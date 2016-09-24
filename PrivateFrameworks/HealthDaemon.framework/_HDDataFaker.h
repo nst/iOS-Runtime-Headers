@@ -3,11 +3,11 @@
  */
 
 @interface _HDDataFaker : NSObject <_HDDemoDataModuleDelegate> {
-    int _activityType;
-    NSArray *_modules;
-    id /* block */ _objectHandler;
-    NSOperationQueue *_operationQueue;
-    HKQuantity *_speed;
+    int  _activityType;
+    NSArray * _modules;
+    id /* block */  _objectHandler;
+    NSOperationQueue * _operationQueue;
+    HKQuantity * _speed;
 }
 
 @property (nonatomic, readonly) int activityType;

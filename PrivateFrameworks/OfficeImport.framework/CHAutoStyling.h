@@ -3,8 +3,8 @@
  */
 
 @interface CHAutoStyling : NSObject {
-    CHDChart *mChart;
-    OADDrawingTheme *mDrawingTheme;
+    CHDChart * mChart;
+    OADDrawingTheme * mDrawingTheme;
 }
 
 + (id)autoStylingWithChart:(id)arg1 drawingTheme:(id)arg2;

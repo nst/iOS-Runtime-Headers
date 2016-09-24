@@ -3,7 +3,7 @@
  */
 
 @interface NNMKFetchesSyncServiceServer : NNMKSyncServiceEndpoint {
-    <NNMKFetchesSyncServiceServerDelegate> *_delegate;
+    <NNMKFetchesSyncServiceServerDelegate> * _delegate;
 }
 
 @property (nonatomic) <NNMKFetchesSyncServiceServerDelegate> *delegate;
@@ -20,6 +20,5 @@
 - (void)setDelegate:(id)arg1;
 - (void)successfullySentProtobufWithIDSIdentifier:(id)arg1;
 - (void)warnErrorDownloadingContentForMessage:(id)arg1 notificationPriority:(BOOL)arg2 userRequested:(BOOL)arg3;
-- (void)warnNeedsUnlock:(id)arg1;
 
 @end

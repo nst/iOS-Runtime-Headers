@@ -3,20 +3,25 @@
  */
 
 @interface EKStringFactory : NSObject {
-    struct __CFDateFormatter { } *_abbrevDayFormatter;
-    struct __CFDateFormatter { } *_customFormatter;
-    struct __CFDateFormatter { } *_dayFormatter;
-    struct __CFDateFormatter { } *_dayOfWeekFormatter;
-    struct __CFDateFormatter { } *_fullStyleDateFormatter;
-    NSMutableDictionary *_longFormatters;
-    struct __CFDateFormatter { } *_standardTimeFormatter;
-    struct __CFDateFormatter { } *_timeFormatter;
+    struct __CFDateFormatter { } * _abbrevDayFormatter;
+    struct __CFDateFormatter { } * _customFormatter;
+    struct __CFDateFormatter { } * _dayFormatter;
+    struct __CFDateFormatter { } * _dayOfWeekFormatter;
+    struct __CFDateFormatter { } * _fullStyleDateFormatter;
+    NSMutableDictionary * _longFormatters;
+    struct __CFDateFormatter { } * _standardTimeFormatter;
+    struct __CFDateFormatter { } * _timeFormatter;
 }
 
++ (id)_dateAfterTodayNextWeekFormatStringForDayOfWeek:(int)arg1 generateLowercaseString:(BOOL)arg2;
++ (id)_dateAfterTodayThisWeekFormatStringForDayOfWeek:(int)arg1 generateLowercaseString:(BOOL)arg2;
++ (id)_dateBeforeTodayLastWeekFormatStringForDayOfWeek:(int)arg1 generateLowercaseString:(BOOL)arg2;
++ (id)_dateBeforeTodayThisWeekFormatStringForDayOfWeek:(int)arg1 generateLowercaseString:(BOOL)arg2;
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
 - (struct __CFDateFormatter { }*)_customFormatter;
+- (id)_dateStringForEventInvitationWithStartDate:(id)arg1 endDate:(id)arg2 timeZone:(id)arg3 allDay:(BOOL)arg4 withFormat:(unsigned int)arg5 showTimeZone:(BOOL)arg6;
 - (id)_dayStringForDate:(double)arg1 allDay:(BOOL)arg2 shortFormat:(BOOL)arg3 lowercase:(BOOL)arg4;
 - (void)_invalidateFormatters;
 - (void)_localeChanged:(id)arg1;
@@ -29,6 +34,7 @@
 - (id)dateStringForDate:(double)arg1 allDay:(BOOL)arg2 standalone:(BOOL)arg3 shortFormat:(BOOL)arg4;
 - (id)dateStringForEventInvitation:(id)arg1 timeZone:(id)arg2;
 - (id)dateStringForEventInvitationWithStartDate:(id)arg1 endDate:(id)arg2 timeZone:(id)arg3 allDay:(BOOL)arg4;
+- (id)dateStringForSuggestedEventWithStartDate:(id)arg1 endDate:(id)arg2 timeZone:(id)arg3 allDay:(BOOL)arg4 showTimeZone:(BOOL)arg5;
 - (struct __CFDateFormatter { }*)dayFormatter;
 - (struct __CFDateFormatter { }*)dayOfWeekFormatter;
 - (void)dealloc;

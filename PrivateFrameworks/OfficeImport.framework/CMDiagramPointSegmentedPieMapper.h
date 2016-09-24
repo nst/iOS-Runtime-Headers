@@ -3,11 +3,11 @@
  */
 
 @interface CMDiagramPointSegmentedPieMapper : CMDiagramPointMapper {
-    BOOL mDrawArrows;
-    unsigned int mSegmentCount;
-    unsigned int mSegmentIndex;
-    float mStartAngle;
-    float mStopAngle;
+    BOOL  mDrawArrows;
+    unsigned int  mSegmentCount;
+    unsigned int  mSegmentIndex;
+    double  mStartAngle;
+    double  mStopAngle;
 }
 
 - (id)_arrowFillWithState:(id)arg1;

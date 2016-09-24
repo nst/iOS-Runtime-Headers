@@ -3,12 +3,12 @@
  */
 
 @interface EKICSPreviewListController : UITableViewController {
-    BOOL _allowsImport;
-    BOOL _allowsSubitems;
-    <EKICSPreviewListDelegate> *_listDelegate;
-    EKICSPreviewModel *_model;
-    NSMutableArray *_sections;
-    BOOL _showWeekNumbers;
+    BOOL  _allowsImport;
+    BOOL  _allowsSubitems;
+    <EKICSPreviewListDelegate> * _listDelegate;
+    EKICSPreviewModel * _model;
+    NSMutableArray * _sections;
+    BOOL  _showWeekNumbers;
 }
 
 @property (nonatomic) BOOL allowsImport;

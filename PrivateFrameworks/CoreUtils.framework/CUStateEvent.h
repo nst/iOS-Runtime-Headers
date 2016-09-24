@@ -3,8 +3,8 @@
  */
 
 @interface CUStateEvent : NSObject {
-    NSString *_name;
-    NSDictionary *_userInfo;
+    NSString * _name;
+    NSDictionary * _userInfo;
 }
 
 @property (nonatomic, readonly, copy) NSString *name;
@@ -14,6 +14,7 @@
 + (id)exitState;
 + (id)initialTransition;
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (id)description;
 - (id)init;

@@ -3,9 +3,9 @@
  */
 
 @interface FMObservingCell : UITableViewCell {
-    NSMutableDictionary *_kvoObservationTokens;
-    NSMutableSet *_notificationTokens;
-    id _representedObject;
+    NSMutableDictionary * _kvoObservationTokens;
+    NSMutableSet * _notificationTokens;
+    id  _representedObject;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *kvoObservationTokens;

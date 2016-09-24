@@ -3,7 +3,7 @@
  */
 
 @interface TPDrawablesZOrder : TSPObject {
-    NSMutableArray *_drawables;
+    NSMutableArray * _drawables;
 }
 
 @property (nonatomic, readonly) unsigned int drawableCount;

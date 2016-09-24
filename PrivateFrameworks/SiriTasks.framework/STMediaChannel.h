@@ -3,10 +3,10 @@
  */
 
 @interface STMediaChannel : STSiriModelObject {
-    NSString *_callSign;
-    NSString *_channelIdentifier;
-    NSString *_name;
-    NSURL *_streamUrl;
+    NSString * _callSign;
+    NSString * _channelIdentifier;
+    NSString * _name;
+    NSURL * _streamUrl;
 }
 
 @property (nonatomic, copy) NSString *callSign;

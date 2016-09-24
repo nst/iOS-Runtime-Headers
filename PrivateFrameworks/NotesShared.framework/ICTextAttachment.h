@@ -3,7 +3,7 @@
  */
 
 @interface ICTextAttachment : NSTextAttachment <TTAttachment> {
-    ICAttachment *_attachment;
+    ICAttachment * _attachment;
 }
 
 @property (retain) ICAttachment *attachment;
@@ -14,6 +14,7 @@
 @property (nonatomic, readonly) NSString *viewIdentifier;
 
 + (float)defaultAttachmentThumbnailViewHeight;
++ (Class)textAttachmentClassForAttachment:(id)arg1;
 + (BOOL)textAttachmentIsContent:(id)arg1;
 + (id)textAttachmentWithAttachment:(id)arg1;
 + (id)textAttachmentWithIdentifier:(id)arg1;
@@ -22,16 +23,17 @@
 - (id)attachment;
 - (id)attachmentAsNSTextAttachment;
 - (id)attachmentAttributesForAttributedString;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })attachmentBoundsForTextContainer:(id)arg1 proposedLineFragment:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 glyphPosition:(struct CGPoint { float x1; float x2; })arg3 characterIndex:(unsigned int)arg4;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })attachmentBoundsIncludingMarginsFromAttachmentBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct { float x1; float x2; float x3; float x4; })attachmentBoundsMargins;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })attachmentBoundsForTextContainer:(id)arg1 proposedLineFragment:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 glyphPosition:(struct CGPoint { double x1; double x2; })arg3 characterIndex:(unsigned int)arg4;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })attachmentBoundsIncludingMarginsFromAttachmentBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct { double x1; double x2; double x3; double x4; })attachmentBoundsMargins;
 - (id)attachmentFileWrapper;
 - (id)attachmentIdentifier;
-- (struct CGSize { float x1; float x2; })attachmentSizeForTextContainer:(id)arg1;
+- (struct CGSize { double x1; double x2; })attachmentSizeForTextContainer:(id)arg1;
 - (id)attachmentUTI;
 - (Class)attachmentViewClass;
 - (void)fixAttachmentForAttributedString:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (id)initWithAttachment:(id)arg1;
+- (BOOL)isEqualToModelComparable:(id)arg1;
 - (struct UIView { Class x1; }*)newlyCreatedView;
 - (struct UIView { Class x1; }*)newlyCreatedViewForManualRendering;
 - (BOOL)requiresSpaceAfterAttachmentForPrinting;

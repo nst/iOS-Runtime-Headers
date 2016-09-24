@@ -3,9 +3,9 @@
  */
 
 @interface EKRecurrenceWeekdayChooserController : EKRecurrenceChooserController {
-    NSMutableArray *_cells;
-    NSArray *_daysOfTheWeek;
-    NSMutableArray *_selectedRows;
+    NSMutableArray * _cells;
+    NSArray * _daysOfTheWeek;
+    NSMutableArray * _selectedRows;
 }
 
 @property (nonatomic, retain) NSMutableArray *cells;

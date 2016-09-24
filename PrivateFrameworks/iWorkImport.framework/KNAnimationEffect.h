@@ -3,7 +3,7 @@
  */
 
 @interface KNAnimationEffect : NSObject <KNAnimationPlugin> {
-    KNAnimationContext *mAnimationContext;
+    KNAnimationContext * mAnimationContext;
 }
 
 @property (readonly, copy) NSString *debugDescription;

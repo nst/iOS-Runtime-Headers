@@ -5,6 +5,7 @@
 @interface EKPersistentSharee : EKPersistentObject <NSCopying>
 
 @property (nonatomic, readonly) NSString *UUID;
+@property (nonatomic, copy) NSString *address;
 @property (nonatomic, copy) NSString *displayName;
 @property (nonatomic, copy) NSString *emailAddress;
 @property (nonatomic, copy) NSString *externalID;
@@ -19,6 +20,7 @@
 + (id)shareeWithName:(id)arg1 emailAddress:(id)arg2 externalID:(id)arg3;
 
 - (id)UUID;
+- (id)address;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)displayName;
@@ -32,6 +34,7 @@
 - (id)initWithName:(id)arg1 emailAddress:(id)arg2 externalID:(id)arg3;
 - (id)lastName;
 - (id)owner;
+- (void)setAddress:(id)arg1;
 - (void)setDisplayName:(id)arg1;
 - (void)setEmailAddress:(id)arg1;
 - (void)setExternalID:(id)arg1;

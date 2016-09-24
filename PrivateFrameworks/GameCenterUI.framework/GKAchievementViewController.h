@@ -3,7 +3,7 @@
  */
 
 @interface GKAchievementViewController : GKGameCenterViewController {
-    <GKAchievementViewControllerDelegate> *_achievementDelegate;
+    <GKAchievementViewControllerDelegate> * _achievementDelegate;
 }
 
 @property (nonatomic) <GKAchievementViewControllerDelegate> *achievementDelegate;

@@ -3,8 +3,8 @@
  */
 
 @interface MCAPNPayload : MCPayload {
-    NSArray *_apnInfos;
-    BOOL _wasInstalled;
+    NSArray * _apnInfos;
+    BOOL  _wasInstalled;
 }
 
 @property (nonatomic) BOOL wasInstalled;

@@ -3,16 +3,16 @@
  */
 
 @interface CNAccountsAndGroupsItem : NSObject {
-    BOOL _bypassIfUnique;
-    NSArray *_childItems;
-    int _containerType;
-    NSString *_identifier;
-    NSString *_name;
-    id /* block */ _nameProvider;
-    CNAccountsAndGroupsItem *_parentItem;
-    BOOL _selected;
-    BOOL _soloSelect;
-    int _type;
+    BOOL  _bypassIfUnique;
+    NSArray * _childItems;
+    int  _containerType;
+    NSString * _identifier;
+    NSString * _name;
+    id /* block */  _nameProvider;
+    CNAccountsAndGroupsItem * _parentItem;
+    BOOL  _selected;
+    BOOL  _soloSelect;
+    int  _type;
 }
 
 @property (nonatomic) BOOL bypassIfUnique;

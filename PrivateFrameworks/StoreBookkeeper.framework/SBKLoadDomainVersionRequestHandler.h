@@ -3,10 +3,10 @@
  */
 
 @interface SBKLoadDomainVersionRequestHandler : SBKSyncRequestHandler <SBKSyncTransactionProcessing> {
-    unsigned int _itemCount;
-    BOOL _loadsRemoteItemCount;
-    unsigned int _responseItemCount;
-    SBKSyncTransaction *_transaction;
+    unsigned int  _itemCount;
+    BOOL  _loadsRemoteItemCount;
+    unsigned int  _responseItemCount;
+    SBKSyncTransaction * _transaction;
 }
 
 @property (readonly, copy) NSString *debugDescription;

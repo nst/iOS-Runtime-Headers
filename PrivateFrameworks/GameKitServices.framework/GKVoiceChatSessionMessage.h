@@ -3,9 +3,9 @@
  */
 
 @interface GKVoiceChatSessionMessage : GKOOBMessage {
-    unsigned int _conferenceID;
-    NSData *_data;
-    unsigned int _subtype;
+    unsigned int  _conferenceID;
+    NSData * _data;
+    unsigned int  _subtype;
 }
 
 - (BOOL)_checkSize:(unsigned long)arg1;

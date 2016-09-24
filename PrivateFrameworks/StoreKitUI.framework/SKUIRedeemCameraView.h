@@ -3,17 +3,17 @@
  */
 
 @interface SKUIRedeemCameraView : UIView <UITextFieldDelegate> {
-    SKUIClientContext *_clientContext;
-    <SKUIRedeemCameraViewDelegate> *_delegate;
-    BOOL _displayRedeem;
-    SKUIITunesPassConfiguration *_iTunesPassConfiguration;
-    SKUIRedeemITunesPassLockup *_iTunesPassLockup;
-    SKUIRedeemTextField *_inputAccessoryTextField;
-    SKUIRedeemCameraLandingView *_landingView;
-    UIView *_overlay;
-    UIView *_redeemerView;
-    UIButton *_termsButton;
-    SKUIRedeemTextField *_textField;
+    SKUIClientContext * _clientContext;
+    <SKUIRedeemCameraViewDelegate> * _delegate;
+    BOOL  _displayRedeem;
+    SKUIITunesPassConfiguration * _iTunesPassConfiguration;
+    SKUIRedeemITunesPassLockup * _iTunesPassLockup;
+    SKUIRedeemTextField * _inputAccessoryTextField;
+    SKUIRedeemCameraLandingView * _landingView;
+    UIView * _overlay;
+    UIView * _redeemerView;
+    UIButton * _termsButton;
+    SKUIRedeemTextField * _textField;
 }
 
 @property (nonatomic, retain) SKUIITunesPassConfiguration *ITunesPassConfiguration;

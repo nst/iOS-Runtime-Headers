@@ -3,16 +3,18 @@
  */
 
 @interface TSCECellDependenciesPrinter : NSObject {
-    NSMutableArray *_cleanCellDependencyRows;
-    NSMutableArray *_dirtyCellDependencyRows;
-    unsigned int _numDirtyCells;
-    NSString *_ownerName;
-    BOOL _showCleanCells;
+    NSMutableArray * _cleanCellDependencyRows;
+    NSMutableArray * _dirtyCellDependencyRows;
+    unsigned int  _numDirtyCells;
+    NSString * _ownerName;
+    BOOL  _showCleanCells;
 }
 
 @property (nonatomic) unsigned int numDirtyCells;
 @property (nonatomic, retain) NSString *ownerName;
 @property (nonatomic) BOOL showCleanCells;
+
++ (id)stringForOwnerKind:(int)arg1;
 
 - (void)addDependencyRow:(id)arg1;
 - (void)dealloc;

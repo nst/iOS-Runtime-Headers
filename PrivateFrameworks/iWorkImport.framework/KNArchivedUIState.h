@@ -3,7 +3,7 @@
  */
 
 @interface KNArchivedUIState : TSPObject {
-    KNUIState *mUIState;
+    KNUIState * mUIState;
 }
 
 @property (nonatomic, readonly) KNUIState *uiState;

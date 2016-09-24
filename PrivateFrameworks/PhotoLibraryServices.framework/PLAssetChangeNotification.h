@@ -3,7 +3,7 @@
  */
 
 @interface PLAssetChangeNotification : PLChangeNotification {
-    NSSet *_updatedAssets;
+    NSSet * _updatedAssets;
 }
 
 @property (nonatomic, copy) NSSet *updatedAssets;

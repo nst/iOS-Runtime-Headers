@@ -3,9 +3,9 @@
  */
 
 @interface MCResourceProgressObserver : NSObject {
-    id /* block */ _cancelHandler;
-    NSString *_name;
-    NSProgress *_progress;
+    id /* block */  _cancelHandler;
+    NSString * _name;
+    NSProgress * _progress;
 }
 
 @property (nonatomic, copy) id /* block */ cancelHandler;

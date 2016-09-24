@@ -3,24 +3,24 @@
  */
 
 @interface RadioStationMatchLibraryTrackMetadata : RadioStationMatchMetadata {
-    NSString *_albumArtistName;
-    NSString *_albumName;
-    NSString *_artistName;
-    NSNumber *_compilation;
-    NSString *_composerName;
-    NSString *_copyright;
-    NSNumber *_discCount;
-    NSNumber *_discNumber;
-    NSNumber *_duration;
-    NSNumber *_fileSize;
-    NSString *_genreName;
-    NSString *_kind;
-    NSString *_name;
-    NSNumber *_storeAdamID;
-    NSNumber *_storeCloudID;
-    NSNumber *_trackCount;
-    NSNumber *_trackNumber;
-    NSNumber *_year;
+    NSString * _albumArtistName;
+    NSString * _albumName;
+    NSString * _artistName;
+    NSNumber * _compilation;
+    NSString * _composerName;
+    NSString * _copyright;
+    NSNumber * _discCount;
+    NSNumber * _discNumber;
+    NSNumber * _duration;
+    NSNumber * _fileSize;
+    NSString * _genreName;
+    NSString * _kind;
+    NSString * _name;
+    NSNumber * _storeAdamID;
+    NSNumber * _storeCloudID;
+    NSNumber * _trackCount;
+    NSNumber * _trackNumber;
+    NSNumber * _year;
 }
 
 @property (nonatomic, copy) NSString *albumArtistName;

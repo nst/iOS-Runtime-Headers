@@ -3,7 +3,7 @@
  */
 
 @interface SKUIFieldSettingDescriptionView : SKUISettingDescriptionView {
-    BOOL _enabled;
+    BOOL  _enabled;
 }
 
 @property (nonatomic) BOOL enabled;

@@ -3,11 +3,11 @@
  */
 
 @interface SCRCRawImage : NSObject {
-    int _bytesPerPixel;
-    char *_data;
-    int _height;
-    struct CGImage { } *_imageRef;
-    int _width;
+    int  _bytesPerPixel;
+    char * _data;
+    int  _height;
+    struct CGImage { } * _imageRef;
+    int  _width;
 }
 
 @property (nonatomic) int bytesPerPixel;

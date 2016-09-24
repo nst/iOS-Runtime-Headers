@@ -3,10 +3,10 @@
  */
 
 @interface DEExtensionManager : NSObject {
-    id /* block */ _afterExtendedBlock;
-    BOOL _extendedLoaded;
-    NSArray *_extensions;
-    NSObject<OS_dispatch_queue> *_initialLoadQueue;
+    id /* block */  _afterExtendedBlock;
+    BOOL  _extendedLoaded;
+    NSArray * _extensions;
+    NSObject<OS_dispatch_queue> * _initialLoadQueue;
 }
 
 @property (nonatomic, copy) id /* block */ afterExtendedBlock;

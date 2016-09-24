@@ -3,28 +3,25 @@
  */
 
 @interface MSVArtworkServiceResizeRequest : MSVArtworkServiceRequest {
-    BOOL _overwriteExistingDestinations;
-    NSMutableArray *_resizeDestinations;
-    NSURL *_sourceURL;
+    NSMutableArray * _resizeDestinations;
+    NSURL * _sourceURL;
 }
 
-@property (nonatomic) BOOL overwriteExistingDestinations;
 @property (nonatomic, retain) NSMutableArray *resizeDestinations;
 @property (nonatomic, copy) NSURL *sourceURL;
 
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (void)addDestinationWithSize:(struct CGSize { float x1; float x2; })arg1 compressionQuality:(float)arg2 url:(id)arg3;
+- (void)addDestinationWithFormat:(int)arg1 size:(struct CGSize { double x1; double x2; })arg2 url:(id)arg3;
+- (void)addJPEGDestinationWithSize:(struct CGSize { double x1; double x2; })arg1 compressionQuality:(float)arg2 url:(id)arg3;
 - (id)debugDescription;
 - (void)encodeWithCoder:(id)arg1;
 - (void)enumerateDestinationsUsingBlock:(id /* block */)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithSourceURL:(id)arg1;
 - (Class)operationClass;
-- (BOOL)overwriteExistingDestinations;
 - (id)resizeDestinations;
-- (void)setOverwriteExistingDestinations:(BOOL)arg1;
 - (void)setResizeDestinations:(id)arg1;
 - (void)setSourceURL:(id)arg1;
 - (id)sourceURL;

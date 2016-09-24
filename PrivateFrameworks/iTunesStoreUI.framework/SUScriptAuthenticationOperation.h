@@ -3,8 +3,8 @@
  */
 
 @interface SUScriptAuthenticationOperation : ISOperation {
-    NSNumber *_authenticatedDSID;
-    SSMutableAuthenticationContext *_authenticationContext;
+    NSNumber * _authenticatedDSID;
+    SSMutableAuthenticationContext * _authenticationContext;
 }
 
 @property (retain) NSNumber *authenticatedDSID;

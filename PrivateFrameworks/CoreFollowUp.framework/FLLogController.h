@@ -3,9 +3,9 @@
  */
 
 @interface FLLogController : NSObject {
-    BOOL _logToFile;
-    BOOL _logToSyslog;
-    unsigned int _maxLogLevel;
+    BOOL  _logToFile;
+    BOOL  _logToSyslog;
+    unsigned int  _maxLogLevel;
 }
 
 + (id)sharedLogger;

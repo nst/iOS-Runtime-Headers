@@ -3,8 +3,8 @@
  */
 
 @interface BLTPairedSyncStateChangedInfo : NSObject {
-    unsigned int _newState;
-    unsigned int _oldState;
+    unsigned int  _newState;
+    unsigned int  _oldState;
 }
 
 @property (nonatomic) unsigned int newState;

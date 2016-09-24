@@ -3,7 +3,7 @@
  */
 
 @interface OADCustomDash : OADDash {
-    NSArray *mStops;
+    NSArray * mStops;
 }
 
 + (id)defaultProperties;

@@ -3,12 +3,12 @@
  */
 
 @interface HDIDSMessagePersistentContext : NSObject <NSSecureCoding> {
-    NSDate *_date;
-    NSString *_deviceIdentifier;
-    BOOL _fromRequest;
-    NSString *_idsIdentifier;
-    unsigned short _messageID;
-    NSDictionary *_userInfo;
+    NSDate * _date;
+    NSString * _deviceIdentifier;
+    BOOL  _fromRequest;
+    NSString * _idsIdentifier;
+    unsigned short  _messageID;
+    NSDictionary * _userInfo;
 }
 
 @property (nonatomic, retain) NSDate *date;

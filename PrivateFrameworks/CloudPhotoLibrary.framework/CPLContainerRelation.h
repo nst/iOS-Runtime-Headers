@@ -3,9 +3,9 @@
  */
 
 @interface CPLContainerRelation : NSObject <NSCopying, NSSecureCoding> {
-    NSString *_containerIdentifier;
-    BOOL _keyAsset;
-    int _position;
+    NSString * _containerIdentifier;
+    BOOL  _keyAsset;
+    int  _position;
 }
 
 @property (nonatomic, copy) NSString *containerIdentifier;

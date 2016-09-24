@@ -3,28 +3,34 @@
  */
 
 @interface IKAppContext : NSObject <ISURLOperationDelegate> {
-    <IKApplication> *_app;
-    BOOL _canAccessPendingQueue;
-    <IKAppContextDelegate> *_delegate;
-    BOOL _isValid;
-    JSContext *_jsContext;
-    IKJSFoundation *_jsFoundation;
-    struct __CFRunLoop { } *_jsThreadRunLoop;
-    struct __CFRunLoopSource { } *_jsThreadRunLoopSource;
-    NSObject<OS_dispatch_source> *_lowMemoryWarningSource;
-    BOOL _mescalPrimeEnabledForXHRRequests;
-    unsigned int _mode;
-    NSMutableArray *_pendingQueue;
-    NSMutableArray *_postEvaluationBlocks;
-    id _reloadData;
-    BOOL _remoteInspectionEnabled;
-    NSError *_responseError;
-    NSString *_responseScript;
-    BOOL _trusted;
-    IKJSInspectorController *_webInspectorController;
+    <IKApplication> * _app;
+    <IKAppScriptFallbackHandler> * _appScriptFallbackHandler;
+    double  _appScriptTimeoutInterval;
+    IKJSArrayBufferStore * _arrayBufferStore;
+    BOOL  _canAccessPendingQueue;
+    <IKAppContextDelegate> * _delegate;
+    BOOL  _isValid;
+    JSContext * _jsContext;
+    IKJSFoundation * _jsFoundation;
+    struct __CFRunLoop { } * _jsThreadRunLoop;
+    struct __CFRunLoopSource { } * _jsThreadRunLoopSource;
+    NSObject<OS_dispatch_source> * _lowMemoryWarningSource;
+    BOOL  _mescalPrimeEnabledForXHRRequests;
+    unsigned int  _mode;
+    NSMutableArray * _pendingQueue;
+    NSMutableArray * _postEvaluationBlocks;
+    id  _reloadData;
+    BOOL  _remoteInspectionEnabled;
+    NSError * _responseError;
+    NSString * _responseScript;
+    BOOL  _trusted;
+    IKJSInspectorController * _webInspectorController;
 }
 
 @property (nonatomic, readonly) <IKApplication> *app;
+@property (nonatomic, retain) <IKAppScriptFallbackHandler> *appScriptFallbackHandler;
+@property (nonatomic) double appScriptTimeoutInterval;
+@property (nonatomic, readonly) IKJSArrayBufferStore *arrayBufferStore;
 @property (nonatomic) BOOL canAccessPendingQueue;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) <IKAppContextDelegate> *delegate;
@@ -57,17 +63,19 @@
 - (void)_evaluate:(id /* block */)arg1;
 - (void)_evaluateFoundationWithDeviceConfig:(id)arg1;
 - (void)_invalidateJSThread;
-- (BOOL)_isAppTrusted;
 - (void)_jsThreadMain;
 - (id)_preferredLaunchURL;
 - (void)_sourceCanceledOnRunLoop:(struct __CFRunLoop { }*)arg1;
 - (void)_sourcePerform;
 - (void)_sourceScheduledOnRunLoop:(struct __CFRunLoop { }*)arg1;
-- (void)_startWithScript:(id)arg1 scriptUrl:(id)arg2;
+- (void)_startWithScript:(id)arg1 scriptUrl:(id)arg2 wasLoadedFromFallback:(BOOL)arg3;
 - (void)_startWithURL:(id)arg1 urlTrusted:(BOOL)arg2;
 - (void)_stopAndReload:(BOOL)arg1;
 - (void)addPostEvaluateBlock:(id /* block */)arg1;
 - (id)app;
+- (id)appScriptFallbackHandler;
+- (double)appScriptTimeoutInterval;
+- (id)arrayBufferStore;
 - (BOOL)canAccessPendingQueue;
 - (id)delegate;
 - (void)evaluate:(id /* block */)arg1 completionBlock:(id /* block */)arg2;
@@ -94,6 +102,8 @@
 - (id)responseError;
 - (id)responseScript;
 - (void)resumeWithOptions:(id)arg1;
+- (void)setAppScriptFallbackHandler:(id)arg1;
+- (void)setAppScriptTimeoutInterval:(double)arg1;
 - (void)setCanAccessPendingQueue:(BOOL)arg1;
 - (void)setException:(id)arg1 withErrorMessage:(id)arg2;
 - (void)setIsValid:(BOOL)arg1;

@@ -3,14 +3,14 @@
  */
 
 @interface MPRadioController : NSObject <MPClientRadioController> {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    BKSApplicationStateMonitor *_applicationStateMonitor;
-    NSXPCConnection *_connection;
-    BOOL _hasLaunchedService;
-    BOOL _isRadioAvailable;
-    BKSProcessAssertion *_remoteProcessAssertion;
-    id /* block */ _remoteProcessAssertionCompletionHandler;
-    int _remoteProcessAssertionCount;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    BKSApplicationStateMonitor * _applicationStateMonitor;
+    NSXPCConnection * _connection;
+    BOOL  _hasLaunchedService;
+    BOOL  _isRadioAvailable;
+    BKSProcessAssertion * _remoteProcessAssertion;
+    id /* block */  _remoteProcessAssertionCompletionHandler;
+    int  _remoteProcessAssertionCount;
 }
 
 @property (readonly, copy) NSString *debugDescription;

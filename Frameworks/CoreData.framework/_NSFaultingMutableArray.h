@@ -3,14 +3,14 @@
  */
 
 @interface _NSFaultingMutableArray : NSMutableArray {
-    int _cd_rc;
+    int  _cd_rc;
     struct _NSFaultingMutableArrayFlags { 
         unsigned int _isFault : 1; 
         unsigned int _reserved : 31; 
-    } _flags;
-    NSMutableArray *_realArray;
-    NSPropertyDescription *_relationship;
-    NSManagedObject *_source;
+    }  _flags;
+    NSMutableArray * _realArray;
+    NSPropertyDescription * _relationship;
+    NSManagedObject * _source;
 }
 
 @property (getter=isFault, nonatomic, readonly) BOOL fault;

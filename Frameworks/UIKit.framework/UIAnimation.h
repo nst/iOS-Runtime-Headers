@@ -3,18 +3,18 @@
  */
 
 @interface UIAnimation : NSObject {
-    SEL _action;
+    SEL  _action;
     struct { 
         unsigned int curve : 4; 
         unsigned int tvOutput : 1; 
         unsigned int useNSTimer : 1; 
-    } _animationFlags;
-    id /* block */ _completion;
-    id _delegate;
-    double _duration;
-    double _startTime;
-    int _state;
-    id _target;
+    }  _animationFlags;
+    id /* block */  _completion;
+    id  _delegate;
+    double  _duration;
+    double  _startTime;
+    int  _state;
+    id  _target;
 }
 
 - (void).cxx_destruct;

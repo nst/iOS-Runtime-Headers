@@ -3,7 +3,7 @@
  */
 
 @interface CMLogItemInternal : NSObject {
-    double fTimestamp;
+    double  fTimestamp;
 }
 
 - (id)initWithTimestamp:(double)arg1;

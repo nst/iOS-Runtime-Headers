@@ -3,9 +3,9 @@
  */
 
 @interface MSPRegionBookmark : PBCodable <NSCopying> {
-    GEOMapRegion *_region;
-    NSString *_title;
-    PBUnknownFields *_unknownFields;
+    GEOMapRegion * _region;
+    NSString * _title;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, readonly) BOOL hasRegion;

@@ -3,22 +3,22 @@
  */
 
 @interface SUClientApplicationController : SUClientController <SKUIPassbookLoaderDelegate, SUTabBarControllerDelegate> {
-    SUMediaPlayerViewController *_activeMediaPlayer;
-    NSString *_exitStoreButtonTitle;
-    SUPlaceholderViewController *_fetchSectionsPlaceholder;
-    int _ignoreDownloadQueueChangeCount;
-    SUSectionsResponse *_lastBackgroundSectionsResponse;
-    SUSectionsResponse *_lastSectionsResponse;
-    SKUIURL *_launchURL;
-    ISOperation *_loadSectionsOperation;
-    id _locationObserver;
-    SKUIPassbookLoader *_passbookLoader;
-    NSString *_preMediaDefaultPNG;
-    SUPreviewOverlayViewController *_previewOverlay;
-    BOOL _reloadForStorefrontChangeAfterAccountSetup;
-    BOOL _reloadSectionsOnNextLaunch;
-    BOOL _shouldPrepareUserInterfaceWhenActivated;
-    SUTabBarController *_tabBarController;
+    SUMediaPlayerViewController * _activeMediaPlayer;
+    NSString * _exitStoreButtonTitle;
+    SUPlaceholderViewController * _fetchSectionsPlaceholder;
+    int  _ignoreDownloadQueueChangeCount;
+    SUSectionsResponse * _lastBackgroundSectionsResponse;
+    SUSectionsResponse * _lastSectionsResponse;
+    SKUIURL * _launchURL;
+    ISOperation * _loadSectionsOperation;
+    id  _locationObserver;
+    SKUIPassbookLoader * _passbookLoader;
+    NSString * _preMediaDefaultPNG;
+    SUPreviewOverlayViewController * _previewOverlay;
+    BOOL  _reloadForStorefrontChangeAfterAccountSetup;
+    BOOL  _reloadSectionsOnNextLaunch;
+    BOOL  _shouldPrepareUserInterfaceWhenActivated;
+    SUTabBarController * _tabBarController;
 }
 
 @property (getter=_activeMediaPlayer, setter=_setActiveMediaPlayer:, nonatomic, retain) SUMediaPlayerViewController *_activeMediaPlayer;

@@ -3,7 +3,7 @@
  */
 
 @interface PLWeakRef : NSObject {
-    id _object;
+    id  _object;
 }
 
 @property (nonatomic, readonly) id object;

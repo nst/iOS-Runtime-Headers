@@ -3,15 +3,15 @@
  */
 
 @interface TKSmartCardPINFormat : NSObject <NSCopying, NSSecureCoding> {
-    int _PINBitOffset;
-    int _PINBlockByteLength;
-    int _PINJustification;
-    int _PINLengthBitOffset;
-    int _PINLengthBitSize;
-    int _charset;
-    int _encoding;
-    int _maxPINLength;
-    int _minPINLength;
+    int  _PINBitOffset;
+    int  _PINBlockByteLength;
+    int  _PINJustification;
+    int  _PINLengthBitOffset;
+    int  _PINLengthBitSize;
+    int  _charset;
+    int  _encoding;
+    int  _maxPINLength;
+    int  _minPINLength;
 }
 
 @property int PINBitOffset;
@@ -24,6 +24,7 @@
 @property int maxPINLength;
 @property int minPINLength;
 
++ (void)_writeNumber:(unsigned int)arg1 into:(id)arg2 bitOffset:(int)arg3 bitLength:(int)arg4;
 + (BOOL)supportsSecureCoding;
 
 - (int)PINBitOffset;
@@ -35,6 +36,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (int)encoding;
+- (BOOL)fillPIN:(id)arg1 intoAPDUTemplate:(id)arg2 PINByteOffset:(int)arg3 error:(id*)arg4;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (int)maxPINLength;

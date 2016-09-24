@@ -3,7 +3,7 @@
  */
 
 @interface GQZInflateInputStream : NSObject <GQZEntryInputStream> {
-    <GQZEntryInputStream> *mInput;
+    <GQZEntryInputStream> * mInput;
     struct z_stream_s { 
         char *next_in; 
         unsigned int avail_in; 
@@ -19,7 +19,7 @@
         int data_type; 
         unsigned int adler; 
         unsigned int reserved; 
-    } mStream;
+    }  mStream;
 }
 
 @property (readonly, copy) NSString *debugDescription;

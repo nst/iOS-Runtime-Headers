@@ -3,10 +3,10 @@
  */
 
 @interface SSDownloadPolicyUserDefaultState : NSObject <NSCopying, NSSecureCoding, SSXPCCoding> {
-    NSString *_domain;
-    NSNumber *_fallbackNumberValue;
-    NSString *_key;
-    BOOL _shouldInvertBoolValue;
+    NSString * _domain;
+    NSNumber * _fallbackNumberValue;
+    NSString * _key;
+    BOOL  _shouldInvertBoolValue;
 }
 
 @property (nonatomic, readonly) BOOL currentBoolValue;

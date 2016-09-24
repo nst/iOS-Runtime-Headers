@@ -3,11 +3,11 @@
  */
 
 @interface WBSParsecSchema : NSObject {
-    NSError *_associatedError;
-    Class _expectedClass;
-    BOOL _optional;
-    id /* block */ _specializedSchemaBlock;
-    id /* block */ _validationBlock;
+    NSError * _associatedError;
+    Class  _expectedClass;
+    BOOL  _optional;
+    id /* block */  _specializedSchemaBlock;
+    id /* block */  _validationBlock;
 }
 
 @property (nonatomic, retain) NSError *associatedError;
@@ -16,16 +16,19 @@
 @property (nonatomic, copy) id /* block */ specializedSchemaBlock;
 @property (nonatomic, copy) id /* block */ validationBlock;
 
++ (id)schemaForArrayWithElementSchema:(id)arg1;
 + (id)schemaForArrayWithElementSchema:(id)arg1 associatedError:(id)arg2;
 + (id)schemaForArrayWithElementSchema:(id)arg1 associatedError:(id)arg2 isOptional:(BOOL)arg3;
++ (id)schemaForDictionaryWithStructure:(id)arg1;
 + (id)schemaForDictionaryWithStructure:(id)arg1 associatedError:(id)arg2;
 + (id)schemaForDictionaryWithStructure:(id)arg1 associatedError:(id)arg2 isOptional:(BOOL)arg3;
++ (id)schemaWithConstantValue:(id)arg1;
++ (id)schemaWithExpectedClass:(Class)arg1;
 + (id)schemaWithExpectedClass:(Class)arg1 associatedError:(id)arg2;
 + (id)schemaWithExpectedClass:(Class)arg1 associatedError:(id)arg2 isOptional:(BOOL)arg3;
 
 - (void).cxx_destruct;
 - (id)_initWithExpectedClass:(Class)arg1 associatedError:(id)arg2 isOptional:(BOOL)arg3;
-- (BOOL)_test_validateObject:(id)arg1 error:(id*)arg2;
 - (BOOL)_validateChild:(id)arg1 ofParent:(id)arg2 withParentAssociatedError:(id)arg3 errorHandler:(id /* block */)arg4;
 - (id)associatedError;
 - (Class)expectedClass;
@@ -36,9 +39,6 @@
 - (void)setSpecializedSchemaBlock:(id /* block */)arg1;
 - (void)setValidationBlock:(id /* block */)arg1;
 - (id /* block */)specializedSchemaBlock;
-- (BOOL)test_acceptsObject:(id)arg1;
-- (BOOL)test_rejectsObject:(id)arg1 withError:(id)arg2;
-- (BOOL)test_rejectsObject:(id)arg1 withErrorCode:(int)arg2;
 - (void)validateObject:(id)arg1 withErrorHandler:(id /* block */)arg2;
 - (id /* block */)validationBlock;
 

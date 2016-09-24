@@ -3,8 +3,8 @@
  */
 
 @interface TSCHReferenceLineNonStyleItem : NSObject {
-    TSCHReferenceLineNonStyle *mNonStyle;
-    NSUUID *mUUID;
+    TSCHReferenceLineNonStyle * mNonStyle;
+    NSUUID * mUUID;
 }
 
 @property (nonatomic, retain) TSCHReferenceLineNonStyle *nonStyle;

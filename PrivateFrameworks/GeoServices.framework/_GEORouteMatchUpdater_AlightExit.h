@@ -3,15 +3,15 @@
  */
 
 @interface _GEORouteMatchUpdater_AlightExit : _GEORouteMatchUpdater {
-    GEOPBTransitStation *_alightStation;
-    GEOComposedRouteStep *_alightStep;
-    GEOPBTransitStop *_alightStop;
-    GEOComposedRouteStep *_postAlightStep;
-    GEOComposedRouteStep *_postAlightWalkingStep;
+    GEOPBTransitStation * _alightStation;
+    GEOComposedRouteStep * _alightStep;
+    GEOPBTransitStop * _alightStop;
+    GEOComposedRouteStep * _postAlightStep;
+    GEOComposedRouteStep * _postAlightWalkingStep;
     struct PolylineCoordinate { 
         unsigned int index; 
-        float offset; 
-    } _routeCoordinateAlightStation;
+        double offset; 
+    }  _routeCoordinateAlightStation;
 }
 
 - (id).cxx_construct;

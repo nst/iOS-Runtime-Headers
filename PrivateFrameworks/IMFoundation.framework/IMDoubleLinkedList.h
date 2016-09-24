@@ -3,9 +3,9 @@
  */
 
 @interface IMDoubleLinkedList : NSObject {
-    unsigned int _count;
-    IMDoubleLinkedListNode *_first;
-    IMDoubleLinkedListNode *_last;
+    unsigned int  _count;
+    IMDoubleLinkedListNode * _first;
+    IMDoubleLinkedListNode * _last;
 }
 
 @property (readonly) unsigned int count;

@@ -3,17 +3,19 @@
  */
 
 @interface PHAdjustmentData : NSObject <NSSecureCoding> {
-    int _baseVersion;
-    NSData *_data;
-    NSString *_formatIdentifier;
-    NSString *_formatVersion;
+    int  _baseVersion;
+    NSData * _data;
+    NSString * _formatIdentifier;
+    NSString * _formatVersion;
 }
 
 @property (nonatomic) int baseVersion;
 @property (readonly) NSData *data;
-@property (copy) NSString *formatIdentifier;
-@property (copy) NSString *formatVersion;
+@property (nonatomic, copy) NSString *formatIdentifier;
+@property (nonatomic, copy) NSString *formatVersion;
 @property (getter=isOpaque, readonly) BOOL opaque;
+
+// Image: /System/Library/Frameworks/Photos.framework/Photos
 
 + (int)adjustmentBaseVersionFromImageRequestVersion:(int)arg1;
 + (int)adjustmentBaseVersionFromVideoRequestVersion:(int)arg1;
@@ -23,6 +25,7 @@
 + (int)videoRequestVersionFromAdjustmentBaseVersion:(int)arg1;
 
 - (void).cxx_destruct;
+- (BOOL)_hasAdjustments;
 - (int)baseVersion;
 - (id)data;
 - (id)description;
@@ -35,5 +38,13 @@
 - (void)setBaseVersion:(int)arg1;
 - (void)setFormatIdentifier:(id)arg1;
 - (void)setFormatVersion:(id)arg1;
+
+// Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
+
+- (int)_pu_baseOrientationForAsset:(id)arg1;
+- (int)pu_adjustmentWorkVersion;
+- (BOOL)pu_isPenultimateAvailable;
+- (BOOL)pu_loadPhotoEditModel:(id)arg1 forAsset:(id)arg2;
+- (int)pu_penultimateState;
 
 @end

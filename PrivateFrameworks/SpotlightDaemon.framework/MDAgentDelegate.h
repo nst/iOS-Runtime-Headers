@@ -3,9 +3,9 @@
  */
 
 @interface MDAgentDelegate : NSObject <NSXPCListenerDelegate> {
-    Class _agentClass;
-    NSMutableSet *_clients;
-    NSObject<MDIndexer> *_indexer;
+    Class  _agentClass;
+    NSMutableSet * _clients;
+    NSObject<MDIndexer> * _indexer;
 }
 
 @property (retain) Class agentClass;

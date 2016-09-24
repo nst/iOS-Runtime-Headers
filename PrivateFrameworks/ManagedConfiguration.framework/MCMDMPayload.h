@@ -3,19 +3,19 @@
  */
 
 @interface MCMDMPayload : MCPayload {
-    int _accessRights;
-    NSString *_checkInURLString;
-    BOOL _checkOutWhenRemoved;
-    NSNumber *_checkOutWhenRemovedNum;
-    NSData *_identityPersistentID;
-    NSString *_identityUUID;
-    NSArray *_serverCapabilities;
-    NSString *_serverURLString;
-    BOOL _signMessage;
-    NSNumber *_signMessageNum;
-    NSString *_topic;
-    BOOL _useDevelopmentAPNS;
-    NSNumber *_useDevelopmentAPNSNum;
+    int  _accessRights;
+    NSString * _checkInURLString;
+    BOOL  _checkOutWhenRemoved;
+    NSNumber * _checkOutWhenRemovedNum;
+    NSData * _identityPersistentID;
+    NSString * _identityUUID;
+    NSArray * _serverCapabilities;
+    NSString * _serverURLString;
+    BOOL  _signMessage;
+    NSNumber * _signMessageNum;
+    NSString * _topic;
+    BOOL  _useDevelopmentAPNS;
+    NSNumber * _useDevelopmentAPNSNum;
 }
 
 @property (nonatomic, readonly) int accessRights;

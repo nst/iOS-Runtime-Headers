@@ -3,9 +3,9 @@
  */
 
 @interface BWNodeConnection : NSObject <BWNodeOutputConsumer> {
-    BWNodeInput *_input;
-    BWNodeOutput *_output;
-    BWPipelineStage *_pipelineStage;
+    BWNodeInput * _input;
+    BWNodeOutput * _output;
+    BWPipelineStage * _pipelineStage;
 }
 
 @property (readonly, copy) NSString *debugDescription;

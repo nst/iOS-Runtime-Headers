@@ -3,21 +3,21 @@
  */
 
 @interface UIKBHandwritingCandidateView : UIKBKeyView <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIKeyboardCandidateList> {
-    TIKeyboardCandidateResultSet *_candidateResultSet;
-    UIKBCandidateCollectionView *_candidatesCollectionView;
-    <UIKeyboardCandidateListDelegate> *_delegate;
-    unsigned int _dummyCellCount;
-    float _dummyCellWidth;
-    UIKeyboardCandidatePocketShadow *_leftBorder;
-    UIKeyboardCandidateLogButton *_logButton;
-    UIKeyboardCandidatePocketShadow *_pocketShadow;
+    TIKeyboardCandidateResultSet * _candidateResultSet;
+    UIKBCandidateCollectionView * _candidatesCollectionView;
+    <UIKeyboardCandidateListDelegate> * _delegate;
+    unsigned int  _dummyCellCount;
+    double  _dummyCellWidth;
+    UIKeyboardCandidatePocketShadow * _leftBorder;
+    UIKeyboardCandidateLogButton * _logButton;
+    UIKeyboardCandidatePocketShadow * _pocketShadow;
     struct { 
         unsigned int idiom : 6; 
         unsigned int landscape : 1; 
         unsigned int split : 1; 
         unsigned int appearance : 8; 
         unsigned int rendering : 16; 
-    } _visualStyling;
+    }  _visualStyling;
 }
 
 @property (nonatomic, readonly) <UIKeyboardCandidateList> *candidateList;
@@ -28,7 +28,7 @@
 @property (nonatomic) <UIKeyboardCandidateListDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) unsigned int dummyCellCount;
-@property (nonatomic) float dummyCellWidth;
+@property (nonatomic) double dummyCellWidth;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) UIKeyboardCandidatePocketShadow *leftBorder;
 @property (nonatomic, retain) UIKeyboardCandidateLogButton *logButton;
@@ -38,6 +38,7 @@
 
 + (Class)cellClass;
 
+- (void).cxx_destruct;
 - (id)_inheritedRenderConfig;
 - (void)_setRenderConfig:(id)arg1;
 - (void)calculateDummyCellAttributes;
@@ -48,7 +49,7 @@
 - (id)candidatesCollectionView;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
-- (struct CGSize { float x1; float x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
+- (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
 - (id)currentCandidate;
 - (unsigned int)currentIndex;
@@ -60,21 +61,22 @@
 - (BOOL)hasCandidates;
 - (BOOL)hasNextPage;
 - (BOOL)hasPreviousPage;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 keyplane:(id)arg2 key:(id)arg3;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 keyplane:(id)arg2 key:(id)arg3;
 - (BOOL)isExtendedList;
-- (BOOL)isHiddenCandidatesList;
 - (void)jumpToCompositions;
 - (id)keyboardBehaviors;
 - (id)leftBorder;
 - (id)logButton;
+- (unsigned int)maxNumberOfProactiveCells;
 - (id)pocketShadow;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (BOOL)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (void)reloadDataByAppendingAtEnd:(BOOL)arg1;
+- (id)secureCandidateRenderTraits;
 - (void)selectAndScrollToCandidateAtIndexPath:(id)arg1 animated:(BOOL)arg2;
 - (unsigned int)selectedSortIndex;
 - (void)setCandidateResultSet:(id)arg1;
-- (void)setCandidates:(id)arg1 inlineText:(id)arg2 inlineRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 maxX:(float)arg4 layout:(BOOL)arg5;
+- (void)setCandidates:(id)arg1 inlineText:(id)arg2 inlineRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 maxX:(float)arg4 layout:(BOOL)arg5;
 - (void)setCandidatesCollectionView:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDummyCellCount:(unsigned int)arg1;
@@ -93,6 +95,7 @@
 - (void)showPreviousCandidate;
 - (void)showPreviousPage;
 - (void)showPreviousRow;
+- (float)singleCellWidthForProactiveCellCount:(unsigned int)arg1;
 - (id)statisticsIdentifier;
 - (void)updateForKeyplane:(id)arg1 key:(id)arg2;
 - (void)updateLeftBorderForKeyplane:(id)arg1;

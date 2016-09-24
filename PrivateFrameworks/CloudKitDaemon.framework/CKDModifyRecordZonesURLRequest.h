@@ -3,11 +3,11 @@
  */
 
 @interface CKDModifyRecordZonesURLRequest : CKDURLRequest {
-    BOOL _markZonesAsUserPurged;
-    NSMutableDictionary *_recordZoneIDByRequestID;
-    NSArray *_recordZoneIDsToDelete;
-    id /* block */ _recordZoneModifiedBlock;
-    NSArray *_recordZonesToSave;
+    BOOL  _markZonesAsUserPurged;
+    NSMutableDictionary * _recordZoneIDByRequestID;
+    NSArray * _recordZoneIDsToDelete;
+    id /* block */  _recordZoneModifiedBlock;
+    NSArray * _recordZonesToSave;
 }
 
 @property (nonatomic) BOOL markZonesAsUserPurged;

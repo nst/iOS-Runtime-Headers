@@ -3,12 +3,12 @@
  */
 
 @interface CoreDAVItem : NSObject <CoreDAVItem> {
-    NSMutableSet *_attributes;
-    NSMutableArray *_extraChildItems;
-    NSString *_name;
-    NSString *_nameSpace;
-    NSData *_payload;
-    BOOL _useCDATA;
+    NSMutableSet * _attributes;
+    NSMutableArray * _extraChildItems;
+    NSString * _name;
+    NSString * _nameSpace;
+    NSData * _payload;
+    BOOL  _useCDATA;
 }
 
 @property (nonatomic, retain) NSMutableSet *attributes;

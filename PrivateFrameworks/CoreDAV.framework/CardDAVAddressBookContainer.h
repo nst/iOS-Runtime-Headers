@@ -3,9 +3,9 @@
  */
 
 @interface CardDAVAddressBookContainer : CoreDAVContainer {
-    NSString *_maxImageSize;
-    NSString *_maxResourceSize;
-    NSURL *_meCardURL;
+    NSString * _maxImageSize;
+    NSString * _maxResourceSize;
+    NSURL * _meCardURL;
 }
 
 @property (nonatomic, readonly) BOOL isAddressBook;

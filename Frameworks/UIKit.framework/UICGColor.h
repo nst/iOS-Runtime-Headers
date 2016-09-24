@@ -3,10 +3,11 @@
  */
 
 @interface UICGColor : UIColor {
-    struct CGColor { } *cachedColor;
+    struct CGColor { } * _cachedColor;
 }
 
 - (struct CGColor { }*)CGColor;
+- (BOOL)_isDeepColor;
 - (float)alphaComponent;
 - (id)colorSpaceName;
 - (id)colorWithAlphaComponent:(float)arg1;

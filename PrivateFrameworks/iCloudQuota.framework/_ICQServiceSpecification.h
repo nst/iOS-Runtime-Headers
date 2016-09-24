@@ -3,8 +3,8 @@
  */
 
 @interface _ICQServiceSpecification : NSObject {
-    NSString *_serviceDescription;
-    NSString *_serviceImageID;
+    NSString * _serviceDescription;
+    NSString * _serviceImageID;
 }
 
 @property (nonatomic, retain) NSString *serviceDescription;

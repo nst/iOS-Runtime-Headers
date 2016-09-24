@@ -3,13 +3,13 @@
  */
 
 @interface CADEntityWrapper : NSObject <NSSecureCoding> {
-    BOOL _deleted;
-    int _entityType;
-    NSArray *_loadedKeys;
-    NSMutableDictionary *_loadedProperties;
-    NSArray *_loadedValues;
-    EKObjectID *_objectID;
-    int _rowID;
+    BOOL  _deleted;
+    int  _entityType;
+    NSArray * _loadedKeys;
+    NSMutableDictionary * _loadedProperties;
+    NSArray * _loadedValues;
+    EKObjectID * _objectID;
+    int  _rowID;
 }
 
 @property (nonatomic, readonly) BOOL deleted;

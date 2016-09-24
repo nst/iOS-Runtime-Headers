@@ -3,16 +3,16 @@
  */
 
 @interface PDTransition : OADProperties {
-    NSNumber *duration;
-    int mAdvanceAfterTime;
-    BOOL mHasAdvanceAfterTime;
-    BOOL mHasAdvanceOnClick;
-    BOOL mHasSpeed;
-    BOOL mHasType;
-    BOOL mIsAdvanceOnClick;
-    PDTransitionOptions *mOptions;
-    int mSpeed;
-    int mType;
+    NSNumber * duration;
+    int  mAdvanceAfterTime;
+    BOOL  mHasAdvanceAfterTime;
+    BOOL  mHasAdvanceOnClick;
+    BOOL  mHasSpeed;
+    BOOL  mHasType;
+    BOOL  mIsAdvanceOnClick;
+    PDTransitionOptions * mOptions;
+    int  mSpeed;
+    int  mType;
 }
 
 @property (nonatomic, retain) NSNumber *duration;

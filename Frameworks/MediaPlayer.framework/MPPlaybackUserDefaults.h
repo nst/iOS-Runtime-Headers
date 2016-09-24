@@ -3,27 +3,47 @@
  */
 
 @interface MPPlaybackUserDefaults : NSObject {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    BOOL _allowsHighQualityMusicStreamingOnCellular;
-    NSObject<OS_dispatch_queue> *_calloutQueue;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    BOOL  _allowsHighQualityMusicStreamingOnCellular;
+    NSObject<OS_dispatch_queue> * _calloutQueue;
+    int  _musicEQPreset;
+    int  _musicRepeatType;
+    int  _musicShuffleType;
     struct vector<int, std::__1::allocator<int> > { 
         int *__begin_; 
         int *__end_; 
         struct __compressed_pair<int *, std::__1::allocator<int> > { 
             int *__first_; 
         } __end_cap_; 
-    } _notifyTokens;
+    }  _notifyTokens;
+    BOOL  _soundCheckEnabled;
+    NSObject<OS_dispatch_queue> * _userDefaultsMutationQueue;
 }
 
 @property (nonatomic, readonly) BOOL allowsHighQualityMusicStreamingOnCellular;
+@property (nonatomic, readonly) int musicEQPreset;
+@property (nonatomic) int musicRepeatType;
+@property (nonatomic) int musicShuffleType;
+@property (nonatomic, readonly) BOOL soundCheckEnabled;
 
 + (id)standardUserDefaults;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)_addNotificationObserver:(id /* block */)arg1 forUserDefaultKey:(struct __CFString { }*)arg2;
+- (int)_calculateCurrentMusicEQPreset;
+- (int)_calculateCurrentMusicRepeatType;
+- (int)_calculateCurrentMusicShuffleType;
+- (void)_mobileiPodPrefsDidChange;
+- (void)_postRepeatShuffleTypeGlobalNotification;
 - (BOOL)allowsHighQualityMusicStreamingOnCellular;
 - (void)dealloc;
 - (id)init;
+- (int)musicEQPreset;
+- (int)musicRepeatType;
+- (int)musicShuffleType;
+- (void)setMusicRepeatType:(int)arg1;
+- (void)setMusicShuffleType:(int)arg1;
+- (BOOL)soundCheckEnabled;
 
 @end

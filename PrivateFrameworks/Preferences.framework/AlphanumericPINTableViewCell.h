@@ -3,7 +3,7 @@
  */
 
 @interface AlphanumericPINTableViewCell : UITableViewCell {
-    AlphanumericPINTextField *_pinTextField;
+    AlphanumericPINTextField * _pinTextField;
 }
 
 @property (nonatomic, retain) AlphanumericPINTextField *pinTextField;

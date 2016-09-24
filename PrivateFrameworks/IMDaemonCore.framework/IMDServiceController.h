@@ -3,7 +3,7 @@
  */
 
 @interface IMDServiceController : NSObject {
-    NSMutableDictionary *_services;
+    NSMutableDictionary * _services;
 }
 
 @property (nonatomic, readonly) NSArray *allServices;

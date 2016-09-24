@@ -3,10 +3,10 @@
  */
 
 @interface CKPublishAssetsOperationInfo : CKDatabaseOperationInfo <NSSecureCoding> {
-    unsigned int _URLOptions;
-    NSDictionary *_fileNamesByAssetFieldNames;
-    NSArray *_recordIDs;
-    unsigned int _requestedTTL;
+    unsigned int  _URLOptions;
+    NSDictionary * _fileNamesByAssetFieldNames;
+    NSArray * _recordIDs;
+    unsigned int  _requestedTTL;
 }
 
 @property (nonatomic) unsigned int URLOptions;

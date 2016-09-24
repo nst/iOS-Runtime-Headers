@@ -13,7 +13,7 @@
 - (BOOL)canRenderSelectionPath:(id)arg1 forInfo:(id)arg2;
 - (Class)chartBoundsLayoutSceneDelegateClass;
 - (id)convertSelectionPathTo3D:(id)arg1 path:(id)arg2;
-- (struct EdgeDetectionParameters { BOOL x1; BOOL x2; float x3; })edgeDetectionParameters;
+- (struct EdgeDetectionParameters { BOOL x1; BOOL x2; double x3; })edgeDetectionParameters;
 - (void)getBounds:(id)arg1;
 - (void)getSceneObjectElementsBounds:(id)arg1;
 - (void)getSelectionKnobsPositions:(id)arg1;

@@ -3,12 +3,12 @@
  */
 
 @interface TSCECellDependencyRowPrinter : NSObject {
-    NSString *_cellID;
-    TSCEEdgeListPrinter *_dependentsList;
-    unsigned int _dirtyPrecedentCount;
-    BOOL _isFormula;
-    BOOL _isInCycle;
-    TSCEEdgeListPrinter *_precedentsList;
+    NSString * _cellID;
+    TSCEEdgeListPrinter * _dependentsList;
+    unsigned int  _dirtyPrecedentCount;
+    BOOL  _isFormula;
+    BOOL  _isInCycle;
+    TSCEEdgeListPrinter * _precedentsList;
 }
 
 @property (nonatomic, retain) NSString *cellID;

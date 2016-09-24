@@ -3,9 +3,9 @@
  */
 
 @interface _ATXIconLocation : NSObject {
-    int _folderPage;
-    int _idx;
-    int _page;
+    int  _folderPage;
+    int  _idx;
+    int  _page;
 }
 
 @property (nonatomic) int folderPage;

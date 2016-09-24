@@ -3,10 +3,10 @@
  */
 
 @interface _PUActivityItemSourceOperation : NSOperation {
-    BOOL __pu_cancelled;
-    NSString *_activityType;
-    PUActivityItemSource *_itemSource;
-    NSObject<OS_dispatch_semaphore> *_semaphore;
+    BOOL  __pu_cancelled;
+    NSString * _activityType;
+    PUActivityItemSource * _itemSource;
+    NSObject<OS_dispatch_semaphore> * _semaphore;
 }
 
 @property (getter=_pu_isCancelled, setter=_pu_setCancelled:) BOOL _pu_cancelled;

@@ -3,9 +3,9 @@
  */
 
 @interface GEOPowerAssertion : NSObject {
-    unsigned int _assertion;
-    NSString *_identifier;
-    double _timeout;
+    unsigned int  _assertion;
+    NSString * _identifier;
+    double  _timeout;
 }
 
 - (void)dealloc;

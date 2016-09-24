@@ -3,9 +3,9 @@
  */
 
 @interface FBSceneUpdateContext : NSObject <BSDescriptionProviding> {
-    NSString *_sceneID;
-    FBSSceneSettingsDiff *_settingsDiff;
-    unsigned int _transactionID;
+    NSString * _sceneID;
+    FBSSceneSettingsDiff * _settingsDiff;
+    unsigned int  _transactionID;
 }
 
 @property (readonly, copy) NSString *debugDescription;

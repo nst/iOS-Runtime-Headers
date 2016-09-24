@@ -3,9 +3,9 @@
  */
 
 @interface MDLNoiseTexture : MDLTexture {
-    bool _grayScale;
-    float _smoothness;
-    bool _vectorNoise;
+    bool  _grayScale;
+    double  _smoothness;
+    bool  _vectorNoise;
 }
 
 - (id)generateDataAtLevel:(int)arg1;

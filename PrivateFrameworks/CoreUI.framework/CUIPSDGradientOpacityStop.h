@@ -3,7 +3,7 @@
  */
 
 @interface CUIPSDGradientOpacityStop : CUIPSDGradientStop <NSCoding> {
-    float opacity;
+    double  opacity;
 }
 
 + (void)initialize;

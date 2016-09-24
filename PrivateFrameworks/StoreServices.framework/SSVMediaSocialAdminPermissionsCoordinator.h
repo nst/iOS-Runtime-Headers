@@ -3,8 +3,8 @@
  */
 
 @interface SSVMediaSocialAdminPermissionsCoordinator : NSObject {
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    double _refreshPeriod;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    double  _refreshPeriod;
 }
 
 @property (nonatomic, readonly) BOOL isCurrentUserAdmin;

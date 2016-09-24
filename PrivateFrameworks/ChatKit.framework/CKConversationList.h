@@ -3,10 +3,10 @@
  */
 
 @interface CKConversationList : NSObject {
-    BOOL _loadedConversations;
-    BOOL _loadingConversations;
-    CKConversation *_pendingConversation;
-    NSMutableArray *_trackedConversations;
+    BOOL  _loadedConversations;
+    BOOL  _loadingConversations;
+    CKConversation * _pendingConversation;
+    NSMutableArray * _trackedConversations;
 }
 
 @property (nonatomic, readonly) BOOL loadingConversations;
@@ -16,6 +16,7 @@
 + (void)initialize;
 + (id)sharedConversationList;
 
+- (void).cxx_destruct;
 - (void)_abChanged:(id)arg1;
 - (id)_alreadyTrackedConversationForChat:(id)arg1;
 - (void)_beginTrackingAllExistingChatsIfNeeded;

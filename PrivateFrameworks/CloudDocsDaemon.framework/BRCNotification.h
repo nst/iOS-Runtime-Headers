@@ -3,25 +3,29 @@
  */
 
 @interface BRCNotification : BRQueryItem {
-    NSString *_aliasContainerID;
-    BRCLocalContainer *_container;
-    NSMutableSet *_containerIDsWithReverseAliases;
-    BRCItemID *_itemID;
-    unsigned long long _oldParentFileID;
-    unsigned long long _parentFileID;
-    BRCItemID *_parentID;
-    NSSet *_parentIDs;
-    NSString *_unsaltedBookmarkData;
+    NSString * _aliasSourceAppLibraryID;
+    BRCAppLibrary * _appLibrary;
+    NSMutableSet * _appLibraryIDsWithReverseAliases;
+    BOOL  _isInDataScope;
+    BOOL  _isInDocumentScope;
+    BOOL  _isInTrashScope;
+    BRCItemID * _itemID;
+    unsigned int  _oldParentFileID;
+    BRCItemID * _parentID;
+    NSSet * _parentIDs;
+    NSString * _unsaltedBookmarkData;
 }
 
-@property (nonatomic, readonly) NSString *aliasContainerID;
-@property (nonatomic, readonly) BRCLocalContainer *container;
-@property (nonatomic, retain) NSMutableSet *containerIDsWithReverseAliases;
+@property (nonatomic, readonly) NSString *aliasSourceAppLibraryID;
+@property (nonatomic, readonly) BRCAppLibrary *appLibrary;
+@property (nonatomic, retain) NSMutableSet *appLibraryIDsWithReverseAliases;
+@property (nonatomic, readonly) BOOL isInDataScope;
+@property (nonatomic, readonly) BOOL isInDocumentScope;
+@property (nonatomic, readonly) BOOL isInTrashScope;
 @property (nonatomic, readonly) BRCItemID *itemID;
-@property (nonatomic, readonly) unsigned long long oldParentFileID;
-@property (nonatomic, readonly) NSNumber *oldParentFileObjectID;
-@property (nonatomic, readonly) unsigned long long parentFileID;
-@property (nonatomic, readonly) NSNumber *parentFileObjectID;
+@property (nonatomic, readonly) unsigned int oldParentFileID;
+@property (nonatomic, readonly) BRFileObjectID *oldParentFileObjectID;
+@property (nonatomic, readonly) BRFileObjectID *parentFileObjectID;
 @property (nonatomic, readonly) BRCItemID *parentID;
 @property (nonatomic, retain) NSSet *parentIDs;
 @property (nonatomic, retain) NSString *unsaltedBookmarkData;
@@ -33,25 +37,28 @@
 
 - (void).cxx_destruct;
 - (void)_addAliasDecoration:(id)arg1;
-- (id)aliasContainerID;
+- (id)aliasSourceAppLibraryID;
+- (id)appLibrary;
+- (id)appLibraryIDsWithReverseAliases;
 - (BOOL)canMerge:(id)arg1;
 - (Class)classForCoder;
-- (id)container;
-- (id)containerIDsWithReverseAliases;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)generateLogicalExtension:(id)arg1 physicalExtension:(id)arg2;
-- (id)initWithAliasItem:(id)arg1 itemDiffs:(unsigned long long)arg2;
-- (id)initWithLocalItem:(id)arg1 itemDiffs:(unsigned long long)arg2;
+- (id)initWithAliasItem:(id)arg1 itemDiffs:(unsigned int)arg2;
+- (id)initWithLocalItem:(id)arg1 itemDiffs:(unsigned int)arg2;
+- (BOOL)isInDataScope;
+- (BOOL)isInDocumentScope;
+- (BOOL)isInTrashScope;
 - (id)itemID;
 - (void)merge:(id)arg1;
 - (id)notificationByStrippingSharingInfoIfNeeded;
-- (unsigned long long)oldParentFileID;
+- (unsigned int)oldParentFileID;
 - (id)oldParentFileObjectID;
-- (unsigned long long)parentFileID;
 - (id)parentFileObjectID;
 - (id)parentID;
 - (id)parentIDs;
-- (void)setContainerIDsWithReverseAliases:(id)arg1;
+- (void)setAppLibraryIDsWithReverseAliases:(id)arg1;
+- (void)setNumberAttribute:(id)arg1 forKey:(id)arg2;
 - (void)setParentIDs:(id)arg1;
 - (void)setUnsaltedBookmarkData:(id)arg1;
 - (id)subclassDescription;

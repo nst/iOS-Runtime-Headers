@@ -3,13 +3,13 @@
  */
 
 @interface NKAssetDownload : NSObject {
-    BOOL _attemptedConnection;
-    NSURLConnection *_connection;
-    NSString *_identifier;
-    BOOL _isDecodingValid;
-    NKIssue *_issue;
-    NSURLRequest *_request;
-    NSData *_userInfoData;
+    BOOL  _attemptedConnection;
+    NSURLConnection * _connection;
+    NSString * _identifier;
+    BOOL  _isDecodingValid;
+    NKIssue * _issue;
+    NSURLRequest * _request;
+    NSData * _userInfoData;
 }
 
 @property (copy) NSURLRequest *URLRequest;

@@ -3,12 +3,12 @@
  */
 
 @interface MCAPNConfiguration : NSObject {
-    NSString *_authenticationType;
-    NSString *_name;
-    NSString *_password;
-    NSNumber *_proxyPort;
-    NSString *_proxyServer;
-    NSString *_username;
+    NSString * _authenticationType;
+    NSString * _name;
+    NSString * _password;
+    NSNumber * _proxyPort;
+    NSString * _proxyServer;
+    NSString * _username;
 }
 
 @property (nonatomic, retain) NSString *authenticationType;

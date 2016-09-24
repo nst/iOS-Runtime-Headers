@@ -7,10 +7,10 @@
         unsigned int timestamp : 1; 
         unsigned int reason : 1; 
         unsigned int status : 1; 
-    } _has;
-    unsigned int _reason;
-    unsigned int _status;
-    unsigned long long _timestamp;
+    }  _has;
+    unsigned int  _reason;
+    unsigned int  _status;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) BOOL hasReason;

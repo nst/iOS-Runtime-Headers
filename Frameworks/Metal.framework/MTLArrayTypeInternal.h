@@ -3,10 +3,10 @@
  */
 
 @interface MTLArrayTypeInternal : MTLArrayType {
-    unsigned int _arrayLength;
-    id _details;
-    unsigned int _elementType;
-    unsigned int _stride;
+    unsigned int  _arrayLength;
+    id  _details;
+    unsigned int  _elementType;
+    unsigned int  _stride;
 }
 
 - (unsigned int)arrayLength;

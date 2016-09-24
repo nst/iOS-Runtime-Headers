@@ -3,10 +3,10 @@
  */
 
 @interface CLIntersiloService : NSObject <CLIntersiloServiceProtocol> {
-    CLIntersiloInterface *_inboundInterface;
-    CLIntersiloInterface *_outboundInterface;
-    CLSilo *_silo;
-    BOOL _valid;
+    CLIntersiloInterface * _inboundInterface;
+    CLIntersiloInterface * _outboundInterface;
+    CLSilo * _silo;
+    BOOL  _valid;
 }
 
 @property (readonly, copy) NSString *debugDescription;

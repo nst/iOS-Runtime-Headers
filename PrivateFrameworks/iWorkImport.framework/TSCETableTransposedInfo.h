@@ -3,7 +3,7 @@
  */
 
 @interface TSCETableTransposedInfo : NSObject {
-    unsigned short _numberOfFooterRows;
+    unsigned short  _numberOfFooterRows;
 }
 
 @property (nonatomic) unsigned short numberOfFooterRows;

@@ -3,9 +3,9 @@
  */
 
 @interface HMDAccessoryRetrievalCompletionTuple : NSObject {
-    id /* block */ _completion;
-    int _linkType;
-    NSObject<OS_dispatch_queue> *_queue;
+    id /* block */  _completion;
+    int  _linkType;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (nonatomic, copy) id /* block */ completion;

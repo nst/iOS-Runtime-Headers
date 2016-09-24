@@ -3,11 +3,11 @@
  */
 
 @interface CKDRequestHeader : NSObject <NSSecureCoding> {
-    NSDictionary *_headerDict;
-    NSString *_method;
-    NSString *_sessionConfigurationIdentifier;
-    NSURL *_url;
-    unsigned int _urlSessionTaskIdentifier;
+    NSDictionary * _headerDict;
+    NSString * _method;
+    NSString * _sessionConfigurationIdentifier;
+    NSURL * _url;
+    unsigned int  _urlSessionTaskIdentifier;
 }
 
 @property (nonatomic, retain) NSDictionary *headerDict;

@@ -3,15 +3,15 @@
  */
 
 @interface CoreCECDevice : CoreRCDevice {
-    unsigned int _cecVersion;
-    unsigned int _deckStatus;
-    unsigned int _deviceType;
-    BOOL _isActiveSource;
-    unsigned char _logicalAddress;
-    unsigned int _physicalAddress;
-    unsigned int _powerStatus;
-    BOOL _systemAudioControlEnabled;
-    unsigned int _vendorID;
+    unsigned int  _cecVersion;
+    unsigned int  _deckStatus;
+    unsigned int  _deviceType;
+    BOOL  _isActiveSource;
+    unsigned char  _logicalAddress;
+    unsigned int  _physicalAddress;
+    unsigned int  _powerStatus;
+    BOOL  _systemAudioControlEnabled;
+    unsigned int  _vendorID;
 }
 
 @property (nonatomic) unsigned int cecVersion;

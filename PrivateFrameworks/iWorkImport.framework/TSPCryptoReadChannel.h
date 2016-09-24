@@ -3,16 +3,16 @@
  */
 
 @interface TSPCryptoReadChannel : NSObject <TSUStreamReadChannel> {
-    NSArray *_blockInfos;
-    struct _CCCryptor { } *_cryptor;
-    SFUCryptoKey *_decryptionKey;
-    NSObject<OS_dispatch_data> *_holdData;
-    unsigned long _initialBytesIgnored;
-    char *_iv;
-    unsigned long _ivRead;
-    unsigned int _nextBlockIndex;
-    <TSUStreamReadChannel> *_readChannel;
-    unsigned long _remainingBlockSize;
+    NSArray * _blockInfos;
+    struct _CCCryptor { } * _cryptor;
+    SFUCryptoKey * _decryptionKey;
+    NSObject<OS_dispatch_data> * _holdData;
+    unsigned long  _initialBytesIgnored;
+    char * _iv;
+    unsigned long  _ivRead;
+    unsigned int  _nextBlockIndex;
+    <TSUStreamReadChannel> * _readChannel;
+    unsigned long  _remainingBlockSize;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -25,6 +25,7 @@
 - (void)_resetCryptor;
 - (void)close;
 - (void)dealloc;
+- (id)init;
 - (id)initWithReadChannel:(id)arg1 decryptionKey:(id)arg2 blockInfos:(id)arg3;
 - (void)readWithHandler:(id /* block */)arg1;
 

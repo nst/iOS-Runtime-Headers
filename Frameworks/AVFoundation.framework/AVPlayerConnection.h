@@ -3,11 +3,11 @@
  */
 
 @interface AVPlayerConnection : NSObject {
-    NSError *_error;
-    AVWeakReference *_playerItemReference;
-    AVWeakReference *_playerReference;
-    AVPlayerItem *_previousPlayerItem;
-    int _status;
+    NSError * _error;
+    AVWeakReference * _playerItemReference;
+    AVWeakReference * _playerReference;
+    AVPlayerItem * _previousPlayerItem;
+    int  _status;
 }
 
 @property (nonatomic, readonly) int status;

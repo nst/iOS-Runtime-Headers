@@ -5,9 +5,9 @@
 @interface GEORouteName : PBCodable <NSCopying> {
     struct { 
         unsigned int lastZilchStitchedIndex : 1; 
-    } _has;
-    int _lastZilchStitchedIndex;
-    GEONameInfo *_nameInfo;
+    }  _has;
+    int  _lastZilchStitchedIndex;
+    GEONameInfo * _nameInfo;
 }
 
 @property (nonatomic) BOOL hasLastZilchStitchedIndex;

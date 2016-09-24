@@ -3,8 +3,8 @@
  */
 
 @interface FUDateAnchorRule : NSObject {
-    unsigned int _calendarUnit;
-    int _roundingValue;
+    unsigned int  _calendarUnit;
+    int  _roundingValue;
 }
 
 @property (nonatomic) unsigned int calendarUnit;

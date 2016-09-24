@@ -3,17 +3,17 @@
  */
 
 @interface HDCodableRoutineScenarioTriggeredRequest : PBRequest <NSCopying> {
-    HDCodableRoutineLocation *_currentLocation;
+    HDCodableRoutineLocation * _currentLocation;
     struct { 
         unsigned int triggerTypes : 1; 
-    } _has;
-    unsigned long long _triggerTypes;
+    }  _has;
+    unsigned int  _triggerTypes;
 }
 
 @property (nonatomic, retain) HDCodableRoutineLocation *currentLocation;
 @property (nonatomic, readonly) BOOL hasCurrentLocation;
 @property (nonatomic) BOOL hasTriggerTypes;
-@property (nonatomic) unsigned long long triggerTypes;
+@property (nonatomic) unsigned int triggerTypes;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
@@ -29,8 +29,8 @@
 - (BOOL)readFrom:(id)arg1;
 - (void)setCurrentLocation:(id)arg1;
 - (void)setHasTriggerTypes:(BOOL)arg1;
-- (void)setTriggerTypes:(unsigned long long)arg1;
-- (unsigned long long)triggerTypes;
+- (void)setTriggerTypes:(unsigned int)arg1;
+- (unsigned int)triggerTypes;
 - (void)writeTo:(id)arg1;
 
 @end

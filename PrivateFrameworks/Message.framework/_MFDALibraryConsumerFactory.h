@@ -3,8 +3,8 @@
  */
 
 @interface _MFDALibraryConsumerFactory : NSObject <MFMessageDataConsumerFactory> {
-    MFMessageLibrary *_library;
-    MFMessage *_message;
+    MFMessageLibrary * _library;
+    MFMessage * _message;
 }
 
 @property (readonly, copy) NSString *debugDescription;

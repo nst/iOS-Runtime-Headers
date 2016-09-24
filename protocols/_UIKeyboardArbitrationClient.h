@@ -6,6 +6,7 @@
 @required
 
 - (void)queue_applicationLostFocusWithCompletion:(void *)arg1; // needs 1 arg types, found 5: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
+- (void)queue_getDebugInfoWithCompletion:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSDictionary *, void*
 - (void)queue_keyboardChanged:(void *)arg1 onComplete:(void *)arg2; // needs 2 arg types, found 6: _UIKeyboardChangedInformation *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
 - (void)queue_keyboardChangedWithCompletion:(void *)arg1; // needs 1 arg types, found 5: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
 - (void)queue_keyboardSuppressed:(void *)arg1 withCompletion:(void *)arg2; // needs 2 arg types, found 6: BOOL, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*

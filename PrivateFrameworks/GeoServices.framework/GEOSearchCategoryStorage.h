@@ -3,8 +3,8 @@
  */
 
 @interface GEOSearchCategoryStorage : PBCodable <NSCopying> {
-    GEOPDAutocompleteEntry *_autocompleteEntry;
-    GEOPDBrowseCategory *_browseCategory;
+    GEOPDAutocompleteEntry * _autocompleteEntry;
+    GEOPDBrowseCategory * _browseCategory;
 }
 
 @property (nonatomic, retain) GEOPDAutocompleteEntry *autocompleteEntry;

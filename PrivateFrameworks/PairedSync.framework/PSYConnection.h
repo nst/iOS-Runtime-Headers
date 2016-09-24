@@ -3,10 +3,10 @@
  */
 
 @interface PSYConnection : NSObject {
-    NSXPCConnection *_connection;
-    <PSYConnectionDelegate> *_delegate;
-    PSYOptions *_options;
-    BOOL _valid;
+    NSXPCConnection * _connection;
+    <PSYConnectionDelegate> * _delegate;
+    PSYOptions * _options;
+    BOOL  _valid;
 }
 
 @property (nonatomic, retain) NSXPCConnection *connection;

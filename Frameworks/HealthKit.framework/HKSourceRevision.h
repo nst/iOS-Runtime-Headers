@@ -3,8 +3,8 @@
  */
 
 @interface HKSourceRevision : NSObject <NSCopying, NSSecureCoding> {
-    HKSource *_source;
-    NSString *_version;
+    HKSource * _source;
+    NSString * _version;
 }
 
 @property (readonly) HKSource *source;

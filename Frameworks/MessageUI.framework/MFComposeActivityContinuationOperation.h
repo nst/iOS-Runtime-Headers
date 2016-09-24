@@ -3,19 +3,19 @@
  */
 
 @interface MFComposeActivityContinuationOperation : NSOperation <NSStreamDelegate> {
-    <MFComposeActivityContinuationOperationDelegate> *_delegate;
-    BOOL _doneWithInputStream;
-    BOOL _doneWithOutputStream;
-    unsigned int _draftBytesReceived;
-    NSData *_draftData;
-    unsigned int _draftDataByteIndex;
-    unsigned int _draftExpectedSize;
-    BOOL _executing;
-    BOOL _finished;
-    NSInputStream *_inputStream;
-    NSOutputStream *_outputStream;
-    NSObject<OS_dispatch_queue> *_streamHandlerQueue;
-    unsigned int _transmissionType;
+    <MFComposeActivityContinuationOperationDelegate> * _delegate;
+    BOOL  _doneWithInputStream;
+    BOOL  _doneWithOutputStream;
+    unsigned int  _draftBytesReceived;
+    NSData * _draftData;
+    unsigned int  _draftDataByteIndex;
+    unsigned int  _draftExpectedSize;
+    BOOL  _executing;
+    BOOL  _finished;
+    NSInputStream * _inputStream;
+    NSOutputStream * _outputStream;
+    NSObject<OS_dispatch_queue> * _streamHandlerQueue;
+    unsigned int  _transmissionType;
 }
 
 @property (nonatomic, readonly) unsigned int bytesExpected;

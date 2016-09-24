@@ -3,38 +3,46 @@
  */
 
 @interface MCD_OLD_TableViewController : UITableViewController {
-    BOOL _alwaysShowNavBar;
-    AVExternalDevice *_externalDevice;
-    BOOL _limitedUI;
-    UIView *_nowPlayingButton;
-    MPAVController *_player;
-    MPMediaQuery *_query;
-    <MCDCarDisplayServiceProvider> *_serviceProvider;
-    BOOL _topLevel;
-    BOOL _viewHasAppeared;
+    BOOL  _alwaysShowNavBar;
+    AVExternalDevice * _externalDevice;
+    BOOL  _limitedUI;
+    MCDNowPlayingButton * _nowPlayingButton;
+    MPAVController * _player;
+    MPMediaQuery * _query;
+    <MCDCarDisplayServiceProvider> * _serviceProvider;
+    UIColor * _tintColor;
+    BOOL  _topLevel;
+    BOOL  _viewHasAppeared;
 }
 
 @property (nonatomic) BOOL alwaysShowNavBar;
+@property (readonly) BOOL currentAppIsPlaying;
 @property (nonatomic) BOOL limitedUI;
 @property (nonatomic, readonly) MPAVController *player;
 @property (nonatomic, readonly) MPMediaQuery *query;
 @property (nonatomic, readonly) <MCDCarDisplayServiceProvider> *serviceProvider;
+@property (nonatomic, retain) UIColor *tintColor;
 @property (nonatomic) BOOL topLevel;
 @property (nonatomic) BOOL viewHasAppeared;
 
-+ (void)_adjustTintColorForSubviewsInCell:(id)arg1 didHighlight:(BOOL)arg2;
-+ (id)addAlbumArtViewFromItem:(id)arg1 toCell:(id)arg2 rowHeight:(float)arg3;
++ (void)_addTemplateImage:(id)arg1 toCell:(id)arg2 tintColor:(id)arg3;
++ (void)_adjustTintColor:(id)arg1 forSubviewsInCell:(id)arg2;
 + (id)addAlbumArtViewWithImage:(id)arg1 toCell:(id)arg2 rowHeight:(float)arg3;
++ (void)addGenericTemplateImage:(id)arg1 toCell:(id)arg2;
 + (void)addTemplateImage:(id)arg1 toCell:(id)arg2;
++ (void)matchingNowPlayingApplicationWithCompletionHandler:(id /* block */)arg1;
 + (void)removeImageFromCell:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_itemChanged:(id)arg1;
+- (void)_itemDidChange;
 - (void)_limitedUIDidChange;
 - (void)_nowPlayingButtonTapped:(id)arg1;
-- (void)_presentNowPlayingViewController;
+- (void)_nowPlayingDidChangeNotification:(id)arg1;
+- (void)_updateNowPlayingPlayingVisibilityWithCompletionHandler:(id /* block */)arg1;
 - (void)_updateNowPlayingVisibility;
 - (BOOL)alwaysShowNavBar;
+- (BOOL)currentAppIsPlaying;
 - (id)dequeueReusableCarDisplayCellForTableView:(id)arg1 indexPath:(id)arg2;
 - (BOOL)hasRowsToDisplay;
 - (id)initWithQuery:(id)arg1 player:(id)arg2 serviceProvider:(id)arg3;
@@ -45,6 +53,7 @@
 - (id)serviceProvider;
 - (void)setAlwaysShowNavBar:(BOOL)arg1;
 - (void)setLimitedUI:(BOOL)arg1;
+- (void)setTintColor:(id)arg1;
 - (void)setTopLevel:(BOOL)arg1;
 - (void)setViewHasAppeared:(BOOL)arg1;
 - (void)tableView:(id)arg1 didHighlightRowAtIndexPath:(id)arg2;
@@ -52,6 +61,7 @@
 - (void)tableView:(id)arg1 didUnhighlightRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (BOOL)tableView:(id)arg1 shouldChangeFocusedItem:(id)arg2 fromRowAtIndexPath:(id)arg3;
+- (id)tintColor;
 - (BOOL)topLevel;
 - (id)viewControllerForRowAtIndexPath:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;

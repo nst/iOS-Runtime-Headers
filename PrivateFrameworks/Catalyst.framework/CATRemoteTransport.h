@@ -3,9 +3,9 @@
  */
 
 @interface CATRemoteTransport : CATTransport <CATRemoteConnectionDelegate> {
-    CATRemoteConnection *mConnection;
-    BOOL mConnectionHasOpened;
-    NSMutableDictionary *mSendOperationsByMessage;
+    CATRemoteConnection * mConnection;
+    BOOL  mConnectionHasOpened;
+    NSMutableDictionary * mOperationByUUID;
 }
 
 @property (readonly, copy) NSString *debugDescription;

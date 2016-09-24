@@ -3,7 +3,7 @@
  */
 
 @interface SCRCMathIdentifierExpression : SCRCMathSimpleExpression {
-    int _fontStyle;
+    int  _fontStyle;
 }
 
 @property (nonatomic, readonly) int fontStyle;

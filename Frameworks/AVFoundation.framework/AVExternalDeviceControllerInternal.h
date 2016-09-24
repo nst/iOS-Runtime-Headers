@@ -3,9 +3,9 @@
  */
 
 @interface AVExternalDeviceControllerInternal : NSObject {
-    <AVExternalDeviceControllerDelegate> *delegate;
-    int discoveryMode;
-    struct OpaqueFigEndpointPicker { } *endpointPicker;
+    <AVExternalDeviceControllerDelegate> * delegate;
+    int  discoveryMode;
+    struct OpaqueFigEndpointPicker { } * endpointPicker;
 }
 
 @end

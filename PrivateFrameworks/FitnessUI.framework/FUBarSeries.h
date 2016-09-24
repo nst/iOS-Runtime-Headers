@@ -3,42 +3,44 @@
  */
 
 @interface FUBarSeries : FUChartSeries {
-    UIColor *_backgroundStrokeColor;
-    float _backgroundStrokeWidth;
-    UIColor *_barColor;
-    NSArray *_barColors;
-    struct CGGradient { } *_barGradient;
-    NSArray *_barLabels;
-    float _barSpacing;
-    float _barWidth;
-    BOOL _fadeZeroBars;
-    UIColor *_fadedBarColor;
-    NSArray *_labelAttributes;
-    NSArray *_plotPoints;
-    float _roundedCornerRadius;
-    UIColor *_strokeColor;
-    float _strokeWidth;
+    UIColor * _backgroundStrokeColor;
+    double  _backgroundStrokeWidth;
+    UIColor * _barColor;
+    NSArray * _barColors;
+    struct CGGradient { } * _barGradient;
+    NSArray * _barLabels;
+    double  _barSpacing;
+    double  _barWidth;
+    double  _fadeInPercentage;
+    BOOL  _fadeZeroBars;
+    UIColor * _fadedBarColor;
+    NSArray * _labelAttributes;
+    NSArray * _plotPoints;
+    double  _roundedCornerRadius;
+    UIColor * _strokeColor;
+    double  _strokeWidth;
 }
 
 @property (nonatomic, retain) UIColor *backgroundStrokeColor;
-@property (nonatomic) float backgroundStrokeWidth;
+@property (nonatomic) double backgroundStrokeWidth;
 @property (nonatomic, retain) UIColor *barColor;
 @property (nonatomic, retain) NSArray *barColors;
 @property (nonatomic) struct CGGradient { }*barGradient;
 @property (nonatomic, retain) NSArray *barLabels;
-@property (nonatomic) float barSpacing;
-@property (nonatomic) float barWidth;
+@property (nonatomic) double barSpacing;
+@property (nonatomic) double barWidth;
+@property (nonatomic) double fadeInPercentage;
 @property (nonatomic) BOOL fadeZeroBars;
 @property (nonatomic, retain) UIColor *fadedBarColor;
 @property (nonatomic, retain) NSArray *labelAttributes;
 @property (nonatomic, retain) NSArray *plotPoints;
-@property (nonatomic) float roundedCornerRadius;
+@property (nonatomic) double roundedCornerRadius;
 @property (nonatomic, retain) UIColor *strokeColor;
-@property (nonatomic) float strokeWidth;
+@property (nonatomic) double strokeWidth;
 
 - (void).cxx_destruct;
 - (id)_chartColorForChartYValue:(float)arg1;
-- (void)_strokeRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 context:(struct CGContext { }*)arg2 color:(struct CGColor { }*)arg3 width:(float)arg4;
+- (void)_strokeRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 context:(struct CGContext { }*)arg2 color:(struct CGColor { }*)arg3 width:(float)arg4;
 - (void)_translateColorThresholds;
 - (id)backgroundStrokeColor;
 - (float)backgroundStrokeWidth;
@@ -50,6 +52,7 @@
 - (float)barWidth;
 - (void)dealloc;
 - (void)drawLayer:(id)arg1 inContext:(struct CGContext { }*)arg2;
+- (float)fadeInPercentage;
 - (BOOL)fadeZeroBars;
 - (id)fadedBarColor;
 - (id)init;
@@ -65,6 +68,7 @@
 - (void)setBarLabels:(id)arg1;
 - (void)setBarSpacing:(float)arg1;
 - (void)setBarWidth:(float)arg1;
+- (void)setFadeInPercentage:(float)arg1;
 - (void)setFadeZeroBars:(BOOL)arg1;
 - (void)setFadedBarColor:(id)arg1;
 - (void)setLabelAttributes:(id)arg1;

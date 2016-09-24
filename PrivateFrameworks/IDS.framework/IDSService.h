@@ -3,12 +3,16 @@
  */
 
 @interface IDSService : NSObject {
-    _IDSService *_internal;
+    _IDSService * _internal;
 }
 
 @property (nonatomic, readonly, retain) _IDSService *_internal;
 @property (nonatomic, readonly, copy) NSSet *accounts;
 @property (nonatomic, readonly, copy) NSArray *devices;
+@property (nonatomic, readonly, copy) NSSet *internalAccounts;
+@property (getter=isActive, nonatomic, readonly) BOOL isActive;
+
+// Image: /System/Library/PrivateFrameworks/IDS.framework/IDS
 
 + (BOOL)checkMessageSize:(unsigned int)arg1 priority:(int)arg2;
 
@@ -16,6 +20,10 @@
 - (id)accounts;
 - (void)addDelegate:(id)arg1 queue:(id)arg2;
 - (BOOL)cancelIdentifier:(id)arg1 error:(id*)arg2;
+- (id)datagramChannelForSessionDestination:(id)arg1 error:(id*)arg2;
+- (id)datagramChannelForSocketDescriptor:(int)arg1 error:(id*)arg2;
+- (id)datagramConnectionForSessionDestination:(id)arg1 error:(id*)arg2;
+- (id)datagramConnectionForSocketDescriptor:(int)arg1 error:(id*)arg2;
 - (void)dealloc;
 - (id)deviceForFromID:(id)arg1;
 - (id)deviceForUniqueID:(id)arg1;
@@ -27,6 +35,7 @@
 - (id)initWithService:(id)arg1 manuallyAckMessages:(BOOL)arg2;
 - (id)initWithService:(id)arg1 serviceDomain:(id)arg2;
 - (id)internal;
+- (id)internalAccounts;
 - (BOOL)isPretendingToBeFull;
 - (int)maxHomeKitPayloadSize;
 - (SEL)protobufActionForIncomingRequestsOfType:(unsigned short)arg1;
@@ -51,8 +60,15 @@
 - (void)setProtobufAction:(SEL)arg1 forIncomingRequestsOfType:(unsigned short)arg2;
 - (void)setProtobufAction:(SEL)arg1 forIncomingResponsesOfType:(unsigned short)arg2;
 - (void)startOTRTest:(int)arg1;
+- (id)streamConnectionForSessionDestination:(id)arg1 error:(id*)arg2;
+- (id)streamConnectionForSocketDescriptor:(int)arg1 error:(id*)arg2;
+- (void)testCloudQRConnection;
 - (void)updateSubServices:(id)arg1;
 - (BOOL)updateSubServices:(id)arg1 forDevice:(id)arg2;
 - (id)uriForFromID:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
+
+- (BOOL)isActive;
 
 @end

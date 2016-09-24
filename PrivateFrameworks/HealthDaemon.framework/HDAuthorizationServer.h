@@ -3,18 +3,18 @@
  */
 
 @interface HDAuthorizationServer : NSObject {
-    NSMutableArray *_authorizationRequestIdentifiers;
-    HDClient *_client;
-    HDDaemon *_daemon;
-    int _invalidated;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSUUID *_transactionSessionIdentifier;
+    NSMutableArray * _authorizationRequestIdentifiers;
+    HDClient * _client;
+    int  _invalidated;
+    HDProfile * _profile;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSUUID * _transactionSessionIdentifier;
 }
 
 @property (nonatomic, retain) NSMutableArray *authorizationRequestIdentifiers;
 @property (readonly) HDClient *client;
-@property (nonatomic) HDDaemon *daemon;
 @property (nonatomic) int invalidated;
+@property (nonatomic) HDProfile *profile;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 @property (nonatomic, retain) NSUUID *transactionSessionIdentifier;
 
@@ -24,22 +24,26 @@
 - (void)_performIfAuthorizedForTypes:(id)arg1 sharing:(BOOL)arg2 onQueue:(id)arg3 usingBlock:(id /* block */)arg4 errorHandler:(id /* block */)arg5;
 - (void)_queue_beginAuthorizationRequestDelegateTransactionWithSessionIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (void)_queue_enqueueAuthorizationRequestForBundleIdentifier:(id)arg1 writeTypes:(id)arg2 readTypes:(id)arg3 authorizationNeededHandler:(id /* block */)arg4 requestCompletionHandler:(id /* block */)arg5;
+- (void)_setAuthorizationStatusesEntitled:(id)arg1 forBundleIdentifier:(id)arg2 completion:(id /* block */)arg3;
 - (BOOL)_shouldBypassAuthorization;
 - (id)allAuthorizationRecordsForBundleIdentifier:(id)arg1 error:(id*)arg2;
 - (id)allAuthorizationRecordsForType:(id)arg1 error:(id*)arg2;
+- (id)allDocumentAuthorizationRecordsForType:(id)arg1 bundleIdentifier:(id)arg2 error:(id*)arg3;
+- (id)allObjectAuthorizationsForSampleWithUUID:(id)arg1 error:(id*)arg2;
 - (id)authorizationRequestIdentifiers;
 - (id)authorizationStatusForType:(id)arg1 error:(id*)arg2;
 - (void)beginAuthorizationRequestDelegateTransactionWithRequestRecord:(id)arg1 completion:(id /* block */)arg2;
 - (void)beginAuthorizationRequestDelegateTransactionWithSessionIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (id)client;
 - (id)clientSourceIdentifierWithError:(id*)arg1;
-- (id)daemon;
-- (void)endAuthorizationRequestDelegateTransactionWithError:(id)arg1;
+- (void)endAuthorizationRequestDelegateTransactionWithSessionIdentifier:(id)arg1 error:(id)arg2;
 - (void)enqueueAuthorizationRequestToWriteTypes:(id)arg1 readTypes:(id)arg2 authorizationNeededHandler:(id /* block */)arg3 requestCompletionHandler:(id /* block */)arg4;
+- (void)enqueueObjectAuthorizationRequestForSamples:(id)arg1 promptIfNeeded:(BOOL)arg2 authorizationNeededHandler:(id /* block */)arg3 completion:(id /* block */)arg4;
 - (id)filterSamplesForReadAuthorization:(id)arg1;
 - (void)handleAuthorizationRequestsForBundleIdentifier:(id)arg1 promptHandler:(id /* block */)arg2 requestCompletionHandler:(id /* block */)arg3;
 - (void)handleAuthorizationRequestsWithPromptHandler:(id /* block */)arg1 requestCompletionHandler:(id /* block */)arg2;
-- (id)initWithClient:(id)arg1 daemon:(id)arg2 queue:(id)arg3;
+- (void)handleObjectAuthorizationRequestsWithPromptHandler:(id /* block */)arg1 completion:(id /* block */)arg2;
+- (id)initWithClient:(id)arg1 profile:(id)arg2 queue:(id)arg3;
 - (void)invalidate;
 - (int)invalidated;
 - (BOOL)isAuthorizationStatusDeterminedForTypes:(id)arg1 error:(id*)arg2;
@@ -47,16 +51,19 @@
 - (void)performIfAuthorizedToDeleteObjectsWithTypes:(id)arg1 onQueue:(id)arg2 usingBlock:(id /* block */)arg3 errorHandler:(id /* block */)arg4;
 - (void)performIfAuthorizedToReadTypes:(id)arg1 onQueue:(id)arg2 usingBlock:(id /* block */)arg3 errorHandler:(id /* block */)arg4;
 - (void)performIfAuthorizedToSaveObjectsWithTypes:(id)arg1 onQueue:(id)arg2 usingBlock:(id /* block */)arg3 errorHandler:(id /* block */)arg4;
+- (id)profile;
 - (id)queue;
 - (id)readAuthorizationWithTypes:(id)arg1 error:(id*)arg2;
 - (void)requestAuthorizationForBundleIdentifier:(id)arg1 writeTypes:(id)arg2 readTypes:(id)arg3 completion:(id /* block */)arg4;
 - (BOOL)resetAuthorizationStatusForBundleIdentifier:(id)arg1 error:(id*)arg2;
+- (BOOL)resetAuthorizationStatusesForObjects:(id)arg1 error:(id*)arg2;
 - (void)setAuthorizationRequestIdentifiers:(id)arg1;
 - (void)setAuthorizationStatuses:(id)arg1 forBundleIdentifier:(id)arg2 completion:(id /* block */)arg3;
-- (void)setDaemon:(id)arg1;
 - (void)setInvalidated:(int)arg1;
+- (void)setProfile:(id)arg1;
 - (void)setQueue:(id)arg1;
 - (void)setTransactionSessionIdentifier:(id)arg1;
 - (id)transactionSessionIdentifier;
+- (void)updateDefaultAuthorizationStatusesWithCompletion:(id /* block */)arg1;
 
 @end

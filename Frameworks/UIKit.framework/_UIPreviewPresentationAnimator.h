@@ -3,15 +3,15 @@
  */
 
 @interface _UIPreviewPresentationAnimator : NSObject {
-    id /* block */ _advanceBlock;
-    CADisplayLink *_displayLink;
-    double _duration;
-    CAMediaTimingFunction *_mediaTimingFunction;
-    double _startMediaTime;
+    id /* block */  _advanceBlock;
+    CADisplayLink * _displayLink;
+    double  _duration;
+    CAMediaTimingFunction * _mediaTimingFunction;
+    double  _startMediaTime;
 }
 
 @property (nonatomic, copy) id /* block */ advanceBlock;
-@property (nonatomic, retain) CADisplayLink *displayLink;
+@property (nonatomic) CADisplayLink *displayLink;
 @property (nonatomic) double duration;
 @property (nonatomic, retain) CAMediaTimingFunction *mediaTimingFunction;
 @property (nonatomic) double startMediaTime;
@@ -19,7 +19,6 @@
 - (void).cxx_destruct;
 - (void)_advanceFromDisplayLink:(id)arg1;
 - (id /* block */)advanceBlock;
-- (void)dealloc;
 - (id)displayLink;
 - (double)duration;
 - (id)init;

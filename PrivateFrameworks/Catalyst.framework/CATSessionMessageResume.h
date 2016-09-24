@@ -3,8 +3,8 @@
  */
 
 @interface CATSessionMessageResume : CATSessionMessage {
-    NSDictionary *_clientUserInfo;
-    NSUUID *_sessionUUID;
+    NSDictionary * _clientUserInfo;
+    NSUUID * _sessionUUID;
 }
 
 @property (nonatomic, copy) NSDictionary *clientUserInfo;

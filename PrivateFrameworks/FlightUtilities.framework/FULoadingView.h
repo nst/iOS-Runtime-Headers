@@ -3,7 +3,7 @@
  */
 
 @interface FULoadingView : UIView {
-    FULabel *_loadingLabel;
+    FULabel * _loadingLabel;
 }
 
 @property (retain) FULabel *loadingLabel;

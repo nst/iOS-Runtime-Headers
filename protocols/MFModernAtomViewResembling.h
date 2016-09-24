@@ -5,8 +5,8 @@
 
 @required
 
-- (struct CGPoint { float x1; float x2; })baselinePoint;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
+- (struct CGPoint { double x1; double x2; })baselinePoint;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })edgeInsets;
 - (BOOL)hidesVIPIndicator;
 - (BOOL)isPrimaryAddressAtom;
 - (void)performBuildInAnimationFromTextColor:(UIColor *)arg1 withDuration:(double)arg2;

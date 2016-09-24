@@ -3,18 +3,18 @@
  */
 
 @interface CNFRegFirstRunController : CNFRegListController <CNFRegFirstRunExperience> {
-    IMAccount *_account;
-    BOOL _cancelled;
-    Class _completionControllerClass;
-    UIBarButtonItem *_customLeftButton;
-    UIBarButtonItem *_customRightButton;
-    <CNFRegFirstRunDelegate> *_delegate;
-    BOOL _previousHidesBackButton;
-    UIBarButtonItem *_previousLeftButton;
-    UIBarButtonItem *_previousRightButton;
-    BOOL _showingActivityIndicator;
-    BOOL _timedOut;
-    NSTimer *_timeoutTimer;
+    IMAccount * _account;
+    BOOL  _cancelled;
+    Class  _completionControllerClass;
+    UIBarButtonItem * _customLeftButton;
+    UIBarButtonItem * _customRightButton;
+    <CNFRegFirstRunDelegate> * _delegate;
+    BOOL  _previousHidesBackButton;
+    UIBarButtonItem * _previousLeftButton;
+    UIBarButtonItem * _previousRightButton;
+    BOOL  _showingActivityIndicator;
+    BOOL  _timedOut;
+    NSTimer * _timeoutTimer;
 }
 
 @property (nonatomic, retain) IMAccount *account;

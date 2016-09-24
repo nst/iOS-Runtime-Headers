@@ -3,11 +3,11 @@
  */
 
 @interface PLMomentAnalyzerQueue : NSObject {
-    double _firstPingSinceReset;
-    double _lastPingSinceReset;
-    double _maximumInterval;
-    double _minimumInterval;
-    NSMutableSet *_momentListIdsToProcess;
+    double  _firstPingSinceReset;
+    double  _lastPingSinceReset;
+    double  _maximumInterval;
+    double  _minimumInterval;
+    NSMutableSet * _momentListIdsToProcess;
 }
 
 @property (nonatomic, readonly) BOOL hasWork;

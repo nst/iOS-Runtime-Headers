@@ -3,7 +3,7 @@
  */
 
 @interface GKAuthenticateHostViewController : GKUIRemoteViewController <GKAuthenticateHostProtocol> {
-    GKHostedAuthenticateViewController *_delegateWeak;
+    GKHostedAuthenticateViewController * _delegateWeak;
 }
 
 @property (readonly, copy) NSString *debugDescription;

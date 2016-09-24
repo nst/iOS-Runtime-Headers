@@ -3,16 +3,16 @@
  */
 
 @interface PLBBMsgHandler : NSObject {
-    PLAgent *_agent;
-    NSDate *_apTimestamp;
-    NSDate *_calibratedTimestamp;
-    NSDate *_date;
-    NSData *_rawData;
-    NSNumber *_seqNum;
-    unsigned int _ticksInGPSONState;
-    unsigned int _ticksInGoodState;
-    double _timeCalibration;
-    NSDate *_timestamp;
+    PLAgent * _agent;
+    NSDate * _apTimestamp;
+    NSDate * _calibratedTimestamp;
+    NSDate * _date;
+    NSData * _rawData;
+    NSNumber * _seqNum;
+    unsigned int  _ticksInGPSONState;
+    unsigned int  _ticksInGoodState;
+    double  _timeCalibration;
+    NSDate * _timestamp;
 }
 
 @property (nonatomic, retain) PLAgent *agent;

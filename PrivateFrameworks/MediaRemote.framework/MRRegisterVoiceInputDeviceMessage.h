@@ -3,7 +3,7 @@
  */
 
 @interface MRRegisterVoiceInputDeviceMessage : MRProtocolMessage {
-    MRVirtualVoiceInputDeviceDescriptor *_descriptor;
+    MRVirtualVoiceInputDeviceDescriptor * _descriptor;
 }
 
 @property (nonatomic, readonly) MRVirtualVoiceInputDeviceDescriptor *descriptor;

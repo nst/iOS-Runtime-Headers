@@ -3,8 +3,8 @@
  */
 
 @interface IKXMLErrorHandlerContext : NSObject {
-    NSMutableString *_mutableErrorMessages;
-    NSMutableSet *_mutableParserErrors;
+    NSMutableString * _mutableErrorMessages;
+    NSMutableSet * _mutableParserErrors;
 }
 
 @property (nonatomic, readonly) NSString *errorMessage;

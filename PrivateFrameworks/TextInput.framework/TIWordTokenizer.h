@@ -3,7 +3,7 @@
  */
 
 @interface TIWordTokenizer : NSObject {
-    unsigned int m_bufferOffset;
+    unsigned int  m_bufferOffset;
     struct { 
         unsigned short buffer[64]; 
         struct __CFString {} *theString; 
@@ -15,16 +15,16 @@
         } rangeToBuffer; 
         int bufferedRangeStart; 
         int bufferedRangeEnd; 
-    } m_inlineBuffer;
+    }  m_inlineBuffer;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } m_searchRange;
-    NSString *m_string;
+    }  m_searchRange;
+    NSString * m_string;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } m_tokenRange;
+    }  m_tokenRange;
 }
 
 - (struct _NSRange { unsigned int x1; unsigned int x2; })advanceToNextToken;

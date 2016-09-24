@@ -3,12 +3,12 @@
  */
 
 @interface MFQuotedPrintableEncoder : MFBaseFilterDataConsumer {
-    BOOL _forHeader;
-    BOOL _forTextPart;
-    unsigned char _lastHorizontalWhitespace;
-    BOOL _lastWasNewLine;
-    unsigned long _line;
-    unsigned long _matchedFrom;
+    BOOL  _forHeader;
+    BOOL  _forTextPart;
+    unsigned char  _lastHorizontalWhitespace;
+    BOOL  _lastWasNewLine;
+    unsigned long  _line;
+    unsigned long  _matchedFrom;
 }
 
 @property (nonatomic) BOOL forHeader;

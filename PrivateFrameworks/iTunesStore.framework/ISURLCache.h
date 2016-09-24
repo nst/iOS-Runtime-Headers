@@ -3,8 +3,8 @@
  */
 
 @interface ISURLCache : NSObject {
-    NSURLCache *_cache;
-    ISURLCacheConfiguration *_configuration;
+    NSURLCache * _cache;
+    ISURLCacheConfiguration * _configuration;
 }
 
 @property (nonatomic, readonly) unsigned int currentDiskUsage;

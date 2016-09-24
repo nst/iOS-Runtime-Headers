@@ -3,14 +3,14 @@
  */
 
 @interface SSVFairPlaySAPSession : NSObject <SSVSAPContext> {
-    NSData *_certificateData;
-    NSObject<OS_dispatch_queue> *_completionBlockQueue;
-    SSVFairPlaySAPContext *_context;
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    BOOL _primed;
-    SSURLBag *_urlBag;
-    SSVURLBagInterpreter *_urlBagInterpreter;
-    int _version;
+    NSData * _certificateData;
+    NSObject<OS_dispatch_queue> * _completionBlockQueue;
+    SSVFairPlaySAPContext * _context;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    BOOL  _primed;
+    SSURLBag * _urlBag;
+    SSVURLBagInterpreter * _urlBagInterpreter;
+    int  _version;
 }
 
 @property (readonly) int SAPVersion;

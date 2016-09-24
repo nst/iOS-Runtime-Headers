@@ -3,7 +3,7 @@
  */
 
 @interface PUScrubberTilingLayoutInvalidationContext : PUTilingLayoutInvalidationContext {
-    BOOL _invalidatedExpandedItem;
+    BOOL  _invalidatedExpandedItem;
 }
 
 @property (nonatomic, readonly) BOOL invalidatedExpandedItem;

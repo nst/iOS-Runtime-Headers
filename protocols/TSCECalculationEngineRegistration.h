@@ -5,6 +5,7 @@
 
 @required
 
+- (struct __CFUUID { }*)formulaOwnerID;
 - (TSPObject<TSCECalculationEngineRegistration> *)objectToArchiveInDependencyTracker;
 - (BOOL)registerLast;
 - (void)registerWithCalculationEngineForDocumentLoad:(TSCECalculationEngine *)arg1;

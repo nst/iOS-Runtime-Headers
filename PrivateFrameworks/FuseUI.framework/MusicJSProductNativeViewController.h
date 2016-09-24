@@ -3,16 +3,16 @@
  */
 
 @interface MusicJSProductNativeViewController : MusicJSNativeViewController <MusicJSProductNativeViewController, SKUIDOMFeature> {
-    <MusicJSProductNativeViewControllerDelegate> *_delegate;
-    NSDictionary *_productEntityValueProviderData;
-    long long _prominentTrackStoreID;
-    IKAppDocument *_relatedContentDocument;
-    NSDictionary *_relatedContentDocumentOptions;
-    IKDOMDocument *_relatedContentJSDocument;
-    NSDictionary *_reportingInformation;
-    IKAppDocument *_shareDocument;
-    NSDictionary *_shareDocumentOptions;
-    NSArray *_tracklistItems;
+    <MusicJSProductNativeViewControllerDelegate> * _delegate;
+    NSDictionary * _productEntityValueProviderData;
+    int  _prominentTrackStoreID;
+    IKAppDocument * _relatedContentDocument;
+    NSDictionary * _relatedContentDocumentOptions;
+    IKDOMDocument * _relatedContentJSDocument;
+    NSDictionary * _reportingInformation;
+    IKAppDocument * _shareDocument;
+    NSDictionary * _shareDocumentOptions;
+    NSArray * _tracklistItems;
 }
 
 @property (nonatomic, readonly) IKAppContext *appContext;
@@ -23,7 +23,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) IKJSNavigationDocument *navigationDocument;
 @property (nonatomic, readonly) NSDictionary *productEntityValueProviderData;
-@property (nonatomic, readonly) long long prominentTrackStoreID;
+@property (nonatomic, readonly) int prominentTrackStoreID;
 @property (nonatomic, readonly) IKAppDocument *relatedContentDocument;
 @property (nonatomic, readonly) NSDictionary *relatedContentDocumentOptions;
 @property (nonatomic, readonly) NSDictionary *reportingInformation;
@@ -38,7 +38,7 @@
 - (void)navigationDocumentDidChange;
 - (void)presentShareDocument:(id)arg1 :(id)arg2;
 - (id)productEntityValueProviderData;
-- (long long)prominentTrackStoreID;
+- (int)prominentTrackStoreID;
 - (id)relatedContentDocument;
 - (id)relatedContentDocumentOptions;
 - (id)reportingInformation;

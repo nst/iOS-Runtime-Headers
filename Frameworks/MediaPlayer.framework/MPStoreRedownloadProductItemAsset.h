@@ -3,7 +3,7 @@
  */
 
 @interface MPStoreRedownloadProductItemAsset : NSObject {
-    NSDictionary *_responseDictionary;
+    NSDictionary * _responseDictionary;
 }
 
 @property (nonatomic, readonly, copy) NSURL *URL;

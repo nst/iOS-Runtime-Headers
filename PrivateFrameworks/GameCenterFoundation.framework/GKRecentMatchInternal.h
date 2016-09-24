@@ -3,9 +3,9 @@
  */
 
 @interface GKRecentMatchInternal : GKInternalRepresentation {
-    NSDate *_date;
-    GKGameRecordInternal *_game;
-    GKPlayerInternal *_player;
+    NSDate * _date;
+    GKGameRecordInternal * _game;
+    GKPlayerInternal * _player;
 }
 
 @property (nonatomic, retain) NSDate *date;

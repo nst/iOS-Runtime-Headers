@@ -3,10 +3,10 @@
  */
 
 @interface WKDateTimePopover : WKFormRotatingAccessoryPopover <WKFormControl> {
-    WKContentView *_view;
+    WKContentView * _view;
     struct RetainPtr<WKDateTimePopoverViewController> { 
         void *m_ptr; 
-    } _viewController;
+    }  _viewController;
 }
 
 - (id).cxx_construct;

@@ -3,8 +3,8 @@
  */
 
 @interface CNContactMatchSummarizer : NSObject {
-    void *_tokenList;
-    struct __CFStringTokenizer { } *_tokenizer;
+    void * _tokenList;
+    struct __CFStringTokenizer { } * _tokenizer;
 }
 
 + (id)keyDescriptorForContactIdentifiers:(id)arg1 matchInfos:(id)arg2;

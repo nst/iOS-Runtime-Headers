@@ -3,14 +3,14 @@
  */
 
 @interface GKLocalPlayerInternal : GKFriendPlayerInternal {
-    NSString *_accountName;
-    NSArray *_emailAddresses;
-    NSString *_facebookUserID;
-    NSNumber *_iCloudUserID;
-    unsigned int _loginStatus;
-    unsigned short _numberOfChallenges;
-    unsigned short _numberOfRequests;
-    unsigned short _numberOfTurns;
+    NSString * _accountName;
+    NSArray * _emailAddresses;
+    NSString * _facebookUserID;
+    NSNumber * _iCloudUserID;
+    unsigned int  _loginStatus;
+    unsigned short  _numberOfChallenges;
+    unsigned short  _numberOfRequests;
+    unsigned short  _numberOfTurns;
 }
 
 @property unsigned int loginStatus;
@@ -30,6 +30,7 @@
 - (BOOL)isPurpleBuddyAccount;
 - (BOOL)isUnderage;
 - (unsigned int)loginStatus;
+- (id)minimalInternal;
 - (unsigned short)numberOfChallenges;
 - (unsigned short)numberOfRequests;
 - (unsigned short)numberOfTurns;

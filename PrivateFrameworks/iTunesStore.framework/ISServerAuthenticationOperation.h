@@ -3,13 +3,13 @@
  */
 
 @interface ISServerAuthenticationOperation : ISOperation {
-    NSNumber *_authenticatedAccountDSID;
-    SSAuthenticationContext *_authenticationContext;
-    ISDialog *_dialog;
-    ISDialogButton *_performedButton;
-    BOOL _performsButtonAction;
-    NSURL *_redirectURL;
-    ISDialogButton *_selectedButton;
+    NSNumber * _authenticatedAccountDSID;
+    SSAuthenticationContext * _authenticationContext;
+    ISDialog * _dialog;
+    ISDialogButton * _performedButton;
+    BOOL  _performsButtonAction;
+    NSURL * _redirectURL;
+    ISDialogButton * _selectedButton;
 }
 
 @property (retain) NSNumber *authenticatedAccountDSID;

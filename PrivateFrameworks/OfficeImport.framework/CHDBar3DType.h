@@ -3,8 +3,8 @@
  */
 
 @interface CHDBar3DType : CHDBar2DType {
-    int mGapDepth;
-    int mShapeType;
+    int  mGapDepth;
+    int  mShapeType;
 }
 
 + (bool)is3DType;

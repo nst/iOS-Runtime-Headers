@@ -3,12 +3,12 @@
  */
 
 @interface GEOStorageCameraView : PBCodable <NSCopying> {
-    GEOURLCamera *_camera;
+    GEOURLCamera * _camera;
     struct { 
         unsigned int mapType : 1; 
-    } _has;
-    int _mapType;
-    PBUnknownFields *_unknownFields;
+    }  _has;
+    int  _mapType;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, retain) GEOURLCamera *camera;
@@ -17,6 +17,7 @@
 @property (nonatomic) int mapType;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
+- (int)StringAsMapType:(id)arg1;
 - (id)camera;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -28,6 +29,7 @@
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (int)mapType;
+- (id)mapTypeAsString:(int)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setCamera:(id)arg1;

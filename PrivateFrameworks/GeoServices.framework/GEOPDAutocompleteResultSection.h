@@ -3,20 +3,30 @@
  */
 
 @interface GEOPDAutocompleteResultSection : PBCodable <NSCopying> {
-    NSMutableArray *_entries;
+    NSMutableArray * _entries;
     struct { 
+        unsigned int suggestionType : 1; 
         unsigned int type : 1; 
-    } _has;
-    NSString *_name;
-    int _type;
+    }  _has;
+    NSString * _name;
+    int  _suggestionType;
+    int  _type;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, retain) NSMutableArray *entries;
 @property (nonatomic, readonly) BOOL hasName;
+@property (nonatomic) BOOL hasSuggestionType;
 @property (nonatomic) BOOL hasType;
 @property (nonatomic, retain) NSString *name;
+@property (nonatomic) int suggestionType;
 @property (nonatomic) int type;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
++ (Class)entriesType;
+
+- (int)StringAsSuggestionType:(id)arg1;
+- (int)StringAsType:(id)arg1;
 - (void)addEntries:(id)arg1;
 - (void)clearEntries;
 - (void)copyTo:(id)arg1;
@@ -28,6 +38,7 @@
 - (id)entriesAtIndex:(unsigned int)arg1;
 - (unsigned int)entriesCount;
 - (BOOL)hasName;
+- (BOOL)hasSuggestionType;
 - (BOOL)hasType;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -35,10 +46,16 @@
 - (id)name;
 - (BOOL)readFrom:(id)arg1;
 - (void)setEntries:(id)arg1;
+- (void)setHasSuggestionType:(BOOL)arg1;
 - (void)setHasType:(BOOL)arg1;
 - (void)setName:(id)arg1;
+- (void)setSuggestionType:(int)arg1;
 - (void)setType:(int)arg1;
+- (int)suggestionType;
+- (id)suggestionTypeAsString:(int)arg1;
 - (int)type;
+- (id)typeAsString:(int)arg1;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

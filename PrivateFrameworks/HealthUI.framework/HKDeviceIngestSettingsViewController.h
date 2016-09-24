@@ -3,7 +3,7 @@
  */
 
 @interface HKDeviceIngestSettingsViewController : _HKIngestSettingsViewController {
-    HKDevice *_device;
+    HKDevice * _device;
 }
 
 - (void).cxx_destruct;

@@ -3,8 +3,8 @@
  */
 
 @interface VKPShieldPack : PBCodable <NSCopying> {
-    NSMutableArray *_atlas;
-    NSMutableArray *_shields;
+    NSMutableArray * _atlas;
+    NSMutableArray * _shields;
 }
 
 @property (nonatomic, retain) NSMutableArray *atlas;

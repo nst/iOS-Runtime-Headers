@@ -3,15 +3,15 @@
  */
 
 @interface HMHAPMetadataAssistantCharacteristic : NSObject <NSSecureCoding> {
-    NSString *_format;
-    NSString *_name;
-    NSDictionary *_outValues;
-    NSString *_readHAPCharacteristicName;
-    NSString *_readHAPCharacteristicType;
-    BOOL _supportsLocalization;
-    NSDictionary *_values;
-    NSString *_writeHAPCharacteristicName;
-    NSString *_writeHAPCharacteristicType;
+    NSString * _format;
+    NSString * _name;
+    NSDictionary * _outValues;
+    NSString * _readHAPCharacteristicName;
+    NSString * _readHAPCharacteristicType;
+    BOOL  _supportsLocalization;
+    NSDictionary * _values;
+    NSString * _writeHAPCharacteristicName;
+    NSString * _writeHAPCharacteristicType;
 }
 
 @property (nonatomic, retain) NSString *format;

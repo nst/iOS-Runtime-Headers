@@ -3,9 +3,9 @@
  */
 
 @interface MPUPlaybackAlertController : UIAlertController {
-    NSError *_error;
-    MPAVItem *_item;
-    int _playbackAlertType;
+    NSError * _error;
+    MPAVItem * _item;
+    int  _playbackAlertType;
 }
 
 @property (nonatomic, readonly) NSError *error;

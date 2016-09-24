@@ -3,7 +3,7 @@
  */
 
 @interface CKMultiCache : IMMultiDict {
-    unsigned int _limit;
+    unsigned int  _limit;
 }
 
 @property (nonatomic) unsigned int limit;

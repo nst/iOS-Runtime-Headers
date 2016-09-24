@@ -3,11 +3,11 @@
  */
 
 @interface PUMiniHTMLParser : NSObject {
-    NSString *__string;
-    id /* block */ _parsedCharactersBlock;
-    id /* block */ _parsedErrorBlock;
-    id /* block */ _parsedMarkupElementEndBlock;
-    id /* block */ _parsedMarkupElementStartBlock;
+    NSString * __string;
+    id /* block */  _parsedCharactersBlock;
+    id /* block */  _parsedErrorBlock;
+    id /* block */  _parsedMarkupElementEndBlock;
+    id /* block */  _parsedMarkupElementStartBlock;
 }
 
 @property (nonatomic, readonly) NSString *_string;

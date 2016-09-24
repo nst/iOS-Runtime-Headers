@@ -3,9 +3,9 @@
  */
 
 @interface RTPredictedDate : NSObject <NSSecureCoding> {
-    double _confidence;
-    NSDate *_date;
-    double _uncertainty;
+    double  _confidence;
+    NSDate * _date;
+    double  _uncertainty;
 }
 
 @property (nonatomic, readonly) double confidence;

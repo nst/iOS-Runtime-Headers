@@ -3,7 +3,7 @@
  */
 
 @interface NNMKProtoAccountDeletion : PBCodable <NSCopying> {
-    NSString *_accountId;
+    NSString * _accountId;
 }
 
 @property (nonatomic, retain) NSString *accountId;

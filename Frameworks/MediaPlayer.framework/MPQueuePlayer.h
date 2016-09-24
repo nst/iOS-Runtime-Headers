@@ -3,31 +3,32 @@
  */
 
 @interface MPQueuePlayer : NSObject <MPAVRoutingControllerDelegate> {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    unsigned long long _allowsExternalPlaybackRevisionID;
-    AVPlayerItem *_currentItem;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    unsigned int  _allowsExternalPlaybackRevisionID;
+    AVPlayerItem * _currentItem;
     struct { 
-        long long value; 
+        int value; 
         int timescale; 
         unsigned int flags; 
-        long long epoch; 
-    } _currentTime;
-    int _defaultItemEQPresetType;
-    BOOL _isExternalPlaybackActive;
-    MPAVRoute *_lastPickedRoute;
-    BOOL _outputObscuredDueToInsufficientExternalProtection;
-    BOOL _pausedForPlaybackQueueTransaction;
-    id /* block */ _playbackQueueCommitHandler;
-    int _playbackQueueTransactionCount;
-    AVQueuePlayer *_player;
-    NSMutableArray *_queuedOperations;
-    float _rate;
-    float _rateBeforePlaybackQueueTransaction;
-    BOOL _routeDidChangeDuringPlaybackQueueTransaction;
-    MPAVRoutingController *_routingController;
-    int _status;
-    unsigned long long _usesAudioOnlyModeForExternalPlaybackRevisionID;
-    unsigned long long _usesExternalPlaybackWhileExternalScreenIsActiveRevisionID;
+        int epoch; 
+    }  _currentTime;
+    int  _defaultItemEQPresetType;
+    BOOL  _isExternalPlaybackActive;
+    MPAVRoute * _lastPickedRoute;
+    BOOL  _outputObscuredDueToInsufficientExternalProtection;
+    BOOL  _pausedForPlaybackQueueTransaction;
+    id /* block */  _playbackQueueCommitHandler;
+    int  _playbackQueueTransactionCount;
+    AVQueuePlayer * _player;
+    double  _playerRate;
+    NSMutableArray * _queuedOperations;
+    double  _rate;
+    double  _rateBeforePlaybackQueueTransaction;
+    BOOL  _routeDidChangeDuringPlaybackQueueTransaction;
+    MPAVRoutingController * _routingController;
+    int  _status;
+    unsigned int  _usesAudioOnlyModeForExternalPlaybackRevisionID;
+    unsigned int  _usesExternalPlaybackWhileExternalScreenIsActiveRevisionID;
 }
 
 @property (nonatomic, readonly) int _externalProtectionStatus;
@@ -47,11 +48,12 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) BOOL isPlaybackQueueTransactionActive;
 @property (nonatomic, readonly) NSArray *items;
+@property (nonatomic) BOOL limitsBandwidthForCellularAccess;
 @property (nonatomic, readonly) BOOL outputObscuredDueToInsufficientExternalProtection;
 @property (nonatomic, copy) id /* block */ playbackQueueCommitHandler;
 @property (nonatomic, readonly) id playerAVAudioSession;
-@property (nonatomic, readonly) float playerRate;
-@property (nonatomic) float rate;
+@property (nonatomic, readonly) double playerRate;
+@property (nonatomic) double rate;
 @property (nonatomic, readonly) int status;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) BOOL usesAudioOnlyModeForExternalPlayback;
@@ -75,13 +77,13 @@
 - (float)_userVolume;
 - (int)actionAtItemEnd;
 - (id)addBoundaryTimeObserverForTimes:(id)arg1 queue:(id)arg2 usingBlock:(id /* block */)arg3;
-- (id)addPeriodicTimeObserverForInterval:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 queue:(id)arg2 usingBlock:(id /* block */)arg3;
+- (id)addPeriodicTimeObserverForInterval:(struct { int x1; int x2; unsigned int x3; int x4; })arg1 queue:(id)arg2 usingBlock:(id /* block */)arg3;
 - (void)advanceToNextItem;
 - (BOOL)allowsExternalPlayback;
 - (void)beginPlaybackQueueTransactionAndPause:(BOOL)arg1;
 - (void)commitPlaybackQueueTransaction;
 - (id)currentItem;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })currentTime;
+- (struct { int x1; int x2; unsigned int x3; int x4; })currentTime;
 - (void)dealloc;
 - (int)defaultItemEQPresetType;
 - (BOOL)disallowsAMRAudio;
@@ -94,6 +96,7 @@
 - (BOOL)isExternalPlaybackActive;
 - (BOOL)isPlaybackQueueTransactionActive;
 - (id)items;
+- (BOOL)limitsBandwidthForCellularAccess;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (BOOL)outputObscuredDueToInsufficientExternalProtection;
 - (void)pause;
@@ -107,15 +110,17 @@
 - (void)removeItem:(id)arg1;
 - (void)removeTimeObserver:(id)arg1;
 - (void)routingControllerAvailableRoutesDidChange:(id)arg1;
-- (void)seekToTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
-- (void)seekToTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 toleranceBefore:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 toleranceAfter:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3;
+- (void)seekToTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
+- (void)seekToTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1 toleranceBefore:(struct { int x1; int x2; unsigned int x3; int x4; })arg2 toleranceAfter:(struct { int x1; int x2; unsigned int x3; int x4; })arg3;
+- (void)seekToTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1 toleranceBefore:(struct { int x1; int x2; unsigned int x3; int x4; })arg2 toleranceAfter:(struct { int x1; int x2; unsigned int x3; int x4; })arg3 completionHandler:(id /* block */)arg4;
 - (void)setActionAtItemEnd:(int)arg1;
 - (void)setAllowsExternalPlayback:(BOOL)arg1 shouldIgnorePlaybackQueueTransactions:(BOOL)arg2;
 - (void)setClosedCaptionDisplayEnabled:(BOOL)arg1;
-- (void)setCurrentPlaybackQueueTransactionDisplayTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)setCurrentPlaybackQueueTransactionDisplayTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
 - (void)setDefaultItemEQPresetType:(int)arg1;
 - (void)setDisallowsAMRAudio:(BOOL)arg1;
 - (void)setExternalPlaybackVideoGravity:(id)arg1;
+- (void)setLimitsBandwidthForCellularAccess:(BOOL)arg1;
 - (void)setMediaSelectionCriteria:(id)arg1 forMediaCharacteristic:(id)arg2;
 - (void)setPlaybackQueueCommitHandler:(id /* block */)arg1;
 - (void)setRate:(float)arg1;

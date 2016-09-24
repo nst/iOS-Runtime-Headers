@@ -4,6 +4,6 @@
 
 @interface SGHtmlParserDissector : SGPipelineDissector
 
-- (void)dissectInternal:(id)arg1;
+- (void)dissectInternal:(id)arg1 inContext:(id)arg2;
 
 @end

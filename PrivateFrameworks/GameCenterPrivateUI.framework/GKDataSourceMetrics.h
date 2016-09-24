@@ -3,18 +3,18 @@
  */
 
 @interface GKDataSourceMetrics : GKGridLayoutMetrics {
-    NSString *_cachedKey;
-    NSArray *_childMetrics;
-    GKCollectionViewDataSource *_dataSource;
+    NSString * _cachedKey;
+    NSArray * _childMetrics;
+    GKCollectionViewDataSource * _dataSource;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _globalSectionRange;
+    }  _globalSectionRange;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _localSectionRange;
-    NSMutableDictionary *_sectionToMetrics;
+    }  _localSectionRange;
+    NSMutableDictionary * _sectionToMetrics;
 }
 
 @property (nonatomic, retain) NSString *cachedKey;

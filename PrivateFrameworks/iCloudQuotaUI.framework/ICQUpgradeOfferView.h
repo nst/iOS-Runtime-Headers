@@ -3,27 +3,27 @@
  */
 
 @interface ICQUpgradeOfferView : ICQPageView <UITextViewDelegate> {
-    UILayoutGuide *_abovePurchaseLayoutGuide;
-    NSArray *_activeConstraints;
-    UILayoutGuide *_belowPurchaseLayoutGuide;
-    <ICQPageDelegate> *_delegate;
-    _ICQTextView *_finePrintView;
-    BOOL _isResizingFonts;
-    BOOL _layoutGuideProblem;
-    UIButton *_learnMoreButton;
-    ICQLink *_learnMoreLink;
-    UILabel *_messageLabel;
-    UILayoutGuide *_navigationBarLayoutGuide;
-    UIButton *_purchaseButton;
-    ICQLink *_purchaseLink;
-    NSArray *_serviceViews;
-    UIActivityIndicatorView *_spinner;
-    BOOL _suppressResizingFonts;
-    UILabel *_titleLabel;
-    float _titleTopMargin;
-    NSLayoutConstraint *_titleTopMarginConstraint;
-    int _upgradeMode;
-    _ICQUpgradeOfferPageSpecification *_upgradeOfferPageSpecification;
+    UILayoutGuide * _abovePurchaseLayoutGuide;
+    NSArray * _activeConstraints;
+    UILayoutGuide * _belowPurchaseLayoutGuide;
+    <ICQPageDelegate> * _delegate;
+    _ICQTextView * _finePrintView;
+    BOOL  _isResizingFonts;
+    BOOL  _layoutGuideProblem;
+    UIButton * _learnMoreButton;
+    ICQLink * _learnMoreLink;
+    UILabel * _messageLabel;
+    UILayoutGuide * _navigationBarLayoutGuide;
+    UIButton * _purchaseButton;
+    ICQLink * _purchaseLink;
+    NSArray * _serviceViews;
+    UIActivityIndicatorView * _spinner;
+    BOOL  _suppressResizingFonts;
+    UILabel * _titleLabel;
+    double  _titleTopMargin;
+    NSLayoutConstraint * _titleTopMarginConstraint;
+    int  _upgradeMode;
+    _ICQUpgradeOfferPageSpecification * _upgradeOfferPageSpecification;
 }
 
 @property (nonatomic, readonly) UILayoutGuide *abovePurchaseLayoutGuide;
@@ -44,7 +44,7 @@
 @property (nonatomic, retain) UIActivityIndicatorView *spinner;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UILabel *titleLabel;
-@property (nonatomic) float titleTopMargin;
+@property (nonatomic) double titleTopMargin;
 @property (nonatomic, readonly) NSLayoutConstraint *titleTopMarginConstraint;
 @property (nonatomic) int upgradeMode;
 @property (nonatomic, retain) _ICQUpgradeOfferPageSpecification *upgradeOfferPageSpecification;
@@ -63,7 +63,7 @@
 - (id)finePrintParagraphStyleAttributes;
 - (id)finePrintView;
 - (id)finePrintViewAttributedText;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)learnMoreButton;
 - (void)learnMoreButtonTapped:(id)arg1;

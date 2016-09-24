@@ -3,10 +3,9 @@
  */
 
 @interface FBApplicationDataStoreRepositoryManager : NSObject <FBApplicationDataStoreRepositoryDelegate> {
-    FBSqliteApplicationDataStoreRepository *_dataStore;
-    NSURL *_dataStoreURL;
-    LSApplicationWorkspace *_lsApplicationWorkspace;
-    FBSSerialQueue *_queue;
+    FBSqliteApplicationDataStoreRepository * _dataStore;
+    NSURL * _dataStoreURL;
+    LSApplicationWorkspace * _lsApplicationWorkspace;
 }
 
 @property (nonatomic, retain) <FBApplicationDataStoreRepository> *dataStore;
@@ -16,16 +15,16 @@
 @property (nonatomic, retain) LSApplicationWorkspace *lsApplicationWorkspace;
 @property (readonly) Class superclass;
 
++ (id)sharedInstance;
+
 - (void)_handleApplicationInstalled:(id)arg1;
 - (void)_handleApplicationsUninstalled:(id)arg1;
 - (id)_initWithDataStore:(id)arg1 lsWorkspace:(id)arg2;
-- (void)_performAfterDeferredWorkWithBlock:(id /* block */)arg1;
 - (id)_safeObjectForKey:(id)arg1 forApplication:(id)arg2 ofType:(Class)arg3;
 - (void)clearExpiredUninstalledApplicationsFromStoreIfNecessary;
 - (id)dataStore;
 - (void)dealloc;
 - (id)init;
-- (id)initWithQueue:(id)arg1;
 - (id)lsApplicationWorkspace;
 - (void)migrateApplicationStorePathIfNecessary;
 - (BOOL)migrateFromApplicationStore:(id)arg1 toApplicationStore:(id)arg2 error:(id*)arg3;

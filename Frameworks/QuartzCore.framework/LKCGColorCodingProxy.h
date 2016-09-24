@@ -3,7 +3,7 @@
  */
 
 @interface LKCGColorCodingProxy : CACodingProxy {
-    struct CGColor { } *_color;
+    struct CGColor { } * _color;
 }
 
 - (void)dealloc;

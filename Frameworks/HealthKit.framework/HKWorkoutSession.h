@@ -3,9 +3,9 @@
  */
 
 @interface HKWorkoutSession : NSObject <NSSecureCoding, _HKWorkoutSessionDelegate> {
-    <HKWorkoutSessionDelegate> *_delegate;
-    _HKWorkoutSession *_privateSession;
-    NSObject<OS_dispatch_queue> *_queue;
+    <HKWorkoutSessionDelegate> * _delegate;
+    _HKWorkoutSession * _privateSession;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (readonly) unsigned int activityType;
@@ -19,12 +19,12 @@
 @property (readonly) NSDate *startDate;
 @property (readonly) int state;
 @property (readonly) Class superclass;
+@property (readonly, copy) HKWorkoutConfiguration *workoutConfiguration;
 
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_init;
-- (id)_initWithActivityType:(unsigned int)arg1 locationType:(int)arg2;
 - (id)_privateSession;
 - (unsigned int)activityType;
 - (id)delegate;
@@ -32,11 +32,14 @@
 - (id)endDate;
 - (id)initWithActivityType:(unsigned int)arg1 locationType:(int)arg2;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithConfiguration:(id)arg1 error:(id*)arg2;
 - (int)locationType;
 - (void)setDelegate:(id)arg1;
 - (id)startDate;
 - (int)state;
+- (id)workoutConfiguration;
 - (void)workoutSession:(id)arg1 didChangeToState:(int)arg2 fromState:(int)arg3 date:(id)arg4;
 - (void)workoutSession:(id)arg1 didFailWithError:(id)arg2;
+- (void)workoutSession:(id)arg1 didGenerateEvent:(id)arg2;
 
 @end

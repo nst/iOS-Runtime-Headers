@@ -3,8 +3,8 @@
  */
 
 @interface WBSWebProcessPlugIn : NSObject <WKWebProcessPlugIn> {
-    NSMapTable *_browserContextControllersToWebProcessPlugInPageControllers;
-    WKWebProcessPlugInController *_plugInController;
+    NSMapTable * _browserContextControllersToWebProcessPlugInPageControllers;
+    WKWebProcessPlugInController * _plugInController;
 }
 
 @property (readonly, copy) NSString *debugDescription;

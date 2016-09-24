@@ -3,12 +3,12 @@
  */
 
 @interface NSConstraintConflict : NSObject {
-    NSDictionary *_conflictedValues;
-    NSArray *_conflictingObjects;
-    NSArray *_conflictingSnapshots;
-    NSArray *_constraint;
-    NSManagedObject *_databaseObject;
-    NSDictionary *_databaseSnapshot;
+    NSDictionary * _conflictedValues;
+    NSArray * _conflictingObjects;
+    NSArray * _conflictingSnapshots;
+    NSArray * _constraint;
+    NSManagedObject * _databaseObject;
+    NSDictionary * _databaseSnapshot;
 }
 
 @property (readonly, retain) NSArray *conflictingObjects;

@@ -3,22 +3,24 @@
  */
 
 @interface TLAlertTone : NSObject {
-    TLSound *_actualSound;
-    NSString *_filePath;
-    TLSound *_previewSound;
+    TLSystemSound * _actualSound;
+    unsigned long  _actualSoundID;
+    TLSystemSound * _previewSound;
+    unsigned long  _previewSoundID;
+    NSURL * _soundFileURL;
+    NSURL * _vibrationPatternFileURL;
 }
 
-@property (nonatomic, retain) TLSound *actualSound;
-@property (nonatomic, copy) NSString *filePath;
-@property (nonatomic, retain) TLSound *previewSound;
+@property (nonatomic, readonly) TLSystemSound *actualSound;
+@property (nonatomic, readonly) TLSystemSound *previewSound;
+@property (nonatomic, readonly) NSURL *soundFileURL;
+@property (nonatomic, readonly) NSURL *vibrationPatternFileURL;
 
-- (void)_setActualSound:(id)arg1;
-- (void)_setFilePath:(id)arg1;
-- (void)_setPreviewSound:(id)arg1;
+- (void).cxx_destruct;
 - (id)actualSound;
-- (void)dealloc;
-- (id)filePath;
-- (id)initWithFilePath:(id)arg1 actualSoundID:(unsigned long)arg2 previewSoundID:(unsigned long)arg3;
+- (id)initWithSoundFileURL:(id)arg1 vibrationPatternFileURL:(id)arg2 actualSoundID:(unsigned long)arg3 previewSoundID:(unsigned long)arg4;
 - (id)previewSound;
+- (id)soundFileURL;
+- (id)vibrationPatternFileURL;
 
 @end

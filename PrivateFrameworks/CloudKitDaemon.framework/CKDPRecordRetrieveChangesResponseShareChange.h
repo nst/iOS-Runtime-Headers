@@ -3,12 +3,12 @@
  */
 
 @interface CKDPRecordRetrieveChangesResponseShareChange : PBCodable <NSCopying> {
-    int _changeType;
+    int  _changeType;
     struct { 
         unsigned int changeType : 1; 
-    } _has;
-    CKDPShare *_share;
-    CKDPShareIdentifier *_shareIdentifier;
+    }  _has;
+    CKDPShare * _share;
+    CKDPShareIdentifier * _shareIdentifier;
 }
 
 @property (nonatomic) int changeType;
@@ -19,7 +19,9 @@
 @property (nonatomic, retain) CKDPShareIdentifier *shareIdentifier;
 
 - (void).cxx_destruct;
+- (int)StringAsChangeType:(id)arg1;
 - (int)changeType;
+- (id)changeTypeAsString:(int)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;

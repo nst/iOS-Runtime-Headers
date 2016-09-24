@@ -3,8 +3,8 @@
  */
 
 @interface _NSMetadataQueryPrivateIvars : NSObject {
-    NSObject *pendingKVONotificationArray;
-    _NSMetadataQueryResultArray *resultArray;
+    NSObject * pendingKVONotificationArray;
+    _NSMetadataQueryResultArray * resultArray;
 }
 
 @end

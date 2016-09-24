@@ -3,19 +3,19 @@
  */
 
 @interface PLCameraImportItem : NSObject {
-    NSString *_basePath;
-    NSString *_identifier;
-    NSError *_importError;
-    BOOL _metadataRequested;
-    NSString *_parentFolder;
-    NSMutableDictionary *_representationsMapping;
-    BOOL _shouldImport;
-    UIImage *_thumbnail;
-    NSData *_thumbnailData;
-    BOOL _thumbnailRequested;
-    int _thumbnailState;
-    NSString *eventName;
-    PLManagedAsset *importedAsset;
+    NSString * _basePath;
+    NSString * _identifier;
+    NSError * _importError;
+    BOOL  _metadataRequested;
+    NSString * _parentFolder;
+    NSMutableDictionary * _representationsMapping;
+    BOOL  _shouldImport;
+    UIImage * _thumbnail;
+    NSData * _thumbnailData;
+    BOOL  _thumbnailRequested;
+    int  _thumbnailState;
+    NSString * eventName;
+    PLManagedAsset * importedAsset;
 }
 
 @property (nonatomic, retain) NSString *basePath;
@@ -47,7 +47,7 @@
 - (id)description;
 - (id)eventName;
 - (id)fileExtensions;
-- (unsigned long long)fileSize;
+- (unsigned int)fileSize;
 - (BOOL)hasAllMetadata;
 - (id)identifier;
 - (id)importError;

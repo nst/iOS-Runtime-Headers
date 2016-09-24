@@ -3,9 +3,9 @@
  */
 
 @interface HKUIDateLabel : UILabel {
-    HKValueRange *_dateRange;
-    int _formatTemplate;
-    BOOL _useUppercase;
+    HKValueRange * _dateRange;
+    int  _formatTemplate;
+    BOOL  _useUppercase;
 }
 
 @property (nonatomic, readonly) HKValueRange *dateRange;

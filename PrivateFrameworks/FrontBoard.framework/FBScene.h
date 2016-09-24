@@ -3,24 +3,24 @@
  */
 
 @interface FBScene : NSObject <BSDescriptionProviding, FBSceneHost, FBUISceneUpdater> {
-    <FBSceneClient> *_client;
-    FBProcess *_clientProcess;
-    <FBSceneClientProvider> *_clientProvider;
-    FBSSceneClientSettings *_clientSettings;
-    <FBSceneDelegate> *_delegate;
-    FBSDisplay *_display;
-    NSHashTable *_geometryObservers;
-    FBSceneHostManager *_hostManager;
-    NSString *_identifier;
-    FBSceneLayerManager *_layerManager;
-    BOOL _lockedForMutation;
-    FBSMutableSceneSettings *_mutableSettings;
-    FBSSceneSettings *_settings;
-    FBUISceneSpecification *_specification;
-    unsigned int _transactionID;
-    BOOL _valid;
-    BOOL _waitingForResponse;
-    NSString *_workspaceIdentifier;
+    <FBSceneClient> * _client;
+    FBProcess * _clientProcess;
+    <FBSceneClientProvider> * _clientProvider;
+    FBSSceneClientSettings * _clientSettings;
+    FBSSceneDefinition * _definition;
+    <FBSceneDelegate> * _delegate;
+    FBSDisplay * _display;
+    NSHashTable * _geometryObservers;
+    FBSceneHostManager * _hostManager;
+    NSString * _identifier;
+    FBSceneLayerManager * _layerManager;
+    BOOL  _lockedForMutation;
+    FBSMutableSceneSettings * _mutableSettings;
+    FBSSceneSettings * _settings;
+    unsigned int  _transactionID;
+    BOOL  _valid;
+    BOOL  _waitingForResponse;
+    NSString * _workspaceIdentifier;
 }
 
 @property (setter=_setLockedForMutation:, nonatomic) BOOL _lockedForMutation;
@@ -32,6 +32,7 @@
 @property (nonatomic, readonly, retain) FBWindowContextHostManager *contextHostManager;
 @property (nonatomic, readonly, retain) FBWindowContextManager *contextManager;
 @property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, readonly, copy) FBSSceneDefinition *definition;
 @property (nonatomic) <FBSceneDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, retain) FBSDisplay *display;
@@ -40,17 +41,17 @@
 @property (nonatomic, readonly, copy) NSString *identifier;
 @property (nonatomic, readonly, retain) FBSceneLayerManager *layerManager;
 @property (nonatomic, readonly, retain) FBSMutableSceneSettings *mutableSettings;
+@property (nonatomic, readonly, copy) FBSSceneParameters *parameters;
 @property (nonatomic, readonly, copy) NSString *sceneIdentifier;
 @property (nonatomic, readonly, retain) FBSSceneSettings *settings;
-@property (nonatomic, copy) FBUISceneSpecification *specification;
 @property (readonly) Class superclass;
 @property (getter=isValid, nonatomic, readonly) BOOL valid;
 @property (getter=isWaitingForResponse, nonatomic, readonly) BOOL waitingForResponse;
-@property (nonatomic, copy) NSString *workspaceIdentifier;
+@property (nonatomic, readonly, copy) NSString *workspaceIdentifier;
 
 - (void)_addSceneGeometryObserver:(id)arg1;
 - (unsigned int)_applyMutableSettings:(id)arg1 withTransitionContext:(id)arg2 completion:(id /* block */)arg3;
-- (void)_handleSceneClientMessage:(id)arg1 withBlock:(id /* block */)arg2;
+- (void)_dispatchClientMessageWithBlock:(id /* block */)arg1;
 - (void)_invalidateWithTransitionContext:(id)arg1;
 - (BOOL)_lockedForMutation;
 - (void)_removeSceneGeometryObserver:(id)arg1;
@@ -65,6 +66,7 @@
 - (id)clientProcess;
 - (id)clientProvider;
 - (id)clientSettings;
+- (void)clientWillInvalidate:(id)arg1;
 - (id)contentView;
 - (id)contextHostManager;
 - (id)contextManager;
@@ -73,6 +75,7 @@
 - (int)currentInterfaceOrientation;
 - (void)dealloc;
 - (id)debugDescription;
+- (id)definition;
 - (id)delegate;
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
@@ -80,19 +83,17 @@
 - (id)display;
 - (id)hostManager;
 - (id)identifier;
-- (id)initWithIdentifier:(id)arg1 display:(id)arg2 initialClientSettings:(id)arg3 clientProvider:(id)arg4;
+- (id)initWithDefiniton:(id)arg1 initialParameters:(id)arg2 clientProvider:(id)arg3;
 - (BOOL)isValid;
 - (BOOL)isWaitingForResponse;
 - (id)layerManager;
 - (id)mutableSettings;
+- (id)parameters;
 - (id)sceneIdentifier;
 - (void)sendActions:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setSpecification:(id)arg1;
-- (void)setWorkspaceIdentifier:(id)arg1;
 - (id)settings;
 - (id)snapshotContext;
-- (id)specification;
 - (id)succinctDescription;
 - (id)succinctDescriptionBuilder;
 - (id)uiClientSettings;

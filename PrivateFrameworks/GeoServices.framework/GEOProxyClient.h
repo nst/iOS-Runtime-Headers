@@ -3,10 +3,10 @@
  */
 
 @interface GEOProxyClient : NSObject {
-    NSData *_auditToken;
-    NSString *_bundleIdentifier;
-    NSString *_bundleVersion;
-    BOOL _isApplication;
+    NSData * _auditToken;
+    NSString * _bundleIdentifier;
+    NSString * _bundleVersion;
+    BOOL  _isApplication;
 }
 
 @property (nonatomic, retain) NSData *auditToken;

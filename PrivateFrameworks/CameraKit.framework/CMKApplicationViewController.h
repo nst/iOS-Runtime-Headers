@@ -2,29 +2,29 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@interface CMKApplicationViewController : CMKCameraViewController <CMKCameraRollObserver, PLPhotoBrowserControllerDelegate, UINavigationControllerDelegate> {
-    UIView *__autorotationCorrectionView;
-    <NSObject> *__cameraRollNotificationToken;
-    UIViewController *__cameraRollViewController;
-    BOOL __didApplyConfigurationToCameraView;
-    BOOL __dismissingCameraRoll;
-    BOOL __dismissingCameraRollForSuspension;
-    BOOL __hasLockedSinceLastConfigurationChange;
-    int __lockToResetToken;
-    UIView *__rootContainerView;
-    BOOL __shouldRetryDismissal;
-    BOOL __shouldShowCameraRoll;
-    NSDictionary *_configuration;
-    <PLApplicationCameraViewControllerDelegate> *_delegate;
-    id /* block */ _doneButtonAction;
-    BOOL _isReadyToTest;
-    CMKKeepDaemonAliveAssertion *_keepDaemonAliveAssertion;
-    id /* block */ _previewButtonAction;
-    double _sessionStartTime;
-    int _testPictureCounter;
-    double _testPictureRepeatDelay;
-    int _testPicturesReceivedCounter;
-    BOOL _usesSessionAlbum;
+@interface CMKApplicationViewController : CMKCameraViewController <CMKCameraRollObserver, UINavigationControllerDelegate> {
+    UIView * __autorotationCorrectionView;
+    <NSObject> * __cameraRollNotificationToken;
+    UIViewController * __cameraRollViewController;
+    BOOL  __didApplyConfigurationToCameraView;
+    BOOL  __dismissingCameraRoll;
+    BOOL  __dismissingCameraRollForSuspension;
+    BOOL  __hasLockedSinceLastConfigurationChange;
+    int  __lockToResetToken;
+    UIView * __rootContainerView;
+    BOOL  __shouldRetryDismissal;
+    BOOL  __shouldShowCameraRoll;
+    NSDictionary * _configuration;
+    <PLApplicationCameraViewControllerDelegate> * _delegate;
+    id /* block */  _doneButtonAction;
+    BOOL  _isReadyToTest;
+    CMKKeepDaemonAliveAssertion * _keepDaemonAliveAssertion;
+    id /* block */  _previewButtonAction;
+    double  _sessionStartTime;
+    int  _testPictureCounter;
+    double  _testPictureRepeatDelay;
+    int  _testPicturesReceivedCounter;
+    BOOL  _usesSessionAlbum;
 }
 
 @property (nonatomic, readonly) UIView *_autorotationCorrectionView;
@@ -52,19 +52,18 @@
 - (void)_applicationWillEnterForeground:(id)arg1;
 - (void)_applyAutorotationCorrectingTransformForOrientation:(int)arg1;
 - (void)_applyConfiguration;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_autorotationCorrectingTransformFromOrientation:(int)arg1;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })_autorotationCorrectingTransformFromOrientation:(int)arg1;
 - (id)_autorotationCorrectionView;
 - (BOOL)_cameraIsRunning;
 - (id)_cameraRollNotificationToken;
 - (void)_cameraRollReload:(id)arg1;
 - (id)_cameraRollViewController;
 - (void)_createPhysicalCaptureRecognizerIfNecessary;
-- (id)_currentPhotoBrowser;
 - (void)_defaultCameraDevice:(id*)arg1 cameraMode:(id*)arg2;
 - (id)_dictionaryFromPackedArray:(id)arg1;
 - (BOOL)_didApplyConfigurationToCameraView;
 - (void)_didPerformPhysicalCapture:(id)arg1;
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; float x6; int x7; }*)arg1;
+- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; int x7; }*)arg1;
 - (BOOL)_hasLockedSinceLastConfigurationChange;
 - (BOOL)_isDismissingCameraRoll;
 - (BOOL)_isDismissingCameraRollForSuspension;
@@ -112,8 +111,6 @@
 - (void)loadView;
 - (void)navigationController:(id)arg1 didShowViewController:(id)arg2 animated:(BOOL)arg3;
 - (id)newAlbumNavigationControllerForCameraRoll:(id)arg1;
-- (void)photoBrowserControllerDidEndPaging:(id)arg1;
-- (void)photoBrowserControllerWillBeginPaging:(id)arg1;
 - (void)photoLibraryDidChange:(id)arg1;
 - (void)preferencesDidChange;
 - (BOOL)prefersStatusBarHidden;
@@ -153,6 +150,6 @@
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillLayoutSubviews;
 - (void)viewWillShowForLaunch;
-- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

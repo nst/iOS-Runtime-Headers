@@ -3,14 +3,14 @@
  */
 
 @interface CLIntersiloProxy : NSProxy {
-    CLIntersiloProxy *_asymStrongPeer;
-    <CLIntersiloProxyDelegateProtocol> *_delegate;
-    CLIntersiloInterface *_delegateInterface;
-    CLSilo *_delegateSilo;
-    CLIntersiloInterfaceSelectorInfo *_last;
-    unsigned long _opaqueTag;
-    CLIntersiloProxy *_peer;
-    CLIntersiloInterface *_proxiedInterface;
+    CLIntersiloProxy * _asymStrongPeer;
+    <CLIntersiloProxyDelegateProtocol> * _delegate;
+    CLIntersiloInterface * _delegateInterface;
+    CLSilo * _delegateSilo;
+    CLIntersiloInterfaceSelectorInfo * _last;
+    unsigned long  _opaqueTag;
+    CLIntersiloProxy * _peer;
+    CLIntersiloInterface * _proxiedInterface;
 }
 
 @property (nonatomic, readonly) <CLIntersiloProxyDelegateProtocol> *delegate;

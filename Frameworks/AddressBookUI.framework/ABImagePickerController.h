@@ -2,21 +2,21 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@interface ABImagePickerController : ABContentController <ABMultipleSourceImagePickerDelegate, UIActionSheetDelegate, UIAlertViewDelegate, UIImagePickerControllerDelegate, UIModalViewDelegate, UINavigationControllerDelegate, UIPopoverControllerDelegate> {
-    BOOL _allowsEditingExistingPhoto;
-    NSDictionary *_animationContextDictionary;
-    BOOL _applyImageChangesToAllPeople;
-    CAKeyframeAnimation *_bounceAnimation;
-    BOOL _canChooseFromMultiplePhotos;
-    BOOL _canChoosePhoto;
-    BOOL _confirmingDelete;
-    BOOL _editingImage;
-    BOOL _hasExistingPhoto;
-    <ABPersonImageDataDelegate> *_imageDataDelegate;
-    UIImagePickerController *_imagePicker;
-    NSArray *_people;
-    UIPopoverController *_popoverPresenter;
-    NSArray *_writablePeople;
+@interface ABImagePickerController : ABContentController <ABMultipleSourceImagePickerDelegate, CAAnimationDelegate, UIActionSheetDelegate, UIAlertViewDelegate, UIImagePickerControllerDelegate, UIModalViewDelegate, UINavigationControllerDelegate, UIPopoverControllerDelegate> {
+    BOOL  _allowsEditingExistingPhoto;
+    NSDictionary * _animationContextDictionary;
+    BOOL  _applyImageChangesToAllPeople;
+    CAKeyframeAnimation * _bounceAnimation;
+    BOOL  _canChooseFromMultiplePhotos;
+    BOOL  _canChoosePhoto;
+    BOOL  _confirmingDelete;
+    BOOL  _editingImage;
+    BOOL  _hasExistingPhoto;
+    <ABPersonImageDataDelegate> * _imageDataDelegate;
+    UIImagePickerController * _imagePicker;
+    NSArray * _people;
+    UIPopoverController * _popoverPresenter;
+    NSArray * _writablePeople;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -26,7 +26,7 @@
 @property (readonly) Class superclass;
 
 - (id)_createImagePicker;
-- (id)_createImagePickerForEditingImageData:(id)arg1 shouldSaveFullSize:(BOOL)arg2 cropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
+- (id)_createImagePickerForEditingImageData:(id)arg1 shouldSaveFullSize:(BOOL)arg2 cropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
 - (id)_formatStringForSource:(void*)arg1 withSuffix:(BOOL)arg2 useAbbreviatedStrings:(BOOL)arg3;
 - (BOOL)_hasMultipleWritablePeople;
 - (id)_removePreviousSheet;

@@ -3,19 +3,18 @@
  */
 
 @interface MCDBrowserViewController : UINavigationController <UITabBarControllerDelegate> {
-    AVExternalDevice *_externalDevice;
-    int _fuseSubscriber;
-    UITabBarController *_hostTabBarController;
-    BOOL _libraryHasSongs;
-    UIButton *_nowPlayingButton;
-    MPAVController *_player;
-    MCDRadioViewController *_radioViewController;
-    RadioRecentStationsController *_recentStationsController;
-    <MCDCarDisplayServiceProvider> *_serviceProvider;
-    BOOL _showRadioTab;
-    UITabBarController *_tabBarController;
-    NSArray *_tabIdentifiers;
-    BOOL _viewHasAppeared;
+    AVExternalDevice * _externalDevice;
+    int  _fuseSubscriber;
+    UITabBarController * _hostTabBarController;
+    BOOL  _libraryHasSongs;
+    UIButton * _nowPlayingButton;
+    MPAVController * _player;
+    MCDRadioViewController * _radioViewController;
+    RadioRecentStationsController * _recentStationsController;
+    <MCDCarDisplayServiceProvider> * _serviceProvider;
+    UITabBarController * _tabBarController;
+    NSArray * _tabIdentifiers;
+    BOOL  _viewHasAppeared;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -28,6 +27,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (void)MCD_popNowPlayingViewControllerAnimated:(BOOL)arg1;
 - (void)MCD_pushNowPlayingViewControllerAnimated:(BOOL)arg1;
 - (void)_accountsDidChangeNotification:(id)arg1;
 - (id)_createViewControllerForIdentifier:(id)arg1;
@@ -37,6 +37,7 @@
 - (BOOL)_limitedUIEnabled;
 - (void)_mediaLibraryDidChange:(id)arg1;
 - (void)_nowPlayingButtonTouchUpInside:(id)arg1;
+- (void)_nowPlayingDidChangeNotification:(id)arg1;
 - (void)_reloadHostTabs;
 - (void)_removeDetailViews;
 - (void)_tabBarDidChangeViewControllers:(id)arg1;

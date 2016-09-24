@@ -3,10 +3,10 @@
  */
 
 @interface SUSegmentedControlAppearance : NSObject <NSCopying> {
-    SUControlAppearance *_backgroundImages;
-    NSMutableDictionary *_dividerImages;
-    UIImage *_optionsBackgroundImage;
-    NSMutableDictionary *_titleTextAttributes;
+    SUControlAppearance * _backgroundImages;
+    NSMutableDictionary * _dividerImages;
+    UIImage * _optionsBackgroundImage;
+    NSMutableDictionary * _titleTextAttributes;
 }
 
 @property (nonatomic, retain) UIImage *optionsBackgroundImage;

@@ -3,29 +3,33 @@
  */
 
 @interface SGStorageEvent : NSObject <SGEventForGeocode> {
-    NSString *_content;
-    double _creationTimestamp;
-    BOOL _curated;
-    SGDuplicateKey *_duplicateKey;
-    double _lastModifiedTimestamp;
-    NSArray *_locations;
-    SGRecordId *_recordId;
-    NSString *_sourceKey;
-    unsigned int _state;
-    NSData *_structuredData;
-    NSSet *_tags;
-    NSString *_title;
-    SGSimpleTimeRange *_when;
+    NSString * _content;
+    struct SGUnixTimestamp_ { 
+        double secondsFromUnixEpoch; 
+    }  _creationTimestamp;
+    BOOL  _curated;
+    SGDuplicateKey * _duplicateKey;
+    struct SGUnixTimestamp_ { 
+        double secondsFromUnixEpoch; 
+    }  _lastModifiedTimestamp;
+    NSArray * _locations;
+    SGRecordId * _recordId;
+    NSString * _sourceKey;
+    unsigned int  _state;
+    NSData * _structuredData;
+    NSSet * _tags;
+    NSString * _title;
+    SGSimpleTimeRange * _when;
 }
 
 @property (nonatomic, readonly) NSString *content;
-@property (nonatomic, readonly) double creationTimestamp;
+@property (nonatomic, readonly) struct SGUnixTimestamp_ { double x1; } creationTimestamp;
 @property (nonatomic, readonly) BOOL curated;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) SGDuplicateKey *duplicateKey;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly) double lastModifiedTimestamp;
+@property (nonatomic, readonly) struct SGUnixTimestamp_ { double x1; } lastModifiedTimestamp;
 @property (nonatomic, readonly) NSArray *locations;
 @property (nonatomic, readonly) NSString *opaqueKey;
 @property (nonatomic, readonly) SGRecordId *recordId;
@@ -42,7 +46,8 @@
 - (void).cxx_destruct;
 - (id)content;
 - (id)convertToEvent:(id)arg1;
-- (double)creationTimestamp;
+- (id)convertToEventWithOrigin:(id)arg1;
+- (struct SGUnixTimestamp_ { double x1; })creationTimestamp;
 - (BOOL)curated;
 - (id)description;
 - (id)duplicateKey;
@@ -55,14 +60,14 @@
 - (id)geocodeStartTimeZone;
 - (id)geocodedEventWithStartDate:(id)arg1 startTimeZone:(id)arg2 endDate:(id)arg3 endTimeZone:(id)arg4 locations:(id)arg5;
 - (unsigned int)hash;
-- (id)initWithRecordId:(id)arg1 duplicateKey:(id)arg2 sourceKey:(id)arg3 content:(id)arg4 title:(id)arg5 creationTimestamp:(double)arg6 lastModifiedTimestamp:(double)arg7 tags:(id)arg8 when:(id)arg9 locations:(id)arg10 structuredData:(id)arg11 state:(unsigned int)arg12 curated:(BOOL)arg13;
+- (id)initWithRecordId:(id)arg1 duplicateKey:(id)arg2 sourceKey:(id)arg3 content:(id)arg4 title:(id)arg5 creationTimestamp:(struct SGUnixTimestamp_ { double x1; })arg6 lastModifiedTimestamp:(struct SGUnixTimestamp_ { double x1; })arg7 tags:(id)arg8 when:(id)arg9 locations:(id)arg10 structuredData:(id)arg11 state:(unsigned int)arg12 curated:(BOOL)arg13;
 - (BOOL)isAllDay;
 - (BOOL)isCancelled;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToStorageEvent:(id)arg1;
 - (BOOL)isFromDataDetectors;
 - (BOOL)isFromSuggestions;
-- (double)lastModifiedTimestamp;
+- (struct SGUnixTimestamp_ { double x1; })lastModifiedTimestamp;
 - (id)locations;
 - (id)opaqueKey;
 - (id)recordId;
@@ -71,6 +76,7 @@
 - (id)structuredData;
 - (id)tags;
 - (id)title;
+- (id)urlFromTags;
 - (id)when;
 
 @end

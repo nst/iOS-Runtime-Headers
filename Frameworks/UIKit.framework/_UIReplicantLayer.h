@@ -5,7 +5,7 @@
 @interface _UIReplicantLayer : CALayer {
     struct { 
         unsigned int hasSetContents : 1; 
-    } _layerFlags;
+    }  _layerFlags;
 }
 
 - (void)setContents:(id)arg1;

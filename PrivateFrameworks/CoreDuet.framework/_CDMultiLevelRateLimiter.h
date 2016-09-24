@@ -3,13 +3,13 @@
  */
 
 @interface _CDMultiLevelRateLimiter : NSObject <_CDRateLimiting> {
-    NSMutableArray *_balances;
-    NSDate *_lastRecorded;
-    NSArray *_maxCounts;
-    int _numberOfRateLimitPolicies;
-    NSMutableArray *_periodStart;
-    NSArray *_periods;
-    NSObject<OS_dispatch_queue> *_queue;
+    NSMutableArray * _balances;
+    NSDate * _lastRecorded;
+    NSArray * _maxCounts;
+    int  _numberOfRateLimitPolicies;
+    NSMutableArray * _periodStart;
+    NSArray * _periods;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -23,7 +23,6 @@
 - (BOOL)credit;
 - (BOOL)debited;
 - (id)description;
-- (int)getNumRateLimits;
 - (id)init;
 - (id)initWithPeriodToCountMap:(id)arg1;
 - (id)lastRecorded;

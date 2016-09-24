@@ -3,9 +3,9 @@
  */
 
 @interface GKMatchRequest : NSObject {
-    GKMatchRequestInternal *_internal;
-    id /* block */ _inviteeResponseHandler;
-    id /* block */ _recipientResponseHandler;
+    GKMatchRequestInternal * _internal;
+    id /* block */  _inviteeResponseHandler;
+    id /* block */  _recipientResponseHandler;
 }
 
 @property unsigned int defaultNumberOfPlayers;

@@ -3,7 +3,7 @@
  */
 
 @interface _MFSelectMailboxReplayContextTransformation : NSObject <MFOfflineCacheReplayContextTransformation> {
-    NSString *_mailboxID;
+    NSString * _mailboxID;
 }
 
 - (void)applyToReplayContext:(id)arg1;

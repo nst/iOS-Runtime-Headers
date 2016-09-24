@@ -3,9 +3,9 @@
  */
 
 @interface WBSCloudHistoryPushAgent : NSObject <APSConnectionDelegate, NSXPCListenerDelegate, WBSCloudHistoryPushAgent> {
-    APSConnection *_pushConnection;
-    NSObject<OS_dispatch_queue> *_pushNotificationStateQueue;
-    NSXPCListener *_xpcListener;
+    APSConnection * _pushConnection;
+    NSObject<OS_dispatch_queue> * _pushNotificationStateQueue;
+    NSXPCListener * _xpcListener;
 }
 
 @property (setter=_setHasAcknowlegedPushNotifications:, nonatomic) BOOL _hasAcknowledgedPushNotifications;

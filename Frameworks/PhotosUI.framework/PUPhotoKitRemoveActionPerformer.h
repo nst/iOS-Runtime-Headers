@@ -3,8 +3,8 @@
  */
 
 @interface PUPhotoKitRemoveActionPerformer : PUPhotoKitActionPerformer <PUAssetActionPerformerDelegate> {
-    NSDictionary *_fetchResultsByAssetCollection;
-    PUPhotoKitTrashActionPerformer *_trashActionPerformer;
+    NSDictionary * _fetchResultsByAssetCollection;
+    PUPhotoKitTrashActionPerformer * _trashActionPerformer;
 }
 
 @property (readonly, copy) NSString *debugDescription;

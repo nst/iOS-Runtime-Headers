@@ -3,9 +3,9 @@
  */
 
 @interface PUOperationStatus : NSObject <NSCopying> {
-    NSError *_error;
-    double _progress;
-    int _state;
+    NSError * _error;
+    double  _progress;
+    int  _state;
 }
 
 @property (nonatomic, readonly) NSError *error;

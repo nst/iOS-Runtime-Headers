@@ -3,7 +3,7 @@
  */
 
 @interface _UIPropertyBasedAppearance : _UIAppearance {
-    NSDictionary *_propertiesToMatch;
+    NSDictionary * _propertiesToMatch;
 }
 
 @property (setter=_setPropertiesToMatch:, nonatomic, retain) NSDictionary *_propertiesToMatch;

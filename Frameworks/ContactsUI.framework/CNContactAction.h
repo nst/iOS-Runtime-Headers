@@ -3,14 +3,14 @@
  */
 
 @interface CNContactAction : NSObject {
-    UIColor *_color;
-    CNContact *_contact;
-    <CNContactActionDelegate> *_delegate;
-    BOOL _destructive;
-    SEL _selector;
-    id _target;
-    NSString *_title;
-    int _transportType;
+    UIColor * _color;
+    CNContact * _contact;
+    <CNContactActionDelegate> * _delegate;
+    BOOL  _destructive;
+    SEL  _selector;
+    id  _target;
+    NSString * _title;
+    int  _transportType;
 }
 
 @property (nonatomic, retain) UIColor *color;

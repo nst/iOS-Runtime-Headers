@@ -3,7 +3,7 @@
  */
 
 @interface _UIWeakHelper : NSObject {
-    id /* block */ _deallocationBlock;
+    id /* block */  _deallocationBlock;
 }
 
 @property (nonatomic, copy) id /* block */ deallocationBlock;

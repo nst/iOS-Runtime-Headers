@@ -3,7 +3,7 @@
  */
 
 @interface _MKSearchFieldPlaceholderTicket : NSObject <MKMapServiceSearchFieldPlaceholderTicket> {
-    <GEOMapServiceSearchFieldPlaceholderTicket> *_ticket;
+    <GEOMapServiceSearchFieldPlaceholderTicket> * _ticket;
 }
 
 @property (readonly, copy) NSString *debugDescription;

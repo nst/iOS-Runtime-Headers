@@ -3,8 +3,8 @@
  */
 
 @interface PLCameraPreviewImageWellChangeNotification : PLChangeNotification {
-    UIImage *_image;
-    NSString *_uuid;
+    UIImage * _image;
+    NSString * _uuid;
 }
 
 @property (nonatomic, readonly, retain) NSString *assetUUID;

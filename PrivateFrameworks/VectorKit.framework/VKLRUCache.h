@@ -3,13 +3,13 @@
  */
 
 @interface VKLRUCache : NSObject <NSFastEnumeration> {
-    unsigned int _count;
-    <VKLRUCacheDelegate> *_delegate;
-    id _head;
-    unsigned int _maximumCapacity;
-    unsigned int _reservedCapacity;
-    void *_table;
-    id _tail;
+    unsigned int  _count;
+    <VKLRUCacheDelegate> * _delegate;
+    id  _head;
+    unsigned int  _maximumCapacity;
+    unsigned int  _reservedCapacity;
+    void * _table;
+    id  _tail;
 }
 
 @property (nonatomic, readonly) unsigned int count;

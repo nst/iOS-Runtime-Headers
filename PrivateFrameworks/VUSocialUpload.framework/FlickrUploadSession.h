@@ -3,7 +3,7 @@
  */
 
 @interface FlickrUploadSession : NSObject {
-    <FlickrRemoteSessionProtocol> *_remoteSession;
+    <FlickrRemoteSessionProtocol> * _remoteSession;
 }
 
 + (id)sharedSession;

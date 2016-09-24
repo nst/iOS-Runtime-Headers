@@ -3,13 +3,13 @@
  */
 
 @interface HAPRelayAccessory : HAPAccessory <HAPAccessoryServerInternalDelegate, HAPRelayActivationClientDelegate, HAPRelayPairingClientDelegate> {
-    NSString *_relayAccessoryIdentifier;
-    HAPRelayActivationClient *_relayActivationClient;
-    HAPCharacteristic *_relayControlPointCharacteristic;
-    BOOL _relayEnabled;
-    HAPCharacteristic *_relayEnabledCharacteristic;
-    HAPRelayPairingClient *_relayPairingClient;
-    unsigned int _relayState;
+    NSString * _relayAccessoryIdentifier;
+    HAPRelayActivationClient * _relayActivationClient;
+    HAPCharacteristic * _relayControlPointCharacteristic;
+    BOOL  _relayEnabled;
+    HAPCharacteristic * _relayEnabledCharacteristic;
+    HAPRelayPairingClient * _relayPairingClient;
+    unsigned int  _relayState;
 }
 
 @property (readonly, copy) NSString *debugDescription;

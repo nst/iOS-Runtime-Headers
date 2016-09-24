@@ -3,9 +3,9 @@
  */
 
 @interface GKBubbleSet : NSObject {
-    GKBubbleFlowBubbleControl *_bubbleControls;
-    NSString *_debuggingTag;
-    int _supportedBubbles;
+    GKBubbleFlowBubbleControl * _bubbleControls;
+    NSString * _debuggingTag;
+    int  _supportedBubbles;
 }
 
 @property (nonatomic, readonly) NSArray *bubbleControls;

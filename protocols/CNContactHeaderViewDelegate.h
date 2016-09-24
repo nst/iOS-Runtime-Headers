@@ -6,7 +6,6 @@
 @required
 
 - (CNContactStore *)contactStoreForHeaderView:(CNContactHeaderView *)arg1;
-- (void)headerHeightDidChange;
 - (void)headerPhotoDidUpdate;
 - (UIViewController *)viewControllerForHeaderView:(CNContactHeaderView *)arg1;
 

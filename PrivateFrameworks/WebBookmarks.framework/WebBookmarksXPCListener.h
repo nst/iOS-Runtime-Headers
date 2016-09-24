@@ -3,10 +3,10 @@
  */
 
 @interface WebBookmarksXPCListener : NSObject <WebBookmarksXPCConnectionDelegate> {
-    NSMutableArray *_clientConnections;
-    <WebBookmarksXPCConnectionDelegate> *_delegate;
-    NSObject<OS_xpc_object> *_listenerConnection;
-    NSMutableDictionary *_messageHandlers;
+    NSMutableArray * _clientConnections;
+    <WebBookmarksXPCConnectionDelegate> * _delegate;
+    NSObject<OS_xpc_object> * _listenerConnection;
+    NSMutableDictionary * _messageHandlers;
 }
 
 @property (readonly, copy) NSString *debugDescription;

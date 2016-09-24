@@ -3,12 +3,12 @@
  */
 
 @interface CKDPTokenRegistrationBody : PBCodable <NSCopying> {
-    int _apnsEnv;
-    NSString *_bundleIdentifier;
+    int  _apnsEnv;
+    NSString * _bundleIdentifier;
     struct { 
         unsigned int apnsEnv : 1; 
-    } _has;
-    NSData *_token;
+    }  _has;
+    NSData * _token;
 }
 
 @property (nonatomic) int apnsEnv;
@@ -19,7 +19,9 @@
 @property (nonatomic, retain) NSData *token;
 
 - (void).cxx_destruct;
+- (int)StringAsApnsEnv:(id)arg1;
 - (int)apnsEnv;
+- (id)apnsEnvAsString:(int)arg1;
 - (id)bundleIdentifier;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

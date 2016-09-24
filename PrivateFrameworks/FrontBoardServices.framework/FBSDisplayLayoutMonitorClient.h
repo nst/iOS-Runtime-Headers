@@ -3,12 +3,12 @@
  */
 
 @interface FBSDisplayLayoutMonitorClient : FBSSystemServiceFacilityClient {
-    <FBSDisplayLayoutMonitorClientDelegate> *_delegate;
+    <FBSDisplayLayoutMonitorClientDelegate> * _delegate;
 }
 
 - (void)_handleDisplayLayoutUpdate:(id)arg1;
 - (void)configureConnectMessage:(id)arg1;
-- (void)handleMessage:(id)arg1 withType:(long long)arg2;
+- (void)handleMessage:(id)arg1 withType:(int)arg2;
 - (id)initWithDelegate:(id)arg1 calloutQueue:(id)arg2;
 - (void)invalidate;
 

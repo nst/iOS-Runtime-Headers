@@ -3,10 +3,10 @@
  */
 
 @interface TSUDateParser : NSObject {
-    NSMutableArray *mFormatCategories;
-    BOOL mIsJapaneseLocale;
-    TSULocale *mLocale;
-    struct __CFDateFormatter { } *mSpecialCaseFormatter;
+    NSMutableArray * mFormatCategories;
+    BOOL  mIsJapaneseLocale;
+    TSULocale * mLocale;
+    struct __CFDateFormatter { } * mSpecialCaseFormatter;
 }
 
 - (void)addFormat:(id)arg1 locale:(struct __CFLocale { }*)arg2 formatCategoryMap:(id)arg3;

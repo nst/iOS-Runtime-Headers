@@ -18,7 +18,6 @@
 - (void)_daemonDisconnected:(id)arg1;
 - (void)_statusImageAppearanceChanged:(id)arg1;
 - (void)dealloc;
-- (void)finalize;
 - (id)init;
 - (void)launchIfNecessary;
 - (id)myAvailableMessages;
@@ -29,7 +28,7 @@
 - (void)setMyAwayMessages:(id)arg1;
 - (void)setMyStatus:(unsigned int)arg1 message:(id)arg2;
 - (void)setupComplete;
-- (unsigned long long)vcCapabilities;
-- (void)vcCapabilitiesChanged:(unsigned long long)arg1;
+- (unsigned int)vcCapabilities;
+- (void)vcCapabilitiesChanged:(unsigned int)arg1;
 
 @end

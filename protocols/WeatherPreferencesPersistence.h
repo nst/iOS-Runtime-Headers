@@ -13,6 +13,6 @@
 - (void)setBool:(BOOL)arg1 forKey:(NSString *)arg2;
 - (void)setObject:(id)arg1 forKey:(NSString *)arg2;
 - (NSString *)stringForKey:(NSString *)arg1;
-- (void)synchronize;
+- (BOOL)synchronize;
 
 @end

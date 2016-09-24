@@ -3,22 +3,22 @@
  */
 
 @interface EKEditItemViewController : UIViewController <EKEditItemViewControllerProtocol> {
-    <EKEditItemViewControllerDelegate> *_editDelegate;
+    <EKEditItemViewControllerDelegate> * _editDelegate;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } _initialFrame;
-    BOOL _modal;
-    EKUIRecurrenceAlertController *_recurrenceAlertController;
-    BOOL _showsDoneButton;
-    <EKStyleProvider> *_styleProvider;
-    unsigned int _subitem;
+    }  _initialFrame;
+    BOOL  _modal;
+    EKUIRecurrenceAlertController * _recurrenceAlertController;
+    BOOL  _showsDoneButton;
+    <EKStyleProvider> * _styleProvider;
+    unsigned int  _subitem;
 }
 
 @property (nonatomic) <EKEditItemViewControllerDelegate> *editDelegate;
@@ -27,6 +27,7 @@
 @property (nonatomic) BOOL presentModally;
 @property (nonatomic) BOOL showsDoneButton;
 @property (nonatomic) unsigned int subitem;
+@property (nonatomic) BOOL useCustomBackButton;
 
 - (void).cxx_destruct;
 - (void)_saveAndDismissWithForce:(BOOL)arg1;
@@ -34,12 +35,12 @@
 - (void)didReceiveMemoryWarning;
 - (id)editDelegate;
 - (BOOL)fitsPopoverWhenKeyboardActive;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 styleProvider:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 styleProvider:(id)arg2;
 - (float)marginForTableView:(id)arg1;
 - (BOOL)modal;
 - (void)popIfNonModal;
-- (struct CGSize { float x1; float x2; })preferredContentSize;
+- (struct CGSize { double x1; double x2; })preferredContentSize;
 - (void)saveAndDismiss;
 - (void)saveAndDismissWithExtremePrejudice;
 - (void)setCell:(id)arg1 checked:(BOOL)arg2;

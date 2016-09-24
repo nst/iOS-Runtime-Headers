@@ -3,24 +3,24 @@
  */
 
 @interface PKPaymentWebServiceContext : NSObject <NSSecureCoding> {
-    NSArray *_certificates;
-    PKPaymentWebServiceConfiguration *_configuration;
-    NSDate *_configurationDate;
-    int _consistencyCheckBackoffLevel;
-    BOOL _devSigned;
-    NSString *_deviceID;
-    BOOL _ignoreProvisioningEnablementPercentage;
-    NSString *_lastUpdatedTag;
-    BOOL _messageServiceDisabled;
-    NSString *_primaryRegionIdentifier;
-    NSString *_pushToken;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSDictionary *_regions;
-    NSDate *_registrationDate;
-    NSString *_secureElementID;
-    BOOL _transactionServiceDisabled;
-    NSMutableDictionary *_verificationRequestsByPassUniqueID;
-    int _version;
+    NSArray * _certificates;
+    PKPaymentWebServiceConfiguration * _configuration;
+    NSDate * _configurationDate;
+    int  _consistencyCheckBackoffLevel;
+    BOOL  _devSigned;
+    NSString * _deviceID;
+    BOOL  _ignoreProvisioningEnablementPercentage;
+    NSString * _lastUpdatedTag;
+    BOOL  _messageServiceDisabled;
+    NSString * _primaryRegionIdentifier;
+    NSString * _pushToken;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSDictionary * _regions;
+    NSDate * _registrationDate;
+    NSString * _secureElementID;
+    BOOL  _transactionServiceDisabled;
+    NSMutableDictionary * _verificationRequestsByPassUniqueID;
+    int  _version;
 }
 
 @property (readonly) NSDictionary *TSMURLStringByPushTopic;
@@ -48,6 +48,7 @@
 + (id)contextWithArchive:(id)arg1;
 + (BOOL)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)TSMPushTopics;
 - (id)TSMURLStringByPushTopic;
 - (double)_contextProvisioningEnablementValue;
@@ -57,8 +58,7 @@
 - (id)configuration;
 - (id)configurationDate;
 - (int)consistencyCheckBackoffLevel;
-- (BOOL)contextMeetsProvisioningEnablementPercentageThreshold;
-- (void)dealloc;
+- (BOOL)contextMeetsProvisioningEnablementPercentageThresholdForRegion:(id)arg1;
 - (BOOL)devSigned;
 - (id)deviceID;
 - (void)encodeWithCoder:(id)arg1;

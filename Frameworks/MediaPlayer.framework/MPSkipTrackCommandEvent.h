@@ -3,7 +3,7 @@
  */
 
 @interface MPSkipTrackCommandEvent : MPRemoteCommandEvent {
-    BOOL _requestingDefermentToPlaybackQueuePosition;
+    BOOL  _requestingDefermentToPlaybackQueuePosition;
 }
 
 @property (getter=isRequestingDefermentToPlaybackQueuePosition, nonatomic, readonly) BOOL requestingDefermentToPlaybackQueuePosition;

@@ -3,9 +3,9 @@
  */
 
 @interface AUAudioUnitProperty : NSObject <NSSecureCoding> {
-    unsigned long _element;
-    NSString *_key;
-    unsigned long _scope;
+    unsigned long  _element;
+    NSString * _key;
+    unsigned long  _scope;
 }
 
 + (id)propertyWithKey:(id)arg1;

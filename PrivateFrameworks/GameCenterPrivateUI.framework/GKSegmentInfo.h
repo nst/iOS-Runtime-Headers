@@ -3,10 +3,10 @@
  */
 
 @interface GKSegmentInfo : NSObject <_GKStateMachineDelegate> {
-    GKCollectionViewDataSource *_dataSource;
-    <GKSegmentInfoDelegagte> *_delegateWeak;
-    GKPlaceholderContentStateMachine *_loadingMatchine;
-    NSString *_title;
+    GKCollectionViewDataSource * _dataSource;
+    <GKSegmentInfoDelegagte> * _delegateWeak;
+    GKPlaceholderContentStateMachine * _loadingMatchine;
+    NSString * _title;
 }
 
 @property (nonatomic, retain) GKCollectionViewDataSource *dataSource;

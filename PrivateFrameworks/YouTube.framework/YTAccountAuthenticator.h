@@ -3,10 +3,10 @@
  */
 
 @interface YTAccountAuthenticator : NSObject <NSURLConnectionDelegate> {
-    NSString *_account;
-    NSString *_accountRefreshToken;
-    NSString *_accountToken;
-    NSString *_accountYouTubeName;
+    NSString * _account;
+    NSString * _accountRefreshToken;
+    NSString * _accountToken;
+    NSString * _accountYouTubeName;
 }
 
 @property (nonatomic, retain) NSString *account;

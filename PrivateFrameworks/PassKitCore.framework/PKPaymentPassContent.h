@@ -3,13 +3,13 @@
  */
 
 @interface PKPaymentPassContent : PKPassContent <NSSecureCoding> {
-    NSString *_appURLScheme;
-    NSString *_cobrandName;
-    NSDictionary *_localizedSuspendedReasonsByAID;
-    NSString *_messagePushTopic;
-    NSURL *_messageServiceURL;
-    NSString *_transactionPushTopic;
-    NSURL *_transactionServiceURL;
+    NSString * _appURLScheme;
+    NSString * _cobrandName;
+    NSDictionary * _localizedSuspendedReasonsByAID;
+    NSString * _messagePushTopic;
+    NSURL * _messageServiceURL;
+    NSString * _transactionPushTopic;
+    NSURL * _transactionServiceURL;
 }
 
 @property (nonatomic, copy) NSString *appURLScheme;
@@ -22,9 +22,9 @@
 
 + (BOOL)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)appURLScheme;
 - (id)cobrandName;
-- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1 bundle:(id)arg2;

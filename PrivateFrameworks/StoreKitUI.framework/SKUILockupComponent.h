@@ -3,20 +3,20 @@
  */
 
 @interface SKUILockupComponent : SKUIPageComponent {
-    SKUIEditorialComponent *_editorial;
-    SKUIItem *_item;
-    long long _itemIdentifier;
+    SKUIEditorialComponent * _editorial;
+    SKUIItem * _item;
+    int  _itemIdentifier;
     struct SKUILockupStyle { 
         int artworkSize; 
         int layoutStyle; 
         unsigned int visibleFields; 
-    } _lockupStyle;
+    }  _lockupStyle;
 }
 
 @property (nonatomic, readonly) BOOL _needsItemData;
 @property (nonatomic, readonly) SKUIEditorialComponent *editorial;
 @property (nonatomic, readonly) SKUIItem *item;
-@property (nonatomic, readonly) long long itemIdentifier;
+@property (nonatomic, readonly) int itemIdentifier;
 @property (nonatomic, readonly) struct SKUILockupStyle { int x1; int x2; unsigned int x3; } lockupStyle;
 @property (nonatomic, readonly) SKUILockupViewElement *viewElement;
 
@@ -28,10 +28,10 @@
 - (id)editorial;
 - (id)initWithCustomPageContext:(id)arg1;
 - (id)initWithItem:(id)arg1 style:(struct SKUILockupStyle { int x1; int x2; unsigned int x3; })arg2;
-- (id)initWithItemIdentifier:(long long)arg1 style:(struct SKUILockupStyle { int x1; int x2; unsigned int x3; })arg2;
+- (id)initWithItemIdentifier:(int)arg1 style:(struct SKUILockupStyle { int x1; int x2; unsigned int x3; })arg2;
 - (id)initWithViewElement:(id)arg1;
 - (id)item;
-- (long long)itemIdentifier;
+- (int)itemIdentifier;
 - (struct SKUILockupStyle { int x1; int x2; unsigned int x3; })lockupStyle;
 
 @end

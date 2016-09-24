@@ -3,9 +3,9 @@
  */
 
 @interface CISkyAndGrassAdjust : CIFilter {
-    NSNumber *inputGrassAmount;
-    CIImage *inputImage;
-    NSNumber *inputSkyAmount;
+    NSNumber * inputGrassAmount;
+    CIImage * inputImage;
+    NSNumber * inputSkyAmount;
 }
 
 @property (nonatomic, retain) NSNumber *inputGrassAmount;

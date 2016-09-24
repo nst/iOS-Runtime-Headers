@@ -3,11 +3,11 @@
  */
 
 @interface PDParagraphBuild : PDBuild {
-    double mAutoAdvanceTime;
-    int mBuildLevel;
-    BOOL mIsReversedParagraphOrder;
-    NSMutableArray *mTimeNodeDataList;
-    int mType;
+    double  mAutoAdvanceTime;
+    int  mBuildLevel;
+    BOOL  mIsReversedParagraphOrder;
+    NSMutableArray * mTimeNodeDataList;
+    int  mType;
 }
 
 - (id)addTimeNodeData;

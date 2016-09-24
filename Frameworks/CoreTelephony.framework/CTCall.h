@@ -3,14 +3,15 @@
  */
 
 @interface CTCall : NSObject {
-    NSString *_callID;
-    NSString *_callState;
+    NSString * _callID;
+    NSString * _callState;
 }
 
 @property (nonatomic, copy) NSString *callID;
 @property (nonatomic, copy) NSString *callState;
 
 + (id)callForCTCallRef:(struct __CTCall { }*)arg1;
++ (id)callForCXCall:(id)arg1;
 
 - (id)callID;
 - (id)callState;

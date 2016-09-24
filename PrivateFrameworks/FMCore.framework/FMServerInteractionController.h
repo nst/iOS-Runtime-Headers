@@ -3,11 +3,11 @@
  */
 
 @interface FMServerInteractionController : NSObject <NSURLSessionDelegate, NSURLSessionTaskDelegate> {
-    NSOperationQueue *_queue;
-    NSURLSession *_session;
-    NSURLSessionConfiguration *_sessionConfiguration;
-    NSObject<OS_dispatch_queue> *dq_inFlightCommands;
-    NSMutableSet *inFlightCommands;
+    NSOperationQueue * _queue;
+    NSURLSession * _session;
+    NSURLSessionConfiguration * _sessionConfiguration;
+    NSObject<OS_dispatch_queue> * dq_inFlightCommands;
+    NSMutableSet * inFlightCommands;
 }
 
 @property (readonly, copy) NSString *debugDescription;

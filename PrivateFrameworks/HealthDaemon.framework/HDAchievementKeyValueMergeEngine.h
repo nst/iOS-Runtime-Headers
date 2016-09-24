@@ -8,7 +8,6 @@
 + (id)_codableTimestampedKeyValuePairsGroupedByKey:(id)arg1;
 + (BOOL)_didDetectStreakResetForKey:(id)arg1 withIncoming:(id)arg2 existing:(id)arg3;
 + (unsigned int)_mergeStrategyForKey:(id)arg1;
-+ (unsigned int)_mergeStrategyForVariableKey:(id)arg1;
 + (BOOL)_shouldOverrideMergeStrategyWithKey:(id)arg1 withIncoming:(id)arg2 existing:(id)arg3;
 + (id)filteredKeysToPersistForAchievementDoctor:(id)arg1;
 + (id)mergeKeyValuesFromSet:(id)arg1 intoSet:(id)arg2 nowDate:(id)arg3;

@@ -3,9 +3,9 @@
  */
 
 @interface EPTableStyleFlattener : EPStyleFlattener {
-    unsigned int mHeaderRowCount;
-    EDTable *mTable;
-    unsigned int mTotalsRowCount;
+    unsigned int  mHeaderRowCount;
+    EDTable * mTable;
+    unsigned int  mTotalsRowCount;
 }
 
 - (int)borderFlagsForStyleType:(int)arg1 row:(int)arg2 column:(int)arg3;

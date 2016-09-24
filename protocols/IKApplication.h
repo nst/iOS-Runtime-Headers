@@ -9,6 +9,7 @@
 - (NSURL *)appJSURL;
 - (<IKAppDataStoring> *)localStorage;
 - (BOOL)shouldIgnoreJSValidation;
+- (<IKAppUserDefaultsStoring> *)userDefaultsStorage;
 - (NSString *)vendorIdentifier;
 - (<IKAppDataStoring> *)vendorStorage;
 
@@ -17,5 +18,6 @@
 - (IKAppDocument *)activeDocument;
 - (BOOL)appIsTrusted;
 - (NSDictionary *)appLaunchParams;
+- (BOOL)shouldAllowRemoteInspection;
 
 @end

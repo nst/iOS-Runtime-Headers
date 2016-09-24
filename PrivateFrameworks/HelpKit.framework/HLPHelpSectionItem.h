@@ -3,8 +3,8 @@
  */
 
 @interface HLPHelpSectionItem : HLPHelpItem {
-    NSArray *_children;
-    BOOL _open;
+    NSArray * _children;
+    BOOL  _open;
 }
 
 @property (nonatomic, copy) NSArray *children;

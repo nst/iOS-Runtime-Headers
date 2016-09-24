@@ -3,7 +3,7 @@
  */
 
 @interface CRKInstructorExtensionContext : NSExtensionContext <CRKInstructorExtensionVendor, NSXPCListenerDelegate> {
-    NSXPCListener *mListener;
+    NSXPCListener * mListener;
 }
 
 @property (readonly, copy) NSString *debugDescription;

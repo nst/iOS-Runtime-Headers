@@ -3,8 +3,8 @@
  */
 
 @interface GEOStorageCompletion : PBCodable <NSCopying> {
-    GEOPDAutocompleteEntry *_autocompleteEntry;
-    PBUnknownFields *_unknownFields;
+    GEOPDAutocompleteEntry * _autocompleteEntry;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, retain) GEOPDAutocompleteEntry *autocompleteEntry;

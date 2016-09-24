@@ -3,20 +3,21 @@
  */
 
 @interface TIKeyboardCandidateResultSet : NSObject <NSCopying, NSSecureCoding> {
-    TIKeyboardCandidate *_acceptedCandidate;
-    unsigned int _batchCandidateLocation;
-    NSArray *_candidates;
-    TIKeyboardCandidate *_defaultCandidate;
-    BOOL _excludedExtensionCandidates;
-    unsigned int _generatedCandidateCount;
-    NSDictionary *_indexTitles;
-    unsigned int _initialSelectedIndex;
-    NSArray *_initiallyHiddenCandidates;
-    unsigned int _selectedHiddenCandidateIndex;
-    NSDictionary *_showExtensionCandidates;
-    NSDictionary *_sortMethodGroups;
-    NSArray *_sortMethods;
-    TIKeyboardIntermediateText *_uncommittedText;
+    TIKeyboardCandidate * _acceptedCandidate;
+    unsigned int  _batchCandidateLocation;
+    NSArray * _candidates;
+    TIKeyboardCandidate * _defaultCandidate;
+    BOOL  _excludedExtensionCandidates;
+    unsigned int  _generatedCandidateCount;
+    NSDictionary * _indexTitles;
+    unsigned int  _initialSelectedIndex;
+    NSArray * _initiallyHiddenCandidates;
+    NSArray * _proactiveTriggers;
+    unsigned int  _selectedHiddenCandidateIndex;
+    NSDictionary * _showExtensionCandidates;
+    NSDictionary * _sortMethodGroups;
+    NSArray * _sortMethods;
+    TIKeyboardIntermediateText * _uncommittedText;
 }
 
 @property (nonatomic, retain) TIKeyboardCandidate *acceptedCandidate;
@@ -28,12 +29,16 @@
 @property (nonatomic) unsigned int generatedCandidateCount;
 @property (nonatomic, readonly) BOOL hasCandidates;
 @property (nonatomic, readonly) BOOL hasMetadata;
+@property (nonatomic, readonly) BOOL hasOnlyProactiveCandidates;
+@property (nonatomic, readonly) BOOL hasOnlySlottedCandidates;
 @property (nonatomic, retain) NSDictionary *indexTitles;
 @property (nonatomic) unsigned int initialSelectedIndex;
 @property (nonatomic, retain) NSArray *initiallyHiddenCandidates;
 @property (nonatomic, readonly) BOOL isDummySet;
+@property (nonatomic, readonly) NSArray *proactiveTriggers;
 @property (nonatomic) unsigned int selectedHiddenCandidateIndex;
 @property (nonatomic, retain) NSDictionary *showExtensionCandidates;
+@property (nonatomic, readonly) unsigned int slottedCandidatesCount;
 @property (nonatomic, retain) NSDictionary *sortMethodGroups;
 @property (nonatomic, retain) NSArray *sortMethods;
 @property (nonatomic, retain) TIKeyboardIntermediateText *uncommittedText;
@@ -43,6 +48,8 @@
 + (id)dummySet;
 + (id)setWithCandidates:(id)arg1;
 + (id)setWithCandidates:(id)arg1 initialSelectedIndex:(unsigned int)arg2 defaultCandidate:(id)arg3 sortMethods:(id)arg4 sortMethodGroups:(id)arg5 indexTitles:(id)arg6 showExtensionCandidates:(id)arg7 initiallyHiddenCandidates:(id)arg8 selectedHiddenCandidateIndex:(unsigned int)arg9;
++ (id)setWithCandidates:(id)arg1 initialSelectedIndex:(unsigned int)arg2 defaultCandidate:(id)arg3 sortMethods:(id)arg4 sortMethodGroups:(id)arg5 indexTitles:(id)arg6 showExtensionCandidates:(id)arg7 initiallyHiddenCandidates:(id)arg8 selectedHiddenCandidateIndex:(unsigned int)arg9 proactiveTriggers:(id)arg10;
++ (id)setWithCandidates:(id)arg1 proactiveTriggers:(id)arg2;
 + (BOOL)supportsSecureCoding;
 
 - (id)acceptedCandidate;
@@ -57,8 +64,9 @@
 - (unsigned int)generatedCandidateCount;
 - (BOOL)hasCandidates;
 - (BOOL)hasMetadata;
+- (BOOL)hasOnlyProactiveCandidates;
 - (id)indexTitles;
-- (id)initWithCandidates:(id)arg1 initialSelectedIndex:(unsigned int)arg2 defaultCandidate:(id)arg3 sortMethods:(id)arg4 sortMethodGroups:(id)arg5 indexTitles:(id)arg6 showExtensionCandidates:(id)arg7 initiallyHiddenCandidates:(id)arg8 selectedHiddenCandidateIndex:(unsigned int)arg9;
+- (id)initWithCandidates:(id)arg1 initialSelectedIndex:(unsigned int)arg2 defaultCandidate:(id)arg3 sortMethods:(id)arg4 sortMethodGroups:(id)arg5 indexTitles:(id)arg6 showExtensionCandidates:(id)arg7 initiallyHiddenCandidates:(id)arg8 selectedHiddenCandidateIndex:(unsigned int)arg9 proactiveTriggers:(id)arg10;
 - (id)initWithCoder:(id)arg1;
 - (unsigned int)initialSelectedIndex;
 - (id)initiallyHiddenCandidates;
@@ -66,6 +74,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isSubsetOf:(id)arg1;
 - (unsigned int)positionInCandidateList:(id)arg1;
+- (id)proactiveTriggers;
 - (unsigned int)selectedHiddenCandidateIndex;
 - (void)setAcceptedCandidate:(id)arg1;
 - (void)setBatchCandidateLocation:(unsigned int)arg1;
@@ -91,5 +100,7 @@
 
 - (id)candidateGroupsForSortIndex:(int)arg1;
 - (BOOL)candidatesForSortIndexShowAlternativeText:(int)arg1;
+- (BOOL)hasOnlySlottedCandidates;
+- (unsigned int)slottedCandidatesCount;
 
 @end

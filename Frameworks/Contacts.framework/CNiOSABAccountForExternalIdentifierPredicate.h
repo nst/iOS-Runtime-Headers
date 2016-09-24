@@ -3,7 +3,7 @@
  */
 
 @interface CNiOSABAccountForExternalIdentifierPredicate : CNPredicate <CNiOSAccountPredicate> {
-    NSString *_externalIdentifier;
+    NSString * _externalIdentifier;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -12,9 +12,14 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
++ (BOOL)supportsSecureCoding;
+
 - (struct __CFArray { }*)cn_copyAccountsInAddressBook:(void*)arg1 error:(struct __CFError {}**)arg2;
 - (void)dealloc;
+- (void)encodeWithCoder:(id)arg1;
 - (id)externalIdentifier;
 - (id)initWithAccountExternalIdentifier:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithPredicate:(id)arg1;
 
 @end

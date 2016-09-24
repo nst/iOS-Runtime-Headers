@@ -3,8 +3,8 @@
  */
 
 @interface TSCH3DSceneRenderCache : NSObject {
-    TSCH3DDictionaryOfDictionary *mCache;
-    NSMutableSet *mEnabledKeys;
+    TSCH3DDictionaryOfDictionary * mCache;
+    NSMutableSet * mEnabledKeys;
 }
 
 + (id)cache;

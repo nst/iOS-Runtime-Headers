@@ -3,17 +3,17 @@
  */
 
 @interface _UIDynamicValueAnimation : _UIDynamicAnimation {
-    NSMutableArray *_activeValues;
-    id /* block */ _applier;
-    double _decelerationFactor;
-    double _decelerationLnFactor;
-    double _friction;
-    double _multiplier;
-    void *_stepFunction;
-    double _unitSize;
-    double _value;
-    double _velocity;
-    id /* block */ _viewApplier;
+    NSMutableArray * _activeValues;
+    id /* block */  _applier;
+    double  _decelerationFactor;
+    double  _decelerationLnFactor;
+    double  _friction;
+    double  _multiplier;
+    void * _stepFunction;
+    double  _unitSize;
+    double  _value;
+    double  _velocity;
+    id /* block */  _viewApplier;
 }
 
 @property (nonatomic, copy) NSArray *activeValues;

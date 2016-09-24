@@ -3,8 +3,8 @@
  */
 
 @interface LKClassGroup : NSObject <NSSecureCoding> {
-    NSString *_classGroupName;
-    NSArray *_classes;
+    NSString * _classGroupName;
+    NSArray * _classes;
 }
 
 @property (nonatomic, readonly, copy) NSString *classGroupName;
@@ -18,5 +18,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithClassGroupDictionary:(id)arg1 classesDictionaryByClassID:(id)arg2;
 - (id)initWithCoder:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isEqualToLKClassGroup:(id)arg1;
 
 @end

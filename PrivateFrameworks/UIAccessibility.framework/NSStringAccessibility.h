@@ -7,9 +7,11 @@
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
 
-- (id)copy;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)initWithFormat:(id)arg1 locale:(id)arg2 arguments:(void*)arg3;
 - (id)initWithString:(id)arg1;
+- (id)lowercaseStringWithLocale:(id)arg1;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (id)stringByReplacingOccurrencesOfString:(id)arg1 withString:(id)arg2 options:(unsigned int)arg3 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4;
+- (id)uppercaseStringWithLocale:(id)arg1;
 
 @end

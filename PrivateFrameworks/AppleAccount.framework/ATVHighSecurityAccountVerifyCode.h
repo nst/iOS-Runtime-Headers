@@ -3,7 +3,7 @@
  */
 
 @interface ATVHighSecurityAccountVerifyCode : ATVHighSecurityAccountSendCode {
-    NSString *_hsaCode;
+    NSString * _hsaCode;
 }
 
 + (Class)responseClass;

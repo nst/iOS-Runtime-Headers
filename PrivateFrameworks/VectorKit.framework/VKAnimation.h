@@ -3,12 +3,12 @@
  */
 
 @interface VKAnimation : NSObject {
-    id /* block */ _completionHandler;
-    NSString *_name;
-    int _priority;
-    <VKAnimationRunner> *_runner;
-    BOOL _runsForever;
-    int _state;
+    id /* block */  _completionHandler;
+    NSString * _name;
+    int  _priority;
+    <VKAnimationRunner> * _runner;
+    BOOL  _runsForever;
+    int  _state;
 }
 
 @property (nonatomic, copy) id /* block */ completionHandler;

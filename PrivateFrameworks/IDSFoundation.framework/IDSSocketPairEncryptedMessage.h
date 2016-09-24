@@ -3,7 +3,7 @@
  */
 
 @interface IDSSocketPairEncryptedMessage : IDSSocketPairMessage {
-    NSData *_data;
+    NSData * _data;
 }
 
 @property (nonatomic, readonly, retain) NSData *data;

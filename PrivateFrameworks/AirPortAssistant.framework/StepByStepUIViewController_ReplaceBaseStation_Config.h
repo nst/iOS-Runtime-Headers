@@ -3,9 +3,9 @@
  */
 
 @interface StepByStepUIViewController_ReplaceBaseStation_Config : StepByStepUIViewController_DevicePicker <StepByStepUIDevicePicker> {
-    UIView *justTextContainerView2;
-    UILabel *justTextLabel2;
-    NSString *personalizedBaseName;
+    UIView * justTextContainerView2;
+    UILabel * justTextLabel2;
+    NSString * personalizedBaseName;
 }
 
 @property (nonatomic, retain) UIView *justTextContainerView2;

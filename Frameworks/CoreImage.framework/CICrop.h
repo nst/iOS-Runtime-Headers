@@ -3,8 +3,8 @@
  */
 
 @interface CICrop : CIFilter <_CIFilterProperties> {
-    CIImage *inputImage;
-    CIVector *inputRectangle;
+    CIImage * inputImage;
+    CIVector * inputRectangle;
 }
 
 @property (nonatomic, retain) CIImage *inputImage;

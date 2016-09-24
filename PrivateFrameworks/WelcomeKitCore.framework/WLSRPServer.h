@@ -3,11 +3,11 @@
  */
 
 @interface WLSRPServer : NSObject {
-    NSData *_hashOfProofOfMatch_HAMK;
-    NSData *_salt_s;
-    NSData *_serverPublicKey_B;
-    struct srp_st { int x1; int x2; struct cstr_st {} *x3; void *x4; void *x5; struct cstr_st {} *x6; void *x7; void *x8; void *x9; void *x10; void *x11; void *x12; struct cstr_st {} *x13; struct srp_meth_st {} *x14; void *x15; void *x16; void *x17; int (*x18)(); struct srp_server_lu_st {} *x19; } *_session;
-    NSData *_sharedKey_K;
+    NSData * _hashOfProofOfMatch_HAMK;
+    NSData * _salt_s;
+    NSData * _serverPublicKey_B;
+    struct srp_st { int x1; int x2; struct cstr_st {} *x3; void *x4; void *x5; struct cstr_st {} *x6; void *x7; void *x8; void *x9; void *x10; void *x11; void *x12; struct cstr_st {} *x13; struct srp_meth_st {} *x14; void *x15; void *x16; void *x17; int (*x18)(); struct srp_server_lu_st {} *x19; } * _session;
+    NSData * _sharedKey_K;
 }
 
 @property (nonatomic, readonly) NSData *hashOfProofOfMatch_HAMK;

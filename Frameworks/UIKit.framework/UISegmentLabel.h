@@ -3,7 +3,7 @@
  */
 
 @interface UISegmentLabel : UILabel {
-    UILabel *_associatedLabel;
+    UILabel * _associatedLabel;
 }
 
 @property (nonatomic) UILabel *associatedLabel;

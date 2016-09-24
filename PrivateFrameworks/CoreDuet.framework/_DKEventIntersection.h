@@ -3,9 +3,9 @@
  */
 
 @interface _DKEventIntersection : NSObject {
-    NSDate *_endDate;
-    NSArray *_events;
-    NSDate *_startDate;
+    NSDate * _endDate;
+    NSArray * _events;
+    NSDate * _startDate;
 }
 
 @property (readonly) NSDate *endDate;

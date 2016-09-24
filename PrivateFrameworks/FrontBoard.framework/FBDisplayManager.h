@@ -3,10 +3,10 @@
  */
 
 @interface FBDisplayManager : NSObject {
-    NSMapTable *_displayIDToFBSDisplayMap;
-    NSMutableSet *_displaysDebouncing;
-    FBSDisplay *_mainDisplay;
-    NSHashTable *_observers;
+    NSMapTable * _displayIDToFBSDisplayMap;
+    NSMutableSet * _displaysDebouncing;
+    FBSDisplay * _mainDisplay;
+    NSHashTable * _observers;
 }
 
 @property (nonatomic, retain) FBSDisplay *mainDisplay;
@@ -23,6 +23,7 @@
 - (id)_fbsDisplayForCADisplay:(id)arg1;
 - (void)_initializeDisplays;
 - (void)addObserver:(id)arg1;
+- (void)dealloc;
 - (id)description;
 - (id)displays;
 - (id)init;

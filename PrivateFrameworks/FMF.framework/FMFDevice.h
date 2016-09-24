@@ -3,10 +3,10 @@
  */
 
 @interface FMFDevice : NSObject <NSCopying, NSSecureCoding> {
-    NSString *_deviceId;
-    NSString *_deviceName;
-    BOOL _isActiveDevice;
-    BOOL _isThisDevice;
+    NSString * _deviceId;
+    NSString * _deviceName;
+    BOOL  _isActiveDevice;
+    BOOL  _isThisDevice;
 }
 
 @property (nonatomic, copy) NSString *deviceId;

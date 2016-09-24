@@ -3,11 +3,12 @@
  */
 
 @interface GEOPDTransitIncident : PBCodable <NSCopying> {
-    NSMutableArray *_transitIncidents;
+    NSMutableArray * _transitIncidents;
 }
 
 @property (nonatomic, retain) NSMutableArray *transitIncidents;
 
++ (Class)transitIncidentType;
 + (id)transitIncidentsForPlaceData:(id)arg1 hasTransitIncidentComponent:(BOOL*)arg2;
 + (id)transitIncidentsTTLExpirationDateForPlaceData:(id)arg1;
 

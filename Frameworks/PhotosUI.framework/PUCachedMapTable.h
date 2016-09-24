@@ -3,9 +3,9 @@
  */
 
 @interface PUCachedMapTable : NSObject <NSCopying> {
-    NSMutableOrderedSet *__cachedObjects;
-    NSMapTable *__mapTable;
-    unsigned int _cacheCountLimit;
+    NSMutableOrderedSet * __cachedObjects;
+    NSMapTable * __mapTable;
+    unsigned int  _cacheCountLimit;
 }
 
 @property (nonatomic, readonly) NSMutableOrderedSet *_cachedObjects;

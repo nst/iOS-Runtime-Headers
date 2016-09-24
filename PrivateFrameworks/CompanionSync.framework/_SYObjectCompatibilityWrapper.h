@@ -3,8 +3,8 @@
  */
 
 @interface _SYObjectCompatibilityWrapper : NSProxy <SYChange, SYObject> {
-    <SYObject> *_syObject;
-    int _type;
+    <SYObject> * _syObject;
+    int  _type;
 }
 
 @property (nonatomic, readonly) int changeType;

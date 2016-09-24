@@ -9,7 +9,7 @@
 - (unsigned long)getMetricId;
 - (void)updateExceptionUUID:(NSData *)arg1;
 - (unsigned int)updateTransactionStateInfoWithPreviousState:(unsigned int)arg1;
-- (void)updateUUID:(NSData *)arg1 withUUIDRefTimestamp:(unsigned long long)arg2;
+- (void)updateUUID:(NSData *)arg1 withUUIDRefTimestamp:(unsigned int)arg2;
 - (unsigned int)updateVASTransactionStateInfoWithPreviousState:(unsigned int)arg1;
 
 @end

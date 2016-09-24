@@ -3,20 +3,20 @@
  */
 
 @interface GKSegmentedSectionDataSource : GKCollectionViewDataSource <GKSegmentInfoDelegagte> {
-    GKSegmentedSectionHeaderView *_headerView;
-    SEL _noContentButtonAction;
-    id _noContentButtonTarget;
-    NSString *_noContentButtonTitle;
-    NSString *_noContentMessage;
-    NSString *_noContentTitle;
-    GKCollectionViewPlaceholderView *_placeholderView;
-    GKCollectionViewDataSource *_rootDataSource;
-    NSMutableArray *_segmentInfos;
-    Class _segmentedHeaderClass;
-    GKSegmentInfo *_selectedSegmentInfo;
-    BOOL _shouldHideSegment;
-    BOOL _usePlaceholder;
-    BOOL _waitingForAnimation;
+    GKSegmentedSectionHeaderView * _headerView;
+    SEL  _noContentButtonAction;
+    id  _noContentButtonTarget;
+    NSString * _noContentButtonTitle;
+    NSString * _noContentMessage;
+    NSString * _noContentTitle;
+    GKCollectionViewPlaceholderView * _placeholderView;
+    GKCollectionViewDataSource * _rootDataSource;
+    NSMutableArray * _segmentInfos;
+    Class  _segmentedHeaderClass;
+    GKSegmentInfo * _selectedSegmentInfo;
+    BOOL  _shouldHideSegment;
+    BOOL  _usePlaceholder;
+    BOOL  _waitingForAnimation;
 }
 
 @property (nonatomic, readonly) NSArray *dataSources;

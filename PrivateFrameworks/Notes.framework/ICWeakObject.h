@@ -3,8 +3,8 @@
  */
 
 @interface ICWeakObject : NSObject <NSCopying> {
-    unsigned int _cachedHash;
-    id _object;
+    unsigned int  _cachedHash;
+    id  _object;
 }
 
 @property (nonatomic) unsigned int cachedHash;

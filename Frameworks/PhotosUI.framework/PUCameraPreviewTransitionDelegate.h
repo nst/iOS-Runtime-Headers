@@ -3,34 +3,34 @@
  */
 
 @interface PUCameraPreviewTransitionDelegate : PUPhotosPreviewTransitionDelegate {
-    PUScrubberView *_previewScrubber;
-    UIImage *_previewSourceImage;
+    PUScrubberView * _previewScrubber;
+    UIImage * _previewSourceImage;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } _previewSourceRect;
-    BOOL _shouldHideScrubber;
+    }  _previewSourceRect;
+    BOOL  _shouldHideScrubber;
 }
 
 @property (nonatomic, retain) PUScrubberView *previewScrubber;
 @property (nonatomic, retain) UIImage *previewSourceImage;
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } previewSourceRect;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } previewSourceRect;
 @property (nonatomic) BOOL shouldHideScrubber;
 
 - (void).cxx_destruct;
 - (id)presentationControllerForPresentedViewController:(id)arg1 presentingViewController:(id)arg2 sourceViewController:(id)arg3;
 - (id)previewScrubber;
 - (id)previewSourceImage;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })previewSourceRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })previewSourceRect;
 - (void)setPreviewScrubber:(id)arg1;
 - (void)setPreviewSourceImage:(id)arg1;
-- (void)setPreviewSourceRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setPreviewSourceRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setShouldHideScrubber:(BOOL)arg1;
 - (BOOL)shouldHideScrubber;
 

@@ -3,14 +3,14 @@
  */
 
 @interface CHDTrendlineLabel : NSObject {
-    bool mAutomaticLabelDeleted;
-    bool mContentFormatDerived;
-    unsigned int mContentFormatId;
-    bool mGeneratedText;
-    OADGraphicProperties *mGraphicProperties;
-    unsigned int mLastCachedNameStringIndex;
-    CHDFormula *mName;
-    EDResources *mResources;
+    bool  mAutomaticLabelDeleted;
+    bool  mContentFormatDerived;
+    unsigned int  mContentFormatId;
+    bool  mGeneratedText;
+    OADGraphicProperties * mGraphicProperties;
+    unsigned int  mLastCachedNameStringIndex;
+    CHDFormula * mName;
+    EDResources * mResources;
 }
 
 + (id)trendlineLabelWithResources:(id)arg1;

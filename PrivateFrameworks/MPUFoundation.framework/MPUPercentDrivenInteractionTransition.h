@@ -3,10 +3,10 @@
  */
 
 @interface MPUPercentDrivenInteractionTransition : UIPercentDrivenInteractiveTransition {
-    CADisplayLink *_displayLink;
-    double _displayLinkLastMediaTime;
-    NSArray *_persistentAnimationLayers;
-    NSUUID *_transitionUUID;
+    CADisplayLink * _displayLink;
+    double  _displayLinkLastMediaTime;
+    NSArray * _persistentAnimationLayers;
+    NSUUID * _transitionUUID;
 }
 
 @property (nonatomic, retain) NSArray *persistentAnimationLayers;

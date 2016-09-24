@@ -3,9 +3,9 @@
  */
 
 @interface GEORisonParser : NSObject {
-    NSNumberFormatter *_formatter;
-    NSMutableCharacterSet *_risonEscapes;
-    NSMutableCharacterSet *_risonTerminators;
+    NSNumberFormatter * _formatter;
+    NSMutableCharacterSet * _risonEscapes;
+    NSMutableCharacterSet * _risonTerminators;
 }
 
 - (id)arrayWithReaderInfo:(struct { char *x1; unsigned int x2; unsigned int x3; }*)arg1;

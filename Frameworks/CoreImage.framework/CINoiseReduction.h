@@ -3,9 +3,9 @@
  */
 
 @interface CINoiseReduction : CIFilter {
-    CIImage *inputImage;
-    NSNumber *inputNoiseLevel;
-    NSNumber *inputSharpness;
+    CIImage * inputImage;
+    NSNumber * inputNoiseLevel;
+    NSNumber * inputSharpness;
 }
 
 + (id)customAttributes;

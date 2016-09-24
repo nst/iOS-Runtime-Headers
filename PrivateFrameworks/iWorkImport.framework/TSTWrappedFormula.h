@@ -3,7 +3,7 @@
  */
 
 @interface TSTWrappedFormula : TSTFormula {
-    int mFunctionIndex;
+    int  mFunctionIndex;
 }
 
 @property (nonatomic) int functionIndex;

@@ -3,8 +3,8 @@
  */
 
 @interface TCMessagePlaceholderInfo : NSObject {
-    BOOL mInUse;
-    id mKey;
+    BOOL  mInUse;
+    id  mKey;
 }
 
 - (void)dealloc;

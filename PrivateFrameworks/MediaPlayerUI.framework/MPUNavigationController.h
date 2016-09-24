@@ -3,8 +3,8 @@
  */
 
 @interface MPUNavigationController : UINavigationController {
-    id /* block */ _overrideSupportedInterfaceOrientationsHandler;
-    BOOL _supportsStandardInterfaceOrientations;
+    id /* block */  _overrideSupportedInterfaceOrientationsHandler;
+    BOOL  _supportsStandardInterfaceOrientations;
 }
 
 @property (nonatomic, copy) id /* block */ overrideSupportedInterfaceOrientationsHandler;

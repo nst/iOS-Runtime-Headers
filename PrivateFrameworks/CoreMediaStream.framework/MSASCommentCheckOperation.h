@@ -3,8 +3,8 @@
  */
 
 @interface MSASCommentCheckOperation : NSObject {
-    NSString *_albumGUID;
-    NSString *_assetCollectionGUID;
+    NSString * _albumGUID;
+    NSString * _assetCollectionGUID;
 }
 
 @property (nonatomic, retain) NSString *albumGUID;

@@ -3,14 +3,14 @@
  */
 
 @interface _ICQAlertSpecification : NSObject {
-    int _defaultButtonIndex;
-    BOOL _disableLockScreenAlert;
-    NSMutableDictionary *_linkForButtonIndex;
-    NSString *_lockScreenMessage;
-    NSString *_lockScreenTitle;
-    NSString *_message;
-    NSDictionary *_serverDict;
-    NSString *_title;
+    int  _defaultButtonIndex;
+    BOOL  _disableLockScreenAlert;
+    NSMutableDictionary * _linkForButtonIndex;
+    NSString * _lockScreenMessage;
+    NSString * _lockScreenTitle;
+    NSString * _message;
+    NSDictionary * _serverDict;
+    NSString * _title;
 }
 
 @property (nonatomic) int defaultButtonIndex;

@@ -3,18 +3,18 @@
  */
 
 @interface MDLPhysicallyPlausibleScatteringFunction : MDLScatteringFunction {
-    MDLMaterialProperty *_anisotropic;
-    MDLMaterialProperty *_anisotropicRotation;
-    MDLMaterialProperty *_clearcoat;
-    MDLMaterialProperty *_clearcoatGloss;
-    MDLMaterialProperty *_metallic;
-    struct PhysicallyPlausibleDistribution { int (**x1)(); struct BSDFMaterialValues { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; float x_2_1_5; float x_2_1_6; float x_2_1_7; float x_2_1_8; float x_2_1_9; float x_2_1_10; float x_2_1_11; float x_2_1_12; float x_2_1_13; float x_2_1_14; } x2; } *_physicalBSDF;
-    MDLMaterialProperty *_roughness;
-    MDLMaterialProperty *_sheen;
-    MDLMaterialProperty *_sheenTint;
-    MDLMaterialProperty *_specularAmount;
-    MDLMaterialProperty *_specularTint;
-    MDLMaterialProperty *_subsurface;
+    MDLMaterialProperty * _anisotropic;
+    MDLMaterialProperty * _anisotropicRotation;
+    MDLMaterialProperty * _clearcoat;
+    MDLMaterialProperty * _clearcoatGloss;
+    MDLMaterialProperty * _metallic;
+    struct PhysicallyPlausibleDistribution { int (**x1)(); struct BSDFMaterialValues { struct CGColor {} *x_2_1_1; double x_2_1_2; struct CGColor {} *x_2_1_3; double x_2_1_4; double x_2_1_5; double x_2_1_6; double x_2_1_7; double x_2_1_8; double x_2_1_9; double x_2_1_10; double x_2_1_11; double x_2_1_12; double x_2_1_13; double x_2_1_14; double x_2_1_15; double x_2_1_16; } x2; } * _physicalBSDF;
+    MDLMaterialProperty * _roughness;
+    MDLMaterialProperty * _sheen;
+    MDLMaterialProperty * _sheenTint;
+    MDLMaterialProperty * _specularAmount;
+    MDLMaterialProperty * _specularTint;
+    MDLMaterialProperty * _subsurface;
 }
 
 @property (nonatomic, readonly, retain) MDLMaterialProperty *anisotropic;
@@ -33,7 +33,6 @@
 - (void).cxx_destruct;
 - (id)anisotropic;
 - (id)anisotropicRotation;
-- (void)bindShadowProperties;
 - (id)clearcoat;
 - (id)clearcoatGloss;
 - (id)init;

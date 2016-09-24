@@ -3,14 +3,14 @@
  */
 
 @interface GKHostedAuthenticateViewController : UIViewController <GKAuthenticateViewController, GKExtensionParentViewControllerProtocol> {
-    id /* block */ _completionHandler;
-    BOOL _disablesSignIn;
-    id /* block */ _dismissCompletionHandler;
-    NSError *_error;
-    GKAuthenticateHostViewController *_extensionHostViewController;
-    int _mode;
-    id /* block */ _remoteViewReadyHandler;
-    BOOL _rotationLocked;
+    id /* block */  _completionHandler;
+    BOOL  _disablesSignIn;
+    id /* block */  _dismissCompletionHandler;
+    NSError * _error;
+    GKAuthenticateHostViewController * _extensionHostViewController;
+    int  _mode;
+    id /* block */  _remoteViewReadyHandler;
+    BOOL  _rotationLocked;
 }
 
 @property (nonatomic, copy) id /* block */ completionHandler;

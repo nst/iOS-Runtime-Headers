@@ -3,17 +3,22 @@
  */
 
 @interface MTLToolsFunction : MTLToolsObject <MTLFunctionSPI> {
-    MTLToolsPointerArray *_functions;
+    MTLToolsPointerArray * _functions;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) <MTLDevice> *device;
 @property (readonly, copy) NSString *filePath;
+@property (readonly) NSDictionary *functionConstantsDictionary;
 @property (readonly) unsigned int functionType;
 @property (readonly) unsigned int hash;
+@property (copy) NSString *label;
 @property (readonly) int lineNumber;
 @property (readonly) NSString *name;
+@property (readonly) int patchControlPointCount;
+@property (readonly) unsigned int patchType;
+@property (readonly) NSArray *stageInputAttributes;
 @property (readonly) Class superclass;
 @property (readonly) NSArray *vertexAttributes;
 
@@ -22,11 +27,17 @@
 - (void)dealloc;
 - (id)device;
 - (id)filePath;
+- (id)functionConstantsDictionary;
 - (unsigned int)functionType;
-- (id)initWithBaseObject:(id)arg1 parent:(id)arg2;
 - (id)initWithBaseObject:(id)arg1 parent:(id)arg2 functions:(id)arg3;
+- (id)initWithBaseObject:(id)arg1 strongParent:(id)arg2 functions:(id)arg3;
+- (id)label;
 - (int)lineNumber;
 - (id)name;
+- (int)patchControlPointCount;
+- (unsigned int)patchType;
+- (void)setLabel:(id)arg1;
+- (id)stageInputAttributes;
 - (id)vertexAttributes;
 
 @end

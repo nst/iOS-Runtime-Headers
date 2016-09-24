@@ -3,11 +3,11 @@
  */
 
 @interface PUVideoEditViewControllerSpec : PUViewControllerSpec {
-    BOOL _wantsScrubberInToolbar;
+    BOOL  _wantsScrubberInToolbar;
 }
 
-@property (nonatomic, readonly) float scrubberEdgeMargins;
-@property (nonatomic, readonly) float toolbarLongSideMargin;
+@property (nonatomic, readonly) double scrubberEdgeMargins;
+@property (nonatomic, readonly) double toolbarLongSideMargin;
 @property (nonatomic) BOOL wantsScrubberInToolbar;
 
 - (id)newSpecChange;

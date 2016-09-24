@@ -3,8 +3,8 @@
  */
 
 @interface GEORPNotification : PBCodable <NSCopying> {
-    NSString *_localizedText;
-    NSString *_localizedTitle;
+    NSString * _localizedText;
+    NSString * _localizedTitle;
 }
 
 @property (nonatomic, readonly) BOOL hasLocalizedText;

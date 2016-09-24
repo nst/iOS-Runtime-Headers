@@ -3,11 +3,11 @@
  */
 
 @interface AVAudioSettingsValueConstrainer : NSObject {
-    NSMutableArray *_applicableOutputDataRatesForSampleRate;
-    NSMutableArray *_applicableOutputSampleRatesForDataRate;
-    struct OpaqueAudioConverter { } *_audioConverter;
-    NSMutableArray *_availableOutputDataRates;
-    NSArray *_availableOutputSampleRates;
+    NSMutableArray * _applicableOutputDataRatesForSampleRate;
+    NSMutableArray * _applicableOutputSampleRatesForDataRate;
+    struct OpaqueAudioConverter { } * _audioConverter;
+    NSMutableArray * _availableOutputDataRates;
+    NSArray * _availableOutputSampleRates;
     struct AudioStreamBasicDescription { 
         double mSampleRate; 
         unsigned int mFormatID; 
@@ -18,10 +18,10 @@
         unsigned int mChannelsPerFrame; 
         unsigned int mBitsPerChannel; 
         unsigned int mReserved; 
-    } _inputASBD;
-    BOOL _needApplicableParameters;
-    BOOL _needAvailableSampleRates;
-    BOOL _needNewConverter;
+    }  _inputASBD;
+    BOOL  _needApplicableParameters;
+    BOOL  _needAvailableSampleRates;
+    BOOL  _needNewConverter;
     struct AudioStreamBasicDescription { 
         double mSampleRate; 
         unsigned int mFormatID; 
@@ -32,8 +32,8 @@
         unsigned int mChannelsPerFrame; 
         unsigned int mBitsPerChannel; 
         unsigned int mReserved; 
-    } _outputASBD;
-    unsigned long _outputDataRate;
+    }  _outputASBD;
+    unsigned long  _outputDataRate;
 }
 
 @property (nonatomic) unsigned long outputBitsPerChannel;
@@ -41,7 +41,7 @@
 @property (nonatomic) unsigned long outputDataRate;
 @property (nonatomic) unsigned long outputFormat;
 @property (nonatomic) unsigned long outputFormatFlags;
-@property (nonatomic) float outputSampleRate;
+@property (nonatomic) double outputSampleRate;
 
 - (void)_bringUpToDate;
 - (void)_buildApplicableDataRatesForSampleRates;

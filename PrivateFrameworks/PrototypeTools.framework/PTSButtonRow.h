@@ -4,19 +4,8 @@
 
 @interface PTSButtonRow : PTSRow
 
-// Image: /System/Library/PrivateFrameworks/PrototypeTools.framework/PrototypeTools
-
 + (id)rowWithTitle:(id)arg1 action:(id)arg2;
 
 - (Class)rowTableViewCellClass;
-
-// Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
-
-+ (id)pu_rowWithTitle:(id)arg1 action:(id /* block */)arg2;
-+ (id)pu_rowWithTitle:(id)arg1 asynchronousOutputProducer:(id /* block */)arg2;
-+ (id)pu_rowWithTitle:(id)arg1 output:(id /* block */)arg2;
-+ (id)pu_rowWithTitle:(id)arg1 settings:(id)arg2;
-+ (id)pu_rowWithTitle:(id)arg1 settingsProvider:(id /* block */)arg2;
-+ (id)pu_rowWithTitle:(id)arg1 settingsProvider:(id /* block */)arg2 isTransient:(BOOL)arg3;
 
 @end

@@ -3,14 +3,14 @@
  */
 
 @interface SSSoftwareUpdatesStore : NSObject {
-    NSObject<OS_dispatch_queue> *_calloutQueue;
-    SSXPCConnection *_connection;
-    SSUpdatesDatabase *_database;
-    BOOL _didMigration;
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    void *_mobileCoreServices;
-    BOOL _useLocalRead;
-    BOOL _useLocalWrite;
+    NSObject<OS_dispatch_queue> * _calloutQueue;
+    SSXPCConnection * _connection;
+    SSUpdatesDatabase * _database;
+    BOOL  _didMigration;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    void * _mobileCoreServices;
+    BOOL  _useLocalRead;
+    BOOL  _useLocalWrite;
 }
 
 + (id)databasePath;
@@ -27,6 +27,7 @@
 - (void)reloadFromServerWithCompletionBlock:(id /* block */)arg1;
 - (void)removeUpdateBulletins;
 - (void)showApplicationBadgeForPendingUpdates;
-- (id)updateWithItemIdentifier:(long long)arg1;
+- (void)updateItemWithIdentifer:(int)arg1 downloadPhase:(id)arg2 properties:(id)arg3 callback:(id /* block */)arg4;
+- (id)updateWithItemIdentifier:(int)arg1;
 
 @end

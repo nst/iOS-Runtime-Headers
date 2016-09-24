@@ -3,10 +3,10 @@
  */
 
 @interface CAMBufferObservance : NSObject {
-    BOOL _enabled;
-    BOOL _fulfilled;
-    id /* block */ _predicate;
-    BOOL _removedOnceEnabled;
+    BOOL  _enabled;
+    BOOL  _fulfilled;
+    id /* block */  _predicate;
+    BOOL  _removedOnceEnabled;
 }
 
 @property (getter=isEnabled, nonatomic) BOOL enabled;

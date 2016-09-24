@@ -3,14 +3,15 @@
  */
 
 @interface TIKeyboardOutput : NSObject <NSSecureCoding> {
-    TIKeyboardCandidate *_acceptedCandidate;
-    unsigned int _deletionCount;
-    unsigned int _forwardDeletionCount;
-    NSIndexSet *_handwritingStrokesToDelete;
-    NSString *_insertionText;
-    NSString *_insertionTextAfterSelection;
-    TIKeyboardCandidate *_shortcutConversion;
-    NSString *_textToCommit;
+    TIKeyboardCandidate * _acceptedCandidate;
+    unsigned int  _deletionCount;
+    unsigned int  _forwardDeletionCount;
+    NSIndexSet * _handwritingStrokesToDelete;
+    NSString * _insertionText;
+    NSString * _insertionTextAfterSelection;
+    TIKeyboardCandidate * _shortcutConversion;
+    BOOL  _shouldSendCurrentLocation;
+    NSString * _textToCommit;
 }
 
 @property (nonatomic, retain) TIKeyboardCandidate *acceptedCandidate;
@@ -20,6 +21,7 @@
 @property (nonatomic, copy) NSString *insertionText;
 @property (nonatomic, copy) NSString *insertionTextAfterSelection;
 @property (nonatomic, retain) TIKeyboardCandidate *shortcutConversion;
+@property (nonatomic) BOOL shouldSendCurrentLocation;
 @property (nonatomic, copy) NSString *textToCommit;
 
 + (BOOL)supportsSecureCoding;
@@ -49,8 +51,10 @@
 - (void)setInsertionText:(id)arg1;
 - (void)setInsertionTextAfterSelection:(id)arg1;
 - (void)setShortcutConversion:(id)arg1;
+- (void)setShouldSendCurrentLocation:(BOOL)arg1;
 - (void)setTextToCommit:(id)arg1;
 - (id)shortcutConversion;
+- (BOOL)shouldSendCurrentLocation;
 - (id)textToCommit;
 
 @end

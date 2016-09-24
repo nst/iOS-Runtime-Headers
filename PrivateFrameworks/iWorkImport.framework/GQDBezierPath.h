@@ -3,12 +3,12 @@
  */
 
 @interface GQDBezierPath : GQDPath <GQDNameMappable> {
-    BOOL mHFlip;
-    BOOL mHasHFlip;
-    BOOL mHasVFlip;
-    struct CGPath { } *mPath;
-    char *mPathStr;
-    BOOL mVFlip;
+    BOOL  mHFlip;
+    BOOL  mHasHFlip;
+    BOOL  mHasVFlip;
+    struct CGPath { } * mPath;
+    char * mPathStr;
+    BOOL  mVFlip;
 }
 
 @property (readonly, copy) NSString *debugDescription;

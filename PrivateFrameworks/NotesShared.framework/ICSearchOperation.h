@@ -3,9 +3,9 @@
  */
 
 @interface ICSearchOperation : NSOperation {
-    id _objectToSearch;
-    ICSearchResult *_searchResult;
-    ICSearchString *_searchString;
+    id  _objectToSearch;
+    ICSearchResult * _searchResult;
+    ICSearchString * _searchString;
 }
 
 @property (nonatomic, readonly) id objectToSearch;

@@ -3,12 +3,12 @@
  */
 
 @interface OISFUBufferedInputStream : NSObject <OISFUBufferedInputStream> {
-    char *mBuffer;
-    long long mBufferEnd;
-    long long mBufferOffset;
-    unsigned long mBufferSize;
-    long long mBufferStart;
-    <SFUInputStream> *mStream;
+    char * mBuffer;
+    int  mBufferEnd;
+    int  mBufferOffset;
+    unsigned long  mBufferSize;
+    int  mBufferStart;
+    <SFUInputStream> * mStream;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -24,11 +24,11 @@
 - (void)enableSystemCaching;
 - (id)initWithStream:(id)arg1;
 - (id)initWithStream:(id)arg1 bufferSize:(unsigned long)arg2;
-- (id)initWithStream:(id)arg1 dataLength:(long long)arg2;
-- (long long)offset;
+- (id)initWithStream:(id)arg1 dataLength:(int)arg2;
+- (int)offset;
 - (unsigned long)readToBuffer:(char *)arg1 size:(unsigned long)arg2;
 - (unsigned long)readToOwnBuffer:(const char **)arg1 size:(unsigned long)arg2;
-- (void)seekToOffset:(long long)arg1;
-- (BOOL)seekWithinBufferToOffset:(long long)arg1;
+- (void)seekToOffset:(int)arg1;
+- (BOOL)seekWithinBufferToOffset:(int)arg1;
 
 @end

@@ -9,7 +9,7 @@
         struct __compressed_pair<glm::detail::tvec2<float> *, std::__1::allocator<glm::detail::tvec2<float> > > { 
             struct tvec2<float> {} *__first_; 
         } __end_cap_; 
-    } mContainer;
+    }  mContainer;
 }
 
 @property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{vector<glm::detail::tvec2<float>' */ struct *container; /* unknown property attribute:  std::__1::allocator<glm::detail::tvec2<float> > >=^{tvec2<float>}}} */

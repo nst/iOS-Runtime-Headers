@@ -3,7 +3,7 @@
  */
 
 @interface CoreDAVPrincipalSearchPropertySetItem : CoreDAVItem {
-    NSMutableSet *_principalSearchProperties;
+    NSMutableSet * _principalSearchProperties;
 }
 
 @property (nonatomic, retain) NSMutableSet *principalSearchProperties;

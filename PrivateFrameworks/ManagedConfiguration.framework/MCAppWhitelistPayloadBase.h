@@ -3,9 +3,9 @@
  */
 
 @interface MCAppWhitelistPayloadBase : MCPayload {
-    BOOL _allowAccessWithoutPasscode;
-    BOOL _forceAllowSupervisorAccess;
-    NSArray *_whitelistedAppsAndOptions;
+    BOOL  _allowAccessWithoutPasscode;
+    BOOL  _forceAllowSupervisorAccess;
+    NSArray * _whitelistedAppsAndOptions;
 }
 
 @property (nonatomic) BOOL allowAccessWithoutPasscode;

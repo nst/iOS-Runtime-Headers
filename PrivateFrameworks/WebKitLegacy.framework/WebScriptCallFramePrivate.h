@@ -5,20 +5,20 @@
 @interface WebScriptCallFramePrivate : NSObject {
     struct JSValue { 
         union EncodedValueDescriptor { 
-            long long asInt64; 
+            int asInt64; 
             double asDouble; 
             struct { 
                 int payload; 
                 int tag; 
             } asBits; 
         } u; 
-    } exceptionValue;
+    }  exceptionValue;
     struct String { 
         struct RefPtr<WTF::StringImpl> { 
             struct StringImpl {} *m_ptr; 
         } m_impl; 
-    } functionName;
-    WebScriptObject *globalObject;
+    }  functionName;
+    WebScriptObject * globalObject;
 }
 
 - (id).cxx_construct;

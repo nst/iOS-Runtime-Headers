@@ -3,13 +3,13 @@
  */
 
 @interface HKStatisticsCollection : NSObject {
-    NSDate *_anchorDate;
-    double _approximateStatisticsInterval;
-    NSSet *_cachedSources;
-    id /* block */ _emptyStatisticsConstructor;
-    NSMutableDictionary *_statisticsByIndex;
-    NSDateComponents *_statisticsInterval;
-    NSLock *_statisticsLock;
+    NSDate * _anchorDate;
+    double  _approximateStatisticsInterval;
+    NSSet * _cachedSources;
+    id /* block */  _emptyStatisticsConstructor;
+    NSMutableDictionary * _statisticsByIndex;
+    NSDateComponents * _statisticsInterval;
+    NSLock * _statisticsLock;
 }
 
 @property (nonatomic, readonly) NSDate *anchorDate;

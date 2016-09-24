@@ -3,19 +3,19 @@
  */
 
 @interface TSDExteriorTextWrap : NSObject <NSCopying, NSMutableCopying> {
-    float _alphaThreshold;
-    int _direction;
-    int _fitType;
-    BOOL _isHTMLWrap;
-    float _margin;
-    int _type;
+    double  _alphaThreshold;
+    int  _direction;
+    int  _fitType;
+    BOOL  _isHTMLWrap;
+    double  _margin;
+    int  _type;
 }
 
-@property (nonatomic, readonly) float alphaThreshold;
+@property (nonatomic, readonly) double alphaThreshold;
 @property (nonatomic, readonly) int direction;
 @property (nonatomic, readonly) int fitType;
 @property (nonatomic, readonly) BOOL isHTMLWrap;
-@property (nonatomic, readonly) float margin;
+@property (nonatomic, readonly) double margin;
 @property (nonatomic, readonly) int type;
 
 + (id)exteriorTextWrap;
@@ -26,14 +26,15 @@
 - (id)description;
 - (int)direction;
 - (int)fitType;
+- (unsigned int)hash;
 - (id)init;
-- (id)initWithArchive:(const struct ExteriorTextWrapArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; unsigned int x5; unsigned int x6; unsigned int x7; float x8; float x9; bool x10; }*)arg1;
+- (id)initWithArchive:(const struct ExteriorTextWrapArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; unsigned int x5; unsigned int x6; unsigned int x7; double x8; double x9; bool x10; }*)arg1;
 - (id)initWithIsHTMLWrap:(BOOL)arg1 type:(int)arg2 direction:(int)arg3 fitType:(int)arg4 margin:(float)arg5 alphaThreshold:(float)arg6;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isHTMLWrap;
 - (float)margin;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (void)saveToArchive:(struct ExteriorTextWrapArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; unsigned int x5; unsigned int x6; unsigned int x7; float x8; float x9; bool x10; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct ExteriorTextWrapArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; unsigned int x5; unsigned int x6; unsigned int x7; double x8; double x9; bool x10; }*)arg1 archiver:(id)arg2;
 - (int)type;
 
 @end

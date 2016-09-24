@@ -3,15 +3,15 @@
  */
 
 @interface FIUIMetricColors : NSObject {
-    UIColor *_adjustmentButtonBackgroundColor;
-    UIColor *_buttonDisabledTextColor;
-    UIColor *_buttonTextColor;
-    UIColor *_gradientDarkColor;
-    UIColor *_gradientLightColor;
-    UIColor *_lightenedNonGradientColor;
-    UIColor *_nonGradientTextColor;
-    UIColor *_valueDisplayColor;
-    NSString *_workoutRingColorIdentifier;
+    UIColor * _adjustmentButtonBackgroundColor;
+    UIColor * _buttonDisabledTextColor;
+    UIColor * _buttonTextColor;
+    UIColor * _gradientDarkColor;
+    UIColor * _gradientLightColor;
+    UIColor * _lightenedNonGradientColor;
+    UIColor * _nonGradientTextColor;
+    UIColor * _valueDisplayColor;
+    NSString * _workoutRingColorIdentifier;
 }
 
 @property (nonatomic, retain) UIColor *adjustmentButtonBackgroundColor;
@@ -26,12 +26,17 @@
 
 + (id)briskColors;
 + (id)clockColors;
++ (id)deepBreathingColors;
 + (id)distanceColors;
 + (id)elapsedTimeColors;
++ (id)elevationColors;
 + (id)energyColors;
 + (id)heartRateColors;
 + (id)keyColors;
++ (id)lapColors;
++ (id)lapsColors;
 + (id)metricColorsForGoalTypeIdentifier:(unsigned int)arg1;
++ (id)metricColorsForMetricType:(unsigned int)arg1;
 + (struct CGGradient { }*)newGradientForStartColor:(id)arg1 endColor:(id)arg2;
 + (id)noMetricColors;
 + (id)paceColors;

@@ -3,7 +3,7 @@
  */
 
 @interface CalDAVChecksumVersionsItem : CoreDAVItem {
-    NSMutableSet *_versionStringsSupported;
+    NSMutableSet * _versionStringsSupported;
 }
 
 - (void).cxx_destruct;

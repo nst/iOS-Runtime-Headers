@@ -3,10 +3,10 @@
  */
 
 @interface _HKStatisticsCollectionQueryServerDataObject : _HKQueryServerDataObject {
-    NSDate *_anchorDate;
-    NSDateComponents *_intervalComponents;
-    unsigned int _mergeStrategy;
-    unsigned int _options;
+    NSDate * _anchorDate;
+    NSDateComponents * _intervalComponents;
+    unsigned int  _mergeStrategy;
+    unsigned int  _options;
 }
 
 @property (nonatomic, retain) NSDate *anchorDate;

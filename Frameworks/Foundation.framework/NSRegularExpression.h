@@ -3,17 +3,19 @@
  */
 
 @interface NSRegularExpression : NSObject <NSCopying, NSSecureCoding> {
-    int _checkout;
-    void *_internal;
-    unsigned int _options;
-    NSString *_pattern;
-    id _reserved1;
-    int _reserved2;
+    int  _checkout;
+    void * _internal;
+    unsigned int  _options;
+    NSString * _pattern;
+    id  _reserved1;
+    int  _reserved2;
 }
 
 @property (readonly) unsigned int numberOfCaptureGroups;
 @property (readonly) unsigned int options;
 @property (readonly, copy) NSString *pattern;
+
+// Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
 + (id)escapedPatternForString:(id)arg1;
 + (id)escapedTemplateForString:(id)arg1;
@@ -26,7 +28,6 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (void)enumerateMatchesInString:(id)arg1 options:(unsigned int)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 usingBlock:(id /* block */)arg4;
-- (void)finalize;
 - (id)firstMatchInString:(id)arg1 options:(unsigned int)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 - (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
@@ -41,5 +42,14 @@
 - (unsigned int)replaceMatchesInString:(id)arg1 options:(unsigned int)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 withTemplate:(id)arg4;
 - (id)replacementStringForResult:(id)arg1 inString:(id)arg2 offset:(int)arg3 template:(id)arg4;
 - (id)stringByReplacingMatchesInString:(id)arg1 options:(unsigned int)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 withTemplate:(id)arg4;
+
+// Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
+
++ (id)mf_attributionExpression;
++ (id)mf_attributionPrefixExpression;
++ (id)mf_copyAttributionRegularExpressionForType:(int)arg1;
++ (id)mf_forwardSeparatorExpression;
++ (id)mf_horizontalSeparatorExpression;
++ (id)mf_signatureExpression;
 
 @end

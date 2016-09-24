@@ -3,14 +3,14 @@
  */
 
 @interface TSCH3DPerspectiveLens : TSCH3DLens {
-    float mAspect;
-    float mFOV;
+    double  mAspect;
+    double  mFOV;
 }
 
-@property (nonatomic) float aspect;
-@property (nonatomic) float fov;
-@property (nonatomic, readonly) float height;
-@property (nonatomic, readonly) float width;
+@property (nonatomic) double aspect;
+@property (nonatomic) double fov;
+@property (nonatomic, readonly) double height;
+@property (nonatomic, readonly) double width;
 
 - (id)asFrustumLens;
 - (float)aspect;
@@ -18,16 +18,16 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (float)fov;
-- (struct FrustumRect { float x1; float x2; float x3; float x4; })frustumRect;
-- (struct FrustumRect { float x1; float x2; float x3; float x4; })frustumRectAtDistance:(float)arg1;
+- (struct FrustumRect { double x1; double x2; double x3; double x4; })frustumRect;
+- (struct FrustumRect { double x1; double x2; double x3; double x4; })frustumRectAtDistance:(float)arg1;
 - (float)height;
 - (id)init;
-- (struct tmat4x4<float> { struct tvec4<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_1_1_2; union { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_1_1_3; union { float x_4_2_1; float x_4_2_2; float x_4_2_3; } x_1_1_4; } x1[4]; })matrix;
+- (struct tmat4x4<float> { struct tvec4<float> { union { double x_1_2_1; double x_1_2_2; double x_1_2_3; } x_1_1_1; union { double x_2_2_1; double x_2_2_2; double x_2_2_3; } x_1_1_2; union { double x_3_2_1; double x_3_2_2; double x_3_2_3; } x_1_1_3; union { double x_4_2_1; double x_4_2_2; double x_4_2_3; } x_1_1_4; } x1[4]; })matrix;
 - (id)matrixDescription;
-- (id)narrowedByNormalizedBounds:(struct box<glm::detail::tvec2<float> > { struct tvec2<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_1_1_2; } x1; struct tvec2<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_2_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_2_1_2; } x2; }*)arg1;
+- (id)narrowedByNormalizedBounds:(struct box<glm::detail::tvec2<float> > { struct tvec2<float> { union { double x_1_2_1; double x_1_2_2; double x_1_2_3; } x_1_1_1; union { double x_2_2_1; double x_2_2_2; double x_2_2_3; } x_1_1_2; } x1; struct tvec2<float> { union { double x_1_2_1; double x_1_2_2; double x_1_2_3; } x_2_1_1; union { double x_2_2_1; double x_2_2_2; double x_2_2_3; } x_2_1_2; } x2; }*)arg1;
 - (void)setAspect:(float)arg1;
 - (void)setFov:(float)arg1;
-- (id)shiftedByPercentage:(struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; }*)arg1;
+- (id)shiftedByPercentage:(struct tvec2<float> { union { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; union { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; }*)arg1;
 - (float)width;
 
 @end

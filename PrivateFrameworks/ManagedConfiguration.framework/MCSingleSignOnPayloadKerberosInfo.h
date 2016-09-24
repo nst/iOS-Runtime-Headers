@@ -3,13 +3,13 @@
  */
 
 @interface MCSingleSignOnPayloadKerberosInfo : NSObject {
-    NSArray *_URLPrefixMatches;
-    NSString *_accountGUID;
-    NSString *_accountTypeGUID;
-    NSArray *_appIdentifierMatches;
-    NSString *_certificateUUID;
-    NSString *_principalName;
-    NSString *_realm;
+    NSArray * _URLPrefixMatches;
+    NSString * _accountGUID;
+    NSString * _accountTypeGUID;
+    NSArray * _appIdentifierMatches;
+    NSString * _certificateUUID;
+    NSString * _principalName;
+    NSString * _realm;
 }
 
 @property (nonatomic, retain) NSArray *URLPrefixMatches;

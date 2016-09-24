@@ -3,8 +3,8 @@
  */
 
 @interface SLTencentWeiboUserRecord : SLMicroBlogUserRecord <NSSecureCoding> {
-    NSURL *_objectID;
-    NSString *_openid;
+    NSURL * _objectID;
+    NSString * _openid;
 }
 
 @property (nonatomic, retain) NSURL *objectID;

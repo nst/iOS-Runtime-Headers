@@ -3,7 +3,7 @@
  */
 
 @interface KeychainSyncSetupController : PSSetupController {
-    PSKeychainSyncManager *_manager;
+    PSKeychainSyncManager * _manager;
 }
 
 - (void).cxx_destruct;

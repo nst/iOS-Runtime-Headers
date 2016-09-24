@@ -3,11 +3,11 @@
  */
 
 @interface EKEventDetailTwoValueCell : EKEventDetailCell {
-    int _style;
-    UILabel *_titleView;
-    int _twoValueCellStyle;
-    UILabel *_value2View;
-    UILabel *_valueView;
+    int  _style;
+    UILabel * _titleView;
+    int  _twoValueCellStyle;
+    UILabel * _value2View;
+    UILabel * _valueView;
 }
 
 @property (nonatomic, readonly) unsigned int visibleItems;

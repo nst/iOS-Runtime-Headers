@@ -3,30 +3,32 @@
  */
 
 @interface ISSoftwareApplication : NSObject <SSXPCCoding> {
-    NSNumber *_accountDSID;
-    NSString *_accountIdentifier;
-    BOOL _beta;
-    NSString *_bundleIdentifier;
-    NSString *_bundleShortVersionString;
-    NSString *_bundleVersion;
-    NSString *_containerPath;
-    SSItemContentRating *_contentRating;
-    NSString *_deviceIdentifierForVendor;
-    NSNumber *_familyAccountIdentifier;
-    BOOL _hasMIDBasedSINF;
-    NSNumber *_itemIdentifier;
-    NSString *_itemName;
-    BOOL _missingRequiredSINF;
-    BOOL _placeholder;
-    BOOL _profileValidated;
-    NSDate *_receiptExpirationDate;
-    unsigned int _removableStatus;
-    NSString *_softwareType;
-    NSNumber *_storeFrontIdentifier;
-    NSString *_vendorName;
-    NSNumber *_versionIdentifier;
-    NSArray *_versionOrdering;
-    unsigned int _vppStateFlags;
+    NSNumber * _accountDSID;
+    NSString * _accountIdentifier;
+    BOOL  _beta;
+    NSString * _bundleIdentifier;
+    NSString * _bundleShortVersionString;
+    NSString * _bundleVersion;
+    NSString * _containerPath;
+    SSItemContentRating * _contentRating;
+    NSString * _deviceIdentifierForVendor;
+    BOOL  _didCheckLaunchProhibited;
+    NSNumber * _familyAccountIdentifier;
+    BOOL  _hasMIDBasedSINF;
+    NSNumber * _itemIdentifier;
+    NSString * _itemName;
+    BOOL  _launchProhibited;
+    BOOL  _missingRequiredSINF;
+    BOOL  _placeholder;
+    BOOL  _profileValidated;
+    NSDate * _receiptExpirationDate;
+    unsigned int  _removableStatus;
+    NSString * _softwareType;
+    NSNumber * _storeFrontIdentifier;
+    NSString * _vendorName;
+    NSNumber * _versionIdentifier;
+    NSArray * _versionOrdering;
+    unsigned int  _vppStateFlags;
 }
 
 @property (nonatomic, retain) NSNumber *accountDSID;
@@ -40,11 +42,13 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSString *deviceIdentifierForVendor;
+@property (nonatomic) BOOL didCheckLaunchProhibited;
 @property (nonatomic, copy) NSNumber *familyAccountIdentifier;
 @property (nonatomic) BOOL hasMIDBasedSINF;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) NSNumber *itemIdentifier;
 @property (nonatomic, copy) NSString *itemName;
+@property (getter=isLaunchProhibited, nonatomic) BOOL launchProhibited;
 @property (nonatomic) BOOL missingRequiredSINF;
 @property (getter=isPlaceholder, nonatomic) BOOL placeholder;
 @property (getter=isProfileValidated, nonatomic) BOOL profileValidated;
@@ -71,12 +75,14 @@
 - (void)dealloc;
 - (id)description;
 - (id)deviceIdentifierForVendor;
+- (BOOL)didCheckLaunchProhibited;
 - (id)familyAccountIdentifier;
 - (BOOL)hasMIDBasedSINF;
 - (id)initWithLaunchServicesApplication:(id)arg1;
 - (id)initWithLaunchServicesApplication:(id)arg1 containerPath:(id)arg2;
 - (id)initWithXPCEncoding:(id)arg1;
 - (BOOL)isBeta;
+- (BOOL)isLaunchProhibited;
 - (BOOL)isPlaceholder;
 - (BOOL)isProfileValidated;
 - (id)itemIdentifier;
@@ -94,10 +100,12 @@
 - (void)setContainerPath:(id)arg1;
 - (void)setContentRating:(id)arg1;
 - (void)setDeviceIdentifierForVendor:(id)arg1;
+- (void)setDidCheckLaunchProhibited:(BOOL)arg1;
 - (void)setFamilyAccountIdentifier:(id)arg1;
 - (void)setHasMIDBasedSINF:(BOOL)arg1;
 - (void)setItemIdentifier:(id)arg1;
 - (void)setItemName:(id)arg1;
+- (void)setLaunchProhibited:(BOOL)arg1;
 - (void)setMissingRequiredSINF:(BOOL)arg1;
 - (void)setPlaceholder:(BOOL)arg1;
 - (void)setProfileValidated:(BOOL)arg1;

@@ -2,29 +2,30 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCHChartStylePreset : TSPObject <TSCHStyleSwapSupporting, TSPCopying, TSSPreset> {
-    NSArray *mCategoryAxisStyles;
-    <TSCHStyleActAlike> *mChartStyle;
-    <TSCHStyleActAlike> *mLegendStyle;
-    NSArray *mParagraphStyles;
-    <TSCHStyleActAlike> *mRefLineStyle;
-    NSArray *mSeriesStyles;
-    struct __CFUUID { } *mUUID;
-    NSArray *mValueAxisStyles;
+@interface TSCHChartStylePreset : TSPObject <TSCHStyleSwapSupporting, TSPCopying, TSSCustomPresetMigration, TSSPreset> {
+    NSArray * mCategoryAxisStylesList;
+    TSCHChartStyle * mChartStyle;
+    BOOL  mHasUpgradedFromFinalizeHandler;
+    TSCHLegendStyle * mLegendStyle;
+    NSArray * mParagraphStylesList;
+    TSCHReferenceLineStyle * mRefLineStyle;
+    NSArray * mSeriesStylesList;
+    NSUUID * mUuid;
+    NSArray * mValueAxisStylesList;
 }
 
 @property (nonatomic, readonly) NSArray *categoryAxisStyles;
-@property (nonatomic, readonly) <TSCHStyleActAlike> *chartStyle;
+@property (nonatomic, readonly) TSCHChartStyle *chartStyle;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly) <TSCHStyleActAlike> *legendStyle;
+@property (nonatomic, readonly) TSCHLegendStyle *legendStyle;
 @property (nonatomic, readonly) NSArray *paragraphStyles;
 @property (nonatomic, readonly) NSString *presetKind;
-@property (nonatomic, readonly) <TSCHStyleActAlike> *refLineStyle;
+@property (nonatomic, readonly) TSCHReferenceLineStyle *refLineStyle;
 @property (nonatomic, readonly) NSArray *seriesStyles;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) struct __CFUUID { }*uuid;
+@property (nonatomic, readonly) NSUUID *uuid;
 @property (nonatomic, readonly) NSArray *valueAxisStyles;
 
 + (BOOL)needsObjectUUID;
@@ -32,6 +33,7 @@
 + (id)p_getDefaultTrendLineShadowColor:(id)arg1;
 + (id)p_getDefaultTrendLineStrokeColor:(id)arg1;
 + (void)p_replaceProperty:(int)arg1 inStyle:(id)arg2 withObject:(id)arg3;
++ (id)presetWithContext:(id)arg1 fromStyleState:(id)arg2 uuid:(id)arg3;
 + (void)upgradeFor3DShadowPropertyMigrationFromChartStyle:(id)arg1 seriesStyles:(id)arg2;
 + (void)upgradeForTrendLineEquationAndR2LabelsPropertyMigrationFromChartStyle:(id)arg1 seriesStyles:(id)arg2;
 + (void)upgradeShadowPropertyForParagraphStyles:(id)arg1;
@@ -49,25 +51,28 @@
 - (id)copyWithContext:(id)arg1;
 - (void)dealloc;
 - (id)description;
-- (void)drawSwatchInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inContext:(struct CGContext { }*)arg2;
+- (void)drawSwatchInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inContext:(struct CGContext { }*)arg2;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1;
 - (id)initWithContext:(id)arg1 chartStyle:(id)arg2 legendStyle:(id)arg3 valueAxisStyles:(id)arg4 categoryAxisStyles:(id)arg5 seriesStyles:(id)arg6;
 - (id)initWithContext:(id)arg1 chartStyle:(id)arg2 legendStyle:(id)arg3 valueAxisStyles:(id)arg4 categoryAxisStyles:(id)arg5 seriesStyles:(id)arg6 paragraphStyles:(id)arg7 refLineStyle:(id)arg8;
-- (id)initWithContext:(id)arg1 chartStyle:(id)arg2 legendStyle:(id)arg3 valueAxisStyles:(id)arg4 categoryAxisStyles:(id)arg5 seriesStyles:(id)arg6 paragraphStyles:(id)arg7 refLineStyle:(id)arg8 uuid:(struct __CFUUID { }*)arg9;
+- (id)initWithContext:(id)arg1 chartStyle:(id)arg2 legendStyle:(id)arg3 valueAxisStyles:(id)arg4 categoryAxisStyles:(id)arg5 seriesStyles:(id)arg6 paragraphStyles:(id)arg7 refLineStyle:(id)arg8 uuid:(id)arg9;
 - (BOOL)isEquivalentToPreset:(id)arg1;
 - (BOOL)isEquivalentToPreset:(id)arg1 outReasons:(id*)arg2;
 - (id)legendStyle;
-- (id)nsuuid;
+- (id)migratedPresetInTheme:(id)arg1 followReplacements:(BOOL)arg2;
 - (id)p_initWithContext:(id)arg1;
 - (id)paragraphStyles;
+- (id)presetByAdoptingStylesheet:(id)arg1 withMapper:(id)arg2;
 - (id)presetKind;
 - (id)refLineStyle;
 - (void)saveToArchiver:(id)arg1;
 - (id)seriesStyles;
 - (id)styleOwnerFromSwapType:(int)arg1 andIndex:(unsigned int)arg2;
+- (id)stylesheet;
 - (id)swatchImage;
-- (struct __CFUUID { }*)uuid;
+- (void)upgradePresetIfNecessaryFromFinalizeHandlerWithOptionalPreUFFVersion:(const unsigned int*)arg1;
+- (id)uuid;
 - (id)valueAxisStyles;
 
 @end

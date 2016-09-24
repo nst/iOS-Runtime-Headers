@@ -3,13 +3,13 @@
  */
 
 @interface AADevice : NSObject {
-    NSString *_model;
-    NSString *_modelDisplayName;
-    NSString *_modelLargePhotoURL1x;
-    NSString *_modelLargePhotoURL2x;
-    NSString *_modelSmallPhotoURL1x;
-    NSString *_modelSmallPhotoURL2x;
-    NSString *_name;
+    NSString * _model;
+    NSString * _modelDisplayName;
+    NSString * _modelLargePhotoURL1x;
+    NSString * _modelLargePhotoURL2x;
+    NSString * _modelSmallPhotoURL1x;
+    NSString * _modelSmallPhotoURL2x;
+    NSString * _name;
 }
 
 @property (nonatomic, readonly) NSString *model;

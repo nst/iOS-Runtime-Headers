@@ -6,10 +6,10 @@
 
 @property (getter=isAbsolute, nonatomic) BOOL absolute;
 @property (getter=isIntegratedDisplay, nonatomic) BOOL integratedDisplay;
-@property (nonatomic) union _MRHIDSize { struct { float x_1_1_1; float x_1_1_2; } x1; float x2[2]; } screenSize;
+@property (nonatomic) union _MRHIDSize { struct { double x_1_1_1; double x_1_1_2; } x1; double x2[2]; } screenSize;
 
 - (void)setAbsolute:(BOOL)arg1;
 - (void)setIntegratedDisplay:(BOOL)arg1;
-- (void)setScreenSize:(union _MRHIDSize { struct { float x_1_1_1; float x_1_1_2; } x1; float x2[2]; })arg1;
+- (void)setScreenSize:(union _MRHIDSize { struct { double x_1_1_1; double x_1_1_2; } x1; double x2[2]; })arg1;
 
 @end

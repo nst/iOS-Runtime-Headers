@@ -3,8 +3,8 @@
  */
 
 @interface OAURLRequestSigner : NSObject {
-    OACredential *_credential;
-    int _signatureMethod;
+    OACredential * _credential;
+    int  _signatureMethod;
 }
 
 @property (nonatomic) int signatureMethod;

@@ -3,25 +3,31 @@
  */
 
 @interface AWDCoreRoutineMagicalMomentsRecommendedAppsHistogramInstance : PBCodable <NSCopying> {
-    NSString *_bundleId;
+    NSString * _bundleId;
+    int  _confidence;
     struct { 
+        unsigned int confidence : 1; 
         unsigned int rank : 1; 
-    } _has;
-    int _rank;
+    }  _has;
+    int  _rank;
 }
 
 @property (nonatomic, retain) NSString *bundleId;
+@property (nonatomic) int confidence;
 @property (nonatomic, readonly) BOOL hasBundleId;
+@property (nonatomic) BOOL hasConfidence;
 @property (nonatomic) BOOL hasRank;
 @property (nonatomic) int rank;
 
 - (id)bundleId;
+- (int)confidence;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasBundleId;
+- (BOOL)hasConfidence;
 - (BOOL)hasRank;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -29,6 +35,8 @@
 - (int)rank;
 - (BOOL)readFrom:(id)arg1;
 - (void)setBundleId:(id)arg1;
+- (void)setConfidence:(int)arg1;
+- (void)setHasConfidence:(BOOL)arg1;
 - (void)setHasRank:(BOOL)arg1;
 - (void)setRank:(int)arg1;
 - (void)writeTo:(id)arg1;

@@ -2,15 +2,20 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIStatusBarStyleAttributes : NSObject {
-    UIStatusBarForegroundStyleAttributes *_foregroundStyle;
-    UIStatusBarStyleRequest *_request;
+@interface UIStatusBarStyleAttributes : NSObject <NSCopying> {
+    UIStatusBarForegroundStyleAttributes * _foregroundStyle;
+    BOOL  _pulsingAnimationEnabled;
+    UIStatusBarStyleRequest * _request;
 }
+
+@property (nonatomic) double foregroundAlpha;
+@property (getter=isPulsingAnimationEnabled, nonatomic) BOOL pulsingAnimationEnabled;
 
 - (void).cxx_destruct;
 - (BOOL)areTopCornersRounded;
 - (id)backgroundColorWithTintColor:(id)arg1;
 - (id)backgroundImageName;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (int)cornerStyle;
 - (float)foregroundAlpha;
 - (id)foregroundStyle;
@@ -21,10 +26,14 @@
 - (id)init;
 - (id)initWithRequest:(id)arg1;
 - (BOOL)isDoubleHeight;
+- (BOOL)isLockScreen;
+- (BOOL)isPulsingAnimationEnabled;
 - (BOOL)isTranslucent;
 - (BOOL)isTransparent;
 - (int)legibilityStyle;
 - (id)newForegroundStyleWithHeight:(float)arg1;
+- (void)setForegroundAlpha:(float)arg1;
+- (void)setPulsingAnimationEnabled:(BOOL)arg1;
 - (BOOL)shouldShowInternalItemType:(int)arg1 withScreenCapabilities:(id)arg2;
 - (BOOL)shouldUseVisualAltitude;
 - (int)style;

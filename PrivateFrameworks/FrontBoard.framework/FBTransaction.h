@@ -5,7 +5,5 @@
 @interface FBTransaction : BSTransaction
 
 - (id)init;
-- (id)queue;
-- (void)removeAllMilestonesWithReason:(id)arg1;
 
 @end

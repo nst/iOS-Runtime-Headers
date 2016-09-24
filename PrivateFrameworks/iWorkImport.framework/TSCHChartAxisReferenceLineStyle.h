@@ -3,8 +3,8 @@
  */
 
 @interface TSCHChartAxisReferenceLineStyle : NSObject {
-    TSCHChartAxisID *mAxisIdentifier;
-    NSArray *mReferenceLineStyles;
+    TSCHChartAxisID * mAxisIdentifier;
+    NSArray * mReferenceLineStyles;
 }
 
 @property (nonatomic, copy) TSCHChartAxisID *axisIdentifier;

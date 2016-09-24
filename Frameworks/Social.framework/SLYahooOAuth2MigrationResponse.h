@@ -3,12 +3,12 @@
  */
 
 @interface SLYahooOAuth2MigrationResponse : NSObject {
-    NSString *_accessToken;
-    NSError *_error;
-    NSDate *_expiryDate;
-    NSString *_refreshToken;
-    NSDictionary *_responseBody;
-    int _statusCode;
+    NSString * _accessToken;
+    NSError * _error;
+    NSDate * _expiryDate;
+    NSString * _refreshToken;
+    NSDictionary * _responseBody;
+    int  _statusCode;
 }
 
 @property (readonly) NSString *accessToken;

@@ -3,11 +3,12 @@
  */
 
 @interface GEOPDTransitAttribution : PBCodable <NSCopying> {
-    NSMutableArray *_providerNames;
+    NSMutableArray * _providerNames;
 }
 
 @property (nonatomic, retain) NSMutableArray *providerNames;
 
++ (Class)providerNameType;
 + (id)transitAttributionForPlaceData:(id)arg1;
 
 - (void)addProviderName:(id)arg1;

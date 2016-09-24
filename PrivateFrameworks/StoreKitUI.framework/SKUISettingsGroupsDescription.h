@@ -3,11 +3,11 @@
  */
 
 @interface SKUISettingsGroupsDescription : NSObject <SKUISettingsGroupControllerDelegate> {
-    SKUIClientContext *_clientContext;
-    NSMapTable *_controllers;
-    <SKUISettingsGroupsDescriptionDelegate> *_delegate;
-    SKUISettingsObjectStore *_groupDescriptions;
-    SKUISettingsContext *_settingsContext;
+    SKUIClientContext * _clientContext;
+    NSMapTable * _controllers;
+    <SKUISettingsGroupsDescriptionDelegate> * _delegate;
+    SKUISettingsObjectStore * _groupDescriptions;
+    SKUISettingsContext * _settingsContext;
 }
 
 @property (nonatomic) SKUIClientContext *clientContext;

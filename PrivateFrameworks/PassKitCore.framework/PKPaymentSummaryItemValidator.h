@@ -3,7 +3,7 @@
  */
 
 @interface PKPaymentSummaryItemValidator : NSObject <PKPaymentValidating> {
-    PKPaymentSummaryItem *_item;
+    PKPaymentSummaryItem * _item;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -15,7 +15,7 @@
 + (Class)validatedClass;
 + (id)validatorWithObject:(id)arg1;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithPaymentSummaryItem:(id)arg1;
 - (BOOL)isValidWithError:(id*)arg1;
 - (id)item;

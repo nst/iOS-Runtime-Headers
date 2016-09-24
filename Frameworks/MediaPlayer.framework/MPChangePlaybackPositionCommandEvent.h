@@ -3,7 +3,7 @@
  */
 
 @interface MPChangePlaybackPositionCommandEvent : MPRemoteCommandEvent {
-    double _positionTime;
+    double  _positionTime;
 }
 
 @property (nonatomic, readonly) double positionTime;

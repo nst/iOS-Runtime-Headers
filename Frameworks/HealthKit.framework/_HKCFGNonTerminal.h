@@ -3,9 +3,9 @@
  */
 
 @interface _HKCFGNonTerminal : _HKCFGExpression {
-    NSCharacterSet *_charactersToBeSkipped;
-    NSString *_label;
-    NSMutableArray *_replacementRules;
+    NSCharacterSet * _charactersToBeSkipped;
+    NSString * _label;
+    NSMutableArray * _replacementRules;
 }
 
 @property (nonatomic, copy) NSCharacterSet *charactersToBeSkipped;

@@ -3,20 +3,21 @@
  */
 
 @interface FBProcessManager : NSObject <FBApplicationProcessDelegate, FBApplicationProcessObserver, FBUIProcessManagerInternal> {
-    NSObject<OS_dispatch_queue> *_callOutQueue;
-    FBApplicationProcessWatchdogPolicy *_defaultWatchdogPolicy;
-    FBApplicationProcess *_foregroundAppProcess;
-    NSHashTable *_observers;
-    FBApplicationProcess *_preferredForegroundAppProcess;
-    NSMapTable *_processesByBundleID;
-    NSMapTable *_processesByPID;
-    NSObject<OS_dispatch_queue> *_processesQueue;
-    NSObject<OS_dispatch_queue> *_queue;
-    FBApplicationProcess *_systemAppProcess;
-    BKSProcessAssertion *_systemAppProcessAssertion;
-    int _workspaceLocked;
-    int _workspaceLockedToken;
-    NSMutableDictionary *_workspacesByClientIdentity;
+    FBApplicationLibrary * _appLibrary;
+    NSObject<OS_dispatch_queue> * _callOutQueue;
+    FBApplicationProcessWatchdogPolicy * _defaultWatchdogPolicy;
+    FBApplicationProcess * _foregroundAppProcess;
+    NSHashTable * _observers;
+    FBApplicationProcess * _preferredForegroundAppProcess;
+    NSMapTable * _processesByBundleID;
+    NSMapTable * _processesByPID;
+    NSObject<OS_dispatch_queue> * _processesQueue;
+    NSObject<OS_dispatch_queue> * _queue;
+    FBApplicationProcess * _systemAppProcess;
+    BKSProcessAssertion * _systemAppProcessAssertion;
+    int  _workspaceLocked;
+    int  _workspaceLockedToken;
+    NSMutableDictionary * _workspacesByClientIdentity;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -34,11 +35,8 @@
 - (void)_queue_evaluateForegroundEventRouting;
 - (void)_queue_notifyObserversUsingBlock:(id /* block */)arg1 completion:(id /* block */)arg2;
 - (void)_queue_removeProcess:(id)arg1 withBundleID:(id)arg2 pid:(int)arg3;
-- (id)_serviceClientAddedWithAuditToken:(struct { unsigned int x1[8]; }*)arg1;
-- (id)_serviceClientAddedWithConnection:(id)arg1;
-- (id)_serviceClientAddedWithPID:(int)arg1 isUIApp:(BOOL)arg2 isExtension:(BOOL)arg3 bundleID:(id)arg4;
+- (id)_serviceClientAddedWithProcessHandle:(id)arg1;
 - (void)_setPreferredForegroundApplicationProcess:(id)arg1;
-- (id)_systemServiceClientAdded:(id)arg1;
 - (void)_updateWorkspaceLockedState;
 - (void)addObserver:(id)arg1;
 - (id)allApplicationProcesses;
@@ -60,7 +58,7 @@
 - (id)processesForBundleIdentifier:(id)arg1;
 - (void)removeObserver:(id)arg1;
 - (id)systemApplicationProcess;
-- (double)watchdogIntervalForProcess:(id)arg1 eventContext:(struct { int x1; id x2; })arg2;
+- (id)watchdogPolicyForProcess:(id)arg1 eventContext:(id)arg2;
 - (id)workspaceForSceneClientWithIdentity:(id)arg1;
 
 @end

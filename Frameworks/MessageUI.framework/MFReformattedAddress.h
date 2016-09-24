@@ -3,11 +3,11 @@
  */
 
 @interface MFReformattedAddress : NSObject {
-    NSString *_address;
+    NSString * _address;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _middleTruncationRange;
+    }  _middleTruncationRange;
 }
 
 @property (nonatomic, readonly) NSString *domainPart;

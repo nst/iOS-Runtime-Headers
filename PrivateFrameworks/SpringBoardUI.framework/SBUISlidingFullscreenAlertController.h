@@ -3,10 +3,10 @@
  */
 
 @interface SBUISlidingFullscreenAlertController : SBUIFullscreenAlertController {
-    BOOL _animatingIn;
-    BOOL _animatingOut;
-    UIView *_bottomBar;
-    UIView *_topBar;
+    BOOL  _animatingIn;
+    BOOL  _animatingOut;
+    UIView * _bottomBar;
+    UIView * _topBar;
 }
 
 @property (nonatomic, readonly) UIView *bottomBar;

@@ -3,9 +3,9 @@
  */
 
 @interface HDUserDefault : NSObject <NSSecureCoding> {
-    NSString *_bundleID;
-    NSString *_key;
-    NSDictionary *_value;
+    NSString * _bundleID;
+    NSString * _key;
+    NSDictionary * _value;
 }
 
 @property (nonatomic, retain) NSString *bundleID;

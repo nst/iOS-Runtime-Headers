@@ -3,7 +3,7 @@
  */
 
 @interface PBMessageStreamWriter : NSObject {
-    NSOutputStream *_stream;
+    NSOutputStream * _stream;
 }
 
 - (void)dealloc;

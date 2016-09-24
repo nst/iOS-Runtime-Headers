@@ -3,9 +3,9 @@
  */
 
 @interface SSKeybagRequest : SSRequest <SSXPCCoding> {
-    NSNumber *_accountID;
-    id _contentIdentifier;
-    int _options;
+    NSNumber * _accountID;
+    id  _contentIdentifier;
+    int  _options;
 }
 
 @property (readonly) NSNumber *accountID;

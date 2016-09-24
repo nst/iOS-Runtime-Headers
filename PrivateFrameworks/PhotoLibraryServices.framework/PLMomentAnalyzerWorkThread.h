@@ -3,7 +3,7 @@
  */
 
 @interface PLMomentAnalyzerWorkThread : NSThread {
-    NSPort *_dummyPort;
+    NSPort * _dummyPort;
 }
 
 - (void)cancel;

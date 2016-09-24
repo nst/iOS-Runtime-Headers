@@ -5,10 +5,10 @@
 @interface AWDWiProxLeConnectionRequest : PBRequest <NSCopying> {
     struct { 
         unsigned int timestamp : 1; 
-    } _has;
-    NSString *_peerId;
-    NSString *_sessionId;
-    unsigned long long _timestamp;
+    }  _has;
+    NSString * _peerId;
+    NSString * _sessionId;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic, readonly) BOOL hasPeerId;

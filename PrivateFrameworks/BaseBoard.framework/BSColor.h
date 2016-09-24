@@ -3,21 +3,21 @@
  */
 
 @interface BSColor : NSObject <BSXPCCoding, NSCopying, NSSecureCoding> {
-    float _alpha;
-    float _blue;
-    struct CGColor { } *_colorRef;
-    float _green;
-    float _red;
+    double  _alpha;
+    double  _blue;
+    struct CGColor { } * _colorRef;
+    double  _green;
+    double  _red;
 }
 
 @property (nonatomic, readonly) struct CGColor { }*CGColor;
-@property (nonatomic, readonly) float alpha;
-@property (nonatomic, readonly) float blue;
+@property (nonatomic, readonly) double alpha;
+@property (nonatomic, readonly) double blue;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) float green;
+@property (nonatomic, readonly) double green;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly) float red;
+@property (nonatomic, readonly) double red;
 @property (readonly) Class superclass;
 
 + (id)blackColor;

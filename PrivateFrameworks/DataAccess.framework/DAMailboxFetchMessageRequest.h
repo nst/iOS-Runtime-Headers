@@ -3,7 +3,7 @@
  */
 
 @interface DAMailboxFetchMessageRequest : DAMailboxRequest {
-    int _maxSize;
+    int  _maxSize;
 }
 
 @property (nonatomic) int maxSize;

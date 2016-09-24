@@ -3,8 +3,8 @@
  */
 
 @interface BSProcessDeathWatcher : NSObject {
-    id /* block */ _deathHandler;
-    BSDispatchSource *_source;
+    id /* block */  _deathHandler;
+    BSDispatchSource * _source;
 }
 
 - (void)dealloc;

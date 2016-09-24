@@ -3,42 +3,46 @@
  */
 
 @interface SiriUISnippetViewController : SiriUIBaseSnippetViewController {
-    NSAttributedString *_attributedSubtitle;
-    BOOL _cancelled;
-    BOOL _confirmed;
-    int _defaultKeylineType;
+    NSAttributedString * _attributedSubtitle;
+    BOOL  _cancelled;
+    BOOL  _confirmed;
+    UIView * _containingView;
+    int  _defaultKeylineType;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    } _defaultViewInsets;
-    UICollectionReusableView<SiriUIReusableView> *_footerView;
-    SAUIAppPunchOut *_headerPunchOut;
-    UICollectionReusableView<SiriUIReusableView> *_headerView;
-    BOOL _isFullPadWidth;
-    BOOL _isTransparent;
-    BOOL _loading;
-    NSString *_navigationTitle;
-    SAUIConfirmationOptions *_previousConfirmationOptions;
-    BOOL _provisional;
-    NSArray *_requestContext;
-    BOOL _showHeaderChevron;
-    SAUIAppPunchOut *_snippetPunchOut;
-    BOOL _topKeylineHidden;
-    UICollectionReusableView<SiriUIReusableView> *_transparentFooterView;
-    UICollectionReusableView<SiriUIReusableView> *_transparentHeaderView;
-    BOOL _virgin;
-    BOOL _wantsConfirmationInsets;
-    BOOL _willAnimateCancellation;
-    BOOL _willAnimateConfirmation;
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _defaultViewInsets;
+    UICollectionReusableView<SiriUIReusableView> * _footerView;
+    SAUIAppPunchOut * _headerPunchOut;
+    UICollectionReusableView<SiriUIReusableView> * _headerView;
+    BOOL  _isFullPadWidth;
+    BOOL  _isTransparent;
+    BOOL  _loading;
+    NSString * _navigationTitle;
+    SAUIConfirmationOptions * _previousConfirmationOptions;
+    BOOL  _provisional;
+    NSArray * _requestContext;
+    BOOL  _showHeaderChevron;
+    SAUIAppPunchOut * _snippetPunchOut;
+    UIColor * _titleBackgroundColor;
+    UIColor * _titleTextColor;
+    BOOL  _topKeylineHidden;
+    UICollectionReusableView<SiriUIReusableView> * _transparentFooterView;
+    UICollectionReusableView<SiriUIReusableView> * _transparentHeaderView;
+    BOOL  _virgin;
+    BOOL  _wantsConfirmationInsets;
+    BOOL  _willAnimateCancellation;
+    BOOL  _willAnimateConfirmation;
 }
 
 @property (nonatomic, copy) NSAttributedString *attributedSubtitle;
 @property (getter=isCancelled, nonatomic) BOOL cancelled;
 @property (getter=isConfirmed, nonatomic) BOOL confirmed;
+@property (nonatomic) UIView *containingView;
 @property (nonatomic) int defaultKeylineType;
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } defaultViewInsets;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } defaultViewInsets;
 @property (nonatomic) <SiriUISnippetViewControllerDelegate> *delegate;
 @property (nonatomic, retain) SAUIAppPunchOut *headerPunchOut;
 @property (nonatomic) BOOL isFullPadWidth;
@@ -51,6 +55,8 @@
 @property (nonatomic) BOOL showHeaderChevron;
 @property (nonatomic, retain) SAUIAppPunchOut *snippetPunchOut;
 @property (nonatomic, copy) NSString *subtitle;
+@property (nonatomic, copy) UIColor *titleBackgroundColor;
+@property (nonatomic, copy) UIColor *titleTextColor;
 @property (nonatomic) BOOL topKeylineHidden;
 @property (getter=isVirgin, nonatomic, readonly) BOOL virgin;
 @property (nonatomic) BOOL wantsConfirmationInsets;
@@ -89,8 +95,9 @@
 - (void)configureReusableTransparentFooterView:(id)arg1;
 - (void)configureReusableTransparentHeaderView:(id)arg1;
 - (void)confirmButtonTapped:(id)arg1;
+- (id)containingView;
 - (int)defaultKeylineType;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })defaultViewInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })defaultViewInsets;
 - (float)desiredHeightForFooterView;
 - (float)desiredHeightForHeaderView;
 - (float)desiredHeightForTransparentFooterView;
@@ -113,8 +120,9 @@
 - (void)setAttributedSubtitle:(id)arg1;
 - (void)setCancelled:(BOOL)arg1;
 - (void)setConfirmed:(BOOL)arg1;
+- (void)setContainingView:(id)arg1;
 - (void)setDefaultKeylineType:(int)arg1;
-- (void)setDefaultViewInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setDefaultViewInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setHeaderPunchOut:(id)arg1;
 - (void)setIsFullPadWidth:(BOOL)arg1;
 - (void)setIsTransparent:(BOOL)arg1;
@@ -125,6 +133,8 @@
 - (void)setShowHeaderChevron:(BOOL)arg1;
 - (void)setSnippetPunchOut:(id)arg1;
 - (void)setSubtitle:(id)arg1;
+- (void)setTitleBackgroundColor:(id)arg1;
+- (void)setTitleTextColor:(id)arg1;
 - (void)setTopKeylineHidden:(BOOL)arg1;
 - (void)setWantsConfirmationInsets:(BOOL)arg1;
 - (BOOL)showHeaderChevron;
@@ -132,9 +142,12 @@
 - (void)siriWillLayoutSnippetView;
 - (id)snippetPunchOut;
 - (id)subtitle;
+- (id)titleBackgroundColor;
+- (id)titleTextColor;
 - (BOOL)topKeylineHidden;
 - (Class)transparentFooterViewClass;
 - (Class)transparentHeaderViewClass;
+- (BOOL)usePlatterStyle;
 - (BOOL)wantsConfirmationInsets;
 - (void)willCancel;
 - (void)willConfirm;

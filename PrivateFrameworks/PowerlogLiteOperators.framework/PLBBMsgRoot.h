@@ -3,14 +3,14 @@
  */
 
 @interface PLBBMsgRoot : NSObject {
-    PLAgent *_agent;
-    NSDate *_msgDate;
-    NSDictionary *_msgEntry;
-    NSDictionary *_msgKVPairs;
-    NSString *_msgName;
-    NSString *_msgPayload;
-    NSString *_msgProcErr;
-    NSNumber *_msgType;
+    PLAgent * _agent;
+    NSDate * _msgDate;
+    NSDictionary * _msgEntry;
+    NSDictionary * _msgKVPairs;
+    NSString * _msgName;
+    NSString * _msgPayload;
+    NSString * _msgProcErr;
+    NSNumber * _msgType;
 }
 
 @property (nonatomic, retain) PLAgent *agent;

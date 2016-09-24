@@ -3,13 +3,13 @@
  */
 
 @interface CalLogNode : NSObject {
-    NSMutableArray *_accumulator;
-    unsigned int _accumulatorBufferSize;
-    NSObject<OS_dispatch_group> *_dispatchGroup;
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    CalLogFilter *_filter;
-    NSMutableArray *_subnodes;
-    <CalLogWriter> *_writer;
+    NSMutableArray * _accumulator;
+    unsigned int  _accumulatorBufferSize;
+    NSObject<OS_dispatch_group> * _dispatchGroup;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    CalLogFilter * _filter;
+    NSMutableArray * _subnodes;
+    <CalLogWriter> * _writer;
 }
 
 @property (nonatomic, retain) NSMutableArray *accumulator;

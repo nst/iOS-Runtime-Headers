@@ -4,11 +4,15 @@
 
 @interface SACFSignal : SADomainCommand
 
+@property (nonatomic, copy) NSString *flowScriptHint;
+
 + (id)signal;
 + (id)signalWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)encodedClassName;
+- (id)flowScriptHint;
 - (id)groupIdentifier;
 - (BOOL)requiresResponse;
+- (void)setFlowScriptHint:(id)arg1;
 
 @end

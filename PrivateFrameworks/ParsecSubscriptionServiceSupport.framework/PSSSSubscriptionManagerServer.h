@@ -3,10 +3,10 @@
  */
 
 @interface PSSSSubscriptionManagerServer : NSObject {
-    NSXPCListener *_internalListener;
-    ServerListenerDelegateInternal *_internalListenerDelegate;
-    NSXPCListener *_listener;
-    ServerListenerDelegate *_listenerDelegate;
+    NSXPCListener * _internalListener;
+    ServerListenerDelegateInternal * _internalListenerDelegate;
+    NSXPCListener * _listener;
+    ServerListenerDelegate * _listenerDelegate;
 }
 
 @property (nonatomic, retain) NSXPCListener *internalListener;

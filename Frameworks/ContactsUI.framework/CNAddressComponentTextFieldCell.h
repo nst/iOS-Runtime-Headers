@@ -3,15 +3,15 @@
  */
 
 @interface CNAddressComponentTextFieldCell : UITableViewCell {
-    UIImageView *_chevron;
-    NSArray *_componentConstraints;
-    NSArray *_oneFieldConstraints;
-    CNRepeatingGradientSeparatorView *_separator;
-    NSArray *_splitFieldConstraints;
-    UITextField *_textFieldForChevron;
-    UITextField *_textFieldLeft;
-    UITextField *_textFieldRight;
-    BOOL _usesSplitTextFields;
+    UIImageView * _chevron;
+    NSArray * _componentConstraints;
+    NSArray * _oneFieldConstraints;
+    CNRepeatingGradientSeparatorView * _separator;
+    NSArray * _splitFieldConstraints;
+    UITextField * _textFieldForChevron;
+    UITextField * _textFieldLeft;
+    UITextField * _textFieldRight;
+    BOOL  _usesSplitTextFields;
 }
 
 @property (nonatomic, retain) UIImageView *chevron;

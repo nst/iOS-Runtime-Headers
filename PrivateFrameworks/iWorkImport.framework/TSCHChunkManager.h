@@ -3,10 +3,8 @@
  */
 
 @interface TSCHChunkManager : NSObject {
-    TSCHChartInfo *mChartInfo;
-    unsigned int mChunkMapCount;
-    unsigned int *mSeriesMap;
-    unsigned int *mValuesMap;
+    TSCHChunkMap * mCachedChunkMap;
+    TSUWeakReference * mWeakChart;
 }
 
 + (id)p_allChartDeliveryStylesLocalized:(BOOL)arg1;
@@ -20,7 +18,6 @@
 - (unsigned int)chartDeliveryStyleFromTSDDeliveryStyle:(unsigned int)arg1 animationFilter:(id)arg2;
 - (unsigned int)chunkCountByUpdatingCacheIfNecessaryForChartDeliveryStyle:(unsigned int)arg1;
 - (unsigned int)chunkCountForChartDeliveryStyle:(unsigned int)arg1;
-- (void)clearCaches;
 - (id)containedTextForChartDeliveryStyle:(unsigned int)arg1 chunkIndex:(unsigned int)arg2;
 - (void)dealloc;
 - (BOOL)hasBackgroundLayerForPieChart;
@@ -28,19 +25,19 @@
 - (BOOL)isVisibleAtBeginningOfMagicChartBuildForDeliveryStyle:(unsigned int)arg1 animationFilter:(id)arg2;
 - (BOOL)lastChunkForSeriesIndex:(unsigned int)arg1 currentChunk:(unsigned int)arg2 chunkStyle:(unsigned int)arg3;
 - (id)p_backgroundStringForChartWithTitle:(id)arg1;
-- (BOOL)p_canAddChunkForSeries:(id)arg1 valueIndex:(int)arg2;
-- (unsigned int)p_chunkCountForChartDeliveryStyle:(unsigned int)arg1;
-- (BOOL)p_hasBackgroundFill;
-- (BOOL)p_isMultiData;
-- (BOOL)p_isPie;
-- (BOOL)p_legendOn;
-- (id)p_nameForMultiDataSetCategory:(unsigned int)arg1;
-- (id)p_seriesNameForSeriesAtIndex:(unsigned int)arg1 withPrefix:(id)arg2;
-- (BOOL)p_titleOn;
-- (void)p_updateCacheForElementsInSeries;
-- (void)p_updateCacheForElementsInSets;
-- (void)p_updateCacheForSeries;
-- (void)p_updateCacheForSets;
+- (id)p_cachedChunkMap;
+- (id)p_chart;
+- (unsigned int)p_chunkCountForChart:(id)arg1 chunkStyle:(unsigned int)arg2 chunkMap:(id)arg3;
+- (id)p_chunkMapForChart:(id)arg1 chunkStyle:(unsigned int)arg2 forceUpdateCache:(BOOL)arg3;
+- (id)p_createChunkMapForChart:(id)arg1 chunkStyle:(unsigned int)arg2;
+- (BOOL)p_hasBackgroundFillForChart:(id)arg1;
+- (BOOL)p_hasBackgroundLayerForPieChartForChart:(id)arg1;
+- (BOOL)p_isMultiDataForChart:(id)arg1;
+- (BOOL)p_isPieForChart:(id)arg1;
+- (BOOL)p_legendOnForChart:(id)arg1;
+- (id)p_nameForMultiDataSetCategory:(unsigned int)arg1 chart:(id)arg2;
+- (id)p_seriesNameForSeriesAtIndex:(unsigned int)arg1 withPrefix:(id)arg2 chart:(id)arg3;
+- (BOOL)p_titleOnForChart:(id)arg1;
 - (unsigned int)textureDeliveryStyleFromDeliveryString:(id)arg1;
 - (id)textureDeliveryStylesLocalized:(BOOL)arg1 animationFilter:(id)arg2;
 - (void)updateCache:(unsigned int)arg1;

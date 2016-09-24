@@ -3,10 +3,10 @@
  */
 
 @interface DDFallbackController : UIViewController {
-    UIWindow *_baseWindow;
-    id _interactionDelegate;
-    UIWindow *_ourWindow;
-    int _startOrientation;
+    UIWindow * _baseWindow;
+    id  _interactionDelegate;
+    UIWindow * _ourWindow;
+    int  _startOrientation;
 }
 
 - (void)dealloc;

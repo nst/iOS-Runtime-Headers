@@ -3,7 +3,7 @@
  */
 
 @interface AVOutputSettings : NSObject <NSCopying> {
-    NSDictionary *_outputSettingsDictionary;
+    NSDictionary * _outputSettingsDictionary;
 }
 
 @property (nonatomic, readonly) NSSet *compatibleMediaTypes;

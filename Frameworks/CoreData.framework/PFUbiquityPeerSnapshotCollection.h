@@ -3,11 +3,11 @@
  */
 
 @interface PFUbiquityPeerSnapshotCollection : NSObject {
-    NSMutableDictionary *_kvToSnapshot;
-    BOOL _needSort;
-    NSMutableDictionary *_peerIDToTranasctionNumberToKnowledgeVector;
-    NSMutableDictionary *_peerIDToTransactionNumberToSnapshot;
-    NSMutableArray *_peerSnapshots;
+    NSMutableDictionary * _kvToSnapshot;
+    BOOL  _needSort;
+    NSMutableDictionary * _peerIDToTranasctionNumberToKnowledgeVector;
+    NSMutableDictionary * _peerIDToTransactionNumberToSnapshot;
+    NSMutableArray * _peerSnapshots;
 }
 
 - (void)addSnapshot:(id)arg1;

@@ -3,10 +3,10 @@
  */
 
 @interface MPUKeyValueObserver : NSObject {
-    id /* block */ _observationHandler;
-    NSString *_observedKeyPath;
-    id _observedObject;
-    NSOperationQueue *_queue;
+    id /* block */  _observationHandler;
+    NSString * _observedKeyPath;
+    id  _observedObject;
+    NSOperationQueue * _queue;
 }
 
 @property (nonatomic, copy) id /* block */ observationHandler;

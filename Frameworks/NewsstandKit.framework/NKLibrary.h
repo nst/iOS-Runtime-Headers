@@ -3,18 +3,18 @@
  */
 
 @interface NKLibrary : NSObject {
-    NSURL *_appSupportURL;
-    NSArray *_assetsFromLaunch;
-    NSURL *_contentURL;
-    NKIssue *_currentlyReadingIssue;
-    NSFileManager *_fileManager;
-    BOOL _inited;
-    NSArray *_issues;
-    NSMapTable *_issuesByDirectory;
-    NSMapTable *_issuesByName;
-    NSURL *_libraryURL;
-    int _needsSaving;
-    int _savePending;
+    NSURL * _appSupportURL;
+    NSArray * _assetsFromLaunch;
+    NSURL * _contentURL;
+    NKIssue * _currentlyReadingIssue;
+    NSFileManager * _fileManager;
+    BOOL  _inited;
+    NSArray * _issues;
+    NSMapTable * _issuesByDirectory;
+    NSMapTable * _issuesByName;
+    NSURL * _libraryURL;
+    int  _needsSaving;
+    int  _savePending;
 }
 
 @property (retain) NKIssue *currentlyReadingIssue;

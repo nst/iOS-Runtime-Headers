@@ -4,12 +4,13 @@
 
 @interface NWAddressEndpoint : NWHostEndpoint
 
-@property (readonly) const struct sockaddr { unsigned char x1; unsigned char x2; BOOL x3[14]; }*address;
-@property (readonly) NSData *addressData;
-@property (readonly) unsigned int addressFamily;
-@property (readonly) NSString *addressString;
-@property (readonly) NSString *addressStringNoPort;
+@property (nonatomic, readonly) const struct sockaddr { unsigned char x1; unsigned char x2; BOOL x3[14]; }*address;
+@property (nonatomic, readonly) NSData *addressData;
+@property (nonatomic, readonly) unsigned int addressFamily;
+@property (nonatomic, readonly) NSString *addressString;
+@property (nonatomic, readonly) NSString *addressStringNoPort;
 
++ (unsigned int)endpointType;
 + (id)endpointWithAddress:(const struct sockaddr { unsigned char x1; unsigned char x2; BOOL x3[14]; }*)arg1;
 + (id)endpointWithHostname:(id)arg1 port:(id)arg2;
 

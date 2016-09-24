@@ -3,12 +3,12 @@
  */
 
 @interface WMSectionMapper : CMMapper {
-    BOOL mBreakAtEnd;
-    BOOL mBreakAtStart;
-    BOOL mIsTitlePage;
-    float mLeftMargin;
-    float mTopMargin;
-    WDSection *wdSection;
+    BOOL  mBreakAtEnd;
+    BOOL  mBreakAtStart;
+    BOOL  mIsTitlePage;
+    double  mLeftMargin;
+    double  mTopMargin;
+    WDSection * wdSection;
 }
 
 + (BOOL)isContentEmpty:(id)arg1;

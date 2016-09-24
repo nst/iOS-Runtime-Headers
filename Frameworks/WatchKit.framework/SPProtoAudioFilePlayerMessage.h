@@ -3,9 +3,9 @@
  */
 
 @interface SPProtoAudioFilePlayerMessage : PBCodable <NSCopying> {
-    SPProtoAudioFilePlayerAsset *_asset;
-    SPProtoAudioFilePlayerItem *_playerItem;
-    SPProtoAudioFileQueuePlayer *_queuePlayer;
+    SPProtoAudioFilePlayerAsset * _asset;
+    SPProtoAudioFilePlayerItem * _playerItem;
+    SPProtoAudioFileQueuePlayer * _queuePlayer;
 }
 
 @property (nonatomic, retain) SPProtoAudioFilePlayerAsset *asset;

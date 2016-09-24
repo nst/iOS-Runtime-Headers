@@ -3,10 +3,10 @@
  */
 
 @interface CKFetchUserQuotaOperationResult : CKOperationResult <NSSecureCoding> {
-    unsigned long long _quotaAvailable;
+    unsigned int  _quotaAvailable;
 }
 
-@property (nonatomic) unsigned long long quotaAvailable;
+@property (nonatomic) unsigned int quotaAvailable;
 
 + (BOOL)supportsSecureCoding;
 
@@ -14,7 +14,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (unsigned long long)quotaAvailable;
-- (void)setQuotaAvailable:(unsigned long long)arg1;
+- (unsigned int)quotaAvailable;
+- (void)setQuotaAvailable:(unsigned int)arg1;
 
 @end

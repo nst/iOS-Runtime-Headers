@@ -3,7 +3,7 @@
  */
 
 @interface NNMKFetchesSyncServiceClient : NNMKSyncServiceEndpoint {
-    <NNMKFetchesSyncServiceClientDelegate> *_delegate;
+    <NNMKFetchesSyncServiceClientDelegate> * _delegate;
 }
 
 @property (nonatomic) <NNMKFetchesSyncServiceClientDelegate> *delegate;
@@ -13,7 +13,6 @@
 - (void)failedSendingProtobufWithIDSIdentifier:(id)arg1 errorCode:(int)arg2;
 - (id)initWithQueue:(id)arg1;
 - (id)notifyInitialSyncFinished:(id)arg1;
-- (void)notifyProtectedChannelSupported:(id)arg1;
 - (void)readProtobufData:(id)arg1 type:(unsigned int)arg2;
 - (void)requestContent:(id)arg1 highPriority:(BOOL)arg2;
 - (id)requestFetch:(id)arg1;

@@ -3,8 +3,8 @@
  */
 
 @interface AAUpdateNameRequest : AAAppleIDSettingsRequest {
-    NSString *_newFirstName;
-    NSString *_newLastName;
+    NSString * _newFirstName;
+    NSString * _newLastName;
 }
 
 + (Class)responseClass;

@@ -3,30 +3,30 @@
  */
 
 @interface PUActivityItemSource : NSObject <UIActivityItemApplicationExtensionSource, UIActivityItemDeferredSource, UIActivityItemSource> {
-    NSURL *__assetURL;
-    NSURL *__assetsLibraryURL;
-    int __imageManagerImageRequestID;
-    int __imageManagerVideoRequestID;
-    NSURL *__irisRemakerURL;
-    NSDictionary *__pasteboardRepresentation;
-    NSURL *__photoRemakerURL;
-    int __remakerWasCancelled;
-    NSURL *__videoComplementAssetURL;
-    NSURL *__videoRemakerURL;
-    PHAsset *_asset;
-    id /* block */ _completionHandler;
-    _PUActivityItemSourceOperation *_currentOperation;
-    BOOL _hasRecognizedVideoAdjustments;
-    PFColorConverter *_irisRemaker;
-    NSArray *_nonLocalAssetsActivities;
-    NSURL *_photoIrisBundleURL;
-    PFSharingRemaker *_photoRemaker;
-    id /* block */ _postCompletionHandler;
-    id /* block */ _progressHandler;
-    PLVideoRemaker *_remaker;
-    id /* block */ _remakerCompletionHandler;
-    id _strongSelf;
-    BOOL _useStillImage;
+    NSURL * __assetURL;
+    NSURL * __assetsLibraryURL;
+    int  __imageManagerImageRequestID;
+    int  __imageManagerVideoRequestID;
+    NSURL * __irisRemakerURL;
+    NSDictionary * __pasteboardRepresentation;
+    NSURL * __photoRemakerURL;
+    int  __remakerWasCancelled;
+    NSURL * __videoComplementAssetURL;
+    NSURL * __videoRemakerURL;
+    PHAsset * _asset;
+    id /* block */  _completionHandler;
+    _PUActivityItemSourceOperation * _currentOperation;
+    BOOL  _hasRecognizedVideoAdjustments;
+    PFColorConverter * _irisRemaker;
+    NSArray * _nonLocalAssetsActivities;
+    NSURL * _photoIrisBundleURL;
+    PFSharingRemaker * _photoRemaker;
+    id /* block */  _postCompletionHandler;
+    id /* block */  _progressHandler;
+    PLVideoRemaker * _remaker;
+    id /* block */  _remakerCompletionHandler;
+    id  _strongSelf;
+    BOOL  _useStillImage;
 }
 
 @property (setter=_setAssetURL:, retain) NSURL *_assetURL;
@@ -50,8 +50,6 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) BOOL useStillImage;
 
-+ (BOOL)_wantsIrisRemakerURLForActivityType:(id)arg1;
-+ (BOOL)_wantsPhotoRemakerURLForActivityType:(id)arg1;
 + (BOOL)supportsPhotoIrisBundleForActivityType:(id)arg1;
 
 - (void).cxx_destruct;
@@ -62,6 +60,7 @@
 - (void)_cleanupPhotoRemaker;
 - (void)_cleanupRemaker;
 - (id)_createTempPhotoIrisBundle;
+- (id)_customAccessibilityLabel;
 - (void)_fetchImageWithProgressHandler:(id /* block */)arg1 completionHandler:(id /* block */)arg2;
 - (void)_fetchPhotoIrisForActivityType:(id)arg1 progressHandler:(id /* block */)arg2 completionHandler:(id /* block */)arg3 wantsAssetsLibraryURL:(BOOL)arg4;
 - (void)_fetchVideoForActivityType:(id)arg1 progressHandler:(id /* block */)arg2 completionHandler:(id /* block */)arg3 wantsAssetsLibraryURL:(BOOL)arg4;
@@ -92,12 +91,14 @@
 - (id)_videoComplementAssetURL;
 - (id)_videoRemakerURL;
 - (BOOL)_wantsAssetsLibraryURLForActivityType:(id)arg1;
+- (BOOL)_wantsIrisRemakerURLForActivityType:(id)arg1;
 - (BOOL)_wantsLocalAssetsForActivityType:(id)arg1;
 - (BOOL)_wantsPhotoIrisBundleForActivityType:(id)arg1;
+- (BOOL)_wantsPhotoRemakerURLForActivityType:(id)arg1;
 - (BOOL)_wantsVideoRemakerForActivityType:(id)arg1 adjustmentData:(id)arg2 wantsAssetsLibraryURL:(BOOL)arg3;
 - (id)activityViewController:(id)arg1 dataTypeIdentifierForActivityType:(id)arg2;
 - (id)activityViewController:(id)arg1 itemForActivityType:(id)arg2;
-- (id)activityViewController:(id)arg1 thumbnailImageForActivityType:(id)arg2 suggestedSize:(struct CGSize { float x1; float x2; })arg3;
+- (id)activityViewController:(id)arg1 thumbnailImageForActivityType:(id)arg2 suggestedSize:(struct CGSize { double x1; double x2; })arg3;
 - (id)activityViewControllerApplicationExtensionItem:(id)arg1;
 - (id)activityViewControllerOperation:(id)arg1;
 - (id)activityViewControllerPlaceholderItem:(id)arg1;

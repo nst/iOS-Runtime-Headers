@@ -3,17 +3,17 @@
  */
 
 @interface PLBBTelephonyRegMsg : PLBasebandMessage {
-    NSNumber *_cellID;
-    unsigned char _changed;
-    NSNumber *_dataActive;
-    NSNumber *_dataAttached;
-    NSString *_dataIndicator;
-    NSNumber *_homeNetwork;
-    NSNumber *_lac;
-    NSString *_operatorName;
-    NSString *_registrationStatus;
-    NSDictionary *_telRegInfo;
-    NSDate *_timeUpdate;
+    NSNumber * _cellID;
+    unsigned char  _changed;
+    NSNumber * _dataActive;
+    NSNumber * _dataAttached;
+    NSString * _dataIndicator;
+    NSNumber * _homeNetwork;
+    NSNumber * _lac;
+    NSString * _operatorName;
+    NSString * _registrationStatus;
+    NSDictionary * _telRegInfo;
+    NSDate * _timeUpdate;
 }
 
 @property (retain) NSNumber *cellID;

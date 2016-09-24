@@ -3,16 +3,16 @@
  */
 
 @interface AXSpeechManager : NSObject <TTSSpeechSynthesizerDelegate> {
-    unsigned int _audioQueueFlags;
-    BOOL _isSpeaking;
-    NSNumber *_originalSpeechRateForJobOverride;
-    AXSpeechThread *_runThread;
-    NSObject<OS_dispatch_semaphore> *_runThreadSemaphore;
-    BOOL _showControlCenterControls;
-    BOOL _speechEnabled;
-    NSMutableArray *_speechQueue;
-    TTSSpeechSynthesizer *_synthesizer;
-    BOOL isPaused;
+    unsigned int  _audioQueueFlags;
+    BOOL  _isSpeaking;
+    NSNumber * _originalSpeechRateForJobOverride;
+    AXSpeechThread * _runThread;
+    NSObject<OS_dispatch_semaphore> * _runThreadSemaphore;
+    BOOL  _showControlCenterControls;
+    BOOL  _speechEnabled;
+    NSMutableArray * _speechQueue;
+    TTSSpeechSynthesizer * _synthesizer;
+    BOOL  isPaused;
 }
 
 @property (nonatomic) unsigned int audioQueueFlags;
@@ -22,6 +22,7 @@
 @property (nonatomic) BOOL isPaused;
 @property (nonatomic, readonly) BOOL isSpeaking;
 @property (nonatomic, retain) NSNumber *originalSpeechRateForJobOverride;
+@property (nonatomic, retain) NSArray *outputChannels;
 @property (nonatomic, readonly) BOOL showControlCenterControls;
 @property (nonatomic) BOOL speechEnabled;
 @property (readonly) Class superclass;
@@ -31,20 +32,25 @@
 + (struct URegularExpression { }*)createRegularExpressionFromString:(id)arg1;
 + (id)currentLanguageCode;
 + (id)matchedRangesForString:(id)arg1 withRegularExpression:(struct URegularExpression { }*)arg2;
++ (id)pauseMarkupString:(id)arg1;
++ (id)remapLanguageCode:(id)arg1;
++ (id)spellOutMarkupString:(id)arg1;
++ (void)test_setAvailableVoices:(id)arg1;
++ (void)test_setUnitTestMode:(BOOL)arg1;
 
 - (void)__speechJobFinished:(id)arg1;
-- (void)__speechJobStarted:(id)arg1;
-- (void)_checkForLanguageMigration:(id)arg1;
 - (void)_clearSpeechQueue;
 - (void)_continueSpeaking;
 - (void)_dispatchSpeechAction:(id)arg1;
 - (void)_initialize;
 - (void)_isSpeaking:(id)arg1;
 - (void)_pauseSpeaking:(id)arg1;
+- (id)_phonemeSubstitutionsForAction:(id)arg1;
 - (void)_speechJobFinished:(BOOL)arg1 action:(id)arg2;
 - (void)_startNextSpeechJob;
 - (void)_stopSpeaking:(id)arg1;
 - (void)_tearDown;
+- (void)_updateUserSubstitutions;
 - (unsigned int)audioQueueFlags;
 - (void)clearSpeechQueue;
 - (void)continueSpeaking;
@@ -54,10 +60,12 @@
 - (BOOL)isPaused;
 - (BOOL)isSpeaking;
 - (id)originalSpeechRateForJobOverride;
+- (id)outputChannels;
 - (void)pauseSpeaking:(int)arg1;
 - (void)setAudioQueueFlags:(unsigned int)arg1;
 - (void)setIsPaused:(BOOL)arg1;
 - (void)setOriginalSpeechRateForJobOverride:(id)arg1;
+- (void)setOutputChannels:(id)arg1;
 - (void)setSpeechEnabled:(BOOL)arg1;
 - (BOOL)showControlCenterControls;
 - (BOOL)speechEnabled;
@@ -69,5 +77,6 @@
 - (void)stopSpeaking;
 - (void)stopSpeaking:(int)arg1;
 - (void)tearDown;
+- (id)voiceIdentifierUsedForLanguage:(id)arg1;
 
 @end

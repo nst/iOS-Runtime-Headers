@@ -58,26 +58,26 @@
         unsigned int rcvbufsize; 
         unsigned int rcvbufused; 
         unsigned int traffic_class; 
-        unsigned long long upid; 
+        unsigned int upid; 
         unsigned int pid; 
         BOOL pname[64]; 
-        unsigned long long eupid; 
+        unsigned int eupid; 
         unsigned int epid; 
         unsigned char uuid[16]; 
         unsigned char euuid[16]; 
         unsigned char vuuid[16]; 
         unsigned short ifnet_properties; 
-    } _descriptor;
-    NSUUID *_euuid;
-    NSData *_localAddress;
-    NSString *_processName;
-    NSData *_remoteAddress;
-    NSUUID *_uuid;
-    NSUUID *_vuuid;
+    }  _descriptor;
+    NSUUID * _euuid;
+    NSData * _localAddress;
+    NSString * _processName;
+    NSData * _remoteAddress;
+    NSUUID * _uuid;
+    NSUUID * _vuuid;
 }
 
 @property (readonly) int epid;
-@property (readonly) unsigned long long eupid;
+@property (readonly) unsigned int eupid;
 @property (retain) NSUUID *euuid;
 @property (readonly) int interface;
 @property (readonly) bool interfaceAWDL;
@@ -94,7 +94,7 @@
 @property (readonly) int receiveBufferUsed;
 @property (retain) NSData *remoteAddress;
 @property (readonly) int trafficClass;
-@property (readonly) unsigned long long uniqueProcessID;
+@property (readonly) unsigned int uniqueProcessID;
 @property (retain) NSUUID *uuid;
 @property (retain) NSUUID *vuuid;
 
@@ -103,7 +103,7 @@
 - (id)createNSUUIDForBytes:(unsigned char)arg1;
 - (id)description;
 - (int)epid;
-- (unsigned long long)eupid;
+- (unsigned int)eupid;
 - (id)euuid;
 - (BOOL)handleDescriptor:(void*)arg1 length:(unsigned long)arg2;
 - (id)initWithManager:(id)arg1 local:(const struct sockaddr { unsigned char x1; unsigned char x2; BOOL x3[14]; }*)arg2 remote:(const struct sockaddr { unsigned char x1; unsigned char x2; BOOL x3[14]; }*)arg3;
@@ -128,7 +128,7 @@
 - (void)setUuid:(id)arg1;
 - (void)setVuuid:(id)arg1;
 - (int)trafficClass;
-- (unsigned long long)uniqueProcessID;
+- (unsigned int)uniqueProcessID;
 - (id)uuid;
 - (id)vuuid;
 

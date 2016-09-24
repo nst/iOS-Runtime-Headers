@@ -3,7 +3,7 @@
  */
 
 @interface ICCameraItem : NSObject {
-    void *_itemProperties;
+    void * _itemProperties;
 }
 
 @property (readonly) NSString *UTI;

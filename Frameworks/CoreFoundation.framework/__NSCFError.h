@@ -12,7 +12,6 @@
 - (int)code;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)domain;
-- (void)finalize;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (oneway void)release;

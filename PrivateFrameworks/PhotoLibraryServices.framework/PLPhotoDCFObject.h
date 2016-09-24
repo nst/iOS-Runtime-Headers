@@ -3,8 +3,8 @@
  */
 
 @interface PLPhotoDCFObject : NSObject {
-    NSString *_name;
-    int _number;
+    NSString * _name;
+    int  _number;
 }
 
 + (id)validDCFNameForName:(id)arg1 requiredLength:(int)arg2 nameLength:(int)arg3 number:(int*)arg4 numberRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg5 suffix:(id)arg6;

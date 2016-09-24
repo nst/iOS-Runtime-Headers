@@ -3,10 +3,10 @@
  */
 
 @interface NNMKSyncedMailbox : NSObject {
-    NSString *_accountId;
-    NSString *_customName;
-    unsigned int _type;
-    NSURL *_url;
+    NSString * _accountId;
+    NSString * _customName;
+    unsigned int  _type;
+    NSURL * _url;
 }
 
 @property (nonatomic, retain) NSString *accountId;

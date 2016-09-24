@@ -3,10 +3,10 @@
  */
 
 @interface _WebSafeForwarder : NSObject {
-    _WebSafeAsyncForwarder *asyncForwarder;
-    long asyncForwarderPred;
-    id defaultTarget;
-    id target;
+    _WebSafeAsyncForwarder * asyncForwarder;
+    long  asyncForwarderPred;
+    id  defaultTarget;
+    id  target;
 }
 
 - (id)asyncForwarder;

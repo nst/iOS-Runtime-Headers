@@ -3,7 +3,7 @@
  */
 
 @interface CMDiagramPointListItemL1Mapper : CMDiagramPointMapper {
-    unsigned int mListIndex;
+    unsigned int  mListIndex;
 }
 
 - (id)initWithPoint:(id)arg1 drawingContext:(id)arg2 orientedBounds:(id)arg3 listIndex:(unsigned int)arg4 parent:(id)arg5;

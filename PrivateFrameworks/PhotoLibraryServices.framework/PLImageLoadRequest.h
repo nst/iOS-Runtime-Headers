@@ -3,12 +3,12 @@
  */
 
 @interface PLImageLoadRequest : NSObject {
-    NSManagedObjectID *_assetID;
-    NSMutableArray *_completionBlocks;
-    PLLoadRequestKey *_key;
-    int _priority;
-    NSMutableSet *_queues;
-    PLImageSource *_source;
+    NSManagedObjectID * _assetID;
+    NSMutableArray * _completionBlocks;
+    PLLoadRequestKey * _key;
+    int  _priority;
+    NSMutableSet * _queues;
+    PLImageSource * _source;
 }
 
 @property (nonatomic, readonly) NSArray *completionBlocks;

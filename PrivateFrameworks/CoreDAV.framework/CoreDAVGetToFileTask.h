@@ -3,7 +3,7 @@
  */
 
 @interface CoreDAVGetToFileTask : CoreDAVGetTask {
-    NSFileHandle *_destinationFile;
+    NSFileHandle * _destinationFile;
 }
 
 @property (nonatomic, retain) NSFileHandle *destinationFile;

@@ -3,12 +3,12 @@
  */
 
 @interface HKGraphZoomLevelConfiguration : NSObject {
-    double _approximateSeriesPointInterval;
-    NSDateComponents *_axisLabelIntervalComponents;
-    double _canonicalSize;
-    double _seriesBlockSize;
-    NSDateComponents *_seriesPointIntervalComponents;
-    double _zoomLevelThreshold;
+    double  _approximateSeriesPointInterval;
+    NSDateComponents * _axisLabelIntervalComponents;
+    double  _canonicalSize;
+    double  _seriesBlockSize;
+    NSDateComponents * _seriesPointIntervalComponents;
+    double  _zoomLevelThreshold;
 }
 
 @property (nonatomic, readonly) double approximateSeriesPointInterval;

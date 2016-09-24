@@ -3,10 +3,10 @@
  */
 
 @interface SLSystemConfigManager : NSObject {
-    int _applySkipCount;
-    BOOL _notifyForExternalChangeOnly;
-    void *_prefs;
-    NSString *_serviceType;
+    int  _applySkipCount;
+    BOOL  _notifyForExternalChangeOnly;
+    void * _prefs;
+    NSString * _serviceType;
 }
 
 + (id)sharedInstanceForCallbackWhileLocked:(void*)arg1;

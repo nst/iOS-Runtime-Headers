@@ -3,10 +3,10 @@
  */
 
 @interface SSKeyValueStore : NSObject {
-    SSXPCConnection *_connection;
-    SSKeyValueStoreDatabase *_database;
-    BOOL _useLocalRead;
-    BOOL _useLocalWrite;
+    SSXPCConnection * _connection;
+    SSKeyValueStoreDatabase * _database;
+    BOOL  _useLocalRead;
+    BOOL  _useLocalWrite;
 }
 
 @property (getter=isLocalReadable, readonly) BOOL localReadable;

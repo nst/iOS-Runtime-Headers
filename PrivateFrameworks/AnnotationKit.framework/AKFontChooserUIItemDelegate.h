@@ -3,7 +3,7 @@
  */
 
 @interface AKFontChooserUIItemDelegate : NSObject <AKFontChooserUserInterfaceItem, AKUserInterfaceItem> {
-    AKTextAttributesViewController *_parentController;
+    AKTextAttributesViewController * _parentController;
 }
 
 @property (readonly, copy) NSString *debugDescription;

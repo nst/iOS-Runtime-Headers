@@ -3,8 +3,8 @@
  */
 
 @interface CalendarPreferences : NSObject {
-    BOOL _drawDebugViewColors;
-    CalPreferences *_preferences;
+    BOOL  _drawDebugViewColors;
+    CalPreferences * _preferences;
 }
 
 @property (nonatomic, retain) NSArray *calendarUUIDsExcludedFromNotifications;
@@ -14,6 +14,8 @@
 @property (nonatomic) BOOL disableContinuity;
 @property (nonatomic) BOOL disableTodayPushes;
 @property (nonatomic) BOOL drawDebugViewColors;
+@property (nonatomic) BOOL enableAvatars;
+@property (nonatomic) BOOL eventAutocompleteEnabled;
 @property (nonatomic) BOOL hideInlineDayViewInEventDetails;
 @property (nonatomic) BOOL immediateAlarmCreation;
 @property (nonatomic) BOOL largeListViewDisclosingEventDetails;
@@ -27,7 +29,6 @@
 @property (nonatomic) BOOL requestSyncOnApplicationLaunch;
 @property (nonatomic, retain) NSString *searchString;
 @property (getter=isShortResumeToTodayTimeout, nonatomic) BOOL shortResumeToTodayTimeout;
-@property (nonatomic) BOOL showDebugGridOverlay;
 @property (nonatomic) BOOL showDetailedListView;
 @property (nonatomic) BOOL showEventsInPhoneMonthView;
 @property (nonatomic) BOOL showExperimentalUI;
@@ -47,11 +48,12 @@
 - (id)calendarUUIDsExcludedFromNotifications;
 - (id)dayViewHourScale;
 - (unsigned int)debugOccurrenceViewIconOverload;
-- (id)deselectedCalendarIDsFromCalendars:(id)arg1;
 - (id)deselectedCalendarSyncHashes;
 - (BOOL)disableContinuity;
 - (BOOL)disableTodayPushes;
 - (BOOL)drawDebugViewColors;
+- (BOOL)enableAvatars;
+- (BOOL)eventAutocompleteEnabled;
 - (BOOL)hideInlineDayViewInEventDetails;
 - (BOOL)immediateAlarmCreation;
 - (id)init;
@@ -69,11 +71,12 @@
 - (void)setCalendarUUIDsExcludedFromNotifications:(id)arg1;
 - (void)setDayViewHourScale:(id)arg1;
 - (void)setDebugOccurrenceViewIconOverload:(unsigned int)arg1;
-- (void)setDeselectedCalendarIDs:(id)arg1;
 - (void)setDeselectedCalendarSyncHashes:(id)arg1;
 - (void)setDisableContinuity:(BOOL)arg1;
 - (void)setDisableTodayPushes:(BOOL)arg1;
 - (void)setDrawDebugViewColors:(BOOL)arg1;
+- (void)setEnableAvatars:(BOOL)arg1;
+- (void)setEventAutocompleteEnabled:(BOOL)arg1;
 - (void)setHideInlineDayViewInEventDetails:(BOOL)arg1;
 - (void)setImmediateAlarmCreation:(BOOL)arg1;
 - (void)setLargeListViewDisclosingEventDetails:(BOOL)arg1;
@@ -87,7 +90,6 @@
 - (void)setRequestSyncOnApplicationLaunch:(BOOL)arg1;
 - (void)setSearchString:(id)arg1;
 - (void)setShortResumeToTodayTimeout:(BOOL)arg1;
-- (void)setShowDebugGridOverlay:(BOOL)arg1;
 - (void)setShowDetailedListView:(BOOL)arg1;
 - (void)setShowEventsInPhoneMonthView:(BOOL)arg1;
 - (void)setShowExperimentalUI:(BOOL)arg1;
@@ -100,7 +102,6 @@
 - (void)setViewedTimeZoneAutomatic:(BOOL)arg1;
 - (void)setWeekStart:(id)arg1;
 - (void)setWeekViewHourScale:(id)arg1;
-- (BOOL)showDebugGridOverlay;
 - (BOOL)showDetailedListView;
 - (BOOL)showEventsInPhoneMonthView;
 - (BOOL)showExperimentalUI;

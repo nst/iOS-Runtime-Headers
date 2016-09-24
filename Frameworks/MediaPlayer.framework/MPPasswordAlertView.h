@@ -3,9 +3,9 @@
  */
 
 @interface MPPasswordAlertView : UIAlertView <UIAlertViewDelegate> {
-    id /* block */ _completionHandler;
-    UITextField *_passwordTextField;
-    int _style;
+    id /* block */  _completionHandler;
+    UITextField * _passwordTextField;
+    int  _style;
 }
 
 @property (readonly, copy) NSString *debugDescription;

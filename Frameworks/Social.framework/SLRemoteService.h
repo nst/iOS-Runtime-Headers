@@ -3,25 +3,25 @@
  */
 
 @interface SLRemoteService : SLService <NSSecureCoding> {
-    NSString *_accountTypeIdentifier;
-    UIImage *_activityImage;
-    NSString *_activityImageName;
-    NSString *_activityViewIconResourceName;
-    BOOL _addDeviceClassToRequest;
-    int _authenticationStyle;
-    NSString *_localizedServiceName;
-    int _maximumImageCount;
-    int _maximumImageDataSize;
-    int _maximumURLCount;
-    int _maximumVideoCount;
-    int _maximumVideoDataSize;
-    int _maximumVideoTimeLimit;
-    NSBundle *_serviceBundle;
-    NSURL *_serviceBundleURL;
-    BOOL _serviceRegionTargetIsChina;
-    NSString *_serviceTypeIdentifier;
-    NSSet *_supportedImageAssetURLSchemes;
-    NSSet *_supportedVideoAssetURLSchemes;
+    NSString * _accountTypeIdentifier;
+    UIImage * _activityImage;
+    NSString * _activityImageName;
+    NSString * _activityViewIconResourceName;
+    BOOL  _addDeviceClassToRequest;
+    int  _authenticationStyle;
+    NSString * _localizedServiceName;
+    int  _maximumImageCount;
+    int  _maximumImageDataSize;
+    int  _maximumURLCount;
+    int  _maximumVideoCount;
+    int  _maximumVideoDataSize;
+    int  _maximumVideoTimeLimit;
+    NSBundle * _serviceBundle;
+    NSURL * _serviceBundleURL;
+    BOOL  _serviceRegionTargetIsChina;
+    NSString * _serviceTypeIdentifier;
+    NSSet * _supportedImageAssetURLSchemes;
+    NSSet * _supportedVideoAssetURLSchemes;
 }
 
 @property (retain) NSString *accountTypeIdentifier;

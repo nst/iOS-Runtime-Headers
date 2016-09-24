@@ -3,37 +3,42 @@
  */
 
 @interface CUIThemeRendition : NSObject {
-    int _artworkStatus;
-    int _blendMode;
-    unsigned int _colorSpaceID;
-    int _exifOrientation;
-    struct _renditionkeytoken { unsigned short x1; unsigned short x2; } *_key;
-    NSString *_name;
-    float _opacity;
+    int  _artworkStatus;
+    int  _blendMode;
+    unsigned int  _colorSpaceID;
+    int  _exifOrientation;
+    struct _renditionkeytoken { unsigned short x1; unsigned short x2; } * _key;
+    NSString * _name;
+    double  _opacity;
     struct { 
         unsigned int isHeaderFlaggedFPO : 1; 
         unsigned int isExcludedFromContrastFilter : 1; 
         unsigned int isVectorBased : 1; 
         unsigned int isOpaque : 1; 
         unsigned int bitmapEncoding : 4; 
-        unsigned int reserved : 24; 
-    } _renditionFlags;
-    unsigned int _scale;
-    NSData *_srcData;
+        unsigned int optOutOfThinning : 1; 
+        unsigned int isFlippable : 1; 
+        unsigned int otherImageProvider : 1; 
+        unsigned int isTintable : 1; 
+        unsigned int reserved : 20; 
+    }  _renditionFlags;
+    unsigned int  _scale;
+    NSData * _srcData;
     struct _renditionkeytoken { 
         unsigned short identifier; 
         unsigned short value; 
-    } _stackKey;
-    unsigned int _subtype;
-    int _templateRenderingMode;
-    int _type;
-    NSString *_utiType;
-    int _validLookGradation;
+    }  _stackKey;
+    unsigned int  _subtype;
+    int  _templateRenderingMode;
+    int  _type;
+    struct CGImage { } * _uncroppedImage;
+    NSString * _utiType;
+    int  _validLookGradation;
 }
 
 @property (nonatomic) int blendMode;
 @property (nonatomic) int exifOrientation;
-@property (nonatomic) float opacity;
+@property (nonatomic) double opacity;
 
 + (id)displayNameForRenditionType:(int)arg1;
 + (id)filteredCSIDataFromBaseCSIData:(id)arg1;
@@ -46,7 +51,7 @@
 - (void)_initializeRenditionKey:(const struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)arg1;
 - (void)_initializeTypeIdentifiersWithLayout:(unsigned short)arg1;
 - (void)_setStructuredThemeStore:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })alphaCroppedRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })alphaCroppedRect;
 - (int)artworkStatus;
 - (id)assetPackIdentifier;
 - (int)bitmapEncoding;
@@ -66,11 +71,13 @@
 - (id)imageForSliceIndex:(int)arg1;
 - (id)initWithCSIData:(id)arg1 forKey:(const struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)arg2;
 - (id)initWithCSIData:(id)arg1 forKey:(const struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)arg2 artworkStatus:(int)arg3;
+- (BOOL)isFlippable;
 - (BOOL)isHeaderFlaggedFPO;
 - (BOOL)isInternalLink;
 - (BOOL)isOpaque;
 - (BOOL)isScaled;
 - (BOOL)isTiled;
+- (BOOL)isTintable;
 - (BOOL)isValidForLookGradation:(int)arg1;
 - (BOOL)isVectorBased;
 - (const struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)key;
@@ -78,12 +85,15 @@
 - (id)linkingToRendition;
 - (id)maskForSliceIndex:(int)arg1;
 - (id)metrics;
+- (id)mipLevels;
 - (id)name;
 - (float)opacity;
-- (struct CGSize { float x1; float x2; })originalUncroppedSize;
+- (BOOL)optOutOfThinning;
+- (struct CGSize { double x1; double x2; })originalUncroppedSize;
 - (id)packedContents;
 - (struct CGPDFDocument { }*)pdfDocument;
 - (int)pixelFormat;
+- (id)provideTextureInfo;
 - (float)scale;
 - (void)setBlendMode:(int)arg1;
 - (void)setExifOrientation:(int)arg1;
@@ -91,8 +101,11 @@
 - (id)sliceInformation;
 - (unsigned int)subtype;
 - (int)templateRenderingMode;
+- (id)textureImages;
 - (int)type;
+- (struct CGImage { }*)uncroppedImage;
 - (struct CGImage { }*)unslicedImage;
+- (struct CGSize { double x1; double x2; })unslicedSize;
 - (id)utiType;
 - (unsigned short)valueForTokenIdentifier:(unsigned short)arg1;
 

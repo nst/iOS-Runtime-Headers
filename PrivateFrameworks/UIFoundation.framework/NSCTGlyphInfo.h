@@ -13,7 +13,6 @@
 - (unsigned int)characterCollection;
 - (unsigned int)characterIdentifier;
 - (void)encodeWithCoder:(id)arg1;
-- (void)finalize;
 - (id)glyphName;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;

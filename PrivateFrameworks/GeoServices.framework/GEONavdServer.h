@@ -3,10 +3,10 @@
  */
 
 @interface GEONavdServer : NSObject <NSXPCListenerDelegate> {
-    NSXPCListener *_getNavigationStateListener;
-    NSXPCListener *_monitorDestinationListener;
-    GEONavigationServer *_navigationServer;
-    NSXPCListener *_pushNavigationStateListener;
+    NSXPCListener * _getNavigationStateListener;
+    NSXPCListener * _monitorDestinationListener;
+    GEONavigationServer * _navigationServer;
+    NSXPCListener * _pushNavigationStateListener;
 }
 
 @property (readonly, copy) NSString *debugDescription;

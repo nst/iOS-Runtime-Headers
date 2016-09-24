@@ -3,11 +3,11 @@
  */
 
 @interface SUPageSectionGroup : NSObject <NSCopying> {
-    int _defaultSectionIndex;
-    NSArray *_sections;
-    int _style;
-    UIColor *_tintColor;
-    int _tintStyle;
+    int  _defaultSectionIndex;
+    NSArray * _sections;
+    int  _style;
+    UIColor * _tintColor;
+    int  _tintStyle;
 }
 
 @property (nonatomic) int defaultSectionIndex;

@@ -3,24 +3,24 @@
  */
 
 @interface MusicContextualActionsConfiguration : NSObject <MusicClientContextConsuming> {
-    BOOL _allowsAddToPlaylistActions;
-    BOOL _allowsCreateGeniusPlaylist;
-    BOOL _allowsLibraryAddRemoveActions;
-    BOOL _allowsLibraryKeepLocalActions;
-    BOOL _allowsShareActions;
-    BOOL _allowsShowGeniusPlaylistDetail;
-    BOOL _allowsShowInStoreActions;
-    BOOL _allowsStartRadioActions;
-    BOOL _allowsUpNextActions;
-    MusicClientContext *_clientContext;
-    NSArray *_customJSActionTitles;
-    id /* block */ _didDismissHandler;
-    MusicEntityValueContext *_entityValueContext;
-    NSDictionary *_extraInfo;
-    BOOL _includesPostActionForDefaultContainer;
-    <MusicEntityProviding> *_libraryAddRemoveOverrideItemEntityProvider;
-    int _preferredAlertControllerStyle;
-    MusicViewControllerPresenter *_presenter;
+    BOOL  _allowsAddToPlaylistActions;
+    BOOL  _allowsCreateGeniusPlaylist;
+    BOOL  _allowsLibraryAddRemoveActions;
+    BOOL  _allowsLibraryKeepLocalActions;
+    BOOL  _allowsShareActions;
+    BOOL  _allowsShowGeniusPlaylistDetail;
+    BOOL  _allowsShowInStoreActions;
+    BOOL  _allowsStartRadioActions;
+    BOOL  _allowsUpNextActions;
+    MusicClientContext * _clientContext;
+    NSArray * _customJSActionTitles;
+    id /* block */  _didDismissHandler;
+    MusicEntityValueContext * _entityValueContext;
+    NSDictionary * _extraInfo;
+    BOOL  _includesPostActionForDefaultContainer;
+    <MusicEntityProviding> * _libraryAddRemoveOverrideItemEntityProvider;
+    int  _preferredAlertControllerStyle;
+    MusicViewControllerPresenter * _presenter;
 }
 
 @property (nonatomic) BOOL allowsAddToPlaylistActions;
@@ -51,7 +51,7 @@
 - (void).cxx_destruct;
 - (void)_didSelectHeaderFromAlertController:(id)arg1;
 - (void)_getAdditionalPresentationHandler:(id /* block */*)arg1 shouldDismissHandler:(id /* block */*)arg2 forAlertController:(id)arg3;
-- (struct { long long x1; unsigned long long x2; })_headerSelectionHandlingInformation;
+- (struct { int x1; unsigned int x2; })_headerSelectionHandlingInformation;
 - (id)_newContextualActionsAlertController;
 - (BOOL)allowsAddToPlaylistActions;
 - (BOOL)allowsCreateGeniusPlaylist;

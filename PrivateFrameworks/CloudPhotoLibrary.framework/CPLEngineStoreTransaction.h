@@ -3,10 +3,10 @@
  */
 
 @interface CPLEngineStoreTransaction : NSObject {
-    NSThread *_currentThread;
-    NSError *_error;
-    BOOL _forWrite;
-    NSString *_name;
+    NSThread * _currentThread;
+    NSError * _error;
+    BOOL  _forWrite;
+    NSString * _name;
 }
 
 @property (nonatomic, copy) NSError *error;

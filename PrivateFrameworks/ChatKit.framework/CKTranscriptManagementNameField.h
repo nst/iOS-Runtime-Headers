@@ -3,14 +3,14 @@
  */
 
 @interface CKTranscriptManagementNameField : UIView <UITextFieldDelegate> {
-    _UIBackdropView *_backdropView;
-    UIView *_bottomSeparator;
-    <CKTranscriptManagementNameFieldDelegate> *_delegate;
-    BOOL _enabled;
-    UILabel *_fieldLabel;
-    BOOL _isOverlay;
-    UITextField *_textField;
-    UIView *_topSeparator;
+    _UIBackdropView * _backdropView;
+    UIView * _bottomSeparator;
+    <CKTranscriptManagementNameFieldDelegate> * _delegate;
+    BOOL  _enabled;
+    UILabel * _fieldLabel;
+    BOOL  _isOverlay;
+    UITextField * _textField;
+    UIView * _topSeparator;
 }
 
 @property (nonatomic, retain) _UIBackdropView *backdropView;
@@ -29,6 +29,7 @@
 
 + (float)preferredHeight;
 
+- (void).cxx_destruct;
 - (id)backdropView;
 - (id)bottomSeparator;
 - (void)commitGroupName;
@@ -36,7 +37,7 @@
 - (id)delegate;
 - (id)fieldLabel;
 - (id)groupName;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (BOOL)isEnabled;
 - (BOOL)isOverlay;
 - (void)layoutMarginsDidChange;

@@ -3,17 +3,17 @@
  */
 
 @interface BBSyncService : NSObject <IDSServiceDelegate> {
-    NSMutableDictionary *_deferredDismissalsBySectionID;
-    NSTimer *_deferredTimer;
-    <BBSyncServiceDelegate> *_delegate;
-    int _lockNotifyToken;
-    NSMutableArray *_pendingDismissalDictionaries;
-    NSMutableArray *_pendingDismissalIDs;
-    NSObject<OS_dispatch_queue> *_queue;
-    unsigned int _queuedFeed;
-    NSString *_queuedSectionID;
-    NSString *_queuedUniversalSectionID;
-    IDSService *_service;
+    NSMutableDictionary * _deferredDismissalsBySectionID;
+    NSTimer * _deferredTimer;
+    <BBSyncServiceDelegate> * _delegate;
+    int  _lockNotifyToken;
+    NSMutableArray * _pendingDismissalDictionaries;
+    NSMutableArray * _pendingDismissalIDs;
+    NSObject<OS_dispatch_queue> * _queue;
+    unsigned int  _queuedFeed;
+    NSString * _queuedSectionID;
+    NSString * _queuedUniversalSectionID;
+    IDSService * _service;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -22,6 +22,7 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)_addDeferredDismissalForBulletin:(id)arg1 feeds:(unsigned int)arg2;
 - (void)_clearDeferredTimer;
 - (void)_deferredTimerFired:(id)arg1;

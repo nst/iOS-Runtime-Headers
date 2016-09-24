@@ -3,7 +3,7 @@
  */
 
 @interface OADStretchTechnique : OADImageFillTechnique {
-    OADRelativeRect *mFillRect;
+    OADRelativeRect * mFillRect;
 }
 
 + (id)defaultProperties;

@@ -3,27 +3,33 @@
  */
 
 @interface NSXPCConnection : NSObject <NSXPCProxyCreating> {
-    id _dCache;
-    id _eCache;
-    NSXPCListenerEndpoint *_endpoint;
-    id _exportInfo;
-    id _importInfo;
-    id /* block */ _interruptionHandler;
-    id /* block */ _invalidationHandler;
-    id _lock;
-    <NSObject> *_otherInfo;
-    NSXPCInterface *_remoteObjectInterface;
-    id _repliesExpected;
-    id _repliesRequested;
-    id _reserved1;
-    NSString *_serviceName;
-    unsigned int _state;
-    unsigned int _state2;
-    NSObject<OS_dispatch_queue> *_userQueue;
-    void *_xconnection;
+    id  _dCache;
+    id  _eCache;
+    NSXPCListenerEndpoint * _endpoint;
+    id  _exportInfo;
+    id  _importInfo;
+    id /* block */  _interruptionHandler;
+    id /* block */  _invalidationHandler;
+    id  _lock;
+    <NSObject> * _otherInfo;
+    NSXPCInterface * _remoteObjectInterface;
+    id  _repliesExpected;
+    id  _repliesRequested;
+    id  _reserved1;
+    NSString * _serviceName;
+    unsigned int  _state;
+    unsigned int  _state2;
+    NSObject<OS_dispatch_queue> * _userQueue;
+    void * _xconnection;
 }
 
 @property (readonly) int auditSessionIdentifier;
+@property (nonatomic, readonly, copy) NSString *cx_applicationIdentifier;
+@property (nonatomic, readonly) NSBundle *cx_bundle;
+@property (nonatomic, readonly, copy) NSSet *cx_capabilities;
+@property (nonatomic, readonly, copy) NSString *cx_developerTeamIdentifier;
+@property (nonatomic, readonly) BOOL cx_hasVoIPBackgroundMode;
+@property (nonatomic, readonly, copy) NSString *cx_processName;
 @property (readonly) unsigned int effectiveGroupIdentifier;
 @property (readonly) unsigned int effectiveUserIdentifier;
 @property (readonly, retain) NSXPCListenerEndpoint *endpoint;
@@ -31,6 +37,7 @@
 @property (retain) id exportedObject;
 @property (nonatomic, readonly, copy) NSString *hk_bundleIdentifier;
 @property (nonatomic, readonly) BOOL hk_isAppExtension;
+@property (nonatomic, readonly, copy) NSString *hk_signingIdentifier;
 @property (copy) id /* block */ interruptionHandler;
 @property (copy) id /* block */ invalidationHandler;
 @property (nonatomic, readonly) NSString *processBundleIdentifier;
@@ -50,27 +57,27 @@
 - (void)_addClassToDecodeCache:(Class)arg1;
 - (void)_addClassToEncodeCache:(Class)arg1;
 - (void)_addImportedProxy:(id)arg1;
-- (void)_cancelProgress:(unsigned long long)arg1;
+- (void)_cancelProgress:(unsigned int)arg1;
 - (void)_decodeAndInvokeMessageWithData:(id)arg1;
-- (void)_decodeAndInvokeReplyBlockWithData:(id)arg1 sequence:(unsigned long long)arg2 replyInfo:(id)arg3;
+- (void)_decodeAndInvokeReplyBlockWithData:(id)arg1 sequence:(unsigned int)arg2 replyInfo:(id)arg3;
 - (BOOL)_decodeCacheContainsClass:(Class)arg1;
 - (void)_decodeProgressMessageWithData:(id)arg1;
 - (BOOL)_encodeCacheContainsClass:(Class)arg1;
 - (id)_errorDescription;
 - (id)_exportTable;
-- (unsigned long long)_generationCount;
+- (unsigned int)_generationCount;
 - (id)_initWithPeerConnection:(id)arg1 name:(id)arg2 options:(unsigned int)arg3;
 - (void)_killConnection:(int)arg1;
-- (void)_pauseProgress:(unsigned long long)arg1;
+- (void)_pauseProgress:(unsigned int)arg1;
 - (id)_queue;
 - (void)_removeImportedProxy:(id)arg1;
-- (void)_resumeProgress:(unsigned long long)arg1;
+- (void)_resumeProgress:(unsigned int)arg1;
 - (void)_sendDesistForProxy:(id)arg1;
 - (void)_sendInvocation:(id)arg1 withProxy:(id)arg2 remoteInterface:(id)arg3;
 - (void)_sendInvocation:(id)arg1 withProxy:(id)arg2 remoteInterface:(id)arg3 withErrorHandler:(id /* block */)arg4;
 - (void)_sendInvocation:(id)arg1 withProxy:(id)arg2 remoteInterface:(id)arg3 withErrorHandler:(id /* block */)arg4 timeout:(double)arg5;
 - (void)_sendInvocation:(id)arg1 withProxy:(id)arg2 remoteInterface:(id)arg3 withErrorHandler:(id /* block */)arg4 timeout:(double)arg5 userInfo:(id)arg6;
-- (void)_sendProgressMessage:(id)arg1 forSequence:(unsigned long long)arg2;
+- (void)_sendProgressMessage:(id)arg1 forSequence:(unsigned int)arg2;
 - (void)_setQueue:(id)arg1;
 - (void)_setTargetUserIdentifier:(unsigned int)arg1;
 - (void)_setUUID:(id)arg1;
@@ -87,7 +94,6 @@
 - (id)endpoint;
 - (id)exportedInterface;
 - (id)exportedObject;
-- (void)finalize;
 - (id)init;
 - (id)initWithEndpoint:(id)arg1;
 - (id)initWithListenerEndpoint:(id)arg1;
@@ -122,10 +128,20 @@
 - (id)userInfo;
 - (id)valueForEntitlement:(id)arg1;
 
+// Image: /System/Library/Frameworks/CallKit.framework/CallKit
+
+- (id)cx_applicationIdentifier;
+- (id)cx_bundle;
+- (id)cx_capabilities;
+- (id)cx_developerTeamIdentifier;
+- (BOOL)cx_hasVoIPBackgroundMode;
+- (id)cx_processName;
+
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
 - (id)hk_bundleIdentifier;
 - (BOOL)hk_isAppExtension;
+- (id)hk_signingIdentifier;
 
 // Image: /System/Library/Frameworks/Social.framework/Social
 
@@ -137,6 +153,11 @@
 
 - (id)initCellularPlanDatabaseClient;
 - (id)initVinylTestClient;
+
+// Image: /System/Library/PrivateFrameworks/Pegasus.framework/Pegasus
+
+- (id)PG_remoteObjectProxyWithDebugMethodAndPointerProem:(id)arg1;
+- (id)PG_remoteObjectProxyWithDebugMethodAndPointerProem:(id)arg1 errorHandler:(id /* block */)arg2;
 
 // Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
 

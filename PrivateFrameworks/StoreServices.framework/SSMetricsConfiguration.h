@@ -3,18 +3,18 @@
  */
 
 @interface SSMetricsConfiguration : NSObject {
-    NSSet *_blacklistedEvents;
-    SSMetricsConfiguration *_childConfiguration;
-    NSDictionary *_config;
-    NSMutableSet *_cookieFieldsUnion;
-    BOOL _disableEventDecoration;
-    BOOL _disabled;
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    NSMutableDictionary *_eventFieldsUnion;
-    NSDictionary *_fields;
-    int _internalSettingsToken;
-    id _reportingFrequencyOverride;
-    BOOL _sendDisabled;
+    NSSet * _blacklistedEvents;
+    SSMetricsConfiguration * _childConfiguration;
+    NSDictionary * _config;
+    NSMutableSet * _cookieFieldsUnion;
+    BOOL  _disableEventDecoration;
+    BOOL  _disabled;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    NSMutableDictionary * _eventFieldsUnion;
+    NSDictionary * _fields;
+    int  _internalSettingsToken;
+    id  _reportingFrequencyOverride;
+    BOOL  _sendDisabled;
 }
 
 @property (nonatomic, retain) SSMetricsConfiguration *childConfiguration;

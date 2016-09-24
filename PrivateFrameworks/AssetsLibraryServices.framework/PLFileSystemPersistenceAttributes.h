@@ -3,7 +3,7 @@
  */
 
 @interface PLFileSystemPersistenceAttributes : NSObject {
-    NSDictionary *_attributes;
+    NSDictionary * _attributes;
 }
 
 - (id)UUIDStringForKey:(id)arg1;

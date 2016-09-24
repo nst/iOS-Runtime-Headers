@@ -3,7 +3,7 @@
  */
 
 @interface CAMVideoFramerateCommand : CAMCaptureCommand {
-    int __videoConfiguration;
+    int  __videoConfiguration;
 }
 
 @property (nonatomic, readonly) int _videoConfiguration;

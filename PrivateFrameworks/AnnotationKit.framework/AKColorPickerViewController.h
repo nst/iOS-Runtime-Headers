@@ -3,11 +3,11 @@
  */
 
 @interface AKColorPickerViewController : UIViewController <AKTextAttributesUserInterfaceItem> {
-    UIColor *_color;
-    int _colorAttributeTag;
-    AKColorPaletteView *_colorPalette;
-    AKController *_controller;
-    int _tag;
+    UIColor * _color;
+    int  _colorAttributeTag;
+    AKColorPaletteView * _colorPalette;
+    AKController * _controller;
+    int  _tag;
 }
 
 @property (nonatomic, retain) UIColor *color;

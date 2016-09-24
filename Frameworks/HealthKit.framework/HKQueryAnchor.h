@@ -3,17 +3,17 @@
  */
 
 @interface HKQueryAnchor : NSObject <NSCopying, NSSecureCoding> {
-    long long _rowid;
+    int  _rowid;
 }
 
-@property (getter=_rowid, setter=_setRowid:, nonatomic) long long rowid;
+@property (getter=_rowid, setter=_setRowid:, nonatomic) int rowid;
 
-+ (id)_anchorWithRowid:(long long)arg1;
++ (id)_anchorWithRowid:(int)arg1;
 + (id)anchorFromValue:(unsigned int)arg1;
 + (BOOL)supportsSecureCoding;
 
-- (long long)_rowid;
-- (void)_setRowid:(long long)arg1;
+- (int)_rowid;
+- (void)_setRowid:(int)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;

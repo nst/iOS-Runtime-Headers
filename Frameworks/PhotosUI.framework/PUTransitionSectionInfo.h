@@ -3,15 +3,15 @@
  */
 
 @interface PUTransitionSectionInfo : NSObject {
-    NSIndexPath *_anchorRealPath;
+    NSIndexPath * _anchorRealPath;
     struct PUGridCoordinates { 
         int row; 
         int column; 
-    } _anchorShiftOffset;
-    int _contiguousRows;
-    int _transitionSection;
-    NSArray *_visualRowStartMarkers;
-    NSIndexSet *_visualSections;
+    }  _anchorShiftOffset;
+    int  _contiguousRows;
+    int  _transitionSection;
+    NSArray * _visualRowStartMarkers;
+    NSIndexSet * _visualSections;
 }
 
 @property (nonatomic, retain) NSIndexPath *anchorRealPath;

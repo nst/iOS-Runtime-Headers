@@ -7,7 +7,6 @@
 @property (readonly) unsigned int length;
 
 - (void)dealloc;
-- (void)finalize;
 - (id)item:(unsigned int)arg1;
 - (unsigned int)length;
 

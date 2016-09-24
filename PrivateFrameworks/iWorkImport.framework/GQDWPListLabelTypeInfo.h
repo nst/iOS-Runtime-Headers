@@ -3,8 +3,8 @@
  */
 
 @interface GQDWPListLabelTypeInfo : NSObject <GQDNameMappable> {
-    GQDWPTextLabel *mLabel;
-    int mType;
+    GQDWPTextLabel * mLabel;
+    int  mType;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,8 +3,8 @@
  */
 
 @interface ICSTimeZoneChange : NSObject {
-    double _interval;
-    int _tzOffsetTo;
+    double  _interval;
+    int  _tzOffsetTo;
 }
 
 - (int)compare:(id)arg1;

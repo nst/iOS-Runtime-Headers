@@ -3,18 +3,19 @@
  */
 
 @interface PKPaymentMerchantData : NSObject {
-    NSData *_applicationData;
-    NSString *_merchantIdentifier;
+    NSData * _applicationData;
+    NSString * _merchantIdentifier;
+    PKPaymentMerchantSession * _merchantSession;
 }
 
-@property (nonatomic, retain) NSData *applicationData;
-@property (nonatomic, retain) NSString *merchantIdentifier;
+@property (nonatomic, readonly) NSData *applicationData;
+@property (nonatomic, readonly) NSString *merchantIdentifier;
 
+- (void).cxx_destruct;
 - (id)applicationData;
-- (void)dealloc;
 - (id)encode;
+- (id)init;
+- (id)initWithPaymentRequest:(id)arg1;
 - (id)merchantIdentifier;
-- (void)setApplicationData:(id)arg1;
-- (void)setMerchantIdentifier:(id)arg1;
 
 @end

@@ -3,8 +3,8 @@
  */
 
 @interface WebPolicyDecisionListenerPrivate : NSObject {
-    SEL action;
-    id target;
+    SEL  action;
+    id  target;
 }
 
 - (void)dealloc;

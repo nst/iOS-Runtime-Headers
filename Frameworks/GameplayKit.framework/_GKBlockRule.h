@@ -3,8 +3,8 @@
  */
 
 @interface _GKBlockRule : GKRule {
-    id /* block */ _action;
-    id /* block */ _predicate;
+    id /* block */  _action;
+    id /* block */  _predicate;
 }
 
 - (void).cxx_destruct;

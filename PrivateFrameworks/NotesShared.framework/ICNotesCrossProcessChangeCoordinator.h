@@ -3,10 +3,10 @@
  */
 
 @interface ICNotesCrossProcessChangeCoordinator : NSObject {
-    BOOL _asApplication;
-    NSManagedObjectContext *_destinationContext;
-    int _notifyToken;
-    NSPersistentStoreCoordinator *_sourceCoordinator;
+    BOOL  _asApplication;
+    NSManagedObjectContext * _destinationContext;
+    int  _notifyToken;
+    NSPersistentStoreCoordinator * _sourceCoordinator;
 }
 
 @property (nonatomic) BOOL asApplication;
@@ -20,15 +20,18 @@
 - (id)contextSaveUserInfoKeys;
 - (void)dealloc;
 - (id)destinationContext;
+- (void)handleCrossProcessNotesDidChangeNotificationForceRefreshAllObjects:(BOOL)arg1;
 - (id)initWithSourceCoordinator:(id)arg1 destinationContext:(id)arg2 asApplication:(BOOL)arg3;
 - (int)notifyToken;
 - (void)postAccountDidChangeNotification;
 - (void)postCrossProcessNotificationName:(id)arg1 userInfo:(id)arg2;
 - (void)postNotesDidChangeNotification;
+- (void)postNotesPasswordStatusDidChangeNotification;
 - (void)registerForAccountNotifications;
 - (void)registerForContextDidSaveNotifications;
 - (void)registerForCrossProcessNotificationName:(id)arg1 block:(id /* block */)arg2;
 - (void)registerForNotesRefreshNotifications;
+- (void)registerForPasswordStatusDidChangeNotifications;
 - (void)setAsApplication:(BOOL)arg1;
 - (void)setDestinationContext:(id)arg1;
 - (void)setNotifyToken:(int)arg1;

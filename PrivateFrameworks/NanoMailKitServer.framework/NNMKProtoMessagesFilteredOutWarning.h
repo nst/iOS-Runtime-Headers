@@ -3,11 +3,11 @@
  */
 
 @interface NNMKProtoMessagesFilteredOutWarning : PBCodable <NSCopying> {
-    unsigned int _fullSyncVersion;
+    unsigned int  _fullSyncVersion;
     struct { 
         unsigned int fullSyncVersion : 1; 
-    } _has;
-    NSMutableArray *_removedMessageIds;
+    }  _has;
+    NSMutableArray * _removedMessageIds;
 }
 
 @property (nonatomic) unsigned int fullSyncVersion;

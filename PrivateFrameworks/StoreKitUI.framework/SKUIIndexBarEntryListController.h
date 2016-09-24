@@ -3,12 +3,12 @@
  */
 
 @interface SKUIIndexBarEntryListController : NSObject {
-    <SKUIIndexBarEntryListControllerDelegate> *_delegate;
-    BOOL _hidesIndexBar;
-    BOOL _needsRootTargetViewElement;
-    int _numberOfEntryDescriptors;
-    NSString *_rootTargetIndexBarEntryID;
-    SKUIViewElement *_rootTargetViewElement;
+    <SKUIIndexBarEntryListControllerDelegate> * _delegate;
+    BOOL  _hidesIndexBar;
+    BOOL  _needsRootTargetViewElement;
+    int  _numberOfEntryDescriptors;
+    NSString * _rootTargetIndexBarEntryID;
+    SKUIViewElement * _rootTargetViewElement;
 }
 
 @property (nonatomic) <SKUIIndexBarEntryListControllerDelegate> *delegate;

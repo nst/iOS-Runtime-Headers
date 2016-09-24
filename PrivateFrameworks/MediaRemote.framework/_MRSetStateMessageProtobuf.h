@@ -3,15 +3,16 @@
  */
 
 @interface _MRSetStateMessageProtobuf : PBCodable <NSCopying> {
-    NSString *_displayID;
-    NSString *_displayName;
+    NSString * _displayID;
+    NSString * _displayName;
     struct { 
         unsigned int playbackState : 1; 
-    } _has;
-    _MRNowPlayingInfoProtobuf *_nowPlayingInfo;
-    _MRPlaybackQueueProtobuf *_playbackQueue;
-    unsigned int _playbackState;
-    _MRSupportedCommandsProtobuf *_supportedCommands;
+    }  _has;
+    _MRNowPlayingInfoProtobuf * _nowPlayingInfo;
+    _MRPlaybackQueueProtobuf * _playbackQueue;
+    _MRPlaybackQueueContextProtobuf * _playbackQueueContext;
+    unsigned int  _playbackState;
+    _MRSupportedCommandsProtobuf * _supportedCommands;
 }
 
 @property (nonatomic, retain) NSString *displayID;
@@ -20,10 +21,12 @@
 @property (nonatomic, readonly) BOOL hasDisplayName;
 @property (nonatomic, readonly) BOOL hasNowPlayingInfo;
 @property (nonatomic, readonly) BOOL hasPlaybackQueue;
+@property (nonatomic, readonly) BOOL hasPlaybackQueueContext;
 @property (nonatomic) BOOL hasPlaybackState;
 @property (nonatomic, readonly) BOOL hasSupportedCommands;
 @property (nonatomic, retain) _MRNowPlayingInfoProtobuf *nowPlayingInfo;
 @property (nonatomic, retain) _MRPlaybackQueueProtobuf *playbackQueue;
+@property (nonatomic, retain) _MRPlaybackQueueContextProtobuf *playbackQueueContext;
 @property (nonatomic) unsigned int playbackState;
 @property (nonatomic, retain) _MRSupportedCommandsProtobuf *supportedCommands;
 
@@ -38,6 +41,7 @@
 - (BOOL)hasDisplayName;
 - (BOOL)hasNowPlayingInfo;
 - (BOOL)hasPlaybackQueue;
+- (BOOL)hasPlaybackQueueContext;
 - (BOOL)hasPlaybackState;
 - (BOOL)hasSupportedCommands;
 - (unsigned int)hash;
@@ -45,6 +49,7 @@
 - (void)mergeFrom:(id)arg1;
 - (id)nowPlayingInfo;
 - (id)playbackQueue;
+- (id)playbackQueueContext;
 - (unsigned int)playbackState;
 - (BOOL)readFrom:(id)arg1;
 - (void)setDisplayID:(id)arg1;
@@ -52,6 +57,7 @@
 - (void)setHasPlaybackState:(BOOL)arg1;
 - (void)setNowPlayingInfo:(id)arg1;
 - (void)setPlaybackQueue:(id)arg1;
+- (void)setPlaybackQueueContext:(id)arg1;
 - (void)setPlaybackState:(unsigned int)arg1;
 - (void)setSupportedCommands:(id)arg1;
 - (id)supportedCommands;

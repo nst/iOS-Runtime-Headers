@@ -3,29 +3,29 @@
  */
 
 @interface CUIKSingleDayTimelineLayout : NSObject {
-    NSCalendar *_calendar;
-    NSMutableArray *_collidingOccurrences;
-    <CUIKSingleDayTimelineViewItem> *_currentOccurrence;
-    unsigned int _currentOccurrenceIndex;
-    NSDate *_endOfDay;
-    double _endOfDayAbsoluteTime;
+    NSCalendar * _calendar;
+    NSMutableArray * _collidingOccurrences;
+    <CUIKSingleDayTimelineViewItem> * _currentOccurrence;
+    unsigned int  _currentOccurrenceIndex;
+    NSDate * _endOfDay;
+    double  _endOfDayAbsoluteTime;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } _frame;
-    <CUIKSingleDayTimelineGeometryDelegate> *_geometryDelegate;
-    NSMutableArray *_occurrenceBuckets;
-    NSArray *_occurrences;
-    NSMutableArray *_partitions;
-    <CUIKSingleDayTimelineLayoutScreenUtils> *_screenUtilsDelegate;
-    NSDate *_startOfDay;
-    double _startOfDayAbsoluteTime;
+    }  _frame;
+    <CUIKSingleDayTimelineGeometryDelegate> * _geometryDelegate;
+    NSMutableArray * _occurrenceBuckets;
+    NSArray * _occurrences;
+    NSMutableArray * _partitions;
+    <CUIKSingleDayTimelineLayoutScreenUtils> * _screenUtilsDelegate;
+    NSDate * _startOfDay;
+    double  _startOfDayAbsoluteTime;
 }
 
 - (void).cxx_destruct;
@@ -36,6 +36,7 @@
 - (float)_combinedWidthOfPartitions;
 - (double)_effectiveEndTimeForOccurrence:(id)arg1;
 - (float)_endOfCollisionZoneForY:(float)arg1 occurrence:(id)arg2;
+- (unsigned int)_enumerationOptions;
 - (void)_findCollidingOccurrences;
 - (void)_generateNewPartitions;
 - (void)_initializeFirstGridStripe;
@@ -44,10 +45,11 @@
 - (void)_popOccurrencesInPartition:(id)arg1 endingBeforeTime:(double)arg2;
 - (void)_putCollidingOccurrencesIntoBuckets;
 - (void)_reclaimSpaceFromStackedOccurrences;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_rectForStartSeconds:(int)arg1 endSeconds:(int)arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_rectForStartSeconds:(int)arg1 endSeconds:(int)arg2;
 - (void)_stampOccurrenceFrames;
 - (float)_topOfOccurrence:(id)arg1;
 - (void)applyLayoutToOccurrences;
 - (id)initWithOccurrences:(id)arg1 startOfDay:(id)arg2 endOfDay:(id)arg3 geometryDelegate:(id)arg4 screenUtilsDelegate:(id)arg5 calendar:(id)arg6;
+- (BOOL)isRightToLeftLayout;
 
 @end

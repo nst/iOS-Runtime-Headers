@@ -3,13 +3,13 @@
  */
 
 @interface SlidingPaneViewState : NSObject {
-    unsigned int _edge;
-    NSLayoutConstraint *_paneHorizontalPositionConstraint;
-    NSLayoutConstraint *_paneVerticalPositionConstraint;
-    ISPaneFrameView *_paneView;
-    UIViewController *_paneViewController;
-    BOOL _shouldNotifyOfPaneSizeChanges;
-    UIVisualEffectView *_visualEffectView;
+    unsigned int  _edge;
+    NSLayoutConstraint * _paneHorizontalPositionConstraint;
+    NSLayoutConstraint * _paneVerticalPositionConstraint;
+    ISPaneFrameView * _paneView;
+    UIViewController * _paneViewController;
+    BOOL  _shouldNotifyOfPaneSizeChanges;
+    UIVisualEffectView * _visualEffectView;
 }
 
 @property (nonatomic) unsigned int edge;

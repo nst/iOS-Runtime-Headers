@@ -3,9 +3,9 @@
  */
 
 @interface OADDrawingTheme : NSObject {
-    OADColorContext *mColorContext;
-    OADFontScheme *mFontScheme;
-    OADStyleMatrix *mStyleMatrix;
+    OADColorContext * mColorContext;
+    OADFontScheme * mFontScheme;
+    OADStyleMatrix * mStyleMatrix;
 }
 
 @property (nonatomic, readonly) OADColorContext *colorContext;

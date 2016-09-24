@@ -3,8 +3,8 @@
  */
 
 @interface SCNUIKitSource : SCNImageSource {
-    id _uiView;
-    id _uiWindow;
+    id  _uiView;
+    id  _uiWindow;
 }
 
 @property (nonatomic, retain) id uiView;

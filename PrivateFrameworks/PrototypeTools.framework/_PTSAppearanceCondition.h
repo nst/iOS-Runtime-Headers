@@ -3,8 +3,8 @@
  */
 
 @interface _PTSAppearanceCondition : NSObject {
-    NSString *_conditionKeyPath;
-    NSPredicate *_conditionPredicate;
+    NSString * _conditionKeyPath;
+    NSPredicate * _conditionPredicate;
 }
 
 @property (nonatomic, retain) NSString *conditionKeyPath;

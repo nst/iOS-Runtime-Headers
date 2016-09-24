@@ -3,9 +3,11 @@
  */
 
 @interface _ATXTimeHistogram : NSObject <NSSecureCoding> {
-    unsigned int _capacity;
-    unsigned int _count;
-    struct { double x1; unsigned int x2; unsigned short x3; } *_entries;
+    bool  _applyFilter;
+    unsigned short  _bucketCount;
+    unsigned int  _capacity;
+    unsigned int  _count;
+    struct { double x1; unsigned int x2; unsigned short x3; } * _entries;
 }
 
 @property (nonatomic, readonly) unsigned int count;
@@ -17,8 +19,10 @@
 - (void)clear;
 - (double)computeCountWithEventId:(unsigned int)arg1;
 - (double)computeCountWithEventId:(unsigned int)arg1 atLocaltime:(unsigned short)arg2;
+- (double)computeCountWithEventId:(unsigned int)arg1 atLocaltime:(unsigned short)arg2 withSpan:(unsigned int)arg3;
 - (void)computeCounts:(double*)arg1 size:(unsigned int)arg2;
 - (void)computeCounts:(double*)arg1 size:(unsigned int)arg2 atLocaltime:(unsigned short)arg3;
+- (void)computeCounts:(double*)arg1 size:(unsigned int)arg2 atLocaltime:(unsigned short)arg3 withSpan:(unsigned int)arg4;
 - (unsigned int)count;
 - (void)dealloc;
 - (void)decayByFactor:(double)arg1;
@@ -26,11 +30,13 @@
 - (id)description;
 - (id)descriptionWithEventNames:(id /* block */)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)init;
+- (id)initWithBucketCount:(unsigned short)arg1 filter:(bool)arg2;
 - (id)initWithCoder:(id)arg1;
-- (unsigned short)pointsPerDay;
+- (unsigned short)pointsPerTimeInterval;
 - (void)removeEventsWithId:(unsigned int)arg1;
-- (void)sortBuckets;
 - (double)totalCounts;
 - (double)totalCountsAtLocaltime:(unsigned short)arg1;
+- (double)totalCountsAtLocaltime:(unsigned short)arg1 withSpan:(unsigned int)arg2;
 
 @end

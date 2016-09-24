@@ -3,8 +3,8 @@
  */
 
 @interface OCFontSubfamily : NSObject {
-    OCFontMetadata *_metadata;
-    NSString *_name;
+    OCFontMetadata * _metadata;
+    NSString * _name;
 }
 
 @property (nonatomic, readonly) OCFontMetadata *metadata;

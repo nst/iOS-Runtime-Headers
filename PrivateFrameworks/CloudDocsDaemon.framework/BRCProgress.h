@@ -3,18 +3,27 @@
  */
 
 @interface BRCProgress : NSProgress {
-    BOOL _isPublished;
-    NSMutableDictionary *_progressByAliasContainerID;
+    BOOL  _group;
+    NSArray * _parentFileIDs;
+    NSMutableDictionary * _progressByAliasContainerID;
+    BOOL  _published;
+    BRCAccountSession * _session;
 }
 
-+ (id)downloadProgressWithBRCDocumentItem:(id)arg1;
-+ (id)progressWithBRCDocumentItem:(id)arg1 totalSize:(long long)arg2 kind:(id)arg3;
-+ (id)uploadProgressWithBRCDocumentItem:(id)arg1 transferSize:(unsigned long long)arg2;
+@property (nonatomic, readonly) BOOL isPublished;
+@property (nonatomic, readonly) NSArray *parentFileIDs;
+
++ (id)_progressForDocument:(id)arg1 group:(BOOL)arg2 sizeInfo:(id)arg3;
++ (id)downloadProgressForDocument:(id)arg1 sizeInfo:(id)arg2;
++ (id)uploadProgressForDocument:(id)arg1 sizeInfo:(id)arg2;
 
 - (void).cxx_destruct;
 - (void)addAliasItem:(id)arg1;
 - (void)brc_publish;
 - (void)brc_unpublish;
-- (void)setCompletedUnitCount:(long long)arg1;
+- (id)initWithGroup:(BOOL)arg1 parentFileIDs:(id)arg2 session:(id)arg3;
+- (BOOL)isPublished;
+- (id)parentFileIDs;
+- (void)setCompletedUnitCount:(int)arg1;
 
 @end

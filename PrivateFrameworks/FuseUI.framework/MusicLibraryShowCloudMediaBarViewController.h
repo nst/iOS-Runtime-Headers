@@ -3,8 +3,8 @@
  */
 
 @interface MusicLibraryShowCloudMediaBarViewController : UIViewController {
-    UILabel *_descriptionLabel;
-    UIButton *_showButton;
+    UILabel * _descriptionLabel;
+    UIButton * _showButton;
 }
 
 - (void).cxx_destruct;

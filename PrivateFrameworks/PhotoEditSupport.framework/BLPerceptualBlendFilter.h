@@ -3,9 +3,9 @@
  */
 
 @interface BLPerceptualBlendFilter : CIFilter {
-    CIImage *_inputBackgroundImage;
-    CIImage *_inputImage;
-    CIImage *_inputMaskImage;
+    CIImage * _inputBackgroundImage;
+    CIImage * _inputImage;
+    CIImage * _inputMaskImage;
 }
 
 @property (retain) CIImage *inputBackgroundImage;

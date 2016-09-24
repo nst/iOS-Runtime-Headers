@@ -3,7 +3,7 @@
  */
 
 @interface WMTableStyle : WMStyle {
-    WDTableProperties *mWdTableProperties;
+    WDTableProperties * mWdTableProperties;
 }
 
 - (void)addTableProperties:(id)arg1;

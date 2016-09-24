@@ -3,7 +3,7 @@
  */
 
 @interface SSVEnableSubscriptionRequest : SSRequest <SSXPCCoding> {
-    SSAuthenticationContext *_authenticationContext;
+    SSAuthenticationContext * _authenticationContext;
 }
 
 @property (nonatomic, copy) SSAuthenticationContext *authenticationContext;

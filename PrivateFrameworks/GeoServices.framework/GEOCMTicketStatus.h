@@ -3,7 +3,7 @@
  */
 
 @interface GEOCMTicketStatus : PBCodable <NSCopying> {
-    NSString *_ticketId;
+    NSString * _ticketId;
 }
 
 @property (nonatomic, readonly) BOOL hasTicketId;

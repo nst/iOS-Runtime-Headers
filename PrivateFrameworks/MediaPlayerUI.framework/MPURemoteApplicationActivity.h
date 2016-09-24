@@ -3,7 +3,7 @@
  */
 
 @interface MPURemoteApplicationActivity : NSObject {
-    void *_mediaRemoteActivity;
+    void * _mediaRemoteActivity;
 }
 
 @property (nonatomic, readonly) NSString *primaryAppDisplayID;

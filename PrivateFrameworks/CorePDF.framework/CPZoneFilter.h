@@ -3,8 +3,8 @@
  */
 
 @interface CPZoneFilter : NSObject {
-    double minArea;
-    CPPage *page;
+    double  minArea;
+    CPPage * page;
 }
 
 + (void)filterZonesInPage:(id)arg1;

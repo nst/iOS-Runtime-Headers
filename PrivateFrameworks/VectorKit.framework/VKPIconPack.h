@@ -3,9 +3,9 @@
  */
 
 @interface VKPIconPack : PBCodable <NSCopying> {
-    NSMutableArray *_atlas;
-    NSMutableArray *_icons;
-    unsigned int _identifier;
+    NSMutableArray * _atlas;
+    NSMutableArray * _icons;
+    unsigned int  _identifier;
 }
 
 @property (nonatomic, retain) NSMutableArray *atlas;

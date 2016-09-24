@@ -3,16 +3,15 @@
  */
 
 @interface GEOProxyClientRegistry : NSObject {
-    GEOProxyClient *_currentComposite;
-    NSMutableSet *_currentSet;
-    NSLock *_lock;
+    GEOProxyClient * _currentComposite;
+    NSMutableSet * _currentSet;
+    NSLock * _lock;
 }
 
 + (id)sharedRegistry;
 
 - (void)_updateComposite;
 - (void)addClient:(id)arg1;
-- (id)compositeClient;
 - (void)dealloc;
 - (void)enableRegistry;
 - (void)removeClient:(id)arg1;

@@ -3,39 +3,44 @@
  */
 
 @interface NSLayoutConstraint : NSObject <NSISConstraint> {
-    float _coefficient;
-    float _constant;
-    id _container;
-    id _firstItem;
-    unsigned long long _layoutConstraintFlags;
-    float _loweredConstant;
-    id _markerAndPositiveExtraVar;
-    id _negativeExtraVar;
-    float _priority;
-    id _secondItem;
+    double  _coefficient;
+    double  _constant;
+    id  _container;
+    id  _firstAnchor;
+    unsigned int  _layoutConstraintFlags;
+    double  _loweredConstant;
+    id  _markerAndPositiveExtraVar;
+    id  _negativeExtraVar;
+    double  _priority;
+    id  _secondAnchor;
 }
 
+@property (setter=_setAssociatedRelationshipNode:) _NSConstraintDescriptionLayoutRelationshipNode *_associatedRelationshipNode;
+@property (setter=_setContainerDeclaredConstraint:) BOOL _containerDeclaredConstraint;
+@property (readonly, copy) NSSet *_referencedLayoutItems;
 @property (getter=isActive) BOOL active;
-@property float constant;
+@property double constant;
 @property id container;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (getter=_encodedConstant, setter=_setEncodedConstant:, retain) _NSLayoutConstraintConstant *encodedConstant;
-@property int firstAttribute;
-@property id firstItem;
+@property (getter=_encodedConstant, setter=_setEncodedConstant:) _NSLayoutConstraintConstant *encodedConstant;
+@property (setter=_setFirstAnchor:, copy) NSLayoutAnchor *firstAnchor;
+@property (readonly) int firstAttribute;
+@property (readonly) id firstItem;
 @property (readonly) BOOL hasBeenLowered;
 @property (readonly) unsigned int hash;
 @property (copy) NSString *identifier;
 @property (getter=_loweredConstantNeedsUpdate, setter=_setLoweredConstantNeedsUpdate:, nonatomic) BOOL loweredConstantNeedsUpdate;
-@property float multiplier;
-@property float priority;
-@property int relation;
-@property int secondAttribute;
-@property id secondItem;
+@property (setter=_setMultiplier:) double multiplier;
+@property double priority;
+@property (setter=_setRelation:) int relation;
+@property (setter=_setSecondAnchor:, copy) NSLayoutAnchor *secondAnchor;
+@property (readonly) int secondAttribute;
+@property (readonly) id secondItem;
 @property BOOL shouldBeArchived;
 @property (readonly) Class superclass;
 @property (copy) NSString *symbolicConstant;
-@property (readonly) float unsatisfaction;
+@property (readonly) double unsatisfaction;
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
@@ -43,6 +48,8 @@
 + (id)_findCommonAncestorOfItem:(id)arg1 andItem:(id)arg2;
 + (void)_setLegacyDecodingOnly:(BOOL)arg1;
 + (void)activateConstraints:(id)arg1;
++ (id)constraintWithAnchor:(id)arg1 relatedBy:(int)arg2 constant:(float)arg3;
++ (id)constraintWithAnchor:(id)arg1 relatedBy:(int)arg2 toAnchor:(id)arg3 multiplier:(float)arg4 constant:(float)arg5;
 + (id)constraintWithItem:(id)arg1 attribute:(int)arg2 relatedBy:(int)arg3 constant:(float)arg4;
 + (id)constraintWithItem:(id)arg1 attribute:(int)arg2 relatedBy:(int)arg3 toItem:(id)arg4 attribute:(int)arg5;
 + (id)constraintWithItem:(id)arg1 attribute:(int)arg2 relatedBy:(int)arg3 toItem:(id)arg4 attribute:(int)arg5 constant:(float)arg6;
@@ -56,27 +63,33 @@
 - (BOOL)_addLoweredExpression:(id)arg1 toEngine:(id)arg2 integralizationAdjustment:(float)arg3 lastLoweredConstantWasRounded:(BOOL)arg4 mutuallyExclusiveConstraints:(id*)arg5;
 - (void)_addToEngine:(id)arg1;
 - (BOOL)_addToEngine:(id)arg1 integralizationAdjustment:(float)arg2 mutuallyExclusiveConstraints:(id*)arg3;
+- (id)_allocationDescription;
 - (float)_allowedMagnitudeForIntegralizationAdjustment;
 - (float)_allowedMagnitudeForIntegralizationAdjustmentOfConstraintWithMarkerScaling:(float*)arg1;
+- (id)_ancestorRelationshipNodes;
+- (id)_associatedRelationshipNode;
 - (void)_clearWeakContainerReference;
 - (id)_constantDescriptionForDTrace;
 - (id)_constraintByReplacingItem:(id)arg1 withItem:(id)arg2;
 - (id)_constraintByReplacingView:(id)arg1 withView:(id)arg2;
 - (int)_constraintType;
+- (id)_constraintValueCopy;
+- (unsigned int)_constraintValueHashIncludingConstant:(BOOL)arg1 includeOtherMutableProperties:(BOOL)arg2;
+- (BOOL)_containerDeclaredConstraint;
 - (void)_containerGeometryDidChange;
 - (id)_deallocSafeDescription;
 - (BOOL)_deferDTraceLogging;
 - (BOOL)_describesSameRestrictionAsConstraint:(id)arg1;
 - (id)_descriptionforSymbolicConstant;
 - (BOOL)_effectiveConstant:(float*)arg1 error:(id*)arg2;
-- (struct CGSize { float x1; float x2; })_engineToContainerScalingCoefficients;
+- (struct CGSize { double x1; double x2; })_engineToContainerScalingCoefficients;
 - (void)_ensureValueMaintainsArbitraryLimit:(float*)arg1;
 - (BOOL)_existsInEngine:(id)arg1;
-- (BOOL)_existsInFirstItemEngine;
 - (void)_explainUnsatisfaction;
 - (void)_forceSatisfactionMeasuringUnsatisfactionChanges:(id*)arg1 andMutuallyExclusiveConstraints:(id*)arg2;
 - (float)_fudgeIncrement;
 - (id)_identifier;
+- (BOOL)_isEqualToConstraintValue:(id)arg1 includingConstant:(BOOL)arg2 includeOtherMutableProperties:(BOOL)arg3;
 - (BOOL)_isFudgeable;
 - (BOOL)_isIBPrototypingLayoutConstraint;
 - (id)_layoutEngine;
@@ -91,20 +104,25 @@
 - (BOOL)_nsib_isRedundantInEngine:(id)arg1;
 - (int)_primitiveConstraintType;
 - (id)_priorityDescription;
+- (id)_referencedLayoutItems;
+- (BOOL)_referencesLayoutItem:(id)arg1;
 - (void)_removeFromEngine:(id)arg1;
 - (void)_setActive:(BOOL)arg1 mutuallyExclusiveConstraints:(id*)arg2;
+- (void)_setAssociatedRelationshipNode:(id)arg1;
+- (void)_setContainerDeclaredConstraint:(BOOL)arg1;
 - (void)_setDeferDTraceLogging:(BOOL)arg1;
-- (void)_setFirstAttribute:(int)arg1;
-- (void)_setFirstItem:(id)arg1;
+- (void)_setFirstAnchor:(id)arg1;
+- (void)_setFirstItem:(id)arg1 attribute:(int)arg2;
 - (void)_setIdentifier:(id)arg1;
 - (void)_setLoweredConstantNeedsUpdate:(BOOL)arg1;
 - (void)_setMarkerAndPositiveErrorVar:(id)arg1;
 - (void)_setMultiplier:(float)arg1;
+- (void)_setMutablePropertiesFromConstraint:(id)arg1;
 - (void)_setNegativeExtraVar:(id)arg1;
 - (void)_setPrimitiveConstraintType:(int)arg1;
 - (void)_setRelation:(int)arg1;
-- (void)_setSecondAttribute:(int)arg1;
-- (void)_setSecondItem:(id)arg1;
+- (void)_setSecondAnchor:(id)arg1;
+- (void)_setSecondItem:(id)arg1 attribute:(int)arg2;
 - (void)_setSymbolicConstant:(id)arg1;
 - (void)_setSymbolicConstant:(id)arg1 constant:(float)arg2;
 - (id)_symbolicConstant;
@@ -120,6 +138,7 @@
 - (float)dissatisfaction;
 - (void)encodeWithCoder:(id)arg1;
 - (id)equationDescription;
+- (id)firstAnchor;
 - (int)firstAttribute;
 - (id)firstItem;
 - (BOOL)hasBeenLowered;
@@ -136,6 +155,7 @@
 - (float)priority;
 - (float)priorityForVariable:(id)arg1;
 - (int)relation;
+- (id)secondAnchor;
 - (int)secondAttribute;
 - (id)secondItem;
 - (void)setActive:(BOOL)arg1;
@@ -148,14 +168,22 @@
 - (void)setShouldBeArchived:(BOOL)arg1;
 - (void)setSymbolicConstant:(id)arg1;
 - (BOOL)shouldBeArchived;
+- (id)sourceRelationshipHierarchy;
 - (id)symbolicConstant;
 - (float)unsatisfaction;
+
+// Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
+
+- (id)ql_activatedConstraint;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (BOOL)_UIWantsMarginAttributeSupport;
 
 - (id)_baselineLoweringInfoForFirstItem:(BOOL)arg1;
+- (id)_debuggableEquationBaseDescription;
+- (id)_debuggableEquationDescriptionWithoutLegend;
+- (id)_debuggableEquationLegendDescription;
 - (id)_encodedConstant;
 - (id)_ola_dimensionItem;
 - (id)_ola_dimensionRefItem;
@@ -184,26 +212,26 @@
 + (id)_gkConstraintForView:(id)arg1 withWidthDerivedFromView:(id)arg2 insetBy:(float)arg3;
 + (id)_gkConstraintWithItem:(id)arg1 attribute:(int)arg2 relatedBy:(int)arg3 toItem:(id)arg4 attribute:(int)arg5 multiplier:(float)arg6 leading:(float)arg7 fontTextStyle:(id)arg8;
 + (id)_gkConstraintsForView:(id)arg1 centeredXInView:(id)arg2 enforceMargin:(float)arg3;
-+ (id)_gkConstraintsForView:(id)arg1 withinView:(id)arg2 insets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg3;
++ (id)_gkConstraintsForView:(id)arg1 withinView:(id)arg2 insets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg3;
 + (id)_gkConstraintsForViews:(id)arg1 alignedByAttribute:(int)arg2;
-+ (id)_gkConstraintsForViews:(id)arg1 contiguouslyLaidOutVertically:(BOOL)arg2 overlap:(float)arg3 withinView:(id)arg4 insets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg5;
-+ (id)_gkConstraintsForViews:(id)arg1 contiguouslyLaidOutVertically:(BOOL)arg2 overlap:(float)arg3 withinView:(id)arg4 insets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg5 applyOrthogonalConstraints:(BOOL)arg6;
++ (id)_gkConstraintsForViews:(id)arg1 contiguouslyLaidOutVertically:(BOOL)arg2 overlap:(float)arg3 withinView:(id)arg4 insets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg5;
++ (id)_gkConstraintsForViews:(id)arg1 contiguouslyLaidOutVertically:(BOOL)arg2 overlap:(float)arg3 withinView:(id)arg4 insets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg5 applyOrthogonalConstraints:(BOOL)arg6;
 
 // Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
 
-+ (id)constraintsByAttachingView:(id)arg1 toView:(id)arg2 alongEdges:(unsigned int)arg3 insets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg4;
-+ (id)constraintsByAttachingView:(id)arg1 toView:(id)arg2 inCorner:(unsigned int)arg3 offset:(struct UIOffset { float x1; float x2; })arg4;
-+ (id)constraintsByCenteringAndContainingView:(id)arg1 inView:(id)arg2 insets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg3;
-+ (id)constraintsByCenteringView:(id)arg1 withView:(id)arg2 alongAxes:(int)arg3 offset:(struct UIOffset { float x1; float x2; })arg4;
-+ (id)constraintsBySizingView:(id)arg1 toSize:(struct CGSize { float x1; float x2; })arg2;
++ (id)constraintsByAttachingView:(id)arg1 toView:(id)arg2 alongEdges:(unsigned int)arg3 insets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg4;
++ (id)constraintsByAttachingView:(id)arg1 toView:(id)arg2 inCorner:(unsigned int)arg3 offset:(struct UIOffset { double x1; double x2; })arg4;
++ (id)constraintsByCenteringAndContainingView:(id)arg1 inView:(id)arg2 insets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg3;
++ (id)constraintsByCenteringView:(id)arg1 withView:(id)arg2 alongAxes:(unsigned int)arg3 offset:(struct UIOffset { double x1; double x2; })arg4;
++ (id)constraintsBySizingView:(id)arg1 toSize:(struct CGSize { double x1; double x2; })arg2;
 
 // Image: /System/Library/PrivateFrameworks/NetAppsUtilitiesUI.framework/NetAppsUtilitiesUI
 
 + (BOOL)naui_areConstraints:(id)arg1 equalToConstraints:(id)arg2;
-+ (id)naui_constraintsByAttachingView:(id)arg1 toView:(id)arg2 alongEdges:(unsigned int)arg3 insets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg4;
-+ (id)naui_constraintsByAttachingView:(id)arg1 toView:(id)arg2 alongEdges:(unsigned int)arg3 relatedBy:(int)arg4 insets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg5;
-+ (id)naui_constraintsByCenteringView:(id)arg1 withView:(id)arg2 alongAxes:(unsigned int)arg3 offset:(struct UIOffset { float x1; float x2; })arg4;
-+ (id)naui_constraintsBySizingView:(id)arg1 toSize:(struct CGSize { float x1; float x2; })arg2;
++ (id)naui_constraintsByAttachingView:(id)arg1 toView:(id)arg2 alongEdges:(unsigned int)arg3 insets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg4;
++ (id)naui_constraintsByAttachingView:(id)arg1 toView:(id)arg2 alongEdges:(unsigned int)arg3 relatedBy:(int)arg4 insets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg5;
++ (id)naui_constraintsByCenteringView:(id)arg1 withView:(id)arg2 alongAxes:(unsigned int)arg3 offset:(struct UIOffset { double x1; double x2; })arg4;
++ (id)naui_constraintsBySizingView:(id)arg1 toSize:(struct CGSize { double x1; double x2; })arg2;
 + (id)naui_constraintsWithVisualFormat:(id)arg1 options:(unsigned int)arg2 metrics:(id)arg3 views:(id)arg4 label:(id)arg5;
 + (id)naui_viewsInConstraints:(id)arg1;
 
@@ -230,10 +258,10 @@
 // Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
 
 + (BOOL)rc_areConstraints:(id)arg1 equalToConstraints:(id)arg2;
-+ (id)rc_constraintsByAttachingView:(id)arg1 toView:(id)arg2 alongEdges:(unsigned int)arg3 insets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg4;
-+ (id)rc_constraintsByAttachingView:(id)arg1 toView:(id)arg2 alongEdges:(unsigned int)arg3 relatedBy:(int)arg4 insets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg5;
-+ (id)rc_constraintsByCenteringView:(id)arg1 withView:(id)arg2 alongAxes:(unsigned int)arg3 offset:(struct UIOffset { float x1; float x2; })arg4;
-+ (id)rc_constraintsBySizingView:(id)arg1 toSize:(struct CGSize { float x1; float x2; })arg2;
++ (id)rc_constraintsByAttachingView:(id)arg1 toView:(id)arg2 alongEdges:(unsigned int)arg3 insets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg4;
++ (id)rc_constraintsByAttachingView:(id)arg1 toView:(id)arg2 alongEdges:(unsigned int)arg3 relatedBy:(int)arg4 insets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg5;
++ (id)rc_constraintsByCenteringView:(id)arg1 withView:(id)arg2 alongAxes:(unsigned int)arg3 offset:(struct UIOffset { double x1; double x2; })arg4;
++ (id)rc_constraintsBySizingView:(id)arg1 toSize:(struct CGSize { double x1; double x2; })arg2;
 + (id)rc_constraintsWithVisualFormat:(id)arg1 options:(unsigned int)arg2 metrics:(id)arg3 views:(id)arg4 label:(id)arg5;
 + (id)rc_viewsInConstraints:(id)arg1;
 

@@ -3,7 +3,7 @@
  */
 
 @interface AAEmailVettingRequest : AARequest {
-    ACAccount *_account;
+    ACAccount * _account;
 }
 
 @property (nonatomic, retain) ACAccount *account;

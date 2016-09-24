@@ -3,12 +3,12 @@
  */
 
 @interface CUIRenditionKey : NSObject <NSCoding, NSCopying> {
-    unsigned short _highwaterKeyCount;
-    struct _renditionkeytoken { unsigned short x1; unsigned short x2; } *_key;
+    unsigned short  _highwaterKeyCount;
+    struct _renditionkeytoken { unsigned short x1; unsigned short x2; } * _key;
     struct _renditionkeytoken { 
         unsigned short identifier; 
         unsigned short value; 
-    } _stackKey;
+    }  _stackKey;
 }
 
 + (void)initialize;
@@ -30,9 +30,11 @@
 - (const struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)keyList;
 - (id)nameOfAttributeName:(int)arg1;
 - (void)removeValueForKeyTokenIdentifier:(int)arg1;
+- (void)setThemeDeploymentTarget:(int)arg1;
 - (void)setThemeDimension1:(int)arg1;
 - (void)setThemeDimension2:(int)arg1;
 - (void)setThemeDirection:(int)arg1;
+- (void)setThemeDisplayGamut:(int)arg1;
 - (void)setThemeElement:(int)arg1;
 - (void)setThemeGraphicsClass:(int)arg1;
 - (void)setThemeIdentifier:(int)arg1;
@@ -51,9 +53,11 @@
 - (void)setThemeSubtype:(int)arg1;
 - (void)setThemeValue:(int)arg1;
 - (void)setValuesFromKeyList:(const struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)arg1;
+- (int)themeDeploymentTarget;
 - (int)themeDimension1;
 - (int)themeDimension2;
 - (int)themeDirection;
+- (int)themeDisplayGamut;
 - (int)themeElement;
 - (int)themeGraphicsClass;
 - (int)themeIdentifier;

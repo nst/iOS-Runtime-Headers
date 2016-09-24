@@ -3,16 +3,16 @@
  */
 
 @interface PKPaymentForbiddenResponse : PKPaymentWebServiceResponse {
-    NSNumber *_errorCode;
-    NSString *_localizedDescription;
-    NSString *_localizedTitle;
+    NSNumber * _errorCode;
+    NSString * _localizedDescription;
+    NSString * _localizedTitle;
 }
 
-@property (nonatomic, retain) NSNumber *errorCode;
-@property (nonatomic, retain) NSString *localizedDescription;
-@property (nonatomic, retain) NSString *localizedTitle;
+@property (nonatomic, copy) NSNumber *errorCode;
+@property (nonatomic, copy) NSString *localizedDescription;
+@property (nonatomic, copy) NSString *localizedTitle;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)errorCode;
 - (id)initWithData:(id)arg1;
 - (id)localizedDescription;

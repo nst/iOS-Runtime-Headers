@@ -3,9 +3,9 @@
  */
 
 @interface VSSpeechConnectionDelegateWrapper : NSObject <VSSpeechServiceDelegate> {
-    VSSpeechConnection *_connection;
-    <VSSpeechConnectionDelegate> *_delegate;
-    VSSpeechRequest *_request;
+    VSSpeechConnection * _connection;
+    <VSSpeechConnectionDelegate> * _delegate;
+    VSSpeechRequest * _request;
 }
 
 @property (nonatomic) VSSpeechConnection *connection;
@@ -27,6 +27,7 @@
 - (oneway void)speechRequestDidPause;
 - (oneway void)speechRequestDidStart;
 - (oneway void)speechRequestDidStopWithSuccess:(BOOL)arg1 phonemesSpoken:(id)arg2 error:(id)arg3;
-- (oneway void)speechRequestMark:(int)arg1 didStartForRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (oneway void)speechRequestMark:(long)arg1 didStartForRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (oneway void)speechRequestSuccessWithInstrumentMetrics:(id)arg1;
 
 @end

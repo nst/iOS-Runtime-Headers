@@ -3,8 +3,8 @@
  */
 
 @interface EKPreviewSection : NSObject {
-    NSDate *_date;
-    NSArray *_events;
+    NSDate * _date;
+    NSArray * _events;
 }
 
 @property (nonatomic, retain) NSDate *date;

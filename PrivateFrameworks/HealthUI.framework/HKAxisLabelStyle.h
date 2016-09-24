@@ -3,10 +3,10 @@
  */
 
 @interface HKAxisLabelStyle : NSObject <NSCopying> {
-    UIFont *_font;
-    int _horizontalAlignment;
-    UIColor *_textColor;
-    int _verticalAlignment;
+    UIFont * _font;
+    int  _horizontalAlignment;
+    UIColor * _textColor;
+    int  _verticalAlignment;
 }
 
 @property (nonatomic, retain) UIFont *font;

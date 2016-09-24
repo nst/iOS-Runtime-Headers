@@ -3,7 +3,7 @@
  */
 
 @interface NSOwnedDictionaryProxy : NSDictionary {
-    id _owner;
+    id  _owner;
 }
 
 - (unsigned int)count;

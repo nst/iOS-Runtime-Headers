@@ -3,11 +3,14 @@
  */
 
 @interface SFStateMachine : NSObject {
-    NSString *_currentState;
-    <SFStateMachineDelegate> *_delegate;
-    int _lock;
-    BOOL _shouldLogStateTransitions;
-    NSDictionary *_validTransitions;
+    NSString * _currentState;
+    <SFStateMachineDelegate> * _delegate;
+    struct _opaque_pthread_mutex_t { 
+        long __sig; 
+        BOOL __opaque[40]; 
+    }  _lock;
+    BOOL  _shouldLogStateTransitions;
+    NSDictionary * _validTransitions;
 }
 
 @property (copy) NSString *currentState;
@@ -22,6 +25,7 @@
 - (id)_validateTransitionFromState:(id)arg1 toState:(id)arg2;
 - (BOOL)applyState:(id)arg1;
 - (id)currentState;
+- (void)dealloc;
 - (id)delegate;
 - (id)init;
 - (id)missingTransitionFromState:(id)arg1 toState:(id)arg2;

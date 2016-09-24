@@ -3,8 +3,8 @@
  */
 
 @interface CIAffineTile : CIFilter {
-    CIImage *inputImage;
-    NSValue *inputTransform;
+    CIImage * inputImage;
+    NSValue * inputTransform;
 }
 
 @property (nonatomic, retain) CIImage *inputImage;

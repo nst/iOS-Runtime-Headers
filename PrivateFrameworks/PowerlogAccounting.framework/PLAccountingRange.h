@@ -3,8 +3,8 @@
  */
 
 @interface PLAccountingRange : NSObject {
-    NSDate *_endDate;
-    NSDate *_startDate;
+    NSDate * _endDate;
+    NSDate * _startDate;
 }
 
 @property (nonatomic, readonly) NSDate *endDate;

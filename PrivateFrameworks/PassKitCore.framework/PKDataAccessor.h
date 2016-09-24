@@ -3,16 +3,17 @@
  */
 
 @interface PKDataAccessor : NSObject {
-    NSObject<OS_dispatch_queue> *_processingQueue;
+    NSObject<OS_dispatch_queue> * _processingQueue;
 }
 
-@property (nonatomic, readonly, retain) NSData *archiveData;
-@property (nonatomic, readonly, retain) NSBundle *bundle;
-@property (nonatomic, readonly, retain) NSData *manifestHash;
-@property (nonatomic, readonly, retain) PKRemoteAssetManager *remoteAssetManager;
+@property (nonatomic, readonly) NSData *archiveData;
+@property (nonatomic, readonly) NSBundle *bundle;
+@property (nonatomic, readonly) NSData *manifestHash;
+@property (nonatomic, readonly) PKRemoteAssetManager *remoteAssetManager;
 @property (nonatomic, readonly) BOOL remoteAssetsDownloaded;
-@property (nonatomic, readonly, retain) NSData *serializedFileWrapper;
+@property (nonatomic, readonly) NSData *serializedFileWrapper;
 
+- (void).cxx_destruct;
 - (id)archiveData;
 - (id)bundle;
 - (id)content;

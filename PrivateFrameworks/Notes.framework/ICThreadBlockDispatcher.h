@@ -3,8 +3,8 @@
  */
 
 @interface ICThreadBlockDispatcher : NSObject {
-    NSThread *_creationThread;
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
+    NSThread * _creationThread;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
 }
 
 @property NSThread *creationThread;
@@ -14,6 +14,7 @@
 - (void)assertIsValidCallingThread;
 - (id)creationThread;
 - (BOOL)currentIsCreationThread;
+- (void)dealloc;
 - (id)dispatchQueue;
 - (id)init;
 - (void)performBlock:(id /* block */)arg1;

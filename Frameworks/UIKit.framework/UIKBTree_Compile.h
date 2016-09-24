@@ -3,8 +3,8 @@
  */
 
 @interface UIKBTree_Compile : UIKBTree {
-    NSMutableDictionary *refs;
-    NSMutableDictionary *symbols;
+    NSMutableDictionary * refs;
+    NSMutableDictionary * symbols;
 }
 
 @property (nonatomic, readonly) NSArray *refList;
@@ -20,6 +20,7 @@
 - (BOOL)_needsScaling;
 - (id)attributeSet:(BOOL)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)geometrySet:(BOOL)arg1;
 - (int)indexOfSubtreeWithName:(id)arg1 rows:(id)arg2;
 - (int)indexOfSubtreeWithType:(int)arg1;

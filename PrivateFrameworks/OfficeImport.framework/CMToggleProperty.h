@@ -3,7 +3,7 @@
  */
 
 @interface CMToggleProperty : CMProperty {
-    int wdValue;
+    int  wdValue;
 }
 
 - (int)compareValue:(id)arg1;

@@ -7,10 +7,10 @@
         unsigned int hintSource : 1; 
         unsigned int isLOI : 1; 
         unsigned int isVisit : 1; 
-    } _has;
-    int _hintSource;
-    int _isLOI;
-    int _isVisit;
+    }  _has;
+    int  _hintSource;
+    int  _isLOI;
+    int  _isVisit;
 }
 
 @property (nonatomic) BOOL hasHintSource;

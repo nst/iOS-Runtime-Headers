@@ -3,8 +3,8 @@
  */
 
 @interface CalPreferences : NSObject {
-    NSString *_domain;
-    NSMutableSet *_registeredNotificationsToReflect;
+    NSString * _domain;
+    NSMutableSet * _registeredNotificationsToReflect;
 }
 
 - (void).cxx_destruct;

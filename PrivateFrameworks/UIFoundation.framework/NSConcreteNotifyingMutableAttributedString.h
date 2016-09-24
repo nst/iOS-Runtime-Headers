@@ -3,7 +3,7 @@
  */
 
 @interface NSConcreteNotifyingMutableAttributedString : NSConcreteMutableAttributedString {
-    id _delegate;
+    id  _delegate;
 }
 
 + (Class)_mutableStringClass;

@@ -3,8 +3,8 @@
  */
 
 @interface SBLockOverlayStylePropertiesFactory : NSObject {
-    NSMutableDictionary *_deviceQualityToProperties;
-    unsigned int _style;
+    NSMutableDictionary * _deviceQualityToProperties;
+    unsigned int  _style;
 }
 
 @property (nonatomic, readonly) unsigned int style;

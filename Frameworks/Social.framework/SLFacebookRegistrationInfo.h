@@ -3,13 +3,13 @@
  */
 
 @interface SLFacebookRegistrationInfo : NSObject {
-    NSDate *_birthday;
-    NSString *_email;
-    NSString *_firstName;
-    NSString *_gender;
-    NSString *_lastName;
-    NSString *_password;
-    NSNumber *_phone;
+    NSDate * _birthday;
+    NSString * _email;
+    NSString * _firstName;
+    NSString * _gender;
+    NSString * _lastName;
+    NSString * _password;
+    NSNumber * _phone;
 }
 
 @property (nonatomic, retain) NSDate *birthday;

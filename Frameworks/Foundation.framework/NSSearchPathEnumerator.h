@@ -3,9 +3,9 @@
  */
 
 @interface NSSearchPathEnumerator : NSEnumerator {
-    unsigned int directory;
-    unsigned int domainMask;
-    long state;
+    unsigned int  directory;
+    unsigned int  domainMask;
+    long  state;
 }
 
 - (id)initWithDirectory:(unsigned int)arg1 domains:(unsigned int)arg2;

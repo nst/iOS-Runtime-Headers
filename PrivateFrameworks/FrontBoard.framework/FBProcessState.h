@@ -3,12 +3,12 @@
  */
 
 @interface FBProcessState : NSObject <BSDescriptionProviding, NSCopying> {
-    int _effectiveVisibility;
-    BOOL _foreground;
-    int _pid;
-    BOOL _running;
-    int _taskState;
-    int _visibility;
+    int  _effectiveVisibility;
+    BOOL  _foreground;
+    int  _pid;
+    BOOL  _running;
+    int  _taskState;
+    int  _visibility;
 }
 
 @property (readonly, copy) NSString *debugDescription;

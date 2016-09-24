@@ -3,10 +3,8 @@
  */
 
 @interface IKJSMediaItem : IKJSObject <IKJSMediaItem> {
-    IKAppMediaItemBridge *_bridge;
-    NSNumber *_resumeTime;
-    double _upNextPresentationDuration;
-    double _upNextPresentationStartTime;
+    IKAppMediaItemBridge * _bridge;
+    NSNumber * _resumeTime;
 }
 
 @property (nonatomic, retain) NSString *artworkImageURL;
@@ -22,15 +20,16 @@
 @property (nonatomic, retain) NSString *subtitle;
 @property (nonatomic, retain) NSString *title;
 @property (nonatomic, retain) NSString *type;
-@property double upNextPresentationDuration;
-@property double upNextPresentationStartTime;
 @property (nonatomic, retain) NSString *url;
 
 - (void).cxx_destruct;
 - (id)artworkImageURL;
 - (id)bridge;
+- (double)contentProposalAutomaticAcceptanceInterval;
+- (double)contentProposalPresentationTime;
 - (id)contentRatingDomain;
 - (id)contentRatingRanking;
+- (void)dealloc;
 - (id)description;
 - (id)externalID;
 - (id)highlightGroups;
@@ -43,6 +42,8 @@
 - (id)ratingBadge;
 - (id)resumeTime;
 - (void)setArtworkImageURL:(id)arg1;
+- (void)setContentProposalAutomaticAcceptanceInterval:(double)arg1;
+- (void)setContentProposalPresentationTime:(double)arg1;
 - (void)setContentRatingDomain:(id)arg1;
 - (void)setContentRatingRanking:(id)arg1;
 - (void)setDescription:(id)arg1;
@@ -55,14 +56,10 @@
 - (void)setSubtitle:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setType:(id)arg1;
-- (void)setUpNextPresentationDuration:(double)arg1;
-- (void)setUpNextPresentationStartTime:(double)arg1;
 - (void)setUrl:(id)arg1;
 - (id)subtitle;
 - (id)title;
 - (id)type;
-- (double)upNextPresentationDuration;
-- (double)upNextPresentationStartTime;
 - (id)url;
 
 @end

@@ -11,11 +11,11 @@
         int depthDataType; 
         BOOL linearFilter; 
         BOOL discardHint; 
-    } mAttributes;
-    BOOL mMultisampleDisabled;
-    TSCH3DGLFBO *mMultisampleFBO;
-    <TSCH3DGLResolveFramebuffer> *mParent;
-    BOOL mResolved;
+    }  mAttributes;
+    BOOL  mMultisampleDisabled;
+    TSCH3DGLFBO * mMultisampleFBO;
+    <TSCH3DGLResolveFramebuffer> * mParent;
+    BOOL  mResolved;
 }
 
 @property (nonatomic, readonly) struct FramebufferAttributes { int x1; int x2; int x3; int x4; int x5; BOOL x6; BOOL x7; } attributes;

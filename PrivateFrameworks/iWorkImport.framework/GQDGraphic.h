@@ -3,7 +3,7 @@
  */
 
 @interface GQDGraphic : GQDDrawable {
-    GQDSStyle *mGraphicStyle;
+    GQDSStyle * mGraphicStyle;
 }
 
 - (void)dealloc;

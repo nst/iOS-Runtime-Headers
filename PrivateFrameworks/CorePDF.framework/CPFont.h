@@ -3,44 +3,44 @@
  */
 
 @interface CPFont : NSObject <CPDisposable> {
-    struct CGFont { } *cgFont;
-    struct CGPDFFont { } *cgPDFFont;
-    float defaultWidth;
+    struct CGFont { } * cgFont;
+    struct CGPDFFont { } * cgPDFFont;
+    double  defaultWidth;
     struct { 
-        float fontStretch; 
-        float fontWeight; 
+        double fontStretch; 
+        double fontWeight; 
         unsigned int flags; 
         struct CGRect { 
             struct CGPoint { 
-                float x; 
-                float y; 
+                double x; 
+                double y; 
             } origin; 
             struct CGSize { 
-                float width; 
-                float height; 
+                double width; 
+                double height; 
             } size; 
         } fontBBox; 
-        float italicAngle; 
-        float ascent; 
-        float descent; 
-        float leading; 
-        float capHeight; 
-        float xHeight; 
-        float stemV; 
-        float stemH; 
-        float avgWidth; 
-        float maxWidth; 
-        float missingWidth; 
-        float spaceWidth; 
-        float underlinePosition; 
-        float underlineThickness; 
-    } descriptor;
-    BOOL disposed;
-    BOOL exactMatch;
-    NSString *fontName;
-    BOOL isHorizontal;
-    struct __CFDictionary { } *kernDictionary;
-    double kernUnitsPerEm;
+        double italicAngle; 
+        double ascent; 
+        double descent; 
+        double leading; 
+        double capHeight; 
+        double xHeight; 
+        double stemV; 
+        double stemH; 
+        double avgWidth; 
+        double maxWidth; 
+        double missingWidth; 
+        double spaceWidth; 
+        double underlinePosition; 
+        double underlineThickness; 
+    }  descriptor;
+    BOOL  disposed;
+    BOOL  exactMatch;
+    NSString * fontName;
+    BOOL  isHorizontal;
+    struct __CFDictionary { } * kernDictionary;
+    double  kernUnitsPerEm;
 }
 
 - (float)ascent;
@@ -53,7 +53,7 @@
 - (void)dispose;
 - (void)finalize;
 - (unsigned int)flags;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })fontBBox;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })fontBBox;
 - (id)fontName;
 - (float)fontStretch;
 - (float)fontWeight;

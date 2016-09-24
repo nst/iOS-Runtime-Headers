@@ -3,10 +3,10 @@
  */
 
 @interface HDPairedSyncManager : NSObject <HDDiagnosticObject, PSYSyncCoordinatorDelegate> {
-    HDDaemon *_daemon;
-    PSYSyncCoordinator *_pairedSyncCoordinator;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSHashTable *_unfinishedSyncSessions;
+    HDDaemon * _daemon;
+    PSYSyncCoordinator * _pairedSyncCoordinator;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSHashTable * _unfinishedSyncSessions;
 }
 
 @property (nonatomic) HDDaemon *daemon;

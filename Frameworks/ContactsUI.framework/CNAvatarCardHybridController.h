@@ -3,9 +3,8 @@
  */
 
 @interface CNAvatarCardHybridController : CNAvatarCardController <CNAvatarCardViewControllerDelegate, UIAlertControllerSystemProvidedPresentationDelegate> {
-    UIAlertController *_alertController;
-    CNAvatarCardViewController *_cardViewController;
-    UIView *_sourceView;
+    UIAlertController * _alertController;
+    CNAvatarCardViewController * _cardViewController;
 }
 
 @property (nonatomic, retain) UIAlertController *alertController;
@@ -20,11 +19,10 @@
 - (void)_prepareAlertController;
 - (id)_presentingViewControllerForSystemProvidedPresentationOfAlertController:(id)arg1;
 - (void)_setupAlertController;
-- (BOOL)_shouldPerformSystemProvidedPresentationOfAlertController:(id)arg1 atSystemProvidedPresentationRegisteredViewLocation:(struct CGPoint { float x1; float x2; })arg2;
+- (void)_setupCardViewControllerWithContacts:(id)arg1;
+- (BOOL)_shouldPerformSystemProvidedPresentationOfAlertController:(id)arg1 atSystemProvidedPresentationRegisteredViewLocation:(struct CGPoint { double x1; double x2; })arg2;
 - (void)_willBeginSystemProvidedPresentationOfAlertController:(id)arg1;
-- (id)actionCategories;
 - (id)alertController;
-- (BOOL)bypassActionValidation;
 - (id)cardViewController;
 - (id)cardViewController:(id)arg1 orderedPropertiesForProperties:(id)arg2 category:(id)arg3;
 - (void)cardViewController:(id)arg1 willShowActions:(id)arg2;
@@ -36,12 +34,9 @@
 - (BOOL)isVisible;
 - (id)preparedViewControllerForPresentationWithGestureRecognizer:(id)arg1;
 - (void)presentAnimated:(BOOL)arg1 completionHandler:(id /* block */)arg2;
-- (void)setActionCategories:(id)arg1;
 - (void)setAlertController:(id)arg1;
-- (void)setBypassActionValidation:(BOOL)arg1;
 - (void)setCardViewController:(id)arg1;
 - (void)setContacts:(id)arg1;
 - (void)setSourceView:(id)arg1;
-- (id)sourceView;
 
 @end

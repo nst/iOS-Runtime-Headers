@@ -3,7 +3,7 @@
  */
 
 @interface TSDArchivedCanvasSelection : TSPObject <TSKArchivedSelection> {
-    TSKSelection<TSDCanvasSelection> *mSelection;
+    TSKSelection<TSDCanvasSelection> * mSelection;
 }
 
 @property (readonly, copy) NSString *debugDescription;

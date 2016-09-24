@@ -3,7 +3,7 @@
  */
 
 @interface TPBottomDoubleButtonBar : TPBottomSingleButtonBar {
-    TPButton *_button2;
+    TPButton * _button2;
 }
 
 - (void).cxx_destruct;

@@ -5,6 +5,7 @@
 
 @required
 
+- (void)hardwareFailedToLoad;
 - (void)secureElementWithIdentifier:(NSString *)arg1 didChangeRestrictedMode:(BOOL)arg2;
 
 @end

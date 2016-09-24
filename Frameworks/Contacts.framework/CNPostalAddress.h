@@ -3,13 +3,13 @@
  */
 
 @interface CNPostalAddress : NSObject <CNObjectValidation, NSCopying, NSMutableCopying, NSSecureCoding> {
-    NSString *_ISOCountryCode;
-    NSString *_city;
-    NSString *_country;
-    NSString *_formattedAddress;
-    NSString *_postalCode;
-    NSString *_state;
-    NSString *_street;
+    NSString * _ISOCountryCode;
+    NSString * _city;
+    NSString * _country;
+    NSString * _formattedAddress;
+    NSString * _postalCode;
+    NSString * _state;
+    NSString * _street;
 }
 
 @property (nonatomic, copy) NSString *ISOCountryCode;
@@ -68,15 +68,20 @@
 - (id)addressDictionary;
 - (id)keyboardSettingsForAddressPart:(id)arg1;
 
-// Image: /System/Library/Frameworks/PassKit.framework/PassKit
+// Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
 
 + (id)_ABKeyFromCNKey:(id)arg1;
 + (id)_CNKeyFromABKey:(id)arg1;
 + (id)backwardsCompatiblePostalAddressDictionary:(id)arg1;
 
+- (id)_countryCodeForCountryName:(id)arg1;
 - (id)backwardsCompatibleDictionaryRepresentation;
 - (id)redactedPostalAddress;
 - (id)redactedStreetAddress;
 - (id)suggestedCountryCode;
+
+// Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
+
++ (id)siriintents_postalAddressFromAddressBookDictionaryAddress:(id)arg1;
 
 @end

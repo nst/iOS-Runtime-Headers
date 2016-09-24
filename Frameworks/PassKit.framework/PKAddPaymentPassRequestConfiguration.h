@@ -3,12 +3,12 @@
  */
 
 @interface PKAddPaymentPassRequestConfiguration : NSObject <NSSecureCoding> {
-    NSString *_cardholderName;
-    NSString *_encryptionScheme;
-    NSString *_localizedDescription;
-    NSString *_paymentNetwork;
-    NSString *_primaryAccountIdentifier;
-    NSString *_primaryAccountSuffix;
+    NSString * _cardholderName;
+    NSString * _encryptionScheme;
+    NSString * _localizedDescription;
+    NSString * _paymentNetwork;
+    NSString * _primaryAccountIdentifier;
+    NSString * _primaryAccountSuffix;
 }
 
 @property (nonatomic, copy) NSString *cardholderName;
@@ -20,6 +20,7 @@
 
 + (BOOL)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)cardholderName;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;

@@ -3,7 +3,7 @@
  */
 
 @interface MIDINetworkSession : NSObject {
-    void *_imp;
+    void * _imp;
 }
 
 @property (nonatomic) unsigned int connectionPolicy;

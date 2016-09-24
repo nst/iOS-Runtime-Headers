@@ -3,7 +3,7 @@
  */
 
 @interface MCDefaultsPayload : MCPayload {
-    NSDictionary *_defaultsByDomain;
+    NSDictionary * _defaultsByDomain;
 }
 
 + (id)localizedPluralForm;

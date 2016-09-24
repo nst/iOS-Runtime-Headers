@@ -4,16 +4,16 @@
 
 @interface NSAffineTransform : NSObject <NSCopying, NSSecureCoding> {
     struct { 
-        float m11; 
-        float m12; 
-        float m21; 
-        float m22; 
-        float tX; 
-        float tY; 
-    } _transformStruct;
+        double m11; 
+        double m12; 
+        double m21; 
+        double m22; 
+        double tX; 
+        double tY; 
+    }  _transformStruct;
 }
 
-@property struct { float x1; float x2; float x3; float x4; float x5; float x6; } transformStruct;
+@property struct { double x1; double x2; double x3; double x4; double x5; double x6; } transformStruct;
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
@@ -35,10 +35,10 @@
 - (void)rotateByRadians:(float)arg1;
 - (void)scaleBy:(float)arg1;
 - (void)scaleXBy:(float)arg1 yBy:(float)arg2;
-- (void)setTransformStruct:(struct { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
-- (struct CGPoint { float x1; float x2; })transformPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (struct CGSize { float x1; float x2; })transformSize:(struct CGSize { float x1; float x2; })arg1;
-- (struct { float x1; float x2; float x3; float x4; float x5; float x6; })transformStruct;
+- (void)setTransformStruct:(struct { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
+- (struct CGPoint { double x1; double x2; })transformPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (struct CGSize { double x1; double x2; })transformSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct { double x1; double x2; double x3; double x4; double x5; double x6; })transformStruct;
 - (void)translateXBy:(float)arg1 yBy:(float)arg2;
 
 // Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
@@ -51,6 +51,6 @@
 
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
 
-- (void)gqu_transformRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 upperLeft:(struct CGPoint { float x1; float x2; }*)arg2 lowerLeft:(struct CGPoint { float x1; float x2; }*)arg3 lowerRight:(struct CGPoint { float x1; float x2; }*)arg4 upperRight:(struct CGPoint { float x1; float x2; }*)arg5;
+- (void)gqu_transformRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 upperLeft:(struct CGPoint { double x1; double x2; }*)arg2 lowerLeft:(struct CGPoint { double x1; double x2; }*)arg3 lowerRight:(struct CGPoint { double x1; double x2; }*)arg4 upperRight:(struct CGPoint { double x1; double x2; }*)arg5;
 
 @end

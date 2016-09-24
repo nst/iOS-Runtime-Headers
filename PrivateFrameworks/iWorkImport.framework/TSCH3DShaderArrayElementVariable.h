@@ -3,8 +3,8 @@
  */
 
 @interface TSCH3DShaderArrayElementVariable : TSCH3DShaderVariable <TSCHUnretainedParent> {
-    unsigned int mIndex;
-    TSCH3DShaderVariable *mParent;
+    unsigned int  mIndex;
+    TSCH3DShaderVariable * mParent;
 }
 
 + (id)variableWithParentVariable:(id)arg1 index:(unsigned int)arg2;

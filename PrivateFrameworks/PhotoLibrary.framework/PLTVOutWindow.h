@@ -3,8 +3,8 @@
  */
 
 @interface PLTVOutWindow : UIWindow {
-    UIView *_backgroundView;
-    UIView *_videoView;
+    UIView * _backgroundView;
+    UIView * _videoView;
 }
 
 - (BOOL)_setupTargetScreen:(id)arg1;

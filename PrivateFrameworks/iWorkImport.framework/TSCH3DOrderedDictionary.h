@@ -3,8 +3,8 @@
  */
 
 @interface TSCH3DOrderedDictionary : NSObject <NSFastEnumeration> {
-    NSMutableArray *mKeyOrder;
-    NSMutableDictionary *mStore;
+    NSMutableArray * mKeyOrder;
+    NSMutableDictionary * mStore;
 }
 
 @property (nonatomic, readonly) unsigned int count;

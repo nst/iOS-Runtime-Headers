@@ -3,9 +3,9 @@
  */
 
 @interface MSASCommentChange : NSObject {
-    MSASComment *_comment;
-    int _deletionIndex;
-    int _type;
+    MSASComment * _comment;
+    int  _deletionIndex;
+    int  _type;
 }
 
 @property (nonatomic, retain) MSASComment *comment;

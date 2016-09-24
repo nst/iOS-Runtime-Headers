@@ -3,11 +3,11 @@
  */
 
 @interface SUOverlayAction : NSObject {
-    int _animationCount;
-    UIViewController *_otherViewController;
-    SUOverlayTransition *_transition;
-    int _type;
-    UIViewController *_viewController;
+    int  _animationCount;
+    UIViewController * _otherViewController;
+    SUOverlayTransition * _transition;
+    int  _type;
+    UIViewController * _viewController;
 }
 
 @property (nonatomic) int actionType;

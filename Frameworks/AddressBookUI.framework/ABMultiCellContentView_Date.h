@@ -3,12 +3,12 @@
  */
 
 @interface ABMultiCellContentView_Date : ABMultiCellContentView <ABDateFieldDelegate> {
-    ABDateField *_dateField;
+    ABDateField * _dateField;
 }
 
 @property (nonatomic, readonly) NSDate *date;
 
-+ (struct CGSize { float x1; float x2; })layoutSubviewsForView:(id)arg1 usingSize:(struct CGSize { float x1; float x2; })arg2 propertyGroup:(id)arg3 info:(id)arg4 styleProvider:(id)arg5 whenEditing:(BOOL)arg6;
++ (struct CGSize { double x1; double x2; })layoutSubviewsForView:(id)arg1 usingSize:(struct CGSize { double x1; double x2; })arg2 propertyGroup:(id)arg3 info:(id)arg4 styleProvider:(id)arg5 whenEditing:(BOOL)arg6;
 
 - (id)date;
 - (void)dateFieldDateDidChange:(id)arg1;

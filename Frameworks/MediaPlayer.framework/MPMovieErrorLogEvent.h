@@ -3,7 +3,7 @@
  */
 
 @interface MPMovieErrorLogEvent : NSObject <NSCopying> {
-    AVPlayerItemErrorLogEvent *_event;
+    AVPlayerItemErrorLogEvent * _event;
 }
 
 @property (nonatomic, readonly) NSString *URI;

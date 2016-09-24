@@ -3,9 +3,9 @@
  */
 
 @interface SKUIRedeemITunesPassLearnMoreView : UIView {
-    UIButton *_button;
-    UILabel *_explanationLabel;
-    UIImageView *_headerImageView;
+    UIButton * _button;
+    UILabel * _explanationLabel;
+    UIImageView * _headerImageView;
 }
 
 @property (nonatomic, readonly) UIControl *button;

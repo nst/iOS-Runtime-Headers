@@ -3,16 +3,16 @@
  */
 
 @interface _PFContextMapTable : NSObject {
-    unsigned int *_capacitiesFor64bitPKMappings;
+    unsigned int * _capacitiesFor64bitPKMappings;
     struct _contextMapTableFlags { 
         unsigned int _usesWeakReferences : 1; 
         unsigned int _garbageCollectionEnabled : 1; 
         unsigned int _reservedFlags : 30; 
-    } _flags;
-    struct __CFDictionary {} **_objectsBy64bitPKID;
-    struct __CFDictionary {} **_objectsByPermanentObjectID;
-    struct __CFDictionary { } *_objectsByTemporaryID;
-    unsigned int _slotLimit;
+    }  _flags;
+    struct __CFDictionary {} ** _objectsBy64bitPKID;
+    struct __CFDictionary {} ** _objectsByPermanentObjectID;
+    struct __CFDictionary { } * _objectsByTemporaryID;
+    unsigned int  _slotLimit;
 }
 
 - (void)_dispose;

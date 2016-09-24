@@ -3,8 +3,8 @@
  */
 
 @interface CKEncryptedData : NSObject <CKRecordValue, NSCopying, NSSecureCoding> {
-    NSData *_data;
-    NSData *_encryptedData;
+    NSData * _data;
+    NSData * _encryptedData;
 }
 
 @property (nonatomic, copy) NSData *data;
@@ -12,6 +12,8 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSData *encryptedData;
 @property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL needsDecryption;
+@property (nonatomic, readonly) BOOL needsEncryption;
 @property (readonly) Class superclass;
 
 // Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
@@ -31,12 +33,10 @@
 - (id)initWithData:(id)arg1;
 - (id)initWithEncryptedData:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)needsDecryption;
+- (BOOL)needsEncryption;
 - (void)setData:(id)arg1;
 - (void)setEncryptedData:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
-
-- (id)_prettyDictionaryRepresentation;
 
 // Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
 

@@ -3,8 +3,8 @@
  */
 
 @interface PULayerAnimationGroup : PUTimedAnimationGroup {
-    BOOL _areTrackedAnimationsPaused;
-    CALayer *_referenceLayer;
+    BOOL  _areTrackedAnimationsPaused;
+    CALayer * _referenceLayer;
 }
 
 @property (nonatomic, readonly) CALayer *referenceLayer;

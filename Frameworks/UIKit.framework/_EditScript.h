@@ -3,13 +3,13 @@
  */
 
 @interface _EditScript : NSObject {
-    int _currentOperation;
-    _IntArray2D *_distanceMatrix;
-    <_EditScriptData> *_itemAData;
-    <_EditScriptData> *_itemBData;
-    NSArray *_operationPrecedenceArray;
-    BOOL _orderAtomsAscending;
-    NSMutableArray *_script;
+    int  _currentOperation;
+    _IntArray2D * _distanceMatrix;
+    <_EditScriptData> * _itemAData;
+    <_EditScriptData> * _itemBData;
+    NSArray * _operationPrecedenceArray;
+    BOOL  _orderAtomsAscending;
+    NSMutableArray * _script;
 }
 
 @property (nonatomic, copy) NSArray *operationPrecedenceArray;

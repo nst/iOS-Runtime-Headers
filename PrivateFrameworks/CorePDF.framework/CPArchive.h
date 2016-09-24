@@ -3,12 +3,12 @@
  */
 
 @interface CPArchive : NSObject <CPDisposable> {
-    NSMutableString *htmlString;
-    NSMutableString *htmlStringNoImages;
-    struct __CFArray { } *imageNodes;
-    NSMutableString *plainText;
-    struct __CFArray { } *selections;
-    NSData *webArchiveData;
+    NSMutableString * htmlString;
+    NSMutableString * htmlStringNoImages;
+    struct __CFArray { } * imageNodes;
+    NSMutableString * plainText;
+    struct __CFArray { } * selections;
+    NSData * webArchiveData;
 }
 
 - (void)addSelection:(struct CGPDFSelection { }*)arg1;

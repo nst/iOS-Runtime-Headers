@@ -3,12 +3,12 @@
  */
 
 @interface OADLineEnd : OADProperties <NSCopying> {
-    unsigned int mIsLengthOverridden;
-    unsigned int mIsTypeOverridden;
-    unsigned int mIsWidthOverridden;
-    unsigned char mLength;
-    unsigned char mType;
-    unsigned char mWidth;
+    unsigned int  mIsLengthOverridden;
+    unsigned int  mIsTypeOverridden;
+    unsigned int  mIsWidthOverridden;
+    unsigned char  mLength;
+    unsigned char  mType;
+    unsigned char  mWidth;
 }
 
 + (id)defaultProperties;

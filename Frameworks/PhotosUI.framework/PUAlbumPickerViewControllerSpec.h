@@ -3,8 +3,8 @@
  */
 
 @interface PUAlbumPickerViewControllerSpec : NSObject {
-    PUAlbumListViewControllerSpec *_albumListViewControllerSpec;
-    unsigned int _supportedInterfaceOrientations;
+    PUAlbumListViewControllerSpec * _albumListViewControllerSpec;
+    unsigned int  _supportedInterfaceOrientations;
 }
 
 @property (nonatomic, readonly) PUAlbumListViewControllerSpec *albumListViewControllerSpec;

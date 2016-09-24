@@ -3,12 +3,12 @@
  */
 
 @interface _NSAttributeRun : NSObject <NSCopying> {
-    NSMutableArray *_attributesArray;
+    NSMutableArray * _attributesArray;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _range;
-    NSTextStorage *_textStorage;
+    }  _range;
+    NSTextStorage * _textStorage;
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

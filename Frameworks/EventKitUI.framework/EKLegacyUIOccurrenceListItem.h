@@ -3,27 +3,30 @@
  */
 
 @interface EKLegacyUIOccurrenceListItem : UIView {
-    unsigned int _cancelled;
-    unsigned int _declined;
-    unsigned int _designator;
-    UIImage *_dot;
-    UIColor *_dotColor;
-    unsigned int _indentsWithoutDot;
-    unsigned int _isAllDay;
-    unsigned int _isBirthday;
-    unsigned int _isEndDate;
-    unsigned int _isFacebook;
-    BOOL _isSelected;
-    NSString *_location;
-    unsigned int _needsReply;
-    unsigned int _showsColors;
-    unsigned int _tentative;
-    NSString *_timeString;
-    NSString *_title;
+    unsigned int  _cancelled;
+    unsigned int  _declined;
+    unsigned int  _designator;
+    UIImage * _dot;
+    UIColor * _dotColor;
+    unsigned int  _indentsWithoutDot;
+    unsigned int  _isAllDay;
+    unsigned int  _isBirthday;
+    unsigned int  _isEndDate;
+    unsigned int  _isFacebook;
+    BOOL  _isSelected;
+    NSString * _location;
+    unsigned int  _needsReply;
+    unsigned int  _showsColors;
+    unsigned int  _tentative;
+    NSString * _timeString;
+    NSString * _title;
 }
 
++ (id)_allDayLocalizedString;
 + (void)_calculateWidths;
++ (id)_cellEndsLocalizedString;
 + (void)_invalidateWidths;
++ (id)_noonLocalizedString;
 + (float)defaultHeight;
 + (float)hourWidth;
 + (float)timeWidthIncludingDots:(BOOL)arg1;
@@ -33,13 +36,13 @@
 - (id)_dot;
 - (id)_selectedBackgroundImage;
 - (unsigned int)designator;
-- (void)drawBoldText:(id)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2 forWidth:(float)arg3 font:(id)arg4 lineBreakMode:(int)arg5 staticColor:(BOOL)arg6;
-- (void)drawDeemphasizedText:(id)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2 forWidth:(float)arg3 font:(id)arg4 lineBreakMode:(int)arg5 staticColor:(BOOL)arg6;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)drawText:(id)arg1 withDefaultColor:(id)arg2 atPoint:(struct CGPoint { float x1; float x2; })arg3 forWidth:(float)arg4 font:(id)arg5 lineBreakMode:(int)arg6 staticColor:(BOOL)arg7;
+- (void)drawBoldText:(id)arg1 atPoint:(struct CGPoint { double x1; double x2; })arg2 forWidth:(float)arg3 font:(id)arg4 lineBreakMode:(int)arg5 staticColor:(BOOL)arg6;
+- (void)drawDeemphasizedText:(id)arg1 atPoint:(struct CGPoint { double x1; double x2; })arg2 forWidth:(float)arg3 font:(id)arg4 lineBreakMode:(int)arg5 staticColor:(BOOL)arg6;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)drawText:(id)arg1 withDefaultColor:(id)arg2 atPoint:(struct CGPoint { double x1; double x2; })arg3 forWidth:(float)arg4 font:(id)arg5 lineBreakMode:(int)arg6 staticColor:(BOOL)arg7;
 - (id)init;
 - (id)initWithEvent:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (BOOL)isAllDay;
 - (BOOL)isCancelled;
 - (BOOL)isHighlighted;
@@ -61,7 +64,7 @@
 - (void)setTitle:(id)arg1;
 - (BOOL)setUpStaticDrawingColor;
 - (BOOL)showDisclosure;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)title;
 - (void)updateWithEvent:(id)arg1;
 

@@ -3,18 +3,18 @@
  */
 
 @interface FMAnnotationView : MKAnnotationView {
-    BOOL _hasPhotoImage;
-    BOOL _isDelayed;
-    BOOL _isShowingLargeSelectedAnnotation;
-    CALayer *_largeCircleLayer;
-    CALayer *_largePersonImageLayer;
-    CAShapeLayer *_largeRingLayer;
-    CALayer *_locationInnerLayer;
-    CALayer *_locationOuterLayer;
-    BOOL _shouldPreventLargeAnnotationState;
-    CALayer *_smallCircleLayer;
-    CALayer *_smallPersonImageLayer;
-    CAShapeLayer *_smallRingLayer;
+    BOOL  _hasPhotoImage;
+    BOOL  _isDelayed;
+    BOOL  _isShowingLargeSelectedAnnotation;
+    CALayer * _largeCircleLayer;
+    CALayer * _largePersonImageLayer;
+    CAShapeLayer * _largeRingLayer;
+    CALayer * _locationInnerLayer;
+    CALayer * _locationOuterLayer;
+    BOOL  _shouldPreventLargeAnnotationState;
+    CALayer * _smallCircleLayer;
+    CALayer * _smallPersonImageLayer;
+    CAShapeLayer * _smallRingLayer;
 }
 
 @property (nonatomic, retain) <FMAnnotation><MKAnnotation> *annotation;
@@ -35,6 +35,7 @@
 + (void)setImagePadding:(float)arg1;
 + (void)setLargeAnnotationBorderVisible:(BOOL)arg1;
 + (void)setShouldMaskLayer:(BOOL)arg1;
++ (void)setThickAnnotationBorder:(BOOL)arg1;
 
 - (void).cxx_destruct;
 - (void)_selectionWasUpdated:(BOOL)arg1;
@@ -43,8 +44,10 @@
 - (void)_updateAnnotationStyle;
 - (void)animateDelayedAnimation;
 - (BOOL)hasPhotoImage;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (id)initWithAnnotation:(id)arg1 reuseIdentifier:(id)arg2;
 - (id)initWithAnnotation:(id)arg1 reuseIdentifier:(id)arg2 tintColor:(id)arg3;
+- (id)initWithCoder:(id)arg1;
 - (BOOL)isDelayed;
 - (BOOL)isShowingLargeSelectedAnnotation;
 - (id)largeCircleLayer;

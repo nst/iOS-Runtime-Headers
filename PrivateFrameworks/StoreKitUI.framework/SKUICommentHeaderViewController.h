@@ -3,8 +3,8 @@
  */
 
 @interface SKUICommentHeaderViewController : UIViewController {
-    NSString *_title;
-    UILabel *_titleLabel;
+    NSString * _title;
+    UILabel * _titleLabel;
 }
 
 - (void).cxx_destruct;

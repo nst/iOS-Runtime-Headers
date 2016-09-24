@@ -3,13 +3,13 @@
  */
 
 @interface GQUProgressiveHelper : NSObject {
-    struct { int (*x1)(); int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); } *mCallBacks;
-    const void *mClient;
-    struct __CFString { } *mNumbersSheetUri;
-    float mPreviewHeight;
-    float mPreviewWidth;
-    BOOL mStartedMainHTML;
-    unsigned char started;
+    struct { int (*x1)(); int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); } * mCallBacks;
+    const void * mClient;
+    struct __CFString { } * mNumbersSheetUri;
+    double  mPreviewHeight;
+    double  mPreviewWidth;
+    BOOL  mStartedMainHTML;
+    unsigned char  started;
 }
 
 - (void)appendDataToAttachment:(struct __CFURL { }*)arg1 chunk:(struct __CFData { }*)arg2;

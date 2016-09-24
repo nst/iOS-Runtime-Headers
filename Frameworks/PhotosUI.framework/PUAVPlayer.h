@@ -3,12 +3,12 @@
  */
 
 @interface PUAVPlayer : AVPlayer {
-    <PUAVPlayerDelegate> *_delegate;
+    <PUAVPlayerDelegate> * _delegate;
     struct { 
         BOOL respondsToRateDidChange; 
         BOOL respondsToStatusDidChange; 
         BOOL respondsToDidDeallocate; 
-    } _delegateFlags;
+    }  _delegateFlags;
 }
 
 @property (nonatomic) <PUAVPlayerDelegate> *delegate;

@@ -3,16 +3,17 @@
  */
 
 @interface ATLegacyAssetLink : NSObject <ATAssetLink, ATMessageLinkObserver> {
-    NSObject<OS_dispatch_queue> *_callbackQueue;
-    <ATAssetLinkDelegate> *_delegate;
-    NSMutableDictionary *_enqueuedAssetsByDataClass;
-    ATLegacyMessageLink *_messageLink;
-    BOOL _open;
-    <ATLegacyAssetLinkProgressDelegate> *_progressDelegate;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSMutableArray *_readyDataClasses;
-    NSArray *_supportedDataClasses;
-    NSMutableSet *_unqueuedAssets;
+    NSObject<OS_dispatch_queue> * _callbackQueue;
+    <ATAssetLinkDelegate> * _delegate;
+    NSMutableDictionary * _enqueuedAssetsByDataClass;
+    ATLegacyMessageLink * _messageLink;
+    BOOL  _open;
+    <ATLegacyAssetLinkProgressDelegate> * _progressDelegate;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSMutableArray * _readyDataClasses;
+    NSArray * _supportedDataClasses;
+    NSMutableDictionary * _syncIDToItemPidMap;
+    NSMutableSet * _unqueuedAssets;
 }
 
 @property (readonly, copy) NSString *debugDescription;

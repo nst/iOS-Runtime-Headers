@@ -3,10 +3,10 @@
  */
 
 @interface GKSimpleComposeController : GKBaseComposeController {
-    NSString *_defaultMessage;
-    id /* block */ _doneHandler;
-    NSArray *_players;
-    GKComposeHeaderWithStaticRecipients *_toField;
+    NSString * _defaultMessage;
+    id /* block */  _doneHandler;
+    NSArray * _players;
+    GKComposeHeaderWithStaticRecipients * _toField;
 }
 
 @property (nonatomic, retain) NSString *defaultMessage;

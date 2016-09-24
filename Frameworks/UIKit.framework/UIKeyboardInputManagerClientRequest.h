@@ -3,8 +3,8 @@
  */
 
 @interface UIKeyboardInputManagerClientRequest : NSObject {
-    unsigned int _errorCount;
-    NSInvocation *_invocation;
+    unsigned int  _errorCount;
+    NSInvocation * _invocation;
 }
 
 @property (nonatomic) unsigned int errorCount;

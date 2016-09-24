@@ -15,10 +15,10 @@
                 unsigned long __first_; 
             } __pair3_; 
         } __tree_; 
-    } mIndexToMappedIndex;
-    NSMutableArray *mMappingInfos;
-    struct __CFDictionary { } *mObjectToMappingInfo;
-    NSMutableDictionary *mSheetNameToMappedIndex;
+    }  mIndexToMappedIndex;
+    NSMutableArray * mMappingInfos;
+    struct __CFDictionary { } * mObjectToMappingInfo;
+    NSMutableDictionary * mSheetNameToMappedIndex;
 }
 
 + (id)mappingContext;

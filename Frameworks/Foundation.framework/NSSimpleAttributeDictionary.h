@@ -6,9 +6,9 @@
     /* Warning: unhandled struct encoding: '{_NSSimpleAttributeDictionaryElement="hash"I"key"@"value"@}]' */ struct _NSSimpleAttributeDictionaryElement { 
         unsigned int hash; 
         id key; 
-    } elements;
-    unsigned int numElements;
-    unsigned int refCount;
+    }  elements;
+    unsigned int  numElements;
+    unsigned int  refCount;
 }
 
 + (id)emptyAttributeDictionary;
@@ -17,7 +17,6 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)count;
 - (void)dealloc;
-- (void)finalize;
 - (id)keyEnumerator;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)newWithKey:(id)arg1 object:(id)arg2;

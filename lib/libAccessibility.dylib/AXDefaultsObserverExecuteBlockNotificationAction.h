@@ -3,7 +3,7 @@
  */
 
 @interface AXDefaultsObserverExecuteBlockNotificationAction : NSObject <AXDefaultsObserverAction> {
-    id /* block */ _block;
+    id /* block */  _block;
 }
 
 @property (nonatomic, copy) id /* block */ block;

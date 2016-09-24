@@ -3,7 +3,7 @@
  */
 
 @interface OADRegularTextRun : OADTextRun {
-    NSMutableString *mText;
+    NSMutableString * mText;
 }
 
 - (unsigned int)characterCount;

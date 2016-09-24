@@ -3,7 +3,7 @@
  */
 
 @interface MFMessageTextAttachment : NSObject {
-    NSMutableDictionary *_cache;
+    NSMutableDictionary * _cache;
 }
 
 @property (nonatomic, retain) MFMessageFileWrapper *fileWrapper;

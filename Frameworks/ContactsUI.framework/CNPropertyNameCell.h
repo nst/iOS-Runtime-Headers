@@ -3,9 +3,9 @@
  */
 
 @interface CNPropertyNameCell : CNContactCell {
-    <CNPropertyCellDelegate> *_delegate;
-    UIResponder *_firstResponderItem;
-    UITextField *_textField;
+    <CNPropertyCellDelegate> * _delegate;
+    UIResponder * _firstResponderItem;
+    UITextField * _textField;
 }
 
 @property (nonatomic) <CNPropertyCellDelegate> *delegate;

@@ -3,9 +3,9 @@
  */
 
 @interface NEFilterBrowserFlow : NEFilterFlow <NSCopying, NSSecureCoding> {
-    NSURL *_parentURL;
-    NSURLRequest *_request;
-    NSURLResponse *_response;
+    NSURL * _parentURL;
+    NSURLRequest * _request;
+    NSURLResponse * _response;
 }
 
 @property (retain) NSURL *parentURL;

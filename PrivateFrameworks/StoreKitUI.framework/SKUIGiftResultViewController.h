@@ -3,9 +3,9 @@
  */
 
 @interface SKUIGiftResultViewController : SKUIGiftStepViewController {
-    UIButton *_giftAgainButton;
-    UIImage *_itemImage;
-    SKUIGiftItemView *_itemView;
+    UIButton * _giftAgainButton;
+    UIImage * _itemImage;
+    SKUIGiftItemView * _itemView;
 }
 
 - (void).cxx_destruct;

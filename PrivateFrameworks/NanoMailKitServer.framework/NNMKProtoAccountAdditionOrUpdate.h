@@ -3,13 +3,13 @@
  */
 
 @interface NNMKProtoAccountAdditionOrUpdate : PBCodable <NSCopying> {
-    NSString *_accountId;
-    NSString *_displayName;
-    NSMutableArray *_emails;
+    NSString * _accountId;
+    NSString * _displayName;
+    NSMutableArray * _emails;
     struct { 
         unsigned int shouldArchive : 1; 
-    } _has;
-    BOOL _shouldArchive;
+    }  _has;
+    BOOL  _shouldArchive;
 }
 
 @property (nonatomic, retain) NSString *accountId;

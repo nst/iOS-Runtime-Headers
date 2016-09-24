@@ -3,16 +3,16 @@
  */
 
 @interface RCCompositionFragment : NSObject <NSCopying, NSMutableCopying, RCDictionaryPListRepresentationCoding> {
-    NSURL *_AVOutputURL;
-    double _contentDuration;
+    NSURL * _AVOutputURL;
+    double  _contentDuration;
     struct { 
         double beginTime; 
         double endTime; 
-    } _timeRangeInComposition;
+    }  _timeRangeInComposition;
     struct { 
         double beginTime; 
         double endTime; 
-    } _timeRangeInContentToUse;
+    }  _timeRangeInContentToUse;
 }
 
 @property (nonatomic, retain) NSURL *AVOutputURL;
@@ -32,7 +32,7 @@
 - (void)deleteFromFilesystem;
 - (id)description;
 - (id)dictionaryPListRepresentation;
-- (unsigned long long)fileSizeOfAssetsIncludingRelatedResources:(BOOL)arg1;
+- (unsigned int)fileSizeOfAssetsIncludingRelatedResources:(BOOL)arg1;
 - (id)fragmentByIntersectingTimeRangeInCompositionWithTimeRange:(struct { double x1; double x2; })arg1;
 - (id)initWithAVOutputURL:(id)arg1 contentDuration:(double)arg2 timeRangeInContentToUse:(struct { double x1; double x2; })arg3 timeRangeInComposition:(struct { double x1; double x2; })arg4;
 - (id)initWithDictionaryPListRepresentation:(id)arg1;

@@ -3,10 +3,10 @@
  */
 
 @interface SDFResponseContainer : NSObject <NSSecureCoding> {
-    NSFileHandle *_fileHandle;
-    NSDictionary *_metadata;
-    unsigned int _transferType;
-    NSURL *_url;
+    NSFileHandle * _fileHandle;
+    NSDictionary * _metadata;
+    unsigned int  _transferType;
+    NSURL * _url;
 }
 
 @property (readonly, retain) NSFileHandle *fileHandle;

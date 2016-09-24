@@ -3,18 +3,18 @@
  */
 
 @interface NSSUsageBundle : NSObject <NSSecureCoding> {
-    NSString *_bundleIdentifier;
-    NSArray *_categories;
-    NSString *_name;
-    BOOL _purgeable;
-    unsigned long long _totalSize;
+    NSString * _bundleIdentifier;
+    NSArray * _categories;
+    NSString * _name;
+    BOOL  _purgeable;
+    unsigned int  _totalSize;
 }
 
 @property (nonatomic, retain) NSString *bundleIdentifier;
 @property (nonatomic, retain) NSArray *categories;
 @property (nonatomic, retain) NSString *name;
 @property (getter=isPurgeable, nonatomic) BOOL purgeable;
-@property (nonatomic) unsigned long long totalSize;
+@property (nonatomic) unsigned int totalSize;
 
 + (BOOL)supportsSecureCoding;
 
@@ -30,7 +30,7 @@
 - (void)setCategories:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setPurgeable:(BOOL)arg1;
-- (void)setTotalSize:(unsigned long long)arg1;
-- (unsigned long long)totalSize;
+- (void)setTotalSize:(unsigned int)arg1;
+- (unsigned int)totalSize;
 
 @end

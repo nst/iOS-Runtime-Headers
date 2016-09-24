@@ -12,7 +12,7 @@
 - (id)convertSelectionPathTo3D:(id)arg1 path:(id)arg2;
 - (BOOL)enabledForInfo:(id)arg1;
 - (BOOL)isAnnotated;
-- (struct LabelTransform { struct tvec3<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_1_1_2; union { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_1_1_3; } x1; struct tvec2<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_2_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_2_1_2; } x2; unsigned int x3; float x4; BOOL x5; })labelTransformForPositioner:(id)arg1;
+- (struct LabelTransform { struct tvec3<float> { union { double x_1_2_1; double x_1_2_2; double x_1_2_3; } x_1_1_1; union { double x_2_2_1; double x_2_2_2; double x_2_2_3; } x_1_1_2; union { double x_3_2_1; double x_3_2_2; double x_3_2_3; } x_1_1_3; } x1; struct tvec2<float> { union { double x_1_2_1; double x_1_2_2; double x_1_2_3; } x_2_1_1; union { double x_2_2_1; double x_2_2_2; double x_2_2_3; } x_2_1_2; } x2; unsigned int x3; double x4; BOOL x5; })labelTransformForPositioner:(id)arg1;
 - (int)labelType;
 - (id)selectionPathForInfo:(id)arg1 scene:(id)arg2 pickedPoint:(id)arg3;
 - (id)textForInfo:(id)arg1;

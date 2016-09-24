@@ -3,10 +3,10 @@
  */
 
 @interface HDSQLiteCompoundPredicate : HDSQLitePredicate <NSCopying> {
-    NSString *_combinationOperation;
-    NSArray *_predicates;
-    BOOL _trueIfNoPredicates;
-    BOOL _unary;
+    NSString * _combinationOperation;
+    NSArray * _predicates;
+    BOOL  _trueIfNoPredicates;
+    BOOL  _unary;
 }
 
 @property (nonatomic, readonly) NSArray *predicates;

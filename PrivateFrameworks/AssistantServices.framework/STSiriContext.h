@@ -3,7 +3,7 @@
  */
 
 @interface STSiriContext : NSObject <NSSecureCoding> {
-    NSArray *_modelObjects;
+    NSArray * _modelObjects;
 }
 
 + (BOOL)supportsSecureCoding;

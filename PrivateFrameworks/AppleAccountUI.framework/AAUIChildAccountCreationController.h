@@ -3,22 +3,22 @@
  */
 
 @interface AAUIChildAccountCreationController : NSObject <RUIObjectModelDelegate> {
-    NSHTTPURLResponse *_currentResponse;
-    <AAUIChildAccountCreationDelegate> *_delegate;
-    AAGrandSlamSigner *_grandSlamSigner;
-    BOOL _isPendingDismissal;
-    BOOL _isShowingSpinner;
-    NSURL *_launchingURL;
-    RUILoader *_loader;
-    UINavigationController *_navigationController;
-    UINavigationItem *_navigationItemShowingSpinner;
-    NSMutableArray *_objectModels;
-    NSArray *_originalEnabledToolbarItems;
-    UIBarButtonItem *_originalRightBarButtonItem;
-    UIToolbar *_originalToolbar;
-    NSArray *_originalToolbarItems;
-    AASetupAssistantService *_setupService;
-    UIActivityIndicatorView *_spinnerView;
+    NSHTTPURLResponse * _currentResponse;
+    <AAUIChildAccountCreationDelegate> * _delegate;
+    AAGrandSlamSigner * _grandSlamSigner;
+    BOOL  _isPendingDismissal;
+    BOOL  _isShowingSpinner;
+    NSURL * _launchingURL;
+    RUILoader * _loader;
+    UINavigationController * _navigationController;
+    UINavigationItem * _navigationItemShowingSpinner;
+    NSMutableArray * _objectModels;
+    NSArray * _originalEnabledToolbarItems;
+    UIBarButtonItem * _originalRightBarButtonItem;
+    UIToolbar * _originalToolbar;
+    NSArray * _originalToolbarItems;
+    AASetupAssistantService * _setupService;
+    UIActivityIndicatorView * _spinnerView;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -48,7 +48,7 @@
 - (void)loadRemoteUI;
 - (void)loader:(id)arg1 didFailWithError:(id)arg2;
 - (void)loader:(id)arg1 didReceiveHTTPResponse:(id)arg2;
-- (void)loader:(id)arg1 receivedObjectModel:(id)arg2 actionSignal:(int)arg3;
+- (void)loader:(id)arg1 receivedObjectModel:(id)arg2 actionSignal:(unsigned int)arg3;
 - (id)navigationController;
 - (void)objectModel:(id)arg1 pressedButton:(id)arg2 attributes:(id)arg3;
 - (void)objectModel:(id)arg1 pressedLink:(id)arg2 httpMethod:(id)arg3;

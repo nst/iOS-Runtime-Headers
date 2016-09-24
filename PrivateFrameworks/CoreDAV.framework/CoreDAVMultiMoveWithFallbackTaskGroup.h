@@ -3,16 +3,16 @@
  */
 
 @interface CoreDAVMultiMoveWithFallbackTaskGroup : CoreDAVTaskGroup {
-    NSMutableDictionary *_destinationEntityETags;
-    NSURL *_destinationURL;
-    NSMutableSet *_destinationURLs;
-    NSMutableArray *_outstandingSourceURLsToMove;
-    int _overwrite;
-    NSDictionary *_sourceEntityDataContentTypes;
-    NSDictionary *_sourceEntityDataPayloads;
-    NSDictionary *_sourceEntityETags;
-    NSSet *_sourceURLs;
-    BOOL _useFallback;
+    NSMutableDictionary * _destinationEntityETags;
+    NSURL * _destinationURL;
+    NSMutableSet * _destinationURLs;
+    NSMutableArray * _outstandingSourceURLsToMove;
+    int  _overwrite;
+    NSDictionary * _sourceEntityDataContentTypes;
+    NSDictionary * _sourceEntityDataPayloads;
+    NSDictionary * _sourceEntityETags;
+    NSSet * _sourceURLs;
+    BOOL  _useFallback;
 }
 
 @property (nonatomic, readonly) NSMutableDictionary *destinationEntityETags;

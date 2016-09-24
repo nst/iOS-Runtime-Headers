@@ -3,26 +3,26 @@
  */
 
 @interface UIAutoscroll : NSObject {
-    id _target;
-    BOOL m_active;
-    unsigned int m_count;
-    int m_directions;
-    BOOL m_disabled;
+    id  _target;
+    BOOL  m_active;
+    unsigned int  m_count;
+    int  m_directions;
+    BOOL  m_disabled;
     struct CGPoint { 
-        float x; 
-        float y; 
-    } m_point;
-    double m_repeatInterval;
-    UIView<UIAutoscrollContainer> *m_scrollContainer;
-    id m_target;
-    NSTimer *m_timer;
+        double x; 
+        double y; 
+    }  m_point;
+    double  m_repeatInterval;
+    UIView<UIAutoscrollContainer> * m_scrollContainer;
+    id  m_target;
+    NSTimer * m_timer;
 }
 
 @property (nonatomic) BOOL active;
 @property (nonatomic) unsigned int count;
 @property (nonatomic) int directions;
 @property (nonatomic) BOOL disabled;
-@property (nonatomic) struct CGPoint { float x1; float x2; } point;
+@property (nonatomic) struct CGPoint { double x1; double x2; } point;
 @property (nonatomic) double repeatInterval;
 @property (nonatomic, retain) UIView<UIAutoscrollContainer> *scrollContainer;
 @property (nonatomic) id target;
@@ -34,18 +34,18 @@
 - (int)directions;
 - (BOOL)disabled;
 - (void)invalidate;
-- (struct CGPoint { float x1; float x2; })point;
+- (struct CGPoint { double x1; double x2; })point;
 - (double)repeatInterval;
 - (id)scrollContainer;
 - (void)setActive:(BOOL)arg1;
 - (void)setCount:(unsigned int)arg1;
 - (void)setDirections:(int)arg1;
 - (void)setDisabled:(BOOL)arg1;
-- (void)setPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setRepeatInterval:(double)arg1;
 - (void)setScrollContainer:(id)arg1;
 - (void)setTarget:(id)arg1;
-- (BOOL)startAutoscroll:(id)arg1 scrollContainer:(id)arg2 point:(struct CGPoint { float x1; float x2; })arg3 directions:(int)arg4 repeatInterval:(double)arg5;
+- (BOOL)startAutoscroll:(id)arg1 scrollContainer:(id)arg2 point:(struct CGPoint { double x1; double x2; })arg3 directions:(int)arg4 repeatInterval:(double)arg5;
 - (id)target;
 - (void)timerFired:(id)arg1;
 

@@ -3,21 +3,21 @@
  */
 
 @interface GEOURLOptions : PBCodable <GEOURLSerializable, NSCopying> {
-    GEOURLCamera *_camera;
-    GEOURLCenterSpan *_centerSpan;
-    BOOL _enableTraffic;
+    GEOURLCamera * _camera;
+    GEOURLCenterSpan * _centerSpan;
+    BOOL  _enableTraffic;
     struct { 
         unsigned int mapType : 1; 
         unsigned int transportType : 1; 
         unsigned int userTrackingMode : 1; 
         unsigned int enableTraffic : 1; 
-    } _has;
-    int _mapType;
-    NSString *_referralIdentifier;
-    GEOURLRouteHandle *_routeHandle;
-    GEOURLTimePoint *_timePoint;
-    int _transportType;
-    int _userTrackingMode;
+    }  _has;
+    int  _mapType;
+    NSString * _referralIdentifier;
+    GEOURLRouteHandle * _routeHandle;
+    GEOURLTimePoint * _timePoint;
+    int  _transportType;
+    int  _userTrackingMode;
 }
 
 @property (nonatomic, retain) GEOURLCamera *camera;
@@ -45,6 +45,9 @@
 
 // Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
 
+- (int)StringAsMapType:(id)arg1;
+- (int)StringAsTransportType:(id)arg1;
+- (int)StringAsUserTrackingMode:(id)arg1;
 - (id)camera;
 - (id)centerSpan;
 - (void)copyTo:(id)arg1;
@@ -66,6 +69,7 @@
 - (id)initWithUrlRepresentation:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (int)mapType;
+- (id)mapTypeAsString:(int)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (id)referralIdentifier;
@@ -85,8 +89,10 @@
 - (void)setUserTrackingMode:(int)arg1;
 - (id)timePoint;
 - (int)transportType;
+- (id)transportTypeAsString:(int)arg1;
 - (id)urlRepresentation;
 - (int)userTrackingMode;
+- (id)userTrackingModeAsString:(int)arg1;
 - (void)writeTo:(id)arg1;
 
 // Image: /System/Library/Frameworks/MapKit.framework/MapKit

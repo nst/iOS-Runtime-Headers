@@ -3,16 +3,14 @@
  */
 
 @interface BRCFetchRecordSubResourcesOperation : _BRCOperation <BRCOperationSubclass> {
-    NSError *_error;
-    BOOL _isDoneFetchingRecords;
-    NSObject<OS_dispatch_group> *_operationGroup;
-    NSObject<OS_dispatch_group> *_recordsBeingFetchedGroup;
-    NSMutableDictionary *_recordsByID;
-    NSMutableArray *_recordsWithXattrsToFetch;
-    BRCServerZone *_serverZone;
-    NSObject<OS_dispatch_source> *_shareFetchingSource;
-    CKShareID *_shareIDToFetchOwnerFrom;
-    NSObject<OS_dispatch_source> *_xattrFetchingSource;
+    NSError * _error;
+    BOOL  _isDoneFetchingRecords;
+    NSObject<OS_dispatch_group> * _operationGroup;
+    NSObject<OS_dispatch_group> * _recordsBeingFetchedGroup;
+    NSMutableDictionary * _recordsByID;
+    NSMutableArray * _recordsWithXattrsToFetch;
+    BRCServerZone * _serverZone;
+    NSObject<OS_dispatch_source> * _xattrFetchingSource;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -23,12 +21,10 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_didEncounterError:(id)arg1;
-- (void)_didFetchShares:(id)arg1;
-- (void)_scheduleEditorsNamesFetch;
 - (void)_scheduleXattrFetch;
 - (void)addRecord:(id)arg1;
 - (void)cancel;
+- (id)createActivity;
 - (id)error;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (id)initWithServerZone:(id)arg1;

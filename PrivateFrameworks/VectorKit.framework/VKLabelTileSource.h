@@ -3,12 +3,12 @@
  */
 
 @interface VKLabelTileSource : VKTileSetBackedTileSource {
-    struct shared_ptr<vk::LabelManager> { 
+    struct shared_ptr<md::LabelManager> { 
         struct LabelManager {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
-    } _labelManager;
-    unsigned char _labelScaleFactor;
-    BOOL _localizeLabels;
+    }  _labelManager;
+    unsigned char  _labelScaleFactor;
+    BOOL  _localizeLabels;
 }
 
 @property (nonatomic) unsigned char labelScaleFactor;
@@ -19,9 +19,10 @@
 - (unsigned char)_labelTileType;
 - (void)dealloc;
 - (int)defaultMaximumZoomLevel;
-- (id)initWithTileSet:(id)arg1 resourceManifestConfiguration:(id)arg2 locale:(id)arg3 labelManager:(const struct shared_ptr<vk::LabelManager> { struct LabelManager {} *x1; struct __shared_weak_count {} *x2; }*)arg4;
+- (id)initWithTileSet:(id)arg1 resourceManifestConfiguration:(id)arg2 locale:(id)arg3 sharedResources:(id)arg4 labelManager:(const struct shared_ptr<md::LabelManager> { struct LabelManager {} *x1; struct __shared_weak_count {} *x2; }*)arg5;
 - (unsigned char)labelScaleFactor;
 - (BOOL)localizeLabels;
+- (unsigned int)maximumDownloadZoomLevel;
 - (BOOL)maximumZoomLevelBoundsCamera;
 - (BOOL)minimumZoomLevelBoundsCamera;
 - (void)setLabelScaleFactor:(unsigned char)arg1;

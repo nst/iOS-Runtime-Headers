@@ -3,31 +3,32 @@
  */
 
 @interface _UICompatibilityTextViewData : NSObject {
-    BOOL m_allowsEditingTextAttributes;
-    BOOL m_becomesEditableWithGestures;
-    DOMHTMLElement *m_body;
-    BOOL m_clearsOnInsertion;
-    BOOL m_editable;
-    BOOL m_editing;
-    UIFont *m_font;
-    WebFrame *m_frame;
-    BOOL m_hasExplicitLineHeight;
-    BOOL m_hasExplicitTextAlignment;
-    UIView *m_inputAccessoryView;
-    UIView *m_inputView;
-    UITextInteractionAssistant *m_interactionAssistant;
-    float m_lineHeight;
-    UIDelayedAction *m_longPressAction;
-    int m_marginTop;
-    BOOL m_readyForScroll;
-    BOOL m_reentrancyGuard;
-    UIDelayedAction *m_selectionTimer;
-    BOOL m_shouldAutoscrollAboveBottom;
-    BOOL m_skipScrollContainingView;
-    int m_textAlignment;
-    UIColor *m_textColor;
-    BOOL m_usesAttributedText;
-    UIWebDocumentView *m_webView;
+    BOOL  m_allowsEditingTextAttributes;
+    BOOL  m_becomesEditableWithGestures;
+    DOMHTMLElement * m_body;
+    BOOL  m_clearsOnInsertion;
+    BOOL  m_didFreezeTextContainerSize;
+    BOOL  m_editable;
+    BOOL  m_editing;
+    UIFont * m_font;
+    WebFrame * m_frame;
+    BOOL  m_hasExplicitLineHeight;
+    BOOL  m_hasExplicitTextAlignment;
+    UIView * m_inputAccessoryView;
+    UIView * m_inputView;
+    UITextInteractionAssistant * m_interactionAssistant;
+    double  m_lineHeight;
+    UIDelayedAction * m_longPressAction;
+    int  m_marginTop;
+    BOOL  m_readyForScroll;
+    BOOL  m_reentrancyGuard;
+    UIDelayedAction * m_selectionTimer;
+    BOOL  m_shouldAutoscrollAboveBottom;
+    BOOL  m_skipScrollContainingView;
+    int  m_textAlignment;
+    UIColor * m_textColor;
+    BOOL  m_usesAttributedText;
+    UIWebDocumentView * m_webView;
 }
 
 - (void).cxx_destruct;

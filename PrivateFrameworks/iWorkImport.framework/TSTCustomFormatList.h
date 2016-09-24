@@ -6,7 +6,7 @@
 
 + (id)upgradedCustomFormatList:(id)arg1;
 
-- (int)count;
+- (void)enumerateCustomFormatsUsingBlock:(id /* block */)arg1;
 - (id)init;
 - (id)initWithContext:(id)arg1;
 - (id)initWithType:(int)arg1 context:(id)arg2;

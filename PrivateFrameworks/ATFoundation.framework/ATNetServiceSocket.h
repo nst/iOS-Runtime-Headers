@@ -3,19 +3,19 @@
  */
 
 @interface ATNetServiceSocket : ATSocket <NSNetServiceDelegate, NSStreamDelegate> {
-    BOOL _connected;
-    NSObject<OS_tcp_connection> *_connection;
-    BOOL _enableTLS;
-    NSString *_hostname;
-    NSString *_interfaceName;
-    unsigned short _port;
-    NSObject<OS_dispatch_queue> *_queue;
-    BOOL _readBuffer;
-    NSObject<OS_dispatch_semaphore> *_sema;
-    NSString *_serviceDomain;
-    NSString *_serviceName;
-    NSString *_serviceType;
-    NSObject<OS_dispatch_source> *_source;
+    BOOL  _connected;
+    NSObject<OS_tcp_connection> * _connection;
+    BOOL  _enableTLS;
+    NSString * _hostname;
+    NSString * _interfaceName;
+    unsigned short  _port;
+    NSObject<OS_dispatch_queue> * _queue;
+    BOOL  _readBuffer;
+    NSObject<OS_dispatch_semaphore> * _sema;
+    NSString * _serviceDomain;
+    NSString * _serviceName;
+    NSString * _serviceType;
+    NSObject<OS_dispatch_source> * _source;
 }
 
 @property (readonly, copy) NSString *debugDescription;

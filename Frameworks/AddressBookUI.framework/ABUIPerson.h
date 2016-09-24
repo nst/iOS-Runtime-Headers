@@ -3,10 +3,10 @@
  */
 
 @interface ABUIPerson : NSObject <NSCopying> {
-    void *_addressBook;
-    NSArray *_linkedPeople;
-    void *_record;
-    void *_source;
+    void * _addressBook;
+    NSArray * _linkedPeople;
+    void * _record;
+    void * _source;
 }
 
 @property (readonly) void*addressBook;

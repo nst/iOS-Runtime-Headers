@@ -3,10 +3,10 @@
  */
 
 @interface PSUILocationServicesAuthorizationLevelController : PSUILocationServicesListController {
-    NSDictionary *_details;
-    NSString *_displayName;
-    NSBundle *_entityBundle;
-    NSString *_serviceKey;
+    NSDictionary * _details;
+    NSString * _displayName;
+    NSBundle * _entityBundle;
+    NSString * _serviceKey;
 }
 
 @property (nonatomic, retain) NSDictionary *details;

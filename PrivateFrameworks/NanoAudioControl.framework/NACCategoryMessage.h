@@ -3,7 +3,7 @@
  */
 
 @interface NACCategoryMessage : PBCodable <NSCopying> {
-    NSString *_category;
+    NSString * _category;
 }
 
 @property (nonatomic, retain) NSString *category;

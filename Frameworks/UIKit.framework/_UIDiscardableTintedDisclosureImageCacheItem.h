@@ -7,9 +7,9 @@
         unsigned int isDiscarded : 1; 
         unsigned int isPressed : 1; 
         unsigned int useCount; 
-    } _flags;
-    UIColor *_tintColor;
-    UIImage *_tintedImage;
+    }  _flags;
+    UIColor * _tintColor;
+    UIImage * _tintedImage;
 }
 
 @property (nonatomic, readonly) UIColor *tintColor;

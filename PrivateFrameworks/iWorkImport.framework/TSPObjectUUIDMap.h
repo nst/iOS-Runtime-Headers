@@ -3,12 +3,12 @@
  */
 
 @interface TSPObjectUUIDMap : NSObject {
-    NSMutableSet *_UUIDsWithSuppressedAssertions;
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    int _assertOnReadCount;
-    TSPObjectContext *_context;
-    NSMutableDictionary *_inMemoryUUIDDictionary;
-    TSPPersistedObjectUUIDMap *_persistedUUIDMap;
+    NSMutableSet * _UUIDsWithSuppressedAssertions;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    int  _assertOnReadCount;
+    TSPObjectContext * _context;
+    NSMutableDictionary * _inMemoryUUIDDictionary;
+    TSPPersistedObjectUUIDMap * _persistedUUIDMap;
 }
 
 - (void).cxx_destruct;
@@ -20,7 +20,7 @@
 - (BOOL)objectUUIDIsInDocument:(id)arg1;
 - (void)objectWasAddedToDocument:(id)arg1 options:(unsigned int)arg2;
 - (void)objectWillBeRemovedFromDocument:(id)arg1;
-- (id)objectWithUUID:(id)arg1 onlyIfLoaded:(BOOL)arg2 validateNewObjects:(BOOL)arg3 identifier:(long long*)arg4;
+- (id)objectWithUUID:(id)arg1 onlyIfLoaded:(BOOL)arg2 validateNewObjects:(BOOL)arg3 identifier:(int*)arg4;
 - (void)setPersistedUUIDMap:(id)arg1;
 - (BOOL)shouldSuppressAssertionForObjectUUID:(id)arg1;
 

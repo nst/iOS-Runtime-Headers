@@ -3,7 +3,7 @@
  */
 
 @interface MKMapViewInternal : NSObject {
-    MKMapView *view;
+    MKMapView * view;
 }
 
 - (void).cxx_destruct;

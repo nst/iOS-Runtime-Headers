@@ -8,7 +8,7 @@
         unsigned int mIndex; 
         unsigned int mMax; 
         double mValue; 
-    } mImp;
+    }  mImp;
 }
 
 @property (nonatomic, readonly) double value;

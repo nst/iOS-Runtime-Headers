@@ -3,55 +3,56 @@
  */
 
 @interface TTTextStorage : NSTextStorage <TTMergeableStringDelegate> {
-    NSMutableAttributedString *_attributedString;
+    NSMutableAttributedString * _attributedString;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _beforeEndEditedRange;
-    NSMutableArray *_coalescingUndoCommands;
-    BOOL _convertAttributes;
-    BOOL _delayedFixupAfterEditingWantsUndoCommand;
-    NSMutableArray *_deletedRanges;
-    BOOL _directlyEditing;
-    BOOL _disableUndoCoalesceBreaking;
-    TTMergeableStringVersionedDocument *_document;
-    unsigned int _editingCount;
-    BOOL _filterPastedAttributes;
-    BOOL _filterSubstringAttributes;
-    BOOL _filterSubstringAttributesForPlainText;
-    BOOL _isApplyingUndoCommand;
-    BOOL _isDictating;
-    BOOL _isDragging;
-    BOOL _isEndingEditing;
-    BOOL _isFixing;
-    BOOL _isHandlingTextCheckingResults;
-    BOOL _isResettingBaseWritingDirection;
-    BOOL _isSelectingText;
-    BOOL _isTypingOrMarkingText;
+    }  _beforeEndEditedRange;
+    TTMergeableStringUndoGroup * _coalescingUndoGroup;
+    BOOL  _convertAttributes;
+    BOOL  _delayedFixupAfterEditingWantsUndoCommand;
+    NSMutableArray * _deletedRanges;
+    BOOL  _directlyEditing;
+    BOOL  _disableUndoCoalesceBreaking;
+    TTMergeableStringVersionedDocument * _document;
+    unsigned int  _editingCount;
+    BOOL  _filterPastedAttributes;
+    BOOL  _filterSubstringAttributes;
+    BOOL  _filterSubstringAttributesForPlainText;
+    BOOL  _isApplyingUndoCommand;
+    BOOL  _isChangingSelectionByGestures;
+    BOOL  _isDictating;
+    BOOL  _isDragging;
+    BOOL  _isEndingEditing;
+    BOOL  _isFixing;
+    BOOL  _isHandlingTextCheckingResults;
+    BOOL  _isResettingBaseWritingDirection;
+    BOOL  _isSelectingText;
+    BOOL  _isTypingOrMarkingText;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _lastUndoEditRange;
-    BOOL _pendingFixupAfterEditing;
-    BOOL _previouslyHadMarkedText;
-    BOOL _retainOriginalFormatting;
-    <TTTextStorageStyler> *_styler;
-    unsigned int _temporaryAttributeEditing;
-    int _ttChangeInLength;
-    unsigned int _ttEditedMask;
+    }  _lastUndoEditRange;
+    BOOL  _pendingFixupAfterEditing;
+    BOOL  _previouslyHadMarkedText;
+    BOOL  _retainOriginalFormatting;
+    <TTTextStorageStyler> * _styler;
+    unsigned int  _temporaryAttributeEditing;
+    int  _ttChangeInLength;
+    unsigned int  _ttEditedMask;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _ttEditedRange;
-    NSMutableArray *_undoCommands;
-    NSUndoManager *_undoManager;
-    BOOL _wantsUndoCommands;
+    }  _ttEditedRange;
+    NSMutableArray * _undoCommands;
+    NSUndoManager * _undoManager;
+    BOOL  _wantsUndoCommands;
 }
 
 @property (nonatomic, readonly) NSAttributedString *_icaxUnfilteredAttributedString;
-@property (nonatomic, retain) NSAttributedString *attributedString;
+@property (nonatomic, retain) NSMutableAttributedString *attributedString;
 @property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } beforeEndEditedRange;
-@property (nonatomic, retain) NSMutableArray *coalescingUndoCommands;
+@property (nonatomic, retain) TTMergeableStringUndoGroup *coalescingUndoGroup;
 @property (nonatomic) BOOL convertAttributes;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) BOOL delayedFixupAfterEditingWantsUndoCommand;
@@ -65,6 +66,7 @@
 @property (nonatomic) BOOL filterSubstringAttributesForPlainText;
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL isApplyingUndoCommand;
+@property (nonatomic) BOOL isChangingSelectionByGestures;
 @property (nonatomic) BOOL isDictating;
 @property (nonatomic) BOOL isDragging;
 @property (nonatomic, readonly) BOOL isEditingTemporaryAttributes;
@@ -88,10 +90,12 @@
 @property (nonatomic, retain) NSUndoManager *undoManager;
 @property (nonatomic) BOOL wantsUndoCommands;
 
++ (id)bulletTextAttributesWithTextFont:(struct UIFont { Class x1; }*)arg1 paragraphStyle:(id)arg2 letterpress:(BOOL)arg3;
 + (id)filteredAttributedSubstring:(id)arg1 fromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 forPlainText:(BOOL)arg3 fixAttachments:(BOOL)arg4;
 + (void)fixAttachmentsForRenderingInAttributedString:(id)arg1;
++ (id)removeDataDetectorLinksForAttributedString:(id)arg1;
 + (id)removeTextAttachmentsForAttributedString:(id)arg1 translateTTFont:(BOOL)arg2;
-+ (id)standardizedAttributedStringWithoutTextAttachmentsForAttributedString:(id)arg1 translateTTFont:(BOOL)arg2;
++ (id)standardizedAttributedStringFromAttributedString:(id)arg1 fixAttachments:(BOOL)arg2 translateTTFont:(BOOL)arg3;
 
 - (void).cxx_destruct;
 - (id)_icaxUnfilteredAttributedString;
@@ -99,7 +103,7 @@
 - (BOOL)_usesSimpleTextEffects;
 - (void)addAttribute:(id)arg1 value:(id)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 - (void)addUndoCommand:(id)arg1;
-- (void)applyUndoCommands:(id)arg1;
+- (void)applyUndoGroup:(id)arg1;
 - (id)attributedString;
 - (id)attributedSubstringFromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)attributesAtIndex:(unsigned int)arg1 effectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2;
@@ -108,7 +112,7 @@
 - (void)beginTemporaryAttributeEditing;
 - (void)beginTemporaryAttributes;
 - (void)breakUndoCoalescing;
-- (id)coalescingUndoCommands;
+- (id)coalescingUndoGroup;
 - (BOOL)convertAttributes;
 - (void)convertNSTablesToTabs:(id)arg1;
 - (void)coordinateAccess:(id /* block */)arg1;
@@ -128,6 +132,7 @@
 - (void)endEditing;
 - (void)endTemporaryAttributeEditing;
 - (void)endTemporaryAttributes;
+- (void)executeDelayedFixupAfterEditing;
 - (BOOL)filterPastedAttributes;
 - (BOOL)filterSubstringAttributes;
 - (BOOL)filterSubstringAttributesForPlainText;
@@ -136,14 +141,17 @@
 - (void)fixupAfterEditingDelayedToEndOfRunLoop;
 - (void)forceFixupAfterEditingIfDelayed;
 - (BOOL)ic_containsAttribute:(id)arg1 InRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (id)initWithAttributedString:(id)arg1 replicaID:(id)arg2;
 - (id)initWithData:(id)arg1 andReplicaID:(id)arg2;
 - (id)initWithReplicaID:(id)arg1;
 - (BOOL)isApplyingUndoCommand;
+- (BOOL)isChangingSelectionByGestures;
+- (BOOL)isDeletingContentAttachmentWithReplacementRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 replacementLength:(unsigned int)arg2;
 - (BOOL)isDeletingDictationAttachmentWithReplacementRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 replacementLength:(unsigned int)arg2;
 - (BOOL)isDictating;
 - (BOOL)isDragging;
 - (BOOL)isEditing;
-- (BOOL)isEditingOrConvertingMarkedText;
+- (BOOL)isEditingOrConvertingMarkedText:(BOOL)arg1;
 - (BOOL)isEditingTemporaryAttributes;
 - (BOOL)isEndingEditing;
 - (BOOL)isFixing;
@@ -162,6 +170,7 @@
 - (void)replaceCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withString:(id)arg2;
 - (void)replaceWithDocument:(id)arg1;
 - (void)resetTTEdits;
+- (void)resetUndoManager;
 - (void)restoreSelection:(id)arg1;
 - (BOOL)retainOriginalFormatting;
 - (void)saveSelectionDuringBlock:(id /* block */)arg1;
@@ -170,7 +179,7 @@
 - (void)setAttributedString:(id)arg1;
 - (void)setAttributes:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)setBeforeEndEditedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (void)setCoalescingUndoCommands:(id)arg1;
+- (void)setCoalescingUndoGroup:(id)arg1;
 - (void)setConvertAttributes:(BOOL)arg1;
 - (void)setDelayedFixupAfterEditingWantsUndoCommand:(BOOL)arg1;
 - (void)setDisableUndoCoalesceBreaking:(BOOL)arg1;
@@ -179,6 +188,7 @@
 - (void)setFilterSubstringAttributes:(BOOL)arg1;
 - (void)setFilterSubstringAttributesForPlainText:(BOOL)arg1;
 - (void)setIsApplyingUndoCommand:(BOOL)arg1;
+- (void)setIsChangingSelectionByGestures:(BOOL)arg1;
 - (void)setIsDictating:(BOOL)arg1;
 - (void)setIsDragging:(BOOL)arg1;
 - (void)setIsEndingEditing:(BOOL)arg1;
@@ -198,9 +208,10 @@
 - (void)setUndoManager:(id)arg1;
 - (void)setWantsUndoCommands:(BOOL)arg1;
 - (BOOL)shouldBreakUndoCoalescingWithReplacementRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 replacementLength:(unsigned int)arg2;
-- (id)standardizedAttributedStringWithoutTextAttachments;
+- (id)standardizedAttributedStringFixingTextAttachments;
 - (id)string;
 - (id)styler;
+- (BOOL)textViewHasMarkedText:(struct UITextView { Class x1; }*)arg1;
 - (id)textViews;
 - (int)ttChangeInLength;
 - (unsigned int)ttEditedMask;

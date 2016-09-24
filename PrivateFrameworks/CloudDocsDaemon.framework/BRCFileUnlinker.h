@@ -3,9 +3,9 @@
  */
 
 @interface BRCFileUnlinker : NSObject {
-    NSObject<OS_dispatch_source> *_cachePurgeSource;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSString *_unlinkRootPath;
+    NSObject<OS_dispatch_source> * _cachePurgeSource;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSString * _unlinkRootPath;
 }
 
 + (id)fileUnlinker;

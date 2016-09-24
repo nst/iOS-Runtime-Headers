@@ -3,17 +3,17 @@
  */
 
 @interface IDSBaseSocketPairConnection : NSObject {
-    long _bytesReceived;
-    int _connectedSocket;
-    IMWeakReference *_delegate;
-    double _lastDateCheck;
-    NSMutableArray *_outgoingDataArray;
-    double _prevBPS;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSObject<OS_dispatch_queue> *_readQueue;
-    NSObject<OS_dispatch_source> *_readSource;
-    NSObject<OS_dispatch_source> *_writeSource;
-    BOOL _writeSourceIsResumed;
+    long  _bytesReceived;
+    int  _connectedSocket;
+    IMWeakReference * _delegate;
+    double  _lastDateCheck;
+    NSMutableArray * _outgoingDataArray;
+    double  _prevBPS;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSObject<OS_dispatch_queue> * _readQueue;
+    NSObject<OS_dispatch_source> * _readSource;
+    NSObject<OS_dispatch_source> * _writeSource;
+    BOOL  _writeSourceIsResumed;
 }
 
 @property (nonatomic, readonly) int socket;

@@ -3,10 +3,10 @@
  */
 
 @interface NSException : NSObject <NSCoding, NSCopying> {
-    NSString *name;
-    NSString *reason;
-    id reserved;
-    NSDictionary *userInfo;
+    NSString * name;
+    NSString * reason;
+    id  reserved;
+    NSDictionary * userInfo;
 }
 
 @property (readonly, copy) NSArray *callStackReturnAddresses;
@@ -40,9 +40,14 @@
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
+- (id)debugDescription;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)replacementObjectForPortCoder:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/NanoRegistry.framework/NanoRegistry
+
+- (id)nr_safeDescription;
 
 // Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
 
@@ -52,6 +57,10 @@
 - (id)gsu_descriptionWithStacktrace;
 - (int)sfu_localErrno;
 - (id)tsu_error;
+
+// Image: /System/Library/PrivateFrameworks/PairedSync.framework/PairedSync
+
+- (id)psy_safeDescription;
 
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
 

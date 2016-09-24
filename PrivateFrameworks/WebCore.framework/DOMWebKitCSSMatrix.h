@@ -34,7 +34,6 @@
 - (void)dealloc;
 - (double)e;
 - (double)f;
-- (void)finalize;
 - (id)inverse;
 - (double)m11;
 - (double)m12;

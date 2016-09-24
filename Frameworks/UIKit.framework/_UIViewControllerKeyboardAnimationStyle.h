@@ -3,10 +3,10 @@
  */
 
 @interface _UIViewControllerKeyboardAnimationStyle : UIInputViewAnimationStyleDirectional {
-    BOOL _allowCustomTransition;
-    _UIViewControllerTransitionContext *_context;
-    BOOL _disableAlongsideView;
-    _UIViewControllerKeyboardAnimationStyleInfo *_info;
+    BOOL  _allowCustomTransition;
+    _UIViewControllerTransitionContext * _context;
+    BOOL  _disableAlongsideView;
+    _UIViewControllerKeyboardAnimationStyleInfo * _info;
 }
 
 @property (nonatomic) BOOL allowCustomTransition;

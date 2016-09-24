@@ -3,7 +3,7 @@
  */
 
 @interface SUScriptTextFieldNativeObject : SUScriptNativeObject <SUScriptTextFieldDelegate> {
-    SUScriptTextFieldDelegate *_textFieldDelegate;
+    SUScriptTextFieldDelegate * _textFieldDelegate;
 }
 
 @property (nonatomic) int autocapitalizationType;
@@ -15,7 +15,7 @@
 @property (nonatomic, copy) NSString *placeholder;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *value;
-@property (nonatomic) float width;
+@property (nonatomic) double width;
 
 - (id)_nativeObjectDelegate;
 - (void)_sendScriptDidChange;

@@ -3,8 +3,8 @@
  */
 
 @interface VKCompoundAnimation : VKAnimation {
-    NSMutableArray *_animations;
-    id /* block */ _groupStepHandler;
+    NSMutableArray * _animations;
+    id /* block */  _groupStepHandler;
 }
 
 @property (nonatomic, readonly) NSMutableArray *animations;

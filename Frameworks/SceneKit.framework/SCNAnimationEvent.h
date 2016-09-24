@@ -3,8 +3,8 @@
  */
 
 @interface SCNAnimationEvent : NSObject {
-    id /* block */ _eventBlock;
-    double _eventTime;
+    id /* block */  _eventBlock;
+    double  _eventTime;
 }
 
 + (id)animationEventWithKeyTime:(float)arg1 block:(id /* block */)arg2;

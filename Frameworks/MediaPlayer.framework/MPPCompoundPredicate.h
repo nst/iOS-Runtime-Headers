@@ -3,7 +3,7 @@
  */
 
 @interface MPPCompoundPredicate : PBCodable <NSCopying> {
-    NSMutableArray *_predicates;
+    NSMutableArray * _predicates;
 }
 
 @property (nonatomic, retain) NSMutableArray *predicates;

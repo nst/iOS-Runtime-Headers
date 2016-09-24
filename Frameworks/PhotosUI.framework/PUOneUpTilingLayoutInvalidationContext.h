@@ -3,20 +3,31 @@
  */
 
 @interface PUOneUpTilingLayoutInvalidationContext : PUTilingLayoutInvalidationContext {
-    BOOL _invalidatedCommentsTile;
-    BOOL _invalidatedContentGuideInsets;
-    BOOL _invalidatedVideoPlaceholderTile;
+    BOOL  _invalidatedAccessoryTile;
+    BOOL  _invalidatedCommentsTile;
+    BOOL  _invalidatedContentGuideInsets;
+    BOOL  _invalidatedContentOffset;
+    BOOL  _invalidatedVideoPlaceholderTile;
+    unsigned int  _options;
 }
 
-@property (nonatomic) BOOL invalidatedCommentsTile;
-@property (nonatomic) BOOL invalidatedContentGuideInsets;
-@property (nonatomic) BOOL invalidatedVideoPlaceholderTile;
+@property (setter=_setInvalidatedAccessoryTile:, nonatomic) BOOL invalidatedAccessoryTile;
+@property (nonatomic, readonly) BOOL invalidatedCommentsTile;
+@property (setter=_setInvalidatedContentGuideInsets:, nonatomic) BOOL invalidatedContentGuideInsets;
+@property (setter=_setInvalidatedContentOffset:, nonatomic) BOOL invalidatedContentOffset;
+@property (setter=_setInvalidatedVideoPlaceholderTile:, nonatomic) BOOL invalidatedVideoPlaceholderTile;
+@property (setter=_setOptions:, nonatomic) unsigned int options;
 
-- (void)_setInvalidatedCommentsTile:(BOOL)arg1;
+- (void)_setInvalidatedAccessoryTile:(BOOL)arg1;
 - (void)_setInvalidatedContentGuideInsets:(BOOL)arg1;
+- (void)_setInvalidatedContentOffset:(BOOL)arg1;
 - (void)_setInvalidatedVideoPlaceholderTile:(BOOL)arg1;
+- (void)_setOptions:(unsigned int)arg1;
+- (BOOL)invalidatedAccessoryTile;
 - (BOOL)invalidatedCommentsTile;
 - (BOOL)invalidatedContentGuideInsets;
+- (BOOL)invalidatedContentOffset;
 - (BOOL)invalidatedVideoPlaceholderTile;
+- (unsigned int)options;
 
 @end

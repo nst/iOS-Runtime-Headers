@@ -3,15 +3,15 @@
  */
 
 @interface AUMFiSetupController : AUSetupController {
-    NSDictionary *_accessoryResponseDict;
-    NSObject<OS_dispatch_semaphore> *_askUserForPasswordSemaphore;
-    NSDictionary *_autoGuessRecommendationDict;
-    NSString *_destinationNetworkPassword;
-    BOOL _destinationNetworkPasswordAccepted;
-    NSString *_destinationNetworkSSID;
-    NSDictionary *_destinationNetworkScanRecord;
-    NSObject<OS_dispatch_semaphore> *_easyConfigConfigurationCompleteSemaphore;
-    EasyConfigDevice *_easyConfigDevice;
+    NSDictionary * _accessoryResponseDict;
+    NSObject<OS_dispatch_semaphore> * _askUserForPasswordSemaphore;
+    NSDictionary * _autoGuessRecommendationDict;
+    NSString * _destinationNetworkPassword;
+    BOOL  _destinationNetworkPasswordAccepted;
+    NSString * _destinationNetworkSSID;
+    NSDictionary * _destinationNetworkScanRecord;
+    NSObject<OS_dispatch_semaphore> * _easyConfigConfigurationCompleteSemaphore;
+    EasyConfigDevice * _easyConfigDevice;
     struct { 
         double secondsToGetLinkUpOnDestination; 
         int wifiJoinDestinationAPError; 
@@ -20,7 +20,7 @@
         int rssiOfDestinationAP; 
         unsigned int snrOfDestinationAP; 
         unsigned int channelOfDestinationAP; 
-    } _easyConfigPostConfigMetrics;
+    }  _easyConfigPostConfigMetrics;
     struct { 
         double startTime; 
         unsigned char userChangedFriendlyName; 
@@ -33,22 +33,22 @@
         int rssiOfSWAP; 
         unsigned int snrOfSWAP; 
         unsigned int channelOfSWAP; 
-    } _easyConfigPreConfigMetrics;
-    int _lastHeardEasyConfigProgressNotification;
-    NSTimer *_linkUpOnDestinationNetworkTimer;
-    NSObject<OS_dispatch_semaphore> *_linkUpOnTargetSWAPSemaphore;
-    NSMutableSet *_mfiSetupDelegates;
-    NSString *_postConfigTargetDeviceFriendlyName;
-    BOOL _postediAPAccessoryConfiguredNotification;
-    BOOL _promptedUserForDestinationWiFiPSK;
-    BOOL _setupEnded;
-    NSDictionary *_setupOptionsDict;
-    BOOL _successfullyEstablishedLinkOnDestinationAP;
-    BOOL _successfullyEstablishedLinkOnTargetDeviceSWAP;
-    NSDictionary *_targetMFiDeviceScanRecord;
-    double _timeDestinationAPJoinStarted;
-    double _timeSWAPJoinStarted;
-    int _waitingForLinkState;
+    }  _easyConfigPreConfigMetrics;
+    int  _lastHeardEasyConfigProgressNotification;
+    NSTimer * _linkUpOnDestinationNetworkTimer;
+    NSObject<OS_dispatch_semaphore> * _linkUpOnTargetSWAPSemaphore;
+    NSMutableSet * _mfiSetupDelegates;
+    NSString * _postConfigTargetDeviceFriendlyName;
+    BOOL  _postediAPAccessoryConfiguredNotification;
+    BOOL  _promptedUserForDestinationWiFiPSK;
+    BOOL  _setupEnded;
+    NSDictionary * _setupOptionsDict;
+    BOOL  _successfullyEstablishedLinkOnDestinationAP;
+    BOOL  _successfullyEstablishedLinkOnTargetDeviceSWAP;
+    NSDictionary * _targetMFiDeviceScanRecord;
+    double  _timeDestinationAPJoinStarted;
+    double  _timeSWAPJoinStarted;
+    int  _waitingForLinkState;
 }
 
 @property (copy) NSString *destinationNetworkPassword;

@@ -3,9 +3,9 @@
  */
 
 @interface CalSignalSensor : NSObject {
-    id /* block */ _fireBlock;
-    int _signal;
-    NSObject<OS_dispatch_source> *_signalSource;
+    id /* block */  _fireBlock;
+    int  _signal;
+    NSObject<OS_dispatch_source> * _signalSource;
 }
 
 @property (nonatomic, copy) id /* block */ fireBlock;

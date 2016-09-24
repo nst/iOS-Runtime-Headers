@@ -3,17 +3,17 @@
  */
 
 @interface TSPDocumentProperties : NSObject <NSCopying> {
-    NSDictionary *_additionalProperties;
-    NSUUID *_documentUUID;
-    unsigned long long _fileFormatVersion;
-    TSPDocumentRevision *_revision;
-    NSUUID *_shareUUID;
-    NSUUID *_versionUUID;
+    NSDictionary * _additionalProperties;
+    NSUUID * _documentUUID;
+    unsigned int  _fileFormatVersion;
+    TSPDocumentRevision * _revision;
+    NSUUID * _shareUUID;
+    NSUUID * _versionUUID;
 }
 
 @property (nonatomic, copy) NSDictionary *additionalProperties;
 @property (nonatomic, copy) NSUUID *documentUUID;
-@property (nonatomic) unsigned long long fileFormatVersion;
+@property (nonatomic) unsigned int fileFormatVersion;
 @property (nonatomic, copy) TSPDocumentRevision *revision;
 @property (nonatomic, readonly) NSUUID *shareUUID;
 @property (nonatomic, readonly) NSUUID *versionUUID;
@@ -31,7 +31,7 @@
 - (id)description;
 - (id)documentUUID;
 - (id)encodedPropertyListWithError:(id*)arg1;
-- (unsigned long long)fileFormatVersion;
+- (unsigned int)fileFormatVersion;
 - (id)init;
 - (id)initWithDocumentBundleURL:(id)arg1 allowMissingPropertyList:(BOOL)arg2 error:(id*)arg3;
 - (id)initWithDocumentFileURL:(id)arg1 allowMissingPropertyList:(BOOL)arg2 error:(id*)arg3;
@@ -43,7 +43,7 @@
 - (id)revision;
 - (void)setAdditionalProperties:(id)arg1;
 - (void)setDocumentUUID:(id)arg1;
-- (void)setFileFormatVersion:(unsigned long long)arg1;
+- (void)setFileFormatVersion:(unsigned int)arg1;
 - (void)setRevision:(id)arg1;
 - (id)shareUUID;
 - (void)updateDocumentAndShareUUID;

@@ -3,16 +3,16 @@
  */
 
 @interface PLBBMsgAll : PLBBMsgRoot {
-    NSDate *_bbDate;
-    NSString *_error;
-    NSDate *_ibbDate;
-    NSString *_ierror;
-    NSString *_ieventCode;
-    NSMutableDictionary *_info;
-    NSString *_ipayload;
-    NSNumber *_iseqNum;
-    NSString *_payload;
-    NSNumber *_seqNum;
+    NSDate * _bbDate;
+    NSString * _error;
+    NSDate * _ibbDate;
+    NSString * _ierror;
+    NSString * _ieventCode;
+    NSMutableDictionary * _info;
+    NSString * _ipayload;
+    NSNumber * _iseqNum;
+    NSString * _payload;
+    NSNumber * _seqNum;
 }
 
 @property (retain) NSDate *bbDate;

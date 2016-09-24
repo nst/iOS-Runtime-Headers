@@ -3,7 +3,7 @@
  */
 
 @interface OADTableUnnecessaryOverrideRemover : OADTableStyleResolver {
-    OADTextListStyle *_parentTextListStyle;
+    OADTextListStyle * _parentTextListStyle;
 }
 
 @property (nonatomic, readonly) OADTextListStyle *parentTextListStyle;

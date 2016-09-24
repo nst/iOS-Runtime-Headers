@@ -3,7 +3,7 @@
  */
 
 @interface MCPeerID : NSObject <NSCopying, NSSecureCoding> {
-    MCPeerIDInternal *_internal;
+    MCPeerIDInternal * _internal;
 }
 
 @property (nonatomic, readonly) NSString *displayName;
@@ -14,6 +14,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)displayName;
+- (id)displayNameAndPID;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
 - (id)idString;
@@ -26,7 +27,7 @@
 - (id)internalDescription;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)pid;
-- (unsigned long long)pid64;
+- (unsigned int)pid64;
 - (id)serializedRepresentation;
 
 @end

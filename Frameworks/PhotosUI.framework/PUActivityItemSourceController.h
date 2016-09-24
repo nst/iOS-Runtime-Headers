@@ -3,13 +3,13 @@
  */
 
 @interface PUActivityItemSourceController : NSObject {
-    NSArray *__activeItemSources;
-    NSError *__error;
-    PUActivityViewController *_activityViewController;
-    NSMutableOrderedSet *_assetItemSources;
-    NSMutableOrderedSet *_assetItems;
-    id /* block */ _progressHandler;
-    int _taskId;
+    NSArray * __activeItemSources;
+    NSError * __error;
+    PUActivityViewController * _activityViewController;
+    NSMutableOrderedSet * _assetItemSources;
+    NSMutableOrderedSet * _assetItems;
+    id /* block */  _progressHandler;
+    int  _taskId;
 }
 
 @property (setter=_setActiveItemSources:, retain) NSArray *_activeItemSources;

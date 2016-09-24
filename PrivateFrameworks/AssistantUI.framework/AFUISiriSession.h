@@ -3,20 +3,20 @@
  */
 
 @interface AFUISiriSession : NSObject <AFAssistantUIService, AFSpeechDelegate, AFUISiriSession, AFUISpeechSynthesisLocalDelegate, AFUIStateMachineDelegate> {
-    AFConnection *_connection;
-    id /* block */ _continuePendingRequest;
-    BOOL _currentRequestDidPresent;
-    NSObject<OS_dispatch_group> *_currentSpeechRequestGroup;
-    <AFUISiriSessionDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_delegateQueue;
-    BOOL _eyesFree;
-    BOOL _isProcessingAcousticIdRequest;
-    <AFUISiriSessionLocalDataSource> *_localDataSource;
-    <AFUISiriSessionLocalDelegate> *_localDelegate;
-    BOOL _sendContextBeforeContinuingSpeechRequest;
-    NSMutableSet *_speechRequestGroupGraveyard;
-    AFUISpeechSynthesis *_speechSynthesis;
-    AFUIStateMachine *_stateMachine;
+    AFConnection * _connection;
+    id /* block */  _continuePendingRequest;
+    BOOL  _currentRequestDidPresent;
+    NSObject<OS_dispatch_group> * _currentSpeechRequestGroup;
+    <AFUISiriSessionDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _delegateQueue;
+    BOOL  _eyesFree;
+    BOOL  _isProcessingAcousticIdRequest;
+    <AFUISiriSessionLocalDataSource> * _localDataSource;
+    <AFUISiriSessionLocalDelegate> * _localDelegate;
+    BOOL  _sendContextBeforeContinuingSpeechRequest;
+    NSMutableSet * _speechRequestGroupGraveyard;
+    AFUISpeechSynthesis * _speechSynthesis;
+    AFUIStateMachine * _stateMachine;
 }
 
 @property (getter=_connection, nonatomic, readonly) AFConnection *connection;
@@ -41,8 +41,8 @@
 - (id)_currentSpeechRequestGroup;
 - (void)_didChangeDialogPhase:(id)arg1;
 - (void)_discardCurrentSpeechGroup;
-- (void)_handleRequestUpdateViewsCommand:(id)arg1;
-- (void)_handleUnlockDeviceCommand:(id)arg1;
+- (void)_handleRequestUpdateViewsCommand:(id)arg1 completion:(id /* block */)arg2;
+- (void)_handleUnlockDeviceCommand:(id)arg1 completion:(id /* block */)arg2;
 - (BOOL)_hasActiveRequest;
 - (void)_outputVoiceDidChange:(id)arg1;
 - (void)_performAceCommand:(id)arg1 forRequestUpdateViewsCommand:(id)arg2 afterDelay:(double)arg3;
@@ -69,7 +69,9 @@
 - (void)assistantConnection:(id)arg1 didChangeAudioSessionID:(unsigned int)arg2;
 - (void)assistantConnection:(id)arg1 didFinishAcousticIDRequestWithSuccess:(BOOL)arg2;
 - (void)assistantConnection:(id)arg1 openURL:(id)arg2 completion:(id /* block */)arg3;
-- (void)assistantConnection:(id)arg1 receivedCommand:(id)arg2;
+- (void)assistantConnection:(id)arg1 receivedCommand:(id)arg2 completion:(id /* block */)arg3;
+- (void)assistantConnection:(id)arg1 recognitionUpdateWithPhrases:(id)arg2 utterances:(id)arg3 refId:(id)arg4;
+- (void)assistantConnection:(id)arg1 recognizedAdditionalSpeechInterpretation:(id)arg2 refId:(id)arg3;
 - (void)assistantConnection:(id)arg1 requestFailedWithError:(id)arg2 requestClass:(id)arg3;
 - (void)assistantConnection:(id)arg1 shouldSpeak:(BOOL)arg2;
 - (void)assistantConnection:(id)arg1 speechRecognized:(id)arg2;
@@ -77,6 +79,7 @@
 - (void)assistantConnection:(id)arg1 speechRecordingDidBeginOnAVRecordRoute:(id)arg2;
 - (void)assistantConnection:(id)arg1 speechRecordingDidChangeAVRecordRoute:(id)arg2;
 - (void)assistantConnection:(id)arg1 speechRecordingDidFail:(id)arg2;
+- (void)assistantConnection:(id)arg1 wantsToCacheImage:(id)arg2;
 - (void)assistantConnectionDidChangeAudioRecordingPower:(id)arg1;
 - (void)assistantConnectionDidDetectMusic:(id)arg1;
 - (void)assistantConnectionDismissAssistant:(id)arg1;
@@ -103,6 +106,7 @@
 - (id)localDelegate;
 - (void)performAceCommand:(id)arg1;
 - (void)performAceCommand:(id)arg1 conflictHandler:(id /* block */)arg2;
+- (void)performAceCommands:(id)arg1;
 - (void)preheat;
 - (void)recordRequestMetricEvent:(id)arg1 withTimestamp:(double)arg2;
 - (void)recordUIMetrics:(id)arg1;
@@ -111,7 +115,9 @@
 - (void)requestDidPresentViewForUICommand:(id)arg1;
 - (void)resetContextTypes:(int)arg1;
 - (void)resultDidChangeForAceCommand:(id)arg1;
+- (void)resultDidChangeForAceCommand:(id)arg1 completion:(id /* block */)arg2;
 - (void)rollbackClearContext;
+- (id /* block */)safeWrapResponseCompletion:(id /* block */)arg1;
 - (void)sendReplyCommand:(id)arg1;
 - (void)setAlertContext;
 - (void)setApplicationContext;
@@ -124,7 +130,7 @@
 - (id)speechSynthesis;
 - (BOOL)speechSynthesisConnectionIsRecording:(id)arg1;
 - (void)speechSynthesisWillStartSpeaking:(id)arg1;
-- (void)startCorrectedRequestWithText:(id)arg1 correctionIdentifier:(id)arg2;
+- (void)startCorrectedRequestWithText:(id)arg1 correctionIdentifier:(id)arg2 userSelectionResults:(id)arg3;
 - (void)startRequestWithOptions:(id)arg1;
 - (id)stateMachine:(id)arg1 descriptionForEvent:(int)arg2;
 - (void)stateMachine:(id)arg1 didTransitionFromState:(int)arg2 forEvent:(int)arg3;

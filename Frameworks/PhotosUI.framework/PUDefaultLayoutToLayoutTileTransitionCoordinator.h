@@ -3,13 +3,13 @@
  */
 
 @interface PUDefaultLayoutToLayoutTileTransitionCoordinator : PUDefaultTileTransitionCoordinator {
-    BOOL __isZoomingIn;
-    BOOL __needsUpdateZoomingIn;
-    PUAssetReference *_anchorAssetReference;
-    PUTilingLayoutTransitionContext *_context;
-    <PUTilingCoordinateSystem> *_fixedCoordinateSystem;
-    PUTilingLayout *_fromLayout;
-    PUTilingLayout *_toLayout;
+    BOOL  __isZoomingIn;
+    BOOL  __needsUpdateZoomingIn;
+    PUAssetReference * _anchorAssetReference;
+    PUTilingLayoutTransitionContext * _context;
+    <PUTilingCoordinateSystem> * _fixedCoordinateSystem;
+    PUTilingLayout * _fromLayout;
+    PUTilingLayout * _toLayout;
 }
 
 @property (setter=_setZoomingIn:, nonatomic) BOOL _isZoomingIn;

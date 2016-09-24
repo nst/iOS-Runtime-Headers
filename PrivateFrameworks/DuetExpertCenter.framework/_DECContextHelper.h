@@ -3,23 +3,18 @@
  */
 
 @interface _DECContextHelper : NSObject {
-    CDContextStore *_contextStore;
-    NSObject<OS_dispatch_queue> *_queue;
+    <_CDLocalContext> * _context;
 }
 
-@property (nonatomic, readonly) CDContextStore *contextStore;
-@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic, readonly) <_CDLocalContext> *context;
 
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
-- (id)contextStore;
-- (BOOL)fetchBooleanForKey:(id)arg1;
-- (id)fetchMetadataForKey:(id)arg1;
-- (id)fetchStringForKey:(id)arg1;
+- (id)context;
+- (id)fetchContextValueForKeyPath:(id)arg1;
+- (id)fetchDataDictionaryForKeyPath:(id)arg1;
 - (id)init;
-- (id)queue;
-- (void)registerForCoreDuetNotificationWithPredicateString:(id)arg1 handler:(id /* block */)arg2;
-- (void)setContextStore:(id)arg1;
+- (void)registerForNotifications:(id)arg1;
 
 @end

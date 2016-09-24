@@ -3,8 +3,8 @@
  */
 
 @interface CUIKUserActivityRemindersListCategory : CUIKUserActivityWithSource {
-    NSString *_externalID;
-    NSString *_title;
+    NSString * _externalID;
+    NSString * _title;
 }
 
 - (void).cxx_destruct;

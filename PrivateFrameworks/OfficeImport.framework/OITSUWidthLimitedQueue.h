@@ -3,11 +3,11 @@
  */
 
 @interface OITSUWidthLimitedQueue : NSObject {
-    int mLimit;
-    NSObject<OS_dispatch_queue> *mManagerQueue;
-    int mReaderCount;
-    int mSpinLock;
-    NSObject<OS_dispatch_queue> *mTargetQueue;
+    int  mLimit;
+    NSObject<OS_dispatch_queue> * mManagerQueue;
+    int  mReaderCount;
+    int  mSpinLock;
+    NSObject<OS_dispatch_queue> * mTargetQueue;
 }
 
 - (void)dealloc;

@@ -6,13 +6,13 @@
     struct { 
         unsigned int reviewTime : 1; 
         unsigned int score : 1; 
-    } _has;
-    NSString *_languageCode;
-    double _reviewTime;
-    GEOUser *_reviewer;
-    double _score;
-    NSString *_snippet;
-    NSString *_uid;
+    }  _has;
+    NSString * _languageCode;
+    double  _reviewTime;
+    GEOUser * _reviewer;
+    double  _score;
+    NSString * _snippet;
+    NSString * _uid;
 }
 
 @property (nonatomic, readonly) BOOL hasLanguageCode;

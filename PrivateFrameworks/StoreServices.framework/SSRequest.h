@@ -3,15 +3,15 @@
  */
 
 @interface SSRequest : NSObject <SSXPCCoding> {
-    unsigned int _assertionID;
-    NSObject<OS_dispatch_source> *_backgroundTaskExpirationTimer;
-    int _backgroundTaskIdentifier;
-    BOOL _cancelAfterTaskExpiration;
-    <SSRequestDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    SSXPCConnection *_requestConnection;
-    SSXPCConnection *_responseConnection;
-    int _taskAssertionState;
+    unsigned int  _assertionID;
+    NSObject<OS_dispatch_source> * _backgroundTaskExpirationTimer;
+    int  _backgroundTaskIdentifier;
+    BOOL  _cancelAfterTaskExpiration;
+    <SSRequestDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    SSXPCConnection * _requestConnection;
+    SSXPCConnection * _responseConnection;
+    int  _taskAssertionState;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -30,8 +30,8 @@
 - (void)_expireBackgroundTask;
 - (id)_initSSRequest;
 - (void)_shutdownRequest;
-- (void)_shutdownRequestWithMessageID:(long long)arg1;
-- (void)_startWithMessageID:(long long)arg1 messageBlock:(id /* block */)arg2;
+- (void)_shutdownRequestWithMessageID:(int)arg1;
+- (void)_startWithMessageID:(int)arg1 messageBlock:(id /* block */)arg2;
 - (void)cancel;
 - (void)dealloc;
 - (id)delegate;

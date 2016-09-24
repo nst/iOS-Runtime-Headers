@@ -3,7 +3,7 @@
  */
 
 @interface CAMLegacyStillImageCaptureCommand : CAMCaptureCommand {
-    CAMLegacyStillImageCaptureRequest *__request;
+    CAMLegacyStillImageCaptureRequest * __request;
 }
 
 @property (nonatomic, readonly) CAMLegacyStillImageCaptureRequest *_request;

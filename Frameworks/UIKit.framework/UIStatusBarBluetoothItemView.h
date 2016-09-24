@@ -3,8 +3,8 @@
  */
 
 @interface UIStatusBarBluetoothItemView : UIStatusBarItemView {
-    BOOL _connected;
-    BOOL _shouldAnimateConnection;
+    BOOL  _connected;
+    BOOL  _shouldAnimateConnection;
 }
 
 - (void)_blinkAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;

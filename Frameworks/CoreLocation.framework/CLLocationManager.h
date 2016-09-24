@@ -3,7 +3,7 @@
  */
 
 @interface CLLocationManager : NSObject {
-    id _internal;
+    id  _internal;
 }
 
 @property (nonatomic) int activityType;
@@ -49,6 +49,7 @@
 + (BOOL)bundleSupported:(id)arg1;
 + (id)dateLocationLastUsedForLocationDictionary:(id)arg1;
 + (BOOL)deferredLocationUpdatesAvailable;
++ (void)dumpDiagnosticFilesWithHandler:(id /* block */)arg1;
 + (BOOL)dumpLogsWithMessage:(id)arg1;
 + (unsigned int)entityAuthorizationForLocationDictionary:(id)arg1;
 + (unsigned int)entityClassesForLocationDictionary:(id)arg1;
@@ -56,7 +57,9 @@
 + (BOOL)headingAvailable;
 + (BOOL)isEntityAuthorizedForLocationDictionary:(id)arg1;
 + (BOOL)isLocationActiveForLocationDictionary:(id)arg1;
++ (BOOL)isMicroLocationAvailable;
 + (BOOL)isMonitoringAvailableForClass:(Class)arg1;
++ (BOOL)isPeerRangingAvailable;
 + (BOOL)isRangingAvailable;
 + (BOOL)isStatusBarIconEnabledForLocationEntityClass:(unsigned int)arg1;
 + (BOOL)locationServicesEnabled;
@@ -126,6 +129,9 @@
 - (void)onClientEventInterrupted:(id)arg1;
 - (void)onClientEventLocation:(id)arg1;
 - (void)onClientEventLocationUnavailable:(id)arg1;
+- (void)onClientEventMicroLocations:(id)arg1;
+- (void)onClientEventPeerRanging:(id)arg1;
+- (void)onClientEventPeerRangingError:(id)arg1;
 - (void)onClientEventRanging:(id)arg1;
 - (void)onClientEventRangingError:(id)arg1;
 - (void)onClientEventRegion:(id)arg1;
@@ -138,6 +144,7 @@
 - (void)onClientEventVehicleSpeed:(id)arg1;
 - (void)onDidBecomeActive:(id)arg1;
 - (void)onLocationRequestTimeout;
+- (void)onRangingRequestTimeout;
 - (void)pauseLocationUpdates:(BOOL)arg1;
 - (BOOL)pausesLocationUpdatesAutomatically;
 - (BOOL)privateMode;
@@ -145,11 +152,14 @@
 - (id)rangedRegions;
 - (void)registerAsLocationClient;
 - (void)requestAlwaysAuthorization;
+- (void)requestCurrentMicroLocation;
 - (void)requestLocation;
+- (void)requestRangingToPeers:(id)arg1 timeoutSeconds:(double)arg2;
 - (void)requestStateForRegion:(id)arg1;
 - (void)requestWhenInUseAuthorization;
 - (void)requestWhenInUseAuthorizationWithPrompt;
 - (void)resetApps;
+- (void)respondToRangingFromPeers:(id)arg1 timeoutSeconds:(double)arg2;
 - (void)resumeLocationUpdates;
 - (void)setActivityType:(int)arg1;
 - (void)setAllowsAlteredAccessoryLocations:(BOOL)arg1;
@@ -174,10 +184,13 @@
 - (void)startMonitoringSignificantLocationChanges;
 - (void)startMonitoringVisits;
 - (void)startRangingBeaconsInRegion:(id)arg1;
+- (void)startRangingFromPeers:(id)arg1;
+- (void)startRangingToPeers:(id)arg1 intervalSeconds:(unsigned int)arg2;
 - (void)startTechStatusUpdates;
 - (void)startUpdatingHeading;
 - (void)startUpdatingLocation;
 - (void)startUpdatingLocationWithPrompt;
+- (void)startUpdatingMicroLocation;
 - (void)startUpdatingVehicleHeading;
 - (void)startUpdatingVehicleSpeed;
 - (void)stopAppStatusUpdates;
@@ -185,9 +198,12 @@
 - (void)stopMonitoringSignificantLocationChanges;
 - (void)stopMonitoringVisits;
 - (void)stopRangingBeaconsInRegion:(id)arg1;
+- (void)stopRangingFromPeers:(id)arg1;
+- (void)stopRangingToPeers:(id)arg1;
 - (void)stopTechStatusUpdates;
 - (void)stopUpdatingHeading;
 - (void)stopUpdatingLocation;
+- (void)stopUpdatingMicroLocation;
 - (void)stopUpdatingVehicleHeading;
 - (void)stopUpdatingVehicleSpeed;
 - (BOOL)supportInfo;
@@ -197,7 +213,9 @@
 
 + (BOOL)convertAuthStatusToBool:(int)arg1;
 + (int)convertToHMDLocationAuthorization:(int)arg1;
++ (int)convertToHMDRegionState:(int)arg1;
 + (id)hmdLocationAuthorizationAsString:(int)arg1;
++ (id)hmdRegionStateAsString:(int)arg1;
 + (id)locationAuthorizationDescription:(int)arg1;
 + (id)referenceFrameDescription:(int)arg1;
 + (id)regionDescription:(id)arg1;
@@ -207,7 +225,9 @@
 
 + (BOOL)convertAuthStatusToBool:(int)arg1;
 + (int)convertToHMDLocationAuthorization:(int)arg1;
++ (int)convertToHMDRegionState:(int)arg1;
 + (id)hmdLocationAuthorizationAsString:(int)arg1;
++ (id)hmdRegionStateAsString:(int)arg1;
 + (id)locationAuthorizationDescription:(int)arg1;
 + (id)referenceFrameDescription:(int)arg1;
 + (id)regionDescription:(id)arg1;

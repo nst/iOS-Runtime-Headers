@@ -3,8 +3,8 @@
  */
 
 @interface BFFLocaleCountry : NSObject {
-    NSString *_code;
-    NSString *_name;
+    NSString * _code;
+    NSString * _name;
 }
 
 @property (nonatomic, copy) NSString *code;

@@ -3,13 +3,14 @@
  */
 
 @interface GEOServiceRequester : NSObject {
-    NSMapTable *_pendingRequests;
-    NSLock *_pendingRequestsLock;
+    NSMapTable * _pendingRequests;
+    NSLock * _pendingRequestsLock;
 }
 
 + (id)_debugRequestName;
 + (int)_experimentDispatcherRequestTypeForRequest:(id)arg1;
 + (int)_experimentType;
++ (unsigned char)_requestCounterInfoTypeForRequest:(id)arg1;
 + (id)_serviceTypeNumber;
 + (BOOL)_shouldThrottleRequests;
 + (id)_throttleKey;

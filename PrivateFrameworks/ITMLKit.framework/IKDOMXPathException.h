@@ -3,7 +3,7 @@
  */
 
 @interface IKDOMXPathException : IKJSObject <IKJSDOMXPathException> {
-    int code;
+    int  code;
 }
 
 @property (nonatomic) int code;

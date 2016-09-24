@@ -3,12 +3,12 @@
  */
 
 @interface AWDCoreRoutineModelStatus : PBCodable <NSCopying> {
-    BOOL _enabled;
+    BOOL  _enabled;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int enabled : 1; 
-    } _has;
-    unsigned long long _timestamp;
+    }  _has;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) BOOL enabled;

@@ -3,17 +3,17 @@
  */
 
 @interface PLBBMavHwRf1xLogMsg : PLBasebandMessage {
-    NSDate *_bbDate;
-    NSNumber *_bbSeqnum;
-    double *_bbTimeCal;
-    NSArray *_callTypeDur;
-    NSMutableDictionary *_commonInfo;
-    NSNumber *_dtxOff;
-    NSNumber *_dtxOn;
-    NSString *_error;
-    unsigned char _inited;
-    NSMutableDictionary *_kvPairs;
-    NSNumber *_logDuration;
+    NSDate * _bbDate;
+    NSNumber * _bbSeqnum;
+    double * _bbTimeCal;
+    NSArray * _callTypeDur;
+    NSMutableDictionary * _commonInfo;
+    NSNumber * _dtxOff;
+    NSNumber * _dtxOn;
+    NSString * _error;
+    unsigned char  _inited;
+    NSMutableDictionary * _kvPairs;
+    NSNumber * _logDuration;
 }
 
 @property (retain) NSDate *bbDate;

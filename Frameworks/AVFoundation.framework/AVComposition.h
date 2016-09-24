@@ -3,11 +3,11 @@
  */
 
 @interface AVComposition : AVAsset <NSMutableCopying, NSSecureCoding> {
-    AVCompositionInternal *_priv;
+    AVCompositionInternal * _priv;
 }
 
 @property (nonatomic, readonly, copy) NSDictionary *URLAssetInitializationOptions;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } naturalSize;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } naturalSize;
 @property (nonatomic, readonly) NSArray *tracks;
 
 + (void)initialize;
@@ -19,6 +19,7 @@
 - (Class)_classForTrackInspectors;
 - (BOOL)_clientProvidesNaturalSize;
 - (long)_createEmptyMutableCompositionIfNeeded;
+- (struct OpaqueFigAsset { }*)_figAsset;
 - (struct OpaqueFigFormatReader { }*)_formatReader;
 - (id)_initWithComposition:(id)arg1;
 - (void)_loadAssetInspectorAndLoaderOnce;
@@ -26,7 +27,7 @@
 - (struct OpaqueFigMutableComposition { }*)_mutableComposition;
 - (id)_mutableTracks;
 - (id)_newTrackForIndex:(long)arg1;
-- (void)_setNaturalSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)_setNaturalSize:(struct CGSize { double x1; double x2; })arg1;
 - (BOOL)_setURLAssetInitializationOptions:(id)arg1 error:(id*)arg2;
 - (void)dealloc;
 - (id)description;
@@ -35,7 +36,7 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (struct CGSize { float x1; float x2; })naturalSize;
+- (struct CGSize { double x1; double x2; })naturalSize;
 - (id)trackWithTrackID:(int)arg1;
 - (id)tracks;
 - (id)tracksWithMediaCharacteristic:(id)arg1;

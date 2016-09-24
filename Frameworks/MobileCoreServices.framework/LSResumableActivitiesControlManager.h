@@ -3,8 +3,8 @@
  */
 
 @interface LSResumableActivitiesControlManager : NSObject {
-    id _delegate;
-    NSXPCConnection *connection;
+    id  _delegate;
+    NSXPCConnection * connection;
 }
 
 @property (retain) NSXPCConnection *connection;

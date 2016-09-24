@@ -3,9 +3,9 @@
  */
 
 @interface MusicQueueFeederEntityProvider : NSObject <MusicEntityProviding> {
-    BOOL _canUseMetadataItemsForEntities;
-    BOOL _hasValidCanUseMetadataItemsForEntities;
-    MPQueueFeeder *_queueFeeder;
+    BOOL  _canUseMetadataItemsForEntities;
+    BOOL  _hasValidCanUseMetadataItemsForEntities;
+    MPQueueFeeder * _queueFeeder;
 }
 
 @property (readonly, copy) NSString *debugDescription;

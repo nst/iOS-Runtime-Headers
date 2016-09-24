@@ -3,10 +3,10 @@
  */
 
 @interface _UIKeyframe : NSObject {
-    double _duration;
-    NSString *_key;
-    double _startTime;
-    id _value;
+    double  _duration;
+    NSString * _key;
+    double  _startTime;
+    id  _value;
 }
 
 @property (nonatomic, retain) id value;

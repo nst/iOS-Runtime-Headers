@@ -3,7 +3,7 @@
  */
 
 @interface GEORouteManager : NSObject {
-    <GEORouteManagerDelegate> *_delegate;
+    <GEORouteManagerDelegate> * _delegate;
 }
 
 @property (nonatomic) <GEORouteManagerDelegate> *delegate;
@@ -13,7 +13,7 @@
 - (void)addedRoutesToRouteSet:(id)arg1;
 - (id)delegate;
 - (void)fetchDirectionsForTicket:(id)arg1 routeSet:(id)arg2 networkActivity:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
-- (void)handleError:(id)arg1 problemDetail:(struct { int x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*)arg2 forTicket:(id)arg3;
+- (void)handleError:(id)arg1 directionsError:(id)arg2 forTicket:(id)arg3;
 - (void)handleResponse:(id)arg1 routeSet:(id)arg2 forTicket:(id)arg3;
 - (void)setDelegate:(id)arg1;
 

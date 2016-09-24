@@ -3,7 +3,7 @@
  */
 
 @interface NSSQLGenerator : NSObject {
-    NSSQLCore *_persistentStore;
+    NSSQLCore * _persistentStore;
 }
 
 + (void)initialize;
@@ -22,11 +22,11 @@
 - (id)generateUpdateColumnsIntermediateInContext:(id)arg1;
 - (void)generateWhereIntermediatesInContext:(id)arg1;
 - (id)initWithPersistentStore:(id)arg1;
-- (id)initializeContextForFetchRequest:(id)arg1 ignoreInheritance:(BOOL)arg2 nestingLevel:(unsigned int)arg3 nestIsWhereScoped:(BOOL)arg4;
+- (id)initializeContextForFetchRequest:(id)arg1 ignoreInheritance:(BOOL)arg2 nestingLevel:(unsigned int)arg3 nestIsWhereScoped:(BOOL)arg4 requestContext:(id)arg5;
 - (id)initializeContextForRequest:(id)arg1 ignoreInheritance:(BOOL)arg2 nestingLevel:(unsigned int)arg3;
 - (id)initializeContextForUpdateRequest:(id)arg1;
-- (id)newSQLStatementForFetchRequest:(id)arg1 ignoreInheritance:(BOOL)arg2 countOnly:(BOOL)arg3 nestingLevel:(unsigned int)arg4 nestIsWhereScoped:(BOOL)arg5;
-- (id)newSQLStatementForRequest:(id)arg1 ignoreInheritance:(BOOL)arg2 countOnly:(BOOL)arg3 nestingLevel:(unsigned int)arg4 nestIsWhereScoped:(BOOL)arg5;
+- (id)newSQLStatementForFetchRequest:(id)arg1 ignoreInheritance:(BOOL)arg2 countOnly:(BOOL)arg3 nestingLevel:(unsigned int)arg4 nestIsWhereScoped:(BOOL)arg5 requestContext:(id)arg6;
+- (id)newSQLStatementForRequest:(id)arg1 ignoreInheritance:(BOOL)arg2 countOnly:(BOOL)arg3 nestingLevel:(unsigned int)arg4 nestIsWhereScoped:(BOOL)arg5 requestContext:(id)arg6;
 - (id)newSQLStatementForUpdateRequest:(id)arg1;
 - (id)predicateForRequestInContext:(id)arg1;
 

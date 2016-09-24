@@ -5,9 +5,9 @@
 @interface GEOGeoServiceTag : PBCodable <NSCopying> {
     struct { 
         unsigned int serviceType : 1; 
-    } _has;
-    int _serviceType;
-    NSString *_tag;
+    }  _has;
+    int  _serviceType;
+    NSString * _tag;
 }
 
 @property (nonatomic) BOOL hasServiceType;
@@ -16,6 +16,7 @@
 
 + (id)defaultTag;
 
+- (int)StringAsServiceType:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -27,6 +28,7 @@
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (int)serviceType;
+- (id)serviceTypeAsString:(int)arg1;
 - (void)setHasServiceType:(BOOL)arg1;
 - (void)setServiceType:(int)arg1;
 - (void)setTag:(id)arg1;

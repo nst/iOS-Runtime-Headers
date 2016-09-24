@@ -3,10 +3,10 @@
  */
 
 @interface CBDescriptor : CBAttribute {
-    CBCharacteristic *_characteristic;
-    NSNumber *_handle;
-    CBPeripheral *_peripheral;
-    id _value;
+    CBCharacteristic * _characteristic;
+    NSNumber * _handle;
+    CBPeripheral * _peripheral;
+    id  _value;
 }
 
 @property (nonatomic) CBCharacteristic *characteristic;
@@ -14,8 +14,8 @@
 @property (nonatomic, readonly) CBPeripheral *peripheral;
 @property (retain) id value;
 
+- (void).cxx_destruct;
 - (id)characteristic;
-- (void)dealloc;
 - (id)description;
 - (id)handle;
 - (id)handleValueUpdated:(id)arg1;

@@ -3,9 +3,9 @@
  */
 
 @interface NNMKProtectedSQLiteConnection : NNMKSQLiteConnection {
-    BOOL _protectedDatabaseAttached;
-    NSString *_protectedDatabaseName;
-    NSString *_protectedDatabasePath;
+    BOOL  _protectedDatabaseAttached;
+    NSString * _protectedDatabaseName;
+    NSString * _protectedDatabasePath;
 }
 
 @property (nonatomic, readonly) BOOL protectedDatabaseAttached;

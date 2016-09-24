@@ -3,13 +3,13 @@
  */
 
 @interface EDPhoneticInfo : NSObject <EDImmutableObject, NSCopying> {
-    int mAlign;
-    bool mDoNotModify;
-    unsigned int mFontIndex;
-    EDResources *mResources;
-    EDCollection *mRuns;
-    NSString *mString;
-    int mType;
+    int  mAlign;
+    bool  mDoNotModify;
+    unsigned int  mFontIndex;
+    EDResources * mResources;
+    EDCollection * mRuns;
+    NSString * mString;
+    int  mType;
 }
 
 @property (readonly, copy) NSString *debugDescription;

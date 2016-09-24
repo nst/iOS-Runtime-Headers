@@ -3,9 +3,9 @@
  */
 
 @interface FigMetadataItemCaptureConnectionConfiguration : FigCaptureConnectionConfiguration {
-    struct OpaqueCMClock { } *_clock;
-    struct opaqueCMFormatDescription { } *_formatDescription;
-    int _sourceSubType;
+    struct OpaqueCMClock { } * _clock;
+    struct opaqueCMFormatDescription { } * _formatDescription;
+    int  _sourceSubType;
 }
 
 @property (nonatomic, retain) struct OpaqueCMClock { }*clock;

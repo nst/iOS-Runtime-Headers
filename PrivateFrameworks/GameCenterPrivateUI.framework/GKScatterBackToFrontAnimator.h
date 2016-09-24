@@ -3,7 +3,7 @@
  */
 
 @interface GKScatterBackToFrontAnimator : GKBubblePathAnimator {
-    unsigned int *_leftToRightIndexByType;
+    unsigned int * _leftToRightIndexByType;
 }
 
 - (void)animateTransition:(id)arg1;

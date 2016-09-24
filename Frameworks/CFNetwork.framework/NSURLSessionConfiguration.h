@@ -43,6 +43,9 @@
 @property BOOL _forcesNewConnections;
 @property BOOL _infersDiscretionaryFromOriginatingClient;
 @property (copy) NSString *_ledBellyServiceIdentifier;
+@property double _longLivedConnectionCacheCellPurgeTimeout;
+@property double _longLivedConnectionCachePurgeTimeout;
+@property BOOL _onBehalfOfPairedDevice;
 @property (copy) NSDictionary *_overriddenDelegateOptions;
 @property BOOL _overridesBackgroundSessionAutoRedirect;
 @property BOOL _performsEVCertCheck;
@@ -71,7 +74,7 @@
 @property (copy) NSString *_sourceApplicationSecondaryIdentifier;
 @property BOOL _supportsAVAssetDownloads;
 @property (copy) NSString *_tcpConnectionPoolName;
-@property long long _timingDataOptions;
+@property int _timingDataOptions;
 @property BOOL _usePipeliningHeuristics;
 @property (copy) NSString *_watchAppBundleIdentifier;
 @property (copy) NSString *_watchExtensionBundleIdentifier;
@@ -96,6 +99,8 @@
 @property double timeoutIntervalForRequest;
 @property double timeoutIntervalForResource;
 
+// Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
+
 + (id)AVBackgroundSessionConfigurationWithIdentifier:(id)arg1;
 + (id)_AVBackgroundSessionConfigurationWithIdentifier:(id)arg1;
 + (id)_defaultProtocolClasses;
@@ -115,5 +120,9 @@
 - (struct HTTPConnectionCacheLimits { int x1; int x2; int x3; int x4; int x5; int x6; int x7; int x8; int x9; int x10; })getConnectionCacheLimits;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDisposition:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
+
+- (void)applyNSURLConnectionProperties:(id)arg1;
 
 @end

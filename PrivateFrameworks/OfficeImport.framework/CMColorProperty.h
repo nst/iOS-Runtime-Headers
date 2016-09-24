@@ -3,7 +3,7 @@
  */
 
 @interface CMColorProperty : CMProperty {
-    OITSUColor *wdValue;
+    OITSUColor * wdValue;
 }
 
 + (struct CGColor { }*)copyCGColorFromOADColor:(id)arg1 state:(id)arg2;

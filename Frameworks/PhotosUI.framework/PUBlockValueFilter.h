@@ -3,7 +3,7 @@
  */
 
 @interface PUBlockValueFilter : PUValueFilter {
-    id /* block */ _operationBlock;
+    id /* block */  _operationBlock;
 }
 
 @property (nonatomic, copy) id /* block */ operationBlock;

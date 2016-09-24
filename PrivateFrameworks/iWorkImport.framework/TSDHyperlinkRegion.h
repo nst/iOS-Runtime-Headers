@@ -3,8 +3,8 @@
  */
 
 @interface TSDHyperlinkRegion : NSObject {
-    TSUBezierPath *mBezierPath;
-    NSURL *mURL;
+    TSUBezierPath * mBezierPath;
+    NSURL * mURL;
 }
 
 @property (nonatomic, retain) NSURL *URL;

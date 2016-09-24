@@ -3,7 +3,7 @@
  */
 
 @interface SKUIStateRestorationContext : NSObject {
-    SKUIClientContext *_clientContext;
+    SKUIClientContext * _clientContext;
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;

@@ -3,12 +3,12 @@
  */
 
 @interface SSMemoryEntity : NSObject <NSCopying> {
-    long long _databaseID;
-    NSMutableDictionary *_externalPropertyValues;
-    NSMutableDictionary *_propertyValues;
+    int  _databaseID;
+    NSMutableDictionary * _externalPropertyValues;
+    NSMutableDictionary * _propertyValues;
 }
 
-@property (nonatomic) long long databaseID;
+@property (nonatomic) int databaseID;
 @property (nonatomic, readonly, copy) NSDictionary *externalPropertyValues;
 @property (nonatomic, readonly, copy) NSDictionary *propertyValues;
 
@@ -19,7 +19,7 @@
 + (id)queryWithDatabase:(id)arg1 predicate:(id)arg2 orderingProperties:(id)arg3;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (long long)databaseID;
+- (int)databaseID;
 - (void)dealloc;
 - (id)description;
 - (id)externalPropertyValues;
@@ -29,7 +29,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)propertyValues;
 - (void)reloadFromDatabaseEntity:(id)arg1 properties:(id)arg2;
-- (void)setDatabaseID:(long long)arg1;
+- (void)setDatabaseID:(int)arg1;
 - (void)setExternalValuesWithDictionary:(id)arg1;
 - (void)setValue:(id)arg1 forExternalProperty:(id)arg2;
 - (void)setValue:(id)arg1 forProperty:(id)arg2;

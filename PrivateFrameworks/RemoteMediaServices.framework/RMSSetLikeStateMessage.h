@@ -3,30 +3,30 @@
  */
 
 @interface RMSSetLikeStateMessage : PBCodable <NSCopying> {
-    unsigned long long _databaseID;
+    unsigned int  _databaseID;
     struct { 
         unsigned int databaseID : 1; 
         unsigned int itemID : 1; 
         unsigned int likeState : 1; 
         unsigned int sessionIdentifier : 1; 
-    } _has;
-    unsigned long long _itemID;
-    int _likeState;
-    int _sessionIdentifier;
+    }  _has;
+    unsigned int  _itemID;
+    int  _likeState;
+    int  _sessionIdentifier;
 }
 
-@property (nonatomic) unsigned long long databaseID;
+@property (nonatomic) unsigned int databaseID;
 @property (nonatomic) BOOL hasDatabaseID;
 @property (nonatomic) BOOL hasItemID;
 @property (nonatomic) BOOL hasLikeState;
 @property (nonatomic) BOOL hasSessionIdentifier;
-@property (nonatomic) unsigned long long itemID;
+@property (nonatomic) unsigned int itemID;
 @property (nonatomic) int likeState;
 @property (nonatomic) int sessionIdentifier;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned long long)databaseID;
+- (unsigned int)databaseID;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasDatabaseID;
@@ -35,17 +35,17 @@
 - (BOOL)hasSessionIdentifier;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
-- (unsigned long long)itemID;
+- (unsigned int)itemID;
 - (int)likeState;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (int)sessionIdentifier;
-- (void)setDatabaseID:(unsigned long long)arg1;
+- (void)setDatabaseID:(unsigned int)arg1;
 - (void)setHasDatabaseID:(BOOL)arg1;
 - (void)setHasItemID:(BOOL)arg1;
 - (void)setHasLikeState:(BOOL)arg1;
 - (void)setHasSessionIdentifier:(BOOL)arg1;
-- (void)setItemID:(unsigned long long)arg1;
+- (void)setItemID:(unsigned int)arg1;
 - (void)setLikeState:(int)arg1;
 - (void)setSessionIdentifier:(int)arg1;
 - (void)writeTo:(id)arg1;

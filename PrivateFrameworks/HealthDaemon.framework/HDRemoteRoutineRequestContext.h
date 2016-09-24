@@ -3,8 +3,8 @@
  */
 
 @interface HDRemoteRoutineRequestContext : NSObject {
-    id /* block */ _completion;
-    HDCodableRoutineRequestMessage *_request;
+    id /* block */  _completion;
+    HDCodableRoutineRequestMessage * _request;
 }
 
 @property (nonatomic, copy) id /* block */ completion;

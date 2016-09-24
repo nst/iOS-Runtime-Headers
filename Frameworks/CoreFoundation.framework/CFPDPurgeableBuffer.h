@@ -3,10 +3,10 @@
  */
 
 @interface CFPDPurgeableBuffer : CFPDDataBuffer {
-    unsigned int allocSize;
-    struct __CFData { } *handle;
-    BOOL safe;
-    BOOL usedMalloc;
+    unsigned int  allocSize;
+    struct __CFData { } * handle;
+    BOOL  safe;
+    BOOL  usedMalloc;
 }
 
 - (BOOL)beginAccessing;

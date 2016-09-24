@@ -3,12 +3,12 @@
  */
 
 @interface CPRegion : CPChunk {
-    BOOL isCompoundShape;
-    BOOL isImageRegion;
-    BOOL isTextRegion;
-    id link;
-    CPRegion *nextRegion;
-    int order;
+    BOOL  isCompoundShape;
+    BOOL  isImageRegion;
+    BOOL  isTextRegion;
+    id  link;
+    CPRegion * nextRegion;
+    int  order;
 }
 
 - (void)accept:(id)arg1;

@@ -3,17 +3,17 @@
  */
 
 @interface GEOPDAutocompleteEntry : PBCodable <NSCopying> {
-    GEOPDAutocompleteEntryAddress *_address;
-    GEOPDAutocompleteEntryBusiness *_business;
-    GEOPDAutocompleteEntryCategory *_category;
+    GEOPDAutocompleteEntryAddress * _address;
+    GEOPDAutocompleteEntryBusiness * _business;
+    GEOPDAutocompleteEntryCategory * _category;
     struct { 
         unsigned int type : 1; 
-    } _has;
-    GEOPDAutocompleteEntryHighlightLine *_highlightExtra;
-    GEOPDAutocompleteEntryHighlightLine *_highlightMain;
-    GEOPDAutocompleteEntryQuery *_query;
-    int _type;
-    PBUnknownFields *_unknownFields;
+    }  _has;
+    GEOPDAutocompleteEntryHighlightLine * _highlightExtra;
+    GEOPDAutocompleteEntryHighlightLine * _highlightMain;
+    GEOPDAutocompleteEntryQuery * _query;
+    int  _type;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, retain) GEOPDAutocompleteEntryAddress *address;
@@ -32,6 +32,7 @@
 @property (nonatomic) int type;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
+- (int)StringAsType:(id)arg1;
 - (id)address;
 - (id)business;
 - (id)category;
@@ -63,6 +64,7 @@
 - (void)setQuery:(id)arg1;
 - (void)setType:(int)arg1;
 - (int)type;
+- (id)typeAsString:(int)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
 

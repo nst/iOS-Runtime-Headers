@@ -3,7 +3,7 @@
  */
 
 @interface PUCollectionViewIntermediateDataSource : NSObject <UICollectionViewDataSource> {
-    <UICollectionViewDataSource> *_realDataSource;
+    <UICollectionViewDataSource> * _realDataSource;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -7,6 +7,7 @@
 
 - (void)deliveredMessageWithID:(NSString *)arg1 context:(NSDictionary *)arg2;
 - (void)enqueuedMessageWithID:(NSString *)arg1 context:(NSDictionary *)arg2;
+- (NSDictionary *)extraTransportOptions;
 - (void)handleFileTransfer:(void *)arg1 metadata:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 9: NSURL *, NSDictionary *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, NSError *, void*
 - (void)handleOutOfBandData:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 8: NSData *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, NSError *, void*
 - (void)handleSyncError:(NSError *)arg1 forMessageWithIdentifier:(NSString *)arg2;

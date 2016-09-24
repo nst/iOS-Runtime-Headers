@@ -3,17 +3,17 @@
  */
 
 @interface GEONavigationTransitStopSummary : PBCodable <NSCopying> {
-    GEOLatLng *_coordinate;
+    GEOLatLng * _coordinate;
     struct { 
         unsigned int stopID : 1; 
-    } _has;
-    unsigned long long _stopID;
+    }  _has;
+    unsigned int  _stopID;
 }
 
 @property (nonatomic, retain) GEOLatLng *coordinate;
 @property (nonatomic, readonly) BOOL hasCoordinate;
 @property (nonatomic) BOOL hasStopID;
-@property (nonatomic) unsigned long long stopID;
+@property (nonatomic) unsigned int stopID;
 
 - (id)coordinate;
 - (void)copyTo:(id)arg1;
@@ -30,8 +30,8 @@
 - (BOOL)readFrom:(id)arg1;
 - (void)setCoordinate:(id)arg1;
 - (void)setHasStopID:(BOOL)arg1;
-- (void)setStopID:(unsigned long long)arg1;
-- (unsigned long long)stopID;
+- (void)setStopID:(unsigned int)arg1;
+- (unsigned int)stopID;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -3,22 +3,22 @@
  */
 
 @interface SBFIrisWallpaperView : SBFStaticWallpaperView <ISPlayerViewDelegatePrivate, SBFIrisWallpaperView> {
-    int _currentMode;
-    UIImageView *_imageView;
-    <SBFIrisWallpaperViewDelegate> *_irisDelegate;
-    BOOL _isInteracting;
-    int _playbackState;
-    UIGestureRecognizer *_playerGestureRecognizer;
-    int _playerState;
-    ISPlayerView *_playerView;
-    ISAVPlayer *_prewiredAVPlayer;
+    int  _currentMode;
+    UIImageView * _imageView;
+    <SBFIrisWallpaperViewDelegate> * _irisDelegate;
+    BOOL  _isInteracting;
+    int  _playbackState;
+    UIGestureRecognizer * _playerGestureRecognizer;
+    int  _playerState;
+    ISPlayerView * _playerView;
+    ISAVPlayer * _prewiredAVPlayer;
     struct CGSize { 
-        float width; 
-        float height; 
-    } _prewiredSize;
-    double _stillTimeInVideo;
-    BOOL _useRewindPlaybackStyle;
-    NSURL *_videoFileURL;
+        double width; 
+        double height; 
+    }  _prewiredSize;
+    double  _stillTimeInVideo;
+    BOOL  _useRewindPlaybackStyle;
+    NSURL * _videoFileURL;
 }
 
 @property (nonatomic, readonly) int currentIrisMode;
@@ -43,8 +43,8 @@
 - (BOOL)_setupContentViewForMode:(int)arg1;
 - (int)currentIrisMode;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 wallpaperImage:(id)arg2 variant:(int)arg3;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 wallpaperImage:(id)arg2 wallpaperVideoURL:(id)arg3 stillTimeInVideo:(double)arg4 treatWallpaper:(BOOL)arg5 variant:(int)arg6 prewireMemory:(BOOL)arg7 useRewindPlaybackStyle:(BOOL)arg8;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 wallpaperImage:(id)arg2 cacheGroup:(id)arg3 wallpaperVideoURL:(id)arg4 stillTimeInVideo:(double)arg5 staticImageOptions:(unsigned int)arg6 variant:(int)arg7 prewireMemory:(BOOL)arg8 useRewindPlaybackStyle:(BOOL)arg9;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 wallpaperImage:(id)arg2 variant:(int)arg3;
 - (id)irisDelegate;
 - (id)irisGestureRecognizer;
 - (int)irisPlaybackState;
@@ -57,5 +57,6 @@
 - (void)switchToIrisMode:(int)arg1;
 - (id)videoFileURL;
 - (id)videoPlayerForPlayerView:(id)arg1;
+- (int)wallpaperType;
 
 @end

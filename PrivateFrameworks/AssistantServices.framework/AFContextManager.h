@@ -3,8 +3,8 @@
  */
 
 @interface AFContextManager : NSObject {
-    CPDistributedMessagingCenter *_center;
-    struct __CFArray { } *_contextProviders;
+    CPDistributedMessagingCenter * _center;
+    struct __CFArray { } * _contextProviders;
 }
 
 + (id)defaultContextManager;
@@ -12,7 +12,10 @@
 - (void).cxx_destruct;
 - (id)_collateContexts;
 - (void)_collateContextsIntoArray:(id)arg1;
+- (id)_serverName;
 - (void)_shutdownServer;
+- (void)_startListening;
+- (void)_stopListening;
 - (BOOL)addContextProvider:(id)arg1;
 - (void)dealloc;
 - (id)init;

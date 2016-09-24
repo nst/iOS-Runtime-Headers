@@ -3,10 +3,10 @@
  */
 
 @interface MKMapItemMetadata : NSObject {
-    GEOBusiness *_business;
-    <MKMapItemVendorDeal> *_deal;
-    BOOL _hasCheckedForVendorDeal;
-    NSMutableDictionary *_imageCache;
+    GEOBusiness * _business;
+    <MKMapItemVendorDeal> * _deal;
+    BOOL  _hasCheckedForVendorDeal;
+    NSMutableDictionary * _imageCache;
 }
 
 @property (nonatomic, readonly) GEOBusiness *business;

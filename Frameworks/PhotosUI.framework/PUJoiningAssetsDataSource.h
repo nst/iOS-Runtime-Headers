@@ -3,10 +3,10 @@
  */
 
 @interface PUJoiningAssetsDataSource : PUAssetsDataSource {
-    NSDictionary *__containedDataSourceInfoByIdentifier;
-    NSArray *__containedDataSourceInfos;
-    NSArray *__dataSources;
-    int __totalNumberOfSections;
+    NSDictionary * __containedDataSourceInfoByIdentifier;
+    NSArray * __containedDataSourceInfos;
+    NSArray * __dataSources;
+    int  __totalNumberOfSections;
 }
 
 @property (nonatomic, readonly) NSDictionary *_containedDataSourceInfoByIdentifier;

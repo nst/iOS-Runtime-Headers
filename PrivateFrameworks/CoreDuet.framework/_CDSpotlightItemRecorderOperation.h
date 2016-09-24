@@ -3,9 +3,9 @@
  */
 
 @interface _CDSpotlightItemRecorderOperation : NSObject {
-    NSString *_bundleID;
-    NSArray *_items;
-    int _type;
+    NSString * _bundleID;
+    NSArray * _items;
+    int  _type;
 }
 
 @property (nonatomic, retain) NSString *bundleID;

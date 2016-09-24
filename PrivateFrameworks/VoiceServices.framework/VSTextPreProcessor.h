@@ -3,9 +3,9 @@
  */
 
 @interface VSTextPreProcessor : NSObject {
-    NSString *_languageID;
-    NSArray *_rules;
-    struct __CFStringTokenizer { } *_tokenizer;
+    NSString * _languageID;
+    NSArray * _rules;
+    struct __CFStringTokenizer { } * _tokenizer;
 }
 
 - (void)dealloc;

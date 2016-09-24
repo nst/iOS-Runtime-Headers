@@ -3,10 +3,10 @@
  */
 
 @interface SKUIStarRatingQueue : NSObject {
-    SKUIClientContext *_clientContext;
-    NSOperationQueue *_queue;
-    SKUIReviewConfiguration *_reviewConfiguration;
-    UIWindow *_window;
+    SKUIClientContext * _clientContext;
+    NSOperationQueue * _queue;
+    SKUIReviewConfiguration * _reviewConfiguration;
+    UIWindow * _window;
 }
 
 @property (nonatomic) UIWindow *window;

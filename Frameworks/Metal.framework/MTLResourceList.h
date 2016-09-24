@@ -12,9 +12,9 @@
         struct { 
             MTLResourceList *tqe_next; 
             id *tqe_prev; 
-            unsigned long long time_added; 
+            unsigned int time_added; 
         } entry; 
-    } _listPriv;
+    }  _listPriv;
 }
 
 - (void)dealloc;

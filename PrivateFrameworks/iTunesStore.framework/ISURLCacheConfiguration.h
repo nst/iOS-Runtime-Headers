@@ -3,9 +3,9 @@
  */
 
 @interface ISURLCacheConfiguration : NSObject <NSCopying> {
-    unsigned int _diskCapacity;
-    unsigned int _memoryCapacity;
-    NSString *_persistentIdentifier;
+    unsigned int  _diskCapacity;
+    unsigned int  _memoryCapacity;
+    NSString * _persistentIdentifier;
 }
 
 @property (nonatomic) unsigned int diskCapacity;

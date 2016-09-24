@@ -3,18 +3,17 @@
  */
 
 @interface AXDisplayLinkManager : NSObject {
-    NSMutableSet *_activeTargetActions;
-    BOOL _handlingDisplayRefresh;
-    BOOL _hasUpdatedTargetActions;
-    CADisplayLink *_storedDisplayLink;
-    NSMutableSet *_updatedTargetActions;
-    unsigned int _warmUpModeRequirementsCount;
+    NSMutableSet * _activeTargetActions;
+    BOOL  _handlingDisplayRefresh;
+    BOOL  _hasUpdatedTargetActions;
+    CADisplayLink * _storedDisplayLink;
+    NSMutableSet * _updatedTargetActions;
+    unsigned int  _warmUpModeRequirementsCount;
 }
 
 @property (nonatomic, retain) NSMutableSet *activeTargetActions;
 @property (nonatomic, retain) CADisplayLink *displayLink;
 @property (nonatomic, readonly) double duration;
-@property (nonatomic, readonly) unsigned int frameInterval;
 @property (getter=isHandlingDisplayRefresh, nonatomic) BOOL handlingDisplayRefresh;
 @property (nonatomic) BOOL hasUpdatedTargetActions;
 @property (getter=isPaused, nonatomic, readonly) BOOL paused;
@@ -33,13 +32,11 @@
 - (id)_prepareUpdatedTargetActionsForModification;
 - (id)activeTargetActions;
 - (void)addTarget:(id)arg1 selector:(SEL)arg2;
-- (void)addTarget:(id)arg1 selector:(SEL)arg2 frameInterval:(unsigned int)arg3;
 - (void)beginRequiringWarmUpMode;
 - (void)dealloc;
 - (id)displayLink;
 - (double)duration;
 - (void)endRequiringWarmUpMode;
-- (unsigned int)frameInterval;
 - (BOOL)hasUpdatedTargetActions;
 - (id)init;
 - (BOOL)isHandlingDisplayRefresh;

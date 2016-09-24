@@ -3,8 +3,8 @@
  */
 
 @interface ODDChoose : ODDLayoutObject {
-    ODDOtherwise *mOtherwise;
-    NSMutableArray *mWhens;
+    ODDOtherwise * mOtherwise;
+    NSMutableArray * mWhens;
 }
 
 - (void)addWhen:(id)arg1;

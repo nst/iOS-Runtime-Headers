@@ -3,11 +3,11 @@
  */
 
 @interface MPUSearchDataSource : MPUQueryDataSource {
-    MPUQueryDataSource *_dataSource;
-    NSOperationQueue *_operationQueue;
-    _MPUSearchOperation *_searchOperation;
-    NSArray *_searchResults;
-    NSString *_searchString;
+    MPUQueryDataSource * _dataSource;
+    NSOperationQueue * _operationQueue;
+    _MPUSearchOperation * _searchOperation;
+    NSArray * _searchResults;
+    NSString * _searchString;
 }
 
 @property (nonatomic, readonly) MPUQueryDataSource *dataSource;

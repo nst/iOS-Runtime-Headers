@@ -3,16 +3,18 @@
  */
 
 @interface CAMRemoteShutterController : NSObject <CCCameraConnectionDelegate> {
-    CAMMotionController *__motionController;
-    int _captureDevice;
-    int _captureMode;
-    BOOL _capturingTimelapse;
-    BOOL _capturingVideo;
-    CCCameraConnection *_connection;
-    <CAMRemoteShutterDelegate> *_delegate;
-    int _flashMode;
-    BOOL _showingPreview;
-    float _zoomAmount;
+    CAMMotionController * __motionController;
+    int  _captureDevice;
+    int  _captureMode;
+    BOOL  _capturingTimelapse;
+    BOOL  _capturingVideo;
+    CCCameraConnection * _connection;
+    <CAMRemoteShutterDelegate> * _delegate;
+    int  _flashMode;
+    int  _hdrMode;
+    int  _irisMode;
+    BOOL  _showingPreview;
+    double  _zoomAmount;
 }
 
 @property (nonatomic, readonly) CAMMotionController *_motionController;
@@ -27,9 +29,11 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic) int flashMode;
 @property (readonly) unsigned int hash;
+@property (nonatomic) int hdrMode;
+@property (nonatomic) int irisMode;
 @property (getter=isShowingPreview, nonatomic) BOOL showingPreview;
 @property (readonly) Class superclass;
-@property (nonatomic) float zoomAmount;
+@property (nonatomic) double zoomAmount;
 
 - (void).cxx_destruct;
 - (void)_captureOrientationDidChange:(id)arg1;
@@ -39,15 +43,28 @@
 - (id)_motionController;
 - (void)_sendMode;
 - (void)applyCaptureConfiguration:(id)arg1;
+- (void)burstCaptureDidStop;
+- (void)burstCaptureNumberOfPhotosDidChange:(unsigned int)arg1;
+- (void)burstCaptureWillStart;
 - (void)cameraConnection:(id)arg1 setFlashMode:(int)arg2;
-- (void)cameraConnection:(id)arg1 setFocusPoint:(struct CGPoint { float x1; float x2; })arg2;
+- (void)cameraConnection:(id)arg1 setFocusPoint:(struct CGPoint { double x1; double x2; })arg2;
+- (void)cameraConnection:(id)arg1 setHDRMode:(int)arg2;
+- (void)cameraConnection:(id)arg1 setIrisMode:(int)arg2;
 - (unsigned int)cameraConnection:(id)arg1 setMode:(unsigned int)arg2 interruptCapture:(BOOL)arg3;
 - (void)cameraConnection:(id)arg1 setZoomAmount:(float)arg2;
 - (void)cameraConnection:(id)arg1 takePhotoWithCountdown:(unsigned int)arg2;
+- (BOOL)cameraConnectionBeginBurstCapture:(id)arg1;
 - (void)cameraConnectionBeginVideo:(id)arg1;
+- (BOOL)cameraConnectionBurstSupport:(id)arg1;
 - (void)cameraConnectionCancelCountdown:(id)arg1;
+- (BOOL)cameraConnectionEndBurstCapture:(id)arg1;
 - (void)cameraConnectionEndVideo:(id)arg1;
-- (int)cameraConnectionFlashMode:(id)arg1 flashSupported:(BOOL*)arg2;
+- (int)cameraConnectionFlashMode:(id)arg1;
+- (int)cameraConnectionFlashSupport:(id)arg1;
+- (int)cameraConnectionHDRMode:(id)arg1;
+- (int)cameraConnectionHDRSupport:(id)arg1;
+- (int)cameraConnectionIrisMode:(id)arg1;
+- (int)cameraConnectionIrisSupport:(id)arg1;
 - (BOOL)cameraConnectionIsMirrored:(id)arg1;
 - (int)cameraConnectionOrientation:(id)arg1;
 - (void)cameraConnectionToggleCameraDevice:(id)arg1;
@@ -60,7 +77,9 @@
 - (void)dealloc;
 - (id)delegate;
 - (int)flashMode;
+- (int)hdrMode;
 - (id)initWithCaptureConfiguration:(id)arg1 motionController:(id)arg2;
+- (int)irisMode;
 - (BOOL)isCapturingTimelapse;
 - (BOOL)isCapturingVideo;
 - (BOOL)isConnected;
@@ -75,6 +94,8 @@
 - (void)setConnection:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFlashMode:(int)arg1;
+- (void)setHdrMode:(int)arg1;
+- (void)setIrisMode:(int)arg1;
 - (void)setShowingPreview:(BOOL)arg1;
 - (void)setZoomAmount:(float)arg1;
 - (float)zoomAmount;

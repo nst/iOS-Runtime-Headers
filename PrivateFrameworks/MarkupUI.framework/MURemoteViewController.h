@@ -3,15 +3,17 @@
  */
 
 @interface MURemoteViewController : _UIRemoteViewController <MURemoteViewProtocol> {
-    id /* block */ _finishedWithResultsCompletionBlock;
-    long long _sandboxExtensionHandle;
+    id /* block */  _finishedWithResultsCompletionBlock;
+    int  _sandboxExtensionHandle;
+    BOOL  _shouldResignFirstResponder;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) id /* block */ finishedWithResultsCompletionBlock;
 @property (readonly) unsigned int hash;
-@property long long sandboxExtensionHandle;
+@property int sandboxExtensionHandle;
+@property BOOL shouldResignFirstResponder;
 @property (readonly) Class superclass;
 
 + (id)exportedInterface;
@@ -19,10 +21,17 @@
 
 - (void).cxx_destruct;
 - (void)beginDismissWithInfo:(id)arg1;
+- (BOOL)canBecomeFirstResponder;
+- (BOOL)canResignFirstResponder;
 - (id /* block */)finishedWithResultsCompletionBlock;
-- (long long)sandboxExtensionHandle;
+- (void)motionEnded:(int)arg1 withEvent:(id)arg2;
+- (int)sandboxExtensionHandle;
 - (void)serviceDidFinishwithResults:(id)arg1 andSandboxExtension:(id)arg2;
 - (void)setFinishedWithResultsCompletionBlock:(id /* block */)arg1;
-- (void)setSandboxExtensionHandle:(long long)arg1;
+- (void)setSandboxExtensionHandle:(int)arg1;
+- (void)setShouldResignFirstResponder:(BOOL)arg1;
+- (BOOL)shouldResignFirstResponder;
+- (void)viewDidLoad;
+- (void)viewWillDisappear:(BOOL)arg1;
 
 @end

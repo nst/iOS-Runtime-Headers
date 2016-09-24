@@ -3,33 +3,33 @@
  */
 
 @interface UIWebClip : NSObject {
-    NSMutableData *_customIconData;
-    NSMutableData *_customStartupImageData;
-    NSMutableData *_customStartupLandscapeImageData;
-    NSURLConnection *_iconConnection;
-    NSURLConnection *_startupImageConnection;
-    NSURLConnection *_startupLandscapeImageConnection;
-    unsigned int _webClipStatusBarStyle;
-    BOOL classicMode;
-    unsigned int currentIconIndex;
-    <WebClipDelegate> *delegate;
-    BOOL fullScreen;
-    UIImage *iconImage;
-    BOOL iconIsPrecomposed;
-    BOOL iconIsPrerendered;
-    BOOL iconIsScreenShotBased;
-    NSArray *icons;
-    NSString *identifier;
-    UIImage *initialLaunchImage;
-    NSURL *pageURL;
-    BOOL removalDisallowed;
-    UIImage *startupImage;
-    NSURL *startupImageURL;
-    UIImage *startupLandscapeImage;
-    NSURL *startupLandscapeImageURL;
-    int statusBarStyle;
-    unsigned int supportedOrientations;
-    NSString *title;
+    NSMutableData * _customIconData;
+    NSMutableData * _customStartupImageData;
+    NSMutableData * _customStartupLandscapeImageData;
+    NSURLConnection * _iconConnection;
+    NSURLConnection * _startupImageConnection;
+    NSURLConnection * _startupLandscapeImageConnection;
+    unsigned int  _webClipStatusBarStyle;
+    BOOL  classicMode;
+    unsigned int  currentIconIndex;
+    <WebClipDelegate> * delegate;
+    BOOL  fullScreen;
+    UIImage * iconImage;
+    BOOL  iconIsPrecomposed;
+    BOOL  iconIsPrerendered;
+    BOOL  iconIsScreenShotBased;
+    NSArray * icons;
+    NSString * identifier;
+    UIImage * initialLaunchImage;
+    NSURL * pageURL;
+    BOOL  removalDisallowed;
+    UIImage * startupImage;
+    NSURL * startupImageURL;
+    UIImage * startupLandscapeImage;
+    NSURL * startupLandscapeImageURL;
+    int  statusBarStyle;
+    unsigned int  supportedOrientations;
+    NSString * title;
 }
 
 @property BOOL classicMode;

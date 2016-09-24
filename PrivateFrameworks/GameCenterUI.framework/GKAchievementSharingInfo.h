@@ -3,12 +3,12 @@
  */
 
 @interface GKAchievementSharingInfo : NSObject <NSCoding, NSSecureCoding> {
-    GKAchievement *_achievement;
-    UIImage *_badgeImage;
-    BOOL _complete;
-    GKGame *_game;
-    UIImage *_iconImage;
-    GKPlayer *_player;
+    GKAchievement * _achievement;
+    UIImage * _badgeImage;
+    BOOL  _complete;
+    GKGame * _game;
+    UIImage * _iconImage;
+    GKPlayer * _player;
 }
 
 @property (nonatomic, retain) GKAchievement *achievement;

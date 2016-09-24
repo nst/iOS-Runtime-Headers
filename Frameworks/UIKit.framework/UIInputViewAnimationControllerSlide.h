@@ -3,7 +3,7 @@
  */
 
 @interface UIInputViewAnimationControllerSlide : NSObject <UIInputViewAnimationController> {
-    int _slide;
+    int  _slide;
 }
 
 @property (readonly, copy) NSString *debugDescription;

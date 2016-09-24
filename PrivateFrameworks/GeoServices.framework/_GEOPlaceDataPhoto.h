@@ -3,8 +3,8 @@
  */
 
 @interface _GEOPlaceDataPhoto : NSObject <GEOMapItemPhoto> {
-    GEOPhoto *_geoPhoto;
-    GEOPDPhoto *_photo;
+    GEOPhoto * _geoPhoto;
+    GEOPDPhoto * _photo;
 }
 
 @property (nonatomic, readonly) NSString *author;

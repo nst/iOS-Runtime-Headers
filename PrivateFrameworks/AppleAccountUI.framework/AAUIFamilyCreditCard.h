@@ -3,13 +3,13 @@
  */
 
 @interface AAUIFamilyCreditCard : NSObject {
-    NSString *_details;
-    NSString *_footer;
-    UIImage *_image;
-    NSURL *_imageURL;
-    NSString *_providerDescription;
-    NSString *_type;
-    NSString *_usageNotice;
+    NSString * _details;
+    NSString * _footer;
+    UIImage * _image;
+    NSURL * _imageURL;
+    NSString * _providerDescription;
+    NSString * _type;
+    NSString * _usageNotice;
 }
 
 @property (nonatomic, copy) NSString *details;

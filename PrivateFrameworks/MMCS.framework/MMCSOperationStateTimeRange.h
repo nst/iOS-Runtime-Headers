@@ -3,9 +3,9 @@
  */
 
 @interface MMCSOperationStateTimeRange : NSObject <MMCSOperationStateTimeRange> {
-    double _duration;
-    unsigned int _operationState;
-    NSDate *_startDate;
+    double  _duration;
+    unsigned int  _operationState;
+    NSDate * _startDate;
 }
 
 @property (readonly) double absoluteStart;
@@ -18,7 +18,7 @@
 @property (readonly) unsigned int operationState;
 @property (readonly) double queueing;
 @property (readonly) double relativeStart;
-@property (retain) NSDate *startDate;
+@property (nonatomic, retain) NSDate *startDate;
 @property (readonly) Class superclass;
 
 + (id)describedSortedRanges:(id)arg1;

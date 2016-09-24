@@ -3,8 +3,8 @@
  */
 
 @interface SFFolderPickerList : NSObject {
-    WebBookmarkCollection *_bookmarkCollection;
-    unsigned int _style;
+    WebBookmarkCollection * _bookmarkCollection;
+    unsigned int  _style;
 }
 
 - (void).cxx_destruct;

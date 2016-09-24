@@ -3,7 +3,7 @@
  */
 
 @interface AVAudioMix : NSObject <NSCopying, NSMutableCopying> {
-    AVAudioMixInternal *_audioMix;
+    AVAudioMixInternal * _audioMix;
 }
 
 @property (nonatomic, readonly, copy) NSArray *inputParameters;

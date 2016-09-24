@@ -3,8 +3,8 @@
  */
 
 @interface MSVLoggingLevelPair : NSObject {
-    int _maxConsoleLoggingLevel;
-    int _maxFileLoggingLevel;
+    int  _maxConsoleLoggingLevel;
+    int  _maxFileLoggingLevel;
 }
 
 @property (nonatomic) int maxConsoleLoggingLevel;

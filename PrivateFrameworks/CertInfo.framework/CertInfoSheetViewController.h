@@ -3,13 +3,13 @@
  */
 
 @interface CertInfoSheetViewController : UIViewController {
-    <CertInfoSheetViewControllerDelegate> *_delegate;
-    NSString *_serviceName;
-    NSDate *_trustExpiration;
-    NSArray *_trustProperties;
-    NSString *_trustPurpose;
-    NSString *_trustSubtitle;
-    NSString *_trustTitle;
+    <CertInfoSheetViewControllerDelegate> * _delegate;
+    NSString * _serviceName;
+    NSDate * _trustExpiration;
+    NSArray * _trustProperties;
+    NSString * _trustPurpose;
+    NSString * _trustSubtitle;
+    NSString * _trustTitle;
 }
 
 @property (nonatomic) <CertInfoSheetViewControllerDelegate> *delegate;

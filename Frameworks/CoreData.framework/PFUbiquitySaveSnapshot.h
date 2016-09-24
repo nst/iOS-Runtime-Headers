@@ -3,11 +3,11 @@
  */
 
 @interface PFUbiquitySaveSnapshot : NSObject {
-    NSString *_exportingPeerID;
-    NSString *_localPeerID;
-    NSString *_modelVersionHash;
-    NSMutableDictionary *_storeNameToStoreSaveSnapshots;
-    NSDate *_transactionDate;
+    NSString * _exportingPeerID;
+    NSString * _localPeerID;
+    NSString * _modelVersionHash;
+    NSMutableDictionary * _storeNameToStoreSaveSnapshots;
+    NSDate * _transactionDate;
 }
 
 @property (nonatomic, readonly) NSString *exportingPeerID;

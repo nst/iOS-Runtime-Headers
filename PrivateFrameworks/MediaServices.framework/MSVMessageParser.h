@@ -3,23 +3,25 @@
  */
 
 @interface MSVMessageParser : NSObject {
-    <MSVMessageParserDelegate> *_delegate;
-    long long _unhandledObjectDataExpectedLength;
-    NSMutableData *_unhandledPartialObjectData;
+    <MSVMessageParserDelegate> * _delegate;
+    int  _unhandledObjectDataExpectedLength;
+    NSMutableData * _unhandledPartialObjectData;
 }
 
 @property (nonatomic) <MSVMessageParserDelegate> *delegate;
-@property (nonatomic) long long unhandledObjectDataExpectedLength;
+@property (nonatomic) int unhandledObjectDataExpectedLength;
 @property (nonatomic, retain) NSMutableData *unhandledPartialObjectData;
+
++ (id)createHeader:(unsigned int)arg1;
 
 - (void).cxx_destruct;
 - (void)_notifyDelegate:(id)arg1;
 - (id)delegate;
 - (void)processData:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setUnhandledObjectDataExpectedLength:(long long)arg1;
+- (void)setUnhandledObjectDataExpectedLength:(int)arg1;
 - (void)setUnhandledPartialObjectData:(id)arg1;
-- (long long)unhandledObjectDataExpectedLength;
+- (int)unhandledObjectDataExpectedLength;
 - (id)unhandledPartialObjectData;
 
 @end

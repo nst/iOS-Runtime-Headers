@@ -5,8 +5,15 @@
 
 @required
 
+- (struct _PCSIdentitySetData { }*)pcsIdentityCreateWithInfo:(NSDictionary *)arg1 error:(id*)arg2;
+- (BOOL)pcsIdentityMigrateCloseDoorWithInfo:(NSDictionary *)arg1 error:(id*)arg2;
+- (BOOL)pcsIdentityMigrateDropStingrayWithInfo:(NSDictionary *)arg1 error:(id*)arg2;
+- (BOOL)pcsIdentityMigrateRestoreHSMWithInfo:(NSDictionary *)arg1 error:(id*)arg2;
 - (BOOL)pcsIdentityMigrateToStingrayWithInfo:(NSDictionary *)arg1 error:(id*)arg2;
-- (BOOL)pcsIdentityMigrateToiCDPWithInfo:(NSDictionary *)arg1 erorr:(id*)arg2;
+- (BOOL)pcsIdentityMigrateToiCDPWithInfo:(NSDictionary *)arg1 error:(id*)arg2;
+- (BOOL)pcsIdentityPlesioLocalWithInfo:(NSDictionary *)arg1 error:(id*)arg2;
+- (BOOL)pcsIdentityPlesioNetworkedWithInfo:(NSDictionary *)arg1 error:(id*)arg2;
+- (BOOL)pcsIdentitySetIsInICDPLocal:(struct _PCSIdentitySetData { }*)arg1 error:(id*)arg2;
 - (BOOL)pcsIdentitySetIsInICDPNetwork:(struct _PCSIdentitySetData { }*)arg1 error:(id*)arg2;
 - (struct _PCSIdentitySetData { }*)pcsIdentitySetupWithInfo:(NSDictionary *)arg1 error:(id*)arg2;
 

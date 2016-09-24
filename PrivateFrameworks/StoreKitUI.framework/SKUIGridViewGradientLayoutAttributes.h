@@ -3,7 +3,7 @@
  */
 
 @interface SKUIGridViewGradientLayoutAttributes : UICollectionViewLayoutAttributes <NSCopying> {
-    IKColor *_gradientColor;
+    IKColor * _gradientColor;
 }
 
 @property (nonatomic, retain) IKColor *gradientColor;

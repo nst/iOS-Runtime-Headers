@@ -3,8 +3,8 @@
  */
 
 @interface CLNotifierClientAdapter : NSObject <CLNotifierServiceClientProtocol> {
-    struct CLNotifierClientBase { int (**x1)(); } *_client;
-    BOOL _valid;
+    struct CLNotifierClientBase { int (**x1)(); } * _client;
+    BOOL  _valid;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,13 +3,13 @@
  */
 
 @interface MSCLAudioPickerMediaLibraryViewController : SKUIViewController <MSCLAudioPickerSourceViewController, MSCLAudioPlayerManagerDataSource, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate> {
-    MSCLAudioPlayerManager *_audioPlayerManager;
-    UIImage *_placeholderImage;
-    MPMediaQuery *_query;
-    UISearchController *_searchController;
-    MPMediaPredicate *_searchPredicate;
-    id /* block */ _selectionBlock;
-    UITableView *_tableView;
+    MSCLAudioPlayerManager * _audioPlayerManager;
+    UIImage * _placeholderImage;
+    MPMediaQuery * _query;
+    UISearchController * _searchController;
+    MPMediaPredicate * _searchPredicate;
+    id /* block */  _selectionBlock;
+    UITableView * _tableView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

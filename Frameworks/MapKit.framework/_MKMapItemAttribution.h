@@ -3,7 +3,7 @@
  */
 
 @interface _MKMapItemAttribution : NSObject {
-    GEOMapItemAttribution *_geoAttribution;
+    GEOMapItemAttribution * _geoAttribution;
 }
 
 @property (nonatomic, readonly) NSArray *attributionApps;
@@ -17,6 +17,7 @@
 - (id)attributionURLs;
 - (id)initWithGEOMapItemAttribution:(id)arg1;
 - (id)providerID;
+- (id)providerImageAtPath:(id)arg1 scale:(float)arg2 isTemplate:(BOOL)arg3;
 - (id)providerLogoImageForScale:(float)arg1;
 - (id)providerName;
 - (id)providerSnippetLogoImageForScale:(float)arg1;

@@ -3,7 +3,7 @@
  */
 
 @interface PSUIFindMyiPhoneController : NSObject {
-    NSObject<OS_dispatch_semaphore> *_stateChangeSem;
+    NSObject<OS_dispatch_semaphore> * _stateChangeSem;
 }
 
 + (id)shared;

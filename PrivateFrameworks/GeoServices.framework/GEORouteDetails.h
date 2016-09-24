@@ -10,13 +10,13 @@
         unsigned int isNearCurrentlyDisplayedStep : 1; 
         unsigned int isNearRoute : 1; 
         unsigned int isUserTrackingOn : 1; 
-    } _has;
-    BOOL _isNearCurrentlyDisplayedStep;
-    BOOL _isNearRoute;
-    BOOL _isUserTrackingOn;
-    int _resultIndex;
-    unsigned int _stepID;
-    double _timeSinceRouteResponse;
+    }  _has;
+    BOOL  _isNearCurrentlyDisplayedStep;
+    BOOL  _isNearRoute;
+    BOOL  _isUserTrackingOn;
+    int  _resultIndex;
+    unsigned int  _stepID;
+    double  _timeSinceRouteResponse;
 }
 
 @property (nonatomic) BOOL hasIsNearCurrentlyDisplayedStep;

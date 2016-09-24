@@ -3,7 +3,7 @@
  */
 
 @interface DMFFetchControlGroupIdentifiersResultObject : CATTaskResultObject {
-    NSArray *_groupIdentifiers;
+    NSArray * _groupIdentifiers;
 }
 
 @property (nonatomic, copy) NSArray *groupIdentifiers;
@@ -11,7 +11,6 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)groupIdentifiers;
 - (id)initWithCoder:(id)arg1;

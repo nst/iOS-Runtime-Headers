@@ -3,11 +3,11 @@
  */
 
 @interface PUOneUpPhotosSharingTransition : PUModalTransition <PUOneUpAssetTransition> {
-    UICollectionViewLayout *__transitionLayout;
-    <PUOneUpPhotosSharingTransitionDelegate> *_delegate;
-    PUOneUpPhotosSharingTransitionContext *_oneUpPhotosSharingTransitionContext;
-    UIViewController<PUOneUpAssetTransitionViewController> *_presentingViewController;
-    UIViewController<PUOneUpPhotosSharingTransitionViewController><PUOneUpAssetTransitionViewController> *_sharingTransitionViewController;
+    UICollectionViewLayout * __transitionLayout;
+    <PUOneUpPhotosSharingTransitionDelegate> * _delegate;
+    PUOneUpPhotosSharingTransitionContext * _oneUpPhotosSharingTransitionContext;
+    UIViewController<PUOneUpAssetTransitionViewController> * _presentingViewController;
+    UIViewController<PUOneUpPhotosSharingTransitionViewController><PUOneUpAssetTransitionViewController> * _sharingTransitionViewController;
 }
 
 @property (setter=_setTransitionLayout:, nonatomic, retain) UICollectionViewLayout *_transitionLayout;

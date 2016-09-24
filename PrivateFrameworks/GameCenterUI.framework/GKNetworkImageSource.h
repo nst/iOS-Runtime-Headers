@@ -3,7 +3,7 @@
  */
 
 @interface GKNetworkImageSource : GKImageSource {
-    NSMutableDictionary *_loadingGroups;
+    NSMutableDictionary * _loadingGroups;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *loadingGroups;

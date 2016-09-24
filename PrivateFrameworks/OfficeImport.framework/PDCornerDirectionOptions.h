@@ -3,7 +3,7 @@
  */
 
 @interface PDCornerDirectionOptions : PDTransitionOptions {
-    int mDirection;
+    int  mDirection;
 }
 
 - (int)direction;

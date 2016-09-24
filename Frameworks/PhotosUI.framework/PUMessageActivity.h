@@ -3,7 +3,7 @@
  */
 
 @interface PUMessageActivity : UIMessageActivity <PUActivity> {
-    PUActivityItemSourceController *_itemSourceController;
+    PUActivityItemSourceController * _itemSourceController;
 }
 
 @property (readonly, copy) NSString *debugDescription;

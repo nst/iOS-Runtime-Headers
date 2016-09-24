@@ -3,7 +3,7 @@
  */
 
 @interface ABCustomContentCell : UITableViewCell {
-    UIView *_customContentView;
+    UIView * _customContentView;
 }
 
 @property (nonatomic, retain) UIView *customContentView;

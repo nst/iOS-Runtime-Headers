@@ -5,9 +5,9 @@
 @interface CKDPPackageManifestHeader : PBCodable <NSCopying> {
     struct { 
         unsigned int version : 1; 
-    } _has;
-    NSData *_signature;
-    int _version;
+    }  _has;
+    NSData * _signature;
+    int  _version;
 }
 
 @property (nonatomic, readonly) BOOL hasSignature;

@@ -3,22 +3,33 @@
  */
 
 @interface CAMPersistenceController : NSObject <CAMCaptureService> {
-    CAMBurstController *__burstController;
-    NSDateFormatter *__exifDateTimeFormatter;
-    NSDateFormatter *__exifSubsecTimeFormatter;
-    CAMIrisVideoController *__irisVideoController;
-    NSObject<OS_dispatch_queue> *__localPersistenceQueue;
-    CAMThumbnailGenerator *__localPersistenceThumbnailGenerator;
-    CAMLocationController *__locationController;
-    CAMPowerController *__powerController;
-    CAMProtectionController *__protectionController;
-    NSObject<OS_dispatch_queue> *__remotePersistenceQueue;
-    CAMThumbnailGenerator *__remotePersistenceThumbnailGenerator;
-    NSMutableArray *_pendingLocalPersistenceWrappers;
-    NSMutableArray *_pendingRemotePersistenceWrappers;
+    CAMBurstController * __burstController;
+    NSObject<OS_dispatch_queue> * __coordinationQueue;
+    NSMapTable * __coordinationQueueGroupsByIdentifier;
+    NSMapTable * __coordinationQueue_dispatchGroupByImageGroupIdentifier;
+    NSDateFormatter * __exifDateTimeFormatter;
+    NSDateFormatter * __exifSubsecTimeFormatter;
+    CAMIrisVideoController * __irisVideoController;
+    NSObject<OS_dispatch_queue> * __localPersistenceQueue;
+    CAMThumbnailGenerator * __localPersistenceThumbnailGenerator;
+    CAMLocationController * __locationController;
+    CAMPowerController * __powerController;
+    CAMProtectionController * __protectionController;
+    NSObject<OS_dispatch_queue> * __remotePersistenceQueue;
+    CAMThumbnailGenerator * __remotePersistenceThumbnailGenerator;
+    NSObject<OS_dispatch_queue> * __resultDelegateIsolationQueue;
+    NSMutableArray * _pendingLocalPersistenceWrappers;
+    NSMutableArray * _pendingRemotePersistenceWrappers;
+    <CAMPersistenceResultDelegate> * _resultDelegate;
+    struct { 
+        BOOL respondsToDidCompleteAllLocalPersistenceForRequest; 
+    }  _resultDelegateFlags;
 }
 
 @property (nonatomic, readonly) CAMBurstController *_burstController;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *_coordinationQueue;
+@property (nonatomic, readonly) NSMapTable *_coordinationQueueGroupsByIdentifier;
+@property (nonatomic, readonly) NSMapTable *_coordinationQueue_dispatchGroupByImageGroupIdentifier;
 @property (nonatomic, readonly) NSDateFormatter *_exifDateTimeFormatter;
 @property (nonatomic, readonly) NSDateFormatter *_exifSubsecTimeFormatter;
 @property (nonatomic, readonly) CAMIrisVideoController *_irisVideoController;
@@ -31,26 +42,37 @@
 @property (nonatomic, readonly) CAMProtectionController *_protectionController;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *_remotePersistenceQueue;
 @property (nonatomic, readonly) CAMThumbnailGenerator *_remotePersistenceThumbnailGenerator;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *_resultDelegateIsolationQueue;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic) <CAMPersistenceResultDelegate> *resultDelegate;
+@property (nonatomic, readonly) BOOL resultDelegateRespondsToDidCompleteAllLocalPersistenceForRequest;
 @property (readonly) Class superclass;
 
 + (id)_pathForIncomingDirectory;
 + (id)clientVideoMetadataForLocation:(id)arg1 withCreationDate:(id)arg2;
-+ (id)clientVideoMetadataForRequest:(id)arg1 withCreationDate:(id)arg2 isHDREV0:(BOOL)arg3;
++ (id)clientVideoMetadataForRequest:(id)arg1 withCreationDate:(id)arg2 isOriginal:(BOOL)arg3;
 + (id)delimiterForIncomingAssetFilenames;
 + (id)uniqueIncomingPathForAssetWithUUID:(id)arg1 captureTime:(double)arg2 extension:(id)arg3;
++ (id)uniquePathForAssetWithUUID:(id)arg1 captureTime:(double)arg2 extension:(id)arg3 usingIncomingDirectory:(BOOL)arg4;
 + (id)videoMetadataDateFormatter;
 
 - (void).cxx_destruct;
 - (void)_addStillImageClientMetadataToMetadata:(id)arg1 fromResult:(id)arg2 request:(id)arg3 withCreationDate:(id)arg4;
 - (id)_burstController;
+- (id)_coordinationGroupForIdentifier:(id)arg1;
+- (id)_coordinationQueue;
+- (id)_coordinationQueueGroupsByIdentifier;
+- (id)_coordinationQueue_dispatchGroupByImageGroupIdentifier;
+- (id)_dispatchGroupForImageGroupIdentifier:(id)arg1;
+- (id)_ensureCoordinationGroupForIdentifier:(id)arg1;
+- (id)_ensureDispatchGroupForImageGroupIdentifier:(id)arg1;
 - (id)_exifDateTimeFormatter;
 - (id)_exifSubsecTimeFormatter;
 - (id)_extensionForUniformTypeIdentifier:(id)arg1;
-- (void)_handleCompletedStillImageJobForRequest:(id)arg1 withReply:(id)arg2 fromBatchOfSize:(unsigned int)arg3 error:(id)arg4;
-- (void)_handleCompletedVideoJobForRequest:(id)arg1 withReply:(id)arg2 error:(id)arg3;
+- (void)_handleCompletedStillImageJobForRequest:(id)arg1 withReply:(id)arg2 fromBatchOfSize:(unsigned int)arg3 completionHandler:(id /* block */)arg4 error:(id)arg5;
+- (void)_handleCompletedVideoJobForRequest:(id)arg1 withReply:(id)arg2 completionHandler:(id /* block */)arg3 error:(id)arg4;
 - (void)_handleStillImagePersistenceForRequest:(id)arg1 withResult:(id)arg2;
 - (void)_handleVideoPersistenceForRequest:(id)arg1 withResult:(id)arg2;
 - (id)_irisVideoController;
@@ -59,8 +81,8 @@
 - (id)_jobDictionaryForVideoLocalResult:(id)arg1 fromRequest:(id)arg2;
 - (id)_localPersistenceQueue;
 - (id)_localPersistenceThumbnailGenerator;
-- (void)_locallyPersistStillImageResult:(id)arg1 forRequest:(id)arg2;
-- (void)_locallyPersistVideoCaptureResult:(id)arg1 forRequest:(id)arg2;
+- (void)_locallyPersistStillImageResult:(id)arg1 forRequest:(id)arg2 withCompletionHandler:(id /* block */)arg3;
+- (void)_locallyPersistVideoCaptureResult:(id)arg1 forRequest:(id)arg2 withCompletionHandler:(id /* block */)arg3;
 - (id)_locationController;
 - (void)_notifyDelegateOfCompletedStillImageLocalPersistenceForRequest:(id)arg1 withResult:(id)arg2;
 - (void)_notifyDelegateOfCompletedStillImageRemotePersistenceForRequest:(id)arg1 withReply:(id)arg2 fromBatchOfSize:(unsigned int)arg3 error:(id)arg4;
@@ -74,9 +96,11 @@
 - (id)_protectionController;
 - (id)_remotePersistenceQueue;
 - (id)_remotePersistenceThumbnailGenerator;
-- (void)_remotelyPersistStillImageJob:(id)arg1 forRequest:(id)arg2;
-- (void)_remotelyPersistVideoJob:(id)arg1 forRequest:(id)arg2;
-- (BOOL)_shouldProtectPersistenceForStillImageRequest:(id)arg1;
+- (void)_remotelyPersistStillImageJob:(id)arg1 forRequest:(id)arg2 withCompletionHandler:(id /* block */)arg3;
+- (void)_remotelyPersistVideoJob:(id)arg1 forRequest:(id)arg2 withCompletionHandler:(id /* block */)arg3;
+- (void)_removeCoordinationGroupForIdentifier:(id)arg1;
+- (void)_removeDispatchGroupForImageGroupIdentifier:(id)arg1;
+- (id)_resultDelegateIsolationQueue;
 - (id)_stillImagePersistenceUUIDForRequest:(id)arg1 withResult:(id)arg2;
 - (id)_stillPersistenceUUIDForRequest:(id)arg1 withVideoResult:(id)arg2;
 - (id)_uniformTypeIdentifierForStillImageRequest:(id)arg1;
@@ -90,8 +114,12 @@
 - (void)performDeferredRemotePersistenceWithCompletionHandler:(id /* block */)arg1;
 - (void)persistBurstWithIdentifier:(id)arg1 result:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)persistPlaceholderTimelapseVideoWithResult:(id)arg1 completionHandler:(id /* block */)arg2;
+- (id)resultDelegate;
+- (BOOL)resultDelegateRespondsToDidCompleteAllLocalPersistenceForRequest;
+- (void)setResultDelegate:(id)arg1;
 - (void)stillImageRequest:(id)arg1 didCompleteStillImageCaptureWithResult:(id)arg2;
 - (void)stillImageRequest:(id)arg1 didCompleteVideoCaptureWithResult:(id)arg2;
+- (void)stillImageRequestDidCompleteCapture:(id)arg1 error:(id)arg2;
 - (void)videoRequest:(id)arg1 didCompleteCaptureWithResult:(id)arg2;
 
 @end

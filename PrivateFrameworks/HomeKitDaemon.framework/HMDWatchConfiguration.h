@@ -3,10 +3,10 @@
  */
 
 @interface HMDWatchConfiguration : NSObject {
-    NSDictionary *_homeConfig;
-    NSDictionary *_metadataConfig;
-    NSUUID *_primaryHome;
-    NSString *_uniqueId;
+    NSDictionary * _homeConfig;
+    NSDictionary * _metadataConfig;
+    NSUUID * _primaryHome;
+    NSString * _uniqueId;
 }
 
 @property (nonatomic, retain) NSDictionary *homeConfig;

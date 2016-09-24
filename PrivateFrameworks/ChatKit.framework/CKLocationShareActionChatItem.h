@@ -4,8 +4,8 @@
 
 @interface CKLocationShareActionChatItem : CKMultilineStampChatItem
 
-- (long long)actionType;
-- (long long)direction;
+- (int)actionType;
+- (int)direction;
 - (id)handle;
 - (id)loadTranscriptText;
 - (id)sender;

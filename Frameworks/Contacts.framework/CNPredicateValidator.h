@@ -3,11 +3,11 @@
  */
 
 @interface CNPredicateValidator : NSObject <NSPredicateVisitor> {
-    NSSet *_allowedKeysSet;
-    NSError *_error;
-    NSPredicate *_predicate;
-    NSMutableSet *_usedKeysSet;
-    BOOL _validated;
+    NSSet * _allowedKeysSet;
+    NSError * _error;
+    NSPredicate * _predicate;
+    NSMutableSet * _usedKeysSet;
+    BOOL  _validated;
 }
 
 @property (nonatomic, retain) NSArray *allowedKeys;

@@ -3,12 +3,12 @@
  */
 
 @interface ICImageLRUCache : NSObject {
-    ICLRUCache *_bigImageCache;
-    unsigned int _bigImageCacheCount;
-    unsigned int _imagePixelThreshold;
-    ICLRUCache *_smallImageCache;
-    unsigned int _smallImageCacheCount;
-    NSMapTable *_weakImageMap;
+    ICLRUCache * _bigImageCache;
+    unsigned int  _bigImageCacheCount;
+    unsigned int  _imagePixelThreshold;
+    ICLRUCache * _smallImageCache;
+    unsigned int  _smallImageCacheCount;
+    NSMapTable * _weakImageMap;
 }
 
 @property (readonly) ICLRUCache *bigImageCache;

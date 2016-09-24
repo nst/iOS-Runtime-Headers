@@ -3,11 +3,11 @@
  */
 
 @interface CKMapViewController : UIViewController <MKMapViewDelegate> {
-    <MKAnnotation> *_annotation;
-    MKLocalSearch *_localSearch;
-    MKMapItem *_mapItem;
-    MKMapView *_mapView;
-    _MKPlaceViewController *_mapViewController;
+    <MKAnnotation> * _annotation;
+    MKLocalSearch * _localSearch;
+    MKMapItem * _mapItem;
+    MKMapView * _mapView;
+    _MKPlaceViewController * _mapViewController;
 }
 
 @property (nonatomic, retain) <MKAnnotation> *annotation;
@@ -20,6 +20,7 @@
 @property (nonatomic, retain) _MKPlaceViewController *mapViewController;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)_toolbarItemPressed:(id)arg1;
 - (id)annotation;
 - (void)dealloc;

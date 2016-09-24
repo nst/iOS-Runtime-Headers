@@ -3,9 +3,9 @@
  */
 
 @interface NETunnelNetworkSettings : NSObject <NEConfigurationValidating, NEPrettyDescription, NSCopying, NSSecureCoding> {
-    NEDNSSettings *_DNSSettings;
-    NEProxySettings *_proxySettings;
-    NSString *_tunnelRemoteAddress;
+    NEDNSSettings * _DNSSettings;
+    NEProxySettings * _proxySettings;
+    NSString * _tunnelRemoteAddress;
 }
 
 @property (copy) NEDNSSettings *DNSSettings;

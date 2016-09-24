@@ -3,28 +3,35 @@
  */
 
 @interface PUActivityProgressController : NSObject {
-    UIAlertController *_alertController;
-    id /* block */ _cancellationHandler;
-    UIView *_containerView;
-    BOOL _didHide;
-    BOOL _didShow;
-    UIView *_dimmingView;
-    UIView *_progressContainerView;
-    PUActivityProgressViewController *_progressViewController;
-    NSString *_title;
-    double _whenDidShow;
+    UIAlertController * _alertController;
+    id /* block */  _cancellationHandler;
+    UIView * _containerView;
+    BOOL  _didHide;
+    BOOL  _didShow;
+    UIView * _dimmingView;
+    NSProgress * _progress;
+    UIView * _progressContainerView;
+    PUActivityProgressViewController * _progressViewController;
+    NSString * _title;
+    double  _whenDidShow;
 }
 
 @property (nonatomic, copy) id /* block */ cancellationHandler;
+@property (nonatomic, retain) NSProgress *progress;
 @property (nonatomic, copy) NSString *title;
 
 - (void).cxx_destruct;
 - (id)_newProgressContainerView;
+- (void)_updateFractionCompletedFromProgress;
 - (id /* block */)cancellationHandler;
+- (void)dealloc;
 - (void)hideAnimated:(BOOL)arg1 allowDelay:(BOOL)arg2;
 - (id)init;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (id)progress;
 - (void)setCancellationHandler:(id /* block */)arg1;
-- (void)setProgress:(double)arg1;
+- (void)setFractionCompleted:(double)arg1;
+- (void)setProgress:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)showAnimated:(BOOL)arg1 allowDelay:(BOOL)arg2;
 - (id)title;

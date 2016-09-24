@@ -3,7 +3,7 @@
  */
 
 @interface SSLookupItemArtwork : NSObject {
-    NSDictionary *_dictionary;
+    NSDictionary * _dictionary;
 }
 
 @property (nonatomic, readonly) NSURL *URL;
@@ -27,5 +27,6 @@
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
 - (id)MP_colorForColorKind:(id)arg1;
+- (id)initWithRawMediaLookupDictionary:(id)arg1;
 
 @end

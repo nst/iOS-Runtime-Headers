@@ -3,8 +3,8 @@
  */
 
 @interface TPFootnoteLayoutController : NSObject {
-    BOOL _bumpedDocumentEndnotesForPageBreak;
-    TPDocumentRoot *_documentRoot;
+    BOOL  _bumpedDocumentEndnotesForPageBreak;
+    TPDocumentRoot * _documentRoot;
 }
 
 @property (nonatomic, readonly) <TSWPFootnoteMarkProvider> *footnoteMarkProvider;
@@ -18,5 +18,6 @@
 - (id)p_footnoteReferenceStoragesInFootnoteIndexRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (unsigned int)p_layoutFootnotesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 intoFootnoteContainer:(id)arg2 maxHeight:(float)arg3 measure:(BOOL)arg4 inflating:(BOOL)arg5;
 - (id)p_layoutForFootnoteReferenceStorage:(id)arg1;
+- (void)removeDeletedFootnoteInContainer:(id)arg1;
 
 @end

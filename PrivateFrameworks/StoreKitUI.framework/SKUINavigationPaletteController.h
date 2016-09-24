@@ -3,10 +3,10 @@
  */
 
 @interface SKUINavigationPaletteController : SKUINavigationBarSectionController {
-    SKUINavigationBarContext *_navigationBarContext;
-    SKUINavigationPaletteView *_paletteView;
-    SKUIPaletteViewElement *_viewElement;
-    SKUIViewElementLayoutContext *_viewLayoutContext;
+    SKUINavigationBarContext * _navigationBarContext;
+    SKUINavigationPaletteView * _paletteView;
+    SKUIPaletteViewElement * _viewElement;
+    SKUIViewElementLayoutContext * _viewLayoutContext;
 }
 
 - (void).cxx_destruct;

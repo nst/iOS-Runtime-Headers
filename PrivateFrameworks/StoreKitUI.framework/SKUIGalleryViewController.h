@@ -3,14 +3,14 @@
  */
 
 @interface SKUIGalleryViewController : UIViewController <SKUIArtworkRequestDelegate, UIPageViewControllerDataSource, UIPageViewControllerDelegate, UIScrollViewDelegate> {
-    SKUIResourceLoader *_artworkLoader;
-    NSMapTable *_componentArtworkRequests;
-    NSObject<OS_dispatch_source> *_cycleTimer;
-    <SKUIEmbeddedMediaViewDelegate> *_embeddedMediaDelegate;
-    SKUIGalleryPageComponent *_galleryComponent;
-    UIPageControl *_pageIndicator;
-    UIPageViewController *_pageViewController;
-    UITapGestureRecognizer *_tapGestureRecognizer;
+    SKUIResourceLoader * _artworkLoader;
+    NSMapTable * _componentArtworkRequests;
+    NSObject<OS_dispatch_source> * _cycleTimer;
+    <SKUIEmbeddedMediaViewDelegate> * _embeddedMediaDelegate;
+    SKUIGalleryPageComponent * _galleryComponent;
+    UIPageControl * _pageIndicator;
+    UIPageViewController * _pageViewController;
+    UITapGestureRecognizer * _tapGestureRecognizer;
 }
 
 @property (readonly, copy) NSString *debugDescription;

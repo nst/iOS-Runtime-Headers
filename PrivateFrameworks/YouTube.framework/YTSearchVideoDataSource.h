@@ -3,7 +3,7 @@
  */
 
 @interface YTSearchVideoDataSource : YTVideoDataSource {
-    NSString *_searchString;
+    NSString * _searchString;
 }
 
 - (id)init;

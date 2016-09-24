@@ -3,14 +3,14 @@
  */
 
 @interface RKPersistentPersonalizer : NSObject {
-    <RKDisplayStringsProvider> *_displayStringsProvider;
-    NSURL *_dynamicDataURL;
-    NSString *_languageID;
-    NSLocale *_languageLocale;
-    NSDate *_lastDynamicDataCreationCheckDate;
-    NSDate *_lastObservedDynamicDataCreationDate;
-    void *_model;
-    NSMutableDictionary *_synonyms;
+    <RKDisplayStringsProvider> * _displayStringsProvider;
+    NSURL * _dynamicDataURL;
+    NSString * _languageID;
+    NSLocale * _languageLocale;
+    NSDate * _lastDynamicDataCreationCheckDate;
+    NSDate * _lastObservedDynamicDataCreationDate;
+    void * _model;
+    NSMutableDictionary * _synonyms;
 }
 
 @property (readonly) <RKDisplayStringsProvider> *displayStringsProvider;

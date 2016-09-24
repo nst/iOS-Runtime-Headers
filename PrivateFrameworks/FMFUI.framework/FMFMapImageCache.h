@@ -3,7 +3,7 @@
  */
 
 @interface FMFMapImageCache : NSObject {
-    NSCache *__cache;
+    NSCache * __cache;
 }
 
 @property (nonatomic, retain) NSCache *_cache;

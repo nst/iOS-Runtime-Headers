@@ -3,20 +3,27 @@
  */
 
 @interface SGContact : NSObject <NSCopying, NSSecureCoding> {
-    NSArray *_emailAddresses;
-    SGName *_name;
-    NSArray *_phones;
-    NSArray *_postalAddresses;
-    SGRecordId *_recordId;
+    NSArray * _emailAddresses;
+    NSArray * _instantMessageAddresses;
+    SGName * _name;
+    NSArray * _phones;
+    NSArray * _postalAddresses;
+    SGRecordId * _recordId;
+    unsigned int  _significance;
+    NSArray * _socialProfiles;
 }
 
-@property (nonatomic, readonly) NSArray *emailAddresses;
-@property (nonatomic, readonly) SGName *name;
-@property (nonatomic, readonly) NSArray *phones;
-@property (nonatomic, readonly) NSArray *postalAddresses;
+@property (nonatomic, copy) NSArray *emailAddresses;
+@property (nonatomic, copy) NSArray *instantMessageAddresses;
+@property (nonatomic, copy) SGName *name;
+@property (nonatomic, copy) NSArray *phones;
+@property (nonatomic, copy) NSArray *postalAddresses;
 @property (nonatomic, readonly) SGRecordId *recordId;
+@property (nonatomic) unsigned int significance;
+@property (nonatomic, copy) NSArray *socialProfiles;
 
 + (id)contactWithId:(id)arg1 name:(id)arg2 emailAddresses:(id)arg3 phones:(id)arg4 postalAddresses:(id)arg5;
++ (id)contactWithId:(id)arg1 name:(id)arg2 emailAddresses:(id)arg3 phones:(id)arg4 postalAddresses:(id)arg5 instantMessageAddresses:(id)arg6 socialProfiles:(id)arg7;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
@@ -31,7 +38,8 @@
 - (BOOL)hasNonTrivialInfo;
 - (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithId:(id)arg1 name:(id)arg2 emailAddresses:(id)arg3 phones:(id)arg4 postalAddresses:(id)arg5;
+- (id)initWithId:(id)arg1 name:(id)arg2 emailAddresses:(id)arg3 phones:(id)arg4 postalAddresses:(id)arg5 instantMessageAddresses:(id)arg6 socialProfiles:(id)arg7;
+- (id)instantMessageAddresses;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToContact:(id)arg1;
 - (id)name;
@@ -40,8 +48,13 @@
 - (id)recordId;
 - (unsigned int)richness;
 - (void)setEmailAddresses:(id)arg1;
+- (void)setInstantMessageAddresses:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setPhones:(id)arg1;
 - (void)setPostalAddresses:(id)arg1;
+- (void)setSignificance:(unsigned int)arg1;
+- (void)setSocialProfiles:(id)arg1;
+- (unsigned int)significance;
+- (id)socialProfiles;
 
 @end

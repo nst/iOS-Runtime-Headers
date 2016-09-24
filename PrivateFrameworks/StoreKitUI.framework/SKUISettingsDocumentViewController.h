@@ -3,17 +3,17 @@
  */
 
 @interface SKUISettingsDocumentViewController : SKUIViewController <SKUIArtworkRequestDelegate, SKUIDocumentViewController, SKUISettingsDocumentViewDelegate, SKUISettingsEditTransactionDelegate, SKUISettingsGroupsDescriptionDelegate, UITableViewDataSource, UITableViewDelegate> {
-    UIBarButtonItem *_barButtonItemCancel;
-    UIBarButtonItem *_barButtonItemDone;
-    UIBarButtonItem *_barButtonItemEdit;
-    SKUISettingsEditTransaction *_editTransaction;
-    SKUIViewElementLayoutContext *_layoutContext;
-    SKUIResourceLoader *_resourceLoader;
-    SKUISettingsContext *_settingsContext;
-    SKUISettingsGroupsDescription *_settingsGroupsDescription;
-    UITableView *_tableView;
-    SKUISettingsTemplateViewElement *_templateElement;
-    SKUIViewElementTextLayoutCache *_textLayoutCache;
+    UIBarButtonItem * _barButtonItemCancel;
+    UIBarButtonItem * _barButtonItemDone;
+    UIBarButtonItem * _barButtonItemEdit;
+    SKUISettingsEditTransaction * _editTransaction;
+    SKUIViewElementLayoutContext * _layoutContext;
+    SKUIResourceLoader * _resourceLoader;
+    SKUISettingsContext * _settingsContext;
+    SKUISettingsGroupsDescription * _settingsGroupsDescription;
+    UITableView * _tableView;
+    SKUISettingsTemplateViewElement * _templateElement;
+    SKUIViewElementTextLayoutCache * _textLayoutCache;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -73,6 +73,7 @@
 - (id)tableView:(id)arg1 viewForFooterInSection:(int)arg2;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
 - (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillLayoutSubviews;
 

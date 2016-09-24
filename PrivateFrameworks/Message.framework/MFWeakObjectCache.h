@@ -3,15 +3,17 @@
  */
 
 @interface MFWeakObjectCache : NSObject {
-    id /* block */ _block;
-    NSMutableDictionary *_dictionary;
-    NSLock *_lock;
+    id /* block */  _block;
+    NSMutableDictionary * _dictionary;
+    NSLock * _lock;
 }
 
 - (void)dealloc;
 - (id)initWithBlock:(id /* block */)arg1;
 - (id)objectForKey:(id)arg1;
+- (id)objectForKey:(id)arg1 shouldGenerate:(BOOL)arg2 wasCached:(BOOL*)arg3;
 - (id)objectForKey:(id)arg1 wasCached:(BOOL*)arg2;
 - (void)removeObjectForKey:(id)arg1;
+- (id)weakObjectCacheRefForKey:(id)arg1;
 
 @end

@@ -3,7 +3,7 @@
  */
 
 @interface AVCompositionTrack : AVAssetTrack {
-    AVCompositionTrackInternal *_priv;
+    AVCompositionTrackInternal * _priv;
 }
 
 @property (nonatomic, readonly, copy) NSArray *segments;

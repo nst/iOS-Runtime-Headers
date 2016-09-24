@@ -3,37 +3,50 @@
  */
 
 @interface TSUNetworkReachability : NSObject {
-    int _enableCount;
-    BOOL _localWiFi;
-    BOOL _notifierActive;
-    struct __SCNetworkReachability { } *_reachabilityRef;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    int  _enableCount;
+    NSString * _hostName;
+    int  _lastKnownStatus;
+    NSObject<OS_dispatch_queue> * _notificationQueue;
+    BOOL  _notifierActive;
+    struct __SCNetworkReachability { } * _reachabilityRef;
 }
 
-@property (nonatomic, readonly) BOOL connectionRequired;
+@property (nonatomic, copy) NSString *hostName;
+@property (nonatomic) int lastKnownStatus;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *notificationQueue;
 @property (nonatomic) BOOL notifierActive;
-@property (nonatomic, readonly) int status;
 
++ (id)internetReachabilityStatusQueue;
++ (void)internetReachabilityStatusWithQueue:(id)arg1 completion:(id /* block */)arg2;
 + (id)networkReachabilityForDocumentResources;
 + (id)networkReachabilityForInternetConnection;
-+ (id)networkReachabilityForLocalWiFi;
-+ (int)networkReachabilityStatusForDocumentResources;
-+ (int)networkReachabilityStatusForInternetConnection;
-+ (int)networkReachabilityStatusForLocalWiFi;
 + (id)networkReachabilityWithAddress:(const struct sockaddr_in { unsigned char x1; unsigned char x2; unsigned short x3; struct in_addr { unsigned int x_4_1_1; } x4; BOOL x5[8]; }*)arg1;
 + (id)networkReachabilityWithHostName:(id)arg1;
++ (id)networkReachabilityWithNetworkReachabilityRef:(struct __SCNetworkReachability { }*)arg1 hostNameOrNil:(id)arg2;
++ (int)networkStatusForFlags:(unsigned int)arg1;
++ (struct __SCNetworkReachability { }*)newNetworkReachabilityRefForInternetConnection;
++ (struct __SCNetworkReachability { }*)newNetworkReachabilityRefWithAddress:(const struct sockaddr_in { unsigned char x1; unsigned char x2; unsigned short x3; struct in_addr { unsigned int x_4_1_1; } x4; BOOL x5[8]; }*)arg1;
++ (struct __SCNetworkReachability { }*)newNetworkReachabilityRefWithHostName:(const char *)arg1;
++ (BOOL)synchronousHostLookup:(id)arg1;
 
-- (BOOL)connectionRequired;
+- (void).cxx_destruct;
 - (void)dealloc;
 - (void)disableNotifier;
-- (BOOL)enableNotifier;
+- (void)enableNotifier;
+- (struct sockaddr_in { unsigned char x1; unsigned char x2; unsigned short x3; struct in_addr { unsigned int x_4_1_1; } x4; BOOL x5[8]; })hostAddress;
+- (id)hostName;
 - (id)init;
 - (id)initWithReachabilityRef:(struct __SCNetworkReachability { }*)arg1;
+- (int)lastKnownStatus;
 - (int)localWiFiStatusForFlags:(unsigned int)arg1;
-- (int)networkStatusForFlags:(unsigned int)arg1;
+- (id)notificationQueue;
 - (BOOL)notifierActive;
+- (void)setHostName:(id)arg1;
+- (void)setLastKnownStatus:(int)arg1;
 - (void)setNotifierActive:(BOOL)arg1;
-- (BOOL)startNotifier;
-- (int)status;
+- (void)startNotifier;
+- (int)statusFromFlags:(unsigned int)arg1;
 - (void)stopNotifier;
 
 @end

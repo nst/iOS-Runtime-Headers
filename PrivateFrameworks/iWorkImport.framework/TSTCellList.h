@@ -3,7 +3,7 @@
  */
 
 @interface TSTCellList : TSPObject <NSCopying> {
-    NSPointerArray *_cells;
+    NSPointerArray * _cells;
 }
 
 @property (nonatomic, retain) NSPointerArray *cells;
@@ -17,6 +17,7 @@
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1;
 - (id)lastCell;
+- (void)p_replaceCell:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)popLastCell;
 - (void)saveToArchiver:(id)arg1;
 - (void)setCells:(id)arg1;

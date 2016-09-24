@@ -5,6 +5,6 @@
 
 @required
 
-- (struct CGSize { float x1; float x2; })rowSizeForGridLayout;
+- (struct CGSize { double x1; double x2; })rowSizeForGridLayout;
 
 @end

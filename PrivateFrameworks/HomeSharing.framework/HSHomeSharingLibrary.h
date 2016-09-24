@@ -3,18 +3,18 @@
  */
 
 @interface HSHomeSharingLibrary : NSObject {
-    BOOL __hasPendingUpdateRequest;
-    BOOL _available;
-    NSURL *_baseURL;
-    HSConnection *_connection;
-    NSObject<OS_dispatch_queue> *_connectionAccessQueue;
-    int _connectionType;
-    NSString *_homeSharingGroupID;
-    NSString *_name;
-    BOOL _requiresPassword;
-    NSNetService *_service;
-    NSString *_uniqueIdentifier;
-    unsigned int _version;
+    BOOL  __hasPendingUpdateRequest;
+    BOOL  _available;
+    NSURL * _baseURL;
+    HSConnection * _connection;
+    NSObject<OS_dispatch_queue> * _connectionAccessQueue;
+    int  _connectionType;
+    NSString * _homeSharingGroupID;
+    NSString * _name;
+    BOOL  _requiresPassword;
+    NSNetService * _service;
+    NSString * _uniqueIdentifier;
+    unsigned int  _version;
 }
 
 @property (nonatomic) BOOL _hasPendingUpdateRequest;

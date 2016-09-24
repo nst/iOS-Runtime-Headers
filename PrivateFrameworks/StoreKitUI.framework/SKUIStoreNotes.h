@@ -3,7 +3,7 @@
  */
 
 @interface SKUIStoreNotes : NSObject {
-    NSString *_standardNotes;
+    NSString * _standardNotes;
 }
 
 @property (nonatomic, retain) NSString *standardNotes;

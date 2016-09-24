@@ -3,8 +3,8 @@
  */
 
 @interface GKExtensionHostContext : NSExtensionContext <GKRemoteViewControllerDelegate, GKServiceViewControllerDelegate> {
-    GKGame *_game;
-    GKUIRemoteViewController *_remoteViewControllerWeak;
+    GKGame * _game;
+    GKUIRemoteViewController * _remoteViewControllerWeak;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -15,7 +15,6 @@
 @property (readonly) Class superclass;
 
 - (void)dealloc;
-- (BOOL)extensionHasGameCenterEntitlement;
 - (id)extensionObjectProxy;
 - (id)game;
 - (void)hostApp:(id)arg1 grantingAccessExtensionSandbox:(id)arg2 replyWithEndpoint:(id /* block */)arg3;

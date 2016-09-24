@@ -3,7 +3,7 @@
  */
 
 @interface _CNAutocompleteFetchDelegateSafeWrapper : NSObject <CNAutocompleteFetchDelegate> {
-    <CNAutocompleteFetchDelegate> *_delegate;
+    <CNAutocompleteFetchDelegate> * _delegate;
 }
 
 @property (readonly, copy) NSString *debugDescription;

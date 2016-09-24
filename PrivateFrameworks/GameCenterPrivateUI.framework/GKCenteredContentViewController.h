@@ -3,8 +3,8 @@
  */
 
 @interface GKCenteredContentViewController : GKViewController <UIScrollViewDelegate> {
-    UIView *_containerView;
-    GKCenteringScrollView *_scrollView;
+    UIView * _containerView;
+    GKCenteringScrollView * _scrollView;
 }
 
 @property (nonatomic, retain) UIView *containerView;
@@ -21,6 +21,6 @@
 - (void)setContainerView:(id)arg1;
 - (void)setScrollView:(id)arg1;
 - (void)viewDidLayoutSubviews;
-- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

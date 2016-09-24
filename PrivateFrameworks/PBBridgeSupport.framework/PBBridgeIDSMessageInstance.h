@@ -3,11 +3,11 @@
  */
 
 @interface PBBridgeIDSMessageInstance : NSObject {
-    id /* block */ _retryAction;
-    int _retryCount;
-    double _retryInterval;
-    NSNumber *_sentAbsoluteTime;
-    unsigned short _typeID;
+    id /* block */  _retryAction;
+    int  _retryCount;
+    double  _retryInterval;
+    NSNumber * _sentAbsoluteTime;
+    unsigned short  _typeID;
 }
 
 @property (nonatomic, copy) id /* block */ retryAction;

@@ -3,7 +3,7 @@
  */
 
 @interface CAStateRemoveAnimation : CAStateElement {
-    NSString *_key;
+    NSString * _key;
 }
 
 @property (nonatomic, copy) NSString *key;

@@ -3,8 +3,8 @@
  */
 
 @interface _CDDateRange : NSObject <_CDDateRangeProtocol> {
-    NSDate *_endDate;
-    NSDate *_startDate;
+    NSDate * _endDate;
+    NSDate * _startDate;
 }
 
 @property (readonly) double duration;

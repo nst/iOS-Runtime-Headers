@@ -3,22 +3,20 @@
  */
 
 @interface VKPuckAnimator : NSObject {
-    VKTimedAnimation *_animation;
-    unsigned int _behavior;
-    VKRunningCurve *_curve;
-    <VKPuckAnimatorDelegate> *_delegate;
-    GEORouteMatch *_lastProjectedLocation;
-    struct VKPoint { 
-        double x; 
-        double y; 
-        double z; 
-    } _lastProjectedPosition;
-    VKPuckAnimatorLocationProjector *_locationProjector;
-    int _pausedCount;
-    BOOL _suspended;
-    <VKPuckAnimatorTarget> *_target;
-    double _tracePlaybackSpeedMultiplier;
-    double _vehicleHeading;
+    VKTimedAnimation * _animation;
+    unsigned int  _behavior;
+    VKRunningCurve * _curve;
+    <VKPuckAnimatorDelegate> * _delegate;
+    GEORouteMatch * _lastProjectedLocation;
+    struct Matrix<double, 3, 1> { 
+        double _e[3]; 
+    }  _lastProjectedPosition;
+    VKPuckAnimatorLocationProjector * _locationProjector;
+    int  _pausedCount;
+    BOOL  _suspended;
+    <VKPuckAnimatorTarget> * _target;
+    double  _tracePlaybackSpeedMultiplier;
+    double  _vehicleHeading;
 }
 
 @property (nonatomic) unsigned int behavior;

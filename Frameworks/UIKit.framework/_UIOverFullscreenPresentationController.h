@@ -4,7 +4,7 @@
 
 @interface _UIOverFullscreenPresentationController : _UIFullscreenPresentationController
 
-- (BOOL)_shouldChangeStatusBarViewController;
+- (BOOL)_shouldPresentedViewControllerControlStatusBarAppearance;
 - (int)presentationStyle;
 - (BOOL)shouldRemovePresentersView;
 

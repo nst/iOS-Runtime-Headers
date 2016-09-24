@@ -3,12 +3,12 @@
  */
 
 @interface _SYInputStreamer : NSObject <NSStreamDelegate> {
-    NSObject<OS_dispatch_queue> *_callbackQueue;
-    NSMutableArray *_items;
-    id /* block */ _onComplete;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSObject<OS_dispatch_source> *_source;
-    SYCompressedFileInputStream *_stream;
+    NSObject<OS_dispatch_queue> * _callbackQueue;
+    NSMutableArray * _items;
+    id /* block */  _onComplete;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSObject<OS_dispatch_source> * _source;
+    SYCompressedFileInputStream * _stream;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,7 +3,7 @@
  */
 
 @interface TNTheme : TSATheme {
-    NSArray *mTablePrototypes;
+    NSArray * mTablePrototypes;
 }
 
 @property (nonatomic, retain) NSArray *tablePrototypes;

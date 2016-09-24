@@ -3,11 +3,11 @@
  */
 
 @interface _ICQBannerSpecification : NSObject {
-    BOOL _hasDismissButtonDefault;
-    NSString *_messageFormat;
-    NSArray *_messageLinks;
-    NSDictionary *_serverDict;
-    NSString *_title;
+    BOOL  _hasDismissButtonDefault;
+    NSString * _messageFormat;
+    NSArray * _messageLinks;
+    NSDictionary * _serverDict;
+    NSString * _title;
 }
 
 @property (nonatomic) BOOL hasDismissButtonDefault;

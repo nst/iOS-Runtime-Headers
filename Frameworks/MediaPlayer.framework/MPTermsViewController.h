@@ -3,13 +3,13 @@
  */
 
 @interface MPTermsViewController : UIViewController {
-    UIActivityIndicatorView *_activityIndicatorView;
-    UIView *_bottomSpacerView;
-    <MPTermsViewControllerDelegate> *_delegate;
-    BOOL _needToLoadTerms;
-    SSTermsAndConditions *_termsAndConditions;
-    UITextView *_termsTextView;
-    UIView *_topSpacerView;
+    UIActivityIndicatorView * _activityIndicatorView;
+    UIView * _bottomSpacerView;
+    <MPTermsViewControllerDelegate> * _delegate;
+    BOOL  _needToLoadTerms;
+    SSTermsAndConditions * _termsAndConditions;
+    UITextView * _termsTextView;
+    UIView * _topSpacerView;
 }
 
 @property (nonatomic, retain) UIActivityIndicatorView *activityIndicatorView;

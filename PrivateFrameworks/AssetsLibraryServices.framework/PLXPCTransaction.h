@@ -3,7 +3,7 @@
  */
 
 @interface PLXPCTransaction : NSObject {
-    const char *_identifier;
+    const char * _identifier;
 }
 
 + (void)_startTrackingTransaction:(id)arg1;

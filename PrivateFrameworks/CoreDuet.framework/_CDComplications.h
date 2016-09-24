@@ -3,18 +3,16 @@
  */
 
 @interface _CDComplications : NSObject {
-    NSDictionary *_activeComplications;
-    NSObject<OS_dispatch_queue> *complicationQueue;
-    int dataChangeToken;
-    int deviceChangeToken;
-    NSMutableDictionary *localAttributes;
-    NSMutableDictionary *meterTokens;
-    NSMutableDictionary *remoteAttributes;
-    CDDevice *remoteDevice;
-    CDSession *session;
+    NSDictionary * _activeComplications;
+    CDAttribute * attribute;
+    NSObject<OS_dispatch_queue> * complicationQueue;
+    int  deviceChangeToken;
+    NSMutableDictionary * meterTokens;
+    NSUserDefaults * pushLimits;
+    CDSession * session;
 }
 
-@property (nonatomic, readonly, copy) NSDictionary *activeComplications;
+@property (nonatomic, copy) NSDictionary *activeComplications;
 
 + (id)initializeForAdmissionChecking:(BOOL)arg1;
 + (id)sharedComplication;
@@ -29,6 +27,9 @@
 - (void)meteringStoppedOnComplication:(id)arg1 costDictionary:(id)arg2 onDate:(id)arg3;
 - (void)meteringUpdateOnComplication:(id)arg1 costDictionary:(id)arg2 onDate:(id)arg3;
 - (void)readOutActiveComplications;
-- (void)updateRemoteDevice;
+- (int)remainingPushesOnComplication:(id)arg1 andReduceBy:(id)arg2;
+- (int)remainingPushesOnComplicationForiOSApplicationWithBundleID:(id)arg1;
+- (void)setActiveComplications:(id)arg1;
+- (BOOL)watchIsCharging;
 
 @end

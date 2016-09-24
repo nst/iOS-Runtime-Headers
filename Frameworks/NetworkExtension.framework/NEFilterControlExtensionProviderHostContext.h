@@ -3,7 +3,7 @@
  */
 
 @interface NEFilterControlExtensionProviderHostContext : NEFilterExtensionProviderHostContext <NEFilterControlExtensionProviderHostProtocol, NEFilterControlExtensionProviderProtocol> {
-    <NEFilterControlExtensionProviderHostDelegate> *_control_delegate;
+    <NEFilterControlExtensionProviderHostDelegate> * _control_delegate;
 }
 
 @property <NEFilterControlExtensionProviderHostDelegate> *control_delegate;

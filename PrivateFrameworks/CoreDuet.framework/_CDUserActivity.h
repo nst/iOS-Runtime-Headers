@@ -3,11 +3,11 @@
  */
 
 @interface _CDUserActivity : NSObject <NSSecureCoding> {
-    NSString *_bundleId;
-    NSDate *_date;
-    NSDictionary *_payload;
-    NSString *_title;
-    NSString *_type;
+    NSString * _bundleId;
+    NSDate * _date;
+    NSDictionary * _payload;
+    NSString * _title;
+    NSString * _type;
 }
 
 @property (copy) NSString *bundleId;

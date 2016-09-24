@@ -3,25 +3,24 @@
  */
 
 @interface AVPictureInPictureController : NSObject <AVPictureInPictureViewControllerDelegate, PGPictureInPictureProxyDelegate> {
-    BOOL _allowsPictureInPicturePlayback;
-    <AVPictureInPictureControllerDelegate> *_delegate;
+    BOOL  _allowsPictureInPicturePlayback;
+    <AVPictureInPictureControllerDelegate> * _delegate;
     struct { 
-        unsigned int pictureInPictureControllerWillStartPictureInPicture : 1; 
-        unsigned int pictureInPictureControllerDidStartPictureInPicture : 1; 
-        unsigned int pictureInPictureController_failedToStartPictureInPictureWithError : 1; 
-        unsigned int pictureInPictureControllerWillStopPictureInPicture : 1; 
-        unsigned int pictureInPictureControllerDidStopPictureInPicture : 1; 
-        unsigned int pictureInPictureController_restoreUserInterfaceForPictureInPictureStopWithCompletionHandler : 1; 
-    } _delegateRespondsTo;
-    NSObject<OS_dispatch_source> *_fullScreenCheckTimer;
-    unsigned int _isFullScreen;
-    unsigned int _isPlaying;
-    PGPictureInPictureProxy *_pictureInPictureProxy;
-    AVPictureInPictureViewController *_pictureInPictureViewController;
-    AVPlayerController *_playerController;
-    AVPlayerLayer *_playerLayer;
-    __AVPlayerLayerView *_playerLayerView;
-    AVPlayerControllerTimeResolver *_timeResolver;
+        BOOL pictureInPictureControllerWillStartPictureInPicture; 
+        BOOL pictureInPictureControllerDidStartPictureInPicture; 
+        BOOL pictureInPictureController_failedToStartPictureInPictureWithError; 
+        BOOL pictureInPictureControllerWillStopPictureInPicture; 
+        BOOL pictureInPictureControllerDidStopPictureInPicture; 
+        BOOL pictureInPictureController_restoreUserInterfaceForPictureInPictureStopWithCompletionHandler; 
+    }  _delegateRespondsTo;
+    NSObject<OS_dispatch_source> * _fullScreenCheckTimer;
+    BOOL  _isFullScreen;
+    BOOL  _isPlaying;
+    PGPictureInPictureProxy * _pictureInPictureProxy;
+    AVPictureInPictureViewController * _pictureInPictureViewController;
+    AVPlayerController * _playerController;
+    AVPlayerLayer * _playerLayer;
+    __AVPlayerLayerView * _playerLayerView;
 }
 
 @property (nonatomic) BOOL allowsPictureInPicturePlayback;
@@ -48,7 +47,7 @@
 
 - (void).cxx_destruct;
 - (void)_checkIsFullScreenAndUpdatePictureInPictureShouldStartWhenEnteringBackground;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_playerLayerVideoRectInScreen;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_playerLayerVideoRectInScreen;
 - (void)_updatePictureInPictureShouldStartWhenEnteringBackground;
 - (void)_updatePlaybackProgress;
 - (id)_window;
@@ -70,7 +69,7 @@
 - (void)pictureInPictureProxy:(id)arg1 willStopPictureInPictureWithAnimationType:(int)arg2 reason:(int)arg3;
 - (void)pictureInPictureProxyPictureInPictureInterruptionBegan:(id)arg1;
 - (void)pictureInPictureProxyPictureInPictureInterruptionEnded:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })pictureInPictureProxyViewFrameForTransitionAnimation:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })pictureInPictureProxyViewFrameForTransitionAnimation:(id)arg1;
 - (void)pictureInPictureViewControllerViewDidAppear:(id)arg1;
 - (void)pictureInPictureViewControllerViewWillDisappear:(id)arg1;
 - (BOOL)pictureInPictureWasStartedWhenEnteringBackground;
@@ -82,5 +81,6 @@
 - (void)setPlayerController:(id)arg1;
 - (void)startPictureInPicture;
 - (void)stopPictureInPicture;
+- (void)stopPictureInPictureEvenWhenInBackground;
 
 @end

@@ -3,7 +3,7 @@
  */
 
 @interface CTEmailAddress : NSObject <CTMessageAddress, NSCopying> {
-    NSString *_address;
+    NSString * _address;
 }
 
 @property (readonly) NSString *address;

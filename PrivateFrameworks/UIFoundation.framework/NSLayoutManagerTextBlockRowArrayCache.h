@@ -3,13 +3,13 @@
  */
 
 @interface NSLayoutManagerTextBlockRowArrayCache : NSObject {
-    BOOL _collapseBorders;
-    float _containerWidth;
-    NSArray *_rowArray;
+    BOOL  _collapseBorders;
+    double  _containerWidth;
+    NSArray * _rowArray;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _rowCharRange;
+    }  _rowCharRange;
 }
 
 - (void)dealloc;

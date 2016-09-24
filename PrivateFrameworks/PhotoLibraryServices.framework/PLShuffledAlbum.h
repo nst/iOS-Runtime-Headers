@@ -3,11 +3,11 @@
  */
 
 @interface PLShuffledAlbum : NSObject <PLAlbumProtocol, PLIndexMappingCache> {
-    NSMutableOrderedSet *_assets;
-    struct NSObject { Class x1; } *_backingAlbum;
-    struct __CFArray { } *_fromBackingMap;
-    PLManagedAsset *_startingAsset;
-    struct __CFArray { } *_toBackingMap;
+    NSMutableOrderedSet * _assets;
+    struct NSObject { Class x1; } * _backingAlbum;
+    struct __CFArray { } * _fromBackingMap;
+    PLManagedAsset * _startingAsset;
+    struct __CFArray { } * _toBackingMap;
 }
 
 @property (nonatomic, retain) NSMutableOrderedSet *_assets;

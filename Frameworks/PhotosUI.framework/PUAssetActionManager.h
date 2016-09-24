@@ -3,7 +3,7 @@
  */
 
 @interface PUAssetActionManager : NSObject {
-    <PUAssetActionManagerDelegate> *_delegate;
+    <PUAssetActionManagerDelegate> * _delegate;
 }
 
 @property (nonatomic) <PUAssetActionManagerDelegate> *delegate;

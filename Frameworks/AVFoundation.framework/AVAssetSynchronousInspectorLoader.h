@@ -3,12 +3,12 @@
  */
 
 @interface AVAssetSynchronousInspectorLoader : AVAssetInspectorLoader {
-    AVAssetInspector *_assetInspector;
+    AVAssetInspector * _assetInspector;
 }
 
 - (id)assetInspector;
 - (void)dealloc;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
+- (struct { int x1; int x2; unsigned int x3; int x4; })duration;
 - (unsigned int)hash;
 - (id)initWithAssetInspector:(id)arg1;
 - (BOOL)isCompatibleWithSavedPhotosAlbum;

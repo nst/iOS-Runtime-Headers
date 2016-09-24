@@ -3,14 +3,14 @@
  */
 
 @interface CHDValueAxis : CHDAxis {
-    bool mAutoMajorUnitValue;
-    bool mAutoMinorUnitValue;
-    int mBuiltInUnit;
-    double mMajorUnitValue;
-    double mMinorUnitValue;
-    bool mPercentageFormattingFlag;
-    double mScalingLogBase;
-    bool mShowBuiltInUnit;
+    bool  mAutoMajorUnitValue;
+    bool  mAutoMinorUnitValue;
+    int  mBuiltInUnit;
+    double  mMajorUnitValue;
+    double  mMinorUnitValue;
+    bool  mPercentageFormattingFlag;
+    double  mScalingLogBase;
+    bool  mShowBuiltInUnit;
 }
 
 - (void)adjustAxisPositionForHorizontalChart;

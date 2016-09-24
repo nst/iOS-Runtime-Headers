@@ -3,11 +3,11 @@
  */
 
 @interface _SchemaRenditionTuple : NSObject {
-    NSMutableDictionary *info;
+    NSMutableDictionary * info;
     struct _renditionkeytoken { 
         unsigned short identifier; 
         unsigned short value; 
-    } key;
+    }  key;
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

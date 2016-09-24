@@ -3,8 +3,8 @@
  */
 
 @interface CalDAVGetDelegatesTaskGroup : CalDAVGetDelegatesBaseTaskGroup {
-    NSMutableArray *_nestedGroupPrincipalURLs;
-    int _state;
+    NSMutableArray * _nestedGroupPrincipalURLs;
+    int  _state;
 }
 
 @property (nonatomic, retain) NSMutableArray *nestedGroupPrincipalURLs;

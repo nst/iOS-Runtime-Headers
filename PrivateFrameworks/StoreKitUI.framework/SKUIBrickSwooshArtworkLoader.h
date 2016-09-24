@@ -3,7 +3,7 @@
  */
 
 @interface SKUIBrickSwooshArtworkLoader : SKUISwooshArtworkLoader {
-    int _artworkSize;
+    int  _artworkSize;
 }
 
 @property (nonatomic, readonly) SKUIBrickSwooshViewController *swooshViewController;

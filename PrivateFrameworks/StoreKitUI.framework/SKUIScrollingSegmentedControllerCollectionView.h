@@ -3,7 +3,7 @@
  */
 
 @interface SKUIScrollingSegmentedControllerCollectionView : SKUIViewControllerContainerCollectionView {
-    BOOL _performingLayout;
+    BOOL  _performingLayout;
 }
 
 @property (nonatomic) <SKUIScrollingSegmentedControllerCollectionViewDelegate> *delegate;

@@ -3,10 +3,10 @@
  */
 
 @interface HKActivityChartPointSummary : NSObject {
-    NSString *_activityGoalSummaryString;
-    NSString *_energyBurnSummaryString;
-    NSString *_formattedDateString;
-    NSString *_workoutSummaryString;
+    NSString * _activityGoalSummaryString;
+    NSString * _energyBurnSummaryString;
+    NSString * _formattedDateString;
+    NSString * _workoutSummaryString;
 }
 
 @property (nonatomic, readonly) NSString *activityGoalSummaryString;

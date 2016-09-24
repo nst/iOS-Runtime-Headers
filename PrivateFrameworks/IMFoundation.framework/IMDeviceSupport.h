@@ -3,11 +3,11 @@
  */
 
 @interface IMDeviceSupport : NSObject {
-    NSString *_buildVersion;
-    NSRecursiveLock *_lock;
-    NSString *_model;
-    NSString *_productName;
-    NSString *_productVersion;
+    NSString * _buildVersion;
+    NSRecursiveLock * _lock;
+    NSString * _model;
+    NSString * _productName;
+    NSString * _productVersion;
 }
 
 @property (nonatomic, readonly) NSString *deviceInformationString;

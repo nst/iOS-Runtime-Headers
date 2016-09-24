@@ -3,9 +3,9 @@
  */
 
 @interface CNAutocompleteSearchObservableProvider : NSObject <CNAutocompleteSearchObservableProvider> {
-    CNAutocompleteFetchRequest *_fetchRequest;
-    <CNScheduler> *_scheduler;
-    <CNAutocompleteSearchProvider> *_searchProvider;
+    CNAutocompleteFetchRequest * _fetchRequest;
+    <CNScheduler> * _scheduler;
+    <CNAutocompleteSearchProvider> * _searchProvider;
 }
 
 @property (readonly, copy) NSString *debugDescription;

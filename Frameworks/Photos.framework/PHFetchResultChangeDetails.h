@@ -3,17 +3,17 @@
  */
 
 @interface PHFetchResultChangeDetails : NSObject {
-    NSIndexSet *_changedIndexes;
-    NSArray *_changedItems;
-    NSArray *_currentItems;
-    PHFetchResult *_fetchResultAfterChanges;
-    PHFetchResult *_fetchResultBeforeChanges;
-    NSIndexSet *_insertedIndexes;
-    struct __CFArray { } *_movedFromIndexes;
-    NSIndexSet *_movedIndexes;
-    NSArray *_previousItems;
-    NSIndexSet *_removedIndexes;
-    BOOL _skipIncrementalChanges;
+    NSIndexSet * _changedIndexes;
+    NSArray * _changedItems;
+    NSArray * _currentItems;
+    PHFetchResult * _fetchResultAfterChanges;
+    PHFetchResult * _fetchResultBeforeChanges;
+    NSIndexSet * _insertedIndexes;
+    struct __CFArray { } * _movedFromIndexes;
+    NSIndexSet * _movedIndexes;
+    NSArray * _previousItems;
+    NSIndexSet * _removedIndexes;
+    BOOL  _skipIncrementalChanges;
 }
 
 @property (readonly) NSIndexSet *changedIndexes;
@@ -24,10 +24,12 @@
 @property (readonly) BOOL hasMoves;
 @property (readonly) NSIndexSet *insertedIndexes;
 @property (readonly) NSArray *insertedObjects;
+@property (nonatomic, readonly) struct __CFArray { }*movedFromIndexes;
+@property (nonatomic, readonly) NSIndexSet *movedIndexes;
 @property (readonly) NSIndexSet *removedIndexes;
 @property (readonly) NSArray *removedObjects;
 
-+ (id)_oidsForPHObjects:(id)arg1;
++ (id)_identifiersForPHObjects:(id)arg1;
 + (id)changeDetailsFromFetchResult:(id)arg1 toFetchResult:(id)arg2 changedObjects:(id)arg3;
 
 - (void).cxx_destruct;
@@ -47,6 +49,8 @@
 - (id)initWithManualFetchResultAfterChanges:(id)arg1;
 - (id)insertedIndexes;
 - (id)insertedObjects;
+- (struct __CFArray { }*)movedFromIndexes;
+- (id)movedIndexes;
 - (id)removedIndexes;
 - (id)removedObjects;
 - (BOOL)shouldReload;

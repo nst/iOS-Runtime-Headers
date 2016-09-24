@@ -3,9 +3,9 @@
  */
 
 @interface NSSQLBindIntarray : NSObject {
-    unsigned int _index;
-    NSString *_tableName;
-    id _value;
+    unsigned int  _index;
+    NSString * _tableName;
+    id  _value;
 }
 
 @property unsigned int index;

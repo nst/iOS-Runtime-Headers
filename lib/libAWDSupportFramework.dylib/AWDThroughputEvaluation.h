@@ -3,12 +3,12 @@
  */
 
 @interface AWDThroughputEvaluation : PBCodable <NSCopying> {
-    unsigned int _actualHighBandwidth;
-    unsigned int _actualLowBandwidth;
-    unsigned int _cca;
-    int _deviation;
-    unsigned int _estimatedHighBandwidth;
-    unsigned int _estimatedLowBandwidth;
+    unsigned int  _actualHighBandwidth;
+    unsigned int  _actualLowBandwidth;
+    unsigned int  _cca;
+    int  _deviation;
+    unsigned int  _estimatedHighBandwidth;
+    unsigned int  _estimatedLowBandwidth;
     struct { 
         unsigned int wifiRssi : 1; 
         unsigned int actualHighBandwidth : 1; 
@@ -22,13 +22,13 @@
         unsigned int movingAvgLowBandwidth : 1; 
         unsigned int phyRate : 1; 
         unsigned int qbssLoad : 1; 
-    } _has;
-    unsigned int _maxOfActualLowBandwidth;
-    unsigned int _movingAvgHighBandwidth;
-    unsigned int _movingAvgLowBandwidth;
-    unsigned int _phyRate;
-    unsigned int _qbssLoad;
-    long long _wifiRssi;
+    }  _has;
+    unsigned int  _maxOfActualLowBandwidth;
+    unsigned int  _movingAvgHighBandwidth;
+    unsigned int  _movingAvgLowBandwidth;
+    unsigned int  _phyRate;
+    unsigned int  _qbssLoad;
+    long long  _wifiRssi;
 }
 
 @property (nonatomic) unsigned int actualHighBandwidth;

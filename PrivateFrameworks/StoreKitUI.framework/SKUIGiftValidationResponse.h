@@ -3,10 +3,10 @@
  */
 
 @interface SKUIGiftValidationResponse : NSObject {
-    NSString *_errorString;
-    NSString *_giftKey;
-    NSString *_totalGiftAmountString;
-    BOOL _valid;
+    NSString * _errorString;
+    NSString * _giftKey;
+    NSString * _totalGiftAmountString;
+    BOOL  _valid;
 }
 
 @property (nonatomic, readonly) NSString *errorString;

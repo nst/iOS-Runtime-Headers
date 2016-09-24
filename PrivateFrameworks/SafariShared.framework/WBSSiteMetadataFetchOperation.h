@@ -3,8 +3,8 @@
  */
 
 @interface WBSSiteMetadataFetchOperation : NSOperation {
-    WBSSiteMetadataRequest *_request;
-    int _status;
+    WBSSiteMetadataRequest * _request;
+    int  _status;
 }
 
 @property (nonatomic, readonly) WBSSiteMetadataRequest *request;

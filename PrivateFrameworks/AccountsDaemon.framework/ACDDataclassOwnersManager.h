@@ -3,8 +3,8 @@
  */
 
 @interface ACDDataclassOwnersManager : NSObject {
-    NSXPCConnection *_connection;
-    <ACDDataclassOwnersManagerProtocol> *_remoteDOM;
+    NSXPCConnection * _connection;
+    <ACDDataclassOwnersManagerProtocol> * _remoteDOM;
 }
 
 - (void).cxx_destruct;

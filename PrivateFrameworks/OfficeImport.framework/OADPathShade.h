@@ -3,9 +3,9 @@
  */
 
 @interface OADPathShade : OADShade {
-    OADRelativeRect *mFillToRect;
-    BOOL mIsTypeOverridden;
-    int mType;
+    OADRelativeRect * mFillToRect;
+    BOOL  mIsTypeOverridden;
+    int  mType;
 }
 
 + (id)defaultProperties;

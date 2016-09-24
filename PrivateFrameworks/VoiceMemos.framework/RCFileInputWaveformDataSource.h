@@ -3,10 +3,10 @@
  */
 
 @interface RCFileInputWaveformDataSource : RCWaveformDataSource {
-    NSURL *_AVFileURL;
-    double _cachedDuration;
-    float _loadingProgress;
-    NSObject<OS_dispatch_queue> *_serialQueue;
+    NSURL * _AVFileURL;
+    double  _cachedDuration;
+    double  _loadingProgress;
+    NSObject<OS_dispatch_queue> * _serialQueue;
 }
 
 @property (nonatomic, readonly, copy) NSURL *AVFileURL;

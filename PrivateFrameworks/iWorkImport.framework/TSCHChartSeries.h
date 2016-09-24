@@ -3,19 +3,19 @@
  */
 
 @interface TSCHChartSeries : NSObject <TSCHPropertyMapsGeneratedProtocol, TSCHStyleOwnerCollaborationSupport, TSCHStyleOwning, TSCHUnretainedParent> {
-    TSUPointerKeyDictionary *mAxisTable;
-    unsigned int mBarGapIndex;
-    TSCHChartModel *mChartModel;
-    TSCHErrorBarData *mErrorBarData;
-    BOOL mIsFakeSeriesForHiddenDataExport;
-    TSCHChartGridAdapter *mNameAdapter;
-    <TSCHStyleActAlike> *mNonStyle;
-    unsigned int mSeriesIndex;
-    NSObject<TSCHUnretainedParent> *mSeriesStorage;
-    TSCHChartSeriesType *mSeriesType;
-    <TSCHStyleActAlike> *mStyle;
-    BOOL mStyleIsPrivate;
-    TSCHTrendLineData *mTrendLineData;
+    TSUPointerKeyDictionary * mAxisTable;
+    unsigned int  mBarGapIndex;
+    TSCHChartModel * mChartModel;
+    TSCHErrorBarData * mErrorBarData;
+    BOOL  mIsFakeSeriesForHiddenDataExport;
+    TSCHChartGridAdapter * mNameAdapter;
+    <TSCHStyleActAlike> * mNonStyle;
+    unsigned int  mSeriesIndex;
+    NSObject<TSCHUnretainedParent> * mSeriesStorage;
+    TSCHChartSeriesType * mSeriesType;
+    <TSCHStyleActAlike> * mStyle;
+    BOOL  mStyleIsPrivate;
+    TSCHTrendLineData * mTrendLineData;
 }
 
 @property (nonatomic) unsigned int barGapIndex;
@@ -100,8 +100,10 @@
 - (void)setGridAdapterForName:(id)arg1;
 - (void)setIsFakeSeriesForHiddenDataExport:(BOOL)arg1;
 - (void)setName:(id)arg1;
+- (void)setNonStyle:(id)arg1;
 - (void)setSeriesStorage:(id)arg1;
 - (void)setSeriesType:(id)arg1;
+- (void)setStyle:(id)arg1;
 - (void)setValue:(id)arg1 forAxisID:(id)arg2 index:(unsigned int)arg3;
 - (BOOL)showTrendLineLegendText;
 - (int)specificPropertyForGeneric:(int)arg1;

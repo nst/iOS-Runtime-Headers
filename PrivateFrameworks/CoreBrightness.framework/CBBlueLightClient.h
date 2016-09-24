@@ -3,23 +3,23 @@
  */
 
 @interface CBBlueLightClient : NSObject {
-    BOOL _supported;
-    BrightnessSystemClient *bsc;
+    BOOL  _supported;
+    BrightnessSystemClient * bsc;
     struct { 
-        float minCCT; 
-        float maxCCT; 
-        float midCCT; 
-    } cctRange;
-    id /* block */ clientBlock;
+        double minCCT; 
+        double maxCCT; 
+        double midCCT; 
+    }  cctRange;
+    id /* block */  clientBlock;
     struct { 
-        float minCCT; 
-        float maxCCT; 
-        float midCCT; 
-    } defaultCctRange;
-    BOOL notificationActive;
-    BOOL ownsClient;
-    BOOL rangeOverridden;
-    BOOL rangeSet;
+        double minCCT; 
+        double maxCCT; 
+        double midCCT; 
+    }  defaultCctRange;
+    BOOL  notificationActive;
+    BOOL  ownsClient;
+    BOOL  rangeOverridden;
+    BOOL  rangeSet;
 }
 
 @property BOOL supported;
@@ -31,8 +31,8 @@
 - (void)enableNotifications;
 - (BOOL)getBlueLightStatus:(struct { BOOL x1; BOOL x2; BOOL x3; int x4; struct { struct { int x_1_2_1; int x_1_2_2; } x_5_1_1; struct { int x_2_2_1; int x_2_2_2; } x_5_1_2; } x5; unsigned long x6; }*)arg1;
 - (BOOL)getCCT:(float*)arg1;
-- (BOOL)getCCTRange:(struct { float x1; float x2; float x3; }*)arg1;
-- (BOOL)getDefaultCCTRange:(struct { float x1; float x2; float x3; }*)arg1;
+- (BOOL)getCCTRange:(struct { double x1; double x2; double x3; }*)arg1;
+- (BOOL)getDefaultCCTRange:(struct { double x1; double x2; double x3; }*)arg1;
 - (BOOL)getStrength:(float*)arg1;
 - (id)init;
 - (id)initWithClientObj:(id)arg1;
@@ -40,7 +40,7 @@
 - (BOOL)setActive:(BOOL)arg1;
 - (BOOL)setCCT:(float)arg1 commit:(BOOL)arg2;
 - (BOOL)setCCT:(float)arg1 withPeriod:(float)arg2 commit:(BOOL)arg3;
-- (BOOL)setCCTRange:(struct { float x1; float x2; float x3; }*)arg1;
+- (BOOL)setCCTRange:(struct { double x1; double x2; double x3; }*)arg1;
 - (BOOL)setEnabled:(BOOL)arg1;
 - (BOOL)setEnabled:(BOOL)arg1 withOption:(int)arg2;
 - (BOOL)setMode:(int)arg1;

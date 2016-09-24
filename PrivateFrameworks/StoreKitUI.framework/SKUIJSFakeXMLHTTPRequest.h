@@ -3,9 +3,9 @@
  */
 
 @interface SKUIJSFakeXMLHTTPRequest : IKJSObject <SKUIJSFakeXMLHTTPRequest> {
-    NSData *_data;
-    NSDictionary *_performanceMetrics;
-    NSHTTPURLResponse *_response;
+    NSData * _data;
+    NSDictionary * _performanceMetrics;
+    NSHTTPURLResponse * _response;
 }
 
 @property (readonly) NSDictionary *metrics;

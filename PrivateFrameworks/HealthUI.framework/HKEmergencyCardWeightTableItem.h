@@ -3,9 +3,9 @@
  */
 
 @interface HKEmergencyCardWeightTableItem : HKEmergencyCardTableItem <HKMedicalIDEditorCellEditDelegate> {
-    _HKMedicalIDMultilineStringCell *_displayCell;
-    HKMedicalIDEditorWeightCell *_editableCell;
-    _HKCustomInsetCellLayoutManager *_layoutManager;
+    _HKMedicalIDMultilineStringCell * _displayCell;
+    HKMedicalIDEditorWeightCell * _editableCell;
+    _HKCustomInsetCellLayoutManager * _layoutManager;
 }
 
 - (void).cxx_destruct;

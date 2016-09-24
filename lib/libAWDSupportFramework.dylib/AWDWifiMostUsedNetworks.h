@@ -3,17 +3,17 @@
  */
 
 @interface AWDWifiMostUsedNetworks : PBCodable <NSCopying> {
-    unsigned int _apOUI;
-    NSData *_apOui;
+    unsigned int  _apOUI;
+    NSData * _apOui;
     struct { 
         unsigned int timeUsed : 1; 
         unsigned int apOUI : 1; 
         unsigned int securityType : 1; 
         unsigned int timeUsedMinutes : 1; 
-    } _has;
-    unsigned int _securityType;
-    double _timeUsed;
-    unsigned int _timeUsedMinutes;
+    }  _has;
+    unsigned int  _securityType;
+    double  _timeUsed;
+    unsigned int  _timeUsedMinutes;
 }
 
 @property (nonatomic) unsigned int apOUI;

@@ -3,16 +3,16 @@
  */
 
 @interface PULoadingStatusManager : NSObject {
-    NSMutableSet *__invalidLoadingStatusItems;
-    BOOL __isUpdateScheduled;
-    NSMutableDictionary *__itemByLoadOperationTrackingID;
-    NSMapTable *__loadOperationTrackingIDsByItem;
-    NSMapTable *__loadingStatusByItem;
-    NSMutableDictionary *__loadingStatusByLoadOperationTrackingID;
-    <PULoadingStatusManagerDelegate> *_delegate;
+    NSMutableSet * __invalidLoadingStatusItems;
+    BOOL  __isUpdateScheduled;
+    NSMutableDictionary * __itemByLoadOperationTrackingID;
+    NSMapTable * __loadOperationTrackingIDsByItem;
+    NSMapTable * __loadingStatusByItem;
+    NSMutableDictionary * __loadingStatusByLoadOperationTrackingID;
+    <PULoadingStatusManagerDelegate> * _delegate;
     struct { 
         BOOL respondsToDidUpdateLoadingStatusForItem; 
-    } _delegateFlags;
+    }  _delegateFlags;
 }
 
 @property (nonatomic, readonly) NSMutableSet *_invalidLoadingStatusItems;

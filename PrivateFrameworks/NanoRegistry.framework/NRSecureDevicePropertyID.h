@@ -3,7 +3,7 @@
  */
 
 @interface NRSecureDevicePropertyID : NSObject <NSCopying, NSSecureCoding> {
-    NSUUID *_uuid;
+    NSUUID * _uuid;
 }
 
 + (BOOL)supportsSecureCoding;

@@ -3,7 +3,7 @@
  */
 
 @interface ATRemoteFileManager : NSObject {
-    ATMessageLink *_messageLink;
+    ATMessageLink * _messageLink;
 }
 
 @property (nonatomic, retain) ATMessageLink *messageLink;
@@ -17,18 +17,18 @@
 - (id)dataAtPath:(id)arg1 options:(id)arg2 error:(id*)arg3;
 - (BOOL)downloadFileAtPath:(id)arg1 toPath:(id)arg2 options:(id)arg3 error:(id*)arg4;
 - (BOOL)downloadFilesAtPaths:(id)arg1 options:(id)arg2 results:(id*)arg3 error:(id*)arg4;
-- (BOOL)freeSpace:(unsigned long long*)arg1 error:(id*)arg2;
+- (BOOL)freeSpace:(unsigned int*)arg1 error:(id*)arg2;
 - (id)initWithMessageLink:(id)arg1;
 - (id)messageLink;
 - (BOOL)moveItemAtPath:(id)arg1 toPath:(id)arg2 options:(id)arg3 error:(id*)arg4;
 - (BOOL)moveItemsAtPaths:(id)arg1 options:(id)arg2 results:(id*)arg3 error:(id*)arg4;
-- (void)progressUpdatedWithPercentage:(double)arg1 size:(unsigned long long)arg2;
+- (void)progressUpdatedWithPercentage:(double)arg1 size:(unsigned int)arg2;
 - (BOOL)removeItemAtPath:(id)arg1 options:(id)arg2 error:(id*)arg3;
 - (BOOL)removeItemsAtPaths:(id)arg1 options:(id)arg2 results:(id*)arg3 error:(id*)arg4;
 - (void)setMessageLink:(id)arg1;
 - (BOOL)uploadData:(id)arg1 toPath:(id)arg2 options:(id)arg3 error:(id*)arg4;
 - (BOOL)uploadFileAtPath:(id)arg1 toPath:(id)arg2 options:(id)arg3 error:(id*)arg4;
 - (BOOL)uploadFilesAtPaths:(id)arg1 options:(id)arg2 results:(id*)arg3 error:(id*)arg4;
-- (BOOL)usageOfDirectoryAtPath:(id)arg1 count:(unsigned int*)arg2 size:(unsigned long long*)arg3 options:(id)arg4 error:(id*)arg5;
+- (BOOL)usageOfDirectoryAtPath:(id)arg1 count:(unsigned int*)arg2 size:(unsigned int*)arg3 options:(id)arg4 error:(id*)arg5;
 
 @end

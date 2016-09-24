@@ -3,9 +3,9 @@
  */
 
 @interface MPStoreLookupBatchOperation : NSOperation {
-    NSError *_error;
-    SSLookupResponse *_response;
-    SSLookupRequest *_subrequest;
+    NSError * _error;
+    SSLookupResponse * _response;
+    SSLookupRequest * _subrequest;
 }
 
 @property (nonatomic, readonly) NSError *error;

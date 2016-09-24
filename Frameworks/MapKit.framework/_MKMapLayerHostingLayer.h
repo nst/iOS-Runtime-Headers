@@ -3,7 +3,7 @@
  */
 
 @interface _MKMapLayerHostingLayer : CALayer {
-    _MKMapLayerHostingView *_hostView;
+    _MKMapLayerHostingView * _hostView;
 }
 
 @property (nonatomic) _MKMapLayerHostingView *hostView;

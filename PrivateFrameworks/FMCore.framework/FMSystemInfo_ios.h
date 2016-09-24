@@ -7,7 +7,6 @@
 - (BOOL)_boolDeviceInfoForKey:(struct __CFString { }*)arg1;
 - (id)_deviceInfoForKey:(struct __CFString { }*)arg1;
 - (id)_deviceInfoNumberForKey:(struct __CFString { }*)arg1;
-- (void)authTokenOfType:(int)arg1 completionBlock:(id /* block */)arg2;
 - (id)btMacAddress;
 - (id)deviceClass;
 - (id)deviceModelName;
@@ -21,7 +20,6 @@
 - (id)meid;
 - (id)osBuildVersion;
 - (id)osVersion;
-- (id)ownerAccount;
 - (id)productName;
 - (id)productType;
 - (id)serialNumber;

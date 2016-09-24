@@ -3,10 +3,10 @@
  */
 
 @interface NSConcreteNotification : NSNotification {
-    BOOL dyingObject;
-    NSString *name;
-    id object;
-    NSDictionary *userInfo;
+    BOOL  dyingObject;
+    NSString * name;
+    id  object;
+    NSDictionary * userInfo;
 }
 
 + (id)newTempNotificationWithName:(id)arg1 object:(id)arg2 userInfo:(id)arg3;

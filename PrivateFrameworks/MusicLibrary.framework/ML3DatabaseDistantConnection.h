@@ -3,10 +3,10 @@
  */
 
 @interface ML3DatabaseDistantConnection : ML3DatabaseConnection {
-    BOOL _connectionOpen;
-    NSUUID *_currentTransactionID;
-    <ML3DatabaseDistantConnectionDelegate> *_distantDelegate;
-    MLMediaLibraryService *_mediaLibraryService;
+    BOOL  _connectionOpen;
+    NSUUID * _currentTransactionID;
+    <ML3DatabaseDistantConnectionDelegate> * _distantDelegate;
+    MLMediaLibraryService * _mediaLibraryService;
 }
 
 @property (nonatomic) <ML3DatabaseDistantConnectionDelegate> *distantDelegate;
@@ -15,7 +15,7 @@
 - (BOOL)_internalBeginTransactionWithBehaviorType:(unsigned int)arg1;
 - (BOOL)_internalBeginTransactionWithBehaviorType:(unsigned int)arg1 isRetry:(BOOL)arg2;
 - (BOOL)_internalEndTransactionAndCommit:(BOOL)arg1;
-- (id)_internalExecuteQuery:(id)arg1 withParameters:(id)arg2 limitProperty:(id)arg3 limitValue:(long long)arg4;
+- (id)_internalExecuteQuery:(id)arg1 withParameters:(id)arg2 limitProperty:(id)arg3 limitValue:(int)arg4;
 - (BOOL)_internalExecuteUpdate:(id)arg1 withParameters:(id)arg2 error:(id*)arg3;
 - (BOOL)_openWithFlags:(int)arg1;
 - (void)_serviceTerminatedTransactionNotification:(id)arg1;
@@ -28,7 +28,7 @@
 - (id)initWithDatabasePath:(id)arg1;
 - (BOOL)isOpen;
 - (BOOL)isReadOnly;
-- (id)openBlobInTable:(id)arg1 column:(id)arg2 row:(long long)arg3 readOnly:(BOOL)arg4;
+- (id)openBlobInTable:(id)arg1 column:(id)arg2 row:(int)arg3 readOnly:(BOOL)arg4;
 - (BOOL)registerFunctionName:(id)arg1 argumentCount:(int)arg2 block:(id /* block */)arg3;
 - (BOOL)registerFunctionName:(id)arg1 argumentCount:(int)arg2 functionPointer:(int (*)arg3 userData:(void*)arg4;
 - (BOOL)registerModule:(id)arg1;

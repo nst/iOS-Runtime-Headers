@@ -3,14 +3,14 @@
  */
 
 @interface EFTableData : NSObject {
-    int mMakeups;
+    int  mMakeups;
     struct EFRefTok { 
         int type; 
         unsigned int dataSize; 
         unsigned char data[12]; 
-    } mRefTok;
-    EDReference *mReference;
-    EDTable *mTable;
+    }  mRefTok;
+    EDReference * mReference;
+    EDTable * mTable;
 }
 
 - (void)dealloc;

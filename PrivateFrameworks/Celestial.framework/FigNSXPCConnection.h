@@ -3,8 +3,8 @@
  */
 
 @interface FigNSXPCConnection : NSXPCConnection {
-    NSObject<OS_dispatch_group> *_connectionRunningGroup;
-    BOOL _explicitlyInvalidated;
+    NSObject<OS_dispatch_group> * _connectionRunningGroup;
+    BOOL  _explicitlyInvalidated;
 }
 
 @property (nonatomic, readonly) BOOL explicitlyInvalidated;

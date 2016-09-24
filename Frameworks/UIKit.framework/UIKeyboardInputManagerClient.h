@@ -3,7 +3,7 @@
  */
 
 @interface UIKeyboardInputManagerClient : NSObject {
-    NSXPCConnection *_connection;
+    NSXPCConnection * _connection;
 }
 
 @property (nonatomic, retain) NSXPCConnection *connection;

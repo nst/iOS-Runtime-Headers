@@ -3,47 +3,47 @@
  */
 
 @interface BLPromiseImage : BLImage {
-    int _actualOrientation;
-    BLAdjustmentModel *_adjustmentModel;
-    NSDictionary *_adjustments;
-    NSDictionary *_analysis;
-    int _backOrientation;
-    BLCropModel *_cropModel;
-    NSLock *_drawLock;
-    BLPixelImageBuffer *_flattenedImageBuffer;
-    BLImagePatchList *_imagePatchList;
-    int _initialOrientation;
-    BLPhotoEffectsModel *_photoEffectsModel;
-    BLImagePatchList *_repairImagePatchList;
-    BLRepairModel *_repairModel;
-    BLRetouchModel *_retouchModel;
-    struct CGImage { } *_sourceCGImage;
+    int  _actualOrientation;
+    BLAdjustmentModel * _adjustmentModel;
+    NSDictionary * _adjustments;
+    NSDictionary * _analysis;
+    int  _backOrientation;
+    BLCropModel * _cropModel;
+    NSLock * _drawLock;
+    BLPixelImageBuffer * _flattenedImageBuffer;
+    BLImagePatchList * _imagePatchList;
+    int  _initialOrientation;
+    BLPhotoEffectsModel * _photoEffectsModel;
+    BLImagePatchList * _repairImagePatchList;
+    BLRepairModel * _repairModel;
+    BLRetouchModel * _retouchModel;
+    struct CGImage { } * _sourceCGImage;
     struct CGSize { 
-        float width; 
-        float height; 
-    } _sourceSize;
-    BLCropModel *_userCropModel;
+        double width; 
+        double height; 
+    }  _sourceSize;
+    BLCropModel * _userCropModel;
 }
 
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } sourceSize;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } sourceSize;
 
-+ (void)convertXMP:(id)arg1 toAdjustments:(id)arg2 andAnalysis:(id)arg3 size:(struct CGSize { float x1; float x2; })arg4 image:(id)arg5 needsHistogram:(BOOL*)arg6;
++ (void)convertXMP:(id)arg1 toAdjustments:(id)arg2 andAnalysis:(id)arg3 size:(struct CGSize { double x1; double x2; })arg4 image:(id)arg5 needsHistogram:(BOOL*)arg6;
 + (id)imageWithImage:(id)arg1;
-+ (struct CGSize { float x1; float x2; })maximumSizeForFlattening;
++ (struct CGSize { double x1; double x2; })maximumSizeForFlattening;
 
 - (struct CGImage { }*)CGImage;
 - (id)CIImage;
 - (id)UIImage;
-- (void)_drawImagePatchListInContext:(struct CGContext { }*)arg1 imagePatchList:(id)arg2 size:(struct CGSize { float x1; float x2; })arg3 drawScaleX:(float)arg4 drawScaleY:(float)arg5 totalPadding:(float)arg6;
-- (BOOL)_flattenInContext:(struct CGContext { }*)arg1 targetSize:(struct CGSize { float x1; float x2; })arg2 progressBlock:(id /* block */)arg3;
-- (struct CGSize { float x1; float x2; })_targetSizeForBoundingSize:(struct CGSize { float x1; float x2; })arg1 shouldScaleForScreen:(BOOL)arg2;
+- (void)_drawImagePatchListInContext:(struct CGContext { }*)arg1 imagePatchList:(id)arg2 size:(struct CGSize { double x1; double x2; })arg3 drawScaleX:(float)arg4 drawScaleY:(float)arg5 totalPadding:(float)arg6;
+- (BOOL)_flattenInContext:(struct CGContext { }*)arg1 targetSize:(struct CGSize { double x1; double x2; })arg2 progressBlock:(id /* block */)arg3;
+- (struct CGSize { double x1; double x2; })_targetSizeForBoundingSize:(struct CGSize { double x1; double x2; })arg1 shouldScaleForScreen:(BOOL)arg2;
 - (void)dealloc;
-- (void)drawInContext:(struct CGContext { }*)arg1 forRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 andSize:(struct CGSize { float x1; float x2; })arg3;
-- (id)flattenedImageFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSize:(struct CGSize { float x1; float x2; })arg2;
-- (id)flattenedImageInBoundingSize:(struct CGSize { float x1; float x2; })arg1;
-- (id)flattenedImageInBoundingSize:(struct CGSize { float x1; float x2; })arg1 shouldScaleForScreen:(BOOL)arg2;
-- (id)flattenedImageInBoundingSize:(struct CGSize { float x1; float x2; })arg1 shouldScaleForScreen:(BOOL)arg2 progressBlock:(id /* block */)arg3;
-- (id)flattenedPixelImageBufferInBoundingSize:(struct CGSize { float x1; float x2; })arg1 shouldScaleForScreen:(BOOL)arg2;
+- (void)drawInContext:(struct CGContext { }*)arg1 forRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 andSize:(struct CGSize { double x1; double x2; })arg3;
+- (id)flattenedImageFromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forSize:(struct CGSize { double x1; double x2; })arg2;
+- (id)flattenedImageInBoundingSize:(struct CGSize { double x1; double x2; })arg1;
+- (id)flattenedImageInBoundingSize:(struct CGSize { double x1; double x2; })arg1 shouldScaleForScreen:(BOOL)arg2;
+- (id)flattenedImageInBoundingSize:(struct CGSize { double x1; double x2; })arg1 shouldScaleForScreen:(BOOL)arg2 progressBlock:(id /* block */)arg3;
+- (id)flattenedPixelImageBufferInBoundingSize:(struct CGSize { double x1; double x2; })arg1 shouldScaleForScreen:(BOOL)arg2;
 - (BOOL)hasColor;
 - (BOOL)hasCrop;
 - (BOOL)hasEdgeEffects;
@@ -59,18 +59,18 @@
 - (BOOL)hasRotation;
 - (id)initWithCGImage:(struct CGImage { }*)arg1 backOrientation:(int)arg2 orientation:(int)arg3 adjustmentData:(id)arg4 andAnalysisData:(id)arg5 andOptionFlags:(int)arg6;
 - (id)initWithCGImage:(struct CGImage { }*)arg1 flattenedImageBuffer:(id)arg2 orientation:(int)arg3 adjustmentData:(id)arg4 andAnalysisData:(id)arg5 andOptionFlags:(int)arg6;
-- (id)initWithCGImage:(struct CGImage { }*)arg1 orImagePatchList:(id)arg2 flattenedImageBuffer:(id)arg3 backOrientation:(int)arg4 orientation:(int)arg5 userCrop:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg6 adjustmentData:(id)arg7 andAnalysisData:(id)arg8 andOptionFlags:(int)arg9;
+- (id)initWithCGImage:(struct CGImage { }*)arg1 orImagePatchList:(id)arg2 flattenedImageBuffer:(id)arg3 backOrientation:(int)arg4 orientation:(int)arg5 userCrop:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg6 adjustmentData:(id)arg7 andAnalysisData:(id)arg8 andOptionFlags:(int)arg9;
 - (id)initWithCGImage:(struct CGImage { }*)arg1 orientation:(int)arg2 adjustmentData:(id)arg3 andAnalysisData:(id)arg4;
 - (id)initWithCGImage:(struct CGImage { }*)arg1 orientation:(int)arg2 adjustmentData:(id)arg3 andAnalysisData:(id)arg4 andOptionFlags:(int)arg5;
 - (id)initWithImagePatchList:(id)arg1 backOrientation:(int)arg2 orientation:(int)arg3 adjustmentData:(id)arg4 andAnalysisData:(id)arg5 andOptionFlags:(int)arg6;
 - (id)initWithPromiseImage:(id)arg1 andOptionFlags:(int)arg2;
-- (id)initWithPromiseImage:(id)arg1 userCrop:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 andOptionFlags:(int)arg3;
-- (struct CGSize { float x1; float x2; })maximumSize;
+- (id)initWithPromiseImage:(id)arg1 userCrop:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 andOptionFlags:(int)arg3;
+- (struct CGSize { double x1; double x2; })maximumSize;
 - (void)prepareForDrawing;
 - (id)repairLayerStack;
 - (id)retouchLayerStack;
 - (void)setRepairLayerStack:(id)arg1;
 - (void)setRetouchLayerStack:(id)arg1;
-- (struct CGSize { float x1; float x2; })sourceSize;
+- (struct CGSize { double x1; double x2; })sourceSize;
 
 @end

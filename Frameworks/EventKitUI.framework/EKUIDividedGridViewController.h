@@ -3,19 +3,19 @@
  */
 
 @interface EKUIDividedGridViewController : UIViewController {
-    NSArray *_allCells;
-    NSArray *_buttonTitles;
-    UIColor *_cellBackgroundColor;
-    <EKUIDividedGridViewControllerDelegate> *_delegate;
-    float _preferredWidth;
-    int _type;
-    NSArray *_weekViews;
+    NSArray * _allCells;
+    NSArray * _buttonTitles;
+    UIColor * _cellBackgroundColor;
+    <EKUIDividedGridViewControllerDelegate> * _delegate;
+    double  _preferredWidth;
+    int  _type;
+    NSArray * _weekViews;
 }
 
 @property (retain) NSArray *allCells;
 @property (nonatomic, retain) NSArray *buttonTitles;
 @property <EKUIDividedGridViewControllerDelegate> *delegate;
-@property (nonatomic) float preferredWidth;
+@property (nonatomic) double preferredWidth;
 @property (retain) NSArray *weekViews;
 
 + (id)dividerColor;
@@ -30,7 +30,7 @@
 - (void)cellTapped:(id)arg1;
 - (id)delegate;
 - (id)initWithType:(int)arg1 buttonTitles:(id)arg2 cellBackgroundColor:(id)arg3;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (void)loadView;
 - (float)preferredWidth;
 - (void)setAllCells:(id)arg1;

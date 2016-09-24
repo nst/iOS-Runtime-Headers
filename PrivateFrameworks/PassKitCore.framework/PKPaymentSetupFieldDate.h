@@ -3,20 +3,22 @@
  */
 
 @interface PKPaymentSetupFieldDate : PKPaymentSetupFieldText {
-    BOOL _showsDay;
-    BOOL _showsMonth;
-    BOOL _showsYear;
-    NSString *_submissionFormat;
+    NSDateFormatter * _displayDateFormatter;
+    BOOL  _showsDay;
+    BOOL  _showsMonth;
+    BOOL  _showsYear;
+    NSString * _submissionFormat;
 }
 
-@property (nonatomic, readonly) NSDate *defaultDate;
+@property (nonatomic, readonly, copy) NSDate *defaultDate;
 @property (nonatomic) BOOL showsDay;
 @property (nonatomic) BOOL showsMonth;
 @property (nonatomic) BOOL showsYear;
 @property (nonatomic, copy) NSString *submissionFormat;
 
+- (void).cxx_destruct;
 - (id)_defaultValueAsDateForCurrentLocale;
-- (void)dealloc;
+- (id)_locale;
 - (id)defaultDate;
 - (id)displayString;
 - (unsigned int)fieldType;

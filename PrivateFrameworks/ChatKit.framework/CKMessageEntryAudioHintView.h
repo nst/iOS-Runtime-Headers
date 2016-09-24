@@ -4,32 +4,32 @@
 
 @interface CKMessageEntryAudioHintView : UIView {
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    } _coverInsets;
-    UIButton *_hintButton;
-    UIImageView *_hintImageView;
-    UILabel *_hintLabel;
-    UIButton *_referenceButton;
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _coverInsets;
+    UIButton * _hintButton;
+    UIImageView * _hintImageView;
+    UILabel * _hintLabel;
+    UIButton * _referenceButton;
 }
 
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } coverInsets;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } coverInsets;
 @property (nonatomic, retain) UIButton *hintButton;
 @property (nonatomic, retain) UIImageView *hintImageView;
 @property (nonatomic, retain) UILabel *hintLabel;
 @property (nonatomic, retain) UIButton *referenceButton;
 
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })coverInsets;
-- (void)dealloc;
+- (void).cxx_destruct;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })coverInsets;
 - (id)hintButton;
 - (id)hintImageView;
 - (id)hintLabel;
-- (id)initWithReferenceButton:(id)arg1 coverInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
+- (id)initWithReferenceButton:(id)arg1 coverInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
 - (void)layoutSubviews;
 - (id)referenceButton;
-- (void)setCoverInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setCoverInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setHidden:(BOOL)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
 - (void)setHintButton:(id)arg1;
 - (void)setHintImageView:(id)arg1;

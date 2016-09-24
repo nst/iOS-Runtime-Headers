@@ -3,7 +3,7 @@
  */
 
 @interface MPSkipIntervalCommandEvent : MPRemoteCommandEvent {
-    double _interval;
+    double  _interval;
 }
 
 @property (nonatomic, readonly) double interval;

@@ -3,11 +3,11 @@
  */
 
 @interface MPStoreOfferContentRating : NSObject <NSCoding> {
-    NSDictionary *_dictionary;
-    NSString *_ratingDescription;
-    NSString *_ratingLabel;
-    int _ratingLevel;
-    unsigned int _ratingSystem;
+    NSDictionary * _dictionary;
+    NSString * _ratingDescription;
+    NSString * _ratingLabel;
+    int  _ratingLevel;
+    unsigned int  _ratingSystem;
 }
 
 @property (getter=isExplicitContent, nonatomic, readonly) BOOL explicitContent;

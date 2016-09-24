@@ -3,9 +3,9 @@
  */
 
 @interface HKEmergencyCardTableItem : NSObject {
-    _HKMedicalIDData *_data;
-    BOOL _isInEditMode;
-    UIViewController *_owningViewController;
+    _HKMedicalIDData * _data;
+    BOOL  _isInEditMode;
+    UIViewController * _owningViewController;
 }
 
 @property (nonatomic, retain) _HKMedicalIDData *data;
@@ -27,13 +27,15 @@
 - (void)localeDidChange:(id)arg1;
 - (int)numberOfRows;
 - (id)owningViewController;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })separatorInset;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })separatorInset;
 - (void)setData:(id)arg1;
 - (void)setOwningViewController:(id)arg1;
 - (BOOL)shouldHighlightRowAtIndex:(int)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndex:(int)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndex:(int)arg2;
+- (float)tableView:(id)arg1 estimatedHeightForRowAtIndex:(int)arg2;
 - (float)tableView:(id)arg1 heightForRowAtIndex:(int)arg2;
+- (void)timeZoneDidChange:(id)arg1;
 - (id)title;
 - (id)titleForFooter;
 - (id)titleForHeader;

@@ -3,9 +3,9 @@
  */
 
 @interface CKActionMenuItemImageView : UIImageView <CKActionMenuItemView> {
-    BOOL _enabled;
-    UIColor *_highlightedTintColor;
-    UIColor *_unhighlightedTintColor;
+    BOOL  _enabled;
+    UIColor * _highlightedTintColor;
+    UIColor * _unhighlightedTintColor;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -13,7 +13,7 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithImage:(id)arg1 tintColor:(id)arg2 highlightedTintColor:(id)arg3;
 - (void)setEnabled:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setHighlighted:(BOOL)arg1;

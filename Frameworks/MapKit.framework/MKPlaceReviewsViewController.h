@@ -2,20 +2,21 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface MKPlaceReviewsViewController : UITableViewController <MKPlaceAttributionCellProvider, MKPlaceReviewsViewCheckInWriteCellDelegate, MKStackingViewControllerPreferredSizeUse> {
-    NSMutableDictionary *_cachedMaskedImages;
-    BOOL _hasAttribution;
-    MKMapItem *_mapItem;
-    ABMonogrammer *_monogrammer;
-    _MKPlaceViewController *_owner;
-    NSArray *_reviews;
-    <MKPlaceCardReviewsControllerDelegate> *_reviewsControllerDelegate;
-    BOOL _showAttribution;
-    BOOL _showCheckInAndWriteReviewButtons;
-    BOOL _showMoreReviewsButton;
-    NSMutableArray *_viewDidAppearBlocks;
+@interface MKPlaceReviewsViewController : MKPlaceSectionViewController <MKPlaceAttributionProvider, _MKInfoCardChildViewControllerAnalyticsDelegate> {
+    NSMutableDictionary * _cachedMaskedImages;
+    NSMutableArray * _cells;
+    BOOL  _hasAttribution;
+    MKMapItem * _mapItem;
+    ABMonogrammer * _monogrammer;
+    _MKPlaceViewController * _owner;
+    <MKPlaceCardReviewsControllerDelegate> * _reviewsControllerDelegate;
+    BOOL  _showCheckInAndWriteReviewButtons;
+    BOOL  _showMoreReviewsButton;
+    NSArray * _userSnippets;
+    NSMutableArray * _viewDidAppearBlocks;
 }
 
+@property (nonatomic, retain) NSMutableArray *cells;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) BOOL hasAttribution;
@@ -23,57 +24,48 @@
 @property (nonatomic, retain) MKMapItem *mapItem;
 @property (nonatomic, readonly) ABMonogrammer *monogrammer;
 @property (nonatomic) _MKPlaceViewController *owner;
-@property (nonatomic, readonly) BOOL requiresPreferredContentSizeInStackingView;
-@property (nonatomic, retain) NSArray *reviews;
 @property (nonatomic) <MKPlaceCardReviewsControllerDelegate> *reviewsControllerDelegate;
 @property (nonatomic, readonly) unsigned int reviewsCount;
-@property (nonatomic) BOOL showAttribution;
-@property (nonatomic, readonly) BOOL showAttributionButtons;
 @property (nonatomic) BOOL showCheckInAndWriteReviewButtons;
 @property (nonatomic) BOOL showMoreReviewsButton;
 @property (readonly) Class superclass;
+@property (nonatomic, retain) NSArray *userSnippets;
 @property (nonatomic, retain) NSMutableArray *viewDidAppearBlocks;
 
 - (void).cxx_destruct;
 - (void)_performWhenViewHasAppeared:(id /* block */)arg1;
-- (void)_showReview:(id)arg1;
+- (id)_sectionViewForRow:(unsigned int)arg1;
+- (void)_showReview:(id)arg1 index:(unsigned int)arg2;
+- (void)_updateAttribution;
 - (void)_viewAllReviews;
-- (void)checkInWriteReviewCellDidSelectCheckIn:(id)arg1;
-- (void)checkInWriteReviewCellDidSelectWriteReview:(id)arg1;
+- (void)attributionLinkWasClicked:(id)arg1;
+- (id)cells;
+- (id)getAttributionDisplayString;
 - (BOOL)hasAttribution;
+- (id)infoCardChildPossibleActions;
 - (id)init;
+- (void)loadCells;
 - (id)mapItem;
 - (id)monogrammer;
-- (int)numberOfSectionsInTableView:(id)arg1;
 - (id)owner;
-- (BOOL)requiresPreferredContentSizeInStackingView;
 - (id)reviewAtIndex:(unsigned int)arg1;
-- (id)reviews;
 - (id)reviewsControllerDelegate;
 - (unsigned int)reviewsCount;
+- (void)sectionView:(id)arg1 didSelectRow:(id)arg2 atIndex:(unsigned int)arg3;
+- (void)setCells:(id)arg1;
 - (void)setHasAttribution:(BOOL)arg1;
 - (void)setMapItem:(id)arg1;
 - (void)setOwner:(id)arg1;
-- (void)setReviews:(id)arg1;
 - (void)setReviewsControllerDelegate:(id)arg1;
-- (void)setShowAttribution:(BOOL)arg1;
 - (void)setShowCheckInAndWriteReviewButtons:(BOOL)arg1;
 - (void)setShowMoreReviewsButton:(BOOL)arg1;
+- (void)setUserSnippets:(id)arg1;
 - (void)setViewDidAppearBlocks:(id)arg1;
-- (BOOL)showAttribution;
-- (BOOL)showAttributionButtons;
 - (BOOL)showCheckInAndWriteReviewButtons;
 - (BOOL)showMoreReviewsButton;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
-- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
+- (id)userSnippets;
 - (void)viewDidAppear:(BOOL)arg1;
 - (id)viewDidAppearBlocks;
-- (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 
 @end

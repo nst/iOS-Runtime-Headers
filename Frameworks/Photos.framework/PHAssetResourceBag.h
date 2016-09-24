@@ -3,21 +3,23 @@
  */
 
 @interface PHAssetResourceBag : NSObject {
-    PHAssetCreationRequest *_assetCreationRequest;
-    NSArray *_assetResourceContexts;
-    NSArray *_assetResources;
-    BOOL _didValidateForInsertion;
-    BOOL _hasAdjustments;
-    unsigned int _mediaSubtype;
-    int _mediaType;
-    PHExternalAssetResource *_primaryResource;
-    BOOL _valid;
+    PHAssetCreationRequest * _assetCreationRequest;
+    NSArray * _assetResourceContexts;
+    NSArray * _assetResources;
+    BOOL  _didValidateForInsertion;
+    BOOL  _hasAdjustments;
+    BOOL  _hasRAW;
+    unsigned int  _mediaSubtype;
+    int  _mediaType;
+    PHExternalAssetResource * _primaryResource;
+    BOOL  _valid;
 }
 
 @property (nonatomic, readonly) PHAssetCreationRequest *assetCreationRequest;
 @property (nonatomic, readonly) NSArray *assetResources;
 @property (nonatomic, readonly) BOOL didValidateForInsertion;
 @property (nonatomic, readonly) BOOL hasAdjustments;
+@property (nonatomic, readonly) BOOL hasRAW;
 @property (nonatomic, readonly) unsigned int mediaSubtype;
 @property (nonatomic, readonly) int mediaType;
 @property (nonatomic, readonly) PHExternalAssetResource *primaryResource;
@@ -40,6 +42,7 @@
 - (id)assetResources;
 - (BOOL)didValidateForInsertion;
 - (BOOL)hasAdjustments;
+- (BOOL)hasRAW;
 - (id)initWithAssetResources:(id)arg1 assetCreationRequest:(id)arg2;
 - (BOOL)isValid;
 - (unsigned int)mediaSubtype;

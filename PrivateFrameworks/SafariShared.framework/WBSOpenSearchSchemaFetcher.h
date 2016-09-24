@@ -3,7 +3,7 @@
  */
 
 @interface WBSOpenSearchSchemaFetcher : NSObject {
-    NSMutableSet *_openSearchDescriptionURLs;
+    NSMutableSet * _openSearchDescriptionURLs;
 }
 
 + (id)sharedFetcher;

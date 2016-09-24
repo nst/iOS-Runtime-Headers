@@ -3,10 +3,9 @@
  */
 
 @interface NFAWDCRSAuthorize : NSObject <NFAWDEventProtocol> {
-    AWDNFCSECRSAuthorize *_metric;
-    NSData *aid;
-    unsigned int method;
-    unsigned int status;
+    unsigned int  _method;
+    AWDNFCSECRSAuthorize * _metric;
+    unsigned int  _status;
 }
 
 @property (nonatomic, retain) NSData *aid;

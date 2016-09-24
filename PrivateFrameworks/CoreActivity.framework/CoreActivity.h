@@ -3,12 +3,12 @@
  */
 
 @interface CoreActivity : NSObject {
-    ActivityCounts *_aCounts;
-    int _accelRate;
-    CMMotionManager *_motionManager;
-    NSOperationQueue *_opQueue;
-    BOOL _pedometerIsOn;
-    StepHandler *_stepHandler;
+    ActivityCounts * _aCounts;
+    int  _accelRate;
+    CMMotionManager * _motionManager;
+    NSOperationQueue * _opQueue;
+    BOOL  _pedometerIsOn;
+    StepHandler * _stepHandler;
 }
 
 @property (nonatomic, retain) ActivityCounts *aCounts;

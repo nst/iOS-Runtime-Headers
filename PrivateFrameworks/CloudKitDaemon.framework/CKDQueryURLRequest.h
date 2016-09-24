@@ -2,19 +2,22 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@interface CKDQueryURLRequest : CKDURLRequest {
-    NSData *_cursor;
-    unsigned int _limit;
-    CKQuery *_query;
-    NSMutableArray *_queryResponses;
-    id /* block */ _recordResponseBlock;
-    NSArray *_requestedFields;
-    NSData *_resultsCursor;
-    BOOL _shouldFetchAssetContent;
-    CKRecordZoneID *_zoneID;
+@interface CKDQueryURLRequest : CKDURLRequest <CKDURLRequestPipelining> {
+    NSData * _cursor;
+    unsigned int  _limit;
+    CKQuery * _query;
+    NSMutableArray * _queryResponses;
+    id /* block */  _recordResponseBlock;
+    NSArray * _requestedFields;
+    NSData * _resultsCursor;
+    BOOL  _shouldFetchAssetContent;
+    CKRecordZoneID * _zoneID;
 }
 
 @property (nonatomic, retain) NSData *cursor;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property (nonatomic) unsigned int limit;
 @property (nonatomic, retain) CKQuery *query;
 @property (nonatomic, retain) NSMutableArray *queryResponses;
@@ -22,6 +25,7 @@
 @property (nonatomic, retain) NSArray *requestedFields;
 @property (nonatomic, retain) NSData *resultsCursor;
 @property (nonatomic) BOOL shouldFetchAssetContent;
+@property (readonly) Class superclass;
 @property (nonatomic, retain) CKRecordZoneID *zoneID;
 
 - (void).cxx_destruct;

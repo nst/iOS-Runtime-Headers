@@ -3,12 +3,12 @@
  */
 
 @interface AVAssetWriterInputWritingHelper : AVAssetWriterInputHelper <AVAssetWriterInputMediaDataRequesterDelegate, AVKeyPathDependencyHost, AVWeakObservable> {
-    AVFigAssetWriterTrack *_assetWriterTrack;
-    AVAssetWriterInputPassDescription *_currentPassDescription;
-    AVKeyPathDependencyManager *_keyPathDependencyManager;
-    AVAssetWriterInputMediaDataRequester *_mediaDataRequester;
-    BOOL _observingSelf;
-    struct __CVPixelBufferPool { } *_pixelBufferPool;
+    AVFigAssetWriterTrack * _assetWriterTrack;
+    AVAssetWriterInputPassDescription * _currentPassDescription;
+    AVKeyPathDependencyManager * _keyPathDependencyManager;
+    AVAssetWriterInputMediaDataRequester * _mediaDataRequester;
+    BOOL  _observingSelf;
+    struct __CVPixelBufferPool { } * _pixelBufferPool;
 }
 
 @property (getter=_assetWriterTrack, nonatomic, readonly) AVFigAssetWriterTrack *assetWriterTrack;
@@ -23,7 +23,7 @@
 - (void)_detachFromMediaDataRequester:(id)arg1;
 - (void)_nudgeMediaDataRequesterIfAppropriate;
 - (void)addCallbackToCancelDuringDeallocation:(id)arg1;
-- (BOOL)appendPixelBuffer:(struct __CVBuffer { }*)arg1 withPresentationTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
+- (BOOL)appendPixelBuffer:(struct __CVBuffer { }*)arg1 withPresentationTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg2;
 - (int)appendSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 error:(id*)arg2;
 - (void)beginPassIfAppropriate;
 - (BOOL)canPerformMultiplePasses;
@@ -46,7 +46,6 @@
 - (void)requestMediaDataWhenReadyOnQueue:(id)arg1 usingBlock:(id /* block */)arg2;
 - (void)setCurrentPassDescription:(id)arg1;
 - (int)status;
-- (int)trackID;
 - (id)transitionToAndReturnTerminalHelperWithTerminalStatus:(int)arg1;
 
 @end

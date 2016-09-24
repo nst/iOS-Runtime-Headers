@@ -3,11 +3,11 @@
  */
 
 @interface AXSupportDefaultsObserver : NSObject {
-    NSMutableDictionary *_actionLastNotifications;
-    NSMutableArray *_actions;
-    NSUserDefaults *_axDomain;
-    NSObject<OS_dispatch_queue> *_lastNotificationsQueue;
-    NSMutableSet *_observedPrefs;
+    NSMutableDictionary * _actionLastNotifications;
+    NSMutableArray * _actions;
+    NSUserDefaults * _axDomain;
+    NSObject<OS_dispatch_queue> * _lastNotificationsQueue;
+    NSMutableSet * _observedPrefs;
 }
 
 - (void)dealloc;

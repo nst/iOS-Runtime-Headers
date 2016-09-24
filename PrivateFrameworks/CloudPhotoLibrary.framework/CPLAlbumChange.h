@@ -3,13 +3,13 @@
  */
 
 @interface CPLAlbumChange : CPLContainerChange <NSCopying, NSSecureCoding> {
-    BOOL _albumSortAscending;
-    unsigned int _albumSortType;
-    unsigned int _albumType;
-    NSString *_keyAssetIdentifier;
-    NSString *_name;
-    NSString *_parentIdentifier;
-    int _position;
+    BOOL  _albumSortAscending;
+    unsigned int  _albumSortType;
+    unsigned int  _albumType;
+    NSString * _keyAssetIdentifier;
+    NSString * _name;
+    NSString * _parentIdentifier;
+    int  _position;
 }
 
 @property (nonatomic) BOOL albumSortAscending;
@@ -36,6 +36,7 @@
 - (void)setParentIdentifier:(id)arg1;
 - (void)setPosition:(int)arg1;
 - (void)setRelatedIdentifier:(id)arg1;
+- (BOOL)supportsDeletion;
 - (id)translateToClientChangeUsingIDMapping:(id)arg1 error:(id*)arg2;
 - (id)translateToCloudChangeUsingIDMapping:(id)arg1 error:(id*)arg2;
 

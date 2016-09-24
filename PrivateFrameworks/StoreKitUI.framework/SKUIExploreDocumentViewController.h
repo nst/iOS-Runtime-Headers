@@ -3,16 +3,16 @@
  */
 
 @interface SKUIExploreDocumentViewController : SKUIViewController <CLLocationManagerDelegate, SKUIDocumentViewController, SKUINavigationBarDisplayConfiguring, SKUIStackedBarDelegate, UINavigationControllerDelegate, UISplitViewControllerDelegate> {
-    SKUIMetricsImpressionSession *_activeMetricsImpressionSession;
-    NSArray *_contentOffsets;
-    SKUIContentInsetScrollView *_contentScrollView;
-    SKUIExploreTemplateElement *_exploreTemplate;
-    UINavigationController *_leftVC;
-    CLLocationManager *_locationManager;
-    UINavigationController *_navigationController;
-    BOOL _nearMeEnabled;
-    SKUIStorePageSectionsViewController *_rightVC;
-    UISplitViewController *_splitVC;
+    SKUIMetricsImpressionSession * _activeMetricsImpressionSession;
+    NSArray * _contentOffsets;
+    SKUIContentInsetScrollView * _contentScrollView;
+    SKUIExploreTemplateElement * _exploreTemplate;
+    UINavigationController * _leftVC;
+    CLLocationManager * _locationManager;
+    UINavigationController * _navigationController;
+    BOOL  _nearMeEnabled;
+    SKUIStorePageSectionsViewController * _rightVC;
+    UISplitViewController * _splitVC;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -56,7 +56,7 @@
 - (BOOL)prefersNavigationBarHidden;
 - (void)selectGenreListComponent:(id)arg1;
 - (void)setClientContext:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { float x1; float x2; })arg2;
+- (struct CGSize { double x1; double x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { double x1; double x2; })arg2;
 - (BOOL)splitViewController:(id)arg1 shouldHideViewController:(id)arg2 inOrientation:(int)arg3;
 - (void)stackedBar:(id)arg1 didSelectItemAtIndex:(int)arg2;
 - (void)viewDidAppear:(BOOL)arg1;

@@ -3,8 +3,8 @@
  */
 
 @interface MCManagedDomainsCache : NSObject {
-    NSObject<OS_dispatch_queue> *_memberQueue;
-    NSMutableArray *_memberQueueCache;
+    NSObject<OS_dispatch_queue> * _memberQueue;
+    NSMutableArray * _memberQueueCache;
 }
 
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *memberQueue;

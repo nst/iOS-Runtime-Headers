@@ -4,21 +4,10 @@
 
 @interface RDGizmoCommands : NSObject
 
-- (void)disableCalendarSync;
-- (void)disableMessageExpiration;
-- (void)disableMusicSync;
-- (void)disableSleep;
-- (void)enableSleep;
-- (id)getBacklightAssertionQueue;
-- (void)reboot;
-- (void)renewBacklightAssertion;
-- (void)requestNotificationCenterCleanup;
 - (void)resetBrightnessToDefaultValue;
 - (void)resetFontSizeToDefaultValue;
 - (void)resetHeySiri;
-- (void)resetNotificationCenterIfNecessary;
 - (void)resetStopwatch;
-- (void)startPlayingDemoMovie;
-- (void)stopPlayingDemoMovie;
+- (void)resetStoreDemoData;
 
 @end

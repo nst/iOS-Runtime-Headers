@@ -3,15 +3,15 @@
  */
 
 @interface NACEUVolumeLimitMessage : PBCodable <NSCopying> {
-    NSString *_category;
-    float _eUVolumeLimit;
+    NSString * _category;
+    double  _eUVolumeLimit;
     struct { 
         unsigned int eUVolumeLimit : 1; 
-    } _has;
+    }  _has;
 }
 
 @property (nonatomic, retain) NSString *category;
-@property (nonatomic) float eUVolumeLimit;
+@property (nonatomic) double eUVolumeLimit;
 @property (nonatomic, readonly) BOOL hasCategory;
 @property (nonatomic) BOOL hasEUVolumeLimit;
 

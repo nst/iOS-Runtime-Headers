@@ -3,8 +3,8 @@
  */
 
 @interface TNFormSelection : TSKSelection {
-    unsigned char _fieldIndex;
-    unsigned short _recordIndex;
+    unsigned char  _fieldIndex;
+    unsigned short  _recordIndex;
 }
 
 @property (nonatomic, readonly) unsigned char fieldIndex;

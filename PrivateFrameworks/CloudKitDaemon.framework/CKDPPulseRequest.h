@@ -3,18 +3,18 @@
  */
 
 @interface CKDPPulseRequest : PBRequest <NSCopying> {
-    int _apnsEnv;
-    NSString *_etag;
+    int  _apnsEnv;
+    NSString * _etag;
     struct { 
         unsigned int lookbackWindowMillis : 1; 
         unsigned int apnsEnv : 1; 
         unsigned int reset : 1; 
-    } _has;
-    long long _lookbackWindowMillis;
-    CKDPPulseData *_pulseData;
-    NSData *_pushToken;
-    BOOL _reset;
-    CKDPShareIdentifier *_shareId;
+    }  _has;
+    int  _lookbackWindowMillis;
+    CKDPPulseData * _pulseData;
+    NSData * _pushToken;
+    BOOL  _reset;
+    CKDPShareIdentifier * _shareId;
 }
 
 @property (nonatomic) int apnsEnv;
@@ -26,7 +26,7 @@
 @property (nonatomic, readonly) BOOL hasPushToken;
 @property (nonatomic) BOOL hasReset;
 @property (nonatomic, readonly) BOOL hasShareId;
-@property (nonatomic) long long lookbackWindowMillis;
+@property (nonatomic) int lookbackWindowMillis;
 @property (nonatomic, retain) CKDPPulseData *pulseData;
 @property (nonatomic, retain) NSData *pushToken;
 @property (nonatomic) BOOL reset;
@@ -35,7 +35,9 @@
 + (id)options;
 
 - (void).cxx_destruct;
+- (int)StringAsApnsEnv:(id)arg1;
 - (int)apnsEnv;
+- (id)apnsEnvAsString:(int)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -50,7 +52,7 @@
 - (BOOL)hasShareId;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
-- (long long)lookbackWindowMillis;
+- (int)lookbackWindowMillis;
 - (void)mergeFrom:(id)arg1;
 - (id)pulseData;
 - (id)pushToken;
@@ -63,7 +65,7 @@
 - (void)setHasApnsEnv:(BOOL)arg1;
 - (void)setHasLookbackWindowMillis:(BOOL)arg1;
 - (void)setHasReset:(BOOL)arg1;
-- (void)setLookbackWindowMillis:(long long)arg1;
+- (void)setLookbackWindowMillis:(int)arg1;
 - (void)setPulseData:(id)arg1;
 - (void)setPushToken:(id)arg1;
 - (void)setReset:(BOOL)arg1;

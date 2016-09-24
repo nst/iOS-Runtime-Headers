@@ -3,13 +3,13 @@
  */
 
 @interface HDSQLiteQueryDescriptor : NSObject <NSCopying> {
-    Class _entityClass;
-    NSString *_groupBy;
-    int _limitCount;
-    NSArray *_orderingDirections;
-    NSArray *_orderingProperties;
-    HDSQLitePredicate *_predicate;
-    BOOL _returnsDistinctEntities;
+    Class  _entityClass;
+    NSString * _groupBy;
+    int  _limitCount;
+    NSArray * _orderingDirections;
+    NSArray * _orderingProperties;
+    HDSQLitePredicate * _predicate;
+    BOOL  _returnsDistinctEntities;
 }
 
 @property (nonatomic) Class entityClass;

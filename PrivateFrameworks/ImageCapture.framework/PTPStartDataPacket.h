@@ -3,17 +3,17 @@
  */
 
 @interface PTPStartDataPacket : NSObject {
-    unsigned long long _totalDataSize;
-    unsigned long _transactionID;
+    unsigned int  _totalDataSize;
+    unsigned long  _transactionID;
 }
 
 - (id)contentForTCP;
 - (id)description;
 - (id)initWithTCPBuffer:(void*)arg1;
-- (id)initWithTransactionID:(unsigned long)arg1 totalDataSize:(unsigned long long)arg2;
-- (void)setTotalDataSize:(unsigned long long)arg1;
+- (id)initWithTransactionID:(unsigned long)arg1 totalDataSize:(unsigned int)arg2;
+- (void)setTotalDataSize:(unsigned int)arg1;
 - (void)setTransactionID:(unsigned long)arg1;
-- (unsigned long long)totalDataSize;
+- (unsigned int)totalDataSize;
 - (unsigned long)transactionID;
 
 @end

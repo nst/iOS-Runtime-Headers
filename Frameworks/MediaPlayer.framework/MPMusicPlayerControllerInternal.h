@@ -3,22 +3,22 @@
  */
 
 @interface MPMusicPlayerControllerInternal : MPServerObjectProxy <MPMusicPlayerController> {
-    unsigned int _allowsBackgroundVideo;
-    unsigned int _cachedPlaybackStateIsValid;
-    unsigned int _clientPort;
-    unsigned int _didCheckIn;
-    int _inBlockHandlingPlaybackStateChangedMessageFromServer;
-    MPMediaItemCollection *_itemCollection;
-    MPMusicPlayerController *_musicPlayerController;
-    int _playbackNotificationObservers;
-    int _playbackState;
-    BOOL _preparedToPlay;
-    BKSProcessAssertion *_processAssertion;
-    MPMediaQuery *_query;
-    struct __CFRunLoopSource { } *_runLoopSource;
-    unsigned int _useApplicationSpecificQueue;
-    unsigned int _useCachedPlaybackState;
-    unsigned int _wantsQueueModificationsDisabled;
+    unsigned int  _allowsBackgroundVideo;
+    unsigned int  _cachedPlaybackStateIsValid;
+    unsigned int  _clientPort;
+    unsigned int  _didCheckIn;
+    int  _inBlockHandlingPlaybackStateChangedMessageFromServer;
+    MPMediaItemCollection * _itemCollection;
+    MPMusicPlayerController * _musicPlayerController;
+    int  _playbackNotificationObservers;
+    int  _playbackState;
+    BOOL  _preparedToPlay;
+    BKSProcessAssertion * _processAssertion;
+    MPMediaQuery * _query;
+    struct __CFRunLoopSource { } * _runLoopSource;
+    unsigned int  _useApplicationSpecificQueue;
+    unsigned int  _useCachedPlaybackState;
+    unsigned int  _wantsQueueModificationsDisabled;
 }
 
 @property BOOL inBlockHandlingPlaybackStateChangedMessageFromServer;

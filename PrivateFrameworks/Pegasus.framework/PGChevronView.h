@@ -3,17 +3,17 @@
  */
 
 @interface PGChevronView : UIView {
-    UIView *_bottomView;
-    int _state;
-    UIView *_topView;
+    UIView * _bottomView;
+    int  _state;
+    UIView * _topView;
 }
 
 @property (nonatomic) int state;
 
 - (void).cxx_destruct;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (void)setState:(int)arg1;
 - (void)setState:(int)arg1 animated:(BOOL)arg2;
 - (int)state;

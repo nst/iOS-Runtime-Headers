@@ -3,11 +3,11 @@
  */
 
 @interface SBSRemoteAlertConfiguration : NSObject <BSDescriptionProviding, BSXPCCoding> {
-    BOOL _forCarPlay;
-    NSString *_impersonatedCarPlayAppIdentifier;
-    NSString *_serviceName;
-    NSDictionary *_userInfo;
-    NSString *_vcClassName;
+    BOOL  _forCarPlay;
+    NSString * _impersonatedCarPlayAppIdentifier;
+    NSString * _serviceName;
+    NSDictionary * _userInfo;
+    NSString * _vcClassName;
 }
 
 @property (readonly, copy) NSString *debugDescription;

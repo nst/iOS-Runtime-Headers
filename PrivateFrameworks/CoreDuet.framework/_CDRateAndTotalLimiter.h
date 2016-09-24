@@ -3,8 +3,8 @@
  */
 
 @interface _CDRateAndTotalLimiter : _CDRateLimiter {
-    int _currentTotal;
-    int _totalCount;
+    int  _currentTotal;
+    int  _totalCount;
 }
 
 @property int currentTotal;

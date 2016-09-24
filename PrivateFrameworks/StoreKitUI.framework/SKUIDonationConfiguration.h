@@ -3,13 +3,13 @@
  */
 
 @interface SKUIDonationConfiguration : NSObject {
-    NSArray *_charities;
-    NSMutableDictionary *_charityImages;
-    SKUIClientContext *_clientContext;
-    NSURL *_donationPurchaseURL;
-    NSURL *_donationValidationURL;
-    NSHashTable *_observers;
-    NSOperationQueue *_operationQueue;
+    NSArray * _charities;
+    NSMutableDictionary * _charityImages;
+    SKUIClientContext * _clientContext;
+    NSURL * _donationPurchaseURL;
+    NSURL * _donationValidationURL;
+    NSHashTable * _observers;
+    NSOperationQueue * _operationQueue;
 }
 
 @property (nonatomic, readonly) NSArray *allCharities;

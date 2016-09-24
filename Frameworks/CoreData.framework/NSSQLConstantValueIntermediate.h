@@ -3,8 +3,8 @@
  */
 
 @interface NSSQLConstantValueIntermediate : NSSQLIntermediate {
-    id _constantValue;
-    unsigned int _type;
+    id  _constantValue;
+    unsigned int  _type;
 }
 
 - (BOOL)_addBindVarForConstId:(id)arg1 ofType:(unsigned int)arg2 inContext:(id)arg3;

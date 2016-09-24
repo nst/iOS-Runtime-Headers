@@ -3,8 +3,8 @@
  */
 
 @interface VKPGenericShieldStyleInfo : PBCodable <NSCopying> {
-    unsigned int _backgroundColor;
-    unsigned int _borderColor;
+    unsigned int  _backgroundColor;
+    unsigned int  _borderColor;
     struct { 
         unsigned int backgroundColor : 1; 
         unsigned int borderColor : 1; 
@@ -14,18 +14,18 @@
         unsigned int textDropShadowSize : 1; 
         unsigned int textStrokeColor : 1; 
         unsigned int textStrokeSize : 1; 
-    } _has;
-    int _style;
-    unsigned int _textColor;
-    unsigned int _textDropShadowColor;
+    }  _has;
+    int  _style;
+    unsigned int  _textColor;
+    unsigned int  _textDropShadowColor;
     struct { 
-        float *list; 
+        double *list; 
         unsigned int count; 
         unsigned int size; 
-    } _textDropShadowOffsets;
-    float _textDropShadowSize;
-    unsigned int _textStrokeColor;
-    float _textStrokeSize;
+    }  _textDropShadowOffsets;
+    double  _textDropShadowSize;
+    unsigned int  _textStrokeColor;
+    double  _textStrokeSize;
 }
 
 @property (nonatomic) unsigned int backgroundColor;
@@ -43,9 +43,9 @@
 @property (nonatomic) unsigned int textDropShadowColor;
 @property (nonatomic, readonly) float*textDropShadowOffsets;
 @property (nonatomic, readonly) unsigned int textDropShadowOffsetsCount;
-@property (nonatomic) float textDropShadowSize;
+@property (nonatomic) double textDropShadowSize;
 @property (nonatomic) unsigned int textStrokeColor;
-@property (nonatomic) float textStrokeSize;
+@property (nonatomic) double textStrokeSize;
 
 - (void)addTextDropShadowOffset:(float)arg1;
 - (unsigned int)backgroundColor;

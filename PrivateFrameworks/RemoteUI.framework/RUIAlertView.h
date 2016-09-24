@@ -3,12 +3,12 @@
  */
 
 @interface RUIAlertView : RUIElement {
-    UIAlertController *_alertController;
-    int _buttonIndex;
-    id /* block */ _completion;
-    NSString *_message;
-    RUIObjectModel<RUIAlertViewDelegate> *_objectModel;
-    NSString *_title;
+    UIAlertController * _alertController;
+    int  _buttonIndex;
+    id /* block */  _completion;
+    NSString * _message;
+    RUIObjectModel<RUIAlertViewDelegate> * _objectModel;
+    NSString * _title;
 }
 
 @property (nonatomic, readonly) int buttonIndex;

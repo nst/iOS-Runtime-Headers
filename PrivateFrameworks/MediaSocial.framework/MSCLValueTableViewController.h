@@ -3,10 +3,10 @@
  */
 
 @interface MSCLValueTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
-    int _selectedIndex;
-    id /* block */ _selectionBlock;
-    UITableView *_tableView;
-    NSArray *_values;
+    int  _selectedIndex;
+    id /* block */  _selectionBlock;
+    UITableView * _tableView;
+    NSArray * _values;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,12 +3,12 @@
  */
 
 @interface UITableViewCellEditingData : NSObject {
-    UITableViewCell *_cell;
-    UITableViewCellDeleteConfirmationControl_Legacy *_deleteConfirmationControl;
-    UITableViewCellEditControl *_editControl;
-    int _editingStyle;
-    UITableViewCellReorderControl *_reorderControl;
-    UIView *_reorderSeparatorView;
+    UITableViewCell * _cell;
+    UITableViewCellDeleteConfirmationControl_Legacy * _deleteConfirmationControl;
+    UITableViewCellEditControl * _editControl;
+    int  _editingStyle;
+    UITableViewCellReorderControl * _reorderControl;
+    UIView * _reorderSeparatorView;
 }
 
 @property (getter=isDataRequired, nonatomic, readonly) BOOL dataRequired;

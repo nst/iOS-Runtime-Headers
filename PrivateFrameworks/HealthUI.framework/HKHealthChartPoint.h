@@ -3,12 +3,12 @@
  */
 
 @interface HKHealthChartPoint : NSObject <HKChartPoint> {
-    NSNumber *_avg;
-    NSDate *_date;
-    NSNumber *_max;
-    NSNumber *_min;
-    NSNumber *_sum;
-    id _userInfo;
+    NSNumber * _avg;
+    NSDate * _date;
+    NSNumber * _max;
+    NSNumber * _min;
+    NSNumber * _sum;
+    id  _userInfo;
 }
 
 @property (readonly, copy) NSString *debugDescription;

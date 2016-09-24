@@ -3,7 +3,7 @@
  */
 
 @interface AVMutableAudioMix : AVAudioMix {
-    AVMutableAudioMixInternal *_mutableAudioMix;
+    AVMutableAudioMixInternal * _mutableAudioMix;
 }
 
 @property (nonatomic, copy) NSArray *inputParameters;

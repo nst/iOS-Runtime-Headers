@@ -3,13 +3,14 @@
  */
 
 @interface CNVCardUnknownPropertyDescription : NSObject {
-    NSString *_originalLine;
-    NSString *_propertyName;
+    NSString * _originalLine;
+    NSString * _propertyName;
 }
 
 @property (copy) NSString *originalLine;
 @property (copy) NSString *propertyName;
 
+- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (id)originalLine;

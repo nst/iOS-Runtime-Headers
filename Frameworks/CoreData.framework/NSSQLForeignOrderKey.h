@@ -3,7 +3,7 @@
  */
 
 @interface NSSQLForeignOrderKey : NSSQLColumn {
-    NSSQLForeignKey *_foreignKey;
+    NSSQLForeignKey * _foreignKey;
 }
 
 - (void)dealloc;

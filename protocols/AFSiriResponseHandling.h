@@ -5,6 +5,6 @@
 
 @required
 
-- (void)handleSiriResponse:(AFSiriResponse *)arg1;
+- (void)handleSiriResponse:(AFSiriResponse *)arg1 atTime:(unsigned int)arg2;
 
 @end

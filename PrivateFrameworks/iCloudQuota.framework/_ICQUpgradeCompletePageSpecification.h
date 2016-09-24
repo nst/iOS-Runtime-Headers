@@ -3,9 +3,9 @@
  */
 
 @interface _ICQUpgradeCompletePageSpecification : _ICQPageSpecification {
-    ICQLink *_doneLink;
-    NSString *_message;
-    NSString *_title;
+    ICQLink * _doneLink;
+    NSString * _message;
+    NSString * _title;
 }
 
 @property (nonatomic, retain) ICQLink *doneLink;

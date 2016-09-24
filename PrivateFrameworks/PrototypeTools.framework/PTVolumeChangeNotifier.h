@@ -3,8 +3,8 @@
  */
 
 @interface PTVolumeChangeNotifier : NSObject {
-    NSMutableSet *ringerSilentChangedHandlers;
-    NSMutableSet *ringerVolumeChangedHandlers;
+    NSMutableSet * ringerSilentChangedHandlers;
+    NSMutableSet * ringerVolumeChangedHandlers;
 }
 
 + (id)sharedInstance;

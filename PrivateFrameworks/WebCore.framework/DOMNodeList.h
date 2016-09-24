@@ -6,15 +6,8 @@
 
 @property (readonly) unsigned int length;
 
-// Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
-
 - (void)dealloc;
-- (void)finalize;
 - (id)item:(unsigned int)arg1;
 - (unsigned int)length;
-
-// Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
-
-- (void)mf_enumerateItemsOfClass:(Class)arg1 usingBlock:(id /* block */)arg2;
 
 @end

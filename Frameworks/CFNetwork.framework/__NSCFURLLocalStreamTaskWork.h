@@ -3,9 +3,9 @@
  */
 
 @interface __NSCFURLLocalStreamTaskWork : NSObject {
-    const char *_static_description;
-    double _timeout;
-    double _timeoutTime;
+    const char * _static_description;
+    double  _timeout;
+    double  _timeoutTime;
 }
 
 - (const char *)_static_description;

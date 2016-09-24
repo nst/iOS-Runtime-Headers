@@ -3,9 +3,9 @@
  */
 
 @interface WDAnnotationData : NSObject {
-    NSDate *mDate;
-    NSString *mOwner;
-    WDText *mText;
+    NSDate * mDate;
+    NSString * mOwner;
+    WDText * mText;
 }
 
 - (id)date;

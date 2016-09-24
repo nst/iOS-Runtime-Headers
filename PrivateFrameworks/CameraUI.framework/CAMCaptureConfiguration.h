@@ -3,18 +3,21 @@
  */
 
 @interface CAMCaptureConfiguration : NSObject {
-    int _HDRMode;
-    int _device;
-    int _flashMode;
-    int _irisMode;
-    int _mode;
-    int _photoModeEffectFilterType;
-    int _squareModeEffectFilterType;
-    int _timerDuration;
-    int _torchMode;
+    int  _HDRMode;
+    int  _audioConfiguration;
+    int  _device;
+    int  _flashMode;
+    int  _irisMode;
+    int  _mode;
+    int  _photoModeEffectFilterType;
+    int  _squareModeEffectFilterType;
+    int  _timerDuration;
+    int  _torchMode;
+    int  _videoConfiguration;
 }
 
 @property (nonatomic, readonly) int HDRMode;
+@property (nonatomic, readonly) int audioConfiguration;
 @property (nonatomic, readonly) int device;
 @property (nonatomic, readonly) int flashMode;
 @property (nonatomic, readonly) int irisMode;
@@ -23,19 +26,24 @@
 @property (nonatomic, readonly) int squareModeEffectFilterType;
 @property (nonatomic, readonly) int timerDuration;
 @property (nonatomic, readonly) int torchMode;
+@property (nonatomic, readonly) int videoConfiguration;
 
-+ (int)audioConfigurationForMode:(int)arg1 device:(int)arg2;
++ (int)_fallbackVideoConfigurationForUnsupportedConfiguration:(int)arg1;
++ (int)audioConfigurationForMode:(int)arg1 device:(int)arg2 emulationMode:(int)arg3 duringCall:(BOOL)arg4;
++ (id)captureGraphConfigurationUsingConfiguration:(id)arg1;
++ (int)sanitizeVideoConfigurationForDesiredConfiguration:(int)arg1 mode:(int)arg2 device:(int)arg3;
 
 - (int)HDRMode;
-- (struct CAMCaptureModeWithOptions { int x1; int x2; int x3; int x4; })currentModeWithOptions;
+- (int)audioConfiguration;
 - (int)device;
 - (int)flashMode;
-- (id)initWithCaptureMode:(int)arg1 captureDevice:(int)arg2 flashMode:(int)arg3 torchMode:(int)arg4 HDRMode:(int)arg5 irisMode:(int)arg6 timerDuration:(int)arg7 photoModeEffectFilterType:(int)arg8 squareModeEffectFilterType:(int)arg9;
+- (id)initWithCaptureMode:(int)arg1 captureDevice:(int)arg2 videoConfiguration:(int)arg3 audioConfiguration:(int)arg4 flashMode:(int)arg5 torchMode:(int)arg6 HDRMode:(int)arg7 irisMode:(int)arg8 timerDuration:(int)arg9 photoModeEffectFilterType:(int)arg10 squareModeEffectFilterType:(int)arg11;
 - (int)irisMode;
 - (int)mode;
 - (int)photoModeEffectFilterType;
 - (int)squareModeEffectFilterType;
 - (int)timerDuration;
 - (int)torchMode;
+- (int)videoConfiguration;
 
 @end

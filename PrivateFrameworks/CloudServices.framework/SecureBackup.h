@@ -3,10 +3,10 @@
  */
 
 @interface SecureBackup : NSObject {
-    NSObject<OS_dispatch_queue> *_replyQueue;
-    NSObject<OS_dispatch_queue> *_syncQueue;
-    NSObject<OS_dispatch_queue> *replyQueue;
-    NSObject<OS_dispatch_queue> *syncQueue;
+    NSObject<OS_dispatch_queue> * _replyQueue;
+    NSObject<OS_dispatch_queue> * _syncQueue;
+    NSObject<OS_dispatch_queue> * replyQueue;
+    NSObject<OS_dispatch_queue> * syncQueue;
 }
 
 @property (nonatomic) NSObject<OS_dispatch_queue> *replyQueue;

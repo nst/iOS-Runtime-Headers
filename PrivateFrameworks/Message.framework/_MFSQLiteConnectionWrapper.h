@@ -3,9 +3,9 @@
  */
 
 @interface _MFSQLiteConnectionWrapper : NSObject {
-    MFSQLiteConnection *_connection;
-    unsigned int _generation;
-    unsigned int _type;
+    MFSQLiteConnection * _connection;
+    unsigned int  _generation;
+    unsigned int  _type;
 }
 
 @property (nonatomic, readonly) MFSQLiteConnection *connection;

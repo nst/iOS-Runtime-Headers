@@ -3,10 +3,10 @@
  */
 
 @interface RMSBeginPairingMessage : PBCodable <NSCopying> {
-    NSString *_appName;
-    NSString *_deviceModel;
-    NSString *_deviceName;
-    NSString *_passcode;
+    NSString * _appName;
+    NSString * _deviceModel;
+    NSString * _deviceName;
+    NSString * _passcode;
 }
 
 @property (nonatomic, retain) NSString *appName;

@@ -3,7 +3,8 @@
  */
 
 @interface CAWindowServerDisplay : NSObject {
-    struct CAWindowServerDisplayImpl { struct Mutex { struct _opaque_pthread_mutex_t { long x_1_2_1; BOOL x_1_2_2[40]; } x_1_1_1; } x1; struct Server {} *x2; } *_impl;
+    struct CAWindowServerDisplayImpl { struct Mutex { struct _opaque_pthread_mutex_t { long x_1_2_1; BOOL x_1_2_2[40]; } x_1_1_1; } x1; struct Server {} *x2; } * _impl;
+    BOOL  _mirroringEnabled;
 }
 
 @property (copy) NSString *TVMode;
@@ -11,50 +12,51 @@
 @property BOOL allowsDisplayCompositing;
 @property BOOL allowsVirtualModes;
 @property (getter=isBlanked) BOOL blanked;
-@property (readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
+@property (readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } bounds;
 @property (readonly) CAWindowServerDisplay *cloneMaster;
 @property (readonly) NSSet *clones;
 @property (nonatomic, copy) NSString *colorMode;
-@property float contrast;
+@property double contrast;
 @property (readonly) NSString *deviceName;
 @property BOOL disablesUpdates;
 @property (readonly) unsigned int displayId;
 @property (getter=isGrayscale) BOOL grayscale;
-@property float idealRefreshRate;
+@property double idealRefreshRate;
 @property BOOL invertsColors;
-@property float maximumBrightness;
-@property float maximumRefreshRate;
-@property float minimumRefreshRate;
+@property double maximumBrightness;
+@property double maximumRefreshRate;
+@property double minimumRefreshRate;
 @property (getter=isMirroringEnabled) BOOL mirroringEnabled;
 @property (readonly) NSString *name;
 @property (copy) NSString *orientation;
-@property float overscanAmount;
-@property struct CGSize { float x1; float x2; } overscanAmounts;
+@property double overscanAmount;
+@property struct CGSize { double x1; double x2; } overscanAmounts;
 @property int processId;
 @property (readonly) unsigned int rendererFlags;
-@property float scale;
+@property double scale;
 @property (getter=isSecure) BOOL secure;
+@property (readonly) BOOL supportsExtendedColors;
 @property int tag;
 @property (readonly) NSString *uniqueId;
 @property BOOL usesPreferredModeRefreshRate;
 
 - (id)TVMode;
 - (id)TVSignalType;
-- (id)_initWithCADisplayServer:(struct Server { int (**x1)(); struct SpinLock { struct { int x_1_2_1; } x_2_1_1; } x2; struct Mutex { struct _opaque_pthread_mutex_t { long x_1_2_1; BOOL x_1_2_2[40]; } x_3_1_1; } x3; id x4; struct Display {} x5; struct __CFString {} *x6; struct ContextItem {} *x7; unsigned int x8; unsigned int x9; struct ContextItem {} *x10; unsigned int x11; struct SpinLock { struct { int x_1_2_1; } x_12_1_1; } x12; struct PendingOperation {} *x13; struct Context {} *x14; struct Shape {} *x15; unsigned int x16; struct Context {} *x17; struct Renderer {} *x18; double x19; double x20; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; }*)arg1;
+- (id)_initWithCADisplayServer:(struct Server { int (**x1)(); struct SpinLock { struct { int x_1_2_1; } x_2_1_1; } x2; struct Mutex { struct _opaque_pthread_mutex_t { long x_1_2_1; BOOL x_1_2_2[40]; } x_3_1_1; } x3; id x4; struct Display {} x5; struct __CFString {} *x6; struct ContextItem {} *x7; unsigned int x8; unsigned int x9; struct ContextItem {} *x10; unsigned int x11; struct SpinLock { struct { int x_1_2_1; } x_12_1_1; } x12; struct PendingOperation {} *x13; struct Context {} *x14; struct Shape {} *x15; unsigned int x16; struct Context {} *x17; struct Renderer {} *x18; double x19; double x20; double x21; struct __CFDictionary {} *x22; struct HangEvent { int (**x_23_1_1)(); struct hangEvent {} *x_23_1_2; } x23; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; }*)arg1;
 - (void)addClone:(id)arg1;
 - (void)addClone:(id)arg1 options:(id)arg2;
 - (BOOL)allowsDisplayCompositing;
 - (BOOL)allowsVirtualModes;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
-- (unsigned int)clientPortAtPosition:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })bounds;
+- (unsigned int)clientPortAtPosition:(struct CGPoint { double x1; double x2; })arg1;
 - (unsigned int)clientPortOfContextId:(unsigned int)arg1;
 - (id)cloneMaster;
 - (id)clones;
 - (id)colorMode;
-- (unsigned int)contextIdAtPosition:(struct CGPoint { float x1; float x2; })arg1;
+- (unsigned int)contextIdAtPosition:(struct CGPoint { double x1; double x2; })arg1;
 - (float)contrast;
-- (struct CGPoint { float x1; float x2; })convertPoint:(struct CGPoint { float x1; float x2; })arg1 fromContextId:(unsigned int)arg2;
-- (struct CGPoint { float x1; float x2; })convertPoint:(struct CGPoint { float x1; float x2; })arg1 toContextId:(unsigned int)arg2;
+- (struct CGPoint { double x1; double x2; })convertPoint:(struct CGPoint { double x1; double x2; })arg1 fromContextId:(unsigned int)arg2;
+- (struct CGPoint { double x1; double x2; })convertPoint:(struct CGPoint { double x1; double x2; })arg1 toContextId:(unsigned int)arg2;
 - (void)dealloc;
 - (id)description;
 - (id)deviceName;
@@ -74,12 +76,13 @@
 - (id)name;
 - (id)orientation;
 - (float)overscanAmount;
-- (struct CGSize { float x1; float x2; })overscanAmounts;
+- (struct CGSize { double x1; double x2; })overscanAmounts;
 - (int)processId;
 - (void)removeAllClones;
 - (void)removeClone:(id)arg1;
 - (unsigned int)rendererFlags;
 - (float)scale;
+- (void)setAccessibilityColorMatrix:(float*)arg1 scale:(float)arg2;
 - (void)setAllowsDisplayCompositing:(BOOL)arg1;
 - (void)setAllowsVirtualModes:(BOOL)arg1;
 - (void)setBlanked:(BOOL)arg1;
@@ -96,7 +99,7 @@
 - (void)setMirroringEnabled:(BOOL)arg1;
 - (void)setOrientation:(id)arg1;
 - (void)setOverscanAmount:(float)arg1;
-- (void)setOverscanAmounts:(struct CGSize { float x1; float x2; })arg1;
+- (void)setOverscanAmounts:(struct CGSize { double x1; double x2; })arg1;
 - (void)setProcessId:(int)arg1;
 - (void)setScale:(float)arg1;
 - (void)setSecure:(BOOL)arg1;
@@ -104,6 +107,7 @@
 - (void)setTVSignalType:(id)arg1;
 - (void)setTag:(int)arg1;
 - (void)setUsesPreferredModeRefreshRate:(BOOL)arg1;
+- (BOOL)supportsExtendedColors;
 - (int)tag;
 - (unsigned int)taskPortOfContextId:(unsigned int)arg1;
 - (id)uniqueId;

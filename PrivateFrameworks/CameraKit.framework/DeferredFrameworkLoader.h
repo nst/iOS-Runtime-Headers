@@ -3,9 +3,9 @@
  */
 
 @interface DeferredFrameworkLoader : NSObject {
-    void *_frameworkHandle;
-    long _frameworkLoadedToken;
-    NSString *_path;
+    void * _frameworkHandle;
+    long  _frameworkLoadedToken;
+    NSString * _path;
 }
 
 @property (nonatomic) void*frameworkHandle;

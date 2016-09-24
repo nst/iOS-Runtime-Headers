@@ -3,10 +3,10 @@
  */
 
 @interface SLFacebookAudienceTableViewController : UITableViewController <SLFacebookAudienceViewController> {
-    UINavigationItem *_navigationItem;
-    NSArray *_privacySettings;
-    SLFacebookPostPrivacySetting *_selectedSetting;
-    <SLFacebookAudienceViewControllerDelegate> *_selectionDelegate;
+    UINavigationItem * _navigationItem;
+    NSArray * _privacySettings;
+    SLFacebookPostPrivacySetting * _selectedSetting;
+    <SLFacebookAudienceViewControllerDelegate> * _selectionDelegate;
 }
 
 - (void).cxx_destruct;

@@ -3,21 +3,21 @@
  */
 
 @interface _MRAudioStreamPacketDescriptionProtobuf : PBCodable <NSCopying> {
-    unsigned int _dataByteSize;
+    unsigned int  _dataByteSize;
     struct { 
         unsigned int startOffset : 1; 
         unsigned int dataByteSize : 1; 
         unsigned int variableFramesInPacket : 1; 
-    } _has;
-    long long _startOffset;
-    unsigned int _variableFramesInPacket;
+    }  _has;
+    int  _startOffset;
+    unsigned int  _variableFramesInPacket;
 }
 
 @property (nonatomic) unsigned int dataByteSize;
 @property (nonatomic) BOOL hasDataByteSize;
 @property (nonatomic) BOOL hasStartOffset;
 @property (nonatomic) BOOL hasVariableFramesInPacket;
-@property (nonatomic) long long startOffset;
+@property (nonatomic) int startOffset;
 @property (nonatomic) unsigned int variableFramesInPacket;
 
 - (void)copyTo:(id)arg1;
@@ -36,9 +36,9 @@
 - (void)setHasDataByteSize:(BOOL)arg1;
 - (void)setHasStartOffset:(BOOL)arg1;
 - (void)setHasVariableFramesInPacket:(BOOL)arg1;
-- (void)setStartOffset:(long long)arg1;
+- (void)setStartOffset:(int)arg1;
 - (void)setVariableFramesInPacket:(unsigned int)arg1;
-- (long long)startOffset;
+- (int)startOffset;
 - (unsigned int)variableFramesInPacket;
 - (void)writeTo:(id)arg1;
 

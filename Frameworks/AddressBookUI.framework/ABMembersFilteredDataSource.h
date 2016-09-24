@@ -3,12 +3,12 @@
  */
 
 @interface ABMembersFilteredDataSource : NSObject <UITableViewDataSource, UITableViewDelegate> {
-    void *_addressBook;
-    <ABMembersDataSourceDelegate> *_delegate;
-    BOOL _isInPopover;
-    NSMapTable *_records;
-    NSMapTable *_sectionTitles;
-    <ABStyleProvider> *_styleProvider;
+    void * _addressBook;
+    <ABMembersDataSourceDelegate> * _delegate;
+    BOOL  _isInPopover;
+    NSMapTable * _records;
+    NSMapTable * _sectionTitles;
+    <ABStyleProvider> * _styleProvider;
 }
 
 @property (nonatomic) void*addressBook;

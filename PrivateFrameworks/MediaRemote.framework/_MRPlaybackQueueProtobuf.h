@@ -3,16 +3,18 @@
  */
 
 @interface _MRPlaybackQueueProtobuf : PBCodable <NSCopying> {
-    NSMutableArray *_contentItems;
+    NSMutableArray * _contentItems;
     struct { 
         unsigned int location : 1; 
-    } _has;
-    int _location;
+    }  _has;
+    int  _location;
 }
 
 @property (nonatomic, retain) NSMutableArray *contentItems;
 @property (nonatomic) BOOL hasLocation;
 @property (nonatomic) int location;
+
++ (Class)contentItemType;
 
 - (void)addContentItem:(id)arg1;
 - (void)clearContentItems;

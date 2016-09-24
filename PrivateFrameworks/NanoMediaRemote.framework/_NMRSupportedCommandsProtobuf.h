@@ -3,10 +3,12 @@
  */
 
 @interface _NMRSupportedCommandsProtobuf : PBCodable <NSCopying> {
-    NSMutableArray *_supportedCommands;
+    NSMutableArray * _supportedCommands;
 }
 
 @property (nonatomic, retain) NSMutableArray *supportedCommands;
+
++ (Class)supportedCommandType;
 
 - (void).cxx_destruct;
 - (void)addSupportedCommand:(id)arg1;

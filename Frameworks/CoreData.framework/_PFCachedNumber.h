@@ -27,7 +27,7 @@
 - (id)initWithBytes:(const void*)arg1 objCType:(const char *)arg2;
 - (int)intValue;
 - (int)integerValue;
-- (long long)longLongValue;
+- (int)longLongValue;
 - (long)longValue;
 - (const char *)objCType;
 - (id)objectID;
@@ -39,7 +39,7 @@
 - (unsigned char)unsignedCharValue;
 - (unsigned int)unsignedIntValue;
 - (unsigned int)unsignedIntegerValue;
-- (unsigned long long)unsignedLongLongValue;
+- (unsigned int)unsignedLongLongValue;
 - (unsigned long)unsignedLongValue;
 - (unsigned short)unsignedShortValue;
 

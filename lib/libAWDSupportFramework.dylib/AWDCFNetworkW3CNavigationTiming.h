@@ -3,17 +3,18 @@
  */
 
 @interface AWDCFNetworkW3CNavigationTiming : PBCodable <NSCopying> {
-    unsigned long long _connectEnd;
-    unsigned long long _connectStart;
-    unsigned long long _domainLookupEnd;
-    unsigned long long _domainLookupStart;
-    unsigned long long _fetchStart;
+    unsigned long long  _connectEnd;
+    unsigned long long  _connectStart;
+    unsigned long long  _domainLookupEnd;
+    unsigned long long  _domainLookupStart;
+    unsigned long long  _fetchStart;
     struct { 
         unsigned int connectEnd : 1; 
         unsigned int connectStart : 1; 
         unsigned int domainLookupEnd : 1; 
         unsigned int domainLookupStart : 1; 
         unsigned int fetchStart : 1; 
+        unsigned int isCellular : 1; 
         unsigned int isReused : 1; 
         unsigned int redirectCount : 1; 
         unsigned int redirectCountW3C : 1; 
@@ -24,19 +25,21 @@
         unsigned int responseStart : 1; 
         unsigned int secureConnectionStart : 1; 
         unsigned int timestamp : 1; 
-    } _has;
-    NSString *_hostname;
-    long long _isReused;
-    long long _redirectCount;
-    long long _redirectCountW3C;
-    unsigned long long _redirectEnd;
-    unsigned long long _redirectStart;
-    unsigned long long _requestStart;
-    unsigned long long _responseEnd;
-    unsigned long long _responseStart;
-    unsigned long long _secureConnectionStart;
-    unsigned long long _timestamp;
-    NSString *_url;
+    }  _has;
+    NSString * _hostname;
+    long long  _isCellular;
+    long long  _isReused;
+    NSString * _procname;
+    long long  _redirectCount;
+    long long  _redirectCountW3C;
+    unsigned long long  _redirectEnd;
+    unsigned long long  _redirectStart;
+    unsigned long long  _requestStart;
+    unsigned long long  _responseEnd;
+    unsigned long long  _responseStart;
+    unsigned long long  _secureConnectionStart;
+    unsigned long long  _timestamp;
+    NSString * _url;
 }
 
 @property (nonatomic) unsigned long long connectEnd;
@@ -50,7 +53,9 @@
 @property (nonatomic) BOOL hasDomainLookupStart;
 @property (nonatomic) BOOL hasFetchStart;
 @property (nonatomic, readonly) BOOL hasHostname;
+@property (nonatomic) BOOL hasIsCellular;
 @property (nonatomic) BOOL hasIsReused;
+@property (nonatomic, readonly) BOOL hasProcname;
 @property (nonatomic) BOOL hasRedirectCount;
 @property (nonatomic) BOOL hasRedirectCountW3C;
 @property (nonatomic) BOOL hasRedirectEnd;
@@ -62,7 +67,9 @@
 @property (nonatomic) BOOL hasTimestamp;
 @property (nonatomic, readonly) BOOL hasUrl;
 @property (nonatomic, retain) NSString *hostname;
+@property (nonatomic) long long isCellular;
 @property (nonatomic) long long isReused;
+@property (nonatomic, retain) NSString *procname;
 @property (nonatomic) long long redirectCount;
 @property (nonatomic) long long redirectCountW3C;
 @property (nonatomic) unsigned long long redirectEnd;
@@ -90,7 +97,9 @@
 - (BOOL)hasDomainLookupStart;
 - (BOOL)hasFetchStart;
 - (BOOL)hasHostname;
+- (BOOL)hasIsCellular;
 - (BOOL)hasIsReused;
+- (BOOL)hasProcname;
 - (BOOL)hasRedirectCount;
 - (BOOL)hasRedirectCountW3C;
 - (BOOL)hasRedirectEnd;
@@ -103,9 +112,11 @@
 - (BOOL)hasUrl;
 - (unsigned int)hash;
 - (id)hostname;
+- (long long)isCellular;
 - (BOOL)isEqual:(id)arg1;
 - (long long)isReused;
 - (void)mergeFrom:(id)arg1;
+- (id)procname;
 - (BOOL)readFrom:(id)arg1;
 - (long long)redirectCount;
 - (long long)redirectCountW3C;
@@ -125,6 +136,7 @@
 - (void)setHasDomainLookupEnd:(BOOL)arg1;
 - (void)setHasDomainLookupStart:(BOOL)arg1;
 - (void)setHasFetchStart:(BOOL)arg1;
+- (void)setHasIsCellular:(BOOL)arg1;
 - (void)setHasIsReused:(BOOL)arg1;
 - (void)setHasRedirectCount:(BOOL)arg1;
 - (void)setHasRedirectCountW3C:(BOOL)arg1;
@@ -136,7 +148,9 @@
 - (void)setHasSecureConnectionStart:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
 - (void)setHostname:(id)arg1;
+- (void)setIsCellular:(long long)arg1;
 - (void)setIsReused:(long long)arg1;
+- (void)setProcname:(id)arg1;
 - (void)setRedirectCount:(long long)arg1;
 - (void)setRedirectCountW3C:(long long)arg1;
 - (void)setRedirectEnd:(unsigned long long)arg1;

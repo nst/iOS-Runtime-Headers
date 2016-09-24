@@ -3,7 +3,7 @@
  */
 
 @interface MFMailDropMailDeliveryUI : MFMailDropMailDelivery <MFMessageRewriterPlaceholderResolver> {
-    MFPlaceholderMessageRewriter *_rewriter;
+    MFPlaceholderMessageRewriter * _rewriter;
 }
 
 @property (readonly, copy) NSString *debugDescription;

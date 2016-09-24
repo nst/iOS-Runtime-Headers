@@ -3,11 +3,11 @@
  */
 
 @interface GEOMapItemHandle : PBCodable <NSCopying> {
-    int _handleType;
+    int  _handleType;
     struct { 
         unsigned int handleType : 1; 
-    } _has;
-    GEOPDPlaceRefinementParameters *_placeRefinementParameters;
+    }  _has;
+    GEOPDPlaceRefinementParameters * _placeRefinementParameters;
 }
 
 @property (nonatomic) int handleType;
@@ -15,12 +15,14 @@
 @property (nonatomic, readonly) BOOL hasPlaceRefinementParameters;
 @property (nonatomic, retain) GEOPDPlaceRefinementParameters *placeRefinementParameters;
 
+- (int)StringAsHandleType:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (int)handleType;
+- (id)handleTypeAsString:(int)arg1;
 - (BOOL)hasHandleType;
 - (BOOL)hasPlaceRefinementParameters;
 - (unsigned int)hash;

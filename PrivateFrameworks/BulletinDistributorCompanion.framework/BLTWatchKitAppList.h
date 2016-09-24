@@ -3,18 +3,30 @@
  */
 
 @interface BLTWatchKitAppList : NSObject {
-    NSDictionary *_appsByAppBundleID;
+    NSDictionary * _appsByAppBundleID;
+    <BLTWatchKitAppListDelegate> * _delegate;
+    BOOL  _loaded;
+    BOOL  _loading;
+    NSMutableArray * _loadingCompletionHandlers;
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
-    } _lock;
+    }  _lock;
 }
+
+@property (nonatomic) <BLTWatchKitAppListDelegate> *delegate;
+@property (getter=isLoaded) BOOL loaded;
 
 - (void).cxx_destruct;
 - (void)_fetchWatchKitInfo;
+- (void)_fetchWatchKitInfoWithForce:(BOOL)arg1 completion:(id /* block */)arg2;
 - (void)dealloc;
+- (id)delegate;
 - (void)fetchWatchKitInfoWithCompletion:(id /* block */)arg1;
 - (id)init;
+- (BOOL)isLoaded;
+- (void)setDelegate:(id)arg1;
+- (void)setLoaded:(BOOL)arg1;
 - (id)watchKitAppDefinitionWithBundleID:(id)arg1;
 
 @end

@@ -3,12 +3,12 @@
  */
 
 @interface AVPictureInPictureViewController : UIViewController <PGPictureInPictureViewController> {
-    <AVPictureInPictureViewControllerDelegate> *_delegate;
+    <AVPictureInPictureViewControllerDelegate> * _delegate;
     struct { 
-        unsigned int pictureInPictureViewControllerViewDidAppear : 1; 
-        unsigned int pictureInPictureViewControllerViewWillDisappear : 1; 
-    } _delegateRespondsTo;
-    AVPlayerController *_playerController;
+        BOOL pictureInPictureViewControllerViewDidAppear; 
+        BOOL pictureInPictureViewControllerViewWillDisappear; 
+    }  _delegateRespondsTo;
+    AVPlayerController * _playerController;
 }
 
 @property (readonly, copy) NSString *debugDescription;

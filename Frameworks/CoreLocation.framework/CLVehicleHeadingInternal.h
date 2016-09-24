@@ -6,7 +6,7 @@
     struct { 
         double trueHeading; 
         double timestamp; 
-    } fHeading;
+    }  fHeading;
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

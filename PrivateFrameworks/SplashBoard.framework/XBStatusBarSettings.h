@@ -3,10 +3,9 @@
  */
 
 @interface XBStatusBarSettings : NSObject <BSSettingDescriptionProvider, NSCoding, NSCopying, NSMutableCopying> {
-    BSMutableSettings *_settings;
+    BSMutableSettings * _settings;
 }
 
-@property (nonatomic, readonly, copy) BSSettings *BSSettings;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
@@ -14,13 +13,12 @@
 @property (nonatomic, readonly) int style;
 @property (readonly) Class superclass;
 
-- (id)BSSettings;
+- (id)_initWithBSSettings:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
-- (id)initWithBSSettings:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isHidden;
 - (id)keyDescriptionForSetting:(unsigned int)arg1;

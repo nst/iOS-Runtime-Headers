@@ -3,10 +3,10 @@
  */
 
 @interface PLMoment : PLManagedObject <PLAssetContainer, PLMomentData_Private> {
-    PLMomentNameInfo *_cachedNameInfo;
-    BOOL _loadedNameInfo;
-    BOOL didRegisteredWithUserInterfaceContext;
-    BOOL isRegisteredForChanges;
+    PLMomentNameInfo * _cachedNameInfo;
+    BOOL  _loadedNameInfo;
+    BOOL  didRegisteredWithUserInterfaceContext;
+    BOOL  isRegisteredForChanges;
 }
 
 @property (nonatomic, readonly) unsigned int approximateCount;
@@ -31,6 +31,7 @@
 @property (nonatomic, readonly, copy) NSArray *localizedLocationNames;
 @property (nonatomic, readonly, copy) NSString *localizedTitle;
 @property (nonatomic, retain) PLMomentList *megaMomentList;
+@property (nonatomic, retain) NSDate *modificationDate;
 @property (nonatomic, retain) PLMomentLibrary *momentLibrary;
 @property (nonatomic, readonly) unsigned int photosCount;
 @property (nonatomic, retain) NSDate *representativeDate;

@@ -4,8 +4,8 @@
 
 @interface FIUIAchievementBadgeCache : NSObject
 
-+ (id)_cacheKeyForAchievement:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
-+ (id)_cachedImagePathForAchievement:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
++ (id)_cacheKeyForAchievement:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
++ (id)_cachedImagePathForAchievement:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
 + (id)_cachedImagesPath;
 + (id)_cachedModelPathForAchievement:(id)arg1;
 + (id)_cachedModelsPath;
@@ -13,6 +13,6 @@
 + (BOOL)_decompressZipFileAtPath:(id)arg1 toDirectory:(id)arg2;
 + (id)_thumbnailCache;
 + (id)badgeModelPathForAchievement:(id)arg1;
-+ (id)thumbnailForAchievement:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
++ (id)thumbnailForAchievement:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
 
 @end

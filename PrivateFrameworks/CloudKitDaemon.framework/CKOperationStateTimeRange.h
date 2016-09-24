@@ -3,9 +3,9 @@
  */
 
 @interface CKOperationStateTimeRange : NSObject <MMCSOperationStateTimeRange> {
-    double _duration;
-    unsigned int _operationState;
-    NSDate *_startDate;
+    double  _duration;
+    unsigned int  _operationState;
+    NSDate * _startDate;
 }
 
 @property (readonly) double absoluteStart;

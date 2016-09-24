@@ -3,8 +3,8 @@
  */
 
 @interface MPStoreItemLibraryImport : NSObject {
-    BOOL _addToCloudLibrary;
-    NSArray *_importElements;
+    BOOL  _addToCloudLibrary;
+    NSArray * _importElements;
 }
 
 @property (nonatomic, readonly) BOOL addToCloudLibrary;

@@ -3,13 +3,14 @@
  */
 
 @interface ICDispatchAfterBlocks : NSObject {
-    <NSCopying> *_identifier;
+    <NSCopying> * _identifier;
 }
 
 @property (nonatomic, copy) <NSCopying> *identifier;
 
 - (void).cxx_destruct;
 - (void)cancelAll;
+- (void)dealloc;
 - (void)dispatchAfter:(double)arg1 withBlock:(id /* block */)arg2;
 - (id)identifier;
 - (id)initWithIdentifier:(id)arg1;

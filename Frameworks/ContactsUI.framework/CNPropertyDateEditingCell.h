@@ -3,8 +3,8 @@
  */
 
 @interface CNPropertyDateEditingCell : CNPropertySimpleEditingCell <CNPickerControllerDelegate, UITextFieldDelegate> {
-    UIViewController *_contentViewController;
-    UIDatePicker *_datePicker;
+    UIViewController * _contentViewController;
+    UIDatePicker * _datePicker;
 }
 
 @property (nonatomic, retain) UIViewController *contentViewController;

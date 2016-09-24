@@ -3,14 +3,14 @@
  */
 
 @interface SKUIMediaSocialProfileCoordinator : NSObject {
-    NSObject<OS_dispatch_queue> *_callbackQueue;
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    NSDate *_lastAuthenticationAttempt;
-    SKUIMediaSocialProfile *_lastKnownProfile;
-    NSDate *_lastRequestDate;
-    NSOperationQueue *_operationQueue;
-    NSMutableArray *_profileBlocks;
-    BOOL _waitingForAuthentication;
+    NSObject<OS_dispatch_queue> * _callbackQueue;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    NSDate * _lastAuthenticationAttempt;
+    SKUIMediaSocialProfile * _lastKnownProfile;
+    NSDate * _lastRequestDate;
+    NSOperationQueue * _operationQueue;
+    NSMutableArray * _profileBlocks;
+    BOOL  _waitingForAuthentication;
 }
 
 + (id)sharedCoordinator;

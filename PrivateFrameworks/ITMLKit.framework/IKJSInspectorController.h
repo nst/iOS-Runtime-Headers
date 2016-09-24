@@ -3,15 +3,15 @@
  */
 
 @interface IKJSInspectorController : NSObject {
-    IKDOMDocument *_activeDocument;
-    IKAppContext *_appContext;
-    IKJSInspectorCSSAgent *_cssAgent;
-    IKJSInspectorDOMAgent *_domAgent;
-    RWIProtocolInspector *_inspector;
-    BOOL _inspectorConnected;
-    id _inspectorConnectedToken;
-    id _inspectorDisconntectedToken;
-    IKJSInspectorPageAgent *_pageAgent;
+    IKDOMDocument * _activeDocument;
+    IKAppContext * _appContext;
+    IKJSInspectorCSSAgent * _cssAgent;
+    IKJSInspectorDOMAgent * _domAgent;
+    RWIProtocolInspector * _inspector;
+    BOOL  _inspectorConnected;
+    id  _inspectorConnectedToken;
+    id  _inspectorDisconntectedToken;
+    IKJSInspectorPageAgent * _pageAgent;
 }
 
 @property (nonatomic, readonly) IKDOMDocument *activeDocument;

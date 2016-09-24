@@ -3,7 +3,7 @@
  */
 
 @interface MSCLAccount : NSObject <NSCopying> {
-    NSMutableDictionary *_accountProperties;
+    NSMutableDictionary * _accountProperties;
 }
 
 @property (nonatomic, copy) NSString *authenticationSecret;

@@ -3,8 +3,8 @@
  */
 
 @interface CNAutocompleteDuetSearch : NSObject <CNAutocompleteSearch> {
-    CNContactStore *_contactStore;
-    _CDPeopleSuggester *_peopleSuggester;
+    CNContactStore * _contactStore;
+    _CDPeopleSuggester * _peopleSuggester;
 }
 
 @property (nonatomic, readonly) CNContactStore *contactStore;

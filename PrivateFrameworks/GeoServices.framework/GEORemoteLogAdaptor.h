@@ -2,17 +2,17 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEORemoteLogAdaptor : GEOBaseLogAdaptor <PBRequesterDelegate> {
-    id /* block */ _backgroundTaskEnd;
-    id /* block */ _backgroundTaskStart;
-    NSString *_debugRequestName;
-    NSURL *_remoteURL;
-    GEOLogMessageCollectionRequest *_request;
-    NSLock *_requestLock;
-    GEORequester *_requester;
-    NSMapTable *_requesterToBackgroundTask;
-    NSObject<OS_dispatch_source> *_sendLogMessageTimer;
-    NSLock *_sendLogMessageTimerLock;
+@interface GEORemoteLogAdaptor : GEOBaseLogAdaptor <GEOPBSessionRequesterDelegate> {
+    id /* block */  _backgroundTaskEnd;
+    id /* block */  _backgroundTaskStart;
+    NSString * _debugRequestName;
+    NSURL * _remoteURL;
+    GEOLogMessageCollectionRequest * _request;
+    NSLock * _requestLock;
+    GEORequester * _requester;
+    NSMapTable * _requesterToBackgroundTask;
+    NSObject<OS_dispatch_source> * _sendLogMessageTimer;
+    NSLock * _sendLogMessageTimerLock;
 }
 
 @property (nonatomic, copy) id /* block */ backgroundTaskEnd;

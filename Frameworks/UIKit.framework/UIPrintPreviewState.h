@@ -3,7 +3,7 @@
  */
 
 @interface UIPrintPreviewState : NSObject {
-    BOOL _cancelled;
+    BOOL  _cancelled;
 }
 
 @property BOOL cancelled;

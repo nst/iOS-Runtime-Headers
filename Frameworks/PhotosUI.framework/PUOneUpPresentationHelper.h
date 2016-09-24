@@ -3,32 +3,34 @@
  */
 
 @interface PUOneUpPresentationHelper : NSObject <PUPhotosPreviewPresentationControllerDelegate, PUPinchedTileTrackerDelegate, PUTilingViewControllerTransitionEndPoint, PUTilingViewTileSource, PUTilingViewTileTransitionDelegate, PUTilingViewTileUseDelegate, UIGestureRecognizerDelegate> {
-    NSSet *__assetReferencesDisplayedInTilingView;
-    id /* block */ __browsingSessionCreationBlock;
-    PUCameraPreviewTransitionDelegate *__cameraPreviewTransitionDelegate;
-    PUTilingView *__disappearingTilingView;
-    BOOL __isEndingPresentation;
-    BOOL __isPerformingNonAnimatedPush;
-    BOOL __needsUpdateAssetReferencesDisplayedInTilingView;
-    PUOneUpViewController *__oneUpViewController;
-    PUChangeDirectionValueFilter *__panDirectionValueFilter;
-    PUPinchedTileTracker *__pinchedTileTracker;
-    int __presentationEndTimeoutIdentifier;
-    UIViewController *__presentingViewController;
-    int __state;
-    UITapGestureRecognizer *__tapGestureRecognizer;
-    PUTilingView *__tilingView;
-    PUTilingView *__transitioningTilingView;
-    <PUOneUpPresentationHelperAssetDisplayDelegate> *_assetDisplayDelegate;
+    NSSet * __assetReferencesDisplayedInTilingView;
+    id /* block */  __browsingSessionCreationBlock;
+    PUCameraPreviewTransitionDelegate * __cameraPreviewTransitionDelegate;
+    PUTilingView * __disappearingTilingView;
+    BOOL  __isEndingPresentation;
+    BOOL  __isPerformingNonAnimatedPush;
+    id  __libraryChangePauseToken;
+    BOOL  __needsUpdateAssetReferencesDisplayedInTilingView;
+    PUOneUpViewController * __oneUpViewController;
+    PUChangeDirectionValueFilter * __panDirectionValueFilter;
+    PUPinchedTileTracker * __pinchedTileTracker;
+    int  __presentationEndTimeoutIdentifier;
+    UIViewController * __presentingViewController;
+    BOOL  __shouldPauseLibraryChanges;
+    int  __state;
+    UITapGestureRecognizer * __tapGestureRecognizer;
+    PUTilingView * __tilingView;
+    PUTilingView * __transitioningTilingView;
+    <PUOneUpPresentationHelperAssetDisplayDelegate> * _assetDisplayDelegate;
     struct { 
         BOOL respondsToCurrentImageForAssetReference; 
         BOOL respondsToShouldHideAssetReferences; 
         BOOL respondsToScrollAssetReferenceToVisible; 
         BOOL respondsToShouldDisableScroll; 
-    } _assetDisplayDelegateFlags;
-    PUBrowsingSession *_browsingSession;
-    BOOL _cachesScrubberView;
-    <PUOneUpPresentationHelperDelegate> *_delegate;
+    }  _assetDisplayDelegateFlags;
+    PUBrowsingSession * _browsingSession;
+    BOOL  _cachesScrubberView;
+    <PUOneUpPresentationHelperDelegate> * _delegate;
     struct { 
         BOOL respondsToTransitionTypeWithProposedTransitionType; 
         BOOL respondsToWillPresentOneUpViewController; 
@@ -39,8 +41,12 @@
         BOOL respondsToShouldLeaveContentOnSecondScreen; 
         BOOL respondsToDisableFinalFadeoutAnimation; 
         BOOL respondsToPreviewScrubberDidBecomeAvailable; 
-    } _delegateFlags;
-    PUPhotosDataSource *_photosDataSource;
+        BOOL respondsToShouldAutoPlay; 
+        BOOL respondsToPreventRevealInMomentAction; 
+    }  _delegateFlags;
+    PXPhotosDataSource * _photosDataSource;
+    id /* block */  _unlockDeviceHandler;
+    id /* block */  _unlockDeviceStatus;
 }
 
 @property (setter=_setAssetReferencesDisplayedInTilingView:, nonatomic, retain) NSSet *_assetReferencesDisplayedInTilingView;
@@ -49,18 +55,20 @@
 @property (setter=_setDisappearingTilingView:, nonatomic) PUTilingView *_disappearingTilingView;
 @property (setter=_setEndingPresentation:, nonatomic) BOOL _isEndingPresentation;
 @property (setter=_setIsPerformingNonAnimatedPush:, nonatomic) BOOL _isPerformingNonAnimatedPush;
+@property (setter=_setLibraryChangePauseToken:, nonatomic, retain) id _libraryChangePauseToken;
 @property (setter=_setNeedsUpdateAssetReferencesDisplayedInTilingView:, nonatomic) BOOL _needsUpdateAssetReferencesDisplayedInTilingView;
 @property (setter=_setOneUpViewController:, nonatomic, retain) PUOneUpViewController *_oneUpViewController;
 @property (setter=_setPanDirectionValueFilter:, nonatomic, retain) PUChangeDirectionValueFilter *_panDirectionValueFilter;
 @property (setter=_setPinchedTileTracker:, nonatomic, retain) PUPinchedTileTracker *_pinchedTileTracker;
 @property (setter=_setPresentationEndTimeoutIdentifier:, nonatomic) int _presentationEndTimeoutIdentifier;
 @property (setter=_setPresentingViewController:, nonatomic) UIViewController *_presentingViewController;
+@property (setter=_setShouldPauseLibraryChanges:, nonatomic) BOOL _shouldPauseLibraryChanges;
 @property (setter=_setState:, nonatomic) int _state;
 @property (setter=_setTapGestureRecognizer:, nonatomic, retain) UITapGestureRecognizer *_tapGestureRecognizer;
 @property (setter=_setTilingView:, nonatomic, retain) PUTilingView *_tilingView;
 @property (setter=_setTransitioningTilingView:, nonatomic, retain) PUTilingView *_transitioningTilingView;
 @property (nonatomic) <PUOneUpPresentationHelperAssetDisplayDelegate> *assetDisplayDelegate;
-@property (nonatomic, retain) PUBrowsingSession *browsingSession;
+@property (setter=_setBrowsingSession:, nonatomic, retain) PUBrowsingSession *browsingSession;
 @property (nonatomic) BOOL cachesScrubberView;
 @property (nonatomic, readonly) BOOL canPresentOneUpViewController;
 @property (readonly, copy) NSString *debugDescription;
@@ -68,8 +76,10 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) BOOL isOneUpPresented;
-@property (nonatomic, retain) PUPhotosDataSource *photosDataSource;
+@property (nonatomic, retain) PXPhotosDataSource *photosDataSource;
 @property (readonly) Class superclass;
+@property (nonatomic, copy) id /* block */ unlockDeviceHandler;
+@property (nonatomic, copy) id /* block */ unlockDeviceStatus;
 
 - (void).cxx_destruct;
 - (id)_assetReferencesDisplayedInTilingView;
@@ -77,22 +87,26 @@
 - (id)_cameraPreviewTransitionDelegate;
 - (void)_cleanUpAfterTilingViewTransitionAnimated:(BOOL)arg1;
 - (void)_cleanupOneUpViewControllerForDismissalIfNeeded;
+- (id)_createOneUpViewControllerWithBrowsingSession:(id)arg1 options:(unsigned int)arg2;
 - (int)_currentNavigationControllerOperation;
 - (id)_currentTilingViewControllerTransition;
 - (void)_didFinishTransitioningToOneUp;
 - (id)_disappearingTilingView;
 - (void)_disappearingTilingView:(id)arg1 animationCompleted:(BOOL)arg2;
+- (void)_ensureRegistrationWithPresentingViewController;
 - (BOOL)_handleInteractivePresentationWithBlock:(id /* block */)arg1;
 - (void)_handleTap:(id)arg1;
 - (void)_handleTileControllerAnimationEnd;
 - (void)_invalidateAssetReferencesDisplayedInTilingView;
 - (BOOL)_isEndingPresentation;
 - (BOOL)_isPerformingNonAnimatedPush;
+- (id)_libraryChangePauseToken;
 - (BOOL)_needsUpdateAssetReferencesDisplayedInTilingView;
 - (id)_newCollapsedLayout;
 - (id)_oneUpViewController;
 - (id)_panDirectionValueFilter;
 - (id)_pinchedTileTracker;
+- (BOOL)_prepareDismissalForced:(BOOL)arg1;
 - (void)_presentOneUpViewController:(id)arg1 animated:(BOOL)arg2 interactiveMode:(int)arg3 completion:(id /* block */)arg4;
 - (void)_presentationEndDidTimeOut:(int)arg1;
 - (int)_presentationEndTimeoutIdentifier;
@@ -104,16 +118,20 @@
 - (void)_setDisappearingTilingView:(id)arg1;
 - (void)_setEndingPresentation:(BOOL)arg1;
 - (void)_setIsPerformingNonAnimatedPush:(BOOL)arg1;
+- (void)_setLibraryChangePauseToken:(id)arg1;
 - (void)_setNeedsUpdateAssetReferencesDisplayedInTilingView:(BOOL)arg1;
 - (void)_setOneUpViewController:(id)arg1;
 - (void)_setPanDirectionValueFilter:(id)arg1;
 - (void)_setPinchedTileTracker:(id)arg1;
 - (void)_setPresentationEndTimeoutIdentifier:(int)arg1;
 - (void)_setPresentingViewController:(id)arg1;
+- (void)_setShouldPauseLibraryChanges:(BOOL)arg1;
 - (void)_setState:(int)arg1;
 - (void)_setTapGestureRecognizer:(id)arg1;
 - (void)_setTilingView:(id)arg1;
 - (void)_setTransitioningTilingView:(id)arg1;
+- (BOOL)_shouldAutoplayOnNavigation;
+- (BOOL)_shouldPauseLibraryChanges;
 - (int)_state;
 - (id)_tapGestureRecognizer;
 - (id)_tilingView;
@@ -127,9 +145,11 @@
 - (void)beginUsingBlackTheme;
 - (id)browsingSession;
 - (BOOL)cachesScrubberView;
-- (id)cameraPreviewTransitionDelegateWithSourceRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 sourceImage:(id)arg2;
+- (id)cameraPreviewTransitionDelegateWithSourceRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 sourceImage:(id)arg2;
+- (BOOL)canDismissOneUpViewController;
 - (BOOL)canPresentOneUpViewController;
 - (void)cancelCommitTransitionForPreviewViewController:(id)arg1 completion:(id /* block */)arg2;
+- (void)commitPreviewViewController:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (void)didDismissPreviewViewController:(id)arg1 committing:(BOOL)arg2;
@@ -144,7 +164,6 @@
 - (void)interactiveTileTracker:(id)arg1 willStartTrackingTileController:(id)arg2;
 - (BOOL)isOneUpPresented;
 - (void)navigateToAssetAtIndexPath:(id)arg1;
-- (void)performCommitTransitionForPreviewViewController:(id)arg1 shouldSnapshot:(BOOL)arg2 completion:(id /* block */)arg3;
 - (id)photosDataSource;
 - (void)photosPreviewPresentationController:(id)arg1 willPresentPreviewViewController:(id)arg2;
 - (id)pinchedTiledTracker:(id)arg1 finalLayoutInfoForTileWithLayoutInfo:(id)arg2;
@@ -156,17 +175,19 @@
 - (void)presentingViewControllerViewDidDisappear:(BOOL)arg1;
 - (void)presentingViewControllerViewWillAppear:(BOOL)arg1;
 - (void)presentingViewControllerViewWillDisappear:(BOOL)arg1;
-- (id)previewPresentationTransitioningDelegateForPosition:(struct CGPoint { float x1; float x2; })arg1 inSourceView:(id)arg2;
+- (id)previewPresentationTransitioningDelegateForPosition:(struct CGPoint { double x1; double x2; })arg1 inSourceView:(id)arg2;
 - (id)previewViewControllerForItemAtIndexPath:(id)arg1 allowingActions:(BOOL)arg2;
 - (void)setAssetDisplayDelegate:(id)arg1;
 - (void)setCachesScrubberView:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setPhotosDataSource:(id)arg1;
+- (void)setUnlockDeviceHandler:(id /* block */)arg1;
+- (void)setUnlockDeviceStatus:(id /* block */)arg1;
 - (BOOL)shouldStartPreviewingSimultaneouslyWithGestureRecognizer:(id)arg1;
 - (id)tilingView:(id)arg1 dataSourceConverterForTransitionFromLayout:(id)arg2 toLayout:(id)arg3;
 - (void)tilingView:(id)arg1 didStopUsingTileController:(id)arg2;
 - (id)tilingView:(id)arg1 tileControllerWithIndexPath:(id)arg2 kind:(id)arg3 dataSource:(id)arg4;
-- (id)tilingView:(id)arg1 tileTransitionCoordinatorForChangeFromFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 toFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 duration:(double)arg4;
+- (id)tilingView:(id)arg1 tileTransitionCoordinatorForChangeFromFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 toFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 duration:(double)arg4;
 - (id)tilingView:(id)arg1 tileTransitionCoordinatorForReattachedTileControllers:(id)arg2 context:(id)arg3;
 - (id)tilingView:(id)arg1 tileTransitionCoordinatorForTransitionFromLayout:(id)arg2 toLayout:(id)arg3 withContext:(id)arg4;
 - (id)tilingView:(id)arg1 tileTransitionCoordinatorForUpdateWithItems:(id)arg2;
@@ -179,6 +200,8 @@
 - (BOOL)tilingViewControllerTransitionUsesTransientTilingView:(id)arg1;
 - (void)tilingViewDidEndAnimatingTileControllers:(id)arg1;
 - (void)tilingViewDidUpdateTileControllers:(id)arg1;
-- (void)willPresentPreviewViewController:(id)arg1 forLocation:(struct CGPoint { float x1; float x2; })arg2 inSourceView:(id)arg3;
+- (id /* block */)unlockDeviceHandler;
+- (id /* block */)unlockDeviceStatus;
+- (void)willPresentPreviewViewController:(id)arg1 forLocation:(struct CGPoint { double x1; double x2; })arg2 inSourceView:(id)arg3;
 
 @end

@@ -3,8 +3,8 @@
  */
 
 @interface TSCH3DTextureResource : TSCH3DResource <TSCH3DOptimizedTextureResource, TSCHUnretainedParent> {
-    NSNumber *mCachedHash;
-    TSCH3DTexture *mParent;
+    NSNumber * mCachedHash;
+    TSCH3DTexture * mParent;
 }
 
 - (BOOL)canLoadCachedFullMipmapBufferForDataCache:(id)arg1;

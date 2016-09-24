@@ -3,8 +3,8 @@
  */
 
 @interface LSAppLink : NSObject <NSSecureCoding> {
-    NSURL *_URL;
-    LSApplicationProxy *_targetApplicationProxy;
+    NSURL * _URL;
+    LSApplicationProxy * _targetApplicationProxy;
 }
 
 @property (copy) NSURL *URL;
@@ -16,14 +16,14 @@
 + (id)_appLinkWithURL:(id)arg1 applicationProxy:(id)arg2 plugIn:(id)arg3 error:(id*)arg4;
 + (void)_getAppLinkWithURL:(id)arg1 requireEntitlement:(BOOL)arg2 XPCConnection:(id)arg3 completionHandler:(id /* block */)arg4;
 + (int)_openStrategyForBundleIdentifier:(id)arg1;
-+ (void)_openWithState:(id)arg1 XPCConnection:(id)arg2 machPort:(unsigned int)arg3 completionHandler:(id /* block */)arg4;
++ (void)_openWithState:(id)arg1 XPCConnection:(id)arg2 completionHandler:(id /* block */)arg3;
++ (void)_openWithState:(id)arg1 completionHandler:(id /* block */)arg2;
 + (void)_setOpenStrategy:(int)arg1 forBundleIdentifier:(id)arg2 XPCConnection:(id)arg3;
 + (BOOL)_shouldAppLinkOpenWithStrategy:(int)arg1 XPCConnection:(id)arg2;
 + (void)considerPlugInClassAtIndex:(unsigned int)arg1 plugInClasses:(id)arg2 URLComponents:(id)arg3 XPCConnection:(id)arg4 previousPlugInError:(id)arg5 completionHandler:(id /* block */)arg6;
 + (id)dispatchQueue;
 + (void)getAppLinkWithURL:(id)arg1 completionHandler:(id /* block */)arg2;
 + (void)openWithURL:(id)arg1 completionHandler:(id /* block */)arg2;
-+ (void)setShouldHandleURL:(id)arg1 fromBrowser:(BOOL)arg2 asAppLink:(BOOL)arg3;
 + (BOOL)supportsSecureCoding;
 
 - (id)URL;

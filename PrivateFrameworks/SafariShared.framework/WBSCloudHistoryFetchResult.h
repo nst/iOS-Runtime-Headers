@@ -3,10 +3,10 @@
  */
 
 @interface WBSCloudHistoryFetchResult : NSObject {
-    NSMutableDictionary *_mutableClientVersions;
-    NSMutableArray *_mutableCloudHistoryVisits;
-    NSMutableArray *_mutableHistoryTombstones;
-    NSData *_serverChangeTokenData;
+    NSMutableDictionary * _mutableClientVersions;
+    NSMutableArray * _mutableCloudHistoryVisits;
+    NSMutableArray * _mutableHistoryTombstones;
+    NSData * _serverChangeTokenData;
 }
 
 @property (nonatomic, readonly) NSDictionary *clientVersions;

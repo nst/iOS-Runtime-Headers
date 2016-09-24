@@ -11,7 +11,7 @@
             unsigned int m_keyCount; 
             unsigned int m_deletedCount; 
         } m_impl; 
-    } _framesToMetadataMap;
+    }  _framesToMetadataMap;
 }
 
 + (BOOL)convertNumber:(id)arg1 toFormMetadataRequestType:(unsigned int*)arg2;
@@ -21,9 +21,12 @@
 - (struct OpaqueJSValue { }*)_jsObjectForForm:(id)arg1 inFrame:(id)arg2;
 - (void)_lockMetadataForForm:(id)arg1 inFrame:(id)arg2;
 - (void)_unlockMetadataForForm:(id)arg1 inFrame:(id)arg2;
+- (void)addressBookAutoFillableFieldBlurred:(id)arg1 inFrame:(id)arg2 page:(id)arg3 textFieldMetadata:(id)arg4 formMetadata:(id)arg5;
+- (void)addressBookAutoFillableFieldFocused:(id)arg1 withAddressBookAutoFillableFieldMetadata:(id)arg2 inFrame:(id)arg3;
 - (void)annotateForm:(double)arg1 inFrame:(id)arg2 withValues:(id)arg3;
 - (void)autoFillFormAsynchronouslyInFrame:(id)arg1 withValues:(id)arg2 selectFieldAfterFilling:(id)arg3;
 - (void)autoFillFormInFrame:(id)arg1 withValues:(id)arg2;
+- (void)autoFillFormInFrame:(id)arg1 withValues:(id)arg2 fillSynchronously:(BOOL)arg3 setAutoFilled:(BOOL)arg4 focusFieldAfterFilling:(BOOL)arg5 fieldToFocus:(id)arg6;
 - (void)autoFillFormInFrame:(id)arg1 withValues:(id)arg2 fillSynchronously:(BOOL)arg3 setAutoFilled:(BOOL)arg4 selectFieldAfterFilling:(id)arg5;
 - (void)autoFillFormSynchronouslyInFrame:(id)arg1 withValues:(id)arg2;
 - (void)autoFillFormSynchronouslyInFrame:(id)arg1 withValues:(id)arg2 selectFieldAfterFilling:(id)arg3;
@@ -31,8 +34,9 @@
 - (void)clearMetadataForFrame:(id)arg1;
 - (void)clearScriptWorld;
 - (void)countUserEditedTextControlsInFrame:(id)arg1 textFields:(unsigned int*)arg2 textAreas:(unsigned int*)arg3;
-- (void)creditCardFieldBlurredInFrame:(id)arg1;
+- (void)creditCardFieldBlurred:(id)arg1 inFrame:(id)arg2 page:(id)arg3 textFieldMetadata:(id)arg4 formMetadata:(id)arg5;
 - (void)creditCardFieldFocused:(id)arg1 inFrame:(id)arg2;
+- (void)disableSpellCheckInField:(id)arg1 inFrame:(id)arg2;
 - (void)fillField:(id)arg1 inFrame:(id)arg2 withGeneratedPassword:(id)arg3;
 - (void)fillForm:(double)arg1 inFrame:(id)arg2 withPassword:(id)arg3;
 - (void)finishedAutoFillingForm:(id)arg1 inFrame:(id)arg2;
@@ -49,7 +53,7 @@
 - (id)metadataForForm:(id)arg1 inFrame:(id)arg2 requestType:(unsigned int)arg3;
 - (struct FrameMetadata { int (**x1)(); struct Vector<OpaqueJSValue *, 0, WTF::CrashOnOverflow, 16> { struct OpaqueJSValue {} **x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3; } x2; struct OpaqueJSValue {} *x3; struct OpaqueJSValue {} *x4; struct OpaqueJSContext {} *x5; id x6; }*)metadataForFrame:(id)arg1 requestType:(unsigned int)arg2;
 - (BOOL)pageWithMainFrameMeetsEditedFormTextWarningCriteria:(id)arg1;
-- (void)passwordFieldBlurred:(id)arg1 inFrame:(id)arg2;
+- (void)passwordFieldBlurred:(id)arg1 inFrame:(id)arg2 page:(id)arg3 textFieldMetadata:(id)arg4 formMetadata:(id)arg5;
 - (void)passwordFieldFocused:(id)arg1 inFrame:(id)arg2;
 - (void)passwordFieldFocused:(id)arg1 inFrame:(id)arg2 isPasswordFieldForUserCredentials:(BOOL)arg3;
 - (void)recursivelyClearMetadataForFrames:(id)arg1;
@@ -57,13 +61,15 @@
 - (void)recursivelyCountUserEditedTextControlsInFrame:(id)arg1 textFields:(unsigned int*)arg2 textAreas:(unsigned int*)arg3;
 - (void)replaceRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 inField:(id)arg2 inFrame:(id)arg3 withString:(id)arg4 andSelectTailStartingAt:(unsigned int)arg5;
 - (void)selectRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 inField:(id)arg2 inFrame:(id)arg3;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })selectionRangeInField:(id)arg1 inFrame:(id)arg2;
 - (void)setFormControls:(id)arg1 inFrame:(id)arg2 asAutoFilled:(BOOL)arg3;
+- (BOOL)shouldAttemptToClassifyFormsWithoutAPasswordFieldAsLoginForms;
 - (BOOL)shouldIncludeUnannotatedControls;
-- (void)textFieldBlurred:(id)arg1 inFrame:(id)arg2;
+- (void)textFieldBlurred:(id)arg1 inFrame:(id)arg2 page:(id)arg3 textFieldMetadata:(id)arg4 formMetadata:(id)arg5;
 - (void)textFieldFocused:(id)arg1 inFrame:(id)arg2;
 - (id)uniqueIDForTextField:(id)arg1 inFrame:(id)arg2;
 - (unsigned int)userEditedTextControlCountInArray:(struct OpaqueJSValue { }*)arg1 context:(struct OpaqueJSContext { }*)arg2 expectTextFieldsRatherThanTextAreas:(BOOL)arg3;
-- (void)usernameFieldBlurredInFrame:(id)arg1;
+- (void)usernameFieldBlurred:(id)arg1 inFrame:(id)arg2 page:(id)arg3 textFieldMetadata:(id)arg4 formMetadata:(id)arg5;
 - (void)usernameFieldFocused:(id)arg1 inForm:(id)arg2 inFrame:(id)arg3;
 - (id)visibleNonEmptyTextFieldsInForm:(id)arg1 inFrame:(id)arg2;
 - (void)willSendSubmitEventForForm:(id)arg1 inFrame:(id)arg2;

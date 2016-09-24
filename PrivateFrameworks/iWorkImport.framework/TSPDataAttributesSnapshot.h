@@ -3,7 +3,7 @@
  */
 
 @interface TSPDataAttributesSnapshot : NSObject {
-    NSDictionary *_attributesMap;
+    NSDictionary * _attributesMap;
 }
 
 + (id)newSnapshotForContext:(id)arg1;

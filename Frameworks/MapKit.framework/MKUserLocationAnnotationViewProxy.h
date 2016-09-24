@@ -3,8 +3,8 @@
  */
 
 @interface MKUserLocationAnnotationViewProxy : NSObject <VKPuckAnimatorTarget, VKRouteMatchedAnnotationPresentation, VKTrackableAnnotationPresentation> {
-    MKAnnotationView *_annotationView;
-    NSHashTable *_presentationCoordinateObservers;
+    MKAnnotationView * _annotationView;
+    NSHashTable * _presentationCoordinateObservers;
 }
 
 @property (nonatomic) MKAnnotationView *annotationView;

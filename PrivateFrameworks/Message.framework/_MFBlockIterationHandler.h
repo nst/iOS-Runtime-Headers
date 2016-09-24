@@ -3,9 +3,9 @@
  */
 
 @interface _MFBlockIterationHandler : NSObject <MFSearchResultHandler, QueryProgressMonitor> {
-    id /* block */ _block;
-    BOOL _cancelled;
-    MFActivityMonitor *_monitor;
+    id /* block */  _block;
+    BOOL  _cancelled;
+    MFActivityMonitor * _monitor;
 }
 
 - (void)beginResult:(unsigned int)arg1;

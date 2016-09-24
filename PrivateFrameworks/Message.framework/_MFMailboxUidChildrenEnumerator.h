@@ -3,9 +3,9 @@
  */
 
 @interface _MFMailboxUidChildrenEnumerator : NSEnumerator {
-    BOOL _includeHidden;
-    unsigned int _index;
-    NSMutableArray *_mailboxes;
+    BOOL  _includeHidden;
+    unsigned int  _index;
+    NSMutableArray * _mailboxes;
 }
 
 - (id)_initWithMailbox:(id)arg1 includeHiddenChildren:(BOOL)arg2;

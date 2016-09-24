@@ -3,10 +3,9 @@
  */
 
 @interface BFFLocaleDataSource : NSObject {
-    NSArray *_canonicalLocales;
-    NSString *_language;
-    NSMutableArray *_moreCountries;
-    NSMutableArray *_suggestedCountries;
+    NSString * _language;
+    NSMutableArray * _moreCountries;
+    NSMutableArray * _suggestedCountries;
 }
 
 @property (nonatomic, copy) NSString *language;

@@ -3,17 +3,17 @@
  */
 
 @interface CMKCameraRoll : NSObject {
-    NSMutableSet *__cachedChangeObservers;
-    BOOL __hasLoadedCameraRollFrameworks;
-    BOOL __hasPendingSessionAssets;
-    NSMutableDictionary *__inflightAssets;
-    NSMutableSet *__sessionAssetUUIDs;
-    PHFetchResult *__userLibraryAssetsFetchResult;
-    PHAssetCollection *__weakAssetCollection;
-    PHFetchResult *__weakAssetCollectionFetchResult;
-    BOOL __weakAssetCollectionLoaded;
-    BOOL _changeNotificationsEnabled;
-    NSDate *_sessionIdentifier;
+    NSMutableSet * __cachedChangeObservers;
+    BOOL  __hasLoadedCameraRollFrameworks;
+    BOOL  __hasPendingSessionAssets;
+    NSMutableDictionary * __inflightAssets;
+    NSMutableSet * __sessionAssetUUIDs;
+    PHFetchResult * __userLibraryAssetsFetchResult;
+    PHAssetCollection * __weakAssetCollection;
+    PHFetchResult * __weakAssetCollectionFetchResult;
+    BOOL  __weakAssetCollectionLoaded;
+    BOOL  _changeNotificationsEnabled;
+    NSDate * _sessionIdentifier;
 }
 
 @property (nonatomic, readonly) NSMutableSet *_cachedChangeObservers;

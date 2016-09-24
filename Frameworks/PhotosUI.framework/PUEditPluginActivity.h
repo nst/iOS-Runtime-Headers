@@ -3,7 +3,7 @@
  */
 
 @interface PUEditPluginActivity : UIActivity {
-    PUEditPlugin *_plugin;
+    PUEditPlugin * _plugin;
 }
 
 @property (nonatomic, readonly) PUEditPlugin *plugin;

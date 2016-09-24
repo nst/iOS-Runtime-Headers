@@ -3,10 +3,10 @@
  */
 
 @interface SKUIMetricsImpressionSession : NSObject {
-    NSMutableArray *_impressionIdentifiers;
-    NSMutableOrderedSet *_impressionableViewElements;
-    NSMapTable *_impressionableViewElementsTimerMap;
-    NSMutableString *_impressionsString;
+    NSMutableArray * _impressionIdentifiers;
+    NSMutableOrderedSet * _impressionableViewElements;
+    NSMapTable * _impressionableViewElementsTimerMap;
+    NSMutableString * _impressionsString;
 }
 
 @property (nonatomic, readonly, copy) NSArray *impressionIdentifiers;
@@ -18,7 +18,7 @@
 - (void)_clearTimerForViewElement:(id)arg1;
 - (id)_getTimerForViewElement:(id)arg1;
 - (void)_setTimer:(id)arg1 forViewElement:(id)arg2;
-- (void)addItemIdentifier:(long long)arg1;
+- (void)addItemIdentifier:(int)arg1;
 - (void)addItemViewElement:(id)arg1;
 - (void)beginActiveImpressionForViewElement:(id)arg1;
 - (void)endActiveImpressionForViewElement:(id)arg1;

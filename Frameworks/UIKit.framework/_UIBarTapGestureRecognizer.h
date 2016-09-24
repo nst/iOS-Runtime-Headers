@@ -3,14 +3,14 @@
  */
 
 @interface _UIBarTapGestureRecognizer : UITapGestureRecognizer {
-    BOOL _failWhenTappingInBars;
-    int _tapCategory;
+    BOOL  _failWhenTappingInBars;
+    int  _tapCategory;
 }
 
 @property (nonatomic) BOOL failWhenTappingInBars;
 @property (nonatomic, readonly) int tapCategory;
 
-- (int)_categoryForTapLocation:(struct CGPoint { float x1; float x2; })arg1;
+- (int)_categoryForTapLocation:(struct CGPoint { double x1; double x2; })arg1;
 - (void)_setDelegate:(id)arg1;
 - (id)description;
 - (BOOL)failWhenTappingInBars;

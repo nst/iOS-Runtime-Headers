@@ -3,9 +3,9 @@
  */
 
 @interface SGBloomFilter : NSObject {
-    <SGBloomFilterChunk> *_head;
-    NSObject<OS_dispatch_queue> *_queue;
-    <SGBloomFilterChunk> *_tail;
+    <SGBloomFilterChunk> * _head;
+    NSObject<OS_dispatch_queue> * _queue;
+    <SGBloomFilterChunk> * _tail;
 }
 
 - (void).cxx_destruct;
@@ -18,5 +18,6 @@
 - (id)initWithHead:(id)arg1 tail:(id)arg2;
 - (id)initWithInMemoryStorage;
 - (id)initWithInMemoryStorageSparse;
+- (void)rotate;
 
 @end

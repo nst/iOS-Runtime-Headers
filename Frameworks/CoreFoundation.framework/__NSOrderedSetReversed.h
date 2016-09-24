@@ -3,8 +3,8 @@
  */
 
 @interface __NSOrderedSetReversed : NSOrderedSet {
-    unsigned int _cnt;
-    id _orderedSet;
+    unsigned int  _cnt;
+    id  _orderedSet;
 }
 
 - (unsigned int)count;

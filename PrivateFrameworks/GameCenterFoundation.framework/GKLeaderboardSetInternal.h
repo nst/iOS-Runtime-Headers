@@ -3,11 +3,11 @@
  */
 
 @interface GKLeaderboardSetInternal : GKInternalRepresentation {
-    NSString *_groupIdentifier;
-    NSDictionary *_icons;
-    NSString *_identifier;
-    NSDictionary *_leaderboardIdentifiers;
-    NSString *_title;
+    NSString * _groupIdentifier;
+    NSDictionary * _icons;
+    NSString * _identifier;
+    NSDictionary * _leaderboardIdentifiers;
+    NSString * _title;
 }
 
 @property (nonatomic, retain) NSString *groupIdentifier;

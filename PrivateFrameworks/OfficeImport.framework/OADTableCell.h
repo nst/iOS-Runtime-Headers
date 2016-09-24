@@ -3,14 +3,14 @@
  */
 
 @interface OADTableCell : NSObject {
-    int mGridSpan;
-    BOOL mHorzMerge;
-    int mLeftColumn;
-    OADTableCellProperties *mProperties;
-    int mRowSpan;
-    OADTextBody *mTextBody;
-    int mTopRow;
-    BOOL mVertMerge;
+    int  mGridSpan;
+    BOOL  mHorzMerge;
+    int  mLeftColumn;
+    OADTableCellProperties * mProperties;
+    int  mRowSpan;
+    OADTextBody * mTextBody;
+    int  mTopRow;
+    BOOL  mVertMerge;
 }
 
 - (void)dealloc;

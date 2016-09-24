@@ -3,12 +3,12 @@
  */
 
 @interface NEIKEv2Rekey : NSObject <NSObject> {
-    PCSimpleTimer *_childLifetime;
-    int _childLifetimeMinutes;
-    id /* block */ _childRekeyHandler;
-    PCSimpleTimer *_ikeLifetime;
-    int _ikeLifetimeMinutes;
-    id /* block */ _ikeRekeyHandler;
+    PCSimpleTimer * _childLifetime;
+    int  _childLifetimeMinutes;
+    id /* block */  _childRekeyHandler;
+    PCSimpleTimer * _ikeLifetime;
+    int  _ikeLifetimeMinutes;
+    id /* block */  _ikeRekeyHandler;
 }
 
 @property (retain) PCSimpleTimer *childLifetime;

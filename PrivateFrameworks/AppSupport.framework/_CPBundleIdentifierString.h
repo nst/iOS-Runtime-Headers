@@ -3,9 +3,9 @@
  */
 
 @interface _CPBundleIdentifierString : NSString {
-    NSString *_bundleIdentifierOrProcessName;
-    NSString *_executablePath;
-    BOOL _isProcessName;
+    NSString * _bundleIdentifierOrProcessName;
+    NSString * _executablePath;
+    BOOL  _isProcessName;
 }
 
 - (id)_initWithExecutablePath:(id)arg1;

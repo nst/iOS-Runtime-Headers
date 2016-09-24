@@ -3,10 +3,10 @@
  */
 
 @interface PLShuffledAlbumChangeNotification : PLAssetContainerChangeNotification {
-    PLShuffledAlbum *_album;
-    PLAssetContainerChangeNotification *_backingNotification;
-    NSIndexSet *_changedIndexes;
-    NSOrderedSet *_newSet;
+    PLShuffledAlbum * _album;
+    PLAssetContainerChangeNotification * _backingNotification;
+    NSIndexSet * _changedIndexes;
+    NSOrderedSet * _newSet;
 }
 
 + (id)notificationForDerivedObject:(id)arg1 priorChangeState:(id)arg2 forBackingObjectNotification:(id)arg3;

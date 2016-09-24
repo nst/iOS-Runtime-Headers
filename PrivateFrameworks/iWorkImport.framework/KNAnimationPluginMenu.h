@@ -3,11 +3,11 @@
  */
 
 @interface KNAnimationPluginMenu : NSObject {
-    unsigned int mDefaultDirection;
-    NSMutableDictionary *mDirectionToLocalizedStringMap;
-    NSMutableArray *mDirections;
-    NSMutableArray *mLocalizedDirections;
-    NSMutableDictionary *mLocalizedStringToDirectionMap;
+    unsigned int  mDefaultDirection;
+    NSMutableDictionary * mDirectionToLocalizedStringMap;
+    NSMutableArray * mDirections;
+    NSMutableArray * mLocalizedDirections;
+    NSMutableDictionary * mLocalizedStringToDirectionMap;
 }
 
 @property (nonatomic, readonly) unsigned int count;

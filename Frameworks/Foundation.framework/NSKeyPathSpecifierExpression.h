@@ -3,7 +3,7 @@
  */
 
 @interface NSKeyPathSpecifierExpression : NSExpression {
-    NSString *_value;
+    NSString * _value;
 }
 
 + (BOOL)supportsSecureCoding;

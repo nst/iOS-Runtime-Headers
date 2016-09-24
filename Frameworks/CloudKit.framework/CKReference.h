@@ -3,8 +3,8 @@
  */
 
 @interface CKReference : NSObject <CKRecordValue, NSCopying, NSSecureCoding> {
-    CKRecordID *_recordID;
-    unsigned int _referenceAction;
+    CKRecordID * _recordID;
+    unsigned int  _referenceAction;
 }
 
 @property (readonly, copy) NSString *debugDescription;

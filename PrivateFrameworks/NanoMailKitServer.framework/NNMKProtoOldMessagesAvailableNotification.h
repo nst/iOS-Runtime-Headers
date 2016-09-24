@@ -3,10 +3,10 @@
  */
 
 @interface NNMKProtoOldMessagesAvailableNotification : PBCodable <NSCopying> {
-    unsigned int _fullSyncVersion;
+    unsigned int  _fullSyncVersion;
     struct { 
         unsigned int fullSyncVersion : 1; 
-    } _has;
+    }  _has;
 }
 
 @property (nonatomic) unsigned int fullSyncVersion;

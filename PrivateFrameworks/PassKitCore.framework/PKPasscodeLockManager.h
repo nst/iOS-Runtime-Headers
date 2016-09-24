@@ -3,10 +3,10 @@
  */
 
 @interface PKPasscodeLockManager : NSObject <MCProfileConnectionObserver> {
-    NSObject<OS_dispatch_queue> *_internalQueue;
-    BOOL _isPasscodeSet;
-    NSHashTable *_observers;
-    MCProfileConnection *_profileConnection;
+    NSObject<OS_dispatch_queue> * _internalQueue;
+    BOOL  _isPasscodeSet;
+    NSHashTable * _observers;
+    MCProfileConnection * _profileConnection;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -17,6 +17,7 @@
 
 + (id)sharedManager;
 
+- (void).cxx_destruct;
 - (void)addObserver:(id)arg1;
 - (void)dealloc;
 - (id)init;

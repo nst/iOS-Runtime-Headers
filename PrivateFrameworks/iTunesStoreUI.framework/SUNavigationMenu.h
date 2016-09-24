@@ -3,13 +3,13 @@
  */
 
 @interface SUNavigationMenu : NSObject <NSCopying> {
-    NSString *_cancelTitle;
-    NSString *_closedTitle;
-    int _initialSelectedIndex;
-    int _location;
-    NSArray *_menuItems;
-    NSArray *_navigationButtons;
-    NSString *_openTitle;
+    NSString * _cancelTitle;
+    NSString * _closedTitle;
+    int  _initialSelectedIndex;
+    int  _location;
+    NSArray * _menuItems;
+    NSArray * _navigationButtons;
+    NSString * _openTitle;
 }
 
 @property (nonatomic, readonly) NSString *cancelTitle;

@@ -3,14 +3,14 @@
  */
 
 @interface CMKCaptureResponse : NSObject {
-    NSDictionary *__parameterStorage;
-    NSDictionary *_additionalInformation;
-    CMKInflightAsset *_asset;
-    BOOL _completed;
-    NSDictionary *_diagnostics;
-    NSMutableDictionary *_metadata;
-    CMKCaptureRequest *_request;
-    int _type;
+    NSDictionary * __parameterStorage;
+    NSDictionary * _additionalInformation;
+    CMKInflightAsset * _asset;
+    BOOL  _completed;
+    NSDictionary * _diagnostics;
+    NSMutableDictionary * _metadata;
+    CMKCaptureRequest * _request;
+    int  _type;
 }
 
 @property (nonatomic, readonly, copy) NSDictionary *_parameterStorage;

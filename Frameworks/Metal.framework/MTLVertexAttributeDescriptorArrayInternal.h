@@ -3,7 +3,7 @@
  */
 
 @interface MTLVertexAttributeDescriptorArrayInternal : MTLVertexAttributeDescriptorArray {
-    MTLVertexAttributeDescriptorInternal *_descriptors;
+    MTLVertexAttributeDescriptorInternal * _descriptors;
 }
 
 - (void)dealloc;

@@ -3,11 +3,11 @@
  */
 
 @interface MSCLTokenTextView : UITextView {
-    <MSCLTokenTextViewDelegate> *_changeDelegate;
-    int _maximumTagLength;
-    NSString *_tagDelimeter;
-    NSString *_tagSuffix;
-    NSMutableArray *_tokenViews;
+    <MSCLTokenTextViewDelegate> * _changeDelegate;
+    int  _maximumTagLength;
+    NSString * _tagDelimeter;
+    NSString * _tagSuffix;
+    NSMutableArray * _tokenViews;
 }
 
 @property (nonatomic) <MSCLTokenTextViewDelegate> *changeDelegate;
@@ -15,14 +15,14 @@
 @property (nonatomic, readonly, copy) NSString *pendingTagForSelectedRange;
 @property (nonatomic, copy) NSString *tagDelimeter;
 @property (nonatomic, copy) NSString *tagSuffix;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } textRectForSelectedRange;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } textRectForSelectedRange;
 
 - (void).cxx_destruct;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_tagRangeForRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (BOOL)becomeFirstResponder;
 - (id)changeDelegate;
 - (void)enumerateTokenAttachmentsUsingBlock:(id /* block */)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 textContainer:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 textContainer:(id)arg2;
 - (void)insertTokenWithAttachment:(id)arg1;
 - (int)maximumTagLength;
 - (id)pendingTagForRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 usedRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2;
@@ -39,7 +39,7 @@
 - (void)setTagSuffix:(id)arg1;
 - (id)tagDelimeter;
 - (id)tagSuffix;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })textRectForSelectedRange;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })textRectForSelectedRange;
 - (id)textWithResolvedTokenStrings;
 
 @end

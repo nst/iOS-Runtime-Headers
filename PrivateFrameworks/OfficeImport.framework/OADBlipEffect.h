@@ -3,7 +3,7 @@
  */
 
 @interface OADBlipEffect : NSObject <NSCopying> {
-    int mType;
+    int  mType;
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

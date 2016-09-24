@@ -3,8 +3,8 @@
  */
 
 @interface PLScheduledWakeAgent : PLAgent {
-    PLEntryNotificationOperatorComposition *_canSleepNotification;
-    PLSemaphore *_canSleepSemaphore;
+    PLEntryNotificationOperatorComposition * _canSleepNotification;
+    PLSemaphore * _canSleepSemaphore;
 }
 
 @property (retain) PLEntryNotificationOperatorComposition *canSleepNotification;

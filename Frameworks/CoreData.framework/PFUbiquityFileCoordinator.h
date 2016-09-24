@@ -3,7 +3,7 @@
  */
 
 @interface PFUbiquityFileCoordinator : NSFileCoordinator {
-    NSString *_localPeerID;
+    NSString * _localPeerID;
 }
 
 @property (nonatomic, readonly) NSString *localPeerID;

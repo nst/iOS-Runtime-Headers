@@ -3,14 +3,14 @@
  */
 
 @interface CMDictArchiveManager : CMArchiveManager {
-    NSMutableString *mCssString;
-    bool mIsFrameset;
-    NSMutableString *mMainHtml;
-    NSString *mName;
-    NSString *mPrefix;
-    NSString *mResourceUrlProtocol;
-    NSMutableDictionary *mResources;
-    NSMutableDictionary *mStyleCache;
+    NSMutableString * mCssString;
+    bool  mIsFrameset;
+    NSMutableString * mMainHtml;
+    NSString * mName;
+    NSString * mPrefix;
+    NSString * mResourceUrlProtocol;
+    NSMutableDictionary * mResources;
+    NSMutableDictionary * mStyleCache;
 }
 
 - (id)addCssStyle:(id)arg1;

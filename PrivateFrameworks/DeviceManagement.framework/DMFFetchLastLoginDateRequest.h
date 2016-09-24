@@ -3,7 +3,7 @@
  */
 
 @interface DMFFetchLastLoginDateRequest : CATTaskRequest {
-    NSSet *_appleIDs;
+    NSSet * _appleIDs;
 }
 
 @property (nonatomic, copy) NSSet *appleIDs;

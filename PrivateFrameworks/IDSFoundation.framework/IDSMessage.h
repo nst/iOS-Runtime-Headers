@@ -3,9 +3,9 @@
  */
 
 @interface IDSMessage : IDSBaseMessage <NSCopying> {
-    NSDictionary *_deliveryStatusContext;
-    NSNumber *_version;
-    NSNumber *_wantsDeliveryStatus;
+    NSDictionary * _deliveryStatusContext;
+    NSNumber * _version;
+    NSNumber * _wantsDeliveryStatus;
 }
 
 @property (copy) NSDictionary *deliveryStatusContext;

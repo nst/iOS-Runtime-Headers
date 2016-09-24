@@ -3,13 +3,12 @@
  */
 
 @interface _UITouchesObservingGestureRecognizer : UIGestureRecognizer {
-    NSSet *_touches;
+    NSSet * _touches;
 }
 
 @property (nonatomic, copy) NSSet *touches;
 
 - (void).cxx_destruct;
-- (BOOL)_acceptsFailureRequirements;
 - (BOOL)_affectedByGesture:(id)arg1;
 - (BOOL)_allTouchesAreEndedOrCancelled:(id)arg1;
 - (void)_updateTouchesFromEvent:(id)arg1;

@@ -3,15 +3,19 @@
  */
 
 @interface TSKSelectionPath : NSObject {
-    NSArray *mCurrentSelection;
+    NSArray * mCurrentSelection;
 }
 
+@property (nonatomic, readonly) NSString *UUIDDescription;
 @property (nonatomic, readonly) BOOL isEditingTableCell;
 @property (nonatomic, readonly) BOOL isEditingTableName;
+@property (nonatomic, readonly) NSArray *orderedSelections;
 @property (nonatomic, readonly) BOOL selectsMultipleTables;
 
 + (id)selectionPathWithSelectionArray:(id)arg1;
 
+- (id)UUIDDescription;
+- (id)autofillSelection;
 - (id)cellSelection;
 - (id)containedCellTextEditingSelection;
 - (id)controlCellSelection;
@@ -28,6 +32,7 @@
 - (BOOL)isEditingTableCell;
 - (BOOL)isEditingTableName;
 - (BOOL)isEqual:(id)arg1;
+- (id)leastSpecificSelectionOfClass:(Class)arg1;
 - (id)mostSpecificSelectionConformingToProtocol:(id)arg1;
 - (id)mostSpecificSelectionOfClass:(Class)arg1;
 - (id)orderedSelections;
@@ -35,11 +40,13 @@
 - (id)selectionAtIndex:(unsigned int)arg1;
 - (id)selectionPathByAppendingOrReplacingMostSpecificSelectionWithSelection:(id)arg1;
 - (id)selectionPathByFixingUpControlCellSelection;
+- (id)selectionPathByFixingUpRowColumnSelection;
 - (id)selectionPathPoppingOffSelection:(id)arg1;
 - (id)selectionPathPoppingToSelection:(id)arg1;
 - (id)selectionPathReplacingMostSpecificLocationOfSelection:(id)arg1 withSelection:(id)arg2;
 - (id)selectionPathWithAppendedSelection:(id)arg1;
 - (id)selectionPathWithAppendedSelections:(id)arg1;
+- (id)selectionPathWithControlCellSelectionRemovedForConfiguration;
 - (id)selectionPathWithTableTextEditingSelectionRemoved;
 - (BOOL)selectsMultipleTables;
 - (id)singleSelectedTableInfo;

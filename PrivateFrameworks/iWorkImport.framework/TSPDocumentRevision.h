@@ -3,8 +3,8 @@
  */
 
 @interface TSPDocumentRevision : NSObject <NSCopying> {
-    NSString *_identifier;
-    int _sequence;
+    NSString * _identifier;
+    int  _sequence;
 }
 
 @property (nonatomic, readonly) NSString *identifier;

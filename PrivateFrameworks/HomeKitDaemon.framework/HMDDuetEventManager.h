@@ -3,20 +3,41 @@
  */
 
 @interface HMDDuetEventManager : NSObject {
-    _DKKnowledgeStore *_store;
+    _DKKnowledgeStore * _deleteStore;
+    <_DKKnowledgeQuerying> * _queryStore;
+    <_DKKnowledgeSaving> * _saveStore;
+    NSObject<OS_dispatch_queue> * _workQueue;
 }
 
-@property (nonatomic, retain) _DKKnowledgeStore *store;
+@property (nonatomic, retain) _DKKnowledgeStore *deleteStore;
+@property (nonatomic, retain) <_DKKnowledgeQuerying> *queryStore;
+@property (nonatomic, retain) <_DKKnowledgeSaving> *saveStore;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
-+ (id)actionSetTypeToUUIDMap;
 + (id)eventStreamForType:(unsigned int)arg1;
++ (id)eventTypeAsString:(unsigned int)arg1;
 + (id)identifierForType:(unsigned int)arg1 eventValue:(id)arg2;
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
+- (void)_deleteEventsOfType:(unsigned int)arg1 fromDate:(id)arg2 offset:(unsigned int)arg3 limit:(unsigned int)arg4;
+- (id)_dumpEventsOfType:(unsigned int)arg1 fromDate:(id)arg2 offset:(unsigned int)arg3 limit:(unsigned int)arg4;
+- (void)_logEventWithType:(unsigned int)arg1 startDate:(id)arg2 endDate:(id)arg3 typeIdentifier:(id)arg4 metadata:(id)arg5;
+- (id)_queryEventsOfType:(unsigned int)arg1 fromDate:(id)arg2 offset:(unsigned int)arg3 limit:(unsigned int)arg4;
+- (void)deleteEventsOfType:(unsigned int)arg1 fromDate:(id)arg2 offset:(unsigned int)arg3 limit:(unsigned int)arg4;
+- (id)deleteStore;
+- (id)dumpAllEvents;
+- (id)dumpEventsOfType:(unsigned int)arg1 fromDate:(id)arg2 offset:(unsigned int)arg3 limit:(unsigned int)arg4;
 - (id)init;
 - (void)logEventWithType:(unsigned int)arg1 startDate:(id)arg2 endDate:(id)arg3 typeIdentifier:(id)arg4 metadata:(id)arg5;
-- (void)setStore:(id)arg1;
-- (id)store;
+- (id)queryEventsOfType:(unsigned int)arg1 fromDate:(id)arg2 offset:(unsigned int)arg3 limit:(unsigned int)arg4;
+- (id)queryStore;
+- (void)resetAllEvents;
+- (id)saveStore;
+- (void)setDeleteStore:(id)arg1;
+- (void)setQueryStore:(id)arg1;
+- (void)setSaveStore:(id)arg1;
+- (void)setWorkQueue:(id)arg1;
+- (id)workQueue;
 
 @end

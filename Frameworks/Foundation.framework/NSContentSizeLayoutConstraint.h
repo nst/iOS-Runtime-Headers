@@ -3,12 +3,12 @@
  */
 
 @interface NSContentSizeLayoutConstraint : NSLayoutConstraint {
-    float _compressionResistancePriority;
-    float _huggingPriority;
+    double  _compressionResistancePriority;
+    double  _huggingPriority;
 }
 
-@property (readonly) float compressionResistancePriority;
-@property (readonly) float huggingPriority;
+@property (readonly) double compressionResistancePriority;
+@property (readonly) double huggingPriority;
 
 - (id)_priorityDescription;
 - (float)compressionResistancePriority;

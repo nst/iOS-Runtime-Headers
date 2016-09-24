@@ -3,14 +3,14 @@
  */
 
 @interface VSRecognitionResultHandlingThread : NSObject {
-    <VSRecognitionResultHandlingThreadDelegate> *_delegate;
-    NSConditionLock *_lock;
-    NSMutableArray *_requests;
+    <VSRecognitionResultHandlingThreadDelegate> * _delegate;
+    NSConditionLock * _lock;
+    NSMutableArray * _requests;
     struct { 
         unsigned int running : 1; 
         unsigned int delegateDidHandleResults : 1; 
         unsigned int valid : 1; 
-    } _resultHandlingFlags;
+    }  _resultHandlingFlags;
 }
 
 - (void)_handleRequests;

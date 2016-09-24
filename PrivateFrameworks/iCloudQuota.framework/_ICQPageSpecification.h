@@ -3,10 +3,10 @@
  */
 
 @interface _ICQPageSpecification : NSObject {
-    BOOL _hasCancelButtonForBack;
-    NSString *_pageClassIdentifier;
-    NSString *_pageIdentifier;
-    NSString *_pageTitle;
+    BOOL  _hasCancelButtonForBack;
+    NSString * _pageClassIdentifier;
+    NSString * _pageIdentifier;
+    NSString * _pageTitle;
 }
 
 @property (nonatomic) BOOL hasCancelButtonForBack;

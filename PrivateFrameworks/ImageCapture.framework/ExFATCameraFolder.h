@@ -3,12 +3,12 @@
  */
 
 @interface ExFATCameraFolder : ICCameraFolder {
-    void *_exFATCameraFolderProperties;
+    void * _exFATCameraFolderProperties;
 }
 
 @property (readonly) struct timespec { int x1; long x2; } fsCreationTime;
 @property (readonly) struct timespec { int x1; long x2; } fsModificationTime;
-@property (readonly) long long fsSize;
+@property (readonly) int fsSize;
 @property (readonly) id object;
 
 - (void)dealloc;
@@ -17,8 +17,8 @@
 - (void)finalize;
 - (struct timespec { int x1; long x2; })fsCreationTime;
 - (struct timespec { int x1; long x2; })fsModificationTime;
-- (long long)fsSize;
-- (id)initWithName:(id)arg1 parentFolder:(id)arg2 device:(id)arg3 object:(id)arg4 fsCreationTime:(struct timespec { int x1; long x2; })arg5 fsModificationTime:(struct timespec { int x1; long x2; })arg6 fsSize:(long long)arg7;
+- (int)fsSize;
+- (id)initWithName:(id)arg1 parentFolder:(id)arg2 device:(id)arg3 object:(id)arg4 fsCreationTime:(struct timespec { int x1; long x2; })arg5 fsModificationTime:(struct timespec { int x1; long x2; })arg6 fsSize:(int)arg7;
 - (id)object;
 
 @end

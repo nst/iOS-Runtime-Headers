@@ -2,20 +2,8 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIDebuggingInformationRootTableViewController : UITableViewController {
-    NSMutableArray *topLevelViewControllerNames;
-    NSMutableArray *topLevelViewControllers;
-}
+@interface UIDebuggingInformationRootTableViewController : UIDebuggingInformationListTableViewController
 
-- (void).cxx_destruct;
-- (void)addTopLevelViewController:(id)arg1 forName:(id)arg2;
 - (id)initWithStyle:(int)arg1;
-- (int)numberOfSectionsInTableView:(id)arg1;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (void)toggleOverlayVisibility;
-- (id)topLevelViewControllerForName:(id)arg1;
-- (void)viewDidLoad;
 
 @end

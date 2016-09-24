@@ -3,7 +3,7 @@
  */
 
 @interface NNMKProtoErrorDownloadingContentForMessageWarning : PBCodable <NSCopying> {
-    NSString *_messageId;
+    NSString * _messageId;
 }
 
 @property (nonatomic, readonly) BOOL hasMessageId;

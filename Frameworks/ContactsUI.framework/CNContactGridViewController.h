@@ -4,30 +4,30 @@
 
 @interface CNContactGridViewController : UICollectionViewController <CNAvatarViewDelegate, CNContactDataSourceDelegate, CNQuickActionsViewDelegate> {
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    } _avatarMargins;
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _avatarMargins;
     struct CGSize { 
-        float width; 
-        float height; 
-    } _avatarSize;
-    UIColor *_backgroundColor;
-    CNContactFormatter *_contactFormatter;
-    NSObject<CNContactDataSource> *_dataSource;
-    <CNContactGridViewControllerDelegate> *_delegate;
-    CNContactGridViewLayout *_gridLayout;
-    NSArray *_inlineActionsCategories;
-    BOOL _inlineActionsEnabled;
-    int _monogrammerStyle;
-    NSDictionary *_nameTextAttributes;
-    int _numberOfColumns;
-    NSMutableDictionary *_preloadedActionsManagers;
+        double width; 
+        double height; 
+    }  _avatarSize;
+    UIColor * _backgroundColor;
+    CNContactFormatter * _contactFormatter;
+    NSObject<CNContactDataSource> * _dataSource;
+    <CNContactGridViewControllerDelegate> * _delegate;
+    CNContactGridViewLayout * _gridLayout;
+    NSArray * _inlineActionsCategories;
+    BOOL  _inlineActionsEnabled;
+    int  _monogrammerStyle;
+    NSDictionary * _nameTextAttributes;
+    int  _numberOfColumns;
+    NSMutableDictionary * _preloadedActionsManagers;
 }
 
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } avatarMargins;
-@property (nonatomic) struct CGSize { float x1; float x2; } avatarSize;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } avatarMargins;
+@property (nonatomic) struct CGSize { double x1; double x2; } avatarSize;
 @property (nonatomic, copy) UIColor *backgroundColor;
 @property (nonatomic, retain) CNContactFormatter *contactFormatter;
 @property (nonatomic, retain) NSObject<CNContactDataSource> *dataSource;
@@ -55,8 +55,8 @@
 - (void)_updateItemSize;
 - (void)actionsView:(id)arg1 didPerformAction:(id)arg2;
 - (void)actionsView:(id)arg1 willShowActions:(id)arg2;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })avatarMargins;
-- (struct CGSize { float x1; float x2; })avatarSize;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })avatarMargins;
+- (struct CGSize { double x1; double x2; })avatarSize;
 - (void)avatarView:(id)arg1 willShowActions:(id)arg2;
 - (id)backgroundColor;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
@@ -84,8 +84,8 @@
 - (void)preloadInlineActionsForContactsAtIndexes:(id)arg1;
 - (id)preloadedActionsManagers;
 - (id)presentingViewControllerForAvatarView:(id)arg1;
-- (void)setAvatarMargins:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setAvatarSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setAvatarMargins:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setAvatarSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setContactFormatter:(id)arg1;
 - (void)setDataSource:(id)arg1;

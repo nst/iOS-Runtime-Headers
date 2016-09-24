@@ -3,7 +3,7 @@
  */
 
 @interface OADBulletColorSpecification : OADBulletColor {
-    OADColor *mColor;
+    OADColor * mColor;
 }
 
 - (id)color;

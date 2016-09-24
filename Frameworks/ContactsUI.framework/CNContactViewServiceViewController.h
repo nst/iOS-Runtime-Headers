@@ -9,6 +9,7 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
+- (void)didChangePreferredContentSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)didCompleteWithContact:(id)arg1;
 - (void)didDeleteContact:(id)arg1;
 - (id)init;

@@ -3,7 +3,7 @@
  */
 
 @interface UIImageNibPlaceholder : UIImage <NSCoding> {
-    NSString *runtimeResourceName;
+    NSString * runtimeResourceName;
 }
 
 - (void).cxx_destruct;

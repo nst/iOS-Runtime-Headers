@@ -3,9 +3,9 @@
  */
 
 @interface WLURLSessionController : NSObject <NSURLSessionDelegate> {
-    WLDeviceAuthentication *_auth;
-    NSOperationQueue *_delegateOperationQueue;
-    NSURLSession *_urlSession;
+    WLDeviceAuthentication * _auth;
+    NSOperationQueue * _delegateOperationQueue;
+    NSURLSession * _urlSession;
 }
 
 @property (readonly, copy) NSString *debugDescription;

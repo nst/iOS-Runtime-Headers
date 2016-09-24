@@ -3,9 +3,9 @@
  */
 
 @interface _SUAutoInstallOperationModel : NSObject <NSCopying, NSSecureCoding> {
-    int _agreementStatus;
-    SUAutoInstallForecast *_forecast;
-    NSUUID *_id;
+    int  _agreementStatus;
+    SUAutoInstallForecast * _forecast;
+    NSUUID * _id;
 }
 
 @property (nonatomic) int agreementStatus;

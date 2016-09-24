@@ -3,19 +3,19 @@
  */
 
 @interface MFContactsSearchResultsModel : NSObject <_MFSearchResultsConsumer> {
-    NSArray *_enteredRecipients;
-    BOOL _favorMobileNumbers;
-    struct __CFSet { } *_finishedResultTypes;
-    NSArray *_infrequentRecentSearchResults;
-    NSMutableDictionary *_localSearchResultsByAddress;
-    unsigned int _preferredType;
-    NSOperationQueue *_queue;
-    NSMutableDictionary *_recentRecipientsByAddress;
-    NSArray *_recentSearchResults;
-    int _resetCount;
-    struct __CFArray { } *_resultTypesPriorityOrder;
-    struct __CFArray { } *_resultTypesSortOrder;
-    NSMutableDictionary *_serverSearchResultsByAddress;
+    NSArray * _enteredRecipients;
+    BOOL  _favorMobileNumbers;
+    struct __CFSet { } * _finishedResultTypes;
+    NSArray * _infrequentRecentSearchResults;
+    NSMutableDictionary * _localSearchResultsByAddress;
+    unsigned int  _preferredType;
+    NSOperationQueue * _queue;
+    NSMutableDictionary * _recentRecipientsByAddress;
+    NSArray * _recentSearchResults;
+    int  _resetCount;
+    struct __CFArray { } * _resultTypesPriorityOrder;
+    struct __CFArray { } * _resultTypesSortOrder;
+    NSMutableDictionary * _serverSearchResultsByAddress;
 }
 
 @property (readonly, copy) NSString *debugDescription;

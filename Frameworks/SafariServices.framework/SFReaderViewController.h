@@ -3,8 +3,8 @@
  */
 
 @interface SFReaderViewController : UIViewController <WKUIDelegate> {
-    _SFBrowserContentViewController *_containerViewController;
-    WKWebView *_originalWebView;
+    _SFBrowserContentViewController * _containerViewController;
+    WKWebView * _originalWebView;
 }
 
 @property (nonatomic) _SFBrowserContentViewController *containerViewController;
@@ -13,8 +13,6 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) WKWebView *readerWebView;
 @property (readonly) Class superclass;
-
-+ (void)initialize;
 
 - (void).cxx_destruct;
 - (void)_webView:(id)arg1 commitPreviewedViewController:(id)arg2;

@@ -3,8 +3,8 @@
  */
 
 @interface CAStateElement : NSObject <NSCoding, NSCopying> {
-    CAStateElement *_source;
-    CALayer *_target;
+    CAStateElement * _source;
+    CALayer * _target;
 }
 
 @property (nonatomic, readonly, copy) NSString *keyPath;

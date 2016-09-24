@@ -3,9 +3,9 @@
  */
 
 @interface BookmarkDAVSyncData : NSObject {
-    NSMutableDictionary *_backingDict;
-    void *_db;
-    BOOL _hasChanges;
+    NSMutableDictionary * _backingDict;
+    void * _db;
+    BOOL  _hasChanges;
 }
 
 @property (nonatomic, retain) NSString *accountPrsId;

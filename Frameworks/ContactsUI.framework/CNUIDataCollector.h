@@ -3,8 +3,8 @@
  */
 
 @interface CNUIDataCollector : NSObject {
-    NSString *_appIdentifier;
-    CNUIDataCollectorLogger *_logger;
+    NSString * _appIdentifier;
+    CNUIDataCollectorLogger * _logger;
 }
 
 @property (nonatomic, retain) NSString *appIdentifier;

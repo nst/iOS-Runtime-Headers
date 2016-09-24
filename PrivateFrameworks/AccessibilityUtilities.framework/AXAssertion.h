@@ -3,8 +3,8 @@
  */
 
 @interface AXAssertion : NSObject {
-    NSString *_assertionType;
-    NSString *_identifier;
+    NSString * _assertionType;
+    NSString * _identifier;
 }
 
 @property (nonatomic, retain) NSString *assertionType;

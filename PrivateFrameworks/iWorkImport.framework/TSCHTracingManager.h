@@ -3,13 +3,13 @@
  */
 
 @interface TSCHTracingManager : NSObject {
-    TSMTraceBuffer *mBuffer;
-    unsigned int mBufferSize;
-    BOOL mBufferSizeSet;
-    NSURL *mLastTraceFileURL;
-    NSString *mTag;
-    unsigned int mTraceLevel;
-    BOOL mTraceLevelSet;
+    TSMTraceBuffer * mBuffer;
+    unsigned int  mBufferSize;
+    BOOL  mBufferSizeSet;
+    NSURL * mLastTraceFileURL;
+    NSString * mTag;
+    unsigned int  mTraceLevel;
+    BOOL  mTraceLevelSet;
 }
 
 @property unsigned int bufferSize;

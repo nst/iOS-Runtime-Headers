@@ -5,18 +5,20 @@
 @interface WKNavigationAction : NSObject <WKObject> {
     struct ObjectStorage<API::NavigationAction> { 
         struct type { 
-            unsigned char __lx[288]; 
+            unsigned char __lx[304]; 
         } data; 
-    } _navigationAction;
+    }  _navigationAction;
 }
 
-@property (readonly) struct Object { int (**x1)(); id x2; /* Warning: Unrecognized filer type: '' using 'void*' */ void*x3; void*x4; void*x5; void*x6; void*x7; void*x8; void*x9; void*x10; void*x11; void*x12; void*x13; void*x14; void*x15; void*x16; void*x17; void*x18; void*x19; void*x20; void*x21; void*x22; void*x23; void*x24; void*x25; void*x26; void*x27; void*x28; void*x29; void*x30; void*x31; void*x32; void*x33; void*x34; void*x35; void*x36; void*x37; void*x38; void*x39; void*x40; void*x41; void*x42; void*x43; void*x44; void x45; void*x46; void*x47; void*x48; void*x49; void*x50; void*x51; unsigned short x52; void*x53; unsigned short x54; void*x55; short x56; void*x57; void*x58; void*x59; void*x60; unsigned long x61; int x62; unsigned int x63/* : ? */; const void*x64; const void*x65; void*x66; void*x67; const int x68; void x69; void*x70; void*x71; void*x72; void*x73; const void*x74; void*x75; void*x76; void*x77; out const void*x78; short x79; void*x80; void*x81; void*x82; const float x83; out const void*x84; void*x85; in BOOL x86; void*x87; void*x88; void*x89; long x90; void*x91; short x92; int x93; short x94; void*x95; float x96; const void*x97; void*x98; void*x99; void*x100; out const void*x101; void*x102; void*x103; void*x104; const float x105; out const void*x106; void*x107; in BOOL x108; void*x109; void*x110; void*x111; long x112; void*x113; short x114; int x115; short x116; void*x117; void*x118; void*x119; void*x120; void*x121; void*x122; void*x123; void*x124; void*x125; void*x126; void*x127; void*x128; void*x129; void*x130; void*x131; void*x132; void*x133; void*x134; void*x135; void*x136; void*x137; void*x138; void*x139; void*x140; void*x141; void*x142; void*x143; void*x144; void*x145; void*x146; void*x147; void*x148; void*x149; void*x150; void*x151; void*x152; void*x153; void*x154; void*x155; void*x156; void*x157; void*x158; void*x159; void*x160; void*x161; void*x162; void*x163; void*x164; void*x165; void*x166; void*x167; void*x168; void*x169; void x170; void*x171; void*x172; void*x173; void*x174; void*x175; void*x176; void*x177; void*x178; void*x179; void*x180; short x181; void*x182; out const void*x183; short x184; short x185; void*x186; void*x187; unsigned long x188; int x189; in void*x190; long doublex191; void*x192; long x193; void*x194; void*x195; void*x196; void*x197; void*x198; void*x199; void*x200; void*x201; void*x202; void*x203; void*x204; void*x205; void*x206; void*x207; void*x208; void*x209; void*x210; void*x211; void*x212; void*x213; void*x214; void*x215; void*x216; id x217; void*x218; void*x219; void*x220; unsigned long x221; void*x222; void*x223; void*x224; void*x225; void*x226; void*x227; void*x228; void*x229; void*x230; id x231; void*x232; void*x233; void*x234; void*x235; inout void*x236; void*x237; void*x238; void*x239; void*x240; void*x241; void*x242; short x243; void*x244; void*x245; void*x246; void*x247; void*x248; void*x249; in void*x250; void*x251; void*x252; void*x253; void*x254; struct x255; void*x256; void*x257; void*x258; float x259; void*x260; long x261; void*x262; out void*x263; void*x264; void*x265; void*x266; void*x267; void*x268; void*x269; void*x270; void*x271; void*x272; void*x273; void*x274; void*x275; void*x276; void*x277; void*x278; void*x279; void*x280; void*x281; void*x282; void*x283; void*x284; void*x285; void*x286; void*x287; float x288; void*x289; long x290; void*x291; out void*x292; void*x293; void*x294; void*x295; void*x296; void*x297; void*x298; void*x299; void*x300; void*x301; void*x302; void*x303; void*x304; void*x305; void*x306; void*x307; void*x308; void*x309; void*x310; void*x311; void*x312; void*x313; void*x314; void*x315; void*x316; }*_apiObject;
+@property (readonly) /* Warning: unhandled struct encoding: '{Object=^^?@}' */ struct Object { int (**x1)(); id x2; }*_apiObject;
 @property (nonatomic, readonly) BOOL _canHandleRequest;
 @property (nonatomic, readonly) NSURL *_originalURL;
 @property (nonatomic, readonly) BOOL _shouldOpenAppLinks;
 @property (nonatomic, readonly) BOOL _shouldOpenExternalSchemes;
 @property (nonatomic, readonly) BOOL _shouldOpenExternalURLs;
+@property (nonatomic, readonly) int _syntheticClickType;
 @property (getter=_isUserInitiated, nonatomic, readonly) BOOL _userInitiated;
+@property (nonatomic, readonly) _WKUserInitiatedAction *_userInitiatedAction;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
@@ -26,13 +28,15 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, copy) WKFrameInfo *targetFrame;
 
-- (struct Object { int (**x1)(); id x2; /* Warning: Unrecognized filer type: '' using 'void*' */ void*x3; void*x4; void*x5; void*x6; void*x7; void*x8; void*x9; void*x10; void*x11; void*x12; }*)_apiObject;
+- (/* Warning: unhandled struct encoding: '{Object=^^?@}' */ struct Object { int (**x1)(); id x2; }*)_apiObject;
 - (BOOL)_canHandleRequest;
 - (BOOL)_isUserInitiated;
 - (id)_originalURL;
 - (BOOL)_shouldOpenAppLinks;
 - (BOOL)_shouldOpenExternalSchemes;
 - (BOOL)_shouldOpenExternalURLs;
+- (int)_syntheticClickType;
+- (id)_userInitiatedAction;
 - (void)dealloc;
 - (id)description;
 - (int)navigationType;

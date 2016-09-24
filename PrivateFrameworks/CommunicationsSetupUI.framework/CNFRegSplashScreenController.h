@@ -3,9 +3,9 @@
  */
 
 @interface CNFRegSplashScreenController : PSViewController <CNFRegFirstRunExperience> {
-    <CNFRegFirstRunDelegate> *_delegate;
-    UIButton *_learnMoreButton;
-    CNFRegController *_regController;
+    <CNFRegFirstRunDelegate> * _delegate;
+    UIButton * _learnMoreButton;
+    CNFRegController * _regController;
 }
 
 @property (nonatomic, readonly) int currentAppearanceStyle;

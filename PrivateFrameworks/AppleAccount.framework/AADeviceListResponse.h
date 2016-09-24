@@ -3,7 +3,7 @@
  */
 
 @interface AADeviceListResponse : AAResponse {
-    NSArray *_devices;
+    NSArray * _devices;
 }
 
 @property (nonatomic, readonly) NSArray *devices;

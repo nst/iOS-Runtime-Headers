@@ -3,9 +3,9 @@
  */
 
 @interface _MFCountableMatchesContext : NSObject {
-    int _maxCount;
-    struct __CFDictionary { } *_peopleCount;
-    NSMutableSet *_popularPeople;
+    int  _maxCount;
+    struct __CFDictionary { } * _peopleCount;
+    NSMutableSet * _popularPeople;
 }
 
 @property (nonatomic) int maxCount;

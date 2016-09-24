@@ -3,14 +3,16 @@
  */
 
 @interface CalMeCard : NSObject <NSSecureCoding> {
-    NSString *_displayName;
-    NSArray *_emailAddresses;
-    NSString *_uniqueID;
-    int _version;
+    NSString * _displayName;
+    NSArray * _emailAddresses;
+    NSString * _likenessString;
+    NSString * _uniqueID;
+    int  _version;
 }
 
 @property (readonly, retain) NSString *displayName;
 @property (readonly, retain) NSArray *emailAddresses;
+@property (retain) NSString *likenessString;
 @property (readonly, retain) NSString *uniqueID;
 @property int version;
 
@@ -23,10 +25,12 @@
 - (id)emailAddresses;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithDisplayName:(id)arg1 emailAddresses:(id)arg2 uniqueID:(id)arg3;
+- (id)initWithDisplayName:(id)arg1 emailAddresses:(id)arg2 uniqueID:(id)arg3 likenessString:(id)arg4;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToMeCard:(id)arg1;
+- (id)likenessString;
 - (id)preferredEmailAddress;
+- (void)setLikenessString:(id)arg1;
 - (void)setVersion:(int)arg1;
 - (id)uniqueID;
 - (int)version;

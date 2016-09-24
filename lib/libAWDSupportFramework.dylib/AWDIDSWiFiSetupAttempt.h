@@ -3,17 +3,17 @@
  */
 
 @interface AWDIDSWiFiSetupAttempt : PBCodable <NSCopying> {
-    NSString *_client;
-    unsigned long long _duration;
+    NSString * _client;
+    unsigned long long  _duration;
     struct { 
         unsigned int duration : 1; 
         unsigned int result : 1; 
         unsigned int timestamp : 1; 
         unsigned int type : 1; 
-    } _has;
-    unsigned long long _result;
-    unsigned long long _timestamp;
-    unsigned long long _type;
+    }  _has;
+    unsigned long long  _result;
+    unsigned long long  _timestamp;
+    unsigned long long  _type;
 }
 
 @property (nonatomic, retain) NSString *client;

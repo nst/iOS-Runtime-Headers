@@ -3,13 +3,13 @@
  */
 
 @interface _NSDefaultSectionInfo : NSObject <NSFetchedResultsSectionInfo> {
-    NSFetchedResultsController *_controller;
-    NSString *_indexTitle;
-    NSString *_name;
-    unsigned int _numberOfObjects;
-    unsigned int _oldSectionNumber;
-    id _sectionObjects;
-    unsigned int _sectionOffset;
+    NSFetchedResultsController * _controller;
+    NSString * _indexTitle;
+    NSString * _name;
+    unsigned int  _numberOfObjects;
+    unsigned int  _oldSectionNumber;
+    id  _sectionObjects;
+    unsigned int  _sectionOffset;
 }
 
 @property (nonatomic, readonly) NSString *indexTitle;

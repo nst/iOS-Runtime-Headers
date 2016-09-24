@@ -3,8 +3,8 @@
  */
 
 @interface PUTilingDataSource : NSObject {
-    NSHashTable *__changeObservers;
-    NSString *_identifier;
+    NSHashTable * __changeObservers;
+    NSString * _identifier;
 }
 
 @property (nonatomic, readonly) NSHashTable *_changeObservers;

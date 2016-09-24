@@ -3,10 +3,10 @@
  */
 
 @interface GEOVoltaireRasterTileTrafficData : NSObject {
-    double _expirationTime;
-    NSArray *_trafficIncidents;
-    NSMutableArray *_trafficSegments;
-    struct { int x1; int x2; } *_vertices;
+    double  _expirationTime;
+    NSArray * _trafficIncidents;
+    NSMutableArray * _trafficSegments;
+    struct { int x1; int x2; } * _vertices;
 }
 
 @property (nonatomic) double expirationTime;

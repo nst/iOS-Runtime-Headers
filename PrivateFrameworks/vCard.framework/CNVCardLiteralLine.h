@@ -3,11 +3,12 @@
  */
 
 @interface CNVCardLiteralLine : CNVCardLine {
-    NSString *_literalValue;
+    NSString * _literalValue;
 }
 
 + (id)lineWithLiteralValue:(id)arg1;
 
+- (void).cxx_destruct;
 - (id)initWithLiteralValue:(id)arg1;
 - (void)serializeWithStrategy:(id)arg1;
 

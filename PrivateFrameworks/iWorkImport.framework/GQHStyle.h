@@ -3,9 +3,9 @@
  */
 
 @interface GQHStyle : NSObject {
-    struct __CFString { } *mCachedCssStyleName;
-    struct __CFString { } *mCssClassAttribute;
-    struct __CFDictionary { } *mStyles;
+    struct __CFString { } * mCachedCssStyleName;
+    struct __CFString { } * mCssClassAttribute;
+    struct __CFDictionary { } * mStyles;
 }
 
 + (void)appendParentClass:(struct __CFString {}**)arg1 style:(id)arg2 classType:(Class)arg3 state:(id)arg4;

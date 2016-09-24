@@ -3,15 +3,15 @@
  */
 
 @interface MPStoreOfferMediaItemArtworkDescriptor : NSObject <NSCopying> {
-    NSString *_cacheID;
-    NSArray *_containerArtworkSizes;
-    NSDictionary *_containerArtworkURLs;
-    unsigned int _hash;
-    NSArray *_itemArtworkSizes;
-    NSDictionary *_itemArtworkURLs;
-    long long _itemPersistentID;
-    NSArray *_screenshotSizes;
-    NSDictionary *_screenshotURLs;
+    NSString * _cacheID;
+    NSArray * _containerArtworkSizes;
+    NSDictionary * _containerArtworkURLs;
+    unsigned int  _hash;
+    NSArray * _itemArtworkSizes;
+    NSDictionary * _itemArtworkURLs;
+    int  _itemPersistentID;
+    NSArray * _screenshotSizes;
+    NSDictionary * _screenshotURLs;
 }
 
 @property (nonatomic, readonly) NSString *cacheID;
@@ -20,12 +20,12 @@
 - (id)_availableSizesForArtworkURLs:(id)arg1;
 - (id)_preferredArtworkURLsForType:(int)arg1;
 - (id)_sizeToURLDictionaryFromStoreDictionariesArray:(id)arg1;
-- (id)artworkURLForSize:(struct CGSize { float x1; float x2; })arg1 type:(int)arg2;
+- (id)artworkURLForSize:(struct CGSize { double x1; double x2; })arg1 type:(int)arg2;
 - (id)availableSizesForArtworkOfType:(int)arg1;
 - (id)cacheID;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)hash;
-- (id)initWithItemPersistentID:(long long)arg1 screenshotDictionaries:(id)arg2 itemArtworkDictionaries:(id)arg3 containerArtworkDictionaries:(id)arg4;
+- (id)initWithItemPersistentID:(int)arg1 screenshotDictionaries:(id)arg2 itemArtworkDictionaries:(id)arg3 containerArtworkDictionaries:(id)arg4;
 - (BOOL)isEqual:(id)arg1;
 
 @end

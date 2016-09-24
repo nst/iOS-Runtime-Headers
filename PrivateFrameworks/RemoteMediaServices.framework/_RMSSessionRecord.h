@@ -3,11 +3,11 @@
  */
 
 @interface _RMSSessionRecord : NSObject {
-    RMSPowerAssertion *_powerAssertion;
-    int _refreshCount;
-    RMSRunAssertion *_runAssertion;
-    id _session;
-    int _timeout;
+    RMSPowerAssertion * _powerAssertion;
+    int  _refreshCount;
+    RMSRunAssertion * _runAssertion;
+    id  _session;
+    int  _timeout;
 }
 
 @property (nonatomic, retain) RMSPowerAssertion *powerAssertion;

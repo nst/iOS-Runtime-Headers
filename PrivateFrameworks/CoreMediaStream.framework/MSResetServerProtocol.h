@@ -25,7 +25,7 @@
         int (*finishedCallback)(); 
         int (*authFailedCallback)(); 
         int (*didReceiveServerSideConfigurationVersionCallback)(); 
-    } _context;
+    }  _context;
 }
 
 - (void)_coreProtocolDidFailAuthenticationError:(id)arg1;

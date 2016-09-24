@@ -3,13 +3,15 @@
  */
 
 @interface IDSSendParameters : NSObject <NSCopying> {
-    NSMutableDictionary *_params;
+    NSMutableDictionary * _params;
 }
 
 @property (nonatomic, retain) NSData *accessToken;
 @property (nonatomic, retain) NSString *accountUUID;
 @property (nonatomic) BOOL activityContinuation;
+@property (nonatomic) BOOL allowCloudDelivery;
 @property (nonatomic, retain) NSString *alternateCallbackID;
+@property (nonatomic) BOOL alwaysSkipSelf;
 @property (nonatomic, retain) NSArray *bulkedPayload;
 @property (nonatomic) BOOL bypassDuet;
 @property (nonatomic) BOOL bypassSizeCheck;
@@ -41,6 +43,7 @@
 @property (nonatomic, retain) NSString *localDestinationDeviceUUID;
 @property (nonatomic, retain) NSString *mainAccountUUID;
 @property (nonatomic, retain) NSDictionary *message;
+@property (nonatomic, retain) NSNumber *messageType;
 @property (nonatomic, retain) NSData *messageUUID;
 @property (nonatomic) BOOL nonWaking;
 @property (nonatomic, retain) NSString *originalfromID;
@@ -53,6 +56,7 @@
 @property (nonatomic, retain) NSArray *requireLackOfRegistrationProperties;
 @property (nonatomic, retain) NSDictionary *resourceMetadata;
 @property (nonatomic, retain) NSString *resourcePath;
+@property (nonatomic, retain) NSString *sessionID;
 @property (nonatomic, retain) NSString *subService;
 @property (nonatomic, retain) NSString *subServiceAccountUUID;
 @property (nonatomic) double timeout;
@@ -64,7 +68,9 @@
 - (id)accessToken;
 - (id)accountUUID;
 - (BOOL)activityContinuation;
+- (BOOL)allowCloudDelivery;
 - (id)alternateCallbackID;
+- (BOOL)alwaysSkipSelf;
 - (id)bulkedPayload;
 - (BOOL)bypassDuet;
 - (BOOL)bypassSizeCheck;
@@ -102,6 +108,7 @@
 - (id)localDestinationDeviceUUID;
 - (id)mainAccountUUID;
 - (id)message;
+- (id)messageType;
 - (id)messageUUID;
 - (BOOL)nonWaking;
 - (id)objectForKey:(id)arg1;
@@ -115,10 +122,13 @@
 - (id)requireLackOfRegistrationProperties;
 - (id)resourceMetadata;
 - (id)resourcePath;
+- (id)sessionID;
 - (void)setAccessToken:(id)arg1;
 - (void)setAccountUUID:(id)arg1;
 - (void)setActivityContinuation:(BOOL)arg1;
+- (void)setAllowCloudDelivery:(BOOL)arg1;
 - (void)setAlternateCallbackID:(id)arg1;
+- (void)setAlwaysSkipSelf:(BOOL)arg1;
 - (void)setBulkedPayload:(id)arg1;
 - (void)setBypassDuet:(BOOL)arg1;
 - (void)setBypassSizeCheck:(BOOL)arg1;
@@ -148,6 +158,7 @@
 - (void)setLocalDestinationDeviceUUID:(id)arg1;
 - (void)setMainAccountUUID:(id)arg1;
 - (void)setMessage:(id)arg1;
+- (void)setMessageType:(id)arg1;
 - (void)setMessageUUID:(id)arg1;
 - (void)setNonWaking:(BOOL)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
@@ -161,6 +172,7 @@
 - (void)setRequireLackOfRegistrationProperties:(id)arg1;
 - (void)setResourceMetadata:(id)arg1;
 - (void)setResourcePath:(id)arg1;
+- (void)setSessionID:(id)arg1;
 - (void)setSubService:(id)arg1;
 - (void)setSubServiceAccountUUID:(id)arg1;
 - (void)setTimeout:(double)arg1;

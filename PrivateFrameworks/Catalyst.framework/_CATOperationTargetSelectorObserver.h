@@ -3,34 +3,33 @@
  */
 
 @interface _CATOperationTargetSelectorObserver : NSObject <CATOperationObserver> {
-    unsigned int _events;
-    SEL _selector;
-    id _target;
-    id _userInfo;
+    NSObject<OS_dispatch_queue> * _delegateQueue;
+    unsigned int  _events;
+    SEL  _selector;
+    id  _target;
+    id  _userInfo;
 }
 
 @property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *delegateQueue;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) unsigned int events;
+@property (nonatomic, readonly) unsigned int events;
 @property (readonly) unsigned int hash;
-@property (nonatomic) SEL selector;
+@property (nonatomic, readonly) SEL selector;
 @property (readonly) Class superclass;
-@property (nonatomic, retain) id target;
-@property (nonatomic, retain) id userInfo;
+@property (nonatomic, readonly) id target;
+@property (nonatomic, readonly) id userInfo;
 
 - (void).cxx_destruct;
+- (id)delegateQueue;
 - (unsigned int)events;
 - (id)init;
-- (id)initWithTarget:(id)arg1 selector:(SEL)arg2 events:(unsigned int)arg3 userInfo:(id)arg4;
+- (id)initWithTarget:(id)arg1 selector:(SEL)arg2 events:(unsigned int)arg3 userInfo:(id)arg4 delegateQueue:(id)arg5;
 - (void)invokeActionWithOperation:(id)arg1;
 - (void)operationDidFinish:(id)arg1;
 - (void)operationDidProgress:(id)arg1;
 - (void)operationDidStart:(id)arg1;
 - (SEL)selector;
-- (void)setEvents:(unsigned int)arg1;
-- (void)setSelector:(SEL)arg1;
-- (void)setTarget:(id)arg1;
-- (void)setUserInfo:(id)arg1;
 - (id)target;
 - (id)userInfo;
 

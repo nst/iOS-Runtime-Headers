@@ -3,12 +3,12 @@
  */
 
 @interface NSLeafProxy <NSCopying> {
-    NSString *dir;
-    NSDocInfo *docInfo;
-    NSString *file;
-    Class isa;
-    id realObject;
-    int refCount;
+    NSString * dir;
+    NSDocInfo * docInfo;
+    NSString * file;
+    Class  isa;
+    id  realObject;
+    int  refCount;
 }
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation

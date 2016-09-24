@@ -3,21 +3,23 @@
  */
 
 @interface CKDPRecordSaveRequest : PBRequest <NSCopying> {
-    CKDPRecordSaveRequestConflictLoserUpdate *_conflictLoserUpdate;
-    NSMutableArray *_conflictLosersToResolves;
-    NSString *_etag;
-    NSMutableArray *_fieldsToDeleteIfExistOnMerges;
+    CKDPRecordSaveRequestConflictLoserUpdate * _conflictLoserUpdate;
+    NSMutableArray * _conflictLosersToResolves;
+    NSString * _etag;
+    NSMutableArray * _fieldsToDeleteIfExistOnMerges;
     struct { 
         unsigned int saveSemantics : 1; 
         unsigned int merge : 1; 
-    } _has;
-    BOOL _merge;
-    CKDPRecord *_record;
-    NSString *_recordProtectionInfoTag;
-    int _saveSemantics;
-    NSString *_shareEtag;
-    CKDPRecordSaveRequestShareIdUpdate *_shareIDUpdate;
-    NSString *_zoneProtectionInfoTag;
+    }  _has;
+    BOOL  _merge;
+    CKDPRecordSaveRequestShareSaveInfo * _oBSOLETEShareSaveInfo;
+    NSString * _parentChainProtectionInfoTag;
+    CKDPRecord * _record;
+    NSString * _recordProtectionInfoTag;
+    int  _saveSemantics;
+    NSString * _shareEtag;
+    CKDPRecordSaveRequestShareIdUpdate * _shareIDUpdate;
+    NSString * _zoneProtectionInfoTag;
 }
 
 @property (nonatomic, retain) CKDPRecordSaveRequestConflictLoserUpdate *conflictLoserUpdate;
@@ -27,6 +29,8 @@
 @property (nonatomic, readonly) BOOL hasConflictLoserUpdate;
 @property (nonatomic, readonly) BOOL hasEtag;
 @property (nonatomic) BOOL hasMerge;
+@property (nonatomic, readonly) BOOL hasOBSOLETEShareSaveInfo;
+@property (nonatomic, readonly) BOOL hasParentChainProtectionInfoTag;
 @property (nonatomic, readonly) BOOL hasRecord;
 @property (nonatomic, readonly) BOOL hasRecordProtectionInfoTag;
 @property (nonatomic) BOOL hasSaveSemantics;
@@ -34,6 +38,8 @@
 @property (nonatomic, readonly) BOOL hasShareIDUpdate;
 @property (nonatomic, readonly) BOOL hasZoneProtectionInfoTag;
 @property (nonatomic) BOOL merge;
+@property (nonatomic, retain) CKDPRecordSaveRequestShareSaveInfo *oBSOLETEShareSaveInfo;
+@property (nonatomic, retain) NSString *parentChainProtectionInfoTag;
 @property (nonatomic, retain) CKDPRecord *record;
 @property (nonatomic, retain) NSString *recordProtectionInfoTag;
 @property (nonatomic) int saveSemantics;
@@ -41,9 +47,12 @@
 @property (nonatomic, retain) CKDPRecordSaveRequestShareIdUpdate *shareIDUpdate;
 @property (nonatomic, retain) NSString *zoneProtectionInfoTag;
 
++ (Class)conflictLosersToResolveType;
++ (Class)fieldsToDeleteIfExistOnMergeType;
 + (id)options;
 
 - (void).cxx_destruct;
+- (int)StringAsSaveSemantics:(id)arg1;
 - (void)addConflictLosersToResolve:(id)arg1;
 - (void)addFieldsToDeleteIfExistOnMerge:(id)arg1;
 - (void)clearConflictLosersToResolves;
@@ -63,6 +72,8 @@
 - (BOOL)hasConflictLoserUpdate;
 - (BOOL)hasEtag;
 - (BOOL)hasMerge;
+- (BOOL)hasOBSOLETEShareSaveInfo;
+- (BOOL)hasParentChainProtectionInfoTag;
 - (BOOL)hasRecord;
 - (BOOL)hasRecordProtectionInfoTag;
 - (BOOL)hasSaveSemantics;
@@ -73,12 +84,15 @@
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)merge;
 - (void)mergeFrom:(id)arg1;
+- (id)oBSOLETEShareSaveInfo;
+- (id)parentChainProtectionInfoTag;
 - (BOOL)readFrom:(id)arg1;
 - (id)record;
 - (id)recordProtectionInfoTag;
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;
 - (int)saveSemantics;
+- (id)saveSemanticsAsString:(int)arg1;
 - (void)setConflictLoserUpdate:(id)arg1;
 - (void)setConflictLosersToResolves:(id)arg1;
 - (void)setEtag:(id)arg1;
@@ -86,6 +100,8 @@
 - (void)setHasMerge:(BOOL)arg1;
 - (void)setHasSaveSemantics:(BOOL)arg1;
 - (void)setMerge:(BOOL)arg1;
+- (void)setOBSOLETEShareSaveInfo:(id)arg1;
+- (void)setParentChainProtectionInfoTag:(id)arg1;
 - (void)setRecord:(id)arg1;
 - (void)setRecordProtectionInfoTag:(id)arg1;
 - (void)setSaveSemantics:(int)arg1;

@@ -3,7 +3,7 @@
  */
 
 @interface AVCompositionTrackReaderInspector : AVTrackReaderInspector {
-    struct OpaqueFigMutableComposition { } *_figMutableComposition;
+    struct OpaqueFigMutableComposition { } * _figMutableComposition;
 }
 
 @property (getter=_mutableComposition, nonatomic, readonly) struct OpaqueFigMutableComposition { }*mutableComposition;
@@ -14,7 +14,7 @@
 - (void)finalize;
 - (BOOL)isPlayable;
 - (long)playabilityValidationResult;
-- (id)segmentForTrackTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (id)segmentForTrackTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
 - (id)segments;
 
 @end

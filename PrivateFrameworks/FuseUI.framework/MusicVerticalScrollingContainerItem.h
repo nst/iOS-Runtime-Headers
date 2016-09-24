@@ -3,8 +3,8 @@
  */
 
 @interface MusicVerticalScrollingContainerItem : NSObject <NSCoding> {
-    UIView *_view;
-    UIViewController *_viewController;
+    UIView * _view;
+    UIViewController * _viewController;
 }
 
 @property (nonatomic, readonly) UIView *view;

@@ -5,9 +5,9 @@
 @interface AWDBltUIBuildFail : PBCodable <NSCopying> {
     struct { 
         unsigned int timestamp : 1; 
-    } _has;
-    NSString *_sectionid;
-    unsigned long long _timestamp;
+    }  _has;
+    NSString * _sectionid;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic, readonly) BOOL hasSectionid;

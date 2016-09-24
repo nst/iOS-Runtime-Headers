@@ -3,7 +3,7 @@
  */
 
 @interface OADShapeProperties : OADGraphicProperties {
-    BOOL mIsTextBox;
+    BOOL  mIsTextBox;
 }
 
 + (id)defaultProperties;

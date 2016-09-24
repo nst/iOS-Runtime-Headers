@@ -3,14 +3,14 @@
  */
 
 @interface SSResponseAction : NSObject <NSCopying> {
-    SSAccount *_account;
-    NSString *_actionType;
-    NSString *_clientIdentifier;
-    NSString *_creditsString;
-    SSDialog *_dialog;
-    NSString *_footerSection;
-    NSURL *_url;
-    int _urlBagType;
+    SSAccount * _account;
+    NSString * _actionType;
+    NSString * _clientIdentifier;
+    NSString * _creditsString;
+    SSDialog * _dialog;
+    NSString * _footerSection;
+    NSURL * _url;
+    int  _urlBagType;
 }
 
 @property (nonatomic, readonly) NSURL *URL;

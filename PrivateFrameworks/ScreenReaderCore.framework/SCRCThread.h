@@ -3,21 +3,21 @@
  */
 
 @interface SCRCThread : NSObject {
-    NSString *_description;
-    BOOL _descriptionChanged;
-    BOOL _isInvalid;
-    BOOL _isRegistered;
-    BOOL _isTimerSet;
-    BOOL _isWaitingForStoppingThread;
-    id _key;
-    double _lastStartTime;
-    NSThread *_nsThread;
-    SCRCStackQueue *_queue;
-    id _queueLock;
-    struct __CFRunLoop { } *_runLoop;
-    BOOL _shouldStop;
-    struct __CFRunLoopSource { } *_source;
-    SCRCStackQueue *_waitingQueue;
+    NSString * _description;
+    BOOL  _descriptionChanged;
+    BOOL  _isInvalid;
+    BOOL  _isRegistered;
+    BOOL  _isTimerSet;
+    BOOL  _isWaitingForStoppingThread;
+    id  _key;
+    double  _lastStartTime;
+    NSThread * _nsThread;
+    SCRCStackQueue * _queue;
+    id  _queueLock;
+    struct __CFRunLoop { } * _runLoop;
+    BOOL  _shouldStop;
+    struct __CFRunLoopSource { } * _source;
+    SCRCStackQueue * _waitingQueue;
 }
 
 + (double)_performSelector:(SEL)arg1 withThreadKey:(id)arg2 onTarget:(id)arg3 waitTime:(double)arg4 cancelMask:(unsigned long)arg5 count:(unsigned long)arg6 firstObject:(id)arg7 moreObjects:(void*)arg8;

@@ -3,10 +3,10 @@
  */
 
 @interface CAMNebulaDaemonProxyManager : NSObject <CAMNebulaDaemonClientProtocol, CAMNebulaDaemonProtocol> {
-    NSXPCConnection *__connection;
-    int __connectionCount;
-    NSObject<OS_dispatch_queue> *__queue;
-    <CAMNebulaDaemonTimelapseClientProtocol> *_timelapseClientDelegate;
+    NSXPCConnection * __connection;
+    int  __connectionCount;
+    NSObject<OS_dispatch_queue> * __queue;
+    <CAMNebulaDaemonTimelapseClientProtocol> * _timelapseClientDelegate;
 }
 
 @property (nonatomic, readonly) NSXPCConnection *_connection;

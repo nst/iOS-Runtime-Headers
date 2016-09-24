@@ -3,13 +3,14 @@
  */
 
 @interface FIUIActivitySettingsController : NSObject <NSCopying> {
-    int _biologicalSex;
-    NSDate *_dateOfBirth;
-    NSMutableDictionary *_dirtyPropertiesMap;
-    HKHealthStore *_healthStore;
-    HKQuantity *_height;
-    id /* block */ _updateHandler;
-    HKQuantity *_weight;
+    int  _biologicalSex;
+    NSDate * _dateOfBirth;
+    NSMutableDictionary * _dirtyPropertiesMap;
+    HKHealthStore * _healthStore;
+    HKQuantity * _height;
+    id /* block */  _updateHandler;
+    HKQuantity * _weight;
+    int  _wheelchairUse;
 }
 
 @property (nonatomic) int biologicalSex;
@@ -18,11 +19,12 @@
 @property (nonatomic, readonly) HKQuantity *leanBodyMass;
 @property (nonatomic, copy) id /* block */ updateHandler;
 @property (nonatomic, retain) HKQuantity *weight;
+@property (nonatomic) int wheelchairUse;
 
 - (void).cxx_destruct;
 - (BOOL)_commitValue:(id)arg1 forPropertyKey:(id)arg2 error:(id*)arg3;
 - (BOOL)_hasDirtyPropertyForPropertyKey:(id)arg1;
-- (void)_logAndNilError:(id*)arg1 operationDescription:(id)arg2;
+- (BOOL)_logAndNilError:(id*)arg1 operationDescription:(id)arg2;
 - (void)_setUncommitedValue:(id)arg1 forPropertyKey:(id)arg2;
 - (int)biologicalSex;
 - (BOOL)commmitWithError:(id*)arg1;
@@ -38,7 +40,9 @@
 - (void)setHeight:(id)arg1;
 - (void)setUpdateHandler:(id /* block */)arg1;
 - (void)setWeight:(id)arg1;
+- (void)setWheelchairUse:(int)arg1;
 - (id /* block */)updateHandler;
 - (id)weight;
+- (int)wheelchairUse;
 
 @end

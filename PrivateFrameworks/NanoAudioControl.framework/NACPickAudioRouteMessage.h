@@ -3,8 +3,8 @@
  */
 
 @interface NACPickAudioRouteMessage : PBCodable <NSCopying> {
-    NSString *_category;
-    NSString *_identifier;
+    NSString * _category;
+    NSString * _identifier;
 }
 
 @property (nonatomic, retain) NSString *category;

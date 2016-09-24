@@ -3,8 +3,8 @@
  */
 
 @interface MKSmallCalloutViewController : UIViewController <CalloutViewControllerProtocol> {
-    <MKSmallCalloutViewControllerDelegate> *_delegate;
-    MKSmallCalloutView *_smallCalloutView;
+    <MKSmallCalloutViewControllerDelegate> * _delegate;
+    MKSmallCalloutView * _smallCalloutView;
 }
 
 @property (getter=isButtonEnabled, nonatomic) BOOL buttonEnabled;
@@ -17,12 +17,13 @@
 @property (nonatomic, retain) UIView *detailView;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) UIView *leftView;
-@property (nonatomic) struct { unsigned char x1; unsigned char x2; unsigned char x3; } mapDisplayStyle;
-@property (nonatomic) float maximumWidth;
+@property (nonatomic) struct { unsigned char x1; unsigned char x2; unsigned char x3; unsigned char x4; BOOL x5; } mapDisplayStyle;
+@property (nonatomic) double maximumWidth;
+@property (nonatomic) double minimumWidth;
 @property (nonatomic, retain) UIView *rightView;
 @property (readonly) Class superclass;
 
-+ (struct CGSize { float x1; float x2; })defaultSize;
++ (struct CGSize { double x1; double x2; })defaultSize;
 
 - (void).cxx_destruct;
 - (id)_smallCalloutView;
@@ -37,9 +38,10 @@
 - (BOOL)isButtonEnabled;
 - (id)leftView;
 - (void)loadView;
-- (struct { unsigned char x1; unsigned char x2; unsigned char x3; })mapDisplayStyle;
+- (struct { unsigned char x1; unsigned char x2; unsigned char x3; unsigned char x4; BOOL x5; })mapDisplayStyle;
 - (float)maximumWidth;
-- (struct CGSize { float x1; float x2; })preferredContentSize;
+- (float)minimumWidth;
+- (struct CGSize { double x1; double x2; })preferredContentSize;
 - (void)reset;
 - (id)rightView;
 - (void)setButtonEnabled:(BOOL)arg1;
@@ -52,8 +54,9 @@
 - (void)setDetailView:(id)arg1 animated:(BOOL)arg2;
 - (void)setLeftView:(id)arg1;
 - (void)setLeftView:(id)arg1 animated:(BOOL)arg2;
-- (void)setMapDisplayStyle:(struct { unsigned char x1; unsigned char x2; unsigned char x3; })arg1;
+- (void)setMapDisplayStyle:(struct { unsigned char x1; unsigned char x2; unsigned char x3; unsigned char x4; BOOL x5; })arg1;
 - (void)setMaximumWidth:(float)arg1;
+- (void)setMinimumWidth:(float)arg1;
 - (void)setRightView:(id)arg1;
 - (void)setRightView:(id)arg1 animated:(BOOL)arg2;
 - (void)viewDidAppear:(BOOL)arg1;

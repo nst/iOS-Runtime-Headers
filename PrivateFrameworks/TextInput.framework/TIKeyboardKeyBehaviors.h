@@ -3,8 +3,8 @@
  */
 
 @interface TIKeyboardKeyBehaviors : NSObject {
-    unsigned int _returnKeyBehavior;
-    unsigned int _spaceKeyBehavior;
+    unsigned int  _returnKeyBehavior;
+    unsigned int  _spaceKeyBehavior;
 }
 
 @property (nonatomic) unsigned int returnKeyBehavior;

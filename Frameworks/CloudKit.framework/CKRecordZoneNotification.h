@@ -3,20 +3,24 @@
  */
 
 @interface CKRecordZoneNotification : CKNotification <NSSecureCoding> {
-    CKRecordZoneID *_recordZoneID;
+    int  _databaseScope;
+    CKRecordZoneID * _recordZoneID;
 }
 
+@property (nonatomic) int databaseScope;
 @property (nonatomic, copy) CKRecordZoneID *recordZoneID;
 
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
+- (int)databaseScope;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithRemoteNotificationDictionary:(id)arg1;
 - (id)recordZoneID;
+- (void)setDatabaseScope:(int)arg1;
 - (void)setRecordZoneID:(id)arg1;
 
 @end

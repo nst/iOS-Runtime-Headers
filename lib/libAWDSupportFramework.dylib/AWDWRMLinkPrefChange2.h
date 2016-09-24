@@ -3,7 +3,7 @@
  */
 
 @interface AWDWRMLinkPrefChange2 : PBCodable <NSCopying> {
-    unsigned int _count;
+    unsigned int  _count;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int count : 1; 
@@ -30,31 +30,31 @@
         unsigned int nVoice : 1; 
         unsigned int nWalking : 1; 
         unsigned int nWifiGood : 1; 
-    } _has;
-    unsigned int _nCallActive;
-    unsigned int _nCallIdle;
-    unsigned int _nCelluarBadEcio;
-    unsigned int _nCelluarBadLQM;
-    unsigned int _nCelluarBadRSRP;
-    unsigned int _nCelluarBadSignal;
-    unsigned int _nCellularNotReady;
-    unsigned int _nData;
-    unsigned int _nHandoverNotPerformed;
-    unsigned int _nHandoverPerformed;
-    unsigned int _nHandoverUnknown;
-    unsigned int _nRunning;
-    unsigned int _nStationary;
-    unsigned int _nStatusUpdateDelayBin1;
-    unsigned int _nStatusUpdateDelayBin2;
-    unsigned int _nStatusUpdateDelayBin3;
-    unsigned int _nStatusUpdateDelayBin4;
-    unsigned int _nStatusUpdateDelayBin5;
-    unsigned int _nStatusUpdateDelayBin6;
-    unsigned int _nVehicular;
-    unsigned int _nVoice;
-    unsigned int _nWalking;
-    unsigned int _nWifiGood;
-    unsigned long long _timestamp;
+    }  _has;
+    unsigned int  _nCallActive;
+    unsigned int  _nCallIdle;
+    unsigned int  _nCelluarBadEcio;
+    unsigned int  _nCelluarBadLQM;
+    unsigned int  _nCelluarBadRSRP;
+    unsigned int  _nCelluarBadSignal;
+    unsigned int  _nCellularNotReady;
+    unsigned int  _nData;
+    unsigned int  _nHandoverNotPerformed;
+    unsigned int  _nHandoverPerformed;
+    unsigned int  _nHandoverUnknown;
+    unsigned int  _nRunning;
+    unsigned int  _nStationary;
+    unsigned int  _nStatusUpdateDelayBin1;
+    unsigned int  _nStatusUpdateDelayBin2;
+    unsigned int  _nStatusUpdateDelayBin3;
+    unsigned int  _nStatusUpdateDelayBin4;
+    unsigned int  _nStatusUpdateDelayBin5;
+    unsigned int  _nStatusUpdateDelayBin6;
+    unsigned int  _nVehicular;
+    unsigned int  _nVoice;
+    unsigned int  _nWalking;
+    unsigned int  _nWifiGood;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) unsigned int count;

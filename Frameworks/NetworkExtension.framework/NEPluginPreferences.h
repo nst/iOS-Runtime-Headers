@@ -3,13 +3,16 @@
  */
 
 @interface NEPluginPreferences : NSObject {
-    NSString *_pluginType;
-    struct __SCPreferences { } *_prefs;
+    NSString * _pluginType;
+    struct __SCPreferences { } * _prefs;
 }
 
 @property (readonly) NSString *pluginType;
 @property struct __SCPreferences { }*prefs;
 
++ (id)copyIdentifiersOfInstalledVPNApps;
++ (BOOL)isAppInstalled:(id)arg1;
++ (BOOL)isEnabledForPluginType:(id)arg1 applicationRemoved:(BOOL)arg2;
 + (void)removePreferencesForPluginType:(id)arg1;
 
 - (void).cxx_destruct;

@@ -3,7 +3,7 @@
  */
 
 @interface TNArchivedFormSelection : TSPObject <TSKArchivedSelection> {
-    TNFormSelection *_selection;
+    TNFormSelection * _selection;
 }
 
 @property (readonly, copy) NSString *debugDescription;

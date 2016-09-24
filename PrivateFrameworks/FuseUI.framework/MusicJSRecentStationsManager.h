@@ -3,9 +3,9 @@
  */
 
 @interface MusicJSRecentStationsManager : IKJSObject <MusicJSRecentStationsManager> {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    BOOL _hasRefreshedStations;
-    RadioRecentStationsController *_recentStationsController;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    BOOL  _hasRefreshedStations;
+    RadioRecentStationsController * _recentStationsController;
 }
 
 @property (nonatomic, readonly) RadioRecentStationsController *recentStationsController;

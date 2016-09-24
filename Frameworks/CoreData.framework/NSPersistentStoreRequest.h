@@ -3,7 +3,7 @@
  */
 
 @interface NSPersistentStoreRequest : NSObject <NSCopying> {
-    NSArray *_affectedStores;
+    NSArray * _affectedStores;
 }
 
 @property (nonatomic, retain) NSArray *affectedStores;

@@ -3,18 +3,28 @@
  */
 
 @interface GEOPDSearchSubstringDescriptor : PBCodable <NSCopying> {
-    int _beginIndex;
-    int _endIndex;
-    int _stringType;
+    int  _beginIndex;
+    int  _endIndex;
+    NSMutableArray * _spanDatas;
+    int  _stringType;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic) int beginIndex;
 @property (nonatomic) int endIndex;
+@property (nonatomic, retain) NSMutableArray *spanDatas;
 @property (nonatomic) int stringType;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
++ (Class)spanDataType;
+
+- (int)StringAsStringType:(id)arg1;
+- (void)addSpanData:(id)arg1;
 - (int)beginIndex;
+- (void)clearSpanDatas;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (int)endIndex;
@@ -24,8 +34,14 @@
 - (BOOL)readFrom:(id)arg1;
 - (void)setBeginIndex:(int)arg1;
 - (void)setEndIndex:(int)arg1;
+- (void)setSpanDatas:(id)arg1;
 - (void)setStringType:(int)arg1;
+- (id)spanDataAtIndex:(unsigned int)arg1;
+- (id)spanDatas;
+- (unsigned int)spanDatasCount;
 - (int)stringType;
+- (id)stringTypeAsString:(int)arg1;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

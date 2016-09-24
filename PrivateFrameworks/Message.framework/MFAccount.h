@@ -3,10 +3,12 @@
  */
 
 @interface MFAccount : NSObject {
-    ACAccount *_persistentAccount;
-    int _persistentAccountLock;
-    NSString *_sourceApplicationBundleIdentifier;
-    NSMutableDictionary *_unsavedAccountProperties;
+    ACAccount * _persistentAccount;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _persistentAccountLock;
+    NSString * _sourceApplicationBundleIdentifier;
+    NSMutableDictionary * _unsavedAccountProperties;
 }
 
 @property (readonly) ACAccount *accountForRenewingCredentials;
@@ -95,6 +97,7 @@
 - (BOOL)enableAccount;
 - (id)enabledDataclasses;
 - (BOOL)fetchTokensIfNecessary:(id*)arg1;
+- (unsigned int)hash;
 - (id)hostname;
 - (id)identifier;
 - (id)inaccessiblePasswordErrorWithTitle:(id)arg1;
@@ -104,7 +107,9 @@
 - (id)insecureConnectionSettings;
 - (BOOL)isActive;
 - (BOOL)isEnabledForDataclass:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (BOOL)isManaged;
+- (BOOL)isSyncingNotes;
 - (id)loginDisabledErrorWithTitle:(id)arg1;
 - (id)managedTag;
 - (id)missingPasswordErrorWithTitle:(id)arg1;

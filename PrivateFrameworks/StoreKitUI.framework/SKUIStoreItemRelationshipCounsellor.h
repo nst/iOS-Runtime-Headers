@@ -3,8 +3,8 @@
  */
 
 @interface SKUIStoreItemRelationshipCounsellor : NSObject {
-    NSRecursiveLock *_lock;
-    NSMutableDictionary *_relationshipsDictionary;
+    NSRecursiveLock * _lock;
+    NSMutableDictionary * _relationshipsDictionary;
 }
 
 @property (nonatomic, readonly) NSRecursiveLock *lock;

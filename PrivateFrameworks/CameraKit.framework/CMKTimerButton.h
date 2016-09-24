@@ -3,9 +3,9 @@
  */
 
 @interface CMKTimerButton : CMKExpandableMenuButton {
-    UIImageView *__glyphView;
-    <CMKTimerButtonDelegate> *_delegate;
-    BOOL _hideOffWhenCollapsed;
+    UIImageView * __glyphView;
+    <CMKTimerButtonDelegate> * _delegate;
+    BOOL  _hideOffWhenCollapsed;
 }
 
 @property (nonatomic, readonly) UIImageView *_glyphView;

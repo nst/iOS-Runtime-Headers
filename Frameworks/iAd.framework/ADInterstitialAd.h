@@ -3,19 +3,21 @@
  */
 
 @interface ADInterstitialAd : NSObject <ADAdRecipient> {
-    BOOL _actionInProgress;
-    ADAdSpace *_adSpace;
-    BOOL _canLoadMoreThanOnce;
-    int _creativeType;
-    <ADInterstitialAdDelegate> *_delegate;
-    BOOL _dimmingEnabled;
-    BOOL _hasLoadedFirstAd;
-    <ADInterstitialAdDelegate> *_internalDelegate;
-    UIViewController *_internalPresentingViewController;
-    ADInterstitialView *_interstitialView;
-    BOOL _loaded;
-    int _options;
-    ADInterstitialAdPresentationViewController *_presentationViewController;
+    BOOL  _actionInProgress;
+    ADAdSpace * _adSpace;
+    BOOL  _canLoadMoreThanOnce;
+    int  _creativeType;
+    <ADInterstitialAdDelegate> * _delegate;
+    BOOL  _dimmingEnabled;
+    BOOL  _hasLoadedFirstAd;
+    <ADInterstitialAdDelegate> * _internalDelegate;
+    UIViewController * _internalPresentingViewController;
+    ADInterstitialView * _interstitialView;
+    BOOL  _loaded;
+    int  _options;
+    ADInterstitialAdPresentationViewController * _presentationViewController;
+    int  _state;
+    id /* block */  _stateChangedBlock;
 }
 
 @property (getter=isActionInProgress, nonatomic) BOOL actionInProgress;
@@ -37,16 +39,20 @@
 @property (nonatomic, readonly) int options;
 @property (nonatomic, retain) ADInterstitialAdPresentationViewController *presentationViewController;
 @property (nonatomic, readonly) UIViewController *presentingViewController;
+@property (nonatomic) int state;
+@property (nonatomic, copy) id /* block */ stateChangedBlock;
 @property (readonly) Class superclass;
 
 - (BOOL)_considerClosingAdSpace;
 - (void)_dismissModalInterstitial;
+- (void)_notifyDelegateOfBannerLoad;
 - (void)_presentFromViewController:(id)arg1;
 - (id)adSpace;
 - (id)adSpaceView;
-- (void)bannerTappedAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)bannerTappedAtPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (BOOL)canLoadMoreThanOnce;
 - (void)cancelAction;
+- (void)changeBannerViewState:(int)arg1;
 - (int)clickAction;
 - (id)context;
 - (int)creativeType;
@@ -69,6 +75,7 @@
 - (BOOL)presentInView:(id)arg1;
 - (id)presentationViewController;
 - (id)presentingViewController;
+- (void)privacyButtonWasTapped;
 - (void)resumeBannerMedia;
 - (void)serverBannerViewDidFailToReceiveAdWithError:(id)arg1;
 - (void)serverBannerViewDidLoad;
@@ -91,7 +98,11 @@
 - (void)setPresentationViewController:(id)arg1;
 - (void)setSection:(id)arg1;
 - (void)setServerURL:(id)arg1;
-- (BOOL)shouldTestVisibilityAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setState:(int)arg1;
+- (void)setStateChangedBlock:(id /* block */)arg1;
+- (BOOL)shouldTestVisibilityAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (int)state;
+- (id /* block */)stateChangedBlock;
 - (void)storyboardViewControllerDidPresent;
 
 @end

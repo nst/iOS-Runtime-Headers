@@ -3,9 +3,9 @@
  */
 
 @interface PLWallpaperImporter : NSObject {
-    NSArray *_allWallpaperURLs;
-    NSData *_wallpaperFileHash;
-    PLPhotoLibrary *photoLibrary;
+    NSArray * _allWallpaperURLs;
+    NSData * _wallpaperFileHash;
+    PLPhotoLibrary * photoLibrary;
 }
 
 @property (nonatomic, readonly, retain) NSArray *allWallpaperURLs;

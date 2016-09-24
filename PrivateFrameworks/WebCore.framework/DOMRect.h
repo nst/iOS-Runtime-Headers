@@ -11,7 +11,6 @@
 
 - (id)bottom;
 - (void)dealloc;
-- (void)finalize;
 - (id)left;
 - (id)right;
 - (id)top;

@@ -3,8 +3,8 @@
  */
 
 @interface SSDownloadAsset : SSEntity {
-    int _assetType;
-    SSURLRequestProperties *_localProperties;
+    int  _assetType;
+    SSURLRequestProperties * _localProperties;
 }
 
 @property (readonly, retain) NSURLRequest *URLRequest;
@@ -12,14 +12,14 @@
 @property (readonly) NSString *downloadFileName;
 @property (readonly) NSString *downloadPath;
 @property (getter=isExternal, readonly) BOOL external;
-@property (readonly) long long fileSize;
+@property (readonly) int fileSize;
 @property (readonly) NSString *finalizedPath;
 @property (readonly) NSArray *sinfs;
 
-+ (long long)_existsMessage;
-+ (long long)_getExternalValuesMessage;
-+ (long long)_getValueMessage;
-+ (long long)_setValuesMessage;
++ (int)_existsMessage;
++ (int)_getExternalValuesMessage;
++ (int)_getValueMessage;
++ (int)_setValuesMessage;
 + (id)assetWithURL:(id)arg1 type:(int)arg2;
 
 - (id)URLRequest;
@@ -28,14 +28,14 @@
 - (int)_legacyAssetType;
 - (void)_resetLocalIVars;
 - (int)assetType;
-- (long long)bytesDownloaded;
-- (long long)bytesUploadTotal;
-- (long long)bytesUploaded;
+- (int)bytesDownloaded;
+- (int)bytesUploadTotal;
+- (int)bytesUploaded;
 - (id)copyXPCEncoding;
 - (void)dealloc;
 - (id)downloadFileName;
 - (id)downloadPath;
-- (long long)fileSize;
+- (int)fileSize;
 - (id)finalizedPath;
 - (id)initWithURLRequest:(id)arg1;
 - (id)initWithURLRequest:(id)arg1 type:(int)arg2;

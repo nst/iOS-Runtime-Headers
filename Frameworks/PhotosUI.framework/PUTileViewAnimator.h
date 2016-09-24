@@ -3,7 +3,7 @@
  */
 
 @interface PUTileViewAnimator : PUTileAnimator {
-    NSMapTable *__synchronizedAnimationGroupsByTransition;
+    NSMapTable * __synchronizedAnimationGroupsByTransition;
 }
 
 @property (nonatomic, readonly) NSMapTable *_synchronizedAnimationGroupsByTransition;

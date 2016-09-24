@@ -3,7 +3,7 @@
  */
 
 @interface AXAttributedString : NSString <NSCopying> {
-    struct __CFAttributedString { } *_string;
+    struct __CFAttributedString { } * _string;
 }
 
 + (id)axAttributedStringWithString:(id)arg1;
@@ -18,13 +18,15 @@
 - (id)attributedSubstringFromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)attributesAtIndex:(int)arg1 effectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2;
 - (id)axAttributedStringDescription;
-- (struct __CFAttributedString { }*)cfAttributedString;
+- (const struct __CFAttributedString { }*)cfAttributedString;
 - (unsigned short)characterAtIndex:(unsigned int)arg1;
+- (id)coalescedAttributes;
 - (id)coalescedFontAttributes;
 - (void)convertAttachmentsWithBlock:(id /* block */)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
+- (void)enumerateAttribute:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 options:(unsigned int)arg3 usingBlock:(id /* block */)arg4;
 - (void)enumerateAttributesUsingBlock:(id /* block */)arg1;
 - (BOOL)hasAttribute:(id)arg1;
 - (BOOL)hasAttributes;

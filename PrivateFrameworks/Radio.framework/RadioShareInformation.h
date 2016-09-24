@@ -3,11 +3,11 @@
  */
 
 @interface RadioShareInformation : NSObject <NSCopying> {
-    NSURL *_URL;
-    RadioArtworkCollection *_artworkCollection;
-    NSString *_message;
-    NSString *_messageMIMEType;
-    NSString *_subject;
+    NSURL * _URL;
+    RadioArtworkCollection * _artworkCollection;
+    NSString * _message;
+    NSString * _messageMIMEType;
+    NSString * _subject;
 }
 
 @property (nonatomic, readonly, retain) NSURL *URL;

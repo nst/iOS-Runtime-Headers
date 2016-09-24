@@ -3,7 +3,7 @@
  */
 
 @interface TimeZoneTableCell : UITableViewCell {
-    ALCity *_city;
+    ALCity * _city;
 }
 
 @property (nonatomic, retain) ALCity *city;

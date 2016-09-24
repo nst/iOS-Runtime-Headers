@@ -3,17 +3,17 @@
  */
 
 @interface MusicEntityCollectionViewDescriptor : MusicEntityViewDescriptor {
-    MPULayoutInterpolator *_lateralContentInsetFromCollectionViewContainerWidthInterpolator;
-    float _sectionHeaderBottomContentInset;
-    BOOL _shouldFlattenToSingleSectionInRegularWidthAndHeight;
-    BOOL _shouldShowOnlyFirstRowOfContent;
-    BOOL _showsSectionHeaders;
-    MPULayoutInterpolator *_textLateralEdgePaddingFromInteritemSpacingLayoutInterpolator;
-    MPULayoutInterpolator *_verticalLockupWidthFromCollectionViewWidthInterpolator;
+    MPULayoutInterpolator * _lateralContentInsetFromCollectionViewContainerWidthInterpolator;
+    double  _sectionHeaderBottomContentInset;
+    BOOL  _shouldFlattenToSingleSectionInRegularWidthAndHeight;
+    BOOL  _shouldShowOnlyFirstRowOfContent;
+    BOOL  _showsSectionHeaders;
+    MPULayoutInterpolator * _textLateralEdgePaddingFromInteritemSpacingLayoutInterpolator;
+    MPULayoutInterpolator * _verticalLockupWidthFromCollectionViewWidthInterpolator;
 }
 
 @property (nonatomic, copy) MPULayoutInterpolator *lateralContentInsetFromCollectionViewContainerWidthInterpolator;
-@property (nonatomic) float sectionHeaderBottomContentInset;
+@property (nonatomic) double sectionHeaderBottomContentInset;
 @property (nonatomic) BOOL shouldFlattenToSingleSectionInRegularWidthAndHeight;
 @property (nonatomic) BOOL shouldShowOnlyFirstRowOfContent;
 @property (nonatomic) BOOL showsSectionHeaders;

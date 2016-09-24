@@ -3,11 +3,12 @@
  */
 
 @interface ICSTimeZone : ICSComponent {
-    id _systemTimeZone;
+    id  _systemTimeZone;
 }
 
 @property (nonatomic, retain) NSString *tzid;
 
++ (BOOL)_isTimeZone:(id)arg1 pseudoDSTForDate:(id)arg2;
 + (id)blocksAfterDate:(id)arg1 untilDate:(id)arg2 forTimeZone:(id)arg3;
 + (int)matchTypeForSubarray:(id)arg1 inTZChangeArray:(id)arg2;
 + (id)name;

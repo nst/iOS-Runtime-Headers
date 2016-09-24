@@ -3,9 +3,9 @@
  */
 
 @interface AAUIFamilyMemberPhotoRequest : AAFamilyRequest {
-    NSNumber *_familyMemberDSID;
-    SSAccount *_iTunesAccount;
-    NSString *_serverCacheTag;
+    NSNumber * _familyMemberDSID;
+    SSAccount * _iTunesAccount;
+    NSString * _serverCacheTag;
 }
 
 @property (nonatomic, copy) NSNumber *familyMemberDSID;

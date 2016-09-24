@@ -3,9 +3,9 @@
  */
 
 @interface EBEscherShape : ESDObject {
-    CHDChart *mChart;
-    NSData *mChartData;
-    BOOL mShowLegend;
+    CHDChart * mChart;
+    NSData * mChartData;
+    BOOL  mShowLegend;
 }
 
 - (id)chart;

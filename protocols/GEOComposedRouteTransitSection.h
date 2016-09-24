@@ -5,10 +5,10 @@
 
 @required
 
-- (struct { unsigned long long x1; unsigned long long x2; unsigned long long x3; })fromNodeID;
+- (struct { unsigned int x1; unsigned int x2; unsigned int x3; })fromNodeID;
 - (BOOL)isTransfer;
-- (unsigned long long)lineID;
-- (struct { unsigned long long x1; unsigned long long x2; unsigned long long x3; })toNodeID;
+- (unsigned int)lineID;
+- (struct { unsigned int x1; unsigned int x2; unsigned int x3; })toNodeID;
 - (int)toNodeSignificance;
 
 @end

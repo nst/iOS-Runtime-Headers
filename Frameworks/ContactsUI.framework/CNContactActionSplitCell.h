@@ -3,8 +3,8 @@
  */
 
 @interface CNContactActionSplitCell : CNLabeledCell {
-    UIButton *_leftLabel;
-    UIButton *_rightLabel;
+    UIButton * _leftLabel;
+    UIButton * _rightLabel;
 }
 
 @property (nonatomic, readonly) UIButton *leftLabel;

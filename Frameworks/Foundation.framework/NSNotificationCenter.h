@@ -3,9 +3,9 @@
  */
 
 @interface NSNotificationCenter : NSObject {
-    void *_callback;
-    void *_impl;
-    void *_pad;
+    void * _callback;
+    void * _impl;
+    void * _pad;
 }
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
@@ -17,7 +17,6 @@
 - (void)dealloc;
 - (id)debugDescription;
 - (id)description;
-- (void)finalize;
 - (id)init;
 - (BOOL)isEmpty;
 - (void)postNotification:(id)arg1;

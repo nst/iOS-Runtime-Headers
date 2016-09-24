@@ -3,7 +3,7 @@
  */
 
 @interface HKFitzpatrickSkinTypeObject : NSObject <NSCopying, NSSecureCoding> {
-    int _skinType;
+    int  _skinType;
 }
 
 @property (readonly) int skinType;

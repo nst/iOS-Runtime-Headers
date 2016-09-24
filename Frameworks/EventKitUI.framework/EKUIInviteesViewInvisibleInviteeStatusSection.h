@@ -3,14 +3,14 @@
  */
 
 @interface EKUIInviteesViewInvisibleInviteeStatusSection : NSObject <EKUIInviteesViewSection> {
-    NSString *_cachedCellReuseIdentifier;
-    BOOL _editable;
-    EKEvent *_event;
-    id /* block */ _participantRemoved;
-    id /* block */ _participantTapped;
-    NSMutableArray *_participants;
-    unsigned int _reuseIdentifierVersion;
-    id /* block */ _tableViewCellHook;
+    NSString * _cachedCellReuseIdentifier;
+    BOOL  _editable;
+    EKEvent * _event;
+    id /* block */  _participantRemoved;
+    id /* block */  _participantTapped;
+    NSMutableArray * _participants;
+    unsigned int  _reuseIdentifierVersion;
+    id /* block */  _tableViewCellHook;
 }
 
 @property (nonatomic, retain) NSString *cachedCellReuseIdentifier;
@@ -58,6 +58,6 @@
 - (void)setTableViewCellHook:(id /* block */)arg1;
 - (id /* block */)tableViewCellHook;
 - (id)titleForDeleteConfirmationButtonForRow:(id)arg1;
-- (void)updateWithEvent:(id)arg1 editable:(BOOL)arg2;
+- (void)updateWithEvent:(id)arg1 editable:(BOOL)arg2 fromDetail:(BOOL)arg3;
 
 @end

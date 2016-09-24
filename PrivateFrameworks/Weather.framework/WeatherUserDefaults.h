@@ -3,7 +3,7 @@
  */
 
 @interface WeatherUserDefaults : NSObject <WeatherPreferencesPersistence> {
-    NSUserDefaults *_userDefaults;
+    NSUserDefaults * _userDefaults;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -23,7 +23,7 @@
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (void)setUserDefaults:(id)arg1;
 - (id)stringForKey:(id)arg1;
-- (void)synchronize;
+- (BOOL)synchronize;
 - (id)userDefaults;
 
 @end

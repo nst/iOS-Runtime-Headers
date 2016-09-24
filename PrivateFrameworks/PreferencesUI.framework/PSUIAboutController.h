@@ -3,8 +3,8 @@
  */
 
 @interface PSUIAboutController : PSListController {
-    id _effectiveSettingsChangedNotificationObserver;
-    BOOL _firstViewDidAppear;
+    id  _effectiveSettingsChangedNotificationObserver;
+    BOOL  _firstViewDidAppear;
 }
 
 @property (nonatomic, retain) id effectiveSettingsChangedNotificationObserver;

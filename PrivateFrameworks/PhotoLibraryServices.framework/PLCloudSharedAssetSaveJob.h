@@ -3,19 +3,19 @@
  */
 
 @interface PLCloudSharedAssetSaveJob : PLCloudSharingJob {
-    NSArray *_assetCollectionInfos;
-    NSString *_cloudAlbumGUID;
-    NSArray *_cloudAssetGUIDsToDelete;
-    NSString *_cloudPersonID;
-    AssetCollectionInfo *_currentAssetCollectionInfo;
-    MSASAssetCollection *_currentCloudAssetCollection;
-    NSString *_currentCloudAssetGUID;
-    unsigned int _currentCloudAssetMediaAssetType;
-    NSString *_currentFilePath;
-    BOOL _isVideo;
-    long long _jobType;
-    NSDictionary *_mstreamdInfoDictionary;
-    BOOL _replacingOriginalWithDerivative;
+    NSArray * _assetCollectionInfos;
+    NSString * _cloudAlbumGUID;
+    NSArray * _cloudAssetGUIDsToDelete;
+    NSString * _cloudPersonID;
+    AssetCollectionInfo * _currentAssetCollectionInfo;
+    MSASAssetCollection * _currentCloudAssetCollection;
+    NSString * _currentCloudAssetGUID;
+    unsigned int  _currentCloudAssetMediaAssetType;
+    NSString * _currentFilePath;
+    BOOL  _isVideo;
+    int  _jobType;
+    NSDictionary * _mstreamdInfoDictionary;
+    BOOL  _replacingOriginalWithDerivative;
 }
 
 @property (nonatomic, retain) NSArray *assetCollectionInfos;
@@ -27,7 +27,7 @@
 @property (nonatomic) unsigned int currentCloudAssetMediaAssetType;
 @property (nonatomic, retain) NSString *currentFilePath;
 @property (nonatomic) BOOL isVideo;
-@property (nonatomic) long long jobType;
+@property (nonatomic) int jobType;
 @property (nonatomic, retain) NSDictionary *mstreamdInfoDictionary;
 
 + (id)_dcimDirectoryForFileURL:(id)arg1;
@@ -57,7 +57,7 @@
 - (id)currentCloudAssetGUID;
 - (unsigned int)currentCloudAssetMediaAssetType;
 - (id)currentFilePath;
-- (long long)daemonOperation;
+- (int)daemonOperation;
 - (void)dealloc;
 - (id)description;
 - (void)encodeToXPCObject:(id)arg1;
@@ -70,7 +70,7 @@
 - (id)initFromXPCObject:(id)arg1 connection:(id)arg2;
 - (BOOL)isProcessingThumbnail;
 - (BOOL)isVideo;
-- (long long)jobType;
+- (int)jobType;
 - (id)mstreamdInfoDictionary;
 - (short)placeHolderKindFromAssetMetadataType:(unsigned int)arg1;
 - (void)run;
@@ -85,7 +85,7 @@
 - (void)setCurrentCloudAssetMediaAssetType:(unsigned int)arg1;
 - (void)setCurrentFilePath:(id)arg1;
 - (void)setIsVideo:(BOOL)arg1;
-- (void)setJobType:(long long)arg1;
+- (void)setJobType:(int)arg1;
 - (void)setMstreamdInfoDictionary:(id)arg1;
 
 @end

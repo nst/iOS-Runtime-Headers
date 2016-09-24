@@ -3,14 +3,14 @@
  */
 
 @interface TCEnumerationMultiMap : NSObject {
-    BOOL m_caseSensitive;
-    struct __CFDictionary { } *m_stringToValue;
-    struct __CFDictionary { } *m_valueToString;
+    BOOL  m_caseSensitive;
+    struct __CFDictionary { } * m_stringToValue;
+    struct __CFDictionary { } * m_valueToString;
 }
 
 - (void)dealloc;
-- (id)initWithStructs:(const struct TCEnumerationStruct { int x1; id x2; /* Warning: Unrecognized filer type: '' using 'void*' */ void*x3; void*x4; void*x5; void*x6; void*x7; void*x8; void*x9; void*x10; void*x11; void*x12; void*x13; void*x14; void*x15; void*x16; }*)arg1 count:(int)arg2;
-- (id)initWithStructs:(const struct TCEnumerationStruct { int x1; id x2; /* Warning: Unrecognized filer type: '' using 'void*' */ void*x3; void*x4; void*x5; void*x6; void*x7; void*x8; void*x9; void*x10; void*x11; void*x12; void*x13; void*x14; void*x15; void*x16; void x17; void*x18; void*x19; void*x20; void*x21; void*x22; void*x23; void*x24; void*x25; void*x26; void*x27; BOOL x28; void*x29; int x30; void x31; int x32; void*x33; void*x34; unsigned int x35; void*x36; void*x37; void*x38; unsigned short x39; out void*x40; const BOOL x41; void*x42; bycopy void*x43; void*x44; const void*x45; void*x46; int x47; out in void*x48; void*x49; void*x50; void*x51; void*x52; void*x53; void*x54; void*x55; void*x56; void*x57; void x58; void*x59; void*x60; void*x61; void*x62; void*x63; void*x64; void*x65; void*x66; void*x67; void*x68; BOOL x69; void*x70; int x71; void x72; int x73; void*x74; void*x75; unsigned int x76; void*x77; void*x78; void*x79; unsigned short x80; out void*x81; const BOOL x82; void*x83; bycopy void*x84; void*x85; const void*x86; void*x87; int x88; out in void*x89; void*x90; void*x91; void*x92; void*x93; void*x94; void*x95; void*x96; void*x97; void*x98; void x99; void*x100; void*x101; void*x102; void*x103; void*x104; void*x105; void*x106; void*x107; unsigned short x108; void*x109; short x110; void*x111; void*x112; void*x113; void*x114; unsigned long x115; int x116; unsigned int x117/* : ? */; const void*x118; const void*x119; void*x120; void*x121; const void*x122; void*x123; void*x124; void*x125; out const void*x126; short x127; void*x128; void*x129; void*x130; out void*x131; out short x132; void*x133; unsigned int x134; void*x135; float x136; const void*x137; void*x138; void*x139; void*x140; out const void*x141; void*x142; void*x143; void*x144; out void*x145; out short x146; void*x147; unsigned int x148; void*x149; void*x150; void*x151; void*x152; void*x153; void*x154; void*x155; void*x156; void*x157; void*x158; void*x159; void*x160; void*x161; void*x162; void*x163; void*x164; void*x165; void*x166; void*x167; void*x168; void*x169; void*x170; void*x171; void*x172; void*x173; void*x174; void*x175; void*x176; void*x177; void*x178; void*x179; void*x180; void*x181; void*x182; void*x183; }*)arg1 count:(int)arg2 caseSensitive:(BOOL)arg3;
+- (id)initWithStructs:(const /* Warning: unhandled struct encoding: '{TCEnumerationStruct=i@}' */ struct TCEnumerationStruct { int x1; id x2; }*)arg1 count:(int)arg2;
+- (id)initWithStructs:(const /* Warning: unhandled struct encoding: '{TCEnumerationStruct=i@}' */ struct TCEnumerationStruct { int x1; id x2; }*)arg1 count:(int)arg2 caseSensitive:(BOOL)arg3;
 - (id)stringForValue:(int)arg1;
 - (long)valueForString:(id)arg1;
 

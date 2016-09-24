@@ -5,11 +5,11 @@
 @interface RadioAudioClip : RadioTrack
 
 @property (nonatomic, readonly, copy) NSURL *assetURL;
-@property (nonatomic, readonly) long long purchaseID;
+@property (nonatomic, readonly) int purchaseID;
 @property (getter=isSkipable, nonatomic, readonly) BOOL skipable;
 
 - (id)assetURL;
 - (BOOL)isSkipable;
-- (long long)purchaseID;
+- (int)purchaseID;
 
 @end

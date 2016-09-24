@@ -3,7 +3,7 @@
  */
 
 @interface CKDBatchGetUserPrivacySettingsOperation : CKDOperation {
-    NSArray *_containerPrivacySettings;
+    NSArray * _containerPrivacySettings;
 }
 
 @property (nonatomic, copy) NSArray *containerPrivacySettings;
@@ -11,7 +11,7 @@
 + (id)appPermissionGroupsFromContainerPrivacySettings:(id)arg1;
 
 - (void).cxx_destruct;
-- (unsigned long long)activityStart;
+- (id)activityCreate;
 - (id)containerPrivacySettings;
 - (void)main;
 - (void)setContainerPrivacySettings:(id)arg1;

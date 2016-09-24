@@ -3,8 +3,8 @@
  */
 
 @interface PUJoiningAssetReference : PUAssetReference {
-    PUAssetReference *_containedAssetReference;
-    int _hintDataSourceIndex;
+    PUAssetReference * _containedAssetReference;
+    int  _hintDataSourceIndex;
 }
 
 @property (nonatomic, readonly) PUAssetReference *containedAssetReference;

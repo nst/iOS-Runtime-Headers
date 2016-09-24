@@ -5,6 +5,6 @@
 
 @required
 
-- (void)sendMessage:(FBSXPCMessage *)arg1 withType:(long long)arg2 toClients:(NSSet *)arg3;
+- (void)sendMessage:(FBSXPCMessage *)arg1 withType:(int)arg2 toClients:(NSSet *)arg3;
 
 @end

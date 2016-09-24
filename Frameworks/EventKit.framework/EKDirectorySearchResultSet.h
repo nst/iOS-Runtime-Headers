@@ -3,10 +3,10 @@
  */
 
 @interface EKDirectorySearchResultSet : NSObject {
-    NSSet *_groups;
-    NSSet *_locations;
-    NSSet *_people;
-    NSSet *_resources;
+    NSSet * _groups;
+    NSSet * _locations;
+    NSSet * _people;
+    NSSet * _resources;
 }
 
 @property (nonatomic, retain) NSSet *groups;
@@ -14,6 +14,7 @@
 @property (nonatomic, retain) NSSet *people;
 @property (nonatomic, retain) NSSet *resources;
 
+- (void).cxx_destruct;
 - (id)groups;
 - (id)locations;
 - (id)people;

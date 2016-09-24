@@ -3,9 +3,9 @@
  */
 
 @interface SKUIAnimatorDOMFeature : NSObject <SKUIDOMFeature> {
-    IKAppContext *_appContext;
-    <SKUIAnimatorDOMFeatureDelegate> *_delegate;
-    NSString *_featureName;
+    IKAppContext * _appContext;
+    <SKUIAnimatorDOMFeatureDelegate> * _delegate;
+    NSString * _featureName;
 }
 
 @property (nonatomic, readonly) IKAppContext *appContext;

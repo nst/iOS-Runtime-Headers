@@ -5,8 +5,8 @@
 @interface HDCodableRoutineLocationRequest : PBRequest <NSCopying> {
     struct { 
         unsigned int locationType : 1; 
-    } _has;
-    int _locationType;
+    }  _has;
+    int  _locationType;
 }
 
 @property (nonatomic) BOOL hasLocationType;

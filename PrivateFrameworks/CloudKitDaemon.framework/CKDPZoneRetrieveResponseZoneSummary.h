@@ -3,20 +3,20 @@
  */
 
 @interface CKDPZoneRetrieveResponseZoneSummary : PBCodable <NSCopying> {
-    long long _assetQuotaUsage;
-    NSData *_clientChangeToken;
-    NSData *_currentServerContinuationToken;
-    int _deviceCount;
+    int  _assetQuotaUsage;
+    NSData * _clientChangeToken;
+    NSData * _currentServerContinuationToken;
+    int  _deviceCount;
     struct { 
         unsigned int assetQuotaUsage : 1; 
         unsigned int metadataQuotaUsage : 1; 
         unsigned int deviceCount : 1; 
-    } _has;
-    long long _metadataQuotaUsage;
-    CKDPZone *_targetZone;
+    }  _has;
+    int  _metadataQuotaUsage;
+    CKDPZone * _targetZone;
 }
 
-@property (nonatomic) long long assetQuotaUsage;
+@property (nonatomic) int assetQuotaUsage;
 @property (nonatomic, retain) NSData *clientChangeToken;
 @property (nonatomic, retain) NSData *currentServerContinuationToken;
 @property (nonatomic) int deviceCount;
@@ -26,11 +26,11 @@
 @property (nonatomic) BOOL hasDeviceCount;
 @property (nonatomic) BOOL hasMetadataQuotaUsage;
 @property (nonatomic, readonly) BOOL hasTargetZone;
-@property (nonatomic) long long metadataQuotaUsage;
+@property (nonatomic) int metadataQuotaUsage;
 @property (nonatomic, retain) CKDPZone *targetZone;
 
 - (void).cxx_destruct;
-- (long long)assetQuotaUsage;
+- (int)assetQuotaUsage;
 - (id)clientChangeToken;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -47,16 +47,16 @@
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (long long)metadataQuotaUsage;
+- (int)metadataQuotaUsage;
 - (BOOL)readFrom:(id)arg1;
-- (void)setAssetQuotaUsage:(long long)arg1;
+- (void)setAssetQuotaUsage:(int)arg1;
 - (void)setClientChangeToken:(id)arg1;
 - (void)setCurrentServerContinuationToken:(id)arg1;
 - (void)setDeviceCount:(int)arg1;
 - (void)setHasAssetQuotaUsage:(BOOL)arg1;
 - (void)setHasDeviceCount:(BOOL)arg1;
 - (void)setHasMetadataQuotaUsage:(BOOL)arg1;
-- (void)setMetadataQuotaUsage:(long long)arg1;
+- (void)setMetadataQuotaUsage:(int)arg1;
 - (void)setTargetZone:(id)arg1;
 - (id)targetZone;
 - (void)writeTo:(id)arg1;

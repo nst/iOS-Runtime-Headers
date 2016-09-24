@@ -3,13 +3,13 @@
  */
 
 @interface NSFileAccessProcessManager : NSObject {
-    BKSProcessAssertion *_assertion;
-    NSObject<OS_xpc_object> *_connection;
-    BKSApplicationStateMonitor *_monitor;
-    int _pendingMessageCount;
-    NSObject<OS_dispatch_queue> *_queue;
-    id /* block */ _suspensionHandler;
-    NSArray *_urls;
+    BKSProcessAssertion * _assertion;
+    NSObject<OS_xpc_object> * _connection;
+    BKSApplicationStateMonitor * _monitor;
+    int  _pendingMessageCount;
+    NSObject<OS_dispatch_queue> * _queue;
+    id /* block */  _suspensionHandler;
+    NSArray * _urls;
 }
 
 @property (copy) NSArray *URLs;

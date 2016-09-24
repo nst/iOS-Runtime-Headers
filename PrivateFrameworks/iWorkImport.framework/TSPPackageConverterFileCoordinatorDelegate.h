@@ -3,7 +3,7 @@
  */
 
 @interface TSPPackageConverterFileCoordinatorDelegate : NSObject <TSPFileCoordinatorDelegate> {
-    NSURL *_URL;
+    NSURL * _URL;
 }
 
 @property (readonly, copy) NSString *debugDescription;

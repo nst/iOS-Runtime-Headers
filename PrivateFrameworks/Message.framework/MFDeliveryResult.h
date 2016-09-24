@@ -3,11 +3,11 @@
  */
 
 @interface MFDeliveryResult : NSObject {
-    int _attributes;
-    unsigned int _bytesSent;
-    double _duration;
-    BOOL _isWifi;
-    int _status;
+    int  _attributes;
+    unsigned int  _bytesSent;
+    double  _duration;
+    BOOL  _isWifi;
+    int  _status;
 }
 
 @property (nonatomic) int attributes;

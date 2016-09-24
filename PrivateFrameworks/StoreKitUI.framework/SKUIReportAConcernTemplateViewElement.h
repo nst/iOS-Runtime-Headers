@@ -3,7 +3,7 @@
  */
 
 @interface SKUIReportAConcernTemplateViewElement : SKUIViewElement {
-    int _concernType;
+    int  _concernType;
 }
 
 @property (nonatomic, readonly) int concernType;

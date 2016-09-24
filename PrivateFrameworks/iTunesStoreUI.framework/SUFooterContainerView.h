@@ -3,9 +3,9 @@
  */
 
 @interface SUFooterContainerView : UIView {
-    UIView *_contentView;
-    UIView *_footerView;
-    BOOL _footerVisible;
+    UIView * _contentView;
+    UIView * _footerView;
+    BOOL  _footerVisible;
 }
 
 @property (nonatomic, retain) UIView *contentView;

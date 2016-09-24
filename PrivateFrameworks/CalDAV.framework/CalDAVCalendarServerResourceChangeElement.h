@@ -3,7 +3,7 @@
  */
 
 @interface CalDAVCalendarServerResourceChangeElement : CoreDAVItemWithHrefChildItem {
-    CalDAVUpdateOwnerItem *_changedBy;
+    CalDAVUpdateOwnerItem * _changedBy;
 }
 
 @property (nonatomic, retain) CalDAVUpdateOwnerItem *changedBy;

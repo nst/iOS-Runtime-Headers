@@ -3,7 +3,7 @@
  */
 
 @interface SKUIRedeemTemplateViewElement : SKUIViewElement {
-    NSString *_initialCode;
+    NSString * _initialCode;
 }
 
 @property (nonatomic, readonly) NSString *initialCode;

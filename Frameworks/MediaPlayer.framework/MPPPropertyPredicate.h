@@ -3,12 +3,12 @@
  */
 
 @interface MPPPropertyPredicate : PBCodable <NSCopying> {
-    int _comparisonType;
+    int  _comparisonType;
     struct { 
         unsigned int comparisonType : 1; 
-    } _has;
-    NSString *_property;
-    MPPMediaPredicateValue *_value;
+    }  _has;
+    NSString * _property;
+    MPPMediaPredicateValue * _value;
 }
 
 @property (nonatomic) int comparisonType;

@@ -3,7 +3,7 @@
  */
 
 @interface AVTextStyleRule : NSObject <NSCopying> {
-    AVTextStyleRuleInternal *_textStyleRule;
+    AVTextStyleRuleInternal * _textStyleRule;
 }
 
 @property (nonatomic, readonly) NSDictionary *textMarkupAttributes;

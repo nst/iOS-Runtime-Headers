@@ -3,7 +3,7 @@
  */
 
 @interface TPLayerDelegateProxy : NSObject {
-    <TPLayerDelegateProxyDelegate> *_delegate;
+    <TPLayerDelegateProxyDelegate> * _delegate;
 }
 
 - (id)actionForLayer:(id)arg1 forKey:(id)arg2;

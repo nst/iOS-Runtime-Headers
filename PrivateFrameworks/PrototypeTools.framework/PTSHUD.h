@@ -3,20 +3,20 @@
  */
 
 @interface PTSHUD : UIView <UIGestureRecognizerDelegate, _UISettingsGroupObserver, _UISettingsKeyPathObserver> {
-    NSDictionary *_configuration;
-    BOOL _enteringModalEditingSavedModeTableViewCell;
-    BOOL _exitingModalEditingSavedModeTableViewCell;
+    NSDictionary * _configuration;
+    BOOL  _enteringModalEditingSavedModeTableViewCell;
+    BOOL  _exitingModalEditingSavedModeTableViewCell;
     struct CGPoint { 
-        float x; 
-        float y; 
-    } _initialPoint;
-    NSString *_mode;
-    UIView *_panView;
-    NSArray *_savedModeRows;
-    unsigned int _savedSettingsIndex;
-    _UISettings *_settings;
-    _UISettingsGroup *_settingsGroup;
-    BOOL _showing;
+        double x; 
+        double y; 
+    }  _initialPoint;
+    NSString * _mode;
+    UIView * _panView;
+    NSArray * _savedModeRows;
+    unsigned int  _savedSettingsIndex;
+    _UISettings * _settings;
+    _UISettingsGroup * _settingsGroup;
+    BOOL  _showing;
 }
 
 @property (nonatomic, copy) NSDictionary *configuration;
@@ -25,7 +25,7 @@
 @property (nonatomic) BOOL enteringModalEditingSavedModeTableViewCell;
 @property (nonatomic) BOOL exitingModalEditingSavedModeTableViewCell;
 @property (readonly) unsigned int hash;
-@property (nonatomic) struct CGPoint { float x1; float x2; } initialPoint;
+@property (nonatomic) struct CGPoint { double x1; double x2; } initialPoint;
 @property (nonatomic, copy) NSString *mode;
 @property (nonatomic, retain) UIView *panView;
 @property (nonatomic, retain) NSArray *savedModeRows;
@@ -35,7 +35,7 @@
 @property (nonatomic) BOOL showing;
 @property (readonly) Class superclass;
 
-+ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })defaultFrame;
++ (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })defaultFrame;
 + (id)sharedInstance;
 + (id)window;
 
@@ -50,8 +50,8 @@
 - (BOOL)exitingModalEditingSavedModeTableViewCell;
 - (void)handleVerticalPanGesture:(id)arg1;
 - (void)hide;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGPoint { float x1; float x2; })initialPoint;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGPoint { double x1; double x2; })initialPoint;
 - (id)mode;
 - (void)moveSavedSettingsAtIndex:(unsigned int)arg1 toIndex:(unsigned int)arg2;
 - (id)panView;
@@ -64,7 +64,7 @@
 - (void)setConfiguration:(id)arg1;
 - (void)setEnteringModalEditingSavedModeTableViewCell:(BOOL)arg1;
 - (void)setExitingModalEditingSavedModeTableViewCell:(BOOL)arg1;
-- (void)setInitialPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setInitialPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setModalEditingSavedModeTableViewCell:(BOOL)arg1;
 - (void)setMode:(id)arg1;
 - (void)setPanView:(id)arg1;

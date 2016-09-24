@@ -3,13 +3,13 @@
  */
 
 @interface SUBezierPathMaskProvider : SUMaskProvider {
-    UIBezierPath *_bezierPath;
+    UIBezierPath * _bezierPath;
 }
 
 @property (nonatomic, retain) UIBezierPath *bezierPath;
 
 - (id)bezierPath;
-- (struct CGPath { }*)copyPathForMaskWithSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGPath { }*)copyPathForMaskWithSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)dealloc;
 - (void)setBezierPath:(id)arg1;
 

@@ -3,15 +3,15 @@
  */
 
 @interface MusicProductMetadataTableViewCell : UITableViewCell {
-    <MusicProductMetadataTableViewCellDelegate> *_delegate;
+    <MusicProductMetadataTableViewCellDelegate> * _delegate;
     struct { 
         unsigned int switchDidChangeState : 1; 
-    } _delegateRespondsToSelector;
-    UIColor *_originalTextColor;
-    UISwitch *_switch;
-    BOOL _switchOn;
-    BOOL _textLabelColorFollowsTintColor;
-    BOOL _wantsSwitchAccessoryView;
+    }  _delegateRespondsToSelector;
+    UIColor * _originalTextColor;
+    UISwitch * _switch;
+    BOOL  _switchOn;
+    BOOL  _textLabelColorFollowsTintColor;
+    BOOL  _wantsSwitchAccessoryView;
 }
 
 @property (nonatomic) <MusicProductMetadataTableViewCellDelegate> *delegate;

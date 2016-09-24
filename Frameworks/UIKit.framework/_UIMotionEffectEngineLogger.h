@@ -3,10 +3,10 @@
  */
 
 @interface _UIMotionEffectEngineLogger : NSObject {
-    double _lastUpdateTimeStamp;
-    int _motionLevelSamples;
-    int _sampleCount;
-    int _updateFreqency;
+    double  _lastUpdateTimeStamp;
+    int  _motionLevelSamples;
+    int  _sampleCount;
+    int  _updateFreqency;
 }
 
 - (void)_dumpToAggregated;

@@ -3,11 +3,11 @@
  */
 
 @interface _UITableViewCellSeparatorView : UIView {
-    UIView *_backgroundView;
-    BOOL _drawsWithVibrantLightMode;
-    UIVisualEffectView *_effectView;
-    UIView *_overlayView;
-    UIVisualEffect *_separatorEffect;
+    UIView * _backgroundView;
+    BOOL  _drawsWithVibrantLightMode;
+    UIVisualEffectView * _effectView;
+    UIView * _overlayView;
+    UIVisualEffect * _separatorEffect;
 }
 
 @property (nonatomic) BOOL drawsWithVibrantLightMode;

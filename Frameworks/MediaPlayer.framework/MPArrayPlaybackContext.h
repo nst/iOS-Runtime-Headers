@@ -3,7 +3,7 @@
  */
 
 @interface MPArrayPlaybackContext : MPPlaybackContext {
-    NSArray *_items;
+    NSArray * _items;
 }
 
 @property (nonatomic, readonly) NSArray *items;

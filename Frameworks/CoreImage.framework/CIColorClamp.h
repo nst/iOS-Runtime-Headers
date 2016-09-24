@@ -3,9 +3,9 @@
  */
 
 @interface CIColorClamp : CIFilter {
-    CIImage *inputImage;
-    CIVector *inputMaxComponents;
-    CIVector *inputMinComponents;
+    CIImage * inputImage;
+    CIVector * inputMaxComponents;
+    CIVector * inputMinComponents;
 }
 
 @property (nonatomic, retain) CIImage *inputImage;

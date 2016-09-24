@@ -3,8 +3,8 @@
  */
 
 @interface WDBookmark : WDRun {
-    int mBookmarkType;
-    NSString *mName;
+    int  mBookmarkType;
+    NSString * mName;
 }
 
 - (int)bookmarkType;

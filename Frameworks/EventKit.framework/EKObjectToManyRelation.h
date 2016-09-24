@@ -3,10 +3,10 @@
  */
 
 @interface EKObjectToManyRelation : EKObjectRelation {
-    NSMutableSet *_addedItems;
-    NSMutableSet *_effectiveItems;
-    NSMutableSet *_loadedItems;
-    NSMutableSet *_removedItems;
+    NSMutableSet * _addedItems;
+    NSMutableSet * _effectiveItems;
+    NSMutableSet * _loadedItems;
+    NSMutableSet * _removedItems;
 }
 
 @property (nonatomic, retain) NSMutableSet *addedItems;
@@ -18,6 +18,7 @@
 @property (nonatomic, retain) NSMutableSet *loadedItems;
 @property (nonatomic, retain) NSMutableSet *removedItems;
 
+- (void).cxx_destruct;
 - (void)_addRelatedObject:(id)arg1 setInverse:(BOOL)arg2 dirty:(BOOL)arg3;
 - (id)_effectiveItems;
 - (void)_forgetRelatedObject:(id)arg1;

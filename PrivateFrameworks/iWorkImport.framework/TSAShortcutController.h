@@ -3,9 +3,9 @@
  */
 
 @interface TSAShortcutController : TSPObject {
-    TSADocumentRoot *_documentRoot;
-    NSMutableDictionary *_shortcutToStyleDictionary;
-    TSURetainedPointerKeyDictionary *_styleToShortcutDictionary;
+    TSADocumentRoot * _documentRoot;
+    NSMutableDictionary * _shortcutToStyleDictionary;
+    TSURetainedPointerKeyDictionary * _styleToShortcutDictionary;
 }
 
 @property (nonatomic) TSADocumentRoot *documentRoot;

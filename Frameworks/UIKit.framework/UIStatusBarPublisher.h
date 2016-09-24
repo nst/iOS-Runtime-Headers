@@ -3,9 +3,9 @@
  */
 
 @interface UIStatusBarPublisher : NSObject {
-    struct __CFMachPort { } *_machPort;
-    NSMutableSet *_statusBarItems;
-    int _styleOverrides;
+    struct __CFMachPort { } * _machPort;
+    NSMutableSet * _statusBarItems;
+    int  _styleOverrides;
 }
 
 - (void).cxx_destruct;

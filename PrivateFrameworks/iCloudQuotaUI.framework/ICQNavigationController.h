@@ -3,7 +3,7 @@
  */
 
 @interface ICQNavigationController : UINavigationController {
-    _ICQFlowSpecification *_flowSpecification;
+    _ICQFlowSpecification * _flowSpecification;
 }
 
 @property (nonatomic, readonly) _ICQFlowSpecification *flowSpecification;

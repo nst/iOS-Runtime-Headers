@@ -3,12 +3,12 @@
  */
 
 @interface RMSNowPlayingInfoMessage : PBCodable <NSCopying> {
-    NSString *_albumName;
-    NSString *_artistName;
-    BOOL _canSkipNext;
-    BOOL _canSkipPrevious;
-    BOOL _canWishlist;
-    unsigned long long _databaseID;
+    NSString * _albumName;
+    NSString * _artistName;
+    BOOL  _canSkipNext;
+    BOOL  _canSkipPrevious;
+    BOOL  _canWishlist;
+    unsigned int  _databaseID;
     struct { 
         unsigned int databaseID : 1; 
         unsigned int itemID : 1; 
@@ -25,19 +25,19 @@
         unsigned int canWishlist : 1; 
         unsigned int hasChapterData : 1; 
         unsigned int likeable : 1; 
-    } _has;
-    BOOL _hasChapterData;
-    unsigned long long _itemID;
-    BOOL _likeable;
-    int _likedState;
-    int _mediaKind;
-    int _playbackState;
-    unsigned int _revisionNumber;
-    int _scrubbableState;
-    double _timeRemaining;
-    double _timestamp;
-    double _totalDuration;
-    NSString *_trackName;
+    }  _has;
+    BOOL  _hasChapterData;
+    unsigned int  _itemID;
+    BOOL  _likeable;
+    int  _likedState;
+    int  _mediaKind;
+    int  _playbackState;
+    unsigned int  _revisionNumber;
+    int  _scrubbableState;
+    double  _timeRemaining;
+    double  _timestamp;
+    double  _totalDuration;
+    NSString * _trackName;
 }
 
 @property (nonatomic, retain) NSString *albumName;
@@ -45,7 +45,7 @@
 @property (nonatomic) BOOL canSkipNext;
 @property (nonatomic) BOOL canSkipPrevious;
 @property (nonatomic) BOOL canWishlist;
-@property (nonatomic) unsigned long long databaseID;
+@property (nonatomic) unsigned int databaseID;
 @property (nonatomic, readonly) BOOL hasAlbumName;
 @property (nonatomic, readonly) BOOL hasArtistName;
 @property (nonatomic) BOOL hasCanSkipNext;
@@ -65,7 +65,7 @@
 @property (nonatomic) BOOL hasTimestamp;
 @property (nonatomic) BOOL hasTotalDuration;
 @property (nonatomic, readonly) BOOL hasTrackName;
-@property (nonatomic) unsigned long long itemID;
+@property (nonatomic) unsigned int itemID;
 @property (nonatomic) BOOL likeable;
 @property (nonatomic) int likedState;
 @property (nonatomic) int mediaKind;
@@ -85,7 +85,7 @@
 - (BOOL)canWishlist;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned long long)databaseID;
+- (unsigned int)databaseID;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasAlbumName;
@@ -109,7 +109,7 @@
 - (BOOL)hasTrackName;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
-- (unsigned long long)itemID;
+- (unsigned int)itemID;
 - (BOOL)likeable;
 - (int)likedState;
 - (int)mediaKind;
@@ -123,7 +123,7 @@
 - (void)setCanSkipNext:(BOOL)arg1;
 - (void)setCanSkipPrevious:(BOOL)arg1;
 - (void)setCanWishlist:(BOOL)arg1;
-- (void)setDatabaseID:(unsigned long long)arg1;
+- (void)setDatabaseID:(unsigned int)arg1;
 - (void)setHasCanSkipNext:(BOOL)arg1;
 - (void)setHasCanSkipPrevious:(BOOL)arg1;
 - (void)setHasCanWishlist:(BOOL)arg1;
@@ -140,7 +140,7 @@
 - (void)setHasTimeRemaining:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
 - (void)setHasTotalDuration:(BOOL)arg1;
-- (void)setItemID:(unsigned long long)arg1;
+- (void)setItemID:(unsigned int)arg1;
 - (void)setLikeable:(BOOL)arg1;
 - (void)setLikedState:(int)arg1;
 - (void)setMediaKind:(int)arg1;

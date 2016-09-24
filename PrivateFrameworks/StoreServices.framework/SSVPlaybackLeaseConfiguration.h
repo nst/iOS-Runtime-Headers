@@ -3,14 +3,14 @@
  */
 
 @interface SSVPlaybackLeaseConfiguration : NSObject <NSCopying> {
-    NSURL *_beginLeaseURL;
-    NSURL *_certificateURL;
-    NSURL *_getAssetURL;
-    int _leaseType;
-    NSURL *_provisionMachineURL;
-    NSURL *_refreshLeaseURL;
-    NSString *_storeFrontSuffix;
-    NSURL *_syncMachineURL;
+    NSURL * _beginLeaseURL;
+    NSURL * _certificateURL;
+    NSURL * _getAssetURL;
+    int  _leaseType;
+    NSURL * _provisionMachineURL;
+    NSURL * _refreshLeaseURL;
+    NSString * _storeFrontSuffix;
+    NSURL * _syncMachineURL;
 }
 
 @property (nonatomic, copy) NSURL *beginLeaseURL;

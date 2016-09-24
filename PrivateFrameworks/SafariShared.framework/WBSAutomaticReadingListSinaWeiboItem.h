@@ -3,8 +3,8 @@
  */
 
 @interface WBSAutomaticReadingListSinaWeiboItem : WBSAutomaticReadingListItem {
-    NSString *_originatorProfileImageURLString;
-    NSString *_profileURLComponent;
+    NSString * _originatorProfileImageURLString;
+    NSString * _profileURLComponent;
 }
 
 @property (nonatomic, copy) NSString *originatorProfileImageURLString;

@@ -3,15 +3,15 @@
  */
 
 @interface NSBatchUpdateRequest : NSPersistentStoreRequest <NSPredicatedStoreRequest> {
-    NSDictionary *_columnsToUpdate;
-    id _entity;
+    NSDictionary * _columnsToUpdate;
+    id  _entity;
     struct _requestFlags { 
         unsigned int includesSubentities : 1; 
         unsigned int resultType : 2; 
         unsigned int entityIsName : 1; 
         unsigned int _RESERVED : 28; 
-    } _flags;
-    NSPredicate *_predicate;
+    }  _flags;
+    NSPredicate * _predicate;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -2,18 +2,18 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@interface HMTrigger : NSObject <HMMessageReceiver, HMObjectMerge, NSSecureCoding> {
-    NSObject<OS_dispatch_queue> *_clientQueue;
-    HMThreadSafeMutableArrayCollection *_currentActionSets;
-    HMDelegateCaller *_delegateCaller;
-    BOOL _enabled;
-    HMHome *_home;
-    NSDate *_lastFireDate;
-    HMMessageDispatcher *_msgDispatcher;
-    NSString *_name;
-    NSObject<OS_dispatch_queue> *_propertyQueue;
-    NSUUID *_uniqueIdentifier;
-    NSUUID *_uuid;
+@interface HMTrigger : NSObject <HMFMessageReceiver, HMObjectMerge, NSSecureCoding> {
+    NSObject<OS_dispatch_queue> * _clientQueue;
+    HMThreadSafeMutableArrayCollection * _currentActionSets;
+    HMDelegateCaller * _delegateCaller;
+    BOOL  _enabled;
+    HMHome * _home;
+    NSDate * _lastFireDate;
+    HMFMessageDispatcher * _msgDispatcher;
+    NSString * _name;
+    NSObject<OS_dispatch_queue> * _propertyQueue;
+    NSUUID * _uniqueIdentifier;
+    NSUUID * _uuid;
 }
 
 @property (nonatomic, readonly, copy) NSArray *actionSets;
@@ -28,17 +28,20 @@
 @property (nonatomic, copy) NSDate *lastFireDate;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 @property (nonatomic, readonly) NSUUID *messageTargetUUID;
-@property (nonatomic, retain) HMMessageDispatcher *msgDispatcher;
+@property (nonatomic, retain) HMFMessageDispatcher *msgDispatcher;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *propertyQueue;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, copy) NSUUID *uniqueIdentifier;
 @property (nonatomic, retain) NSUUID *uuid;
 
+// Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
+
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_addActionSet:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)_addActionSetWithCompletionHandler:(id /* block */)arg1;
 - (void)_configure:(id)arg1 uuid:(id)arg2 messageDispatcher:(id)arg3 clientQueue:(id)arg4 delegateCaller:(id)arg5;
 - (void)_enable:(BOOL)arg1 completionHandler:(id /* block */)arg2;
 - (void)_handleTriggerActivatedNotification:(id)arg1;
@@ -56,6 +59,7 @@
 - (void)_updateName:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)actionSets;
 - (void)addActionSet:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)addActionSetWithCompletionHandler:(id /* block */)arg1;
 - (id)clientQueue;
 - (id)currentActionSets;
 - (void)dealloc;
@@ -86,5 +90,11 @@
 - (id)uniqueIdentifier;
 - (void)updateName:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)uuid;
+
+// Image: /System/Library/PrivateFrameworks/Home.framework/Home
+
++ (id)_hf_sanitizeTriggerName:(id)arg1 home:(id)arg2;
+
+- (id)hf_prettyDescription;
 
 @end

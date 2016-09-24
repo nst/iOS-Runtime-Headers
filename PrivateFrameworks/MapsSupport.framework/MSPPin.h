@@ -3,7 +3,7 @@
  */
 
 @interface MSPPin : PBCodable <NSCopying> {
-    MSPDroppedPin *_droppedPin;
+    MSPDroppedPin * _droppedPin;
 }
 
 @property (nonatomic, retain) MSPDroppedPin *droppedPin;

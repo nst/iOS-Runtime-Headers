@@ -3,9 +3,9 @@
  */
 
 @interface GEORPWatchAuxiliaryControl : PBCodable <NSCopying> {
-    NSString *_hardwareIdentifier;
-    NSString *_osBuild;
-    NSString *_osVersion;
+    NSString * _hardwareIdentifier;
+    NSString * _osBuild;
+    NSString * _osVersion;
 }
 
 @property (nonatomic, retain) NSString *hardwareIdentifier;

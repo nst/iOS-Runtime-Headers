@@ -3,7 +3,7 @@
  */
 
 @interface PBBProtoSetPasscodeRestrictions : PBCodable <NSCopying> {
-    NSData *_restrictions;
+    NSData * _restrictions;
 }
 
 @property (nonatomic, retain) NSData *restrictions;

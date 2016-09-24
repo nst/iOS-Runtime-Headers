@@ -3,45 +3,46 @@
  */
 
 @interface KNAnimationPluginContext : NSObject <KNAnimationPluginContext> {
-    TSDGLState *_GLState;
-    KNAnimatedBuild *_animatedBuild;
+    TSDGLState * _GLState;
+    KNAnimatedBuild * _animatedBuild;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } _boundingRect;
+    }  _boundingRect;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } _boundingRectOnCanvas;
-    unsigned int _direction;
-    double _duration;
-    BOOL _isMotionBlurred;
-    BOOL _isPreview;
-    BOOL _isWarmingUp;
-    NSArray *_magicMoveMatches;
-    double _percent;
-    int _rendererType;
-    TSDRep *_rep;
-    NSArray *_textures;
-    NSDictionary *_transitionAttributes;
+    }  _boundingRectOnCanvas;
+    unsigned int  _direction;
+    double  _duration;
+    BOOL  _isMotionBlurred;
+    BOOL  _isPreview;
+    BOOL  _isWarmingUp;
+    NSArray * _magicMoveMatches;
+    double  _percent;
+    KNAnimationRandomGenerator * _randomGenerator;
+    int  _rendererType;
+    TSDRep * _rep;
+    NSArray * _textures;
+    NSDictionary * _transitionAttributes;
 }
 
 @property (nonatomic, retain) TSDGLState *GLState;
 @property (nonatomic) KNAnimatedBuild *animatedBuild;
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } boundingRect;
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } boundingRectOnCanvas;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } boundingRect;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } boundingRectOnCanvas;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) unsigned int direction;
@@ -56,6 +57,7 @@
 @property (nonatomic) BOOL isWarmingUp;
 @property (nonatomic) NSArray *magicMoveMatches;
 @property (nonatomic) double percent;
+@property (nonatomic, readonly) KNAnimationRandomGenerator *randomGenerator;
 @property (nonatomic) int rendererType;
 @property (nonatomic) TSDRep *rep;
 @property (readonly) Class superclass;
@@ -64,8 +66,8 @@
 
 - (id)GLState;
 - (id)animatedBuild;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingRect;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingRectOnCanvas;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundingRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundingRectOnCanvas;
 - (void)dealloc;
 - (id)description;
 - (unsigned int)direction;
@@ -79,11 +81,12 @@
 - (BOOL)isWarmingUp;
 - (id)magicMoveMatches;
 - (double)percent;
+- (id)randomGenerator;
 - (int)rendererType;
 - (id)rep;
 - (void)setAnimatedBuild:(id)arg1;
-- (void)setBoundingRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setBoundingRectOnCanvas:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setBoundingRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setBoundingRectOnCanvas:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setDirection:(unsigned int)arg1;
 - (void)setDuration:(double)arg1;
 - (void)setGLState:(id)arg1;

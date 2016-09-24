@@ -3,12 +3,12 @@
  */
 
 @interface PKPassContent : PKContent <NSSecureCoding> {
-    NSArray *_backFieldBuckets;
-    PKImage *_footerImage;
-    NSArray *_frontFieldBuckets;
-    NSString *_logoText;
-    PKPassPersonalization *_personalization;
-    int _transitType;
+    NSArray * _backFieldBuckets;
+    PKImage * _footerImage;
+    NSArray * _frontFieldBuckets;
+    NSString * _logoText;
+    PKPassPersonalization * _personalization;
+    int  _transitType;
 }
 
 @property (nonatomic, copy) NSArray *backFieldBuckets;
@@ -20,8 +20,8 @@
 
 + (BOOL)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)backFieldBuckets;
-- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (void)flushFormattedFieldValues;
 - (id)footerImage;

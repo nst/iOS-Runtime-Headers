@@ -3,7 +3,7 @@
  */
 
 @interface UIDynamicAnimatorTicker : NSObject {
-    UIDynamicAnimator *_animator;
+    UIDynamicAnimator * _animator;
 }
 
 @property UIDynamicAnimator *animator;

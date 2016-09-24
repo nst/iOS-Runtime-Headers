@@ -3,8 +3,8 @@
  */
 
 @interface DDFlightPreviewAction : DDRemoteAction {
-    NSString *_platerTitle;
-    BOOL _previewModeSet;
+    NSString * _platerTitle;
+    BOOL  _previewModeSet;
 }
 
 @property (retain) NSString *platerTitle;

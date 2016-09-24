@@ -3,9 +3,9 @@
  */
 
 @interface PLActivityCriterionTime : PLActivityCriterion {
-    double _interval;
-    double _rescheduleDelay;
-    PLMonotonicTimer *_timer;
+    double  _interval;
+    double  _rescheduleDelay;
+    PLMonotonicTimer * _timer;
 }
 
 @property double interval;

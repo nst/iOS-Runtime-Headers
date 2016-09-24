@@ -3,7 +3,7 @@
  */
 
 @interface NSURLProtectionSpace : NSObject <NSCopying, NSSecureCoding> {
-    NSURLProtectionSpaceInternal *_internal;
+    NSURLProtectionSpaceInternal * _internal;
 }
 
 @property (nonatomic, readonly, copy) NSString *_sf_highLevelDomainAndPort;

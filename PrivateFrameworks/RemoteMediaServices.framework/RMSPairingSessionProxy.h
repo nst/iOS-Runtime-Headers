@@ -3,13 +3,13 @@
  */
 
 @interface RMSPairingSessionProxy : RMSSessionProxy <RMSPairingSession> {
-    NSString *_advertisedAppName;
-    NSString *_advertisedDeviceModel;
-    NSString *_advertisedDeviceName;
-    <RMSPairingSessionDelegate> *_delegate;
-    RMSIDSClient *_idsClient;
-    BOOL _pairing;
-    NSString *_passcode;
+    NSString * _advertisedAppName;
+    NSString * _advertisedDeviceModel;
+    NSString * _advertisedDeviceName;
+    <RMSPairingSessionDelegate> * _delegate;
+    RMSIDSClient * _idsClient;
+    BOOL  _pairing;
+    NSString * _passcode;
 }
 
 @property (nonatomic, retain) NSString *advertisedAppName;

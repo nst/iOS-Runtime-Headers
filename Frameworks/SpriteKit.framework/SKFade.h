@@ -3,7 +3,7 @@
  */
 
 @interface SKFade : SKAction {
-    struct SKCFade { int (**x1)(); unsigned int x2; float x3; id /* block */ x4; id x5; double x6; double x7; float x8; float x9; double x10; bool x11; bool x12; id /* block */ x13; int x14; float x15; float x16; float x17; float x18; float x19; float x20; float x21; BOOL x22; } *_mycaction;
+    struct SKCFade { int (**x1)(); unsigned int x2; double x3; id /* block */ x4; id x5; double x6; double x7; double x8; double x9; double x10; bool x11; bool x12; id /* block */ x13; int x14; double x15; double x16; double x17; double x18; double x19; double x20; double x21; BOOL x22; } * _mycaction;
 }
 
 + (id)fadeAlphaBy:(float)arg1 duration:(double)arg2;

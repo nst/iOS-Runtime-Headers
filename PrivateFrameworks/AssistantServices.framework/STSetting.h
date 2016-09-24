@@ -3,8 +3,8 @@
  */
 
 @interface STSetting : STSiriModelObject {
-    int _type;
-    id _value;
+    int  _type;
+    id  _value;
 }
 
 @property (nonatomic) int type;

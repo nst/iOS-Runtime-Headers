@@ -3,7 +3,7 @@
  */
 
 @interface _PLPhotoLibraryFileReservation : NSObject {
-    int _fileDescriptor;
+    int  _fileDescriptor;
 }
 
 @property (nonatomic) int fileDescriptor;

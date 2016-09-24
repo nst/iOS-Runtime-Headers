@@ -3,20 +3,20 @@
  */
 
 @interface NSFileVersion : NSObject {
-    id _addition;
-    NSURL *_contentsURL;
-    BOOL _contentsURLIsAccessed;
-    id _deadVersionIdentifier;
-    BOOL _discardable;
-    NSURL *_fileURL;
-    BOOL _isBackup;
-    BOOL _isResolved;
-    NSString *_localizedComputerName;
-    NSString *_localizedName;
-    NSDate *_modificationDate;
-    NSString *_name;
-    id _nonLocalVersion;
-    id _reserved;
+    id  _addition;
+    NSURL * _contentsURL;
+    BOOL  _contentsURLIsAccessed;
+    id  _deadVersionIdentifier;
+    BOOL  _discardable;
+    NSURL * _fileURL;
+    BOOL  _isBackup;
+    BOOL  _isResolved;
+    NSString * _localizedComputerName;
+    NSString * _localizedName;
+    NSDate * _modificationDate;
+    NSString * _name;
+    id  _nonLocalVersion;
+    id  _reserved;
 }
 
 @property (readonly, copy) NSURL *URL;
@@ -31,9 +31,10 @@
 @property (readonly, copy) NSDate *modificationDate;
 @property (readonly, copy) NSString *originalPOSIXName;
 @property (readonly, copy) NSString *originatorName;
+@property (readonly, copy) NSPersonNameComponents *originatorNameComponents;
 @property (readonly, retain) <NSCoding> *persistentIdentifier;
 @property (getter=isResolved) BOOL resolved;
-@property (readonly) unsigned long long size;
+@property (readonly) unsigned int size;
 @property (getter=isUbiquitous, readonly) BOOL ubiquitous;
 
 + (void*)_addConflictObserverForItemAtURL:(id)arg1 statusChangedHandler:(id /* block */)arg2;
@@ -49,7 +50,7 @@
 + (void)_markConflicts:(id)arg1 asHandledForItemAtURL:(id)arg2;
 + (id)_otherNonpurgeableVersionsOfItemAtURL:(id)arg1 temporaryStorageIdentifier:(id)arg2;
 + (id)_otherVersionsOfItemAtURL:(id)arg1 temporaryStorageIdentifier:(id)arg2;
-+ (id)_otherVersionsOfItemAtURL:(id)arg1 temporaryStorageIdentifier:(id)arg2 withoutOptions:(unsigned long long)arg3;
++ (id)_otherVersionsOfItemAtURL:(id)arg1 temporaryStorageIdentifier:(id)arg2 withoutOptions:(unsigned int)arg3;
 + (BOOL)_permanentVersionStorageSupportedForURL:(id)arg1 temporaryStorageIdentifier:(id*)arg2 error:(id*)arg3;
 + (void)_removeConflictObserver:(void*)arg1;
 + (BOOL)_removeOtherVersionsOfItemAtURL:(id)arg1 temporaryStorageIdentifier:(id)arg2 error:(id*)arg3;
@@ -83,6 +84,7 @@
 - (BOOL)_preserveConflictVersionLocally;
 - (BOOL)_setDocumentInfo:(id)arg1;
 - (void)dealloc;
+- (id)description;
 - (id)etag;
 - (BOOL)hasLocalContents;
 - (BOOL)hasThumbnail;
@@ -98,12 +100,13 @@
 - (id)modificationDate;
 - (id)originalPOSIXName;
 - (id)originatorName;
+- (id)originatorNameComponents;
 - (id)persistentIdentifier;
 - (BOOL)removeAndReturnError:(id*)arg1;
 - (id)replaceItemAtURL:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
 - (id)restoreOverItemAtURL:(id)arg1 error:(id*)arg2;
 - (void)setDiscardable:(BOOL)arg1;
 - (void)setResolved:(BOOL)arg1;
-- (unsigned long long)size;
+- (unsigned int)size;
 
 @end

@@ -3,7 +3,7 @@
  */
 
 @interface SGPseudoContactKey : NSObject <SGEntityKey> {
-    SGIdentityKey *_identityKey;
+    SGIdentityKey * _identityKey;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -12,7 +12,7 @@
 @property (nonatomic, readonly) SGIdentityKey *identityKey;
 @property (readonly) Class superclass;
 
-+ (BOOL)isSupportedEntityType:(long long)arg1;
++ (BOOL)isSupportedEntityType:(int)arg1;
 
 - (void).cxx_destruct;
 - (id)description;

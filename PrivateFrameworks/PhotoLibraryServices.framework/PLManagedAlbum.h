@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@interface PLManagedAlbum : _PLManagedAlbum <PLUserEditableAlbumProtocol> {
-    BOOL _albumShouldBeAutomaticallyDeleted;
-    BOOL _needsPersistenceUpdate;
-    BOOL _resolvingConflicts;
+@interface PLManagedAlbum : _PLManagedAlbum <PLSearchableAssetCollection, PLUserEditableAlbumProtocol> {
+    BOOL  _albumShouldBeAutomaticallyDeleted;
+    BOOL  _needsPersistenceUpdate;
+    BOOL  _resolvingConflicts;
 }
 
 @property (nonatomic) BOOL albumShouldBeAutomaticallyDeleted;
@@ -74,6 +74,7 @@
 + (id)keyPathsForValuesAffectingPhotosCount;
 + (id)keyPathsForValuesAffectingVideosCount;
 + (id)pathToAssetAlbumOrderStructure;
++ (id)searchIndexAllowedPredicate;
 
 - (unsigned int)_albumStandInCount;
 - (id)_assetOrderByAssetUUID;
@@ -86,6 +87,7 @@
 - (void)addAssetUsingiTunesAlbumOrder:(id)arg1;
 - (BOOL)albumShouldBeAutomaticallyDeleted;
 - (unsigned int)approximateCount;
+- (id)assetUUIDsForPreviewWithCount:(unsigned int)arg1;
 - (unsigned int)assetsCount;
 - (BOOL)canPerformEditOperation:(unsigned int)arg1;
 - (id)childKeyForOrdering;
@@ -115,6 +117,7 @@
 - (void)removePersistedFileSystemData;
 - (void)replaceAssetsAtIndexes:(id)arg1 withAssets:(id)arg2;
 - (BOOL)resolvingConflicts;
+- (unsigned int)searchIndexCategory;
 - (id)searchIndexContents;
 - (void)setAlbumShouldBeAutomaticallyDeleted:(BOOL)arg1;
 - (void)setNeedsPersistenceUpdate:(BOOL)arg1;

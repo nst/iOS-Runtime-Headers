@@ -7,14 +7,13 @@
 
 - (BOOL)groupView:(PKPassGroupView *)arg1 deleteButtonEnabledForPass:(PKPass *)arg2;
 - (void)groupView:(PKPassGroupView *)arg1 deleteButtonPressedForPass:(PKPass *)arg2;
-- (void)groupView:(PKPassGroupView *)arg1 didBeginShowingFontmostPassView:(PKPassView *)arg2;
-- (void)groupView:(PKPassGroupView *)arg1 didEndShowingFontmostPassView:(PKPassView *)arg2;
 - (void)groupView:(PKPassGroupView *)arg1 didScrollToPassView:(PKPassView *)arg2;
 - (void)groupView:(PKPassGroupView *)arg1 didUpdatePassView:(PKPassView *)arg2;
 - (void)groupView:(PKPassGroupView *)arg1 flipButtonPressedForPass:(PKPass *)arg2;
-- (void)groupView:(PKPassGroupView *)arg1 panned:(struct CGPoint { float x1; float x2; })arg2 withVelocity:(struct CGPoint { float x1; float x2; })arg3;
+- (void)groupView:(PKPassGroupView *)arg1 panned:(struct CGPoint { double x1; double x2; })arg2 withVelocity:(struct CGPoint { double x1; double x2; })arg3;
 - (void)groupView:(PKPassGroupView *)arg1 resizeButtonPressedForPass:(PKPass *)arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })groupView:(PKPassGroupView *)arg1 targetPageControlFrameForProposedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })groupView:(PKPassGroupView *)arg1 targetPageControlFrameForProposedFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (int)groupViewContentModeForFrontmostPassWhenPiled:(PKPassGroupView *)arg1 withDefaultContentMode:(int)arg2;
 - (int)groupViewContentModeForFrontmostPassWhenStacked:(PKPassGroupView *)arg1;
 - (void)groupViewDidUpdatePageControlVisibility:(PKPassGroupView *)arg1;
 - (void)groupViewFrontPassDidFlip:(PKPassGroupView *)arg1 animated:(BOOL)arg2;

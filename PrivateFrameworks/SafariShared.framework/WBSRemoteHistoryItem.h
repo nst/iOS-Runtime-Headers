@@ -3,9 +3,9 @@
  */
 
 @interface WBSRemoteHistoryItem : NSObject <NSSecureCoding> {
-    NSDate *_lastVisitTime;
-    NSString *_title;
-    NSURL *_url;
+    NSDate * _lastVisitTime;
+    NSString * _title;
+    NSURL * _url;
 }
 
 @property (nonatomic, readonly) NSDate *lastVisitTime;

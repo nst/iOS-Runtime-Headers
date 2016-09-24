@@ -8,7 +8,7 @@
         double x; 
         double y; 
         double z; 
-    } fQuaternion;
+    }  fQuaternion;
 }
 
 - (id)initWithQuaternion:(struct { double x1; double x2; double x3; double x4; })arg1;

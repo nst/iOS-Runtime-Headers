@@ -3,14 +3,14 @@
  */
 
 @interface NEAppRule : NSObject <NEConfigurationLegacySupport, NEConfigurationValidating, NEPrettyDescription, NSCopying, NSSecureCoding> {
-    NSArray *_additionalExecutables;
-    NSArray *_matchAccountIdentifiers;
-    NSString *_matchDesignatedRequirement;
-    NSArray *_matchDomains;
-    NSString *_matchPath;
-    NSString *_matchSigningIdentifier;
-    BOOL _noDivertDNS;
-    BOOL _noRestriction;
+    NSArray * _additionalExecutables;
+    NSArray * _matchAccountIdentifiers;
+    NSString * _matchDesignatedRequirement;
+    NSArray * _matchDomains;
+    NSString * _matchPath;
+    NSString * _matchSigningIdentifier;
+    BOOL  _noDivertDNS;
+    BOOL  _noRestriction;
 }
 
 @property (copy) NSArray *additionalExecutables;

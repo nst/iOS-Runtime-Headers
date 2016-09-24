@@ -3,19 +3,19 @@
  */
 
 @interface CKNotification : NSObject <NSSecureCoding> {
-    NSString *_alertActionLocalizationKey;
-    NSString *_alertBody;
-    NSString *_alertLaunchImage;
-    NSArray *_alertLocalizationArgs;
-    NSString *_alertLocalizationKey;
-    NSNumber *_badge;
-    NSString *_category;
-    NSString *_containerIdentifier;
-    BOOL _isPruned;
-    CKNotificationID *_notificationID;
-    int _notificationType;
-    NSString *_soundName;
-    NSString *_subscriptionID;
+    NSString * _alertActionLocalizationKey;
+    NSString * _alertBody;
+    NSString * _alertLaunchImage;
+    NSArray * _alertLocalizationArgs;
+    NSString * _alertLocalizationKey;
+    NSNumber * _badge;
+    NSString * _category;
+    NSString * _containerIdentifier;
+    BOOL  _isPruned;
+    CKNotificationID * _notificationID;
+    int  _notificationType;
+    NSString * _soundName;
+    NSString * _subscriptionID;
 }
 
 @property (nonatomic, copy) NSString *alertActionLocalizationKey;

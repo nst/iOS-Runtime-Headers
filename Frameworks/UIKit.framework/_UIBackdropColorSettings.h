@@ -3,29 +3,29 @@
  */
 
 @interface _UIBackdropColorSettings : NSObject {
-    float _averageBrightness;
-    float _averageHue;
-    float _averageSaturation;
-    float _contrast;
-    BOOL _hasObservedValues;
-    _UIBackdropViewSettings *_parentSettings;
-    float _previousAverageBrightness;
-    float _previousAverageHue;
-    float _previousAverageSaturation;
-    float _previousContrast;
+    double  _averageBrightness;
+    double  _averageHue;
+    double  _averageSaturation;
+    double  _contrast;
+    BOOL  _hasObservedValues;
+    _UIBackdropViewSettings * _parentSettings;
+    double  _previousAverageBrightness;
+    double  _previousAverageHue;
+    double  _previousAverageSaturation;
+    double  _previousContrast;
 }
 
-@property (nonatomic) float averageBrightness;
-@property (nonatomic) float averageHue;
-@property (nonatomic) float averageSaturation;
+@property (nonatomic) double averageBrightness;
+@property (nonatomic) double averageHue;
+@property (nonatomic) double averageSaturation;
 @property (nonatomic, readonly) UIColor *color;
-@property (nonatomic) float contrast;
+@property (nonatomic) double contrast;
 @property (nonatomic) BOOL hasObservedValues;
 @property (nonatomic) _UIBackdropViewSettings *parentSettings;
-@property (nonatomic) float previousAverageBrightness;
-@property (nonatomic) float previousAverageHue;
-@property (nonatomic) float previousAverageSaturation;
-@property (nonatomic) float previousContrast;
+@property (nonatomic) double previousAverageBrightness;
+@property (nonatomic) double previousAverageHue;
+@property (nonatomic) double previousAverageSaturation;
+@property (nonatomic) double previousContrast;
 
 - (BOOL)applyCABackdropLayerStatistics:(id)arg1;
 - (float)averageBrightness;

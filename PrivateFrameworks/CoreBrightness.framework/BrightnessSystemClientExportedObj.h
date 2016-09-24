@@ -3,9 +3,9 @@
  */
 
 @interface BrightnessSystemClientExportedObj : NSObject <BacklightSystemDelegateXpcProtocol> {
-    BrightnessSystemClientInternal *_target;
-    id /* block */ clientBlock;
-    NSObject<OS_dispatch_queue> *queue;
+    BrightnessSystemClientInternal * _target;
+    id /* block */  clientBlock;
+    NSObject<OS_dispatch_queue> * queue;
 }
 
 @property (readonly, copy) NSString *debugDescription;

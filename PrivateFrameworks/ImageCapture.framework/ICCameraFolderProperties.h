@@ -3,8 +3,8 @@
  */
 
 @interface ICCameraFolderProperties : NSObject {
-    NSMutableArray *_files;
-    NSMutableArray *_folders;
+    NSMutableArray * _files;
+    NSMutableArray * _folders;
 }
 
 @property (retain) NSMutableArray *files;

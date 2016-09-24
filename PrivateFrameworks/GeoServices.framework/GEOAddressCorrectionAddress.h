@@ -3,8 +3,8 @@
  */
 
 @interface GEOAddressCorrectionAddress : PBCodable <NSCopying> {
-    NSString *_addressID;
-    GEOLocation *_addressLocation;
+    NSString * _addressID;
+    GEOLocation * _addressLocation;
 }
 
 @property (nonatomic, retain) NSString *addressID;

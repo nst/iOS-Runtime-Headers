@@ -3,7 +3,7 @@
  */
 
 @interface BLTAlertStateTester : NSObject {
-    id /* block */ _sectionInfoRetriever;
+    id /* block */  _sectionInfoRetriever;
 }
 
 @property (nonatomic, copy) id /* block */ sectionInfoRetriever;

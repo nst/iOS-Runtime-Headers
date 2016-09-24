@@ -3,7 +3,7 @@
  */
 
 @interface NPKProtoPass : PBCodable <NSCopying> {
-    NSData *_passData;
+    NSData * _passData;
 }
 
 @property (nonatomic, retain) NSData *passData;

@@ -3,17 +3,19 @@
  */
 
 @interface _ATXAppInfoManager : NSObject {
-    NSMutableDictionary *_appInfo;
-    _ATXDataStore *_dataStore;
-    NSMutableDictionary *_infoMap;
-    _ATXAppInstallMonitor *_installMonitor;
-    NSDate *_lastLaunch;
-    int _launchCount;
+    NSMutableDictionary * _appInfo;
+    _ATXDataStore * _dataStore;
+    NSMutableArray * _installDeltaLog;
+    _ATXInternalInstallNotification * _installNotificationListener;
+    NSString * _lastLaunch;
+    NSDate * _lastLaunchDate;
+    int  _launchCount;
     struct _opaque_pthread_rwlock_t { 
         long __sig; 
         BOOL __opaque[124]; 
-    } _rwlock;
-    int _spotlightLaunchCount;
+    }  _rwlock;
+    int  _spotlightLaunchCount;
+    _ATXInternalUninstallNotification * _uninstallNotificationListener;
 }
 
 + (id)sharedInstance;
@@ -23,22 +25,33 @@
 - (id)_getInfoOrCreateForBundleId:(id)arg1;
 - (BOOL)_hasBeenLaunchedForBundleId:(id)arg1;
 - (void)addInstallForBundleId:(id)arg1 withDate:(id)arg2;
+- (void)addInstallForBundleToDateMap:(id)arg1;
 - (void)addLaunchForBundleId:(id)arg1 withDate:(id)arg2;
+- (void)addScreenLockAtDate:(id)arg1;
 - (void)addSpotlightLaunchForBundleId:(id)arg1 withDate:(id)arg2;
 - (id)allAppsWithInstallDate;
 - (id)appInfoForBundleId:(id)arg1;
+- (void)clearAppInstallInfo;
+- (void)clearAppLaunchInfo;
 - (void)dealloc;
-- (id)init;
 - (id)initWithDataStore:(id)arg1;
 - (id)initWithInMemoryStore;
-- (id)installMonitor;
 - (id)lastAppLaunch;
+- (id)lastAppLaunchDate;
+- (id)lastAppLaunchWithHistory:(id)arg1;
 - (int)launchedAppCount;
-- (void)receivedDataStoreResetNotification:(id)arg1;
-- (void)registerForRestoreNotificationsFrom:(id)arg1;
+- (void)receivedDataStoreCompletedNotification:(id)arg1;
+- (void)receivedDataStoreStartedNotification:(id)arg1;
+- (void)registerForRestoreCompletionNotificationsFrom:(id)arg1;
+- (void)registerForRestoreStartedNotificationsFrom:(id)arg1;
 - (void)removeAppInfoForBundleId:(id)arg1;
+- (void)removeAppInfoForBundleIds:(id)arg1;
+- (void)removeAppLaunchesForBundleId:(id)arg1;
 - (void)setupInMemoryCache;
-- (void)train;
-- (void)unregisterFromRestoreNotificationsFrom:(id)arg1;
+- (void)setupInMemoryCacheWithAppInfoMapLocked:(id)arg1;
+- (void)startInstallDeltaRecording;
+- (id)stopInstallDeltaRecording;
+- (void)unregisterFromRestoreCompletionNotificationsFrom:(id)arg1;
+- (void)unregisterFromRestoreStartedNotificationsFrom:(id)arg1;
 
 @end

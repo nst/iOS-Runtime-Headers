@@ -3,8 +3,8 @@
  */
 
 @interface SUScriptSegmentedControl : SUScriptObject {
-    NSArray *_segments;
-    int _style;
+    NSArray * _segments;
+    int  _style;
 }
 
 @property (nonatomic, readonly) SUSegmentedControl *activeSegmentedControl;
@@ -14,7 +14,7 @@
 @property (readonly) unsigned int controlStateNormal;
 @property (readonly) unsigned int controlStateSelected;
 @property int maximumNumberOfItems;
-@property float maximumWidth;
+@property double maximumWidth;
 @property (copy) NSString *moreListTitle;
 @property (nonatomic, retain) SUSegmentedControl *nativeSegmentedControl;
 @property (nonatomic, readonly) int nativeSelectedIndex;

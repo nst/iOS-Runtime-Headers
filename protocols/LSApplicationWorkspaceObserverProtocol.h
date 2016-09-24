@@ -13,6 +13,7 @@
 - (void)applicationInstallsDidResume:(NSArray *)arg1;
 - (void)applicationInstallsDidStart:(NSArray *)arg1;
 - (void)applicationInstallsDidUpdateIcon:(NSArray *)arg1;
+- (void)applicationStateDidChange:(NSArray *)arg1;
 - (void)applicationsDidFailToInstall:(NSArray *)arg1;
 - (void)applicationsDidFailToUninstall:(NSArray *)arg1;
 - (void)applicationsDidInstall:(NSArray *)arg1;

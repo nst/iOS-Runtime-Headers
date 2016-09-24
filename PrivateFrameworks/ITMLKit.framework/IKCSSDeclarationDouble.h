@@ -3,7 +3,7 @@
  */
 
 @interface IKCSSDeclarationDouble : IKCSSDeclaration {
-    double _value;
+    double  _value;
 }
 
 @property double value;

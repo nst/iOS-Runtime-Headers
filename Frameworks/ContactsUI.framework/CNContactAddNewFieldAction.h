@@ -3,7 +3,7 @@
  */
 
 @interface CNContactAddNewFieldAction : CNContactAction {
-    <CNContactGroupPickerDelegate> *_groupPickerDelegate;
+    <CNContactGroupPickerDelegate> * _groupPickerDelegate;
 }
 
 @property (nonatomic) <CNContactGroupPickerDelegate> *groupPickerDelegate;

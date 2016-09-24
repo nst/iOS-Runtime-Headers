@@ -3,7 +3,7 @@
  */
 
 @interface CKDPShareSaveResponse : PBCodable <NSCopying> {
-    CKDPShare *_share;
+    CKDPShare * _share;
 }
 
 @property (nonatomic, readonly) BOOL hasShare;

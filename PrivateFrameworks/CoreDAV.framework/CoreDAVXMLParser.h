@@ -3,10 +3,10 @@
  */
 
 @interface CoreDAVXMLParser : NSXMLParser <CoreDAVResponseBodyParser> {
-    NSURL *_baseURL;
-    NSSet *_parseHints;
-    CoreDAVXMLElementGenerator *_rootElementGenerator;
-    CoreDAVXMLElementGenerator *_rootErrorGenerator;
+    NSURL * _baseURL;
+    NSSet * _parseHints;
+    CoreDAVXMLElementGenerator * _rootElementGenerator;
+    CoreDAVXMLElementGenerator * _rootErrorGenerator;
 }
 
 @property (nonatomic, retain) NSURL *baseURL;

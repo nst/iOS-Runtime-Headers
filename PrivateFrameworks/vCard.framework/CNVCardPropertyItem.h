@@ -3,9 +3,9 @@
  */
 
 @interface CNVCardPropertyItem : NSObject {
-    NSString *_identifier;
-    NSString *_label;
-    id _value;
+    NSString * _identifier;
+    NSString * _label;
+    id  _value;
 }
 
 @property (readonly) NSString *identifier;
@@ -14,7 +14,7 @@
 
 + (id)itemWithValue:(id)arg1 label:(id)arg2 identifier:(id)arg3;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)description;
 - (id)identifier;
 - (id)initWithValue:(id)arg1 label:(id)arg2 identifier:(id)arg3;

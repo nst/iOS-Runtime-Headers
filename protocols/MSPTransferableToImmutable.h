@@ -5,6 +5,7 @@
 
 @required
 
-- (id)transferToImmutableWithError:(out id*)arg1;
+- (id)copyIfValidWithError:(out id*)arg1;
+- (id)transferToImmutableIfValidWithError:(out id*)arg1;
 
 @end

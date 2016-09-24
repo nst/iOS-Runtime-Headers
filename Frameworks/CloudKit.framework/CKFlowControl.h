@@ -3,18 +3,18 @@
  */
 
 @interface CKFlowControl : NSObject {
-    double _budget;
-    unsigned int _budgetCap;
-    NSDate *_lastExpenditure;
-    double _maximumThrottleTime;
-    double _regenerationPerSecond;
-    double _totalCost;
-    unsigned int _totalSamples;
+    double  _budget;
+    unsigned int  _budgetCap;
+    NSDate * _lastRegeneration;
+    double  _maximumThrottleTime;
+    double  _regenerationPerSecond;
+    double  _totalCost;
+    unsigned int  _totalSamples;
 }
 
 @property double budget;
 @property unsigned int budgetCap;
-@property (retain) NSDate *lastExpenditure;
+@property (retain) NSDate *lastRegeneration;
 @property (nonatomic) double maximumThrottleTime;
 @property double regenerationPerSecond;
 
@@ -30,14 +30,14 @@
 - (void)expendWithCost:(double)arg1;
 - (id)initWithBudgetCap:(unsigned int)arg1 withMaximumThrottleTime:(double)arg2 andRegenerationPerSecond:(double)arg3;
 - (BOOL)isLimited;
-- (id)lastExpenditure;
+- (id)lastRegeneration;
 - (double)maximumThrottleTime;
 - (void)regenerate;
 - (double)regenerationPerSecond;
 - (double)secondsUntilBudgetLimitationRemoved;
 - (void)setBudget:(double)arg1;
 - (void)setBudgetCap:(unsigned int)arg1;
-- (void)setLastExpenditure:(id)arg1;
+- (void)setLastRegeneration:(id)arg1;
 - (void)setMaximumThrottleTime:(double)arg1;
 - (void)setRegenerationPerSecond:(double)arg1;
 

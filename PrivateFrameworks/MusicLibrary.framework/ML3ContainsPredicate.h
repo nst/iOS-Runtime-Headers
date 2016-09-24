@@ -3,7 +3,7 @@
  */
 
 @interface ML3ContainsPredicate : ML3PropertyPredicate {
-    id _values;
+    id  _values;
 }
 
 @property (nonatomic, copy) id values;

@@ -3,12 +3,12 @@
  */
 
 @interface SUItemOfferButton : UIButton {
-    int _animationHorizontalAlignment;
-    NSString *_buttonStyle;
-    NSString *_confirmationTitle;
-    BOOL _isShowingConfirmation;
-    NSString *_offerTitle;
-    BOOL _shouldShowConfirmation;
+    int  _animationHorizontalAlignment;
+    NSString * _buttonStyle;
+    NSString * _confirmationTitle;
+    BOOL  _isShowingConfirmation;
+    NSString * _offerTitle;
+    BOOL  _shouldShowConfirmation;
 }
 
 @property (nonatomic) int animationHorizontalAlignment;
@@ -21,14 +21,14 @@
 + (double)defaultAnimationDuration;
 + (id)itemOfferButtonStyleForItem:(id)arg1 offer:(id)arg2;
 
-- (void)_applyConfiguration:(struct { id x1; int x2; struct UIEdgeInsets { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; id x4; })arg1;
-- (struct { id x1; int x2; struct UIEdgeInsets { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; id x4; })_configurationForStyle:(id)arg1;
+- (void)_applyConfiguration:(struct { id x1; int x2; struct UIEdgeInsets { double x_3_1_1; double x_3_1_2; double x_3_1_3; double x_3_1_4; } x3; id x4; })arg1;
+- (struct { id x1; int x2; struct UIEdgeInsets { double x_3_1_1; double x_3_1_2; double x_3_1_3; double x_3_1_4; } x3; id x4; })_configurationForStyle:(id)arg1;
 - (void)_reloadButton;
 - (int)animationHorizontalAlignment;
 - (BOOL)configureForItem:(id)arg1 offer:(id)arg2;
 - (id)confirmationTitle;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (BOOL)isShowingConfirmation;
 - (id)itemOfferButtonStyle;
 - (void)layoutSubviews;
@@ -41,6 +41,6 @@
 - (void)setShowingConfirmation:(BOOL)arg1;
 - (void)setShowingConfirmation:(BOOL)arg1 duration:(double)arg2;
 - (BOOL)shouldShowConfirmation;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 
 @end

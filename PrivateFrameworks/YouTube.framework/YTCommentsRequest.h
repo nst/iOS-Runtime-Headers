@@ -3,12 +3,12 @@
  */
 
 @interface YTCommentsRequest : YTXMLHTTPRequest {
-    NSMutableArray *_comments;
-    id _delegate;
-    NSMutableString *_moreCommentsURLString;
-    unsigned int _startIndex;
-    unsigned int _totalResults;
-    YTVideo *_video;
+    NSMutableArray * _comments;
+    id  _delegate;
+    NSMutableString * _moreCommentsURLString;
+    unsigned int  _startIndex;
+    unsigned int  _totalResults;
+    YTVideo * _video;
 }
 
 + (unsigned int)commentsPerRequest;

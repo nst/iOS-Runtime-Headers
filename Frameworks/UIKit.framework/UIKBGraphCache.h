@@ -3,8 +3,8 @@
  */
 
 @interface UIKBGraphCache : NSObject <_UIScreenBasedObject> {
-    NSMutableDictionary *_graphCache;
-    UIScreen *_screen;
+    NSMutableDictionary * _graphCache;
+    UIScreen * _screen;
 }
 
 @property (readonly) UIScreen *_intendedScreen;

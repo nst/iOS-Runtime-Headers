@@ -3,11 +3,11 @@
  */
 
 @interface GEOEnvironmentsController : NSObject {
-    NSArray *_customEnvironmentInfos;
-    NSArray *_defaultEnvironmentInfos;
-    <GEOEnvironmentsControllerDelegate> *_delegate;
-    BOOL _enableCustomEnvironments;
-    NSArray *_environmentInfos;
+    NSArray * _customEnvironmentInfos;
+    NSArray * _defaultEnvironmentInfos;
+    <GEOEnvironmentsControllerDelegate> * _delegate;
+    BOOL  _enableCustomEnvironments;
+    NSArray * _environmentInfos;
 }
 
 @property (nonatomic) <GEOEnvironmentsControllerDelegate> *delegate;

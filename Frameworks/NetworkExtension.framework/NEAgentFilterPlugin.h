@@ -3,34 +3,34 @@
  */
 
 @interface NEAgentFilterPlugin : NSObject <NEAgentSessionDelegate> {
-    id /* block */ _browserDataCompleteHandler;
-    id /* block */ _browserDataHandler;
-    struct __CFDictionary { } *_browserFlows;
-    id /* block */ _browserNewFlowHandler;
-    BOOL _builtInPlugin;
-    void *_clientInfo;
-    NSObject<OS_xpc_object> *_clientListener;
-    NSObject<OS_dispatch_queue> *_clientQueue;
-    NSUUID *_configID;
-    int _outstandingSetDataOps;
-    int _outstandingSetGlobalDataOps;
-    struct __CFDictionary { } *_pendingGlobalPersistentData;
-    struct __CFDictionary { } *_pendingPerConfigurationPersistentData;
-    struct __CFBundle { } *_pluginBundle;
+    id /* block */  _browserDataCompleteHandler;
+    id /* block */  _browserDataHandler;
+    struct __CFDictionary { } * _browserFlows;
+    id /* block */  _browserNewFlowHandler;
+    BOOL  _builtInPlugin;
+    void * _clientInfo;
+    NSObject<OS_xpc_object> * _clientListener;
+    NSObject<OS_dispatch_queue> * _clientQueue;
+    NSUUID * _configID;
+    int  _outstandingSetDataOps;
+    int  _outstandingSetGlobalDataOps;
+    struct __CFDictionary { } * _pendingGlobalPersistentData;
+    struct __CFDictionary { } * _pendingPerConfigurationPersistentData;
+    struct __CFBundle { } * _pluginBundle;
     struct NEAgentFilterPluginCallbacks { 
         int (*PluginInit)(); 
         int (*PluginStart)(); 
         int (*PluginStop)(); 
         int (*PluginEnvironmentEvent)(); 
         int (*PluginDispose)(); 
-    } _pluginCallbacks;
-    void *_pluginInfo;
-    BOOL _pluginInitialized;
-    NEPluginPreferences *_pluginPrefs;
-    NSString *_pluginType;
-    NSObject<OS_dispatch_queue> *_queue;
-    NEAgentSession *_session;
-    struct NESocketContentFilter_s { } *_socketContentFilter;
+    }  _pluginCallbacks;
+    void * _pluginInfo;
+    BOOL  _pluginInitialized;
+    NEPluginPreferences * _pluginPrefs;
+    NSString * _pluginType;
+    NSObject<OS_dispatch_queue> * _queue;
+    NEAgentSession * _session;
+    struct NESocketContentFilter_s { } * _socketContentFilter;
 }
 
 @property (readonly) BOOL builtInPlugin;

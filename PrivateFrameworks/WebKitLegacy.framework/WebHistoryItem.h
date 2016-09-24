@@ -3,7 +3,7 @@
  */
 
 @interface WebHistoryItem : NSObject <NSCopying> {
-    WebHistoryItemPrivate *_private;
+    WebHistoryItemPrivate * _private;
 }
 
 @property (nonatomic, readonly, copy) NSString *URLString;
@@ -24,10 +24,10 @@
 - (id)_redirectURLs;
 - (float)_scale;
 - (BOOL)_scaleIsInitial;
-- (struct CGPoint { float x1; float x2; })_scrollPoint;
+- (struct CGPoint { double x1; double x2; })_scrollPoint;
 - (void)_setBookmarkID:(unsigned int)arg1;
 - (void)_setScale:(float)arg1 isInitial:(BOOL)arg2;
-- (void)_setScrollPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)_setScrollPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)_setSharedLinkUniqueIdentifier:(id)arg1;
 - (void)_setTransientProperty:(id)arg1 forKey:(id)arg2;
 - (void)_setViewportArguments:(id)arg1;
@@ -42,11 +42,9 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)dictionaryRepresentationIncludingChildren:(BOOL)arg1;
-- (void)finalize;
 - (unsigned int)hash;
 - (id)init;
 - (id)initFromDictionaryRepresentation:(id)arg1;
-- (id)initWithURL:(id)arg1 target:(id)arg2 parent:(id)arg3 title:(id)arg4;
 - (id)initWithURL:(id)arg1 title:(id)arg2;
 - (id)initWithURLString:(id)arg1 title:(id)arg2 displayTitle:(id)arg3 lastVisitedTimeInterval:(double)arg4;
 - (id)initWithURLString:(id)arg1 title:(id)arg2 lastVisitedTimeInterval:(double)arg3;
@@ -56,13 +54,12 @@
 - (BOOL)lastVisitWasFailure;
 - (double)lastVisitedTimeInterval;
 - (id)originalURLString;
-- (struct CGPoint { float x1; float x2; })scrollPoint;
+- (struct CGPoint { double x1; double x2; })scrollPoint;
 - (void)setAlternateTitle:(id)arg1;
 - (void)setRSSFeedReferrer:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setViewState:(id)arg1;
 - (id)target;
-- (id)targetItem;
 - (id)title;
 
 @end

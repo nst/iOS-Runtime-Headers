@@ -3,10 +3,10 @@
  */
 
 @interface PLWarningHelper : NSObject {
-    NSArray *__additionalPhotoStreamAssets;
-    NSArray *__assets;
-    NSString *__clientName;
-    int __style;
+    NSArray * __additionalPhotoStreamAssets;
+    NSArray * __assets;
+    NSString * __clientName;
+    int  __style;
 }
 
 @property (setter=_setAdditionalPhotoStreamAssets:, nonatomic, retain) NSArray *_additionalPhotoStreamAssets;

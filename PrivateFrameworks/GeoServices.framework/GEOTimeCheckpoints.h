@@ -7,12 +7,12 @@
         unsigned int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _distToNextCheckpoints;
+    }  _distToNextCheckpoints;
     struct { 
         unsigned int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _timeToNextCheckpoints;
+    }  _timeToNextCheckpoints;
 }
 
 @property (nonatomic, readonly) unsigned int*distToNextCheckpoints;

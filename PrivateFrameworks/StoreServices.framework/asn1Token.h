@@ -3,10 +3,10 @@
  */
 
 @interface asn1Token : NSObject {
-    unsigned char mClass;
-    const char *mContent;
-    unsigned int mIdentifier;
-    unsigned int mLength;
+    unsigned char  mClass;
+    const char * mContent;
+    unsigned int  mIdentifier;
+    unsigned int  mLength;
 }
 
 @property (readonly) const char *content;

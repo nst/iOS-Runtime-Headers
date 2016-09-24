@@ -3,11 +3,11 @@
  */
 
 @interface PLSyslogAgent : PLAgent {
-    PLEntryNotificationOperatorComposition *_batteryLevelChanged;
-    struct __CFRunLoopSource { } *fileDescriptorSource;
-    int kq;
-    unsigned int lastMessageID;
-    unsigned int syslogdPid;
+    PLEntryNotificationOperatorComposition * _batteryLevelChanged;
+    struct __CFRunLoopSource { } * fileDescriptorSource;
+    int  kq;
+    unsigned int  lastMessageID;
+    unsigned int  syslogdPid;
 }
 
 @property (retain) PLEntryNotificationOperatorComposition *batteryLevelChanged;

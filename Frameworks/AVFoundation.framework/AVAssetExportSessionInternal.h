@@ -3,59 +3,59 @@
  */
 
 @interface AVAssetExportSessionInternal : NSObject {
-    NSString *actualOutputFileType;
-    AVAsset *asset;
-    AVAudioMix *audioMix;
-    NSString *audioTimePitchAlgorithm;
-    BOOL canUseFastFrameRateConversion;
-    NSObject<OS_dispatch_semaphore> *canUseFastFrameRateConversionSemaphore;
-    NSArray *compatibleFileTypes;
-    long compatibleFileTypesDispatchOncePredicate;
-    AVCustomVideoCompositorSession *customVideoCompositorSession;
-    NSURL *directoryForTemporaryFiles;
-    NSError *error;
-    void *figVideoCompositor;
-    AVAssetTrack *firstVideoTrack;
-    id /* block */ handler;
-    long long maxFileSize;
-    NSArray *metadata;
-    AVMetadataItemFilter *metadataItemFilter;
+    NSString * actualOutputFileType;
+    AVAsset * asset;
+    AVAudioMix * audioMix;
+    NSString * audioTimePitchAlgorithm;
+    BOOL  canUseFastFrameRateConversion;
+    NSObject<OS_dispatch_semaphore> * canUseFastFrameRateConversionSemaphore;
+    NSArray * compatibleFileTypes;
+    long  compatibleFileTypesDispatchOncePredicate;
+    AVCustomVideoCompositorSession * customVideoCompositorSession;
+    NSURL * directoryForTemporaryFiles;
+    NSError * error;
+    void * figVideoCompositor;
+    AVAssetTrack * firstVideoTrack;
+    id /* block */  handler;
+    int  maxFileSize;
+    NSArray * metadata;
+    AVMetadataItemFilter * metadataItemFilter;
     struct { 
-        long long value; 
+        int value; 
         int timescale; 
         unsigned int flags; 
-        long long epoch; 
-    } minVideoFrameDuration;
-    BOOL optimizeForNetworkUse;
-    BOOL outputFileCreatedByRemaker;
-    NSString *outputFileType;
-    NSURL *outputURL;
-    NSString *preset;
-    NSString *preset16x9;
-    float progress;
-    NSObject<OS_dispatch_queue> *readWriteQueue;
-    struct OpaqueFigRemaker { } *remaker;
-    NSObject<OS_dispatch_queue> *remakerNotificationSerializationQueue;
-    int status;
+        int epoch; 
+    }  minVideoFrameDuration;
+    BOOL  optimizeForNetworkUse;
+    BOOL  outputFileCreatedByRemaker;
+    NSString * outputFileType;
+    NSURL * outputURL;
+    NSString * preset;
+    NSString * preset16x9;
+    double  progress;
+    NSObject<OS_dispatch_queue> * readWriteQueue;
+    struct OpaqueFigRemaker { } * remaker;
+    NSObject<OS_dispatch_queue> * remakerNotificationSerializationQueue;
+    int  status;
     struct { 
         struct { 
-            long long value; 
+            int value; 
             int timescale; 
             unsigned int flags; 
-            long long epoch; 
+            int epoch; 
         } start; 
         struct { 
-            long long value; 
+            int value; 
             int timescale; 
             unsigned int flags; 
-            long long epoch; 
+            int epoch; 
         } duration; 
-    } timeRange;
-    BOOL useMultiPass;
-    AVVideoComposition *videoComposition;
-    NSString *videoFrameRateConversionAlgorithm;
-    BOOL waitingForFastFrameRateResponse;
-    AVWeakReference *weakReference;
+    }  timeRange;
+    BOOL  useMultiPass;
+    AVVideoComposition * videoComposition;
+    NSString * videoFrameRateConversionAlgorithm;
+    BOOL  waitingForFastFrameRateResponse;
+    AVWeakReference * weakReference;
 }
 
 @end

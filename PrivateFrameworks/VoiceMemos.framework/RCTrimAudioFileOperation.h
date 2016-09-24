@@ -3,13 +3,13 @@
  */
 
 @interface RCTrimAudioFileOperation : RCTrimTimeRangeOperation {
-    RCCompositionComposedAssetWriter *_assetWriter;
-    BOOL _createWaveform;
-    NSURL *_destinationURL;
-    NSError *_error;
-    double _exportedDuration;
-    NSURL *_sourceURL;
-    BOOL _success;
+    RCCompositionComposedAssetWriter * _assetWriter;
+    BOOL  _createWaveform;
+    NSURL * _destinationURL;
+    NSError * _error;
+    double  _exportedDuration;
+    NSURL * _sourceURL;
+    BOOL  _success;
 }
 
 @property (nonatomic, readonly) BOOL createWaveform;

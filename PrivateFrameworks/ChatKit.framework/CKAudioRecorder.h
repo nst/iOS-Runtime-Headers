@@ -3,18 +3,18 @@
  */
 
 @interface CKAudioRecorder : NSObject <CKVoiceControllerDelegate> {
-    BOOL _cancelled;
-    id /* block */ _completion;
-    <CKAudioRecorderDelegate> *_delegate;
-    struct OpaqueAudioFileID { } *_fileID;
-    NSURL *_fileURL;
-    BOOL _recording;
-    BOOL _recordingEmpty;
-    BOOL _shouldPlayStartSound;
-    BOOL _shouldPlayStopSound;
-    NSDate *_startDate;
-    long long _totalPacketsCount;
-    CKVoiceController *_voiceController;
+    BOOL  _cancelled;
+    id /* block */  _completion;
+    <CKAudioRecorderDelegate> * _delegate;
+    struct OpaqueAudioFileID { } * _fileID;
+    NSURL * _fileURL;
+    BOOL  _recording;
+    BOOL  _recordingEmpty;
+    BOOL  _shouldPlayStartSound;
+    BOOL  _shouldPlayStopSound;
+    NSDate * _startDate;
+    int  _totalPacketsCount;
+    CKVoiceController * _voiceController;
 }
 
 @property (getter=isCancelled, nonatomic) BOOL cancelled;
@@ -32,9 +32,10 @@
 @property (nonatomic) BOOL shouldPlayStopSound;
 @property (nonatomic, retain) NSDate *startDate;
 @property (readonly) Class superclass;
-@property (nonatomic) long long totalPacketsCount;
+@property (nonatomic) int totalPacketsCount;
 @property (nonatomic, retain) CKVoiceController *voiceController;
 
+- (void).cxx_destruct;
 - (void)applicationDidEnterBackground:(id)arg1;
 - (void)cancelRecording;
 - (id /* block */)completion;
@@ -58,7 +59,7 @@
 - (void)setShouldPlayStartSound:(BOOL)arg1;
 - (void)setShouldPlayStopSound:(BOOL)arg1;
 - (void)setStartDate:(id)arg1;
-- (void)setTotalPacketsCount:(long long)arg1;
+- (void)setTotalPacketsCount:(int)arg1;
 - (void)setVoiceController:(id)arg1;
 - (BOOL)shouldPlayStartSound;
 - (BOOL)shouldPlayStopSound;
@@ -68,7 +69,7 @@
 - (void)startRecordingForRaiseGesture:(BOOL)arg1 shouldPlaySound:(BOOL)arg2;
 - (void)stopRecording:(id /* block */)arg1;
 - (void)stopRecordingAndPlaySound:(BOOL)arg1 completion:(id /* block */)arg2;
-- (long long)totalPacketsCount;
+- (int)totalPacketsCount;
 - (id)voiceController;
 - (void)voiceController:(id)arg1 didUpdateAveragePower:(float)arg2;
 - (void)voiceControllerDidDetectStartpoint:(id)arg1;

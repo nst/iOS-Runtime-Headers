@@ -3,14 +3,14 @@
  */
 
 @interface EKAlarmOccurrence : NSObject {
-    NSDate *_acknowledgedDate;
-    EKObjectID *_alarmID;
-    NSString *_externalID;
-    NSDate *_fireDate;
-    NSDate *_ownerDate;
-    EKObjectID *_ownerID;
-    NSTimeZone *_ownerTimeZone;
-    NSURL *_ownerURI;
+    NSDate * _acknowledgedDate;
+    EKObjectID * _alarmID;
+    NSString * _externalID;
+    NSDate * _fireDate;
+    NSDate * _ownerDate;
+    EKObjectID * _ownerID;
+    NSTimeZone * _ownerTimeZone;
+    NSURL * _ownerURI;
 }
 
 @property (nonatomic, readonly) NSDate *acknowledgedDate;

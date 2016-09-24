@@ -3,9 +3,9 @@
  */
 
 @interface AWDIMessageQueryFinished : PBCodable <NSCopying> {
-    unsigned int _connectionType;
-    int _genericError;
-    NSString *_guid;
+    unsigned int  _connectionType;
+    int  _genericError;
+    NSString * _guid;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int connectionType : 1; 
@@ -17,15 +17,17 @@
         unsigned int resultCode : 1; 
         unsigned int success : 1; 
         unsigned int uRLError : 1; 
-    } _has;
-    unsigned int _isEmail;
-    unsigned int _isPhoneNumber;
-    int _pOSIXError;
-    unsigned int _queryDuration;
-    int _resultCode;
-    unsigned int _success;
-    unsigned long long _timestamp;
-    int _uRLError;
+        unsigned int wasReversePushAttempted : 1; 
+    }  _has;
+    unsigned int  _isEmail;
+    unsigned int  _isPhoneNumber;
+    int  _pOSIXError;
+    unsigned int  _queryDuration;
+    int  _resultCode;
+    unsigned int  _success;
+    unsigned long long  _timestamp;
+    int  _uRLError;
+    unsigned int  _wasReversePushAttempted;
 }
 
 @property (nonatomic) unsigned int connectionType;
@@ -42,6 +44,7 @@
 @property (nonatomic) BOOL hasSuccess;
 @property (nonatomic) BOOL hasTimestamp;
 @property (nonatomic) BOOL hasURLError;
+@property (nonatomic) BOOL hasWasReversePushAttempted;
 @property (nonatomic) unsigned int isEmail;
 @property (nonatomic) unsigned int isPhoneNumber;
 @property (nonatomic) int pOSIXError;
@@ -50,6 +53,7 @@
 @property (nonatomic) unsigned int success;
 @property (nonatomic) unsigned long long timestamp;
 @property (nonatomic) int uRLError;
+@property (nonatomic) unsigned int wasReversePushAttempted;
 
 - (unsigned int)connectionType;
 - (void)copyTo:(id)arg1;
@@ -70,6 +74,7 @@
 - (BOOL)hasSuccess;
 - (BOOL)hasTimestamp;
 - (BOOL)hasURLError;
+- (BOOL)hasWasReversePushAttempted;
 - (unsigned int)hash;
 - (unsigned int)isEmail;
 - (BOOL)isEqual:(id)arg1;
@@ -92,6 +97,7 @@
 - (void)setHasSuccess:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
 - (void)setHasURLError:(BOOL)arg1;
+- (void)setHasWasReversePushAttempted:(BOOL)arg1;
 - (void)setIsEmail:(unsigned int)arg1;
 - (void)setIsPhoneNumber:(unsigned int)arg1;
 - (void)setPOSIXError:(int)arg1;
@@ -100,9 +106,11 @@
 - (void)setSuccess:(unsigned int)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (void)setURLError:(int)arg1;
+- (void)setWasReversePushAttempted:(unsigned int)arg1;
 - (unsigned int)success;
 - (unsigned long long)timestamp;
 - (int)uRLError;
+- (unsigned int)wasReversePushAttempted;
 - (void)writeTo:(id)arg1;
 
 @end

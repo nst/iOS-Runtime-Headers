@@ -3,25 +3,28 @@
  */
 
 @interface BBDataProviderConnection : NSObject <NSXPCListenerDelegate> {
-    NSString *_bundleID;
-    NSObject<OS_dispatch_queue> *_clientCalloutQueue;
-    BOOL _connected;
-    NSObject<OS_dispatch_queue> *_connectionQueue;
-    BBDataProviderConnectionResolver *_connectionResolver;
-    NSMutableDictionary *_dataProvidersBySectionID;
-    NSMutableDictionary *_parentFactoriesBySectionID;
-    NSObject<OS_dispatch_queue> *_queue;
-    <BBDataProviderConnectionServerProxy> *_serverProxy;
-    NSString *_serviceName;
+    NSString * _bundleID;
+    NSObject<OS_dispatch_queue> * _clientCalloutQueue;
+    BOOL  _connected;
+    NSObject<OS_dispatch_queue> * _connectionQueue;
+    BBDataProviderConnectionResolver * _connectionResolver;
+    NSMutableDictionary * _dataProvidersBySectionID;
+    NSMutableDictionary * _parentFactoriesBySectionID;
+    NSObject<OS_dispatch_queue> * _queue;
+    <BBDataProviderConnectionServerProxy> * _serverProxy;
+    NSString * _serviceName;
 }
 
+@property (nonatomic, copy) NSString *bundleID;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *serviceName;
 @property (readonly) Class superclass;
 
 + (void)initialize;
 
+- (void).cxx_destruct;
 - (id)_addDataProvider:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)_invalidate;
 - (id)addDataProvider:(id)arg1;
@@ -36,6 +39,8 @@
 - (void)ping:(id /* block */)arg1;
 - (void)removeDataProviderWithSectionID:(id)arg1;
 - (id)serviceName;
+- (void)setBundleID:(id)arg1;
 - (void)setServerProxy:(id)arg1;
+- (void)setServiceName:(id)arg1;
 
 @end

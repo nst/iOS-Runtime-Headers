@@ -3,13 +3,13 @@
  */
 
 @interface PLAccountingOwner : NSObject <PLAccountingDependencyOwner> {
-    NSNumber *_ID;
-    NSDate *_activationDate;
-    NSMutableDictionary *_dependencyIDToDependenciesInRange;
-    <PLAccountingOwnerManager> *_manager;
-    NSMutableSet *_observingDependencyIDs;
-    PLAccountingRange *_range;
-    NSDate *_runDate;
+    NSNumber * _ID;
+    NSDate * _activationDate;
+    NSMutableDictionary * _dependencyIDToDependenciesInRange;
+    <PLAccountingOwnerManager> * _manager;
+    NSMutableSet * _observingDependencyIDs;
+    PLAccountingRange * _range;
+    NSDate * _runDate;
 }
 
 @property (nonatomic, retain) NSNumber *ID;

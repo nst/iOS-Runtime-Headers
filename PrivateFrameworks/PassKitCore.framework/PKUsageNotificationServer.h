@@ -3,8 +3,8 @@
  */
 
 @interface PKUsageNotificationServer : PDXPCService <NSXPCListenerDelegate, PKUsageNotificationServerExportedInterface> {
-    NSMutableSet *_connections;
-    NSXPCListener *_listener;
+    NSMutableSet * _connections;
+    NSXPCListener * _listener;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -12,6 +12,7 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (id)init;
 - (void)initializeUsageNotificationServer;

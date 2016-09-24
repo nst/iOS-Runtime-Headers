@@ -3,10 +3,10 @@
  */
 
 @interface TPPageInfo : NSObject <TSDContainerInfo> {
-    TPBodyInfo *_bodyInfo;
-    TPDocumentRoot *_documentRoot;
-    <TPPageLayoutInfoProvider> *_layoutInfoProvider;
-    unsigned int _pageIndex;
+    TPBodyInfo * _bodyInfo;
+    TSUWeakReference * _documentRootWeakReference;
+    <TPPageLayoutInfoProvider> * _layoutInfoProvider;
+    unsigned int  _pageIndex;
 }
 
 @property (getter=isAnchoredToText, nonatomic, readonly) BOOL anchoredToText;
@@ -34,12 +34,15 @@
 - (void)dealloc;
 - (id)documentRoot;
 - (id)geometry;
+- (unsigned int)hash;
 - (id)infoForSelectionPath:(id)arg1;
 - (id)initWithPageIndex:(unsigned int)arg1 documentRoot:(id)arg2 layoutInfoProvider:(id)arg3;
 - (BOOL)isAnchoredToText;
 - (BOOL)isAttachedToBodyText;
+- (BOOL)isEqual:(id)arg1;
 - (BOOL)isFloatingAboveText;
 - (BOOL)isInlineWithText;
+- (BOOL)isSelectable;
 - (BOOL)isThemeContent;
 - (Class)layoutClass;
 - (id)layoutInfoProvider;

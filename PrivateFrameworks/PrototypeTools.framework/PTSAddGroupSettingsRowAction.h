@@ -3,8 +3,8 @@
  */
 
 @interface PTSAddGroupSettingsRowAction : PTSRowAction {
-    NSString *_groupKeyPath;
-    Class _settingsClass;
+    NSString * _groupKeyPath;
+    Class  _settingsClass;
 }
 
 @property (nonatomic, copy) NSString *groupKeyPath;

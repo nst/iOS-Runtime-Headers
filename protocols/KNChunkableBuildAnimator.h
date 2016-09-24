@@ -5,7 +5,6 @@
 
 @optional
 
-+ (unsigned int)maxChunkCountToAnimate;
 + (BOOL)requiresSingleTexturePerStage;
 
 @end

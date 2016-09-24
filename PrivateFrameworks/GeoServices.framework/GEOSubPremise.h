@@ -3,13 +3,14 @@
  */
 
 @interface GEOSubPremise : PBCodable <NSCopying> {
-    NSString *_name;
-    int _type;
+    NSString * _name;
+    int  _type;
 }
 
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic) int type;
 
+- (int)StringAsType:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -23,6 +24,7 @@
 - (void)setName:(id)arg1;
 - (void)setType:(int)arg1;
 - (int)type;
+- (id)typeAsString:(int)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

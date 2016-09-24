@@ -8,6 +8,7 @@
 @property (nonatomic, readonly) BOOL disableAutoDim;
 @property (nonatomic, readonly) BOOL dontDimOrLockWhileConnectedToPower;
 @property (nonatomic, readonly) double minimumLockscreenIdleTime;
+@property (nonatomic, readonly) BOOL supportLiftToWake;
 
 - (void)_bindAndRegisterDefaults;
 - (BOOL)disableAutoDim;

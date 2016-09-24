@@ -3,13 +3,13 @@
  */
 
 @interface BBDataProviderManager : NSObject <BBDataProviderStoreDelegate> {
-    <BBDataProviderManagerDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_loadDataProviderQueue;
-    BOOL _loadQueueSuspended;
-    BBLocalDataProviderStore *_localDataProviderStore;
-    NSMutableDictionary *_parentFactoriesBySectionID;
-    NSObject<OS_dispatch_queue> *_queue;
-    BBRemoteDataProviderConnectionResolver *_remoteDataProviderResolver;
+    <BBDataProviderManagerDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _loadDataProviderQueue;
+    BOOL  _loadQueueSuspended;
+    BBLocalDataProviderStore * _localDataProviderStore;
+    NSMutableDictionary * _parentFactoriesBySectionID;
+    NSObject<OS_dispatch_queue> * _queue;
+    BBRemoteDataProviderConnectionResolver * _remoteDataProviderResolver;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -17,6 +17,7 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (id)_configureDataProvider:(id)arg1 performMigration:(BOOL)arg2;
 - (id)_configureSectionInfo:(id)arg1 forDataProvider:(id)arg2;
 - (id)_queue_dataProviderForUniversalSectionID:(id)arg1;

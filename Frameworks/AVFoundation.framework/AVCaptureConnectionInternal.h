@@ -3,46 +3,46 @@
  */
 
 @interface AVCaptureConnectionInternal : NSObject {
-    BOOL active;
-    int activeVideoStabilizationMode;
-    NSArray *audioChannelLevels;
-    NSMutableArray *audioChannels;
-    AVCaptureInputPort *audioInputPort;
-    BOOL automaticallyAdjustsVideoMirroring;
-    int changeSeed;
-    NSString *connectionID;
-    BOOL enabled;
-    BOOL hasActiveObservers;
-    BOOL hasVideoMinFrameDurationObserver;
-    NSMutableArray *inputPorts;
-    long long lastGetAudioLevelsTime;
-    AVCaptureInputPort *metadataInputPort;
-    AVCaptureInputPort *metadataItemInputPort;
-    AVWeakReference *outputWeakReference;
-    int preferredVideoStabilizationMode;
-    AVCaptureDevice *sourceDevice;
-    AVCaptureInputPort *videoInputPort;
+    BOOL  active;
+    int  activeVideoStabilizationMode;
+    NSArray * audioChannelLevels;
+    NSMutableArray * audioChannels;
+    AVCaptureInputPort * audioInputPort;
+    BOOL  automaticallyAdjustsVideoMirroring;
+    int  changeSeed;
+    NSString * connectionID;
+    BOOL  enabled;
+    BOOL  hasActiveObservers;
+    BOOL  hasVideoMinFrameDurationObserver;
+    NSMutableArray * inputPorts;
+    int  lastGetAudioLevelsTime;
+    AVCaptureInputPort * metadataInputPort;
+    AVCaptureInputPort * metadataItemInputPort;
+    AVWeakReference * outputWeakReference;
+    int  preferredVideoStabilizationMode;
+    AVCaptureDevice * sourceDevice;
+    AVCaptureInputPort * videoInputPort;
     struct { 
-        long long value; 
+        int value; 
         int timescale; 
         unsigned int flags; 
-        long long epoch; 
-    } videoMaxFrameDuration;
-    float videoMaxScaleAndCropFactor;
+        int epoch; 
+    }  videoMaxFrameDuration;
+    double  videoMaxScaleAndCropFactor;
     struct { 
-        long long value; 
+        int value; 
         int timescale; 
         unsigned int flags; 
-        long long epoch; 
-    } videoMinFrameDuration;
-    BOOL videoMirrored;
-    BOOL videoMirroringSupported;
-    int videoOrientation;
-    BOOL videoOrientationSupported;
-    AVWeakReference *videoPreviewLayerWeakReference;
-    int videoRetainedBufferCountHint;
-    float videoScaleAndCropFactor;
-    BOOL videoStabilizationEnabled;
+        int epoch; 
+    }  videoMinFrameDuration;
+    BOOL  videoMirrored;
+    BOOL  videoMirroringSupported;
+    int  videoOrientation;
+    BOOL  videoOrientationSupported;
+    AVWeakReference * videoPreviewLayerWeakReference;
+    int  videoRetainedBufferCountHint;
+    double  videoScaleAndCropFactor;
+    BOOL  videoStabilizationEnabled;
 }
 
 @end

@@ -3,9 +3,9 @@
  */
 
 @interface _HKCFGNonTerminalNode : _HKCFGNode {
-    NSArray *_nodes;
-    _HKCFGReplacementRule *_rule;
-    id _value;
+    NSArray * _nodes;
+    _HKCFGReplacementRule * _rule;
+    id  _value;
 }
 
 @property (nonatomic, readonly) _HKCFGReplacementRule *rule;

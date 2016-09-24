@@ -3,8 +3,8 @@
  */
 
 @interface SUScriptACClientAccessInfo : SUScriptObject {
-    SUScriptAppleAccountType *_accountType;
-    NSMutableDictionary *_dictionary;
+    SUScriptAppleAccountType * _accountType;
+    NSMutableDictionary * _dictionary;
 }
 
 @property (readonly) NSDictionary *accessInfoDictionary;

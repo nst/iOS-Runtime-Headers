@@ -3,10 +3,10 @@
  */
 
 @interface SKUIAccountButtonsViewController : UIViewController <UINavigationControllerDelegate> {
-    SKUIAccountButtonsView *_buttonsView;
-    SKUIClientContext *_clientContext;
-    <SKUIAccountButtonsDelegate> *_delegate;
-    SKUILink *_ecommerceLink;
+    SKUIAccountButtonsView * _buttonsView;
+    SKUIClientContext * _clientContext;
+    <SKUIAccountButtonsDelegate> * _delegate;
+    SKUILink * _ecommerceLink;
 }
 
 @property (nonatomic, retain) SKUILink *ECommerceLink;

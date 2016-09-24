@@ -3,8 +3,8 @@
  */
 
 @interface PKRemoteAddPaymentPassViewController : _UIRemoteViewController <PKRemoteAddPassViewControllerProtocol> {
-    PKWeakReference *_delegate;
-    BOOL _finished;
+    <PKAddPaymentPassViewControllerDelegate> * _delegate;
+    BOOL  _finished;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -17,6 +17,7 @@
 + (id)serviceViewControllerInterface;
 + (BOOL)shouldPropagateAppearanceCustomizations;
 
+- (void).cxx_destruct;
 - (id)_addPaymentPassVC;
 - (void)dealloc;
 - (id)delegate;

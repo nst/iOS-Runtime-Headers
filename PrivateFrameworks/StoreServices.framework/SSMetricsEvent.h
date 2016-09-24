@@ -4,6 +4,10 @@
 
 @interface SSMetricsEvent : NSObject
 
++ (id)_globalCanaryLock;
++ (id)globalEventCanary;
++ (void)setGlobalEventCanary:(id)arg1;
+
 - (id)_dictionaryRepresentationOfBody;
 - (id)allTableEntityPropertiesPermittedByConfiguration:(id)arg1;
 - (id)allTableEntityPropertiesPermittedByConfiguration:(id)arg1 externalValues:(id)arg2;
@@ -12,6 +16,7 @@
 - (BOOL)isBlacklistedByConfiguration:(id)arg1;
 - (BOOL)isFieldBlacklistEnabled;
 - (id)millisecondsFromTimeInterval:(double)arg1;
+- (BOOL)requiresDiagnosticSendingPermission;
 - (double)timeIntervalFromMilliseconds:(id)arg1;
 
 @end

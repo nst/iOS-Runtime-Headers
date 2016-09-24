@@ -3,9 +3,9 @@
  */
 
 @interface MPUUserActivityContext : NSObject <NSCopying, NSMutableCopying> {
-    NSArray *_containerItems;
-    int _originatorType;
-    int _originatorVersion;
+    NSArray * _containerItems;
+    int  _originatorType;
+    int  _originatorVersion;
 }
 
 @property (nonatomic, readonly, copy) NSArray *containerItems;

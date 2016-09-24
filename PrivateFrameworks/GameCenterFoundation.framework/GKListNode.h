@@ -3,9 +3,9 @@
  */
 
 @interface GKListNode : NSObject {
-    GKListNode *_nextNode;
-    GKListNode *_prevNode;
-    id _value;
+    GKListNode * _nextNode;
+    GKListNode * _prevNode;
+    id  _value;
 }
 
 @property (nonatomic) GKListNode *nextNode;

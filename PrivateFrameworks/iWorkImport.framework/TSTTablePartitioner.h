@@ -3,47 +3,47 @@
  */
 
 @interface TSTTablePartitioner : NSObject <TSDPartitioner> {
-    float mFirstPartitionWidth;
-    TSUPointerKeyDictionary *mHintMatricesByCanvas;
-    TSDInfoGeometry *mInfoGeometry;
-    NSMutableDictionary *mPartitioningPassCache;
+    double  mFirstPartitionWidth;
+    TSUPointerKeyDictionary * mHintMatricesByCanvas;
+    TSDInfoGeometry * mInfoGeometry;
+    NSMutableDictionary * mPartitioningPassCache;
     struct CGSize { 
-        float width; 
-        float height; 
-    } mScaleToFit;
-    TSTLayout *mScaledLayout;
-    TSTTableInfo *mTableInfo;
+        double width; 
+        double height; 
+    }  mScaleToFit;
+    TSTLayout * mScaledLayout;
+    TSTTableInfo * mTableInfo;
 }
 
 @property (nonatomic, copy) TSDInfoGeometry *infoGeometry;
-@property (nonatomic, readonly) float inlineTableWidth;
+@property (nonatomic, readonly) double inlineTableWidth;
 @property (nonatomic, readonly) BOOL scaleIsValid;
-@property (nonatomic) struct CGSize { float x1; float x2; } scaleToFit;
+@property (nonatomic) struct CGSize { double x1; double x2; } scaleToFit;
 @property (nonatomic, readonly) TSTLayout *scaledLayout;
 @property (nonatomic, readonly) TSTTableInfo *tableInfo;
 
 - (void)dealloc;
 - (BOOL)didHint:(id)arg1 syncWithNextHint:(id)arg2 horizontally:(BOOL)arg3 delta:(int)arg4;
 - (id)hintCacheKeyForHint:(id)arg1;
-- (id)hintCacheKeyForPartitioningPass:(id)arg1 andHintID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
+- (id)hintCacheKeyForPartitioningPass:(id)arg1 andHintID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
 - (id)hintForLayout:(id)arg1;
 - (id)infoGeometry;
 - (id)initWithInfo:(id)arg1;
 - (float)inlineTableWidth;
 - (id)layoutForHint:(id)arg1 parentLayout:(id)arg2;
-- (struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })measureCellRangeForNextPartitionOfSize:(struct CGSize { float x1; float x2; })arg1 previousHint:(id)arg2 horizontally:(BOOL)arg3;
-- (id)nextHintForSize:(struct CGSize { float x1; float x2; })arg1 parentLayout:(id)arg2 previousHint:(id)arg3 horizontally:(BOOL)arg4 outFinished:(out BOOL*)arg5;
-- (id)nextLayoutForSize:(struct CGSize { float x1; float x2; })arg1 parentLayout:(id)arg2 previousHint:(id)arg3 horizontally:(BOOL)arg4 outFinished:(out BOOL*)arg5;
+- (struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })measureCellRangeForNextPartitionOfSize:(struct CGSize { double x1; double x2; })arg1 previousHint:(id)arg2 horizontally:(BOOL)arg3;
+- (id)nextHintForSize:(struct CGSize { double x1; double x2; })arg1 parentLayout:(id)arg2 previousHint:(id)arg3 horizontally:(BOOL)arg4 outFinished:(out BOOL*)arg5;
+- (id)nextLayoutForSize:(struct CGSize { double x1; double x2; })arg1 parentLayout:(id)arg2 previousHint:(id)arg3 horizontally:(BOOL)arg4 outFinished:(out BOOL*)arg5;
 - (BOOL)p_didFinishPartitioningHint:(id)arg1 horizontally:(BOOL)arg2;
 - (void)p_flushCacheAfterPartitioningFinished:(id)arg1 lastHint:(id)arg2 horizontally:(BOOL)arg3;
-- (id)partitioningPassForFirstPartitionSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)partitioningPassForFirstPartitionSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)partitioningPassForHint:(id)arg1 withPreviousHint:(id)arg2;
 - (BOOL)scaleIsValid;
-- (struct CGSize { float x1; float x2; })scaleToFit;
+- (struct CGSize { double x1; double x2; })scaleToFit;
 - (id)scaledLayout;
 - (void)setInfoGeometry:(id)arg1;
-- (void)setScaleToFit:(struct CGSize { float x1; float x2; })arg1;
-- (BOOL)shouldReuseLayout:(id)arg1 forSize:(struct CGSize { float x1; float x2; })arg2 parentLayout:(id)arg3 hint:(id)arg4;
+- (void)setScaleToFit:(struct CGSize { double x1; double x2; })arg1;
+- (BOOL)shouldReuseLayout:(id)arg1 forSize:(struct CGSize { double x1; double x2; })arg2 parentLayout:(id)arg3 hint:(id)arg4;
 - (id)tableInfo;
 - (void)validateScaledLayout;
 

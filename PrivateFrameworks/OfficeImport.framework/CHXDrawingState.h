@@ -3,7 +3,7 @@
  */
 
 @interface CHXDrawingState : OAXDrawingState {
-    CHXReadState *mCHXState;
+    CHXReadState * mCHXState;
 }
 
 - (id)chxState;

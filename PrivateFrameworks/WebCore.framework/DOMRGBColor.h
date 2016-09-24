@@ -13,7 +13,6 @@
 - (id)blue;
 - (struct CGColor { }*)color;
 - (void)dealloc;
-- (void)finalize;
 - (id)green;
 - (id)red;
 

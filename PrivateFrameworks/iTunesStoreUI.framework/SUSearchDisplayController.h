@@ -3,7 +3,7 @@
  */
 
 @interface SUSearchDisplayController : UISearchDisplayController {
-    BOOL _store_navigationBarHidingEnabled;
+    BOOL  _store_navigationBarHidingEnabled;
 }
 
 - (id)_createPopoverController;

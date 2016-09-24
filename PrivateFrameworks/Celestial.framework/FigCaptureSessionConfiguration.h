@@ -3,15 +3,15 @@
  */
 
 @interface FigCaptureSessionConfiguration : NSObject <FigXPCCoding, NSCopying> {
-    BOOL _allowedToRunInWindowedLayout;
-    long long _configurationID;
-    BOOL _configuresAppAudioSession;
-    NSMutableArray *_connections;
-    BOOL _usesAppAudioSession;
+    BOOL  _allowedToRunInWindowedLayout;
+    int  _configurationID;
+    BOOL  _configuresAppAudioSession;
+    NSMutableArray * _connections;
+    BOOL  _usesAppAudioSession;
 }
 
 @property (nonatomic) BOOL allowedToRunInWindowedLayout;
-@property (nonatomic) long long configurationID;
+@property (nonatomic) int configurationID;
 @property (nonatomic) BOOL configuresAppAudioSession;
 @property (nonatomic, readonly) NSArray *connectionConfigurations;
 @property (readonly, copy) NSString *debugDescription;
@@ -26,7 +26,7 @@
 
 - (void)addConnectionConfiguration:(id)arg1;
 - (BOOL)allowedToRunInWindowedLayout;
-- (long long)configurationID;
+- (int)configurationID;
 - (BOOL)configuresAppAudioSession;
 - (id)connectionConfigurations;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -38,7 +38,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)removeConnectionConfiguration:(id)arg1;
 - (void)setAllowedToRunInWindowedLayout:(BOOL)arg1;
-- (void)setConfigurationID:(long long)arg1;
+- (void)setConfigurationID:(int)arg1;
 - (void)setConfiguresAppAudioSession:(BOOL)arg1;
 - (void)setUsesAppAudioSession:(BOOL)arg1;
 - (id)sinkConfigurations;

@@ -3,7 +3,7 @@
  */
 
 @interface FBOrderedRequesters : NSObject {
-    NSMutableArray *_bands;
+    NSMutableArray * _bands;
 }
 
 - (void)addRequester:(id)arg1 toBand:(int)arg2;
@@ -12,8 +12,9 @@
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
-- (id)frontmostRequester;
+- (id)highestPriorityRequester;
 - (id)init;
+- (id)lowestPriorityRequester;
 - (void)prioritizeRequester:(id)arg1;
 - (void)removeRequester:(id)arg1;
 - (id)requesters;

@@ -3,19 +3,19 @@
  */
 
 @interface EDReferenceIterator : NSObject {
-    unsigned int mCellIndex;
-    int mCurrentCellIndex;
-    EDWorksheet *mCurrentSheet;
-    unsigned int mNextArrayIndex;
-    unsigned int mPreviousColumnNumber;
-    EDReference *mReference;
-    EDCollection *mReferences;
-    EDRowBlock *mRowBlock;
-    unsigned int mRowBlockIndex;
-    EDRowBlocks *mRowBlocks;
-    struct EDRowInfo { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned short x6; unsigned char x7; unsigned int x8 : 1; unsigned int x9 : 1; } *mRowInfo;
-    unsigned int mRowInfoIndex;
-    EDWorkbook *mWorkbook;
+    unsigned int  mCellIndex;
+    int  mCurrentCellIndex;
+    EDWorksheet * mCurrentSheet;
+    unsigned int  mNextArrayIndex;
+    unsigned int  mPreviousColumnNumber;
+    EDReference * mReference;
+    EDCollection * mReferences;
+    EDRowBlock * mRowBlock;
+    unsigned int  mRowBlockIndex;
+    EDRowBlocks * mRowBlocks;
+    struct EDRowInfo { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned short x6; unsigned char x7; unsigned int x8 : 1; unsigned int x9 : 1; } * mRowInfo;
+    unsigned int  mRowInfoIndex;
+    EDWorkbook * mWorkbook;
 }
 
 + (id)referenceIteratorWithReference:(id)arg1 workbook:(id)arg2;

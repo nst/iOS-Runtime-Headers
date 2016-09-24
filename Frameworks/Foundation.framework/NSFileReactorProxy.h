@@ -3,24 +3,25 @@
  */
 
 @interface NSFileReactorProxy : NSObject {
-    NSObject<OS_xpc_object> *_client;
-    NSFileAccessNode *_itemLocation;
-    id /* block */ _messageSender;
-    id _reactorID;
+    NSXPCConnection * _client;
+    NSFileAccessNode * _itemLocation;
+    id  _reactorID;
 }
 
++ (void)_enumerateParentDirectoriesStartingAtURL:(id)arg1 usingBlock:(id /* block */)arg2;
+
+- (id)_clientProxy;
+- (BOOL)allowedForURL:(id)arg1;
 - (id)client;
 - (void)collectDebuggingInformationWithCompletionHandler:(id /* block */)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)descriptionWithIndenting:(id)arg1;
-- (void)finalize;
-- (void)forwardUsingMessageSender:(id /* block */)arg1;
-- (id)initWithClient:(id)arg1 reactorID:(id)arg2 messageSender:(id /* block */)arg3;
+- (void)forwardUsingProxy:(id)arg1;
+- (id)initWithClient:(id)arg1 reactorID:(id)arg2;
+- (void)invalidate;
 - (id)itemLocation;
-- (id /* block */)messageSender;
 - (id)reactorID;
-- (void)sendMessageKind:(id)arg1 parameters:(id)arg2 resultHandler:(id /* block */)arg3;
 - (void)setItemLocation:(id)arg1;
 
 @end

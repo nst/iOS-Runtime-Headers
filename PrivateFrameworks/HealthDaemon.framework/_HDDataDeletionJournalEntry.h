@@ -3,15 +3,14 @@
  */
 
 @interface _HDDataDeletionJournalEntry : HDJournalEntry {
-    HKObject *_dataObject;
-    BOOL _restrictSource;
+    HKObject * _dataObject;
+    BOOL  _restrictSource;
 }
 
 @property (nonatomic, readonly) HKObject *dataObject;
 @property (nonatomic, readonly) BOOL restrictSource;
 
-+ (void)applyEntries:(id)arg1 withDaemon:(id)arg2;
-+ (int)behavior;
++ (void)applyEntries:(id)arg1 withProfile:(id)arg2;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;

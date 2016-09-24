@@ -3,10 +3,12 @@
  */
 
 @interface CKDPRecordSaveRequestConflictLoserUpdate : PBCodable <NSCopying> {
-    NSMutableArray *_conflictLoserEtags;
+    NSMutableArray * _conflictLoserEtags;
 }
 
 @property (nonatomic, retain) NSMutableArray *conflictLoserEtags;
+
++ (Class)conflictLoserEtagsType;
 
 - (void).cxx_destruct;
 - (void)addConflictLoserEtags:(id)arg1;

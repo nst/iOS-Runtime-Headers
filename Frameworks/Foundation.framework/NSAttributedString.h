@@ -2,9 +2,13 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSAttributedString : NSObject <NSCopying, NSMutableCopying, NSSecureCoding>
+@interface NSAttributedString : NSObject <HFStringGenerator, NSCopying, NSMutableCopying, NSSecureCoding>
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property (readonly, copy) NSString *string;
+@property (readonly) Class superclass;
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
@@ -49,12 +53,6 @@
 - (id)_mapkit_attributedStringByApplyingBindingFormatReplacements:(id)arg1 defaultReplacementAttributes:(id)arg2 startTokenDelimiter:(id)arg3 endTokenDelimiter:(id)arg4 error:(id*)arg5;
 - (id)_mapkit_attributedStringByApplyingBindingFormatReplacements:(id)arg1 error:(id*)arg2;
 
-// Image: /System/Library/Frameworks/PassKit.framework/PassKit
-
-- (struct CGSize { float x1; float x2; })pkui_sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (struct CGSize { float x1; float x2; })pkui_sizeThatFits:(struct CGSize { float x1; float x2; })arg1 withNumberOfLines:(unsigned int)arg2;
-- (struct CGSize { float x1; float x2; })pkui_sizeThatFits:(struct CGSize { float x1; float x2; })arg1 withNumberOfLines:(unsigned int)arg2 forceWordWrap:(BOOL)arg3;
-
 // Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
 
 + (id)pu_attributedStringWithHTMLString:(id)arg1 defaultAttributes:(id)arg2;
@@ -73,14 +71,18 @@
 
 - (id)_ui_attributedStringWithOriginalFontAttributes;
 - (id)_ui_fontsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 usingDefaultFont:(id)arg2;
+- (id)_ui_glyphImageViewsScale:(float)arg1 outImageRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg2 outLineRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg3 outBaselineOffset:(float*)arg4;
 - (int)_ui_resolvedTextAlignment;
 - (int)_ui_resolvedTextAlignmentForUserInterfaceLayoutDirection:(int)arg1;
-- (id)_ui_secureStringWithPointSize:(float)arg1;
 - (id)_ui_synthesizeAttributedSubstringFromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 usingDefaultAttributes:(id)arg2;
 
 // Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
 
 - (BOOL)containsAttribute:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/ClockKit.framework/ClockKit
+
+- (id)_attributedStringWithParagraphStyleFromStyle:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/DataDetectorsCore.framework/DataDetectorsCore
 
@@ -90,15 +92,28 @@
 // Image: /System/Library/PrivateFrameworks/DataDetectorsUI.framework/DataDetectorsUI
 
 - (id)dd_contextAtLocation:(int)arg1;
-- (struct __DDResult { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __DDQueryRange { struct __DDQueryOffset { int x_1_2_1; int x_1_2_2; } x_2_1_1; struct __DDQueryOffset { int x_2_2_1; int x_2_2_2; } x_2_1_2; } x2; struct { int x_3_1_1; int x_3_1_2; } x3; int x4; struct __CFArray {} *x5; struct __CFString {} *x6; struct __CFString {} *x7; void *x8; void *x9; int x10; }*)dd_resultAtLocation:(int)arg1;
+- (struct __DDResult { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __DDQueryRange { struct __DDQueryOffset { unsigned int x_1_2_1 : 32; unsigned int x_1_2_2 : 32; } x_2_1_1; struct __DDQueryOffset { unsigned int x_2_2_1 : 32; unsigned int x_2_2_2 : 32; } x_2_1_2; } x2; struct { int x_3_1_1; int x_3_1_2; } x3; int x4; struct __CFArray {} *x5; struct __CFString {} *x6; struct __CFString {} *x7; void *x8; struct __CFDictionary {} *x9; int x10; unsigned char x11; double x12; }*)dd_resultAtLocation:(int)arg1;
 
 // Image: /System/Library/PrivateFrameworks/FlightUtilities.framework/FlightUtilities
 
-- (id)FU_uppercaseAttributedString;
+- (id)FU_uppercaseAttributedStringCurrentLocale:(BOOL)arg1;
 
 // Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
 
 + (id)hk_attributedStringForSpacing:(float)arg1;
+
+// Image: /System/Library/PrivateFrameworks/Home.framework/Home
+
+- (id)_synthesizeAttributedSubstringFromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 usingDefaultAttributes:(id)arg2;
+- (id)dynamicStringForSize:(struct CGSize { double x1; double x2; })arg1 attributes:(id)arg2;
+- (BOOL)prefersDynamicString;
+- (id)stringWithAttributes:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/HomeUI.framework/HomeUI
+
+- (id)hu_attributedStringScaledByFactor:(float)arg1;
+- (float)hu_scaleFactorForBoundingSize:(struct CGSize { double x1; double x2; })arg1 minimumScaleFactor:(float)arg2 maximumNumberOfLines:(unsigned int)arg3;
+- (id)hu_scaledAttributedStringWithBoundingSize:(struct CGSize { double x1; double x2; })arg1 minimumScaleFactor:(float)arg2 maximumNumberOfLines:(unsigned int)arg3;
 
 // Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
 
@@ -111,9 +126,21 @@
 - (BOOL)MPU_hasUniformFont;
 - (id)MPU_tallestFontFromAttributes;
 
-// Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
+// Image: /System/Library/PrivateFrameworks/NanoTimeKitCompanion.framework/NanoTimeKitCompanion
 
-+ (id)attributedStringWithTextElement:(id)arg1 baseFont:(id)arg2;
++ (id)NTKCountdownToDate:(id)arg1 useShort:(BOOL)arg2 withDesignatorFont:(id)arg3;
++ (id)NTKDesignatorAttributedTimeWithDate:(id)arg1;
++ (id)NTKHyphenatableString:(id)arg1;
++ (id)NTKHyphenatableString:(id)arg1 factor:(float)arg2;
++ (id)NTKHyphenationParagraphStyle;
++ (id)NTKHyphenationParagraphStyleWithFactor:(float)arg1;
++ (id)NTKReplaceTimeDesignatorAttributesFrom:(id)arg1 withDesignatorFont:(id)arg2;
++ (id)NTKSwapPlaceholderString:(id)arg1 withTimeStringForDate:(id)arg2 inString:(id)arg3 usingBaseFont:(id)arg4;
++ (id)NTKSwapPlaceholderString:(id)arg1 withTimeStringForDate:(id)arg2 inString:(id)arg3 usingBaseFont:(id)arg4 timeZone:(id)arg5 options:(unsigned int)arg6;
++ (id)NTKTimeWithDate:(id)arg1 andDesignatorAttributes:(id)arg2 timeZone:(id)arg3 options:(unsigned int)arg4;
++ (id)NTKTimeWithDate:(id)arg1 andDesignatorFont:(id)arg2;
++ (id)NTKTimeWithDate:(id)arg1 andDesignatorFont:(id)arg2 options:(unsigned int)arg3;
++ (id)NTKTimeWithDate:(id)arg1 andDesignatorFont:(id)arg2 timeZone:(id)arg3 options:(unsigned int)arg4;
 
 // Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
 
@@ -122,8 +149,17 @@
 
 - (unsigned int)TT_approximateAttachmentsSizeIncludingPreviews:(BOOL)arg1;
 - (BOOL)TT_isCopyableSize;
-- (void)TT_saveToArchive:(struct String { int (**x1)(); struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_2_1_1; } x2; unsigned int x3[1]; int x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct RepeatedPtrField<topotext::Substring> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; struct VectorTimestamp {} *x7; struct RepeatedPtrField<topotext::AttributeRun> { void **x_8_1_1; int x_8_1_2; int x_8_1_3; int x_8_1_4; } x8; struct RepeatedPtrField<topotext::Attachment> { void **x_9_1_1; int x_9_1_2; int x_9_1_3; int x_9_1_4; } x9; }*)arg1 saveAttachments:(BOOL)arg2;
-- (id)TT_serializeWithAttachments:(BOOL)arg1;
+- (void)TT_saveToArchive:(struct String { int (**x1)(); struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_2_1_1; } x2; unsigned int x3[1]; int x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct RepeatedPtrField<topotext::Substring> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; struct VectorTimestamp {} *x7; struct RepeatedPtrField<topotext::AttributeRun> { void **x_8_1_1; int x_8_1_2; int x_8_1_3; int x_8_1_4; } x8; struct RepeatedPtrField<topotext::Attachment> { void **x_9_1_1; int x_9_1_2; int x_9_1_3; int x_9_1_4; } x9; }*)arg1 flags:(unsigned int)arg2 managedObjectContext:(id)arg3;
+- (id)TT_serializeWithFlags:(unsigned int)arg1 managedObjectContext:(id)arg2;
+- (void)enumerateClampedAttribute:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 options:(unsigned int)arg3 usingBlock:(id /* block */)arg4;
+- (void)enumerateUnclampedAttribute:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 options:(unsigned int)arg3 usingBlock:(id /* block */)arg4;
+- (id)ic_attributedSubstringFromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+
+// Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
+
+- (struct CGSize { double x1; double x2; })pkui_sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { double x1; double x2; })pkui_sizeThatFits:(struct CGSize { double x1; double x2; })arg1 withNumberOfLines:(unsigned int)arg2;
+- (struct CGSize { double x1; double x2; })pkui_sizeThatFits:(struct CGSize { double x1; double x2; })arg1 withNumberOfLines:(unsigned int)arg2 forceWordWrap:(BOOL)arg3;
 
 // Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
 
@@ -193,8 +229,8 @@
 - (void)_readDocumentFragment:(id)arg1 fromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 documentAttributes:(id)arg3 subresources:(id*)arg4;
 - (id)_ui_attributedSubstringFromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 scaledByScaleFactor:(float)arg2;
 - (id)_ui_attributedSubstringFromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withTrackingAdjustment:(float)arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingRectWithSize:(struct CGSize { float x1; float x2; })arg1 options:(int)arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingRectWithSize:(struct CGSize { float x1; float x2; })arg1 options:(int)arg2 context:(id)arg3;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundingRectWithSize:(struct CGSize { double x1; double x2; })arg1 options:(int)arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundingRectWithSize:(struct CGSize { double x1; double x2; })arg1 options:(int)arg2 context:(id)arg3;
 - (BOOL)containsAttachments;
 - (BOOL)containsAttachmentsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)dataFromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 documentAttributes:(id)arg2 error:(id*)arg3;
@@ -202,12 +238,13 @@
 - (id)docFormatFromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 documentAttributes:(id)arg2;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })doubleClickAtIndex:(unsigned int)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })doubleClickAtIndex:(unsigned int)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (void)drawAtPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)drawWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 options:(int)arg2;
-- (void)drawWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 options:(int)arg2 context:(id)arg3;
+- (void)drawAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)drawInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)drawWithRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 options:(int)arg2;
+- (void)drawWithRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 options:(int)arg2 context:(id)arg3;
 - (id)fileWrapperFromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 documentAttributes:(id)arg2 error:(id*)arg3;
 - (id)fontAttributesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (BOOL)hasColorGlyphsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)initWithData:(id)arg1 options:(id)arg2 documentAttributes:(id*)arg3 error:(id*)arg4;
 - (id)initWithDocFormat:(id)arg1 documentAttributes:(id*)arg2;
 - (id)initWithFileURL:(id)arg1 options:(id)arg2 documentAttributes:(id*)arg3 error:(id*)arg4;
@@ -228,8 +265,12 @@
 - (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfTextList:(id)arg1 atIndex:(unsigned int)arg2;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfTextTable:(id)arg1 atIndex:(unsigned int)arg2;
 - (id)rulerAttributesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (struct CGSize { float x1; float x2; })size;
+- (struct CGSize { double x1; double x2; })size;
 - (id)stringByStrippingAttachmentCharactersAndConvertingWritingDirectionToBidiControlCharactersFromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+
+// Image: /System/Library/PrivateFrameworks/VideosExtras.framework/VideosExtras
+
++ (id)attributedStringWithTextElement:(id)arg1 baseFont:(id)arg2;
 
 // Image: /System/Library/PrivateFrameworks/VoiceServices.framework/VoiceServices
 

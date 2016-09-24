@@ -3,7 +3,7 @@
  */
 
 @interface CATMessage : NSObject <NSSecureCoding> {
-    NSUUID *_messageUUID;
+    NSUUID * _messageUUID;
 }
 
 @property (nonatomic, retain) NSUUID *messageUUID;

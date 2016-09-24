@@ -3,9 +3,9 @@
  */
 
 @interface TSDImageProviderPool : NSObject <TSPDataCullingListener> {
-    BOOL mHaveRaisedFileDescriptorLimit;
-    TSUPointerKeyDictionary *mImageDataToImageProviderMap;
-    unsigned int mOpenFileDescriptorLimit;
+    BOOL  mHaveRaisedFileDescriptorLimit;
+    TSUPointerKeyDictionary * mImageDataToImageProviderMap;
+    unsigned int  mOpenFileDescriptorLimit;
 }
 
 @property (readonly, copy) NSString *debugDescription;

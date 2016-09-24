@@ -39,6 +39,11 @@
 - (void)unionOrderedSet:(id)arg1;
 - (void)unionSet:(id)arg1;
 
+// Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
+
+- (BOOL)CKSynchronizedAddIfAbsent:(id)arg1;
+- (void)CKSynchronizedRemoveObject:(id)arg1;
+
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
 - (Class)classForCoder;
@@ -47,6 +52,10 @@
 // Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
 
 - (void)axSafelyAddObject:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
+
+- (void)bs_safeAddObject:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/ContactsFoundation.framework/ContactsFoundation
 
@@ -60,6 +69,16 @@
 
 - (id)physicalDeviceWithAddress:(unsigned int)arg1;
 
+// Image: /System/Library/PrivateFrameworks/DuetActivityScheduler.framework/DuetActivityScheduler
+
+- (void)_DAS_addOrReplaceObject:(id)arg1;
+- (void)_DAS_addOrReplaceObjectsFromArray:(id)arg1;
+- (void)_DAS_unionSetOverridingExisting:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/FMCoreLite.framework/FMCoreLite
+
+- (void)fm_safeAddObject:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
 
 + (id)nonRetainingSet;
@@ -72,9 +91,13 @@
 
 - (void)minusPathSet:(id)arg1;
 
-// Image: /System/Library/PrivateFrameworks/NetAppsUtilitiesUI.framework/NetAppsUtilitiesUI
+// Image: /System/Library/PrivateFrameworks/NetAppsUtilities.framework/NetAppsUtilities
 
-- (void)naui_safeAddObject:(id)arg1;
+- (void)na_safeAddObject:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
+
+- (void)fc_removeObjectsFromArray:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
 
@@ -98,6 +121,8 @@
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
 
 - (void)tsu_addNonNilObject:(id)arg1;
+- (void)tsu_addObjectsFromNonNilArray:(id)arg1;
+- (void)tsu_removeEqualObject:(id)arg1;
 - (void)tsu_xorSet:(id)arg1;
 
 @end

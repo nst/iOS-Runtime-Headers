@@ -3,11 +3,11 @@
  */
 
 @interface AVCaptureAudioDataOutputInternal : NSObject {
-    NSObject<OS_dispatch_queue> *bufferQueue;
-    AVWeakReferencingDelegateStorage *delegateStorage;
-    struct OpaqueFigSimpleMutex { } *remoteQueueMutex;
-    struct remoteQueueReceiverOpaque { } *remoteReceiverQueue;
-    AVWeakReference *weakReference;
+    NSObject<OS_dispatch_queue> * bufferQueue;
+    AVWeakReferencingDelegateStorage * delegateStorage;
+    struct OpaqueFigSimpleMutex { } * remoteQueueMutex;
+    struct remoteQueueReceiverOpaque { } * remoteReceiverQueue;
+    AVWeakReference * weakReference;
 }
 
 - (void)dealloc;

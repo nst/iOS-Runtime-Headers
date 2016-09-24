@@ -3,9 +3,9 @@
  */
 
 @interface DCRelativePath : NSObject {
-    NSString *_firstPathComponent;
-    DCService *_service;
-    NSString *_string;
+    NSString * _firstPathComponent;
+    DCService * _service;
+    NSString * _string;
 }
 
 @property (readonly, retain) NSString *firstPathComponent;

@@ -5,9 +5,9 @@
 @interface CKDPZoneDeleteRequest : PBRequest <NSCopying> {
     struct { 
         unsigned int userPurge : 1; 
-    } _has;
-    BOOL _userPurge;
-    CKDPRecordZoneIdentifier *_zoneIdentifier;
+    }  _has;
+    BOOL  _userPurge;
+    CKDPRecordZoneIdentifier * _zoneIdentifier;
 }
 
 @property (nonatomic) BOOL hasUserPurge;

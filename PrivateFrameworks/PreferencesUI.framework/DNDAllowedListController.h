@@ -3,8 +3,8 @@
  */
 
 @interface DNDAllowedListController : PSListController {
-    NSArray *_presetGroups;
-    NSMutableArray *_usersGroups;
+    NSArray * _presetGroups;
+    NSMutableArray * _usersGroups;
 }
 
 - (void).cxx_destruct;

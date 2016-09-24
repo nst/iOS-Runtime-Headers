@@ -3,7 +3,7 @@
  */
 
 @interface CoreDAVActionBackedTask : CoreDAVTask {
-    CoreDAVAction *_backingAction;
+    CoreDAVAction * _backingAction;
 }
 
 @property (nonatomic, retain) CoreDAVAction *backingAction;

@@ -3,11 +3,11 @@
  */
 
 @interface CPTableMaker : NSObject {
-    unsigned int cellIndex;
-    struct { float x1; float x2; } *columnXIntervals;
-    struct { float x1; float x2; } *rowYIntervals;
-    CPTable *table;
-    CPZone *tableZone;
+    unsigned int  cellIndex;
+    struct { double x1; double x2; } * columnXIntervals;
+    struct { double x1; double x2; } * rowYIntervals;
+    CPTable * table;
+    CPZone * tableZone;
 }
 
 + (BOOL)isTable:(id)arg1;

@@ -3,8 +3,7 @@
  */
 
 @interface FIUIWeeklyGoalModel : NSObject {
-    HKHealthStore *_healthStore;
-    BOOL _showFakeData;
+    HKHealthStore * _healthStore;
 }
 
 - (void).cxx_destruct;

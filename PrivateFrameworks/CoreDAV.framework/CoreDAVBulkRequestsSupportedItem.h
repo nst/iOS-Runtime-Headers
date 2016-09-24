@@ -3,7 +3,7 @@
  */
 
 @interface CoreDAVBulkRequestsSupportedItem : CoreDAVItem {
-    CoreDAVItem *_supported;
+    CoreDAVItem * _supported;
 }
 
 @property (nonatomic, retain) CoreDAVItem *supported;

@@ -3,9 +3,9 @@
  */
 
 @interface OCXContentType : NSObject {
-    NSString *mContentType;
-    NSString *mExtension;
-    NSString *mPath;
+    NSString * mContentType;
+    NSString * mExtension;
+    NSString * mPath;
 }
 
 @property (nonatomic, readonly) NSString *contentType;

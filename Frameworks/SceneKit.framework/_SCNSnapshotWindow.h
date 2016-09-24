@@ -5,13 +5,13 @@
 @interface _SCNSnapshotWindow : UIWindow
 
 - (BOOL)_canBecomeKeyWindow;
-- (id)_hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2 windowServerHitTestWindow:(id)arg3;
+- (id)_hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2 windowServerHitTestWindow:(id)arg3;
 - (BOOL)_isSettingFirstResponder;
 - (void)_setFirstResponder:(id)arg1;
-- (struct CGPoint { float x1; float x2; })_warpPoint:(struct CGPoint { float x1; float x2; })arg1 outOfBounds:(BOOL*)arg2;
+- (struct CGPoint { double x1; double x2; })_warpPoint:(struct CGPoint { double x1; double x2; })arg1 outOfBounds:(BOOL*)arg2;
 - (void)dealloc;
 - (id)scnView;
-- (struct CGPoint { float x1; float x2; })warpPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGPoint { double x1; double x2; })warpPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (float)windowLevelForEventHandling;
 
 @end

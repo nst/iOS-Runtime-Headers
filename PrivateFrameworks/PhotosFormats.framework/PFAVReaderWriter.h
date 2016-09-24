@@ -3,33 +3,33 @@
  */
 
 @interface PFAVReaderWriter : NSObject <PFRWSampleBufferChannelDelegate> {
-    AVAsset *_asset;
-    id /* block */ _completionBlock;
-    <PFAVReaderWriterAdjustDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_isolationQueue;
-    NSURL *_outputURL;
-    id /* block */ _progressBlock;
-    NSObject<OS_dispatch_queue> *_serializationQueue;
+    AVAsset * _asset;
+    id /* block */  _completionBlock;
+    <PFAVReaderWriterAdjustDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _isolationQueue;
+    NSURL * _outputURL;
+    id /* block */  _progressBlock;
+    NSObject<OS_dispatch_queue> * _serializationQueue;
     struct { 
         struct { 
-            long long value; 
+            int value; 
             int timescale; 
             unsigned int flags; 
-            long long epoch; 
+            int epoch; 
         } start; 
         struct { 
-            long long value; 
+            int value; 
             int timescale; 
             unsigned int flags; 
-            long long epoch; 
+            int epoch; 
         } duration; 
-    } _timeRange;
-    BOOL _writeInProgress;
-    AVAssetReader *assetReader;
-    AVAssetWriter *assetWriter;
-    BOOL cancelled;
-    NSArray *passthroughChannels;
-    NSArray *videoChannels;
+    }  _timeRange;
+    BOOL  _writeInProgress;
+    AVAssetReader * assetReader;
+    AVAssetWriter * assetWriter;
+    BOOL  cancelled;
+    NSArray * passthroughChannels;
+    NSArray * videoChannels;
 }
 
 @property (nonatomic, copy) AVAsset *asset;
@@ -39,7 +39,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, copy) NSURL *outputURL;
 @property (readonly) Class superclass;
-@property (nonatomic) struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; } timeRange;
+@property (nonatomic) struct { struct { int x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; int x_1_1_4; } x1; struct { int x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; int x_2_1_4; } x2; } timeRange;
 
 - (void).cxx_destruct;
 - (void)_didLoadAVAssetValues;
@@ -55,10 +55,10 @@
 - (void)setAsset:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setOutputURL:(id)arg1;
-- (void)setTimeRange:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg1;
+- (void)setTimeRange:(struct { struct { int x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; int x_1_1_4; } x1; struct { int x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; int x_2_1_4; } x2; })arg1;
 - (BOOL)setUpReaderAndWriterReturningError:(id*)arg1;
 - (BOOL)startReadingAndWritingReturningError:(id*)arg1;
-- (struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })timeRange;
+- (struct { struct { int x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; int x_1_1_4; } x1; struct { int x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; int x_2_1_4; } x2; })timeRange;
 - (void)writeToURL:(id)arg1 progress:(id /* block */)arg2 completion:(id /* block */)arg3;
 
 @end

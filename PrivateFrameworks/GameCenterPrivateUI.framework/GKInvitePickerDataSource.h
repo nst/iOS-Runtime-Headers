@@ -3,10 +3,10 @@
  */
 
 @interface GKInvitePickerDataSource : GKSegmentedSectionDataSource {
-    GKFriendsSplittingDataSource *_friendsSplittingDataSource;
-    NSSet *_hiddenPlayers;
-    GKNearbyPlayersDataSource *_nearbyPlayersDataSource;
-    GKGameRecentPlayersDataSource *_recentPlayersDataSource;
+    GKFriendsSplittingDataSource * _friendsSplittingDataSource;
+    NSSet * _hiddenPlayers;
+    GKNearbyPlayersDataSource * _nearbyPlayersDataSource;
+    GKGameRecentPlayersDataSource * _recentPlayersDataSource;
 }
 
 @property (nonatomic, retain) GKFriendsSplittingDataSource *friendsSplittingDataSource;

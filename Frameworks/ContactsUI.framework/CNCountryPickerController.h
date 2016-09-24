@@ -3,11 +3,11 @@
  */
 
 @interface CNCountryPickerController : UINavigationController <UITableViewDataSource, UITableViewDelegate> {
-    UILocalizedIndexedCollation *_collation;
-    NSArray *_countries;
-    NSArray *_sections;
-    NSString *_selectedCountryCode;
-    UITableViewController *_tableViewController;
+    UILocalizedIndexedCollation * _collation;
+    NSArray * _countries;
+    NSArray * _sections;
+    NSString * _selectedCountryCode;
+    UITableViewController * _tableViewController;
 }
 
 @property (nonatomic, retain) UILocalizedIndexedCollation *collation;

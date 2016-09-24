@@ -3,14 +3,14 @@
  */
 
 @interface CNAutocompleteQuery : NSObject <CNCancelable> {
-    CNCancelationToken *_cancelationToken;
-    CNAutocompleteDelegateWrapper *_delegate;
-    <CNCancelable> *_delegateToken;
-    <CNAutocompleteProbeProvider> *_probeProvider;
-    CNAutocompleteFetchRequest *_request;
-    <CNScheduler> *_scheduler;
-    <CNAutocompleteSearchProvider> *_searchProvider;
-    CNAutocompleteUserSession *_userSession;
+    CNCancelationToken * _cancelationToken;
+    CNAutocompleteDelegateWrapper * _delegate;
+    <CNCancelable> * _delegateToken;
+    <CNAutocompleteProbeProvider> * _probeProvider;
+    CNAutocompleteFetchRequest * _request;
+    <CNScheduler> * _scheduler;
+    <CNAutocompleteSearchProvider> * _searchProvider;
+    CNAutocompleteUserSession * _userSession;
 }
 
 @property (retain) CNCancelationToken *cancelationToken;

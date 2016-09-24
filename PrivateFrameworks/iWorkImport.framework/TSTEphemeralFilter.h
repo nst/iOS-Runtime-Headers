@@ -3,9 +3,9 @@
  */
 
 @interface TSTEphemeralFilter : NSObject {
-    unsigned char mColumnIndex;
-    unsigned int mFilterIndex;
-    NSArray *mRules;
+    unsigned char  mColumnIndex;
+    unsigned int  mFilterIndex;
+    NSArray * mRules;
 }
 
 @property (nonatomic, readonly) unsigned char columnIndex;
@@ -18,6 +18,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)filterByAddingRule:(id)arg1;
+- (id)filterByClearingRules;
 - (id)filterByRemovingRuleAtIndex:(unsigned int)arg1;
 - (unsigned int)filterIndex;
 - (id)filterWithRule:(id)arg1 atIndex:(unsigned int)arg2;

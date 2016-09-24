@@ -3,8 +3,8 @@
  */
 
 @interface CNFRegDisabledController : CNFRegFirstRunController {
-    PSSpecifier *_spinner;
-    PSSpecifier *_turnOnButton;
+    PSSpecifier * _spinner;
+    PSSpecifier * _turnOnButton;
 }
 
 - (void).cxx_destruct;

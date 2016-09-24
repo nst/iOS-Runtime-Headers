@@ -3,12 +3,12 @@
  */
 
 @interface AWDCarouselPreviousExit : PBCodable <NSCopying> {
-    unsigned long long _elapsedTime;
+    unsigned long long  _elapsedTime;
     struct { 
         unsigned int elapsedTime : 1; 
         unsigned int reason : 1; 
-    } _has;
-    unsigned int _reason;
+    }  _has;
+    unsigned int  _reason;
 }
 
 @property (nonatomic) unsigned long long elapsedTime;

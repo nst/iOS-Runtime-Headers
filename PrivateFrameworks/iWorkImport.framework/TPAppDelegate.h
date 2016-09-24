@@ -3,8 +3,8 @@
  */
 
 @interface TPAppDelegate : TSABaseApplicationDelegate {
-    BOOL _appDoneLaunching;
-    BOOL _cachedBidiIsSupported;
+    BOOL  _appDoneLaunching;
+    BOOL  _cachedBidiIsSupported;
 }
 
 @property (nonatomic, readonly) NSArray *wordDocumentTypes;
@@ -14,6 +14,7 @@
 - (id)appChartPropertyOverrides;
 - (id)applicationName;
 - (id)applicationTemplateVariantsForLocale:(struct __CFLocale { }*)arg1;
+- (id)bladerunnerContainerIdentifier;
 - (id)cloudKitContainerIdentifier;
 - (id)createCompatibilityDelegate;
 - (void)dealloc;
@@ -26,12 +27,13 @@
 - (id)nativeSFFDocumentType;
 - (void)p_inputMethodsChanged:(id)arg1;
 - (void)p_localeChanged:(id)arg1;
-- (id)previewImageNameForDocumentType:(id)arg1;
 - (id)previewImageNameForEncryptedNativeDocument;
 - (id)previewImageNameForNativeDocument;
 - (id)sharedAlertMessageWithUserName:(id)arg1;
 - (id)sharedReadOnlyAlertMessageWithUserName:(id)arg1;
 - (id)stringForCloseDocument;
+- (id)stringForCollaborator1_6ConflictDetails;
+- (id)stringForCollaborator1_6ConflictWithKeepDetails;
 - (id)stringForCollaboratorConflict;
 - (id)stringForCollaboratorConflictDetails;
 - (id)stringForCollaboratorConflictWithKeepDetails;
@@ -41,8 +43,15 @@
 - (id)stringForDocumentUpdatedByOwnerWithKeepDetails;
 - (id)stringForDocumentUpdatedTitle;
 - (id)stringForLearnMoreSharingURL;
+- (id)stringForOwnerConflictWithSaveACopyAlertMessage;
+- (id)stringForOwnerPasswordOnConflictAlertMessage;
+- (id)stringForOwnerPasswordOnConflictAlertTitle;
 - (id)stringForRemoteVersionRestorationAlertMessage;
 - (id)stringForRemoteVersionRestorationWithUnsavedChangesAlertMessage;
+- (id)stringForRemoveSelfAlertConfirmationMessage;
+- (id)stringForRemoveSelfAlertConfirmationTitle;
+- (id)stringForStopSharingAlertConfirmationMessage;
+- (id)stringForStopSharingAlertConfirmationTitle;
 - (id)stringForUpdatingDocument;
 - (BOOL)supportsRTL;
 - (BOOL)tableHeaderInspectorShowsRepeatHeaderRowsSwitch;
@@ -51,6 +60,7 @@
 - (id)templateSFFDocumentType;
 - (id)templateTypeDisplayName;
 - (BOOL)textInspectorShowsMoreSubpane;
+- (id)universalPreviewImageNameForDocumentType:(id)arg1;
 - (id)wordDocumentTypes;
 
 @end

@@ -3,10 +3,10 @@
  */
 
 @interface HDSQLiteContainsPredicate : HDSQLitePropertyPredicate <NSCopying> {
-    BOOL _negative;
-    HDSQLiteQuery *_query;
-    NSString *_queryProperty;
-    id _values;
+    BOOL  _negative;
+    HDSQLiteQuery * _query;
+    NSString * _queryProperty;
+    id  _values;
 }
 
 @property (getter=isNegative, nonatomic, readonly) BOOL negative;

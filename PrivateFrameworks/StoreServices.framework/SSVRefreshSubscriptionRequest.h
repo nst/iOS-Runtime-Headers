@@ -3,8 +3,8 @@
  */
 
 @interface SSVRefreshSubscriptionRequest : SSRequest <SSXPCCoding> {
-    SSAuthenticationContext *_authenticationContext;
-    BOOL _requestingOfflineSlot;
+    SSAuthenticationContext * _authenticationContext;
+    BOOL  _requestingOfflineSlot;
 }
 
 @property (nonatomic, copy) SSAuthenticationContext *authenticationContext;

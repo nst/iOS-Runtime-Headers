@@ -10,6 +10,7 @@
 - (void)speechSynthesizer:(VSSpeechSynthesizer *)arg1 didFinishSpeaking:(BOOL)arg2 withError:(NSError *)arg3;
 - (void)speechSynthesizer:(VSSpeechSynthesizer *)arg1 didFinishSpeakingRequest:(VSSpeechRequest *)arg2 successfully:(BOOL)arg3 phonemesSpoken:(NSString *)arg4 withError:(NSError *)arg5;
 - (void)speechSynthesizer:(VSSpeechSynthesizer *)arg1 didFinishSpeakingRequest:(VSSpeechRequest *)arg2 successfully:(BOOL)arg3 withError:(NSError *)arg4;
+- (void)speechSynthesizer:(VSSpeechSynthesizer *)arg1 didFinishSpeakingRequest:(VSSpeechRequest *)arg2 withInstrumentMetrics:(VSInstrumentMetrics *)arg3;
 - (void)speechSynthesizer:(VSSpeechSynthesizer *)arg1 didPauseSpeakingRequest:(VSSpeechRequest *)arg2;
 - (void)speechSynthesizer:(VSSpeechSynthesizer *)arg1 didStartSpeakingRequest:(VSSpeechRequest *)arg2;
 - (void)speechSynthesizer:(VSSpeechSynthesizer *)arg1 willSpeakRangeOfSpeechString:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;

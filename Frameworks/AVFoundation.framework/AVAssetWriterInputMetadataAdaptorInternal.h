@@ -3,7 +3,7 @@
  */
 
 @interface AVAssetWriterInputMetadataAdaptorInternal : NSObject {
-    AVAssetWriterInput *input;
+    AVAssetWriterInput * input;
 }
 
 @end

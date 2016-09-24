@@ -3,10 +3,10 @@
  */
 
 @interface _MFKeyValueObserverHandler : NSObject <MFKVOObservation> {
-    id /* block */ _block;
-    NSString *_keyPath;
-    id _object;
-    BOOL _observing;
+    id /* block */  _block;
+    NSString * _keyPath;
+    id  _object;
+    BOOL  _observing;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,16 +3,16 @@
  */
 
 @interface EDAlignmentInfo : NSObject <EDImmutableObject, NSCopying> {
-    bool mDoNotModify;
-    bool mHorizontalAlignOverridden;
-    int mHorizontalAlignment;
-    int mIndent;
-    bool mIndentOverridden;
-    int mTextRotation;
-    bool mTextWrapped;
-    bool mTextWrappedOveridden;
-    bool mVerticalAlignOverridden;
-    int mVerticalAlignment;
+    bool  mDoNotModify;
+    bool  mHorizontalAlignOverridden;
+    int  mHorizontalAlignment;
+    int  mIndent;
+    bool  mIndentOverridden;
+    int  mTextRotation;
+    bool  mTextWrapped;
+    bool  mTextWrappedOveridden;
+    bool  mVerticalAlignOverridden;
+    int  mVerticalAlignment;
 }
 
 @property (readonly, copy) NSString *debugDescription;

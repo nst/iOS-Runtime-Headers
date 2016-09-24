@@ -3,7 +3,7 @@
  */
 
 @interface CAMStartVideoRecordingCommand : CAMCaptureCommand {
-    CAMVideoCaptureRequest *__request;
+    CAMVideoCaptureRequest * __request;
 }
 
 @property (nonatomic, readonly) CAMVideoCaptureRequest *_request;

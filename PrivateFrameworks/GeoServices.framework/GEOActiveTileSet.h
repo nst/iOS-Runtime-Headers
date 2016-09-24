@@ -3,29 +3,29 @@
  */
 
 @interface GEOActiveTileSet : PBCodable <NSCopying> {
-    struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; } *_availableTiles;
-    unsigned int _availableTilesCount;
-    unsigned int _availableTilesSpace;
-    NSString *_baseURL;
-    int _checksumType;
-    NSMutableArray *_countryRegionWhitelists;
+    struct GEOTileSetRegion { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; } * _availableTiles;
+    unsigned int  _availableTilesCount;
+    unsigned int  _availableTilesSpace;
+    NSString * _baseURL;
+    int  _checksumType;
+    NSMutableArray * _countryRegionWhitelists;
     struct { 
         unsigned int checksumType : 1; 
         unsigned int timeToLiveSeconds : 1; 
         unsigned int updateBehavior : 1; 
-    } _has;
-    NSString *_localizationURL;
-    int _scale;
-    NSMutableArray *_sentinelTiles;
-    int _size;
-    int _style;
-    NSMutableArray *_supportedLanguages;
-    unsigned int _timeToLiveSeconds;
-    int _updateBehavior;
-    unsigned int _version;
+    }  _has;
+    NSString * _localizationURL;
+    int  _scale;
+    NSMutableArray * _sentinelTiles;
+    int  _size;
+    int  _style;
+    NSMutableArray * _supportedLanguages;
+    unsigned int  _timeToLiveSeconds;
+    int  _updateBehavior;
+    unsigned int  _version;
 }
 
-@property (nonatomic, readonly) struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; }*availableTiles;
+@property (nonatomic, readonly) struct GEOTileSetRegion { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; }*availableTiles;
 @property (nonatomic, readonly) unsigned int availableTilesCount;
 @property (nonatomic, retain) NSString *baseURL;
 @property (nonatomic) int checksumType;
@@ -46,19 +46,28 @@
 @property (nonatomic) unsigned int version;
 
 + (id)buildDisputedBordersQueryStringForCountry:(id)arg1 region:(id)arg2;
++ (Class)countryRegionWhitelistType;
++ (Class)sentinelTileType;
++ (Class)supportedLanguageType;
 
+- (int)StringAsChecksumType:(id)arg1;
+- (int)StringAsScale:(id)arg1;
+- (int)StringAsSize:(id)arg1;
+- (int)StringAsStyle:(id)arg1;
+- (int)StringAsUpdateBehavior:(id)arg1;
 - (id)_bestCountryRegionWhitelistMatchForCountry:(id)arg1 region:(id)arg2;
 - (id)_bestLanguageWithOverrideLocale:(id)arg1;
 - (void)_resetBestLanguage;
-- (void)addAvailableTiles:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; })arg1;
+- (void)addAvailableTiles:(struct GEOTileSetRegion { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; })arg1;
 - (void)addCountryRegionWhitelist:(id)arg1;
 - (void)addSentinelTile:(id)arg1;
 - (void)addSupportedLanguage:(id)arg1;
-- (struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; }*)availableTiles;
-- (struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; })availableTilesAtIndex:(unsigned int)arg1;
+- (struct GEOTileSetRegion { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; }*)availableTiles;
+- (struct GEOTileSetRegion { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; })availableTilesAtIndex:(unsigned int)arg1;
 - (unsigned int)availableTilesCount;
 - (id)baseURL;
 - (int)checksumType;
+- (id)checksumTypeAsString:(int)arg1;
 - (void)clearAvailableTiles;
 - (void)clearCountryRegionWhitelists;
 - (void)clearSentinelTiles;
@@ -91,10 +100,11 @@
 - (unsigned int)minimumZoomLevelInRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (BOOL)readFrom:(id)arg1;
 - (int)scale;
+- (id)scaleAsString:(int)arg1;
 - (id)sentinelTileAtIndex:(unsigned int)arg1;
 - (id)sentinelTiles;
 - (unsigned int)sentinelTilesCount;
-- (void)setAvailableTiles:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; }*)arg1 count:(unsigned int)arg2;
+- (void)setAvailableTiles:(struct GEOTileSetRegion { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; }*)arg1 count:(unsigned int)arg2;
 - (void)setBaseURL:(id)arg1;
 - (void)setChecksumType:(int)arg1;
 - (void)setCountryRegionWhitelists:(id)arg1;
@@ -111,12 +121,15 @@
 - (void)setUpdateBehavior:(int)arg1;
 - (void)setVersion:(unsigned int)arg1;
 - (int)size;
+- (id)sizeAsString:(int)arg1;
 - (int)style;
+- (id)styleAsString:(int)arg1;
 - (id)supportedLanguageAtIndex:(unsigned int)arg1;
 - (id)supportedLanguages;
 - (unsigned int)supportedLanguagesCount;
 - (unsigned int)timeToLiveSeconds;
 - (int)updateBehavior;
+- (id)updateBehaviorAsString:(int)arg1;
 - (unsigned int)version;
 - (void)writeTo:(id)arg1;
 

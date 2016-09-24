@@ -3,15 +3,15 @@
  */
 
 @interface CACentralTableViewCell : UITableViewCell {
-    NSArray *_activityHConstraints;
-    UIActivityIndicatorView *_activityIndicator;
-    NSArray *_activityVConstraints;
-    UILabel *_connectionStatusLabel;
-    UILabel *_deviceNameLabel;
-    UILabel *_inputLabel;
-    NSArray *_labelConstraints;
-    UILabel *_outputLabel;
-    UILabel *_slashLabel;
+    NSArray * _activityHConstraints;
+    UIActivityIndicatorView * _activityIndicator;
+    NSArray * _activityVConstraints;
+    UILabel * _connectionStatusLabel;
+    UILabel * _deviceNameLabel;
+    UILabel * _inputLabel;
+    NSArray * _labelConstraints;
+    UILabel * _outputLabel;
+    UILabel * _slashLabel;
 }
 
 @property (nonatomic, retain) NSArray *activityHConstraints;

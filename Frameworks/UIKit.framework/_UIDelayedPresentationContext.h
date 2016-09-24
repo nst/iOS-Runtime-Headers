@@ -3,12 +3,12 @@
  */
 
 @interface _UIDelayedPresentationContext : NSObject {
-    id /* block */ _cancellationHandler;
-    BOOL _enableUserInteraction;
-    NSInvocation *_presentInvocation;
-    int _reqcnt;
-    double _timeout;
-    NSObject<OS_dispatch_source> *_timerSource;
+    id /* block */  _cancellationHandler;
+    BOOL  _enableUserInteraction;
+    NSInvocation * _presentInvocation;
+    int  _reqcnt;
+    double  _timeout;
+    NSObject<OS_dispatch_source> * _timerSource;
 }
 
 @property (nonatomic, copy) id /* block */ cancellationHandler;

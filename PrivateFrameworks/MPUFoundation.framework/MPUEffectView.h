@@ -3,10 +3,10 @@
  */
 
 @interface MPUEffectView : UIView {
-    MPUEffectCache *_effectCache;
-    UIImage *_effectImage;
-    _UIBackdropViewSettings *_effectSettings;
-    UIView *_referenceView;
+    MPUEffectCache * _effectCache;
+    UIImage * _effectImage;
+    _UIBackdropViewSettings * _effectSettings;
+    UIView * _referenceView;
 }
 
 @property (nonatomic, retain) MPUEffectCache *effectCache;

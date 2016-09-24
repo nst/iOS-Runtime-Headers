@@ -3,7 +3,7 @@
  */
 
 @interface FigBaseCALayer : CALayer <FigPiPableLayer> {
-    BOOL _preventsChangesToSublayerHierarchy;
+    BOOL  _preventsChangesToSublayerHierarchy;
 }
 
 @property (nonatomic) BOOL preventsChangesToSublayerHierarchy;

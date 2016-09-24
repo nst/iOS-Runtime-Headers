@@ -3,10 +3,10 @@
  */
 
 @interface GKCollectionViewAggregateDataSource : GKCollectionViewDataSource {
-    NSMapTable *_dataSourceToMappings;
-    NSMutableDictionary *_globalSectionToMappings;
-    NSMutableArray *_mappings;
-    unsigned int _sectionCount;
+    NSMapTable * _dataSourceToMappings;
+    NSMutableDictionary * _globalSectionToMappings;
+    NSMutableArray * _mappings;
+    unsigned int  _sectionCount;
 }
 
 @property (nonatomic, retain) NSMapTable *dataSourceToMappings;

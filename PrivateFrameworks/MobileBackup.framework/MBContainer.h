@@ -3,7 +3,7 @@
  */
 
 @interface MBContainer : NSObject <NSCopying> {
-    NSMutableDictionary *_plist;
+    NSMutableDictionary * _plist;
 }
 
 @property (nonatomic, retain) NSString *containerDir;

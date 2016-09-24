@@ -3,12 +3,12 @@
  */
 
 @interface WCDProtoUserInfoTransfer : PBCodable <NSCopying> {
-    NSData *_clientData;
+    NSData * _clientData;
     struct { 
         unsigned int version : 1; 
-    } _has;
-    NSString *_transferIdentifier;
-    unsigned int _version;
+    }  _has;
+    NSString * _transferIdentifier;
+    unsigned int  _version;
 }
 
 @property (nonatomic, retain) NSData *clientData;

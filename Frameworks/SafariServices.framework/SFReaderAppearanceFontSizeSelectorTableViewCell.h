@@ -3,10 +3,10 @@
  */
 
 @interface SFReaderAppearanceFontSizeSelectorTableViewCell : UITableViewCell {
-    UIButton *_decreaseFontSizeButton;
-    <SFReaderAppearanceFontSizeSelectorDelegate> *_delegate;
-    UIButton *_increaseFontSizeButton;
-    SFReaderAppearanceFontSizeSeparatorView *_verticalSeparatorView;
+    UIButton * _decreaseFontSizeButton;
+    <SFReaderAppearanceFontSizeSelectorDelegate> * _delegate;
+    UIButton * _increaseFontSizeButton;
+    SFReaderAppearanceFontSizeSeparatorView * _verticalSeparatorView;
 }
 
 @property (nonatomic, retain) UIButton *decreaseFontSizeButton;

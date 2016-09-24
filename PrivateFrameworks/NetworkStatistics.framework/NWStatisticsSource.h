@@ -3,17 +3,17 @@
  */
 
 @interface NWStatisticsSource : NSObject {
-    NSDictionary *_counts;
-    <NWStatisticsSourceDelegate> *_delegate;
-    unsigned int _filter;
-    BOOL _hasCounts;
-    BOOL _hasDescriptor;
-    BOOL _hasNewKernelInfo;
+    NSDictionary * _counts;
+    <NWStatisticsSourceDelegate> * _delegate;
+    unsigned int  _filter;
+    BOOL  _hasCounts;
+    BOOL  _hasDescriptor;
+    BOOL  _hasNewKernelInfo;
     struct nstat_counts { 
-        unsigned long long nstat_rxpackets; 
-        unsigned long long nstat_rxbytes; 
-        unsigned long long nstat_txpackets; 
-        unsigned long long nstat_txbytes; 
+        unsigned int nstat_rxpackets; 
+        unsigned int nstat_rxbytes; 
+        unsigned int nstat_txpackets; 
+        unsigned int nstat_txbytes; 
         unsigned int nstat_rxduplicatebytes; 
         unsigned int nstat_rxoutoforderbytes; 
         unsigned int nstat_txretransmit; 
@@ -22,22 +22,22 @@
         unsigned int nstat_min_rtt; 
         unsigned int nstat_avg_rtt; 
         unsigned int nstat_var_rtt; 
-        unsigned long long nstat_cell_rxbytes; 
-        unsigned long long nstat_cell_txbytes; 
-        unsigned long long nstat_wifi_rxbytes; 
-        unsigned long long nstat_wifi_txbytes; 
-        unsigned long long nstat_wired_rxbytes; 
-        unsigned long long nstat_wired_txbytes; 
-    } _last_counts;
-    NWStatisticsManager *_manager;
-    unsigned int _reference;
-    BOOL _removed;
-    BOOL _removing;
-    unsigned long long _rxWiFiBytes;
-    unsigned long long _txWiFiBytes;
+        unsigned int nstat_cell_rxbytes; 
+        unsigned int nstat_cell_txbytes; 
+        unsigned int nstat_wifi_rxbytes; 
+        unsigned int nstat_wifi_txbytes; 
+        unsigned int nstat_wired_rxbytes; 
+        unsigned int nstat_wired_txbytes; 
+    }  _last_counts;
+    NWStatisticsManager * _manager;
+    unsigned int  _reference;
+    BOOL  _removed;
+    BOOL  _removing;
+    unsigned int  _rxWiFiBytes;
+    unsigned int  _txWiFiBytes;
 }
 
-@property (readonly) const struct nstat_counts { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned long long x13; unsigned long long x14; unsigned long long x15; unsigned long long x16; unsigned long long x17; unsigned long long x18; }*_nstat_counts;
+@property (readonly) const struct nstat_counts { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; unsigned int x15; unsigned int x16; unsigned int x17; unsigned int x18; }*_nstat_counts;
 @property (readonly) int connectAttempts;
 @property (readonly) int connectSuccesses;
 @property (nonatomic, readonly, copy) NSDictionary *counts;
@@ -52,34 +52,34 @@
 @property (readonly) double rttAverage;
 @property (readonly) double rttMinimum;
 @property (readonly) double rttVariation;
-@property (readonly) unsigned long long rxBytes;
-@property (readonly) unsigned long long rxCellularBytes;
+@property (readonly) unsigned int rxBytes;
+@property (readonly) unsigned int rxCellularBytes;
 @property (readonly) int rxDuplicateBytes;
 @property (readonly) int rxOutOfOrderBytes;
-@property (readonly) unsigned long long rxPackets;
-@property (readonly) unsigned long long rxWiFiBytes;
-@property (readonly) unsigned long long rxWiredBytes;
-@property (readonly) unsigned long long txBytes;
-@property (readonly) unsigned long long txCellularBytes;
-@property (readonly) unsigned long long txPackets;
+@property (readonly) unsigned int rxPackets;
+@property (readonly) unsigned int rxWiFiBytes;
+@property (readonly) unsigned int rxWiredBytes;
+@property (readonly) unsigned int txBytes;
+@property (readonly) unsigned int txCellularBytes;
+@property (readonly) unsigned int txPackets;
 @property (readonly) int txRetransmittedBytes;
-@property (readonly) unsigned long long txWiFiBytes;
-@property (readonly) unsigned long long txWiredBytes;
+@property (readonly) unsigned int txWiFiBytes;
+@property (readonly) unsigned int txWiredBytes;
 
 + (id)createSourceForProvider:(unsigned int)arg1 srcRef:(unsigned int)arg2 manager:(id)arg3;
 
 - (void).cxx_destruct;
 - (BOOL)_handleDescriptor:(void*)arg1 length:(unsigned long)arg2;
-- (const struct nstat_counts { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned long long x13; unsigned long long x14; unsigned long long x15; unsigned long long x16; unsigned long long x17; unsigned long long x18; }*)_nstat_counts;
+- (const struct nstat_counts { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; unsigned int x15; unsigned int x16; unsigned int x17; unsigned int x18; }*)_nstat_counts;
 - (int)connectAttempts;
 - (int)connectSuccesses;
 - (id)counts;
 - (id)createCounts;
 - (id)delegate;
 - (void)discardCountsDir;
-- (BOOL)handleCounts:(const struct nstat_counts { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned long long x13; unsigned long long x14; unsigned long long x15; unsigned long long x16; unsigned long long x17; unsigned long long x18; }*)arg1;
+- (BOOL)handleCounts:(const struct nstat_counts { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; unsigned int x15; unsigned int x16; unsigned int x17; unsigned int x18; }*)arg1;
 - (BOOL)handleDescriptor:(void*)arg1 length:(unsigned long)arg2;
-- (BOOL)handleMessage:(struct nstat_msg_hdr { unsigned long long x1; unsigned int x2; unsigned short x3; unsigned short x4; }*)arg1 length:(long)arg2;
+- (BOOL)handleMessage:(struct nstat_msg_hdr { unsigned int x1; unsigned int x2; unsigned short x3; unsigned short x4; }*)arg1 length:(long)arg2;
 - (BOOL)hasCounts;
 - (BOOL)hasDescriptor;
 - (BOOL)hasNewKernelInfo;
@@ -89,19 +89,20 @@
 - (id)manager;
 - (void)queryCounts;
 - (void)queryDescription;
+- (void)queryUpdate;
 - (unsigned int)reference;
 - (BOOL)removing;
 - (double)rttAverage;
 - (double)rttMinimum;
 - (double)rttVariation;
-- (unsigned long long)rxBytes;
-- (unsigned long long)rxCellularBytes;
+- (unsigned int)rxBytes;
+- (unsigned int)rxCellularBytes;
 - (int)rxDuplicateBytes;
 - (int)rxOutOfOrderBytes;
-- (unsigned long long)rxPackets;
-- (unsigned long long)rxWiFiBytes;
-- (unsigned long long)rxWifiBytes;
-- (unsigned long long)rxWiredBytes;
+- (unsigned int)rxPackets;
+- (unsigned int)rxWiFiBytes;
+- (unsigned int)rxWifiBytes;
+- (unsigned int)rxWiredBytes;
 - (void)setDelegate:(id)arg1;
 - (void)setHasCounts:(BOOL)arg1;
 - (void)setHasDescriptor:(BOOL)arg1;
@@ -109,12 +110,12 @@
 - (void)setReference:(unsigned int)arg1;
 - (void)setRemoved:(BOOL)arg1;
 - (void)setRemoving:(BOOL)arg1;
-- (unsigned long long)txBytes;
-- (unsigned long long)txCellularBytes;
-- (unsigned long long)txPackets;
+- (unsigned int)txBytes;
+- (unsigned int)txCellularBytes;
+- (unsigned int)txPackets;
 - (int)txRetransmittedBytes;
-- (unsigned long long)txWiFiBytes;
-- (unsigned long long)txWifiBytes;
-- (unsigned long long)txWiredBytes;
+- (unsigned int)txWiFiBytes;
+- (unsigned int)txWifiBytes;
+- (unsigned int)txWiredBytes;
 
 @end

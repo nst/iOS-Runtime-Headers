@@ -3,7 +3,7 @@
  */
 
 @interface BRCContainerMetadataSyncUpOperation : _BRCOperation <BRCOperationSubclass> {
-    BOOL _shouldPerformAnotherBatch;
+    BOOL  _shouldPerformAnotherBatch;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -12,11 +12,11 @@
 @property (nonatomic, readonly) BOOL shouldPerformAnotherBatch;
 @property (readonly) Class superclass;
 
+- (id)createActivity;
 - (id)initWithSession:(id)arg1;
 - (void)main;
 - (void)performAfterSavingRecords:(id /* block */)arg1;
 - (BOOL)shouldPerformAnotherBatch;
 - (BOOL)shouldRetryForError:(id)arg1;
-- (unsigned long long)startActivity;
 
 @end

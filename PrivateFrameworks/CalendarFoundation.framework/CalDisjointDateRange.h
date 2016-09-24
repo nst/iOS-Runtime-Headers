@@ -3,7 +3,7 @@
  */
 
 @interface CalDisjointDateRange : NSObject <NSCopying, NSSecureCoding> {
-    NSMutableSet *_distinctRanges;
+    NSMutableSet * _distinctRanges;
 }
 
 @property (nonatomic, copy) NSMutableSet *distinctRanges;

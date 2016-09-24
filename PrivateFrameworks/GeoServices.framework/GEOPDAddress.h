@@ -5,11 +5,11 @@
 @interface GEOPDAddress : PBCodable <NSCopying> {
     struct { 
         unsigned int knownAccuracy : 1; 
-    } _has;
-    int _knownAccuracy;
-    NSMutableArray *_localizedAddress;
-    NSMutableArray *_spokenNavigationAddress;
-    NSMutableArray *_spokenStructuredAddress;
+    }  _has;
+    int  _knownAccuracy;
+    NSMutableArray * _localizedAddress;
+    NSMutableArray * _spokenNavigationAddress;
+    NSMutableArray * _spokenStructuredAddress;
 }
 
 @property (nonatomic) BOOL hasKnownAccuracy;
@@ -18,12 +18,14 @@
 @property (nonatomic, retain) NSMutableArray *spokenNavigationAddress;
 @property (nonatomic, retain) NSMutableArray *spokenStructuredAddress;
 
-+ (id)addressForPlaceData:(id)arg1;
++ (Class)localizedAddressType;
++ (Class)spokenNavigationAddressType;
++ (Class)spokenStructuredAddressType;
 
+- (int)StringAsKnownAccuracy:(id)arg1;
 - (void)addLocalizedAddress:(id)arg1;
 - (void)addSpokenNavigationAddress:(id)arg1;
 - (void)addSpokenStructuredAddress:(id)arg1;
-- (id)bestLocalizedAddress;
 - (void)clearLocalizedAddress;
 - (void)clearSpokenNavigationAddress;
 - (void)clearSpokenStructuredAddress;
@@ -36,6 +38,7 @@
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (int)knownAccuracy;
+- (id)knownAccuracyAsString:(int)arg1;
 - (id)localizedAddress;
 - (id)localizedAddressAtIndex:(unsigned int)arg1;
 - (unsigned int)localizedAddressCount;
@@ -46,7 +49,6 @@
 - (void)setLocalizedAddress:(id)arg1;
 - (void)setSpokenNavigationAddress:(id)arg1;
 - (void)setSpokenStructuredAddress:(id)arg1;
-- (id)spokenAddressForLocale:(id)arg1;
 - (id)spokenNavigationAddress;
 - (id)spokenNavigationAddressAtIndex:(unsigned int)arg1;
 - (unsigned int)spokenNavigationAddressCount;

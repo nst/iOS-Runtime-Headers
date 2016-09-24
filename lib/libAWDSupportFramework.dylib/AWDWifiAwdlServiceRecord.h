@@ -3,17 +3,17 @@
  */
 
 @interface AWDWifiAwdlServiceRecord : PBCodable <NSCopying> {
-    unsigned long long _duration;
+    unsigned long long  _duration;
     struct { 
         unsigned int duration : 1; 
         unsigned int opcode : 1; 
         unsigned int serviceId : 1; 
         unsigned int type : 1; 
-    } _has;
-    unsigned int _opcode;
-    unsigned int _serviceId;
-    NSData *_serviceKey;
-    unsigned int _type;
+    }  _has;
+    unsigned int  _opcode;
+    unsigned int  _serviceId;
+    NSData * _serviceKey;
+    unsigned int  _type;
 }
 
 @property (nonatomic) unsigned long long duration;

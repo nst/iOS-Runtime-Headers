@@ -3,19 +3,19 @@
  */
 
 @interface GKLeaderboardInternal : GKInternalRepresentation {
-    unsigned short _friendRank;
-    unsigned short _friendRankCount;
-    NSString *_groupIdentifier;
-    NSDictionary *_icons;
-    NSString *_identifier;
-    NSDate *_lastSubmittedDate;
-    NSString *_leaderboardSetIdentifier;
-    unsigned int _maxRank;
-    unsigned int _overallRank;
-    unsigned int _overallRankCount;
-    GKScoreInternal *_playerScore;
-    NSArray *_scores;
-    NSString *_title;
+    unsigned short  _friendRank;
+    unsigned short  _friendRankCount;
+    NSString * _groupIdentifier;
+    NSDictionary * _icons;
+    NSString * _identifier;
+    NSDate * _lastSubmittedDate;
+    NSString * _leaderboardSetIdentifier;
+    unsigned int  _maxRank;
+    unsigned int  _overallRank;
+    unsigned int  _overallRankCount;
+    GKScoreInternal * _playerScore;
+    NSArray * _scores;
+    NSString * _title;
 }
 
 @property (nonatomic, retain) NSString *category;

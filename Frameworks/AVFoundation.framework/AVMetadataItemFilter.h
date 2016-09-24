@@ -3,7 +3,7 @@
  */
 
 @interface AVMetadataItemFilter : NSObject {
-    AVMetadataItemFilterInternal *_itemFilterInternal;
+    AVMetadataItemFilterInternal * _itemFilterInternal;
 }
 
 @property (readonly) NSDictionary *whitelist;

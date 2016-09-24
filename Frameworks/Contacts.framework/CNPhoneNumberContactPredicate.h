@@ -3,8 +3,8 @@
  */
 
 @interface CNPhoneNumberContactPredicate : CNPredicate <CNSuggestedContactPredicate> {
-    CNPhoneNumber *_phoneNumber;
-    BOOL _returnsMultipleResults;
+    CNPhoneNumber * _phoneNumber;
+    BOOL  _returnsMultipleResults;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -14,8 +14,12 @@
 @property (nonatomic, readonly) BOOL returnsMultipleResults;
 @property (readonly) Class superclass;
 
++ (BOOL)supportsSecureCoding;
+
 - (void)dealloc;
 - (id)description;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithPhoneNumber:(id)arg1 returnMultipleResults:(BOOL)arg2;
 - (id)phoneNumber;
 - (BOOL)returnsMultipleResults;

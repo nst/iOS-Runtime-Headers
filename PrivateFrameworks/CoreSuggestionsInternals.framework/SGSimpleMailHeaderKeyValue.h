@@ -3,8 +3,8 @@
  */
 
 @interface SGSimpleMailHeaderKeyValue : NSObject <NSCopying, NSSecureCoding> {
-    NSString *_key;
-    NSString *_value;
+    NSString * _key;
+    NSString * _value;
 }
 
 @property (nonatomic, readonly) NSString *key;

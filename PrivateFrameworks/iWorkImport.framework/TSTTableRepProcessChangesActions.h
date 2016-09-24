@@ -3,8 +3,8 @@
  */
 
 @interface TSTTableRepProcessChangesActions : NSObject {
-    struct TSUColumnRowRect { 
-        struct { 
+    struct TSUCellRect { 
+        struct TSUCellCoord { 
             unsigned short row; 
             unsigned char column; 
             unsigned char reserved; 
@@ -13,9 +13,9 @@
             unsigned short numberOfColumns; 
             unsigned short numberOfRows; 
         } size; 
-    } _dirtyCellRange;
-    struct TSUColumnRowRect { 
-        struct { 
+    }  _dirtyCellRange;
+    struct TSUCellRect { 
+        struct TSUCellCoord { 
             unsigned short row; 
             unsigned char column; 
             unsigned char reserved; 
@@ -24,23 +24,25 @@
             unsigned short numberOfColumns; 
             unsigned short numberOfRows; 
         } size; 
-    } _dirtyStrokeRange;
-    BOOL _hideChromeContextMenuButton;
-    BOOL _hideStepperHUD;
-    BOOL _invalidateAllChrome;
-    BOOL _invalidateAllChromeCaches;
-    BOOL _invalidateColumnChrome;
-    BOOL _invalidateKnobs;
-    BOOL _invalidateRowChrome;
-    BOOL _invalidateSelection;
-    BOOL _invalidateTableName;
-    BOOL _setNeedsDisplay;
-    BOOL _syncReferenceHighlightState;
-    BOOL _updateEditorRemainders;
+    }  _dirtyStrokeRange;
+    BOOL  _expandDirtyRegionForReferences;
+    BOOL  _hideChromeContextMenuButton;
+    BOOL  _hideStepperHUD;
+    BOOL  _invalidateAllChrome;
+    BOOL  _invalidateAllChromeCaches;
+    BOOL  _invalidateColumnChrome;
+    BOOL  _invalidateKnobs;
+    BOOL  _invalidateRowChrome;
+    BOOL  _invalidateSelection;
+    BOOL  _invalidateTableName;
+    BOOL  _setNeedsDisplay;
+    BOOL  _syncReferenceHighlightState;
+    BOOL  _updateEditorRemainders;
 }
 
-@property (nonatomic) struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; } dirtyCellRange;
-@property (nonatomic) struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; } dirtyStrokeRange;
+@property (nonatomic) struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; } dirtyCellRange;
+@property (nonatomic) struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; } dirtyStrokeRange;
+@property (nonatomic) BOOL expandDirtyRegionForReferences;
 @property (nonatomic) BOOL hideChromeContextMenuButton;
 @property (nonatomic) BOOL hideStepperHUD;
 @property (nonatomic) BOOL invalidateAllChrome;
@@ -54,8 +56,9 @@
 @property (nonatomic) BOOL syncReferenceHighlightState;
 @property (nonatomic) BOOL updateEditorRemainders;
 
-- (struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })dirtyCellRange;
-- (struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })dirtyStrokeRange;
+- (struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })dirtyCellRange;
+- (struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })dirtyStrokeRange;
+- (BOOL)expandDirtyRegionForReferences;
 - (BOOL)hideChromeContextMenuButton;
 - (BOOL)hideStepperHUD;
 - (BOOL)invalidateAllChrome;
@@ -65,8 +68,9 @@
 - (BOOL)invalidateRowChrome;
 - (BOOL)invalidateSelection;
 - (BOOL)invalidateTableName;
-- (void)setDirtyCellRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
-- (void)setDirtyStrokeRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
+- (void)setDirtyCellRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
+- (void)setDirtyStrokeRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
+- (void)setExpandDirtyRegionForReferences:(BOOL)arg1;
 - (void)setHideChromeContextMenuButton:(BOOL)arg1;
 - (void)setHideStepperHUD:(BOOL)arg1;
 - (void)setInvalidateAllChrome:(BOOL)arg1;

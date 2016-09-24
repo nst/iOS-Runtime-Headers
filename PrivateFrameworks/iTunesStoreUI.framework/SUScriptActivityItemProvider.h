@@ -3,13 +3,13 @@
  */
 
 @interface SUScriptActivityItemProvider : SUScriptObject <SUActivityItemProviderDelegate> {
-    id _item;
-    id /* block */ _itemBlock;
-    SUScriptFunction *_itemFunction;
-    int _loadState;
-    NSString *_mimeType;
-    SUActivityItemProvider *_nativeProvider;
-    int _previewLoadState;
+    id  _item;
+    id /* block */  _itemBlock;
+    SUScriptFunction * _itemFunction;
+    int  _loadState;
+    NSString * _mimeType;
+    SUActivityItemProvider * _nativeProvider;
+    int  _previewLoadState;
 }
 
 @property (readonly) NSString *MIMEType;
@@ -19,7 +19,7 @@
 @property (readonly) unsigned int hash;
 @property (retain) WebScriptObject *itemFunction;
 @property (readonly) SUActivityItemProvider *nativeActivityItemProvider;
-@property float progress;
+@property double progress;
 @property (copy) NSString *status;
 @property (readonly) Class superclass;
 

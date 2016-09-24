@@ -3,10 +3,10 @@
  */
 
 @interface MFPen : NSObject <MFObject> {
-    OITSUColor *m_colour;
-    int m_penStyle;
-    int m_penWidth;
-    double *m_userStyleArray;
+    OITSUColor * m_colour;
+    int  m_penStyle;
+    int  m_penWidth;
+    double * m_userStyleArray;
 }
 
 + (id)pen;

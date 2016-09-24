@@ -3,9 +3,9 @@
  */
 
 @interface UIMenuItem : NSObject {
-    SEL _action;
-    BOOL _dontDismiss;
-    NSString *_title;
+    SEL  _action;
+    BOOL  _dontDismiss;
+    NSString * _title;
 }
 
 @property (nonatomic) SEL action;

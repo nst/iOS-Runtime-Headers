@@ -6,10 +6,10 @@
     struct { 
         double latitude; 
         double longitude; 
-    } _originalCoordinate;
-    double _params;
-    double _radius;
-    BOOL _shouldUsePolyShiftFunction;
+    }  _originalCoordinate;
+    double  _params;
+    double  _radius;
+    BOOL  _shouldUsePolyShiftFunction;
 }
 
 @property (nonatomic) struct { double x1; double x2; } originalCoordinate;

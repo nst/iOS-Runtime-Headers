@@ -3,14 +3,15 @@
  */
 
 @interface SKUIItemOffer : NSObject <SKUICacheCoding> {
-    NSString *_actionParameters;
-    NSString *_buttonText;
-    NSString *_confirmationText;
-    long long _fileSize;
-    NSString *_fileSizeText;
-    NSString *_offerTypeString;
-    float _price;
-    NSString *_variantIdentifier;
+    NSString * _actionParameters;
+    NSString * _buttonText;
+    NSString * _confirmationText;
+    int  _fileSize;
+    NSString * _fileSizeText;
+    NSString * _offerTypeString;
+    double  _price;
+    BOOL  _shouldEnableMessagesExtension;
+    NSString * _variantIdentifier;
 }
 
 @property (nonatomic, readonly) NSString *actionParameters;
@@ -19,12 +20,13 @@
 @property (nonatomic, readonly) NSString *confirmationText;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) long long fileSize;
+@property (nonatomic, readonly) int fileSize;
 @property (nonatomic, readonly) NSString *fileSizeText;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) NSDictionary *lookupDictionary;
 @property (nonatomic, readonly) int offerType;
-@property (nonatomic, readonly) float price;
+@property (nonatomic, readonly) double price;
+@property (nonatomic, readonly) BOOL shouldEnableMessagesExtension;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSString *variantIdentifier;
 
@@ -37,7 +39,7 @@
 - (id)buttonText;
 - (id)cacheRepresentation;
 - (id)confirmationText;
-- (long long)fileSize;
+- (int)fileSize;
 - (id)fileSizeText;
 - (id)initWithButtonText:(id)arg1;
 - (id)initWithCacheRepresentation:(id)arg1;
@@ -47,6 +49,7 @@
 - (id)lookupDictionary;
 - (int)offerType;
 - (float)price;
+- (BOOL)shouldEnableMessagesExtension;
 - (id)variantIdentifier;
 
 @end

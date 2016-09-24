@@ -3,32 +3,32 @@
  */
 
 @interface AWDWiFiMetricLinkChangeData : PBCodable <NSCopying> {
-    unsigned int _akmSuites;
+    unsigned int  _akmSuites;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _bcnFrmsHistorys;
+    }  _bcnFrmsHistorys;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _bcnPerHistorys;
-    unsigned int _capabilities;
-    unsigned int _channel;
-    unsigned int _channelWidth;
-    unsigned int _flags;
+    }  _bcnPerHistorys;
+    unsigned int  _capabilities;
+    unsigned int  _channel;
+    unsigned int  _channelWidth;
+    unsigned int  _flags;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _fwTxFrmsHistorys;
+    }  _fwTxFrmsHistorys;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _fwTxPerHistorys;
-    unsigned int _gatewayARPHistory;
+    }  _fwTxPerHistorys;
+    unsigned int  _gatewayARPHistory;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int akmSuites : 1; 
@@ -52,41 +52,41 @@
         unsigned int wpaProtocol : 1; 
         unsigned int isInVol : 1; 
         unsigned int isLinkUp : 1; 
-    } _has;
-    unsigned int _htASel;
-    unsigned int _htAmpduParams;
-    unsigned int _htExtended;
-    unsigned int _htInfo;
-    NSData *_htSupportedMcsSet;
-    unsigned int _htTxBf;
-    BOOL _isInVol;
-    BOOL _isLinkUp;
-    unsigned int _mcastCipher;
-    NSData *_oui;
-    unsigned int _phyMode;
-    unsigned int _reason;
+    }  _has;
+    unsigned int  _htASel;
+    unsigned int  _htAmpduParams;
+    unsigned int  _htExtended;
+    unsigned int  _htInfo;
+    NSData * _htSupportedMcsSet;
+    unsigned int  _htTxBf;
+    BOOL  _isInVol;
+    BOOL  _isLinkUp;
+    unsigned int  _mcastCipher;
+    NSData * _oui;
+    unsigned int  _phyMode;
+    unsigned int  _reason;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _rssiHistorys;
-    unsigned int _securityType;
-    unsigned int _subreason;
-    unsigned long long _timestamp;
+    }  _rssiHistorys;
+    unsigned int  _securityType;
+    unsigned int  _subreason;
+    unsigned long long  _timestamp;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _txFrmsHistorys;
+    }  _txFrmsHistorys;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _txPerHistorys;
-    unsigned int _ucastCipher;
-    unsigned int _vhtInfo;
-    NSData *_vhtSupportedMcsSet;
-    unsigned int _wpaProtocol;
+    }  _txPerHistorys;
+    unsigned int  _ucastCipher;
+    unsigned int  _vhtInfo;
+    NSData * _vhtSupportedMcsSet;
+    unsigned int  _wpaProtocol;
 }
 
 @property (nonatomic) unsigned int akmSuites;

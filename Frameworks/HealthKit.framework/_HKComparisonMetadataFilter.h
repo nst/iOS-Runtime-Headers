@@ -3,7 +3,7 @@
  */
 
 @interface _HKComparisonMetadataFilter : _HKMetadataFilter {
-    id _value;
+    id  _value;
 }
 
 @property (nonatomic, readonly) id value;
@@ -25,6 +25,7 @@
 
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 
-- (id)predicateWithHealthDaemon:(id)arg1;
+- (id)_filterIgnoringPrivateMetadata;
+- (id)predicateWithProfile:(id)arg1;
 
 @end

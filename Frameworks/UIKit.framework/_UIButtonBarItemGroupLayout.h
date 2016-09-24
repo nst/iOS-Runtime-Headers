@@ -3,15 +3,15 @@
  */
 
 @interface _UIButtonBarItemGroupLayout : _UIButtonBarLayout {
-    bool _compact;
-    NSMutableArray *_configuredItemLayouts;
-    UIBarButtonItemGroup *_group;
-    UILayoutGuide *_groupSizeGuide;
-    NSMapTable *_itemLayoutMap;
-    NSMutableArray *_itemLayouts;
-    id /* block */ _itemViewGenerator;
-    _UIButtonBarLayout *_representativeLayout;
-    bool _useGroupSizing;
+    bool  _compact;
+    NSMutableArray * _configuredItemLayouts;
+    UIBarButtonItemGroup * _group;
+    UILayoutGuide * _groupSizeGuide;
+    NSMapTable * _itemLayoutMap;
+    NSMutableArray * _itemLayouts;
+    id /* block */  _itemViewGenerator;
+    _UIButtonBarLayout * _representativeLayout;
+    bool  _useGroupSizing;
 }
 
 @property (nonatomic) bool compact;
@@ -25,10 +25,13 @@
 - (void)_addLayoutGuides:(id)arg1;
 - (void)_addLayoutViews:(id)arg1;
 - (void)_configure;
+- (id)_effectiveLayout;
 - (bool)_isGroup;
 - (bool)_isSpace;
+- (id)_itemLayouts;
 - (void)_iterateConfiguredLayouts:(id /* block */)arg1;
 - (id)_newLayoutForBarButtonItem:(id)arg1 useGroupSizing:(bool)arg2;
+- (id)_representativeLayout;
 - (void)_updateGroupSizing;
 - (bool)compact;
 - (id)description;

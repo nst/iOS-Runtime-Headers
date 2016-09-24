@@ -7,9 +7,10 @@
 + (void)initialize;
 + (id)singleLineSignatureLeadingCharacterSet;
 
+- (BOOL)_paragraphWithContent:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 exceedsLineLimit:(unsigned int)arg3 orCharacterLimit:(unsigned int)arg4;
 - (id)authorFirstname:(id)arg1;
 - (id)authorName:(id)arg1;
-- (void)dissectInternal:(id)arg1;
+- (void)dissectInternal:(id)arg1 inContext:(id)arg2;
 - (id)findRejectSig:(id)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })findSignaturePrefix:(id)arg1;
 - (id)findSignaturePrefixesInEntity:(id)arg1 withSignaturePrefixes:(id)arg2;

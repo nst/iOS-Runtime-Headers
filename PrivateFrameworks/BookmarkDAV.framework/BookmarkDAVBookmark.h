@@ -3,15 +3,15 @@
  */
 
 @interface BookmarkDAVBookmark : NSObject <CoreDAVLeafDataPayload, NSXMLParserDelegate> {
-    NSMutableString *_appleAttributeString;
-    NSDictionary *_appleAttributes;
-    NSURL *_bookmarkURL;
-    CoreDAVErrorItem *_bulkUploadErrorItem;
-    int _ignoreLevel;
-    NSString *_name;
-    int _parseState;
-    NSURL *_serverID;
-    NSString *_syncKey;
+    NSMutableString * _appleAttributeString;
+    NSDictionary * _appleAttributes;
+    NSURL * _bookmarkURL;
+    CoreDAVErrorItem * _bulkUploadErrorItem;
+    int  _ignoreLevel;
+    NSString * _name;
+    int  _parseState;
+    NSURL * _serverID;
+    NSString * _syncKey;
 }
 
 @property (nonatomic, readonly, retain) NSDictionary *appleAttributes;

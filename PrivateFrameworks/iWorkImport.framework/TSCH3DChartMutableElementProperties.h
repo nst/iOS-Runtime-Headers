@@ -3,10 +3,10 @@
  */
 
 @interface TSCH3DChartMutableElementProperties : TSCH3DChartElementProperties {
-    TSCH3DTransform *mChartTransform;
-    TSCH3DTransform *mElementsTransform;
-    TSCH3DLabelResources *mLabels;
-    TSCH3DArray2D *mLightingModels;
+    TSCH3DTransform * mChartTransform;
+    TSCH3DTransform * mElementsTransform;
+    TSCH3DLabelResources * mLabels;
+    TSCH3DArray2D * mLightingModels;
 }
 
 @property (nonatomic, retain) TSCH3DTransform *chartTransform;

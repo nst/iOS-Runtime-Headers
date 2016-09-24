@@ -3,11 +3,11 @@
  */
 
 @interface SBFBuildVersion : NSObject {
-    NSString *_majorBuildLetterString;
-    int _majorBuildNumber;
-    NSString *_minorBuildLetterString;
-    int _minorBuildNumber;
-    NSString *_stringRepresentation;
+    NSString * _majorBuildLetterString;
+    int  _majorBuildNumber;
+    NSString * _minorBuildLetterString;
+    int  _minorBuildNumber;
+    NSString * _stringRepresentation;
 }
 
 @property (nonatomic, readonly, copy) NSString *majorBuildLetterString;

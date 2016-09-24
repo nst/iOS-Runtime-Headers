@@ -3,9 +3,9 @@
  */
 
 @interface UITableViewIndexOverlayIndicatorView : UIView {
-    UILabel *_label;
-    UITableView *_table;
-    UITapGestureRecognizer *_tapGestureRecognizer;
+    UILabel * _label;
+    UITableView * _table;
+    UITapGestureRecognizer * _tapGestureRecognizer;
 }
 
 @property (nonatomic, copy) NSString *currentText;

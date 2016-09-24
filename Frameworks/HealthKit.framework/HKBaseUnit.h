@@ -3,11 +3,11 @@
  */
 
 @interface HKBaseUnit : HKUnit <_HKFactor> {
-    NSString *_prefix;
-    double _proportionalSize;
-    NSString *_root;
-    BOOL _uniqued;
-    NSString *_unitString;
+    NSString * _prefix;
+    double  _proportionalSize;
+    NSString * _root;
+    BOOL  _uniqued;
+    NSString * _unitString;
 }
 
 @property (readonly, copy) NSString *debugDescription;

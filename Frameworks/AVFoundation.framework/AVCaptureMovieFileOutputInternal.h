@@ -3,19 +3,22 @@
  */
 
 @interface AVCaptureMovieFileOutputInternal : NSObject {
-    NSMutableArray *connectionsThatRecordVideoOrientationAndMirroringChangesAsMetadataTrack;
-    NSArray *metadata;
+    NSArray * availableVideoCodecs;
+    NSString * bravoCameraSelectionBehaviorForRecording;
+    NSMutableArray * connectionsThatRecordVideoOrientationAndMirroringChangesAsMetadataTrack;
+    NSArray * metadata;
     struct { 
-        long long value; 
+        int value; 
         int timescale; 
         unsigned int flags; 
-        long long epoch; 
-    } movieFragmentInterval;
-    BOOL paused;
-    BOOL recording;
-    NSMutableArray *recordingDelegatesArray;
-    BOOL sendLastVideoPreviewFrame;
-    AVWeakReference *weakReference;
+        int epoch; 
+    }  movieFragmentInterval;
+    BOOL  paused;
+    BOOL  recording;
+    NSMutableArray * recordingDelegatesArray;
+    BOOL  sendLastVideoPreviewFrame;
+    NSString * videoCodec;
+    AVWeakReference * weakReference;
 }
 
 - (void)dealloc;

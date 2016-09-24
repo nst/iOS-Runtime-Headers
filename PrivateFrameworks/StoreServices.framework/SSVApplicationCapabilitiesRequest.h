@@ -3,7 +3,7 @@
  */
 
 @interface SSVApplicationCapabilitiesRequest : SSRequest <SSXPCCoding> {
-    NSString *_bundleID;
+    NSString * _bundleID;
 }
 
 @property (nonatomic, copy) NSString *bundleID;

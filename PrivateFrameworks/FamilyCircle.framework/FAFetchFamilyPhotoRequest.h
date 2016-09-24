@@ -3,18 +3,18 @@
  */
 
 @interface FAFetchFamilyPhotoRequest : FAFamilyCircleRequest {
-    NSString *_emailAddress;
-    NSString *_fullname;
-    BOOL _localFallback;
-    NSNumber *_memberDSID;
-    NSString *_memberHashedDSID;
-    double _monogramDiameter;
-    int _monogramStyle;
-    NSString *_phoneNumber;
-    unsigned int _requestedSize;
-    double _requiredHeight;
-    double _requiredWidth;
-    BOOL _useMonogramAsLastResort;
+    NSString * _emailAddress;
+    NSString * _fullname;
+    BOOL  _localFallback;
+    NSNumber * _memberDSID;
+    NSString * _memberHashedDSID;
+    double  _monogramDiameter;
+    int  _monogramStyle;
+    NSString * _phoneNumber;
+    unsigned int  _requestedSize;
+    double  _requiredHeight;
+    double  _requiredWidth;
+    BOOL  _useMonogramAsLastResort;
 }
 
 @property (copy) NSString *emailAddress;

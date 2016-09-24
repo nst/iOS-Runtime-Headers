@@ -3,14 +3,14 @@
  */
 
 @interface BBDismissalDictionaryAndFeeds : BBDismissalItem {
-    NSString *_dismissalHash;
-    double _dismissalTimeInterval;
+    NSString * _dismissalHash;
+    double  _dismissalTimeInterval;
 }
 
 @property (nonatomic, readonly, copy) NSString *dismissalHash;
 @property (nonatomic, readonly) double dismissalTimeInterval;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)description;
 - (id)dismissalHash;
 - (double)dismissalTimeInterval;

@@ -6,7 +6,7 @@
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _transitStepRange;
+    }  _transitStepRange;
 }
 
 - (id)_accessPointsForTransitStep:(id)arg1;

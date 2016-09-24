@@ -3,7 +3,7 @@
  */
 
 @interface MTLToolsResource : MTLToolsObject <MTLResourceSPI> {
-    unsigned int _options;
+    unsigned int  _options;
 }
 
 @property (readonly) MTLResourceAllocationInfo *cachedAllocationInfo;
@@ -12,6 +12,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) <MTLDevice> *device;
 @property (readonly) unsigned int hash;
+@property (readonly) <MTLHeap> *heap;
 @property (copy) NSString *label;
 @property (nonatomic, readonly) unsigned int options;
 @property int responsibleProcess;
@@ -22,8 +23,16 @@
 - (id)cachedAllocationInfo;
 - (unsigned int)cpuCacheMode;
 - (id)device;
+- (BOOL)doesAliasAllResources:(const id*)arg1 count:(unsigned int)arg2;
+- (BOOL)doesAliasAnyResources:(const id*)arg1 count:(unsigned int)arg2;
+- (BOOL)doesAliasResource:(id)arg1;
+- (id)heap;
+- (id)initWithBaseObject:(id)arg1 parent:(id)arg2;
+- (BOOL)isAliasable;
+- (BOOL)isComplete;
 - (BOOL)isPurgeable;
 - (id)label;
+- (void)makeAliasable;
 - (unsigned int)options;
 - (int)responsibleProcess;
 - (void)setLabel:(id)arg1;
@@ -33,5 +42,6 @@
 - (unsigned int)storageMode;
 - (void)validateCPUReadable;
 - (void)validateCPUWriteable;
+- (void)waitUntilComplete;
 
 @end

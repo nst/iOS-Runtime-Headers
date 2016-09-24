@@ -3,9 +3,9 @@
  */
 
 @interface SKUIMoreNavigationController : UIMoreNavigationController {
-    UINavigationController *_displayedViewController;
-    UIViewController *_firstActualViewController;
-    <SKUIMoreNavigationControllerDelegate> *_storeKitDelegate;
+    UINavigationController * _displayedViewController;
+    UIViewController * _firstActualViewController;
+    <SKUIMoreNavigationControllerDelegate> * _storeKitDelegate;
 }
 
 @property (nonatomic) <SKUIMoreNavigationControllerDelegate> *storeKitDelegate;

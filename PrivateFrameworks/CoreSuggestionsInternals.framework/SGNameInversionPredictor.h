@@ -3,9 +3,9 @@
  */
 
 @interface SGNameInversionPredictor : NSObject {
-    double _confidenceThreshold;
-    NSDictionary *_tradToInversionRate;
-    struct __CFDictionary { } *_tradToTrie;
+    double  _confidenceThreshold;
+    NSDictionary * _tradToInversionRate;
+    struct __CFDictionary { } * _tradToTrie;
 }
 
 + (id)sharedInstance;

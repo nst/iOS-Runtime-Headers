@@ -3,14 +3,14 @@
  */
 
 @interface PSYOptions : NSObject <NSSecureCoding> {
-    NSURL *_activityInfoDirectory;
-    BOOL _dryRun;
-    NSArray *_jobs;
-    BOOL _resetDeviceSyncState;
-    BOOL _resumePendingJobs;
-    unsigned int _syncSessionType;
-    unsigned int _terminationJobCount;
-    NSArray *_testInputs;
+    NSURL * _activityInfoDirectory;
+    BOOL  _dryRun;
+    NSArray * _jobs;
+    BOOL  _resetDeviceSyncState;
+    BOOL  _resumePendingJobs;
+    unsigned int  _syncSessionType;
+    unsigned int  _terminationJobCount;
+    NSArray * _testInputs;
 }
 
 @property (nonatomic, copy) NSURL *activityInfoDirectory;

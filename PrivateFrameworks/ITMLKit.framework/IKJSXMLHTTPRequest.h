@@ -3,34 +3,36 @@
  */
 
 @interface IKJSXMLHTTPRequest : IKJSEventListenerObject <IKJSXMLHTTPRequest, ISStoreURLOperationDelegate> {
-    BOOL _async;
-    NSString *_dataToSend;
-    BOOL _inProgress;
-    ISURLOperation *_jingleOperation;
-    BOOL _jingleRequest;
-    JSManagedValue *_managedSelf;
-    NSMutableArray *_onReadyStateChangeMessageQueue;
-    int _onReadyStateChangeMessageQueueLock;
-    NSString *_password;
-    NSDictionary *_performanceMetrics;
-    BOOL _primeEnabled;
-    int _primeRetryCount;
-    unsigned int _readyState;
-    NSMutableData *_receivedData;
-    int _reprimingResponseStatus;
-    NSError *_requestError;
-    int _requestReadyState;
-    int _requestResponseType;
-    unsigned int _requestStatusCode;
-    NSString *_requestStatusText;
-    BOOL _shouldSquashOnReadyStateEvents;
-    unsigned int _status;
-    NSString *_statusText;
-    NSURLConnection *_urlConnection;
-    NSMutableURLRequest *_urlRequest;
-    NSHTTPURLResponse *_urlResponse;
-    NSString *_user;
-    unsigned long timeout;
+    BOOL  _async;
+    NSString * _dataToSend;
+    BOOL  _inProgress;
+    ISURLOperation * _jingleOperation;
+    BOOL  _jingleRequest;
+    JSManagedValue * _managedSelf;
+    NSMutableArray * _onReadyStateChangeMessageQueue;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _onReadyStateChangeMessageQueueLock;
+    NSString * _password;
+    NSDictionary * _performanceMetrics;
+    BOOL  _primeEnabled;
+    int  _primeRetryCount;
+    unsigned int  _readyState;
+    NSData * _receivedData;
+    int  _reprimingResponseStatus;
+    NSError * _requestError;
+    int  _requestReadyState;
+    int  _requestResponseType;
+    unsigned int  _requestStatusCode;
+    NSString * _requestStatusText;
+    BOOL  _shouldSquashOnReadyStateEvents;
+    unsigned int  _status;
+    NSString * _statusText;
+    NSURLConnection * _urlConnection;
+    NSMutableURLRequest * _urlRequest;
+    NSHTTPURLResponse * _urlResponse;
+    NSString * _user;
+    unsigned long  timeout;
 }
 
 @property (nonatomic, copy) NSString *dataToSend;
@@ -47,7 +49,7 @@
 @property (nonatomic, readonly) BOOL primeEnabled;
 @property (nonatomic) int primeRetryCount;
 @property unsigned int readyState;
-@property (nonatomic, retain) NSMutableData *receivedData;
+@property (retain) NSData *receivedData;
 @property (nonatomic, readonly) int reprimingResponseStatus;
 @property (nonatomic, retain) NSError *requestError;
 @property (nonatomic) int requestReadyState;
@@ -118,6 +120,7 @@
 - (unsigned int)requestStatusCode;
 - (id)requestStatusText;
 - (id)response;
+- (id)responseArrayBuffer;
 - (id)responseBlob;
 - (id)responseText;
 - (id)responseType;

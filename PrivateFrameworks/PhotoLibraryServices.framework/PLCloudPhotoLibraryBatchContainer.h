@@ -3,10 +3,10 @@
  */
 
 @interface PLCloudPhotoLibraryBatchContainer : NSObject {
-    CPLChangeBatch *_batch;
-    BOOL _reachedMinSplit;
-    unsigned int _retryCount;
-    BOOL _wasSplit;
+    CPLChangeBatch * _batch;
+    BOOL  _reachedMinSplit;
+    unsigned int  _retryCount;
+    BOOL  _wasSplit;
 }
 
 @property (nonatomic, retain) CPLChangeBatch *batch;

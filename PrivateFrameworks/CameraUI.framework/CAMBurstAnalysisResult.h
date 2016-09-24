@@ -3,10 +3,10 @@
  */
 
 @interface CAMBurstAnalysisResult : NSObject {
-    NSArray *_allAssetIdentifiers;
-    NSString *_bestAssetIdentifier;
-    NSArray *_goodAssetIdentifiers;
-    NSString *_identifier;
+    NSArray * _allAssetIdentifiers;
+    NSString * _bestAssetIdentifier;
+    NSArray * _goodAssetIdentifiers;
+    NSString * _identifier;
 }
 
 @property (nonatomic, readonly, copy) NSArray *allAssetIdentifiers;

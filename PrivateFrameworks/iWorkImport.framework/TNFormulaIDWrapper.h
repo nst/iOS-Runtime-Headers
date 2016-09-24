@@ -6,7 +6,7 @@
     struct { 
         unsigned int formulaID : 24; 
         unsigned int reserved : 8; 
-    } mID;
+    }  mID;
 }
 
 @property (readonly) struct { unsigned int x1 : 24; unsigned int x2 : 8; } formulaID;

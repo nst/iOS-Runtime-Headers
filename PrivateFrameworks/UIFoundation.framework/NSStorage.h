@@ -3,9 +3,9 @@
  */
 
 @interface NSStorage : NSObject {
-    long _hintCapacity;
-    unsigned int _reserved;
-    id _storage;
+    long  _hintCapacity;
+    unsigned int  _reserved;
+    id  _storage;
 }
 
 + (void)initialize;

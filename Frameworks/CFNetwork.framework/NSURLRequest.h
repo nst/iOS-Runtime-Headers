@@ -3,7 +3,7 @@
  */
 
 @interface NSURLRequest : NSObject <NSCopying, NSMutableCopying, NSSecureCoding> {
-    NSURLRequestInternal *_internal;
+    NSURLRequestInternal * _internal;
 }
 
 @property (readonly, copy) NSData *HTTPBody;
@@ -25,9 +25,9 @@
 + (BOOL)allowsAnyHTTPSCertificateForHost:(id)arg1;
 + (id)allowsSpecificHTTPSCertificateForHost:(id)arg1;
 + (double)defaultTimeoutInterval;
++ (id)frRequestWithURL:(id)arg1;
++ (id)frRequestWithURL:(id)arg1 cachePolicy:(unsigned int)arg2 timeoutInterval:(double)arg3;
 + (id)getObjectKeyWithIndex:(long)arg1;
-+ (id)requestWithURL:(id)arg1;
-+ (id)requestWithURL:(id)arg1 cachePolicy:(unsigned int)arg2 timeoutInterval:(double)arg3;
 + (void)setAllowsAnyHTTPSCertificate:(BOOL)arg1 forHost:(id)arg2;
 + (void)setAllowsSpecificHTTPSCertificate:(id)arg1 forHost:(id)arg2;
 + (void)setDefaultTimeoutInterval:(double)arg1;
@@ -65,7 +65,7 @@
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned long long)expectedWorkload;
+- (unsigned int)expectedWorkload;
 - (unsigned int)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
@@ -91,6 +91,13 @@
 - (id)_gkDictionaryKey;
 - (id)_gkSAPSession;
 - (void)_gkSetSAPSession:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
+
++ (void)load;
++ (id)overrideUserAgent;
++ (id)requestWithURL:(id)arg1;
++ (id)requestWithURL:(id)arg1 cachePolicy:(unsigned int)arg2 timeoutInterval:(double)arg3;
 
 // Image: /System/Library/PrivateFrameworks/Stocks.framework/Stocks
 

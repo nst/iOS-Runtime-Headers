@@ -3,7 +3,7 @@
  */
 
 @interface ABMultiCellContentView_RelatedName : ABMultiCellContentView_Simple {
-    UIButton *_accessoryButton;
+    UIButton * _accessoryButton;
 }
 
 @property (nonatomic, readonly) UIButton *accessoryButton;

@@ -6,8 +6,6 @@
 @optional
 
 - (void)placeCardPhotosController:(MKPlacePhotosViewController *)arg1 didSelectViewPhotoWithID:(NSString *)arg2;
-- (void)placeCardPhotosControllerDidSelectAddPhoto:(MKPlacePhotosViewController *)arg1;
-- (void)placeCardPhotosControllerDidSelectViewAllPhotos:(MKPlacePhotosViewController *)arg1;
 - (BOOL)shouldUseSmallPhotosWithPhotosController:(MKPlacePhotosViewController *)arg1;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@interface EKUIConstrainedFontsTableViewCell : UITableViewCell
+@interface EKUIConstrainedFontsTableViewCell : EKUITableViewCell
 
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 

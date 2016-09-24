@@ -3,17 +3,16 @@
  */
 
 @interface HKQuantityType : HKSampleType {
-    int _aggregationStyle;
-    HKUnit *_canonicalUnit;
-    long _canonicalUnitToken;
-    NSString *_unitString;
+    int  _aggregationStyle;
+    HKUnit * _canonicalUnit;
+    long  _canonicalUnitToken;
+    NSString * _unitString;
 }
 
 @property (readonly) int aggregationStyle;
 @property (nonatomic, readonly) HKUnit *canonicalUnit;
 @property (nonatomic, readonly) _HKDimension *dimension;
 
-+ (void)_insertCode:(int)arg1 forIdentifier:(id)arg2;
 + (id)_quantityTypeWithCode:(int)arg1;
 
 - (void).cxx_destruct;

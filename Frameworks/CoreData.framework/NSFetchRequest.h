@@ -3,10 +3,10 @@
  */
 
 @interface NSFetchRequest : NSPersistentStoreRequest <NSCoding> {
-    id *_additionalPrivateIvars;
-    unsigned int _batchSize;
-    NSEntityDescription *_entity;
-    unsigned long _fetchLimit;
+    id * _additionalPrivateIvars;
+    unsigned int  _batchSize;
+    NSEntityDescription * _entity;
+    unsigned long  _fetchLimit;
     struct _fetchRequestFlags { 
         unsigned int distinctValuesOnly : 1; 
         unsigned int includesSubentities : 1; 
@@ -20,13 +20,13 @@
         unsigned int propertiesValidated : 1; 
         unsigned int disableCaching : 1; 
         unsigned int _RESERVED : 19; 
-    } _flags;
-    NSArray *_groupByProperties;
-    NSPredicate *_havingPredicate;
-    NSPredicate *_predicate;
-    NSArray *_relationshipKeyPathsForPrefetching;
-    NSArray *_sortDescriptors;
-    NSArray *_valuesToFetch;
+    }  _flags;
+    NSArray * _groupByProperties;
+    NSPredicate * _havingPredicate;
+    NSPredicate * _predicate;
+    NSArray * _relationshipKeyPathsForPrefetching;
+    NSArray * _sortDescriptors;
+    NSArray * _valuesToFetch;
 }
 
 @property (nonatomic, retain) NSArray *affectedStores;
@@ -49,7 +49,9 @@
 @property (nonatomic) BOOL shouldRefreshRefetchedObjects;
 @property (nonatomic, retain) NSArray *sortDescriptors;
 
++ (id)_newDenormalizedFetchProperties:(id)arg1;
 + (BOOL)accessInstanceVariablesDirectly;
++ (id)decodeFromXPCArchive:(id)arg1 withContext:(id)arg2;
 + (id)fetchRequestWithEntityName:(id)arg1;
 + (void)initialize;
 
@@ -58,7 +60,9 @@
 - (id)_copyForDirtyContext;
 - (BOOL)_disablePersistentStoreResultCaching;
 - (void)_incrementInUseCounter;
+- (BOOL)_isCachingFetchRequest__;
 - (BOOL)_isEditable;
+- (id)_newNormalizedFetchProperties:(id)arg1;
 - (id)_newValidatedProperties:(id)arg1 groupBy:(BOOL)arg2 error:(id*)arg3;
 - (void)_resolveEntityWithContext:(id)arg1;
 - (void)_setAsyncResultHandle:(id)arg1;
@@ -70,9 +74,11 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
+- (id)encodeForXPC;
 - (void)encodeWithCoder:(id)arg1;
 - (id)entity;
 - (id)entityName;
+- (id)execute:(id*)arg1;
 - (unsigned int)fetchBatchSize;
 - (unsigned int)fetchLimit;
 - (unsigned int)fetchOffset;

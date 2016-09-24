@@ -3,8 +3,8 @@
  */
 
 @interface CNiOSABConstantsMapping : NSObject {
-    id _defaultConstant;
-    NSDictionary *_mapping;
+    id  _defaultConstant;
+    NSDictionary * _mapping;
 }
 
 @property (nonatomic, retain) id defaultConstant;

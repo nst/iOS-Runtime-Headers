@@ -3,34 +3,34 @@
  */
 
 @interface KNMovieRenderer : KNBuildRenderer <TSKMediaPlayerControllerDelegate> {
-    KNBuildRenderer *mBuildInRenderer;
+    KNBuildRenderer * mBuildInRenderer;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } mFrameInContainerView;
-    unsigned int mHasMoviePlaybackStarted;
-    unsigned int mHasPendingTogglePlayingControl;
-    unsigned int mIsObservingVideoLayerReadyForDisplay;
-    unsigned int mIsTeardownCompletionBlockPending;
-    SEL mMovieStartCallbackSelector;
-    id mMovieStartCallbackTarget;
-    unsigned int mNeedsPlaybackAtStartTime;
-    unsigned int mNeedsToSendBuildEndCallback;
-    unsigned int mNeedsToSendMovieStartCallback;
-    unsigned int mPendingTogglePlayingControlStartsPlaying;
-    double mPlaybackAtStartTimePauseOffset;
-    double mPlaybackAtStartTimePauseTime;
-    NSObject<TSKMediaPlayerController> *mPlayerController;
-    unsigned int mShouldMoviePlaybackEndOnCompletion;
-    double mStartTime;
-    CALayer *mVideoLayer;
-    unsigned int mWasMoviePlayingBeforeAnimationPause;
+    }  mFrameInContainerView;
+    unsigned int  mHasMoviePlaybackStarted;
+    unsigned int  mHasPendingTogglePlayingControl;
+    unsigned int  mIsObservingVideoLayerReadyForDisplay;
+    unsigned int  mIsTeardownCompletionBlockPending;
+    SEL  mMovieStartCallbackSelector;
+    id  mMovieStartCallbackTarget;
+    unsigned int  mNeedsPlaybackAtStartTime;
+    unsigned int  mNeedsToSendBuildEndCallback;
+    unsigned int  mNeedsToSendMovieStartCallback;
+    unsigned int  mPendingTogglePlayingControlStartsPlaying;
+    double  mPlaybackAtStartTimePauseOffset;
+    double  mPlaybackAtStartTimePauseTime;
+    NSObject<TSKMediaPlayerController> * mPlayerController;
+    unsigned int  mShouldMoviePlaybackEndOnCompletion;
+    double  mStartTime;
+    CALayer * mVideoLayer;
+    unsigned int  mWasMoviePlayingBeforeAnimationPause;
 }
 
 @property (nonatomic) KNBuildRenderer *buildInRenderer;

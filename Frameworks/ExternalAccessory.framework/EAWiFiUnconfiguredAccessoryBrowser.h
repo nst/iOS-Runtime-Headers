@@ -3,11 +3,11 @@
  */
 
 @interface EAWiFiUnconfiguredAccessoryBrowser : NSObject {
-    BOOL __debugLog;
-    NSPredicate *_accessorySearchPredicate;
-    <EAWiFiUnconfiguredAccessoryBrowserDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_delegateQueue;
-    NSSet *_unconfiguredAccessories;
+    BOOL  __debugLog;
+    NSPredicate * _accessorySearchPredicate;
+    <EAWiFiUnconfiguredAccessoryBrowserDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _delegateQueue;
+    NSSet * _unconfiguredAccessories;
 }
 
 @property (retain) NSPredicate *accessorySearchPredicate;

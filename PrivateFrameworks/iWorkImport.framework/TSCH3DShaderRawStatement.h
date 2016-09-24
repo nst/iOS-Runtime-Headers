@@ -5,8 +5,8 @@
 @interface TSCH3DShaderRawStatement : NSObject <TSCH3DShaderStatement> {
     struct TSCH3DShaderType { 
         unsigned int mValue; 
-    } mLinkageType;
-    NSString *mString;
+    }  mLinkageType;
+    NSString * mString;
 }
 
 @property (readonly, copy) NSString *debugDescription;

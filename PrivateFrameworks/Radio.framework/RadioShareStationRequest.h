@@ -3,7 +3,7 @@
  */
 
 @interface RadioShareStationRequest : RadioSyncRequest {
-    NSDictionary *_stationDictionary;
+    NSDictionary * _stationDictionary;
 }
 
 - (void).cxx_destruct;

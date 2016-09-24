@@ -3,24 +3,39 @@
  */
 
 @interface FigIrisAutoTrimmer : NSObject {
-    double _bufferHistorySeconds;
-    CMAttitude *_captureMotionDelta;
-    double _captureMotionDeltaPeriod;
-    CMAttitude *_lastAttitude;
-    double _lastCheckedTimestamp;
-    CMAttitude *_lastDelta;
-    int _lastStatus;
+    double  _bufferHistorySeconds;
     struct { 
-        long long value; 
+        double w; 
+        double x; 
+        double y; 
+        double z; 
+    }  _captureMotionDelta;
+    double  _captureMotionDeltaPeriod;
+    BOOL  _haveCaptureMotionDelta;
+    struct { 
+        double w; 
+        double x; 
+        double y; 
+        double z; 
+    }  _lastAttitude;
+    double  _lastCheckedTimestamp;
+    struct { 
+        double w; 
+        double x; 
+        double y; 
+        double z; 
+    }  _lastDelta;
+    int  _lastStatus;
+    struct { 
+        int value; 
         int timescale; 
         unsigned int flags; 
-        long long epoch; 
-    } _maxHoldDuration;
-    CMMotionManager *_motionManager;
-    NSOperationQueue *_motionQueue;
-    double _motionSampleRate;
-    NSMutableArray *_motionSamples;
-    struct OpaqueFigSimpleMutex { } *_motionSamplesLock;
+        int epoch; 
+    }  _maxHoldDuration;
+    BOOL  _motionAvailable;
+    double  _motionSampleRate;
+    NSMutableArray * _motionSamples;
+    struct OpaqueFigSimpleMutex { } * _motionSamplesLock;
 }
 
 @property (nonatomic, readonly) BOOL trimmingActive;
@@ -29,18 +44,19 @@
 
 - (double)_getHostTime;
 - (BOOL)_isUnstable:(id)arg1;
-- (void)_processMotionSample:(id)arg1 gravity:(struct { double x1; double x2; double x3; })arg2 timestamp:(double)arg3;
+- (void)_processMotionSample:(const struct { double x1; double x2; double x3; double x4; }*)arg1 gravity:(const struct { double x1; double x2; double x3; }*)arg2 timestamp:(double)arg3;
 - (BOOL)_shouldCutUnstable:(id)arg1 withLookahead:(id)arg2;
 - (double)_timeoutThreshold;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })beginTrimmingForStillImageHostPTS:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 minimumPTS:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
+- (struct { int x1; int x2; unsigned int x3; int x4; })beginTrimmingForStillImageHostPTS:(struct { int x1; int x2; unsigned int x3; int x4; })arg1 minimumPTS:(struct { int x1; int x2; unsigned int x3; int x4; })arg2;
 - (double)bufferHistorySeconds;
 - (void)dealloc;
 - (double)directionalWeightForSample:(id)arg1;
-- (int)emissionStatusForHostPTS:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (int)emissionStatusForHostPTS:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
 - (id)init;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })maxHoldDuration;
+- (struct { int x1; int x2; unsigned int x3; int x4; })maxHoldDuration;
+- (void)processISPMotionData:(id)arg1 forHostTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg2;
 - (void)setBufferHistorySeconds:(double)arg1;
-- (void)setMaxHoldDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)setMaxHoldDuration:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
 - (void)setVideoFrameRate:(double)arg1;
 - (void)startMotionProcessing;
 - (void)stopMotionProcessing;

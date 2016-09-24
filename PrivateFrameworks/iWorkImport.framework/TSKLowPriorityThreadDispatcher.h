@@ -3,8 +3,8 @@
  */
 
 @interface TSKLowPriorityThreadDispatcher : TSKThreadDispatcher {
-    NSObject<OS_dispatch_queue> *_queue;
-    int _suspendCount;
+    NSObject<OS_dispatch_queue> * _queue;
+    int  _suspendCount;
 }
 
 @property (getter=isSuspended, readonly) BOOL suspended;

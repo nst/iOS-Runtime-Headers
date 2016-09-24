@@ -3,11 +3,11 @@
  */
 
 @interface MSAuthenticationManager : NSObject {
-    MSAlertManager *_alertManager;
-    int _bagRefetchCount;
-    BOOL _isListeningToKeybagChanges;
-    int _keybagChangeNotifyToken;
-    int _state;
+    MSAlertManager * _alertManager;
+    int  _bagRefetchCount;
+    BOOL  _isListeningToKeybagChanges;
+    int  _keybagChangeNotifyToken;
+    int  _state;
 }
 
 @property (nonatomic) BOOL isListeningToKeybagChanges;

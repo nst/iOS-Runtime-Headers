@@ -3,17 +3,17 @@
  */
 
 @interface IMDAccount : NSObject <IMSystemMonitorListener> {
-    NSString *_account;
-    NSMutableDictionary *_accountDefaults;
-    int _disconnectReason;
-    BOOL _isLoading;
-    BOOL _isManaged;
-    NSDictionary *_lastPostedStatus;
-    unsigned int _loginStatus;
-    NSString *_loginStatusMessage;
-    NSMutableDictionary *_myStatus;
-    IMDService *_service;
-    IMDServiceSession *_session;
+    NSString * _account;
+    NSMutableDictionary * _accountDefaults;
+    int  _disconnectReason;
+    BOOL  _isLoading;
+    BOOL  _isManaged;
+    NSDictionary * _lastPostedStatus;
+    unsigned int  _loginStatus;
+    NSString * _loginStatusMessage;
+    NSMutableDictionary * _myStatus;
+    IMDService * _service;
+    IMDServiceSession * _session;
 }
 
 @property (nonatomic, readonly, retain) NSDictionary *accountDefaults;

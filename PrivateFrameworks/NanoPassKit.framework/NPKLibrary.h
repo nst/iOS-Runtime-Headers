@@ -3,27 +3,27 @@
  */
 
 @interface NPKLibrary : NSObject <NPKGizmoClientProtocol> {
-    NSObject<OS_dispatch_semaphore> *_connectionSemaphore;
-    NSDate *_dateOfLastInvalidation;
-    BOOL _disableCaching;
-    BOOL _disabled;
-    BOOL _initialLoadComplete;
-    int _invalidationOccurrences;
-    NSArray *_lastSeenRelevantPassTuples;
-    BOOL _needsRelevancyInformation;
-    BOOL _needsUpdatePassDescriptions;
-    BOOL _noPassesInDaemon;
-    NSMutableDictionary *_passCache;
-    NSArray *_passDescriptions;
-    NSTimer *_passLibraryChangedCoalescingTimer;
-    NSObject<OS_dispatch_queue> *_passesQueue;
-    NSMutableDictionary *_preferredPaymentApplicationsCache;
-    BOOL _serverHasPasses;
-    BOOL _serverHasPotentiallyRelevantPasses;
-    int _updatePassDescriptionsFailureCount;
-    BOOL _updatingPassDescriptions;
-    NSMutableArray *_workToPerformAfterInitialLoad;
-    NSXPCConnection *_xpcConnection;
+    NSObject<OS_dispatch_semaphore> * _connectionSemaphore;
+    NSDate * _dateOfLastInvalidation;
+    BOOL  _disableCaching;
+    BOOL  _disabled;
+    BOOL  _initialLoadComplete;
+    int  _invalidationOccurrences;
+    NSArray * _lastSeenRelevantPassTuples;
+    BOOL  _needsRelevancyInformation;
+    BOOL  _needsUpdatePassDescriptions;
+    BOOL  _noPassesInDaemon;
+    NSMutableDictionary * _passCache;
+    NSArray * _passDescriptions;
+    NSTimer * _passLibraryChangedCoalescingTimer;
+    NSObject<OS_dispatch_queue> * _passesQueue;
+    NSMutableDictionary * _preferredPaymentApplicationsCache;
+    BOOL  _serverHasPasses;
+    BOOL  _serverHasPotentiallyRelevantPasses;
+    int  _updatePassDescriptionsFailureCount;
+    BOOL  _updatingPassDescriptions;
+    NSMutableArray * _workToPerformAfterInitialLoad;
+    NSXPCConnection * _xpcConnection;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -57,6 +57,7 @@
 - (id)_init;
 - (void)_tearDownConnectionBecauseOfInvalidation;
 - (void)_updatePassDescriptions;
+- (void)_updatePassDescriptionsWithCompletionHandler:(id /* block */)arg1;
 - (void)_updateRelevantPassIDs;
 - (void)addPass:(id)arg1 completion:(id /* block */)arg2;
 - (void)addPassData:(id)arg1 completion:(id /* block */)arg2;
@@ -69,7 +70,8 @@
 - (void)getDiffForPassWithID:(id)arg1 reply:(id /* block */)arg2;
 - (void)getPassWithID:(id)arg1 reply:(id /* block */)arg2;
 - (void)getPassWithID:(id)arg1 reply:(id /* block */)arg2 queue:(id)arg3;
-- (void)getSecureElementIdentifier:(id /* block */)arg1;
+- (void)getSecureElementIdentifiers:(id /* block */)arg1;
+- (void)getSharedWebServiceContextWithCompletion:(id /* block */)arg1;
 - (void)handlePassLibraryChangedNotification:(id)arg1;
 - (void)handleRelevancyCheckCompletedNotification:(id)arg1;
 - (void)handleRelevancyPotentialChangedNotification:(id)arg1;
@@ -84,6 +86,7 @@
 - (BOOL)needsUpdatePassDescriptions;
 - (id)nfcPassDescriptions;
 - (id)nonPaymentPassDescriptions;
+- (void)noteWebServiceUpdateNeededWithCompletion:(id /* block */)arg1;
 - (id)passCache;
 - (id)passDescriptions;
 - (id)passLibraryChangedCoalescingTimer;
@@ -108,6 +111,7 @@
 - (void)setPreferredPaymentApplicationsCache:(id)arg1;
 - (void)setServerHasPasses:(BOOL)arg1;
 - (void)setServerHasPotentiallyRelevantPasses:(BOOL)arg1;
+- (void)setSharedWebServiceContext:(id)arg1 completion:(id /* block */)arg2;
 - (void)setUpdatingPassDescriptions:(BOOL)arg1;
 - (void)setWorkToPerformAfterInitialLoad:(id)arg1;
 - (BOOL)updatingPassDescriptions;

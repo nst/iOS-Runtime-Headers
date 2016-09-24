@@ -3,8 +3,8 @@
  */
 
 @interface NSSQLRelationship : NSSQLProperty {
-    NSSQLEntity *_destinationEntity;
-    NSSQLRelationship *_inverse;
+    NSSQLEntity * _destinationEntity;
+    NSSQLRelationship * _inverse;
 }
 
 - (void)_setForeignOrderKey:(id)arg1;

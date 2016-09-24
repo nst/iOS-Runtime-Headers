@@ -3,19 +3,19 @@
  */
 
 @interface IDSDaemonListener : NSObject <IDSDaemonListenerProtocol> {
-    NSMutableDictionary *_accountToActiveDeviceUniqueID;
-    NSMutableDictionary *_accountToDevices;
-    BOOL _connectionComplete;
-    NSString *_deviceIdentifier;
-    NSHashTable *_handlers;
-    BOOL _hidingDisconnect;
-    NSObject<OS_dispatch_queue> *_ivarQueue;
-    BOOL _postedSetupComplete;
-    NSProtocolChecker *_protocol;
-    BOOL _setupComplete;
-    BOOL _setupInfoComplete;
-    NSMutableDictionary *_topicToAccountDictionaries;
-    NSMutableDictionary *_topicToEnabledAccounts;
+    NSMutableDictionary * _accountToActiveDeviceUniqueID;
+    NSMutableDictionary * _accountToDevices;
+    BOOL  _connectionComplete;
+    NSString * _deviceIdentifier;
+    NSHashTable * _handlers;
+    BOOL  _hidingDisconnect;
+    NSObject<OS_dispatch_queue> * _ivarQueue;
+    BOOL  _postedSetupComplete;
+    NSProtocolChecker * _protocol;
+    BOOL  _setupComplete;
+    BOOL  _setupInfoComplete;
+    NSMutableDictionary * _topicToAccountDictionaries;
+    NSMutableDictionary * _topicToEnabledAccounts;
 }
 
 @property (setter=_setHidingDisconnect:, nonatomic) BOOL _hidingDisconnect;
@@ -36,6 +36,7 @@
 - (void)_internalDidSwitchActivePairedDevice:(id)arg1 forService:(id)arg2;
 - (void)_internalSwitchActivePairedDevice:(id)arg1 forAccount:(id)arg2;
 - (void)_noteDisconnected;
+- (void)_performSyncBlock:(id /* block */)arg1;
 - (void)_removeAccountOnIvarQueue:(id)arg1;
 - (void)_setHidingDisconnect:(BOOL)arg1;
 - (id)_uniqueIDForDevice:(id)arg1;

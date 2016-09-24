@@ -3,8 +3,8 @@
  */
 
 @interface CMCatherineData : CMLogItem {
-    double _catherine;
-    double _confidence;
+    double  _catherine;
+    double  _confidence;
 }
 
 @property (nonatomic, readonly) double catherine;

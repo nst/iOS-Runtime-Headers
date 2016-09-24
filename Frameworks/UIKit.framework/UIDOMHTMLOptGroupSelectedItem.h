@@ -3,7 +3,7 @@
  */
 
 @interface UIDOMHTMLOptGroupSelectedItem : NSObject <UIWebSelectedItemPrivate> {
-    DOMHTMLOptGroupElement *_node;
+    DOMHTMLOptGroupElement * _node;
 }
 
 @property (nonatomic, retain) DOMHTMLOptGroupElement *_node;

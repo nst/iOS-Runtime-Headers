@@ -3,13 +3,13 @@
  */
 
 @interface MPRadioStation : NSObject <NSCopying, NSSecureCoding> {
-    RadioStation *_station;
+    RadioStation * _station;
 }
 
 @property (getter=_station, nonatomic, readonly) RadioStation *_station;
 @property (nonatomic, readonly) NSString *localizedDescription;
 @property (nonatomic, readonly) NSString *localizedName;
-@property (nonatomic, readonly) long long uniqueIdentifier;
+@property (nonatomic, readonly) int uniqueIdentifier;
 
 + (BOOL)supportsSecureCoding;
 
@@ -22,6 +22,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)localizedDescription;
 - (id)localizedName;
-- (long long)uniqueIdentifier;
+- (int)uniqueIdentifier;
 
 @end

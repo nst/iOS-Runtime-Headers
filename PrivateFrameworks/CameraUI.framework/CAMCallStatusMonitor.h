@@ -3,9 +3,9 @@
  */
 
 @interface CAMCallStatusMonitor : NSObject {
-    NSObject<OS_dispatch_queue> *__mutexQueue;
-    BOOL __mutexQueue_callActive;
-    BOOL __mutexQueue_mustQueryInitialValueForCallActive;
+    NSObject<OS_dispatch_queue> * __mutexQueue;
+    BOOL  __mutexQueue_callActive;
+    BOOL  __mutexQueue_mustQueryInitialValueForCallActive;
 }
 
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *_mutexQueue;

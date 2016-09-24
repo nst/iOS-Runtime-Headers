@@ -3,7 +3,7 @@
  */
 
 @interface CMKFocusLockView : CMKFocusView {
-    CAKeyframeAnimation *_lockBoundsAnimation;
+    CAKeyframeAnimation * _lockBoundsAnimation;
 }
 
 - (void).cxx_destruct;

@@ -3,7 +3,7 @@
  */
 
 @interface CoreDAVItemWithHrefChildItemTolerateBarePayload : CoreDAVItemWithHrefChildItem {
-    CoreDAVHrefItem *_virtualHref;
+    CoreDAVHrefItem * _virtualHref;
 }
 
 - (void)dealloc;

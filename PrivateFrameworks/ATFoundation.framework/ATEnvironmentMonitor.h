@@ -3,13 +3,13 @@
  */
 
 @interface ATEnvironmentMonitor : NSObject {
-    BOOL _internetReachable;
-    BOOL _internetReachableViaOnlyWWAN;
-    NSHashTable *_observers;
-    BOOL _power;
-    unsigned int _powerNotification;
-    NSObject<OS_dispatch_queue> *_queue;
-    struct __SCNetworkReachability { } *_reachability;
+    BOOL  _internetReachable;
+    BOOL  _internetReachableViaOnlyWWAN;
+    NSHashTable * _observers;
+    BOOL  _power;
+    unsigned int  _powerNotification;
+    NSObject<OS_dispatch_queue> * _queue;
+    struct __SCNetworkReachability { } * _reachability;
 }
 
 @property (getter=isInternetReachable, nonatomic, readonly) BOOL internetReachable;

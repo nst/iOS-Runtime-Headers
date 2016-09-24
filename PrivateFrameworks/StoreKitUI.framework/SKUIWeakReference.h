@@ -3,7 +3,7 @@
  */
 
 @interface SKUIWeakReference : NSObject {
-    NSObject *_object;
+    NSObject * _object;
 }
 
 @property (nonatomic) NSObject *object;

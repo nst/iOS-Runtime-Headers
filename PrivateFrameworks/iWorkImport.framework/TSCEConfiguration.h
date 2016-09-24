@@ -3,7 +3,7 @@
  */
 
 @interface TSCEConfiguration : NSObject {
-    unsigned int mWarnWhenFormulasReferToEmptyCells;
+    unsigned int  mWarnWhenFormulasReferToEmptyCells;
 }
 
 + (id)sharedCalculationEngineConfiguration;

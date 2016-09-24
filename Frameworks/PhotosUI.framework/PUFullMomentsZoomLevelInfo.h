@@ -3,7 +3,7 @@
  */
 
 @interface PUFullMomentsZoomLevelInfo : PUGridZoomLevelInfo <PUPhotosSectionHeaderViewDelegate, PUSectionedGridLayoutDelegate> {
-    PUGridZoomLevelInfo *_transitionOtherLevelInfo;
+    PUGridZoomLevelInfo * _transitionOtherLevelInfo;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -12,7 +12,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_fillerViewInsetsForItemAtIndexPath:(id)arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_fillerViewInsetsForItemAtIndexPath:(id)arg1;
 - (void)_prepareTransitionImageContentForCell:(id)arg1 atIndexPath:(id)arg2 appearingZoomLevelInfo:(id)arg3;
 - (void)_prepareTransitionSubviewsForCell:(id)arg1 atIndexPath:(id)arg2 isAppearing:(BOOL)arg3;
 - (struct __CFString { }*)aggregateLevelKey;
@@ -23,6 +23,7 @@
 - (id)diagnosticsProviderForVisualSection:(int)arg1;
 - (void)didFinishZoomLevelTransition;
 - (id)displayTitle;
+- (void)getPhotosDataSource:(id*)arg1 displayTitleInfo:(id*)arg2 forDetailsForVisualSection:(int)arg3;
 - (void)headerView:(id)arg1 actionButtonPressed:(id)arg2;
 - (id)newCollectionViewLayout;
 - (void)prepareForTransitionFromZoomLevelInfo:(id)arg1 animated:(BOOL)arg2 interactive:(BOOL)arg3;
@@ -31,7 +32,7 @@
 - (void)sectionedGridLayout:(id)arg1 didFinalizePrepareTransitionIsAppearing:(BOOL)arg2;
 - (BOOL)supportsEditMode;
 - (BOOL)supportsIncrementalChangeNotifications;
-- (struct CGSize { float x1; float x2; })thumbnailImageSize;
+- (struct CGSize { double x1; double x2; })thumbnailImageSize;
 - (void)updateLayoutMetricsForWidth:(float)arg1;
 - (BOOL)wantsAssetCountsVisible;
 - (BOOL)wantsAutomaticContentOffsetAdjustment;

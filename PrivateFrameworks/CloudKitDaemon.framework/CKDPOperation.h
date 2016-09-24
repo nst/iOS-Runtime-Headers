@@ -7,11 +7,11 @@
         unsigned int type : 1; 
         unsigned int last : 1; 
         unsigned int synchronousMode : 1; 
-    } _has;
-    BOOL _last;
-    NSString *_operationUUID;
-    BOOL _synchronousMode;
-    int _type;
+    }  _has;
+    BOOL  _last;
+    NSString * _operationUUID;
+    BOOL  _synchronousMode;
+    int  _type;
 }
 
 @property (nonatomic) BOOL hasLast;
@@ -24,6 +24,7 @@
 @property (nonatomic) int type;
 
 - (void).cxx_destruct;
+- (int)StringAsType:(id)arg1;
 - (void)_CKLogToFileHandle:(id)arg1 atDepth:(int)arg2;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -48,6 +49,7 @@
 - (void)setType:(int)arg1;
 - (BOOL)synchronousMode;
 - (int)type;
+- (id)typeAsString:(int)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -3,8 +3,12 @@
  */
 
 @interface _ATXBundleIdSet : NSObject {
-    _DECAsset *_asset;
-    struct _CFBurstTrie { } *_trie;
+    _DECAsset * _asset;
+    struct _opaque_pthread_mutex_t { 
+        long __sig; 
+        BOOL __opaque[40]; 
+    }  _lock;
+    struct _CFBurstTrie { } * _trie;
 }
 
 + (id)sharedInstance;

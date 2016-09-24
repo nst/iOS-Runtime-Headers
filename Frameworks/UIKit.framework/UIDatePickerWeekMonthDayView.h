@@ -3,14 +3,14 @@
  */
 
 @interface UIDatePickerWeekMonthDayView : UIView {
-    UILabel *_dateLabel;
+    UILabel * _dateLabel;
     struct { 
         unsigned int weekdayLast : 1; 
-    } _datePickerWeekMonthDayViewFlags;
-    NSString *_formattedDateString;
-    BOOL _isModern;
-    UILabel *_weekdayLabel;
-    float _weekdayWidth;
+    }  _datePickerWeekMonthDayViewFlags;
+    NSString * _formattedDateString;
+    BOOL  _isModern;
+    UILabel * _weekdayLabel;
+    double  _weekdayWidth;
 }
 
 @property (nonatomic, readonly) UILabel *dateLabel;
@@ -18,13 +18,13 @@
 @property (nonatomic) BOOL isModern;
 @property (nonatomic, readonly) UILabel *weekdayLabel;
 @property (nonatomic) BOOL weekdayLast;
-@property (nonatomic) float weekdayWidth;
+@property (nonatomic) double weekdayWidth;
 
 - (void).cxx_destruct;
 - (BOOL)_canBeReusedInPickerView;
 - (id)dateLabel;
 - (id)formattedDateString;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (BOOL)isModern;
 - (void)layoutSubviews;
 - (void)setFormattedDateString:(id)arg1;

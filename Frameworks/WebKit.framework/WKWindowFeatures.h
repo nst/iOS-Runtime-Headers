@@ -2,46 +2,31 @@
    Image: /System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-@interface WKWindowFeatures : NSObject {
-    struct RetainPtr<NSNumber> { 
-        void *m_ptr; 
-    } _allowsResizing;
-    struct RetainPtr<NSNumber> { 
-        void *m_ptr; 
-    } _height;
-    struct RetainPtr<NSNumber> { 
-        void *m_ptr; 
-    } _menuBarVisibility;
-    struct RetainPtr<NSNumber> { 
-        void *m_ptr; 
-    } _statusBarVisibility;
-    struct RetainPtr<NSNumber> { 
-        void *m_ptr; 
-    } _toolbarsVisibility;
-    struct RetainPtr<NSNumber> { 
-        void *m_ptr; 
-    } _width;
-    struct RetainPtr<NSNumber> { 
-        void *m_ptr; 
-    } _x;
-    struct RetainPtr<NSNumber> { 
-        void *m_ptr; 
-    } _y;
+@interface WKWindowFeatures : NSObject <WKObject> {
+    struct ObjectStorage<API::WindowFeatures> { 
+        struct type { 
+            unsigned char __lx[60]; 
+        } data; 
+    }  _windowFeatures;
 }
 
+@property (readonly) /* Warning: unhandled struct encoding: '{Object=^^?@}' */ struct Object { int (**x1)(); id x2; }*_apiObject;
 @property (nonatomic, readonly) NSNumber *allowsResizing;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property (nonatomic, readonly) NSNumber *height;
 @property (nonatomic, readonly) NSNumber *menuBarVisibility;
 @property (nonatomic, readonly) NSNumber *statusBarVisibility;
+@property (readonly) Class superclass;
 @property (nonatomic, readonly) NSNumber *toolbarsVisibility;
 @property (nonatomic, readonly) NSNumber *width;
 @property (nonatomic, readonly) NSNumber *x;
 @property (nonatomic, readonly) NSNumber *y;
 
-- (id).cxx_construct;
-- (void).cxx_destruct;
-- (id)_initWithWindowFeatures:(const struct WindowFeatures { float x1; bool x2; float x3; bool x4; float x5; bool x6; float x7; bool x8; bool x9; bool x10; bool x11; bool x12; bool x13; bool x14; bool x15; bool x16; struct Vector<WTF::String, 0, WTF::CrashOnOverflow, 16> { struct String {} *x_17_1_1; unsigned int x_17_1_2; unsigned int x_17_1_3; } x17; }*)arg1;
+- (/* Warning: unhandled struct encoding: '{Object=^^?@}' */ struct Object { int (**x1)(); id x2; }*)_apiObject;
 - (id)allowsResizing;
+- (void)dealloc;
 - (id)height;
 - (id)menuBarVisibility;
 - (id)statusBarVisibility;

@@ -3,8 +3,8 @@
  */
 
 @interface SSDownloadAuthenticationChallengeSender : NSObject <NSURLAuthenticationChallengeSender> {
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    SSDownloadAuthenticationSession *_session;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    SSDownloadAuthenticationSession * _session;
 }
 
 @property (readonly) SSDownloadAuthenticationSession *authenticationSession;

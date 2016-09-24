@@ -3,7 +3,7 @@
  */
 
 @interface CDXClient : NSObject {
-    struct addrinfo { int x1; int x2; int x3; int x4; unsigned int x5; char *x6; struct sockaddr {} *x7; struct addrinfo {} *x8; } *cdxMappedIPv4Addr;
+    struct addrinfo { int x1; int x2; int x3; int x4; unsigned int x5; char *x6; struct sockaddr {} *x7; struct addrinfo {} *x8; } * cdxMappedIPv4Addr;
     struct sockaddr_in { 
         unsigned char sin_len; 
         unsigned char sin_family; 
@@ -12,29 +12,29 @@
             unsigned int s_addr; 
         } sin_addr; 
         BOOL sin_zero[8]; 
-    } cdxaddr_ipv4;
-    <CDXClientDelegate> *delegate_;
-    NSError *error_;
-    int fd_;
-    int holePunchAttemptCount_;
-    double holePunchInterval_;
-    unsigned long long holePunchSID_;
-    NSObject<OS_dispatch_source> *holePunchTimer_;
-    unsigned short localPort_;
-    void *padding_;
-    unsigned short port_;
-    id /* block */ preblobCallback_;
-    BOOL preblobIsUpToDate_;
-    NSData *preblob_;
-    unsigned long long prevHolePunchSID_;
-    NSObject<OS_dispatch_queue> *queue_;
-    int restartCount_;
-    struct __CFRunLoopSource { } *scDynamicStoreRunLoopSource_;
-    struct __SCDynamicStore { } *scDynamicStore_;
-    NSString *server_;
-    NSMutableDictionary *sessionLookup_;
-    NSObject<OS_dispatch_source> *source_;
-    BOOL willReconfigureShortly_;
+    }  cdxaddr_ipv4;
+    <CDXClientDelegate> * delegate_;
+    NSError * error_;
+    int  fd_;
+    int  holePunchAttemptCount_;
+    double  holePunchInterval_;
+    unsigned int  holePunchSID_;
+    NSObject<OS_dispatch_source> * holePunchTimer_;
+    unsigned short  localPort_;
+    void * padding_;
+    unsigned short  port_;
+    id /* block */  preblobCallback_;
+    BOOL  preblobIsUpToDate_;
+    NSData * preblob_;
+    unsigned int  prevHolePunchSID_;
+    NSObject<OS_dispatch_queue> * queue_;
+    int  restartCount_;
+    struct __CFRunLoopSource { } * scDynamicStoreRunLoopSource_;
+    struct __SCDynamicStore { } * scDynamicStore_;
+    NSString * server_;
+    NSMutableDictionary * sessionLookup_;
+    NSObject<OS_dispatch_source> * source_;
+    BOOL  willReconfigureShortly_;
 }
 
 @property (nonatomic) <CDXClientDelegate> *delegate;

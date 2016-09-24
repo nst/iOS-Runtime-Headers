@@ -6,7 +6,7 @@
 @required
 
 - (NSArray *)labelItems;
-- (unsigned long long)muid;
+- (unsigned int)muid;
 - (NSString *)name;
 - (int)providerID;
 - (NSURL *)urlToOpen;

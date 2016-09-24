@@ -3,9 +3,9 @@
  */
 
 @interface CKDPLikedId : PBCodable <NSCopying> {
-    CKDPIdentifier *_commentIdentifier;
-    NSData *_itemId;
-    CKDPShareIdentifier *_shareIdentifier;
+    CKDPIdentifier * _commentIdentifier;
+    NSData * _itemId;
+    CKDPShareIdentifier * _shareIdentifier;
 }
 
 @property (nonatomic, retain) CKDPIdentifier *commentIdentifier;

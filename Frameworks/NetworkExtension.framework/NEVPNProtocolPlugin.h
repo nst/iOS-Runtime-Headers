@@ -3,7 +3,7 @@
  */
 
 @interface NEVPNProtocolPlugin : NEVPNProtocol {
-    NSString *_pluginType;
+    NSString * _pluginType;
 }
 
 @property (readonly) NSString *pluginType;

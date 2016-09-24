@@ -3,10 +3,10 @@
  */
 
 @interface NPKProtoRemoteAdminPerformRequest : PBRequest <NSCopying> {
-    NSString *_command;
-    NSData *_infoDictionary;
-    NSString *_seid;
-    NSData *_url;
+    NSString * _command;
+    NSData * _infoDictionary;
+    NSString * _seid;
+    NSData * _url;
 }
 
 @property (nonatomic, retain) NSString *command;

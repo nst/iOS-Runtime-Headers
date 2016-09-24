@@ -3,12 +3,12 @@
  */
 
 @interface PKPaymentCredential : NSObject {
-    int _credentialType;
-    PKPaymentEligibilityResponse *_eligibilityResponse;
-    NSString *_expiration;
-    NSString *_longDescription;
-    PKPaymentRequirementsResponse *_requirementsResponse;
-    NSString *_sanitizedPrimaryAccountNumber;
+    int  _credentialType;
+    PKPaymentEligibilityResponse * _eligibilityResponse;
+    NSString * _expiration;
+    NSString * _longDescription;
+    PKPaymentRequirementsResponse * _requirementsResponse;
+    NSString * _sanitizedPrimaryAccountNumber;
 }
 
 @property (nonatomic) int credentialType;
@@ -18,8 +18,10 @@
 @property (nonatomic, retain) PKPaymentRequirementsResponse *requirementsResponse;
 @property (nonatomic, copy) NSString *sanitizedPrimaryAccountNumber;
 
++ (id)fakeRemoteCredentials;
+
+- (void).cxx_destruct;
 - (int)credentialType;
-- (void)dealloc;
 - (id)eligibilityResponse;
 - (id)expiration;
 - (BOOL)isLocalPassCredential;

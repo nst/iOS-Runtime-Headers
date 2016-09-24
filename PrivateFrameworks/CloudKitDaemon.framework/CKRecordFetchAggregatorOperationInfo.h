@@ -3,9 +3,9 @@
  */
 
 @interface CKRecordFetchAggregatorOperationInfo : CKDatabaseOperationInfo {
-    NSSet *_desiredKeys;
-    BOOL _fetchAssetContents;
-    BOOL _preserveOrdering;
+    NSSet * _desiredKeys;
+    BOOL  _fetchAssetContents;
+    BOOL  _preserveOrdering;
 }
 
 @property (nonatomic, retain) NSSet *desiredKeys;

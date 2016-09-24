@@ -3,8 +3,8 @@
  */
 
 @interface CSLocalizedString : NSString <CSCoderEncoder> {
-    NSString *_defaultString;
-    NSDictionary *_localizedStrings;
+    NSString * _defaultString;
+    NSDictionary * _localizedStrings;
 }
 
 @property (nonatomic, readonly) NSString *defaultString;

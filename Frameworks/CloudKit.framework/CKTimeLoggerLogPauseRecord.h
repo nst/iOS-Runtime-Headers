@@ -3,8 +3,8 @@
  */
 
 @interface CKTimeLoggerLogPauseRecord : NSObject {
-    NSString *_message;
-    double _time;
+    NSString * _message;
+    double  _time;
 }
 
 @property (nonatomic, retain) NSString *message;

@@ -3,13 +3,13 @@
  */
 
 @interface AWDIMessageDeduplicated : PBCodable <NSCopying> {
-    unsigned int _deduplicationInterval;
-    NSString *_guid;
+    unsigned int  _deduplicationInterval;
+    NSString * _guid;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int deduplicationInterval : 1; 
-    } _has;
-    unsigned long long _timestamp;
+    }  _has;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) unsigned int deduplicationInterval;

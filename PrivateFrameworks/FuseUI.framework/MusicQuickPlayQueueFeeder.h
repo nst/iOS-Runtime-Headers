@@ -3,8 +3,8 @@
  */
 
 @interface MusicQuickPlayQueueFeeder : MPQueueFeeder {
-    MPPlaceholderAVItem *_placeholderItem;
-    NSOperationQueue *_requestQueue;
+    MPPlaceholderAVItem * _placeholderItem;
+    NSOperationQueue * _requestQueue;
 }
 
 - (void).cxx_destruct;

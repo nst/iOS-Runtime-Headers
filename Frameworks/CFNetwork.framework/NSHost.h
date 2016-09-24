@@ -3,9 +3,9 @@
  */
 
 @interface NSHost : NSObject {
-    NSArray *addresses;
-    NSArray *names;
-    id reserved;
+    NSArray * addresses;
+    NSArray * names;
+    id  reserved;
 }
 
 @property (readonly, copy) NSString *address;

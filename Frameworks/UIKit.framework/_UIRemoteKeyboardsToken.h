@@ -3,7 +3,7 @@
  */
 
 @interface _UIRemoteKeyboardsToken : NSObject {
-    int _identifier;
+    int  _identifier;
 }
 
 + (id)uniqueToken;

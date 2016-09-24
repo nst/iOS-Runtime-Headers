@@ -3,7 +3,7 @@
  */
 
 @interface DDRemoteActionViewControllerProvider : NSObject {
-    DDRemoteActionContext *_actionContext;
+    DDRemoteActionContext * _actionContext;
 }
 
 @property (readonly) DDRemoteActionContext *actionContext;

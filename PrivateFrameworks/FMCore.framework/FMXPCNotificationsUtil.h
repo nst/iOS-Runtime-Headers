@@ -3,9 +3,9 @@
  */
 
 @interface FMXPCNotificationsUtil : NSObject {
-    NSMutableDictionary *_darwinNotificationHandlers;
-    NSMutableDictionary *_distributedNotificationHandlers;
-    NSObject<OS_dispatch_queue> *_modificationQueue;
+    NSMutableDictionary * _darwinNotificationHandlers;
+    NSMutableDictionary * _distributedNotificationHandlers;
+    NSObject<OS_dispatch_queue> * _modificationQueue;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *darwinNotificationHandlers;

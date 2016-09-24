@@ -3,7 +3,7 @@
  */
 
 @interface DMFControlSessionIdentifier : DMFControlGroupIdentifier {
-    unsigned int _leaderIP;
+    unsigned int  _leaderIP;
 }
 
 @property unsigned int leaderIP;

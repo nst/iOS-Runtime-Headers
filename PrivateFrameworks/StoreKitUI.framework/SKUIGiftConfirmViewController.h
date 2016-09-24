@@ -3,10 +3,10 @@
  */
 
 @interface SKUIGiftConfirmViewController : SKUIGiftStepViewController {
-    SKUIGiftConfirmView *_confirmView;
-    BOOL _isShowingConfirmation;
-    SKUIGiftPurchaseRequest *_purchaseRequest;
-    SKUIFocusedTouchGestureRecognizer *_touchRecognizer;
+    SKUIGiftConfirmView * _confirmView;
+    BOOL  _isShowingConfirmation;
+    SKUIGiftPurchaseRequest * _purchaseRequest;
+    SKUIFocusedTouchGestureRecognizer * _touchRecognizer;
 }
 
 - (void).cxx_destruct;

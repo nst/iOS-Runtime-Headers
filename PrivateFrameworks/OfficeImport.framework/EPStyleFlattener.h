@@ -3,22 +3,22 @@
  */
 
 @interface EPStyleFlattener : EDProcessor {
-    EDColumnInfoCollection *mColumnInfos;
-    EDRowBlock *mCurrentRowBlock;
-    ECIntToTwoIntKeyCache *mFillCache;
-    int mFirstColumn;
-    unsigned int mFirstColumnStripeSize;
-    int mFirstRow;
-    unsigned int mFirstRowStripeSize;
-    ECIntToTwoIntKeyCache *mFlattenedStyleCache;
-    NSArray *mKeys;
-    int mLastColumn;
-    int mLastRow;
-    NSMutableArray *mRanges;
-    EDRowBlocks *mRowBlocks;
-    unsigned int mSecondColumnStripeSize;
-    unsigned int mSecondRowStripeSize;
-    EDWorksheet *mWorksheet;
+    EDColumnInfoCollection * mColumnInfos;
+    EDRowBlock * mCurrentRowBlock;
+    ECIntToTwoIntKeyCache * mFillCache;
+    int  mFirstColumn;
+    unsigned int  mFirstColumnStripeSize;
+    int  mFirstRow;
+    unsigned int  mFirstRowStripeSize;
+    ECIntToTwoIntKeyCache * mFlattenedStyleCache;
+    NSArray * mKeys;
+    int  mLastColumn;
+    int  mLastRow;
+    NSMutableArray * mRanges;
+    EDRowBlocks * mRowBlocks;
+    unsigned int  mSecondColumnStripeSize;
+    unsigned int  mSecondRowStripeSize;
+    EDWorksheet * mWorksheet;
 }
 
 - (void)applyDifferentialStyle:(id)arg1 borderFlags:(int)arg2 precedence:(unsigned int)arg3 toCell:(struct EDCellHeader {}**)arg4 row:(int)arg5 column:(int)arg6;

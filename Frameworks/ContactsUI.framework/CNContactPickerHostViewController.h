@@ -3,10 +3,10 @@
  */
 
 @interface CNContactPickerHostViewController : _UIRemoteViewController <CNContactPickerContentViewController, CNContactPickerHostProtocol> {
-    void *_addressBook;
-    <NSCopying> *_currentRequestIdentifier;
-    <CNContactPickerContentDelegate> *_delegate;
-    NSExtension *_extension;
+    void * _addressBook;
+    <NSCopying> * _currentRequestIdentifier;
+    <CNContactPickerContentDelegate> * _delegate;
+    NSExtension * _extension;
 }
 
 @property (nonatomic, retain) <NSCopying> *currentRequestIdentifier;

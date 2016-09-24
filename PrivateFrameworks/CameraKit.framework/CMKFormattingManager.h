@@ -3,8 +3,8 @@
  */
 
 @interface CMKFormattingManager : NSObject {
-    BOOL _supportsVerticalText;
-    BOOL _wantsCustomKerning;
+    BOOL  _supportsVerticalText;
+    BOOL  _wantsCustomKerning;
 }
 
 @property (nonatomic, readonly) BOOL supportsVerticalText;

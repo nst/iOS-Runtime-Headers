@@ -3,7 +3,7 @@
  */
 
 @interface PKPassPersonalizationImageSet : PKPassImageSet {
-    PKImage *_logoImage;
+    PKImage * _logoImage;
 }
 
 @property (nonatomic, retain) PKImage *logoImage;
@@ -12,7 +12,7 @@
 + (BOOL)shouldCache;
 + (BOOL)supportsSecureCoding;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;

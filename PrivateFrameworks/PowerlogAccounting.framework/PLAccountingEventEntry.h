@@ -3,11 +3,13 @@
  */
 
 @interface PLAccountingEventEntry : PLEntry {
-    PLAccountingRange *_range;
+    PLAccountingRange * _range;
+    BOOL  _used;
 }
 
 @property (nonatomic, readonly) int instanceDirectionality;
 @property (nonatomic, retain) PLAccountingRange *range;
+@property (nonatomic) BOOL used;
 
 + (int)classDirectionality;
 
@@ -21,5 +23,7 @@
 - (id)range;
 - (id)rangeSinceEvent:(id)arg1;
 - (void)setRange:(id)arg1;
+- (void)setUsed:(BOOL)arg1;
+- (BOOL)used;
 
 @end

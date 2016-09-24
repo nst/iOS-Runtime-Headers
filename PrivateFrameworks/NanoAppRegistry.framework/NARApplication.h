@@ -3,21 +3,26 @@
  */
 
 @interface NARApplication : NSObject <NSSecureCoding> {
-    NARGlance *_glance;
-    NSDictionary *_iTunesPlistStrings;
-    NSDictionary *_infoPlist;
-    NSString *_launchServicesBundleType;
-    NSDictionary *_localizedStrings;
-    NSString *_parentApplicationBundleIdentifier;
-    unsigned int _sequenceNumber;
+    NARApplicationState * _appState;
+    NSArray * _appTags;
+    NARGlance * _glance;
+    NSDictionary * _iTunesPlistStrings;
+    NSDictionary * _infoPlist;
+    NSString * _launchServicesBundleType;
+    NSDictionary * _localizedStrings;
+    NSString * _parentApplicationBundleIdentifier;
+    unsigned int  _sequenceNumber;
 }
 
+@property (nonatomic, retain) NARApplicationState *appState;
+@property (nonatomic, retain) NSArray *appTags;
 @property (nonatomic, readonly) NSString *applicationIdentifier;
 @property (nonatomic, readonly) NSString *bundleName;
 @property (nonatomic, readonly) NSString *bundleVersion;
 @property (nonatomic, retain) NARGlance *glance;
 @property (nonatomic, retain) NSDictionary *iTunesPlistStrings;
 @property (nonatomic, retain) NSDictionary *infoPlist;
+@property (nonatomic, readonly) BOOL isHidden;
 @property (nonatomic, readonly) NSString *itemName;
 @property (nonatomic, copy) NSString *launchServicesBundleType;
 @property (nonatomic, readonly) NSArray *localizations;
@@ -33,6 +38,8 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)appState;
+- (id)appTags;
 - (id)applicationIdentifier;
 - (id)bundleName;
 - (id)bundleVersion;
@@ -42,6 +49,7 @@
 - (id)iTunesPlistStrings;
 - (id)infoPlist;
 - (id)initWithCoder:(id)arg1;
+- (BOOL)isHidden;
 - (id)itemName;
 - (id)launchServicesBundleType;
 - (id)localizations;
@@ -53,6 +61,8 @@
 - (id)objectForInfoDictionaryKey:(id)arg1 localization:(id)arg2;
 - (id)parentApplicationBundleIdentifier;
 - (unsigned int)sequenceNumber;
+- (void)setAppState:(id)arg1;
+- (void)setAppTags:(id)arg1;
 - (void)setGlance:(id)arg1;
 - (void)setITunesPlistStrings:(id)arg1;
 - (void)setInfoPlist:(id)arg1;

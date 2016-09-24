@@ -6,6 +6,7 @@
 
 - (Class)foregroundStyleClass;
 - (float)heightForMetrics:(int)arg1;
+- (BOOL)isLockScreen;
 - (BOOL)shouldShowInternalItemType:(int)arg1 withScreenCapabilities:(id)arg2;
 
 @end

@@ -3,10 +3,10 @@
  */
 
 @interface RadioTrackHistorySectionInfo : NSObject <NSCopying, NSFetchedResultsSectionInfo, NSMutableCopying> {
-    NSString *_indexTitle;
-    NSString *_name;
-    unsigned int _numberOfObjects;
-    NSArray *_objects;
+    NSString * _indexTitle;
+    NSString * _name;
+    unsigned int  _numberOfObjects;
+    NSArray * _objects;
 }
 
 @property (nonatomic, readonly) NSString *indexTitle;

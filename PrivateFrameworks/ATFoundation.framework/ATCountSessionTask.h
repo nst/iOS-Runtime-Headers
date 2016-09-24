@@ -3,9 +3,9 @@
  */
 
 @interface ATCountSessionTask : ATSessionTask {
-    unsigned int _count;
-    unsigned int _maxCount;
-    NSObject<OS_dispatch_source> *_timer;
+    unsigned int  _count;
+    unsigned int  _maxCount;
+    NSObject<OS_dispatch_source> * _timer;
 }
 
 - (void).cxx_destruct;

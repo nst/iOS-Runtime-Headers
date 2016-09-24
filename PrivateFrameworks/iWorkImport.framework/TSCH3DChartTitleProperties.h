@@ -3,10 +3,10 @@
  */
 
 @interface TSCH3DChartTitleProperties : NSObject {
-    TSCH3DChartTitlePositioner *mCachedPositioner;
-    BOOL mHidden;
-    TSCHChartInfo *mInfo;
-    TSCH3DLabelResources *mLabels;
+    TSCH3DChartTitlePositioner * mCachedPositioner;
+    BOOL  mHidden;
+    TSCHChartInfo * mInfo;
+    TSCH3DLabelResources * mLabels;
 }
 
 @property (nonatomic, retain) TSCH3DChartTitlePositioner *cachedPositioner;

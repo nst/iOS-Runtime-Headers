@@ -3,9 +3,9 @@
  */
 
 @interface NAUIUsageStatistics : NSObject {
-    NSMutableDictionary *_nextAllowedUsageEventType;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSString *_usageStatisticsDomain;
+    NSMutableDictionary * _nextAllowedUsageEventType;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSString * _usageStatisticsDomain;
 }
 
 @property (nonatomic, readonly) NSString *usageStatisticsDomain;

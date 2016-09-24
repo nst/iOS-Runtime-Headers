@@ -6,11 +6,11 @@
     struct { 
         double latitude; 
         double longitude; 
-    } _alightLocationCoordinate;
-    GEOComposedRouteStep *_alightStep;
-    GEOComposedRouteStep *_boardStep;
-    unsigned int _progressionCount;
-    double _startProgressionDistanceToDestination;
+    }  _alightLocationCoordinate;
+    GEOComposedRouteStep * _alightStep;
+    GEOComposedRouteStep * _boardStep;
+    unsigned int  _progressionCount;
+    double  _startProgressionDistanceToDestination;
 }
 
 - (void)dealloc;

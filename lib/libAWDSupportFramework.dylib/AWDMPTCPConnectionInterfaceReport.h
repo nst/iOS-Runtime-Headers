@@ -3,8 +3,8 @@
  */
 
 @interface AWDMPTCPConnectionInterfaceReport : PBCodable <NSCopying> {
-    long long _dataInKB;
-    long long _dataOutKB;
+    long long  _dataInKB;
+    long long  _dataOutKB;
     struct { 
         unsigned int dataInKB : 1; 
         unsigned int dataOutKB : 1; 
@@ -12,17 +12,17 @@
         unsigned int secondaryFlowFailureCount : 1; 
         unsigned int secondaryFlowSuccessCount : 1; 
         unsigned int postConnectTcpFallbackCount : 1; 
-    } _has;
-    NSString *_interfaceName;
+    }  _has;
+    NSString * _interfaceName;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _postConnectSubflowFailureErrors;
-    BOOL _postConnectTcpFallbackCount;
-    int _secondaryFlowFailureCount;
-    int _secondaryFlowSuccessCount;
-    unsigned long long _timestamp;
+    }  _postConnectSubflowFailureErrors;
+    BOOL  _postConnectTcpFallbackCount;
+    int  _secondaryFlowFailureCount;
+    int  _secondaryFlowSuccessCount;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) long long dataInKB;

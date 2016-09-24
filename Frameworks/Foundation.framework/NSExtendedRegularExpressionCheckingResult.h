@@ -6,8 +6,8 @@
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _ranges;
-    NSRegularExpression *_regularExpression;
+    }  _ranges;
+    NSRegularExpression * _regularExpression;
 }
 
 - (BOOL)_adjustRangesWithOffset:(int)arg1;

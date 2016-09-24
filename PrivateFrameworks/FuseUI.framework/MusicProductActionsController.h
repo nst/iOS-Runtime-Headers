@@ -3,9 +3,9 @@
  */
 
 @interface MusicProductActionsController : NSObject <MusicClientContextConsuming> {
-    MusicClientContext *_clientContext;
-    NSDictionary *_extraInfo;
-    MusicProductActionsTemplateViewElement *_templateViewElement;
+    MusicClientContext * _clientContext;
+    NSDictionary * _extraInfo;
+    MusicProductActionsTemplateViewElement * _templateViewElement;
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;

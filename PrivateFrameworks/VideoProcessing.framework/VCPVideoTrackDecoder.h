@@ -3,8 +3,10 @@
  */
 
 @interface VCPVideoTrackDecoder : NSObject {
-    AVAssetTrack *_track;
+    AVAssetTrack * _track;
 }
+
++ (struct { int x1; int x2; })decodeDimensionsForTrack:(id)arg1;
 
 - (void).cxx_destruct;
 - (struct opaqueCMSampleBuffer { }*)copyNextSampleBuffer;

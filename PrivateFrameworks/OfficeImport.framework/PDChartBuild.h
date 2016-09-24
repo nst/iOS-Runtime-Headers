@@ -3,7 +3,7 @@
  */
 
 @interface PDChartBuild : PDBuild {
-    int mChartBuildType;
+    int  mChartBuildType;
 }
 
 - (id)initWithBuildType:(int)arg1;

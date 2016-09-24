@@ -3,8 +3,8 @@
  */
 
 @interface _MCDStackItem : NSObject {
-    NSString *_identifier;
-    NSIndexPath *_indexPath;
+    NSString * _identifier;
+    NSIndexPath * _indexPath;
 }
 
 @property (nonatomic, readonly) NSString *identifier;

@@ -3,13 +3,13 @@
  */
 
 @interface CAStateControllerLayer : NSObject {
-    CAState *_currentState;
-    CALayer *_layer;
-    float _nextSpeed;
-    CAState *_nextState;
-    NSTimer *_nextTimer;
-    NSMutableArray *_transitions;
-    CAStateControllerUndo *_undoStack;
+    CAState * _currentState;
+    CALayer * _layer;
+    double  _nextSpeed;
+    CAState * _nextState;
+    NSTimer * _nextTimer;
+    NSMutableArray * _transitions;
+    CAStateControllerUndo * _undoStack;
 }
 
 @property (nonatomic, retain) CAState *currentState;

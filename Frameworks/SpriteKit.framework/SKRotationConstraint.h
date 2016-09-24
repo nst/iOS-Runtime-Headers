@@ -3,7 +3,7 @@
  */
 
 @interface SKRotationConstraint : SKConstraint {
-    SKRange *_zRotationRange;
+    SKRange * _zRotationRange;
 }
 
 @property (copy) SKRange *zRotationRange;

@@ -3,24 +3,24 @@
  */
 
 @interface CKDPSubscription : PBCodable <NSCopying> {
-    int _evaluationType;
-    NSMutableArray *_filters;
-    BOOL _fireOnce;
+    int  _evaluationType;
+    NSMutableArray * _filters;
+    BOOL  _fireOnce;
     struct { 
         unsigned int evaluationType : 1; 
         unsigned int owner : 1; 
         unsigned int fireOnce : 1; 
-    } _has;
-    CKDPIdentifier *_identifier;
+    }  _has;
+    CKDPIdentifier * _identifier;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _mutationTriggers;
-    CKDPSubscriptionNotification *_notification;
-    int _owner;
-    NSMutableArray *_recordTypes;
-    CKDPRecordZoneIdentifier *_zoneIdentifier;
+    }  _mutationTriggers;
+    CKDPSubscriptionNotification * _notification;
+    int  _owner;
+    NSMutableArray * _recordTypes;
+    CKDPRecordZoneIdentifier * _zoneIdentifier;
 }
 
 @property (nonatomic) int evaluationType;
@@ -40,7 +40,13 @@
 @property (nonatomic, retain) NSMutableArray *recordTypes;
 @property (nonatomic, retain) CKDPRecordZoneIdentifier *zoneIdentifier;
 
++ (Class)filtersType;
++ (Class)recordTypesType;
+
 - (void).cxx_destruct;
+- (int)StringAsEvaluationType:(id)arg1;
+- (int)StringAsMutationTriggers:(id)arg1;
+- (int)StringAsOwner:(id)arg1;
 - (void)addFilters:(id)arg1;
 - (void)addMutationTriggers:(int)arg1;
 - (void)addRecordTypes:(id)arg1;
@@ -53,6 +59,7 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (int)evaluationType;
+- (id)evaluationTypeAsString:(int)arg1;
 - (id)filters;
 - (id)filtersAtIndex:(unsigned int)arg1;
 - (unsigned int)filtersCount;
@@ -68,10 +75,12 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (int*)mutationTriggers;
+- (id)mutationTriggersAsString:(int)arg1;
 - (int)mutationTriggersAtIndex:(unsigned int)arg1;
 - (unsigned int)mutationTriggersCount;
 - (id)notification;
 - (int)owner;
+- (id)ownerAsString:(int)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (id)recordTypes;
 - (id)recordTypesAtIndex:(unsigned int)arg1;

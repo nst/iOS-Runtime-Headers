@@ -3,13 +3,13 @@
  */
 
 @interface PUPhotoEditValuesCalculator : NSObject {
-    CIImage *_baseImage;
-    NSObject<OS_dispatch_queue> *_computationQueue;
-    NSObject<OS_dispatch_group> *_computingValuesGroup;
-    PUPhotoEditImageValues *_currentImageValues;
-    PUPhotoEditImageValues *_initialImageValues;
-    PLPhotoEditModel *_photoEditModel;
-    PLPhotoEditModel *_photoEditModelForCurrentValues;
+    CIImage * _baseImage;
+    NSObject<OS_dispatch_queue> * _computationQueue;
+    NSObject<OS_dispatch_group> * _computingValuesGroup;
+    PUPhotoEditImageValues * _currentImageValues;
+    PUPhotoEditImageValues * _initialImageValues;
+    PLPhotoEditModel * _photoEditModel;
+    PLPhotoEditModel * _photoEditModelForCurrentValues;
 }
 
 @property (nonatomic, retain) CIImage *baseImage;

@@ -3,15 +3,15 @@
  */
 
 @interface _IDSAccountController : NSObject <IDSDaemonListenerProtocol> {
-    BOOL _accountsLoaded;
-    NSMutableSet *_cachedAccounts;
-    id _delegateContext;
-    NSMapTable *_delegateToInfo;
-    NSMutableSet *_enabledAccounts;
-    BOOL _isLocalAccountVisible;
-    NSString *_service;
-    NSString *_serviceToken;
-    NSMutableDictionary *_transactionIDToHandlersMap;
+    BOOL  _accountsLoaded;
+    NSMutableSet * _cachedAccounts;
+    id  _delegateContext;
+    NSMapTable * _delegateToInfo;
+    NSMutableSet * _enabledAccounts;
+    BOOL  _isLocalAccountVisible;
+    NSString * _service;
+    NSString * _serviceToken;
+    NSMutableDictionary * _transactionIDToHandlersMap;
 }
 
 @property (nonatomic, readonly, retain) NSSet *accounts;
@@ -19,6 +19,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, retain) NSSet *enabledAccounts;
 @property (readonly) unsigned int hash;
+@property (nonatomic, readonly, retain) NSSet *internalAccounts;
 @property (nonatomic, readonly, retain) NSString *serviceName;
 @property (readonly) Class superclass;
 

@@ -3,25 +3,25 @@
  */
 
 @interface SBKUniversalPlaybackPositionStore : NSObject {
-    id _accountsObserver;
-    unsigned int _automaticSynchronizeOptions;
-    double _autorefreshInterval;
-    SBKAsynchronousTask *_bagLookupTask;
-    SBKAsynchronousTask *_currentTask;
-    SBKRequestHandler *_currentTaskRequestHandler;
-    <SBKUniversalPlaybackPositionDataSource> *_dataSource;
-    NSDate *_dateToFireNextTimer;
-    NSString *_domain;
-    BOOL _hasLocalChangesToSync;
-    double _initialAutosyncInterval;
-    BOOL _isActive;
-    SBKAsynchronousTask *_lookupDomainVersionTask;
-    NSMutableArray *_pendingTaskBlocks;
-    double _pollingLimitFromBag;
-    id _prefsObserver;
-    NSObject<OS_dispatch_queue> *_queue;
-    BOOL _refreshTimerActive;
-    NSTimer *_timer;
+    id  _accountsObserver;
+    unsigned int  _automaticSynchronizeOptions;
+    double  _autorefreshInterval;
+    SBKAsynchronousTask * _bagLookupTask;
+    SBKAsynchronousTask * _currentTask;
+    SBKRequestHandler * _currentTaskRequestHandler;
+    <SBKUniversalPlaybackPositionDataSource> * _dataSource;
+    NSDate * _dateToFireNextTimer;
+    NSString * _domain;
+    BOOL  _hasLocalChangesToSync;
+    double  _initialAutosyncInterval;
+    BOOL  _isActive;
+    SBKAsynchronousTask * _lookupDomainVersionTask;
+    NSMutableArray * _pendingTaskBlocks;
+    double  _pollingLimitFromBag;
+    id  _prefsObserver;
+    NSObject<OS_dispatch_queue> * _queue;
+    BOOL  _refreshTimerActive;
+    NSTimer * _timer;
 }
 
 @property unsigned int automaticSynchronizeOptions;

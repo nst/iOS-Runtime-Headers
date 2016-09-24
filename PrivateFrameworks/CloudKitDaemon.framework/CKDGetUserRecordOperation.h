@@ -3,7 +3,7 @@
  */
 
 @interface CKDGetUserRecordOperation : CKDFetchRecordsOperation {
-    CKRecord *_userRecord;
+    CKRecord * _userRecord;
 }
 
 @property (nonatomic, retain) CKRecord *userRecord;

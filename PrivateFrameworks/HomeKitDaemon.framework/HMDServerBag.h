@@ -3,13 +3,13 @@
  */
 
 @interface HMDServerBag : NSObject <NSURLSessionDelegate> {
-    NSDictionary *_dictionaryRepresentation;
-    unsigned int _environment;
-    NSObject<OS_dispatch_queue> *_propertyQueue;
-    BOOL _refreshing;
-    NSURL *_url;
-    NSURLSession *_urlSession;
-    NSObject<OS_dispatch_queue> *_workQueue;
+    NSDictionary * _dictionaryRepresentation;
+    unsigned int  _environment;
+    NSObject<OS_dispatch_queue> * _propertyQueue;
+    BOOL  _refreshing;
+    NSURL * _url;
+    NSURLSession * _urlSession;
+    NSObject<OS_dispatch_queue> * _workQueue;
 }
 
 @property (nonatomic, readonly) double accessoryReportTimeout;

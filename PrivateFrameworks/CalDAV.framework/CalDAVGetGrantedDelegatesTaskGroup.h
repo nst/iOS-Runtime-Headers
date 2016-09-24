@@ -3,8 +3,8 @@
  */
 
 @interface CalDAVGetGrantedDelegatesTaskGroup : CalDAVGetDelegatesBaseTaskGroup {
-    BOOL _fetchPrincipalDetails;
-    int _state;
+    BOOL  _fetchPrincipalDetails;
+    int  _state;
 }
 
 @property (nonatomic) BOOL fetchPrincipalDetails;

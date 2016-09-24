@@ -3,7 +3,7 @@
  */
 
 @interface OADTextBodyAutoFit : NSObject {
-    unsigned char mType;
+    unsigned char  mType;
 }
 
 - (id)description;

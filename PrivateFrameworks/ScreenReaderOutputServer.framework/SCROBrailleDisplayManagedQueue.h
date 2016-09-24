@@ -3,11 +3,11 @@
  */
 
 @interface SCROBrailleDisplayManagedQueue : NSObject {
-    struct __CFDictionary { } *_displayQueueDict;
-    unsigned int _maxActiveQueueSize;
-    struct __CFDictionary { } *_queueStateDict;
-    SCRCIndexMap *_stateQueueMap;
-    SCRCIndexMap *_tokenDisplayMap;
+    struct __CFDictionary { } * _displayQueueDict;
+    unsigned int  _maxActiveQueueSize;
+    struct __CFDictionary { } * _queueStateDict;
+    SCRCIndexMap * _stateQueueMap;
+    SCRCIndexMap * _tokenDisplayMap;
 }
 
 - (void)_fillActiveBrailleDisplayQueue;

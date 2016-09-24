@@ -7,6 +7,7 @@
 - (void)acceptVisitor:(id)arg1;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)instructionalText;
+- (BOOL)isSelectable;
 - (int)kind;
 - (Class)layoutClass;
 - (id)localizedChunkNameForTextureDeliveryStyle:(unsigned int)arg1 animationFilter:(id)arg2 chunkIndex:(unsigned int)arg3;

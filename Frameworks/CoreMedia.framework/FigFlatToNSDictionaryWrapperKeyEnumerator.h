@@ -3,9 +3,9 @@
  */
 
 @interface FigFlatToNSDictionaryWrapperKeyEnumerator : NSEnumerator {
-    int _counter;
-    struct { /* ? */ } **_keys;
-    int _keysCount;
+    int  _counter;
+    struct { /* ? */ } ** _keys;
+    int  _keysCount;
 }
 
 - (id)allObjects;

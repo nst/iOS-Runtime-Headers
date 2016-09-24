@@ -3,8 +3,8 @@
  */
 
 @interface BLTPBSelectorItem : NSObject {
-    int (*_method;
-    SEL _selector;
+    int (* _method;
+    SEL  _selector;
 }
 
 @property (nonatomic) int (*method;

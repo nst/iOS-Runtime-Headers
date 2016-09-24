@@ -3,8 +3,8 @@
  */
 
 @interface OCPPackageRelationshipCollection : NSObject {
-    NSMutableDictionary *mIdentifierMap;
-    NSMutableDictionary *mTypeMap;
+    NSMutableDictionary * mIdentifierMap;
+    NSMutableDictionary * mTypeMap;
 }
 
 - (void)dealloc;

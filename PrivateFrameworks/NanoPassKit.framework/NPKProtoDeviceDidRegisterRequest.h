@@ -3,14 +3,21 @@
  */
 
 @interface NPKProtoDeviceDidRegisterRequest : PBRequest <NSCopying> {
-    NSMutableArray *_brokerRegionPushTopics;
-    NSMutableArray *_tsmRegionPushTopics;
-    NSMutableArray *_tsmRegionURLs;
+    NSMutableArray * _brokerRegionPushTopics;
+    NSString * _primaryRegionTopic;
+    NSMutableArray * _tsmRegionPushTopics;
+    NSMutableArray * _tsmRegionURLs;
 }
 
 @property (nonatomic, retain) NSMutableArray *brokerRegionPushTopics;
+@property (nonatomic, readonly) BOOL hasPrimaryRegionTopic;
+@property (nonatomic, retain) NSString *primaryRegionTopic;
 @property (nonatomic, retain) NSMutableArray *tsmRegionPushTopics;
 @property (nonatomic, retain) NSMutableArray *tsmRegionURLs;
+
++ (Class)brokerRegionPushTopicsType;
++ (Class)tsmRegionPushTopicsType;
++ (Class)tsmRegionURLsType;
 
 - (void).cxx_destruct;
 - (void)addBrokerRegionPushTopics:(id)arg1;
@@ -26,11 +33,14 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (BOOL)hasPrimaryRegionTopic;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
+- (id)primaryRegionTopic;
 - (BOOL)readFrom:(id)arg1;
 - (void)setBrokerRegionPushTopics:(id)arg1;
+- (void)setPrimaryRegionTopic:(id)arg1;
 - (void)setTsmRegionPushTopics:(id)arg1;
 - (void)setTsmRegionURLs:(id)arg1;
 - (id)tsmRegionPushTopics;

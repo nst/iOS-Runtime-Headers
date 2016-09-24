@@ -3,12 +3,12 @@
  */
 
 @interface SCROClient : NSObject {
-    struct __CFSet { } *_callbackSet;
-    unsigned int _identifier;
-    NSLock *_lock;
-    int _pid;
-    unsigned int _port;
-    struct __CFArray { } *_queue;
+    struct __CFSet { } * _callbackSet;
+    unsigned int  _identifier;
+    NSLock * _lock;
+    int  _pid;
+    unsigned int  _port;
+    struct __CFArray { } * _queue;
 }
 
 + (id)addClientGetIdentifier:(unsigned int*)arg1 token:(struct { unsigned int x1[8]; })arg2 getPort:(unsigned int*)arg3;

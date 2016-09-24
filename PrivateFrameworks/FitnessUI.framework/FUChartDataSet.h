@@ -3,10 +3,10 @@
  */
 
 @interface FUChartDataSet : NSObject {
-    NSArray *_data;
-    <FUChartDataSetDataSource> *_dataSource;
-    NSArray *_labels;
-    int _tag;
+    NSArray * _data;
+    <FUChartDataSetDataSource> * _dataSource;
+    NSArray * _labels;
+    int  _tag;
 }
 
 @property (nonatomic) <FUChartDataSetDataSource> *dataSource;

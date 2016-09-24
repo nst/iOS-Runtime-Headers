@@ -3,9 +3,9 @@
  */
 
 @interface SSVAppleAccountStore : NSObject {
-    ACAccountStore *_accountStore;
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    ACAccount *_primaryAppleAccount;
+    ACAccountStore * _accountStore;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    ACAccount * _primaryAppleAccount;
 }
 
 @property (readonly) ACAccount *primaryAppleAccount;

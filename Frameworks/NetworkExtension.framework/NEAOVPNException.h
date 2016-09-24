@@ -3,9 +3,9 @@
  */
 
 @interface NEAOVPNException : NSObject <NSCopying, NSSecureCoding> {
-    int _action;
-    NSString *_bundleIdentifier;
-    NSString *_serviceName;
+    int  _action;
+    NSString * _bundleIdentifier;
+    NSString * _serviceName;
 }
 
 @property int action;

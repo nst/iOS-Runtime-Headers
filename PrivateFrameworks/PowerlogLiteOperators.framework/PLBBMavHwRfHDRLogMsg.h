@@ -3,17 +3,17 @@
  */
 
 @interface PLBBMavHwRfHDRLogMsg : PLBasebandMessage {
-    NSMutableDictionary *_commonInfo;
-    NSString *_error;
-    unsigned char _inited;
-    NSMutableDictionary *_kvPairs;
-    NSNumber *_lDTXOffFrame;
-    NSNumber *_lDTXOnFrame;
-    NSNumber *_logDuration;
-    NSNumber *_sDTXOffFrame;
-    NSNumber *_sDTXOnFrame;
-    NSNumber *_tDTXOffFrame;
-    NSNumber *_tDTXOnFrame;
+    NSMutableDictionary * _commonInfo;
+    NSString * _error;
+    unsigned char  _inited;
+    NSMutableDictionary * _kvPairs;
+    NSNumber * _lDTXOffFrame;
+    NSNumber * _lDTXOnFrame;
+    NSNumber * _logDuration;
+    NSNumber * _sDTXOffFrame;
+    NSNumber * _sDTXOnFrame;
+    NSNumber * _tDTXOffFrame;
+    NSNumber * _tDTXOnFrame;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *commonInfo;

@@ -3,16 +3,16 @@
  */
 
 @interface SKUINavigationBarContext : NSObject {
-    SKUIClientContext *_clientContext;
-    float _maximumNavigationBarWidth;
-    NSOperationQueue *_operationQueue;
-    UIViewController *_parentViewController;
-    SKUIResourceLoader *_resourceLoader;
-    SKUILayoutCache *_textLayoutCache;
+    SKUIClientContext * _clientContext;
+    double  _maximumNavigationBarWidth;
+    NSOperationQueue * _operationQueue;
+    UIViewController * _parentViewController;
+    SKUIResourceLoader * _resourceLoader;
+    SKUILayoutCache * _textLayoutCache;
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;
-@property (nonatomic) float maximumNavigationBarWidth;
+@property (nonatomic) double maximumNavigationBarWidth;
 @property (nonatomic, retain) NSOperationQueue *operationQueue;
 @property (nonatomic) UIViewController *parentViewController;
 @property (nonatomic, retain) SKUIResourceLoader *resourceLoader;

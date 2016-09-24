@@ -3,13 +3,13 @@
  */
 
 @interface GEODirectionsRequestFeedback : PBCodable <NSCopying> {
-    NSString *_appIdentifier;
+    NSString * _appIdentifier;
     struct { 
         unsigned int purpose : 1; 
         unsigned int source : 1; 
-    } _has;
-    int _purpose;
-    int _source;
+    }  _has;
+    int  _purpose;
+    int  _source;
 }
 
 @property (nonatomic, retain) NSString *appIdentifier;
@@ -19,6 +19,8 @@
 @property (nonatomic) int purpose;
 @property (nonatomic) int source;
 
+- (int)StringAsPurpose:(id)arg1;
+- (int)StringAsSource:(id)arg1;
 - (id)appIdentifier;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -35,6 +37,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (int)purpose;
+- (id)purposeAsString:(int)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setAppIdentifier:(id)arg1;
 - (void)setHasPurpose:(BOOL)arg1;
@@ -42,6 +45,7 @@
 - (void)setPurpose:(int)arg1;
 - (void)setSource:(int)arg1;
 - (int)source;
+- (id)sourceAsString:(int)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -3,13 +3,13 @@
  */
 
 @interface SFReaderAppearanceThemeSelectorTableViewCell : UITableViewCell {
-    <SFReaderAppearanceThemeSelectorTableViewCellDelegate> *_delegate;
-    UIButton *_grayButton;
-    UIButton *_nightButton;
-    int _selectedTheme;
-    UIButton *_sepiaButton;
-    UIStackView *_stackView;
-    UIButton *_whiteButton;
+    <SFReaderAppearanceThemeSelectorTableViewCellDelegate> * _delegate;
+    UIButton * _grayButton;
+    UIButton * _nightButton;
+    int  _selectedTheme;
+    UIButton * _sepiaButton;
+    UIStackView * _stackView;
+    UIButton * _whiteButton;
 }
 
 @property (nonatomic) <SFReaderAppearanceThemeSelectorTableViewCellDelegate> *delegate;

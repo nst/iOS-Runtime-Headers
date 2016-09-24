@@ -3,9 +3,9 @@
  */
 
 @interface CBClient : NSObject {
-    CBAdaptationClient *_adaptationClient;
-    CBBlueLightClient *_blueLightClient;
-    BrightnessSystemClient *bsc;
+    CBAdaptationClient * _adaptationClient;
+    CBBlueLightClient * _blueLightClient;
+    BrightnessSystemClient * bsc;
 }
 
 @property (readonly) CBAdaptationClient *adaptationClient;

@@ -3,11 +3,11 @@
  */
 
 @interface _UINavigationBarVisualStyleEnvironment : NSObject <NSCopying> {
-    BOOL _containedInPopover;
-    int _metrics;
-    _UINavigationBarVisualStyle *_primaryStyle;
-    _UINavigationBarVisualStyle *_secondaryStyle;
-    BOOL _wantsLetterpressContent;
+    BOOL  _containedInPopover;
+    int  _metrics;
+    _UINavigationBarVisualStyle * _primaryStyle;
+    _UINavigationBarVisualStyle * _secondaryStyle;
+    BOOL  _wantsLetterpressContent;
 }
 
 @property (getter=isContainedInPopover, nonatomic, readonly) BOOL containedInPopover;

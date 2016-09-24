@@ -3,7 +3,7 @@
  */
 
 @interface UIApplicationRotationFollowingController : UIViewController {
-    BOOL _sizesWindowToScene;
+    BOOL  _sizesWindowToScene;
 }
 
 @property (nonatomic) BOOL sizesWindowToScene;

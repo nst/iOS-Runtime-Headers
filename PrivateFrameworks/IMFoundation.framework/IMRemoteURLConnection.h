@@ -3,22 +3,24 @@
  */
 
 @interface IMRemoteURLConnection : NSObject {
-    id /* block */ _block;
-    NSString *_bundleIdentifierForDataUsage;
-    BOOL _cancelled;
-    int _concurrentConnections;
-    NSObject<OS_xpc_object> *_connection;
-    BOOL _disableKeepAlive;
-    BOOL _forceCellularIfPossible;
-    int _keepAliveCell;
-    int _keepAliveWifi;
-    BOOL _loading;
-    NSURLRequest *_request;
-    BOOL _requireIDSHost;
-    int _retries;
-    BOOL _shouldUsePipelining;
+    BOOL  _alwaysForceCellular;
+    id /* block */  _block;
+    NSString * _bundleIdentifierForDataUsage;
+    BOOL  _cancelled;
+    int  _concurrentConnections;
+    NSObject<OS_xpc_object> * _connection;
+    BOOL  _disableKeepAlive;
+    BOOL  _forceCellularIfPossible;
+    int  _keepAliveCell;
+    int  _keepAliveWifi;
+    BOOL  _loading;
+    NSURLRequest * _request;
+    BOOL  _requireIDSHost;
+    int  _retries;
+    BOOL  _shouldUsePipelining;
 }
 
+@property BOOL alwaysForceCellular;
 @property (copy) id /* block */ block;
 @property (retain) NSString *bundleIdentifierForDataUsage;
 @property int concurrentConnections;
@@ -33,6 +35,7 @@
 - (BOOL)_connect;
 - (BOOL)_disconnect;
 - (void)_disconnected;
+- (BOOL)alwaysForceCellular;
 - (id /* block */)block;
 - (id)bundleIdentifierForDataUsage;
 - (void)cancel;
@@ -46,6 +49,7 @@
 - (void)load;
 - (id)request;
 - (BOOL)requireIDSHost;
+- (void)setAlwaysForceCellular:(BOOL)arg1;
 - (void)setBlock:(id /* block */)arg1;
 - (void)setBundleIdentifierForDataUsage:(id)arg1;
 - (void)setConcurrentConnections:(int)arg1;

@@ -3,8 +3,8 @@
  */
 
 @interface SKUIFamilySettingDescription : SKUISettingDescription {
-    int _viewState;
-    SKUISettingsFamilyViewStateCoordinator *_viewStateCoordinator;
+    int  _viewState;
+    SKUISettingsFamilyViewStateCoordinator * _viewStateCoordinator;
 }
 
 @property (nonatomic, readonly) int viewState;

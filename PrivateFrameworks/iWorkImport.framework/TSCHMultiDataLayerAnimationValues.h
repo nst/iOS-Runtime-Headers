@@ -3,11 +3,11 @@
  */
 
 @interface TSCHMultiDataLayerAnimationValues : NSObject {
-    NSString *mKey;
-    NSArray *mKeyTimes;
-    CALayer *mLayer;
-    BOOL mNeedPresentationLayerValues;
-    NSArray *mValues;
+    NSString * mKey;
+    NSArray * mKeyTimes;
+    CALayer * mLayer;
+    BOOL  mNeedPresentationLayerValues;
+    NSArray * mValues;
 }
 
 @property (nonatomic, readonly) NSString *key;

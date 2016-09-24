@@ -3,11 +3,11 @@
  */
 
 @interface ACSystemConfigManager : NSObject {
-    int _applySkipCount;
-    NSObject<OS_dispatch_queue> *_preferencesQueue;
-    struct __SCPreferences { } *_preferencesSession;
-    NSObject<OS_dispatch_queue> *_timerQueue;
-    NSObject<OS_dispatch_source> *_timerSource;
+    int  _applySkipCount;
+    NSObject<OS_dispatch_queue> * _preferencesQueue;
+    struct __SCPreferences { } * _preferencesSession;
+    NSObject<OS_dispatch_queue> * _timerQueue;
+    NSObject<OS_dispatch_source> * _timerSource;
 }
 
 + (id)_livingInstance;

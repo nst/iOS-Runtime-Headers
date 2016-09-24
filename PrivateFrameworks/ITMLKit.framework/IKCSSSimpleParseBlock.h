@@ -3,7 +3,7 @@
  */
 
 @interface IKCSSSimpleParseBlock : IKCSSParseBlock {
-    int _associatedToken;
+    int  _associatedToken;
 }
 
 @property (nonatomic) int associatedToken;

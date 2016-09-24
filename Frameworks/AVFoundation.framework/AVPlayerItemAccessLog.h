@@ -3,13 +3,14 @@
  */
 
 @interface AVPlayerItemAccessLog : NSObject <NSCopying> {
-    AVPlayerItemAccessLogInternal *_playerItemAccessLog;
+    AVPlayerItemAccessLogInternal * _playerItemAccessLog;
 }
 
 @property (nonatomic, readonly) NSArray *events;
 @property (nonatomic, readonly) unsigned int extendedLogDataStringEncoding;
 
 - (id)_accessLogArray;
+- (id)_common_init;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;

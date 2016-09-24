@@ -3,12 +3,12 @@
  */
 
 @interface CNAutocompleteQueryResponseUniqueResultFinder : NSObject {
-    id /* block */ _duplicateResultHandler;
-    NSIndexSet *_firstIndexes;
-    NSDictionary *_hashIndex;
-    NSMutableArray *_hashes;
-    NSMutableIndexSet *_uniqueResultIndexes;
-    NSMutableArray *_uniqueResults;
+    id /* block */  _duplicateResultHandler;
+    NSIndexSet * _firstIndexes;
+    NSDictionary * _hashIndex;
+    NSMutableArray * _hashes;
+    NSMutableIndexSet * _uniqueResultIndexes;
+    NSMutableArray * _uniqueResults;
 }
 
 + (id)findUniqueResults:(id)arg1 duplicateResultHandler:(id /* block */)arg2;

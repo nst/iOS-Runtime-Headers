@@ -3,8 +3,8 @@
  */
 
 @interface PLActivityScheduler : NSObject {
-    NSMutableDictionary *_activities;
-    NSObject<OS_dispatch_queue> *_workQueue;
+    NSMutableDictionary * _activities;
+    NSObject<OS_dispatch_queue> * _workQueue;
 }
 
 @property (retain) NSMutableDictionary *activities;

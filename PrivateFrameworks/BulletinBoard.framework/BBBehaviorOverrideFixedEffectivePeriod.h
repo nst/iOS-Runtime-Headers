@@ -3,9 +3,9 @@
  */
 
 @interface BBBehaviorOverrideFixedEffectivePeriod : NSObject <BBBehaviorOverrideEffectivePeriod> {
-    double _effectiveInterval;
-    NSUUID *_identifier;
-    NSDate *_startDate;
+    double  _effectiveInterval;
+    NSUUID * _identifier;
+    NSDate * _startDate;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -18,9 +18,9 @@
 
 + (BOOL)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (BOOL)containsDate:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (double)effectiveInterval;
 - (void)encodeWithCoder:(id)arg1;
 - (id)identifier;

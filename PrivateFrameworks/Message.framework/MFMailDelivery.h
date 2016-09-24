@@ -3,27 +3,27 @@
  */
 
 @interface MFMailDelivery : NSObject {
-    DeliveryAccount *_account;
-    MailAccount *_archiveAccount;
-    NSArray *_charsets;
-    NSDictionary *_compositionSpecification;
-    unsigned long long _conversationFlags;
-    id _delegate;
-    MFMutableMessageHeaders *_headers;
-    NSString *_htmlString;
-    BOOL _isUserRequested;
-    MFMessage *_message;
-    NSArray *_mixedContent;
-    NSArray *_otherStringsAndAttachments;
-    MFPlainTextDocument *_plainTextAlternative;
-    MFDeliveryResult *_result;
-    BOOL _textPartsAreHTML;
-    unsigned int _threaded;
-    unsigned int _useCellDataOnly;
+    DeliveryAccount * _account;
+    MailAccount * _archiveAccount;
+    NSArray * _charsets;
+    NSDictionary * _compositionSpecification;
+    unsigned int  _conversationFlags;
+    id  _delegate;
+    MFMutableMessageHeaders * _headers;
+    NSString * _htmlString;
+    BOOL  _isUserRequested;
+    MFMessage * _message;
+    NSArray * _mixedContent;
+    NSArray * _otherStringsAndAttachments;
+    MFPlainTextDocument * _plainTextAlternative;
+    MFDeliveryResult * _result;
+    BOOL  _textPartsAreHTML;
+    unsigned int  _threaded;
+    unsigned int  _useCellDataOnly;
 }
 
 @property (nonatomic, retain) NSDictionary *compositionSpecification;
-@property (nonatomic) unsigned long long conversationFlags;
+@property (nonatomic) unsigned int conversationFlags;
 @property (nonatomic) BOOL isUserRequested;
 
 + (BOOL)deliverMessage:(id)arg1;
@@ -35,7 +35,7 @@
 - (void)archive;
 - (id)archiveAccount;
 - (id)compositionSpecification;
-- (unsigned long long)conversationFlags;
+- (unsigned int)conversationFlags;
 - (void)dealloc;
 - (id)delegate;
 - (void)deliverAsynchronously;
@@ -56,7 +56,7 @@
 - (void)setArchiveAccount:(id)arg1;
 - (void)setCellDataOnly:(BOOL)arg1;
 - (void)setCompositionSpecification:(id)arg1;
-- (void)setConversationFlags:(unsigned long long)arg1;
+- (void)setConversationFlags:(unsigned int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setIsUserRequested:(BOOL)arg1;
 - (BOOL)shouldEncryptMessage;

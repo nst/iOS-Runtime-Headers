@@ -3,9 +3,9 @@
  */
 
 @interface SKUIIndexBarSingleEntryListController : SKUIIndexBarEntryListController {
-    SKUIViewElement *_descriptiveViewElement;
-    SKUIIndexBarEntryDescriptor *_entryDescriptor;
-    SKUIIndexBarEntryViewElement *_entryViewElement;
+    SKUIViewElement * _descriptiveViewElement;
+    SKUIIndexBarEntryDescriptor * _entryDescriptor;
+    SKUIIndexBarEntryViewElement * _entryViewElement;
 }
 
 @property (nonatomic, readonly) SKUIIndexBarEntryViewElement *entryViewElement;

@@ -3,9 +3,9 @@
  */
 
 @interface MFPLevelsEffect : MFPEffect {
-    int mHighlight;
-    int mMidtone;
-    int mShadow;
+    int  mHighlight;
+    int  mMidtone;
+    int  mShadow;
 }
 
 + (id)GUID;

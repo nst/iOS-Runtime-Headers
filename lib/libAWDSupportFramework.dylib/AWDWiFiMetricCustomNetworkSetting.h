@@ -3,10 +3,10 @@
  */
 
 @interface AWDWiFiMetricCustomNetworkSetting : PBCodable <NSCopying> {
-    unsigned int _autoProxySetCount;
-    unsigned int _bootpSetCount;
-    unsigned int _customNetworkCount;
-    unsigned int _dhcpSetCount;
+    unsigned int  _autoProxySetCount;
+    unsigned int  _bootpSetCount;
+    unsigned int  _customNetworkCount;
+    unsigned int  _dhcpSetCount;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int autoProxySetCount : 1; 
@@ -16,11 +16,11 @@
         unsigned int manualProxySetCount : 1; 
         unsigned int staticSetCount : 1; 
         unsigned int totalNetworkCount : 1; 
-    } _has;
-    unsigned int _manualProxySetCount;
-    unsigned int _staticSetCount;
-    unsigned long long _timestamp;
-    unsigned int _totalNetworkCount;
+    }  _has;
+    unsigned int  _manualProxySetCount;
+    unsigned int  _staticSetCount;
+    unsigned long long  _timestamp;
+    unsigned int  _totalNetworkCount;
 }
 
 @property (nonatomic) unsigned int autoProxySetCount;

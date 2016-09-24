@@ -3,12 +3,12 @@
  */
 
 @interface SYTransaction : NSObject <SYChangeTracking> {
-    NSMutableArray *_changes;
-    id /* block */ _completion;
-    NSDictionary *_contextInfo;
-    NSDictionary *_idsOptions;
-    int _inTransaction;
-    SYLegacyStore *_store;
+    NSMutableArray * _changes;
+    id /* block */  _completion;
+    NSDictionary * _contextInfo;
+    NSDictionary * _idsOptions;
+    bool  _inTransaction;
+    SYLegacyStore * _store;
 }
 
 @property (nonatomic, retain) NSMutableArray *changes;

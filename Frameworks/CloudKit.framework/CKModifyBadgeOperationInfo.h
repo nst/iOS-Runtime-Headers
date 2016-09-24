@@ -3,7 +3,7 @@
  */
 
 @interface CKModifyBadgeOperationInfo : CKDatabaseOperationInfo <NSSecureCoding> {
-    unsigned int _badgeValue;
+    unsigned int  _badgeValue;
 }
 
 @property (nonatomic) unsigned int badgeValue;

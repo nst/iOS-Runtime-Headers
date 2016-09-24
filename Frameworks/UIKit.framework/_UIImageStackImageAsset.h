@@ -3,8 +3,8 @@
  */
 
 @interface _UIImageStackImageAsset : UIImageAsset {
-    CUICatalog *_catalog;
-    NSData *_stackData;
+    CUICatalog * _catalog;
+    NSData * _stackData;
 }
 
 @property (nonatomic, retain) CUICatalog *catalog;

@@ -3,7 +3,7 @@
  */
 
 @interface SKUILoadMoreCell : SKUITableViewCell {
-    UIActivityIndicatorView *_indicator;
+    UIActivityIndicatorView * _indicator;
 }
 
 - (void).cxx_destruct;

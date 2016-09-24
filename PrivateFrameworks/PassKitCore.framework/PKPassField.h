@@ -3,16 +3,18 @@
  */
 
 @interface PKPassField : NSObject <NSSecureCoding> {
-    NSString *_changeMessage;
-    unsigned int _dataDetectorTypes;
-    NSString *_key;
-    NSString *_label;
-    int _textAlignment;
-    int _type;
-    id _unformattedValue;
-    NSString *_value;
+    int  _cellStyle;
+    NSString * _changeMessage;
+    unsigned int  _dataDetectorTypes;
+    NSString * _key;
+    NSString * _label;
+    int  _textAlignment;
+    int  _type;
+    id  _unformattedValue;
+    NSString * _value;
 }
 
+@property (nonatomic) int cellStyle;
 @property (nonatomic, copy) NSString *changeMessage;
 @property (nonatomic) unsigned int dataDetectorTypes;
 @property (nonatomic, copy) NSString *key;
@@ -24,9 +26,10 @@
 
 + (BOOL)supportsSecureCoding;
 
+- (void).cxx_destruct;
+- (int)cellStyle;
 - (id)changeMessage;
 - (unsigned int)dataDetectorTypes;
-- (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (void)flushCachedValue;
@@ -35,6 +38,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)key;
 - (id)label;
+- (void)setCellStyle:(int)arg1;
 - (void)setChangeMessage:(id)arg1;
 - (void)setDataDetectorTypes:(unsigned int)arg1;
 - (void)setKey:(id)arg1;

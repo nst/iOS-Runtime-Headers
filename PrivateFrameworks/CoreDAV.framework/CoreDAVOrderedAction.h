@@ -3,8 +3,8 @@
  */
 
 @interface CoreDAVOrderedAction : CoreDAVAction {
-    int _absoluteOrder;
-    NSURL *_priorURL;
+    int  _absoluteOrder;
+    NSURL * _priorURL;
 }
 
 @property (nonatomic, readonly) int absoluteOrder;

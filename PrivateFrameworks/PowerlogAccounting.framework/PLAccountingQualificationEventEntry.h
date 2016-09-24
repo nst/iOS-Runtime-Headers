@@ -3,7 +3,7 @@
  */
 
 @interface PLAccountingQualificationEventEntry : PLAccountingEventEntry {
-    NSSet *_childNodeIDs;
+    NSSet * _childNodeIDs;
 }
 
 @property (nonatomic, readonly) NSSet *childNodeIDs;

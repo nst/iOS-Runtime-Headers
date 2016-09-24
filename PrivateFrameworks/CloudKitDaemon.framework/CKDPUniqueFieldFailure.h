@@ -3,7 +3,7 @@
  */
 
 @interface CKDPUniqueFieldFailure : PBCodable <NSCopying> {
-    CKDPIdentifier *_identifierForConstraintFailure;
+    CKDPIdentifier * _identifierForConstraintFailure;
 }
 
 @property (nonatomic, readonly) BOOL hasIdentifierForConstraintFailure;

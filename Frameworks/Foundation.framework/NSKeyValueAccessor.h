@@ -3,15 +3,15 @@
  */
 
 @interface NSKeyValueAccessor : NSObject {
-    id _containerClassID;
-    void *_extraArgument1;
-    void *_extraArgument2;
-    void *_extraArgument3;
-    unsigned int _extraArgumentCount;
-    unsigned long _hash;
-    int (*_implementation;
-    NSString *_key;
-    SEL _selector;
+    id  _containerClassID;
+    void * _extraArgument1;
+    void * _extraArgument2;
+    void * _extraArgument3;
+    unsigned int  _extraArgumentCount;
+    unsigned long  _hash;
+    int (* _implementation;
+    NSString * _key;
+    SEL  _selector;
 }
 
 - (id)containerClassID;

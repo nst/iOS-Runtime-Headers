@@ -3,15 +3,16 @@
  */
 
 @interface BBRemoteDataProviderConnectionResolver : NSObject <BBDataProviderConnectionCheckinServer, BBDataProviderStore, BBRemoteDataProviderStoreDelegate, NSXPCListenerDelegate> {
-    NSMutableDictionary *_dataProviderConnectionsBySectionID;
-    NSMutableDictionary *_dataProviderConnectionsByService;
-    NSMutableDictionary *_dataProviderConnectionsByUniversalSectionID;
-    <BBDataProviderStoreDelegate> *_delegate;
-    NSXPCListener *_listener;
-    int _listeningToken;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSObject<OS_dispatch_queue> *_registerQueue;
-    NSMutableDictionary *_xpcConnectionsByService;
+    BKSApplicationStateMonitor * _appStateMonitor;
+    NSMutableDictionary * _dataProviderConnectionsBySectionID;
+    NSMutableDictionary * _dataProviderConnectionsByService;
+    NSMutableDictionary * _dataProviderConnectionsByUniversalSectionID;
+    <BBDataProviderStoreDelegate> * _delegate;
+    NSXPCListener * _listener;
+    int  _listeningToken;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSObject<OS_dispatch_queue> * _registerQueue;
+    NSMutableDictionary * _xpcConnectionsByService;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -20,7 +21,9 @@
 @property (readonly) Class superclass;
 
 + (id)resolverWithDelegate:(id)arg1;
++ (id)xpcInterface;
 
+- (void).cxx_destruct;
 - (void)_registerForPublicationNotification;
 - (void)_registerServiceName:(id)arg1 appBundleID:(id)arg2 completion:(id /* block */)arg3;
 - (id)dataProviderForSectionID:(id)arg1;

@@ -3,10 +3,10 @@
  */
 
 @interface SUScriptDownloadQueue : SUScriptObject <SSDownloadManagerObserver, SSPreorderManagerObserver> {
-    SUClientInterface *_clientInterface;
-    SUDownloadManager *_downloadManager;
-    SSPreorderManager *_preorderManager;
-    NSString *_queueType;
+    SUClientInterface * _clientInterface;
+    SUDownloadManager * _downloadManager;
+    SSPreorderManager * _preorderManager;
+    NSString * _queueType;
 }
 
 @property (readonly, copy) NSString *debugDescription;

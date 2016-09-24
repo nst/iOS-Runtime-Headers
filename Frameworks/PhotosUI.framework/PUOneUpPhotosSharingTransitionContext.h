@@ -3,7 +3,7 @@
  */
 
 @interface PUOneUpPhotosSharingTransitionContext : PUPhotosSharingTransitionContext {
-    PUAssetReference *_currentAssetReference;
+    PUAssetReference * _currentAssetReference;
 }
 
 @property (nonatomic, retain) PUAssetReference *currentAssetReference;

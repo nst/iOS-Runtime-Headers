@@ -3,33 +3,33 @@
  */
 
 @interface GKDiscoveryPeerConnection : NSObject <GKSimpleTimerDelegate> {
-    BOOL _connected;
-    id /* block */ _connectedHandler;
-    GKAsyncSocket *_connectionSocket;
-    double _connectionTimeoutInSeconds;
-    unsigned int _currentSequenceNumber;
-    NSMutableData *_dataReceived;
-    NSMutableData *_dataToSendHoldingQueue;
-    double _heartbeatIntervalInSeconds;
-    GKSimpleTimer *_heartbeatTimeoutTimer;
-    GKSimpleTimer *_heartbeatTimer;
-    NSString *_localServiceName;
-    NSMutableArray *_messageReceiptHandlerHoldingQueue;
-    NSMutableArray *_messageReceiptHandlerList;
-    id /* block */ _receiveDataHandler;
-    NSMutableArray *_receivedDataHoldingQueue;
-    NSString *_remoteServiceName;
-    NSObject<OS_dispatch_queue> *_syncQueue;
-    NSObject<OS_dispatch_queue> *_targetQueue;
-    GKSimpleTimer *_timeoutTimer;
+    BOOL  _connected;
+    id /* block */  _connectedHandler;
+    GKAsyncSocket * _connectionSocket;
+    double  _connectionTimeoutInSeconds;
+    unsigned int  _currentSequenceNumber;
+    NSMutableData * _dataReceived;
+    NSMutableData * _dataToSendHoldingQueue;
+    double  _heartbeatIntervalInSeconds;
+    GKSimpleTimer * _heartbeatTimeoutTimer;
+    GKSimpleTimer * _heartbeatTimer;
+    NSString * _localServiceName;
+    NSMutableArray * _messageReceiptHandlerHoldingQueue;
+    NSMutableArray * _messageReceiptHandlerList;
+    id /* block */  _receiveDataHandler;
+    NSMutableArray * _receivedDataHoldingQueue;
+    NSString * _remoteServiceName;
+    NSObject<OS_dispatch_queue> * _syncQueue;
+    NSObject<OS_dispatch_queue> * _targetQueue;
+    GKSimpleTimer * _timeoutTimer;
 }
 
 @property (nonatomic, copy) id /* block */ connectedHandler;
 @property (nonatomic, copy) NSString *localServiceName;
 @property (nonatomic, copy) id /* block */ receiveDataHandler;
 @property (nonatomic, copy) NSString *remoteServiceName;
-@property (nonatomic) NSObject<OS_dispatch_queue> *syncQueue;
-@property (nonatomic) NSObject<OS_dispatch_queue> *targetQueue;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *syncQueue;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *targetQueue;
 
 + (void)checkConstants;
 + (unsigned int)receiveDataLimit;

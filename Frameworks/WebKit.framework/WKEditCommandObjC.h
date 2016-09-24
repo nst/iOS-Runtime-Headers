@@ -5,7 +5,7 @@
 @interface WKEditCommandObjC : NSObject {
     struct RefPtr<WebKit::WebEditCommandProxy> { 
         struct WebEditCommandProxy {} *m_ptr; 
-    } m_command;
+    }  m_command;
 }
 
 - (id).cxx_construct;

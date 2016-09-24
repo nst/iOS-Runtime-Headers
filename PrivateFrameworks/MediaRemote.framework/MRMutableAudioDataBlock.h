@@ -5,7 +5,7 @@
 @interface MRMutableAudioDataBlock : MRAudioDataBlock
 
 @property (nonatomic, retain) MRAudioBuffer *buffer;
-@property (nonatomic) float gain;
+@property (nonatomic) double gain;
 @property (nonatomic) struct { double x1; double x2; } time;
 
 - (void)setBuffer:(id)arg1;

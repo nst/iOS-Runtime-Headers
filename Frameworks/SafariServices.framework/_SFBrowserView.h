@@ -3,32 +3,35 @@
  */
 
 @interface _SFBrowserView : UIView {
-    float _bottomBarOffset;
-    UIView *_contentContainerView;
-    _SFCrashBanner *_crashBanner;
-    float _crashBannerOffset;
-    WKWebView *_currentWebView;
-    _SFNavigationBar *_navigationBar;
-    unsigned int _navigationBarBehavior;
-    _SFLinkPreviewHeader *_previewHeader;
-    UIView *_scrollToTopView;
-    BOOL _shouldUseScrollToTopView;
-    _SFBrowserToolbar *_toolbar;
-    float _topBarHeight;
+    double  _bottomBarOffset;
+    UIView * _contentContainerView;
+    _SFCrashBanner * _crashBanner;
+    double  _crashBannerOffset;
+    WKWebView * _currentWebView;
+    BOOL  _hasReceivedTouchEvents;
+    _SFNavigationBar * _navigationBar;
+    unsigned int  _navigationBarBehavior;
+    _SFLinkPreviewHeader * _previewHeader;
+    UIView * _scrollToTopView;
+    BOOL  _shouldUseScrollToTopView;
+    _SFBrowserToolbar * _toolbar;
+    double  _topBarHeight;
 }
 
-@property (nonatomic) float bottomBarOffset;
+@property (nonatomic) double bottomBarOffset;
 @property (nonatomic, readonly) UIView *contentContainerView;
 @property (nonatomic, retain) _SFCrashBanner *crashBanner;
-@property (nonatomic) float crashBannerOffset;
+@property (nonatomic) double crashBannerOffset;
 @property (nonatomic, readonly) WKWebView *currentWebView;
+@property (nonatomic, readonly) BOOL hasReceivedTouchEvents;
 @property (nonatomic, retain) _SFNavigationBar *navigationBar;
 @property (nonatomic) unsigned int navigationBarBehavior;
+@property (nonatomic, readonly) double navigationBarOffset;
 @property (nonatomic, retain) _SFLinkPreviewHeader *previewHeader;
 @property (nonatomic, readonly) UIView *scrollToTopView;
 @property (nonatomic) BOOL shouldUseScrollToTopView;
 @property (nonatomic, retain) _SFBrowserToolbar *toolbar;
-@property (nonatomic) float topBarHeight;
+@property (nonatomic) double topBarHeight;
 
 - (void).cxx_destruct;
 - (void)addWebView:(id)arg1;
@@ -37,10 +40,13 @@
 - (id)crashBanner;
 - (float)crashBannerOffset;
 - (id)currentWebView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)hasReceivedTouchEvents;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)navigationBar;
 - (unsigned int)navigationBarBehavior;
+- (float)navigationBarOffset;
 - (id)previewHeader;
 - (id)scrollToTopView;
 - (void)setBottomBarOffset:(float)arg1;
@@ -55,6 +61,8 @@
 - (BOOL)shouldUseScrollToTopView;
 - (id)toolbar;
 - (float)topBarHeight;
+- (void)updateNavigationBarTintColor:(id)arg1;
 - (void)updatePreviewHeader;
+- (void)updateToolbarTintColor:(id)arg1;
 
 @end

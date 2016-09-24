@@ -3,23 +3,33 @@
  */
 
 @interface _CNThrottledObservable : CNObservable {
-    <CNCancelable> *_delayToken;
-    BOOL _hasResult;
-    double _interval;
-    <CNObservable> *_observable;
-    id _result;
-    unsigned int _resultCounter;
-    <CNScheduler> *_scheduler;
+    <CNCancelable> * _delayToken;
+    double  _interval;
+    id  _mostRecentResult;
+    <CNObservable> * _observable;
+    <CNScheduler> * _observerScheduler;
+    <CNScheduler> * _resourceLock;
 }
 
-- (void)_cancel;
-- (void)_clearResult;
-- (void)_sendCompletionToObserver:(id)arg1;
-- (void)_sendResultToObserver:(id)arg1 withIdentifier:(unsigned int)arg2;
-- (void)_setDelayToken:(id)arg1;
-- (unsigned int)_setResult:(id)arg1;
+@property (retain) <CNCancelable> *delayToken;
+@property (readonly) double interval;
+@property (retain) id mostRecentResult;
+@property (readonly) CNObservable *observable;
+@property (readonly) <CNScheduler> *observerScheduler;
+@property (readonly) <CNScheduler> *resourceLock;
+
+- (void).cxx_destruct;
 - (void)dealloc;
-- (id)initWithInterval:(double)arg1 observable:(id)arg2 scheduler:(id)arg3;
+- (id)delayToken;
+- (id)initWithInterval:(double)arg1 observable:(id)arg2 schedulerProvider:(id)arg3;
+- (double)interval;
+- (id)mostRecentResult;
+- (id)observable;
+- (id)observerScheduler;
+- (void)observerScheduler_sendResultToObserver:(id)arg1;
+- (id)resourceLock;
+- (void)setDelayToken:(id)arg1;
+- (void)setMostRecentResult:(id)arg1;
 - (id)subscribe:(id)arg1;
 
 @end

@@ -3,9 +3,9 @@
  */
 
 @interface MSCLDurationFormatter : NSObject {
-    NSString *_durationFormatString;
-    NSNumberFormatter *_hoursFormatter;
-    NSNumberFormatter *_minutesAndSecondsFormatter;
+    NSString * _durationFormatString;
+    NSNumberFormatter * _hoursFormatter;
+    NSNumberFormatter * _minutesAndSecondsFormatter;
 }
 
 - (void).cxx_destruct;

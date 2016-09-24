@@ -3,8 +3,8 @@
  */
 
 @interface CDAttributeOccurrence : NSObject {
-    NSDate *_date;
-    NSObject *_value;
+    NSDate * _date;
+    NSObject * _value;
 }
 
 @property (readonly) NSDate *date;

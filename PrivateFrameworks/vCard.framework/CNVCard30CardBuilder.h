@@ -3,18 +3,19 @@
  */
 
 @interface CNVCard30CardBuilder : NSObject {
-    unsigned int _countOfLinesBeforePhoto;
-    int _groupCount;
-    <CNVCardLineFactory> *_lineFactory;
-    NSMutableArray *_lines;
-    <CNVCardPerson> *_person;
-    BOOL _photoHandled;
-    id /* block */ _retrofitPhoto;
-    NSMutableArray *_unknownProperties;
+    unsigned int  _countOfLinesBeforePhoto;
+    int  _groupCount;
+    <CNVCardLineFactory> * _lineFactory;
+    NSMutableArray * _lines;
+    <CNVCardPerson> * _person;
+    BOOL  _photoHandled;
+    id /* block */  _retrofitPhoto;
+    NSMutableArray * _unknownProperties;
 }
 
 + (id)builderWithPerson:(id)arg1;
 
+- (void).cxx_destruct;
 - (void)_addAttributesForCropRects:(id)arg1 imageHash:(id)arg2 toLine:(id)arg3;
 - (void)addActivityAlerts;
 - (void)addAlternateBirthday;
@@ -42,6 +43,8 @@
 - (BOOL)addPhotoReferences;
 - (void)addPhotoWithOptions:(id)arg1;
 - (void)addPostalAddresses;
+- (void)addPreferredApplePersonaIdentifier;
+- (void)addPreferredLikenessSource;
 - (void)addPropertyLinesForValues:(id)arg1 generator:(id)arg2;
 - (void)addRelatedNames;
 - (void)addSocialProfiles;
@@ -49,7 +52,6 @@
 - (void)addURLs;
 - (void)addUnknownProperties;
 - (void)buildWithSerializer:(id)arg1;
-- (void)dealloc;
 - (id)initWithPerson:(id)arg1;
 - (void)preparePhotoLineWithOptions:(id)arg1;
 - (void)removeUnknownPropertiesWithTag:(id)arg1;

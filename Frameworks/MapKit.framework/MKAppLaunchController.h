@@ -3,9 +3,9 @@
  */
 
 @interface MKAppLaunchController : NSObject {
-    SSLookupRequest *_request;
-    NSString *_webURLString;
-    NSURL *webURL;
+    SSLookupRequest * _request;
+    NSString * _webURLString;
+    NSURL * webURL;
 }
 
 @property (nonatomic, retain) SSLookupRequest *storeRequest;

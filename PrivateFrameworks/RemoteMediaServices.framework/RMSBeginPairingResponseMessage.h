@@ -6,9 +6,9 @@
     struct { 
         unsigned int responseCode : 1; 
         unsigned int sessionIdentifier : 1; 
-    } _has;
-    int _responseCode;
-    int _sessionIdentifier;
+    }  _has;
+    int  _responseCode;
+    int  _sessionIdentifier;
 }
 
 @property (nonatomic) BOOL hasResponseCode;

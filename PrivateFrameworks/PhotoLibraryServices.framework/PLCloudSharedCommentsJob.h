@@ -3,18 +3,18 @@
  */
 
 @interface PLCloudSharedCommentsJob : PLCloudSharingJob {
-    NSString *_albumGUID;
-    NSString *_assetGUID;
-    NSString *_commentGUID;
-    long long _jobType;
-    NSArray *_msASComments;
-    NSDictionary *_mstreamdInfoDictionary;
+    NSString * _albumGUID;
+    NSString * _assetGUID;
+    NSString * _commentGUID;
+    int  _jobType;
+    NSArray * _msASComments;
+    NSDictionary * _mstreamdInfoDictionary;
 }
 
 @property (nonatomic, retain) NSString *albumGUID;
 @property (nonatomic, retain) NSString *assetGUID;
 @property (nonatomic, retain) NSString *commentGUID;
-@property (nonatomic) long long jobType;
+@property (nonatomic) int jobType;
 @property (nonatomic, retain) NSArray *msASComments;
 @property (nonatomic, retain) NSDictionary *mstreamdInfoDictionary;
 
@@ -27,7 +27,7 @@
 - (id)albumGUID;
 - (id)assetGUID;
 - (id)commentGUID;
-- (long long)daemonOperation;
+- (int)daemonOperation;
 - (void)dealloc;
 - (id)description;
 - (void)encodeToXPCObject:(id)arg1;
@@ -35,7 +35,7 @@
 - (void)executeProcessServerNotificationOfCommentChanges;
 - (void)executePublishCommentToServer;
 - (id)initFromXPCObject:(id)arg1 connection:(id)arg2;
-- (long long)jobType;
+- (int)jobType;
 - (id)msASComments;
 - (id)mstreamdInfoDictionary;
 - (void)run;
@@ -43,7 +43,7 @@
 - (void)setAlbumGUID:(id)arg1;
 - (void)setAssetGUID:(id)arg1;
 - (void)setCommentGUID:(id)arg1;
-- (void)setJobType:(long long)arg1;
+- (void)setJobType:(int)arg1;
 - (void)setMsASComments:(id)arg1;
 - (void)setMstreamdInfoDictionary:(id)arg1;
 - (BOOL)shouldArchiveXPCToDisk;

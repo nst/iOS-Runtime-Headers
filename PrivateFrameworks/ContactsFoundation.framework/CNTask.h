@@ -3,8 +3,8 @@
  */
 
 @interface CNTask : NSObject {
-    BOOL _cancelled;
-    NSString *_name;
+    BOOL  _cancelled;
+    NSString * _name;
 }
 
 @property (getter=isCancelled, readonly) BOOL cancelled;

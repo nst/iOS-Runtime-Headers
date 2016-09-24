@@ -3,7 +3,7 @@
  */
 
 @interface CPLEngineResourceDownloadTaskGroup : NSObject {
-    NSMutableSet *_activeTasks;
+    NSMutableSet * _activeTasks;
 }
 
 @property (nonatomic, readonly) NSSet *activeTasks;

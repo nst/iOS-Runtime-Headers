@@ -3,39 +3,39 @@
  */
 
 @interface PUTilingViewSettings : PUSettings {
-    BOOL _allowPaging;
-    BOOL _allowPreheating;
-    BOOL _allowTileReuse;
-    BOOL _allowsEdgeAntialiasing;
-    float _animationDragCoefficient;
-    BOOL _carryOverVelocities;
-    double _defaultAnimationDuration;
-    float _interactiveTransitionBackgroundDimming;
-    BOOL _rotateDisappearingTiles;
-    BOOL _showVisibleRects;
-    double _springAnimationDuration;
-    BOOL _tintTiles;
-    float _transitionChromeDelay;
-    double _transitionDuration;
-    int _transitionProgressBehavior;
-    BOOL _useOvershootingSpringAnimations;
-    BOOL _useSpringAnimations;
-    BOOL _useSystemSpringAnimations;
+    BOOL  _allowPaging;
+    BOOL  _allowPreheating;
+    BOOL  _allowTileReuse;
+    BOOL  _allowsEdgeAntialiasing;
+    double  _animationDragCoefficient;
+    BOOL  _carryOverVelocities;
+    double  _defaultAnimationDuration;
+    double  _interactiveTransitionBackgroundDimming;
+    BOOL  _rotateDisappearingTiles;
+    BOOL  _showVisibleRects;
+    double  _springAnimationDuration;
+    BOOL  _tintTiles;
+    double  _transitionChromeDelay;
+    double  _transitionDuration;
+    int  _transitionProgressBehavior;
+    BOOL  _useOvershootingSpringAnimations;
+    BOOL  _useSpringAnimations;
+    BOOL  _useSystemSpringAnimations;
 }
 
 @property (nonatomic) BOOL allowPaging;
 @property (nonatomic) BOOL allowPreheating;
 @property (nonatomic) BOOL allowTileReuse;
 @property (nonatomic) BOOL allowsEdgeAntialiasing;
-@property (nonatomic) float animationDragCoefficient;
+@property (nonatomic) double animationDragCoefficient;
 @property (nonatomic) BOOL carryOverVelocities;
 @property (nonatomic) double defaultAnimationDuration;
-@property (nonatomic) float interactiveTransitionBackgroundDimming;
+@property (nonatomic) double interactiveTransitionBackgroundDimming;
 @property (nonatomic) BOOL rotateDisappearingTiles;
 @property (nonatomic) BOOL showVisibleRects;
 @property (nonatomic) double springAnimationDuration;
 @property (nonatomic) BOOL tintTiles;
-@property (nonatomic) float transitionChromeDelay;
+@property (nonatomic) double transitionChromeDelay;
 @property (nonatomic) double transitionDuration;
 @property (nonatomic) int transitionProgressBehavior;
 @property (nonatomic) BOOL useOvershootingSpringAnimations;

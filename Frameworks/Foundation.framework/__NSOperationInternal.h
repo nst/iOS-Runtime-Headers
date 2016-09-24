@@ -3,41 +3,41 @@
  */
 
 @interface __NSOperationInternal : NSObject {
-    int __RC;
-    id __activity;
-    unsigned char __cached_isReady;
-    id __children;
-    id /* block */ __completion;
-    id __dependencies;
-    id __down_dependencies;
-    void *__implicitObsInfo;
-    unsigned char __isBarrier;
-    unsigned char __isCancelled;
-    char *__nameBuffer;
-    NSOperation *__nextOp;
-    NSOperation *__nextPriOp;
-    void *__obsInfo;
-    NSOperation *__outerOp;
-    struct pthread_override_s { } *__ov;
-    unsigned char __pad1;
-    unsigned char __pad3;
-    NSOperation *__prevOp;
-    BOOL __prio;
-    struct _opaque_pthread_t { long x1; struct __darwin_pthread_handler_rec {} *x2; BOOL x3[4088]; } *__pthread;
-    int __qoses;
-    NSOperationQueue *__queue;
-    long long __seqno;
-    int __state;
-    double __thread_prio;
-    long long __unfinished_deps;
+    int  __RC;
+    id  __activity;
+    unsigned char  __cached_isReady;
+    id  __children;
+    id /* block */  __completion;
+    id  __dependencies;
+    id  __down_dependencies;
+    void * __implicitObsInfo;
+    unsigned char  __isBarrier;
+    unsigned char  __isCancelled;
+    char * __nameBuffer;
+    NSOperation * __nextOp;
+    NSOperation * __nextPriOp;
+    void * __obsInfo;
+    NSOperation * __outerOp;
+    struct pthread_override_s { } * __ov;
+    unsigned char  __pad1;
+    unsigned char  __pad3;
+    NSOperation * __prevOp;
+    BOOL  __prio;
+    struct _opaque_pthread_t { long x1; struct __darwin_pthread_handler_rec {} *x2; BOOL x3[4088]; } * __pthread;
+    int  __qoses;
+    NSOperationQueue * __queue;
+    int  __seqno;
+    int  __state;
+    double  __thread_prio;
+    int  __unfinished_deps;
     struct _opaque_pthread_cond_t { 
         long __sig; 
         BOOL __opaque[24]; 
-    } __wait_cond;
+    }  __wait_cond;
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
-    } __wait_mutex;
+    }  __wait_mutex;
 }
 
 + (void)_observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 changeKind:(unsigned int)arg3 oldValue:(id)arg4 newValue:(id)arg5 indexes:(id)arg6 context:(void*)arg7;
@@ -66,7 +66,6 @@
 - (void)_waitUntilFinished:(id)arg1;
 - (void)_waitUntilFinishedOrTimeout:(double)arg1 outer:(id)arg2;
 - (void)dealloc;
-- (void)finalize;
 - (id)init:(id)arg1;
 
 @end

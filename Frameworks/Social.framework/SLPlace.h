@@ -3,17 +3,17 @@
  */
 
 @interface SLPlace : NSObject <MKAnnotation, NSSecureCoding> {
-    NSString *_category;
-    double _distance;
-    NSString *_identifier;
-    double _latitude;
-    double _longitude;
-    NSString *_name;
-    NSURL *_pictureURL;
+    NSString * _category;
+    double  _distance;
+    NSString * _identifier;
+    double  _latitude;
+    double  _longitude;
+    NSString * _name;
+    NSURL * _pictureURL;
 }
 
 @property (retain) NSString *category;
-@property (nonatomic, readonly) struct { double x1; double x2; } coordinate;
+@property (nonatomic, readonly) struct CLLocationCoordinate2D { double x1; double x2; } coordinate;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property double distance;
@@ -31,7 +31,7 @@
 
 - (void).cxx_destruct;
 - (id)category;
-- (struct { double x1; double x2; })coordinate;
+- (struct CLLocationCoordinate2D { double x1; double x2; })coordinate;
 - (id)description;
 - (double)distance;
 - (id)encodableProperties;

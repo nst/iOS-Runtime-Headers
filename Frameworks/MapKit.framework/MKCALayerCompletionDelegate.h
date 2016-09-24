@@ -2,11 +2,15 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface MKCALayerCompletionDelegate : NSObject {
-    id /* block */ _completion;
+@interface MKCALayerCompletionDelegate : NSObject <CAAnimationDelegate> {
+    id /* block */  _completion;
 }
 
 @property (nonatomic, copy) id /* block */ completion;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)delegateWithCompletion:(id /* block */)arg1;
 

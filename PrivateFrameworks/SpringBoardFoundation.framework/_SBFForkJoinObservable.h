@@ -3,9 +3,9 @@
  */
 
 @interface _SBFForkJoinObservable : SBFObservable {
-    NSArray *_observables;
-    NSMutableArray *_results;
-    unsigned int _uncompletedObservableCount;
+    NSArray * _observables;
+    NSMutableArray * _results;
+    unsigned int  _uncompletedObservableCount;
 }
 
 - (void).cxx_destruct;

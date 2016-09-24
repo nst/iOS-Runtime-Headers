@@ -3,12 +3,12 @@
  */
 
 @interface SKUIMediaPlayer : NSObject {
-    MPAVItem *_currentItem;
-    id _periodicTimeObserver;
-    MPAVController *_player;
-    SKUIMediaPlayerItemStatus *_playerItem;
-    BOOL _playing;
-    float _rate;
+    MPAVItem * _currentItem;
+    id  _periodicTimeObserver;
+    MPAVController * _player;
+    SKUIMediaPlayerItemStatus * _playerItem;
+    BOOL  _playing;
+    double  _rate;
 }
 
 @property (nonatomic) MPAVItem *currentItem;
@@ -16,7 +16,7 @@
 @property (nonatomic) MPAVController *player;
 @property (nonatomic, retain) SKUIMediaPlayerItemStatus *playerItem;
 @property (nonatomic) BOOL playing;
-@property (nonatomic) float rate;
+@property (nonatomic) double rate;
 
 - (void).cxx_destruct;
 - (id)currentItem;

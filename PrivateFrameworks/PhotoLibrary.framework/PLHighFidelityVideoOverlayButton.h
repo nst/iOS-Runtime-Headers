@@ -3,11 +3,12 @@
  */
 
 @interface PLHighFidelityVideoOverlayButton : UIView <PLVideoOverlayButton> {
-    SEL _action;
-    _UIBackdropView *_backdropView;
-    UIButton *_button;
-    int _style;
-    id _target;
+    SEL  _action;
+    _UIBackdropView * _backdropView;
+    UIButton * _button;
+    UIImageView * _overlayPlayBackground;
+    int  _style;
+    id  _target;
 }
 
 - (void)_playButtonActivate:(id)arg1;
@@ -15,6 +16,7 @@
 - (void)_playButtonTapped:(id)arg1;
 - (void)dealloc;
 - (id)initWithStyle:(int)arg1;
+- (void)layoutSubviews;
 - (void)setTarget:(id)arg1 action:(SEL)arg2;
 - (int)style;
 

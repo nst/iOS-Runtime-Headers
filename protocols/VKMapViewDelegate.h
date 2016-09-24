@@ -5,14 +5,13 @@
 
 @optional
 
-- (void)mapLayer:(VKMapView *)arg1 annotationMarker:(VKAnnotationMarker *)arg2 didChangeDragState:(int)arg3 fromOldState:(int)arg4;
 - (void)mapLayer:(VKMapView *)arg1 canEnter3DModeDidChange:(BOOL)arg2;
 - (void)mapLayer:(VKMapView *)arg1 canShowFlyoverDidChange:(BOOL)arg2;
 - (void)mapLayer:(VKMapView *)arg1 canZoomInDidChange:(BOOL)arg2;
 - (void)mapLayer:(VKMapView *)arg1 canZoomOutDidChange:(BOOL)arg2;
 - (void)mapLayer:(VKMapView *)arg1 didBecomePitched:(BOOL)arg2;
 - (void)mapLayer:(VKMapView *)arg1 didChangeRegionAnimated:(BOOL)arg2;
-- (void)mapLayer:(VKMapView *)arg1 didFinishChangingMapDisplayStyle:(struct { unsigned char x1; unsigned char x2; unsigned char x3; })arg2;
+- (void)mapLayer:(VKMapView *)arg1 didFinishChangingMapDisplayStyle:(struct { unsigned char x1; unsigned char x2; unsigned char x3; unsigned char x4; BOOL x5; })arg2;
 - (void)mapLayer:(VKMapView *)arg1 didStopFlyoverTourCompleted:(BOOL)arg2;
 - (void)mapLayer:(VKMapView *)arg1 didUpdateVerticalYawTo:(double)arg2;
 - (void)mapLayer:(VKMapView *)arg1 flyoverModeDidChange:(int)arg2;
@@ -20,6 +19,7 @@
 - (void)mapLayer:(VKMapView *)arg1 flyoverTourLabelDidChange:(NSString *)arg2;
 - (VKOverlayPainter *)mapLayer:(VKMapView *)arg1 painterForOverlay:(id <VKOverlay>)arg2;
 - (<VKTrackableAnnotationPresentation> *)mapLayer:(VKMapView *)arg1 presentationForAnnotation:(id <VKTrackableAnnotation>)arg2;
+- (void)mapLayer:(VKMapView *)arg1 selectedLabelMarkerDidChangeState:(VKLabelMarker *)arg2;
 - (void)mapLayer:(VKMapView *)arg1 selectedLabelMarkerWillDisappear:(VKLabelMarker *)arg2;
 - (void)mapLayer:(VKMapView *)arg1 showingFlyoverDidChange:(BOOL)arg2;
 - (void)mapLayer:(VKMapView *)arg1 willChangeRegionAnimated:(BOOL)arg2;
@@ -34,6 +34,8 @@
 - (void)mapLayerDidReloadStylesheet:(VKMapView *)arg1;
 - (void)mapLayerDidStartLoadingTiles:(VKMapView *)arg1;
 - (void)mapLayerLabelsDidLayout:(VKMapView *)arg1;
+- (void)mapLayerNavigationCameraHasStartedPanning:(VKMapView *)arg1;
+- (void)mapLayerNavigationCameraHasStoppedPanning:(VKMapView *)arg1;
 - (void)mapLayerWillStartFlyoverTour:(VKMapView *)arg1;
 
 @end

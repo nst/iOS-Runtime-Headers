@@ -3,7 +3,7 @@
  */
 
 @interface SKAttribute : NSObject <NSCoding> {
-    NSString *_name;
+    NSString * _name;
     struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { 
         struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { 
             struct __rep { 
@@ -26,8 +26,8 @@
                 } ; 
             } __first_; 
         } __r_; 
-    } _nameString;
-    int _type;
+    }  _nameString;
+    int  _type;
 }
 
 @property (nonatomic, readonly) NSString *name;

@@ -3,9 +3,9 @@
  */
 
 @interface RadioStationMatchLibraryArtistMetadata : RadioStationMatchMetadata {
-    NSString *_artistName;
-    NSNumber *_artistStoreID;
-    NSNumber *_representativeCloudID;
+    NSString * _artistName;
+    NSNumber * _artistStoreID;
+    NSNumber * _representativeCloudID;
 }
 
 @property (nonatomic, copy) NSString *artistName;

@@ -3,13 +3,13 @@
  */
 
 @interface ML3PersistentIDsPredicate : ML3Predicate {
-    NSArray *_persistentIDs;
-    BOOL _shouldContain;
+    NSArray * _persistentIDs;
+    BOOL  _shouldContain;
 }
 
 @property (nonatomic, readonly) BOOL shouldContain;
 
-+ (id)predicateWithPersistentIDs:(const long long*)arg1 count:(unsigned int)arg2 shouldContain:(BOOL)arg3;
++ (id)predicateWithPersistentIDs:(const int*)arg1 count:(unsigned int)arg2 shouldContain:(BOOL)arg3;
 + (id)predicateWithPersistentIDs:(id)arg1 shouldContain:(BOOL)arg2;
 
 - (void).cxx_destruct;

@@ -3,13 +3,13 @@
  */
 
 @interface ADAdSpaceConfiguration : NSObject <NSSecureCoding> {
-    NSString *_advertisingSection;
-    NSString *_authenticationUserName;
-    NSSet *_context;
-    int _creativeType;
-    NSString *_identifier;
-    int _options;
-    NSURL *_serverURL;
+    NSString * _advertisingSection;
+    NSString * _authenticationUserName;
+    NSSet * _context;
+    int  _creativeType;
+    NSString * _identifier;
+    int  _options;
+    NSURL * _serverURL;
 }
 
 @property (nonatomic, copy) NSString *advertisingSection;

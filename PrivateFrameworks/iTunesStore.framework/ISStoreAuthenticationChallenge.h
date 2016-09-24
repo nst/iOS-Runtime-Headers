@@ -3,12 +3,12 @@
  */
 
 @interface ISStoreAuthenticationChallenge : ISAuthenticationChallenge {
-    int _failureCount;
-    BOOL _hasPassword;
-    NSString *_password;
-    <NSURLAuthenticationChallengeSender> *_sender;
-    NSString *_user;
-    BOOL _userNameIsEditable;
+    int  _failureCount;
+    BOOL  _hasPassword;
+    NSString * _password;
+    <NSURLAuthenticationChallengeSender> * _sender;
+    NSString * _user;
+    BOOL  _userNameIsEditable;
 }
 
 @property int failureCount;

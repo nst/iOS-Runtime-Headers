@@ -3,7 +3,7 @@
  */
 
 @interface IKJSInspectorPageAgent : NSObject <RWIProtocolPageDomainHandler> {
-    IKJSInspectorController *_controller;
+    IKJSInspectorController * _controller;
 }
 
 @property (nonatomic, readonly) IKJSInspectorController *controller;
@@ -30,6 +30,7 @@
 - (void)reloadWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 ignoreCache:(BOOL*)arg3 scriptToEvaluateOnLoad:(id*)arg4;
 - (void)removeScriptToEvaluateOnLoadWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 identifier:(id)arg3;
 - (void)searchInResourceWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 frameId:(id)arg3 url:(id)arg4 query:(id)arg5 caseSensitive:(BOOL*)arg6 isRegex:(BOOL*)arg7;
+- (void)searchInResourceWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 frameId:(id)arg3 url:(id)arg4 query:(id)arg5 caseSensitive:(BOOL*)arg6 isRegex:(BOOL*)arg7 requestId:(id*)arg8;
 - (void)searchInResourcesWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 text:(id)arg3 caseSensitive:(BOOL*)arg4 isRegex:(BOOL*)arg5;
 - (void)setCompositingBordersVisibleWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 visible:(BOOL)arg3;
 - (void)setDocumentContentWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 frameId:(id)arg3 html:(id)arg4;

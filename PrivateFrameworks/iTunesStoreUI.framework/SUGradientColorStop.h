@@ -3,15 +3,15 @@
  */
 
 @interface SUGradientColorStop : NSObject <NSCoding> {
-    float _a;
-    float _b;
-    float _g;
-    float _offset;
-    float _r;
-    struct CGColor { } *_rawColor;
+    double  _a;
+    double  _b;
+    double  _g;
+    double  _offset;
+    double  _r;
+    struct CGColor { } * _rawColor;
 }
 
-@property (nonatomic, readonly) float offset;
+@property (nonatomic, readonly) double offset;
 
 - (int)compare:(id)arg1;
 - (struct CGColor { }*)copyCGColor;

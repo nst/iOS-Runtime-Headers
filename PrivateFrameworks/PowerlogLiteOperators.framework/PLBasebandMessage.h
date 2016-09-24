@@ -3,18 +3,18 @@
  */
 
 @interface PLBasebandMessage : NSObject {
-    PLAgent *_agent;
-    NSDate *_apTimestamp;
-    NSDate *_date;
-    PLBBMsg *_logger;
-    NSNumber *_msgType;
-    NSString *_pload;
-    NSNumber *_seqNum;
-    double _timeCal;
-    NSData *rawData;
-    unsigned int ticksInGPSONState;
-    unsigned int ticksInGoodState;
-    double timeCalibration;
+    PLAgent * _agent;
+    NSDate * _apTimestamp;
+    NSDate * _date;
+    PLBBMsg * _logger;
+    NSNumber * _msgType;
+    NSString * _pload;
+    NSNumber * _seqNum;
+    double  _timeCal;
+    NSData * rawData;
+    unsigned int  ticksInGPSONState;
+    unsigned int  ticksInGoodState;
+    double  timeCalibration;
 }
 
 @property (nonatomic, retain) PLAgent *agent;

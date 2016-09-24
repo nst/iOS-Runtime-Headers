@@ -3,19 +3,19 @@
  */
 
 @interface PCPersistentTimer : NSObject <CUTPowerMonitorDelegate, PCLoggingDelegate> {
-    BOOL _disableSystemWaking;
-    double _fireTime;
-    unsigned int _guidancePriority;
-    double _minimumEarlyFireProportion;
-    NSObject<OS_dispatch_queue> *_queue;
-    SEL _selector;
-    NSString *_serviceIdentifier;
-    PCSimpleTimer *_simpleTimer;
-    double _startTime;
-    id _target;
-    BOOL _triggerOnGMTChange;
-    id _userInfo;
-    BOOL _userVisible;
+    BOOL  _disableSystemWaking;
+    double  _fireTime;
+    unsigned int  _guidancePriority;
+    double  _minimumEarlyFireProportion;
+    NSObject<OS_dispatch_queue> * _queue;
+    SEL  _selector;
+    NSString * _serviceIdentifier;
+    PCSimpleTimer * _simpleTimer;
+    double  _startTime;
+    id  _target;
+    BOOL  _triggerOnGMTChange;
+    id  _userInfo;
+    BOOL  _userVisible;
 }
 
 @property (readonly, copy) NSString *debugDescription;

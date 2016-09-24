@@ -3,8 +3,8 @@
  */
 
 @interface OADTextListStyle : NSObject {
-    NSString *mLanguage;
-    NSMutableArray *mParagraphProperties;
+    NSString * mLanguage;
+    NSMutableArray * mParagraphProperties;
 }
 
 @property (nonatomic, retain) NSString *language;

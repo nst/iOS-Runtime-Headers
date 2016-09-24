@@ -3,9 +3,9 @@
  */
 
 @interface SGContactDetailKey : NSObject <SGEntityKey> {
-    SGIdentityKey *_identityKey;
-    NSString *_label;
-    NSString *_value;
+    SGIdentityKey * _identityKey;
+    NSString * _label;
+    NSString * _value;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -16,7 +16,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSString *value;
 
-+ (BOOL)isSupportedEntityType:(long long)arg1;
++ (BOOL)isSupportedEntityType:(int)arg1;
 + (id)prefixForForIdentityKey:(id)arg1;
 
 - (void).cxx_destruct;

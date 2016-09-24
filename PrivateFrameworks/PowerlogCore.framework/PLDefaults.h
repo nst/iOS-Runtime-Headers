@@ -3,10 +3,10 @@
  */
 
 @interface PLDefaults : NSObject {
-    BOOL _debugEnabled;
-    NSMutableDictionary *_instancePrefsCache;
-    NSMutableDictionary *_managedPrefsCache;
-    NSMutableDictionary *_userPrefsCache;
+    BOOL  _debugEnabled;
+    NSMutableDictionary * _instancePrefsCache;
+    NSMutableDictionary * _managedPrefsCache;
+    NSMutableDictionary * _userPrefsCache;
 }
 
 @property BOOL debugEnabled;
@@ -30,6 +30,7 @@
 + (BOOL)isClassNameDebugEnabled:(id)arg1;
 + (BOOL)isClassNameDebugEnabled:(id)arg1 forKey:(id)arg2;
 + (BOOL)isDevBoard;
++ (BOOL)isModelTrigger;
 + (BOOL)isModelingDebugEnabled;
 + (long)longForKey:(id)arg1;
 + (long)longForKey:(id)arg1 ifNotSet:(long)arg2;

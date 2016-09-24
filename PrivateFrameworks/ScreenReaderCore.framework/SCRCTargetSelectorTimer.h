@@ -3,13 +3,13 @@
  */
 
 @interface SCRCTargetSelectorTimer : SCRCTargetSelector {
-    BOOL _createdTimer;
-    BOOL _isCanceled;
-    BOOL _isPending;
-    id _key;
-    NSLock *_lock;
-    id _object;
-    struct __CFRunLoopTimer { } *_timer;
+    BOOL  _createdTimer;
+    BOOL  _isCanceled;
+    BOOL  _isPending;
+    id  _key;
+    NSLock * _lock;
+    id  _object;
+    struct __CFRunLoopTimer { } * _timer;
 }
 
 + (void)_runThread;

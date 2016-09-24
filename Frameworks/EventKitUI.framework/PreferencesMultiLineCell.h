@@ -4,7 +4,7 @@
 
 @interface PreferencesMultiLineCell : EKUIConstrainedFontsTableViewCell
 
-+ (struct CGSize { float x1; float x2; })fitValue:(id)arg1 forWidth:(float)arg2 font:(id)arg3;
++ (struct CGSize { double x1; double x2; })fitValue:(id)arg1 forWidth:(float)arg2 font:(id)arg3;
 
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 

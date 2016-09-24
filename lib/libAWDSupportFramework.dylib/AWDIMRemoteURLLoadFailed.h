@@ -3,13 +3,13 @@
  */
 
 @interface AWDIMRemoteURLLoadFailed : PBCodable <NSCopying> {
-    unsigned long long _connectEndToRequestStartMillis;
-    unsigned long long _connectStartToConnectEndMillis;
-    unsigned long long _connectStartToSecureConnectionStartMillis;
-    unsigned long long _domainLookupEndToConnectStartMillis;
-    unsigned long long _domainLookupStartToDomainLookupEndMillis;
-    long long _errorCode;
-    unsigned long long _fetchStartToDomainLookupStartMillis;
+    unsigned long long  _connectEndToRequestStartMillis;
+    unsigned long long  _connectStartToConnectEndMillis;
+    unsigned long long  _connectStartToSecureConnectionStartMillis;
+    unsigned long long  _domainLookupEndToConnectStartMillis;
+    unsigned long long  _domainLookupStartToDomainLookupEndMillis;
+    long long  _errorCode;
+    unsigned long long  _fetchStartToDomainLookupStartMillis;
     struct { 
         unsigned int connectEndToRequestStartMillis : 1; 
         unsigned int connectStartToConnectEndMillis : 1; 
@@ -25,14 +25,14 @@
         unsigned int responseStartToResponseEndMillis : 1; 
         unsigned int secureConnectionStartToConnectEndMillis : 1; 
         unsigned int timestamp : 1; 
-    } _has;
-    unsigned long long _navigationStartToRedirectStartMillis;
-    unsigned long long _redirectEndToFetchStartMillis;
-    unsigned long long _redirectStartToRedirectEndMillis;
-    unsigned long long _requestStartToResponseStartMillis;
-    unsigned long long _responseStartToResponseEndMillis;
-    unsigned long long _secureConnectionStartToConnectEndMillis;
-    unsigned long long _timestamp;
+    }  _has;
+    unsigned long long  _navigationStartToRedirectStartMillis;
+    unsigned long long  _redirectEndToFetchStartMillis;
+    unsigned long long  _redirectStartToRedirectEndMillis;
+    unsigned long long  _requestStartToResponseStartMillis;
+    unsigned long long  _responseStartToResponseEndMillis;
+    unsigned long long  _secureConnectionStartToConnectEndMillis;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) unsigned long long connectEndToRequestStartMillis;

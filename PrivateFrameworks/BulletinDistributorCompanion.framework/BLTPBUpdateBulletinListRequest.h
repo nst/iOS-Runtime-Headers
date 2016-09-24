@@ -3,7 +3,7 @@
  */
 
 @interface BLTPBUpdateBulletinListRequest : PBRequest <NSCopying> {
-    BLTPBFullBulletinList *_bulletinList;
+    BLTPBFullBulletinList * _bulletinList;
 }
 
 @property (nonatomic, retain) BLTPBFullBulletinList *bulletinList;

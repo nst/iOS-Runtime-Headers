@@ -3,12 +3,12 @@
  */
 
 @interface GEOTileKeyList : NSObject <NSCopying, NSFastEnumeration> {
-    unsigned int _count;
-    void *_head;
-    GEOTileKeyMap *_map;
-    unsigned int _maxCount;
-    unsigned long _mutationsCount;
-    void *_tail;
+    unsigned int  _count;
+    void * _head;
+    GEOTileKeyMap * _map;
+    unsigned int  _maxCount;
+    unsigned long  _mutationsCount;
+    void * _tail;
 }
 
 + (id)listFromXPCData:(id)arg1;
@@ -26,6 +26,7 @@
 - (id)description;
 - (struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)firstKey;
 - (id)init;
+- (id)initWithCapacity:(unsigned int)arg1;
 - (id)initWithMaxCapacity:(unsigned int)arg1;
 - (BOOL)intersectsList:(id)arg1;
 - (id)listWithout:(id)arg1;

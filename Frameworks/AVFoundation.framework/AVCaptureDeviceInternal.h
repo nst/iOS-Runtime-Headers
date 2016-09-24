@@ -3,11 +3,11 @@
  */
 
 @interface AVCaptureDeviceInternal : NSObject {
-    AVCaptureDeviceInput *activeInput;
-    int configLockPid;
-    int configLockRefCount;
-    int openRefCount;
-    BOOL usingDevice;
+    AVCaptureDeviceInput * activeInput;
+    int  configLockPid;
+    int  configLockRefCount;
+    int  openRefCount;
+    BOOL  usingDevice;
 }
 
 @end

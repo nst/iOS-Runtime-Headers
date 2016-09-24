@@ -3,9 +3,9 @@
  */
 
 @interface _HKCategoryValueFilter : _HKFilter {
-    NSNumber *_comparisonValue;
-    HKCategoryType *_dataType;
-    unsigned int _operatorType;
+    NSNumber * _comparisonValue;
+    HKCategoryType * _dataType;
+    unsigned int  _operatorType;
 }
 
 @property (nonatomic, readonly) NSNumber *comparisonValue;
@@ -30,6 +30,6 @@
 
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 
-- (id)predicateWithHealthDaemon:(id)arg1;
+- (id)predicateWithProfile:(id)arg1;
 
 @end

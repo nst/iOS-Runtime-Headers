@@ -3,10 +3,10 @@
  */
 
 @interface MusicEntityProviderChangeRecord : NSObject <NSCopying> {
-    NSIndexPath *_destinationIndexPath;
-    <MusicEntityValueProviding> *_entityValueProvider;
-    NSIndexPath *_sourceIndexPath;
-    int _type;
+    NSIndexPath * _destinationIndexPath;
+    <MusicEntityValueProviding> * _entityValueProvider;
+    NSIndexPath * _sourceIndexPath;
+    int  _type;
 }
 
 @property (nonatomic, readonly) <MusicEntityValueProviding> *deletedEntityValueProvider;

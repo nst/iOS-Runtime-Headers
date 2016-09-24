@@ -3,12 +3,13 @@
  */
 
 @interface MDLMeshBufferData : NSObject <MDLMeshBuffer> {
-    <MDLMeshBufferAllocator> *_allocator;
-    NSMutableData *_data;
-    unsigned int _length;
-    unsigned int _type;
-    MDLMeshBufferZoneDefault *_zone;
-    MDLMeshBufferZoneDefault *_zoneDefault;
+    <MDLMeshBufferAllocator> * _allocator;
+    NSMutableData * _data;
+    unsigned int  _length;
+    NSString * _name;
+    unsigned int  _type;
+    MDLMeshBufferZoneDefault * _zone;
+    MDLMeshBufferZoneDefault * _zoneDefault;
 }
 
 @property (nonatomic, readonly, retain) <MDLMeshBufferAllocator> *allocator;
@@ -32,6 +33,8 @@
 - (id)initWithType:(unsigned int)arg1 length:(unsigned int)arg2;
 - (unsigned int)length;
 - (id)map;
+- (id)name;
+- (void)setName:(id)arg1;
 - (unsigned int)type;
 - (id)zone;
 

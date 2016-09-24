@@ -3,8 +3,8 @@
  */
 
 @interface CalDAVRetrieveSharedCalendarShareesTaskGroup : CoreDAVTaskGroup <CoreDAVPropFindTaskDelegate> {
-    NSSet *_sharees;
-    NSURL *_url;
+    NSSet * _sharees;
+    NSURL * _url;
 }
 
 @property (readonly, copy) NSString *debugDescription;

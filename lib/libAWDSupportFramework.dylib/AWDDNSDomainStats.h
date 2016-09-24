@@ -7,22 +7,39 @@
         unsigned int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _answeredQuerySendCounts;
-    NSString *_domain;
+    }  _answeredQuerySendCounts;
+    NSString * _domain;
     struct { 
         unsigned int networkType : 1; 
-    } _has;
-    int _networkType;
+        unsigned int recordType : 1; 
+    }  _has;
     struct { 
         unsigned int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _responseLatencyMs;
+    }  _negAnsweredQuerySendCounts;
     struct { 
         unsigned int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _unansweredQuerySendCounts;
+    }  _negResponseLatencyMs;
+    int  _networkType;
+    int  _recordType;
+    struct { 
+        unsigned int *list; 
+        unsigned int count; 
+        unsigned int size; 
+    }  _responseLatencyMs;
+    struct { 
+        unsigned int *list; 
+        unsigned int count; 
+        unsigned int size; 
+    }  _unansweredQueryDurationMs;
+    struct { 
+        unsigned int *list; 
+        unsigned int count; 
+        unsigned int size; 
+    }  _unansweredQuerySendCounts;
 }
 
 @property (nonatomic, readonly) unsigned int*answeredQuerySendCounts;
@@ -30,21 +47,36 @@
 @property (nonatomic, retain) NSString *domain;
 @property (nonatomic, readonly) BOOL hasDomain;
 @property (nonatomic) BOOL hasNetworkType;
+@property (nonatomic) BOOL hasRecordType;
+@property (nonatomic, readonly) unsigned int*negAnsweredQuerySendCounts;
+@property (nonatomic, readonly) unsigned int negAnsweredQuerySendCountsCount;
+@property (nonatomic, readonly) unsigned int*negResponseLatencyMs;
+@property (nonatomic, readonly) unsigned int negResponseLatencyMsCount;
 @property (nonatomic) int networkType;
+@property (nonatomic) int recordType;
 @property (nonatomic, readonly) unsigned int*responseLatencyMs;
 @property (nonatomic, readonly) unsigned int responseLatencyMsCount;
+@property (nonatomic, readonly) unsigned int*unansweredQueryDurationMs;
+@property (nonatomic, readonly) unsigned int unansweredQueryDurationMsCount;
 @property (nonatomic, readonly) unsigned int*unansweredQuerySendCounts;
 @property (nonatomic, readonly) unsigned int unansweredQuerySendCountsCount;
 
 - (int)StringAsNetworkType:(id)arg1;
+- (int)StringAsRecordType:(id)arg1;
 - (void)addAnsweredQuerySendCount:(unsigned int)arg1;
+- (void)addNegAnsweredQuerySendCount:(unsigned int)arg1;
+- (void)addNegResponseLatencyMs:(unsigned int)arg1;
 - (void)addResponseLatencyMs:(unsigned int)arg1;
+- (void)addUnansweredQueryDurationMs:(unsigned int)arg1;
 - (void)addUnansweredQuerySendCount:(unsigned int)arg1;
 - (unsigned int)answeredQuerySendCountAtIndex:(unsigned int)arg1;
 - (unsigned int*)answeredQuerySendCounts;
 - (unsigned int)answeredQuerySendCountsCount;
 - (void)clearAnsweredQuerySendCounts;
+- (void)clearNegAnsweredQuerySendCounts;
+- (void)clearNegResponseLatencyMs;
 - (void)clearResponseLatencyMs;
+- (void)clearUnansweredQueryDurationMs;
 - (void)clearUnansweredQuerySendCounts;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -54,21 +86,38 @@
 - (id)domain;
 - (BOOL)hasDomain;
 - (BOOL)hasNetworkType;
+- (BOOL)hasRecordType;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
+- (unsigned int)negAnsweredQuerySendCountAtIndex:(unsigned int)arg1;
+- (unsigned int*)negAnsweredQuerySendCounts;
+- (unsigned int)negAnsweredQuerySendCountsCount;
+- (unsigned int*)negResponseLatencyMs;
+- (unsigned int)negResponseLatencyMsAtIndex:(unsigned int)arg1;
+- (unsigned int)negResponseLatencyMsCount;
 - (int)networkType;
 - (id)networkTypeAsString:(int)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (int)recordType;
+- (id)recordTypeAsString:(int)arg1;
 - (unsigned int*)responseLatencyMs;
 - (unsigned int)responseLatencyMsAtIndex:(unsigned int)arg1;
 - (unsigned int)responseLatencyMsCount;
 - (void)setAnsweredQuerySendCounts:(unsigned int*)arg1 count:(unsigned int)arg2;
 - (void)setDomain:(id)arg1;
 - (void)setHasNetworkType:(BOOL)arg1;
+- (void)setHasRecordType:(BOOL)arg1;
+- (void)setNegAnsweredQuerySendCounts:(unsigned int*)arg1 count:(unsigned int)arg2;
+- (void)setNegResponseLatencyMs:(unsigned int*)arg1 count:(unsigned int)arg2;
 - (void)setNetworkType:(int)arg1;
+- (void)setRecordType:(int)arg1;
 - (void)setResponseLatencyMs:(unsigned int*)arg1 count:(unsigned int)arg2;
+- (void)setUnansweredQueryDurationMs:(unsigned int*)arg1 count:(unsigned int)arg2;
 - (void)setUnansweredQuerySendCounts:(unsigned int*)arg1 count:(unsigned int)arg2;
+- (unsigned int*)unansweredQueryDurationMs;
+- (unsigned int)unansweredQueryDurationMsAtIndex:(unsigned int)arg1;
+- (unsigned int)unansweredQueryDurationMsCount;
 - (unsigned int)unansweredQuerySendCountAtIndex:(unsigned int)arg1;
 - (unsigned int*)unansweredQuerySendCounts;
 - (unsigned int)unansweredQuerySendCountsCount;

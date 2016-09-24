@@ -3,12 +3,12 @@
  */
 
 @interface NSAtomicStore : NSPersistentStore {
-    NSMutableDictionary *_entityCache;
-    int _nextReference;
-    NSMutableDictionary *_nodeCache;
-    void *_reserved4;
-    void *_reserved5;
-    NSMutableDictionary *_storeMetadata;
+    NSMutableDictionary * _entityCache;
+    int  _nextReference;
+    NSMutableDictionary * _nodeCache;
+    void * _reserved4;
+    void * _reserved5;
+    NSMutableDictionary * _storeMetadata;
 }
 
 + (void)initialize;

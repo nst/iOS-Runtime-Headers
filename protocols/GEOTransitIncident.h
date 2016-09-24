@@ -15,6 +15,7 @@
 - (NSString *)messageForNonRoutable;
 - (NSString *)messageForRoutePlanning;
 - (NSString *)messageForRouteStepping;
+- (unsigned int)muid;
 - (NSDate *)startDate;
 - (NSString *)summary;
 - (NSString *)title;

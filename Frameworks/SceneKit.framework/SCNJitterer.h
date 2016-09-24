@@ -3,12 +3,12 @@
  */
 
 @interface SCNJitterer : NSObject {
-    <SCNJittererDelegate> *_delegate;
-    BOOL _enabled;
-    unsigned int _iteration;
-    NSObject<OS_dispatch_source> *_restartSource;
-    BOOL _restartSourceIsSuspended;
-    unsigned int _state;
+    <SCNJittererDelegate> * _delegate;
+    BOOL  _enabled;
+    unsigned int  _iteration;
+    NSObject<OS_dispatch_source> * _restartSource;
+    BOOL  _restartSourceIsSuspended;
+    unsigned int  _state;
 }
 
 @property (getter=isEnabled, nonatomic) BOOL enabled;

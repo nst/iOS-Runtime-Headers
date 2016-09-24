@@ -3,9 +3,9 @@
  */
 
 @interface GEORPCurrentEnvironmentManifestURLs : PBCodable <NSCopying> {
-    NSString *_environmentDisplayName;
-    NSString *_environmentReleaseName;
-    NSMutableArray *_urls;
+    NSString * _environmentDisplayName;
+    NSString * _environmentReleaseName;
+    NSMutableArray * _urls;
 }
 
 @property (nonatomic, retain) NSString *environmentDisplayName;
@@ -13,6 +13,8 @@
 @property (nonatomic, readonly) BOOL hasEnvironmentDisplayName;
 @property (nonatomic, readonly) BOOL hasEnvironmentReleaseName;
 @property (nonatomic, retain) NSMutableArray *urls;
+
++ (Class)urlType;
 
 - (void)addUrl:(id)arg1;
 - (void)clearUrls;

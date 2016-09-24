@@ -2,23 +2,26 @@
    Image: /System/Library/Frameworks/Photos.framework/Photos
  */
 
-@interface PHAssetPhotoCommentProperties : NSObject {
-    PHAsset *_asset;
-    unsigned int _commentCount;
-    BOOL _hasUserLiked;
-    unsigned int _likeCount;
+@interface PHAssetPhotoCommentProperties : PHAssetPropertySet {
+    unsigned int  _commentCount;
+    BOOL  _hasUserLiked;
+    unsigned int  _likeCount;
 }
 
-@property (nonatomic, readonly) PHAsset *asset;
 @property (nonatomic, readonly) unsigned int commentCount;
 @property (nonatomic, readonly) BOOL hasUserLiked;
 @property (nonatomic, readonly) unsigned int likeCount;
 
-- (void).cxx_destruct;
-- (id)asset;
++ (id)entityName;
++ (BOOL)isToMany;
++ (id)keyPathFromPrimaryObject;
++ (id)keyPathToPrimaryObject;
++ (id)propertiesToFetch;
++ (id)propertySetName;
+
 - (unsigned int)commentCount;
 - (BOOL)hasUserLiked;
-- (id)initWithFetchDictionaries:(id)arg1 asset:(id)arg2;
+- (id)initWithFetchDictionary:(id)arg1 asset:(id)arg2 prefetched:(BOOL)arg3;
 - (unsigned int)likeCount;
 
 @end

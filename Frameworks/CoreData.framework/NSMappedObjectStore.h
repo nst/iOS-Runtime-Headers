@@ -3,8 +3,8 @@
  */
 
 @interface NSMappedObjectStore : NSPersistentStore {
-    NSSet *_entitiesToFetch;
-    NSPersistentStoreMap *_theMap;
+    NSSet * _entitiesToFetch;
+    NSPersistentStoreMap * _theMap;
 }
 
 + (id)metadataForPersistentStoreWithURL:(id)arg1 options:(id)arg2 error:(id*)arg3;

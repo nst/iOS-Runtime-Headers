@@ -3,15 +3,15 @@
  */
 
 @interface PFUbiquityBaseline : PFUbiquitySafeSaveFile {
-    _PFZipFileArchive *_baselineArchive;
-    PFUbiquityLocation *_baselineStagingLocation;
-    PFUbiquityBaselineMetadata *_metadata;
-    NSManagedObjectModel *_model;
-    NSString *_modelVersionHash;
-    NSPersistentStore *_store;
-    NSString *_storeFilename;
-    NSMutableDictionary *_storeFilenameToData;
-    NSString *_storeName;
+    _PFZipFileArchive * _baselineArchive;
+    PFUbiquityLocation * _baselineStagingLocation;
+    PFUbiquityBaselineMetadata * _metadata;
+    NSManagedObjectModel * _model;
+    NSString * _modelVersionHash;
+    NSPersistentStore * _store;
+    NSString * _storeFilename;
+    NSMutableDictionary * _storeFilenameToData;
+    NSString * _storeName;
 }
 
 @property (readonly) _PFZipFileArchive *baselineArchive;

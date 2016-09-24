@@ -3,7 +3,7 @@
  */
 
 @interface AAPaymentSummaryResponse : AAResponse {
-    NSDictionary *_responseParameters;
+    NSDictionary * _responseParameters;
 }
 
 @property (nonatomic, readonly) NSString *description;

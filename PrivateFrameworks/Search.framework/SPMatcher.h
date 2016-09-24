@@ -3,7 +3,7 @@
  */
 
 @interface SPMatcher : NSObject {
-    void *_matcher;
+    void * _matcher;
 }
 
 + (id)transcriptionForString:(id)arg1 withLanguage:(id)arg2;
@@ -11,9 +11,9 @@
 - (void)dealloc;
 - (id)initWithSearchString:(id)arg1 andLocale:(id)arg2 andOptions:(unsigned int)arg3;
 - (BOOL)matches:(id)arg1;
-- (BOOL)matches:(id)arg1 outMatchBits:(unsigned long long*)arg2;
+- (BOOL)matches:(id)arg1 outMatchBits:(unsigned int*)arg2;
 - (BOOL)matchesUTF8String:(const char *)arg1;
-- (BOOL)matchesUTF8String:(const char *)arg1 outMatchBits:(unsigned long long*)arg2;
+- (BOOL)matchesUTF8String:(const char *)arg1 outMatchBits:(unsigned int*)arg2;
 - (unsigned int)wordCount;
 
 @end

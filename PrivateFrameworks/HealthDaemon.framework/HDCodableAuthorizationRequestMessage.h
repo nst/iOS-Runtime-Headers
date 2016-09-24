@@ -3,32 +3,32 @@
  */
 
 @interface HDCodableAuthorizationRequestMessage : PBCodable <NSCopying> {
-    NSString *_appBundleIdentifier;
-    NSData *_requestIdentifier;
+    NSString * _appBundleIdentifier;
+    NSData * _requestIdentifier;
     struct { 
-        long long *list; 
+        int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _typesToReads;
+    }  _typesToReads;
     struct { 
-        long long *list; 
+        int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _typesToWrites;
+    }  _typesToWrites;
 }
 
 @property (nonatomic, retain) NSString *appBundleIdentifier;
 @property (nonatomic, readonly) BOOL hasAppBundleIdentifier;
 @property (nonatomic, readonly) BOOL hasRequestIdentifier;
 @property (nonatomic, retain) NSData *requestIdentifier;
-@property (nonatomic, readonly) long long*typesToReads;
+@property (nonatomic, readonly) int*typesToReads;
 @property (nonatomic, readonly) unsigned int typesToReadsCount;
-@property (nonatomic, readonly) long long*typesToWrites;
+@property (nonatomic, readonly) int*typesToWrites;
 @property (nonatomic, readonly) unsigned int typesToWritesCount;
 
 - (void).cxx_destruct;
-- (void)addTypesToRead:(long long)arg1;
-- (void)addTypesToWrite:(long long)arg1;
+- (void)addTypesToRead:(int)arg1;
+- (void)addTypesToWrite:(int)arg1;
 - (id)appBundleIdentifier;
 - (void)clearTypesToReads;
 - (void)clearTypesToWrites;
@@ -46,13 +46,13 @@
 - (id)requestIdentifier;
 - (void)setAppBundleIdentifier:(id)arg1;
 - (void)setRequestIdentifier:(id)arg1;
-- (void)setTypesToReads:(long long*)arg1 count:(unsigned int)arg2;
-- (void)setTypesToWrites:(long long*)arg1 count:(unsigned int)arg2;
-- (long long)typesToReadAtIndex:(unsigned int)arg1;
-- (long long*)typesToReads;
+- (void)setTypesToReads:(int*)arg1 count:(unsigned int)arg2;
+- (void)setTypesToWrites:(int*)arg1 count:(unsigned int)arg2;
+- (int)typesToReadAtIndex:(unsigned int)arg1;
+- (int*)typesToReads;
 - (unsigned int)typesToReadsCount;
-- (long long)typesToWriteAtIndex:(unsigned int)arg1;
-- (long long*)typesToWrites;
+- (int)typesToWriteAtIndex:(unsigned int)arg1;
+- (int*)typesToWrites;
 - (unsigned int)typesToWritesCount;
 - (void)writeTo:(id)arg1;
 

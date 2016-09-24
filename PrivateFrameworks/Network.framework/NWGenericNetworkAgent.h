@@ -3,21 +3,21 @@
  */
 
 @interface NWGenericNetworkAgent : NSObject <NWPrettyDescription> {
-    struct netagent { unsigned char x1[16]; BOOL x2[32]; BOOL x3[32]; BOOL x4[128]; unsigned int x5; unsigned int x6; unsigned char x7[0]; } *_internalNetagent;
+    struct netagent { unsigned char x1[16]; BOOL x2[32]; BOOL x3[32]; BOOL x4[128]; unsigned int x5; unsigned int x6; unsigned char x7[0]; } * _internalNetagent;
 }
 
-@property (getter=isActive, readonly) BOOL active;
-@property (readonly) NSString *agentDescription;
-@property (readonly) NSString *agentDomain;
-@property (readonly) NSString *agentType;
-@property (readonly) NSUUID *agentUUID;
+@property (getter=isActive, nonatomic, readonly) BOOL active;
+@property (nonatomic, readonly) NSString *agentDescription;
+@property (nonatomic, readonly) NSString *agentDomain;
+@property (nonatomic, readonly) NSString *agentType;
+@property (nonatomic, readonly) NSUUID *agentUUID;
 @property struct netagent { unsigned char x1[16]; BOOL x2[32]; BOOL x3[32]; BOOL x4[128]; unsigned int x5; unsigned int x6; unsigned char x7[0]; }*internalNetagent;
-@property (getter=isKernelActivated, readonly) BOOL kernelActivated;
-@property (getter=isNetworkProvider, readonly) BOOL networkProvider;
-@property (readonly, copy) NSString *privateDescription;
-@property (getter=isSpecificUseOnly, readonly) BOOL specificUseOnly;
-@property (getter=isUserActivated, readonly) BOOL userActivated;
-@property (getter=isVoluntary, readonly) BOOL voluntary;
+@property (getter=isKernelActivated, nonatomic, readonly) BOOL kernelActivated;
+@property (getter=isNetworkProvider, nonatomic, readonly) BOOL networkProvider;
+@property (nonatomic, readonly, copy) NSString *privateDescription;
+@property (getter=isSpecificUseOnly, nonatomic, readonly) BOOL specificUseOnly;
+@property (getter=isUserActivated, nonatomic, readonly) BOOL userActivated;
+@property (getter=isVoluntary, nonatomic, readonly) BOOL voluntary;
 
 - (id)agentDescription;
 - (id)agentDomain;
@@ -31,6 +31,7 @@
 - (BOOL)isActive;
 - (BOOL)isKernelActivated;
 - (BOOL)isNetworkProvider;
+- (BOOL)isNexusProvider;
 - (BOOL)isSpecificUseOnly;
 - (BOOL)isUserActivated;
 - (BOOL)isVoluntary;

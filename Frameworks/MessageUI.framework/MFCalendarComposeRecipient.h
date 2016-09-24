@@ -3,8 +3,8 @@
  */
 
 @interface MFCalendarComposeRecipient : MFComposeRecipient {
-    NSString *_calAttendeeName;
-    id _participant;
+    NSString * _calAttendeeName;
+    id  _participant;
 }
 
 @property (nonatomic, retain) id participant;

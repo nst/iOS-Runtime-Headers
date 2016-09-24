@@ -3,7 +3,7 @@
  */
 
 @interface MFMessageBodyHTMLParser : MFMessageBodyParser {
-    NSScanner *_scanner;
+    NSScanner * _scanner;
 }
 
 - (void)_consumeNodesFromNode:(id)arg1 upToNode:(id)arg2;

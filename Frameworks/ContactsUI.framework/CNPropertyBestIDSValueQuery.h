@@ -3,10 +3,10 @@
  */
 
 @interface CNPropertyBestIDSValueQuery : NSObject {
-    <CNPropertyBestIDSValueQueryDelegate> *_delegate;
-    CNPropertyIDSRequest *_idsRequest;
-    NSArray *_propertyItems;
-    NSMutableArray *_validIDSItems;
+    <CNPropertyBestIDSValueQueryDelegate> * _delegate;
+    CNPropertyIDSRequest * _idsRequest;
+    NSArray * _propertyItems;
+    NSMutableArray * _validIDSItems;
 }
 
 @property (nonatomic, readonly) CNPropertyGroupItem *bestIDSProperty;

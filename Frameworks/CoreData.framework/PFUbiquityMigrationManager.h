@@ -3,10 +3,10 @@
  */
 
 @interface PFUbiquityMigrationManager : NSObject {
-    NSManagedObjectModel *_destinationModel;
-    NSString *_localPeerID;
-    PFUbiquityLocation *_rootLocation;
-    NSManagedObjectModel *_sourceModel;
+    NSManagedObjectModel * _destinationModel;
+    NSString * _localPeerID;
+    PFUbiquityLocation * _rootLocation;
+    NSManagedObjectModel * _sourceModel;
 }
 
 @property (readonly) NSManagedObjectModel *destinationModel;

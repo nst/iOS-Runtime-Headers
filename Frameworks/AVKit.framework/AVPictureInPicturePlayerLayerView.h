@@ -3,7 +3,7 @@
  */
 
 @interface AVPictureInPicturePlayerLayerView : UIView {
-    _AVSimplePlayerLayerView *_simplePlayerLayerView;
+    _AVSimplePlayerLayerView * _simplePlayerLayerView;
 }
 
 @property (nonatomic, readonly) AVPlayerLayer *playerLayer;

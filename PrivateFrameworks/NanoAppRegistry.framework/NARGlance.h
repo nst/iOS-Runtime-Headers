@@ -3,10 +3,10 @@
  */
 
 @interface NARGlance : NSObject <NSSecureCoding> {
-    NSString *_appID;
-    NSString *_displayName;
-    NSString *_glanceID;
-    NSDictionary *_localizedDisplayNameMap;
+    NSString * _appID;
+    NSString * _displayName;
+    NSString * _glanceID;
+    NSDictionary * _localizedDisplayNameMap;
 }
 
 @property (nonatomic, copy) NSString *appID;

@@ -3,7 +3,7 @@
  */
 
 @interface FAHandleFamilyEventPushNotificationRequest : FAFamilyCircleRequest {
-    NSDictionary *_payload;
+    NSDictionary * _payload;
 }
 
 @property (readonly) NSDictionary *payload;

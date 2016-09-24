@@ -3,27 +3,24 @@
  */
 
 @interface _MRRegisterGameControllerMessageProtobuf : PBCodable <NSCopying> {
-    int _gameControllerProfile;
-    struct { 
-        unsigned int gameControllerProfile : 1; 
-    } _has;
+    _MRGameControllerPropertiesProtobuf * _properties;
 }
 
-@property (nonatomic) int gameControllerProfile;
-@property (nonatomic) BOOL hasGameControllerProfile;
+@property (nonatomic, readonly) BOOL hasProperties;
+@property (nonatomic, retain) _MRGameControllerPropertiesProtobuf *properties;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (int)gameControllerProfile;
-- (BOOL)hasGameControllerProfile;
+- (BOOL)hasProperties;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
+- (id)properties;
 - (BOOL)readFrom:(id)arg1;
-- (void)setGameControllerProfile:(int)arg1;
-- (void)setHasGameControllerProfile:(BOOL)arg1;
+- (void)setProperties:(id)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

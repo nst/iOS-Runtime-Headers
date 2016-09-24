@@ -3,24 +3,24 @@
  */
 
 @interface AWDPowerBBCallMetricInfo : PBCodable <NSCopying> {
-    unsigned int _callDuration;
+    unsigned int  _callDuration;
     struct { 
         unsigned int callDuration : 1; 
         unsigned int powerMicroWatt : 1; 
         unsigned int threshold : 1; 
-    } _has;
-    unsigned int _powerMicroWatt;
+    }  _has;
+    unsigned int  _powerMicroWatt;
     struct { 
         unsigned int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _rxTxDurations;
+    }  _rxTxDurations;
     struct { 
         unsigned int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _sleepStateDurations;
-    unsigned int _threshold;
+    }  _sleepStateDurations;
+    unsigned int  _threshold;
 }
 
 @property (nonatomic) unsigned int callDuration;

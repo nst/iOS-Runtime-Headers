@@ -3,10 +3,10 @@
  */
 
 @interface MSTableCell : SUTableCell {
-    UIImageView *_backsideSnapshotView;
-    UIView *_previewContainerView;
-    MSAudioProgressView *_previewProgressView;
-    SUPlayerStatus *_previewStatus;
+    UIImageView * _backsideSnapshotView;
+    UIView * _previewContainerView;
+    MSAudioProgressView * _previewProgressView;
+    SUPlayerStatus * _previewStatus;
 }
 
 @property (nonatomic, retain) SUPlayerStatus *previewStatus;

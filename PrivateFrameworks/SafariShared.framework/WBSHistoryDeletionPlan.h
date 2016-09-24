@@ -3,14 +3,14 @@
  */
 
 @interface WBSHistoryDeletionPlan : NSObject {
-    NSMutableSet *_discoveredItemsToDelete;
-    NSSet *_discoveredVisitsToDelete;
-    NSSet *_excludedItems;
-    NSSet *_excludedVisits;
-    WBSHistorySQLiteStore *_store;
-    NSSet *_triggeringItems;
-    NSSet *_triggeringVisits;
-    NSMapTable *_updatedLastVisitsByItem;
+    NSMutableSet * _discoveredItemsToDelete;
+    NSSet * _discoveredVisitsToDelete;
+    NSSet * _excludedItems;
+    NSSet * _excludedVisits;
+    WBSHistorySQLiteStore * _store;
+    NSSet * _triggeringItems;
+    NSSet * _triggeringVisits;
+    NSMapTable * _updatedLastVisitsByItem;
 }
 
 @property (nonatomic, readonly) NSSet *allItemsToDelete;

@@ -3,9 +3,9 @@
  */
 
 @interface MSVThreadSafeMultiCallback : MSVMultiCallback {
-    NSLock *_readLock;
-    NSLock *_writeLock;
-    int readers;
+    NSLock * _readLock;
+    NSLock * _writeLock;
+    int  readers;
 }
 
 - (void).cxx_destruct;

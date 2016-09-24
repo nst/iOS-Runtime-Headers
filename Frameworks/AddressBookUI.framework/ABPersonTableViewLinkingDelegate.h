@@ -3,17 +3,17 @@
  */
 
 @interface ABPersonTableViewLinkingDelegate : NSObject <ABPersonLinkingUIDelegate> {
-    BOOL _appearsInLinkingPeoplePicker;
-    int _currentIndexInLinkedInfos;
-    ABPersonTableViewDataSource *_dataSource;
-    BOOL _hasLinkChanges;
-    ABPersonViewControllerHelper *_helper;
-    BOOL _ignoresReloadLinkedInfos;
-    NSMutableArray *_linkedInfos;
-    BOOL _shouldAllowLinkingAnotherContact;
-    BOOL _shouldShowLinkingUIOnCard;
-    BOOL _showsLinkedPeople;
-    BOOL _updateShouldAllowLinkingAnotherContact;
+    BOOL  _appearsInLinkingPeoplePicker;
+    int  _currentIndexInLinkedInfos;
+    ABPersonTableViewDataSource * _dataSource;
+    BOOL  _hasLinkChanges;
+    ABPersonViewControllerHelper * _helper;
+    BOOL  _ignoresReloadLinkedInfos;
+    NSMutableArray * _linkedInfos;
+    BOOL  _shouldAllowLinkingAnotherContact;
+    BOOL  _shouldShowLinkingUIOnCard;
+    BOOL  _showsLinkedPeople;
+    BOOL  _updateShouldAllowLinkingAnotherContact;
 }
 
 @property (nonatomic) BOOL appearsInLinkingPeoplePicker;

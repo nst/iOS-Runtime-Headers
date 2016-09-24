@@ -3,19 +3,20 @@
  */
 
 @interface CUStateMachine : NSObject {
-    CUState *_currentState;
-    BOOL _dispatching;
-    NSMutableArray *_eventQueue;
-    CUState *_initialState;
-    NSPointerArray *_lcaPath;
-    BOOL _started;
-    NSArray *_states;
-    CUState *_targetState;
+    CUState * _currentState;
+    BOOL  _dispatching;
+    NSMutableArray * _eventQueue;
+    CUState * _initialState;
+    NSPointerArray * _lcaPath;
+    BOOL  _started;
+    NSArray * _states;
+    CUState * _targetState;
 }
 
 @property (nonatomic, retain) CUState *initialState;
 @property (nonatomic, retain) NSArray *states;
 
+- (void).cxx_destruct;
 - (void)_firstTimeInit;
 - (void)dealloc;
 - (void)dispatchEvent:(id)arg1;

@@ -3,11 +3,11 @@
  */
 
 @interface CBPeer : NSObject <NSCopying> {
-    int _hostState;
-    NSUUID *_identifier;
-    BOOL _isLinkEncrypted;
-    unsigned int _mtuLength;
-    int _pairingState;
+    int  _hostState;
+    NSUUID * _identifier;
+    BOOL  _isLinkEncrypted;
+    unsigned int  _mtuLength;
+    int  _pairingState;
 }
 
 @property (nonatomic) int hostState;
@@ -16,8 +16,8 @@
 @property (nonatomic) unsigned int mtuLength;
 @property (nonatomic) int pairingState;
 
+- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (void)handleHostStateUpdated:(id)arg1;
 - (void)handleLinkEncryptionChanged:(id)arg1;
 - (void)handleMTUChanged:(id)arg1;

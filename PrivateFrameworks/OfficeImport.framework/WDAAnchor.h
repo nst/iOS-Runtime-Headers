@@ -3,33 +3,33 @@
  */
 
 @interface WDAAnchor : NSObject {
-    BOOL mAllowOverlap;
+    BOOL  mAllowOverlap;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } mBounds;
-    int mHorizontalPosition;
-    int mRelativeHorizontalPosition;
-    int mRelativeVerticalPosition;
-    NSArray *mTextWrapPoints;
-    int mTextWrappingMode;
-    int mTextWrappingModeType;
-    int mVerticalPosition;
-    double mWrapDistanceBottom;
-    double mWrapDistanceLeft;
-    double mWrapDistanceRight;
-    double mWrapDistanceTop;
-    long mZIndex;
+    }  mBounds;
+    int  mHorizontalPosition;
+    int  mRelativeHorizontalPosition;
+    int  mRelativeVerticalPosition;
+    NSArray * mTextWrapPoints;
+    int  mTextWrappingMode;
+    int  mTextWrappingModeType;
+    int  mVerticalPosition;
+    double  mWrapDistanceBottom;
+    double  mWrapDistanceLeft;
+    double  mWrapDistanceRight;
+    double  mWrapDistanceTop;
+    long  mZIndex;
 }
 
 @property (nonatomic) BOOL allowOverlap;
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } bounds;
 @property (nonatomic) int horizontalPosition;
 @property (nonatomic) int relativeHorizontalPosition;
 @property (nonatomic) int relativeVerticalPosition;
@@ -46,7 +46,7 @@
 + (id)stringForTextWrappingModeType:(int)arg1;
 
 - (BOOL)allowOverlap;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })bounds;
 - (void)dealloc;
 - (id)description;
 - (int)horizontalPosition;
@@ -54,7 +54,7 @@
 - (int)relativeHorizontalPosition;
 - (int)relativeVerticalPosition;
 - (void)setAllowOverlap:(BOOL)arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setHorizontalPosition:(int)arg1;
 - (void)setRelativeHorizontalPosition:(int)arg1;
 - (void)setRelativeVerticalPosition:(int)arg1;

@@ -3,37 +3,53 @@
  */
 
 @interface FigIrisAutoTrimmerMotionSample : NSObject {
-    CMAttitude *_accel;
-    double _accelPeriod;
-    CMAttitude *_attitude;
-    CMAttitude *_delta;
-    double _deltaPeriod;
+    struct { 
+        double w; 
+        double x; 
+        double y; 
+        double z; 
+    }  _accel;
+    double  _accelPeriod;
+    struct { 
+        double w; 
+        double x; 
+        double y; 
+        double z; 
+    }  _attitude;
+    struct { 
+        double w; 
+        double x; 
+        double y; 
+        double z; 
+    }  _delta;
+    double  _deltaPeriod;
     struct { 
         double x; 
         double y; 
         double z; 
-    } _gravity;
-    double _timestamp;
+    }  _gravity;
+    double  _timestamp;
 }
 
-@property (nonatomic, readonly) CMAttitude *accel;
+@property (nonatomic, readonly) struct { double x1; double x2; double x3; double x4; } accel;
 @property (nonatomic, readonly) double accelPeriod;
-@property (nonatomic, readonly) CMAttitude *attitude;
-@property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } cmTimestamp;
-@property (nonatomic, readonly) CMAttitude *delta;
+@property (nonatomic, readonly) struct { double x1; double x2; double x3; double x4; } attitude;
+@property (nonatomic, readonly) struct { int x1; int x2; unsigned int x3; int x4; } cmTimestamp;
+@property (nonatomic, readonly) struct { double x1; double x2; double x3; double x4; } delta;
 @property (nonatomic, readonly) double deltaPeriod;
 @property (nonatomic, readonly) struct { double x1; double x2; double x3; } gravity;
 @property (nonatomic, readonly) double timestamp;
 
-- (id)accel;
+- (struct { double x1; double x2; double x3; double x4; })accel;
 - (double)accelPeriod;
-- (id)attitude;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })cmTimestamp;
+- (struct { double x1; double x2; double x3; double x4; })attitude;
+- (struct { double x1; double x2; double x3; double x4; })attitudeRelativeTo:(id)arg1;
+- (struct { int x1; int x2; unsigned int x3; int x4; })cmTimestamp;
 - (void)dealloc;
-- (id)delta;
+- (struct { double x1; double x2; double x3; double x4; })delta;
 - (double)deltaPeriod;
 - (struct { double x1; double x2; double x3; })gravity;
-- (id)initWithAttitude:(id)arg1 gravity:(struct { double x1; double x2; double x3; })arg2 timestamp:(double)arg3 fromSample:(id)arg4 fromDelta:(id)arg5;
+- (id)initWithAttitude:(const struct { double x1; double x2; double x3; double x4; }*)arg1 gravity:(const struct { double x1; double x2; double x3; }*)arg2 timestamp:(double)arg3 fromSample:(id)arg4 fromDelta:(id)arg5;
 - (double)timestamp;
 
 @end

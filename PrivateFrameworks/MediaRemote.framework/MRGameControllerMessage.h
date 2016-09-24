@@ -3,7 +3,7 @@
  */
 
 @interface MRGameControllerMessage : MRProtocolMessage {
-    BOOL _eventInitialized;
+    BOOL  _eventInitialized;
     struct { 
         int type; 
         union { 
@@ -20,48 +20,48 @@
                 } userAcceleration; 
             } motion; 
             struct { 
-                float buttonA; 
-                float buttonX; 
-                float buttonPause; 
+                double buttonA; 
+                double buttonX; 
+                double buttonPause; 
             } buttons; 
             struct { 
                 struct { 
-                    float buttonA; 
-                    float buttonX; 
-                    float buttonPause; 
+                    double buttonA; 
+                    double buttonX; 
+                    double buttonPause; 
                 } buttons; 
-                float dpadX; 
-                float dpadY; 
-                float buttonB; 
-                float buttonY; 
-                float leftShoulder; 
-                float rightShoulder; 
-                float leftThumbstickX; 
-                float leftThumbstickY; 
-                float rightThumbstickX; 
-                float rightThumbstickY; 
-                float leftTrigger; 
-                float rightTrigger; 
+                double dpadX; 
+                double dpadY; 
+                double buttonB; 
+                double buttonY; 
+                double leftShoulder; 
+                double rightShoulder; 
+                double leftThumbstickX; 
+                double leftThumbstickY; 
+                double rightThumbstickX; 
+                double rightThumbstickY; 
+                double leftTrigger; 
+                double rightTrigger; 
             } extendedButtons; 
             struct { 
-                float x; 
-                float y; 
+                double x; 
+                double y; 
                 bool touchDown; 
+                unsigned int timestamp; 
             } digitizer; 
         } ; 
-    } _gcEvent;
-    BOOL _hasEvent;
-    unsigned int _priority;
-    BOOL _shouldLog;
+    }  _gcEvent;
+    BOOL  _hasEvent;
+    unsigned int  _priority;
 }
 
-@property (nonatomic, readonly) unsigned long long controllerID;
-@property (nonatomic, readonly) struct { int x1; union { struct { struct { double x_1_3_1; double x_1_3_2; double x_1_3_3; } x_1_2_1; struct { double x_2_3_1; double x_2_3_2; double x_2_3_3; } x_1_2_2; } x_2_1_1; struct { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_2_1_2; struct { struct { float x_1_3_1; float x_1_3_2; float x_1_3_3; } x_3_2_1; float x_3_2_2; float x_3_2_3; float x_3_2_4; float x_3_2_5; float x_3_2_6; float x_3_2_7; float x_3_2_8; float x_3_2_9; float x_3_2_10; float x_3_2_11; float x_3_2_12; float x_3_2_13; } x_2_1_3; struct { float x_4_2_1; float x_4_2_2; bool x_4_2_3; } x_2_1_4; } x2; }*event;
+@property (nonatomic, readonly) unsigned int controllerID;
+@property (nonatomic, readonly) struct { int x1; union { struct { struct { double x_1_3_1; double x_1_3_2; double x_1_3_3; } x_1_2_1; struct { double x_2_3_1; double x_2_3_2; double x_2_3_3; } x_1_2_2; } x_2_1_1; struct { double x_2_2_1; double x_2_2_2; double x_2_2_3; } x_2_1_2; struct { struct { double x_1_3_1; double x_1_3_2; double x_1_3_3; } x_3_2_1; double x_3_2_2; double x_3_2_3; double x_3_2_4; double x_3_2_5; double x_3_2_6; double x_3_2_7; double x_3_2_8; double x_3_2_9; double x_3_2_10; double x_3_2_11; double x_3_2_12; double x_3_2_13; } x_2_1_3; struct { double x_4_2_1; double x_4_2_2; bool x_4_2_3; unsigned int x_4_2_4; } x_2_1_4; } x2; }*event;
 
-- (unsigned long long)controllerID;
-- (struct { int x1; union { struct { struct { double x_1_3_1; double x_1_3_2; double x_1_3_3; } x_1_2_1; struct { double x_2_3_1; double x_2_3_2; double x_2_3_3; } x_1_2_2; } x_2_1_1; struct { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_2_1_2; struct { struct { float x_1_3_1; float x_1_3_2; float x_1_3_3; } x_3_2_1; float x_3_2_2; float x_3_2_3; float x_3_2_4; float x_3_2_5; float x_3_2_6; float x_3_2_7; float x_3_2_8; float x_3_2_9; float x_3_2_10; float x_3_2_11; float x_3_2_12; float x_3_2_13; } x_2_1_3; struct { float x_4_2_1; float x_4_2_2; bool x_4_2_3; } x_2_1_4; } x2; }*)event;
-- (id)initWithButtons:(struct { float x1; float x2; float x3; }*)arg1 controllerID:(unsigned long long)arg2;
-- (id)initWithGameControllerEvent:(const struct { int x1; union { struct { struct { double x_1_3_1; double x_1_3_2; double x_1_3_3; } x_1_2_1; struct { double x_2_3_1; double x_2_3_2; double x_2_3_3; } x_1_2_2; } x_2_1_1; struct { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_2_1_2; struct { struct { float x_1_3_1; float x_1_3_2; float x_1_3_3; } x_3_2_1; float x_3_2_2; float x_3_2_3; float x_3_2_4; float x_3_2_5; float x_3_2_6; float x_3_2_7; float x_3_2_8; float x_3_2_9; float x_3_2_10; float x_3_2_11; float x_3_2_12; float x_3_2_13; } x_2_1_3; struct { float x_4_2_1; float x_4_2_2; bool x_4_2_3; } x_2_1_4; } x2; }*)arg1 controllerID:(unsigned long long)arg2;
+- (unsigned int)controllerID;
+- (struct { int x1; union { struct { struct { double x_1_3_1; double x_1_3_2; double x_1_3_3; } x_1_2_1; struct { double x_2_3_1; double x_2_3_2; double x_2_3_3; } x_1_2_2; } x_2_1_1; struct { double x_2_2_1; double x_2_2_2; double x_2_2_3; } x_2_1_2; struct { struct { double x_1_3_1; double x_1_3_2; double x_1_3_3; } x_3_2_1; double x_3_2_2; double x_3_2_3; double x_3_2_4; double x_3_2_5; double x_3_2_6; double x_3_2_7; double x_3_2_8; double x_3_2_9; double x_3_2_10; double x_3_2_11; double x_3_2_12; double x_3_2_13; } x_2_1_3; struct { double x_4_2_1; double x_4_2_2; bool x_4_2_3; unsigned int x_4_2_4; } x_2_1_4; } x2; }*)event;
+- (id)initWithButtons:(struct { double x1; double x2; double x3; }*)arg1 controllerID:(unsigned int)arg2;
+- (id)initWithGameControllerEvent:(const struct { int x1; union { struct { struct { double x_1_3_1; double x_1_3_2; double x_1_3_3; } x_1_2_1; struct { double x_2_3_1; double x_2_3_2; double x_2_3_3; } x_1_2_2; } x_2_1_1; struct { double x_2_2_1; double x_2_2_2; double x_2_2_3; } x_2_1_2; struct { struct { double x_1_3_1; double x_1_3_2; double x_1_3_3; } x_3_2_1; double x_3_2_2; double x_3_2_3; double x_3_2_4; double x_3_2_5; double x_3_2_6; double x_3_2_7; double x_3_2_8; double x_3_2_9; double x_3_2_10; double x_3_2_11; double x_3_2_12; double x_3_2_13; } x_2_1_3; struct { double x_4_2_1; double x_4_2_2; bool x_4_2_3; unsigned int x_4_2_4; } x_2_1_4; } x2; }*)arg1 controllerID:(unsigned int)arg2;
 - (unsigned int)priority;
 - (BOOL)shouldLog;
 - (unsigned int)type;

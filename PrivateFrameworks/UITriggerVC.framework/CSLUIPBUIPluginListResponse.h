@@ -3,8 +3,8 @@
  */
 
 @interface CSLUIPBUIPluginListResponse : PBCodable <NSCopying> {
-    NSMutableArray *_names;
-    NSMutableArray *_usages;
+    NSMutableArray * _names;
+    NSMutableArray * _usages;
 }
 
 @property (nonatomic, retain) NSMutableArray *names;

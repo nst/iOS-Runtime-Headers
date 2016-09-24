@@ -3,7 +3,7 @@
  */
 
 @interface AFSpeechInterpretation : NSObject <NSSecureCoding> {
-    NSArray *_tokens;
+    NSArray * _tokens;
 }
 
 @property (nonatomic, copy) NSArray *tokens;
@@ -11,7 +11,11 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (int)averageConfidenceScore;
 - (int)confidenceScore;
+- (int)confidenceScoreAvg;
+- (int)confidenceScoreMax;
+- (int)confidenceScoreMin;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;

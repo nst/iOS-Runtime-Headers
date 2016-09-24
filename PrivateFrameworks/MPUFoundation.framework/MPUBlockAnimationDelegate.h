@@ -3,7 +3,7 @@
  */
 
 @interface MPUBlockAnimationDelegate : NSObject {
-    id /* block */ _completionHandler;
+    id /* block */  _completionHandler;
 }
 
 @property (nonatomic, readonly, copy) id /* block */ completionHandler;

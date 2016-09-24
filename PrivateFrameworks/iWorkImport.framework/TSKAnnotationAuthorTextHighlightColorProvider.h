@@ -3,7 +3,7 @@
  */
 
 @interface TSKAnnotationAuthorTextHighlightColorProvider : NSObject <TSKCGColorProvider> {
-    TSKAnnotationAuthor *mAnnotationAuthor;
+    TSKAnnotationAuthor * mAnnotationAuthor;
 }
 
 @property (readonly, copy) NSString *debugDescription;

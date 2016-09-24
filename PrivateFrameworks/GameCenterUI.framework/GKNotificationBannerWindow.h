@@ -3,8 +3,8 @@
  */
 
 @interface GKNotificationBannerWindow : UIWindow {
-    NSObject<OS_dispatch_semaphore> *_bannerSemaphore;
-    GKNotificationBannerViewController *_currentBannerViewController;
+    NSObject<OS_dispatch_semaphore> * _bannerSemaphore;
+    GKNotificationBannerViewController * _currentBannerViewController;
 }
 
 @property (nonatomic, readonly, retain) NSObject<OS_dispatch_semaphore> *bannerSemaphore;
@@ -25,7 +25,7 @@
 - (void)handlePan:(id)arg1;
 - (void)handleSingleTap:(id)arg1;
 - (id)init;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (BOOL)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (void)setCurrentBannerViewController:(id)arg1;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 

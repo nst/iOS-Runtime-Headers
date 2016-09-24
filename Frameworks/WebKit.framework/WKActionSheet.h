@@ -3,16 +3,16 @@
  */
 
 @interface WKActionSheet : UIAlertController {
-    unsigned int _arrowDirections;
-    BOOL _isRotating;
+    unsigned int  _arrowDirections;
+    BOOL  _isRotating;
     struct RetainPtr<id<UIPopoverPresentationControllerDelegate> > { 
         void *m_ptr; 
-    } _popoverPresentationControllerDelegateWhileRotating;
+    }  _popoverPresentationControllerDelegateWhileRotating;
     struct RetainPtr<UIViewController> { 
         void *m_ptr; 
-    } _presentedViewControllerWhileRotating;
-    BOOL _readyToPresentAfterRotation;
-    <WKActionSheetDelegate> *_sheetDelegate;
+    }  _presentedViewControllerWhileRotating;
+    BOOL  _readyToPresentAfterRotation;
+    <WKActionSheetDelegate> * _sheetDelegate;
 }
 
 @property (nonatomic) unsigned int arrowDirections;
@@ -27,7 +27,7 @@
 - (void)doneWithSheet;
 - (id)init;
 - (BOOL)presentSheet;
-- (BOOL)presentSheetFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)presentSheetFromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setArrowDirections:(unsigned int)arg1;
 - (void)setSheetDelegate:(id)arg1;
 - (id)sheetDelegate;

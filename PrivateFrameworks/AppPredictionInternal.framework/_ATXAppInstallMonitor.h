@@ -3,10 +3,10 @@
  */
 
 @interface _ATXAppInstallMonitor : NSObject {
-    _ATXAppInfoManager *_appInfoManager;
-    NSDictionary *_assetData;
-    NSObject<OS_dispatch_queue> *_installQueue;
-    id /* block */ _updateCompletionBlock;
+    _ATXAppInfoManager * _appInfoManager;
+    NSDictionary * _assetData;
+    NSObject<OS_dispatch_queue> * _installQueue;
+    id /* block */  _updateCompletionBlock;
 }
 
 - (void).cxx_destruct;
@@ -19,12 +19,16 @@
 - (id)fetchInstalledApps;
 - (id)initWithAppInfoManager:(id)arg1;
 - (void)noSyncUpdateWithWaitTime:(unsigned int)arg1 andBackdate:(BOOL)arg2;
-- (BOOL)recentlyRestoredBackupWithRestoreDate:(id)arg1 andTimeWindow:(unsigned int)arg2;
+- (void)receivedInstallNotification:(id)arg1;
+- (void)receivedStateChangeNotification:(id)arg1;
+- (void)receivedUninstallNotification:(id)arg1;
 - (id)removeIntersectionBetweenSet:(id)arg1 set:(id)arg2;
+- (BOOL)restoreInProgress;
 - (void)setUpdateCompletionBlock:(id /* block */)arg1;
 - (void)start;
 - (void)stop;
 - (void)synchronousUpdateAndBackdate:(BOOL)arg1;
 - (void)synchronousUpdateWithUninstallWaitTime:(unsigned int)arg1 andBackdate:(BOOL)arg2;
+- (void)train;
 
 @end

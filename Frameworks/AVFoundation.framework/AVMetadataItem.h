@@ -3,20 +3,20 @@
  */
 
 @interface AVMetadataItem : NSObject <AVAsynchronousKeyValueLoading, NSCopying, NSMutableCopying> {
-    AVMetadataItemInternal *_priv;
+    AVMetadataItemInternal * _priv;
 }
 
 @property (nonatomic, readonly, copy) NSString *dataType;
 @property (nonatomic, readonly) NSData *dataValue;
 @property (nonatomic, readonly) NSDate *dateValue;
-@property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } duration;
+@property (nonatomic, readonly) struct { int x1; int x2; unsigned int x3; int x4; } duration;
 @property (nonatomic, readonly, copy) NSString *extendedLanguageTag;
 @property (nonatomic, readonly, copy) NSDictionary *extraAttributes;
 @property (nonatomic, readonly, copy) NSString *identifier;
 @property (nonatomic, readonly, copy) NSLocale *locale;
 @property (nonatomic, readonly) NSNumber *numberValue;
 @property (nonatomic, readonly) NSString *stringValue;
-@property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } time;
+@property (nonatomic, readonly) struct { int x1; int x2; unsigned int x3; int x4; } time;
 @property (nonatomic, readonly, copy) <NSObject><NSCopying> *value;
 
 + (BOOL)_clientExpectsISOUserDataKeysInQuickTimeUserDataKeySpace;
@@ -58,6 +58,7 @@
 - (void)_updateIdentifier;
 - (void)_updateLanguageInformationFromExtendedLanguageTag:(id)arg1;
 - (void)_updateLanguageInformationFromLocale:(id)arg1;
+- (id)_valueFromCFType:(void*)arg1;
 - (void)cancelLoading;
 - (id)commonKey;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -67,7 +68,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)discoveryTimestamp;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
+- (struct { int x1; int x2; unsigned int x3; int x4; })duration;
 - (id)extendedLanguageTag;
 - (id)extraAttributes;
 - (void)finalize;
@@ -87,7 +88,7 @@
 - (id)startDate;
 - (int)statusOfValueForKey:(id)arg1 error:(id*)arg2;
 - (id)stringValue;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })time;
+- (struct { int x1; int x2; unsigned int x3; int x4; })time;
 - (id)unicodeLanguageCode;
 - (id)unicodeLanguageIdentifier;
 - (id)value;

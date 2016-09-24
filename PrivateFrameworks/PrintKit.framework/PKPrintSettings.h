@@ -3,8 +3,8 @@
  */
 
 @interface PKPrintSettings : NSObject {
-    NSMutableDictionary *_dict;
-    PKPaper *paper;
+    NSMutableDictionary * _dict;
+    PKPaper * paper;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *dict;

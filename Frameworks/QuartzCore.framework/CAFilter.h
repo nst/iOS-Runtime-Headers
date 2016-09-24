@@ -3,17 +3,19 @@
  */
 
 @interface CAFilter : NSObject <NSCoding, NSCopying, NSMutableCopying> {
-    void *_attr;
-    void *_cache;
-    unsigned int _flags;
-    NSString *_name;
-    unsigned int _type;
+    void * _attr;
+    void * _cache;
+    unsigned int  _flags;
+    NSString * _name;
+    unsigned int  _type;
 }
 
 @property BOOL cachesInputImage;
 @property (getter=isEnabled) BOOL enabled;
 @property (copy) NSString *name;
 @property (readonly) NSString *type;
+
+// Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
 
 + (void)CAMLParserStartElement:(id)arg1;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
@@ -43,5 +45,9 @@
 - (void)setValue:(id)arg1 forKey:(id)arg2;
 - (id)type;
 - (id)valueForKey:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
+
++ (id)px_filterWithPXCompositingFilterType:(int)arg1;
 
 @end

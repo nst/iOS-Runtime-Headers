@@ -3,9 +3,9 @@
  */
 
 @interface UISliderContent : NSObject {
-    UIImage *_maxTrack;
-    UIImage *_minTrack;
-    UIImage *_thumb;
+    UIImage * _maxTrack;
+    UIImage * _minTrack;
+    UIImage * _thumb;
 }
 
 @property (nonatomic, readonly) BOOL isEmpty;

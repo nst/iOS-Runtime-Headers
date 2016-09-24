@@ -3,11 +3,13 @@
  */
 
 @interface BKSSystemApplicationClient : BSBaseXPCClient {
-    NSObject<OS_dispatch_queue> *_callOutQueue;
-    NSObject<OS_dispatch_semaphore> *_checkinSemaphore;
-    <BKSSystemApplicationClientDelegate> *_delegate;
-    BOOL _pendingCheckIn;
-    BOOL _sentConnect;
+    NSObject<OS_dispatch_queue> * _callOutQueue;
+    NSObject<OS_dispatch_semaphore> * _checkinSemaphore;
+    <BKSSystemApplicationClientDelegate> * _delegate;
+    BOOL  _pendingCheckIn;
+    NSObject<OS_dispatch_semaphore> * _pingSemaphore;
+    BOOL  _sentConnect;
+    BOOL  _waitingForPing;
 }
 
 @property (nonatomic) <BKSSystemApplicationClientDelegate> *delegate;
@@ -16,8 +18,8 @@
 - (void)_queue_handleWatchdogPing:(id)arg1;
 - (void)_sendMessageOfType:(int)arg1 packer:(id /* block */)arg2;
 - (void)_sendMessageOfType:(int)arg1 packer:(id /* block */)arg2 replyHandler:(id /* block */)arg3;
-- (void)_sendMessageOfType:(int)arg1 packer:(id /* block */)arg2 replyHandler:(id /* block */)arg3 waitForReply:(BOOL)arg4 waitDuration:(unsigned long long)arg5;
-- (void)checkIn;
+- (void)_sendMessageOfType:(int)arg1 packer:(id /* block */)arg2 replyHandler:(id /* block */)arg3 waitForReply:(BOOL)arg4 waitDuration:(unsigned int)arg5;
+- (void)checkInAndWaitForDataMigration:(BOOL)arg1;
 - (void)connect;
 - (void)dealloc;
 - (id)delegate;

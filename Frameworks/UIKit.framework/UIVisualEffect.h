@@ -3,16 +3,25 @@
  */
 
 @interface UIVisualEffect : NSObject <NSCopying, NSSecureCoding> {
-    _UIVisualEffectConfig *_effectConfig;
-    _UIBackdropViewSettings *_effectSettings;
+    BOOL  __isATVStyle;
+    BOOL  __isAutomaticStyle;
+    _UIVisualEffectConfig * _effectConfig;
+    _UIBackdropViewSettings * _effectSettings;
 }
 
+@property (nonatomic, readonly) BOOL _isATVStyle;
+@property (nonatomic, readonly) BOOL _isAutomaticStyle;
 @property (nonatomic, readonly) _UIVisualEffectConfig *effectConfig;
 @property (nonatomic, readonly) _UIBackdropViewSettings *effectSettings;
+@property (nonatomic, readonly) BOOL hu_isVibrancyEffect;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (BOOL)_isATVStyle;
+- (BOOL)_isAutomaticStyle;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)effectConfig;
 - (id)effectConfigForQuality:(int)arg1;
@@ -20,5 +29,9 @@
 - (id)effectSettings;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/HomeUI.framework/HomeUI
+
+- (BOOL)hu_isVibrancyEffect;
 
 @end

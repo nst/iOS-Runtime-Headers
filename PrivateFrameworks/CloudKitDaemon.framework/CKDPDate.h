@@ -5,15 +5,14 @@
 @interface CKDPDate : PBCodable <NSCopying> {
     struct { 
         unsigned int time : 1; 
-    } _has;
-    double _time;
+    }  _has;
+    double  _time;
 }
 
 @property (nonatomic) BOOL hasTime;
 @property (nonatomic) double time;
 
 - (void)_CKLogToFileHandle:(id)arg1 atDepth:(int)arg2;
-- (id)_prettyDictionaryRepresentation;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;

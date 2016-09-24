@@ -3,8 +3,8 @@
  */
 
 @interface SKUIEntityProviderInvalidationContext : NSObject {
-    BOOL _invalidateDataSourceCounts;
-    BOOL _invalidateEverything;
+    BOOL  _invalidateDataSourceCounts;
+    BOOL  _invalidateEverything;
 }
 
 @property (nonatomic, readonly) BOOL invalidateDataSourceCounts;

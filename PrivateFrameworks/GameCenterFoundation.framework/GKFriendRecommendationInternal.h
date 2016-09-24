@@ -3,10 +3,10 @@
  */
 
 @interface GKFriendRecommendationInternal : GKFamiliarPlayerInternal {
-    NSString *_reason;
-    NSString *_reason2;
-    unsigned int _rid;
-    int _source;
+    NSString * _reason;
+    NSString * _reason2;
+    unsigned int  _rid;
+    int  _source;
 }
 
 @property (nonatomic, retain) NSString *reason;

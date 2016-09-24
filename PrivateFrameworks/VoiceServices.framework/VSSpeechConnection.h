@@ -3,9 +3,9 @@
  */
 
 @interface VSSpeechConnection : NSObject {
-    NSXPCConnection *_connection;
-    VSSpeechConnectionDelegateWrapper *_delegateWrapper;
-    VSSpeechRequest *_request;
+    NSXPCConnection * _connection;
+    VSSpeechConnectionDelegateWrapper * _delegateWrapper;
+    VSSpeechRequest * _request;
 }
 
 @property (nonatomic) <VSSpeechConnectionDelegate> *delegate;
@@ -22,20 +22,21 @@
 - (void)continueCurrentSpeechRequest;
 - (void)dealloc;
 - (id)delegate;
-- (void)downloadVoiceAsset:(id)arg1 progress:(id /* block */)arg2 completion:(id /* block */)arg3;
-- (void)getAllVoiceAssets:(id /* block */)arg1;
 - (void)getAutoDownloadedVoiceAssets:(id /* block */)arg1;
 - (void)getLocalVoiceAssets:(id /* block */)arg1;
+- (void)getLocalVoiceResources:(id /* block */)arg1;
 - (void)getLogToFile:(id /* block */)arg1;
-- (void)getVoiceInfoForLanguageCode:(id)arg1 footprint:(int)arg2 gender:(int)arg3 custom:(BOOL)arg4 reply:(id /* block */)arg5;
+- (void)getVoiceInfoForLanguageCode:(id)arg1 footprint:(long)arg2 gender:(long)arg3 type:(long)arg4 reply:(id /* block */)arg5;
+- (void)getVoiceResourceForLanguage:(id)arg1 reply:(id /* block */)arg2;
 - (BOOL)isSystemSpeaking;
 - (BOOL)isSystemSpeakingOnBehalfOfCurrentConnection;
-- (void)pauseCurrentSpeechRequestAtMark:(int)arg1;
+- (void)pauseCurrentSpeechRequestAtMark:(long)arg1;
+- (void)prewarmIfNeededWithRequest:(id)arg1;
 - (id)request;
 - (void)setAutoDownloadedVoiceAssets:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setLogToFile:(BOOL)arg1;
 - (void)startSpeechRequest:(id)arg1;
-- (void)stopCurrentSpeechRequestAtMark:(int)arg1;
+- (void)stopCurrentSpeechRequestAtMark:(long)arg1;
 
 @end

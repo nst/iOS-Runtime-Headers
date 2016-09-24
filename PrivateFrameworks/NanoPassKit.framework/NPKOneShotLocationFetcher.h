@@ -3,10 +3,10 @@
  */
 
 @interface NPKOneShotLocationFetcher : NSObject <CLLocationManagerDelegate> {
-    id /* block */ _completionHandler;
-    CLInUseAssertion *_inUseAssertion;
-    NSObject<OS_dispatch_source> *_locationFixTimeout;
-    CLLocationManager *_locationManager;
+    id /* block */  _completionHandler;
+    CLInUseAssertion * _inUseAssertion;
+    NSObject<OS_dispatch_source> * _locationFixTimeout;
+    CLLocationManager * _locationManager;
 }
 
 @property (nonatomic, copy) id /* block */ completionHandler;

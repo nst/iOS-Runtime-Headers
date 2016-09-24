@@ -3,11 +3,11 @@
  */
 
 @interface RUISpinnerView : RUIElement {
-    UILabel *_label;
-    RUIObjectModel *_objectModel;
-    UIActivityIndicatorView *_spinner;
-    UIColor *_spinnerColor;
-    UIView *_view;
+    UILabel * _label;
+    RUIObjectModel * _objectModel;
+    UIActivityIndicatorView * _spinner;
+    UIColor * _spinnerColor;
+    UIView * _view;
 }
 
 @property (nonatomic) RUIObjectModel *objectModel;

@@ -19,8 +19,8 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 
-// Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
+// Image: /System/Library/PrivateFrameworks/SiriCore.framework/SiriCore
 
-- (BOOL)af_bufferingAllowedDuringActiveSession;
+- (BOOL)siriCore_bufferingAllowedDuringActiveSession;
 
 @end

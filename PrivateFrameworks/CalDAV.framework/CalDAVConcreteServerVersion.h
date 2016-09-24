@@ -3,7 +3,7 @@
  */
 
 @interface CalDAVConcreteServerVersion : CalDAVServerVersion {
-    NSRegularExpression *_regularExpression;
+    NSRegularExpression * _regularExpression;
 }
 
 @property (nonatomic, retain) NSRegularExpression *regularExpression;

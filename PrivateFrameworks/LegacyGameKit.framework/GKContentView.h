@@ -3,16 +3,16 @@
  */
 
 @interface GKContentView : UIView {
-    UIActivityIndicatorView *_activityIndicator;
-    UIButton *_cancelButton;
-    NSArray *_connectionButtons;
-    UIImageView *_iconView;
-    UILabel *_messageLabel;
-    BOOL _needsLayout;
-    UIButton *_otherButton;
-    UITableView *_table;
-    UIImageView *_tableWellView;
-    UILabel *_titleLabel;
+    UIActivityIndicatorView * _activityIndicator;
+    UIButton * _cancelButton;
+    NSArray * _connectionButtons;
+    UIImageView * _iconView;
+    UILabel * _messageLabel;
+    BOOL  _needsLayout;
+    UIButton * _otherButton;
+    UITableView * _table;
+    UIImageView * _tableWellView;
+    UILabel * _titleLabel;
 }
 
 @property (nonatomic, retain) UIActivityIndicatorView *activityIndicator;

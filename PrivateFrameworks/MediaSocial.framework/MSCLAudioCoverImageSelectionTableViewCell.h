@@ -3,9 +3,9 @@
  */
 
 @interface MSCLAudioCoverImageSelectionTableViewCell : UITableViewCell {
-    UIImageView *_cameraImageView;
-    UIImageView *_coverImageView;
-    UILabel *_placeholderLabel;
+    UIImageView * _cameraImageView;
+    UIImageView * _coverImageView;
+    UILabel * _placeholderLabel;
 }
 
 @property (nonatomic, retain) UIImage *coverImage;

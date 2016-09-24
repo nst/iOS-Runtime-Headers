@@ -3,15 +3,15 @@
  */
 
 @interface EPFormulaCleaner : EDProcessor {
-    EDRowBlocks *mBaseFormulaRowBlocks;
-    int mColumnOffset;
-    EDSheet *mCurrentSheet;
-    EDFormula *mFormula;
-    OITSUIntDictionary *mNameArrayedTestCache;
-    OITSUIntDictionary *mNameCircularReferenceTestCache;
-    EDName *mParentName;
-    int mRowOffset;
-    EDFormula *mTokensToClean;
+    EDRowBlocks * mBaseFormulaRowBlocks;
+    int  mColumnOffset;
+    EDSheet * mCurrentSheet;
+    EDFormula * mFormula;
+    OITSUIntDictionary * mNameArrayedTestCache;
+    OITSUIntDictionary * mNameCircularReferenceTestCache;
+    EDName * mParentName;
+    int  mRowOffset;
+    EDFormula * mTokensToClean;
 }
 
 - (void)addOffsetsToRow:(int*)arg1 rowRelative:(bool)arg2 column:(int*)arg3 columnRelative:(bool)arg4;

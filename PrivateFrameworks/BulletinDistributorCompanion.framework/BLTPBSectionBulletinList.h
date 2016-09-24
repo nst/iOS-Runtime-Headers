@@ -3,8 +3,8 @@
  */
 
 @interface BLTPBSectionBulletinList : PBCodable <NSCopying> {
-    NSMutableArray *_bulletinIdentifiers;
-    NSString *_sectionID;
+    NSMutableArray * _bulletinIdentifiers;
+    NSString * _sectionID;
 }
 
 @property (nonatomic, retain) NSMutableArray *bulletinIdentifiers;

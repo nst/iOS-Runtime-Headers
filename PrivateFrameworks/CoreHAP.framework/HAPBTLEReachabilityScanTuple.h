@@ -3,9 +3,9 @@
  */
 
 @interface HAPBTLEReachabilityScanTuple : NSObject {
-    id /* block */ _completion;
-    NSString *_identifier;
-    NSObject<OS_dispatch_queue> *_queue;
+    id /* block */  _completion;
+    NSString * _identifier;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (nonatomic, copy) id /* block */ completion;

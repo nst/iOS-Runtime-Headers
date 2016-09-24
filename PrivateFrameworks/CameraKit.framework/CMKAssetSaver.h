@@ -3,11 +3,11 @@
  */
 
 @interface CMKAssetSaver : NSObject {
-    NSMutableDictionary *__inProgressAvalancheFileDescriptors;
-    NSMutableDictionary *__inProgressNebulaFileDescriptors;
-    NSMutableDictionary *__inflightAssets;
-    NSMutableArray *__pendingImageJobs;
-    NSMutableArray *__transientStillImageResponses;
+    NSMutableDictionary * __inProgressAvalancheFileDescriptors;
+    NSMutableDictionary * __inProgressNebulaFileDescriptors;
+    NSMutableDictionary * __inflightAssets;
+    NSMutableArray * __pendingImageJobs;
+    NSMutableArray * __transientStillImageResponses;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *_inProgressAvalancheFileDescriptors;

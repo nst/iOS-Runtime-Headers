@@ -3,8 +3,8 @@
  */
 
 @interface CIColorPosterize : CIFilter {
-    CIImage *inputImage;
-    NSNumber *inputLevels;
+    CIImage * inputImage;
+    NSNumber * inputLevels;
 }
 
 @property (nonatomic, retain) CIImage *inputImage;

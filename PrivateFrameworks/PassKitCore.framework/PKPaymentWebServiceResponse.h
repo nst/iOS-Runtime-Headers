@@ -3,15 +3,18 @@
  */
 
 @interface PKPaymentWebServiceResponse : NSObject {
-    id _JSONObject;
+    id  _JSONObject;
+    NSData * _rawData;
 }
 
 @property (nonatomic, readonly) id JSONObject;
+@property (nonatomic, readonly) NSData *rawData;
 
 + (id)responseWithData:(id)arg1;
 
+- (void).cxx_destruct;
 - (id)JSONObject;
-- (void)dealloc;
 - (id)initWithData:(id)arg1;
+- (id)rawData;
 
 @end

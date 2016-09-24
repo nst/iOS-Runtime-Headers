@@ -3,7 +3,7 @@
  */
 
 @interface UICompletionCell : UITableViewCell {
-    NSString *_cellContentString;
+    NSString * _cellContentString;
 }
 
 @property (getter=_contentString, setter=_setContentString:, nonatomic, retain) NSString *contentString;

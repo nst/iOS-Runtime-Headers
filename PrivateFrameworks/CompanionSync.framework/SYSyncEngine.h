@@ -2,20 +2,29 @@
    Image: /System/Library/PrivateFrameworks/CompanionSync.framework/CompanionSync
  */
 
-@interface SYSyncEngine : NSObject {
-    NSObject<OS_dispatch_queue> *_queue;
-    <SYSyncEngineResponder> *_responder;
-    SYService *_service;
+@interface SYSyncEngine : NSObject <SYStateLoggable> {
+    NSObject<OS_dispatch_queue> * _queue;
+    <SYSyncEngineResponder> * _responder;
+    SYService * _service;
+    NSObject<OS_os_activity> * _transportActivity;
 }
 
+@property (nonatomic, readonly) BOOL buffersHandshake;
 @property (nonatomic, readonly) BOOL buffersSessions;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property (nonatomic, readonly) BOOL isInSession;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
 @property (nonatomic) <SYSyncEngineResponder> *responder;
 @property (nonatomic, readonly) SYService *service;
+@property (nonatomic, readonly) PBCodable *stateForLogging;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSObject<OS_os_activity> *transportActivity;
 
 - (void).cxx_destruct;
 - (void)beginSession;
+- (BOOL)buffersHandshake;
 - (BOOL)buffersSessions;
 - (id)cancelMessagesReturningFailures:(id)arg1;
 - (void)endSession;
@@ -28,6 +37,8 @@
 - (BOOL)resume:(id*)arg1;
 - (id)service;
 - (void)setResponder:(id)arg1;
+- (id)stateForLogging;
 - (void)suspend;
+- (id)transportActivity;
 
 @end

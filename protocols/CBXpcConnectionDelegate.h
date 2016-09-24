@@ -5,8 +5,7 @@
 
 @required
 
-- (void)xpcConnectionDidFinalize;
-- (void)xpcConnectionDidReceiveMsg:(void *)arg1 args:(void *)arg2 reply:(void *)arg3; // needs 3 arg types, found 8: unsigned short, NSDictionary *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSDictionary *, void*
+- (void)xpcConnectionDidReceiveMsg:(unsigned short)arg1 args:(NSDictionary *)arg2;
 - (void)xpcConnectionDidReset;
 - (void)xpcConnectionIsInvalid;
 

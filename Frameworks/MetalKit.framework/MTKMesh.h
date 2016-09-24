@@ -3,14 +3,14 @@
  */
 
 @interface MTKMesh : NSObject {
-    NSString *_name;
-    NSMutableArray *_submeshes;
-    NSMutableArray *_vertexBuffers;
-    unsigned int _vertexCount;
-    MDLVertexDescriptor *_vertexDescriptor;
+    NSString * _name;
+    NSMutableArray * _submeshes;
+    NSMutableArray * _vertexBuffers;
+    unsigned int  _vertexCount;
+    MDLVertexDescriptor * _vertexDescriptor;
 }
 
-@property (nonatomic, retain) NSString *name;
+@property (nonatomic, copy) NSString *name;
 @property (nonatomic, readonly) NSArray *submeshes;
 @property (nonatomic, readonly) NSArray *vertexBuffers;
 @property (nonatomic, readonly) unsigned int vertexCount;

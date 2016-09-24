@@ -13,7 +13,7 @@
         unsigned int Nh; 
         unsigned int data[16]; 
         int num; 
-    } _context;
+    }  _context;
 }
 
 - (id)final;

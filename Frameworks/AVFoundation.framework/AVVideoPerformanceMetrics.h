@@ -3,7 +3,7 @@
  */
 
 @interface AVVideoPerformanceMetrics : NSObject {
-    AVVideoPerformanceMetricsInternal *_performanceMetricsInternal;
+    AVVideoPerformanceMetricsInternal * _performanceMetricsInternal;
 }
 
 @property (nonatomic, readonly) unsigned long numberOfCorruptedVideoFrames;

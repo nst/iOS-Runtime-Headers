@@ -3,11 +3,11 @@
  */
 
 @interface AKAnnotationLayer : CALayer {
-    AKAnnotation *_annotation;
-    BOOL _isObservingAnnotation;
-    BOOL _lastRedrawWasForDrawingBounds;
-    AKPageController *_pageController;
-    BOOL _wasLastDrawingClipped;
+    AKAnnotation * _annotation;
+    BOOL  _isObservingAnnotation;
+    BOOL  _lastRedrawWasForDrawingBounds;
+    AKPageController * _pageController;
+    BOOL  _wasLastDrawingClipped;
 }
 
 @property (retain) AKAnnotation *annotation;

@@ -3,10 +3,10 @@
  */
 
 @interface CertInfoCertificateDetailsController : UITableViewController {
-    <CertInfoCertificateDetailsControllerDelegate> *_delegate;
-    UIBarButtonItem *_doneButton;
-    NSArray *_sectionDictionaries;
-    unsigned int _showsDoneButton;
+    <CertInfoCertificateDetailsControllerDelegate> * _delegate;
+    UIBarButtonItem * _doneButton;
+    NSArray * _sectionDictionaries;
+    unsigned int  _showsDoneButton;
 }
 
 @property (nonatomic) <CertInfoCertificateDetailsControllerDelegate> *delegate;

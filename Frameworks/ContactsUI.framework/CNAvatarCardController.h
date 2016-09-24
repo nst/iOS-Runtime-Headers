@@ -3,25 +3,26 @@
  */
 
 @interface CNAvatarCardController : NSObject {
-    NSArray *_actionCategories;
-    BOOL _actionsNeedRefresh;
-    CNAvatarView *_avatarView;
-    BOOL _bypassActionValidation;
-    NSArray *_contacts;
-    <CNAvatarCardControllerDelegate> *_delegate;
-    CNContactHeaderDisplayView *_headerView;
-    UIButton *_infoButton;
-    UIGestureRecognizer *_rolloverGestureRecognizer;
+    NSArray * _actionCategories;
+    BOOL  _actionsNeedRefresh;
+    CNAvatarView * _avatarView;
+    BOOL  _bypassActionValidation;
+    NSArray * _contacts;
+    <CNAvatarCardControllerDelegate> * _delegate;
+    CNContactOrbHeaderView * _headerView;
+    UIButton * _infoButton;
+    UIGestureRecognizer * _rolloverGestureRecognizer;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } _sourceRect;
+    }  _sourceRect;
+    UIView * _sourceView;
 }
 
 @property (nonatomic, copy) NSArray *actionCategories;
@@ -31,13 +32,13 @@
 @property (nonatomic, retain) CNContact *contact;
 @property (nonatomic, retain) NSArray *contacts;
 @property (nonatomic) <CNAvatarCardControllerDelegate> *delegate;
-@property (nonatomic, retain) CNContactHeaderDisplayView *headerView;
+@property (nonatomic, retain) CNContactOrbHeaderView *headerView;
 @property (nonatomic, retain) UIButton *infoButton;
 @property (nonatomic, copy) NSString *message;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, readonly) UIViewController *presentingViewController;
 @property (nonatomic, retain) UIGestureRecognizer *rolloverGestureRecognizer;
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } sourceRect;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } sourceRect;
 @property (nonatomic, retain) UIView *sourceView;
 @property (getter=isVisible, nonatomic, readonly) BOOL visible;
 
@@ -45,6 +46,7 @@
 + (BOOL)avatarCardEnabled;
 + (int)avatarCardImplementation;
 + (id)descriptorForRequiredKeys;
++ (id)descriptorForRequiredKeysIncludingAvatarViewDescriptors:(BOOL)arg1;
 + (BOOL)showsWithTapAndHold;
 
 - (void).cxx_destruct;
@@ -81,11 +83,11 @@
 - (void)setMessage:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setRolloverGestureRecognizer:(id)arg1;
-- (void)setSourceRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setSourceRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setSourceView:(id)arg1;
 - (void)showContact;
 - (void)showContact:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })sourceRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })sourceRect;
 - (id)sourceView;
 
 @end

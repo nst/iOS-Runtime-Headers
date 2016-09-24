@@ -3,21 +3,23 @@
  */
 
 @interface ISDataProvider : NSObject <NSCopying> {
-    NSNumber *_authenticatedAccountDSID;
-    SSAuthenticationContext *_authenticationContext;
-    SSURLBagContext *_bagContext;
-    long long _contentLength;
-    NSString *_contentType;
-    int _errorHandlerResponseType;
-    id _output;
-    ISOperation *_parentOperation;
-    NSURL *_redirectURL;
+    NSNumber * _authenticatedAccountDSID;
+    SSAuthenticationContext * _authenticationContext;
+    SSURLBagContext * _bagContext;
+    ISBiometricAuthenticationContext * _biometricAuthenticationContext;
+    int  _contentLength;
+    NSString * _contentType;
+    int  _errorHandlerResponseType;
+    id  _output;
+    ISOperation * _parentOperation;
+    NSURL * _redirectURL;
 }
 
 @property (retain) NSNumber *authenticatedAccountDSID;
 @property (retain) SSAuthenticationContext *authenticationContext;
 @property (retain) SSURLBagContext *bagContext;
-@property long long contentLength;
+@property (retain) ISBiometricAuthenticationContext *biometricAuthenticationContext;
+@property int contentLength;
 @property (retain) NSString *contentType;
 @property int errorHandlerResponseType;
 @property (retain) id output;
@@ -26,17 +28,18 @@
 
 + (id)provider;
 
+- (void).cxx_destruct;
 - (BOOL)_runServerAuthenticationOperation:(id)arg1 error:(id*)arg2;
 - (id)authenticatedAccountDSID;
 - (id)authenticationContext;
 - (id)bagContext;
-- (BOOL)canStreamContentLength:(long long)arg1 error:(id*)arg2;
+- (id)biometricAuthenticationContext;
+- (BOOL)canStreamContentLength:(int)arg1 error:(id*)arg2;
 - (id)closeStream;
 - (void)configureFromProvider:(id)arg1;
-- (long long)contentLength;
+- (int)contentLength;
 - (id)contentType;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (int)errorHandlerResponseType;
 - (BOOL)isStream;
 - (BOOL)isStreamComplete;
@@ -48,10 +51,12 @@
 - (void)resetStream;
 - (BOOL)runAuthorizationDialog:(id)arg1 error:(id*)arg2;
 - (BOOL)runSubOperation:(id)arg1 error:(id*)arg2;
+- (BOOL)runTouchIDAuthorizationDialog:(id)arg1 error:(id*)arg2;
 - (void)setAuthenticatedAccountDSID:(id)arg1;
 - (void)setAuthenticationContext:(id)arg1;
 - (void)setBagContext:(id)arg1;
-- (void)setContentLength:(long long)arg1;
+- (void)setBiometricAuthenticationContext:(id)arg1;
+- (void)setContentLength:(int)arg1;
 - (void)setContentType:(id)arg1;
 - (void)setErrorHandlerResponseType:(int)arg1;
 - (void)setOutput:(id)arg1;
@@ -60,6 +65,6 @@
 - (void)setup;
 - (void)streamCancelled;
 - (void)streamDidFailWithError:(id)arg1;
-- (long long)streamedBytes;
+- (int)streamedBytes;
 
 @end

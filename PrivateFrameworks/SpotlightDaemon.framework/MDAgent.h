@@ -3,12 +3,14 @@
  */
 
 @interface MDAgent : NSObject {
-    <NSXPCProxyCreating> *_clientLink;
-    MDAgentDelegate *_delegate;
+    <NSXPCProxyCreating> * _clientLink;
+    MDAgentDelegate * _delegate;
+    NSString * _processDescription;
 }
 
 @property (retain) <NSXPCProxyCreating> *clientLink;
 @property MDAgentDelegate *delegate;
+@property (nonatomic, retain) NSString *processDescription;
 
 + (id)clientBundleIDForConnection:(id)arg1;
 + (id)clientXPCInterface;
@@ -20,7 +22,9 @@
 - (id)clientLink;
 - (id)delegate;
 - (id)initWithClientConnection:(id)arg1 clientLink:(id)arg2 indexer:(id)arg3;
+- (id)processDescription;
 - (void)setClientLink:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setProcessDescription:(id)arg1;
 
 @end

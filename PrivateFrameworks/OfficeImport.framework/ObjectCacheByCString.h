@@ -3,7 +3,7 @@
  */
 
 @interface ObjectCacheByCString : NSObject {
-    struct __CFDictionary { } *_dictionary;
+    struct __CFDictionary { } * _dictionary;
 }
 
 - (void)dealloc;

@@ -3,20 +3,20 @@
  */
 
 @interface MCSessionStream : NSObject {
-    id /* block */ _completionHandler;
-    int _fd;
-    NSMutableData *_incomingBuffer;
-    NSString *_name;
-    MCResourceProgressObserver *_observer;
-    MCPeerID *_peerID;
-    NSProgress *_progress;
-    BOOL _progressUnbounded;
-    NSObject<OS_dispatch_source> *_source;
-    BOOL _sourceSuspended;
-    unsigned int _streamID;
-    NSURL *_url;
-    MCResourceDownloader *_urlDownloader;
-    int state;
+    id /* block */  _completionHandler;
+    int  _fd;
+    NSMutableData * _incomingBuffer;
+    NSString * _name;
+    MCResourceProgressObserver * _observer;
+    MCPeerID * _peerID;
+    NSProgress * _progress;
+    BOOL  _progressUnbounded;
+    NSObject<OS_dispatch_source> * _source;
+    BOOL  _sourceSuspended;
+    unsigned int  _streamID;
+    NSURL * _url;
+    MCResourceDownloader * _urlDownloader;
+    int  state;
 }
 
 @property (nonatomic, copy) id /* block */ completionHandler;

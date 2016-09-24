@@ -3,12 +3,12 @@
  */
 
 @interface BRCLogState : NSObject {
-    struct __asl_object_s { } *_asl_client;
-    struct __asl_object_s { } *_asl_store;
-    NSString *_basename;
-    NSURL *_directory;
-    int _fd;
-    NSObject<OS_dispatch_source> *_fdDeletionWatcher;
+    struct __asl_object_s { } * _asl_client;
+    struct __asl_object_s { } * _asl_store;
+    NSString * _basename;
+    NSURL * _directory;
+    int  _fd;
+    NSObject<OS_dispatch_source> * _fdDeletionWatcher;
 }
 
 @property (nonatomic, retain) NSString *basename;
@@ -16,6 +16,8 @@
 
 + (id)defaultLogState;
 
+- (void).cxx_destruct;
+- (void)_setLevel:(int)arg1;
 - (id)basename;
 - (void)closeLog;
 - (const char *)currentSectionID;
@@ -26,7 +28,6 @@
 - (void)openASLStoreIfNeeded;
 - (void)setBasename:(id)arg1;
 - (void)setDirectory:(id)arg1;
-- (void)setLevel:(int)arg1;
 - (void)setPath:(const char *)arg1 base:(const char *)arg2;
 
 @end

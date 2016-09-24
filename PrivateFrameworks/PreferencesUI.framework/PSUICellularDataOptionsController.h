@@ -3,12 +3,12 @@
  */
 
 @interface PSUICellularDataOptionsController : PSListController {
-    BOOL _3GOverrideTo4G;
-    BOOL _LTEOverrideTo4G;
-    PSListItemsController *_RATModeDrilldownController;
-    int _RATSwitchKind;
-    PSSpecifier *_enableRATSpecifier;
-    PSSpecifier *_mobileDataGroup;
+    BOOL  _3GOverrideTo4G;
+    BOOL  _LTEOverrideTo4G;
+    PSListItemsController * _RATModeDrilldownController;
+    int  _RATSwitchKind;
+    PSSpecifier * _enableRATSpecifier;
+    PSSpecifier * _mobileDataGroup;
 }
 
 - (void).cxx_destruct;

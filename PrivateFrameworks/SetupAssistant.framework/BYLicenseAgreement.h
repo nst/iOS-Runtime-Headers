@@ -4,9 +4,10 @@
 
 @interface BYLicenseAgreement : NSObject
 
++ (void)_clearAcceptedLicenseVersion;
 + (BOOL)needsToAcceptNewAgreement;
 + (void)recordUserAcceptedAgreementVersion:(unsigned int)arg1;
 + (unsigned int)versionOfAcceptedAgreement;
-+ (unsigned int)versionOfNewestAgreement;
++ (unsigned int)versionOfOnDiskAgreement;
 
 @end

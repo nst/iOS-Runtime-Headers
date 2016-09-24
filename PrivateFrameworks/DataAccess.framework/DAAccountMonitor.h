@@ -3,8 +3,8 @@
  */
 
 @interface DAAccountMonitor : NSObject {
-    NSHashTable *_accounts;
-    NSObject<OS_dispatch_queue> *_accountsQueue;
+    NSHashTable * _accounts;
+    NSObject<OS_dispatch_queue> * _accountsQueue;
 }
 
 @property (nonatomic, retain) NSHashTable *accounts;

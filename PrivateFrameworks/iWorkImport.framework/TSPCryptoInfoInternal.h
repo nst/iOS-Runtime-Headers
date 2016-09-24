@@ -3,10 +3,10 @@
  */
 
 @interface TSPCryptoInfoInternal : NSObject <TSPCryptoInfo> {
-    NSArray *_blockInfos;
-    SFUCryptoKey *_cryptoKey;
-    unsigned long _decodedLength;
-    unsigned long _preferredBlockSize;
+    NSArray * _blockInfos;
+    SFUCryptoKey * _cryptoKey;
+    unsigned long  _decodedLength;
+    unsigned long  _preferredBlockSize;
 }
 
 @property (nonatomic, retain) NSArray *blockInfos;
@@ -14,6 +14,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) unsigned long decodedLength;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) BOOL hasDecodedLength;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) unsigned long preferredBlockSize;
 @property (readonly) Class superclass;
@@ -22,6 +23,7 @@
 - (id)blockInfos;
 - (id)cryptoKey;
 - (unsigned long)decodedLength;
+- (BOOL)hasDecodedLength;
 - (id)initWithCryptoInfo:(id)arg1;
 - (id)initWithCryptoKey:(id)arg1 preferredBlockSize:(unsigned long)arg2 blockInfos:(id)arg3 decodedLength:(unsigned long)arg4;
 - (id)mutableCryptoInfoCopy;

@@ -6,9 +6,9 @@
     struct { 
         unsigned int initializing : 1; 
         unsigned int confirmed : 1; 
-    } _confirmFlags;
-    VSRecognitionAction *_confirmedAction;
-    VSRecognitionAction *_deniedAction;
+    }  _confirmFlags;
+    VSRecognitionAction * _confirmedAction;
+    VSRecognitionAction * _deniedAction;
 }
 
 - (void)_setConfirmed:(BOOL)arg1;

@@ -3,14 +3,14 @@
  */
 
 @interface GEOTimeRange : PBCodable <NSCopying> {
-    BOOL _allDay;
-    unsigned int _from;
+    BOOL  _allDay;
+    unsigned int  _from;
     struct { 
         unsigned int from : 1; 
         unsigned int to : 1; 
         unsigned int allDay : 1; 
-    } _has;
-    unsigned int _to;
+    }  _has;
+    unsigned int  _to;
 }
 
 @property (nonatomic) BOOL allDay;
@@ -30,7 +30,7 @@
 - (BOOL)hasFrom;
 - (BOOL)hasTo;
 - (unsigned int)hash;
-- (id)initWithPlaceDataTimeRange:(struct { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*)arg1;
+- (id)initWithPlaceDataTimeRange:(struct GEOPDLocalTimeRange { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;

@@ -3,7 +3,7 @@
  */
 
 @interface MBAutoreleaseBlock : NSObject {
-    id /* block */ _block;
+    id /* block */  _block;
 }
 
 + (id)withBlock:(id /* block */)arg1;

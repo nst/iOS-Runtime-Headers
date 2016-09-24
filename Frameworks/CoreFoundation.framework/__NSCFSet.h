@@ -3,10 +3,10 @@
  */
 
 @interface __NSCFSet : NSMutableSet {
-    unsigned int _bits;
-    void *_callbacks;
-    unsigned char _cfinfo;
-    id *_values;
+    unsigned int  _bits;
+    void * _callbacks;
+    unsigned char  _cfinfo;
+    id * _values;
 }
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
@@ -19,7 +19,6 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)count;
 - (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
-- (void)finalize;
 - (void)getObjects:(id*)arg1;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;

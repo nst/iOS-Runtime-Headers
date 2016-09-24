@@ -3,8 +3,8 @@
  */
 
 @interface SCROIOElement : NSObject <NSCopying, SCROIOElementProtocol> {
-    long _identifier;
-    unsigned int _ioObject;
+    long  _identifier;
+    unsigned int  _ioObject;
 }
 
 @property (readonly, copy) NSString *debugDescription;

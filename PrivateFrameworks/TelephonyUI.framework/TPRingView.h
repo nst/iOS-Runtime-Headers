@@ -3,11 +3,11 @@
  */
 
 @interface TPRingView : UIView {
-    CALayer *_dodgeRingLayer;
-    CALayer *_highlightDodgeLayer;
-    CALayer *_highlightLuminanceLayer;
-    CALayer *_luminanceRingLayer;
-    CALayer *_selectionLayer;
+    CALayer * _dodgeRingLayer;
+    CALayer * _highlightDodgeLayer;
+    CALayer * _highlightLuminanceLayer;
+    CALayer * _luminanceRingLayer;
+    CALayer * _selectionLayer;
 }
 
 @property (retain) CALayer *dodgeRingLayer;
@@ -18,19 +18,19 @@
 
 + (id)colorForDodge;
 + (id)colorForLuminance;
-+ (id)createRingImageWithSize:(struct CGSize { float x1; float x2; })arg1 strokeWidth:(float)arg2 color:(id)arg3;
++ (id)createRingImageWithSize:(struct CGSize { double x1; double x2; })arg1 strokeWidth:(float)arg2 color:(id)arg3;
 + (float)ringCornerRadius;
 + (id)ringImageForDodge;
 + (id)ringImageForLuminance;
-+ (struct CGSize { float x1; float x2; })ringSize;
++ (struct CGSize { double x1; double x2; })ringSize;
 + (float)ringStroke;
 
 - (void).cxx_destruct;
 - (id)dodgeRingLayer;
 - (id)highlightDodgeLayer;
 - (id)highlightLuminanceLayer;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (id)luminanceRingLayer;
 - (id)selectionLayer;
 - (void)setDodgeRingLayer:(id)arg1;

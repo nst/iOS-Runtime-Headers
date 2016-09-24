@@ -3,14 +3,14 @@
  */
 
 @interface AWDWiProxLeReceiveDataResult : PBCodable <NSCopying> {
-    unsigned int _dataLength;
+    unsigned int  _dataLength;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int dataLength : 1; 
-    } _has;
-    NSString *_peerId;
-    NSString *_sessionId;
-    unsigned long long _timestamp;
+    }  _has;
+    NSString * _peerId;
+    NSString * _sessionId;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) unsigned int dataLength;

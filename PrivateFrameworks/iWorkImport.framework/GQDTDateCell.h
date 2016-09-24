@@ -3,8 +3,8 @@
  */
 
 @interface GQDTDateCell : GQDTCell {
-    GQDTComputedFormatSpec *mComputedFormat;
-    struct __CFDate { } *mDate;
+    GQDTComputedFormatSpec * mComputedFormat;
+    struct __CFDate { } * mDate;
 }
 
 - (struct __CFString { }*)createStringValue;

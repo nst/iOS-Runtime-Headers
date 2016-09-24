@@ -3,21 +3,22 @@
  */
 
 @interface ATDeviceSyncSessionAssetTask : ATDeviceSyncSessionTask <ATAssetLinkControllerObserver> {
-    BOOL _addedTransportUpgradeException;
-    <ATAssetClient> *_assetClient;
-    ATAssetLinkController *_assetController;
-    NSMutableSet *_assetStreams;
-    NSMapTable *_assetToBytesMap;
-    NSMutableOrderedSet *_clientAssetsInProgress;
-    NSMutableOrderedSet *_clientAssetsRemaining;
-    NSMutableDictionary *_detailedProgress;
-    BOOL _peerRequestsComplete;
-    BOOL _requestsComplete;
-    NSMutableOrderedSet *_serverAssetsInProgress;
-    double _taskStartTime;
-    ATThroughputCalculator *_throughputCalculator;
-    unsigned long long _totalAssetSize;
-    NSObject<OS_dispatch_queue> *_workQueue;
+    BOOL  _addedTransportUpgradeException;
+    <ATAssetClient> * _assetClient;
+    ATAssetLinkController * _assetController;
+    NSMutableSet * _assetStreams;
+    NSMapTable * _assetToBytesMap;
+    NSMutableOrderedSet * _clientAssetsInProgress;
+    NSMutableOrderedSet * _clientAssetsRemaining;
+    NSMutableDictionary * _detailedProgress;
+    BOOL  _handledTaskCompletion;
+    BOOL  _peerRequestsComplete;
+    BOOL  _requestsComplete;
+    NSMutableOrderedSet * _serverAssetsInProgress;
+    double  _taskStartTime;
+    ATThroughputCalculator * _throughputCalculator;
+    unsigned int  _totalAssetSize;
+    NSObject<OS_dispatch_queue> * _workQueue;
 }
 
 @property (readonly, copy) NSString *debugDescription;

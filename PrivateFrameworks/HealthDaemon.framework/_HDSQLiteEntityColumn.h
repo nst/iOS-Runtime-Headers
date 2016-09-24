@@ -3,12 +3,12 @@
  */
 
 @interface _HDSQLiteEntityColumn : NSObject {
-    NSString *_columnType;
-    int _deletionAction;
-    unsigned int _keyPathType;
-    NSString *_name;
-    Class _targetEntityClass;
-    NSString *_targetProperty;
+    NSString * _columnType;
+    int  _deletionAction;
+    unsigned int  _keyPathType;
+    NSString * _name;
+    Class  _targetEntityClass;
+    NSString * _targetProperty;
 }
 
 @property (nonatomic, readonly, copy) NSString *columnType;

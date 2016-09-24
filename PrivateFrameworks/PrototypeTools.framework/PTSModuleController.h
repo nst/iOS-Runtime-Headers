@@ -3,7 +3,7 @@
  */
 
 @interface PTSModuleController : UITableViewController <PTSModuleObserver, PTSRowTableViewCellDelegate> {
-    PTSModule *_module;
+    PTSModule * _module;
 }
 
 @property (readonly, copy) NSString *debugDescription;

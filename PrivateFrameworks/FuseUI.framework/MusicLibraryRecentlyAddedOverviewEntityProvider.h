@@ -3,9 +3,9 @@
  */
 
 @interface MusicLibraryRecentlyAddedOverviewEntityProvider : MusicMediaEntityProvider {
-    unsigned int _entityLimit;
-    BOOL _hasValidOverviewEntityValueProvider;
-    MusicLibraryRecentlyAddedOverviewEntityValueProvider *_overviewEntityValueProvider;
+    unsigned int  _entityLimit;
+    BOOL  _hasValidOverviewEntityValueProvider;
+    MusicLibraryRecentlyAddedOverviewEntityValueProvider * _overviewEntityValueProvider;
 }
 
 @property (nonatomic) unsigned int entityLimit;

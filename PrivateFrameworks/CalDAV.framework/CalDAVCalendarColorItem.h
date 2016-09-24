@@ -3,7 +3,7 @@
  */
 
 @interface CalDAVCalendarColorItem : CoreDAVItem {
-    NSString *_symbolicColorName;
+    NSString * _symbolicColorName;
 }
 
 @property (nonatomic, retain) NSString *colorString;

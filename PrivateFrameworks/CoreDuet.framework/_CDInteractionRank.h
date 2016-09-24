@@ -3,8 +3,8 @@
  */
 
 @interface _CDInteractionRank : NSObject {
-    NSSet *_reasons;
-    double _score;
+    NSSet * _reasons;
+    double  _score;
 }
 
 @property (retain) NSSet *reasons;

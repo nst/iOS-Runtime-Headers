@@ -3,7 +3,7 @@
  */
 
 @interface SUScriptViewController : SUScriptObject {
-    NSArray *_scriptToolbarItems;
+    NSArray * _scriptToolbarItems;
 }
 
 @property (retain) id backgroundColor;

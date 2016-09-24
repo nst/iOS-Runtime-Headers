@@ -3,8 +3,8 @@
  */
 
 @interface PFUbiquityBaselineOperation : PFUbiquityImportOperation {
-    NSManagedObjectModel *_model;
-    NSString *_modelVersionHash;
+    NSManagedObjectModel * _model;
+    NSString * _modelVersionHash;
 }
 
 @property (nonatomic, readonly) NSManagedObjectModel *model;

@@ -2,23 +2,25 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDHomeInvitation : NSObject <NSSecureCoding> {
-    NSObject<OS_dispatch_queue> *_clientQueue;
-    id /* block */ _expirationHandler;
-    HMDHome *_home;
-    HMHomeInvitationData *_invitationData;
-    int _invitationState;
-    id /* block */ _resolutionHandler;
-    NSObject<OS_dispatch_source> *_timer;
-    NSObject<OS_dispatch_queue> *_timerQueue;
+@interface HMDHomeInvitation : NSObject <HMFTimerDelegate, NSSecureCoding> {
+    NSObject<OS_dispatch_queue> * _clientQueue;
+    id /* block */  _expirationHandler;
+    HMDHome * _home;
+    HMHomeInvitationData * _invitationData;
+    int  _invitationState;
+    id /* block */  _resolutionHandler;
+    HMFTimer * _timer;
 }
 
 @property (getter=isAccepted, nonatomic, readonly) BOOL accepted;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *clientQueue;
+@property (readonly, copy) NSString *debugDescription;
 @property (getter=isDeclined, nonatomic, readonly) BOOL declined;
-@property (nonatomic, readonly, copy) NSDate *endDate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSDate *endDate;
 @property (nonatomic, copy) id /* block */ expirationHandler;
 @property (getter=isExpired, nonatomic, readonly) BOOL expired;
+@property (readonly) unsigned int hash;
 @property (nonatomic) HMDHome *home;
 @property (nonatomic, readonly, copy) NSUUID *identifier;
 @property (nonatomic, retain) HMHomeInvitationData *invitationData;
@@ -26,19 +28,23 @@
 @property (getter=isPending, nonatomic, readonly) BOOL pending;
 @property (nonatomic, copy) id /* block */ resolutionHandler;
 @property (nonatomic, readonly, copy) NSDate *startDate;
-@property (nonatomic, retain) NSObject<OS_dispatch_source> *timer;
-@property (nonatomic, retain) NSObject<OS_dispatch_queue> *timerQueue;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) HMFTimer *timer;
 
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_clearTimer;
 - (void)_configureTimer;
+- (void)_resolve:(BOOL)arg1;
+- (void)accept;
 - (id)clientQueue;
+- (void)decline;
+- (id)describeWithFormat;
 - (void)encodeWithCoder:(id)arg1;
 - (id)endDate;
 - (id /* block */)expirationHandler;
-- (void)expireTimer;
+- (void)expire;
 - (id)home;
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;
@@ -51,18 +57,17 @@
 - (BOOL)isExpired;
 - (BOOL)isPending;
 - (id /* block */)resolutionHandler;
-- (void)resolveTimer:(BOOL)arg1;
 - (void)setClientQueue:(id)arg1;
+- (void)setEndDate:(id)arg1;
 - (void)setExpirationHandler:(id /* block */)arg1;
 - (void)setHome:(id)arg1;
 - (void)setInvitationData:(id)arg1;
 - (void)setInvitationState:(int)arg1;
 - (void)setResolutionHandler:(id /* block */)arg1;
 - (void)setTimer:(id)arg1;
-- (void)setTimerQueue:(id)arg1;
 - (id)startDate;
 - (id)timer;
-- (id)timerQueue;
+- (void)timerDidFire:(id)arg1;
 - (void)updateInvitationState:(int)arg1;
 - (void)updateTimer:(unsigned int)arg1 clientQueue:(id)arg2;
 

@@ -3,48 +3,48 @@
  */
 
 @interface PTXParallaxSettings : _UISettings {
-    BOOL _alphaEnabled;
-    int _distanceFromScreen;
-    BOOL _increaseEnabled;
-    float _maxAlpha;
-    float _minAlpha;
-    float _perspectiveTransform;
-    int _slideDirectionX;
-    int _slideDirectionY;
-    BOOL _slideEnabled;
-    float _slideIncreaseX;
-    float _slideIncreaseY;
-    float _slidePixelsX;
-    float _slidePixelsY;
-    float _tiltDegreesX;
-    float _tiltDegreesY;
-    int _tiltDirectionX;
-    int _tiltDirectionY;
-    BOOL _tiltEnabled;
-    float _tiltIncreaseX;
-    float _tiltIncreaseY;
+    BOOL  _alphaEnabled;
+    int  _distanceFromScreen;
+    BOOL  _increaseEnabled;
+    double  _maxAlpha;
+    double  _minAlpha;
+    double  _perspectiveTransform;
+    int  _slideDirectionX;
+    int  _slideDirectionY;
+    BOOL  _slideEnabled;
+    double  _slideIncreaseX;
+    double  _slideIncreaseY;
+    double  _slidePixelsX;
+    double  _slidePixelsY;
+    double  _tiltDegreesX;
+    double  _tiltDegreesY;
+    int  _tiltDirectionX;
+    int  _tiltDirectionY;
+    BOOL  _tiltEnabled;
+    double  _tiltIncreaseX;
+    double  _tiltIncreaseY;
 }
 
 @property BOOL alphaEnabled;
 @property int distanceFromScreen;
 @property BOOL increaseEnabled;
-@property float maxAlpha;
-@property float minAlpha;
-@property float perspectiveTransform;
+@property double maxAlpha;
+@property double minAlpha;
+@property double perspectiveTransform;
 @property int slideDirectionX;
 @property int slideDirectionY;
 @property BOOL slideEnabled;
-@property float slideIncreaseX;
-@property float slideIncreaseY;
-@property float slidePixelsX;
-@property float slidePixelsY;
-@property float tiltDegreesX;
-@property float tiltDegreesY;
+@property double slideIncreaseX;
+@property double slideIncreaseY;
+@property double slidePixelsX;
+@property double slidePixelsY;
+@property double tiltDegreesX;
+@property double tiltDegreesY;
 @property int tiltDirectionX;
 @property int tiltDirectionY;
 @property BOOL tiltEnabled;
-@property float tiltIncreaseX;
-@property float tiltIncreaseY;
+@property double tiltIncreaseX;
+@property double tiltIncreaseY;
 
 + (id)settingsControllerModule;
 

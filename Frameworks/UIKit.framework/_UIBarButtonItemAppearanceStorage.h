@@ -3,13 +3,13 @@
  */
 
 @interface _UIBarButtonItemAppearanceStorage : _UIBarItemAppearanceStorage {
-    _UIBarBackButtonItemAppearanceStorage *backButtonAppearance;
-    NSMutableDictionary *backgroundImages;
-    NSMutableDictionary *backgroundVerticalAdjustmentsForBarMetrics;
-    NSMutableDictionary *miniBackgroundImages;
-    NSValue *miniTitlePositionOffset;
-    UIColor *tintColor;
-    NSValue *titlePositionOffset;
+    _UIBarBackButtonItemAppearanceStorage * backButtonAppearance;
+    NSMutableDictionary * backgroundImages;
+    NSMutableDictionary * backgroundVerticalAdjustmentsForBarMetrics;
+    NSMutableDictionary * miniBackgroundImages;
+    NSValue * miniTitlePositionOffset;
+    UIColor * tintColor;
+    NSValue * titlePositionOffset;
 }
 
 @property (nonatomic, retain) NSValue *backButtonTitlePositionOffset;

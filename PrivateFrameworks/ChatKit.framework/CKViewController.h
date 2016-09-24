@@ -3,9 +3,9 @@
  */
 
 @interface CKViewController : UIViewController {
-    BOOL _appeared;
-    BOOL _appearing;
-    BOOL _dissapearing;
+    BOOL  _appeared;
+    BOOL  _appearing;
+    BOOL  _dissapearing;
 }
 
 @property (nonatomic) BOOL appeared;

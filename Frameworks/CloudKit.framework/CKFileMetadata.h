@@ -3,11 +3,11 @@
  */
 
 @interface CKFileMetadata : NSObject {
-    NSNumber *_deviceID;
-    NSNumber *_fileID;
-    NSNumber *_fileSize;
-    NSNumber *_generationID;
-    NSNumber *_modTimeInSeconds;
+    NSNumber * _deviceID;
+    NSNumber * _fileID;
+    NSNumber * _fileSize;
+    NSNumber * _generationID;
+    NSNumber * _modTimeInSeconds;
 }
 
 @property (nonatomic, retain) NSNumber *deviceID;

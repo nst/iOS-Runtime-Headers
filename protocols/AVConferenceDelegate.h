@@ -30,6 +30,7 @@
 - (void)conference:(AVConference *)arg1 didReceiveData:(NSData *)arg2 forCallID:(int)arg3;
 - (void)conference:(AVConference *)arg1 didStartSession:(BOOL)arg2 withCallID:(int)arg3 error:(NSError *)arg4;
 - (void)conference:(AVConference *)arg1 didStopWithCallID:(int)arg2 error:(NSError *)arg3 callMetadata:(NSDictionary *)arg4;
+- (void)conference:(AVConference *)arg1 isRemoteAudioBelowThreshold:(BOOL)arg2;
 - (void)conference:(AVConference *)arg1 localAudioEnabled:(BOOL)arg2 forCallID:(unsigned long)arg3 error:(NSError *)arg4;
 - (void)conference:(AVConference *)arg1 localIPChange:(NSData *)arg2 withCallID:(int)arg3;
 - (void)conference:(AVConference *)arg1 reinitializeCallForCallID:(unsigned long)arg2;
@@ -38,5 +39,6 @@
 - (void)conference:(AVConference *)arg1 updateInputMeterLevel:(float)arg2;
 - (void)conference:(AVConference *)arg1 updateOutputMeterLevel:(float)arg2;
 - (void)conference:(AVConference *)arg1 withCallID:(int)arg2 didPauseAudio:(BOOL)arg3 error:(NSError *)arg4;
+- (void)conference:(AVConference *)arg1 withCallID:(int)arg2 didPauseVideo:(BOOL)arg3 error:(NSError *)arg4;
 
 @end

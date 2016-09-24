@@ -3,17 +3,18 @@
  */
 
 @interface UIImageAsset : NSObject <NSSecureCoding> {
-    CUINamedLayerStack *__layerStack;
+    CUINamedLayerStack * __layerStack;
     struct { 
         unsigned int hasRegisteredImages : 1; 
         unsigned int supportsBlockGeneration : 1; 
         unsigned int disconnectedFromAssetManager : 1; 
-    } _assetFlags;
-    _UIAssetManager *_assetManager;
-    NSString *_assetName;
-    BOOL _cacheContents;
-    id /* block */ _creationBlock;
-    UITraitCollection *_defaultTraitCollection;
+    }  _assetFlags;
+    _UIAssetManager * _assetManager;
+    NSString * _assetName;
+    BOOL  _cacheContents;
+    NSBundle * _containingBundle;
+    id /* block */  _creationBlock;
+    UITraitCollection * _defaultTraitCollection;
 }
 
 @property (nonatomic, readonly) _UIAssetManager *_assetManager;
@@ -30,9 +31,11 @@
 - (BOOL)_containsImagesInPath:(id)arg1;
 - (id)_defaultTraitCollection;
 - (void)_disconnectFromAssetManager;
+- (id)_initWithAssetName:(id)arg1 forFilesInBundle:(id)arg2;
 - (id)_initWithAssetName:(id)arg1 forManager:(id)arg2;
 - (id)_layerStack;
 - (id)_mutableCatalog;
+- (id)_nameForStoringRuntimeRegisteredImagesInMutableCatalog;
 - (void)_registerImage:(id)arg1 withTraitCollection:(id)arg2 cache:(BOOL)arg3;
 - (id)_updateAssetFromBlockGenerationWithTraitCollection:(id)arg1 resolvedCatalogImage:(id)arg2;
 - (id)assetName;

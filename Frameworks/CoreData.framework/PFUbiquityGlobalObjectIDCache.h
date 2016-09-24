@@ -3,10 +3,10 @@
  */
 
 @interface PFUbiquityGlobalObjectIDCache : NSObject {
-    NSString *_localPeerID;
-    NSMutableDictionary *_peerIDToEntityNameToPrimaryKey;
-    NSRecursiveLock *_peerIDToEntityNameToPrimaryKeyLock;
-    NSString *_storeName;
+    NSString * _localPeerID;
+    NSMutableDictionary * _peerIDToEntityNameToPrimaryKey;
+    NSRecursiveLock * _peerIDToEntityNameToPrimaryKeyLock;
+    NSString * _storeName;
 }
 
 @property (nonatomic, retain) NSString *localPeerID;

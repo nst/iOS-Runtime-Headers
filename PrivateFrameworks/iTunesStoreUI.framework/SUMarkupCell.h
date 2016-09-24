@@ -3,7 +3,7 @@
  */
 
 @interface SUMarkupCell : SUTableCell {
-    SUWebDocumentView *_webView;
+    SUWebDocumentView * _webView;
 }
 
 - (void)dealloc;

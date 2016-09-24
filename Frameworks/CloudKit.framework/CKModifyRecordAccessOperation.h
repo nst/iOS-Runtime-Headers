@@ -3,14 +3,14 @@
  */
 
 @interface CKModifyRecordAccessOperation : CKDatabaseOperation {
-    NSMutableArray *_grantedRecordIDs;
-    id /* block */ _recordAccessCompletionBlock;
-    id /* block */ _recordAccessGrantedBlock;
-    id /* block */ _recordAccessRevokedBlock;
-    NSMutableDictionary *_recordErrors;
-    NSArray *_recordIDsToGrant;
-    NSArray *_recordIDsToRevoke;
-    NSMutableArray *_revokedRecordIDs;
+    NSMutableArray * _grantedRecordIDs;
+    id /* block */  _recordAccessCompletionBlock;
+    id /* block */  _recordAccessGrantedBlock;
+    id /* block */  _recordAccessRevokedBlock;
+    NSMutableDictionary * _recordErrors;
+    NSArray * _recordIDsToGrant;
+    NSArray * _recordIDsToRevoke;
+    NSMutableArray * _revokedRecordIDs;
 }
 
 @property (nonatomic, retain) NSMutableArray *grantedRecordIDs;
@@ -26,7 +26,7 @@
 - (BOOL)CKOperationShouldRun:(id*)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
-- (unsigned long long)activityStart;
+- (id)activityCreate;
 - (void)fillFromOperationInfo:(id)arg1;
 - (void)fillOutOperationInfo:(id)arg1;
 - (id)grantedRecordIDs;

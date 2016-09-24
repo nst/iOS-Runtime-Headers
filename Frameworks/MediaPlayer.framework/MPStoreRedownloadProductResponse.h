@@ -3,7 +3,7 @@
  */
 
 @interface MPStoreRedownloadProductResponse : NSObject {
-    NSDictionary *_responseDictionary;
+    NSDictionary * _responseDictionary;
 }
 
 @property (nonatomic, readonly) MPStoreRedownloadProductItem *item;

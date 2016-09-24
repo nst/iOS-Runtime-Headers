@@ -3,10 +3,10 @@
  */
 
 @interface SKUIRedeemOperation : NSOperation {
-    BOOL _cameraRecognized;
-    SKUIClientContext *_clientContext;
-    NSString *_code;
-    id /* block */ _resultBlock;
+    BOOL  _cameraRecognized;
+    SKUIClientContext * _clientContext;
+    NSString * _code;
+    id /* block */  _resultBlock;
 }
 
 @property (nonatomic) BOOL cameraRecognized;

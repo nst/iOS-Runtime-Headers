@@ -3,7 +3,7 @@
  */
 
 @interface WebCookieStorageObjCAdapter : NSObject {
-    int (*m_cookieChangeCallback;
+    int (* m_cookieChangeCallback;
 }
 
 - (void)cookiesChangedNotificationHandler:(id)arg1;

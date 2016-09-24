@@ -3,9 +3,9 @@
  */
 
 @interface ML3ContainerQuery : ML3Query {
-    ML3Container *_container;
-    ML3Predicate *_containerPredicate;
-    NSArray *_limitedPersistentIDs;
+    ML3Container * _container;
+    ML3Predicate * _containerPredicate;
+    NSArray * _limitedPersistentIDs;
 }
 
 @property (nonatomic, readonly) ML3Container *container;

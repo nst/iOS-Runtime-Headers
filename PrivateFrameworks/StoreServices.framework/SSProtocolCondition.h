@@ -3,8 +3,8 @@
  */
 
 @interface SSProtocolCondition : NSObject {
-    int _operator;
-    id _value;
+    int  _operator;
+    id  _value;
 }
 
 + (id)newConditionWithDictionary:(id)arg1;

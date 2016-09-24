@@ -3,13 +3,13 @@
  */
 
 @interface GKList : NSObject {
-    unsigned long _count;
-    unsigned int *_items;
+    unsigned long  _count;
+    unsigned int * _items;
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
-    } _lock;
-    unsigned long _size;
+    }  _lock;
+    unsigned long  _size;
 }
 
 @property (readonly) unsigned long count;

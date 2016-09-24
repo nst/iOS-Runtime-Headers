@@ -3,29 +3,29 @@
  */
 
 @interface SKUIIPhoneProductPageViewController : SKUIViewController <SKStoreProductViewControllerDelegate, SKUIMessageBannerDelegate, SKUIMetricsViewController, SKUINetworkErrorDelegate, SKUIProductPageChildViewControllerDelegate, SKUIProductPageHeaderViewDelegate, UIScrollViewDelegate> {
-    BOOL _askPermission;
-    SKUIMessageBanner *_banner;
-    NSString *_bannerText;
-    UIViewController<SKUIProductPageChildViewController> *_childViewController;
-    <SKUIIPhoneProductPageDelegate> *_delegate;
-    SKUIProductPageDetailsViewController *_detailsViewController;
-    SKUINetworkErrorViewController *_errorViewController;
-    SKUIProductPageHeaderViewController *_headerViewController;
-    SKUIIncompatibleAppViewController *_incompatibleViewController;
-    SKUIItem *_item;
-    SSMetricsPageEvent *_lastPageEvent;
-    SKUILoadProductPageOperation *_loadOperation;
-    SKUIProductPagePlaceholderViewController *_loadingViewController;
-    long long _lookupItemIdentifier;
-    SKUIMetricsController *_metricsController;
-    NSOperationQueue *_operationQueue;
-    SKUIProductPage *_productPage;
-    SKUIProductPagePlaceholderViewController *_relatedPlaceholderViewController;
-    SKUISwooshArrayViewController *_relatedViewController;
-    SKUIProductPageReviewsViewController *_reviewsViewController;
-    int _sectionIndex;
-    NSURLRequest *_urlRequest;
-    BOOL _wantsActivityViewController;
+    BOOL  _askPermission;
+    SKUIMessageBanner * _banner;
+    NSString * _bannerText;
+    UIViewController<SKUIProductPageChildViewController> * _childViewController;
+    <SKUIIPhoneProductPageDelegate> * _delegate;
+    SKUIProductPageDetailsViewController * _detailsViewController;
+    SKUINetworkErrorViewController * _errorViewController;
+    SKUIProductPageHeaderViewController * _headerViewController;
+    SKUIIncompatibleAppViewController * _incompatibleViewController;
+    SKUIItem * _item;
+    SSMetricsPageEvent * _lastPageEvent;
+    SKUILoadProductPageOperation * _loadOperation;
+    SKUIProductPagePlaceholderViewController * _loadingViewController;
+    int  _lookupItemIdentifier;
+    SKUIMetricsController * _metricsController;
+    NSOperationQueue * _operationQueue;
+    SKUIProductPage * _productPage;
+    SKUIProductPagePlaceholderViewController * _relatedPlaceholderViewController;
+    SKUISwooshArrayViewController * _relatedViewController;
+    SKUIProductPageReviewsViewController * _reviewsViewController;
+    int  _sectionIndex;
+    NSURLRequest * _urlRequest;
+    BOOL  _wantsActivityViewController;
 }
 
 @property (nonatomic, readonly) NSURL *URL;
@@ -75,7 +75,7 @@
 - (id)delegate;
 - (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (id)initWithItem:(id)arg1;
-- (id)initWithItemIdentifier:(long long)arg1;
+- (id)initWithItemIdentifier:(int)arg1;
 - (id)initWithProductPage:(id)arg1;
 - (id)initWithURL:(id)arg1;
 - (id)initWithURLRequest:(id)arg1;
@@ -98,7 +98,7 @@
 - (void)setAskPermission:(BOOL)arg1;
 - (void)setBannerText:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (struct CGPoint { float x1; float x2; })topContentOffset;
+- (struct CGPoint { double x1; double x2; })topContentOffset;
 - (void)viewDidLayoutSubviews;
 - (void)viewWillAppear:(BOOL)arg1;
 

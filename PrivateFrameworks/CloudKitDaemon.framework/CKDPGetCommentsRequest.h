@@ -3,14 +3,14 @@
  */
 
 @interface CKDPGetCommentsRequest : PBRequest <NSCopying> {
-    NSData *_continuationMarker;
+    NSData * _continuationMarker;
     struct { 
         unsigned int limit : 1; 
-    } _has;
-    CKDPCommentedOnId *_identifier;
-    unsigned int _limit;
-    CKDPQuerySort *_orderBy;
-    NSString *_path;
+    }  _has;
+    CKDPCommentedOnId * _identifier;
+    unsigned int  _limit;
+    CKDPQuerySort * _orderBy;
+    NSString * _path;
 }
 
 @property (nonatomic, retain) NSData *continuationMarker;

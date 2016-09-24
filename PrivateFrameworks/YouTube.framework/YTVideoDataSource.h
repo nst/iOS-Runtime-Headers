@@ -3,12 +3,12 @@
  */
 
 @interface YTVideoDataSource : NSObject {
-    BOOL _hasLoaded;
-    NSError *_lastError;
-    YTSearchRequest *_searchRequest;
-    unsigned int _startIndex;
-    NSMutableArray *_videos;
-    unsigned int _videosRemaining;
+    BOOL  _hasLoaded;
+    NSError * _lastError;
+    YTSearchRequest * _searchRequest;
+    unsigned int  _startIndex;
+    NSMutableArray * _videos;
+    unsigned int  _videosRemaining;
 }
 
 + (void)saveDataSources;

@@ -3,7 +3,7 @@
  */
 
 @interface SKUISubmitInputViewElement : SKUIInputViewElement {
-    NSString *_label;
+    NSString * _label;
 }
 
 @property (nonatomic, readonly) NSString *label;

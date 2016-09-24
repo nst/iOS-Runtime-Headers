@@ -3,10 +3,10 @@
  */
 
 @interface MPMediaPlaylistCreationMetadata : NSObject {
-    NSString *_authorDisplayName;
-    NSString *_defaultAuthorDisplayName;
-    NSString *_descriptionText;
-    NSString *_name;
+    NSString * _authorDisplayName;
+    NSString * _defaultAuthorDisplayName;
+    NSString * _descriptionText;
+    NSString * _name;
 }
 
 @property (nonatomic, copy) NSString *authorDisplayName;

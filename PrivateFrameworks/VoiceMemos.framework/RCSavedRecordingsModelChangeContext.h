@@ -3,9 +3,9 @@
  */
 
 @interface RCSavedRecordingsModelChangeContext : NSObject {
-    NSArray *_deletedObjects;
-    NSArray *_insertedObjects;
-    NSArray *_updatedObjects;
+    NSArray * _deletedObjects;
+    NSArray * _insertedObjects;
+    NSArray * _updatedObjects;
 }
 
 @property (nonatomic, readonly, copy) NSArray *deletedObjects;

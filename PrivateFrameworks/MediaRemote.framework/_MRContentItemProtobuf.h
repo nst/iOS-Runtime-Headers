@@ -3,8 +3,8 @@
  */
 
 @interface _MRContentItemProtobuf : PBCodable <NSCopying> {
-    NSString *_identifier;
-    _MRContentItemMetadataProtobuf *_metadata;
+    NSString * _identifier;
+    _MRContentItemMetadataProtobuf * _metadata;
 }
 
 @property (nonatomic, readonly) BOOL hasIdentifier;

@@ -3,9 +3,9 @@
  */
 
 @interface PSSetupController : PSRootController {
-    UIViewController<PSController> *_parentController;
-    PSRootController *_parentRootController;
-    NSDictionary *_rootInfo;
+    UIViewController<PSController> * _parentController;
+    PSRootController * _parentRootController;
+    NSDictionary * _rootInfo;
 }
 
 - (void).cxx_destruct;

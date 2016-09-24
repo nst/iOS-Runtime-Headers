@@ -3,9 +3,9 @@
  */
 
 @interface HAPMetadataProperty : NSObject {
-    NSNumber *_bitPosition;
-    NSString *_propertyDescription;
-    NSString *_propertyType;
+    NSNumber * _bitPosition;
+    NSString * _propertyDescription;
+    NSString * _propertyType;
 }
 
 @property (nonatomic, retain) NSNumber *bitPosition;

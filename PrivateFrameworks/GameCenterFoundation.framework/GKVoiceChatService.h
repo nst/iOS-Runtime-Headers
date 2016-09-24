@@ -3,16 +3,16 @@
  */
 
 @interface GKVoiceChatService : NSObject {
-    id _voiceChatService;
+    id  _voiceChatService;
 }
 
 @property <GKVoiceChatClient> *client;
-@property (readonly) float inputMeterLevel;
+@property (readonly) double inputMeterLevel;
 @property (getter=isInputMeteringEnabled, nonatomic) BOOL inputMeteringEnabled;
 @property (getter=isMicrophoneMuted, nonatomic) BOOL microphoneMuted;
-@property (readonly) float outputMeterLevel;
+@property (readonly) double outputMeterLevel;
 @property (getter=isOutputMeteringEnabled, nonatomic) BOOL outputMeteringEnabled;
-@property (nonatomic) float remoteParticipantVolume;
+@property (nonatomic) double remoteParticipantVolume;
 
 + (id)defaultVoiceChatService;
 + (void)initialize;

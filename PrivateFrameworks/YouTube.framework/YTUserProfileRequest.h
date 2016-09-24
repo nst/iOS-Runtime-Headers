@@ -3,8 +3,8 @@
  */
 
 @interface YTUserProfileRequest : YTXMLHTTPRequest {
-    <YTUserProfileRequestDelegate> *_delegate;
-    YTUserProfile *_profile;
+    <YTUserProfileRequestDelegate> * _delegate;
+    YTUserProfile * _profile;
 }
 
 - (void)dealloc;

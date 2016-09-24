@@ -3,7 +3,7 @@
  */
 
 @interface PLMultiKeyEntry : PLEntry {
-    NSMutableDictionary *_multiKeys;
+    NSMutableDictionary * _multiKeys;
 }
 
 @property (retain) NSMutableDictionary *multiKeys;

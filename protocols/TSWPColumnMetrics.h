@@ -5,7 +5,7 @@
 
 @required
 
-- (struct CGSize { float x1; float x2; })adjustedInsetsForTarget:(id <TSWPLayoutTarget>)arg1;
+- (struct CGSize { double x1; double x2; })adjustedInsetsForTarget:(id <TSWPLayoutTarget>)arg1;
 - (BOOL)alwaysStartsNewTarget;
 - (unsigned int)columnCount;
 - (BOOL)columnsAreLeftToRight;

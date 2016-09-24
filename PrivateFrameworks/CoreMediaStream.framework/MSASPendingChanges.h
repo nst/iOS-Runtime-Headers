@@ -3,10 +3,10 @@
  */
 
 @interface MSASPendingChanges : NSObject {
-    NSMutableSet *_pendingAlbumChanges;
-    NSMutableDictionary *_pendingAlbumGUIDToAssetCollections;
-    NSMutableSet *_pendingAlbumGUIDsWithKeyValueChanges;
-    NSMutableSet *_pendingAlbumGUIDsWithSharingInfoChanges;
+    NSMutableSet * _pendingAlbumChanges;
+    NSMutableDictionary * _pendingAlbumGUIDToAssetCollections;
+    NSMutableSet * _pendingAlbumGUIDsWithKeyValueChanges;
+    NSMutableSet * _pendingAlbumGUIDsWithSharingInfoChanges;
 }
 
 @property (nonatomic, retain) NSMutableSet *pendingAlbumChanges;

@@ -3,78 +3,78 @@
  */
 
 @interface CKActionMenuView : UIView {
-    CKActionMenuController *_actionMenuController;
-    NSArray *_actionMenuItems;
-    UIVisualEffectView *_blurView;
-    BOOL _collapsed;
-    unsigned int _defaultActionIndex;
-    UIImageView *_maskView;
-    NSArray *_presentationActionMenuItems;
-    unsigned int _presentationDefaultActionIndex;
+    CKActionMenuController * _actionMenuController;
+    NSArray * _actionMenuItems;
+    UIBlurEffect * _blurEffect;
+    UIVisualEffectView * _blurView;
+    BOOL  _collapsed;
+    unsigned int  _defaultActionIndex;
+    NSArray * _presentationActionMenuItems;
+    unsigned int  _presentationDefaultActionIndex;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } _presentationTargetBounds;
+    }  _presentationTargetBounds;
     struct CGPoint { 
-        float x; 
-        float y; 
-    } _presentationTargetPosition;
-    BOOL _touchInside;
+        double x; 
+        double y; 
+    }  _presentationTargetPosition;
+    BOOL  _touchInside;
 }
 
 @property (nonatomic) CKActionMenuController *actionMenuController;
 @property (nonatomic, copy) NSArray *actionMenuItems;
+@property (nonatomic, retain) UIBlurEffect *blurEffect;
 @property (nonatomic, retain) UIVisualEffectView *blurView;
 @property (getter=isCollapsed, nonatomic) BOOL collapsed;
 @property (nonatomic) unsigned int defaultActionIndex;
-@property (nonatomic, retain) UIImageView *maskView;
 @property (nonatomic, copy) NSArray *presentationActionMenuItems;
 @property (nonatomic) unsigned int presentationDefaultActionIndex;
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } presentationTargetBounds;
-@property (nonatomic) struct CGPoint { float x1; float x2; } presentationTargetPosition;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } presentationTargetBounds;
+@property (nonatomic) struct CGPoint { double x1; double x2; } presentationTargetPosition;
 @property (getter=isTouchInside, nonatomic) BOOL touchInside;
 
 + (void)collapseAnimation:(id /* block */)arg1 completion:(id /* block */)arg2;
 
+- (void).cxx_destruct;
 - (id)actionMenuController;
 - (void)actionMenuGestureRecognized:(id)arg1;
-- (id)actionMenuItemAtPoint:(struct CGPoint { float x1; float x2; })arg1 velocity:(struct CGPoint { float x1; float x2; })arg2;
+- (id)actionMenuItemAtPoint:(struct CGPoint { double x1; double x2; })arg1 velocity:(struct CGPoint { double x1; double x2; })arg2;
 - (id)actionMenuItems;
+- (id)blurEffect;
 - (id)blurView;
-- (void)configureForPresentationAtPoint:(struct CGPoint { float x1; float x2; })arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (void)dealloc;
+- (void)configureForPresentationAtPoint:(struct CGPoint { double x1; double x2; })arg1 inRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 - (unsigned int)defaultActionIndex;
 - (id)description;
 - (void)dismissActionMenuViewAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
-- (id)initWithActionMenuItems:(id)arg1 defaultActionIndex:(unsigned int)arg2 blurEffectStyle:(int)arg3 backgroundFilters:(id)arg4;
+- (id)initWithActionMenuItems:(id)arg1 defaultActionIndex:(unsigned int)arg2 blurEffectStyle:(int)arg3;
 - (BOOL)isCollapsed;
 - (BOOL)isTouchInside;
 - (void)layoutSubviews;
-- (id)maskView;
-- (void)presentActionMenuViewFromPoint:(struct CGPoint { float x1; float x2; })arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 animated:(BOOL)arg3 completion:(id /* block */)arg4;
+- (void)presentActionMenuViewFromPoint:(struct CGPoint { double x1; double x2; })arg1 inRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 animated:(BOOL)arg3 completion:(id /* block */)arg4;
 - (id)presentationActionMenuItems;
 - (unsigned int)presentationDefaultActionIndex;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })presentationTargetBounds;
-- (struct CGPoint { float x1; float x2; })presentationTargetPosition;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })presentationTargetBounds;
+- (struct CGPoint { double x1; double x2; })presentationTargetPosition;
 - (void)setActionMenuController:(id)arg1;
 - (void)setActionMenuItems:(id)arg1;
 - (void)setActionMenuItems:(id)arg1 defaultActionIndex:(unsigned int)arg2 animated:(BOOL)arg3;
+- (void)setBlurEffect:(id)arg1;
 - (void)setBlurView:(id)arg1;
 - (void)setCollapsed:(BOOL)arg1;
 - (void)setCollapsed:(BOOL)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
 - (void)setDefaultActionIndex:(unsigned int)arg1;
-- (void)setMaskView:(id)arg1;
 - (void)setPresentationActionMenuItems:(id)arg1;
 - (void)setPresentationDefaultActionIndex:(unsigned int)arg1;
-- (void)setPresentationTargetBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setPresentationTargetPosition:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setPresentationTargetBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setPresentationTargetPosition:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setTouchInside:(BOOL)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 
 @end

@@ -3,9 +3,9 @@
  */
 
 @interface TSCH3DRenderingLightingModel : NSObject {
-    BOOL mHasTransparency;
-    TSCH3DLightingModel *mLightingModel;
-    NSNumber *mPercentage;
+    BOOL  mHasTransparency;
+    TSCH3DLightingModel * mLightingModel;
+    NSNumber * mPercentage;
 }
 
 @property (nonatomic, readonly) BOOL hasTransparency;

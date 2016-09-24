@@ -3,19 +3,21 @@
  */
 
 @interface CNVCardNameComponents : NSObject <CNVCardNameDataSource> {
-    NSString *_companyName;
-    NSString *_firstName;
-    BOOL _isCompany;
-    NSString *_lastName;
-    NSString *_middleName;
-    NSString *_suffix;
-    NSString *_title;
+    NSString * _companyName;
+    NSString * _firstName;
+    NSString * _formattedName;
+    BOOL  _isCompany;
+    NSString * _lastName;
+    NSString * _middleName;
+    NSString * _suffix;
+    NSString * _title;
 }
 
 @property (readonly) NSString *companyName;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) NSString *firstName;
+@property (readonly, copy) NSString *formattedName;
 @property (readonly) unsigned int hash;
 @property (readonly) BOOL isCompany;
 @property (readonly) NSString *lastName;
@@ -27,8 +29,10 @@
 + (id)components;
 + (id)componentsWithFirstName:(id)arg1 lastName:(id)arg2 middleName:(id)arg3 title:(id)arg4 suffix:(id)arg5 companyName:(id)arg6 isCompany:(BOOL)arg7;
 
+- (void).cxx_destruct;
 - (id)companyName;
 - (id)firstName;
+- (id)formattedName;
 - (BOOL)isCompany;
 - (id)lastName;
 - (id)middleName;

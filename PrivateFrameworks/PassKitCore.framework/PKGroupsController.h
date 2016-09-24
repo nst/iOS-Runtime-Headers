@@ -3,24 +3,24 @@
  */
 
 @interface PKGroupsController : NSObject <PKPassLibraryDelegate> {
-    BOOL _activePassesOnly;
-    PKCatalog *_catalogBeforeReordering;
-    <PKGroupsControllerDelegate> *_delegate;
-    BOOL _enqueueRemoteUpdates;
-    NSMutableArray *_enqueuedUpdates;
-    unsigned int _filters;
-    NSMutableDictionary *_groupIDsByPassUniqueID;
-    NSMutableArray *_groups;
-    NSMutableDictionary *_groupsByGroupID;
-    NSMutableDictionary *_indicesByGroupID;
-    BOOL _limitedMode;
-    NSArray *_localPasses;
-    PKPassLibrary *_passLibrary;
-    unsigned int _passTypeMask;
-    NSMutableDictionary *_passesByUniqueID;
-    BOOL _reorderingEnabled;
-    BOOL _shouldSeparatePaymentPasses;
-    BOOL _suppressRemoteUpdates;
+    BOOL  _activePassesOnly;
+    PKCatalog * _catalogBeforeReordering;
+    <PKGroupsControllerDelegate> * _delegate;
+    BOOL  _enqueueRemoteUpdates;
+    NSMutableArray * _enqueuedUpdates;
+    unsigned int  _filters;
+    NSMutableDictionary * _groupIDsByPassUniqueID;
+    NSMutableArray * _groups;
+    NSMutableDictionary * _groupsByGroupID;
+    NSMutableDictionary * _indicesByGroupID;
+    BOOL  _limitedMode;
+    NSArray * _localPasses;
+    PKPassLibrary * _passLibrary;
+    unsigned int  _passTypeMask;
+    NSMutableDictionary * _passesByUniqueID;
+    BOOL  _reorderingEnabled;
+    BOOL  _shouldSeparatePaymentPasses;
+    BOOL  _suppressRemoteUpdates;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -31,6 +31,7 @@
 @property (nonatomic) BOOL shouldSeparatePaymentPasses;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (id)_copyRemoteCatalog;
 - (unsigned int)_destinationIndexForGroupID:(id)arg1 catalogGroups:(id)arg2 skippingNewGroupsAfterIndex:(unsigned int)arg3;
 - (void)_fixIndex:(unsigned int)arg1;

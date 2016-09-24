@@ -3,9 +3,9 @@
  */
 
 @interface AFRemoteRequestWatcher : NSObject {
-    id /* block */ _handler;
-    NSObject<OS_dispatch_queue> *_queue;
-    int _token;
+    id /* block */  _handler;
+    NSObject<OS_dispatch_queue> * _queue;
+    int  _token;
 }
 
 - (void).cxx_destruct;

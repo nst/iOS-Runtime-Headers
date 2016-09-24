@@ -3,32 +3,32 @@
  */
 
 @interface GEOPlaceResult : PBCodable <NSCopying> {
-    NSMutableArray *_additionalPlaces;
-    int _cacheControl;
-    NSMutableArray *_disambiguationLabels;
-    unsigned long long _flyoverTourMuid;
+    NSMutableArray * _additionalPlaces;
+    int  _cacheControl;
+    NSMutableArray * _disambiguationLabels;
+    unsigned int  _flyoverTourMuid;
     struct { 
         unsigned int flyoverTourMuid : 1; 
         unsigned int cacheControl : 1; 
         unsigned int travelDistance : 1; 
         unsigned int travelTime : 1; 
-    } _has;
-    NSMutableArray *_matchedTokens;
-    NSMutableArray *_namedFeatures;
-    GEOPlace *_place;
-    NSString *_quad;
-    GEOPlaceSearchRequest *_revgeoRequestTemplate;
-    NSString *_suggestedQuery;
-    GEOAddress *_tokenEntity;
-    unsigned int _travelDistance;
-    unsigned int _travelTime;
-    NSMutableArray *_unmatchedStrings;
+    }  _has;
+    NSMutableArray * _matchedTokens;
+    NSMutableArray * _namedFeatures;
+    GEOPlace * _place;
+    NSString * _quad;
+    GEOPlaceSearchRequest * _revgeoRequestTemplate;
+    NSString * _suggestedQuery;
+    GEOAddress * _tokenEntity;
+    unsigned int  _travelDistance;
+    unsigned int  _travelTime;
+    NSMutableArray * _unmatchedStrings;
 }
 
 @property (nonatomic, retain) NSMutableArray *additionalPlaces;
 @property (nonatomic) int cacheControl;
 @property (nonatomic, retain) NSMutableArray *disambiguationLabels;
-@property (nonatomic) unsigned long long flyoverTourMuid;
+@property (nonatomic) unsigned int flyoverTourMuid;
 @property (nonatomic) BOOL hasCacheControl;
 @property (nonatomic) BOOL hasFlyoverTourMuid;
 @property (nonatomic, readonly) BOOL hasQuad;
@@ -48,6 +48,13 @@
 @property (nonatomic) unsigned int travelTime;
 @property (nonatomic, retain) NSMutableArray *unmatchedStrings;
 
++ (Class)additionalPlaceType;
++ (Class)disambiguationLabelType;
++ (Class)matchedTokenType;
++ (Class)namedFeatureType;
++ (Class)unmatchedStringType;
+
+- (int)StringAsCacheControl:(id)arg1;
 - (void)addAdditionalPlace:(id)arg1;
 - (void)addDisambiguationLabel:(id)arg1;
 - (void)addMatchedToken:(id)arg1;
@@ -57,6 +64,7 @@
 - (id)additionalPlaces;
 - (unsigned int)additionalPlacesCount;
 - (int)cacheControl;
+- (id)cacheControlAsString:(int)arg1;
 - (void)clearAdditionalPlaces;
 - (void)clearDisambiguationLabels;
 - (void)clearMatchedTokens;
@@ -70,7 +78,7 @@
 - (id)disambiguationLabelAtIndex:(unsigned int)arg1;
 - (id)disambiguationLabels;
 - (unsigned int)disambiguationLabelsCount;
-- (unsigned long long)flyoverTourMuid;
+- (unsigned int)flyoverTourMuid;
 - (id)geoMapItem;
 - (BOOL)hasCacheControl;
 - (BOOL)hasFlyoverTourMuid;
@@ -96,7 +104,7 @@
 - (void)setAdditionalPlaces:(id)arg1;
 - (void)setCacheControl:(int)arg1;
 - (void)setDisambiguationLabels:(id)arg1;
-- (void)setFlyoverTourMuid:(unsigned long long)arg1;
+- (void)setFlyoverTourMuid:(unsigned int)arg1;
 - (void)setHasCacheControl:(BOOL)arg1;
 - (void)setHasFlyoverTourMuid:(BOOL)arg1;
 - (void)setHasTravelDistance:(BOOL)arg1;

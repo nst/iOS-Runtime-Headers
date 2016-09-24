@@ -3,12 +3,12 @@
  */
 
 @interface SGTinyLinusMeData : NSObject {
-    NSSet *_addresses;
-    NSString *_compositeName;
-    NSString *_firstName;
-    NSString *_lastName;
-    NSSet *_normalizedEmails;
-    NSSet *_normalizedPhones;
+    NSSet * _addresses;
+    NSString * _compositeName;
+    NSString * _firstName;
+    NSString * _lastName;
+    NSSet * _normalizedEmails;
+    NSSet * _normalizedPhones;
 }
 
 @property (nonatomic, readonly) NSSet *addresses;

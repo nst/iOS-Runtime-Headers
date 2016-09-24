@@ -3,8 +3,8 @@
  */
 
 @interface PLWeakTimerTarget : NSObject {
-    SEL _selector;
-    id _target;
+    SEL  _selector;
+    id  _target;
 }
 
 @property (nonatomic) SEL selector;

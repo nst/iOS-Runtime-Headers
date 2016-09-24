@@ -16,19 +16,19 @@
         unsigned int txretrans : 1; 
         unsigned int txrunt : 1; 
         unsigned int txserr : 1; 
-    } _has;
-    unsigned long long _txbyte;
-    unsigned long long _txchit;
-    unsigned long long _txcmiss;
-    unsigned long long _txctl;
-    unsigned long long _txerror;
-    unsigned long long _txframe;
-    unsigned long long _txnoassoc;
-    unsigned long long _txnobuf;
-    unsigned long long _txprshort;
-    unsigned long long _txretrans;
-    unsigned long long _txrunt;
-    unsigned long long _txserr;
+    }  _has;
+    unsigned long long  _txbyte;
+    unsigned long long  _txchit;
+    unsigned long long  _txcmiss;
+    unsigned long long  _txctl;
+    unsigned long long  _txerror;
+    unsigned long long  _txframe;
+    unsigned long long  _txnoassoc;
+    unsigned long long  _txnobuf;
+    unsigned long long  _txprshort;
+    unsigned long long  _txretrans;
+    unsigned long long  _txrunt;
+    unsigned long long  _txserr;
 }
 
 @property (nonatomic) BOOL hasTxbyte;

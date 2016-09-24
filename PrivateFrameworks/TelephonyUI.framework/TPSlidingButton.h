@@ -3,11 +3,11 @@
  */
 
 @interface TPSlidingButton : UIView <_UIActionSliderDelegate> {
-    _UIActionSlider *_acceptButton;
-    <TPSlidingButtonDelegateProtocol> *_delegate;
-    UIImageView *_dialImageView;
-    UIButton *_sideButtonRight;
-    int _type;
+    _UIActionSlider * _acceptButton;
+    <TPSlidingButtonDelegateProtocol> * _delegate;
+    UIImageView * _dialImageView;
+    UIButton * _sideButtonRight;
+    int  _type;
 }
 
 @property (retain) _UIActionSlider *acceptButton;
@@ -28,7 +28,7 @@
 - (id)delegate;
 - (id)dialImageView;
 - (id)initWithSlidingButtonType:(int)arg1;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (void)layoutSubviews;
 - (void)setAcceptButton:(id)arg1;
 - (void)setDelegate:(id)arg1;

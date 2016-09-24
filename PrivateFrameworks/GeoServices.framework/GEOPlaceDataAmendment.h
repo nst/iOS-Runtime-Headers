@@ -5,8 +5,8 @@
 @interface GEOPlaceDataAmendment : PBCodable <NSCopying> {
     struct { 
         unsigned int suppressSiriRating : 1; 
-    } _has;
-    BOOL _suppressSiriRating;
+    }  _has;
+    BOOL  _suppressSiriRating;
 }
 
 @property (nonatomic) BOOL hasSuppressSiriRating;

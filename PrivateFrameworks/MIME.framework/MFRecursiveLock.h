@@ -3,8 +3,8 @@
  */
 
 @interface MFRecursiveLock : NSRecursiveLock <MFLockObject> {
-    id _delegate;
-    NSString *_name;
+    id  _delegate;
+    NSString * _name;
 }
 
 + (void)initialize;

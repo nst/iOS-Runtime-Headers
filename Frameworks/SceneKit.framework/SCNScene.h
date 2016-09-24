@@ -3,27 +3,30 @@
  */
 
 @interface SCNScene : NSObject <NSSecureCoding> {
-    SCNAuthoringEnvironment *_authoringEnvironment;
-    SCNMaterialProperty *_background;
-    id _fogColor;
-    float _fogDensityExponent;
-    float _fogEndDistance;
-    float _fogStartDistance;
-    double _lastEvalTime;
-    BOOL _paused;
-    BOOL _pausedForEditing;
-    SCNPhysicsWorld *_physicsWorld;
-    SCNNode *_rootNode;
-    struct __C3DScene { } *_scene;
-    SCNSceneSource *_sceneSource;
-    NSMutableDictionary *_userAttributes;
+    SCNAuthoringEnvironment * _authoringEnvironment;
+    SCNMaterialProperty * _background;
+    SCNMaterialProperty * _environment;
+    id  _fogColor;
+    double  _fogDensityExponent;
+    double  _fogEndDistance;
+    double  _fogStartDistance;
+    double  _lastEvalTime;
+    SCNNode * _layerRootNode;
+    BOOL  _paused;
+    BOOL  _pausedForEditing;
+    SCNPhysicsWorld * _physicsWorld;
+    SCNNode * _rootNode;
+    struct __C3DScene { } * _scene;
+    SCNSceneSource * _sceneSource;
+    NSMutableDictionary * _userAttributes;
 }
 
 @property (nonatomic, readonly) SCNMaterialProperty *background;
 @property (nonatomic, retain) id fogColor;
-@property (nonatomic) float fogDensityExponent;
-@property (nonatomic) float fogEndDistance;
-@property (nonatomic) float fogStartDistance;
+@property (nonatomic) double fogDensityExponent;
+@property (nonatomic) double fogEndDistance;
+@property (nonatomic) double fogStartDistance;
+@property (nonatomic, readonly) SCNMaterialProperty *lightingEnvironment;
 @property (getter=isPaused, nonatomic) BOOL paused;
 @property (nonatomic, readonly) SCNPhysicsWorld *physicsWorld;
 @property (nonatomic, readonly) SCNNode *rootNode;
@@ -46,7 +49,7 @@
 + (id)supportedFileUTIsForImport;
 + (BOOL)supportsSecureCoding;
 
-- (void*)__CFObject;
+- (const void*)__CFObject;
 - (void)_customDecodingOfSCNScene:(id)arg1;
 - (void)_customEncodingOfSCNScene:(id)arg1;
 - (void)_didDecodeSCNScene:(id)arg1;
@@ -56,7 +59,7 @@
 - (id)_scenes;
 - (void)_setRootNode:(id)arg1;
 - (void)_syncObjCModel;
-- (void)addParticleSystem:(id)arg1 withTransform:(struct SCNMatrix4 { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })arg2;
+- (void)addParticleSystem:(id)arg1 withTransform:(struct SCNMatrix4 { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; })arg2;
 - (void)addSceneAnimation:(id)arg1 forKey:(id)arg2 target:(id)arg3;
 - (id)attributeForKey:(id)arg1;
 - (id)background;
@@ -80,6 +83,7 @@
 - (BOOL)isPausedForEditing;
 - (BOOL)isPausedOrPausedByInheritance;
 - (double)lastEvalTime;
+- (id)lightingEnvironment;
 - (void)lock;
 - (id)particleSystems;
 - (id)physicsWorld;
@@ -88,6 +92,7 @@
 - (void)removeParticleSystem:(id)arg1;
 - (id)root;
 - (id)rootNode;
+- (id)rootNodeForLayer:(int)arg1;
 - (id)scene;
 - (struct __C3DScene { }*)sceneRef;
 - (id)sceneSource;
@@ -103,12 +108,13 @@
 - (void)setPausedForEditing:(BOOL)arg1;
 - (void)setPlaybackSpeed:(float)arg1;
 - (void)setRootNode:(id)arg1;
+- (void)setRootNode:(id)arg1 forLayer:(int)arg2;
 - (void)setSceneSource:(id)arg1;
 - (void)setStartTime:(double)arg1;
-- (void)setUpAxis:(struct SCNVector3 { float x1; float x2; float x3; })arg1;
+- (void)setUpAxis:(struct SCNVector3 { double x1; double x2; double x3; })arg1;
 - (double)startTime;
 - (void)unlock;
-- (struct SCNVector3 { float x1; float x2; float x3; })upAxis;
+- (struct SCNVector3 { double x1; double x2; double x3; })upAxis;
 - (id)valueForUndefinedKey:(id)arg1;
 - (BOOL)writeToURL:(id)arg1 options:(id)arg2;
 - (BOOL)writeToURL:(id)arg1 options:(id)arg2 delegate:(id)arg3 progressHandler:(id /* block */)arg4;

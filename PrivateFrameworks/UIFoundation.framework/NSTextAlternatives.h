@@ -3,9 +3,9 @@
  */
 
 @interface NSTextAlternatives : NSObject {
-    NSArray *_alternativeStrings;
-    id _internal;
-    NSString *_primaryString;
+    NSArray * _alternativeStrings;
+    id  _internal;
+    NSString * _primaryString;
 }
 
 @property (readonly) NSArray *alternativeStrings;

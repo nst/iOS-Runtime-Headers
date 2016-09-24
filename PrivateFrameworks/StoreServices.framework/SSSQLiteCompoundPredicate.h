@@ -3,8 +3,8 @@
  */
 
 @interface SSSQLiteCompoundPredicate : SSSQLitePredicate <NSCopying> {
-    NSString *_combinationOperation;
-    NSArray *_predicates;
+    NSString * _combinationOperation;
+    NSArray * _predicates;
 }
 
 @property (nonatomic, readonly) NSArray *predicates;

@@ -4,11 +4,7 @@
 
 @interface CKDateChatItem : CKStampChatItem
 
-@property (nonatomic, readonly, retain) NSDate *date;
-
-+ (id)thePastDateFormatter;
-+ (id)thisWeekRelativeDateFormatter;
-+ (id)thisYearDateFormatter;
+@property (nonatomic, readonly) NSDate *date;
 
 - (id)date;
 - (id)loadTranscriptText;

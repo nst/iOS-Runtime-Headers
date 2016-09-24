@@ -3,35 +3,35 @@
  */
 
 @interface MusicLibraryPlaylistsOverviewViewController : UIViewController <MusicActionableHeaderViewDelegate, MusicClientContextConsuming, MusicLibraryBrowseCollectionViewControllerDelegate, MusicNoContentViewDelegate, MusicSwitcherButtonContainerViewDelegate, SKUIProxyScrollViewDelegate, SKUITabBarItemRootViewController, UIViewControllerRestoration> {
-    UISwitch *_alertShowOfflineSwitch;
-    MusicClientContext *_clientContext;
-    NSDictionary *_curatorsByID;
-    UIAlertController *_filterAlertController;
-    MusicHairlineView *_hairlineView;
-    BOOL _hasSubscribedPlaylistsCapability;
-    MusicSwitcherButtonContainerView *_librarySwitcherButtonContainerView;
-    MusicMatchLoadingViewController *_matchLoadingViewController;
-    UIViewController *_noContentViewController;
-    unsigned int _playlistsConfigurationOptions;
-    MusicActionableHeaderView *_playlistsHeaderView;
-    MusicPlaylistsWithNewActionViewConfiguration *_playlistsViewConfiguration;
-    UIViewController *_playlistsViewController;
-    SKUIProxyScrollView *_proxyScrollView;
+    UISwitch * _alertShowOfflineSwitch;
+    MusicClientContext * _clientContext;
+    NSDictionary * _curatorsByID;
+    UIAlertController * _filterAlertController;
+    MusicHairlineView * _hairlineView;
+    BOOL  _hasSubscribedPlaylistsCapability;
+    MusicSwitcherButtonContainerView * _librarySwitcherButtonContainerView;
+    MusicMatchLoadingViewController * _matchLoadingViewController;
+    UIViewController * _noContentViewController;
+    unsigned int  _playlistsConfigurationOptions;
+    MusicActionableHeaderView * _playlistsHeaderView;
+    MusicPlaylistsWithNewActionViewConfiguration * _playlistsViewConfiguration;
+    UIViewController * _playlistsViewController;
+    SKUIProxyScrollView * _proxyScrollView;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    } _proxyScrollViewContentInsetAdditions;
-    MusicActionableHeaderView *_recentlyAddedPlaylistsHeaderView;
-    MusicLibraryBrowseCollectionViewController *_recentlyAddedPlaylistsViewController;
-    NSString *_selectedFilter;
-    BOOL _selectedFilterIsCuratorID;
-    MusicPlaylistsWithNewActionViewConfiguration *_selectedPlaylistsViewConfiguration;
-    BOOL _shouldShowMatchLoadingView;
-    BOOL _shouldShowNoContentView;
-    MusicLibraryTopBarController *_topBarController;
-    MusicVerticalScrollingContainerViewController *_verticalScrollingContainerViewController;
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _proxyScrollViewContentInsetAdditions;
+    MusicActionableHeaderView * _recentlyAddedPlaylistsHeaderView;
+    MusicLibraryBrowseCollectionViewController * _recentlyAddedPlaylistsViewController;
+    NSString * _selectedFilter;
+    BOOL  _selectedFilterIsCuratorID;
+    MusicPlaylistsWithNewActionViewConfiguration * _selectedPlaylistsViewConfiguration;
+    BOOL  _shouldShowMatchLoadingView;
+    BOOL  _shouldShowNoContentView;
+    MusicLibraryTopBarController * _topBarController;
+    MusicVerticalScrollingContainerViewController * _verticalScrollingContainerViewController;
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;

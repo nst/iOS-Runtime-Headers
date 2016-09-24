@@ -4,7 +4,8 @@
 
 @interface CKComposeRecipientView : MFComposeRecipientTextView
 
-- (void)dealloc;
+- (id)_baseAttributes;
+- (void)atomTextViewDidBecomeFirstResponder:(id)arg1;
 - (void)reset;
 
 @end

@@ -3,8 +3,8 @@
  */
 
 @interface SSVFairPlaySubscriptionStatus : NSObject <SSXPCCoding> {
-    BOOL _hasSubscriptionLease;
-    BOOL _hasSubscriptionSlot;
+    BOOL  _hasSubscriptionLease;
+    BOOL  _hasSubscriptionSlot;
 }
 
 @property (readonly, copy) NSString *debugDescription;

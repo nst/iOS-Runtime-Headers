@@ -3,17 +3,17 @@
  */
 
 @interface CPLBackgroundDownloadsTask : CPLEngineSyncTask {
-    unsigned int _activeDownloadTaskCount;
-    NSError *_badError;
-    NSMutableArray *_downloadTaskGroups;
-    unsigned int _downloadTaskGroupsCount;
-    unsigned int _failedDownloadedResourcesCount;
-    BOOL _hasResetQueue;
-    NSObject<OS_dispatch_queue> *_lock;
-    BOOL _shouldStop;
-    NSError *_stopError;
-    unsigned int _successfullyDownloadedResourcesCount;
-    unsigned int _total;
+    unsigned int  _activeDownloadTaskCount;
+    NSError * _badError;
+    NSMutableArray * _downloadTaskGroups;
+    unsigned int  _downloadTaskGroupsCount;
+    unsigned int  _failedDownloadedResourcesCount;
+    BOOL  _hasResetQueue;
+    NSObject<OS_dispatch_queue> * _lock;
+    BOOL  _shouldStop;
+    NSError * _stopError;
+    unsigned int  _successfullyDownloadedResourcesCount;
+    unsigned int  _total;
 }
 
 - (void).cxx_destruct;

@@ -3,15 +3,18 @@
  */
 
 @interface GEOTrafficTile : PBCodable <NSCopying> {
-    NSMutableArray *_trafficIncidents;
-    NSMutableArray *_trafficSegments;
-    NSData *_vertices;
+    NSMutableArray * _trafficIncidents;
+    NSMutableArray * _trafficSegments;
+    NSData * _vertices;
 }
 
 @property (nonatomic, readonly) BOOL hasVertices;
 @property (nonatomic, retain) NSMutableArray *trafficIncidents;
 @property (nonatomic, retain) NSMutableArray *trafficSegments;
 @property (nonatomic, retain) NSData *vertices;
+
++ (Class)trafficIncidentType;
++ (Class)trafficSegmentType;
 
 - (void)addTrafficIncident:(id)arg1;
 - (void)addTrafficSegment:(id)arg1;

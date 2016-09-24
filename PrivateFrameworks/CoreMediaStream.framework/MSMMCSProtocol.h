@@ -3,10 +3,10 @@
  */
 
 @interface MSMMCSProtocol : NSObject <MSStorageProtocol> {
-    NSString *_MMCSDirPath;
-    struct _mmcs_engine { } *_engine;
-    NSString *_engineDirPath;
-    NSString *_personID;
+    NSString * _MMCSDirPath;
+    struct _mmcs_engine { } * _engine;
+    NSString * _engineDirPath;
+    NSString * _personID;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -19,10 +19,10 @@
 + (id)computeItemIDForAsset:(id)arg1;
 
 - (void).cxx_destruct;
-- (int)_getFileDescriptorFromItem:(unsigned long long)arg1;
-- (void)_getItemDone:(unsigned long long)arg1 path:(id)arg2 error:(id)arg3;
-- (id)_getUTIFromItem:(unsigned long long)arg1;
-- (void)_putItemDone:(unsigned long long)arg1 putReceipt:(id)arg2 error:(id)arg3;
+- (int)_getFileDescriptorFromItem:(unsigned int)arg1;
+- (void)_getItemDone:(unsigned int)arg1 path:(id)arg2 error:(id)arg3;
+- (id)_getUTIFromItem:(unsigned int)arg1;
+- (void)_putItemDone:(unsigned int)arg1 putReceipt:(id)arg2 error:(id)arg3;
 - (void)_requestCompleted;
 - (void)abort;
 - (void)deactivate;

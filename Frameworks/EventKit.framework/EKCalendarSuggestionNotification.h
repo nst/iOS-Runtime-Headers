@@ -2,8 +2,18 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@interface EKCalendarSuggestionNotification : EKCalendarResourceChangeNotification
+@interface EKCalendarSuggestionNotification : EKCalendarResourceChangeNotification {
+    SGEvent * _suggestedEvent;
+}
 
+@property (nonatomic, readonly) SGEvent *suggestedEvent;
+
++ (id)_queue;
+
+- (void).cxx_destruct;
+- (Class)_SGSuggestionsServiceClass;
 - (BOOL)hiddenFromNotificationCenter;
+- (id)suggestedEvent;
+- (void)updateSuggestedEventWithEventStore:(id)arg1;
 
 @end

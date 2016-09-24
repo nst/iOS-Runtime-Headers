@@ -3,26 +3,26 @@
  */
 
 @interface PKPaymentRequirementsResponse : PKPaymentWebServiceResponse {
-    NSURL *_learnMoreURL;
-    NSArray *_possibleProductIdentifiers;
-    NSArray *_possibleProducts;
-    NSString *_productIdentifier;
-    NSArray *_requiredPaymentSetupFields;
-    int _status;
+    NSURL * _learnMoreURL;
+    NSString * _nonce;
+    NSArray * _possibleProducts;
+    NSString * _productIdentifier;
+    NSArray * _requiredPaymentSetupFields;
+    int  _status;
 }
 
-@property (nonatomic, readonly) NSURL *learnMoreURL;
-@property (nonatomic, readonly) NSArray *possibleProductIdentifiers;
-@property (nonatomic, readonly) NSArray *possibleProducts;
-@property (nonatomic, readonly) NSString *productIdentifier;
-@property (nonatomic, readonly) NSArray *requiredPaymentSetupFields;
+@property (nonatomic, readonly, copy) NSURL *learnMoreURL;
+@property (nonatomic, readonly, copy) NSString *nonce;
+@property (nonatomic, readonly, copy) NSArray *possibleProducts;
+@property (nonatomic, readonly, copy) NSString *productIdentifier;
+@property (nonatomic, readonly, copy) NSArray *requiredPaymentSetupFields;
 @property (nonatomic, readonly) int status;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithData:(id)arg1;
 - (id)initWithProduct:(id)arg1;
 - (id)learnMoreURL;
-- (id)possibleProductIdentifiers;
+- (id)nonce;
 - (id)possibleProducts;
 - (id)productIdentifier;
 - (id)requiredPaymentSetupFields;

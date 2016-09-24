@@ -3,14 +3,14 @@
  */
 
 @interface ISOpenURLOperation : ISOperation {
-    ISOpenURLRequest *_request;
+    ISOpenURLRequest * _request;
 }
 
 @property (readonly) ISOpenURLRequest *openURLRequest;
 
+- (void).cxx_destruct;
 - (id)_newSortedTargetsArray;
 - (BOOL)_openURL:(id)arg1;
-- (void)dealloc;
 - (id)init;
 - (id)initWithOpenURLRequest:(id)arg1;
 - (id)openURLRequest;

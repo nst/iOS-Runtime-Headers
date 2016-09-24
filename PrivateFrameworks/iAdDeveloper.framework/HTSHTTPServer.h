@@ -3,27 +3,27 @@
  */
 
 @interface HTSHTTPServer : NSObject {
-    NSMutableArray *_activeConnections;
-    NSMutableDictionary *_authTokens;
-    double _bandwidthStddev;
-    unsigned long long _bytesWritten;
-    int _cacheMaxAge;
-    struct __CFHTTPMessage { } *_currentRequest;
-    <HTSHTTPServerDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_delegateQueue;
-    BOOL _digestAuthenticationEnabled;
-    NSString *_documentRoot;
-    double _kbps;
-    double _lastReplenishTime;
-    double _latency;
-    double _latencyStddev;
-    int _listenSocket4;
-    NSObject<OS_dispatch_source> *_listenSource4;
-    NSString *_nodename;
-    BOOL _pipeliningEnabled;
-    unsigned short _port;
-    NSObject<OS_dispatch_queue> *_serverQueue;
-    unsigned long long _totalBytesWritten;
+    NSMutableArray * _activeConnections;
+    NSMutableDictionary * _authTokens;
+    double  _bandwidthStddev;
+    unsigned int  _bytesWritten;
+    int  _cacheMaxAge;
+    struct __CFHTTPMessage { } * _currentRequest;
+    <HTSHTTPServerDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _delegateQueue;
+    BOOL  _digestAuthenticationEnabled;
+    NSString * _documentRoot;
+    double  _kbps;
+    double  _lastReplenishTime;
+    double  _latency;
+    double  _latencyStddev;
+    int  _listenSocket4;
+    NSObject<OS_dispatch_source> * _listenSource4;
+    NSString * _nodename;
+    BOOL  _pipeliningEnabled;
+    unsigned short  _port;
+    NSObject<OS_dispatch_queue> * _serverQueue;
+    unsigned int  _totalBytesWritten;
 }
 
 @property (nonatomic) double bandwidthStddev;
@@ -38,7 +38,7 @@
 @property (nonatomic) double latencyStddev;
 @property (nonatomic) BOOL pipeliningEnabled;
 @property (nonatomic, readonly) unsigned short port;
-@property (nonatomic, readonly) unsigned long long totalBytesWritten;
+@property (nonatomic, readonly) unsigned int totalBytesWritten;
 @property (nonatomic, readonly) NSString *urlString;
 
 - (id)_authenticationResponseForRequest:(id)arg1;
@@ -53,10 +53,10 @@
 - (void)_respondWithData:(id)arg1 mimeType:(id)arg2 toRequest:(id)arg3 connection:(id)arg4;
 - (id)_restrictedFilePathForRelativePath:(id)arg1;
 - (void)_returnResponse:(id)arg1 toConnection:(id)arg2 closeAfterSending:(BOOL)arg3;
-- (unsigned long long)availableBandwidth;
+- (unsigned int)availableBandwidth;
 - (double)bandwidthStddev;
 - (int)cacheMaxAge;
-- (void)consumedBandwidth:(unsigned long long)arg1;
+- (void)consumedBandwidth:(unsigned int)arg1;
 - (struct __CFHTTPMessage { }*)currentRequest;
 - (void)dealloc;
 - (id)delegate;
@@ -82,7 +82,7 @@
 - (void)setLatency:(double)arg1;
 - (void)setLatencyStddev:(double)arg1;
 - (void)setPipeliningEnabled:(BOOL)arg1;
-- (unsigned long long)totalBytesWritten;
+- (unsigned int)totalBytesWritten;
 - (id)urlString;
 
 @end

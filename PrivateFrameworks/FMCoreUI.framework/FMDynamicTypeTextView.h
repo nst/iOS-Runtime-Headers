@@ -3,7 +3,7 @@
  */
 
 @interface FMDynamicTypeTextView : UITextView {
-    id _token;
+    id  _token;
 }
 
 @property (nonatomic, retain) id token;

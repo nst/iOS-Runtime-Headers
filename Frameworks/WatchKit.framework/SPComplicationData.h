@@ -3,8 +3,8 @@
  */
 
 @interface SPComplicationData : NSObject <NSSecureCoding> {
-    double _timeToLive;
-    NSDate *_timestamp;
+    double  _timeToLive;
+    NSDate * _timestamp;
 }
 
 @property (nonatomic) double timeToLive;

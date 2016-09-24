@@ -5,8 +5,8 @@
 @interface WKSelectPopover : WKFormRotatingAccessoryPopover <WKFormControl> {
     struct RetainPtr<WKSelectTableViewController> { 
         void *m_ptr; 
-    } _tableViewController;
-    WKContentView *_view;
+    }  _tableViewController;
+    WKContentView * _view;
 }
 
 - (id).cxx_construct;

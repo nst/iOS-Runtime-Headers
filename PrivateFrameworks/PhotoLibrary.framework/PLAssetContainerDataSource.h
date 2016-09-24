@@ -3,12 +3,12 @@
  */
 
 @interface PLAssetContainerDataSource : NSObject <PHAssetCollectionDataSource> {
-    unsigned int _allAssetsCount;
-    PHFetchResult *_assetCollectionsFetchResult;
-    NSMutableDictionary *_assetsFetchResultByAssetCollection;
-    BOOL _cachedValuesNeedUpdate;
-    unsigned int *_containerCounts;
-    unsigned int _lastAssetCollectionIndex;
+    unsigned int  _allAssetsCount;
+    PHFetchResult * _assetCollectionsFetchResult;
+    NSMutableDictionary * _assetsFetchResultByAssetCollection;
+    BOOL  _cachedValuesNeedUpdate;
+    unsigned int * _containerCounts;
+    unsigned int  _lastAssetCollectionIndex;
 }
 
 @property (nonatomic, readonly) PHFetchResult *assetCollectionsFetchResult;

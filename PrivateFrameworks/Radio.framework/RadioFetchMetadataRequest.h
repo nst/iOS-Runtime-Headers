@@ -3,10 +3,10 @@
  */
 
 @interface RadioFetchMetadataRequest : RadioRequest {
-    NSArray *_itemIDs;
-    SSURLConnectionRequest *_request;
-    NSData *_timedMetadata;
-    NSArray *_tracks;
+    NSArray * _itemIDs;
+    SSURLConnectionRequest * _request;
+    NSData * _timedMetadata;
+    NSArray * _tracks;
 }
 
 @property (nonatomic, copy) NSArray *itemIDs;

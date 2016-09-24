@@ -3,9 +3,9 @@
  */
 
 @interface WCUserInfo : NSObject <NSSecureCoding> {
-    NSDictionary *_clientUserInfo;
-    NSDictionary *_userInfo;
-    NSData *_userInfoData;
+    NSDictionary * _clientUserInfo;
+    NSDictionary * _userInfo;
+    NSData * _userInfoData;
 }
 
 @property (nonatomic, copy) NSDictionary *clientUserInfo;

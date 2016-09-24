@@ -3,8 +3,8 @@
  */
 
 @interface CRCarPlayPreferences : NSObject <MCProfileConnectionObserver> {
-    BOOL _cachedCarPlayAllowed;
-    <CRCarPlayPreferencesDelegate> *_preferencesDelegate;
+    BOOL  _cachedCarPlayAllowed;
+    <CRCarPlayPreferencesDelegate> * _preferencesDelegate;
 }
 
 @property (nonatomic) BOOL cachedCarPlayAllowed;
@@ -20,6 +20,7 @@
 - (BOOL)cachedCarPlayAllowed;
 - (void)dealloc;
 - (void)handleAssistantLanguageChanged:(id)arg1;
+- (void)handleAssistantPreferencesChanged:(id)arg1;
 - (id)init;
 - (BOOL)isCarPlayAllowed;
 - (BOOL)isCarPlayCapable;

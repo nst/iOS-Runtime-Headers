@@ -3,8 +3,8 @@
  */
 
 @interface MPBidirectionalDictionary : NSObject <NSCoding, NSCopying, NSMutableCopying> {
-    NSMutableDictionary *_keyToObjectDictionary;
-    NSMutableDictionary *_objectToKeyDictionary;
+    NSMutableDictionary * _keyToObjectDictionary;
+    NSMutableDictionary * _objectToKeyDictionary;
 }
 
 + (id)bidirectionalDictionary;

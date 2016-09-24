@@ -3,13 +3,13 @@
  */
 
 @interface CalDAVResourceTypeItem : CoreDAVResourceTypeItem {
-    CoreDAVItemWithNoChildren *_calendar;
-    CoreDAVItemWithNoChildren *_isFamilyCalendar;
-    CoreDAVItemWithNoChildren *_notification;
-    CoreDAVItemWithNoChildren *_scheduleInbox;
-    CoreDAVItemWithNoChildren *_scheduleOutbox;
-    CoreDAVItemWithNoChildren *_sharedOwner;
-    CoreDAVItemWithNoChildren *_subscribed;
+    CoreDAVItemWithNoChildren * _calendar;
+    CoreDAVItemWithNoChildren * _isFamilyCalendar;
+    CoreDAVItemWithNoChildren * _notification;
+    CoreDAVItemWithNoChildren * _scheduleInbox;
+    CoreDAVItemWithNoChildren * _scheduleOutbox;
+    CoreDAVItemWithNoChildren * _sharedOwner;
+    CoreDAVItemWithNoChildren * _subscribed;
 }
 
 @property (nonatomic, retain) CoreDAVItemWithNoChildren *calendar;

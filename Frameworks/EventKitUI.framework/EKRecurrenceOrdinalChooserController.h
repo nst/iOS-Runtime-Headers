@@ -3,8 +3,8 @@
  */
 
 @interface EKRecurrenceOrdinalChooserController : EKRecurrenceChooserController <EKRecurrenceOrdinalPickerViewControllerDelegate> {
-    UITableViewCell *_cell;
-    EKRecurrenceOrdinalPickerViewController *_pickerViewController;
+    UITableViewCell * _cell;
+    EKRecurrenceOrdinalPickerViewController * _pickerViewController;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -17,9 +17,9 @@
 - (void)sendFailedNotificationForApp:(LSApplicationProxy *)arg1 isUninstall:(BOOL)arg2;
 - (void)sendIconUpdatedNotificationForApp:(LSApplicationProxy *)arg1;
 - (void)sendInstalledNotificationForApp:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 7: LSApplicationProxy *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, void*
-- (void)sendInstalledNotificationForApps:(NSArray *)arg1;
+- (void)sendInstalledNotificationForApps:(NSArray *)arg1 Plugins:(NSArray *)arg2;
 - (void)sendUninstalledNotificationForApp:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 7: LSApplicationProxy *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, void*
-- (void)sendUninstalledNotificationForApps:(NSArray *)arg1;
+- (void)sendUninstalledNotificationForApps:(NSArray *)arg1 Plugins:(NSArray *)arg2;
 - (void)sendWillUninstallNotificationForApps:(LSApplicationProxy *)arg1 Plugins:(NSArray *)arg2 isUpdate:(BOOL)arg3;
 
 @end

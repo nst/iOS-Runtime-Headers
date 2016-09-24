@@ -3,7 +3,7 @@
  */
 
 @interface CNPerContactPropertyKeyDescriptor : NSObject <CNKeyDescriptor, CNKeyDescriptor_Private> {
-    NSMutableDictionary *_propertiesByIdentifier;
+    NSMutableDictionary * _propertiesByIdentifier;
 }
 
 @property (readonly, copy) NSString *debugDescription;

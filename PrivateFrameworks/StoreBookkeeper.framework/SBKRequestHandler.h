@@ -3,7 +3,7 @@
  */
 
 @interface SBKRequestHandler : NSObject {
-    SBKStoreURLBagContext *_bagContext;
+    SBKStoreURLBagContext * _bagContext;
 }
 
 @property (nonatomic, readonly) SBKStoreURLBagContext *bagContext;

@@ -3,9 +3,9 @@
  */
 
 @interface _NSUndoObject : NSObject {
-    id _target;
-    _NSUndoObject *next;
-    _NSUndoObject *previous;
+    id  _target;
+    _NSUndoObject * next;
+    _NSUndoObject * previous;
 }
 
 - (id)init;

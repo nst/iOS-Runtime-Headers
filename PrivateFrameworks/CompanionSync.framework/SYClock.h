@@ -3,12 +3,12 @@
  */
 
 @interface SYClock : PBCodable <NSCopying> {
-    SYPeer *_peer;
-    unsigned long long _version;
+    SYPeer * _peer;
+    unsigned int  _version;
 }
 
 @property (nonatomic, retain) SYPeer *peer;
-@property (nonatomic) unsigned long long version;
+@property (nonatomic) unsigned int version;
 
 + (void)initialize;
 
@@ -19,15 +19,15 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (unsigned int)hash;
-- (unsigned long long)increaseBy:(unsigned long long)arg1;
-- (unsigned long long)increment;
+- (unsigned int)increaseBy:(unsigned int)arg1;
+- (unsigned int)increment;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)peer;
 - (BOOL)readFrom:(id)arg1;
 - (void)setPeer:(id)arg1;
-- (void)setVersion:(unsigned long long)arg1;
-- (unsigned long long)version;
+- (void)setVersion:(unsigned int)arg1;
+- (unsigned int)version;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -3,11 +3,11 @@
  */
 
 @interface CPSearchMatcher : NSObject {
-    NSArray *_asciiComponents;
-    NSArray *_components;
-    NSData *_context;
-    int _options;
-    NSData *_wholeSearchStringData;
+    NSArray * _asciiComponents;
+    NSArray * _components;
+    NSData * _context;
+    int  _options;
+    NSData * _wholeSearchStringData;
 }
 
 - (void)dealloc;

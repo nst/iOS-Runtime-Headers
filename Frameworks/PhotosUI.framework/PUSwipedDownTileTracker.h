@@ -3,10 +3,10 @@
  */
 
 @interface PUSwipedDownTileTracker : PUInteractiveTileTracker {
-    PHSwipeDownTracker *__swipeDownTracker;
-    PUTileLayoutInfo *__trackedTileLayoutInfo;
-    PUTileController *_designatedTileController;
-    UIPanGestureRecognizer *_panGestureRecognizer;
+    PHSwipeDownTracker * __swipeDownTracker;
+    PUTileLayoutInfo * __trackedTileLayoutInfo;
+    PUTileController * _designatedTileController;
+    UIPanGestureRecognizer * _panGestureRecognizer;
 }
 
 @property (setter=_setSwipeDownTracker:, nonatomic, retain) PHSwipeDownTracker *_swipeDownTracker;

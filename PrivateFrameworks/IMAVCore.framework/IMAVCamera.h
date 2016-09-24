@@ -3,7 +3,7 @@
  */
 
 @interface IMAVCamera : NSObject {
-    id _internalDevice;
+    id  _internalDevice;
 }
 
 @property (nonatomic, readonly) int cameraStyle;

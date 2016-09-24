@@ -2,20 +2,18 @@
    Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
  */
 
-@interface WBSCloudHistoryStore : NSObject {
-    WBSCloudHistoryConfiguration *_configuration;
-    CKDatabase *_database;
-    NSObject<OS_dispatch_queue> *_databaseQueue;
-    CKRecordZone *_recordZone;
-    CKRecordZoneID *_recordZoneID;
+@interface WBSCloudHistoryStore : NSObject <WBSCloudHistoryDataStore> {
+    WBSCloudHistoryConfiguration * _configuration;
+    CKDatabase * _database;
+    NSObject<OS_dispatch_queue> * _databaseQueue;
+    CKRecordZone * _recordZone;
+    CKRecordZoneID * _recordZoneID;
 }
 
 - (void).cxx_destruct;
 - (void)_appendRecord:(id)arg1 toResult:(id)arg2;
 - (void)_batchSaveRecords:(id)arg1 useLongLivedOperation:(BOOL)arg2 longLivedOperationPersistenceCompletion:(id /* block */)arg3 completion:(id /* block */)arg4;
 - (void)_configureFetchChangesOperation:(id)arg1;
-- (id)_debugAllRecordsDescription;
-- (id)_debugDescriptionForRecord:(id)arg1;
 - (id)_dictionaryForRecordData:(id)arg1;
 - (void)_fetchRecordsWithServerChangeToken:(id)arg1 numberOfFetchRecordsOperationsPerformedSoFar:(unsigned int)arg2 result:(id)arg3 completion:(id /* block */)arg4;
 - (void)_prepareRecordZoneWithCompletion:(id /* block */)arg1;

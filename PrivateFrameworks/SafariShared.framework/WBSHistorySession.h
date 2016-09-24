@@ -3,7 +3,7 @@
  */
 
 @interface WBSHistorySession : NSObject {
-    NSDate *_startDate;
+    NSDate * _startDate;
 }
 
 @property (nonatomic, readonly) BOOL isCurrentSession;

@@ -3,8 +3,8 @@
  */
 
 @interface BLTBulletinDistributorSubscriberList : NSObject <BLTBulletinDistributorSubscriberDelegate> {
-    NSObject<OS_dispatch_queue> *_queue;
-    NSMutableArray *_subscribers;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSMutableArray * _subscribers;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -19,7 +19,7 @@
 - (void)addSubscriber:(id)arg1;
 - (BOOL)hasSubscribersForSectionID:(id)arg1;
 - (id)init;
-- (void)pingWithBulletin:(id)arg1;
+- (void)pingWithBulletin:(id)arg1 ack:(id /* block */)arg2;
 - (id)queue;
 - (void)removeSubscriber:(id)arg1;
 - (void)setSubscribers:(id)arg1;

@@ -3,10 +3,10 @@
  */
 
 @interface MFPFont : NSObject {
-    unsigned int mFlags;
-    NSString *mName;
-    float mSize;
-    int mUnit;
+    unsigned int  mFlags;
+    NSString * mName;
+    double  mSize;
+    int  mUnit;
 }
 
 - (struct __CTFont { }*)createCTFontWithGraphics:(id)arg1;

@@ -3,7 +3,7 @@
  */
 
 @interface BWNodeDroppedSampleMessage : BWNodeMessage {
-    BWDroppedSample *_droppedSample;
+    BWDroppedSample * _droppedSample;
 }
 
 @property (readonly) BWDroppedSample *droppedSample;

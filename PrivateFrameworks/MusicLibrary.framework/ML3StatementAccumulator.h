@@ -3,14 +3,14 @@
  */
 
 @interface ML3StatementAccumulator : NSObject {
-    ML3DatabaseConnection *_connection;
-    NSString *_databasePath;
-    NSUUID *_existingTransactionIdentifier;
-    unsigned int _priorityLevel;
-    NSObject<OS_dispatch_queue> *_serialQueue;
-    NSMutableArray *_statementQueue;
-    unsigned int _statementThreshold;
-    MLMediaLibraryService *_xpcService;
+    ML3DatabaseConnection * _connection;
+    NSString * _databasePath;
+    NSUUID * _existingTransactionIdentifier;
+    unsigned int  _priorityLevel;
+    NSObject<OS_dispatch_queue> * _serialQueue;
+    NSMutableArray * _statementQueue;
+    unsigned int  _statementThreshold;
+    MLMediaLibraryService * _xpcService;
 }
 
 @property (nonatomic, readonly) ML3DatabaseConnection *connection;

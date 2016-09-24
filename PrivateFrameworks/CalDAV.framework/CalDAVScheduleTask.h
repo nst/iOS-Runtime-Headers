@@ -3,9 +3,9 @@
  */
 
 @interface CalDAVScheduleTask : CoreDAVPostTask {
-    NSArray *_attendees;
-    NSString *_originator;
-    CalDAVScheduleResponseItem *_scheduleResponse;
+    NSArray * _attendees;
+    NSString * _originator;
+    CalDAVScheduleResponseItem * _scheduleResponse;
 }
 
 @property (nonatomic, retain) NSArray *attendees;

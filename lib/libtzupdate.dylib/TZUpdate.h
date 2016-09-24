@@ -3,8 +3,8 @@
  */
 
 @interface TZUpdate : NSObject {
-    NSXPCConnection *_connectionToService;
-    TZFileSystemInterface *_fileSystemInterface;
+    NSXPCConnection * _connectionToService;
+    TZFileSystemInterface * _fileSystemInterface;
 }
 
 @property (retain) NSXPCConnection *connectionToService;

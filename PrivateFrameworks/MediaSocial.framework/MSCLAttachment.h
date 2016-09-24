@@ -3,25 +3,25 @@
  */
 
 @interface MSCLAttachment : NSObject <NSCopying> {
-    NSString *_UTI;
-    MSCLStoreItem *_album;
-    NSArray *_artists;
-    UIImage *_assetImage;
-    NSURL *_assetURL;
-    NSString *_attachmentDescription;
-    NSString *_categoryName;
-    NSData *_data;
-    double _duration;
-    BOOL _explicitContent;
-    MPMediaItem *_mediaItem;
-    NSString *_message;
+    NSString * _UTI;
+    MSCLStoreItem * _album;
+    NSArray * _artists;
+    UIImage * _assetImage;
+    NSURL * _assetURL;
+    NSString * _attachmentDescription;
+    NSString * _categoryName;
+    NSData * _data;
+    double  _duration;
+    BOOL  _explicitContent;
+    MPMediaItem * _mediaItem;
+    NSString * _message;
     struct CGSize { 
-        float width; 
-        float height; 
-    } _pixelSize;
-    UIImage *_thumbnailImage;
-    double _thumbnailImageTime;
-    NSString *_title;
+        double width; 
+        double height; 
+    }  _pixelSize;
+    UIImage * _thumbnailImage;
+    double  _thumbnailImageTime;
+    NSString * _title;
 }
 
 @property (nonatomic, copy) NSString *UTI;
@@ -38,7 +38,7 @@
 @property (getter=isExplicitContent, nonatomic) BOOL explicitContent;
 @property (nonatomic, retain) MPMediaItem *mediaItem;
 @property (nonatomic, copy) NSString *message;
-@property (nonatomic) struct CGSize { float x1; float x2; } pixelSize;
+@property (nonatomic) struct CGSize { double x1; double x2; } pixelSize;
 @property (nonatomic, retain) UIImage *thumbnailImage;
 @property (nonatomic) double thumbnailImageTime;
 @property (nonatomic, copy) NSString *title;
@@ -66,7 +66,7 @@
 - (BOOL)isExplicitContent;
 - (id)mediaItem;
 - (id)message;
-- (struct CGSize { float x1; float x2; })pixelSize;
+- (struct CGSize { double x1; double x2; })pixelSize;
 - (void)setAlbum:(id)arg1;
 - (void)setArtists:(id)arg1;
 - (void)setAssetImage:(id)arg1;
@@ -78,7 +78,7 @@
 - (void)setExplicitContent:(BOOL)arg1;
 - (void)setMediaItem:(id)arg1;
 - (void)setMessage:(id)arg1;
-- (void)setPixelSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setPixelSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setThumbnailImage:(id)arg1;
 - (void)setThumbnailImageTime:(double)arg1;
 - (void)setTitle:(id)arg1;

@@ -3,18 +3,18 @@
  */
 
 @interface GEOCMCommunityRequest : PBRequest <NSCopying> {
-    GEOPDAnalyticMetadata *_analyticMetadata;
-    GEOPDClientMetadata *_clientMetadata;
-    NSMutableArray *_displayLocales;
+    GEOPDAnalyticMetadata * _analyticMetadata;
+    GEOPDClientMetadata * _clientMetadata;
+    NSMutableArray * _displayLocales;
     struct { 
         unsigned int requestType : 1; 
-    } _has;
-    int _requestType;
-    NSMutableArray *_spokenLocales;
-    GEOCMTicketFollowup *_ticketFollowup;
-    GEOCMTicketStatus *_ticketStatus;
-    GEOCMTicketSubmission *_ticketSubmission;
-    GEORPUserCredentials *_userCredentials;
+    }  _has;
+    int  _requestType;
+    NSMutableArray * _spokenLocales;
+    GEOCMTicketFollowup * _ticketFollowup;
+    GEOCMTicketStatus * _ticketStatus;
+    GEOCMTicketSubmission * _ticketSubmission;
+    GEORPUserCredentials * _userCredentials;
 }
 
 @property (nonatomic, retain) GEOPDAnalyticMetadata *analyticMetadata;
@@ -34,6 +34,10 @@
 @property (nonatomic, retain) GEOCMTicketSubmission *ticketSubmission;
 @property (nonatomic, retain) GEORPUserCredentials *userCredentials;
 
++ (Class)displayLocaleType;
++ (Class)spokenLocaleType;
+
+- (int)StringAsRequestType:(id)arg1;
 - (void)addDisplayLocale:(id)arg1;
 - (void)addSpokenLocale:(id)arg1;
 - (id)analyticMetadata;
@@ -60,6 +64,7 @@
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (int)requestType;
+- (id)requestTypeAsString:(int)arg1;
 - (void)setAnalyticMetadata:(id)arg1;
 - (void)setClientMetadata:(id)arg1;
 - (void)setDisplayLocales:(id)arg1;

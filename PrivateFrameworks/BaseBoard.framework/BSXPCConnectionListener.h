@@ -3,10 +3,10 @@
  */
 
 @interface BSXPCConnectionListener : NSObject {
-    NSObject<OS_xpc_object> *_connection;
-    <BSXPCConnectionListenerHandler> *_handler;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSString *_service;
+    NSObject<OS_xpc_object> * _connection;
+    <BSXPCConnectionListenerHandler> * _handler;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSString * _service;
 }
 
 @property (readonly, retain) <BSXPCConnectionListenerHandler> *handler;

@@ -3,22 +3,22 @@
  */
 
 @interface UIKBRenderConfig : NSObject <NSCopying> {
-    float _blurRadius;
-    float _blurSaturation;
-    int _forceQuality;
-    float _keycapOpacity;
-    BOOL _lightKeyboard;
-    float _lightKeycapOpacity;
-    BOOL _useEmojiStyles;
+    double  _blurRadius;
+    double  _blurSaturation;
+    int  _forceQuality;
+    double  _keycapOpacity;
+    BOOL  _lightKeyboard;
+    double  _lightKeycapOpacity;
+    BOOL  _useEmojiStyles;
 }
 
 @property (nonatomic, readonly) int backdropStyle;
-@property (nonatomic) float blurRadius;
-@property (nonatomic) float blurSaturation;
+@property (nonatomic) double blurRadius;
+@property (nonatomic) double blurSaturation;
 @property (nonatomic) int forceQuality;
-@property (nonatomic) float keycapOpacity;
+@property (nonatomic) double keycapOpacity;
 @property (nonatomic) BOOL lightKeyboard;
-@property (nonatomic) float lightKeycapOpacity;
+@property (nonatomic) double lightKeycapOpacity;
 @property (nonatomic, readonly) BOOL whiteText;
 
 + (int)backdropStyleForStyle:(int)arg1 quality:(int)arg2;

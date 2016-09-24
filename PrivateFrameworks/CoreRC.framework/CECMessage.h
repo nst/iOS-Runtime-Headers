@@ -7,7 +7,7 @@
         unsigned char blocks[16]; 
         unsigned int length : 5; 
         unsigned int reserved : 3; 
-    } _frame;
+    }  _frame;
 }
 
 @property (nonatomic, readonly) unsigned char destination;

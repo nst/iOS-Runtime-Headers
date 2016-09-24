@@ -3,8 +3,8 @@
  */
 
 @interface WBUFormDataControllerWK1 : WBUFormDataController <UIWebAutoFillDelegate> {
-    WBUFormAutoCompleteStateWK1 *_autoCompleteState;
-    NSHashTable *_webBrowserViewsWithUnsubmittedForms;
+    WBUFormAutoCompleteStateWK1 * _autoCompleteState;
+    NSHashTable * _webBrowserViewsWithUnsubmittedForms;
 }
 
 @property (readonly, copy) NSString *debugDescription;

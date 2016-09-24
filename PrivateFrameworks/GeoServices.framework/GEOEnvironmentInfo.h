@@ -3,13 +3,13 @@
  */
 
 @interface GEOEnvironmentInfo : NSObject {
-    NSString *_displayName;
-    NSError *_lastLoadingError;
-    NSData *_manifestData;
-    NSString *_name;
-    NSDictionary *_originalDictionaryRepresentation;
-    NSString *_releaseName;
-    int _state;
+    NSString * _displayName;
+    NSError * _lastLoadingError;
+    NSData * _manifestData;
+    NSString * _name;
+    NSDictionary * _originalDictionaryRepresentation;
+    NSString * _releaseName;
+    int  _state;
 }
 
 @property (nonatomic, readonly) NSString *displayName;

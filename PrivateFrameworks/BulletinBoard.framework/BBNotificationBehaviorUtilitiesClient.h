@@ -3,9 +3,12 @@
  */
 
 @interface BBNotificationBehaviorUtilitiesClient : NSObject <BBNotificationBehaviorUtilitiesClientProtocol> {
-    id /* block */ _activeBehaviorOverridesChangeHandler;
-    NSXPCConnection *_connection;
-    id /* block */ _filteringStateChangeHandler;
+    id /* block */  _activeBehaviorOverridesChangeHandler;
+    NSObject<OS_dispatch_queue> * _calloutQueue;
+    NSXPCConnection * _connection;
+    id /* block */  _filteringStateChangeHandler;
+    int  _listeningToken;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -15,8 +18,13 @@
 
 + (id)clientInterface;
 
+- (void).cxx_destruct;
+- (id)_queue_connection;
+- (void)_queue_invalidate;
+- (void)_registerForPublicationNotification;
 - (void)activeBehaviorOverrideTypesChanged:(unsigned int)arg1 source:(unsigned int)arg2;
 - (void)dealloc;
+- (void)establishXPCConnection;
 - (id)init;
 - (void)invalidate;
 - (void)notificationPresentationFilteringChangedToEnabled:(BOOL)arg1;

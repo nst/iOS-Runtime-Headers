@@ -3,7 +3,7 @@
  */
 
 @interface FBApplicationTerminationAssertionServiceServer : FBSystemServiceFacility {
-    NSMutableDictionary *_assertionsByClient;
+    NSMutableDictionary * _assertionsByClient;
 }
 
 - (void)_handleAcquireTerminationAssertionMessage:(id)arg1 fromClient:(id)arg2;
@@ -11,7 +11,7 @@
 - (void)_rememberTerminationAssertion:(id)arg1 forClient:(id)arg2;
 - (void)dealloc;
 - (void)noteClientDidDisconnect:(id)arg1;
-- (void)noteDidReceiveMessage:(id)arg1 withType:(long long)arg2 fromClient:(id)arg3;
+- (void)noteDidReceiveMessage:(id)arg1 withType:(int)arg2 fromClient:(id)arg3;
 - (id)prerequisiteMilestones;
 
 @end

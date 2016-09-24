@@ -3,7 +3,7 @@
  */
 
 @interface SKUIEntityProviderListViewElement : SKUIViewElement {
-    NSDictionary *_entityProviders;
+    NSDictionary * _entityProviders;
 }
 
 - (void).cxx_destruct;

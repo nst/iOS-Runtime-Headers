@@ -3,12 +3,12 @@
  */
 
 @interface FBSystemApp : UIApplication <BKSSystemApplicationDelegate, FBSSceneUpdater, FBSceneClient, FBSceneClientProvider> {
-    struct __CFBoolean { } *_darkboot;
-    NSMapTable *_hostsByIdentifier;
-    FBDisplayLayoutTransition *_interfaceOrientationTransition;
-    FBSceneClientProviderInvalidationAction *_invalidationAction;
-    NSMutableDictionary *_scenesByIdentifier;
-    struct __CFBoolean { } *_wasDarkboot;
+    struct __CFBoolean { } * _darkboot;
+    NSMapTable * _hostsByIdentifier;
+    FBDisplayLayoutTransition * _interfaceOrientationTransition;
+    FBSceneClientProviderInvalidationAction * _invalidationAction;
+    NSMutableDictionary * _scenesByIdentifier;
+    struct __CFBoolean { } * _wasDarkboot;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -24,12 +24,15 @@
 + (BOOL)rendersLocally;
 + (BOOL)shouldCheckInWithBackboard;
 + (BOOL)shouldFixMainThreadPriority;
++ (int)startupInterfaceOrientation;
++ (BOOL)supportsAsynchronousApplicationLoading;
 + (BOOL)systemApplicationIsAliveForWatchdog:(id)arg1;
 + (BOOL)systemApplicationShouldWaitForDataMigration:(id)arg1;
 
 - (int)_interfaceOrientationRotationDirectionFromOrientation:(int)arg1 toOrientation:(int)arg2;
 - (id)_newSceneForWindow:(id)arg1 oldDisplay:(id)arg2 newDisplay:(id)arg3;
 - (void)_noteApplicationDidFinishLaunching;
+- (BOOL)_openURL:(id)arg1;
 - (BOOL)_saveSnapshotWithName:(id)arg1;
 - (void)_setDarkBoot:(BOOL)arg1;
 - (void)_updateSceneSettingsForScene:(id)arg1 layer:(id)arg2;
@@ -38,10 +41,12 @@
 - (void)endTransaction;
 - (id)fbsSceneWithIdentifier:(id)arg1;
 - (BOOL)handleDoubleHeightStatusBarTap:(int)arg1;
+- (void)host:(id)arg1 configureWithDefinition:(id)arg2 parameters:(id)arg3;
 - (void)host:(id)arg1 configureWithInitialClientSettings:(id)arg2;
 - (void)host:(id)arg1 didInvalidateWithTransitionContext:(id)arg2 completion:(id /* block */)arg3;
 - (void)host:(id)arg1 didReceiveActions:(id)arg2;
 - (void)host:(id)arg1 didUpdateSettings:(id)arg2 withDiff:(id)arg3 transitionContext:(id)arg4 completion:(id /* block */)arg5;
+- (id)hostProcess;
 - (id)init;
 - (BOOL)isBootingDark;
 - (BOOL)isFrontBoard;
@@ -51,7 +56,6 @@
 - (unsigned int)lastExitReason;
 - (void)noteActiveInterfaceOrientationDidChangeToOrientation:(int)arg1 willAnimateWithSettings:(id)arg2 fromOrientation:(int)arg3;
 - (void)noteActiveInterfaceOrientationWillChangeToOrientation:(int)arg1;
-- (BOOL)openURL:(id)arg1;
 - (void)registerDelegate:(id)arg1 forSceneID:(id)arg2;
 - (id)registerHost:(id)arg1;
 - (void)registerInvalidationAction:(id)arg1;
@@ -61,6 +65,7 @@
 - (void)scene:(id)arg1 didReceiveActions:(id)arg2;
 - (void)scene:(id)arg1 didUpdateClientSettings:(id)arg2 withDiff:(id)arg3 transitionContext:(id)arg4;
 - (void)scene:(id)arg1 didUpdateLayer:(id)arg2;
+- (void)scene:(id)arg1 sendMessage:(id)arg2 withResponse:(id /* block */)arg3;
 - (void)sendActionsToBackboard:(id)arg1;
 - (void)unregisterDelegateForSceneID:(id)arg1;
 - (void)unregisterHost:(id)arg1;

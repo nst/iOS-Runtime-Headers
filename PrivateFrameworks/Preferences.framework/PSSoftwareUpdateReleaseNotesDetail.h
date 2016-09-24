@@ -3,7 +3,7 @@
  */
 
 @interface PSSoftwareUpdateReleaseNotesDetail : PSListController <UIWebViewDelegate> {
-    NSString *_releaseNotes;
+    NSString * _releaseNotes;
 }
 
 @property (readonly, copy) NSString *debugDescription;

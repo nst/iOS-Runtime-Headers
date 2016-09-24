@@ -3,9 +3,9 @@
  */
 
 @interface PUIndeterminateProgressTileViewController : PUTileViewController {
-    UIView *__contentView;
-    UIActivityIndicatorView *__spinnerView;
-    BOOL _progressIndicatorVisible;
+    UIView * __contentView;
+    UIActivityIndicatorView * __spinnerView;
+    BOOL  _progressIndicatorVisible;
 }
 
 @property (nonatomic, retain) UIView *_contentView;

@@ -3,11 +3,11 @@
  */
 
 @interface TSWPDeletionRangeMap : NSObject {
-    TSWPRangeArray *_removedRanges;
+    TSWPRangeArray * _removedRanges;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _subRange;
+    }  _subRange;
 }
 
 - (void)adjustByDelta:(int)arg1 startingAt:(unsigned int)arg2;

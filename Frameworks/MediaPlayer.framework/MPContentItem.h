@@ -3,15 +3,20 @@
  */
 
 @interface MPContentItem : NSObject {
-    MPMediaItemArtwork *_artwork;
-    struct _MRContentItem { } *_mrContentItem;
+    MPMediaItemArtwork * _artwork;
+    double  _artworkHeightHint;
+    double  _artworkWidthHint;
+    BOOL  _artworkingLoading;
+    struct _MRContentItem { } * _mrContentItem;
 }
 
 @property (nonatomic, retain) MPMediaItemArtwork *artwork;
 @property (getter=isContainer, nonatomic) BOOL container;
+@property (getter=isExplicitContent, nonatomic) BOOL explicitContent;
 @property (nonatomic, readonly, copy) NSString *identifier;
 @property (getter=isPlayable, nonatomic) BOOL playable;
-@property (nonatomic) float playbackProgress;
+@property (nonatomic) double playbackProgress;
+@property (getter=isStreamingContent, nonatomic) BOOL streamingContent;
 @property (nonatomic, copy) NSString *subtitle;
 @property (nonatomic, copy) NSString *title;
 
@@ -20,19 +25,25 @@
 - (struct _MRContentItem { }*)_mediaRemoteContentItem;
 - (id)_notification;
 - (void)_postItemChangedNotification;
+- (void)_setArtworkSize:(double)arg1 height:(double)arg2;
 - (id)artwork;
 - (void)dealloc;
 - (id)description;
 - (id)identifier;
 - (id)init;
 - (id)initWithIdentifier:(id)arg1;
+- (BOOL)isArtworkReady;
 - (BOOL)isContainer;
+- (BOOL)isExplicitContent;
 - (BOOL)isPlayable;
+- (BOOL)isStreamingContent;
 - (float)playbackProgress;
 - (void)setArtwork:(id)arg1;
 - (void)setContainer:(BOOL)arg1;
+- (void)setExplicitContent:(BOOL)arg1;
 - (void)setPlayable:(BOOL)arg1;
 - (void)setPlaybackProgress:(float)arg1;
+- (void)setStreamingContent:(BOOL)arg1;
 - (void)setSubtitle:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)subtitle;

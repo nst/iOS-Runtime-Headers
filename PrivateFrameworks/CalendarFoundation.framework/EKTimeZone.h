@@ -3,12 +3,12 @@
  */
 
 @interface EKTimeZone : NSObject <NSCopying> {
-    void *_internal;
-    long long _lastEnd;
-    unsigned int _lastIndex;
-    long long _lastStart;
-    NSString *_name;
-    double _offset;
+    void * _internal;
+    int  _lastEnd;
+    unsigned int  _lastIndex;
+    int  _lastStart;
+    NSString * _name;
+    double  _offset;
 }
 
 + (id)timeZoneWithNSTimeZone:(id)arg1;

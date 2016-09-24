@@ -7,13 +7,13 @@
         unsigned int muid : 1; 
         unsigned int stationIndex : 1; 
         unsigned int structureType : 1; 
-    } _has;
-    GEOLatLng *_location;
-    unsigned long long _muid;
-    NSString *_nameDisplayString;
-    unsigned int _stationIndex;
-    int _structureType;
-    NSMutableArray *_zoomNames;
+    }  _has;
+    GEOLatLng * _location;
+    unsigned int  _muid;
+    NSString * _nameDisplayString;
+    unsigned int  _stationIndex;
+    int  _structureType;
+    NSMutableArray * _zoomNames;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -25,13 +25,16 @@
 @property (nonatomic) BOOL hasStructureType;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) GEOLatLng *location;
-@property (nonatomic) unsigned long long muid;
+@property (nonatomic) unsigned int muid;
 @property (nonatomic, retain) NSString *nameDisplayString;
 @property (nonatomic) unsigned int stationIndex;
 @property (nonatomic) int structureType;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSMutableArray *zoomNames;
 
++ (Class)zoomNameType;
+
+- (int)StringAsStructureType:(id)arg1;
 - (void)addZoomName:(id)arg1;
 - (id)bestName;
 - (void)clearZoomNames;
@@ -49,20 +52,21 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)location;
 - (void)mergeFrom:(id)arg1;
-- (unsigned long long)muid;
+- (unsigned int)muid;
 - (id)nameDisplayString;
 - (BOOL)readFrom:(id)arg1;
 - (void)setHasMuid:(BOOL)arg1;
 - (void)setHasStationIndex:(BOOL)arg1;
 - (void)setHasStructureType:(BOOL)arg1;
 - (void)setLocation:(id)arg1;
-- (void)setMuid:(unsigned long long)arg1;
+- (void)setMuid:(unsigned int)arg1;
 - (void)setNameDisplayString:(id)arg1;
 - (void)setStationIndex:(unsigned int)arg1;
 - (void)setStructureType:(int)arg1;
 - (void)setZoomNames:(id)arg1;
 - (unsigned int)stationIndex;
 - (int)structureType;
+- (id)structureTypeAsString:(int)arg1;
 - (void)writeTo:(id)arg1;
 - (id)zoomNameAtIndex:(unsigned int)arg1;
 - (id)zoomNames;

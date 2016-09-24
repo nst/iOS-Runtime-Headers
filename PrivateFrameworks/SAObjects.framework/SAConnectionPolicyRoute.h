@@ -5,6 +5,7 @@
 @interface SAConnectionPolicyRoute : AceObject <SAAceSerializable>
 
 @property (nonatomic, copy) NSString *cname;
+@property (nonatomic, copy) NSString *connectionId;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
@@ -22,6 +23,7 @@
 + (id)connectionPolicyRouteWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)cname;
+- (id)connectionId;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)host;
@@ -31,6 +33,7 @@
 - (id)resolverProtocol;
 - (id)routeId;
 - (void)setCname:(id)arg1;
+- (void)setConnectionId:(id)arg1;
 - (void)setHost:(id)arg1;
 - (void)setMptcp:(id)arg1;
 - (void)setPriority:(int)arg1;

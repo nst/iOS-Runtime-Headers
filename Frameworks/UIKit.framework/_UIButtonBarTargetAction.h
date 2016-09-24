@@ -3,8 +3,8 @@
  */
 
 @interface _UIButtonBarTargetAction : NSObject {
-    id /* block */ _actionFilter;
-    UIBarButtonItem *_barButtonItem;
+    id /* block */  _actionFilter;
+    UIBarButtonItem * _barButtonItem;
 }
 
 @property (nonatomic, copy) id /* block */ actionFilter;

@@ -3,10 +3,10 @@
  */
 
 @interface CoreDAVPropFindItem : CoreDAVItem {
-    CoreDAVItemWithNoChildren *_allProp;
-    CoreDAVItem *_include;
-    CoreDAVItem *_prop;
-    CoreDAVItemWithNoChildren *_propName;
+    CoreDAVItemWithNoChildren * _allProp;
+    CoreDAVItem * _include;
+    CoreDAVItem * _prop;
+    CoreDAVItemWithNoChildren * _propName;
 }
 
 @property (nonatomic, retain) CoreDAVItemWithNoChildren *allProp;

@@ -3,12 +3,12 @@
  */
 
 @interface CNLabeledValue : NSObject <CNSuggested, NSCopying, NSSecureCoding> {
-    int _iOSLegacyIdentifier;
-    NSString *_identifier;
-    CNLabelValuePair *_labelValuePair;
-    NSSet *_linkedIdentifiers;
-    NSString *_storeIdentifier;
-    NSDictionary *_storeInfo;
+    int  _iOSLegacyIdentifier;
+    NSString * _identifier;
+    CNLabelValuePair * _labelValuePair;
+    NSSet * _linkedIdentifiers;
+    NSString * _storeIdentifier;
+    NSDictionary * _storeInfo;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -24,6 +24,7 @@
 @property (nonatomic, copy) NSString *storeIdentifier;
 @property (nonatomic, copy) NSDictionary *storeInfo;
 @property (getter=isSuggested, nonatomic, readonly) BOOL suggested;
+@property (nonatomic, readonly) NSString *suggestionFoundInBundleId;
 @property (nonatomic, readonly) SGRecordId *suggestionRecordId;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, copy) <NSCopying><NSSecureCoding> *value;
@@ -74,6 +75,7 @@
 - (void)setStoreInfo:(id)arg1;
 - (id)storeIdentifier;
 - (id)storeInfo;
+- (id)suggestionFoundInBundleId;
 - (id)suggestionRecordId;
 - (id)value;
 
@@ -89,6 +91,7 @@
 + (id)builtinLabelsForProperty:(id)arg1;
 + (id)defaultLabels;
 + (void)deleteCustomLabel:(id)arg1;
++ (id)localizedDisplayStringForLabel:(id)arg1 propertyName:(id)arg2;
 
 - (Class)contactViewControllerCellClassForPropertyType:(id)arg1;
 - (id)localizedLabel;

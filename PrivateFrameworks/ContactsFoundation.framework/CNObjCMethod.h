@@ -3,9 +3,9 @@
  */
 
 @interface CNObjCMethod : NSObject {
-    int (*_implementation;
-    NSString *_name;
-    NSString *_typeEncoding;
+    int (* _implementation;
+    NSString * _name;
+    NSString * _typeEncoding;
 }
 
 @property (readonly) int (*implementation;

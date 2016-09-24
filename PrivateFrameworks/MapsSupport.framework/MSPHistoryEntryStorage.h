@@ -3,19 +3,21 @@
  */
 
 @interface MSPHistoryEntryStorage : PBCodable <NSCopying> {
-    MSPDirectionsSearch *_directionsSearch;
+    MSPDirectionsSearch * _directionsSearch;
     struct { 
         unsigned int position : 1; 
         unsigned int timestamp : 1; 
         unsigned int searchType : 1; 
-    } _has;
-    NSString *_identifier;
-    MSPPlaceDisplay *_placeDisplay;
-    double _position;
-    MSPQuerySearch *_querySearch;
-    int _searchType;
-    double _timestamp;
-    PBUnknownFields *_unknownFields;
+    }  _has;
+    NSString * _identifier;
+    MSPPlaceDisplay * _placeDisplay;
+    double  _position;
+    MSPQuerySearch * _querySearch;
+    MSPRidesharingTrip * _ridesharingTrip;
+    int  _searchType;
+    double  _timestamp;
+    MSPTransitStorageLineItem * _transitLineItem;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, retain) MSPDirectionsSearch *directionsSearch;
@@ -24,17 +26,22 @@
 @property (nonatomic, readonly) BOOL hasPlaceDisplay;
 @property (nonatomic) BOOL hasPosition;
 @property (nonatomic, readonly) BOOL hasQuerySearch;
+@property (nonatomic, readonly) BOOL hasRidesharingTrip;
 @property (nonatomic) BOOL hasSearchType;
 @property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic, readonly) BOOL hasTransitLineItem;
 @property (nonatomic, retain) NSString *identifier;
 @property (nonatomic, retain) MSPPlaceDisplay *placeDisplay;
 @property (nonatomic) double position;
 @property (nonatomic, retain) MSPQuerySearch *querySearch;
+@property (nonatomic, retain) MSPRidesharingTrip *ridesharingTrip;
 @property (nonatomic) int searchType;
 @property (nonatomic) double timestamp;
+@property (nonatomic, retain) MSPTransitStorageLineItem *transitLineItem;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 - (void).cxx_destruct;
+- (int)StringAsSearchType:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -45,8 +52,10 @@
 - (BOOL)hasPlaceDisplay;
 - (BOOL)hasPosition;
 - (BOOL)hasQuerySearch;
+- (BOOL)hasRidesharingTrip;
 - (BOOL)hasSearchType;
 - (BOOL)hasTimestamp;
+- (BOOL)hasTransitLineItem;
 - (unsigned int)hash;
 - (id)identifier;
 - (BOOL)isEqual:(id)arg1;
@@ -55,7 +64,9 @@
 - (double)position;
 - (id)querySearch;
 - (BOOL)readFrom:(id)arg1;
+- (id)ridesharingTrip;
 - (int)searchType;
+- (id)searchTypeAsString:(int)arg1;
 - (void)setDirectionsSearch:(id)arg1;
 - (void)setHasPosition:(BOOL)arg1;
 - (void)setHasSearchType:(BOOL)arg1;
@@ -64,9 +75,12 @@
 - (void)setPlaceDisplay:(id)arg1;
 - (void)setPosition:(double)arg1;
 - (void)setQuerySearch:(id)arg1;
+- (void)setRidesharingTrip:(id)arg1;
 - (void)setSearchType:(int)arg1;
 - (void)setTimestamp:(double)arg1;
+- (void)setTransitLineItem:(id)arg1;
 - (double)timestamp;
+- (id)transitLineItem;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
 

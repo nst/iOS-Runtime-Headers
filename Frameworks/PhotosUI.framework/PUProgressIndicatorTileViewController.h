@@ -3,19 +3,19 @@
  */
 
 @interface PUProgressIndicatorTileViewController : PUTileViewController <PUAssetSharedViewModelChangeObserver, PUBrowsingVideoPlayerChangeObserver> {
-    UILabel *__debugProgressLabel;
-    UIButton *__errorButton;
-    BOOL __isProgressViewVisible;
-    BOOL __needsUpdateProgressViewStyle;
-    BOOL __needsUpdateSizeClass;
-    BOOL __needsUpdateStatus;
-    BOOL __needsUpdateStatusViews;
-    PLRoundProgressView *__progressView;
-    int __progressViewStyle;
-    int __sizeClass;
-    PUOperationStatus *__status;
-    PUAssetSharedViewModel *_assetSharedViewModel;
-    PUBrowsingVideoPlayer *_videoPlayer;
+    UILabel * __debugProgressLabel;
+    UIButton * __errorButton;
+    BOOL  __isProgressViewVisible;
+    BOOL  __needsUpdateProgressViewStyle;
+    BOOL  __needsUpdateSizeClass;
+    BOOL  __needsUpdateStatus;
+    BOOL  __needsUpdateStatusViews;
+    PLRoundProgressView * __progressView;
+    int  __progressViewStyle;
+    int  __sizeClass;
+    PUOperationStatus * __status;
+    PUAssetSharedViewModel * _assetSharedViewModel;
+    PUBrowsingVideoPlayer * _videoPlayer;
 }
 
 @property (setter=_setDebugProgressLabel:, nonatomic, retain) UILabel *_debugProgressLabel;
@@ -37,7 +37,7 @@
 @property (nonatomic, retain) PUBrowsingVideoPlayer *videoPlayer;
 
 + (id)_loadErrorIconForSizeClass:(int)arg1;
-+ (struct CGSize { float x1; float x2; })progressIndicatorTileSizeForSizeClass:(int)arg1;
++ (struct CGSize { double x1; double x2; })progressIndicatorTileSizeForSizeClass:(int)arg1;
 
 - (void).cxx_destruct;
 - (id)_debugProgressLabel;

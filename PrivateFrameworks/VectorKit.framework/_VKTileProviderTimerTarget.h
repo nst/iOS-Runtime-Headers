@@ -3,8 +3,8 @@
  */
 
 @interface _VKTileProviderTimerTarget : NSObject {
-    VKTileProvider *_tileProvider;
-    VKTileProvider *tileProvider;
+    VKTileProvider * _tileProvider;
+    VKTileProvider * tileProvider;
 }
 
 @property (nonatomic) VKTileProvider *tileProvider;

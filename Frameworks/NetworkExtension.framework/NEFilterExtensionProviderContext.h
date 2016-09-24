@@ -3,9 +3,9 @@
  */
 
 @interface NEFilterExtensionProviderContext : NEExtensionProviderContext <NEFilterExtensionProviderHostProtocol, NEFilterExtensionProviderProtocol> {
-    NSString *_description;
-    long _onceToken;
-    NSObject<OS_dispatch_queue> *_queue;
+    NSString * _description;
+    long  _onceToken;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (readonly, copy) NSString *debugDescription;

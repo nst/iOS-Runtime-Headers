@@ -3,22 +3,27 @@
  */
 
 @interface CNContainer : NSObject <NSCopying, NSSecureCoding> {
-    BOOL _enabled;
-    int _iOSLegacyIdentifier;
-    NSString *_identifier;
-    NSString *_name;
-    CNContainer *_snapshot;
-    int _type;
+    NSString * _accountIdentifier;
+    BOOL  _enabled;
+    int  _iOSLegacyIdentifier;
+    NSString * _identifier;
+    NSString * _name;
+    CNContainerPermissions * _permissions;
+    CNContainer * _snapshot;
+    int  _type;
 }
 
+@property (nonatomic, readonly, copy) NSString *accountIdentifier;
 @property (getter=isEnabled, nonatomic, readonly) BOOL enabled;
 @property (nonatomic, readonly) int iOSLegacyIdentifier;
 @property (nonatomic, readonly, copy) NSString *identifier;
 @property (nonatomic, readonly, copy) NSString *name;
+@property (nonatomic, readonly, copy) CNContainerPermissions *permissions;
 @property (nonatomic, readonly, copy) CNContainer *snapshot;
 @property (nonatomic, readonly) int type;
 
 + (id)identifierProvider;
++ (id)makeDefaultContainerPermissions;
 + (id)makeIdentifier;
 + (id)makeIdentifierString;
 + (id)predicateForContainerOfContactWithIdentifier:(id)arg1;
@@ -33,6 +38,7 @@
 + (id)predicateForiOSLegacyIdentifier:(int)arg1;
 + (BOOL)supportsSecureCoding;
 
+- (id)accountIdentifier;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
@@ -44,6 +50,7 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithContainer:(id)arg1;
+- (id)initWithIdentifier:(id)arg1 accountIdentifier:(id)arg2 name:(id)arg3 type:(int)arg4 permissions:(id)arg5;
 - (id)initWithIdentifier:(id)arg1 name:(id)arg2 type:(int)arg3;
 - (id)initWithName:(id)arg1;
 - (id)initWithName:(id)arg1 type:(int)arg2;
@@ -51,6 +58,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)name;
+- (id)permissions;
 - (id)snapshot;
 - (int)type;
 

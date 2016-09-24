@@ -3,7 +3,7 @@
  */
 
 @interface TNArchivedUIState : TSPObject {
-    TNUIState *mUIState;
+    TNUIState * mUIState;
 }
 
 @property (nonatomic, readonly) TNUIState *uiState;

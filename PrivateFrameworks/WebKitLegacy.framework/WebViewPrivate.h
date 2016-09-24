@@ -3,45 +3,45 @@
  */
 
 @interface WebViewPrivate : NSObject {
-    id UIDelegate;
-    id UIDelegateForwarder;
-    id UIKitDelegate;
-    id UIKitDelegateForwarder;
-    id WebMailDelegate;
-    <WebCaretChangeListener> *_caretChangeListener;
-    NSMutableSet *_caretChangeListeners;
-    BOOL _didPerformFirstNavigation;
-    WebFixedPositionContent *_fixedPositionContent;
-    <WebGeolocationProvider> *_geolocationProvider;
+    id  UIDelegate;
+    id  UIDelegateForwarder;
+    id  UIKitDelegate;
+    id  UIKitDelegateForwarder;
+    id  WebMailDelegate;
+    <WebCaretChangeListener> * _caretChangeListener;
+    NSMutableSet * _caretChangeListeners;
+    BOOL  _didPerformFirstNavigation;
+    WebFixedPositionContent * _fixedPositionContent;
+    <WebGeolocationProvider> * _geolocationProvider;
     struct RefPtr<WebCore::HistoryItem> { 
         struct HistoryItem {} *m_ptr; 
-    } _globalHistoryItem;
-    int _keyboardUIMode;
-    BOOL _keyboardUIModeAccessed;
-    <WebNotificationProvider> *_notificationProvider;
-    BOOL allowsMessaging;
-    BOOL allowsUndo;
-    NSString *applicationNameForUserAgent;
-    struct CGColor { } *backgroundColor;
-    BOOL becomingFirstResponder;
-    BOOL becomingFirstResponderFromOutside;
-    BOOL closed;
-    BOOL closing;
-    WebNodeHighlight *currentNodeHighlight;
-    float customDeviceScaleFactor;
-    int didDrawTiles;
-    id downloadDelegate;
-    BOOL drawsBackground;
-    id editingDelegate;
-    id editingDelegateForwarder;
+    }  _globalHistoryItem;
+    int  _keyboardUIMode;
+    BOOL  _keyboardUIModeAccessed;
+    <WebNotificationProvider> * _notificationProvider;
+    BOOL  allowsMessaging;
+    BOOL  allowsUndo;
+    NSString * applicationNameForUserAgent;
+    struct CGColor { } * backgroundColor;
+    BOOL  becomingFirstResponder;
+    BOOL  becomingFirstResponderFromOutside;
+    BOOL  closed;
+    BOOL  closing;
+    WebNodeHighlight * currentNodeHighlight;
+    double  customDeviceScaleFactor;
+    int  didDrawTiles;
+    id  downloadDelegate;
+    BOOL  drawsBackground;
+    id  editingDelegate;
+    id  editingDelegateForwarder;
     struct CGSize { 
-        float width; 
-        float height; 
-    } fixedLayoutSize;
-    <WebFormDelegate> *formDelegate;
-    id formDelegateForwarder;
-    id frameLoadDelegate;
-    id frameLoadDelegateForwarder;
+        double width; 
+        double height; 
+    }  fixedLayoutSize;
+    <WebFormDelegate> * formDelegate;
+    id  formDelegateForwarder;
+    id  frameLoadDelegate;
+    id  frameLoadDelegateForwarder;
     struct WebFrameLoadDelegateImplementationCache { 
         int (*didCreateJavaScriptContextForFrameFunc)(); 
         int (*didClearWindowObjectForFrameFunc)(); 
@@ -73,13 +73,13 @@
         int (*didDetectXSSFunc)(); 
         int (*didRemoveFrameFromHierarchyFunc)(); 
         int (*webThreadDidLayoutFunc)(); 
-    } frameLoadDelegateImplementations;
-    WebVideoFullscreenController *fullscreenController;
+    }  frameLoadDelegateImplementations;
+    WebVideoFullscreenController * fullscreenController;
     struct RefPtr<WebViewGroup> { 
         struct WebViewGroup {} *m_ptr; 
-    } group;
-    BOOL hasSpellCheckerDocumentTag;
-    id historyDelegate;
+    }  group;
+    BOOL  hasSpellCheckerDocumentTag;
+    id  historyDelegate;
     struct WebHistoryDelegateImplementationCache { 
         int (*navigatedFunc)(); 
         int (*clientRedirectFunc)(); 
@@ -87,8 +87,8 @@
         int (*deprecatedSetTitleFunc)(); 
         int (*setTitleFunc)(); 
         int (*populateVisitedLinksFunc)(); 
-    } historyDelegateImplementations;
-    WAKWindow *hostWindow;
+    }  historyDelegateImplementations;
+    WAKWindow * hostWindow;
     struct HashMap<unsigned long, WTF::RetainPtr<id>, WTF::IntHash<unsigned long>, WTF::HashTraits<unsigned long>, WTF::HashTraits<WTF::RetainPtr<id> > > { 
         struct HashTable<unsigned long, WTF::KeyValuePair<unsigned long, WTF::RetainPtr<id> >, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<unsigned long, WTF::RetainPtr<id> > >, WTF::IntHash<unsigned long>, WTF::HashMap<unsigned long, WTF::RetainPtr<id>, WTF::IntHash<unsigned long>, WTF::HashTraits<unsigned long>, WTF::HashTraits<WTF::RetainPtr<id> > >::KeyValuePairTraits, WTF::HashTraits<unsigned long> > { 
             struct KeyValuePair<unsigned long, WTF::RetainPtr<id> > {} *m_table; 
@@ -97,49 +97,48 @@
             unsigned int m_keyCount; 
             unsigned int m_deletedCount; 
         } m_impl; 
-    } identifierMap;
-    BOOL includesFlattenedCompositingLayersWhenDrawingToBitmap;
-    WebIndicateLayer *indicateLayer;
-    WebInspector *inspector;
-    BOOL interactiveFormValidationEnabled;
-    BOOL isStopping;
+    }  identifierMap;
+    BOOL  includesFlattenedCompositingLayersWhenDrawingToBitmap;
+    WebIndicateLayer * indicateLayer;
+    WebInspector * inspector;
+    BOOL  interactiveFormValidationEnabled;
+    BOOL  isStopping;
     struct CGSize { 
-        float width; 
-        float height; 
-    } lastLayoutSize;
+        double width; 
+        double height; 
+    }  lastLayoutSize;
     struct RefPtr<LayerFlushController> { 
         struct LayerFlushController {} *m_ptr; 
-    } layerFlushController;
-    <WebDeviceOrientationProvider> *m_deviceOrientationProvider;
-    BOOL mainFrameDocumentReady;
-    BOOL mainViewIsScrollingOrZooming;
-    NSString *mediaStyle;
-    BOOL needsOneShotDrawingSynchronization;
-    void *observationInfo;
-    struct Page { } *page;
+    }  layerFlushController;
+    <WebDeviceOrientationProvider> * m_deviceOrientationProvider;
+    BOOL  mainFrameDocumentReady;
+    BOOL  mainViewIsScrollingOrZooming;
+    NSString * mediaStyle;
+    BOOL  needsOneShotDrawingSynchronization;
+    struct Page { } * page;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } pendingFixedPositionLayoutRect;
-    struct Mutex { 
-        struct _opaque_pthread_mutex_t { 
-            long __sig; 
-            BOOL __opaque[40]; 
-        } m_mutex; 
-    } pendingFixedPositionLayoutRectMutex;
-    id policyDelegate;
-    id policyDelegateForwarder;
-    BOOL postsAcceleratedCompositingNotifications;
-    WebPreferences *preferences;
-    int programmaticFocusCount;
+    }  pendingFixedPositionLayoutRect;
+    struct Lock { 
+        struct Atomic<unsigned char> { 
+            struct atomic<unsigned char> { 
+                unsigned char __a_; 
+            } value; 
+        } m_byte; 
+    }  pendingFixedPositionLayoutRectMutex;
+    id  policyDelegate;
+    id  policyDelegateForwarder;
+    BOOL  postsAcceleratedCompositingNotifications;
+    WebPreferences * preferences;
+    int  programmaticFocusCount;
     struct WebResourceDelegateImplementationCache { 
-        int (*didCancelAuthenticationChallengeFunc)(); 
         int (*didReceiveAuthenticationChallengeFunc)(); 
         int (*canAuthenticateAgainstProtectionSpaceFunc)(); 
         int (*connectionPropertiesFunc)(); 
@@ -162,37 +161,37 @@
         int (*plugInFailedWithErrorFunc)(); 
         int (*shouldUseCredentialStorageFunc)(); 
         int (*shouldPaintBrokenImageForURLFunc)(); 
-    } resourceLoadDelegateImplementations;
-    id resourceProgressDelegate;
-    id resourceProgressDelegateForwarder;
-    id scriptDebugDelegate;
+    }  resourceLoadDelegateImplementations;
+    id  resourceProgressDelegate;
+    id  resourceProgressDelegateForwarder;
+    id  scriptDebugDelegate;
     struct WebScriptDebugDelegateImplementationCache { 
         BOOL didParseSourceExpectsBaseLineNumber; 
         BOOL exceptionWasRaisedExpectsHasHandlerFlag; 
         int (*didParseSourceFunc)(); 
         int (*failedToParseSourceFunc)(); 
         int (*exceptionWasRaisedFunc)(); 
-    } scriptDebugDelegateImplementations;
-    BOOL shouldCloseWithWindow;
-    BOOL shouldMaintainInactiveSelection;
-    BOOL shouldUpdateWhileOffscreen;
+    }  scriptDebugDelegateImplementations;
+    BOOL  shouldCloseWithWindow;
+    BOOL  shouldMaintainInactiveSelection;
+    BOOL  shouldUpdateWhileOffscreen;
     struct RetainPtr<NSData> { 
         void *m_ptr; 
-    } sourceApplicationAuditData;
-    int spellCheckerDocumentTag;
-    BOOL tabKeyCyclesThroughElementsChanged;
-    BOOL useSiteSpecificSpoofing;
+    }  sourceApplicationAuditData;
+    int  spellCheckerDocumentTag;
+    BOOL  tabKeyCyclesThroughElementsChanged;
+    BOOL  useSiteSpecificSpoofing;
     struct String { 
         struct RefPtr<WTF::StringImpl> { 
             struct StringImpl {} *m_ptr; 
         } m_impl; 
-    } userAgent;
-    BOOL userAgentOverridden;
-    NSURL *userStyleSheetLocation;
-    BOOL usesPageCache;
-    int validationMessageTimerMagnification;
-    float zoomMultiplier;
-    BOOL zoomsTextOnly;
+    }  userAgent;
+    BOOL  userAgentOverridden;
+    NSURL * userStyleSheetLocation;
+    BOOL  usesPageCache;
+    int  validationMessageTimerMagnification;
+    double  zoomMultiplier;
+    BOOL  zoomsTextOnly;
 }
 
 + (void)initialize;
@@ -200,7 +199,6 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)dealloc;
-- (void)finalize;
 - (id)init;
 
 @end

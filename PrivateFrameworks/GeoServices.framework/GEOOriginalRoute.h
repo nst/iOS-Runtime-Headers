@@ -6,11 +6,11 @@
     struct { 
         unsigned int originalRoutePurpose : 1; 
         unsigned int routeIndex : 1; 
-    } _has;
-    NSData *_originalDirectionsResponseID;
-    int _originalRoutePurpose;
-    NSData *_routeHandle;
-    unsigned int _routeIndex;
+    }  _has;
+    NSData * _originalDirectionsResponseID;
+    int  _originalRoutePurpose;
+    NSData * _routeHandle;
+    unsigned int  _routeIndex;
 }
 
 @property (nonatomic, readonly) BOOL hasOriginalDirectionsResponseID;
@@ -22,6 +22,7 @@
 @property (nonatomic, retain) NSData *routeHandle;
 @property (nonatomic) unsigned int routeIndex;
 
+- (int)StringAsOriginalRoutePurpose:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -36,6 +37,7 @@
 - (void)mergeFrom:(id)arg1;
 - (id)originalDirectionsResponseID;
 - (int)originalRoutePurpose;
+- (id)originalRoutePurposeAsString:(int)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (id)routeHandle;
 - (unsigned int)routeIndex;

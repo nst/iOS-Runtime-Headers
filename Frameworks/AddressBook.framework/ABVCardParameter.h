@@ -3,11 +3,11 @@
  */
 
 @interface ABVCardParameter : NSObject {
-    NSString *_grouping;
-    NSString *_name;
-    BOOL _primary;
-    NSMutableArray *_types;
-    id _value;
+    NSString * _grouping;
+    NSString * _name;
+    BOOL  _primary;
+    NSMutableArray * _types;
+    id  _value;
 }
 
 - (void)addType:(id)arg1;

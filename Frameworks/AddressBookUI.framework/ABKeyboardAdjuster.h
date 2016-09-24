@@ -3,8 +3,8 @@
  */
 
 @interface ABKeyboardAdjuster : NSObject {
-    BOOL _active;
-    NSMutableSet *_adjustmentRecords;
+    BOOL  _active;
+    NSMutableSet * _adjustmentRecords;
 }
 
 @property (nonatomic) BOOL active;
@@ -22,7 +22,7 @@
 - (void)dateFieldDateDidEndEditingNotification:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (void)manuallyAdjustEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1 force:(BOOL)arg2;
+- (void)manuallyAdjustEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1 force:(BOOL)arg2;
 - (id)recordForScrollView:(id)arg1;
 - (void)removeScrollView:(id)arg1;
 - (void)resetAdjustment;

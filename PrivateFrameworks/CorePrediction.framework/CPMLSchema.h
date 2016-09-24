@@ -3,18 +3,18 @@
  */
 
 @interface CPMLSchema : NSObject {
-    NSMutableArray *_categoricalDataList;
-    NSMutableArray *_indexColumnList;
-    NSMutableArray *_matchReplaceValue;
-    NSMutableArray *_replaceMissingValue;
-    NSMutableArray *attribute;
-    NSMutableArray *availableOptions;
-    NSMutableArray *nsRemapTable;
-    NSMutableArray *schema;
-    NSMutableArray *schemaHDef;
-    NSMutableString *schemaHeader;
-    NSMutableString *schemaHeaderWithType;
-    int yColumnPosition;
+    NSMutableArray * _categoricalDataList;
+    NSMutableArray * _indexColumnList;
+    NSMutableArray * _matchReplaceValue;
+    NSMutableArray * _replaceMissingValue;
+    NSMutableArray * attribute;
+    NSMutableArray * availableOptions;
+    NSMutableArray * nsRemapTable;
+    NSMutableArray * schema;
+    NSMutableArray * schemaHDef;
+    NSMutableString * schemaHeader;
+    NSMutableString * schemaHeaderWithType;
+    int  yColumnPosition;
 }
 
 @property (nonatomic, readonly) NSMutableArray *attribute;
@@ -33,7 +33,7 @@
 - (id)getSubstituteValue:(unsigned int)arg1;
 - (unsigned int)getTotalAttributes;
 - (id)getUserDefinedCategoricalData:(unsigned int)arg1;
-- (unsigned long long)getUserDefinedCategoricalDataCount:(unsigned int)arg1;
+- (unsigned int)getUserDefinedCategoricalDataCount:(unsigned int)arg1;
 - (int)getVectorContent:(unsigned int)arg1;
 - (int)getYColumnPosition;
 - (BOOL)hasOptions:(unsigned int)arg1;

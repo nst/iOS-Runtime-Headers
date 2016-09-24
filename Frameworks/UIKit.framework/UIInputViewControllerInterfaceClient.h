@@ -3,7 +3,7 @@
  */
 
 @interface UIInputViewControllerInterfaceClient : NSExtensionContext {
-    <_UIIVCInterface> *_forwardingInterface;
+    <_UIIVCInterface> * _forwardingInterface;
 }
 
 @property (nonatomic, retain) <_UIIVCInterface> *forwardingInterface;

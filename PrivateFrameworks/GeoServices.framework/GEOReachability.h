@@ -3,9 +3,9 @@
  */
 
 @interface GEOReachability : NSObject <GEOResourceManifestTileGroupObserver> {
-    unsigned int _errorCount;
-    BOOL _networkReachable;
-    int _symptomsAlternateAdviceToken;
+    unsigned int  _errorCount;
+    BOOL  _networkReachable;
+    int  _symptomsAlternateAdviceToken;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,19 +3,19 @@
  */
 
 @interface PLInteractiveNavigationControllerView : UIView <UINavigationBarDelegate> {
-    UIView *_bottom;
+    UIView * _bottom;
     struct { 
         unsigned int transitioning : 1; 
         unsigned int headerViewIsVisible : 1; 
         unsigned int footerViewIsVisible : 1; 
-    } _controllerViewFlags;
-    UIView *_footer;
-    UIView *_header;
-    UIView *_interactive;
-    UINavigationBar *_navBar;
-    int _orientation;
-    UIView *_overlay;
-    UIView *_top;
+    }  _controllerViewFlags;
+    UIView * _footer;
+    UIView * _header;
+    UIView * _interactive;
+    UINavigationBar * _navBar;
+    int  _orientation;
+    UIView * _overlay;
+    UIView * _top;
 }
 
 @property (nonatomic, retain) UIView *bottomView;
@@ -37,7 +37,7 @@
 - (BOOL)footerViewIsHidden;
 - (id)headerView;
 - (BOOL)headerViewIsHidden;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)interactiveView;
 - (void)layoutSubviews;
 - (id)navigationBar;

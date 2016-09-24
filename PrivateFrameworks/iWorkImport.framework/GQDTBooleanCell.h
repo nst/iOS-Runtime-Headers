@@ -3,7 +3,7 @@
  */
 
 @interface GQDTBooleanCell : GQDTNumberCell {
-    struct __CFBundle { } *mProcessorBundle;
+    struct __CFBundle { } * mProcessorBundle;
 }
 
 - (BOOL)boolValue;

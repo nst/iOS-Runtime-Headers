@@ -3,7 +3,7 @@
  */
 
 @interface AVPictureInPictureIndicatorLayer : CALayer {
-    CALayer *_containerLayer;
+    CALayer * _containerLayer;
 }
 
 - (void).cxx_destruct;

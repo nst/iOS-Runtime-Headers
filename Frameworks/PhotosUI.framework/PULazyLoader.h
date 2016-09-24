@@ -3,12 +3,12 @@
  */
 
 @interface PULazyLoader : NSObject {
-    <PULazyLoaderDelegate> *_delegate;
+    <PULazyLoaderDelegate> * _delegate;
     struct { 
         BOOL respondsToDidLoadItem; 
-    } _delegateFlags;
-    id _item;
-    id /* block */ _loadingBlock;
+    }  _delegateFlags;
+    id  _item;
+    id /* block */  _loadingBlock;
 }
 
 @property (nonatomic) <PULazyLoaderDelegate> *delegate;

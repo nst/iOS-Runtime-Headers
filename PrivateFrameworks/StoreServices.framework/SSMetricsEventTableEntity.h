@@ -2,10 +2,14 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@interface SSMetricsEventTableEntity : SSSQLiteEntity
+@interface SSMetricsEventTableEntity : SSSQLiteEntity {
+    NSDictionary * _reportingDictionary;
+}
 
 + (id)databaseTable;
 
+- (void)dealloc;
+- (id)reportingCanaryIdentifier;
 - (id)reportingDictionary;
 - (id)reportingJSON;
 

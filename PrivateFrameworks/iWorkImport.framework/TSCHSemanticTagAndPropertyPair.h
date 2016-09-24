@@ -3,11 +3,12 @@
  */
 
 @interface TSCHSemanticTagAndPropertyPair : NSObject <NSCopying> {
-    int mProperty;
-    TSCHStyleSemanticTag *mSemanticTag;
+    int  mProperty;
+    TSCHStyleSemanticTag * mSemanticTag;
 }
 
 + (id)pairWithSemanticTag:(id)arg1 property:(int)arg2;
++ (id)semanticTagToSemanticUsagesMapForSemanticUsages:(id)arg1;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

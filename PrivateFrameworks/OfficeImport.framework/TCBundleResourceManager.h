@@ -3,7 +3,7 @@
  */
 
 @interface TCBundleResourceManager : NSObject {
-    NSMutableDictionary *mPackageMap;
+    NSMutableDictionary * mPackageMap;
 }
 
 + (void)disposeInstance;

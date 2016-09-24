@@ -3,10 +3,10 @@
  */
 
 @interface SUClientQueueSession : NSObject {
-    int _count;
-    NSArray *_downloadKinds;
-    SSDownloadManagerOptions *_managerOptions;
-    id _queue;
+    int  _count;
+    NSArray * _downloadKinds;
+    SSDownloadManagerOptions * _managerOptions;
+    id  _queue;
 }
 
 @property (nonatomic) int count;

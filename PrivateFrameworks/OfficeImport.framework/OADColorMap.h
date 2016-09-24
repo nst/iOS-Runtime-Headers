@@ -3,7 +3,7 @@
  */
 
 @interface OADColorMap : NSObject {
-    NSMutableDictionary *mMappings;
+    NSMutableDictionary * mMappings;
 }
 
 - (void)addDefaultMappings:(BOOL)arg1;

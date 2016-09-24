@@ -5,19 +5,19 @@
 @interface SKUISignInDocumentViewController : SKUIViewController <SKUIArtworkRequestDelegate, SKUIDocumentViewController, SKUILayoutCacheDelegate, SKUISignInViewDelegate> {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } _keyboardFrame;
-    SKUIViewElementLayoutContext *_layoutContext;
-    SKUISignInTemplateView *_loginView;
-    UIScrollView *_scrollView;
-    SKUISignInTemplateViewElement *_templateElement;
-    SKUILayoutCache *_textLayoutCache;
+    }  _keyboardFrame;
+    SKUIViewElementLayoutContext * _layoutContext;
+    SKUISignInTemplateView * _loginView;
+    UIScrollView * _scrollView;
+    SKUISignInTemplateViewElement * _templateElement;
+    SKUILayoutCache * _textLayoutCache;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -33,7 +33,7 @@
 - (id)_layoutContext;
 - (void)_layoutScrollView;
 - (void)_reloadContentSize;
-- (void)_reloadPanelViewWithScrollViewSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)_reloadPanelViewWithScrollViewSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)_signInFailed:(id)arg1 error:(id)arg2;
 - (void)_signInSuccess:(id)arg1;
 - (void)artworkRequest:(id)arg1 didLoadImage:(id)arg2;
@@ -46,6 +46,6 @@
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillLayoutSubviews;
-- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

@@ -3,7 +3,7 @@
  */
 
 @interface UIDebuggingInformationValueTableViewCell : UITableViewCell {
-    UIView *_valueView;
+    UIView * _valueView;
 }
 
 @property (nonatomic, retain) UIView *valueView;

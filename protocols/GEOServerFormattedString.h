@@ -6,6 +6,8 @@
 @required
 
 - (NSString *)formatString;
+- (NSArray *)formatStrings;
 - (NSArray *)formatTokens;
+- (NSArray *)separators;
 
 @end

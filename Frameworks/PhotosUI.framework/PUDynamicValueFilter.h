@@ -3,8 +3,8 @@
  */
 
 @interface PUDynamicValueFilter : PUValueFilter {
-    double _currentTime;
-    double _targetValue;
+    double  _currentTime;
+    double  _targetValue;
 }
 
 @property (nonatomic) double currentTime;

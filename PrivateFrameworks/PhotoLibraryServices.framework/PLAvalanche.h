@@ -3,18 +3,18 @@
  */
 
 @interface PLAvalanche : NSObject <PLAssetChangeObserver, PLAssetContainer> {
-    PLManagedAsset *__aNewPick;
-    PLManagedAsset *__anOldPick;
-    NSMutableIndexSet *__autoPickIndexes;
-    id /* block */ __completionHandler;
-    NSIndexSet *__originalAutoPickIndexes;
-    unsigned int __originalStackIndex;
-    NSIndexSet *__originalUserFavoriteIndexes;
-    unsigned int __stackIndex;
-    NSMutableIndexSet *__userFavoriteIndexes;
-    NSOrderedSet *_assets;
-    PLPhotoLibrary *_photoLibrary;
-    NSString *_uuid;
+    PLManagedAsset * __aNewPick;
+    PLManagedAsset * __anOldPick;
+    NSMutableIndexSet * __autoPickIndexes;
+    id /* block */  __completionHandler;
+    NSIndexSet * __originalAutoPickIndexes;
+    unsigned int  __originalStackIndex;
+    NSIndexSet * __originalUserFavoriteIndexes;
+    unsigned int  __stackIndex;
+    NSMutableIndexSet * __userFavoriteIndexes;
+    NSOrderedSet * _assets;
+    PLPhotoLibrary * _photoLibrary;
+    NSString * _uuid;
 }
 
 @property (setter=_setANewPick:, nonatomic, retain) PLManagedAsset *_aNewPick;
@@ -59,7 +59,7 @@
 + (id)avalancheStackForImage:(id)arg1 backgroundColor:(id)arg2;
 + (unsigned int)countForAvalancheUUID:(id)arg1 inLibrary:(id)arg2;
 + (void)disolveBurstForAssets:(id)arg1;
-+ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameOfTopImageInStackForStackFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
++ (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameOfTopImageInStackForStackFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 + (BOOL)isValidBurstWithAssets:(id)arg1;
 + (id)partialAvalancheStackForImage:(id)arg1 backgroundColor:(id)arg2;
 + (void)removeFavoriteStatus:(id)arg1;

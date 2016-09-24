@@ -2,16 +2,31 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@interface MFMailMessage : MFMessage {
-    MFMessageInfo *_info;
-    unsigned long long _messageFlags;
-    unsigned long long _modSequenceNumber;
-    BOOL _shouldUseMailDrop;
-    unsigned char _subjectPrefixLength;
+@interface MFMailMessage : MFMessage <MFBaseMessage, MFMailboxPredictionMessage> {
+    MFMessageInfo * _info;
+    unsigned int  _messageFlags;
+    unsigned int  _modSequenceNumber;
+    BOOL  _shouldUseMailDrop;
+    unsigned char  _subjectPrefixLength;
 }
 
-@property unsigned long long modSequenceNumber;
+@property (nonatomic, readonly) int conversationHash;
+@property (nonatomic, readonly) unsigned int dateReceivedInterval;
+@property (nonatomic, readonly) unsigned int dateSentInterval;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, readonly) BOOL deleted;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) BOOL flagged;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL isVIP;
+@property (getter=isKnownToHaveAttachments, nonatomic, readonly) BOOL knownToHaveAttachments;
+@property (nonatomic, readonly) unsigned int mailboxID;
+@property (nonatomic, readonly) int messageIDHash;
+@property unsigned int modSequenceNumber;
+@property (nonatomic, readonly) BOOL read;
 @property (nonatomic) BOOL shouldUseMailDrop;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) unsigned long uid;
 
 // Image: /System/Library/PrivateFrameworks/Message.framework/Message
 
@@ -24,10 +39,16 @@
 - (id)account;
 - (id)bestAlternativePart;
 - (id)bestAlternativePart:(BOOL*)arg1;
-- (unsigned long long)conversationFlags;
+- (id)ccAddressList;
+- (unsigned int)conversationFlags;
 - (id)copyMessageInfo;
 - (void)dealloc;
+- (BOOL)deleted;
 - (id)externalConversationID;
+- (id)firstSenderAddress;
+- (BOOL)flagged;
+- (BOOL)isKnownToHaveAttachments;
+- (BOOL)isVIP;
 - (void)loadCachedHeaderValuesFromHeaders:(id)arg1;
 - (id)loadMeetingData;
 - (id)loadMeetingExternalID;
@@ -40,28 +61,30 @@
 - (void)markAsNotViewed;
 - (void)markAsReplied;
 - (void)markAsViewed;
-- (unsigned long long)messageFlags;
+- (unsigned int)messageFlags;
 - (id)messageStore;
-- (unsigned long long)modSequenceNumber;
+- (unsigned int)modSequenceNumber;
 - (unsigned short)numberOfAttachments;
 - (id)originalMailboxURL;
 - (int)priority;
+- (BOOL)read;
 - (id)remoteMailboxURL;
-- (void)setConversationFlags:(unsigned long long)arg1;
-- (void)setMessageFlags:(unsigned long long)arg1;
-- (void)setMessageFlagsWithoutCommitting:(unsigned long long)arg1;
-- (void)setModSequenceNumber:(unsigned long long)arg1;
+- (void)setConversationFlags:(unsigned int)arg1;
+- (void)setMessageFlags:(unsigned int)arg1;
+- (void)setMessageFlagsWithoutCommitting:(unsigned int)arg1;
+- (void)setModSequenceNumber:(unsigned int)arg1;
 - (void)setMutableInfoFromMessage:(id)arg1;
 - (void)setPriorityFromHeaders:(id)arg1;
 - (void)setShouldUseMailDrop:(BOOL)arg1;
 - (void)setSubject:(id)arg1;
-- (void)setSubject:(id)arg1 to:(id)arg2 cc:(id)arg3 bcc:(id)arg4 sender:(id)arg5 dateReceived:(double)arg6 dateSent:(double)arg7 messageIDHash:(long long)arg8 conversationIDHash:(long long)arg9 summary:(id)arg10 withOptions:(unsigned int)arg11;
+- (void)setSubject:(id)arg1 to:(id)arg2 cc:(id)arg3 bcc:(id)arg4 sender:(id)arg5 dateReceived:(double)arg6 dateSent:(double)arg7 messageIDHash:(int)arg8 conversationIDHash:(int)arg9 summary:(id)arg10 withOptions:(unsigned int)arg11;
 - (void)setSummary:(id)arg1;
 - (BOOL)shouldSetSummary;
 - (BOOL)shouldUseMailDrop;
 - (id)subject;
 - (id)subjectAndPrefixLength:(unsigned int*)arg1;
 - (id)subjectNotIncludingReAndFwdPrefix;
+- (id)toAddressList;
 
 // Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
 

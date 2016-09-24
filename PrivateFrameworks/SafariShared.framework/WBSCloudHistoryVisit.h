@@ -3,14 +3,14 @@
  */
 
 @interface WBSCloudHistoryVisit : NSObject {
-    BOOL _httpNonGet;
-    BOOL _loadSuccessful;
-    WBSCloudHistoryVisit *_redirectDestinationVisit;
-    WBSCloudHistoryVisitIdentifier *_redirectDestinationVisitIdentifier;
-    WBSCloudHistoryVisit *_redirectSourceVisit;
-    WBSCloudHistoryVisitIdentifier *_redirectSourceVisitIdentifier;
-    NSString *_title;
-    WBSCloudHistoryVisitIdentifier *_visitIdentifier;
+    BOOL  _httpNonGet;
+    BOOL  _loadSuccessful;
+    WBSCloudHistoryVisit * _redirectDestinationVisit;
+    WBSCloudHistoryVisitIdentifier * _redirectDestinationVisitIdentifier;
+    WBSCloudHistoryVisit * _redirectSourceVisit;
+    WBSCloudHistoryVisitIdentifier * _redirectSourceVisitIdentifier;
+    NSString * _title;
+    WBSCloudHistoryVisitIdentifier * _visitIdentifier;
 }
 
 @property (nonatomic, readonly) NSDictionary *dictionaryRepresentation;

@@ -3,8 +3,8 @@
  */
 
 @interface IMAVChatParticipantProxy : NSObject {
-    IMAVChatProxy *_chat;
-    NSDictionary *_info;
+    IMAVChatProxy * _chat;
+    NSDictionary * _info;
 }
 
 @property (nonatomic, readonly) BOOL _inviteDelivered;

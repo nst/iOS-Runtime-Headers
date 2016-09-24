@@ -3,13 +3,13 @@
  */
 
 @interface MFDADelivery : MFMailDelivery {
-    DAMailAccount *_DAMailAccount;
-    NSString *_accountId;
-    NSString *_folderId;
-    NSString *_forwardedLongId;
-    NSString *_forwardedMessageId;
-    NSString *_repliedLongId;
-    NSString *_repliedMessageId;
+    DAMailAccount * _DAMailAccount;
+    NSString * _accountId;
+    NSString * _folderId;
+    NSString * _forwardedLongId;
+    NSString * _forwardedMessageId;
+    NSString * _repliedLongId;
+    NSString * _repliedMessageId;
 }
 
 - (void)dealloc;

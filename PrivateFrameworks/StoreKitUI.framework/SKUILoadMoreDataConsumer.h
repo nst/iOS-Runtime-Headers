@@ -3,7 +3,7 @@
  */
 
 @interface SKUILoadMoreDataConsumer : SSVURLDataConsumer {
-    NSSet *_unavailableItemIdentifiers;
+    NSSet * _unavailableItemIdentifiers;
 }
 
 @property (nonatomic, copy) NSSet *unavailableItemIdentifiers;

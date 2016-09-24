@@ -3,9 +3,9 @@
  */
 
 @interface CNAutocompleteRecentResult : CNAutocompleteResult {
-    BOOL _completesChosenGroup;
-    NSDate *_date;
-    BOOL _matchesSendingAddress;
+    BOOL  _completesChosenGroup;
+    NSDate * _date;
+    BOOL  _matchesSendingAddress;
 }
 
 @property BOOL completesChosenGroup;

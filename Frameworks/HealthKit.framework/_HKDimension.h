@@ -3,8 +3,8 @@
  */
 
 @interface _HKDimension : NSObject {
-    _HKFactorization *_reduction;
-    long _reductionToken;
+    _HKFactorization * _reduction;
+    long  _reductionToken;
 }
 
 + (id)dimensionFromString:(id)arg1;

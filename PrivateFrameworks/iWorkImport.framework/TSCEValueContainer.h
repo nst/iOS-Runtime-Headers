@@ -6,7 +6,7 @@
     struct TSCEValue { 
         unsigned int mBuff[64]; 
         int mType; 
-    } mValue;
+    }  mValue;
 }
 
 - (id).cxx_construct;

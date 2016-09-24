@@ -3,8 +3,8 @@
  */
 
 @interface FUChartDataGroup : NSObject <FUChartDataSetDataSource> {
-    NSArray *_dataSets;
-    <FUChartDataGroupDataSource> *_dataSource;
+    NSArray * _dataSets;
+    <FUChartDataGroupDataSource> * _dataSource;
 }
 
 @property (nonatomic, retain) NSArray *dataSets;

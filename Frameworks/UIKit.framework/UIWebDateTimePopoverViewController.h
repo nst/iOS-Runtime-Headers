@@ -3,7 +3,7 @@
  */
 
 @interface UIWebDateTimePopoverViewController : UIViewController {
-    <UIWebFormControl> *_innerWebDateTimeControl;
+    <UIWebFormControl> * _innerWebDateTimeControl;
 }
 
 @property (nonatomic, retain) <UIWebFormControl> *_innerWebDateTimeControl;

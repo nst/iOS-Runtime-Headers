@@ -3,9 +3,9 @@
  */
 
 @interface MTLToolsTexture : MTLToolsResource <MTLTextureImplementation> {
-    <MTLBuffer> *_buffer;
-    <MTLTexture> *_parentTexture;
-    MTLToolsPointerArray *_views;
+    <MTLBuffer> * _buffer;
+    <MTLTexture> * _parentTexture;
+    MTLToolsPointerArray * _views;
 }
 
 @property (readonly) unsigned int arrayLength;
@@ -20,6 +20,7 @@
 @property (readonly) <MTLDevice> *device;
 @property (getter=isFramebufferOnly, readonly) BOOL framebufferOnly;
 @property (readonly) unsigned int hash;
+@property (readonly) <MTLHeap> *heap;
 @property (readonly) unsigned int height;
 @property (readonly) struct __IOSurface { }*iosurface;
 @property (readonly) unsigned int iosurfacePlane;
@@ -38,6 +39,7 @@
 @property (readonly) MTLResourceAllocationInfo *sharedAllocationInfo;
 @property (readonly) unsigned int storageMode;
 @property (readonly) Class superclass;
+@property unsigned int swizzle;
 @property (readonly) unsigned int textureType;
 @property (readonly) unsigned int usage;
 @property (nonatomic, readonly) MTLToolsPointerArray *views;
@@ -49,10 +51,13 @@
 - (id)buffer;
 - (unsigned int)bufferBytesPerRow;
 - (unsigned int)bufferOffset;
+- (BOOL)canGenerateMipmapLevels;
 - (void)copyFromPixels:(const void*)arg1 rowBytes:(unsigned int)arg2 imageBytes:(unsigned int)arg3 toSlice:(unsigned int)arg4 mipmapLevel:(unsigned int)arg5 origin:(struct { unsigned int x1; unsigned int x2; unsigned int x3; })arg6 size:(struct { unsigned int x1; unsigned int x2; unsigned int x3; })arg7;
 - (void)copyFromSlice:(unsigned int)arg1 mipmapLevel:(unsigned int)arg2 origin:(struct { unsigned int x1; unsigned int x2; unsigned int x3; })arg3 size:(struct { unsigned int x1; unsigned int x2; unsigned int x3; })arg4 toPixels:(void*)arg5 rowBytes:(unsigned int)arg6 imageBytes:(unsigned int)arg7;
 - (unsigned int)depth;
+- (void)generateMipmapLevel:(unsigned int)arg1 slice:(unsigned int)arg2;
 - (void)getBytes:(void*)arg1 bytesPerRow:(unsigned int)arg2 bytesPerImage:(unsigned int)arg3 fromRegion:(struct { struct { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; } x1; struct { unsigned int x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3; } x2; })arg4 mipmapLevel:(unsigned int)arg5 slice:(unsigned int)arg6;
+- (void)getBytes:(void*)arg1 bytesPerRow:(unsigned int)arg2 bytesPerImage:(unsigned int)arg3 fromRegion:(struct { struct { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; } x1; struct { unsigned int x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3; } x2; })arg4 mipmapLevel:(unsigned int)arg5 slice:(unsigned int)arg6 options:(unsigned int)arg7;
 - (void)getBytes:(void*)arg1 bytesPerRow:(unsigned int)arg2 fromRegion:(struct { struct { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; } x1; struct { unsigned int x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3; } x2; })arg3 mipmapLevel:(unsigned int)arg4;
 - (unsigned int)height;
 - (id)initWithBaseObject:(id)arg1 parent:(id)arg2;
@@ -64,18 +69,23 @@
 - (BOOL)isDrawable;
 - (BOOL)isFramebufferOnly;
 - (unsigned int)mipmapLevelCount;
+- (id)newCompressedTextureViewWithPixelFormat:(unsigned int)arg1 textureType:(unsigned int)arg2 level:(unsigned int)arg3 slice:(unsigned int)arg4;
 - (id)newTextureViewWithPixelFormat:(unsigned int)arg1;
 - (id)newTextureViewWithPixelFormat:(unsigned int)arg1 textureType:(unsigned int)arg2 levels:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 slices:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4;
+- (id)newTextureViewWithPixelFormat:(unsigned int)arg1 textureType:(unsigned int)arg2 levels:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 slices:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4 swizzle:(unsigned int)arg5;
 - (unsigned int)numFaces;
 - (unsigned int)parentRelativeLevel;
 - (unsigned int)parentRelativeSlice;
 - (id)parentTexture;
 - (unsigned int)pixelFormat;
 - (void)replaceRegion:(struct { struct { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; } x1; struct { unsigned int x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3; } x2; })arg1 mipmapLevel:(unsigned int)arg2 slice:(unsigned int)arg3 withBytes:(const void*)arg4 bytesPerRow:(unsigned int)arg5 bytesPerImage:(unsigned int)arg6;
+- (void)replaceRegion:(struct { struct { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; } x1; struct { unsigned int x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3; } x2; })arg1 mipmapLevel:(unsigned int)arg2 slice:(unsigned int)arg3 withBytes:(const void*)arg4 bytesPerRow:(unsigned int)arg5 bytesPerImage:(unsigned int)arg6 options:(unsigned int)arg7;
 - (void)replaceRegion:(struct { struct { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; } x1; struct { unsigned int x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3; } x2; })arg1 mipmapLevel:(unsigned int)arg2 withBytes:(const void*)arg3 bytesPerRow:(unsigned int)arg4;
 - (id)rootResource;
 - (unsigned int)rotation;
 - (unsigned int)sampleCount;
+- (void)setSwizzle:(unsigned int)arg1;
+- (unsigned int)swizzle;
 - (unsigned int)textureType;
 - (unsigned int)usage;
 - (id)views;

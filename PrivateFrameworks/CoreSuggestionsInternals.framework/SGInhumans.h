@@ -4,11 +4,14 @@
 
 @interface SGInhumans : NSObject
 
++ (BOOL)_isInhumanEmailAddressPatternMatch:(id)arg1;
 + (BOOL)areHumanHeaders:(id)arg1;
 + (void)initialize;
-+ (BOOL)isInhuman:(id)arg1;
++ (BOOL)isInhuman:(id)arg1 inContext:(id)arg2;
 + (BOOL)isInhumanBody:(id)arg1;
 + (BOOL)isInhumanEmailAddress:(id)arg1;
++ (BOOL)isInhumanEmailAddress:(id)arg1 inContext:(id)arg2;
 + (BOOL)isInhumanName:(id)arg1;
++ (BOOL)isInhumanPerson:(id)arg1 inContext:(id)arg2;
 
 @end

@@ -3,7 +3,7 @@
  */
 
 @interface IDSDelegateInfo : NSObject {
-    NSObject<OS_dispatch_queue> *_queue;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 - (void)dealloc;

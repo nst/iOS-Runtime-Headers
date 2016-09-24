@@ -3,7 +3,7 @@
  */
 
 @interface SSVPushNotificationRequest : SSRequest <SSXPCCoding> {
-    SSVPushNotificationParameters *_parameters;
+    SSVPushNotificationParameters * _parameters;
 }
 
 @property (readonly, copy) NSString *debugDescription;

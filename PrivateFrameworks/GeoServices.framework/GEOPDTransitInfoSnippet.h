@@ -3,10 +3,10 @@
  */
 
 @interface GEOPDTransitInfoSnippet : PBCodable <NSCopying> {
-    NSMutableArray *_artworks;
-    NSMutableArray *_labels;
-    NSString *_searchDisplayName;
-    NSMutableArray *_systemNames;
+    NSMutableArray * _artworks;
+    NSMutableArray * _labels;
+    NSString * _searchDisplayName;
+    NSMutableArray * _systemNames;
 }
 
 @property (nonatomic, retain) NSMutableArray *artworks;
@@ -15,6 +15,9 @@
 @property (nonatomic, retain) NSString *searchDisplayName;
 @property (nonatomic, retain) NSMutableArray *systemNames;
 
++ (Class)artworkType;
++ (Class)labelType;
++ (Class)systemNameType;
 + (id)transitInfoSnippetForPlaceData:(id)arg1;
 
 - (void)addArtwork:(id)arg1;

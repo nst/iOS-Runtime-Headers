@@ -3,7 +3,7 @@
  */
 
 @interface CNStack : NSObject {
-    NSMutableArray *_objects;
+    NSMutableArray * _objects;
 }
 
 @property (nonatomic, readonly) unsigned int count;
@@ -14,6 +14,8 @@
 - (id)init;
 - (id)peek;
 - (id)pop;
+- (void)popAllWithHandler:(id /* block */)arg1;
+- (void)popWithHandler:(id /* block */)arg1;
 - (void)push:(id)arg1;
 
 @end

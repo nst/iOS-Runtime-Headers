@@ -3,9 +3,9 @@
  */
 
 @interface PUInitialHysteresisValueFilter : PUValueFilter {
-    BOOL _didReachThreshold;
-    double _initialHysteresis;
-    double _thresholdValue;
+    BOOL  _didReachThreshold;
+    double  _initialHysteresis;
+    double  _thresholdValue;
 }
 
 @property (nonatomic, readonly) double outputValueDerivative;

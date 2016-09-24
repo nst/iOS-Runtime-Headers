@@ -3,13 +3,13 @@
  */
 
 @interface IKJSTabBarItem : IKJSObject <IKJSTabBarItem, JSExport> {
-    NSString *_identifier;
-    JSManagedValue *_managedNavigationDocument;
-    JSManagedValue *_managedSelf;
-    <IKAppNavigationController> *_navigationControllerDelegate;
-    IKJSNavigationDocument *_navigationDocument;
-    IKJSTabBar *_owner;
-    NSString *_rootURL;
+    NSString * _identifier;
+    JSManagedValue * _managedNavigationDocument;
+    JSManagedValue * _managedSelf;
+    <IKAppNavigationController> * _navigationControllerDelegate;
+    IKJSNavigationDocument * _navigationDocument;
+    IKJSTabBar * _owner;
+    NSString * _rootURL;
 }
 
 @property (nonatomic, readonly) NSString *identifier;

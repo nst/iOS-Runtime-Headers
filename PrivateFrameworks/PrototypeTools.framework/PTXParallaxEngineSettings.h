@@ -3,42 +3,42 @@
  */
 
 @interface PTXParallaxEngineSettings : _UISettings {
-    float _delayBeforeIdle;
-    BOOL _directionalLockEnabled;
-    float _directionalLockSharpness;
-    float _directionalLockStickiness;
-    float _directionalLockThreshold;
-    unsigned int _frameInterval;
-    float _idleLeeway;
-    float _inputSmoothing;
-    BOOL _jumpEnabled;
-    float _jumpThreshold;
-    BOOL _playJumpSound;
-    float _shiftDistanceDependence;
-    BOOL _shiftEnabled;
-    float _shiftSpeed;
-    BOOL _showDirectionalLockIndicators;
-    BOOL _showIdleIndicator;
-    float _sigmoidDegree;
+    double  _delayBeforeIdle;
+    BOOL  _directionalLockEnabled;
+    double  _directionalLockSharpness;
+    double  _directionalLockStickiness;
+    double  _directionalLockThreshold;
+    unsigned int  _frameInterval;
+    double  _idleLeeway;
+    double  _inputSmoothing;
+    BOOL  _jumpEnabled;
+    double  _jumpThreshold;
+    BOOL  _playJumpSound;
+    double  _shiftDistanceDependence;
+    BOOL  _shiftEnabled;
+    double  _shiftSpeed;
+    BOOL  _showDirectionalLockIndicators;
+    BOOL  _showIdleIndicator;
+    double  _sigmoidDegree;
 }
 
-@property float delayBeforeIdle;
+@property double delayBeforeIdle;
 @property BOOL directionalLockEnabled;
-@property float directionalLockSharpness;
-@property float directionalLockStickiness;
-@property float directionalLockThreshold;
+@property double directionalLockSharpness;
+@property double directionalLockStickiness;
+@property double directionalLockThreshold;
 @property unsigned int frameInterval;
-@property float idleLeeway;
-@property float inputSmoothing;
+@property double idleLeeway;
+@property double inputSmoothing;
 @property BOOL jumpEnabled;
-@property float jumpThreshold;
+@property double jumpThreshold;
 @property BOOL playJumpSound;
-@property float shiftDistanceDependence;
+@property double shiftDistanceDependence;
 @property BOOL shiftEnabled;
-@property float shiftSpeed;
+@property double shiftSpeed;
 @property BOOL showDirectionalLockIndicators;
 @property BOOL showIdleIndicator;
-@property float sigmoidDegree;
+@property double sigmoidDegree;
 
 + (id)settingsControllerModule;
 

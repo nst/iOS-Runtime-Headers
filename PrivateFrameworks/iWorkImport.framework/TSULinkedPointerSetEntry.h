@@ -3,9 +3,9 @@
  */
 
 @interface TSULinkedPointerSetEntry : NSObject {
-    TSULinkedPointerSetEntry *mNext;
-    id mObject;
-    TSULinkedPointerSetEntry *mPrevious;
+    TSULinkedPointerSetEntry * mNext;
+    id  mObject;
+    TSULinkedPointerSetEntry * mPrevious;
 }
 
 - (void)dealloc;

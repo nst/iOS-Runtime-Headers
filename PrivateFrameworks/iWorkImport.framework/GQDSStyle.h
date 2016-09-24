@@ -3,8 +3,8 @@
  */
 
 @interface GQDSStyle : NSObject <GQDNameMappableWithDefault> {
-    GQDSStyle *mParent;
-    struct GQDSMap { } *mPropertyMap;
+    GQDSStyle * mParent;
+    struct GQDSMap { } * mPropertyMap;
 }
 
 @property (readonly, copy) NSString *debugDescription;

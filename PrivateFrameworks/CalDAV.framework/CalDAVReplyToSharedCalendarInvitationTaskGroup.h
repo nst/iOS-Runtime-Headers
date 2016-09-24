@@ -3,10 +3,10 @@
  */
 
 @interface CalDAVReplyToSharedCalendarInvitationTaskGroup : CoreDAVTaskGroup <CoreDAVPostTaskDelegate> {
-    BOOL _acceptInvitation;
-    NSURL *_calendarHomeURL;
-    CalDAVCalendarServerInviteNotificationItem *_invitation;
-    NSURL *_sharedAs;
+    BOOL  _acceptInvitation;
+    NSURL * _calendarHomeURL;
+    CalDAVCalendarServerInviteNotificationItem * _invitation;
+    NSURL * _sharedAs;
 }
 
 @property (nonatomic) BOOL acceptInvitation;

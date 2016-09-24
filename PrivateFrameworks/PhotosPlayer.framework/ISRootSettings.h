@@ -3,9 +3,9 @@
  */
 
 @interface ISRootSettings : ISSettings {
-    ISPerformanceDiagnosticsSettings *_performanceDiagnosticsSettings;
-    ISPlayerSettings *_playerSettings;
-    ISVitalitySettings *_vitalitySettings;
+    ISPerformanceDiagnosticsSettings * _performanceDiagnosticsSettings;
+    ISPlayerSettings * _playerSettings;
+    ISVitalitySettings * _vitalitySettings;
 }
 
 @property (nonatomic, retain) ISPerformanceDiagnosticsSettings *performanceDiagnosticsSettings;

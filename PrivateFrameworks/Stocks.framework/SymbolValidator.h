@@ -3,8 +3,8 @@
  */
 
 @interface SymbolValidator : YQLRequest {
-    id _delegate;
-    NSArray *_symbols;
+    id  _delegate;
+    NSArray * _symbols;
 }
 
 @property (nonatomic) id delegate;

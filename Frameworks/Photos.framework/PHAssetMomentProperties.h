@@ -2,19 +2,22 @@
    Image: /System/Library/Frameworks/Photos.framework/Photos
  */
 
-@interface PHAssetMomentProperties : NSObject {
-    PHAsset *_asset;
-    NSData *_reverseLocationData;
-    BOOL _reverseLocationDataIsValid;
+@interface PHAssetMomentProperties : PHAssetPropertySet {
+    NSData * _reverseLocationData;
+    BOOL  _reverseLocationDataIsValid;
 }
 
-@property (nonatomic, readonly) PHAsset *asset;
+@property (nonatomic, readonly) NSDictionary *locationAddressDictionary;
 @property (nonatomic, readonly) NSData *reverseLocationData;
 @property (nonatomic, readonly) BOOL reverseLocationDataIsValid;
 
++ (id)propertiesToFetch;
++ (id)propertySetName;
+
 - (void).cxx_destruct;
-- (id)asset;
-- (id)initWithFetchDictionary:(id)arg1 asset:(id)arg2;
+- (id)initWithFetchDictionary:(id)arg1 asset:(id)arg2 prefetched:(BOOL)arg3;
+- (id)localizedGeoDescriptionIsHome:(BOOL*)arg1;
+- (id)locationAddressDictionary;
 - (id)reverseLocationData;
 - (BOOL)reverseLocationDataIsValid;
 

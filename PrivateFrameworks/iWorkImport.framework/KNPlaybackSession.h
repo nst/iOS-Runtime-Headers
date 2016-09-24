@@ -3,36 +3,38 @@
  */
 
 @interface KNPlaybackSession : NSObject <TSDAnimationSession> {
-    BOOL _isExitingShow;
-    TSULRUCache *mASVCache;
-    <TSKAccessControllerReadTicket> *mAccessControllerReadTicket;
-    KNSlideNode *mAlternateNextSlideNode;
-    KNAnimationContext *mAnimationContext;
-    TSDBitmapRenderingQualityInfo *mBitmapRenderingQualityInfo;
-    NSMutableArray *mBreadCrumbTrail;
-    <TSDCanvasDelegate> *mCanvasDelegate;
-    KNSlideNode *mCurrentSlideNode;
-    BOOL mDisableAutoAnimationRemoval;
-    BOOL mDisableTransitionTextureCaching;
-    id /* block */ mEndShowHandler;
-    BOOL mHasEndShowHandlerBeenCancelled;
-    <TSKAccessControllerReadTicket> *mIncomingRenderingTicket;
-    KNSlideNode *mLastVisitedSlideNode;
-    <TSKAccessControllerReadTicket> *mOutgoingRenderingTicket;
-    int mPlayMode;
-    BOOL mShouldAlwaysSetCurrentGLContextWhenDrawing;
-    BOOL mShouldAnimateNullTransitions;
-    BOOL mShouldAnimateTransitionOnLastSlide;
-    BOOL mShouldAutomaticallyPlayMovies;
-    BOOL mShouldDrawTexturesAsynchronously;
-    BOOL mShouldForceTextureGeneration;
-    BOOL mShouldPreferCARenderer;
-    BOOL mShouldShowVideoReflectionsAndMasks;
-    BOOL mShouldUseContentlessLayers;
-    BOOL mShouldUseSourceImage;
-    KNShow *mShow;
-    BOOL mSkipBuilds;
-    BOOL mSkipSlides;
+    BOOL  _isExitingShow;
+    BOOL  _shouldNotBakeActionTextures;
+    TSULRUCache * mASVCache;
+    <TSKAccessControllerReadTicket> * mAccessControllerReadTicket;
+    KNSlideNode * mAlternateNextSlideNode;
+    KNAnimationContext * mAnimationContext;
+    TSDBitmapRenderingQualityInfo * mBitmapRenderingQualityInfo;
+    NSMutableArray * mBreadCrumbTrail;
+    <TSDCanvasDelegate> * mCanvasDelegate;
+    KNSlideNode * mCurrentSlideNode;
+    BOOL  mDisableAutoAnimationRemoval;
+    BOOL  mDisableTransitionTextureCaching;
+    id /* block */  mEndShowHandler;
+    BOOL  mHasEndShowHandlerBeenCancelled;
+    <TSKAccessControllerReadTicket> * mIncomingRenderingTicket;
+    KNSlideNode * mLastVisitedSlideNode;
+    <TSKAccessControllerReadTicket> * mOutgoingRenderingTicket;
+    int  mPlayMode;
+    BOOL  mShouldAlwaysSetCurrentGLContextWhenDrawing;
+    BOOL  mShouldAnimateNullTransitions;
+    BOOL  mShouldAnimateTransitionOnLastSlide;
+    BOOL  mShouldAutomaticallyPlayMovies;
+    BOOL  mShouldDrawTexturesAsynchronously;
+    BOOL  mShouldForceTextureGeneration;
+    BOOL  mShouldPreferCARenderer;
+    BOOL  mShouldRenderSlidesSynchronously;
+    BOOL  mShouldShowVideoReflectionsAndMasks;
+    BOOL  mShouldUseContentlessLayers;
+    BOOL  mShouldUseSourceImage;
+    KNShow * mShow;
+    BOOL  mSkipBuilds;
+    BOOL  mSkipSlides;
 }
 
 @property (nonatomic) <TSKAccessControllerReadTicket> *accessControllerReadTicket;
@@ -58,7 +60,9 @@
 @property (nonatomic) BOOL shouldAutomaticallyPlayMovies;
 @property (nonatomic) BOOL shouldDrawTexturesAsynchronously;
 @property (nonatomic) BOOL shouldForceTextureGeneration;
+@property (nonatomic) BOOL shouldNotBakeActionTextures;
 @property (nonatomic) BOOL shouldPreferCARenderer;
+@property (nonatomic) BOOL shouldRenderSlidesSynchronously;
 @property (nonatomic, readonly) BOOL shouldShowInstructionalText;
 @property (nonatomic) BOOL shouldShowVideoReflectionsAndMasks;
 @property (nonatomic) BOOL shouldUseContentlessLayers;
@@ -132,7 +136,9 @@
 - (void)setShouldAutomaticallyPlayMovies:(BOOL)arg1;
 - (void)setShouldDrawTexturesAsynchronously:(BOOL)arg1;
 - (void)setShouldForceTextureGeneration:(BOOL)arg1;
+- (void)setShouldNotBakeActionTextures:(BOOL)arg1;
 - (void)setShouldPreferCARenderer:(BOOL)arg1;
+- (void)setShouldRenderSlidesSynchronously:(BOOL)arg1;
 - (void)setShouldShowVideoReflectionsAndMasks:(BOOL)arg1;
 - (void)setShouldUseContentlessLayers:(BOOL)arg1;
 - (void)setShouldUseSourceImage:(BOOL)arg1;
@@ -144,7 +150,9 @@
 - (BOOL)shouldAutomaticallyPlayMovies;
 - (BOOL)shouldDrawTexturesAsynchronously;
 - (BOOL)shouldForceTextureGeneration;
+- (BOOL)shouldNotBakeActionTextures;
 - (BOOL)shouldPreferCARenderer;
+- (BOOL)shouldRenderSlidesSynchronously;
 - (BOOL)shouldShowInstructionalText;
 - (BOOL)shouldShowVideoReflectionsAndMasks;
 - (BOOL)shouldUseContentlessLayers;

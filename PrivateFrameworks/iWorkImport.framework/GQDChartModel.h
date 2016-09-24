@@ -3,17 +3,17 @@
  */
 
 @interface GQDChartModel : NSObject {
-    struct __CFString { } *mCatagoryTitle;
-    struct __CFArray { } *mChartData;
-    struct __CFArray { } *mColumnNames;
-    long mDirection;
-    BOOL mIsFormulaChart;
-    struct __CFBundle { } *mProcessorBundle;
-    struct __CFDictionary { } *mPropertyBag;
-    struct __CFArray { } *mRowNames;
-    struct __CFString { } *mTitle;
-    struct __CFString { } *mValue2Title;
-    struct __CFString { } *mValueTitle;
+    struct __CFString { } * mCatagoryTitle;
+    struct __CFArray { } * mChartData;
+    struct __CFArray { } * mColumnNames;
+    long  mDirection;
+    BOOL  mIsFormulaChart;
+    struct __CFBundle { } * mProcessorBundle;
+    struct __CFDictionary { } * mPropertyBag;
+    struct __CFArray { } * mRowNames;
+    struct __CFString { } * mTitle;
+    struct __CFString { } * mValue2Title;
+    struct __CFString { } * mValueTitle;
 }
 
 - (struct __CFString { }*)catagoryTitle;

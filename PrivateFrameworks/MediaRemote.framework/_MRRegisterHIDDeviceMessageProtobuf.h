@@ -3,7 +3,7 @@
  */
 
 @interface _MRRegisterHIDDeviceMessageProtobuf : PBCodable <NSCopying> {
-    _MRVirtualTouchDeviceDescriptorProtobuf *_deviceDescriptor;
+    _MRVirtualTouchDeviceDescriptorProtobuf * _deviceDescriptor;
 }
 
 @property (nonatomic, retain) _MRVirtualTouchDeviceDescriptorProtobuf *deviceDescriptor;

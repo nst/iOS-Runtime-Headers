@@ -3,14 +3,14 @@
  */
 
 @interface AVPlayerMediaSelectionCriteriaInternal : NSObject {
-    BOOL _precludeMultichannelAudio;
-    NSArray *_precludedMediaCharacteristics;
-    NSArray *_precludedMediaSubTypes;
-    BOOL _preferMultichannelAudio;
-    NSArray *_preferredLanguages;
-    NSArray *_preferredMediaCharacteristics;
-    NSArray *_preferredMediaSubTypes;
-    NSArray *_requiredMediaCharacteristics;
+    BOOL  _precludeMultichannelAudio;
+    NSArray * _precludedMediaCharacteristics;
+    NSArray * _precludedMediaSubTypes;
+    BOOL  _preferMultichannelAudio;
+    NSArray * _preferredLanguages;
+    NSArray * _preferredMediaCharacteristics;
+    NSArray * _preferredMediaSubTypes;
+    NSArray * _requiredMediaCharacteristics;
 }
 
 @property (nonatomic) BOOL precludeMultichannelAudio;

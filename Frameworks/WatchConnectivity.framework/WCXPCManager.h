@@ -3,13 +3,13 @@
  */
 
 @interface WCXPCManager : NSObject <NSXPCConnectionDelegate, WCXPCManagerClientProtocol, WCXPCManagerDaemonProtocol> {
-    NSXPCConnection *_connection;
-    BOOL _connectionInvalidated;
-    NSObject<WCXPCManagerDelegate> *_delegate;
-    int _listenerResumedToken;
-    BOOL _reconnectFailed;
-    unsigned int _reconnectRetryCount;
-    NSObject<OS_dispatch_queue> *_workQueue;
+    NSXPCConnection * _connection;
+    BOOL  _connectionInvalidated;
+    NSObject<WCXPCManagerDelegate> * _delegate;
+    int  _listenerResumedToken;
+    BOOL  _reconnectFailed;
+    unsigned int  _reconnectRetryCount;
+    NSObject<OS_dispatch_queue> * _workQueue;
 }
 
 @property (readonly) NSXPCConnection *connection;

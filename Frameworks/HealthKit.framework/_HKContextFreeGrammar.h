@@ -3,11 +3,11 @@
  */
 
 @interface _HKContextFreeGrammar : NSObject {
-    id /* block */ _emptyStringEvaluator;
-    NSMutableSet *_nonTerminals;
-    _HKCFGNonTerminal *_rootNonTerminal;
-    NSCharacterSet *_terminalCharacters;
-    NSMutableSet *_terminals;
+    id /* block */  _emptyStringEvaluator;
+    NSMutableSet * _nonTerminals;
+    _HKCFGNonTerminal * _rootNonTerminal;
+    NSCharacterSet * _terminalCharacters;
+    NSMutableSet * _terminals;
 }
 
 @property (nonatomic, readonly) id /* block */ emptyStringEvaluator;

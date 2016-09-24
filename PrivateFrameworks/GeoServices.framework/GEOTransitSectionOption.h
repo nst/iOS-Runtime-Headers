@@ -3,15 +3,15 @@
  */
 
 @interface GEOTransitSectionOption : PBCodable <NSCopying> {
-    unsigned int _defaultSectionIndex;
+    unsigned int  _defaultSectionIndex;
     struct { 
         unsigned int defaultSectionIndex : 1; 
-    } _has;
+    }  _has;
     struct { 
         unsigned int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _sections;
+    }  _sections;
 }
 
 @property (nonatomic) unsigned int defaultSectionIndex;

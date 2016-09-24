@@ -4,10 +4,7 @@
 
 @interface WBUWebProcessPlugIn : WBSWebProcessPlugIn
 
-@property (nonatomic, readonly) NSString *overrideUserAgentStringForSwitchBoard;
-
 - (void)didCreatePageController:(id)arg1 forBrowserContextController:(id)arg2;
-- (id)overrideUserAgentStringForSwitchBoard;
 - (void)willDestroyPageController:(id)arg1 forBrowserContextController:(id)arg2;
 
 @end

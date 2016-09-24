@@ -3,14 +3,14 @@
  */
 
 @interface CICopyMachineTransition : CIFilter {
-    NSNumber *inputAngle;
-    CIColor *inputColor;
-    CIVector *inputExtent;
-    CIImage *inputImage;
-    NSNumber *inputOpacity;
-    CIImage *inputTargetImage;
-    NSNumber *inputTime;
-    NSNumber *inputWidth;
+    NSNumber * inputAngle;
+    CIColor * inputColor;
+    CIVector * inputExtent;
+    CIImage * inputImage;
+    NSNumber * inputOpacity;
+    CIImage * inputTargetImage;
+    NSNumber * inputTime;
+    NSNumber * inputWidth;
 }
 
 @property (nonatomic, retain) NSNumber *inputAngle;

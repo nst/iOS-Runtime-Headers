@@ -3,8 +3,8 @@
  */
 
 @interface UIStatusBarThermalColorItemView : UIStatusBarItemView {
-    BOOL _sunlightMode;
-    int _thermalColor;
+    BOOL  _sunlightMode;
+    int  _thermalColor;
 }
 
 - (id)_color;

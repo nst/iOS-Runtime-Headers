@@ -3,13 +3,13 @@
  */
 
 @interface FTRegAppleIDSetupManager : NSObject {
-    NSArray *_candidateAliases;
-    IDSAccountController *_faceTimeAccountController;
-    id /* block */ _handler;
-    IDSAccountController *_iMessageAccountController;
-    NSArray *_selectedAliases;
-    NSString *_selectionSummaryText;
-    NSMutableDictionary *_setupOperations;
+    NSArray * _candidateAliases;
+    IDSAccountController * _faceTimeAccountController;
+    id /* block */  _handler;
+    IDSAccountController * _iMessageAccountController;
+    NSArray * _selectedAliases;
+    NSString * _selectionSummaryText;
+    NSMutableDictionary * _setupOperations;
 }
 
 @property (nonatomic, copy) NSArray *candidateAliases;

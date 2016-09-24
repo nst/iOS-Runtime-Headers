@@ -3,18 +3,25 @@
  */
 
 @interface _HKCurrentActivitySummaryQuery : HKQuery {
-    HKActivitySummary *_lastActivitySummary;
-    id /* block */ _updateHandler;
+    NSDictionary * _collectionIntervals;
+    id /* block */  _updateHandler;
 }
+
+@property (getter=_collectionIntervals, setter=_setCollectionIntervals:, nonatomic, copy) NSDictionary *collectionIntervals;
 
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
++ (Class)_queryServerDataObjectClass;
+
 - (void).cxx_destruct;
+- (id)_collectionIntervals;
 - (void)_queue_cleanupAfterDeactivation;
+- (void)_queue_configureQueryServerDataObject:(id)arg1;
 - (id /* block */)_queue_errorHandler;
 - (BOOL)_queue_shouldStayAliveAfterInitialResults;
 - (void)_queue_validate;
 - (BOOL)_requiresValidSampleType;
+- (void)_setCollectionIntervals:(id)arg1;
 - (void)deliverActivitySummaries:(id)arg1 queryUUID:(id)arg2;
 - (id)initWithUpdateHandler:(id /* block */)arg1;
 

@@ -3,7 +3,7 @@
  */
 
 @interface CNBlockTask : CNTask {
-    id /* block */ _block;
+    id /* block */  _block;
 }
 
 - (void)dealloc;

@@ -3,8 +3,8 @@
  */
 
 @interface TCFontName : NSObject {
-    NSString *_fullName;
-    NSString *_styleName;
+    NSString * _fullName;
+    NSString * _styleName;
 }
 
 @property (nonatomic, readonly) NSString *fullName;

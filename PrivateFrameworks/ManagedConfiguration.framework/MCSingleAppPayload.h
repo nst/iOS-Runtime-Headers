@@ -4,10 +4,13 @@
 
 @interface MCSingleAppPayload : MCAppWhitelistPayloadBase
 
+@property (nonatomic, readonly) NSString *applicationBundleID;
+
 + (id)localizedPluralForm;
 + (id)localizedSingularForm;
 + (id)typeStrings;
 
+- (id)applicationBundleID;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (BOOL)mustInstallNonInteractively;
 - (id)restrictions;

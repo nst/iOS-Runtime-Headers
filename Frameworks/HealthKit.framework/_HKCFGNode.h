@@ -6,7 +6,7 @@
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _rangeOfString;
+    }  _rangeOfString;
 }
 
 @property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } rangeOfString;

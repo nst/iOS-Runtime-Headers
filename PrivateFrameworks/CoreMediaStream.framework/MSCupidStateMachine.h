@@ -3,12 +3,12 @@
  */
 
 @interface MSCupidStateMachine : NSObject <MSStreamsProtocolDelegate> {
-    MSBackoffManager *_MMCSBackoffManager;
-    BOOL _hasDeactivated;
-    NSString *_manifestPath;
-    NSString *_personID;
-    MSBackoffManager *_streamsBackoffManager;
-    NSMutableDictionary *_userManifest;
+    MSBackoffManager * _MMCSBackoffManager;
+    BOOL  _hasDeactivated;
+    NSString * _manifestPath;
+    NSString * _personID;
+    MSBackoffManager * _streamsBackoffManager;
+    NSMutableDictionary * _userManifest;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *_userManifest;

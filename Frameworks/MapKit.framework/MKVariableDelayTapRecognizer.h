@@ -3,8 +3,8 @@
  */
 
 @interface MKVariableDelayTapRecognizer : UITapGestureRecognizer {
-    double originalMaximumIntervalBetweenSuccessiveTaps;
-    <MKVariableDelayTapRecognizerDelegate> *tapDelayDelegate;
+    double  originalMaximumIntervalBetweenSuccessiveTaps;
+    <MKVariableDelayTapRecognizerDelegate> * tapDelayDelegate;
 }
 
 @property (nonatomic) <MKVariableDelayTapRecognizerDelegate> *tapDelayDelegate;

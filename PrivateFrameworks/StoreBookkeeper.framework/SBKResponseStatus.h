@@ -3,12 +3,12 @@
  */
 
 @interface SBKResponseStatus : NSObject {
-    NSString *_consoleDescription;
-    BOOL _isError;
-    BOOL _isPuntedError;
-    BOOL _isRecoverable;
-    BOOL _shouldFileRadar;
-    int _statusCode;
+    NSString * _consoleDescription;
+    BOOL  _isError;
+    BOOL  _isPuntedError;
+    BOOL  _isRecoverable;
+    BOOL  _shouldFileRadar;
+    int  _statusCode;
 }
 
 @property (readonly, copy) NSString *consoleDescription;

@@ -3,8 +3,8 @@
  */
 
 @interface STShowWeatherConditionsRequest : AFSiriRequest {
-    STWeatherAttributes *_attributes;
-    STCity *_city;
+    STWeatherAttributes * _attributes;
+    STCity * _city;
 }
 
 + (BOOL)supportsSecureCoding;

@@ -3,9 +3,9 @@
  */
 
 @interface OADLightRig : NSObject <NSCopying> {
-    int mDirection;
-    OADRotation3D *mRotation;
-    int mType;
+    int  mDirection;
+    OADRotation3D * mRotation;
+    int  mType;
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

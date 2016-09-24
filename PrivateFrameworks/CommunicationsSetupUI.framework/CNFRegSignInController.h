@@ -3,17 +3,17 @@
  */
 
 @interface CNFRegSignInController : CNFRegFirstRunController <CNFRegCreateAccountControllerDelegate> {
-    PSSpecifier *_actionGroupSpecifier;
-    PSSpecifier *_createAccountButtonSpecifier;
-    BOOL _hideLearnMoreButton;
-    CNFRegLearnMoreButton *_learnMoreButton;
-    PSSpecifier *_passwordSpecifier;
-    NSString *_pendingPassword;
-    NSString *_pendingUsername;
-    PSSpecifier *_signInButtonSpecifier;
-    unsigned int _signinFailureCount;
-    BOOL _useSystemAccount;
-    PSSpecifier *_usernameSpecifier;
+    PSSpecifier * _actionGroupSpecifier;
+    PSSpecifier * _createAccountButtonSpecifier;
+    BOOL  _hideLearnMoreButton;
+    CNFRegLearnMoreButton * _learnMoreButton;
+    PSSpecifier * _passwordSpecifier;
+    NSString * _pendingPassword;
+    NSString * _pendingUsername;
+    PSSpecifier * _signInButtonSpecifier;
+    unsigned int  _signinFailureCount;
+    BOOL  _useSystemAccount;
+    PSSpecifier * _usernameSpecifier;
 }
 
 @property (readonly, copy) NSString *debugDescription;

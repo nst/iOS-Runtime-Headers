@@ -3,8 +3,8 @@
  */
 
 @interface UIRemoteApplication : NSObject {
-    NSString *_machServiceName;
-    unsigned int _port;
+    NSString * _machServiceName;
+    unsigned int  _port;
 }
 
 - (void).cxx_destruct;

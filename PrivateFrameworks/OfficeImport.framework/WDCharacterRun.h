@@ -3,9 +3,9 @@
  */
 
 @interface WDCharacterRun : WDRun {
-    BOOL mBinaryWriterContentFlag;
-    WDCharacterProperties *mProperties;
-    NSMutableString *mString;
+    BOOL  mBinaryWriterContentFlag;
+    WDCharacterProperties * mProperties;
+    NSMutableString * mString;
 }
 
 - (void)appendString:(id)arg1;

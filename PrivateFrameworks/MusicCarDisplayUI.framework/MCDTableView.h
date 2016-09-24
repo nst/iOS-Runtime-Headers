@@ -3,14 +3,14 @@
  */
 
 @interface MCDTableView : UITableView {
-    BOOL _shouldShowHeadersAndFooters;
+    BOOL  _shouldShowHeadersAndFooters;
 }
 
 @property (nonatomic) BOOL shouldShowHeadersAndFooters;
 
 - (BOOL)_shouldShowHeadersAndFooters;
 - (BOOL)canBecomeFirstResponder;
-- (id)preferredFocusedView;
+- (id)preferredFocusEnvironments;
 - (void)setShouldShowHeadersAndFooters:(BOOL)arg1;
 - (BOOL)shouldShowHeadersAndFooters;
 

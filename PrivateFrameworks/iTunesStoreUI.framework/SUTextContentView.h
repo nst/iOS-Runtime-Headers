@@ -3,7 +3,7 @@
  */
 
 @interface SUTextContentView : UITextContentView {
-    UILabel *_placeholderLabel;
+    UILabel * _placeholderLabel;
 }
 
 @property (nonatomic, retain) NSString *placeholder;

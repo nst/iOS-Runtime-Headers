@@ -3,10 +3,10 @@
  */
 
 @interface CIColorControls : CIFilter {
-    NSNumber *inputBrightness;
-    NSNumber *inputContrast;
-    CIImage *inputImage;
-    NSNumber *inputSaturation;
+    NSNumber * inputBrightness;
+    NSNumber * inputContrast;
+    CIImage * inputImage;
+    NSNumber * inputSaturation;
 }
 
 @property (nonatomic, retain) NSNumber *inputBrightness;

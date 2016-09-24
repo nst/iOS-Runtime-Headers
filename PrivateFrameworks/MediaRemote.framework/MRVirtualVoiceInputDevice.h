@@ -3,9 +3,9 @@
  */
 
 @interface MRVirtualVoiceInputDevice : NSObject {
-    MRVirtualVoiceInputDeviceDescriptor *_descriptor;
-    unsigned int _deviceID;
-    unsigned int _recordingState;
+    MRVirtualVoiceInputDeviceDescriptor * _descriptor;
+    unsigned int  _deviceID;
+    unsigned int  _recordingState;
 }
 
 @property (nonatomic, readonly) NSData *data;

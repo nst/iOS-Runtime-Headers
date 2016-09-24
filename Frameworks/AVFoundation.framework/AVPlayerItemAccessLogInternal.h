@@ -3,7 +3,7 @@
  */
 
 @interface AVPlayerItemAccessLogInternal : NSObject {
-    NSArray *logArray;
+    NSArray * logArray;
 }
 
 @end

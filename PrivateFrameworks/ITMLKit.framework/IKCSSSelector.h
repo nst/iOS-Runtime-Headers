@@ -3,8 +3,8 @@
  */
 
 @interface IKCSSSelector : NSObject {
-    NSString *_name;
-    int _type;
+    NSString * _name;
+    int  _type;
 }
 
 @property (nonatomic, retain) NSString *name;

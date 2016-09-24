@@ -3,7 +3,7 @@
  */
 
 @interface OADDateTimeField : OADTextField {
-    int _format;
+    int  _format;
 }
 
 @property (nonatomic) int format;

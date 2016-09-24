@@ -3,8 +3,8 @@
  */
 
 @interface NotificationSender : NSObject {
-    NSString *_name;
-    NSDictionary *_userInfo;
+    NSString * _name;
+    NSDictionary * _userInfo;
 }
 
 @property (readonly) NSString *name;

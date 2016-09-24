@@ -3,7 +3,7 @@
  */
 
 @interface NFAWDAPNReceived : NSObject <NFAWDEventProtocol> {
-    AWDNFCTSMAPNReceivedEvent *_metric;
+    AWDNFCTSMAPNReceivedEvent * _metric;
 }
 
 @property (readonly, copy) NSString *debugDescription;

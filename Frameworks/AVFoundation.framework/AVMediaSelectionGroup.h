@@ -3,7 +3,7 @@
  */
 
 @interface AVMediaSelectionGroup : NSObject <NSCopying> {
-    AVMediaSelectionGroupInternal *_mediaSelectionGroup;
+    AVMediaSelectionGroupInternal * _mediaSelectionGroup;
 }
 
 @property (nonatomic, readonly) BOOL allowsEmptySelection;

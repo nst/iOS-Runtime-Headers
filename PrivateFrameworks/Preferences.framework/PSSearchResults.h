@@ -3,13 +3,13 @@
  */
 
 @interface PSSearchResults : NSObject <NSCopying> {
-    NSMutableDictionary *_entriesBySection;
-    id /* block */ _entryComparator;
-    NSMutableSet *_explicitlyAddedSectionEntries;
-    BOOL _needsSorting;
-    id /* block */ _sectionComparator;
-    NSMutableArray *_sectionEntries;
-    BOOL _treatSectionEntriesAsRegularEntries;
+    NSMutableDictionary * _entriesBySection;
+    id /* block */  _entryComparator;
+    NSMutableSet * _explicitlyAddedSectionEntries;
+    BOOL  _needsSorting;
+    id /* block */  _sectionComparator;
+    NSMutableArray * _sectionEntries;
+    BOOL  _treatSectionEntriesAsRegularEntries;
 }
 
 @property (nonatomic, copy) id /* block */ entryComparator;

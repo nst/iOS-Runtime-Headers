@@ -3,9 +3,9 @@
  */
 
 @interface BRCPackageManifestReader : NSEnumerator {
-    NSError *_error;
-    PBMessageStreamReader *_reader;
-    NSInputStream *_stream;
+    NSError * _error;
+    PBMessageStreamReader * _reader;
+    NSInputStream * _stream;
 }
 
 @property (nonatomic) Class itemClass;
@@ -16,7 +16,7 @@
 - (id)error;
 - (id)init;
 - (id)initWithAsset:(id)arg1;
-- (id)initWithDeviceID:(int)arg1 fileID:(unsigned long long)arg2;
+- (id)initWithDeviceID:(int)arg1 fileID:(unsigned int)arg2;
 - (id)initWithInputStream:(id)arg1;
 - (id)initWithURL:(id)arg1;
 - (Class)itemClass;

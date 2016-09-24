@@ -3,7 +3,7 @@
  */
 
 @interface VCPVideMetaOrientationAnalyzer : VCPVideoMetaAnalyzer {
-    NSMutableArray *_results;
+    NSMutableArray * _results;
 }
 
 - (void).cxx_destruct;

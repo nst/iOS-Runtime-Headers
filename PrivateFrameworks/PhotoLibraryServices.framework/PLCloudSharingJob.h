@@ -3,9 +3,9 @@
  */
 
 @interface PLCloudSharingJob : PLDaemonJob {
-    NSString *_archiveFilename;
-    PLPhotoLibrary *_photoLibrary;
-    BOOL _shouldPrioritize;
+    NSString * _archiveFilename;
+    PLPhotoLibrary * _photoLibrary;
+    BOOL  _shouldPrioritize;
 }
 
 @property (nonatomic) BOOL shouldPrioritize;

@@ -3,15 +3,15 @@
  */
 
 @interface _CDAdvisedInteraction : NSObject <NSCopying, NSSecureCoding> {
-    NSString *_account;
-    NSString *_bundleId;
-    _CDContact *_contact;
-    int _mechanism;
-    NSMutableSet *_reasons;
-    double _score;
-    int _similarBidirectionalInteractionsCount;
-    int _similarIncomingInteractionsCount;
-    int _similarOutgoingInteractionsCount;
+    NSString * _account;
+    NSString * _bundleId;
+    _CDContact * _contact;
+    int  _mechanism;
+    NSMutableSet * _reasons;
+    double  _score;
+    int  _similarBidirectionalInteractionsCount;
+    int  _similarIncomingInteractionsCount;
+    int  _similarOutgoingInteractionsCount;
 }
 
 @property (retain) NSString *account;

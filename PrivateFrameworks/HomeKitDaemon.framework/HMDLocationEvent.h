@@ -3,7 +3,7 @@
  */
 
 @interface HMDLocationEvent : HMDEvent <NSSecureCoding> {
-    CLRegion *_region;
+    CLRegion * _region;
 }
 
 @property (nonatomic, retain) CLRegion *region;
@@ -13,6 +13,7 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)dumpState;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithRegion:(id)arg1;

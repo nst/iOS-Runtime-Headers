@@ -3,8 +3,8 @@
  */
 
 @interface EDBuildableFormula : NSObject <EDFormulaBuilding> {
-    struct EDBuildablePtg { int (**x1)(); char *x2; int x3; unsigned int x4; unsigned short x5; struct EDBuildablePtg {} *x6; struct EDBuildablePtg {} *x7; bool x8; int x9; unsigned short x10; unsigned short x11; } *mTree;
-    int mWarning;
+    struct EDBuildablePtg { int (**x1)(); char *x2; int x3; unsigned int x4; unsigned short x5; struct EDBuildablePtg {} *x6; struct EDBuildablePtg {} *x7; bool x8; int x9; unsigned short x10; unsigned short x11; } * mTree;
+    int  mWarning;
 }
 
 @property (readonly, copy) NSString *debugDescription;

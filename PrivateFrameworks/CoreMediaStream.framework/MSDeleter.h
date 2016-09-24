@@ -3,14 +3,14 @@
  */
 
 @interface MSDeleter : MSCupidStateMachine <MSDeleteStreamsProtocolDelegate, MSDeleter> {
-    int _batchSize;
-    MSMediaStreamDaemon *_daemon;
-    <MSDeleterDelegate> *_delegate;
-    MSObjectQueue *_deleteQueue;
-    int _maxErrorCount;
-    MSDeleteStreamsProtocol *_protocol;
-    NSMutableArray *_requestedDeleteWrappers;
-    int _state;
+    int  _batchSize;
+    MSMediaStreamDaemon * _daemon;
+    <MSDeleterDelegate> * _delegate;
+    MSObjectQueue * _deleteQueue;
+    int  _maxErrorCount;
+    MSDeleteStreamsProtocol * _protocol;
+    NSMutableArray * _requestedDeleteWrappers;
+    int  _state;
 }
 
 @property (nonatomic) int batchSize;

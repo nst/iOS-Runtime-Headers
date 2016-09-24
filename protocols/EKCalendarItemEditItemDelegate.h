@@ -9,6 +9,7 @@
 
 @optional
 
+- (UITableViewCell *)cellWithReuseIdentifier:(NSString *)arg1 forEditItem:(EKCalendarItemEditItem *)arg2;
 - (void)editItem:(EKCalendarItemEditItem *)arg1 didEndDatePickingAnimated:(BOOL)arg2;
 - (void)editItem:(EKCalendarItemEditItem *)arg1 didSaveFromDetailViewController:(BOOL)arg2;
 - (void)editItem:(void *)arg1 performActionsOnCellAtSubitem:(void *)arg2 actions:(void *)arg3; // needs 3 arg types, found 8: EKCalendarItemEditItem *, unsigned int, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, UITableViewCell *, void*
@@ -25,6 +26,7 @@
 - (void)editItemRequiresHeightChange:(EKCalendarItemEditItem *)arg1;
 - (void)editItemRequiresPopoverSizeUpdate:(EKCalendarItemEditItem *)arg1;
 - (void)editItemTextChanged:(EKCalendarItemEditItem *)arg1;
+- (void)editItemVisibilityChanged:(EKCalendarItemEditItem *)arg1;
 - (void)editItemWantsInjectableViewControllerToBeShown:(EKCalendarItemEditItem *)arg1;
 - (int)rowNumberForEditItem:(EKCalendarItemEditItem *)arg1;
 - (UIViewController *)viewControllerForEditItem:(EKCalendarItemEditItem *)arg1;

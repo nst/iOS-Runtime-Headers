@@ -21,7 +21,7 @@
 // Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
 
 - (id)_text;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingBox;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundingBox;
 - (id)cloneContents;
 - (id)cloneRange;
 - (void)collapse:(BOOL)arg1;
@@ -41,7 +41,6 @@
 - (void)expand:(id)arg1;
 - (void)extend:(unsigned long)arg1 inDirection:(int)arg2;
 - (id)extractContents;
-- (void)finalize;
 - (id)firstNode;
 - (void)insertNode:(id)arg1;
 - (BOOL)intersectsNode:(id)arg1;
@@ -78,8 +77,8 @@
 
 - (id)asDomNode;
 - (id)asDomRange;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingRect;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingRectAndInsideFixedPosition:(int*)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundingRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundingRectAndInsideFixedPosition:(int*)arg1;
 - (BOOL)canShrinkDirectlyToTextOnly;
 - (BOOL)containsBlock:(id)arg1;
 - (BOOL)containsRange:(id)arg1;

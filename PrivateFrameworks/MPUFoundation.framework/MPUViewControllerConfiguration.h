@@ -3,14 +3,14 @@
  */
 
 @interface MPUViewControllerConfiguration : NSObject {
-    NSString *_aggregateStatisticDisplayCountKey;
-    Class _cellConfigurationClass;
-    id /* block */ _configurationBlock;
-    MPUDataSourceConfiguration *_dataSourceConfiguration;
-    Class _navigationControllerClass;
-    Class _viewControllerClass;
-    BOOL _wantsModalPresentation;
-    BOOL _wantsNavigationController;
+    NSString * _aggregateStatisticDisplayCountKey;
+    Class  _cellConfigurationClass;
+    id /* block */  _configurationBlock;
+    MPUDataSourceConfiguration * _dataSourceConfiguration;
+    Class  _navigationControllerClass;
+    Class  _viewControllerClass;
+    BOOL  _wantsModalPresentation;
+    BOOL  _wantsNavigationController;
 }
 
 @property (nonatomic, copy) NSString *aggregateStatisticDisplayCountKey;

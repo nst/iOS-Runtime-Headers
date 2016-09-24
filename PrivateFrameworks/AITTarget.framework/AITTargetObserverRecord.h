@@ -3,9 +3,9 @@
  */
 
 @interface AITTargetObserverRecord : NSObject {
-    id /* block */ _handler;
-    id _observer;
-    NSObject<OS_dispatch_queue> *_queue;
+    id /* block */  _handler;
+    id  _observer;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (readonly) id /* block */ handler;

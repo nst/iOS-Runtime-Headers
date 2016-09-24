@@ -3,15 +3,15 @@
  */
 
 @interface GEOAddressCorrectionInitResponse : PBCodable <NSCopying> {
-    NSMutableArray *_address;
-    NSString *_addressID;
-    GEOLocation *_addressLocation;
+    NSMutableArray * _address;
+    NSString * _addressID;
+    GEOLocation * _addressLocation;
     struct { 
         unsigned int numberOfVisitsBucketSize : 1; 
         unsigned int statusCode : 1; 
-    } _has;
-    unsigned int _numberOfVisitsBucketSize;
-    int _statusCode;
+    }  _has;
+    unsigned int  _numberOfVisitsBucketSize;
+    int  _statusCode;
 }
 
 @property (nonatomic, retain) NSMutableArray *address;
@@ -24,6 +24,9 @@
 @property (nonatomic) unsigned int numberOfVisitsBucketSize;
 @property (nonatomic) int statusCode;
 
++ (Class)addressType;
+
+- (int)StringAsStatusCode:(id)arg1;
 - (void)addAddress:(id)arg1;
 - (id)address;
 - (id)addressAtIndex:(unsigned int)arg1;
@@ -53,6 +56,7 @@
 - (void)setNumberOfVisitsBucketSize:(unsigned int)arg1;
 - (void)setStatusCode:(int)arg1;
 - (int)statusCode;
+- (id)statusCodeAsString:(int)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

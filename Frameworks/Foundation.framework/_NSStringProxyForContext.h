@@ -3,9 +3,9 @@
  */
 
 @interface _NSStringProxyForContext : NSString {
-    NSFormatter *_formatter;
-    <NSCopying><NSSecureCoding><NSObject> *_item;
-    NSString *_string;
+    NSFormatter * _formatter;
+    <NSCopying><NSSecureCoding><NSObject> * _item;
+    NSString * _string;
 }
 
 @property (copy) NSFormatter *formatter;

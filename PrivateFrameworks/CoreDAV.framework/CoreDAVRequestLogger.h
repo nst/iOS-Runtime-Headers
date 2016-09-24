@@ -3,9 +3,9 @@
  */
 
 @interface CoreDAVRequestLogger : NSObject {
-    NSArray *_headerSortDescriptors;
-    <CoreDAVAccountInfoProvider> *_provider;
-    int _snippetsLogged;
+    NSArray * _headerSortDescriptors;
+    <CoreDAVAccountInfoProvider> * _provider;
+    int  _snippetsLogged;
 }
 
 @property (nonatomic, retain) NSArray *headerSortDescriptors;

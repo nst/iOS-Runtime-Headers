@@ -3,7 +3,7 @@
  */
 
 @interface __NSCFBackgroundDownloadTask : __NSCFBackgroundSessionTask {
-    BOOL _finished;
+    BOOL  _finished;
 }
 
 @property BOOL finished;
@@ -12,8 +12,8 @@
 - (void)_onqueue_didFinishDownloadingToURL:(id)arg1;
 - (void)_onqueue_didFinishWithError:(id)arg1;
 - (void)_onqueue_didReceiveResponse:(id)arg1;
-- (void)_onqueue_didResumeAtOffset:(long long)arg1 expectedTotalBytes:(long long)arg2;
-- (void)_onqueue_didWriteData:(long long)arg1 totalBytesWritten:(long long)arg2 totalBytesExpectedToWrite:(long long)arg3;
+- (void)_onqueue_didResumeAtOffset:(int)arg1 expectedTotalBytes:(int)arg2;
+- (void)_onqueue_didWriteData:(int)arg1 totalBytesWritten:(int)arg2 totalBytesExpectedToWrite:(int)arg3;
 - (void)cancelByProducingResumeData:(id /* block */)arg1;
 - (BOOL)finished;
 - (BOOL)isKindOfClass:(Class)arg1;

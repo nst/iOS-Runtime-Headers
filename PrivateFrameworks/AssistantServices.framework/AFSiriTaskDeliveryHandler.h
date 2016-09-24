@@ -3,9 +3,9 @@
  */
 
 @interface AFSiriTaskDeliveryHandler : NSObject <AFSiriTaskDelivering> {
-    <AFSiriTaskServiceDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_queue;
-    AFSiriTaskService *_service;
+    <AFSiriTaskServiceDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _queue;
+    AFSiriTaskService * _service;
 }
 
 @property (readonly, copy) NSString *debugDescription;

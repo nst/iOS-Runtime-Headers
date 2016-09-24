@@ -3,7 +3,7 @@
  */
 
 @interface MTKMeshBufferHolder : NSObject {
-    MTKMeshBuffer *_buffer;
+    MTKMeshBuffer * _buffer;
 }
 
 @property MTKMeshBuffer *buffer;

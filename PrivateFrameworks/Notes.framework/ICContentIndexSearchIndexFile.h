@@ -3,9 +3,9 @@
  */
 
 @interface ICContentIndexSearchIndexFile : NSObject <ICSearchIndexFile, ICSearchQueryable> {
-    struct __CXIndex { } *_index;
-    unsigned int _tid;
-    NSURL *_url;
+    struct __CXIndex { } * _index;
+    unsigned int  _tid;
+    NSURL * _url;
 }
 
 @property (nonatomic) struct __CXIndex { }*index;

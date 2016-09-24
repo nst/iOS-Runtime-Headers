@@ -3,10 +3,12 @@
  */
 
 @interface CKDPRequestedFields : PBCodable <NSCopying> {
-    NSMutableArray *_fields;
+    NSMutableArray * _fields;
 }
 
 @property (nonatomic, retain) NSMutableArray *fields;
+
++ (Class)fieldsType;
 
 - (void).cxx_destruct;
 - (void)_CKLogToFileHandle:(id)arg1 atDepth:(int)arg2;

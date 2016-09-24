@@ -3,20 +3,20 @@
  */
 
 @interface BLPEModel : NSObject {
-    NSMutableDictionary *_AdaptiveGradientProcessingCache;
-    NSMutableDictionary *_InkProcessingCache;
-    NSMutableDictionary *_TiltShiftProcessingCache;
-    CIFilter *_auraFilter;
-    CIFilter *_blackAndWhiteFilter;
-    CIFilter *_dramaFilter;
-    CIFilter *_duotoneFilter;
-    BOOL _liveInteraction;
-    CIFilter *_photoFiltersFilter;
-    BOOL _processingFX;
-    BLPixelImageBuffer *_sourceImageBuffer;
-    BOOL _sourceImageDidChange;
-    CIFilter *_vintageFilter;
-    CIFilter *_warmAndCoolFilter;
+    NSMutableDictionary * _AdaptiveGradientProcessingCache;
+    NSMutableDictionary * _InkProcessingCache;
+    NSMutableDictionary * _TiltShiftProcessingCache;
+    CIFilter * _auraFilter;
+    CIFilter * _blackAndWhiteFilter;
+    CIFilter * _dramaFilter;
+    CIFilter * _duotoneFilter;
+    BOOL  _liveInteraction;
+    CIFilter * _photoFiltersFilter;
+    BOOL  _processingFX;
+    BLPixelImageBuffer * _sourceImageBuffer;
+    BOOL  _sourceImageDidChange;
+    CIFilter * _vintageFilter;
+    CIFilter * _warmAndCoolFilter;
 }
 
 @property (nonatomic, retain) CIFilter *auraFilter;
@@ -31,16 +31,16 @@
 - (id)auraFilter;
 - (id)blackAndWhiteFilter;
 - (BOOL)canRenderCIImageWithGroupIndex:(int)arg1 amount:(float)arg2 withOptionsObject:(id)arg3;
-- (id)ciImageProcessFX_CI:(id)arg1 groupIndex:(int)arg2 amount:(float)arg3 withOptionsObject:(id)arg4 analysisDictionary:(id)arg5 destRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg6 padding:(float)arg7;
-- (id)ciImageWithGroupIndex:(int)arg1 amount:(float)arg2 withOptionsObject:(id)arg3 analysisDictionary:(id)arg4 destRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg5 padding:(float)arg6;
-- (id)ciImageWithInk:(id)arg1 cache:(id)arg2 groupIndex:(int)arg3 withOptionsObject:(id)arg4 gradientRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg5 padding:(float)arg6 liveInteraction:(BOOL)arg7;
+- (id)ciImageProcessFX_CI:(id)arg1 groupIndex:(int)arg2 amount:(float)arg3 withOptionsObject:(id)arg4 analysisDictionary:(id)arg5 destRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg6 padding:(float)arg7;
+- (id)ciImageWithGroupIndex:(int)arg1 amount:(float)arg2 withOptionsObject:(id)arg3 analysisDictionary:(id)arg4 destRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg5 padding:(float)arg6;
+- (id)ciImageWithInk:(id)arg1 cache:(id)arg2 groupIndex:(int)arg3 withOptionsObject:(id)arg4 gradientRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg5 padding:(float)arg6 liveInteraction:(BOOL)arg7;
 - (void)dealloc;
 - (id)dramaFilter;
 - (id)duotoneFilter;
-- (id)imageWithAdaptiveGradientV1:(id)arg1 cache:(id)arg2 groupIndex:(int)arg3 withCenter:(struct CGPoint { float x1; float x2; })arg4 withSize:(float)arg5 withAngle:(float)arg6 gradientRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg7 liveInteraction:(BOOL)arg8;
-- (id)imageWithAdaptiveGradientV2:(id)arg1 cache:(id)arg2 groupIndex:(int)arg3 withCenter:(struct CGPoint { float x1; float x2; })arg4 withSize:(float)arg5 withAngle:(float)arg6 gradientRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg7 liveInteraction:(BOOL)arg8;
-- (id)imageWithGroupIndex:(int)arg1 amount:(float)arg2 withOptionsObject:(id)arg3 analysisDictionary:(id)arg4 destRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg5 padding:(float)arg6;
-- (id)imageWithInk:(id)arg1 cache:(id)arg2 groupIndex:(int)arg3 withOptionsObject:(id)arg4 gradientRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg5 padding:(float)arg6 liveInteraction:(BOOL)arg7;
+- (id)imageWithAdaptiveGradientV1:(id)arg1 cache:(id)arg2 groupIndex:(int)arg3 withCenter:(struct CGPoint { double x1; double x2; })arg4 withSize:(float)arg5 withAngle:(float)arg6 gradientRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg7 liveInteraction:(BOOL)arg8;
+- (id)imageWithAdaptiveGradientV2:(id)arg1 cache:(id)arg2 groupIndex:(int)arg3 withCenter:(struct CGPoint { double x1; double x2; })arg4 withSize:(float)arg5 withAngle:(float)arg6 gradientRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg7 liveInteraction:(BOOL)arg8;
+- (id)imageWithGroupIndex:(int)arg1 amount:(float)arg2 withOptionsObject:(id)arg3 analysisDictionary:(id)arg4 destRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg5 padding:(float)arg6;
+- (id)imageWithInk:(id)arg1 cache:(id)arg2 groupIndex:(int)arg3 withOptionsObject:(id)arg4 gradientRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg5 padding:(float)arg6 liveInteraction:(BOOL)arg7;
 - (id)initWithSourceImage:(id)arg1;
 - (id)initWithSourceImageBuffer:(id)arg1;
 - (BOOL)liveInteraction;
@@ -48,8 +48,8 @@
 - (BOOL)needInkProcessingCacheForGroupIndex:(int)arg1 andAmount:(float)arg2;
 - (BOOL)needTiltShiftProcessingCacheForGroupIndex:(int)arg1 andAmount:(float)arg2;
 - (id)photoFiltersFilter;
-- (id)processFX_CI:(id)arg1 groupIndex:(int)arg2 amount:(float)arg3 withOptionsObject:(id)arg4 analysisDictionary:(id)arg5 destRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg6 padding:(float)arg7;
-- (id)processFX_NonCI:(id)arg1 tiltShiftCache:(id)arg2 groupIndex:(int)arg3 amount:(float)arg4 withOptionsObject:(id)arg5 analysisDictionary:(id)arg6 destRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg7 padding:(float)arg8;
+- (id)processFX_CI:(id)arg1 groupIndex:(int)arg2 amount:(float)arg3 withOptionsObject:(id)arg4 analysisDictionary:(id)arg5 destRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg6 padding:(float)arg7;
+- (id)processFX_NonCI:(id)arg1 tiltShiftCache:(id)arg2 groupIndex:(int)arg3 amount:(float)arg4 withOptionsObject:(id)arg5 analysisDictionary:(id)arg6 destRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg7 padding:(float)arg8;
 - (void)releaseCachedFilters;
 - (void)setAuraFilter:(id)arg1;
 - (void)setBlackAndWhiteFilter:(id)arg1;

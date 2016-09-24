@@ -3,8 +3,8 @@
  */
 
 @interface XPCNSClientConnection : NSObject <XPCClientConnectionDelegate> {
-    XPCClientConnection *_clientConnection;
-    <XPCNSClientConnectionDelegate> *_delegate;
+    XPCClientConnection * _clientConnection;
+    <XPCNSClientConnectionDelegate> * _delegate;
 }
 
 @property (readonly, copy) NSString *debugDescription;

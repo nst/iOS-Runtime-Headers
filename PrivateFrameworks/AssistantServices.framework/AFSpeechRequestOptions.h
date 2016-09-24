@@ -3,25 +3,31 @@
  */
 
 @interface AFSpeechRequestOptions : NSObject <NSSecureCoding> {
-    BOOL _acousticIdEnabled;
-    int _activationEvent;
-    double _activationEventTime;
-    NSFileHandle *_audioFileHandle;
-    int _audioFileType;
-    NSString *_btDeviceAddress;
-    double _expectedActivationEventTime;
-    double _homeButtonDownEventTime;
-    NSNumber *_homeButtonUpFromBeep;
-    BOOL _isEyesFree;
-    BOOL _isInitialBringUp;
-    BOOL _releaseAudioSessionOnRecordingCompletion;
-    NSString *_serverCommandId;
-    BOOL _useAutomaticEndpointing;
-    BOOL _useStreamingDictation;
-    NSDictionary *_voiceTriggerEventInfo;
+    BOOL  _acousticIdEnabled;
+    NSString * _activationDeviceIdentifier;
+    int  _activationEvent;
+    double  _activationEventTime;
+    NSFileHandle * _audioFileHandle;
+    int  _audioFileType;
+    double  _expectedActivationEventTime;
+    double  _homeButtonDownEventTime;
+    NSNumber * _homeButtonUpFromBeep;
+    BOOL  _isEyesFree;
+    BOOL  _isInitialBringUp;
+    BOOL  _pendCallbacksUntilAfterContinuation;
+    NSString * _recordDeviceIdentifier;
+    BOOL  _releaseAudioSessionOnRecordingCompletion;
+    NSString * _serverCommandId;
+    NSXPCListenerEndpoint * _speechRecordingEventListeningEndpoint;
+    BOOL  _useAutomaticEndpointing;
+    BOOL  _useBorealisBuffer;
+    BOOL  _usePrelisteningMode;
+    BOOL  _useStreamingDictation;
+    NSDictionary * _voiceTriggerEventInfo;
 }
 
 @property (nonatomic) BOOL acousticIdEnabled;
+@property (nonatomic, copy) NSString *activationDeviceIdentifier;
 @property (nonatomic) int activationEvent;
 @property (nonatomic) double activationEventTime;
 @property (nonatomic, retain) NSFileHandle *audioFileHandle;
@@ -32,9 +38,14 @@
 @property (nonatomic, copy) NSNumber *homeButtonUpFromBeep;
 @property (nonatomic) BOOL isEyesFree;
 @property (nonatomic) BOOL isInitialBringUp;
+@property (nonatomic) BOOL pendCallbacksUntilAfterContinuation;
+@property (nonatomic, copy) NSString *recordDeviceIdentifier;
 @property (nonatomic) BOOL releaseAudioSessionOnRecordingCompletion;
 @property (nonatomic, copy) NSString *serverCommandId;
+@property (nonatomic, retain) NSXPCListenerEndpoint *speechRecordingEventListeningEndpoint;
 @property (nonatomic) BOOL useAutomaticEndpointing;
+@property (nonatomic) BOOL useBorealisBuffer;
+@property (nonatomic) BOOL usePrelisteningMode;
 @property (nonatomic) BOOL useStreamingDictation;
 @property (nonatomic, copy) NSDictionary *voiceTriggerEventInfo;
 
@@ -42,6 +53,7 @@
 
 - (void).cxx_destruct;
 - (BOOL)acousticIdEnabled;
+- (id)activationDeviceIdentifier;
 - (int)activationEvent;
 - (double)activationEventTime;
 - (id)audioFileHandle;
@@ -57,9 +69,12 @@
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEyesFree;
 - (BOOL)isInitialBringUp;
+- (BOOL)pendCallbacksUntilAfterContinuation;
+- (id)recordDeviceIdentifier;
 - (BOOL)releaseAudioSessionOnRecordingCompletion;
 - (id)serverCommandId;
 - (void)setAcousticIdEnabled:(BOOL)arg1;
+- (void)setActivationDeviceIdentifier:(id)arg1;
 - (void)setActivationEvent:(int)arg1;
 - (void)setActivationEventTime:(double)arg1;
 - (void)setAudioFileHandle:(id)arg1;
@@ -70,12 +85,20 @@
 - (void)setHomeButtonUpFromBeep:(id)arg1;
 - (void)setIsEyesFree:(BOOL)arg1;
 - (void)setIsInitialBringUp:(BOOL)arg1;
+- (void)setPendCallbacksUntilAfterContinuation:(BOOL)arg1;
+- (void)setRecordDeviceIdentifier:(id)arg1;
 - (void)setReleaseAudioSessionOnRecordingCompletion:(BOOL)arg1;
 - (void)setServerCommandId:(id)arg1;
+- (void)setSpeechRecordingEventListeningEndpoint:(id)arg1;
 - (void)setUseAutomaticEndpointing:(BOOL)arg1;
+- (void)setUseBorealisBuffer:(BOOL)arg1;
+- (void)setUsePrelisteningMode:(BOOL)arg1;
 - (void)setUseStreamingDictation:(BOOL)arg1;
 - (void)setVoiceTriggerEventInfo:(id)arg1;
+- (id)speechRecordingEventListeningEndpoint;
 - (BOOL)useAutomaticEndpointing;
+- (BOOL)useBorealisBuffer;
+- (BOOL)usePrelisteningMode;
 - (BOOL)useStreamingDictation;
 - (id)voiceTriggerEventInfo;
 

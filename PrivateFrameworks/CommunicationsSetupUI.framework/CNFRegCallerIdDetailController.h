@@ -3,7 +3,7 @@
  */
 
 @interface CNFRegCallerIdDetailController : PSListItemsController {
-    CNFRegController *_regController;
+    CNFRegController * _regController;
 }
 
 @property (nonatomic, readonly, retain) CNFRegController *regController;

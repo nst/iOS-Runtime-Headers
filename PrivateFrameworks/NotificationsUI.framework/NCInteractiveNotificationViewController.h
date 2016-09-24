@@ -3,18 +3,19 @@
  */
 
 @interface NCInteractiveNotificationViewController : UIViewController <NCInteractiveNotificationServiceInterface> {
-    NSDictionary *_context;
-    float _maximumHeight;
-    BOOL _modal;
+    NSDictionary * _context;
+    double  _maximumHeight;
+    BOOL  _modal;
 }
 
 @property (nonatomic, copy) NSDictionary *context;
-@property (nonatomic) float maximumHeight;
+@property (nonatomic) double maximumHeight;
 @property (getter=isModal, nonatomic) BOOL modal;
 
 + (id)_exportedInterface;
 + (id)_remoteViewControllerInterface;
 
+- (void).cxx_destruct;
 - (void)_didChangeRevealPercent:(float)arg1;
 - (void)_getActionContextWithCompletion:(id /* block */)arg1;
 - (void)_getActionTitlesWithCompletion:(id /* block */)arg1;
@@ -32,7 +33,6 @@
 - (id)actionTitles;
 - (float)bottomOverhangHeight;
 - (id)context;
-- (void)dealloc;
 - (void)didChangeRevealPercent:(float)arg1;
 - (void)dismissWithContext:(id)arg1;
 - (void)handleActionAtIndex:(unsigned int)arg1;

@@ -7,12 +7,8 @@
 + (id)_appleWatchSamplesPredicateForSession:(id)arg1;
 + (id)_companionNanoSyncPredicateConjunctionForSession:(id)arg1;
 + (id)_defaultCompanionNanoSyncSampleAgePredicateForSession:(id)arg1;
-+ (id)_nanoSyncWatchRestorePredicatesWithSession:(id)arg1;
-+ (id)_predicateForNanoSyncRestoreSession:(id)arg1 healthDaemon:(id)arg2 error:(id*)arg3;
-+ (long long)finalAnchorForNanoSyncRestoreSession:(id)arg1 healthDaemon:(id)arg2 error:(id*)arg3;
 + (int)nanoSyncObjectType;
 + (id)nanoSyncPredicateForSession:(id)arg1;
-+ (id)objectsForNanoSyncRestoreSession:(id)arg1 syncAnchorRange:(struct HDSyncAnchorRange { long long x1; long long x2; })arg2 lastSyncAnchor:(long long*)arg3 healthDaemon:(id)arg4 error:(id*)arg5;
 + (unsigned int)supportedNanoSyncDirectionsForProtocolVersion:(int)arg1;
 + (BOOL)supportsSpeculativeNanoSyncChanges;
 

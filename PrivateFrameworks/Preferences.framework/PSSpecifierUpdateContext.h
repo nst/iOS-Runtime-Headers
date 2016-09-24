@@ -3,9 +3,9 @@
  */
 
 @interface PSSpecifierUpdateContext : NSObject <NSCopying> {
-    BOOL _animated;
-    BOOL _updateModelOnly;
-    NSDictionary *_userInfo;
+    BOOL  _animated;
+    BOOL  _updateModelOnly;
+    NSDictionary * _userInfo;
 }
 
 @property (nonatomic) BOOL animated;

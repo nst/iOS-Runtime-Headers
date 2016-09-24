@@ -3,11 +3,11 @@
  */
 
 @interface MPMediaQuery : NSObject <MPPProtobufferCoding, NSCopying, NSSecureCoding> {
-    MPMediaQueryCriteria *_criteria;
-    int _isFilteringDisabled;
-    MPMediaLibrary *_mediaLibrary;
-    NSArray *_staticEntities;
-    int _staticEntityType;
+    MPMediaQueryCriteria * _criteria;
+    int  _isFilteringDisabled;
+    MPMediaLibrary * _mediaLibrary;
+    NSArray * _staticEntities;
+    int  _staticEntityType;
 }
 
 @property (getter=MCD_playlist, nonatomic, readonly) MPMediaPlaylist *MCD_playlist;

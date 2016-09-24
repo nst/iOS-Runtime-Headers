@@ -2,11 +2,11 @@
    Image: /System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
  */
 
-@interface _LSAppLinkOpenState : NSObject {
-    NSURL *_URL;
-    NSDictionary *_browserState;
-    NSString *_bundleIdentifier;
-    BOOL _openStrategyChanged;
+@interface _LSAppLinkOpenState : NSObject <NSSecureCoding> {
+    NSURL * _URL;
+    NSDictionary * _browserState;
+    NSString * _bundleIdentifier;
+    BOOL  _openStrategyChanged;
 }
 
 @property (copy) NSURL *URL;
@@ -15,7 +15,7 @@
 @property (readonly) NSData *dataRepresentation;
 @property BOOL openStrategyChanged;
 
-+ (id)openStateWithDataRepresentation:(id)arg1;
++ (BOOL)supportsSecureCoding;
 
 - (id)URL;
 - (id)browserState;
@@ -23,6 +23,9 @@
 - (id)dataRepresentation;
 - (void)dealloc;
 - (id)debugDescription;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithDataRepresentation:(id)arg1;
 - (BOOL)openStrategyChanged;
 - (void)setBrowserState:(id)arg1;
 - (void)setBundleIdentifier:(id)arg1;

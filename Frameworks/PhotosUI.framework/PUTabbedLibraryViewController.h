@@ -3,15 +3,15 @@
  */
 
 @interface PUTabbedLibraryViewController : UITabBarController <PLAssetContainerListChangeObserver, PLAssetContainerObserver, PLDismissableViewController, PLInvitationRecordsObserver, PLRootLibraryNavigationController, UINavigationControllerDelegate> {
-    NSMutableIndexSet *_everDisplayedContentModes;
-    NSArray *_excludedContentModes;
-    NSMutableDictionary *_filteredAlbumListsByContentMode;
-    PUImportViewController *_importViewController;
-    int _pendingSelectedContentMode;
-    PUSessionInfo *_sessionInfo;
-    BOOL _sharedTabBadgeIsDirty;
-    PUTabbedLibraryViewControllerSpec *_spec;
-    PUMomentsZoomLevelManager *_zoomLevelManager;
+    NSMutableIndexSet * _everDisplayedContentModes;
+    NSArray * _excludedContentModes;
+    NSMutableDictionary * _filteredAlbumListsByContentMode;
+    PUImportViewController * _importViewController;
+    int  _pendingSelectedContentMode;
+    PUSessionInfo * _sessionInfo;
+    BOOL  _sharedTabBadgeIsDirty;
+    PUTabbedLibraryViewControllerSpec * _spec;
+    PUMomentsZoomLevelManager * _zoomLevelManager;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -49,6 +49,8 @@
 - (BOOL)_navigationControllerShouldUseBuiltinInteractionController:(id)arg1;
 - (id)_newNavigationControllerWithRootController:(id)arg1;
 - (id)_nextCloudFeedNavigatingObject;
+- (id)_snapBackRootViewControllerInNavigationController:(id)arg1;
+- (id)_tabRootViewControllerInNavigationController:(id)arg1;
 - (void)_updateSharedStreamsTabBadge;
 - (BOOL)albumIsAvailableForNavigation:(struct NSObject { Class x1; }*)arg1;
 - (void)assetContainerDidChange:(id)arg1;
@@ -77,6 +79,7 @@
 - (void)navigateToContentMode:(int)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
 - (void)navigateToInitialLocationInNavigationController:(id)arg1;
 - (void)navigateToLastYearPhotosSearchAnimated:(BOOL)arg1;
+- (id)navigateToMemoryWithLocalIdentifier:(id)arg1;
 - (void)navigateToOneUpForAsset:(id)arg1 inAssetContainer:(id)arg2 animated:(BOOL)arg3;
 - (void)navigateToPhotosContentBottomAnimated:(BOOL)arg1;
 - (void)navigateToPhotosSearchAnimated:(BOOL)arg1;
@@ -93,6 +96,8 @@
 - (void)prepareForDefaultImageSnapshot;
 - (BOOL)prepareForDismissingForced:(BOOL)arg1;
 - (BOOL)pu_shouldSelectViewController:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })px_frameForTabItem:(unsigned int)arg1 inCoordinateSpace:(id)arg2;
+- (id)px_navigateToMemoryWithLocalIdentifier:(id)arg1;
 - (int)selectedContentMode;
 - (id)selectedNavigationController;
 - (id)sessionInfo;
@@ -105,6 +110,7 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (BOOL)shouldShowTabForContentMode:(int)arg1;
 - (unsigned int)supportedInterfaceOrientations;
+- (unsigned int)tabIdentifierForContentMode:(int)arg1;
 - (void)updateDisplayedTabsAnimated:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 

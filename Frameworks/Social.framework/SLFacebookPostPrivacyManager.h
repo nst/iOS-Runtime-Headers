@@ -3,8 +3,8 @@
  */
 
 @interface SLFacebookPostPrivacyManager : NSObject {
-    ACAccount *_account;
-    NSArray *_privacySettings;
+    ACAccount * _account;
+    NSArray * _privacySettings;
 }
 
 @property (retain) SLFacebookPostPrivacySetting *privacySetting;

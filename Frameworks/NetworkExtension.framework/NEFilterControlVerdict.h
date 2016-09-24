@@ -3,8 +3,8 @@
  */
 
 @interface NEFilterControlVerdict : NEFilterNewFlowVerdict <NSCopying, NSSecureCoding> {
-    BOOL _handledByDataProvider;
-    BOOL _updateRules;
+    BOOL  _handledByDataProvider;
+    BOOL  _updateRules;
 }
 
 @property BOOL handledByDataProvider;

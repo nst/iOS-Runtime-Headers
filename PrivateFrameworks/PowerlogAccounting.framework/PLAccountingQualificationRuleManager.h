@@ -3,9 +3,9 @@
  */
 
 @interface PLAccountingQualificationRuleManager : PLAccountingRuleManager {
-    NSMutableDictionary *_qualificationIDToQualificationRules;
-    NSRegularExpression *_regex;
-    NSMutableDictionary *_rootNodeIDToQualificationRules;
+    NSMutableDictionary * _qualificationIDToQualificationRules;
+    NSRegularExpression * _regex;
+    NSMutableDictionary * _rootNodeIDToQualificationRules;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *qualificationIDToQualificationRules;

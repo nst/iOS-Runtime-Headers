@@ -3,12 +3,12 @@
  */
 
 @interface MLTrackImportChapter : NSObject <NSCopying> {
-    NSString *_imageCacheKey;
-    NSData *_imageData;
-    unsigned int _startTimeInMilliseconds;
-    NSString *_title;
-    NSURL *_url;
-    NSString *_urlTitle;
+    NSString * _imageCacheKey;
+    NSData * _imageData;
+    unsigned int  _startTimeInMilliseconds;
+    NSString * _title;
+    NSURL * _url;
+    NSString * _urlTitle;
 }
 
 @property (nonatomic, copy) NSURL *URL;

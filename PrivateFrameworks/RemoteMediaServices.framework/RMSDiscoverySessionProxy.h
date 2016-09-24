@@ -3,15 +3,15 @@
  */
 
 @interface RMSDiscoverySessionProxy : RMSSessionProxy <RMSDiscoverySession> {
-    NSArray *_availableServices;
-    <RMSDiscoverySessionDelegate> *_delegate;
-    BOOL _discovering;
-    int _discoveryTypes;
-    RMSIDSClient *_idsClient;
-    BOOL _networkAvailable;
-    NSArray *_pairedNetworkNames;
-    int _retryRate;
-    BOOL _wifiAvailable;
+    NSArray * _availableServices;
+    <RMSDiscoverySessionDelegate> * _delegate;
+    BOOL  _discovering;
+    int  _discoveryTypes;
+    RMSIDSClient * _idsClient;
+    BOOL  _networkAvailable;
+    NSArray * _pairedNetworkNames;
+    int  _retryRate;
+    BOOL  _wifiAvailable;
 }
 
 @property (nonatomic, readonly) NSArray *availableServices;

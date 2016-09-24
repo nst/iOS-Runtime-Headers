@@ -3,23 +3,26 @@
  */
 
 @interface MRMediaRemoteServiceClient : NSObject {
-    NSArray *_externalScreenTypeNotificationObservers;
-    NSArray *_nowPlayingNotificationObservers;
-    void *_nowPlayingPlaybackQueueContext;
-    NSArray *_originNotificationObservers;
-    BOOL _receivesExternalScreenTypeChangedNotifications;
-    BOOL _receivesOriginChangedNotifications;
-    BOOL _receivesPlaybackErrorNotifications;
-    BOOL _receivesRoutesChangedNotifications;
-    BOOL _receivesSupportedCommandsNotifications;
-    BOOL _receivesVoiceInputRecordingStateNotifications;
-    unsigned int _registeredNowPlayingObservers;
-    NSMutableArray *_registeredOrigins;
-    MRAVRoutingClientController *_routingClientController;
-    NSArray *_routingNotificationObservers;
-    NSObject<OS_dispatch_queue> *_serialQueue;
-    struct MRMediaRemoteService { } *_service;
-    NSArray *_voiceInputNotificationObservers;
+    NSArray * _externalScreenTypeNotificationObservers;
+    NSArray * _nowPlayingNotificationObservers;
+    void * _nowPlayingPlaybackQueueContext;
+    NSArray * _originNotificationObservers;
+    BOOL  _receivesExternalScreenTypeChangedNotifications;
+    BOOL  _receivesOriginChangedNotifications;
+    BOOL  _receivesPlaybackErrorNotifications;
+    BOOL  _receivesRoutesChangedNotifications;
+    BOOL  _receivesSupportedCommandsNotifications;
+    BOOL  _receivesVoiceInputRecordingStateNotifications;
+    unsigned int  _registeredNowPlayingObservers;
+    NSMutableArray * _registeredOrigins;
+    MRAVRoutingClientController * _routingClientController;
+    NSArray * _routingNotificationObservers;
+    NSObject<OS_dispatch_queue> * _serialQueue;
+    struct MRMediaRemoteService { } * _service;
+    MSVDistributedNotificationObserver * _televisionIsPairingAllowedChangedObserver;
+    MSVDistributedNotificationObserver * _televisionPairedDevicesChangedObserver;
+    NSMutableDictionary * _transactionSources;
+    NSArray * _voiceInputNotificationObservers;
 }
 
 @property (nonatomic, retain) NSArray *externalScreenTypeNotificationObservers;
@@ -59,6 +62,7 @@
 - (void)registerOrigin:(struct _MROrigin { }*)arg1 withCompletion:(id /* block */)arg2;
 - (id)registeredOrigins;
 - (id)routingNotificationObservers;
+- (void)sendTransaction:(unsigned int)arg1 withData:(id)arg2 forOrigin:(struct _MROrigin { }*)arg3;
 - (struct MRMediaRemoteService { }*)service;
 - (id)serviceQueue;
 - (void)setExternalScreenTypeNotificationObservers:(id)arg1;

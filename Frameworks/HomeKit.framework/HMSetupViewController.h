@@ -3,15 +3,15 @@
  */
 
 @interface HMSetupViewController : UIViewController <HMSetupRemoteHost> {
-    HMSetupAccessoryDescription *_accessoryDescription;
-    _UIAsyncInvocation *_cancelServiceInvocation;
-    BOOL _cancelling;
-    id /* block */ _completionHandler;
-    BOOL _disconnected;
-    HMHome *_home;
-    id /* block */ _loadHandler;
-    HMSetupRemoteViewController *_remoteViewController;
-    BOOL _shouldPresentWhenLoaded;
+    HMSetupAccessoryDescription * _accessoryDescription;
+    _UIAsyncInvocation * _cancelServiceInvocation;
+    BOOL  _cancelling;
+    id /* block */  _completionHandler;
+    BOOL  _disconnected;
+    HMHome * _home;
+    id /* block */  _loadHandler;
+    HMSetupRemoteViewController * _remoteViewController;
+    BOOL  _shouldPresentWhenLoaded;
 }
 
 @property (nonatomic, retain) HMSetupAccessoryDescription *accessoryDescription;

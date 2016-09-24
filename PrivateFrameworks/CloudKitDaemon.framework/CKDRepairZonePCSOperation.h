@@ -3,11 +3,11 @@
  */
 
 @interface CKDRepairZonePCSOperation : CKDDatabaseOperation {
-    NSMutableArray *_fetchedZones;
-    NSMutableArray *_fixedZones;
-    NSMutableDictionary *_pcsInfoByZoneID;
-    NSArray *_zoneIDs;
-    id /* block */ _zonePCSRepairProgressBlock;
+    NSMutableArray * _fetchedZones;
+    NSMutableArray * _fixedZones;
+    NSMutableDictionary * _pcsInfoByZoneID;
+    NSArray * _zoneIDs;
+    id /* block */  _zonePCSRepairProgressBlock;
 }
 
 @property (nonatomic, retain) NSMutableArray *fetchedZones;
@@ -22,7 +22,7 @@
 - (void)_fetchZones;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_uploadRepairedZones;
-- (unsigned long long)activityStart;
+- (id)activityCreate;
 - (id)fetchedZones;
 - (id)fixedZones;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;

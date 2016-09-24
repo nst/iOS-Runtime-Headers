@@ -3,13 +3,13 @@
  */
 
 @interface PUReviewScrubberCell : UICollectionViewCell {
-    UIImageView *__checkmarkImageView;
-    UIImageView *__suggestedImageView;
-    UIImageView *__thumbnailImageView;
-    BOOL _favorite;
-    UIImage *_image;
-    BOOL _suggested;
-    BOOL _wantsSmallSuggestionIndicators;
+    UIImageView * __checkmarkImageView;
+    UIImageView * __suggestedImageView;
+    UIImageView * __thumbnailImageView;
+    BOOL  _favorite;
+    UIImage * _image;
+    BOOL  _suggested;
+    BOOL  _wantsSmallSuggestionIndicators;
 }
 
 @property (nonatomic, readonly) UIImageView *_checkmarkImageView;
@@ -30,7 +30,7 @@
 - (void)_updateThumbnailImageView;
 - (id)image;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (BOOL)isFavorite;
 - (BOOL)isSuggested;
 - (void)layoutSubviews;

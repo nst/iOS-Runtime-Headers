@@ -3,9 +3,9 @@
  */
 
 @interface CKModifyWebSharingOperationInfo : CKDatabaseOperationInfo <NSSecureCoding> {
-    NSArray *_recordIDsToShare;
-    NSArray *_recordIDsToShareReadWrite;
-    NSArray *_recordIDsToUnshare;
+    NSArray * _recordIDsToShare;
+    NSArray * _recordIDsToShareReadWrite;
+    NSArray * _recordIDsToUnshare;
 }
 
 @property (nonatomic, retain) NSArray *recordIDsToShare;

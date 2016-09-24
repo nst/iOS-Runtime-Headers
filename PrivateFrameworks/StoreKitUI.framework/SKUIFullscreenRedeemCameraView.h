@@ -3,21 +3,21 @@
  */
 
 @interface SKUIFullscreenRedeemCameraView : UIView <UITextFieldDelegate> {
-    <SKUIRedeemCameraViewDelegate> *_delegate;
-    BOOL _enabled;
+    <SKUIRedeemCameraViewDelegate> * _delegate;
+    BOOL  _enabled;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } _keyboardRect;
-    UIView *_overlay;
-    UIView *_redeemerView;
-    SKUIRedeemTextField *_textField;
+    }  _keyboardRect;
+    UIView * _overlay;
+    UIView * _redeemerView;
+    SKUIRedeemTextField * _textField;
 }
 
 @property (readonly, copy) NSString *debugDescription;

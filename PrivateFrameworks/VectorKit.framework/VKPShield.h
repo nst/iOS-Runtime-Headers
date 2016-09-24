@@ -3,9 +3,9 @@
  */
 
 @interface VKPShield : PBCodable <NSCopying> {
-    VKPGenericShieldStyleInfo *_genericShieldStyleInfo;
-    NSString *_identifier;
-    NSMutableArray *_variants;
+    VKPGenericShieldStyleInfo * _genericShieldStyleInfo;
+    NSString * _identifier;
+    NSMutableArray * _variants;
 }
 
 @property (nonatomic, retain) VKPGenericShieldStyleInfo *genericShieldStyleInfo;

@@ -3,11 +3,11 @@
  */
 
 @interface NPKWorkQueue : NSObject {
-    NSObject<OS_dispatch_queue> *_callbackQueue;
-    BOOL _performingWork;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSMutableArray *_remainingWork;
-    BOOL _takeOutTransactions;
+    NSObject<OS_dispatch_queue> * _callbackQueue;
+    BOOL  _performingWork;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSMutableArray * _remainingWork;
+    BOOL  _takeOutTransactions;
 }
 
 @property (nonatomic) NSObject<OS_dispatch_queue> *callbackQueue;

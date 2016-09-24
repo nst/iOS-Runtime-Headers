@@ -3,8 +3,8 @@
  */
 
 @interface BLTPBBulletinIdentifier : PBCodable <NSCopying> {
-    NSString *_publisherBulletinID;
-    NSString *_recordID;
+    NSString * _publisherBulletinID;
+    NSString * _recordID;
 }
 
 @property (nonatomic, readonly) BOOL hasPublisherBulletinID;

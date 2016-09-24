@@ -3,8 +3,8 @@
  */
 
 @interface UIStatusBarItem : NSObject {
-    int _idiom;
-    int _type;
+    int  _idiom;
+    int  _type;
 }
 
 @property (nonatomic, readonly) NSString *indicatorName;
@@ -14,7 +14,7 @@
 @property (nonatomic, readonly) int type;
 @property (nonatomic, readonly) Class viewClass;
 
-+ (BOOL)isItemWithTypeExclusive:(int)arg1;
++ (BOOL)isItemWithTypeExclusive:(int)arg1 outBlacklistItems:(id*)arg2 outWhitelistItems:(id*)arg3;
 + (BOOL)itemType:(int)arg1 idiom:(int)arg2 appearsInRegion:(int)arg3;
 + (BOOL)itemType:(int)arg1 idiom:(int)arg2 canBeEnabledForData:(id)arg3 style:(id)arg4;
 + (id)itemWithType:(int)arg1 idiom:(int)arg2;

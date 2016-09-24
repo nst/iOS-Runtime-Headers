@@ -3,7 +3,7 @@
  */
 
 @interface SKUISlideshowAnimator : NSObject <UIViewControllerAnimatorTransitioning> {
-    UIImageView *_imageView;
+    UIImageView * _imageView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

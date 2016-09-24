@@ -3,7 +3,7 @@
  */
 
 @interface NSCustomPredicateOperator : NSPredicateOperator {
-    SEL _selector;
+    SEL  _selector;
 }
 
 + (BOOL)supportsSecureCoding;

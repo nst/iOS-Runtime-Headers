@@ -3,7 +3,7 @@
  */
 
 @interface PTSSliderRowTableViewCell : PTSRowTableViewCell {
-    UISlider *_slider;
+    UISlider * _slider;
 }
 
 + (float)cellHeightForRow:(id)arg1;

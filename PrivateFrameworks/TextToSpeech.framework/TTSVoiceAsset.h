@@ -3,19 +3,23 @@
  */
 
 @interface TTSVoiceAsset : NSObject <NSSecureCoding> {
-    NSNumber *_contentVersion;
-    int _footprint;
-    int _gender;
-    BOOL _isBuiltInVoice;
-    BOOL _isInstalled;
-    NSArray *_languages;
-    NSString *_masteredVersion;
-    NSString *_name;
+    NSString * _compatibilityVersion;
+    NSNumber * _contentVersion;
+    int  _footprint;
+    int  _gender;
+    NSString * _identifier;
+    BOOL  _isBuiltInVoice;
+    BOOL  _isInstalled;
+    NSArray * _languages;
+    NSString * _masteredVersion;
+    NSString * _name;
 }
 
+@property (nonatomic, readonly) NSString *compatibilityVersion;
 @property (nonatomic, readonly) NSNumber *contentVersion;
 @property (nonatomic, readonly) int footprint;
 @property (nonatomic, readonly) int gender;
+@property (nonatomic, retain) NSString *identifier;
 @property (nonatomic, readonly) BOOL isBuiltInVoice;
 @property (nonatomic, readonly) BOOL isInstalled;
 @property (nonatomic, readonly) NSArray *languages;
@@ -25,19 +29,22 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)compatibilityVersion;
 - (id)contentVersion;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (void)encodeWithCoder:(id)arg1;
 - (int)footprint;
 - (int)gender;
+- (id)identifier;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionaryRepresentation:(id)arg1;
-- (id)initWithName:(id)arg1 languages:(id)arg2 gender:(int)arg3 footprint:(int)arg4 isInstalled:(BOOL)arg5 isBuiltIn:(BOOL)arg6;
+- (id)initWithName:(id)arg1 languages:(id)arg2 gender:(int)arg3 footprint:(int)arg4 isInstalled:(BOOL)arg5 isBuiltIn:(BOOL)arg6 masteredVersion:(id)arg7 compatibilityVersion:(id)arg8;
 - (BOOL)isBuiltInVoice;
 - (BOOL)isInstalled;
 - (id)languages;
 - (id)masteredVersion;
 - (id)name;
+- (void)setIdentifier:(id)arg1;
 
 @end

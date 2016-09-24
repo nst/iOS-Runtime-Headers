@@ -3,7 +3,7 @@
  */
 
 @interface _MKAnnotationViewAnchor : VKAnchorWrapper {
-    MKAnnotationView *_annotationView;
+    MKAnnotationView * _annotationView;
 }
 
 @property (nonatomic) MKAnnotationView *annotationView;

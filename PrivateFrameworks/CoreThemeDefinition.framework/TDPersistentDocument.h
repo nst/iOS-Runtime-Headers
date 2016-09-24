@@ -3,12 +3,12 @@
  */
 
 @interface TDPersistentDocument : NSObject {
-    NSString *_fileType;
-    NSURL *_fileURL;
-    NSManagedObjectContext *_managedObjectContext;
-    NSManagedObjectModel *_managedObjectModel;
-    id _store;
-    NSURL *_temporaryFileURL;
+    NSString * _fileType;
+    NSURL * _fileURL;
+    NSManagedObjectContext * _managedObjectContext;
+    NSManagedObjectModel * _managedObjectModel;
+    id  _store;
+    NSURL * _temporaryFileURL;
 }
 
 @property (nonatomic, copy) NSString *fileType;

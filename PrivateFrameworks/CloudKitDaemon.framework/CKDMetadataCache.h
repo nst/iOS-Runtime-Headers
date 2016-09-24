@@ -3,7 +3,7 @@
  */
 
 @interface CKDMetadataCache : CKSQLite {
-    NSObject<OS_dispatch_queue> *_cacheQueue;
+    NSObject<OS_dispatch_queue> * _cacheQueue;
 }
 
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *cacheQueue;
@@ -26,6 +26,7 @@
 - (id)knownAppContainerTuples;
 - (id)knownApplicationBundleIDs;
 - (id)pushTokenForAppContainerTuple:(id)arg1;
+- (void)removeContainerID:(id)arg1;
 - (void)removeKnownApplicationBundleID:(id)arg1;
 - (void)setAppContainerIntersectionMetadata:(id)arg1 forAppContainerTuple:(id)arg2;
 - (void)setApplicationMetadata:(id)arg1 forApplicationBundleID:(id)arg2 sourceApplicationBundleID:(id)arg3;

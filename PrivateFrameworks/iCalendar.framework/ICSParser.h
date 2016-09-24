@@ -3,9 +3,9 @@
  */
 
 @interface ICSParser : NSObject {
-    NSData *_data;
-    ICSTokenizer *_lexer;
-    int _options;
+    NSData * _data;
+    ICSTokenizer * _lexer;
+    int  _options;
 }
 
 @property (readonly) ICSTokenizer *lexer;

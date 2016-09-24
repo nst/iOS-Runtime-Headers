@@ -3,7 +3,7 @@
  */
 
 @interface GKGameRecord : GKGame {
-    GKPlayer *_player;
+    GKPlayer * _player;
 }
 
 @property (nonatomic, readonly) unsigned int achievementPoints;

@@ -3,12 +3,12 @@
  */
 
 @interface OABReaderState : NSObject {
-    ESDContainer *mBstoreContainerHolder;
-    Class mClient;
-    <OADColorPalette> *mColorPalette;
-    NSMutableDictionary *mEshContentIdMap;
-    NSMutableArray *mGroupStack;
-    NSMutableDictionary *mShapeIdMap;
+    ESDContainer * mBstoreContainerHolder;
+    Class  mClient;
+    <OADColorPalette> * mColorPalette;
+    NSMutableDictionary * mEshContentIdMap;
+    NSMutableArray * mGroupStack;
+    NSMutableDictionary * mShapeIdMap;
 }
 
 @property (nonatomic, retain) ESDContainer *bstoreContainerHolder;

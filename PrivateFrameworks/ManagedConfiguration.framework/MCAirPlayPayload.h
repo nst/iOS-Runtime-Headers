@@ -3,9 +3,9 @@
  */
 
 @interface MCAirPlayPayload : MCPayload {
-    NSArray *_destinationsWithPasswords;
-    NSArray *_titlesAndDescriptions;
-    NSArray *_whitelistDestinations;
+    NSArray * _destinationsWithPasswords;
+    NSArray * _titlesAndDescriptions;
+    NSArray * _whitelistDestinations;
 }
 
 @property (nonatomic, retain) NSArray *destinationsWithPasswords;

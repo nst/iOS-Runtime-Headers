@@ -3,12 +3,12 @@
  */
 
 @interface OCFontMetadata : NSObject {
-    NSArray *_altNames;
-    int _charSet;
-    int _genericFamily;
-    OCFontPanose1 *_panose1;
-    int _pitch;
-    OCFontSig *_sig;
+    NSArray * _altNames;
+    int  _charSet;
+    int  _genericFamily;
+    OCFontPanose1 * _panose1;
+    int  _pitch;
+    OCFontSig * _sig;
 }
 
 @property (nonatomic, readonly) NSArray *altNames;

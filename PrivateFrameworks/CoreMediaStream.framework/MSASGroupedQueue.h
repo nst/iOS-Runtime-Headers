@@ -3,16 +3,16 @@
  */
 
 @interface MSASGroupedQueue : NSObject {
-    MSTimerGate *_idleTimerGate;
-    BOOL _isAssertingBusyAssertion;
-    BOOL _isShuttingDown;
-    int _maxGroupedCallbackEventBatchCount;
-    double _maxGroupedCallbackEventIdleInterval;
-    double _maxGroupedCallbackEventStaleness;
-    NSObject<OS_dispatch_queue> *_memberQueue;
-    MSASServerSideModel *_model;
-    MSTimerGate *_stalenessTimerGate;
-    NSObject<OS_dispatch_queue> *_workQueue;
+    MSTimerGate * _idleTimerGate;
+    BOOL  _isAssertingBusyAssertion;
+    BOOL  _isShuttingDown;
+    int  _maxGroupedCallbackEventBatchCount;
+    double  _maxGroupedCallbackEventIdleInterval;
+    double  _maxGroupedCallbackEventStaleness;
+    NSObject<OS_dispatch_queue> * _memberQueue;
+    MSASServerSideModel * _model;
+    MSTimerGate * _stalenessTimerGate;
+    NSObject<OS_dispatch_queue> * _workQueue;
 }
 
 @property (nonatomic, retain) MSTimerGate *idleTimerGate;

@@ -3,11 +3,11 @@
  */
 
 @interface DAResolveRecipientsRequest : NSObject {
-    NSArray *_emailAddresses;
-    NSDate *_endTime;
-    BOOL _retrieveAvailablilty;
-    BOOL _retrieveCertificates;
-    NSDate *_startTime;
+    NSArray * _emailAddresses;
+    NSDate * _endTime;
+    BOOL  _retrieveAvailablilty;
+    BOOL  _retrieveCertificates;
+    NSDate * _startTime;
 }
 
 @property (nonatomic, retain) NSArray *emailAddresses;

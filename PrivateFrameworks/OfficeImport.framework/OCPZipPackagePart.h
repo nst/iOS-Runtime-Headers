@@ -3,7 +3,7 @@
  */
 
 @interface OCPZipPackagePart : OCPPackagePart {
-    OISFUZipEntry *mEntry;
+    OISFUZipEntry * mEntry;
 }
 
 @property (nonatomic, readonly) OISFUZipEntry *zipEntry;

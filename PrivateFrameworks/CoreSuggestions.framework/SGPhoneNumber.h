@@ -3,7 +3,7 @@
  */
 
 @interface SGPhoneNumber : SGLabeledObject {
-    NSString *_phoneNumber;
+    NSString * _phoneNumber;
 }
 
 @property (nonatomic, readonly) NSString *phoneNumber;

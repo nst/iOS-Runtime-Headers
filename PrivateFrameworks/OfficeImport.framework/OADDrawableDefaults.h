@@ -3,9 +3,9 @@
  */
 
 @interface OADDrawableDefaults : NSObject {
-    OADDrawableCategoryDefaults *mLineDefaults;
-    OADDrawableCategoryDefaults *mShapeDefaults;
-    OADDrawableCategoryDefaults *mTextDefaults;
+    OADDrawableCategoryDefaults * mLineDefaults;
+    OADDrawableCategoryDefaults * mShapeDefaults;
+    OADDrawableCategoryDefaults * mTextDefaults;
 }
 
 @property (nonatomic, retain) OADDrawableCategoryDefaults *lineDefaults;

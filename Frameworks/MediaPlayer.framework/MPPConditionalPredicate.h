@@ -3,9 +3,9 @@
  */
 
 @interface MPPConditionalPredicate : PBCodable <NSCopying> {
-    MPPMediaPredicate *_conditionalPredicate;
-    MPPMediaPredicate *_elsePredicate;
-    MPPMediaPredicate *_thenPredicate;
+    MPPMediaPredicate * _conditionalPredicate;
+    MPPMediaPredicate * _elsePredicate;
+    MPPMediaPredicate * _thenPredicate;
 }
 
 @property (nonatomic, retain) MPPMediaPredicate *conditionalPredicate;

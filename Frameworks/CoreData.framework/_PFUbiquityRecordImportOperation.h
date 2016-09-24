@@ -3,25 +3,25 @@
  */
 
 @interface _PFUbiquityRecordImportOperation : PFUbiquityImportOperation <NSManagedObjectContextFaultingDelegate> {
-    NSMutableSet *_deletedObjectIDs;
-    PFUbiquitySwitchboardEntry *_entry;
-    PFUbiquityImportContext *_importContext;
-    int _inMemorySequenceNumber;
-    PFUbiquityKnowledgeVector *_initialStoreKnowledgeVector;
-    NSMutableSet *_insertedObjectIDs;
-    BOOL _lockedExistingCoord;
-    PFUbiquityKnowledgeVector *_logScore;
-    NSManagedObjectContext *_moc;
-    NSError *_operationError;
-    NSPersistentStoreCoordinator *_psc;
-    NSMutableDictionary *_relationshipsToObjectIDsToCheck;
-    NSMutableDictionary *_resolvedConflicts;
-    BOOL _success;
-    BOOL _transactionDidRollback;
-    PFUbiquityTransactionLog *_transactionLog;
-    NSMutableSet *_updatedObjectIDs;
-    PFUbiquityKnowledgeVector *_updatedStoreKnowledgeVector;
-    BOOL _wroteKV;
+    NSMutableSet * _deletedObjectIDs;
+    PFUbiquitySwitchboardEntry * _entry;
+    PFUbiquityImportContext * _importContext;
+    int  _inMemorySequenceNumber;
+    PFUbiquityKnowledgeVector * _initialStoreKnowledgeVector;
+    NSMutableSet * _insertedObjectIDs;
+    BOOL  _lockedExistingCoord;
+    PFUbiquityKnowledgeVector * _logScore;
+    NSManagedObjectContext * _moc;
+    NSError * _operationError;
+    NSPersistentStoreCoordinator * _psc;
+    NSMutableDictionary * _relationshipsToObjectIDsToCheck;
+    NSMutableDictionary * _resolvedConflicts;
+    BOOL  _success;
+    BOOL  _transactionDidRollback;
+    PFUbiquityTransactionLog * _transactionLog;
+    NSMutableSet * _updatedObjectIDs;
+    PFUbiquityKnowledgeVector * _updatedStoreKnowledgeVector;
+    BOOL  _wroteKV;
 }
 
 @property (readonly, copy) NSString *debugDescription;

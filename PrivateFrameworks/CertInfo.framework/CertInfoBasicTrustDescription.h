@@ -3,8 +3,8 @@
  */
 
 @interface CertInfoBasicTrustDescription : NSObject <CertInfoTrustDescription> {
-    int _action;
-    struct __SecTrust { } *_trust;
+    int  _action;
+    struct __SecTrust { } * _trust;
 }
 
 @property (readonly, copy) NSString *debugDescription;

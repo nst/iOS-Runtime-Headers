@@ -3,7 +3,7 @@
  */
 
 @interface NSPersonNameComponentsFormatter : NSFormatter <NSCopying, NSObservable, NSObserver, NSSecureCoding> {
-    id _private;
+    id  _private;
 }
 
 @property BOOL _forceFamilyNameFirst;
@@ -19,14 +19,19 @@
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
++ (int)__abbreviatedNameFormatForPersonNameComponents:(id)arg1;
++ (int)__abbreviatedNameFormatForString:(id)arg1;
++ (id)__characterSetWithPattern:(id)arg1;
 + (BOOL)__contents:(id)arg1 exclusivelyInCharacterSet:(struct USet { }*)arg2;
 + (id)__currentLocale;
 + (id)__familyNameFirstOrdering;
 + (struct USet { }*)__getCharacterSetWithPattern:(id)arg1;
 + (id)__givenNameFirstOrdering;
-+ (id)__inferredDelimiterBetweenStringOne:(id)arg1 andStringTwo:(id)arg2 isPhonetic:(BOOL)arg3;
 + (unsigned int)__inferredScriptIndexForComponents:(id)arg1;
++ (unsigned int)__inferredScriptIndexForComponents:(id)arg1 ignoreUndeterminedComponents:(BOOL)arg2;
 + (unsigned int)__inferredScriptIndexFromString:(id)arg1;
++ (SEL)__initialsCreatorForScript:(unsigned int)arg1;
++ (id)__initialsForString:(id)arg1;
 + (id)__localizedNameDefaults;
 + (id)__longestComponentFromComponents:(id)arg1;
 + (id)__naiveDelimiterForCombinedNameString:(id)arg1;
@@ -37,12 +42,14 @@
 + (BOOL)__shortStyle:(int)arg1 isRestrictedForLocale:(id)arg2;
 + (BOOL)__shortStyle:(int)arg1 isRestrictedForScript:(unsigned int)arg2;
 + (BOOL)__shortStyleRestrictionExistsForComponents:(id)arg1 shortStyle:(int)arg2;
++ (BOOL)__shouldReturnEmptyString;
 + (id)__stringValueForShortStyle:(int)arg1;
 + (id)__stringValueForStyle:(int)arg1;
 + (BOOL)__style:(int)arg1 isRestrictedForLocale:(id)arg2;
 + (BOOL)__style:(int)arg1 isRestrictedForScript:(unsigned int)arg2;
 + (id)__supportedNameDefaultsFromLocale:(id)arg1;
 + (id)__supportedScriptDefaultsFromScriptName:(id)arg1;
++ (id)__thaiConsonantSet;
 + (id)_cjkLanguagesSet;
 + (id)_cjkLocaleIdentifiers;
 + (BOOL)_currentLocaleIsCJK;
@@ -59,15 +66,19 @@
 + (BOOL)_shortNameIsEnabled;
 + (BOOL)_shouldPreferNicknames;
 + (id)_styleFormatterForStyle:(int)arg1 masterFormatter:(id)arg2;
++ (id /* block */)arabicInitialsCreator;
 + (void)forEachExistingComponentWithComponents:(id)arg1 performBlock:(id /* block */)arg2;
 + (BOOL)isKatakana:(id)arg1;
 + (id)localizedStringFromPersonNameComponents:(id)arg1 style:(int)arg2 options:(unsigned int)arg3;
 + (BOOL)supportsSecureCoding;
++ (id /* block */)thaiInitialsCreator;
++ (id /* block */)tibetanInitialsCreator;
++ (id /* block */)westernInitialsCreator;
 
 - (int)__computedNameOrderForComponents:(id)arg1;
 - (int)__computedShortNameFormat;
 - (int)__localizedNameOrderUsingNativeOrdering:(BOOL)arg1;
-- (BOOL)__localizedRestrictionExistsForComponents:(id)arg1;
+- (BOOL)__localizedRestrictionExistsForComponents:(id)arg1 ignoreUndeterminedComponents:(BOOL)arg2;
 - (BOOL)__localizedRestrictionExistsForShortStyle:(int)arg1;
 - (BOOL)__localizedRestrictionExistsForStyle:(int)arg1;
 - (int)__localizedShortNameFormat;
@@ -86,6 +97,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToFormatter:(id)arg1;
 - (BOOL)isPhonetic;
+- (id)personNameComponentsFromString:(id)arg1;
 - (void)receiveObservedValue:(id)arg1;
 - (void)setPhonetic:(BOOL)arg1;
 - (void)setStyle:(int)arg1;
@@ -93,6 +105,7 @@
 - (void)set_forceGivenNameFirst:(BOOL)arg1;
 - (void)set_ignoresFallbacks:(BOOL)arg1;
 - (void)set_locale:(id)arg1;
+- (id)stringForObjectValue:(id)arg1;
 - (id)stringFromPersonNameComponents:(id)arg1;
 - (int)style;
 

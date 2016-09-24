@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/UITriggerVC.framework/UITriggerVC
  */
 
-@interface UITriggerTableViewController : UITableViewController <CSLUIUITriggerIDSProtocolResponse, IDSServiceDelegate, UIAlertViewDelegate, UITableViewDataSource, UITableViewDelegate> {
-    NSMutableArray *_UIProviders;
-    UIAlertView *_alertView;
-    IDSService *_idsService;
+@interface UITriggerTableViewController : UITableViewController <CSLUIUITriggerIDSProtocolResponse, IDSServiceDelegate, UITableViewDataSource, UITableViewDelegate> {
+    NSMutableArray * _UIProviders;
+    IDSService * _idsService;
 }
 
 @property (nonatomic, retain) NSMutableArray *UIProviders;
-@property (nonatomic, retain) UIAlertView *alertView;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
@@ -18,8 +16,6 @@
 
 - (void).cxx_destruct;
 - (id)UIProviders;
-- (id)alertView;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)dealloc;
 - (void)didReceiveMemoryWarning;
 - (void)idsRequestUITriggerResponse:(id)arg1;
@@ -29,7 +25,6 @@
 - (BOOL)requestPluginList;
 - (id)sendProtobufRequest:(id)arg1 type:(unsigned short)arg2 priority:(int)arg3 expectsResponse:(BOOL)arg4 errorHandler:(id /* block */)arg5 withTimeout:(double)arg6;
 - (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(BOOL)arg4 error:(id)arg5;
-- (void)setAlertView:(id)arg1;
 - (void)setIdsService:(id)arg1;
 - (void)setUIProviders:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

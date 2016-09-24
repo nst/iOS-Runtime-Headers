@@ -3,14 +3,14 @@
  */
 
 @interface AWDWRMLinkPrefInit : PBCodable <NSCopying> {
-    unsigned int _countCellular;
-    unsigned int _countWifi;
+    unsigned int  _countCellular;
+    unsigned int  _countWifi;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int countCellular : 1; 
         unsigned int countWifi : 1; 
-    } _has;
-    unsigned long long _timestamp;
+    }  _has;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) unsigned int countCellular;

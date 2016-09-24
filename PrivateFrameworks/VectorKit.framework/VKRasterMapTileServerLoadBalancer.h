@@ -3,9 +3,9 @@
  */
 
 @interface VKRasterMapTileServerLoadBalancer : NSObject {
-    NSArray *_snapshotServers;
-    unsigned int _superTileSize;
-    NSArray *_tileServers;
+    NSArray * _snapshotServers;
+    unsigned int  _superTileSize;
+    NSArray * _tileServers;
 }
 
 - (void)dealloc;

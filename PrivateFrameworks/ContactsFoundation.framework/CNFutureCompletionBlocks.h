@@ -3,8 +3,8 @@
  */
 
 @interface CNFutureCompletionBlocks : NSObject {
-    NSMutableArray *_completionBlocks;
-    BOOL _shouldCallImmediately;
+    NSMutableArray * _completionBlocks;
+    BOOL  _shouldCallImmediately;
 }
 
 - (void)addCompletionBlock:(id /* block */)arg1 orCallWithFutureResult:(id)arg2;

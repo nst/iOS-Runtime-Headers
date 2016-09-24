@@ -3,7 +3,7 @@
  */
 
 @interface CAMFlashCommand : CAMCaptureCommand <NSCoding, NSCopying> {
-    int __flashMode;
+    int  __flashMode;
 }
 
 @property (nonatomic, readonly) int _flashMode;

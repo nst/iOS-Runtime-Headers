@@ -3,7 +3,7 @@
  */
 
 @interface _HKCorrelationFilter : _HKFilter {
-    unsigned int _operatorType;
+    unsigned int  _operatorType;
 }
 
 @property (nonatomic, readonly) unsigned int operatorType;
@@ -23,6 +23,6 @@
 
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 
-- (id)predicateWithHealthDaemon:(id)arg1;
+- (id)predicateWithProfile:(id)arg1;
 
 @end

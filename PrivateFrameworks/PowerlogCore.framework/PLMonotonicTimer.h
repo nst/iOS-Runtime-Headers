@@ -3,13 +3,12 @@
  */
 
 @interface PLMonotonicTimer : NSObject {
-    id /* block */ _block;
-    NSMutableSet *_canceledFireDates;
-    double _interval;
-    NSDate *_monotonicFireDate;
-    NSObject<OS_dispatch_queue> *_queue;
-    PLEntryNotificationOperatorComposition *_wakeEntryNotification;
-    NSObject<OS_dispatch_queue> *_workQueue;
+    id /* block */  _block;
+    NSMutableSet * _canceledFireDates;
+    double  _interval;
+    NSDate * _monotonicFireDate;
+    NSObject<OS_dispatch_queue> * _queue;
+    PLEntryNotificationOperatorComposition * _wakeEntryNotification;
 }
 
 @property (copy) id /* block */ block;
@@ -18,7 +17,6 @@
 @property (nonatomic, retain) NSDate *monotonicFireDate;
 @property (retain) NSObject<OS_dispatch_queue> *queue;
 @property (retain) PLEntryNotificationOperatorComposition *wakeEntryNotification;
-@property (retain) NSObject<OS_dispatch_queue> *workQueue;
 
 + (BOOL)debugInstance;
 + (id)debugScheduledTimerWithMonotonicFireDate:(id)arg1 withInterval:(double)arg2 withQueue:(id)arg3 withBlock:(id /* block */)arg4;
@@ -45,9 +43,7 @@
 - (void)setMonotonicFireDate:(id)arg1;
 - (void)setQueue:(id)arg1;
 - (void)setWakeEntryNotification:(id)arg1;
-- (void)setWorkQueue:(id)arg1;
 - (void)timerFiredForMonotonicFireDate:(id)arg1;
 - (id)wakeEntryNotification;
-- (id)workQueue;
 
 @end

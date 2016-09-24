@@ -3,12 +3,12 @@
  */
 
 @interface CMKLocationController : NSObject <CLLocationManagerDelegate> {
-    NSMutableArray *__assetsWaitingForLocation;
-    CLLocationManager *__locationManager;
-    BOOL __monitoringLocation;
-    CLLocation *_currentLocation;
-    BOOL _enabled;
-    BOOL _headingEnabled;
+    NSMutableArray * __assetsWaitingForLocation;
+    CLLocationManager * __locationManager;
+    BOOL  __monitoringLocation;
+    CLLocation * _currentLocation;
+    BOOL  _enabled;
+    BOOL  _headingEnabled;
 }
 
 @property (nonatomic, readonly) NSMutableArray *_assetsWaitingForLocation;

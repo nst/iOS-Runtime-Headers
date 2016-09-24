@@ -3,10 +3,9 @@
  */
 
 @interface WebDownload : NSURLDownload {
-    WebDownloadInternal *_webInternal;
+    WebDownloadInternal * _webInternal;
 }
 
-- (id)_initWithLoadingCFURLConnection:(struct _CFURLConnection { }*)arg1 request:(struct _CFURLRequest { }*)arg2 response:(struct _CFURLResponse { }*)arg3 delegate:(id)arg4 proxy:(id)arg5;
 - (id)_initWithLoadingConnection:(id)arg1 request:(id)arg2 response:(id)arg3 delegate:(id)arg4 proxy:(id)arg5;
 - (id)_initWithRequest:(id)arg1 delegate:(id)arg2 directory:(id)arg3;
 - (void)_setRealDelegate:(id)arg1;

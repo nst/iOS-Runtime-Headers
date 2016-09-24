@@ -13,7 +13,6 @@
 - (BOOL)allowsWeakReference;
 - (void)close;
 - (id)delegate;
-- (void)finalize;
 - (BOOL)getBuffer:(char **)arg1 length:(unsigned int*)arg2;
 - (BOOL)hasBytesAvailable;
 - (unsigned int)hash;

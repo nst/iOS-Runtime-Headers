@@ -3,7 +3,7 @@
  */
 
 @interface AVRunLoopCondition : NSCondition {
-    NSMutableArray *_runLoopStateList;
+    NSMutableArray * _runLoopStateList;
 }
 
 - (void)_signalRunLoopWithState:(id)arg1;

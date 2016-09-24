@@ -3,7 +3,8 @@
  */
 
 @interface AAiCloudTermsAgreeRequest : AARequest {
-    ACAccount *_account;
+    ACAccount * _account;
+    ACAccountStore * _accountStore;
 }
 
 @property (nonatomic, retain) ACAccount *account;

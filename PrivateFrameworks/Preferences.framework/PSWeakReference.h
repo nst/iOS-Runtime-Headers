@@ -3,7 +3,7 @@
  */
 
 @interface PSWeakReference : NSObject <NSCopying> {
-    id _location;
+    id  _location;
 }
 
 + (id)weakReferenceWithObject:(id)arg1;

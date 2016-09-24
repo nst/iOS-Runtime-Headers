@@ -3,7 +3,7 @@
  */
 
 @interface TSCHPersistentChartMediator : TSPObject <TSCHMediatorProvider, TSCHNotifyOnModify> {
-    TSCHChartMediator *mMediator;
+    TSCHChartMediator * mMediator;
 }
 
 @property (readonly, copy) NSString *debugDescription;

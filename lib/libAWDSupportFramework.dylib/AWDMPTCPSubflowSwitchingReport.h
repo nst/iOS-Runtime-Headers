@@ -6,11 +6,11 @@
     struct { 
         unsigned int timestamp : 1; 
         unsigned int switchCount : 1; 
-    } _has;
-    int _switchCount;
-    NSString *_switchFromInterfaceName;
-    NSString *_switchToInterfaceName;
-    unsigned long long _timestamp;
+    }  _has;
+    int  _switchCount;
+    NSString * _switchFromInterfaceName;
+    NSString * _switchToInterfaceName;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) BOOL hasSwitchCount;

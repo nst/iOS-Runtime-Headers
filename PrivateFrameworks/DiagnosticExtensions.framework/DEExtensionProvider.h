@@ -3,9 +3,9 @@
  */
 
 @interface DEExtensionProvider : NSObject <NSExtensionRequestHandling> {
-    BOOL _allowUserAttachmentSelection;
-    BOOL _canGenerateNewAttachment;
-    NSString *_loggingConsent;
+    BOOL  _allowUserAttachmentSelection;
+    BOOL  _canGenerateNewAttachment;
+    NSString * _loggingConsent;
 }
 
 @property (nonatomic) BOOL allowUserAttachmentSelection;

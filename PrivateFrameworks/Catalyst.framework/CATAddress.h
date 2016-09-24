@@ -3,8 +3,8 @@
  */
 
 @interface CATAddress : NSObject {
-    NSString *_address;
-    NSData *_data;
+    NSString * _address;
+    NSData * _data;
 }
 
 @property (nonatomic, readonly) NSString *address;
@@ -18,6 +18,7 @@
 - (void).cxx_destruct;
 - (id)address;
 - (id)data;
+- (id)description;
 - (unsigned int)hash;
 - (id)init;
 - (id)initWithData:(id)arg1;

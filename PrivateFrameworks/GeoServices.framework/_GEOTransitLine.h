@@ -3,8 +3,8 @@
  */
 
 @interface _GEOTransitLine : NSObject <GEOTransitLine> {
-    GEOPBTransitLine *_line;
-    <GEOTransitSystem> *_system;
+    GEOPBTransitLine * _line;
+    <GEOTransitSystem> * _system;
 }
 
 @property (nonatomic, readonly) <GEOTransitArtworkDataSource> *artwork;
@@ -16,7 +16,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) NSString *lineColorString;
 @property (nonatomic, readonly) <GEOTransitArtworkDataSource> *modeArtwork;
-@property (nonatomic, readonly) unsigned long long muid;
+@property (nonatomic, readonly) unsigned int muid;
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) NSArray *operatingHours;
 @property (nonatomic, readonly) BOOL showVehicleNumber;
@@ -32,7 +32,7 @@
 - (id)initWithLine:(id)arg1 system:(id)arg2;
 - (id)lineColorString;
 - (id)modeArtwork;
-- (unsigned long long)muid;
+- (unsigned int)muid;
 - (id)name;
 - (id)operatingHours;
 - (BOOL)showVehicleNumber;

@@ -3,10 +3,10 @@
  */
 
 @interface UIPrinterTableViewCell : UITableViewCell <UIPrinterAccessoryViewDelegate> {
-    id _delegate;
-    UIGestureRecognizer *_expandedAccessoryTapRecognizer;
-    PKPrinter *_printer;
-    UIPrinterAccessoryView *_printerAccessoryView;
+    id  _delegate;
+    UIGestureRecognizer * _expandedAccessoryTapRecognizer;
+    PKPrinter * _printer;
+    UIPrinterAccessoryView * _printerAccessoryView;
 }
 
 @property (nonatomic) BOOL checked;

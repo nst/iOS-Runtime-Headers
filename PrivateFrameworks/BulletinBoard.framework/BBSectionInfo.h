@@ -3,31 +3,34 @@
  */
 
 @interface BBSectionInfo : NSObject <NSCopying, NSSecureCoding> {
-    NSArray *_dataProviderIDs;
-    NSString *_displayName;
-    BOOL _displaysCriticalBulletins;
-    NSString *_factorySectionID;
-    NSArray *_filters;
-    BOOL _hideWeeApp;
-    BBSectionIcon *_icon;
-    BBSectionInfoSettings *_managedSectionInfoSettings;
-    BBSectionInfo *_parentSection;
-    NSString *_pathToWeeAppPluginBundle;
-    int _sectionCategory;
-    NSString *_sectionID;
-    BBSectionInfoSettings *_sectionInfoSettings;
-    int _sectionType;
-    NSString *_subsectionID;
-    int _subsectionPriority;
-    NSArray *_subsections;
-    BOOL _suppressFromSettings;
-    unsigned int _suppressedSettings;
-    unsigned int _version;
+    NSString * _appName;
+    NSArray * _dataProviderIDs;
+    NSString * _displayName;
+    BOOL  _displaysCriticalBulletins;
+    NSString * _factorySectionID;
+    NSArray * _filters;
+    BOOL  _hideWeeApp;
+    BBSectionIcon * _icon;
+    BBSectionInfoSettings * _managedSectionInfoSettings;
+    BBSectionInfo * _parentSection;
+    NSString * _pathToWeeAppPluginBundle;
+    int  _sectionCategory;
+    NSString * _sectionID;
+    BBSectionInfoSettings * _sectionInfoSettings;
+    int  _sectionType;
+    NSString * _subsectionID;
+    int  _subsectionPriority;
+    NSArray * _subsections;
+    BOOL  _suppressFromSettings;
+    unsigned int  _suppressedSettings;
+    unsigned int  _version;
 }
 
 @property (nonatomic) unsigned int alertType;
 @property (nonatomic) BOOL allowsNotifications;
+@property (nonatomic, copy) NSString *appName;
 @property (nonatomic) unsigned int bulletinCount;
+@property (nonatomic) int carPlaySetting;
 @property (nonatomic, copy) NSArray *dataProviderIDs;
 @property (nonatomic, copy) NSString *displayName;
 @property (nonatomic) BOOL displaysCriticalBulletins;
@@ -66,6 +69,7 @@
 + (id)defaultSectionInfoForType:(int)arg1;
 + (BOOL)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (void)_addSubsection:(id)arg1;
 - (void)_associateDataProviderSectionInfo:(id)arg1;
 - (void)_configureWithDefaultsForSectionType:(int)arg1;
@@ -74,11 +78,14 @@
 - (id)_subsectionForID:(id)arg1;
 - (unsigned int)alertType;
 - (BOOL)allowsNotifications;
+- (id)appName;
+- (id)awakeAfterUsingCoder:(id)arg1;
 - (unsigned int)bulletinCount;
+- (int)carPlaySetting;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dataProviderIDs;
-- (void)dealloc;
 - (id)description;
+- (int)disabledSettingForSetting:(int)arg1;
 - (id)displayName;
 - (BOOL)displaysCriticalBulletins;
 - (id)effectiveSectionInfo;
@@ -87,12 +94,14 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)factorySectionID;
 - (id)filters;
+- (unsigned int)hash;
 - (BOOL)hideWeeApp;
 - (id)icon;
 - (id)iconData;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDefaultsForSectionType:(int)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)managedSectionInfoSettings;
 - (unsigned int)notificationCenterLimit;
 - (id)parentSection;
@@ -101,13 +110,16 @@
 - (BOOL)queryAndUseManagedSettings;
 - (BOOL)queryAndUseManagedSettingsForSectionID:(id)arg1;
 - (id)readableSettings;
+- (id)replacementObjectForCoder:(id)arg1;
 - (int)sectionCategory;
 - (id)sectionID;
 - (id)sectionInfoSettings;
 - (int)sectionType;
 - (void)setAlertType:(unsigned int)arg1;
 - (void)setAllowsNotifications:(BOOL)arg1;
+- (void)setAppName:(id)arg1;
 - (void)setBulletinCount:(unsigned int)arg1;
+- (void)setCarPlaySetting:(int)arg1;
 - (void)setDataProviderIDs:(id)arg1;
 - (void)setDisplayName:(id)arg1;
 - (void)setDisplaysCriticalBulletins:(BOOL)arg1;
@@ -150,10 +162,11 @@
 - (unsigned int)version;
 - (id)writableSettings;
 
-// Image: /System/Library/PrivateFrameworks/UserNotification.framework/UserNotification
+// Image: /System/Library/PrivateFrameworks/UserNotificationsServer.framework/UserNotificationsServer
 
-- (unsigned int)un_effectiveNotificationTypes;
-- (BOOL)un_isEnabled;
-- (id)un_sectionInfoWithNotificationTypes:(unsigned int)arg1;
+- (BOOL)uns_isEnabled;
+- (int)uns_notificationSettingForBBSectionInfoSetting:(int)arg1;
+- (id)uns_notificationSettings;
+- (id)uns_sectionInfoWithAuthorizationOptions:(unsigned int)arg1;
 
 @end

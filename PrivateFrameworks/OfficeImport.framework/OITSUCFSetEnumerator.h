@@ -3,10 +3,10 @@
  */
 
 @interface OITSUCFSetEnumerator : NSObject <NSFastEnumeration> {
-    long mCount;
-    long mIndex;
-    void *mInlineObjects;
-    const void **mObjects;
+    long  mCount;
+    long  mIndex;
+    void * mInlineObjects;
+    const void ** mObjects;
 }
 
 - (id)allObjects;

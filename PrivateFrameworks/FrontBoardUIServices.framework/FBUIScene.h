@@ -3,22 +3,22 @@
  */
 
 @interface FBUIScene : NSObject <FBUISceneContentManager, FBUISceneIdentity, FBUISceneSurrogate> {
-    BOOL _activated;
-    FBSSceneClientSettings *_clientSettings;
-    UIView *_contentView;
-    BOOL _deactivating;
-    <FBUISceneDelegate> *_delegate;
-    FBUISceneIdentity *_identity;
-    BOOL _invalidated;
-    unsigned int _layerCount;
-    NSString *_name;
-    NSMutableArray *_pendingUpdateBlocks;
-    <FBUISceneClientProxy> *_sceneClient;
-    <FBUISceneHostProxy> *_sceneHost;
-    <FBUISceneUpdater> *_sceneUpdater;
-    FBSSceneSettings *_settings;
-    FBUISceneSpecification *_specification;
-    FBUISceneWorkspace *_workspace;
+    BOOL  _activated;
+    FBSSceneClientSettings * _clientSettings;
+    UIView * _contentView;
+    BOOL  _deactivating;
+    <FBUISceneDelegate> * _delegate;
+    FBUISceneIdentity * _identity;
+    BOOL  _invalidated;
+    unsigned int  _layerCount;
+    NSString * _name;
+    NSMutableArray * _pendingUpdateBlocks;
+    <FBUISceneClientProxy> * _sceneClient;
+    <FBUISceneHostProxy> * _sceneHost;
+    <FBUISceneUpdater> * _sceneUpdater;
+    FBSSceneSettings * _settings;
+    FBSSceneSpecification * _specification;
+    FBUISceneWorkspace * _workspace;
 }
 
 @property (getter=isActivated, nonatomic, readonly) BOOL activated;
@@ -36,10 +36,11 @@
 @property <FBUISceneHostProxy> *sceneHost;
 @property (nonatomic, readonly, copy) NSString *sceneIdentifier;
 @property (nonatomic, copy) FBSSceneSettings *settings;
-@property (nonatomic, readonly, copy) FBUISceneSpecification *specification;
+@property (nonatomic, readonly, copy) FBSSceneSpecification *specification;
 @property (readonly) Class superclass;
 @property (nonatomic) FBUISceneWorkspace *workspace;
 
+- (void).cxx_destruct;
 - (BOOL)_isReallyActive;
 - (void)_performPendingUpdates;
 - (void)_performSceneUpdate:(id /* block */)arg1;

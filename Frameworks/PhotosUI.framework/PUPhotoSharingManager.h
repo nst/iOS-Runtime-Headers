@@ -3,13 +3,13 @@
  */
 
 @interface PUPhotoSharingManager : NSObject <PLPublishingAgentDelegate> {
-    int _appSuspensionCount;
-    unsigned int _backgroundTaskIdentifier;
-    int _networkPromptCount;
-    NSMutableArray *_publishingAgents;
-    NSTimer *_publishingProgressTimer;
-    PLProgressView *_publishingProgressView;
-    int _videoRemakingCount;
+    int  _appSuspensionCount;
+    unsigned int  _backgroundTaskIdentifier;
+    int  _networkPromptCount;
+    NSMutableArray * _publishingAgents;
+    NSTimer * _publishingProgressTimer;
+    PLProgressView * _publishingProgressView;
+    int  _videoRemakingCount;
 }
 
 @property (nonatomic, readonly) PLProgressView *publishingProgressView;

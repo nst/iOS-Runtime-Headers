@@ -3,10 +3,10 @@
  */
 
 @interface _UIWebGeolocationChallengeData : NSObject {
-    <WebAllowDenyPolicyListener> *_listener;
-    NSURL *_requestingURL;
-    NSString *_token;
-    UIWindow *_window;
+    <WebAllowDenyPolicyListener> * _listener;
+    NSURL * _requestingURL;
+    NSString * _token;
+    UIWindow * _window;
 }
 
 @property (nonatomic, retain) <WebAllowDenyPolicyListener> *listener;

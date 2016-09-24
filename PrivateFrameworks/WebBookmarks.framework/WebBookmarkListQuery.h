@@ -3,27 +3,37 @@
  */
 
 @interface WebBookmarkListQuery : NSObject {
-    BOOL _customQuery;
-    unsigned int _folderID;
-    BOOL _includeHidden;
-    NSString *_query;
-    NSString *_queryWithOrderBy;
-    NSArray *_titleWordPrefixes;
-    NSString *_urlFilter;
+    BOOL  _customQuery;
+    int  _folderID;
+    BOOL  _includeHidden;
+    NSString * _orderBy;
+    NSString * _query;
+    NSString * _queryWithOrderBy;
+    NSArray * _titleWordPrefixes;
+    NSArray * _titleWordPrefixesForInMemoryFiltering;
+    NSString * _urlFilter;
 }
 
 @property (getter=isCustomQuery, nonatomic, readonly) BOOL customQuery;
-@property (nonatomic, readonly) unsigned int folderID;
+@property (nonatomic, readonly) int folderID;
 
 - (void).cxx_destruct;
+- (int)_childCountInDatabaseForBookmarkFolder:(int)arg1 collection:(id)arg2 skipCountingInDatabaseBookmarksThatAreDeletedInMemory:(BOOL)arg3;
+- (id)_filterBookmarks:(id)arg1;
+- (int)_inMemoryAddedChildrenCountForBookmarkFolder:(int)arg1 collection:(id)arg2 skipCountingBookmarksThatAreDeletedInMemory:(BOOL)arg3;
+- (int)_listQueryType;
 - (id)_normalizeUserTypedString:(id)arg1;
-- (id)_prefixesFromNormalizedString:(id)arg1;
+- (void)_preparePrefixesFromNormalizedString:(id)arg1;
+- (id)_sqliteNotInConditionForInMemoryDeletedBookmarksInFolder:(int)arg1 collection:(id)arg2;
+- (id)_whereClauseByAddingCondition:(id)arg1;
 - (id)bookmarksInCollection:(id)arg1 fromIndex:(unsigned int)arg2 toIndex:(unsigned int)arg3;
 - (int)countInCollection:(id)arg1;
-- (unsigned int)folderID;
+- (id)debugDescription;
+- (int)folderID;
 - (id)init;
+- (id)initWithBookmarksWhere:(id)arg1 folderID:(int)arg2 orderBy:(id)arg3 usingFilter:(id)arg4;
 - (id)initWithBookmarksWhere:(id)arg1 orderBy:(id)arg2 usingFilter:(id)arg3;
-- (id)initWithFolderID:(unsigned int)arg1 inCollection:(id)arg2 includeHidden:(BOOL)arg3 usingFilter:(id)arg4;
+- (id)initWithFolderID:(int)arg1 inCollection:(id)arg2 includeHidden:(BOOL)arg3 usingFilter:(id)arg4;
 - (BOOL)isCustomQuery;
 
 @end

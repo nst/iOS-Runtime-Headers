@@ -3,8 +3,8 @@
  */
 
 @interface TSWPPlaceholderSmartField : TSWPSmartField {
-    BOOL _localizable;
-    NSString *_scriptTag;
+    BOOL  _localizable;
+    NSString * _scriptTag;
 }
 
 @property (nonatomic) BOOL isLocalizable;

@@ -3,17 +3,17 @@
  */
 
 @interface RCSelectionTouchTrackingInfo : NSObject {
-    float _lastLocation;
-    int _selectionAffinity;
-    int _selectionBarType;
-    UITouch *_touch;
-    float _trackingOffset;
+    double  _lastLocation;
+    int  _selectionAffinity;
+    int  _selectionBarType;
+    UITouch * _touch;
+    double  _trackingOffset;
 }
 
 @property (nonatomic) int selectionAffinity;
 @property (nonatomic) int selectionBarType;
 @property (nonatomic) UITouch *touch;
-@property (nonatomic) float trackingOffset;
+@property (nonatomic) double trackingOffset;
 
 - (void).cxx_destruct;
 - (id)description;

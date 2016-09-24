@@ -3,13 +3,13 @@
  */
 
 @interface ATStoreAssetLink : NSObject <ATAssetLink, SSDownloadHandlerDelegate, SSDownloadManagerObserver> {
-    NSMutableDictionary *_assetsByStoreID;
-    NSObject<OS_dispatch_queue> *_callbackQueue;
-    <ATAssetLinkDelegate> *_delegate;
-    SSDownloadManager *_downloadManager;
-    NSMapTable *_downloadsByAsset;
-    BOOL _open;
-    NSObject<OS_dispatch_queue> *_queue;
+    NSMutableDictionary * _assetsByStoreID;
+    NSObject<OS_dispatch_queue> * _callbackQueue;
+    <ATAssetLinkDelegate> * _delegate;
+    SSDownloadManager * _downloadManager;
+    NSMapTable * _downloadsByAsset;
+    BOOL  _open;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *callbackQueue;
@@ -28,6 +28,7 @@
 - (void)_enqueueAssets:(id)arg1;
 - (void)_finishAsset:(id)arg1 error:(id)arg2 retryable:(BOOL)arg3;
 - (id)_storeKindForAssetType:(id)arg1;
+- (void)_updateInstallProgress:(double)arg1 forAsset:(id)arg2;
 - (id)callbackQueue;
 - (BOOL)canEnqueueAsset:(id)arg1;
 - (void)cancelAssets:(id)arg1;

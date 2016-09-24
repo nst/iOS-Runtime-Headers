@@ -3,11 +3,11 @@
  */
 
 @interface PBBridgeProblemCodeGenerator : NSObject {
-    NSString *_advertisingName;
-    NSString *_buildVersion;
-    NSString *_errorCode;
-    NSMutableString *_eventString;
-    NSString *_payload;
+    NSString * _advertisingName;
+    NSString * _buildVersion;
+    NSString * _errorCode;
+    NSMutableString * _eventString;
+    NSString * _payload;
 }
 
 @property (nonatomic, copy) NSString *advertisingName;

@@ -3,7 +3,7 @@
  */
 
 @interface GQDTFormulaCell : GQDTCell {
-    GQDTCell *mResultCell;
+    GQDTCell * mResultCell;
 }
 
 - (void)dealloc;

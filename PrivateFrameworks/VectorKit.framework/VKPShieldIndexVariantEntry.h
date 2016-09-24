@@ -3,12 +3,12 @@
  */
 
 @interface VKPShieldIndexVariantEntry : PBCodable <NSCopying> {
-    NSMutableArray *_entries;
+    NSMutableArray * _entries;
     struct { 
         unsigned int variantType : 1; 
-    } _has;
-    NSMutableArray *_textEntries;
-    int _variantType;
+    }  _has;
+    NSMutableArray * _textEntries;
+    int  _variantType;
 }
 
 @property (nonatomic, retain) NSMutableArray *entries;

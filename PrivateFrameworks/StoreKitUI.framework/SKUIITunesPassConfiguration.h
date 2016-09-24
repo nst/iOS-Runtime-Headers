@@ -3,18 +3,18 @@
  */
 
 @interface SKUIITunesPassConfiguration : NSObject {
-    NSString *_dialogLearnMoreButton;
-    NSString *_dialogMessage;
-    NSString *_dialogNotNowButton;
-    NSString *_dialogTitle;
-    NSString *_learnMoreAddPassButtonTitle;
-    NSString *_learnMoreDoneButtonTitle;
-    NSString *_learnMoreExplanation;
-    NSString *_learnMoreTitle;
-    NSString *_learnMoreViewPassButtonTitle;
-    NSString *_lockupDescription;
-    NSString *_lockupLearnMoreLinkTitle;
-    NSString *_lockupTitle;
+    NSString * _dialogLearnMoreButton;
+    NSString * _dialogMessage;
+    NSString * _dialogNotNowButton;
+    NSString * _dialogTitle;
+    NSString * _learnMoreAddPassButtonTitle;
+    NSString * _learnMoreDoneButtonTitle;
+    NSString * _learnMoreExplanation;
+    NSString * _learnMoreTitle;
+    NSString * _learnMoreViewPassButtonTitle;
+    NSString * _lockupDescription;
+    NSString * _lockupLearnMoreLinkTitle;
+    NSString * _lockupTitle;
 }
 
 @property (nonatomic, readonly) NSString *learnMoreAddPassButtonTitle;

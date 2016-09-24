@@ -3,7 +3,7 @@
  */
 
 @interface MusicStoreBag : NSObject {
-    NSDictionary *_bagDictionary;
+    NSDictionary * _bagDictionary;
 }
 
 @property (nonatomic, readonly) NSDictionary *bagDictionary;
@@ -15,7 +15,7 @@
 @property (nonatomic, readonly) BOOL isIgnoringAddToPlaylistUserSetting;
 @property (nonatomic, readonly) unsigned int librarySharedPlaylistTrackCountLimit;
 @property (nonatomic, readonly) int minimumNumberOfDaysBetweenPresentingWelcomeScreen;
-@property (nonatomic, readonly) float popularityStarThreshold;
+@property (nonatomic, readonly) double popularityStarThreshold;
 @property (nonatomic, readonly) NSURL *prominentRadioStationInfoURL;
 @property (nonatomic, readonly) NSURL *radioGroupingURL;
 @property (nonatomic, readonly) NSString *storeFrontSuffix;

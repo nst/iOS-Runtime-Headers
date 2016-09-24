@@ -3,7 +3,7 @@
  */
 
 @interface WFTagFactory : NSObject {
-    NSMutableDictionary *sharedTags;
+    NSMutableDictionary * sharedTags;
 }
 
 + (id)defaultFactory;

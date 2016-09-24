@@ -3,16 +3,16 @@
  */
 
 @interface PDSlideBase : NSObject {
-    PDAnimation *mAnimation;
-    OADBackground *mBackground;
-    OADTableStyle *mDefaultTableStyle;
-    NSArray *mDrawables;
-    unsigned int mIsDoneWithContent;
-    unsigned int mIsHidden;
-    NSString *mName;
-    PDTransition *mPpt2011Transition;
-    unsigned long mSlideId;
-    PDTransition *mTransition;
+    PDAnimation * mAnimation;
+    OADBackground * mBackground;
+    OADTableStyle * mDefaultTableStyle;
+    NSArray * mDrawables;
+    unsigned int  mIsDoneWithContent;
+    unsigned int  mIsHidden;
+    NSString * mName;
+    PDTransition * mPpt2011Transition;
+    unsigned long  mSlideId;
+    PDTransition * mTransition;
 }
 
 @property (nonatomic) unsigned long slideId;

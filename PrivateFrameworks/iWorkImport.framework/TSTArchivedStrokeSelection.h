@@ -3,7 +3,7 @@
  */
 
 @interface TSTArchivedStrokeSelection : TSPObject <TSKArchivedSelection> {
-    TSTStrokeSelection *mStrokeSelection;
+    TSTStrokeSelection * mStrokeSelection;
 }
 
 @property (readonly, copy) NSString *debugDescription;

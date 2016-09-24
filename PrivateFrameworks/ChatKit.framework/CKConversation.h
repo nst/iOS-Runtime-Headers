@@ -3,30 +3,31 @@
  */
 
 @interface CKConversation : NSObject {
-    IMChat *_chat;
+    IMChat * _chat;
     struct { 
         unsigned int ignoringTypingUpdates : 1; 
-    } _conversationFlags;
-    NSAttributedString *_groupName;
-    unsigned int _limitToLoad;
-    NSString *_name;
-    BOOL _needsReload;
-    NSArray *_pendingHandles;
-    NSArray *_recipients;
+    }  _conversationFlags;
+    NSAttributedString * _groupName;
+    unsigned int  _limitToLoad;
+    NSString * _name;
+    BOOL  _needsReload;
+    NSArray * _pendingHandles;
+    NSString * _previewText;
+    NSArray * _recipients;
 }
 
 @property (nonatomic, readonly) BOOL buttonColor;
 @property (nonatomic, readonly) BOOL canLeave;
 @property (nonatomic, retain) IMChat *chat;
-@property (nonatomic, readonly, retain) NSString *deviceIndependentID;
+@property (nonatomic, readonly) NSString *deviceIndependentID;
 @property (nonatomic, readonly) unsigned int disclosureAtomStyle;
 @property (nonatomic) NSString *displayName;
 @property (nonatomic) BOOL forceMMS;
-@property (nonatomic, readonly, retain) NSArray *frequentReplies;
+@property (nonatomic, readonly) NSArray *frequentReplies;
 @property (getter=isGroupConversation, nonatomic, readonly) BOOL groupConversation;
-@property (nonatomic, readonly, retain) NSString *groupID;
-@property (nonatomic, readonly, retain) NSAttributedString *groupName;
-@property (nonatomic, readonly, retain) NSArray *handles;
+@property (nonatomic, readonly) NSString *groupID;
+@property (nonatomic, readonly) NSAttributedString *groupName;
+@property (nonatomic, readonly) NSArray *handles;
 @property (nonatomic, readonly) BOOL hasDisplayName;
 @property (nonatomic, readonly) BOOL hasUnreadMessages;
 @property (getter=isIgnoringTypingUpdates, nonatomic) BOOL ignoringTypingUpdates;
@@ -35,21 +36,23 @@
 @property (getter=hasLeft, nonatomic, readonly) BOOL left;
 @property (getter=hasLeftGroupChat, nonatomic, readonly) BOOL leftGroupChat;
 @property (nonatomic) unsigned int limitToLoad;
+@property (nonatomic, copy) NSString *localUserIsComposing;
 @property (nonatomic) BOOL localUserIsRecording;
 @property (nonatomic) BOOL localUserIsTyping;
 @property (getter=isMuted, nonatomic, readonly) BOOL muted;
-@property (nonatomic, readonly, retain) NSString *name;
+@property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) BOOL needsReload;
 @property (getter=isPending, nonatomic, readonly) BOOL pending;
 @property (nonatomic, readonly, copy) NSArray *pendingEntities;
 @property (nonatomic, copy) NSArray *pendingHandles;
-@property (nonatomic, readonly, retain) NSString *previewText;
-@property (nonatomic, readonly, retain) CKEntity *recipient;
+@property (nonatomic, copy) NSString *previewText;
+@property (nonatomic, readonly) CKEntity *recipient;
 @property (nonatomic, readonly) unsigned int recipientCount;
 @property (nonatomic, readonly, copy) NSArray *recipientStrings;
 @property (nonatomic, retain) NSArray *recipients;
-@property (nonatomic, readonly, retain) IMService *sendingService;
-@property (nonatomic, readonly, retain) NSString *serviceDisplayName;
+@property (getter=shouldSendReadReceipts, nonatomic, readonly) BOOL sendReadReceipts;
+@property (nonatomic, readonly) IMService *sendingService;
+@property (nonatomic, readonly) NSString *serviceDisplayName;
 @property (nonatomic, readonly) BOOL shouldShowCharacterCount;
 @property (nonatomic, readonly) BOOL supportsMutatingGroupMembers;
 @property (nonatomic, readonly) unsigned int unreadCount;
@@ -72,10 +75,11 @@
 + (double)_sms_maxTrimDurationForMediaType:(int)arg1;
 + (BOOL)_sms_mediaObjectPassesDurationCheck:(id)arg1;
 + (BOOL)_sms_mediaObjectPassesRestriction:(id)arg1;
++ (id)conversationForAddresses:(id)arg1 allowRetargeting:(BOOL)arg2 candidateConversation:(id)arg3;
 + (id)newPendingConversation;
 
-- (BOOL)_accountIsOperational:(id)arg1 forService:(id)arg2;
-- (BOOL)_chatHasValidAccount:(id)arg1 forService:(id)arg2;
+- (void).cxx_destruct;
+- (void)_chatItemsDidChange:(id)arg1;
 - (BOOL)_chatSupportsTypingIndicators;
 - (void)_clearTypingIndicatorsIfNecessary;
 - (void)_deleteAllMessagesAndRemoveGroup:(BOOL)arg1;
@@ -108,9 +112,11 @@
 - (void)deleteAllMessagesAndRemoveGroup;
 - (id)description;
 - (id)deviceIndependentID;
+- (void)didBecomeActive;
 - (unsigned int)disclosureAtomStyle;
 - (id)displayName;
 - (id)displayNameForMediaObjects:(id)arg1 subject:(id)arg2;
+- (id)ensureMessageWithGUIDIsLoaded:(id)arg1;
 - (void)enumerateMessagesWithOptions:(unsigned int)arg1 usingBlock:(id /* block */)arg2;
 - (BOOL)forceMMS;
 - (id)frequentReplies;
@@ -133,14 +139,17 @@
 - (BOOL)isToEmailAddress;
 - (unsigned int)limitToLoad;
 - (void)loadAllMessages;
+- (void)loadAllUnreadMessagesUpToMessageGUID:(id)arg1;
 - (void)loadFrequentReplies;
 - (void)loadMoreMessages;
+- (id)localUserIsComposing;
 - (BOOL)localUserIsRecording;
 - (BOOL)localUserIsTyping;
 - (void)markAllMessagesAsRead;
 - (double)maxTrimDurationForMediaType:(int)arg1;
 - (int)maximumRecipientsForSendingService;
 - (id)messageWithComposition:(id)arg1;
+- (id)messagesFromComposition:(id)arg1;
 - (id)name;
 - (BOOL)needsReload;
 - (BOOL)noAvailableServices;
@@ -169,21 +178,28 @@
 - (void)setIgnoringTypingUpdates:(BOOL)arg1;
 - (void)setLimitToLoad:(unsigned int)arg1;
 - (void)setLoadedMessageCount:(unsigned int)arg1;
+- (void)setLoadedMessageCount:(unsigned int)arg1 loadImmediately:(BOOL)arg2;
+- (void)setLocalUserIsComposing:(id)arg1;
+- (void)setLocalUserIsComposing:(id)arg1 typingIndicatorIcon:(id)arg2;
 - (void)setLocalUserIsRecording:(BOOL)arg1;
 - (void)setLocalUserIsTyping:(BOOL)arg1;
 - (void)setMutedUntilDate:(id)arg1;
 - (void)setNeedsReload;
 - (void)setPendingComposeRecipients:(id)arg1;
 - (void)setPendingHandles:(id)arg1;
+- (void)setPreviewText:(id)arg1;
 - (void)setRecipients:(id)arg1;
+- (void)setSendReadReceipts:(BOOL)arg1;
 - (void)setUnsentComposition:(id)arg1;
 - (id)shortDescription;
+- (BOOL)shouldSendReadReceipts;
 - (BOOL)shouldShowCharacterCount;
 - (BOOL)supportsMutatingGroupMembers;
 - (id)uniqueIdentifier;
 - (void)unmute;
 - (unsigned int)unreadCount;
 - (id)unsentComposition;
-- (void)updateUserActivityWithComposition:(id)arg1;
+- (void)updateUserActivity;
+- (void)willBecomeInactive;
 
 @end

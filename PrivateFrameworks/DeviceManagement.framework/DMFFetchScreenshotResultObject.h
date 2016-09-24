@@ -3,7 +3,7 @@
  */
 
 @interface DMFFetchScreenshotResultObject : CATTaskResultObject {
-    NSData *_screenshotData;
+    NSData * _screenshotData;
 }
 
 @property (nonatomic, retain) NSData *screenshotData;
@@ -11,7 +11,6 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)screenshotData;

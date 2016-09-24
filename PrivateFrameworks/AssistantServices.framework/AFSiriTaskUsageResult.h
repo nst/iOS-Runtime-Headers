@@ -3,7 +3,7 @@
  */
 
 @interface AFSiriTaskUsageResult : NSObject <NSSecureCoding> {
-    NSString *_originatingAceID;
+    NSString * _originatingAceID;
 }
 
 + (BOOL)supportsSecureCoding;

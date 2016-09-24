@@ -3,8 +3,8 @@
  */
 
 @interface NSInPredicateOperator : NSPredicateOperator {
-    unsigned int _flags;
-    NSSubstringPredicateOperator *_stringVersion;
+    unsigned int  _flags;
+    NSSubstringPredicateOperator * _stringVersion;
 }
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation

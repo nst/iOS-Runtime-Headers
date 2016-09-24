@@ -3,13 +3,13 @@
  */
 
 @interface BBBulletinRequestParameters : NSObject <NSCopying, NSSecureCoding> {
-    NSSet *_enabledSectionIDs;
-    int _maximumCount;
-    unsigned int _publisherDestination;
-    NSDate *_sinceDate;
+    NSSet * _enabledSectionIDs;
+    int  _maximumCount;
+    unsigned int  _publisherDestination;
+    NSDate * _sinceDate;
 }
 
-@property (nonatomic, readonly) NSSet *enabledSectionIDs;
+@property (nonatomic, retain) NSSet *enabledSectionIDs;
 @property (nonatomic, readonly) unsigned int maximumCount;
 @property (nonatomic, readonly) unsigned int publisherDestination;
 @property (nonatomic, retain) NSDate *sinceDate;
@@ -17,8 +17,8 @@
 + (id)requestParametersForDestination:(unsigned int)arg1 withSinceDate:(id)arg2 maximumCount:(int)arg3 enabledSectionIDs:(id)arg4;
 + (BOOL)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)enabledSectionIDs;
 - (void)encodeWithCoder:(id)arg1;
@@ -26,6 +26,7 @@
 - (id)initWithDestination:(unsigned int)arg1 sinceDate:(id)arg2 maximumCount:(int)arg3 enabledSectionIDs:(id)arg4;
 - (unsigned int)maximumCount;
 - (unsigned int)publisherDestination;
+- (void)setEnabledSectionIDs:(id)arg1;
 - (void)setSinceDate:(id)arg1;
 - (id)sinceDate;
 

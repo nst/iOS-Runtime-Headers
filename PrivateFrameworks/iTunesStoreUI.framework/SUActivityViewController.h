@@ -3,9 +3,9 @@
  */
 
 @interface SUActivityViewController : UIActivityViewController {
-    NSMutableDictionary *_customTitles;
-    NSArray *_suActivityItems;
-    int _transitionSafetyCount;
+    NSMutableDictionary * _customTitles;
+    NSArray * _suActivityItems;
+    int  _transitionSafetyCount;
 }
 
 - (void)_performActivity:(id)arg1;

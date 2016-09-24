@@ -3,7 +3,7 @@
  */
 
 @interface UIPrinterSetupDisplayPINViewController : UIViewController {
-    PKPrinter *_printer;
+    PKPrinter * _printer;
 }
 
 @property (nonatomic, retain) PKPrinter *printer;

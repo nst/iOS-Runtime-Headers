@@ -3,23 +3,25 @@
  */
 
 @interface DDOperation : NSOperation <NSCopying> {
-    id _container;
-    int _containerNotReadyTryCount;
-    NSDictionary *_context;
-    int _generationNumber;
-    BOOL _isCurrentlyUsingTheScanner;
-    BOOL _isDiscarded;
-    BOOL _needContinuation;
-    struct __DDScanQuery { } *_query;
-    NSArray *_results;
-    int _tryCount;
-    unsigned int _types;
+    id  _container;
+    int  _containerNotReadyTryCount;
+    NSDictionary * _context;
+    int  _generationNumber;
+    BOOL  _ignoreSignatures;
+    BOOL  _isCurrentlyUsingTheScanner;
+    BOOL  _isDiscarded;
+    BOOL  _needContinuation;
+    struct __DDScanQuery { } * _query;
+    NSArray * _results;
+    int  _tryCount;
+    unsigned int  _types;
 }
 
 @property (nonatomic, retain) id container;
 @property (nonatomic, retain) NSDictionary *context;
 @property (nonatomic) unsigned int detectionTypes;
 @property int generationNumber;
+@property (nonatomic) BOOL ignoreSignatures;
 @property BOOL isDiscarded;
 @property BOOL needContinuation;
 @property (nonatomic, retain) NSArray *results;
@@ -27,6 +29,7 @@
 
 + (BOOL)_needsFullScannerForDetectionTypes:(unsigned int)arg1;
 + (struct __DDScanner { }*)_sharedScannerForTypes:(unsigned int)arg1;
++ (id /* block */)shouldUrlifyBlockForTypes:(unsigned int)arg1;
 + (id /* block */)urlificationBlockForTypes:(unsigned int)arg1;
 
 - (void)_applyContainerRestrictionsToTypes;
@@ -48,6 +51,7 @@
 - (void)dispatchScanQueryCreationWithCompletionBlock:(id /* block */)arg1;
 - (BOOL)doURLificationOnDocument;
 - (int)generationNumber;
+- (BOOL)ignoreSignatures;
 - (id)initWithContainer:(id)arg1;
 - (BOOL)isDiscarded;
 - (void)main;
@@ -62,6 +66,7 @@
 - (void)setContext:(id)arg1;
 - (void)setDetectionTypes:(unsigned int)arg1;
 - (void)setGenerationNumber:(int)arg1;
+- (void)setIgnoreSignatures:(BOOL)arg1;
 - (void)setIsDiscarded:(BOOL)arg1;
 - (void)setNeedContinuation:(BOOL)arg1;
 - (void)setResults:(id)arg1;

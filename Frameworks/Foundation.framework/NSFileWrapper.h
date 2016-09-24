@@ -3,12 +3,12 @@
  */
 
 @interface NSFileWrapper : NSObject <NSCoding> {
-    id _contents;
-    NSDictionary *_fileAttributes;
-    NSString *_fileName;
-    id _icon;
-    id _moreVars;
-    NSString *_preferredFileName;
+    id  _contents;
+    NSDictionary * _fileAttributes;
+    NSString * _fileName;
+    id  _icon;
+    id  _moreVars;
+    NSString * _preferredFileName;
 }
 
 @property (getter=isDirectory, readonly) BOOL directory;

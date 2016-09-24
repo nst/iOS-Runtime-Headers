@@ -3,12 +3,12 @@
  */
 
 @interface HMUserListViewController : UIViewController <HMUserManagementRemoteHost> {
-    _UIAsyncInvocation *_cancelServiceInvocation;
-    id /* block */ _completionHandler;
-    HMHome *_home;
-    id /* block */ _loadHandler;
-    HMUserListRemoteViewController *_remoteViewController;
-    BOOL _shouldPresentWhenLoaded;
+    _UIAsyncInvocation * _cancelServiceInvocation;
+    id /* block */  _completionHandler;
+    HMHome * _home;
+    id /* block */  _loadHandler;
+    HMUserListRemoteViewController * _remoteViewController;
+    BOOL  _shouldPresentWhenLoaded;
 }
 
 @property (nonatomic, retain) _UIAsyncInvocation *cancelServiceInvocation;

@@ -7,14 +7,14 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) TSUColor *firstColor;
-@property (nonatomic) float gradientAngle;
-@property (nonatomic) float gradientAngleInDegrees;
+@property (nonatomic) double gradientAngle;
+@property (nonatomic) double gradientAngleInDegrees;
 @property (nonatomic, retain) NSArray *gradientStops;
 @property (nonatomic) unsigned int gradientType;
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL isAdvancedGradient;
 @property (nonatomic, retain) TSUColor *lastColor;
-@property (nonatomic) float opacity;
+@property (nonatomic) double opacity;
 @property (readonly) Class superclass;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -28,11 +28,14 @@
 - (void)reverseStopOrder;
 - (void)setColorOfStopAtIndex:(unsigned int)arg1 toColor:(id)arg2;
 - (void)setFirstColor:(id)arg1;
+- (void)setGradientAngle:(float)arg1;
 - (void)setGradientAngleInDegrees:(float)arg1;
 - (void)setGradientStops:(id)arg1;
 - (void)setGradientType:(unsigned int)arg1;
 - (void)setInflectionOfStopAtIndex:(unsigned int)arg1 toInflection:(float)arg2;
+- (void)setIsAdvancedGradient:(BOOL)arg1;
 - (void)setLastColor:(id)arg1;
+- (void)setOpacity:(float)arg1;
 - (void)swapStopAtIndex:(unsigned int)arg1 withStopAtIndex:(unsigned int)arg2;
 
 @end

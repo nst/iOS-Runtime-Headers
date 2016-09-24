@@ -3,10 +3,10 @@
  */
 
 @interface SKUINavigationBarMenusController : SKUINavigationBarSectionController <SKUIMenuPopoverDelegate> {
-    UIControl *_focusedMenuButton;
-    NSArray *_menuViewElements;
-    SKUINavigationBarMenusView *_menusView;
-    SKUIMenuPopoverController *_popoverController;
+    UIControl * _focusedMenuButton;
+    NSArray * _menuViewElements;
+    SKUINavigationBarMenusView * _menusView;
+    SKUIMenuPopoverController * _popoverController;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -21,7 +21,7 @@
 - (void)dealloc;
 - (id)initWithMenuViewElements:(id)arg1;
 - (void)menuPopover:(id)arg1 didSelectMenuItemAtIndex:(int)arg2;
-- (void)menuPopover:(id)arg1 willRepositionToRect:(inout struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 inView:(inout id*)arg3;
+- (void)menuPopover:(id)arg1 willRepositionToRect:(inout struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg2 inView:(inout id*)arg3;
 - (void)menuPopoverDidCancel:(id)arg1;
 - (void)reloadSectionViews;
 - (id)view;

@@ -3,8 +3,8 @@
  */
 
 @interface IMIDStatusController : NSObject {
-    NSRecursiveLock *_servicesLock;
-    NSMutableSet *_servicesRegistered;
+    NSRecursiveLock * _servicesLock;
+    NSMutableSet * _servicesRegistered;
 }
 
 @property (nonatomic, retain) NSRecursiveLock *_servicesLock;
@@ -12,6 +12,7 @@
 
 + (id)sharedInstance;
 
+- (void).cxx_destruct;
 - (int)__statusForID:(id)arg1 onService:(id)arg2 isCanonicalized:(BOOL)arg3;
 - (int)_idStatusForID:(id)arg1 onAccount:(id)arg2;
 - (int)_idStatusForID:(id)arg1 onService:(id)arg2;
@@ -20,7 +21,6 @@
 - (id)_servicesLock;
 - (id)_servicesRegistered;
 - (int)_statusForCanonicalizedID:(id)arg1 onService:(id)arg2;
-- (void)dealloc;
 - (id)init;
 - (void)requestStatusForID:(id)arg1 onAccount:(id)arg2;
 - (void)requestStatusForID:(id)arg1 onService:(id)arg2;

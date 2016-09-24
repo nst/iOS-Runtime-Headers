@@ -3,10 +3,10 @@
  */
 
 @interface TSWPTwoPartAction : NSObject {
-    id /* block */ _cancelAction;
-    id /* block */ _finishAction;
-    BOOL _performImmediately;
-    id /* block */ _startAction;
+    id /* block */  _cancelAction;
+    id /* block */  _finishAction;
+    BOOL  _performImmediately;
+    id /* block */  _startAction;
 }
 
 @property BOOL performImmediately;

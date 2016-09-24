@@ -3,14 +3,14 @@
  */
 
 @interface IMLockdownManager : NSObject {
-    BOOL _hasShownMismatchedSIM;
-    BOOL _hasShownWaitingAlertThisSession;
-    BOOL _isCarrierInstall;
-    BOOL _isInternalInstall;
-    BOOL _isNonUIInstall;
-    BOOL _isVendorInstall;
-    BOOL _settingUpActivationState;
-    unsigned int _state;
+    BOOL  _hasShownMismatchedSIM;
+    BOOL  _hasShownWaitingAlertThisSession;
+    BOOL  _isCarrierInstall;
+    BOOL  _isInternalInstall;
+    BOOL  _isNonUIInstall;
+    BOOL  _isVendorInstall;
+    BOOL  _settingUpActivationState;
+    unsigned int  _state;
 }
 
 @property (nonatomic) BOOL _hasShownMismatchedSIM;

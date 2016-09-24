@@ -3,10 +3,10 @@
  */
 
 @interface WLMessageSMILContext : NSObject <NSXMLParserDelegate> {
-    NSString *_characters;
-    BOOL _inBody;
-    BOOL _inPar;
-    NSArray *_parts;
+    NSString * _characters;
+    BOOL  _inBody;
+    BOOL  _inPar;
+    NSArray * _parts;
 }
 
 @property (nonatomic, readonly) NSString *characters;

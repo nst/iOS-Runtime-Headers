@@ -3,12 +3,12 @@
  */
 
 @interface CKDRecordDownloadTask : NSObject {
-    NSMutableArray *_assetsToDownload;
-    NSError *_error;
-    NSObject<OS_dispatch_group> *_group;
-    NSMutableArray *_packageIndexSets;
-    CKDProgressTracker *_progressTracker;
-    CKRecord *_record;
+    NSMutableArray * _assetsToDownload;
+    NSError * _error;
+    NSObject<OS_dispatch_group> * _group;
+    NSMutableArray * _packageIndexSets;
+    CKDProgressTracker * _progressTracker;
+    CKRecord * _record;
 }
 
 @property (nonatomic, retain) NSMutableArray *assetsToDownload;

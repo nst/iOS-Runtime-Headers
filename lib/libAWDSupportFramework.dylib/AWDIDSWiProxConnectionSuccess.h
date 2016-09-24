@@ -6,9 +6,9 @@
     struct { 
         unsigned int timeToSucceed : 1; 
         unsigned int timestamp : 1; 
-    } _has;
-    long long _timeToSucceed;
-    unsigned long long _timestamp;
+    }  _has;
+    long long  _timeToSucceed;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) BOOL hasTimeToSucceed;

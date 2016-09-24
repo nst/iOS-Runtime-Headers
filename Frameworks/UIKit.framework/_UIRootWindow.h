@@ -3,8 +3,8 @@
  */
 
 @interface _UIRootWindow : UIWindow {
-    BOOL _isExternal;
-    BOOL _mainDisplay;
+    BOOL  _isExternal;
+    BOOL  _mainDisplay;
 }
 
 - (void)_configureContextOptions:(id)arg1;

@@ -3,9 +3,9 @@
  */
 
 @interface _HKQuantityFilter : _HKFilter {
-    HKQuantity *_comparisonQuantity;
-    HKQuantityType *_dataType;
-    unsigned int _operatorType;
+    HKQuantity * _comparisonQuantity;
+    HKQuantityType * _dataType;
+    unsigned int  _operatorType;
 }
 
 @property (nonatomic, readonly) HKQuantity *comparisonQuantity;
@@ -30,6 +30,6 @@
 
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 
-- (id)predicateWithHealthDaemon:(id)arg1;
+- (id)predicateWithProfile:(id)arg1;
 
 @end

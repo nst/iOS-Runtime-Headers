@@ -3,9 +3,9 @@
  */
 
 @interface PTSImageLoader : NSObject {
-    <PTSImageLoaderDelegate> *_delegate;
-    BOOL _loading;
-    NSString *_path;
+    <PTSImageLoaderDelegate> * _delegate;
+    BOOL  _loading;
+    NSString * _path;
 }
 
 @property (nonatomic) <PTSImageLoaderDelegate> *delegate;

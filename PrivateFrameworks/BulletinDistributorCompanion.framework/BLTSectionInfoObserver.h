@@ -3,10 +3,10 @@
  */
 
 @interface BLTSectionInfoObserver : NSObject <BBObserverDelegate> {
-    <BLTSectionInfoObserverDelegate> *_delegate;
-    BBObserver *_observer;
-    NSObject<OS_dispatch_queue> *_queue;
-    id /* block */ _reloadSectionInfoCompletion;
+    <BLTSectionInfoObserverDelegate> * _delegate;
+    BBObserver * _observer;
+    NSObject<OS_dispatch_queue> * _queue;
+    id /* block */  _reloadSectionInfoCompletion;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -23,6 +23,7 @@
 - (id)delegate;
 - (id)init;
 - (void)observer:(id)arg1 noteServerConnectionStateChanged:(BOOL)arg2;
+- (void)observer:(id)arg1 removeSection:(id)arg2;
 - (void)observer:(id)arg1 updateSectionInfo:(id)arg2;
 - (void)reloadWithCompletion:(id /* block */)arg1;
 - (void)setDelegate:(id)arg1;

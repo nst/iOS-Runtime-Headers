@@ -3,10 +3,10 @@
  */
 
 @interface _UIViewVisitor : NSObject {
-    BOOL __currentlyVisitingHierarchy;
-    BOOL _tracksHierarchy;
-    unsigned int _traversalDirection;
-    BOOL _visitMaskViews;
+    BOOL  __currentlyVisitingHierarchy;
+    BOOL  _tracksHierarchy;
+    unsigned int  _traversalDirection;
+    BOOL  _visitMaskViews;
 }
 
 @property (nonatomic) BOOL _currentlyVisitingHierarchy;

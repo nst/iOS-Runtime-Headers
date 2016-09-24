@@ -3,12 +3,12 @@
  */
 
 @interface XBApplicationSnapshotGroup : NSObject <BSDescriptionProviding, NSCoding> {
-    XBApplicationIdentity *_appIdentity;
-    NSString *_identifier;
-    NSMutableSet *_snapshots;
+    XBSnapshotContainerIdentity * _containerIdentity;
+    NSString * _identifier;
+    NSMutableSet * _snapshots;
 }
 
-@property (copy) XBApplicationIdentity *appIdentity;
+@property (copy) XBSnapshotContainerIdentity *containerIdentity;
 @property (nonatomic, readonly, copy) NSString *containerPath;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -18,10 +18,12 @@
 @property (readonly) Class superclass;
 
 - (id)_commonInit;
+- (id)_initWithIdentifier:(id)arg1 containerIdentity:(id)arg2;
 - (void)_invalidate;
-- (BOOL)_validateWithAppIdentity:(id)arg1;
+- (void)_manifestQueueDecode_setStore:(id)arg1;
+- (BOOL)_validateWithContainerIdentity:(id)arg1;
 - (void)addSnapshot:(id)arg1;
-- (id)appIdentity;
+- (id)containerIdentity;
 - (id)containerPath;
 - (void)dealloc;
 - (id)description;
@@ -30,9 +32,8 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithIdentifier:(id)arg1 appIdentity:(id)arg2;
 - (BOOL)removeSnapshot:(id)arg1;
-- (void)setAppIdentity:(id)arg1;
+- (void)setContainerIdentity:(id)arg1;
 - (id)snapshots;
 - (id)succinctDescription;
 - (id)succinctDescriptionBuilder;

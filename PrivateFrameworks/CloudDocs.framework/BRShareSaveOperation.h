@@ -3,14 +3,14 @@
  */
 
 @interface BRShareSaveOperation : BROperation {
-    CKShare *_share;
-    id /* block */ _shareSaveCompletionBlock;
+    CKShare * _share;
+    id /* block */  _shareSaveCompletionBlock;
 }
 
 @property (nonatomic, retain) CKShare *share;
 @property (copy) id /* block */ shareSaveCompletionBlock;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (id)initWithShare:(id)arg1;
 - (void)main;

@@ -3,10 +3,10 @@
  */
 
 @interface OADGroupProperties : OADDrawableProperties <OADEffectsParent, OADProperties3DParent> {
-    NSArray *mEffects;
-    OADFill *mFill;
-    OADScene3D *mScene3D;
-    OADShape3D *mShape3D;
+    NSArray * mEffects;
+    OADFill * mFill;
+    OADScene3D * mScene3D;
+    OADShape3D * mShape3D;
 }
 
 @property (readonly, copy) NSString *debugDescription;

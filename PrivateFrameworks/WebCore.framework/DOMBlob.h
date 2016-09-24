@@ -4,11 +4,10 @@
 
 @interface DOMBlob : DOMObject
 
-@property (readonly) unsigned long long size;
+@property (readonly) unsigned int size;
 
 - (void)dealloc;
-- (void)finalize;
-- (unsigned long long)size;
+- (unsigned int)size;
 - (id)type;
 
 @end

@@ -3,8 +3,8 @@
  */
 
 @interface HKPropertyAnimationApplier : NSObject {
-    NSMutableDictionary *_animations;
-    CADisplayLink *_displayLink;
+    NSMutableDictionary * _animations;
+    CADisplayLink * _displayLink;
 }
 
 - (void).cxx_destruct;

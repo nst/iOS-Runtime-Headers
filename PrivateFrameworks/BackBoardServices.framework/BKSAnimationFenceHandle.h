@@ -3,16 +3,14 @@
  */
 
 @interface BKSAnimationFenceHandle : NSObject <BSXPCCoding, NSCopying, NSSecureCoding> {
-    BSMachPortSendRight *_caFence;
-    int _invalidated;
-    BOOL _notObservable;
-    BSMachPortSendRight *_preFence;
-    BSMachPortSendRight *_preFenceTrigger;
-    BOOL _reportable;
+    BSMachPortSendRight * _caFence;
+    int  _invalidated;
+    BOOL  _notObservable;
+    BSMachPortSendRight * _preFence;
+    BSMachPortSendRight * _preFenceTrigger;
 }
 
 @property (nonatomic, readonly, retain) BSMachPortSendRight *_caFence;
-@property (getter=_isReportable, nonatomic, readonly) BOOL _reportable;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
@@ -27,8 +25,7 @@
 
 - (unsigned int)CAPort;
 - (id)_caFence;
-- (id)_initWithCAFence:(id)arg1 preFence:(id)arg2 preFenceTrigger:(id)arg3 reportable:(BOOL)arg4 notObservable:(BOOL)arg5;
-- (BOOL)_isReportable;
+- (id)_initWithCAFence:(id)arg1 preFence:(id)arg2 preFenceTrigger:(id)arg3 notObservable:(BOOL)arg4;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;

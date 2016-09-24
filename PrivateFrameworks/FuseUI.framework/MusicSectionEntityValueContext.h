@@ -3,8 +3,8 @@
  */
 
 @interface MusicSectionEntityValueContext : MusicEntityValueContext {
-    NSString *_localizedTitle;
-    BOOL _wantsLocalizedTitle;
+    NSString * _localizedTitle;
+    BOOL  _wantsLocalizedTitle;
 }
 
 @property (nonatomic, copy) NSString *localizedTitle;

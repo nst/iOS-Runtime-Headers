@@ -7,10 +7,10 @@
         unsigned int powerConnSetupMicroWatt : 1; 
         unsigned int powerConnectedMicroWatt : 1; 
         unsigned int rAT : 1; 
-    } _has;
-    unsigned int _powerConnSetupMicroWatt;
-    unsigned int _powerConnectedMicroWatt;
-    int _rAT;
+    }  _has;
+    unsigned int  _powerConnSetupMicroWatt;
+    unsigned int  _powerConnectedMicroWatt;
+    int  _rAT;
 }
 
 @property (nonatomic) BOOL hasPowerConnSetupMicroWatt;

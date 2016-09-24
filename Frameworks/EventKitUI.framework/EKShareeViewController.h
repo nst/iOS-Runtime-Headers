@@ -3,12 +3,12 @@
  */
 
 @interface EKShareeViewController : UITableViewController {
-    BOOL _allowEditing;
-    BOOL _allowResendInvitations;
-    BOOL _allowStopSharing;
-    <EKShareeViewControllerDelegate> *_delegate;
-    UIAlertController *_removeAlertController;
-    EKSharee *_sharee;
+    BOOL  _allowEditing;
+    BOOL  _allowResendInvitations;
+    BOOL  _allowStopSharing;
+    <EKShareeViewControllerDelegate> * _delegate;
+    UIAlertController * _removeAlertController;
+    EKSharee * _sharee;
 }
 
 @property (nonatomic) BOOL allowEditing;
@@ -31,7 +31,7 @@
 - (id)initWithSharee:(id)arg1;
 - (void)loadView;
 - (int)numberOfSectionsInTableView:(id)arg1;
-- (struct CGSize { float x1; float x2; })preferredContentSize;
+- (struct CGSize { double x1; double x2; })preferredContentSize;
 - (void)removeClicked:(id)arg1;
 - (void)setAllowEditing:(BOOL)arg1;
 - (void)setAllowResendInvitations:(BOOL)arg1;

@@ -3,8 +3,8 @@
  */
 
 @interface MSVArtworkService : NSObject {
-    NSXPCConnection *_serverConnection;
-    NSOperationQueue *_serviceThrottlingOperationQueue;
+    NSXPCConnection * _serverConnection;
+    NSOperationQueue * _serviceThrottlingOperationQueue;
 }
 
 @property (nonatomic, retain) NSXPCConnection *serverConnection;

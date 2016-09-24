@@ -3,31 +3,31 @@
  */
 
 @interface Stock : NSObject {
-    NSString *_averageVolume;
-    NSString *_change;
-    StockChartData *_chartDataArray;
-    NSString *_companyName;
-    NSString *_currency;
-    StockDataSource *_dataSource;
-    NSString *_dividendYield;
-    Exchange *_exchange;
-    NSString *_high;
-    NSURL *_infoURL;
-    NSString *_low;
-    NSString *_marketcap;
-    NSString *_open;
-    NSString *_peRatio;
-    NSString *_price;
-    unsigned int _pricePrecision;
-    NSString *_shortCompanyName;
-    NSString *_symbol;
-    NSString *_symbolType;
-    double _timeMetadataLastUpdated;
-    double _timeQuoteLastUpdated;
-    BOOL _transient;
-    NSString *_volume;
-    NSString *_yearHigh;
-    NSString *_yearLow;
+    NSString * _averageVolume;
+    NSString * _change;
+    StockChartData * _chartDataArray;
+    NSString * _companyName;
+    NSString * _currency;
+    StockDataSource * _dataSource;
+    NSString * _dividendYield;
+    Exchange * _exchange;
+    NSString * _high;
+    NSURL * _infoURL;
+    NSString * _low;
+    NSString * _marketcap;
+    NSString * _open;
+    NSString * _peRatio;
+    NSString * _price;
+    unsigned int  _pricePrecision;
+    NSString * _shortCompanyName;
+    NSString * _symbol;
+    NSString * _symbolType;
+    double  _timeMetadataLastUpdated;
+    double  _timeQuoteLastUpdated;
+    BOOL  _transient;
+    NSString * _volume;
+    NSString * _yearHigh;
+    NSString * _yearLow;
 }
 
 @property (nonatomic, retain) NSString *averageVolume;

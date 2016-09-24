@@ -3,9 +3,9 @@
  */
 
 @interface WBSSQLiteRowEnumerator : NSEnumerator {
-    int _lastResultCode;
-    WBSSQLiteRow *_row;
-    WBSSQLiteStatement *_statement;
+    int  _lastResultCode;
+    WBSSQLiteRow * _row;
+    WBSSQLiteStatement * _statement;
 }
 
 @property (nonatomic, readonly) int lastResultCode;

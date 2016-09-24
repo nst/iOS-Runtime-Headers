@@ -3,10 +3,10 @@
  */
 
 @interface CalDAVModifyCalendarSharingLevelTaskGroup : CoreDAVTaskGroup <CoreDAVPropPatchTaskDelegate> {
-    int _action;
-    NSURL *_publishedURL;
-    int _state;
-    NSURL *_url;
+    int  _action;
+    NSURL * _publishedURL;
+    int  _state;
+    NSURL * _url;
 }
 
 @property (nonatomic) int action;

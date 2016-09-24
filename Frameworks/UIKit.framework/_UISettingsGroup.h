@@ -3,8 +3,8 @@
  */
 
 @interface _UISettingsGroup : _UISettings <NSFastEnumeration> {
-    NSMutableArray *_internal_group;
-    NSHashTable *_internal_groupObservers;
+    NSMutableArray * _internal_group;
+    NSHashTable * _internal_groupObservers;
 }
 
 - (void).cxx_destruct;

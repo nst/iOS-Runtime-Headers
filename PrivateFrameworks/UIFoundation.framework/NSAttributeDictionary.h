@@ -6,8 +6,8 @@
     /* Warning: unhandled struct encoding: '{_NSAttributeDictionaryElement="hash"I"key"@"value"@}]' */ struct _NSAttributeDictionaryElement { 
         unsigned int hash; 
         id key; 
-    } elements;
-    unsigned int numElements;
+    }  elements;
+    unsigned int  numElements;
 }
 
 + (id)emptyAttributeDictionary;

@@ -3,12 +3,12 @@
  */
 
 @interface ACDAuthenticationDialogRequest : NSObject {
-    ACAccount *_account;
-    NSString *_authDelegateClassBundlePath;
-    NSString *_authDelegateClassName;
-    id /* block */ _completion;
-    BOOL _confirmationRequired;
-    NSURL *_url;
+    ACAccount * _account;
+    NSString * _authDelegateClassBundlePath;
+    NSString * _authDelegateClassName;
+    id /* block */  _completion;
+    BOOL  _confirmationRequired;
+    NSURL * _url;
 }
 
 @property (nonatomic, retain) ACAccount *account;

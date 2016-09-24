@@ -3,9 +3,9 @@
  */
 
 @interface CMKEffectFilterManager : NSObject {
-    NSMutableArray *_aggdNames;
-    NSMutableArray *_effects;
-    NSMutableArray *_names;
+    NSMutableArray * _aggdNames;
+    NSMutableArray * _effects;
+    NSMutableArray * _names;
 }
 
 + (id)sharedInstance;

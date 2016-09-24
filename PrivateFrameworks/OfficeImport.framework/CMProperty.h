@@ -3,7 +3,7 @@
  */
 
 @interface CMProperty : NSObject {
-    NSString *cachedCssString;
+    NSString * cachedCssString;
 }
 
 - (id)cachedCssStringForName:(id)arg1;

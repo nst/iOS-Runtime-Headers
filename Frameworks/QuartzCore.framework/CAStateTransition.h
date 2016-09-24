@@ -3,9 +3,9 @@
  */
 
 @interface CAStateTransition : NSObject <NSCoding, NSCopying> {
-    NSArray *_elements;
-    NSString *_fromState;
-    NSString *_toState;
+    NSArray * _elements;
+    NSString * _fromState;
+    NSString * _toState;
 }
 
 @property (nonatomic, copy) NSArray *elements;

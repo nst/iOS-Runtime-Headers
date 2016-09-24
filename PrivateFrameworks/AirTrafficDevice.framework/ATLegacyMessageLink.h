@@ -3,10 +3,10 @@
  */
 
 @interface ATLegacyMessageLink : ATLockdownMessageLink <ATLegacyMessageLink, ATSocketDelegate> {
-    int _expectedBytesRemaining;
-    NSMutableData *_incomingData;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSMutableDictionary *_requestHandlerTable;
+    int  _expectedBytesRemaining;
+    NSMutableData * _incomingData;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSMutableDictionary * _requestHandlerTable;
 }
 
 @property (readonly, copy) NSString *debugDescription;

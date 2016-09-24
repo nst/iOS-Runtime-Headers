@@ -3,8 +3,8 @@
  */
 
 @interface NSBlockExpression : NSExpression {
-    NSArray *_arguments;
-    id /* block */ _block;
+    NSArray * _arguments;
+    id /* block */  _block;
 }
 
 - (id)_expressionWithSubstitutionVariables:(id)arg1;

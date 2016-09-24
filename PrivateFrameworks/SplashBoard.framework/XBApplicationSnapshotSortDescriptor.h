@@ -3,9 +3,9 @@
  */
 
 @interface XBApplicationSnapshotSortDescriptor : NSObject <BSDescriptionProviding> {
-    BOOL _ascending;
-    id /* block */ _comparator;
-    unsigned int _key;
+    BOOL  _ascending;
+    id /* block */  _comparator;
+    unsigned int  _key;
 }
 
 @property (nonatomic, readonly, retain) NSSortDescriptor *NSSortDescriptor;

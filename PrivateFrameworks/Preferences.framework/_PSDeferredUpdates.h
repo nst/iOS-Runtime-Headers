@@ -3,9 +3,9 @@
  */
 
 @interface _PSDeferredUpdates : NSObject {
-    BOOL _invalidatedSpecifiers;
-    NSMutableSet *_searchEntries;
-    PSSpecifierUpdates *_specifierUpdates;
+    BOOL  _invalidatedSpecifiers;
+    NSMutableSet * _searchEntries;
+    PSSpecifierUpdates * _specifierUpdates;
 }
 
 @property (nonatomic) BOOL invalidatedSpecifiers;

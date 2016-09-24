@@ -3,10 +3,10 @@
  */
 
 @interface PHPhotosPickerOptions : NSObject {
-    NSArray *_excludedContentModes;
-    NSDictionary *_initialAssetsToSelect;
-    PHAsset *_keyAsset;
-    PHAssetCollection *_keyAssetCollection;
+    NSArray * _excludedContentModes;
+    NSDictionary * _initialAssetsToSelect;
+    PHAsset * _keyAsset;
+    PHAssetCollection * _keyAssetCollection;
 }
 
 @property (nonatomic, copy) NSArray *excludedContentModes;

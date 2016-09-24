@@ -3,7 +3,7 @@
  */
 
 @interface NFPreferenceObserver : NSObject {
-    id /* block */ _callback;
+    id /* block */  _callback;
 }
 
 @property (copy) id /* block */ callback;

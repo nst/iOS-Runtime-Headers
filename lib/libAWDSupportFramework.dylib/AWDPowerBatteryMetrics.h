@@ -3,14 +3,14 @@
  */
 
 @interface AWDPowerBatteryMetrics : PBCodable <NSCopying> {
-    unsigned int _cycleCountKey;
-    unsigned int _durationDispOn;
-    unsigned int _durationPartialDispOff;
-    unsigned int _durationPartialDispOn;
-    unsigned int _energyChargedMicroWatt;
-    unsigned int _energyConsumedDisplayOffMicroWatt;
-    unsigned int _energyConsumedDisplayOnMicroWatt;
-    unsigned int _energyConsumedPartailDispOnMicrowatt;
+    unsigned int  _cycleCountKey;
+    unsigned int  _durationDispOn;
+    unsigned int  _durationPartialDispOff;
+    unsigned int  _durationPartialDispOn;
+    unsigned int  _energyChargedMicroWatt;
+    unsigned int  _energyConsumedDisplayOffMicroWatt;
+    unsigned int  _energyConsumedDisplayOnMicroWatt;
+    unsigned int  _energyConsumedPartailDispOnMicrowatt;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int cycleCountKey : 1; 
@@ -21,8 +21,8 @@
         unsigned int energyConsumedDisplayOffMicroWatt : 1; 
         unsigned int energyConsumedDisplayOnMicroWatt : 1; 
         unsigned int energyConsumedPartailDispOnMicrowatt : 1; 
-    } _has;
-    unsigned long long _timestamp;
+    }  _has;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) unsigned int cycleCountKey;

@@ -3,8 +3,8 @@
  */
 
 @interface _PLLazyPreheatData : NSData {
-    NSData *_data;
-    NSString *_path;
+    NSData * _data;
+    NSString * _path;
 }
 
 + (id)dataWithContentsOfFile:(id)arg1;

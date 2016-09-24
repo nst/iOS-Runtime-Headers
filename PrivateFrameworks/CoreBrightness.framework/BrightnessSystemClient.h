@@ -3,7 +3,7 @@
  */
 
 @interface BrightnessSystemClient : NSObject {
-    BrightnessSystemClientInternal *bsci;
+    BrightnessSystemClientInternal * bsci;
 }
 
 - (id)copyPropertyForKey:(id)arg1;

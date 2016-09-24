@@ -3,8 +3,8 @@
  */
 
 @interface TCBundleResourceDebugEntry : NSObject {
-    unsigned int mCacheCount;
-    unsigned int mUncachedCount;
+    unsigned int  mCacheCount;
+    unsigned int  mUncachedCount;
 }
 
 + (void)addEntry:(id)arg1 ofType:(id)arg2 inPackage:(id)arg3 cacheResult:(BOOL)arg4;

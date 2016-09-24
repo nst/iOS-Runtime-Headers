@@ -3,13 +3,11 @@
  */
 
 @interface MecabraCoreDataProperties : NSObject {
-    NSMutableDictionary *_descriptionDictionary;
-    NSString *_identifier;
-    NSString *_type;
+    NSMutableDictionary * _descriptionDictionary;
+    NSString * _type;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *descriptionDictionary;
-@property (nonatomic, retain) NSString *identifier;
 @property (nonatomic, readonly, retain) NSString *type;
 @property (nonatomic, readonly) NSString *ubiquityContainerIdentifier;
 
@@ -24,11 +22,9 @@
 - (id)entityDescriptionURL;
 - (id)entityModelName;
 - (void)forceNoSync;
-- (id)identifier;
 - (id)initWithIdentifier:(id)arg1;
 - (id)requiredKeys;
 - (void)setDescriptionDictionary:(id)arg1;
-- (void)setIdentifier:(id)arg1;
 - (id)sortDescriptors;
 - (id)type;
 - (id)ubiquitousStoreDirectoryURLForIdentifier:(id)arg1;

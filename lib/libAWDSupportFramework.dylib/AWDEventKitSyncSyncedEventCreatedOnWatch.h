@@ -3,12 +3,12 @@
  */
 
 @interface AWDEventKitSyncSyncedEventCreatedOnWatch : PBCodable <NSCopying> {
-    unsigned long long _deltaTransitTime;
+    unsigned long long  _deltaTransitTime;
     struct { 
         unsigned int deltaTransitTime : 1; 
         unsigned int timestamp : 1; 
-    } _has;
-    unsigned long long _timestamp;
+    }  _has;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) unsigned long long deltaTransitTime;

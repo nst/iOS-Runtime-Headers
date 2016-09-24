@@ -3,13 +3,13 @@
  */
 
 @interface ICQOfferManager : NSObject {
-    NSURLSessionDataTask *_fetchOfferDataTask;
-    NSTimer *_invalidationTimer;
-    BOOL _isRegisteredForDarwinNotifications;
-    NSURLSession *_sharedURLSession;
-    NSURLSessionDataTask *_teardownAckDataTask;
-    int _testKind;
-    int _testLevel;
+    NSURLSessionDataTask * _fetchOfferDataTask;
+    NSTimer * _invalidationTimer;
+    BOOL  _isRegisteredForDarwinNotifications;
+    NSURLSession * _sharedURLSession;
+    NSURLSessionDataTask * _teardownAckDataTask;
+    int  _testKind;
+    int  _testLevel;
 }
 
 @property (nonatomic) int testKind;

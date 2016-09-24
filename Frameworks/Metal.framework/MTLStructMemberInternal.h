@@ -3,10 +3,10 @@
  */
 
 @interface MTLStructMemberInternal : MTLStructMember {
-    unsigned int _dataType;
-    id _details;
-    NSString *_name;
-    unsigned int _offset;
+    unsigned int  _dataType;
+    id  _details;
+    NSString * _name;
+    unsigned int  _offset;
 }
 
 - (id)arrayType;

@@ -3,9 +3,9 @@
  */
 
 @interface TCAImportController : TSAImportController <TSAImportDelegate> {
-    NSUUID *_baseUUIDForObjectUUID;
-    NSString *_passphrase;
-    NSError *_passphraseError;
+    NSUUID * _baseUUIDForObjectUUID;
+    NSString * _passphrase;
+    NSError * _passphraseError;
 }
 
 @property (readonly, copy) NSString *debugDescription;

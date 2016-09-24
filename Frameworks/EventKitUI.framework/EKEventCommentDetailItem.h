@@ -3,7 +3,7 @@
  */
 
 @interface EKEventCommentDetailItem : EKEventDetailItem <UITextFieldDelegate> {
-    EKEventDetailCommentCell *_cell;
+    EKEventDetailCommentCell * _cell;
 }
 
 @property (readonly, copy) NSString *debugDescription;

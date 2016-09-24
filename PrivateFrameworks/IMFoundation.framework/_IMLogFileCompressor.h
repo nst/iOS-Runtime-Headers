@@ -3,7 +3,7 @@
  */
 
 @interface _IMLogFileCompressor : NSObject <IMFileCopierDelegate> {
-    NSMutableArray *_archivers;
+    NSMutableArray * _archivers;
 }
 
 + (id)sharedInstance;

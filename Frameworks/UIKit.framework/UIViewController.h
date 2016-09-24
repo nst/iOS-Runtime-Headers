@@ -2,121 +2,119 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIViewController : UIResponder <GKContentRefresh, GKURLHandling, NSCoding, NSExtensionRequestHandling, UIAppearanceContainer, UIContentContainer, UIFocusEnvironment, UITraitEnvironment, UIViewControllerPresenting, _UIContentContainerInternal, _UIFocusEnvironmentInternal, _UIFocusRegion, _UITraitEnvironmentInternal, _UIViewServiceDeputy> {
-    UIViewController *__childControllerToIgnoreWhileLookingForTransitionCoordinator;
-    <_UIViewControllerContentViewEmbedding> *__embeddedDelegate;
-    UIView *__embeddedView;
+@interface UIViewController : UIResponder <GKContentRefresh, GKURLHandling, MKInfoCardThemeListener, NSCoding, NSExtensionRequestHandling, PXDiagnosticsEnvironment, UIAppearanceContainer, UIContentContainer, UIFocusEnvironment, UITraitEnvironment, UIViewControllerPresenting, _UIContentContainerInternal, _UIFocusEnvironmentInternal, _UITraitEnvironmentInternal, _UIViewServiceDeputy> {
+    UIViewController * __childControllerToIgnoreWhileLookingForTransitionCoordinator;
+    <_UIViewControllerContentViewEmbedding> * __embeddedDelegate;
+    UIView * __embeddedView;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } __embeddedViewFrame;
-    UIView *__embeddingView;
-    NSArray *_addedKeyCommands;
-    id /* block */ _afterAppearance;
-    NSLayoutConstraint *_bottomBarInsetGuideConstraint;
-    <UILayoutSupport><_UILayoutItem> *_bottomLayoutGuide;
-    UIViewController *_childModalViewController;
-    NSMutableArray *_childViewControllers;
-    UIView *_containerViewInSheet;
-    float _contentMargin;
+    }  __embeddedViewFrame;
+    UIView * __embeddingView;
+    NSArray * _addedKeyCommands;
+    id /* block */  _afterAppearance;
+    NSLayoutConstraint * _bottomBarInsetGuideConstraint;
+    <UILayoutSupport><_UILayoutItem> * _bottomLayoutGuide;
+    UIViewController * _childModalViewController;
+    NSMutableArray * _childViewControllers;
+    UILayoutContainerView * _containerViewInSheet;
+    double  _contentMargin;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    } _contentOverlayInsets;
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _contentOverlayInsets;
     struct CGSize { 
-        float width; 
-        float height; 
-    } _contentSizeForViewInPopover;
-    id _currentAction;
-    float _customNavigationInteractiveTransitionDuration;
-    float _customNavigationInteractiveTransitionPercentComplete;
-    UITransitionView *_customTransitioningView;
-    id _dimmingView;
-    id _dropShadowView;
-    unsigned int _edgesForExtendedLayout;
-    UIBarButtonItem *_editButtonItem;
-    int _explicitAppearanceTransitionLevel;
-    NSDictionary *_externalObjectsTableForViewLoading;
+        double width; 
+        double height; 
+    }  _contentSizeForViewInPopover;
+    id  _currentAction;
+    double  _customNavigationInteractiveTransitionDuration;
+    double  _customNavigationInteractiveTransitionPercentComplete;
+    UITransitionView * _customTransitioningView;
+    id  _dimmingView;
+    BOOL  _disablesAutomaticKeyboardDismissal;
+    id  _dropShadowView;
+    unsigned int  _edgesForExtendedLayout;
+    UIBarButtonItem * _editButtonItem;
+    int  _explicitAppearanceTransitionLevel;
+    NSDictionary * _externalObjectsTableForViewLoading;
     struct CGSize { 
-        float width; 
-        float height; 
-    } _formSheetSize;
-    BOOL _ignoreAppSupportedOrientations;
-    BOOL _ignoresParentMargins;
-    NSArray *_interfaceBuilderKeyCommands;
-    int _lastKnownInterfaceOrientation;
-    UITraitCollection *_lastNotifiedTraitCollection;
-    _UILayoutGuide *_leftLayoutGuide;
-    NSLayoutConstraint *_leftMarginGuideConstraint;
-    BOOL _modalPresentationCapturesStatusBarAppearance;
-    int _modalPresentationStyle;
-    UIResponder *_modalPreservedFirstResponder;
-    UIViewController *_modalSourceViewController;
-    int _modalTransitionStyle;
-    UIView *_modalTransitionView;
+        double width; 
+        double height; 
+    }  _formSheetSize;
+    UITraitCollection * _frozenTraitCollection;
+    BOOL  _ignoreAppSupportedOrientations;
+    BOOL  _ignoresParentMargins;
+    NSArray * _interfaceBuilderKeyCommands;
+    int  _lastKnownInterfaceOrientation;
+    UITraitCollection * _lastNotifiedTraitCollection;
+    BOOL  _modalPresentationCapturesStatusBarAppearance;
+    int  _modalPresentationStyle;
+    UIResponder * _modalPreservedFirstResponder;
+    UIViewController * _modalSourceViewController;
+    int  _modalTransitionStyle;
+    UIView * _modalTransitionView;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    } _navigationControllerContentInsetAdjustment;
-    float _navigationControllerContentOffsetAdjustment;
-    UINavigationItem *_navigationItem;
-    NSBundle *_nibBundle;
-    NSString *_nibName;
-    UIPresentationController *_originalPresentationController;
-    NSMapTable *_overrideTraitCollections;
-    <UIViewControllerTransitioningDelegate> *_overrideTransitioningDelegate;
-    UIViewController *_parentModalViewController;
-    UIViewController *_parentViewController;
-    UIPopoverController *_popoverController;
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _navigationControllerContentInsetAdjustment;
+    double  _navigationControllerContentOffsetAdjustment;
+    UINavigationItem * _navigationItem;
+    NSBundle * _nibBundle;
+    NSString * _nibName;
+    UIPresentationController * _originalPresentationController;
+    NSMapTable * _overrideTraitCollections;
+    <UIViewControllerTransitioningDelegate> * _overrideTransitioningDelegate;
+    UIViewController * _parentModalViewController;
+    UIViewController * _parentViewController;
+    UIPopoverController * _popoverController;
     struct CGSize { 
-        float width; 
-        float height; 
-    } _preferredContentSize;
-    <UIFocusContainer> *_preferredFocusedItem;
-    UIPresentationController *_presentationController;
+        double width; 
+        double height; 
+    }  _preferredContentSize;
+    <UIFocusContainer> * _preferredFocusedItem;
+    UIPresentationController * _presentationController;
     struct { 
         int width; 
         int height; 
-    } _presentationSizeClassPair;
-    UIViewController *_presentedStatusBarViewController;
-    UIView *_presentingFocusedView;
-    NSMutableArray *_previewSourceViews;
-    UIViewController *_previousRootViewController;
-    UIScrollView *_recordedContentScrollView;
-    int _retainCount;
-    _UILayoutGuide *_rightLayoutGuide;
-    NSLayoutConstraint *_rightMarginGuideConstraint;
-    UIView *_savedFooterSuperview;
-    UIView *_savedHeaderSuperview;
-    UISearchDisplayController *_searchDisplayController;
-    UIStoryboardSegue *_segueResponsibleForModalPresentation;
-    UIViewController *_sourceViewControllerIfPresentedViaPopoverSegue;
-    UIStoryboard *_storyboard;
-    NSArray *_storyboardCommitSegueTemplates;
-    NSString *_storyboardIdentifier;
-    NSArray *_storyboardPreviewSegueTemplates;
-    NSArray *_storyboardPreviewingRegistrants;
-    NSArray *_storyboardSegueTemplates;
-    UISearchDisplayController *_strongSearchDisplayController;
-    UITabBarItem *_tabBarItem;
-    UIPresentationController *_temporaryPresentationController;
-    NSString *_title;
-    NSArray *_toolbarItems;
-    NSLayoutConstraint *_topBarInsetGuideConstraint;
-    <UILayoutSupport><_UILayoutItem> *_topLayoutGuide;
-    NSArray *_topLevelObjectsToKeepAliveFromStoryboard;
-    <UIViewControllerTransitioningDelegate> *_transitioningDelegate;
-    UIView *_view;
+    }  _presentationSizeClassPair;
+    UIViewController * _presentedStatusBarViewController;
+    <UIFocusItem> * _presentingFocusedItem;
+    NSMutableArray * _previewSourceViews;
+    UIViewController * _previousRootViewController;
+    UIScrollView * _recordedContentScrollView;
+    int  _retainCount;
+    UIView * _savedFooterSuperview;
+    UIView * _savedHeaderSuperview;
+    UISearchDisplayController * _searchDisplayController;
+    UIStoryboardSegue * _segueResponsibleForModalPresentation;
+    UIViewController * _sourceViewControllerIfPresentedViaPopoverSegue;
+    UIStoryboard * _storyboard;
+    NSArray * _storyboardCommitSegueTemplates;
+    NSString * _storyboardIdentifier;
+    NSArray * _storyboardPreviewSegueTemplates;
+    NSArray * _storyboardPreviewingRegistrants;
+    NSArray * _storyboardSegueTemplates;
+    UISearchDisplayController * _strongSearchDisplayController;
+    UITabBarItem * _tabBarItem;
+    UIPresentationController * _temporaryPresentationController;
+    NSString * _title;
+    NSArray * _toolbarItems;
+    NSLayoutConstraint * _topBarInsetGuideConstraint;
+    <UILayoutSupport><_UILayoutItem> * _topLayoutGuide;
+    NSArray * _topLevelObjectsToKeepAliveFromStoryboard;
+    <UIViewControllerTransitioningDelegate> * _transitioningDelegate;
+    UIView * _view;
     struct { 
         unsigned int appearState : 2; 
         unsigned int isEditing : 1; 
@@ -162,30 +160,34 @@
         unsigned int automaticallyAdjustInsets : 1; 
         unsigned int previousShouldUnderlapUnderStatusBar : 1; 
         unsigned int freezeShouldUnderlapUnderStatusBar : 1; 
+        unsigned int shouldNotFreezeUnderlapsStatusBar : 1; 
         unsigned int monitorsSystemLayoutFittingSize : 1; 
         unsigned int shouldLoadInputAccessoryViewsOnAppearance : 1; 
         unsigned int useViewBasedTopAndBottomGuides : 1; 
         unsigned int didConfirmLayoutGuideClass : 1; 
-    } _viewControllerFlags;
-    BOOL _viewHostsLayoutEngine;
-    BOOL overrideUseCustomPresentation;
+        unsigned int overridesTraitCollectionDidChange : 1; 
+        unsigned int restoresFocusAfterTransition : 1; 
+        unsigned int freezeTraitsOnCounterRotationForPresentation : 1; 
+    }  _viewControllerFlags;
+    BOOL  _viewHostsLayoutEngine;
+    BOOL  overrideUseCustomPresentation;
 }
 
 @property (nonatomic, readonly) int ITunesStoreUIBarStyle;
 @property (getter=MPU_identifier, setter=MPU_setIdentifier:, nonatomic, copy) NSString *MPU_identifier;
 @property (nonatomic, readonly) _UIBackdropView *SKUIPinnedHeaderView;
 @property (nonatomic, readonly) SKUIStackedBar *SKUIStackedBar;
-@property (nonatomic) float SKUIStackedBarSplit;
+@property (nonatomic) double SKUIStackedBarSplit;
 @property (nonatomic, readonly) struct { int x1; int x2; } __sizeClassPair;
 @property (nonatomic, readonly, retain) NSLayoutConstraint *_bottomBarInsetGuideConstraint;
 @property (setter=_setChildControllerToIgnoreWhileLookingForTransitionCoordinator:, nonatomic, retain) UIViewController *_childControllerToIgnoreWhileLookingForTransitionCoordinator;
-@property (setter=_setContentMargin:, nonatomic) float _contentMargin;
-@property (setter=_setContentOverlayInsets:, nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } _contentOverlayInsets;
+@property (setter=_setContentMargin:, nonatomic) double _contentMargin;
+@property (setter=_setContentOverlayInsets:, nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } _contentOverlayInsets;
 @property (nonatomic, readonly) <_UIViewControllerContentViewEmbedding> *_embeddedDelegate;
 @property (setter=_setEmbeddedDelegate:, nonatomic) <_UIViewControllerContentViewEmbedding> *_embeddedDelegate;
 @property (nonatomic, readonly) UIView *_embeddedView;
 @property (setter=_setEmbeddedView:, nonatomic, retain) UIView *_embeddedView;
-@property (setter=_setEmbeddedViewFrame:, nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } _embeddedViewFrame;
+@property (setter=_setEmbeddedViewFrame:, nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } _embeddedViewFrame;
 @property (setter=_setEmbeddingView:, nonatomic, retain) UIView *_embeddingView;
 @property (setter=_gkSetSourcePresentingViewController:, nonatomic, retain) UIViewController *_gkSourcePresentingViewController;
 @property (nonatomic, readonly) int _horizontalSizeClass;
@@ -195,19 +197,17 @@
 @property (nonatomic, readonly) BOOL _isModalSheet;
 @property (nonatomic, readonly) BOOL _isPresentedFormSheet;
 @property (setter=_setLastNotifiedTraitCollection:, nonatomic, retain) UITraitCollection *_lastNotifiedTraitCollection;
-@property (nonatomic, readonly, retain) _UILayoutGuide *_leftLayoutGuide;
-@property (nonatomic, readonly, retain) NSLayoutConstraint *_leftMarginGuideConstraint;
 @property (setter=_setModalSourceViewController:, nonatomic) UIViewController *_modalSourceViewController;
 @property (nonatomic, readonly) BOOL _monitorsSystemLayoutFittingSize;
-@property (setter=_setNavigationControllerContentInsetAdjustment:, nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } _navigationControllerContentInsetAdjustment;
-@property (setter=_setNavigationControllerContentOffsetAdjustment:, nonatomic) float _navigationControllerContentOffsetAdjustment;
+@property (nonatomic, readonly) UIMultiColumnViewController *_multiColumnViewController;
+@property (setter=_setNavigationControllerContentInsetAdjustment:, nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } _navigationControllerContentInsetAdjustment;
+@property (setter=_setNavigationControllerContentOffsetAdjustment:, nonatomic) double _navigationControllerContentOffsetAdjustment;
 @property (nonatomic, readonly) UIViewController *_parentModalViewController;
 @property (nonatomic, readonly) UIViewController *_parentViewController;
+@property (nonatomic, readonly) NSArray *_preferredContentSizes;
 @property (setter=_setPresentationController:, nonatomic, retain) UIPresentationController *_presentationController;
 @property (setter=_setPresentedStatusBarViewController:, nonatomic, retain) UIViewController *_presentedStatusBarViewController;
 @property (setter=_setPreviousFittingSizeInfo:, nonatomic, retain) NSDictionary *_previousFittingSizeInfo;
-@property (nonatomic, readonly, retain) _UILayoutGuide *_rightLayoutGuide;
-@property (nonatomic, readonly, retain) NSLayoutConstraint *_rightMarginGuideConstraint;
 @property (setter=_setSegueResponsibleForModalPresentation:, nonatomic, retain) UIStoryboardSegue *_segueResponsibleForModalPresentation;
 @property (nonatomic, readonly) UIViewController *_sf_viewControllerToPresentFrom;
 @property (setter=_setSourceViewControllerIfPresentedViaPopoverSegue:, nonatomic) UIViewController *_sourceViewControllerIfPresentedViaPopoverSegue;
@@ -215,36 +215,44 @@
 @property (nonatomic, readonly) BOOL _transitionsChildViewControllers;
 @property (nonatomic, readonly) BOOL _useSheetRotation;
 @property (nonatomic, readonly) int _verticalSizeClass;
+@property (nonatomic, readonly) BOOL _viewHostsLayoutEngineAllowsTAMIC_NO;
 @property (nonatomic, readonly) BOOL ab_isDirectlyInPopover;
 @property (nonatomic, readonly) BOOL ab_isInPopover;
 @property (nonatomic, readonly) BOOL ab_isInSheet;
 @property (nonatomic, readonly) BOOL ab_shouldShowNavBarButtons;
 @property (nonatomic, readonly) BOOL ab_shouldUseTransparentBackgroundInPopovers;
+@property (nonatomic, readonly) _UIActionSheetPresentationController *actionSheetPresentationController;
 @property (nonatomic, copy) id /* block */ afterAppearanceBlock;
 @property (nonatomic, retain) NSString *aggregateStatisticsDisplayCountKey;
 @property (nonatomic) BOOL appearanceTransitionsAreDisabled;
 @property (nonatomic) BOOL automaticallyAdjustsScrollViewInsets;
+@property (getter=isBeingDismissed, nonatomic, readonly) BOOL beingDismissed;
+@property (getter=isBeingPresented, nonatomic, readonly) BOOL beingPresented;
 @property (nonatomic, readonly, retain) <UILayoutSupport><_UILayoutItem> *bottomLayoutGuide;
 @property (nonatomic) BOOL canDisplayBannerAds;
 @property (nonatomic, retain) UIViewController *childModalViewController;
+@property (nonatomic, readonly) UIViewController *childViewControllerForStatusBarHidden;
+@property (nonatomic, readonly) UIViewController *childViewControllerForStatusBarStyle;
 @property (nonatomic, readonly) NSArray *childViewControllers;
 @property (nonatomic, readonly) unsigned int childViewControllersCount;
-@property (nonatomic) struct CGSize { float x1; float x2; } contentSizeForViewInPopover;
-@property (nonatomic) float customNavigationInteractiveTransitionDuration;
-@property (nonatomic) float customNavigationInteractiveTransitionPercentComplete;
+@property (nonatomic) struct CGSize { double x1; double x2; } contentSizeForViewInPopover;
+@property (nonatomic) double customNavigationInteractiveTransitionDuration;
+@property (nonatomic) double customNavigationInteractiveTransitionPercentComplete;
 @property (nonatomic, retain) UITransitionView *customTransitioningView;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) BOOL definesPresentationContext;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) BOOL disableRootPromotion;
+@property (nonatomic) BOOL disablesAutomaticKeyboardDismissal;
 @property (getter=isDisplayingBannerAd, nonatomic, readonly) BOOL displayingBannerAd;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } documentBounds;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } documentBounds;
 @property (nonatomic, retain) UIDropShadowView *dropShadowView;
 @property (nonatomic) unsigned int edgesForExtendedLayout;
 @property (nonatomic) BOOL extendedLayoutIncludesOpaqueBars;
 @property (nonatomic, readonly) NSExtensionContext *extensionContext;
 @property (setter=_setExtensionContext:, nonatomic, retain) NSExtensionContext *extensionContext;
 @property (getter=isFinishingModalTransition, nonatomic) BOOL finishingModalTransition;
+@property (getter=_focusedItemRegionContainer, nonatomic, readonly) <_UIFocusRegionContainer> *focusedItemRegionContainer;
 @property (nonatomic) int gkFocusBubbleType;
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL hidesBottomBarWhenPushed;
@@ -255,16 +263,17 @@
 @property (nonatomic) int interstitialPresentationPolicy;
 @property (nonatomic, readonly) BOOL isPresentedInsidePopover;
 @property (nonatomic, readonly) BOOL isSettingAppearState;
-@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } largerEdgeInsets;
-@property (getter=isLoaded, nonatomic, readonly) BOOL loaded;
-@property (getter=isLoading, nonatomic, readonly) BOOL loading;
+@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } largerEdgeInsets;
+@property (getter=_linearFocusMovementSequences, nonatomic, readonly, copy) NSArray *linearFocusMovementSequences;
+@property (nonatomic, readonly) NCLongLookPresentationController *longLookPresentationController;
 @property (nonatomic) BOOL modalInPopover;
 @property (nonatomic) BOOL modalPresentationCapturesStatusBarAppearance;
 @property (nonatomic) int modalPresentationStyle;
 @property (nonatomic) int modalTransitionStyle;
 @property (nonatomic, retain) UITransitionView *modalTransitionView;
 @property (nonatomic, readonly) UIViewController *modalViewController;
-@property (nonatomic, readonly) UIBarButtonItem *music_accountEntryLeftBarButtonItem;
+@property (getter=isMovingFromParentViewController, nonatomic, readonly) BOOL movingFromParentViewController;
+@property (getter=isMovingToParentViewController, nonatomic, readonly) BOOL movingToParentViewController;
 @property (nonatomic, readonly) BOOL music_allowsMetricsEvents;
 @property (nonatomic, readonly, copy) NSString *music_effectiveReportingFeatureName;
 @property (nonatomic, readonly, copy) NSData *music_effectiveReportingRecommendationData;
@@ -272,13 +281,13 @@
 @property (setter=music_setReportingRecommendationData:, nonatomic, copy) NSData *music_reportingRecommendationData;
 @property (nonatomic, readonly) UIBarButtonItem *music_searchEntryRightBarButtonItem;
 @property (setter=music_setSearchOptions:, nonatomic) unsigned int music_searchOptions;
-@property (setter=music_setWantsAccountEntryLeftBarButtonItem:, nonatomic) BOOL music_wantsAccountEntryLeftBarButtonItem;
 @property (setter=music_setWantsDefaultIndexBar:, nonatomic) BOOL music_wantsDefaultIndexBar;
 @property (setter=music_setWantsSearchEntryRightBarButtonItem:, nonatomic) BOOL music_wantsSearchEntryRightBarButtonItem;
 @property (setter=music_setWantsToOverrideRightBarButtonItem:, nonatomic) BOOL music_wantsToOverrideRightBarButtonItem;
 @property (nonatomic, retain) NSMutableArray *mutableChildViewControllers;
 @property (nonatomic, readonly) UINavigationController *navigationController;
 @property (nonatomic, readonly) UINavigationItem *navigationItem;
+@property (setter=setNCTransitionAnimationState:, nonatomic) int ncTransitionAnimationState;
 @property (nonatomic) BOOL needsDidMoveCleanup;
 @property (nonatomic, retain) NSBundle *nibBundle;
 @property (nonatomic, copy) NSString *nibName;
@@ -286,18 +295,26 @@
 @property (getter=_originalPresentationController, setter=_setOriginalPresentationController:, nonatomic, retain) UIPresentationController *originalPresentationController;
 @property (getter=_overrideTransitioningDelegate, setter=_setOverrideTransitioningDelegate:, nonatomic, retain) <UIViewControllerTransitioningDelegate> *overrideTransitioningDelegate;
 @property (getter=_overrideUseCustomPresentation, setter=_setOverrideUseCustomPresentation:, nonatomic) BOOL overrideUseCustomPresentation;
+@property (getter=_parentFocusEnvironment, nonatomic, readonly) <UIFocusEnvironment> *parentFocusEnvironment;
 @property (nonatomic) UIViewController *parentModalViewController;
 @property (nonatomic) UIViewController *parentViewController;
+@property (nonatomic, readonly) unsigned int ph_preferredChrome;
+@property (nonatomic, readonly) int ph_preferredChromeAnimation;
 @property (nonatomic, readonly) BOOL pl_isInPopover;
-@property (nonatomic) struct CGSize { float x1; float x2; } preferedContentSizeInModalItem;
-@property (nonatomic) struct CGSize { float x1; float x2; } preferredContentSize;
+@property (nonatomic) struct CGSize { double x1; double x2; } preferredContentSize;
+@property (nonatomic, readonly, copy) NSArray *preferredFocusEnvironments;
+@property (getter=_preferredFocusMovementStyle, nonatomic, readonly) int preferredFocusMovementStyle;
 @property (nonatomic) <UIFocusContainer> *preferredFocusedItem;
 @property (nonatomic) UIView *preferredFocusedView;
+@property (nonatomic, readonly) int preferredStatusBarStyle;
+@property (nonatomic, readonly) int preferredStatusBarUpdateAnimation;
+@property (nonatomic, readonly) BOOL prefersStatusBarHidden;
 @property (getter=_presentationSizeClassPair, setter=_setPresentationSizeClassPair:, nonatomic) struct { int x1; int x2; } presentationSizeClassPair;
 @property (nonatomic, readonly) UIViewController *presentedViewController;
-@property (getter=_presentingFocusedView, nonatomic, readonly) UIView *presentingFocusedView;
+@property (getter=_presentingFocusedItem, setter=_setPresentingFocusedItem:, nonatomic) <UIFocusItem> *presentingFocusedItem;
 @property (getter=isPresentingFullScreenAd, nonatomic, readonly) BOOL presentingFullScreenAd;
 @property (nonatomic, readonly) UIViewController *presentingViewController;
+@property (nonatomic, readonly) NSArray *previewActionItems;
 @property (nonatomic) BOOL providesPresentationContextTransitionStyle;
 @property (nonatomic, readonly) PUModalTransition *pu_currentInteractiveModalTransition;
 @property (nonatomic, readonly) PUNavigationTransition *pu_currentInteractiveNavigationTransition;
@@ -314,18 +331,32 @@
 @property (nonatomic, readonly) BOOL pu_wantsNavigationBarVisible;
 @property (nonatomic, readonly) BOOL pu_wantsTabBarVisible;
 @property (nonatomic, readonly) BOOL pu_wantsToolbarVisible;
+@property (nonatomic, readonly) PXBarAppearance *px_barAppearance;
+@property (setter=px_setDefaultTransitionEndPoint:, nonatomic, retain) <PXUIViewControllerTransitionEndPoint> *px_defaultTransitionEndPoint;
+@property (nonatomic, readonly) PXExtendedTraitCollection *px_extendedTraitCollection;
+@property (nonatomic, readonly) BOOL px_isSnapBackDestination;
+@property (nonatomic, readonly) PXOneUpPresentation *px_oneUpPresentation;
+@property (nonatomic, readonly) BOOL px_photosUICategoriesAvailable;
+@property (nonatomic, readonly) NSString *px_snapBackHistorySubtitle;
+@property (nonatomic, readonly) NSString *px_snapBackHistoryTitle;
+@property (setter=px_setSubtitle:, nonatomic, copy) NSString *px_subtitle;
+@property (getter=px_isVisible, nonatomic, readonly) BOOL px_visible;
 @property (setter=rc_setScreenUpdatesDisabled:, nonatomic) BOOL rc_screenUpdatesDisabled;
+@property (nonatomic) BOOL restoresFocusAfterTransition;
 @property (nonatomic, readonly) UIView *savedHeaderSuperview;
 @property (nonatomic, readonly) SKUIScrollingSegmentedController *scrollingSegmentedController;
 @property (nonatomic, readonly) SKUIScrollingTabBarController *scrollingTabBarController;
 @property (nonatomic) BOOL searchBarHidNavBar;
 @property (nonatomic, retain) UISearchDisplayController *searchDisplayController;
+@property (nonatomic, readonly) BOOL shouldAutomaticallyForwardAppearanceMethods;
 @property (nonatomic, readonly) BOOL shouldInvalidateForMemoryPurge;
 @property (nonatomic, readonly) BOOL shouldPresentInterstitialAd;
+@property (getter=isSkLoaded, nonatomic, readonly) BOOL skLoaded;
+@property (getter=isSkLoading, nonatomic, readonly) BOOL skLoading;
 @property (nonatomic, readonly) FMSlidingPaneViewController *slidingPaneViewController;
 @property (nonatomic, readonly) UISplitViewController *splitViewController;
 @property (nonatomic, retain) SUStorePageProtocol *storePageProtocol;
-@property (nonatomic, retain) UIStoryboard *storyboard;
+@property (setter=_setStoryboard:, nonatomic, retain) UIStoryboard *storyboard;
 @property (nonatomic, readonly) NSArray *storyboardCommitSegueTemplates;
 @property (nonatomic, readonly) NSArray *storyboardPreviewSegueTemplates;
 @property (nonatomic, readonly) NSArray *storyboardPreviewingRegistrants;
@@ -341,6 +372,7 @@
 @property (nonatomic, retain) UIView *view;
 @property (nonatomic, readonly) SUViewControllerFactory *viewControllerFactory;
 @property (nonatomic, readonly) UIView *viewIfLoaded;
+@property (getter=isViewLoaded, nonatomic, readonly) BOOL viewLoaded;
 @property (nonatomic) BOOL wantsFullScreenLayout;
 @property (getter=_window, nonatomic, readonly) UIWindow *window;
 
@@ -365,7 +397,6 @@
 + (BOOL)_isViewSizeFullScreen:(id)arg1 inWindow:(id)arg2;
 + (BOOL)_isViewSizeFullScreen:(id)arg1 inWindow:(id)arg2 ignoreInWindowCheck:(BOOL)arg3;
 + (int)_keyboardDirectionForTransition:(int)arg1;
-+ (BOOL)_optsOutOfPopoverControllerHierarchyCheck;
 + (void)_performWithoutDeferringTransitions:(id /* block */)arg1;
 + (BOOL)_preventsAppearanceProxyCustomization;
 + (id)_printHierarchy;
@@ -390,7 +421,7 @@
 + (void)_withDisabledAppearanceTransitionsForVisibleDescendantsOf:(id)arg1 perform:(id /* block */)arg2;
 + (void)attemptRotationToDeviceOrientation;
 + (double)customTransitionDuration;
-+ (struct CGSize { float x1; float x2; })defaultFormSheetSize;
++ (struct CGSize { double x1; double x2; })defaultFormSheetSize;
 + (BOOL)doesOverridePreferredInterfaceOrientationForPresentation;
 + (BOOL)doesOverrideSupportedInterfaceOrientations;
 + (BOOL)doesOverrideViewControllerMethod:(SEL)arg1;
@@ -433,7 +464,7 @@
 - (id)_appearanceContainer;
 - (id)_appearanceGuideClass;
 - (void)_appendNavigationItemsToNavigationController:(id)arg1 transition:(int)arg2;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_avoidanceInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_avoidanceInsets;
 - (id)_backdropBarGroupName;
 - (id)_backgroundColorForModalFormSheet;
 - (id)_barBackdropGroupNameForAncestorViewController:(id*)arg1;
@@ -442,30 +473,30 @@
 - (void)_beginDelayingPresentation:(double)arg1 cancellationHandler:(id /* block */)arg2;
 - (void)_beginDisablingInterfaceAutorotation;
 - (id)_bottomBarInsetGuideConstraint;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_boundsForOrientation:(int)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_boundsForOrientation:(int)arg1;
 - (BOOL)_canBecomeDeepestUnambiguousResponder;
 - (BOOL)_canBecomeFirstResponder;
 - (BOOL)_canReloadView;
+- (BOOL)_canResignIfContainsFirstResponder;
 - (void)_cancelDelayedPresentation:(BOOL)arg1;
-- (struct CGPoint { float x1; float x2; })_centerForOrientation:(int)arg1;
+- (struct CGPoint { double x1; double x2; })_centerForOrientation:(int)arg1;
 - (BOOL)_checkIfViewControllerIsBeingDismissed:(id)arg1;
 - (id)_childControllerToIgnoreWhileLookingForTransitionCoordinator;
-- (id)_childFocusRegions;
-- (id)_childFocusRegionsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)_childViewControllerForWhitePointAdaptivityStyle;
 - (id)_childViewControllersToSendViewWillTransitionToSize;
 - (void)_cleanupLayoutGuides;
 - (void)_cleanupPresentation;
 - (void)_clearLastKnownInterfaceOrientation;
 - (void)_clearRecordedContentScrollView;
+- (void)_collapseSecondaryViewController:(id)arg1 forSplitViewController:(id)arg2 withTransitionCoordinator:(id)arg3;
 - (void)_commitPreviewTransitionAsDetailOfSplitViewController:(id)arg1 withDelegate:(id)arg2 completion:(id /* block */)arg3;
 - (id /* block */)_completionBlock;
 - (BOOL)_containsFirstResponder;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_contentInsetsInWindow;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_contentInsetsInWindow;
 - (float)_contentMargin;
 - (float)_contentMarginForChildViewController:(id)arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_contentOverlayInsets;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_cumulativeOverlayInsetsForViewControllerHierarchy;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_contentOverlayInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_cumulativeOverlayInsetsForViewControllerHierarchy;
 - (id)_customAnimatorForDismissedController:(id)arg1;
 - (id)_customAnimatorForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
 - (id)_customInteractionControllerForDismissal:(id)arg1;
@@ -475,15 +506,16 @@
 - (id /* block */)_decodeRestorableStateAndReturnContinuationWithCoder:(id)arg1;
 - (id)_deepestUnambiguousResponder;
 - (id)_defaultAnimationController;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_defaultInitialViewFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_defaultInitialViewFrame;
 - (id)_delayingViewController;
 - (id)_description;
 - (id)_descriptionForPrintingHierarchy;
 - (id)_descriptionWithChildren:(int)arg1;
-- (id)_destinationForUnwindingFromSource:(id)arg1;
+- (id)_destinationForUnwindingFromSource:(id)arg1 visitedViewControllers:(id)arg2;
 - (void)_didBecomeContentViewControllerOfPopover:(id)arg1;
 - (void)_didCancelDismissTransition:(id)arg1;
 - (void)_didCancelPresentTransition:(id)arg1;
+- (void)_didEndCounterRotationForPresentation;
 - (void)_didFinishDismissTransition;
 - (void)_didFinishPresentTransition;
 - (void)_didReceiveMemoryWarning:(id)arg1;
@@ -498,14 +530,14 @@
 - (BOOL)_displaysFullScreen;
 - (void)_doCommonSetup;
 - (BOOL)_doesSelfOrAncestorPassPredicate:(id /* block */)arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_edgeInsetsForChildViewController:(id)arg1 insetsAreAbsolute:(BOOL*)arg2;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_edgeInsetsForChildViewController:(id)arg1 insetsAreAbsolute:(BOOL*)arg2;
 - (id)_effectiveStatusBarHiddenViewController;
 - (id)_effectiveStatusBarStyleViewController;
 - (id)_effectiveWhitePointAdaptivityStyleViewController;
-- (void)_embedContentViewInView:(id)arg1 withContentFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 delegate:(id)arg3;
+- (void)_embedContentViewInView:(id)arg1 withContentFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 delegate:(id)arg3;
 - (id)_embeddedDelegate;
 - (id)_embeddedView;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_embeddedViewFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_embeddedViewFrame;
 - (id)_embeddingView;
 - (BOOL)_endAppearanceTransition:(id /* block */)arg1;
 - (void)_endAppearanceTransitionToViewController:(id)arg1;
@@ -521,25 +553,19 @@
 - (id)_existingView;
 - (id)_extensionContext;
 - (id)_firstResponder;
-- (id)_focusDebugOverlayParentView;
-- (BOOL)_focusRegionCanBecomeFocused;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_focusRegionFrame;
-- (id)_focusRegionGuides;
-- (BOOL)_focusRegionIsEligibleForFocus;
-- (id)_focusRegionItem;
-- (id)_focusRegionView;
-- (struct CGSize { float x1; float x2; })_formSheetSizeForWindowWithSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })_formSheetSizeForWindowWithSize:(struct CGSize { double x1; double x2; })arg1;
 - (BOOL)_forwardAppearanceMethods;
 - (BOOL)_forwardRotationMethods;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForContainerViewInSheetForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForContainerViewInSheetForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 displayingTopView:(BOOL)arg2 andBottomView:(BOOL)arg3;
-- (id)_fulfillPromisedFocusRegion;
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; float x6; int x7; }*)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameForContainerViewInSheetForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameForContainerViewInSheetForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 displayingTopView:(BOOL)arg2 andBottomView:(BOOL)arg3;
+- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; int x7; }*)arg1;
 - (BOOL)_hackFor11408026_beginAppearanceTransition:(BOOL)arg1 animated:(BOOL)arg2;
 - (BOOL)_hackFor11408026_endAppearanceTransition;
 - (void)_handleTapToDismissModalCurl:(id)arg1;
+- (BOOL)_handlesCounterRotationForPresentation;
 - (BOOL)_hasAppeared;
 - (BOOL)_hasCurlUpTapGestureRecognizer;
+- (BOOL)_hasPreferredInterfaceOrientationForPresentation;
 - (int)_horizontalSizeClass;
 - (int)_horizontalSizeClassForChildViewController:(id)arg1;
 - (id)_hostApplicationBundleIdentifier;
@@ -561,6 +587,7 @@
 - (BOOL)_isInCustomTransition;
 - (BOOL)_isInPopoverPresentation;
 - (BOOL)_isInSheetPresentation;
+- (BOOL)_isInViewControllerThatHandlesKeyboardAvoidance;
 - (BOOL)_isInterfaceAutorotationDisabled;
 - (BOOL)_isMemberOfViewControllerHierarchy:(id)arg1;
 - (BOOL)_isModalSheet;
@@ -568,10 +595,8 @@
 - (BOOL)_isPresentationContextByDefault;
 - (BOOL)_isPresentedFormSheet;
 - (BOOL)_isPresentingInWindow:(id)arg1;
-- (BOOL)_isPromiseFocusRegion;
 - (BOOL)_isRootViewController;
 - (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
-- (BOOL)_isTransparentFocusRegion;
 - (BOOL)_isViewController;
 - (BOOL)_isViewControllerInWindowHierarchy;
 - (BOOL)_isViewInWindowWithoutParentViewController;
@@ -584,8 +609,6 @@
 - (id)_lastNotifiedTraitCollection;
 - (void)_layoutContainerViewDidMoveToWindow:(id)arg1;
 - (void)_layoutContainerViewWillMoveToWindow:(id)arg1;
-- (id)_leftLayoutGuide;
-- (id)_leftMarginGuideConstraint;
 - (void)_legacyDismissModalViewController:(id)arg1 withTransition:(int)arg2;
 - (int)_legacyInterfaceOrientation;
 - (void)_legacyModalDismissTransitionDidComplete;
@@ -593,13 +616,16 @@
 - (void)_legacyPresentModalViewController:(id)arg1 withTransition:(int)arg2;
 - (void)_loadHierarchyInputAccessoryViewIfNecessary;
 - (void)_loadViewFromNibNamed:(id)arg1 bundle:(id)arg2;
+- (BOOL)_modalPresentationStyleRequiresTemporaryPopoverPresentationController:(int)arg1;
 - (id)_modalPresenter:(int)arg1;
 - (id)_modalPresenterForPresentationController:(id)arg1;
 - (id)_modalPreservedFirstResponder;
 - (id)_modalSourceViewController;
 - (BOOL)_monitorsSystemLayoutFittingSize;
 - (id)_moreListTitle;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_navigationControllerContentInsetAdjustment;
+- (id)_multiColumnViewController;
+- (id)_navigationBarForDragAffordance;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_navigationControllerContentInsetAdjustment;
 - (float)_navigationControllerContentOffsetAdjustment;
 - (id)_navigationItemCreatingDefaultIfNotSet;
 - (id)_nearestFullScreenAncestorViewController;
@@ -609,11 +635,13 @@
 - (id)_nonModalAncestorViewControllerStopAtIsPresentationContext:(BOOL)arg1;
 - (id)_nonModalParentViewController;
 - (id)_nonPresentationAppearanceContainer;
+- (BOOL)_optsOutOfPopoverControllerHierarchyCheck;
 - (id)_originalPresentationController;
 - (void)_overlayPresentAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (int)_overrideInterfaceOrientationMechanics;
 - (id)_overrideTransitioningDelegate;
 - (BOOL)_overrideUseCustomPresentation;
+- (BOOL)_overridesTraitCollectionDidChange;
 - (id)_overridingDestinationEnvironmentForFocusUpdateInContext:(id)arg1;
 - (void)_parent:(id)arg1 willTransitionToTraitCollection:(id)arg2 withTransitionCoordinator:(id)arg3;
 - (id)_parentContentContainer;
@@ -624,8 +652,8 @@
 - (void)_performCoordinatedPresentOrDismiss:(id /* block */)arg1 animated:(BOOL)arg2;
 - (id)_popoverController;
 - (void)_populateArchivedChildViewControllers:(id)arg1;
-- (id)_preferredChildFocusRegionsForView;
 - (void)_preferredContentSizeDidChangeForChildViewController:(id)arg1;
+- (id)_preferredContentSizes;
 - (int)_preferredInterfaceOrientationForPresentationInWindow:(id)arg1 fromInterfaceOrientation:(int)arg2;
 - (int)_preferredInterfaceOrientationGivenCurrentOrientation:(int)arg1;
 - (int)_preferredInterfaceOrientationGivenStatusBarAndDeviceAndOrientation:(int)arg1;
@@ -639,6 +667,7 @@
 - (void)_prepareForNormalDisplayWithNavigationController:(id)arg1;
 - (void)_prepareForPresentationInPopover:(id)arg1;
 - (void)_prepareForTapGesture:(id)arg1;
+- (void)_preparePresentationControllerForPresenting:(id)arg1;
 - (void)_presentViewController:(id)arg1 modalSourceViewController:(id)arg2 presentationController:(id)arg3 animationController:(id)arg4 interactionController:(id)arg5 completion:(id /* block */)arg6;
 - (void)_presentViewController:(id)arg1 withAnimationController:(id)arg2 completion:(id /* block */)arg3;
 - (void)_presentViewControllerForStateRestoration:(id)arg1 animated:(BOOL)arg2;
@@ -647,18 +676,18 @@
 - (id)_presentationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
 - (struct { int x1; int x2; })_presentationSizeClassPair;
 - (id)_presentedStatusBarViewController;
-- (id)_presentingFocusedView;
+- (id)_presentingFocusedItem;
 - (void)_presentingViewControllerDidChange:(id)arg1;
 - (void)_presentingViewControllerWillChange:(id)arg1;
 - (id)_previousFittingSizeInfo;
 - (id)_previousRootViewController;
 - (id)_primaryViewControllerForAutorotation;
-- (void)_primitiveSetNavigationControllerContentInsetAdjustment:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)_primitiveSetNavigationControllerContentInsetAdjustment:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)_primitiveSetNavigationControllerContentOffsetAdjustment:(float)arg1;
 - (id)_printHierarchy;
 - (BOOL)_reallyWantsFullScreenLayout;
 - (void)_recordContentScrollView;
-- (void)_rememberPresentingFocusedView:(id)arg1;
+- (void)_rememberPresentingFocusedItem:(id)arg1;
 - (id)_remoteViewControllerProxy;
 - (id)_remoteViewControllerProxyWithErrorHandler:(id /* block */)arg1;
 - (void)_removeChildViewController:(id)arg1;
@@ -668,11 +697,10 @@
 - (BOOL)_requiresCustomPresentationController;
 - (void)_resetViewController;
 - (void)_resignRootViewController;
-- (struct CGSize { float x1; float x2; })_resolvedPreferredContentSize;
+- (struct CGSize { double x1; double x2; })_resolvedPreferredContentSize;
 - (id)_restorationClassName;
 - (void)_restoreInputViewsForPresentation;
-- (id)_rightLayoutGuide;
-- (id)_rightMarginGuideConstraint;
+- (BOOL)_restoresFocusAfterTransitionByDefault;
 - (id)_rootAncestorViewController;
 - (int)_rotatingFromInterfaceOrientation;
 - (int)_rotatingToInterfaceOrientation;
@@ -680,24 +708,24 @@
 - (id)_segueResponsibleForModalPresentation;
 - (id)_segueTemplateWithIdentifier:(id)arg1;
 - (void)_sendViewDidLoadWithAppearanceProxyObjectTaggingEnabled;
-- (void)_sendViewWillTransitionToSizeToPresentationController:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)_sendViewWillTransitionToSizeToPresentationController:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (void)_setAllowNestedNavigationControllers:(BOOL)arg1;
 - (void)_setAllowsAutorotation:(BOOL)arg1;
 - (void)_setAppearState:(int)arg1;
 - (void)_setAvoidanceInsetsNeedsUpdate;
 - (void)_setChildControllerToIgnoreWhileLookingForTransitionCoordinator:(id)arg1;
 - (void)_setContentMargin:(float)arg1;
-- (void)_setContentOverlayInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)_setContentOverlayInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)_setCustomizesForPresentationInPopover:(BOOL)arg1;
 - (void)_setDisallowMixedOrientationPresentations:(BOOL)arg1;
 - (void)_setEmbeddedDelegate:(id)arg1;
 - (void)_setEmbeddedView:(id)arg1;
-- (void)_setEmbeddedViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_setEmbeddedViewFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)_setEmbeddingView:(id)arg1;
 - (void)_setExistingNavigationItem:(id)arg1;
 - (void)_setExistingTabBarItem:(id)arg1;
 - (void)_setExtensionContext:(id)arg1;
-- (void)_setFormSheetSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)_setFormSheetSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)_setHostApplicationBundleIdentifier:(id)arg1;
 - (void)_setHostAuditToken:(struct { unsigned int x1[8]; })arg1;
 - (void)_setHostProcessIdentifier:(int)arg1;
@@ -710,7 +738,7 @@
 - (void)_setLastNotifiedTraitCollection:(id)arg1;
 - (void)_setModalPresentationStyle:(int)arg1;
 - (void)_setModalSourceViewController:(id)arg1;
-- (void)_setNavigationControllerContentInsetAdjustment:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)_setNavigationControllerContentInsetAdjustment:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)_setNavigationControllerContentOffsetAdjustment:(float)arg1;
 - (void)_setNeedsNonDeferredFocusUpdate;
 - (void)_setNeedsScreenWhitePointAdaptivityStyleUpdate;
@@ -721,6 +749,7 @@
 - (void)_setPresentationController:(id)arg1;
 - (void)_setPresentationSizeClassPair:(struct { int x1; int x2; })arg1;
 - (void)_setPresentedStatusBarViewController:(id)arg1;
+- (void)_setPresentingFocusedItem:(id)arg1;
 - (void)_setPreviousFittingSizeInfo:(id)arg1;
 - (void)_setPreviousRootViewController:(id)arg1;
 - (void)_setPreviousUnderlapsStatusBar:(BOOL)arg1;
@@ -729,6 +758,7 @@
 - (void)_setSearchDisplayControllerUnretained:(id)arg1;
 - (void)_setSegueResponsibleForModalPresentation:(id)arg1;
 - (void)_setSharedView:(id)arg1;
+- (void)_setShouldFreezeUnderlapsStatusBar:(BOOL)arg1;
 - (void)_setShouldLoadInputAccessoryViewOnAppearance:(BOOL)arg1;
 - (void)_setShouldSynthesizeSupportedOrientations:(BOOL)arg1;
 - (void)_setSourceViewControllerIfPresentedViaPopoverSegue:(id)arg1;
@@ -736,7 +766,6 @@
 - (void)_setSuppressesBottomBar:(BOOL)arg1;
 - (void)_setTemporaryPresentationController:(id)arg1;
 - (void)_setUpLayoutGuideConstraintIfNecessaryAtTop:(BOOL)arg1;
-- (void)_setUpLayoutGuideConstraintIfNecessaryOnLeft:(BOOL)arg1;
 - (void)_setUseTelephonyUI:(BOOL)arg1;
 - (void)_setUsesSharedView:(BOOL)arg1;
 - (void)_setViewAppearState:(int)arg1 isAnimating:(BOOL)arg2;
@@ -747,11 +776,12 @@
 - (BOOL)_shouldAutoPinInputViewsForModalFormSheet;
 - (BOOL)_shouldChildViewControllerUseFullScreenLayout:(id)arg1;
 - (BOOL)_shouldForwardSystemLayoutFittingSizeChanges;
+- (BOOL)_shouldFreezeUnderlapsStatusBar;
 - (BOOL)_shouldIgnoreTouchesForModalFormSheet;
 - (BOOL)_shouldLoadInputAccessoryViewsOnAppearance;
 - (BOOL)_shouldLoadViewDuringRestoration:(id)arg1;
 - (BOOL)_shouldPersistViewWhenCoding;
-- (BOOL)_shouldPropagateFrameChange:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)_shouldPropagateFrameChange:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (BOOL)_shouldRemoveViewFromHierarchyOnDisappear;
 - (BOOL)_shouldSynthesizeSupportedOrientations;
 - (BOOL)_shouldUpdateLayoutForStatusBarAndInterfaceOrientation;
@@ -761,16 +791,18 @@
 - (void)_showViewController:(id)arg1 withAction:(SEL)arg2 sender:(id)arg3;
 - (BOOL)_skipDefaultAppearStateCallbacks;
 - (id)_sourceViewControllerIfPresentedViaPopoverSegue;
+- (void)_splitViewControllerWillCollapseOntoPrimaryViewController:(id)arg1;
 - (void)_startModalPresentationInPopover;
 - (void)_startPresentCustomTransitionWithDuration:(double)arg1;
 - (void)_stateRestorationDidFinish:(BOOL)arg1;
 - (float)_statusBarHeightAdjustmentForCurrentOrientation;
 - (float)_statusBarHeightForCurrentInterfaceOrientation;
+- (void)_stopTransitionsImmediately;
 - (int)_supportedInterfaceOrientationForInterfaceOrientation:(int)arg1 givenMask:(unsigned int*)arg2;
 - (void)_supportedInterfaceOrientationsDidChange;
 - (BOOL)_suppressesBottomBar;
 - (void)_systemLayoutFittingSizeDidChangeForChildContentContainer:(id)arg1 childViewController:(id)arg2;
-- (struct CGSize { float x1; float x2; })_systemLayoutSizeFittingSize:(struct CGSize { float x1; float x2; })arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;
+- (struct CGSize { double x1; double x2; })_systemLayoutSizeFittingSize:(struct CGSize { double x1; double x2; })arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;
 - (id)_temporaryPresentationController;
 - (void)_toggleEditing:(id)arg1;
 - (float)_topBarHeight;
@@ -821,24 +853,27 @@
 - (id)_viewForContentInPopover;
 - (id)_viewForModalPresentationInPopover;
 - (BOOL)_viewHostsLayoutEngine;
+- (BOOL)_viewHostsLayoutEngineAllowsTAMIC_NO;
 - (id)_viewsWithDisabledInteractionGivenTransitionContext:(id)arg1;
 - (id)_visibleView;
 - (void)_willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2 forwardToChildControllers:(BOOL)arg3 skipSelf:(BOOL)arg4;
 - (void)_willAppearInRemoteViewController;
 - (void)_willAppearInRemoteViewController:(id)arg1;
 - (void)_willBecomeContentViewControllerOfPopover:(id)arg1;
+- (void)_willBeginCounterRotationForPresentation;
 - (void)_willChangeToIdiom:(int)arg1 onScreen:(id)arg2;
 - (void)_willResignContentViewControllerOfPopover:(id)arg1;
 - (void)_willRotateToInterfaceOrientation;
 - (void)_willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2 forwardToChildControllers:(BOOL)arg3 skipSelf:(BOOL)arg4;
 - (id)_window;
-- (void)_window:(id)arg1 viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg2 withTransitionCoordinator:(id)arg3;
+- (void)_window:(id)arg1 viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg2 withTransitionCoordinator:(id)arg3;
 - (void)_window:(id)arg1 willTransitionToTraitCollection:(id)arg2 withTransitionCoordinator:(id)arg3;
 - (void)_windowControllerBasedDismissViewControllerWithTransition:(int)arg1 from:(id)arg2 completion:(id /* block */)arg3;
 - (void)_windowControllerBasedPresentViewController:(id)arg1 withTransition:(int)arg2 completion:(id /* block */)arg3;
 - (void)_windowControllerDismissViewControllerWithTransition:(int)arg1 completion:(id /* block */)arg2;
 - (id)_windowForAutorotation;
 - (void)accessibilityLargeTextDidChange;
+- (id)actionSheetPresentationController;
 - (void)addChildViewController:(id)arg1;
 - (void)addKeyCommand:(id)arg1;
 - (id /* block */)afterAppearanceBlock;
@@ -866,13 +901,14 @@
 - (id)childViewControllerContainingSegueSource:(id)arg1;
 - (id)childViewControllerForStatusBarHidden;
 - (id)childViewControllerForStatusBarStyle;
+- (id)childViewControllerForWhitePointAdaptivityStyle;
 - (id)childViewControllers;
 - (unsigned int)childViewControllersCount;
 - (void)collapseSecondaryViewController:(id)arg1 forSplitViewController:(id)arg2;
 - (BOOL)containmentSupport;
 - (id)contentScrollView;
-- (struct CGSize { float x1; float x2; })contentSizeForViewInPopover;
-- (struct CGSize { float x1; float x2; })contentSizeForViewInPopoverView;
+- (struct CGSize { double x1; double x2; })contentSizeForViewInPopover;
+- (struct CGSize { double x1; double x2; })contentSizeForViewInPopoverView;
 - (id)currentAction;
 - (float)customNavigationInteractiveTransitionDuration;
 - (float)customNavigationInteractiveTransitionPercentComplete;
@@ -888,7 +924,6 @@
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (BOOL)disableRootPromotion;
 - (BOOL)disablesAutomaticKeyboardDismissal;
-- (void)dismissModalItem:(id)arg1 withTappedButtonIndex:(int)arg2 animated:(BOOL)arg3;
 - (void)dismissModalViewControllerAnimated:(BOOL)arg1;
 - (void)dismissModalViewControllerWithTransition:(int)arg1;
 - (void)dismissViewControllerAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
@@ -906,8 +941,8 @@
 - (void)focusedViewDidChange;
 - (void)focusedViewWillChange;
 - (void)forceUnloadView;
-- (struct CGSize { float x1; float x2; })formSheetSize;
-- (void)getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; float x6; int x7; }*)arg1 forWindow:(id)arg2;
+- (struct CGSize { double x1; double x2; })formSheetSize;
+- (void)getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; int x7; }*)arg1 forWindow:(id)arg2;
 - (BOOL)hidesBottomBarWhenPushed;
 - (BOOL)ignoresParentMargins;
 - (BOOL)inExplicitAppearanceTransition;
@@ -934,8 +969,6 @@
 - (BOOL)isViewLoaded;
 - (id)keyCommands;
 - (id)leadingPreviewAction;
-- (id)leadingPreviewMenuItem;
-- (id)leadingPreviewQuickAction;
 - (void)loadView;
 - (void)loadViewIfNeeded;
 - (void)loadViewIfRequired;
@@ -961,19 +994,17 @@
 - (void)performSegueWithIdentifier:(id)arg1 sender:(id)arg2;
 - (id)popoverPresentationController;
 - (id)popoverPresentationController:(BOOL)arg1;
-- (struct CGSize { float x1; float x2; })preferredContentSize;
+- (struct CGSize { double x1; double x2; })preferredContentSize;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
+- (id)preferredFocusEnvironments;
 - (id)preferredFocusedItem;
 - (id)preferredFocusedView;
 - (int)preferredInterfaceOrientationForPresentation;
 - (int)preferredStatusBarStyle;
 - (int)preferredStatusBarUpdateAnimation;
+- (int)preferredWhitePointAdaptivityStyle;
 - (BOOL)prefersStatusBarHidden;
 - (void)prepareForSegue:(id)arg1 sender:(id)arg2;
-- (void)presentModalItem:(id)arg1 animated:(BOOL)arg2;
-- (void)presentModalItem:(id)arg1 animated:(BOOL)arg2 dontPresentAndAddToStack:(BOOL)arg3;
-- (void)presentModalItem:(id)arg1 replacing:(id)arg2 animated:(BOOL)arg3;
-- (void)presentModalItem:(id)arg1 replacing:(id)arg2 animated:(BOOL)arg3 dontPresentAndAddToStack:(BOOL)arg4;
 - (void)presentModalViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)presentModalViewController:(id)arg1 withTransition:(int)arg2;
 - (void)presentViewController:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
@@ -996,6 +1027,7 @@
 - (void)removeKeyCommand:(id)arg1;
 - (Class)restorationClass;
 - (void)restoreUserActivityState:(id)arg1;
+- (BOOL)restoresFocusAfterTransition;
 - (id)retain;
 - (unsigned int)retainCount;
 - (id)rotatingContentViewForWindow:(id)arg1;
@@ -1015,19 +1047,20 @@
 - (void)setAutoresizesArchivedViewToFullSize:(BOOL)arg1;
 - (void)setChildModalViewController:(id)arg1;
 - (void)setContainmentSupport:(BOOL)arg1;
-- (void)setContentSizeForViewInPopover:(struct CGSize { float x1; float x2; })arg1;
+- (void)setContentSizeForViewInPopover:(struct CGSize { double x1; double x2; })arg1;
 - (void)setCustomNavigationInteractiveTransitionDuration:(float)arg1;
 - (void)setCustomNavigationInteractiveTransitionPercentComplete:(float)arg1;
 - (void)setCustomTransitioningView:(id)arg1;
 - (void)setDefinesPresentationContext:(BOOL)arg1;
 - (void)setDisableRootPromotion:(BOOL)arg1;
+- (void)setDisablesAutomaticKeyboardDismissal:(BOOL)arg1;
 - (void)setDropShadowView:(id)arg1;
 - (void)setEdgesForExtendedLayout:(unsigned int)arg1;
 - (void)setEditing:(BOOL)arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setExtendedLayoutIncludesOpaqueBars:(BOOL)arg1;
 - (void)setFinishingModalTransition:(BOOL)arg1;
-- (void)setFormSheetSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setFormSheetSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setHidesBottomBarWhenPushed:(BOOL)arg1;
 - (void)setIgnoresParentMargins:(BOOL)arg1;
 - (void)setInAnimatedVCTransition:(BOOL)arg1;
@@ -1044,17 +1077,19 @@
 - (void)setNeedsFocusUpdate;
 - (void)setNeedsPreferredFocusedItemUpdate;
 - (void)setNeedsStatusBarAppearanceUpdate;
+- (void)setNeedsWhitePointAdaptivityStyleUpdate;
 - (void)setNibBundle:(id)arg1;
 - (void)setNibName:(id)arg1;
 - (void)setOverrideTraitCollection:(id)arg1 forChildViewController:(id)arg2;
 - (void)setParentModalViewController:(id)arg1;
 - (void)setParentViewController:(id)arg1;
 - (void)setPerformingModalTransition:(BOOL)arg1;
-- (void)setPreferredContentSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setPreferredContentSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setPreferredFocusedItem:(id)arg1;
 - (void)setPreferredFocusedView:(id)arg1;
 - (void)setProvidesPresentationContextTransitionStyle:(BOOL)arg1;
 - (void)setRestorationClass:(Class)arg1;
+- (void)setRestoresFocusAfterTransition:(BOOL)arg1;
 - (void)setSearchBarHidNavBar:(BOOL)arg1;
 - (void)setSearchDisplayController:(id)arg1;
 - (void)setShouldForceNonAnimatedTransition:(BOOL)arg1;
@@ -1081,7 +1116,7 @@
 - (BOOL)shouldWindowUseOnePartInterfaceRotationAnimation:(id)arg1;
 - (void)showDetailViewController:(id)arg1 sender:(id)arg2;
 - (void)showViewController:(id)arg1 sender:(id)arg2;
-- (struct CGSize { float x1; float x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { float x1; float x2; })arg2;
+- (struct CGSize { double x1; double x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { double x1; double x2; })arg2;
 - (id)splitViewController;
 - (id)storyboard;
 - (id)storyboardCommitSegueTemplates;
@@ -1099,12 +1134,10 @@
 - (id)toolbarItems;
 - (id)topLayoutGuide;
 - (id)trailingPreviewAction;
-- (id)trailingPreviewMenuItem;
-- (id)trailingPreviewQuickAction;
 - (id)traitCollection;
 - (void)traitCollectionDidChange:(id)arg1;
 - (id)traitCollectionForChildViewController:(id)arg1;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })tranformForScreenOriginRotation:(float)arg1;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })tranformForScreenOriginRotation:(float)arg1;
 - (id)transitionCoordinator;
 - (void)transitionFromViewController:(id)arg1 toViewController:(id)arg2 duration:(double)arg3 options:(unsigned int)arg4 animations:(id /* block */)arg5 completion:(id /* block */)arg6;
 - (void)transitionViewDidComplete:(id)arg1 fromView:(id)arg2 toView:(id)arg3;
@@ -1118,7 +1151,6 @@
 - (void)unregisterPreviewing:(id)arg1;
 - (void)unwindForSegue:(id)arg1 towardsViewController:(id)arg2;
 - (void)updateFocusIfNeeded;
-- (void)updateModaltem:(id)arg1 animated:(BOOL)arg2;
 - (void)updatePreferredFocusedItemIfNeeded;
 - (void)updateTabBarItemForViewController:(id)arg1;
 - (void)updateTitleForViewController:(id)arg1;
@@ -1140,7 +1172,7 @@
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillLayoutSubviews;
 - (void)viewWillMoveToWindow:(id)arg1;
-- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (void)viewWillUnload;
 - (BOOL)wantsFullScreenLayout;
 - (void)willAnimateFirstHalfOfRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
@@ -1153,19 +1185,19 @@
 - (void)willUpdateFocusToView:(id)arg1;
 - (void)window:(id)arg1 didAnimateFirstHalfOfRotationToInterfaceOrientation:(int)arg2;
 - (void)window:(id)arg1 didRotateFromInterfaceOrientation:(int)arg2;
-- (void)window:(id)arg1 didRotateFromInterfaceOrientation:(int)arg2 oldSize:(struct CGSize { float x1; float x2; })arg3;
+- (void)window:(id)arg1 didRotateFromInterfaceOrientation:(int)arg2 oldSize:(struct CGSize { double x1; double x2; })arg3;
 - (void)window:(id)arg1 resizeFromOrientation:(int)arg2;
 - (void)window:(id)arg1 setupWithInterfaceOrientation:(int)arg2;
 - (BOOL)window:(id)arg1 shouldAutorotateToInterfaceOrientation:(int)arg2;
 - (void)window:(id)arg1 statusBarWillChangeFromHeight:(float)arg2 toHeight:(float)arg3;
 - (void)window:(id)arg1 statusBarWillChangeFromHeight:(float)arg2 toHeight:(float)arg3 windowSizedViewController:(id)arg4;
 - (void)window:(id)arg1 willAnimateFirstHalfOfRotationToInterfaceOrientation:(int)arg2 duration:(double)arg3;
-- (void)window:(id)arg1 willAnimateFromContentFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 toContentFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
+- (void)window:(id)arg1 willAnimateFromContentFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 toContentFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
 - (void)window:(id)arg1 willAnimateRotationToInterfaceOrientation:(int)arg2 duration:(double)arg3;
-- (void)window:(id)arg1 willAnimateRotationToInterfaceOrientation:(int)arg2 duration:(double)arg3 newSize:(struct CGSize { float x1; float x2; })arg4;
+- (void)window:(id)arg1 willAnimateRotationToInterfaceOrientation:(int)arg2 duration:(double)arg3 newSize:(struct CGSize { double x1; double x2; })arg4;
 - (void)window:(id)arg1 willAnimateSecondHalfOfRotationFromInterfaceOrientation:(int)arg2 duration:(double)arg3;
 - (void)window:(id)arg1 willRotateToInterfaceOrientation:(int)arg2 duration:(double)arg3;
-- (void)window:(id)arg1 willRotateToInterfaceOrientation:(int)arg2 duration:(double)arg3 newSize:(struct CGSize { float x1; float x2; })arg4;
+- (void)window:(id)arg1 willRotateToInterfaceOrientation:(int)arg2 duration:(double)arg3 newSize:(struct CGSize { double x1; double x2; })arg4;
 
 // Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
 
@@ -1186,21 +1218,16 @@
 
 // Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
 
-+ (Class)_ABPersonViewControllerClass;
-+ (id)eventDetailViewControllerWithEvent:(id)arg1 delegate:(id)arg2;
++ (id)eventDetailViewControllerWithEvent:(id)arg1 delegate:(id)arg2 context:(struct NSDictionary { Class x1; }*)arg3;
 
 - (BOOL)isPresentedInsidePopover;
 
+// Image: /System/Library/Frameworks/MapKit.framework/MapKit
+
+- (void)infoCardThemeChanged:(id)arg1;
+
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
-+ (void)_beginAppearanceTransitionFromViewController:(id)arg1 toViewController:(id)arg2 animated:(BOOL)arg3;
-+ (void)_endAppearanceTransitionFromViewController:(id)arg1 toViewController:(id)arg2;
-
-- (void)_addChildViewAndViewController:(id)arg1;
-- (void)_addChildViewAndViewController:(id)arg1 asSubviewOfView:(id)arg2;
-- (void)_addChildViewAndViewController:(id)arg1 asSubviewOfView:(id)arg2 addSubviewBlock:(id /* block */)arg3;
-- (BOOL)_hasAncestorViewController:(id)arg1;
-- (void)_removeFromParentViewAndViewController;
 - (id)aggregateStatisticsDisplayCountKey;
 - (void)dismissMoviePlayerViewControllerAnimated;
 - (void)presentMoviePlayerViewControllerAnimated:(id)arg1;
@@ -1212,27 +1239,31 @@
 - (id)mf_keyPathsMapForUICustomization;
 - (void)mf_setDataForUICustomization:(id)arg1;
 
-// Image: /System/Library/Frameworks/PassKit.framework/PassKit
-
-- (void)pk_applyAppearance:(struct _PKAppearanceSpecifier { BOOL x1; id x2; id x3; id x4; id x5; id x6; id x7; id x8; id x9; id x10; id x11; id x12; id x13; /* Warning: Unrecognized filer type: '' using 'void*' */ void*x14; void*x15; void*x16; void*x17; void*x18; void*x19; void*x20; void*x21; void*x22; void*x23; void*x24; void*x25; void*x26; void*x27; void*x28; void*x29; void*x30; void*x31; void*x32; bycopy void*x33; void*x34; void*x35; void*x36; void*x37; void*x38; void*x39; void*x40; void*x41; void*x42; void*x43; void*x44; void*x45; void*x46; void*x47; void*x48; void*x49; void*x50; void x51; void*x52; void*x53; void*x54; void*x55; void*x56; void*x57; void*x58; void*x59; unsigned int x60; void*x61; bool x62; void*x63; void*x64; in double x65; void*x66; const void*x67; void*x68; BOOL x69; void*x70; out const void*x71; int x72; void*x73; void*x74; double x75; void*x76; void*x77; short x78; short x79; BOOL x80; out double x81; void*x82; void*x83; void*x84; void*x85; void*x86; void*x87; void*x88; void*x89; void*x90; void*x91; void*x92; void*x93; void x94; void*x95; void*x96; void*x97; void*x98; void*x99; void*x100; void*x101; void*x102; unsigned int x103; void*x104; bool x105; void*x106; void*x107; in double x108; void*x109; const void*x110; void*x111; BOOL x112; void*x113; out const void*x114; int x115; void*x116; void*x117; double x118; void*x119; void*x120; short x121; short x122; BOOL x123; out double x124; void*x125; void*x126; void*x127; void*x128; void*x129; void*x130; void*x131; void*x132; void*x133; void*x134; void*x135; void*x136; void*x137; void*x138; void*x139; void*x140; void*x141; void*x142; void*x143; void*x144; void*x145; void*x146; void*x147; void*x148; void*x149; void*x150; void*x151; void*x152; void*x153; void*x154; void*x155; void*x156; void*x157; void*x158; void*x159; void*x160; void*x161; void*x162; void*x163; void*x164; void*x165; void*x166; void*x167; void*x168; void*x169; void*x170; void*x171; void*x172; void*x173; void*x174; void*x175; void*x176; void*x177; void*x178; void*x179; void*x180; void*x181; void*x182; void*x183; void*x184; void*x185; void*x186; void*x187; void*x188; void*x189; void*x190; void*x191; void*x192; void*x193; void*x194; void*x195; void*x196; void*x197; void*x198; void*x199; void*x200; void x201; void*x202; void*x203; void*x204; void*x205; void*x206; void*x207; void*x208; void*x209; unsigned short x210; void*x211; short x212; void*x213; void*x214; void*x215; void*x216; unsigned long x217; int x218; unsigned int x219/* : ? */; const void*x220; const void*x221; void*x222; void*x223; const void*x224; void*x225; void*x226; void*x227; out const void*x228; short x229; void*x230; void*x231; void*x232; void*x233; long x234; void*x235; void*x236; void*x237; int x238; void*x239; void*x240; float x241; const void*x242; void*x243; void*x244; void*x245; out const void*x246; void*x247; void*x248; void*x249; void*x250; long x251; void*x252; void*x253; void*x254; int x255; void*x256; void*x257; void*x258; void*x259; void*x260; void*x261; void*x262; void*x263; void*x264; void*x265; void*x266; void*x267; void*x268; void*x269; void*x270; void*x271; void*x272; void*x273; void*x274; void*x275; void*x276; void*x277; void*x278; void*x279; void*x280; id x281; void*x282; void*x283; id x284; void*x285; void*x286; id x287; void*x288; void*x289; void*x290; void*x291; void*x292; void*x293; void*x294; void*x295; void*x296; void*x297; void*x298; void*x299; void*x300; void*x301; void x302; void*x303; void*x304; void*x305; void*x306; void*x307; void*x308; void*x309; unsigned char x310; void*x311; void*x312; const void*x313; in short x314; BOOL x315; const int x316; void*x317; void*x318; void*x319; void*x320; long x321; void*x322; int x323; long x324; int x325; in void*x326; unsigned long x327; void*x328; unsigned int x329/* : ? */; void*x330; long x331; unsigned char x332; void*x333; long x334; long x335; void*x336; void*x337; void*x338; void*x339; void*x340; void*x341; void*x342; void*x343; void*x344; void*x345; void x346; void*x347; void*x348; void*x349; void*x350; void*x351; void*x352; void*x353; unsigned char x354; void*x355; void*x356; const void*x357; in short x358; BOOL x359; const int x360; void*x361; void*x362; void*x363; void*x364; long x365; void*x366; int x367; long x368; int x369; in void*x370; unsigned long x371; void*x372; unsigned int x373/* : ? */; void*x374; long x375; unsigned char x376; void*x377; long x378; long x379; void*x380; void*x381; void*x382; void*x383; void*x384; void*x385; void*x386; void*x387; void*x388; void*x389; void x390; void*x391; void*x392; void*x393; void*x394; void*x395; void*x396; void*x397; void*x398; unsigned short x399; void*x400; short x401; void*x402; void*x403; void*x404; void*x405; unsigned long x406; int x407; unsigned int x408/* : ? */; const void*x409; const void*x410; void*x411; void*x412; const int x413; void x414; void*x415; void*x416; void*x417; void*x418; const void*x419; void*x420; void*x421; void*x422; out const void*x423; short x424; void*x425; unsigned char x426; void*x427; void*x428; void*x429; void*x430; int x431; void*x432; void*x433; float x434; const void*x435; void*x436; void*x437; void*x438; out const void*x439; void*x440; unsigned char x441; void*x442; void*x443; void*x444; void*x445; int x446; void*x447; void*x448; void*x449; void*x450; void*x451; void*x452; void*x453; void*x454; void*x455; void*x456; void*x457; void*x458; void*x459; void*x460; void*x461; void*x462; void*x463; void*x464; void*x465; void*x466; void*x467; void*x468; void*x469; void*x470; void*x471; void*x472; void*x473; void*x474; void*x475; void*x476; void*x477; void*x478; void*x479; void*x480; void*x481; void*x482; void*x483; void*x484; void*x485; void*x486; void*x487; void*x488; void*x489; void*x490; void*x491; void*x492; in out in void*x493; void*x494; out void*x495; int x496; BOOL x497; void*x498; void*x499; const void*x500; void*x501; double x502; out in long x503; void*x504; void*x505; void*x506; void*x507; void*x508; void*x509; void*x510; void*x511; void*x512; void*x513; void*x514; void*x515; void*x516; void*x517; id x518; void*x519; void*x520; void**x521; void*x522; void*x523; void*x524; void*x525; void*x526; void*x527; void*x528; void*x529; void*x530; void*x531; void x532; void*x533; void*x534; void*x535; void*x536; void*x537; void*x538; void*x539; void*x540; unsigned long x541; void*x542; out void*x543; in double x544; void*x545; const out void*x546; const void*x547; short x548; short x549; oneway int x550; void*x551; void*x552; void*x553; void*x554; void*x555; void*x556; void*x557; void*x558; void*x559; void*x560; void*x561; void*x562; void*x563; void*x564; void*x565; void*x566; void*x567; void*x568; void*x569; void*x570; void*x571; void*x572; void*x573; void*x574; void*x575; void*x576; void*x577; void*x578; void*x579; void*x580; void*x581; void*x582; void*x583; void*x584; void*x585; void*x586; void x587; void*x588; void*x589; void*x590; void*x591; void*x592; void*x593; void*x594; void*x595; unsigned long x596; void*x597; out void*x598; in double x599; void*x600; const out void*x601; const void*x602; short x603; short x604; oneway int x605; void*x606; void*x607; void*x608; void*x609; void*x610; void*x611; void*x612; void x613; void*x614; void*x615; void*x616; void*x617; void*x618; void*x619; void*x620; void*x621; unsigned short x622; void*x623; short x624; void*x625; void*x626; void*x627; void*x628; unsigned long x629; int x630; unsigned int x631/* : ? */; const void*x632; const void*x633; void*x634; void*x635; const int x636; void x637; void*x638; void*x639; void*x640; void*x641; const void*x642; void*x643; void*x644; void*x645; out const void*x646; short x647; void*x648; void*x649; void*x650; out void*x651; out unsigned long x652; int x653; unsigned int x654/* : ? */; const void*x655; const void*x656; void*x657; float x658; const void*x659; void*x660; void*x661; void*x662; out const void*x663; void*x664; void*x665; void*x666; out void*x667; out unsigned long x668; int x669; unsigned int x670/* : ? */; const void*x671; const void*x672; void*x673; void*x674; void*x675; void*x676; void*x677; void*x678; void*x679; void*x680; void*x681; void*x682; void*x683; void*x684; void*x685; void*x686; void*x687; void*x688; void*x689; void*x690; void*x691; void*x692; void*x693; void*x694; void*x695; void*x696; void*x697; void*x698; void*x699; void*x700; void*x701; void*x702; void*x703; void*x704; void*x705; void*x706; void*x707; void x708; void*x709; void*x710; void*x711; void*x712; void*x713; void*x714; void*x715; void*x716; void*x717; void*x718; void*x719; double x720; int x721; out double x722; void*x723; const void*x724; BOOL x725; void*x726; void*x727; void*x728; void*x729; void*x730; void*x731; void*x732; void*x733; void*x734; void*x735; void*x736; void*x737; void*x738; void*x739; void*x740; void*x741; void*x742; void*x743; void*x744; bool x745; void*x746; void*x747; void*x748; bool x749; void*x750; void*x751; void*x752; bool x753; void*x754; void*x755; void*x756; void*x757; void*x758; void*x759; void*x760; void*x761; void*x762; void*x763; void*x764; void*x765; void*x766; void*x767; void*x768; void x769; void*x770; void*x771; void*x772; void*x773; void*x774; void*x775; void*x776; void*x777; void*x778; void*x779; void*x780; double x781; int x782; out double x783; void*x784; const void*x785; BOOL x786; void*x787; void*x788; void*x789; void*x790; void*x791; void*x792; void*x793; void*x794; void*x795; void*x796; void*x797; void x798; void*x799; void*x800; void*x801; void*x802; void*x803; void*x804; void*x805; void*x806; unsigned short x807; void*x808; short x809; void*x810; void*x811; void*x812; void*x813; unsigned long x814; int x815; unsigned int x816/* : ? */; const void*x817; const void*x818; void*x819; void*x820; const int x821; void x822; void*x823; void*x824; void*x825; void*x826; const void*x827; void*x828; void*x829; void*x830; out const void*x831; short x832; void*x833; void*x834; void*x835; double x836; int x837; out void*x838; unsigned int x839; void*x840; float x841; const void*x842; void*x843; void*x844; void*x845; out const void*x846; void*x847; void*x848; void*x849; double x850; int x851; out void*x852; unsigned int x853; void*x854; void*x855; void*x856; void*x857; void*x858; void*x859; void*x860; void*x861; void*x862; void*x863; void*x864; void*x865; void*x866; void*x867; void*x868; void*x869; void*x870; void*x871; void*x872; void*x873; void*x874; void*x875; void*x876; void*x877; void*x878; void*x879; void*x880; void*x881; void*x882; void*x883; void*x884; void*x885; void*x886; void*x887; void*x888; void*x889; void*x890; void*x891; void*x892; void*x893; void*x894; void*x895; void*x896; void*x897; void*x898; void x899; void*x900; void*x901; void*x902; void*x903; void*x904; void*x905; void*x906; void*x907; long x908; void*x909; float x910; void*x911; void*x912; void*x913; const void*x914; int x915; in void*x916; void*x917; int x918; double x919; void*x920; unsigned char x921; out in short x922; void*x923; const void*x924; int x925; in void*x926; void*x927; void*x928; void*x929; void*x930; void*x931; void*x932; void*x933; void*x934; void*x935; void*x936; void*x937; void*x938; void*x939; void*x940; void x941; void*x942; void*x943; void*x944; void*x945; void*x946; void*x947; void*x948; const void*x949; BOOL x950; void*x951; const short x952; int x953; void x954; void*x955; long doublex956; void*x957; short x958; BOOL x959; const int x960; void*x961; void*x962; int x963; out in void*x964; void*x965; void*x966; void*x967; void*x968; void*x969; void*x970; void*x971; void*x972; void*x973; void*x974; void*x975; void*x976; void*x977; void*x978; id x979; void*x980; void*x981; void*x982; bool x983; void*x984; void*x985; void*x986; void*x987; void*x988; void*x989; void*x990; void*x991; void*x992; void*x993; void*x994; void*x995; void*x996; void*x997; void*x998; void x999; void*x1000; void*x1001; void*x1002; void*x1003; void*x1004; void*x1005; void*x1006; void*x1007; const void*x1008; void*x1009; out void*x1010; void*x1011; oneway int x1012; void*x1013; void*x1014; unsigned char x1015; out in void*x1016; const out long x1017; long x1018; void*x1019; const void*x1020; const out void*x1021; void*x1022; void*x1023; int x1024; void*x1025; void*x1026; void*x1027; const const out const void*x1028; void*x1029; in double x1030; long x1031; void*x1032; const SEL x1033; void*x1034; void*x1035; void*x1036; void*x1037; void*x1038; void*x1039; void*x1040; void*x1041; void*x1042; void*x1043; void*x1044; void*x1045; void*x1046; void x1047; void*x1048; void*x1049; void*x1050; void*x1051; void*x1052; void*x1053; void*x1054; void*x1055; short x1056; BOOL x1057; const void*x1058; void*x1059; in void*x1060; void*x1061; void*x1062; void*x1063; void*x1064; void*x1065; void*x1066; void*x1067; void*x1068; void*x1069; void*x1070; void*x1071; void*x1072; void*x1073; void*x1074; void*x1075; void*x1076; void x1077; void*x1078; void*x1079; void*x1080; void*x1081; void*x1082; void*x1083; void*x1084; unsigned short x1085; bool x1086; unsigned short x1087; void*x1088; unsigned int x1089; void*x1090; void*x1091; long x1092; long x1093; void*x1094; void*x1095; void*x1096; void*x1097; const void*x1098; const void*x1099; void x1100; int x1101; void*x1102; void*x1103; oneway int x1104; void*x1105; void*x1106; void*x1107; void*x1108; void*x1109; void*x1110; void*x1111; void*x1112; void*x1113; void*x1114; void*x1115; void*x1116; void*x1117; void*x1118; void*x1119; void*x1120; void*x1121; void*x1122; void*x1123; void*x1124; void*x1125; void*x1126; void*x1127; void*x1128; void*x1129; void*x1130; void*x1131; void*x1132; void*x1133; void*x1134; void*x1135; void*x1136; void*x1137; void*x1138; void*x1139; void*x1140; void*x1141; void*x1142; void*x1143; void*x1144; void*x1145; void*x1146; void*x1147; void*x1148; void*x1149; void*x1150; void*x1151; void*x1152; void*x1153; void*x1154; void*x1155; void*x1156; void*x1157; void*x1158; void*x1159; void*x1160; void*x1161; void*x1162; void*x1163; void*x1164; void*x1165; void*x1166; void*x1167; void*x1168; void*x1169; void x1170; void*x1171; void*x1172; void*x1173; void*x1174; void*x1175; void*x1176; void*x1177; BOOL x1178; void*x1179; short x1180; void*x1181; out void*x1182; inout void*x1183; void x1184; int x1185; void*x1186; void*x1187; void*x1188; int x1189; out in unsigned int x1190; in void*x1191; void*x1192; const void*x1193; BOOL x1194; void*x1195; int x1196; void x1197; void*x1198; void*x1199; const void*x1200; in short x1201; int x1202; void*x1203; int x1204; out in void*x1205; void*x1206; const BOOL x1207; void*x1208; in void*x1209; unsigned char x1210; out void*x1211; void*x1212; long x1213; void*x1214; void*x1215; void*x1216; void*x1217; void*x1218; void*x1219; void*x1220; void*x1221; void*x1222; void*x1223; void*x1224; void*x1225; long x1226; void*x1227; void*x1228; void*x1229; void*x1230; void*x1231; SEL x1232; void*x1233; void*x1234; void*x1235; void*x1236; void*x1237; void*x1238; void*x1239; void*x1240; void*x1241; void*x1242; void*x1243; void*x1244; void*x1245; void*x1246; void*x1247; void*x1248; void*x1249; void*x1250; void*x1251; void*x1252; void*x1253; void*x1254; void*x1255; void*x1256; void*x1257; void*x1258; void*x1259; void*x1260; void*x1261; void*x1262; void*x1263; void*x1264; void*x1265; void*x1266; void*x1267; void*x1268; void x1269; void*x1270; void*x1271; void*x1272; void*x1273; void*x1274; void*x1275; void*x1276; unsigned short x1277; unsigned short x1278; oneway void*x1279; void*x1280; unsigned long x1281; void*x1282; const out void*x1283; out BOOL x1284; out long x1285; unsigned char x1286; out in short x1287; void*x1288; void*x1289; void*x1290; const void*x1291; void*x1292; void*x1293; void*x1294; void*x1295; void*x1296; void*x1297; void*x1298; void*x1299; void*x1300; long doublex1301; void*x1302; void*x1303; void*x1304; void*x1305; void*x1306; void*x1307; void*x1308; long doublex1309; void*x1310; void*x1311; void*x1312; void*x1313; void*x1314; void*x1315; void*x1316; void*x1317; void*x1318; void*x1319; void*x1320; void*x1321; void*x1322; void*x1323; void*x1324; void x1325; void*x1326; void*x1327; void*x1328; void*x1329; void*x1330; void*x1331; void*x1332; unsigned short x1333; unsigned short x1334; oneway void*x1335; void*x1336; unsigned long x1337; void*x1338; const out void*x1339; out BOOL x1340; out long x1341; unsigned char x1342; out in short x1343; void*x1344; void*x1345; void*x1346; const void*x1347; void*x1348; void*x1349; void*x1350; void*x1351; void*x1352; void*x1353; void*x1354; void*x1355; void*x1356; void*x1357; void*x1358; void*x1359; void*x1360; void*x1361; void*x1362; void*x1363; void*x1364; void*x1365; void*x1366; void*x1367; void*x1368; void*x1369; void*x1370; void*x1371; void*x1372; void*x1373; void*x1374; void*x1375; void*x1376; void*x1377; void*x1378; void*x1379; void*x1380; void*x1381; void*x1382; void*x1383; void*x1384; void*x1385; void*x1386; void*x1387; void*x1388; void*x1389; void*x1390; void*x1391; void*x1392; void*x1393; void*x1394; void*x1395; void*x1396; void*x1397; void*x1398; void*x1399; void*x1400; void*x1401; void*x1402; void*x1403; void*x1404; void*x1405; void*x1406; void*x1407; void*x1408; void*x1409; void*x1410; void*x1411; void*x1412; void x1413; void*x1414; void*x1415; void*x1416; void*x1417; void*x1418; void*x1419; void*x1420; void*x1421; void*x1422; unsigned short x1423; void*x1424; void*x1425; double x1426; void*x1427; void*x1428; void*x1429; long doublex1430; void*x1431; void*x1432; void*x1433; unsigned short x1434; void*x1435; out const void*x1436; void*x1437; void*x1438; void*x1439; void*x1440; void*x1441; void*x1442; void*x1443; void*x1444; void*x1445; void*x1446; void*x1447; void*x1448; id x1449; void*x1450; void*x1451; void*x1452; void*x1453; void*x1454; void*x1455; void*x1456; void*x1457; void*x1458; void*x1459; void*x1460; void*x1461; void*x1462; void*x1463; void*x1464; void*x1465; void*x1466; void*x1467; void*x1468; void*x1469; void*x1470; void*x1471; void*x1472; void*x1473; void*x1474; void*x1475; void*x1476; void*x1477; short x1478; void*x1479; void*x1480; void*x1481; void*x1482; void*x1483; void*x1484; void*x1485; void*x1486; void*x1487; void*x1488; void*x1489; void*x1490; void*x1491; void*x1492; short x1493; void*x1494; void*x1495; void*x1496; void*x1497; void*x1498; out void*x1499; out void*x1500; int x1501; void*x1502; void*x1503; void*x1504; double x1505; int x1506; void*x1507; void*x1508; const out void x1509; int x1510; double x1511; void*x1512; const void*x1513; void*x1514; void*x1515; void*x1516; void*x1517; void*x1518; void*x1519; void*x1520; void*x1521; void*x1522; void*x1523; void*x1524; void*x1525; void*x1526; void*x1527; void*x1528; void*x1529; void x1530; void*x1531; void*x1532; void*x1533; void*x1534; void*x1535; void*x1536; void*x1537; void*x1538; void*x1539; void*x1540; void*x1541; void*x1542; out void*x1543; void*x1544; void*x1545; void*x1546; double x1547; int x1548; void*x1549; void*x1550; int x1551; BOOL x1552; void*x1553; void*x1554; const unsigned char x1555; out in void*x1556; const out long x1557; long x1558; void*x1559; const void*x1560; void*x1561; void*x1562; void*x1563; void*x1564; void*x1565; void*x1566; void*x1567; void*x1568; void*x1569; void*x1570; void*x1571; void*x1572; id x1573; void*x1574; short x1575; void*x1576; void*x1577; void*x1578; void*x1579; unsigned int x1580; unsigned long x1581; out void*x1582; double x1583; int x1584; in void*x1585; oneway int x1586; void*x1587; void*x1588; void*x1589; void*x1590; void*x1591; void*x1592; void*x1593; void*x1594; void*x1595; void*x1596; void*x1597; void*x1598; void*x1599; id x1600; void*x1601; short x1602; void*x1603; void*x1604; void*x1605; unsigned long long x1606; void*x1607; int x1608; BOOL x1609; void*x1610; long x1611; out out void*x1612; unsigned char x1613; out void*x1614; void*x1615; void*x1616; void*x1617; int x1618; unsigned int x1619/* : ? */; int x1620; long x1621; int x1622; void*x1623; void*x1624; long doublex1625; void*x1626; long x1627; void*x1628; void*x1629; void*x1630; void*x1631; void*x1632; void*x1633; void*x1634; void*x1635; void*x1636; void*x1637; void*x1638; void*x1639; void*x1640; void*x1641; void*x1642; id x1643; void*x1644; short x1645; void*x1646; void*x1647; void*x1648; unsigned short x1649; BOOL x1650; const int x1651; void*x1652; void*x1653; void*x1654; void*x1655; double x1656; int x1657; void*x1658; unsigned int x1659; void*x1660; void*x1661; void*x1662; void*x1663; void*x1664; void*x1665; void*x1666; void*x1667; void*x1668; void*x1669; void*x1670; void*x1671; id x1672; void*x1673; short x1674; void*x1675; void*x1676; oneway unsigned char x1677; void*x1678; void*x1679; void*x1680; void*x1681; const void*x1682; oneway int x1683; double x1684; void*x1685; out long doublex1686; void*x1687; void*x1688; void*x1689; bycopy void*x1690; void*x1691; void*x1692; void*x1693; void*x1694; void*x1695; void*x1696; void*x1697; void*x1698; void*x1699; void*x1700; void*x1701; void*x1702; void*x1703; void*x1704; void*x1705; void*x1706; void*x1707; void*x1708; void*x1709; void*x1710; void*x1711; void*x1712; id x1713; void*x1714; short x1715; bycopy void*x1716; void*x1717; unsigned int x1718; bycopy unsigned short x1719; void*x1720; const float x1721; void*x1722; BOOL x1723; void*x1724; void*x1725; const void*x1726; void*x1727; void*x1728; void*x1729; const void*x1730; void*x1731; void*x1732; void*x1733; void*x1734; void*x1735; void*x1736; id x1737; void*x1738; short x1739; void*x1740; void*x1741; long doublex1742; unsigned short x1743; BOOL x1744; void*x1745; void*x1746; void*x1747; void*x1748; void*x1749; long x1750; void*x1751; void*x1752; void*x1753; in void*x1754; void*x1755; const out double x1756; void*x1757; BOOL x1758; void*x1759; int x1760; out in void*x1761; void*x1762; void*x1763; void*x1764; void*x1765; void*x1766; void*x1767; void*x1768; void*x1769; void*x1770; void*x1771; void*x1772; void*x1773; void*x1774; void*x1775; void*x1776; void*x1777; id x1778; void*x1779; short x1780; void*x1781; void*x1782; void*x1783; unsigned int x1784; bool x1785; void*x1786; BOOL x1787; void*x1788; double x1789; const out void*x1790; oneway int x1791; void*x1792; void*x1793; unsigned short x1794; void*x1795; void*x1796; void*x1797; int x1798; in void*x1799; short x1800; void*x1801; oneway void*x1802; void*x1803; double x1804; int x1805; void*x1806; void*x1807; unsigned long x1808; int x1809; void*x1810; void*x1811; void*x1812; void*x1813; void*x1814; void*x1815; void*x1816; void*x1817; id x1818; void*x1819; short x1820; void*x1821; void*x1822; void*x1823; void*x1824; void*x1825; void*x1826; out void*x1827; void*x1828; BOOL x1829; BOOL x1830; out void*x1831; in void*x1832; void*x1833; void*x1834; void*x1835; void*x1836; oneway int x1837; void*x1838; void*x1839; unsigned char x1840; out in void*x1841; const out long x1842; long x1843; void*x1844; const void*x1845; void*x1846; void*x1847; void*x1848; void*x1849; void*x1850; void*x1851; void*x1852; void*x1853; id x1854; void*x1855; short x1856; long doublex1857; void*x1858; void*x1859; oneway void*x1860; bool x1861; const int x1862; double x1863; void*x1864; void*x1865; bool x1866; void*x1867; short x1868; void*x1869; void*x1870; void*x1871; void*x1872; void*x1873; void*x1874; void*x1875; void*x1876; void*x1877; void*x1878; void*x1879; void*x1880; void*x1881; id x1882; void*x1883; short x1884; bool x1885; void*x1886; void*x1887; unsigned int x1888; void*x1889; void*x1890; unsigned int x1891/* : ? */; oneway int x1892; void*x1893; void*x1894; void*x1895; void*x1896; void*x1897; void*x1898; void*x1899; void*x1900; void*x1901; void*x1902; void*x1903; void*x1904; void*x1905; void*x1906; void*x1907; void*x1908; void*x1909; void*x1910; id x1911; void*x1912; short x1913; id x1914; void*x1915; short x1916; int x1917; BOOL x1918; void*x1919; const out float x1920; int x1921; long x1922; void*x1923; long x1924; unsigned int x1925/* : ? */; void*x1926; void*x1927; short x1928; oneway int x1929; void*x1930; void*x1931; unsigned char x1932; out in float x1933; int x1934; void*x1935; void*x1936; const void*x1937; void*x1938; int x1939; out in void*x1940; void*x1941; void*x1942; void*x1943; void*x1944; void*x1945; void*x1946; id x1947; void*x1948; short x1949; void*x1950; void*x1951; bool x1952; unsigned short x1953; void*x1954; void*x1955; void*x1956; void*x1957; short x1958; bool x1959; void*x1960; const unsigned short x1961; void*x1962; void*x1963; void*x1964; int x1965; in void*x1966; short x1967; void*x1968; void*x1969; void*x1970; void*x1971; void*x1972; void*x1973; void*x1974; id x1975; void*x1976; short x1977; void*x1978; void*x1979; void*x1980; void*x1981; void*x1982; BOOL x1983; out const double x1984; void*x1985; const void*x1986; void*x1987; void*x1988; void*x1989; void*x1990; void*x1991; void*x1992; void*x1993; void*x1994; void*x1995; void*x1996; void*x1997; void*x1998; void*x1999; void*x2000; void*x2001; id x2002; void*x2003; short x2004; void*x2005; void*x2006; inout unsigned char x2007; out in void*x2008; void*x2009; BOOL x2010; void*x2011; unsigned char x2012; void*x2013; void*x2014; in void*x2015; void*x2016; short x2017; void*x2018; void*x2019; void*x2020; BOOL x2021; void*x2022; void*x2023; const void*x2024; void*x2025; void*x2026; void*x2027; void*x2028; void*x2029; void*x2030; void*x2031; void*x2032; void*x2033; void*x2034; void*x2035; void*x2036; void*x2037; void*x2038; void*x2039; void*x2040; void*x2041; void*x2042; id x2043; void*x2044; short x2045; void*x2046; void*x2047; unsigned short x2048; void*x2049; unsigned int x2050; void*x2051; int x2052; void*x2053; void*x2054; void*x2055; out in void*x2056; void*x2057; void*x2058; in void*x2059; void*x2060; void*x2061; void*x2062; void*x2063; void*x2064; void*x2065; void*x2066; void*x2067; void*x2068; void*x2069; id x2070; void*x2071; short x2072; void*x2073; void*x2074; oneway void*x2075; unsigned int x2076; long doublex2077; unsigned int x2078; void*x2079; long x2080; void*x2081; void*x2082; void*x2083; const void*x2084; void*x2085; void*x2086; void*x2087; void*x2088; void*x2089; void*x2090; void*x2091; void*x2092; void*x2093; void*x2094; void*x2095; void*x2096; void*x2097; id x2098; void*x2099; short x2100; void*x2101; void*x2102; void*x2103; double x2104; int x2105; out void*x2106; void*x2107; unsigned long x2108; unsigned char x2109; out in in void*x2110; BOOL x2111; void*x2112; int x2113; out in void*x2114; void*x2115; long long x2116; void*x2117; void*x2118; short x2119; void*x2120; void*x2121; void*x2122; void*x2123; void*x2124; void*x2125; void*x2126; void*x2127; void*x2128; void*x2129; void*x2130; void*x2131; void*x2132; void*x2133; void*x2134; void*x2135; void*x2136; void*x2137; id x2138; void*x2139; short x2140; void*x2141; void*x2142; void*x2143; bycopy void*x2144; const void*x2145; float x2146; float x2147; int x2148; BOOL x2149; void*x2150; void*x2151; const out void*x2152; void*x2153; void*x2154; void*x2155; void*x2156; void*x2157; double x2158; unsigned int x2159/* : ? */; void*x2160; BOOL x2161; void*x2162; void*x2163; void*x2164; void*x2165; void*x2166; void*x2167; void*x2168; void*x2169; void*x2170; void*x2171; void*x2172; void*x2173; void*x2174; void*x2175; void*x2176; void*x2177; void*x2178; void*x2179; id x2180; void*x2181; short x2182; void*x2183; void*x2184; unsigned int x2185; void*x2186; void*x2187; void*x2188; unsigned int x2189/* : ? */; out void*x2190; const double x2191; unsigned char x2192; void*x2193; in double x2194; int x2195; double x2196; void*x2197; void*x2198; void*x2199; void*x2200; const int x2201; double x2202; unsigned char x2203; out long x2204; long x2205; void*x2206; BOOL x2207; void*x2208; int x2209; out in oneway int x2210; void*x2211; void*x2212; void*x2213; void*x2214; void*x2215; void*x2216; void*x2217; id x2218; void*x2219; short x2220; void*x2221; void*x2222; void*x2223; int x2224; void*x2225; void*x2226; const void*x2227; void*x2228; short x2229; void*x2230; void*x2231; void*x2232; void*x2233; void*x2234; void*x2235; void*x2236; void*x2237; void*x2238; void*x2239; void*x2240; void*x2241; void*x2242; void*x2243; void*x2244; void*x2245; id x2246; void*x2247; short x2248; void*x2249; void*x2250; void*x2251; unsigned short x2252; BOOL x2253; const int x2254; void*x2255; void*x2256; void*x2257; void*x2258; double x2259; int x2260; void*x2261; void*x2262; int x2263; BOOL x2264; void*x2265; void*x2266; const unsigned char x2267; out in void*x2268; const out long x2269; long x2270; void*x2271; const void*x2272; void*x2273; void*x2274; void*x2275; void*x2276; void*x2277; void*x2278; void*x2279; void*x2280; void*x2281; void*x2282; void*x2283; void*x2284; id x2285; void*x2286; short x2287; void*x2288; void*x2289; void*x2290; void*x2291; out const void*x2292; unsigned int x2293/* : ? */; out out void*x2294; void*x2295; void*x2296; void*x2297; void*x2298; void*x2299; const void*x2300; void*x2301; void*x2302; void*x2303; void*x2304; void*x2305; void*x2306; void*x2307; void*x2308; void*x2309; id x2310; void*x2311; short x2312; void*x2313; void*x2314; void*x2315; void*x2316; unsigned int x2317; void*x2318; out short x2319; void*x2320; void*x2321; void*x2322; void x2323; int x2324; void*x2325; void*x2326; bycopy void*x2327; void*x2328; const void*x2329; void*x2330; int x2331; out in void*x2332; void*x2333; void*x2334; void*x2335; void*x2336; void*x2337; void*x2338; void*x2339; void*x2340; void*x2341; void*x2342; void*x2343; void*x2344; void*x2345; void*x2346; void*x2347; void*x2348; void*x2349; void*x2350; id x2351; void*x2352; void*x2353; void*x2354; void*x2355; void*x2356; void*x2357; unsigned short x2358; void*x2359; void*x2360; void*x2361; int x2362; BOOL x2363; void*x2364; void*x2365; const void*x2366; void*x2367; void*x2368; void*x2369; void*x2370; const unsigned int x2371; in float x2372; out void*x2373; void*x2374; void*x2375; void*x2376; id x2377; long long *x2378; void*x2379; void*x2380; void*x2381; oneway bycopy void*x2382; void*x2383; void*x2384; void*x2385; void*x2386; long doublex2387; void*x2388; void x2389; int x2390; BOOL x2391; void*x2392; void*x2393; void*x2394; void*x2395; void*x2396; void*x2397; void*x2398; void*x2399; void*x2400; void*x2401; void*x2402; void*x2403; void*x2404; id x2405; void*x2406; void*x2407; void*x2408; void*x2409; void*x2410; void*x2411; void*x2412; const out double x2413; void*x2414; BOOL x2415; void*x2416; short x2417; void*x2418; void*x2419; short x2420; void*x2421; out in short x2422; void*x2423; unsigned int x2424; in void*x2425; void*x2426; const in void*x2427; long x2428; void*x2429; void*x2430; void*x2431; void*x2432; void*x2433; void*x2434; void*x2435; void*x2436; void*x2437; void*x2438; void*x2439; void*x2440; void*x2441; void*x2442; void*x2443; void*x2444; id x2445; id x2446; unsigned long long x2447; void*x2448; void*x2449; unsigned short x2450; void*x2451; out out void*x2452; void*x2453; const void*x2454; void*x2455; void*x2456; void*x2457; const long x2458; int x2459; in void*x2460; oneway int x2461; void*x2462; void*x2463; void*x2464; void*x2465; void*x2466; void*x2467; void*x2468; id x2469; unsigned int x2470; void*x2471; void*x2472; void*x2473; void*x2474; long doublex2475; unsigned short x2476; BOOL x2477; void*x2478; void*x2479; void*x2480; void*x2481; void*x2482; void*x2483; in double x2484; int x2485; void*x2486; int x2487; out in unsigned short x2488; void*x2489; void*x2490; BOOL x2491; void*x2492; void*x2493; void*x2494; void*x2495; void*x2496; id x2497; void*x2498; void*x2499; void*x2500; void*x2501; void*x2502; void*x2503; unsigned short x2504; void*x2505; out const void*x2506; unsigned int x2507; void*x2508; void*x2509; void*x2510; bycopy float x2511; float x2512; void*x2513; const short x2514; short x2515; void*x2516; void*x2517; void*x2518; void*x2519; void*x2520; void*x2521; void*x2522; id x2523; void*x2524; void*x2525; void*x2526; void*x2527; void*x2528; long doublex2529; void*x2530; void*x2531; long x2532; void*x2533; void*x2534; BOOL x2535; void*x2536; int x2537; void x2538; void*x2539; void*x2540; int x2541; out in unsigned short x2542; void*x2543; short x2544; short x2545; int x2546; out in void*x2547; void*x2548; void*x2549; void*x2550; void*x2551; void*x2552; void*x2553; void*x2554; void*x2555; void*x2556; void*x2557; void*x2558; void*x2559; void*x2560; void*x2561; void*x2562; void*x2563; id x2564; void*x2565; void*x2566; void*x2567; void*x2568; void*x2569; void*x2570; void*x2571; unsigned int x2572; void*x2573; void*x2574; void*x2575; void*x2576; in double x2577; void*x2578; void*x2579; void*x2580; void*x2581; unsigned char x2582; out void*x2583; void*x2584; out in void*x2585; in void*x2586; void*x2587; void*x2588; void*x2589; void*x2590; void*x2591; void*x2592; void*x2593; void*x2594; void*x2595; void*x2596; void*x2597; void*x2598; void*x2599; void*x2600; void*x2601; void*x2602; void*x2603; void*x2604; void*x2605; id x2606; void*x2607; void*x2608; void*x2609; void*x2610; void*x2611; unsigned int x2612; void*x2613; void*x2614; void*x2615; unsigned int x2616/* : ? */; out void*x2617; const double x2618; unsigned char x2619; void*x2620; in double x2621; int x2622; double x2623; void*x2624; void*x2625; void*x2626; void*x2627; const int x2628; double x2629; unsigned char x2630; out long x2631; long x2632; void*x2633; BOOL x2634; void*x2635; int x2636; out in oneway int x2637; void*x2638; void*x2639; unsigned char x2640; out in void*x2641; const out long x2642; long x2643; void*x2644; const void*x2645; void*x2646; void*x2647; void*x2648; void*x2649; void*x2650; void*x2651; void*x2652; void*x2653; void*x2654; void*x2655; id x2656; void*x2657; void*x2658; void*x2659; void*x2660; void*x2661; void*x2662; unsigned short x2663; BOOL x2664; const int x2665; void*x2666; void*x2667; void*x2668; void*x2669; double x2670; int x2671; void*x2672; void*x2673; long x2674; void*x2675; void*x2676; long x2677; int x2678; short x2679; void*x2680; void*x2681; void*x2682; void*x2683; void*x2684; void*x2685; id x2686; void*x2687; long long x2688; void*x2689; void*x2690; void*x2691; inout unsigned char x2692; out in void*x2693; void*x2694; BOOL x2695; void*x2696; unsigned char x2697; void*x2698; void*x2699; in void*x2700; void*x2701; short x2702; inout out void*x2703; int x2704; float x2705; int x2706; void*x2707; const void*x2708; void*x2709; void*x2710; void*x2711; void*x2712; void*x2713; void*x2714; void*x2715; void*x2716; void*x2717; void*x2718; void*x2719; void*x2720; void*x2721; void*x2722; void*x2723; long doublex2724; out void*x2725; void*x2726; void*x2727; short x2728; void*x2729; void*x2730; void*x2731; void*x2732; void*x2733; void*x2734; void*x2735; void*x2736; void*x2737; void*x2738; void*x2739; void*x2740; void*x2741; void*x2742; void*x2743; void*x2744; void*x2745; void*x2746; void*x2747; void*x2748; void*x2749; void*x2750; void*x2751; void*x2752; void*x2753; void*x2754; void*x2755; void*x2756; void*x2757; void*x2758; void*x2759; void*x2760; void*x2761; void*x2762; void*x2763; void*x2764; void*x2765; void*x2766; void*x2767; void*x2768; void*x2769; void*x2770; void*x2771; void*x2772; void*x2773; void*x2774; void*x2775; void*x2776; void*x2777; void*x2778; void*x2779; void*x2780; void*x2781; void*x2782; void*x2783; void*x2784; void*x2785; void*x2786; void*x2787; void*x2788; void*x2789; void*x2790; void*x2791; void*x2792; void*x2793; void*x2794; void*x2795; void*x2796; void*x2797; void*x2798; void*x2799; void*x2800; void*x2801; void*x2802; void x2803; void*x2804; void*x2805; void*x2806; void*x2807; void*x2808; void*x2809; void*x2810; void*x2811; bool x2812; unsigned short x2813; void*x2814; void*x2815; const short x2816; void*x2817; BOOL x2818; unsigned short x2819; void*x2820; void*x2821; const BOOL x2822; void*x2823; void*x2824; void*x2825; int x2826; void*x2827; void*x2828; void*x2829; const void*x2830; void*x2831; short x2832; void*x2833; long x2834; void*x2835; void*x2836; void*x2837; void*x2838; void*x2839; void*x2840; void*x2841; void*x2842; void*x2843; void*x2844; void*x2845; void*x2846; void*x2847; void x2848; void*x2849; void*x2850; void*x2851; void*x2852; void*x2853; void*x2854; void*x2855; void*x2856; bool x2857; unsigned short x2858; void*x2859; void*x2860; const short x2861; void*x2862; BOOL x2863; unsigned short x2864; void*x2865; void*x2866; const BOOL x2867; void*x2868; void*x2869; void*x2870; int x2871; void*x2872; void*x2873; void*x2874; const void*x2875; void*x2876; short x2877; void*x2878; long x2879; void*x2880; void*x2881; void*x2882; void*x2883; void*x2884; void*x2885; void*x2886; void*x2887; void*x2888; void*x2889; void*x2890; void*x2891; void*x2892; void*x2893; void*x2894; void*x2895; void*x2896; void*x2897; void*x2898; void*x2899; void*x2900; void*x2901; void*x2902; void*x2903; void*x2904; void*x2905; void*x2906; void*x2907; void*x2908; void*x2909; void*x2910; void*x2911; void*x2912; void*x2913; void*x2914; void*x2915; void*x2916; void*x2917; void*x2918; void*x2919; void*x2920; void*x2921; void*x2922; void*x2923; void*x2924; void x2925; void*x2926; void*x2927; void*x2928; void*x2929; void*x2930; void*x2931; void*x2932; void*x2933; float x2934; out const void*x2935; void*x2936; const double x2937; void*x2938; out void*x2939; void*x2940; void*x2941; int x2942; out in void*x2943; void*x2944; void*x2945; void*x2946; out double x2947; short x2948; void*x2949; void*x2950; void*x2951; void*x2952; void*x2953; void*x2954; void*x2955; void*x2956; void*x2957; void*x2958; void*x2959; void*x2960; void*x2961; void*x2962; void*x2963; void*x2964; void*x2965; void x2966; void*x2967; void*x2968; void*x2969; void*x2970; void*x2971; void*x2972; void*x2973; void*x2974; float x2975; out const void*x2976; void*x2977; const double x2978; void*x2979; out void*x2980; void*x2981; void*x2982; int x2983; out in void*x2984; void*x2985; void*x2986; void*x2987; out double x2988; short x2989; void*x2990; void*x2991; void*x2992; void*x2993; void*x2994; void*x2995; void*x2996; void*x2997; void*x2998; void*x2999; void*x3000; void*x3001; void*x3002; void*x3003; void*x3004; void*x3005; void*x3006; void x3007; void*x3008; void*x3009; void*x3010; void*x3011; void*x3012; void*x3013; void*x3014; void*x3015; unsigned short x3016; void*x3017; short x3018; void*x3019; void*x3020; void*x3021; void*x3022; unsigned long x3023; int x3024; unsigned int x3025/* : ? */; const void*x3026; const void*x3027; void*x3028; void*x3029; const int x3030; void x3031; void*x3032; void*x3033; void*x3034; void*x3035; const void*x3036; void*x3037; void*x3038; void*x3039; out const void*x3040; short x3041; void*x3042; void*x3043; short x3044; void*x3045; const void*x3046; unsigned short x3047; void*x3048; float x3049; const void*x3050; void*x3051; void*x3052; void*x3053; out const void*x3054; void*x3055; void*x3056; short x3057; void*x3058; const void*x3059; unsigned short x3060; void*x3061; void*x3062; void*x3063; void*x3064; void*x3065; void*x3066; void*x3067; void*x3068; void*x3069; void*x3070; void*x3071; void*x3072; void*x3073; void*x3074; void*x3075; void*x3076; void*x3077; void*x3078; in char *x3079; void*x3080; void*x3081; void*x3082; void*x3083; void*x3084; void*x3085; void*x3086; void*x3087; void*x3088; void*x3089; void*x3090; void*x3091; void*x3092; void*x3093; void*x3094; void*x3095; void*x3096; void*x3097; void*x3098; void*x3099; void*x3100; void*x3101; void*x3102; void*x3103; void*x3104; void*x3105; void*x3106; void*x3107; void*x3108; id x3109; float x3110; void*x3111; void*x3112; void*x3113; void*x3114; void*x3115; void*x3116; void*x3117; void*x3118; void*x3119; void*x3120; void*x3121; void*x3122; void*x3123; void*x3124; void*x3125; void*x3126; void*x3127; void*x3128; void*x3129; void*x3130; void*x3131; void*x3132; void*x3133; void*x3134; void*x3135; void*x3136; void*x3137; void*x3138; void*x3139; id x3140; void*x3141; void*x3142; void*x3143; void*x3144; void*x3145; void*x3146; void*x3147; void*x3148; void*x3149; void*x3150; void*x3151; void*x3152; void*x3153; void*x3154; void*x3155; void*x3156; void*x3157; void*x3158; void*x3159; void*x3160; void*x3161; void*x3162; void*x3163; void*x3164; void*x3165; void*x3166; void*x3167; void*x3168; void*x3169; void*x3170; id x3171; double x3172; out void*x3173; void*x3174; void*x3175; void*x3176; void*x3177; void*x3178; void*x3179; void*x3180; void*x3181; void*x3182; void*x3183; void*x3184; void*x3185; void*x3186; void*x3187; void*x3188; void*x3189; void*x3190; void*x3191; void*x3192; void*x3193; void*x3194; void*x3195; void*x3196; void*x3197; void*x3198; void*x3199; void*x3200; id x3201; double x3202; out void*x3203; void*x3204; void*x3205; void*x3206; void*x3207; void*x3208; void*x3209; void*x3210; void*x3211; void*x3212; void*x3213; void*x3214; void*x3215; void*x3216; void*x3217; void*x3218; void*x3219; void*x3220; void*x3221; void*x3222; void*x3223; void*x3224; void*x3225; void*x3226; void*x3227; void*x3228; void*x3229; void*x3230; id x3231; void*x3232; void*x3233; void*x3234; void*x3235; void*x3236; void*x3237; void*x3238; void*x3239; void*x3240; void*x3241; void*x3242; void*x3243; void*x3244; void*x3245; void*x3246; void*x3247; void*x3248; void*x3249; void*x3250; void*x3251; void*x3252; void*x3253; void*x3254; void*x3255; void*x3256; void*x3257; void*x3258; void*x3259; void*x3260; void*x3261; void*x3262; void*x3263; void*x3264; void*x3265; void*x3266; void*x3267; void*x3268; void*x3269; void*x3270; void*x3271; void*x3272; void*x3273; void*x3274; void*x3275; void*x3276; void*x3277; void*x3278; void*x3279; void*x3280; void*x3281; void*x3282; void*x3283; void*x3284; void*x3285; void*x3286; void*x3287; void*x3288; void*x3289; void*x3290; void*x3291; void x3292; void*x3293; void*x3294; void*x3295; void*x3296; void*x3297; void*x3298; void*x3299; void*x3300; void*x3301; void*x3302; void*x3303; void*x3304; void*x3305; void*x3306; void*x3307; void*x3308; void*x3309; void*x3310; void*x3311; void*x3312; void*x3313; void*x3314; void*x3315; void*x3316; void*x3317; void*x3318; void*x3319; void*x3320; void*x3321; void*x3322; void*x3323; void x3324; void*x3325; void*x3326; void*x3327; void*x3328; void*x3329; void*x3330; void*x3331; void*x3332; unsigned int x3333; void*x3334; bool x3335; void*x3336; void*x3337; in double x3338; void*x3339; const void*x3340; void*x3341; BOOL x3342; void*x3343; out const void*x3344; int x3345; void*x3346; void*x3347; double x3348; unsigned long x3349; void*x3350; in double x3351; short x3352; BOOL x3353; void*x3354; void*x3355; void*x3356; void*x3357; void*x3358; void*x3359; void*x3360; void*x3361; void*x3362; void*x3363; void*x3364; void*x3365; void*x3366; void*x3367; void*x3368; void*x3369; void*x3370; void*x3371; void*x3372; void*x3373; id x3374; void*x3375; void*x3376; void*x3377; void*x3378; bycopy void*x3379; void*x3380; void*x3381; void*x3382; void*x3383; void*x3384; void*x3385; void*x3386; void*x3387; void*x3388; void*x3389; void*x3390; void*x3391; void*x3392; void*x3393; void*x3394; void*x3395; void*x3396; void x3397; void*x3398; void*x3399; void*x3400; void*x3401; void*x3402; void*x3403; void*x3404; void*x3405; short x3406; void*x3407; void*x3408; inout void*x3409; void x3410; int x3411; void*x3412; void*x3413; void*x3414; int x3415; out in unsigned char x3416; out in void*x3417; const out long x3418; long x3419; void*x3420; const unsigned char x3421; out in void*x3422; void*x3423; in void*x3424; bycopy float x3425; float x3426; short x3427; void*x3428; void*x3429; double x3430; void*x3431; void*x3432; short x3433; void*x3434; void*x3435; void*x3436; in void*x3437; SEL x3438; void*x3439; void*x3440; void*x3441; void*x3442; void*x3443; void*x3444; void*x3445; void*x3446; void x3447; void*x3448; void*x3449; void*x3450; void*x3451; void*x3452; void*x3453; void*x3454; void*x3455; short x3456; void*x3457; void*x3458; void*x3459; out void*x3460; out void x3461; void*x3462; const unsigned char x3463; out in void*x3464; const out long x3465; long x3466; void*x3467; const SEL x3468; void*x3469; void*x3470; void*x3471; void*x3472; void*x3473; void*x3474; void*x3475; void*x3476; void*x3477; void*x3478; unsigned int x3479; void*x3480; void*x3481; void*x3482; void*x3483; void*x3484; void*x3485; void*x3486; long long x3487; void*x3488; void*x3489; void*x3490; void*x3491; void*x3492; void*x3493; void*x3494; void*x3495; void*x3496; void*x3497; void*x3498; void*x3499; void*x3500; void*x3501; void*x3502; }*)arg1;
-- (id)pk_childrenForAppearance;
-
 // Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
 
 + (void)_pu_ensureLocalAssets:(id)arg1 forReason:(id)arg2 completion:(id /* block */)arg3;
 + (void)pu_copyAssets:(id)arg1 completionHandler:(id /* block */)arg2;
 + (id)pu_currentViewControllerStack;
-+ (BOOL)pu_isSkiingBlackSlope;
 
+- (void)_ph_updateBarAppearanceAnimated:(BOOL)arg1;
 - (void)_pu_animateBottomBarTransition:(id)arg1 withContext:(id)arg2;
 - (id)_pu_offersTableView;
 - (void)_pu_performBarsVisibilityUpdatesWithAnimationSettings:(struct PUBarAnimationSettings { int x1; double x2; })arg1 isStatusBarHidden:(BOOL)arg2;
-- (void)_pu_performBottomBarsMorphAnimations;
 - (void)_pu_setNavigationBarVisible:(BOOL)arg1 withAnimationSettings:(struct PUBarAnimationSettings { int x1; double x2; })arg2;
 - (void)_pu_setPreferredStatusBarUpdateAnimation:(int)arg1;
 - (void)_pu_setTabBarVisible:(BOOL)arg1 withAnimationSettings:(struct PUBarAnimationSettings { int x1; double x2; })arg2;
 - (void)_pu_setToolbarVisible:(BOOL)arg1 withAnimationSettings:(struct PUBarAnimationSettings { int x1; double x2; })arg2;
 - (void)_pu_updateStatusBarVisibilityWithAnimationSettings:(struct PUBarAnimationSettings { int x1; double x2; })arg1;
+- (void)ph_enableChromeManagement;
+- (BOOL)ph_isPreparedForTransition;
+- (BOOL)ph_isTransitionOverlayView:(id)arg1;
+- (void)ph_loadTransitionSourcePlaceholderViewUsingFactory:(id /* block */)arg1;
+- (unsigned int)ph_preferredChrome;
+- (int)ph_preferredChromeAnimation;
+- (void)ph_prepareForTransition;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })ph_rectOfInterestForTransitionInCoordinateSpace:(id)arg1;
+- (void)ph_setNeedsChromeUpdate;
+- (BOOL)ph_viewContainsTransitionSourcePlaceholderView;
 - (void)puRootSettings_dismissViewController:(id)arg1;
 - (void)pu_copyAssets:(id)arg1;
 - (id)pu_currentInteractiveModalTransition;
@@ -1246,11 +1277,12 @@
 - (id)pu_footerToolbar;
 - (BOOL)pu_handleSecondTabTap;
 - (void)pu_insertFooterToolbarWithItems:(id)arg1;
-- (BOOL)pu_isViewVisible;
+- (BOOL)pu_isForceTouchEnabled;
 - (id)pu_modalTransition;
 - (id)pu_navigationController;
 - (id)pu_navigationTransition;
 - (void)pu_performBarsVisibilityUpdatesWithAnimationSettings:(struct PUBarAnimationSettings { int x1; double x2; })arg1;
+- (void)pu_performBottomBarsMorphAnimations;
 - (int)pu_preferredBarStyle;
 - (int)pu_preferredStatusBarUpdateAnimation;
 - (void)pu_presentViewController:(id)arg1 transition:(id)arg2 animated:(BOOL)arg3 interactive:(BOOL)arg4 completion:(id /* block */)arg5;
@@ -1287,6 +1319,19 @@
 - (void)setInterstitialPresentationPolicy:(int)arg1;
 - (BOOL)shouldPresentInterstitialAd;
 
+// Image: /System/Library/PrivateFrameworks/BaseBoardUI.framework/BaseBoardUI
+
+- (BOOL)bs_addChildViewController:(id)arg1;
+- (BOOL)bs_addChildViewController:(id)arg1 animated:(BOOL)arg2 transitionBlock:(id /* block */)arg3;
+- (BOOL)bs_beginAppearanceTransition:(BOOL)arg1 animated:(BOOL)arg2;
+- (BOOL)bs_beginAppearanceTransitionForChildViewController:(id)arg1 toVisible:(BOOL)arg2 animated:(BOOL)arg3;
+- (BOOL)bs_endAppearanceTransition;
+- (BOOL)bs_endAppearanceTransition:(BOOL)arg1;
+- (BOOL)bs_endAppearanceTransitionForChildViewController:(id)arg1;
+- (BOOL)bs_endAppearanceTransitionForChildViewController:(id)arg1 toVisible:(BOOL)arg2;
+- (BOOL)bs_removeChildViewController:(id)arg1;
+- (BOOL)bs_removeChildViewController:(id)arg1 animated:(BOOL)arg2 transitionBlock:(id /* block */)arg3;
+
 // Image: /System/Library/PrivateFrameworks/FMCoreUI.framework/FMCoreUI
 
 - (void)addConstraintsToFillSuperview;
@@ -1302,10 +1347,7 @@
 
 // Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
 
-- (void)_music_handleAccountButtonTapped:(id)arg1;
 - (void)_music_handleSearchButtonTapped:(id)arg1;
-- (void)dismissDetailViewController:(id)arg1;
-- (id)music_accountEntryLeftBarButtonItem;
 - (BOOL)music_allowsMetricsEvents;
 - (void)music_configureWithJSReportingInformation:(id)arg1;
 - (void)music_dismissViewController:(id)arg1 animated:(BOOL)arg2;
@@ -1321,24 +1363,22 @@
 - (void)music_setReportingFeatureName:(id)arg1;
 - (void)music_setReportingRecommendationData:(id)arg1;
 - (void)music_setSearchOptions:(unsigned int)arg1;
-- (void)music_setWantsAccountEntryLeftBarButtonItem:(BOOL)arg1;
 - (void)music_setWantsDefaultIndexBar:(BOOL)arg1;
 - (void)music_setWantsSearchEntryRightBarButtonItem:(BOOL)arg1;
 - (void)music_setWantsToOverrideRightBarButtonItem:(BOOL)arg1;
 - (void)music_viewInheritedLayoutInsetsDidChange;
-- (BOOL)music_wantsAccountEntryLeftBarButtonItem;
 - (BOOL)music_wantsDefaultIndexBar;
 - (BOOL)music_wantsSearchEntryRightBarButtonItem;
 - (BOOL)music_wantsToOverrideRightBarButtonItem;
 
 // Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
 
-+ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })largerEdgeInsetsForView:(id)arg1;
-+ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })largerEdgeInsetsForView:(id)arg1 isWithinSplitView:(BOOL)arg2;
++ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })largerEdgeInsetsForView:(id)arg1;
++ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })largerEdgeInsetsForView:(id)arg1 isWithinSplitView:(BOOL)arg2;
 
-- (void)_gkAddPositionConstraintsForOverlayBubble:(id)arg1 center:(struct CGPoint { float x1; float x2; })arg2 movingFromView:(id)arg3 toView:(id)arg4;
+- (void)_gkAddPositionConstraintsForOverlayBubble:(id)arg1 center:(struct CGPoint { double x1; double x2; })arg2 movingFromView:(id)arg3 toView:(id)arg4;
 - (id)_gkBorrowBubbleViewFromOverlayWithBubbleType:(int)arg1 andMoveTo:(id)arg2;
-- (id)_gkBorrowBubbleViewFromOverlayWithBubbleType:(int)arg1 expectedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 andMoveTo:(id)arg3;
+- (id)_gkBorrowBubbleViewFromOverlayWithBubbleType:(int)arg1 expectedFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 andMoveTo:(id)arg3;
 - (struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; })_gkBubbleFlowAdoptionInfo;
 - (BOOL)_gkCanBeRemovedFromParentWhenCovered;
 - (void)_gkInternalPushDetailViewControllerInCompactMode:(id)arg1 animated:(BOOL)arg2;
@@ -1352,13 +1392,13 @@
 - (void)_gkPushDetailViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)_gkPushMasterViewController:(id)arg1 animated:(BOOL)arg2;
 - (id)_gkReturnBubbleViewToOverlayWithBubbleType:(int)arg1;
-- (id)_gkReturnBubbleViewToOverlayWithBubbleType:(int)arg1 expectedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (id)_gkReturnBubbleViewToOverlayWithBubbleType:(int)arg1 expectedFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 - (void)_gkSetMasterDetailViewController:(id)arg1;
 - (void)_gkShowDetailViewController:(id)arg1 animated:(BOOL)arg2;
 - (BOOL)_gkUsesBubbleFlowModalPresentation;
 - (BOOL)_gkUsesFormSheetForBubbleFlowModalPresentationOnPad;
 - (int)gkFocusBubbleType;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })largerEdgeInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })largerEdgeInsets;
 - (void)setGkFocusBubbleType:(int)arg1;
 
 // Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
@@ -1395,6 +1435,10 @@
 - (void)_gkUpdateContentsWithCompletionHandlerAndError:(id /* block */)arg1;
 - (id)_gkViewControllersForRestoringPopover;
 - (void)_gkWillTransitionModalPresentationForTraitCollection:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/HomeUI.framework/HomeUI
+
+- (id)hu_presentPreloadableViewController:(id)arg1 animated:(BOOL)arg2;
 
 // Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
 
@@ -1443,6 +1487,11 @@
 - (void)naui_loadViewIfNecessary;
 - (id)recursiveDescription;
 
+// Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
+
+- (void)pk_applyAppearance:(id)arg1;
+- (id)pk_childrenForAppearance;
+
 // Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
 
 - (BOOL)pl_isInPopover;
@@ -1453,6 +1502,56 @@
 - (id)uiipc_imagePickerController;
 - (id)uiipc_imagePickerOptions;
 - (BOOL)uiipc_useTelephonyUI;
+
+// Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
+
++ (void)_px_prepareClassForBarAppearance;
++ (void)_px_prepareClassForExtendedTraitCollection;
++ (void)_px_prepareClassForOneUpPresentation;
++ (id)px_viewControllerWithAsynchronousOutputProducer:(id /* block */)arg1;
++ (id)px_viewControllerWithContinuousOutputProducer:(id /* block */)arg1;
++ (id)px_viewControllerWithOutput:(id /* block */)arg1;
++ (id)px_viewControllerWithSettings:(id)arg1;
+
+- (void)_px_dismiss:(id)arg1;
+- (int)_pxswizzled_barAppearance_preferredStatusBarUpdateAnimation;
+- (BOOL)_pxswizzled_barAppearance_prefersStatusBarHidden;
+- (void)_pxswizzled_barAppearance_viewDidDisappear:(BOOL)arg1;
+- (void)_pxswizzled_barAppearance_viewWillAppear:(BOOL)arg1;
+- (void)_pxswizzled_oneUpPresentation_viewDidAppear:(BOOL)arg1;
+- (void)_pxswizzled_oneUpPresentation_viewDidDisappear:(BOOL)arg1;
+- (void)_pxswizzled_oneUpPresentation_viewWillAppear:(BOOL)arg1;
+- (void)_pxswizzled_oneUpPresentation_viewWillDisappear:(BOOL)arg1;
+- (void)_pxswizzled_viewControllerTraitCollection_traitCollectionDidChange:(id)arg1;
+- (void)_pxswizzled_viewControllerTraitCollection_viewDidLoad;
+- (void)_pxswizzled_viewControllerTraitCollection_viewWillAppear:(BOOL)arg1;
+- (void)_pxswizzled_viewControllerTraitCollection_viewWillLayoutSubviews;
+- (void)_pxswizzled_viewControllerTraitCollection_viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (id)px_barAppearance;
+- (BOOL)px_canPerformPinchTransitionWithDetailViewController:(id)arg1;
+- (BOOL)px_canPerformPinchTransitionWithMasterViewController:(id)arg1;
+- (BOOL)px_canPerformZoomTransitionWithDetailViewController:(id)arg1;
+- (BOOL)px_canPerformZoomTransitionWithMasterViewController:(id)arg1;
+- (id)px_defaultTransitionEndPoint;
+- (id)px_diagnosticsItemProvidersForPoint:(struct CGPoint { double x1; double x2; })arg1 inCoordinateSpace:(id)arg2;
+- (void)px_enableBarAppearance;
+- (void)px_enableExtendedTraitCollection;
+- (void)px_enableOneUpPresentation;
+- (id)px_endPointForTransition:(id)arg1;
+- (void)px_enumerateDescendantViewControllersWithOptions:(unsigned int)arg1 usingBlock:(id /* block */)arg2;
+- (id)px_extendedTraitCollection;
+- (id)px_gridPresentation;
+- (BOOL)px_isSnapBackDestination;
+- (BOOL)px_isVisible;
+- (id)px_oneUpPresentation;
+- (BOOL)px_photosUICategoriesAvailable;
+- (void)px_presentViewControllerInNavigationController:(id)arg1 animated:(BOOL)arg2 dimissButtonLocation:(int)arg3 completion:(id /* block */)arg4;
+- (id)px_searchPresentation;
+- (void)px_setDefaultTransitionEndPoint:(id)arg1;
+- (void)px_setSubtitle:(id)arg1;
+- (id)px_snapBackHistorySubtitle;
+- (id)px_snapBackHistoryTitle;
+- (id)px_subtitle;
 
 // Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
 
@@ -1471,12 +1570,21 @@
 - (id)SKUIPinnedHeaderView;
 - (id)SKUIStackedBar;
 - (float)SKUIStackedBarSplit;
+- (id)_SKUIView;
 - (id)scrollingSegmentedController;
 - (id)scrollingTabBarController;
 - (void)setNeedsNavigationBarAppearanceUpdate;
 - (void)setNeedsNestedPagingScrollViewUpdate;
 - (void)setNeedsScrollingSegmentContentScrollViewUpdate;
 - (void)setSKUIStackedBarSplit:(float)arg1;
+
+// Image: /System/Library/PrivateFrameworks/UserNotificationsUIKit.framework/UserNotificationsUIKit
+
+- (id)longLookPresentationController;
+- (int)ncTransitionAnimationState;
+- (id)nc_bannerPresentationController;
+- (id)nc_presentationControllerIfPresented;
+- (id)nc_presentingBannerPresentationController;
 
 // Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
 
@@ -1504,6 +1612,13 @@
 - (BOOL)rc_shouldAutoDisableUpdatesWhenInBackground;
 - (id)recursiveDescription;
 
+// Image: /System/Library/PrivateFrameworks/Widgets.framework/Widgets
+
+- (BOOL)wg_beginAppearanceTransitionIfNecessary:(BOOL)arg1 animated:(BOOL)arg2;
+- (BOOL)wg_endAppearanceTransitionIfNecessary;
+- (BOOL)wg_isAppearingOrAppeared;
+- (BOOL)wg_isDisappearingOrDisappeared;
+
 // Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
 
 + (void)_iTunesStoreUI_dequeueTransitionSafeInvocations;
@@ -1524,23 +1639,23 @@
 - (void)dismissAnimated:(BOOL)arg1;
 - (void)dismissOverlayBackgroundViewController;
 - (id)displayedURL;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })documentBounds;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })documentBounds;
 - (void)handleStoreFailureWithError:(id)arg1;
 - (BOOL)hasDisplayableContent;
 - (void)iTunesStoreUI_dismissAction:(id)arg1;
 - (id)iTunesStoreUI_searchFieldController;
 - (BOOL)isDescendantOfViewController:(id)arg1;
 - (BOOL)isInMoreList;
-- (BOOL)isLoaded;
-- (BOOL)isLoading;
 - (BOOL)isRootViewController;
+- (BOOL)isSkLoaded;
+- (BOOL)isSkLoading;
 - (void)keyboardDidHideWithInfo:(id)arg1;
 - (void)keyboardDidShowWithInfo:(id)arg1;
 - (void)keyboardWillHideWithInfo:(id)arg1;
 - (void)keyboardWillShowWithInfo:(id)arg1;
 - (BOOL)loadMoreWithURL:(id)arg1;
-- (struct CGSize { float x1; float x2; })maximumViewSize;
-- (struct CGSize { float x1; float x2; })minimumViewSize;
+- (struct CGSize { double x1; double x2; })maximumViewSize;
+- (struct CGSize { double x1; double x2; })minimumViewSize;
 - (id)navigationItemForScriptInterface;
 - (id)overlayBackgroundViewController;
 - (id)overlayViewController;

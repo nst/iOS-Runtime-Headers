@@ -3,9 +3,9 @@
  */
 
 @interface _PFArray : NSArray {
-    id *_array;
-    int _cd_rc;
-    unsigned int _count;
+    id * _array;
+    int  _cd_rc;
+    unsigned int  _count;
     struct _PFArrayFlags { 
         unsigned int shouldRetain : 1; 
         unsigned int shouldRelease : 1; 
@@ -14,8 +14,8 @@
         unsigned int copyBackingArray : 1; 
         unsigned int managedObjects : 1; 
         unsigned int _RESERVED : 27; 
-    } _flags;
-    _PFWeakReference *_weakContext;
+    }  _flags;
+    _PFWeakReference * _weakContext;
 }
 
 + (BOOL)accessInstanceVariablesDirectly;

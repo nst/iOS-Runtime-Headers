@@ -3,21 +3,21 @@
  */
 
 @interface MSASComment : NSObject {
-    NSString *_GUID;
-    int _ID;
-    NSDate *_clientTimestamp;
-    NSString *_content;
-    NSString *_email;
-    NSString *_firstName;
-    NSString *_fullName;
-    BOOL _isBatchComment;
-    BOOL _isCaption;
-    BOOL _isDeletable;
-    BOOL _isLike;
-    BOOL _isMine;
-    NSString *_lastName;
-    NSString *_personID;
-    NSDate *_timestamp;
+    NSString * _GUID;
+    int  _ID;
+    NSDate * _clientTimestamp;
+    NSString * _content;
+    NSString * _email;
+    NSString * _firstName;
+    NSString * _fullName;
+    BOOL  _isBatchComment;
+    BOOL  _isCaption;
+    BOOL  _isDeletable;
+    BOOL  _isLike;
+    BOOL  _isMine;
+    NSString * _lastName;
+    NSString * _personID;
+    NSDate * _timestamp;
 }
 
 @property (nonatomic, retain) NSString *GUID;

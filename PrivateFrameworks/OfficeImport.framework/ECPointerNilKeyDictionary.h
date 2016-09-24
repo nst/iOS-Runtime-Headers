@@ -3,7 +3,7 @@
  */
 
 @interface ECPointerNilKeyDictionary : OITSUPointerKeyDictionary {
-    id mNilKeyObject;
+    id  mNilKeyObject;
 }
 
 - (id)objectForKey:(id)arg1;

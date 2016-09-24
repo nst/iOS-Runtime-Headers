@@ -3,7 +3,7 @@
  */
 
 @interface ML3DatabaseBlob : NSObject {
-    struct sqlite3_blob { } *_sqliteHandle;
+    struct sqlite3_blob { } * _sqliteHandle;
 }
 
 - (id)data;

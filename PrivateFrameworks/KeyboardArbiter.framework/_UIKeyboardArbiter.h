@@ -3,20 +3,20 @@
  */
 
 @interface _UIKeyboardArbiter : NSObject <NSXPCListenerDelegate> {
-    _UIKeyboardArbiterHandle *_activeHandle;
-    NSMutableArray *_clients;
-    _UIKeyboardArbiterHandle *_commandFocusHandle;
-    NSString *_currentBundleIdForHardwareKeyboard;
-    _UIKeyboardArbiterHandle *_keyboardFocusHandle;
-    _UIKeyboardChangedInformation *_lastUpdate;
-    NSXPCListener *_listener;
-    _UIKeyboardArbiterHandle *_previouslyActiveHandle;
-    NSObject<OS_dispatch_queue> *_queue;
-    FBSScene *_scene;
-    <_UIKeyboardArbiterLink> *_sceneLink;
-    BKSApplicationStateMonitor *_stateMonitor;
-    int _updateCounter;
-    FBSWorkspace *_workspace;
+    _UIKeyboardArbiterHandle * _activeHandle;
+    NSMutableArray * _clients;
+    _UIKeyboardArbiterHandle * _commandFocusHandle;
+    NSString * _currentBundleIdForHardwareKeyboard;
+    _UIKeyboardArbiterHandle * _keyboardFocusHandle;
+    _UIKeyboardChangedInformation * _lastUpdate;
+    NSXPCListener * _listener;
+    _UIKeyboardArbiterHandle * _previouslyActiveHandle;
+    NSObject<OS_dispatch_queue> * _queue;
+    FBSScene * _scene;
+    <_UIKeyboardArbiterLink> * _sceneLink;
+    BKSApplicationStateMonitor * _stateMonitor;
+    int  _updateCounter;
+    FBSWorkspace * _workspace;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -46,6 +46,7 @@
 - (void)reevaluateHardwareKeyboardClient;
 - (void)reevaluateSceneSettings;
 - (void)resume;
+- (void)retrieveDebugInformationWithCompletion:(id /* block */)arg1;
 - (void)runOperations:(id /* block */)arg1 onHandler:(id)arg2;
 - (id)sceneLink;
 - (void)scheduleWindowTimeout;

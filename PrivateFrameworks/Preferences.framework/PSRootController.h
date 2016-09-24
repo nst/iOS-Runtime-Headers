@@ -3,10 +3,11 @@
  */
 
 @interface PSRootController : UINavigationController <PSController, UINavigationControllerDelegate> {
-    BOOL _deallocating;
-    PSSpecifier *_specifier;
-    PSStackPushAnimationController *_stackAnimationController;
-    NSMutableSet *_tasks;
+    BOOL  _deallocating;
+    PSSpecifier * _specifier;
+    PSStackPushAnimationController * _stackAnimationController;
+    unsigned int  _supportedOrientationsOverride;
+    NSMutableSet * _tasks;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -54,6 +55,7 @@
 - (void)setPreferenceValue:(id)arg1 specifier:(id)arg2;
 - (void)setRootController:(id)arg1;
 - (void)setSpecifier:(id)arg1;
+- (void)setSupportedInterfaceOrientations:(unsigned int)arg1;
 - (void)setViewControllers:(id)arg1 animated:(BOOL)arg2;
 - (void)showController:(id)arg1;
 - (void)showController:(id)arg1 animate:(BOOL)arg2;

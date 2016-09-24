@@ -3,7 +3,7 @@
  */
 
 @interface GQDWPTocEntry : GQDWPBlockList {
-    struct __CFString { } *mBookmark;
+    struct __CFString { } * mBookmark;
 }
 
 - (struct __CFString { }*)bookmark;

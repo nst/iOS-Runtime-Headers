@@ -3,8 +3,8 @@
  */
 
 @interface CNUIDataCollectionSearchSession : NSObject {
-    BOOL _pendingResults;
-    BOOL _pendingSuggestionsResults;
+    BOOL  _pendingResults;
+    BOOL  _pendingSuggestionsResults;
 }
 
 @property (nonatomic) BOOL pendingResults;

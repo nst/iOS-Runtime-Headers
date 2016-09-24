@@ -3,10 +3,10 @@
  */
 
 @interface MPUsageStatistics : NSObject {
-    NSString *_domain;
-    NSString *_lastAggregateStatisticsDisplayCountKey;
-    double _lastAggregateStatisticsDisplayCountTime;
-    NSObject<OS_dispatch_queue> *_queue;
+    NSString * _domain;
+    NSString * _lastAggregateStatisticsDisplayCountKey;
+    double  _lastAggregateStatisticsDisplayCountTime;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 + (id)sharedStatistics;

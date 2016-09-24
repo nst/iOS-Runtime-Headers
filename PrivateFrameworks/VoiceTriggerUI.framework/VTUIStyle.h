@@ -3,14 +3,14 @@
  */
 
 @interface VTUIStyle : NSObject {
-    NSString *_deviceClass;
-    NSArray *_deviceImageSuffixes;
-    NSArray *_deviceStringSuffixes;
-    int _enrollmentMode;
-    BOOL _isBuddy;
-    BOOL _isHeySiriAlwaysOn;
-    BOOL _isIpad;
-    BOOL _needMoreLineSpacing;
+    NSString * _deviceClass;
+    NSArray * _deviceImageSuffixes;
+    NSArray * _deviceStringSuffixes;
+    int  _enrollmentMode;
+    BOOL  _isBuddy;
+    BOOL  _isHeySiriAlwaysOn;
+    BOOL  _isIpad;
+    BOOL  _needMoreLineSpacing;
 }
 
 @property (nonatomic) int enrollmentMode;
@@ -44,6 +44,8 @@
 - (id)headerTitleFont;
 - (float)headerTitleLinespacing;
 - (float)horizontalPadding;
+- (float)horizontalPaddingLandscape;
+- (float)horizontalPaddingPortrait;
 - (float)imageViewBottomOffsetFromFooter;
 - (float)imageViewTopOffset;
 - (id)init;

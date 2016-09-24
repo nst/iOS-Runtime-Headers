@@ -3,15 +3,15 @@
  */
 
 @interface MSVSystemDialogOptions : NSObject {
-    NSString *_alertHeader;
-    NSString *_alertMessage;
-    NSArray *_allowedApplicationBundleIDs;
-    NSString *_alternateButtonTitle;
-    NSString *_defaultButtonTitle;
-    BOOL _dismissOverlaysOnLockscreen;
-    BOOL _forceModalAlertAppearance;
-    BOOL _showAsTopmost;
-    BOOL _showOnLockscreen;
+    NSString * _alertHeader;
+    NSString * _alertMessage;
+    NSArray * _allowedApplicationBundleIDs;
+    NSString * _alternateButtonTitle;
+    NSString * _defaultButtonTitle;
+    BOOL  _dismissOverlaysOnLockscreen;
+    BOOL  _forceModalAlertAppearance;
+    BOOL  _showAsTopmost;
+    BOOL  _showOnLockscreen;
 }
 
 @property (nonatomic, copy) NSString *alertHeader;

@@ -3,8 +3,8 @@
  */
 
 @interface UIPrintActivityWrapperNavigationController : UINavigationController {
-    id /* block */ _completionHandler;
-    BOOL _presentedPrintInteractionController;
+    id /* block */  _completionHandler;
+    BOOL  _presentedPrintInteractionController;
 }
 
 @property (nonatomic) BOOL presentedPrintInteractionController;

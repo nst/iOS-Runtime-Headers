@@ -7,8 +7,8 @@
         unsigned int sparse : 1; 
         unsigned int parsingUpdatedTree : 1; 
         unsigned int parsingReorderedSiblings : 1; 
-    } _parsingFlags;
-    IKViewElementStyleFactory *_styleFactory;
+    }  _parsingFlags;
+    IKViewElementStyleFactory * _styleFactory;
 }
 
 @property (getter=isSparse, nonatomic) BOOL sparse;
@@ -18,7 +18,9 @@
 + (unsigned int)elementTypeByTagName:(id)arg1;
 + (id)elementsForDocumentElement:(id)arg1 sparse:(BOOL)arg2 styleFactory:(id*)arg3;
 + (void)initialize;
++ (BOOL)isDependentByTagName:(id)arg1;
 + (void)registerClass:(Class)arg1 forElementName:(id)arg2 elementType:(unsigned int)arg3;
++ (void)registerClass:(Class)arg1 forElementName:(id)arg2 elementType:(unsigned int)arg3 dependent:(BOOL)arg4;
 
 - (void).cxx_destruct;
 - (id)elementForDOMElement:(id)arg1 parent:(id)arg2;

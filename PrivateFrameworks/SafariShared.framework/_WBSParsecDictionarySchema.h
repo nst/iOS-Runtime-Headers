@@ -3,7 +3,7 @@
  */
 
 @interface _WBSParsecDictionarySchema : WBSParsecSchema {
-    NSDictionary *_keysToSchemata;
+    NSDictionary * _keysToSchemata;
 }
 
 @property (nonatomic, copy) NSDictionary *keysToSchemata;

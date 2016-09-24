@@ -16,8 +16,10 @@
 - (void)setShouldDelayRemotePersistence:(BOOL)arg1;
 - (void)setShouldExtractDiagnosticsFromMetadata:(BOOL)arg1;
 - (void)setShouldPersistDiagnosticsToSidecar:(BOOL)arg1;
+- (void)setTemporaryPersistenceOptions:(int)arg1;
 - (BOOL)shouldDelayRemotePersistence;
 - (BOOL)shouldExtractDiagnosticsFromMetadata;
 - (BOOL)shouldPersistDiagnosticsToSidecar;
+- (int)temporaryPersistenceOptions;
 
 @end

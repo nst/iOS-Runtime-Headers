@@ -9,10 +9,10 @@
         NSObject *newValue; 
         NSIndexSet *indexes; 
         id extraData; 
-    } _details;
-    BOOL _isPriorNotification;
-    BOOL _isRetainingObjects;
-    NSObject *_originalObservable;
+    }  _details;
+    BOOL  _isPriorNotification;
+    BOOL  _isRetainingObjects;
+    NSObject * _originalObservable;
 }
 
 - (unsigned int)count;

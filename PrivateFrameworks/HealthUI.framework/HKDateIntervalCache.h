@@ -3,14 +3,14 @@
  */
 
 @interface HKDateIntervalCache : NSObject {
-    NSArray *_cachedDates;
-    unsigned int _dateAnchorUnit;
-    HKValueRange *_dateRange;
-    NSDateComponents *_dateSpacingComponents;
-    BOOL _datesInvalidated;
-    NSDate *_maxAnchorDate;
-    NSDate *_minAnchorDate;
-    double _previousTimeInterval;
+    NSArray * _cachedDates;
+    unsigned int  _dateAnchorUnit;
+    HKValueRange * _dateRange;
+    NSDateComponents * _dateSpacingComponents;
+    BOOL  _datesInvalidated;
+    NSDate * _maxAnchorDate;
+    NSDate * _minAnchorDate;
+    double  _previousTimeInterval;
 }
 
 @property (nonatomic) unsigned int dateAnchorUnit;

@@ -3,17 +3,17 @@
  */
 
 @interface GEOSearchAttributionSource : PBCodable <NSCopying> {
-    NSMutableArray *_attributionApps;
+    NSMutableArray * _attributionApps;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _attributionRequirements;
-    NSMutableArray *_localizedAttributions;
-    NSString *_sourceIdentifier;
-    unsigned int _sourceVersion;
-    NSMutableArray *_supportedComponentActions;
-    NSString *_webBaseActionURL;
+    }  _attributionRequirements;
+    NSMutableArray * _localizedAttributions;
+    NSString * _sourceIdentifier;
+    unsigned int  _sourceVersion;
+    NSMutableArray * _supportedComponentActions;
+    NSString * _webBaseActionURL;
 }
 
 @property (nonatomic, retain) NSMutableArray *attributionApps;
@@ -26,6 +26,11 @@
 @property (nonatomic, retain) NSMutableArray *supportedComponentActions;
 @property (nonatomic, retain) NSString *webBaseActionURL;
 
++ (Class)attributionAppsType;
++ (Class)localizedAttributionType;
++ (Class)supportedComponentActionsType;
+
+- (int)StringAsAttributionRequirements:(id)arg1;
 - (void)addAttributionApps:(id)arg1;
 - (void)addAttributionRequirements:(int)arg1;
 - (void)addLocalizedAttribution:(id)arg1;
@@ -34,6 +39,7 @@
 - (id)attributionAppsAtIndex:(unsigned int)arg1;
 - (unsigned int)attributionAppsCount;
 - (int*)attributionRequirements;
+- (id)attributionRequirementsAsString:(int)arg1;
 - (int)attributionRequirementsAtIndex:(unsigned int)arg1;
 - (unsigned int)attributionRequirementsCount;
 - (id)bestLocalizedAttribution;

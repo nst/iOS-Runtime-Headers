@@ -3,7 +3,7 @@
  */
 
 @interface CallDBMetaInfo : NSObject {
-    NSURL *_dbInfoPrefFile;
+    NSURL * _dbInfoPrefFile;
 }
 
 @property (retain) NSURL *dbInfoPrefFile;

@@ -5,9 +5,9 @@
 
 @optional
 
-- (void)overlay:(UIView<MPVideoOverlay> *)arg1 didBeginUserEvent:(int)arg2;
-- (void)overlay:(UIView<MPVideoOverlay> *)arg1 didCancelUserEvent:(int)arg2;
-- (void)overlay:(UIView<MPVideoOverlay> *)arg1 didEndUserEvent:(int)arg2;
+- (void)overlay:(UIView<MPVideoOverlay> *)arg1 didBeginUserEvent:(unsigned int)arg2;
+- (void)overlay:(UIView<MPVideoOverlay> *)arg1 didCancelUserEvent:(unsigned int)arg2;
+- (void)overlay:(UIView<MPVideoOverlay> *)arg1 didEndUserEvent:(unsigned int)arg2;
 - (double)overlay:(UIView<MPVideoOverlay> *)arg1 interpretCurrentTime:(double)arg2;
 - (double)overlay:(UIView<MPVideoOverlay> *)arg1 interpretDuration:(double)arg2;
 - (void)overlayDidBeginScrubbing:(UIView<MPVideoOverlay> *)arg1;

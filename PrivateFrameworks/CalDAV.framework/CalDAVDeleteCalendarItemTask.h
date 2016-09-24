@@ -3,7 +3,7 @@
  */
 
 @interface CalDAVDeleteCalendarItemTask : CoreDAVDeleteTask {
-    NSString *_previousScheduleTag;
+    NSString * _previousScheduleTag;
 }
 
 @property (nonatomic, retain) NSString *previousScheduleTag;

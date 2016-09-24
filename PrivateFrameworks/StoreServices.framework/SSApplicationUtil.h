@@ -3,8 +3,8 @@
  */
 
 @interface SSApplicationUtil : NSObject {
-    SSXPCConnection *_connection;
-    NSObject<OS_dispatch_queue> *_serialQueue;
+    SSXPCConnection * _connection;
+    NSObject<OS_dispatch_queue> * _serialQueue;
 }
 
 - (void).cxx_destruct;

@@ -5,6 +5,6 @@
 
 @required
 
-- (void)captureController:(CUCaptureController *)arg1 didChangeToMode:(struct CAMCaptureModeWithOptions { int x1; int x2; int x3; int x4; })arg2 device:(int)arg3;
+- (void)captureController:(CUCaptureController *)arg1 didChangeToGraphConfiguration:(CAMCaptureGraphConfiguration *)arg2 forDesiredConfiguration:(CAMCaptureGraphConfiguration *)arg3 requestID:(int)arg4;
 
 @end

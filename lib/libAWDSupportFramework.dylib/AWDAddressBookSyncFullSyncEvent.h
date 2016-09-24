@@ -3,16 +3,16 @@
  */
 
 @interface AWDAddressBookSyncFullSyncEvent : PBCodable <NSCopying> {
-    unsigned long long _approximateRecordCount;
+    unsigned long long  _approximateRecordCount;
     struct { 
         unsigned int approximateRecordCount : 1; 
         unsigned int recordsPerSecond : 1; 
         unsigned int timestamp : 1; 
         unsigned int result : 1; 
-    } _has;
-    unsigned long long _recordsPerSecond;
-    int _result;
-    unsigned long long _timestamp;
+    }  _has;
+    unsigned long long  _recordsPerSecond;
+    int  _result;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) unsigned long long approximateRecordCount;

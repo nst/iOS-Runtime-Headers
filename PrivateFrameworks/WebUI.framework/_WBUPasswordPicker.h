@@ -3,12 +3,12 @@
  */
 
 @interface _WBUPasswordPicker : UITableViewController <UISearchBarDelegate, UISearchResultsUpdating> {
-    NSArray *_matchingPasswords;
-    _UINavigationControllerPalette *_palette;
-    WBUPasswordPickerViewController *_pickerViewController;
-    NSArray *_savedPasswords;
-    UISearchController *_searchController;
-    NSString *_searchPattern;
+    NSArray * _matchingPasswords;
+    _UINavigationControllerPalette * _palette;
+    WBUPasswordPickerViewController * _pickerViewController;
+    NSArray * _savedPasswords;
+    UISearchController * _searchController;
+    NSString * _searchPattern;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -24,6 +24,7 @@
 - (void)tableView:(id)arg1 accessoryButtonTappedForRowWithIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (float)tableView:(id)arg1 estimatedHeightForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (id)tableView:(id)arg1 titleForFooterInSection:(int)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;

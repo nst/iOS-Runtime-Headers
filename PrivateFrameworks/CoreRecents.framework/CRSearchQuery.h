@@ -3,12 +3,12 @@
  */
 
 @interface CRSearchQuery : NSObject <NSSecureCoding> {
-    id /* block */ _comparator;
-    NSArray *_domains;
-    unsigned int _implicitGroupThreshold;
-    unsigned int _options;
-    NSPredicate *_predicate;
-    id /* block */ _weightDecayer;
+    id /* block */  _comparator;
+    NSArray * _domains;
+    unsigned int  _implicitGroupThreshold;
+    unsigned int  _options;
+    NSPredicate * _predicate;
+    id /* block */  _weightDecayer;
 }
 
 @property (nonatomic, copy) id /* block */ comparator;

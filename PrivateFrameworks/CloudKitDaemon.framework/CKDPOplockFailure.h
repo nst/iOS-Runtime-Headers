@@ -3,7 +3,7 @@
  */
 
 @interface CKDPOplockFailure : PBCodable <NSCopying> {
-    CKDPRecord *_recordForOplockFailure;
+    CKDPRecord * _recordForOplockFailure;
 }
 
 @property (nonatomic, readonly) BOOL hasRecordForOplockFailure;

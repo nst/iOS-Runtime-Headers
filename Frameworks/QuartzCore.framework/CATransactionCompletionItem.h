@@ -3,7 +3,7 @@
  */
 
 @interface CATransactionCompletionItem : NSObject {
-    void *_priv;
+    void * _priv;
 }
 
 + (id)completionItem;

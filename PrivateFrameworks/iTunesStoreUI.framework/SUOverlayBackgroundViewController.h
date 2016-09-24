@@ -3,25 +3,25 @@
  */
 
 @interface SUOverlayBackgroundViewController : SUViewController <SUScalingFlipViewDelegate, UIGestureRecognizerDelegate> {
-    NSMutableArray *_actionQueue;
-    SUScalingFlipView *_activeFlipView;
-    BOOL _askingToDismissEverything;
-    BOOL _askingToDismissSelection;
-    SUTouchCaptureView *_captureView;
-    <SUOverlayBackgroundDelegate> *_delegate;
+    NSMutableArray * _actionQueue;
+    SUScalingFlipView * _activeFlipView;
+    BOOL  _askingToDismissEverything;
+    BOOL  _askingToDismissSelection;
+    SUTouchCaptureView * _captureView;
+    <SUOverlayBackgroundDelegate> * _delegate;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } _keyboardFrame;
-    int _selectedViewControllerIndex;
-    UISwipeGestureRecognizer *_swipeGestureRecognizer;
-    NSMutableArray *_viewControllers;
+    }  _keyboardFrame;
+    int  _selectedViewControllerIndex;
+    UISwipeGestureRecognizer * _swipeGestureRecognizer;
+    NSMutableArray * _viewControllers;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -35,14 +35,14 @@
 - (void)_addViewController:(id)arg1;
 - (void)_backgroundAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (void)_captureViewAction:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_centeredFrameForViewController:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_centeredFrameForViewController:(id)arg1;
 - (id)_copyTransitionForTransition:(id)arg1 action:(id)arg2;
 - (void)_enqueueAction:(id)arg1;
 - (void)_finishDismissAction:(id)arg1;
 - (void)_finishDismissEverythingAction:(id)arg1;
 - (void)_finishDismissOfViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)_finishPresentAction:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForSlideFromBottomForViewController:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameForSlideFromBottomForViewController:(id)arg1;
 - (void)_layoutForKeyboardChangeWithInfo:(id)arg1;
 - (void)_overlayActionDidFinish;
 - (void)_overlayAnimationDidFinish;

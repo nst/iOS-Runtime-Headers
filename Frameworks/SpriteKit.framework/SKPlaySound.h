@@ -3,18 +3,18 @@
  */
 
 @interface SKPlaySound : SKAction {
-    NSString *_fileName;
-    NSString *_filePath;
-    struct SKCPlaySound { int (**x1)(); unsigned int x2; float x3; id /* block */ x4; id x5; double x6; double x7; float x8; float x9; double x10; bool x11; bool x12; id /* block */ x13; int x14; float x15; float x16; float x17; float x18; id x19; BOOL x20; } *_mycaction;
+    NSString * _fileName;
+    NSString * _filePath;
+    struct SKCPlaySound { int (**x1)(); unsigned int x2; double x3; id /* block */ x4; id x5; double x6; double x7; double x8; double x9; double x10; bool x11; bool x12; id /* block */ x13; int x14; double x15; double x16; double x17; double x18; id x19; BOOL x20; } * _mycaction;
     struct CGPoint { 
-        float x; 
-        float y; 
-    } _position;
-    SKSoundSource *_soundSource;
+        double x; 
+        double y; 
+    }  _position;
+    SKSoundSource * _soundSource;
 }
 
 + (id)_audioURLWithName:(id)arg1 bundle:(id)arg2;
-+ (id)playSoundFileNamed:(id)arg1 atPosition:(struct CGPoint { float x1; float x2; })arg2 waitForCompletion:(BOOL)arg3;
++ (id)playSoundFileNamed:(id)arg1 atPosition:(struct CGPoint { double x1; double x2; })arg2 waitForCompletion:(BOOL)arg3;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

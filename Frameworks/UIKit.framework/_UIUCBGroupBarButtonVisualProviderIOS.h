@@ -3,8 +3,8 @@
  */
 
 @interface _UIUCBGroupBarButtonVisualProviderIOS : _UIUCBBarButtonVisualProviderIOS {
-    BOOL _lightKeyboard;
-    _UIUCBKBSelectionBackground *_selectionBackgroundView;
+    BOOL  _lightKeyboard;
+    _UIUCBKBSelectionBackground * _selectionBackgroundView;
 }
 
 + (id)darkKeyboardProvider;

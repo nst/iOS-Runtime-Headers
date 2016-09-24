@@ -3,10 +3,10 @@
  */
 
 @interface CIHighlightShadowAdjust : CIFilter <_CIFilterProperties> {
-    NSNumber *inputHighlightAmount;
-    CIImage *inputImage;
-    NSNumber *inputRadius;
-    NSNumber *inputShadowAmount;
+    NSNumber * inputHighlightAmount;
+    CIImage * inputImage;
+    NSNumber * inputRadius;
+    NSNumber * inputShadowAmount;
 }
 
 @property (nonatomic, retain) NSNumber *inputHighlightAmount;

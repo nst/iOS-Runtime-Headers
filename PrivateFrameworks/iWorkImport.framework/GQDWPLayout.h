@@ -3,7 +3,7 @@
  */
 
 @interface GQDWPLayout : GQDWPBlockList {
-    GQDSStyle *mLayoutStyle;
+    GQDSStyle * mLayoutStyle;
 }
 
 - (void)dealloc;

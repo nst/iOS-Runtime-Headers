@@ -3,21 +3,21 @@
  */
 
 @interface PFUbiquityLocationStatus : NSObject {
-    NSError *_error;
-    unsigned int _hash;
-    BOOL _isDeleted;
-    BOOL _isDownloaded;
-    BOOL _isDownloading;
-    BOOL _isExported;
-    BOOL _isFailed;
-    BOOL _isImported;
-    BOOL _isLive;
-    BOOL _isScheduled;
-    BOOL _isUploaded;
-    BOOL _isUploading;
-    PFUbiquityLocation *_location;
-    long long _numBytes;
-    int _numNotifications;
+    NSError * _error;
+    unsigned int  _hash;
+    BOOL  _isDeleted;
+    BOOL  _isDownloaded;
+    BOOL  _isDownloading;
+    BOOL  _isExported;
+    BOOL  _isFailed;
+    BOOL  _isImported;
+    BOOL  _isLive;
+    BOOL  _isScheduled;
+    BOOL  _isUploaded;
+    BOOL  _isUploading;
+    PFUbiquityLocation * _location;
+    int  _numBytes;
+    int  _numNotifications;
 }
 
 @property (nonatomic, readonly) NSError *error;
@@ -32,7 +32,7 @@
 @property (nonatomic, readonly) BOOL isUploaded;
 @property (nonatomic, readonly) BOOL isUploading;
 @property (nonatomic, readonly) PFUbiquityLocation *location;
-@property (nonatomic, readonly) long long numBytes;
+@property (nonatomic, readonly) int numBytes;
 @property (nonatomic, readonly) int numNotifications;
 
 - (void)checkFileURLState;
@@ -58,7 +58,7 @@
 - (void)logWasExported;
 - (void)logWasImported;
 - (void)logWasScheduled;
-- (long long)numBytes;
+- (int)numBytes;
 - (int)numNotifications;
 - (void)recoveredFromError;
 - (void)setIsDownloading:(BOOL)arg1;

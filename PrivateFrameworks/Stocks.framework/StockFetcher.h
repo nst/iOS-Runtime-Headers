@@ -3,10 +3,10 @@
  */
 
 @interface StockFetcher : NSObject <SymbolValidatorDelegate> {
-    id /* block */ _completionHandler;
-    double _timeoutDuration;
-    NSTimer *_timeoutTimer;
-    SymbolValidator *_validator;
+    id /* block */  _completionHandler;
+    double  _timeoutDuration;
+    NSTimer * _timeoutTimer;
+    SymbolValidator * _validator;
 }
 
 @property (nonatomic, copy) id /* block */ completionHandler;

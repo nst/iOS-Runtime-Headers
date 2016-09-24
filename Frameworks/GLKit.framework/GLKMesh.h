@@ -3,11 +3,11 @@
  */
 
 @interface GLKMesh : NSObject {
-    NSString *_name;
-    NSMutableArray *_submeshes;
-    NSMutableArray *_vertexBuffers;
-    unsigned int _vertexCount;
-    MDLVertexDescriptor *_vertexDescriptor;
+    NSString * _name;
+    NSMutableArray * _submeshes;
+    NSMutableArray * _vertexBuffers;
+    unsigned int  _vertexCount;
+    MDLVertexDescriptor * _vertexDescriptor;
 }
 
 @property (nonatomic, readonly) NSString *name;

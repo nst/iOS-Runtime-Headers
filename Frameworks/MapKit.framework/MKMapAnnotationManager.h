@@ -3,8 +3,8 @@
  */
 
 @interface MKMapAnnotationManager : MKAnnotationManager {
-    BOOL _addedUserLocationAnnotation;
-    MKAnnotationView *_userLocationView;
+    BOOL  _addedUserLocationAnnotation;
+    MKAnnotationView * _userLocationView;
 }
 
 - (void).cxx_destruct;

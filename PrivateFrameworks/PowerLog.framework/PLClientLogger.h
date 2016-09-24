@@ -3,26 +3,27 @@
  */
 
 @interface PLClientLogger : NSObject {
-    BOOL _batchDropMessages;
-    NSObject<OS_dispatch_queue> *_batchFlushQueue;
-    int _batchedDropMessageCount;
-    NSMutableArray *_batchedTaskCache;
-    BOOL _batchedTimerInFlight;
-    NSSet *_batchingClientWhitelist;
-    BOOL _clientDebug;
-    BOOL _forceBatching;
-    NSMutableDictionary *_pendingTaskCache;
-    NSMutableDictionary *_permissionCache;
-    NSObject<OS_dispatch_queue> *_permissionQueue;
-    NSString *_processName;
-    BOOL _talkToPowerlogHelper;
-    NSObject<OS_dispatch_queue> *_workQueue;
-    NSObject<OS_xpc_object> *_xpcConnection;
-    NSObject<OS_xpc_object> *_xpcConnectionHelper;
-    NSObject<OS_dispatch_queue> *_xpcConnectionHelperQueue;
-    NSObject<OS_dispatch_queue> *_xpcConnectionQueue;
+    NSObject<OS_dispatch_queue> * _adaptivePermissionWorkQueue;
+    BOOL  _batchDropMessages;
+    NSObject<OS_dispatch_queue> * _batchFlushQueue;
+    int  _batchedDropMessageCount;
+    NSMutableArray * _batchedTaskCache;
+    BOOL  _batchedTimerInFlight;
+    NSSet * _batchingClientWhitelist;
+    BOOL  _clientDebug;
+    BOOL  _forceBatching;
+    NSMutableDictionary * _pendingTaskCache;
+    NSMutableDictionary * _permissionCache;
+    NSString * _processName;
+    BOOL  _talkToPowerlogHelper;
+    NSObject<OS_dispatch_queue> * _workQueue;
+    NSObject<OS_xpc_object> * _xpcConnection;
+    NSObject<OS_xpc_object> * _xpcConnectionHelper;
+    NSObject<OS_dispatch_queue> * _xpcConnectionHelperQueue;
+    NSObject<OS_dispatch_queue> * _xpcConnectionQueue;
 }
 
+@property (retain) NSObject<OS_dispatch_queue> *adaptivePermissionWorkQueue;
 @property BOOL batchDropMessages;
 @property (retain) NSObject<OS_dispatch_queue> *batchFlushQueue;
 @property int batchedDropMessageCount;
@@ -33,7 +34,6 @@
 @property BOOL forceBatching;
 @property (retain) NSMutableDictionary *pendingTaskCache;
 @property (retain) NSMutableDictionary *permissionCache;
-@property (retain) NSObject<OS_dispatch_queue> *permissionQueue;
 @property (retain) NSString *processName;
 @property BOOL talkToPowerlogHelper;
 @property (retain) NSObject<OS_dispatch_queue> *workQueue;
@@ -46,6 +46,7 @@
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
+- (id)adaptivePermissionWorkQueue;
 - (void)addToBatchedTaskCacheForType:(id)arg1 forClientID:(short)arg2 forKey:(id)arg3 withPayload:(id)arg4;
 - (void)addToPendingTaskCacheForType:(id)arg1 forClientID:(short)arg2 forKey:(id)arg3 withPayload:(id)arg4;
 - (BOOL)batchDropMessages;
@@ -66,10 +67,10 @@
 - (id)pendingTasksForType:(id)arg1 forClientID:(short)arg2 forKey:(id)arg3;
 - (id)permissionCache;
 - (short)permissionForClientID:(short)arg1 withKey:(id)arg2 withType:(id)arg3;
-- (id)permissionQueue;
 - (void)powerlogStateChanged;
 - (id)processName;
 - (id)queryForClientID:(short)arg1 withKey:(id)arg2 withPayload:(id)arg3;
+- (void)setAdaptivePermissionWorkQueue:(id)arg1;
 - (void)setBatchDropMessages:(BOOL)arg1;
 - (void)setBatchFlushQueue:(id)arg1;
 - (void)setBatchedDropMessageCount:(int)arg1;
@@ -80,7 +81,6 @@
 - (void)setForceBatching:(BOOL)arg1;
 - (void)setPendingTaskCache:(id)arg1;
 - (void)setPermissionCache:(id)arg1;
-- (void)setPermissionQueue:(id)arg1;
 - (void)setProcessName:(id)arg1;
 - (void)setTalkToPowerlogHelper:(BOOL)arg1;
 - (void)setWorkQueue:(id)arg1;

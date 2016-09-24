@@ -3,7 +3,7 @@
  */
 
 @interface EKLayoutContainerView : UIView {
-    <EKLayoutContainerViewDelegate> *_delegate;
+    <EKLayoutContainerViewDelegate> * _delegate;
 }
 
 @property (nonatomic) <EKLayoutContainerViewDelegate> *delegate;

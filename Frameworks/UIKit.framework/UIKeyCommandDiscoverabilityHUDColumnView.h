@@ -3,25 +3,25 @@
  */
 
 @interface UIKeyCommandDiscoverabilityHUDColumnView : UIView {
-    UIFont *_baseFont;
-    NSArray *_constraints;
-    <UIKeyCommandDiscoverabilityHUDColumnViewDelegate> *_delegate;
-    UILayoutGuide *_descriptionColumnLayoutGuide;
-    NSArray *_descriptionViews;
-    float _fontScaleFactor;
-    UILayoutGuide *_inputStringColumnLayoutGuide;
-    NSArray *_inputStringViews;
-    NSArray *_modifierViews;
-    UILayoutGuide *_modifiersColumnLayoutGuide;
-    UIKeyCommandDiscoverabilityHUDVisualStyle *_visualStyle;
+    UIFont * _baseFont;
+    NSArray * _constraints;
+    <UIKeyCommandDiscoverabilityHUDColumnViewDelegate> * _delegate;
+    UILayoutGuide * _descriptionColumnLayoutGuide;
+    NSArray * _descriptionViews;
+    double  _fontScaleFactor;
+    UILayoutGuide * _inputStringColumnLayoutGuide;
+    NSArray * _inputStringViews;
+    NSArray * _modifierViews;
+    UILayoutGuide * _modifiersColumnLayoutGuide;
+    UIKeyCommandDiscoverabilityHUDVisualStyle * _visualStyle;
 }
 
-@property (nonatomic) float fontScaleFactor;
+@property (nonatomic) double fontScaleFactor;
 
 - (void).cxx_destruct;
 - (float)fontScaleFactor;
-- (id)initWithVisualStyle:(id)arg1 delegate:(id)arg2;
+- (id)initWithDelegate:(id)arg1;
 - (void)setFontScaleFactor:(float)arg1;
-- (void)setKeyCommands:(id)arg1;
+- (void)setKeyCommands:(id)arg1 withVisualStyle:(id)arg2;
 
 @end

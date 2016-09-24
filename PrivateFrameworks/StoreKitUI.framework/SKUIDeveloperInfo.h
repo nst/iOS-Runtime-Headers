@@ -3,18 +3,18 @@
  */
 
 @interface SKUIDeveloperInfo : NSObject <NSCopying> {
-    NSArray *_addressLines;
-    NSString *_administrativeArea;
-    NSString *_businessRegistrationIdentifier;
-    NSString *_country;
-    NSString *_ecommerceRegistrationIdentifier;
-    NSString *_emailAddress;
-    NSString *_isoCountryCode;
-    NSString *_locality;
-    NSString *_phoneNumber;
-    NSString *_postalCode;
-    NSString *_tradeName;
-    NSString *_tradeRepresentativeName;
+    NSArray * _addressLines;
+    NSString * _administrativeArea;
+    NSString * _businessRegistrationIdentifier;
+    NSString * _country;
+    NSString * _ecommerceRegistrationIdentifier;
+    NSString * _emailAddress;
+    NSString * _isoCountryCode;
+    NSString * _locality;
+    NSString * _phoneNumber;
+    NSString * _postalCode;
+    NSString * _tradeName;
+    NSString * _tradeRepresentativeName;
 }
 
 @property (nonatomic, copy) NSString *ECommerceRegistrationIdentifier;

@@ -3,10 +3,10 @@
  */
 
 @interface RTActionCondition : NSObject <NSSecureCoding> {
-    NSDate *_date;
-    NSString *_depiction;
-    RTLocationOfInterest *_locationOfInterest;
-    int _locationOfInterestState;
+    NSDate * _date;
+    NSString * _depiction;
+    RTLocationOfInterest * _locationOfInterest;
+    int  _locationOfInterestState;
 }
 
 @property (nonatomic, readonly) NSDate *date;

@@ -3,7 +3,7 @@
  */
 
 @interface _CNPriorityQueueingStrategy : NSObject <CNQueueingStrategy> {
-    id /* block */ _priorityComparator;
+    id /* block */  _priorityComparator;
 }
 
 @property (readonly, copy) NSString *debugDescription;

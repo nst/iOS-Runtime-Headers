@@ -2,15 +2,21 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@interface HMIncomingHomeInvitation : HMHomeInvitation {
-    HMHomeManager *_homeManager;
-    HMUser *_inviter;
+@interface HMIncomingHomeInvitation : HMHomeInvitation <HFPrettyDescription> {
+    HMHomeManager * _homeManager;
+    HMUser * _inviter;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property (nonatomic) HMHomeManager *homeManager;
 @property (nonatomic, readonly, copy) NSString *homeName;
 @property (nonatomic, readonly, copy) NSUUID *homeUUID;
 @property (nonatomic, readonly) HMUser *inviter;
+@property (readonly) Class superclass;
+
+// Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
 
 + (id)homeInvitationsFromData:(id)arg1 homeManager:(id)arg2;
 + (id)homeInvitationsFromEncodedData:(id)arg1 homeManager:(id)arg2;
@@ -31,5 +37,9 @@
 - (id)initWithInvitationData:(id)arg1 homeManager:(id)arg2;
 - (id)inviter;
 - (void)setHomeManager:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/Home.framework/Home
+
+- (id)hf_prettyDescription;
 
 @end

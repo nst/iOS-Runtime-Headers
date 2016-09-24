@@ -3,34 +3,34 @@
  */
 
 @interface Converter : NSObject {
-    NSArray *_additionalResults;
-    NSString *_conversionType;
-    float _currencyUpdateTimeOut;
-    NSString *_inputString;
-    NSString *_inputUnit;
-    NSNumber *_inputValue;
-    BOOL _isCurrency;
-    NSString *_localizedInputValueAndUnit;
-    NSString *_localizedOutputUnit;
-    NSString *_localizedOutputValue;
-    NSString *_localizedOutputValueAndUnit;
-    NSString *_outputUnit;
-    NSNumber *_outputValue;
+    NSArray * _additionalResults;
+    NSString * _conversionType;
+    double  _currencyUpdateTimeOut;
+    NSString * _inputString;
+    NSString * _inputUnit;
+    NSNumber * _inputValue;
+    BOOL  _isCurrency;
+    NSString * _localizedInputValueAndUnit;
+    NSString * _localizedOutputUnit;
+    NSString * _localizedOutputValue;
+    NSString * _localizedOutputValueAndUnit;
+    NSString * _outputUnit;
+    NSNumber * _outputValue;
 }
 
-@property (retain) NSArray *additionalResults;
-@property (retain) NSString *conversionType;
-@property float currencyUpdateTimeOut;
-@property (retain) NSString *inputString;
-@property (retain) NSString *inputUnit;
-@property (retain) NSNumber *inputValue;
+@property (nonatomic, retain) NSArray *additionalResults;
+@property (nonatomic, retain) NSString *conversionType;
+@property double currencyUpdateTimeOut;
+@property (nonatomic, retain) NSString *inputString;
+@property (nonatomic, retain) NSString *inputUnit;
+@property (nonatomic, retain) NSNumber *inputValue;
 @property (readonly) BOOL isCurrency;
-@property (retain) NSString *localizedInputValueAndUnit;
-@property (retain) NSString *localizedOutputUnit;
-@property (retain) NSString *localizedOutputValue;
-@property (retain) NSString *localizedOutputValueAndUnit;
-@property (retain) NSString *outputUnit;
-@property (retain) NSNumber *outputValue;
+@property (nonatomic, retain) NSString *localizedInputValueAndUnit;
+@property (nonatomic, retain) NSString *localizedOutputUnit;
+@property (nonatomic, retain) NSString *localizedOutputValue;
+@property (nonatomic, retain) NSString *localizedOutputValueAndUnit;
+@property (nonatomic, retain) NSString *outputUnit;
+@property (nonatomic, retain) NSNumber *outputValue;
 
 + (id)currencyCacheLastRefreshDate;
 + (BOOL)refreshCurrencyCache;

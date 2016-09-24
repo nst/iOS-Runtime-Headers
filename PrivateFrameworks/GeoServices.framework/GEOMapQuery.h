@@ -3,9 +3,9 @@
  */
 
 @interface GEOMapQuery : PBCodable <NSCopying> {
-    int _clientImgFmt;
-    int _clientImgMaxHeight;
-    int _clientImgMaxWidth;
+    int  _clientImgFmt;
+    int  _clientImgMaxHeight;
+    int  _clientImgMaxWidth;
     struct { 
         unsigned int sessionID : 1; 
         unsigned int clientImgFmt : 1; 
@@ -19,23 +19,23 @@
         unsigned int tilesizeX : 1; 
         unsigned int tilesizeY : 1; 
         unsigned int zoomlevel : 1; 
-    } _has;
-    int _mapCenterX;
-    int _mapCenterY;
-    GEOMapRegion *_mapRegion;
-    int _mapSpanX;
-    int _mapSpanY;
-    GEOPlaceSearchRequest *_placeSearchRequest;
-    NSString *_query;
-    int _requestType;
-    struct { 
-        unsigned long long _high; 
-        unsigned long long _low; 
-    } _sessionID;
-    int _tilesizeX;
-    int _tilesizeY;
-    GEOLocation *_userLocation;
-    int _zoomlevel;
+    }  _has;
+    int  _mapCenterX;
+    int  _mapCenterY;
+    GEOMapRegion * _mapRegion;
+    int  _mapSpanX;
+    int  _mapSpanY;
+    GEOPlaceSearchRequest * _placeSearchRequest;
+    NSString * _query;
+    int  _requestType;
+    struct GEOSessionID { 
+        unsigned int _high; 
+        unsigned int _low; 
+    }  _sessionID;
+    int  _tilesizeX;
+    int  _tilesizeY;
+    GEOLocation * _userLocation;
+    int  _zoomlevel;
 }
 
 @property (nonatomic) int clientImgFmt;
@@ -65,13 +65,16 @@
 @property (nonatomic, retain) GEOPlaceSearchRequest *placeSearchRequest;
 @property (nonatomic, retain) NSString *query;
 @property (nonatomic) int requestType;
-@property (nonatomic) struct { unsigned long long x1; unsigned long long x2; } sessionID;
+@property (nonatomic) struct GEOSessionID { unsigned int x1; unsigned int x2; } sessionID;
 @property (nonatomic) int tilesizeX;
 @property (nonatomic) int tilesizeY;
 @property (nonatomic, retain) GEOLocation *userLocation;
 @property (nonatomic) int zoomlevel;
 
+- (int)StringAsClientImgFmt:(id)arg1;
+- (int)StringAsRequestType:(id)arg1;
 - (int)clientImgFmt;
+- (id)clientImgFmtAsString:(int)arg1;
 - (int)clientImgMaxHeight;
 - (int)clientImgMaxWidth;
 - (void)copyTo:(id)arg1;
@@ -107,7 +110,8 @@
 - (id)query;
 - (BOOL)readFrom:(id)arg1;
 - (int)requestType;
-- (struct { unsigned long long x1; unsigned long long x2; })sessionID;
+- (id)requestTypeAsString:(int)arg1;
+- (struct GEOSessionID { unsigned int x1; unsigned int x2; })sessionID;
 - (void)setClientImgFmt:(int)arg1;
 - (void)setClientImgMaxHeight:(int)arg1;
 - (void)setClientImgMaxWidth:(int)arg1;
@@ -131,7 +135,7 @@
 - (void)setPlaceSearchRequest:(id)arg1;
 - (void)setQuery:(id)arg1;
 - (void)setRequestType:(int)arg1;
-- (void)setSessionID:(struct { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)setSessionID:(struct GEOSessionID { unsigned int x1; unsigned int x2; })arg1;
 - (void)setTilesizeX:(int)arg1;
 - (void)setTilesizeY:(int)arg1;
 - (void)setUserLocation:(id)arg1;

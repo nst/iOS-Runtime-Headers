@@ -3,11 +3,11 @@
  */
 
 @interface CertInfoCertificateHeaderCell : UITableViewCell {
-    UIImage *_certificateImage;
-    UIImage *_notTrustedGradient;
-    UILabel *_subtitleLabel;
-    UILabel *_titleLabel;
-    CertInfoGradientLabel *_trustedLabel;
+    UIImage * _certificateImage;
+    UIImage * _notTrustedGradient;
+    UILabel * _subtitleLabel;
+    UILabel * _titleLabel;
+    CertInfoGradientLabel * _trustedLabel;
 }
 
 - (void).cxx_destruct;

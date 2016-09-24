@@ -3,9 +3,9 @@
  */
 
 @interface WLLogController : NSObject {
-    BOOL _logToFile;
-    BOOL _logToSyslog;
-    unsigned int _maxLogLevel;
+    BOOL  _logToFile;
+    BOOL  _logToSyslog;
+    unsigned int  _maxLogLevel;
 }
 
 + (id)_logDirectory;

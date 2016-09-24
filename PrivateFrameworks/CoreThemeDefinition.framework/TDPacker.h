@@ -3,24 +3,24 @@
  */
 
 @interface TDPacker : NSObject {
-    NSArray *_objectsToPack;
-    NSArray *_packedObjects;
-    _TDPackerNode *_root;
-    id /* block */ _sizeHandler;
+    NSArray * _objectsToPack;
+    NSArray * _packedObjects;
+    _TDPackerNode * _root;
+    id /* block */  _sizeHandler;
 }
 
 @property (nonatomic, retain) NSArray *objectsToPack;
 @property (retain) NSArray *packedObjects;
 @property (retain) _TDPackerNode *root;
 
-- (id)_findNode:(id)arg1 ofSize:(struct CGSize { float x1; float x2; })arg2;
-- (id)_growDown:(struct CGSize { float x1; float x2; })arg1;
-- (id)_growNodeToSize:(struct CGSize { float x1; float x2; })arg1;
-- (id)_growRight:(struct CGSize { float x1; float x2; })arg1;
-- (id)_splitNode:(id)arg1 toSize:(struct CGSize { float x1; float x2; })arg2;
+- (id)_findNode:(id)arg1 ofSize:(struct CGSize { double x1; double x2; })arg2;
+- (id)_growDown:(struct CGSize { double x1; double x2; })arg1;
+- (id)_growNodeToSize:(struct CGSize { double x1; double x2; })arg1;
+- (id)_growRight:(struct CGSize { double x1; double x2; })arg1;
+- (id)_splitNode:(id)arg1 toSize:(struct CGSize { double x1; double x2; })arg2;
 - (void)dealloc;
-- (struct CGSize { float x1; float x2; })enclosingSize;
-- (struct CGPoint { float x1; float x2; })fitPositionOfObjectAtIndex:(int)arg1;
+- (struct CGSize { double x1; double x2; })enclosingSize;
+- (struct CGPoint { double x1; double x2; })fitPositionOfObjectAtIndex:(int)arg1;
 - (BOOL)objectAtIndexFit:(int)arg1;
 - (id)objectsToPack;
 - (void)pack;

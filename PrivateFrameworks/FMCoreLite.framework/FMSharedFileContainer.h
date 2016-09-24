@@ -3,7 +3,7 @@
  */
 
 @interface FMSharedFileContainer : NSObject <FMFileContainer> {
-    NSURL *_url;
+    NSURL * _url;
 }
 
 @property (readonly, copy) NSString *debugDescription;

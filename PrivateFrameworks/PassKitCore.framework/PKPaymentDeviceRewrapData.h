@@ -3,26 +3,22 @@
  */
 
 @interface PKPaymentDeviceRewrapData : NSObject <NSSecureCoding> {
-    NSString *_CASDECCCertificate;
-    NSString *_CASDRSACertificate;
-    NSString *_deviceIdentifier;
+    PKSecureElementCertificateSet * _certificates;
+    NSString * _deviceIdentifier;
 }
 
-@property (nonatomic, copy) NSString *CASDECCCertificate;
-@property (nonatomic, copy) NSString *CASDRSACertificate;
+@property (nonatomic, copy) PKSecureElementCertificateSet *certificates;
 @property (nonatomic, copy) NSString *deviceIdentifier;
 
 + (BOOL)supportsSecureCoding;
 
-- (id)CASDECCCertificate;
-- (id)CASDRSACertificate;
+- (void).cxx_destruct;
+- (id)certificates;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)deviceIdentifier;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)setCASDECCCertificate:(id)arg1;
-- (void)setCASDRSACertificate:(id)arg1;
+- (void)setCertificates:(id)arg1;
 - (void)setDeviceIdentifier:(id)arg1;
 
 @end

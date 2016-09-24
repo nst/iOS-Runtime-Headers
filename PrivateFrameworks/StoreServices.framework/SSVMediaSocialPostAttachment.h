@@ -3,19 +3,19 @@
  */
 
 @interface SSVMediaSocialPostAttachment : NSObject <NSCopying, SSXPCCoding> {
-    NSString *_albumIdentifier;
-    NSArray *_artists;
-    NSData *_assetData;
-    NSURL *_assetURL;
-    NSString *_attachmentDescription;
-    NSString *_categoryName;
-    NSMutableDictionary *_childAttachments;
-    BOOL _deletesAssetWhenFinished;
-    BOOL _explicitContent;
-    double _previewFrameTimestamp;
-    NSString *_subtitle;
-    NSString *_title;
-    NSString *_uti;
+    NSString * _albumIdentifier;
+    NSArray * _artists;
+    NSData * _assetData;
+    NSURL * _assetURL;
+    NSString * _attachmentDescription;
+    NSString * _categoryName;
+    NSMutableDictionary * _childAttachments;
+    BOOL  _deletesAssetWhenFinished;
+    BOOL  _explicitContent;
+    double  _previewFrameTimestamp;
+    NSString * _subtitle;
+    NSString * _title;
+    NSString * _uti;
 }
 
 @property (nonatomic, copy) NSString *UTI;

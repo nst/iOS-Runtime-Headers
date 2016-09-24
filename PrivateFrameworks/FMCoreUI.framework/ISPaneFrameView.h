@@ -3,7 +3,7 @@
  */
 
 @interface ISPaneFrameView : UIView {
-    FMSlidingPaneViewController *_owningViewController;
+    FMSlidingPaneViewController * _owningViewController;
 }
 
 @property (nonatomic) FMSlidingPaneViewController *owningViewController;

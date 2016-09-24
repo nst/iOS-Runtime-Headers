@@ -2,31 +2,40 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@interface HDProcessStateManager : NSObject {
-    BKSApplicationStateMonitor *_applicationMonitor;
-    NSObject<OS_dispatch_queue> *_clientCalloutQueue;
-    NSMutableDictionary *_currentProcessStateByBundleID;
-    HDDaemon *_daemon;
-    NSHashTable *_generalProcessObservers;
-    NSMutableDictionary *_processObserversByBundleID;
-    NSObject<OS_dispatch_queue> *_queue;
+@interface HDProcessStateManager : NSObject <HDDiagnosticObject> {
+    BKSApplicationStateMonitor * _applicationMonitor;
+    NSObject<OS_dispatch_queue> * _clientCalloutQueue;
+    HDDaemon * _daemon;
+    NSHashTable * _foregroundClientProcessObservers;
+    NSMutableDictionary * _processInfoByBundleID;
+    NSMutableDictionary * _processObserversByBundleID;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
-@property (nonatomic) HDDaemon *daemon;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
++ (BOOL)applicationIsForeground:(id)arg1;
 + (id)bundleVersionStringForProcessIdentifier:(int)arg1;
++ (int)processIdentifierForApplicationIdentifier:(id)arg1;
 
 - (void).cxx_destruct;
-- (void)_queue_stateChangeHandler:(id)arg1;
-- (int)countOfForegroundObservedApplications;
-- (id)daemon;
+- (unsigned int)_getApplicationStateForBundleIdentifier:(id)arg1;
+- (void)_handleBackboardApplicationInfoChanged:(id)arg1;
+- (void)_queue_handleBackboardApplicationInfoChanged:(id)arg1;
+- (void)_queue_handleProcessInfoChangedWithAllPreviousProcessInfos:(id)arg1;
+- (void)_queue_notifyObserversProcessWithBundleIdentifier:(id)arg1 processIdentifier:(int)arg2 applicationStateChanged:(unsigned int)arg3 previousApplicationState:(unsigned int)arg4;
+- (void)dealloc;
+- (id)diagnosticDescription;
 - (id)init;
 - (id)initWithDaemon:(id)arg1;
+- (BOOL)isApplicationStateForegroundForBundleIdentifier:(id)arg1;
 - (BOOL)isApplicationStateSuspendedForBundleIdentifier:(id)arg1;
-- (void)registerAllProcessObserver:(id)arg1;
+- (void)registerForegroundClientProcessObserver:(id)arg1;
 - (BOOL)registerObserver:(id)arg1 forBundleIdentifier:(id)arg2;
-- (void)setDaemon:(id)arg1;
-- (void)unregisterAllProcessObserver:(id)arg1;
+- (void)unregisterForegroundClientProcessObserver:(id)arg1;
 - (void)unregisterObserver:(id)arg1 forBundleIdentifier:(id)arg2;
 
 @end

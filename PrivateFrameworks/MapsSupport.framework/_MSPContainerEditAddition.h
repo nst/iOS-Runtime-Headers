@@ -3,9 +3,10 @@
  */
 
 @interface _MSPContainerEditAddition : _MSPContainerEdit <MSPContainerEditAddition> {
-    NSArray *_addedImmutableObjects;
-    NSIndexSet *_indexesOfAddedObjects;
-    NSArray *_objects;
+    NSArray * _addedImmutableObjects;
+    NSMapTable * _identifiersAtopByIdentifier;
+    NSIndexSet * _indexesOfAddedObjects;
+    NSArray * _objects;
 }
 
 @property (nonatomic, readonly) NSArray *addedImmutableObjects;
@@ -19,8 +20,9 @@
 - (void).cxx_destruct;
 - (id)addedImmutableObjects;
 - (id)description;
+- (id)identifierForObjectAtopAddedImmutableObject:(id)arg1;
 - (id)indexesOfAddedObjects;
-- (id)initWithObjects:(id)arg1 indexes:(id)arg2;
+- (id)initWithObjects:(id)arg1 indexes:(id)arg2 identifiersAtop:(id)arg3;
 - (id)objects;
 - (void)useImmutableObjectsFromMap:(id)arg1 intermediateMutableObjectTransferBlock:(id /* block */)arg2;
 

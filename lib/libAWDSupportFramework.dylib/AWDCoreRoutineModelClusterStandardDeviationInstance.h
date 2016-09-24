@@ -3,12 +3,12 @@
  */
 
 @interface AWDCoreRoutineModelClusterStandardDeviationInstance : PBCodable <NSCopying> {
-    int _entryStandardDeviation;
-    int _exitStandardDeviation;
+    int  _entryStandardDeviation;
+    int  _exitStandardDeviation;
     struct { 
         unsigned int entryStandardDeviation : 1; 
         unsigned int exitStandardDeviation : 1; 
-    } _has;
+    }  _has;
 }
 
 @property (nonatomic) int entryStandardDeviation;

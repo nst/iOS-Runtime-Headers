@@ -3,12 +3,12 @@
  */
 
 @interface CHDCategoryAxis : CHDAxis {
-    bool mAutomatic;
-    int mLabelAlignment;
-    long mLabelFrequency;
-    bool mLabelFrequencyAutomatic;
-    bool mNoMultipleLevelLabel;
-    bool mShowSeriesNames;
+    bool  mAutomatic;
+    int  mLabelAlignment;
+    long  mLabelFrequency;
+    bool  mLabelFrequencyAutomatic;
+    bool  mNoMultipleLevelLabel;
+    bool  mShowSeriesNames;
 }
 
 - (void)adjustAxisPositionForHorizontalChart;

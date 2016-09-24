@@ -3,9 +3,9 @@
  */
 
 @interface MSCLAudioPickerViewController : UINavigationController {
-    <MSCLAudioPickerDelegate> *_audioPickerDelegate;
-    SKUIClientContext *_clientContext;
-    NSArray *_sources;
+    <MSCLAudioPickerDelegate> * _audioPickerDelegate;
+    SKUIClientContext * _clientContext;
+    NSArray * _sources;
 }
 
 @property (nonatomic) <MSCLAudioPickerDelegate> *audioPickerDelegate;

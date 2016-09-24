@@ -3,7 +3,7 @@
  */
 
 @interface OADFlattenedGroup : OADDrawable {
-    NSMutableArray *mDrawables;
+    NSMutableArray * mDrawables;
 }
 
 - (void)addDrawable:(id)arg1;

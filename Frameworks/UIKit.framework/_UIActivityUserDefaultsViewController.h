@@ -3,9 +3,9 @@
  */
 
 @interface _UIActivityUserDefaultsViewController : UITableViewController {
-    NSArray *_activities;
-    UIImage *_placeholderImage;
-    _UIActivityUserDefaults *_userDefaults;
+    NSArray * _activities;
+    UIImage * _placeholderImage;
+    _UIActivityUserDefaults * _userDefaults;
 }
 
 @property (nonatomic, copy) NSArray *activities;

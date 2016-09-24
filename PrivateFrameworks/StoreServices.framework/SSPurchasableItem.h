@@ -3,23 +3,23 @@
  */
 
 @interface SSPurchasableItem : NSObject {
-    SSSQLiteDatabase *_database;
-    NSDictionary *_propertyValues;
-    NSString *_tableName;
+    SSSQLiteDatabase * _database;
+    NSDictionary * _propertyValues;
+    NSString * _tableName;
 }
 
 + (id)allPropertyKeys;
 + (id)databaseTable;
 + (id)sortByDatePurchasedKey;
 
-- (long long)accountUniqueIdentifier;
+- (int)accountUniqueIdentifier;
 - (id)datePurchased;
 - (void)dealloc;
 - (id)description;
 - (id)initWithPropertyValues:(id)arg1;
 - (BOOL)isHidden;
-- (long long)pid;
+- (int)pid;
 - (id)propertyValues;
-- (long long)storeID;
+- (int)storeID;
 
 @end

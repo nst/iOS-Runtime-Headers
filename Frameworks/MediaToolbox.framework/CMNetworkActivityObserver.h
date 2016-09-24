@@ -3,11 +3,11 @@
  */
 
 @interface CMNetworkActivityObserver : NSObject {
-    CMNetworkActivityMonitor *_activityMonitor;
-    int _cmActivityPollingToken;
-    int _cmActivityToken;
-    BOOL _registered;
-    BOOL _valid;
+    CMNetworkActivityMonitor * _activityMonitor;
+    int  _cmActivityPollingToken;
+    int  _cmActivityToken;
+    BOOL  _registered;
+    BOOL  _valid;
 }
 
 @property (nonatomic, readonly) CMNetworkActivityMonitor *activityMonitor;

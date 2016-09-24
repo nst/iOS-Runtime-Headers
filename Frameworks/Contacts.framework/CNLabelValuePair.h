@@ -3,8 +3,8 @@
  */
 
 @interface CNLabelValuePair : NSObject <NSCopying> {
-    NSString *_label;
-    id _value;
+    NSString * _label;
+    id  _value;
 }
 
 @property (readonly, copy) NSString *label;

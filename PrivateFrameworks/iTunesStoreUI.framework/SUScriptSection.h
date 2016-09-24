@@ -3,10 +3,10 @@
  */
 
 @interface SUScriptSection : SUScriptObject {
-    NSString *_badgeValue;
-    NSString *_identifier;
-    BOOL _transient;
-    SUScriptViewController *_viewController;
+    NSString * _badgeValue;
+    NSString * _identifier;
+    BOOL  _transient;
+    SUScriptViewController * _viewController;
 }
 
 @property (retain) NSString *badgeValue;

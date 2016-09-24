@@ -3,7 +3,7 @@
  */
 
 @interface SUResponderChainInvocationRecorder : ISInvocationRecorder {
-    Protocol *_protocol;
+    Protocol * _protocol;
 }
 
 - (id)_targetForSelector:(SEL)arg1 sender:(id)arg2;

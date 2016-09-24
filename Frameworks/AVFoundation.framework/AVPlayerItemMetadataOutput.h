@@ -3,7 +3,7 @@
  */
 
 @interface AVPlayerItemMetadataOutput : AVPlayerItemOutput {
-    AVPlayerItemMetadataOutputInternal *_metadataOutputInternal;
+    AVPlayerItemMetadataOutputInternal * _metadataOutputInternal;
 }
 
 @property (nonatomic) double advanceIntervalForDelegateInvocation;

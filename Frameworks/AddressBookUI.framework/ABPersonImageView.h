@@ -3,20 +3,20 @@
  */
 
 @interface ABPersonImageView : ABPasteboardControl {
-    BOOL _allowsEditing;
-    ABUIPerson *_displayedPerson;
-    UIImageView *_editingImageView;
-    ABClippingImageView *_emptyImageView;
-    <ABPersonImageDataDelegate> *_imageDataDelegate;
-    BOOL _isEditing;
-    BOOL _multiplePhotoBackdropEnabled;
-    BOOL _needsReflow;
-    BOOL _needsReload;
-    ABClippingImageView *_pasteboardMaskImageView;
-    UIImage *_personImage;
-    UIImageView *_personImageView;
-    BOOL _showLabel;
-    <ABStyleProvider> *_styleProvider;
+    BOOL  _allowsEditing;
+    ABUIPerson * _displayedPerson;
+    UIImageView * _editingImageView;
+    ABClippingImageView * _emptyImageView;
+    <ABPersonImageDataDelegate> * _imageDataDelegate;
+    BOOL  _isEditing;
+    BOOL  _multiplePhotoBackdropEnabled;
+    BOOL  _needsReflow;
+    BOOL  _needsReload;
+    ABClippingImageView * _pasteboardMaskImageView;
+    UIImage * _personImage;
+    UIImageView * _personImageView;
+    BOOL  _showLabel;
+    <ABStyleProvider> * _styleProvider;
 }
 
 @property (nonatomic) BOOL allowsEditing;
@@ -31,7 +31,7 @@
 
 + (id)newImageWithName:(id)arg1;
 
-- (void)_drawEditLabelInFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_drawEditLabelInFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)_newDictionaryWithImageData;
 - (id)_supportedPasteboardImageTypesIncludingCustomTypes:(BOOL)arg1;
 - (void)abMenuControllerWillHide;
@@ -49,7 +49,7 @@
 - (id)emptyImageView;
 - (id)framedPhoto;
 - (id)imageDataDelegate;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 styleProvider:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 styleProvider:(id)arg2;
 - (void)layoutSubviews;
 - (id)maskImage;
 - (BOOL)multiplePhotoBackdropEnabled;

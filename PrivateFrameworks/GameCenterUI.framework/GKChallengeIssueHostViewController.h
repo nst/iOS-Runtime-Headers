@@ -3,7 +3,7 @@
  */
 
 @interface GKChallengeIssueHostViewController : GKUIRemoteViewController <GKChallengeIssueHostProtocol> {
-    GKHostedChallengeIssueController *_delegateWeak;
+    GKHostedChallengeIssueController * _delegateWeak;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -18,7 +18,7 @@
 - (id)contextForRequestIdentifier;
 - (void)dealloc;
 - (id)delegate;
-- (void)didFinishWithPlayerInternals:(id)arg1 message:(id)arg2;
+- (void)didFinishWithPlayerIDs:(id)arg1 message:(id)arg2;
 - (void)remoteViewControllerIsCanceling;
 - (void)setChallenge:(id)arg1 withPlayers:(id)arg2 defaultMessage:(id)arg3 forcePicker:(BOOL)arg4;
 - (void)setDelegate:(id)arg1;

@@ -3,12 +3,12 @@
  */
 
 @interface MFMessageBodyElement : NSObject <MFMessageBodyElement_Private> {
-    int _attributes;
-    unsigned int _externalRetainCount;
-    NSArray *_nodes;
-    MFMessageBodyParser *_parser;
-    unsigned int _quoteLevel;
-    int _validAttributes;
+    int  _attributes;
+    unsigned int  _externalRetainCount;
+    NSArray * _nodes;
+    MFMessageBodyParser * _parser;
+    unsigned int  _quoteLevel;
+    int  _validAttributes;
 }
 
 @property (readonly, copy) NSString *debugDescription;

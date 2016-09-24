@@ -3,11 +3,11 @@
  */
 
 @interface SLMicroBlogStatus : NSObject <NSSecureCoding> {
-    NSArray *_imageAssetURLs;
-    NSArray *_imageData;
-    NSString *_inReplyToStatusID;
-    NSString *_maskedApplicationID;
-    NSString *_statusText;
+    NSArray * _imageAssetURLs;
+    NSArray * _imageData;
+    NSString * _inReplyToStatusID;
+    NSString * _maskedApplicationID;
+    NSString * _statusText;
 }
 
 @property (nonatomic, retain) NSArray *imageAssetURLs;

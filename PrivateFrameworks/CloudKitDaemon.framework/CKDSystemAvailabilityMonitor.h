@@ -3,9 +3,9 @@
  */
 
 @interface CKDSystemAvailabilityMonitor : NSObject {
-    NSObject<OS_dispatch_queue> *_availabilityQueue;
-    unsigned int _availabilityState;
-    NSMutableSet *_watchers;
+    NSObject<OS_dispatch_queue> * _availabilityQueue;
+    unsigned int  _availabilityState;
+    NSMutableSet * _watchers;
 }
 
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *availabilityQueue;

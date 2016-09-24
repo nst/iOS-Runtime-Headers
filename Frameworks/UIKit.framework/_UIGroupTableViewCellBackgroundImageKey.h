@@ -3,47 +3,47 @@
  */
 
 @interface _UIGroupTableViewCellBackgroundImageKey : NSObject <NSCopying> {
-    UIColor *_backgroundColor;
-    UIColor *_bottomShadowColor;
-    UIColor *_fillColor;
-    float _leftPhase;
-    BOOL _opaque;
-    float _rightPhase;
-    UIColor *_sectionBorderColor;
-    float _sectionBorderWidth;
-    int _sectionLocation;
-    BOOL _selected;
-    UIColor *_selectionColor;
-    int _selectionStyle;
-    UIColor *_separatorColor;
+    UIColor * _backgroundColor;
+    UIColor * _bottomShadowColor;
+    UIColor * _fillColor;
+    double  _leftPhase;
+    BOOL  _opaque;
+    double  _rightPhase;
+    UIColor * _sectionBorderColor;
+    double  _sectionBorderWidth;
+    int  _sectionLocation;
+    BOOL  _selected;
+    UIColor * _selectionColor;
+    int  _selectionStyle;
+    UIColor * _separatorColor;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    } _separatorInset;
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _separatorInset;
     struct CGSize { 
-        float width; 
-        float height; 
-    } _size;
-    UIColor *_topShadowColor;
+        double width; 
+        double height; 
+    }  _size;
+    UIColor * _topShadowColor;
 }
 
 @property (nonatomic, retain) UIColor *backgroundColor;
 @property (nonatomic, retain) UIColor *bottomShadowColor;
 @property (nonatomic, retain) UIColor *fillColor;
-@property (nonatomic) float leftPhase;
+@property (nonatomic) double leftPhase;
 @property (nonatomic) BOOL opaque;
-@property (nonatomic) float rightPhase;
+@property (nonatomic) double rightPhase;
 @property (nonatomic, retain) UIColor *sectionBorderColor;
-@property (nonatomic) float sectionBorderWidth;
+@property (nonatomic) double sectionBorderWidth;
 @property (nonatomic) int sectionLocation;
 @property (nonatomic) BOOL selected;
 @property (nonatomic, retain) UIColor *selectionColor;
 @property (nonatomic) int selectionStyle;
 @property (nonatomic, retain) UIColor *separatorColor;
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } separatorInset;
-@property (nonatomic) struct CGSize { float x1; float x2; } size;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } separatorInset;
+@property (nonatomic) struct CGSize { double x1; double x2; } size;
 @property (nonatomic, retain) UIColor *topShadowColor;
 
 - (id)backgroundColor;
@@ -64,7 +64,7 @@
 - (id)selectionColor;
 - (int)selectionStyle;
 - (id)separatorColor;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })separatorInset;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })separatorInset;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setBottomShadowColor:(id)arg1;
 - (void)setFillColor:(id)arg1;
@@ -78,10 +78,10 @@
 - (void)setSelectionColor:(id)arg1;
 - (void)setSelectionStyle:(int)arg1;
 - (void)setSeparatorColor:(id)arg1;
-- (void)setSeparatorInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setSeparatorInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setTopShadowColor:(id)arg1;
-- (struct CGSize { float x1; float x2; })size;
+- (struct CGSize { double x1; double x2; })size;
 - (id)topShadowColor;
 
 @end

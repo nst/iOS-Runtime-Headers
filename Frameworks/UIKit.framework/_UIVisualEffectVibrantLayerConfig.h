@@ -3,9 +3,9 @@
  */
 
 @interface _UIVisualEffectVibrantLayerConfig : _UIVisualEffectLayerConfig {
-    NSDictionary *_filterAttributes;
-    UIColor *_tintColor;
-    UIColor *_vibrantColor;
+    NSDictionary * _filterAttributes;
+    UIColor * _tintColor;
+    UIColor * _vibrantColor;
 }
 
 @property (nonatomic, readonly, copy) NSDictionary *filterAttributes;

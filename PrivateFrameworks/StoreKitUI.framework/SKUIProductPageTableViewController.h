@@ -3,16 +3,16 @@
  */
 
 @interface SKUIProductPageTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
-    SKUIClientContext *_clientContext;
-    UIColor *_color;
-    SKUIColorScheme *_colorScheme;
-    <SKUIProductPageChildViewControllerDelegate> *_delegate;
-    <SKUIProductPageChildViewController> *_delegateSender;
-    UIColor *_evenColor;
-    SKUIProductPageHeaderViewController *_headerViewController;
-    NSArray *_sections;
-    SKUIProductPageTableView *_tableView;
-    SKUILayoutCache *_textLayoutCache;
+    SKUIClientContext * _clientContext;
+    UIColor * _color;
+    SKUIColorScheme * _colorScheme;
+    <SKUIProductPageChildViewControllerDelegate> * _delegate;
+    <SKUIProductPageChildViewController> * _delegateSender;
+    UIColor * _evenColor;
+    SKUIProductPageHeaderViewController * _headerViewController;
+    NSArray * _sections;
+    SKUIProductPageTableView * _tableView;
+    SKUILayoutCache * _textLayoutCache;
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;

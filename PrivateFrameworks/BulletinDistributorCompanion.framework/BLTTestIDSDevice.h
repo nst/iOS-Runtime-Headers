@@ -3,10 +3,10 @@
  */
 
 @interface BLTTestIDSDevice : NSObject <BLTAbstractIDSDevice> {
-    BOOL _isCloudReachable;
-    BOOL _isConnected;
-    BOOL _isDefaultPairedDevice;
-    BOOL _isNearby;
+    BOOL  _isCloudReachable;
+    BOOL  _isConnected;
+    BOOL  _isDefaultPairedDevice;
+    BOOL  _isNearby;
 }
 
 @property (readonly, copy) NSString *debugDescription;

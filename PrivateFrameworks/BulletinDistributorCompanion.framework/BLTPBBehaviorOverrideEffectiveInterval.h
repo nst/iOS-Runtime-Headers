@@ -3,13 +3,13 @@
  */
 
 @interface BLTPBBehaviorOverrideEffectiveInterval : PBCodable <NSCopying> {
-    NSString *_calendarIdentifier;
-    BLTPBDateComponents *_endComponents;
+    NSString * _calendarIdentifier;
+    BLTPBDateComponents * _endComponents;
     struct { 
         unsigned int repeatInterval : 1; 
-    } _has;
-    int _repeatInterval;
-    BLTPBDateComponents *_startComponents;
+    }  _has;
+    int  _repeatInterval;
+    BLTPBDateComponents * _startComponents;
 }
 
 @property (nonatomic, retain) NSString *calendarIdentifier;

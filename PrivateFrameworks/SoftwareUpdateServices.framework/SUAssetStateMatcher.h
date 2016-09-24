@@ -3,8 +3,8 @@
  */
 
 @interface SUAssetStateMatcher : NSObject <SUAssetMatcher> {
-    NSString *_assetType;
-    int _interestedStates;
+    NSString * _assetType;
+    int  _interestedStates;
 }
 
 @property (nonatomic, readonly) NSString *assetType;

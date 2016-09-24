@@ -3,7 +3,7 @@
  */
 
 @interface TSKAddedToDocumentContext_Importing : TSKAddedToDocumentContext {
-    NSString *mImporterID;
+    NSString * mImporterID;
 }
 
 - (void)dealloc;

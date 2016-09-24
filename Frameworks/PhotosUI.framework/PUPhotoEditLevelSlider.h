@@ -3,49 +3,49 @@
  */
 
 @interface PUPhotoEditLevelSlider : UIView <PUPhotoEditLayoutStaticAdaptable> {
-    UIView *__sliderContentView;
-    PUAdjustmentsMode *_adjustmentsMode;
-    float _baseValue;
-    BOOL _baseValueIndicatorHidden;
-    UIView *_baseValueIndicatorView;
-    NSArray *_baseValueIndicatorViewConstraints;
-    NSLayoutConstraint *_baseValueIndicatorViewPositionConstraint;
+    UIView * __sliderContentView;
+    PUAdjustmentsMode * _adjustmentsMode;
+    double  _baseValue;
+    BOOL  _baseValueIndicatorHidden;
+    UIView * _baseValueIndicatorView;
+    NSArray * _baseValueIndicatorViewConstraints;
+    NSLayoutConstraint * _baseValueIndicatorViewPositionConstraint;
     struct CGSize { 
-        float width; 
-        float height; 
-    } _contentSize;
-    NSArray *_contentViewConstraints;
-    NSLayoutConstraint *_contentViewOffsetConstraint;
-    float _currentValue;
-    BOOL _directionReversed;
-    float _identityOffset;
-    float _identityValue;
-    int _layoutOrientation;
-    UIView *_levelIndicatorView;
-    NSArray *_levelIndicatorViewConstraints;
-    NSLayoutConstraint *_levelIndicatorViewOffsetConstraint;
-    NSLayoutConstraint *_levelIndicatorViewSpanConstraint;
-    float _maxValue;
-    float _minValue;
-    float _pointsPerUnitAboveIdentity;
-    float _pointsPerUnitBelowIdentity;
-    BOOL _scaleFactorsAreValid;
+        double width; 
+        double height; 
+    }  _contentSize;
+    NSArray * _contentViewConstraints;
+    NSLayoutConstraint * _contentViewOffsetConstraint;
+    double  _currentValue;
+    BOOL  _directionReversed;
+    double  _identityOffset;
+    double  _identityValue;
+    int  _layoutOrientation;
+    UIView * _levelIndicatorView;
+    NSArray * _levelIndicatorViewConstraints;
+    NSLayoutConstraint * _levelIndicatorViewOffsetConstraint;
+    NSLayoutConstraint * _levelIndicatorViewSpanConstraint;
+    double  _maxValue;
+    double  _minValue;
+    double  _pointsPerUnitAboveIdentity;
+    double  _pointsPerUnitBelowIdentity;
+    BOOL  _scaleFactorsAreValid;
 }
 
 @property (nonatomic, retain) PUAdjustmentsMode *adjustmentsMode;
-@property (nonatomic) float baseValue;
+@property (nonatomic) double baseValue;
 @property (getter=isBaseValueIndicatorHidden, nonatomic) BOOL baseValueIndicatorHidden;
-@property (nonatomic) struct CGSize { float x1; float x2; } contentSize;
-@property (nonatomic) float currentValue;
+@property (nonatomic) struct CGSize { double x1; double x2; } contentSize;
+@property (nonatomic) double currentValue;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (getter=isDirectionReversed, nonatomic) BOOL directionReversed;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly) float identityOffset;
-@property (nonatomic) float identityValue;
+@property (nonatomic, readonly) double identityOffset;
+@property (nonatomic) double identityValue;
 @property (nonatomic, readonly) int layoutOrientation;
-@property (nonatomic) float maxValue;
-@property (nonatomic) float minValue;
+@property (nonatomic) double maxValue;
+@property (nonatomic) double minValue;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) BOOL wantsLevelIndicator;
 
@@ -61,11 +61,11 @@
 - (void)_updateLevelDisplay;
 - (id)adjustmentsMode;
 - (float)baseValue;
-- (struct CGSize { float x1; float x2; })contentSize;
+- (struct CGSize { double x1; double x2; })contentSize;
 - (float)currentValue;
 - (float)identityOffset;
 - (float)identityValue;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)invalidateConversionFactors;
 - (BOOL)isBaseValueIndicatorHidden;
 - (BOOL)isDirectionReversed;
@@ -79,8 +79,8 @@
 - (void)setBaseValue:(float)arg1;
 - (void)setBaseValueIndicatorHidden:(BOOL)arg1;
 - (void)setBaseValueIndicatorHidden:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setContentSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setContentSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setCurrentValue:(float)arg1;
 - (void)setDirectionReversed:(BOOL)arg1;
 - (void)setIdentityValue:(float)arg1;

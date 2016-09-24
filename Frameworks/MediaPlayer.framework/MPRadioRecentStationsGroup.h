@@ -3,8 +3,8 @@
  */
 
 @interface MPRadioRecentStationsGroup : NSObject <NSSecureCoding> {
-    NSString *_localizedTitle;
-    NSArray *_stations;
+    NSString * _localizedTitle;
+    NSArray * _stations;
 }
 
 @property (nonatomic, copy) NSString *localizedTitle;

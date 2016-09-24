@@ -3,17 +3,17 @@
  */
 
 @interface PUOneUpGestureRecognizerCoordinator : NSObject <UIGestureRecognizerDelegate> {
-    NSHashTable *__irisGestureRecognizers;
-    BOOL __needsUpdateGestureRecognizers;
-    PUBrowsingSession *_browsingSession;
-    <PUOneUpGestureRecognizerCoordinatorDelegate> *_delegate;
+    NSHashTable * __irisGestureRecognizers;
+    BOOL  __needsUpdateGestureRecognizers;
+    PUBrowsingSession * _browsingSession;
+    <PUOneUpGestureRecognizerCoordinatorDelegate> * _delegate;
     struct { 
         BOOL respondsToViewHostingGestureRecognizers; 
         BOOL respondsToShouldAllowIrisGestureRecognizer; 
-    } _delegateFlags;
-    PUDoubleTapZoomController *_doubleTapZoomController;
-    PUOneUpBarsController *_oneUpBarsController;
-    PUTouchingGestureRecognizer *_touchingGestureRecognizer;
+    }  _delegateFlags;
+    PUDoubleTapZoomController * _doubleTapZoomController;
+    PUOneUpBarsController * _oneUpBarsController;
+    PUTouchingGestureRecognizer * _touchingGestureRecognizer;
 }
 
 @property (setter=_setIrisGestureRecognizers:, nonatomic, retain) NSHashTable *_irisGestureRecognizers;
@@ -39,6 +39,7 @@
 - (id)browsingSession;
 - (id)delegate;
 - (id)doubleTapZoomController;
+- (BOOL)gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRequireFailureOfGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;

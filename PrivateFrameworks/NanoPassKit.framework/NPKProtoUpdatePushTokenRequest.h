@@ -3,7 +3,7 @@
  */
 
 @interface NPKProtoUpdatePushTokenRequest : PBRequest <NSCopying> {
-    NSString *_pushToken;
+    NSString * _pushToken;
 }
 
 @property (nonatomic, readonly) BOOL hasPushToken;

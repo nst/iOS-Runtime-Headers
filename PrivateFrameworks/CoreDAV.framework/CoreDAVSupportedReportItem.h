@@ -3,7 +3,7 @@
  */
 
 @interface CoreDAVSupportedReportItem : CoreDAVItem {
-    CoreDAVItem *_report;
+    CoreDAVItem * _report;
 }
 
 @property (nonatomic, retain) CoreDAVItem *report;

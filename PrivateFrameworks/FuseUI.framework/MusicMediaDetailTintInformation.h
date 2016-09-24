@@ -3,11 +3,11 @@
  */
 
 @interface MusicMediaDetailTintInformation : NSObject <NSCopying> {
-    UIColor *_actionableColor;
-    UIColor *_backgroundColor;
-    BOOL _backgroundColorLight;
-    UIColor *_primaryTextColor;
-    UIColor *_separatorColor;
+    UIColor * _actionableColor;
+    UIColor * _backgroundColor;
+    BOOL  _backgroundColorLight;
+    UIColor * _primaryTextColor;
+    UIColor * _separatorColor;
 }
 
 @property (nonatomic, readonly) UIColor *actionableColor;

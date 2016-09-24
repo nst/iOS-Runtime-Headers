@@ -3,7 +3,7 @@
  */
 
 @interface IDSBatchIDQueryController : NSObject {
-    _IDSBatchIDQueryController *_internal;
+    _IDSBatchIDQueryController * _internal;
 }
 
 - (void)dealloc;

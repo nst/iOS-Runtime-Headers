@@ -3,7 +3,7 @@
  */
 
 @interface MPMediaCompoundPredicate : MPMediaPredicate <MPPProtobufferCoding> {
-    NSArray *_predicates;
+    NSArray * _predicates;
 }
 
 @property (readonly, copy) NSString *debugDescription;

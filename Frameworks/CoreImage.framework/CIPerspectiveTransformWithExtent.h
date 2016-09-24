@@ -3,12 +3,12 @@
  */
 
 @interface CIPerspectiveTransformWithExtent : CIFilter {
-    CIVector *inputBottomLeft;
-    CIVector *inputBottomRight;
-    CIVector *inputExtent;
-    CIImage *inputImage;
-    CIVector *inputTopLeft;
-    CIVector *inputTopRight;
+    CIVector * inputBottomLeft;
+    CIVector * inputBottomRight;
+    CIVector * inputExtent;
+    CIImage * inputImage;
+    CIVector * inputTopLeft;
+    CIVector * inputTopRight;
 }
 
 @property (nonatomic, retain) CIVector *inputBottomLeft;

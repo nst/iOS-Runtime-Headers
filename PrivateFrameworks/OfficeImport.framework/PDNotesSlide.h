@@ -3,7 +3,7 @@
  */
 
 @interface PDNotesSlide : PDSlideChild {
-    PDNotesMaster *mNotesMaster;
+    PDNotesMaster * mNotesMaster;
 }
 
 - (void)dealloc;

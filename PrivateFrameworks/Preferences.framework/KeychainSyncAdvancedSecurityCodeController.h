@@ -3,10 +3,9 @@
  */
 
 @interface KeychainSyncAdvancedSecurityCodeController : PSKeychainSyncViewController <UIAlertViewDelegate> {
-    UIFont *_cellFont;
-    float _cellTextWidth;
-    UIAlertView *_disableRecoveryConfirmationAlert;
-    BOOL _showsDisableRecoveryOption;
+    UIFont * _cellFont;
+    double  _cellTextWidth;
+    BOOL  _showsDisableRecoveryOption;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -17,7 +16,6 @@
 
 - (void).cxx_destruct;
 - (void)_finishedWithSpecifier:(id)arg1;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)nextPressed;
 - (void)setShowsDisableRecoveryOption:(BOOL)arg1;
 - (BOOL)showsDisableRecoveryOption;

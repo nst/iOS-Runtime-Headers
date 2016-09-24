@@ -3,11 +3,11 @@
  */
 
 @interface _UIAppearanceRecorder : NSObject {
-    NSString *_classNameToRecord;
-    NSArray *_containerClassNames;
-    NSMutableArray *_customizations;
-    Class _superclassToRecord;
-    NSArray *_unarchivedCustomizations;
+    NSString * _classNameToRecord;
+    NSArray * _containerClassNames;
+    NSMutableArray * _customizations;
+    Class  _superclassToRecord;
+    NSArray * _unarchivedCustomizations;
 }
 
 @property (setter=_setClassNameToRecord:, nonatomic, copy) NSString *_classNameToRecord;

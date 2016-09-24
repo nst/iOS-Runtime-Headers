@@ -3,9 +3,9 @@
  */
 
 @interface WLIntroViewController : WLWelcomeGroupViewController {
-    id /* block */ _continueHandler;
-    UIButton *_continueView;
-    UIActivityIndicatorView *_spinner;
+    id /* block */  _continueHandler;
+    UIButton * _continueView;
+    UIActivityIndicatorView * _spinner;
 }
 
 @property (nonatomic, copy) id /* block */ continueHandler;

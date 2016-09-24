@@ -4,26 +4,32 @@
 
 @interface SearchUIUtilities : NSObject
 
++ (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })absoluteFrameForView:(id)arg1;
 + (id)addAspectRatioConstraintForImageView:(id)arg1;
 + (id)buttonColorForStyle:(unsigned int)arg1;
 + (id)captionFont;
-+ (id)chevronImage;
-+ (id)contactForResult:(id)arg1 withKeys:(id)arg2;
-+ (void)cropImageViewToCircle:(id)arg1;
 + (BOOL)deviceSupportsRotation;
++ (void)dispatchMainIfNecessary:(id /* block */)arg1;
 + (id)hyphenatableStringForString:(id)arg1;
-+ (id)imageWithColor:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
-+ (id)imageWithColor:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 cornersToRound:(unsigned int)arg3 cornerRadius:(float)arg4;
++ (id)imageWithColor:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
++ (id)imageWithColor:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 cornersToRound:(unsigned int)arg3 cornerRadius:(float)arg4;
 + (void)initialize;
 + (BOOL)isPortrait;
 + (BOOL)isWideScreen;
++ (struct CGSize { double x1; double x2; })maxThumbnailSize;
 + (float)onePixelForCurrentScreenResolution;
-+ (void)roundImageViewCorners:(id)arg1 withRadius:(float)arg2;
++ (id)openOptions;
++ (void)openPunchout:(id)arg1;
++ (void)openUserActivity:(id)arg1 applicationBundleIdentifier:(id)arg2;
++ (void)performAnimatableChanges:(id /* block */)arg1;
++ (void)performAnimatableChanges:(id /* block */)arg1 animated:(BOOL)arg2;
++ (void)performAnimatableChanges:(id /* block */)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
++ (void)performOpenTask:(id /* block */)arg1;
 + (float)separatorHeight;
-+ (id)sharedContactStore;
 + (id)shortFootnoteFont;
 + (id)shortSubheadFont;
 + (float)standardTableCellContentInset;
 + (id)textColorForStyle:(unsigned int)arg1;
++ (id)vibrantButtonColorForStyle:(unsigned int)arg1;
 
 @end

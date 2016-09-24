@@ -3,13 +3,12 @@
  */
 
 @interface TKTokenDriverContext : NSExtensionContext <TKTokenDriverProtocol> {
-    TKTokenDriver *_driver;
-    NSString *_driverClassID;
-    NSString *_instanceID;
+    TKTokenDriver * _driver;
+    NSString * _tokenID;
 }
 
-@property (nonatomic, retain) TKTokenDriver *driver;
-@property (nonatomic, retain) NSString *driverClassID;
+@property (retain) TKTokenDriver *driver;
+@property (retain) NSString *tokenID;
 
 + (id)_extensionAuxiliaryHostProtocol;
 + (id)_extensionAuxiliaryVendorProtocol;
@@ -18,8 +17,8 @@
 - (void)acquireTokenEndpointWithAttributes:(id)arg1 reply:(id /* block */)arg2;
 - (void)dealloc;
 - (id)driver;
-- (id)driverClassID;
 - (void)setDriver:(id)arg1;
-- (void)setDriverClassID:(id)arg1;
+- (void)setTokenID:(id)arg1;
+- (id)tokenID;
 
 @end

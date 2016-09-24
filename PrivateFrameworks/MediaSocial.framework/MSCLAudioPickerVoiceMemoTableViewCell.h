@@ -3,9 +3,9 @@
  */
 
 @interface MSCLAudioPickerVoiceMemoTableViewCell : UITableViewCell {
-    UILabel *_creationDateLabel;
-    UILabel *_durationLabel;
-    SKUIPlayButton *_playButton;
+    UILabel * _creationDateLabel;
+    UILabel * _durationLabel;
+    SKUIPlayButton * _playButton;
 }
 
 @property (nonatomic, copy) NSString *creationDateString;

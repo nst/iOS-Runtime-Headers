@@ -3,8 +3,8 @@
  */
 
 @interface MPMediaContainmentPredicate : MPMediaPredicate {
-    NSString *_property;
-    NSSet *_values;
+    NSString * _property;
+    NSSet * _values;
 }
 
 @property (nonatomic, readonly, copy) NSString *property;

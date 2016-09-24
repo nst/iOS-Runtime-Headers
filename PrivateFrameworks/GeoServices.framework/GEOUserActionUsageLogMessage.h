@@ -6,16 +6,16 @@
     struct { 
         unsigned int locationBucket : 1; 
         unsigned int uiTarget : 1; 
-    } _has;
-    int _locationBucket;
-    GEOMapLaunchDetails *_mapLaunchDetails;
-    GEOPlaceActionDetails *_placeActionDetails;
-    NSString *_providerId;
-    GEORouteDetails *_routeDetails;
-    GEOMapsServerMetadata *_serverMetadata;
-    int _uiTarget;
-    NSString *_usageEventKey;
-    NSString *_usageEventValue;
+    }  _has;
+    int  _locationBucket;
+    GEOMapLaunchDetails * _mapLaunchDetails;
+    GEOPlaceActionDetails * _placeActionDetails;
+    NSString * _providerId;
+    GEORouteDetails * _routeDetails;
+    GEOMapsServerMetadata * _serverMetadata;
+    int  _uiTarget;
+    NSString * _usageEventKey;
+    NSString * _usageEventValue;
 }
 
 @property (nonatomic) BOOL hasLocationBucket;
@@ -37,6 +37,8 @@
 @property (nonatomic, retain) NSString *usageEventKey;
 @property (nonatomic, retain) NSString *usageEventValue;
 
+- (int)StringAsLocationBucket:(id)arg1;
+- (int)StringAsUiTarget:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -54,6 +56,7 @@
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (int)locationBucket;
+- (id)locationBucketAsString:(int)arg1;
 - (id)mapLaunchDetails;
 - (void)mergeFrom:(id)arg1;
 - (id)placeActionDetails;
@@ -73,6 +76,7 @@
 - (void)setUsageEventKey:(id)arg1;
 - (void)setUsageEventValue:(id)arg1;
 - (int)uiTarget;
+- (id)uiTargetAsString:(int)arg1;
 - (id)usageEventKey;
 - (id)usageEventValue;
 - (void)writeTo:(id)arg1;

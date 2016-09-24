@@ -3,12 +3,12 @@
  */
 
 @interface CKDFetchNotificationChangesOperation : CKDOperation {
-    BOOL _moreComing;
-    id /* block */ _notificationChangedBlock;
-    CKServerChangeToken *_previousServerChangeToken;
-    CKServerChangeToken *_resultServerChangeToken;
-    unsigned int _resultsLimit;
-    BOOL _wantsChanges;
+    BOOL  _moreComing;
+    id /* block */  _notificationChangedBlock;
+    CKServerChangeToken * _previousServerChangeToken;
+    CKServerChangeToken * _resultServerChangeToken;
+    unsigned int  _resultsLimit;
+    BOOL  _wantsChanges;
 }
 
 @property (nonatomic) BOOL moreComing;
@@ -21,7 +21,7 @@
 - (void).cxx_destruct;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleFetchChangesRequestFinished:(id)arg1;
-- (unsigned long long)activityStart;
+- (id)activityCreate;
 - (void)fillOutOperationResult:(id)arg1;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 - (void)main;

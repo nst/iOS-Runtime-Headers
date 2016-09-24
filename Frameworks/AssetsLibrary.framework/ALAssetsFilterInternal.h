@@ -3,7 +3,7 @@
  */
 
 @interface ALAssetsFilterInternal : NSObject {
-    int _filter;
+    int  _filter;
 }
 
 @property (nonatomic) int filter;

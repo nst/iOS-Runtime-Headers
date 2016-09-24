@@ -4,6 +4,7 @@
 
 @interface SAMPSetQueue : SADomainCommand
 
+@property (nonatomic, copy) NSString *airplayRouteUID;
 @property (nonatomic, copy) NSArray *filters;
 @property (nonatomic, retain) SAMPCollection *mediaItems;
 @property (nonatomic) BOOL shouldOverrideManuallyCuratedUpNext;
@@ -14,11 +15,13 @@
 + (id)setQueue;
 + (id)setQueueWithDictionary:(id)arg1 context:(id)arg2;
 
+- (id)airplayRouteUID;
 - (id)encodedClassName;
 - (id)filters;
 - (id)groupIdentifier;
 - (id)mediaItems;
 - (BOOL)requiresResponse;
+- (void)setAirplayRouteUID:(id)arg1;
 - (void)setFilters:(id)arg1;
 - (void)setMediaItems:(id)arg1;
 - (void)setShouldOverrideManuallyCuratedUpNext:(BOOL)arg1;

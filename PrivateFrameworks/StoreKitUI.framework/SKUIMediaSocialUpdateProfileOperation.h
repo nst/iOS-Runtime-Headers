@@ -3,12 +3,12 @@
  */
 
 @interface SKUIMediaSocialUpdateProfileOperation : SSVComplexOperation {
-    SKUIClientContext *_clientContext;
-    NSString *_entityType;
-    NSNumber *_identifier;
-    NSLock *_lock;
-    id /* block */ _outputBlock;
-    NSMutableDictionary *_parameters;
+    SKUIClientContext * _clientContext;
+    NSString * _entityType;
+    NSNumber * _identifier;
+    NSLock * _lock;
+    id /* block */  _outputBlock;
+    NSMutableDictionary * _parameters;
 }
 
 @property (copy) NSString *entityType;

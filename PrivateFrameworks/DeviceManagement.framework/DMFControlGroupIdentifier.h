@@ -3,8 +3,8 @@
  */
 
 @interface DMFControlGroupIdentifier : NSObject <NSCopying, NSSecureCoding> {
-    unsigned short _groupID;
-    NSUUID *_organizationUUID;
+    unsigned short  _groupID;
+    NSUUID * _organizationUUID;
 }
 
 @property unsigned short groupID;

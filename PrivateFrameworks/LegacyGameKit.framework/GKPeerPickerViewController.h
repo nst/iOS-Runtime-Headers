@@ -3,30 +3,30 @@
  */
 
 @interface GKPeerPickerViewController : UIViewController {
-    BOOL _alertCancelled;
-    BOOL _alertPresented;
-    BOOL _animating;
-    int _bluetoothStatus;
-    GKContentView *_btView;
-    GKContentView *_connectTypeView;
-    unsigned int _connectionTypesMask;
-    NSString *_currentConnectionTypeKey;
-    GKContentView *_currentView;
-    id _delegate;
-    NSTimer *_invitationWaitTimer;
-    GKContentView *_inviteView;
-    GKContentView *_listView;
-    NSMutableArray *_menuQueue;
-    GKContentView *_noPeersView;
-    UITableView *_peerTableView;
-    NSMutableArray *_peers;
-    NSString *_pendingPeer;
-    int _pendingState;
-    NSString *_searchingForServicesString;
-    NSMutableDictionary *_sessionMap;
-    int _state;
-    GKContentView *_statusView;
-    BOOL _updating;
+    BOOL  _alertCancelled;
+    BOOL  _alertPresented;
+    BOOL  _animating;
+    int  _bluetoothStatus;
+    GKContentView * _btView;
+    GKContentView * _connectTypeView;
+    unsigned int  _connectionTypesMask;
+    NSString * _currentConnectionTypeKey;
+    GKContentView * _currentView;
+    id  _delegate;
+    NSTimer * _invitationWaitTimer;
+    GKContentView * _inviteView;
+    GKContentView * _listView;
+    NSMutableArray * _menuQueue;
+    GKContentView * _noPeersView;
+    UITableView * _peerTableView;
+    NSMutableArray * _peers;
+    NSString * _pendingPeer;
+    int  _pendingState;
+    NSString * _searchingForServicesString;
+    NSMutableDictionary * _sessionMap;
+    int  _state;
+    GKContentView * _statusView;
+    BOOL  _updating;
 }
 
 @property (nonatomic) BOOL alertCancelled;

@@ -3,9 +3,9 @@
  */
 
 @interface WLMigrationCompletedViewController : WLWelcomeGroupViewController {
-    UIButton *_continueButton;
-    id /* block */ _continueHandler;
-    UIButton *_continueView;
+    UIButton * _continueButton;
+    id /* block */  _continueHandler;
+    UIButton * _continueView;
 }
 
 @property (nonatomic, copy) id /* block */ continueHandler;

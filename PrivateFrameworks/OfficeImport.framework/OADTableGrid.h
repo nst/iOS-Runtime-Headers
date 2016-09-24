@@ -3,7 +3,7 @@
  */
 
 @interface OADTableGrid : NSObject {
-    NSMutableArray *mColumns;
+    NSMutableArray * mColumns;
 }
 
 - (id)addColumn;

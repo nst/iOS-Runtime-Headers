@@ -3,7 +3,7 @@
  */
 
 @interface MIDINetworkConnection : NSObject {
-    void *_imp;
+    void * _imp;
 }
 
 @property (nonatomic, readonly, retain) MIDINetworkHost *host;

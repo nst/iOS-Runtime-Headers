@@ -3,9 +3,9 @@
  */
 
 @interface SKUIReloadConfigurationOperation : NSOperation {
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    id /* block */ _outputBlock;
-    SSURLBag *_urlBag;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    id /* block */  _outputBlock;
+    SSURLBag * _urlBag;
 }
 
 @property (retain) SSURLBag *URLBag;

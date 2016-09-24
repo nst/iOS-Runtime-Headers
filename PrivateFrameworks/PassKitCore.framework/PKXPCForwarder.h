@@ -3,12 +3,12 @@
  */
 
 @interface PKXPCForwarder : NSObject {
-    PKWeakReference *_target;
-    Class _targetClass;
+    id  _target;
+    Class  _targetClass;
 }
 
+- (void).cxx_destruct;
 - (void)clearTarget;
-- (void)dealloc;
 - (void)forwardInvocation:(id)arg1;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (id)init;

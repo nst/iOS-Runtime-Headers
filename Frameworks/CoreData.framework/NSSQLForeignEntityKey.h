@@ -3,7 +3,7 @@
  */
 
 @interface NSSQLForeignEntityKey : NSSQLColumn {
-    NSSQLForeignKey *_foreignKey;
+    NSSQLForeignKey * _foreignKey;
 }
 
 - (void)dealloc;

@@ -3,20 +3,20 @@
  */
 
 @interface CPDistributedMessagingCenter : NSObject {
-    NSOperationQueue *_asyncQueue;
-    NSMutableDictionary *_callouts;
-    NSString *_centerName;
-    CPDistributedMessagingCallout *_currentCallout;
-    BOOL _delayedReply;
-    NSLock *_lock;
-    unsigned int _parkedServerPort;
-    BOOL _portPassing;
-    unsigned int _replyPort;
-    BOOL _requireLookupByPID;
-    NSString *_requiredEntitlement;
-    unsigned int _sendPort;
-    struct __CFRunLoopSource { } *_serverSource;
-    int _targetPID;
+    NSOperationQueue * _asyncQueue;
+    NSMutableDictionary * _callouts;
+    NSString * _centerName;
+    CPDistributedMessagingCallout * _currentCallout;
+    BOOL  _delayedReply;
+    NSLock * _lock;
+    unsigned int  _parkedServerPort;
+    BOOL  _portPassing;
+    unsigned int  _replyPort;
+    BOOL  _requireLookupByPID;
+    NSString * _requiredEntitlement;
+    unsigned int  _sendPort;
+    struct __CFRunLoopSource { } * _serverSource;
+    int  _targetPID;
 }
 
 + (id)_centerNamed:(id)arg1 requireLookupByPID:(BOOL)arg2;

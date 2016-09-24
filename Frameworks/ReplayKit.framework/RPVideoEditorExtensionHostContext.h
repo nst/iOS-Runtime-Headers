@@ -3,7 +3,7 @@
  */
 
 @interface RPVideoEditorExtensionHostContext : NSExtensionContext <RPVideoEditorExtensionHostProtocol> {
-    RPVideoEditorHostViewController *_hostViewController;
+    RPVideoEditorHostViewController * _hostViewController;
 }
 
 @property (nonatomic) RPVideoEditorHostViewController *hostViewController;

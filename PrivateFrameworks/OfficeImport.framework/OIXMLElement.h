@@ -3,10 +3,10 @@
  */
 
 @interface OIXMLElement : OIXMLNode {
-    id _attributes;
-    id _children;
-    BOOL _hasMultipleAttributes;
-    BOOL _hasMultipleChildren;
+    id  _attributes;
+    id  _children;
+    BOOL  _hasMultipleAttributes;
+    BOOL  _hasMultipleChildren;
 }
 
 + (void)_initEmptyHTMLNames;

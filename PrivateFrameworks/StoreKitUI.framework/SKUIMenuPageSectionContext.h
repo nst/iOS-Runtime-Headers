@@ -3,8 +3,8 @@
  */
 
 @interface SKUIMenuPageSectionContext : NSObject {
-    NSMutableDictionary *_sections;
-    int _selectedIndex;
+    NSMutableDictionary * _sections;
+    int  _selectedIndex;
 }
 
 @property (nonatomic) int selectedIndex;

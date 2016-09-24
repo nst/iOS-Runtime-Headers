@@ -3,7 +3,7 @@
  */
 
 @interface UIWebSelectionGraph : NSObject {
-    NSMutableArray *_selectionNodes;
+    NSMutableArray * _selectionNodes;
 }
 
 - (id)addNodeFromSelection:(id)arg1;

@@ -3,7 +3,7 @@
  */
 
 @interface TSCH3DChartStageSceneObject : TSCH3DSceneObject {
-    TSCH3DSceneObject *mMain;
+    TSCH3DSceneObject * mMain;
 }
 
 + (id)objectWithMain:(id)arg1;

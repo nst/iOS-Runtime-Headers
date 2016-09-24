@@ -3,10 +3,10 @@
  */
 
 @interface MusicBundleImageArtworkRequest : NSObject <NSCopying> {
-    NSBundle *_bundle;
-    NSString *_imageName;
-    int _renderingMode;
-    UIColor *_tintColor;
+    NSBundle * _bundle;
+    NSString * _imageName;
+    int  _renderingMode;
+    UIColor * _tintColor;
 }
 
 @property (nonatomic, readonly) NSBundle *bundle;

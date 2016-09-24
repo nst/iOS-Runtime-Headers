@@ -3,9 +3,9 @@
  */
 
 @interface WeatherImageLoader : NSObject {
-    NSCache *_conditionImagesCache;
-    float _scale;
-    CPBitmapStore *_store;
+    NSCache * _conditionImagesCache;
+    double  _scale;
+    CPBitmapStore * _store;
 }
 
 @property (nonatomic, retain) NSCache *conditionImagesCache;

@@ -3,7 +3,7 @@
  */
 
 @interface GKGameInternal : GKGameDescriptor {
-    NSString *_defaultLeaderboardIdentifier;
+    NSString * _defaultLeaderboardIdentifier;
     union { 
         struct { 
             unsigned int _platform : 8; 
@@ -19,14 +19,14 @@
             unsigned int _reserved : 13; 
         } ; 
         unsigned int _value; 
-    } _flags;
-    NSDictionary *_icons;
-    unsigned short _maxAchievementPoints;
-    NSString *_name;
-    unsigned short _numberOfAchievements;
-    unsigned short _numberOfLeaderboardSets;
-    unsigned short _numberOfLeaderboards;
-    GKStoreItemInternal *_storeItem;
+    }  _flags;
+    NSDictionary * _icons;
+    unsigned short  _maxAchievementPoints;
+    NSString * _name;
+    unsigned short  _numberOfAchievements;
+    unsigned short  _numberOfLeaderboardSets;
+    unsigned short  _numberOfLeaderboards;
+    GKStoreItemInternal * _storeItem;
 }
 
 @property (nonatomic, retain) NSString *defaultLeaderboardIdentifier;

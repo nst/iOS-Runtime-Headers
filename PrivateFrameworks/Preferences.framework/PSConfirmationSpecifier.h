@@ -3,10 +3,10 @@
  */
 
 @interface PSConfirmationSpecifier : PSSpecifier {
-    NSString *_cancelButton;
-    NSString *_okButton;
-    NSString *_prompt;
-    NSString *_title;
+    NSString * _cancelButton;
+    NSString * _okButton;
+    NSString * _prompt;
+    NSString * _title;
 }
 
 @property (nonatomic, retain) NSString *cancelButton;

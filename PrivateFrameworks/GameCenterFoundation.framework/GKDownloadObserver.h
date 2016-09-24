@@ -3,7 +3,7 @@
  */
 
 @interface GKDownloadObserver : NSObject <SSDownloadManagerObserver> {
-    SSDownloadManager *_downloadManager;
+    SSDownloadManager * _downloadManager;
 }
 
 @property (readonly, copy) NSString *debugDescription;

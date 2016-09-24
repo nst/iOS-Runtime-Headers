@@ -3,9 +3,9 @@
  */
 
 @interface TNFormBasedSheet : TNSheet {
-    NSString *mImportedTargetName;
-    struct __CFUUID { } *mTableID;
-    TSTTableInfo *mTableInfo;
+    NSString * mImportedTargetName;
+    struct __CFUUID { } * mTableID;
+    TSTTableInfo * mTableInfo;
 }
 
 @property struct __CFUUID { }*tableID;
@@ -20,6 +20,7 @@
 - (void)resolveImportedTargetNameInDocumentRoot:(id)arg1;
 - (void)saveToArchiver:(id)arg1;
 - (void)setTableID:(struct __CFUUID { }*)arg1;
+- (BOOL)shouldBeDisplayed;
 - (struct __CFUUID { }*)tableID;
 - (id)tableInfo;
 

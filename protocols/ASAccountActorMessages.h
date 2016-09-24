@@ -25,6 +25,7 @@
 - (int)mailNumberOfPastDaysToSync;
 - (NSArray *)mailboxes;
 - (oneway void)monitorFoldersForUpdates:(NSArray *)arg1;
+- (oneway void)monitorFoldersForUpdates:(NSArray *)arg1 persistent:(BOOL)arg2;
 - (int)performFetchAttachmentRequest:(DAMessageFetchAttachmentRequest *)arg1 consumer:(id <DAMessageFetchAttachmentConsumer>)arg2;
 - (int)performFetchMessageSearchResultRequests:(NSArray *)arg1 consumer:(id <DAMailboxFetchSearchResultConsumer>)arg2;
 - (void)performFolderChange:(DAFolderChange *)arg1 isUserRequested:(BOOL)arg2;
@@ -35,8 +36,8 @@
 - (oneway void)performSearchQuery:(DASearchQuery *)arg1;
 - (BOOL)reattemptInvitationLinkageForMetaData:(NSData *)arg1 inFolderWithId:(NSString *)arg2;
 - (BOOL)searchQueriesRunning;
-- (int)sendMessageWithRFC822Data:(NSData *)arg1 messageID:(NSString *)arg2 outgoingMessageType:(int)arg3 originalMessageFolderID:(NSString *)arg4 originalMessageItemID:(NSString *)arg5 originalMessageLongID:(NSString *)arg6 originalAccountID:(NSString *)arg7 useSmartTasksIfPossible:(BOOL)arg8 consumer:(id <DAMessageSendConsumer>)arg9 context:(id)arg10;
 - (int)sendMessageWithRFC822Data:(NSData *)arg1 messageID:(NSString *)arg2 outgoingMessageType:(int)arg3 originalMessageFolderID:(NSString *)arg4 originalMessageItemID:(NSString *)arg5 originalMessageLongID:(NSString *)arg6 originalAccountID:(NSString *)arg7 useSmartTasksIfPossible:(BOOL)arg8 isUserRequested:(BOOL)arg9 consumer:(id <DAMessageSendConsumer>)arg10 context:(id)arg11;
+- (int)sendSmartMessageWithRFC822Data:(NSData *)arg1 messageID:(NSString *)arg2 outgoingMessageType:(int)arg3 originalMessageFolderID:(NSString *)arg4 originalMessageItemID:(NSString *)arg5 originalMessageLongID:(NSString *)arg6 originalAccountID:(NSString *)arg7 replaceOriginalMime:(BOOL)arg8 isUserRequested:(BOOL)arg9 consumer:(id <DAMessageSendConsumer>)arg10 context:(id)arg11;
 - (DAFolder *)sentItemsFolder;
 - (oneway void)setAccount:(id)arg1;
 - (oneway void)setCustomSignature:(NSString *)arg1;
@@ -54,6 +55,7 @@
 - (int)supportsDraftFolderSync;
 - (int)supportsEmailFlagging;
 - (int)supportsMailboxSearch;
+- (int)supportsSmartForwardReply;
 - (NSString *)unactionableICSRepresentationForMetaData:(NSData *)arg1 inFolderWithId:(NSString *)arg2 outSummary:(id*)arg3;
 
 @end

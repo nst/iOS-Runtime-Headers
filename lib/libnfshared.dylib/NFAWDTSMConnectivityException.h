@@ -3,8 +3,8 @@
  */
 
 @interface NFAWDTSMConnectivityException : NSObject <NFAWDEventProtocol> {
-    AWDNFCTSMConnectivityExceptionEvent *_metric;
-    unsigned int errorCode;
+    unsigned int  _errorCode;
+    AWDNFCTSMConnectivityExceptionEvent * _metric;
 }
 
 @property (readonly, copy) NSString *debugDescription;

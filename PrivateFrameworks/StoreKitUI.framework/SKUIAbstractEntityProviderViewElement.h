@@ -3,8 +3,8 @@
  */
 
 @interface SKUIAbstractEntityProviderViewElement : SKUIViewElement {
-    NSString *_entityTypeString;
-    NSArray *_prefetchedProperties;
+    NSString * _entityTypeString;
+    NSArray * _prefetchedProperties;
 }
 
 @property (nonatomic, readonly, copy) NSString *entityTypeString;

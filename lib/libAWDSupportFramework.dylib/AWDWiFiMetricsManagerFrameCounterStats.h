@@ -5,14 +5,14 @@
 @interface AWDWiFiMetricsManagerFrameCounterStats : PBCodable <NSCopying> {
     struct { 
         unsigned int timestamp : 1; 
-    } _has;
-    AWDControlFrames *_rxControl;
-    AWDDataFrames *_rxData;
-    AWDManagementFrames *_rxManagement;
-    unsigned long long _timestamp;
-    AWDControlFrames *_txControl;
-    AWDDataFrames *_txData;
-    AWDManagementFrames *_txManagement;
+    }  _has;
+    AWDControlFrames * _rxControl;
+    AWDDataFrames * _rxData;
+    AWDManagementFrames * _rxManagement;
+    unsigned long long  _timestamp;
+    AWDControlFrames * _txControl;
+    AWDDataFrames * _txData;
+    AWDManagementFrames * _txManagement;
 }
 
 @property (nonatomic, readonly) BOOL hasRxControl;

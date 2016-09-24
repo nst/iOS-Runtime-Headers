@@ -3,10 +3,10 @@
  */
 
 @interface HKGraphSeriesDataSource : NSObject {
-    <HKGraphSeriesDataSourceDelegate> *_delegate;
-    NSDate *_firstBlockStartDate;
-    int _maximumZoom;
-    int _minimumZoom;
+    <HKGraphSeriesDataSourceDelegate> * _delegate;
+    NSDate * _firstBlockStartDate;
+    int  _maximumZoom;
+    int  _minimumZoom;
 }
 
 @property (nonatomic) <HKGraphSeriesDataSourceDelegate> *delegate;

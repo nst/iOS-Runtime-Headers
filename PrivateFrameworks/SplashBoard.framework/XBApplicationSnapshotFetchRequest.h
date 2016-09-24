@@ -3,9 +3,9 @@
  */
 
 @interface XBApplicationSnapshotFetchRequest : NSObject <BSDescriptionProviding> {
-    XBApplicationSnapshotGenerationContext *_fallbackGenerationContext;
-    XBApplicationSnapshotPredicate *_predicate;
-    NSArray *_sortDescriptors;
+    XBApplicationSnapshotGenerationContext * _fallbackGenerationContext;
+    XBApplicationSnapshotPredicate * _predicate;
+    NSArray * _sortDescriptors;
 }
 
 @property (nonatomic, readonly, copy) NSArray *NSSortDescriptors;

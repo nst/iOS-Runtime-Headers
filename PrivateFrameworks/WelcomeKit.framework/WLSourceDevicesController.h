@@ -3,7 +3,7 @@
  */
 
 @interface WLSourceDevicesController : WLDaemonController {
-    <WLSourceDevicesDelegate> *_delegate;
+    <WLSourceDevicesDelegate> * _delegate;
 }
 
 @property (nonatomic) <WLSourceDevicesDelegate> *delegate;

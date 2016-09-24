@@ -3,7 +3,7 @@
  */
 
 @interface AXObserverElementPair : NSObject {
-    id _observer;
+    id  _observer;
 }
 
 @property (nonatomic, readonly) id observer;

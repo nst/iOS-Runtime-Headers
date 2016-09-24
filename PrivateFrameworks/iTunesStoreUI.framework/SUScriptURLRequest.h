@@ -3,7 +3,7 @@
  */
 
 @interface SUScriptURLRequest : SUScriptObject {
-    SSMutableURLRequestProperties *_requestProperties;
+    SSMutableURLRequestProperties * _requestProperties;
 }
 
 @property (copy) NSString *URLBagKey;

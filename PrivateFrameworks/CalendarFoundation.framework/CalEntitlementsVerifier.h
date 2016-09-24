@@ -6,6 +6,7 @@
 
 + (BOOL)currentProcessHasAllowSuggestionsEntitlement;
 + (BOOL)currentProcessHasBooleanEntitlement:(id)arg1;
++ (BOOL)currentProcessHasContactsUIEntitlement;
 + (BOOL)currentProcessHasLocationdEffectiveBundleEntitlement;
 + (BOOL)currentProcessHasWatchOSMutableDatabaseEntitlement;
 

@@ -3,7 +3,7 @@
  */
 
 @interface _HKFactorization : NSObject <NSCopying, NSSecureCoding> {
-    NSMapTable *_factors;
+    NSMapTable * _factors;
 }
 
 + (id)factorization;

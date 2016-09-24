@@ -3,8 +3,8 @@
  */
 
 @interface CKDBackingiOSAccount : CKDBackingAccount {
-    ACAccountStore *_accountStore;
-    ACAccount *_parentAppleAccount;
+    ACAccountStore * _accountStore;
+    ACAccount * _parentAppleAccount;
 }
 
 @property (nonatomic, readonly) ACAccountStore *accountStore;
@@ -16,19 +16,24 @@
 + (id)primaryAccountInStore:(id)arg1;
 
 - (void).cxx_destruct;
+- (id)_accountCredentialForAccount:(id)arg1 withError:(id*)arg2;
 - (id)_initWithParentAccount:(id)arg1 inStore:(id)arg2;
 - (id)accountPropertiesForDataclass:(id)arg1;
 - (id)accountStore;
 - (id)ckAccount;
-- (id)cloudKitAuthToken;
+- (id)cloudKitAuthTokenWithError:(id*)arg1;
 - (BOOL)cloudKitIsEnabled;
 - (BOOL)cloudPhotosIsEnabled;
 - (id)dsid;
-- (id)iCloudAuthToken;
+- (id)fullName;
+- (id)iCloudAuthTokenWithError:(id*)arg1;
 - (BOOL)iCloudDriveAllowsCellularAccess;
 - (id)identifier;
+- (BOOL)isDataclassEnabled:(id)arg1;
 - (id)parentAppleAccount;
 - (id)primaryEmail;
 - (void)setParentAppleAccount:(id)arg1;
+- (void)updateAccountProperiesInStore:(id)arg1 completionHandler:(id /* block */)arg2;
+- (id)username;
 
 @end

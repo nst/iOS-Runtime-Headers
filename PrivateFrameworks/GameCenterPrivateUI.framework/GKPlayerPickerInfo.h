@@ -3,16 +3,16 @@
  */
 
 @interface GKPlayerPickerInfo : NSObject {
-    NSAttributedString *_achievementString;
-    BOOL _canSelectPlayer;
-    GKGameMatch *_gameMatch;
-    BOOL _hasAchievement;
-    BOOL _hasRank;
-    BOOL _nearby;
-    GKPlayer *_player;
-    NSAttributedString *_rankString;
-    unsigned int _selectionStatus;
-    NSDate *_sortDate;
+    NSAttributedString * _achievementString;
+    BOOL  _canSelectPlayer;
+    GKGameMatch * _gameMatch;
+    BOOL  _hasAchievement;
+    BOOL  _hasRank;
+    BOOL  _nearby;
+    GKPlayer * _player;
+    NSAttributedString * _rankString;
+    unsigned int  _selectionStatus;
+    NSDate * _sortDate;
 }
 
 @property (nonatomic, retain) NSAttributedString *achievementString;

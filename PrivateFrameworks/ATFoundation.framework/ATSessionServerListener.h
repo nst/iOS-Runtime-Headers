@@ -3,8 +3,8 @@
  */
 
 @interface ATSessionServerListener : NSObject <ATSessionServer, NSXPCListenerDelegate> {
-    NSXPCListener *_listener;
-    NSMutableDictionary *_sessionProxiesBySessionID;
+    NSXPCListener * _listener;
+    NSMutableDictionary * _sessionProxiesBySessionID;
 }
 
 @property (readonly, copy) NSString *debugDescription;

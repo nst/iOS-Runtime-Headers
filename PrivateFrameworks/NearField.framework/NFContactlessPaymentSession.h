@@ -3,10 +3,11 @@
  */
 
 @interface NFContactlessPaymentSession : NFSession <NFContactlessPaymentSessionCallbacks> {
-    NFApplet *_activeApplet;
-    NSDictionary *_appletsById;
-    NFApplet *_defaultApplet;
-    NFWeakReference *_delegate;
+    NFApplet * _activeApplet;
+    NSDictionary * _appletsById;
+    NFApplet * _defaultApplet;
+    NFWeakReference * _delegate;
+    unsigned int  _numActiveSEs;
 }
 
 @property (readonly) NFApplet *activeApplet;
@@ -15,6 +16,7 @@
 @property <NFContactlessPaymentSessionDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (readonly) unsigned int numberOfActiveSecureElements;
 @property (readonly) Class superclass;
 
 - (id)activeApplet;
@@ -28,14 +30,21 @@
 - (void)didEndTransaction:(id)arg1;
 - (void)didEndUnexpectedly;
 - (void)didExpireTransactionForApplet:(id)arg1;
+- (void)didFailDeferredAuthorization;
+- (void)didFelicaStateChange:(id)arg1;
 - (void)didReceiveButtonPressForApplet:(id)arg1;
 - (void)didSelectApplet:(id)arg1;
 - (void)didStartSession:(id)arg1;
 - (void)didStartTransaction:(id)arg1;
 - (void)endSession;
+- (void)endSessionWithCompletion:(id /* block */)arg1;
+- (id)felicaAppletState:(id)arg1;
+- (unsigned int)numberOfActiveSecureElements;
+- (BOOL)setActivePaymentApplet:(id)arg1 authorization:(id)arg2;
 - (BOOL)setActivePaymentApplet:(id)arg1 makeDefault:(BOOL)arg2 authorization:(id)arg3;
 - (void)setDelegate:(id)arg1;
 - (BOOL)startCardEmulationWithAuthorization:(id)arg1;
+- (BOOL)startDeferredCardEmulationWithAuthorization:(id)arg1;
 - (BOOL)startHostCardEmulation;
 - (BOOL)stopCardEmulation;
 

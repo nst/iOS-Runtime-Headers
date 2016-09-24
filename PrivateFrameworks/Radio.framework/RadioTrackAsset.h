@@ -3,7 +3,7 @@
  */
 
 @interface RadioTrackAsset : NSObject {
-    NSDictionary *_responseDictionary;
+    NSDictionary * _responseDictionary;
 }
 
 @property (nonatomic, readonly, retain) NSURL *URL;

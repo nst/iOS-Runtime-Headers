@@ -3,18 +3,18 @@
  */
 
 @interface TSWPShapeStylePropertyChangeSet : TSDShapeStylePropertyChangeSet {
-    TSWPSpecColumns *_columns;
-    TSWPSpecParagraphStyle *_defaultParagraphStyle;
-    BOOL _definedColumns;
-    BOOL _definedDefaultParagraphStyle;
-    BOOL _definedPadding;
-    BOOL _definedShrinkTextToFit;
-    BOOL _definedVerticalAlignment;
-    BOOL _definedVerticalText;
-    TSWPSpecPadding *_padding;
-    TSSSpecBool *_shrinkTextToFit;
-    TSSSpecInteger *_verticalAlignment;
-    TSSSpecBool *_verticalText;
+    TSWPSpecColumns * _columns;
+    TSWPSpecParagraphStyle * _defaultParagraphStyle;
+    BOOL  _definedColumns;
+    BOOL  _definedDefaultParagraphStyle;
+    BOOL  _definedPadding;
+    BOOL  _definedShrinkTextToFit;
+    BOOL  _definedVerticalAlignment;
+    BOOL  _definedVerticalText;
+    TSWPSpecPadding * _padding;
+    TSSSpecBool * _shrinkTextToFit;
+    TSSSpecInteger * _verticalAlignment;
+    TSSSpecBool * _verticalText;
 }
 
 - (void)enumerateDefinedPropertiesWithBlock:(id /* block */)arg1;

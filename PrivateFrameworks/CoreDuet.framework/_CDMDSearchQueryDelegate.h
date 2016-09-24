@@ -3,8 +3,8 @@
  */
 
 @interface _CDMDSearchQueryDelegate : NSObject <MDSearchQueryDelegate> {
-    NSObject<OS_dispatch_semaphore> *_mdQuerySem;
-    NSMutableArray *_recentMDSearchQueryResults;
+    NSObject<OS_dispatch_semaphore> * _mdQuerySem;
+    NSMutableArray * _recentMDSearchQueryResults;
 }
 
 @property (readonly, copy) NSString *debugDescription;

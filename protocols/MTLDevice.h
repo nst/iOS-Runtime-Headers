@@ -5,6 +5,8 @@
 
 @required
 
+- (struct { unsigned int x1; unsigned int x2; })heapBufferSizeAndAlignWithLength:(unsigned int)arg1 options:(unsigned int)arg2;
+- (struct { unsigned int x1; unsigned int x2; })heapTextureSizeAndAlignWithDescriptor:(MTLTextureDescriptor *)arg1;
 - (BOOL)isDepth24Stencil8PixelFormatSupported;
 - (BOOL)isHeadless;
 - (BOOL)isLowPower;
@@ -22,7 +24,10 @@
 - (void)newComputePipelineStateWithFunction:(void *)arg1 options:(void *)arg2 completionHandler:(void *)arg3; // needs 3 arg types, found 10: <MTLFunction> *, unsigned int, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, <MTLComputePipelineState> *, MTLComputePipelineReflection *, NSError *, void*
 - (<MTLComputePipelineState> *)newComputePipelineStateWithFunction:(id <MTLFunction>)arg1 options:(unsigned int)arg2 reflection:(id*)arg3 error:(id*)arg4;
 - (<MTLLibrary> *)newDefaultLibrary;
+- (<MTLLibrary> *)newDefaultLibraryWithBundle:(NSBundle *)arg1 error:(id*)arg2;
 - (<MTLDepthStencilState> *)newDepthStencilStateWithDescriptor:(MTLDepthStencilDescriptor *)arg1;
+- (<MTLFence> *)newFence;
+- (<MTLHeap> *)newHeapWithDescriptor:(MTLHeapDescriptor *)arg1;
 - (<MTLLibrary> *)newLibraryWithData:(NSObject<OS_dispatch_data> *)arg1 error:(id*)arg2;
 - (<MTLLibrary> *)newLibraryWithFile:(NSString *)arg1 error:(id*)arg2;
 - (void)newLibraryWithSource:(void *)arg1 options:(void *)arg2 completionHandler:(void *)arg3; // needs 3 arg types, found 9: NSString *, MTLCompileOptions *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, <MTLLibrary> *, NSError *, void*
@@ -33,6 +38,7 @@
 - (<MTLRenderPipelineState> *)newRenderPipelineStateWithDescriptor:(MTLRenderPipelineDescriptor *)arg1 options:(unsigned int)arg2 reflection:(id*)arg3 error:(id*)arg4;
 - (<MTLSamplerState> *)newSamplerStateWithDescriptor:(MTLSamplerDescriptor *)arg1;
 - (<MTLTexture> *)newTextureWithDescriptor:(MTLTextureDescriptor *)arg1;
+- (unsigned int)recommendedMaxWorkingSetSize;
 - (BOOL)supportsFeatureSet:(unsigned int)arg1;
 - (BOOL)supportsTextureSampleCount:(unsigned int)arg1;
 

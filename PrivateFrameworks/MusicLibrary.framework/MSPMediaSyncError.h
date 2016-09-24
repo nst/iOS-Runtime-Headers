@@ -3,11 +3,11 @@
  */
 
 @interface MSPMediaSyncError : PBCodable <NSCopying> {
-    int _errorCode;
-    NSString *_errorDescription;
+    int  _errorCode;
+    NSString * _errorDescription;
     struct { 
         unsigned int errorCode : 1; 
-    } _has;
+    }  _has;
 }
 
 @property (nonatomic) int errorCode;

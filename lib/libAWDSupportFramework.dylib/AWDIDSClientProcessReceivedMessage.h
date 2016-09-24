@@ -3,7 +3,7 @@
  */
 
 @interface AWDIDSClientProcessReceivedMessage : PBCodable <NSCopying> {
-    unsigned long long _deltaTime;
+    unsigned long long  _deltaTime;
     struct { 
         unsigned int deltaTime : 1; 
         unsigned int payloadSize : 1; 
@@ -11,13 +11,13 @@
         unsigned int qos : 1; 
         unsigned int threadPriority : 1; 
         unsigned int timestamp : 1; 
-    } _has;
-    unsigned long long _payloadSize;
-    unsigned long long _priority;
-    unsigned long long _qos;
-    NSString *_service;
-    unsigned long long _threadPriority;
-    unsigned long long _timestamp;
+    }  _has;
+    unsigned long long  _payloadSize;
+    unsigned long long  _priority;
+    unsigned long long  _qos;
+    NSString * _service;
+    unsigned long long  _threadPriority;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) unsigned long long deltaTime;

@@ -3,9 +3,9 @@
  */
 
 @interface NSHTMLWebDelegate : NSObject {
-    NSURL *_baseURL;
-    BOOL _loadDidFinish;
-    BOOL _loadDidSucceed;
+    NSURL * _baseURL;
+    BOOL  _loadDidFinish;
+    BOOL  _loadDidSucceed;
 }
 
 - (void)dealloc;

@@ -3,16 +3,16 @@
  */
 
 @interface PUToolbarViewModelChange : PUViewModelChange {
-    BOOL _accessoryViewChanged;
-    BOOL _accessoryViewTopOutsetChanged;
-    BOOL _maximumHeightChanged;
-    BOOL _toolbarItemsChanged;
+    BOOL  _accessoryViewChanged;
+    BOOL  _accessoryViewTopOutsetChanged;
+    BOOL  _maximumHeightChanged;
+    BOOL  _toolbarItemsChanged;
 }
 
-@property (nonatomic) BOOL accessoryViewChanged;
-@property (nonatomic) BOOL accessoryViewTopOutsetChanged;
-@property (nonatomic) BOOL maximumHeightChanged;
-@property (nonatomic) BOOL toolbarItemsChanged;
+@property (setter=_setAccessoryViewChanged:, nonatomic) BOOL accessoryViewChanged;
+@property (setter=_setAccessoryViewTopOutsetChanged:, nonatomic) BOOL accessoryViewTopOutsetChanged;
+@property (setter=_setMaximumHeightChanged:, nonatomic) BOOL maximumHeightChanged;
+@property (setter=_setToolbarItemsChanged:, nonatomic) BOOL toolbarItemsChanged;
 
 - (void)_setAccessoryViewChanged:(BOOL)arg1;
 - (void)_setAccessoryViewTopOutsetChanged:(BOOL)arg1;

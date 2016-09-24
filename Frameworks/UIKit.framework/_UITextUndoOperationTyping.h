@@ -3,11 +3,11 @@
  */
 
 @interface _UITextUndoOperationTyping : NSUndoTextOperation {
-    NSMutableAttributedString *_attributedString;
+    NSMutableAttributedString * _attributedString;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _replacementRange;
+    }  _replacementRange;
 }
 
 - (void).cxx_destruct;

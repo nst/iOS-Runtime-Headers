@@ -3,7 +3,7 @@
  */
 
 @interface EDContentFormatsCollection : EDKeyedCollection {
-    unsigned int mNextContentFormatId;
+    unsigned int  mNextContentFormatId;
 }
 
 - (void)addDefaultWithNSString:(id)arg1 formatId:(unsigned int)arg2;

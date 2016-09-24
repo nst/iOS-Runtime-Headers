@@ -3,7 +3,7 @@
  */
 
 @interface AKTextAttributesUIItemDelegate : NSObject <AKTextAttributesUserInterfaceItem, AKUserInterfaceItem> {
-    AKTextAttributesViewController *_parentController;
+    AKTextAttributesViewController * _parentController;
 }
 
 @property (readonly, copy) NSString *debugDescription;

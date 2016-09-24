@@ -3,8 +3,8 @@
  */
 
 @interface HDActivitySummaryBuilder : NSObject {
-    <HDHealthDaemon> *_healthDaemon;
-    BOOL _shouldIncludePrivateProperties;
+    HDProfile * _profile;
+    BOOL  _shouldIncludePrivateProperties;
 }
 
 @property (nonatomic) BOOL shouldIncludePrivateProperties;
@@ -12,7 +12,7 @@
 - (void).cxx_destruct;
 - (void)activitySummariesWithPredicate:(id)arg1 handler:(id /* block */)arg2;
 - (id)init;
-- (id)initWithHealthDaemon:(id)arg1;
+- (id)initWithProfile:(id)arg1;
 - (void)setShouldIncludePrivateProperties:(BOOL)arg1;
 - (BOOL)shouldIncludePrivateProperties;
 

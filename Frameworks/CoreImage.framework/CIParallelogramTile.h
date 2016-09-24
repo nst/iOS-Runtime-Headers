@@ -3,11 +3,11 @@
  */
 
 @interface CIParallelogramTile : CIFilter {
-    NSNumber *inputAcuteAngle;
-    NSNumber *inputAngle;
-    CIVector *inputCenter;
-    CIImage *inputImage;
-    NSNumber *inputWidth;
+    NSNumber * inputAcuteAngle;
+    NSNumber * inputAngle;
+    CIVector * inputCenter;
+    CIImage * inputImage;
+    NSNumber * inputWidth;
 }
 
 + (id)customAttributes;

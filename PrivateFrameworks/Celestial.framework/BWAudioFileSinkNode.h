@@ -3,23 +3,23 @@
  */
 
 @interface BWAudioFileSinkNode : BWFileSinkNode {
-    unsigned long long _adjustedMinFreeDiskSpace;
-    struct OpaqueCMByteStream { } *_byteStream;
+    unsigned int  _adjustedMinFreeDiskSpace;
+    struct OpaqueCMByteStream { } * _byteStream;
     struct { 
-        long long value; 
+        int value; 
         int timescale; 
         unsigned int flags; 
-        long long epoch; 
-    } _curFileDuration;
-    unsigned long long _curFileSize;
-    BOOL _didBeginFileWriterSession;
-    struct OpaqueFigFormatWriter { } *_formatWriter;
-    char *_parentPath;
-    NSObject<OS_dispatch_queue> *_propertySyncQueue;
-    BOOL _recordingIsSubjectToDiskSpaceQuota;
-    FigCaptureAudioFileRecordingSettings *_settings;
-    FigStateMachine *_stateMachine;
-    int _trackID;
+        int epoch; 
+    }  _curFileDuration;
+    unsigned int  _curFileSize;
+    BOOL  _didBeginFileWriterSession;
+    struct OpaqueFigFormatWriter { } * _formatWriter;
+    char * _parentPath;
+    NSObject<OS_dispatch_queue> * _propertySyncQueue;
+    BOOL  _recordingIsSubjectToDiskSpaceQuota;
+    FigCaptureAudioFileRecordingSettings * _settings;
+    FigStateMachine * _stateMachine;
+    int  _trackID;
 }
 
 + (void)initialize;
@@ -32,12 +32,12 @@
 - (void)_stopRecordingWithError:(long)arg1;
 - (long)_teardownFileWriter;
 - (void)_updateFilePropertiesForSbuf:(struct opaqueCMSampleBuffer { }*)arg1;
-- (void)configurationWithID:(long long)arg1 updatedFormat:(id)arg2 didBecomeLiveForInput:(id)arg3;
+- (void)configurationWithID:(int)arg1 updatedFormat:(id)arg2 didBecomeLiveForInput:(id)arg3;
 - (void)dealloc;
 - (void)didReachEndOfDataForInput:(id)arg1;
 - (id)init;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })lastFileDuration;
-- (unsigned long long)lastFileSize;
+- (struct { int x1; int x2; unsigned int x3; int x4; })lastFileDuration;
+- (unsigned int)lastFileSize;
 - (id)nodeSubType;
 - (void)renderSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 forInput:(id)arg2;
 

@@ -3,17 +3,17 @@
  */
 
 @interface GEORouteHypothesisOld : NSObject {
-    unsigned int _currentTrafficDensity;
-    NSDate *_estimatedArrivalDate;
-    BOOL _hasTrafficIncidentOnRoute;
-    unsigned int _historicTrafficDensity;
-    GEOLocation *_lastLocation;
-    int _routeIncidentSignificance;
-    NSString *_routeIncidentStreetName;
-    int _routeIncidentType;
-    NSDate *_suggestedDepartureDate;
-    unsigned int _travelState;
-    double _travelStateScore;
+    unsigned int  _currentTrafficDensity;
+    NSDate * _estimatedArrivalDate;
+    BOOL  _hasTrafficIncidentOnRoute;
+    unsigned int  _historicTrafficDensity;
+    GEOLocation * _lastLocation;
+    int  _routeIncidentSignificance;
+    NSString * _routeIncidentStreetName;
+    int  _routeIncidentType;
+    NSDate * _suggestedDepartureDate;
+    unsigned int  _travelState;
+    double  _travelStateScore;
 }
 
 @property (nonatomic, readonly) unsigned int currentTrafficDensity;

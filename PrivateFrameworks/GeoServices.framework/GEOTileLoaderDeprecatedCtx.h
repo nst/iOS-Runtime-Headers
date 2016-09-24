@@ -3,15 +3,15 @@
  */
 
 @interface GEOTileLoaderDeprecatedCtx : NSObject {
-    id /* block */ _callback;
-    id /* block */ _error;
-    id /* block */ _finished;
-    GEOTileKeyList *_notLoaded;
-    GEOTileKeyList *_originalList;
-    id /* block */ _progress;
-    struct __CFRunLoop { } *_runloop;
-    GEOTileKeyList *_satisfiedList;
-    GEOTileKeyList *_submittedList;
+    id /* block */  _callback;
+    id /* block */  _error;
+    id /* block */  _finished;
+    GEOTileKeyList * _notLoaded;
+    GEOTileKeyList * _originalList;
+    id /* block */  _progress;
+    struct __CFRunLoop { } * _runloop;
+    GEOTileKeyList * _satisfiedList;
+    GEOTileKeyList * _submittedList;
 }
 
 @property (nonatomic, readonly) id /* block */ callback;

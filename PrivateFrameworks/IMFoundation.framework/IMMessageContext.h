@@ -3,11 +3,11 @@
  */
 
 @interface IMMessageContext : NSObject {
-    BOOL _boost;
-    id _context;
-    IMLocalObject *_localObject;
-    NSObject<OS_voucher> *_voucher;
-    NSObject<OS_xpc_object> *_xpcMessage;
+    BOOL  _boost;
+    id  _context;
+    IMLocalObject * _localObject;
+    NSObject<OS_voucher> * _voucher;
+    NSObject<OS_xpc_object> * _xpcMessage;
 }
 
 @property (retain) id context;

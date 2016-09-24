@@ -20,25 +20,25 @@
 - (id)globalKeyImageName;
 - (BOOL)isTallPopup;
 - (id)leftArrowKeyImageName;
-- (struct CGPoint { float x1; float x2; })more123KeyOffset;
+- (struct CGPoint { double x1; double x2; })more123KeyOffset;
 - (float)moreABCKeyFontSize;
-- (struct CGPoint { float x1; float x2; })moreABCKeyOffset;
+- (struct CGPoint { double x1; double x2; })moreABCKeyOffset;
 - (id)multitapCompleteKeyImageName;
 - (id)muttitapReverseKeyImageName;
 - (id)pasteKeyImageName;
 - (float)popupFontSize;
-- (struct CGPoint { float x1; float x2; })popupSymbolTextOffset;
+- (struct CGPoint { double x1; double x2; })popupSymbolTextOffset;
 - (id)rightArrowKeyImageName;
 - (id)shiftKeyImageName;
 - (id)shiftLockImageName;
 - (id)shiftOnKeyImageName;
 - (float)skinnyKeyThreshold;
 - (id)undoKeyImageName;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })variantDisplayFrameInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })variantDisplayFrameInsets;
 - (id)variantGeometriesForGeometry:(id)arg1 variantCount:(unsigned int)arg2 rowLimit:(int)arg3;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })variantPaddedFrameInsets;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })variantSymbolFrameInsets;
-- (struct CGPoint { float x1; float x2; })variantSymbolTextOffset;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })wideShadowPaddleInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })variantPaddedFrameInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })variantSymbolFrameInsets;
+- (struct CGPoint { double x1; double x2; })variantSymbolTextOffset;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })wideShadowPaddleInsets;
 
 @end

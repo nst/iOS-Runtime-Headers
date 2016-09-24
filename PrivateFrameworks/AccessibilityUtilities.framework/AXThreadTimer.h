@@ -3,10 +3,10 @@
  */
 
 @interface AXThreadTimer : NSObject <AXAccessQueueTimer> {
-    BOOL _automaticallyCancelPendingBlockUponSchedulingNewBlock;
-    id /* block */ _cancelBlock;
-    AXThreadTimerTask *_task;
-    NSThread *_thread;
+    BOOL  _automaticallyCancelPendingBlockUponSchedulingNewBlock;
+    id /* block */  _cancelBlock;
+    AXThreadTimerTask * _task;
+    NSThread * _thread;
 }
 
 @property (getter=isActive, nonatomic, readonly) BOOL active;

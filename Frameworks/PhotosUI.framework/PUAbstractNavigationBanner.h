@@ -3,11 +3,11 @@
  */
 
 @interface PUAbstractNavigationBanner : NSObject {
-    <PUAbstractNavigationBannerDelegate> *_delegate;
+    <PUAbstractNavigationBannerDelegate> * _delegate;
 }
 
 @property (nonatomic) <PUAbstractNavigationBannerDelegate> *delegate;
-@property (nonatomic, readonly) float height;
+@property (nonatomic, readonly) double height;
 @property (nonatomic, readonly) UIView *view;
 
 - (void).cxx_destruct;

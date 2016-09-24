@@ -3,9 +3,9 @@
  */
 
 @interface HKQuantityMinimumRangeAxisScalingRule : HKAbstractMinimumRangeScalingRule {
-    NSDictionary *_axisRangeQuantityOverrides;
-    HKQuantity *_defaultYAxisRangeQuantity;
-    HKUnit *_unit;
+    NSDictionary * _axisRangeQuantityOverrides;
+    HKQuantity * _defaultYAxisRangeQuantity;
+    HKUnit * _unit;
 }
 
 @property (nonatomic, retain) HKUnit *unit;

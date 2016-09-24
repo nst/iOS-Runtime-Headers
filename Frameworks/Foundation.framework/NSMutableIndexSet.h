@@ -3,7 +3,7 @@
  */
 
 @interface NSMutableIndexSet : NSIndexSet {
-    void *_reserved;
+    void * _reserved;
 }
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
@@ -57,6 +57,11 @@
 
 - (void)pl_adjustIndexesForDeletions:(id)arg1;
 - (void)pl_adjustIndexesForInsertions:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
+
+- (void)px_adjustIndexesForDeletions:(id)arg1;
+- (void)px_adjustIndexesForInsertions:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
 

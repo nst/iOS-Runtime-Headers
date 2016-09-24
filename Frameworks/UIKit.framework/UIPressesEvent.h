@@ -3,11 +3,13 @@
  */
 
 @interface UIPressesEvent : UIEvent {
-    NSMutableSet *_allPresses;
-    UIPress *_triggeringPhysicalButton;
+    NSMutableSet * _allPresses;
+    NSHashTable * _terminalEventRegistrants;
+    UIPress * _triggeringPhysicalButton;
 }
 
 @property (nonatomic, retain) UIPress *_triggeringPhysicalButton;
+@property (nonatomic, readonly) NSSet *allPresses;
 
 - (void).cxx_destruct;
 - (void)_addGesturesForPress:(id)arg1;
@@ -21,9 +23,12 @@
 - (id)_physicalButtonsForGestureRecognizer:(id)arg1 withPhase:(int)arg2;
 - (id)_physicalButtonsForResponder:(id)arg1;
 - (id)_physicalButtonsForResponder:(id)arg1 withPhase:(int)arg2;
+- (void)_registerForTerminalEvent:(id)arg1;
 - (void)_removePhysicalButton:(id)arg1;
 - (id)_respondersForWindow:(id)arg1;
+- (id)_terminalRegistrantsForPressType:(int)arg1;
 - (id)_triggeringPhysicalButton;
+- (void)_unregisterForTerminalEvent:(id)arg1;
 - (id)_windows;
 - (id)allPresses;
 - (id)description;

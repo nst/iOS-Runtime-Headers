@@ -3,8 +3,8 @@
  */
 
 @interface EKUIRecurrenceAlertController : NSObject <UIActionSheetDelegate> {
-    UIAlertController *_alertController;
-    id /* block */ _completionHandler;
+    UIAlertController * _alertController;
+    id /* block */  _completionHandler;
 }
 
 @property (copy) id /* block */ completionHandler;
@@ -13,6 +13,9 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
++ (id)_cancelLocalizedString;
++ (id)_detachAllLocalizedString;
++ (id)_detachFutureLocalizedString;
 + (id)newAlertControllerWithCompletionHandler:(id /* block */)arg1;
 + (id)presentDeleteAlertWithOptions:(unsigned int)arg1 viewController:(id)arg2 stringForDeleteButton:(id)arg3 withCompletionHandler:(id /* block */)arg4;
 + (id)presentDeleteAlertWithOptions:(unsigned int)arg1 viewController:(id)arg2 withCompletionHandler:(id /* block */)arg3;

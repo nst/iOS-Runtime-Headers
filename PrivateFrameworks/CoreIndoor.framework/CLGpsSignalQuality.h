@@ -3,7 +3,7 @@
  */
 
 @interface CLGpsSignalQuality : NSObject <NSSecureCoding> {
-    int _quality;
+    int  _quality;
 }
 
 @property (nonatomic) int quality;

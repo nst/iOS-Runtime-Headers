@@ -3,8 +3,8 @@
  */
 
 @interface RadioStationMatchRequest : RadioRequest {
-    NSArray *_libraryTrackDictionaries;
-    SSURLConnectionRequest *_request;
+    NSArray * _libraryTrackDictionaries;
+    SSURLConnectionRequest * _request;
 }
 
 - (void).cxx_destruct;

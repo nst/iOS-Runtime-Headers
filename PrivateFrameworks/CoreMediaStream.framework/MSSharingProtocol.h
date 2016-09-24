@@ -27,15 +27,15 @@
         int (*didFailAuthenticationCallback)(); 
         int (*didReceiveServerSideConfigurationVersionCallback)(); 
         int __contextType; 
-    } _context;
-    <MSSharingProtocolDelegate> *_delegate;
-    NSURL *_inviteURL;
-    NSURL *_manageURL;
-    NSString *_personID;
-    NSURL *_respondURL;
-    NSArray *_shares;
-    NSURL *_statusURL;
-    int _transactionType;
+    }  _context;
+    <MSSharingProtocolDelegate> * _delegate;
+    NSURL * _inviteURL;
+    NSURL * _manageURL;
+    NSString * _personID;
+    NSURL * _respondURL;
+    NSArray * _shares;
+    NSURL * _statusURL;
+    int  _transactionType;
 }
 
 @property (nonatomic) <MSSharingProtocolDelegate> *delegate;

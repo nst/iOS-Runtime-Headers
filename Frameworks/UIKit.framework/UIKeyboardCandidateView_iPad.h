@@ -3,8 +3,9 @@
  */
 
 @interface UIKeyboardCandidateView_iPad : UIKeyboardCandidateView <UICollectionViewDelegate, UIKeyboardCandidateBarDelegate> {
-    UIKBInputBackdropView *_backdropView;
-    UIKeyboardCandidatePageControl *_pageControl;
+    UIKBInputBackdropView * _backdropView;
+    double  _extendedViewHeight;
+    UIKeyboardCandidatePageControl * _pageControl;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -20,9 +21,10 @@
 - (void)candidateBarDidScroll:(id)arg1;
 - (void)dealloc;
 - (void)didEndSplitTransition;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (float)extendedViewHeight;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (BOOL)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (float)rightButtonYOffset;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)setCandidateViewExtended:(BOOL)arg1;

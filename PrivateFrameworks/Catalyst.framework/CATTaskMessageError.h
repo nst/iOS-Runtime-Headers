@@ -3,7 +3,7 @@
  */
 
 @interface CATTaskMessageError : CATTaskMessage {
-    NSError *_taskError;
+    NSError * _taskError;
 }
 
 @property (nonatomic, retain) NSError *taskError;

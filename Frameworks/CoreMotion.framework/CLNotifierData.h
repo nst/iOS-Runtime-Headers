@@ -3,8 +3,8 @@
  */
 
 @interface CLNotifierData : NSObject {
-    void *_data;
-    id /* block */ _destructor;
+    void * _data;
+    id /* block */  _destructor;
 }
 
 @property (nonatomic) void*data;

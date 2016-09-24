@@ -3,9 +3,9 @@
  */
 
 @interface HMDWatchSystemState : NSObject {
-    BOOL _companionReachable;
-    NSObject<OS_dispatch_queue> *_propertyQueue;
-    NSHashTable *_watchSystemStateDelegates;
+    BOOL  _companionReachable;
+    NSObject<OS_dispatch_queue> * _propertyQueue;
+    NSHashTable * _watchSystemStateDelegates;
 }
 
 @property (getter=isCompanionReachable, nonatomic) BOOL companionReachable;

@@ -3,23 +3,23 @@
  */
 
 @interface TSCH3DShaderAssignment : NSObject <TSCH3DShaderStatement> {
-    TSCH3DShaderVariableLinkage *mAssignee;
+    TSCH3DShaderVariableLinkage * mAssignee;
     struct TSCH3DShaderVariableScopeType { 
         unsigned int mValue; 
-    } mAssigneeScope;
+    }  mAssigneeScope;
     struct vector<TSCH3DShaderVariableScopeType, std::__1::allocator<TSCH3DShaderVariableScopeType> > { 
         struct TSCH3DShaderVariableScopeType {} *__begin_; 
         struct TSCH3DShaderVariableScopeType {} *__end_; 
         struct __compressed_pair<TSCH3DShaderVariableScopeType *, std::__1::allocator<TSCH3DShaderVariableScopeType> > { 
             struct TSCH3DShaderVariableScopeType {} *__first_; 
         } __end_cap_; 
-    } mDependeeScopes;
-    NSArray *mDependees;
+    }  mDependeeScopes;
+    NSArray * mDependees;
     struct TSCH3DShaderType { 
         unsigned int mValue; 
-    } mLinkageType;
-    TSCH3DShaderProgram *mProgram;
-    NSString *mStatement;
+    }  mLinkageType;
+    TSCH3DShaderProgram * mProgram;
+    NSString * mStatement;
 }
 
 @property (nonatomic, readonly) TSCH3DShaderVariableLinkage *assignee;

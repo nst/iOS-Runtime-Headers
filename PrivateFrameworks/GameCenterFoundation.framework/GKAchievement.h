@@ -3,10 +3,10 @@
  */
 
 @interface GKAchievement : NSObject <NSCoding, NSCopying, NSSecureCoding> {
-    GKGame *_game;
-    GKAchievementInternal *_internal;
-    GKPlayer *_player;
-    BOOL _showsCompletionBanner;
+    GKGame * _game;
+    GKAchievementInternal * _internal;
+    GKPlayer * _player;
+    BOOL  _showsCompletionBanner;
 }
 
 @property (getter=isCompleted, nonatomic, readonly) BOOL completed;

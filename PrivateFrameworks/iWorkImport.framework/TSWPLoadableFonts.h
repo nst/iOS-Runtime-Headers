@@ -3,9 +3,9 @@
  */
 
 @interface TSWPLoadableFonts : NSObject {
-    BOOL _allFontsLoaded;
-    unsigned int _loadableFontCount;
-    struct TSWPLoadableFontInfo { id x1; id x2; } *_loadableFonts;
+    BOOL  _allFontsLoaded;
+    unsigned int  _loadableFontCount;
+    struct TSWPLoadableFontInfo { id x1; id x2; } * _loadableFonts;
 }
 
 + (id)_singletonAlloc;

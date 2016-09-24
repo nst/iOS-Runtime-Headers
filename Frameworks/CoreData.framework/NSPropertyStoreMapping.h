@@ -3,7 +3,7 @@
  */
 
 @interface NSPropertyStoreMapping : NSStoreMapping {
-    NSPropertyDescription *_property;
+    NSPropertyDescription * _property;
 }
 
 - (void)dealloc;

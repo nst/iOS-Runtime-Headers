@@ -3,42 +3,42 @@
  */
 
 @interface UIWebTouchEventsGestureRecognizer : UIGestureRecognizer {
-    BOOL _defaultPrevented;
-    BOOL _dispatchingTouchEvents;
-    BOOL _isPotentialTap;
+    BOOL  _defaultPrevented;
+    BOOL  _dispatchingTouchEvents;
+    BOOL  _isPotentialTap;
     struct _UIWebTouchEvent { 
         int type; 
         double timestamp; 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } locationInScreenCoordinates; 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } locationInDocumentCoordinates; 
-        float scale; 
-        float rotation; 
+        double scale; 
+        double rotation; 
         bool inJavaScriptGesture; 
         struct _UIWebTouchPoint {} *touchPoints; 
         unsigned int touchPointCount; 
         bool isPotentialTap; 
-    } _lastTouchEvent;
-    float _originalGestureAngle;
-    float _originalGestureDistance;
-    BOOL _passedHitTest;
-    SEL _touchAction;
-    id _touchTarget;
-    <UIWebTouchEventsGestureRecognizerDelegate> *_webTouchDelegate;
+    }  _lastTouchEvent;
+    double  _originalGestureAngle;
+    double  _originalGestureDistance;
+    BOOL  _passedHitTest;
+    SEL  _touchAction;
+    id  _touchTarget;
+    <UIWebTouchEventsGestureRecognizerDelegate> * _webTouchDelegate;
 }
 
 @property (getter=isDefaultPrevented, nonatomic) BOOL defaultPrevented;
 @property (getter=isDispatchingTouchEvents, nonatomic, readonly) BOOL dispatchingTouchEvents;
 @property (nonatomic, readonly) BOOL inJavaScriptGesture;
-@property (nonatomic, readonly) const struct _UIWebTouchEvent { int x1; double x2; struct CGPoint { float x_3_1_1; float x_3_1_2; } x3; struct CGPoint { float x_4_1_1; float x_4_1_2; } x4; float x5; float x6; bool x7; struct _UIWebTouchPoint {} *x8; unsigned int x9; bool x10; }*lastTouchEvent;
-@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } locationInWindow;
-@property (nonatomic, readonly) float rotation;
-@property (nonatomic, readonly) float scale;
+@property (nonatomic, readonly) const struct _UIWebTouchEvent { int x1; double x2; struct CGPoint { double x_3_1_1; double x_3_1_2; } x3; struct CGPoint { double x_4_1_1; double x_4_1_2; } x4; double x5; double x6; bool x7; struct _UIWebTouchPoint {} *x8; unsigned int x9; bool x10; }*lastTouchEvent;
+@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } locationInWindow;
+@property (nonatomic, readonly) double rotation;
+@property (nonatomic, readonly) double scale;
 @property (nonatomic, readonly) NSMutableArray *touchIdentifiers;
 @property (nonatomic, readonly) NSMutableArray *touchLocations;
 @property (nonatomic, readonly) NSMutableArray *touchPhases;
@@ -57,8 +57,8 @@
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2 touchDelegate:(id)arg3;
 - (BOOL)isDefaultPrevented;
 - (BOOL)isDispatchingTouchEvents;
-- (const struct _UIWebTouchEvent { int x1; double x2; struct CGPoint { float x_3_1_1; float x_3_1_2; } x3; struct CGPoint { float x_4_1_1; float x_4_1_2; } x4; float x5; float x6; bool x7; struct _UIWebTouchPoint {} *x8; unsigned int x9; bool x10; }*)lastTouchEvent;
-- (struct CGPoint { float x1; float x2; })locationInWindow;
+- (const struct _UIWebTouchEvent { int x1; double x2; struct CGPoint { double x_3_1_1; double x_3_1_2; } x3; struct CGPoint { double x_4_1_1; double x_4_1_2; } x4; double x5; double x6; bool x7; struct _UIWebTouchPoint {} *x8; unsigned int x9; bool x10; }*)lastTouchEvent;
+- (struct CGPoint { double x1; double x2; })locationInWindow;
 - (void)reset;
 - (float)rotation;
 - (float)scale;

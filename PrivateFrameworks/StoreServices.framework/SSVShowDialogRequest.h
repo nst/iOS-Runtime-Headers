@@ -3,7 +3,7 @@
  */
 
 @interface SSVShowDialogRequest : SSRequest <SSXPCCoding> {
-    NSObject<OS_xpc_object> *_dialog;
+    NSObject<OS_xpc_object> * _dialog;
 }
 
 @property (readonly, copy) NSString *debugDescription;

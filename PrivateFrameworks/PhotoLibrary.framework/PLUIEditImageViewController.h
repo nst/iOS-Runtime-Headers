@@ -3,9 +3,9 @@
  */
 
 @interface PLUIEditImageViewController : PLUIImageViewController {
-    id _delegate;
-    int _mode;
-    int _saveOptions;
+    id  _delegate;
+    int  _mode;
+    int  _saveOptions;
 }
 
 @property (nonatomic) id delegate;

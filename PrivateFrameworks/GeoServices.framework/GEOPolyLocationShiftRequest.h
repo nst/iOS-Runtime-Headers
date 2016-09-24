@@ -3,7 +3,7 @@
  */
 
 @interface GEOPolyLocationShiftRequest : PBRequest <NSCopying> {
-    GEOLatLng *_location;
+    GEOLatLng * _location;
 }
 
 @property (nonatomic, retain) GEOLatLng *location;

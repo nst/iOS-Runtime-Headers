@@ -3,7 +3,7 @@
  */
 
 @interface SKVelocityFieldNode : SKFieldNode {
-    SKTexture *_velocityTexture;
+    SKTexture * _velocityTexture;
 }
 
 @property (nonatomic) void velocity;

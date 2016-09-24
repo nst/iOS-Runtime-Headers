@@ -3,10 +3,10 @@
  */
 
 @interface MFAccountValidator : NSObject {
-    MFAccount *_account;
-    MFActivityMonitor *_accountValidationActivity;
-    id /* block */ _completionBlock;
-    id _delegate;
+    MFAccount * _account;
+    MFActivityMonitor * _accountValidationActivity;
+    id /* block */  _completionBlock;
+    id  _delegate;
     struct { 
         unsigned int useSSL : 1; 
         unsigned int incomingServerSupportsSSL : 1; 
@@ -14,12 +14,12 @@
         unsigned int canceled : 1; 
         unsigned int performsValidationInBackground : 1; 
         unsigned int unused : 27; 
-    } _flags;
-    NSArray *_incomingServerAuthSchemes;
-    MFError *_incomingServerValidationError;
-    NSArray *_smtpServerAuthSchemes;
-    MFError *_smtpServerValidationError;
-    MFMonitoredInvocation *_validationInvocation;
+    }  _flags;
+    NSArray * _incomingServerAuthSchemes;
+    MFError * _incomingServerValidationError;
+    NSArray * _smtpServerAuthSchemes;
+    MFError * _smtpServerValidationError;
+    MFMonitoredInvocation * _validationInvocation;
 }
 
 @property (nonatomic, readonly) MFAccount *account;

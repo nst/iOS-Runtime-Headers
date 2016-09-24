@@ -3,12 +3,12 @@
  */
 
 @interface _UIUserNotificationAlertView : UIAlertView {
-    id _retainedSelf;
-    BOOL _runningModal;
-    BOOL _runsModal;
-    id _strongDelegate;
-    struct __CFUserNotification { } *_userNotification;
-    struct __CFRunLoopSource { } *_userNotificationRunLoopSource;
+    id  _retainedSelf;
+    BOOL  _runningModal;
+    BOOL  _runsModal;
+    id  _strongDelegate;
+    struct __CFUserNotification { } * _userNotification;
+    struct __CFRunLoopSource { } * _userNotificationRunLoopSource;
 }
 
 + (void)initialize;

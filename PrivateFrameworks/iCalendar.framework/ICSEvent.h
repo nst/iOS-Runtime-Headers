@@ -51,8 +51,11 @@
 @property (nonatomic) BOOL x_wr_itipstatusml;
 @property (nonatomic) BOOL x_wr_rsvpneeded;
 
+// Image: /System/Library/PrivateFrameworks/iCalendar.framework/iCalendar
+
 + (id)name;
 
+- (void)fixAttendeeComments;
 - (void)fixComponent;
 - (BOOL)isDefaultAlarmDeleted;
 - (id)propertiesThatIfPresentExcludeThisComponentFromChecksummingForVersion:(int)arg1;
@@ -78,5 +81,12 @@
 - (BOOL)x_wr_itipstatusattendeeml;
 - (BOOL)x_wr_itipstatusml;
 - (BOOL)x_wr_rsvpneeded;
+
+// Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
+
+- (id)attendeeEmailAddresses;
+- (id)entityWithParentEntity:(id)arg1;
+- (id)firstValueOfPropertyForName:(id)arg1;
+- (int)method;
 
 @end

@@ -3,11 +3,11 @@
  */
 
 @interface PDPlaceholder : NSObject {
-    int mBoundsTrack;
-    unsigned long mIndex;
-    int mOrientation;
-    int mSize;
-    int mType;
+    int  mBoundsTrack;
+    unsigned long  mIndex;
+    int  mOrientation;
+    int  mSize;
+    int  mType;
 }
 
 + (BOOL)isNonTextType:(int)arg1;

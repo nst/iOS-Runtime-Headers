@@ -3,8 +3,8 @@
  */
 
 @interface _UIButtonBarLayout : NSObject {
-    bool _dirty;
-    <_UIButtonBarLayoutMetricsData> *_layoutMetrics;
+    bool  _dirty;
+    <_UIButtonBarLayoutMetricsData> * _layoutMetrics;
 }
 
 @property (nonatomic) bool dirty;

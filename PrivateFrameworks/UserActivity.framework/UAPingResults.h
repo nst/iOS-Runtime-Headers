@@ -3,10 +3,10 @@
  */
 
 @interface UAPingResults : NSObject <NSSecureCoding> {
-    NSMutableDictionary *_devices;
-    NSMutableDictionary *_errorsMap;
-    double _pingAvg;
-    NSMutableDictionary *_resultsMap;
+    NSMutableDictionary * _devices;
+    NSMutableDictionary * _errorsMap;
+    double  _pingAvg;
+    NSMutableDictionary * _resultsMap;
 }
 
 @property (retain) NSMutableDictionary *devices;
@@ -17,6 +17,7 @@
 + (id)sharedFormatter;
 + (BOOL)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (void)addDevice:(id)arg1;
 - (void)addKeysForDevice:(id)arg1;
 - (double)averagePingTime;

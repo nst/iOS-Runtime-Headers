@@ -4,7 +4,7 @@
 
 @interface PUTilingViewContentCoordinateSystem : PUTilingViewCoordinateSystem
 
-- (struct CGPoint { float x1; float x2; })coordinateSystemOrigin;
+- (struct CGPoint { double x1; double x2; })coordinateSystemOrigin;
 - (id)parentCoordinateSystem;
 
 @end

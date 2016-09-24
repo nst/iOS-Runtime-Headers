@@ -3,8 +3,8 @@
  */
 
 @interface SUItemListGroup : NSObject {
-    NSMutableArray *_items;
-    SUItem *_separatorItem;
+    NSMutableArray * _items;
+    SUItem * _separatorItem;
 }
 
 @property (nonatomic, readonly) NSString *indexBarTitle;

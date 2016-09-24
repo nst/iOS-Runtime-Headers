@@ -3,19 +3,19 @@
  */
 
 @interface CalLogBasicTextFormatter : NSObject <CalLogFormatter> {
-    NSDateFormatter *_dateFormatter;
-    BOOL _includeEnvelopePartNames;
-    BOOL _includeFunction;
-    BOOL _includeLevel;
-    BOOL _includeLogName;
-    BOOL _includeMachPort;
-    BOOL _includeMessage;
-    BOOL _includeProcessID;
-    BOOL _includeProcessName;
-    BOOL _includeTimestamp;
-    BOOL _useCompactForm;
-    BOOL _usePrettyTimestamp;
-    BOOL _useTinyEnvelopePartNames;
+    NSDateFormatter * _dateFormatter;
+    BOOL  _includeEnvelopePartNames;
+    BOOL  _includeFunction;
+    BOOL  _includeLevel;
+    BOOL  _includeLogName;
+    BOOL  _includeMachPort;
+    BOOL  _includeMessage;
+    BOOL  _includeProcessID;
+    BOOL  _includeProcessName;
+    BOOL  _includeTimestamp;
+    BOOL  _useCompactForm;
+    BOOL  _usePrettyTimestamp;
+    BOOL  _useTinyEnvelopePartNames;
 }
 
 @property (nonatomic, retain) NSDateFormatter *dateFormatter;

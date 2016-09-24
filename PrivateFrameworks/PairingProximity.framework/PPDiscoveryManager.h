@@ -3,11 +3,11 @@
  */
 
 @interface PPDiscoveryManager : NSObject <CBCentralManagerDelegate> {
-    BOOL _bluetoothIsScanning;
-    CBCentralManager *_central;
-    <PPDiscoveryManagerDelegate> *_discoveryDelegate;
-    NSObject<OS_dispatch_queue> *_discoveryQueue;
-    int _signalLimitOverride;
+    BOOL  _bluetoothIsScanning;
+    CBCentralManager * _central;
+    <PPDiscoveryManagerDelegate> * _discoveryDelegate;
+    NSObject<OS_dispatch_queue> * _discoveryQueue;
+    int  _signalLimitOverride;
 }
 
 @property (nonatomic) BOOL bluetoothIsScanning;

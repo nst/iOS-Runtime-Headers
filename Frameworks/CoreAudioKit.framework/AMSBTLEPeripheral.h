@@ -3,16 +3,16 @@
  */
 
 @interface AMSBTLEPeripheral : NSObject {
-    BOOL _changingState;
-    BOOL available;
-    CBCentralManager *centralManager;
-    BOOL inputAvailable;
-    double lastSeen;
-    NSString *name;
-    BOOL online;
-    BOOL outputAvailable;
-    CBPeripheral *peripheral;
-    NSString *uuid;
+    BOOL  available;
+    CBCentralManager * centralManager;
+    BOOL  changingState;
+    BOOL  inputAvailable;
+    double  lastSeen;
+    NSString * name;
+    BOOL  online;
+    BOOL  outputAvailable;
+    CBPeripheral * peripheral;
+    NSString * uuid;
 }
 
 @property (getter=isAvailable) BOOL available;

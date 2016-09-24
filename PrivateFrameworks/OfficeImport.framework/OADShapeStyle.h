@@ -3,10 +3,10 @@
  */
 
 @interface OADShapeStyle : NSObject <NSCopying> {
-    OADStyleMatrixReference *mEffectReference;
-    OADStyleMatrixReference *mFillReference;
-    OADFontReference *mFontReference;
-    OADStyleMatrixReference *mLineReference;
+    OADStyleMatrixReference * mEffectReference;
+    OADStyleMatrixReference * mFillReference;
+    OADFontReference * mFontReference;
+    OADStyleMatrixReference * mLineReference;
 }
 
 + (id)defaultOfficeShapeStyle;

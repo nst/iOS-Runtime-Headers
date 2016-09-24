@@ -3,7 +3,7 @@
  */
 
 @interface SFHostApplicationCustomActivity : _SFActivity {
-    SFCustomActivityProxy *_activityProxy;
+    SFCustomActivityProxy * _activityProxy;
 }
 
 @property (nonatomic, readonly) SFCustomActivityProxy *activityProxy;

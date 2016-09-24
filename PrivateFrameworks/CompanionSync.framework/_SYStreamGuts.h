@@ -3,13 +3,13 @@
  */
 
 @interface _SYStreamGuts : NSObject {
-    <NSStreamDelegate> *_delegate;
-    NSError *_error;
-    id /* block */ _handler;
-    unsigned int _port;
-    NSObject<OS_dispatch_queue> *_queue;
-    struct __CFRunLoopSource { } *_runloopSource;
-    unsigned int _status;
+    <NSStreamDelegate> * _delegate;
+    NSError * _error;
+    id /* block */  _handler;
+    unsigned int  _port;
+    NSObject<OS_dispatch_queue> * _queue;
+    struct __CFRunLoopSource { } * _runloopSource;
+    unsigned int  _status;
 }
 
 - (void).cxx_destruct;

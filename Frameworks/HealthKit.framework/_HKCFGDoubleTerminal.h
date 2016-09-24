@@ -3,7 +3,7 @@
  */
 
 @interface _HKCFGDoubleTerminal : _HKCFGTerminal {
-    id /* block */ _condition;
+    id /* block */  _condition;
 }
 
 @property (nonatomic, copy) id /* block */ condition;

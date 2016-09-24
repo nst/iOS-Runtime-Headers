@@ -10,7 +10,7 @@
 @property (readonly) Class superclass;
 
 - (BOOL)canFetchAllContainersByID;
-- (id)fetchAllContainersByID;
+- (id)fetchAllContainersByIDWithError:(id*)arg1;
 - (id)fetchContainerForURL:(id)arg1;
 
 @end

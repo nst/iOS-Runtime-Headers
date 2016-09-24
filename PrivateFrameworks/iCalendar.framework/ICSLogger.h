@@ -3,8 +3,8 @@
  */
 
 @interface ICSLogger : NSObject {
-    int _logCount;
-    <ICSLoggingDelegate> *_loggingDelegate;
+    int  _logCount;
+    <ICSLoggingDelegate> * _loggingDelegate;
 }
 
 + (void)logAtLevel:(int)arg1 forTokenizer:(id)arg2 message:(id)arg3;

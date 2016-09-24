@@ -3,8 +3,8 @@
  */
 
 @interface TSCHSeriesDimension : NSObject <NSCopying> {
-    int mAxisType;
-    unsigned int mSeriesIndex;
+    int  mAxisType;
+    unsigned int  mSeriesIndex;
 }
 
 @property (nonatomic, readonly) int axisType;

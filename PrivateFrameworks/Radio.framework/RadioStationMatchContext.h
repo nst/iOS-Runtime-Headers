@@ -3,8 +3,8 @@
  */
 
 @interface RadioStationMatchContext : NSObject {
-    RadioStationMatchMetadata *_matchMetadata;
-    BOOL _shouldMatchArtist;
+    RadioStationMatchMetadata * _matchMetadata;
+    BOOL  _shouldMatchArtist;
 }
 
 @property (nonatomic, retain) RadioStationMatchMetadata *matchMetadata;

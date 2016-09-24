@@ -3,8 +3,8 @@
  */
 
 @interface _HKWorkoutDataGap : NSObject <NSSecureCoding> {
-    NSUUID *_end;
-    NSUUID *_start;
+    NSUUID * _end;
+    NSUUID * _start;
 }
 
 @property (nonatomic, retain) NSUUID *end;

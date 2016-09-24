@@ -3,7 +3,7 @@
  */
 
 @interface FADispatchFamilyPushRequest : FAFamilyCircleRequest {
-    NSDictionary *_payload;
+    NSDictionary * _payload;
 }
 
 @property (readonly, copy) NSDictionary *payload;

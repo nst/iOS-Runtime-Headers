@@ -3,7 +3,7 @@
  */
 
 @interface TSCEDependencyChanges : NSObject {
-    struct __CFUUID { } *mTableID;
+    struct __CFUUID { } * mTableID;
 }
 
 - (void)dealloc;

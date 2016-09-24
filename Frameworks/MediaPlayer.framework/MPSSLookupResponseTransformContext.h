@@ -3,7 +3,7 @@
  */
 
 @interface MPSSLookupResponseTransformContext : NSObject {
-    MPMediaItem *_collectionRepresentativeItem;
+    MPMediaItem * _collectionRepresentativeItem;
 }
 
 @property (nonatomic, retain) MPMediaItem *collectionRepresentativeItem;

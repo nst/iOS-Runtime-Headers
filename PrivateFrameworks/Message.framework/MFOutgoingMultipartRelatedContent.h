@@ -3,7 +3,7 @@
  */
 
 @interface MFOutgoingMultipartRelatedContent : MFOutgoingRichtextMessageContent {
-    NSString *_htmlBody;
+    NSString * _htmlBody;
 }
 
 @property (nonatomic, retain) NSString *htmlBody;

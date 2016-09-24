@@ -3,16 +3,16 @@
  */
 
 @interface MFMailDropMetadata : NSObject {
-    BOOL _autoArchive;
-    NSURL *_directUrl;
-    NSDate *_expiration;
-    NSString *_fileName;
-    int _fileSize;
-    unsigned int _flags;
-    BOOL _isInvalid;
-    NSString *_mimeType;
-    NSString *_uuid;
-    NSURL *_wrappedUrl;
+    BOOL  _autoArchive;
+    NSURL * _directUrl;
+    NSDate * _expiration;
+    NSString * _fileName;
+    int  _fileSize;
+    unsigned int  _flags;
+    BOOL  _isInvalid;
+    NSString * _mimeType;
+    NSString * _uuid;
+    NSURL * _wrappedUrl;
 }
 
 @property (getter=UUID, setter=setUUID:) NSString *UUID;

@@ -3,11 +3,11 @@
  */
 
 @interface ABPostalNameGroupItem : CNCardGroupItem {
-    CNMutableContact *_contact;
-    NSString *_placeholder;
-    NSString *_property;
-    SEL _setter;
-    NSString *_value;
+    CNMutableContact * _contact;
+    NSString * _placeholder;
+    NSString * _property;
+    SEL  _setter;
+    NSString * _value;
 }
 
 @property (nonatomic, retain) CNMutableContact *contact;

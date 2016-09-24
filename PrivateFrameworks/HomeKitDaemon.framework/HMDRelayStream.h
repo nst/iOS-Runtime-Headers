@@ -2,16 +2,16 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDRelayStream : HAPRelayStream <HMDRelayManagerDelegate, IDSServiceDelegateHomeKit> {
-    NSData *_accessToken;
-    NSString *_accessoryIdentifier;
-    NSObject<OS_dispatch_queue> *_clientQueue;
-    NSString *_controllerIdentifier;
-    IDSService *_idsService;
-    BOOL _opened;
-    NSMutableArray *_pendingSentMessageIdentifiers;
-    HMDRelayManager *_relayManger;
-    BOOL _suspended;
+@interface HMDRelayStream : HAPRelayStream <HMDRelayManagerDelegate, HMFLogging, IDSServiceDelegateHomeKit> {
+    NSData * _accessToken;
+    NSString * _accessoryIdentifier;
+    NSObject<OS_dispatch_queue> * _clientQueue;
+    NSString * _controllerIdentifier;
+    IDSService * _idsService;
+    BOOL  _opened;
+    NSMutableArray * _pendingSentMessageIdentifiers;
+    HMDRelayManager * _relayManger;
+    BOOL  _suspended;
 }
 
 @property (nonatomic, readonly, copy) NSData *accessToken;
@@ -28,6 +28,8 @@
 @property (readonly) Class superclass;
 @property (getter=isSuspended, nonatomic) BOOL suspended;
 
++ (id)logCategory;
+
 - (void).cxx_destruct;
 - (void)_closeWithError:(id)arg1;
 - (id)accessToken;
@@ -39,6 +41,7 @@
 - (id)initWithRelayManager:(id)arg1 idsService:(id)arg2 accessoryIdentifier:(id)arg3 accessToken:(id)arg4;
 - (BOOL)isOpened;
 - (BOOL)isSuspended;
+- (id)logIdentifier;
 - (unsigned int)mtu;
 - (void)open;
 - (id)pendingSentMessageIdentifiers;

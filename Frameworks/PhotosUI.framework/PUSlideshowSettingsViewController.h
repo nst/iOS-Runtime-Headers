@@ -3,21 +3,21 @@
  */
 
 @interface PUSlideshowSettingsViewController : UIViewController <PUSlideshowMusicDelegate, PUSlideshowSettingsViewModelChangeObserver, PUSlideshowSpeedCellDelegate, PUSlideshowThemeDelegate, PUViewControllerSpecChangeObserver, UIPopoverPresentationControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
-    BOOL __needsUpdateMediaItem;
-    BOOL __needsUpdateMusicOn;
-    BOOL __needsUpdateNavigationBar;
-    BOOL __needsUpdatePreset;
-    BOOL __needsUpdateSpec;
-    BOOL __needsUpdateTableView;
-    PUSlideshowMediaItem *__pendingMediaItem;
-    OKProducerPreset *__pendingPreset;
-    _UIBackdropView *_backdropView;
-    <PUSlideshowSettingsViewControllerDelegate> *_delegate;
-    PUSlideshowSession *_session;
-    PUSlideshowSettingsViewModel *_settingsViewModel;
-    BOOL _shouldHideTableViewWhenViewWillDisappear;
-    PUSlideshowSettingsViewControllerSpec *_spec;
-    UITableView *_tableView;
+    BOOL  __needsUpdateMediaItem;
+    BOOL  __needsUpdateMusicOn;
+    BOOL  __needsUpdateNavigationBar;
+    BOOL  __needsUpdatePreset;
+    BOOL  __needsUpdateSpec;
+    BOOL  __needsUpdateTableView;
+    PUSlideshowMediaItem * __pendingMediaItem;
+    OKProducerPreset * __pendingPreset;
+    _UIBackdropView * _backdropView;
+    <PUSlideshowSettingsViewControllerDelegate> * _delegate;
+    PUSlideshowSession * _session;
+    PUSlideshowSettingsViewModel * _settingsViewModel;
+    BOOL  _shouldHideTableViewWhenViewWillDisappear;
+    PUSlideshowSettingsViewControllerSpec * _spec;
+    UITableView * _tableView;
 }
 
 @property (setter=_setNeedsUpdateMediaItem:, nonatomic) BOOL _needsUpdateMediaItem;

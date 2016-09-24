@@ -3,8 +3,8 @@
  */
 
 @interface NEContentFilter : NSObject <NEConfigurationValidating, NEPrettyDescription, NSCopying, NSSecureCoding> {
-    BOOL _enabled;
-    NEFilterProviderConfiguration *_provider;
+    BOOL  _enabled;
+    NEFilterProviderConfiguration * _provider;
 }
 
 @property (getter=isEnabled) BOOL enabled;

@@ -3,8 +3,8 @@
  */
 
 @interface SKUIPageComponent : NSObject <SSMetricsEventFieldProvider> {
-    int _metricsLocationPosition;
-    SKUIViewElement *_viewElement;
+    int  _metricsLocationPosition;
+    SKUIViewElement * _viewElement;
 }
 
 @property (nonatomic, readonly) int componentType;
@@ -12,7 +12,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) NSString *metricsElementName;
-@property (nonatomic) int metricsLocationPosition;
+@property (setter=_setMetricsLocationPosition:, nonatomic) int metricsLocationPosition;
 @property (getter=isMissingItemData, nonatomic, readonly) BOOL missingItemData;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) SKUIViewElement *viewElement;

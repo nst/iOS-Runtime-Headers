@@ -5,11 +5,11 @@
 @interface WBSBookmarkAndHistoryCompletionMatch : WBSURLCompletionMatch {
     struct RefPtr<SafariShared::BookmarkAndHistoryCompletionMatch> { 
         struct BookmarkAndHistoryCompletionMatch {} *m_ptr; 
-    } _match;
+    }  _match;
 }
 
 @property (nonatomic, readonly) <WBSURLCompletionMatchData> *data;
-@property (nonatomic, readonly) float weight;
+@property (nonatomic, readonly) double weight;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

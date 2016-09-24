@@ -3,7 +3,7 @@
  */
 
 @interface ABPersonViewControllerHelperNavigationController : UINavigationController {
-    ABUnknownPersonViewController *_unknownPersonViewController;
+    ABUnknownPersonViewController * _unknownPersonViewController;
 }
 
 - (void)dealloc;

@@ -3,7 +3,7 @@
  */
 
 @interface SPFont : NSObject <NSKeyedUnarchiverDelegate, NSSecureCoding> {
-    UIFont *_font;
+    UIFont * _font;
 }
 
 @property (readonly, copy) NSString *debugDescription;

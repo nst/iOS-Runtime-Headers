@@ -3,7 +3,7 @@
  */
 
 @interface _MKGemUserLocationView : MKUserLocationView {
-    CALayer *_gemLayer;
+    CALayer * _gemLayer;
 }
 
 - (void).cxx_destruct;
@@ -14,7 +14,7 @@
 - (void)_setupLayers;
 - (void)_updateLayers;
 - (id)initWithAnnotation:(id)arg1 reuseIdentifier:(id)arg2;
-- (struct UIImage { Class x1; }*)normalImage;
-- (struct UIImage { Class x1; }*)staleImage;
+- (id)normalImage;
+- (id)staleImage;
 
 @end

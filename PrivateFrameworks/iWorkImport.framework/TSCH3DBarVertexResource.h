@@ -3,7 +3,7 @@
  */
 
 @interface TSCH3DBarVertexResource : TSCH3DAbstractBarVertexResource {
-    TSCH3DBarExtrusionGeometry *mGeometry;
+    TSCH3DBarExtrusionGeometry * mGeometry;
 }
 
 - (int)capOffset;

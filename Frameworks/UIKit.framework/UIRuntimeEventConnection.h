@@ -3,7 +3,7 @@
  */
 
 @interface UIRuntimeEventConnection : UIRuntimeConnection {
-    unsigned int eventMask;
+    unsigned int  eventMask;
 }
 
 @property (readonly) SEL action;

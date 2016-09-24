@@ -5,6 +5,7 @@
 
 @required
 
-- (void)achievementsWereAdded;
+- (void)clientRemote_achievementDefinitionUnviewedCountChanged;
+- (void)clientRemote_achievementsWereAdded;
 
 @end

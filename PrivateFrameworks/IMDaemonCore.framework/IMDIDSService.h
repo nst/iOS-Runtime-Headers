@@ -3,9 +3,9 @@
  */
 
 @interface IMDIDSService : IMDService <IDSAccountControllerDelegate, IDSAccountRegistrationDelegate> {
-    IDSAccountController *_accountController;
-    BOOL _activatingAccount;
-    BOOL _deactivatingAccount;
+    IDSAccountController * _accountController;
+    BOOL  _activatingAccount;
+    BOOL  _deactivatingAccount;
 }
 
 @property (nonatomic, readonly, retain) NSArray *accountsLoadedFromIdentityServices;

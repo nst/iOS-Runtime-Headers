@@ -3,8 +3,8 @@
  */
 
 @interface SLGuaranteedRemoteCall : NSObject {
-    id /* block */ _block;
-    id _proxy;
+    id /* block */  _block;
+    id  _proxy;
 }
 
 @property (copy) id /* block */ block;

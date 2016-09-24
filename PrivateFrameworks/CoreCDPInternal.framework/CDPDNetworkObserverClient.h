@@ -3,7 +3,7 @@
  */
 
 @interface CDPDNetworkObserverClient : NSObject {
-    id /* block */ _eventHandler;
+    id /* block */  _eventHandler;
 }
 
 @property (copy) id /* block */ eventHandler;

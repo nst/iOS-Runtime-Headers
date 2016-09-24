@@ -3,18 +3,18 @@
  */
 
 @interface NNMKProtoInitialMessagesSync : PBCodable <NSCopying> {
-    NSData *_dateForRequestingMoreMessages;
-    NSData *_dateSynced;
-    unsigned int _fullSyncVersion;
+    NSData * _dateForRequestingMoreMessages;
+    NSData * _dateSynced;
+    unsigned int  _fullSyncVersion;
     struct { 
         unsigned int fullSyncVersion : 1; 
         unsigned int syncedMailboxType : 1; 
-    } _has;
-    NSMutableArray *_initialMessages;
-    NSString *_syncedMailboxAccountId;
-    NSString *_syncedMailboxCustomName;
-    unsigned int _syncedMailboxType;
-    NSString *_syncedMailboxURL;
+    }  _has;
+    NSMutableArray * _initialMessages;
+    NSString * _syncedMailboxAccountId;
+    NSString * _syncedMailboxCustomName;
+    unsigned int  _syncedMailboxType;
+    NSString * _syncedMailboxURL;
 }
 
 @property (nonatomic, retain) NSData *dateForRequestingMoreMessages;

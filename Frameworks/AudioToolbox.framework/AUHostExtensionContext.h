@@ -2,11 +2,11 @@
    Image: /System/Library/Frameworks/AudioToolbox.framework/AudioToolbox
  */
 
-@interface AUHostExtensionContext : NSExtensionContext <AUAudioUnitHostProtocol> {
-    AUAudioUnit_XH *_audioUnit;
-    NSExtension *_extension;
-    <AUAudioUnitXPCProtocol> *_remote;
-    NSUUID *_requestIdentifier;
+@interface AUHostExtensionContext : NSExtensionContext <AUAudioUnitHostProtocol, _AURemoteParameterSynchronization> {
+    AUAudioUnit_XH * _audioUnit;
+    NSExtension * _extension;
+    <AUAudioUnitXPCProtocol> * _remote;
+    NSUUID * _requestIdentifier;
 }
 
 @property (nonatomic) AUAudioUnit_XH *audioUnit;
@@ -20,14 +20,13 @@
 - (id)audioUnit;
 - (void)dealloc;
 - (id)extension;
-- (void)parameterChanged:(unsigned long long)arg1 value:(float)arg2;
 - (void)propertiesChanged:(id)arg1;
-- (void)recordParameterEvents:(id)arg1;
 - (id)remote;
 - (id)requestIdentifier;
 - (void)setAudioUnit:(id)arg1;
 - (void)setExtension:(id)arg1;
 - (void)setRemote:(id)arg1;
 - (void)setRequestIdentifier:(id)arg1;
+- (void)syncParameter:(unsigned int)arg1 value:(float)arg2 extOriginator:(unsigned int)arg3 hostTime:(unsigned int)arg4 eventType:(unsigned int)arg5;
 
 @end

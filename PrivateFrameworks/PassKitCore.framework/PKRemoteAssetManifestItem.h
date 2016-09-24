@@ -3,11 +3,11 @@
  */
 
 @interface PKRemoteAssetManifestItem : NSObject <NSSecureCoding> {
-    NSURL *_localURL;
-    NSURL *_passURL;
-    NSURL *_remoteURL;
-    NSString *_sha1Hex;
-    NSNumber *_size;
+    NSURL * _localURL;
+    NSURL * _passURL;
+    NSURL * _remoteURL;
+    NSString * _sha1Hex;
+    NSNumber * _size;
 }
 
 @property (nonatomic, copy) NSURL *localURL;
@@ -20,7 +20,7 @@
 + (id)itemWithLocalURL:(id)arg1 passURL:(id)arg2 dictionary:(id)arg3 error:(id*)arg4;
 + (BOOL)supportsSecureCoding;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithLocalURL:(id)arg1 passURL:(id)arg2 dictionary:(id)arg3 error:(id*)arg4;

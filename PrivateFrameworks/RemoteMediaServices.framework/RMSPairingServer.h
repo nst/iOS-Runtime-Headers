@@ -3,16 +3,16 @@
  */
 
 @interface RMSPairingServer : NSObject {
-    struct _CFHTTPServer { } *_HTTPServer;
-    struct __CFDictionary { } *_HTTPServerConnections;
-    NSObject<OS_dispatch_queue> *_HTTPServerQueue;
-    NSString *_advertisedDeviceModel;
-    NSString *_advertisedDeviceName;
-    <RMSPairingServerDelegate> *_delegate;
-    NSString *_expectedPasscodeHash;
-    unsigned short _port;
-    NSString *_successfulPairingGUID;
-    NSString *_successfulPairingServiceName;
+    struct _CFHTTPServer { } * _HTTPServer;
+    struct __CFDictionary { } * _HTTPServerConnections;
+    NSObject<OS_dispatch_queue> * _HTTPServerQueue;
+    NSString * _advertisedDeviceModel;
+    NSString * _advertisedDeviceName;
+    <RMSPairingServerDelegate> * _delegate;
+    NSString * _expectedPasscodeHash;
+    unsigned short  _port;
+    NSString * _successfulPairingGUID;
+    NSString * _successfulPairingServiceName;
 }
 
 @property (nonatomic) <RMSPairingServerDelegate> *delegate;

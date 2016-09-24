@@ -3,16 +3,16 @@
  */
 
 @interface AWDWiFiMetricHotspotTransportType : PBCodable <NSCopying> {
-    unsigned int _bt;
+    unsigned int  _bt;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int bt : 1; 
         unsigned int usb : 1; 
         unsigned int wifi : 1; 
-    } _has;
-    unsigned long long _timestamp;
-    unsigned int _usb;
-    unsigned int _wifi;
+    }  _has;
+    unsigned long long  _timestamp;
+    unsigned int  _usb;
+    unsigned int  _wifi;
 }
 
 @property (nonatomic) unsigned int bt;

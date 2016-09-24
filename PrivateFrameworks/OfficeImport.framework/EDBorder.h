@@ -3,10 +3,10 @@
  */
 
 @interface EDBorder : NSObject {
-    EDColorReference *mColorReference;
-    int mDiagonalType;
-    EDResources *mResources;
-    int mType;
+    EDColorReference * mColorReference;
+    int  mDiagonalType;
+    EDResources * mResources;
+    int  mType;
 }
 
 + (id)borderWithType:(int)arg1 color:(id)arg2 diagonalType:(int)arg3 resources:(id)arg4;

@@ -3,8 +3,8 @@
  */
 
 @interface MFAttachmentDataProvider : NSObject <MFAttachmentDataProviderProtocol> {
-    int _isPartialDownload;
-    NSURL *_url;
+    int  _isPartialDownload;
+    NSURL * _url;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,7 +3,7 @@
  */
 
 @interface AACloudKitMigrationStateResponse : AAResponse {
-    NSString *_name;
+    NSString * _name;
 }
 
 @property (nonatomic, readonly) NSString *name;

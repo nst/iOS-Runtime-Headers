@@ -6,8 +6,8 @@
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _range;
-    NSString *_replacementString;
+    }  _range;
+    NSString * _replacementString;
 }
 
 + (BOOL)supportsSecureCoding;

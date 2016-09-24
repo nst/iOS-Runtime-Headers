@@ -3,30 +3,22 @@
  */
 
 @interface MKTransitSectionPagingFilter : NSObject {
-    BOOL _limitNumCells;
-    BOOL _limitNumLines;
-    unsigned int _maxNumCells;
-    unsigned int _numLinesFallbackThreshold;
-    unsigned int _numLinesFallbackValue;
+    BOOL  _limitNumLines;
+    unsigned int  _numLinesFallbackThreshold;
+    unsigned int  _numLinesFallbackValue;
 }
 
-@property (nonatomic) BOOL limitNumCells;
 @property (nonatomic) BOOL limitNumLines;
-@property (nonatomic) unsigned int maxNumCells;
 @property (nonatomic) unsigned int numLinesFallbackThreshold;
 @property (nonatomic) unsigned int numLinesFallbackValue;
 
++ (id)defaultFilterForDepartures;
 + (id)defaultFilterForInactiveLines;
-+ (id)defaultFilterForSequences:(id)arg1;
 
-- (BOOL)limitNumCells;
 - (BOOL)limitNumLines;
-- (unsigned int)maxNumCells;
 - (unsigned int)numLinesFallbackThreshold;
 - (unsigned int)numLinesFallbackValue;
-- (void)setLimitNumCells:(BOOL)arg1;
 - (void)setLimitNumLines:(BOOL)arg1;
-- (void)setMaxNumCells:(unsigned int)arg1;
 - (void)setNumLinesFallbackThreshold:(unsigned int)arg1;
 - (void)setNumLinesFallbackValue:(unsigned int)arg1;
 

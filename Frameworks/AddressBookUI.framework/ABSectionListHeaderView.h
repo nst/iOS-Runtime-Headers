@@ -3,7 +3,7 @@
  */
 
 @interface ABSectionListHeaderView : UITableViewHeaderFooterView {
-    <ABStyleProvider> *_styleProvider;
+    <ABStyleProvider> * _styleProvider;
 }
 
 @property (nonatomic, retain) <ABStyleProvider> *styleProvider;

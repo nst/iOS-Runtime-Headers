@@ -3,12 +3,12 @@
  */
 
 @interface CKFetchNotificationChangesOperation : CKOperation {
-    id /* block */ _fetchNotificationChangesCompletionBlock;
-    BOOL _moreComing;
-    id /* block */ _notificationChangedBlock;
-    CKServerChangeToken *_previousServerChangeToken;
-    CKServerChangeToken *_resultServerChangeToken;
-    unsigned int _resultsLimit;
+    id /* block */  _fetchNotificationChangesCompletionBlock;
+    BOOL  _moreComing;
+    id /* block */  _notificationChangedBlock;
+    CKServerChangeToken * _previousServerChangeToken;
+    CKServerChangeToken * _resultServerChangeToken;
+    unsigned int  _resultsLimit;
 }
 
 @property (nonatomic, copy) id /* block */ fetchNotificationChangesCompletionBlock;
@@ -24,7 +24,7 @@
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleCompletionCallback:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
-- (unsigned long long)activityStart;
+- (id)activityCreate;
 - (id /* block */)fetchNotificationChangesCompletionBlock;
 - (void)fillFromOperationInfo:(id)arg1;
 - (void)fillOutOperationInfo:(id)arg1;

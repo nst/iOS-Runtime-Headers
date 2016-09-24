@@ -3,8 +3,8 @@
  */
 
 @interface _NSIndexSetEnumerator : NSEnumerator {
-    unsigned int _index;
-    NSIndexSet *_indexSet;
+    unsigned int  _index;
+    NSIndexSet * _indexSet;
 }
 
 - (void)dealloc;

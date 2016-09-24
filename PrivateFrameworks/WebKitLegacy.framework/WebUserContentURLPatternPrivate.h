@@ -21,7 +21,7 @@
             } m_impl; 
         } m_path; 
         bool m_matchSubdomains; 
-    } pattern;
+    }  pattern;
 }
 
 - (id).cxx_construct;

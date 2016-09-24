@@ -3,8 +3,8 @@
  */
 
 @interface CKDPRecordZoneIdentifier : PBCodable <NSCopying> {
-    CKDPIdentifier *_ownerIdentifier;
-    CKDPIdentifier *_value;
+    CKDPIdentifier * _ownerIdentifier;
+    CKDPIdentifier * _value;
 }
 
 @property (nonatomic, readonly) BOOL hasOwnerIdentifier;

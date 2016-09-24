@@ -3,13 +3,13 @@
  */
 
 @interface OpenURLTarget : NSObject {
-    unsigned int _applicationState;
+    unsigned int  _applicationState;
     struct { 
         NSString *clientIdentifier; 
         NSString *normalScheme; 
         NSString *secureScheme; 
-    } _targetData;
-    int _targetIndex;
+    }  _targetData;
+    int  _targetIndex;
 }
 
 - (int)compare:(id)arg1;

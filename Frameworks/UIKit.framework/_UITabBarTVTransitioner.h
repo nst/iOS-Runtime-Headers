@@ -3,8 +3,8 @@
  */
 
 @interface _UITabBarTVTransitioner : NSObject <_UITabBarControllerInterruptibleTransitioning> {
-    <UIViewControllerContextTransitioning> *_transitionContext;
-    BOOL _transitionFromRight;
+    <UIViewControllerContextTransitioning> * _transitionContext;
+    BOOL  _transitionFromRight;
 }
 
 @property (readonly, copy) NSString *debugDescription;

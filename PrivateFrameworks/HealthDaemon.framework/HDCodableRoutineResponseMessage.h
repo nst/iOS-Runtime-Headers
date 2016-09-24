@@ -3,14 +3,14 @@
  */
 
 @interface HDCodableRoutineResponseMessage : PBCodable <NSCopying> {
-    NSString *_errorDescription;
-    HDCodableRoutineLocationResponse *_fetchLocationResponse;
-    HDCodableRoutinePredictedLocationsResponse *_fetchNextLocationResponse;
+    NSString * _errorDescription;
+    HDCodableRoutineLocationResponse * _fetchLocationResponse;
+    HDCodableRoutinePredictedLocationsResponse * _fetchNextLocationResponse;
     struct { 
         unsigned int requestType : 1; 
-    } _has;
-    NSString *_requestIdentifier;
-    int _requestType;
+    }  _has;
+    NSString * _requestIdentifier;
+    int  _requestType;
 }
 
 @property (nonatomic, retain) NSString *errorDescription;

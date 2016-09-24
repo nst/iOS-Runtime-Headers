@@ -3,12 +3,15 @@
  */
 
 @interface NPKProtoHandleValueAddedServiceTransactionsRequest : PBRequest <NSCopying> {
-    NSMutableArray *_transactionPassIDs;
-    NSMutableArray *_transactionsBytes;
+    NSMutableArray * _transactionPassIDs;
+    NSMutableArray * _transactionsBytes;
 }
 
 @property (nonatomic, retain) NSMutableArray *transactionPassIDs;
 @property (nonatomic, retain) NSMutableArray *transactionsBytes;
+
++ (Class)transactionPassIDsType;
++ (Class)transactionsBytesType;
 
 - (void).cxx_destruct;
 - (void)addTransactionPassIDs:(id)arg1;

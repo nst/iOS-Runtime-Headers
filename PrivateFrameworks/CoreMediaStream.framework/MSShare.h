@@ -3,13 +3,13 @@
  */
 
 @interface MSShare : NSObject <NSCoding> {
-    NSString *_UUID;
-    NSString *_emailAddress;
-    NSString *_firstName;
-    NSString *_lastName;
-    NSString *_personID;
-    int _sharingOurStream;
-    int _sharingTheirStream;
+    NSString * _UUID;
+    NSString * _emailAddress;
+    NSString * _firstName;
+    NSString * _lastName;
+    NSString * _personID;
+    int  _sharingOurStream;
+    int  _sharingTheirStream;
 }
 
 @property (nonatomic, retain) NSString *UUID;

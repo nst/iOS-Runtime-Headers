@@ -3,14 +3,14 @@
  */
 
 @interface OISFUZipInflateInputStream : NSObject <SFUInputStream> {
-    unsigned long mCalculatedCrc;
-    unsigned long mCheckCrc;
-    <OISFUBufferedInputStream> *mInput;
-    BOOL mIsFromZip;
-    long long mOffset;
-    char *mOutBuffer;
-    unsigned long long mOutBufferSize;
-    BOOL mReachedEnd;
+    unsigned long  mCalculatedCrc;
+    unsigned long  mCheckCrc;
+    <OISFUBufferedInputStream> * mInput;
+    BOOL  mIsFromZip;
+    int  mOffset;
+    char * mOutBuffer;
+    unsigned int  mOutBufferSize;
+    BOOL  mReachedEnd;
     struct z_stream_s { 
         char *next_in; 
         unsigned int avail_in; 
@@ -26,7 +26,7 @@
         int data_type; 
         unsigned int adler; 
         unsigned int reserved; 
-    } mStream;
+    }  mStream;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -41,12 +41,12 @@
 - (void)disableSystemCaching;
 - (void)enableSystemCaching;
 - (id)initWithInput:(id)arg1;
-- (id)initWithOffset:(long long)arg1 end:(long long)arg2 uncompressedSize:(unsigned long long)arg3 crc:(unsigned long)arg4 dataRepresentation:(id)arg5;
-- (long long)offset;
+- (id)initWithOffset:(int)arg1 end:(int)arg2 uncompressedSize:(unsigned int)arg3 crc:(unsigned long)arg4 dataRepresentation:(id)arg5;
+- (int)offset;
 - (unsigned long)readToBuffer:(char *)arg1 size:(unsigned long)arg2;
 - (unsigned long)readToOwnBuffer:(const char **)arg1 size:(unsigned long)arg2;
-- (void)seekToOffset:(long long)arg1;
+- (void)seekToOffset:(int)arg1;
 - (void)setupInflateStream;
-- (long long)totalCompressedBytesConsumed;
+- (int)totalCompressedBytesConsumed;
 
 @end

@@ -3,12 +3,12 @@
  */
 
 @interface TSSStyleMapper : NSObject <TSKStyleMapper> {
-    BOOL _clientsMustRemap;
-    NSMutableSet *_createdStyles;
-    BOOL _forceMatchStyle;
-    NSMutableArray *_mappingContext;
-    TSURetainedPointerKeyDictionary *_styleMap;
-    TSSStylesheet *_targetStylesheet;
+    BOOL  _clientsMustRemap;
+    NSMutableSet * _createdStyles;
+    BOOL  _forceMatchStyle;
+    NSMutableArray * _mappingContext;
+    TSURetainedPointerKeyDictionary * _styleMap;
+    TSSStylesheet * _targetStylesheet;
 }
 
 @property (nonatomic) BOOL clientsMustRemap;

@@ -8,14 +8,14 @@
 @property (nonatomic, retain) NSString *bundleId;
 @property (nonatomic, retain) NSString *contentURL;
 @property (nonatomic) double creationDate;
-@property (nonatomic) long long direction;
+@property (nonatomic) int direction;
 @property (nonatomic, retain) NSString *domainIdentifier;
 @property (nonatomic) double endDate;
 @property (nonatomic) BOOL isResponse;
 @property (nonatomic, retain) NSSet *keywords;
 @property (nonatomic, retain) NSString *locationUUID;
-@property (nonatomic) long long mechanism;
-@property (nonatomic) long long recipientCount;
+@property (nonatomic) int mechanism;
+@property (nonatomic) int recipientCount;
 @property (nonatomic, retain) NSSet *recipients;
 @property (nonatomic, retain) _CDContactRecord *sender;
 @property (nonatomic) double startDate;

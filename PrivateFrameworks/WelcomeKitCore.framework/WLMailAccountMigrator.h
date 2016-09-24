@@ -3,7 +3,7 @@
  */
 
 @interface WLMailAccountMigrator : WLMigrationWebService {
-    ACAccountStore *_accountStore;
+    ACAccountStore * _accountStore;
 }
 
 + (id)contentType;

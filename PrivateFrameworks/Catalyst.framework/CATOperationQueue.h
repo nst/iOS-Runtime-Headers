@@ -3,7 +3,7 @@
  */
 
 @interface CATOperationQueue : NSOperationQueue {
-    <CATOperationQueueDelegate> *_delegate;
+    <CATOperationQueueDelegate> * _delegate;
 }
 
 @property (nonatomic) <CATOperationQueueDelegate> *delegate;
@@ -21,6 +21,7 @@
 - (id)description;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)setDelegate:(id)arg1;
+- (void)setUnderlyingQueue:(id)arg1;
 - (void)startObserving:(id)arg1;
 - (void)stopObserving:(id)arg1;
 

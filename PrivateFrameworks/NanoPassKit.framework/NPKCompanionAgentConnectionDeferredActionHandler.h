@@ -3,9 +3,9 @@
  */
 
 @interface NPKCompanionAgentConnectionDeferredActionHandler : NSObject {
-    NSMutableDictionary *_deferredActions;
-    NSMutableDictionary *_deferredSharedPaymentWebServiceContexts;
-    NSObject<OS_dispatch_queue> *_internalQueue;
+    NSMutableDictionary * _deferredActions;
+    NSMutableDictionary * _deferredSharedPaymentWebServiceContexts;
+    NSObject<OS_dispatch_queue> * _internalQueue;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *deferredActions;

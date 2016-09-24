@@ -3,10 +3,10 @@
  */
 
 @interface ScrollSpringFactory : SpringFactory {
-    float _initialVelocity;
+    double  _initialVelocity;
 }
 
-@property (nonatomic) float initialVelocity;
+@property (nonatomic) double initialVelocity;
 
 + (id)sharedFactory;
 

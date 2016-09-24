@@ -3,9 +3,9 @@
  */
 
 @interface MSShareStateNotificationString : NSObject {
-    NSString *_body;
-    NSString *_sourcePersonID;
-    NSString *_title;
+    NSString * _body;
+    NSString * _sourcePersonID;
+    NSString * _title;
 }
 
 @property (nonatomic, retain) NSString *body;

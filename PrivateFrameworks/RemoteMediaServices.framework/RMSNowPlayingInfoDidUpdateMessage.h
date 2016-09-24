@@ -5,9 +5,9 @@
 @interface RMSNowPlayingInfoDidUpdateMessage : PBCodable <NSCopying> {
     struct { 
         unsigned int sessionIdentifier : 1; 
-    } _has;
-    RMSNowPlayingInfoMessage *_nowPlayingInfo;
-    int _sessionIdentifier;
+    }  _has;
+    RMSNowPlayingInfoMessage * _nowPlayingInfo;
+    int  _sessionIdentifier;
 }
 
 @property (nonatomic, readonly) BOOL hasNowPlayingInfo;

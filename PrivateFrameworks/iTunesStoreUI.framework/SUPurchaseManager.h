@@ -3,19 +3,19 @@
  */
 
 @interface SUPurchaseManager : NSObject <SSDownloadManagerObserver, SSPurchaseRequestDelegate, SSPurchaseRequestDelegatePrivate, SUContinuationDelegate> {
-    <SUPurchaseManagerDelegate> *_delegate;
-    NSMutableSet *_futurePurchases;
-    NSMutableSet *_inflightContinuations;
-    NSMutableArray *_observedDownloadManagers;
-    NSMutableArray *_pendingContinuations;
-    NSMutableArray *_pendingPurchases;
-    NSMutableArray *_purchaseRequests;
-    NSMutableSet *_purchasedIdentifiers;
-    SUQueueSessionManager *_queueSessionManager;
-    BOOL _showingErrorDialogs;
-    int _updatesCount;
-    NSString *_userAgent;
-    BOOL _waitingForAuthentication;
+    <SUPurchaseManagerDelegate> * _delegate;
+    NSMutableSet * _futurePurchases;
+    NSMutableSet * _inflightContinuations;
+    NSMutableArray * _observedDownloadManagers;
+    NSMutableArray * _pendingContinuations;
+    NSMutableArray * _pendingPurchases;
+    NSMutableArray * _purchaseRequests;
+    NSMutableSet * _purchasedIdentifiers;
+    SUQueueSessionManager * _queueSessionManager;
+    BOOL  _showingErrorDialogs;
+    int  _updatesCount;
+    NSString * _userAgent;
+    BOOL  _waitingForAuthentication;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -54,7 +54,7 @@
 - (void)addExternalDownloads:(id)arg1 withOptions:(id)arg2 inContext:(struct OpaqueJSContext { }*)arg3;
 - (void)addFuturePurchase:(id)arg1;
 - (BOOL)addPurchaseBatch:(id)arg1;
-- (void)addPurchasedItemIdentifier:(unsigned long long)arg1;
+- (void)addPurchasedItemIdentifier:(unsigned int)arg1;
 - (void)addPurchasedItemIdentifiers:(id)arg1;
 - (void)beginUpdates;
 - (void)cancelFuturePurchase:(id)arg1;
@@ -68,8 +68,8 @@
 - (void)enqueueScriptPurchases:(id)arg1;
 - (id)futurePurchases;
 - (id)init;
-- (BOOL)itemIdentifierIsPurchased:(unsigned long long)arg1;
-- (BOOL)itemIdentifierIsPurchasing:(unsigned long long)arg1;
+- (BOOL)itemIdentifierIsPurchased:(unsigned int)arg1;
+- (BOOL)itemIdentifierIsPurchasing:(unsigned int)arg1;
 - (id)newPurchaseBatchForItems:(id)arg1 offers:(id)arg2;
 - (int)numberOfPendingPurchases;
 - (void)purchaseRequest:(id)arg1 purchaseDidFail:(id)arg2 withError:(id)arg3;
@@ -79,7 +79,7 @@
 - (void)purchaseScriptObject:(id)arg1 withOptions:(id)arg2 inContext:(struct OpaqueJSContext { }*)arg3;
 - (id)purchasedItemIdentifiers;
 - (id)queueSessionManager;
-- (void)removePurchasedItemIdentifier:(unsigned long long)arg1;
+- (void)removePurchasedItemIdentifier:(unsigned int)arg1;
 - (void)request:(id)arg1 didFailWithError:(id)arg2;
 - (void)requestDidFinish:(id)arg1;
 - (void)setDelegate:(id)arg1;

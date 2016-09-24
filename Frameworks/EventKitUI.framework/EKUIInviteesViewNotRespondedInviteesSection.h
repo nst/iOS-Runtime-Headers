@@ -3,21 +3,21 @@
  */
 
 @interface EKUIInviteesViewNotRespondedInviteesSection : NSObject <EKUIInviteesViewSection> {
-    id /* block */ _addInviteesTapped;
-    NSOperationQueue *_availabilityRequestsQueue;
-    NSString *_cachedAddInviteeCellReuseIdentifier;
-    NSString *_cachedInviteeCellReuseIdentifier;
-    BOOL _canSeeAttendeeStatuses;
-    BOOL _editable;
-    EKEvent *_event;
-    NSMutableSet *_participantAddressesForInFlightAvailabilityOperations;
-    NSMutableDictionary *_participantAddressesToAvailabilityType;
-    NSMutableDictionary *_participantAddressesToParticipantIndex;
-    id /* block */ _participantRemoved;
-    id /* block */ _participantTapped;
-    NSMutableArray *_participants;
-    unsigned int _reuseIdentifierVersion;
-    id /* block */ _tableViewCellHook;
+    id /* block */  _addInviteesTapped;
+    NSOperationQueue * _availabilityRequestsQueue;
+    NSString * _cachedAddInviteeCellReuseIdentifier;
+    NSString * _cachedInviteeCellReuseIdentifier;
+    BOOL  _canSeeAttendeeStatuses;
+    BOOL  _editable;
+    EKEvent * _event;
+    NSMutableSet * _participantAddressesForInFlightAvailabilityOperations;
+    NSMutableDictionary * _participantAddressesToAvailabilityType;
+    NSMutableDictionary * _participantAddressesToParticipantIndex;
+    id /* block */  _participantRemoved;
+    id /* block */  _participantTapped;
+    NSMutableArray * _participants;
+    unsigned int  _reuseIdentifierVersion;
+    id /* block */  _tableViewCellHook;
 }
 
 @property (nonatomic, copy) id /* block */ addInviteesTapped;
@@ -103,6 +103,6 @@
 - (void)setTableViewCellHook:(id /* block */)arg1;
 - (id /* block */)tableViewCellHook;
 - (id)titleForDeleteConfirmationButtonForRow:(id)arg1;
-- (void)updateWithEvent:(id)arg1 editable:(BOOL)arg2;
+- (void)updateWithEvent:(id)arg1 editable:(BOOL)arg2 fromDetail:(BOOL)arg3;
 
 @end

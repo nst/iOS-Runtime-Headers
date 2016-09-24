@@ -3,24 +3,24 @@
  */
 
 @interface PLDiskController : NSObject {
-    long long _bytesRequiredForPhoto;
+    int  _bytesRequiredForPhoto;
     struct { 
         unsigned int needToCheckDiskSpace : 1; 
         unsigned int probablyLowOnDiskSpace : 1; 
         unsigned int isAssetsd : 1; 
         unsigned int extra : 28; 
-    } _flags;
-    double _lastFSCheck;
+    }  _flags;
+    double  _lastFSCheck;
 }
 
-+ (long long)diskSpaceAvailableForUse;
-+ (long long)freeDiskSpaceThreshold;
++ (int)diskSpaceAvailableForUse;
++ (int)freeDiskSpaceThreshold;
 + (id)sharedInstance;
 
 - (void)_actuallyUpdateCookie;
 - (void)_diskSpaceDidBecomeLow;
 - (void)_updateCookie;
-- (long long)bytesToAutomaticallyClear;
+- (int)bytesToAutomaticallyClear;
 - (void)dealloc;
 - (BOOL)hasEnoughDiskToTakePicture;
 - (id)init;

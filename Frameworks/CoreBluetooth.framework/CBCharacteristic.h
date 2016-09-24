@@ -3,16 +3,16 @@
  */
 
 @interface CBCharacteristic : CBAttribute {
-    NSArray *_descriptors;
-    NSNumber *_handle;
-    BOOL _isBroadcasted;
-    BOOL _isNotifying;
-    CBPeripheral *_peripheral;
-    unsigned int _properties;
-    CBService *_service;
-    NSData *_value;
-    NSNumber *_valueHandle;
-    unsigned long long _valueTimestamp;
+    NSArray * _descriptors;
+    NSNumber * _handle;
+    BOOL  _isBroadcasted;
+    BOOL  _isNotifying;
+    CBPeripheral * _peripheral;
+    unsigned int  _properties;
+    CBService * _service;
+    NSData * _value;
+    NSNumber * _valueHandle;
+    unsigned int  _valueTimestamp;
 }
 
 @property (retain) NSArray *descriptors;
@@ -24,9 +24,9 @@
 @property (nonatomic) CBService *service;
 @property (retain) NSData *value;
 @property (nonatomic, readonly) NSNumber *valueHandle;
-@property (nonatomic, readonly) unsigned long long valueTimestamp;
+@property (nonatomic, readonly) unsigned int valueTimestamp;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)description;
 - (id)descriptors;
 - (id)handle;
@@ -49,6 +49,6 @@
 - (void)setValue:(id)arg1;
 - (id)value;
 - (id)valueHandle;
-- (unsigned long long)valueTimestamp;
+- (unsigned int)valueTimestamp;
 
 @end

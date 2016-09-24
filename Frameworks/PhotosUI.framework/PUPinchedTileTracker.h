@@ -3,27 +3,27 @@
  */
 
 @interface PUPinchedTileTracker : PUInteractiveTileTracker {
-    PUVelocityFilter *__angularVelocityFilter;
-    PUVelocityFilter *__horizontalVelocityFilter;
-    PUTileLayoutInfo *__initialLayoutInfo;
-    PUChangeDirectionValueFilter *__pinchGestureRecognizerScaleDirectionValueFilter;
-    float __pinchProgress;
-    PUPinchTracker *__pinchTracker;
-    PUTileLayoutInfo *__targetLayoutInfo;
-    PUVelocityFilter *__verticalVelocityFilter;
+    PUVelocityFilter * __angularVelocityFilter;
+    PUVelocityFilter * __horizontalVelocityFilter;
+    PUTileLayoutInfo * __initialLayoutInfo;
+    PUChangeDirectionValueFilter * __pinchGestureRecognizerScaleDirectionValueFilter;
+    double  __pinchProgress;
+    PUPinchTracker * __pinchTracker;
+    PUTileLayoutInfo * __targetLayoutInfo;
+    PUVelocityFilter * __verticalVelocityFilter;
     struct { 
         BOOL respondsToInitialAspectRatioForTileWithLayoutInfo; 
         BOOL respondsToFinalLayoutInfoForTileWithLayoutInfo; 
-    } _delegateFlags;
-    int _direction;
-    UIPinchGestureRecognizer *_pinchGestureRecognizer;
+    }  _delegateFlags;
+    int  _direction;
+    UIPinchGestureRecognizer * _pinchGestureRecognizer;
 }
 
 @property (setter=_setAngularVelocityFilter:, nonatomic, retain) PUVelocityFilter *_angularVelocityFilter;
 @property (setter=_setHorizontalVelocityFilter:, nonatomic, retain) PUVelocityFilter *_horizontalVelocityFilter;
 @property (setter=_setInitialLayoutInfo:, nonatomic, retain) PUTileLayoutInfo *_initialLayoutInfo;
 @property (setter=_setPinchGestureRecognizerScaleDirectionValueFilter:, nonatomic, retain) PUChangeDirectionValueFilter *_pinchGestureRecognizerScaleDirectionValueFilter;
-@property (setter=_setPinchProgress:, nonatomic) float _pinchProgress;
+@property (setter=_setPinchProgress:, nonatomic) double _pinchProgress;
 @property (setter=_setPinchTracker:, nonatomic, retain) PUPinchTracker *_pinchTracker;
 @property (setter=_setTargetLayoutInfo:, nonatomic, retain) PUTileLayoutInfo *_targetLayoutInfo;
 @property (setter=_setVerticalVelocityFilter:, nonatomic, retain) PUVelocityFilter *_verticalVelocityFilter;

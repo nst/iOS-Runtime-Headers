@@ -3,14 +3,14 @@
  */
 
 @interface HKActivityChartPoint : NSObject <HKChartPoint> {
-    NSNumber *_activeEnergyBurnedMinusWorkouts;
-    HKActivityCache *_activityCache;
-    NSDate *_date;
-    HKActivityChartPointSummary *_summary;
-    HKUnit *_unit;
-    NSNumber *_workoutActiveEnergyBurned;
-    NSArray *_workoutTimes;
-    NSArray *_workouts;
+    NSNumber * _activeEnergyBurnedMinusWorkouts;
+    HKActivityCache * _activityCache;
+    NSDate * _date;
+    HKActivityChartPointSummary * _summary;
+    HKUnit * _unit;
+    NSNumber * _workoutActiveEnergyBurned;
+    NSArray * _workoutTimes;
+    NSArray * _workouts;
 }
 
 @property (readonly, copy) NSString *debugDescription;

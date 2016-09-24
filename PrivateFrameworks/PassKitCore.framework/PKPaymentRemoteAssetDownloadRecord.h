@@ -3,8 +3,8 @@
  */
 
 @interface PKPaymentRemoteAssetDownloadRecord : PKPaymentBackgroundDownloadRecord <NSSecureCoding> {
-    NSURL *_passURL;
-    NSDictionary *_remoteAssetsByTaskIdentifier;
+    NSURL * _passURL;
+    NSDictionary * _remoteAssetsByTaskIdentifier;
 }
 
 @property (nonatomic, retain) NSURL *passURL;
@@ -12,7 +12,7 @@
 
 + (BOOL)supportsSecureCoding;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;

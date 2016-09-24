@@ -9,8 +9,8 @@
         int (*retain)(); 
         int (*release)(); 
         int (*describe)(); 
-    } _callBacks;
-    struct __CFBasicHash { } *_ht;
+    }  _callBacks;
+    struct __CFBasicHash { } * _ht;
 }
 
 - (void)addObject:(id)arg1;

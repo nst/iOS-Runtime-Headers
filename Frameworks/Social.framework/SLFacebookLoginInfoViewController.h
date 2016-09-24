@@ -3,8 +3,8 @@
  */
 
 @interface SLFacebookLoginInfoViewController : UITableViewController {
-    <SLFacebookLoginInfoViewControllerDelegate> *_delegate;
-    SLFacebookLoginInfoFooter *_footerView;
+    <SLFacebookLoginInfoViewControllerDelegate> * _delegate;
+    SLFacebookLoginInfoFooter * _footerView;
 }
 
 @property (nonatomic) <SLFacebookLoginInfoViewControllerDelegate> *delegate;

@@ -3,13 +3,13 @@
  */
 
 @interface WBSParsecSearchMescalSession : NSObject {
-    BOOL _complete;
+    BOOL  _complete;
     struct FairPlayHWInfo_ { 
         unsigned int IDLength; 
         unsigned char ID[20]; 
-    } _hardwareInfo;
-    struct FPSAPContextOpaque_ { } *_session;
-    unsigned int _versionNumber;
+    }  _hardwareInfo;
+    struct FPSAPContextOpaque_ { } * _session;
+    unsigned int  _versionNumber;
 }
 
 - (BOOL)_getHardwareInfo:(struct FairPlayHWInfo_ { unsigned int x1; unsigned char x2[20]; }*)arg1;

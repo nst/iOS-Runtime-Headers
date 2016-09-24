@@ -2,19 +2,14 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SACalendarEventSearch : SABaseClientBoundCommand {
-    NSURL *_eventId;
-    NSURL *_targetAppId;
-}
+@interface SACalendarEventSearch : SADomainCommand
 
 @property (nonatomic, copy) NSDate *endDate;
-@property (nonatomic, copy) NSURL *eventId;
-@property (nonatomic, retain) NSNumber *limit;
+@property (nonatomic, copy) NSNumber *limit;
 @property (nonatomic, copy) NSString *location;
 @property (nonatomic, copy) NSString *notes;
 @property (nonatomic, copy) NSArray *participants;
 @property (nonatomic, copy) NSDate *startDate;
-@property (nonatomic, copy) NSURL *targetAppId;
 @property (nonatomic, copy) NSString *timeZoneId;
 @property (nonatomic, copy) NSString *title;
 
@@ -23,7 +18,6 @@
 
 - (id)encodedClassName;
 - (id)endDate;
-- (id)eventId;
 - (id)groupIdentifier;
 - (id)limit;
 - (id)location;
@@ -31,17 +25,14 @@
 - (id)participants;
 - (BOOL)requiresResponse;
 - (void)setEndDate:(id)arg1;
-- (void)setEventId:(id)arg1;
 - (void)setLimit:(id)arg1;
 - (void)setLocation:(id)arg1;
 - (void)setNotes:(id)arg1;
 - (void)setParticipants:(id)arg1;
 - (void)setStartDate:(id)arg1;
-- (void)setTargetAppId:(id)arg1;
 - (void)setTimeZoneId:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)startDate;
-- (id)targetAppId;
 - (id)timeZoneId;
 - (id)title;
 

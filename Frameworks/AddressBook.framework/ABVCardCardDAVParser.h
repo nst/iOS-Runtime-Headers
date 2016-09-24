@@ -3,14 +3,14 @@
  */
 
 @interface ABVCardCardDAVParser : ABVCardParser {
-    NSData *_lastCropRectChecksum;
-    int _lastCropRectHeight;
-    int _lastCropRectWidth;
-    int _lastCropRectX;
-    int _lastCropRectY;
-    BOOL _localRecordHasAdditionalProperties;
-    BOOL _removeExistingProperties;
-    NSMutableDictionary *_unknownAttributes;
+    NSData * _lastCropRectChecksum;
+    int  _lastCropRectHeight;
+    int  _lastCropRectWidth;
+    int  _lastCropRectX;
+    int  _lastCropRectY;
+    BOOL  _localRecordHasAdditionalProperties;
+    BOOL  _removeExistingProperties;
+    NSMutableDictionary * _unknownAttributes;
 }
 
 @property (readonly, retain) NSData *lastCropRectChecksum;

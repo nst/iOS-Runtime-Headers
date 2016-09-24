@@ -3,13 +3,13 @@
  */
 
 @interface GKPlayerPickerViewController : GKCollectionViewController {
-    GKGame *_game;
-    id /* block */ _handler;
-    int _maxSelectable;
-    <GKNearbyBrowserDelegate> *_nearbyDelegate;
-    NSArray *_preselectedPlayers;
-    GKSearchBarView *_searchBar;
-    BOOL _supportsNearby;
+    GKGame * _game;
+    id /* block */  _handler;
+    int  _maxSelectable;
+    <GKNearbyBrowserDelegate> * _nearbyDelegate;
+    NSArray * _preselectedPlayers;
+    GKSearchBarView * _searchBar;
+    BOOL  _supportsNearby;
 }
 
 @property (nonatomic, retain) GKGame *game;

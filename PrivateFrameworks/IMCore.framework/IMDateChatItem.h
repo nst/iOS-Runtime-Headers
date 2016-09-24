@@ -4,7 +4,7 @@
 
 @interface IMDateChatItem : IMTranscriptChatItem
 
-@property (nonatomic, readonly, retain) NSDate *date;
+@property (nonatomic, readonly) NSDate *date;
 
 // Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
 

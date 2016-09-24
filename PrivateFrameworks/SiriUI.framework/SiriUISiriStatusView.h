@@ -3,31 +3,31 @@
  */
 
 @interface SiriUISiriStatusView : UIView <SUICFlamesViewDelegate, SiriUISiriStatusViewProtocol, UIGestureRecognizerDelegate> {
-    <SiriUISiriStatusViewAnimationDelegate> *_animationDelegate;
-    UIButton *_button;
-    SiriUIConfiguration *_configuration;
-    int _deferredFlamesViewState;
-    <SiriUISiriStatusViewDelegate> *_delegate;
-    float _disabledMicOpacity;
-    UIView *_flamesContainerView;
-    SUICFlamesView *_flamesView;
-    BOOL _flamesViewDeferred;
-    float _flamesViewWidth;
-    double _lastStateChangeTime;
-    UILongPressGestureRecognizer *_longPressRecognizer;
-    UIImageView *_micGlyphImageView;
-    int _mode;
-    UIScreen *_screen;
+    <SiriUISiriStatusViewAnimationDelegate> * _animationDelegate;
+    UIButton * _button;
+    SiriUIConfiguration * _configuration;
+    int  _deferredFlamesViewState;
+    <SiriUISiriStatusViewDelegate> * _delegate;
+    double  _disabledMicOpacity;
+    UIView * _flamesContainerView;
+    SUICFlamesView * _flamesView;
+    BOOL  _flamesViewDeferred;
+    double  _flamesViewWidth;
+    double  _lastStateChangeTime;
+    UILongPressGestureRecognizer * _longPressRecognizer;
+    UIImageView * _micGlyphImageView;
+    int  _mode;
+    UIScreen * _screen;
 }
 
 @property (nonatomic) <SiriUISiriStatusViewAnimationDelegate> *animationDelegate;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SiriUISiriStatusViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) float disabledMicOpacity;
+@property (nonatomic) double disabledMicOpacity;
 @property (nonatomic, readonly) UIView *flamesContainerView;
 @property (nonatomic) BOOL flamesViewDeferred;
-@property (nonatomic) float flamesViewWidth;
+@property (nonatomic) double flamesViewWidth;
 @property (readonly) unsigned int hash;
 @property (nonatomic) int mode;
 @property (readonly) Class superclass;
@@ -37,13 +37,13 @@
 - (void).cxx_destruct;
 - (void)_animateMicGlyphHidden:(BOOL)arg1;
 - (void)_attachFlamesViewIfNeeded;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_flamesFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_flamesFrame;
 - (id)_flamesView;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_flamesViewFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_flamesViewFrame;
 - (void)_layoutFlamesViewIfNeeded;
 - (void)_micButtonHeld:(id)arg1;
 - (void)_micButtonTapped:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_micGlyphTappableRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_micGlyphTappableRect;
 - (void)_setFlamesViewState:(int)arg1;
 - (id)animationDelegate;
 - (float)audioLevelForFlamesView:(id)arg1;
@@ -55,16 +55,16 @@
 - (float)flamesViewWidth;
 - (void)forceMicVisible:(BOOL)arg1;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 screen:(id)arg2 configuration:(id)arg3;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 screen:(id)arg2 configuration:(id)arg3;
 - (void)layoutSubviews;
 - (int)mode;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (BOOL)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (void)setAnimationDelegate:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDisabledMicOpacity:(float)arg1;
 - (void)setFlamesViewDeferred:(BOOL)arg1;
 - (void)setFlamesViewWidth:(float)arg1;
 - (void)setMode:(int)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 
 @end

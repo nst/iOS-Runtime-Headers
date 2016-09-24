@@ -3,12 +3,12 @@
  */
 
 @interface NSAddressCheckingResult : NSTextCheckingResult {
-    NSDictionary *_components;
+    NSDictionary * _components;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _range;
-    id _underlyingResult;
+    }  _range;
+    id  _underlyingResult;
 }
 
 @property (readonly) void*underlyingResult;
@@ -24,7 +24,7 @@
 - (id)initWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 components:(id)arg2 underlyingResult:(void*)arg3;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })range;
 - (id)resultByAdjustingRangesWithOffset:(int)arg1;
-- (unsigned long long)resultType;
+- (unsigned int)resultType;
 - (void*)underlyingResult;
 
 @end

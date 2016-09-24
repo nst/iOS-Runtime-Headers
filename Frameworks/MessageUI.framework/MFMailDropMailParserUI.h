@@ -4,12 +4,12 @@
 
 @interface MFMailDropMailParserUI : MFMailDropMailParser
 
-+ (void)MFConvertHTMLNodeToAttachmentNode:(id)arg1 element:(id)arg2 mailDrop:(id)arg3;
 + (id)_extractElementURL:(id)arg1;
 + (id)_mailDropClassName:(id)arg1;
 + (BOOL)isMailDropBanner:(id)arg1;
 + (BOOL)isMailDropClass:(id)arg1;
 + (BOOL)isMailDropItem:(id)arg1;
++ (id)metadataWithDictionary:(id)arg1;
 + (id)parseElement:(id)arg1;
 
 @end

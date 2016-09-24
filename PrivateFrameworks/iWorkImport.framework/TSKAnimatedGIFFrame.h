@@ -3,8 +3,8 @@
  */
 
 @interface TSKAnimatedGIFFrame : NSObject {
-    struct CGImage { } *mImage;
-    double mTime;
+    struct CGImage { } * mImage;
+    double  mTime;
 }
 
 @property (nonatomic, readonly) struct CGImage { }*image;

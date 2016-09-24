@@ -23,8 +23,8 @@
         unsigned int kerning : 2; 
         unsigned int strikethrough : 2; 
         unsigned int caps : 2; 
-    } mData;
-    unsigned int mHash;
+    }  mData;
+    unsigned int  mHash;
 }
 
 - (void)applyToParagraphProperties:(id)arg1 graphicStyleCache:(id)arg2;

@@ -3,9 +3,9 @@
  */
 
 @interface CoreDAVAction : NSObject {
-    int _action;
-    id _changeContext;
-    id _context;
+    int  _action;
+    id  _changeContext;
+    id  _context;
 }
 
 @property (nonatomic, readonly) int action;

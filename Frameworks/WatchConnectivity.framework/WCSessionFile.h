@@ -3,12 +3,12 @@
  */
 
 @interface WCSessionFile : NSObject <NSSecureCoding> {
-    NSDate *_creationDate;
-    NSString *_fileIdentifier;
-    NSURL *_fileURL;
-    NSDictionary *_metadata;
-    NSString *_relativePath;
-    WCUserInfo *_userInfoStorage;
+    NSDate * _creationDate;
+    NSString * _fileIdentifier;
+    NSURL * _fileURL;
+    NSDictionary * _metadata;
+    NSString * _relativePath;
+    WCUserInfo * _userInfoStorage;
 }
 
 @property (nonatomic, retain) NSDate *creationDate;

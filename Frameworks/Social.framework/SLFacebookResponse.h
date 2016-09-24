@@ -3,10 +3,10 @@
  */
 
 @interface SLFacebookResponse : NSObject <NSCoding> {
-    int _httpErrorCode;
-    NSData *_responseData;
-    id _untypedResponseParameters;
-    NSHTTPURLResponse *_urlResponse;
+    int  _httpErrorCode;
+    NSData * _responseData;
+    id  _untypedResponseParameters;
+    NSHTTPURLResponse * _urlResponse;
 }
 
 @property (readonly) int APIresponseErrorCode;

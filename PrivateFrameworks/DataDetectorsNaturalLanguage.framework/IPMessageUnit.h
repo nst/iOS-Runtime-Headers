@@ -3,30 +3,38 @@
  */
 
 @interface IPMessageUnit : NSObject {
-    NSArray *_features;
-    NSArray *_flatMessageThread;
-    NSMutableArray *_followups;
-    int _indexInOriginalMessage;
-    IPMessage *_originalMessage;
-    IPMessageUnit *_previous;
-    NSString *_text;
+    NSString * _bestLanguage;
+    NSArray * _features;
+    NSArray * _flatMessageThread;
+    NSMutableArray * _followups;
+    int  _indexInOriginalMessage;
+    NSString * _lowercaseText;
+    IPMessage * _originalMessage;
+    IPMessageUnit * _previous;
+    NSIndexSet * _rejectionRanges;
+    NSString * _text;
 }
 
 @property (readonly) NSArray *features;
 @property (readonly) NSArray *followups;
 @property (readonly) int indexInOriginalMessage;
+@property (readonly, copy) NSString *lowercaseText;
 @property (readonly) IPMessage *originalMessage;
 @property (readonly) IPMessageUnit *previous;
-@property (readonly) NSString *text;
+@property (readonly, copy) NSString *text;
 
 - (void).cxx_destruct;
 - (void)addFollowup:(id)arg1;
+- (id)bestLanguageID;
 - (id)features;
 - (id)followups;
 - (int)indexInOriginalMessage;
 - (id)initWithText:(id)arg1 originalMessage:(id)arg2 index:(int)arg3;
+- (id)lowercaseText;
 - (id)originalMessage;
 - (id)previous;
+- (id)rejectionRanges;
+- (void)setFeatures:(id)arg1;
 - (id)text;
 
 @end

@@ -3,7 +3,7 @@
  */
 
 @interface CKAllPredicateValidator : CKPredicateValidatorInstance {
-    NSArray *_validators;
+    NSArray * _validators;
 }
 
 @property (nonatomic, retain) NSArray *validators;

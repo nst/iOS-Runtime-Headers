@@ -3,15 +3,15 @@
  */
 
 @interface AXSimpleRuntimeManager : NSObject {
-    id /* block */ _applicationElementCallback;
-    id /* block */ _attributeCallback;
-    id /* block */ _clientObserverCallback;
-    id /* block */ _hitTestCallback;
-    id /* block */ _outgoingValuePreprocessor;
-    id /* block */ _parameterizedAttributeCallback;
-    id /* block */ _performActionCallback;
-    id /* block */ _setAttributeCallback;
-    BOOL _systemWideServer;
+    id /* block */  _applicationElementCallback;
+    id /* block */  _attributeCallback;
+    id /* block */  _clientObserverCallback;
+    id /* block */  _hitTestCallback;
+    id /* block */  _outgoingValuePreprocessor;
+    id /* block */  _parameterizedAttributeCallback;
+    id /* block */  _performActionCallback;
+    id /* block */  _setAttributeCallback;
+    BOOL  _systemWideServer;
 }
 
 @property (nonatomic, copy) id /* block */ applicationElementCallback;
@@ -29,6 +29,7 @@
 - (id /* block */)applicationElementCallback;
 - (id /* block */)attributeCallback;
 - (id /* block */)clientObserverCallback;
+- (void)dealloc;
 - (id /* block */)hitTestCallback;
 - (id /* block */)outgoingValuePreprocessor;
 - (id /* block */)parameterizedAttributeCallback;

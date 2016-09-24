@@ -5,6 +5,7 @@
 @interface SALocalSearchBusiness2 : SADomainObject <SAAceSerializable>
 
 @property (nonatomic, retain) SALocation *address;
+@property (nonatomic, copy) NSArray *attributions;
 @property (nonatomic, copy) NSURL *businessUrl;
 @property (nonatomic, copy) NSArray *categories;
 @property (nonatomic, copy) NSArray *commands;
@@ -32,6 +33,7 @@
 + (id)business2WithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)address;
+- (id)attributions;
 - (id)businessUrl;
 - (id)categories;
 - (id)commands;
@@ -51,6 +53,7 @@
 - (id)priceRange;
 - (id)reviewList;
 - (void)setAddress:(id)arg1;
+- (void)setAttributions:(id)arg1;
 - (void)setBusinessUrl:(id)arg1;
 - (void)setCategories:(id)arg1;
 - (void)setCommands:(id)arg1;
@@ -74,6 +77,7 @@
 
 - (id)afui_mapItemRepresentation;
 - (id)afui_mapsURL;
+- (id)donateActivityCommand;
 
 // Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
 

@@ -3,10 +3,10 @@
  */
 
 @interface TSWPCharacterStyleValidateFontResult : NSObject {
-    int _bold;
-    int _italic;
-    NSString *_mappedName;
-    TSKWarning *_warning;
+    int  _bold;
+    int  _italic;
+    NSString * _mappedName;
+    TSKWarning * _warning;
 }
 
 @property (nonatomic) int bold;

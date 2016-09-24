@@ -3,34 +3,34 @@
  */
 
 @interface AFUIRequestOptions : NSObject <NSCopying, NSSecureCoding> {
-    BOOL _acousticIdEnabled;
-    NSString *_appBundleIdentifier;
-    NSString *_bluetoothDeviceAddress;
-    AFBulletin *_bulletin;
-    double _buttonDownTimestamp;
-    SAGuidanceCheckForGuideUpdateContext *_checkForGuideUpdateContext;
-    NSDictionary *_continuityInfo;
-    int _directActionEvent;
-    double _expectedTimestamp;
-    NSNumber *_homeButtonUpFromBeep;
-    BOOL _initialBringUp;
-    NSDictionary *_messagesDirectActionContext;
-    SASPronunciationContext *_pronunciationContext;
-    BOOL _pronunciationRequest;
-    BOOL _releaseAudioSessionOnRecordingCompletion;
-    AFRequestInfo *_requestInfo;
-    int _requestSource;
-    NSString *_serverCommandId;
-    NSURL *_speechFileURL;
-    NSString *_text;
-    double _timestamp;
-    BOOL _useAutomaticEndpointing;
-    BOOL _useStreamingDictation;
+    BOOL  _acousticIdEnabled;
+    NSString * _activationDeviceIdentifier;
+    NSString * _appBundleIdentifier;
+    AFBulletin * _bulletin;
+    double  _buttonDownTimestamp;
+    SAGuidanceCheckForGuideUpdateContext * _checkForGuideUpdateContext;
+    NSDictionary * _continuityInfo;
+    int  _directActionEvent;
+    double  _expectedTimestamp;
+    NSNumber * _homeButtonUpFromBeep;
+    BOOL  _initialBringUp;
+    NSDictionary * _messagesDirectActionContext;
+    SASPronunciationContext * _pronunciationContext;
+    BOOL  _pronunciationRequest;
+    BOOL  _releaseAudioSessionOnRecordingCompletion;
+    AFRequestInfo * _requestInfo;
+    int  _requestSource;
+    NSString * _serverCommandId;
+    NSURL * _speechFileURL;
+    NSString * _text;
+    double  _timestamp;
+    BOOL  _useAutomaticEndpointing;
+    BOOL  _useStreamingDictation;
 }
 
 @property (nonatomic) BOOL acousticIdEnabled;
+@property (nonatomic, copy) NSString *activationDeviceIdentifier;
 @property (nonatomic, copy) NSString *appBundleIdentifier;
-@property (nonatomic, copy) NSString *bluetoothDeviceAddress;
 @property (nonatomic, retain) AFBulletin *bulletin;
 @property (nonatomic) double buttonDownTimestamp;
 @property (nonatomic, copy) SAGuidanceCheckForGuideUpdateContext *checkForGuideUpdateContext;
@@ -59,8 +59,8 @@
 - (void).cxx_destruct;
 - (void)_configureStreamingDictationForSource:(int)arg1;
 - (BOOL)acousticIdEnabled;
+- (id)activationDeviceIdentifier;
 - (id)appBundleIdentifier;
-- (id)bluetoothDeviceAddress;
 - (id)bulletin;
 - (double)buttonDownTimestamp;
 - (id)checkForGuideUpdateContext;
@@ -85,8 +85,8 @@
 - (int)requestSource;
 - (id)serverCommandId;
 - (void)setAcousticIdEnabled:(BOOL)arg1;
+- (void)setActivationDeviceIdentifier:(id)arg1;
 - (void)setAppBundleIdentifier:(id)arg1;
-- (void)setBluetoothDeviceAddress:(id)arg1;
 - (void)setBulletin:(id)arg1;
 - (void)setButtonDownTimestamp:(double)arg1;
 - (void)setCheckForGuideUpdateContext:(id)arg1;

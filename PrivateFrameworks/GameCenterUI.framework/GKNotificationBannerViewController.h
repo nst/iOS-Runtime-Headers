@@ -3,11 +3,11 @@
  */
 
 @interface GKNotificationBannerViewController : UIViewController {
-    BOOL _bannerAnimating;
-    GKNotificationBannerView *_bannerView;
-    BOOL _bannerVisible;
-    NSLayoutConstraint *_bannerWidthConstraint;
-    NSLayoutConstraint *_bannerYPositionConstraint;
+    BOOL  _bannerAnimating;
+    GKNotificationBannerView * _bannerView;
+    BOOL  _bannerVisible;
+    NSLayoutConstraint * _bannerWidthConstraint;
+    NSLayoutConstraint * _bannerYPositionConstraint;
 }
 
 @property (nonatomic) BOOL bannerAnimating;
@@ -16,15 +16,15 @@
 @property (nonatomic, retain) NSLayoutConstraint *bannerWidthConstraint;
 @property (nonatomic, retain) NSLayoutConstraint *bannerYPositionConstraint;
 
-- (struct CGPoint { float x1; float x2; })_hiddenBannerPosition:(struct CGSize { float x1; float x2; })arg1;
-- (struct CGPoint { float x1; float x2; })_visibleBannerCenterPosition:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGPoint { double x1; double x2; })_hiddenBannerPosition:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGPoint { double x1; double x2; })_visibleBannerCenterPosition:(struct CGSize { double x1; double x2; })arg1;
 - (void)addBannerView:(id)arg1;
 - (void)addConstraintsForBannerView;
 - (BOOL)bannerAnimating;
 - (id)bannerView;
 - (BOOL)bannerVisible;
 - (id)bannerWidthConstraint;
-- (float)bannerWidthForViewSize:(struct CGSize { float x1; float x2; })arg1;
+- (float)bannerWidthForViewSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)bannerYPositionConstraint;
 - (void)dealloc;
 - (void)handleWindowPan:(id)arg1;
@@ -38,8 +38,8 @@
 - (void)setBannerYPositionConstraint:(id)arg1;
 - (void)showCurrentBanner;
 - (unsigned int)supportedInterfaceOrientations;
-- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
-- (BOOL)windowPointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (BOOL)windowPointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (void)windowTouchesEnded:(id)arg1 withEvent:(id)arg2;
 
 @end

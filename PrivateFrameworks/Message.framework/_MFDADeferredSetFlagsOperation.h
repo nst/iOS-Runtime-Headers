@@ -3,9 +3,9 @@
  */
 
 @interface _MFDADeferredSetFlagsOperation : MFOfflineCacheOperation <MFDAOfflineCacheOperation> {
-    NSString *_messageID;
-    unsigned long long _offFlags;
-    unsigned long long _onFlags;
+    NSString * _messageID;
+    unsigned int  _offFlags;
+    unsigned int  _onFlags;
 }
 
 - (void)dealloc;

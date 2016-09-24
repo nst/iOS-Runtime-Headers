@@ -3,13 +3,13 @@
  */
 
 @interface IMLocationManager : NSObject <CLLocationManagerDelegate, IMLocationManager> {
-    NSError *_error;
-    NSMutableArray *_handlers;
-    NSDate *_locateStartTime;
-    CLLocation *_location;
-    CLLocationManager *_locationManager;
-    NSTimer *_locationUpdateTimer;
-    NSTimer *_timeoutHandler;
+    NSError * _error;
+    NSMutableArray * _handlers;
+    NSDate * _locateStartTime;
+    CLLocation * _location;
+    CLLocationManager * _locationManager;
+    NSTimer * _locationUpdateTimer;
+    NSTimer * _timeoutHandler;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -28,6 +28,7 @@
 + (id)locationShifter;
 + (id)sharedInstance;
 
+- (void).cxx_destruct;
 - (void)_fireCompletionHandlers;
 - (void)_locationManagerTimedOut;
 - (void)_locationUpdateTimerFired:(id)arg1;

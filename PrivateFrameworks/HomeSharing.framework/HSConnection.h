@@ -3,37 +3,37 @@
  */
 
 @interface HSConnection : NSObject {
-    NSObject<OS_dispatch_source> *_activityTimerSource;
-    unsigned int _basePlaylistContainerID;
-    NSURL *_baseURL;
-    NSURLSession *_connectionSession;
-    int _connectionState;
-    int _connectionType;
-    unsigned int _controlKey;
-    unsigned int _controlPort;
-    unsigned int _databaseID;
-    unsigned int _databaseRevision;
-    HSFairPlayInfo *_fairPlayInfo;
-    NSString *_homeSharingGroupID;
-    unsigned int _interfaceID;
-    unsigned int _promptID;
-    NSObject<OS_dispatch_queue> *_serialQueue;
-    unsigned int _sessionID;
+    NSObject<OS_dispatch_source> * _activityTimerSource;
+    unsigned int  _basePlaylistContainerID;
+    NSURL * _baseURL;
+    NSURLSession * _connectionSession;
+    int  _connectionState;
+    int  _connectionType;
+    unsigned int  _controlKey;
+    unsigned int  _controlPort;
+    unsigned int  _databaseID;
+    unsigned int  _databaseRevision;
+    HSFairPlayInfo * _fairPlayInfo;
+    NSString * _homeSharingGroupID;
+    unsigned int  _interfaceID;
+    unsigned int  _promptID;
+    NSObject<OS_dispatch_queue> * _serialQueue;
+    unsigned int  _sessionID;
 }
 
-@property unsigned int basePlaylistContainerID;
+@property (nonatomic) unsigned int basePlaylistContainerID;
 @property (nonatomic, readonly) NSURL *baseURL;
 @property (nonatomic) int connectionState;
 @property (nonatomic, readonly) int connectionType;
-@property unsigned int controlKey;
-@property unsigned int controlPort;
-@property unsigned int databaseID;
-@property unsigned int databaseRevision;
+@property (nonatomic) unsigned int controlKey;
+@property (nonatomic) unsigned int controlPort;
+@property (nonatomic) unsigned int databaseID;
+@property (nonatomic) unsigned int databaseRevision;
 @property (retain) HSFairPlayInfo *fairPlayInfo;
 @property (copy) NSString *homeSharingGroupID;
-@property unsigned int interfaceID;
+@property (nonatomic) unsigned int interfaceID;
 @property (nonatomic) unsigned int promptID;
-@property unsigned int sessionID;
+@property (nonatomic) unsigned int sessionID;
 
 - (void).cxx_destruct;
 - (void)_continueFPSetupNegotiationWithData:(id)arg1 internalConnectionCompletionHandler:(id /* block */)arg2;

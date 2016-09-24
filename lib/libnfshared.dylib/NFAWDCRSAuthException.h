@@ -3,7 +3,7 @@
  */
 
 @interface NFAWDCRSAuthException : NSObject <NFAWDEventProtocol> {
-    AWDNFCCRSAuthExceptionEvent *_metric;
+    AWDNFCCRSAuthExceptionEvent * _metric;
 }
 
 @property (readonly, copy) NSString *debugDescription;

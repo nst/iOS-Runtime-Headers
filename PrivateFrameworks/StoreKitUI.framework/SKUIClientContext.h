@@ -3,30 +3,35 @@
  */
 
 @interface SKUIClientContext : NSObject <SUClientInterfaceDelegatePrivate> {
-    NSString *_additionalPurchaseParameters;
-    SKUIApplicationController *_applicationController;
-    NSBundle *_bundle;
-    SUClientInterface *_clientInterface;
-    NSDictionary *_configurationDictionary;
-    SKUIStoreDialogController *_dialogController;
-    SKUILocalizedStringDictionary *_localizedStrings;
-    NSString *_metricsConfigurationIdentifier;
-    NSMapTable *_metricsPageContexts;
-    NSMutableArray *_navigationHistory;
-    NSString *_navigationHistoryPersistenceKey;
-    NSString *_purchaseAffiliateIdentifier;
-    SKUIURL *_purchaseReferrerURL;
-    int _purchaseURLBagType;
-    IKAppContext *_scriptAppContext;
-    NSString *_storeFrontIdentifier;
-    SSUpdatableAssetController *_updatableAssetController;
-    SKUIURLBag *_urlBag;
-    int _userInterfaceIdiomOverride;
+    NSString * _additionalPurchaseParameters;
+    SKUIApplicationController * _applicationController;
+    NSBundle * _bundle;
+    SUClientInterface * _clientInterface;
+    NSDictionary * _configurationDictionary;
+    SKUIStoreDialogController * _dialogController;
+    SKUILocalizedStringDictionary * _localizedStrings;
+    NSString * _metricsConfigurationIdentifier;
+    NSMapTable * _metricsPageContexts;
+    NSMutableArray * _navigationHistory;
+    NSString * _navigationHistoryPersistenceKey;
+    NSCache * _placeholderImageCache;
+    NSString * _purchaseAffiliateIdentifier;
+    SKUIURL * _purchaseReferrerURL;
+    int  _purchaseURLBagType;
+    NSOperationQueue * _resourceLoadQueue;
+    IKAppContext * _scriptAppContext;
+    NSString * _storeFrontIdentifier;
+    SKUITrendingSearchProvider * _trendingSearchProvider;
+    SSUpdatableAssetController * _updatableAssetController;
+    SKUIURLBag * _urlBag;
+    int  _userInterfaceIdiomOverride;
 }
 
 @property (nonatomic, readonly) SSURLBag *URLBag;
 @property (getter=_applicationController, setter=_setApplicationController:, nonatomic) SKUIApplicationController *_applicationController;
 @property (getter=_scriptAppContext, setter=_setScriptAppContext:, nonatomic, retain) IKAppContext *_scriptAppContext;
+@property (getter=applicationController, nonatomic, readonly) SKUIApplicationController *applicationController;
+@property (getter=isBootstrapScriptFallbackDisabled, nonatomic, readonly) BOOL bootstrapScriptFallbackDisabled;
 @property (nonatomic, readonly) SUClientInterface *clientInterface;
 @property (nonatomic, readonly, copy) NSDictionary *configurationDictionary;
 @property (readonly, copy) NSString *debugDescription;
@@ -38,17 +43,23 @@
 @property (getter=isMultiUser, nonatomic, readonly) BOOL multiUser;
 @property (nonatomic, readonly) NSArray *navigationHistory;
 @property (nonatomic, copy) NSString *navigationHistoryPersistenceKey;
+@property (nonatomic, readonly) NSCache *placeholderImageCache;
 @property (nonatomic, readonly) SSVPlatformContext *platformContext;
 @property (nonatomic, copy) SKUIURL *purchaseReferrerURL;
+@property (nonatomic, readonly) NSOperationQueue *resourceLoadQueue;
 @property (nonatomic, readonly) NSString *storeFrontIdentifier;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) SKUITrendingSearchProvider *trendingSearchProvider;
 @property (nonatomic, retain) SSUpdatableAssetController *updatableAssetController;
 @property (nonatomic) int userInterfaceIdiomOverride;
 
++ (id)_cachePath;
 + (id)_cachePathForStoreFrontIdentifier:(id)arg1;
 + (id)_configurationDictionaryWithBagDictionary:(id)arg1;
 + (id)_fallbackConfigurationDictionary;
 + (id)defaultContext;
++ (id)localizedStringForKey:(id)arg1 inBundles:(id)arg2;
++ (id)localizedStringForKey:(id)arg1 inBundles:(id)arg2 inTable:(id)arg3;
 
 - (void).cxx_destruct;
 - (id)SAPSessionForVersion:(int)arg1;
@@ -63,7 +74,10 @@
 - (void)_setScriptAppContext:(id)arg1;
 - (void)_setValue:(id)arg1 forConfigurationKey:(id)arg2;
 - (id)additionalLeftBarButtonItemForDocumentContainerViewController:(id)arg1;
+- (id)additionalLeftBarButtonItemForViewController:(id)arg1;
 - (id)additionalRightBarButtonItemForDocumentContainerViewController:(id)arg1;
+- (id)additionalRightBarButtonItemForViewController:(id)arg1;
+- (id)applicationController;
 - (id)clientInterface;
 - (void)clientInterface:(id)arg1 dispatchOnPageResponseWithData:(id)arg2 response:(id)arg3;
 - (void)clientInterface:(id)arg1 dispatchXEvent:(id)arg2 completionBlock:(id /* block */)arg3;
@@ -73,8 +87,10 @@
 - (void)dealloc;
 - (id)description;
 - (id)documentViewControllerForTemplateViewElement:(id)arg1;
+- (id)existingBagValueForKey:(id)arg1;
 - (void)getDefaultMetricsControllerWithCompletionBlock:(id /* block */)arg1;
 - (id)initWithConfigurationDictionary:(id)arg1;
+- (BOOL)isBootstrapScriptFallbackDisabled;
 - (BOOL)isManagedAppleID;
 - (BOOL)isMultiUser;
 - (void)loadValueForConfigurationKey:(id)arg1 completionBlock:(id /* block */)arg2;
@@ -90,13 +106,17 @@
 - (id)newLegacyStorePageViewControllerForURLResponse:(id)arg1;
 - (id)newLoadStoreURLOperationWithURL:(id)arg1;
 - (id)newLoadStoreURLOperationWithURLRequest:(id)arg1;
+- (id)placeholderImageCache;
 - (id)platformContext;
 - (id)previewViewControllerForViewElement:(id)arg1;
 - (id)purchaseReferrerURL;
 - (void)pushNavigationHistoryPageIdentifier:(id)arg1;
+- (id)resourceLoadQueue;
 - (id)scriptInterfaceForClientInterface:(id)arg1;
+- (void)sendAppPreviewStateChanged:(BOOL)arg1;
 - (void)sendApplicationDidEnterBackground;
 - (void)sendApplicationWillEnterForeground;
+- (void)sendApplicationWindowSizeDidUpdate:(struct CGSize { double x1; double x2; })arg1;
 - (void)sendOnPageResponseWithDocument:(id)arg1 data:(id)arg2 URLResponse:(id)arg3 performanceMetrics:(id)arg4;
 - (void)sendOnXEventWithDictionary:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)setMetricsConfigurationIdentifier:(id)arg1;
@@ -105,9 +125,13 @@
 - (void)setPurchaseReferrerURL:(id)arg1;
 - (void)setUpdatableAssetController:(id)arg1;
 - (void)setUserInterfaceIdiomOverride:(int)arg1;
+- (BOOL)shouldForceTransientSearchControllerBahavior;
 - (id)storeFrontIdentifier;
+- (BOOL)storeViewController:(id)arg1 shouldDisplayDefaultDarButton:(int)arg2;
 - (BOOL)supportsRenderingVersion:(unsigned int)arg1;
 - (id)tabBarItemsForStyle:(int)arg1;
+- (int)tabBarStyleForWidth:(float)arg1;
+- (id)trendingSearchProvider;
 - (id)updatableAssetController;
 - (int)userInterfaceIdiomOverride;
 - (id)valueForConfigurationKey:(id)arg1;

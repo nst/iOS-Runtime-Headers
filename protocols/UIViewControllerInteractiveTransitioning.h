@@ -11,5 +11,6 @@
 
 - (int)completionCurve;
 - (float)completionSpeed;
+- (BOOL)wantsInteractiveStart;
 
 @end

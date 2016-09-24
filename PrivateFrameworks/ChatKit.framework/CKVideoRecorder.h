@@ -3,21 +3,21 @@
  */
 
 @interface CKVideoRecorder : UIViewController <AVCaptureFileOutputRecordingDelegate> {
-    AVCaptureDeviceInput *_audioInput;
-    NSObject<OS_dispatch_queue> *_avCaptureSessionDispatchQueue;
-    BOOL _canceled;
-    AVCaptureVideoPreviewLayer *_captureVideoPreviewLayer;
-    int _currentDevice;
-    <CKVideoRecorderDelegate> *_delegate;
-    AVCaptureDevice *_frontFacingCamera;
-    AVCaptureDeviceInput *_frontVideoInput;
-    NSURL *_outputFileURL;
-    BOOL _previousStatusBarHidden;
-    AVCaptureDevice *_rearFacingCamera;
-    AVCaptureDeviceInput *_rearVideoInput;
-    AVCaptureSession *_session;
-    AVCaptureStillImageOutput *_stillImageOutput;
-    AVCaptureMovieFileOutput *_videoOutput;
+    AVCaptureDeviceInput * _audioInput;
+    NSObject<OS_dispatch_queue> * _avCaptureSessionDispatchQueue;
+    BOOL  _canceled;
+    AVCaptureVideoPreviewLayer * _captureVideoPreviewLayer;
+    int  _currentDevice;
+    <CKVideoRecorderDelegate> * _delegate;
+    AVCaptureDevice * _frontFacingCamera;
+    AVCaptureDeviceInput * _frontVideoInput;
+    NSURL * _outputFileURL;
+    BOOL  _previousStatusBarHidden;
+    AVCaptureDevice * _rearFacingCamera;
+    AVCaptureDeviceInput * _rearVideoInput;
+    AVCaptureSession * _session;
+    AVCaptureStillImageOutput * _stillImageOutput;
+    AVCaptureMovieFileOutput * _videoOutput;
 }
 
 @property (nonatomic, retain) AVCaptureDeviceInput *audioInput;
@@ -36,6 +36,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) AVCaptureMovieFileOutput *videoOutput;
 
+- (void).cxx_destruct;
 - (id)_cameraWithPosition:(int)arg1;
 - (id)_configureFrontVideoInput;
 - (id)_configureRearVideoInput;

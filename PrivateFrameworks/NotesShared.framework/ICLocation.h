@@ -3,7 +3,7 @@
  */
 
 @interface ICLocation : NSManagedObject {
-    BOOL updatingPlace;
+    BOOL  updatingPlace;
 }
 
 @property (nonatomic, readonly) NSString *formattedAddress;

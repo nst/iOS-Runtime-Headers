@@ -3,9 +3,9 @@
  */
 
 @interface ICSearchIndexableIdentifier : NSObject <NSCopying> {
-    ICSearchIndexableNoteContextIdentifier *_contextIdentifier;
-    NSManagedObjectContext *_managedObjectContext;
-    NSString *_objectIdentifier;
+    ICSearchIndexableNoteContextIdentifier * _contextIdentifier;
+    NSManagedObjectContext * _managedObjectContext;
+    NSString * _objectIdentifier;
 }
 
 @property (nonatomic, readonly, copy) ICSearchIndexableNoteContextIdentifier *contextIdentifier;

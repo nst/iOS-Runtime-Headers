@@ -3,11 +3,11 @@
  */
 
 @interface FKFriendGroup : NSObject {
-    <FKFriendGroupDelegate> *_delegate;
-    NSMutableArray *_friendsManager;
-    unsigned int _groupSize;
-    unsigned int _selectedPosition;
-    NSString *_title;
+    <FKFriendGroupDelegate> * _delegate;
+    NSMutableArray * _friendsManager;
+    unsigned int  _groupSize;
+    unsigned int  _selectedPosition;
+    NSString * _title;
 }
 
 @property (nonatomic) <FKFriendGroupDelegate> *delegate;

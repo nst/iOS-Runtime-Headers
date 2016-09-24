@@ -3,7 +3,7 @@
  */
 
 @interface _CNAutocompleteUserDefaultsSourceInclusionPolicy : NSObject <CNAutocompleteSourceInclusionPolicy> {
-    CNUserDefaults *_userDefaults;
+    CNUserDefaults * _userDefaults;
 }
 
 @property (readonly, copy) NSString *debugDescription;

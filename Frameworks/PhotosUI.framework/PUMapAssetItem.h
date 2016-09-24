@@ -3,7 +3,7 @@
  */
 
 @interface PUMapAssetItem : PUMapItem {
-    PLManagedAsset *_asset;
+    PLManagedAsset * _asset;
 }
 
 @property (nonatomic, retain) PLManagedAsset *asset;

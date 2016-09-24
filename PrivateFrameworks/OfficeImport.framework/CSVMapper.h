@@ -3,19 +3,19 @@
  */
 
 @interface CSVMapper : CMMapper {
-    CMArchiveManager *mArchiver;
-    unsigned int mColumnCount;
-    NSString *mFileName;
+    CMArchiveManager * mArchiver;
+    unsigned int  mColumnCount;
+    NSString * mFileName;
     struct CGSize { 
-        float width; 
-        float height; 
-    } mPageSize;
-    NSMutableArray *mRows;
+        double width; 
+        double height; 
+    }  mPageSize;
+    NSMutableArray * mRows;
 }
 
 - (void)dealloc;
 - (id)initWithRows:(id)arg1 fileName:(id)arg2 columnCount:(unsigned int)arg3 archiver:(id)arg4;
 - (void)mapAt:(id)arg1 withState:(id)arg2;
-- (struct CGSize { float x1; float x2; })pageSize;
+- (struct CGSize { double x1; double x2; })pageSize;
 
 @end

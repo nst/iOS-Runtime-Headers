@@ -3,7 +3,7 @@
  */
 
 @interface CDPDCircleProxyImpl : NSObject <CDPDCircleProxy> {
-    CDPContext *_cdpContext;
+    CDPContext * _cdpContext;
 }
 
 @property (nonatomic, retain) CDPContext *cdpContext;
@@ -13,14 +13,16 @@
 @property (readonly) Class superclass;
 
 + (BOOL)canAuthenticate;
-+ (void)registerCredentialsFromContext:(id)arg1;
++ (BOOL)registerCredentialsFromContext:(id)arg1;
 
 - (void).cxx_destruct;
 - (BOOL)_performSOSCBlock:(id /* block */)arg1 error:(id*)arg2;
+- (BOOL)anyPeerHasEnabledViewsInSet:(id)arg1 error:(id*)arg2;
 - (id)cdpContext;
 - (int)circleStatus:(id*)arg1;
 - (BOOL)hasNonViewAwarePeers;
 - (id)initWithContext:(id)arg1;
+- (BOOL)isLastBackupMakingPeer:(id*)arg1;
 - (unsigned int)peerCount;
 - (id)peerDeviceNamesByPeerID;
 - (id)peerId;

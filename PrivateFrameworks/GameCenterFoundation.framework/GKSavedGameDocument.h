@@ -3,13 +3,13 @@
  */
 
 @interface GKSavedGameDocument : NSObject <NSFilePresenter> {
-    NSString *_deviceName;
-    NSURL *_fileURL;
-    NSFileVersion *_fileVersion;
-    BOOL _hasConflict;
-    BOOL _isConflictVersion;
-    NSDate *_modificationDate;
-    NSString *_name;
+    NSString * _deviceName;
+    NSURL * _fileURL;
+    NSFileVersion * _fileVersion;
+    BOOL  _hasConflict;
+    BOOL  _isConflictVersion;
+    NSDate * _modificationDate;
+    NSString * _name;
 }
 
 @property (readonly, copy) NSString *debugDescription;

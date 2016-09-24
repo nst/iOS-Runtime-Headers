@@ -3,8 +3,8 @@
  */
 
 @interface SKUINavigationBarViewElement : SKUIViewElement {
-    BOOL _hidesBackButton;
-    BOOL _hidesShadow;
+    BOOL  _hidesBackButton;
+    BOOL  _hidesShadow;
 }
 
 @property (nonatomic, readonly) BOOL hidesBackButton;

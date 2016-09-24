@@ -3,8 +3,8 @@
  */
 
 @interface CNQueue : NSObject {
-    NSMutableArray *_buffer;
-    <CNQueueingStrategy> *_strategy;
+    NSMutableArray * _buffer;
+    <CNQueueingStrategy> * _strategy;
 }
 
 @property (readonly) NSArray *allObjects;

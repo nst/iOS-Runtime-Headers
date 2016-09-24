@@ -3,13 +3,13 @@
  */
 
 @interface NFSession : NSObject <NFSession> {
-    NSObject<OS_dispatch_queue> *_callbackQueue;
-    id /* block */ _didEndCallback;
-    id /* block */ _didStartCallback;
-    BOOL _isCallbackQueueSuspended;
-    BOOL _isFirstInQueue;
-    NSObject<NFSessionInterface><NSXPCProxyCreating> *_proxy;
-    unsigned int _state;
+    NSObject<OS_dispatch_queue> * _callbackQueue;
+    id /* block */  _didEndCallback;
+    id /* block */  _didStartCallback;
+    BOOL  _isCallbackQueueSuspended;
+    BOOL  _isFirstInQueue;
+    NSObject<NFSessionInterface><NSXPCProxyCreating> * _proxy;
+    unsigned int  _state;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -26,6 +26,7 @@
 - (void)didEndUnexpectedly;
 - (void)didStartSession:(id)arg1;
 - (void)endSession;
+- (void)endSessionWithCompletion:(id /* block */)arg1;
 - (id)init;
 - (BOOL)isFirstInQueue;
 - (id)proxy;

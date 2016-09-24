@@ -3,9 +3,9 @@
  */
 
 @interface MBConnection : NSObject {
-    NSObject<OS_xpc_object> *_conn;
-    NSObject<OS_dispatch_queue> *_eventQueue;
-    NSObject<MBConnectionHandler> *_handler;
+    NSObject<OS_xpc_object> * _conn;
+    NSObject<OS_dispatch_queue> * _eventQueue;
+    NSObject<MBConnectionHandler> * _handler;
 }
 
 @property (nonatomic) NSObject<MBConnectionHandler> *messageHandler;

@@ -3,11 +3,11 @@
  */
 
 @interface NNMKProtoComposedMessageSendingProgressReport : PBCodable <NSCopying> {
-    NSString *_composedMessageId;
+    NSString * _composedMessageId;
     struct { 
         unsigned int progress : 1; 
-    } _has;
-    int _progress;
+    }  _has;
+    int  _progress;
 }
 
 @property (nonatomic, retain) NSString *composedMessageId;

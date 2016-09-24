@@ -3,12 +3,12 @@
  */
 
 @interface YTAuthenticatedAccountPost : NSObject <NSURLConnectionDelegate> {
-    NSURLConnection *_connection;
-    id _delegate;
-    NSMutableURLRequest *_postRequest;
-    NSMutableData *_rawData;
-    int _type;
-    BOOL _validResponse;
+    NSURLConnection * _connection;
+    id  _delegate;
+    NSMutableURLRequest * _postRequest;
+    NSMutableData * _rawData;
+    int  _type;
+    BOOL  _validResponse;
 }
 
 @property (readonly, copy) NSString *debugDescription;

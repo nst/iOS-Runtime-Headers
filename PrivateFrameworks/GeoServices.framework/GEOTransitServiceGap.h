@@ -3,15 +3,15 @@
  */
 
 @interface GEOTransitServiceGap : PBCodable <GEOServiceGap, NSCopying> {
-    unsigned int _absEndTime;
-    unsigned int _absStartTime;
-    unsigned int _appearsBeforeSuggestedRouteIndex;
-    GEOFormattedString *_displayMessage;
+    unsigned int  _absEndTime;
+    unsigned int  _absStartTime;
+    unsigned int  _appearsBeforeSuggestedRouteIndex;
+    GEOFormattedString * _displayMessage;
     struct { 
         unsigned int absEndTime : 1; 
         unsigned int absStartTime : 1; 
         unsigned int appearsBeforeSuggestedRouteIndex : 1; 
-    } _has;
+    }  _has;
 }
 
 @property (nonatomic) unsigned int absEndTime;

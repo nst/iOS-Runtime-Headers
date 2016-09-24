@@ -3,56 +3,70 @@
  */
 
 @interface PUSnappingController : NSObject {
-    float __accumulatedOffset;
-    BOOL __hasEnteredAttractionThreshold;
-    BOOL __hasEnteredRetentionThreshold;
-    float __previousOffset;
-    BOOL __previousOffsetInvalid;
-    BOOL _accumulateOffsetWhileSnapped;
-    float _attractionOffsetThreshold;
-    float _attractionVelocityThreshold;
-    float _retentionOffsetThreshold;
-    BOOL _snappedToTarget;
-    float _targetOffset;
+    double  __accumulatedOffset;
+    BOOL  __hasEnteredAttractionThreshold;
+    BOOL  __hasEnteredRetentionThreshold;
+    BOOL  __interacting;
+    double  __previousOffset;
+    BOOL  __previousOffsetInvalid;
+    _UIFeedbackRetargetBehavior * __retargetBehavior;
+    BOOL  _accumulateOffsetWhileSnapped;
+    double  _attractionOffsetThreshold;
+    double  _attractionVelocityThreshold;
+    <UICoordinateSpace> * _coordinateSpace;
+    double  _retentionOffsetThreshold;
+    BOOL  _snappedToTarget;
+    double  _snappingTarget;
 }
 
-@property (setter=_setAccumulatedOffset:, nonatomic) float _accumulatedOffset;
+@property (setter=_setAccumulatedOffset:, nonatomic) double _accumulatedOffset;
 @property (setter=_setHasEnteredAttractionThreshold:, nonatomic) BOOL _hasEnteredAttractionThreshold;
 @property (setter=_setHasEnteredRetentionThreshold:, nonatomic) BOOL _hasEnteredRetentionThreshold;
-@property (setter=_setPreviousOffset:, nonatomic) float _previousOffset;
+@property (getter=_isInteracting, setter=_setInteracting:, nonatomic) BOOL _interacting;
+@property (setter=_setPreviousOffset:, nonatomic) double _previousOffset;
 @property (getter=_isPreviousOffsetInvalid, setter=_setPreviousOffsetInvalid:, nonatomic) BOOL _previousOffsetInvalid;
+@property (setter=_setRetargetBehavior:, nonatomic, retain) _UIFeedbackRetargetBehavior *_retargetBehavior;
 @property (nonatomic) BOOL accumulateOffsetWhileSnapped;
-@property (nonatomic) float attractionOffsetThreshold;
-@property (nonatomic) float attractionVelocityThreshold;
-@property (nonatomic) float retentionOffsetThreshold;
+@property (nonatomic) double attractionOffsetThreshold;
+@property (nonatomic) double attractionVelocityThreshold;
+@property (nonatomic, readonly) <UICoordinateSpace> *coordinateSpace;
+@property (nonatomic) double retentionOffsetThreshold;
 @property (getter=isSnappedToTarget, nonatomic, readonly) BOOL snappedToTarget;
-@property (nonatomic) float targetOffset;
+@property (nonatomic, readonly) double snappingTarget;
 
+- (void).cxx_destruct;
 - (float)_accumulatedOffset;
 - (BOOL)_hasEnteredAttractionThreshold;
 - (BOOL)_hasEnteredRetentionThreshold;
+- (BOOL)_isInteracting;
 - (BOOL)_isOffset:(float)arg1 inThreshold:(float)arg2;
 - (BOOL)_isPreviousOffsetInvalid;
 - (float)_previousOffset;
+- (void)_reset;
+- (id)_retargetBehavior;
 - (void)_setAccumulatedOffset:(float)arg1;
 - (void)_setBoolPointer:(inout BOOL*)arg1 toValue:(BOOL)arg2;
 - (void)_setHasEnteredAttractionThreshold:(BOOL)arg1;
 - (void)_setHasEnteredRetentionThreshold:(BOOL)arg1;
+- (void)_setInteracting:(BOOL)arg1;
 - (void)_setPreviousOffset:(float)arg1;
 - (void)_setPreviousOffsetInvalid:(BOOL)arg1;
+- (void)_setRetargetBehavior:(id)arg1;
 - (BOOL)accumulateOffsetWhileSnapped;
 - (float)attractionOffsetThreshold;
 - (float)attractionVelocityThreshold;
+- (id)coordinateSpace;
 - (id)init;
+- (id)initWithSnappingTarget:(float)arg1 coordinateSpace:(id)arg2;
+- (void)interactionBegan;
+- (void)interactionEnded;
 - (BOOL)isSnappedToTarget;
-- (void)reset;
 - (float)retentionOffsetThreshold;
 - (void)setAccumulateOffsetWhileSnapped:(BOOL)arg1;
 - (void)setAttractionOffsetThreshold:(float)arg1;
 - (void)setAttractionVelocityThreshold:(float)arg1;
 - (void)setRetentionOffsetThreshold:(float)arg1;
-- (void)setTargetOffset:(float)arg1;
-- (float)targetOffset;
+- (float)snappingTarget;
 - (void)updateOffset:(inout float*)arg1 withVelocity:(float)arg2 shouldSnap:(out BOOL*)arg3 shouldBreak:(out BOOL*)arg4;
 
 @end

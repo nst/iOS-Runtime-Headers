@@ -3,8 +3,8 @@
  */
 
 @interface NPHCarrierInfoCompanionReplication : NSObject {
-    NPSDomainAccessor *_mobilePhoneDomainAccessor;
-    NPSManager *_npsManager;
+    NPSDomainAccessor * _mobilePhoneDomainAccessor;
+    NPSManager * _npsManager;
 }
 
 + (id)sharedInstance;

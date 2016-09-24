@@ -3,12 +3,12 @@
  */
 
 @interface CalDAVUpdateOwnerItem : CoreDAVItem {
-    NSURL *_address;
-    NSString *_displayName;
-    ICSDateValue *_dtstamp;
-    NSString *_emailAddress;
-    NSString *_firstName;
-    NSString *_lastName;
+    NSURL * _address;
+    NSString * _displayName;
+    ICSDateValue * _dtstamp;
+    NSString * _emailAddress;
+    NSString * _firstName;
+    NSString * _lastName;
 }
 
 @property (nonatomic, retain) NSURL *address;

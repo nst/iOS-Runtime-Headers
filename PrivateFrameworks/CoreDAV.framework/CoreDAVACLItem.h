@@ -3,7 +3,7 @@
  */
 
 @interface CoreDAVACLItem : CoreDAVItem {
-    NSMutableSet *_accessControlEntities;
+    NSMutableSet * _accessControlEntities;
 }
 
 @property (nonatomic, retain) NSMutableSet *accessControlEntities;

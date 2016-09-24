@@ -3,16 +3,16 @@
  */
 
 @interface WBSParsecSearchCompletionResultSet : NSObject {
-    double _completionScore;
-    NSString *_completionString;
-    NSString *_errorCodeString;
-    NSString *_feedbackQueryIdentifier;
-    double _maxAge;
-    NSArray *_patternStrings;
-    NSMutableDictionary *_patternStringsToPatterns;
-    NSString *_prefix;
-    NSArray *_results;
-    NSString *_status;
+    double  _completionScore;
+    NSString * _completionString;
+    NSString * _errorCodeString;
+    NSString * _feedbackQueryIdentifier;
+    double  _maxAge;
+    NSArray * _patternStrings;
+    NSMutableDictionary * _patternStringsToPatterns;
+    NSString * _prefix;
+    NSArray * _results;
+    NSString * _status;
 }
 
 @property (nonatomic, readonly) double completionScore;

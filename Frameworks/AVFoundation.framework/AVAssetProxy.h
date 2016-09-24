@@ -3,7 +3,7 @@
  */
 
 @interface AVAssetProxy : AVAsset {
-    AVAssetProxyInternal *_assetProxy;
+    AVAssetProxyInternal * _assetProxy;
 }
 
 + (id)assetProxyWithPropertyList:(id)arg1;

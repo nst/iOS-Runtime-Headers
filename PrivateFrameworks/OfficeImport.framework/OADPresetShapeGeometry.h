@@ -3,7 +3,7 @@
  */
 
 @interface OADPresetShapeGeometry : OADShapeGeometry {
-    int mType;
+    int  mType;
 }
 
 - (id)description;

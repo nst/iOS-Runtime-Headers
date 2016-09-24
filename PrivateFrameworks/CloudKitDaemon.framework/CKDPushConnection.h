@@ -3,20 +3,20 @@
  */
 
 @interface CKDPushConnection : NSObject <APSConnectionDelegate> {
-    APSConnection *_apsConnection;
-    NSString *_apsEnvironmentString;
-    NSMapTable *_callbacks;
-    BOOL _darkWakeEnabled;
-    NSMutableSet *_enabledTopics;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSMutableDictionary *_tokensCache;
-    NSMutableSet *_topicsAwaitingPrivateToken;
-    NSMutableSet *_topicsAwaitingPublicToken;
-    NSMutableDictionary *_topicsToWaitingAppContainerTuples;
+    APSConnection * _apsConnection;
+    NSString * _apsEnvironmentString;
+    NSMapTable * _callbacks;
+    BOOL  _darkWakeEnabled;
+    NSMutableSet * _enabledTopics;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSMutableDictionary * _tokensCache;
+    NSMutableSet * _topicsAwaitingPrivateToken;
+    NSMutableSet * _topicsAwaitingPublicToken;
+    NSMutableDictionary * _topicsToWaitingAppContainerTuples;
 }
 
 @property (nonatomic, retain) APSConnection *apsConnection;
-@property (nonatomic, retain) NSString *apsEnvironmentString;
+@property (setter=setAPSEnvironmentString:, nonatomic, retain) NSString *apsEnvironmentString;
 @property (nonatomic, retain) NSMapTable *callbacks;
 @property (nonatomic) BOOL darkWakeEnabled;
 @property (readonly, copy) NSString *debugDescription;

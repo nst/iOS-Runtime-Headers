@@ -3,8 +3,8 @@
  */
 
 @interface CoreDAVCopyOrMoveTask : CoreDAVTask {
-    NSURL *_destinationURL;
-    int _overwrite;
+    NSURL * _destinationURL;
+    int  _overwrite;
 }
 
 @property (nonatomic, retain) NSURL *destinationURL;

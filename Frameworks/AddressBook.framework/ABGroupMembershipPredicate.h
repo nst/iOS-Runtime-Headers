@@ -3,16 +3,16 @@
  */
 
 @interface ABGroupMembershipPredicate : ABPredicate {
-    NSString *_accountIdentifier;
-    void *_group;
-    void *_store;
+    NSString * _accountIdentifier;
+    void * _group;
+    void * _store;
 }
 
 @property (nonatomic, copy) NSString *accountIdentifier;
 @property (nonatomic) void*group;
 @property (nonatomic) void*store;
 
-- (void)ab_bindWhereClauseComponentOfStatement:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; }*)arg1 withBindingOffset:(int*)arg2 predicateIdentifier:(int)arg3;
+- (void)ab_bindWhereClauseComponentOfStatement:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; double x3; }*)arg1 withBindingOffset:(int*)arg2 predicateIdentifier:(int)arg3;
 - (id)accountIdentifier;
 - (void)dealloc;
 - (id)description;

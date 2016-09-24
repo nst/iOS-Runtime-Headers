@@ -3,32 +3,32 @@
  */
 
 @interface GKBubbleDetailViewController : GKCenteredContentViewController {
-    NSArray *_activeConstraints;
-    UIActivityViewController *_activityViewController;
-    GKHorizontalBubbleControlsView *_bubblesView;
-    NSLayoutConstraint *_bubblesViewTopPortraitConstraint;
-    NSLayoutConstraint *_containerViewBottomPortraitConstraint;
-    GKLabel *_descriptionLabel;
-    BOOL _didFloatInBubbles;
-    BOOL _didTransition;
-    GKLabel *_disabledFunctionalityLabel;
-    UIImageView *_iconView;
-    NSLayoutConstraint *_iconViewTopConstraint;
-    NSArray *_landscapeConstraints;
-    GKPlayerWithSpeechBalloonView *_playerWithSpeechView;
-    NSLayoutConstraint *_playerWithSpeechViewTopShowsPlayerConstraint;
-    NSArray *_portraitConstraints;
-    BOOL _showDescriptionView;
-    BOOL _showPlayerWithSpeechView;
+    NSArray * _activeConstraints;
+    UIActivityViewController * _activityViewController;
+    GKHorizontalBubbleControlsView * _bubblesView;
+    NSLayoutConstraint * _bubblesViewTopPortraitConstraint;
+    NSLayoutConstraint * _containerViewBottomPortraitConstraint;
+    GKLabel * _descriptionLabel;
+    BOOL  _didFloatInBubbles;
+    BOOL  _didTransition;
+    GKLabel * _disabledFunctionalityLabel;
+    UIImageView * _iconView;
+    NSLayoutConstraint * _iconViewTopConstraint;
+    NSArray * _landscapeConstraints;
+    GKPlayerWithSpeechBalloonView * _playerWithSpeechView;
+    NSLayoutConstraint * _playerWithSpeechViewTopShowsPlayerConstraint;
+    NSArray * _portraitConstraints;
+    BOOL  _showDescriptionView;
+    BOOL  _showPlayerWithSpeechView;
     struct CGSize { 
-        float width; 
-        float height; 
-    } _sizeUsedForBubbleAdjustment;
-    GKLabel *_subtitleLabel;
-    NSLayoutConstraint *_subtitleLabelFirstBaselineBaseConstraint;
-    GKLabel *_titleLabel;
-    NSLayoutConstraint *_titleLabelFirstBaselineBaseConstraint;
-    UIView *_viewAboveBubbles;
+        double width; 
+        double height; 
+    }  _sizeUsedForBubbleAdjustment;
+    GKLabel * _subtitleLabel;
+    NSLayoutConstraint * _subtitleLabelFirstBaselineBaseConstraint;
+    GKLabel * _titleLabel;
+    NSLayoutConstraint * _titleLabelFirstBaselineBaseConstraint;
+    UIView * _viewAboveBubbles;
 }
 
 @property (nonatomic, retain) NSArray *activeConstraints;
@@ -48,7 +48,7 @@
 @property (nonatomic, retain) NSArray *portraitConstraints;
 @property (nonatomic) BOOL showDescriptionView;
 @property (nonatomic) BOOL showPlayerWithSpeechView;
-@property (nonatomic) struct CGSize { float x1; float x2; } sizeUsedForBubbleAdjustment;
+@property (nonatomic) struct CGSize { double x1; double x2; } sizeUsedForBubbleAdjustment;
 @property (nonatomic, retain) GKLabel *subtitleLabel;
 @property (nonatomic, retain) NSLayoutConstraint *subtitleLabelFirstBaselineBaseConstraint;
 @property (nonatomic, retain) GKLabel *titleLabel;
@@ -83,7 +83,7 @@
 - (id)playerWithSpeechView;
 - (id)playerWithSpeechViewTopShowsPlayerConstraint;
 - (id)portraitConstraints;
-- (struct CGSize { float x1; float x2; })preferredContentSize;
+- (struct CGSize { double x1; double x2; })preferredContentSize;
 - (void)prepareViewsForAppear;
 - (void)prepareViewsForDisappear;
 - (void)registerForAppSwitching;
@@ -104,7 +104,7 @@
 - (void)setPortraitConstraints:(id)arg1;
 - (void)setShowDescriptionView:(BOOL)arg1;
 - (void)setShowPlayerWithSpeechView:(BOOL)arg1;
-- (void)setSizeUsedForBubbleAdjustment:(struct CGSize { float x1; float x2; })arg1;
+- (void)setSizeUsedForBubbleAdjustment:(struct CGSize { double x1; double x2; })arg1;
 - (void)setSubtitleLabel:(id)arg1;
 - (void)setSubtitleLabelFirstBaselineBaseConstraint:(id)arg1;
 - (void)setTitleLabel:(id)arg1;
@@ -113,13 +113,13 @@
 - (id)sharePopoverSourceView;
 - (BOOL)showDescriptionView;
 - (BOOL)showPlayerWithSpeechView;
-- (struct CGSize { float x1; float x2; })sizeUsedForBubbleAdjustment;
+- (struct CGSize { double x1; double x2; })sizeUsedForBubbleAdjustment;
 - (id)subtitleLabel;
 - (id)subtitleLabelFirstBaselineBaseConstraint;
 - (id)titleLabel;
 - (id)titleLabelFirstBaselineBaseConstraint;
 - (void)traitCollectionDidChange:(id)arg1;
-- (void)updateBubbleSizeIfNotInPopover:(struct CGSize { float x1; float x2; })arg1;
+- (void)updateBubbleSizeIfNotInPopover:(struct CGSize { double x1; double x2; })arg1;
 - (id)viewAboveBubbles;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;

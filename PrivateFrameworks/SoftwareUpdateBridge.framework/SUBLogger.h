@@ -3,8 +3,9 @@
  */
 
 @interface SUBLogger : NSObject {
-    struct __asl_object_s { } *_aslHandle;
-    int _logLevel;
+    NSObject<OS_os_log> * _logError;
+    NSObject<OS_os_log> * _logInfo;
+    int  _logLevel;
 }
 
 @property (nonatomic) int logLevel;

@@ -3,7 +3,7 @@
  */
 
 @interface RadioLoadStoreBagRequest : RadioRequest {
-    BOOL _ignoresRadioDiskCache;
+    BOOL  _ignoresRadioDiskCache;
 }
 
 @property (nonatomic) BOOL ignoresRadioDiskCache;

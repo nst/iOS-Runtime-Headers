@@ -3,7 +3,7 @@
  */
 
 @interface YTHistoryVideoDataSource : YTVideoDataSource {
-    NSMutableArray *_history;
+    NSMutableArray * _history;
 }
 
 - (id)_history;

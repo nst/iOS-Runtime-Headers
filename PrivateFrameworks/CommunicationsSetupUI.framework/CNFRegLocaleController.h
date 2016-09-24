@@ -3,17 +3,17 @@
  */
 
 @interface CNFRegLocaleController : CNFRegFirstRunController <CNFRegRegionChooserDelegate> {
-    id /* block */ _completionBlock;
-    PSSpecifier *_countryFieldSpecifier;
-    NSString *_currentPhoneValue;
-    NSString *_currentRegionID;
-    BOOL _isError;
-    BOOL _isLoading;
-    PSSpecifier *_phoneNumberFieldSpecifier;
-    PSSpecifier *_phoneNumberGroupSpecifier;
-    NSArray *_phoneNumberSpecifiers;
-    NSArray *_regionData;
-    id _regionListChangeObserver;
+    id /* block */  _completionBlock;
+    PSSpecifier * _countryFieldSpecifier;
+    NSString * _currentPhoneValue;
+    NSString * _currentRegionID;
+    BOOL  _isError;
+    BOOL  _isLoading;
+    PSSpecifier * _phoneNumberFieldSpecifier;
+    PSSpecifier * _phoneNumberGroupSpecifier;
+    NSArray * _phoneNumberSpecifiers;
+    NSArray * _regionData;
+    id  _regionListChangeObserver;
 }
 
 @property (copy) id /* block */ completionBlock;

@@ -3,15 +3,15 @@
  */
 
 @interface PUSlideshowThemeViewController : UIViewController <PUViewControllerSpecChangeObserver, UITableViewDataSource, UITableViewDelegate> {
-    BOOL __needsUpdateBackgroundView;
-    BOOL __needsUpdateSpec;
-    BOOL __needsUpdateTableView;
-    OKProducerPreset *_currentPreset;
-    <PUSlideshowThemeDelegate> *_delegate;
-    NSArray *_presets;
-    BOOL _shouldHideTableViewWhenViewWillDisappear;
-    PUSlideshowSettingsViewControllerSpec *_spec;
-    UITableView *_tableView;
+    BOOL  __needsUpdateBackgroundView;
+    BOOL  __needsUpdateSpec;
+    BOOL  __needsUpdateTableView;
+    OKProducerPreset * _currentPreset;
+    <PUSlideshowThemeDelegate> * _delegate;
+    NSArray * _presets;
+    BOOL  _shouldHideTableViewWhenViewWillDisappear;
+    PUSlideshowSettingsViewControllerSpec * _spec;
+    UITableView * _tableView;
 }
 
 @property (setter=_setNeedsUpdateBackgroundView:, nonatomic) BOOL _needsUpdateBackgroundView;

@@ -3,24 +3,24 @@
  */
 
 @interface PLMav5BasebandHardwareMessage : PLMav4BasebandHardwareMessage {
-    struct _PLMav5BasebandHWStatsSleep { unsigned int x1; unsigned int x2; } *_mav4_mpss_sleep;
-    struct _PLMav5BasebandHWMPSSSleepVeto { unsigned int x1[3]; } *_mav4_mpss_sleep_veto;
-    struct _PLMav5BasebandHWStatsAPPSPerf { unsigned int x1[6]; } *_mav5_apps;
-    struct _PLMav5BasebandHWStatsSleep { unsigned int x1; unsigned int x2; } *_mav5_apps_sleep;
-    struct _PLMav5BasebandHWAPPSSleepVeto { unsigned int x1[1]; } *_mav5_apps_sleep_veto;
-    struct _PLMav5BasebandHWClocksDuration { unsigned int x1[114]; unsigned int x2[95]; } *_mav5_clock;
-    struct _PLMav4BasebandHWOnOffComponentStats { unsigned int x1[2]; } *_mav5_gps_dpo;
-    struct _PLMav4BasebandHWOnOffComponentStats { unsigned int x1[2]; } *_mav5_lpass;
-    struct _PLMav5BasebandHWStatsMDSP { unsigned int x1[10]; } *_mav5_mdsp;
-    struct _PLMav5BasebandHWStatsSleep { unsigned int x1; unsigned int x2; } *_mav5_mpss_sleep;
-    struct _PLMav5BasebandHWMPSSSleepVeto { unsigned int x1[3]; } *_mav5_mpss_sleep_veto;
-    struct _PLMav5BasebandHWStatsProtocol { unsigned int x1[5][16]; } *_mav5_protocol;
-    struct _PLMav5BasebandHWStatsQDSP { unsigned int x1[10]; } *_mav5_qdsp;
-    struct _PLMav5BasebandHWStatsRPM { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; } *_mav5_rpm;
-    struct _PLMav5BasebandHWStatsRX { unsigned int x1[5][4]; unsigned int x2[5][13]; unsigned int x3[5][13]; } *_mav5_rx;
-    struct _PLMav5BasebandHWStatsRXSQA { unsigned int x1[5][11]; unsigned int x2[5][11]; } *_mav5_rx_sqa;
-    struct _PLMav5BasebandHWStatsTX { unsigned int x1[5][12]; } *_mav5_tx;
-    struct _PLMav5BasebandHWStatsUSB { unsigned int x1[3]; } *_mav5_usb;
+    struct _PLMav5BasebandHWStatsSleep { unsigned int x1; unsigned int x2; } * _mav4_mpss_sleep;
+    struct _PLMav5BasebandHWMPSSSleepVeto { unsigned int x1[3]; } * _mav4_mpss_sleep_veto;
+    struct _PLMav5BasebandHWStatsAPPSPerf { unsigned int x1[6]; } * _mav5_apps;
+    struct _PLMav5BasebandHWStatsSleep { unsigned int x1; unsigned int x2; } * _mav5_apps_sleep;
+    struct _PLMav5BasebandHWAPPSSleepVeto { unsigned int x1[1]; } * _mav5_apps_sleep_veto;
+    struct _PLMav5BasebandHWClocksDuration { unsigned int x1[114]; unsigned int x2[95]; } * _mav5_clock;
+    struct _PLMav4BasebandHWOnOffComponentStats { unsigned int x1[2]; } * _mav5_gps_dpo;
+    struct _PLMav4BasebandHWOnOffComponentStats { unsigned int x1[2]; } * _mav5_lpass;
+    struct _PLMav5BasebandHWStatsMDSP { unsigned int x1[10]; } * _mav5_mdsp;
+    struct _PLMav5BasebandHWStatsSleep { unsigned int x1; unsigned int x2; } * _mav5_mpss_sleep;
+    struct _PLMav5BasebandHWMPSSSleepVeto { unsigned int x1[3]; } * _mav5_mpss_sleep_veto;
+    struct _PLMav5BasebandHWStatsProtocol { unsigned int x1[5][16]; } * _mav5_protocol;
+    struct _PLMav5BasebandHWStatsQDSP { unsigned int x1[10]; } * _mav5_qdsp;
+    struct _PLMav5BasebandHWStatsRPM { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; } * _mav5_rpm;
+    struct _PLMav5BasebandHWStatsRX { unsigned int x1[5][4]; unsigned int x2[5][13]; unsigned int x3[5][13]; } * _mav5_rx;
+    struct _PLMav5BasebandHWStatsRXSQA { unsigned int x1[5][11]; unsigned int x2[5][11]; } * _mav5_rx_sqa;
+    struct _PLMav5BasebandHWStatsTX { unsigned int x1[5][12]; } * _mav5_tx;
+    struct _PLMav5BasebandHWStatsUSB { unsigned int x1[3]; } * _mav5_usb;
 }
 
 @property (nonatomic) struct _PLMav5BasebandHWStatsAPPSPerf { unsigned int x1[6]; }*apps;

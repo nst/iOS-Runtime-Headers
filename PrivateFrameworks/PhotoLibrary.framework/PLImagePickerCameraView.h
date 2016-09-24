@@ -3,22 +3,22 @@
  */
 
 @interface PLImagePickerCameraView : CMKCameraView <PLVideoViewDelegate> {
-    PLCropOverlay *__cropOverlay;
-    int __enabledGestures;
-    BOOL __manipulatingCrop;
-    CMKStillImageCaptureResponse *__mostRecentCaptureResponse;
-    BOOL __retakingPhoto;
-    BOOL __shouldSkipPostcaptureReview;
-    PLVideoView *__videoView;
-    int __windowEdgeClip;
-    BOOL _allowsEditing;
-    BOOL _cropOverlayUsesTelephonyUI;
-    BOOL _displayedInPopover;
-    NSDictionary *_imagePickerOptions;
-    int _photoSavingOptions;
-    BOOL _showsCropRegion;
-    PLPhotoTileViewController *_tileViewController;
-    BOOL _wantsImageData;
+    PLCropOverlay * __cropOverlay;
+    int  __enabledGestures;
+    BOOL  __manipulatingCrop;
+    CMKStillImageCaptureResponse * __mostRecentCaptureResponse;
+    BOOL  __retakingPhoto;
+    BOOL  __shouldSkipPostcaptureReview;
+    PLVideoView * __videoView;
+    int  __windowEdgeClip;
+    BOOL  _allowsEditing;
+    BOOL  _cropOverlayUsesTelephonyUI;
+    BOOL  _displayedInPopover;
+    NSDictionary * _imagePickerOptions;
+    int  _photoSavingOptions;
+    BOOL  _showsCropRegion;
+    PLPhotoTileViewController * _tileViewController;
+    BOOL  _wantsImageData;
 }
 
 @property (nonatomic, readonly) PLCropOverlay *_cropOverlay;
@@ -45,10 +45,10 @@
 @property (nonatomic) BOOL wantsImageData;
 
 - (BOOL)_allowsVideoEditing;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_bottomBarFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_bottomBarFrame;
 - (void)_createCropOverlayIfNecessary;
 - (id)_cropOverlay;
-- (struct CGSize { float x1; float x2; })_displaySizeForPreviewForCameraMode:(int)arg1;
+- (struct CGSize { double x1; double x2; })_displaySizeForPreviewForCameraMode:(int)arg1;
 - (int)_enabledGestures;
 - (BOOL)_isLockedToPortraitOrientation;
 - (BOOL)_isManipulatingCrop;
@@ -89,9 +89,9 @@
 - (id)customOverlayView;
 - (void)dealloc;
 - (void)didMoveToWindow;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (id)imagePickerOptions;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 spec:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 spec:(id)arg2;
 - (BOOL)isDisplayedInPopover;
 - (void)performPostcapturePreviewForVideoAtPath:(id)arg1;
 - (int)photoSavingOptions;

@@ -3,8 +3,8 @@
  */
 
 @interface WFLSMMap : NSObject {
-    struct __LSMMap { } *map;
-    NSNumber *threshold;
+    struct __LSMMap { } * map;
+    NSNumber * threshold;
 }
 
 @property (copy) NSNumber *threshold;

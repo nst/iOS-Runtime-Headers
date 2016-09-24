@@ -3,8 +3,8 @@
  */
 
 @interface PLMomentList : PLManagedObject <PLAssetContainerList, PLMomentListData> {
-    PLMomentNameInfo *_cachedNameInfo;
-    BOOL _loadedNameInfo;
+    PLMomentNameInfo * _cachedNameInfo;
+    BOOL  _loadedNameInfo;
 }
 
 @property (nonatomic, readonly) unsigned int containersCount;

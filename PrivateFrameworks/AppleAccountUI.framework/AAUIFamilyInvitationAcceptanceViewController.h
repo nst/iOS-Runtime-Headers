@@ -3,14 +3,14 @@
  */
 
 @interface AAUIFamilyInvitationAcceptanceViewController : AAUIBleachedNavigationController <AAUIConfirmIdentityViewControllerDelegate, RemoteUIControllerDelegate> {
-    ACAccount *_account;
-    ACAccountStore *_accountStore;
-    NSMutableURLRequest *_currentRemoteUIRequest;
-    AAGrandSlamSigner *_grandSlamSigner;
-    AAFamilyInvite *_invite;
-    NSOperationQueue *_inviteOperationQueue;
-    RemoteUIController *_remoteUIController;
-    NSMutableURLRequest *_startRemoteUIRequest;
+    ACAccount * _account;
+    ACAccountStore * _accountStore;
+    NSMutableURLRequest * _currentRemoteUIRequest;
+    AAGrandSlamSigner * _grandSlamSigner;
+    AAFamilyInvite * _invite;
+    NSOperationQueue * _inviteOperationQueue;
+    RemoteUIController * _remoteUIController;
+    NSMutableURLRequest * _startRemoteUIRequest;
 }
 
 @property (readonly, copy) NSString *debugDescription;

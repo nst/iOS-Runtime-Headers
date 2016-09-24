@@ -3,8 +3,8 @@
  */
 
 @interface NSIdentityGlyphInfo : NSGlyphInfo <NSSecureCoding> {
-    NSFont *_font;
-    unsigned int _glyph;
+    NSFont * _font;
+    unsigned int  _glyph;
 }
 
 + (id)glyphInfoWithGlyph:(unsigned int)arg1 forFont:(id)arg2 baseString:(id)arg3;

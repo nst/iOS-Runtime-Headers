@@ -3,15 +3,15 @@
  */
 
 @interface GEORouteHypothesisRequest : PBRequest <NSCopying> {
-    double _arrivalDate;
-    GEOMapItemStorage *_destinationLocation;
-    double _expirationDate;
+    double  _arrivalDate;
+    GEOMapItemStorage * _destinationLocation;
+    double  _expirationDate;
     struct { 
         unsigned int arrivalDate : 1; 
         unsigned int expirationDate : 1; 
         unsigned int transportType : 1; 
-    } _has;
-    int _transportType;
+    }  _has;
+    int  _transportType;
 }
 
 @property (nonatomic) double arrivalDate;
@@ -23,6 +23,7 @@
 @property (nonatomic) BOOL hasTransportType;
 @property (nonatomic) int transportType;
 
+- (int)StringAsTransportType:(id)arg1;
 - (double)arrivalDate;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -47,6 +48,7 @@
 - (void)setHasTransportType:(BOOL)arg1;
 - (void)setTransportType:(int)arg1;
 - (int)transportType;
+- (id)transportTypeAsString:(int)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

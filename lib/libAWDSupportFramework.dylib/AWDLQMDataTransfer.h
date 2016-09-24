@@ -3,17 +3,17 @@
  */
 
 @interface AWDLQMDataTransfer : PBCodable <NSCopying> {
-    NSString *_bundleName;
+    NSString * _bundleName;
     struct { 
         unsigned int lQM : 1; 
         unsigned int rxBytes : 1; 
         unsigned int stateDuration : 1; 
         unsigned int txBytes : 1; 
-    } _has;
-    int _lQM;
-    unsigned int _rxBytes;
-    unsigned int _stateDuration;
-    unsigned int _txBytes;
+    }  _has;
+    int  _lQM;
+    unsigned int  _rxBytes;
+    unsigned int  _stateDuration;
+    unsigned int  _txBytes;
 }
 
 @property (nonatomic, retain) NSString *bundleName;

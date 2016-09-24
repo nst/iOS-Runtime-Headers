@@ -3,10 +3,10 @@
  */
 
 @interface EDTableStyleElement : NSObject <EDKeyedObject, NSCopying> {
-    unsigned int mBandSize;
-    EDDifferentialStyle *mDifferentialStyle;
-    EDCollection *mDifferentialStyles;
-    int mType;
+    unsigned int  mBandSize;
+    EDDifferentialStyle * mDifferentialStyle;
+    EDCollection * mDifferentialStyles;
+    int  mType;
 }
 
 @property (readonly, copy) NSString *debugDescription;

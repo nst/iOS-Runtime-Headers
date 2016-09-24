@@ -3,15 +3,16 @@
  */
 
 @interface EKAvailabilitySpan : NSObject {
-    NSDate *_endDate;
-    NSDate *_startDate;
-    int _type;
+    NSDate * _endDate;
+    NSDate * _startDate;
+    int  _type;
 }
 
 @property (nonatomic, readonly) NSDate *endDate;
 @property (nonatomic, readonly) NSDate *startDate;
 @property (nonatomic, readonly) int type;
 
+- (void).cxx_destruct;
 - (id)description;
 - (id)endDate;
 - (id)init;

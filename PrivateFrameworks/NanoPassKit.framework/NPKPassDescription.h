@@ -3,32 +3,33 @@
  */
 
 @interface NPKPassDescription : NSObject <NSCopying, NSSecureCoding> {
-    PKColor *_backgroundColor;
-    PKImage *_backgroundImage;
-    NSData *_backgroundImageEncoded;
-    BOOL _cobranded;
-    NSData *_completeHash;
-    BOOL _deletePending;
-    PKPaymentApplication *_devicePrimaryPaymentApplication;
-    int _effectivePaymentApplicationState;
-    PKColor *_foregroundColor;
-    NSNumber *_groupID;
-    BOOL _hasStoredValue;
-    BOOL _hasUserSelectablePaymentApplications;
-    NSDate *_ingestionDate;
-    PKColor *_labelColor;
-    PKImage *_logoImage;
-    NSData *_logoImageEncoded;
-    NSString *_logoText;
-    NSData *_manifestHash;
-    PKNFCPayload *_nfcPayload;
-    NSString *_passTypeIdentifier;
-    PKPaymentApplication *_preferredPaymentApplication;
-    BOOL _privateLabel;
-    NSDate *_relevantDate;
-    unsigned int _settings;
-    int _style;
-    NSString *_uniqueID;
+    PKColor * _backgroundColor;
+    PKImage * _backgroundImage;
+    NSData * _backgroundImageEncoded;
+    BOOL  _cobranded;
+    NSData * _completeHash;
+    BOOL  _deletePending;
+    NSSet * _devicePaymentApplications;
+    PKPaymentApplication * _devicePrimaryPaymentApplication;
+    int  _effectivePaymentApplicationState;
+    PKColor * _foregroundColor;
+    NSNumber * _groupID;
+    BOOL  _hasStoredValue;
+    BOOL  _hasUserSelectablePaymentApplications;
+    NSDate * _ingestionDate;
+    PKColor * _labelColor;
+    PKImage * _logoImage;
+    NSData * _logoImageEncoded;
+    NSString * _logoText;
+    NSData * _manifestHash;
+    PKNFCPayload * _nfcPayload;
+    NSString * _passTypeIdentifier;
+    PKPaymentApplication * _preferredPaymentApplication;
+    BOOL  _privateLabel;
+    NSDate * _relevantDate;
+    unsigned int  _settings;
+    int  _style;
+    NSString * _uniqueID;
 }
 
 @property (nonatomic, retain) PKColor *backgroundColor;
@@ -37,6 +38,7 @@
 @property (getter=isCobranded, nonatomic) BOOL cobranded;
 @property (nonatomic, retain) NSData *completeHash;
 @property (nonatomic) BOOL deletePending;
+@property (nonatomic, retain) NSSet *devicePaymentApplications;
 @property (nonatomic, retain) PKPaymentApplication *devicePrimaryPaymentApplication;
 @property (nonatomic) int effectivePaymentApplicationState;
 @property (nonatomic, retain) PKColor *foregroundColor;
@@ -70,6 +72,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (BOOL)deletePending;
 - (id)description;
+- (id)devicePaymentApplications;
 - (id)devicePrimaryPaymentApplication;
 - (int)effectivePaymentApplicationState;
 - (id)encodeAsData:(id)arg1;
@@ -102,6 +105,7 @@
 - (void)setCobranded:(BOOL)arg1;
 - (void)setCompleteHash:(id)arg1;
 - (void)setDeletePending:(BOOL)arg1;
+- (void)setDevicePaymentApplications:(id)arg1;
 - (void)setDevicePrimaryPaymentApplication:(id)arg1;
 - (void)setEffectivePaymentApplicationState:(int)arg1;
 - (void)setForegroundColor:(id)arg1;
@@ -124,6 +128,8 @@
 - (void)setUniqueID:(id)arg1;
 - (unsigned int)settings;
 - (int)style;
+- (BOOL)supportsInAppPaymentOnNetworks:(id)arg1;
+- (BOOL)supportsInAppPaymentOnNetworks:(id)arg1 capabilities:(unsigned int)arg2;
 - (id)uniqueID;
 
 @end

@@ -3,12 +3,12 @@
  */
 
 @interface ICQUpgradeFlowManager : NSObject <ICQPageDelegate, PSCloudStorageOffersManagerDelegate, UINavigationControllerDelegate> {
-    ICQUpgradeOfferViewController *_busyOfferViewController;
-    NSURLSession *_buyProductSession;
-    <ICQUpgradeFlowManagerDelegate> *_delegate;
-    ICQOffer *_offer;
-    PSCloudStorageOffersManager *_storageOffersManager;
-    ICQUpgradeNavigationController *_upgradeNavigationController;
+    ICQUpgradeOfferViewController * _busyOfferViewController;
+    NSURLSession * _buyProductSession;
+    <ICQUpgradeFlowManagerDelegate> * _delegate;
+    ICQOffer * _offer;
+    PSCloudStorageOffersManager * _storageOffersManager;
+    ICQUpgradeNavigationController * _upgradeNavigationController;
 }
 
 @property (readonly, copy) NSString *debugDescription;

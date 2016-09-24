@@ -3,9 +3,9 @@
  */
 
 @interface MKTransitMessageCell : MKCustomSeparatorTableViewCell {
-    NSLayoutConstraint *_bottomConstraint;
-    UILabel *_messageLabel;
-    NSLayoutConstraint *_topConstraint;
+    NSLayoutConstraint * _bottomConstraint;
+    _MKUILabel * _messageLabel;
+    NSLayoutConstraint * _topConstraint;
 }
 
 @property (nonatomic, copy) NSString *messageText;

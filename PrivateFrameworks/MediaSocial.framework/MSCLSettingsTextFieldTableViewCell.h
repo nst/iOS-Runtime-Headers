@@ -3,22 +3,22 @@
  */
 
 @interface MSCLSettingsTextFieldTableViewCell : UITableViewCell {
-    <UITextFieldDelegate> *_delegate;
-    BOOL _enabled;
-    float _labelWidth;
-    int _layoutStyle;
-    UITextField *_textField;
+    <UITextFieldDelegate> * _delegate;
+    BOOL  _enabled;
+    double  _labelWidth;
+    int  _layoutStyle;
+    UITextField * _textField;
 }
 
 @property (nonatomic) <UITextFieldDelegate> *delegate;
 @property (getter=isEnabled, nonatomic) BOOL enabled;
-@property (nonatomic) float labelWidth;
+@property (nonatomic) double labelWidth;
 @property (nonatomic) int layoutStyle;
 @property (nonatomic, readonly) UITextField *textField;
 
 - (void).cxx_destruct;
 - (id)delegate;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (BOOL)isEnabled;
 - (float)labelWidth;

@@ -3,10 +3,10 @@
  */
 
 @interface SKReferenceNode : SKNode {
-    BOOL _hasResolvedURL;
-    NSString *_referenceFileName;
-    NSURL *_referenceURL;
-    SKNode *_resolvedNode;
+    BOOL  _hasResolvedURL;
+    NSString * _referenceFileName;
+    NSURL * _referenceURL;
+    SKNode * _resolvedNode;
 }
 
 @property (nonatomic, retain) NSString *referenceFileName;

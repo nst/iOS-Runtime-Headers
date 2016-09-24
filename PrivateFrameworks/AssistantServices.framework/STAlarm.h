@@ -3,11 +3,11 @@
  */
 
 @interface STAlarm : STSiriModelObject <NSCopying> {
-    int _daysOfWeek;
-    BOOL _enabled;
-    int _hourOfDay;
-    NSString *_label;
-    int _minuteOfHour;
+    int  _daysOfWeek;
+    BOOL  _enabled;
+    int  _hourOfDay;
+    NSString * _label;
+    int  _minuteOfHour;
 }
 
 @property (nonatomic) int daysOfWeek;

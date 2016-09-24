@@ -3,28 +3,31 @@
  */
 
 @interface _GEOMapURLParser : NSObject {
-    NSString *_abAddressID;
-    NSString *_abRecordID;
-    NSString *_addressString;
-    double _altitude;
+    NSString * _abAddressID;
+    NSString * _abRecordID;
+    NSString * _addressString;
+    double  _altitude;
     struct { 
         double latitude; 
         double longitude; 
-    } _centerCoordinate;
-    NSString *_contentProvider;
-    NSString *_contentProviderID;
-    NSString *_directionsDestinationAddressString;
-    NSString *_directionsSourceAddressString;
-    BOOL _exactPositionSpecified;
-    int _mapType;
-    double _roll;
-    double _rotation;
+    }  _centerCoordinate;
+    NSString * _contentProvider;
+    NSString * _contentProviderID;
+    NSString * _directionsDestinationAddressString;
+    NSString * _directionsSourceAddressString;
+    BOOL  _exactPositionSpecified;
+    int  _favoritesType;
+    unsigned int  _lineMUID;
+    NSString * _lineName;
+    int  _mapType;
+    double  _roll;
+    double  _rotation;
     struct { 
         double latitude; 
         double longitude; 
-    } _searchCoordinate;
-    int _searchProviderID;
-    NSString *_searchQuery;
+    }  _searchCoordinate;
+    int  _searchProviderID;
+    NSString * _searchQuery;
     struct { 
         struct { 
             double latitude; 
@@ -34,18 +37,19 @@
             double latitudeDelta; 
             double longitudeDelta; 
         } span; 
-    } _searchRegion;
-    unsigned long long _searchUID;
+    }  _searchRegion;
+    unsigned int  _searchUID;
     struct { 
         double latitudeDelta; 
         double longitudeDelta; 
-    } _span;
-    double _tilt;
-    int _trackingMode;
-    int _transportType;
-    NSURL *_url;
-    GEOUserSessionEntity *_userSessionEntity;
-    float _zoomLevel;
+    }  _span;
+    BOOL  _tester;
+    double  _tilt;
+    int  _trackingMode;
+    int  _transportType;
+    NSURL * _url;
+    GEOUserSessionEntity * _userSessionEntity;
+    double  _zoomLevel;
 }
 
 @property (readonly) NSString *abAddressID;
@@ -58,6 +62,9 @@
 @property (readonly) NSString *directionsDestinationAddressString;
 @property (readonly) NSString *directionsSourceAddressString;
 @property (readonly) BOOL exactPositionSpecified;
+@property (readonly) int favoritesType;
+@property (readonly) unsigned int lineMUID;
+@property (readonly, copy) NSString *lineName;
 @property (readonly) int mapType;
 @property (readonly) double roll;
 @property (readonly) double rotation;
@@ -65,13 +72,14 @@
 @property (readonly) int searchProviderID;
 @property (readonly) NSString *searchQuery;
 @property (readonly) struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; } searchRegion;
-@property (readonly) unsigned long long searchUID;
+@property (readonly) unsigned int searchUID;
 @property (readonly) struct { double x1; double x2; } span;
+@property (readonly) BOOL tester;
 @property (readonly) double tilt;
 @property (readonly) int trackingMode;
 @property (readonly) int transportType;
 @property (readonly) GEOUserSessionEntity *userSessionEntity;
-@property (readonly) float zoomLevel;
+@property (readonly) double zoomLevel;
 
 + (BOOL)isValidMapURL:(id)arg1;
 + (BOOL)isValidMapsCategoryURL:(id)arg1;
@@ -88,7 +96,10 @@
 - (id)directionsDestinationAddressString;
 - (id)directionsSourceAddressString;
 - (BOOL)exactPositionSpecified;
+- (int)favoritesType;
 - (id)initWithURL:(id)arg1;
+- (unsigned int)lineMUID;
+- (id)lineName;
 - (int)mapType;
 - (BOOL)parseIncludingCustomParameters:(BOOL)arg1;
 - (double)roll;
@@ -97,8 +108,9 @@
 - (int)searchProviderID;
 - (id)searchQuery;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })searchRegion;
-- (unsigned long long)searchUID;
+- (unsigned int)searchUID;
 - (struct { double x1; double x2; })span;
+- (BOOL)tester;
 - (double)tilt;
 - (int)trackingMode;
 - (int)transportType;

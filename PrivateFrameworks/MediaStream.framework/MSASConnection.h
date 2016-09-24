@@ -3,13 +3,13 @@
  */
 
 @interface MSASConnection : NSObject <XPCNSClientConnectionDelegate> {
-    XPCNSClientConnection *_connection;
-    NSMutableDictionary *_focusAlbumGUIDByPersonID;
-    NSMutableDictionary *_focusAlbumTimerByPersonID;
-    NSMutableDictionary *_foregroundPingTimerContextByPersonID;
-    NSObject<OS_dispatch_queue> *_memberQueue;
-    XPCNSClientConnection *_noWakeConnection;
-    NSMutableDictionary *_serverSideConfigurationDictionaryByPersonID;
+    XPCNSClientConnection * _connection;
+    NSMutableDictionary * _focusAlbumGUIDByPersonID;
+    NSMutableDictionary * _focusAlbumTimerByPersonID;
+    NSMutableDictionary * _foregroundPingTimerContextByPersonID;
+    NSObject<OS_dispatch_queue> * _memberQueue;
+    XPCNSClientConnection * _noWakeConnection;
+    NSMutableDictionary * _serverSideConfigurationDictionaryByPersonID;
 }
 
 @property (nonatomic, retain) XPCNSClientConnection *connection;

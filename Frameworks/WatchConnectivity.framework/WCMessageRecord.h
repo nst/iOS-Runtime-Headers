@@ -3,10 +3,10 @@
  */
 
 @interface WCMessageRecord : NSObject {
-    id /* block */ _errorHandler;
-    BOOL _expectsResponse;
-    NSString *_identifier;
-    NSObject<OS_dispatch_source> *_timeoutTimer;
+    id /* block */  _errorHandler;
+    BOOL  _expectsResponse;
+    NSString * _identifier;
+    NSObject<OS_dispatch_source> * _timeoutTimer;
 }
 
 @property (readonly, copy) id /* block */ errorHandler;

@@ -3,11 +3,11 @@
  */
 
 @interface GKTurnBasedMatchmakerViewController : UINavigationController <GKExtensionParentViewControllerProtocol, GKLocalPlayerListener, GKTurnBasedEventListener> {
-    UIAlertController *_alertController;
-    GKMatchRequest *_matchRequest;
-    GKTurnBasedMatchmakerHostViewController *_remoteViewController;
-    BOOL _showExistingMatches;
-    <GKTurnBasedMatchmakerViewControllerDelegate> *_turnBasedMatchmakerDelegateWeak;
+    UIAlertController * _alertController;
+    GKMatchRequest * _matchRequest;
+    GKTurnBasedMatchmakerHostViewController * _remoteViewController;
+    BOOL  _showExistingMatches;
+    <GKTurnBasedMatchmakerViewControllerDelegate> * _turnBasedMatchmakerDelegateWeak;
 }
 
 @property (nonatomic, retain) UIAlertController *alertController;

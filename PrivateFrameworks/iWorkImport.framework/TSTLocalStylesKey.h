@@ -3,8 +3,8 @@
  */
 
 @interface TSTLocalStylesKey : NSObject <NSCopying> {
-    TSTCellStyle *mCellStyle;
-    TSWPParagraphStyle *mTextStyle;
+    TSTCellStyle * mCellStyle;
+    TSWPParagraphStyle * mTextStyle;
 }
 
 @property (retain) TSTCellStyle *cellStyle;
@@ -12,6 +12,7 @@
 
 - (id)cellStyle;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;

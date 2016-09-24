@@ -3,14 +3,14 @@
  */
 
 @interface SBCXPCService : NSObject {
-    SBCXPCServiceInterface *_XPCServiceInterface;
-    id _applicationWillTerminateObserver;
-    SBCClientConfiguration *_clientConfiguration;
-    BOOL _isConnecting;
-    NSMutableDictionary *_pendingReplyBlockCompletionHandlers;
-    NSObject<OS_dispatch_queue> *_queue;
-    id _serviceProxy;
-    NSXPCConnection *_xpcConnection;
+    SBCXPCServiceInterface * _XPCServiceInterface;
+    id  _applicationWillTerminateObserver;
+    SBCClientConfiguration * _clientConfiguration;
+    BOOL  _isConnecting;
+    NSMutableDictionary * _pendingReplyBlockCompletionHandlers;
+    NSObject<OS_dispatch_queue> * _queue;
+    id  _serviceProxy;
+    NSXPCConnection * _xpcConnection;
 }
 
 @property (readonly) SBCXPCServiceInterface *XPCServiceInterface;

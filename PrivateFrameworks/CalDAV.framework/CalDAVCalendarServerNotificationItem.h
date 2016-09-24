@@ -3,8 +3,8 @@
  */
 
 @interface CalDAVCalendarServerNotificationItem : CoreDAVItem {
-    CoreDAVItem *_content;
-    CoreDAVLeafItem *_dtstamp;
+    CoreDAVItem * _content;
+    CoreDAVLeafItem * _dtstamp;
 }
 
 @property (nonatomic, retain) CoreDAVItem *content;

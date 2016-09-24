@@ -14,7 +14,6 @@
 - (void)dealloc;
 - (BOOL)expandEntityReferences;
 - (id)filter;
-- (void)finalize;
 - (id)firstChild;
 - (id)lastChild;
 - (id)nextNode;

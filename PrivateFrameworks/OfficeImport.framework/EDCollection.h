@@ -3,7 +3,7 @@
  */
 
 @interface EDCollection : NSObject <NSCopying> {
-    NSMutableArray *mObjects;
+    NSMutableArray * mObjects;
 }
 
 + (id)collection;

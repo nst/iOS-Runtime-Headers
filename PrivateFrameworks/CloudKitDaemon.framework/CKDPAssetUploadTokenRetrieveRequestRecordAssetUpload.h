@@ -3,9 +3,9 @@
  */
 
 @interface CKDPAssetUploadTokenRetrieveRequestRecordAssetUpload : PBCodable <NSCopying> {
-    NSMutableArray *_assetFields;
-    CKDPRecordIdentifier *_recordId;
-    CKDPRecordType *_type;
+    NSMutableArray * _assetFields;
+    CKDPRecordIdentifier * _recordId;
+    CKDPRecordType * _type;
 }
 
 @property (nonatomic, retain) NSMutableArray *assetFields;
@@ -13,6 +13,8 @@
 @property (nonatomic, readonly) BOOL hasType;
 @property (nonatomic, retain) CKDPRecordIdentifier *recordId;
 @property (nonatomic, retain) CKDPRecordType *type;
+
++ (Class)assetFieldsType;
 
 - (void).cxx_destruct;
 - (void)addAssetFields:(id)arg1;

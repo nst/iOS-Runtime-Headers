@@ -3,9 +3,9 @@
  */
 
 @interface GQZArchiveMemoryInputStream : NSObject <GQZArchiveInputStream> {
-    const char *mBytes;
-    NSData *mData;
-    long long mSize;
+    const char * mBytes;
+    NSData * mData;
+    int  mSize;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -13,10 +13,10 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
-- (const char *)dataAtOffset:(long long)arg1 size:(unsigned long)arg2 end:(long long)arg3 readSize:(unsigned int*)arg4;
+- (const char *)dataAtOffset:(int)arg1 size:(unsigned long)arg2 end:(int)arg3 readSize:(unsigned int*)arg4;
 - (void)dealloc;
 - (id)initWithData:(id)arg1;
-- (void)readFromOffset:(long long)arg1 size:(unsigned long)arg2 buffer:(char *)arg3;
-- (long long)size;
+- (void)readFromOffset:(int)arg1 size:(unsigned long)arg2 buffer:(char *)arg3;
+- (int)size;
 
 @end

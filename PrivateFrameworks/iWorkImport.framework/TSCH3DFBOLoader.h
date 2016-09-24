@@ -3,8 +3,8 @@
  */
 
 @interface TSCH3DFBOLoader : TSCH3DResourceLoader {
-    <TSCH3DRenderBufferAllocator> *mColorAllocator;
-    <TSCH3DRenderBufferAllocator> *mDepthAllocator;
+    <TSCH3DRenderBufferAllocator> * mColorAllocator;
+    <TSCH3DRenderBufferAllocator> * mDepthAllocator;
     struct FramebufferAttributes { 
         int type; 
         int samples; 
@@ -13,7 +13,7 @@
         int depthDataType; 
         BOOL linearFilter; 
         BOOL discardHint; 
-    } mFramebufferAttributes;
+    }  mFramebufferAttributes;
     struct tvec2<int> { 
         union { 
             int x; 
@@ -25,7 +25,7 @@
             int g; 
             int t; 
         } ; 
-    } mSize;
+    }  mSize;
 }
 
 @property (nonatomic, readonly) <TSCH3DRenderBufferAllocator> *colorAllocator;

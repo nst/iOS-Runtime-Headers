@@ -3,9 +3,10 @@
  */
 
 @interface PKSerializedDataAccessor : PKFileDataAccessor {
-    NSData *_archiveData;
+    NSData * _archiveData;
 }
 
+- (void).cxx_destruct;
 - (void)_removeDiskRepresentation;
 - (id)archiveData;
 - (void)dealloc;

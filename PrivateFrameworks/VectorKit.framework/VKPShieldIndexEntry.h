@@ -3,17 +3,17 @@
  */
 
 @interface VKPShieldIndexEntry : PBCodable <NSCopying> {
-    NSString *_artworkIdentifier;
+    NSString * _artworkIdentifier;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _defaultForFeatureTypes;
+    }  _defaultForFeatureTypes;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _shieldTypes;
+    }  _shieldTypes;
 }
 
 @property (nonatomic, retain) NSString *artworkIdentifier;

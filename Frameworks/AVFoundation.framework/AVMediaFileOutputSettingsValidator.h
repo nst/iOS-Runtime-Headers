@@ -3,7 +3,7 @@
  */
 
 @interface AVMediaFileOutputSettingsValidator : NSObject <AVOutputSettingsValidation> {
-    AVMediaFileType *_fileType;
+    AVMediaFileType * _fileType;
 }
 
 @property (nonatomic, readonly) AVMediaFileType *fileType;

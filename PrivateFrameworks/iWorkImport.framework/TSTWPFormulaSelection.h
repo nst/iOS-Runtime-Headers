@@ -3,7 +3,7 @@
  */
 
 @interface TSTWPFormulaSelection : TSTWPSelection {
-    unsigned int mActiveTokenCharIndex;
+    unsigned int  mActiveTokenCharIndex;
 }
 
 @property (nonatomic) unsigned int activeTokenCharIndex;

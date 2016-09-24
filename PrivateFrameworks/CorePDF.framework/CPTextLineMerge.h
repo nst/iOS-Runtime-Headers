@@ -3,7 +3,7 @@
  */
 
 @interface CPTextLineMerge : NSObject {
-    NSMutableArray *avail;
+    NSMutableArray * avail;
 }
 
 - (void)addInterval:(id)arg1 to:(id)arg2;

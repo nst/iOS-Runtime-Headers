@@ -3,12 +3,12 @@
  */
 
 @interface AWDWiFiMetricsManagerBTCoexStats : PBCodable <NSCopying> {
-    unsigned long long _antennaGrants;
-    AWDWiFiMetricsManagerStateMachine *_antennaOwnership2BT;
-    AWDWiFiMetricsManagerStateMachine *_antennaOwnership2WLAN;
-    unsigned long long _antennaRequests;
-    AWDWiFiMetricsManagerStateMachine *_enbledStateOff;
-    AWDWiFiMetricsManagerStateMachine *_enbledStateOn;
+    unsigned long long  _antennaGrants;
+    AWDWiFiMetricsManagerStateMachine * _antennaOwnership2BT;
+    AWDWiFiMetricsManagerStateMachine * _antennaOwnership2WLAN;
+    unsigned long long  _antennaRequests;
+    AWDWiFiMetricsManagerStateMachine * _enbledStateOff;
+    AWDWiFiMetricsManagerStateMachine * _enbledStateOn;
     struct { 
         unsigned int antennaGrants : 1; 
         unsigned int antennaRequests : 1; 
@@ -30,29 +30,29 @@
         unsigned int requestseSCO : 1; 
         unsigned int timestamp : 1; 
         unsigned int wlanPreempted : 1; 
-    } _has;
-    unsigned long long _highUcodeLatency;
-    AWDWiFiMetricsManagerStateMachine *_hybridStateOff;
-    AWDWiFiMetricsManagerStateMachine *_hybridStateOn;
-    unsigned long long _psnullExceeded;
-    unsigned long long _requestsA2DP;
-    unsigned long long _requestsACL;
-    unsigned long long _requestsBLE;
-    unsigned long long _requestsBLEScan;
-    unsigned long long _requestsInquiry;
-    unsigned long long _requestsInquiryScan;
-    unsigned long long _requestsMSS;
-    unsigned long long _requestsOther;
-    unsigned long long _requestsPARK;
-    unsigned long long _requestsPage;
-    unsigned long long _requestsPageScan;
-    unsigned long long _requestsSCO;
-    unsigned long long _requestsSniff;
-    unsigned long long _requestseSCO;
-    AWDWiFiMetricsManagerStateMachine *_tdmStateOff;
-    AWDWiFiMetricsManagerStateMachine *_tdmStateOn;
-    unsigned long long _timestamp;
-    unsigned long long _wlanPreempted;
+    }  _has;
+    unsigned long long  _highUcodeLatency;
+    AWDWiFiMetricsManagerStateMachine * _hybridStateOff;
+    AWDWiFiMetricsManagerStateMachine * _hybridStateOn;
+    unsigned long long  _psnullExceeded;
+    unsigned long long  _requestsA2DP;
+    unsigned long long  _requestsACL;
+    unsigned long long  _requestsBLE;
+    unsigned long long  _requestsBLEScan;
+    unsigned long long  _requestsInquiry;
+    unsigned long long  _requestsInquiryScan;
+    unsigned long long  _requestsMSS;
+    unsigned long long  _requestsOther;
+    unsigned long long  _requestsPARK;
+    unsigned long long  _requestsPage;
+    unsigned long long  _requestsPageScan;
+    unsigned long long  _requestsSCO;
+    unsigned long long  _requestsSniff;
+    unsigned long long  _requestseSCO;
+    AWDWiFiMetricsManagerStateMachine * _tdmStateOff;
+    AWDWiFiMetricsManagerStateMachine * _tdmStateOn;
+    unsigned long long  _timestamp;
+    unsigned long long  _wlanPreempted;
 }
 
 @property (nonatomic) unsigned long long antennaGrants;

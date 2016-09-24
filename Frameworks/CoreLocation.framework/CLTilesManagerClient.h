@@ -3,9 +3,7 @@
  */
 
 @interface CLTilesManagerClient : NSObject {
-    NSDictionary *fNotificationHandlers;
-    NSObject<OS_dispatch_queue> *fQueue;
-    NSObject<OS_xpc_object> *fXpcConnection;
+    CLTilesManagerClientInternal * _internal;
 }
 
 + (void)initialize;

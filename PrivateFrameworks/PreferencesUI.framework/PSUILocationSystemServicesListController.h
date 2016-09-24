@@ -3,7 +3,7 @@
  */
 
 @interface PSUILocationSystemServicesListController : PSUILocationServicesListController {
-    RTRoutineManager *_routineManager;
+    RTRoutineManager * _routineManager;
 }
 
 @property (nonatomic, retain) RTRoutineManager *routineManager;

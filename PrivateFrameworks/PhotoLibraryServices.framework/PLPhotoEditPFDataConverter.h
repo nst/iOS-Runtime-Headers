@@ -13,9 +13,11 @@
 + (id)_formatVersion;
 + (id)_knownFormatIdentifiers;
 + (id)_knownFormatVersions;
++ (void)_sanitizeDictionary:(id)arg1;
 + (id)_settingsDictionaryForLegacyAutoEnhanceFilters:(id)arg1;
 + (int)_supportLevelForSettings:(id)arg1 typesForKnownKeys:(id)arg2 requiredKeys:(id)arg3;
 + (id)_supportedAdjustments;
++ (id)_validStatisticsValueTypes;
 + (BOOL)_validateValueTypesForKeys:(id)arg1 requiredKeys:(id)arg2 inDictionary:(id)arg3 error:(id*)arg4;
 + (BOOL)canInterpretDataWithFormatIdentifier:(id)arg1 formatVersion:(id)arg2;
 + (id)dataFromPhotoEditModel:(id)arg1 outFormatIdentifier:(id*)arg2 outFormatVersion:(id*)arg3 exportProperties:(id)arg4;

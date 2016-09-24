@@ -6,8 +6,8 @@
 
 + (id)columnsDefinition;
 + (id)databaseTable;
-+ (id)insertOrLookupDataProvenanceForSyncProvenance:(long long)arg1 originDevice:(id)arg2 originBuild:(id)arg3 localDevice:(id)arg4 localBuild:(id)arg5 sourceID:(id)arg6 deviceID:(id)arg7 sourceVersion:(id)arg8 database:(id)arg9 error:(id*)arg10;
-+ (id)originProvenanceForPersistentID:(long long)arg1 database:(id)arg2 error:(id*)arg3;
++ (id)insertOrLookupDataProvenanceForSyncProvenance:(int)arg1 originProductType:(id)arg2 originSystemBuild:(id)arg3 localProductType:(id)arg4 localSystemBuild:(id)arg5 sourceVersion:(id)arg6 timeZoneName:(id)arg7 sourceID:(id)arg8 deviceID:(id)arg9 database:(id)arg10 error:(id*)arg11;
++ (id)originProvenanceForPersistentID:(int)arg1 database:(id)arg2 error:(id*)arg3;
 + (int)protectionClass;
 + (id)uniquedColumns;
 

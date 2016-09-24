@@ -5,8 +5,8 @@
 @interface _NSFileWatcherDirectoryFileHandleInfo : _NSFileWatcherFileHandleInfo {
     struct InodeDevPair { 
         int dev; 
-        unsigned long long inode; 
-    } inodeDevPair;
+        unsigned int inode; 
+    }  inodeDevPair;
 }
 
 - (void)close;

@@ -3,7 +3,7 @@
  */
 
 @interface NFFieldDetectSession : NFSession <NFFieldDetectSessionCallbacks> {
-    NFWeakReference *_delegate;
+    NFWeakReference * _delegate;
 }
 
 @property (readonly, copy) NSString *debugDescription;

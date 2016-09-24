@@ -3,8 +3,8 @@
  */
 
 @interface WMTableRowMapper : CMMapper {
-    double mHeight;
-    WDTableRow *mWdTableRow;
+    double  mHeight;
+    WDTableRow * mWdTableRow;
 }
 
 + (BOOL)isTableRowDeleted:(id)arg1;

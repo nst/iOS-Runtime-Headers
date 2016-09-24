@@ -3,9 +3,9 @@
  */
 
 @interface NSFunctionExpression : NSExpression {
-    NSArray *_arguments;
-    NSExpression *_operand;
-    SEL _selector;
+    NSArray * _arguments;
+    NSExpression * _operand;
+    SEL  _selector;
 }
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation

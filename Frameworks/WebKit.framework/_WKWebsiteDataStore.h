@@ -5,7 +5,7 @@
 @interface _WKWebsiteDataStore : NSObject {
     struct RetainPtr<WKWebsiteDataStore> { 
         void *m_ptr; 
-    } _dataStore;
+    }  _dataStore;
 }
 
 @property (getter=isNonPersistent, readonly) BOOL nonPersistent;

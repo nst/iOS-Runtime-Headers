@@ -3,10 +3,10 @@
  */
 
 @interface BSXPCConnectionListenerManager : NSObject {
-    NSObject<OS_dispatch_queue> *_defaultHandlerQueue;
-    NSObject<OS_dispatch_queue> *_listeningQueue;
-    NSMutableDictionary *_services;
-    NSLock *_servicesLock;
+    NSObject<OS_dispatch_queue> * _defaultHandlerQueue;
+    NSObject<OS_dispatch_queue> * _listeningQueue;
+    NSMutableDictionary * _services;
+    NSLock * _servicesLock;
 }
 
 + (id)defaultHandlerQueue;

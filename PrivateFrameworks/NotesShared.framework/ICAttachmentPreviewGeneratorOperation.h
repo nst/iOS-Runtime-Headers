@@ -3,9 +3,9 @@
  */
 
 @interface ICAttachmentPreviewGeneratorOperation : NSOperation {
-    NSManagedObjectID *_attachmentID;
-    ICAttachmentModel *_attachmentModel;
-    NSManagedObjectContext *_managedObjectContext;
+    NSManagedObjectID * _attachmentID;
+    ICAttachmentModel * _attachmentModel;
+    NSManagedObjectContext * _managedObjectContext;
 }
 
 @property (retain) NSManagedObjectID *attachmentID;

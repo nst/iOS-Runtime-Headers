@@ -3,7 +3,7 @@
  */
 
 @interface SKUIMenuBarNavigationBarController : SKUINavigationBarController {
-    UIView *_titleView;
+    UIView * _titleView;
 }
 
 @property (nonatomic, retain) UIView *titleView;

@@ -3,7 +3,7 @@
  */
 
 @interface GQDTDateFormat : NSObject <GQDNameMappable> {
-    struct __CFString { } *mFormatString;
+    struct __CFString { } * mFormatString;
 }
 
 @property (readonly, copy) NSString *debugDescription;

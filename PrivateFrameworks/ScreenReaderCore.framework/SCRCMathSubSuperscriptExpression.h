@@ -3,9 +3,9 @@
  */
 
 @interface SCRCMathSubSuperscriptExpression : SCRCMathExpression {
-    SCRCMathExpression *_base;
-    SCRCMathExpression *_subscript;
-    SCRCMathExpression *_superscript;
+    SCRCMathExpression * _base;
+    SCRCMathExpression * _subscript;
+    SCRCMathExpression * _superscript;
 }
 
 @property (nonatomic, retain) SCRCMathExpression *base;

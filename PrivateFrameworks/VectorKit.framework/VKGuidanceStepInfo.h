@@ -3,8 +3,8 @@
  */
 
 @interface VKGuidanceStepInfo : NSObject {
-    NSString *_roadName;
-    int _routePoint;
+    NSString * _roadName;
+    int  _routePoint;
 }
 
 @property (nonatomic, readonly, retain) NSString *roadName;

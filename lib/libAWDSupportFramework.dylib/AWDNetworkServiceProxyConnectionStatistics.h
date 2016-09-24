@@ -3,16 +3,16 @@
  */
 
 @interface AWDNetworkServiceProxyConnectionStatistics : PBCodable <NSCopying> {
-    unsigned int _alternatePathCount;
-    unsigned long long _captivePresentCount;
-    unsigned int _captivePresentFailedCount;
-    unsigned long long _connectionCount;
+    unsigned int  _alternatePathCount;
+    unsigned long long  _captivePresentCount;
+    unsigned int  _captivePresentFailedCount;
+    unsigned long long  _connectionCount;
     struct { 
         unsigned int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _connectionDurationBuckets;
-    unsigned int _exceededMssCount;
+    }  _connectionDurationBuckets;
+    unsigned int  _exceededMssCount;
     struct { 
         unsigned int captivePresentCount : 1; 
         unsigned int connectionCount : 1; 
@@ -37,27 +37,29 @@
         unsigned int captivePresentFailedCount : 1; 
         unsigned int exceededMssCount : 1; 
         unsigned int interfaceType : 1; 
+        unsigned int protocolType : 1; 
         unsigned int restrictedNetworkFailedCount : 1; 
-    } _has;
-    int _interfaceType;
-    unsigned long long _mptcpSuccessCount;
-    unsigned long long _restrictedNetworkCount;
-    unsigned int _restrictedNetworkFailedCount;
-    unsigned long long _resultConnectionResetCount;
-    unsigned long long _resultNetworkUnavailableCount;
-    unsigned long long _resultResponseTimeoutCount;
-    unsigned long long _resultSendFailureCount;
-    unsigned long long _resultServerBusyCount;
-    unsigned long long _resultServerDetachedCount;
-    unsigned long long _resultServerInterruptCount;
-    unsigned long long _resultServerOfflineCount;
-    unsigned long long _resultServerOrphanedCount;
-    unsigned long long _resultServerSessionExpiredCount;
-    unsigned long long _resultServerUnreachableCount;
-    unsigned long long _resultSuccessCount;
-    unsigned long long _resultUnknownErrorCount;
-    unsigned long long _tfoSuccessCount;
-    unsigned long long _timestamp;
+    }  _has;
+    int  _interfaceType;
+    unsigned long long  _mptcpSuccessCount;
+    int  _protocolType;
+    unsigned long long  _restrictedNetworkCount;
+    unsigned int  _restrictedNetworkFailedCount;
+    unsigned long long  _resultConnectionResetCount;
+    unsigned long long  _resultNetworkUnavailableCount;
+    unsigned long long  _resultResponseTimeoutCount;
+    unsigned long long  _resultSendFailureCount;
+    unsigned long long  _resultServerBusyCount;
+    unsigned long long  _resultServerDetachedCount;
+    unsigned long long  _resultServerInterruptCount;
+    unsigned long long  _resultServerOfflineCount;
+    unsigned long long  _resultServerOrphanedCount;
+    unsigned long long  _resultServerSessionExpiredCount;
+    unsigned long long  _resultServerUnreachableCount;
+    unsigned long long  _resultSuccessCount;
+    unsigned long long  _resultUnknownErrorCount;
+    unsigned long long  _tfoSuccessCount;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) unsigned int alternatePathCount;
@@ -74,6 +76,7 @@
 @property (nonatomic) BOOL hasExceededMssCount;
 @property (nonatomic) BOOL hasInterfaceType;
 @property (nonatomic) BOOL hasMptcpSuccessCount;
+@property (nonatomic) BOOL hasProtocolType;
 @property (nonatomic) BOOL hasRestrictedNetworkCount;
 @property (nonatomic) BOOL hasRestrictedNetworkFailedCount;
 @property (nonatomic) BOOL hasResultConnectionResetCount;
@@ -93,6 +96,7 @@
 @property (nonatomic) BOOL hasTimestamp;
 @property (nonatomic) int interfaceType;
 @property (nonatomic) unsigned long long mptcpSuccessCount;
+@property (nonatomic) int protocolType;
 @property (nonatomic) unsigned long long restrictedNetworkCount;
 @property (nonatomic) unsigned int restrictedNetworkFailedCount;
 @property (nonatomic) unsigned long long resultConnectionResetCount;
@@ -112,6 +116,7 @@
 @property (nonatomic) unsigned long long timestamp;
 
 - (int)StringAsInterfaceType:(id)arg1;
+- (int)StringAsProtocolType:(id)arg1;
 - (void)addConnectionDurationBuckets:(unsigned int)arg1;
 - (unsigned int)alternatePathCount;
 - (unsigned long long)captivePresentCount;
@@ -134,6 +139,7 @@
 - (BOOL)hasExceededMssCount;
 - (BOOL)hasInterfaceType;
 - (BOOL)hasMptcpSuccessCount;
+- (BOOL)hasProtocolType;
 - (BOOL)hasRestrictedNetworkCount;
 - (BOOL)hasRestrictedNetworkFailedCount;
 - (BOOL)hasResultConnectionResetCount;
@@ -157,6 +163,8 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)mptcpSuccessCount;
+- (int)protocolType;
+- (id)protocolTypeAsString:(int)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (unsigned long long)restrictedNetworkCount;
 - (unsigned int)restrictedNetworkFailedCount;
@@ -186,6 +194,7 @@
 - (void)setHasExceededMssCount:(BOOL)arg1;
 - (void)setHasInterfaceType:(BOOL)arg1;
 - (void)setHasMptcpSuccessCount:(BOOL)arg1;
+- (void)setHasProtocolType:(BOOL)arg1;
 - (void)setHasRestrictedNetworkCount:(BOOL)arg1;
 - (void)setHasRestrictedNetworkFailedCount:(BOOL)arg1;
 - (void)setHasResultConnectionResetCount:(BOOL)arg1;
@@ -205,6 +214,7 @@
 - (void)setHasTimestamp:(BOOL)arg1;
 - (void)setInterfaceType:(int)arg1;
 - (void)setMptcpSuccessCount:(unsigned long long)arg1;
+- (void)setProtocolType:(int)arg1;
 - (void)setRestrictedNetworkCount:(unsigned long long)arg1;
 - (void)setRestrictedNetworkFailedCount:(unsigned int)arg1;
 - (void)setResultConnectionResetCount:(unsigned long long)arg1;

@@ -2,52 +2,36 @@
    Image: /System/Library/PrivateFrameworks/CoreDuet.framework/CoreDuet
  */
 
-@interface _DKQuery : NSObject <NSSecureCoding> {
-    NSString *_entityName;
-    unsigned int _limit;
-    unsigned int _offset;
-    NSPredicate *_predicate;
-    NSArray *_sortDescriptors;
-}
+@interface _DKQuery : NSObject <NSSecureCoding>
 
-@property (retain) NSString *entityName;
-@property unsigned int limit;
-@property unsigned int offset;
-@property (retain) NSPredicate *predicate;
-@property (retain) NSArray *sortDescriptors;
-
++ (id)endDateSortDescriptorAscending:(BOOL)arg1;
++ (id)exectuableQueryForQuery:(id)arg1;
 + (id)predicateForEventsBetweenStartDate:(id)arg1 endDate:(id)arg2;
 + (id)predicateForEventsBetweenStartSecondOfDay:(unsigned int)arg1 endSecondOfDay:(unsigned int)arg2;
 + (id)predicateForEventsContainingDateRangeFrom:(id)arg1 to:(id)arg2;
 + (id)predicateForEventsIntersectingDateRangeFrom:(id)arg1 to:(id)arg2;
++ (id)predicateForEventsWithCategoryValue:(id)arg1;
 + (id)predicateForEventsWithDayOfWeek:(unsigned int)arg1;
++ (id)predicateForEventsWithDoubleValue:(double)arg1;
++ (id)predicateForEventsWithDoubleValueBetween:(double)arg1 and:(double)arg2;
 + (id)predicateForEventsWithEndInDateRangeFrom:(id)arg1 to:(id)arg2;
++ (id)predicateForEventsWithIdentifierValue:(id)arg1;
++ (id)predicateForEventsWithIntegerValue:(int)arg1;
++ (id)predicateForEventsWithQuantityValue:(id)arg1;
 + (id)predicateForEventsWithStartAndEndInDateRangeFrom:(id)arg1 to:(id)arg2;
 + (id)predicateForEventsWithStartInDateRangeFrom:(id)arg1 to:(id)arg2;
 + (id)predicateForEventsWithStartOrEndInDateRangeWithFrom:(id)arg1 to:(id)arg2;
 + (id)predicateForEventsWithStreamName:(id)arg1;
 + (id)predicateForEventsWithStreamNames:(id)arg1;
++ (id)predicateForEventsWithStringValue:(id)arg1;
 + (id)predicateForObjectWithUUID:(id)arg1;
 + (id)predicateForObjectsWithUUIDs:(id)arg1;
++ (id)queryNotExecutableError;
 + (id)startDateSortDescriptorAscending:(BOOL)arg1;
 + (BOOL)supportsSecureCoding;
 
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (id)entityName;
-- (void)executeUsingCoreDataStorage:(id)arg1 reponseQueue:(id)arg2;
-- (void)handleResults:(id)arg1 error:(id)arg2 responseQueue:(id)arg3;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithEntityName:(id)arg1 predicate:(id)arg2 offset:(unsigned int)arg3 limit:(unsigned int)arg4 sortDescritors:(id)arg5;
-- (unsigned int)limit;
-- (unsigned int)offset;
-- (id)predicate;
-- (void)setEntityName:(id)arg1;
-- (void)setLimit:(unsigned int)arg1;
-- (void)setOffset:(unsigned int)arg1;
-- (void)setPredicate:(id)arg1;
-- (void)setSortDescriptors:(id)arg1;
-- (id)sortDescriptors;
 
 @end

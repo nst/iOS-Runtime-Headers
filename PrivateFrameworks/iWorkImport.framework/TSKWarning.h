@@ -3,10 +3,10 @@
  */
 
 @interface TSKWarning : NSObject {
-    NSSet *_affectedObjects;
-    NSString *_localizedLocation;
-    NSString *_message;
-    NSDictionary *_userInfo;
+    NSSet * _affectedObjects;
+    NSString * _localizedLocation;
+    NSString * _message;
+    NSDictionary * _userInfo;
 }
 
 @property (nonatomic, copy) NSSet *affectedObjects;

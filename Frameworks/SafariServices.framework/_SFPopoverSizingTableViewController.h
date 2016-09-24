@@ -3,8 +3,8 @@
  */
 
 @interface _SFPopoverSizingTableViewController : UITableViewController {
-    BOOL _didHaveTranslucentAppearance;
-    BOOL _didUpdateTranslucentAppearanceAtLeastOnce;
+    BOOL  _didHaveTranslucentAppearance;
+    BOOL  _didUpdateTranslucentAppearanceAtLeastOnce;
 }
 
 @property (nonatomic, readonly) BOOL hasTranslucentAppearance;
@@ -15,11 +15,11 @@
 - (id)backgroundColorUsingTranslucentAppearance:(BOOL)arg1;
 - (BOOL)hasTranslucentAppearance;
 - (float)minimumHeightInPopoverView;
-- (struct CGSize { float x1; float x2; })preferredContentSize;
+- (struct CGSize { double x1; double x2; })preferredContentSize;
 - (void)updateTranslucentAppearance;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
 
 @end

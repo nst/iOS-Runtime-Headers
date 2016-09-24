@@ -3,25 +3,25 @@
  */
 
 @interface _SSVPlayActivityFlushSessionInformation : NSObject {
-    NSString *_endpointIdentifier;
-    NSString *_revisionVersionToken;
-    NSMutableIndexSet *_revisionsIndexSet;
-    unsigned long long _sessionToken;
+    NSString * _endpointIdentifier;
+    NSString * _revisionVersionToken;
+    NSIndexSet * _revisionsIndexSet;
+    unsigned int  _sessionToken;
 }
 
 @property (nonatomic, copy) NSString *endpointIdentifier;
 @property (nonatomic, copy) NSString *revisionVersionToken;
-@property (nonatomic, retain) NSMutableIndexSet *revisionsIndexSet;
-@property (nonatomic) unsigned long long sessionToken;
+@property (nonatomic, retain) NSIndexSet *revisionsIndexSet;
+@property (nonatomic) unsigned int sessionToken;
 
 - (void).cxx_destruct;
 - (id)endpointIdentifier;
 - (id)revisionVersionToken;
 - (id)revisionsIndexSet;
-- (unsigned long long)sessionToken;
+- (unsigned int)sessionToken;
 - (void)setEndpointIdentifier:(id)arg1;
 - (void)setRevisionVersionToken:(id)arg1;
 - (void)setRevisionsIndexSet:(id)arg1;
-- (void)setSessionToken:(unsigned long long)arg1;
+- (void)setSessionToken:(unsigned int)arg1;
 
 @end

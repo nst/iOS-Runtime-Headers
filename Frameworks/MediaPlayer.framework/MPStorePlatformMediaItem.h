@@ -3,7 +3,7 @@
  */
 
 @interface MPStorePlatformMediaItem : MPNondurableMediaItem {
-    MPStoreItemMetadata *_storeItemMetadata;
+    MPStoreItemMetadata * _storeItemMetadata;
 }
 
 @property (nonatomic, retain) MPStoreItemMetadata *storeItemMetadata;

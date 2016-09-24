@@ -3,7 +3,7 @@
  */
 
 @interface SKUISimpleAnimationFactory : NSObject <_UIBasicAnimationFactory> {
-    CAMediaTimingFunction *_timingFunction;
+    CAMediaTimingFunction * _timingFunction;
 }
 
 @property (readonly, copy) NSString *debugDescription;

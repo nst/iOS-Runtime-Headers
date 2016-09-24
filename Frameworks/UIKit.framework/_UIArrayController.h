@@ -3,13 +3,13 @@
  */
 
 @interface _UIArrayController : NSObject {
-    <_UIArrayControllerDelegate> *_delegate;
-    BOOL _firstUpdateSent;
-    BOOL _invalidated;
-    NSOrderedSet *_lastSnapshot;
-    NSOperationQueue *_operationQueue;
-    NSPredicate *_predicate;
-    NSArray *_sortDescriptors;
+    <_UIArrayControllerDelegate> * _delegate;
+    BOOL  _firstUpdateSent;
+    BOOL  _invalidated;
+    NSOrderedSet * _lastSnapshot;
+    NSOperationQueue * _operationQueue;
+    NSPredicate * _predicate;
+    NSArray * _sortDescriptors;
 }
 
 @property (nonatomic) <_UIArrayControllerDelegate> *delegate;

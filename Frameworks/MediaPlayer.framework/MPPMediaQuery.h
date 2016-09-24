@@ -3,18 +3,18 @@
  */
 
 @interface MPPMediaQuery : PBCodable <NSCopying> {
-    int _entityOrder;
-    NSMutableArray *_filterPredicates;
-    BOOL _filteringDisabled;
-    int _groupingType;
+    int  _entityOrder;
+    NSMutableArray * _filterPredicates;
+    BOOL  _filteringDisabled;
+    int  _groupingType;
     struct { 
         unsigned int entityOrder : 1; 
         unsigned int groupingType : 1; 
         unsigned int staticEntityType : 1; 
         unsigned int filteringDisabled : 1; 
-    } _has;
-    NSMutableArray *_staticEntityIdentifiers;
-    int _staticEntityType;
+    }  _has;
+    NSMutableArray * _staticEntityIdentifiers;
+    int  _staticEntityType;
 }
 
 @property (nonatomic) int entityOrder;

@@ -3,21 +3,21 @@
  */
 
 @interface _UINavigationBarAppearanceStorage : _UIBarAppearanceStorage {
-    NSString *_backdropViewGroupName;
-    UIImage *_condensedBackgroundImage;
-    BOOL _deferShadowToSearchBar;
-    int activeBarMetrics;
-    UIImage *backIndicatorImage;
-    NSNumber *backIndicatorLeftMargin;
-    UIImage *backIndicatorTransitionMaskImage;
-    int barMetrics;
-    _UIBarButtonItemAppearanceStorage *buttonAppearanceStorage;
-    int defaultBarMetrics;
-    BOOL hidesShadow;
-    BOOL reversesShadowOffset;
-    UIImage *shadowImage;
-    NSDictionary *textAttributes;
-    NSMutableDictionary *titleVerticalAdjustmentsForBarMetrics;
+    NSString * _backdropViewGroupName;
+    UIImage * _condensedBackgroundImage;
+    BOOL  _deferShadowToSearchBar;
+    int  activeBarMetrics;
+    UIImage * backIndicatorImage;
+    NSNumber * backIndicatorLeftMargin;
+    UIImage * backIndicatorTransitionMaskImage;
+    int  barMetrics;
+    _UIBarButtonItemAppearanceStorage * buttonAppearanceStorage;
+    int  defaultBarMetrics;
+    BOOL  hidesShadow;
+    BOOL  reversesShadowOffset;
+    UIImage * shadowImage;
+    NSDictionary * textAttributes;
+    NSMutableDictionary * titleVerticalAdjustmentsForBarMetrics;
 }
 
 @property (nonatomic, readonly) _UIBarButtonItemAppearanceStorage *_barButtonAppearanceStorage;

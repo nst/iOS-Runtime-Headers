@@ -3,13 +3,13 @@
  */
 
 @interface SBKResponse : NSObject {
-    NSString *_MIMEType;
-    NSError *_error;
-    unsigned int _responseCode;
-    NSDictionary *_responseDictionary;
-    NSDictionary *_responseHeaderFields;
-    SBKResponseStatus *_responseStatus;
-    double _retrySeconds;
+    NSString * _MIMEType;
+    NSError * _error;
+    unsigned int  _responseCode;
+    NSDictionary * _responseDictionary;
+    NSDictionary * _responseHeaderFields;
+    SBKResponseStatus * _responseStatus;
+    double  _retrySeconds;
 }
 
 @property (nonatomic, readonly) NSString *MIMEType;

@@ -2,33 +2,28 @@
    Image: /System/Library/PrivateFrameworks/Weather.framework/Weather
  */
 
-@interface TWCLocationUpdater : TWCUpdater {
-    City *_currentCity;
-    CLGeocoder *_geocoder;
-    id /* block */ _localWeatherHandler;
-    _MKLocationShifter *_locationShifter;
+@interface TWCLocationUpdater : TWCCityUpdater {
+    City * _currentCity;
+    CLGeocoder * _reverseGeocoder;
 }
 
 @property (nonatomic, retain) City *currentCity;
+@property (nonatomic, retain) CLGeocoder *reverseGeocoder;
 
-+ (void)clearSharedLocationUpdater;
 + (id)sharedLocationUpdater;
 
 - (void).cxx_destruct;
-- (void)_failed:(unsigned int)arg1;
-- (void)_geocodeLocation:(id)arg1;
-- (id)aggregateDictionaryDomain;
-- (void)cancel;
+- (void)_completeReverseGeocodeForLocation:(id)arg1 currentCity:(id)arg2 geocodeError:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)_geocodeLocation:(id)arg1 currentCity:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)_updateWeatherForLocation:(id)arg1 city:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)currentCity;
-- (void)dealloc;
-- (void)didProcessJSONObject;
 - (void)enableProgressIndicator:(BOOL)arg1;
-- (void)failCity:(id)arg1;
-- (void)handleCompletionForCity:(id)arg1 withUpdateDetail:(unsigned int)arg2;
-- (void)handleNilCity;
-- (id)init;
 - (void)parsedResultCity:(id)arg1;
+- (id)reverseGeocoder;
 - (void)setCurrentCity:(id)arg1;
+- (void)setReverseGeocoder:(id)arg1;
+- (void)updateWeatherForCities:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)updateWeatherForCity:(id)arg1;
 - (void)updateWeatherForLocation:(id)arg1 city:(id)arg2;
 - (void)updateWeatherForLocation:(id)arg1 city:(id)arg2 withCompletionHandler:(id /* block */)arg3;
 

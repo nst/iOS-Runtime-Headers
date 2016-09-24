@@ -3,10 +3,10 @@
  */
 
 @interface RadioHistoryItem : NSObject <NSCopying, NSMutableCopying> {
-    NSDate *_datePlayed;
-    NSString *_externalIdentifier;
-    RadioTrack *_track;
-    int _type;
+    NSDate * _datePlayed;
+    NSString * _externalIdentifier;
+    RadioTrack * _track;
+    int  _type;
 }
 
 @property (nonatomic, readonly) NSDate *datePlayed;

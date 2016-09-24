@@ -3,7 +3,7 @@
  */
 
 @interface FBSystemAppProxyService : NSObject {
-    FBSystemAppProxyServiceServer *_server;
+    FBSystemAppProxyServiceServer * _server;
 }
 
 + (id)sharedInstance;

@@ -3,7 +3,7 @@
  */
 
 @interface SKUISettingsDocumentView : UIView {
-    <SKUISettingsDocumentViewDelegate> *_delegate;
+    <SKUISettingsDocumentViewDelegate> * _delegate;
 }
 
 @property (nonatomic) <SKUISettingsDocumentViewDelegate> *delegate;

@@ -3,7 +3,7 @@
  */
 
 @interface PUMediaProvider : NSObject {
-    PULoadingStatusManager *_loadingStatusManager;
+    PULoadingStatusManager * _loadingStatusManager;
 }
 
 @property (nonatomic, retain) PULoadingStatusManager *loadingStatusManager;
@@ -12,8 +12,8 @@
 - (void)cancelImageRequest:(int)arg1;
 - (id)loadingStatusManager;
 - (int)requestImageDataForAsset:(id)arg1 options:(id)arg2 resultHandler:(id /* block */)arg3;
-- (int)requestImageForAsset:(id)arg1 targetSize:(struct CGSize { float x1; float x2; })arg2 contentMode:(int)arg3 options:(id)arg4 resultHandler:(id /* block */)arg5;
-- (int)requestLivePhotoForAsset:(id)arg1 targetSize:(struct CGSize { float x1; float x2; })arg2 contentMode:(int)arg3 options:(id)arg4 resultHandler:(id /* block */)arg5;
+- (int)requestImageForAsset:(id)arg1 targetSize:(struct CGSize { double x1; double x2; })arg2 contentMode:(int)arg3 options:(id)arg4 resultHandler:(id /* block */)arg5;
+- (int)requestLivePhotoForAsset:(id)arg1 targetSize:(struct CGSize { double x1; double x2; })arg2 contentMode:(int)arg3 options:(id)arg4 resultHandler:(id /* block */)arg5;
 - (int)requestPlayerItemForVideo:(id)arg1 options:(id)arg2 resultHandler:(id /* block */)arg3;
 - (void)setLoadingStatusManager:(id)arg1;
 

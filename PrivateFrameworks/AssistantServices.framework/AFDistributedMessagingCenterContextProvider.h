@@ -3,7 +3,7 @@
  */
 
 @interface AFDistributedMessagingCenterContextProvider : NSObject <AFSiriAppContextProviding> {
-    NSString *_bundleIdentifier;
+    NSString * _bundleIdentifier;
 }
 
 @property (readonly, copy) NSString *debugDescription;

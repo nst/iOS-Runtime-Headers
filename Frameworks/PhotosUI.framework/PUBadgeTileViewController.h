@@ -3,13 +3,13 @@
  */
 
 @interface PUBadgeTileViewController : PUTileViewController <PUAssetViewModelChangeObserver> {
-    PUBadgeInfo *__badgeInfo;
-    PLPhotoTileBadgeView *__badgeView;
-    BOOL __isOverContent;
-    BOOL __needsUpdateBadgeInfo;
-    BOOL __needsUpdateBadgeView;
-    BOOL __needsUpdateIrisBadge;
-    PUAssetViewModel *_assetViewModel;
+    PUBadgeInfo * __badgeInfo;
+    PLPhotoTileBadgeView * __badgeView;
+    BOOL  __isOverContent;
+    BOOL  __needsUpdateBadgeInfo;
+    BOOL  __needsUpdateBadgeView;
+    BOOL  __needsUpdateIrisBadge;
+    PUAssetViewModel * _assetViewModel;
 }
 
 @property (setter=_setBadgeInfo:, nonatomic, copy) PUBadgeInfo *_badgeInfo;
@@ -24,9 +24,9 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
-+ (struct CGSize { float x1; float x2; })_badgeTileSizeForBadgeInfo:(id)arg1;
++ (struct CGSize { double x1; double x2; })_badgeTileSizeForBadgeInfo:(id)arg1;
 + (void)_configureBadgeView:(id)arg1 withBadgeInfo:(id)arg2 isOverContent:(BOOL)arg3;
-+ (struct CGSize { float x1; float x2; })badgeTileSizeForAssetViewModel:(id)arg1;
++ (struct CGSize { double x1; double x2; })badgeTileSizeForAssetViewModel:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)_badgeInfo;

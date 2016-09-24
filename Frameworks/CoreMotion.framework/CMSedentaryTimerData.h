@@ -3,10 +3,10 @@
  */
 
 @interface CMSedentaryTimerData : NSObject <NSCopying, NSSecureCoding> {
-    int fAlarmType;
-    BOOL fDidWake;
-    double fFiredDate;
-    double fStartDate;
+    int  fAlarmType;
+    BOOL  fDidWake;
+    double  fFiredDate;
+    double  fStartDate;
 }
 
 @property (nonatomic, readonly) int alarmType;

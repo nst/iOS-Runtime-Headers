@@ -6,9 +6,9 @@
     struct { 
         unsigned int stateDuration : 1; 
         unsigned int stateChanges : 1; 
-    } _has;
-    unsigned int _stateChanges;
-    unsigned long long _stateDuration;
+    }  _has;
+    unsigned int  _stateChanges;
+    unsigned long long  _stateDuration;
 }
 
 @property (nonatomic) BOOL hasStateChanges;

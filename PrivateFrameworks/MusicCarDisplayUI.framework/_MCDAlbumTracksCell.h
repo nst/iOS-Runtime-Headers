@@ -3,23 +3,33 @@
  */
 
 @interface _MCDAlbumTracksCell : UITableViewCell {
-    UILabel *_durationLabel;
-    float _maximumDurationWidth;
-    UILabel *_titleLabel;
-    UILabel *_trackNumberLabel;
+    BOOL  _currentlyPlaying;
+    UIImageView * _currentlyPlayingImageView;
+    UILabel * _durationLabel;
+    BOOL  _explicitContent;
+    UIImageView * _explicitImageView;
+    double  _maximumDurationWidth;
+    UILabel * _titleLabel;
+    UILabel * _trackNumberLabel;
 }
 
+@property (nonatomic) BOOL currentlyPlaying;
 @property (nonatomic, copy) NSString *durationText;
-@property (nonatomic) float maximumDurationWidth;
+@property (nonatomic) BOOL explicitContent;
+@property (nonatomic) double maximumDurationWidth;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *trackNumberText;
 
 - (void).cxx_destruct;
+- (BOOL)currentlyPlaying;
 - (id)durationText;
+- (BOOL)explicitContent;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
 - (float)maximumDurationWidth;
+- (void)setCurrentlyPlaying:(BOOL)arg1;
 - (void)setDurationText:(id)arg1;
+- (void)setExplicitContent:(BOOL)arg1;
 - (void)setMaximumDurationWidth:(float)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setTrackNumberText:(id)arg1;

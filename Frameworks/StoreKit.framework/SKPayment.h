@@ -3,7 +3,7 @@
  */
 
 @interface SKPayment : NSObject <NSCopying, NSMutableCopying> {
-    id _internal;
+    id  _internal;
 }
 
 @property (nonatomic, readonly, copy) NSString *applicationUsername;

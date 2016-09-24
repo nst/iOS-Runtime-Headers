@@ -3,13 +3,13 @@
  */
 
 @interface CPPowerAssertionManager : NSObject {
-    struct __CFDictionary { } *_contextToGroupIdentifier;
-    NSCountedSet *_contexts;
-    <CPPowerAssertionManagerDelegate> *_delegate;
-    NSMutableDictionary *_groupIdentifierToContexts;
-    NSCountedSet *_heldAsideContexts;
-    NSMutableSet *_heldAsideGroupIdentifiers;
-    NSString *_uuid;
+    struct __CFDictionary { } * _contextToGroupIdentifier;
+    NSCountedSet * _contexts;
+    <CPPowerAssertionManagerDelegate> * _delegate;
+    NSMutableDictionary * _groupIdentifierToContexts;
+    NSCountedSet * _heldAsideContexts;
+    NSMutableSet * _heldAsideGroupIdentifiers;
+    NSString * _uuid;
 }
 
 @property <CPPowerAssertionManagerDelegate> *delegate;

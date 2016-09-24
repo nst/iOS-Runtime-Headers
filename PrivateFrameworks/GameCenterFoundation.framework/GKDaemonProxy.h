@@ -3,13 +3,13 @@
  */
 
 @interface GKDaemonProxy : GKServiceProxy <GKClientProtocol, NSXPCConnectionDelegate> {
-    NSObject<OS_dispatch_semaphore> *_concurrentRequestSemaphore;
-    NSXPCConnection *_connection;
-    <GKDaemonProxyDataUpdateDelegate> *_dataUpdateDelegate;
-    int _hostPID;
-    NSDictionary *_interfaceLookup;
-    NSObject<OS_dispatch_queue> *_invocationQueue;
-    <GKDaemonProxyNetworkActivityIndicatorDelegate> *_networkActivityIndicatorDelegate;
+    NSObject<OS_dispatch_semaphore> * _concurrentRequestSemaphore;
+    NSXPCConnection * _connection;
+    <GKDaemonProxyDataUpdateDelegate> * _dataUpdateDelegate;
+    int  _hostPID;
+    NSDictionary * _interfaceLookup;
+    NSObject<OS_dispatch_queue> * _invocationQueue;
+    <GKDaemonProxyNetworkActivityIndicatorDelegate> * _networkActivityIndicatorDelegate;
 }
 
 @property (nonatomic, retain) NSXPCConnection *connection;
@@ -48,6 +48,9 @@
 - (id)dataUpdateDelegate;
 - (void)dealloc;
 - (oneway void)declineInviteWithNotification:(id)arg1;
+- (oneway void)didConnectToParticipantWithID:(id)arg1;
+- (oneway void)didDisconnectFromParticipantWithID:(id)arg1;
+- (oneway void)didReceiveData:(id)arg1 reliably:(BOOL)arg2 forRecipients:(id)arg3 fromSender:(id)arg4;
 - (void)dispatchCompletedChallenge:(id)arg1;
 - (oneway void)endNetworkActivity;
 - (oneway void)fetchTurnBasedData;
@@ -71,6 +74,12 @@
 - (void)resetServiceLookup;
 - (oneway void)respondedToNearbyInvite:(id)arg1;
 - (oneway void)scoreSelected:(id)arg1;
+- (oneway void)session:(id)arg1 addedPlayer:(id)arg2;
+- (oneway void)session:(id)arg1 didReceiveData:(id)arg2 fromPlayer:(id)arg3;
+- (oneway void)session:(id)arg1 didReceiveMessage:(id)arg2 withData:(id)arg3 fromPlayer:(id)arg4;
+- (oneway void)session:(id)arg1 player:(id)arg2 didChangeConnectionState:(int)arg3;
+- (oneway void)session:(id)arg1 player:(id)arg2 didSaveData:(id)arg3;
+- (oneway void)session:(id)arg1 removedPlayer:(id)arg2;
 - (oneway void)setBadgeCount:(unsigned int)arg1 forType:(unsigned int)arg2;
 - (void)setConnection:(id)arg1;
 - (oneway void)setCurrentGame:(id)arg1 serverEnvironment:(int)arg2 reply:(id /* block */)arg3;
@@ -79,5 +88,6 @@
 - (oneway void)setLogBits:(int)arg1;
 - (void)setNetworkActivityIndicatorDelegate:(id)arg1;
 - (oneway void)setPreferencesValues:(id)arg1;
+- (oneway void)setTestGame:(id)arg1;
 
 @end

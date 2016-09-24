@@ -3,14 +3,14 @@
  */
 
 @interface _UIApplicationModalProgressController : NSObject {
-    UIAlertController *_alertController;
-    id /* block */ _dismissalHandler;
-    double _displayStartTime;
-    NSTimer *_hideTimer;
-    NSProgress *_progress;
-    NSTimer *_showTimer;
-    NSProgress *_urlProgress;
-    UIWindow *_window;
+    UIAlertController * _alertController;
+    id /* block */  _dismissalHandler;
+    double  _displayStartTime;
+    NSTimer * _hideTimer;
+    NSProgress * _progress;
+    NSTimer * _showTimer;
+    NSProgress * _urlProgress;
+    UIWindow * _window;
 }
 
 @property (getter=_alertController, setter=_setAlertController:, nonatomic, retain) UIAlertController *alertController;

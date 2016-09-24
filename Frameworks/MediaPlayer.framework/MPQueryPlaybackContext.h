@@ -3,7 +3,7 @@
  */
 
 @interface MPQueryPlaybackContext : MPPlaybackContext {
-    MPMediaQuery *_query;
+    MPMediaQuery * _query;
 }
 
 @property (nonatomic, readonly) MPMediaQuery *query;

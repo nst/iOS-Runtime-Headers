@@ -3,8 +3,8 @@
  */
 
 @interface AKFontListController : NSObject {
-    UIFont *_defaultFont;
-    NSArray *_fonts;
+    UIFont * _defaultFont;
+    NSArray * _fonts;
 }
 
 @property (retain) UIFont *defaultFont;

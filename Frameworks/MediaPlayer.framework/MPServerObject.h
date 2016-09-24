@@ -3,12 +3,14 @@
  */
 
 @interface MPServerObject : NSObject {
-    struct { unsigned int x1[8]; } *_clientAuditToken;
-    int _clientPID;
+    struct { unsigned int x1[8]; } * _clientAuditToken;
+    int  _clientPID;
+    NSMutableArray * _deferredInvocations;
 }
 
 @property (nonatomic, readonly) struct { unsigned int x1[8]; }*clientAuditToken;
 @property (nonatomic, readonly) int clientPID;
+@property (nonatomic, retain) NSMutableArray *deferredInvocations;
 
 + (id)_center;
 
@@ -16,6 +18,10 @@
 - (void)_registerNotificationsForSelectors;
 - (struct { unsigned int x1[8]; }*)clientAuditToken;
 - (int)clientPID;
+- (id)deferredInvocations;
 - (id)init;
+- (void)performDelayedInvocationsIfNeeded;
+- (void)setDeferredInvocations:(id)arg1;
+- (BOOL)shouldDelayInvocation:(id)arg1;
 
 @end

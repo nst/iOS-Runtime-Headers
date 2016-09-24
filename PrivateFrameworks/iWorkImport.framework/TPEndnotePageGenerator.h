@@ -3,7 +3,7 @@
  */
 
 @interface TPEndnotePageGenerator : NSObject <TPPageGenerator> {
-    TPFootnoteLayoutController *_footnoteLayoutController;
+    TPFootnoteLayoutController * _footnoteLayoutController;
 }
 
 @property (readonly, copy) NSString *debugDescription;

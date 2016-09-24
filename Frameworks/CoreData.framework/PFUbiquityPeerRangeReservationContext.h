@@ -3,15 +3,15 @@
  */
 
 @interface PFUbiquityPeerRangeReservationContext : NSObject {
-    NSMutableDictionary *_globalIDToLocalURI;
-    NSArray *_globalObjectIDs;
-    NSManagedObjectContext *_moc;
-    int _numRangesToReserve;
-    NSMutableDictionary *_peerEntityNameRangeStartSet;
-    NSPersistentStoreCoordinator *_psc;
-    NSPersistentStore *_store;
-    NSMutableDictionary *_storeNameToFetchedMetadata;
-    NSMutableArray *_unresolvedGlobalObjectIDs;
+    NSMutableDictionary * _globalIDToLocalURI;
+    NSArray * _globalObjectIDs;
+    NSManagedObjectContext * _moc;
+    int  _numRangesToReserve;
+    NSMutableDictionary * _peerEntityNameRangeStartSet;
+    NSPersistentStoreCoordinator * _psc;
+    NSPersistentStore * _store;
+    NSMutableDictionary * _storeNameToFetchedMetadata;
+    NSMutableArray * _unresolvedGlobalObjectIDs;
 }
 
 @property (nonatomic, readonly) NSArray *globalObjectIDs;

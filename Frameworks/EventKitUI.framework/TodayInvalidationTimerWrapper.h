@@ -3,7 +3,7 @@
  */
 
 @interface TodayInvalidationTimerWrapper : NSObject {
-    NSTimer *_tzSupportDayRolloverTimer;
+    NSTimer * _tzSupportDayRolloverTimer;
 }
 
 - (void).cxx_destruct;

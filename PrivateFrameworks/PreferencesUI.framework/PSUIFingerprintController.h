@@ -3,7 +3,7 @@
  */
 
 @interface PSUIFingerprintController : PSListController {
-    id _effectiveSettingsChangedNotificationObserver;
+    id  _effectiveSettingsChangedNotificationObserver;
 }
 
 @property (nonatomic, retain) id effectiveSettingsChangedNotificationObserver;

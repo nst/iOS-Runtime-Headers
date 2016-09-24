@@ -3,10 +3,10 @@
  */
 
 @interface SSItemOfferDevice : NSObject {
-    int _deviceIdentifier;
-    SSItemOfferDeviceError *_incompatibleDeviceError;
-    SSItemOfferDeviceError *_incompatibleSystemError;
-    NSString *_minimumProductVersion;
+    int  _deviceIdentifier;
+    SSItemOfferDeviceError * _incompatibleDeviceError;
+    SSItemOfferDeviceError * _incompatibleSystemError;
+    NSString * _minimumProductVersion;
 }
 
 @property (nonatomic, readonly) int deviceIdentifier;

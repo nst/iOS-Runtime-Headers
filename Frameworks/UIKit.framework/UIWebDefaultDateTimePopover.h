@@ -3,7 +3,7 @@
  */
 
 @interface UIWebDefaultDateTimePopover : UIWebFormRotatingAccessoryPopover <UIWebFormControl> {
-    UIWebDateTimePopoverViewController *_webDateTimeViewController;
+    UIWebDateTimePopoverViewController * _webDateTimeViewController;
 }
 
 @property (nonatomic, retain) UIWebDateTimePopoverViewController *_webDateTimeViewController;

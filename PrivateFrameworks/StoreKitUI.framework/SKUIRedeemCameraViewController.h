@@ -3,15 +3,15 @@
  */
 
 @interface SKUIRedeemCameraViewController : SKUIRedeemStepViewController <CRCodeRedeemerControllerDelegate, SKUIRedeemCameraViewControllerDelegate, SKUIRedeemCameraViewDelegate> {
-    BOOL _alreadyPushed;
-    CRCodeRedeemerController *_camera;
-    int _category;
-    <SKUIRedeemCameraViewControllerDelegate> *_delegate;
-    UIBarButtonItem *_flipButton;
-    BOOL _fullscreen;
-    NSString *_initialCode;
-    UIBarButtonItem *_redeemButton;
-    SKUIRedeem *_successfulRedeem;
+    BOOL  _alreadyPushed;
+    CRCodeRedeemerController * _camera;
+    int  _category;
+    <SKUIRedeemCameraViewControllerDelegate> * _delegate;
+    UIBarButtonItem * _flipButton;
+    BOOL  _fullscreen;
+    NSString * _initialCode;
+    UIBarButtonItem * _redeemButton;
+    SKUIRedeem * _successfulRedeem;
 }
 
 @property (nonatomic, readonly) int category;

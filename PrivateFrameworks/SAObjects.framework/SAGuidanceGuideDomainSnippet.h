@@ -13,6 +13,7 @@
 @property (nonatomic) BOOL iconNeedsProcessing;
 @property (nonatomic, copy) NSString *iconResourceName;
 @property (nonatomic) BOOL isAppIcon;
+@property (nonatomic) BOOL performIntentEnabledAppAuthorizationCheck;
 @property (nonatomic, copy) NSString *tagPhrase;
 
 + (id)guideDomainSnippet;
@@ -29,6 +30,7 @@
 - (BOOL)iconNeedsProcessing;
 - (id)iconResourceName;
 - (BOOL)isAppIcon;
+- (BOOL)performIntentEnabledAppAuthorizationCheck;
 - (void)setDomainAlternateDisplayName:(id)arg1;
 - (void)setDomainDisplayName:(id)arg1;
 - (void)setDomainIconURI:(id)arg1;
@@ -38,6 +40,7 @@
 - (void)setIconNeedsProcessing:(BOOL)arg1;
 - (void)setIconResourceName:(id)arg1;
 - (void)setIsAppIcon:(BOOL)arg1;
+- (void)setPerformIntentEnabledAppAuthorizationCheck:(BOOL)arg1;
 - (void)setTagPhrase:(id)arg1;
 - (id)tagPhrase;
 

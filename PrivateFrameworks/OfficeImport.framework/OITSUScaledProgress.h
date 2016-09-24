@@ -3,10 +3,10 @@
  */
 
 @interface OITSUScaledProgress : OITSUProgress {
-    OITSUProgress *mProgress;
-    id mProgressObserver;
-    NSObject<OS_dispatch_queue> *mProgressQueue;
-    OITSUScaledProgressStorage *mStorage;
+    OITSUProgress * mProgress;
+    id  mProgressObserver;
+    NSObject<OS_dispatch_queue> * mProgressQueue;
+    OITSUScaledProgressStorage * mStorage;
 }
 
 @property double maxValue;

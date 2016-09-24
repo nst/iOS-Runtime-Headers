@@ -3,44 +3,53 @@
  */
 
 @interface CKGradientView : UIView {
-    NSArray *_colors;
-    UIView *_effectView;
+    NSArray * _colors;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } _gradientFrame;
-    UIView<CKGradientReferenceView> *_referenceView;
+    }  _gradientFrame;
+    CALayer * _gradientLayer;
+    UIImage * _maskImage;
+    UIView<CKGradientReferenceView> * _referenceView;
+    CATransformLayer * _trackingLayer;
 }
 
 @property (nonatomic, retain) NSArray *colors;
-@property (nonatomic, retain) UIView *effectView;
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } gradientFrame;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } gradientFrame;
+@property (nonatomic, retain) CALayer *gradientLayer;
+@property (nonatomic, retain) UIImage *maskImage;
 @property (nonatomic) UIView<CKGradientReferenceView> *referenceView;
+@property (nonatomic, retain) CATransformLayer *trackingLayer;
 
 + (id)gradientViews;
 
+- (void).cxx_destruct;
 - (void)_removeAllAnimations:(BOOL)arg1;
 - (id)colors;
 - (void)dealloc;
 - (id)description;
 - (void)didMoveToSuperview;
 - (void)didMoveToWindow;
-- (id)effectView;
 - (id)gradient;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })gradientFrame;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })gradientFrame;
+- (id)gradientLayer;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
+- (id)maskImage;
 - (id)referenceView;
 - (void)setColors:(id)arg1;
-- (void)setEffectView:(id)arg1;
-- (void)setGradientFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setGradientFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setGradientLayer:(id)arg1;
+- (void)setMaskImage:(id)arg1;
 - (void)setReferenceView:(id)arg1;
+- (void)setTrackingLayer:(id)arg1;
+- (id)trackingLayer;
 - (void)updateAnimation;
 - (void)updateGradientImage;
 

@@ -3,14 +3,14 @@
  */
 
 @interface TTMergeableStringSelection : NSObject <TTMergeableStringIDTracker> {
-    unsigned int _selectionAffinity;
+    unsigned int  _selectionAffinity;
     struct vector<std::__1::pair<TopoID, TopoID>, std::__1::allocator<std::__1::pair<TopoID, TopoID> > > { 
         struct pair<TopoID, TopoID> {} *__begin_; 
         struct pair<TopoID, TopoID> {} *__end_; 
         struct __compressed_pair<std::__1::pair<TopoID, TopoID> *, std::__1::allocator<std::__1::pair<TopoID, TopoID> > > { 
             struct pair<TopoID, TopoID> {} *__first_; 
         } __end_cap_; 
-    } _selectionRanges;
+    }  _selectionRanges;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -21,6 +21,7 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (id)description;
 - (BOOL)hasTopoIDsThatCanChange;
 - (unsigned int)hash;
 - (id)initWithArchive:(const struct Selection { int (**x1)(); struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<std::__1::basic_string<char> > { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; struct RepeatedPtrField<topotext::Selection_Range> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; int x7; }*)arg1;

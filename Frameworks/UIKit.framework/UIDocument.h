@@ -3,13 +3,13 @@
  */
 
 @interface UIDocument : NSObject <NSFilePresenter, NSProgressReporting> {
-    NSLock *_activityContinuationLock;
-    id _alertPresenter;
-    NSTimer *_autosavingTimer;
-    NSUserActivity *_currentUserActivity;
-    id _differenceDueToRecentChanges;
-    id _differenceSincePreservingPreviousVersion;
-    id _differenceSinceSaving;
+    NSLock * _activityContinuationLock;
+    id  _alertPresenter;
+    NSTimer * _autosavingTimer;
+    NSUserActivity * _currentUserActivity;
+    id  _differenceDueToRecentChanges;
+    id  _differenceSincePreservingPreviousVersion;
+    id  _differenceSinceSaving;
     struct __docFlags { 
         unsigned int inClose : 1; 
         unsigned int isOpen : 1; 
@@ -17,29 +17,30 @@
         unsigned int isAutosavingBecauseOfTimer : 1; 
         unsigned int versionWithoutRecentChangesIsNotLastOpened : 1; 
         unsigned int ignoreUndoAndRedoNotifications : 1; 
-        unsigned int editingDisabled : 1; 
+        unsigned int editingTemporarilyDisabled : 1; 
+        unsigned int editingDisabledDueToPermissions : 1; 
         unsigned int isRegisteredAsFilePresenter : 1; 
         unsigned int movingFile : 1; 
         unsigned int savingError : 1; 
         unsigned int inConflict : 1; 
         unsigned int needToStopAccessingSecurityScopedResource : 1; 
-    } _docFlags;
-    NSLock *_documentPropertyLock;
-    NSObject<OS_dispatch_queue> *_fileAccessQueue;
-    NSObject<OS_dispatch_semaphore> *_fileAccessSemaphore;
-    NSDate *_fileModificationDate;
-    NSOperationQueue *_filePresenterQueue;
-    NSString *_fileType;
-    NSURL *_fileURL;
-    double _lastPreservationTime;
-    double _lastSaveTime;
-    NSString *_localizedName;
-    NSObject<OS_dispatch_queue> *_openingQueue;
-    NSProgress *_progress;
-    id _progressSubscriber;
-    NSUndoManager *_undoManager;
-    id _versionWithoutRecentChanges;
-    NSMutableArray *_versions;
+    }  _docFlags;
+    NSLock * _documentPropertyLock;
+    NSObject<OS_dispatch_queue> * _fileAccessQueue;
+    NSObject<OS_dispatch_semaphore> * _fileAccessSemaphore;
+    NSDate * _fileModificationDate;
+    NSOperationQueue * _filePresenterQueue;
+    NSString * _fileType;
+    NSURL * _fileURL;
+    double  _lastPreservationTime;
+    double  _lastSaveTime;
+    NSString * _localizedName;
+    NSObject<OS_dispatch_queue> * _openingQueue;
+    NSProgress * _progress;
+    id  _progressSubscriber;
+    NSUndoManager * _undoManager;
+    id  _versionWithoutRecentChanges;
+    NSMutableArray * _versions;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -48,16 +49,17 @@
 @property (nonatomic, readonly) NSDocumentDifferenceSize *differenceSincePreservingPreviousVersion;
 @property (nonatomic, readonly) NSDocumentDifferenceSize *differenceSinceSaving;
 @property (readonly) unsigned int documentState;
-@property (getter=_isEditingDisabled, setter=_setEditingDisabled:) BOOL editingDisabled;
 @property (copy) NSDate *fileModificationDate;
 @property (readonly, copy) NSString *fileType;
 @property (readonly) NSURL *fileURL;
+@property (nonatomic, readonly) BOOL hasUnsavedChanges;
 @property (readonly) unsigned int hash;
 @property (readonly, copy) NSString *localizedName;
 @property (readonly, retain) NSOperationQueue *presentedItemOperationQueue;
 @property (readonly, copy) NSURL *presentedItemURL;
 @property (readonly, copy) NSURL *primaryPresentedItemURL;
-@property (retain) NSProgress *progress;
+@property (getter=progress, setter=_setProgress:, nonatomic, retain) NSProgress *progress;
+@property (nonatomic, readonly) NSString *savingFileType;
 @property (readonly) Class superclass;
 @property (retain) NSUndoManager *undoManager;
 
@@ -87,7 +89,8 @@
 - (BOOL)_hasSavingError;
 - (BOOL)_hasUnsavedChanges;
 - (void)_invalidateCurrentUserActivity;
-- (BOOL)_isEditingDisabled;
+- (BOOL)_isEditingDisabledDueToPermissions;
+- (BOOL)_isEditingTemporarilyDisabled;
 - (BOOL)_isInConflict;
 - (BOOL)_isInOpen;
 - (BOOL)_isOpen;
@@ -106,7 +109,8 @@
 - (void)_scheduleAutosaving;
 - (void)_scheduleAutosavingAfterDelay:(double)arg1 reset:(BOOL)arg2;
 - (void)_sendStateChangedNotification;
-- (void)_setEditingDisabled:(BOOL)arg1;
+- (void)_setEditingDisabledDueToPermissions:(BOOL)arg1;
+- (void)_setEditingTemporarilyDisabled:(BOOL)arg1;
 - (void)_setFileURL:(id)arg1;
 - (void)_setHasSavingError:(BOOL)arg1;
 - (void)_setInConflict:(BOOL)arg1;
@@ -120,6 +124,7 @@
 - (void)_unregisterAsFilePresenterIfNecessary;
 - (void)_updateConflictState;
 - (void)_updateLocalizedName;
+- (void)_updatePermissionsState:(BOOL)arg1;
 - (id)_userActivityWithActivityType:(id)arg1;
 - (id)_userInfoForActivityContinuation;
 - (void)accommodatePresentedItemDeletionWithCompletionHandler:(id /* block */)arg1;

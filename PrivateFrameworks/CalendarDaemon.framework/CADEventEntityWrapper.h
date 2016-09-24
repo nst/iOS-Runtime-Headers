@@ -3,7 +3,7 @@
  */
 
 @interface CADEventEntityWrapper : CADEntityWrapper {
-    double _occurrenceDate;
+    double  _occurrenceDate;
 }
 
 + (BOOL)supportsSecureCoding;

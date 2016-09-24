@@ -3,7 +3,7 @@
  */
 
 @interface _MFTableCellAttributesCache : NSObject {
-    NSCache *_attributesCache;
+    NSCache * _attributesCache;
 }
 
 + (id)sharedInstance;

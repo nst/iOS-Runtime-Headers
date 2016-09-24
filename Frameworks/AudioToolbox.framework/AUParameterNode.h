@@ -3,16 +3,16 @@
  */
 
 @interface AUParameterNode : NSObject {
-    NSString *_displayName;
-    NSString *_identifier;
-    id /* block */ _impl_implementorDisplayNameWithLengthCallback;
-    id /* block */ _impl_implementorStringFromValueCallback;
-    id /* block */ _impl_implementorValueFromStringCallback;
-    id /* block */ _impl_implementorValueObserver;
-    id /* block */ _impl_implementorValueProvider;
-    unsigned int _indexInGroup;
-    struct AUObserverList { struct vector<AULocalParameterObserver *, std::__1::allocator<AULocalParameterObserver *> > { struct AULocalParameterObserver {} **x_1_1_1; struct AULocalParameterObserver {} **x_1_1_2; struct __compressed_pair<AULocalParameterObserver **, std::__1::allocator<AULocalParameterObserver *> > { struct AULocalParameterObserver {} **x_3_2_1; } x_1_1_3; } x1; } *_observerList;
-    AUParameterGroup *_parentNode;
+    NSString * _displayName;
+    NSString * _identifier;
+    id /* block */  _impl_implementorDisplayNameWithLengthCallback;
+    id /* block */  _impl_implementorStringFromValueCallback;
+    id /* block */  _impl_implementorValueFromStringCallback;
+    id /* block */  _impl_implementorValueObserver;
+    id /* block */  _impl_implementorValueProvider;
+    unsigned int  _indexInGroup;
+    struct AUObserverList { struct vector<AULocalParameterObserver *, std::__1::allocator<AULocalParameterObserver *> > { struct AULocalParameterObserver {} **x_1_1_1; struct AULocalParameterObserver {} **x_1_1_2; struct __compressed_pair<AULocalParameterObserver **, std::__1::allocator<AULocalParameterObserver *> > { struct AULocalParameterObserver {} **x_3_2_1; } x_1_1_3; } x1; } * _observerList;
+    AUParameterGroup * _parentNode;
 }
 
 @property (nonatomic, readonly, copy) NSString *displayName;
@@ -32,12 +32,13 @@
 @property (nonatomic) /* Warning: unhandled struct encoding: '{AUObserverList={vector<AULocalParameterObserver *' */ struct *observerList; /* unknown property attribute:  std::__1::allocator<AULocalParameterObserver *> >=^^{AULocalParameterObserver}}}} */
 @property (nonatomic) AUParameterGroup *parentNode;
 
+- (void*)_addRecObserver:(id /* block */)arg1 autoObserver:(id /* block */)arg2;
 - (void)_deserialize:(struct CADeserializer { struct __CFData {} *x1; char *x2; char *x3; char *x4; bool x5; }*)arg1;
 - (void)_observersChanged:(BOOL)arg1 deltaCount:(int)arg2;
 - (id)_rootParent;
 - (void)_serialize:(struct CASerializer { struct __CFData {} *x1; }*)arg1;
 - (void)_walkTree:(int)arg1 callback:(id /* block */)arg2;
-- (id)copyNodeWithOffset:(unsigned long long)arg1;
+- (id)copyNodeWithOffset:(unsigned int)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)displayName;
@@ -73,6 +74,7 @@
 - (void)setIndexInGroup:(unsigned int)arg1;
 - (void)setObserverList:(struct AUObserverList { struct vector<AULocalParameterObserver *, std::__1::allocator<AULocalParameterObserver *> > { struct AULocalParameterObserver {} **x_1_1_1; struct AULocalParameterObserver {} **x_1_1_2; struct __compressed_pair<AULocalParameterObserver **, std::__1::allocator<AULocalParameterObserver *> > { struct AULocalParameterObserver {} **x_3_2_1; } x_1_1_3; } x1; }*)arg1;
 - (void)setParentNode:(id)arg1;
+- (void*)tokenByAddingParameterAutomationObserver:(id /* block */)arg1;
 - (void*)tokenByAddingParameterObserver:(id /* block */)arg1;
 - (void*)tokenByAddingParameterRecordingObserver:(id /* block */)arg1;
 

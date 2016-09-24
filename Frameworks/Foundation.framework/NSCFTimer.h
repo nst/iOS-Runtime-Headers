@@ -9,7 +9,6 @@
 
 - (unsigned long)_cfTypeID;
 - (BOOL)allowsWeakReference;
-- (void)finalize;
 - (void)fire;
 - (id)fireDate;
 - (unsigned int)hash;

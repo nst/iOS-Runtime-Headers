@@ -3,28 +3,28 @@
  */
 
 @interface MusicJSProfileNativeViewController : MusicJSNativeViewController <MusicJSProfileNativeViewController, SKUIDOMFeature> {
-    NSDictionary *_availableContentFlags;
-    IKAppDocument *_biographyEditorDocument;
-    NSDictionary *_biographyEditorDocumentOptions;
-    <MusicJSProfileNativeViewControllerDelegate> *_delegate;
-    NSString *_followerCountText;
-    NSString *_followersText;
-    IKAppDocument *_moreRelatedContentDocument;
-    NSDictionary *_moreRelatedContentDocumentOptions;
-    int _numberOfFollowers;
-    NSDictionary *_profileEntityValueProviderData;
-    IKAppDocument *_relatedContentDocument;
-    NSDictionary *_relatedContentDocumentOptions;
-    IKDOMDocument *_relatedContentJSDocument;
-    NSDictionary *_reportingInformation;
-    NSMutableDictionary *_segmentDocumentOptions;
-    NSMutableDictionary *_segmentDocuments;
-    NSMutableDictionary *_segmentJSDocuments;
-    NSString *_selectedSegmentIdentifier;
-    IKAppDocument *_shareDocument;
-    NSDictionary *_shareDocumentOptions;
-    BOOL _socialHidden;
-    NSArray *_visibleSegments;
+    NSDictionary * _availableContentFlags;
+    IKAppDocument * _biographyEditorDocument;
+    NSDictionary * _biographyEditorDocumentOptions;
+    <MusicJSProfileNativeViewControllerDelegate> * _delegate;
+    NSString * _followerCountText;
+    NSString * _followersText;
+    IKAppDocument * _moreRelatedContentDocument;
+    NSDictionary * _moreRelatedContentDocumentOptions;
+    int  _numberOfFollowers;
+    NSDictionary * _profileEntityValueProviderData;
+    IKAppDocument * _relatedContentDocument;
+    NSDictionary * _relatedContentDocumentOptions;
+    IKDOMDocument * _relatedContentJSDocument;
+    NSDictionary * _reportingInformation;
+    NSMutableDictionary * _segmentDocumentOptions;
+    NSMutableDictionary * _segmentDocuments;
+    NSMutableDictionary * _segmentJSDocuments;
+    NSString * _selectedSegmentIdentifier;
+    IKAppDocument * _shareDocument;
+    NSDictionary * _shareDocumentOptions;
+    BOOL  _socialHidden;
+    NSArray * _visibleSegments;
 }
 
 @property (nonatomic, readonly) IKAppContext *appContext;

@@ -3,9 +3,9 @@
  */
 
 @interface CNAutocompleteProbeKeyBuilder : NSObject {
-    NSString *_key;
-    NSArray *_prefixes;
-    NSArray *_suffixes;
+    NSString * _key;
+    NSArray * _prefixes;
+    NSArray * _suffixes;
 }
 
 @property (nonatomic, retain) NSString *key;

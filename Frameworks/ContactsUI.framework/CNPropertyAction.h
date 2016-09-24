@@ -3,7 +3,7 @@
  */
 
 @interface CNPropertyAction : CNContactAction <CNContactActionProtocol> {
-    NSArray *_propertyItems;
+    NSArray * _propertyItems;
 }
 
 @property (nonatomic, readonly) BOOL canPerformAction;

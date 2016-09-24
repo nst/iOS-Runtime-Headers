@@ -3,20 +3,20 @@
  */
 
 @interface SUSegmentedControl : UIControl <SUMenuViewControllerDelegate, UIPopoverControllerDelegate> {
-    BOOL _autosizesText;
-    NSString *_cancelButtonTitle;
-    SUClientInterface *_clientInterface;
-    BOOL _hidingPopoverForRotation;
-    NSMutableArray *_items;
-    int _maximumNumberOfItems;
-    float _maximumWidth;
-    SUSimpleMenuViewController *_menuViewController;
-    NSString *_moreListTitle;
-    UIPopoverController *_popoverController;
-    UISegmentedControl *_segmentedControl;
-    int _selectionIndex;
-    BOOL _showsMoreListAutomatically;
-    int _tintStyle;
+    BOOL  _autosizesText;
+    NSString * _cancelButtonTitle;
+    SUClientInterface * _clientInterface;
+    BOOL  _hidingPopoverForRotation;
+    NSMutableArray * _items;
+    int  _maximumNumberOfItems;
+    double  _maximumWidth;
+    SUSimpleMenuViewController * _menuViewController;
+    NSString * _moreListTitle;
+    UIPopoverController * _popoverController;
+    UISegmentedControl * _segmentedControl;
+    int  _selectionIndex;
+    BOOL  _showsMoreListAutomatically;
+    int  _tintStyle;
 }
 
 @property (nonatomic, copy) NSString *cancelButtonTitle;
@@ -26,7 +26,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, copy) NSArray *items;
 @property (nonatomic) int maximumNumberOfItems;
-@property (nonatomic) float maximumWidth;
+@property (nonatomic) double maximumWidth;
 @property (nonatomic, copy) NSString *moreListTitle;
 @property (nonatomic, readonly) int numberOfVisibleSegments;
 @property (nonatomic) int segmentedControlStyle;
@@ -53,7 +53,7 @@
 - (id)clientInterface;
 - (void)dealloc;
 - (id)dividerImageForLeftSegmentState:(unsigned int)arg1 rightSegmentState:(unsigned int)arg2 barMetrics:(int)arg3;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)items;
 - (void)layoutSubviews;
 - (int)maximumNumberOfItems;
@@ -85,7 +85,7 @@
 - (void)showMoreList:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)showPopover:(id)arg1 fromSegmentIndex:(int)arg2 animated:(BOOL)arg3;
 - (BOOL)showsMoreListAutomatically;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (void)sizeToFitUserInterfaceIdiom;
 - (void)sizeToFitWithMinimumSegmentWidth:(float)arg1 maximumTotalWidth:(float)arg2;
 - (id)tintColor;

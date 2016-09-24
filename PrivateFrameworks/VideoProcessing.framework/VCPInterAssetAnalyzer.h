@@ -4,11 +4,14 @@
 
 @interface VCPInterAssetAnalyzer : NSObject
 
-+ (BOOL)canUseLastFrameForDistance:(id)arg1;
++ (BOOL)canUseLastFrameOfAsset:(id)arg1 withResources:(id)arg2;
++ (struct CGSize { double x1; double x2; })thumbnailSizeForAsset:(id)arg1 withResources:(id)arg2;
 
 - (long)distanceFromAsset:(id)arg1 toAsset:(id)arg2 distance:(float*)arg3;
-- (long)generateFeature:(id)arg1 lastFrame:(BOOL)arg2 feature:(id*)arg3;
+- (long)distanceFromFeatureArray:(id)arg1 toFeatureArray:(id)arg2 distance:(float*)arg3;
+- (long)generateFeatureForAsset:(id)arg1 withResources:(id)arg2 lastFrame:(BOOL)arg3 feature:(id*)arg4;
 - (long)generateFeatureLastFrame:(id)arg1 feature:(id*)arg2;
+- (struct __CVBuffer { }*)getThumbnailForAsset:(id)arg1 withResouces:(id)arg2;
 - (id)init;
 
 @end

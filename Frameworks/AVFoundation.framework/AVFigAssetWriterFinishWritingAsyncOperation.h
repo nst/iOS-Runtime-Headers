@@ -3,8 +3,8 @@
  */
 
 @interface AVFigAssetWriterFinishWritingAsyncOperation : AVOperation <AVAssetWriterFigAssetWriterNotificationHandlerDelegate> {
-    struct OpaqueFigAssetWriter { } *_figAssetWriter;
-    AVAssetWriterFigAssetWriterNotificationHandler *_notificationHandler;
+    struct OpaqueFigAssetWriter { } * _figAssetWriter;
+    AVAssetWriterFigAssetWriterNotificationHandler * _notificationHandler;
 }
 
 @property (readonly, copy) NSString *debugDescription;

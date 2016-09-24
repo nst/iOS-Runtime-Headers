@@ -3,33 +3,33 @@
  */
 
 @interface PKPayment : NSObject <NSSecureCoding> {
-    const void *_billingAddress;
-    PKContact *_billingContact;
-    const void *_shippingAddress;
-    PKContact *_shippingContact;
-    PKShippingMethod *_shippingMethod;
-    PKPaymentToken *_token;
+    PKContact * _billingContact;
+    PKContact * _shippingContact;
+    PKShippingMethod * _shippingMethod;
+    PKPaymentToken * _token;
 }
 
-@property (nonatomic) const void*billingAddress;
+@property (nonatomic, readonly) const void*billingAddress;
 @property (nonatomic, retain) PKContact *billingContact;
-@property (nonatomic) const void*shippingAddress;
+@property (nonatomic, readonly) const void*shippingAddress;
 @property (nonatomic, retain) PKContact *shippingContact;
 @property (nonatomic, retain) PKShippingMethod *shippingMethod;
 @property (nonatomic, retain) PKPaymentToken *token;
 
++ (id)paymentWithProtobuf:(id)arg1;
 + (BOOL)supportsSecureCoding;
++ (int)version;
 
+- (void).cxx_destruct;
 - (const void*)billingAddress;
 - (id)billingContact;
-- (void)dealloc;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithToken:(id)arg1;
-- (void)setBillingAddress:(void*)arg1;
+- (id)protobuf;
 - (void)setBillingContact:(id)arg1;
-- (void)setShippingAddress:(void*)arg1;
 - (void)setShippingContact:(id)arg1;
 - (void)setShippingMethod:(id)arg1;
 - (void)setToken:(id)arg1;

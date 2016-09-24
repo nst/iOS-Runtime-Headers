@@ -3,17 +3,17 @@
  */
 
 @interface PKPassBackFaceImageSet : PKPassImageSet {
-    PKImage *_faceImage;
+    PKImage * _faceImage;
 }
 
 @property (nonatomic, retain) PKImage *faceImage;
 
 + (id)archiveName;
-+ (int)currentVersion;
++ (unsigned int)currentVersion;
 + (int)imageSetType;
 + (BOOL)supportsSecureCoding;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)faceImage;
 - (unsigned int)hash;

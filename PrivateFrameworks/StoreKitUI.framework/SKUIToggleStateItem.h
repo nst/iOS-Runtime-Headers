@@ -3,11 +3,11 @@
  */
 
 @interface SKUIToggleStateItem : NSObject <NSCopying> {
-    int _count;
-    NSString *_itemIdentifier;
-    NSString *_nonToggledString;
-    BOOL _toggled;
-    NSString *_toggledString;
+    int  _count;
+    NSString * _itemIdentifier;
+    NSString * _nonToggledString;
+    BOOL  _toggled;
+    NSString * _toggledString;
 }
 
 @property (nonatomic) int count;

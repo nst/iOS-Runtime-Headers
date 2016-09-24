@@ -3,10 +3,10 @@
  */
 
 @interface NNMKAttachment : NSTextAttachment <NSSecureCoding> {
-    NSString *_contentId;
-    NSString *_fileName;
-    unsigned int _fileSize;
-    unsigned int _type;
+    NSString * _contentId;
+    NSString * _fileName;
+    unsigned int  _fileSize;
+    unsigned int  _type;
 }
 
 @property (nonatomic, retain) NSString *contentId;

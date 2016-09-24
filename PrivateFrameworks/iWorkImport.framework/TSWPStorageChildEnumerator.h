@@ -3,9 +3,9 @@
  */
 
 @interface TSWPStorageChildEnumerator : NSEnumerator {
-    NSArray *_charOffsetArray;
-    unsigned int _index;
-    TSWPStorage *_storage;
+    NSArray * _charOffsetArray;
+    unsigned int  _index;
+    TSWPStorage * _storage;
 }
 
 - (void)dealloc;

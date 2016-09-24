@@ -3,7 +3,7 @@
  */
 
 @interface PUAirPlayScreenMap : NSObject {
-    NSMapTable *_screens;
+    NSMapTable * _screens;
 }
 
 - (void).cxx_destruct;

@@ -3,7 +3,7 @@
  */
 
 @interface SCROWeakReferenceContainer : NSObject <NSCopying> {
-    id _weakReference;
+    id  _weakReference;
 }
 
 - (id)autoreleasedReference;

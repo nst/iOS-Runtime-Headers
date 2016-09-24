@@ -3,8 +3,8 @@
  */
 
 @interface _UIAttributeTraitStorageRecord : NSObject <NSCoding> {
-    UITraitCollection *_traitCollection;
-    id _value;
+    UITraitCollection * _traitCollection;
+    id  _value;
 }
 
 @property (nonatomic, readonly) UITraitCollection *traitCollection;

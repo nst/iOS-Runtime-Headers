@@ -2,125 +2,123 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@interface MDDisplayLayer : NSObject <GGLRenderQueueSource, MDRenderTarget> {
+@interface MDDisplayLayer : NSObject <GGLLayerDelegate, GGLRenderQueueSource, MDRenderTarget> {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } _bounds;
-    float _contentsScale;
+    }  _bounds;
+    double  _contentsScale;
     struct unique_ptr<md::DebugConsoleManager, std::__1::default_delete<md::DebugConsoleManager> > { 
         struct __compressed_pair<md::DebugConsoleManager *, std::__1::default_delete<md::DebugConsoleManager> > { 
             struct DebugConsoleManager {} *__first_; 
         } __ptr_; 
-    } _debugConsoleManager;
+    }  _debugConsoleManager;
     struct mutex { 
         struct _opaque_pthread_mutex_t { 
             long __sig; 
             BOOL __opaque[40]; 
         } __m_; 
-    } _debugConsoleManagerCreationLock;
-    struct shared_ptr<ggl::GLDevice> { 
-        struct GLDevice {} *__ptr_; 
+    }  _debugConsoleManagerCreationLock;
+    struct unique_ptr<ggl::RenderBuffer, std::__1::default_delete<ggl::RenderBuffer> > { 
+        struct __compressed_pair<ggl::RenderBuffer *, std::__1::default_delete<ggl::RenderBuffer> > { 
+            struct RenderBuffer {} *__first_; 
+        } __ptr_; 
+    }  _depthStencil;
+    struct shared_ptr<ggl::Device> { 
+        struct Device {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
-    } _device;
-    BOOL _forceMSAATarget;
-    GGLLayer *_layer;
-    struct unique_ptr<ggl::RenderTargetOperation, std::__1::default_delete<ggl::RenderTargetOperation> > { 
-        struct __compressed_pair<ggl::RenderTargetOperation *, std::__1::default_delete<ggl::RenderTargetOperation> > { 
-            struct RenderTargetOperation {} *__first_; 
-        } __ptr_; 
-    } _msaaBlitOperation;
+    }  _device;
+    struct RenderTargetFormat { 
+        int colorFormats[4]; 
+        unsigned int colorFormatsCount; 
+        unsigned int samples; 
+        int depthStencilFormat; 
+    }  _format;
+    CALayer<GGLLayer> * _layer;
     struct unique_ptr<ggl::RenderBuffer, std::__1::default_delete<ggl::RenderBuffer> > { 
         struct __compressed_pair<ggl::RenderBuffer *, std::__1::default_delete<ggl::RenderBuffer> > { 
             struct RenderBuffer {} *__first_; 
         } __ptr_; 
-    } _msaaColorBuffer;
-    struct unique_ptr<ggl::RenderBuffer, std::__1::default_delete<ggl::RenderBuffer> > { 
-        struct __compressed_pair<ggl::RenderBuffer *, std::__1::default_delete<ggl::RenderBuffer> > { 
-            struct RenderBuffer {} *__first_; 
-        } __ptr_; 
-    } _msaaDepthStencilBuffer;
+    }  _msaaTexture;
+    BOOL  _readPixels;
+    <GGLRenderQueueSource> * _renderSource;
     struct unique_ptr<ggl::RenderTarget, std::__1::default_delete<ggl::RenderTarget> > { 
         struct __compressed_pair<ggl::RenderTarget *, std::__1::default_delete<ggl::RenderTarget> > { 
             struct RenderTarget {} *__first_; 
         } __ptr_; 
-    } _msaaRenderTarget;
-    struct unique_ptr<ggl::RenderQueue, std::__1::default_delete<ggl::RenderQueue> > { 
-        struct __compressed_pair<ggl::RenderQueue *, std::__1::default_delete<ggl::RenderQueue> > { 
-            struct RenderQueue {} *__first_; 
-        } __ptr_; 
-    } _renderQueueOuter;
-    <GGLRenderQueueSource> *_renderSource;
-    struct shared_ptr<ggl::GLRenderer> { 
-        struct GLRenderer {} *__ptr_; 
-        struct __shared_weak_count {} *__cntrl_; 
-    } _renderer;
-    BOOL _requiresMultisampling;
-    struct CGContext { } *_snapshotContext;
-    BOOL _useMultisampling;
+    }  _renderTarget;
+    struct Renderer { int (**x1)(); struct Device {} *x2; unsigned int x3; unsigned int x4; unsigned int x5; bool x6; double x7; struct vector<std::__1::shared_ptr<ggl::DebugRenderer>, std::__1::allocator<std::__1::shared_ptr<ggl::DebugRenderer> > > { struct shared_ptr<ggl::DebugRenderer> {} *x_8_1_1; struct shared_ptr<ggl::DebugRenderer> {} *x_8_1_2; struct __compressed_pair<std::__1::shared_ptr<ggl::DebugRenderer> *, std::__1::allocator<std::__1::shared_ptr<ggl::DebugRenderer> > > { struct shared_ptr<ggl::DebugRenderer> {} *x_3_2_1; } x_8_1_3; } x8; struct unique_ptr<ggl::RenderQueue, std::__1::default_delete<ggl::RenderQueue> > { struct __compressed_pair<ggl::RenderQueue *, std::__1::default_delete<ggl::RenderQueue> > { struct RenderQueue {} *x_1_2_1; } x_9_1_1; } x9; struct shared_ptr<ggl::CommonLibrary> { struct CommonLibrary {} *x_10_1_1; struct __shared_weak_count {} *x_10_1_2; } x10; struct unique_ptr<ggl::RenderResourceFences, std::__1::default_delete<ggl::RenderResourceFences> > { struct __compressed_pair<ggl::RenderResourceFences *, std::__1::default_delete<ggl::RenderResourceFences> > { struct RenderResourceFences {} *x_1_2_1; } x_11_1_1; } x11; } * _renderer;
+    BOOL  _requiresMultisampling;
+    BOOL  _shouldRasterize;
+    struct CGContext { } * _snapshotContext;
+    BOOL  _useMultisampling;
 }
 
-@property (nonatomic, readonly) float averageFPS;
-@property (nonatomic, readonly) float contentScale;
+@property (nonatomic, readonly) double averageFPS;
+@property (nonatomic, readonly) double contentScale;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) BOOL debugEnableMultisampling;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) struct shared_ptr<ggl::Device> { struct Device {} *x1; struct __shared_weak_count {} *x2; } device;
+@property (nonatomic, readonly) struct Device { int x1; struct shared_ptr<ggl::Device> { struct Device {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; /* Warning: unhandled struct encoding: '{unique_ptr<md::SharedDeviceResources' */ struct x3; }*device; /* unknown property attribute:  std::__1::default_delete<md::SharedDeviceResources> >=^{SharedDeviceResources}}}} */
+@property (nonatomic, readonly) const struct RenderTargetFormat { int x1[4]; unsigned int x2; unsigned int x3; int x4; }*format;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly) GGLLayer *layer;
+@property (nonatomic, readonly) CALayer *layer;
+@property (nonatomic, readonly) BOOL multiSample;
 @property (nonatomic) <GGLRenderQueueSource> *renderSource;
-@property (nonatomic, readonly) struct GLRenderer { int (**x1)(); struct Device {} *x2; unsigned int x3; unsigned int x4; bool x5; float x6; /* Warning: unhandled struct encoding: '{vector<std::__1::shared_ptr<ggl::DebugRenderer>' */ struct x7; void*x8; void*x9; void*x10; void*x11; void*x12; void*x13; void*x14; void*x15; void*x16; void*x17; void*x18; void x19; void*x20; void*x21; void*x22; void*x23; void*x24; void*x25; void*x26; void*x27; void*x28; unsigned int x29; unsigned short x30; void*x31; void*x32; const BOOL x33; void*x34; bool x35; void*x36; const unsigned char x37; out in void*x38; void*x39; int x40; in void*x41; const oneway int x42; void*x43; void*x44; void*x45; void*x46; void*x47; void*x48; void*x49; void*x50; void*x51; void*x52; void*x53; void*x54; void*x55; void*x56; void*x57; void*x58; void*x59; void*x60; void*x61; void*x62; void*x63; void*x64; void*x65; void*x66; void*x67; void*x68; void*x69; void*x70; void*x71; void*x72; bycopy void*x73; void*x74; void*x75; void*x76; void*x77; void*x78; void*x79; void*x80; void*x81; void*x82; void*x83; void*x84; void*x85; void*x86; void*x87; void*x88; void*x89; void*x90; void x91; void*x92; void*x93; void*x94; void*x95; void*x96; void*x97; void*x98; void*x99; void*x100; unsigned int x101; unsigned short x102; void*x103; void*x104; const BOOL x105; void*x106; bool x107; void*x108; const unsigned char x109; out in void*x110; void*x111; int x112; in void*x113; const oneway int x114; void*x115; void*x116; void*x117; void*x118; void*x119; void*x120; void*x121; void*x122; void*x123; void*x124; void*x125; void*x126; void*x127; void*x128; void*x129; void*x130; void*x131; void*x132; void*x133; void*x134; void*x135; void*x136; void*x137; void*x138; void*x139; void*x140; void*x141; void*x142; void*x143; void*x144; void*x145; void*x146; void*x147; void*x148; void*x149; void*x150; void*x151; void*x152; void*x153; void*x154; void*x155; void*x156; void*x157; void*x158; void*x159; void*x160; void*x161; void*x162; void*x163; void x164; void*x165; void*x166; void*x167; void*x168; void*x169; void*x170; void*x171; void*x172; void*x173; bycopy void*x174; const out void*x175; void*x176; unsigned char x177; long x178; int x179; void*x180; in void*x181; void*x182; void*x183; void*x184; int x185; short x186; void*x187; const void*x188; void*x189; void*x190; void x191; void*x192; void*x193; void*x194; void*x195; void*x196; void*x197; void*x198; unsigned short x199; void*x200; void*x201; void*x202; void*x203; void*x204; void*x205; void*x206; void*x207; void*x208; unsigned long long x209; void*x210; void*x211; out void*x212; void*x213; void*x214; void*x215; void*x216; void*x217; void*x218; void*x219; void*x220; void*x221; void*x222; void*x223; void*x224; void*x225; void*x226; void*x227; void*x228; void*x229; void*x230; void*x231; void*x232; void*x233; void*x234; void*x235; void*x236; void x237; void*x238; void*x239; void*x240; void*x241; void*x242; void*x243; void*x244; void*x245; void*x246; void*x247; void*x248; void*x249; void*x250; void*x251; void*x252; void*x253; void*x254; void*x255; void*x256; void*x257; void*x258; void*x259; void*x260; void*x261; void*x262; void*x263; void*x264; void*x265; void*x266; void*x267; void*x268; void*x269; void*x270; id x271; void*x272; void*x273; unsigned long long x274; void*x275; void*x276; void*x277; void*x278; void*x279; void*x280; void*x281; void*x282; void*x283; void*x284; void*x285; void*x286; id x287; void*x288; void*x289; void*x290; void*x291; void*x292; void*x293; void*x294; void*x295; void*x296; void*x297; void*x298; void*x299; void*x300; void*x301; void*x302; void*x303; void*x304; void*x305; void*x306; void*x307; void*x308; void*x309; void*x310; void*x311; void*x312; void*x313; void*x314; void x315; void*x316; void*x317; void*x318; void*x319; void*x320; void*x321; void*x322; void*x323; void*x324; void*x325; short x326; void*x327; out const void*x328; void*x329; void*x330; in void*x331; void*x332; void*x333; const void*x334; void*x335; void*x336; void*x337; void*x338; void*x339; void*x340; void*x341; void*x342; long long x343; void*x344; void*x345; void*x346; short x347; void*x348; void*x349; void*x350; void*x351; void*x352; void*x353; void*x354; void*x355; void*x356; void*x357; void*x358; id x359; void*x360; void*x361; id x362; void*x363; void*x364; void*x365; void*x366; void*x367; void*x368; void*x369; void*x370; void*x371; void*x372; void*x373; void*x374; void*x375; void*x376; void*x377; void*x378; void*x379; void*x380; void*x381; void*x382; void*x383; void*x384; void*x385; void*x386; void x387; void*x388; void*x389; void*x390; void*x391; void*x392; void*x393; void*x394; void*x395; unsigned short x396; void*x397; short x398; void*x399; void*x400; void*x401; void*x402; unsigned long x403; int x404; unsigned int x405/* : ? */; const void*x406; const void*x407; void*x408; void*x409; const int x410; void x411; void*x412; void*x413; void*x414; void*x415; const void*x416; void*x417; void*x418; void*x419; out const void*x420; short x421; void*x422; bycopy float x423; float x424; int x425; BOOL x426; void*x427; unsigned int x428; void*x429; void*x430; out const void*x431; void*x432; float x433; const void*x434; void*x435; void*x436; void*x437; out const void*x438; void*x439; bycopy float x440; float x441; int x442; BOOL x443; void*x444; unsigned int x445; void*x446; void*x447; out const void*x448; void*x449; void*x450; void*x451; void*x452; void*x453; void*x454; void*x455; char *x456; long long x457; void*x458; void*x459; char *x460; long long x461; void*x462; void*x463; void*x464; void*x465; void*x466; void*x467; void x468; void*x469; void*x470; void*x471; void*x472; void*x473; void*x474; void*x475; unsigned short x476; unsigned long x477; out BOOL x478; void*x479; long x480; unsigned short x481; void*x482; void*x483; const BOOL x484; void*x485; unsigned short x486; void*x487; out void*x488; void*x489; void*x490; void*x491; void*x492; out int x493; in void*x494; short x495; void*x496; void*x497; void*x498; void*x499; void*x500; void*x501; void*x502; void*x503; void*x504; void*x505; void*x506; void*x507; void*x508; void*x509; void*x510; void*x511; void*x512; void*x513; void*x514; void*x515; void*x516; void*x517; void*x518; void*x519; void*x520; void*x521; void*x522; void*x523; void*x524; void*x525; void*x526; void*x527; void*x528; void*x529; void*x530; void*x531; void*x532; void*x533; void*x534; void*x535; void*x536; void*x537; void*x538; void*x539; void*x540; void*x541; void*x542; void*x543; void*x544; void*x545; void*x546; void*x547; void*x548; void*x549; void*x550; void*x551; void*x552; void*x553; void*x554; void*x555; void*x556; void*x557; long doublex558; void*x559; void*x560; SEL x561; void*x562; short x563; unsigned long long x564; void*x565; void*x566; void*x567; void*x568; void*x569; void*x570; void*x571; void*x572; void*x573; void*x574; void*x575; void*x576; void*x577; void*x578; void*x579; void*x580; void*x581; void*x582; void*x583; void*x584; void*x585; void*x586; void*x587; void*x588; void*x589; void*x590; void*x591; id x592; char *x593; long long x594; void*x595; void*x596; void*x597; void*x598; void*x599; void*x600; void*x601; void*x602; void*x603; void*x604; void*x605; void*x606; void*x607; void*x608; void*x609; void*x610; void*x611; void*x612; void*x613; void*x614; void*x615; void*x616; void*x617; void*x618; void*x619; void*x620; void*x621; void*x622; void*x623; void*x624; void*x625; void*x626; void*x627; void*x628; void*x629; void*x630; void*x631; void*x632; void*x633; void*x634; void*x635; void*x636; void*x637; void*x638; void*x639; void*x640; void*x641; void*x642; void*x643; void*x644; void*x645; void*x646; void*x647; void*x648; void*x649; void*x650; void*x651; void*x652; void*x653; void*x654; id x655; void*x656; long x657; void*x658; void*x659; void*x660; void*x661; void*x662; void*x663; void*x664; void*x665; void*x666; void*x667; void*x668; void*x669; void*x670; void*x671; void*x672; void*x673; void*x674; void*x675; void*x676; void*x677; void*x678; void*x679; void*x680; void*x681; void*x682; void x683; void*x684; void*x685; void*x686; void*x687; void*x688; void*x689; void*x690; void*x691; void*x692; void*x693; void*x694; void*x695; void*x696; void*x697; void*x698; void*x699; void*x700; void*x701; void*x702; void*x703; void*x704; void*x705; void*x706; void*x707; void*x708; void*x709; void*x710; void*x711; void*x712; void*x713; void*x714; void x715; void*x716; void*x717; void*x718; void*x719; void*x720; void*x721; void*x722; void*x723; void*x724; void*x725; void*x726; void*x727; void*x728; void*x729; void*x730; void*x731; void*x732; void*x733; void*x734; void*x735; void*x736; void*x737; void*x738; void*x739; void*x740; void*x741; void*x742; void*x743; void*x744; void*x745; void*x746; void*x747; void*x748; id x749; void*x750; void*x751; void*x752; void*x753; void*x754; void*x755; void*x756; void*x757; void*x758; void*x759; void*x760; void*x761; void*x762; void*x763; void*x764; void*x765; void*x766; void*x767; void*x768; void*x769; void*x770; void*x771; void*x772; void*x773; void*x774; void*x775; void*x776; void*x777; void*x778; void*x779; void*x780; void*x781; void*x782; void*x783; void*x784; void*x785; void*x786; unsigned long x787; id x788; void*x789; void*x790; void*x791; void*x792; void*x793; void*x794; void*x795; void*x796; void*x797; void*x798; void*x799; void*x800; void*x801; void*x802; void*x803; void*x804; void*x805; void*x806; void*x807; void*x808; void*x809; void*x810; void*x811; void*x812; void*x813; void*x814; void*x815; void*x816; void*x817; void*x818; void*x819; void*x820; void*x821; void*x822; unsigned char x823; void*x824; short x825; unsigned long long x826; void*x827; void*x828; long long x829; void*x830; void*x831; void*x832; void*x833; void*x834; void*x835; void*x836; void*x837; void*x838; void*x839; }*renderer; /* unknown property attribute:  std::__1::allocator<ggl::Texture2DLoadItem> >=^{Texture2DLoadItem}}}I} */
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } sizeInPixels;
+@property (nonatomic, readonly) struct Renderer { int (**x1)(); struct Device {} *x2; unsigned int x3; unsigned int x4; unsigned int x5; bool x6; double x7; /* Warning: unhandled struct encoding: '{vector<std::__1::shared_ptr<ggl::DebugRenderer>' */ struct x8; }*renderer; /* unknown property attribute:  std::__1::default_delete<ggl::CommandBuffer> >=^{CommandBuffer}}}} */
+@property (nonatomic, readonly) BOOL shouldRasterize;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } size;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } sizeInPixels;
 @property (readonly) Class superclass;
-@property (nonatomic) BOOL useMultisampling;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)_createGLLayer;
-- (void)_createMSAARenderTarget;
-- (void)_destroyMSAARenderTarget;
+- (void)_createLayer;
+- (void)_createRenderTarget:(struct Texture { int (**x1)(); struct ResourceManager {} *x2; struct RenderResource {} *x3; int (**x4)(); char *x5; int x6; int x7; int x8; int x9; }*)arg1;
 - (float)averageFPS;
 - (float)contentScale;
-- (struct CGPoint { float x1; float x2; })convertPoint:(struct CGPoint { float x1; float x2; })arg1 toLayer:(id)arg2;
+- (struct CGPoint { double x1; double x2; })convertPoint:(struct CGPoint { double x1; double x2; })arg1 toLayer:(id)arg2;
 - (void)dealloc;
-- (struct DebugConsole { int (**x1)(); struct Matrix<float, 2, 1> { float x_2_1_1[2]; } x2; struct Matrix<float, 2, 1> { float x_3_1_1[2]; } x3; struct Matrix<float, 2, 1> { float x_4_1_1[2]; } x4; struct Matrix<float, 2, 1> { float x_5_1_1[2]; } x5; unsigned int x6; struct RenderItem {} *x7; struct unique_ptr<ggl::DataWrite<ggl::ColoredText::My>, std::__1::default_delete<ggl::DataWrite<ggl::ColoredText::My> > > { struct __compressed_pair<ggl::DataWrite<ggl::ColoredText::My> *, std::__1::default_delete<ggl::DataWrite<ggl::ColoredText::My> > > { struct DataWrite<ggl::ColoredText::My> {} *x_1_2_1; } x_8_1_1; } x8; unsigned int x9; struct Matrix<float, 2, 1> {} *x10; struct Matrix<unsigned char, 4, 1> { unsigned char x_11_1_1[4]; } x11; struct Matrix<unsigned char, 4, 1> { unsigned char x_12_1_1[4]; } x12; float x13; }*)debugConsoleForId:(int)arg1;
+- (struct DebugConsole { int (**x1)(); struct Matrix<float, 2, 1> { double x_2_1_1[2]; } x2; struct Matrix<float, 2, 1> { double x_3_1_1[2]; } x3; struct Matrix<float, 2, 1> { double x_4_1_1[2]; } x4; struct Matrix<float, 2, 1> { double x_5_1_1[2]; } x5; unsigned int x6; struct unique_ptr<ggl::RenderItem, std::__1::default_delete<ggl::RenderItem> > { struct __compressed_pair<ggl::RenderItem *, std::__1::default_delete<ggl::RenderItem> > { struct RenderItem {} *x_1_2_1; } x_7_1_1; } x7; struct unique_ptr<ggl::DataWrite<ggl::ColoredText::My>, std::__1::default_delete<ggl::DataWrite<ggl::ColoredText::My> > > { struct __compressed_pair<ggl::DataWrite<ggl::ColoredText::My> *, std::__1::default_delete<ggl::DataWrite<ggl::ColoredText::My> > > { struct DataWrite<ggl::ColoredText::My> {} *x_1_2_1; } x_8_1_1; } x8; unsigned int x9; struct Matrix<float, 2, 1> {} *x10; struct Matrix<unsigned char, 4, 1> { unsigned char x_11_1_1[4]; } x11; struct Matrix<unsigned char, 4, 1> { unsigned char x_12_1_1[4]; } x12; double x13; struct CommonLibrary {} *x14; struct RenderTargetFormat { int x_15_1_1[4]; unsigned int x_15_1_2; unsigned int x_15_1_3; int x_15_1_4; } x15; }*)debugConsoleForId:(int)arg1;
 - (BOOL)debugEnableMultisampling;
 - (void)destroyLayer;
-- (struct shared_ptr<ggl::Device> { struct Device {} *x1; struct __shared_weak_count {} *x2; })device;
+- (struct Device { int x1; struct shared_ptr<ggl::Device> { struct Device {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; struct unique_ptr<md::SharedDeviceResources, std::__1::default_delete<md::SharedDeviceResources> > { struct __compressed_pair<md::SharedDeviceResources *, std::__1::default_delete<md::SharedDeviceResources> > { struct SharedDeviceResources {} *x_1_2_1; } x_3_1_1; } x3; }*)device;
 - (void)didEnterBackground;
+- (void)didPresent;
 - (void)didReadPixels:(struct shared_ptr<ggl::BitmapData> { struct BitmapData {} *x1; struct __shared_weak_count {} *x2; }*)arg1;
 - (void)didReceiveMemoryWarning;
 - (void)disablePerformanceHUD:(id)arg1;
 - (void)drawInContext:(struct CGContext { }*)arg1;
-- (void)drawWithTimestamp:(double)arg1;
+- (void)drawToTexture:(struct Texture { int (**x1)(); struct ResourceManager {} *x2; struct RenderResource {} *x3; int (**x4)(); char *x5; int x6; int x7; int x8; int x9; }*)arg1 withTimestamp:(double)arg2;
+- (void)drawToTexture:(struct Texture { int (**x1)(); struct ResourceManager {} *x2; struct RenderResource {} *x3; int (**x4)(); char *x5; int x6; int x7; int x8; int x9; }*)arg1 withTimestamp:(double)arg2 completionHandler:(id /* block */)arg3;
 - (void)enablePerformanceHUD:(id)arg1;
 - (void)expandedPerformanceHUD:(id)arg1;
 - (void)forceLayout;
-- (id)init;
+- (const struct RenderTargetFormat { int x1[4]; unsigned int x2; unsigned int x3; int x4; }*)format;
+- (id)initWithContentScale:(float)arg1 shouldRasterize:(BOOL)arg2;
 - (id)layer;
+- (BOOL)multiSample;
+- (void)onTimerFired:(double)arg1;
 - (void)recreateLayer;
 - (struct RenderQueue { struct vector<ggl::RenderQueue::Pass, std::__1::allocator<ggl::RenderQueue::Pass> > { struct Pass {} *x_1_1_1; struct Pass {} *x_1_1_2; struct __compressed_pair<ggl::RenderQueue::Pass *, std::__1::allocator<ggl::RenderQueue::Pass> > { struct Pass {} *x_3_2_1; } x_1_1_3; } x1; struct vector<ggl::CommandBuffer *, std::__1::allocator<ggl::CommandBuffer *> > { struct CommandBuffer {} **x_2_1_1; struct CommandBuffer {} **x_2_1_2; struct __compressed_pair<ggl::CommandBuffer **, std::__1::allocator<ggl::CommandBuffer *> > { struct CommandBuffer {} **x_3_2_1; } x_2_1_3; } x2; struct shared_ptr<ggl::RenderTransaction> { struct RenderTransaction {} *x_3_1_1; struct __shared_weak_count {} *x_3_1_2; } x3; }*)renderQueue;
 - (id)renderSource;
-- (struct GLRenderer { int (**x1)(); struct Device {} *x2; unsigned int x3; unsigned int x4; bool x5; float x6; struct vector<std::__1::shared_ptr<ggl::DebugRenderer>, std::__1::allocator<std::__1::shared_ptr<ggl::DebugRenderer> > > { struct shared_ptr<ggl::DebugRenderer> {} *x_7_1_1; struct shared_ptr<ggl::DebugRenderer> {} *x_7_1_2; struct __compressed_pair<std::__1::shared_ptr<ggl::DebugRenderer> *, std::__1::allocator<std::__1::shared_ptr<ggl::DebugRenderer> > > { struct shared_ptr<ggl::DebugRenderer> {} *x_3_2_1; } x_7_1_3; } x7; struct unique_ptr<ggl::RenderQueue, std::__1::default_delete<ggl::RenderQueue> > { struct __compressed_pair<ggl::RenderQueue *, std::__1::default_delete<ggl::RenderQueue> > { struct RenderQueue {} *x_1_2_1; } x_8_1_1; } x8; struct unique_ptr<ggl::CommandBuffer, std::__1::default_delete<ggl::CommandBuffer> > { struct __compressed_pair<ggl::CommandBuffer *, std::__1::default_delete<ggl::CommandBuffer> > { struct CommandBuffer {} *x_1_2_1; } x_9_1_1; } x9; bool x10; id x11; struct RenderState {} x12; struct unique_ptr<ggl::OESContext, std::__1::default_delete<ggl::OESContext> > { struct __compressed_pair<ggl::OESContext *, std::__1::default_delete<ggl::OESContext> > { struct OESContext {} *x_1_2_1; } x_13_1_1; } x13; struct RenderTarget {} *x14; struct TransactionBuffer { struct deque<std::__1::shared_ptr<ggl::RenderTransaction>, std::__1::allocator<std::__1::shared_ptr<ggl::RenderTransaction> > > { struct __split_buffer<std::__1::shared_ptr<ggl::RenderTransaction> *, std::__1::allocator<std::__1::shared_ptr<ggl::RenderTransaction> *> > { struct shared_ptr<ggl::RenderTransaction> {} **x_1_3_1; struct shared_ptr<ggl::RenderTransaction> {} **x_1_3_2; struct shared_ptr<ggl::RenderTransaction> {} **x_1_3_3; struct __compressed_pair<std::__1::shared_ptr<ggl::RenderTransaction> **, std::__1::allocator<std::__1::shared_ptr<ggl::RenderTransaction> *> > { struct shared_ptr<ggl::RenderTransaction> {} **x_4_4_1; } x_1_3_4; } x_1_2_1; unsigned int x_1_2_2; struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::shared_ptr<ggl::RenderTransaction> > > { unsigned long x_3_3_1; } x_1_2_3; } x_15_1_1; } x15; struct unique_ptr<ggl::PerformanceHUD, std::__1::default_delete<ggl::PerformanceHUD> > { struct __compressed_pair<ggl::PerformanceHUD *, std::__1::default_delete<ggl::PerformanceHUD> > { struct PerformanceHUD {} *x_1_2_1; } x_16_1_1; } x16; struct deque<std::__1::pair<unsigned long, void *>, std::__1::allocator<std::__1::pair<unsigned long, void *> > > { struct __split_buffer<std::__1::pair<unsigned long, void *> *, std::__1::allocator<std::__1::pair<unsigned long, void *> *> > { struct pair<unsigned long, void *> {} **x_1_2_1; struct pair<unsigned long, void *> {} **x_1_2_2; struct pair<unsigned long, void *> {} **x_1_2_3; struct __compressed_pair<std::__1::pair<unsigned long, void *> **, std::__1::allocator<std::__1::pair<unsigned long, void *> *> > { struct pair<unsigned long, void *> {} **x_4_3_1; } x_1_2_4; } x_17_1_1; unsigned int x_17_1_2; struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::pair<unsigned long, void *> > > { unsigned long x_3_2_1; } x_17_1_3; } x17; struct vector<ggl::BufferLoadItem, std::__1::allocator<ggl::BufferLoadItem> > { struct BufferLoadItem {} *x_18_1_1; struct BufferLoadItem {} *x_18_1_2; struct __compressed_pair<ggl::BufferLoadItem *, std::__1::allocator<ggl::BufferLoadItem> > { struct BufferLoadItem {} *x_3_2_1; } x_18_1_3; } x18; struct vector<ggl::Texture2DLoadItem, std::__1::allocator<ggl::Texture2DLoadItem> > { struct Texture2DLoadItem {} *x_19_1_1; struct Texture2DLoadItem {} *x_19_1_2; struct __compressed_pair<ggl::Texture2DLoadItem *, std::__1::allocator<ggl::Texture2DLoadItem> > { struct Texture2DLoadItem {} *x_3_2_1; } x_19_1_3; } x19; unsigned int x20; }*)renderer;
-- (void)resetRenderQueue;
+- (struct Renderer { int (**x1)(); struct Device {} *x2; unsigned int x3; unsigned int x4; unsigned int x5; bool x6; double x7; struct vector<std::__1::shared_ptr<ggl::DebugRenderer>, std::__1::allocator<std::__1::shared_ptr<ggl::DebugRenderer> > > { struct shared_ptr<ggl::DebugRenderer> {} *x_8_1_1; struct shared_ptr<ggl::DebugRenderer> {} *x_8_1_2; struct __compressed_pair<std::__1::shared_ptr<ggl::DebugRenderer> *, std::__1::allocator<std::__1::shared_ptr<ggl::DebugRenderer> > > { struct shared_ptr<ggl::DebugRenderer> {} *x_3_2_1; } x_8_1_3; } x8; struct unique_ptr<ggl::RenderQueue, std::__1::default_delete<ggl::RenderQueue> > { struct __compressed_pair<ggl::RenderQueue *, std::__1::default_delete<ggl::RenderQueue> > { struct RenderQueue {} *x_1_2_1; } x_9_1_1; } x9; struct shared_ptr<ggl::CommonLibrary> { struct CommonLibrary {} *x_10_1_1; struct __shared_weak_count {} *x_10_1_2; } x10; struct unique_ptr<ggl::RenderResourceFences, std::__1::default_delete<ggl::RenderResourceFences> > { struct __compressed_pair<ggl::RenderResourceFences *, std::__1::default_delete<ggl::RenderResourceFences> > { struct RenderResourceFences {} *x_1_2_1; } x_11_1_1; } x11; }*)renderer;
 - (void)setBackgroundColor:(struct CGColor { }*)arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setContentsGravity:(id)arg1;
 - (void)setContentsScale:(float)arg1;
 - (void)setDebugEnableMultisampling:(BOOL)arg1;
 - (void)setNeedsDisplayOnBoundsChange:(BOOL)arg1;
 - (void)setOpaque:(BOOL)arg1;
 - (void)setRenderSource:(id)arg1;
-- (void)setUseMultisampling:(BOOL)arg1;
-- (struct CGSize { float x1; float x2; })size;
-- (struct CGSize { float x1; float x2; })sizeInPixels;
-- (BOOL)useMultisampling;
+- (BOOL)shouldRasterize;
+- (struct CGSize { double x1; double x2; })size;
+- (struct CGSize { double x1; double x2; })sizeInPixels;
 
 @end

@@ -3,9 +3,9 @@
  */
 
 @interface PLPrivacy : NSObject {
-    int _authStatus;
-    NSObject<OS_dispatch_queue> *_callbackQueue;
-    NSObject<OS_dispatch_queue> *_isolationQueue;
+    int  _authStatus;
+    NSObject<OS_dispatch_queue> * _callbackQueue;
+    NSObject<OS_dispatch_queue> * _isolationQueue;
 }
 
 + (id)sharedInstance;

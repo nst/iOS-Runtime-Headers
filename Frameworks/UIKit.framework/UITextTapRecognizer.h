@@ -3,7 +3,7 @@
  */
 
 @interface UITextTapRecognizer : UITapGestureRecognizer {
-    NSArray *_touchesForTap;
+    NSArray * _touchesForTap;
 }
 
 @property (nonatomic, retain) NSArray *touchesForTap;

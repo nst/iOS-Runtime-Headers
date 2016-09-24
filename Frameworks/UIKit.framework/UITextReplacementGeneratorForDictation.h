@@ -3,7 +3,7 @@
  */
 
 @interface UITextReplacementGeneratorForDictation : UITextReplacementGenerator {
-    NSTextAlternatives *_alternatives;
+    NSTextAlternatives * _alternatives;
 }
 
 @property (nonatomic, readonly) NSTextAlternatives *alternatives;

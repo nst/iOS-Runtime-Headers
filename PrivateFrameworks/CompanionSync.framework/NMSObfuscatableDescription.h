@@ -3,8 +3,8 @@
  */
 
 @interface NMSObfuscatableDescription : NSObject {
-    NSMutableArray *_items;
-    NSString *_prefixString;
+    NSMutableArray * _items;
+    NSString * _prefixString;
 }
 
 @property (nonatomic, retain) NSMutableArray *items;

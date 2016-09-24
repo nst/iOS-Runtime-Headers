@@ -3,29 +3,27 @@
  */
 
 @interface VTAssetManager : NSObject {
-    int _assetInstalledNotificationToken;
-    int _assetMetadataUpdateNotificationToken;
-    NSObject<OS_dispatch_queue> *_cacheQueue;
-    NSMutableDictionary *_cachedPathsByLanguage;
-    NSObject<OS_dispatch_queue> *_serialAssetQueryQueue;
+    VTPolicy * _enablePolicy;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
-- (void)_assetDownloaded:(int)arg1;
+- (id)_assetQueryForLanguage:(id)arg1 supportPremium:(BOOL)arg2 localOnly:(BOOL)arg3;
+- (id)_createPredicateForLanguage:(id)arg1 supportPremium:(BOOL)arg2;
 - (id)_defaultDownloadOptions;
-- (void)_downloadAsset:(id)arg1;
-- (void)_metadataUpdated:(int)arg1;
-- (void)_onetimeRemoteQuery;
+- (void)_downloadAsset:(id)arg1 withComplete:(id /* block */)arg2;
+- (void)_fetchRemoteAssetForLanguage:(id)arg1 supportPremium:(BOOL)arg2;
+- (void)_fetchRemoteMetaData;
+- (id)_findLatestInstalledAsset:(id)arg1;
+- (id)_installedAssetForLanguage:(id)arg1 supportPremium:(BOOL)arg2;
+- (BOOL)_isReadyToUse;
 - (void)_runAssetQuery:(id)arg1 completion:(id /* block */)arg2;
 - (void)_startDownloadingVoiceTriggerAsset:(id)arg1 progress:(id /* block */)arg2 completion:(id /* block */)arg3;
-- (void)_updateAssetForLanguage:(id)arg1 withTimeout:(double)arg2;
-- (BOOL)_updateCachesIfNecessary:(id)arg1;
-- (id)_voiceAssetQueryForLanguage:(id)arg1 contentVersion:(id)arg2 localOnly:(BOOL)arg3;
-- (id)assetForLanguage:(id)arg1 forceCacheUpdate:(BOOL)arg2;
-- (id)getLocalAssetForLanguage:(id)arg1;
+- (void)_updateFromRemoteToLocalAssets:(id)arg1;
+- (id)assetForLanguage:(id)arg1;
 - (id)init;
-- (void)invalidateAsset:(id)arg1;
+- (id)installedAssetForLanguage:(id)arg1;
 
 @end

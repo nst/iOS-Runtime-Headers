@@ -3,21 +3,24 @@
  */
 
 @interface UINavigationBar : UIView <NSCoding, UIBarPositioning, UIGestureRecognizerDelegate, UIStatusBarTinting, _UIBarPositioningInternal, _UIBasicAnimationFactory, _UIShadowedView> {
-    NSMutableArray *__animationIds;
-    UIColor *_accessibilityButtonBackgroundTintColor;
-    UIView *_accessoryView;
-    id _appearanceStorage;
-    UIImageView *_backIndicatorView;
-    NSString *_backdropViewLayerGroupName;
-    UIView *_backgroundView;
-    int _barPosition;
-    UIColor *_barTintColor;
-    UIFocusContainerGuide *_contentFocusContainerGuide;
-    id _currentAlert;
-    id _delegate;
-    NSMutableArray *_itemStack;
-    NSArray *_leftViews;
-    _UIViewControllerTransitionContext *_navControllerAnimatingContext;
+    NSMutableArray * __animationIds;
+    UIColor * _accessibilityButtonBackgroundTintColor;
+    UIView * _accessoryView;
+    id  _appearanceStorage;
+    UIImageView * _backIndicatorView;
+    _UIBarBackground * _barBackgroundView;
+    int  _barPosition;
+    UIColor * _barTintColor;
+    UIFocusContainerGuide * _contentFocusContainerGuide;
+    UIView * _contentView;
+    id  _currentAlert;
+    UIView * _currentCanvasView;
+    UIView * _customBackgroundView;
+    <_UINavigationBarDelegatePrivate> * _delegate;
+    NSMutableArray * _itemStack;
+    UIView * _leadingAffordanceView;
+    NSArray * _leftViews;
+    _UIViewControllerTransitionContext * _navControllerAnimatingContext;
     struct { 
         unsigned int animate : 1; 
         unsigned int animationDisabledCount : 10; 
@@ -46,28 +49,36 @@
         unsigned int cancelledTransition : 1; 
         unsigned int animationCount : 4; 
         unsigned int backgroundLayoutNeedsUpdate : 1; 
-    } _navbarFlags;
-    BOOL _needsUpdateBackIndicatorImage;
-    UISwipeGestureRecognizer *_popSwipeGestureRecognizer;
-    UIView *_prompt;
-    float _requestedMaxBackButtonWidth;
-    float _rightMargin;
-    NSArray *_rightViews;
-    NSMutableArray *_slideTransitionClippingViews;
-    unsigned int _state;
-    UIView *_titleView;
-    BOOL _wantsLetterpressContent;
+        unsigned int showsLeadingResizeAffordance : 1; 
+        unsigned int showsTrailingResizeAffordance : 1; 
+        unsigned int isInterruptibleTransition : 1; 
+    }  _navbarFlags;
+    BOOL  _needsUpdateBackIndicatorImage;
+    UISwipeGestureRecognizer * _popSwipeGestureRecognizer;
+    UIView * _prompt;
+    double  _requestedMaxBackButtonWidth;
+    double  _rightMargin;
+    NSArray * _rightViews;
+    NSMutableArray * _slideTransitionClippingViews;
+    unsigned int  _state;
+    UIView * _titleView;
+    UIView * _trailingAffordanceView;
+    <UIViewControllerTransitionCoordinator> * _transitionCoordinator;
+    UILayoutGuide * _userContentGuide;
+    NSLayoutConstraint * _userContentGuideLeading;
+    NSLayoutConstraint * _userContentGuideTrailing;
+    BOOL  _wantsLetterpressContent;
 }
 
 @property (setter=_setAccessibilityButtonBackgroundTintColor:, nonatomic, retain) UIColor *_accessibilityButtonBackgroundTintColor;
 @property (setter=_setAnimationIds:, nonatomic, retain) NSMutableArray *_animationIds;
 @property (setter=_setBackIndicatorImage:, nonatomic, retain) UIImage *_backIndicatorImage;
-@property (setter=_setBackIndicatorLeftMargin:, nonatomic) float _backIndicatorLeftMargin;
+@property (setter=_setBackIndicatorLeftMargin:, nonatomic) double _backIndicatorLeftMargin;
 @property (setter=_setBackdropViewLayerGroupName:, nonatomic, retain) NSString *_backdropViewLayerGroupName;
 @property (nonatomic, readonly) int _barTranslucence;
-@property (nonatomic, readonly) float _heightIncludingBackground;
+@property (nonatomic, readonly) double _heightIncludingBackground;
 @property (setter=_setNeedsUpdateBackIndicatorImage:, nonatomic) BOOL _needsUpdateBackIndicatorImage;
-@property (setter=_setRequestedMaxBackButtonWidth:, nonatomic) float _requestedMaxBackButtonWidth;
+@property (setter=_setRequestedMaxBackButtonWidth:, nonatomic) double _requestedMaxBackButtonWidth;
 @property (setter=_setWantsLetterpressContent:, nonatomic) BOOL _wantsLetterpressContent;
 @property (nonatomic, retain) UIImage *backIndicatorImage;
 @property (nonatomic, retain) UIImage *backIndicatorTransitionMaskImage;
@@ -90,21 +101,22 @@
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
-+ (id)_bottomColorForBackgroundImage:(id)arg1 viewSize:(struct CGSize { float x1; float x2; })arg2;
++ (id)_bottomColorForBackgroundImage:(id)arg1 viewSize:(struct CGSize { double x1; double x2; })arg2;
 + (id)_defaultBackIndicatorImage;
 + (id)_defaultBackIndicatorTransitionMaskImage;
 + (id)_defaultVisualStyleForOrientation:(int)arg1;
 + (void)_initializeForIdiom:(int)arg1;
 + (void)_setUseCustomBackButtonAction:(BOOL)arg1;
 + (id)_statusBarBaseTintColorForStyle:(int)arg1 translucent:(BOOL)arg2 tintColor:(id)arg3;
-+ (id)_statusBarBaseTintColorForStyle:(int)arg1 translucent:(BOOL)arg2 tintColor:(id)arg3 backgroundImage:(id)arg4 viewSize:(struct CGSize { float x1; float x2; })arg5;
++ (id)_statusBarBaseTintColorForStyle:(int)arg1 translucent:(BOOL)arg2 tintColor:(id)arg3 backgroundImage:(id)arg4 viewSize:(struct CGSize { double x1; double x2; })arg5;
++ (BOOL)_supportsCanvasView;
 + (BOOL)_useCustomBackButtonAction;
 + (id)_visualStyleForIdiom:(int)arg1 metrics:(int)arg2 isContainedInPopover:(BOOL)arg3 wantsLetterpressContent:(BOOL)arg4;
 + (id)defaultPromptFont;
-+ (struct CGSize { float x1; float x2; })defaultSize;
-+ (struct CGSize { float x1; float x2; })defaultSizeForOrientation:(int)arg1;
-+ (struct CGSize { float x1; float x2; })defaultSizeWithPrompt;
-+ (struct CGSize { float x1; float x2; })defaultSizeWithPromptForOrientation:(int)arg1;
++ (struct CGSize { double x1; double x2; })defaultSize;
++ (struct CGSize { double x1; double x2; })defaultSizeForOrientation:(int)arg1;
++ (struct CGSize { double x1; double x2; })defaultSizeWithPrompt;
++ (struct CGSize { double x1; double x2; })defaultSizeWithPromptForOrientation:(int)arg1;
 + (void)setDefaultAnimationDuration:(double)arg1;
 
 - (void).cxx_destruct;
@@ -116,6 +128,7 @@
 - (void)_addItem:(id)arg1 withEffectiveDelegate:(id)arg2 transition:(int)arg3;
 - (void)_addItems:(id)arg1 withEffectiveDelegate:(id)arg2 transition:(int)arg3;
 - (id)_allViews;
+- (BOOL)_allowInteractionDuringTransition;
 - (void)_animateOldBackButtonView:(id)arg1 toNewBackButtonView:(id)arg2 duration:(float)arg3 initialFrameForIncomingView:(id /* block */)arg4 destinationFrameForOutgoingView:(id /* block */)arg5 animationCleanup:(id /* block */)arg6;
 - (id)_animationIds;
 - (id)_appearanceStorage;
@@ -128,28 +141,31 @@
 - (float)_backTitleWidthOverTitleWidthForMatchingBackButtonView:(id)arg1 titleView:(id)arg2 withBackButtonWidth:(float)arg3;
 - (id)_backdropViewLayerGroupName;
 - (int)_backgroundBackdropStyle;
-- (void)_backgroundFadeDidFinish:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (id)_backgroundView;
 - (id)_backgroundViewForPalette:(id)arg1;
 - (BOOL)_backgroundViewSuppressesAdaptiveBackdrop;
 - (int)_barPosition;
-- (void)_barSizeDidChangeAndSoDidHeight:(BOOL)arg1;
+- (void)_barSizeDidChange;
 - (int)_barStyle:(BOOL)arg1;
 - (BOOL)_barStyleSuppressesAdaptiveBackdrop;
 - (int)_barTranslucence;
 - (BOOL)_barTranslucenceSuppressesAdaptiveBackdrop;
 - (id)_basicAnimationForView:(id)arg1 withKeyPath:(id)arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_boundsForPrompt:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 withFont:(id)arg3 barStyle:(int)arg4;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_boundsForPrompt:(id)arg1 inRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 withFont:(id)arg3 barStyle:(int)arg4;
 - (BOOL)_canDrawContent;
-- (BOOL)_canHandleStatusBarTouchAtLocation:(struct CGPoint { float x1; float x2; })arg1;
+- (BOOL)_canHandleStatusBarTouchAtLocation:(struct CGPoint { double x1; double x2; })arg1;
 - (void)_cancelInProgressPushOrPop;
 - (void)_cancelInteractiveTransition;
 - (void)_cancelInteractiveTransition:(float)arg1 completionSpeed:(float)arg2 completionCurve:(int)arg3;
-- (id)_commonHitTest:(struct CGPoint { float x1; float x2; })arg1 forView:(id)arg2;
+- (id)_commonHitTest:(struct CGPoint { double x1; double x2; })arg1 forView:(id)arg2;
 - (void)_commonNavBarInit;
+- (void)_completeTransitionFromCanvasView:(id)arg1 toCanvasView:(id)arg2 updateSize:(BOOL)arg3;
 - (void)_configurePaletteConstraintsIfNecessary;
 - (id)_contentFocusContainerGuide;
 - (BOOL)_contentHuggingDefault_isUsuallyFixedHeight;
+- (id)_contentView;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_contentViewFrameInBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 style:(id)arg2;
+- (id)_createAffordanceView;
 - (void)_crossFadeToBarBackgroundImageForItem:(id)arg1;
 - (id)_currentBackButtonForNthItemFromTop:(unsigned int)arg1;
 - (int)_currentBarStyle;
@@ -165,9 +181,11 @@
 - (id)_defaultTitleFontWithScaleAdjustment:(float)arg1;
 - (id)_defaultVisualStyleForOrientation:(int)arg1;
 - (BOOL)_deferShadowToSearchBar;
+- (BOOL)_delegateWantsNavigationBarHidden;
 - (void)_didChangeFromIdiom:(int)arg1 onScreen:(id)arg2 traverseHierarchy:(BOOL)arg3;
 - (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
 - (BOOL)_didVisibleItemsChangeWithNewItems:(id)arg1 oldItems:(id)arg2;
+- (BOOL)_disableBlurTinting;
 - (id)_effectiveBackIndicatorImage;
 - (float)_effectiveBackIndicatorLeftMargin;
 - (id)_effectiveBackIndicatorTransitionMaskImage;
@@ -175,18 +193,22 @@
 - (void)_effectiveBarTintColorDidChangeWithPreviousColor:(id)arg1;
 - (id)_effectiveDelegate;
 - (void)_evaluateBackIndicatorForHilightedState:(BOOL)arg1 ofBarButtonItem:(id)arg2 inNavigationItem:(id)arg3;
+- (float)_expectedHeightForNavigationItem:(id)arg1;
 - (void)_fadeAllViewsIn;
 - (void)_fadeAllViewsOut;
 - (void)_fadeViewOut:(id)arg1;
 - (void)_fadeViewsIn:(id)arg1;
 - (void)_fadeViewsOut:(id)arg1;
 - (void)_finishInteractiveTransition:(float)arg1 completionSpeed:(float)arg2 completionCurve:(int)arg3;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameForCanvasView:(id)arg1 inBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 - (BOOL)_gestureRecognizerShouldBegin:(id)arg1;
-- (void)_getTitleViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 leftViewFrames:(id)arg2 rightViewFrames:(id)arg3;
-- (void)_getTitleViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 leftViewFrames:(id)arg2 rightViewFrames:(id)arg3 forItemAtIndex:(unsigned int)arg4;
-- (void)_getTitleViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 leftViewFrames:(id)arg2 rightViewFrames:(id)arg3 forItemAtIndex:(unsigned int)arg4 returnedIdealWidthOfTextContent:(float*)arg5 availableLayoutWidthForTextContent:(float*)arg6 idealBackButtonWidth:(float*)arg7;
-- (void)_handleMouseDownAtPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)_handleMouseUpAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)_getBackgroundImage:(id*)arg1 shouldRespectOversizedBackgroundImage:(BOOL*)arg2 actualBarMetrics:(int*)arg3 actualBarPosition:(int*)arg4;
+- (void)_getLeftMargin:(float*)arg1 rightMargin:(float*)arg2 forNavigationItem:(id)arg3 showingBackButton:(BOOL)arg4 visualStyle:(id)arg5;
+- (void)_getTitleViewFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg1 leftViewFrames:(id)arg2 rightViewFrames:(id)arg3;
+- (void)_getTitleViewFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg1 leftViewFrames:(id)arg2 rightViewFrames:(id)arg3 forItemAtIndex:(unsigned int)arg4;
+- (void)_getTitleViewFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg1 leftViewFrames:(id)arg2 rightViewFrames:(id)arg3 forItemAtIndex:(unsigned int)arg4 returnedIdealWidthOfTextContent:(float*)arg5 availableLayoutWidthForTextContent:(float*)arg6 idealBackButtonWidth:(float*)arg7;
+- (void)_handleMouseDownAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)_handleMouseUpAtPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)_handlePopSwipe:(id)arg1;
 - (BOOL)_hasBackButton;
 - (BOOL)_hasCustomAutolayoutNeighborSpacing;
@@ -198,22 +220,26 @@
 - (void)_intrinsicContentSizeInvalidatedForChildView:(id)arg1;
 - (BOOL)_isAlwaysHidden;
 - (BOOL)_isIncomingButtonSameAsOutgoingButtonOnLeft:(BOOL)arg1;
-- (id)_itemStack;
+- (BOOL)_isInterruptibleTransition;
 - (int)_itemStackCount;
-- (void)_layoutBackgroundViewConsideringAdaptiveBackdropAndChangedHeight:(BOOL)arg1;
 - (BOOL)_legacyIsTranslucent;
 - (BOOL)_modernIsTranslucent;
 - (void)_navBarButtonPressed:(id)arg1;
 - (void)_navigationAnimationDidFinish:(BOOL)arg1 context:(id)arg2;
+- (void)_navigationButtonsWantAccessibilityBlendModes:(BOOL)arg1 withTintColor:(id)arg2;
 - (BOOL)_needsUpdateBackIndicatorImage;
 - (id)_nthNavigationItemFromTop:(int)arg1;
 - (void)_palette:(id)arg1 isAttaching:(BOOL)arg2 didComplete:(BOOL)arg3;
-- (void)_popForTouchAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (BOOL)_performCanvasViewTransitionFromItem:(id)arg1 toItem:(id)arg2;
+- (void)_popForTouchAtPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (id)_popNavigationItemWithTransition:(int)arg1;
 - (void)_popNestedNavigationItem;
 - (void)_populateArchivedSubviews:(id)arg1;
+- (void)_positionAffordanceView:(id)arg1 leading:(BOOL)arg2;
+- (struct CGSize { double x1; double x2; })_preferredSize;
 - (void)_prepareForPopAnimationWithNewTopItem:(id)arg1;
 - (void)_prepareForPushAnimationWithItems:(id)arg1;
+- (BOOL)_prepareTransitionFromItem:(id)arg1 toItem:(id)arg2;
 - (void)_propagateEffectiveBarTintColorWithPreviousColor:(id)arg1;
 - (void)_pushNavigationItem:(id)arg1 transition:(int)arg2;
 - (void)_pushNestedNavigationItem:(id)arg1;
@@ -223,8 +249,8 @@
 - (void)_removeItemsFromSuperview:(id)arg1;
 - (float)_requestedMaxBackButtonWidth;
 - (void)_resetBackgroundImageAsNecessary;
+- (void)_sendNavigationBarDidChangeStyle;
 - (void)_setAccessibilityButtonBackgroundTintColor:(id)arg1;
-- (void)_setActiveBarMetrics:(int)arg1;
 - (void)_setAnimationIds:(id)arg1;
 - (void)_setAutoAdjustTitle:(BOOL)arg1;
 - (void)_setBackButtonBackgroundImage:(id)arg1 mini:(id)arg2 forStates:(unsigned int)arg3;
@@ -239,10 +265,11 @@
 - (void)_setButtonBackgroundImage:(id)arg1 mini:(id)arg2 forStates:(unsigned int)arg3;
 - (void)_setButtonItemTextColor:(id)arg1 shadowColor:(id)arg2;
 - (void)_setButtonItemTextColor:(id)arg1 shadowColor:(id)arg2 forState:(unsigned int)arg3;
-- (void)_setButtonTextShadowOffset:(struct CGSize { float x1; float x2; })arg1;
+- (void)_setButtonTextShadowOffset:(struct CGSize { double x1; double x2; })arg1;
 - (void)_setDecodedItems:(id)arg1;
 - (void)_setDefaultBarMetrics:(int)arg1;
 - (void)_setDeferShadowToSearchBar:(BOOL)arg1;
+- (void)_setDisableBlurTinting:(BOOL)arg1;
 - (void)_setHidesShadow:(BOOL)arg1;
 - (void)_setIsContainedInPopover:(BOOL)arg1;
 - (void)_setItems:(id)arg1 transition:(int)arg2;
@@ -251,21 +278,26 @@
 - (void)_setItemsUpToItem:(id)arg1 transition:(int)arg2;
 - (void)_setLeftView:(id)arg1 rightView:(id)arg2;
 - (void)_setLeftViews:(id)arg1 rightViews:(id)arg2;
+- (void)_setNeedsBackgroundViewUpdate;
 - (void)_setNeedsUpdateBackIndicatorImage:(BOOL)arg1;
 - (void)_setPressedButtonItemTextColor:(id)arg1 shadowColor:(id)arg2;
 - (void)_setRequestedMaxBackButtonWidth:(float)arg1;
 - (void)_setReversesButtonTextShadowOffsetWhenPressed:(BOOL)arg1;
 - (void)_setShadowAlpha:(float)arg1;
+- (void)_setShowsLeadingResizeAffordance:(BOOL)arg1;
+- (void)_setShowsTrailingResizeAffordance:(BOOL)arg1;
 - (void)_setUpContentFocusContainerGuide;
 - (void)_setVisualAltitude:(float)arg1;
-- (void)_setVisualAltitudeBias:(struct CGSize { float x1; float x2; })arg1;
+- (void)_setVisualAltitudeBias:(struct CGSize { double x1; double x2; })arg1;
 - (void)_setWantsLetterpressContent:(BOOL)arg1;
 - (void)_setupTopNavItem:(id)arg1 oldTopNavItem:(id)arg2;
 - (float)_shadowAlpha;
 - (id)_shadowView;
-- (BOOL)_shouldPopForTouchAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (BOOL)_shouldPopForTouchAtPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (BOOL)_shouldShowBackButtonForNavigationItem:(id)arg1;
 - (void)_showLeftRightButtonsAnimationDidFinish:(BOOL)arg1 context:(id)arg2;
+- (BOOL)_showsLeadingResizeAffordance;
+- (BOOL)_showsTrailingResizeAffordance;
 - (void)_startBarStyleAnimation:(int)arg1 withTintColor:(id)arg2;
 - (void)_startInteractiveNavigationBarTransition;
 - (void)_startPopAnimationFromItems:(id)arg1 fromBarStyle:(int)arg2 toItems:(id)arg3 toBarStyle:(int)arg4;
@@ -280,10 +312,11 @@
 - (void)_tintViewAppearanceDidChange;
 - (id)_titleTextColor;
 - (int)_transitionForOldItems:(id)arg1 newItems:(id)arg2;
+- (BOOL)_updateActiveBarMetricsIfNeededTo:(int)arg1;
 - (void)_updateBackIndicatorImage;
 - (void)_updateBackIndicatorViewTintColor;
-- (void)_updateBackgroundColor;
-- (void)_updateBackgroundImage;
+- (void)_updateBackgroundView;
+- (void)_updateBackgroundViewIgnoringFlag;
 - (void)_updateInteractiveStatusBarTransitionPercent:(float)arg1 isFinished:(BOOL)arg2 didComplete:(BOOL)arg3 completionSpeed:(float)arg4 completionCurve:(int)arg5;
 - (void)_updateInteractiveTransition:(float)arg1;
 - (void)_updateNavigationBarItem:(id)arg1 forStyle:(int)arg2;
@@ -291,8 +324,10 @@
 - (void)_updateNavigationBarItemsForStyle:(int)arg1;
 - (void)_updateNavigationBarItemsForStyle:(int)arg1 previousTintColor:(id)arg2;
 - (void)_updateOpacity;
+- (void)_updatePalette:(id)arg1;
 - (void)_updatePaletteBackgroundIfNecessary;
 - (void)_updateTitleView;
+- (id)_userContentGuide;
 - (id)_visualStyleForMetrics:(int)arg1;
 - (BOOL)_wantsAdaptiveBackdrop;
 - (BOOL)_wantsAdaptiveBackdropForPalette;
@@ -302,8 +337,8 @@
 - (void)_wrapView:(id)arg1 inClippingViewWithLeftBoundary:(float)arg2 rightBoundary:(float)arg3 leftMaskImage:(id)arg4 leftMaskIsChevron:(BOOL)arg5 rightMaskImage:(id)arg6;
 - (void)addConstraint:(id)arg1;
 - (unsigned int)animationDisabledCount;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })availableTitleArea;
-- (id)backButtonViewAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })availableTitleArea;
+- (id)backButtonViewAtPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (id)backIndicatorImage;
 - (id)backIndicatorTransitionMaskImage;
 - (id)backItem;
@@ -320,24 +355,24 @@
 - (id)currentRightView;
 - (void)dealloc;
 - (float)defaultBackButtonAlignmentHeight;
-- (struct CGSize { float x1; float x2; })defaultSizeForOrientation:(int)arg1;
+- (struct CGSize { double x1; double x2; })defaultSizeForOrientation:(int)arg1;
 - (id)delegate;
 - (void)didAddSubview:(id)arg1;
 - (void)disableAnimation;
-- (void)drawBackButtonBackgroundInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withStyle:(int)arg2 pressed:(BOOL)arg3;
-- (void)drawBackgroundInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withStyle:(int)arg2;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)drawBackButtonBackgroundInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withStyle:(int)arg2 pressed:(BOOL)arg3;
+- (void)drawBackgroundInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withStyle:(int)arg2;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (int)effectiveInterfaceOrientation;
 - (void)enableAnimation;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)forceFullHeightInLandscape;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (void)hideButtons;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (void)invalidateIntrinsicContentSize;
 - (BOOL)isAnimationEnabled;
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
@@ -345,32 +380,32 @@
 - (BOOL)isMinibar;
 - (BOOL)isTranslucent;
 - (id)items;
+- (void)layoutSublayersOfLayer:(id)arg1;
 - (void)layoutSubviews;
-- (id)navigationItemAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (id)navigationItemAtPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (id)navigationItems;
 - (void)popNavigationItem;
 - (id)popNavigationItemAnimated:(BOOL)arg1;
 - (id)preferredFocusedView;
 - (id)prompt;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })promptBounds;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })promptBounds;
 - (id)promptView;
 - (void)pushNavigationItem:(id)arg1;
 - (void)pushNavigationItem:(id)arg1 animated:(BOOL)arg2;
 - (void)removeConstraint:(id)arg1;
 - (void)setAccessoryView:(id)arg1 animate:(BOOL)arg2;
-- (void)setAutoresizingMask:(unsigned int)arg1;
 - (void)setBackIndicatorImage:(id)arg1;
 - (void)setBackIndicatorTransitionMaskImage:(id)arg1;
 - (void)setBackgroundImage:(id)arg1 forBarMetrics:(int)arg2;
 - (void)setBackgroundImage:(id)arg1 forBarPosition:(int)arg2 barMetrics:(int)arg3;
 - (void)setBarStyle:(int)arg1;
 - (void)setBarTintColor:(id)arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setButton:(int)arg1 enabled:(BOOL)arg2;
-- (void)setCenter:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setCenter:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setForceFullHeightInLandscape:(BOOL)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setHidden:(BOOL)arg1;
 - (void)setItems:(id)arg1;
 - (void)setItems:(id)arg1 animated:(BOOL)arg2;
@@ -396,7 +431,7 @@
 - (void)showButtonsWithLeftTitle:(id)arg1 rightTitle:(id)arg2 leftBack:(BOOL)arg3;
 - (void)showHideBackButtomAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (void)showLeftButton:(id)arg1 withStyle:(int)arg2 rightButton:(id)arg3 withStyle:(int)arg4;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (int)state;
 - (void)tintColorDidChange;
 - (BOOL)titleAutoresizesToFit;
@@ -408,6 +443,7 @@
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)updatePrompt;
 - (void)willRemoveSubview:(id)arg1;
 
@@ -415,14 +451,18 @@
 
 - (void)_cnui_applyContactStyle;
 
-// Image: /System/Library/Frameworks/PassKit.framework/PassKit
+// Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
 
-- (void)pk_applyAppearance:(struct _PKAppearanceSpecifier { BOOL x1; id x2; id x3; id x4; id x5; id x6; id x7; id x8; id x9; id x10; id x11; id x12; id x13; /* Warning: Unrecognized filer type: '' using 'void*' */ void*x14; void*x15; void*x16; void*x17; void*x18; void*x19; void x20; void*x21; void*x22; void*x23; void*x24; void*x25; void*x26; void*x27; void*x28; unsigned short x29; void*x30; short x31; void*x32; void*x33; void*x34; void*x35; unsigned long x36; int x37; unsigned int x38/* : ? */; const void*x39; const void*x40; void*x41; void*x42; const void*x43; void*x44; void*x45; void*x46; out const void*x47; short x48; void*x49; void*x50; void*x51; out void*x52; out short x53; void*x54; unsigned int x55; void*x56; float x57; const void*x58; void*x59; void*x60; void*x61; out const void*x62; void*x63; void*x64; void*x65; out void*x66; out short x67; void*x68; unsigned int x69; void*x70; double x71; void*x72; void*x73; long long x74; void*x75; inout short x76; void*x77; void*x78; void*x79; void*x80; void*x81; void*x82; void*x83; void*x84; void*x85; void*x86; void*x87; void*x88; void*x89; void*x90; void*x91; void*x92; void*x93; void*x94; void*x95; void*x96; void*x97; void*x98; void*x99; void*x100; void*x101; void*x102; void*x103; void*x104; void*x105; void*x106; void*x107; void*x108; void*x109; void*x110; void*x111; void*x112; void*x113; void*x114; void*x115; void*x116; void*x117; void*x118; void*x119; void*x120; void*x121; void*x122; void*x123; void*x124; void*x125; void*x126; void*x127; void*x128; void*x129; void*x130; void*x131; void*x132; void*x133; void*x134; char *x135; short x136; long long x137; bool x138; void*x139; out void*x140; void*x141; void*x142; short x143; void*x144; void*x145; unsigned short x146; void*x147; out void*x148; long x149; double x150; void*x151; int x152; void*x153; void*x154; void*x155; int x156; in void*x157; void*x158; const void*x159; void*x160; double x161; void*x162; const int x163; out const int x164; void*x165; void*x166; SEL x167; void*x168; void*x169; void*x170; void*x171; void*x172; void*x173; void*x174; void*x175; void x176; void*x177; void*x178; void*x179; void*x180; void*x181; void*x182; void*x183; void*x184; unsigned short x185; unsigned char x186; void*x187; unsigned char x188; void*x189; void*x190; const void*x191; unsigned short x192; void*x193; void*x194; BOOL x195; void*x196; void*x197; double x198; void*x199; void*x200; const BOOL x201; void*x202; in void*x203; oneway void*x204; long x205; void*x206; void*x207; void*x208; int x209; short x210; void*x211; void*x212; void*x213; void*x214; void*x215; void*x216; void*x217; void*x218; void x219; void*x220; void*x221; void*x222; void*x223; void*x224; void*x225; void*x226; void*x227; unsigned short x228; unsigned char x229; void*x230; unsigned char x231; void*x232; void*x233; const void*x234; unsigned short x235; void*x236; void*x237; BOOL x238; void*x239; void*x240; double x241; void*x242; void*x243; const BOOL x244; void*x245; in void*x246; oneway void*x247; long x248; void*x249; void*x250; void*x251; int x252; short x253; void*x254; void*x255; void*x256; void*x257; void*x258; void*x259; void*x260; void*x261; void x262; void*x263; void*x264; void*x265; void*x266; void*x267; void*x268; unsigned char x269; void*x270; unsigned short x271; void*x272; short x273; void*x274; void*x275; void*x276; void*x277; unsigned long x278; int x279; unsigned int x280/* : ? */; const void*x281; const void*x282; void*x283; void*x284; const int x285; void x286; void*x287; void*x288; void*x289; void*x290; const void*x291; void*x292; void*x293; void*x294; out const void*x295; short x296; void*x297; int x298; void*x299; out const void*x300; unsigned int x301; void*x302; void*x303; out const void*x304; void*x305; float x306; const void*x307; void*x308; void*x309; void*x310; out const void*x311; void*x312; int x313; void*x314; out const void*x315; unsigned int x316; void*x317; void*x318; out const void*x319; void*x320; void*x321; void*x322; void*x323; void*x324; void*x325; void*x326; void*x327; void*x328; void*x329; void*x330; void*x331; void*x332; void*x333; void*x334; void*x335; void*x336; void*x337; void*x338; void*x339; void*x340; void*x341; void*x342; void*x343; void*x344; void*x345; void*x346; void*x347; void*x348; void*x349; void*x350; void*x351; void*x352; void*x353; void*x354; void*x355; void*x356; void*x357; long x358; void*x359; void*x360; void*x361; short x362; void*x363; void*x364; void*x365; void*x366; void*x367; void*x368; void*x369; void*x370; void*x371; void*x372; void*x373; void*x374; id x375; void*x376; long x377; void*x378; void*x379; id /* block */ x380; void*x381; void*x382; void*x383; void*x384; void*x385; void*x386; void x387; void*x388; void*x389; void*x390; void*x391; void*x392; void*x393; void*x394; unsigned short x395; void*x396; void*x397; unsigned int x398; void*x399; void*x400; in double x401; out float x402; float x403; void*x404; void*x405; void*x406; long x407; out void*x408; double x409; void*x410; void*x411; void*x412; void*x413; void*x414; void*x415; void*x416; void*x417; void*x418; void*x419; void*x420; void*x421; void*x422; void*x423; void*x424; void*x425; void*x426; void*x427; void*x428; void*x429; void*x430; void*x431; void*x432; void*x433; void*x434; void*x435; void*x436; void*x437; void*x438; void*x439; void*x440; void*x441; void*x442; void*x443; void*x444; void*x445; void*x446; void x447; void*x448; void*x449; void*x450; void*x451; void*x452; void*x453; void*x454; unsigned short x455; void*x456; void*x457; unsigned int x458; void*x459; void*x460; in double x461; out float x462; float x463; void*x464; void*x465; void*x466; long x467; out void*x468; double x469; void*x470; void*x471; void*x472; void*x473; void*x474; void x475; void*x476; void*x477; void*x478; void*x479; void*x480; void*x481; void*x482; void*x483; unsigned short x484; void*x485; short x486; void*x487; void*x488; void*x489; void*x490; unsigned long x491; int x492; unsigned int x493/* : ? */; const void*x494; const void*x495; void*x496; void*x497; const int x498; void x499; void*x500; void*x501; void*x502; void*x503; const void*x504; void*x505; void*x506; void*x507; out const void*x508; short x509; void*x510; unsigned short x511; void*x512; unsigned int x513/* : ? */; void*x514; void*x515; BOOL x516; void*x517; short x518; void*x519; float x520; const void*x521; void*x522; void*x523; void*x524; out const void*x525; void*x526; unsigned short x527; void*x528; unsigned int x529/* : ? */; void*x530; void*x531; BOOL x532; void*x533; short x534; void*x535; void*x536; void*x537; void*x538; void*x539; void*x540; void*x541; void*x542; void*x543; void*x544; void*x545; void*x546; void*x547; void*x548; void*x549; void*x550; void*x551; void*x552; void*x553; void*x554; void*x555; void*x556; void*x557; void*x558; void*x559; void*x560; void*x561; void*x562; long x563; void*x564; void*x565; void*x566; void*x567; void*x568; void*x569; void*x570; void*x571; void*x572; void*x573; void*x574; void*x575; void*x576; void*x577; void*x578; void*x579; void*x580; void*x581; void*x582; void*x583; void*x584; void*x585; void*x586; void*x587; void*x588; void*x589; void*x590; id x591; void*x592; void*x593; void*x594; void*x595; void*x596; void*x597; void*x598; unsigned char x599; out long x600; out const unsigned char x601; void*x602; const void x603; void*x604; void*x605; float x606; float x607; void*x608; BOOL x609; void*x610; void*x611; void*x612; void*x613; void*x614; void*x615; void*x616; void*x617; id x618; void*x619; void*x620; void*x621; void*x622; void*x623; unsigned short x624; void*x625; short x626; void*x627; void*x628; void*x629; void*x630; unsigned long x631; int x632; unsigned int x633/* : ? */; const void*x634; const void*x635; void*x636; void*x637; const int x638; void x639; void*x640; void*x641; void*x642; void*x643; const void*x644; void*x645; void*x646; void*x647; out const void*x648; short x649; void*x650; bycopy float x651; float x652; int x653; BOOL x654; void*x655; unsigned int x656; void*x657; void*x658; out const void*x659; void*x660; float x661; const void*x662; void*x663; void*x664; void*x665; out const void*x666; void*x667; bycopy float x668; float x669; int x670; BOOL x671; void*x672; unsigned int x673; void*x674; void*x675; out const void*x676; void*x677; void*x678; void*x679; void*x680; void*x681; id x682; void*x683; void*x684; void*x685; void*x686; void*x687; void*x688; void*x689; void*x690; void*x691; void*x692; void*x693; void*x694; void*x695; void*x696; void*x697; void*x698; void*x699; void*x700; void*x701; void*x702; void*x703; void*x704; void*x705; void*x706; void*x707; void*x708; void*x709; void x710; void*x711; void*x712; void*x713; void*x714; void*x715; void*x716; void*x717; void*x718; void*x719; bycopy void*x720; void*x721; void*x722; void*x723; short x724; out long x725; void*x726; void*x727; int x728; out in void*x729; void*x730; void*x731; void*x732; void*x733; void*x734; void*x735; void*x736; void*x737; void*x738; void*x739; id x740; void*x741; out void*x742; void*x743; void*x744; void*x745; unsigned int x746; void*x747; out void*x748; int x749; out in void*x750; float x751; float x752; void*x753; BOOL x754; void*x755; void*x756; out BOOL x757; void*x758; short x759; void*x760; void x761; void*x762; in void*x763; void*x764; const out void x765; int x766; double x767; void*x768; const void*x769; void*x770; void*x771; void*x772; void*x773; void*x774; void*x775; void*x776; void*x777; id x778; unsigned long x779; void*x780; void*x781; void*x782; void*x783; unsigned short x784; void*x785; void*x786; const int x787; double x788; unsigned int x789; void*x790; void*x791; void*x792; void*x793; void*x794; void*x795; void*x796; void*x797; void*x798; void*x799; void*x800; void*x801; void*x802; void*x803; void*x804; void*x805; void*x806; id x807; void*x808; long x809; void*x810; void*x811; long doublex812; double x813; BOOL x814; void*x815; int x816; out in void*x817; void*x818; unsigned int x819/* : ? */; long x820; int x821; BOOL x822; void*x823; void*x824; const int x825; unsigned int x826/* : ? */; void*x827; void*x828; void*x829; short x830; void*x831; void*x832; void*x833; void*x834; void*x835; void*x836; void*x837; void*x838; void*x839; void*x840; void*x841; void*x842; void*x843; void*x844; void*x845; void*x846; id x847; void*x848; void*x849; void*x850; void*x851; void*x852; bool x853; void*x854; unsigned int x855; unsigned short x856; BOOL x857; void*x858; in void*x859; BOOL x860; void*x861; int x862; out in short x863; void*x864; void x865; void*x866; in void*x867; void*x868; void*x869; void*x870; void*x871; void*x872; long long x873; void*x874; void*x875; long long x876; void*x877; void*x878; void*x879; void*x880; void*x881; void*x882; void*x883; void*x884; void*x885; void*x886; void*x887; void*x888; void*x889; void*x890; void*x891; void*x892; long long x893; void*x894; void*x895; void*x896; void*x897; void*x898; void*x899; void*x900; void*x901; void*x902; void*x903; void*x904; void*x905; void*x906; void*x907; void*x908; void*x909; void*x910; void*x911; void*x912; void*x913; void*x914; void*x915; void*x916; void*x917; void*x918; void*x919; void*x920; id x921; void*x922; long long x923; void*x924; void*x925; void*x926; void*x927; unsigned long x928; unsigned char x929; void*x930; void*x931; in void*x932; void*x933; unsigned short x934; void*x935; short x936; short x937; int x938; out in void*x939; void*x940; void*x941; void*x942; void*x943; void*x944; void*x945; void*x946; void*x947; void*x948; id x949; void*x950; void*x951; long long x952; void*x953; void*x954; unsigned short x955; void*x956; short x957; void*x958; void*x959; void*x960; void*x961; unsigned long x962; int x963; unsigned int x964/* : ? */; const void*x965; const void*x966; void*x967; void*x968; const int x969; void x970; void*x971; void*x972; void*x973; void*x974; const void*x975; void*x976; void*x977; void*x978; out const void*x979; short x980; void*x981; unsigned char x982; long x983; out void*x984; double x985; void*x986; void*x987; out void*x988; out unsigned long x989; int x990; unsigned int x991/* : ? */; const void*x992; const void*x993; void*x994; float x995; const void*x996; void*x997; void*x998; void*x999; out const void*x1000; void*x1001; unsigned char x1002; long x1003; out void*x1004; double x1005; void*x1006; void*x1007; out void*x1008; out unsigned long x1009; int x1010; unsigned int x1011/* : ? */; const void*x1012; const void*x1013; void*x1014; void*x1015; void*x1016; void*x1017; void*x1018; void*x1019; void*x1020; void*x1021; void*x1022; void*x1023; void*x1024; id x1025; void*x1026; out void*x1027; void*x1028; void*x1029; void*x1030; void*x1031; void*x1032; void*x1033; void*x1034; void*x1035; void*x1036; void*x1037; void*x1038; void*x1039; void*x1040; void*x1041; void x1042; void*x1043; void*x1044; void*x1045; void*x1046; void*x1047; void*x1048; void*x1049; void*x1050; void*x1051; void*x1052; void*x1053; void*x1054; void*x1055; void*x1056; void*x1057; void*x1058; void*x1059; void*x1060; void*x1061; void*x1062; void*x1063; void*x1064; void*x1065; void*x1066; void*x1067; void*x1068; void*x1069; void*x1070; void*x1071; void*x1072; void*x1073; void*x1074; void*x1075; void*x1076; void*x1077; void*x1078; void*x1079; void*x1080; void*x1081; void*x1082; void*x1083; void*x1084; void x1085; void*x1086; void*x1087; void*x1088; void*x1089; void*x1090; void*x1091; void*x1092; void*x1093; unsigned int x1094; void*x1095; out BOOL x1096; void*x1097; short x1098; void*x1099; void*x1100; int x1101; double x1102; void*x1103; void*x1104; void*x1105; void*x1106; void*x1107; void*x1108; void*x1109; void*x1110; void*x1111; void*x1112; void*x1113; void*x1114; void*x1115; void x1116; void*x1117; void*x1118; void*x1119; void*x1120; void*x1121; void*x1122; void*x1123; inout unsigned short x1124; unsigned char x1125; out void*x1126; void*x1127; int x1128; in void*x1129; void*x1130; void*x1131; void*x1132; void*x1133; void*x1134; void*x1135; void*x1136; void*x1137; void*x1138; void*x1139; void*x1140; void*x1141; void*x1142; void*x1143; void*x1144; void*x1145; void*x1146; void*x1147; void*x1148; void*x1149; void*x1150; void*x1151; void*x1152; void*x1153; void*x1154; void*x1155; void*x1156; void*x1157; void*x1158; void*x1159; void*x1160; void*x1161; void*x1162; void*x1163; void*x1164; void*x1165; void*x1166; void*x1167; void*x1168; void*x1169; void*x1170; void*x1171; void*x1172; void*x1173; void*x1174; void*x1175; void*x1176; void*x1177; short x1178; void*x1179; void*x1180; void*x1181; long x1182; void*x1183; void*x1184; void*x1185; void*x1186; void*x1187; void*x1188; void*x1189; void*x1190; void*x1191; void*x1192; void*x1193; void*x1194; void*x1195; void*x1196; void*x1197; void*x1198; void*x1199; void*x1200; void*x1201; void*x1202; void*x1203; void*x1204; void*x1205; void*x1206; void*x1207; void*x1208; void*x1209; short x1210; void*x1211; void*x1212; void*x1213; void*x1214; void*x1215; void*x1216; void*x1217; void*x1218; void*x1219; void*x1220; void*x1221; void*x1222; void*x1223; void*x1224; void*x1225; void*x1226; void*x1227; void*x1228; void*x1229; void*x1230; void*x1231; void*x1232; void*x1233; void*x1234; void*x1235; void*x1236; void*x1237; void*x1238; void*x1239; void*x1240; void*x1241; void*x1242; id x1243; double x1244; out void*x1245; void*x1246; void*x1247; void*x1248; void*x1249; void*x1250; void*x1251; void*x1252; void*x1253; void*x1254; void*x1255; void*x1256; void*x1257; void*x1258; void*x1259; void*x1260; void*x1261; void*x1262; void*x1263; void*x1264; void*x1265; void*x1266; void*x1267; void*x1268; void*x1269; void*x1270; void*x1271; void*x1272; void*x1273; void*x1274; void*x1275; void*x1276; void*x1277; void*x1278; void*x1279; void*x1280; void*x1281; void*x1282; void*x1283; void*x1284; void*x1285; void*x1286; void*x1287; void*x1288; void*x1289; void*x1290; }*)arg1;
-- (id)pk_childrenForAppearance;
+- (void)setDarkEffectStyle:(BOOL)arg1;
 
 // Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
 
 - (void)_gkApplyTheme:(id)arg1;
 - (void)_gkApplyTheme:(id)arg1 navbarStyle:(int)arg2;
+
+// Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
+
+- (void)pk_applyAppearance:(id)arg1;
+- (id)pk_childrenForAppearance;
 
 @end

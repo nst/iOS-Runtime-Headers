@@ -3,16 +3,16 @@
  */
 
 @interface DASettingsAccountsUIController : ACUIViewController <DAValidityCheckConsumer, UIActionSheetDelegate, UIAlertViewDelegate> {
-    DAAccount *_account;
-    BOOL _accountNeedsAdd;
-    BOOL _attemptedValidation;
-    BOOL _confirmedUnvalidatedAccount;
-    BOOL _didSetFullHostURL;
-    BOOL _haveRegisteredForAccountsChanged;
-    BOOL _isSettingUpNewAccount;
-    BOOL _needsSave;
-    BOOL _transitioningToFinishedAccountSetup;
-    BOOL _validatedSuccessfully;
+    DAAccount * _account;
+    BOOL  _accountNeedsAdd;
+    BOOL  _attemptedValidation;
+    BOOL  _confirmedUnvalidatedAccount;
+    BOOL  _didSetFullHostURL;
+    BOOL  _haveRegisteredForAccountsChanged;
+    BOOL  _isSettingUpNewAccount;
+    BOOL  _needsSave;
+    BOOL  _transitioningToFinishedAccountSetup;
+    BOOL  _validatedSuccessfully;
 }
 
 @property (nonatomic, retain) DAAccount *account;

@@ -3,15 +3,17 @@
  */
 
 @interface GEOPDAutocompleteEntryHighlightLine : PBCodable <NSCopying> {
-    NSString *_line;
-    NSMutableArray *_spans;
-    PBUnknownFields *_unknownFields;
+    NSString * _line;
+    NSMutableArray * _spans;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, readonly) BOOL hasLine;
 @property (nonatomic, retain) NSString *line;
 @property (nonatomic, retain) NSMutableArray *spans;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
+
++ (Class)spanType;
 
 - (void)addSpan:(id)arg1;
 - (void)clearSpans;

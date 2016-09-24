@@ -3,9 +3,9 @@
  */
 
 @interface ML3DatabaseStatementCache : NSObject {
-    unsigned int _cacheSize;
-    ML3StatementCacheList *_nodeList;
-    NSMutableDictionary *_statementsDictionary;
+    unsigned int  _cacheSize;
+    ML3StatementCacheList * _nodeList;
+    NSMutableDictionary * _statementsDictionary;
 }
 
 @property (nonatomic, readonly) unsigned int cacheSize;

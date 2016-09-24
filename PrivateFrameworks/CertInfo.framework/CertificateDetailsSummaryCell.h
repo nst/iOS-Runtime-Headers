@@ -3,7 +3,7 @@
  */
 
 @interface CertificateDetailsSummaryCell : CertUIItemDetailsSummaryCell {
-    NSArray *_details;
+    NSArray * _details;
 }
 
 @property (nonatomic, retain) NSArray *details;

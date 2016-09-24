@@ -3,10 +3,10 @@
  */
 
 @interface HAPCharacteristicWriteRequestTuple : NSObject {
-    NSData *_authorizationData;
-    HAPCharacteristic *_characteristic;
-    NSNumber *_enableEvents;
-    id _value;
+    NSData * _authorizationData;
+    HAPCharacteristic * _characteristic;
+    NSNumber * _enableEvents;
+    id  _value;
 }
 
 @property (nonatomic, retain) NSData *authorizationData;

@@ -3,7 +3,7 @@
  */
 
 @interface AltTileFetcher : NSObject {
-    GEOTileLoader *_geoTileLoader;
+    GEOTileLoader * _geoTileLoader;
     struct map<_GEOTileKey, std::__1::shared_ptr<altitude::GeoServicesLoadJob>, GEOTileKeyComp, std::__1::allocator<std::__1::pair<const _GEOTileKey, std::__1::shared_ptr<altitude::GeoServicesLoadJob> > > > { 
         struct __tree<std::__1::__value_type<_GEOTileKey, std::__1::shared_ptr<altitude::GeoServicesLoadJob> >, std::__1::__map_value_compare<_GEOTileKey, std::__1::__value_type<_GEOTileKey, std::__1::shared_ptr<altitude::GeoServicesLoadJob> >, GEOTileKeyComp, true>, std::__1::allocator<std::__1::__value_type<_GEOTileKey, std::__1::shared_ptr<altitude::GeoServicesLoadJob> > > > { 
             struct __tree_node<std::__1::__value_type<_GEOTileKey, std::__1::shared_ptr<altitude::GeoServicesLoadJob> >, void *> {} *__begin_node_; 
@@ -16,12 +16,12 @@
                 unsigned long __first_; 
             } __pair3_; 
         } __tree_; 
-    } _keyToJobMap;
+    }  _keyToJobMap;
     struct Mutex { 
         void *mMutex; 
-    } _mutex;
-    unsigned int _numDownloads;
-    NSString *_tileLoaderClientIdentifier;
+    }  _mutex;
+    unsigned int  _numDownloads;
+    NSString * _tileLoaderClientIdentifier;
 }
 
 - (id).cxx_construct;

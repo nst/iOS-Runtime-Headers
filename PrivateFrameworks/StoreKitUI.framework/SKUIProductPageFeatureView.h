@@ -3,10 +3,10 @@
  */
 
 @interface SKUIProductPageFeatureView : UIView {
-    SKUIColorScheme *_colorScheme;
-    UIImageView *_iconView;
-    UILabel *_subtitleLabel;
-    UILabel *_titleLabel;
+    SKUIColorScheme * _colorScheme;
+    UIImageView * _iconView;
+    UILabel * _subtitleLabel;
+    UILabel * _titleLabel;
 }
 
 @property (nonatomic, retain) SKUIColorScheme *colorScheme;
@@ -23,7 +23,7 @@
 - (void)setIcon:(id)arg1;
 - (void)setSubtitle:(id)arg1;
 - (void)setTitle:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)subtitle;
 - (id)title;
 

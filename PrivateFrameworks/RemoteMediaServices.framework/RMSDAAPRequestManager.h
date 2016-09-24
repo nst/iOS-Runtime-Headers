@@ -3,14 +3,14 @@
  */
 
 @interface RMSDAAPRequestManager : NSObject {
-    <RMSDAAPRequestManagerDelegate> *_delegate;
-    RMSFairPlaySession *_fairPlaySession;
-    NSString *_homeSharingGroupKey;
-    NSString *_hostName;
-    NSString *_pairingGUID;
-    int _port;
-    int _sessionIdentifier;
-    NSURLSession *_urlSession;
+    <RMSDAAPRequestManagerDelegate> * _delegate;
+    RMSFairPlaySession * _fairPlaySession;
+    NSString * _homeSharingGroupKey;
+    NSString * _hostName;
+    NSString * _pairingGUID;
+    int  _port;
+    int  _sessionIdentifier;
+    NSURLSession * _urlSession;
 }
 
 @property (nonatomic) <RMSDAAPRequestManagerDelegate> *delegate;

@@ -3,7 +3,7 @@
  */
 
 @interface ICSStatusValue : ICSPredefinedValue {
-    NSString *_statusString;
+    NSString * _statusString;
 }
 
 @property (retain) NSString *statusString;

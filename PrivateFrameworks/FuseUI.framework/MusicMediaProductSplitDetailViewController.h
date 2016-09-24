@@ -2,19 +2,18 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicMediaProductSplitDetailViewController : UIViewController <MusicClientContextConsuming, MusicEntityEditableVerticalLockupViewDelegate, MusicEntityPlaybackStatusControllerObserving, MusicMediaDetailSplitViewController, MusicVerticalScrollingContainerViewControllerDelegate> {
-    MusicClientContext *_clientContext;
-    <MusicEntityProviding> *_containerEntityProvider;
-    MusicEntityValueContext *_containerEntityValueContext;
-    UIImage *_editedContentArtworkImage;
-    NSString *_lockupArtworkProperty;
-    MusicMediaDetailTintInformation *_mediaDetailTintInformation;
-    <MusicMediaProductSplitDetailViewControllerDelegate> *_mediaSplitViewControllerDelegate;
-    MusicEntityPlaybackStatusController *_playbackStatusController;
-    MPAVController *_player;
-    UIViewController *_relatedContentViewController;
-    MusicEntityEditableVerticalLockupView *_verticalLockupView;
-    MusicVerticalScrollingContainerViewController *_verticalScrollingContainerViewController;
+@interface MusicMediaProductSplitDetailViewController : UIViewController <MusicClientContextConsuming, MusicEntityEditableVerticalLockupViewDelegate, MusicMediaDetailSplitViewController, MusicVerticalScrollingContainerViewControllerDelegate> {
+    MusicClientContext * _clientContext;
+    <MusicEntityProviding> * _containerEntityProvider;
+    MusicEntityValueContext * _containerEntityValueContext;
+    UIImage * _editedContentArtworkImage;
+    NSString * _lockupArtworkProperty;
+    MusicMediaDetailTintInformation * _mediaDetailTintInformation;
+    <MusicMediaProductSplitDetailViewControllerDelegate> * _mediaSplitViewControllerDelegate;
+    MPAVController * _player;
+    UIViewController * _relatedContentViewController;
+    MusicEntityEditableVerticalLockupView * _verticalLockupView;
+    MusicVerticalScrollingContainerViewController * _verticalScrollingContainerViewController;
 }
 
 @property (nonatomic, retain) MusicClientContext *clientContext;
@@ -30,12 +29,12 @@
 
 - (void).cxx_destruct;
 - (void)_applyTintInformation;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_calculateArtworkEdgeInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_calculateArtworkEdgeInsets;
 - (void)_containerEntityProviderDidInvalidateNotification:(id)arg1;
 - (void)_contentSizeCategoryDidChangeNotification:(id)arg1;
 - (void)_reloadContainerEntityValueContextProperties;
 - (void)_reloadVerticalScrollingContainerItems;
-- (void)_setContentOverlayInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)_setContentOverlayInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)_updatePlaybackStatusForLockupView;
 - (void)_updateVerticalLockupViewSize;
 - (void)cancelEditing;
@@ -50,7 +49,6 @@
 - (id)mediaDetailTintInformation;
 - (id)mediaSplitViewControllerDelegate;
 - (void)music_viewInheritedLayoutInsetsDidChange;
-- (void)playbackStatusControllerPlaybackStatusDidChange:(id)arg1;
 - (id)relatedContentViewController;
 - (void)setClientContext:(id)arg1;
 - (void)setEditedContentArtworkImage:(id)arg1;
@@ -60,7 +58,7 @@
 - (void)setMediaSplitViewControllerDelegate:(id)arg1;
 - (void)setRelatedContentViewController:(id)arg1;
 - (void)verticalLockupView:(id)arg1 didSelectPlayButtonAction:(unsigned int)arg2;
-- (void)verticalScrollingContainerViewController:(id)arg1 willEndDraggingWithVelocity:(struct CGPoint { float x1; float x2; })arg2 targetContentOffset:(inout struct CGPoint { float x1; float x2; }*)arg3;
+- (void)verticalScrollingContainerViewController:(id)arg1 willEndDraggingWithVelocity:(struct CGPoint { double x1; double x2; })arg2 targetContentOffset:(inout struct CGPoint { double x1; double x2; }*)arg3;
 - (void)verticalScrollingContainerViewControllerContentSizeDidChange:(id)arg1;
 - (void)verticalScrollingContainerViewControllerDidScroll:(id)arg1;
 - (void)viewDidLayoutSubviews;

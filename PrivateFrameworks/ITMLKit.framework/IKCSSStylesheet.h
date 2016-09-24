@@ -3,7 +3,7 @@
  */
 
 @interface IKCSSStylesheet : NSObject {
-    IKCSSRuleList *_ruleList;
+    IKCSSRuleList * _ruleList;
 }
 
 @property (nonatomic, retain) IKCSSRuleList *ruleList;

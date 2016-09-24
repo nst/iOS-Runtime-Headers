@@ -3,13 +3,13 @@
  */
 
 @interface PLBBMavHwRfTDSLogMsg : PLBasebandMessage {
-    NSMutableDictionary *_commonInfo;
-    NSString *_error;
-    unsigned char _inited;
-    NSMutableDictionary *_kvPairs;
-    NSNumber *_logDuration;
-    NSArray *_rxdStateCnt;
-    NSArray *_srvcTypeCnt;
+    NSMutableDictionary * _commonInfo;
+    NSString * _error;
+    unsigned char  _inited;
+    NSMutableDictionary * _kvPairs;
+    NSNumber * _logDuration;
+    NSArray * _rxdStateCnt;
+    NSArray * _srvcTypeCnt;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *commonInfo;

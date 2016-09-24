@@ -3,9 +3,9 @@
  */
 
 @interface ML3ConditionalPredicate : ML3Predicate {
-    ML3Predicate *_conditionPredicate;
-    ML3Predicate *_elsePredicate;
-    ML3Predicate *_thenPredicate;
+    ML3Predicate * _conditionPredicate;
+    ML3Predicate * _elsePredicate;
+    ML3Predicate * _thenPredicate;
 }
 
 @property (nonatomic, readonly, copy) ML3Predicate *conditionPredicate;

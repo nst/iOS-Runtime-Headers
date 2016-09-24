@@ -3,7 +3,7 @@
  */
 
 @interface SCNAnimationReference : CAAnimationGroup {
-    NSString *referenceName;
+    NSString * referenceName;
 }
 
 @property (nonatomic, copy) NSString *referenceName;

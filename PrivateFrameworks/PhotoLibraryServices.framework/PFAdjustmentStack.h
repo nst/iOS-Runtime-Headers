@@ -3,9 +3,9 @@
  */
 
 @interface PFAdjustmentStack : NSObject <NSCopying, NSFastEnumeration> {
-    NSArray *_adjustments;
-    unsigned int _formatVersion;
-    NSOrderedSet *_maskUUIDs;
+    NSArray * _adjustments;
+    unsigned int  _formatVersion;
+    NSOrderedSet * _maskUUIDs;
 }
 
 + (BOOL)isValidEnvelopeDictionary:(id)arg1 errors:(id)arg2;

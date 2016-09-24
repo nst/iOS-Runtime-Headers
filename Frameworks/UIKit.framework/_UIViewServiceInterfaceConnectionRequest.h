@@ -3,18 +3,18 @@
  */
 
 @interface _UIViewServiceInterfaceConnectionRequest : NSObject {
-    BOOL __automatic_invalidation_invalidated;
-    int __automatic_invalidation_retainCount;
-    NSError *_cancellationError;
-    _UIAsyncInvocation *_cancellationInvocation;
-    id /* block */ _connectionHandler;
-    BOOL _isCancelled;
-    NSObject<OS_dispatch_queue> *_queue;
-    _UIRemoteViewService *_service;
-    NSString *_serviceBundleIdentifier;
-    BKSProcessAssertion *_serviceProcessAssertion;
-    NSXPCConnection *_serviceSessionConnection;
-    int _sessionRequestNotifyToken;
+    BOOL  __automatic_invalidation_invalidated;
+    int  __automatic_invalidation_retainCount;
+    NSError * _cancellationError;
+    _UIAsyncInvocation * _cancellationInvocation;
+    id /* block */  _connectionHandler;
+    BOOL  _isCancelled;
+    NSObject<OS_dispatch_queue> * _queue;
+    _UIRemoteViewService * _service;
+    NSString * _serviceBundleIdentifier;
+    BKSProcessAssertion * _serviceProcessAssertion;
+    NSXPCConnection * _serviceSessionConnection;
+    int  _sessionRequestNotifyToken;
 }
 
 + (id)_connectToViewServiceWithBundleIdentifier:(id)arg1 service:(id)arg2 connectionHandler:(id /* block */)arg3;

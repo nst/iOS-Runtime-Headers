@@ -3,19 +3,19 @@
  */
 
 @interface FlickrComposeViewController : SLComposeServiceViewController <FlickrComposeOptionViewDelegate> {
-    ACAccountStore *_accountStore;
-    int _audience;
-    SLComposeSheetConfigurationItem *_audienceConfigurationItem;
-    FlickrAudienceController *_audienceController;
-    ACAccount *_flickrAccount;
-    BOOL _hasFlickrAccount;
-    UIImageView *_logoView;
-    FlickrPhotoSetManager *_manager;
-    SLComposeSheetConfigurationItem *_photoSetConfigurationItem;
-    FlickrPhotoSetController *_photoSetController;
-    long long _photoSetID;
-    NSString *_photoSetTitle;
-    FlickrUploadSession *_session;
+    ACAccountStore * _accountStore;
+    int  _audience;
+    SLComposeSheetConfigurationItem * _audienceConfigurationItem;
+    FlickrAudienceController * _audienceController;
+    ACAccount * _flickrAccount;
+    BOOL  _hasFlickrAccount;
+    UIImageView * _logoView;
+    FlickrPhotoSetManager * _manager;
+    SLComposeSheetConfigurationItem * _photoSetConfigurationItem;
+    FlickrPhotoSetController * _photoSetController;
+    int  _photoSetID;
+    NSString * _photoSetTitle;
+    FlickrUploadSession * _session;
 }
 
 @property (nonatomic, retain) ACAccountStore *accountStore;

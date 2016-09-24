@@ -2,28 +2,62 @@
    Image: /System/Library/PrivateFrameworks/CoreDuet.framework/CoreDuet
  */
 
-@interface _DKEventQuery : _DKQuery <NSSecureCoding> {
-    NSObject<OS_dispatch_queue> *_defaultQueue;
-    NSArray *_eventStreams;
-    id /* block */ _resultsHandler;
+@interface _DKEventQuery : _DKQuery <_DKExecutableQuery> {
+    BOOL  _deduplicateValues;
+    NSObject<OS_dispatch_queue> * _defaultQueue;
+    NSArray * _eventStreams;
+    unsigned int  _limit;
+    unsigned int  _offset;
+    NSPredicate * _predicate;
+    BOOL  _readMetadata;
+    int  _resultType;
+    id /* block */  _resultsHandler;
+    NSArray * _sortDescriptors;
 }
 
+@property BOOL deduplicateValues;
 @property (retain) NSArray *eventStreams;
+@property unsigned int limit;
+@property unsigned int offset;
+@property (retain) NSPredicate *predicate;
+@property BOOL readMetadata;
+@property int resultType;
 @property (copy) id /* block */ resultsHandler;
+@property (retain) NSArray *sortDescriptors;
 
++ (id)eventQueryWithPredicate:(id)arg1 eventStreams:(id)arg2 offset:(unsigned int)arg3 limit:(unsigned int)arg4 sortDescriptors:(id)arg5;
 + (id)eventQueryWithPredicate:(id)arg1 eventStreams:(id)arg2 offset:(unsigned int)arg3 limit:(unsigned int)arg4 sortDescriptors:(id)arg5 resultHandler:(id /* block */)arg6;
++ (id)expressionForEventDuration;
++ (id)predicateForEventsOfMaximumDuration:(double)arg1;
++ (id)predicateForEventsOfMinimumDuration:(double)arg1;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)constructFetchRequestPredicate;
+- (BOOL)deduplicateValues;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)eventStreams;
-- (void)executeUsingCoreDataStorage:(id)arg1 reponseQueue:(id)arg2;
-- (void)handleResults:(id)arg1 error:(id)arg2 responseQueue:(id)arg3;
+- (id)executeUsingCoreDataStorage:(id)arg1 error:(id*)arg2;
+- (id)handleResults:(id)arg1 error:(id)arg2;
+- (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithPredicate:(id)arg1 eventStreams:(id)arg2 offset:(unsigned int)arg3 limit:(unsigned int)arg4 sortDescriptors:(id)arg5 resultHandler:(id /* block */)arg6;
+- (unsigned int)limit;
+- (unsigned int)offset;
+- (id)predicate;
+- (BOOL)readMetadata;
+- (int)resultType;
 - (id /* block */)resultsHandler;
+- (void)setDeduplicateValues:(BOOL)arg1;
 - (void)setEventStreams:(id)arg1;
+- (void)setLimit:(unsigned int)arg1;
+- (void)setOffset:(unsigned int)arg1;
+- (void)setPredicate:(id)arg1;
+- (void)setReadMetadata:(BOOL)arg1;
+- (void)setResultType:(int)arg1;
 - (void)setResultsHandler:(id /* block */)arg1;
+- (void)setSortDescriptors:(id)arg1;
+- (id)sortDescriptors;
 
 @end

@@ -3,16 +3,16 @@
  */
 
 @interface MSASProtocol : NSObject <NSURLConnectionDelegate> {
-    NSURL *_baseURL;
-    MSASPConnectionGate *_gate;
-    NSString *_headerVersion;
-    BOOL _isShuttingDown;
-    NSObject<OS_dispatch_queue> *_memberQueue;
-    NSObject<OS_dispatch_group> *_pendingConnectionsGroup;
-    NSObject<OS_dispatch_queue> *_pendingConnectionsQueue;
-    NSString *_personID;
-    NSString *_serverSideConfigVersion;
-    NSObject<OS_dispatch_queue> *_workQueue;
+    NSURL * _baseURL;
+    MSASPConnectionGate * _gate;
+    NSString * _headerVersion;
+    BOOL  _isShuttingDown;
+    NSObject<OS_dispatch_queue> * _memberQueue;
+    NSObject<OS_dispatch_group> * _pendingConnectionsGroup;
+    NSObject<OS_dispatch_queue> * _pendingConnectionsQueue;
+    NSString * _personID;
+    NSString * _serverSideConfigVersion;
+    NSObject<OS_dispatch_queue> * _workQueue;
 }
 
 @property (nonatomic, retain) NSURL *baseURL;

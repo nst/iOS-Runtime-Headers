@@ -3,76 +3,76 @@
  */
 
 @interface UITableViewCell : UIView <NSCoding, UIGestureRecognizerDelegate, UIScrollViewDelegate, _UILayoutEngineSuspending> {
-    SEL _accessoryAction;
-    UIStoryboardPreviewingSegueTemplateStorage *_accessoryActionPreviewingSegueTemplateStorage;
-    id _accessoryActionSegueTemplate;
-    UIColor *_accessoryTintColor;
-    UIControl *_accessoryView;
-    UIColor *_backgroundColor;
+    SEL  _accessoryAction;
+    UIStoryboardPreviewingSegueTemplateStorage * _accessoryActionPreviewingSegueTemplateStorage;
+    id  _accessoryActionSegueTemplate;
+    UIColor * _accessoryTintColor;
+    UIControl * _accessoryView;
+    UIColor * _backgroundColor;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    } _backgroundInset;
-    UIView *_backgroundView;
-    id _badge;
-    UIView *_bottomShadowAnimationView;
-    UIColor *_bottomShadowColor;
-    UIView *_clearBlendingView;
-    <UITableViewConstants> *_constants;
-    UIView *_contentView;
-    UIView *_customAccessoryView;
-    UIView *_customEditingAccessoryView;
-    float _defaultMarginWidth;
-    NSTimer *_deselectTimer;
-    UILabel *_detailTextLabel;
-    SEL _editAction;
-    UIFocusGuide *_editControlFocusGuide;
-    UITextField *_editableTextField;
-    UIControl *_editingAccessoryView;
-    id _editingData;
-    _UIFloatingContentView *_floatingContentView;
-    UIView *_floatingSeparatorView;
-    BOOL _focusable;
-    id _highlightingSupport;
-    UIImageView *_imageView;
-    int _indentationLevel;
-    float _indentationWidth;
-    float _indexBarWidth;
-    BOOL _isLayoutEngineSuspended;
-    double _lastSelectionTime;
-    id _layoutManager;
-    int _lineBreakModeBeforeFocus;
-    UILongPressGestureRecognizer *_menuGesture;
-    UIView *_multipleSelectionBackgroundView;
-    _UITableViewCellOldEditingData *_oldEditingData;
-    UIFocusGuide *_reorderControlFocusGuide;
-    UIImage *_reorderControlImage;
-    NSIndexPath *_representedIndexPath;
-    SEL _returnAction;
-    NSString *_reuseIdentifier;
-    float _rightMargin;
-    UIColor *_sectionBorderColor;
-    float _sectionBorderWidth;
-    float _sectionCornerRadius;
-    UIView *_selectedBackgroundView;
-    UIView *_selectedOverlayView;
-    float _selectionFadeDuration;
-    id _selectionSegueTemplate;
-    UIColor *_selectionTintColor;
-    UIColor *_separatorColor;
-    UIVisualEffect *_separatorEffect;
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _backgroundInset;
+    UIView * _backgroundView;
+    id  _badge;
+    UIView * _bottomShadowAnimationView;
+    UIColor * _bottomShadowColor;
+    UIView * _clearBlendingView;
+    <UITableConstants> * _constants;
+    UIView * _contentView;
+    UIView * _customAccessoryView;
+    UIView * _customEditingAccessoryView;
+    double  _defaultMarginWidth;
+    NSTimer * _deselectTimer;
+    UILabel * _detailTextLabel;
+    SEL  _editAction;
+    UIFocusGuide * _editControlFocusGuide;
+    UITextField * _editableTextField;
+    UIControl * _editingAccessoryView;
+    id  _editingData;
+    _UIFloatingContentView * _floatingContentView;
+    UIView * _floatingSeparatorView;
+    BOOL  _focusable;
+    id  _highlightingSupport;
+    UIImageView * _imageView;
+    int  _indentationLevel;
+    double  _indentationWidth;
+    double  _indexBarWidth;
+    BOOL  _isLayoutEngineSuspended;
+    double  _lastSelectionTime;
+    id  _layoutManager;
+    int  _lineBreakModeBeforeFocus;
+    UILongPressGestureRecognizer * _menuGesture;
+    UIView * _multipleSelectionBackgroundView;
+    _UITableViewCellOldEditingData * _oldEditingData;
+    UIFocusGuide * _reorderControlFocusGuide;
+    UIImage * _reorderControlImage;
+    NSIndexPath * _representedIndexPath;
+    SEL  _returnAction;
+    NSString * _reuseIdentifier;
+    double  _rightMargin;
+    UIColor * _sectionBorderColor;
+    double  _sectionBorderWidth;
+    double  _sectionCornerRadius;
+    UIView * _selectedBackgroundView;
+    UIView * _selectedOverlayView;
+    double  _selectionFadeDuration;
+    id  _selectionSegueTemplate;
+    UIColor * _selectionTintColor;
+    UIColor * _separatorColor;
+    UIVisualEffect * _separatorEffect;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    } _separatorInset;
-    _UITableViewCellSeparatorView *_separatorView;
-    UITapGestureRecognizer *_swipeToDeleteCancelationGesture;
-    UITableViewCellDeleteConfirmationView *_swipeToDeleteConfirmationView;
-    float _swipeToDeleteDistancePulled;
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _separatorInset;
+    _UITableViewCellSeparatorView * _separatorView;
+    UITapGestureRecognizer * _swipeToDeleteCancelationGesture;
+    UITableViewCellDeleteConfirmationView * _swipeToDeleteConfirmationView;
+    double  _swipeToDeleteDistancePulled;
     struct { 
         unsigned int showingDeleteConfirmation : 1; 
         unsigned int separatorStyle : 3; 
@@ -109,7 +109,6 @@
         unsigned int needsSetup : 1; 
         unsigned int dontDrawTopShadow : 1; 
         unsigned int usingMultiselectbackgroundView : 1; 
-        unsigned int layoutLoopCounter : 2; 
         unsigned int isCarPlayCell : 1; 
         unsigned int deleteAnimationInProgress : 1; 
         unsigned int deleteCancelationAnimationInProgress : 1; 
@@ -129,16 +128,17 @@
         unsigned int doesNotOverrideDidUpdateFocus : 1; 
         unsigned int hasEditingFocusGuides : 1; 
         unsigned int focusStyle : 3; 
-    } _tableCellFlags;
-    UITableView *_tableView;
-    id _target;
-    float _textFieldOffset;
-    UILabel *_textLabel;
-    _UITableViewCellSeparatorView *_topSeparatorView;
-    UIView *_topShadowAnimationView;
-    UIColor *_topShadowColor;
-    UIView *_topShadowView;
-    struct __CFDictionary { } *_unhighlightedStates;
+        unsigned int accessoryViewsHidden : 1; 
+    }  _tableCellFlags;
+    <UITable_UITableViewCellDelegate> * _tableView;
+    id  _target;
+    double  _textFieldOffset;
+    UILabel * _textLabel;
+    _UITableViewCellSeparatorView * _topSeparatorView;
+    UIView * _topShadowAnimationView;
+    UIColor * _topShadowColor;
+    UIView * _topShadowView;
+    struct __CFDictionary { } * _unhighlightedStates;
 }
 
 @property (getter=_isLayoutEngineSuspended, setter=_setLayoutEngineSuspended:, nonatomic) BOOL _layoutEngineSuspended;
@@ -159,14 +159,14 @@
 @property (getter=isHighlighted, nonatomic) BOOL highlighted;
 @property (nonatomic, readonly) UIImageView *imageView;
 @property (nonatomic) int indentationLevel;
-@property (nonatomic) float indentationWidth;
+@property (nonatomic) double indentationWidth;
 @property (nonatomic, retain) UIView *multipleSelectionBackgroundView;
 @property (getter=_reorderControlFocusGuide, setter=_setReorderControlFocusGuide:, nonatomic, retain) UIFocusGuide *reorderControlFocusGuide;
 @property (nonatomic, readonly, copy) NSString *reuseIdentifier;
 @property (getter=isSelected, nonatomic) BOOL selected;
 @property (nonatomic, retain) UIView *selectedBackgroundView;
 @property (nonatomic) int selectionStyle;
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } separatorInset;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } separatorInset;
 @property (nonatomic) BOOL shouldIndentWhileEditing;
 @property (nonatomic, readonly) BOOL showingDeleteConfirmation;
 @property (nonatomic) BOOL showsReorderControl;
@@ -183,13 +183,16 @@
 - (SEL)_accessoryAction;
 - (id)_accessoryTintColor;
 - (id)_accessoryView:(BOOL)arg1;
+- (BOOL)_accessoryViewsHidden;
 - (void)_actionButtonPushed:(id)arg1;
+- (id)_addSeparatorWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)_addSubview:(id)arg1 positioned:(int)arg2 relativeTo:(id)arg3;
 - (BOOL)_allowsReorderingWhenNotEditing;
 - (void)_animateFloatingSeparatorForInsertion:(BOOL)arg1 withRowAnimation:(int)arg2;
 - (void)_animateInnerShadowForInsertion:(BOOL)arg1 withRowAnimation:(int)arg2;
 - (BOOL)_backgroundColorSet;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_backgroundInset;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_backgroundInset;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_backgroundSeparatorInset;
 - (id)_backgroundView:(BOOL)arg1;
 - (id)_badge;
 - (id)_badge:(BOOL)arg1;
@@ -211,7 +214,7 @@
 - (id)_defaultFont;
 - (float)_defaultMarginWidth;
 - (void)_delayedDeselect;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_delegateConfirmationRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_delegateConfirmationRect;
 - (id)_deleteConfirmationView;
 - (void)_descendent:(id)arg1 didMoveFromSuperview:(id)arg2 toSuperview:(id)arg3;
 - (void)_descendent:(id)arg1 willMoveFromSuperview:(id)arg2 toSuperview:(id)arg3;
@@ -225,8 +228,8 @@
 - (id)_disclosureChevronImage:(BOOL)arg1;
 - (id)_disclosureImage:(BOOL)arg1;
 - (id)_disclosurePressedImage:(BOOL)arg1;
-- (void)_drawContentInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 selected:(BOOL)arg2;
-- (void)_drawSeparatorInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_drawContentInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 selected:(BOOL)arg2;
+- (void)_drawSeparatorInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (BOOL)_drawsSeparatorAtBottomOfSection;
 - (BOOL)_drawsSeparatorAtTopOfSection;
 - (BOOL)_drawsTopSeparatorDuringReordering;
@@ -241,16 +244,21 @@
 - (void)_ensureFocusedFloatingContentView;
 - (void)_finishTransitioningToReorderingAppearance:(BOOL)arg1;
 - (void)_finishedFadingGrabber:(id)arg1 finished:(BOOL)arg2;
+- (id)_forSpringBoardDefaultSelectedBackgroundView;
+- (void)_forSpringBoardSetDefaultSelectedBackgroundView:(id)arg1;
+- (BOOL)_forwardsSystemLayoutFittingSizeToContentView:(id)arg1;
 - (BOOL)_gestureRecognizerShouldBegin:(id)arg1;
-- (void)_grabberBeganReorder:(id)arg1;
+- (void)_grabberBeganReorder:(id)arg1 touch:(id)arg2;
 - (void)_grabberDragged:(id)arg1 yDelta:(float)arg2;
+- (void)_grabberDragged:(id)arg1 yDelta:(float)arg2 touch:(id)arg3;
 - (void)_grabberReleased:(id)arg1;
 - (void)_handleSwipeDeleteCancelation:(id)arg1;
 - (BOOL)_hasAccessoryView;
 - (BOOL)_hasEditingAccessoryView;
-- (struct CGSize { float x1; float x2; })_imageInsetSize;
+- (struct CGSize { double x1; double x2; })_imageInsetSize;
 - (id)_imageView;
 - (id)_imageView:(BOOL)arg1;
+- (float)_imageViewTrailingX;
 - (float)_indexBarWidth;
 - (id)_indexPath;
 - (BOOL)_insetsBackground;
@@ -281,7 +289,8 @@
 - (void)_populateArchivedSubviews:(id)arg1;
 - (id)_preferredConfigurationForFocusAnimation:(int)arg1 inContext:(id)arg2;
 - (void)_prepareToEnterReuseQueue;
-- (id)_previewingSegueTemplateStorageForLocation:(struct CGPoint { float x1; float x2; })arg1 inView:(id)arg2;
+- (id)_previewingSegueTemplateStorageForLocation:(struct CGPoint { double x1; double x2; })arg1 inView:(id)arg2;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_rawSeparatorInset;
 - (void)_releaseDetailTextLabel;
 - (void)_releaseRemoveControl;
 - (void)_releaseReorderingControl;
@@ -298,21 +307,22 @@
 - (void)_resetSelectionTimer;
 - (float)_rightMarginWidth;
 - (void)_saveOpaqueViewState:(id)arg1;
-- (id)_scriptingInfo;
 - (float)_sectionBorderWidth;
 - (id)_selectedBackgroundView:(BOOL)arg1;
 - (int)_separatorBackdropOverlayBlendMode;
 - (BOOL)_separatorDrawsInVibrantLightMode;
 - (id)_separatorEffect;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_separatorFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_separatorFrame;
 - (float)_separatorHeight;
 - (BOOL)_separatorHidden;
+- (id)_separatorView:(BOOL)arg1;
 - (void)_setAccessoryAction:(SEL)arg1;
 - (void)_setAccessoryTintColor:(id)arg1;
+- (void)_setAccessoryViewsHidden:(BOOL)arg1;
 - (void)_setAllowsReorderingWhenNotEditing:(BOOL)arg1;
 - (void)_setAnimating:(BOOL)arg1;
 - (void)_setAnimating:(BOOL)arg1 clippingAdjacentCells:(BOOL)arg2;
-- (void)_setBackgroundInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)_setBackgroundInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)_setBadgeText:(id)arg1;
 - (void)_setConstants:(id)arg1;
 - (void)_setCurrentScreenScale:(float)arg1;
@@ -325,9 +335,10 @@
 - (void)_setDrawsTopSeparatorDuringReordering:(BOOL)arg1;
 - (void)_setDrawsTopShadow:(BOOL)arg1;
 - (void)_setEditControlFocusGuide:(id)arg1;
+- (void)_setEditing:(BOOL)arg1 animated:(BOOL)arg2 cellOrAncestorViewForAnimatedLayout:(id)arg3;
 - (void)_setEditingStyle:(int)arg1;
 - (void)_setFont:(id)arg1 layout:(BOOL)arg2;
-- (void)_setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 skipLayout:(BOOL)arg2;
+- (void)_setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 skipLayout:(BOOL)arg2;
 - (void)_setGrabberHidden:(BOOL)arg1;
 - (void)_setHiddenForReuse:(BOOL)arg1;
 - (void)_setIndexBarWidth:(float)arg1;
@@ -381,12 +392,12 @@
 - (id)_tableView;
 - (void)_tableViewDidUpdateMarginWidth;
 - (id)_target;
-- (struct CGSize { float x1; float x2; })_textInsetSize;
+- (struct CGSize { double x1; double x2; })_textInsetSize;
 - (id)_textLabel;
 - (id)_textLabel:(BOOL)arg1;
 - (id)_tintedDisclosureImagePressed:(BOOL)arg1;
 - (id)_titleForDeleteConfirmationButton;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_topSeparatorFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_topSeparatorFrame;
 - (void)_topShadowDidFadeOut;
 - (id)_topShadowView:(BOOL)arg1;
 - (void)_transitionToReorderingAppearance:(BOOL)arg1;
@@ -394,6 +405,8 @@
 - (void)_updateAndCacheBackgroundColorForHighlightIgnoringSelection:(BOOL)arg1;
 - (void)_updateCellMaskViewsForView:(id)arg1 backdropView:(id)arg2;
 - (void)_updateContentClip;
+- (void)_updateDefaultAccessoryViewForFocus:(BOOL)arg1;
+- (void)_updateDefaultLabelsForFocus:(BOOL)arg1;
 - (void)_updateFloatingContentControlStateAnimated:(BOOL)arg1;
 - (void)_updateFloatingContentControlStateInContext:(id)arg1 withAnimationCoordinator:(id)arg2 animated:(BOOL)arg3;
 - (void)_updateFullWidthSwipeDeletionView;
@@ -402,6 +415,7 @@
 - (void)_updateHighlightColorsForView:(id)arg1 highlighted:(BOOL)arg2;
 - (void)_updateSeparatorContent;
 - (void)_updateSeparatorContent:(BOOL)arg1;
+- (void)_updateSeparatorInset;
 - (void)_updateSwipeWithDistancePulled:(float)arg1;
 - (void)_updateTopShadowView:(BOOL)arg1;
 - (void)_updateViewsForDeleteButton;
@@ -411,11 +425,11 @@
 - (SEL)accessoryAction;
 - (id)accessoryActionPreviewingSegueTemplateStorage;
 - (id)accessoryActionSegueTemplate;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessoryRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 accessoryView:(id)arg2 isCustom:(BOOL)arg3;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })accessoryRectForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 accessoryView:(id)arg2 isCustom:(BOOL)arg3;
 - (int)accessoryType;
 - (id)accessoryView;
 - (id)backgroundColor;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })backgroundRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })backgroundRectForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)backgroundView;
 - (id)bottomShadowColor;
 - (void)bringSubviewToFront:(id)arg1;
@@ -423,8 +437,8 @@
 - (BOOL)canBecomeFocused;
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (BOOL)clipsContents;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentRectForState:(unsigned int)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })contentRectForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })contentRectForState:(unsigned int)arg1;
 - (id)contentView;
 - (void)copy:(id)arg1;
 - (unsigned int)currentStateMask;
@@ -439,7 +453,7 @@
 - (BOOL)drawingEnabled;
 - (SEL)editAction;
 - (void)editControlWasClicked:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })editRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })editRectForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)editableTextField;
 - (int)editingAccessoryType;
 - (id)editingAccessoryView;
@@ -450,16 +464,16 @@
 - (void)focusedViewDidChange;
 - (id)font;
 - (BOOL)hidesAccessoryWhenEditing;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (id)image;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })imageRectForContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })imageRectForContentRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)imageView;
 - (int)indentationLevel;
 - (float)indentationWidth;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 reuseIdentifier:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 reuseIdentifier:(id)arg2;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)insertControl:(id)arg1 shouldInsertWithTarget:(id)arg2;
 - (BOOL)isAtLeastHalfSelected;
@@ -473,17 +487,17 @@
 - (id)multipleSelectionBackgroundView;
 - (id)oldEditingData;
 - (void)paste:(id)arg1;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (BOOL)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (id)preferredFocusedView;
 - (void)prepareForReuse;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })removeControl:(id)arg1 endFrameForTarget:(id)arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })removeControl:(id)arg1 startFrameForTarget:(id)arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })removeControl:(id)arg1 endFrameForTarget:(id)arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })removeControl:(id)arg1 startFrameForTarget:(id)arg2;
 - (void)removeControl:(id)arg1 wasCanceledForTarget:(id)arg2;
 - (void)removeControl:(id)arg1 willRemoveTarget:(id)arg2;
 - (void)removeControlWillHideRemoveConfirmation:(id)arg1;
 - (void)removeEditingData;
 - (void)removeFromSuperview;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })reorderRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })reorderRectForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (SEL)returnAction;
 - (id)reuseIdentifier;
 - (id)sectionBorderColor;
@@ -499,7 +513,7 @@
 - (id)selectionTintColor;
 - (void)sendSubviewToBack:(id)arg1;
 - (id)separatorColor;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })separatorInset;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })separatorInset;
 - (int)separatorStyle;
 - (void)setAccessoryAction:(SEL)arg1;
 - (void)setAccessoryActionPreviewingSegueTemplateStorage:(id)arg1;
@@ -519,7 +533,7 @@
 - (void)setEditingStyle:(int)arg1;
 - (void)setFocusStyle:(int)arg1;
 - (void)setFont:(id)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setHidesAccessoryWhenEditing:(BOOL)arg1;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
@@ -549,12 +563,13 @@
 - (void)setSelectionTintColor:(id)arg1;
 - (void)setSemanticContentAttribute:(int)arg1;
 - (void)setSeparatorColor:(id)arg1;
-- (void)setSeparatorInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setSeparatorInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setSeparatorStyle:(int)arg1;
 - (void)setShouldIndentWhileEditing:(BOOL)arg1;
 - (void)setShowingDeleteConfirmation:(BOOL)arg1;
 - (void)setShowsReorderControl:(BOOL)arg1;
 - (void)setTableBackgroundColor:(id)arg1;
+- (void)setTableSpecificElementsHidden:(BOOL)arg1;
 - (void)setTableViewStyle:(int)arg1;
 - (void)setTarget:(id)arg1;
 - (void)setText:(id)arg1;
@@ -567,10 +582,11 @@
 - (void)showSelectedBackgroundView:(BOOL)arg1 animated:(BOOL)arg2;
 - (BOOL)showingDeleteConfirmation;
 - (BOOL)showsReorderControl;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (int)style;
-- (struct CGSize { float x1; float x2; })systemLayoutSizeFittingSize:(struct CGSize { float x1; float x2; })arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;
+- (struct CGSize { double x1; double x2; })systemLayoutSizeFittingSize:(struct CGSize { double x1; double x2; })arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;
 - (id)tableBackgroundColor;
+- (BOOL)tableSpecificElementsHidden;
 - (int)tableViewStyle;
 - (id)target;
 - (id)text;
@@ -579,12 +595,13 @@
 - (void)textFieldDidBecomeFirstResponder:(id)arg1;
 - (float)textFieldOffset;
 - (id)textLabel;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })textRectForContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })textRectForContentRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)topShadowColor;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
+- (void)traitCollectionDidChange:(id)arg1;
 - (BOOL)wasSwiped;
 - (void)willMoveToSuperview:(id)arg1;
 - (void)willTransitionToState:(unsigned int)arg1;
@@ -593,22 +610,13 @@
 
 - (void)_cnui_applyContactStyle;
 
-// Image: /System/Library/Frameworks/MapKit.framework/MapKit
-
-- (void)_mk_setSeparatorHidden:(BOOL)arg1 visibleSeparatorInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
-- (void)_mk_setSeparatorHidden:(BOOL)arg1 visibleSeparatorInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
-- (void)_mk_setSeparatorHidden:(BOOL)arg1 visibleSeparatorInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
-- (void)_mk_setSeparatorHidden:(BOOL)arg1 visibleSeparatorInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
-- (void)_mk_setSeparatorHidden:(BOOL)arg1 visibleSeparatorInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
-
-// Image: /System/Library/Frameworks/PassKit.framework/PassKit
-
-- (void)pk_applyAppearance:(struct _PKAppearanceSpecifier { BOOL x1; id x2; id x3; id x4; id x5; id x6; id x7; id x8; id x9; id x10; id x11; id x12; id x13; /* Warning: Unrecognized filer type: '' using 'void*' */ void*x14; void*x15; void*x16; void*x17; void*x18; void*x19; void x20; void*x21; void*x22; void*x23; void*x24; void*x25; void*x26; void*x27; unsigned short x28; void*x29; void*x30; unsigned int x31; unsigned short x32; void*x33; void*x34; BOOL x35; void*x36; const unsigned char x37; out long x38; long x39; void*x40; BOOL x41; void*x42; int x43; out in oneway int x44; void*x45; void*x46; unsigned char x47; void*x48; long x49; long x50; void*x51; void*x52; void*x53; void*x54; void*x55; void*x56; void*x57; void*x58; void*x59; void*x60; void*x61; void*x62; void x63; void*x64; void*x65; void*x66; void*x67; void*x68; void*x69; void*x70; unsigned short x71; void*x72; short x73; void*x74; void*x75; void*x76; void*x77; unsigned long x78; int x79; unsigned int x80/* : ? */; const void*x81; const void*x82; void*x83; void*x84; const int x85; void x86; void*x87; void*x88; void*x89; void*x90; const void*x91; void*x92; void*x93; void*x94; out const void*x95; short x96; void*x97; unsigned short x98; void*x99; out const void*x100; void*x101; int x102; void*x103; void*x104; unsigned int x105; void*x106; float x107; const void*x108; void*x109; void*x110; void*x111; out const void*x112; void*x113; unsigned short x114; void*x115; out const void*x116; void*x117; int x118; void*x119; void*x120; unsigned int x121; void*x122; void*x123; void*x124; void*x125; void*x126; void*x127; void*x128; void*x129; void*x130; void*x131; void*x132; void*x133; void*x134; void*x135; void*x136; void*x137; void*x138; void*x139; void*x140; void*x141; void*x142; void*x143; void*x144; void*x145; void*x146; void*x147; void*x148; void*x149; void*x150; void*x151; void*x152; void*x153; void*x154; void*x155; void*x156; void*x157; void*x158; void*x159; void*x160; void*x161; long long x162; unsigned long long x163; void*x164; void*x165; void*x166; void*x167; void*x168; void*x169; void*x170; void*x171; void*x172; void*x173; void*x174; void*x175; void*x176; void*x177; void*x178; void*x179; void*x180; void*x181; void*x182; void*x183; void*x184; void*x185; void*x186; void*x187; void*x188; void*x189; void*x190; void*x191; void*x192; void x193; void*x194; void*x195; void*x196; void*x197; void*x198; void*x199; void*x200; void*x201; void*x202; short x203; short x204; void*x205; void*x206; unsigned short x207; void*x208; void*x209; const void*x210; double x211; oneway int x212; void*x213; void*x214; void*x215; out double x216; void*x217; long x218; void*x219; void*x220; void*x221; void*x222; void*x223; void*x224; void*x225; void*x226; void*x227; void*x228; void*x229; void*x230; void*x231; void*x232; void*x233; void*x234; void*x235; void*x236; void*x237; void*x238; void*x239; void*x240; void*x241; void*x242; void*x243; void*x244; void*x245; void*x246; void*x247; void*x248; void*x249; void*x250; void*x251; void*x252; void*x253; void*x254; void*x255; void*x256; void*x257; void*x258; void*x259; void*x260; void*x261; void*x262; void*x263; void*x264; void*x265; void*x266; void*x267; void*x268; void*x269; void*x270; void*x271; void*x272; void*x273; void*x274; void*x275; void*x276; void*x277; void*x278; void*x279; void*x280; void*x281; void*x282; void*x283; void*x284; void x285; void*x286; void*x287; void*x288; void*x289; void*x290; void*x291; void*x292; void*x293; void*x294; short x295; short x296; void*x297; void*x298; unsigned short x299; void*x300; void*x301; const void*x302; double x303; oneway int x304; void*x305; void*x306; void*x307; out double x308; void*x309; long x310; void*x311; void*x312; void x313; void*x314; void*x315; void*x316; void*x317; void*x318; void*x319; void*x320; void*x321; unsigned short x322; void*x323; short x324; void*x325; void*x326; void*x327; void*x328; unsigned long x329; int x330; unsigned int x331/* : ? */; const void*x332; const void*x333; void*x334; void*x335; const void*x336; void*x337; void*x338; void*x339; out const void*x340; short x341; void*x342; void*x343; void*x344; out void*x345; out short x346; void*x347; unsigned int x348; void*x349; float x350; const void*x351; void*x352; void*x353; void*x354; out const void*x355; void*x356; void*x357; void*x358; out void*x359; out short x360; void*x361; unsigned int x362; void*x363; unsigned int x364 : 7; void*x365; void*x366; void*x367; void*x368; long x369; void*x370; void*x371; void*x372; void*x373; void*x374; void*x375; void*x376; void*x377; void*x378; void*x379; void*x380; void*x381; void*x382; void*x383; void*x384; void*x385; void*x386; void*x387; void*x388; void*x389; void*x390; void*x391; void*x392; void*x393; void*x394; void*x395; void x396; void*x397; void*x398; void*x399; void*x400; void*x401; void*x402; void*x403; char *x404; void*x405; void*x406; void*x407; void*x408; void*x409; void*x410; void*x411; void*x412; void*x413; void*x414; void*x415; void*x416; void*x417; void*x418; void*x419; void*x420; void*x421; void*x422; void*x423; void*x424; void*x425; void*x426; void*x427; bool x428; out void*x429; void*x430; void*x431; void*x432; void*x433; void*x434; void*x435; unsigned int x436; void*x437; long doublex438; void*x439; void*x440; void*x441; void x442; void*x443; void*x444; void*x445; in void*x446; void*x447; void*x448; void*x449; void*x450; struct x451; void*x452; void*x453; void*x454; void*x455; void*x456; void*x457; void x458; void*x459; void*x460; void*x461; void*x462; void*x463; void*x464; void*x465; void*x466; struct   {} x467; void*x468; void*x469; void*x470; void*x471; }*)arg1;
-- (id)pk_childrenForAppearance;
-
 // Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
 
 - (void)sf_setUsesVibrantSelection:(BOOL)arg1;
+
+// Image: /System/Library/PrivateFrameworks/MobileTimer.framework/MobileTimer
+
+- (void)setSelectedBackgroundColor:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/NetAppsUtilitiesUI.framework/NetAppsUtilitiesUI
 
@@ -616,6 +624,11 @@
 + (id)naui_prototypeCell;
 + (BOOL)naui_supportsAutoLayout;
 + (float)naui_tableRowHeight;
+
+// Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
+
+- (void)pk_applyAppearance:(id)arg1;
+- (id)pk_childrenForAppearance;
 
 // Image: /System/Library/PrivateFrameworks/UIAccessibility.framework/UIAccessibility
 

@@ -3,14 +3,14 @@
  */
 
 @interface KNAnimatedSlideModel : NSObject {
-    KNAnimatedSlideView *_ASV;
-    TSUNoCopyDictionary *_animatedBuildToRendererMap;
-    NSMutableArray *_animatedBuilds;
-    NSMutableArray *_buildEvents;
-    TSUNoCopyDictionary *_infoToAnimatedBuildMap;
-    NSArray *_infos;
-    unsigned int _numberOfAddedEvents;
-    KNPlaybackSession *_session;
+    KNAnimatedSlideView * _ASV;
+    TSUNoCopyDictionary * _animatedBuildToRendererMap;
+    NSMutableArray * _animatedBuilds;
+    NSMutableArray * _buildEvents;
+    TSUNoCopyDictionary * _infoToAnimatedBuildMap;
+    NSArray * _infos;
+    unsigned int  _numberOfAddedEvents;
+    KNPlaybackSession * _session;
 }
 
 @property (nonatomic, readonly) NSArray *animatedBuilds;
@@ -51,6 +51,7 @@
 - (int)p_eventNumberForInfo:(id)arg1 animationType:(int)arg2 defaultResult:(int)arg3;
 - (id)p_getCurrentDocumentRoot;
 - (void)p_insertInitialMovies;
+- (BOOL)p_isUnplayableMovieInfo:(id)arg1;
 - (void)p_setRenderer:(id)arg1 forAnimatedBuild:(id)arg2;
 - (void)p_updatePreviousAndFinalAttributes;
 - (void)p_updateVisibilityOnAnimatedBuild:(id)arg1;

@@ -6,6 +6,7 @@
 @required
 
 - (TSPDigest *)digest;
+- (NSString *)documentResourceLocator;
 - (NSString *)externalFilePath;
 - (NSString *)preferredFilename;
 

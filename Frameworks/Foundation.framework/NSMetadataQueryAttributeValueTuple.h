@@ -3,10 +3,10 @@
  */
 
 @interface NSMetadataQueryAttributeValueTuple : NSObject {
-    id _attr;
-    unsigned int _count;
-    void *_reserved;
-    id _value;
+    id  _attr;
+    unsigned int  _count;
+    void * _reserved;
+    id  _value;
 }
 
 @property (readonly, copy) NSString *attribute;

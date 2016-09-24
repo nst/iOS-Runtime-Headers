@@ -3,7 +3,7 @@
  */
 
 @interface HKSampleTypeCountDataSource : HKHealthQueryChartCacheDataSource {
-    id /* block */ _userInfoCreationBlock;
+    id /* block */  _userInfoCreationBlock;
 }
 
 @property (nonatomic, copy) id /* block */ userInfoCreationBlock;

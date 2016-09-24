@@ -3,9 +3,9 @@
  */
 
 @interface TSCH3DChartTexcoordSharedResource : TSCH3DChartMeshSharedResource {
-    TSCH3DTexCoordGeneration *mGenerator;
-    TSCH3Dvec3DataBuffer *mNormal;
-    TSCH3Dvec3DataBuffer *mVertex;
+    TSCH3DTexCoordGeneration * mGenerator;
+    TSCH3Dvec3DataBuffer * mNormal;
+    TSCH3Dvec3DataBuffer * mVertex;
 }
 
 @property (nonatomic, retain) TSCH3DTexCoordGeneration *generator;

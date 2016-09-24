@@ -3,16 +3,16 @@
  */
 
 @interface CDPDCircleStateObserver : NSObject {
-    int _circleChangeToken;
-    CDPContext *_context;
-    NSObject<OS_dispatch_queue> *_eventQueue;
-    BOOL _isObserving;
+    int  _circleChangeToken;
+    <CDPDCircleProxy> * _circleProxy;
+    NSObject<OS_dispatch_queue> * _eventQueue;
+    BOOL  _isObserving;
 }
 
 - (void).cxx_destruct;
 - (const char *)_notificationName;
 - (void)dealloc;
-- (id)initWithContext:(id)arg1;
+- (id)initWithProxy:(id)arg1;
 - (void)observeChangeToState:(int)arg1 handler:(id /* block */)arg2;
 - (void)observeCircleStateWithChangeHandler:(id /* block */)arg1;
 - (void)stopObservingCircleStatusChange;

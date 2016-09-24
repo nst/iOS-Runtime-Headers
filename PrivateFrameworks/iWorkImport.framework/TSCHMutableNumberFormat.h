@@ -20,6 +20,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)p_formatTypeAffectedPropertyKeys;
 - (void)p_setFractionAccuracy:(int)arg1;
+- (void)remapCustomFormatKeysWithOldToNewKeyMap:(id)arg1;
 - (void)setBase:(unsigned int)arg1;
 - (void)setBasePlaces:(unsigned int)arg1;
 - (void)setBaseUseMinusSign:(BOOL)arg1;

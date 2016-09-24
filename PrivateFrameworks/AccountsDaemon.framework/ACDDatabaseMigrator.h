@@ -3,11 +3,11 @@
  */
 
 @interface ACDDatabaseMigrator : NSObject {
-    NSString *_databasePath;
-    NSManagedObjectContext *_migrationContext;
-    NSPersistentStoreCoordinator *_privateCoordinator;
-    NSPersistentStoreCoordinator *_realCoordinator;
-    NSMutableDictionary *_realOptions;
+    NSString * _databasePath;
+    NSManagedObjectContext * _migrationContext;
+    NSPersistentStoreCoordinator * _privateCoordinator;
+    NSPersistentStoreCoordinator * _realCoordinator;
+    NSMutableDictionary * _realOptions;
 }
 
 - (void).cxx_destruct;

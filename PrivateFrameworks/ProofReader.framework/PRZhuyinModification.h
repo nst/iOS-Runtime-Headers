@@ -6,21 +6,21 @@
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _additionalSyllableRange;
-    unsigned char _letters;
-    double _modificationScore;
-    unsigned int _modificationType;
-    BOOL _producesPartialSyllable;
+    }  _additionalSyllableRange;
+    unsigned char  _letters;
+    double  _modificationScore;
+    unsigned int  _modificationType;
+    BOOL  _producesPartialSyllable;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _range;
-    NSString *_replacementString;
-    unsigned int _syllableCountScore;
+    }  _range;
+    NSString * _replacementString;
+    unsigned int  _syllableCountScore;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _syllableRange;
+    }  _syllableRange;
 }
 
 - (BOOL)_shouldAppendLetter:(unsigned char)arg1;

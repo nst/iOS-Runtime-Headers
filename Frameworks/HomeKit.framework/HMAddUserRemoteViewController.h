@@ -3,7 +3,7 @@
  */
 
 @interface HMAddUserRemoteViewController : _UIRemoteViewController <HMUserManagementRemoteHost> {
-    <HMUserManagementRemoteHost> *_delegate;
+    <HMUserManagementRemoteHost> * _delegate;
 }
 
 @property (nonatomic) <HMUserManagementRemoteHost> *delegate;

@@ -7,11 +7,11 @@
         unsigned int syncDuration : 1; 
         unsigned int timestamp : 1; 
         unsigned int isMaster : 1; 
-    } _has;
-    BOOL _isMaster;
-    NSString *_service;
-    unsigned long long _syncDuration;
-    unsigned long long _timestamp;
+    }  _has;
+    BOOL  _isMaster;
+    NSString * _service;
+    unsigned long long  _syncDuration;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) BOOL hasIsMaster;

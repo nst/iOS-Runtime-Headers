@@ -3,8 +3,8 @@
  */
 
 @interface CILinearBlur : CIFilter {
-    CIImage *inputImage;
-    NSNumber *inputRadius;
+    CIImage * inputImage;
+    NSNumber * inputRadius;
 }
 
 @property (nonatomic, retain) CIImage *inputImage;

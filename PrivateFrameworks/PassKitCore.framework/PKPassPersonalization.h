@@ -3,9 +3,9 @@
  */
 
 @interface PKPassPersonalization : NSObject <NSCopying, NSSecureCoding> {
-    NSString *_localizedDescription;
-    unsigned int _requiredPersonalizationFields;
-    NSString *_termsAndConditions;
+    NSString * _localizedDescription;
+    unsigned int  _requiredPersonalizationFields;
+    NSString * _termsAndConditions;
 }
 
 @property (nonatomic, readonly) NSString *localizedDescription;
@@ -15,8 +15,8 @@
 + (id)passPersonalizationWithPassBundle:(id)arg1;
 + (BOOL)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

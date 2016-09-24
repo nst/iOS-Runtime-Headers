@@ -3,9 +3,9 @@
  */
 
 @interface HDPluginManager : NSObject {
-    <HDHealthDaemon> *_healthDaemon;
-    NSArray *_pluginClasses;
-    NSArray *_plugins;
+    <HDHealthDaemon> * _healthDaemon;
+    NSArray * _pluginClasses;
+    NSArray * _plugins;
 }
 
 @property (nonatomic) <HDHealthDaemon> *healthDaemon;
@@ -14,6 +14,7 @@
 
 - (void).cxx_destruct;
 - (void)_enumerateObjectsInArray:(id)arg1 conformingToProtocol:(id)arg2 usingBlock:(id /* block */)arg3;
+- (id)_internalPluginsPath;
 - (Class)_loadPrincipalClassesConformingToProtocol:(id)arg1 withBundleAtPath:(id)arg2;
 - (id)_loadPrincipalClassesConformingToProtocol:(id)arg1 withBundleDirectoryPath:(id)arg2;
 - (id)_pluginsPath;
@@ -22,7 +23,7 @@
 - (void)loadPlugins;
 - (id)pluginClasses;
 - (id)plugins;
-- (id)queryServerForUUID:(id)arg1 serverDataObject:(id)arg2 queryClass:(Class)arg3 clientProxy:(id)arg4 client:(id)arg5 healthDaemon:(id)arg6 queryDelegate:(id)arg7;
+- (id)queryServerForUUID:(id)arg1 serverDataObject:(id)arg2 queryClass:(Class)arg3 clientProxy:(id)arg4 client:(id)arg5 profile:(id)arg6 queryDelegate:(id)arg7;
 - (void)setHealthDaemon:(id)arg1;
 - (void)setPluginClasses:(id)arg1;
 - (void)setPlugins:(id)arg1;

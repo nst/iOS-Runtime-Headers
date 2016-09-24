@@ -3,8 +3,8 @@
  */
 
 @interface CUTReachability : NSObject {
-    BOOL localWiFiRef;
-    struct __SCNetworkReachability { } *reachabilityRef;
+    BOOL  localWiFiRef;
+    struct __SCNetworkReachability { } * reachabilityRef;
 }
 
 + (id)reachabilityForInternetConnection;

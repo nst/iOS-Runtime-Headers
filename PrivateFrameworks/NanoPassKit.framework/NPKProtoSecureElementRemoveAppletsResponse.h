@@ -6,9 +6,9 @@
     struct { 
         unsigned int pending : 1; 
         unsigned int success : 1; 
-    } _has;
-    BOOL _pending;
-    BOOL _success;
+    }  _has;
+    BOOL  _pending;
+    BOOL  _success;
 }
 
 @property (nonatomic) BOOL hasPending;

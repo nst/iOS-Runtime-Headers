@@ -3,8 +3,8 @@
  */
 
 @interface MRMessageCallback : NSObject {
-    NSObject<OS_dispatch_queue> *_queue;
-    id /* block */ _reply;
+    NSObject<OS_dispatch_queue> * _queue;
+    id /* block */  _reply;
 }
 
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;

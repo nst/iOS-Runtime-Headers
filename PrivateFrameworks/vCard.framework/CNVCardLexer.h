@@ -3,16 +3,17 @@
  */
 
 @interface CNVCardLexer : NSObject {
-    NSArray *_activeTokenSets;
-    char *_bytes;
-    unsigned int _cursor;
-    NSMutableData *_data;
-    int _errorCount;
-    unsigned int _length;
-    unsigned int _peekedPoint;
-    BOOL _unicode;
+    NSArray * _activeTokenSets;
+    char * _bytes;
+    unsigned int  _cursor;
+    NSMutableData * _data;
+    int  _errorCount;
+    unsigned int  _length;
+    unsigned int  _peekedPoint;
+    BOOL  _unicode;
 }
 
+- (void).cxx_destruct;
 - (void)_applyNextStringInEncoding:(unsigned int)arg1 quotedPrintable:(BOOL)arg2 stopTokens:(int)arg3 trim:(BOOL)arg4 intoString:(id)arg5;
 - (BOOL)advancePastEOL;
 - (BOOL)advancePastEOLSingle;
@@ -32,7 +33,6 @@
 - (BOOL)atEOF;
 - (unsigned short)charAtPosition:(unsigned int)arg1 withOffset:(int)arg2;
 - (unsigned int)cursor;
-- (void)dealloc;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })emptyRangeStartingAtCursor;
 - (int)errorCount;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })expandRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 untilNextByteIs:(id)arg2;

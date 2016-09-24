@@ -3,8 +3,8 @@
  */
 
 @interface SPCompanionAssetCache : NSObject {
-    SPAssetCacheClientCache *_permanentCache;
-    SPAssetCacheClientCache *_transientCache;
+    SPAssetCacheClientCache * _permanentCache;
+    SPAssetCacheClientCache * _transientCache;
 }
 
 @property (nonatomic, retain) SPAssetCacheClientCache *permanentCache;

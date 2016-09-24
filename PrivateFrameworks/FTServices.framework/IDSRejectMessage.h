@@ -3,10 +3,10 @@
  */
 
 @interface IDSRejectMessage : IDSFaceTimeMessage <NSCopying> {
-    NSString *_peerID;
-    NSData *_peerPushToken;
-    NSNumber *_reason;
-    NSData *_selfPushToken;
+    NSString * _peerID;
+    NSData * _peerPushToken;
+    NSNumber * _reason;
+    NSData * _selfPushToken;
 }
 
 @property (copy) NSString *peerID;

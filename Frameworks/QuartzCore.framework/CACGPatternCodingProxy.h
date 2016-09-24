@@ -3,7 +3,7 @@
  */
 
 @interface CACGPatternCodingProxy : CACodingProxy {
-    struct CGPattern { } *_pattern;
+    struct CGPattern { } * _pattern;
 }
 
 - (void)dealloc;

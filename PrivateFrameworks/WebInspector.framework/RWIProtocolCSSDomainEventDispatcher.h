@@ -3,7 +3,7 @@
  */
 
 @interface RWIProtocolCSSDomainEventDispatcher : NSObject {
-    struct AugmentableInspectorController { int (**x1)(); } *_controller;
+    struct AugmentableInspectorController { int (**x1)(); } * _controller;
 }
 
 - (id)initWithController:(struct AugmentableInspectorController { int (**x1)(); }*)arg1;

@@ -3,13 +3,13 @@
  */
 
 @interface MPInlineAudioOverlay : MPPlaybackControlsView {
-    UIView *_backgroundView;
-    NSString *_playbackErrorDescription;
-    UILabel *_playbackErrorDescriptionLabel;
-    UILabel *_streamingLabel;
-    int _style;
-    MPInlineAudioTransportControls *_transportControls;
-    <MPVideoControllerProtocol> *_videoViewController;
+    UIView * _backgroundView;
+    NSString * _playbackErrorDescription;
+    UILabel * _playbackErrorDescriptionLabel;
+    UILabel * _streamingLabel;
+    int  _style;
+    MPInlineAudioTransportControls * _transportControls;
+    <MPVideoControllerProtocol> * _videoViewController;
 }
 
 @property (nonatomic, copy) NSString *playbackErrorDescription;
@@ -18,13 +18,13 @@
 
 - (void).cxx_destruct;
 - (void)_availableRoutesDidChangeNotification:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameInBackgroundViewForDescriptionLabel:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameInBackgroundViewForDescriptionLabel:(id)arg1;
 - (void)_itemDurationDidChangeNotification:(id)arg1;
 - (id)_newDescriptionLabel;
 - (void)_updateVisiblePartsForAvailableRoutes;
 - (void)dealloc;
-- (unsigned long long)displayablePartsInPartMask:(unsigned long long)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (unsigned int)displayablePartsInPartMask:(unsigned int)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)newProgressIndicator;
 - (id)playbackErrorDescription;

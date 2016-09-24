@@ -3,9 +3,9 @@
  */
 
 @interface FigCameraUsageListener : NSObject <MCProfileConnectionObserver> {
-    id /* block */ _changeHandler;
-    BOOL _isProhibited;
-    struct OpaqueFigSimpleMutex { } *_isProhibitedLock;
+    id /* block */  _changeHandler;
+    BOOL  _isProhibited;
+    struct OpaqueFigSimpleMutex { } * _isProhibitedLock;
 }
 
 @property (readonly, copy) NSString *debugDescription;

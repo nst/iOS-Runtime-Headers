@@ -3,23 +3,23 @@
  */
 
 @interface GKPeerInternal : NSObject <GKTableCleanupWhenRemoved> {
-    id *_addrList;
-    double _connectTimeout;
-    NSString *_displayName;
-    unsigned int *_interfaceList;
-    BOOL _isBusy;
-    int _lookupServiceCount;
-    struct _DNSServiceRef_t {} **_lookupServiceList;
-    int _lookupServiceSize;
-    BOOL _moreResolvesComing;
-    BOOL _needsToTimeout;
-    unsigned int _pid;
-    struct _DNSServiceRef_t { } *_resolveService;
-    int _serviceCount;
-    NSString *_serviceName;
-    unsigned int _servicePort;
-    GKSessionInternal *_session;
-    struct _DNSServiceRef_t { } *_txtRecordService;
+    id * _addrList;
+    double  _connectTimeout;
+    NSString * _displayName;
+    unsigned int * _interfaceList;
+    BOOL  _isBusy;
+    int  _lookupServiceCount;
+    struct _DNSServiceRef_t {} ** _lookupServiceList;
+    int  _lookupServiceSize;
+    BOOL  _moreResolvesComing;
+    BOOL  _needsToTimeout;
+    unsigned int  _pid;
+    struct _DNSServiceRef_t { } * _resolveService;
+    int  _serviceCount;
+    NSString * _serviceName;
+    unsigned int  _servicePort;
+    GKSessionInternal * _session;
+    struct _DNSServiceRef_t { } * _txtRecordService;
 }
 
 @property (getter=isBusy) BOOL busy;

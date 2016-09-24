@@ -2,51 +2,48 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicLibraryBrowseTableViewController : UIViewController <MusicClientContextConsuming, MusicEntityPlaybackStatusControllerObserving, MusicIndexBarDataSource, MusicIndexBarScrollDelegate, MusicLibraryBrowseSectionHeaderViewDelegate, MusicLibraryViewConfigurationConsuming, MusicMediaPickerSearchDelegate, MusicSplitInitialStateProviding, MusicTableViewDelegate, UITableViewDataSource, UIViewControllerPreviewingDelegate, UIViewControllerPreviewingDelegate_Private> {
-    MusicAsynchronousPropertyLoadingController *_asynchronousPropertyLoadingController;
-    MusicClientContext *_clientContext;
-    NSArray *_contentDescriptors;
-    UIColor *_defaultSelectionTintColor;
-    <MusicLibraryBrowseTableViewControllerDelegate> *_delegate;
+@interface MusicLibraryBrowseTableViewController : UIViewController <MusicClientContextConsuming, MusicIndexBarDataSource, MusicIndexBarScrollDelegate, MusicLibraryBrowseSectionHeaderViewDelegate, MusicLibraryViewConfigurationConsuming, MusicMediaPickerSearchDelegate, MusicSplitInitialStateProviding, MusicTableViewDelegate, UITableViewDataSource, UIViewControllerPreviewingDelegate, UIViewControllerPreviewingDelegate_Private> {
+    MusicAsynchronousPropertyLoadingController * _asynchronousPropertyLoadingController;
+    MusicClientContext * _clientContext;
+    NSArray * _contentDescriptors;
+    UIColor * _defaultSelectionTintColor;
+    <MusicLibraryBrowseTableViewControllerDelegate> * _delegate;
     struct { 
         unsigned int didFinishContentHeightAnimation : 1; 
         unsigned int willBeginContentHeightAnimation : 1; 
-    } _delegateRespondsToSelector;
-    BOOL _didIgnoreEntityProviderInvalidationDuringEditing;
-    id /* block */ _editingChangesCommitBlock;
-    MusicEditingEntityProvider *_editingEntityProvider;
-    BOOL _editingWasCancelled;
-    MusicEntityDownloadInformationController *_entityDownloadInformationController;
-    MusicEntityViewDescriptor *_entityViewDescriptor;
-    unsigned int _firstSectionHeaderIndex;
-    BOOL _hasValidFirstSectionHeaderIndex;
-    MusicEntityValueContext *_itemEntityValueContext;
-    int _lastSelectionBehavior;
-    MusicLibraryBrowseTableViewConfiguration *_libraryViewConfiguration;
-    unsigned int _numberOfEntities;
-    MusicEntityPlayabilityController *_playabilityController;
-    MusicEntityPlaybackStatusController *_playbackStatusController;
-    MPAVController *_player;
-    float _previousWidth;
-    unsigned int _referenceCountForIgnoringEntityProviderInvalidation;
-    unsigned int _referenceCountForRunningEditingStateAnimations;
-    NSMutableArray *_reusableItemCoalescingEntityValueProviders;
-    NSMutableArray *_reusableSectionCoalescingEntityValueProviders;
-    NSMapTable *_sectionContentDescriptorToMaximumHeaderHeight;
-    MusicSectionEntityValueContext *_sectionEntityValueContext;
-    MusicEntityValueContext *_selectedItemEntityValueContext;
-    BOOL _shouldReloadTableViewOnceStoppedIgnoringNotifications;
-    MusicTableView *_tableView;
-    <UIViewControllerPreviewing> *_viewControllerPreviewing;
-    NSMapTable *_viewToDownloadInformationObserverToken;
-    NSMutableArray *_visibleFlexibleHeaderViews;
+    }  _delegateRespondsToSelector;
+    BOOL  _didIgnoreEntityProviderInvalidationDuringEditing;
+    id /* block */  _editingChangesCommitBlock;
+    MusicEditingEntityProvider * _editingEntityProvider;
+    BOOL  _editingWasCancelled;
+    MusicEntityViewDescriptor * _entityViewDescriptor;
+    unsigned int  _firstSectionHeaderIndex;
+    BOOL  _hasValidFirstSectionHeaderIndex;
+    MusicEntityValueContext * _itemEntityValueContext;
+    int  _lastSelectionBehavior;
+    MusicLibraryBrowseTableViewConfiguration * _libraryViewConfiguration;
+    unsigned int  _numberOfEntities;
+    MPAVController * _player;
+    double  _previousWidth;
+    unsigned int  _referenceCountForIgnoringEntityProviderInvalidation;
+    unsigned int  _referenceCountForRunningEditingStateAnimations;
+    NSMutableArray * _reusableItemCoalescingEntityValueProviders;
+    NSMutableArray * _reusableSectionCoalescingEntityValueProviders;
+    NSMapTable * _sectionContentDescriptorToMaximumHeaderHeight;
+    MusicSectionEntityValueContext * _sectionEntityValueContext;
+    MusicEntityValueContext * _selectedItemEntityValueContext;
+    BOOL  _shouldReloadTableViewOnceStoppedIgnoringNotifications;
+    MusicTableView * _tableView;
+    <UIViewControllerPreviewing> * _viewControllerPreviewing;
+    NSMapTable * _viewToDownloadInformationObserverToken;
+    NSMutableArray * _visibleFlexibleHeaderViews;
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <MusicLibraryBrowseTableViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) float effectiveContentHeight;
+@property (nonatomic, readonly) double effectiveContentHeight;
 @property (nonatomic, readonly) NSArray *entityProviderChangeRecords;
 @property (nonatomic, readonly) MusicEntityViewDescriptor *entityViewDescriptor;
 @property (readonly) unsigned int hash;
@@ -67,7 +64,6 @@
 - (void)_didFinishEditingStateChangeAnimation;
 - (id)_effectiveEntityProvider;
 - (void)_endIgnoringEntityProviderInvalidation;
-- (unsigned int)_entityPlayabilityResultForEntityValueContext:(id)arg1;
 - (id)_entityValueContextAtIndexPath:(id)arg1;
 - (void)_handleContentDescriptorDidInvalidateNotification:(id)arg1;
 - (void)_handleContentSizeCategoryDidChangeNotification:(id)arg1;
@@ -90,8 +86,6 @@
 - (void)_updateEntityDisabledStateForView:(id)arg1 withEntityValueContext:(id)arg2;
 - (void)_updateEntityDisabledStateForVisibleItems;
 - (void)_updateNumberOfEntities;
-- (void)_updatePlaybackStatusForCell:(id)arg1 withEntityValueContext:(id)arg2;
-- (void)_updatePlaybackStatusForVisibleCells;
 - (void)_updatePropertiesFromContentDescriptors;
 - (BOOL)_wantsPersistentSelection;
 - (void)_willBeginContentHeightAnimation;
@@ -110,7 +104,7 @@
 - (void)endEditingWithCommitBlock:(id /* block */)arg1;
 - (id)entityProviderChangeRecords;
 - (id)entityViewDescriptor;
-- (BOOL)getContentOffset:(struct CGPoint { float x1; float x2; }*)arg1 forIndexBarEntryAtIndex:(unsigned int)arg2;
+- (BOOL)getContentOffset:(struct CGPoint { double x1; double x2; }*)arg1 forIndexBarEntryAtIndex:(unsigned int)arg2;
 - (void)handleContentDescriptorDidInvalidate;
 - (void)handleContentSizeCategoryDidChange;
 - (void)handleEntityProviderDidInvalidate;
@@ -127,9 +121,8 @@
 - (BOOL)music_handleUserActivityContext:(id)arg1 containerItem:(id)arg2;
 - (unsigned int)numberOfIndexBarEntries;
 - (int)numberOfSectionsInTableView:(id)arg1;
-- (void)playbackStatusControllerPlaybackStatusDidChange:(id)arg1;
 - (void)previewingContext:(id)arg1 commitViewController:(id)arg2;
-- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { float x1; float x2; })arg2;
+- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { double x1; double x2; })arg2;
 - (id)sectionHeaderBackgroundColor;
 - (void)sectionHeaderViewDidSelectButton:(id)arg1;
 - (id)sectionIndexTitlesForTableView:(id)arg1;
@@ -175,6 +168,6 @@
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)willDisplayBrowseSectionHeaderView:(id)arg1 forSection:(int)arg2;
-- (void)willPresentPreviewViewController:(id)arg1 forLocation:(struct CGPoint { float x1; float x2; })arg2 inSourceView:(id)arg3;
+- (void)willPresentPreviewViewController:(id)arg1 forLocation:(struct CGPoint { double x1; double x2; })arg2 inSourceView:(id)arg3;
 
 @end

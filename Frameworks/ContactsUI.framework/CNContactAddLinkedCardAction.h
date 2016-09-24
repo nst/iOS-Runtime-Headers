@@ -3,10 +3,10 @@
  */
 
 @interface CNContactAddLinkedCardAction : CNContactAction <CNContactContentViewControllerDelegate, CNContactPickerDelegate> {
-    CNContact *_chosenContact;
-    CNContactPickerViewController *_contactPicker;
-    NSArray *_editingLinkedContacts;
-    CNContact *_selectedContact;
+    CNContact * _chosenContact;
+    CNContactPickerViewController * _contactPicker;
+    NSArray * _editingLinkedContacts;
+    CNContact * _selectedContact;
 }
 
 @property (nonatomic, retain) CNContact *chosenContact;

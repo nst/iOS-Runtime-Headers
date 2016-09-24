@@ -3,10 +3,10 @@
  */
 
 @interface PSSystemConfigurationDynamicStoreWifiWatcher : NSObject {
-    struct __SCDynamicStore { } *_prefs;
-    struct __CFString { } *_tetheringLink;
-    struct __CFString { } *_wifiInterface;
-    struct __CFString { } *_wifiKey;
+    struct __SCDynamicStore { } * _prefs;
+    struct __CFString { } * _tetheringLink;
+    struct __CFString { } * _wifiInterface;
+    struct __CFString { } * _wifiKey;
 }
 
 + (void)releaseSharedInstance;

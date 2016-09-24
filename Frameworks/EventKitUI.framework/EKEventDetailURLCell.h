@@ -3,8 +3,8 @@
  */
 
 @interface EKEventDetailURLCell : EKEventDetailCell {
-    UILabel *_URLTitleView;
-    UITextView *_URLView;
+    UILabel * _URLTitleView;
+    UITextView * _URLView;
 }
 
 - (void).cxx_destruct;

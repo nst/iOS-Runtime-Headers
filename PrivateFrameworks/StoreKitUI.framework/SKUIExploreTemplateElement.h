@@ -3,7 +3,7 @@
  */
 
 @interface SKUIExploreTemplateElement : SKUIViewElement {
-    BOOL _usesSplits;
+    BOOL  _usesSplits;
 }
 
 @property (nonatomic, readonly) NSArray *childViewElements;

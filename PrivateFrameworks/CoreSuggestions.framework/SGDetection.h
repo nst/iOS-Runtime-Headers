@@ -3,19 +3,19 @@
  */
 
 @interface SGDetection : NSObject {
-    NSString *_context;
+    NSString * _context;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _contextRangeOfInterest;
-    NSString *_extraction;
-    BOOL _hasPhoneLabel;
-    NSString *_label;
+    }  _contextRangeOfInterest;
+    NSString * _extraction;
+    BOOL  _hasPhoneLabel;
+    NSString * _label;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _match;
-    unsigned int _type;
+    }  _match;
+    unsigned int  _type;
 }
 
 @property (nonatomic, readonly) NSString *context;

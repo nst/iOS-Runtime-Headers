@@ -3,9 +3,9 @@
  */
 
 @interface MFPHueSaturationLightnessEffect : MFPEffect {
-    int mHueChange;
-    int mLightnessChange;
-    int mSaturationChange;
+    int  mHueChange;
+    int  mLightnessChange;
+    int  mSaturationChange;
 }
 
 + (id)GUID;

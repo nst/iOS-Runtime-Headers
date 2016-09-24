@@ -3,18 +3,19 @@
  */
 
 @interface CKFetchRecordsOperationInfo : CKDatabaseOperationInfo <NSSecureCoding> {
-    unsigned int _URLOptions;
-    NSSet *_assetFieldNamesToPublishURLs;
-    NSArray *_desiredKeys;
-    NSDictionary *_desiredPackageFileIndices;
-    BOOL _isFetchCurrentUserOperation;
-    NSArray *_recordIDs;
-    NSDictionary *_recordIDsToETags;
-    NSDictionary *_recordIDsToVersionETags;
-    unsigned int _requestedTTL;
-    BOOL _shouldFetchAssetContent;
-    NSDictionary *_signaturesOfAssetsByRecordIDAndKey;
-    NSDictionary *_webSharingIdentityDataByRecordID;
+    unsigned int  _URLOptions;
+    NSSet * _assetFieldNamesToPublishURLs;
+    NSArray * _desiredKeys;
+    NSDictionary * _desiredPackageFileIndices;
+    BOOL  _isFetchCurrentUserOperation;
+    NSArray * _recordIDs;
+    NSDictionary * _recordIDsToETags;
+    NSDictionary * _recordIDsToVersionETags;
+    unsigned int  _requestedTTL;
+    BOOL  _shouldFetchAssetContent;
+    BOOL  _shouldFetchAssetContentInMemory;
+    NSDictionary * _signaturesOfAssetsByRecordIDAndKey;
+    NSDictionary * _webSharingIdentityDataByRecordID;
 }
 
 @property (nonatomic) unsigned int URLOptions;
@@ -27,6 +28,7 @@
 @property (nonatomic, retain) NSDictionary *recordIDsToVersionETags;
 @property (nonatomic) unsigned int requestedTTL;
 @property (nonatomic) BOOL shouldFetchAssetContent;
+@property (nonatomic) BOOL shouldFetchAssetContentInMemory;
 @property (nonatomic, retain) NSDictionary *signaturesOfAssetsByRecordIDAndKey;
 @property (nonatomic, retain) NSDictionary *webSharingIdentityDataByRecordID;
 
@@ -53,10 +55,12 @@
 - (void)setRecordIDsToVersionETags:(id)arg1;
 - (void)setRequestedTTL:(unsigned int)arg1;
 - (void)setShouldFetchAssetContent:(BOOL)arg1;
+- (void)setShouldFetchAssetContentInMemory:(BOOL)arg1;
 - (void)setSignaturesOfAssetsByRecordIDAndKey:(id)arg1;
 - (void)setURLOptions:(unsigned int)arg1;
 - (void)setWebSharingIdentityDataByRecordID:(id)arg1;
 - (BOOL)shouldFetchAssetContent;
+- (BOOL)shouldFetchAssetContentInMemory;
 - (id)signaturesOfAssetsByRecordIDAndKey;
 - (id)webSharingIdentityDataByRecordID;
 

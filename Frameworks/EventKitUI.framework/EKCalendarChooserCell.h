@@ -3,14 +3,14 @@
  */
 
 @interface EKCalendarChooserCell : EKUIConstrainedFontsTableViewCell {
-    BOOL _checked;
-    UIImageView *_checkmarkView;
-    UIImage *_colorDot;
-    UIImage *_colorDotHighlighted;
-    UIImageView *_colorDotView;
-    BOOL _shouldAnimate;
-    BOOL _showCheckmarksOnLeft;
-    BOOL _showsColorDot;
+    BOOL  _checked;
+    UIImageView * _checkmarkView;
+    UIImage * _colorDot;
+    UIImage * _colorDotHighlighted;
+    UIImageView * _colorDotView;
+    BOOL  _shouldAnimate;
+    BOOL  _showCheckmarksOnLeft;
+    BOOL  _showsColorDot;
 }
 
 @property (nonatomic) BOOL checked;

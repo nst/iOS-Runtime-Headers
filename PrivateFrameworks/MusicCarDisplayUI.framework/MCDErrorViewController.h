@@ -3,11 +3,11 @@
  */
 
 @interface MCDErrorViewController : UIViewController {
-    NSString *_errorMessage;
-    NSString *_errorTitle;
-    UILabel *_messageLabel;
-    UIButton *_okButton;
-    UILabel *_titleLabel;
+    NSString * _errorMessage;
+    NSString * _errorTitle;
+    UILabel * _messageLabel;
+    UIButton * _okButton;
+    UILabel * _titleLabel;
 }
 
 @property (nonatomic, retain) NSString *errorMessage;

@@ -3,12 +3,12 @@
  */
 
 @interface PKPaymentNonceResponse : PKPaymentWebServiceResponse {
-    NSData *_nonceData;
+    NSData * _nonceData;
 }
 
-@property (nonatomic, retain) NSData *nonceData;
+@property (nonatomic, copy) NSData *nonceData;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithData:(id)arg1;
 - (id)nonceData;
 - (void)setNonceData:(id)arg1;

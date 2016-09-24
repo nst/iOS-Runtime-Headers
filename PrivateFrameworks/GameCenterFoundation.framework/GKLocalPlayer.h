@@ -3,19 +3,19 @@
  */
 
 @interface GKLocalPlayer : GKPlayer <GKLocalPlayerAuthenticationUIPersonality, GKSavedGameListener, NSCoding, NSSecureCoding> {
-    GKInvite *_acceptedInvite;
-    BOOL _authenticated;
-    UIAlertView *_currentAlert;
-    NSInvocation *_currentFriendRequestInvocation;
-    BOOL _didAuthenticate;
-    BOOL _enteringForeground;
-    int _environment;
-    GKEventEmitter<GKLocalPlayerListener> *_eventEmitter;
-    UIAlertView *_loginAlertView;
-    BOOL _newToGameCenter;
-    BOOL _showingInGameUI;
-    id /* block */ _validateAccountCompletionHandler;
-    BOOL _validatingAccount;
+    GKInvite * _acceptedInvite;
+    BOOL  _authenticated;
+    UIAlertView * _currentAlert;
+    NSInvocation * _currentFriendRequestInvocation;
+    BOOL  _didAuthenticate;
+    BOOL  _enteringForeground;
+    int  _environment;
+    GKEventEmitter<GKLocalPlayerListener> * _eventEmitter;
+    UIAlertView * _loginAlertView;
+    BOOL  _newToGameCenter;
+    BOOL  _showingInGameUI;
+    id /* block */  _validateAccountCompletionHandler;
+    BOOL  _validatingAccount;
 }
 
 @property (nonatomic, retain) GKInvite *acceptedInvite;
@@ -70,7 +70,7 @@
 + (void)performSync:(id /* block */)arg1;
 + (BOOL)supportsSecureCoding;
 
-- (void)acceptFriendRequestsFromPlayers:(id)arg1 withHandles:(id)arg2 handler:(id /* block */)arg3;
+- (void)_loadFriendPlayersWithCompletionHandler:(id /* block */)arg1;
 - (id)acceptedInvite;
 - (BOOL)appIsInBackground;
 - (id /* block */)authenticateHandler;
@@ -81,7 +81,6 @@
 - (id)currentAlert;
 - (id)currentFriendRequestInvocation;
 - (void)dealloc;
-- (void)declineFriendRequestsFromPlayers:(id)arg1 handler:(id /* block */)arg2;
 - (void)deleteSavedGamesWithName:(id)arg1 completionHandler:(id /* block */)arg2;
 - (BOOL)didAuthenticate;
 - (id)displayNameWithOptions:(unsigned char)arg1;
@@ -106,16 +105,13 @@
 - (void)loadDefaultLeaderboardCategoryIDWithCompletionHandler:(id /* block */)arg1;
 - (void)loadDefaultLeaderboardIdentifierWithCompletionHandler:(id /* block */)arg1;
 - (void)loadFriendPlayersWithCompletionHandler:(id /* block */)arg1;
-- (void)loadFriendRecommendationsWithCompletionHandler:(id /* block */)arg1;
-- (void)loadFriendRequests:(id /* block */)arg1;
 - (void)loadFriendsWithCompletionHandler:(id /* block */)arg1;
-- (void)loadGameRecommendationsWithCompletionHandler:(id /* block */)arg1;
+- (void)loadRecentPlayersWithCompletionHandler:(id /* block */)arg1;
 - (id)loginAlertView;
 - (void)registerListener:(id)arg1;
 - (void)removeFriend:(id)arg1 block:(id /* block */)arg2;
 - (void)resolveConflictingSavedGames:(id)arg1 withData:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)saveGameData:(id)arg1 withName:(id)arg2 completionHandler:(id /* block */)arg3;
-- (void)sendFriendRequest:(id)arg1 toAliases:(id)arg2 players:(id)arg3 emailAddresses:(id)arg4 twitterScreenNames:(id)arg5 facebookIDs:(id)arg6 rid:(id)arg7 block:(id /* block */)arg8;
 - (void)setAcceptedInvite:(id)arg1;
 - (void)setAppIsInBackground:(BOOL)arg1;
 - (void)setAuthenticateHandler:(id /* block */)arg1;
@@ -157,7 +153,6 @@
 - (void)_showViewControllerForLegacyApps:(id)arg1;
 - (void)_showWelcomeBanner;
 - (id)activeViewController;
-- (void)alertAndSendFriendRequest:(id)arg1 destination:(id)arg2;
 - (BOOL)alertUserInStoreDemoModeEnabled;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)applicationDidEnterBackground:(id)arg1;

@@ -3,9 +3,9 @@
  */
 
 @interface WBSParsecSubscriptionManager : NSObject {
-    BOOL _needsUpdate;
-    NSMutableDictionary *_subscriptionsByProvider;
-    PSSSSubscriptionManagerInternal *_thirdPartySubscriptionManager;
+    BOOL  _needsUpdate;
+    NSMutableDictionary * _subscriptionsByProvider;
+    PSSSSubscriptionManagerInternal * _thirdPartySubscriptionManager;
 }
 
 @property (nonatomic, readonly) BOOL needsUpdate;

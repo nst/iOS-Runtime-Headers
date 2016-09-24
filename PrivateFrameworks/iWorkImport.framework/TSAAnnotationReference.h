@@ -2,24 +2,18 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSAAnnotationReference : TSPObject {
-    <TSKAnnotation> *_annotation;
-    unsigned int _pageIndex;
+@interface TSAAnnotationReference : NSObject {
+    <TSKAnnotation> * _annotation;
+    unsigned int  _pageIndex;
 }
 
 @property (nonatomic, retain) <TSKAnnotation> *annotation;
 @property (nonatomic) unsigned int pageIndex;
 
-+ (id)referenceWithObjectContext:(id)arg1 annotation:(id)arg2 searchReference:(id)arg3 pageIndex:(unsigned int)arg4;
-
 - (id)annotation;
 - (void)dealloc;
-- (id)initFromUnarchiver:(id)arg1;
-- (void)loadFromArchive:(const struct AnnotationReferenceArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Reference {} *x5; unsigned int x6; unsigned int x7; struct Reference {} *x8; struct Point {} *x9; struct Range {} *x10; struct CellID {} *x11; struct SelectionPathArchive {} *x12; }*)arg1 unarchiver:(id)arg2;
 - (unsigned int)pageIndex;
 - (BOOL)referencesAnnotation:(id)arg1;
-- (void)saveToArchive:(struct AnnotationReferenceArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Reference {} *x5; unsigned int x6; unsigned int x7; struct Reference {} *x8; struct Point {} *x9; struct Range {} *x10; struct CellID {} *x11; struct SelectionPathArchive {} *x12; }*)arg1 archiver:(id)arg2;
-- (void)saveToArchiver:(id)arg1;
 - (void)setAnnotation:(id)arg1;
 - (void)setPageIndex:(unsigned int)arg1;
 

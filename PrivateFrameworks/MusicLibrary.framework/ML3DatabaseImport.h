@@ -3,21 +3,21 @@
  */
 
 @interface ML3DatabaseImport : NSObject <NSCopying, NSMutableCopying, NSSecureCoding> {
-    NSFileHandle *_fileHandle;
-    unsigned int _homeSharingBasePlaylistID;
-    BOOL _isServerImport;
-    NSString *_libraryPath;
-    BOOL _pendingMatch;
-    NSData *_playlistData;
-    BOOL _playlistsAreLibraryOwnedContent;
-    long long _preferredVideoQuality;
-    BOOL _resetSync;
-    BOOL _sagaEnabled;
-    long long _storeAccountID;
-    NSString *_syncAnchor;
-    NSString *_syncLibraryID;
-    NSData *_trackData;
-    BOOL _tracksAreLibraryOwnedContent;
+    NSFileHandle * _fileHandle;
+    unsigned int  _homeSharingBasePlaylistID;
+    BOOL  _isServerImport;
+    NSString * _libraryPath;
+    BOOL  _pendingMatch;
+    NSData * _playlistData;
+    BOOL  _playlistsAreLibraryOwnedContent;
+    int  _preferredVideoQuality;
+    BOOL  _resetSync;
+    BOOL  _sagaEnabled;
+    int  _storeAccountID;
+    NSString * _syncAnchor;
+    NSString * _syncLibraryID;
+    NSData * _trackData;
+    BOOL  _tracksAreLibraryOwnedContent;
 }
 
 @property (nonatomic, readonly) NSFileHandle *fileHandle;
@@ -27,10 +27,10 @@
 @property (getter=isPendingMatch, nonatomic, readonly) BOOL pendingMatch;
 @property (nonatomic, readonly) NSData *playlistData;
 @property (nonatomic, readonly) BOOL playlistsAreLibraryOwnedContent;
-@property (nonatomic, readonly) long long preferredVideoQuality;
+@property (nonatomic, readonly) int preferredVideoQuality;
 @property (getter=isResetSync, nonatomic, readonly) BOOL resetSync;
 @property (getter=isSagaEnabled, nonatomic, readonly) BOOL sagaEnabled;
-@property (nonatomic, readonly) long long storeAccountID;
+@property (nonatomic, readonly) int storeAccountID;
 @property (nonatomic, readonly) NSString *syncAnchor;
 @property (nonatomic, readonly) NSString *syncLibraryID;
 @property (nonatomic, readonly) NSData *trackData;
@@ -56,8 +56,8 @@
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)playlistData;
 - (BOOL)playlistsAreLibraryOwnedContent;
-- (long long)preferredVideoQuality;
-- (long long)storeAccountID;
+- (int)preferredVideoQuality;
+- (int)storeAccountID;
 - (id)syncAnchor;
 - (id)syncLibraryID;
 - (id)trackData;

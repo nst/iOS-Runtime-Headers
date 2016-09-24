@@ -42,6 +42,11 @@
 - (void)_CKLogToFileHandle:(id)arg1 atDepth:(int)arg2;
 - (BOOL)_hasIvar:(struct objc_ivar { }*)arg1;
 
+// Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
+
+- (id)initWithCPLArchiver:(id)arg1;
+- (id)plistArchiveWithCPLArchiver:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/MediaRemote.framework/MediaRemote
 
 - (id)mr_valueForPotentiallyUndefinedKey:(id)arg1;

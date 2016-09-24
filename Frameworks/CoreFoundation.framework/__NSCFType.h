@@ -10,7 +10,6 @@
 - (BOOL)_tryRetain;
 - (void)dealloc;
 - (id)description;
-- (void)finalize;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (oneway void)release;

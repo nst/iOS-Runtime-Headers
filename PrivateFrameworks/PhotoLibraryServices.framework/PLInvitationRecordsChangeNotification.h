@@ -3,8 +3,8 @@
  */
 
 @interface PLInvitationRecordsChangeNotification : PLContainerChangeNotification {
-    BOOL _invitationRecordsDidChange;
-    NSDictionary *_userInfo;
+    BOOL  _invitationRecordsDidChange;
+    NSDictionary * _userInfo;
 }
 
 @property (nonatomic, readonly, retain) PLGenericAlbum *album;

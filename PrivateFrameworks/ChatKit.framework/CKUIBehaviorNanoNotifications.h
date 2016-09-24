@@ -4,9 +4,8 @@
 
 @interface CKUIBehaviorNanoNotifications : CKUIBehaviorNano
 
-- (float)balloonMaxWidthForTranscriptWidth:(float)arg1 marginInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2 shouldShowPhotoButton:(BOOL)arg3 shouldShowCharacterCount:(BOOL)arg4;
+- (float)balloonMaxWidthForTranscriptWidth:(float)arg1 marginInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2 shouldShowPluginButtons:(BOOL)arg3 shouldShowCharacterCount:(BOOL)arg4 shouldCoverSendButton:(BOOL)arg5;
 - (float)bottomTranscriptSpace;
-- (BOOL)modifiesFirstBalloonLayout;
 - (BOOL)modifiesSingleLineBalloonLayout;
 - (float)nanoNoteSenderContentSpace;
 - (float)previewBalloonMaxWidthForBalloonMaxWidth:(float)arg1;
@@ -15,6 +14,7 @@
 - (BOOL)shouldUseRotisserieScrolling;
 - (BOOL)showsBalloonBadges;
 - (BOOL)showsBalloonChevron;
+- (BOOL)showsReplyButtonsInTranscript;
 - (float)topTranscriptSpace;
 
 @end

@@ -3,10 +3,10 @@
  */
 
 @interface CHTextRecognitionResult : CHRecognitionResult {
-    BOOL _rare;
-    NSString *_string;
-    NSArray *_wordIDs;
-    NSArray *_wordRanges;
+    BOOL  _rare;
+    NSString * _string;
+    NSArray * _wordIDs;
+    NSArray * _wordRanges;
 }
 
 @property (readonly) BOOL rare;
@@ -16,6 +16,7 @@
 
 - (void)dealloc;
 - (id)initWithString:(id)arg1 score:(double)arg2 rare:(BOOL)arg3 wordRanges:(id)arg4 wordIDs:(id)arg5;
+- (id)mecabraCandidate;
 - (BOOL)rare;
 - (id)string;
 - (id)wordIDs;

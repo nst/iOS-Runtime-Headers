@@ -3,8 +3,8 @@
  */
 
 @interface _CNBoundedQueueingStrategy : NSObject <CNQueueingStrategy> {
-    unsigned int _capacity;
-    id /* block */ _overflowHandler;
+    unsigned int  _capacity;
+    id /* block */  _overflowHandler;
 }
 
 @property (readonly, copy) NSString *debugDescription;

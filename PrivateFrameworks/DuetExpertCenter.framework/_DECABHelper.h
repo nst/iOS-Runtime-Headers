@@ -3,19 +3,31 @@
  */
 
 @interface _DECABHelper : NSObject {
-    NSDictionary *_abGroupContents;
-    NSString *_groupIdentifier;
+    NSDictionary * _abGroupContents;
+    NSString * _groupIdentifier;
 }
 
 @property (nonatomic, readonly) NSDictionary *abGroupContents;
 @property (nonatomic, readonly) NSString *groupIdentifier;
 
++ (unsigned int)cachedSaltedIndex:(unsigned int)arg1;
++ (id)decDeviceId;
++ (void)decDeviceIdWithReply:(id /* block */)arg1;
++ (unsigned int)incrementalSaltedIndex:(unsigned int)arg1;
 + (unsigned char)indexForDevice;
++ (void)initialize;
++ (unsigned int)randomSaltedIndex:(unsigned int)arg1;
++ (id)readDeviceIdFromDefaults:(id)arg1;
++ (unsigned int)saltedIndex:(unsigned int)arg1;
++ (void)setDefaultDeviceIndexPolicy;
++ (void)setIndexForDevice:(id /* block */)arg1;
++ (void)setStaticIndexForDevice:(unsigned char)arg1;
 
 - (void).cxx_destruct;
 - (id)abGroupContents;
 - (id)groupIdentifier;
 - (id)init;
+- (id)initWithAsset:(id)arg1;
 - (id)initWithAssetContents:(id)arg1;
 - (id)initWithAssetContents:(id)arg1 indexForDevice:(unsigned char)arg2;
 

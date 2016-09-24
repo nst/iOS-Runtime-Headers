@@ -3,18 +3,18 @@
  */
 
 @interface CNVCardOptions : NSObject {
-    NSArray *_availableEncodings;
-    BOOL _compressPhotos;
-    BOOL _includeNotes;
-    BOOL _includePhotos;
-    BOOL _includePrivateFields;
-    BOOL _includeUserSettings;
-    unsigned int _maximumEncodingLength;
-    unsigned int _maximumImageEncodingLength;
-    unsigned int _outputVersion;
-    BOOL _prefersUncroppedPhotos;
-    NSArray *_treatAsUnknownProperties;
-    BOOL _usePhotoReferencesIfAvailable;
+    NSArray * _availableEncodings;
+    BOOL  _compressPhotos;
+    BOOL  _includeNotes;
+    BOOL  _includePhotos;
+    BOOL  _includePrivateFields;
+    BOOL  _includeUserSettings;
+    unsigned int  _maximumEncodingLength;
+    unsigned int  _maximumImageEncodingLength;
+    unsigned int  _outputVersion;
+    BOOL  _prefersUncroppedPhotos;
+    NSArray * _treatAsUnknownProperties;
+    BOOL  _usePhotoReferencesIfAvailable;
 }
 
 @property (copy) NSArray *availableEncodings;
@@ -32,6 +32,7 @@
 
 + (id)optionsFromPreferences;
 
+- (void).cxx_destruct;
 - (id)availableEncodings;
 - (BOOL)compressPhotos;
 - (BOOL)includeNotes;

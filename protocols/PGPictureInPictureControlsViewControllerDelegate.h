@@ -5,7 +5,6 @@
 
 @optional
 
-- (void)pictureInPictureControlsViewController:(PGPictureInPictureControlsViewController *)arg1 controlsVisibilityChanged:(BOOL)arg2 animated:(BOOL)arg3;
 - (void)pictureInPictureControlsViewControllerActionButtonTapped:(PGPictureInPictureControlsViewController *)arg1;
 - (void)pictureInPictureControlsViewControllerCancelButtonTapped:(PGPictureInPictureControlsViewController *)arg1;
 - (BOOL)pictureInPictureControlsViewControllerShouldHandleDoubleTapGesture:(PGPictureInPictureControlsViewController *)arg1;

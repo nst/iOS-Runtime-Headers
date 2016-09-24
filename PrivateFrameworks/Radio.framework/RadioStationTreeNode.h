@@ -3,15 +3,15 @@
  */
 
 @interface RadioStationTreeNode : NSObject <NSCopying, NSMutableCopying> {
-    RadioArtworkCollection *_artworkCollection;
-    int _childNodeLoadingStyle;
-    NSArray *_childNodes;
-    int _displayStyle;
-    BOOL _hasAdditionalChildNodes;
-    NSString *_name;
-    long long _nodeID;
-    NSDictionary *_stationDictionary;
-    NSDictionary *_stationTreeNodeDictionary;
+    RadioArtworkCollection * _artworkCollection;
+    int  _childNodeLoadingStyle;
+    NSArray * _childNodes;
+    int  _displayStyle;
+    BOOL  _hasAdditionalChildNodes;
+    NSString * _name;
+    int  _nodeID;
+    NSDictionary * _stationDictionary;
+    NSDictionary * _stationTreeNodeDictionary;
 }
 
 @property (nonatomic, readonly, copy) RadioArtworkCollection *artworkCollection;
@@ -20,7 +20,7 @@
 @property (nonatomic, readonly) int displayStyle;
 @property (nonatomic, readonly) BOOL hasAdditionalChildNodes;
 @property (nonatomic, readonly, copy) NSString *name;
-@property (nonatomic, readonly) long long nodeID;
+@property (nonatomic, readonly) int nodeID;
 @property (nonatomic, readonly, copy) NSDictionary *stationDictionary;
 @property (nonatomic, readonly, copy) NSDictionary *stationTreeNodeDictionary;
 
@@ -37,7 +37,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)name;
-- (long long)nodeID;
+- (int)nodeID;
 - (id)stationDictionary;
 - (id)stationTreeNodeDictionary;
 

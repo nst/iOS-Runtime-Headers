@@ -3,14 +3,14 @@
  */
 
 @interface PINView : UIView <PINEntryView> {
-    <PSPINEntryViewDelegate> *_delegate;
-    BOOL _error;
-    UILabel *_errorTitleLabel;
-    FailureBarView *_failureView;
-    UIButton *_optionsButton;
-    id /* block */ _passcodeOptionsHandler;
-    UILabel *_pinPolicyLabel;
-    UILabel *_titleLabel;
+    <PSPINEntryViewDelegate> * _delegate;
+    BOOL  _error;
+    UILabel * _errorTitleLabel;
+    FailureBarView * _failureView;
+    UIButton * _optionsButton;
+    id /* block */  _passcodeOptionsHandler;
+    UILabel * _pinPolicyLabel;
+    UILabel * _titleLabel;
 }
 
 @property (readonly, copy) NSString *debugDescription;

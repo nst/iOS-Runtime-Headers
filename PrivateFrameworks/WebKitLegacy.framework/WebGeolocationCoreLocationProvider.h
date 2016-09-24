@@ -3,12 +3,12 @@
  */
 
 @interface WebGeolocationCoreLocationProvider : NSObject <CLLocationManagerDelegate> {
-    BOOL _isWaitingForAuthorization;
-    int _lastAuthorizationStatus;
+    BOOL  _isWaitingForAuthorization;
+    int  _lastAuthorizationStatus;
     struct RetainPtr<CLLocationManager> { 
         void *m_ptr; 
-    } _locationManager;
-    <WebGeolocationCoreLocationUpdateListener> *_positionListener;
+    }  _locationManager;
+    <WebGeolocationCoreLocationUpdateListener> * _positionListener;
 }
 
 @property (readonly, copy) NSString *debugDescription;

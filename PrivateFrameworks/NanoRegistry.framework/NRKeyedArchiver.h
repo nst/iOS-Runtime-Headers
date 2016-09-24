@@ -3,7 +3,7 @@
  */
 
 @interface NRKeyedArchiver : NSKeyedArchiver {
-    BOOL _archiveSecureItems;
+    BOOL  _archiveSecureItems;
 }
 
 @property (nonatomic) BOOL archiveSecureItems;

@@ -3,25 +3,25 @@
  */
 
 @interface SYDRemotePreferencesSource : NSObject {
-    BOOL _forceNextSynchronization;
-    long _generationCount;
-    NSObject<OS_os_transaction> *_isExecutingForClient;
-    double _lastAccess;
-    long _lastGenerationFromDisk;
-    NSObject<OS_dispatch_source> *_memoryWarningSource;
-    NSObject<OS_dispatch_queue> *_protectionQueue;
-    struct __CFDictionary { } *cache;
-    SYDClient *client;
-    struct __CFDictionary { } *configurationDictionary;
-    struct __CFSet { } *dirtyKeys;
-    NSMutableDictionary *externalChanges;
-    long long initialSyncChangeCount;
-    unsigned char isInitialSync;
-    struct __CFString { } *preferenceID;
-    id /* block */ registrationBlock;
-    NSObject<OS_dispatch_queue> *registrationQueue;
-    long long storageChangeCount;
-    struct __CFURL { } *urlOnDisk;
+    BOOL  _forceNextSynchronization;
+    long  _generationCount;
+    NSObject<OS_os_transaction> * _isExecutingForClient;
+    double  _lastAccess;
+    long  _lastGenerationFromDisk;
+    NSObject<OS_dispatch_source> * _memoryWarningSource;
+    NSObject<OS_dispatch_queue> * _protectionQueue;
+    struct __CFDictionary { } * cache;
+    SYDClient * client;
+    struct __CFDictionary { } * configurationDictionary;
+    struct __CFSet { } * dirtyKeys;
+    NSMutableDictionary * externalChanges;
+    int  initialSyncChangeCount;
+    unsigned char  isInitialSync;
+    struct __CFString { } * preferenceID;
+    id /* block */  registrationBlock;
+    NSObject<OS_dispatch_queue> * registrationQueue;
+    int  storageChangeCount;
+    struct __CFURL { } * urlOnDisk;
 }
 
 + (id)SYDRemotePreferencesSourceConfigurationDidChangeNotification;
@@ -31,6 +31,7 @@
 + (void)noteAccountChanges:(id)arg1;
 + (void)resetAllApplicationsWithCompletionHandler:(id /* block */)arg1;
 
+- (void).cxx_destruct;
 - (void)_cachePlistFromDisk;
 - (void)_createMemoryWarningSource;
 - (void)_didReceiveMemoryWarning;
@@ -43,11 +44,10 @@
 - (long)configurationValueForKey:(struct __CFString { }*)arg1;
 - (struct __CFDictionary { }*)copyConfigurationDictionary;
 - (struct __CFDictionary { }*)copyDictionary;
-- (id)copyExternalChangesWithChangeCount:(long long*)arg1;
+- (id)copyExternalChangesWithChangeCount:(int*)arg1;
 - (struct __CFArray { }*)copyKeyList;
 - (void)dealloc;
-- (void)discardExternalChangesForChangeCount:(long long)arg1;
-- (void)finalize;
+- (void)discardExternalChangesForChangeCount:(int)arg1;
 - (long)generationCount;
 - (void*)getValueForKey:(struct __CFString { }*)arg1;
 - (unsigned char)hasExternalChanges;

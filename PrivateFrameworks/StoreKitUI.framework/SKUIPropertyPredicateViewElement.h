@@ -3,9 +3,9 @@
  */
 
 @interface SKUIPropertyPredicateViewElement : SKUIPredicateViewElement {
-    int _comparisonType;
-    NSString *_property;
-    NSString *_value;
+    int  _comparisonType;
+    NSString * _property;
+    NSString * _value;
 }
 
 @property (nonatomic, readonly) int comparisonType;

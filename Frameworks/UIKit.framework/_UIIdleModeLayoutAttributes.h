@@ -3,35 +3,35 @@
  */
 
 @interface _UIIdleModeLayoutAttributes : NSObject {
-    float _alphaOffset;
+    double  _alphaOffset;
     struct CGPoint { 
-        float x; 
-        float y; 
-    } _centerOffset;
+        double x; 
+        double y; 
+    }  _centerOffset;
     struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
-    } _transform;
-    BOOL _wantsDimmingOverlay;
+        double a; 
+        double b; 
+        double c; 
+        double d; 
+        double tx; 
+        double ty; 
+    }  _transform;
+    BOOL  _wantsDimmingOverlay;
 }
 
-@property (nonatomic) float alphaOffset;
-@property (nonatomic) struct CGPoint { float x1; float x2; } centerOffset;
-@property (nonatomic) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } transform;
+@property (nonatomic) double alphaOffset;
+@property (nonatomic) struct CGPoint { double x1; double x2; } centerOffset;
+@property (nonatomic) struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; } transform;
 @property (nonatomic) BOOL wantsDimmingOverlay;
 
 - (float)alphaOffset;
-- (struct CGPoint { float x1; float x2; })centerOffset;
+- (struct CGPoint { double x1; double x2; })centerOffset;
 - (id)init;
 - (void)setAlphaOffset:(float)arg1;
-- (void)setCenterOffset:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
+- (void)setCenterOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
 - (void)setWantsDimmingOverlay:(BOOL)arg1;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transform;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })transform;
 - (BOOL)wantsDimmingOverlay;
 
 @end

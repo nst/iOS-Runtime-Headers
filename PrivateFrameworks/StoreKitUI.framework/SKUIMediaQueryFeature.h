@@ -3,7 +3,7 @@
  */
 
 @interface SKUIMediaQueryFeature : NSObject {
-    NSString *_featureName;
+    NSString * _featureName;
 }
 
 @property (nonatomic, readonly) NSString *featureName;

@@ -3,18 +3,18 @@
  */
 
 @interface BLDramaFilter : CIFilter {
-    CIFilter *_colorCubeFilterDrama;
-    NSNumber *_inputAmount;
-    CIVector *_inputHueStrengthArray;
-    CIImage *_inputImage;
-    NSNumber *_inputNeutralGamma;
-    NSNumber *_inputPhototone;
-    float _lastAmount;
-    CIVector *_lastHueStrengthArray;
-    float _lastNeutralGamma;
-    float _lastPhototone;
-    BOOL _needsReprocess;
-    NSData *_precomputedCube;
+    CIFilter * _colorCubeFilterDrama;
+    NSNumber * _inputAmount;
+    CIVector * _inputHueStrengthArray;
+    CIImage * _inputImage;
+    NSNumber * _inputNeutralGamma;
+    NSNumber * _inputPhototone;
+    double  _lastAmount;
+    CIVector * _lastHueStrengthArray;
+    double  _lastNeutralGamma;
+    double  _lastPhototone;
+    BOOL  _needsReprocess;
+    NSData * _precomputedCube;
 }
 
 @property (nonatomic, retain) CIFilter *colorCubeFilterDrama;

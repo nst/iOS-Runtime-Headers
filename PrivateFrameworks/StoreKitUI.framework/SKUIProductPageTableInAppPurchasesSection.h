@@ -3,11 +3,11 @@
  */
 
 @interface SKUIProductPageTableInAppPurchasesSection : SKUIProductPageTableSection {
-    SKUIClientContext *_clientContext;
-    SKUIColorScheme *_colorScheme;
-    SKUIProductPageTableExpandableHeaderView *_headerView;
-    NSArray *_inAppPurchases;
-    NSNumberFormatter *_numberFormatter;
+    SKUIClientContext * _clientContext;
+    SKUIColorScheme * _colorScheme;
+    SKUIProductPageTableExpandableHeaderView * _headerView;
+    NSArray * _inAppPurchases;
+    NSNumberFormatter * _numberFormatter;
 }
 
 @property (nonatomic, retain) SKUIColorScheme *colorScheme;

@@ -3,14 +3,14 @@
  */
 
 @interface EKUIEventNotificationRepresentation : NSObject {
-    BOOL _allDay;
-    NSDate *_date;
-    NSDictionary *_organizerContactDictionary;
-    EKUITextAndHeaderItem *_subtitleItem;
-    NSArray *_supplementaryItems;
-    EKUITextAndHeaderItem *_titleItem;
-    unsigned int _type;
-    NSDictionary *_userActivityUserInfo;
+    BOOL  _allDay;
+    NSDate * _date;
+    NSDictionary * _organizerContactDictionary;
+    EKUITextAndHeaderItem * _subtitleItem;
+    NSArray * _supplementaryItems;
+    EKUITextAndHeaderItem * _titleItem;
+    unsigned int  _type;
+    NSDictionary * _userActivityUserInfo;
 }
 
 @property (getter=isAllDay, nonatomic) BOOL allDay;
@@ -23,11 +23,16 @@
 @property (nonatomic) unsigned int type;
 @property (nonatomic, retain) NSDictionary *userActivityUserInfo;
 
++ (id)_fromLocalizedString;
 + (BOOL)_invitationNotificationHasResourceChanges:(id)arg1 changesString:(id*)arg2;
++ (id)_invitationUpdatedTitleLocalizedString;
++ (id)_whenLocalizedString;
++ (id)_whereLocalizedString;
 + (id)defaultEventNotificationRepresentationWithTitle:(id)arg1 message:(id)arg2;
 + (id)invitationNotificationRepresentationWithNotification:(id)arg1 date:(id)arg2 endDate:(id)arg3 timeZone:(id)arg4;
 + (id)resourceChangeNotificationWithNotification:(id)arg1 message:(id)arg2 date:(id)arg3 endDate:(id)arg4 timeZone:(id)arg5;
 + (id)responseNotificationWithTitle:(id)arg1 message:(id)arg2;
++ (id)timeToLeaveNotificationRepresentationWithHypothesisMessage:(id)arg1 event:(id)arg2 date:(id)arg3 displayTimeZone:(id)arg4;
 + (id)upcomingEventNotificationRepresentationWithEvent:(id)arg1 date:(id)arg2 displayTimeZone:(id)arg3;
 
 - (void).cxx_destruct;

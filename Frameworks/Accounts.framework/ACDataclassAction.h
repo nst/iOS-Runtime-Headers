@@ -3,9 +3,9 @@
  */
 
 @interface ACDataclassAction : NSObject <NSSecureCoding> {
-    NSArray *_affectedContainers;
-    BOOL _isDestructive;
-    int _type;
+    NSArray * _affectedContainers;
+    BOOL  _isDestructive;
+    int  _type;
 }
 
 @property (nonatomic, readonly) NSArray *affectedContainers;

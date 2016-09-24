@@ -3,9 +3,9 @@
  */
 
 @interface FIUIHealthSettingsWeightPickerController : FIUIHealthSettingsPickerController <UIPickerViewDataSource, UIPickerViewDelegate> {
-    id /* block */ _weightUpdateHandler;
-    int numberOfComponents;
-    int numberOfRows;
+    id /* block */  _weightUpdateHandler;
+    int  numberOfComponents;
+    int  numberOfRows;
 }
 
 @property (readonly, copy) NSString *debugDescription;

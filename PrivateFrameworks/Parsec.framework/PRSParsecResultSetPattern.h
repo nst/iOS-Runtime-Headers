@@ -3,8 +3,8 @@
  */
 
 @interface PRSParsecResultSetPattern : NSObject {
-    int _patternLength;
-    NSRegularExpression *_regularExpression;
+    int  _patternLength;
+    NSRegularExpression * _regularExpression;
 }
 
 @property (readonly) int patternLength;

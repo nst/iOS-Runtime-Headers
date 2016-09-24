@@ -3,8 +3,8 @@
  */
 
 @interface SGLabeledObject : SGObject {
-    unsigned int _extractionType;
-    NSString *_label;
+    unsigned int  _extractionType;
+    NSString * _label;
 }
 
 @property (nonatomic, readonly) unsigned int extractionType;

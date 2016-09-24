@@ -3,8 +3,8 @@
  */
 
 @interface SKUIInAppPurchase : NSObject <SKUICacheCoding> {
-    NSString *_formattedPrice;
-    NSString *_name;
+    NSString * _formattedPrice;
+    NSString * _name;
 }
 
 @property (nonatomic, readonly) NSMutableDictionary *cacheRepresentation;

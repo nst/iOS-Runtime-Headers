@@ -3,13 +3,13 @@
  */
 
 @interface WCFileStorage : NSObject {
-    WCContentIndex *_fileIndex;
-    NSObject<OS_dispatch_queue> *_fileQueue;
-    WCContentIndex *_fileResultsIndex;
-    NSArray *_outstandingFileTransfers;
-    NSString *_pairingID;
-    WCContentIndex *_userInfoIndex;
-    WCContentIndex *_userInfoResultsIndex;
+    WCContentIndex * _fileIndex;
+    NSObject<OS_dispatch_queue> * _fileQueue;
+    WCContentIndex * _fileResultsIndex;
+    NSArray * _outstandingFileTransfers;
+    NSString * _pairingID;
+    WCContentIndex * _userInfoIndex;
+    WCContentIndex * _userInfoResultsIndex;
 }
 
 @property (retain) WCContentIndex *fileIndex;

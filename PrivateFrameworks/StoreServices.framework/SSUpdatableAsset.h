@@ -3,18 +3,18 @@
  */
 
 @interface SSUpdatableAsset : NSObject {
-    NSURL *_cacheURL;
-    NSString *_md5;
-    NSString *_name;
-    NSURL *_serverURL;
-    NSString *_version;
+    NSURL * _cacheURL;
+    NSString * _md5;
+    NSString * _name;
+    NSURL * _serverURL;
+    NSString * _version;
 }
 
-@property (nonatomic, retain) NSURL *cacheURL;
-@property (nonatomic, copy) NSString *md5;
-@property (nonatomic, copy) NSString *name;
-@property (nonatomic, retain) NSURL *serverURL;
-@property (nonatomic, copy) NSString *version;
+@property (setter=_setCacheURL:, nonatomic, retain) NSURL *cacheURL;
+@property (setter=_setMD5:, nonatomic, copy) NSString *md5;
+@property (setter=_setName:, nonatomic, copy) NSString *name;
+@property (setter=_setServerURL:, nonatomic, retain) NSURL *serverURL;
+@property (setter=_setVersion:, nonatomic, copy) NSString *version;
 
 - (void).cxx_destruct;
 - (void)_setCacheURL:(id)arg1;

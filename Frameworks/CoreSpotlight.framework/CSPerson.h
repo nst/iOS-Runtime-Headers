@@ -3,16 +3,18 @@
  */
 
 @interface CSPerson : NSObject <CSCoderEncoder, NSCopying, NSSecureCoding> {
-    NSString *_contactIdentifier;
-    NSString *_displayName;
-    NSString *_handleIdentifier;
-    NSArray *_handles;
+    NSString * _contactIdentifier;
+    NSString * _displayName;
+    NSString * _handleIdentifier;
+    NSArray * _handles;
 }
 
 @property (copy) NSString *contactIdentifier;
-@property (retain) NSString *displayName;
-@property (retain) NSString *handleIdentifier;
-@property (retain) NSArray *handles;
+@property (nonatomic, retain) NSString *displayName;
+@property (nonatomic, retain) NSString *handleIdentifier;
+@property (nonatomic, retain) NSArray *handles;
+
+// Image: /System/Library/Frameworks/CoreSpotlight.framework/CoreSpotlight
 
 + (BOOL)supportsSecureCoding;
 
@@ -33,5 +35,13 @@
 - (void)setDisplayName:(id)arg1;
 - (void)setHandleIdentifier:(id)arg1;
 - (void)setHandles:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/CoreSuggestions.framework/CoreSuggestions
+
+- (id)sg_emailAddress;
+- (id)sg_initWithNamedEmailAddress:(id)arg1;
+- (id)sg_initWithSerializedForm:(id)arg1;
+- (id)sg_namedEmailAddress;
+- (id)sg_serialized;
 
 @end

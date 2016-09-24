@@ -3,7 +3,7 @@
  */
 
 @interface CATimerManager : NSObject {
-    id timerSource;
+    id  timerSource;
 }
 
 @property (nonatomic) id timerSource;

@@ -3,8 +3,8 @@
  */
 
 @interface PUAirPlayScreenDetector : NSObject {
-    PUAirPlayScreenMap *__detectedScreensMap;
-    <PUAirPlayScreenReceiver> *_receiver;
+    PUAirPlayScreenMap * __detectedScreensMap;
+    <PUAirPlayScreenReceiver> * _receiver;
 }
 
 @property (setter=_setDetectedScreensMap:, nonatomic, retain) PUAirPlayScreenMap *_detectedScreensMap;

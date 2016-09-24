@@ -3,10 +3,10 @@
  */
 
 @interface TSCHChartValueAxisRenderer : TSCHChartAxisRenderer {
-    unsigned int mEditingLabelIndex;
+    unsigned int  mEditingLabelIndex;
 }
 
-- (void)drawIntoLayer:(int)arg1 inContext:(struct CGContext { }*)arg2 visible:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
+- (void)drawIntoLayer:(int)arg1 inContext:(struct CGContext { }*)arg2 visible:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
 - (id)labelStringForAxis:(id)arg1 index:(unsigned int)arg2;
 - (id)labelsLayoutItem;
 - (id)transparencyLayers;

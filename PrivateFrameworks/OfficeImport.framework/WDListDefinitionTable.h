@@ -3,12 +3,12 @@
  */
 
 @interface WDListDefinitionTable : NSObject {
-    WDListDefinition *mDefaultListDefinition;
-    WDDocument *mDocument;
-    NSMutableDictionary *mListDefinitionMapById;
-    NSMutableDictionary *mListDefinitionMapByStyleId;
-    NSMutableArray *mListDefinitions;
-    WDListDefinition *mNullListDefinition;
+    WDListDefinition * mDefaultListDefinition;
+    WDDocument * mDocument;
+    NSMutableDictionary * mListDefinitionMapById;
+    NSMutableDictionary * mListDefinitionMapByStyleId;
+    NSMutableArray * mListDefinitions;
+    WDListDefinition * mNullListDefinition;
 }
 
 - (id)addDefinitionWithDefinitionId:(long)arg1 styleId:(id)arg2;

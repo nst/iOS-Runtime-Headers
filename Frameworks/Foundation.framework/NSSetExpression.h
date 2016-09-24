@@ -3,8 +3,8 @@
  */
 
 @interface NSSetExpression : NSExpression {
-    NSExpression *_left;
-    NSExpression *_right;
+    NSExpression * _left;
+    NSExpression * _right;
 }
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation

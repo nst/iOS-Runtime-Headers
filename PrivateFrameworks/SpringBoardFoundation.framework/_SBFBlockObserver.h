@@ -3,9 +3,9 @@
  */
 
 @interface _SBFBlockObserver : NSObject <SBFObserver> {
-    id /* block */ _completionBlock;
-    id /* block */ _failureBlock;
-    id /* block */ _resultBlock;
+    id /* block */  _completionBlock;
+    id /* block */  _failureBlock;
+    id /* block */  _resultBlock;
 }
 
 @property (readonly, copy) NSString *debugDescription;

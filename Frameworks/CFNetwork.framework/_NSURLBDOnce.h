@@ -3,8 +3,8 @@
  */
 
 @interface _NSURLBDOnce : NSObject {
-    id /* block */ fBlock;
-    BOOL fDone;
+    id /* block */  fBlock;
+    BOOL  fDone;
 }
 
 - (void)dealloc;

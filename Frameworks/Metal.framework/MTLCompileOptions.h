@@ -6,6 +6,7 @@
 
 @property (nonatomic) BOOL debuggingEnabled;
 @property (nonatomic) BOOL fastMathEnabled;
+@property (nonatomic) BOOL glBufferBindPoints;
 @property (nonatomic) unsigned int languageVersion;
 @property (nonatomic, copy) NSDictionary *preprocessorMacros;
 

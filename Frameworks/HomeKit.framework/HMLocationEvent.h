@@ -3,8 +3,8 @@
  */
 
 @interface HMLocationEvent : HMEvent <NSSecureCoding, _HMLocationHandlerDelegate> {
-    int _locationAuthorization;
-    CLRegion *_region;
+    int  _locationAuthorization;
+    CLRegion * _region;
 }
 
 @property (nonatomic) int locationAuthorization;

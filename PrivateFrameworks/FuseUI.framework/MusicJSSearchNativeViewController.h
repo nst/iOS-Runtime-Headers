@@ -3,10 +3,10 @@
  */
 
 @interface MusicJSSearchNativeViewController : MusicJSNativeViewController <MusicJSSearchNativeViewController> {
-    <MusicJSSearchNativeViewControllerDelegate> *_delegate;
-    IKAppDocument *_storeSearchResultsDocument;
-    NSDictionary *_storeSearchResultsDocumentOptions;
-    IKDOMDocument *_storeSearchResultsJSDocument;
+    <MusicJSSearchNativeViewControllerDelegate> * _delegate;
+    IKAppDocument * _storeSearchResultsDocument;
+    NSDictionary * _storeSearchResultsDocumentOptions;
+    IKDOMDocument * _storeSearchResultsJSDocument;
 }
 
 @property (nonatomic) <MusicJSSearchNativeViewControllerDelegate> *delegate;

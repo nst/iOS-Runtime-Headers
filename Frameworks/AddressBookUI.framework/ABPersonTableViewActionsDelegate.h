@@ -3,17 +3,17 @@
  */
 
 @interface ABPersonTableViewActionsDelegate : NSObject <ABPersonTableActionDelegate, ABPersonTableTinyActionDelegate, UIActionSheetDelegate> {
-    <ABFMFActionButtonsDelegate> *_FMFActionButtonsDelegate;
-    ABPersonTableActionDataSource *_actionDataSource;
-    int _actionSheetType;
-    BOOL _actionShouldPickHighlightedValue;
-    ABPersonTableViewDataSource *_dataSource;
-    int _highlightedValueIdentifier;
-    BOOL _highlightedValueIsImportant;
-    ABUIPerson *_highlightedValuePerson;
-    int _highlightedValueProperty;
-    ABStyleProvider *_styleProvider;
-    ABPersonTableTinyActionCell *_tinyActionCell;
+    <ABFMFActionButtonsDelegate> * _FMFActionButtonsDelegate;
+    ABPersonTableActionDataSource * _actionDataSource;
+    int  _actionSheetType;
+    BOOL  _actionShouldPickHighlightedValue;
+    ABPersonTableViewDataSource * _dataSource;
+    int  _highlightedValueIdentifier;
+    BOOL  _highlightedValueIsImportant;
+    ABUIPerson * _highlightedValuePerson;
+    int  _highlightedValueProperty;
+    ABStyleProvider * _styleProvider;
+    ABPersonTableTinyActionCell * _tinyActionCell;
 }
 
 @property (nonatomic) <ABFMFActionButtonsDelegate> *FMFActionButtonsDelegate;

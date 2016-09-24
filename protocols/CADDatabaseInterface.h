@@ -16,12 +16,13 @@
 - (void)CADDatabaseImportICSData:(void *)arg1 intoCalendarWithID:(void *)arg2 optionsMask:(void *)arg3 reply:(void *)arg4; // needs 4 arg types, found 10: NSData *, int, unsigned int, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, NSArray *, void*
 - (void)CADDatabaseIsAutomaticLocationGeocodingAllowed:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, BOOL, void*
 - (void)CADDatabaseMarkChangedObjectIDsConsumedUpToSequenceNumber:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 7: int, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, void*
+- (void)CADDatabaseRebuildOccurrenceCacheWithReply:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, void*
 - (void)CADDatabaseRegisterForDetailedChangeTracking:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, void*
 - (void)CADDatabaseResetWithReply:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, void*
 - (void)CADDatabaseRollbackWithReply:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, void*
 - (void)CADDatabaseSaveWithReply:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, void*
 - (void)CADDatabaseSetAutomaticLocationGeocodingAllowed:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 7: BOOL, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, void*
-- (void)CADDatabaseSetPath:(void *)arg1 andInitOptions:(void *)arg2 reply:(void *)arg3; // needs 3 arg types, found 8: NSString *, int, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, void*
+- (void)CADDatabaseSetInitializationOptions:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 7: int, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, void*
 - (void)CADDatabaseSetShowsDeclinedEvents:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 7: BOOL, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, void*
 - (void)CADDatabaseSetSourceAccountManagement:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 7: int, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, void*
 

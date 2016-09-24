@@ -3,9 +3,9 @@
  */
 
 @interface AWDFaceTimeCallDeclineSent : PBCodable <NSCopying> {
-    unsigned int _declineCode;
-    int _errorCode;
-    NSString *_guid;
+    unsigned int  _declineCode;
+    int  _errorCode;
+    NSString * _guid;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int declineCode : 1; 
@@ -13,11 +13,11 @@
         unsigned int isVideo : 1; 
         unsigned int onLockScreen : 1; 
         unsigned int sendDuration : 1; 
-    } _has;
-    unsigned int _isVideo;
-    unsigned int _onLockScreen;
-    unsigned int _sendDuration;
-    unsigned long long _timestamp;
+    }  _has;
+    unsigned int  _isVideo;
+    unsigned int  _onLockScreen;
+    unsigned int  _sendDuration;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) unsigned int declineCode;

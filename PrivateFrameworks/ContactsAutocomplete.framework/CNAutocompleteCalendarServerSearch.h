@@ -3,9 +3,9 @@
  */
 
 @interface CNAutocompleteCalendarServerSearch : NSObject <CNAutocompleteSearch> {
-    EKEventStore *_eventStore;
-    CNAutocompleteCalendarServerOperationFactory *_operationFactory;
-    CNStringTokenizer *_tokenizer;
+    EKEventStore * _eventStore;
+    CNAutocompleteCalendarServerOperationFactory * _operationFactory;
+    CNStringTokenizer * _tokenizer;
 }
 
 @property (readonly, copy) NSString *debugDescription;

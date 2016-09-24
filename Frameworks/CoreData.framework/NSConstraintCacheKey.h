@@ -3,7 +3,7 @@
  */
 
 @interface NSConstraintCacheKey : NSObject {
-    NSArray *_values;
+    NSArray * _values;
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

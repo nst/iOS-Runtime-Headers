@@ -3,9 +3,9 @@
  */
 
 @interface FBSqliteDatabaseConnection : NSObject {
-    NSObject<OS_dispatch_queue> *_queue;
-    struct sqlite3 { } *_queue_dbConnection;
-    NSCache *_queue_queryCache;
+    NSObject<OS_dispatch_queue> * _queue;
+    struct sqlite3 { } * _queue_dbConnection;
+    NSCache * _queue_queryCache;
 }
 
 + (int)_sqliteOpenFlagsForDataProtectionClass:(unsigned int)arg1;

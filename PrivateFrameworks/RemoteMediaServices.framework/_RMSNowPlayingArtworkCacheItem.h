@@ -3,9 +3,9 @@
  */
 
 @interface _RMSNowPlayingArtworkCacheItem : NSObject <NSDiscardableContent> {
-    NSData *_artworkData;
-    NSString *_artworkIdentifier;
-    BOOL _keepAlive;
+    NSData * _artworkData;
+    NSString * _artworkIdentifier;
+    BOOL  _keepAlive;
 }
 
 @property (nonatomic, retain) NSData *artworkData;

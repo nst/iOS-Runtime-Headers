@@ -3,8 +3,8 @@
  */
 
 @interface TSUDownloadManagerDownloadResultInfo : NSObject {
-    NSError *_error;
-    BOOL _success;
+    NSError * _error;
+    BOOL  _success;
 }
 
 @property (readonly) NSError *error;
@@ -12,6 +12,7 @@
 
 - (void).cxx_destruct;
 - (id)error;
+- (id)init;
 - (id)initWithSuccess:(BOOL)arg1 error:(id)arg2;
 - (BOOL)success;
 

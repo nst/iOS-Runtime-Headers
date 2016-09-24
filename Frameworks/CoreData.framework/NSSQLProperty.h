@@ -3,10 +3,10 @@
  */
 
 @interface NSSQLProperty : NSStoreMapping {
-    NSSQLEntity *_entity;
-    NSString *_name;
-    NSPropertyDescription *_propertyDescription;
-    unsigned int _propertyType;
+    NSSQLEntity * _entity;
+    NSString * _name;
+    NSPropertyDescription * _propertyDescription;
+    unsigned int  _propertyType;
 }
 
 - (void)_setName:(id)arg1;

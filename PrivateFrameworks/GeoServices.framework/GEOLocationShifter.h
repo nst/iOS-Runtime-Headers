@@ -3,12 +3,12 @@
  */
 
 @interface GEOLocationShifter : NSObject <GEOResourceManifestTileGroupObserver> {
-    BOOL _isRequestingShiftFunction;
-    NSMutableArray *_locationsToShift;
-    NSLock *_lock;
-    <_GEOLocationShifterProxy> *_proxy;
-    int _resetPrivacyToken;
-    NSCache *_shiftFunctionCache;
+    BOOL  _isRequestingShiftFunction;
+    NSMutableArray * _locationsToShift;
+    NSLock * _lock;
+    <_GEOLocationShifterProxy> * _proxy;
+    int  _resetPrivacyToken;
+    NSCache * _shiftFunctionCache;
 }
 
 @property (readonly, copy) NSString *debugDescription;

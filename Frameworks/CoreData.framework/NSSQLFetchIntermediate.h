@@ -3,14 +3,14 @@
  */
 
 @interface NSSQLFetchIntermediate : NSSQLStatementIntermediate {
-    NSSQLGroupByIntermediate *_groupByClause;
-    NSMutableArray *_groupByKeypaths;
-    NSSQLHavingIntermediate *_havingClause;
-    BOOL _isDictionaryCountFetch;
-    NSMutableArray *_joinIntermediates;
-    NSMutableDictionary *_joinKeypaths;
-    NSSQLOffsetIntermediate *_offsetClause;
-    NSSQLSelectIntermediate *_selectClause;
+    NSSQLGroupByIntermediate * _groupByClause;
+    NSMutableArray * _groupByKeypaths;
+    NSSQLHavingIntermediate * _havingClause;
+    BOOL  _isDictionaryCountFetch;
+    NSMutableArray * _joinIntermediates;
+    NSMutableDictionary * _joinKeypaths;
+    NSSQLOffsetIntermediate * _offsetClause;
+    NSSQLSelectIntermediate * _selectClause;
 }
 
 - (id)_generateJoinSQLStringInContext:(id)arg1;

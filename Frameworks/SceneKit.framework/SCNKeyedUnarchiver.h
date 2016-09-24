@@ -3,10 +3,10 @@
  */
 
 @interface SCNKeyedUnarchiver : NSKeyedUnarchiver {
-    SCNAssetCatalog *_assetCatalog;
-    NSDictionary *_context;
-    id lookUpFoundInstance;
-    NSString *lookUpKey;
+    SCNAssetCatalog * _assetCatalog;
+    NSDictionary * _context;
+    id  lookUpFoundInstance;
+    NSString * lookUpKey;
 }
 
 @property (nonatomic, retain) SCNAssetCatalog *assetCatalog;

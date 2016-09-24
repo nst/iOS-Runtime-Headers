@@ -3,9 +3,9 @@
  */
 
 @interface NFTimer : NSObject {
-    id /* block */ _block;
-    unsigned int _index;
-    NSObject<OS_dispatch_queue> *_queue;
+    id /* block */  _block;
+    unsigned int  _index;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 - (void)dealloc;

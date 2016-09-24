@@ -3,12 +3,12 @@
  */
 
 @interface CDPTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
-    id /* block */ _completionHandler;
-    UIView *_containerView;
-    NSString *_headerSubTitle;
-    NSString *_headerTitle;
-    CDPPaneHeaderView *_headerView;
-    UITableView *_tableView;
+    id /* block */  _completionHandler;
+    UIView * _containerView;
+    NSString * _headerSubTitle;
+    NSString * _headerTitle;
+    CDPPaneHeaderView * _headerView;
+    UITableView * _tableView;
 }
 
 @property (nonatomic, copy) id /* block */ completionHandler;
@@ -17,8 +17,8 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, copy) NSString *deviceClass;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly, copy) NSString *headerSubTitle;
-@property (nonatomic, readonly, copy) NSString *headerTitle;
+@property (nonatomic, copy) NSString *headerSubTitle;
+@property (nonatomic, copy) NSString *headerTitle;
 @property (nonatomic, retain) CDPPaneHeaderView *headerView;
 @property (nonatomic, readonly) BOOL isIPad;
 @property (nonatomic, readonly) BOOL isiPhone5OrSmaller;
@@ -41,6 +41,8 @@
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (void)setCompletionHandler:(id /* block */)arg1;
 - (void)setContainerView:(id)arg1;
+- (void)setHeaderSubTitle:(id)arg1;
+- (void)setHeaderTitle:(id)arg1;
 - (void)setHeaderView:(id)arg1;
 - (void)setTableView:(id)arg1;
 - (id)tableView;
@@ -49,5 +51,6 @@
 - (BOOL)uiTestMode;
 - (void)viewDidLayoutSubviews;
 - (id)viewForHeaderInTableView:(id)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
 
 @end

@@ -5,6 +5,7 @@
 
 @required
 
+- (PLAccountingDependency *)_lastDependencyForDependencyID:(NSNumber *)arg1;
 - (void)canFreeOwner:(PLAccountingOwner *)arg1;
 - (NSArray *)dependenciesWithDependencyID:(NSNumber *)arg1 withRange:(PLAccountingRange *)arg2;
 - (NSMutableSet *)dependencyIDsForOwner:(PLAccountingOwner *)arg1;

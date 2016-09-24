@@ -3,9 +3,9 @@
  */
 
 @interface PUAddSubscribersViewController : UIViewController {
-    UIBarButtonItem *_addButton;
-    PLCloudSharedAlbum *_album;
-    PUPhotoStreamRecipientViewController *_composeRecipientController;
+    UIBarButtonItem * _addButton;
+    PLCloudSharedAlbum * _album;
+    PUPhotoStreamRecipientViewController * _composeRecipientController;
 }
 
 @property (nonatomic, readonly) PLCloudSharedAlbum *album;

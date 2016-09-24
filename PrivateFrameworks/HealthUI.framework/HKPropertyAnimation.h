@@ -3,15 +3,15 @@
  */
 
 @interface HKPropertyAnimation : NSObject <NSCopying> {
-    NSDate *_appliedDate;
-    id /* block */ _completion;
-    double _duration;
-    id _fromValue;
-    NSString *_property;
-    id /* block */ _propertyApplicationFunction;
-    int _secondaryAnimationCurve;
-    CAMediaTimingFunction *_timingFunction;
-    id _toValue;
+    NSDate * _appliedDate;
+    id /* block */  _completion;
+    double  _duration;
+    id  _fromValue;
+    NSString * _property;
+    id /* block */  _propertyApplicationFunction;
+    int  _secondaryAnimationCurve;
+    CAMediaTimingFunction * _timingFunction;
+    id  _toValue;
 }
 
 @property (nonatomic, retain) NSDate *appliedDate;

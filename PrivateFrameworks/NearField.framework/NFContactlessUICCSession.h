@@ -2,8 +2,8 @@
    Image: /System/Library/PrivateFrameworks/NearField.framework/NearField
  */
 
-@interface NFContactlessUICCSession : NFSession <NFContactlessUICCSessionCallbacks> {
-    <NFContactlessUICCSessionDelegate> *_delegate;
+@interface NFContactlessUICCSession : NFSession <NFContactlessSessionCallbacks> {
+    <NFContactlessUICCSessionDelegate> * _delegate;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -16,6 +16,7 @@
 - (void)didDetectField:(BOOL)arg1;
 - (void)didDetectTechnology:(id)arg1;
 - (void)didEndUnexpectedly;
+- (void)didSelectApplet:(id)arg1;
 - (void)setDelegate:(id)arg1;
 
 @end

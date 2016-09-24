@@ -3,26 +3,26 @@
  */
 
 @interface MFComposeRecipient : NSObject <MFDraggableItem, NSCoding, NSCopying> {
-    NSString *_address;
-    CNAutocompleteResult *_autocompleteResult;
-    NSArray *_cachedCompleteMatches;
-    NSArray *_cachedMatchedStrings;
-    NSArray *_cachedSortedMembers;
-    NSString *_compositeName;
-    CNContact *_contact;
-    NSString *_contactIdentifier;
-    NSString *_countryCode;
-    NSString *_displayString;
-    int _identifier;
-    unsigned int _kind;
-    NSString *_label;
-    MFComposeRecipientOriginContext *_originContext;
-    int _property;
-    void *_record;
-    int _recordID;
-    unsigned int _sourceType;
-    NSString *_unlocalizedLabel;
-    NSString *_valueIdentifier;
+    NSString * _address;
+    CNAutocompleteResult * _autocompleteResult;
+    NSArray * _cachedCompleteMatches;
+    NSArray * _cachedMatchedStrings;
+    NSArray * _cachedSortedMembers;
+    NSString * _compositeName;
+    CNContact * _contact;
+    NSString * _contactIdentifier;
+    NSString * _countryCode;
+    NSString * _displayString;
+    int  _identifier;
+    unsigned int  _kind;
+    NSString * _label;
+    MFComposeRecipientOriginContext * _originContext;
+    int  _property;
+    void * _record;
+    int  _recordID;
+    unsigned int  _sourceType;
+    NSString * _unlocalizedLabel;
+    NSString * _valueIdentifier;
 }
 
 @property (nonatomic, copy) NSString *address;

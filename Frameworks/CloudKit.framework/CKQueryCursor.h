@@ -3,8 +3,8 @@
  */
 
 @interface CKQueryCursor : NSObject <NSCopying, NSSecureCoding> {
-    NSData *_data;
-    CKRecordZoneID *_zoneID;
+    NSData * _data;
+    CKRecordZoneID * _zoneID;
 }
 
 @property (nonatomic, retain) NSData *data;

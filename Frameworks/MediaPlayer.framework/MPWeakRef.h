@@ -3,8 +3,8 @@
  */
 
 @interface MPWeakRef : NSObject {
-    id _object;
-    unsigned int _objectAddress;
+    id  _object;
+    unsigned int  _objectAddress;
 }
 
 + (id)weakRefWithObject:(id)arg1;

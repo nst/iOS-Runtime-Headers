@@ -3,18 +3,20 @@
  */
 
 @interface NSSQLCompoundWhereIntermediate : NSSQLWhereIntermediate {
-    NSSQLEntity *_disambiguatingEntity;
-    NSMutableArray *_subclauses;
+    NSSQLEntity * _disambiguatingEntity;
+    NSArray * _disambiguationKeypath;
+    BOOL  _disambiguationKeypathHasToMany;
+    NSMutableArray * _subclauses;
 }
-
-@property (nonatomic) NSSQLEntity *disambiguatingEntity;
 
 - (id)_generateMulticlauseStringInContext:(id)arg1;
 - (void)dealloc;
 - (id)disambiguatingEntity;
+- (id)disambiguationKeypath;
+- (BOOL)disambiguationKeypathHasToMany;
 - (id)generateSQLStringInContext:(id)arg1;
 - (id)initWithPredicate:(id)arg1 inScope:(id)arg2 inContext:(id)arg3;
 - (BOOL)isOrScoped;
-- (void)setDisambiguatingEntity:(id)arg1;
+- (void)setDisambiguatingEntity:(id)arg1 withKeypath:(id)arg2 hasToMany:(BOOL)arg3;
 
 @end

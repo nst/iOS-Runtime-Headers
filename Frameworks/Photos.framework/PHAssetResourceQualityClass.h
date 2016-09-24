@@ -3,14 +3,14 @@
  */
 
 @interface PHAssetResourceQualityClass : NSObject {
-    unsigned int _backingCPLResourceType;
-    PLImageFormat *_backingImageFormat;
-    BOOL _croppedToSquare;
-    unsigned int _maxNumberOfPixelsIfSquare;
-    unsigned int _maxSideLengthIfSquare;
-    BOOL _table;
-    BOOL _thumbnail;
-    BOOL _video;
+    unsigned int  _backingCPLResourceType;
+    PLImageFormat * _backingImageFormat;
+    BOOL  _croppedToSquare;
+    unsigned int  _maxNumberOfPixelsIfSquare;
+    unsigned int  _maxSideLengthIfSquare;
+    BOOL  _table;
+    BOOL  _thumbnail;
+    BOOL  _video;
 }
 
 @property (nonatomic) unsigned int backingCPLResourceType;
@@ -32,6 +32,7 @@
 - (int)_compare:(id)arg1;
 - (unsigned int)backingCPLResourceType;
 - (id)backingImageFormat;
+- (id)description;
 - (id)initWithCPLResourceType:(unsigned int)arg1;
 - (id)initWithThumbnailFormat:(id)arg1;
 - (BOOL)isCroppedToSquare;

@@ -3,7 +3,7 @@
  */
 
 @interface SKUIContentUnavailableTableViewCell : SKUITableViewCell {
-    _UIContentUnavailableView *_view;
+    _UIContentUnavailableView * _view;
 }
 
 @property (nonatomic, copy) NSString *message;

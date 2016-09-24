@@ -3,12 +3,12 @@
  */
 
 @interface CKPublishAssetsOperation : CKDatabaseOperation {
-    unsigned int _URLOptions;
-    id /* block */ _assetPublishedBlock;
-    NSDictionary *_fileNamesByAssetFieldNames;
-    id /* block */ _publishAssetCompletionBlock;
-    NSArray *_recordIDs;
-    unsigned int _requestedTTL;
+    unsigned int  _URLOptions;
+    id /* block */  _assetPublishedBlock;
+    NSDictionary * _fileNamesByAssetFieldNames;
+    id /* block */  _publishAssetCompletionBlock;
+    NSArray * _recordIDs;
+    unsigned int  _requestedTTL;
 }
 
 @property (nonatomic) unsigned int URLOptions;
@@ -23,7 +23,7 @@
 - (unsigned int)URLOptions;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
-- (unsigned long long)activityStart;
+- (id)activityCreate;
 - (id /* block */)assetPublishedBlock;
 - (id)fileNamesByAssetFieldNames;
 - (void)fillFromOperationInfo:(id)arg1;

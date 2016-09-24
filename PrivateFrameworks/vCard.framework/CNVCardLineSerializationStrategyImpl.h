@@ -3,7 +3,7 @@
  */
 
 @interface CNVCardLineSerializationStrategyImpl : NSObject <CNVCardLineSerialization> {
-    <CNVCardSerializationStorage> *_storage;
+    <CNVCardSerializationStorage> * _storage;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -13,6 +13,7 @@
 
 + (id)serializerWithStorage:(id)arg1;
 
+- (void).cxx_destruct;
 - (BOOL)canSerializeArray:(id)arg1;
 - (BOOL)canSerializeData:(id)arg1;
 - (BOOL)canSerializeString:(id)arg1;

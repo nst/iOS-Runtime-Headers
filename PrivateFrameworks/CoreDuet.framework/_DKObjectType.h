@@ -3,8 +3,8 @@
  */
 
 @interface _DKObjectType : NSObject <NSCopying, NSSecureCoding> {
-    Class _objectClass;
-    int _typeCode;
+    Class  _objectClass;
+    int  _typeCode;
 }
 
 @property (nonatomic, readonly) Class objectClass;

@@ -3,18 +3,19 @@
  */
 
 @interface HMDCharacteristicResponse : NSObject {
-    NSError *_error;
-    HMDCharacteristicRequest *_request;
-    id _value;
+    NSError * _error;
+    HMDCharacteristicRequest * _request;
+    id  _value;
 }
 
 @property (nonatomic, readonly) NSError *error;
 @property (nonatomic, readonly) HMDCharacteristicRequest *request;
-@property (nonatomic, readonly) id value;
+@property (nonatomic, retain) id value;
 
 + (id)responseWithRequest:(id)arg1 error:(id)arg2;
 
 - (void).cxx_destruct;
+- (id)description;
 - (id)error;
 - (id)initWithRequest:(id)arg1 error:(id)arg2;
 - (id)request;

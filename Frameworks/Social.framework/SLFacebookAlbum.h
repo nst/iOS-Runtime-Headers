@@ -3,12 +3,12 @@
  */
 
 @interface SLFacebookAlbum : NSObject <NSSecureCoding> {
-    BOOL _canUpload;
-    int _count;
-    NSString *_coverPhotoIdentifier;
-    NSString *_identifier;
-    BOOL _isDefaultAlbum;
-    NSString *_name;
+    BOOL  _canUpload;
+    int  _count;
+    NSString * _coverPhotoIdentifier;
+    NSString * _identifier;
+    BOOL  _isDefaultAlbum;
+    NSString * _name;
 }
 
 @property BOOL canUpload;

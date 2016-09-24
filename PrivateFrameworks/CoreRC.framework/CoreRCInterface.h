@@ -3,8 +3,8 @@
  */
 
 @interface CoreRCInterface : NSObject {
-    CoreRCInterfaceListener *_listener;
-    id _testProperty;
+    CoreRCInterfaceListener * _listener;
+    id  _testProperty;
 }
 
 @property (nonatomic) CoreRCInterfaceListener *listener;

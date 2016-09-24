@@ -3,15 +3,15 @@
  */
 
 @interface CKContactsSearchManager : NSObject <MFContactsSearchConsumer> {
-    BOOL _biasForOutgoingInteraction;
-    NSArray *_conversationCache;
-    NSNumber *_currentSearchTaskID;
-    <CKContactsSearchManagerDelegate> *_delegate;
-    NSArray *_enteredRecipients;
-    MFContactsSearchManager *_searchManager;
-    NSMutableArray *_searchResults;
-    NSString *_searchText;
-    BOOL _suppressGroupSuggestions;
+    BOOL  _biasForOutgoingInteraction;
+    NSArray * _conversationCache;
+    NSNumber * _currentSearchTaskID;
+    <CKContactsSearchManagerDelegate> * _delegate;
+    NSArray * _enteredRecipients;
+    MFContactsSearchManager * _searchManager;
+    NSMutableArray * _searchResults;
+    NSString * _searchText;
+    BOOL  _suppressGroupSuggestions;
 }
 
 @property (nonatomic) BOOL biasForOutgoingInteraction;
@@ -28,9 +28,10 @@
 @property (readonly) Class superclass;
 @property (nonatomic) BOOL suppressGroupSuggestions;
 
+- (void).cxx_destruct;
 - (void)_generateConversationCache;
 - (id)_sortResultsByDate:(id)arg1;
-- (void)_sortSearchResultsWithCoreRecentsResults:(id)arg1 displayNameMatches:(id)arg2 participantNameMatches:(id)arg3;
+- (id)_sortSearchResultsWithCoreRecentsResults:(id)arg1 displayNameMatches:(id)arg2 participantNameMatches:(id)arg3;
 - (void)beganNetworkActivity;
 - (BOOL)biasForOutgoingInteraction;
 - (void)cancelSearch;

@@ -3,11 +3,11 @@
  */
 
 @interface WBSAddressBookValueSpecifier : NSObject {
-    NSString *_category;
-    NSString *_component;
-    NSString *_label;
-    NSString *_parentProperty;
-    NSString *_property;
+    NSString * _category;
+    NSString * _component;
+    NSString * _label;
+    NSString * _parentProperty;
+    NSString * _property;
 }
 
 @property (nonatomic, readonly) NSString *category;

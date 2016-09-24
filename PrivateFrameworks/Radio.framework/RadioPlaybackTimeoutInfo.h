@@ -3,7 +3,7 @@
  */
 
 @interface RadioPlaybackTimeoutInfo : NSObject <NSCopying, NSMutableCopying> {
-    NSMutableDictionary *_playbackTimeoutIdentifierToTimeoutNumber;
+    NSMutableDictionary * _playbackTimeoutIdentifierToTimeoutNumber;
 }
 
 - (void).cxx_destruct;

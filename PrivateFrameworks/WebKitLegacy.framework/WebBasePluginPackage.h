@@ -3,16 +3,16 @@
  */
 
 @interface WebBasePluginPackage : NSObject {
-    int (*BP_CreatePluginMIMETypesPreferences;
+    int (* BP_CreatePluginMIMETypesPreferences;
     struct RetainPtr<__CFBundle *> { 
         void *m_ptr; 
-    } cfBundle;
+    }  cfBundle;
     struct String { 
         struct RefPtr<WTF::StringImpl> { 
             struct StringImpl {} *m_ptr; 
         } m_impl; 
-    } path;
-    NSMutableSet *pluginDatabases;
+    }  path;
+    NSMutableSet * pluginDatabases;
     struct PluginInfo { 
         struct String { 
             struct RefPtr<WTF::StringImpl> { 
@@ -36,7 +36,7 @@
         } mimes; 
         bool isApplicationPlugin; 
         unsigned char clientLoadPolicy; 
-    } pluginInfo;
+    }  pluginInfo;
 }
 
 + (void)initialize;
@@ -50,7 +50,6 @@
 - (struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; })bundleVersion;
 - (void)createPropertyListFile;
 - (void)dealloc;
-- (void)finalize;
 - (BOOL)getPluginInfoFromPLists;
 - (id)initWithPath:(id)arg1;
 - (BOOL)isJavaPlugIn;

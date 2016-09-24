@@ -3,12 +3,12 @@
  */
 
 @interface SUScriptDownload : SUScriptObject {
-    ISUDownload *_download;
+    ISUDownload * _download;
 }
 
 @property (readonly) NSNumber *adamID;
 @property (readonly) NSString *phase;
-@property (readonly) float progress;
+@property (readonly) double progress;
 
 + (void)initialize;
 + (id)phaseStringForDownload:(id)arg1;

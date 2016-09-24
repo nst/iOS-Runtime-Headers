@@ -3,14 +3,14 @@
  */
 
 @interface MFMessageWriter : NSObject {
-    unsigned int _allows8BitMimeParts;
-    unsigned int _allowsBinaryMimeParts;
-    unsigned int _allowsQuotedPrintable;
-    NSDictionary *_compositionSpecification;
-    id _delegate;
-    Class _messageClassToInstantiate;
-    BOOL _shouldWriteAttachmentPlaceholders;
-    unsigned int _writeSizeDispositionParameter;
+    unsigned int  _allows8BitMimeParts;
+    unsigned int  _allowsBinaryMimeParts;
+    unsigned int  _allowsQuotedPrintable;
+    NSDictionary * _compositionSpecification;
+    id  _delegate;
+    Class  _messageClassToInstantiate;
+    BOOL  _shouldWriteAttachmentPlaceholders;
+    unsigned int  _writeSizeDispositionParameter;
 }
 
 @property (nonatomic, readonly) NSDictionary *compositionSpecification;

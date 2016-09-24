@@ -5,20 +5,26 @@
 @interface SALocalSearchShowMapPoints : SADomainCommand
 
 @property (nonatomic, copy) NSDate *arrivalDate;
+@property (nonatomic, retain) SALocalSearchCarRouteOptions *carRouteOptions;
+@property (nonatomic) BOOL chainResultSet;
 @property (nonatomic, copy) NSDate *departureDate;
 @property (nonatomic, copy) NSString *directionsType;
 @property (nonatomic, retain) SALocalSearchMapItem *itemDestination;
 @property (nonatomic, retain) SALocalSearchMapItem *itemSource;
 @property (nonatomic, copy) NSString *language;
 @property (nonatomic, copy) NSNumber *regionOfInterestRadiusInMiles;
+@property (nonatomic) BOOL searchAlongRoute;
 @property (nonatomic, retain) SALocalSearchMapItemList *searchItems;
 @property (nonatomic) BOOL showDirections;
 @property (nonatomic) BOOL showTraffic;
+@property (nonatomic) BOOL suppressNavigation;
 
 + (id)showMapPoints;
 + (id)showMapPointsWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)arrivalDate;
+- (id)carRouteOptions;
+- (BOOL)chainResultSet;
 - (id)departureDate;
 - (id)directionsType;
 - (id)encodedClassName;
@@ -28,18 +34,24 @@
 - (id)language;
 - (id)regionOfInterestRadiusInMiles;
 - (BOOL)requiresResponse;
+- (BOOL)searchAlongRoute;
 - (id)searchItems;
 - (void)setArrivalDate:(id)arg1;
+- (void)setCarRouteOptions:(id)arg1;
+- (void)setChainResultSet:(BOOL)arg1;
 - (void)setDepartureDate:(id)arg1;
 - (void)setDirectionsType:(id)arg1;
 - (void)setItemDestination:(id)arg1;
 - (void)setItemSource:(id)arg1;
 - (void)setLanguage:(id)arg1;
 - (void)setRegionOfInterestRadiusInMiles:(id)arg1;
+- (void)setSearchAlongRoute:(BOOL)arg1;
 - (void)setSearchItems:(id)arg1;
 - (void)setShowDirections:(BOOL)arg1;
 - (void)setShowTraffic:(BOOL)arg1;
+- (void)setSuppressNavigation:(BOOL)arg1;
 - (BOOL)showDirections;
 - (BOOL)showTraffic;
+- (BOOL)suppressNavigation;
 
 @end

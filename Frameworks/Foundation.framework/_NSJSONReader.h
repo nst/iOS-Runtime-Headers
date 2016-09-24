@@ -3,9 +3,9 @@
  */
 
 @interface _NSJSONReader : NSObject {
-    NSError *error;
-    id input;
-    int kind;
+    NSError * error;
+    id  input;
+    int  kind;
 }
 
 + (BOOL)validForJSON:(id)arg1 depth:(unsigned int)arg2 allowFragments:(BOOL)arg3;

@@ -3,7 +3,7 @@
  */
 
 @interface CNPromise : NSObject <CNPromise> {
-    CNFuture *_future;
+    CNFuture * _future;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -12,7 +12,9 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
+- (id /* block */)boolErrorCompletionHandlerAdapter;
 - (id /* block */)completionHandlerAdapter;
+- (id /* block */)completionHandlerAdapterWithDefaultValue:(id)arg1;
 - (void)dealloc;
 - (id /* block */)errorOnlyCompletionHandlerAdapter;
 - (BOOL)finishWithError:(id)arg1;

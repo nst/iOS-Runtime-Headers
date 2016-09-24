@@ -8,11 +8,11 @@
         unsigned int latitudeDelta : 1; 
         unsigned int longitude : 1; 
         unsigned int longitudeDelta : 1; 
-    } _has;
-    double _latitude;
-    double _latitudeDelta;
-    double _longitude;
-    double _longitudeDelta;
+    }  _has;
+    double  _latitude;
+    double  _latitudeDelta;
+    double  _longitude;
+    double  _longitudeDelta;
 }
 
 @property (nonatomic) BOOL hasLatitude;

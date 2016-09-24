@@ -3,33 +3,58 @@
  */
 
 @interface MPAVRoutingTableViewCell : UITableViewCell {
-    BOOL _debugCell;
-    <MPAVRoutingTableViewCellDelegate> *_delegate;
-    UILabel *_mirroringLabel;
-    UIView *_mirroringSeparatorView;
-    UISwitch *_mirroringSwitch;
-    BOOL _mirroringSwitchVisible;
-    MPAVRoute *_route;
+    BOOL  _debugCell;
+    <MPAVRoutingTableViewCellDelegate> * _delegate;
+    UIImageView * _iconImageView;
+    unsigned int  _iconStyle;
+    UILabel * _mirroringLabel;
+    UIView * _mirroringSeparatorView;
+    unsigned int  _mirroringStyle;
+    UISwitch * _mirroringSwitch;
+    BOOL  _mirroringSwitchVisible;
+    BOOL  _pendingSelection;
+    MPAVRoute * _route;
+    UILabel * _routeNameLabel;
+    UIActivityIndicatorView * _spinnerView;
+    UILabel * _subtitleTextLabel;
 }
 
 @property (getter=isDebugCell, nonatomic) BOOL debugCell;
 @property (nonatomic) <MPAVRoutingTableViewCellDelegate> *delegate;
+@property (nonatomic) unsigned int iconStyle;
+@property (nonatomic) unsigned int mirroringStyle;
 @property (nonatomic) BOOL mirroringSwitchVisible;
+@property (getter=isPendingSelection, nonatomic) BOOL pendingSelection;
 @property (nonatomic, retain) MPAVRoute *route;
 
 - (void).cxx_destruct;
+- (id)_airpodsIconImageName;
+- (void)_configureDetailLabel:(id)arg1;
 - (void)_configureLabel:(id)arg1;
+- (id)_currentDeviceRoutingIconImageName;
+- (id)_detailTextForRoute:(id)arg1;
+- (id)_iconImageForRoute:(id)arg1;
 - (void)_mirroringSwitchValueDidChange:(id)arg1;
+- (id)_routingImageStyleName;
 - (BOOL)_shouldShowMirroringAsEnabledForRoute:(id)arg1;
+- (BOOL)_shouldShowSeparateBatteryPercentagesForBatteryLevel:(id)arg1;
 - (id)delegate;
+- (unsigned int)iconStyle;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (BOOL)isDebugCell;
+- (BOOL)isPendingSelection;
 - (void)layoutSubviews;
+- (unsigned int)mirroringStyle;
 - (BOOL)mirroringSwitchVisible;
 - (id)route;
 - (void)setDebugCell:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setIconStyle:(unsigned int)arg1;
+- (void)setMirroringStyle:(unsigned int)arg1;
 - (void)setMirroringSwitchVisible:(BOOL)arg1;
 - (void)setMirroringSwitchVisible:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setPendingSelection:(BOOL)arg1;
 - (void)setRoute:(id)arg1;
+- (void)setTintColor:(id)arg1;
 
 @end

@@ -3,10 +3,10 @@
  */
 
 @interface _NSKeyedUnarchiverHelper : NSObject {
-    NSMutableArray *_allowedClasses;
-    NSError *_decodeError;
-    unsigned int _lastRef;
-    NSArray *_white;
+    NSMutableArray * _allowedClasses;
+    NSError * _decodeError;
+    unsigned int  _lastRef;
+    NSArray * _white;
 }
 
 @property (copy) NSError *decodeError;

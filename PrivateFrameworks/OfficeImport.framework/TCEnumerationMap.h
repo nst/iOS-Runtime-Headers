@@ -3,14 +3,14 @@
  */
 
 @interface TCEnumerationMap : NSObject {
-    BOOL m_caseSensitive;
-    struct __CFDictionary { } *m_stringToValue;
-    struct __CFDictionary { } *m_valueToString;
+    BOOL  m_caseSensitive;
+    struct __CFDictionary { } * m_stringToValue;
+    struct __CFDictionary { } * m_valueToString;
 }
 
 - (void)dealloc;
-- (id)initWithStructs:(const struct TCEnumerationStruct { int x1; id x2; /* Warning: Unrecognized filer type: '' using 'void*' */ void*x3; void*x4; void*x5; void*x6; void*x7; void*x8; void*x9; void*x10; void*x11; void*x12; void*x13; void*x14; void*x15; void*x16; }*)arg1 count:(int)arg2;
-- (id)initWithStructs:(const struct TCEnumerationStruct { int x1; id x2; /* Warning: Unrecognized filer type: '' using 'void*' */ void*x3; void*x4; void*x5; void*x6; void*x7; void*x8; void*x9; void*x10; void*x11; void*x12; void*x13; void*x14; void*x15; void*x16; void*x17; void*x18; void*x19; void*x20; void*x21; void*x22; void*x23; void*x24; void*x25; void*x26; void*x27; void*x28; void*x29; void*x30; void*x31; void*x32; void*x33; void*x34; void*x35; void*x36; void*x37; void*x38; void*x39; void*x40; void*x41; void*x42; void*x43; void*x44; void*x45; void*x46; void*x47; void*x48; void*x49; }*)arg1 count:(int)arg2 caseSensitive:(BOOL)arg3;
+- (id)initWithStructs:(const /* Warning: unhandled struct encoding: '{TCEnumerationStruct=i@}' */ struct TCEnumerationStruct { int x1; id x2; }*)arg1 count:(int)arg2;
+- (id)initWithStructs:(const /* Warning: unhandled struct encoding: '{TCEnumerationStruct=i@}' */ struct TCEnumerationStruct { int x1; id x2; }*)arg1 count:(int)arg2 caseSensitive:(BOOL)arg3;
 - (id)stringForValue:(int)arg1;
 - (long)valueForString:(id)arg1;
 

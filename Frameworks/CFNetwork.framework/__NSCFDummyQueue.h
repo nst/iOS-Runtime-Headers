@@ -3,7 +3,7 @@
  */
 
 @interface __NSCFDummyQueue : NSObject {
-    NSObject<OS_dispatch_queue> *_queue;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 - (void)addOperationWithBlock:(id /* block */)arg1;

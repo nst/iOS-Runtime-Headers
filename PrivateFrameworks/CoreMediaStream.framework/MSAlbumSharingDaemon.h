@@ -3,15 +3,15 @@
  */
 
 @interface MSAlbumSharingDaemon : MSDaemon {
-    int _busyCount;
-    MSASDaemonModel *_daemonModel;
-    <MSAlbumSharingDaemonDelegate> *_delegate;
-    BOOL _isRetryingOutstandingActivities;
-    NSObject<OS_dispatch_queue> *_mapQueue;
-    NSMutableDictionary *_nextUpdateDateByPersonID;
-    NSMutableDictionary *_personIDToDelegateMap;
-    NSMutableDictionary *_personIDToStateMachineMap;
-    NSObject<OS_dispatch_queue> *_workQueue;
+    int  _busyCount;
+    MSASDaemonModel * _daemonModel;
+    <MSAlbumSharingDaemonDelegate> * _delegate;
+    BOOL  _isRetryingOutstandingActivities;
+    NSObject<OS_dispatch_queue> * _mapQueue;
+    NSMutableDictionary * _nextUpdateDateByPersonID;
+    NSMutableDictionary * _personIDToDelegateMap;
+    NSMutableDictionary * _personIDToStateMachineMap;
+    NSObject<OS_dispatch_queue> * _workQueue;
 }
 
 @property (nonatomic) int busyCount;

@@ -3,7 +3,7 @@
  */
 
 @interface CKDPWebAuthTokenRetrieveRequest : PBRequest <NSCopying> {
-    NSString *_apiToken;
+    NSString * _apiToken;
 }
 
 @property (nonatomic, retain) NSString *apiToken;
@@ -22,6 +22,8 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (unsigned int)requestTypeCode;
+- (Class)responseClass;
 - (void)setApiToken:(id)arg1;
 - (void)writeTo:(id)arg1;
 

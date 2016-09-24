@@ -3,8 +3,8 @@
  */
 
 @interface UIKeyCommandDiscoverabilityHUDViewController : UIViewController {
-    NSArray *_keyCommands;
-    struct __GSKeyboard { } *_keyboard;
+    NSArray * _keyCommands;
+    struct __GSKeyboard { } * _keyboard;
 }
 
 @property (nonatomic, retain) UIKeyCommandDiscoverabilityHUDView *view;

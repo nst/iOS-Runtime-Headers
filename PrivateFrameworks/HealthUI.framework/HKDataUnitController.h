@@ -2,11 +2,12 @@
    Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
  */
 
-@interface HKDataUnitController : NSObject {
-    NSArray *_dataUnits;
-    NSDictionary *_dataUnitsByCategoryIdentifier;
-    NSDictionary *_dataUnitsByIdentifier;
-    NSDictionary *_dataUnitsByObjectType;
+@interface HKDataUnitController : NSObject <_HKWheelchairUseCharacteristicCacheObserver> {
+    NSArray * _dataUnits;
+    NSDictionary * _dataUnitsByCategoryIdentifier;
+    NSDictionary * _dataUnitsByIdentifier;
+    NSDictionary * _dataUnitsByObjectType;
+    _HKWheelchairUseCharacteristicCache * _wheelchairUseCharacteristicCache;
 }
 
 + (id)sharedInstance;
@@ -18,5 +19,7 @@
 - (id)dataUnitWithIdentifier:(id)arg1;
 - (id)dataUnitsForCategoryIdentifier:(int)arg1;
 - (id)init;
+- (void)setWheelchairUseCharacteristicCache:(id)arg1;
+- (void)wheelchairUseCharacteristicCache:(id)arg1 wheelchairUsageDidChange:(BOOL)arg2;
 
 @end

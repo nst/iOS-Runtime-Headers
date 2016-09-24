@@ -3,7 +3,7 @@
  */
 
 @interface OABTableSortedIntArray : NSObject {
-    NSArray *mIntArray;
+    NSArray * mIntArray;
 }
 
 - (void)dealloc;

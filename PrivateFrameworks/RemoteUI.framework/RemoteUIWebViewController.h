@@ -3,12 +3,12 @@
  */
 
 @interface RemoteUIWebViewController : UIViewController <UIWebViewDelegate> {
-    <RemoteUIWebViewControllerDelegate> *_delegate;
-    id /* block */ _loadCompletion;
-    BOOL _scalesPageToFit;
-    _UIBackdropView *_statusBarBackdrop;
-    UIToolbar *_toolbar;
-    UIWebView *_webView;
+    <RemoteUIWebViewControllerDelegate> * _delegate;
+    id /* block */  _loadCompletion;
+    BOOL  _scalesPageToFit;
+    _UIBackdropView * _statusBarBackdrop;
+    UIToolbar * _toolbar;
+    UIWebView * _webView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

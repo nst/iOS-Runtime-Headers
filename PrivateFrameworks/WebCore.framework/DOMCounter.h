@@ -9,7 +9,6 @@
 @property (readonly, copy) NSString *separator;
 
 - (void)dealloc;
-- (void)finalize;
 - (id)identifier;
 - (id)listStyle;
 - (id)separator;

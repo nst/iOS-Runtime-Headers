@@ -17,6 +17,8 @@
 - (void)cameraController:(VKCameraController *)arg1 willChangeRegionAnimated:(BOOL)arg2;
 - (void)cameraControllerDidChangeCameraState:(VKCameraController *)arg1;
 - (void)cameraControllerDidFinishInitialTrackingAnimation:(VKCameraController *)arg1;
+- (void)cameraControllerRequestsLayout:(VKCameraController *)arg1;
+- (void)cameraControllerRequestsUpdateDisplayLinkStatus:(VKCameraController *)arg1;
 - (void)runAnimation:(VKAnimation *)arg1;
 
 @end

@@ -3,11 +3,11 @@
  */
 
 @interface CMNetworkActivityMonitor : NSObject {
-    CMNetworkActivityObserver *_cmObserver;
-    int _monitoringActiveCount;
-    BOOL _networkIsActive;
-    NSObject<OS_dispatch_queue> *_queue;
-    int _showingNetworkActivityCount;
+    CMNetworkActivityObserver * _cmObserver;
+    int  _monitoringActiveCount;
+    BOOL  _networkIsActive;
+    NSObject<OS_dispatch_queue> * _queue;
+    int  _showingNetworkActivityCount;
 }
 
 @property (setter=setCMObserver:, nonatomic, retain) CMNetworkActivityObserver *cmObserver;

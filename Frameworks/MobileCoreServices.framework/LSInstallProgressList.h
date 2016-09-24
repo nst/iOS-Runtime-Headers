@@ -3,8 +3,8 @@
  */
 
 @interface LSInstallProgressList : NSObject {
-    NSMutableDictionary *_progresses;
-    NSMutableDictionary *_subscriptions;
+    NSMutableDictionary * _progresses;
+    NSMutableDictionary * _subscriptions;
 }
 
 - (void)addSubscriber:(id)arg1 forPublishingKey:(id)arg2 andBundleID:(id)arg3;

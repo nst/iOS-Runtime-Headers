@@ -3,8 +3,8 @@
  */
 
 @interface MFPTintEffect : MFPEffect {
-    int mAmount;
-    int mHue;
+    int  mAmount;
+    int  mHue;
 }
 
 + (id)GUID;

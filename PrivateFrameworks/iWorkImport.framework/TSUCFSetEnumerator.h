@@ -2,11 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSUCFSetEnumerator : NSObject <NSFastEnumeration> {
-    long mCount;
-    long mIndex;
-    void *mInlineObjects;
-    const void **mObjects;
+@interface TSUCFSetEnumerator : NSEnumerator <NSFastEnumeration> {
+    long  mCount;
+    long  mIndex;
+    void * mInlineObjects;
+    const void ** mObjects;
 }
 
 - (id)allObjects;

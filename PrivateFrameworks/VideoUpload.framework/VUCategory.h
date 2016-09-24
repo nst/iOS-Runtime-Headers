@@ -3,8 +3,8 @@
  */
 
 @interface VUCategory : NSObject {
-    NSString *_displayName;
-    id _value;
+    NSString * _displayName;
+    id  _value;
 }
 
 @property (nonatomic, retain) NSString *displayName;

@@ -9,7 +9,7 @@
         struct __compressed_pair<TSCH3D::PODType<unsigned char> *, std::__1::allocator<TSCH3D::PODType<unsigned char> > > { 
             struct PODType<unsigned char> {} *__first_; 
         } __end_cap_; 
-    } mContainer;
+    }  mContainer;
 }
 
 @property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{vector<TSCH3D::PODType<unsigned char>' */ struct *container; /* unknown property attribute:  std::__1::allocator<TSCH3D::PODType<unsigned char> > >=^{PODType<unsigned char>}}} */

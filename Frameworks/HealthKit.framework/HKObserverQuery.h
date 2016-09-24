@@ -3,7 +3,7 @@
  */
 
 @interface HKObserverQuery : HKQuery {
-    id /* block */ _updateHandler;
+    id /* block */  _updateHandler;
 }
 
 @property (nonatomic, readonly) id /* block */ updateHandler;

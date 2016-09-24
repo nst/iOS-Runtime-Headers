@@ -5,10 +5,10 @@
 @interface WKRemoteObject : NSObject {
     struct RetainPtr<_WKRemoteObjectInterface> { 
         void *m_ptr; 
-    } _interface;
+    }  _interface;
     struct RetainPtr<_WKRemoteObjectRegistry> { 
         void *m_ptr; 
-    } _objectRegistry;
+    }  _objectRegistry;
 }
 
 - (id).cxx_construct;

@@ -3,9 +3,9 @@
  */
 
 @interface MDLNormalMapTexture : MDLTexture {
-    float _contrast;
-    float _smoothness;
-    MDLTexture *_sourceTexture;
+    double  _contrast;
+    double  _smoothness;
+    MDLTexture * _sourceTexture;
 }
 
 - (void).cxx_destruct;

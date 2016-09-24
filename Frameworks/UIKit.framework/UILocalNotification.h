@@ -10,6 +10,7 @@
 @property (nonatomic, copy) NSString *alertTitle;
 @property (nonatomic) BOOL allowSnooze;
 @property (nonatomic) int applicationIconBadgeNumber;
+@property (nonatomic, retain) NSNumber *audioVolume;
 @property (nonatomic, copy) NSString *category;
 @property (nonatomic, copy) NSString *customLockSliderLabel;
 @property (nonatomic, copy) NSDate *fireDate;
@@ -30,10 +31,13 @@
 @property (nonatomic, copy) NSString *snoozedNotificationName;
 @property (nonatomic, copy) NSString *soundName;
 @property (nonatomic) int soundType;
+@property (nonatomic, copy) NSString *threadIdentifier;
 @property (nonatomic, copy) NSTimeZone *timeZone;
 @property (nonatomic) int totalRepeatCount;
 @property (nonatomic, copy) NSDictionary *userInfo;
 @property (nonatomic, copy) NSString *vibrationName;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (id)alloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
@@ -50,5 +54,9 @@
 - (id)nextFireDateAfterDate:(id)arg1 localTimeZone:(id)arg2;
 - (id)nextFireDateForLastFireDate:(id)arg1;
 - (void)validate;
+
+// Image: /System/Library/PrivateFrameworks/UserNotificationsServer.framework/UserNotificationsServer
+
+- (void)uns_safeSetUserInfo:(id)arg1;
 
 @end

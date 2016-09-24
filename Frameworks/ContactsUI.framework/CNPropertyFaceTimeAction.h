@@ -3,8 +3,8 @@
  */
 
 @interface CNPropertyFaceTimeAction : CNPropertyAction <CNPropertyBestIDSValueQueryDelegate> {
-    CNPropertyBestIDSValueQuery *_bestFaceTimeQuery;
-    int _type;
+    CNPropertyBestIDSValueQuery * _bestFaceTimeQuery;
+    int  _type;
 }
 
 @property (nonatomic, retain) CNPropertyBestIDSValueQuery *bestFaceTimeQuery;

@@ -3,8 +3,8 @@
  */
 
 @interface HKDataCategoryController : NSObject {
-    NSMutableArray *_dataCategories;
-    NSMutableDictionary *_dataCategoriesByCategoryID;
+    NSMutableArray * _dataCategories;
+    NSMutableDictionary * _dataCategoriesByCategoryID;
 }
 
 + (id)sharedInstance;

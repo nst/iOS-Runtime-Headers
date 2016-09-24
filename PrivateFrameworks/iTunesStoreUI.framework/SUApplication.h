@@ -3,9 +3,9 @@
  */
 
 @interface SUApplication : UIApplication <UIApplicationDelegate> {
-    UIColor *_interactionTintColor;
-    BOOL _terminateOnNextSuspend;
-    UIWindow *_window;
+    UIColor * _interactionTintColor;
+    BOOL  _terminateOnNextSuspend;
+    UIWindow * _window;
 }
 
 @property (readonly, copy) NSString *debugDescription;

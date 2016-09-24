@@ -3,17 +3,17 @@
  */
 
 @interface MSPPinStorage : PBCodable <NSCopying> {
-    MSPDroppedPin *_droppedPin;
+    MSPDroppedPin * _droppedPin;
     struct { 
         unsigned int position : 1; 
         unsigned int timestamp : 1; 
         unsigned int type : 1; 
-    } _has;
-    NSString *_identifier;
-    double _position;
-    double _timestamp;
-    int _type;
-    PBUnknownFields *_unknownFields;
+    }  _has;
+    NSString * _identifier;
+    double  _position;
+    double  _timestamp;
+    int  _type;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, retain) MSPDroppedPin *droppedPin;
@@ -29,6 +29,7 @@
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 - (void).cxx_destruct;
+- (int)StringAsType:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -55,6 +56,7 @@
 - (void)setType:(int)arg1;
 - (double)timestamp;
 - (int)type;
+- (id)typeAsString:(int)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
 

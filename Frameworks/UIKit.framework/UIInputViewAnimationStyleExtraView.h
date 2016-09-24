@@ -3,10 +3,10 @@
  */
 
 @interface UIInputViewAnimationStyleExtraView : NSObject {
-    int _alignment;
-    id /* block */ _animation;
-    int _clipContainerType;
-    UIView *_view;
+    int  _alignment;
+    id /* block */  _animation;
+    int  _clipContainerType;
+    UIView * _view;
 }
 
 @property (nonatomic) int alignment;

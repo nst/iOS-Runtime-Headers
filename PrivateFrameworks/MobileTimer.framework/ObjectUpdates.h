@@ -3,8 +3,8 @@
  */
 
 @interface ObjectUpdates : NSObject {
-    NSMutableArray *_addedObjects;
-    NSMutableArray *_removedObjects;
+    NSMutableArray * _addedObjects;
+    NSMutableArray * _removedObjects;
 }
 
 @property (nonatomic, readonly) NSMutableArray *addedObjects;

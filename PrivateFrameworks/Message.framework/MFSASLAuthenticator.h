@@ -3,10 +3,10 @@
  */
 
 @interface MFSASLAuthenticator : NSObject {
-    MFAccount *_account;
-    MFAuthScheme *_authScheme;
-    int _authenticationState;
-    MFConnection *_connection;
+    MFAccount * _account;
+    MFAuthScheme * _authScheme;
+    int  _authenticationState;
+    MFConnection * _connection;
 }
 
 - (id)account;

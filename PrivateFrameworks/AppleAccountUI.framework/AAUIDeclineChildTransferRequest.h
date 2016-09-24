@@ -3,7 +3,7 @@
  */
 
 @interface AAUIDeclineChildTransferRequest : AAFamilyRequest {
-    NSString *_requestCode;
+    NSString * _requestCode;
 }
 
 @property (nonatomic, copy) NSString *requestCode;

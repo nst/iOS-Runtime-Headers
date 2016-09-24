@@ -3,11 +3,11 @@
  */
 
 @interface CAEmitterBehavior : NSObject <NSCoding> {
-    void *_attr;
-    void *_cache;
-    unsigned int _flags;
-    NSString *_name;
-    unsigned int _type;
+    void * _attr;
+    void * _cache;
+    unsigned int  _flags;
+    NSString * _name;
+    unsigned int  _type;
 }
 
 @property (getter=isEnabled) BOOL enabled;

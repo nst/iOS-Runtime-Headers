@@ -3,15 +3,13 @@
  */
 
 @interface SKUILibraryItem : NSObject <NSCopying> {
-    NSString *_storeFlavorIdentifier;
-    SKUIStoreIdentifier *_storeIdentifer;
-    SKUIStoreIdentifier *_storeIdentifier;
-    NSNumber *_storeItemIdentifier;
+    NSString * _storeFlavorIdentifier;
+    SKUIStoreIdentifier * _storeIdentifier;
 }
 
 @property (nonatomic, copy) NSString *storeFlavorIdentifier;
 @property (nonatomic, copy) SKUIStoreIdentifier *storeIdentifier;
-@property (nonatomic, copy) NSNumber *storeItemIdentifier;
+@property (nonatomic, readonly) NSNumber *storeItemIdentifier;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -20,7 +18,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)setStoreFlavorIdentifier:(id)arg1;
 - (void)setStoreIdentifier:(id)arg1;
-- (void)setStoreItemIdentifier:(id)arg1;
 - (id)storeFlavorIdentifier;
 - (id)storeIdentifier;
 - (id)storeItemIdentifier;

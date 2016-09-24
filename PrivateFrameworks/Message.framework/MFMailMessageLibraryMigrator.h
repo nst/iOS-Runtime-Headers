@@ -3,7 +3,7 @@
  */
 
 @interface MFMailMessageLibraryMigrator : NSObject {
-    int _needsSpotlightReindex;
+    int  _needsSpotlightReindex;
 }
 
 - (BOOL)migrateWithSQLiteConnection:(id)arg1;

@@ -3,8 +3,8 @@
  */
 
 @interface OADImageRecolorInfo : NSObject {
-    NSDictionary *mColors;
-    NSDictionary *mFills;
+    NSDictionary * mColors;
+    NSDictionary * mFills;
 }
 
 - (id)colors;

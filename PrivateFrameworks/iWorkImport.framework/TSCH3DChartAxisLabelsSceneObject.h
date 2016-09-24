@@ -3,8 +3,8 @@
  */
 
 @interface TSCH3DChartAxisLabelsSceneObject : TSCH3DChartLabelsContainingSceneObject {
-    <TSCH3DAxisLabelPositioner><NSObject> *mCategoryLabelPositioner;
-    <TSCH3DAxisLabelPositioner><NSObject> *mValueLabelPositioner;
+    <TSCH3DAxisLabelPositioner><NSObject> * mCategoryLabelPositioner;
+    <TSCH3DAxisLabelPositioner><NSObject> * mValueLabelPositioner;
 }
 
 @property (retain) <TSCH3DAxisLabelPositioner> *categoryLabelPositioner;
@@ -15,7 +15,7 @@
 + (void)setSelectionPath:(id)arg1 selectionMode:(int)arg2 forScene:(id)arg3;
 + (unsigned int)valueAxisLabelAlignmentForScene:(id)arg1;
 
-- (unsigned int)alignmentForPositioner:(id)arg1 scene:(id)arg2 enumerator:(id)arg3 returningDirection:(struct tvec3<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; }*)arg4;
+- (unsigned int)alignmentForPositioner:(id)arg1 scene:(id)arg2 enumerator:(id)arg3 returningDirection:(struct tvec3<float> { union { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; union { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; union { double x_3_1_1; double x_3_1_2; double x_3_1_3; } x3; }*)arg4;
 - (BOOL)canEditTextForSelectionPath:(id)arg1 forInfo:(id)arg2;
 - (BOOL)canRenderSelectionPath:(id)arg1 forInfo:(id)arg2;
 - (id)categoryLabelPositioner;
@@ -23,14 +23,14 @@
 - (void)dealloc;
 - (id)effects;
 - (int)knobsModeForLabelType:(int)arg1 scene:(id)arg2;
-- (struct tvec3<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; })labelPositionDirectionForScene:(id)arg1 enumerator:(id)arg2;
-- (struct tvec3<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; })p_categoryLabelsOffsetFromAccessor:(const struct ChartScenePropertyAccessor { id x1; }*)arg1;
+- (struct tvec3<float> { union { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; union { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; union { double x_3_1_1; double x_3_1_2; double x_3_1_3; } x3; })labelPositionDirectionForScene:(id)arg1 enumerator:(id)arg2;
+- (struct tvec3<float> { union { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; union { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; union { double x_3_1_1; double x_3_1_2; double x_3_1_3; } x3; })p_categoryLabelsOffsetFromAccessor:(const struct ChartScenePropertyAccessor { id x1; }*)arg1;
 - (int)p_categoryStride:(id)arg1;
 - (void)p_renderCategoryLabels:(id)arg1;
-- (void)p_renderLabels:(id)arg1 labelType:(int)arg2 part:(struct TSCH3DScenePart { id x1; })arg3 positioner:(id)arg4 offset:(const struct tvec3<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; }*)arg5 offset2DBlock:(id /* block */)arg6 strideBlock:(id /* block */)arg7 skipFirst:(BOOL)arg8 showLast:(BOOL)arg9;
+- (void)p_renderLabels:(id)arg1 labelType:(int)arg2 part:(struct TSCH3DScenePart { id x1; })arg3 positioner:(id)arg4 offset:(const struct tvec3<float> { union { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; union { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; union { double x_3_1_1; double x_3_1_2; double x_3_1_3; } x3; }*)arg5 offset2DBlock:(id /* block */)arg6 strideBlock:(id /* block */)arg7 skipFirst:(BOOL)arg8 showLast:(BOOL)arg9;
 - (void)p_renderValueLabels:(id)arg1;
-- (void)p_setOffset:(const struct tvec3<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; }*)arg1 forLabelType:(int)arg2 pipeline:(id)arg3 part:(struct TSCH3DScenePart { id x1; })arg4 positioner:(id)arg5;
-- (struct tvec3<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; })p_valueLabelsOffsetFromAccessor:(const struct ChartScenePropertyAccessor { id x1; }*)arg1;
+- (void)p_setOffset:(const struct tvec3<float> { union { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; union { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; union { double x_3_1_1; double x_3_1_2; double x_3_1_3; } x3; }*)arg1 forLabelType:(int)arg2 pipeline:(id)arg3 part:(struct TSCH3DScenePart { id x1; })arg4 positioner:(id)arg5;
+- (struct tvec3<float> { union { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; union { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; union { double x_3_1_1; double x_3_1_2; double x_3_1_3; } x3; })p_valueLabelsOffsetFromAccessor:(const struct ChartScenePropertyAccessor { id x1; }*)arg1;
 - (void)postRenderBounds:(id)arg1;
 - (void)renderAnnotatedLabels:(id)arg1;
 - (id)renderInfoForSelectionPath:(id)arg1 info:(id)arg2;

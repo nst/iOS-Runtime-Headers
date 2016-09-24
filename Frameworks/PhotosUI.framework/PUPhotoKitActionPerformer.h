@@ -3,9 +3,10 @@
  */
 
 @interface PUPhotoKitActionPerformer : PUAssetActionPerformer {
-    PUPhotoKitDataSourceManager *_photoKitDataSourceManager;
+    PUPhotoKitDataSourceManager * _photoKitDataSourceManager;
 }
 
+@property (nonatomic, readonly, copy) NSArray *assets;
 @property (nonatomic, retain) PUPhotoKitDataSourceManager *photoKitDataSourceManager;
 
 + (BOOL)canPerformOnAsset:(id)arg1 inAssetCollection:(id)arg2;
@@ -16,7 +17,6 @@
 - (id)_photosDataSourceFromDataSourceManager:(id)arg1;
 - (void)forceIncludeAssetsInDataSource;
 - (void)instantlyExcludeAssetsFromDataSource;
-- (void)instantlyInvalidateAssetsInDataSource;
 - (id)photoKitDataSourceManager;
 - (void)setPhotoKitDataSourceManager:(id)arg1;
 - (void)stopExcludingAssetsFromDataSource;

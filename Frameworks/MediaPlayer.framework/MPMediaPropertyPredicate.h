@@ -3,9 +3,9 @@
  */
 
 @interface MPMediaPropertyPredicate : MPMediaPredicate <MPPProtobufferCoding> {
-    int _comparisonType;
-    NSString *_property;
-    id _value;
+    int  _comparisonType;
+    NSString * _property;
+    id  _value;
 }
 
 @property (nonatomic) int comparisonType;

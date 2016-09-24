@@ -3,7 +3,7 @@
  */
 
 @interface CAMStillImageStabilizationCommand : CAMCaptureCommand {
-    BOOL __stabilizationEnabled;
+    BOOL  __stabilizationEnabled;
 }
 
 @property (getter=_isStabilizationEnabled, nonatomic, readonly) BOOL _stabilizationEnabled;

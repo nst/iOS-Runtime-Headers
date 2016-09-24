@@ -3,15 +3,15 @@
  */
 
 @interface AWDSiriServerConnectionFailed : PBCodable <NSCopying> {
-    int _connectionType;
-    long long _errorCode;
-    NSString *_errorDomain;
+    int  _connectionType;
+    long long  _errorCode;
+    NSString * _errorDomain;
     struct { 
         unsigned int errorCode : 1; 
         unsigned int timestamp : 1; 
         unsigned int connectionType : 1; 
-    } _has;
-    unsigned long long _timestamp;
+    }  _has;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) int connectionType;

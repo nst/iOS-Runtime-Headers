@@ -3,8 +3,8 @@
  */
 
 @interface UIStoryboardPushSegueTemplate : UIStoryboardSegueTemplate {
-    int _destinationContainmentContext;
-    int _splitViewControllerIndex;
+    int  _destinationContainmentContext;
+    int  _splitViewControllerIndex;
 }
 
 @property (nonatomic) int destinationContainmentContext;

@@ -3,7 +3,7 @@
  */
 
 @interface GKNSPredicateRule : GKRule {
-    NSPredicate *_predicate;
+    NSPredicate * _predicate;
 }
 
 @property (nonatomic, readonly, retain) NSPredicate *predicate;

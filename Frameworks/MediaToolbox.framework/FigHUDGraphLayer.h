@@ -3,17 +3,17 @@
  */
 
 @interface FigHUDGraphLayer : CALayer {
-    struct __CTFont { } *_Font;
-    struct CGPoint { float x1; float x2; } *_Lines;
-    int _MaxLength;
-    float *_Maxes;
-    float *_Mins;
-    int _NumGraphs;
-    int *_NumValues;
-    int *_StartIndex;
-    struct __CFDictionary { } *_TextAttributes;
-    float **_Values;
-    NSMutableArray *_valueLabels;
+    struct __CTFont { } * _Font;
+    struct CGPoint { double x1; double x2; } * _Lines;
+    int  _MaxLength;
+    double * _Maxes;
+    double * _Mins;
+    int  _NumGraphs;
+    int * _NumValues;
+    int * _StartIndex;
+    struct __CFDictionary { } * _TextAttributes;
+    double ** _Values;
+    NSMutableArray * _valueLabels;
 }
 
 - (void)dealloc;

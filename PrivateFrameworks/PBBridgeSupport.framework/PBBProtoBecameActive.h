@@ -3,7 +3,7 @@
  */
 
 @interface PBBProtoBecameActive : PBCodable <NSCopying> {
-    BOOL _wantsConfirmation;
+    BOOL  _wantsConfirmation;
 }
 
 @property (nonatomic) BOOL wantsConfirmation;

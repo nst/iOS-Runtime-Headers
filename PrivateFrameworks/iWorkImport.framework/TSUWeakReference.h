@@ -3,7 +3,7 @@
  */
 
 @interface TSUWeakReference : NSObject {
-    id mObject;
+    id  mObject;
 }
 
 @property (nonatomic, readonly) id object;

@@ -3,17 +3,19 @@
  */
 
 @interface _UIViewServiceInterface : NSObject <NSXPCConnectionDelegate> {
-    BOOL __automatic_invalidation_invalidated;
-    int __automatic_invalidation_retainCount;
-    bool _isTerminated;
-    _UIRemoteViewService *_service;
-    NSString *_serviceBundleIdentifier;
-    NSXPCConnection *_serviceConnection;
-    BKSProcessAssertion *_serviceProcessAssertion;
-    _UIAsyncInvocation *_terminateInvocation;
-    NSError *_terminationError;
-    id /* block */ _terminationHandler;
-    int _terminationStateLock;
+    BOOL  __automatic_invalidation_invalidated;
+    int  __automatic_invalidation_retainCount;
+    bool  _isTerminated;
+    _UIRemoteViewService * _service;
+    NSString * _serviceBundleIdentifier;
+    NSXPCConnection * _serviceConnection;
+    BKSProcessAssertion * _serviceProcessAssertion;
+    _UIAsyncInvocation * _terminateInvocation;
+    NSError * _terminationError;
+    id /* block */  _terminationHandler;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _terminationStateLock;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,8 +3,8 @@
  */
 
 @interface TSCHMultiDataChartRepElementIndex : NSObject <NSCopying> {
-    unsigned int mSeriesIndex;
-    unsigned int mValueIndex;
+    unsigned int  mSeriesIndex;
+    unsigned int  mValueIndex;
 }
 
 @property (nonatomic, readonly) unsigned int seriesIndex;

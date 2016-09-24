@@ -5,6 +5,6 @@
 
 @required
 
-- (double)heightAtPoint:(struct VKPoint { double x1; double x2; double x3; })arg1;
+- (double)heightAtPoint:(struct Matrix<double, 3, 1> { double x1[3]; })arg1;
 
 @end

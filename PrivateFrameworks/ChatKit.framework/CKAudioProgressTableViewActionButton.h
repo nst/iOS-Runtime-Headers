@@ -3,11 +3,11 @@
  */
 
 @interface CKAudioProgressTableViewActionButton : _UITableViewCellActionButton <SBBulletinCellButton> {
-    double _currentProgress;
-    double _duration;
-    UILabel *_label;
-    double _lastProgress;
-    CKAudioProgressView *_progressView;
+    double  _currentProgress;
+    double  _duration;
+    UILabel * _label;
+    double  _lastProgress;
+    CKAudioProgressView * _progressView;
 }
 
 @property (nonatomic) double currentProgress;
@@ -20,6 +20,7 @@
 @property (nonatomic, retain) CKAudioProgressView *progressView;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)_playButtonHit:(id)arg1;
 - (void)_updateTime:(id)arg1;
 - (double)currentProgress;
@@ -27,9 +28,9 @@
 - (void)didFinish:(id)arg1;
 - (void)didStop:(id)arg1;
 - (double)duration;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)label;
-- (struct CGSize { float x1; float x2; })labelSizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })labelSizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (double)lastProgress;
 - (void)layoutSubviews;
 - (id)progressView;
@@ -39,6 +40,6 @@
 - (void)setLabel:(id)arg1;
 - (void)setLastProgress:(double)arg1;
 - (void)setProgressView:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 
 @end

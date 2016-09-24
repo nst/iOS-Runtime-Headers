@@ -3,7 +3,7 @@
  */
 
 @interface GCGamepadSnapshot : GCGamepad {
-    NSData *snapshotData;
+    NSData * snapshotData;
 }
 
 @property (copy) NSData *snapshotData;

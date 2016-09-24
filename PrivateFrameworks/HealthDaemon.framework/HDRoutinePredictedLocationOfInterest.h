@@ -3,11 +3,11 @@
  */
 
 @interface HDRoutinePredictedLocationOfInterest : NSObject {
-    double _confidence;
-    HDRoutineLocationOfInterest *_locationOfInterest;
-    int _modeOfTransportation;
-    NSDate *_nextEntryTime;
-    int _sourceType;
+    double  _confidence;
+    HDRoutineLocationOfInterest * _locationOfInterest;
+    int  _modeOfTransportation;
+    NSDate * _nextEntryTime;
+    int  _sourceType;
 }
 
 @property (nonatomic) double confidence;

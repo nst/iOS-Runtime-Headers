@@ -3,7 +3,7 @@
  */
 
 @interface AVAudioMixEffectParameters : NSObject <NSCopying> {
-    AVAudioMixEffectParametersInternal *_audioEffect;
+    AVAudioMixEffectParametersInternal * _audioEffect;
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

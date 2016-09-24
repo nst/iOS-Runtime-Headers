@@ -3,8 +3,8 @@
  */
 
 @interface NACAudioRoutesMessage : PBCodable <NSCopying> {
-    NSMutableArray *_audioRoutes;
-    NSString *_category;
+    NSMutableArray * _audioRoutes;
+    NSString * _category;
 }
 
 @property (nonatomic, retain) NSMutableArray *audioRoutes;

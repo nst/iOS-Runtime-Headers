@@ -3,7 +3,7 @@
  */
 
 @interface ATWorkspaceObserver : LSApplicationWorkspaceObserver {
-    NSObject<LSApplicationWorkspaceObserverProtocol> *_delegate;
+    NSObject<LSApplicationWorkspaceObserverProtocol> * _delegate;
 }
 
 @property (nonatomic) NSObject<ATWorkspaceObserverDelegate> *delegate;

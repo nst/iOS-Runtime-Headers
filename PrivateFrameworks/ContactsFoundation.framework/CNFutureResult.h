@@ -3,8 +3,8 @@
  */
 
 @interface CNFutureResult : NSObject {
-    NSError *_error;
-    id _result;
+    NSError * _error;
+    id  _result;
 }
 
 @property (nonatomic, copy) NSError *error;

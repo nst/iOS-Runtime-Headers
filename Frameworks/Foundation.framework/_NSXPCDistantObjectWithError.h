@@ -3,12 +3,12 @@
  */
 
 @interface _NSXPCDistantObjectWithError : _NSXPCDistantObject {
-    id /* block */ _errorBlock;
+    id /* block */  _errorBlock;
 }
 
 @property (copy) id /* block */ errorBlock;
 
-- (id)_initWithConnection:(id)arg1 proxyNumber:(unsigned long long)arg2 generationCount:(unsigned long long)arg3 interface:(id)arg4 error:(id /* block */)arg5;
+- (id)_initWithConnection:(id)arg1 proxyNumber:(unsigned int)arg2 generationCount:(unsigned int)arg3 interface:(id)arg4 error:(id /* block */)arg5;
 - (void)dealloc;
 - (id /* block */)errorBlock;
 - (void)forwardInvocation:(id)arg1;

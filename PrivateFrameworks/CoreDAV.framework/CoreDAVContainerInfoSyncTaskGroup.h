@@ -3,8 +3,8 @@
  */
 
 @interface CoreDAVContainerInfoSyncTaskGroup : CoreDAVTaskGroup <CoreDAVTaskDelegate> {
-    NSURL *_containerURL;
-    NSString *_previousSyncToken;
+    NSURL * _containerURL;
+    NSString * _previousSyncToken;
 }
 
 @property (readonly, copy) NSString *debugDescription;

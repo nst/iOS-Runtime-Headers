@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface NSOrderedSet : NSObject <NSCopying, NSFastEnumeration, NSMutableCopying, NSSecureCoding>
+@interface NSOrderedSet : NSObject <FCOrderedCollectionAdditions, NSCopying, NSFastEnumeration, NSMutableCopying, NSSecureCoding>
 
 @property (readonly) unsigned int count;
 
@@ -129,6 +129,22 @@
 - (id)_gkMapDictionaryWithKeyPath:(id)arg1 valueKeyPath:(id)arg2;
 - (id)_gkSortedOrderedSetUsingDescriptors:(id)arg1;
 - (id)_gkValuesForKeyPath:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
+
+- (BOOL)fc_containsObjectPassingTest:(id /* block */)arg1;
+- (id)fc_diffAgainstOrderedSet:(id)arg1;
+- (id)fc_diffAgainstOrderedSet:(id)arg1 withEqualityTest:(id /* block */)arg2 identityValueProvider:(id /* block */)arg3;
+- (id)fc_diffAgainstSortedOrderedCollection:(id)arg1 usingComparator:(id /* block */)arg2;
+- (void)fc_enumerateObjectsPairwiseUsingBlock:(id /* block */)arg1;
+- (id)fc_firstObjectPassingTest:(id /* block */)arg1;
+- (id)fc_indexesOfObjectsInOrderedSet:(id)arg1;
+- (BOOL)fc_isSortedUsingComparator:(id /* block */)arg1;
+- (id)fc_orderedSetByCollectingObjectsWithBlock:(id /* block */)arg1;
+- (id)fc_orderedSetByMinusingOrderedSet:(id)arg1;
+- (id)fc_orderedSetByTransformingWithBlock:(id /* block */)arg1;
+- (id)fc_orderedSetWithObjectsAtIndexes:(id)arg1;
+- (id)fc_orderedSetWithObjectsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 
 // Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
 

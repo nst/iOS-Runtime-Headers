@@ -3,7 +3,7 @@
  */
 
 @interface CAMSetVideoOrientationCommand : CAMCaptureCommand {
-    int __captureOrientation;
+    int  __captureOrientation;
 }
 
 @property (nonatomic, readonly) int _captureOrientation;

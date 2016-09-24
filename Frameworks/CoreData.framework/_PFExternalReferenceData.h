@@ -3,10 +3,10 @@
  */
 
 @interface _PFExternalReferenceData : NSData {
-    unsigned int _bytesLengthForExternalReference;
-    unsigned int _bytesLengthForStore;
-    void *_bytesPtrForExternalReference;
-    void *_bytesPtrForStore;
+    unsigned int  _bytesLengthForExternalReference;
+    unsigned int  _bytesLengthForStore;
+    void * _bytesPtrForExternalReference;
+    void * _bytesPtrForStore;
     struct __externalDataFlags { 
         unsigned int _isStoredExternally : 1; 
         unsigned int _hasMappedData : 1; 
@@ -15,11 +15,11 @@
         unsigned int _isStoredUbiquitously : 1; 
         unsigned int _createdByUbiquityImport : 1; 
         unsigned int _reserved : 24; 
-    } _externalDataFlags;
-    NSString *_externalReferenceLocation;
-    NSData *_originalData;
-    NSString *_safeguardLocation;
-    id _ubiquitousLocation;
+    }  _externalDataFlags;
+    NSString * _externalReferenceLocation;
+    NSData * _originalData;
+    NSString * _safeguardLocation;
+    id  _ubiquitousLocation;
 }
 
 + (BOOL)_releaseReservedMapFileDescriptor;

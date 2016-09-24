@@ -3,9 +3,9 @@
  */
 
 @interface CTCellularPlanSubscriptionDataUsage : NSObject <NSCopying, NSSecureCoding> {
-    double _dataCapacity;
-    NSString *_dataCategory;
-    double _dataUsed;
+    double  _dataCapacity;
+    NSString * _dataCategory;
+    double  _dataUsed;
 }
 
 @property (nonatomic, readonly) double dataCapacity;
@@ -21,7 +21,7 @@
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (id)initWithCategory:(id)arg1 andDataUsed:(int)arg2 andDataCapacity:(int)arg3;
+- (id)initWithCategory:(id)arg1 andDataUsed:(double)arg2 andDataCapacity:(double)arg3;
 - (id)initWithCoder:(id)arg1;
 
 @end

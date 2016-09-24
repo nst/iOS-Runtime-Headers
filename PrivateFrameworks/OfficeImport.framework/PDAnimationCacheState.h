@@ -3,7 +3,7 @@
  */
 
 @interface PDAnimationCacheState : NSObject {
-    OITSUNoCopyDictionary *mMediaNodeMap;
+    OITSUNoCopyDictionary * mMediaNodeMap;
 }
 
 - (void)dealloc;

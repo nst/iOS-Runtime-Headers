@@ -3,9 +3,9 @@
  */
 
 @interface TSUMovingAverageRegressionModel : TSURegressionModel {
-    int mNumTrendPoint;
-    double *mTrendXValues;
-    double *mTrendYValues;
+    int  mNumTrendPoint;
+    double * mTrendXValues;
+    double * mTrendYValues;
 }
 
 - (double)coefficientAtIndex:(int)arg1;

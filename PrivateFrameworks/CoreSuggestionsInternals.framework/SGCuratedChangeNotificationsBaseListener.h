@@ -3,7 +3,7 @@
  */
 
 @interface SGCuratedChangeNotificationsBaseListener : NSObject {
-    NSMapTable *_liveObserversMap;
+    NSMapTable * _liveObserversMap;
 }
 
 - (void).cxx_destruct;

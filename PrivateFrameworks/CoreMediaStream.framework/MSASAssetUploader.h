@@ -3,14 +3,14 @@
  */
 
 @interface MSASAssetUploader : MSASAssetTransferer {
-    NSMutableDictionary *_assetCollectionGUIDToRequestorContext;
-    NSMutableDictionary *_assetCollectionsToItemInFlightMap;
-    NSMutableSet *_assetCollectionsWithAuthorizationError;
-    NSMutableDictionary *_assetToAssetCollectionMap;
-    BOOL _didEncounterNetworkConditionError;
-    NSMutableArray *_finishedAssetCollections;
-    NSMutableArray *_itemsInFlight;
-    int _state;
+    NSMutableDictionary * _assetCollectionGUIDToRequestorContext;
+    NSMutableDictionary * _assetCollectionsToItemInFlightMap;
+    NSMutableSet * _assetCollectionsWithAuthorizationError;
+    NSMutableDictionary * _assetToAssetCollectionMap;
+    BOOL  _didEncounterNetworkConditionError;
+    NSMutableArray * _finishedAssetCollections;
+    NSMutableArray * _itemsInFlight;
+    int  _state;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *assetCollectionGUIDToRequestorContext;

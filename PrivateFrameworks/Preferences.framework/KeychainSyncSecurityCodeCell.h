@@ -3,10 +3,10 @@
  */
 
 @interface KeychainSyncSecurityCodeCell : PSEditableTableCell {
-    UILabel *_bulletTextLabel;
-    NSString *_firstPasscodeEntry;
-    int _mode;
-    int _securityCodeType;
+    UILabel * _bulletTextLabel;
+    NSString * _firstPasscodeEntry;
+    int  _mode;
+    int  _securityCodeType;
 }
 
 @property (nonatomic, retain) NSString *firstPasscodeEntry;

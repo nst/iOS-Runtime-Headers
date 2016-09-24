@@ -3,8 +3,8 @@
  */
 
 @interface TSPCopyAssistant : TSPPasteboardWriteAssistant {
-    BOOL _didAttemptToCopy;
-    TSPPasteboard *_pasteboard;
+    BOOL  _didAttemptToCopy;
+    TSPPasteboard * _pasteboard;
 }
 
 - (void).cxx_destruct;

@@ -5,10 +5,5 @@
 @interface SPLogs : NSObject
 
 + (BOOL)debugLogLevel;
-+ (int)fileLoggingLevel;
-+ (void)setDebugLogLevel:(id)arg1;
-+ (void)setupLoggingForDomain:(id)arg1;
-+ (void)setupLoggingLevelForDomain:(id)arg1;
-+ (BOOL)watchLogging;
 
 @end

@@ -3,16 +3,16 @@
  */
 
 @interface StepByStepUIViewController : AssistantSubUIViewController {
-    UIView *justTextContainerView;
-    UILabel *justTextLabel;
-    int sbsMode;
-    UILabel *spinnerWithStatusBelowLabel;
-    UIActivityIndicatorView *spinnerWithStatusBelowSpinner;
-    UIView *spinnerWithStatusBelowView;
-    UIView *tableFooterContainerView;
-    UIView *tableHeaderContainerView;
-    NetTopoMiniStaticLayout *topoLayout;
-    UIView *topoView;
+    UIView * justTextContainerView;
+    UILabel * justTextLabel;
+    int  sbsMode;
+    UILabel * spinnerWithStatusBelowLabel;
+    UIActivityIndicatorView * spinnerWithStatusBelowSpinner;
+    UIView * spinnerWithStatusBelowView;
+    UIView * tableFooterContainerView;
+    UIView * tableHeaderContainerView;
+    NetTopoMiniStaticLayout * topoLayout;
+    UIView * topoView;
 }
 
 @property (nonatomic, retain) UIView *justTextContainerView;

@@ -2,12 +2,12 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicSearchRecentsStorage : UIViewController {
-    BOOL _hasChanges;
-    int _limit;
-    int _maximumNumberOfRecents;
-    NSURL *_persistenceURL;
-    NSMutableArray *_recents;
+@interface MusicSearchRecentsStorage : NSObject {
+    BOOL  _hasChanges;
+    int  _limit;
+    int  _maximumNumberOfRecents;
+    NSURL * _persistenceURL;
+    NSMutableArray * _recents;
 }
 
 @property (readonly) int maximumNumberOfRecents;

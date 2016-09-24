@@ -3,9 +3,9 @@
  */
 
 @interface UIInputViewAnimationControllerViewController : NSObject <UIInputViewAnimationController> {
-    <UIViewControllerAnimatedTransitioning_Keyboard> *_animator;
-    <UIViewControllerContextTransitioning> *_context;
-    UIInputViewSetPlacement *_endPlacement;
+    <UIViewControllerAnimatedTransitioning_Keyboard> * _animator;
+    <UIViewControllerContextTransitioning> * _context;
+    UIInputViewSetPlacement * _endPlacement;
 }
 
 @property (readonly, copy) NSString *debugDescription;

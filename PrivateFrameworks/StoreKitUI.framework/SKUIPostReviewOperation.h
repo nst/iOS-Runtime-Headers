@@ -3,8 +3,8 @@
  */
 
 @interface SKUIPostReviewOperation : ISOperation {
-    NSDictionary *_responseDictionary;
-    SKUIReviewMetadata *_review;
+    NSDictionary * _responseDictionary;
+    SKUIReviewMetadata * _review;
 }
 
 @property (readonly) NSDictionary *responseDictionary;

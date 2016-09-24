@@ -3,10 +3,10 @@
  */
 
 @interface DAAccountClassNames : NSObject {
-    NSString *_accountClassName;
-    NSString *_agentClassName;
-    NSString *_clientAccountClassName;
-    NSString *_daemonAccountClassName;
+    NSString * _accountClassName;
+    NSString * _agentClassName;
+    NSString * _clientAccountClassName;
+    NSString * _daemonAccountClassName;
 }
 
 @property (nonatomic, retain) NSString *accountClassName;

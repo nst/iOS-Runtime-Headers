@@ -3,17 +3,17 @@
  */
 
 @interface MKUserLocationInternal : NSObject {
-    <MKUserLocationAnnotation> *_annotation;
-    <MKAnnotation> *annotation;
-    double course;
-    CLLocation *fixedLocation;
-    CLHeading *heading;
-    CLLocation *location;
-    CLLocation *predictedLocation;
-    NSString *subtitle;
-    double timestamp;
-    NSString *title;
-    BOOL updating;
+    <MKUserLocationAnnotation> * _annotation;
+    <MKAnnotation> * annotation;
+    double  course;
+    CLLocation * fixedLocation;
+    CLHeading * heading;
+    CLLocation * location;
+    CLLocation * predictedLocation;
+    NSString * subtitle;
+    double  timestamp;
+    NSString * title;
+    BOOL  updating;
 }
 
 @property (nonatomic, readonly) <MKAnnotation> *annotation;

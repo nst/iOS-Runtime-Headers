@@ -3,18 +3,18 @@
  */
 
 @interface OADTileTechnique : OADImageFillTechnique {
-    int mAlignment;
-    int mFlipMode;
-    BOOL mIsAlignmentOverridden;
-    BOOL mIsFlipModeOverridden;
-    BOOL mIsOffsetXOverridden;
-    BOOL mIsOffsetYOverridden;
-    BOOL mIsScaleXOverridden;
-    BOOL mIsScaleYOverridden;
-    float mOffsetX;
-    float mOffsetY;
-    float mScaleX;
-    float mScaleY;
+    int  mAlignment;
+    int  mFlipMode;
+    BOOL  mIsAlignmentOverridden;
+    BOOL  mIsFlipModeOverridden;
+    BOOL  mIsOffsetXOverridden;
+    BOOL  mIsOffsetYOverridden;
+    BOOL  mIsScaleXOverridden;
+    BOOL  mIsScaleYOverridden;
+    double  mOffsetX;
+    double  mOffsetY;
+    double  mScaleX;
+    double  mScaleY;
 }
 
 + (id)defaultProperties;

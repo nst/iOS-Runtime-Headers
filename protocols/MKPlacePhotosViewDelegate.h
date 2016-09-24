@@ -5,8 +5,12 @@
 
 @required
 
-- (void)placePhotoViewer:(MKPlacePhotosView *)arg1 attributionTappedForPhotoAtIndex:(unsigned int)arg2;
-- (UIImageView *)placePhotoViewer:(MKPlacePhotosView *)arg1 viewForPhotoAtIndex:(unsigned int)arg2;
-- (MKMapItem *)placePhotoViewerGetDelegatesMapItem:(MKPlacePhotosView *)arg1;
+- (void)placePhotoViewerAttributionTappedForPhotoAtIndex:(unsigned int)arg1 photo:(id <GEOMapItemPhoto>)arg2;
+- (MKMapItem *)placePhotoViewerGetDelegatesMapItem;
+- (UIImageView *)placePhotoViewerViewForPhotoAtIndex:(unsigned int)arg1;
+
+@optional
+
+- (void)placePhotoViewerWillClose:(MKPlacePhotosView *)arg1 photo:(id <GEOMapItemPhoto>)arg2 onIndex:(unsigned int)arg3;
 
 @end

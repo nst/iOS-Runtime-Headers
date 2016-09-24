@@ -3,14 +3,14 @@
  */
 
 @interface PUActivity : UIActivity <PUActivity> {
-    UIImage *_cachedCustomImage;
-    UIImage *_cachedSmallCustomImage;
-    <PUActivityDataSource> *_dataSource;
+    UIImage * _cachedCustomImage;
+    UIImage * _cachedSmallCustomImage;
+    <PUActivityDataSource> * _dataSource;
     struct { 
         BOOL respondsToActivityViewControllerForActivity; 
         BOOL respondsToActivityItemsForActivity; 
-    } _dataSourceFlags;
-    PUActivityItemSourceController *_itemSourceController;
+    }  _dataSourceFlags;
+    PUActivityItemSourceController * _itemSourceController;
 }
 
 @property (nonatomic) <PUActivityDataSource> *dataSource;

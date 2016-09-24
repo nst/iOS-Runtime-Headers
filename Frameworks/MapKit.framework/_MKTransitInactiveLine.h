@@ -3,11 +3,11 @@
  */
 
 @interface _MKTransitInactiveLine : NSObject <MKInactiveTransitLine> {
-    BOOL _blocked;
-    <GEOTransitLine> *_line;
-    NSDate *_referenceDate;
-    NSDate *_serviceResumesDate;
-    NSTimeZone *_timeZone;
+    BOOL  _blocked;
+    <GEOTransitLine> * _line;
+    NSDate * _referenceDate;
+    NSDate * _serviceResumesDate;
+    NSTimeZone * _timeZone;
 }
 
 @property (readonly, copy) NSString *debugDescription;

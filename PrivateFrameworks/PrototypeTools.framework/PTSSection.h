@@ -3,16 +3,16 @@
  */
 
 @interface PTSSection : NSObject <_UISettingsGroupObserver, _UISettingsKeyPathObserver> {
-    NSMutableArray *_allConcreteRows;
-    NSArray *_appearanceConditions;
-    NSMutableDictionary *_concreteRowsByTemplateIndex;
-    NSMutableArray *_enabledConcreteRows;
-    NSMutableDictionary *_groupsByTemplateIndex;
-    NSHashTable *_observers;
-    NSArray *_rows;
-    _UISettings *_settings;
-    NSString *_submoduleKeyPath;
-    NSString *_title;
+    NSMutableArray * _allConcreteRows;
+    NSArray * _appearanceConditions;
+    NSMutableDictionary * _concreteRowsByTemplateIndex;
+    NSMutableArray * _enabledConcreteRows;
+    NSMutableDictionary * _groupsByTemplateIndex;
+    NSHashTable * _observers;
+    NSArray * _rows;
+    _UISettings * _settings;
+    NSString * _submoduleKeyPath;
+    NSString * _title;
 }
 
 @property (nonatomic, retain) NSArray *appearanceConditions;

@@ -3,7 +3,7 @@
  */
 
 @interface TSWPCommentInfo : TSWPShapeInfo <TSDAnnotationHosting> {
-    TSDCommentStorage *_commentStorage;
+    TSDCommentStorage * _commentStorage;
 }
 
 @property (nonatomic, readonly) int annotationDisplayStringType;
@@ -17,15 +17,17 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic) <TSKModel> *hostingModel;
+@property (nonatomic, readonly) TSPObject *hostingModel;
 @property (nonatomic, copy) TSDCommentStorage *storage;
 @property (readonly) Class superclass;
 
 + (id)bezierPathForExportCommentOutline;
-+ (id)commentInfoWithContext:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 storage:(id)arg3;
++ (id)commentInfoWithContext:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 storage:(id)arg3;
++ (id)commentParagraphStyleForStylesheet:(id)arg1;
++ (id)commentParagraphStyleIdentifierForFontSize:(unsigned int)arg1;
 + (id)commentStyleIdentifier;
 + (void)createCommentInfoStyleInStylesheetIfNeeded:(id)arg1;
-+ (id)p_commentParagraphStyleForStylesheet:(id)arg1;
++ (id)p_commentParagraphStyleForStylesheet:(id)arg1 fontSize:(unsigned int)arg2;
 + (id)p_defaultCommentInfoStyleInStylesheet:(id)arg1;
 + (id)p_defaultFill;
 + (id)p_defaultPadding;
@@ -33,6 +35,7 @@
 + (id)p_defaultStroke;
 + (void)upgradeCommentInfoStorage:(id)arg1;
 + (void)upgradeCommentInfoStyle:(id)arg1;
++ (void)upgradeCommentParagraphStylesForStylesheet:(id)arg1;
 
 - (int)annotationDisplayStringType;
 - (int)annotationType;
@@ -56,7 +59,6 @@
 - (void)saveToArchiver:(id)arg1;
 - (void)setAuthor:(id)arg1;
 - (void)setCommentStorage:(id)arg1;
-- (void)setHostingModel:(id)arg1;
 - (id)storage;
 - (BOOL)supportsAttachedComments;
 - (BOOL)supportsHyperlinks;

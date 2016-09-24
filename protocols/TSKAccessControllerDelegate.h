@@ -6,6 +6,10 @@
 @optional
 
 - (void)didAcquireReadLock;
+- (void)didAcquireWriteLock;
+- (void)willAcquireReadLock;
+- (void)willAcquireWriteLock;
 - (void)willRelinquishReadLock;
+- (void)willRelinquishWriteLock;
 
 @end

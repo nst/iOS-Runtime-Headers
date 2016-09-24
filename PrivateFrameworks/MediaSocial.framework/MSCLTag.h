@@ -3,11 +3,11 @@
  */
 
 @interface MSCLTag : NSObject <NSCopying> {
-    NSString *_entityType;
-    NSString *_identifier;
-    NSString *_name;
-    NSString *_tagString;
-    NSURL *_thumbnailImageURL;
+    NSString * _entityType;
+    NSString * _identifier;
+    NSString * _name;
+    NSString * _tagString;
+    NSURL * _thumbnailImageURL;
 }
 
 @property (nonatomic, readonly, copy) SSVMediaSocialPostArtist *artistRepresentation;

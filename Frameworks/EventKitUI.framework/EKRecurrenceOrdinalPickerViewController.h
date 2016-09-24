@@ -3,7 +3,7 @@
  */
 
 @interface EKRecurrenceOrdinalPickerViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate> {
-    <EKRecurrenceOrdinalPickerViewControllerDelegate> *_delegate;
+    <EKRecurrenceOrdinalPickerViewControllerDelegate> * _delegate;
 }
 
 @property (readonly, copy) NSString *debugDescription;

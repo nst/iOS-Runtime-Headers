@@ -3,9 +3,9 @@
  */
 
 @interface ICArchiveReader : NSObject {
-    struct archive { } *_archive;
-    NSString *_destinationPath;
-    NSString *_sourcePath;
+    struct archive { } * _archive;
+    NSString * _destinationPath;
+    NSString * _sourcePath;
 }
 
 @property (nonatomic, retain) NSString *destinationPath;

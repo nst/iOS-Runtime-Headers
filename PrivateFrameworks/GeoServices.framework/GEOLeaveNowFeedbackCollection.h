@@ -3,10 +3,10 @@
  */
 
 @interface GEOLeaveNowFeedbackCollection : PBCodable <NSCopying> {
-    int _actionType;
-    int _alertType;
-    double _currentTimestamp;
-    double _eventTimestamp;
+    int  _actionType;
+    int  _alertType;
+    double  _currentTimestamp;
+    double  _eventTimestamp;
     struct { 
         unsigned int sessionID : 1; 
         unsigned int currentTimestamp : 1; 
@@ -15,13 +15,13 @@
         unsigned int actionType : 1; 
         unsigned int alertType : 1; 
         unsigned int travelState : 1; 
-    } _has;
-    struct { 
-        unsigned long long _high; 
-        unsigned long long _low; 
-    } _sessionID;
-    double _travelDuration;
-    int _travelState;
+    }  _has;
+    struct GEOSessionID { 
+        unsigned int _high; 
+        unsigned int _low; 
+    }  _sessionID;
+    double  _travelDuration;
+    int  _travelState;
 }
 
 @property (nonatomic) int actionType;
@@ -35,12 +35,17 @@
 @property (nonatomic) BOOL hasSessionID;
 @property (nonatomic) BOOL hasTravelDuration;
 @property (nonatomic) BOOL hasTravelState;
-@property (nonatomic) struct { unsigned long long x1; unsigned long long x2; } sessionID;
+@property (nonatomic) struct GEOSessionID { unsigned int x1; unsigned int x2; } sessionID;
 @property (nonatomic) double travelDuration;
 @property (nonatomic) int travelState;
 
+- (int)StringAsActionType:(id)arg1;
+- (int)StringAsAlertType:(id)arg1;
+- (int)StringAsTravelState:(id)arg1;
 - (int)actionType;
+- (id)actionTypeAsString:(int)arg1;
 - (int)alertType;
+- (id)alertTypeAsString:(int)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (double)currentTimestamp;
@@ -58,7 +63,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (struct { unsigned long long x1; unsigned long long x2; })sessionID;
+- (struct GEOSessionID { unsigned int x1; unsigned int x2; })sessionID;
 - (void)setActionType:(int)arg1;
 - (void)setAlertType:(int)arg1;
 - (void)setCurrentTimestamp:(double)arg1;
@@ -70,11 +75,12 @@
 - (void)setHasSessionID:(BOOL)arg1;
 - (void)setHasTravelDuration:(BOOL)arg1;
 - (void)setHasTravelState:(BOOL)arg1;
-- (void)setSessionID:(struct { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)setSessionID:(struct GEOSessionID { unsigned int x1; unsigned int x2; })arg1;
 - (void)setTravelDuration:(double)arg1;
 - (void)setTravelState:(int)arg1;
 - (double)travelDuration;
 - (int)travelState;
+- (id)travelStateAsString:(int)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

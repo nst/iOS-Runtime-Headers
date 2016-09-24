@@ -3,14 +3,14 @@
  */
 
 @interface CalLogEnvelope : NSObject {
-    NSString *_function;
-    int _level;
-    NSString *_logName;
-    unsigned int _machPort;
-    NSString *_message;
-    int _processID;
-    NSString *_processName;
-    double _timestamp;
+    NSString * _function;
+    int  _level;
+    NSString * _logName;
+    unsigned int  _machPort;
+    NSString * _message;
+    int  _processID;
+    NSString * _processName;
+    double  _timestamp;
 }
 
 @property (nonatomic, retain) NSString *function;

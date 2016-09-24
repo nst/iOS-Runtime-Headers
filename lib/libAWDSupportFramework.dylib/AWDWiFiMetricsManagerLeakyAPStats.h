@@ -8,13 +8,13 @@
         unsigned int timestamp : 1; 
         unsigned int version : 1; 
         unsigned int leakyApDecision : 1; 
-    } _has;
-    unsigned long long _hashCode;
-    unsigned int _leakyApDecision;
-    NSData *_leakyApStats;
-    NSData *_oui;
-    unsigned long long _timestamp;
-    unsigned long long _version;
+    }  _has;
+    unsigned long long  _hashCode;
+    unsigned int  _leakyApDecision;
+    NSData * _leakyApStats;
+    NSData * _oui;
+    unsigned long long  _timestamp;
+    unsigned long long  _version;
 }
 
 @property (nonatomic) BOOL hasHashCode;

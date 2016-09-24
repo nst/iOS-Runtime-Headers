@@ -3,22 +3,22 @@
  */
 
 @interface NSLayoutConstraintParser : NSObject {
-    NSMutableArray *_alignmentConstraints;
-    NSMutableArray *_constraints;
-    <NSLayoutItem> *_containerView;
-    unsigned int _currentCharacter;
-    NSMutableArray *_incompleteConstraints;
-    NSString *_line;
-    const char *_lineChars;
-    unsigned int _lineLength;
-    NSDictionary *_metrics;
-    unsigned int _opts;
-    <NSLayoutItem> *_parsedConstrainedWidthView;
-    <NSLayoutItem> *_parsedLeftView;
-    <NSLayoutItem> *_parsedRightView;
-    NSMutableArray *_unflushedWidthConstraints;
-    BOOL _useHorizontalArrangement;
-    NSDictionary *_views;
+    NSMutableArray * _alignmentConstraints;
+    NSMutableArray * _constraints;
+    <NSLayoutItem> * _containerView;
+    unsigned int  _currentCharacter;
+    NSMutableArray * _incompleteConstraints;
+    NSString * _line;
+    const char * _lineChars;
+    unsigned int  _lineLength;
+    NSDictionary * _metrics;
+    unsigned int  _opts;
+    <NSLayoutItem> * _parsedConstrainedWidthView;
+    <NSLayoutItem> * _parsedLeftView;
+    <NSLayoutItem> * _parsedRightView;
+    NSMutableArray * _unflushedWidthConstraints;
+    BOOL  _useHorizontalArrangement;
+    NSDictionary * _views;
 }
 
 + (id)constraintsWithVisualFormat:(id)arg1 options:(unsigned int)arg2 metrics:(id)arg3 views:(id)arg4;

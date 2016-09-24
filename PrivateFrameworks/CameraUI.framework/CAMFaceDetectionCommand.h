@@ -3,8 +3,8 @@
  */
 
 @interface CAMFaceDetectionCommand : CAMCaptureCommand {
-    BOOL __faceDetectionEnabled;
-    BOOL __usesFacesForImageProcessing;
+    BOOL  __faceDetectionEnabled;
+    BOOL  __usesFacesForImageProcessing;
 }
 
 @property (getter=_isFaceDetectionEnabled, nonatomic, readonly) BOOL _faceDetectionEnabled;

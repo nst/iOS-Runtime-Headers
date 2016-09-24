@@ -3,7 +3,7 @@
  */
 
 @interface AKPDFDocumentWrapper : NSObject {
-    struct CGPDFDocument { } *_pdfDocument;
+    struct CGPDFDocument { } * _pdfDocument;
 }
 
 - (void)dealloc;

@@ -3,28 +3,28 @@
  */
 
 @interface RadioGetTracksRequest : RadioRequest {
-    NSNumber *_accountUniqueIdentifier;
-    NSDictionary *_additionalRequestParameters;
-    unsigned long long _globalVersion;
-    BOOL _hasSetWillContinuePlayback;
-    NSData *_heartbeatTokenData;
-    BOOL _includeCleanTracksOnly;
-    RadioStationMatchContext *_nowPlayingMatchContext;
-    unsigned int _numberOfTracks;
-    NSArray *_playActivityEvents;
-    RadioPlayEventCollection *_playEventCollection;
-    RadioPlaybackContext *_playbackContext;
-    SSVPlaybackLease *_playbackLease;
-    int _reasonType;
-    SSURLConnectionRequest *_request;
-    BOOL _shouldIncludeAsset;
-    BOOL _shouldIncludeStationInResponse;
-    BOOL _skipPromptForSeamlessPlayback;
-    NSString *_stationHash;
-    long long _stationID;
-    RadioStationMatchContext *_stationMatchContext;
-    NSString *_stationStringID;
-    BOOL _willContinuePlayback;
+    NSNumber * _accountUniqueIdentifier;
+    NSDictionary * _additionalRequestParameters;
+    unsigned int  _globalVersion;
+    BOOL  _hasSetWillContinuePlayback;
+    NSData * _heartbeatTokenData;
+    BOOL  _includeCleanTracksOnly;
+    RadioStationMatchContext * _nowPlayingMatchContext;
+    unsigned int  _numberOfTracks;
+    NSArray * _playActivityEvents;
+    RadioPlayEventCollection * _playEventCollection;
+    RadioPlaybackContext * _playbackContext;
+    SSVPlaybackLease * _playbackLease;
+    int  _reasonType;
+    SSURLConnectionRequest * _request;
+    BOOL  _shouldIncludeAsset;
+    BOOL  _shouldIncludeStationInResponse;
+    BOOL  _skipPromptForSeamlessPlayback;
+    NSString * _stationHash;
+    int  _stationID;
+    RadioStationMatchContext * _stationMatchContext;
+    NSString * _stationStringID;
+    BOOL  _willContinuePlayback;
 }
 
 @property (nonatomic, readonly, copy) NSNumber *accountUniqueIdentifier;
@@ -52,9 +52,9 @@
 - (id)heartbeatTokenData;
 - (BOOL)includeCleanTracksOnly;
 - (id)init;
-- (id)initWithGlobalVersion:(unsigned long long)arg1;
-- (id)initWithStation:(id)arg1 globalVersion:(unsigned long long)arg2;
-- (id)initWithStationStringID:(id)arg1 globalVersion:(unsigned long long)arg2;
+- (id)initWithGlobalVersion:(unsigned int)arg1;
+- (id)initWithStation:(id)arg1 globalVersion:(unsigned int)arg2;
+- (id)initWithStationStringID:(id)arg1 globalVersion:(unsigned int)arg2;
 - (id)nowPlayingMatchContext;
 - (unsigned int)numberOfTracks;
 - (id)playActivityEvents;

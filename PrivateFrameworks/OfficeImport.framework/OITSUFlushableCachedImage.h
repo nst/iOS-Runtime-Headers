@@ -3,9 +3,9 @@
  */
 
 @interface OITSUFlushableCachedImage : OITSUFlushableObject {
-    id _delegate;
-    SEL _delegateCreateImageSelector;
-    struct CGImage { } *_image;
+    id  _delegate;
+    SEL  _delegateCreateImageSelector;
+    struct CGImage { } * _image;
 }
 
 - (void)dealloc;

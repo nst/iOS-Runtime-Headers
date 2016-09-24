@@ -3,9 +3,9 @@
  */
 
 @interface HDSQLiteQueryStatement : HDSQLiteStatement {
-    NSArray *_columns;
-    HDSQLiteQueryDescriptor *_descriptor;
-    NSArray *_properties;
+    NSArray * _columns;
+    HDSQLiteQueryDescriptor * _descriptor;
+    NSArray * _properties;
 }
 
 - (void).cxx_destruct;

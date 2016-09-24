@@ -3,16 +3,18 @@
  */
 
 @interface GEOStateTimingUsageLogMessage : PBCodable <NSCopying> {
-    double _durationInOldState;
+    double  _durationInOldState;
     struct { 
         unsigned int durationInOldState : 1; 
-    } _has;
-    NSMutableArray *_stateTransitionLogMessages;
+    }  _has;
+    NSMutableArray * _stateTransitionLogMessages;
 }
 
 @property (nonatomic) double durationInOldState;
 @property (nonatomic) BOOL hasDurationInOldState;
 @property (nonatomic, retain) NSMutableArray *stateTransitionLogMessages;
+
++ (Class)stateTransitionLogMessageType;
 
 - (void)addStateTransitionLogMessage:(id)arg1;
 - (void)clearStateTransitionLogMessages;

@@ -3,9 +3,9 @@
  */
 
 @interface ISURLOperationPoolOperation : ISOperation {
-    int _cancelCount;
-    BOOL _forwardImmediately;
-    NSMutableArray *_operations;
+    int  _cancelCount;
+    BOOL  _forwardImmediately;
+    NSMutableArray * _operations;
 }
 
 @property (nonatomic, readonly) ISURLOperation *mainOperation;

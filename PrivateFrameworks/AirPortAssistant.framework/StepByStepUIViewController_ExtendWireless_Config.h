@@ -3,10 +3,10 @@
  */
 
 @interface StepByStepUIViewController_ExtendWireless_Config : StepByStepUIViewController_DevicePicker <StepByStepUIDevicePicker> {
-    NSString *connectionType;
-    BOOL isReallyJoin;
-    NSString *personalizedBaseName;
-    NSString *unlocalizedStatusString;
+    NSString * connectionType;
+    BOOL  isReallyJoin;
+    NSString * personalizedBaseName;
+    NSString * unlocalizedStatusString;
 }
 
 @property (nonatomic, retain) NSString *personalizedBaseName;

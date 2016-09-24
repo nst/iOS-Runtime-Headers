@@ -5,6 +5,6 @@
 
 @required
 
-- (NSArray *)menuItemsForTranscriptPreviewController:(CKTranscriptPreviewController *)arg1;
+- (NSArray *)actionsForTranscriptPreviewController:(CKTranscriptPreviewController *)arg1;
 
 @end

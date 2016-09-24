@@ -3,8 +3,8 @@
  */
 
 @interface ATProvisioningHandler : NSObject <ATMessageLinkObserver, ATMessageLinkRequestHandler> {
-    int _endpointType;
-    NSString *_expectedRequestCommand;
+    int  _endpointType;
+    NSString * _expectedRequestCommand;
 }
 
 @property (readonly, copy) NSString *debugDescription;

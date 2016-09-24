@@ -3,8 +3,8 @@
  */
 
 @interface CHXAutoStyling : CHAutoStyling <CHAutoStyling> {
-    BOOL __autoChartFillIsHollow;
-    BOOL __autoChartStrokeIsHollow;
+    BOOL  __autoChartFillIsHollow;
+    BOOL  __autoChartStrokeIsHollow;
 }
 
 @property BOOL _autoChartFillIsHollow;

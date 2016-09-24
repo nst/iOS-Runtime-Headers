@@ -3,13 +3,13 @@
  */
 
 @interface NSSQLSelectIntermediate : NSSQLIntermediate {
-    NSString *_columnAlias;
-    NSString *_correlationTarget;
-    NSSQLEntity *_entity;
-    NSString *_entityAlias;
-    NSArray *_fetchColumns;
-    BOOL _isCount;
-    BOOL _useDistinct;
+    NSString * _columnAlias;
+    NSString * _correlationTarget;
+    NSSQLEntity * _entity;
+    NSString * _entityAlias;
+    NSArray * _fetchColumns;
+    BOOL  _isCount;
+    BOOL  _useDistinct;
 }
 
 - (void)dealloc;

@@ -5,9 +5,12 @@
 
 @required
 
+- (BOOL)done;
 - (BOOL)isSpeculative;
 - (<HDSyncAnchorMap> *)requiredAnchorMapWithError:(id*)arg1;
-- (void)setObjects:(NSArray *)arg1 syncAnchorRange:(struct HDSyncAnchorRange { long long x1; long long x2; })arg2 requiredAnchorMap:(id <HDSyncAnchorMap>)arg3;
-- (struct HDSyncAnchorRange { long long x1; long long x2; })syncAnchorRange;
+- (NSNumber *)sequenceNumber;
+- (void)setObjects:(NSArray *)arg1 syncAnchorRange:(struct HDSyncAnchorRange { int x1; int x2; })arg2 requiredAnchorMap:(id <HDSyncAnchorMap>)arg3;
+- (void)setSequenceNumber:(int)arg1 done:(BOOL)arg2;
+- (struct HDSyncAnchorRange { int x1; int x2; })syncAnchorRange;
 
 @end

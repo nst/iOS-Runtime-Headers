@@ -3,18 +3,18 @@
  */
 
 @interface SKUIStorePage : NSObject <NSCopying> {
-    SKUIArtwork *_backgroundArtwork;
-    NSData *_itmlData;
-    NSHTTPURLResponse *_itmlResponse;
-    SSMetricsConfiguration *_metricsConfiguration;
-    NSString *_metricsPageDescription;
-    NSArray *_pageComponents;
-    NSString *_pageType;
-    NSURL *_pageURL;
-    SKUIProductPage *_productPage;
-    NSString *_title;
-    SKUIUber *_uber;
-    NSMutableDictionary *_values;
+    SKUIArtwork * _backgroundArtwork;
+    NSData * _itmlData;
+    NSHTTPURLResponse * _itmlResponse;
+    SSMetricsConfiguration * _metricsConfiguration;
+    NSString * _metricsPageDescription;
+    NSArray * _pageComponents;
+    NSString * _pageType;
+    NSURL * _pageURL;
+    SKUIProductPage * _productPage;
+    NSString * _title;
+    SKUIUber * _uber;
+    NSMutableDictionary * _values;
 }
 
 @property (nonatomic, retain) NSData *ITMLData;

@@ -3,12 +3,12 @@
  */
 
 @interface _GEORouteMatchUpdater_LineProgression : _GEORouteMatchUpdater {
-    GEOComposedTransitTripRouteStep *_alightStep;
-    GEOComposedTransitTripRouteStep *_boardStep;
+    GEOComposedTransitTripRouteStep * _alightStep;
+    GEOComposedTransitTripRouteStep * _boardStep;
     struct PolylineCoordinate { 
         unsigned int index; 
-        float offset; 
-    } _startRouteCoordinate;
+        double offset; 
+    }  _startRouteCoordinate;
 }
 
 - (id).cxx_construct;

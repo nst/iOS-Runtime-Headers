@@ -3,10 +3,10 @@
  */
 
 @interface SSDatabaseCacheEntry : SSSQLiteEntity {
-    SSPersistentCache *_persistentCache;
+    SSPersistentCache * _persistentCache;
 }
 
-+ (unsigned long long)_fetchPersistentID:(id)arg1 inDatabase:(id)arg2;
++ (unsigned int)_fetchPersistentID:(id)arg1 inDatabase:(id)arg2;
 + (id)allPropertyKeys;
 + (id)databaseTable;
 

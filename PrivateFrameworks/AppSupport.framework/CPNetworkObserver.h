@@ -3,17 +3,17 @@
  */
 
 @interface CPNetworkObserver : NSObject {
-    NSLock *_lock;
-    BOOL _networkNotified;
-    struct __CFDictionary { } *_networkObservers;
-    struct __SCNetworkReachability { } *_networkReach;
-    unsigned int _networkReachability;
-    BOOL _networkReachable;
-    NSMutableDictionary *_reachabilityRequests;
-    BOOL _wifiEnabled;
-    BOOL _wifiNotified;
-    struct __CFDictionary { } *_wifiObservers;
-    struct __SCPreferences { } *_wifiPreferences;
+    NSLock * _lock;
+    BOOL  _networkNotified;
+    struct __CFDictionary { } * _networkObservers;
+    struct __SCNetworkReachability { } * _networkReach;
+    unsigned int  _networkReachability;
+    BOOL  _networkReachable;
+    NSMutableDictionary * _reachabilityRequests;
+    BOOL  _wifiEnabled;
+    BOOL  _wifiNotified;
+    struct __CFDictionary { } * _wifiObservers;
+    struct __SCPreferences { } * _wifiPreferences;
 }
 
 + (id)sharedNetworkObserver;

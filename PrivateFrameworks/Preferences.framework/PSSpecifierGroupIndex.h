@@ -3,11 +3,11 @@
  */
 
 @interface PSSpecifierGroupIndex : NSObject <NSCopying> {
-    NSMutableArray *_groupSections;
-    NSMutableArray *_groupSpecifiers;
-    NSMutableArray *_specifiers;
-    NSMutableArray *_ungroupedPrefixSpecifiers;
-    BOOL _wantsDebugCallbacks;
+    NSMutableArray * _groupSections;
+    NSMutableArray * _groupSpecifiers;
+    NSMutableArray * _specifiers;
+    NSMutableArray * _ungroupedPrefixSpecifiers;
+    BOOL  _wantsDebugCallbacks;
 }
 
 @property (nonatomic, readonly, copy) NSArray *groupSpecifiers;

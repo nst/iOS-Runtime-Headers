@@ -3,11 +3,11 @@
  */
 
 @interface NSKnownKeysMappingStrategy1 : NSKnownKeysMappingStrategy {
-    int _cd_rc;
-    id *_keys;
-    unsigned long _length;
-    id _reserved1;
-    void *_table;
+    int  _cd_rc;
+    id * _keys;
+    unsigned long  _length;
+    id  _reserved1;
+    void * _table;
 }
 
 + (BOOL)accessInstanceVariablesDirectly;

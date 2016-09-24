@@ -3,17 +3,17 @@
  */
 
 @interface SKUINavigationBarController : NSObject <SKUILayoutCacheDelegate> {
-    SKUINavigationBarButtonsController *_buttonsController;
-    SKUIClientContext *_clientContext;
-    <SKUINavigationBarControllerDelegate> *_delegate;
-    SKUINavigationBarContext *_navigationBarContext;
-    SKUINavigationPaletteController *_paletteController;
-    UIViewController *_parentViewController;
-    NSMutableArray *_reusableSearchBarControllers;
-    NSMapTable *_searchBarControllers;
-    NSMutableArray *_sections;
-    SKUIButtonViewElement *_titleButtonViewElement;
-    SKUINavigationBarViewElement *_viewElement;
+    SKUINavigationBarButtonsController * _buttonsController;
+    SKUIClientContext * _clientContext;
+    <SKUINavigationBarControllerDelegate> * _delegate;
+    SKUINavigationBarContext * _navigationBarContext;
+    SKUINavigationPaletteController * _paletteController;
+    UIViewController * _parentViewController;
+    NSMutableArray * _reusableSearchBarControllers;
+    NSMapTable * _searchBarControllers;
+    NSMutableArray * _sections;
+    SKUIButtonViewElement * _titleButtonViewElement;
+    SKUINavigationBarViewElement * _viewElement;
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;
@@ -47,6 +47,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)detachFromNavigationItem:(id)arg1;
+- (void)detachNavigationItemControllers;
 - (id)existingSearchBarControllers;
 - (id)fallbackTitleView;
 - (id)initWithNavigationBarViewElement:(id)arg1;

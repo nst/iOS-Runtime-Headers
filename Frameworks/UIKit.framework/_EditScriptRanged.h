@@ -3,8 +3,8 @@
  */
 
 @interface _EditScriptRanged : _EditScript {
-    _EditScriptRangedAtom *_currentScriptAtom;
-    int _options;
+    _EditScriptRangedAtom * _currentScriptAtom;
+    int  _options;
 }
 
 @property (nonatomic, readonly) NSString *stringA;

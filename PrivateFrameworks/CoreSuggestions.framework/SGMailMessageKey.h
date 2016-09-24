@@ -3,8 +3,8 @@
  */
 
 @interface SGMailMessageKey : NSObject <NSCopying, NSSecureCoding> {
-    NSString *_messageId;
-    NSString *_source;
+    NSString * _messageId;
+    NSString * _source;
 }
 
 @property (nonatomic, readonly) NSString *messageId;

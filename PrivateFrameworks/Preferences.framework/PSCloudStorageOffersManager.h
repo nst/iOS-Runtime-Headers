@@ -3,16 +3,16 @@
  */
 
 @interface PSCloudStorageOffersManager : NSObject <CommerceRemoteUIDelegateDelegate> {
-    CommerceRemoteUIDelegate *_commerceDelegate;
-    <PSCloudStorageOffersManagerDelegate> *_delegate;
-    unsigned long long _requiredStorageThreshold;
+    CommerceRemoteUIDelegate * _commerceDelegate;
+    <PSCloudStorageOffersManagerDelegate> * _delegate;
+    unsigned int  _requiredStorageThreshold;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PSCloudStorageOffersManagerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic) unsigned long long requiredStorageThreshold;
+@property (nonatomic) unsigned int requiredStorageThreshold;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -24,8 +24,8 @@
 - (void)commerceDelegateDidCancel:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (unsigned long long)requiredStorageThreshold;
+- (unsigned int)requiredStorageThreshold;
 - (void)setDelegate:(id)arg1;
-- (void)setRequiredStorageThreshold:(unsigned long long)arg1;
+- (void)setRequiredStorageThreshold:(unsigned int)arg1;
 
 @end

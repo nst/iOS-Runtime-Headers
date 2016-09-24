@@ -3,10 +3,10 @@
  */
 
 @interface SKUIItemResourceRequest : SKUIResourceRequest <NSCopying> {
-    <SKUIItemRequestDelegate> *_delegate;
-    NSString *_imageProfile;
-    NSArray *_itemIdentifiers;
-    NSString *_keyProfile;
+    <SKUIItemRequestDelegate> * _delegate;
+    NSString * _imageProfile;
+    NSArray * _itemIdentifiers;
+    NSString * _keyProfile;
 }
 
 @property (nonatomic) <SKUIItemRequestDelegate> *delegate;

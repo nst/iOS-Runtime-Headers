@@ -3,12 +3,16 @@
  */
 
 @interface NEPathControllerNetworkAgent : NENetworkAgent {
-    NWInterface *_advisoryInterface;
-    NWInterface *_predictedInterface;
-    BOOL _weakAdvisory;
+    NWInterface * _advisoryInterface;
+    id /* block */  _internalAssertHandler;
+    id /* block */  _internalUnassertHandler;
+    NWInterface * _predictedInterface;
+    BOOL  _weakAdvisory;
 }
 
 @property (retain) NWInterface *advisoryInterface;
+@property (copy) id /* block */ internalAssertHandler;
+@property (copy) id /* block */ internalUnassertHandler;
 @property (retain) NWInterface *predictedInterface;
 @property BOOL weakAdvisory;
 
@@ -17,11 +21,19 @@
 
 - (void).cxx_destruct;
 - (id)advisoryInterface;
+- (BOOL)assertAgentWithOptions:(id)arg1;
 - (id)copyAgentData;
+- (id /* block */)internalAssertHandler;
+- (id /* block */)internalUnassertHandler;
 - (id)predictedInterface;
 - (void)setAdvisoryInterface:(id)arg1;
+- (void)setAssertHandler:(id /* block */)arg1;
+- (void)setInternalAssertHandler:(id /* block */)arg1;
+- (void)setInternalUnassertHandler:(id /* block */)arg1;
 - (void)setPredictedInterface:(id)arg1;
+- (void)setUnassertHandler:(id /* block */)arg1;
 - (void)setWeakAdvisory:(BOOL)arg1;
+- (void)unassertAgentWithOptions:(id)arg1;
 - (BOOL)weakAdvisory;
 
 @end

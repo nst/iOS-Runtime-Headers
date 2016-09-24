@@ -5,9 +5,9 @@
 @interface GEOVStyleAttribute : PBCodable <NSCopying> {
     struct { 
         unsigned int intValue : 1; 
-    } _has;
-    int _intValue;
-    unsigned int _key;
+    }  _has;
+    int  _intValue;
+    unsigned int  _key;
 }
 
 @property (nonatomic) BOOL hasIntValue;

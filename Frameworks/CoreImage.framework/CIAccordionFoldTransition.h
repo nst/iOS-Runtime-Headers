@@ -3,12 +3,12 @@
  */
 
 @interface CIAccordionFoldTransition : CIFilter {
-    NSNumber *inputBottomHeight;
-    NSNumber *inputFoldShadowAmount;
-    CIImage *inputImage;
-    NSNumber *inputNumberOfFolds;
-    CIImage *inputTargetImage;
-    NSNumber *inputTime;
+    NSNumber * inputBottomHeight;
+    NSNumber * inputFoldShadowAmount;
+    CIImage * inputImage;
+    NSNumber * inputNumberOfFolds;
+    CIImage * inputTargetImage;
+    NSNumber * inputTime;
 }
 
 @property (nonatomic, retain) NSNumber *inputBottomHeight;

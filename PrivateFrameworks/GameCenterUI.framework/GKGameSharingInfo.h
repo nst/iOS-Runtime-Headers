@@ -3,14 +3,14 @@
  */
 
 @interface GKGameSharingInfo : NSObject {
-    BOOL _complete;
-    NSString *_developerName;
-    NSString *_emailBody;
-    NSString *_emailSubject;
-    NSString *_gameName;
-    UIImage *_iconImage;
-    NSURL *_shortViewItemURL;
-    NSURL *_viewItemURL;
+    BOOL  _complete;
+    NSString * _developerName;
+    NSString * _emailBody;
+    NSString * _emailSubject;
+    NSString * _gameName;
+    UIImage * _iconImage;
+    NSURL * _shortViewItemURL;
+    NSURL * _viewItemURL;
 }
 
 @property (nonatomic) BOOL complete;

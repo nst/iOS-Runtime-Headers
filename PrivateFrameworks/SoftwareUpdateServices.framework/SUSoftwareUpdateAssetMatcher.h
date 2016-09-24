@@ -3,12 +3,12 @@
  */
 
 @interface SUSoftwareUpdateAssetMatcher : SUAssetStateMatcher {
-    BOOL _checkTatsu;
-    NSString *_fromBuild;
-    NSString *_fromProductType;
-    NSString *_fromReleaseType;
-    NSString *_fromVersion;
-    SUPreferences *_preferences;
+    BOOL  _checkTatsu;
+    NSString * _fromBuild;
+    NSString * _fromProductType;
+    NSString * _fromReleaseType;
+    NSString * _fromVersion;
+    SUPreferences * _preferences;
 }
 
 @property (nonatomic) BOOL compareWithTatsuForEligibility;
@@ -22,7 +22,9 @@
 + (id)matcherForCurrentDeviceWithInterestedStates:(int)arg1;
 
 - (id)_copyMatchingAssetsAfterSortingAndFiltering:(id)arg1;
+- (id)_createCleanOSVersionString:(id)arg1;
 - (id)_createSortedAndFilteredAssetResults:(id)arg1 usingFirstKey:(id)arg2 secondKey:(id)arg3;
+- (id)_fileterPatchesIfNecessary:(id)arg1;
 - (id)_findMatchFromCandidates:(id)arg1 error:(id*)arg2;
 - (unsigned int)_getIndexOfHighestVersionedAsset:(id)arg1 usingFirstKey:(id)arg2 secondKey:(id)arg3;
 - (BOOL)_isDeviceEligibleForUpdate:(id)arg1;

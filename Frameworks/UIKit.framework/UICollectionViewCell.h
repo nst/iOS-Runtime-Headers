@@ -3,29 +3,30 @@
  */
 
 @interface UICollectionViewCell : UICollectionReusableView <UIGestureRecognizerDelegate, _UILayoutEngineSuspending> {
-    UIView *_backgroundView;
+    UIView * _backgroundView;
     struct { 
         unsigned int selected : 1; 
         unsigned int highlighted : 1; 
         unsigned int showingMenu : 1; 
         unsigned int clearSelectionWhenMenuDisappears : 1; 
         unsigned int waitingForSelectionAnimationHalfwayPoint : 1; 
-    } _collectionCellFlags;
-    UIView *_contentView;
-    int _focusStyle;
-    _UIFloatingContentView *_focusedFloatingContentView;
-    BOOL _highlighted;
-    id _highlightingSupport;
-    BOOL _isLayoutEngineSuspended;
-    UILongPressGestureRecognizer *_menuGesture;
-    BOOL _selected;
-    UIView *_selectedBackgroundView;
-    id _selectionSegueTemplate;
+    }  _collectionCellFlags;
+    UIView * _contentView;
+    int  _focusStyle;
+    _UIFloatingContentView * _focusedFloatingContentView;
+    BOOL  _highlighted;
+    id  _highlightingSupport;
+    BOOL  _isLayoutEngineSuspended;
+    UILongPressGestureRecognizer * _menuGesture;
+    BOOL  _selected;
+    UIView * _selectedBackgroundView;
+    id  _selectionSegueTemplate;
 }
 
 @property (getter=_isLayoutEngineSuspended, setter=_setLayoutEngineSuspended:, nonatomic) BOOL _layoutEngineSuspended;
 @property (nonatomic, retain) UIView *backgroundView;
-@property (nonatomic, readonly) UIView *contentView;
+@property (nonatomic, retain) UIView *contentView;
+@property (getter=_contentViewFrame, nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } contentViewFrame;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (getter=_focusStyle, setter=_setFocusStyle:, nonatomic) int focusStyle;
@@ -33,6 +34,7 @@
 @property (getter=isHighlighted, nonatomic) BOOL highlighted;
 @property (getter=isSelected, nonatomic) BOOL selected;
 @property (nonatomic, retain) UIView *selectedBackgroundView;
+@property (getter=_selectionAnimationDuration, nonatomic, readonly) double selectionAnimationDuration;
 @property (readonly) Class superclass;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
@@ -41,6 +43,7 @@
 
 - (void).cxx_destruct;
 - (BOOL)_canFocusProgrammatically;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_contentViewFrame;
 - (BOOL)_descendantsShouldHighlight;
 - (void)_descendent:(id)arg1 didMoveFromSuperview:(id)arg2 toSuperview:(id)arg3;
 - (void)_descendent:(id)arg1 willMoveFromSuperview:(id)arg2 toSuperview:(id)arg3;
@@ -57,7 +60,9 @@
 - (void)_menuDismissed:(id)arg1;
 - (void)_performAction:(SEL)arg1 sender:(id)arg2;
 - (id)_preferredConfigurationForFocusAnimation:(int)arg1 inContext:(id)arg2;
+- (double)_selectionAnimationDuration;
 - (id)_selectionSegueTemplate;
+- (void)_setContentView:(id)arg1 addToHierarchy:(BOOL)arg2;
 - (void)_setFocusStyle:(int)arg1;
 - (void)_setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_setLayoutEngineSuspended:(BOOL)arg1;
@@ -81,7 +86,8 @@
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (BOOL)isEditing;
 - (BOOL)isHighlighted;
 - (BOOL)isSelected;
 - (void)layoutSubviews;
@@ -89,11 +95,14 @@
 - (void)prepareForReuse;
 - (id)selectedBackgroundView;
 - (void)setBackgroundView:(id)arg1;
+- (void)setContentView:(id)arg1;
+- (void)setEditing:(BOOL)arg1;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setSelected:(BOOL)arg1;
 - (void)setSelectedBackgroundView:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (struct CGSize { float x1; float x2; })systemLayoutSizeFittingSize:(struct CGSize { float x1; float x2; })arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;
+- (void)setSemanticContentAttribute:(int)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { double x1; double x2; })systemLayoutSizeFittingSize:(struct CGSize { double x1; double x2; })arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;
 
 // Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
 

@@ -3,12 +3,12 @@
  */
 
 @interface CKDFetchNotificationChangesURLRequest : CKDURLRequest {
-    BOOL _moreComing;
-    NSMutableArray *_resultChangedNotifications;
-    NSData *_resultServerChangeTokenData;
-    unsigned int _resultsLimit;
-    NSData *_serverChangeTokenData;
-    BOOL _wantsChanges;
+    BOOL  _moreComing;
+    NSMutableArray * _resultChangedNotifications;
+    NSData * _resultServerChangeTokenData;
+    unsigned int  _resultsLimit;
+    NSData * _serverChangeTokenData;
+    BOOL  _wantsChanges;
 }
 
 @property (nonatomic) BOOL moreComing;

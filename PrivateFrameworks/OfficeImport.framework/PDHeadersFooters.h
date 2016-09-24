@@ -3,16 +3,16 @@
  */
 
 @interface PDHeadersFooters : NSObject {
-    int mDateTimeFormat;
-    NSString *mFooter;
-    BOOL mHasDateTime;
-    BOOL mHasFooter;
-    BOOL mHasHeader;
-    BOOL mHasNowDateTime;
-    BOOL mHasSlideNumber;
-    BOOL mHasUserDateTime;
-    NSString *mHeader;
-    NSString *mUserDateTime;
+    int  mDateTimeFormat;
+    NSString * mFooter;
+    BOOL  mHasDateTime;
+    BOOL  mHasFooter;
+    BOOL  mHasHeader;
+    BOOL  mHasNowDateTime;
+    BOOL  mHasSlideNumber;
+    BOOL  mHasUserDateTime;
+    NSString * mHeader;
+    NSString * mUserDateTime;
 }
 
 - (void)dealloc;

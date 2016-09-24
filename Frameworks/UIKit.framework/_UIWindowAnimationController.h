@@ -3,8 +3,8 @@
  */
 
 @interface _UIWindowAnimationController : NSObject <UIViewControllerAnimatedTransitioning> {
-    BOOL _shouldCrossfade;
-    UIWindow *_window;
+    BOOL  _shouldCrossfade;
+    UIWindow * _window;
 }
 
 @property (readonly, copy) NSString *debugDescription;

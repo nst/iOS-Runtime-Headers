@@ -3,7 +3,7 @@
  */
 
 @interface ICLocationContext : NSObject <CLLocationManagerDelegate> {
-    CLGeocoder *_geocoder;
+    CLGeocoder * _geocoder;
 }
 
 @property (readonly, copy) NSString *debugDescription;

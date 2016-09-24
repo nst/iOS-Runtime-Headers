@@ -3,16 +3,25 @@
  */
 
 @interface CMOutlineState : NSObject {
-    unsigned int counter;
-    unsigned int listId;
+    NSMutableArray * _counters;
+    WDList * _currentList;
+    WDListDefinition * _listDefinition;
 }
 
+@property (retain) WDList *currentList;
+@property (readonly) WDListDefinition *listDefinition;
+
 - (unsigned int)counterAtLevel:(unsigned char)arg1;
+- (id)currentList;
+- (void)dealloc;
 - (void)increaseCounterAtLevel:(unsigned char)arg1;
 - (id)init;
-- (id)initWithListId:(unsigned int)arg1;
-- (unsigned int)listId;
+- (id)initWithListDefinition:(id)arg1;
+- (unsigned int)levelCount;
+- (id)levelDescriptionAtIndex:(unsigned char)arg1;
+- (id)listDefinition;
 - (void)reset;
 - (void)setCounterTo:(unsigned int)arg1 atLevel:(unsigned char)arg2;
+- (void)setCurrentList:(id)arg1;
 
 @end

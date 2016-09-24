@@ -3,7 +3,7 @@
  */
 
 @interface MSCLAudioPickerMediaItemTableViewCell : UITableViewCell {
-    SKUIPlayButton *_playButton;
+    SKUIPlayButton * _playButton;
 }
 
 @property (nonatomic, readonly) SKUIPlayButton *playButton;

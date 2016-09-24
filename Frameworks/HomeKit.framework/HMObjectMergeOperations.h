@@ -3,7 +3,7 @@
  */
 
 @interface HMObjectMergeOperations : NSObject {
-    NSMutableArray *_operations;
+    NSMutableArray * _operations;
 }
 
 @property (nonatomic, retain) NSMutableArray *operations;

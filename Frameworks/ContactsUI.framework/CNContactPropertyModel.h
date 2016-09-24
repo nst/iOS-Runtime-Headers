@@ -3,13 +3,13 @@
  */
 
 @interface CNContactPropertyModel : NSObject {
-    <CNContactPropertyModelDelegate> *_delegate;
-    NSMutableDictionary *_model;
-    NSArray *_properties;
-    <CNContactPropertyRemoteModelDelegate> *_remoteDelegate;
-    id _source;
-    NSMutableArray *_transactions;
-    NSMutableArray *_validProperties;
+    <CNContactPropertyModelDelegate> * _delegate;
+    NSMutableDictionary * _model;
+    NSArray * _properties;
+    <CNContactPropertyRemoteModelDelegate> * _remoteDelegate;
+    id  _source;
+    NSMutableArray * _transactions;
+    NSMutableArray * _validProperties;
 }
 
 @property (nonatomic, retain) <CNContactPropertyModelDelegate> *delegate;

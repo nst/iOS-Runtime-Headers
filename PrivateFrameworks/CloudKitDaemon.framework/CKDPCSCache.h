@@ -3,29 +3,65 @@
  */
 
 @interface CKDPCSCache : NSObject {
-    id /* block */ _fetchPCSItemForCacheBlock;
-    NSMutableDictionary *_itemIDToPCSCacheItem;
-    NSObject<OS_dispatch_queue> *_itemPCSFetchQueue;
+    NSObject<OS_dispatch_queue> * _callbackQueue;
+    CKDClientContext * _context;
+    CKDPCSFetchAggregator * _fetchAggregator;
+    NSObject<OS_dispatch_queue> * _fetchQueue;
+    NSMutableDictionary * _outstandingFetches;
+    CKDPCSMemoryCache * _recordMemoryCache;
+    CKDPCSMemoryCache * _shareMemoryCache;
+    CKDPCSSQLCache * _sqlCache;
+    CKDPCSMemoryCache * _zoneMemoryCache;
 }
 
-@property (nonatomic, copy) id /* block */ fetchPCSItemForCacheBlock;
-@property (nonatomic, retain) NSMutableDictionary *itemIDToPCSCacheItem;
-@property (nonatomic, retain) NSObject<OS_dispatch_queue> *itemPCSFetchQueue;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *callbackQueue;
+@property (nonatomic) CKDClientContext *context;
+@property (nonatomic, retain) CKDPCSFetchAggregator *fetchAggregator;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *fetchQueue;
+@property (nonatomic, retain) NSMutableDictionary *outstandingFetches;
+@property (nonatomic, readonly) CKDPCSMemoryCache *recordMemoryCache;
+@property (nonatomic, readonly) CKDPCSMemoryCache *shareMemoryCache;
+@property (nonatomic, readonly) CKDPCSSQLCache *sqlCache;
+@property (nonatomic, readonly) CKDPCSMemoryCache *zoneMemoryCache;
 
 - (void).cxx_destruct;
-- (void)_initCache;
-- (void)_lockedSetPCSData:(id)arg1 forItemWithID:(id)arg2;
-- (void)clearCache;
-- (void)fetchPCSForItemWithID:(id)arg1 operation:(id)arg2 options:(unsigned int)arg3 withCompletionHandler:(id /* block */)arg4;
-- (id /* block */)fetchPCSItemForCacheBlock;
-- (id)init;
-- (id)itemIDToPCSCacheItem;
-- (id)itemPCSFetchQueue;
-- (void)pcsDataFetched:(id)arg1 forItemWithID:(id)arg2 error:(id)arg3;
-- (void)setFetchPCSItemForCacheBlock:(id /* block */)arg1;
-- (void)setItemIDToPCSCacheItem:(id)arg1;
-- (void)setItemPCSFetchQueue:(id)arg1;
-- (void)setPCSData:(id)arg1 forItemWithID:(id)arg2;
-- (void)setPCSData:(id)arg1 forItemsPassingTest:(id /* block */)arg2;
+- (id)CKStatusReportArray;
+- (void)_lockedAddOutstandingFetch:(id)arg1 forItemIDString:(id)arg2 databaseScope:(int)arg3;
+- (void)_lockedCreatePCSCacheFetchOfItem:(id)arg1 pcsData:(id)arg2 forOperation:(id)arg3 options:(unsigned int)arg4 fetchCreator:(id /* block */)arg5 withCompletionHandler:(id /* block */)arg6;
+- (void)_lockedFetchPCSForItem:(id)arg1 memoryCache:(id)arg2 forOperation:(id)arg3 options:(unsigned int)arg4 fetchCreator:(id /* block */)arg5 withCompletionHandler:(id /* block */)arg6;
+- (id)_lockedGetOutstandingFetchForOperation:(id)arg1 options:(unsigned int)arg2 itemIDString:(id)arg3;
+- (void)_lockedHandleMemoryFetchOfItem:(id)arg1 pcsData:(id)arg2 forOperation:(id)arg3 options:(unsigned int)arg4 fetchCreator:(id /* block */)arg5 withCompletionHandler:(id /* block */)arg6;
+- (void)_lockedRemoveOutstandingFetch:(id)arg1 forItemIDString:(id)arg2 databaseScope:(int)arg3;
+- (void)_updateMemoryCacheWithPCSData:(id)arg1 forItemWithID:(id)arg2 inMemoryCache:(id)arg3 databaseScope:(int)arg4 withCompletionHandler:(id /* block */)arg5;
+- (id)callbackQueue;
+- (void)clearPCSCaches;
+- (void)clearPCSMemoryCaches;
+- (id)context;
+- (void)dealloc;
+- (id)fetchAggregator;
+- (void)fetchPCSForRecordWithID:(id)arg1 forOperation:(id)arg2 options:(unsigned int)arg3 withCompletionHandler:(id /* block */)arg4;
+- (void)fetchPCSForShareWithID:(id)arg1 forOperation:(id)arg2 options:(unsigned int)arg3 withCompletionHandler:(id /* block */)arg4;
+- (void)fetchPCSForZoneWithID:(id)arg1 forOperation:(id)arg2 options:(unsigned int)arg3 withCompletionHandler:(id /* block */)arg4;
+- (id)fetchQueue;
+- (BOOL)hasStatusToReport;
+- (id)initWithClientContext:(id)arg1;
+- (id)outstandingFetches;
+- (id)recordMemoryCache;
+- (void)removePCSDataForItemsInShareWithID:(id)arg1;
+- (void)removePCSDataForItemsInZoneWithID:(id)arg1;
+- (void)setCallbackQueue:(id)arg1;
+- (void)setContext:(id)arg1;
+- (void)setFetchAggregator:(id)arg1;
+- (void)setFetchQueue:(id)arg1;
+- (void)setOutstandingFetches:(id)arg1;
+- (void)setPCSData:(id)arg1 forFetchedRecordID:(id)arg2 withScope:(int)arg3 fetchError:(id)arg4 withCompletionHandler:(id /* block */)arg5;
+- (void)setPCSData:(id)arg1 forFetchedShareID:(id)arg2 withScope:(int)arg3 fetchError:(id)arg4 withCompletionHandler:(id /* block */)arg5;
+- (void)setPCSData:(id)arg1 forFetchedZoneID:(id)arg2 withScope:(int)arg3 fetchError:(id)arg4 withCompletionHandler:(id /* block */)arg5;
+- (id)shareMemoryCache;
+- (id)sqlCache;
+- (void)updateMemoryCacheWithRecordPCSData:(id)arg1 forRecordWithID:(id)arg2 databaseScope:(int)arg3 withCompletionHandler:(id /* block */)arg4;
+- (void)updateMemoryCacheWithSharePCSData:(id)arg1 forShareWithID:(id)arg2 databaseScope:(int)arg3 withCompletionHandler:(id /* block */)arg4;
+- (void)updateMemoryCacheWithZonePCSData:(id)arg1 forZoneWithID:(id)arg2 databaseScope:(int)arg3 withCompletionHandler:(id /* block */)arg4;
+- (id)zoneMemoryCache;
 
 @end

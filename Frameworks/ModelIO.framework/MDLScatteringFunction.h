@@ -3,20 +3,20 @@
  */
 
 @interface MDLScatteringFunction : NSObject <MDLNamed> {
-    MDLMaterialProperty *_ambientOcclusion;
-    MDLMaterialProperty *_ambientOcclusionScale;
-    MDLMaterialProperty *_baseColor;
+    MDLMaterialProperty * _ambientOcclusion;
+    MDLMaterialProperty * _ambientOcclusionScale;
+    MDLMaterialProperty * _baseColor;
     struct unique_ptr<ModelIO::BidirectionalScatteringDistributionFunction, std::__1::default_delete<ModelIO::BidirectionalScatteringDistributionFunction> > { 
         struct __compressed_pair<ModelIO::BidirectionalScatteringDistributionFunction *, std::__1::default_delete<ModelIO::BidirectionalScatteringDistributionFunction> > { 
             struct BidirectionalScatteringDistributionFunction {} *__first_; 
         } __ptr_; 
-    } _bsdf;
-    MDLMaterialProperty *_emission;
-    MDLMaterialProperty *_interfaceIndexOfRefraction;
-    MDLMaterialProperty *_materialIndexOfRefraction;
-    NSString *_name;
-    MDLMaterialProperty *_normal;
-    MDLMaterialProperty *_specular;
+    }  _bsdf;
+    MDLMaterialProperty * _emission;
+    MDLMaterialProperty * _interfaceIndexOfRefraction;
+    MDLMaterialProperty * _materialIndexOfRefraction;
+    NSString * _name;
+    MDLMaterialProperty * _normal;
+    MDLMaterialProperty * _specular;
 }
 
 @property (nonatomic, readonly, retain) MDLMaterialProperty *ambientOcclusion;
@@ -34,7 +34,6 @@
 - (id)ambientOcclusion;
 - (id)ambientOcclusionScale;
 - (id)baseColor;
-- (void)bindShadowProperties;
 - (id)emission;
 - (id)init;
 - (id)interfaceIndexOfRefraction;

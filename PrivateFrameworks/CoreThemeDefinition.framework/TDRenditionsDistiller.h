@@ -3,15 +3,15 @@
  */
 
 @interface TDRenditionsDistiller : NSObject {
-    TDLogger *_logger;
-    CoreThemeDocument *document;
-    NSConditionLock *inQueueLock;
-    BOOL noMoreCSIDataInfo;
-    BOOL noMoreRenditions;
-    NSConditionLock *outQueueLock;
-    NSMutableArray *psiDataInfoOutQueue;
-    NSMutableArray *renditionInQueue;
-    BOOL shouldCompressCSIDataFlag;
+    TDLogger * _logger;
+    CoreThemeDocument * document;
+    NSConditionLock * inQueueLock;
+    BOOL  noMoreCSIDataInfo;
+    BOOL  noMoreRenditions;
+    NSConditionLock * outQueueLock;
+    NSMutableArray * psiDataInfoOutQueue;
+    NSMutableArray * renditionInQueue;
+    BOOL  shouldCompressCSIDataFlag;
 }
 
 @property (retain) TDLogger *logger;

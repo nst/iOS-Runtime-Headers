@@ -3,7 +3,7 @@
  */
 
 @interface NPKProtoMarkPaymentPassForDeleteRequest : PBRequest <NSCopying> {
-    NSString *_passID;
+    NSString * _passID;
 }
 
 @property (nonatomic, retain) NSString *passID;

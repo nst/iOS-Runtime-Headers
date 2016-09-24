@@ -3,8 +3,8 @@
  */
 
 @interface _UIHostedWindowAnimationController : _UIWindowAnimationController {
-    double _duration;
-    id /* block */ _transitionActions;
+    double  _duration;
+    id /* block */  _transitionActions;
 }
 
 @property (nonatomic) double duration;

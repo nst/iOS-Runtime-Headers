@@ -3,8 +3,8 @@
  */
 
 @interface SUCompletionsResponse : NSObject {
-    NSArray *_completionItems;
-    NSString *_title;
+    NSArray * _completionItems;
+    NSString * _title;
 }
 
 @property (nonatomic, readonly) NSArray *completionItems;

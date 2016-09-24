@@ -3,13 +3,13 @@
  */
 
 @interface TSCHStyleSwapUndoTuple : NSObject {
-    unsigned int mIndex;
-    TSSPropertySet *mMutatedProperties;
-    TSSStyle *mNewValue;
-    TSSStyle *mOldValue;
-    NSUUID *mRefLineUUID;
-    TSPObject<TSCHStyleSwapSupporting> *mStyleSwapSupporting;
-    int mSwapType;
+    int  mIndex;
+    TSSPropertySet * mMutatedProperties;
+    TSSStyle * mNewValue;
+    TSSStyle * mOldValue;
+    NSUUID * mRefLineUUID;
+    TSPObject<TSCHStyleSwapSupporting> * mStyleSwapSupporting;
+    int  mSwapType;
 }
 
 @property (readonly) TSSStyle *afterValue;
@@ -24,14 +24,20 @@
 @property (nonatomic, readonly, retain) TSPObject<TSCHStyleSwapSupporting> *styleSwapSupporting;
 @property (readonly) int swapType;
 
++ (id)convertedSwapTuplesForSwapTuples:(id)arg1 chartInfo:(id)arg2;
++ (BOOL)hasSwapTuplesRequiringConversion:(id)arg1;
++ (id)migratedSwapTuplesForSwapTuples:(id)arg1 documentRoot:(id)arg2;
+
 - (id)afterValue;
 - (id)beforeValue;
 - (BOOL)canApplyTupleToStyleSwapSupporting:(id)arg1;
+- (id)convertedSwapTupleForChartInfo:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)forwardDelta;
 - (unsigned int)hash;
 - (unsigned int)index;
+- (id)initFromSOSWithSwapType:(int)arg1 index:(unsigned int)arg2 oldValue:(id)arg3 newValue:(id)arg4 refLineUUID:(id)arg5;
 - (id)initWithArchive:(const struct StyleSwapUndoTupleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Reference {} *x5; int x6; unsigned int x7; struct Reference {} *x8; struct Reference {} *x9; struct UUID {} *x10; }*)arg1 unarchiver:(id)arg2;
 - (id)initWithChartInfo:(id)arg1 swapType:(int)arg2 index:(unsigned int)arg3 oldValue:(id)arg4 newValue:(id)arg5;
 - (id)initWithChartInfo:(id)arg1 swapType:(int)arg2 index:(unsigned int)arg3 oldValue:(id)arg4 newValue:(id)arg5 refLineUUID:(id)arg6;
@@ -40,6 +46,8 @@
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isSwappingSameStyleObject:(id)arg1;
 - (BOOL)isSwappingSameStyleValues:(id)arg1;
+- (id)migratedStyleForStyle:(id)arg1 documentRoot:(id)arg2;
+- (id)migratedSwapTupleForDocumentRoot:(id)arg1;
 - (id)mutatedProperties;
 - (id)p_deltaFrom:(id)arg1 to:(id)arg2;
 - (id)p_initWithPersistentStyleSwapSupporting:(id)arg1 swapType:(int)arg2 index:(unsigned int)arg3 oldValue:(id)arg4 newValue:(id)arg5 refLineUUID:(id)arg6;

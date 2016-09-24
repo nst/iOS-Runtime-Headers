@@ -3,10 +3,10 @@
  */
 
 @interface UIClassicController : NSObject {
-    BOOL _hidesStatusBarFiller;
-    UIStatusBarViewController *_statusBarViewController;
-    UIWindow *_window;
-    UIZoomViewController *_zoomViewController;
+    BOOL  _hidesStatusBarFiller;
+    UIStatusBarViewController * _statusBarViewController;
+    UIWindow * _window;
+    UIZoomViewController * _zoomViewController;
 }
 
 + (id)sharedClassicController;

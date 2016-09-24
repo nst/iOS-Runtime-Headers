@@ -3,9 +3,9 @@
  */
 
 @interface XPCNSRequest : NSObject {
-    NSData *_data;
-    <NSCoding> *_message;
-    XPCRequest *_request;
+    NSData * _data;
+    <NSCoding> * _message;
+    XPCRequest * _request;
 }
 
 @property (nonatomic, readonly, retain) NSData *data;

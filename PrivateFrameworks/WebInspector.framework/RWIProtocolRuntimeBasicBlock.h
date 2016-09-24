@@ -5,13 +5,16 @@
 @interface RWIProtocolRuntimeBasicBlock : RWIProtocolJSONObject
 
 @property (nonatomic) int endOffset;
+@property (nonatomic) int executionCount;
 @property (nonatomic) BOOL hasExecuted;
 @property (nonatomic) int startOffset;
 
 - (int)endOffset;
+- (int)executionCount;
 - (BOOL)hasExecuted;
-- (id)initWithStartOffset:(int)arg1 endOffset:(int)arg2 hasExecuted:(BOOL)arg3;
+- (id)initWithStartOffset:(int)arg1 endOffset:(int)arg2 hasExecuted:(BOOL)arg3 executionCount:(int)arg4;
 - (void)setEndOffset:(int)arg1;
+- (void)setExecutionCount:(int)arg1;
 - (void)setHasExecuted:(BOOL)arg1;
 - (void)setStartOffset:(int)arg1;
 - (int)startOffset;

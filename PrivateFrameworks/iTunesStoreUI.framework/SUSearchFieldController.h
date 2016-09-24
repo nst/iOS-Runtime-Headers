@@ -3,15 +3,15 @@
  */
 
 @interface SUSearchFieldController : NSObject <ISStoreURLOperationDelegate, SUScriptTextFieldDelegate, UISearchDisplayDelegate, UITableViewDataSource, UITableViewDelegate> {
-    SUClientInterface *_clientInterface;
-    NSArray *_completions;
-    ISStoreURLOperation *_completionsOperation;
-    SUSearchFieldConfiguration *_configuration;
-    UIControl *_dimmerView;
-    UISearchBar *_searchBar;
-    SUSearchDisplayController *_searchController;
-    int _searchFieldStyle;
-    SUScriptTextFieldDelegate *_textFieldDelegate;
+    SUClientInterface * _clientInterface;
+    NSArray * _completions;
+    ISStoreURLOperation * _completionsOperation;
+    SUSearchFieldConfiguration * _configuration;
+    UIControl * _dimmerView;
+    UISearchBar * _searchBar;
+    SUSearchDisplayController * _searchController;
+    int  _searchFieldStyle;
+    SUScriptTextFieldDelegate * _textFieldDelegate;
 }
 
 @property (getter=isActive, nonatomic, readonly) BOOL active;

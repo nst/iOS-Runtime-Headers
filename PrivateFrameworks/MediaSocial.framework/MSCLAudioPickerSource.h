@@ -3,9 +3,9 @@
  */
 
 @interface MSCLAudioPickerSource : NSObject <NSCopying> {
-    UIImage *_icon;
-    NSString *_title;
-    UIViewController<MSCLAudioPickerSourceViewController> *_viewController;
+    UIImage * _icon;
+    NSString * _title;
+    UIViewController<MSCLAudioPickerSourceViewController> * _viewController;
 }
 
 @property (nonatomic, copy) UIImage *icon;

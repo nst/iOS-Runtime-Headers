@@ -6,17 +6,17 @@
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _labelRange;
-    unsigned int _matchType;
+    }  _labelRange;
+    unsigned int  _matchType;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _range;
+    }  _range;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _valueRange;
-    NSString *_valueString;
+    }  _valueRange;
+    NSString * _valueString;
 }
 
 @property (nonatomic, readonly) struct _NSRange { unsigned int x1; unsigned int x2; } labelRange;

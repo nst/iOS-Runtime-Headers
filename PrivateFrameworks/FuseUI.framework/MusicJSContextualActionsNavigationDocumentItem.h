@@ -3,8 +3,8 @@
  */
 
 @interface MusicJSContextualActionsNavigationDocumentItem : NSObject {
-    MusicJSManagedObject *_jsDocumentManagedObject;
-    NSDictionary *_presentationOptions;
+    MusicJSManagedObject * _jsDocumentManagedObject;
+    NSDictionary * _presentationOptions;
 }
 
 @property (nonatomic, readonly) MusicJSManagedObject *jsDocumentManagedObject;

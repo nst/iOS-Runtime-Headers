@@ -3,7 +3,7 @@
  */
 
 @interface RTScenarioTriggerArrivedEarly : RTScenarioTrigger {
-    double _secondsEarly;
+    double  _secondsEarly;
 }
 
 @property (nonatomic, readonly) double secondsEarly;

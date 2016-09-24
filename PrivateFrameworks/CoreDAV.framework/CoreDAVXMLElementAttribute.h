@@ -3,9 +3,9 @@
  */
 
 @interface CoreDAVXMLElementAttribute : NSObject {
-    NSString *_name;
-    NSString *_nameSpace;
-    NSString *_value;
+    NSString * _name;
+    NSString * _nameSpace;
+    NSString * _value;
 }
 
 @property (nonatomic, retain) NSString *name;

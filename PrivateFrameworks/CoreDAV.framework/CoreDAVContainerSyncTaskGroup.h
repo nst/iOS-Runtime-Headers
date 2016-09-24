@@ -3,30 +3,30 @@
  */
 
 @interface CoreDAVContainerSyncTaskGroup : CoreDAVTaskGroup <CoreDAVDeleteTaskDelegate, CoreDAVGetTaskDelegate, CoreDAVPutTaskDelegate> {
-    NSMutableArray *_actions;
-    BOOL _actionsOnly;
-    NSURL *_addMemberURL;
-    Class _appSpecificDataItemClass;
-    NSString *_bulkChangeCheckCTag;
-    NSDictionary *_bulkRequests;
-    BOOL _ensureUpdatedCTag;
-    NSURL *_folderURL;
-    NSMutableArray *_localItemURLOrder;
-    unsigned int _maxIndependentTasks;
-    unsigned int _multiGetBatchSize;
-    NSString *_nextCTag;
-    NSString *_nextSyncToken;
-    int _phase;
-    NSString *_previousCTag;
-    NSString *_previousSyncToken;
-    NSMutableDictionary *_remainingHREFsToModDeleteActions;
-    NSMutableDictionary *_remainingUUIDsToAddActions;
-    BOOL _syncItemOrder;
-    NSMutableSet *_syncReportDeletedURLs;
-    NSMutableArray *_unsubmittedTasks;
-    NSMutableDictionary *_urlToETag;
-    BOOL _useMultiGet;
-    BOOL _useSyncCollection;
+    NSMutableArray * _actions;
+    BOOL  _actionsOnly;
+    NSURL * _addMemberURL;
+    Class  _appSpecificDataItemClass;
+    NSString * _bulkChangeCheckCTag;
+    NSDictionary * _bulkRequests;
+    BOOL  _ensureUpdatedCTag;
+    NSURL * _folderURL;
+    NSMutableArray * _localItemURLOrder;
+    unsigned int  _maxIndependentTasks;
+    unsigned int  _multiGetBatchSize;
+    NSString * _nextCTag;
+    NSString * _nextSyncToken;
+    int  _phase;
+    NSString * _previousCTag;
+    NSString * _previousSyncToken;
+    NSMutableDictionary * _remainingHREFsToModDeleteActions;
+    NSMutableDictionary * _remainingUUIDsToAddActions;
+    BOOL  _syncItemOrder;
+    NSMutableSet * _syncReportDeletedURLs;
+    NSMutableArray * _unsubmittedTasks;
+    NSMutableDictionary * _urlToETag;
+    BOOL  _useMultiGet;
+    BOOL  _useSyncCollection;
 }
 
 @property (nonatomic) BOOL actionsOnly;

@@ -3,9 +3,9 @@
  */
 
 @interface WLVideosMigrator : WLFileMigrationWebService {
-    BOOL _didSaveVideo;
-    NSObject<OS_dispatch_semaphore> *_importSema;
-    NSError *_saveError;
+    BOOL  _didSaveVideo;
+    NSObject<OS_dispatch_semaphore> * _importSema;
+    NSError * _saveError;
 }
 
 + (id)contentType;

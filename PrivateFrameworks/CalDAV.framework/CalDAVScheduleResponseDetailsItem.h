@@ -3,11 +3,11 @@
  */
 
 @interface CalDAVScheduleResponseDetailsItem : CoreDAVItem {
-    ICSDocument *_calendarData;
-    CoreDAVItemWithHrefChildItem *_recipientHREF;
-    CoreDAVLeafItem *_requestStatus;
-    NSString *_responseDescription;
-    CoreDAVErrorItem *_topLevelErrorItem;
+    ICSDocument * _calendarData;
+    CoreDAVItemWithHrefChildItem * _recipientHREF;
+    CoreDAVLeafItem * _requestStatus;
+    NSString * _responseDescription;
+    CoreDAVErrorItem * _topLevelErrorItem;
 }
 
 @property (nonatomic, retain) ICSDocument *calendarData;

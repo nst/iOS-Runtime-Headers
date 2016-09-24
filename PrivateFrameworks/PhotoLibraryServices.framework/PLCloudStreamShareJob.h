@@ -3,11 +3,11 @@
  */
 
 @interface PLCloudStreamShareJob : PLCloudSharingJob {
-    NSString *_albumCloudGUID;
-    NSString *_albumName;
-    NSString *_commentText;
-    NSArray *_mediaSources;
-    NSArray *_recipientsInfo;
+    NSString * _albumCloudGUID;
+    NSString * _albumName;
+    NSString * _commentText;
+    NSArray * _mediaSources;
+    NSArray * _recipientsInfo;
 }
 
 @property (nonatomic, retain) NSString *albumCloudGUID;
@@ -23,7 +23,7 @@
 - (id)albumCloudGUID;
 - (id)albumName;
 - (id)commentText;
-- (long long)daemonOperation;
+- (int)daemonOperation;
 - (id)description;
 - (void)encodeToXPCObject:(id)arg1;
 - (void)executeDaemonOperation;

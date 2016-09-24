@@ -2,39 +2,36 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@interface HDCodableSample : PBCodable <NSCopying> {
-    long long _dataType;
-    double _endDate;
+@interface HDCodableSample : PBCodable <HDDecoding, NSCopying> {
+    int  _dataType;
+    double  _endDate;
     struct { 
         unsigned int dataType : 1; 
         unsigned int endDate : 1; 
         unsigned int startDate : 1; 
-    } _has;
-    HDCodableObject *_object;
-    double _startDate;
+    }  _has;
+    HDCodableObject * _object;
+    double  _startDate;
 }
 
-@property (nonatomic) long long dataType;
+@property (nonatomic) int dataType;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic) double endDate;
 @property (nonatomic) BOOL hasDataType;
 @property (nonatomic) BOOL hasEndDate;
 @property (nonatomic, readonly) BOOL hasObject;
 @property (nonatomic) BOOL hasStartDate;
+@property (readonly) unsigned int hash;
 @property (nonatomic, retain) HDCodableObject *object;
 @property (nonatomic) double startDate;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (id)_decodedObjectTypeOfClass:(Class)arg1;
+- (BOOL)applyToObject:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (long long)dataType;
-- (id)decodedBinarySampleType;
-- (id)decodedCategoryType;
-- (id)decodedCorrelationType;
-- (double)decodedEndDate;
-- (id)decodedQuantityType;
-- (double)decodedStartDate;
-- (id)decodedWorkoutType;
+- (int)dataType;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (double)endDate;
@@ -47,7 +44,7 @@
 - (void)mergeFrom:(id)arg1;
 - (id)object;
 - (BOOL)readFrom:(id)arg1;
-- (void)setDataType:(long long)arg1;
+- (void)setDataType:(int)arg1;
 - (void)setEndDate:(double)arg1;
 - (void)setHasDataType:(BOOL)arg1;
 - (void)setHasEndDate:(BOOL)arg1;

@@ -3,13 +3,13 @@
  */
 
 @interface NRServerRequestReporter : NSObject {
-    NSString *_requestType;
-    double _startTime;
-    BOOL _submitted;
+    NSString * _requestType;
+    double  _startTime;
+    BOOL  _submitted;
     struct mach_timebase_info { 
         unsigned int numer; 
         unsigned int denom; 
-    } _timebaseInfo;
+    }  _timebaseInfo;
 }
 
 @property (nonatomic, retain) NSString *requestType;
@@ -18,8 +18,8 @@
 @property (nonatomic) struct mach_timebase_info { unsigned int x1; unsigned int x2; } timebaseInfo;
 
 - (void).cxx_destruct;
-- (unsigned long long)abs_to_nanos:(unsigned long long)arg1;
-- (double)abs_to_seconds:(unsigned long long)arg1;
+- (unsigned int)abs_to_nanos:(unsigned int)arg1;
+- (double)abs_to_seconds:(unsigned int)arg1;
 - (void)dealloc;
 - (id)initWithRequestType:(id)arg1;
 - (void)requestCompletedWithErrorCode:(unsigned long)arg1;

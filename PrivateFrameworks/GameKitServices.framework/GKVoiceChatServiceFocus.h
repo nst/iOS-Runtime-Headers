@@ -3,12 +3,12 @@
  */
 
 @interface GKVoiceChatServiceFocus : GKVoiceChatServicePrivate {
-    NSString *currentFocus;
-    BOOL hasMic;
-    NSMutableArray *incomingCallDictList;
-    int incomingUID;
-    NSMutableArray *outgoingCallDictList;
-    int packetsPerBundle;
+    NSString * currentFocus;
+    BOOL  hasMic;
+    NSMutableArray * incomingCallDictList;
+    int  incomingUID;
+    NSMutableArray * outgoingCallDictList;
+    int  packetsPerBundle;
 }
 
 @property (nonatomic, copy) NSString *currentFocus;

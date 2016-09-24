@@ -5,10 +5,10 @@
 @interface _NMRMediaRemoteSetArtworkMessage : PBCodable <NSCopying> {
     struct { 
         unsigned int timestamp : 1; 
-    } _has;
-    NSData *_jpegData;
-    NSData *_originalDigest;
-    double _timestamp;
+    }  _has;
+    NSData * _jpegData;
+    NSData * _originalDigest;
+    double  _timestamp;
 }
 
 @property (nonatomic, readonly) BOOL hasJpegData;

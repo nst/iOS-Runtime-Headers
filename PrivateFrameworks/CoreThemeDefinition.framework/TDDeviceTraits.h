@@ -3,36 +3,51 @@
  */
 
 @interface TDDeviceTraits : NSObject {
-    int _graphicsFeatureSetClassValue;
-    NSArray *_graphicsFeatureSetFallbackValues;
-    int _graphicsPerformanceClass;
-    NSArray *_hostedIdiomValues;
-    int _idiomValue;
-    int _memoryPerformanceClass;
-    float _scale;
-    int _sizeClassHorizontal;
-    int _sizeClassVertical;
-    int _subtype;
+    int  _deploymentTargetValue;
+    int  _displayGamutValue;
+    int  _graphicsFeatureSetClassValue;
+    NSArray * _graphicsFeatureSetFallbackValues;
+    int  _graphicsPerformanceClass;
+    NSArray * _hostedIdiomValues;
+    int  _idiomValue;
+    int  _memoryPerformanceClass;
+    double  _scale;
+    int  _sizeClassHorizontal;
+    int  _sizeClassVertical;
+    int  _subtype;
 }
 
-@property (nonatomic) NSString *graphicsFeatureSetClass;
+@property (nonatomic, retain) NSString *deploymentTarget;
+@property (nonatomic) int deploymentTargetValue;
+@property (nonatomic, retain) NSString *displayGamut;
+@property (nonatomic) int displayGamutValue;
+@property (nonatomic, retain) NSString *graphicsFeatureSetClass;
 @property (nonatomic) int graphicsFeatureSetClassValue;
 @property (nonatomic, copy) NSArray *graphicsFeatureSetFallbackValues;
-@property (nonatomic) NSArray *graphicsFeatureSetFallbacks;
+@property (nonatomic, retain) NSArray *graphicsFeatureSetFallbacks;
 @property (nonatomic) int graphicsPerformanceClass;
 @property (nonatomic, copy) NSArray *hostedIdiomValues;
-@property (nonatomic) NSArray *hostedIdioms;
-@property (nonatomic) NSString *idiom;
+@property (nonatomic, retain) NSArray *hostedIdioms;
+@property (nonatomic, retain) NSString *idiom;
 @property (nonatomic) int idiomValue;
 @property (nonatomic) int memoryPerformanceClass;
-@property (nonatomic) float scale;
+@property (nonatomic) double scale;
 @property (nonatomic) int subtype;
 
+- (int)_deploymentTargetFromTraitString:(id)arg1;
+- (id)_deploymentTargetToTraitString:(int)arg1;
+- (int)_displayGamutFromTraitString:(id)arg1;
+- (id)_displayGamutToTraitString:(int)arg1;
 - (int)_graphicsFeatureSetClassFromTraitString:(id)arg1;
 - (id)_graphicsFeatureSetClassToTraitString:(int)arg1;
 - (int)_idiomFromTraitString:(id)arg1;
 - (id)_idiomToTraitString:(int)arg1;
 - (void)dealloc;
+- (id)deploymentTarget;
+- (int)deploymentTargetValue;
+- (id)description;
+- (id)displayGamut;
+- (int)displayGamutValue;
 - (id)graphicsFeatureSetClass;
 - (int)graphicsFeatureSetClassValue;
 - (id)graphicsFeatureSetFallbackValues;
@@ -42,8 +57,13 @@
 - (id)hostedIdioms;
 - (id)idiom;
 - (int)idiomValue;
+- (id)init;
 - (int)memoryPerformanceClass;
 - (float)scale;
+- (void)setDeploymentTarget:(id)arg1;
+- (void)setDeploymentTargetValue:(int)arg1;
+- (void)setDisplayGamut:(id)arg1;
+- (void)setDisplayGamutValue:(int)arg1;
 - (void)setGraphicsFeatureSetClass:(id)arg1;
 - (void)setGraphicsFeatureSetClassValue:(int)arg1;
 - (void)setGraphicsFeatureSetFallbackValues:(id)arg1;

@@ -3,10 +3,10 @@
  */
 
 @interface PKAddPaymentPassViewController : UIViewController {
-    PKAddPaymentPassRequestConfiguration *_configuration;
-    PKWeakReference *_delegate;
-    PKRemoteAddPaymentPassViewController *_remoteVC;
-    _UIAsyncInvocation *_remoteVCRequest;
+    PKAddPaymentPassRequestConfiguration * _configuration;
+    <PKAddPaymentPassViewControllerDelegate> * _delegate;
+    PKRemoteAddPaymentPassViewController * _remoteVC;
+    _UIAsyncInvocation * _remoteVCRequest;
 }
 
 @property (nonatomic) <PKAddPaymentPassViewControllerDelegate> *delegate;
@@ -14,6 +14,7 @@
 + (BOOL)_shouldForwardViewWillTransitionToSize;
 + (BOOL)canAddPaymentPass;
 
+- (void).cxx_destruct;
 - (void)_setRemoteVC:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)childViewControllerForStatusBarHidden;
 - (id)childViewControllerForStatusBarStyle;
@@ -27,7 +28,7 @@
 - (int)modalTransitionStyle;
 - (void)setDelegate:(id)arg1;
 - (BOOL)shouldAutorotate;
-- (struct CGSize { float x1; float x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { float x1; float x2; })arg2;
+- (struct CGSize { double x1; double x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { double x1; double x2; })arg2;
 - (unsigned int)supportedInterfaceOrientations;
 - (void)viewWillLayoutSubviews;
 

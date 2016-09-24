@@ -2,18 +2,20 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSWPParagraphStyle : TSSStyle <TSDMixing, TSSPreset> {
-    void *_coreTextParagraphStyle;
-    struct __CFDictionary { } *_scalePercentStyleCaches;
-    struct __CFDictionary { } *_styleCache;
+@interface TSWPParagraphStyle : TSSStyle <TSDMixing, TSSPreset, TSTCellDiffing> {
+    void * _coreTextParagraphStyle;
+    struct __CFDictionary { } * _scalePercentStyleCaches;
+    struct __CFDictionary { } * _styleCache;
 }
 
 @property (nonatomic, readonly) NSString *presetKind;
 
++ (id)cellDiffProperties;
 + (float)defaultFloatValueForProperty:(int)arg1;
 + (int)defaultIntValueForProperty:(int)arg1;
 + (id)defaultPropertyMap;
 + (id)defaultStyleWithContext:(id)arg1;
++ (id)defaultStyleWithDefaultPropertiesInContext:(id)arg1;
 + (id)defaultValueForProperty:(int)arg1;
 + (id)deprecatedProperties;
 + (void)initialize;
@@ -29,7 +31,7 @@
 
 - (void)addMissingClassProperties;
 - (float)ascent;
-- (id)boxedValueForProperty:(int)arg1 oldBoxedValue:(id)arg2 transformedByTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg3;
+- (id)boxedValueForProperty:(int)arg1 oldBoxedValue:(id)arg2 transformedByTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg3;
 - (void)clearStyleCaches;
 - (void)dealloc;
 - (struct __CTFont { }*)findCachedFontForCharacterStyle:(id)arg1 scalePercent:(unsigned int)arg2;
@@ -43,6 +45,7 @@
 - (SEL)mapThemePropertyMapSelector;
 - (id)mixedObjectWithFraction:(float)arg1 ofObject:(id)arg2;
 - (int)mixingTypeWithObject:(id)arg1 context:(id)arg2;
+- (id)objectByRemovingPropertiesInMap:(id)arg1 addingPropertiesInMap:(id)arg2 updateInverseResetPropertyMap:(id)arg3 updateInverseSetPropertyMap:(id)arg4;
 - (BOOL)p_coreTextWritingDirectionFromWPWritingDirection:(int)arg1;
 - (struct __CTParagraphStyle { }*)p_createCoreTextParagraphStyleWithCharacterStyle:(id)arg1 writingDirection:(int)arg2;
 - (struct __CFDictionary { }*)p_newCoreTextCharacterStyle:(id)arg1 allowLigatures:(BOOL)arg2 scalePercent:(unsigned int)arg3;

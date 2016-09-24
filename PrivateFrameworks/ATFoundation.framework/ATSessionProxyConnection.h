@@ -3,8 +3,8 @@
  */
 
 @interface ATSessionProxyConnection : NSObject <ATSessionObserver, ATSessionProxy> {
-    NSXPCConnection *_connection;
-    ATSession *_session;
+    NSXPCConnection * _connection;
+    ATSession * _session;
 }
 
 @property (readonly, copy) NSString *debugDescription;

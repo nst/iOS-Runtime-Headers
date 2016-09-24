@@ -3,8 +3,8 @@
  */
 
 @interface WDTableRowProperties : NSObject <NSCopying> {
-    WDCharacterProperties *mCharacterProperties;
-    unsigned int mOriginal;
+    WDCharacterProperties * mCharacterProperties;
+    unsigned int  mOriginal;
     struct { 
         short widthBefore; 
         int widthBeforeType; 
@@ -20,10 +20,10 @@
         unsigned int heightTypeOverridden : 1; 
         unsigned int header : 1; 
         unsigned int headerOverridden : 1; 
-    } mOriginalProperties;
-    unsigned int mResolved;
-    WDTableProperties *mTableProperties;
-    unsigned int mTracked;
+    }  mOriginalProperties;
+    unsigned int  mResolved;
+    WDTableProperties * mTableProperties;
+    unsigned int  mTracked;
     struct { 
         short widthBefore; 
         int widthBeforeType; 
@@ -39,7 +39,7 @@
         unsigned int heightTypeOverridden : 1; 
         unsigned int header : 1; 
         unsigned int headerOverridden : 1; 
-    } mTrackedProperties;
+    }  mTrackedProperties;
 }
 
 - (void)addProperties:(id)arg1;

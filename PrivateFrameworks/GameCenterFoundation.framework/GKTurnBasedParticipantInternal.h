@@ -3,15 +3,15 @@
  */
 
 @interface GKTurnBasedParticipantInternal : GKInternalRepresentation {
-    NSString *_inviteMessage;
-    GKPlayerInternal *_invitedBy;
-    NSDate *_lastTurnDate;
-    unsigned int _matchOutcome;
-    GKPlayerInternal *_player;
-    NSString *_sessionID;
-    unsigned char _slot;
-    NSString *_status;
-    NSDate *_timeoutDate;
+    NSString * _inviteMessage;
+    GKPlayerInternal * _invitedBy;
+    NSDate * _lastTurnDate;
+    unsigned int  _matchOutcome;
+    GKPlayerInternal * _player;
+    NSString * _sessionID;
+    unsigned char  _slot;
+    NSString * _status;
+    NSDate * _timeoutDate;
 }
 
 @property (nonatomic, retain) NSString *inviteMessage;

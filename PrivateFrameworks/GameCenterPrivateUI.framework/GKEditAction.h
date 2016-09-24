@@ -3,9 +3,9 @@
  */
 
 @interface GKEditAction : NSObject {
-    BOOL _destructive;
-    NSString *_name;
-    SEL _selector;
+    BOOL  _destructive;
+    NSString * _name;
+    SEL  _selector;
 }
 
 @property (nonatomic) BOOL destructive;

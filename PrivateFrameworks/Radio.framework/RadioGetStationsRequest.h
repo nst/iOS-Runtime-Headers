@@ -3,30 +3,30 @@
  */
 
 @interface RadioGetStationsRequest : RadioRequest {
-    SSMetricsConfiguration *_metricsConfiguration;
-    SSMetricsPageEvent *_metricsPageEvent;
-    int _nodeType;
-    int _numberOfResults;
-    long long _parentNodeID;
-    SSURLConnectionRequest *_request;
-    int _resultsOffset;
+    SSMetricsConfiguration * _metricsConfiguration;
+    SSMetricsPageEvent * _metricsPageEvent;
+    int  _nodeType;
+    int  _numberOfResults;
+    int  _parentNodeID;
+    SSURLConnectionRequest * _request;
+    int  _resultsOffset;
 }
 
 @property (nonatomic, readonly) SSMetricsConfiguration *metricsConfiguration;
 @property (nonatomic, readonly, copy) SSMetricsPageEvent *metricsPageEvent;
 @property (nonatomic) int numberOfResults;
-@property (nonatomic, readonly) long long parentNodeID;
+@property (nonatomic, readonly) int parentNodeID;
 @property (nonatomic) int resultsOffset;
 
 - (void).cxx_destruct;
 - (id)_rootTreeNodeByApplyingResponse:(id)arg1 returningError:(id*)arg2;
 - (void)cancel;
 - (id)initForFeaturedStations;
-- (id)initWithParentNodeID:(long long)arg1;
+- (id)initWithParentNodeID:(int)arg1;
 - (id)metricsConfiguration;
 - (id)metricsPageEvent;
 - (int)numberOfResults;
-- (long long)parentNodeID;
+- (int)parentNodeID;
 - (int)resultsOffset;
 - (void)setNumberOfResults:(int)arg1;
 - (void)setResultsOffset:(int)arg1;

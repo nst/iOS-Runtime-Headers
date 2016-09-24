@@ -3,27 +3,29 @@
  */
 
 @interface PSUISoftwareUpdateManager : NSObject <SUManagerClientDelegate, SUNetworkObserver> {
-    SUManagerClient *_SUManager;
-    NSString *_actionString;
-    BOOL _allowCellularDownloads;
-    BOOL _anyScanInProgress;
-    SUAutoInstallOperation *_autoInstallOperation;
-    BOOL _connectedToPowerSource;
-    <PSUISoftwareUpdateManagerDelegate> *_delegate;
-    SUDownload *_download;
-    SUMutableDownloadMetadata *_downloadMetadata;
-    NSDateComponentsFormatter *_durationFormatter;
-    UIViewController *_hostController;
-    BOOL _manuallyStartedScan;
-    int _networkType;
-    unsigned char _originalCellFlag;
-    unsigned char _originalWifiFlag;
-    NSString *_progressString;
-    BOOL _readyToDownload;
-    BOOL _readyToResume;
-    RUIStyle *_serverFlowStyle;
-    int _state;
-    SUDescriptor *_update;
+    SUManagerClient * _SUManager;
+    NSString * _actionString;
+    BOOL  _allowCellularDownloads;
+    BOOL  _anyScanInProgress;
+    SUAutoInstallOperation * _autoInstallOperation;
+    BOOL  _connectedToPowerSource;
+    <PSUISoftwareUpdateManagerDelegate> * _delegate;
+    SUDownload * _download;
+    SUMutableDownloadMetadata * _downloadMetadata;
+    NSDateComponentsFormatter * _durationFormatter;
+    UIViewController * _hostController;
+    BOOL  _manuallyStartedScan;
+    int  _networkType;
+    unsigned char  _originalCellFlag;
+    unsigned char  _originalWifiFlag;
+    double  _previousTimeRemaining;
+    NSString * _progressString;
+    BOOL  _readyToDownload;
+    BOOL  _readyToResume;
+    BOOL  _runningInitialScan;
+    RUIStyle * _serverFlowStyle;
+    int  _state;
+    SUDescriptor * _update;
 }
 
 @property (nonatomic, readonly) SUManagerClient *SUManager;
@@ -54,6 +56,7 @@
 - (void)_reallyDownloadAndInstallAcceptingCellularFees:(BOOL)arg1 completion:(id /* block */)arg2;
 - (void)_reallyResumeDownloadAcceptingCellularFees:(BOOL)arg1;
 - (void)_setState:(int)arg1 error:(id)arg2;
+- (void)_updateDownloadProgressWithDownload:(id)arg1 stateFromDownload:(int*)arg2;
 - (id)actionString;
 - (BOOL)allowCellularDownloads;
 - (void)cancelAutoInstall;
@@ -87,6 +90,7 @@
 - (BOOL)readyToResume;
 - (void)refreshState;
 - (void)resumeDownload;
+- (void)runEntryScan;
 - (void)scanFinishedWithUpdate:(id)arg1 error:(id)arg2;
 - (void)scanForUpdateCompletion:(id /* block */)arg1;
 - (id)serverFlowStyle;

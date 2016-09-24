@@ -3,13 +3,16 @@
  */
 
 @interface TSTTableDataFormulaError : TSTTableDataObject {
-    TSWPStorage *mFormulaError;
+    TSWPStorage * mFormulaError;
 }
+
+@property (nonatomic, readonly) TSWPStorage *formulaError;
 
 - (void)dealloc;
 - (id)description;
+- (id)formulaError;
 - (unsigned int)hash;
-- (id)initObjectWithFormulaError:(id)arg1;
+- (id)initObjectWithFormulaError:(id)arg1 refCount:(unsigned int)arg2;
 - (BOOL)isEqual:(id)arg1;
 
 @end

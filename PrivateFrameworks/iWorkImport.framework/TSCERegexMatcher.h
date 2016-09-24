@@ -3,7 +3,7 @@
  */
 
 @interface TSCERegexMatcher : NSObject {
-    NSRegularExpression *mRegex;
+    NSRegularExpression * mRegex;
 }
 
 + (id)regexMatcherWithStringMatch:(id)arg1;

@@ -3,12 +3,12 @@
  */
 
 @interface TIInputModeController : NSObject {
-    NSArray *_supportedInputModeIdentifiers;
-    NSArray *_supportedInputModeLanguageAndRegions;
-    NSString *currentLocale;
-    NSArray *defaultInputModes;
-    NSArray *enabledInputModes;
-    NSArray *preferredLanguages;
+    NSArray * _supportedInputModeIdentifiers;
+    NSArray * _supportedInputModeLanguageAndRegions;
+    NSString * currentLocale;
+    NSArray * defaultInputModes;
+    NSArray * enabledInputModes;
+    NSArray * preferredLanguages;
 }
 
 @property (nonatomic, copy) NSString *currentLocale;

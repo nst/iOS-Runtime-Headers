@@ -3,29 +3,29 @@
  */
 
 @interface UIKeyboardKeyplaneTransition : NSObject {
-    id /* block */ _completionBlock;
-    float _currentProgress;
-    CADisplayLink *_displayLink;
-    UIKBTree *_end;
-    UIView *_endView;
-    double _finalTransitionStartTime;
-    float _finishDuration;
-    float _finishProgress;
-    BOOL _initiallyAtEnd;
-    float _liftOffProgress;
-    UIKBTree *_start;
-    UIView *_startView;
-    <UIKeyboardKeyplaneTransitionDelegate> *_transitionDelegate;
-    NSMutableArray *_transitionViews;
+    id /* block */  _completionBlock;
+    double  _currentProgress;
+    CADisplayLink * _displayLink;
+    UIKBTree * _end;
+    UIView * _endView;
+    double  _finalTransitionStartTime;
+    double  _finishDuration;
+    double  _finishProgress;
+    BOOL  _initiallyAtEnd;
+    double  _liftOffProgress;
+    UIKBTree * _start;
+    UIView * _startView;
+    <UIKeyboardKeyplaneTransitionDelegate> * _transitionDelegate;
+    NSMutableArray * _transitionViews;
 }
 
 @property (copy) id /* block */ completionBlock;
-@property (nonatomic, readonly) float endHeight;
+@property (nonatomic, readonly) double endHeight;
 @property (nonatomic) BOOL initiallyAtEnd;
-@property (nonatomic, readonly) float startHeight;
+@property (nonatomic, readonly) double startHeight;
 @property (nonatomic) <UIKeyboardKeyplaneTransitionDelegate> *transitionDelegate;
 
-- (void)addTransitionView:(id)arg1 startFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 endFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
+- (void)addTransitionView:(id)arg1 startFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 endFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
 - (BOOL)canDisplayTransitionFromKeyplane:(id)arg1 toKeyplane:(id)arg2;
 - (void)commitTransitionRebuild;
 - (id /* block */)completionBlock;

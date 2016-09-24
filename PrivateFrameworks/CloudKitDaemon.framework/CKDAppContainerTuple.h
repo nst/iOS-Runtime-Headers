@@ -3,10 +3,10 @@
  */
 
 @interface CKDAppContainerTuple : NSObject <NSCopying> {
-    NSString *_applicationBundleID;
-    NSString *_applicationContainerPath;
-    CKContainerID *_containerID;
-    NSString *_sourceApplicationBundleID;
+    NSString * _applicationBundleID;
+    NSString * _applicationContainerPath;
+    CKContainerID * _containerID;
+    NSString * _sourceApplicationBundleID;
 }
 
 @property (nonatomic, retain) NSString *applicationBundleID;

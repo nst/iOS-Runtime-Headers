@@ -3,9 +3,9 @@
  */
 
 @interface PLValueComparison : NSObject {
-    short _comparisonOperation;
-    NSString *_key;
-    id _value;
+    short  _comparisonOperation;
+    NSString * _key;
+    id  _value;
 }
 
 @property (readonly) short comparisonOperation;

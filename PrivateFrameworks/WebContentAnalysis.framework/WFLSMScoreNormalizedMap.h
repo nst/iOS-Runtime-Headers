@@ -3,8 +3,8 @@
  */
 
 @interface WFLSMScoreNormalizedMap : WFLSMMap {
-    float *maxScore;
-    float *minScore;
+    double * maxScore;
+    double * minScore;
 }
 
 - (void)dealloc;

@@ -3,7 +3,7 @@
  */
 
 @interface AXPathWrapper : NSObject <NSSecureCoding> {
-    struct CGPath { } *_path;
+    struct CGPath { } * _path;
 }
 
 @property (nonatomic) struct CGPath { }*path;

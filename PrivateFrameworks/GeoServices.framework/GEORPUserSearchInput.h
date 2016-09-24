@@ -3,15 +3,15 @@
  */
 
 @interface GEORPUserSearchInput : PBCodable <NSCopying> {
-    GEOPDAutocompleteEntry *_autocompleteEntry;
-    GEOLatLng *_coordinate;
+    GEOPDAutocompleteEntry * _autocompleteEntry;
+    GEOLatLng * _coordinate;
     struct { 
         unsigned int origin : 1; 
-    } _has;
-    int _origin;
-    GEOPDPlace *_place;
-    NSString *_searchString;
-    NSString *_singleLineAddressString;
+    }  _has;
+    int  _origin;
+    GEOPDPlace * _place;
+    NSString * _searchString;
+    NSString * _singleLineAddressString;
 }
 
 @property (nonatomic, retain) GEOPDAutocompleteEntry *autocompleteEntry;
@@ -27,6 +27,7 @@
 @property (nonatomic, retain) NSString *searchString;
 @property (nonatomic, retain) NSString *singleLineAddressString;
 
+- (int)StringAsOrigin:(id)arg1;
 - (id)autocompleteEntry;
 - (id)coordinate;
 - (void)copyTo:(id)arg1;
@@ -44,6 +45,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (int)origin;
+- (id)originAsString:(int)arg1;
 - (id)place;
 - (BOOL)readFrom:(id)arg1;
 - (id)searchString;

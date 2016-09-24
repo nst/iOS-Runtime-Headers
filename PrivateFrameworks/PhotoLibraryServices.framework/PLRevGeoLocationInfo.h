@@ -3,13 +3,13 @@
  */
 
 @interface PLRevGeoLocationInfo : NSObject {
-    PLRevGeoCompoundNameInfo *_compoundNameInfo;
-    PLRevGeoCompoundNameInfo *_compoundSecondaryNameInfo;
-    <GEOMapItemPrivate> *_geoMapItem;
-    BOOL _isHome;
-    BOOL _isValid;
-    NSString *_providerId;
-    unsigned int _providerVersion;
+    PLRevGeoCompoundNameInfo * _compoundNameInfo;
+    PLRevGeoCompoundNameInfo * _compoundSecondaryNameInfo;
+    <GEOMapItemPrivate> * _geoMapItem;
+    BOOL  _isHome;
+    BOOL  _isValid;
+    NSString * _providerId;
+    unsigned int  _providerVersion;
 }
 
 @property (nonatomic, retain) PLRevGeoCompoundNameInfo *compoundNameInfo;

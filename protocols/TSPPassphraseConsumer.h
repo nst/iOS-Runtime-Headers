@@ -5,6 +5,7 @@
 
 @required
 
+- (NSString *)lastPasswordAttempted;
 - (BOOL)setPassphrase:(NSString *)arg1;
 
 @optional

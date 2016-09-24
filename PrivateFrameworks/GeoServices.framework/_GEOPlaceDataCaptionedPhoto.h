@@ -3,8 +3,8 @@
  */
 
 @interface _GEOPlaceDataCaptionedPhoto : NSObject <GEOMapItemPhoto> {
-    GEOPDCaptionedPhoto *_captionedPhoto;
-    GEOPhoto *_geoPhoto;
+    GEOPDCaptionedPhoto * _captionedPhoto;
+    GEOPhoto * _geoPhoto;
 }
 
 @property (nonatomic, readonly) NSString *author;

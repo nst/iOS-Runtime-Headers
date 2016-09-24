@@ -25,12 +25,13 @@
         unsigned int resolveFilter; 
         unsigned int width; 
         unsigned int height; 
-    } _private;
+        BOOL yInvert; 
+    }  _private;
 }
 
 + (id)attachmentDescriptor;
 
-- (const struct MTLRenderPassAttachmentDescriptorPrivate { id x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; struct { double x_6_1_1; double x_6_1_2; double x_6_1_3; double x_6_1_4; } x6; double x7; unsigned int x8; id x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; }*)_descriptorPrivate;
+- (const struct MTLRenderPassAttachmentDescriptorPrivate { id x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; struct { double x_6_1_1; double x_6_1_2; double x_6_1_3; double x_6_1_4; } x6; double x7; unsigned int x8; id x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; BOOL x15; }*)_descriptorPrivate;
 - (struct { double x1; double x2; double x3; double x4; })clearColor;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -56,8 +57,10 @@
 - (void)setSlice:(unsigned int)arg1;
 - (void)setStoreAction:(unsigned int)arg1;
 - (void)setTexture:(id)arg1;
+- (void)setYInvert:(BOOL)arg1;
 - (unsigned int)slice;
 - (unsigned int)storeAction;
 - (id)texture;
+- (BOOL)yInvert;
 
 @end

@@ -3,13 +3,13 @@
  */
 
 @interface CDDXPCConnection : NSObject {
-    NSObject<OS_xpc_object> *_connection;
-    NSObject<OS_dispatch_queue> *_connectionQueue;
-    CDDebug *_debug;
-    BOOL _hasValidConnection;
-    NSObject<OS_dispatch_queue> *_replyQueue;
-    long long _sequenceNumber;
-    NSString *_serviceName;
+    NSObject<OS_xpc_object> * _connection;
+    NSObject<OS_dispatch_queue> * _connectionQueue;
+    CDDebug * _debug;
+    BOOL  _hasValidConnection;
+    NSObject<OS_dispatch_queue> * _replyQueue;
+    int  _sequenceNumber;
+    NSString * _serviceName;
 }
 
 @property (readonly) CDDebug *debug;
@@ -23,10 +23,10 @@
 - (BOOL)establishConnection;
 - (id)initWithMachServiceName:(id)arg1 dispatchQueue:(id)arg2;
 - (void)invalidateConnection;
-- (id)makeStashWithId:(unsigned long long)arg1;
+- (id)makeStashWithId:(unsigned int)arg1;
 - (void)sendBarrier:(id /* block */)arg1;
 - (BOOL)sendMessageAsync:(id)arg1 withReplyHandler:(id /* block */)arg2;
-- (unsigned long long)sequenceNumber;
+- (unsigned int)sequenceNumber;
 - (id)serviceName;
 
 @end

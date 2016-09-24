@@ -3,9 +3,9 @@
  */
 
 @interface SKUIShelfViewElement : SKUIViewElement {
-    int _numberOfRows;
-    id /* block */ _shelfItemViewElementValidator;
-    NSString *_slideshowTitle;
+    int  _numberOfRows;
+    id /* block */  _shelfItemViewElementValidator;
+    NSString * _slideshowTitle;
 }
 
 @property (nonatomic, readonly) int numberOfRows;

@@ -3,29 +3,31 @@
  */
 
 @interface CKRecipientSelectionController : CKViewController <ABPeoplePickerNavigationControllerDelegate, CKRecipientSearchListControllerDelegate, MFComposeRecipientTextViewDelegate, MFGroupDetailViewControllerDelegate> {
-    NSArray *_addressBookProperties;
-    CKPendingConversation *_conversation;
-    <CKRecipientSelectionControllerDelegate> *_delegate;
-    BOOL _didShowOneTimeErrorAlert;
-    BOOL _editable;
-    BOOL _forceMMS;
-    BOOL _homogenizePreferredServiceForiMessage;
-    float _keyboardHeightWithAccessoryView;
-    ABPeoplePickerNavigationController *_peoplePickerController;
-    BOOL _peoplePickerHidden;
-    BOOL _preventAtomization;
-    MFComposeRecipient *_recentContactForPresentedABCard;
-    NSMutableDictionary *_recipientAvailabilities;
-    NSMutableDictionary *_recipientAvailibityTimers;
-    CKRecipientSearchListController *_searchListController;
-    BOOL _shouldSuppressSearchResultsTable;
-    CKComposeRecipientView *_toField;
-    UIView *_toFieldContainerView;
-    UIScrollView *_toFieldScrollingView;
+    NSArray * _addressBookProperties;
+    CKPendingConversation * _conversation;
+    <CKRecipientSelectionControllerDelegate> * _delegate;
+    BOOL  _didShowOneTimeErrorAlert;
+    BOOL  _editable;
+    BOOL  _forceMMS;
+    id /* block */  _gameCenterPickerBlock;
+    BOOL  _homogenizePreferredServiceForiMessage;
+    double  _keyboardHeightWithAccessoryView;
+    ABPeoplePickerNavigationController * _peoplePickerController;
+    BOOL  _peoplePickerHidden;
+    BOOL  _preventAtomization;
+    MFComposeRecipient * _recentContactForPresentedABCard;
+    NSMutableDictionary * _recipientAvailabilities;
+    NSMutableDictionary * _recipientAvailibityTimers;
+    CKRecipientSearchListController * _searchListController;
+    BOOL  _shouldSuppressSearchResultsTable;
+    CKComposeRecipientView * _toField;
+    UIView * _toFieldContainerView;
+    UILabel * _toFieldPlaceholderLabel;
+    UIScrollView * _toFieldScrollingView;
 }
 
 @property (nonatomic, retain) NSArray *addressBookProperties;
-@property (nonatomic, readonly) float collapsedHeight;
+@property (nonatomic, readonly) double collapsedHeight;
 @property (nonatomic, retain) CKPendingConversation *conversation;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CKRecipientSelectionControllerDelegate> *delegate;
@@ -33,6 +35,7 @@
 @property (nonatomic) BOOL didShowOneTimeErrorAlert;
 @property (getter=isEditable, nonatomic) BOOL editable;
 @property (nonatomic) BOOL forceMMS;
+@property (nonatomic, copy) id /* block */ gameCenterPickerBlock;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) BOOL homogenizePreferredServiceForiMessage;
 @property (nonatomic, retain) ABPeoplePickerNavigationController *peoplePickerController;
@@ -46,10 +49,12 @@
 @property (nonatomic, readonly) BOOL shouldSuppressSearchResultsTable;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) CKComposeRecipientView *toField;
-@property (nonatomic, retain) UIView *toFieldContainerView;
+@property (nonatomic, readonly) UIView *toFieldContainerView;
 @property (nonatomic, readonly) BOOL toFieldIsFirstResponder;
+@property (nonatomic, retain) UILabel *toFieldPlaceholderLabel;
 @property (nonatomic, retain) UIScrollView *toFieldScrollingView;
 
+- (void).cxx_destruct;
 - (void)_adjustToFieldPositionIfNecessary;
 - (id)_alternateAddressesForRecipient:(id)arg1;
 - (id)_alternateiMessagableAddressesForRecipient:(id)arg1;
@@ -63,7 +68,7 @@
 - (void)_hideSearchField;
 - (BOOL)_isToFieldPushedUp;
 - (void)_keyboardWillShowOrHide:(id)arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_navigationBarInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_navigationBarInsets;
 - (id)_recipientCausingTooManyRecipientsError;
 - (void)_refreshActionSheet;
 - (void)_removeAvailabilityTimeoutTimerForRecipient:(id)arg1;
@@ -90,7 +95,8 @@
 - (float)collapsedHeight;
 - (id)composeRecipientView:(id)arg1 composeRecipientForAddress:(id)arg2;
 - (id)composeRecipientView:(id)arg1 composeRecipientForRecord:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
-- (void)composeRecipientView:(id)arg1 didChangeSize:(struct CGSize { float x1; float x2; })arg2;
+- (void)composeRecipientView:(id)arg1 didAddRecipient:(id)arg2;
+- (void)composeRecipientView:(id)arg1 didChangeSize:(struct CGSize { double x1; double x2; })arg2;
 - (void)composeRecipientView:(id)arg1 didFinishEnteringAddress:(id)arg2;
 - (void)composeRecipientView:(id)arg1 didRemoveRecipient:(id)arg2;
 - (void)composeRecipientView:(id)arg1 didSelectRecipients:(id)arg2;
@@ -105,6 +111,7 @@
 - (BOOL)didShowOneTimeErrorAlert;
 - (BOOL)finishedComposingRecipients;
 - (BOOL)forceMMS;
+- (id /* block */)gameCenterPickerBlock;
 - (void)groupDetailViewController:(id)arg1 didAskToRemoveGroup:(id)arg2;
 - (void)groupDetailViewController:(id)arg1 didTapComposeRecipient:(id)arg2;
 - (void)groupDetailViewControllerDidCancel:(id)arg1;
@@ -117,6 +124,7 @@
 - (id)initWithConversation:(id)arg1;
 - (void)invalidateOutstandingIDStatusRequests;
 - (BOOL)isEditable;
+- (BOOL)isGameCenterRecipient:(id)arg1;
 - (BOOL)isPeoplePickerHidden;
 - (BOOL)isSearchResultsHidden;
 - (void)loadView;
@@ -150,6 +158,8 @@
 - (void)setDidShowOneTimeErrorAlert:(BOOL)arg1;
 - (void)setEditable:(BOOL)arg1;
 - (void)setForceMMS:(BOOL)arg1;
+- (void)setGameCenterPickedHandles:(id)arg1 playerNames:(id)arg2;
+- (void)setGameCenterPickerBlock:(id /* block */)arg1;
 - (void)setPeoplePickerController:(id)arg1;
 - (void)setPeoplePickerHidden:(BOOL)arg1;
 - (void)setPreventAtomization:(BOOL)arg1;
@@ -159,19 +169,21 @@
 - (void)setSearchListController:(id)arg1;
 - (void)setSearchResultsHidden:(BOOL)arg1;
 - (void)setToField:(id)arg1;
-- (void)setToFieldContainerView:(id)arg1;
+- (void)setToFieldPlaceholderLabel:(id)arg1;
 - (void)setToFieldScrollingView:(id)arg1;
 - (BOOL)shouldSuppressSearchResultsTable;
 - (void)stopCheckingRecipientAvailabilityAndRemoveAllTimers;
 - (id)toField;
 - (id)toFieldContainerView;
 - (BOOL)toFieldIsFirstResponder;
+- (id)toFieldPlaceholderLabel;
 - (id)toFieldScrollingView;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)viewDidAppearDeferredSetup;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidLoad;
 - (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillLayoutSubviews;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

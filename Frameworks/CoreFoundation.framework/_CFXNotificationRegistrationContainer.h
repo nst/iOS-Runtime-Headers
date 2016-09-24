@@ -11,7 +11,7 @@
         } elements; 
         void *singleChildKey; 
         struct { /* ? */ } *callbacks; 
-    } _children;
+    }  _children;
 }
 
 + (Class)childClass;
@@ -19,7 +19,6 @@
 - (void)addChild:(id)arg1;
 - (void)dealloc;
 - (BOOL)enumerate:(id /* block */)arg1;
-- (void)finalize;
 - (id)initWithParent:(id)arg1;
 - (id)initWithParent:(id)arg1 childKeyCallbacks:(const struct { int x1; int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); int (*x6)(); }*)arg2;
 - (void)invalidate;

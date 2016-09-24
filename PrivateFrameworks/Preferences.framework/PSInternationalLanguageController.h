@@ -3,16 +3,16 @@
  */
 
 @interface PSInternationalLanguageController : PSViewController <UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate> {
-    PSLanguage *_checkedLanguage;
-    UIView *_contentView;
-    NSArray *_deviceLanguages;
-    NSArray *_filteredDeviceLanguages;
-    PSLanguageSelector *_languageSelector;
-    PSLocaleSelector *_localeSelector;
-    NSString *_savedSearchTerm;
-    UISearchBar *_searchBar;
-    BOOL _searchIsActive;
-    UITableView *_tableView;
+    PSLanguage * _checkedLanguage;
+    UIView * _contentView;
+    NSArray * _deviceLanguages;
+    NSArray * _filteredDeviceLanguages;
+    PSLanguageSelector * _languageSelector;
+    PSLocaleSelector * _localeSelector;
+    NSString * _savedSearchTerm;
+    UISearchBar * _searchBar;
+    BOOL  _searchIsActive;
+    UITableView * _tableView;
 }
 
 @property (nonatomic, retain) PSLanguage *checkedLanguage;

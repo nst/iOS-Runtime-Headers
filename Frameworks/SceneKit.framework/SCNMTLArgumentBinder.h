@@ -3,9 +3,9 @@
  */
 
 @interface SCNMTLArgumentBinder : NSObject {
-    id /* block */ _block;
-    int _frequency;
-    BOOL _needsRenderResource;
+    id /* block */  _block;
+    int  _frequency;
+    BOOL  _needsRenderResource;
 }
 
 - (void)dealloc;

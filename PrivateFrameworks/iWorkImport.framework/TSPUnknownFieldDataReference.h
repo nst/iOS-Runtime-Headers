@@ -3,7 +3,7 @@
  */
 
 @interface TSPUnknownFieldDataReference : TSPUnknownField {
-    NSArray *_datas;
+    NSArray * _datas;
 }
 
 - (void).cxx_destruct;

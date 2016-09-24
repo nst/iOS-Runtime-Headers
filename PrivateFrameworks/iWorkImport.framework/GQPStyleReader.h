@@ -3,16 +3,16 @@
  */
 
 @interface GQPStyleReader : NSObject <GQPObjectHandler, GQPObjectReader> {
-    int mCurrentProperty;
-    struct __CFArray { } *mEntries;
-    char *mIdentifier;
-    char *mParentIdentifier;
-    GQDSStyle *mStyle;
-    BOOL mStyleIdentiferEqualsParentIdentifier;
-    BOOL mStyleIsIdentified;
-    int mStyleType;
-    GQDSStylesheet *mStylesheet;
-    char *mUid;
+    int  mCurrentProperty;
+    struct __CFArray { } * mEntries;
+    char * mIdentifier;
+    char * mParentIdentifier;
+    GQDSStyle * mStyle;
+    BOOL  mStyleIdentiferEqualsParentIdentifier;
+    BOOL  mStyleIsIdentified;
+    int  mStyleType;
+    GQDSStylesheet * mStylesheet;
+    char * mUid;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -2,33 +2,41 @@
    Image: /System/Library/PrivateFrameworks/MapsSupport.framework/MapsSupport
  */
 
-@interface MSPMutableFavorite : NSObject <MSPFavorite, MSPMutableObject> {
-    MSPBookmarkStorage *_bookmarkStorage;
-    NSUUID *_storageIdentifier;
+@interface MSPMutableFavorite : NSObject <MSPFavorite, MSPIdentifiableFavorite, MSPMutableObject> {
+    MSPBookmarkStorage * _bookmarkStorage;
+    BOOL  _immutable;
+    NSUUID * _storageIdentifier;
 }
 
 @property (nonatomic, readonly) MSPBookmarkStorage *bookmarkStorage;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (getter=_isImmutable, nonatomic, readonly) BOOL immutable;
+@property (nonatomic, readonly) NSUUID *storageIdentifier;
 @property (readonly) Class superclass;
 
 + (Class)immutableObjectClass;
 + (id)immutableObjectProtocol;
++ (void)initialize;
 + (id)mutableFavoriteForBookmarkStorage:(id)arg1;
 + (Class)mutableObjectClass;
 + (id)mutableObjectProtocol;
 
 - (void).cxx_destruct;
+- (void)_assertNotImmutable;
+- (BOOL)_isImmutable;
+- (void)_markImmutable;
 - (id)abridgedBookmarkStorageForSpotlightStorage;
 - (id)bookmarkStorage;
-- (void)ifMutablePlace:(id /* block */)arg1 ifMutableRoute:(id /* block */)arg2 ifMutableRegion:(id /* block */)arg3;
-- (void)ifPlace:(id /* block */)arg1 ifRoute:(id /* block */)arg2 ifRegion:(id /* block */)arg3;
+- (id)copyIfValidWithError:(out id*)arg1;
+- (void)ifMutablePlace:(id /* block */)arg1 ifMutableRoute:(id /* block */)arg2 ifMutableRegion:(id /* block */)arg3 ifMutableTransitLine:(id /* block */)arg4;
+- (void)ifPlace:(id /* block */)arg1 ifRoute:(id /* block */)arg2 ifRegion:(id /* block */)arg3 ifTransitLine:(id /* block */)arg4;
 - (id)init;
 - (id)initWithBookmarkStorage:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)persisterOnlyBookmarkStorage;
 - (id)storageIdentifier;
-- (id)transferToImmutableWithError:(out id*)arg1;
+- (id)transferToImmutableIfValidWithError:(out id*)arg1;
 
 @end

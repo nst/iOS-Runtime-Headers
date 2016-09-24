@@ -3,9 +3,9 @@
  */
 
 @interface ICIndexItemsOperation : NSOperation {
-    NSArray *_dataSources;
-    NSError *_error;
-    CSSearchableIndex *_searchableIndex;
+    NSArray * _dataSources;
+    NSError * _error;
+    CSSearchableIndex * _searchableIndex;
 }
 
 @property (nonatomic, copy) NSArray *dataSources;

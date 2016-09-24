@@ -3,15 +3,15 @@
  */
 
 @interface AAFamilyDetailsResponse : AAResponse {
-    BOOL _canAddChildMembers;
-    BOOL _canAddMembers;
-    NSString *_childAccountButtonTitle;
-    NSString *_childAccountPrompt;
-    NSArray *_invites;
-    AAFamilyMember *_me;
-    NSArray *_members;
-    AAFamilyMember *_organizer;
-    NSArray *_pendingMembers;
+    BOOL  _canAddChildMembers;
+    BOOL  _canAddMembers;
+    NSString * _childAccountButtonTitle;
+    NSString * _childAccountPrompt;
+    NSArray * _invites;
+    AAFamilyMember * _me;
+    NSArray * _members;
+    AAFamilyMember * _organizer;
+    NSArray * _pendingMembers;
 }
 
 @property (nonatomic, readonly) BOOL canAddChildMembers;

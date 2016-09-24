@@ -3,8 +3,8 @@
  */
 
 @interface CallDBManagerClient : CallDBManager {
-    NSXPCConnection *_helperConnection;
-    id _syncHelperReadyNotificationRef;
+    NSXPCConnection * _helperConnection;
+    id  _syncHelperReadyNotificationRef;
 }
 
 @property (retain) NSXPCConnection *helperConnection;

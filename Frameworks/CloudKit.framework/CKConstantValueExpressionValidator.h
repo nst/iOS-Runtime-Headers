@@ -3,7 +3,7 @@
  */
 
 @interface CKConstantValueExpressionValidator : CKPredicateValidatorInstance {
-    <CKObjectValidating> *_validator;
+    <CKObjectValidating> * _validator;
 }
 
 @property (nonatomic, retain) <CKObjectValidating> *validator;

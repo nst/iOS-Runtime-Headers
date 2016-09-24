@@ -3,9 +3,9 @@
  */
 
 @interface IKAppPlaylistBridge : NSObject {
-    IKAppContext *_appContext;
-    <IKAppPlaylist> *_appPlaylist;
-    IKJSPlaylist *_jsPlaylist;
+    IKAppContext * _appContext;
+    <IKAppPlaylist> * _appPlaylist;
+    IKJSPlaylist * _jsPlaylist;
 }
 
 @property (nonatomic, readonly) IKAppContext *appContext;
@@ -17,9 +17,9 @@
 - (void).cxx_destruct;
 - (id)appContext;
 - (id)appPlaylist;
-- (void)dealloc;
+- (void)cleanup;
 - (int)endAction;
-- (id)initWithJSPlaylist:(id)arg1;
+- (id)initWithAppContext:(id)arg1 jsPlaylist:(id)arg2;
 - (id)item:(int)arg1;
 - (id)jsPlaylist;
 - (unsigned int)length;

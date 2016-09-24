@@ -3,7 +3,7 @@
  */
 
 @interface WBSUserTypedFormString : WBSFormAutoFillItem {
-    NSString *_userTypedString;
+    NSString * _userTypedString;
 }
 
 @property (nonatomic, readonly) NSString *userTypedString;

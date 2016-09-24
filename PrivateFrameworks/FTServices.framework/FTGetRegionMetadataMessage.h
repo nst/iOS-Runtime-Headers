@@ -3,8 +3,8 @@
  */
 
 @interface FTGetRegionMetadataMessage : IDSBaseMessage <NSCopying> {
-    NSString *_language;
-    NSDictionary *_responseRegionInformation;
+    NSString * _language;
+    NSDictionary * _responseRegionInformation;
 }
 
 @property (copy) NSString *language;

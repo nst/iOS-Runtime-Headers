@@ -2,8 +2,8 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface _GEOMapItemTransitAttribution : NSObject <GEOMapItemTransitAttribution> {
-    GEOPDTransitAttribution *_transitAttribution;
+@interface _GEOMapItemTransitAttribution : NSObject <GEOTransitAttribution> {
+    GEOPDTransitAttribution * _transitAttribution;
 }
 
 @property (readonly, copy) NSString *debugDescription;

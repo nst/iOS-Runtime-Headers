@@ -3,16 +3,15 @@
  */
 
 @interface WBSParsecRichText : WBSParsecModel {
-    WBSParsecImageRepresentation *_contentAdvisoryImage;
-    NSString *_contentAdvisoryString;
-    NSString *_formattedTextDelimiter;
-    NSArray *_formattedTextList;
-    BOOL _hasStarRating;
-    NSNumber *_maximumLines;
-    NSArray *_moreGlyphRepresentations;
-    NSString *_percentRating;
-    float _starRating;
-    NSString *_text;
+    WBSParsecImageRepresentation * _contentAdvisoryImage;
+    NSString * _contentAdvisoryString;
+    NSString * _formattedTextDelimiter;
+    NSArray * _formattedTextList;
+    BOOL  _hasStarRating;
+    NSNumber * _maximumLines;
+    NSArray * _moreGlyphRepresentations;
+    double  _starRating;
+    NSString * _text;
 }
 
 @property (nonatomic, readonly) NSString *contentAdvisoryString;
@@ -21,8 +20,7 @@
 @property (nonatomic, readonly) BOOL hasStarRating;
 @property (nonatomic, readonly) NSNumber *maximumLines;
 @property (nonatomic, readonly) NSArray *moreGlyphRepresentations;
-@property (nonatomic, readonly) NSString *percentRating;
-@property (nonatomic, readonly) float starRating;
+@property (nonatomic, readonly) double starRating;
 @property (nonatomic, readonly) NSString *text;
 
 + (id)schema;
@@ -39,10 +37,7 @@
 - (id)maximumLines;
 - (id)moreGlyphRepresentations;
 - (id)moreGlyphsWithSession:(id)arg1;
-- (id)percentRating;
 - (float)starRating;
-- (id)test_contentAdvisoryImage;
-- (id)test_moreGlyphs;
 - (id)text;
 
 @end

@@ -3,8 +3,8 @@
  */
 
 @interface GKInvitePickerViewController : GKPlayerPickerViewController {
-    NSSet *_hiddenPlayers;
-    GKInvitePickerDataSource *_invitePickerDataSource;
+    NSSet * _hiddenPlayers;
+    GKInvitePickerDataSource * _invitePickerDataSource;
 }
 
 @property (nonatomic, retain) NSSet *hiddenPlayers;

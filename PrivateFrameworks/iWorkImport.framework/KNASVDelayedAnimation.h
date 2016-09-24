@@ -3,12 +3,12 @@
  */
 
 @interface KNASVDelayedAnimation : NSObject {
-    double _delay;
-    id _object;
-    double _remainingDelay;
-    SEL _selector;
-    double _startTime;
-    id _target;
+    double  _delay;
+    id  _object;
+    double  _remainingDelay;
+    SEL  _selector;
+    double  _startTime;
+    id  _target;
 }
 
 @property (nonatomic) double delay;

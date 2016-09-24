@@ -3,19 +3,19 @@
  */
 
 @interface GEOPDAmenities : PBCodable <NSCopying> {
-    struct { int x1; BOOL x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; } *_amenitys;
-    unsigned int _amenitysCount;
-    unsigned int _amenitysSpace;
+    struct GEOPDAmenityValue { int x1; BOOL x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; } * _amenitys;
+    unsigned int  _amenitysCount;
+    unsigned int  _amenitysSpace;
 }
 
-@property (nonatomic, readonly) struct { int x1; BOOL x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*amenitys;
+@property (nonatomic, readonly) struct GEOPDAmenityValue { int x1; BOOL x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*amenitys;
 @property (nonatomic, readonly) unsigned int amenitysCount;
 
 + (id)amentiesForPlaceData:(id)arg1;
 
-- (void)addAmenity:(struct { int x1; BOOL x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; })arg1;
-- (struct { int x1; BOOL x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; })amenityAtIndex:(unsigned int)arg1;
-- (struct { int x1; BOOL x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*)amenitys;
+- (void)addAmenity:(struct GEOPDAmenityValue { int x1; BOOL x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; })arg1;
+- (struct GEOPDAmenityValue { int x1; BOOL x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; })amenityAtIndex:(unsigned int)arg1;
+- (struct GEOPDAmenityValue { int x1; BOOL x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*)amenitys;
 - (unsigned int)amenitysCount;
 - (void)clearAmenitys;
 - (void)copyTo:(id)arg1;
@@ -28,7 +28,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (void)setAmenitys:(struct { int x1; BOOL x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*)arg1 count:(unsigned int)arg2;
+- (void)setAmenitys:(struct GEOPDAmenityValue { int x1; BOOL x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*)arg1 count:(unsigned int)arg2;
 - (BOOL)valueForAmenityType:(int)arg1;
 - (void)writeTo:(id)arg1;
 

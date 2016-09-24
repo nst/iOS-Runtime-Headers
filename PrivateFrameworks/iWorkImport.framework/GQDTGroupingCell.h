@@ -3,15 +3,15 @@
  */
 
 @interface GQDTGroupingCell : GQDTCell {
-    id mFormat;
-    struct __CFString { } *mFormulaValue;
-    BOOL mHasValidFormulaValue;
-    BOOL mIsCollapsed;
-    unsigned short mLevel;
-    struct __CFBundle { } *mProcessorBundle;
-    unsigned short mRowCount;
-    unsigned short mRowIdx;
-    id mValue;
+    id  mFormat;
+    struct __CFString { } * mFormulaValue;
+    BOOL  mHasValidFormulaValue;
+    BOOL  mIsCollapsed;
+    unsigned short  mLevel;
+    struct __CFBundle { } * mProcessorBundle;
+    unsigned short  mRowCount;
+    unsigned short  mRowIdx;
+    id  mValue;
 }
 
 + (struct __CFString { }*)displayTypeString:(int)arg1;

@@ -3,12 +3,12 @@
  */
 
 @interface UIKBTree : NSObject <NSCopying> {
-    NSMutableDictionary *cache;
-    NSString *layoutTag;
-    NSString *name;
-    NSMutableDictionary *properties;
-    NSMutableArray *subtrees;
-    int type;
+    NSMutableDictionary * cache;
+    NSString * layoutTag;
+    NSString * name;
+    NSMutableDictionary * properties;
+    NSMutableArray * subtrees;
+    int  type;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *cache;
@@ -32,14 +32,18 @@
 - (void)_addKeylayoutKeys:(id)arg1;
 - (id)_cacheRootNameForKey:(id)arg1;
 - (int)_keyCountOnNamedRow:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_keyplaneFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_keyplaneFrame;
 - (BOOL)_needsScaling;
 - (BOOL)_renderAsStringKey;
 - (int)_variantType;
 - (id)activeGeometriesList;
 - (id)activeShapesFromOutputShapes:(id)arg1 inputShapes:(id)arg2;
+- (void)addMessagesWriteboardKey;
+- (void)addkeyToCachedKeyList:(id)arg1;
 - (BOOL)allowRetestAfterCommittingDownActions;
 - (id)alternateKeyplaneName;
+- (id)alternateStrings;
+- (BOOL)alternatesOnTop;
 - (id)attributeSet:(BOOL)arg1;
 - (id)autolocalizedKeyCacheIterator;
 - (BOOL)avoidAutoDeactivation;
@@ -51,7 +55,8 @@
 - (void)cacheKey:(id)arg1;
 - (id)cacheSecondaryDisplayString;
 - (id)cachedKeysByKeyName:(id)arg1;
-- (void)centerKeys:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 scale:(float)arg3;
+- (void)centerKeys:(id)arg1 inRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 scale:(float)arg3;
+- (void)clearManualAddedKey;
 - (void)clearTransientCaches;
 - (int)clipCorners;
 - (id)componentName;
@@ -68,13 +73,14 @@
 - (int)displayTypeHint;
 - (int)dragThreshold;
 - (BOOL)dynamicDisplayTypeHint;
-- (void)elaborateLayoutWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2;
+- (void)elaborateLayoutWithSize:(struct CGSize { double x1; double x2; })arg1 scale:(float)arg2;
 - (id)findLeftMoreKey;
 - (id)firstCachedKeyWithName:(id)arg1;
+- (id)firstKeyplaneSwitchKey;
 - (int)flickDirection;
 - (BOOL)forceMultitap;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForKeylayoutName:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameForKeylayoutName:(id)arg1;
 - (id)fullRepresentedString;
 - (id)geometries;
 - (id)geometriesList;
@@ -116,6 +122,7 @@
 - (id)keysOrderedByPositionRTL;
 - (id)keysOrderedByPositionWithoutZip;
 - (id)keysWithString:(id)arg1;
+- (id)keysetCanContainWriteboardKey;
 - (id)layoutName;
 - (id)layoutTag;
 - (id)listShapes;
@@ -127,27 +134,31 @@
 - (BOOL)modifiesKeyplane;
 - (id)name;
 - (id)nameFromAttributes;
-- (struct CGPoint { float x1; float x2; })navigationPointOfKey;
+- (struct CGPoint { double x1; double x2; })navigationPointOfKey;
 - (BOOL)noLanguageIndicator;
 - (BOOL)notUseCandidateSelection;
 - (id)numberForProperty:(id)arg1;
 - (id)objectForProperty:(id)arg1;
 - (void)orderVariantKeys:(BOOL)arg1;
 - (id)overrideDisplayString;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })paddedFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })paddedFrame;
 - (id)parentKey;
 - (void)precacheLayoutName:(id)arg1;
 - (float)primaryKeylayoutOffset;
 - (float)primaryKeylayoutWidthRatio;
 - (id)properties;
 - (id)recursiveDescription;
+- (void)removeKeyFromCachedKeyList:(id)arg1;
 - (BOOL)renderKeyInKeyplane:(id)arg1;
 - (int)rendering;
 - (id)representedString;
+- (id)rightSpaceKey;
 - (id)secondaryDisplayStrings;
 - (id)secondaryRepresentedStrings;
 - (int)selectedVariantIndex;
 - (void)setActiveGeometriesList:(id)arg1;
+- (void)setAlternateStrings:(id)arg1;
+- (void)setAlternatesOnTop:(BOOL)arg1;
 - (void)setAttributes:(id)arg1;
 - (void)setCache:(id)arg1;
 - (void)setClipCorners:(int)arg1;
@@ -158,7 +169,7 @@
 - (void)setDisplayTypeHint:(int)arg1;
 - (void)setFlickDirection:(int)arg1;
 - (void)setForceMultitap:(BOOL)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setGeometriesList:(id)arg1;
 - (void)setGeometry:(id)arg1;
 - (void)setGhost:(BOOL)arg1;
@@ -169,7 +180,7 @@
 - (void)setName:(id)arg1;
 - (BOOL)setObject:(id)arg1 forProperty:(id)arg2;
 - (void)setOverrideDisplayString:(id)arg1;
-- (void)setPaddedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setPaddedFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setParentKey:(id)arg1;
 - (void)setProperties:(id)arg1;
 - (void)setRendering:(int)arg1;

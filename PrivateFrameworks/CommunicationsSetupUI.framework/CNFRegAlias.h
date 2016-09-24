@@ -3,9 +3,9 @@
  */
 
 @interface CNFRegAlias : NSObject {
-    IMAccount *_account;
-    NSString *_alias;
-    NSString *_displayName;
+    IMAccount * _account;
+    NSString * _alias;
+    NSString * _displayName;
 }
 
 @property (nonatomic, retain) IMAccount *account;

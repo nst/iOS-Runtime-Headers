@@ -3,7 +3,7 @@
  */
 
 @interface SLBatchRequest : SLRequest {
-    NSMutableArray *_requests;
+    NSMutableArray * _requests;
 }
 
 - (void).cxx_destruct;

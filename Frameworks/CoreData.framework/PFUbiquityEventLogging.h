@@ -3,8 +3,8 @@
  */
 
 @interface PFUbiquityEventLogging : NSObject {
-    NSMutableSet *_logEvents;
-    int _logLevel;
+    NSMutableSet * _logEvents;
+    int  _logLevel;
 }
 
 @property int logLevel;

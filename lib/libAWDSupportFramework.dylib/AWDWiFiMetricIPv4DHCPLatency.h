@@ -3,16 +3,16 @@
  */
 
 @interface AWDWiFiMetricIPv4DHCPLatency : PBCodable <NSCopying> {
-    unsigned int _dhcpLatencyMilliSecs;
-    unsigned int _dhcpLeaseMins;
+    unsigned int  _dhcpLatencyMilliSecs;
+    unsigned int  _dhcpLeaseMins;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int dhcpLatencyMilliSecs : 1; 
         unsigned int dhcpLeaseMins : 1; 
         unsigned int securityType : 1; 
-    } _has;
-    unsigned int _securityType;
-    unsigned long long _timestamp;
+    }  _has;
+    unsigned int  _securityType;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) unsigned int dhcpLatencyMilliSecs;

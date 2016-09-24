@@ -2,11 +2,11 @@
    Image: /System/Library/PrivateFrameworks/NanoRegistry.framework/NanoRegistry
  */
 
-@interface NRSecureDevicePropertyStore : NSObject <NSSecureCoding> {
-    NSMutableDictionary *_IDToProperty;
-    BOOL _dirty;
-    NSMutableDictionary *_propertyToID;
-    NSObject<OS_dispatch_queue> *_queue;
+@interface NRSecureDevicePropertyStore : NSObject <NSCopying, NSSecureCoding> {
+    NSMutableDictionary * _IDToProperty;
+    BOOL  _dirty;
+    NSMutableDictionary * _propertyToID;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (nonatomic, readonly) BOOL dirty;
@@ -18,6 +18,7 @@
 
 - (void).cxx_destruct;
 - (id)allSecurePropertyIDs;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)count;
 - (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (id)description;

@@ -3,7 +3,7 @@
  */
 
 @interface TSPDirectoryPackageDataWriter : NSObject <TSPPackageDataWriter> {
-    NSURL *_URL;
+    NSURL * _URL;
 }
 
 @property (readonly, copy) NSString *debugDescription;

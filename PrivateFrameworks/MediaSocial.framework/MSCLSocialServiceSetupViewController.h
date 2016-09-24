@@ -3,12 +3,12 @@
  */
 
 @interface MSCLSocialServiceSetupViewController : SKUIViewController <UITableViewDataSource, UITableViewDelegate> {
-    MSCLAccountStore *_accountStore;
-    MSCLConfiguration *_configuration;
-    NSArray *_facebookPages;
-    MSCLAccount *_facebookPagesAccount;
-    NSMutableArray *_sections;
-    UITableView *_tableView;
+    MSCLAccountStore * _accountStore;
+    MSCLConfiguration * _configuration;
+    NSArray * _facebookPages;
+    MSCLAccount * _facebookPagesAccount;
+    NSMutableArray * _sections;
+    UITableView * _tableView;
 }
 
 @property (nonatomic, readonly) MSCLAccountStore *accountStore;

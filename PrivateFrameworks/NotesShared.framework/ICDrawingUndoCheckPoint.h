@@ -3,11 +3,11 @@
  */
 
 @interface ICDrawingUndoCheckPoint : NSObject {
-    NSString *_cacheFilename;
-    struct CGImage { } *_image;
-    BOOL _isEraseAllCheckPoint;
-    NSOrderedSet *_renderedCommands;
-    NSUUID *_uuid;
+    NSString * _cacheFilename;
+    struct CGImage { } * _image;
+    BOOL  _isEraseAllCheckPoint;
+    NSOrderedSet * _renderedCommands;
+    NSUUID * _uuid;
 }
 
 @property (nonatomic, readonly) NSString *cacheFilename;
@@ -17,7 +17,7 @@
 @property (nonatomic, readonly) NSUUID *uuid;
 
 + (id)cacheDirectory;
-+ (unsigned long long)cacheSize;
++ (unsigned int)cacheSize;
 + (void)deleteAllCacheFiles;
 
 - (void).cxx_destruct;
@@ -26,7 +26,7 @@
 - (BOOL)ensureCacheDirectoryExists;
 - (void)flushFromMemoryIfPossible;
 - (struct CGImage { }*)image;
-- (id)initWithImage:(struct CGImage { }*)arg1 renderedCommands:(id)arg2;
+- (id)initWithImage:(struct CGImage { }*)arg1 andMask:(struct CGImage { }*)arg2 renderedCommands:(id)arg3;
 - (BOOL)isEraseAllCheckPoint;
 - (BOOL)isInMemory;
 - (void)reloadImage;

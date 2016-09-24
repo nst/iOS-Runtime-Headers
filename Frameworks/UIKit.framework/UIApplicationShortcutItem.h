@@ -3,12 +3,12 @@
  */
 
 @interface UIApplicationShortcutItem : NSObject <NSCopying, NSMutableCopying> {
-    unsigned int _activationMode;
-    UIApplicationShortcutIcon *_icon;
-    NSString *_localizedSubtitle;
-    NSString *_localizedTitle;
-    NSString *_type;
-    NSData *_userInfoData;
+    unsigned int  _activationMode;
+    UIApplicationShortcutIcon * _icon;
+    NSString * _localizedSubtitle;
+    NSString * _localizedTitle;
+    NSString * _type;
+    NSData * _userInfoData;
 }
 
 @property (nonatomic, readonly) unsigned int activationMode;

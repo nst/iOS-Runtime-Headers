@@ -6,13 +6,13 @@
     struct { 
         unsigned int nameRank : 1; 
         unsigned int isDefault : 1; 
-    } _has;
-    BOOL _isDefault;
-    NSString *_languageCode;
-    NSString *_name;
-    unsigned int _nameRank;
-    NSString *_nameType;
-    NSString *_phoneticName;
+    }  _has;
+    BOOL  _isDefault;
+    NSString * _languageCode;
+    NSString * _name;
+    unsigned int  _nameRank;
+    NSString * _nameType;
+    NSString * _phoneticName;
 }
 
 @property (nonatomic) BOOL hasIsDefault;

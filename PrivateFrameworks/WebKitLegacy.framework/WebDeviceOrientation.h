@@ -3,7 +3,7 @@
  */
 
 @interface WebDeviceOrientation : NSObject {
-    WebDeviceOrientationInternal *m_internal;
+    WebDeviceOrientationInternal * m_internal;
 }
 
 - (void)dealloc;

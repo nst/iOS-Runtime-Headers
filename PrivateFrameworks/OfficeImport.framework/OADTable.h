@@ -3,8 +3,8 @@
  */
 
 @interface OADTable : OADDrawable {
-    OADTableGrid *mGrid;
-    NSMutableArray *mRows;
+    OADTableGrid * mGrid;
+    NSMutableArray * mRows;
 }
 
 + (void)applyTextStyle:(id)arg1 toParagraphProperties:(id)arg2;

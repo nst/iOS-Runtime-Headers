@@ -3,23 +3,28 @@
  */
 
 @interface _MKTicket : NSObject <MKMapServiceTicket, _MKMapServiceTicketForFreshness> {
-    NSError *_error;
-    NSArray *_exactMapItems;
-    NSArray *_refinedMapItems;
-    <GEOMapServiceTicket> *_ticket;
+    NSError * _error;
+    NSArray * _exactMapItems;
+    NSArray * _refinedMapItems;
+    <GEOMapServiceTicket> * _ticket;
 }
 
 @property (nonatomic, readonly) BOOL allAreFreshFromNetwork;
 @property (nonatomic, readonly) GEOMapRegion *boundingRegion;
 @property (getter=isChainResultSet, nonatomic, readonly) BOOL chainResultSet;
 @property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, readonly) GEORelatedSearchSuggestion *defaultRelatedSuggestion;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSError *error;
 @property (nonatomic, readonly) NSArray *exactMapItems;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) NSArray *refinedMapItems;
+@property (nonatomic, readonly) NSArray *relatedSearchSuggestions;
 @property (nonatomic, readonly) double requestResponseTime;
+@property (nonatomic, readonly) NSString *resultDisplayHeader;
+@property (nonatomic, readonly) int searchResultType;
 @property (nonatomic, readonly) NSString *sectionHeader;
+@property (nonatomic, readonly) BOOL shouldEnableRedoSearch;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) GEOMapServiceTraits *traits;
 
@@ -29,14 +34,19 @@
 - (void)applyToPlaceInfo:(id)arg1;
 - (id)boundingRegion;
 - (void)cancel;
+- (id)defaultRelatedSuggestion;
 - (id)description;
 - (id)error;
 - (id)exactMapItems;
 - (id)initWithTicket:(id)arg1;
 - (BOOL)isChainResultSet;
 - (id)refinedMapItems;
+- (id)relatedSearchSuggestions;
 - (double)requestResponseTime;
+- (id)resultDisplayHeader;
+- (int)searchResultType;
 - (id)sectionHeader;
+- (BOOL)shouldEnableRedoSearch;
 - (void)submitWithHandler:(id /* block */)arg1 networkActivity:(id /* block */)arg2;
 - (void)submitWithHandler:(id /* block */)arg1 queue:(id)arg2 networkActivity:(id /* block */)arg3;
 - (void)submitWithHandler:(id /* block */)arg1 timeout:(int)arg2 networkActivity:(id /* block */)arg3;

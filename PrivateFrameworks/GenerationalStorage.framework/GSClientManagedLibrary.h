@@ -3,7 +3,7 @@
  */
 
 @interface GSClientManagedLibrary : NSObject <GSLibraryProtocol> {
-    GSTemporaryStorage *_ts;
+    GSTemporaryStorage * _ts;
 }
 
 @property (nonatomic, readonly) NSString *nameSpace;

@@ -3,16 +3,16 @@
  */
 
 @interface MFPStringFormat : NSObject {
-    int mAlignment;
-    unsigned short mDigitSubstitutionLanguage;
-    int mDigitSubstitutionMethod;
-    float mFirstTabOffset;
-    unsigned int mFormatFlags;
-    int mHotkeyPrefix;
-    int mLineAlignment;
-    int mTabStopCount;
-    float *mTabStops;
-    int mTrimming;
+    int  mAlignment;
+    unsigned short  mDigitSubstitutionLanguage;
+    int  mDigitSubstitutionMethod;
+    double  mFirstTabOffset;
+    unsigned int  mFormatFlags;
+    int  mHotkeyPrefix;
+    int  mLineAlignment;
+    int  mTabStopCount;
+    double * mTabStops;
+    int  mTrimming;
 }
 
 - (int)alignment;

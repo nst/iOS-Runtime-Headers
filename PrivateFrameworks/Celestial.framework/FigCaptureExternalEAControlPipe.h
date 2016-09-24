@@ -3,33 +3,33 @@
  */
 
 @interface FigCaptureExternalEAControlPipe : NSObject <NSStreamDelegate> {
-    id _clientAssertion;
-    unsigned char _controlMode;
-    unsigned int _currentIncomingPacketBytesRead;
-    unsigned int _currentIncomingPacketLength;
-    NSData *_currentOutgoingPacket;
-    unsigned int _currentOutgoingPacketLength;
-    unsigned int _currentPacketBytesWritten;
-    <FigCaptureExternalEAControlPipeDelegate> *_delegate;
+    id  _clientAssertion;
+    unsigned char  _controlMode;
+    unsigned int  _currentIncomingPacketBytesRead;
+    unsigned int  _currentIncomingPacketLength;
+    NSData * _currentOutgoingPacket;
+    unsigned int  _currentOutgoingPacketLength;
+    unsigned int  _currentPacketBytesWritten;
+    <FigCaptureExternalEAControlPipeDelegate> * _delegate;
     struct _EAFrameBufferPacket { 
         NSMutableData *frameBufferData; 
         unsigned int frameTimeStamp; 
         unsigned int frameBytesRead; 
         unsigned char frameTypeIndex; 
-    } _frameBuffers;
-    NSMutableData *_incomingPacket;
-    NSRunLoop *_inputRunLoop;
-    NSObject<OS_dispatch_queue> *_inputRunQueue;
-    NSInputStream *_inputStream;
-    NSObject<OS_dispatch_queue> *_inputStreamQueue;
-    BOOL _isEAOpen;
-    NSMutableArray *_outgoingPackets;
-    NSRunLoop *_outputRunLoop;
-    NSObject<OS_dispatch_queue> *_outputRunQueue;
-    NSOutputStream *_outputStream;
-    NSObject<OS_dispatch_queue> *_outputStreamQueue;
-    BOOL _readData;
-    FigCaptureExternalEAControlPipe *_weakSelf;
+    }  _frameBuffers;
+    NSMutableData * _incomingPacket;
+    NSRunLoop * _inputRunLoop;
+    NSObject<OS_dispatch_queue> * _inputRunQueue;
+    NSInputStream * _inputStream;
+    NSObject<OS_dispatch_queue> * _inputStreamQueue;
+    BOOL  _isEAOpen;
+    NSMutableArray * _outgoingPackets;
+    NSRunLoop * _outputRunLoop;
+    NSObject<OS_dispatch_queue> * _outputRunQueue;
+    NSOutputStream * _outputStream;
+    NSObject<OS_dispatch_queue> * _outputStreamQueue;
+    BOOL  _readData;
+    FigCaptureExternalEAControlPipe * _weakSelf;
 }
 
 @property (readonly, copy) NSString *debugDescription;

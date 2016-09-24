@@ -3,10 +3,10 @@
  */
 
 @interface NACIDSClient : NSObject <IDSServiceDelegate> {
-    <NACIDSClientDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_idsDispatchQueue;
-    NSObject<OS_dispatch_queue> *_idsOutgoingQueue;
-    IDSService *_idsService;
+    <NACIDSClientDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _idsDispatchQueue;
+    NSObject<OS_dispatch_queue> * _idsOutgoingQueue;
+    IDSService * _idsService;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -20,6 +20,7 @@
 - (void)_handleEUVolumeLimitDidChange:(id)arg1;
 - (void)_handleHapticIntensityDidChange:(id)arg1;
 - (void)_handleMutedStateDidChange:(id)arg1;
+- (void)_handleProminentHapticStateDidChange:(id)arg1;
 - (void)_handleRouteObservationCancelled:(id)arg1;
 - (void)_handleSystemMutedStatedDidChange:(id)arg1;
 - (void)_handleVolumeControlAvailabilityDidChange:(id)arg1;
@@ -38,6 +39,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setHapticIntensity:(float)arg1;
 - (void)setMuted:(BOOL)arg1 category:(id)arg2;
+- (void)setProminentHapticEnabled:(BOOL)arg1;
 - (void)setSystemMuted:(BOOL)arg1;
 - (void)setVolumeValue:(float)arg1 category:(id)arg2;
 

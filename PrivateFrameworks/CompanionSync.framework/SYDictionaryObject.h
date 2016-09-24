@@ -3,7 +3,7 @@
  */
 
 @interface SYDictionaryObject : NSObject <NSSecureCoding, SYObject> {
-    NSDictionary *_properties;
+    NSDictionary * _properties;
 }
 
 @property (readonly, copy) NSString *debugDescription;

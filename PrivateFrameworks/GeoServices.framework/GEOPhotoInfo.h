@@ -5,9 +5,9 @@
 @interface GEOPhotoInfo : PBCodable <NSCopying> {
     struct { 
         unsigned int size : 1; 
-    } _has;
-    int _size;
-    NSString *_url;
+    }  _has;
+    int  _size;
+    NSString * _url;
 }
 
 @property (nonatomic) BOOL hasSize;
@@ -15,6 +15,7 @@
 @property (nonatomic) int size;
 @property (nonatomic, retain) NSString *url;
 
+- (int)StringAsSize:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -31,6 +32,7 @@
 - (void)setSize:(int)arg1;
 - (void)setUrl:(id)arg1;
 - (int)size;
+- (id)sizeAsString:(int)arg1;
 - (id)url;
 - (void)writeTo:(id)arg1;
 

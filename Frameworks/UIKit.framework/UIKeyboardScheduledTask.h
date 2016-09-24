@@ -3,12 +3,12 @@
  */
 
 @interface UIKeyboardScheduledTask : NSObject {
-    _UIActionWhenIdle *_deferredAction;
-    id /* block */ _enqueuedTask;
-    id /* block */ _task;
-    UIKeyboardTaskQueue *_taskQueue;
-    double _timeInterval;
-    NSTimer *_timer;
+    _UIActionWhenIdle * _deferredAction;
+    id /* block */  _enqueuedTask;
+    id /* block */  _task;
+    UIKeyboardTaskQueue * _taskQueue;
+    double  _timeInterval;
+    NSTimer * _timer;
 }
 
 @property (nonatomic, retain) _UIActionWhenIdle *deferredAction;

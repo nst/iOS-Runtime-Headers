@@ -3,16 +3,16 @@
  */
 
 @interface GQHTableState : NSObject {
-    struct vector<unsigned short, std::__1::allocator<unsigned short> > { unsigned short *x1; unsigned short *x2; struct __compressed_pair<unsigned short *, std::__1::allocator<unsigned short> > { unsigned short *x_3_1_1; } x3; } *mCellCountInColumns;
-    double mCurrentTablePosition;
-    int mGroupLevel;
-    double mLastAttachmentPosition;
-    double mOriginalTableHeight;
-    int mPrevColumnIndex;
-    int mPrevRowIndex;
-    bool mSplitTable;
-    long mSplitTableIndex;
-    GQDTTable *mTable;
+    struct vector<unsigned short, std::__1::allocator<unsigned short> > { unsigned short *x1; unsigned short *x2; struct __compressed_pair<unsigned short *, std::__1::allocator<unsigned short> > { unsigned short *x_3_1_1; } x3; } * mCellCountInColumns;
+    double  mCurrentTablePosition;
+    int  mGroupLevel;
+    double  mLastAttachmentPosition;
+    double  mOriginalTableHeight;
+    int  mPrevColumnIndex;
+    int  mPrevRowIndex;
+    bool  mSplitTable;
+    long  mSplitTableIndex;
+    GQDTTable * mTable;
 }
 
 - (void)addRowHeight:(float)arg1;

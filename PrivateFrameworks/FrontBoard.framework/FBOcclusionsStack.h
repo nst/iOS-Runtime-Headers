@@ -3,11 +3,11 @@
  */
 
 @interface FBOcclusionsStack : NSObject {
-    NSMutableSet *_dirtyKeys;
-    NSMutableDictionary *_keyToEntry;
-    NSMutableDictionary *_levelToCompositeOcclusions;
-    NSCountedSet *_levels;
-    NSMutableArray *_orderedEntries;
+    NSMutableSet * _dirtyKeys;
+    NSMutableDictionary * _keyToEntry;
+    NSMutableDictionary * _levelToCompositeOcclusions;
+    NSCountedSet * _levels;
+    NSMutableArray * _orderedEntries;
 }
 
 - (void)_adjustEntry:(id)arg1 forLevel:(float)arg2 occlusions:(id)arg3;

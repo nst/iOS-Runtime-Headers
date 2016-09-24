@@ -3,8 +3,8 @@
  */
 
 @interface TKSmartCardUserInteractionForConfirmation : TKSmartCardUserInteraction <NSSecureCoding> {
-    BOOL _result;
-    TKSmartCardSlot *_slot;
+    BOOL  _result;
+    TKSmartCardSlot * _slot;
 }
 
 @property BOOL result;

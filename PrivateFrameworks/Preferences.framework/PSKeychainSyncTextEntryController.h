@@ -3,16 +3,16 @@
  */
 
 @interface PSKeychainSyncTextEntryController : PSKeychainSyncViewController <KeychainSyncPasscodeFieldDelegate> {
-    BOOL _convertsNumeralsToASCII;
-    BOOL _hidesNextButton;
-    unsigned int _numberOfPasscodeFields;
-    BOOL _secureTextEntry;
-    PSTableCell *_textEntryCell;
-    PSSpecifier *_textEntrySpecifier;
-    int _textEntryType;
-    UIView<UIKeyInput> *_textEntryView;
-    BOOL _textFieldHasRoundBorder;
-    NSString *_textValue;
+    BOOL  _convertsNumeralsToASCII;
+    BOOL  _hidesNextButton;
+    unsigned int  _numberOfPasscodeFields;
+    BOOL  _secureTextEntry;
+    PSTableCell * _textEntryCell;
+    PSSpecifier * _textEntrySpecifier;
+    int  _textEntryType;
+    UIView<UIKeyInput> * _textEntryView;
+    BOOL  _textFieldHasRoundBorder;
+    NSString * _textValue;
 }
 
 @property (nonatomic) BOOL convertsNumeralsToASCII;

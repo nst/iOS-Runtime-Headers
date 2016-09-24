@@ -3,20 +3,20 @@
  */
 
 @interface _MDPlistBytes : NSObject {
-    unsigned int _byteVector;
-    unsigned int _byteVectorCapacity;
-    unsigned int _byteVectorCnt;
-    unsigned int _didFinalize;
-    unsigned int _isBad;
-    unsigned int _isMutable;
-    unsigned int _isMutating;
-    struct __CFArray { } *_rleQueue;
-    unsigned int _shouldDeallocate;
-    int _uidCapacity;
-    int _uidCount;
-    unsigned long long *_uidVector;
-    unsigned int _useMalloc;
-    unsigned long long *_wrapperPtr;
+    unsigned int  _byteVector;
+    unsigned int  _byteVectorCapacity;
+    unsigned int  _byteVectorCnt;
+    id /* block */  _deallocator;
+    unsigned int  _didFinalize;
+    unsigned int  _isBad;
+    unsigned int  _isMutable;
+    unsigned int  _isMutating;
+    struct __CFArray { } * _rleQueue;
+    int  _uidCapacity;
+    int  _uidCount;
+    unsigned int * _uidVector;
+    unsigned int  _useMalloc;
+    unsigned int * _wrapperPtr;
 }
 
 + (struct __MDPlistBytes { }*)createArrayPlistBytesUsingBlock:(id /* block */)arg1;
@@ -35,6 +35,7 @@
 - (id)description;
 - (void)enumerateObjectsUsingBlock:(id /* block */)arg1;
 - (void)finalize;
+- (id)initWithByteVector:(char *)arg1 count:(unsigned int)arg2 deallocator:(id /* block */)arg3;
 - (id)initWithByteVector:(char *)arg1 count:(unsigned int)arg2 shouldDeallocate:(BOOL)arg3;
 - (BOOL)isEqual:(id)arg1;
 

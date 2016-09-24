@@ -3,21 +3,21 @@
  */
 
 @interface GEORouteGenerator : NSObject {
-    NSObject<OS_dispatch_queue> *_queue;
-    GEODirectionsRequest *_request;
-    GEODirectionsRouteResponse *_response;
+    NSObject<OS_dispatch_queue> * _queue;
+    GEODirectionsRequest * _request;
+    GEODirectionsResponse * _response;
 }
 
 @property (nonatomic, readonly, retain) GEODirectionsRequest *request;
-@property (nonatomic, readonly, retain) GEODirectionsRouteResponse *response;
+@property (nonatomic, readonly, retain) GEODirectionsResponse *response;
 
-+ (unsigned long long)routingSharedLibraryCodeVersion;
-+ (unsigned long long)routingSubgraphDataVersion;
++ (unsigned int)routingSharedLibraryCodeVersion;
++ (unsigned int)routingSubgraphDataVersion;
 
 - (void)dealloc;
 - (void)decompressResponse;
 - (id)initWithRequest:(id)arg1 response:(id)arg2;
-- (id)lookupHubStationOrStopFromMuid:(unsigned long long)arg1;
+- (id)lookupHubStationOrStopFromMuid:(unsigned int)arg1;
 - (id)request;
 - (void)rerouteFromWaypoint:(id)arg1 completion:(id /* block */)arg2;
 - (id)response;

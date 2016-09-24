@@ -3,7 +3,7 @@
  */
 
 @interface IKTextParser : NSObject <NSCopying> {
-    NSAttributedString *_attributedString;
+    NSAttributedString * _attributedString;
 }
 
 @property (nonatomic, readonly, retain) NSAttributedString *attributedString;
@@ -13,12 +13,16 @@
 
 - (void).cxx_destruct;
 - (id)_attributedStringFromDomElement:(id)arg1 usingParseBlock:(id /* block */)arg2;
+- (id)_attributedStringWithFont:(id)arg1 style:(id)arg2 fontHandler:(id /* block */)arg3;
+- (id)_attributedStringWithFontHandler:(id /* block */)arg1 defaultFont:(id)arg2 style:(id)arg3 foregroundColor:(id)arg4 textAlignment:(int)arg5;
 - (id)_stringFromDateElement:(id)arg1 unformattedString:(id)arg2;
 - (id)_stringFromDurationElement:(id)arg1 unformattedString:(id)arg2;
 - (id)_stringFromNumberElement:(id)arg1 unformattedString:(id)arg2;
 - (id)attributedString;
 - (id)attributedStringWithFont:(id)arg1 foregroundColor:(id)arg2 textAlignment:(int)arg3 style:(id)arg4;
 - (id)attributedStringWithFont:(id)arg1 style:(id)arg2;
+- (id)attributedStringWithFontHandler:(id /* block */)arg1 style:(id)arg2;
+- (id)attributedStringWithFontHandler:(id /* block */)arg1 style:(id)arg2 foregroundColor:(id)arg3 textAlignment:(int)arg4;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;

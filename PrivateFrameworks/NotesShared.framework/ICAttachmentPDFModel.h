@@ -7,7 +7,8 @@
 + (id)contentInfoTextWithAttachmentCount:(unsigned int)arg1;
 + (int)populateSearchStrings:(id)arg1 url:(id)arg2 maxStringLength:(unsigned int)arg3 isCancelledBlock:(id /* block */)arg4;
 
-- (void)generatePreviews;
+- (BOOL)canMarkup;
+- (void)generatePreviewsInOperation:(id)arg1;
 - (id)generateSearchIndexStringsOperation;
 - (id /* block */)genericBrickThumbnailCreator;
 - (id /* block */)genericListThumbnailCreator;

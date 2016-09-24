@@ -3,12 +3,13 @@
  */
 
 @interface CKDMMCSItemGroupSetContext : NSObject <CKDCancelling> {
-    id /* block */ _itemGroupCompletionBlock;
-    NSMutableArray *_itemGroupContexts;
-    CKDMMCSItemGroupSet *_itemGroupSet;
-    id /* block */ _itemGroupSetCompletionBlock;
-    NSObject<OS_dispatch_group> *_itemGroupSetCompletionGroup;
-    CKDOperation *_operation;
+    id /* block */  _itemGroupCompletionBlock;
+    NSMutableArray * _itemGroupContexts;
+    CKDMMCSItemGroupSet * _itemGroupSet;
+    id /* block */  _itemGroupSetCompletionBlock;
+    NSObject<OS_dispatch_group> * _itemGroupSetCompletionGroup;
+    int  _mmcsOperationType;
+    CKDOperation * _operation;
 }
 
 @property (nonatomic, copy) id /* block */ itemGroupCompletionBlock;
@@ -16,6 +17,7 @@
 @property (nonatomic, retain) CKDMMCSItemGroupSet *itemGroupSet;
 @property (nonatomic, copy) id /* block */ itemGroupSetCompletionBlock;
 @property (nonatomic, retain) NSObject<OS_dispatch_group> *itemGroupSetCompletionGroup;
+@property (nonatomic) int mmcsOperationType;
 @property (nonatomic) CKDOperation *operation;
 
 - (void).cxx_destruct;
@@ -27,12 +29,14 @@
 - (id)itemGroupSet;
 - (id /* block */)itemGroupSetCompletionBlock;
 - (id)itemGroupSetCompletionGroup;
+- (int)mmcsOperationType;
 - (id)operation;
 - (void)setItemGroupCompletionBlock:(id /* block */)arg1;
 - (void)setItemGroupContexts:(id)arg1;
 - (void)setItemGroupSet:(id)arg1;
 - (void)setItemGroupSetCompletionBlock:(id /* block */)arg1;
 - (void)setItemGroupSetCompletionGroup:(id)arg1;
+- (void)setMmcsOperationType:(int)arg1;
 - (void)setOperation:(id)arg1;
 - (void)start;
 

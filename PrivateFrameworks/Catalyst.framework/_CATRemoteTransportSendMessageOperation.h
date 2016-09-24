@@ -3,8 +3,8 @@
  */
 
 @interface _CATRemoteTransportSendMessageOperation : CATOperation {
-    CATMessage *_message;
-    CATRemoteTransport *_transport;
+    CATMessage * _message;
+    CATRemoteTransport * _transport;
 }
 
 @property (nonatomic, retain) CATMessage *message;

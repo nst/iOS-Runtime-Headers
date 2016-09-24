@@ -3,7 +3,7 @@
  */
 
 @interface FBSXPCMessage : NSObject {
-    NSObject<OS_xpc_object> *_payload;
+    NSObject<OS_xpc_object> * _payload;
 }
 
 @property (nonatomic, readonly, retain) NSObject<OS_xpc_object> *payload;

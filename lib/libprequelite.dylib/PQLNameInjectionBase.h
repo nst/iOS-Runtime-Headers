@@ -3,8 +3,8 @@
  */
 
 @interface PQLNameInjectionBase : NSData {
-    char *_bytes;
-    unsigned int _length;
+    char * _bytes;
+    unsigned int  _length;
 }
 
 @property (nonatomic, readonly) NSData *sql;

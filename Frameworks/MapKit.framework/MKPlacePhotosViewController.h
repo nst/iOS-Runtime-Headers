@@ -2,88 +2,51 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface MKPlacePhotosViewController : UITableViewController <MKPlaceAttributionCellProvider, MKPlacePhotosViewDelegate, MKStackingViewControllerPreferredSizeUse, UICollectionViewDataSource, UICollectionViewDelegate> {
-    BOOL _hasAttribution;
-    MKMapItem *_mapItem;
-    _MKPlaceViewController *_owner;
-    _MKPlacePhotosCollectionView *_photoGrid;
-    float _photoWidth;
-    <MKPlaceCardPhotosControllerDelegate> *_photosControllerDelegate;
-    unsigned int _photosCount;
-    BOOL _showAddPhotoButton;
-    BOOL _showAttribution;
-    BOOL _showMorePhotosButton;
+@interface MKPlacePhotosViewController : UIViewController <MKPlacePhotosViewDelegate, _MKInfoCardChildViewControllerAnalyticsDelegate> {
+    BOOL  _canUseInlineViewer;
+    BOOL  _constraintsAdded;
+    MKMapItem * _mapItem;
+    unsigned int  _mode;
+    _MKPlaceViewController * _owner;
+    NSArray * _photoViews;
+    <MKPlaceCardPhotosControllerDelegate> * _photosControllerDelegate;
+    unsigned int  _photosCount;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL hasAttribution;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) MKMapItem *mapItem;
+@property (nonatomic, readonly) unsigned int mode;
 @property (nonatomic) _MKPlaceViewController *owner;
-@property (nonatomic, retain) _MKPlacePhotosCollectionView *photoGrid;
-@property (nonatomic) float photoWidth;
 @property (nonatomic) <MKPlaceCardPhotosControllerDelegate> *photosControllerDelegate;
-@property (nonatomic) unsigned int photosCount;
-@property (nonatomic, readonly) BOOL requiresPreferredContentSizeInStackingView;
-@property (nonatomic) BOOL showAddPhotoButton;
-@property (nonatomic) BOOL showAttribution;
-@property (nonatomic, readonly) BOOL showAttributionButtons;
-@property (nonatomic) BOOL showMorePhotosButton;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_addPhoto;
-- (void)_calculatePhotoSizeForSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)_morePhotos;
-- (float)_photoCellHeight;
-- (void)_photoTappedAtIndex:(unsigned int)arg1 fromLincense:(BOOL)arg2;
-- (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
-- (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })collectionView:(id)arg1 layout:(id)arg2 insetForSectionAtIndex:(int)arg3;
-- (float)collectionView:(id)arg1 layout:(id)arg2 minimumInteritemSpacingForSectionAtIndex:(int)arg3;
-- (float)collectionView:(id)arg1 layout:(id)arg2 minimumLineSpacingForSectionAtIndex:(int)arg3;
-- (struct CGSize { float x1; float x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
-- (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
-- (BOOL)hasAttribution;
-- (id)init;
+- (void)_callPhotoDelegateForPhotoAt:(unsigned int)arg1 fromLicense:(BOOL)arg2;
+- (void)_createPhotoViews;
+- (void)_photoSelected:(id)arg1;
+- (void)_photoTappedAtIndex:(unsigned int)arg1;
+- (void)_reloadPhotos;
+- (void)_updatePhotoBackgroundColor:(id)arg1;
+- (id)infoCardChildPossibleActions;
+- (void)infoCardThemeChanged:(id)arg1;
+- (id)initWithLayoutMode:(unsigned int)arg1;
+- (void)loadView;
 - (id)mapItem;
-- (int)numberOfSectionsInCollectionView:(id)arg1;
-- (int)numberOfSectionsInTableView:(id)arg1;
+- (unsigned int)mode;
 - (id)owner;
-- (id)photoGrid;
-- (float)photoWidth;
 - (id)photos;
 - (id)photosControllerDelegate;
-- (unsigned int)photosCount;
-- (void)placePhotoViewer:(id)arg1 attributionTappedForPhotoAtIndex:(unsigned int)arg2;
-- (id)placePhotoViewer:(id)arg1 viewForPhotoAtIndex:(unsigned int)arg2;
-- (id)placePhotoViewerGetDelegatesMapItem:(id)arg1;
-- (BOOL)requiresPreferredContentSizeInStackingView;
-- (void)setHasAttribution:(BOOL)arg1;
+- (void)placePhotoViewerAttributionTappedForPhotoAtIndex:(unsigned int)arg1 photo:(id)arg2;
+- (id)placePhotoViewerGetDelegatesMapItem;
+- (id)placePhotoViewerViewForPhotoAtIndex:(unsigned int)arg1;
+- (void)placePhotoViewerWillClose:(id)arg1 photo:(id)arg2 onIndex:(unsigned int)arg3;
 - (void)setMapItem:(id)arg1;
 - (void)setOwner:(id)arg1;
-- (void)setPhotoGrid:(id)arg1;
-- (void)setPhotoWidth:(float)arg1;
 - (void)setPhotosControllerDelegate:(id)arg1;
-- (void)setPhotosCount:(unsigned int)arg1;
-- (void)setShowAddPhotoButton:(BOOL)arg1;
-- (void)setShowAttribution:(BOOL)arg1;
-- (void)setShowMorePhotosButton:(BOOL)arg1;
-- (BOOL)showAddPhotoButton;
-- (BOOL)showAttribution;
-- (BOOL)showAttributionButtons;
-- (BOOL)showMorePhotosButton;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
-- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
+- (void)updateViewConstraints;
 - (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
-- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

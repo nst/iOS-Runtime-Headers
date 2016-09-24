@@ -3,9 +3,9 @@
  */
 
 @interface SUScriptMenuItem : SUScriptObject {
-    BOOL _enabled;
-    NSString *_title;
-    id _userInfo;
+    BOOL  _enabled;
+    NSString * _title;
+    id  _userInfo;
 }
 
 @property BOOL enabled;

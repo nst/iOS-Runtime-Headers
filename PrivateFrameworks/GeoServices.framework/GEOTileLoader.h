@@ -26,8 +26,8 @@
 + (void)useRemoteLoader;
 
 - (void)_loadTiles:(id)arg1 options:(unsigned int)arg2 progress:(id /* block */)arg3 finished:(id /* block */)arg4 error:(id /* block */)arg5;
-- (void)beginPreloadSessionOfSize:(unsigned long long)arg1;
-- (void)beginPreloadSessionOfSize:(unsigned long long)arg1 forClient:(id)arg2 exclusive:(BOOL)arg3;
+- (void)beginPreloadSessionOfSize:(unsigned int)arg1;
+- (void)beginPreloadSessionOfSize:(unsigned int)arg1 forClient:(id)arg2 exclusive:(BOOL)arg3;
 - (id)cachedTileForKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;
 - (void)calculateFreeableSizeWithCallbackQ:(id)arg1 finished:(id /* block */)arg2;
 - (void)cancelAllForClient:(id)arg1;
@@ -36,6 +36,7 @@
 - (void)clearAllCaches;
 - (void)closeDatabase;
 - (void)closeForClient:(id)arg1;
+- (id)descriptionDictionaryRepresentation;
 - (int)diskHits;
 - (void)endPreloadSession;
 - (void)endPreloadSessionForClient:(id)arg1;
@@ -61,7 +62,7 @@
 - (void)setInternalDelegate:(id)arg1;
 - (void)setInternalDelegateQ:(id)arg1;
 - (void)setSortPoint:(const struct { double x1; double x2; }*)arg1;
-- (void)shrinkDiskCacheToSize:(unsigned long long)arg1 callbackQ:(id)arg2 finished:(id /* block */)arg3;
-- (void)shrinkDiskCacheToSize:(unsigned long long)arg1 finished:(id /* block */)arg2;
+- (void)shrinkDiskCacheToSize:(unsigned int)arg1 callbackQ:(id)arg2 finished:(id /* block */)arg3;
+- (void)shrinkDiskCacheToSize:(unsigned int)arg1 finished:(id /* block */)arg2;
 
 @end

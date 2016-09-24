@@ -3,21 +3,21 @@
  */
 
 @interface WLMessage : NSObject {
-    NSArray *_attachments;
-    NSDate *_date;
-    NSString *_dateString;
-    BOOL _isGroupMessage;
-    unsigned int _messageDirection;
-    NSString *_messageText;
-    unsigned int _messageType;
-    NSData *_mimeData;
-    NSMutableArray *_mimeParts;
-    NSArray *_recipients;
-    WLMessageParty *_sender;
-    WLMessageSMILContext *_smilContext;
-    NSString *_subject;
-    WLSourceDeviceRecordSummary *_summary;
-    NSString *_threadID;
+    NSArray * _attachments;
+    NSDate * _date;
+    NSString * _dateString;
+    BOOL  _isGroupMessage;
+    unsigned int  _messageDirection;
+    NSString * _messageText;
+    unsigned int  _messageType;
+    NSData * _mimeData;
+    NSMutableArray * _mimeParts;
+    NSArray * _recipients;
+    WLMessageParty * _sender;
+    WLMessageSMILContext * _smilContext;
+    NSString * _subject;
+    WLSourceDeviceRecordSummary * _summary;
+    NSString * _threadID;
 }
 
 @property (nonatomic, readonly) NSArray *attachments;

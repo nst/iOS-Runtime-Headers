@@ -3,7 +3,7 @@
  */
 
 @interface SKUIGiftPurchaseRequest : NSObject {
-    SKUIURLConnectionRequest *_request;
+    SKUIURLConnectionRequest * _request;
 }
 
 - (void).cxx_destruct;

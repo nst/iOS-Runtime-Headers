@@ -3,8 +3,8 @@
  */
 
 @interface UIHandleLocalNotificationAction : BSAction {
-    UILocalNotification *_cachedNotification;
-    NSObject<OS_dispatch_semaphore> *_decodeSemaphore;
+    UILocalNotification * _cachedNotification;
+    NSObject<OS_dispatch_semaphore> * _decodeSemaphore;
 }
 
 @property (nonatomic, readonly, copy) NSString *action;

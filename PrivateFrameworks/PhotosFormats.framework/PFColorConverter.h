@@ -3,8 +3,8 @@
  */
 
 @interface PFColorConverter : NSObject <PFAVReaderWriterAdjustDelegate> {
-    CIContext *_conversionContext;
-    PFAVReaderWriter *_readerWriter;
+    CIContext * _conversionContext;
+    PFAVReaderWriter * _readerWriter;
 }
 
 @property (readonly, copy) NSString *debugDescription;

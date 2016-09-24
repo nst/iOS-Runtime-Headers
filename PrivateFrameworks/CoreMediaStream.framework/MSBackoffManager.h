@@ -3,14 +3,14 @@
  */
 
 @interface MSBackoffManager : NSObject <NSCoding> {
-    double _backoffFactor;
-    double _currentInterval;
-    <MSBackoffManagerDelegate> *_delegate;
-    double _initialInterval;
-    double _maxBackoffInterval;
-    NSDate *_nextExpiryDate;
-    double _randomizeFactor;
-    NSDate *_retryAfterDate;
+    double  _backoffFactor;
+    double  _currentInterval;
+    <MSBackoffManagerDelegate> * _delegate;
+    double  _initialInterval;
+    double  _maxBackoffInterval;
+    NSDate * _nextExpiryDate;
+    double  _randomizeFactor;
+    NSDate * _retryAfterDate;
 }
 
 @property (nonatomic) double backoffFactor;

@@ -3,7 +3,7 @@
  */
 
 @interface PLCloudCommentsChangeNotification : PLContainerChangeNotification {
-    NSDictionary *_userInfo;
+    NSDictionary * _userInfo;
 }
 
 @property (nonatomic, readonly, retain) PLManagedAsset *asset;

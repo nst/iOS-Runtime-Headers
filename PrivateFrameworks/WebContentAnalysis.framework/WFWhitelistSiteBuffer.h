@@ -3,8 +3,8 @@
  */
 
 @interface WFWhitelistSiteBuffer : NSObject {
-    unsigned int _maxSize;
-    NSMutableDictionary *_siteTree;
+    unsigned int  _maxSize;
+    NSMutableDictionary * _siteTree;
 }
 
 @property unsigned int maxSize;

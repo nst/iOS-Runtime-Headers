@@ -3,10 +3,10 @@
  */
 
 @interface AVCMNotificationDispatcher : NSObject {
-    AVCallbackContextRegistry *_callbackContextRegistry;
-    struct opaqueCMNotificationCenter { } *_cmNotificationCenter;
-    NSMutableDictionary *_listenerObjectsPassedToFig;
-    NSObject<OS_dispatch_queue> *_listenerObjectsQueue;
+    AVCallbackContextRegistry * _callbackContextRegistry;
+    struct opaqueCMNotificationCenter { } * _cmNotificationCenter;
+    NSMutableDictionary * _listenerObjectsPassedToFig;
+    NSObject<OS_dispatch_queue> * _listenerObjectsQueue;
 }
 
 @property (nonatomic, readonly) struct opaqueCMNotificationCenter { }*CMNotificationCenter;

@@ -3,8 +3,8 @@
  */
 
 @interface GKCachePair : NSObject {
-    id _key;
-    id _value;
+    id  _key;
+    id  _value;
 }
 
 @property (nonatomic, retain) id key;

@@ -3,12 +3,12 @@
  */
 
 @interface ABPersonTableActionDataSource : NSObject {
-    struct __CFDictionary { } *_actionGroupingsByProperty;
-    struct __CFDictionary { } *_actionsByProperty;
-    NSMutableArray *_bottomActions;
-    struct __CFSet { } *_hiddenActions;
-    struct __CFDictionary { } *_inlineActionsByProperty;
-    NSMutableArray *_topActions;
+    struct __CFDictionary { } * _actionGroupingsByProperty;
+    struct __CFDictionary { } * _actionsByProperty;
+    NSMutableArray * _bottomActions;
+    struct __CFSet { } * _hiddenActions;
+    struct __CFDictionary { } * _inlineActionsByProperty;
+    NSMutableArray * _topActions;
 }
 
 - (int)actionCountForActionGrouping:(int)arg1;

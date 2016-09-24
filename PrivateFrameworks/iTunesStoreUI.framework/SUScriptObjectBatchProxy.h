@@ -3,8 +3,8 @@
  */
 
 @interface SUScriptObjectBatchProxy : NSObject {
-    SUScriptObjectInvocationBatch *_invocationBatch;
-    id _target;
+    SUScriptObjectInvocationBatch * _invocationBatch;
+    id  _target;
 }
 
 @property SUScriptObjectInvocationBatch *invocationBatch;

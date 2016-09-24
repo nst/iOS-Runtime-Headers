@@ -2,12 +2,12 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDUserManagementOperationManager : NSObject <HAPTimerDelegate> {
-    NSObject<OS_dispatch_queue> *_clientQueue;
-    NSHashTable *_observedAccessories;
-    NSMutableArray *_operations;
-    NSObject<OS_dispatch_queue> *_propertyQueue;
-    HAPTimer *_saveTimer;
+@interface HMDUserManagementOperationManager : NSObject <HMFTimerDelegate> {
+    NSObject<OS_dispatch_queue> * _clientQueue;
+    NSHashTable * _observedAccessories;
+    NSMutableArray * _operations;
+    NSObject<OS_dispatch_queue> * _propertyQueue;
+    HMFTimer * _saveTimer;
 }
 
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *clientQueue;
@@ -17,7 +17,7 @@
 @property (nonatomic, readonly) NSHashTable *observedAccessories;
 @property (nonatomic, readonly) NSArray *operations;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *propertyQueue;
-@property (nonatomic, readonly) HAPTimer *saveTimer;
+@property (nonatomic, readonly) HMFTimer *saveTimer;
 @property (readonly) Class superclass;
 
 + (void)initialize;
@@ -31,6 +31,7 @@
 - (void)__registerIfNeededForReachablityChangeNotificationsForAccessory:(id)arg1;
 - (void)__removeOperationAndProcessDependantOperations:(id)arg1;
 - (void)__save;
+- (void)_cleanPriorOperations:(id)arg1;
 - (id)_filteredOperationsForAccessory:(id)arg1;
 - (id)_filteredOperationsWithDependency:(id)arg1;
 - (void)_handleAccessoryIsReachable:(id)arg1;

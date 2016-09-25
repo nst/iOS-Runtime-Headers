@@ -4,7 +4,7 @@
 
 @interface WFCategoryJudgement : NSObject {
     long  category;
-    double  score;
+    float  score;
 }
 
 + (id)categoryJudgementWithCategory:(long)arg1 score:(float)arg2;

@@ -3,24 +3,24 @@
  */
 
 @interface SKFieldNode : SKNode {
-    double  _animationSpeed;
+    float  _animationSpeed;
     BOOL  _exclusive;
     PKPhysicsField * _field;
     SKRegion * _region;
-    double  _smoothness;
+    float  _smoothness;
     SKTexture * _texture;
 }
 
-@property (nonatomic) double animationSpeed;
+@property (nonatomic) float animationSpeed;
 @property (nonatomic) unsigned int categoryBitMask;
 @property (nonatomic) void direction;
 @property (getter=isEnabled, nonatomic) BOOL enabled;
 @property (getter=isExclusive, nonatomic) BOOL exclusive;
-@property (nonatomic) double falloff;
-@property (nonatomic) double minimumRadius;
+@property (nonatomic) float falloff;
+@property (nonatomic) float minimumRadius;
 @property (nonatomic, retain) SKRegion *region;
-@property (nonatomic) double smoothness;
-@property (nonatomic) double strength;
+@property (nonatomic) float smoothness;
+@property (nonatomic) float strength;
 @property (nonatomic, retain) SKTexture *texture;
 
 + (id)customFieldWithEvaluationBlock:(id /* block */)arg1;

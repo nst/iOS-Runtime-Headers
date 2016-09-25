@@ -14,7 +14,7 @@
 @property (nonatomic, readonly) double indicatedAverageBitrate;
 @property (nonatomic, readonly) double indicatedBitrate;
 @property (nonatomic, readonly) int mediaRequestsWWAN;
-@property (nonatomic, readonly) int numberOfBytesTransferred;
+@property (nonatomic, readonly) long long numberOfBytesTransferred;
 @property (nonatomic, readonly) int numberOfDroppedVideoFrames;
 @property (nonatomic, readonly) int numberOfMediaRequests;
 @property (nonatomic, readonly) int numberOfSegmentsDownloaded;
@@ -50,7 +50,7 @@
 - (id)init;
 - (id)initWithDictionary:(id)arg1;
 - (int)mediaRequestsWWAN;
-- (int)numberOfBytesTransferred;
+- (long long)numberOfBytesTransferred;
 - (int)numberOfDroppedVideoFrames;
 - (int)numberOfMediaRequests;
 - (int)numberOfSegmentsDownloaded;

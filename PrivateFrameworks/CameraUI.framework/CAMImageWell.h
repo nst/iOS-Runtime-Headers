@@ -12,10 +12,10 @@
     int  _cameraOrientation;
     int  _layoutStyle;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _tappableEdgeInsets;
     BOOL  _thumbnailImageHidden;
 }
@@ -28,12 +28,12 @@
 @property (setter=_setUuid:, nonatomic, retain) NSString *_uuid;
 @property (nonatomic) int cameraOrientation;
 @property (nonatomic) int layoutStyle;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } tappableEdgeInsets;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } tappableEdgeInsets;
 @property (nonatomic, readonly) UIImage *thumbnailImage;
 @property (getter=isThumbnailImageHidden, nonatomic) BOOL thumbnailImageHidden;
 
 - (void).cxx_destruct;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })_affineTransformForImageOrientation:(int)arg1;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_affineTransformForImageOrientation:(int)arg1;
 - (void)_commonCAMImageWellInitializationWithLayoutStyle:(int)arg1;
 - (id)_containerView;
 - (id)_dimmingViewQueue;
@@ -49,12 +49,12 @@
 - (void)_updateThumbnailImageAnimated:(BOOL)arg1;
 - (void)_updateThumbnailTransformFromCameraOrientation;
 - (id)_uuid;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })alignmentRectInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentRectInsets;
 - (int)cameraOrientation;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithLayoutStyle:(int)arg1;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (BOOL)isThumbnailImageHidden;
 - (int)layoutStyle;
 - (void)layoutSubviews;
@@ -63,12 +63,12 @@
 - (void)setCameraOrientation:(int)arg1;
 - (void)setCameraOrientation:(int)arg1 animated:(BOOL)arg2;
 - (void)setLayoutStyle:(int)arg1;
-- (void)setTappableEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setTappableEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setThumbnailImage:(id)arg1 animated:(BOOL)arg2;
 - (void)setThumbnailImage:(id)arg1 uuid:(id)arg2 animated:(BOOL)arg3;
 - (void)setThumbnailImageHidden:(BOOL)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })tappableEdgeInsets;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })tappableEdgeInsets;
 - (id)thumbnailImage;
 
 @end

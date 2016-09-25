@@ -8,7 +8,7 @@
 
 @property (readonly) NSNumber *adamID;
 @property (readonly) NSString *phase;
-@property (readonly) double progress;
+@property (readonly) float progress;
 
 + (void)initialize;
 + (id)phaseStringForDownload:(id)arg1;

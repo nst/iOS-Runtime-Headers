@@ -6,20 +6,20 @@
     NSString * _bundleID;
     NSError * _failureError;
     double  _percentComplete;
-    int  _persistentID;
+    long long  _persistentID;
     int  _phase;
-    int  _purchaseID;
-    int  _storeItemID;
+    long long  _purchaseID;
+    long long  _storeItemID;
     int  _type;
 }
 
 @property (nonatomic, copy) NSString *bundleID;
 @property (nonatomic, copy) NSError *failureError;
 @property (nonatomic) double percentComplete;
-@property (nonatomic) int persistentID;
+@property (nonatomic) long long persistentID;
 @property (nonatomic) int phase;
-@property (nonatomic) int purchaseID;
-@property (nonatomic) int storeItemID;
+@property (nonatomic) long long purchaseID;
+@property (nonatomic) long long storeItemID;
 @property (nonatomic) int type;
 
 + (BOOL)supportsSecureCoding;
@@ -33,21 +33,21 @@
 - (unsigned int)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithPersistentID:(int)arg1;
+- (id)initWithPersistentID:(long long)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (double)percentComplete;
-- (int)persistentID;
+- (long long)persistentID;
 - (int)phase;
-- (int)purchaseID;
+- (long long)purchaseID;
 - (void)setBundleID:(id)arg1;
 - (void)setFailureError:(id)arg1;
 - (void)setPercentComplete:(double)arg1;
-- (void)setPersistentID:(int)arg1;
+- (void)setPersistentID:(long long)arg1;
 - (void)setPhase:(int)arg1;
-- (void)setPurchaseID:(int)arg1;
-- (void)setStoreItemID:(int)arg1;
+- (void)setPurchaseID:(long long)arg1;
+- (void)setStoreItemID:(long long)arg1;
 - (void)setType:(int)arg1;
-- (int)storeItemID;
+- (long long)storeItemID;
 - (int)type;
 
 @end

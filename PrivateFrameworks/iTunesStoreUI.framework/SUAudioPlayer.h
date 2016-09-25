@@ -11,7 +11,7 @@
     AVPlayer * _player;
     AVPlayerItem * _playerItem;
     SUPlayerStatus * _status;
-    int  _storeItemIdentifier;
+    long long  _storeItemIdentifier;
     id  _timeObserver;
     NSURL * _url;
 }
@@ -23,7 +23,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) NSURL *keyURL;
 @property (nonatomic, readonly) SUPlayerStatus *playerStatus;
-@property (nonatomic) int storeItemIdentifier;
+@property (nonatomic) long long storeItemIdentifier;
 @property (readonly) Class superclass;
 
 - (id)URL;
@@ -50,10 +50,10 @@
 - (void)seekToTime:(double)arg1;
 - (void)setCertificateURL:(id)arg1;
 - (void)setKeyURL:(id)arg1;
-- (void)setStoreItemIdentifier:(int)arg1;
+- (void)setStoreItemIdentifier:(long long)arg1;
 - (void)setValue:(id)arg1 forNowPlayingKey:(id)arg2;
 - (void)stop;
-- (int)storeItemIdentifier;
+- (long long)storeItemIdentifier;
 - (id)valueForNowPlayingKey:(id)arg1;
 
 @end

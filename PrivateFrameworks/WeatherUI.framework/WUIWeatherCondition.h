@@ -4,7 +4,7 @@
 
 @interface WUIWeatherCondition : NSObject {
     unsigned int  _CAMLState;
-    double  _alpha;
+    float  _alpha;
     City * _city;
     int  _condition;
     BOOL  _forcesCondition;
@@ -18,13 +18,13 @@
     BOOL  _playing;
     CALayer * _rootLayer;
     BOOL  _shouldRasterize;
-    double  _speed;
+    float  _speed;
     CAStateController * _stateController;
     double  _timeOffset;
 }
 
 @property (nonatomic) unsigned int CAMLState;
-@property (nonatomic) double alpha;
+@property (nonatomic) float alpha;
 @property (nonatomic) City *city;
 @property (nonatomic) int condition;
 @property (nonatomic) BOOL forcesCondition;
@@ -37,14 +37,14 @@
 @property (nonatomic) BOOL multiCityMode;
 @property (nonatomic) BOOL playing;
 @property (nonatomic) BOOL shouldRasterize;
-@property (nonatomic) double speed;
+@property (nonatomic) float speed;
 @property (nonatomic, retain) CAStateController *stateController;
 @property (nonatomic) double timeOffset;
 
 - (void).cxx_destruct;
 - (unsigned int)CAMLState;
 - (BOOL)_interfaceConsideredPortraitForCAMLLayer;
-- (BOOL)_interfaceConsideredPortraitForCAMLLayerWithSize:(struct CGSize { double x1; double x2; })arg1;
+- (BOOL)_interfaceConsideredPortraitForCAMLLayerWithSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)actionForLayer:(id)arg1 forKey:(id)arg2;
 - (float)alpha;
 - (id)city;
@@ -89,6 +89,6 @@
 - (float)speed;
 - (id)stateController;
 - (double)timeOffset;
-- (void)transitionToSize:(struct CGSize { double x1; double x2; })arg1 animated:(BOOL)arg2;
+- (void)transitionToSize:(struct CGSize { float x1; float x2; })arg1 animated:(BOOL)arg2;
 
 @end

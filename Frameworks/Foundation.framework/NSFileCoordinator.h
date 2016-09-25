@@ -44,7 +44,7 @@
 + (unsigned int)_readingOptions;
 + (void)_removeFileProvider:(id)arg1;
 + (void)_removeProcessIdentifierForID:(id)arg1;
-+ (unsigned int)_responsesForPresenter:(id)arg1;
++ (unsigned long long)_responsesForPresenter:(id)arg1;
 + (void)_setReadingOptions:(unsigned int)arg1;
 + (BOOL)_skipCoordinationWork;
 + (void)_startInProcessFileCoordinationAndProgressServers;

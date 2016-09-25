@@ -7,14 +7,14 @@
     SKAction * _appearAction;
     SKAction * _disappearAction;
     NSArray * _nodes;
-    double  _radius;
+    float  _radius;
 }
 
 @property (nonatomic, copy) id /* block */ animateBlock;
 @property (nonatomic, retain) SKAction *appearAction;
 @property (nonatomic, retain) SKAction *disappearAction;
 @property (nonatomic, retain) NSArray *nodes;
-@property (nonatomic) double radius;
+@property (nonatomic) float radius;
 
 + (id)hours12;
 + (id)hours12ZeusWithFont:(int)arg1;

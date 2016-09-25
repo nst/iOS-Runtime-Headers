@@ -7,7 +7,7 @@
 
 - (IMMessage *)IMMessage;
 - (NSDictionary *)attributionInfo;
-- (unsigned int)currentBytes;
+- (unsigned long long)currentBytes;
 - (NSError *)error;
 - (NSURL *)fileURL;
 - (NSString *)filename;
@@ -25,7 +25,7 @@
 - (void)mediaObjectRemoved;
 - (void)setIMMessage:(IMMessage *)arg1;
 - (NSDictionary *)stickerUserInfo;
-- (unsigned int)totalBytes;
+- (unsigned long long)totalBytes;
 - (NSDictionary *)transcoderUserInfo;
 
 @optional

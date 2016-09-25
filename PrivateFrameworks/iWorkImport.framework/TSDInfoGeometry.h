@@ -3,7 +3,7 @@
  */
 
 @interface TSDInfoGeometry : NSObject <NSCopying, NSMutableCopying, TSDMixing> {
-    double  mAngle;
+    float  mAngle;
     struct { 
         unsigned int widthValid : 1; 
         unsigned int heightValid : 1; 
@@ -11,53 +11,53 @@
         unsigned int verticalFlip : 1; 
     }  mFlags;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  mPosition;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  mSize;
 }
 
-@property (nonatomic, readonly) double angle;
+@property (nonatomic, readonly) float angle;
 @property (nonatomic, readonly) BOOL heightValid;
 @property (nonatomic, readonly) BOOL horizontalFlip;
-@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } position;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } size;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } position;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;
 @property (nonatomic, readonly) BOOL verticalFlip;
 @property (nonatomic, readonly) BOOL widthValid;
 
-+ (id)geometryFromFullTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
-+ (id)geometryFromFullTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1 widthValid:(BOOL)arg2 heightValid:(BOOL)arg3;
-+ (id)geometryFromTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1 withSize:(struct CGSize { double x1; double x2; })arg2;
++ (id)geometryFromFullTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
++ (id)geometryFromFullTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 widthValid:(BOOL)arg2 heightValid:(BOOL)arg3;
++ (id)geometryFromTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 withSize:(struct CGSize { float x1; float x2; })arg2;
 
 - (float)angle;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundsBeforeRotation;
-- (struct CGPoint { double x1; double x2; })center;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundsBeforeRotation;
+- (struct CGPoint { float x1; float x2; })center;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })fullTransform;
-- (id)geometryByAppendingTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })fullTransform;
+- (id)geometryByAppendingTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (id)geometryRelativeToGeometry:(id)arg1;
-- (id)geometryWithNewBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)geometryWithNewBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)geometryWithParentGeometry:(id)arg1;
 - (unsigned int)hash;
 - (BOOL)heightValid;
 - (BOOL)horizontalFlip;
 - (id)init;
-- (id)initWithArchive:(const struct GeometryArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Point {} *x5; struct Size {} *x6; unsigned int x7; double x8; }*)arg1;
-- (id)initWithCenter:(struct CGPoint { double x1; double x2; })arg1 size:(struct CGSize { double x1; double x2; })arg2;
-- (id)initWithFullTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1 widthValid:(BOOL)arg2 heightValid:(BOOL)arg3;
+- (id)initWithArchive:(const struct GeometryArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Point {} *x5; struct Size {} *x6; unsigned int x7; float x8; }*)arg1;
+- (id)initWithCenter:(struct CGPoint { float x1; float x2; })arg1 size:(struct CGSize { float x1; float x2; })arg2;
+- (id)initWithFullTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 widthValid:(BOOL)arg2 heightValid:(BOOL)arg3;
 - (id)initWithHeight:(float)arg1;
 - (id)initWithLayoutGeometry:(id)arg1;
-- (id)initWithPosition:(struct CGPoint { double x1; double x2; })arg1 size:(struct CGSize { double x1; double x2; })arg2;
-- (id)initWithPosition:(struct CGPoint { double x1; double x2; })arg1 size:(struct CGSize { double x1; double x2; })arg2 angle:(float)arg3;
-- (id)initWithPosition:(struct CGPoint { double x1; double x2; })arg1 size:(struct CGSize { double x1; double x2; })arg2 widthValid:(BOOL)arg3 heightValid:(BOOL)arg4 horizontalFlip:(BOOL)arg5 verticalFlip:(BOOL)arg6 angle:(float)arg7;
-- (id)initWithSize:(struct CGSize { double x1; double x2; })arg1;
-- (id)initWithTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1 size:(struct CGSize { double x1; double x2; })arg2;
-- (id)initWithTransformedBoundsOrigin:(struct CGPoint { double x1; double x2; })arg1 size:(struct CGSize { double x1; double x2; })arg2 angle:(float)arg3;
-- (id)initWithTransformedBoundsOrigin:(struct CGPoint { double x1; double x2; })arg1 size:(struct CGSize { double x1; double x2; })arg2 horizontalFlip:(BOOL)arg3 verticalFlip:(BOOL)arg4 angle:(float)arg5;
+- (id)initWithPosition:(struct CGPoint { float x1; float x2; })arg1 size:(struct CGSize { float x1; float x2; })arg2;
+- (id)initWithPosition:(struct CGPoint { float x1; float x2; })arg1 size:(struct CGSize { float x1; float x2; })arg2 angle:(float)arg3;
+- (id)initWithPosition:(struct CGPoint { float x1; float x2; })arg1 size:(struct CGSize { float x1; float x2; })arg2 widthValid:(BOOL)arg3 heightValid:(BOOL)arg4 horizontalFlip:(BOOL)arg5 verticalFlip:(BOOL)arg6 angle:(float)arg7;
+- (id)initWithSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)initWithTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 size:(struct CGSize { float x1; float x2; })arg2;
+- (id)initWithTransformedBoundsOrigin:(struct CGPoint { float x1; float x2; })arg1 size:(struct CGSize { float x1; float x2; })arg2 angle:(float)arg3;
+- (id)initWithTransformedBoundsOrigin:(struct CGPoint { float x1; float x2; })arg1 size:(struct CGSize { float x1; float x2; })arg2 horizontalFlip:(BOOL)arg3 verticalFlip:(BOOL)arg4 angle:(float)arg5;
 - (id)initWithWidth:(float)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualExceptForPosition:(id)arg1;
@@ -65,16 +65,16 @@
 - (int)mixingTypeWithObject:(id)arg1 context:(id)arg2;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)normalizedGeometry;
-- (struct CGPoint { double x1; double x2; })position;
-- (void)saveToArchive:(struct GeometryArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Point {} *x5; struct Size {} *x6; unsigned int x7; double x8; }*)arg1 archiver:(id)arg2;
-- (struct CGSize { double x1; double x2; })size;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })transform;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })transformBasedOnPoint:(struct CGPoint { double x1; double x2; })arg1 centeredAtPoint:(struct CGPoint { double x1; double x2; })arg2;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })transformBasedOnPoint:(struct CGPoint { double x1; double x2; })arg1 centeredAtPoint:(struct CGPoint { double x1; double x2; })arg2 withFlips:(BOOL)arg3;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })transformBasedOnRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })transformWithoutFlips;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })transformedBounds;
-- (struct CGPoint { double x1; double x2; })transformedBoundsOrigin;
+- (struct CGPoint { float x1; float x2; })position;
+- (void)saveToArchive:(struct GeometryArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Point {} *x5; struct Size {} *x6; unsigned int x7; float x8; }*)arg1 archiver:(id)arg2;
+- (struct CGSize { float x1; float x2; })size;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transform;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transformBasedOnPoint:(struct CGPoint { float x1; float x2; })arg1 centeredAtPoint:(struct CGPoint { float x1; float x2; })arg2;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transformBasedOnPoint:(struct CGPoint { float x1; float x2; })arg1 centeredAtPoint:(struct CGPoint { float x1; float x2; })arg2 withFlips:(BOOL)arg3;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transformBasedOnRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transformWithoutFlips;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })transformedBounds;
+- (struct CGPoint { float x1; float x2; })transformedBoundsOrigin;
 - (BOOL)verticalFlip;
 - (BOOL)widthValid;
 

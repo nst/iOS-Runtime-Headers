@@ -4,22 +4,22 @@
 
 @interface IKCSSDeclarationEdgeInsets : IKCSSDeclaration {
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _insets;
     BOOL  _insetsFound;
 }
 
-@property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } insets;
+@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } insets;
 @property BOOL insetsFound;
 
 - (id)description;
 - (id)initWithParseDeclaration:(id)arg1 info:(id)arg2;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })insets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })insets;
 - (BOOL)insetsFound;
-- (void)setInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setInsetsFound:(BOOL)arg1;
 - (id)stringValue;
 

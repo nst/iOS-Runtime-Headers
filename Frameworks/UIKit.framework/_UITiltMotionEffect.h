@@ -3,20 +3,20 @@
  */
 
 @interface _UITiltMotionEffect : UIMotionEffect {
-    double  _maximumHorizontalTiltAngle;
-    double  _maximumVerticalTiltAngle;
-    double  _rotatingSphereRadius;
+    float  _maximumHorizontalTiltAngle;
+    float  _maximumVerticalTiltAngle;
+    float  _rotatingSphereRadius;
 }
 
-@property (nonatomic) double maximumHorizontalTiltAngle;
-@property (nonatomic) double maximumVerticalTiltAngle;
-@property (nonatomic) double rotatingSphereRadius;
+@property (nonatomic) float maximumHorizontalTiltAngle;
+@property (nonatomic) float maximumVerticalTiltAngle;
+@property (nonatomic) float rotatingSphereRadius;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)keyPathsAndRelativeValuesForViewerOffset:(struct UIOffset { double x1; double x2; })arg1;
+- (id)keyPathsAndRelativeValuesForViewerOffset:(struct UIOffset { float x1; float x2; })arg1;
 - (float)maximumHorizontalTiltAngle;
 - (float)maximumVerticalTiltAngle;
 - (float)rotatingSphereRadius;

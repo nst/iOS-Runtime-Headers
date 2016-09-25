@@ -11,7 +11,7 @@
 
 - (unsigned char)decodeByte;
 - (unsigned int)decodeNSUIntegerFromUInt64;
-- (unsigned int)decodeUInt64;
+- (unsigned long long)decodeUInt64;
 - (void)endDecode;
 - (id)initWithUUID:(id)arg1;
 - (BOOL)p_hasSpaceToDecodeNumberOfBytes:(unsigned int)arg1;

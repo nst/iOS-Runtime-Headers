@@ -26,7 +26,7 @@
     BOOL  __lockExposureAfterExposeFinishes;
     BOOL  __lockFocusAfterFocusFinishes;
     id /* block */  __lockLensPositionCompletionBlock;
-    double  __lockLensPositionTarget;
+    float  __lockLensPositionTarget;
     BOOL  __panoramaProcessorReadyForSampleBuffers;
     BOOL  __previewLayerEnabledForRenderer;
     BOOL  __previewPaused;
@@ -164,12 +164,12 @@
     BOOL  _capturingTimelapse;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _cleanAperture;
     AVCaptureDevice * _currentDevice;
@@ -193,18 +193,18 @@
     NSTimer * _keepAliveFailsafeTimer;
     NSTimer * _keepAliveTimer;
     struct CGImage { } * _lastVideoPreviewFrameImageRef;
-    double  _maxVideoZoomFactorFront;
-    double  _maxVideoZoomFactorRear;
+    float  _maxVideoZoomFactorFront;
+    float  _maxVideoZoomFactorRear;
     double  _maximumCaptureDuration;
     AVCaptureDeviceFormat * _mogulFormatBack;
     BOOL  _mogulFormatBackSupportsAlternate;
     AVCaptureDeviceFormat * _mogulFormatFront;
     BOOL  _mogulFormatFrontSupportsAlternate;
     struct _CAImageQueue { } * _panoramaImageQueue;
-    double  _panoramaPreviewScale;
+    float  _panoramaPreviewScale;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _panoramaPreviewSize;
     struct OpaqueFigSampleBufferProcessor { } * _panoramaProcessor;
     BOOL  _performingAvalancheCapture;
@@ -249,7 +249,7 @@
 @property (nonatomic, readonly) BOOL _lockExposureAfterExposeFinishes;
 @property (nonatomic, readonly) BOOL _lockFocusAfterFocusFinishes;
 @property (setter=_setLockLensPositionCompletionBlock:, nonatomic, copy) id /* block */ _lockLensPositionCompletionBlock;
-@property (setter=_setLockLensPositionTarget:, nonatomic) double _lockLensPositionTarget;
+@property (setter=_setLockLensPositionTarget:, nonatomic) float _lockLensPositionTarget;
 @property (getter=_isModeChangeWaitingForConfigureSession, setter=_setModeChangeWaitingForConfigureSession:, nonatomic) BOOL _modeChangeWaitingForConfigureSession;
 @property (getter=_isModeChangeWaitingForPreviewStarted, setter=_setModeChangeWaitingForPreviewStarted:, nonatomic) BOOL _modeChangeWaitingForPreviewStarted;
 @property (nonatomic, readonly) BOOL _panoramaProcessorReadyForSampleBuffers;
@@ -270,7 +270,7 @@
 @property (nonatomic) BOOL canCapturePhotoFromVideoModeWhenNotRecording;
 @property (nonatomic) int captureOrientation;
 @property (getter=isCapturingTimelapse, nonatomic) BOOL capturingTimelapse;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } cleanAperture;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } cleanAperture;
 @property (nonatomic) BOOL convertSampleBufferToJPEG;
 @property (nonatomic) AVCaptureDevice *currentDevice;
 @property (nonatomic) AVCaptureDeviceInput *currentInput;
@@ -281,19 +281,19 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic) BOOL disableAllPreviewSuspensionDuringCapture;
 @property (setter=_setEffectsRenderer:, retain) CMKEffectsRenderer *effectsRenderer;
-@property (nonatomic) struct CGPoint { double x1; double x2; } exposurePointOfInterest;
-@property (nonatomic) double exposureTargetBias;
-@property (nonatomic, readonly) double exposureTargetBiasDefault;
-@property (nonatomic, readonly) double exposureTargetBiasMax;
-@property (nonatomic, readonly) double exposureTargetBiasMin;
+@property (nonatomic) struct CGPoint { float x1; float x2; } exposurePointOfInterest;
+@property (nonatomic) float exposureTargetBias;
+@property (nonatomic, readonly) float exposureTargetBiasDefault;
+@property (nonatomic, readonly) float exposureTargetBiasMax;
+@property (nonatomic, readonly) float exposureTargetBiasMin;
 @property (nonatomic) int flashMode;
-@property (nonatomic) struct CGPoint { double x1; double x2; } focusPointOfInterest;
+@property (nonatomic) struct CGPoint { float x1; float x2; } focusPointOfInterest;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) AVCaptureStillImageOutput *imageOutput;
 @property (nonatomic) BOOL isCameraApp;
 @property (nonatomic, readonly) BOOL isStillImageStabilizationActive;
-@property (nonatomic, readonly) double panoramaPreviewScale;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } panoramaPreviewSize;
+@property (nonatomic, readonly) float panoramaPreviewScale;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } panoramaPreviewSize;
 @property (setter=_setPerformingAvalancheCapture:, nonatomic) BOOL performingAvalancheCapture;
 @property (nonatomic, copy) id /* block */ postSessionSetupBlock;
 @property (nonatomic, readonly) AVCaptureVideoPreviewLayer *previewLayer;
@@ -310,7 +310,7 @@
 @property (nonatomic) BOOL useAlternateSlomoRear;
 @property (nonatomic) BOOL userLockedExposure;
 @property (nonatomic) BOOL userLockedFocus;
-@property (nonatomic) double videoZoomFactor;
+@property (nonatomic) float videoZoomFactor;
 
 + (id)_dateFormatterForVideoMetadata;
 + (BOOL)_shouldExtractDiagnostics;
@@ -318,7 +318,7 @@
 + (BOOL)isStillImageMode:(int)arg1;
 + (BOOL)isVideoMode:(int)arg1;
 + (float)panoramaPreviewHorizontalInset;
-+ (struct CGSize { double x1; double x2; })panoramaPreviewSize;
++ (struct CGSize { float x1; float x2; })panoramaPreviewSize;
 + (id)sharedInstance;
 + (id)videoMetadataArrayWithLocation:(id)arg1 date:(id)arg2 didSetLocationData:(BOOL*)arg3;
 
@@ -377,7 +377,7 @@
 - (void)_delayIdleTimerByTimeInterval:(double)arg1;
 - (void)_destroyAllServices;
 - (void)_destroyCamera;
-- (void)_deviceConfigurationForPanoramaOptions:(struct __CFDictionary { }*)arg1 captureDevice:(id)arg2 deviceFormat:(id*)arg3 minFrameDuration:(struct { int x1; int x2; unsigned int x3; int x4; }*)arg4 maxFrameDuration:(struct { int x1; int x2; unsigned int x3; int x4; }*)arg5;
+- (void)_deviceConfigurationForPanoramaOptions:(struct __CFDictionary { }*)arg1 captureDevice:(id)arg2 deviceFormat:(id*)arg3 minFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg4 maxFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg5;
 - (int)_deviceLockCount;
 - (void)_deviceStarted:(id)arg1;
 - (BOOL)_didSendPreviewStartedCallbackToEmptyDelegate;
@@ -569,7 +569,7 @@
 - (BOOL)allowsAlternateSlomoFront;
 - (BOOL)allowsAlternateSlomoRear;
 - (void)cameraConnection:(id)arg1 setFlashMode:(int)arg2;
-- (void)cameraConnection:(id)arg1 setFocusPoint:(struct CGPoint { double x1; double x2; })arg2;
+- (void)cameraConnection:(id)arg1 setFocusPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (unsigned int)cameraConnection:(id)arg1 setMode:(unsigned int)arg2 interruptCapture:(BOOL)arg3;
 - (void)cameraConnection:(id)arg1 setZoomAmount:(float)arg2;
 - (void)cameraConnection:(id)arg1 takePhotoWithCountdown:(unsigned int)arg2;
@@ -608,7 +608,7 @@
 - (void)captureOutput:(id)arg1 didStartRecordingToOutputFileAtURL:(id)arg2 fromConnections:(id)arg3;
 - (void)capturePhoto;
 - (BOOL)capturePhotoUsingHDR:(BOOL)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })cleanAperture;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })cleanAperture;
 - (BOOL)convertSampleBufferToJPEG;
 - (id)currentDevice;
 - (id)currentInput;
@@ -633,17 +633,17 @@
 - (BOOL)enqueueStillImageCaptureRequest:(id)arg1;
 - (void)enqueueVideoCaptureRequest:(id)arg1;
 - (void)executeBlockOnMainQueue:(id /* block */)arg1;
-- (struct CGPoint { double x1; double x2; })exposurePointOfInterest;
+- (struct CGPoint { float x1; float x2; })exposurePointOfInterest;
 - (float)exposureTargetBias;
 - (float)exposureTargetBiasDefault;
 - (float)exposureTargetBiasMax;
 - (float)exposureTargetBiasMin;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })faceRectangle;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })faceRectangle;
 - (void)finishAvalancheCapture;
 - (int)flashMode;
 - (BOOL)flashWillFire;
 - (float)focusLensPosition;
-- (struct CGPoint { double x1; double x2; })focusPointOfInterest;
+- (struct CGPoint { float x1; float x2; })focusPointOfInterest;
 - (BOOL)hasFrontCamera;
 - (BOOL)hasFrontFlash;
 - (BOOL)hasInheritedForegroundState;
@@ -683,7 +683,7 @@
 - (int)numberOfCapturedAvalanchePhotos;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (float)panoramaPreviewScale;
-- (struct CGSize { double x1; double x2; })panoramaPreviewSize;
+- (struct CGSize { float x1; float x2; })panoramaPreviewSize;
 - (void)panoramaProcessorOutputCallbackWithStatus:(long)arg1 buffer:(struct opaqueCMSampleBuffer { }*)arg2;
 - (void)pausePreview;
 - (void)performAutofocusAfterCapture;
@@ -718,14 +718,14 @@
 - (void)setEffectFilterIndex:(unsigned int)arg1 forMode:(int)arg2;
 - (void)setEffectFilterIndices:(id)arg1 forceStateChange:(BOOL)arg2;
 - (void)setExposureMode:(int)arg1;
-- (void)setExposurePointOfInterest:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setExposurePointOfInterest:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setExposureTargetBias:(float)arg1;
 - (void)setFaceDetectionEnabled:(BOOL)arg1 forceDisableImageProcessing:(BOOL)arg2;
 - (void)setFlashMode:(int)arg1;
 - (void)setFocusDisabled:(BOOL)arg1;
 - (void)setFocusMode:(int)arg1;
 - (void)setFocusModeLockedWithLensPosition:(float)arg1 completionBlock:(id /* block */)arg2;
-- (void)setFocusPointOfInterest:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setFocusPointOfInterest:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setHDRDetectionEnabled:(BOOL)arg1;
 - (void)setIsCameraApp:(BOOL)arg1;
 - (void)setPanoramaCaptureDirection:(int)arg1;

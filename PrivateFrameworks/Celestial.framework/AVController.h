@@ -3,7 +3,7 @@
  */
 
 @interface AVController : NSObject {
-    struct AVControllerPrivate { id x1; id x2; id x3; id x4; int x5; double x6; double x7; int x8; BOOL x9; id x10; struct __CFString {} *x11; id x12; BOOL x13; BOOL x14; id x15; struct OpaqueFigVisualContext {} x16; id x17; struct __CFRunLoop {} x18; unsigned int x19; int x20; int x21; int x22; BOOL x23; BOOL x24; BOOL x25; BOOL x26; id x27; struct OpaqueFigPlayer {} x28; id x29; id x30; BOOL x31; id x32; BOOL x33; BOOL x34; BOOL x35; int x36; BOOL x37; } * _priv;
+    struct AVControllerPrivate { id x1; id x2; id x3; id x4; int x5; float x6; float x7; int x8; BOOL x9; id x10; struct __CFString {} *x11; id x12; BOOL x13; BOOL x14; id x15; struct OpaqueFigVisualContext {} x16; id x17; struct __CFRunLoop {} x18; unsigned int x19; int x20; int x21; int x22; BOOL x23; BOOL x24; BOOL x25; BOOL x26; id x27; struct OpaqueFigPlayer {} x28; id x29; id x30; BOOL x31; id x32; BOOL x33; BOOL x34; BOOL x35; int x36; BOOL x37; } * _priv;
 }
 
 + (id)avController;
@@ -30,7 +30,7 @@
 - (void)cancelContinueAfterRepeatGap;
 - (void)checkQueueSpace;
 - (void)continueAfterRepeatGap;
-- (long)copyImageForTime:(struct __CVBuffer {}**)arg1 time:(const struct { int x1; int x2; unsigned int x3; int x4; }*)arg2;
+- (long)copyImageForTime:(struct __CVBuffer {}**)arg1 time:(const struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg2;
 - (struct OpaqueFigPlaybackItem { }*)createItemWithURL:(id)arg1 flags:(unsigned long)arg2 error:(int*)arg3;
 - (struct OpaqueFigPlaybackItem { }*)currentFPItem;
 - (id)currentItem;
@@ -60,7 +60,7 @@
 - (id)initWithQueue:(id)arg1 error:(id*)arg2;
 - (id)initWithQueue:(id)arg1 fmpType:(unsigned int)arg2 error:(id*)arg3;
 - (BOOL)isCurrentItemReady;
-- (BOOL)isNewImageAvailableForTime:(const struct { int x1; int x2; unsigned int x3; int x4; }*)arg1 willNeverBeAvailable:(BOOL*)arg2;
+- (BOOL)isNewImageAvailableForTime:(const struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg1 willNeverBeAvailable:(BOOL*)arg2;
 - (BOOL)isValid;
 - (void)itemHasFinishedPlayingNotification:(id)arg1;
 - (id)lkLayer;
@@ -73,7 +73,7 @@
 - (void)pause;
 - (BOOL)play:(id*)arg1;
 - (BOOL)playNextItem:(id*)arg1;
-- (struct AVControllerPrivate { id x1; id x2; id x3; id x4; int x5; double x6; double x7; int x8; BOOL x9; id x10; struct __CFString {} *x11; id x12; BOOL x13; BOOL x14; id x15; struct OpaqueFigVisualContext {} x16; id x17; struct __CFRunLoop {} x18; unsigned int x19; int x20; int x21; int x22; BOOL x23; BOOL x24; BOOL x25; BOOL x26; id x27; struct OpaqueFigPlayer {} x28; id x29; id x30; BOOL x31; id x32; BOOL x33; BOOL x34; BOOL x35; int x36; BOOL x37; }*)privateStorage;
+- (struct AVControllerPrivate { id x1; id x2; id x3; id x4; int x5; float x6; float x7; int x8; BOOL x9; id x10; struct __CFString {} *x11; id x12; BOOL x13; BOOL x14; id x15; struct OpaqueFigVisualContext {} x16; id x17; struct __CFRunLoop {} x18; unsigned int x19; int x20; int x21; int x22; BOOL x23; BOOL x24; BOOL x25; BOOL x26; id x27; struct OpaqueFigPlayer {} x28; id x29; id x30; BOOL x31; id x32; BOOL x33; BOOL x34; BOOL x35; int x36; BOOL x37; }*)privateStorage;
 - (id)queue;
 - (id)queueFeeder;
 - (float)rate;

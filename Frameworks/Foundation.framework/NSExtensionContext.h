@@ -27,8 +27,8 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } hostedViewMaximumAllowedSize;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } hostedViewMinimumAllowedSize;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } hostedViewMaximumAllowedSize;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } hostedViewMinimumAllowedSize;
 @property (setter=_setInputItems:, nonatomic, copy) NSArray *inputItems;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) int widgetActiveDisplayMode;
@@ -94,15 +94,15 @@
 
 // Image: /System/Library/Frameworks/IntentsUI.framework/IntentsUI
 
-- (struct CGSize { double x1; double x2; })hostedViewMaximumAllowedSize;
-- (struct CGSize { double x1; double x2; })hostedViewMinimumAllowedSize;
+- (struct CGSize { float x1; float x2; })hostedViewMaximumAllowedSize;
+- (struct CGSize { float x1; float x2; })hostedViewMinimumAllowedSize;
 
 // Image: /System/Library/Frameworks/NotificationCenter.framework/NotificationCenter
 
 - (void)setWidgetLargestAvailableDisplayMode:(int)arg1;
 - (int)widgetActiveDisplayMode;
 - (int)widgetLargestAvailableDisplayMode;
-- (struct CGSize { double x1; double x2; })widgetMaximumSizeForDisplayMode:(int)arg1;
+- (struct CGSize { float x1; float x2; })widgetMaximumSizeForDisplayMode:(int)arg1;
 
 // Image: /System/Library/Frameworks/ReplayKit.framework/ReplayKit
 

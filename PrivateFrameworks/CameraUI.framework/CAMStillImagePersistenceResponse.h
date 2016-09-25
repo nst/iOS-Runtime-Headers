@@ -14,10 +14,10 @@
 @property (nonatomic, readonly) NSDate *captureDate;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) struct { int x1; int x2; unsigned int x3; int x4; } duration;
+@property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } duration;
 @property (getter=isExpectingPairedVideo, nonatomic, readonly) BOOL expectingPairedVideo;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly) struct { int x1; int x2; unsigned int x3; int x4; } irisStillDisplayTime;
+@property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } irisStillDisplayTime;
 @property (nonatomic, readonly) NSString *irisStillImageUUID;
 @property (nonatomic, readonly) NSURL *irisVideoPersistenceURL;
 @property (nonatomic, readonly) unsigned int mediaType;
@@ -35,10 +35,10 @@
 - (unsigned int)burstRepresentedCount;
 - (id)captureDate;
 - (id)description;
-- (struct { int x1; int x2; unsigned int x3; int x4; })duration;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
 - (id)initWithUUID:(id)arg1 captureSession:(unsigned short)arg2 url:(id)arg3 creationDate:(id)arg4 scubberImage:(id)arg5;
 - (id)initWithUUID:(id)arg1 captureSession:(unsigned short)arg2 url:(id)arg3 creationDate:(id)arg4 scubberImage:(id)arg5 metadata:(id)arg6 burstIdentifier:(id)arg7 burstRepresentedCount:(unsigned int)arg8 expectingPairedVideo:(BOOL)arg9;
-- (struct { int x1; int x2; unsigned int x3; int x4; })irisStillDisplayTime;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })irisStillDisplayTime;
 - (id)irisStillImageUUID;
 - (id)irisVideoPersistenceURL;
 - (BOOL)isExpectingPairedVideo;

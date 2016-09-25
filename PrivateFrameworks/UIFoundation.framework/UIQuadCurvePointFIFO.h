@@ -7,11 +7,11 @@
     id /* block */  _emissionHandler;
     BOOL  _emitInterpolatedPoints;
     void _lastPoint;
-    double  _lineWidth;
+    float  _lineWidth;
     struct CGPath { } * _path;
     _UIPointVector * _points;
     _UIPointVector * _prevPoints;
-    double  _unitScale;
+    float  _unitScale;
     UIView * _view;
 }
 
@@ -19,11 +19,11 @@
 @property (copy) id /* block */ emissionHandler;
 @property (nonatomic) BOOL emitInterpolatedPoints;
 @property (nonatomic) void lastPoint;
-@property (nonatomic) double lineWidth;
+@property (nonatomic) float lineWidth;
 @property (nonatomic) struct CGPath { }*path;
 @property (nonatomic) _UIPointVector *points;
 @property (nonatomic) _UIPointVector *prevPoints;
-@property (nonatomic) double unitScale;
+@property (nonatomic) float unitScale;
 @property (nonatomic, retain) UIView *view;
 
 + (void)interpolateFromPoint:(void *)arg1 toPoint:(void *)arg2 controlPoint:(void *)arg3 time:(void *)arg4; // needs 4 arg types, found 1: float
@@ -51,7 +51,7 @@
 - (void)setPoints:(id)arg1;
 - (void)setPrevPoints:(id)arg1;
 - (void)setUnitScale:(float)arg1;
-- (void)setUnitScaleForViewSize:(struct CGSize { double x1; double x2; })arg1 normalizedSize:(struct CGSize { double x1; double x2; })arg2 contentScaleFactor:(float)arg3;
+- (void)setUnitScaleForViewSize:(struct CGSize { float x1; float x2; })arg1 normalizedSize:(struct CGSize { float x1; float x2; })arg2 contentScaleFactor:(float)arg3;
 - (void)setView:(id)arg1;
 - (float)unitScale;
 - (id)view;

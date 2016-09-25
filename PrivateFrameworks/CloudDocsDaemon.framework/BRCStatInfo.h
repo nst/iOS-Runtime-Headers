@@ -3,7 +3,7 @@
  */
 
 @interface BRCStatInfo : NSObject <NSCopying, NSSecureCoding> {
-    int  _birthtime;
+    long long  _birthtime;
     BRFieldCKInfo * _ckInfo;
     NSString * _filenameOrAliasTarget;
     NSData * _finderTags;
@@ -20,7 +20,7 @@
 
 @property (nonatomic, readonly) NSString *_aliasTargetContainerIDAndOwner;
 @property (nonatomic, readonly) NSString *_aliasTargetMangledID;
-@property (nonatomic) int birthtime;
+@property (nonatomic) long long birthtime;
 @property (nonatomic, retain) BRFieldCKInfo *ckInfo;
 @property (nonatomic, retain) NSData *finderTags;
 @property (getter=isHiddenExt, nonatomic) BOOL hiddenExt;
@@ -45,14 +45,14 @@
 - (id)_aliasTargetMangledID;
 - (id)_aliasTargetShareItemIDWithLibraryRowID:(id)arg1;
 - (void)_updateAliasTarget:(id)arg1;
-- (int)birthtime;
-- (BOOL)check:(id)arg1 logToFile:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; int x20; }*)arg2;
-- (BOOL)checkStateWithItemID:(id)arg1 logToFile:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; int x20; }*)arg2;
+- (long long)birthtime;
+- (BOOL)check:(id)arg1 logToFile:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; long long x20; }*)arg2;
+- (BOOL)checkStateWithItemID:(id)arg1 logToFile:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; long long x20; }*)arg2;
 - (id)ckInfo;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)descriptionWithContext:(id)arg1 origName:(id)arg2;
-- (unsigned int)diffAgainst:(id)arg1;
+- (unsigned long long)diffAgainst:(id)arg1;
 - (id)displayName;
 - (void)encodeWithCoder:(id)arg1;
 - (id)finderTags;
@@ -67,7 +67,7 @@
 - (id)logicalName;
 - (BOOL)mode;
 - (id)parentID;
-- (void)setBirthtime:(int)arg1;
+- (void)setBirthtime:(long long)arg1;
 - (void)setCkInfo:(id)arg1;
 - (void)setFinderTags:(id)arg1;
 - (void)setHiddenExt:(BOOL)arg1;

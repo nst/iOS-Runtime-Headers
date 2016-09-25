@@ -5,33 +5,33 @@
 @interface UIKeyboardSplitTransitionView : UIView {
     BOOL  _centerFilled;
     id /* block */  _completionBlock;
-    double  _currentProgress;
+    float  _currentProgress;
     CADisplayLink * _displayLink;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _endFrame;
     double  _finalTransitionStartTime;
-    double  _finishDuration;
-    double  _finishProgress;
+    float  _finishDuration;
+    float  _finishProgress;
     BOOL  _isRebuilding;
     BOOL  _isSplitTranslation;
-    double  _liftOffProgress;
+    float  _liftOffProgress;
     UIKeyboardSliceSet * _sliceSet;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _startFrame;
     <UIKeyboardSplitTransitionDataSource> * _transitionDataSource;
@@ -58,19 +58,19 @@
 - (void)initializeLayers;
 - (struct CGImage { }*)keyImageWithToken:(id)arg1;
 - (id)outerCenterDropShadow;
-- (void)rebuildControlKeys:(unsigned int)arg1;
+- (void)rebuildControlKeys:(unsigned long long)arg1;
 - (void)rebuildFromKeyplane:(id)arg1 toKeyplane:(id)arg2 keyboardType:(int)arg3 orientation:(int)arg4;
 - (void)rebuildTransitionForSplitStyleChange:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rectEnclosingKeyplane:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectEnclosingKeyplane:(id)arg1;
 - (void)setCompletionBlock:(id /* block */)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setSplitTransitionDataSource:(id)arg1;
 - (void)setSplitTransitionDelegate:(id)arg1;
 - (id)shadowLayers;
 - (BOOL)shouldAllowRubberiness;
 - (BOOL)showDictationKey;
 - (BOOL)showIntlKey;
-- (struct CGSize { double x1; double x2; })sizeForShadowLayer:(int)arg1;
+- (struct CGSize { float x1; float x2; })sizeForShadowLayer:(int)arg1;
 - (struct CGImage { }*)splitKeyboardImage;
 - (id)splitTransitionDataSource;
 - (id)splitTransitionDelegate;

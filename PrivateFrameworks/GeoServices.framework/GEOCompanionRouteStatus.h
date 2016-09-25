@@ -24,7 +24,7 @@
     unsigned int  _remainingTime;
     NSData * _routeID;
     unsigned int  _routeLocationIndex;
-    double  _routeLocationOffset;
+    float  _routeLocationOffset;
     GEOLatLng * _routeMatchCoordinate;
     struct { 
         unsigned int *list; 
@@ -63,7 +63,7 @@
 @property (nonatomic) unsigned int remainingTime;
 @property (nonatomic, retain) NSData *routeID;
 @property (nonatomic) unsigned int routeLocationIndex;
-@property (nonatomic) double routeLocationOffset;
+@property (nonatomic) float routeLocationOffset;
 @property (nonatomic, retain) GEOLatLng *routeMatchCoordinate;
 @property (nonatomic, readonly) unsigned int*selectedRideIndexs;
 @property (nonatomic, readonly) unsigned int selectedRideIndexsCount;

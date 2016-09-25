@@ -3,13 +3,13 @@
  */
 
 @interface UIAutoRespondingScrollViewControllerKeyboardSupport : NSObject {
-    double  _adjustmentForKeyboard;
+    float  _adjustmentForKeyboard;
     unsigned int  _registeredForNotifications;
     UIViewController<_UIKeyboardAutoRespondingScrollViewController> * _viewController;
     unsigned int  _viewIsDisappearing;
 }
 
-@property (nonatomic) double adjustmentForKeyboard;
+@property (nonatomic) float adjustmentForKeyboard;
 @property (nonatomic) BOOL registeredForNotifications;
 @property (nonatomic) BOOL viewIsDisappearing;
 

@@ -3,7 +3,7 @@
  */
 
 @interface MFLibraryMessage : MFMailMessage {
-    unsigned int  _conversationFlags;
+    unsigned long long  _conversationFlags;
     unsigned int  _libraryID;
     unsigned int  _mailboxID;
     NSString * _messageID;
@@ -14,7 +14,7 @@
     NSString * _remoteID;
     unsigned int  _size;
     unsigned long  _uid;
-    unsigned int  _uniqueRemoteId;
+    unsigned long long  _uniqueRemoteId;
 }
 
 + (id)messageWithLibraryID:(unsigned int)arg1;
@@ -28,7 +28,7 @@
 - (BOOL)canBeDeleted;
 - (void)commit;
 - (int)compareByUidWithMessage:(id)arg1;
-- (unsigned int)conversationFlags;
+- (unsigned long long)conversationFlags;
 - (id)copyMessageInfo;
 - (id)dataConsumerForMimePart:(id)arg1;
 - (id)dataPathForMimePart:(id)arg1;
@@ -63,25 +63,25 @@
 - (id)persistentID;
 - (id)preferredEmailAddressToReplyWith;
 - (id)remoteID;
-- (void)setConversationFlags:(unsigned int)arg1;
-- (void)setFlags:(unsigned int)arg1;
+- (void)setConversationFlags:(unsigned long long)arg1;
+- (void)setFlags:(unsigned long long)arg1;
 - (void)setHasTemporaryUid:(BOOL)arg1;
 - (void)setIsPartial:(BOOL)arg1;
 - (void)setMailboxID:(unsigned int)arg1;
 - (void)setMessageData:(id)arg1 isPartial:(BOOL)arg2;
-- (void)setMessageFlags:(unsigned int)arg1;
-- (void)setMessageFlagsWithoutCommitting:(unsigned int)arg1;
+- (void)setMessageFlags:(unsigned long long)arg1;
+- (void)setMessageFlagsWithoutCommitting:(unsigned long long)arg1;
 - (void)setMessageSize:(unsigned int)arg1;
 - (void)setMetadataValue:(id)arg1 forKey:(id)arg2;
 - (void)setMutableInfoFromMessage:(id)arg1;
 - (void)setOriginalMailboxID:(unsigned int)arg1;
 - (void)setPreferredEncoding:(unsigned long)arg1;
 - (void)setRemoteID:(id)arg1;
-- (void)setRemoteID:(const char *)arg1 flags:(unsigned int)arg2 size:(unsigned int)arg3 mailboxID:(unsigned int)arg4 originalMailboxID:(unsigned int)arg5;
+- (void)setRemoteID:(const char *)arg1 flags:(unsigned long long)arg2 size:(unsigned int)arg3 mailboxID:(unsigned int)arg4 originalMailboxID:(unsigned int)arg5;
 - (void)setSummary:(id)arg1;
 - (void)setUid:(unsigned long)arg1;
-- (void)setUniqueRemoteId:(unsigned int)arg1;
+- (void)setUniqueRemoteId:(unsigned long long)arg1;
 - (unsigned long)uid;
-- (unsigned int)uniqueRemoteId;
+- (unsigned long long)uniqueRemoteId;
 
 @end

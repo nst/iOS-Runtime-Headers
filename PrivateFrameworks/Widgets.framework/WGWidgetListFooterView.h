@@ -27,8 +27,8 @@
 - (void)addTarget:(id)arg1 action:(SEL)arg2;
 - (id)backgroundView;
 - (id)delegate;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (void)invalidateFooterBackgroundViews;
 - (void)invalidateSubviewGeometery;
 - (int)layoutMode;
@@ -39,7 +39,7 @@
 - (void)setLayoutMode:(int)arg1;
 - (void)setLegibilitySettings:(id)arg1;
 - (void)setVisibleWidgetsIDs:(id)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 interaction:(int)arg4;
 - (void)traitCollectionDidChange:(id)arg1;
 

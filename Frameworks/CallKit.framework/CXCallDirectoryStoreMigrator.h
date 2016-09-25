@@ -9,7 +9,7 @@
 @property (nonatomic, retain) CXCallDirectoryStore *store;
 
 - (void).cxx_destruct;
-- (id)_performMigrationsStartingAtSchemaVersion:(int)arg1 error:(id*)arg2;
+- (id)_performMigrationsStartingAtSchemaVersion:(long long)arg1 error:(id*)arg2;
 - (id)performMigrationsWithError:(id*)arg1;
 - (void)setStore:(id)arg1;
 - (id)store;

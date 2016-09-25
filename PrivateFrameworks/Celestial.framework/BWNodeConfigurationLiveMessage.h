@@ -3,18 +3,18 @@
  */
 
 @interface BWNodeConfigurationLiveMessage : BWNodeMessage {
-    int  _configurationID;
+    long long  _configurationID;
     BWFormat * _updatedFormat;
 }
 
-@property (readonly) int configurationID;
+@property (readonly) long long configurationID;
 @property (readonly) BWFormat *updatedFormat;
 
-+ (id)newMessageWithConfigurationID:(int)arg1;
-+ (id)newMessageWithConfigurationID:(int)arg1 updatedFormat:(id)arg2;
++ (id)newMessageWithConfigurationID:(long long)arg1;
++ (id)newMessageWithConfigurationID:(long long)arg1 updatedFormat:(id)arg2;
 
-- (id)_initWithConfigurationID:(int)arg1 updatedFormat:(id)arg2;
-- (int)configurationID;
+- (id)_initWithConfigurationID:(long long)arg1 updatedFormat:(id)arg2;
+- (long long)configurationID;
 - (void)dealloc;
 - (id)updatedFormat;
 

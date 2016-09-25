@@ -31,7 +31,7 @@
 @property (nonatomic, readonly) NSString *contactName;
 @property (nonatomic, readonly) NSString *contactSpokenName;
 @property (nonatomic, readonly) struct { double x1; double x2; } coordinate;
-@property (getter=_customIconID, nonatomic, readonly) unsigned int customIconID;
+@property (getter=_customIconID, nonatomic, readonly) unsigned long long customIconID;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) GEOMapItemDetourInfo *detourInfo;
@@ -73,10 +73,10 @@
 @property (getter=_hasUserRatingScore, nonatomic, readonly) BOOL hasUserRatingScore;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) BOOL isEventAllDay;
-@property (getter=_muid, nonatomic, readonly) unsigned int muid;
+@property (getter=_muid, nonatomic, readonly) unsigned long long muid;
 @property (nonatomic, readonly) NSString *name;
 @property (getter=_needsAttribution, nonatomic, readonly) BOOL needsAttribution;
-@property (getter=_normalizedUserRatingScore, nonatomic, readonly) double normalizedUserRatingScore;
+@property (getter=_normalizedUserRatingScore, nonatomic, readonly) float normalizedUserRatingScore;
 @property (getter=_openingHoursOptions, nonatomic, readonly) unsigned int openingHoursOptions;
 @property (getter=_operatingHours, nonatomic, readonly) NSArray *operatingHours;
 @property (getter=_optsOutOfTelephoneAds, nonatomic, readonly) BOOL optsOutOfTelephoneAds;
@@ -123,7 +123,7 @@
 - (id)_businessURL;
 - (id)_clientAttributes;
 - (id)_completeOperatingHours;
-- (unsigned int)_customIconID;
+- (unsigned long long)_customIconID;
 - (id)_disambiguationName;
 - (id)_displayNameForAttribution:(id)arg1 requirement:(int)arg2;
 - (id)_encyclopedicInfo;
@@ -157,7 +157,7 @@
 - (id)_localizedCategoryNamesForType:(unsigned int)arg1;
 - (id)_logoPathForAttribution:(id)arg1 requirement:(int)arg2 scale:(double)arg3;
 - (id)_mapItemByStrippingOptionalData;
-- (unsigned int)_muid;
+- (unsigned long long)_muid;
 - (BOOL)_needsAttribution;
 - (float)_normalizedUserRatingScore;
 - (unsigned int)_openingHoursOptions;

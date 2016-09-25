@@ -3,10 +3,10 @@
  */
 
 @interface _UIDismissCurlUpTapGestureRecognizer : UITapGestureRecognizer {
-    double  _curlUpDY;
+    float  _curlUpDY;
 }
 
-@property (setter=_setCurlUpDY:, nonatomic) double _curlUpDY;
+@property (setter=_setCurlUpDY:, nonatomic) float _curlUpDY;
 
 - (float)_curlUpDY;
 - (void)_setCurlUpDY:(float)arg1;

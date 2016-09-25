@@ -5,10 +5,10 @@
 @interface SKUIIndexBarControl : UIControl {
     SKUIIndexBarEntry * _combinedEntry;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _contentEdgeInsets;
     <SKUIIndexBarControlDataSource> * _dataSource;
     struct { 
@@ -29,28 +29,28 @@
     BOOL  _hasValidTotalEntryCount;
     BOOL  _hasValidTotalSize;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _hitTestEdgeInsets;
     NSMapTable * _indexPathToEntryMapTable;
     NSIndexPath * _lastSelectedIndexPath;
-    double  _lineSpacing;
+    float  _lineSpacing;
     int  _numberOfSections;
     NSMapTable * _sectionIndexToNumberOfEntriesMapTable;
     int  _totalEntryCount;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _totalSize;
 }
 
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentEdgeInsets;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentEdgeInsets;
 @property (nonatomic) <SKUIIndexBarControlDataSource> *dataSource;
 @property (nonatomic, copy) NSDictionary *defaultTextAttributes;
 @property (nonatomic) <SKUIIndexBarControlDelegate> *delegate;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } hitTestEdgeInsets;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } hitTestEdgeInsets;
 @property (nonatomic, readonly) int numberOfSections;
 
 - (void).cxx_destruct;
@@ -68,39 +68,39 @@
 - (int)_numberOfSections;
 - (BOOL)_reloadLineSpacing;
 - (void)_sendSelectionForTouch:(id)arg1 withEvent:(id)arg2;
-- (struct CGSize { double x1; double x2; })_sizeForEntries:(id)arg1;
-- (struct CGSize { double x1; double x2; })_sizeForEntryAtIndexPath:(id)arg1;
+- (struct CGSize { float x1; float x2; })_sizeForEntries:(id)arg1;
+- (struct CGSize { float x1; float x2; })_sizeForEntryAtIndexPath:(id)arg1;
 - (int)_totalEntryCount;
-- (struct CGSize { double x1; double x2; })_totalSize;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_visibleBounds;
+- (struct CGSize { float x1; float x2; })_totalSize;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_visibleBounds;
 - (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)cancelTrackingWithEvent:(id)arg1;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentEdgeInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentEdgeInsets;
 - (BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (id)dataSource;
 - (id)defaultTextAttributes;
 - (id)delegate;
-- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })hitTestEdgeInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })hitTestEdgeInsets;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (int)numberOfEntriesInSection:(int)arg1;
 - (int)numberOfSections;
-- (BOOL)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)reloadCombinedEntry;
 - (void)reloadData;
 - (void)reloadEntryAtIndexPath:(id)arg1;
 - (void)reloadSections:(id)arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)setContentEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setContentEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setDataSource:(id)arg1;
 - (void)setDefaultTextAttributes:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)setHitTestEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
-- (void)setTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setHitTestEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)tintColorDidChange;
 - (void)traitCollectionDidChange:(id)arg1;
 

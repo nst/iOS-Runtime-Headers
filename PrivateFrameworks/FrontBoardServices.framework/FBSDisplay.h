@@ -6,19 +6,19 @@
     CADisplay * _caDisplay;
     unsigned int  _displayID;
     BOOL  _external;
-    double  _orientation;
+    float  _orientation;
     int  _pid;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _referenceBounds;
-    double  _scale;
+    float  _scale;
     unsigned int  _seed;
     int  _tags;
     unsigned int  _type;
@@ -31,10 +31,10 @@
 @property (nonatomic, readonly) unsigned int displayID;
 @property (getter=isExternal, nonatomic, readonly) BOOL external;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly) double orientation;
+@property (nonatomic, readonly) float orientation;
 @property (nonatomic, readonly) int pid;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } referenceBounds;
-@property (nonatomic, readonly) double scale;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } referenceBounds;
+@property (nonatomic, readonly) float scale;
 @property (nonatomic) unsigned int seed;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) int tags;
@@ -75,7 +75,7 @@
 - (BOOL)isiPodOnlyDisplay;
 - (float)orientation;
 - (int)pid;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })referenceBounds;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })referenceBounds;
 - (float)scale;
 - (unsigned int)seed;
 - (void)setSeed:(unsigned int)arg1;

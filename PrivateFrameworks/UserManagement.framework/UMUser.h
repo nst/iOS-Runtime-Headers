@@ -6,8 +6,8 @@
     id  __photo;
     NSString * _alternateDSID;
     NSDate * _creationDate;
-    unsigned int  _dataQuota;
-    unsigned int  _dataUsed;
+    unsigned long long  _dataQuota;
+    unsigned long long  _dataUsed;
     NSString * _displayName;
     NSError * _errorCausingLogout;
     NSString * _familyName;
@@ -32,8 +32,8 @@
 @property (nonatomic, copy) id _photo;
 @property (nonatomic, copy) NSString *alternateDSID;
 @property (nonatomic, copy) NSDate *creationDate;
-@property (nonatomic) unsigned int dataQuota;
-@property (nonatomic) unsigned int dataUsed;
+@property (nonatomic) unsigned long long dataQuota;
+@property (nonatomic) unsigned long long dataUsed;
 @property (nonatomic, copy) NSString *displayName;
 @property (nonatomic, retain) NSError *errorCausingLogout;
 @property (nonatomic, copy) NSString *familyName;
@@ -59,15 +59,15 @@
 // Image: /System/Library/PrivateFrameworks/UserManagement.framework/UserManagement
 
 - (void).cxx_destruct;
-- (struct dqblk { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10[4]; })_diskQuota;
+- (struct dqblk { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10[4]; })_diskQuota;
 - (id)_photo;
 - (id)alternateDSID;
 - (BOOL)commitChanges;
 - (BOOL)commitChangesWithError:(id*)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)creationDate;
-- (unsigned int)dataQuota;
-- (unsigned int)dataUsed;
+- (unsigned long long)dataQuota;
+- (unsigned long long)dataUsed;
 - (id)description;
 - (id)displayName;
 - (id)errorCausingLogout;
@@ -94,8 +94,8 @@
 - (id)photoURL;
 - (void)setAlternateDSID:(id)arg1;
 - (void)setCreationDate:(id)arg1;
-- (void)setDataQuota:(unsigned int)arg1;
-- (void)setDataUsed:(unsigned int)arg1;
+- (void)setDataQuota:(unsigned long long)arg1;
+- (void)setDataUsed:(unsigned long long)arg1;
 - (void)setDisplayName:(id)arg1;
 - (void)setErrorCausingLogout:(id)arg1;
 - (void)setFamilyName:(id)arg1;

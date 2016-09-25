@@ -135,7 +135,7 @@
 - (id)newActionButton;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (id)personHeaderView;
-- (struct CGSize { double x1; double x2; })preferredContentSize;
+- (struct CGSize { float x1; float x2; })preferredContentSize;
 - (void)presentAddToContactsSheet;
 - (void)presentNewContactViewControllerForAddToContacts;
 - (void)presentPeoplePickerNavigationControllerForMergeToContact;

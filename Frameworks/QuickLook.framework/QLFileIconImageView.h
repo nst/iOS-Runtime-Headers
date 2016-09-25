@@ -3,14 +3,14 @@
  */
 
 @interface QLFileIconImageView : UIImageView {
-    double  _cornerRadius;
+    float  _cornerRadius;
 }
 
-@property (nonatomic) double cornerRadius;
+@property (nonatomic) float cornerRadius;
 
 - (float)cornerRadius;
 - (id)initWithCoder:(id)arg1;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (void)setCornerRadius:(float)arg1;
 
 @end

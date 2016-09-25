@@ -4,22 +4,22 @@
 
 @interface PXViewControllerPinchTransitionSettings : PXSettings {
     BOOL  _allowPinchTransitions;
-    double  _backgroundParallax;
-    double  _backgroundScale;
-    double  _dimmingOpacity;
-    double  _dimmingWhite;
-    double  _shadowOpacity;
-    double  _shadowRadius;
+    float  _backgroundParallax;
+    float  _backgroundScale;
+    float  _dimmingOpacity;
+    float  _dimmingWhite;
+    float  _shadowOpacity;
+    float  _shadowRadius;
     double  _transitionDuration;
 }
 
 @property (nonatomic) BOOL allowPinchTransitions;
-@property (nonatomic) double backgroundParallax;
-@property (nonatomic) double backgroundScale;
-@property (nonatomic) double dimmingOpacity;
-@property (nonatomic) double dimmingWhite;
-@property (nonatomic) double shadowOpacity;
-@property (nonatomic) double shadowRadius;
+@property (nonatomic) float backgroundParallax;
+@property (nonatomic) float backgroundScale;
+@property (nonatomic) float dimmingOpacity;
+@property (nonatomic) float dimmingWhite;
+@property (nonatomic) float shadowOpacity;
+@property (nonatomic) float shadowRadius;
 @property (nonatomic) double transitionDuration;
 
 + (id)settingsControllerModule;

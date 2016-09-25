@@ -12,7 +12,7 @@
 @property (nonatomic, readonly) BOOL shouldSend;
 
 - (id)deferredOperation;
-- (unsigned int)generationNumber;
+- (unsigned long long)generationNumber;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isUserRequested;

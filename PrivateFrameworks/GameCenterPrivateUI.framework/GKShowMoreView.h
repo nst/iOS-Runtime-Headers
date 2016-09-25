@@ -12,7 +12,7 @@
     SEL  _showMoreAction;
     BOOL  _showShowAll;
     UIActivityIndicatorView * _spinner;
-    double  _textAlignmentOffset;
+    float  _textAlignmentOffset;
     NSLayoutConstraint * _verticalContraint;
 }
 
@@ -25,7 +25,7 @@
 @property (nonatomic) SEL showMoreAction;
 @property (nonatomic) BOOL showShowAll;
 @property (nonatomic, retain) UIActivityIndicatorView *spinner;
-@property (nonatomic) double textAlignmentOffset;
+@property (nonatomic) float textAlignmentOffset;
 @property (nonatomic, retain) NSLayoutConstraint *verticalContraint;
 
 + (BOOL)requiresConstraintBasedLayout;
@@ -35,7 +35,7 @@
 - (id)collectionView;
 - (void)dealloc;
 - (id)horizontalContraint;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)label;
 - (BOOL)loading;
 - (int)numberToShow;

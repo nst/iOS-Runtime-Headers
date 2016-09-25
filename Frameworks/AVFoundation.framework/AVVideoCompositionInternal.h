@@ -12,16 +12,16 @@
     NSString * colorYCbCrMatrix;
     Class  customCompositorClass;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  frameDuration;
     NSArray * instructions;
-    double  renderScale;
+    float  renderScale;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  renderSize;
     int  sourceTrackIDForFrameTiming;
 }

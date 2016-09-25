@@ -4,18 +4,18 @@
 
 @interface GEOComposedRouteTransitTripSection : GEOComposedRouteSection <GEOComposedRouteTransitSection> {
     struct { 
-        unsigned int stopID; 
-        unsigned int hallID; 
-        unsigned int stationID; 
+        unsigned long long stopID; 
+        unsigned long long hallID; 
+        unsigned long long stationID; 
     }  _fromNodeID;
     struct { 
         double latitude; 
         double longitude; 
     }  _fromNodeLocation;
     struct Matrix<float, 4, 1> { 
-        double _e[4]; 
+        float _e[4]; 
     }  _lineColor;
-    unsigned int  _lineID;
+    unsigned long long  _lineID;
     struct { 
         struct { 
             double x; 
@@ -27,9 +27,9 @@
         } size; 
     }  _originalBounds;
     struct { 
-        unsigned int stopID; 
-        unsigned int hallID; 
-        unsigned int stationID; 
+        unsigned long long stopID; 
+        unsigned long long hallID; 
+        unsigned long long stationID; 
     }  _toNodeID;
     struct { 
         double latitude; 
@@ -40,25 +40,25 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) struct { unsigned int x1; unsigned int x2; unsigned int x3; } fromNodeID;
+@property (nonatomic, readonly) struct { unsigned long long x1; unsigned long long x2; unsigned long long x3; } fromNodeID;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) BOOL isTransfer;
 @property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{Matrix<float' */ struct  lineColor; /* unknown property attribute:  1>=[4f]} */
-@property (nonatomic, readonly) unsigned int lineID;
+@property (nonatomic, readonly) unsigned long long lineID;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) struct { unsigned int x1; unsigned int x2; unsigned int x3; } toNodeID;
+@property (nonatomic, readonly) struct { unsigned long long x1; unsigned long long x2; unsigned long long x3; } toNodeID;
 @property (nonatomic, readonly) int toNodeSignificance;
 
 // Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
 
 - (id).cxx_construct;
 - (id)description;
-- (struct { unsigned int x1; unsigned int x2; unsigned int x3; })fromNodeID;
+- (struct { unsigned long long x1; unsigned long long x2; unsigned long long x3; })fromNodeID;
 - (id)initWithRoute:(id)arg1 startPoint:(unsigned int)arg2 pointCount:(unsigned int)arg3 step:(id)arg4 stepIndex:(unsigned int)arg5 toNodeSignificance:(int)arg6 currentTransitLineColor:(id)arg7 startDistance:(double)arg8 lengthScaleFactor:(double)arg9;
 - (BOOL)isTransfer;
-- (struct Matrix<float, 4, 1> { double x1[4]; })lineColor;
-- (unsigned int)lineID;
-- (struct { unsigned int x1; unsigned int x2; unsigned int x3; })toNodeID;
+- (struct Matrix<float, 4, 1> { float x1[4]; })lineColor;
+- (unsigned long long)lineID;
+- (struct { unsigned long long x1; unsigned long long x2; unsigned long long x3; })toNodeID;
 - (int)toNodeSignificance;
 
 // Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit

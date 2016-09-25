@@ -5,7 +5,7 @@
 @interface HDFitnessFriendsCloudKitCodableRelationship : PBCodable <NSCopying> {
     NSMutableArray * _addresses;
     NSString * _cloudKitAddress;
-    int  _eventCount;
+    long long  _eventCount;
     NSMutableArray * _events;
     struct { 
         unsigned int eventCount : 1; 
@@ -19,7 +19,7 @@
 
 @property (nonatomic, retain) NSMutableArray *addresses;
 @property (nonatomic, retain) NSString *cloudKitAddress;
-@property (nonatomic) int eventCount;
+@property (nonatomic) long long eventCount;
 @property (nonatomic, retain) NSMutableArray *events;
 @property (nonatomic, readonly) BOOL hasCloudKitAddress;
 @property (nonatomic) BOOL hasEventCount;
@@ -47,7 +47,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (int)eventCount;
+- (long long)eventCount;
 - (id)events;
 - (id)eventsAtIndex:(unsigned int)arg1;
 - (unsigned int)eventsCount;
@@ -68,7 +68,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (void)setAddresses:(id)arg1;
 - (void)setCloudKitAddress:(id)arg1;
-- (void)setEventCount:(int)arg1;
+- (void)setEventCount:(long long)arg1;
 - (void)setEvents:(id)arg1;
 - (void)setHasEventCount:(BOOL)arg1;
 - (void)setIncomingHandshakeToken:(id)arg1;

@@ -23,8 +23,8 @@
 - (void)_flushPendingBlockingEntryData;
 - (void)_flushPendingIdentificationPhoneNumbersAndLabels;
 - (id)_remoteObjectProxyWithErrorHandler:(id /* block */)arg1 synchronous:(BOOL)arg2;
-- (void)addBlockingEntryWithNextSequentialPhoneNumber:(int)arg1;
-- (void)addIdentificationEntryWithNextSequentialPhoneNumber:(int)arg1 label:(id)arg2;
+- (void)addBlockingEntryWithNextSequentialPhoneNumber:(long long)arg1;
+- (void)addIdentificationEntryWithNextSequentialPhoneNumber:(long long)arg1 label:(id)arg2;
 - (void)completeRequestWithCompletionHandler:(id /* block */)arg1;
 - (id)delegate;
 - (id)pendingBlockingEntryData;

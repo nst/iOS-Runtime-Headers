@@ -22,20 +22,20 @@
 @property (nonatomic, readonly, copy) NSArray *viewControllers;
 
 - (void).cxx_destruct;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_centeredFrameForViewController:(id)arg1 inBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_centeredFrameForViewController:(id)arg1 inBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)_fadeInViewController:(id)arg1 withCompletionBlock:(id /* block */)arg2;
 - (void)_frameAction:(id)arg1;
-- (int)_indexOfViewControllerForPoint:(struct CGPoint { double x1; double x2; })arg1;
-- (struct CGSize { double x1; double x2; })_overlaySizeForController:(id)arg1 atBoundsSize:(struct CGSize { double x1; double x2; })arg2;
-- (float)_overlaySpacingForSize:(struct CGSize { double x1; double x2; })arg1;
+- (int)_indexOfViewControllerForPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGSize { float x1; float x2; })_overlaySizeForController:(id)arg1 atBoundsSize:(struct CGSize { float x1; float x2; })arg2;
+- (float)_overlaySpacingForSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_popViewControllers;
-- (void)_positionViewControllersForSize:(struct CGSize { double x1; double x2; })arg1 traitCollection:(id)arg2;
+- (void)_positionViewControllersForSize:(struct CGSize { float x1; float x2; })arg1 traitCollection:(id)arg2;
 - (void)_pushViewController:(id)arg1;
 - (void)_removeChildren;
 - (id)_selectedViewController;
 - (void)_slideInViewController:(id)arg1 withCompletionBlock:(id /* block */)arg2;
 - (void)_tapAction:(id)arg1;
-- (id)_viewControllerForPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (id)_viewControllerForPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)backstopControl;
 - (void)dealloc;
 - (id)delegate;
@@ -57,6 +57,6 @@
 - (void)traitCollectionDidChange:(id)arg1;
 - (id)viewControllers;
 - (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

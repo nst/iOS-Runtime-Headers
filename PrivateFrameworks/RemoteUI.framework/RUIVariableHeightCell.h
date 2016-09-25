@@ -9,11 +9,11 @@
 @property (nonatomic) BOOL supportsAccessory;
 
 - (float)contentWidth;
-- (struct CGSize { double x1; double x2; })detailLabelSizeForWidth:(float)arg1;
+- (struct CGSize { float x1; float x2; })detailLabelSizeForWidth:(float)arg1;
 - (float)height;
 - (void)layoutSubviews;
 - (void)setSupportsAccessory:(BOOL)arg1;
 - (BOOL)supportsAccessory;
-- (struct CGSize { double x1; double x2; })textLabelSizeForWidth:(float)arg1;
+- (struct CGSize { float x1; float x2; })textLabelSizeForWidth:(float)arg1;
 
 @end

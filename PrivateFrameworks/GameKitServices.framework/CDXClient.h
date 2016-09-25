@@ -18,7 +18,7 @@
     int  fd_;
     int  holePunchAttemptCount_;
     double  holePunchInterval_;
-    unsigned int  holePunchSID_;
+    unsigned long long  holePunchSID_;
     NSObject<OS_dispatch_source> * holePunchTimer_;
     unsigned short  localPort_;
     void * padding_;
@@ -26,7 +26,7 @@
     id /* block */  preblobCallback_;
     BOOL  preblobIsUpToDate_;
     NSData * preblob_;
-    unsigned int  prevHolePunchSID_;
+    unsigned long long  prevHolePunchSID_;
     NSObject<OS_dispatch_queue> * queue_;
     int  restartCount_;
     struct __CFRunLoopSource { } * scDynamicStoreRunLoopSource_;

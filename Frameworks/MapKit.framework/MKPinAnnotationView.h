@@ -16,18 +16,18 @@
 @property (nonatomic, retain) UIColor *pinTintColor;
 
 + (id)_bounceAnimation;
-+ (struct CGPoint { double x1; double x2; })_calloutOffset;
++ (struct CGPoint { float x1; float x2; })_calloutOffset;
 + (id)_dropBounceAnimation;
 + (id)_imageForLayer:(int)arg1 state:(int)arg2 mapType:(unsigned int)arg3 traits:(id)arg4;
 + (id)_imageForState:(int)arg1 mapType:(unsigned int)arg2 displayStyle:(unsigned int)arg3 pinColor:(id)arg4 traits:(id)arg5;
-+ (struct CGPoint { double x1; double x2; })_leftCalloutOffset;
-+ (struct CGPoint { double x1; double x2; })_perceivedAnchorPoint;
-+ (struct CGSize { double x1; double x2; })_perceivedSize;
-+ (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_pinFrameForPosition:(struct CGPoint { double x1; double x2; })arg1;
++ (struct CGPoint { float x1; float x2; })_leftCalloutOffset;
++ (struct CGPoint { float x1; float x2; })_perceivedAnchorPoint;
++ (struct CGSize { float x1; float x2; })_perceivedSize;
++ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_pinFrameForPosition:(struct CGPoint { float x1; float x2; })arg1;
 + (id)_pinsWithMapType:(unsigned int)arg1 mapDisplayStyle:(struct { unsigned char x1; unsigned char x2; unsigned char x3; unsigned char x4; BOOL x5; })arg2 pinColor:(id)arg3 traits:(id)arg4;
 + (id)_reuseIdentifier;
-+ (struct CGPoint { double x1; double x2; })_rightCalloutOffset;
-+ (struct CGPoint { double x1; double x2; })_shadowAnchorPoint;
++ (struct CGPoint { float x1; float x2; })_rightCalloutOffset;
++ (struct CGPoint { float x1; float x2; })_shadowAnchorPoint;
 + (id)_shadowImage;
 + (id)greenPinColor;
 + (Class)layerClass;
@@ -39,7 +39,7 @@
 - (void)_cleanupAfterPinDropAnimation;
 - (id)_delegate;
 - (void)_didUpdatePosition;
-- (struct CGPoint { double x1; double x2; })_draggingDropOffset;
+- (struct CGPoint { float x1; float x2; })_draggingDropOffset;
 - (void)_dropAfterDraggingAndRevertPosition:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_dropAfterDraggingDidEnd:(id)arg1;
 - (void)_dropFromDistance:(float)arg1 maxDistance:(float)arg2 withDelay:(double)arg3;
@@ -59,7 +59,7 @@
 - (void)_setMapDisplayStyle:(struct { unsigned char x1; unsigned char x2; unsigned char x3; unsigned char x4; BOOL x5; })arg1;
 - (void)_setMapType:(unsigned int)arg1;
 - (void)_setRotationRadians:(float)arg1 withAnimation:(id)arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_significantBounds;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_significantBounds;
 - (int)_state;
 - (void)_stopDrop;
 - (void)_stopDropAnimationAndDropToPosition;
@@ -73,7 +73,7 @@
 - (unsigned int)pinColor;
 - (id)pinTintColor;
 - (void)setAnimatesDrop:(BOOL)arg1;
-- (void)setCenter:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setCenter:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setDragState:(unsigned int)arg1;
 - (void)setDragState:(unsigned int)arg1 animated:(BOOL)arg2;
 - (void)setHighlighted:(BOOL)arg1;

@@ -4,7 +4,7 @@
 
 @interface _MRGameControllerMessageProtobuf : PBCodable <NSCopying> {
     _MRGameControllerButtonsProtobuf * _buttons;
-    unsigned int  _controllerID;
+    unsigned long long  _controllerID;
     struct { 
         unsigned int controllerID : 1; 
     }  _has;
@@ -12,14 +12,14 @@
 }
 
 @property (nonatomic, retain) _MRGameControllerButtonsProtobuf *buttons;
-@property (nonatomic) unsigned int controllerID;
+@property (nonatomic) unsigned long long controllerID;
 @property (nonatomic, readonly) BOOL hasButtons;
 @property (nonatomic) BOOL hasControllerID;
 @property (nonatomic, readonly) BOOL hasMotion;
 @property (nonatomic, retain) _MRGameControllerMotionProtobuf *motion;
 
 - (id)buttons;
-- (unsigned int)controllerID;
+- (unsigned long long)controllerID;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -34,7 +34,7 @@
 - (id)motion;
 - (BOOL)readFrom:(id)arg1;
 - (void)setButtons:(id)arg1;
-- (void)setControllerID:(unsigned int)arg1;
+- (void)setControllerID:(unsigned long long)arg1;
 - (void)setHasControllerID:(BOOL)arg1;
 - (void)setMotion:(id)arg1;
 - (void)writeTo:(id)arg1;

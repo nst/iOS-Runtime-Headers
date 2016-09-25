@@ -40,7 +40,7 @@
 - (id)pipeWithReceiver:(id)arg1;
 - (void)queueProgressUpdates:(id)arg1;
 - (void)queueUpdate:(id)arg1;
-- (void)queueUpdateForItemAtRowID:(unsigned int)arg1;
+- (void)queueUpdateForItemAtRowID:(unsigned long long)arg1;
 - (void)registerAppLibraries:(id)arg1 forFlags:(unsigned int)arg2;
 - (void)resume;
 - (id)session;

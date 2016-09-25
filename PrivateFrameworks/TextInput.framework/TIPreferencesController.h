@@ -19,8 +19,8 @@
 - (void)clearSynchronizePreferencesTimer;
 - (void)dealloc;
 - (id)defaultForKey:(int)arg1;
-- (struct { id x1; BOOL x2; BOOL x3; unsigned int x4; int x5; }*)domainForType:(int)arg1;
-- (struct { id x1; BOOL x2; BOOL x3; unsigned int x4; int x5; }*)domains;
+- (struct { id x1; BOOL x2; BOOL x3; unsigned long long x4; int x5; }*)domainForType:(int)arg1;
+- (struct { id x1; BOOL x2; BOOL x3; unsigned long long x4; int x5; }*)domains;
 - (BOOL)inhibitGlobalNotification;
 - (id)init;
 - (BOOL)isInternalInstall;

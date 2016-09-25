@@ -8,7 +8,7 @@
     struct sqlite3 { } * _db;
     struct sqlite3_stmt { } * _insertIncoming;
     struct sqlite3_stmt { } * _insertOutgoing;
-    int  _lastIncomingRowID;
+    long long  _lastIncomingRowID;
     struct sqlite3_stmt { } * _logFileActivity;
     struct sqlite3_stmt { } * _markCompleteIncoming;
     NSObject<OS_dispatch_queue> * _operations_queue;
@@ -73,7 +73,7 @@
 - (void)recordIncomingMessage:(id)arg1 forService:(id)arg2;
 - (void)recordOutgoingFileTransferAtURL:(id)arg1 metadata:(id)arg2 identifier:(id)arg3 error:(id)arg4 forService:(id)arg5;
 - (void)recordOutgoingMessage:(id)arg1 forService:(id)arg2;
-- (unsigned int)rowIDForPartialMessage:(id)arg1;
+- (unsigned long long)rowIDForPartialMessage:(id)arg1;
 - (void)setFileTransferIdentifier:(id)arg1 forOutgoingMessagesWithRowIDs:(id)arg2;
 - (void)updateLastIncomingMessageWithError:(id)arg1;
 - (void)updateLastIncomingMessageWithProcessingTime:(double)arg1;

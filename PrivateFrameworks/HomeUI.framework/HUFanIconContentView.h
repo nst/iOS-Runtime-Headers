@@ -7,7 +7,7 @@
     UIVisualEffectView * _baseVisualEffectView;
     HUNonAnimatingTintImageView * _bladesView;
     UIVisualEffectView * _bladesVisualEffectView;
-    double  _rotationSpeed;
+    float  _rotationSpeed;
     unsigned int  _rotationState;
     HUApplier * _speedRampApplier;
 }
@@ -16,7 +16,7 @@
 @property (nonatomic, retain) UIVisualEffectView *baseVisualEffectView;
 @property (nonatomic, retain) HUNonAnimatingTintImageView *bladesView;
 @property (nonatomic, retain) UIVisualEffectView *bladesVisualEffectView;
-@property (nonatomic) double rotationSpeed;
+@property (nonatomic) float rotationSpeed;
 @property (nonatomic) unsigned int rotationState;
 @property (nonatomic, retain) HUApplier *speedRampApplier;
 
@@ -30,7 +30,7 @@
 - (id)baseVisualEffectView;
 - (id)bladesView;
 - (id)bladesVisualEffectView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (float)rotationSpeed;
 - (unsigned int)rotationState;

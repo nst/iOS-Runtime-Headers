@@ -5,20 +5,20 @@
 @interface PXViewSpec : NSObject <NSCopying> {
     struct UIColor { Class x1; } * _backgroundColor;
     struct UIColor { Class x1; } * _borderColor;
-    double  _borderWidth;
+    float  _borderWidth;
     int  _compositingFilterType;
-    double  _cornerRadius;
-    double  _displayScale;
+    float  _cornerRadius;
+    float  _displayScale;
     BOOL  _hidden;
     struct UIColor { Class x1; } * _selectionHighlightColor;
 }
 
 @property (nonatomic, copy) UIColor *backgroundColor;
 @property (nonatomic, copy) UIColor *borderColor;
-@property (nonatomic) double borderWidth;
+@property (nonatomic) float borderWidth;
 @property (nonatomic) int compositingFilterType;
-@property (nonatomic) double cornerRadius;
-@property (nonatomic) double displayScale;
+@property (nonatomic) float cornerRadius;
+@property (nonatomic) float displayScale;
 @property (getter=isHidden, nonatomic) BOOL hidden;
 @property (nonatomic, copy) UIColor *selectionHighlightColor;
 

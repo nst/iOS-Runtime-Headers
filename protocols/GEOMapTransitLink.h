@@ -10,6 +10,6 @@
 - (unsigned int)minimumTravelTime;
 - (<GEOMapTransitStop> *)stopFrom;
 - (<GEOMapTransitStop> *)stopTo;
-- (unsigned int)transitLineID;
+- (unsigned long long)transitLineID;
 
 @end

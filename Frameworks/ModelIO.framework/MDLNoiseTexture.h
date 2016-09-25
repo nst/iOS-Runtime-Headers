@@ -4,7 +4,7 @@
 
 @interface MDLNoiseTexture : MDLTexture {
     bool  _grayScale;
-    double  _smoothness;
+    float  _smoothness;
     bool  _vectorNoise;
 }
 

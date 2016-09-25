@@ -3,7 +3,7 @@
  */
 
 @interface HDCodableAchievement : PBCodable <NSCopying> {
-    int  _achievementType;
+    long long  _achievementType;
     BOOL  _alerted;
     double  _completedDate;
     NSString * _definitionIdentifier;
@@ -17,12 +17,12 @@
         unsigned int workoutActivityType : 1; 
         unsigned int alerted : 1; 
     }  _has;
-    int  _intValue;
+    long long  _intValue;
     NSData * _uuid;
-    int  _workoutActivityType;
+    long long  _workoutActivityType;
 }
 
-@property (nonatomic) int achievementType;
+@property (nonatomic) long long achievementType;
 @property (nonatomic) BOOL alerted;
 @property (nonatomic) double completedDate;
 @property (nonatomic, retain) NSString *definitionIdentifier;
@@ -37,12 +37,12 @@
 @property (nonatomic) BOOL hasIntValue;
 @property (nonatomic, readonly) BOOL hasUuid;
 @property (nonatomic) BOOL hasWorkoutActivityType;
-@property (nonatomic) int intValue;
+@property (nonatomic) long long intValue;
 @property (nonatomic, retain) NSData *uuid;
-@property (nonatomic) int workoutActivityType;
+@property (nonatomic) long long workoutActivityType;
 
 - (void).cxx_destruct;
-- (int)achievementType;
+- (long long)achievementType;
 - (BOOL)alerted;
 - (double)completedDate;
 - (void)copyTo:(id)arg1;
@@ -66,11 +66,11 @@
 - (BOOL)hasUuid;
 - (BOOL)hasWorkoutActivityType;
 - (unsigned int)hash;
-- (int)intValue;
+- (long long)intValue;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (void)setAchievementType:(int)arg1;
+- (void)setAchievementType:(long long)arg1;
 - (void)setAlerted:(BOOL)arg1;
 - (void)setCompletedDate:(double)arg1;
 - (void)setDefinitionIdentifier:(id)arg1;
@@ -82,11 +82,11 @@
 - (void)setHasDoubleValue:(BOOL)arg1;
 - (void)setHasIntValue:(BOOL)arg1;
 - (void)setHasWorkoutActivityType:(BOOL)arg1;
-- (void)setIntValue:(int)arg1;
+- (void)setIntValue:(long long)arg1;
 - (void)setUuid:(id)arg1;
-- (void)setWorkoutActivityType:(int)arg1;
+- (void)setWorkoutActivityType:(long long)arg1;
 - (id)uuid;
-- (int)workoutActivityType;
+- (long long)workoutActivityType;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -3,12 +3,12 @@
  */
 
 @interface WBSHistorySQLiteStore : NSObject <WBSHistoryLoader, WBSHistoryLoaderDelegate> {
-    int  _cachedNumberOfDevicesInSyncCircle;
+    long long  _cachedNumberOfDevicesInSyncCircle;
     BOOL  _checkpointWriteAheadLogOnNextWrite;
     NSMutableDictionary * _clientVersions;
     BOOL  _commitGenerationValuesOnNextWrite;
     NSData * _cryptographicKey;
-    int  _currentGeneration;
+    long long  _currentGeneration;
     WBSSQLiteDatabase * _database;
     int  _databaseCoordinationLockFileDescriptor;
     int  _databaseLockingPolicy;
@@ -24,7 +24,7 @@
     unsigned int  _itemCountLimit;
     NSMutableDictionary * _itemsByDatabaseID;
     NSDate * _lastMaintenanceDate;
-    int  _lastSyncedGeneration;
+    long long  _lastSyncedGeneration;
     BOOL  _loadInProgress;
     NSArray * _loadedItems;
     NSCountedSet * _loadedStringsForUserTypedDomainExpansion;
@@ -72,8 +72,8 @@
 - (void)_clearHistoryVisitsAddedAfterDate:(id)arg1 beforeDate:(id)arg2 addingTombstone:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)_clearHistoryVisitsMatchingURLHash:(id)arg1 salt:(id)arg2 afterDate:(id)arg3 beforeDate:(id)arg4 addingTombstone:(id)arg5 completionHandler:(id /* block */)arg6;
 - (void)_clearHistoryVisitsMatchingURLString:(id)arg1 afterDate:(id)arg2 beforeDate:(id)arg3 addingTombstone:(id)arg4 completionHandler:(id /* block */)arg5;
-- (void)_convertTombstoneWithGenerationToSecureFormat:(int)arg1;
-- (int)_currentGeneration;
+- (void)_convertTombstoneWithGenerationToSecureFormat:(long long)arg1;
+- (long long)_currentGeneration;
 - (id)_databaseCoordinationLockURLForDatabaseURL:(id)arg1;
 - (id)_deletionPlanForDeletionOfVisits:(id)arg1;
 - (void)_enforceAgeAndItemCountLimits:(id /* block */)arg1;
@@ -86,13 +86,13 @@
 - (void)_insertVisit:(id)arg1;
 - (id)_itemsOrderedForInsertion:(id)arg1;
 - (id)_lastSeenDateForCloudClientVersionOnDatabaseQueue:(unsigned int)arg1;
-- (int)_lastSyncedGeneration;
+- (long long)_lastSyncedGeneration;
 - (void)_loadClientVersions;
 - (void)_loadFromDatabase;
 - (void)_loadHistory;
 - (void)_loadRedirectVisitsForLoadedItems:(id)arg1;
 - (id)_metadataDataValueForKey:(id)arg1;
-- (int)_metadataInt64ValueForKey:(id)arg1;
+- (long long)_metadataInt64ValueForKey:(id)arg1;
 - (int)_migrateToCurrentSchemaVersionIfNeeded;
 - (int)_migrateToSchemaVersion:(int)arg1;
 - (int)_migrateToSchemaVersion_2;
@@ -116,15 +116,15 @@
 - (void)_scheduleMaintenance;
 - (void)_scheduleWrite;
 - (int)_setDatabaseSchemaVersion:(int)arg1;
-- (void)_setLastSyncedGeneration:(unsigned int)arg1;
+- (void)_setLastSyncedGeneration:(unsigned long long)arg1;
 - (void)_setMetadataDataValue:(id)arg1 forKey:(id)arg2;
-- (void)_setMetadataInt64Value:(int)arg1 forKey:(id)arg2;
+- (void)_setMetadataInt64Value:(long long)arg1 forKey:(id)arg2;
 - (int)_setOrigin:(int)arg1 forVisitsFromOrigin:(int)arg2;
 - (BOOL)_shouldEmitLegacyTombstones;
 - (BOOL)_shouldMigrateFromPropertyListWhenLoadingDatabase:(id)arg1;
 - (id)_statementForQuery:(id)arg1;
 - (id)_tombstonesNeedingSync;
-- (void)_updateDatabaseAfterSuccessfulSyncWithGeneration:(int)arg1 convertTombstonesToSecureFormat:(BOOL)arg2;
+- (void)_updateDatabaseAfterSuccessfulSyncWithGeneration:(long long)arg1 convertTombstonesToSecureFormat:(BOOL)arg2;
 - (void)_updateGenerationForVisits:(id)arg1;
 - (void)_updateItem:(id)arg1;
 - (void)_updateVisit:(id)arg1;
@@ -185,7 +185,7 @@
 - (void)setSyncCircleSizeRetrievalThrottlerData:(id)arg1;
 - (void)startLoading;
 - (id)syncCircleSizeRetrievalThrottlerData;
-- (void)updateHistoryAfterSuccessfulPersistedLongLivedSaveOperationWithGeneration:(int)arg1 completion:(id /* block */)arg2;
+- (void)updateHistoryAfterSuccessfulPersistedLongLivedSaveOperationWithGeneration:(long long)arg1 completion:(id /* block */)arg2;
 - (id)visitForItem:(id)arg1 row:(id)arg2;
 - (id)visitForRow:(id)arg1;
 - (void)visitIdentifiersMatchingExistingVisits:(id)arg1 populateAssociatedVisits:(BOOL)arg2 completion:(id /* block */)arg3;

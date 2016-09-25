@@ -41,7 +41,7 @@
     double  _speed;
     double  _speedAccuracy;
     double  _timestamp;
-    unsigned int  _transitID;
+    unsigned long long  _transitID;
     int  _transportType;
     int  _type;
     double  _verticalAccuracy;
@@ -86,7 +86,7 @@
 @property (nonatomic) double speed;
 @property (nonatomic) double speedAccuracy;
 @property (nonatomic) double timestamp;
-@property (nonatomic) unsigned int transitID;
+@property (nonatomic) unsigned long long transitID;
 @property (nonatomic) int transportType;
 @property (nonatomic) int type;
 @property (nonatomic) double verticalAccuracy;
@@ -187,14 +187,14 @@
 - (void)setSpeed:(double)arg1;
 - (void)setSpeedAccuracy:(double)arg1;
 - (void)setTimestamp:(double)arg1;
-- (void)setTransitID:(unsigned int)arg1;
+- (void)setTransitID:(unsigned long long)arg1;
 - (void)setTransportType:(int)arg1;
 - (void)setType:(int)arg1;
 - (void)setVerticalAccuracy:(double)arg1;
 - (double)speed;
 - (double)speedAccuracy;
 - (double)timestamp;
-- (unsigned int)transitID;
+- (unsigned long long)transitID;
 - (int)transportType;
 - (id)transportTypeAsString:(int)arg1;
 - (int)type;

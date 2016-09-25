@@ -8,7 +8,7 @@
     UIView * _statusSpringView;
     UIView * _statusSpringViewParent;
     UILabel * _statusSubtitleView;
-    double  _targetEntryFieldFillerAlpha;
+    float  _targetEntryFieldFillerAlpha;
 }
 
 @property (nonatomic, copy) NSString *statusSubtitle;

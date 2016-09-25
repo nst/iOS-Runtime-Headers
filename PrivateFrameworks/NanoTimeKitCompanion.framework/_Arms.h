@@ -3,12 +3,12 @@
  */
 
 @interface _Arms : _Geometry {
-    double  _curLeftBend;
-    double  _curRightBend;
-    double  _leftShoulderAdjustment;
-    double  _leftShoulderX;
-    double  _rightShoulderAdjustment;
-    double  _rightShoulderX;
+    float  _curLeftBend;
+    float  _curRightBend;
+    float  _leftShoulderAdjustment;
+    float  _leftShoulderX;
+    float  _rightShoulderAdjustment;
+    float  _rightShoulderX;
     NSNumber * _texArm;
     NSNumber * _texHandHour;
     NSArray * _texHandMnut;
@@ -18,12 +18,12 @@
     unsigned int  _vboHand;
 }
 
-@property (nonatomic) double curLeftBend;
-@property (nonatomic) double curRightBend;
-@property (nonatomic) double leftShoulderAdjustment;
-@property (nonatomic) double leftShoulderX;
-@property (nonatomic) double rightShoulderAdjustment;
-@property (nonatomic) double rightShoulderX;
+@property (nonatomic) float curLeftBend;
+@property (nonatomic) float curRightBend;
+@property (nonatomic) float leftShoulderAdjustment;
+@property (nonatomic) float leftShoulderX;
+@property (nonatomic) float rightShoulderAdjustment;
+@property (nonatomic) float rightShoulderX;
 @property (nonatomic, retain) NSNumber *texArm;
 @property (nonatomic, retain) NSNumber *texHandHour;
 @property (nonatomic, retain) NSArray *texHandMnut;

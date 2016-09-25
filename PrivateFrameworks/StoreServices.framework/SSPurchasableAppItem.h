@@ -4,10 +4,10 @@
 
 @interface SSPurchasableAppItem : SSPurchasableItem
 
-+ (id)allItemsFromDatabase:(id)arg1 forAccount:(int)arg2 sortedBy:(id)arg3 sortAscending:(BOOL)arg4;
++ (id)allItemsFromDatabase:(id)arg1 forAccount:(long long)arg2 sortedBy:(id)arg3 sortAscending:(BOOL)arg4;
 + (id)allPropertyKeys;
 + (id)databaseTable;
-+ (id)itemsFromDatabase:(id)arg1 forAccount:(int)arg2 matching:(id)arg3 sortedBy:(id)arg4 sortAscending:(BOOL)arg5;
++ (id)itemsFromDatabase:(id)arg1 forAccount:(long long)arg2 matching:(id)arg3 sortedBy:(id)arg4 sortAscending:(BOOL)arg5;
 + (id)sortByNameKey;
 
 - (id)accountIdentifier;
@@ -18,7 +18,7 @@
 - (id)description;
 - (BOOL)hasMessagesExtension;
 - (id)humanReadableVersion;
-- (int)iTunesVersion;
+- (long long)iTunesVersion;
 - (id)iconTitle;
 - (id)iconURL;
 - (BOOL)isFamilyShareable;

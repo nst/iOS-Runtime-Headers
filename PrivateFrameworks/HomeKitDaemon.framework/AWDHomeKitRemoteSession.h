@@ -5,7 +5,7 @@
 @interface AWDHomeKitRemoteSession : PBCodable <NSCopying> {
     unsigned int  _closeReason;
     unsigned int  _deviceType;
-    unsigned int  _duration;
+    unsigned long long  _duration;
     int  _errorCode;
     struct { 
         unsigned int duration : 1; 
@@ -16,12 +16,12 @@
         unsigned int role : 1; 
     }  _has;
     unsigned int  _role;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) unsigned int closeReason;
 @property (nonatomic) unsigned int deviceType;
-@property (nonatomic) unsigned int duration;
+@property (nonatomic) unsigned long long duration;
 @property (nonatomic) int errorCode;
 @property (nonatomic) BOOL hasCloseReason;
 @property (nonatomic) BOOL hasDeviceType;
@@ -30,7 +30,7 @@
 @property (nonatomic) BOOL hasRole;
 @property (nonatomic) BOOL hasTimestamp;
 @property (nonatomic) unsigned int role;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 
 - (unsigned int)closeReason;
 - (void)copyTo:(id)arg1;
@@ -38,7 +38,7 @@
 - (id)description;
 - (unsigned int)deviceType;
 - (id)dictionaryRepresentation;
-- (unsigned int)duration;
+- (unsigned long long)duration;
 - (int)errorCode;
 - (BOOL)hasCloseReason;
 - (BOOL)hasDeviceType;
@@ -53,7 +53,7 @@
 - (unsigned int)role;
 - (void)setCloseReason:(unsigned int)arg1;
 - (void)setDeviceType:(unsigned int)arg1;
-- (void)setDuration:(unsigned int)arg1;
+- (void)setDuration:(unsigned long long)arg1;
 - (void)setErrorCode:(int)arg1;
 - (void)setHasCloseReason:(BOOL)arg1;
 - (void)setHasDeviceType:(BOOL)arg1;
@@ -62,8 +62,8 @@
 - (void)setHasRole:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
 - (void)setRole:(unsigned int)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
-- (unsigned int)timestamp;
+- (void)setTimestamp:(unsigned long long)arg1;
+- (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 
 @end

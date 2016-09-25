@@ -31,7 +31,7 @@
 - (void)_dispatchToMainQueueWithBlock:(id /* block */)arg1;
 - (void)_dispatchToWorkQueueAfterDelay:(double)arg1 withBlock:(id /* block */)arg2;
 - (void)_dispatchToWorkQueueWithBlock:(id /* block */)arg1;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })_frameTransformForState:(id)arg1;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_frameTransformForState:(id)arg1;
 - (id)_getOrCreateSessionContextForTimelapseUUID:(id)arg1;
 - (BOOL)_isCameraRunning;
 - (BOOL)_isCapturing;

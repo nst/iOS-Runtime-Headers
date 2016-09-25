@@ -4,14 +4,14 @@
 
 @interface _UILegibilitySettings : NSObject <BSDescriptionProviding, NSSecureCoding> {
     UIColor * _contentColor;
-    double  _imageOutset;
-    double  _minFillHeight;
+    float  _imageOutset;
+    float  _minFillHeight;
     UIColor * _primaryColor;
     UIColor * _secondaryColor;
-    double  _shadowAlpha;
+    float  _shadowAlpha;
     UIColor * _shadowColor;
     NSString * _shadowCompositingFilterName;
-    double  _shadowRadius;
+    float  _shadowRadius;
     int  _style;
 }
 
@@ -19,14 +19,14 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic) double imageOutset;
-@property (nonatomic) double minFillHeight;
+@property (nonatomic) float imageOutset;
+@property (nonatomic) float minFillHeight;
 @property (nonatomic, retain) UIColor *primaryColor;
 @property (nonatomic, retain) UIColor *secondaryColor;
-@property (nonatomic) double shadowAlpha;
+@property (nonatomic) float shadowAlpha;
 @property (nonatomic, retain) UIColor *shadowColor;
 @property (nonatomic, copy) NSString *shadowCompositingFilterName;
-@property (nonatomic) double shadowRadius;
+@property (nonatomic) float shadowRadius;
 @property (nonatomic) int style;
 @property (readonly) Class superclass;
 

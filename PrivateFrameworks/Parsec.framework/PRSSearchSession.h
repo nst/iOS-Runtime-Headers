@@ -41,7 +41,7 @@
 - (id)cepDictionary;
 - (id)clientQueue;
 - (void)deactivate;
-- (id)dictationQueryWithResponse:(id)arg1 keyboardLanguage:(id)arg2 externalId:(unsigned int)arg3 webSearch:(BOOL)arg4 handler:(id)arg5 queryIdent:(unsigned int)arg6 whyQuery:(unsigned int)arg7;
+- (id)dictationQueryWithResponse:(id)arg1 keyboardLanguage:(id)arg2 externalId:(unsigned int)arg3 webSearch:(BOOL)arg4 handler:(id)arg5 queryIdent:(unsigned long long)arg6 whyQuery:(unsigned int)arg7;
 - (id)feedbackListener;
 - (void)getCachedQueries:(id*)arg1 results:(id*)arg2 webSearch:(BOOL)arg3;
 - (int)getCategoryScoreToReturnInFeedback;
@@ -52,8 +52,8 @@
 - (id)listener;
 - (void)pruneCache;
 - (void)queryCompleted:(id)arg1;
-- (id)queryWithString:(id)arg1 keyboardLanguage:(id)arg2 externalId:(unsigned int)arg3 handler:(id)arg4 queryIdent:(unsigned int)arg5 whyQuery:(unsigned int)arg6;
-- (id)queryWithString:(id)arg1 keyboardLanguage:(id)arg2 externalId:(unsigned int)arg3 scaleFactor:(float)arg4 handler:(id)arg5 queryIdent:(unsigned int)arg6 whyQuery:(unsigned int)arg7;
+- (id)queryWithString:(id)arg1 keyboardLanguage:(id)arg2 externalId:(unsigned int)arg3 handler:(id)arg4 queryIdent:(unsigned long long)arg5 whyQuery:(unsigned int)arg6;
+- (id)queryWithString:(id)arg1 keyboardLanguage:(id)arg2 externalId:(unsigned int)arg3 scaleFactor:(float)arg4 handler:(id)arg5 queryIdent:(unsigned long long)arg6 whyQuery:(unsigned int)arg7;
 - (id)rankingKnobs;
 - (double)retryAfter;
 - (double)searchRenderTimeout;

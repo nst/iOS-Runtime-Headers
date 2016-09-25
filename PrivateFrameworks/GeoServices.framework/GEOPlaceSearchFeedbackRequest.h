@@ -3,7 +3,7 @@
  */
 
 @interface GEOPlaceSearchFeedbackRequest : PBRequest <NSCopying> {
-    int  _businessID;
+    long long  _businessID;
     int  _feedbackType;
     struct { 
         unsigned int sessionGUID : 1; 
@@ -20,13 +20,13 @@
     int  _positionInResults;
     int  _sequenceNumber;
     struct GEOSessionID { 
-        unsigned int _high; 
-        unsigned int _low; 
+        unsigned long long _high; 
+        unsigned long long _low; 
     }  _sessionGUID;
     double  _timestamp;
 }
 
-@property (nonatomic) int businessID;
+@property (nonatomic) long long businessID;
 @property (nonatomic) int feedbackType;
 @property (nonatomic) BOOL hasBusinessID;
 @property (nonatomic) BOOL hasFeedbackType;
@@ -40,11 +40,11 @@
 @property (nonatomic) int numberOfResults;
 @property (nonatomic) int positionInResults;
 @property (nonatomic) int sequenceNumber;
-@property (nonatomic) struct GEOSessionID { unsigned int x1; unsigned int x2; } sessionGUID;
+@property (nonatomic) struct GEOSessionID { unsigned long long x1; unsigned long long x2; } sessionGUID;
 @property (nonatomic) double timestamp;
 
 - (int)StringAsFeedbackType:(id)arg1;
-- (int)businessID;
+- (long long)businessID;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -69,8 +69,8 @@
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;
 - (int)sequenceNumber;
-- (struct GEOSessionID { unsigned int x1; unsigned int x2; })sessionGUID;
-- (void)setBusinessID:(int)arg1;
+- (struct GEOSessionID { unsigned long long x1; unsigned long long x2; })sessionGUID;
+- (void)setBusinessID:(long long)arg1;
 - (void)setFeedbackType:(int)arg1;
 - (void)setHasBusinessID:(BOOL)arg1;
 - (void)setHasFeedbackType:(BOOL)arg1;
@@ -84,7 +84,7 @@
 - (void)setNumberOfResults:(int)arg1;
 - (void)setPositionInResults:(int)arg1;
 - (void)setSequenceNumber:(int)arg1;
-- (void)setSessionGUID:(struct GEOSessionID { unsigned int x1; unsigned int x2; })arg1;
+- (void)setSessionGUID:(struct GEOSessionID { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)setTimestamp:(double)arg1;
 - (double)timestamp;
 - (void)writeTo:(id)arg1;

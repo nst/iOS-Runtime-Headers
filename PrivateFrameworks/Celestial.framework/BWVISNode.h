@@ -36,12 +36,12 @@
 - (void)_tallyAndEmitDroppedSample:(id)arg1;
 - (void)_tallyAndEmitSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
 - (void)_updateOutputRequirements;
-- (void)configurationWithID:(int)arg1 updatedFormat:(id)arg2 didBecomeLiveForInput:(id)arg3;
+- (void)configurationWithID:(long long)arg1 updatedFormat:(id)arg2 didBecomeLiveForInput:(id)arg3;
 - (void)dealloc;
 - (void)didReachEndOfDataForInput:(id)arg1;
 - (void)didSelectFormat:(id)arg1 forInput:(id)arg2;
 - (id)emitSampleBufferSemaphore;
-- (id)initWithSensorIDDict:(id)arg1 stabilizationMethod:(int)arg2 stabilizationType:(int)arg3 stripProcessingSession:(struct OpaqueFigCaptureISPProcessingSession { }*)arg4 requiredFormat:(id)arg5 activeMaxFrameRate:(float)arg6 motionAttachmentsSource:(int)arg7 offlineOutputDimensions:(struct { int x1; int x2; })arg8 irisVISCleanOutputRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg9 cameraAlignmentInfo:(id)arg10 cameraInfoByPortType:(id)arg11;
+- (id)initWithSensorIDDict:(id)arg1 stabilizationMethod:(int)arg2 stabilizationType:(int)arg3 stripProcessingSession:(struct OpaqueFigCaptureISPProcessingSession { }*)arg4 requiredFormat:(id)arg5 activeMaxFrameRate:(float)arg6 motionAttachmentsSource:(int)arg7 offlineOutputDimensions:(struct { int x1; int x2; })arg8 irisVISCleanOutputRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg9 cameraAlignmentInfo:(id)arg10 cameraInfoByPortType:(id)arg11;
 - (id)nodeSubType;
 - (id)nodeType;
 - (unsigned long)outputHeight;

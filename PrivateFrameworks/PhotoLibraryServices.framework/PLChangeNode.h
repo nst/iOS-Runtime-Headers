@@ -7,7 +7,7 @@
     NSObject<OS_xpc_object> * _hubConnection;
     BOOL  _isObservingOrderKeys;
     NSObject<OS_dispatch_queue> * _isolationQueue;
-    unsigned int  _lastKnownChangeHubEventIndex;
+    unsigned long long  _lastKnownChangeHubEventIndex;
     unsigned char  _nodeUUID;
     int  _notifyToken;
     NSSet * _observedRelationships;

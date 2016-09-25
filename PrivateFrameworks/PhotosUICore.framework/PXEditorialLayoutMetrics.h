@@ -4,28 +4,28 @@
 
 @interface PXEditorialLayoutMetrics : PXLayoutMetrics {
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _contentInsets;
-    double  _interTileSpacing;
+    float  _interTileSpacing;
     unsigned int  _lowerItemCountThreshold;
     unsigned int  _numberOfColumns;
 }
 
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInsets;
-@property (nonatomic) double interTileSpacing;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
+@property (nonatomic) float interTileSpacing;
 @property (nonatomic) unsigned int lowerItemCountThreshold;
 @property (nonatomic) unsigned int numberOfColumns;
 
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
 - (float)interTileSpacing;
 - (unsigned int)lowerItemCountThreshold;
 - (unsigned int)numberOfColumns;
-- (void)setContentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setInterTileSpacing:(float)arg1;
 - (void)setLowerItemCountThreshold:(unsigned int)arg1;
 - (void)setNumberOfColumns:(unsigned int)arg1;

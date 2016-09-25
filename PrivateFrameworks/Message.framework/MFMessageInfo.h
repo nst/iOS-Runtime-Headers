@@ -3,17 +3,17 @@
  */
 
 @interface MFMessageInfo : NSObject <MFBaseMessage, NSCopying> {
-    int  _conversationHash;
+    long long  _conversationHash;
     unsigned int  _dateReceivedInterval;
     unsigned int  _dateSentInterval;
     unsigned int  _deleted;
     unsigned int  _flagged;
-    int  _generationNumber;
+    long long  _generationNumber;
     unsigned int  _hasAttachments;
     unsigned int  _isHighPriority;
     unsigned int  _isVIP;
     unsigned int  _mailboxID;
-    int  _messageIDHash;
+    long long  _messageIDHash;
     unsigned int  _read;
     unsigned int  _sortDateReceivedInterval;
     unsigned int  _sortUid;
@@ -21,8 +21,8 @@
     unsigned int  _uidIsLibraryID;
 }
 
-@property (nonatomic, readonly) int conversationHash;
-@property (nonatomic) int conversationHash;
+@property (nonatomic, readonly) long long conversationHash;
+@property (nonatomic) long long conversationHash;
 @property (nonatomic, readonly) unsigned int dateReceivedInterval;
 @property (nonatomic) unsigned int dateReceivedInterval;
 @property (nonatomic, readonly) unsigned int dateSentInterval;
@@ -33,7 +33,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) BOOL flagged;
 @property (nonatomic) BOOL flagged;
-@property (nonatomic, readonly) int generationNumber;
+@property (nonatomic, readonly) long long generationNumber;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) BOOL isVIP;
 @property (nonatomic) BOOL isVIP;
@@ -41,8 +41,8 @@
 @property (getter=isKnownToHaveAttachments, nonatomic) BOOL knownToHaveAttachments;
 @property (nonatomic, readonly) unsigned int mailboxID;
 @property (nonatomic) unsigned int mailboxID;
-@property (nonatomic, readonly) int messageIDHash;
-@property (nonatomic) int messageIDHash;
+@property (nonatomic, readonly) long long messageIDHash;
+@property (nonatomic) long long messageIDHash;
 @property (nonatomic, readonly) BOOL read;
 @property (nonatomic) BOOL read;
 @property (nonatomic) unsigned int sortDateReceivedInterval;
@@ -52,9 +52,9 @@
 @property (nonatomic) unsigned int uid;
 @property (nonatomic) BOOL uidIsLibraryID;
 
-+ (int)newGenerationNumber;
++ (long long)newGenerationNumber;
 
-- (int)conversationHash;
+- (long long)conversationHash;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)dateReceivedInterval;
 - (unsigned int)dateSentInterval;
@@ -62,17 +62,17 @@
 - (id)description;
 - (BOOL)flagged;
 - (int)generationCompare:(id)arg1;
-- (int)generationNumber;
+- (long long)generationNumber;
 - (unsigned int)hash;
 - (id)init;
-- (id)initWithUid:(unsigned int)arg1 mailboxID:(unsigned int)arg2 messageID:(int)arg3 dateReceivedInterval:(unsigned int)arg4 dateSentInterval:(unsigned int)arg5 conversationHash:(int)arg6 read:(BOOL)arg7 knownToHaveAttachments:(BOOL)arg8 flagged:(BOOL)arg9 isVIP:(BOOL)arg10;
+- (id)initWithUid:(unsigned int)arg1 mailboxID:(unsigned int)arg2 messageID:(long long)arg3 dateReceivedInterval:(unsigned int)arg4 dateSentInterval:(unsigned int)arg5 conversationHash:(long long)arg6 read:(BOOL)arg7 knownToHaveAttachments:(BOOL)arg8 flagged:(BOOL)arg9 isVIP:(BOOL)arg10;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isKnownToHaveAttachments;
 - (BOOL)isVIP;
 - (unsigned int)mailboxID;
-- (int)messageIDHash;
+- (long long)messageIDHash;
 - (BOOL)read;
-- (void)setConversationHash:(int)arg1;
+- (void)setConversationHash:(long long)arg1;
 - (void)setDateReceivedInterval:(unsigned int)arg1;
 - (void)setDateSentInterval:(unsigned int)arg1;
 - (void)setDeleted:(BOOL)arg1;
@@ -80,7 +80,7 @@
 - (void)setIsVIP:(BOOL)arg1;
 - (void)setKnownToHaveAttachments:(BOOL)arg1;
 - (void)setMailboxID:(unsigned int)arg1;
-- (void)setMessageIDHash:(int)arg1;
+- (void)setMessageIDHash:(long long)arg1;
 - (void)setRead:(BOOL)arg1;
 - (void)setSortDateReceivedInterval:(unsigned int)arg1;
 - (void)setSortUid:(unsigned int)arg1;

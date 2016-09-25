@@ -7,18 +7,18 @@
     SBUILegibilityLabel * _label;
     _UILegibilitySettings * _legibilitySettings;
     NSHashTable * _replicatedViews;
-    double  _strength;
+    float  _strength;
 }
 
 @property (nonatomic, retain) UIView<SBFScreenFadeReplicatable> *accessoryView;
-@property (nonatomic, readonly) double baselineOffsetFromBottom;
-@property (nonatomic, readonly) double baselineOffsetFromOrigin;
+@property (nonatomic, readonly) float baselineOffsetFromBottom;
+@property (nonatomic, readonly) float baselineOffsetFromOrigin;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) UIFont *font;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) _UILegibilitySettings *legibilitySettings;
-@property (nonatomic) double strength;
+@property (nonatomic) float strength;
 @property (nonatomic, retain) NSString *string;
 @property (readonly) Class superclass;
 
@@ -27,7 +27,7 @@
 - (void)_enumerateReplicateViews:(id /* block */)arg1;
 - (id)_labelFont;
 - (id)accessoryView;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })accessoryViewFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessoryViewFrame;
 - (float)baselineOffsetFromBottom;
 - (float)baselineOffsetFromOrigin;
 - (id)font;
@@ -42,9 +42,9 @@
 - (void)setLegibilitySettings:(id)arg1;
 - (void)setStrength:(float)arg1;
 - (void)setString:(id)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (float)strength;
 - (id)string;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })subtitleLabelFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })subtitleLabelFrame;
 
 @end

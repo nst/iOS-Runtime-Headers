@@ -9,17 +9,17 @@
     CADisplayLink * _displayLink;
     int  _iterations;
     int  _scrollLength;
-    double  _startOffset;
+    float  _startOffset;
 }
 
 @property (nonatomic) int axis;
 @property (nonatomic, retain) NSString *currentTest;
 @property (nonatomic) int delta;
 @property (nonatomic, retain) CADisplayLink *displayLink;
-@property (nonatomic, readonly) double endOffset;
+@property (nonatomic, readonly) float endOffset;
 @property (nonatomic) int iterations;
 @property (nonatomic) int scrollLength;
-@property (nonatomic) double startOffset;
+@property (nonatomic) float startOffset;
 
 - (void).cxx_destruct;
 - (int)axis;

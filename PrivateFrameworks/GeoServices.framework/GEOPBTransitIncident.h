@@ -19,7 +19,7 @@
     }  _has;
     int  _iconEnum;
     unsigned int  _incidentIndex;
-    unsigned int  _incidentMuid;
+    unsigned long long  _incidentMuid;
     NSString * _longDescriptionString;
     NSString * _messageForAllBlocking;
     NSString * _messageForIncidentType;
@@ -50,7 +50,7 @@
 @property (nonatomic) BOOL hasUpdatedDatetime;
 @property (nonatomic) int iconEnum;
 @property (nonatomic) unsigned int incidentIndex;
-@property (nonatomic) unsigned int incidentMuid;
+@property (nonatomic) unsigned long long incidentMuid;
 @property (nonatomic, retain) NSString *longDescriptionString;
 @property (nonatomic, retain) NSString *messageForAllBlocking;
 @property (nonatomic, retain) NSString *messageForIncidentType;
@@ -94,7 +94,7 @@
 - (int)iconEnum;
 - (id)iconEnumAsString:(int)arg1;
 - (unsigned int)incidentIndex;
-- (unsigned int)incidentMuid;
+- (unsigned long long)incidentMuid;
 - (BOOL)isEqual:(id)arg1;
 - (id)longDescriptionString;
 - (void)mergeFrom:(id)arg1;
@@ -116,7 +116,7 @@
 - (void)setHasUpdatedDatetime:(BOOL)arg1;
 - (void)setIconEnum:(int)arg1;
 - (void)setIncidentIndex:(unsigned int)arg1;
-- (void)setIncidentMuid:(unsigned int)arg1;
+- (void)setIncidentMuid:(unsigned long long)arg1;
 - (void)setLongDescriptionString:(id)arg1;
 - (void)setMessageForAllBlocking:(id)arg1;
 - (void)setMessageForIncidentType:(id)arg1;

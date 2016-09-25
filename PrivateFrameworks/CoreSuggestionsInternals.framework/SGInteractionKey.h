@@ -7,7 +7,7 @@
 @property (nonatomic, readonly) NSString *bundleId;
 @property (nonatomic, readonly) NSString *personHandle;
 
-+ (BOOL)isSupportedEntityType:(int)arg1;
++ (BOOL)isSupportedEntityType:(long long)arg1;
 
 - (id)bundleId;
 - (id)description;

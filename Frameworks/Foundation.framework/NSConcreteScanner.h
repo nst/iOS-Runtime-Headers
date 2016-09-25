@@ -22,7 +22,7 @@
 - (id)locale;
 - (BOOL)scanInt:(int*)arg1;
 - (unsigned int)scanLocation;
-- (BOOL)scanLongLong:(int*)arg1;
+- (BOOL)scanLongLong:(long long*)arg1;
 - (void)setCaseSensitive:(BOOL)arg1;
 - (void)setCharactersToBeSkipped:(id)arg1;
 - (void)setLocale:(id)arg1;

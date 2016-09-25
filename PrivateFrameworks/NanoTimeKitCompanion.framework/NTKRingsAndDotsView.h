@@ -3,34 +3,34 @@
  */
 
 @interface NTKRingsAndDotsView : UIView {
-    double  _appearanceAnimationProgress;
-    double  _diameter;
-    double  _dotDiameter;
-    double  _dotPositionFraction;
+    float  _appearanceAnimationProgress;
+    float  _diameter;
+    float  _dotDiameter;
+    float  _dotPositionFraction;
     NTKDotView * _dotView;
     UIColor * _foregroundColor;
-    double  _radiusForDotViewRing;
+    float  _radiusForDotViewRing;
     NSArray * _ringColors;
-    double  _ringGapWidth;
+    float  _ringGapWidth;
     NSArray * _ringViews;
-    double  _ringWidth;
+    float  _ringWidth;
     NSMutableArray * _ringsFillFractions;
     UIColor * _secondaryForegroundColor;
     BOOL  _showsDotOnRing;
     BOOL  _showsRingsBackground;
 }
 
-@property (nonatomic) double appearanceAnimationProgress;
-@property (nonatomic) double diameter;
-@property (nonatomic) double dotDiameter;
-@property (nonatomic) double dotPositionFraction;
+@property (nonatomic) float appearanceAnimationProgress;
+@property (nonatomic) float diameter;
+@property (nonatomic) float dotDiameter;
+@property (nonatomic) float dotPositionFraction;
 @property (nonatomic, retain) NTKDotView *dotView;
 @property (nonatomic, retain) UIColor *foregroundColor;
-@property (nonatomic) double radiusForDotViewRing;
+@property (nonatomic) float radiusForDotViewRing;
 @property (nonatomic, retain) NSArray *ringColors;
-@property (nonatomic) double ringGapWidth;
+@property (nonatomic) float ringGapWidth;
 @property (nonatomic, retain) NSArray *ringViews;
-@property (nonatomic) double ringWidth;
+@property (nonatomic) float ringWidth;
 @property (nonatomic, retain) NSMutableArray *ringsFillFractions;
 @property (nonatomic, retain) UIColor *secondaryForegroundColor;
 @property (nonatomic) BOOL showsDotOnRing;
@@ -48,8 +48,8 @@
 - (float)dotPositionFraction;
 - (id)dotView;
 - (id)foregroundColor;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 diameter:(float)arg2 ringWidth:(float)arg3 ringGapWidth:(float)arg4 showsRingsBackground:(BOOL)arg5;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 diameter:(float)arg2 ringWidth:(float)arg3 ringGapWidth:(float)arg4 showsRingsBackground:(BOOL)arg5;
 - (void)layoutSubviews;
 - (void)performAppearanceAnimation;
 - (void)prepareAppearanceAnimation;
@@ -78,6 +78,6 @@
 - (void)setShowsRingsBackground:(BOOL)arg1;
 - (BOOL)showsDotOnRing;
 - (BOOL)showsRingsBackground;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 
 @end

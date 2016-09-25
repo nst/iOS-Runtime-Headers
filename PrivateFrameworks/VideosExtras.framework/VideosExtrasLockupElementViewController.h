@@ -9,8 +9,8 @@
     NSLayoutConstraint * _artworkContainerWidthConstraint;
     NSLayoutConstraint * _artworkContainerXConstraint;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _artworkSize;
     MPUContentSizeLayoutConstraint * _descriptionBaselineConstraint;
     UILabel * _descriptionLabel;

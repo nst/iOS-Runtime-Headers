@@ -3,7 +3,7 @@
  */
 
 @interface OADPercentBulletSize : OADBulletSize {
-    double  mPercent;
+    float  mPercent;
 }
 
 - (unsigned int)hash;

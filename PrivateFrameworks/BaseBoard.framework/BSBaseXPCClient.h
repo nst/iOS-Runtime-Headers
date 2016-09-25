@@ -21,7 +21,7 @@
 - (id)_getStringFromMessage:(id)arg1 key:(char *)arg2;
 - (id)_notifyTokenName;
 - (void)_sendMessage:(id /* block */)arg1;
-- (void)_sendMessage:(id /* block */)arg1 withReplyHandler:(id /* block */)arg2 waitForReply:(BOOL)arg3 waitDuration:(unsigned int)arg4;
+- (void)_sendMessage:(id /* block */)arg1 withReplyHandler:(id /* block */)arg2 waitForReply:(BOOL)arg3 waitDuration:(unsigned long long)arg4;
 - (void)_sendMessageReply:(id)arg1 messagePacker:(id /* block */)arg2;
 - (void)_sendReply:(id)arg1 messagePacker:(id /* block */)arg2;
 - (void)_sendReplyForMessage:(id)arg1 messagePacker:(id /* block */)arg2;

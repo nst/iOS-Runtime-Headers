@@ -19,7 +19,7 @@
     UIImageView * _profileImageView;
     NSString * _profileTitle;
     BOOL  _shouldDelayTransitionProgress;
-    double  _transitionProgress;
+    float  _transitionProgress;
 }
 
 @property (getter=isAdminEnabled, nonatomic) BOOL adminEnabled;
@@ -44,14 +44,14 @@
 - (void)_applyProfileImageTintInformation;
 - (void)_applyTintInformation;
 - (void)_applyTransitionProgress;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_calculateProfileDetailViewLayoutInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_calculateProfileDetailViewLayoutInsets;
 - (void)_containerEntityValueProviderDidInvalidateNotification:(id)arg1;
 - (void)_contentSizeCategoryDidChangeNotification:(id)arg1;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_effectiveVerticalInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_effectiveVerticalInsets;
 - (BOOL)_isFollowActionAvailable;
 - (void)_reloadContainerEntityValueContextProperties;
 - (void)_reloadProfileImageView;
-- (void)_setContentOverlayInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)_setContentOverlayInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)_updatePreferredContentSize;
 - (id)clientContext;
 - (void)configureArtworkCatalog:(id)arg1;

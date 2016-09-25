@@ -15,7 +15,7 @@
 - (void)additionalRequestForRadioGenresForParentSection:(id)arg1 completion:(id /* block */)arg2;
 - (id)createRequest;
 - (id)init;
-- (void)loadCuratedPlaylistStoreAdamID:(unsigned int)arg1 requestWithCompletion:(id /* block */)arg2;
+- (void)loadCuratedPlaylistStoreAdamID:(unsigned long long)arg1 requestWithCompletion:(id /* block */)arg2;
 - (void)loadRequestForRadioGenresWithCompletion:(id /* block */)arg1;
 - (void)loadRequestWithCompletion:(id /* block */)arg1;
 - (id)operationQueue;

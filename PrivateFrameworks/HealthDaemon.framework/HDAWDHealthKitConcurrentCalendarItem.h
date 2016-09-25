@@ -3,28 +3,28 @@
  */
 
 @interface HDAWDHealthKitConcurrentCalendarItem : PBCodable <NSCopying> {
-    int  _endDate;
+    long long  _endDate;
     struct { 
         unsigned int endDate : 1; 
         unsigned int startDate : 1; 
         unsigned int isBusy : 1; 
     }  _has;
     BOOL  _isBusy;
-    int  _startDate;
+    long long  _startDate;
 }
 
-@property (nonatomic) int endDate;
+@property (nonatomic) long long endDate;
 @property (nonatomic) BOOL hasEndDate;
 @property (nonatomic) BOOL hasIsBusy;
 @property (nonatomic) BOOL hasStartDate;
 @property (nonatomic) BOOL isBusy;
-@property (nonatomic) int startDate;
+@property (nonatomic) long long startDate;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (int)endDate;
+- (long long)endDate;
 - (BOOL)hasEndDate;
 - (BOOL)hasIsBusy;
 - (BOOL)hasStartDate;
@@ -33,13 +33,13 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (void)setEndDate:(int)arg1;
+- (void)setEndDate:(long long)arg1;
 - (void)setHasEndDate:(BOOL)arg1;
 - (void)setHasIsBusy:(BOOL)arg1;
 - (void)setHasStartDate:(BOOL)arg1;
 - (void)setIsBusy:(BOOL)arg1;
-- (void)setStartDate:(int)arg1;
-- (int)startDate;
+- (void)setStartDate:(long long)arg1;
+- (long long)startDate;
 - (void)writeTo:(id)arg1;
 
 @end

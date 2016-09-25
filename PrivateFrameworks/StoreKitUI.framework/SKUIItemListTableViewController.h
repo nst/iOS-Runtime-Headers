@@ -12,8 +12,8 @@
     BOOL  _didLoadMore;
     NSMutableIndexSet * _hiddenIconIndexSet;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _imageBoundingSize;
     SKUIItemCollectionController * _itemCollectionController;
     SKUIItemList * _itemList;
@@ -21,7 +21,7 @@
     BOOL  _loadsMoreItems;
     NSOperationQueue * _operationQueue;
     BOOL  _requestedLoadMore;
-    double  _rowHeight;
+    float  _rowHeight;
     int  _selectionStyle;
     int  _separatorStyle;
     BOOL  _suspended;
@@ -36,11 +36,11 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) SKUIStyledImageDataConsumer *iconDataConsumer;
-@property (nonatomic) struct CGSize { double x1; double x2; } imageBoundingSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } imageBoundingSize;
 @property (nonatomic, retain) SKUIItemList *itemList;
 @property (nonatomic) BOOL loadsMoreItems;
 @property (nonatomic, retain) NSOperationQueue *operationQueue;
-@property (nonatomic) double rowHeight;
+@property (nonatomic) float rowHeight;
 @property (nonatomic) int selectionStyle;
 @property (nonatomic) int separatorStyle;
 @property (readonly) Class superclass;
@@ -59,13 +59,13 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)deleteRowsAtIndexPaths:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameForItemAtIndex:(int)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForItemAtIndex:(int)arg1;
 - (id)iconDataConsumer;
-- (struct CGSize { double x1; double x2; })imageBoundingSize;
+- (struct CGSize { float x1; float x2; })imageBoundingSize;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (BOOL)isSuspended;
 - (id)itemCollectionController:(id)arg1 cellLayoutForItemIndex:(int)arg2;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })itemCollectionController:(id)arg1 itemPageRangeForOffset:(struct CGPoint { double x1; double x2; })arg2;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })itemCollectionController:(id)arg1 itemPageRangeForOffset:(struct CGPoint { float x1; float x2; })arg2;
 - (id)itemList;
 - (void)itemTableView:(id)arg1 didConfirmItemOfferForTableViewCell:(id)arg2;
 - (void)itemTableView:(id)arg1 didRemoveCell:(id)arg2;
@@ -78,7 +78,7 @@
 - (float)rowHeight;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
-- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { double x1; double x2; })arg2 targetContentOffset:(inout struct CGPoint { double x1; double x2; }*)arg3;
+- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { float x1; float x2; })arg2 targetContentOffset:(inout struct CGPoint { float x1; float x2; }*)arg3;
 - (int)selectionStyle;
 - (int)separatorStyle;
 - (void)setArtworkContext:(id)arg1;
@@ -86,7 +86,7 @@
 - (void)setClientContext:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setIconDataConsumer:(id)arg1;
-- (void)setImageBoundingSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setImageBoundingSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setItemArtworkContext:(id)arg1;
 - (void)setItemCellClass:(Class)arg1;
 - (void)setItemList:(id)arg1;

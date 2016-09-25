@@ -14,7 +14,7 @@
         unsigned int rrcState : 1; 
     }  _has;
     int  _rrcState;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) unsigned int band;
@@ -26,7 +26,7 @@
 @property (nonatomic) BOOL hasRrcState;
 @property (nonatomic) BOOL hasTimestamp;
 @property (nonatomic) int rrcState;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 
 - (unsigned int)band;
 - (unsigned int)coexPolicy;
@@ -54,8 +54,8 @@
 - (void)setHasRrcState:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
 - (void)setRrcState:(int)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
-- (unsigned int)timestamp;
+- (void)setTimestamp:(unsigned long long)arg1;
+- (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 
 @end

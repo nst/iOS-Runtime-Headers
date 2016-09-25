@@ -6,15 +6,15 @@
     MPMediaItem * _cloudDialogAllowedMediaItem;
     MPMediaLibraryConnectionAssertion * _connectionAssertion;
     unsigned int  _currentInvalidationRevision;
-    unsigned int  _feederRevisionID;
+    unsigned long long  _feederRevisionID;
     BOOL  _hasValidItems;
     MPMutableBidirectionalDictionary * _indexToIdentifierCache;
     BOOL  _isPlaylistQueueFeeder;
-    struct vector<int, std::__1::allocator<int> > { 
-        int *__begin_; 
-        int *__end_; 
-        struct __compressed_pair<int *, std::__1::allocator<int> > { 
-            int *__first_; 
+    struct vector<long long, std::__1::allocator<long long> > { 
+        long long *__begin_; 
+        long long *__end_; 
+        struct __compressed_pair<long long *, std::__1::allocator<long long> > { 
+            long long *__first_; 
         } __end_cap_; 
     }  _itemPIDs;
     MPMediaQuery * _query;
@@ -42,11 +42,11 @@
 - (id)_currentEmptyQueueError;
 - (void)_handleMediaLibraryDidChange;
 - (id)_identifierAtIndex:(unsigned int)arg1;
-- (unsigned int)_indexForPersistentID:(unsigned int)arg1;
+- (unsigned int)_indexForPersistentID:(unsigned long long)arg1;
 - (unsigned int)_indexForSongShuffledIndex:(unsigned int)arg1;
 - (void)_invalidateMediaLibraryValues;
 - (void)_libraryDidChangeNotification:(id)arg1;
-- (id)_mediaItemForPID:(unsigned int)arg1;
+- (id)_mediaItemForPID:(unsigned long long)arg1;
 - (unsigned int)_playbackIndexByApplyShuffleType:(int)arg1 withStartIndex:(unsigned int)arg2 startIndexMediaItem:(id)arg3 shouldKeepConsistentQueueOrder:(BOOL)arg4;
 - (void)_reloadQueryItems;
 - (void)_verifyQueueInvalidationCompletionHandler:(id /* block */)arg1;
@@ -86,7 +86,7 @@
 
 - (id)_musicEntityValueProviding_representativeCollection;
 - (id)entityUniqueIdentifier;
-- (id)imageURLForEntityArtworkProperty:(id)arg1 fittingSize:(struct CGSize { double x1; double x2; })arg2 destinationScale:(float)arg3;
+- (id)imageURLForEntityArtworkProperty:(id)arg1 fittingSize:(struct CGSize { float x1; float x2; })arg2 destinationScale:(float)arg3;
 - (id)valueForEntityProperty:(id)arg1;
 - (id)valuesForEntityProperties:(id)arg1;
 

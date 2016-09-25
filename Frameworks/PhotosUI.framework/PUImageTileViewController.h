@@ -7,12 +7,12 @@
     NSDate * __assetLoadingStartDate;
     int  __fullsizeImageOrientation;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  __fullsizeImageSize;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  __fullsizeImageUntransformedSize;
     NSData * __fullsizeJPEGData;
     PLTiledLayer * __fullsizeTiledLayer;
@@ -24,8 +24,8 @@
     BOOL  __needsUpdateImage;
     BOOL  __needsUpdateImageView;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  __targetSize;
     BOOL  _animatesImageAppearance;
     <PUDisplayAsset> * _asset;
@@ -39,8 +39,8 @@
 @property (setter=_setAssetLoadingStage:, nonatomic) int _assetLoadingStage;
 @property (setter=_setAssetLoadingStartDate:, nonatomic, retain) NSDate *_assetLoadingStartDate;
 @property (setter=_setFullsizeImageOrientation:, nonatomic) int _fullsizeImageOrientation;
-@property (setter=_setFullsizeImageSize:, nonatomic) struct CGSize { double x1; double x2; } _fullsizeImageSize;
-@property (setter=_setFullsizeImageUntransformedSize:, nonatomic) struct CGSize { double x1; double x2; } _fullsizeImageUntransformedSize;
+@property (setter=_setFullsizeImageSize:, nonatomic) struct CGSize { float x1; float x2; } _fullsizeImageSize;
+@property (setter=_setFullsizeImageUntransformedSize:, nonatomic) struct CGSize { float x1; float x2; } _fullsizeImageUntransformedSize;
 @property (setter=_setFullsizeJPEGData:, nonatomic, retain) NSData *_fullsizeJPEGData;
 @property (setter=_setFullsizeTiledLayer:, nonatomic, retain) PLTiledLayer *_fullsizeTiledLayer;
 @property (setter=_setImageRequester:, nonatomic, retain) PUImageRequester *_imageRequester;
@@ -50,7 +50,7 @@
 @property (setter=_setNeedsUpdateFullsizeTiledLayer:, nonatomic) BOOL _needsUpdateFullsizeTiledLayer;
 @property (setter=_setNeedsUpdateImage:, nonatomic) BOOL _needsUpdateImage;
 @property (setter=_setNeedsUpdateImageView:, nonatomic) BOOL _needsUpdateImageView;
-@property (setter=_setTargetSize:, nonatomic) struct CGSize { double x1; double x2; } _targetSize;
+@property (setter=_setTargetSize:, nonatomic) struct CGSize { float x1; float x2; } _targetSize;
 @property (nonatomic) BOOL animatesImageAppearance;
 @property (nonatomic, retain) <PUDisplayAsset> *asset;
 @property (nonatomic, retain) PUAssetViewModel *assetViewModel;
@@ -68,8 +68,8 @@
 - (id)_assetLoadingStartDate;
 - (void)_cancelAllImageRequests;
 - (int)_fullsizeImageOrientation;
-- (struct CGSize { double x1; double x2; })_fullsizeImageSize;
-- (struct CGSize { double x1; double x2; })_fullsizeImageUntransformedSize;
+- (struct CGSize { float x1; float x2; })_fullsizeImageSize;
+- (struct CGSize { float x1; float x2; })_fullsizeImageUntransformedSize;
 - (id)_fullsizeJPEGData;
 - (id)_fullsizeTiledLayer;
 - (void)_handleAssetViewModel:(id)arg1 didChange:(id)arg2;
@@ -90,8 +90,8 @@
 - (void)_setAssetLoadingStartDate:(id)arg1;
 - (void)_setDisplayingFullQualityImage:(BOOL)arg1;
 - (void)_setFullsizeImageOrientation:(int)arg1;
-- (void)_setFullsizeImageSize:(struct CGSize { double x1; double x2; })arg1;
-- (void)_setFullsizeImageUntransformedSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)_setFullsizeImageSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)_setFullsizeImageUntransformedSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_setFullsizeJPEGData:(id)arg1;
 - (void)_setFullsizeTiledLayer:(id)arg1;
 - (void)_setImageRequester:(id)arg1;
@@ -100,8 +100,8 @@
 - (void)_setNeedsUpdateFullsizeTiledLayer:(BOOL)arg1;
 - (void)_setNeedsUpdateImage:(BOOL)arg1;
 - (void)_setNeedsUpdateImageView:(BOOL)arg1;
-- (void)_setTargetSize:(struct CGSize { double x1; double x2; })arg1;
-- (struct CGSize { double x1; double x2; })_targetSize;
+- (void)_setTargetSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { float x1; float x2; })_targetSize;
 - (void)_updateAssetLoadingStage;
 - (void)_updateFullsizeImageMetadataIfNeeded;
 - (void)_updateFullsizeTiledLayerIfNeeded;

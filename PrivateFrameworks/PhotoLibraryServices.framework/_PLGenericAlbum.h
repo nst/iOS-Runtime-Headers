@@ -15,7 +15,7 @@
 @property (nonatomic, retain) PLManagedFolder *parentFolder;
 @property (nonatomic) int pendingItemsCount;
 @property (nonatomic) int pendingItemsType;
-@property (nonatomic) int syncEventOrderKey;
+@property (nonatomic) long long syncEventOrderKey;
 
 + (id)entityInManagedObjectContext:(id)arg1;
 + (id)entityName;

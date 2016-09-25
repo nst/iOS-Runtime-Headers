@@ -5,19 +5,19 @@
 @interface PXFeedbackCollectionBannerUIViewController : UIViewController <UIGestureRecognizerDelegate> {
     BOOL  _alreadyShowingBanner;
     UIDynamicAnimator * _animator;
-    double  _autoDismissDuration;
+    float  _autoDismissDuration;
     UIView * _bannerContentView;
-    double  _bannerHeight;
+    float  _bannerHeight;
     NSString * _bannerMessage;
     NSString * _bannerTitle;
     BOOL  _bounce;
     unsigned int  _feedbackCollectionContext;
-    double  _hideBannerAnimationDuration;
+    float  _hideBannerAnimationDuration;
     BOOL  _isMSGOnlyBanner;
-    double  _showBannerAnimationDuration;
+    float  _showBannerAnimationDuration;
 }
 
-@property (nonatomic) double autoDismissDuration;
+@property (nonatomic) float autoDismissDuration;
 @property (nonatomic, copy) NSString *bannerMessage;
 @property (nonatomic, copy) NSString *bannerTitle;
 @property (readonly, copy) NSString *debugDescription;

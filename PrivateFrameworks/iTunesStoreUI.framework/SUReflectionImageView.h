@@ -6,14 +6,14 @@
     UIImageView * _imageView;
     unsigned int  _nonSquareImage;
     SUReflectionView * _reflection;
-    double  _reflectionAlpha;
-    double  _reflectionHeight;
-    double  _spacing;
+    float  _reflectionAlpha;
+    float  _reflectionHeight;
+    float  _spacing;
     BOOL  _useImageSize;
 }
 
 @property (nonatomic) BOOL nonSquareImage;
-@property (nonatomic) double reflectionSpacing;
+@property (nonatomic) float reflectionSpacing;
 
 - (void)dealloc;
 - (id)init;

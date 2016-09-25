@@ -4,8 +4,8 @@
 
 @interface CACGPathCodingSegment : NSObject <NSCoding> {
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _points;
     int  _type;
 }

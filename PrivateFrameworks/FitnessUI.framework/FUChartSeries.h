@@ -3,16 +3,16 @@
  */
 
 @interface FUChartSeries : UIView {
-    double  _animationDuration;
+    float  _animationDuration;
     NSArray * _dataPoints;
     FUChartDataSet * _dataSet;
     <FUChartSeriesDataSource> * _dataSource;
     <FUChartSeriesDelegate> * _delegate;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _edgeInsets;
     NSDate * _maxXValue;
     NSNumber * _maxYValue;
@@ -20,11 +20,11 @@
     NSNumber * _minYValue;
 }
 
-@property (nonatomic) double animationDuration;
+@property (nonatomic) float animationDuration;
 @property (nonatomic, retain) FUChartDataSet *dataSet;
 @property (nonatomic) <FUChartSeriesDataSource> *dataSource;
 @property (nonatomic) <FUChartSeriesDelegate> *delegate;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } edgeInsets;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
 @property (nonatomic, retain) NSNumber *maxYValue;
 @property (nonatomic, retain) NSNumber *minYValue;
 
@@ -45,14 +45,14 @@
 - (id)dataSet;
 - (id)dataSource;
 - (id)delegate;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })edgeInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
 - (id)getChartPointFromDataSetAtIndex:(int)arg1;
 - (id)getLabelsFromSet;
-- (struct CGPoint { double x1; double x2; })getPointFromChartPoint:(id)arg1;
-- (struct CGPoint { double x1; double x2; })getPointFromChartPoint:(id)arg1 forKey:(id)arg2;
+- (struct CGPoint { float x1; float x2; })getPointFromChartPoint:(id)arg1;
+- (struct CGPoint { float x1; float x2; })getPointFromChartPoint:(id)arg1 forKey:(id)arg2;
 - (id)getPointsFromDataSet;
 - (id)init;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })insetBounds;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })insetBounds;
 - (void)layoutSubviews;
 - (id)maxYValue;
 - (id)minYValue;
@@ -62,7 +62,7 @@
 - (void)setDataSet:(id)arg1;
 - (void)setDataSource:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setMaxYValue:(id)arg1;
 - (void)setMinYValue:(id)arg1;
 

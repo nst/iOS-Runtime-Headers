@@ -9,7 +9,7 @@
     }  _has;
     NSString * _identifier;
     NSString * _key;
-    unsigned int  _totalLength;
+    unsigned long long  _totalLength;
 }
 
 @property (nonatomic, retain) NSData *data;
@@ -19,7 +19,7 @@
 @property (nonatomic) BOOL hasTotalLength;
 @property (nonatomic, retain) NSString *identifier;
 @property (nonatomic, retain) NSString *key;
-@property (nonatomic) unsigned int totalLength;
+@property (nonatomic) unsigned long long totalLength;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -41,8 +41,8 @@
 - (void)setHasTotalLength:(BOOL)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setKey:(id)arg1;
-- (void)setTotalLength:(unsigned int)arg1;
-- (unsigned int)totalLength;
+- (void)setTotalLength:(unsigned long long)arg1;
+- (unsigned long long)totalLength;
 - (void)writeTo:(id)arg1;
 
 @end

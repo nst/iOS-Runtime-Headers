@@ -5,25 +5,25 @@
 @interface PLCoalitionDataObject : NSObject {
     NSString * _bundleID;
     NSValue * _coalStruct;
-    unsigned int  _coalitionID;
+    unsigned long long  _coalitionID;
     NSString * _launchdName;
 }
 
 @property (retain) NSString *bundleID;
 @property (retain) NSValue *coalStruct;
-@property unsigned int coalitionID;
+@property unsigned long long coalitionID;
 @property (retain) NSString *launchdName;
 
 - (void).cxx_destruct;
 - (id)bundleID;
 - (id)coalStruct;
-- (unsigned int)coalitionID;
+- (unsigned long long)coalitionID;
 - (void)dealloc;
 - (id)description;
 - (id)launchdName;
 - (void)setBundleID:(id)arg1;
 - (void)setCoalStruct:(id)arg1;
-- (void)setCoalitionID:(unsigned int)arg1;
+- (void)setCoalitionID:(unsigned long long)arg1;
 - (void)setLaunchdName:(id)arg1;
 
 @end

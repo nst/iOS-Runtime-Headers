@@ -12,12 +12,12 @@
         unsigned int resultProviderId : 1; 
         unsigned int status : 1; 
     }  _has;
-    unsigned int  _muid;
-    unsigned int  _preferredMuid;
+    unsigned long long  _muid;
+    unsigned long long  _preferredMuid;
     int  _referenceFrame;
     int  _resultProviderId;
     int  _status;
-    unsigned int  _updateVersion;
+    unsigned long long  _updateVersion;
 }
 
 @property (nonatomic, retain) NSMutableArray *components;
@@ -27,17 +27,17 @@
 @property (nonatomic) BOOL hasResultProviderId;
 @property (nonatomic) BOOL hasStatus;
 @property (nonatomic) BOOL hasUpdateVersion;
-@property (nonatomic) unsigned int muid;
-@property (nonatomic) unsigned int preferredMuid;
+@property (nonatomic) unsigned long long muid;
+@property (nonatomic) unsigned long long preferredMuid;
 @property (nonatomic) int referenceFrame;
 @property (nonatomic) int resultProviderId;
 @property (nonatomic) int status;
-@property (nonatomic) unsigned int updateVersion;
+@property (nonatomic) unsigned long long updateVersion;
 
 + (id)attributionForPlaceData:(id)arg1 type:(int)arg2;
 + (Class)componentType;
 + (id)failedPlaceData;
-+ (id)failedPlaceDataForMuid:(unsigned int)arg1;
++ (id)failedPlaceDataForMuid:(unsigned long long)arg1;
 
 - (int)StringAsReferenceFrame:(id)arg1;
 - (int)StringAsStatus:(id)arg1;
@@ -73,10 +73,10 @@
 - (BOOL)isDisputed;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (unsigned int)muid;
+- (unsigned long long)muid;
 - (BOOL)phoneNumberOptsOutOfAds:(id)arg1;
 - (id)phoneNumbers;
-- (unsigned int)preferredMuid;
+- (unsigned long long)preferredMuid;
 - (BOOL)readFrom:(id)arg1;
 - (int)referenceFrame;
 - (id)referenceFrameAsString:(int)arg1;
@@ -89,16 +89,16 @@
 - (void)setHasResultProviderId:(BOOL)arg1;
 - (void)setHasStatus:(BOOL)arg1;
 - (void)setHasUpdateVersion:(BOOL)arg1;
-- (void)setMuid:(unsigned int)arg1;
-- (void)setPreferredMuid:(unsigned int)arg1;
+- (void)setMuid:(unsigned long long)arg1;
+- (void)setPreferredMuid:(unsigned long long)arg1;
 - (void)setReferenceFrame:(int)arg1;
 - (void)setResultProviderId:(int)arg1;
 - (void)setStatus:(int)arg1;
-- (void)setUpdateVersion:(unsigned int)arg1;
+- (void)setUpdateVersion:(unsigned long long)arg1;
 - (id)spokenNameForLocale:(id)arg1;
 - (int)status;
 - (id)statusAsString:(int)arg1;
-- (unsigned int)updateVersion;
+- (unsigned long long)updateVersion;
 - (void)writeTo:(id)arg1;
 
 @end

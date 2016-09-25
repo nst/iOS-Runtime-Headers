@@ -13,13 +13,13 @@
     MusicClientContext * _clientContext;
     MusicContainerScrollView * _containerScrollView;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _containerScrollViewNormalizedContentOffset;
     BOOL  _didAutomaticallySelectMyMusicSegment;
     UIScrollView * _focusedContentScrollView;
     BOOL  _hasInitializedContainerScrollViewNormalizedContentOffset;
-    double  _headerTransitionProgress;
+    float  _headerTransitionProgress;
     NSString * _initiallySelectedSegmentIdentifier;
     BOOL  _isAdjustingContentSize;
     BOOL  _isHidingVerticalScrollIndicator;
@@ -27,22 +27,22 @@
     MusicMediaDetailTintInformation * _mediaDetailTintInformation;
     <MusicMediaProfileSplitMainViewControllerDelegate> * _mediaSplitViewControllerDelegate;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _minimumHeightContentInsetAdditions;
-    double  _preferredMaximumContentWidth;
+    float  _preferredMaximumContentWidth;
     unsigned int  _profileType;
     SKUIScrollingSegmentedController * _scrollingSegmentedController;
     NSMutableArray * _segmentIdentifiers;
     NSMutableSet * _segmentIdentifiersForLoadedViews;
     UIView * _segmentedControlHairlineView;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _segmentedControlScrollViewEdgeInsetAdditions;
     BOOL  _segmentedControlVisible;
     BOOL  _shouldAutomaticallySelectMyMusicSegment;
@@ -56,10 +56,10 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic) double headerTransitionProgress;
+@property (nonatomic) float headerTransitionProgress;
 @property (nonatomic, copy) MusicMediaDetailTintInformation *mediaDetailTintInformation;
 @property (nonatomic) <MusicMediaProfileSplitMainViewControllerDelegate> *mediaSplitViewControllerDelegate;
-@property (nonatomic) double preferredMaximumContentWidth;
+@property (nonatomic) float preferredMaximumContentWidth;
 @property (nonatomic, readonly) SKUIScrollingSegmentedController *scrollingSegmentedController;
 @property (getter=isSegmentedControlVisible, nonatomic, readonly) BOOL segmentedControlVisible;
 @property (nonatomic, copy) NSString *selectedSegmentIdentifier;
@@ -69,17 +69,17 @@
 @property (getter=isVisuallyInset, nonatomic) BOOL visuallyInset;
 
 - (void).cxx_destruct;
-- (struct CGPoint { double x1; double x2; })_adjustContentOffsetForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inScrollView:(id)arg2 withContentInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg3;
+- (struct CGPoint { float x1; float x2; })_adjustContentOffsetForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inScrollView:(id)arg2 withContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg3;
 - (void)_applyHairlineTintInformation;
 - (void)_applyTintInformation;
 - (void)_containerScrollViewDidBeginScrolling;
 - (void)_containerScrollViewDidFinishScrolling;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_currentSegmentedControlContentEdgeInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_currentSegmentedControlContentEdgeInsets;
 - (void)_handleCanShowConnectDidChangeNotification:(id)arg1;
 - (void)_handleCanShowSubscriptionContentDidChangeNotification:(id)arg1;
 - (void)_registerForNotificationsForContentScrollView:(id)arg1;
 - (id)_scrollingSegmentedController;
-- (void)_setContentOverlayInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)_setContentOverlayInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (BOOL)_shouldShowSegmentedControl;
 - (void)_unregisterForNotificationsForContentScrollView:(id)arg1;
 - (void)_updateContainerScrollViewContentInformationFromScroll:(BOOL)arg1;
@@ -106,7 +106,7 @@
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (float)preferredMaximumContentWidth;
 - (void)scrollViewDidScroll:(id)arg1;
-- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { double x1; double x2; })arg2 targetContentOffset:(inout struct CGPoint { double x1; double x2; }*)arg3;
+- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { float x1; float x2; })arg2 targetContentOffset:(inout struct CGPoint { float x1; float x2; }*)arg3;
 - (id)scrollingSegmentedController;
 - (void)scrollingSegmentedController:(id)arg1 contentScrollViewDidChangeForViewControllerAtIndex:(unsigned int)arg2;
 - (void)scrollingSegmentedController:(id)arg1 didFocusViewControllerAtIndex:(unsigned int)arg2;

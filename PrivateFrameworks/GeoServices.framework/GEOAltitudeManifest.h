@@ -21,7 +21,7 @@
 - (BOOL)hasDataVersionForRegion:(unsigned int)arg1;
 - (id)init;
 - (id)initWithoutObserver;
-- (BOOL)isValidTourId:(unsigned int)arg1;
+- (BOOL)isValidTourId:(unsigned long long)arg1;
 - (id)nameForRegion:(unsigned int)arg1;
 - (void)parseManifest:(id)arg1;
 - (BOOL)parseXml:(id)arg1;

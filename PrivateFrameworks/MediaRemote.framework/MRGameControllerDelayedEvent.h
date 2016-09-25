@@ -3,18 +3,18 @@
  */
 
 @interface MRGameControllerDelayedEvent : NSObject {
-    unsigned int  _lastDownEvent;
+    unsigned long long  _lastDownEvent;
     id /* block */  _sendEventBlock;
 }
 
-@property (nonatomic) unsigned int lastDownEvent;
+@property (nonatomic) unsigned long long lastDownEvent;
 @property (nonatomic, copy) id /* block */ sendEventBlock;
 
 - (void)dealloc;
-- (unsigned int)lastDownEvent;
+- (unsigned long long)lastDownEvent;
 - (void)send;
 - (id /* block */)sendEventBlock;
-- (void)setLastDownEvent:(unsigned int)arg1;
+- (void)setLastDownEvent:(unsigned long long)arg1;
 - (void)setSendEventBlock:(id /* block */)arg1;
 
 @end

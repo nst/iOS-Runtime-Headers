@@ -18,7 +18,7 @@
 
 - (void).cxx_destruct;
 - (void)_reloadResultsView;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_resultsViewContentInset;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_resultsViewContentInset;
 - (void)adPrivacyViewController:(id)arg1 didFailWithError:(id)arg2;
 - (void)adPrivacyViewControllerDidDismiss:(id)arg1;
 - (void)adPrivacyViewControllerDidLoad:(id)arg1;

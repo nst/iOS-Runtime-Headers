@@ -4,14 +4,14 @@
 
 @interface NTKFloatCurveElement : NSObject {
     int  _curve;
-    double  _floatValue;
-    double  _fraction;
+    float  _floatValue;
+    float  _fraction;
     CAMediaTimingFunction * _timingFunction;
 }
 
 @property (nonatomic) int curve;
-@property (nonatomic) double floatValue;
-@property (nonatomic) double fraction;
+@property (nonatomic) float floatValue;
+@property (nonatomic) float fraction;
 @property (nonatomic, retain) CAMediaTimingFunction *timingFunction;
 
 - (void).cxx_destruct;

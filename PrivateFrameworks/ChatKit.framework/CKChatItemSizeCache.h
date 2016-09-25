@@ -22,8 +22,8 @@
 - (void)_persistCache;
 - (id)cache;
 - (id)cacheDiskQueue;
-- (id)cacheKeyForChatItem:(id)arg1 fittingSize:(struct CGSize { double x1; double x2; })arg2;
-- (BOOL)cachedSizeForChatItem:(id)arg1 size:(out struct CGSize { double x1; double x2; }*)arg2 textAlignmentInsets:(out struct UIEdgeInsets { double x1; double x2; double x3; double x4; }*)arg3 fittingSize:(struct CGSize { double x1; double x2; })arg4;
+- (id)cacheKeyForChatItem:(id)arg1 fittingSize:(struct CGSize { float x1; float x2; })arg2;
+- (BOOL)cachedSizeForChatItem:(id)arg1 size:(out struct CGSize { float x1; float x2; }*)arg2 textAlignmentInsets:(out struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg3 fittingSize:(struct CGSize { float x1; float x2; })arg4;
 - (void)dealloc;
 - (id)evictionUpdater;
 - (id)init;
@@ -31,7 +31,7 @@
 - (id)orderedKeys;
 - (void)setCache:(id)arg1;
 - (void)setCacheDiskQueue:(id)arg1;
-- (void)setCachedSizeForChatItem:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 textAlignmentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg3 fittingSize:(struct CGSize { double x1; double x2; })arg4;
+- (void)setCachedSizeForChatItem:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 textAlignmentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg3 fittingSize:(struct CGSize { float x1; float x2; })arg4;
 - (void)setEvictionUpdater:(id)arg1;
 - (void)setOrderedKeys:(id)arg1;
 - (void)systemApplicationDidSuspend;

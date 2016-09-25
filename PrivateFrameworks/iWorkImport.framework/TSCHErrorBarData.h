@@ -27,7 +27,7 @@
 + (int)p_errorBarSettingForSeries:(id)arg1 useXAxis:(BOOL)arg2 axisID:(id)arg3;
 
 - (void)clearParent;
-- (BOOL)hasErrorDataForAxisID:(id)arg1 valueIndex:(unsigned int)arg2 chartVertical:(BOOL)arg3 barVertical:(BOOL*)arg4 unitValue:(struct CGPoint { double x1; double x2; }*)arg5 unitPositive:(struct CGPoint { double x1; double x2; }*)arg6 unitNegative:(struct CGPoint { double x1; double x2; }*)arg7;
+- (BOOL)hasErrorDataForAxisID:(id)arg1 valueIndex:(unsigned int)arg2 chartVertical:(BOOL)arg3 barVertical:(BOOL*)arg4 unitValue:(struct CGPoint { float x1; float x2; }*)arg5 unitPositive:(struct CGPoint { float x1; float x2; }*)arg6 unitNegative:(struct CGPoint { float x1; float x2; }*)arg7;
 - (id)initWithSeries:(id)arg1;
 - (void)invalidateData;
 - (id)lineEndForAxisID:(id)arg1;
@@ -45,7 +45,7 @@
 - (int)p_errorBarTypeForAxisID:(id)arg1;
 - (double)p_errorForValue:(double*)arg1 onAxisID:(id)arg2 groupIndex:(unsigned int)arg3 positive:(BOOL)arg4;
 - (double)p_fixedErrorForAxisID:(id)arg1;
-- (struct CGPoint { double x1; double x2; })p_getValuePointForGroup:(unsigned int)arg1 inputAxisID:(id)arg2 outputAxisID:(id)arg3 barVertical:(BOOL)arg4;
+- (struct CGPoint { float x1; float x2; })p_getValuePointForGroup:(unsigned int)arg1 inputAxisID:(id)arg2 outputAxisID:(id)arg3 barVertical:(BOOL)arg4;
 - (double)p_negativeErrorForValue:(double*)arg1 onAxisID:(id)arg2 groupIndex:(unsigned int)arg3;
 - (double)p_percentageErrorForAxisID:(id)arg1;
 - (double)p_positiveErrorForValue:(double*)arg1 onAxisID:(id)arg2 groupIndex:(unsigned int)arg3;

@@ -9,7 +9,7 @@
 - (id)bufferedInputStream;
 - (id)bufferedInputStreamWithBufferSize:(unsigned long)arg1;
 - (id)data;
-- (int)dataLength;
+- (long long)dataLength;
 - (void)dealloc;
 - (BOOL)hasSameLocationAs:(id)arg1;
 - (id)initWithData:(id)arg1;

@@ -7,12 +7,12 @@
     <CKFullScreenBalloonViewControllerDelegate> * _delegate;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _gradientFrame;
     BOOL  _isGroupConversation;
@@ -26,7 +26,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) <CKFullScreenBalloonViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } gradientFrame;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } gradientFrame;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) BOOL isGroupConversation;
 @property (nonatomic, readonly) CKMessageAcknowledgmentPickerBarViewController *pickerBar;
@@ -47,7 +47,7 @@
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceivePress:(id)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })gradientFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })gradientFrame;
 - (id)initWithChatItem:(id)arg1 gradientReferenceView:(id)arg2 isGroupConversation:(BOOL)arg3 showActionMenu:(BOOL)arg4 delegate:(id)arg5;
 - (BOOL)isGroupConversation;
 - (void)loadView;

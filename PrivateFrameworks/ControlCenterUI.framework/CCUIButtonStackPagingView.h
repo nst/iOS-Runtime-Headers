@@ -8,7 +8,7 @@
     unsigned int  _buttonStretchThreshold;
     NSMutableArray * _buttons;
     <CCUIButtonStackPagingViewDelegate> * _delegate;
-    double  _interButtonPadding;
+    float  _interButtonPadding;
     NSLayoutConstraint * _leadingMargin;
     unsigned int  _maxButtonsPerPage;
     UIStackView * _pagesStackView;
@@ -24,8 +24,8 @@
 @property (nonatomic) <CCUIButtonStackPagingViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic) double interButtonPadding;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } marginInsets;
+@property (nonatomic) float interButtonPadding;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } marginInsets;
 @property (nonatomic) unsigned int maxButtonsPerPage;
 @property (nonatomic) int pagingAxis;
 @property (readonly) Class superclass;
@@ -41,9 +41,9 @@
 - (unsigned int)buttonStretchThreshold;
 - (id)buttons;
 - (id)delegate;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (float)interButtonPadding;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })marginInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })marginInsets;
 - (unsigned int)maxButtonsPerPage;
 - (int)pagingAxis;
 - (void)removeButton:(id)arg1;
@@ -56,7 +56,7 @@
 - (void)setButtons:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setInterButtonPadding:(float)arg1;
-- (void)setMarginInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setMarginInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setMaxButtonsPerPage:(unsigned int)arg1;
 - (void)setPagingAxis:(int)arg1;
 

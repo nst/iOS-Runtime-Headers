@@ -3,17 +3,17 @@
  */
 
 @interface VCPVanishingPointDetector : NSObject {
-    double * _confidenceMap;
-    double * _edgeWeightMap;
+    float * _confidenceMap;
+    float * _edgeWeightMap;
     VCPGaborFilter * _gaborFilter;
     unsigned long  _height;
     unsigned long  _heightPadded;
-    double * _image;
+    float * _image;
     long  _offset;
-    double * _orientationResponses;
-    double * _orientionMap;
-    double  _pixelMean;
-    double  _pixelVar;
+    float * _orientationResponses;
+    float * _orientionMap;
+    float  _pixelMean;
+    float  _pixelVar;
     long  _stride;
     long  _stridePadded;
     bool  _validDimension;
@@ -23,17 +23,17 @@
 
 - (void).cxx_destruct;
 - (void)averageOrientationResponses:(int)arg1 withCurrentMap:(float*)arg2;
-- (long)calculateConfidence:(id)arg1 lineDistance:(float)arg2 vaninshingPoint:(struct CGPoint { double x1; double x2; })arg3 vanishingPointConfidence:(float*)arg4;
+- (long)calculateConfidence:(id)arg1 lineDistance:(float)arg2 vaninshingPoint:(struct CGPoint { float x1; float x2; })arg3 vanishingPointConfidence:(float*)arg4;
 - (long)calculateOrientationResponses;
 - (void)dealloc;
-- (long)detect:(struct CGPoint { double x1; double x2; }*)arg1 withConfidence:(float*)arg2 dominantLine:(id*)arg3;
+- (long)detect:(struct CGPoint { float x1; float x2; }*)arg1 withConfidence:(float*)arg2 dominantLine:(id*)arg3;
 - (void)extractUsefulAreaFrom:(float*)arg1 to:(float*)arg2 withOffset:(unsigned long)arg3 stridePadded:(unsigned long)arg4 width:(unsigned long)arg5 height:(unsigned long)arg6;
 - (long)generateLineWeightMap:(id)arg1 weightMap:(float*)arg2;
 - (long)generateOrientationMap;
 - (id)initWithImage:(struct __CVBuffer { }*)arg1;
 - (BOOL)isVerticalOrHorizontal:(int)arg1;
 - (long)prepareImage:(struct __CVBuffer { }*)arg1;
-- (long)searchVanishingPointandDominantLine:(float*)arg1 lineGroup:(id)arg2 vanishingPoint:(struct CGPoint { double x1; double x2; }*)arg3 vanishingPointConfidence:(float*)arg4 dominantLine:(id*)arg5;
+- (long)searchVanishingPointandDominantLine:(float*)arg1 lineGroup:(id)arg2 vanishingPoint:(struct CGPoint { float x1; float x2; }*)arg3 vanishingPointConfidence:(float*)arg4 dominantLine:(id*)arg5;
 - (void)smoothFiltering:(float*)arg1 width:(unsigned long)arg2 height:(unsigned long)arg3;
 - (long)voteVanishingPoint:(float*)arg1;
 

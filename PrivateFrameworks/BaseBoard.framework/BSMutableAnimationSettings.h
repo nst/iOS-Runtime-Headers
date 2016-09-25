@@ -7,7 +7,7 @@
 @property (nonatomic) double delay;
 @property (nonatomic) double duration;
 @property (nonatomic) double frameInterval;
-@property (nonatomic) double speed;
+@property (nonatomic) float speed;
 @property (nonatomic, retain) CAMediaTimingFunction *timingFunction;
 
 + (id)settingsWithDuration:(double)arg1;

@@ -4,8 +4,8 @@
 
 @interface TSDMutableContactShadow : TSDContactShadow <TSDMutableShadow>
 
-@property (nonatomic) double height;
-@property (nonatomic) double perspective;
+@property (nonatomic) float height;
+@property (nonatomic) float perspective;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setAngle:(float)arg1;

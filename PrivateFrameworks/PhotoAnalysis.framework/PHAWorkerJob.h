@@ -14,7 +14,7 @@
     short  _workerType;
 }
 
-@property (nonatomic, readonly) double completionScore;
+@property (nonatomic, readonly) float completionScore;
 @property (nonatomic) unsigned int countOfFailedStarts;
 @property (nonatomic) <PHAWorkerJobDelegate> *delegate;
 @property (nonatomic, readonly) BOOL finished;

@@ -10,8 +10,8 @@
     UIImagePickerController * _imagePicker;
     DOMNode * _interactionElement;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _interactionPoint;
     BOOL  _isUsingCamera;
     NSArray * _mimeTypes;

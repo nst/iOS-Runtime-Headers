@@ -4,11 +4,11 @@
 
 @interface _UIBarPanGestureRecognizer : UIPanGestureRecognizer {
     int  _barAction;
-    double  _bias;
+    float  _bias;
 }
 
 @property (nonatomic, readonly) int barAction;
-@property (nonatomic, readonly) double bias;
+@property (nonatomic, readonly) float bias;
 
 - (void)_setDelegate:(id)arg1;
 - (int)barAction;

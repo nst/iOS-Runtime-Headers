@@ -5,8 +5,8 @@
 @interface TSCH3DFill : TSDFill {
     TSDFill * _cachedImageFill;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _cachedImageFillSize;
     TSDFill * _fallbackFill;
     TSCH3DFillSetIdentifier * _identifier;
@@ -17,7 +17,7 @@
 @property (nonatomic, retain) TSCH3DFillSetIdentifier *identifier;
 @property (readonly) TSCH3DLightingModel *lightingModel;
 @property (nonatomic, retain) NSNumber *percentage;
-@property (nonatomic, readonly) double percentageValue;
+@property (nonatomic, readonly) float percentageValue;
 
 + (id)fill;
 + (id)fillWithIdentifier:(id)arg1;
@@ -31,7 +31,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)didInitFromSOS;
-- (void)drawSwatchInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inContext:(struct CGContext { }*)arg2;
+- (void)drawSwatchInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inContext:(struct CGContext { }*)arg2;
 - (int)fillType;
 - (BOOL)hasCompleteData;
 - (unsigned int)hash;
@@ -48,12 +48,12 @@
 - (id)p_convertToTSDFillWithSize:(unsigned int)arg1 technique:(int)arg2;
 - (id)p_convertToTSDFillWithSize:(unsigned int)arg1 technique:(int)arg2 context:(id)arg3;
 - (id)p_iconFill;
-- (id)p_imageFillForRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 context:(struct CGContext { }*)arg2;
-- (id)p_imageFillForSize:(struct CGSize { double x1; double x2; })arg1 context:(id)arg2;
+- (id)p_imageFillForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 context:(struct CGContext { }*)arg2;
+- (id)p_imageFillForSize:(struct CGSize { float x1; float x2; })arg1 context:(id)arg2;
 - (id)p_lazyLightingModel;
 - (void)paintPath:(struct CGPath { }*)arg1 inContext:(struct CGContext { }*)arg2;
-- (void)paintPath:(struct CGPath { }*)arg1 naturalBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 inContext:(struct CGContext { }*)arg3 isPDF:(BOOL)arg4;
-- (void)paintRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inContext:(struct CGContext { }*)arg2;
+- (void)paintPath:(struct CGPath { }*)arg1 naturalBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 inContext:(struct CGContext { }*)arg3 isPDF:(BOOL)arg4;
+- (void)paintRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inContext:(struct CGContext { }*)arg2;
 - (id)percentage;
 - (float)percentageValue;
 - (id)referenceColor;

@@ -9,10 +9,10 @@
     unsigned int  _direction;
     int  _highlightBlendMode;
     CUIColor * _highlightColor;
-    double  _highlightOpacity;
+    float  _highlightOpacity;
     int  _shadowBlendMode;
     CUIColor * _shadowColor;
-    double  _shadowOpacity;
+    float  _shadowOpacity;
     unsigned int  _softenSize;
 }
 
@@ -22,10 +22,10 @@
 @property unsigned int direction;
 @property int highlightBlendMode;
 @property (retain) CUIColor *highlightColor;
-@property double highlightOpacity;
+@property float highlightOpacity;
 @property int shadowBlendMode;
 @property (retain) CUIColor *shadowColor;
-@property double shadowOpacity;
+@property float shadowOpacity;
 @property unsigned int softenSize;
 
 - (unsigned int)altitude;

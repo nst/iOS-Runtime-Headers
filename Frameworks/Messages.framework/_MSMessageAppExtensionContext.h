@@ -7,12 +7,12 @@
     NSMapTable * _conversationsByIdentifier;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _initialFrameOfHostView;
     unsigned int  _presentationStyle;
@@ -24,7 +24,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } initialFrameOfHostView;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } initialFrameOfHostView;
 @property (nonatomic) unsigned int presentationStyle;
 @property (nonatomic, readonly) struct __CFRunLoopObserver { }*principalObjectCreationObserver;
 @property (readonly) Class superclass;
@@ -56,7 +56,7 @@
 - (void)dismissToKeyboard:(BOOL)arg1;
 - (void)endDisablingUserInteraction;
 - (id)initWithInputItems:(id)arg1 listenerEndpoint:(id)arg2 contextUUID:(id)arg3;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })initialFrameOfHostView;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })initialFrameOfHostView;
 - (void)openURL:(id)arg1 completionHandler:(id /* block */)arg2;
 - (unsigned int)presentationStyle;
 - (struct __CFRunLoopObserver { }*)principalObjectCreationObserver;
@@ -68,7 +68,7 @@
 - (void)stageAppItem:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)stageMediaItem:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)stageRichLink:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)startDragMediaItem:(id)arg1 frameInRemoteView:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 fence:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)startDragMediaItem:(id)arg1 frameInRemoteView:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 fence:(id)arg3 completionHandler:(id /* block */)arg4;
 - (id)updatedConversationForConversationState:(id)arg1;
 - (id)viewController;
 

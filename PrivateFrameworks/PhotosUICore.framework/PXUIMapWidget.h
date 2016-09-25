@@ -12,18 +12,18 @@
     PXPlacesMapFetchResultViewController * __mapViewController;
     NSMutableArray * __nearbyCountCompletionBlocks;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _contentSize;
     PXPhotosDetailsContext * _context;
     BOOL  _didDisplayContentView;
     NSMutableDictionary * _fetchedImages;
-    double  _height;
+    float  _height;
     BOOL  _isLoaded;
     int  _lastFetchedBoundingRectAssetCount;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _minimumInitialSize;
     BOOL  _showAddressLink;
     PXWidgetSpec * _spec;
@@ -104,7 +104,7 @@
 - (id)localizedTitle;
 - (void)photosDataSource:(id)arg1 didChange:(id)arg2;
 - (float)preferredContentHeightForWidth:(float)arg1;
-- (void)setContentSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setContext:(id)arg1;
 - (void)setShowAddressLink:(BOOL)arg1;
 - (void)setSpec:(id)arg1;

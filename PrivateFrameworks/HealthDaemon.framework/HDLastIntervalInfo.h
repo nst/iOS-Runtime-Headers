@@ -3,22 +3,22 @@
  */
 
 @interface HDLastIntervalInfo : NSObject {
-    int  _lastInterval;
+    long long  _lastInterval;
     NSArray * _orderedSourceIds;
     double  _startTimeInBucket;
     NSMutableDictionary * _sumsBySource;
 }
 
-@property (nonatomic) int lastInterval;
+@property (nonatomic) long long lastInterval;
 @property (nonatomic, retain) NSArray *orderedSourceIds;
 @property (nonatomic) double startTimeInBucket;
 @property (nonatomic, retain) NSMutableDictionary *sumsBySource;
 
 - (void).cxx_destruct;
 - (id)initWithSources:(id)arg1;
-- (int)lastInterval;
+- (long long)lastInterval;
 - (id)orderedSourceIds;
-- (void)setLastInterval:(int)arg1;
+- (void)setLastInterval:(long long)arg1;
 - (void)setOrderedSourceIds:(id)arg1;
 - (void)setStartTimeInBucket:(double)arg1;
 - (void)setSumsBySource:(id)arg1;

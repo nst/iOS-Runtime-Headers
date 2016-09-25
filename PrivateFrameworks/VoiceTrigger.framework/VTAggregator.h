@@ -9,7 +9,7 @@
     NSString * _languageCode;
     double  _lastAggTime;
     double  _lastAggTimeFalseWakeUp;
-    unsigned int  _numFalseWakeUp;
+    unsigned long long  _numFalseWakeUp;
     NSObject<OS_dispatch_queue> * _queue;
     NSObject<OS_dispatch_source> * _timer;
 }

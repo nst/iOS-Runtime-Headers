@@ -82,6 +82,6 @@
 - (void)writeDataFromFileURL:(id)arg1 waitUntilDone:(BOOL)arg2 completionBlock:(id /* block */)arg3;
 - (void)writeDataFromFileWrapper:(id)arg1 waitUntilDone:(BOOL)arg2 completionBlock:(id /* block */)arg3;
 - (void)writeDataFromItemProvider:(id)arg1 checkForMarkupData:(BOOL)arg2 completionBlock:(id /* block */)arg3;
-- (void)writeDataWithFileSize:(unsigned int)arg1 writeBlock:(id /* block */)arg2 completionBlock:(id /* block */)arg3;
+- (void)writeDataWithFileSize:(unsigned long long)arg1 writeBlock:(id /* block */)arg2 completionBlock:(id /* block */)arg3;
 
 @end

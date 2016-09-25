@@ -4,14 +4,14 @@
 
 @interface SGRecordId : NSObject <NSCopying, NSSecureCoding> {
     NSData * _foreignHash;
-    int  _internalEntityId;
+    long long  _internalEntityId;
 }
 
 // Image: /System/Library/PrivateFrameworks/CoreSuggestions.framework/CoreSuggestions
 
-+ (id)recordIdWithInternalEntityId:(int)arg1;
-+ (id)recordIdWithInternalEntityId:(int)arg1 foreignHash:(id)arg2;
-+ (id)recordIdWithNumericValue:(int)arg1;
++ (id)recordIdWithInternalEntityId:(long long)arg1;
++ (id)recordIdWithInternalEntityId:(long long)arg1 foreignHash:(id)arg2;
++ (id)recordIdWithNumericValue:(long long)arg1;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
@@ -21,22 +21,22 @@
 - (id)foreignHash;
 - (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithInternalEntityId:(int)arg1 foreignHash:(id)arg2;
-- (int)internalEntityId;
+- (id)initWithInternalEntityId:(long long)arg1 foreignHash:(id)arg2;
+- (long long)internalEntityId;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToRecordId:(id)arg1;
-- (int)numericValue;
+- (long long)numericValue;
 
 // Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
 
-+ (id)recordIdForContactDetailWithRowId:(int)arg1;
-+ (id)recordIdForContactWithRowId:(int)arg1;
-+ (id)recordIdForEmailWithRowId:(int)arg1;
-+ (id)recordIdForEventWithRowId:(int)arg1;
++ (id)recordIdForContactDetailWithRowId:(long long)arg1;
++ (id)recordIdForContactWithRowId:(long long)arg1;
++ (id)recordIdForEmailWithRowId:(long long)arg1;
++ (id)recordIdForEventWithRowId:(long long)arg1;
 + (id)recordIdForForeignStringValue:(id)arg1 origin:(id)arg2 foreignUniqueContactString:(id)arg3;
-+ (id)recordIdWithTableId:(unsigned char)arg1 rowId:(int)arg2;
++ (id)recordIdWithTableId:(unsigned char)arg1 rowId:(long long)arg2;
 
-- (int)rowId;
+- (long long)rowId;
 - (unsigned char)tableId;
 
 @end

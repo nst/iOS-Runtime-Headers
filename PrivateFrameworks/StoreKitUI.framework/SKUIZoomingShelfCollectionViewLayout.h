@@ -4,26 +4,26 @@
 
 @interface SKUIZoomingShelfCollectionViewLayout : UICollectionViewLayout <SKUIHorizontalScrollingContainerMenuBarCollectionViewLayout, SKUIShelfCollectionViewLayout> {
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _cachedCollectionViewContentSize;
     NSMutableDictionary * _cachedLayoutAttributes;
-    double  _focusedItemHorizontalCenterOffset;
-    double  _interItemSpacing;
+    float  _focusedItemHorizontalCenterOffset;
+    float  _interItemSpacing;
     BOOL  _invalidateGeometryOnlyOfExistingLayoutAttributes;
-    double  _itemWidth;
+    float  _itemWidth;
     SKUIShelfLayoutData * _layoutData;
-    double  _scaledItemWidth;
+    float  _scaledItemWidth;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) double focusedItemHorizontalCenterOffset;
+@property (nonatomic) float focusedItemHorizontalCenterOffset;
 @property (readonly) unsigned int hash;
-@property (nonatomic) double interItemSpacing;
-@property (nonatomic) double itemWidth;
+@property (nonatomic) float interItemSpacing;
+@property (nonatomic) float itemWidth;
 @property (nonatomic, retain) SKUIShelfLayoutData *layoutData;
-@property (nonatomic) double scaledItemWidth;
+@property (nonatomic) float scaledItemWidth;
 @property (readonly) Class superclass;
 
 + (BOOL)collectionViewCanClipToBounds;
@@ -32,13 +32,13 @@
 + (float)snapToBoundariesDecelerationRate;
 
 - (void).cxx_destruct;
-- (struct CGSize { double x1; double x2; })collectionViewContentSize;
+- (struct CGSize { float x1; float x2; })collectionViewContentSize;
 - (float)focusedItemHorizontalCenterOffset;
 - (float)interItemSpacing;
 - (void)invalidateLayoutWithContext:(id)arg1;
-- (id)invalidationContextForBoundsChange:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)invalidationContextForBoundsChange:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (float)itemWidth;
-- (id)layoutAttributesForElementsInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)layoutAttributesForElementsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;
 - (id)layoutData;
 - (id)menuBarFocusedItemIndexPathWithTransitionProgress:(float*)arg1;
@@ -50,7 +50,7 @@
 - (void)setLayoutData:(id)arg1;
 - (void)setMenuBarFocusedItemIndexPath:(id)arg1 withTransitionProgress:(float)arg2;
 - (void)setScaledItemWidth:(float)arg1;
-- (BOOL)shouldInvalidateLayoutForBoundsChange:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (struct CGPoint { double x1; double x2; })targetContentOffsetForProposedContentOffset:(struct CGPoint { double x1; double x2; })arg1 withScrollingVelocity:(struct CGPoint { double x1; double x2; })arg2;
+- (BOOL)shouldInvalidateLayoutForBoundsChange:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGPoint { float x1; float x2; })targetContentOffsetForProposedContentOffset:(struct CGPoint { float x1; float x2; })arg1 withScrollingVelocity:(struct CGPoint { float x1; float x2; })arg2;
 
 @end

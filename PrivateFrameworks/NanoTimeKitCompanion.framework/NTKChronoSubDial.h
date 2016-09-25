@@ -4,25 +4,25 @@
 
 @interface NTKChronoSubDial : SKEffectNode {
     int  _labelsFont;
-    double  _labelsFontSize;
-    double  _labelsRadius;
-    double  _radius;
+    float  _labelsFontSize;
+    float  _labelsRadius;
+    float  _radius;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _smallInner;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _smallOuter;
 }
 
 @property (nonatomic, readonly) int labelsFont;
-@property (nonatomic, readonly) double labelsFontSize;
-@property (nonatomic, readonly) double labelsRadius;
-@property (nonatomic, readonly) double radius;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } smallInner;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } smallOuter;
+@property (nonatomic, readonly) float labelsFontSize;
+@property (nonatomic, readonly) float labelsRadius;
+@property (nonatomic, readonly) float radius;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } smallInner;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } smallOuter;
 
 + (id)lower:(float)arg1;
 + (id)upper:(float)arg1;
@@ -36,8 +36,8 @@
 - (float)labelsFontSize;
 - (float)labelsRadius;
 - (float)radius;
-- (struct CGSize { double x1; double x2; })smallInner;
-- (struct CGSize { double x1; double x2; })smallOuter;
+- (struct CGSize { float x1; float x2; })smallInner;
+- (struct CGSize { float x1; float x2; })smallOuter;
 - (void)updateTimeScale:(unsigned int)arg1;
 
 @end

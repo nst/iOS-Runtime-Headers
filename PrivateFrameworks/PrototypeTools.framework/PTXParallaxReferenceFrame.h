@@ -7,86 +7,86 @@
         struct { 
             union _GLKVector3 { 
                 struct { 
-                    double x; 
-                    double y; 
-                    double z; 
+                    float x; 
+                    float y; 
+                    float z; 
                 } ; 
                 struct { 
-                    double r; 
-                    double g; 
-                    double b; 
+                    float r; 
+                    float g; 
+                    float b; 
                 } ; 
                 struct { 
-                    double s; 
-                    double t; 
-                    double p; 
+                    float s; 
+                    float t; 
+                    float p; 
                 } ; 
-                double v[3]; 
+                float v[3]; 
             } v; 
-            double s; 
+            float s; 
         } ; 
         struct { 
-            double x; 
-            double y; 
-            double z; 
-            double w; 
+            float x; 
+            float y; 
+            float z; 
+            float w; 
         } ; 
-        double q[4]; 
+        float q[4]; 
     }  _absoluteQuaternion;
     CAMediaTimingFunction * _curveFunction;
     UIWindow * _diagnosticsWindow;
-    double  _distanceMultiplier;
+    float  _distanceMultiplier;
     UIView * _horizontalLockIndicator;
     UILabel * _idleIndicator;
-    double  _idleLeeway;
+    float  _idleLeeway;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _idleStartOffset;
     double  _idleStartTime;
     unsigned long  _jumpSound;
-    double  _jumpThreshold;
+    float  _jumpThreshold;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _lastOffset;
     double  _lastUpdate;
-    double  _lockStrength;
-    double  _lockValue;
+    float  _lockStrength;
+    float  _lockValue;
     union _GLKQuaternion { 
         struct { 
             union _GLKVector3 { 
                 struct { 
-                    double x; 
-                    double y; 
-                    double z; 
+                    float x; 
+                    float y; 
+                    float z; 
                 } ; 
                 struct { 
-                    double r; 
-                    double g; 
-                    double b; 
+                    float r; 
+                    float g; 
+                    float b; 
                 } ; 
                 struct { 
-                    double s; 
-                    double t; 
-                    double p; 
+                    float s; 
+                    float t; 
+                    float p; 
                 } ; 
-                double v[3]; 
+                float v[3]; 
             } v; 
-            double s; 
+            float s; 
         } ; 
         struct { 
-            double x; 
-            double y; 
-            double z; 
-            double w; 
+            float x; 
+            float y; 
+            float z; 
+            float w; 
         } ; 
-        double q[4]; 
+        float q[4]; 
     }  _referenceQuaternion;
-    double  _referenceShiftSpeed;
-    double  _secondsBeforeIdle;
+    float  _referenceShiftSpeed;
+    float  _secondsBeforeIdle;
     PTXParallaxEngineSettings * _settings;
-    double  _smoothingDegree;
+    float  _smoothingDegree;
     UIView * _verticalLockIndicator;
 }
 
@@ -99,25 +99,25 @@
 - (void)_createDiagnosticsWindow;
 - (void)_createDirectionLockIndicators;
 - (void)_createIdleIndicator;
-- (struct CGPoint { double x1; double x2; })_currentRawOffset:(union _GLKQuaternion { struct { union _GLKVector3 { struct { double x_1_3_1; double x_1_3_2; double x_1_3_3; } x_1_2_1; struct { double x_2_3_1; double x_2_3_2; double x_2_3_3; } x_1_2_2; struct { double x_3_3_1; double x_3_3_2; double x_3_3_3; } x_1_2_3; double x_1_2_4[3]; } x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; double x_2_1_3; double x_2_1_4; } x2; double x3[4]; })arg1;
-- (struct CGPoint { double x1; double x2; })_curvedOffset;
+- (struct CGPoint { float x1; float x2; })_currentRawOffset:(union _GLKQuaternion { struct { union _GLKVector3 { struct { float x_1_3_1; float x_1_3_2; float x_1_3_3; } x_1_2_1; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; } x_1_2_2; struct { float x_3_3_1; float x_3_3_2; float x_3_3_3; } x_1_2_3; float x_1_2_4[3]; } x_1_1_1; float x_1_1_2; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; float x3[4]; })arg1;
+- (struct CGPoint { float x1; float x2; })_curvedOffset;
 - (BOOL)_isIdle;
 - (float)_referenceShiftRadiansPerSecondForAngle:(float)arg1;
-- (union _GLKQuaternion { struct { union _GLKVector3 { struct { double x_1_3_1; double x_1_3_2; double x_1_3_3; } x_1_2_1; struct { double x_2_3_1; double x_2_3_2; double x_2_3_3; } x_1_2_2; struct { double x_3_3_1; double x_3_3_2; double x_3_3_3; } x_1_2_3; double x_1_2_4[3]; } x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; double x_2_1_3; double x_2_1_4; } x2; double x3[4]; })_relativeQuaternion:(union _GLKQuaternion { struct { union _GLKVector3 { struct { double x_1_3_1; double x_1_3_2; double x_1_3_3; } x_1_2_1; struct { double x_2_3_1; double x_2_3_2; double x_2_3_3; } x_1_2_2; struct { double x_3_3_1; double x_3_3_2; double x_3_3_3; } x_1_2_3; double x_1_2_4[3]; } x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; double x_2_1_3; double x_2_1_4; } x2; double x3[4]; })arg1;
+- (union _GLKQuaternion { struct { union _GLKVector3 { struct { float x_1_3_1; float x_1_3_2; float x_1_3_3; } x_1_2_1; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; } x_1_2_2; struct { float x_3_3_1; float x_3_3_2; float x_3_3_3; } x_1_2_3; float x_1_2_4[3]; } x_1_1_1; float x_1_1_2; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; float x3[4]; })_relativeQuaternion:(union _GLKQuaternion { struct { union _GLKVector3 { struct { float x_1_3_1; float x_1_3_2; float x_1_3_3; } x_1_2_1; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; } x_1_2_2; struct { float x_3_3_1; float x_3_3_2; float x_3_3_3; } x_1_2_3; float x_1_2_4[3]; } x_1_1_1; float x_1_1_2; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; float x3[4]; })arg1;
 - (void)_showIdleUI:(BOOL)arg1;
 - (void)_tearDownDiagnosticsWindow;
 - (void)_tearDownDirectionLockIndicators;
 - (void)_tearDownIdleIndicator;
 - (void)_updateDirectionalLockIndicators;
-- (void)_updateIdleStateForRawOffset:(struct CGPoint { double x1; double x2; })arg1;
-- (void)_updateReferenceAttitude:(union _GLKQuaternion { struct { union _GLKVector3 { struct { double x_1_3_1; double x_1_3_2; double x_1_3_3; } x_1_2_1; struct { double x_2_3_1; double x_2_3_2; double x_2_3_3; } x_1_2_2; struct { double x_3_3_1; double x_3_3_2; double x_3_3_3; } x_1_2_3; double x_1_2_4[3]; } x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; double x_2_1_3; double x_2_1_4; } x2; double x3[4]; })arg1;
+- (void)_updateIdleStateForRawOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (void)_updateReferenceAttitude:(union _GLKQuaternion { struct { union _GLKVector3 { struct { float x_1_3_1; float x_1_3_2; float x_1_3_3; } x_1_2_1; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; } x_1_2_2; struct { float x_3_3_1; float x_3_3_2; float x_3_3_3; } x_1_2_3; float x_1_2_4[3]; } x_1_1_1; float x_1_1_2; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; float x3[4]; })arg1;
 - (void)_updateSettings;
-- (void)_updateSmoothedOffsetForRawOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (void)_updateSmoothedOffsetForRawOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)dealloc;
 - (int)directionLockStatus;
 - (float)directionLockStrength;
 - (id)initWithReferenceAttitude:(id)arg1 settings:(id)arg2;
-- (struct CGPoint { double x1; double x2; })offset;
+- (struct CGPoint { float x1; float x2; })offset;
 - (void)reset;
 - (void)settings:(id)arg1 changedValueForKey:(id)arg2;
 - (void)updateWithAttitude:(id)arg1;

@@ -4,10 +4,10 @@
 
 @interface TPFootnoteContainerLayout : TSDLayout <TSWPColumnMetrics, TSWPFootnoteMarkProvider, TSWPLayoutParent> {
     <TSWPFootnoteMarkProvider> * _footnoteMarkProvider;
-    double  _footnoteSpacing;
+    float  _footnoteSpacing;
     BOOL  _includeFootnoteSeparatorLine;
-    double  _maxFootnoteHeight;
-    double  _width;
+    float  _maxFootnoteHeight;
+    float  _width;
 }
 
 @property (nonatomic, readonly) BOOL alwaysStartsNewTarget;
@@ -15,26 +15,26 @@
 @property (nonatomic, readonly) BOOL columnsAreLeftToRight;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } footnoteSeparatorLineFrame;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } footnoteSeparatorLineFrame;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly) double height;
+@property (nonatomic, readonly) float height;
 @property (nonatomic) BOOL includeFootnoteSeparatorLine;
 @property (nonatomic, readonly) BOOL isEmpty;
 @property (nonatomic, readonly) TSWPPadding *layoutMargins;
 @property (nonatomic, readonly) BOOL shrinkTextToFit;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) double textScaleFactor;
+@property (nonatomic, readonly) float textScaleFactor;
 
 - (void)addFootnoteLayout:(id)arg1;
-- (struct CGSize { double x1; double x2; })adjustedInsetsForTarget:(id)arg1;
+- (struct CGSize { float x1; float x2; })adjustedInsetsForTarget:(id)arg1;
 - (BOOL)alwaysStartsNewTarget;
 - (unsigned int)autosizeFlagsForTextLayout:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })autosizedFrameForTextLayout:(id)arg1 textSize:(struct CGSize { double x1; double x2; })arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })autosizedFrameForTextLayout:(id)arg1 textSize:(struct CGSize { float x1; float x2; })arg2;
 - (unsigned int)columnCount;
 - (BOOL)columnsAreLeftToRight;
 - (id)computeLayoutGeometry;
 - (id)dependentsOfTextLayout:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })footnoteSeparatorLineFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })footnoteSeparatorLineFrame;
 - (float)gapForColumnIndex:(unsigned int)arg1 bodyWidth:(float)arg2;
 - (float)height;
 - (BOOL)includeFootnoteSeparatorLine;
@@ -44,7 +44,7 @@
 - (id)layoutMargins;
 - (id)markStringForFootnoteReferenceStorage:(id)arg1;
 - (float)maxAutoGrowHeightForTextLayout:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })nonAutosizedFrameForTextLayout:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })nonAutosizedFrameForTextLayout:(id)arg1;
 - (float)positionForColumnIndex:(unsigned int)arg1 bodyWidth:(float)arg2 target:(id)arg3 outWidth:(float*)arg4 outGap:(float*)arg5;
 - (void)removeAllFootnoteLayouts;
 - (void)removeFootnoteLayout:(id)arg1;

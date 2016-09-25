@@ -6,12 +6,12 @@
     BOOL  _deferredEnabled;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _deferredFrame;
     NSMutableDictionary * _deferredImages;
@@ -30,13 +30,13 @@
 - (void)_saveImagesAsDeferred;
 - (void)_saveTitlesAsDeferred;
 - (void)dealloc;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
 - (id)imageForState:(unsigned int)arg1;
 - (BOOL)isDeferringInterfaceUpdates;
 - (BOOL)isEnabled;
 - (void)setDeferringInterfaceUpdates:(BOOL)arg1;
 - (void)setEnabled:(BOOL)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setImage:(id)arg1 forState:(unsigned int)arg2;
 - (void)setTitle:(id)arg1 forState:(unsigned int)arg2;
 - (id)titleForState:(unsigned int)arg1;

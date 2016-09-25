@@ -26,7 +26,7 @@
 - (unsigned int)maxSecondsBetweenRetriesUnderMemoryPressure;
 - (unsigned int)minSecondsBetweenRetries;
 - (unsigned int)minSecondsBetweenRetriesUnderMemoryPressure;
-- (int)nextDispatchTimeDeltaForExtension:(id)arg1 job:(id)arg2 memoryPressure:(BOOL)arg3;
+- (long long)nextDispatchTimeDeltaForExtension:(id)arg1 job:(id)arg2 memoryPressure:(BOOL)arg3;
 - (void)setCountersByBundleID:(id)arg1;
 - (void)setMaxRetryCount:(unsigned int)arg1;
 - (void)setMaxSecondsBetweenRetries:(unsigned int)arg1;

@@ -15,7 +15,7 @@
     unsigned int  _authRequestStatus;
     BOOL  _beingTornDown;
     BOOL  _blockNotifications;
-    unsigned int  _capabilities;
+    unsigned long long  _capabilities;
     NSDictionary * _certs;
     NSString * _countryCode;
     NSString * _displayID;
@@ -80,7 +80,7 @@
 @property (nonatomic, readonly) id bestSibling;
 @property (nonatomic, readonly) BOOL canBeAdded;
 @property (nonatomic, readonly) BOOL canBeDeleted;
-@property (nonatomic, readonly) unsigned int capabilities;
+@property (nonatomic, readonly) unsigned long long capabilities;
 @property (setter=_setCountryCode:, nonatomic, retain) NSString *countryCode;
 @property (nonatomic, retain) NSData *customPictureData;
 @property (nonatomic, readonly) NSArray *dependentIMHandles;
@@ -204,7 +204,7 @@
 - (void)_sendRemoteLogDumpRequest:(id)arg1;
 - (void)_setABPersonFirstName:(id)arg1 lastName:(id)arg2;
 - (void)_setBaseFirstName:(id)arg1 lastName:(id)arg2 fullName:(id)arg3;
-- (BOOL)_setCapabilities:(unsigned int)arg1;
+- (BOOL)_setCapabilities:(unsigned long long)arg1;
 - (void)_setCountryCode:(id)arg1;
 - (void)_setExtraProperties:(id)arg1;
 - (void)_setIDStatus:(int)arg1;
@@ -230,7 +230,7 @@
 - (id)bestSibling;
 - (BOOL)canBeAdded;
 - (BOOL)canBeDeleted;
-- (unsigned int)capabilities;
+- (unsigned long long)capabilities;
 - (id)chatSiblingsArray;
 - (void)clearABPerson;
 - (int)compareAccountNames:(id)arg1;
@@ -265,7 +265,7 @@
 - (id)groupsArray;
 - (id)guid;
 - (BOOL)hasAudio;
-- (BOOL)hasCapability:(unsigned int)arg1;
+- (BOOL)hasCapability:(unsigned long long)arg1;
 - (BOOL)hasConferencing;
 - (BOOL)hasLocation;
 - (BOOL)hasMultiwayAudio;
@@ -334,7 +334,7 @@
 - (void)setAnonymous:(BOOL)arg1;
 - (void)setAuthRequestStatus:(unsigned int)arg1;
 - (void)setBlocked:(BOOL)arg1;
-- (void)setCapabilities:(unsigned int)arg1;
+- (void)setCapabilities:(unsigned long long)arg1;
 - (void)setCustomPictureData:(id)arg1;
 - (void)setCustomPictureData:(id)arg1 key:(id)arg2;
 - (void)setEmail:(id)arg1;

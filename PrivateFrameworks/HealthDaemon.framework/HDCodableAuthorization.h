@@ -3,8 +3,8 @@
  */
 
 @interface HDCodableAuthorization : PBCodable <NSCopying> {
-    int  _authorizationRequest;
-    int  _authorizationStatus;
+    long long  _authorizationRequest;
+    long long  _authorizationStatus;
     struct { 
         unsigned int authorizationRequest : 1; 
         unsigned int authorizationStatus : 1; 
@@ -12,17 +12,17 @@
         unsigned int objectType : 1; 
     }  _has;
     double  _modificationDate;
-    int  _objectType;
+    long long  _objectType;
 }
 
-@property (nonatomic) int authorizationRequest;
-@property (nonatomic) int authorizationStatus;
+@property (nonatomic) long long authorizationRequest;
+@property (nonatomic) long long authorizationStatus;
 @property (nonatomic) BOOL hasAuthorizationRequest;
 @property (nonatomic) BOOL hasAuthorizationStatus;
 @property (nonatomic) BOOL hasModificationDate;
 @property (nonatomic) BOOL hasObjectType;
 @property (nonatomic) double modificationDate;
-@property (nonatomic) int objectType;
+@property (nonatomic) long long objectType;
 
 - (int)_authorizationRequest;
 - (int)_authorizationStatus;
@@ -32,8 +32,8 @@
 - (void)_setAuthorizationStatusWithNumber:(id)arg1;
 - (void)_setDataTypeCodeWithObjectType:(id)arg1;
 - (void)_setModificationDate:(id)arg1;
-- (int)authorizationRequest;
-- (int)authorizationStatus;
+- (long long)authorizationRequest;
+- (long long)authorizationStatus;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -46,16 +46,16 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (double)modificationDate;
-- (int)objectType;
+- (long long)objectType;
 - (BOOL)readFrom:(id)arg1;
-- (void)setAuthorizationRequest:(int)arg1;
-- (void)setAuthorizationStatus:(int)arg1;
+- (void)setAuthorizationRequest:(long long)arg1;
+- (void)setAuthorizationStatus:(long long)arg1;
 - (void)setHasAuthorizationRequest:(BOOL)arg1;
 - (void)setHasAuthorizationStatus:(BOOL)arg1;
 - (void)setHasModificationDate:(BOOL)arg1;
 - (void)setHasObjectType:(BOOL)arg1;
 - (void)setModificationDate:(double)arg1;
-- (void)setObjectType:(int)arg1;
+- (void)setObjectType:(long long)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -8,8 +8,8 @@
     BOOL  _onlyDisplayMapLocations;
     _UINavigationControllerPalette * _palette;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _preferredContentSize;
     UISearchBar * _searchBar;
     EKUILocationSearchModel * _searchModel;
@@ -44,8 +44,8 @@
 - (void)eventsSearchUpdated:(id)arg1;
 - (void)frequentsSearchUpdated:(id)arg1;
 - (id)greyPinImage;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 styleProvider:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 styleProvider:(id)arg2 calendarItem:(id)arg3 eventStore:(id)arg4;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 styleProvider:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 styleProvider:(id)arg2 calendarItem:(id)arg3 eventStore:(id)arg4;
 - (id)itemAtIndexPath:(id)arg1;
 - (void)loadView;
 - (id)locationArrowImage;
@@ -54,7 +54,7 @@
 - (BOOL)needsSave;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (BOOL)onlyDisplayMapLocations;
-- (struct CGSize { double x1; double x2; })preferredContentSize;
+- (struct CGSize { float x1; float x2; })preferredContentSize;
 - (BOOL)presentModally;
 - (void)recentsSearchUpdated:(id)arg1;
 - (id)redPinImage;
@@ -64,7 +64,7 @@
 - (id)selectedLocation;
 - (void)setNeedsSave:(BOOL)arg1;
 - (void)setOnlyDisplayMapLocations:(BOOL)arg1;
-- (void)setPreferredContentSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setPreferredContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setSelectedConferenceRoom:(id)arg1;
 - (void)setSelectedLocation:(id)arg1;
 - (void)setStructuredLocation:(id)arg1;

@@ -26,10 +26,10 @@
     <PXActionPerformerDelegate> * _actionPerformerDelegate;
     PXBarsController * _barsController;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _contentEdgeInsets;
     PXPhotosDetailsContext * _context;
     BOOL  _empty;
@@ -59,7 +59,7 @@
 @property (nonatomic, readonly) NSArray *_widgets;
 @property (nonatomic) <PXActionPerformerDelegate> *actionPerformerDelegate;
 @property (nonatomic, readonly) PXBarsController *barsController;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentEdgeInsets;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentEdgeInsets;
 @property (nonatomic, readonly) PXPhotosDetailsContext *context;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -126,7 +126,7 @@
 - (void)_updateWidgetDisablingWithAnimationOptions:(id)arg1;
 - (void)_updateWidgetSpec;
 - (id)_viewModel;
-- (id)_widgetAtLocation:(struct CGPoint { double x1; double x2; })arg1 inCoordinateSpace:(id)arg2;
+- (id)_widgetAtLocation:(struct CGPoint { float x1; float x2; })arg1 inCoordinateSpace:(id)arg2;
 - (id)_widgetDisablingDimmingViews;
 - (id)_widgetOptions;
 - (id)_widgetSpec;
@@ -134,7 +134,7 @@
 - (void)actionPerformer:(id)arg1 didChangeState:(unsigned int)arg2;
 - (id)actionPerformerDelegate;
 - (id)barsController;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentEdgeInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentEdgeInsets;
 - (id)contentScrollView;
 - (id)context;
 - (void)dealloc;
@@ -150,17 +150,17 @@
 - (void)ppt_performBlockAfterAllWidgetLoadingCompletes:(id /* block */)arg1;
 - (id)ppt_scrollView;
 - (void)ppt_toggleDiscloseWidgets;
-- (struct CGSize { double x1; double x2; })preferredContentSize;
+- (struct CGSize { float x1; float x2; })preferredContentSize;
 - (id)preferredFocusEnvironments;
 - (void)preloadWithSourceRegionOfInterest:(id)arg1 forTransition:(id)arg2;
 - (id)previewActionItems;
 - (void)previewingContext:(id)arg1 commitViewController:(id)arg2;
-- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { double x1; double x2; })arg2;
+- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { float x1; float x2; })arg2;
 - (void)purgeIfPossible;
 - (BOOL)px_canPerformPinchTransitionWithMasterViewController:(id)arg1;
 - (BOOL)px_canPerformZoomTransitionWithDetailViewController:(id)arg1;
 - (BOOL)px_canPerformZoomTransitionWithMasterViewController:(id)arg1;
-- (id)px_diagnosticsItemProvidersForPoint:(struct CGPoint { double x1; double x2; })arg1 inCoordinateSpace:(id)arg2;
+- (id)px_diagnosticsItemProvidersForPoint:(struct CGPoint { float x1; float x2; })arg1 inCoordinateSpace:(id)arg2;
 - (id)px_endPointForTransition:(id)arg1;
 - (BOOL)px_isSnapBackDestination;
 - (id)regionOfInterestForTransition:(id)arg1;
@@ -171,7 +171,7 @@
 - (void)scrollViewControllerDidScroll:(id)arg1;
 - (void)scrollViewControllerWillBeginScrolling:(id)arg1;
 - (void)setActionPerformerDelegate:(id)arg1;
-- (void)setContentEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setContentEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setEmpty:(BOOL)arg1;
 - (void)setOccludedContentEdges:(unsigned int)arg1;
 - (BOOL)shouldUpdateStatusBarTitle;

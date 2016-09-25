@@ -13,7 +13,7 @@
 
 - (void).cxx_destruct;
 - (id)artwork;
-- (unsigned int)featureID;
+- (unsigned long long)featureID;
 - (id)initWithGEOTransitLine:(id)arg1;
 - (id)labelText;
 

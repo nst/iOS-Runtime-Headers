@@ -13,7 +13,7 @@
     QLDetailItemViewControllerState * _state;
 }
 
-@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } fileThumbnailFrame;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } fileThumbnailFrame;
 @property (nonatomic, retain) NSArray *information;
 @property (nonatomic, retain) QLDetailItemViewControllerState *state;
 
@@ -23,12 +23,12 @@
 - (BOOL)canEnterFullScreen;
 - (BOOL)canPinchToDismiss;
 - (BOOL)canSwipeToDismiss;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })fileThumbnailFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })fileThumbnailFrame;
 - (id)information;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)loadPreviewControllerWithPreviewItem:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)performAction;
-- (void)setFileThumbnailFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setFileThumbnailFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setInformation:(id)arg1;
 - (void)setState:(id)arg1;
 - (void)setState:(id)arg1 animated:(BOOL)arg2;

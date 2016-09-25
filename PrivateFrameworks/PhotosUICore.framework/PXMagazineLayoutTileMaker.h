@@ -6,36 +6,36 @@
     NSMutableArray * _allFrames;
     PXMagazineRectArray * _cachedTileRects;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _defaultTileSize;
-    double  _height;
-    double  _interTileSpacing;
-    double  _lastTileWidthPadding;
+    float  _height;
+    float  _interTileSpacing;
+    float  _lastTileWidthPadding;
     BOOL  _layoutFromRightToLeft;
-    double  _maxFrameAspectRatio;
+    float  _maxFrameAspectRatio;
     unsigned int  _maxTilesInFrame;
-    double  _minFrameAspectRatio;
-    double * _normalizedWeights;
+    float  _minFrameAspectRatio;
+    float * _normalizedWeights;
     unsigned int  _numberOfColumns;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _referenceSize;
     NSMutableArray * _sharedTempArray;
     BOOL  _startLastPadding;
-    double  _tileAspectRatio;
+    float  _tileAspectRatio;
     PXMagazineGrid * _tileGrid;
 }
 
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } defaultTileSize;
-@property (nonatomic, readonly) double height;
-@property (nonatomic) double interTileSpacing;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } defaultTileSize;
+@property (nonatomic, readonly) float height;
+@property (nonatomic) float interTileSpacing;
 @property (nonatomic) BOOL layoutFromRightToLeft;
 @property (nonatomic) unsigned int maxTilesInFrame;
 @property (nonatomic, readonly) unsigned int numberOfColumns;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } referenceSize;
-@property (nonatomic, readonly) double tileAspectRatio;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } referenceSize;
+@property (nonatomic, readonly) float tileAspectRatio;
 
 + (void)printInputs:(id)arg1;
 + (void)printLayout:(id)arg1 numOfColumns:(unsigned int)arg2;
@@ -45,7 +45,7 @@
 - (int)_availableFrames:(id*)arg1 maxReturnCount:(unsigned int)arg2 forAspectRatio:(float)arg3 weight:(float)arg4 maxWidth:(unsigned int)arg5;
 - (void)_findNextChunkWithInputs:(id)arg1 fromIndex:(unsigned int)arg2 outArray:(id)arg3;
 - (BOOL)_findNextTileWithInputs:(id)arg1 atIndex:(unsigned int)arg2 baseIndex:(unsigned int)arg3 coordinator:(id)arg4;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameFromTileFrame:(struct PXMagazineRect { struct PXMagazineOrigin { int x_1_1_1; int x_1_1_2; } x1; struct PXMagazineSize { int x_2_1_1; int x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameFromTileFrame:(struct PXMagazineRect { struct PXMagazineOrigin { int x_1_1_1; int x_1_1_2; } x1; struct PXMagazineSize { int x_2_1_1; int x_2_1_2; } x2; })arg1;
 - (id)_generateLastTilesWithInputs:(id)arg1 baseIndex:(unsigned int)arg2 returnFallback:(BOOL)arg3;
 - (id)_generateTilesWithInputs:(id)arg1;
 - (BOOL)_generateTilesWithInputs:(id)arg1 atIndex:(unsigned int)arg2 forMaxY:(unsigned int)arg3 reserveNumberForPadding:(unsigned int)arg4 outArray:(id)arg5;
@@ -57,16 +57,16 @@
 - (void)_updateDimensionInfos;
 - (BOOL)checkAndPrintResults:(BOOL)arg1;
 - (void)dealloc;
-- (struct CGSize { double x1; double x2; })defaultTileSize;
+- (struct CGSize { float x1; float x2; })defaultTileSize;
 - (id)description;
-- (void)getFrames:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg1 withInputs:(id)arg2;
+- (void)getFrames:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 withInputs:(id)arg2;
 - (float)height;
-- (id)initWithReferenceSize:(struct CGSize { double x1; double x2; })arg1 numberOfColumns:(unsigned int)arg2;
+- (id)initWithReferenceSize:(struct CGSize { float x1; float x2; })arg1 numberOfColumns:(unsigned int)arg2;
 - (float)interTileSpacing;
 - (BOOL)layoutFromRightToLeft;
 - (unsigned int)maxTilesInFrame;
 - (unsigned int)numberOfColumns;
-- (struct CGSize { double x1; double x2; })referenceSize;
+- (struct CGSize { float x1; float x2; })referenceSize;
 - (void)setInterTileSpacing:(float)arg1;
 - (void)setLayoutFromRightToLeft:(BOOL)arg1;
 - (void)setMaxTilesInFrame:(unsigned int)arg1;

@@ -4,28 +4,28 @@
 
 @interface BWQuickTimeMovieFileSinkNode : BWFileSinkNode {
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _adjustedMaxFileDuration;
-    unsigned int  _adjustedMaxFileSize;
-    unsigned int  _adjustedMinFreeDiskSpaceLimit;
+    unsigned long long  _adjustedMaxFileSize;
+    unsigned long long  _adjustedMinFreeDiskSpaceLimit;
     BOOL  _atLeastOneFragmentIsWritten;
     struct OpaqueCMByteStream { } * _byteStream;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _checkDiskSpaceAtThisDuration;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _currFileDuration;
-    unsigned int  _currFileSize;
+    unsigned long long  _currFileSize;
     struct AudioBufferList { unsigned int x1; struct AudioBuffer { unsigned int x_2_1_1; unsigned int x_2_1_2; void *x_2_1_3; } x2[1]; } * _debugABL;
     struct AudioStreamBasicDescription { 
         double mSampleRate; 
@@ -40,10 +40,10 @@
     }  _debugASBD;
     BOOL  _debugAudio;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _debugDurationForFailOfDiskSpaceTest;
     BOOL  _didBeginSession;
     BOOL  _didBeginWriting;
@@ -63,21 +63,21 @@
     unsigned int  _masterInputIndex;
     int  _masterInputTimeScale;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _maxFileDuration;
-    unsigned int  _maxFileSize;
-    double  _maxVideoFrameRate;
-    unsigned int  _minFreeDiskSpaceLimit;
+    unsigned long long  _maxFileSize;
+    float  _maxVideoFrameRate;
+    unsigned long long  _minFreeDiskSpaceLimit;
     NSArray * _movieLevelMetadata;
     BOOL  _needToDeMoof;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _nextTimeToReturnFileSize;
     unsigned int  _numAudioTracks;
     unsigned int  _numInputs;
@@ -91,10 +91,10 @@
     FigCaptureMovieFileRecordingSettings * _settings;
     NSArray * _stagingQueues;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _startingPTS;
     NSArray * _structuralDependentTrackReferenceListForMetadataInputs;
     NSObject<OS_dispatch_queue> * _thumbnailGenerationDispatchQueue;
@@ -104,7 +104,7 @@
 }
 
 @property (nonatomic) BOOL irisMovieProcessingSuspended;
-@property (nonatomic) double maxVideoFrameRate;
+@property (nonatomic) float maxVideoFrameRate;
 @property (nonatomic, copy) NSArray *movieLevelMetadata;
 @property (nonatomic, copy) NSArray *structuralDependentTrackReferenceListForMetadataInputs;
 @property (nonatomic, copy) NSArray *trackReferenceListForMetadataInputs;
@@ -116,32 +116,32 @@
 - (long)_checkFreeSpace;
 - (void)_debugAudioUsingSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
 - (void)_determineWhichInputsWeExpectToSeeSamplesFor;
-- (void)_doEndRecordingAtTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1 earlyTerminationErrCode:(long)arg2;
-- (long)_doStartRecordingAtTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1 withSettings:(id)arg2 thumbnailSourcePixelBuffer:(struct __CVBuffer { }*)arg3 sensorVideoPort:(struct __CFString { }*)arg4;
+- (void)_doEndRecordingAtTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 earlyTerminationErrCode:(long)arg2;
+- (long)_doStartRecordingAtTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 withSettings:(id)arg2 thumbnailSourcePixelBuffer:(struct __CVBuffer { }*)arg3 sensorVideoPort:(struct __CFString { }*)arg4;
 - (BOOL)_driveStateMachineWithBuffer:(struct opaqueCMSampleBuffer { }*)arg1 forInput:(id)arg2 sampleBufferAlreadyAtHeadOfQueue:(BOOL)arg3;
 - (void)_driveStateMachineWithMediaBuffer:(struct opaqueCMSampleBuffer { }*)arg1 forInputIndex:(unsigned int)arg2 sampleBufferAlreadyAtHeadOfQueue:(BOOL)arg3;
 - (BOOL)_driveStateMachineWithPauseMarkerBuffer:(struct opaqueCMSampleBuffer { }*)arg1 forInputIndex:(unsigned int)arg2 sampleBufferAlreadyAtHeadOfQueue:(BOOL)arg3;
 - (BOOL)_driveStateMachineWithResumeMarkerBuffer:(struct opaqueCMSampleBuffer { }*)arg1 forInputIndex:(unsigned int)arg2 sampleBufferAlreadyAtHeadOfQueue:(BOOL)arg3;
 - (BOOL)_driveStateMachineWithStartMarkerBuffer:(struct opaqueCMSampleBuffer { }*)arg1 forInputIndex:(unsigned int)arg2 sampleBufferAlreadyAtHeadOfQueue:(BOOL)arg3;
 - (BOOL)_driveStateMachineWithStopMarkerBuffer:(struct opaqueCMSampleBuffer { }*)arg1 forInputIndex:(unsigned int)arg2 sampleBufferAlreadyAtHeadOfQueue:(BOOL)arg3;
-- (struct { int x1; int x2; unsigned int x3; int x4; })_findMarkers:(struct __CFString { }*)arg1;
-- (struct { int x1; int x2; unsigned int x3; int x4; })_findStartMarkersWithMatchedStagedSetting:(id*)arg1 thumbnailSourcePixelBuffer:(struct __CVBuffer {}**)arg2 sensorVideoPort:(const struct __CFString {}**)arg3;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })_findMarkers:(struct __CFString { }*)arg1;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })_findStartMarkersWithMatchedStagedSetting:(id*)arg1 thumbnailSourcePixelBuffer:(struct __CVBuffer {}**)arg2 sensorVideoPort:(const struct __CFString {}**)arg3;
 - (void)_finishIrisMovieGenerationForLastRecordingIfNeeded;
 - (void)_forceEarlyTerminationWithErrorCode:(long)arg1;
-- (unsigned int)_getCurrentFileSize:(BOOL)arg1;
+- (unsigned long long)_getCurrentFileSize:(BOOL)arg1;
 - (void)_handleFormatWriterDidWriteFragmentNotification;
 - (void)_moveOrDeleteTemporaryIrisMovie:(id)arg1 recordingSucceeded:(BOOL)arg2;
 - (void)_preprocessingForFirstAudioBuffer:(struct opaqueCMSampleBuffer { }*)arg1 forInputIndex:(unsigned int)arg2;
 - (void)_preprocessingForFirstMetadataBuffer:(struct opaqueCMSampleBuffer { }*)arg1 forInputIndex:(unsigned int)arg2;
 - (void)_preprocessingForFirstVideoBuffer:(struct opaqueCMSampleBuffer { }*)arg1 forInputIndex:(unsigned int)arg2;
 - (void)_printBufferEvent:(struct opaqueCMSampleBuffer { }*)arg1 forNodeInputIndex:(unsigned int)arg2 eventName:(id)arg3;
-- (long)_startUpFormatWriterAtTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1 withSettings:(id)arg2;
+- (long)_startUpFormatWriterAtTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 withSettings:(id)arg2;
 - (id)_validTrackReferencesForReferenceInputIndexes:(id)arg1;
 - (long)_verifyMovieTiming:(id)arg1;
 - (void)_writeBuffer:(struct opaqueCMSampleBuffer { }*)arg1 forInputIndex:(unsigned int)arg2;
 - (void)_writeIrisRefMovieWithInfo:(id)arg1;
-- (long)_writeStillImageTimeMetadataSampleForCaptureTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1 toTrackWithID:(int)arg2 usingTrackTimeScale:(int)arg3;
-- (void)configurationWithID:(int)arg1 updatedFormat:(id)arg2 didBecomeLiveForInput:(id)arg3;
+- (long)_writeStillImageTimeMetadataSampleForCaptureTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 toTrackWithID:(int)arg2 usingTrackTimeScale:(int)arg3;
+- (void)configurationWithID:(long long)arg1 updatedFormat:(id)arg2 didBecomeLiveForInput:(id)arg3;
 - (void)dealloc;
 - (void)didReachEndOfDataForInput:(id)arg1;
 - (void)handleIrisReferenceMovieRequest:(id)arg1 forInput:(id)arg2;
@@ -149,8 +149,8 @@
 - (id)initWithNumberOfVideoInputs:(unsigned int)arg1 numberOfAudioInputs:(unsigned int)arg2 numberOfMetadataInputs:(unsigned int)arg3;
 - (BOOL)irisMovieProcessingSuspended;
 - (BOOL)irisSampleReferenceMoviesEnabled;
-- (struct { int x1; int x2; unsigned int x3; int x4; })lastFileDuration;
-- (unsigned int)lastFileSize;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })lastFileDuration;
+- (unsigned long long)lastFileSize;
 - (float)maxVideoFrameRate;
 - (id)movieLevelMetadata;
 - (id)nodeSubType;

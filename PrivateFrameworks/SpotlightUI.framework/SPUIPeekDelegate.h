@@ -27,7 +27,7 @@
 @property SPUITableViewController *viewController;
 
 - (void).cxx_destruct;
-- (void)animateRevealWithInteractionProgress:(id)arg1 forPreviewingAtLocation:(struct CGPoint { double x1; double x2; })arg2 inSourceView:(id)arg3 containerView:(id)arg4;
+- (void)animateRevealWithInteractionProgress:(id)arg1 forPreviewingAtLocation:(struct CGPoint { float x1; float x2; })arg2 inSourceView:(id)arg3 containerView:(id)arg4;
 - (void)didDismissPreviewViewController:(id)arg1 committing:(BOOL)arg2;
 - (BOOL)didPeek;
 - (void)fillParentViewController:(id)arg1 withChild:(id)arg2;
@@ -40,7 +40,7 @@
 - (BOOL)keyboardShouldReturn;
 - (void)prepareForPreviewAtIndexPath:(id)arg1;
 - (void)previewingContext:(id)arg1 commitViewController:(id)arg2;
-- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { double x1; double x2; })arg2;
+- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { float x1; float x2; })arg2;
 - (id)result;
 - (void)setDidPeek:(BOOL)arg1;
 - (void)setHiddenCell:(id)arg1;

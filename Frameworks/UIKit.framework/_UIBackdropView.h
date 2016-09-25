@@ -5,8 +5,8 @@
 @interface _UIBackdropView : UIView {
     BOOL  __backdropVisible;
     NSString * __blurQuality;
-    double  __blurRadius;
-    double  __saturationDeltaFactor;
+    float  __blurRadius;
+    float  __saturationDeltaFactor;
     BOOL  _allowsColorSettingsSuppression;
     double  _appliesOutputSettingsAnimationDuration;
     BOOL  _appliesOutputSettingsAutomatically;
@@ -26,9 +26,9 @@
     NSMutableDictionary * _colorBurnTintMaskViewMap;
     UIView * _colorBurnTintView;
     UIColor * _colorMatrixColorTint;
-    double  _colorMatrixColorTintAlpha;
-    double  _colorMatrixGrayscaleTintAlpha;
-    double  _colorMatrixGrayscaleTintLevel;
+    float  _colorMatrixColorTintAlpha;
+    float  _colorMatrixGrayscaleTintAlpha;
+    float  _colorMatrixGrayscaleTintLevel;
     CAFilter * _colorOffsetFilter;
     CAFilter * _colorSaturateFilter;
     UIImage * _colorTintMaskImage;
@@ -41,7 +41,7 @@
     UIView * _contentView;
     BOOL  _contentViewAccessed;
     BOOL  _contentViewAccessorGuard;
-    double  _cornerRadius;
+    float  _cornerRadius;
     BOOL  _cornerRadiusIsContinuous;
     UIImage * _darkeningTintMaskImage;
     UIView * _darkeningTintMaskViewContainer;
@@ -64,10 +64,10 @@
     NSHashTable * _observers;
     _UIBackdropViewSettings * _outputSettings;
     NSMutableSet * _partialMaskViews;
-    double  _previousBackdropStatisticsBlue;
-    double  _previousBackdropStatisticsContrast;
-    double  _previousBackdropStatisticsGreen;
-    double  _previousBackdropStatisticsRed;
+    float  _previousBackdropStatisticsBlue;
+    float  _previousBackdropStatisticsContrast;
+    float  _previousBackdropStatisticsGreen;
+    float  _previousBackdropStatisticsRed;
     BOOL  _requiresTintViews;
     _UIBackdropViewSettings * _savedInputSettingsDuringRenderInContext;
     BOOL  _simulatesMasks;
@@ -79,8 +79,8 @@
 
 @property (nonatomic) BOOL _backdropVisible;
 @property (nonatomic, copy) NSString *_blurQuality;
-@property (nonatomic) double _blurRadius;
-@property (nonatomic) double _saturationDeltaFactor;
+@property (nonatomic) float _blurRadius;
+@property (nonatomic) float _saturationDeltaFactor;
 @property (nonatomic) BOOL allowsColorSettingsSuppression;
 @property (nonatomic) double appliesOutputSettingsAnimationDuration;
 @property (nonatomic) BOOL appliesOutputSettingsAutomatically;
@@ -100,9 +100,9 @@
 @property (nonatomic, retain) NSMutableDictionary *colorBurnTintMaskViewMap;
 @property (nonatomic, retain) UIView *colorBurnTintView;
 @property (nonatomic, retain) UIColor *colorMatrixColorTint;
-@property (nonatomic) double colorMatrixColorTintAlpha;
-@property (nonatomic) double colorMatrixGrayscaleTintAlpha;
-@property (nonatomic) double colorMatrixGrayscaleTintLevel;
+@property (nonatomic) float colorMatrixColorTintAlpha;
+@property (nonatomic) float colorMatrixGrayscaleTintAlpha;
+@property (nonatomic) float colorMatrixGrayscaleTintLevel;
 @property (nonatomic, retain) CAFilter *colorOffsetFilter;
 @property (nonatomic, retain) CAFilter *colorSaturateFilter;
 @property (nonatomic, retain) UIImage *colorTintMaskImage;
@@ -137,10 +137,10 @@
 @property (nonatomic, retain) NSHashTable *observers;
 @property (nonatomic, retain) _UIBackdropViewSettings *outputSettings;
 @property (nonatomic, retain) NSMutableSet *partialMaskViews;
-@property (nonatomic) double previousBackdropStatisticsBlue;
-@property (nonatomic) double previousBackdropStatisticsContrast;
-@property (nonatomic) double previousBackdropStatisticsGreen;
-@property (nonatomic) double previousBackdropStatisticsRed;
+@property (nonatomic) float previousBackdropStatisticsBlue;
+@property (nonatomic) float previousBackdropStatisticsContrast;
+@property (nonatomic) float previousBackdropStatisticsGreen;
+@property (nonatomic) float previousBackdropStatisticsRed;
 @property (nonatomic) BOOL requiresTintViews;
 @property (nonatomic, retain) _UIBackdropViewSettings *savedInputSettingsDuringRenderInContext;
 @property (nonatomic) BOOL simulatesMasks;
@@ -251,11 +251,11 @@
 - (id)grayscaleTintView;
 - (id)groupName;
 - (id)init;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 autosizesToFitSuperview:(BOOL)arg2 settings:(id)arg3;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 privateStyle:(int)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 settings:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 style:(int)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 autosizesToFitSuperview:(BOOL)arg2 settings:(id)arg3;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 privateStyle:(int)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 settings:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
 - (id)initWithPrivateStyle:(int)arg1;
 - (id)initWithSettings:(id)arg1;
 - (id)initWithStyle:(int)arg1;

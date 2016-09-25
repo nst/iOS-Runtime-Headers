@@ -22,7 +22,7 @@
 
 - (struct opaqueCMSampleBuffer { }*)_newQuadraResampledSampleBufferFromSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 outputPixelBuffer:(struct __CVBuffer { }*)arg2;
 - (id)_outputRequirementsForInputFormat:(id)arg1;
-- (void)configurationWithID:(int)arg1 updatedFormat:(id)arg2 didBecomeLiveForInput:(id)arg3;
+- (void)configurationWithID:(long long)arg1 updatedFormat:(id)arg2 didBecomeLiveForInput:(id)arg3;
 - (void)dealloc;
 - (void)didReachEndOfDataForInput:(id)arg1;
 - (void)didSelectFormat:(id)arg1 forInput:(id)arg2;

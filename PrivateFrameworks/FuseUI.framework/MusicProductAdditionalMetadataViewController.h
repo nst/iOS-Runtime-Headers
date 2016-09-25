@@ -35,7 +35,7 @@
 @property (nonatomic) <MusicProductAdditionalMetadataViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) MusicMediaDetailTintInformation *detailTintInformation;
-@property (nonatomic, readonly) double effectiveContentHeight;
+@property (nonatomic, readonly) float effectiveContentHeight;
 @property (readonly) unsigned int hash;
 @property (nonatomic, copy) MusicProductDescription *productDescription;
 @property (nonatomic) int productDescriptionMaximumLengthForTextInput;

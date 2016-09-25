@@ -18,7 +18,7 @@
 - (void)generateLargeThumbnailFileIfNecessary;
 - (BOOL)hasAdjustments;
 - (BOOL)hasLegacyAdjustments;
-- (struct CGSize { double x1; double x2; })imageSize;
+- (struct CGSize { float x1; float x2; })imageSize;
 - (BOOL)isCloudPhotoLibraryAsset;
 - (BOOL)isCloudPlaceholder;
 - (BOOL)isCloudSharedAsset;
@@ -32,7 +32,7 @@
 - (BOOL)isVideo;
 - (short)kind;
 - (short)kindSubtype;
-- (unsigned int)localResourcesState;
+- (unsigned long long)localResourcesState;
 - (PLManagedAsset *)managedAssetForPhotoLibrary:(PLPhotoLibrary *)arg1;
 - (NSManagedObjectID *)objectID;
 - (int)orientation;

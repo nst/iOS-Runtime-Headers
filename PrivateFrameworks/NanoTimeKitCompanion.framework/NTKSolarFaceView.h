@@ -10,13 +10,13 @@
     NSTimer * _buttonPressTimer;
     BOOL  _canHandleHardwareEvents;
     struct NSNumber { Class x1; } * _clockTimerToken;
-    double  _currentSolarDiskPercentage;
+    float  _currentSolarDiskPercentage;
     NTKComplicationController * _dateComplicationController;
     NTKDateComplicationLabel * _dateComplicationLabel;
     NTKLayoutRule * _dateComplicationLayoutRule;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _dateLabelZoomEndingCenter;
     UIView * _horizonGradientContainerView;
     UIImageView * _horizonGradientView;
@@ -36,11 +36,11 @@
     UIView * _solarDiskHaloMaskView;
     UIView * _solarDiskHaloParentView;
     UIImageView * _solarDiskHaloView;
-    double  _solarDiskOverridePercentage;
+    float  _solarDiskOverridePercentage;
     NTKSolarDiskView * _solarDiskView;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _solarDiskViewZoomEndingCenter;
     NTKSolarPath * _solarPath;
     BOOL  _solarPathNeedsUpdate;
@@ -52,8 +52,8 @@
     NTKDigitalTimeLabelStyle * _timeLabelDefaultStyle;
     NTKDigitalTimeLabelStyle * _timeLabelSmallInUpperRightCornerStyle;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _timeLabelZoomEndingCenter;
     NTKDigitalTimeLabel * _timeScrubLabel;
     NTKDigitalTimeLabelStyle * _timeScrubLabelStyle;
@@ -110,7 +110,7 @@
 - (void)_makeLocationAwareInteractiveModeUIVisible:(BOOL)arg1 animated:(BOOL)arg2;
 - (float)_percentageForWaypoint:(int)arg1;
 - (void)_performWristRaiseAnimation;
-- (struct CGPoint { double x1; double x2; })_pointOnSolarPathForPercentage:(float)arg1;
+- (struct CGPoint { float x1; float x2; })_pointOnSolarPathForPercentage:(float)arg1;
 - (void)_prepareForSettingViewMode:(int)arg1;
 - (void)_prepareToZoomWithIconView:(id)arg1 minDiameter:(float)arg2 maxDiameter:(float)arg3;
 - (void)_prepareWristRaiseAnimation;
@@ -131,7 +131,7 @@
 - (void)_updateSolarDiskHaloViewPosition;
 - (void)_updateSolarHaloWithPercentage:(float)arg1;
 - (void)_updateSolarHorizonGradientAlphaWithPercentage:(float)arg1;
-- (void)_updateSolarHorizonGradientAlphaWithSolarDiskCenter:(struct CGPoint { double x1; double x2; })arg1;
+- (void)_updateSolarHorizonGradientAlphaWithSolarDiskCenter:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_updateSolarHorizonGradientColorWithPercentage:(float)arg1;
 - (void)_updateSolarPathForChangedDate:(id)arg1;
 - (void)_updateSolarPathForChangedLocation:(id)arg1;
@@ -145,7 +145,7 @@
 - (void)_wheelDelayTimerFired;
 - (void)dealloc;
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (void)setOverrideDate:(id)arg1 duration:(double)arg2;
 - (void)setTimeOffset:(double)arg1;

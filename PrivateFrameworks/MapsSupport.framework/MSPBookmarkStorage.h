@@ -38,7 +38,7 @@
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 + (id)__test_newBookmarkStorageForLine;
-+ (id)__test_newBookmarkStorageForLineWithMuid:(unsigned int)arg1;
++ (id)__test_newBookmarkStorageForLineWithMuid:(unsigned long long)arg1;
 
 - (void).cxx_destruct;
 - (int)StringAsType:(id)arg1;

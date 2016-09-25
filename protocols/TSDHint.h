@@ -15,8 +15,8 @@
 
 @optional
 
-- (struct CGSize { double x1; double x2; })effectiveSize;
+- (struct CGSize { float x1; float x2; })effectiveSize;
 - (BOOL)isFirstHint;
-- (struct CGSize { double x1; double x2; })maximumSize;
+- (struct CGSize { float x1; float x2; })maximumSize;
 
 @end

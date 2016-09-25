@@ -26,7 +26,7 @@
 - (id)delegate;
 - (void)downloadRemoteImageForNetwork:(id)arg1 completion:(id /* block */)arg2;
 - (id)featuredNetworksImageData;
-- (struct CGSize { double x1; double x2; })imageSizeForScreenSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })imageSizeForScreenSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)initWithManifest:(id)arg1 featuredNetworks:(id)arg2;
 - (id)primaryFeaturedNetwork;
 - (void)setDelegate:(id)arg1;

@@ -18,7 +18,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) double duration;
-@property (nonatomic) int fileSize;
+@property (nonatomic) long long fileSize;
 @property (nonatomic) BOOL hasMarkupData;
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL isBeingEditedLocallyOnDevice;
@@ -91,12 +91,12 @@
 - (id)attachmentModel;
 - (id)attachmentPreviewImageCreatingIfNecessaryWithWidth:(float)arg1 height:(float)arg2 scale:(float)arg3 scaleWhenDrawing:(BOOL)arg4 metadata:(id)arg5;
 - (id)attachmentPreviewImageCreatingIfNecessaryWithWidth:(float)arg1 height:(float)arg2 scale:(float)arg3 scaleWhenDrawing:(BOOL)arg4 metadata:(id)arg5 save:(BOOL)arg6;
-- (id)attachmentPreviewImageWithMinSize:(struct CGSize { double x1; double x2; })arg1 scale:(float)arg2;
-- (id)attachmentPreviewImageWithMinSize:(struct CGSize { double x1; double x2; })arg1 scale:(float)arg2 matchScale:(BOOL)arg3;
+- (id)attachmentPreviewImageWithMinSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2;
+- (id)attachmentPreviewImageWithMinSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2 matchScale:(BOOL)arg3;
 - (short)attachmentType;
 - (id)attributedString;
 - (id)authorsExcludingCurrentUser;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })bounds;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
 - (struct UIImage { Class x1; }*)cachedImage;
 - (BOOL)checkPreviewImagesIntegrity;
 - (id)childCloudObjects;
@@ -105,7 +105,7 @@
 - (void)deleteFromLocalDatabase;
 - (void)deleteFromNoteContextUsingIndexerContext:(id)arg1;
 - (void)didUpdateLocationPlace;
-- (BOOL)fetchThumbnailImageWithMinSize:(struct CGSize { double x1; double x2; })arg1 scale:(float)arg2 cache:(id)arg3 cacheKey:(id)arg4 processingBlock:(id /* block */)arg5 completionBlock:(id /* block */)arg6 fallbackBlock:(id /* block */)arg7 aboutToLoadHandler:(id /* block */)arg8;
+- (BOOL)fetchThumbnailImageWithMinSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2 cache:(id)arg3 cacheKey:(id)arg4 processingBlock:(id /* block */)arg5 completionBlock:(id /* block */)arg6 fallbackBlock:(id /* block */)arg7 aboutToLoadHandler:(id /* block */)arg8;
 - (id)fileSizeString;
 - (void)fixBrokenReferences;
 - (id)generateSearchIndexStringsOperation;
@@ -113,7 +113,7 @@
 - (id)ic_loggingValues;
 - (BOOL)ignoreInSearchIndexer;
 - (struct UIImage { Class x1; }*)image;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (void)invalidateAttachmentPreviewImages;
 - (BOOL)isAppStore;
 - (BOOL)isBeingEditedLocallyOnDevice;
@@ -127,10 +127,10 @@
 - (BOOL)isURL;
 - (BOOL)isVisible;
 - (BOOL)isiTunes;
-- (void)loadFromArchive:(const struct Attachment { int (**x1)(); struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_2_1_1; } x2; unsigned int x3[1]; int x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; double x7; double x8; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x9; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x10; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x11; }*)arg1 withIdentifierMap:(id)arg2;
+- (void)loadFromArchive:(const struct Attachment { int (**x1)(); struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_2_1_1; } x2; unsigned int x3[1]; int x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; float x7; float x8; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x9; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x10; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x11; }*)arg1 withIdentifierMap:(id)arg2;
 - (id /* block */)loadImage:(id /* block */)arg1;
 - (id /* block */)loadImage:(id /* block */)arg1 aboutToLoadHandler:(id /* block */)arg2;
-- (void)loadPreviewArchive:(const struct PreviewImage { int (**x1)(); struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_2_1_1; } x2; unsigned int x3[1]; int x4; double x5; bool x6; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x7; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x8; int x9; int x10; }*)arg1;
+- (void)loadPreviewArchive:(const struct PreviewImage { int (**x1)(); struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_2_1_1; } x2; unsigned int x3[1]; int x4; float x5; bool x6; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x7; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x8; int x9; int x10; }*)arg1;
 - (BOOL)locationNeedsUpdate;
 - (void)markForDeletion;
 - (void)mergeDataFromRecord:(id)arg1;
@@ -162,8 +162,8 @@
 - (void)resetUniqueIdentifier;
 - (void)saveAndClearDecryptedData;
 - (void)saveMergeableDataIfNeeded;
-- (void)savePreview:(id)arg1 toArchive:(struct PreviewImage { int (**x1)(); struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_2_1_1; } x2; unsigned int x3[1]; int x4; double x5; bool x6; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x7; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x8; int x9; int x10; }*)arg2;
-- (void)saveToArchive:(struct Attachment { int (**x1)(); struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_2_1_1; } x2; unsigned int x3[1]; int x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; double x7; double x8; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x9; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x10; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x11; }*)arg1 stripImageMarkupMetadata:(BOOL)arg2;
+- (void)savePreview:(id)arg1 toArchive:(struct PreviewImage { int (**x1)(); struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_2_1_1; } x2; unsigned int x3[1]; int x4; float x5; bool x6; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x7; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x8; int x9; int x10; }*)arg2;
+- (void)saveToArchive:(struct Attachment { int (**x1)(); struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_2_1_1; } x2; unsigned int x3[1]; int x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; float x7; float x8; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x9; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x10; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x11; }*)arg1 stripImageMarkupMetadata:(BOOL)arg2;
 - (id)searchDomainIdentifier;
 - (id)searchIndexStringsOutHasAdditionalStrings:(BOOL*)arg1;
 - (id)searchIndexableTitleUsingContentTextIfNecessary:(id)arg1;
@@ -171,7 +171,7 @@
 - (unsigned int)searchResultsSection;
 - (id)searchableItemAttributeSet;
 - (id)searchableItemIdentifier;
-- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setCachedImage:(struct UIImage { Class x1; }*)arg1;
 - (void)setIsBeingEditedLocallyOnDevice:(BOOL)arg1;
 - (void)setMergeableData:(id)arg1;
@@ -188,7 +188,7 @@
 - (id)summary;
 - (BOOL)supportsDeletionByTTL;
 - (BOOL)supportsSavingAttachmentToExternalFile;
-- (BOOL)thumbnailImage:(struct UIImage { Class x1; }**)arg1 minSize:(struct CGSize { double x1; double x2; })arg2 scale:(float)arg3 imageScaling:(unsigned int*)arg4 showAsFileIcon:(BOOL*)arg5 isMovie:(BOOL*)arg6 movieDuration:(struct { int x1; int x2; unsigned int x3; int x4; }*)arg7;
+- (BOOL)thumbnailImage:(struct UIImage { Class x1; }**)arg1 minSize:(struct CGSize { float x1; float x2; })arg2 scale:(float)arg3 imageScaling:(unsigned int*)arg4 showAsFileIcon:(BOOL*)arg5 isMovie:(BOOL*)arg6 movieDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg7;
 - (id)title;
 - (void)unmarkForDeletion;
 - (void)updateAfterMediaChange;

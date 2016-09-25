@@ -4,15 +4,15 @@
 
 @interface RCEntityRevision : NSManagedObject
 
-@property (nonatomic, readonly) int recordingID;
-@property (nonatomic, readonly) int revisionID;
+@property (nonatomic, readonly) long long recordingID;
+@property (nonatomic, readonly) long long revisionID;
 @property (nonatomic, readonly) int revisionType;
 
-- (int)recordingID;
-- (int)revisionID;
+- (long long)recordingID;
+- (long long)revisionID;
 - (int)revisionType;
-- (void)setRecordingID:(int)arg1;
-- (void)setRevisionID:(int)arg1;
+- (void)setRecordingID:(long long)arg1;
+- (void)setRevisionID:(long long)arg1;
 - (void)setRevisionType:(int)arg1;
 
 @end

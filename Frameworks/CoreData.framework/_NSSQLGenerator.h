@@ -16,7 +16,7 @@
 - (void)appendSQL:(id)arg1;
 - (void)appendWhereClause:(id)arg1;
 - (void)appendWhereClauseToSQL;
-- (void)buildWhereClauseForRow:(id)arg1 optLock:(int)arg2;
+- (void)buildWhereClauseForRow:(id)arg1 optLock:(long long)arg2;
 - (void)dealloc;
 - (id)initWithStatement:(id)arg1 forAdapter:(id)arg2;
 - (void)prepareConstrainedValuesUpdateStatementWithRow:(id)arg1;

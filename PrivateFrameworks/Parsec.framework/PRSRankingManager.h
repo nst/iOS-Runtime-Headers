@@ -33,7 +33,7 @@
 - (id)initWithGroupedResult:(id)arg1 preferredTopHitGroups:(id)arg2 shortcuts:(id)arg3;
 - (id)postDeDuplicationTopHitResultArray:(id)arg1;
 - (id)preferredTopHitGroups;
-- (BOOL)rankIsMeaningfulForTopHit:(unsigned int)arg1;
+- (BOOL)rankIsMeaningfulForTopHit:(unsigned long long)arg1;
 - (void)setCombinedBottomScoreOrder:(id)arg1;
 - (void)setCombinedTopScoreOrder:(id)arg1;
 - (void)setGroupedResults:(id)arg1;

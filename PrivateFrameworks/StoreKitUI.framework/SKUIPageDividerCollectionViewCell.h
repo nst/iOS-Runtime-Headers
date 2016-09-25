@@ -5,48 +5,48 @@
 @interface SKUIPageDividerCollectionViewCell : UICollectionViewCell <SKUIViewElementView> {
     UIView * _bottomDividerLine;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _contentInset;
-    double  _dividerHeight;
+    float  _dividerHeight;
     int  _dividerType;
     UIColor * _insetColor;
     UIView * _insetView;
-    double  _leftEdgeInset;
-    double  _rightEdgeInset;
+    float  _leftEdgeInset;
+    float  _rightEdgeInset;
     UIView * _topDividerLine;
     int  _verticalAlignment;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) double dividerHeight;
+@property (nonatomic) float dividerHeight;
 @property (nonatomic) int dividerType;
 @property (readonly) unsigned int hash;
-@property (nonatomic) double leftEdgeInset;
-@property (nonatomic) double rightEdgeInset;
+@property (nonatomic) float leftEdgeInset;
+@property (nonatomic) float rightEdgeInset;
 @property (readonly) Class superclass;
 @property (nonatomic) int verticalAlignment;
 
-+ (struct CGSize { double x1; double x2; })preferredSizeForViewElement:(id)arg1 context:(id)arg2;
++ (struct CGSize { float x1; float x2; })preferredSizeForViewElement:(id)arg1 context:(id)arg2;
 + (BOOL)prefetchResourcesForViewElement:(id)arg1 reason:(int)arg2 context:(id)arg3;
 + (void)requestLayoutForViewElement:(id)arg1 width:(float)arg2 context:(id)arg3;
-+ (struct CGSize { double x1; double x2; })sizeThatFitsWidth:(float)arg1 viewElement:(id)arg2 context:(id)arg3;
++ (struct CGSize { float x1; float x2; })sizeThatFitsWidth:(float)arg1 viewElement:(id)arg2 context:(id)arg3;
 
 - (void).cxx_destruct;
 - (void)applyLayoutAttributes:(id)arg1;
 - (float)dividerHeight;
 - (int)dividerType;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (float)leftEdgeInset;
 - (void)reloadWithViewElement:(id)arg1 width:(float)arg2 context:(id)arg3;
 - (float)rightEdgeInset;
 - (void)setColoringWithColorScheme:(id)arg1;
 - (void)setColoringWithStyle:(id)arg1;
-- (void)setContentInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setDividerHeight:(float)arg1;
 - (void)setDividerType:(int)arg1;
 - (BOOL)setImage:(id)arg1 forArtworkRequest:(id)arg2 context:(id)arg3;

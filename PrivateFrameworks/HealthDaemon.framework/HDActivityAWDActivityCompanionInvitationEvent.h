@@ -16,7 +16,7 @@
     BOOL  _retryExpected;
     int  _stage;
     BOOL  _success;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) int action;
@@ -30,7 +30,7 @@
 @property (nonatomic) BOOL retryExpected;
 @property (nonatomic) int stage;
 @property (nonatomic) BOOL success;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 
 - (int)StringAsAction:(id)arg1;
 - (int)StringAsFailureReason:(id)arg1;
@@ -65,11 +65,11 @@
 - (void)setRetryExpected:(BOOL)arg1;
 - (void)setStage:(int)arg1;
 - (void)setSuccess:(BOOL)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (int)stage;
 - (id)stageAsString:(int)arg1;
 - (BOOL)success;
-- (unsigned int)timestamp;
+- (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -5,12 +5,12 @@
 @interface SKUITomatoRatingViewElement : SKUIViewElement {
     int  _freshness;
     SKUIViewElementText * _ratingText;
-    double  _tomatoRating;
+    float  _tomatoRating;
 }
 
 @property (nonatomic, readonly) int freshness;
 @property (nonatomic, readonly) SKUIViewElementText *ratingText;
-@property (nonatomic, readonly) double tomatoRating;
+@property (nonatomic, readonly) float tomatoRating;
 
 - (void).cxx_destruct;
 - (id)applyUpdatesWithElement:(id)arg1;

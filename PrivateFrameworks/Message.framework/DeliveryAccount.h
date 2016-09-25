@@ -29,11 +29,11 @@
 - (BOOL)hasNoReferences;
 - (id)identifier;
 - (id)mailAccountIfAvailable;
-- (unsigned int)maximumMessageBytes;
+- (unsigned long long)maximumMessageBytes;
 - (id)newDeliveryWithHeaders:(id)arg1 HTML:(id)arg2 plainTextAlternative:(id)arg3 other:(id)arg4 charsets:(id)arg5;
 - (id)newDeliveryWithHeaders:(id)arg1 mixedContent:(id)arg2 textPartsAreHTML:(BOOL)arg3;
 - (id)newDeliveryWithMessage:(id)arg1;
-- (void)setMaximumMessageBytes:(unsigned int)arg1;
+- (void)setMaximumMessageBytes:(unsigned long long)arg1;
 - (void)setShouldUseAuthentication:(BOOL)arg1;
 - (void)setUsername:(id)arg1;
 - (BOOL)shouldUseAuthentication;

@@ -7,7 +7,7 @@
 }
 
 - (void)dealloc;
-- (id)eventForController:(unsigned int)arg1 element:(int)arg2;
-- (void)invokeEventsForController:(unsigned int)arg1 beacuseElement:(int)arg2;
+- (id)eventForController:(unsigned long long)arg1 element:(int)arg2;
+- (void)invokeEventsForController:(unsigned long long)arg1 beacuseElement:(int)arg2;
 
 @end

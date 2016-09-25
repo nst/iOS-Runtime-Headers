@@ -12,8 +12,8 @@
     NSData * _optionsData;
     int  _singleThumbnailImageLength;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _size;
     NSData * _thumbnailData;
     NSMutableArray * _thumbnailImages;
@@ -23,12 +23,12 @@
 @property (nonatomic, readonly) int bitsPerComponent;
 @property (nonatomic, readonly) int bytesPerPixel;
 @property (nonatomic, readonly) int format;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } imageRect;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } imageRect;
 @property (nonatomic, readonly, retain) NSMutableDictionary *options;
 @property (nonatomic, readonly, retain) NSData *optionsData;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } size;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;
 
-+ (BOOL)_transformForImage:(struct CGImage { }*)arg1 isCropped:(BOOL)arg2 captureOrientation:(int)arg3 sizeInOut:(struct CGSize { double x1; double x2; }*)arg4 contextSizeOut:(struct CGSize { double x1; double x2; }*)arg5 transformOut:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; }*)arg6;
++ (BOOL)_transformForImage:(struct CGImage { }*)arg1 isCropped:(BOOL)arg2 captureOrientation:(int)arg3 sizeInOut:(struct CGSize { float x1; float x2; }*)arg4 contextSizeOut:(struct CGSize { float x1; float x2; }*)arg5 transformOut:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg6;
 + (id)thumbnailsWithContentsOfFile:(id)arg1 format:(int)arg2;
 
 - (id)_thumbnailData;
@@ -39,7 +39,7 @@
 - (void)dealloc;
 - (id)description;
 - (int)format;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })imageRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })imageRect;
 - (id)initWithContentsOfFile:(id)arg1 format:(int)arg2;
 - (id)initWithContentsOfFile:(id)arg1 format:(int)arg2 readOnly:(BOOL)arg3;
 - (id)initWithData:(id)arg1 format:(int)arg2;
@@ -49,10 +49,10 @@
 - (id)optionsData;
 - (BOOL)saveToFile:(id)arg1;
 - (id)serializedData;
-- (struct CGSize { double x1; double x2; })size;
+- (struct CGSize { float x1; float x2; })size;
 - (char *)thumbnailBytesAtIndex:(int)arg1;
 - (id)thumbnailDataAtIndex:(int)arg1;
 - (struct CGImage { }*)thumbnailImageAtIndex:(int)arg1;
-- (BOOL)writeBorderedThumbnailOfImage:(struct CGImage { }*)arg1 toBuffer:(void*)arg2 orientation:(int*)arg3 format:(int)arg4 formatInfo:(const struct { int x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_3_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_3_1_2; } x3; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_4_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_4_1_2; } x4; unsigned int x5; int x6; int x7; double x8[4]; double x9[4]; unsigned int x10; }*)arg5 delegate:(id)arg6;
+- (BOOL)writeBorderedThumbnailOfImage:(struct CGImage { }*)arg1 toBuffer:(void*)arg2 orientation:(int*)arg3 format:(int)arg4 formatInfo:(const struct { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_4_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_4_1_2; } x4; unsigned int x5; int x6; int x7; float x8[4]; float x9[4]; unsigned int x10; }*)arg5 delegate:(id)arg6;
 
 @end

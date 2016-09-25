@@ -4,17 +4,17 @@
 
 @interface PXPeopleRelatedWidget : NSObject <PXPeopleDataSourceDelegate, PXPeopleStripCollectionViewControllerDelegate, PXWidget, UIGestureRecognizerDelegate> {
     PXUITapGestureRecognizer * __tapRecognizer;
-    double  _cellMinInteritemSpacing;
-    double  _cellMinLineSpacing;
+    float  _cellMinInteritemSpacing;
+    float  _cellMinLineSpacing;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _cellSize;
     PXPeopleStripCollectionViewController * _collectionViewController;
     UIView * _containerView;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _contentSize;
     int  _contentViewAnchoringType;
     PXPhotosDetailsContext * _context;
@@ -24,7 +24,7 @@
     BOOL  _showFooter;
     PXWidgetSpec * _spec;
     BOOL  _startedLoadingDataSource;
-    double  _targetPrefetchWidth;
+    float  _targetPrefetchWidth;
     BOOL  _userInteractionEnabled;
     unsigned int  _viewType;
     <PXWidgetDelegate> * _widgetDelegate;
@@ -32,13 +32,13 @@
 
 @property (nonatomic, retain) PXUITapGestureRecognizer *_tapRecognizer;
 @property (nonatomic, readonly) BOOL allowUserInteractionWithSubtitle;
-@property (nonatomic) double cellMinInteritemSpacing;
-@property (nonatomic) double cellMinLineSpacing;
-@property (nonatomic) struct CGSize { double x1; double x2; } cellSize;
+@property (nonatomic) float cellMinInteritemSpacing;
+@property (nonatomic) float cellMinLineSpacing;
+@property (nonatomic) struct CGSize { float x1; float x2; } cellSize;
 @property (nonatomic, retain) PXPeopleStripCollectionViewController *collectionViewController;
 @property (nonatomic, retain) UIView *containerView;
 @property (nonatomic, readonly) int contentLayoutStyle;
-@property (nonatomic) struct CGSize { double x1; double x2; } contentSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } contentSize;
 @property (nonatomic, readonly) PXTilingController *contentTilingController;
 @property (nonatomic, readonly) NSObject<PXAnonymousView> *contentView;
 @property (nonatomic, readonly) int contentViewAnchoringType;
@@ -64,35 +64,35 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) BOOL supportsFaceMode;
 @property (nonatomic, readonly) BOOL supportsSelection;
-@property (nonatomic) double targetPrefetchWidth;
+@property (nonatomic) float targetPrefetchWidth;
 @property (getter=isUserInteractionEnabled, nonatomic) BOOL userInteractionEnabled;
 @property (nonatomic) unsigned int viewType;
 @property (nonatomic) <PXWidgetDelegate> *widgetDelegate;
 
 - (void).cxx_destruct;
-- (BOOL)_calculateLayoutInfosForWidth:(float)arg1 cellSize:(struct CGSize { double x1; double x2; }*)arg2 interitemSpacing:(float*)arg3;
+- (BOOL)_calculateLayoutInfosForWidth:(float)arg1 cellSize:(struct CGSize { float x1; float x2; }*)arg2 interitemSpacing:(float*)arg3;
 - (BOOL)_canFitToHeight:(float)arg1 width:(float)arg2 textLabel:(id)arg3;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_collectionViewFrameFromContentFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_collectionViewFrameFromContentFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_handleTap:(id)arg1;
 - (void)_loadContainerView;
 - (float)_maxLabelHeightForWidth:(float)arg1;
 - (id)_nameStringForPeople:(id)arg1 font:(id)arg2 width:(float)arg3;
 - (unsigned int)_numberOfVisibleFacesForWidth:(float)arg1;
 - (void)_prepareDataSource;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_realContentInset;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_realContentInset;
 - (void)_resetControllerLayoutInfosForWidth:(float)arg1;
-- (struct CGSize { double x1; double x2; })_sizeForItemWithWidth:(float)arg1 withInterItemSpacing:(float)arg2;
+- (struct CGSize { float x1; float x2; })_sizeForItemWithWidth:(float)arg1 withInterItemSpacing:(float)arg2;
 - (id)_tapRecognizer;
 - (float)cellMinInteritemSpacing;
 - (float)cellMinLineSpacing;
-- (struct CGSize { double x1; double x2; })cellSize;
+- (struct CGSize { float x1; float x2; })cellSize;
 - (id)collectionViewController;
 - (id)containerView;
-- (struct CGSize { double x1; double x2; })contentSize;
+- (struct CGSize { float x1; float x2; })contentSize;
 - (void)contentSizeCategoryChanged:(id)arg1;
 - (id)contentView;
 - (int)contentViewAnchoringType;
-- (void)contentViewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)contentViewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (id)context;
 - (id)currentLabelFont;
 - (id)currentNameLabelFont;
@@ -115,13 +115,13 @@
 - (void)peopleDataSource:(id)arg1 didUpdateMembersAtIndexPaths:(id)arg2;
 - (void)peopleDataSourceMembersChanged:(id)arg1;
 - (float)preferredContentHeightForWidth:(float)arg1;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })sectionInset;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })sectionInset;
 - (void)setCellMinInteritemSpacing:(float)arg1;
 - (void)setCellMinLineSpacing:(float)arg1;
-- (void)setCellSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setCellSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setCollectionViewController:(id)arg1;
 - (void)setContainerView:(id)arg1;
-- (void)setContentSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setContext:(id)arg1;
 - (void)setCurrentLabelFont:(id)arg1;
 - (void)setDataSource:(id)arg1;
@@ -135,7 +135,7 @@
 - (void)setWidgetDelegate:(id)arg1;
 - (void)set_tapRecognizer:(id)arg1;
 - (BOOL)showFooter;
-- (struct CGSize { double x1; double x2; })sizeForItem;
+- (struct CGSize { float x1; float x2; })sizeForItem;
 - (id)spec;
 - (float)targetPrefetchWidth;
 - (id)traitCollection;

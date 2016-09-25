@@ -6,19 +6,19 @@
 @required
 
 - (unsigned int)autosizeFlagsForTextLayout:(TSWPLayout *)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })autosizedFrameForTextLayout:(TSWPLayout *)arg1 textSize:(struct CGSize { double x1; double x2; })arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })autosizedFrameForTextLayout:(TSWPLayout *)arg1 textSize:(struct CGSize { float x1; float x2; })arg2;
 - (<NSFastEnumeration> *)dependentsOfTextLayout:(TSWPLayout *)arg1;
 - (void)invalidateForAutosizingTextLayout:(TSWPLayout *)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })nonAutosizedFrameForTextLayout:(TSWPLayout *)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })nonAutosizedFrameForTextLayout:(TSWPLayout *)arg1;
 - (Class)repClassForTextLayout:(TSWPLayout *)arg1;
 - (int)verticalAlignmentForTextLayout:(TSWPLayout *)arg1;
 
 @optional
 
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })adjustRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forScrollingToSelectionPath:(TSKSelectionPath *)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })adjustRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forScrollingToSelectionPath:(TSKSelectionPath *)arg2;
 - (unsigned int)initialCharIndex;
-- (struct CGSize { double x1; double x2; })initialTextSize;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })maskRectForTextLayout:(TSWPLayout *)arg1;
+- (struct CGSize { float x1; float x2; })initialTextSize;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })maskRectForTextLayout:(TSWPLayout *)arg1;
 - (float)maxAutoGrowHeightForTextLayout:(TSWPLayout *)arg1;
 - (float)maxAutoGrowWidthForTextLayout:(TSWPLayout *)arg1;
 - (int)naturalAlignmentForTextLayout:(TSWPLayout *)arg1;

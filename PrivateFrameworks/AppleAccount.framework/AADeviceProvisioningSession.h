@@ -5,7 +5,7 @@
 @interface AADeviceProvisioningSession : NSObject {
     struct OpaqueCFHTTPCookieStorage { } * _cookieStorageRef;
     NSString * _dsid;
-    unsigned int  _dsidNumber;
+    unsigned long long  _dsidNumber;
 }
 
 - (void).cxx_destruct;

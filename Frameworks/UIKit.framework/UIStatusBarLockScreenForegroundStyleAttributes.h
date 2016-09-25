@@ -5,11 +5,11 @@
 @interface UIStatusBarLockScreenForegroundStyleAttributes : UIStatusBarForegroundStyleAttributes
 
 - (int)activityIndicatorStyleWithSyncActivity:(BOOL)arg1;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })edgeInsetsForBatteryInsides;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })edgeInsetsForBluetoothBatteryInsides;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsetsForBatteryInsides;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsetsForBluetoothBatteryInsides;
 - (id)expandedNameForImageName:(id)arg1;
 - (id)makeTextFontForStyle:(int)arg1;
-- (struct CGPoint { double x1; double x2; })positionForMoonMaskInBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGPoint { float x1; float x2; })positionForMoonMaskInBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (float)sizeForMoonMaskVisible:(BOOL)arg1;
 - (BOOL)supportsShowingBuildVersion;
 - (float)textOffsetForStyle:(int)arg1;

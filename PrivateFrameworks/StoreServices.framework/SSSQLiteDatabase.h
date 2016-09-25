@@ -36,7 +36,7 @@
 - (void)beginTaskCompletionAssertion;
 - (int)countChanges;
 - (void)dealloc;
-- (void)dispatchAfter:(unsigned int)arg1 block:(id /* block */)arg2;
+- (void)dispatchAfter:(unsigned long long)arg1 block:(id /* block */)arg2;
 - (void)dispatchBlockAsync:(id /* block */)arg1;
 - (void)dispatchBlockSync:(id /* block */)arg1;
 - (void)endTaskCompletionAssertion;

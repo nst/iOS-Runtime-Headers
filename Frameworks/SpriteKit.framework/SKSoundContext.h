@@ -9,7 +9,7 @@
 }
 
 @property (nonatomic) double gain;
-@property (nonatomic) struct CGPoint { double x1; double x2; } listenerPosition;
+@property (nonatomic) struct CGPoint { float x1; float x2; } listenerPosition;
 @property (nonatomic) BOOL suspended;
 
 + (id)context;
@@ -18,10 +18,10 @@
 - (void)dealloc;
 - (double)gain;
 - (id)init;
-- (struct CGPoint { double x1; double x2; })listenerPosition;
+- (struct CGPoint { float x1; float x2; })listenerPosition;
 - (void)makeCurrentContext;
 - (void)setGain:(double)arg1;
-- (void)setListenerPosition:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setListenerPosition:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setSuspended:(BOOL)arg1;
 - (BOOL)suspended;
 

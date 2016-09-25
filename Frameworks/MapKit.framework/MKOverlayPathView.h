@@ -6,10 +6,10 @@
     UIColor * _fillColor;
     int  _lineCap;
     NSArray * _lineDashPattern;
-    double  _lineDashPhase;
+    float  _lineDashPhase;
     int  _lineJoin;
-    double  _lineWidth;
-    double  _miterLimit;
+    float  _lineWidth;
+    float  _miterLimit;
     struct CGPath { } * _path;
     UIColor * _strokeColor;
 }
@@ -17,10 +17,10 @@
 @property (retain) UIColor *fillColor;
 @property int lineCap;
 @property (copy) NSArray *lineDashPattern;
-@property double lineDashPhase;
+@property float lineDashPhase;
 @property int lineJoin;
-@property double lineWidth;
-@property double miterLimit;
+@property float lineWidth;
+@property float miterLimit;
 @property struct CGPath { }*path;
 @property (retain) UIColor *strokeColor;
 

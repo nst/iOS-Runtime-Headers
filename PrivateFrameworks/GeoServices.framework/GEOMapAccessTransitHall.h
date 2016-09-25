@@ -15,13 +15,13 @@
 @property (nonatomic, readonly) NSString *internalName;
 @property (nonatomic, readonly) struct { double x1; double x2; }*polygonPoints;
 @property (nonatomic, readonly) int polygonPointsCount;
-@property (nonatomic, readonly) unsigned int stationID;
+@property (nonatomic, readonly) unsigned long long stationID;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) unsigned int transitID;
+@property (nonatomic, readonly) unsigned long long transitID;
 
 - (void)dealloc;
 - (id)findStation:(id /* block */)arg1 completionHandler:(id /* block */)arg2;
 - (id)findStops:(id /* block */)arg1 completionHandler:(id /* block */)arg2;
-- (unsigned int)stationID;
+- (unsigned long long)stationID;
 
 @end

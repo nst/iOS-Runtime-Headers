@@ -13,11 +13,11 @@
 - (void).cxx_destruct;
 - (id)begin:(unsigned int)arg1;
 - (id)end;
-- (id)exportPlaylistAdded:(unsigned int)arg1;
-- (id)exportPlaylistDeleted:(unsigned int)arg1;
-- (id)exportTrackAdded:(unsigned int)arg1;
-- (id)exportTrackDeleted:(unsigned int)arg1;
-- (id)exportTrackUpdated:(unsigned int)arg1;
+- (id)exportPlaylistAdded:(unsigned long long)arg1;
+- (id)exportPlaylistDeleted:(unsigned long long)arg1;
+- (id)exportTrackAdded:(unsigned long long)arg1;
+- (id)exportTrackDeleted:(unsigned long long)arg1;
+- (id)exportTrackUpdated:(unsigned long long)arg1;
 - (id)initWithLibrary:(id)arg1 outputStream:(id)arg2;
 - (id)library;
 - (id)outputStream;

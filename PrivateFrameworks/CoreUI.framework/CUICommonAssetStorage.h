@@ -38,7 +38,7 @@
 - (void)_bringHeaderInfoUpToDate;
 - (void)_buildBitmapInfoIntoDictionary:(id)arg1;
 - (BOOL)_commonInitWithStorage:(struct _BOMStorage { }*)arg1 forWritting:(BOOL)arg2;
-- (const struct FontValue { BOOL x1[128]; double x2; }*)_fontValueForFontType:(id)arg1;
+- (const struct FontValue { BOOL x1[128]; float x2; }*)_fontValueForFontType:(id)arg1;
 - (void)_initDefaultHeaderVersion:(double)arg1 versionString:(const char *)arg2;
 - (long)_storagefileTimestamp;
 - (void)_swapHeader;
@@ -81,7 +81,7 @@
 - (id)path;
 - (unsigned int)renditionCount;
 - (id)renditionInfoForIdentifier:(unsigned short)arg1;
-- (const struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)renditionKeyForName:(const char *)arg1 hotSpot:(struct CGPoint { double x1; double x2; }*)arg2;
+- (const struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)renditionKeyForName:(const char *)arg1 hotSpot:(struct CGPoint { float x1; float x2; }*)arg2;
 - (id)renditionNameForKeyList:(struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)arg1;
 - (unsigned int)schemaVersion;
 - (long)storageTimestamp;

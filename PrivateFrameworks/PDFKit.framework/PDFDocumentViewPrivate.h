@@ -7,8 +7,8 @@
     int  displayBox;
     PDFDocument * document;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  documentViewSize;
     bool  forceUseMainThread;
     bool  ignoreChangedBoundsForBoxNotification;

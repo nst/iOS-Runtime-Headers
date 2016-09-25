@@ -7,7 +7,7 @@
     struct { 
         unsigned int version : 1; 
     }  _has;
-    int  _version;
+    long long  _version;
 }
 
 @property (nonatomic, retain) NSMutableArray *cacheHints;
@@ -16,7 +16,7 @@
 @property (nonatomic) BOOL hasVersion;
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
-@property (nonatomic) int version;
+@property (nonatomic) long long version;
 
 // Image: /System/Library/PrivateFrameworks/NewsTransport.framework/NewsTransport
 
@@ -38,8 +38,8 @@
 - (BOOL)readFrom:(id)arg1;
 - (void)setCacheHints:(id)arg1;
 - (void)setHasVersion:(BOOL)arg1;
-- (void)setVersion:(int)arg1;
-- (int)version;
+- (void)setVersion:(long long)arg1;
+- (long long)version;
 - (void)writeTo:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore

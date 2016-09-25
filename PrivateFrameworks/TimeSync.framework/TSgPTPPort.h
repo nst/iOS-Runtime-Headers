@@ -9,7 +9,7 @@
 @property (getter=isASCapable, nonatomic, readonly) BOOL asCapable;
 @property (nonatomic, readonly) unsigned short portNumber;
 @property (nonatomic, readonly) unsigned int propagationDelay;
-@property (nonatomic, readonly) unsigned int remoteClockIdentity;
+@property (nonatomic, readonly) unsigned long long remoteClockIdentity;
 @property (nonatomic, readonly) unsigned short remotePortNumber;
 @property (nonatomic, readonly) unsigned int service;
 
@@ -22,7 +22,7 @@
 - (BOOL)isASCapable;
 - (unsigned short)portNumber;
 - (unsigned int)propagationDelay;
-- (unsigned int)remoteClockIdentity;
+- (unsigned long long)remoteClockIdentity;
 - (unsigned short)remotePortNumber;
 - (unsigned int)service;
 - (void)serviceTerminated;

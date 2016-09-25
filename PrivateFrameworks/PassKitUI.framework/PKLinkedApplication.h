@@ -20,7 +20,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, copy) NSURL *defaultLaunchURL;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } expectedIconSize;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } expectedIconSize;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) UIImage *iconImage;
 @property (getter=isInstalled, nonatomic, readonly) BOOL installed;
@@ -36,10 +36,10 @@
 
 - (void).cxx_destruct;
 - (int)_iconOptionsForItem:(id)arg1;
-- (id)_iconURLFromArtwork:(id)arg1 withDesiredSize:(struct CGSize { double x1; double x2; })arg2;
-- (id)_iconURLFromArtwork:(id)arg1 withDesiredSize:(struct CGSize { double x1; double x2; })arg2 requireStrictMatch:(BOOL)arg3;
+- (id)_iconURLFromArtwork:(id)arg1 withDesiredSize:(struct CGSize { float x1; float x2; })arg2;
+- (id)_iconURLFromArtwork:(id)arg1 withDesiredSize:(struct CGSize { float x1; float x2; })arg2 requireStrictMatch:(BOOL)arg3;
 - (int)_iconVariantForScale:(float)arg1;
-- (id)_imageForSize:(struct CGSize { double x1; double x2; })arg1 fromArtwork:(id)arg2 requireStrictMatch:(BOOL)arg3;
+- (id)_imageForSize:(struct CGSize { float x1; float x2; })arg1 fromArtwork:(id)arg2 requireStrictMatch:(BOOL)arg3;
 - (BOOL)_itemArtNeedsShine:(id)arg1;
 - (void)_notifyObserversOfStateChange;
 - (void)_performStoreLookupWithCompletion:(id /* block */)arg1;
@@ -50,7 +50,7 @@
 - (id)averageRating;
 - (void)dealloc;
 - (id)defaultLaunchURL;
-- (struct CGSize { double x1; double x2; })expectedIconSize;
+- (struct CGSize { float x1; float x2; })expectedIconSize;
 - (id)iconImage;
 - (id)init;
 - (id)initWithPass:(id)arg1;

@@ -18,7 +18,7 @@
     }  mInitialSize;
     NSArray * mPyramidResources;
     int  mRequestedSize;
-    double  mTargetRadiusFactor;
+    float  mTargetRadiusFactor;
 }
 
 - (id).cxx_construct;

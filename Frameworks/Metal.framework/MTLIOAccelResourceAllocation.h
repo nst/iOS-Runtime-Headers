@@ -7,17 +7,17 @@
     NSString * _memoryPool;
     BOOL  _purgeable;
     unsigned int  _residentSize;
-    unsigned int  _uniqueIdentifier;
+    unsigned long long  _uniqueIdentifier;
     unsigned int  _virtualSize;
 }
 
 - (void)dealloc;
 - (unsigned int)dirtySize;
-- (id)initWithPool:(id)arg1 virtualSize:(unsigned int)arg2 residentSize:(unsigned int)arg3 dirtySize:(unsigned int)arg4 purgeable:(BOOL)arg5 uniqueID:(unsigned int)arg6;
+- (id)initWithPool:(id)arg1 virtualSize:(unsigned int)arg2 residentSize:(unsigned int)arg3 dirtySize:(unsigned int)arg4 purgeable:(BOOL)arg5 uniqueID:(unsigned long long)arg6;
 - (id)memoryPool;
 - (BOOL)purgeable;
 - (unsigned int)residentSize;
-- (unsigned int)uniqueIdentifier;
+- (unsigned long long)uniqueIdentifier;
 - (unsigned int)virtualSize;
 
 @end

@@ -22,16 +22,16 @@
 - (void).cxx_destruct;
 - (id)URLSession;
 - (id)URLSessionConfiguration;
-- (id)_artworkRepresentationWithImageFromData:(id)arg1 forURLResponse:(id)arg2 size:(struct CGSize { double x1; double x2; })arg3 immediateImageDecompressionAllowed:(BOOL)arg4;
+- (id)_artworkRepresentationWithImageFromData:(id)arg1 forURLResponse:(id)arg2 size:(struct CGSize { float x1; float x2; })arg3 immediateImageDecompressionAllowed:(BOOL)arg4;
 - (id)_existingRepresentationFromURLCacheForArtworkCatalog:(id)arg1 immediateImageDecompressionAllowed:(BOOL)arg2;
 - (id)_existingRepresentativeObjectForArtworkCatalog:(id)arg1 handler:(id /* block */)arg2;
-- (BOOL)_isRepresentationSize:(struct CGSize { double x1; double x2; })arg1 validForCatalog:(id)arg2;
+- (BOOL)_isRepresentationSize:(struct CGSize { float x1; float x2; })arg1 validForCatalog:(id)arg2;
 - (void)_performAsyncBarrierBlock:(id /* block */)arg1;
 - (void)_performSyncBlock:(id /* block */)arg1;
 - (id)accessQueue;
 - (BOOL)areRepresentationsAvailableForCatalog:(id)arg1;
 - (id)artworkRepresentationCache;
-- (id)cacheKeyForCatalog:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
+- (id)cacheKeyForCatalog:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 - (void)cancelLoadingRepresentationForArtworkCatalog:(id)arg1;
 - (id)catalogTaskMap;
 - (id)existingArtworkEffectResultForEffectType:(int)arg1 catalog:(id)arg2 options:(id)arg3;
@@ -40,7 +40,7 @@
 - (BOOL)isRepresentation:(id)arg1 bestRepresentationForArtworkCatalog:(id)arg2;
 - (void)loadArtworkEffectResultForEffectType:(int)arg1 catalog:(id)arg2 options:(id)arg3 systemEffectHandler:(id /* block */)arg4 completionHandler:(id /* block */)arg5;
 - (void)loadRepresentationForArtworkCatalog:(id)arg1 completionHandler:(id /* block */)arg2;
-- (id)requestForCatalog:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
+- (id)requestForCatalog:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 - (void)setAccessQueue:(id)arg1;
 - (void)setArtworkRepresentationCache:(id)arg1;
 - (void)setCatalogTaskMap:(id)arg1;

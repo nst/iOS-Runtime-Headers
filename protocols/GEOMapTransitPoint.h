@@ -14,6 +14,6 @@
 - (NSString *)internalName;
 - (struct { double x1; double x2; }*)polygonPoints;
 - (int)polygonPointsCount;
-- (unsigned int)transitID;
+- (unsigned long long)transitID;
 
 @end

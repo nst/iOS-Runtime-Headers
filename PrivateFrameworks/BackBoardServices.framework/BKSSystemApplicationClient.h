@@ -18,7 +18,7 @@
 - (void)_queue_handleWatchdogPing:(id)arg1;
 - (void)_sendMessageOfType:(int)arg1 packer:(id /* block */)arg2;
 - (void)_sendMessageOfType:(int)arg1 packer:(id /* block */)arg2 replyHandler:(id /* block */)arg3;
-- (void)_sendMessageOfType:(int)arg1 packer:(id /* block */)arg2 replyHandler:(id /* block */)arg3 waitForReply:(BOOL)arg4 waitDuration:(unsigned int)arg5;
+- (void)_sendMessageOfType:(int)arg1 packer:(id /* block */)arg2 replyHandler:(id /* block */)arg3 waitForReply:(BOOL)arg4 waitDuration:(unsigned long long)arg5;
 - (void)checkInAndWaitForDataMigration:(BOOL)arg1;
 - (void)connect;
 - (void)dealloc;

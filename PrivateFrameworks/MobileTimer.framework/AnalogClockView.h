@@ -31,7 +31,7 @@
 @property (nonatomic, retain) NSDate *time;
 @property (nonatomic, retain) NSTimeZone *timeZone;
 
-+ (void)adjustNumberalCenter:(struct CGPoint { double x1; double x2; }*)arg1 forNumeralIndex:(int)arg2;
++ (void)adjustNumberalCenter:(struct CGPoint { float x1; float x2; }*)arg1 forNumeralIndex:(int)arg2;
 + (id)analogClockWithStyle:(int)arg1;
 + (float)antialiasPaddingRatio;
 + (id)cacheTopLevelPath;
@@ -41,7 +41,7 @@
 + (id)clockFaceForDaytime:(BOOL)arg1;
 + (id)clockFaceForDaytime:(BOOL)arg1 ignoreCache:(BOOL)arg2;
 + (id)clockHand:(int)arg1 daytime:(BOOL)arg2;
-+ (struct CGSize { double x1; double x2; })clockSize;
++ (struct CGSize { float x1; float x2; })clockSize;
 + (id)dayTimeFaceColor;
 + (id)dayTimeHourHandColor;
 + (id)dayTimeMinuteHandColor;
@@ -50,7 +50,7 @@
 + (id)dayTimeTextColor;
 + (BOOL)doesFaceHaveShadow;
 + (float)faceRadius;
-+ (struct CGPoint { double x1; double x2; })handRotationalCenterForHand:(int)arg1;
++ (struct CGPoint { float x1; float x2; })handRotationalCenterForHand:(int)arg1;
 + (BOOL)hasOverHourHandDot;
 + (BOOL)hasOverSecondHandDot;
 + (float)hourHandLength;
@@ -60,7 +60,7 @@
 + (id)imageForType:(int)arg1 dayTime:(BOOL)arg2 generation:(id /* block */)arg3 ignoreCache:(BOOL)arg4;
 + (id)imageInBundleForName:(id)arg1;
 + (void)initialize;
-+ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })insetsForStyle:(int)arg1;
++ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })insetsForStyle:(int)arg1;
 + (BOOL)isClockRegistered:(id)arg1;
 + (id)makeClockFaceForDaytime:(BOOL)arg1;
 + (id)makeClockHand:(int)arg1 daytime:(BOOL)arg2;
@@ -91,10 +91,10 @@
 + (float)secondHandOverhangLength;
 + (float)secondHandWidth;
 + (id)shadowInfoAtIndex:(unsigned int)arg1;
-+ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })shadowInsets;
-+ (struct CGPoint { double x1; double x2; })shadowRotationalCenterForHand:(int)arg1;
++ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })shadowInsets;
++ (struct CGPoint { float x1; float x2; })shadowRotationalCenterForHand:(int)arg1;
 + (BOOL)shouldCacheImageOnDiskForType:(int)arg1 dayTime:(BOOL)arg2;
-+ (struct CGSize { double x1; double x2; })sizeForStyle:(int)arg1;
++ (struct CGSize { float x1; float x2; })sizeForStyle:(int)arg1;
 + (int)style;
 + (void)unregisterClock:(id)arg1;
 + (void)unregisterSweepingClock:(id)arg1;
@@ -109,12 +109,12 @@
 - (void)handleLocaleChange;
 - (int)hour;
 - (id)init;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (BOOL)isNighttime;
 - (BOOL)isStarted;
 - (int)minute;
 - (int)runMode;
-- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setHandAngle:(float)arg1 forHandIndex:(int)arg2;
 - (void)setHandTransformForHandIndex:(int)arg1;
 - (void)setNighttime:(BOOL)arg1;

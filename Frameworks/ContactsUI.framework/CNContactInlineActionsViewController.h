@@ -5,7 +5,7 @@
 @interface CNContactInlineActionsViewController : UIViewController <CNActionsViewProtocol, CNContactActionsViewControllerDelegate, CNUIObjectViewController, CNUIUserActionListConsumer> {
     NSArray * _actionItems;
     CNUIUserActionListDataSource * _actionListDataSource;
-    double  _actionTypesInterspace;
+    float  _actionTypesInterspace;
     <CNCustomPresentation> * _actionsControllerPresentation;
     CNActionsView * _actionsView;
     CNContact * _contact;
@@ -23,7 +23,7 @@
 
 @property (nonatomic, copy) NSArray *actionItems;
 @property (nonatomic, retain) CNUIUserActionListDataSource *actionListDataSource;
-@property (nonatomic) double actionTypesInterspace;
+@property (nonatomic) float actionTypesInterspace;
 @property (nonatomic, retain) <CNCustomPresentation> *actionsControllerPresentation;
 @property (nonatomic) CNActionsView *actionsView;
 @property (nonatomic, retain) CNContact *contact;

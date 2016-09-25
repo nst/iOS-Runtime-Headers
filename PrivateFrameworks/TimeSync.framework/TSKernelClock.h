@@ -11,20 +11,20 @@
 
 + (id)availableKernelClockIdentifiers;
 + (id)diagnosticDescriptionForService:(unsigned int)arg1 withIndent:(id)arg2;
-+ (id)iokitMatchingDictionaryForClockIdentifier:(unsigned int)arg1;
++ (id)iokitMatchingDictionaryForClockIdentifier:(unsigned long long)arg1;
 
-- (void)_handleNotification:(unsigned int)arg1 withArg1:(unsigned int)arg2 andArg2:(unsigned int)arg3;
+- (void)_handleNotification:(unsigned int)arg1 withArg1:(unsigned long long)arg2 andArg2:(unsigned long long)arg3;
 - (id)clockName;
 - (unsigned int)connection;
-- (BOOL)convertFromDomainTime:(unsigned int*)arg1 toMachAbsoluteTime:(unsigned int*)arg2 withCount:(unsigned int)arg3;
-- (unsigned int)convertFromDomainToMachAbsoluteTime:(unsigned int)arg1 withFlags:(unsigned int*)arg2;
-- (BOOL)convertFromMachAbsoluteTime:(unsigned int*)arg1 toDomainTime:(unsigned int*)arg2 withCount:(unsigned int)arg3;
-- (unsigned int)convertFromMachAbsoluteToDomainTime:(unsigned int)arg1 withFlags:(unsigned int*)arg2;
+- (BOOL)convertFromDomainTime:(unsigned long long*)arg1 toMachAbsoluteTime:(unsigned long long*)arg2 withCount:(unsigned int)arg3;
+- (unsigned long long)convertFromDomainToMachAbsoluteTime:(unsigned long long)arg1 withFlags:(unsigned int*)arg2;
+- (BOOL)convertFromMachAbsoluteTime:(unsigned long long*)arg1 toDomainTime:(unsigned long long*)arg2 withCount:(unsigned int)arg3;
+- (unsigned long long)convertFromMachAbsoluteToDomainTime:(unsigned long long)arg1 withFlags:(unsigned int*)arg2;
 - (void)dealloc;
 - (BOOL)deregisterAsyncDCLCallback;
-- (BOOL)getRateRatioNumerator:(unsigned int*)arg1 denominator:(unsigned int*)arg2 machAnchor:(unsigned int*)arg3 andDomainAnchor:(unsigned int*)arg4 withError:(id*)arg5;
+- (BOOL)getRateRatioNumerator:(unsigned long long*)arg1 denominator:(unsigned long long*)arg2 machAnchor:(unsigned long long*)arg3 andDomainAnchor:(unsigned long long*)arg4 withError:(id*)arg5;
 - (double)hostRateRatio;
-- (id)initWithClockIdentifier:(unsigned int)arg1;
+- (id)initWithClockIdentifier:(unsigned long long)arg1;
 - (int)lockState;
 - (BOOL)registerAsyncCallback;
 - (unsigned int)service;

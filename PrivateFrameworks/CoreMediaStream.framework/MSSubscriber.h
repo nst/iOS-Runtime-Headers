@@ -16,7 +16,7 @@
     int  _retrievalState;
     int  _state;
     <MSSubscribeStorageProtocol> * _storageProtocol;
-    int  _targetRetrievalByteCount;
+    long long  _targetRetrievalByteCount;
 }
 
 @property (nonatomic) MSMediaStreamDaemon *daemon;
@@ -26,7 +26,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic) int retrievalBatchSize;
 @property (readonly) Class superclass;
-@property (nonatomic) int targetRetrievalByteCount;
+@property (nonatomic) long long targetRetrievalByteCount;
 
 + (id)_clearInstantiatedSubscribersByPersonID;
 + (id)_descriptionForRetrievalState:(int)arg1;
@@ -80,7 +80,7 @@
 - (void)setDaemon:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setRetrievalBatchSize:(int)arg1;
-- (void)setTargetRetrievalByteCount:(int)arg1;
+- (void)setTargetRetrievalByteCount:(long long)arg1;
 - (void)stop;
 - (void)subscribeStorageProtocol:(id)arg1 didFinishRetrievingAsset:(id)arg2 error:(id)arg3;
 - (void)subscribeStorageProtocolDidFinishRetrievingAllAssets:(id)arg1;
@@ -93,6 +93,6 @@
 - (void)subscribeStreamsProtocol:(id)arg1 didReceiveAuthenticationError:(id)arg2;
 - (void)subscribeStreamsProtocol:(id)arg1 willReceiveUpdatesForPersonID:(id)arg2 wasReset:(BOOL)arg3 metadata:(id)arg4;
 - (id)subscribedStreams;
-- (int)targetRetrievalByteCount;
+- (long long)targetRetrievalByteCount;
 
 @end

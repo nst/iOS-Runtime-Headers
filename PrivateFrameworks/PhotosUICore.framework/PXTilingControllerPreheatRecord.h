@@ -5,10 +5,10 @@
 @interface PXTilingControllerPreheatRecord : NSObject {
     void * _context;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _padding;
     <PXTilingControllerPreheatHandler> * _preheatHandler;
     NSIndexSet * _preheatedTileIndexes;
@@ -16,7 +16,7 @@
 }
 
 @property (nonatomic, readonly) void*context;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } padding;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } padding;
 @property (nonatomic, readonly) <PXTilingControllerPreheatHandler> *preheatHandler;
 @property (nonatomic, retain) NSIndexSet *preheatedTileIndexes;
 @property (nonatomic) unsigned int tileGroup;
@@ -24,10 +24,10 @@
 - (void).cxx_destruct;
 - (void*)context;
 - (id)initWithPreheatHandler:(id)arg1 context:(void*)arg2;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })padding;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })padding;
 - (id)preheatHandler;
 - (id)preheatedTileIndexes;
-- (void)setPadding:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setPadding:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setPreheatedTileIndexes:(id)arg1;
 - (void)setTileGroup:(unsigned int)arg1;
 - (unsigned int)tileGroup;

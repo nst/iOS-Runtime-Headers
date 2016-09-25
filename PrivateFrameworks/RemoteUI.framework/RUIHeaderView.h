@@ -10,10 +10,10 @@
     int  _imageAlignment;
     BOOL  _isFirstSection;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _margins;
     UILabel * _subHeaderLabel;
 }
@@ -21,7 +21,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } margins;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } margins;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -35,15 +35,15 @@
 - (id)iconImage;
 - (id)initWithAttributes:(id)arg1;
 - (void)layoutSubviews;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })margins;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })margins;
 - (void)setDetailHeaderColor:(id)arg1;
 - (void)setDetailText:(id)arg1 attributes:(id)arg2;
 - (void)setHeaderAlignment:(int)arg1;
 - (void)setHeaderColor:(id)arg1;
 - (void)setIconImage:(id)arg1;
 - (void)setImageAlignment:(int)arg1;
-- (void)setImageSize:(struct CGSize { double x1; double x2; })arg1;
-- (void)setMargins:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setImageSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setMargins:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setSectionIsFirst:(BOOL)arg1;
 - (void)setSubHeaderAlignment:(int)arg1;
 - (void)setSubHeaderColor:(id)arg1;

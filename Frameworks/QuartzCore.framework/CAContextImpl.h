@@ -3,7 +3,7 @@
  */
 
 @interface CAContextImpl : CAContext {
-    /* Warning: unhandled struct encoding: '{Context=I^{Context}{Mutex={_opaque_pthread_mutex_t=l[40c]}}{Weak<const void *>=@}III@^{Context}^{CGColorSpace}i^{__CFDictionary}III^{ObjectCache}@If^{Commit}{Generic=^^?^{Context}}b1b1b1b1b1}' */ struct Context { unsigned int x1; struct Context {} *x2; struct Mutex { struct _opaque_pthread_mutex_t { long x_1_2_1; BOOL x_1_2_2[40]; } x_3_1_1; } x3; struct Weak<const void *> { id x_4_1_1; unsigned int x_4_1_2; unsigned int x_4_1_3; unsigned int x_4_1_4; id x_4_1_5; struct Context {} x_4_1_6; struct CGColorSpace {} *x_4_1_7; int x_4_1_8; struct __CFDictionary {} *x_4_1_9; unsigned int x_4_1_10; unsigned int x_4_1_11; unsigned int x_4_1_12; struct ObjectCache {} *x_4_1_13; id x_4_1_14; double x_4_1_15; struct Commit {} *x_4_1_16; struct Generic { int (**x_17_2_1)(); struct Context {} *x_17_2_2; } x_4_1_17; unsigned int x_4_1_18 : 1; unsigned int x_4_1_19 : 1; unsigned int x_4_1_20 : 1; unsigned int x_4_1_21 : 1; unsigned int x_4_1_22 : 1; } x4; } * _impl;
+    /* Warning: unhandled struct encoding: '{Context=I^{Context}{Mutex={_opaque_pthread_mutex_t=l[40c]}}{Weak<const void *>=@}III@^{Context}^{CGColorSpace}i^{__CFDictionary}III^{ObjectCache}@If^{Commit}{Generic=^^?^{Context}}b1b1b1b1b1}' */ struct Context { unsigned int x1; struct Context {} *x2; struct Mutex { struct _opaque_pthread_mutex_t { long x_1_2_1; BOOL x_1_2_2[40]; } x_3_1_1; } x3; struct Weak<const void *> { id x_4_1_1; unsigned int x_4_1_2; unsigned int x_4_1_3; unsigned int x_4_1_4; id x_4_1_5; struct Context {} x_4_1_6; struct CGColorSpace {} *x_4_1_7; int x_4_1_8; struct __CFDictionary {} *x_4_1_9; unsigned int x_4_1_10; unsigned int x_4_1_11; unsigned int x_4_1_12; struct ObjectCache {} *x_4_1_13; id x_4_1_14; float x_4_1_15; struct Commit {} *x_4_1_16; struct Generic { int (**x_17_2_1)(); struct Context {} *x_17_2_2; } x_4_1_17; unsigned int x_4_1_18 : 1; unsigned int x_4_1_19 : 1; unsigned int x_4_1_20 : 1; unsigned int x_4_1_21 : 1; unsigned int x_4_1_22 : 1; } x4; } * _impl;
 }
 
 - (BOOL)colorMatchUntaggedContent;
@@ -11,8 +11,8 @@
 - (id)contentsFormat;
 - (unsigned int)contextId;
 - (unsigned int)createFencePort;
-- (unsigned int)createImageSlot:(struct CGSize { double x1; double x2; })arg1 hasAlpha:(BOOL)arg2;
-- (unsigned int)createImageSlot:(struct CGSize { double x1; double x2; })arg1 hasAlpha:(BOOL)arg2 extendedColors:(BOOL)arg3;
+- (unsigned int)createImageSlot:(struct CGSize { float x1; float x2; })arg1 hasAlpha:(BOOL)arg2;
+- (unsigned int)createImageSlot:(struct CGSize { float x1; float x2; })arg1 hasAlpha:(BOOL)arg2 extendedColors:(BOOL)arg3;
 - (unsigned int)createSlot;
 - (void)dealloc;
 - (void)deleteSlot:(unsigned int)arg1;

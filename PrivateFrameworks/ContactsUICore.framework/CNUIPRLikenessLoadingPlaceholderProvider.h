@@ -15,12 +15,12 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (id)_cnui_likenessForSize:(struct CGSize { double x1; double x2; })arg1;
-- (id)_cnui_likenessForSize:(struct CGSize { double x1; double x2; })arg1 scale:(float)arg2;
+- (id)_cnui_likenessForSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)_cnui_likenessForSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2;
 - (unsigned int)_cnui_likenessType;
 - (id)cache;
 - (id)init;
-- (struct CGImage { }*)renderImageForSize:(struct CGSize { double x1; double x2; })arg1 scale:(float)arg2;
+- (struct CGImage { }*)renderImageForSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2;
 - (id)resourceLock;
 
 @end

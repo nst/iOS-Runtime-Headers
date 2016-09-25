@@ -9,11 +9,11 @@
     struct statfs { 
         unsigned int f_bsize; 
         int f_iosize; 
-        unsigned int f_blocks; 
-        unsigned int f_bfree; 
-        unsigned int f_bavail; 
-        unsigned int f_files; 
-        unsigned int f_ffree; 
+        unsigned long long f_blocks; 
+        unsigned long long f_bfree; 
+        unsigned long long f_bavail; 
+        unsigned long long f_files; 
+        unsigned long long f_ffree; 
         struct fsid { 
             int val[2]; 
         } f_fsid; 

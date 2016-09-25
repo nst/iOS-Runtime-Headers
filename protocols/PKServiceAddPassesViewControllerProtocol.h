@@ -6,6 +6,6 @@
 @required
 
 - (void)ingestPassesWithData:(NSArray *)arg1 fromPresentationSource:(unsigned int)arg2;
-- (void)setDisplayPropertiesWithScreenSize:(struct CGSize { double x1; double x2; })arg1 scale:(float)arg2;
+- (void)setDisplayPropertiesWithScreenSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2;
 
 @end

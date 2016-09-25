@@ -8,8 +8,8 @@
     NSOperationQueue * _fragmentLoadingOperationQueue;
     BOOL  _highlightLastDecomposedFragment;
     BOOL  _preferLoadingFragmentWaveforms;
-    double  _progressOfFinishedFragments;
-    double  _progressWeightPerFragment;
+    float  _progressOfFinishedFragments;
+    float  _progressWeightPerFragment;
     BOOL  _saveGeneratedWaveform;
     NSObject<OS_dispatch_queue> * _searialQueue;
 }

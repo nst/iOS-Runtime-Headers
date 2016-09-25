@@ -10,8 +10,8 @@
     int  _largestAllowedDisplayMode;
     UIImage * _outlineIcon;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _preferredContentSize;
     NSPointerArray * _registeredWidgetHosts;
     NSString * _sdkVersion;
@@ -22,10 +22,10 @@
 @property (nonatomic, readonly) NSExtension *extension;
 @property (setter=_setIcon:, nonatomic, retain) UIImage *icon;
 @property (nonatomic, readonly) int initialDisplayMode;
-@property (nonatomic, readonly) double initialHeight;
+@property (nonatomic, readonly) float initialHeight;
 @property (setter=_setLargestAllowedDisplayMode:, nonatomic) int largestAllowedDisplayMode;
 @property (setter=_setOutlineIcon:, nonatomic, retain) UIImage *outlineIcon;
-@property (nonatomic) struct CGSize { double x1; double x2; } preferredContentSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } preferredContentSize;
 @property (getter=_sdkVersion, nonatomic, readonly, copy) NSString *sdkVersion;
 @property (setter=_setSettingsIcon:, nonatomic, retain) UIImage *settingsIcon;
 @property (nonatomic, readonly, copy) NSString *widgetIdentifier;
@@ -56,11 +56,11 @@
 - (BOOL)isLinkedOnOrAfterSystemVersion:(id)arg1;
 - (int)largestAllowedDisplayMode;
 - (id)outlineIcon;
-- (struct CGSize { double x1; double x2; })preferredContentSize;
+- (struct CGSize { float x1; float x2; })preferredContentSize;
 - (void)registerWidgetHost:(id)arg1;
-- (void)setPreferredContentSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setPreferredContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)settingsIcon;
-- (void)updatePreferredContentSize:(struct CGSize { double x1; double x2; })arg1 forWidgetHost:(id)arg2;
+- (void)updatePreferredContentSize:(struct CGSize { float x1; float x2; })arg1 forWidgetHost:(id)arg2;
 - (id)widgetIdentifier;
 - (id)widgetInfoWithExtension:(id)arg1;
 

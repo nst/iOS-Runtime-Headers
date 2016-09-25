@@ -68,7 +68,7 @@
     unsigned int  _rtpMaxSkew;
     unsigned int  _rtpSkewResets;
     NSString * _sessionUUID;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
     unsigned int  _unrecoveredPackets;
 }
 
@@ -136,7 +136,7 @@
 @property (nonatomic) unsigned int rtpMaxSkew;
 @property (nonatomic) unsigned int rtpSkewResets;
 @property (nonatomic, retain) NSString *sessionUUID;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 @property (nonatomic) unsigned int unrecoveredPackets;
 
 - (unsigned int)bigLosses;
@@ -275,9 +275,9 @@
 - (void)setRtpMaxSkew:(unsigned int)arg1;
 - (void)setRtpSkewResets:(unsigned int)arg1;
 - (void)setSessionUUID:(id)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (void)setUnrecoveredPackets:(unsigned int)arg1;
-- (unsigned int)timestamp;
+- (unsigned long long)timestamp;
 - (unsigned int)unrecoveredPackets;
 - (void)writeTo:(id)arg1;
 

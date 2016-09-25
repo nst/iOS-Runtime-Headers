@@ -3,7 +3,7 @@
  */
 
 @interface MIPMultiverseIdentifier : PBCodable <NSCopying> {
-    int  _accountId;
+    long long  _accountId;
     struct { 
         unsigned int accountId : 1; 
         unsigned int purchaseHistoryId : 1; 
@@ -16,12 +16,12 @@
     int  _mediaObjectType;
     int  _mediaType;
     NSString * _name;
-    int  _purchaseHistoryId;
-    int  _sagaId;
-    int  _storeId;
+    long long  _purchaseHistoryId;
+    long long  _sagaId;
+    long long  _storeId;
 }
 
-@property (nonatomic) int accountId;
+@property (nonatomic) long long accountId;
 @property (nonatomic) BOOL hasAccountId;
 @property (nonatomic) BOOL hasMediaObjectType;
 @property (nonatomic) BOOL hasMediaType;
@@ -33,16 +33,16 @@
 @property (nonatomic) int mediaObjectType;
 @property (nonatomic) int mediaType;
 @property (nonatomic, retain) NSString *name;
-@property (nonatomic) int purchaseHistoryId;
-@property (nonatomic) int sagaId;
-@property (nonatomic) int storeId;
+@property (nonatomic) long long purchaseHistoryId;
+@property (nonatomic) long long sagaId;
+@property (nonatomic) long long storeId;
 
 + (Class)libraryIdentifiersType;
 
 - (void).cxx_destruct;
 - (int)StringAsMediaObjectType:(id)arg1;
 - (int)StringAsMediaType:(id)arg1;
-- (int)accountId;
+- (long long)accountId;
 - (void)addLibraryIdentifiers:(id)arg1;
 - (void)clearLibraryIdentifiers;
 - (void)copyTo:(id)arg1;
@@ -67,10 +67,10 @@
 - (id)mediaTypeAsString:(int)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)name;
-- (int)purchaseHistoryId;
+- (long long)purchaseHistoryId;
 - (BOOL)readFrom:(id)arg1;
-- (int)sagaId;
-- (void)setAccountId:(int)arg1;
+- (long long)sagaId;
+- (void)setAccountId:(long long)arg1;
 - (void)setHasAccountId:(BOOL)arg1;
 - (void)setHasMediaObjectType:(BOOL)arg1;
 - (void)setHasMediaType:(BOOL)arg1;
@@ -81,10 +81,10 @@
 - (void)setMediaObjectType:(int)arg1;
 - (void)setMediaType:(int)arg1;
 - (void)setName:(id)arg1;
-- (void)setPurchaseHistoryId:(int)arg1;
-- (void)setSagaId:(int)arg1;
-- (void)setStoreId:(int)arg1;
-- (int)storeId;
+- (void)setPurchaseHistoryId:(long long)arg1;
+- (void)setSagaId:(long long)arg1;
+- (void)setStoreId:(long long)arg1;
+- (long long)storeId;
 - (void)writeTo:(id)arg1;
 
 @end

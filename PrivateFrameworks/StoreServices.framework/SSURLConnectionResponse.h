@@ -15,7 +15,7 @@
 @property (nonatomic, readonly) NSData *databaseEncoding;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) int expectedContentLength;
+@property (nonatomic, readonly) long long expectedContentLength;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) SSMetricsPageEvent *metricsPageEvent;
 @property (nonatomic, readonly) NSData *radio_decompressedBodyData;
@@ -35,7 +35,7 @@
 - (id)copyXPCEncoding;
 - (id)databaseEncoding;
 - (void)dealloc;
-- (int)expectedContentLength;
+- (long long)expectedContentLength;
 - (id)initWithDatabaseEncoding:(id)arg1;
 - (id)initWithURLResponse:(id)arg1 bodyData:(id)arg2;
 - (id)initWithXPCEncoding:(id)arg1;

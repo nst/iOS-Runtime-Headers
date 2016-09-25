@@ -13,7 +13,7 @@
     int  _localNoticationNumberReceived;
     BOOL  _localNotificationDirectOpen;
     int  _localNotificationDirectOpenNumber;
-    int  _localNotificationSentTimestamp;
+    long long  _localNotificationSentTimestamp;
     int  _localNotificationType;
 }
 
@@ -25,7 +25,7 @@
 @property (nonatomic) int localNoticationNumberReceived;
 @property (nonatomic) BOOL localNotificationDirectOpen;
 @property (nonatomic) int localNotificationDirectOpenNumber;
-@property (nonatomic) int localNotificationSentTimestamp;
+@property (nonatomic) long long localNotificationSentTimestamp;
 @property (nonatomic) int localNotificationType;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -41,7 +41,7 @@
 - (int)localNoticationNumberReceived;
 - (BOOL)localNotificationDirectOpen;
 - (int)localNotificationDirectOpenNumber;
-- (int)localNotificationSentTimestamp;
+- (long long)localNotificationSentTimestamp;
 - (int)localNotificationType;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
@@ -53,7 +53,7 @@
 - (void)setLocalNoticationNumberReceived:(int)arg1;
 - (void)setLocalNotificationDirectOpen:(BOOL)arg1;
 - (void)setLocalNotificationDirectOpenNumber:(int)arg1;
-- (void)setLocalNotificationSentTimestamp:(int)arg1;
+- (void)setLocalNotificationSentTimestamp:(long long)arg1;
 - (void)setLocalNotificationType:(int)arg1;
 - (void)writeTo:(id)arg1;
 

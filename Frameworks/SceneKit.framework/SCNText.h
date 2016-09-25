@@ -6,20 +6,20 @@
     BOOL  __wantsSeparateGeometryElements;
     long  _alignmentMode;
     UIBezierPath * _chamferProfile;
-    double  _chamferRadius;
+    float  _chamferRadius;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _customContainerFrame;
-    double  _discretizedStraightLineMaxLength;
-    double  _extrusionDepth;
-    double  _flatness;
+    float  _discretizedStraightLineMaxLength;
+    float  _extrusionDepth;
+    float  _flatness;
     UIFont * _font;
     int  _primitiveType;
     id  _string;
@@ -30,10 +30,10 @@
 
 @property (nonatomic, copy) NSString *alignmentMode;
 @property (nonatomic, copy) UIBezierPath *chamferProfile;
-@property (nonatomic) double chamferRadius;
-@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } containerFrame;
-@property (nonatomic) double extrusionDepth;
-@property (nonatomic) double flatness;
+@property (nonatomic) float chamferRadius;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } containerFrame;
+@property (nonatomic) float extrusionDepth;
+@property (nonatomic) float flatness;
 @property (nonatomic, retain) UIFont *font;
 @property (nonatomic, copy) id string;
 @property (nonatomic, copy) NSString *truncationMode;
@@ -46,12 +46,12 @@
 - (struct __C3DGeometry { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_2_1; unsigned char x_1_2_2[4]; } x_1_1_1; void *x_1_1_2; struct __CFString {} *x_1_1_3; struct __CFString {} *x_1_1_4; struct __CFDictionary {} *x_1_1_5; int x_1_1_6; int x_1_1_7; } x1; struct __C3DMesh {} *x2; struct __C3DMaterial {} *x3; struct __CFArray {} *x4; struct __CFSet {} *x5; struct __CFArray {} *x6; struct __C3DAABB {} *x7; unsigned int x8 : 1; int (*x9)(); struct { unsigned short x_10_1_1; struct { bool x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; unsigned char x_2_2_4; } x_10_1_2; struct __C3DMeshElement {} *x_10_1_3; struct __C3DMeshSource {} *x_10_1_4; struct __C3DMesh {} *x_10_1_5; } x10; }*)__createCFObject;
 - (void)_customDecodingOfSCNText:(id)arg1;
 - (void)_customEncodingOfSCNText:(id)arg1;
-- (void)_syncObjCModel:(struct __C3DTextGeometry { struct __C3DShapeGeometry { struct __C3DGeometry { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_4_1; unsigned char x_1_4_2[4]; } x_1_3_1; void *x_1_3_2; struct __CFString {} *x_1_3_3; struct __CFString {} *x_1_3_4; struct __CFDictionary {} *x_1_3_5; int x_1_3_6; int x_1_3_7; } x_1_2_1; struct __C3DMesh {} *x_1_2_2; struct __C3DMaterial {} *x_1_2_3; struct __CFArray {} *x_1_2_4; struct __CFSet {} *x_1_2_5; struct __CFArray {} *x_1_2_6; struct __C3DAABB {} *x_1_2_7; unsigned int x_1_2_8 : 1; int (*x_1_2_9)(); struct { unsigned short x_10_3_1; struct { bool x_2_4_1; unsigned char x_2_4_2; unsigned char x_2_4_3; unsigned char x_2_4_4; } x_10_3_2; struct __C3DMeshElement {} *x_10_3_3; struct __C3DMeshSource {} *x_10_3_4; struct __C3DMesh {} *x_10_3_5; } x_1_2_10; } x_1_1_1; struct { BOOL x_2_2_1; double x_2_2_2; double x_2_2_3; double x_2_2_4; long x_2_2_5; double x_2_2_6; struct CGPath {} *x_2_2_7; void *x_2_2_8; struct CGPath {} *x_2_2_9; void *x_2_2_10; } x_1_1_2; struct __C3DMesh {} *x_1_1_3; unsigned char x_1_1_4[16]; } x1; }*)arg1;
+- (void)_syncObjCModel:(struct __C3DTextGeometry { struct __C3DShapeGeometry { struct __C3DGeometry { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_4_1; unsigned char x_1_4_2[4]; } x_1_3_1; void *x_1_3_2; struct __CFString {} *x_1_3_3; struct __CFString {} *x_1_3_4; struct __CFDictionary {} *x_1_3_5; int x_1_3_6; int x_1_3_7; } x_1_2_1; struct __C3DMesh {} *x_1_2_2; struct __C3DMaterial {} *x_1_2_3; struct __CFArray {} *x_1_2_4; struct __CFSet {} *x_1_2_5; struct __CFArray {} *x_1_2_6; struct __C3DAABB {} *x_1_2_7; unsigned int x_1_2_8 : 1; int (*x_1_2_9)(); struct { unsigned short x_10_3_1; struct { bool x_2_4_1; unsigned char x_2_4_2; unsigned char x_2_4_3; unsigned char x_2_4_4; } x_10_3_2; struct __C3DMeshElement {} *x_10_3_3; struct __C3DMeshSource {} *x_10_3_4; struct __C3DMesh {} *x_10_3_5; } x_1_2_10; } x_1_1_1; struct { BOOL x_2_2_1; float x_2_2_2; float x_2_2_3; float x_2_2_4; long x_2_2_5; float x_2_2_6; struct CGPath {} *x_2_2_7; void *x_2_2_8; struct CGPath {} *x_2_2_9; void *x_2_2_10; } x_1_1_2; struct __C3DMesh {} *x_1_1_3; unsigned char x_1_1_4[16]; } x1; }*)arg1;
 - (BOOL)_wantsSeparateGeometryElements;
 - (id)alignmentMode;
 - (id)chamferProfile;
 - (float)chamferRadius;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })containerFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })containerFrame;
 - (id)copy;
 - (struct __C3DAnimationChannel { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __C3DAnimation {} *x2; struct __CFArray {} *x3; void *x4; struct __C3DModelTarget {} *x5; struct __CFString {} *x6; }*)copyAnimationChannelForKeyPath:(id)arg1 animation:(id)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -62,20 +62,20 @@
 - (float)extrusionDepth;
 - (float)flatness;
 - (id)font;
-- (BOOL)getBoundingBoxMin:(struct SCNVector3 { double x1; double x2; double x3; }*)arg1 max:(struct SCNVector3 { double x1; double x2; double x3; }*)arg2;
-- (BOOL)getBoundingSphereCenter:(struct SCNVector3 { double x1; double x2; double x3; }*)arg1 radius:(float*)arg2;
+- (BOOL)getBoundingBoxMin:(struct SCNVector3 { float x1; float x2; float x3; }*)arg1 max:(struct SCNVector3 { float x1; float x2; float x3; }*)arg2;
+- (BOOL)getBoundingSphereCenter:(struct SCNVector3 { float x1; float x2; float x3; }*)arg1 radius:(float*)arg2;
 - (id)init;
-- (id)initPresentationTextGeometryWithTextGeometryRef:(struct __C3DTextGeometry { struct __C3DShapeGeometry { struct __C3DGeometry { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_4_1; unsigned char x_1_4_2[4]; } x_1_3_1; void *x_1_3_2; struct __CFString {} *x_1_3_3; struct __CFString {} *x_1_3_4; struct __CFDictionary {} *x_1_3_5; int x_1_3_6; int x_1_3_7; } x_1_2_1; struct __C3DMesh {} *x_1_2_2; struct __C3DMaterial {} *x_1_2_3; struct __CFArray {} *x_1_2_4; struct __CFSet {} *x_1_2_5; struct __CFArray {} *x_1_2_6; struct __C3DAABB {} *x_1_2_7; unsigned int x_1_2_8 : 1; int (*x_1_2_9)(); struct { unsigned short x_10_3_1; struct { bool x_2_4_1; unsigned char x_2_4_2; unsigned char x_2_4_3; unsigned char x_2_4_4; } x_10_3_2; struct __C3DMeshElement {} *x_10_3_3; struct __C3DMeshSource {} *x_10_3_4; struct __C3DMesh {} *x_10_3_5; } x_1_2_10; } x_1_1_1; struct { BOOL x_2_2_1; double x_2_2_2; double x_2_2_3; double x_2_2_4; long x_2_2_5; double x_2_2_6; struct CGPath {} *x_2_2_7; void *x_2_2_8; struct CGPath {} *x_2_2_9; void *x_2_2_10; } x_1_1_2; struct __C3DMesh {} *x_1_1_3; unsigned char x_1_1_4[16]; } x1; }*)arg1;
+- (id)initPresentationTextGeometryWithTextGeometryRef:(struct __C3DTextGeometry { struct __C3DShapeGeometry { struct __C3DGeometry { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_4_1; unsigned char x_1_4_2[4]; } x_1_3_1; void *x_1_3_2; struct __CFString {} *x_1_3_3; struct __CFString {} *x_1_3_4; struct __CFDictionary {} *x_1_3_5; int x_1_3_6; int x_1_3_7; } x_1_2_1; struct __C3DMesh {} *x_1_2_2; struct __C3DMaterial {} *x_1_2_3; struct __CFArray {} *x_1_2_4; struct __CFSet {} *x_1_2_5; struct __CFArray {} *x_1_2_6; struct __C3DAABB {} *x_1_2_7; unsigned int x_1_2_8 : 1; int (*x_1_2_9)(); struct { unsigned short x_10_3_1; struct { bool x_2_4_1; unsigned char x_2_4_2; unsigned char x_2_4_3; unsigned char x_2_4_4; } x_10_3_2; struct __C3DMeshElement {} *x_10_3_3; struct __C3DMeshSource {} *x_10_3_4; struct __C3DMesh {} *x_10_3_5; } x_1_2_10; } x_1_1_1; struct { BOOL x_2_2_1; float x_2_2_2; float x_2_2_3; float x_2_2_4; long x_2_2_5; float x_2_2_6; struct CGPath {} *x_2_2_7; void *x_2_2_8; struct CGPath {} *x_2_2_9; void *x_2_2_10; } x_1_1_2; struct __C3DMesh {} *x_1_1_3; unsigned char x_1_1_4[16]; } x1; }*)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithTextGeometryRef:(struct __C3DTextGeometry { struct __C3DShapeGeometry { struct __C3DGeometry { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_4_1; unsigned char x_1_4_2[4]; } x_1_3_1; void *x_1_3_2; struct __CFString {} *x_1_3_3; struct __CFString {} *x_1_3_4; struct __CFDictionary {} *x_1_3_5; int x_1_3_6; int x_1_3_7; } x_1_2_1; struct __C3DMesh {} *x_1_2_2; struct __C3DMaterial {} *x_1_2_3; struct __CFArray {} *x_1_2_4; struct __CFSet {} *x_1_2_5; struct __CFArray {} *x_1_2_6; struct __C3DAABB {} *x_1_2_7; unsigned int x_1_2_8 : 1; int (*x_1_2_9)(); struct { unsigned short x_10_3_1; struct { bool x_2_4_1; unsigned char x_2_4_2; unsigned char x_2_4_3; unsigned char x_2_4_4; } x_10_3_2; struct __C3DMeshElement {} *x_10_3_3; struct __C3DMeshSource {} *x_10_3_4; struct __C3DMesh {} *x_10_3_5; } x_1_2_10; } x_1_1_1; struct { BOOL x_2_2_1; double x_2_2_2; double x_2_2_3; double x_2_2_4; long x_2_2_5; double x_2_2_6; struct CGPath {} *x_2_2_7; void *x_2_2_8; struct CGPath {} *x_2_2_9; void *x_2_2_10; } x_1_1_2; struct __C3DMesh {} *x_1_1_3; unsigned char x_1_1_4[16]; } x1; }*)arg1;
+- (id)initWithTextGeometryRef:(struct __C3DTextGeometry { struct __C3DShapeGeometry { struct __C3DGeometry { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_4_1; unsigned char x_1_4_2[4]; } x_1_3_1; void *x_1_3_2; struct __CFString {} *x_1_3_3; struct __CFString {} *x_1_3_4; struct __CFDictionary {} *x_1_3_5; int x_1_3_6; int x_1_3_7; } x_1_2_1; struct __C3DMesh {} *x_1_2_2; struct __C3DMaterial {} *x_1_2_3; struct __CFArray {} *x_1_2_4; struct __CFSet {} *x_1_2_5; struct __CFArray {} *x_1_2_6; struct __C3DAABB {} *x_1_2_7; unsigned int x_1_2_8 : 1; int (*x_1_2_9)(); struct { unsigned short x_10_3_1; struct { bool x_2_4_1; unsigned char x_2_4_2; unsigned char x_2_4_3; unsigned char x_2_4_4; } x_10_3_2; struct __C3DMeshElement {} *x_10_3_3; struct __C3DMeshSource {} *x_10_3_4; struct __C3DMesh {} *x_10_3_5; } x_1_2_10; } x_1_1_1; struct { BOOL x_2_2_1; float x_2_2_2; float x_2_2_3; float x_2_2_4; long x_2_2_5; float x_2_2_6; struct CGPath {} *x_2_2_7; void *x_2_2_8; struct CGPath {} *x_2_2_9; void *x_2_2_10; } x_1_1_2; struct __C3DMesh {} *x_1_1_3; unsigned char x_1_1_4[16]; } x1; }*)arg1;
 - (BOOL)isWrapped;
-- (struct { struct { BOOL x_1_1_1; double x_1_1_2; double x_1_1_3; long x_1_1_4; double x_1_1_5; void *x_1_1_6; void *x_1_1_7; } x1; void *x2; void *x3; long x4; long x5; bool x6; bool x7; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_8_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_8_1_2; } x8; double x9; })params;
+- (struct { struct { BOOL x_1_1_1; float x_1_1_2; float x_1_1_3; long x_1_1_4; float x_1_1_5; void *x_1_1_6; void *x_1_1_7; } x1; void *x2; void *x3; long x4; long x5; bool x6; bool x7; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_8_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_8_1_2; } x8; float x9; })params;
 - (id)presentationGeometry;
 - (int)primitiveType;
 - (void)setAlignmentMode:(id)arg1;
 - (void)setChamferProfile:(id)arg1;
 - (void)setChamferRadius:(float)arg1;
-- (void)setContainerFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setContainerFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setDiscretizedStraightLineMaxLength:(float)arg1;
 - (void)setExtrusionDepth:(float)arg1;
 - (void)setFlatness:(float)arg1;

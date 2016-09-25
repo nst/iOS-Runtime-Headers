@@ -21,7 +21,7 @@
 - (id)messageBody;
 - (BOOL)messageData:(id*)arg1 messageSize:(unsigned int*)arg2 isComplete:(BOOL*)arg3 downloadIfNecessary:(BOOL)arg4;
 - (BOOL)messageDataHolder:(id*)arg1 messageSize:(unsigned int*)arg2 isComplete:(BOOL*)arg3 downloadIfNecessary:(BOOL)arg4;
-- (unsigned int)messageFlags;
+- (unsigned long long)messageFlags;
 - (unsigned int)messageSize;
 - (id)remoteID;
 - (id)remoteMailboxURL;

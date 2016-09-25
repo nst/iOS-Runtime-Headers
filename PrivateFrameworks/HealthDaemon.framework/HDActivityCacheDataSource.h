@@ -5,7 +5,7 @@
 @interface HDActivityCacheDataSource : NSObject <HDActivityCacheStatisticsBuilderSourceOrderDelegate, HDDataObserver> {
     NSSet * _allObservedTypes;
     HKCategoryType * _deepBreathingSessionType;
-    int  _nonQuantitySampleAnchor;
+    long long  _nonQuantitySampleAnchor;
     NSString * _nonQuantitySamplesQueryString;
     NSSet * _observedQuantityTypes;
     _HKTimePeriod * _previousDayDateRange;
@@ -20,7 +20,7 @@
         } __end_cap_; 
     }  _previousWatchActivationLogEntryVector;
     HDProfile * _profile;
-    int  _quantitySampleAnchor;
+    long long  _quantitySampleAnchor;
     NSString * _quantitySamplesQueryString;
     NSObject<OS_dispatch_queue> * _queue;
     _HKDelayedOperation * _rebuildOperation;
@@ -54,7 +54,7 @@
 - (BOOL)_primeNonQuantitySamplesWithError:(id*)arg1;
 - (BOOL)_primePreviousActivationLogEntryWithError:(id*)arg1;
 - (BOOL)_primeQuantitySamplesWithError:(id*)arg1;
-- (BOOL)_quantitySampleIsValidWithTypeCode:(int)arg1 workoutSourceIdentifier:(int)arg2 isWatchSource:(BOOL)arg3;
+- (BOOL)_quantitySampleIsValidWithTypeCode:(int)arg1 workoutSourceIdentifier:(long long)arg2 isWatchSource:(BOOL)arg3;
 - (id)_quantitySamplesQueryStringWithQuatityTypes:(id)arg1;
 - (BOOL)_quantityTypeRequiresWatchSource:(int)arg1;
 - (void)_queue_deregisterForSamplesAdded;

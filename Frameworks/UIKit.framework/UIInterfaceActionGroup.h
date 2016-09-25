@@ -6,14 +6,14 @@
     NSArray * _actions;
     NSArray * _actionsBySection;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _leadingImageLayoutSize;
     UIInterfaceAction * _preferredAction;
     NSString * _title;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _trailingImageLayoutSize;
     UIInterfaceActionVisualStyle * _visualStyle;
     NSPointerArray * _weakDisplayPropertyObservers;
@@ -24,11 +24,11 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } leadingImageLayoutSize;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } leadingImageLayoutSize;
 @property (nonatomic, retain) UIInterfaceAction *preferredAction;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSString *title;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } trailingImageLayoutSize;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } trailingImageLayoutSize;
 @property (getter=_visualStyle, setter=_setVisualStyle:, nonatomic, retain) UIInterfaceActionVisualStyle *visualStyle;
 @property (nonatomic, readonly) NSPointerArray *weakDisplayPropertyObservers;
 
@@ -56,13 +56,13 @@
 - (id)initWithTitle:(id)arg1 actionsBySection:(id)arg2;
 - (void)interfaceAction:(id)arg1 reloadDisplayedContentActionProperties:(id)arg2;
 - (void)interfaceAction:(id)arg1 reloadDisplayedContentVisualStyle:(id)arg2;
-- (struct CGSize { double x1; double x2; })leadingImageLayoutSize;
+- (struct CGSize { float x1; float x2; })leadingImageLayoutSize;
 - (id)preferredAction;
-- (void)setLeadingImageLayoutSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setLeadingImageLayoutSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setPreferredAction:(id)arg1;
-- (void)setTrailingImageLayoutSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setTrailingImageLayoutSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)title;
-- (struct CGSize { double x1; double x2; })trailingImageLayoutSize;
+- (struct CGSize { float x1; float x2; })trailingImageLayoutSize;
 - (id)weakDisplayPropertyObservers;
 
 @end

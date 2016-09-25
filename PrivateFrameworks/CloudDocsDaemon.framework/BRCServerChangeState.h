@@ -4,14 +4,14 @@
 
 @interface BRCServerChangeState : NSObject <NSCopying, NSSecureCoding> {
     CKServerChangeToken * _changeToken;
-    unsigned int  _clientRequestID;
+    unsigned long long  _clientRequestID;
     NSDate * _lastSyncDownDate;
     int  _lastSyncDownStatus;
     CKServerChangeToken * _pendingChangeToken;
 }
 
 @property (nonatomic, retain) CKServerChangeToken *changeToken;
-@property (nonatomic) unsigned int clientRequestID;
+@property (nonatomic) unsigned long long clientRequestID;
 @property (nonatomic, readonly) BOOL hasNeverSyncedDown;
 @property (retain) NSDate *lastSyncDownDate;
 @property (nonatomic) int lastSyncDownStatus;
@@ -22,7 +22,7 @@
 
 - (void).cxx_destruct;
 - (id)changeToken;
-- (unsigned int)clientRequestID;
+- (unsigned long long)clientRequestID;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)descriptionWithContext:(id)arg1;
@@ -38,10 +38,10 @@
 - (id)nextSyncRequestChangeToken;
 - (id)pendingChangeToken;
 - (void)setChangeToken:(id)arg1;
-- (void)setClientRequestID:(unsigned int)arg1;
+- (void)setClientRequestID:(unsigned long long)arg1;
 - (void)setLastSyncDownDate:(id)arg1;
 - (void)setLastSyncDownStatus:(int)arg1;
 - (void)setPendingChangeToken:(id)arg1;
-- (BOOL)updateWithServerChangeToken:(id)arg1 clientRequestID:(unsigned int)arg2 syncDownStatus:(int)arg3;
+- (BOOL)updateWithServerChangeToken:(id)arg1 clientRequestID:(unsigned long long)arg2 syncDownStatus:(int)arg3;
 
 @end

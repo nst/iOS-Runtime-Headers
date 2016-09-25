@@ -4,7 +4,7 @@
 
 @interface GEORouteIncident : PBCodable <NSCopying> {
     NSString * _crossStreet;
-    int  _endTime;
+    long long  _endTime;
     BOOL  _endTimeReliable;
     struct { 
         unsigned int endTime : 1; 
@@ -22,14 +22,14 @@
     int  _laneClosureType;
     GEOLatLng * _position;
     int  _significance;
-    int  _startTime;
+    long long  _startTime;
     NSString * _street;
     int  _type;
-    int  _updateTime;
+    long long  _updateTime;
 }
 
 @property (nonatomic, retain) NSString *crossStreet;
-@property (nonatomic) int endTime;
+@property (nonatomic) long long endTime;
 @property (nonatomic) BOOL endTimeReliable;
 @property (nonatomic, readonly) BOOL hasCrossStreet;
 @property (nonatomic) BOOL hasEndTime;
@@ -50,10 +50,10 @@
 @property (nonatomic) int laneClosureType;
 @property (nonatomic, retain) GEOLatLng *position;
 @property (nonatomic) int significance;
-@property (nonatomic) int startTime;
+@property (nonatomic) long long startTime;
 @property (nonatomic, retain) NSString *street;
 @property (nonatomic) int type;
-@property (nonatomic) int updateTime;
+@property (nonatomic) long long updateTime;
 
 - (int)StringAsLaneClosureType:(id)arg1;
 - (int)StringAsSignificance:(id)arg1;
@@ -64,7 +64,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (int)endTime;
+- (long long)endTime;
 - (BOOL)endTimeReliable;
 - (BOOL)hasCrossStreet;
 - (BOOL)hasEndTime;
@@ -90,7 +90,7 @@
 - (id)position;
 - (BOOL)readFrom:(id)arg1;
 - (void)setCrossStreet:(id)arg1;
-- (void)setEndTime:(int)arg1;
+- (void)setEndTime:(long long)arg1;
 - (void)setEndTimeReliable:(BOOL)arg1;
 - (void)setHasEndTime:(BOOL)arg1;
 - (void)setHasEndTimeReliable:(BOOL)arg1;
@@ -106,17 +106,17 @@
 - (void)setLaneClosureType:(int)arg1;
 - (void)setPosition:(id)arg1;
 - (void)setSignificance:(int)arg1;
-- (void)setStartTime:(int)arg1;
+- (void)setStartTime:(long long)arg1;
 - (void)setStreet:(id)arg1;
 - (void)setType:(int)arg1;
-- (void)setUpdateTime:(int)arg1;
+- (void)setUpdateTime:(long long)arg1;
 - (int)significance;
 - (id)significanceAsString:(int)arg1;
-- (int)startTime;
+- (long long)startTime;
 - (id)street;
 - (int)type;
 - (id)typeAsString:(int)arg1;
-- (int)updateTime;
+- (long long)updateTime;
 - (void)writeTo:(id)arg1;
 
 @end

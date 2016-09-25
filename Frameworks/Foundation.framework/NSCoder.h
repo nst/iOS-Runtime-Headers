@@ -26,7 +26,7 @@
 - (double)decodeDoubleForKey:(id)arg1;
 - (float)decodeFloatForKey:(id)arg1;
 - (int)decodeInt32ForKey:(id)arg1;
-- (int)decodeInt64ForKey:(id)arg1;
+- (long long)decodeInt64ForKey:(id)arg1;
 - (int)decodeIntForKey:(id)arg1;
 - (int)decodeIntegerForKey:(id)arg1;
 - (long)decodeLongForKey:(id)arg1;
@@ -37,13 +37,13 @@
 - (id)decodeObjectOfClass:(Class)arg1 forKey:(id)arg2 error:(id*)arg3;
 - (id)decodeObjectOfClasses:(id)arg1 forKey:(id)arg2;
 - (id)decodeObjectOfClasses:(id)arg1 forKey:(id)arg2 error:(id*)arg3;
-- (struct CGPoint { double x1; double x2; })decodePoint;
-- (struct CGPoint { double x1; double x2; })decodePointForKey:(id)arg1;
+- (struct CGPoint { float x1; float x2; })decodePoint;
+- (struct CGPoint { float x1; float x2; })decodePointForKey:(id)arg1;
 - (id)decodePropertyListForKey:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })decodeRect;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })decodeRectForKey:(id)arg1;
-- (struct CGSize { double x1; double x2; })decodeSize;
-- (struct CGSize { double x1; double x2; })decodeSizeForKey:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })decodeRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })decodeRectForKey:(id)arg1;
+- (struct CGSize { float x1; float x2; })decodeSize;
+- (struct CGSize { float x1; float x2; })decodeSizeForKey:(id)arg1;
 - (id)decodeTopLevelObjectAndReturnError:(id*)arg1;
 - (id)decodeTopLevelObjectForKey:(id)arg1 error:(id*)arg2;
 - (id)decodeTopLevelObjectOfClass:(Class)arg1 forKey:(id)arg2 error:(id*)arg3;
@@ -63,19 +63,19 @@
 - (void)encodeDouble:(double)arg1 forKey:(id)arg2;
 - (void)encodeFloat:(float)arg1 forKey:(id)arg2;
 - (void)encodeInt32:(int)arg1 forKey:(id)arg2;
-- (void)encodeInt64:(int)arg1 forKey:(id)arg2;
+- (void)encodeInt64:(long long)arg1 forKey:(id)arg2;
 - (void)encodeInt:(int)arg1 forKey:(id)arg2;
 - (void)encodeInteger:(int)arg1 forKey:(id)arg2;
 - (void)encodeLong:(long)arg1 forKey:(id)arg2;
 - (void)encodeObject:(id)arg1;
 - (void)encodeObject:(id)arg1 forKey:(id)arg2;
-- (void)encodePoint:(struct CGPoint { double x1; double x2; })arg1;
-- (void)encodePoint:(struct CGPoint { double x1; double x2; })arg1 forKey:(id)arg2;
-- (void)encodeRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)encodeRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forKey:(id)arg2;
+- (void)encodePoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)encodePoint:(struct CGPoint { float x1; float x2; })arg1 forKey:(id)arg2;
+- (void)encodeRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)encodeRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forKey:(id)arg2;
 - (void)encodeRootObject:(id)arg1;
-- (void)encodeSize:(struct CGSize { double x1; double x2; })arg1;
-- (void)encodeSize:(struct CGSize { double x1; double x2; })arg1 forKey:(id)arg2;
+- (void)encodeSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)encodeSize:(struct CGSize { float x1; float x2; })arg1 forKey:(id)arg2;
 - (void)encodeValueOfObjCType:(const char *)arg1 at:(const void*)arg2;
 - (void)encodeValuesOfObjCTypes:(const char *)arg1;
 - (id)error;
@@ -91,12 +91,12 @@
 
 // Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
 
-- (struct { int x1; int x2; unsigned int x3; int x4; })decodeCMTimeForKey:(id)arg1;
-- (struct { struct { struct { int x_1_2_1; int x_1_2_2; unsigned int x_1_2_3; int x_1_2_4; } x_1_1_1; struct { int x_2_2_1; int x_2_2_2; unsigned int x_2_2_3; int x_2_2_4; } x_1_1_2; } x1; struct { struct { int x_1_2_1; int x_1_2_2; unsigned int x_1_2_3; int x_1_2_4; } x_2_1_1; struct { int x_2_2_1; int x_2_2_2; unsigned int x_2_2_3; int x_2_2_4; } x_2_1_2; } x2; })decodeCMTimeMappingForKey:(id)arg1;
-- (struct { struct { int x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; int x_1_1_4; } x1; struct { int x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; int x_2_1_4; } x2; })decodeCMTimeRangeForKey:(id)arg1;
-- (void)encodeCMTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1 forKey:(id)arg2;
-- (void)encodeCMTimeMapping:(struct { struct { struct { int x_1_2_1; int x_1_2_2; unsigned int x_1_2_3; int x_1_2_4; } x_1_1_1; struct { int x_2_2_1; int x_2_2_2; unsigned int x_2_2_3; int x_2_2_4; } x_1_1_2; } x1; struct { struct { int x_1_2_1; int x_1_2_2; unsigned int x_1_2_3; int x_1_2_4; } x_2_1_1; struct { int x_2_2_1; int x_2_2_2; unsigned int x_2_2_3; int x_2_2_4; } x_2_1_2; } x2; })arg1 forKey:(id)arg2;
-- (void)encodeCMTimeRange:(struct { struct { int x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; int x_1_1_4; } x1; struct { int x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; int x_2_1_4; } x2; })arg1 forKey:(id)arg2;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })decodeCMTimeForKey:(id)arg1;
+- (struct { struct { struct { long long x_1_2_1; int x_1_2_2; unsigned int x_1_2_3; long long x_1_2_4; } x_1_1_1; struct { long long x_2_2_1; int x_2_2_2; unsigned int x_2_2_3; long long x_2_2_4; } x_1_1_2; } x1; struct { struct { long long x_1_2_1; int x_1_2_2; unsigned int x_1_2_3; long long x_1_2_4; } x_2_1_1; struct { long long x_2_2_1; int x_2_2_2; unsigned int x_2_2_3; long long x_2_2_4; } x_2_1_2; } x2; })decodeCMTimeMappingForKey:(id)arg1;
+- (struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })decodeCMTimeRangeForKey:(id)arg1;
+- (void)encodeCMTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 forKey:(id)arg2;
+- (void)encodeCMTimeMapping:(struct { struct { struct { long long x_1_2_1; int x_1_2_2; unsigned int x_1_2_3; long long x_1_2_4; } x_1_1_1; struct { long long x_2_2_1; int x_2_2_2; unsigned int x_2_2_3; long long x_2_2_4; } x_1_1_2; } x1; struct { struct { long long x_1_2_1; int x_1_2_2; unsigned int x_1_2_3; long long x_1_2_4; } x_2_1_1; struct { long long x_2_2_1; int x_2_2_2; unsigned int x_2_2_3; long long x_2_2_4; } x_2_1_2; } x2; })arg1 forKey:(id)arg2;
+- (void)encodeCMTimeRange:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg1 forKey:(id)arg2;
 
 // Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
 
@@ -127,27 +127,27 @@
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 - (BOOL)_ui_isInterprocess;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })decodeCGAffineTransformForKey:(id)arg1;
-- (struct CGPoint { double x1; double x2; })decodeCGPointForKey:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })decodeCGRectForKey:(id)arg1;
-- (struct CGSize { double x1; double x2; })decodeCGSizeForKey:(id)arg1;
-- (struct CGVector { double x1; double x2; })decodeCGVectorForKey:(id)arg1;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })decodeUIEdgeInsetsForKey:(id)arg1;
-- (struct UIOffset { double x1; double x2; })decodeUIOffsetForKey:(id)arg1;
-- (void)encodeCGAffineTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1 forKey:(id)arg2;
-- (void)encodeCGPoint:(struct CGPoint { double x1; double x2; })arg1 forKey:(id)arg2;
-- (void)encodeCGRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forKey:(id)arg2;
-- (void)encodeCGSize:(struct CGSize { double x1; double x2; })arg1 forKey:(id)arg2;
-- (void)encodeCGVector:(struct CGVector { double x1; double x2; })arg1 forKey:(id)arg2;
-- (void)encodeUIEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1 forKey:(id)arg2;
-- (void)encodeUIOffset:(struct UIOffset { double x1; double x2; })arg1 forKey:(id)arg2;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })decodeCGAffineTransformForKey:(id)arg1;
+- (struct CGPoint { float x1; float x2; })decodeCGPointForKey:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })decodeCGRectForKey:(id)arg1;
+- (struct CGSize { float x1; float x2; })decodeCGSizeForKey:(id)arg1;
+- (struct CGVector { float x1; float x2; })decodeCGVectorForKey:(id)arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })decodeUIEdgeInsetsForKey:(id)arg1;
+- (struct UIOffset { float x1; float x2; })decodeUIOffsetForKey:(id)arg1;
+- (void)encodeCGAffineTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 forKey:(id)arg2;
+- (void)encodeCGPoint:(struct CGPoint { float x1; float x2; })arg1 forKey:(id)arg2;
+- (void)encodeCGRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forKey:(id)arg2;
+- (void)encodeCGSize:(struct CGSize { float x1; float x2; })arg1 forKey:(id)arg2;
+- (void)encodeCGVector:(struct CGVector { float x1; float x2; })arg1 forKey:(id)arg2;
+- (void)encodeUIEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1 forKey:(id)arg2;
+- (void)encodeUIOffset:(struct UIOffset { float x1; float x2; })arg1 forKey:(id)arg2;
 
 // Image: /System/Library/Frameworks/UserNotifications.framework/UserNotifications
 
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })un_decodeCGRectForKey:(id)arg1;
-- (struct { int x1; int x2; unsigned int x3; int x4; })un_decodeCMTimeForKey:(id)arg1;
-- (void)un_encodeCGRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forKey:(id)arg2;
-- (void)un_encodeCMTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1 forKey:(id)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })un_decodeCGRectForKey:(id)arg1;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })un_decodeCMTimeForKey:(id)arg1;
+- (void)un_encodeCGRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forKey:(id)arg2;
+- (void)un_encodeCMTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 forKey:(id)arg2;
 
 // Image: /System/Library/PrivateFrameworks/AnnotationKit.framework/AnnotationKit
 
@@ -216,12 +216,12 @@
 
 // Image: /System/Library/PrivateFrameworks/PhysicsKit.framework/PhysicsKit
 
-- (struct CGPoint { double x1; double x2; })decodeCGPointForKey:(id)arg1;
-- (struct CGSize { double x1; double x2; })decodeCGSizeForKey:(id)arg1;
-- (struct CGVector { double x1; double x2; })decodeCGVectorForKey:(id)arg1;
-- (void)encodeCGPoint:(struct CGPoint { double x1; double x2; })arg1 forKey:(id)arg2;
-- (void)encodeCGSize:(struct CGSize { double x1; double x2; })arg1 forKey:(id)arg2;
-- (void)encodeCGVector:(struct CGVector { double x1; double x2; })arg1 forKey:(id)arg2;
+- (struct CGPoint { float x1; float x2; })decodeCGPointForKey:(id)arg1;
+- (struct CGSize { float x1; float x2; })decodeCGSizeForKey:(id)arg1;
+- (struct CGVector { float x1; float x2; })decodeCGVectorForKey:(id)arg1;
+- (void)encodeCGPoint:(struct CGPoint { float x1; float x2; })arg1 forKey:(id)arg2;
+- (void)encodeCGSize:(struct CGSize { float x1; float x2; })arg1 forKey:(id)arg2;
+- (void)encodeCGVector:(struct CGVector { float x1; float x2; })arg1 forKey:(id)arg2;
 
 // Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
 

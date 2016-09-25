@@ -13,10 +13,10 @@
     LPCaptionBarPresentationProperties * _captionBar;
     LPCaptionBarView * _captionBarView;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _contentInset;
     UIView * _contentView;
     <LPLinkViewDelegate> * _delegate;
@@ -63,7 +63,7 @@
 @property (setter=_setForceFlexibleWidth:, nonatomic) BOOL _forceFlexibleWidth;
 @property (nonatomic, readonly, copy) NSString *_storeIdentifier;
 @property (setter=_setUsesDeferredLayout:, nonatomic) BOOL _usesDeferredLayout;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInset;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <LPLinkViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -96,7 +96,7 @@
 - (void)_invalidateLayout;
 - (void)_invalidatePresentationProperties;
 - (void)_layoutLinkView;
-- (struct CGSize { double x1; double x2; })_layoutLinkViewForSize:(struct CGSize { double x1; double x2; })arg1 applyingLayout:(BOOL)arg2;
+- (struct CGSize { float x1; float x2; })_layoutLinkViewForSize:(struct CGSize { float x1; float x2; })arg1 applyingLayout:(BOOL)arg2;
 - (void)_performDeferredLayout;
 - (void)_rebuildSubviewsWithAnimation:(BOOL)arg1;
 - (void)_setAllowsTapToLoad:(BOOL)arg1;
@@ -116,29 +116,29 @@
 - (void)_tapRecognized:(id)arg1;
 - (BOOL)_usesDeferredLayout;
 - (void)animateBackgroundColor;
-- (void)animateFromOldFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 oldMediaBackgroundFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 oldCaptionBarView:(id)arg3;
+- (void)animateFromOldFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 oldMediaBackgroundFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 oldCaptionBarView:(id)arg3;
 - (void)animateInViews;
 - (void)animateOutAndRemoveViews;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInset;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInset;
 - (id)delegate;
 - (BOOL)gestureRecognizer:(id)arg1 canPreventGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRequireFailureOfGestureRecognizer:(id)arg2;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithMetadataLoadedFromURL:(id)arg1;
 - (id)initWithPresentationProperties:(id)arg1;
 - (id)initWithPresentationProperties:(id)arg1 URL:(id)arg2;
 - (id)initWithURL:(id)arg1;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (void)layoutSubviews;
 - (id)metadata;
-- (void)setContentInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setMetadata:(id)arg1;
 - (void)setSuppressMask:(BOOL)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)tapToLoadViewWasTapped:(id)arg1;
 - (void)themeParametersDidChange;
 

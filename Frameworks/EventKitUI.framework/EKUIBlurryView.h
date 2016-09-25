@@ -7,7 +7,7 @@
     BOOL  _shouldRasterizeForTransition;
 }
 
-@property double blurRadius;
+@property float blurRadius;
 @property (nonatomic) BOOL shouldRasterizeForTransition;
 
 - (void)_activateBlurring;

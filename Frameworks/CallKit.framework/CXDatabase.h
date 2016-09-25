@@ -9,7 +9,7 @@
 }
 
 @property (nonatomic) struct sqlite3 { }*database;
-@property (nonatomic, readonly) int lastInsertedRowID;
+@property (nonatomic, readonly) long long lastInsertedRowID;
 @property (nonatomic, retain) NSMutableDictionary *sqlQueryToStatements;
 @property (nonatomic, retain) NSURL *url;
 
@@ -27,7 +27,7 @@
 - (BOOL)executeSQL:(id)arg1 withStatementPreparationBlock:(id /* block */)arg2 error:(id*)arg3;
 - (id)init;
 - (id)initWithURL:(id)arg1 readOnly:(BOOL)arg2 error:(id*)arg3;
-- (int)lastInsertedRowID;
+- (long long)lastInsertedRowID;
 - (BOOL)performTransactionWithBlock:(id /* block */)arg1 error:(id*)arg2;
 - (BOOL)rollbackTransactionWithError:(id*)arg1;
 - (BOOL)selectSQL:(id)arg1 withBindings:(id)arg2 expectedColumnCount:(int)arg3 resultRowHandler:(id /* block */)arg4 error:(id*)arg5;

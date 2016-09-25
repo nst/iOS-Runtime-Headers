@@ -3,10 +3,10 @@
  */
 
 @interface NSStringDrawingTextStorage : NSTextStorage <NSLayoutManagerDelegate> {
-    double  _baselineDelta;
+    float  _baselineDelta;
     CUICatalog * _catalog;
     NSConcreteNotifyingMutableAttributedString * _contents;
-    double  _defaultTighteningFactor;
+    float  _defaultTighteningFactor;
     NSLayoutManager * _layoutManager;
     struct { 
         unsigned int _typesetterBehavior : 4; 
@@ -23,7 +23,7 @@
 @property (nonatomic, retain) CUICatalog *cuiCatalog;
 @property (nonatomic, retain) CUIStyleEffectConfiguration *cuiStyleEffects;
 @property (readonly, copy) NSString *debugDescription;
-@property double defaultTighteningFactor;
+@property float defaultTighteningFactor;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
@@ -54,10 +54,10 @@
 - (id)cuiCatalog;
 - (id)cuiStyleEffects;
 - (void)dealloc;
-- (struct CGPoint { double x1; double x2; })defaultTextContainerOriginForRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGPoint { float x1; float x2; })defaultTextContainerOriginForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (float)defaultTighteningFactor;
-- (void)drawTextContainer:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 withRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 graphicsContext:(struct CGContext { }*)arg4 baselineMode:(BOOL)arg5 scrollable:(BOOL)arg6 padding:(float)arg7;
-- (void)drawTextContainer:(id)arg1 withRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 graphicsContext:(struct CGContext { }*)arg3 baselineMode:(BOOL)arg4 scrollable:(BOOL)arg5 padding:(float)arg6;
+- (void)drawTextContainer:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 withRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 graphicsContext:(struct CGContext { }*)arg4 baselineMode:(BOOL)arg5 scrollable:(BOOL)arg6 padding:(float)arg7;
+- (void)drawTextContainer:(id)arg1 withRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 graphicsContext:(struct CGContext { }*)arg3 baselineMode:(BOOL)arg4 scrollable:(BOOL)arg5 padding:(float)arg6;
 - (void)fontSetChanged;
 - (id)init;
 - (id)layoutManager;
@@ -73,8 +73,8 @@
 - (id)string;
 - (id)textContainer;
 - (id)textContainerForAttributedString:(id)arg1;
-- (id)textContainerForAttributedString:(id)arg1 containerSize:(struct CGSize { double x1; double x2; })arg2 lineFragmentPadding:(float)arg3;
+- (id)textContainerForAttributedString:(id)arg1 containerSize:(struct CGSize { float x1; float x2; })arg2 lineFragmentPadding:(float)arg3;
 - (int)typesetterBehavior;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })usedRectForTextContainer:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })usedRectForTextContainer:(id)arg1;
 
 @end

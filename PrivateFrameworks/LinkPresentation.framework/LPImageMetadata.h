@@ -5,8 +5,8 @@
 @interface LPImageMetadata : NSObject <NSSecureCoding, _LPResolvable> {
     NSURL * _URL;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _size;
     NSString * _type;
     unsigned int  _version;
@@ -16,7 +16,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic) struct CGSize { double x1; double x2; } size;
+@property (nonatomic) struct CGSize { float x1; float x2; } size;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *type;
 @property (nonatomic, readonly) unsigned int version;
@@ -29,11 +29,11 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isValidMIMEType:(id)arg1;
-- (int)maximumBytes;
-- (void)setSize:(struct CGSize { double x1; double x2; })arg1;
+- (long long)maximumBytes;
+- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setType:(id)arg1;
 - (void)setURL:(id)arg1;
-- (struct CGSize { double x1; double x2; })size;
+- (struct CGSize { float x1; float x2; })size;
 - (id)tryToResolveWithWebViewForProcessSharing:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)type;
 - (unsigned int)version;

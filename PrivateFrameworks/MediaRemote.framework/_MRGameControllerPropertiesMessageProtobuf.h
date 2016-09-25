@@ -3,19 +3,19 @@
  */
 
 @interface _MRGameControllerPropertiesMessageProtobuf : PBCodable <NSCopying> {
-    unsigned int  _controllerID;
+    unsigned long long  _controllerID;
     struct { 
         unsigned int controllerID : 1; 
     }  _has;
     _MRGameControllerPropertiesProtobuf * _properties;
 }
 
-@property (nonatomic) unsigned int controllerID;
+@property (nonatomic) unsigned long long controllerID;
 @property (nonatomic) BOOL hasControllerID;
 @property (nonatomic, readonly) BOOL hasProperties;
 @property (nonatomic, retain) _MRGameControllerPropertiesProtobuf *properties;
 
-- (unsigned int)controllerID;
+- (unsigned long long)controllerID;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -28,7 +28,7 @@
 - (void)mergeFrom:(id)arg1;
 - (id)properties;
 - (BOOL)readFrom:(id)arg1;
-- (void)setControllerID:(unsigned int)arg1;
+- (void)setControllerID:(unsigned long long)arg1;
 - (void)setHasControllerID:(BOOL)arg1;
 - (void)setProperties:(id)arg1;
 - (void)writeTo:(id)arg1;

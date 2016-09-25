@@ -3,7 +3,7 @@
  */
 
 @interface SKBitmapFont : NSObject <NSCoding> {
-    double  _baseLine;
+    float  _baseLine;
     struct map<unsigned short, float, std::__1::less<unsigned short>, std::__1::allocator<std::__1::pair<const unsigned short, float> > > { 
         struct __tree<std::__1::__value_type<unsigned short, float>, std::__1::__map_value_compare<unsigned short, std::__1::__value_type<unsigned short, float>, std::__1::less<unsigned short>, true>, std::__1::allocator<std::__1::__value_type<unsigned short, float> > > { 
             struct __tree_node<std::__1::__value_type<unsigned short, float>, void *> {} *__begin_node_; 
@@ -48,7 +48,7 @@
     NSString * _filePath;
     NSString * _fontName;
     BOOL  _internal;
-    double  _lineHeight;
+    float  _lineHeight;
 }
 
 + (id)_fontForFileNamed:(id)arg1;

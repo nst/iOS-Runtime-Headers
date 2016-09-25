@@ -12,7 +12,7 @@
     NSURL * _contentBaseURL;
     NSNumber * _deviceID;
     NSString * _downloadBaseURL;
-    unsigned int  _downloadTokenExpiration;
+    unsigned long long  _downloadTokenExpiration;
     NSURL * _downloadURL;
     NSDate * _downloadURLExpiration;
     BOOL  _downloaded;
@@ -30,7 +30,7 @@
     NSString * _requestor;
     BOOL  _shouldReadRawEncryptedData;
     NSData * _signature;
-    unsigned int  _size;
+    unsigned long long  _size;
     int  _storageGroupingPolicy;
     int  _uploadRank;
     NSString * _uploadReceipt;
@@ -51,7 +51,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSNumber *deviceID;
 @property (nonatomic, retain) NSString *downloadBaseURL;
-@property (nonatomic) unsigned int downloadTokenExpiration;
+@property (nonatomic) unsigned long long downloadTokenExpiration;
 @property (nonatomic, retain) NSURL *downloadURL;
 @property (nonatomic, retain) NSDate *downloadURLExpiration;
 @property (nonatomic) BOOL downloaded;
@@ -70,7 +70,7 @@
 @property (nonatomic, retain) NSString *requestor;
 @property (nonatomic) BOOL shouldReadRawEncryptedData;
 @property (nonatomic, copy) NSData *signature;
-@property (nonatomic) unsigned int size;
+@property (nonatomic) unsigned long long size;
 @property (nonatomic) int storageGroupingPolicy;
 @property (readonly) Class superclass;
 @property (nonatomic) int uploadRank;
@@ -102,7 +102,7 @@
 - (id)description;
 - (id)deviceID;
 - (id)downloadBaseURL;
-- (unsigned int)downloadTokenExpiration;
+- (unsigned long long)downloadTokenExpiration;
 - (id)downloadURL;
 - (id)downloadURLExpiration;
 - (BOOL)downloaded;
@@ -133,7 +133,7 @@
 - (void)setAuthToken:(id)arg1;
 - (void)setContentBaseURL:(id)arg1;
 - (void)setDownloadBaseURL:(id)arg1;
-- (void)setDownloadTokenExpiration:(unsigned int)arg1;
+- (void)setDownloadTokenExpiration:(unsigned long long)arg1;
 - (void)setDownloadURL:(id)arg1;
 - (void)setDownloadURLExpiration:(id)arg1;
 - (void)setDownloaded:(BOOL)arg1;
@@ -150,7 +150,7 @@
 - (void)setRequestor:(id)arg1;
 - (void)setShouldReadRawEncryptedData:(BOOL)arg1;
 - (void)setSignature:(id)arg1;
-- (void)setSize:(unsigned int)arg1;
+- (void)setSize:(unsigned long long)arg1;
 - (void)setStorageGroupingPolicy:(int)arg1;
 - (void)setUUID:(id)arg1;
 - (void)setUploadRank:(int)arg1;
@@ -160,7 +160,7 @@
 - (void)setWrappedAssetKey:(id)arg1;
 - (BOOL)shouldReadRawEncryptedData;
 - (id)signature;
-- (unsigned int)size;
+- (unsigned long long)size;
 - (int)storageGroupingPolicy;
 - (int)uploadRank;
 - (id)uploadReceipt;

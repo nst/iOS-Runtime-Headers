@@ -15,7 +15,7 @@
     BOOL  _isResidentCapable;
     BOOL  _isResidentEnabled;
     unsigned int  _metadataVersion;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) unsigned int databaseSize;
@@ -28,7 +28,7 @@
 @property (nonatomic) BOOL isResidentCapable;
 @property (nonatomic) BOOL isResidentEnabled;
 @property (nonatomic) unsigned int metadataVersion;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 
 + (Class)homeConfigurationsType;
 
@@ -65,8 +65,8 @@
 - (void)setIsResidentCapable:(BOOL)arg1;
 - (void)setIsResidentEnabled:(BOOL)arg1;
 - (void)setMetadataVersion:(unsigned int)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
-- (unsigned int)timestamp;
+- (void)setTimestamp:(unsigned long long)arg1;
+- (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 
 @end

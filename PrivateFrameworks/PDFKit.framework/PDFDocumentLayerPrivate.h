@@ -5,12 +5,12 @@
 @interface PDFDocumentLayerPrivate : NSObject {
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  boundingBox;
     PDFDocument * document;

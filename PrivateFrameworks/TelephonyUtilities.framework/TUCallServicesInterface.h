@@ -104,7 +104,7 @@
 - (void)setInitialStateSemaphore:(id)arg1;
 - (void)setLocalProxyCalls:(id)arg1;
 - (void)setQueue:(id)arg1;
-- (void)setRemoteVideoPresentationSizeForCallWithUniqueProxyIdentifier:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
+- (void)setRemoteVideoPresentationSizeForCallWithUniqueProxyIdentifier:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 - (void)setRemoteVideoPresentationStateForCallWithUniqueProxyIdentifier:(id)arg1 presentationState:(int)arg2;
 - (void)setUniqueProxyIdentifierToProxyCall:(id)arg1;
 - (void)setUplinkMuted:(BOOL)arg1 forCallWithUniqueProxyIdentifier:(id)arg2;

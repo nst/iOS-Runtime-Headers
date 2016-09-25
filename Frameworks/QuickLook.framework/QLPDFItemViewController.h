@@ -8,7 +8,7 @@
     long  _lastSavedEditNumber;
     QLMUViewController * _markupViewController;
     BOOL  _showingSignatureView;
-    double  _topInset;
+    float  _topInset;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -16,7 +16,7 @@
 @property (nonatomic) BOOL hasChangesToUndo;
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
-@property double topInset;
+@property float topInset;
 
 - (void).cxx_destruct;
 - (void)_enableMarkupMode:(BOOL)arg1;
@@ -33,8 +33,8 @@
 - (BOOL)canPinchToDismiss;
 - (BOOL)canShowToolBar;
 - (BOOL)canSwipeToDismiss;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })customEdgeInsets;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })customSketchOverlayInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })customEdgeInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })customSketchOverlayInsets;
 - (BOOL)hasChangesToUndo;
 - (void)loadPreviewControllerWithPreviewItem:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)previewBecameFullScreen:(BOOL)arg1 animated:(BOOL)arg2;

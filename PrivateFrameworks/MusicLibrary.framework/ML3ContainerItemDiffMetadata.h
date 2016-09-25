@@ -3,31 +3,31 @@
  */
 
 @interface ML3ContainerItemDiffMetadata : NSObject {
-    int  _containerPersistentID;
-    int  _itemPersistentID;
-    int  _newPosition;
-    int  _persistentID;
-    int  _previousPosition;
+    long long  _containerPersistentID;
+    long long  _itemPersistentID;
+    long long  _newPosition;
+    long long  _persistentID;
+    long long  _previousPosition;
 }
 
-@property (nonatomic) int containerPersistentID;
-@property (nonatomic) int itemPersistentID;
-@property (nonatomic) int newPosition;
-@property (nonatomic) int persistentID;
-@property (nonatomic) int previousPosition;
+@property (nonatomic) long long containerPersistentID;
+@property (nonatomic) long long itemPersistentID;
+@property (nonatomic) long long newPosition;
+@property (nonatomic) long long persistentID;
+@property (nonatomic) long long previousPosition;
 
-+ (id)diffMetadataWithPersistentID:(int)arg1;
-+ (id)diffMetadataWithPersistentID:(int)arg1 containerPersistentID:(int)arg2 itemPersistentID:(int)arg3 newPosition:(int)arg4 previousPosition:(int)arg5;
++ (id)diffMetadataWithPersistentID:(long long)arg1;
++ (id)diffMetadataWithPersistentID:(long long)arg1 containerPersistentID:(long long)arg2 itemPersistentID:(long long)arg3 newPosition:(long long)arg4 previousPosition:(long long)arg5;
 
-- (int)containerPersistentID;
-- (int)itemPersistentID;
-- (int)newPosition;
-- (int)persistentID;
-- (int)previousPosition;
-- (void)setContainerPersistentID:(int)arg1;
-- (void)setItemPersistentID:(int)arg1;
-- (void)setNewPosition:(int)arg1;
-- (void)setPersistentID:(int)arg1;
-- (void)setPreviousPosition:(int)arg1;
+- (long long)containerPersistentID;
+- (long long)itemPersistentID;
+- (long long)newPosition;
+- (long long)persistentID;
+- (long long)previousPosition;
+- (void)setContainerPersistentID:(long long)arg1;
+- (void)setItemPersistentID:(long long)arg1;
+- (void)setNewPosition:(long long)arg1;
+- (void)setPersistentID:(long long)arg1;
+- (void)setPreviousPosition:(long long)arg1;
 
 @end

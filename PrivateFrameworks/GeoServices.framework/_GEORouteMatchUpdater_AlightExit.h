@@ -10,7 +10,7 @@
     GEOComposedRouteStep * _postAlightWalkingStep;
     struct PolylineCoordinate { 
         unsigned int index; 
-        double offset; 
+        float offset; 
     }  _routeCoordinateAlightStation;
 }
 

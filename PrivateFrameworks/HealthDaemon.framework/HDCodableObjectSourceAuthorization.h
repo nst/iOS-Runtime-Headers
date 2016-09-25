@@ -3,7 +3,7 @@
  */
 
 @interface HDCodableObjectSourceAuthorization : PBCodable <NSCopying> {
-    int  _authorizationStatus;
+    long long  _authorizationStatus;
     struct { 
         unsigned int authorizationStatus : 1; 
         unsigned int modificationDate : 1; 
@@ -12,7 +12,7 @@
     NSData * _sourceUUID;
 }
 
-@property (nonatomic) int authorizationStatus;
+@property (nonatomic) long long authorizationStatus;
 @property (nonatomic) BOOL hasAuthorizationStatus;
 @property (nonatomic) BOOL hasModificationDate;
 @property (nonatomic, readonly) BOOL hasSourceUUID;
@@ -20,7 +20,7 @@
 @property (nonatomic, retain) NSData *sourceUUID;
 
 - (void).cxx_destruct;
-- (int)authorizationStatus;
+- (long long)authorizationStatus;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -33,7 +33,7 @@
 - (void)mergeFrom:(id)arg1;
 - (double)modificationDate;
 - (BOOL)readFrom:(id)arg1;
-- (void)setAuthorizationStatus:(int)arg1;
+- (void)setAuthorizationStatus:(long long)arg1;
 - (void)setHasAuthorizationStatus:(BOOL)arg1;
 - (void)setHasModificationDate:(BOOL)arg1;
 - (void)setModificationDate:(double)arg1;

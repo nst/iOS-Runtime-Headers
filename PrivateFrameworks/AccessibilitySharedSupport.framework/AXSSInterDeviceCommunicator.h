@@ -19,7 +19,7 @@
     MCSession * _session;
     MCPeerID * _slave;
     int  _state;
-    unsigned int  _switchEventIndex;
+    unsigned long long  _switchEventIndex;
 }
 
 @property (nonatomic) <AXSSInterDeviceActionReceiver> *actionReceiver;
@@ -48,7 +48,7 @@
 @property (nonatomic, retain) MCPeerID *slave;
 @property (nonatomic) int state;
 @property (readonly) Class superclass;
-@property (nonatomic) unsigned int switchEventIndex;
+@property (nonatomic) unsigned long long switchEventIndex;
 
 - (void).cxx_destruct;
 - (void)_advertise;
@@ -59,7 +59,7 @@
 - (void)_handleSwitchEventMessageWithPayload:(id)arg1 fromPeer:(id)arg2;
 - (void)_handleTimeoutAsPotentialSlave;
 - (id)_messageForSelection:(BOOL)arg1 settings:(id)arg2;
-- (id)_messageForSwitchEvent:(id)arg1 index:(unsigned int)arg2;
+- (id)_messageForSwitchEvent:(id)arg1 index:(unsigned long long)arg2;
 - (void)_removePeerFromAvailableDevices:(id)arg1;
 - (void)_sendDataToSlave:(id)arg1;
 - (void)_sendDummyPacket;
@@ -124,10 +124,10 @@
 - (void)setSession:(id)arg1;
 - (void)setSlave:(id)arg1;
 - (void)setState:(int)arg1;
-- (void)setSwitchEventIndex:(unsigned int)arg1;
+- (void)setSwitchEventIndex:(unsigned long long)arg1;
 - (id)slave;
 - (int)state;
 - (void)stop;
-- (unsigned int)switchEventIndex;
+- (unsigned long long)switchEventIndex;
 
 @end

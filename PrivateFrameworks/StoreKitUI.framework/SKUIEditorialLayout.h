@@ -7,11 +7,11 @@
     int  _landscapeLinkLayoutIndex;
     int  _landscapeTextLayoutIndex;
     int  _landscapeTitleLayoutIndex;
-    double  _landscapeWidth;
+    float  _landscapeWidth;
     int  _portraitLinkLayoutIndex;
     int  _portraitTextLayoutIndex;
     int  _portraitTitleLayoutIndex;
-    double  _portraitWidth;
+    float  _portraitWidth;
     SKUILayoutCache * _textLayoutCache;
 }
 

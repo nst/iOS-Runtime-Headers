@@ -6,6 +6,6 @@
 
 - (BOOL)enumeratePackageEntriesWithZipArchive:(id)arg1 accessor:(id /* block */)arg2;
 - (BOOL)isValid;
-- (unsigned int)progressTotalUnitCountWithZipArchive:(id)arg1;
+- (unsigned long long)progressTotalUnitCountWithZipArchive:(id)arg1;
 
 @end

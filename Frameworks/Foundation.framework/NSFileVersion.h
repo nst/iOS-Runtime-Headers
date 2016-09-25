@@ -34,7 +34,7 @@
 @property (readonly, copy) NSPersonNameComponents *originatorNameComponents;
 @property (readonly, retain) <NSCoding> *persistentIdentifier;
 @property (getter=isResolved) BOOL resolved;
-@property (readonly) unsigned int size;
+@property (readonly) unsigned long long size;
 @property (getter=isUbiquitous, readonly) BOOL ubiquitous;
 
 + (void*)_addConflictObserverForItemAtURL:(id)arg1 statusChangedHandler:(id /* block */)arg2;
@@ -50,7 +50,7 @@
 + (void)_markConflicts:(id)arg1 asHandledForItemAtURL:(id)arg2;
 + (id)_otherNonpurgeableVersionsOfItemAtURL:(id)arg1 temporaryStorageIdentifier:(id)arg2;
 + (id)_otherVersionsOfItemAtURL:(id)arg1 temporaryStorageIdentifier:(id)arg2;
-+ (id)_otherVersionsOfItemAtURL:(id)arg1 temporaryStorageIdentifier:(id)arg2 withoutOptions:(unsigned int)arg3;
++ (id)_otherVersionsOfItemAtURL:(id)arg1 temporaryStorageIdentifier:(id)arg2 withoutOptions:(unsigned long long)arg3;
 + (BOOL)_permanentVersionStorageSupportedForURL:(id)arg1 temporaryStorageIdentifier:(id*)arg2 error:(id*)arg3;
 + (void)_removeConflictObserver:(void*)arg1;
 + (BOOL)_removeOtherVersionsOfItemAtURL:(id)arg1 temporaryStorageIdentifier:(id)arg2 error:(id*)arg3;
@@ -107,6 +107,6 @@
 - (id)restoreOverItemAtURL:(id)arg1 error:(id*)arg2;
 - (void)setDiscardable:(BOOL)arg1;
 - (void)setResolved:(BOOL)arg1;
-- (unsigned int)size;
+- (unsigned long long)size;
 
 @end

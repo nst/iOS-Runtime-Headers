@@ -7,7 +7,7 @@
     NSString * _assetFlavor;
     unsigned int  _assetQuality;
     BOOL  _didStartLeaseSession;
-    unsigned int  _downloadToken;
+    unsigned long long  _downloadToken;
     BOOL  _isHLSAsset;
     unsigned int  _protectionType;
     NSDictionary * _purchaseBundle;
@@ -19,7 +19,7 @@
 @property (nonatomic, copy) NSString *assetFlavor;
 @property (nonatomic) unsigned int assetQuality;
 @property (nonatomic) BOOL didStartLeaseSession;
-@property (nonatomic) unsigned int downloadToken;
+@property (nonatomic) unsigned long long downloadToken;
 @property (nonatomic) BOOL isHLSAsset;
 @property (nonatomic) unsigned int protectionType;
 @property (nonatomic, copy) NSDictionary *purchaseBundle;
@@ -33,7 +33,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (BOOL)didStartLeaseSession;
-- (unsigned int)downloadToken;
+- (unsigned long long)downloadToken;
 - (BOOL)isHLSAsset;
 - (unsigned int)protectionType;
 - (id)purchaseBundle;
@@ -42,7 +42,7 @@
 - (void)setAssetFlavor:(id)arg1;
 - (void)setAssetQuality:(unsigned int)arg1;
 - (void)setDidStartLeaseSession:(BOOL)arg1;
-- (void)setDownloadToken:(unsigned int)arg1;
+- (void)setDownloadToken:(unsigned long long)arg1;
 - (void)setIsHLSAsset:(BOOL)arg1;
 - (void)setProtectionType:(unsigned int)arg1;
 - (void)setPurchaseBundle:(id)arg1;

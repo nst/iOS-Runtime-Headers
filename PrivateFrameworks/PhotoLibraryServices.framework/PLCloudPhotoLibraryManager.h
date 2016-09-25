@@ -25,8 +25,8 @@
     PLCloudInMemoryTaskManager * _inMemoryTaskManager;
     BOOL  _initializedMaster;
     NSObject<OS_dispatch_queue> * _isolationQueue;
-    unsigned int  _lastKnownChangeHubEventIndex;
-    unsigned int  _lastKnownDeletionEventIndex;
+    unsigned long long  _lastKnownChangeHubEventIndex;
+    unsigned long long  _lastKnownDeletionEventIndex;
     NSString * _lastKnownStoreUUID;
     unsigned int  _mode;
     BOOL  _modeChangePending;
@@ -50,9 +50,9 @@
     BOOL  _stopped;
     BOOL  _stopping;
     PLCloudTaskManager * _taskManager;
-    unsigned int  _totalSizeOfPushedOriginals;
-    unsigned int  _totalSizeOfUnpushedOriginals;
-    unsigned int  _totalUploadedOriginalSize;
+    unsigned long long  _totalSizeOfPushedOriginals;
+    unsigned long long  _totalSizeOfUnpushedOriginals;
+    unsigned long long  _totalUploadedOriginalSize;
     NSMutableDictionary * _trackedResourceProgressSize;
     NSObject<OS_dispatch_source> * _unpauseDispatchTimer;
     unsigned int  _uploadCounterCheck;
@@ -79,9 +79,9 @@
 @property (nonatomic, readonly) unsigned int numberOfVideosToDownload;
 @property (nonatomic, readonly) unsigned int numberOfVideosToUpload;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) unsigned int totalSizeOfPushedOriginals;
-@property (nonatomic, readonly) unsigned int totalSizeOfUnpushedOriginals;
-@property (nonatomic, readonly) unsigned int totalUploadedOriginalSize;
+@property (nonatomic, readonly) unsigned long long totalSizeOfPushedOriginals;
+@property (nonatomic, readonly) unsigned long long totalSizeOfUnpushedOriginals;
+@property (nonatomic, readonly) unsigned long long totalUploadedOriginalSize;
 
 + (id)descriptionForResourceType:(unsigned int)arg1;
 + (BOOL)needResetSyncErrorType:(id)arg1;
@@ -98,7 +98,7 @@
 - (void)_doUnpause;
 - (void)_downloadFromCloud;
 - (void)_fetchDeletionEventsFromChangeHub;
-- (unsigned int)_fetchLastEventIndexFromChangeHub;
+- (unsigned long long)_fetchLastEventIndexFromChangeHub;
 - (BOOL)_hasAvalancheIncomingWork;
 - (BOOL)_hasIncomingWorkFileMarker;
 - (id /* block */)_idleStateTransitionOneTimeAction;
@@ -110,7 +110,7 @@
 - (unsigned int)_inq_numberOfVideosToUpload;
 - (BOOL)_isColorAwareResource:(unsigned int)arg1 adjustedResource:(BOOL)arg2;
 - (void)_linkFileFrom:(id)arg1 to:(id)arg2;
-- (id)_newFetchPendingEventsFromIndex:(unsigned int)arg1;
+- (id)_newFetchPendingEventsFromIndex:(unsigned long long)arg1;
 - (id)_numberOfOtherItemsDownloaded;
 - (id)_numberOfOtherItemsToPush;
 - (id)_numberOfPhotosDownloaded;
@@ -145,7 +145,7 @@
 - (void)_stopAll;
 - (void)_stopUnpauseTimer;
 - (void)_stopWorkInProgressTimer;
-- (struct CGSize { double x1; double x2; })_targetSizeForInputSize:(struct CGSize { double x1; double x2; })arg1 maxPixelSize:(unsigned int)arg2;
+- (struct CGSize { float x1; float x2; })_targetSizeForInputSize:(struct CGSize { float x1; float x2; })arg1 maxPixelSize:(unsigned int)arg2;
 - (void)_transitionToState:(unsigned int)arg1;
 - (void)_updateAsset:(id)arg1 withImageFileURL:(id)arg2;
 - (void)_updatePendingResetSyncDate;
@@ -155,7 +155,7 @@
 - (void)_uploadFullPhotoLibraryToCloud;
 - (void)addLogMark:(id)arg1;
 - (void)batterySaverModeDidChange:(BOOL)arg1;
-- (void)beginsSignificantWorkWithResourcesSize:(unsigned int)arg1;
+- (void)beginsSignificantWorkWithResourcesSize:(unsigned long long)arg1;
 - (void)cancelResourceTransferTaskWithIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (void)cplHasBackgroundDownloadOperationsWithCompletionHandler:(id /* block */)arg1;
 - (id)cplStatus;
@@ -207,9 +207,9 @@
 - (void)stop;
 - (void)sync;
 - (void)takeStatisticsSnapshotSinceDate:(id)arg1 completionHandler:(id /* block */)arg2;
-- (unsigned int)totalSizeOfPushedOriginals;
-- (unsigned int)totalSizeOfUnpushedOriginals;
-- (unsigned int)totalUploadedOriginalSize;
+- (unsigned long long)totalSizeOfPushedOriginals;
+- (unsigned long long)totalSizeOfUnpushedOriginals;
+- (unsigned long long)totalUploadedOriginalSize;
 - (void)unpause;
 - (void)unregisterToChangeHubNotification;
 - (void)updateLastKnownIndexFromChangeHub;

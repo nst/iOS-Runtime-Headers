@@ -38,7 +38,7 @@
 - (id)_rootParent;
 - (void)_serialize:(struct CASerializer { struct __CFData {} *x1; }*)arg1;
 - (void)_walkTree:(int)arg1 callback:(id /* block */)arg2;
-- (id)copyNodeWithOffset:(unsigned int)arg1;
+- (id)copyNodeWithOffset:(unsigned long long)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)displayName;

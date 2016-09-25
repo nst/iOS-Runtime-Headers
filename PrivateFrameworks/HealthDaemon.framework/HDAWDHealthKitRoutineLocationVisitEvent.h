@@ -3,24 +3,24 @@
  */
 
 @interface HDAWDHealthKitRoutineLocationVisitEvent : PBCodable <NSCopying> {
-    int  _arrivalDate;
+    long long  _arrivalDate;
     struct { 
         unsigned int arrivalDate : 1; 
         unsigned int timestamp : 1; 
     }  _has;
     HDAWDHealthKitRoutineLocation * _location;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
 }
 
-@property (nonatomic) int arrivalDate;
+@property (nonatomic) long long arrivalDate;
 @property (nonatomic) BOOL hasArrivalDate;
 @property (nonatomic, readonly) BOOL hasLocation;
 @property (nonatomic) BOOL hasTimestamp;
 @property (nonatomic, retain) HDAWDHealthKitRoutineLocation *location;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void).cxx_destruct;
-- (int)arrivalDate;
+- (long long)arrivalDate;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -33,12 +33,12 @@
 - (id)location;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (void)setArrivalDate:(int)arg1;
+- (void)setArrivalDate:(long long)arg1;
 - (void)setHasArrivalDate:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
 - (void)setLocation:(id)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
-- (unsigned int)timestamp;
+- (void)setTimestamp:(unsigned long long)arg1;
+- (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -4,29 +4,29 @@
 
 @interface ManagedTableViewCell : UITableViewCell {
     NSMutableDictionary * _cellDict;
-    double  _cellXEdgeInset;
-    double  _computedRightmostEditTextInset;
+    float  _cellXEdgeInset;
+    float  _computedRightmostEditTextInset;
     NSIndexPath * _currentIndexPath;
-    double  _forcedRightmostEditTextInset;
+    float  _forcedRightmostEditTextInset;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _modifiedContentViewFrame;
-    double  _neededContentHeight;
+    float  _neededContentHeight;
     TableViewManager * _parentTableManager;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *cellDict;
-@property (nonatomic, readonly) double computedRightmostEditTextInset;
+@property (nonatomic, readonly) float computedRightmostEditTextInset;
 @property (nonatomic, retain) NSIndexPath *currentIndexPath;
-@property (nonatomic) double forcedRightmostEditTextInset;
-@property (nonatomic, readonly) double neededContentHeight;
+@property (nonatomic) float forcedRightmostEditTextInset;
+@property (nonatomic, readonly) float neededContentHeight;
 @property (nonatomic) TableViewManager *parentTableManager;
 
 - (id)accessibilityValue;

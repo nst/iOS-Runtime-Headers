@@ -4,19 +4,19 @@
 
 @interface PKDisambiguationFooterView : UIView {
     UIButton * _actionButton;
-    double  _bottomPadding;
+    float  _bottomPadding;
     UILabel * _descriptionLabel;
     UIButton * _secondaryActionButton;
-    double  _secondaryActionTopPadding;
-    double  _topPadding;
+    float  _secondaryActionTopPadding;
+    float  _topPadding;
 }
 
 @property (nonatomic, readonly, retain) UIButton *actionButton;
-@property (nonatomic) double bottomPadding;
+@property (nonatomic) float bottomPadding;
 @property (nonatomic, readonly, retain) UILabel *descriptionLabel;
 @property (nonatomic, readonly, retain) UIButton *secondaryActionButton;
-@property (nonatomic) double secondaryActionTopPadding;
-@property (nonatomic) double topPadding;
+@property (nonatomic) float secondaryActionTopPadding;
+@property (nonatomic) float topPadding;
 
 - (void).cxx_destruct;
 - (float)_recommendedSecondaryActionTopPaddingForTableView:(id)arg1;
@@ -30,7 +30,7 @@
 - (void)setBottomPadding:(float)arg1;
 - (void)setSecondaryActionTopPadding:(float)arg1;
 - (void)setTopPadding:(float)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)sizeToFitForTableView:(id)arg1;
 - (float)topPadding;
 

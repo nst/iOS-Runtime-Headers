@@ -4,14 +4,14 @@
 
 @interface PUFilmstripTileViewController : PUImageTileViewController <PUAssetViewModelChangeObserver> {
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  __expandedSize;
     BOOL  __isExpanded;
     PUFilmstripWrapperView * __wrapperView;
 }
 
-@property (setter=_setExpandedSize:, nonatomic) struct CGSize { double x1; double x2; } _expandedSize;
+@property (setter=_setExpandedSize:, nonatomic) struct CGSize { float x1; float x2; } _expandedSize;
 @property (setter=_setExpanded:, nonatomic) BOOL _isExpanded;
 @property (nonatomic, readonly) PUFilmstripWrapperView *_wrapperView;
 @property (readonly, copy) NSString *debugDescription;
@@ -20,10 +20,10 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (struct CGSize { double x1; double x2; })_expandedSize;
+- (struct CGSize { float x1; float x2; })_expandedSize;
 - (BOOL)_isExpanded;
 - (void)_setExpanded:(BOOL)arg1;
-- (void)_setExpandedSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)_setExpandedSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_updateFilmstripView;
 - (id)_wrapperView;
 - (void)applyLayoutInfo:(id)arg1;

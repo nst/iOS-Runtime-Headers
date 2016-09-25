@@ -3,16 +3,16 @@
  */
 
 @interface _MRUnregisterGameControllerMessageProtobuf : PBCodable <NSCopying> {
-    unsigned int  _controllerID;
+    unsigned long long  _controllerID;
     struct { 
         unsigned int controllerID : 1; 
     }  _has;
 }
 
-@property (nonatomic) unsigned int controllerID;
+@property (nonatomic) unsigned long long controllerID;
 @property (nonatomic) BOOL hasControllerID;
 
-- (unsigned int)controllerID;
+- (unsigned long long)controllerID;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -22,7 +22,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (void)setControllerID:(unsigned int)arg1;
+- (void)setControllerID:(unsigned long long)arg1;
 - (void)setHasControllerID:(BOOL)arg1;
 - (void)writeTo:(id)arg1;
 

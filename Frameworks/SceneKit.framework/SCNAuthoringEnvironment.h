@@ -41,14 +41,14 @@
         struct { 
             struct __C3DImage {} *texture; 
             struct CGSize { 
-                double width; 
-                double height; 
+                float width; 
+                float height; 
             } textureSize; 
             bool isRetina; 
         } textureInfo; 
-        double lineHeight; 
+        float lineHeight; 
         short characterWidth_texture; 
-        double *characterWidth_typography; 
+        float *characterWidth_typography; 
         short characterHeight_texture; 
         struct { /* ? */ } *symbolRects; 
     }  _boldTextInfo;
@@ -59,7 +59,7 @@
     struct __C3DRasterizerStates { } * _depthOffCullOnStates;
     struct __C3DRasterizerStates { } * _depthOnCullOffStates;
     struct __C3DRasterizerStates { } * _depthOnCullOnStates;
-    double  _drawScale;
+    float  _drawScale;
     struct { 
         struct __C3DFXProgram {} *weakProgram; 
         unsigned int baseIndex; 
@@ -123,10 +123,10 @@
     int  _editingSpace;
     struct __C3DEngineContext { } * _engineContext;
     BOOL  _graphicalSelectionEnabled;
-    double  _gridUnit;
+    float  _gridUnit;
     unsigned int  _hasLighting;
     NSSet * _initialSelection;
-    double  _lastGridDistance;
+    float  _lastGridDistance;
     struct { 
         struct __C3DFXProgram {} *weakProgram; 
         unsigned int baseIndex; 
@@ -194,14 +194,14 @@
         struct { 
             struct __C3DImage {} *texture; 
             struct CGSize { 
-                double width; 
-                double height; 
+                float width; 
+                float height; 
             } textureSize; 
             bool isRetina; 
         } textureInfo; 
-        double lineHeight; 
+        float lineHeight; 
         short characterWidth_texture; 
-        double *characterWidth_typography; 
+        float *characterWidth_typography; 
         short characterHeight_texture; 
         struct { /* ? */ } *symbolRects; 
     }  _normalTextInfo;
@@ -265,7 +265,7 @@
         NSMutableSet *_usedMeshElements; 
         NSMutableSet *_freeMeshElements; 
     }  _overlayDynamicTriangleInfo;
-    struct __C3DFXPass { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __CFString {} *x2; long x3; int x4; bool x5; struct __C3DFXTechnique {} *x6; struct __CFString {} *x7; struct __CFString {} *x8; struct __CFString {} *x9; struct __CFString {} *x10; bool x11; struct __C3DFXProgram {} *x12; struct __C3DMaterial {} *x13; struct __C3DBlendStates {} *x14; struct __C3DRasterizerStates {} *x15; struct C3DColor4 { union { double x_1_2_1[4]; struct { double x_2_3_1; double x_2_3_2; double x_2_3_3; double x_2_3_4; } x_1_2_2; } x_16_1_1; } x16; unsigned char x17; unsigned int x18; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; unsigned int x34 : 1; unsigned int x35 : 1; unsigned int x36 : 1; unsigned int x37 : 1; unsigned int x38 : 1; } * _pass;
+    struct __C3DFXPass { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __CFString {} *x2; long x3; int x4; bool x5; struct __C3DFXTechnique {} *x6; struct __CFString {} *x7; struct __CFString {} *x8; struct __CFString {} *x9; struct __CFString {} *x10; bool x11; struct __C3DFXProgram {} *x12; struct __C3DMaterial {} *x13; struct __C3DBlendStates {} *x14; struct __C3DRasterizerStates {} *x15; struct C3DColor4 { union { float x_1_2_1[4]; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; float x_2_3_4; } x_1_2_2; } x_16_1_1; } x16; unsigned char x17; unsigned int x18; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; unsigned int x34 : 1; unsigned int x35 : 1; unsigned int x36 : 1; unsigned int x37 : 1; unsigned int x38 : 1; } * _pass;
     unsigned short  _quadrantIndicesCount;
     const void * _quadrantIndicesOffset;
     unsigned short  _quadrantRingIndicesCount;
@@ -282,8 +282,8 @@
     struct { 
         bool initialized; 
         bool showFullStatistics; 
-        double fps; 
-        double waitDisplayLinkTime; 
+        float fps; 
+        float waitDisplayLinkTime; 
         int pressedButtonIndex; 
         struct __CFString {} *fpsString; 
         struct __CFString {} *shortString; 
@@ -482,7 +482,7 @@
 @property (nonatomic) <SCNAuthoringEnvironmentDelegate> *delegate;
 @property (nonatomic) int editingSpace;
 @property (nonatomic) BOOL graphicalSelectionEnabled;
-@property (nonatomic, readonly) double gridUnit;
+@property (nonatomic, readonly) float gridUnit;
 @property (nonatomic, readonly) SCNManipulator *manipulator;
 @property (readonly) <SCNSceneRenderer> *sceneRenderer;
 @property (nonatomic, readonly) NSArray *selectedNodes;
@@ -491,7 +491,7 @@
 @property (nonatomic) BOOL shouldSnapOnGrid;
 @property (nonatomic) BOOL shouldSnapToAlign;
 @property (nonatomic) BOOL surroundToSelect;
-@property (nonatomic, readonly) struct SCNMatrix4 { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; } viewMatrix;
+@property (nonatomic, readonly) struct SCNMatrix4 { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; } viewMatrix;
 
 + (id)authoringEnvironmentForSceneRenderer:(id)arg1;
 + (int)defaultAuthoringDisplayMask;
@@ -504,9 +504,9 @@
 - (void)cancelEdition;
 - (void)dealloc;
 - (id)delegate;
-- (BOOL)didTapAtPoint:(struct CGPoint { double x1; double x2; })arg1;
-- (void)drawLineFromPoint:(struct SCNVector3 { double x1; double x2; double x3; })arg1 toPoint:(struct SCNVector3 { double x1; double x2; double x3; })arg2 color:(id)arg3;
-- (void)drawString:(id)arg1 atPoint:(struct CGPoint { double x1; double x2; })arg2 color:(id)arg3;
+- (BOOL)didTapAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)drawLineFromPoint:(struct SCNVector3 { float x1; float x2; float x3; })arg1 toPoint:(struct SCNVector3 { float x1; float x2; float x3; })arg2 color:(id)arg3;
+- (void)drawString:(id)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2 color:(id)arg3;
 - (int)editingSpace;
 - (BOOL)graphicalSelectionEnabled;
 - (float)gridUnit;
@@ -531,6 +531,6 @@
 - (BOOL)shouldSnapToAlign;
 - (BOOL)surroundToSelect;
 - (void)update;
-- (struct SCNMatrix4 { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; })viewMatrix;
+- (struct SCNMatrix4 { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })viewMatrix;
 
 @end

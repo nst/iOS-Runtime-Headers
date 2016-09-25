@@ -6,10 +6,10 @@
     BOOL  _active;
     CALayer * _background;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _cacheInsets;
     CALayer * _leftBorder;
     BOOL  _lightKeyboard;
@@ -22,9 +22,9 @@
 
 @property (nonatomic) BOOL active;
 @property (nonatomic, readonly) BOOL cacheDeferable;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } cacheInsets;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } cacheInsets;
 @property (nonatomic, readonly) NSString *cacheKey;
-@property (nonatomic, readonly) double cachedWidth;
+@property (nonatomic, readonly) float cachedWidth;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
@@ -42,18 +42,18 @@
 - (BOOL)active;
 - (id)borderFilterTypeForCurrentStyle;
 - (BOOL)cacheDeferable;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })cacheInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })cacheInsets;
 - (id)cacheKey;
 - (id)cacheKeysForRenderFlags:(id)arg1;
 - (float)cachedWidth;
 - (void)didMoveToWindow;
 - (void)displayLayer:(id)arg1;
 - (void)drawContentsOfRenderers:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 style:(int)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
 - (BOOL)keepNonPersistent;
 - (void)layoutSubviews;
 - (void)setActive:(BOOL)arg1;
-- (void)setCacheInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setCacheInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setShowsLeftBorder:(BOOL)arg1;
 - (void)setShowsRightBorder:(BOOL)arg1;
 - (void)setStyle:(int)arg1;

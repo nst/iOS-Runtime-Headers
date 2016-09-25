@@ -18,7 +18,7 @@
     NSMutableDictionary * _cardholderCounts;
     BOOL  _codeInverted;
     NSDate * _codePresented;
-    double  _configDemoSpeed;
+    float  _configDemoSpeed;
     BOOL  _configExperimentalMode;
     BOOL  _configPresentCentered;
     BOOL  _configUseFastScanning;
@@ -77,7 +77,7 @@
 @property (retain) NSMutableDictionary *cardholderCounts;
 @property BOOL codeInverted;
 @property (retain) NSDate *codePresented;
-@property double configDemoSpeed;
+@property float configDemoSpeed;
 @property BOOL configExperimentalMode;
 @property BOOL configPresentCentered;
 @property BOOL configUseFastScanning;
@@ -130,8 +130,8 @@
 + (id)extractCardImage:(struct vImage_Buffer { void *x1; unsigned int x2; unsigned int x3; unsigned int x4; }*)arg1 fromPixelBuffer:(struct __CVBuffer { }*)arg2 withCardBuffer:(struct __CVBuffer { }*)arg3 withPoints:(id)arg4 pixelFocalLength:(id)arg5;
 + (id)findCodeInImage:(struct vImage_Buffer { void *x1; unsigned int x2; unsigned int x3; unsigned int x4; })arg1 maxStage:(unsigned int)arg2;
 + (id)findCodeInImage:(struct vImage_Buffer { void *x1; unsigned int x2; unsigned int x3; unsigned int x4; })arg1 maxStage:(unsigned int)arg2 outputObjectTypes:(id)arg3;
-+ (id)findCodeInImage:(struct vImage_Buffer { void *x1; unsigned int x2; unsigned int x3; unsigned int x4; })arg1 maxStage:(unsigned int)arg2 roi:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
-+ (id)findCodeInImage:(struct vImage_Buffer { void *x1; unsigned int x2; unsigned int x3; unsigned int x4; })arg1 maxStage:(unsigned int)arg2 roi:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 outputObjectTypes:(id)arg4;
++ (id)findCodeInImage:(struct vImage_Buffer { void *x1; unsigned int x2; unsigned int x3; unsigned int x4; })arg1 maxStage:(unsigned int)arg2 roi:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
++ (id)findCodeInImage:(struct vImage_Buffer { void *x1; unsigned int x2; unsigned int x3; unsigned int x4; })arg1 maxStage:(unsigned int)arg2 roi:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 outputObjectTypes:(id)arg4;
 + (id)findObjects:(id)arg1 inImage:(id)arg2 properties:(id)arg3;
 + (BOOL)isTestMode;
 + (void)loadFonts;
@@ -147,7 +147,7 @@
 - (void)animatePresentCode;
 - (id)boxLayer;
 - (id)boxLayerHideTimer;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boxLayerPresentationFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boxLayerPresentationFrame;
 - (id)callbackDelegate;
 - (id)cameraMode;
 - (int)cameraPosition;

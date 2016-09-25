@@ -11,8 +11,8 @@
     MusicContextualActionsHeaderLockupView * _lockupView;
     MusicContextualAlertAction * _pendingAlertAction;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _previousBoundsSize;
     id /* block */  _selectionHandler;
 }

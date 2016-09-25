@@ -10,7 +10,7 @@
 
 - (void).cxx_destruct;
 - (id)HSCloudItemIDList;
-- (void)addCloudItemID:(unsigned int)arg1 idType:(int)arg2;
+- (void)addCloudItemID:(unsigned long long)arg1 idType:(int)arg2;
 - (id)init;
 
 @end

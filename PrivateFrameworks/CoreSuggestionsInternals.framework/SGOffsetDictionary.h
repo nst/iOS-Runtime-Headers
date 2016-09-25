@@ -3,21 +3,21 @@
  */
 
 @interface SGOffsetDictionary : NSObject {
-    struct { unsigned int x1; unsigned short x2; BOOL x3[3]; } * _carrierEntries;
+    struct { unsigned long long x1; unsigned short x2; BOOL x3[3]; } * _carrierEntries;
     unsigned short  _count;
-    struct { unsigned int x1; unsigned short x2; BOOL x3[3]; } * _mruCarrierEntry;
-    unsigned int  _payloadOffset;
+    struct { unsigned long long x1; unsigned short x2; BOOL x3[3]; } * _mruCarrierEntry;
+    unsigned long long  _payloadOffset;
     unsigned int  _sizeFactor;
-    unsigned int  _totalPayloadSize;
+    unsigned long long  _totalPayloadSize;
 }
 
-- (struct { unsigned int x1; unsigned short x2; BOOL x3[3]; }*)carrierEntryForKey:(const char *)arg1;
+- (struct { unsigned long long x1; unsigned short x2; BOOL x3[3]; }*)carrierEntryForKey:(const char *)arg1;
 - (void)dealloc;
 - (id)fullMappingFromFile:(id)arg1;
 - (id)initWithFilehandle:(id)arg1 sizeFactor:(unsigned int)arg2 keyLength:(int)arg3 singleByteOffset:(BOOL)arg4;
 - (long)payloadCountForKey:(const char *)arg1;
-- (unsigned int)payloadLengthForKey:(const char *)arg1;
-- (unsigned int)seekLocationForKey:(const char *)arg1;
+- (unsigned long long)payloadLengthForKey:(const char *)arg1;
+- (unsigned long long)seekLocationForKey:(const char *)arg1;
 - (id)stringValueForKey:(const char *)arg1 fromFile:(id)arg2;
 
 @end

@@ -6,12 +6,12 @@
     void * _properties;
 }
 
-@property (nonatomic, readonly) unsigned int controllerID;
+@property (nonatomic, readonly) unsigned long long controllerID;
 @property (nonatomic, readonly) void*properties;
 
-- (unsigned int)controllerID;
+- (unsigned long long)controllerID;
 - (void)dealloc;
-- (id)initWithGameControllerProperties:(void*)arg1 controllerID:(unsigned int)arg2;
+- (id)initWithGameControllerProperties:(void*)arg1 controllerID:(unsigned long long)arg2;
 - (void*)properties;
 - (unsigned int)type;
 

@@ -30,8 +30,8 @@
 - (BOOL)releaseFileURL:(id)arg1 forResource:(id)arg2 error:(id*)arg3;
 - (BOOL)resetWithError:(id*)arg1;
 - (id)retainFileURLForResource:(id)arg1 error:(id*)arg2;
-- (unsigned int)sizeOfOriginalResourcesToUpload;
-- (unsigned int)sizeOfResourcesToUpload;
+- (unsigned long long)sizeOfOriginalResourcesToUpload;
+- (unsigned long long)sizeOfResourcesToUpload;
 - (BOOL)storeDownloadedResource:(id)arg1 atURL:(id)arg2 error:(id*)arg3;
 - (BOOL)storeResourceForUpload:(id)arg1 error:(id*)arg2;
 - (void)writeTransactionDidFail;

@@ -78,12 +78,12 @@
 + (void)launchAppStoreWithGameCenterGames;
 + (void)preloadIconsForGames:(id)arg1 style:(int)arg2 handler:(id /* block */)arg3;
 + (void)removeHistoryForGameWithBundleIdentifier:(id)arg1 completionHandler:(id /* block */)arg2;
-+ (struct CGSize { double x1; double x2; })serverImageSizeForIconStyle:(int)arg1;
++ (struct CGSize { float x1; float x2; })serverImageSizeForIconStyle:(int)arg1;
 
 - (id)URLStringForImageWithShineIfNeeded;
 - (void)_gkSetSharingInfo:(id)arg1;
 - (id)_gkSharingInfo;
-- (id)_imageSourceForIconSize:(struct CGSize { double x1; double x2; })arg1;
+- (id)_imageSourceForIconSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)_imageURLForIconStyle:(int)arg1;
 - (int)activityViewController:(id)arg1 attachmentULRTypeForActivityType:(id)arg2;
 - (id)activityViewController:(id)arg1 itemsForActivityType:(id)arg2;
@@ -96,9 +96,9 @@
 - (id)iconForStyle:(int)arg1;
 - (id)imageSourceForIconStyle:(int)arg1;
 - (id)imageSourceForiOSIconStyle:(int)arg1;
-- (id)loadIconForSize:(struct CGSize { double x1; double x2; })arg1 scale:(float)arg2 withCompletionHandler:(id /* block */)arg3;
+- (id)loadIconForSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2 withCompletionHandler:(id /* block */)arg3;
 - (id)loadIconForStyle:(int)arg1 withCompletionHandler:(id /* block */)arg2;
-- (id)logoImageWithMaximumSize:(struct CGSize { double x1; double x2; })arg1;
+- (id)logoImageWithMaximumSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)macBrushForIconStyle:(int)arg1;
 - (void)presentStoreSheetFromViewController:(id)arg1 context:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)productViewControllerDidFinish:(id)arg1;

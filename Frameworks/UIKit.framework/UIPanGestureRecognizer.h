@@ -3,30 +3,30 @@
  */
 
 @interface UIPanGestureRecognizer : UIGestureRecognizer {
-    double  _allowableSeparation;
+    float  _allowableSeparation;
     unsigned int  _canPanHorizontally;
     unsigned int  _canPanVertically;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _digitizerLocation;
     unsigned int  _failsPastHysteresisWithoutMinTouches;
     unsigned int  _failsPastMaxTouches;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _firstSceneReferenceLocation;
-    double  _hysteresis;
+    float  _hysteresis;
     unsigned int  _ignoresStationaryTouches;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _lastSceneReferenceLocation;
     unsigned int  _lastTouchCount;
     double  _lastTouchTime;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _lastUnadjustedSceneReferenceLocation;
     unsigned int  _maximumNumberOfTouches;
     unsigned int  _minimumNumberOfTouches;
@@ -47,21 +47,21 @@
 
 - (void).cxx_destruct;
 - (id)_activeTouches;
-- (struct CGPoint { double x1; double x2; })_adjustSceneReferenceLocation:(struct CGPoint { double x1; double x2; })arg1;
+- (struct CGPoint { float x1; float x2; })_adjustSceneReferenceLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (float)_allowableSeparation;
 - (BOOL)_canPanHorizontally;
 - (BOOL)_canPanVertically;
-- (void)_centroidMovedTo:(struct CGPoint { double x1; double x2; })arg1 atTime:(double)arg2;
-- (struct CADoublePoint { double x1; double x2; })_convertPoint:(struct CGPoint { double x1; double x2; })arg1 fromSceneReferenceCoordinatesToView:(id)arg2;
-- (struct CADoublePoint { double x1; double x2; })_convertPoint:(struct CGPoint { double x1; double x2; })arg1 toSceneReferenceCoordinatesFromView:(id)arg2;
+- (void)_centroidMovedTo:(struct CGPoint { float x1; float x2; })arg1 atTime:(double)arg2;
+- (struct CADoublePoint { double x1; double x2; })_convertPoint:(struct CGPoint { float x1; float x2; })arg1 fromSceneReferenceCoordinatesToView:(id)arg2;
+- (struct CADoublePoint { double x1; double x2; })_convertPoint:(struct CGPoint { float x1; float x2; })arg1 toSceneReferenceCoordinatesFromView:(id)arg2;
 - (struct CADoublePoint { double x1; double x2; })_convertVelocitySample:(id)arg1 fromSceneReferenceCoordinatesToView:(id)arg2;
-- (struct CGPoint { double x1; double x2; })_digitizerLocation;
+- (struct CGPoint { float x1; float x2; })_digitizerLocation;
 - (BOOL)_failsPastHysteresisWithoutMinTouches;
 - (void)_handleEndedTouches:(id)arg1 withFinalStateAdjustments:(id /* block */)arg2;
 - (float)_hysteresis;
 - (BOOL)_ignoresStationaryTouches;
 - (int)_lastTouchCount;
-- (struct UIOffset { double x1; double x2; })_offsetInViewFromSceneReferenceLocation:(struct CGPoint { double x1; double x2; })arg1 toSceneReferenceLocation:(struct CGPoint { double x1; double x2; })arg2;
+- (struct UIOffset { float x1; float x2; })_offsetInViewFromSceneReferenceLocation:(struct CGPoint { float x1; float x2; })arg1 toSceneReferenceLocation:(struct CGPoint { float x1; float x2; })arg2;
 - (id)_previousVelocitySample;
 - (void)_processTouchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)_removeHysteresisFromTranslation;
@@ -73,7 +73,7 @@
 - (void)_setFailsPastHysteresisWithoutMinTouches:(BOOL)arg1;
 - (void)_setHysteresis:(float)arg1;
 - (void)_setIgnoresStationaryTouches:(BOOL)arg1;
-- (struct CGPoint { double x1; double x2; })_shiftPanLocationToNewSceneReferenceLocation:(struct CGPoint { double x1; double x2; })arg1 lockingToAxis:(int)arg2;
+- (struct CGPoint { float x1; float x2; })_shiftPanLocationToNewSceneReferenceLocation:(struct CGPoint { float x1; float x2; })arg1 lockingToAxis:(int)arg2;
 - (BOOL)_shouldTryToBeginWithEvent:(id)arg1;
 - (BOOL)_touchesExceedAllowableSeparation;
 - (void)_touchesListChangedFrom:(id)arg1 to:(id)arg2;
@@ -87,8 +87,8 @@
 - (BOOL)failsPastMaxTouches;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
-- (struct CGPoint { double x1; double x2; })locationInView:(id)arg1;
-- (struct CGPoint { double x1; double x2; })locationOfTouch:(unsigned int)arg1 inView:(id)arg2;
+- (struct CGPoint { float x1; float x2; })locationInView:(id)arg1;
+- (struct CGPoint { float x1; float x2; })locationOfTouch:(unsigned int)arg1 inView:(id)arg2;
 - (unsigned int)maximumNumberOfTouches;
 - (unsigned int)minimumNumberOfTouches;
 - (unsigned int)numberOfTouches;
@@ -96,12 +96,12 @@
 - (void)setFailsPastMaxTouches:(BOOL)arg1;
 - (void)setMaximumNumberOfTouches:(unsigned int)arg1;
 - (void)setMinimumNumberOfTouches:(unsigned int)arg1;
-- (void)setTranslation:(struct CGPoint { double x1; double x2; })arg1 inView:(id)arg2;
+- (void)setTranslation:(struct CGPoint { float x1; float x2; })arg1 inView:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
-- (struct CGPoint { double x1; double x2; })translationInView:(id)arg1;
-- (struct CGPoint { double x1; double x2; })velocityInView:(id)arg1;
+- (struct CGPoint { float x1; float x2; })translationInView:(id)arg1;
+- (struct CGPoint { float x1; float x2; })velocityInView:(id)arg1;
 
 @end

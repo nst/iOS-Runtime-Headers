@@ -4,23 +4,23 @@
 
 @interface BudgetPool : NSObject <DuetLoggerProtocol> {
     int  budgetMode;
-    int  currentGlobalPool;
-    int  globalPoolLimit;
-    int  itemPoolLimit;
+    long long  currentGlobalPool;
+    long long  globalPoolLimit;
+    long long  itemPoolLimit;
     NSMutableDictionary * itemsDictionary;
 }
 
 - (void).cxx_destruct;
-- (void)UpdateBudget:(id)arg1 withCost:(int)arg2;
+- (void)UpdateBudget:(id)arg1 withCost:(long long)arg2;
 - (id)findPoolResource:(id)arg1;
 - (bool)hasBudgetAvailable:(id)arg1;
 - (bool)hasGlobalPoolReachedLimit;
-- (id)init:(int)arg1 andItemLimit:(int)arg2 withBudgetMode:(int)arg3;
+- (id)init:(long long)arg1 andItemLimit:(long long)arg2 withBudgetMode:(int)arg3;
 - (void)logAll:(struct __asl_object_s { }*)arg1 withMsg:(struct __asl_object_s { }*)arg2 withLevel:(int)arg3;
 - (void)logLight:(struct __asl_object_s { }*)arg1 withMsg:(struct __asl_object_s { }*)arg2 withLevel:(int)arg3;
 - (void)resetAllDiff;
 - (void)resetAllPoolLimits;
-- (int)totalBudget;
-- (int)totalDiffBudget;
+- (long long)totalBudget;
+- (long long)totalDiffBudget;
 
 @end

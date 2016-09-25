@@ -25,7 +25,7 @@
 - (void)_queue_handleCreateSceneRequest:(id)arg1;
 - (void)_queue_handleDestroySceneRequest:(id)arg1;
 - (void)_queue_handleMessage:(id)arg1;
-- (BOOL)_queue_handleMessage:(id)arg1 withType:(int)arg2;
+- (BOOL)_queue_handleMessage:(id)arg1 withType:(long long)arg2;
 - (void)_queue_handleSceneAttachLayer:(id)arg1;
 - (void)_queue_handleSceneDetachLayer:(id)arg1;
 - (void)_queue_handleSceneDidReceiveActions:(id)arg1;

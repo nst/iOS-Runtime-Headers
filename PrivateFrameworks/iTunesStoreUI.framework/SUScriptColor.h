@@ -6,11 +6,11 @@
     UIColor * _color;
 }
 
-@property (readonly) double alpha;
-@property (readonly) double blue;
-@property (readonly) double green;
+@property (readonly) float alpha;
+@property (readonly) float blue;
+@property (readonly) float green;
 @property (readonly) UIColor *nativeColor;
-@property (readonly) double red;
+@property (readonly) float red;
 
 + (void)initialize;
 + (id)webScriptNameForKeyName:(id)arg1;

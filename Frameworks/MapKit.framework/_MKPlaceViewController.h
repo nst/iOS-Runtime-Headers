@@ -9,8 +9,8 @@
     BOOL  _attemptedToCreateAddressBook;
     GEOAutomobileOptions * _automobileOptions;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _beginAnalyticsScrollingPoint;
     CNContact * _contact;
     CNContactNavigationController<ABContactViewControllerDelegate> * _contactsNavigationController;
@@ -50,13 +50,13 @@
     GEOTransitOptions * _transitOptions;
     MKPlaceTransitViewController * _transitViewController;
     NSMutableArray * _viewDidAppearBlocks;
-    double  headerHeight;
+    float  headerHeight;
 }
 
 @property (nonatomic, retain) GEOAutomobileOptions *automobileOptions;
 @property (nonatomic, readonly) CNContact *contact;
 @property (nonatomic) CNContactNavigationController<ABContactViewControllerDelegate> *contactsNavigationController;
-@property (nonatomic) double currentHeaderMinimalModeInterpolationFactor;
+@property (nonatomic) float currentHeaderMinimalModeInterpolationFactor;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) BOOL disableReportAProblem;
@@ -64,7 +64,7 @@
 @property (nonatomic) BOOL hasCheckedDistanceAvailability;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) _MKPlaceActionButtonController *headerActionButtonController;
-@property (nonatomic) double headerHeight;
+@property (nonatomic) float headerHeight;
 @property (nonatomic, copy) NSString *headerTitle;
 @property (nonatomic) BOOL hideDirectionsButtons;
 @property (nonatomic) BOOL hideInlineMap;
@@ -156,7 +156,7 @@
 - (void)infoCardAnalyticsDidSelectAction:(int)arg1 eventValue:(id)arg2 feedbackDelegateSelector:(int)arg3;
 - (void)infoCardAnalyticsDidSelectAction:(int)arg1 target:(int)arg2 eventValue:(id)arg3 actionURL:(id)arg4 photoID:(id)arg5 feedbackDelegateSelector:(int)arg6;
 - (void)infoCardAnalyticsDidSelectAction:(int)arg1 target:(int)arg2 eventValue:(id)arg3 feedbackDelegateSelector:(int)arg4;
-- (void)infoCardTransitAnalyticsDidSelectionAction:(int)arg1 resultIndex:(int)arg2 targetID:(unsigned int)arg3 transitSystem:(id)arg4 transitDepartureSequence:(id)arg5 transitCardCategory:(int)arg6 transitIncident:(id)arg7 feedbackDelegateSelector:(int)arg8;
+- (void)infoCardTransitAnalyticsDidSelectionAction:(int)arg1 resultIndex:(int)arg2 targetID:(unsigned long long)arg3 transitSystem:(id)arg4 transitDepartureSequence:(id)arg5 transitCardCategory:(int)arg6 transitIncident:(id)arg7 feedbackDelegateSelector:(int)arg8;
 - (void)infoViewController:(id)arg1 didSelectShareFromView:(id)arg2;
 - (id)init;
 - (id)initWithContact:(id)arg1 mapItem:(id)arg2;
@@ -212,7 +212,7 @@
 - (id)scrollViewDelegate;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
-- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { double x1; double x2; })arg2 targetContentOffset:(inout struct CGPoint { double x1; double x2; }*)arg3;
+- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { float x1; float x2; })arg2 targetContentOffset:(inout struct CGPoint { float x1; float x2; }*)arg3;
 - (void)setAllowTransitLineSelection:(BOOL)arg1;
 - (void)setAutomobileOptions:(id)arg1;
 - (void)setContactsNavigationController:(id)arg1;

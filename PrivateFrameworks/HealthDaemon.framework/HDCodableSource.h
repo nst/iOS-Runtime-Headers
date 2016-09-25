@@ -12,7 +12,7 @@
     }  _has;
     double  _modificationDate;
     NSString * _name;
-    int  _options;
+    long long  _options;
     NSString * _productType;
     NSData * _uuid;
 }
@@ -28,7 +28,7 @@
 @property (nonatomic, readonly) BOOL hasUuid;
 @property (nonatomic) double modificationDate;
 @property (nonatomic, retain) NSString *name;
-@property (nonatomic) int options;
+@property (nonatomic) long long options;
 @property (nonatomic, retain) NSString *productType;
 @property (nonatomic, retain) NSData *uuid;
 
@@ -53,7 +53,7 @@
 - (void)mergeFrom:(id)arg1;
 - (double)modificationDate;
 - (id)name;
-- (int)options;
+- (long long)options;
 - (id)productType;
 - (BOOL)readFrom:(id)arg1;
 - (void)setBundleIdentifier:(id)arg1;
@@ -63,7 +63,7 @@
 - (void)setHasOptions:(BOOL)arg1;
 - (void)setModificationDate:(double)arg1;
 - (void)setName:(id)arg1;
-- (void)setOptions:(int)arg1;
+- (void)setOptions:(long long)arg1;
 - (void)setProductType:(id)arg1;
 - (void)setUuid:(id)arg1;
 - (id)uuid;

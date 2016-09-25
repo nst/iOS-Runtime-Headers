@@ -5,53 +5,53 @@
 @interface GLKEffectPropertyFog : GLKEffectProperty {
     union _GLKVector4 { 
         struct { 
-            double x; 
-            double y; 
-            double z; 
-            double w; 
+            float x; 
+            float y; 
+            float z; 
+            float w; 
         } ; 
         struct { 
-            double r; 
-            double g; 
-            double b; 
-            double a; 
+            float r; 
+            float g; 
+            float b; 
+            float a; 
         } ; 
         struct { 
-            double s; 
-            double t; 
-            double p; 
-            double q; 
+            float s; 
+            float t; 
+            float p; 
+            float q; 
         } ; 
-        double v[4]; 
+        float v[4]; 
     }  _color;
     int  _colorLoc;
-    double  _density;
+    float  _density;
     int  _densityLoc;
     unsigned char  _enabled;
-    double  _end;
+    float  _end;
     int  _endLoc;
     int  _mode;
     int  _modeLoc;
-    double  _start;
+    float  _start;
     int  _startLoc;
 }
 
-@property (nonatomic) union _GLKVector4 { struct { double x_1_1_1; double x_1_1_2; double x_1_1_3; double x_1_1_4; } x1; struct { double x_2_1_1; double x_2_1_2; double x_2_1_3; double x_2_1_4; } x2; struct { double x_3_1_1; double x_3_1_2; double x_3_1_3; double x_3_1_4; } x3; double x4[4]; } color;
+@property (nonatomic) union _GLKVector4 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; float x4[4]; } color;
 @property (nonatomic) int colorLoc;
-@property (nonatomic) double density;
+@property (nonatomic) float density;
 @property (nonatomic) int densityLoc;
 @property (nonatomic) unsigned char enabled;
-@property (nonatomic) double end;
+@property (nonatomic) float end;
 @property (nonatomic) int endLoc;
 @property (nonatomic) int mode;
 @property (nonatomic) int modeLoc;
-@property (nonatomic) double start;
+@property (nonatomic) float start;
 @property (nonatomic) int startLoc;
 
 + (void)setStaticMasksWithVshRoot:(id)arg1 fshRoot:(id)arg2;
 
 - (void)bind;
-- (union _GLKVector4 { struct { double x_1_1_1; double x_1_1_2; double x_1_1_3; double x_1_1_4; } x1; struct { double x_2_1_1; double x_2_1_2; double x_2_1_3; double x_2_1_4; } x2; struct { double x_3_1_1; double x_3_1_2; double x_3_1_3; double x_3_1_4; } x3; double x4[4]; })color;
+- (union _GLKVector4 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; float x4[4]; })color;
 - (int)colorLoc;
 - (void)dealloc;
 - (float)density;
@@ -67,7 +67,7 @@
 - (void)initializeMasks;
 - (int)mode;
 - (int)modeLoc;
-- (void)setColor:(union _GLKVector4 { struct { double x_1_1_1; double x_1_1_2; double x_1_1_3; double x_1_1_4; } x1; struct { double x_2_1_1; double x_2_1_2; double x_2_1_3; double x_2_1_4; } x2; struct { double x_3_1_1; double x_3_1_2; double x_3_1_3; double x_3_1_4; } x3; double x4[4]; })arg1;
+- (void)setColor:(union _GLKVector4 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; float x4[4]; })arg1;
 - (void)setColorLoc:(int)arg1;
 - (void)setDensity:(float)arg1;
 - (void)setDensityLoc:(int)arg1;

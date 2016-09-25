@@ -3,30 +3,30 @@
  */
 
 @interface _INPBLocalDate : PBCodable <NSCopying> {
-    int  _dayOfMonth;
+    long long  _dayOfMonth;
     struct { 
         unsigned int dayOfMonth : 1; 
         unsigned int month : 1; 
         unsigned int year : 1; 
     }  _has;
-    int  _month;
+    long long  _month;
     PBUnknownFields * _unknownFields;
-    int  _year;
+    long long  _year;
 }
 
-@property (nonatomic) int dayOfMonth;
+@property (nonatomic) long long dayOfMonth;
 @property (nonatomic) BOOL hasDayOfMonth;
 @property (nonatomic) BOOL hasMonth;
 @property (nonatomic) BOOL hasYear;
-@property (nonatomic) int month;
+@property (nonatomic) long long month;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
-@property (nonatomic) int year;
+@property (nonatomic) long long year;
 
 + (id)options;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (int)dayOfMonth;
+- (long long)dayOfMonth;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasDayOfMonth;
@@ -35,16 +35,16 @@
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (int)month;
+- (long long)month;
 - (BOOL)readFrom:(id)arg1;
-- (void)setDayOfMonth:(int)arg1;
+- (void)setDayOfMonth:(long long)arg1;
 - (void)setHasDayOfMonth:(BOOL)arg1;
 - (void)setHasMonth:(BOOL)arg1;
 - (void)setHasYear:(BOOL)arg1;
-- (void)setMonth:(int)arg1;
-- (void)setYear:(int)arg1;
+- (void)setMonth:(long long)arg1;
+- (void)setYear:(long long)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
-- (int)year;
+- (long long)year;
 
 @end

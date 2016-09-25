@@ -6,7 +6,7 @@
     int  _databaseVersion;
     NSDictionary * _fullMetadata;
     NSMutableDictionary * _mapData;
-    unsigned int  _primaryKeyGeneration;
+    unsigned long long  _primaryKeyGeneration;
     NSDictionary * _storeOptions;
 }
 
@@ -16,14 +16,14 @@
 - (void)dealloc;
 - (id)fullMetadata;
 - (id)mapData;
-- (unsigned int)primaryKeyGeneration;
+- (unsigned long long)primaryKeyGeneration;
 - (BOOL)readBinaryStoreFromData:(id)arg1 originalPath:(id)arg2 error:(id*)arg3;
 - (BOOL)readFromFile:(id)arg1 error:(id*)arg2;
 - (BOOL)readMetadataFromFile:(id)arg1 error:(id*)arg2;
 - (void)setDatabaseVersion:(int)arg1;
 - (void)setFullMetadata:(id)arg1;
 - (void)setMapData:(id)arg1;
-- (void)setPrimaryKeyGeneration:(unsigned int)arg1;
+- (void)setPrimaryKeyGeneration:(unsigned long long)arg1;
 - (BOOL)writeMetadataToFile:(id)arg1 error:(id*)arg2;
 - (BOOL)writeToFile:(id)arg1 error:(id*)arg2;
 

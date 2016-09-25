@@ -7,7 +7,7 @@
     CKAttachmentCollectionManager * _attachmentCollectionManager;
     CKAvatarPickerViewController * _avatarPickerViewController;
     CKDetailsContactsManager * _contactsManager;
-    double  _contentOffsetYShiftAfterKeyboardNotification;
+    float  _contentOffsetYShiftAfterKeyboardNotification;
     CKConversation * _conversation;
     unsigned int  _currentAssetType;
     UIViewController<CKSharedAssetsControllerProtocol> * _currentSharedAssetsViewController;
@@ -34,7 +34,7 @@
 @property (nonatomic, retain) CKAttachmentCollectionManager *attachmentCollectionManager;
 @property (nonatomic, retain) CKAvatarPickerViewController *avatarPickerViewController;
 @property (nonatomic, retain) CKDetailsContactsManager *contactsManager;
-@property (nonatomic) double contentOffsetYShiftAfterKeyboardNotification;
+@property (nonatomic) float contentOffsetYShiftAfterKeyboardNotification;
 @property (nonatomic, retain) CKConversation *conversation;
 @property (nonatomic) unsigned int currentAssetType;
 @property (nonatomic, retain) UIViewController<CKSharedAssetsControllerProtocol> *currentSharedAssetsViewController;
@@ -143,7 +143,7 @@
 - (id)presentedEntity;
 - (id)presentingViewControllerForAvatarView:(id)arg1;
 - (void)previewingContext:(id)arg1 commitViewController:(id)arg2;
-- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { double x1; double x2; })arg2;
+- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { float x1; float x2; })arg2;
 - (void)readReceiptsSwitchValueChanged:(id)arg1;
 - (int)rowForAddMemberCell;
 - (int)rowForShowMoreContactsCell;

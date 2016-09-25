@@ -23,28 +23,28 @@
         unsigned int delegateRespondsToDidUnarchiveObject : 1; 
     }  _flags;
     BOOL  _hasReadFailure;
-    struct unordered_map<int, TSP::ObjectInfo, TSP::ObjectIdentifierHash, std::__1::equal_to<int>, std::__1::allocator<std::__1::pair<const int, TSP::ObjectInfo> > > { 
-        struct __hash_table<std::__1::__hash_value_type<int, TSP::ObjectInfo>, std::__1::__unordered_map_hasher<int, std::__1::__hash_value_type<int, TSP::ObjectInfo>, TSP::ObjectIdentifierHash, true>, std::__1::__unordered_map_equal<int, std::__1::__hash_value_type<int, TSP::ObjectInfo>, std::__1::equal_to<int>, true>, std::__1::allocator<std::__1::__hash_value_type<int, TSP::ObjectInfo> > > { 
-            struct unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<int, TSP::ObjectInfo>, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<int, TSP::ObjectInfo>, void *> *> > > { 
-                struct __compressed_pair<std::__1::__hash_node<std::__1::__hash_value_type<int, TSP::ObjectInfo>, void *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<int, TSP::ObjectInfo>, void *> *> > > { 
-                    struct __hash_node<std::__1::__hash_value_type<int, TSP::ObjectInfo>, void *> {} **__first_; 
-                    struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<int, TSP::ObjectInfo>, void *> *> > { 
-                        struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<int, TSP::ObjectInfo>, void *> *> > { 
+    struct unordered_map<long long, TSP::ObjectInfo, TSP::ObjectIdentifierHash, std::__1::equal_to<long long>, std::__1::allocator<std::__1::pair<const long long, TSP::ObjectInfo> > > { 
+        struct __hash_table<std::__1::__hash_value_type<long long, TSP::ObjectInfo>, std::__1::__unordered_map_hasher<long long, std::__1::__hash_value_type<long long, TSP::ObjectInfo>, TSP::ObjectIdentifierHash, true>, std::__1::__unordered_map_equal<long long, std::__1::__hash_value_type<long long, TSP::ObjectInfo>, std::__1::equal_to<long long>, true>, std::__1::allocator<std::__1::__hash_value_type<long long, TSP::ObjectInfo> > > { 
+            struct unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<long long, TSP::ObjectInfo>, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<long long, TSP::ObjectInfo>, void *> *> > > { 
+                struct __compressed_pair<std::__1::__hash_node<std::__1::__hash_value_type<long long, TSP::ObjectInfo>, void *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<long long, TSP::ObjectInfo>, void *> *> > > { 
+                    struct __hash_node<std::__1::__hash_value_type<long long, TSP::ObjectInfo>, void *> {} **__first_; 
+                    struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<long long, TSP::ObjectInfo>, void *> *> > { 
+                        struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<long long, TSP::ObjectInfo>, void *> *> > { 
                             unsigned long __first_; 
                         } __data_; 
                     } __second_; 
                 } __ptr_; 
             } __bucket_list_; 
-            struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, TSP::ObjectInfo>, void *> *>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<int, TSP::ObjectInfo>, void *> > > { 
-                struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, TSP::ObjectInfo>, void *> *> { 
-                    struct __hash_node<std::__1::__hash_value_type<int, TSP::ObjectInfo>, void *> {} *__next_; 
+            struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, TSP::ObjectInfo>, void *> *>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<long long, TSP::ObjectInfo>, void *> > > { 
+                struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, TSP::ObjectInfo>, void *> *> { 
+                    struct __hash_node<std::__1::__hash_value_type<long long, TSP::ObjectInfo>, void *> {} *__next_; 
                 } __first_; 
             } __p1_; 
-            struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<int, std::__1::__hash_value_type<int, TSP::ObjectInfo>, TSP::ObjectIdentifierHash, true> > { 
+            struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<long long, std::__1::__hash_value_type<long long, TSP::ObjectInfo>, TSP::ObjectIdentifierHash, true> > { 
                 unsigned long __first_; 
             } __p2_; 
-            struct __compressed_pair<float, std::__1::__unordered_map_equal<int, std::__1::__hash_value_type<int, TSP::ObjectInfo>, std::__1::equal_to<int>, true> > { 
-                double __first_; 
+            struct __compressed_pair<float, std::__1::__unordered_map_equal<long long, std::__1::__hash_value_type<long long, TSP::ObjectInfo>, std::__1::equal_to<long long>, true> > { 
+                float __first_; 
             } __p3_; 
         } __table_; 
     }  _objectInfoMap;
@@ -71,7 +71,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) BOOL didFinishResolvingReferences;
 @property (nonatomic, retain) NSError *error;
-@property (nonatomic, readonly) unsigned int fileFormatVersion;
+@property (nonatomic, readonly) unsigned long long fileFormatVersion;
 @property (nonatomic, readonly) BOOL hasDocumentVersionUUID;
 @property (readonly) BOOL hasReadFailure;
 @property (readonly) unsigned int hash;
@@ -82,9 +82,9 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (id)UUIDForObjectIdentifier:(int)arg1;
+- (id)UUIDForObjectIdentifier:(long long)arg1;
 - (void)addUnarchivedObject:(id)arg1 unarchiver:(id)arg2;
-- (void)attemptedToReadInMemoryObject:(id)arg1 objectIdentifier:(int)arg2;
+- (void)attemptedToReadInMemoryObject:(id)arg1 objectIdentifier:(long long)arg2;
 - (void)beginIgnoringModificationsForObject:(id)arg1;
 - (void)beginReadingWithCompletionQueue:(id)arg1 completion:(id /* block */)arg2;
 - (BOOL)canRetainObjectReferencedByWeakLazyReference;
@@ -92,13 +92,13 @@
 - (id)completionGroup;
 - (id)component;
 - (id)context;
-- (id)dataForIdentifier:(int)arg1;
+- (id)dataForIdentifier:(long long)arg1;
 - (id)delegate;
 - (BOOL)didFinishResolvingReferences;
 - (void)didUnarchiveObject:(id)arg1 withUnarchiver:(id)arg2;
 - (void)endIgnoringModificationsForObject:(id)arg1;
 - (id)error;
-- (unsigned int)fileFormatVersion;
+- (unsigned long long)fileFormatVersion;
 - (BOOL)finishUnarchiving;
 - (BOOL)hasDocumentVersionUUID;
 - (BOOL)hasReadFailure;
@@ -107,11 +107,11 @@
 - (BOOL)isCrossAppPaste;
 - (BOOL)isCrossDocumentPaste;
 - (BOOL)isObjectInDocument:(id)arg1;
-- (int)modifyObjectTokenForNewObject;
-- (int)newObjectIdentifier;
+- (long long)modifyObjectTokenForNewObject;
+- (long long)newObjectIdentifier;
 - (id)newObjectUUIDForObject:(id)arg1;
-- (int)objectIdentifierForUUID:(id)arg1;
-- (struct ObjectInfo { struct vector<TSP::ReferenceCompletionInfo, std::__1::allocator<TSP::ReferenceCompletionInfo> > { struct ReferenceCompletionInfo {} *x_1_1_1; struct ReferenceCompletionInfo {} *x_1_1_2; struct __compressed_pair<TSP::ReferenceCompletionInfo *, std::__1::allocator<TSP::ReferenceCompletionInfo> > { struct ReferenceCompletionInfo {} *x_3_2_1; } x_1_1_3; } x1; }*)objectInfoForIdentifier:(int)arg1;
+- (long long)objectIdentifierForUUID:(id)arg1;
+- (struct ObjectInfo { struct vector<TSP::ReferenceCompletionInfo, std::__1::allocator<TSP::ReferenceCompletionInfo> > { struct ReferenceCompletionInfo {} *x_1_1_1; struct ReferenceCompletionInfo {} *x_1_1_2; struct __compressed_pair<TSP::ReferenceCompletionInfo *, std::__1::allocator<TSP::ReferenceCompletionInfo> > { struct ReferenceCompletionInfo {} *x_3_2_1; } x_1_1_3; } x1; }*)objectInfoForIdentifier:(long long)arg1;
 - (id)objectUUIDMap;
 - (void)processObjectsToModifyWithRootObject:(id)arg1;
 - (void)readWithIOCompletionQueue:(id)arg1 ioCompletion:(id /* block */)arg2 completionQueue:(id)arg3 completion:(id /* block */)arg4;

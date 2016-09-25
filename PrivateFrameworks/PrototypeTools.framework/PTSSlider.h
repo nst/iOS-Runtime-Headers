@@ -7,7 +7,7 @@
     NSTimer * _buttonRepeatTimer;
     UIButton * _downIncrementButton;
     BOOL  _enabled;
-    double  _increment;
+    float  _increment;
     _UISettings * _settings;
     BOOL  _showsValueLabel;
     UISlider * _sliderControl;
@@ -31,9 +31,9 @@
 @property (nonatomic, retain) UIButton *downIncrementButton;
 @property (getter=isEnabled, nonatomic) BOOL enabled;
 @property (readonly) unsigned int hash;
-@property (nonatomic) double increment;
-@property (nonatomic) double maximumValue;
-@property (nonatomic) double minimumValue;
+@property (nonatomic) float increment;
+@property (nonatomic) float maximumValue;
+@property (nonatomic) float minimumValue;
 @property (nonatomic) _UISettings *settings;
 @property (nonatomic) BOOL showsValueLabel;
 @property (nonatomic, retain) UISlider *sliderControl;
@@ -41,14 +41,14 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UILabel *titleLabel;
 @property (nonatomic, retain) UIButton *upIncrementButton;
-@property (nonatomic) double value;
+@property (nonatomic) float value;
 @property (nonatomic) struct { double x1; double x2; } valueChangePublishTTL;
 @property (nonatomic, copy) NSString *valueKeyPath;
 @property (nonatomic, retain) UILabel *valueLabel;
 @property (nonatomic, retain) NSNumberFormatter *valueLabelFormatter;
 @property (nonatomic, copy) NSArray *valueLabelStrings;
 
-+ (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })defaultFrame;
++ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })defaultFrame;
 + (id)slider;
 + (id)sliderForSettings:(id)arg1 valueKeyPath:(id)arg2 title:(id)arg3 minimumValue:(float)arg4 maximumValue:(float)arg5;
 + (id)zeroToOneSliderForSettings:(id)arg1 valueKeyPath:(id)arg2 title:(id)arg3;
@@ -62,8 +62,8 @@
 - (id)downIncrementButton;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (float)increment;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (BOOL)isEnabled;
 - (void)layoutSubviews;
 - (id)makeIncrementButtonWithAction:(SEL)arg1 imageName:(id)arg2;

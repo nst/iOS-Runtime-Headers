@@ -13,7 +13,7 @@
         BOOL respondsToStopPlayback; 
     }  _delegateFlags;
     BOOL  _didReachMaxForce;
-    double  _forceProgress;
+    float  _forceProgress;
     BOOL  _touchActive;
 }
 
@@ -21,7 +21,7 @@
 @property (setter=_setCurrentTimeoutRequestId:, nonatomic) int _currentTimeoutRequestId;
 @property (setter=_setForceAboveThresholdLongEnough:, nonatomic) BOOL _forceAboveThresholdLongEnough;
 @property (setter=_setHasCrossedHintThreshold:, nonatomic) BOOL _hasCrossedHintThreshold;
-@property (nonatomic) double forceProgress;
+@property (nonatomic) float forceProgress;
 @property (getter=isTouchActive, nonatomic) BOOL touchActive;
 
 - (BOOL)_aboveTimeoutThreshold;

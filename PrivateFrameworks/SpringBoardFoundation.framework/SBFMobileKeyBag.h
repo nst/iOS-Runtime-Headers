@@ -25,7 +25,7 @@
 - (void)_queue_handleKeybagStatusChanged;
 - (id)_queue_lockStateExtended:(BOOL)arg1;
 - (void)_queue_setHasPasscodeIfNecessary:(id)arg1;
-- (BOOL)_queue_verifyExpectedStashState:(int)arg1;
+- (BOOL)_queue_verifyExpectedStashState:(long long)arg1;
 - (void)addObserver:(id)arg1;
 - (BOOL)beginRecovery:(id)arg1 error:(id*)arg2;
 - (void)createStashBag:(id)arg1 completion:(id /* block */)arg2;

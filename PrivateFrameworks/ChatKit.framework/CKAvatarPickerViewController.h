@@ -28,7 +28,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UITapGestureRecognizer *tapGestureRecognizer;
 @property (nonatomic, retain) CKAvatarTitleCollectionReusableView *titleView;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } titleViewFrame;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } titleViewFrame;
 @property (nonatomic, retain) NSMapTable *visibleTitleViews;
 
 - (void).cxx_destruct;
@@ -77,7 +77,7 @@
 - (id)suggestionsEnabledContactStore;
 - (id)tapGestureRecognizer;
 - (id)titleView;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })titleViewFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })titleViewFrame;
 - (void)viewWillLayoutSubviews;
 - (id)visibleTitleViews;
 

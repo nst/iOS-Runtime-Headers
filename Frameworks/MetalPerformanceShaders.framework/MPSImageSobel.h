@@ -3,7 +3,7 @@
  */
 
 @interface MPSImageSobel : MPSUnaryImageKernel {
-    double  _colVec;
+    float  _colVec;
 }
 
 @property (nonatomic, readonly) const float*colorTransform;

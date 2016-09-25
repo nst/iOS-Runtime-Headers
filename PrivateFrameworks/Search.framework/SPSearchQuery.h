@@ -6,7 +6,7 @@
     double  _cancellationTime;
     BOOL  _cancelled;
     int  _contentFilters;
-    unsigned int  _creationStamp;
+    unsigned long long  _creationStamp;
     double  _creationTime;
     NSDictionary * _dictationResponse;
     BOOL  _dictationStable;
@@ -22,7 +22,7 @@
     NSArray * _markedTextArray;
     long  _maxCount;
     unsigned int  _queryID;
-    unsigned int  _queryIdent;
+    unsigned long long  _queryIdent;
     NSArray * _searchDomains;
     NSString * _searchString;
     unsigned int  _whyQuery;
@@ -32,7 +32,7 @@
 @property (nonatomic, readonly) double cancellationTime;
 @property (nonatomic, readonly) BOOL cancelled;
 @property (nonatomic) int contentFilters;
-@property (nonatomic, readonly) unsigned int creationStamp;
+@property (nonatomic, readonly) unsigned long long creationStamp;
 @property (nonatomic, readonly) double creationTime;
 @property (nonatomic, retain) NSDictionary *dictationResponse;
 @property (nonatomic) BOOL dictationStable;
@@ -47,7 +47,7 @@
 @property (nonatomic, readonly) NSString *keyboardPrimaryLanguage;
 @property (nonatomic, readonly) NSArray *markedTextArray;
 @property (nonatomic) long maxCount;
-@property (nonatomic) unsigned int queryIdent;
+@property (nonatomic) unsigned long long queryIdent;
 @property (nonatomic, readonly) NSArray *searchDomains;
 @property (nonatomic, readonly) NSString *searchString;
 @property (nonatomic) unsigned int whyQuery;
@@ -58,7 +58,7 @@
 - (BOOL)cancelled;
 - (int)contentFilters;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)creationStamp;
+- (unsigned long long)creationStamp;
 - (double)creationTime;
 - (id)dictationResponse;
 - (BOOL)dictationStable;
@@ -82,7 +82,7 @@
 - (id)keyboardPrimaryLanguage;
 - (id)markedTextArray;
 - (long)maxCount;
-- (unsigned int)queryIdent;
+- (unsigned long long)queryIdent;
 - (id)searchDomains;
 - (id)searchString;
 - (void)setContentFilters:(int)arg1;
@@ -94,7 +94,7 @@
 - (void)setInternal:(BOOL)arg1;
 - (void)setIsWideScreen:(BOOL)arg1;
 - (void)setMaxCount:(long)arg1;
-- (void)setQueryIdent:(unsigned int)arg1;
+- (void)setQueryIdent:(unsigned long long)arg1;
 - (void)setWhyQuery:(unsigned int)arg1;
 - (unsigned int)whyQuery;
 

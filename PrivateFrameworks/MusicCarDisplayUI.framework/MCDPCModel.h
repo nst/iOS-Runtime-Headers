@@ -7,14 +7,14 @@
     NSMapTable * _identifiersToItems;
     NSObject<OS_dispatch_queue> * _imageProcessingQueue;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _imageSize;
     NSObject<OS_dispatch_group> * _mediaRemoteGroup;
     NSObject<OS_dispatch_queue> * _mediaRemoteNotificationQueue;
     BOOL  _needsInvalidation;
-    unsigned int  _nextAllowedInvalidate;
-    unsigned int  _nextAllowedUpdate;
+    unsigned long long  _nextAllowedInvalidate;
+    unsigned long long  _nextAllowedUpdate;
     NSCache * _resizedImages;
     MCDPCItem * _rootItem;
     NSObject<OS_dispatch_queue> * _serialAccessQueue;
@@ -23,7 +23,7 @@
 
 @property (nonatomic, readonly) NSString *appTitle;
 @property (nonatomic, readonly, copy) NSString *bundleID;
-@property (nonatomic) struct CGSize { double x1; double x2; } imageSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } imageSize;
 @property (nonatomic, readonly) MCDPCItem *rootItem;
 
 - (void).cxx_destruct;
@@ -49,11 +49,11 @@
 - (void)getNowPlayingIdentifiersWithCompletion:(id /* block */)arg1;
 - (void)getRemoteAppIsPlaying:(id /* block */)arg1;
 - (id)imageForIdentifier:(id)arg1;
-- (struct CGSize { double x1; double x2; })imageSize;
+- (struct CGSize { float x1; float x2; })imageSize;
 - (id)initWithBundleID:(id)arg1;
 - (void)initiatePlaybackAtIndexPath:(id)arg1 completion:(id /* block */)arg2;
 - (id)itemsFromMRContentItems:(id)arg1;
 - (id)rootItem;
-- (void)setImageSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setImageSize:(struct CGSize { float x1; float x2; })arg1;
 
 @end

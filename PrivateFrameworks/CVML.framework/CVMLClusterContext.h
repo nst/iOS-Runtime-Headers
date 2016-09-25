@@ -9,7 +9,7 @@
     CVMLSimilarityMatrix * _matrix;
     unsigned int  _maxFaceId;
     NSMutableDictionary * _obsDictById;
-    double  _threshold;
+    float  _threshold;
     BOOL  _useClusterObservation;
 }
 

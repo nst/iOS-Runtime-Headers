@@ -17,9 +17,9 @@
 @property (nonatomic, readonly) BOOL canMakeSharingThumbnails;
 @property (nonatomic, readonly) BOOL isPad;
 @property (nonatomic, readonly) BOOL lowPerformanceDevice;
-@property (nonatomic, readonly) double mainScreenPPI;
-@property (nonatomic, readonly) double mainScreenScale;
-@property (nonatomic, readonly) double maxContentScaleForRendering;
+@property (nonatomic, readonly) float mainScreenPPI;
+@property (nonatomic, readonly) float mainScreenScale;
+@property (nonatomic, readonly) float maxContentScaleForRendering;
 @property (nonatomic, readonly) unsigned int memorySize;
 @property (nonatomic, readonly) BOOL proceduralRoadAlpha;
 @property (nonatomic, readonly) BOOL roadsWithSimpleLineMeshesAvailable;

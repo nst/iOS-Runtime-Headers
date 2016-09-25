@@ -5,20 +5,20 @@
 @interface MKViewWithHairline : UIView {
     UIView * _bottomHairline;
     UIColor * _hairlineColor;
-    double  _leftHairlineInset;
-    double  _rightHairlineInset;
+    float  _leftHairlineInset;
+    float  _rightHairlineInset;
     UIView * _topHairline;
 }
 
 @property (getter=isBottomHairlineHidden, nonatomic) BOOL bottomHairlineHidden;
 @property (nonatomic, retain) UIColor *hairlineColor;
-@property (nonatomic) double leftHairlineInset;
-@property (nonatomic) double rightHairlineInset;
+@property (nonatomic) float leftHairlineInset;
+@property (nonatomic) float rightHairlineInset;
 @property (getter=isTopHairlineHidden, nonatomic) BOOL topHairlineHidden;
 
 - (void).cxx_destruct;
 - (id)hairlineColor;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isBottomHairlineHidden;
 - (BOOL)isTopHairlineHidden;
 - (void)layoutSubviews;

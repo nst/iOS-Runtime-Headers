@@ -6,14 +6,14 @@
     NTKAnalogScene * _analogScene;
     UIView * _circleView;
     UIView * _handsView;
-    double  _maxZoomingIconDiameter;
+    float  _maxZoomingIconDiameter;
     SKView * _sceneHostView;
 }
 
 @property (nonatomic, retain) NTKAnalogScene *analogScene;
 @property (nonatomic) UIView *circleView;
 @property (nonatomic) UIView *handsView;
-@property (nonatomic) double maxZoomingIconDiameter;
+@property (nonatomic) float maxZoomingIconDiameter;
 @property (nonatomic, readonly) UIView *sceneView;
 @property (nonatomic) BOOL shouldRasterizeBackground;
 

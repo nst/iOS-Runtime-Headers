@@ -6,8 +6,8 @@
     UIView * _wrappedView;
     UIView * _wrappedViewContainer;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _wrappedViewSize;
 }
 
@@ -20,7 +20,7 @@
 - (void)_updateWrappedViewFrame;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)prepareForReuse;
-- (void)resizeSubviewsWithOldSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)resizeSubviewsWithOldSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setWrappedView:(id)arg1;
 - (id)wrappedView;
 

@@ -3,7 +3,7 @@
  */
 
 @interface TPPhonePad : UIControl <TPDialerKeypadProtocol> {
-    double  _bottomHeight;
+    float  _bottomHeight;
     <TPDialerKeypadDelegate> * _delegate;
     unsigned int  _delegateSoundCallbacks;
     int  _downKey;
@@ -11,13 +11,13 @@
     unsigned int  _incompleteSounds;
     struct __CFSet { } * _inflightSounds;
     struct __CFDictionary { } * _keyToButtonMap;
-    double  _leftWidth;
-    double  _midHeight;
-    double  _midWidth;
+    float  _leftWidth;
+    float  _midHeight;
+    float  _midWidth;
     BOOL  _playsSounds;
-    double  _rightWidth;
+    float  _rightWidth;
     unsigned int  _soundsActivated;
-    double  _topHeight;
+    float  _topHeight;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -39,31 +39,31 @@
 - (void)_handleKeyPressAndHoldForHighlightedKey:(id)arg1;
 - (void)_handleKeyPressAndHoldForKey:(int)arg1;
 - (id)_highlightedImage;
-- (id)_imageByCroppingImage:(id)arg1 toRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
-- (int)_keyForPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (id)_imageByCroppingImage:(id)arg1 toRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (int)_keyForPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)_keypadImage;
-- (struct CGPoint { double x1; double x2; })_keypadOrigin;
+- (struct CGPoint { float x1; float x2; })_keypadOrigin;
 - (void)_notifySoundCompletionIfNecessary:(unsigned long)arg1;
 - (void)_playSoundForKey:(unsigned int)arg1;
 - (id)_pressedImage;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_rectForKey:(unsigned int)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_rectForKey:(unsigned int)arg1;
 - (void)_stopAllSoundsForcingCallbacks:(BOOL)arg1;
 - (void)_stopSoundForKey:(unsigned int)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_updateRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withScale:(float)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_updateRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withScale:(float)arg2;
 - (float)_yFudge;
 - (BOOL)cancelTouchTracking;
 - (void)dealloc;
-- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)highlightKeyAtIndex:(int)arg1;
-- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (int)indexForHighlightedKey;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)movedFromWindow:(id)arg1;
 - (void)movedToWindow:(id)arg1;
 - (void)performTapActionCancelForHighlightedKey;
 - (void)performTapActionDownForHighlightedKey;
 - (void)performTapActionEndForHighlightedKey;
-- (BOOL)pointMostlyInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (BOOL)pointMostlyInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)removeFromSuperview;
 - (void)setButton:(id)arg1 forKeyAtIndex:(unsigned int)arg2;
 - (void)setDelegate:(id)arg1;

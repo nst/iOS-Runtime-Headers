@@ -5,9 +5,9 @@
 @interface UIWebSelectTableViewController : UITableViewController <UIKeyInput> {
     BOOL  _allowsMultipleSelection;
     NSArray * _cachedItems;
-    double  _fontSize;
+    float  _fontSize;
     NSArray * _groupsAndOptions;
-    double  _maximumTextWidth;
+    float  _maximumTextWidth;
     UIWebSelectPopover * _popover;
     DOMHTMLSelectElement * _selectionNode;
     unsigned int  _singleSelectionIndex;

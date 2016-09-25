@@ -3,7 +3,7 @@
  */
 
 @interface HDActivityAWDActivitySharingSnapshotEvent : PBCodable <NSCopying> {
-    int  _count;
+    long long  _count;
     struct { 
         unsigned int count : 1; 
         unsigned int timestamp : 1; 
@@ -12,22 +12,22 @@
     }  _has;
     int  _kind;
     BOOL  _success;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
 }
 
-@property (nonatomic) int count;
+@property (nonatomic) long long count;
 @property (nonatomic) BOOL hasCount;
 @property (nonatomic) BOOL hasKind;
 @property (nonatomic) BOOL hasSuccess;
 @property (nonatomic) BOOL hasTimestamp;
 @property (nonatomic) int kind;
 @property (nonatomic) BOOL success;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 
 - (int)StringAsKind:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (int)count;
+- (long long)count;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasCount;
@@ -40,16 +40,16 @@
 - (id)kindAsString:(int)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (void)setCount:(int)arg1;
+- (void)setCount:(long long)arg1;
 - (void)setHasCount:(BOOL)arg1;
 - (void)setHasKind:(BOOL)arg1;
 - (void)setHasSuccess:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
 - (void)setKind:(int)arg1;
 - (void)setSuccess:(BOOL)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (BOOL)success;
-- (unsigned int)timestamp;
+- (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 
 @end

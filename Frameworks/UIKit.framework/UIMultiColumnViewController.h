@@ -9,16 +9,16 @@
     NSArray * _columnWidths;
     <UIMultiColumnViewControllerDelegate> * _delegate;
     UIBarButtonItem * _hideSecondColumnBarButtonItem;
-    double  _keyboardInset;
+    float  _keyboardInset;
     unsigned int  _lastColumnCount;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _lastFrameInWindow;
     struct { 
@@ -33,7 +33,7 @@
 @property (setter=_setColumnToggleButtonImage:, nonatomic, retain) UIImage *_columnToggleButtonImage;
 @property (nonatomic, retain) NSArray *columnWidths;
 @property (nonatomic) <UIMultiColumnViewControllerDelegate> *delegate;
-@property (nonatomic) double keyboardInset;
+@property (nonatomic) float keyboardInset;
 @property (nonatomic, retain) NSArray *navControllers;
 @property (nonatomic, retain) NSArray *viewControllers;
 
@@ -46,7 +46,7 @@
 - (id)_columnToggleButtonImage;
 - (id)_contentSizesForColumnWidths:(id)arg1;
 - (BOOL)_currentSizeMightAllowMultipleColumns;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_edgeInsetsForChildViewController:(id)arg1 insetsAreAbsolute:(BOOL*)arg2;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_edgeInsetsForChildViewController:(id)arg1 insetsAreAbsolute:(BOOL*)arg2;
 - (id)_effectiveColumnWidths;
 - (void)_hideSecondColumn:(id)arg1;
 - (id)_hideSecondColumnBarButtonItem;

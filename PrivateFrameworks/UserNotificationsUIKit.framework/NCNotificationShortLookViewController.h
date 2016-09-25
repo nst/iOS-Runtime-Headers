@@ -24,7 +24,7 @@
 - (void).cxx_destruct;
 - (void)_configureScrollViewIfNecessary;
 - (id)_customContentProvidingViewControllerCreateIfNecessary;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameForTransitionViewInScrollView;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForTransitionViewInScrollView;
 - (void)_handleTapOnView:(id)arg1;
 - (id)_initWithNotificationRequest:(id)arg1 revealingAdditionalContentOnPresentation:(BOOL)arg2;
 - (BOOL)_isPresentingCustomContentProvidingViewController;
@@ -51,7 +51,7 @@
 - (BOOL)hasCommittedToPresentingCustomContentProvidingViewController;
 - (BOOL)isContentExtensionVisible:(id)arg1;
 - (BOOL)isShortLook;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })longLookPresentationController:(id)arg1 frameForTransitionViewInPresentationSuperview:(id)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })longLookPresentationController:(id)arg1 frameForTransitionViewInPresentationSuperview:(id)arg2;
 - (BOOL)longLookPresentationControllerPreviewShouldIncludeShadow:(id)arg1;
 - (BOOL)longLookPresentationControllerShouldRestoreSourceView:(id)arg1;
 - (id)longLookViewControllerForTransitionManager:(id)arg1;

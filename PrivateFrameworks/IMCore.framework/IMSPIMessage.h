@@ -15,7 +15,7 @@
     BOOL  _isOutgoing;
     BOOL  _isRead;
     NSDate * _lastReadDate;
-    int  _messageID;
+    long long  _messageID;
     NSArray * _recipients;
     IMSPIHandle * _sender;
     NSString * _subject;
@@ -34,7 +34,7 @@
 @property BOOL isOutgoing;
 @property BOOL isRead;
 @property (retain) NSDate *lastReadDate;
-@property int messageID;
+@property long long messageID;
 @property (retain) NSArray *recipients;
 @property (retain) IMSPIHandle *sender;
 @property (retain) NSString *subject;
@@ -56,7 +56,7 @@
 - (BOOL)isOutgoing;
 - (BOOL)isRead;
 - (id)lastReadDate;
-- (int)messageID;
+- (long long)messageID;
 - (id)recipients;
 - (id)sender;
 - (void)setAttributedText:(id)arg1;
@@ -71,7 +71,7 @@
 - (void)setIsOutgoing:(BOOL)arg1;
 - (void)setIsRead:(BOOL)arg1;
 - (void)setLastReadDate:(id)arg1;
-- (void)setMessageID:(int)arg1;
+- (void)setMessageID:(long long)arg1;
 - (void)setRecipients:(id)arg1;
 - (void)setSender:(id)arg1;
 - (void)setSubject:(id)arg1;

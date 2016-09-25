@@ -5,7 +5,7 @@
 @interface _SBUIBiometricKitInterface : NSObject <BiometricKitDelegate> {
     BiometricKit * _biometricKit;
     <_SBUIBiometricKitInterfaceDelegate> * _delegate;
-    unsigned int  _enrolledIdentitiesCount;
+    unsigned long long  _enrolledIdentitiesCount;
     int  _enrollmentChangedNotifyToken;
     BOOL  _isFingerOn;
 }

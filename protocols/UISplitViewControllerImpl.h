@@ -10,15 +10,15 @@
 - (NSArray *)_childViewControllersToSendViewWillTransitionToSize;
 - (void)_commonInit;
 - (float)_contentMarginForChildViewController:(UIViewController *)arg1;
-- (struct CGSize { double x1; double x2; })_contentSizeForChildViewController:(UIViewController *)arg1 inPopoverController:(UIPopoverController *)arg2;
+- (struct CGSize { float x1; float x2; })_contentSizeForChildViewController:(UIViewController *)arg1 inPopoverController:(UIPopoverController *)arg2;
 - (void)_descendantWillPresentViewController:(UIViewController *)arg1 modalSourceViewController:(UIViewController *)arg2 presentationController:(UIPresentationController *)arg3 animated:(BOOL)arg4;
 - (void)_didChangeToFirstResponder:(UIResponder *)arg1;
 - (void)_didEndSnapshotSession;
 - (BOOL)_disableAutomaticKeyboardBehavior;
 - (NSString *)_displayModeButtonItemTitle;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_edgeInsetsForChildViewController:(UIViewController *)arg1 insetsAreAbsolute:(BOOL*)arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameForChildContentContainer:(id <UIContentContainer>)arg1;
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; int x7; }*)arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_edgeInsetsForChildViewController:(UIViewController *)arg1 insetsAreAbsolute:(BOOL*)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForChildContentContainer:(id <UIContentContainer>)arg1;
+- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; float x6; int x7; }*)arg1;
 - (BOOL)_handlesCounterRotationForPresentation;
 - (BOOL)_hasPreferredInterfaceOrientationForPresentation;
 - (void)_initWithCoder:(NSCoder *)arg1;
@@ -75,7 +75,7 @@
 - (BOOL)shouldUpdateFocusInContext:(UIFocusUpdateContext *)arg1;
 - (void)showDetailViewController:(UIViewController *)arg1 sender:(id)arg2;
 - (void)showViewController:(UIViewController *)arg1 sender:(id)arg2;
-- (struct CGSize { double x1; double x2; })sizeForChildContentContainer:(id <UIContentContainer>)arg1 withParentContainerSize:(struct CGSize { double x1; double x2; })arg2;
+- (struct CGSize { float x1; float x2; })sizeForChildContentContainer:(id <UIContentContainer>)arg1 withParentContainerSize:(struct CGSize { float x1; float x2; })arg2;
 - (unsigned int)supportedInterfaceOrientations;
 - (void)toggleMasterVisible:(id)arg1;
 - (void)traitCollectionDidChange:(UITraitCollection *)arg1;
@@ -86,7 +86,7 @@
 - (void)viewDidLayoutSubviews;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id <UIViewControllerTransitionCoordinator>)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id <UIViewControllerTransitionCoordinator>)arg2;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)willTransitionToTraitCollection:(UITraitCollection *)arg1 withTransitionCoordinator:(id <UIViewControllerTransitionCoordinator>)arg2;

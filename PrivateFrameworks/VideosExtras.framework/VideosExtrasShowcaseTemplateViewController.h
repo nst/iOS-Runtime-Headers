@@ -40,7 +40,7 @@
 - (id)carouselLockupElements;
 - (unsigned int)carouselSize;
 - (id)carouselViewController;
-- (void)carouselViewController:(id)arg1 configureCarouselCollectionViewCell:(id)arg2 forItemAtIndex:(unsigned int)arg3 withThumbnailImageContainerSize:(struct CGSize { double x1; double x2; })arg4;
+- (void)carouselViewController:(id)arg1 configureCarouselCollectionViewCell:(id)arg2 forItemAtIndex:(unsigned int)arg3 withThumbnailImageContainerSize:(struct CGSize { float x1; float x2; })arg4;
 - (void)carouselViewController:(id)arg1 didHighlightItemAtIndex:(unsigned int)arg2;
 - (void)carouselViewController:(id)arg1 didSelectItemAtIndex:(unsigned int)arg2 completionHandler:(id /* block */)arg3;
 - (void)dealloc;

@@ -4,17 +4,17 @@
 
 @interface _HKActivityRingViewSizingDirective : NSObject {
     NSString * _identifier;
-    double  _outerRingOffset;
-    double  _ringInterspacing;
-    double  _ringThickness;
-    double  _width;
+    float  _outerRingOffset;
+    float  _ringInterspacing;
+    float  _ringThickness;
+    float  _width;
 }
 
 @property (nonatomic, retain) NSString *identifier;
-@property (nonatomic) double outerRingOffset;
-@property (nonatomic) double ringInterspacing;
-@property (nonatomic) double ringThickness;
-@property (nonatomic) double width;
+@property (nonatomic) float outerRingOffset;
+@property (nonatomic) float ringInterspacing;
+@property (nonatomic) float ringThickness;
+@property (nonatomic) float width;
 
 + (id)activityRingSizingDirectiveWithIdentifier:(id)arg1 width:(float)arg2 outerRingOffset:(float)arg3 ringThickness:(float)arg4 ringInterspacing:(float)arg5;
 + (id)sortedRingRatioDirectives;

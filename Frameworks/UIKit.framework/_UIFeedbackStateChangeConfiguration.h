@@ -3,19 +3,19 @@
  */
 
 @interface _UIFeedbackStateChangeConfiguration : NSObject <NSCopying> {
-    double  _approachCurvature;
-    double  _approachEnd;
+    float  _approachCurvature;
+    float  _approachEnd;
     _UIFeedback<_UIFeedbackContinuousPlayable> * _approachFeedback;
-    double  _approachStart;
-    double  _approachVolumeMax;
+    float  _approachStart;
+    float  _approachVolumeMax;
     _UIFeedback<_UIFeedbackDiscretePlayable> * _thresholdFeedback;
 }
 
-@property (nonatomic) double approachCurvature;
-@property (nonatomic) double approachEnd;
+@property (nonatomic) float approachCurvature;
+@property (nonatomic) float approachEnd;
 @property (nonatomic, retain) _UIFeedback<_UIFeedbackContinuousPlayable> *approachFeedback;
-@property (nonatomic) double approachStart;
-@property (nonatomic) double approachVolumeMax;
+@property (nonatomic) float approachStart;
+@property (nonatomic) float approachVolumeMax;
 @property (nonatomic, retain) _UIFeedback<_UIFeedbackDiscretePlayable> *thresholdFeedback;
 
 - (void).cxx_destruct;

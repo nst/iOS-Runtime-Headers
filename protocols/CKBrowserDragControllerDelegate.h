@@ -16,6 +16,6 @@
 
 @optional
 
-- (id /* block */)commitBlockForItem:(void *)arg1; // needs 1 arg types, found 8: id /* block */, struct CGPoint { double x1; double x2; }, float, float, void*, id, SEL, UIView<CKBrowserItem> *
+- (id /* block */)commitBlockForItem:(void *)arg1; // needs 1 arg types, found 8: id /* block */, struct CGPoint { float x1; float x2; }, float, float, void*, id, SEL, UIView<CKBrowserItem> *
 
 @end

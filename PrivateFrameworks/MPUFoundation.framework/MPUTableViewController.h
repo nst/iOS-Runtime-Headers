@@ -15,7 +15,7 @@
 }
 
 @property (nonatomic, readonly) Class cellConfigurationClass;
-@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } contentOffsetRevealingFirstDataSourceSection;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } contentOffsetRevealingFirstDataSourceSection;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
@@ -46,7 +46,7 @@
 - (Class)cellConfigurationClass;
 - (Class)cellConfigurationForIndexPath:(id)arg1;
 - (void)configureCell:(id)arg1 atIndexPath:(id)arg2 withEntity:(id)arg3 invalidationContext:(id)arg4;
-- (struct CGPoint { double x1; double x2; })contentOffsetRevealingFirstDataSourceSection;
+- (struct CGPoint { float x1; float x2; })contentOffsetRevealingFirstDataSourceSection;
 - (int)dataSourceIndexForIndexPath:(id)arg1;
 - (int)dataSourceSectionForSection:(int)arg1;
 - (void)dealloc;

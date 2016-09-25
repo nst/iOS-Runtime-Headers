@@ -17,7 +17,7 @@
     struct __CFMachPort { } * _serverPort;
     NSLock * _serverPortLock;
     NSString * _serviceName;
-    double  _timeout;
+    float  _timeout;
     BOOL  _usesPerPidLookup;
     unsigned int  clientCallbackPort;
     struct __CFRunLoopSource { } * clientCallbackSource;
@@ -37,7 +37,7 @@
 @property (nonatomic, readonly) unsigned int serviceMachPort;
 @property (nonatomic, copy) NSString *serviceName;
 @property (nonatomic) BOOL shouldRegisterCallbackSourceOnMainRunloop;
-@property (nonatomic) double timeout;
+@property (nonatomic) float timeout;
 @property (nonatomic) BOOL usesPerPidLookup;
 
 + (id)allClients;

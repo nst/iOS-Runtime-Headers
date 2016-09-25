@@ -33,7 +33,7 @@
 - (void)fireCompletion:(id /* block */)arg1 arrayResults:(id)arg2 error:(id)arg3;
 - (void)fireCompletion:(id /* block */)arg1 error:(id)arg2;
 - (void)fireCompletion:(id /* block */)arg1 result:(id)arg2 error:(id)arg3;
-- (void)handleMessage:(id)arg1 withType:(int)arg2;
+- (void)handleMessage:(id)arg1 withType:(long long)arg2;
 - (id)init;
 - (void)invalidate;
 - (void)objectForKey:(id)arg1 forApplication:(id)arg2 withResult:(id /* block */)arg3;

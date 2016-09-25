@@ -9,17 +9,17 @@
     int  _selectionState;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _seriesSelectionRect;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _touchPoint;
 }
 
@@ -27,21 +27,21 @@
 @property (nonatomic, retain) HKGraphSeries *selectedSeries;
 @property (nonatomic, retain) NSArray *selectionAreaMapping;
 @property (nonatomic) int selectionState;
-@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } seriesSelectionRect;
-@property (nonatomic) struct CGPoint { double x1; double x2; } touchPoint;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } seriesSelectionRect;
+@property (nonatomic) struct CGPoint { float x1; float x2; } touchPoint;
 
 - (void).cxx_destruct;
 - (id)selectedPointXValue;
 - (id)selectedSeries;
 - (id)selectionAreaMapping;
 - (int)selectionState;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })seriesSelectionRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })seriesSelectionRect;
 - (void)setSelectedPointXValue:(id)arg1;
 - (void)setSelectedSeries:(id)arg1;
 - (void)setSelectionAreaMapping:(id)arg1;
 - (void)setSelectionState:(int)arg1;
-- (void)setSeriesSelectionRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)setTouchPoint:(struct CGPoint { double x1; double x2; })arg1;
-- (struct CGPoint { double x1; double x2; })touchPoint;
+- (void)setSeriesSelectionRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setTouchPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGPoint { float x1; float x2; })touchPoint;
 
 @end

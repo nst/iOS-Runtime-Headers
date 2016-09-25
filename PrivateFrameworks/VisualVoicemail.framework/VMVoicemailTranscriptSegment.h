@@ -3,7 +3,7 @@
  */
 
 @interface VMVoicemailTranscriptSegment : NSObject <NSSecureCoding> {
-    double  _confidence;
+    float  _confidence;
     unsigned int  _confidenceRating;
     double  _duration;
     NSString * _substring;
@@ -14,7 +14,7 @@
     double  _timestamp;
 }
 
-@property (nonatomic, readonly) double confidence;
+@property (nonatomic, readonly) float confidence;
 @property (nonatomic) unsigned int confidenceRating;
 @property (nonatomic, readonly) double duration;
 @property (nonatomic, readonly, copy) NSString *substring;

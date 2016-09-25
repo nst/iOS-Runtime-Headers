@@ -7,10 +7,10 @@
     NSObject<OS_dispatch_queue> * bufferQueue;
     AVWeakReferencingDelegateStorage * delegateStorage;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  deprecatedMinFrameDuration;
     struct OpaqueFigSimpleMutex { } * remoteQueueMutex;
     struct remoteQueueReceiverOpaque { } * remoteReceiverQueue;

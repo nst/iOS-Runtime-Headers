@@ -39,9 +39,9 @@
 - (unsigned int)_knownEntityKeyForObject:(id)arg1;
 - (unsigned int)_knownEntityKeyForObjectID:(id)arg1;
 - (unsigned int)_knownOrderKeyForObject:(id)arg1 from:(id)arg2 inverseToMany:(id)arg3;
-- (int)_knownPrimaryKeyForObject:(id)arg1;
-- (int)_knownPrimaryKeyForObjectID:(id)arg1;
-- (id)_newRowCacheRowForToManyUpdatesForRelationship:(id)arg1 rowCacheOriginal:(id)arg2 originalOrderKeys:(id)arg3 originalSnapshot:(id)arg4 value:(id)arg5 added:(id)arg6 deleted:(id)arg7 sourceRowPK:(int)arg8 properties:(id)arg9 sourceObject:(id)arg10 newIndexes:(unsigned int**)arg11 reorderedIndexes:(char **)arg12;
+- (long long)_knownPrimaryKeyForObject:(id)arg1;
+- (long long)_knownPrimaryKeyForObjectID:(id)arg1;
+- (id)_newRowCacheRowForToManyUpdatesForRelationship:(id)arg1 rowCacheOriginal:(id)arg2 originalOrderKeys:(id)arg3 originalSnapshot:(id)arg4 value:(id)arg5 added:(id)arg6 deleted:(id)arg7 sourceRowPK:(long long)arg8 properties:(id)arg9 sourceObject:(id)arg10 newIndexes:(unsigned int**)arg11 reorderedIndexes:(char **)arg12;
 - (unsigned int)_orderKeyForObject:(id)arg1 fromSourceObjectID:(id)arg2 inverseRelationship:(id)arg3 inOrderedSet:(id)arg4;
 - (void)_populateOrderKeysInOrderedSet:(id)arg1 usingSourceObjectID:(id)arg2 inverseRelationship:(id)arg3 newIndexes:(unsigned int**)arg4 reorderedIndexes:(char **)arg5;
 - (void)_populateRow:(id)arg1 fromObject:(id)arg2 timestamp:(double)arg3 inserted:(BOOL)arg4;

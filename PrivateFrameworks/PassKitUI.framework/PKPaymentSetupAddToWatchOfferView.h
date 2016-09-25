@@ -27,7 +27,7 @@
 - (void).cxx_destruct;
 - (float)_instructionFontSize;
 - (float)_instructionYCoordinate;
-- (struct CGSize { double x1; double x2; })_passImageSize;
+- (struct CGSize { float x1; float x2; })_passImageSize;
 - (float)_passImageYCoordinate;
 - (id)_watchImage;
 - (id)_watchImageName;

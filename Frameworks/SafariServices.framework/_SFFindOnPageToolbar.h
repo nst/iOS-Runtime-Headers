@@ -39,12 +39,12 @@
 - (void)dismiss:(id)arg1;
 - (id)initWithDelegate:(id)arg1;
 - (id)inputField;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (void)layoutSubviews;
-- (struct CGSize { double x1; double x2; })leftContentViewSize;
+- (struct CGSize { float x1; float x2; })leftContentViewSize;
 - (void)next:(id)arg1;
 - (void)previous:(id)arg1;
-- (struct CGSize { double x1; double x2; })rightContentViewSize;
+- (struct CGSize { float x1; float x2; })rightContentViewSize;
 - (void)searchBar:(id)arg1 textDidChange:(id)arg2;
 - (void)searchBarSearchButtonClicked:(id)arg1;
 - (BOOL)searchBarShouldBeginEditing:(id)arg1;

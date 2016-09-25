@@ -17,14 +17,14 @@
     NSArray * _cachedAllowList;
     NSArray * _cachedBlockList;
     unsigned int  _cachedBlockingMode;
-    unsigned int  _capabilities;
+    unsigned long long  _capabilities;
     int  _coalesceCount;
     NSMutableDictionary * _coalescedChanges;
     NSString * _countryCode;
     NSMutableDictionary * _currentAccountStatus;
     NSDictionary * _data;
     NSMutableDictionary * _dataChanges;
-    unsigned int  _defaultHandleCapabilities;
+    unsigned long long  _defaultHandleCapabilities;
     NSString * _displayName;
     NSArray * _groups;
     BOOL  _hasBeenRemoved;
@@ -92,7 +92,7 @@
 @property (nonatomic) unsigned int blockingMode;
 @property (nonatomic, readonly) IMPeople *buddyList;
 @property (nonatomic, readonly) BOOL canActivate;
-@property (nonatomic, readonly) unsigned int capabilities;
+@property (nonatomic, readonly) unsigned long long capabilities;
 @property (nonatomic, readonly) NSString *countryCode;
 @property (nonatomic, readonly) NSDictionary *dictionary;
 @property (nonatomic, copy) NSString *displayName;
@@ -247,7 +247,7 @@
 - (BOOL)canActivate;
 - (id)canonicalFormOfID:(id)arg1;
 - (id)canonicalFormOfID:(id)arg1 countryCode:(id)arg2;
-- (unsigned int)capabilities;
+- (unsigned long long)capabilities;
 - (void)changeBuddyList:(id)arg1 add:(BOOL)arg2 groups:(id)arg3 atLocation:(int)arg4;
 - (id)chatIDForRoomName:(id)arg1;
 - (void)clearServiceCaches;
@@ -261,7 +261,7 @@
 - (id)countryCode;
 - (void)dealloc;
 - (id)defaultChatSuffix;
-- (unsigned int)defaultHandleCapabilities;
+- (unsigned long long)defaultHandleCapabilities;
 - (id)description;
 - (id)dictionary;
 - (id)dictionaryDataForKey:(id)arg1;
@@ -288,7 +288,7 @@
 - (BOOL)handlesChatInvites;
 - (BOOL)hasAlias:(id)arg1;
 - (BOOL)hasAlias:(id)arg1 type:(int)arg2;
-- (BOOL)hasCapability:(unsigned int)arg1;
+- (BOOL)hasCapability:(unsigned long long)arg1;
 - (BOOL)hasCustomDescription;
 - (BOOL)hasSyncedWithRemoteBuddies;
 - (BOOL)hasTargetGroupStateBeenMet;
@@ -445,7 +445,7 @@
 - (BOOL)unvalidateAlias:(id)arg1;
 - (BOOL)unvalidateAliases:(id)arg1;
 - (BOOL)updateAuthorizationCredentials:(id)arg1 token:(id)arg2;
-- (void)updateCapabilities:(unsigned int)arg1;
+- (void)updateCapabilities:(unsigned long long)arg1;
 - (void)updateWithTargetGroups;
 - (BOOL)useSSL;
 - (BOOL)validLogin;

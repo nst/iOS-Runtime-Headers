@@ -9,13 +9,13 @@
     NSMutableDictionary * _pidToCSSymbolicatorCache;
     PAImageInfo * _sharedCache32bit;
     struct _CSRange { 
-        unsigned int location; 
-        unsigned int length; 
+        unsigned long long location; 
+        unsigned long long length; 
     }  _sharedCache32bitRange;
     PAImageInfo * _sharedCache64bit;
     struct _CSRange { 
-        unsigned int location; 
-        unsigned int length; 
+        unsigned long long location; 
+        unsigned long long length; 
     }  _sharedCache64bitRange;
     NSMutableSet * _sharedCacheUUIDsAlreadySearchedFor;
     BOOL  _shouldSymbolicate;
@@ -43,11 +43,11 @@
 - (id)_PACSSymbolOwnerForImageUUID:(id)arg1 andPath:(id)arg2 andPidHint:(int)arg3;
 - (void)_addNewSymbolOwnerForCSSymbolOwnerRef:(struct _CSTypeRef { unsigned int x1; unsigned int x2; })arg1;
 - (void)_fillUUIDCacheWithKernelSymbolOwners;
-- (BOOL)_isLikelyToBeKernelAddress:(unsigned int)arg1;
+- (BOOL)_isLikelyToBeKernelAddress:(unsigned long long)arg1;
 - (id)_sharedCacheMappingsForSharedCacheUUID:(id)arg1;
-- (id)_symbolHandleForAddress:(unsigned int)arg1 withImageUUIDMappings:(id)arg2 andImageMappingSlide:(unsigned int)arg3 andPidHint:(int)arg4;
-- (id)_symbolHandleForOffsetInBinary:(unsigned int)arg1 inImageUUID:(id)arg2 andImageMappingSlide:(unsigned int)arg3 andPidHint:(int)arg4;
-- (id)_symbolHandleForOffsetIntoSymbolOwner:(unsigned int)arg1 withSymbolOwner:(id)arg2 andSymbolOwnerBaseAddress:(unsigned int)arg3 andPidHint:(int)arg4;
+- (id)_symbolHandleForAddress:(unsigned long long)arg1 withImageUUIDMappings:(id)arg2 andImageMappingSlide:(unsigned long long)arg3 andPidHint:(int)arg4;
+- (id)_symbolHandleForOffsetInBinary:(unsigned long long)arg1 inImageUUID:(id)arg2 andImageMappingSlide:(unsigned long long)arg3 andPidHint:(int)arg4;
+- (id)_symbolHandleForOffsetIntoSymbolOwner:(unsigned long long)arg1 withSymbolOwner:(id)arg2 andSymbolOwnerBaseAddress:(unsigned long long)arg3 andPidHint:(int)arg4;
 - (id)addDSCSymFromBuffer:(const void*)arg1 withLength:(unsigned long)arg2;
 - (void)addDsymPaths:(id)arg1;
 - (BOOL)addSelfToBufferAtPosition:(void*)arg1 withCompletedSerializationDictionary:(id)arg2;
@@ -64,7 +64,7 @@
 - (void)makeSureKernelBinariesAreKnown;
 - (id)ownerContainingSymbol:(id)arg1;
 - (void)populateReferencesUsingBufferPosition:(const void*)arg1 andDeserializationDictionary:(id)arg2 andDataBufferDictionary:(id)arg3;
-- (struct _CSRange { unsigned int x1; unsigned int x2; })rangeOfSharedCacheWithArchitecture:(struct _CSArchitecture { int x1; int x2; })arg1;
+- (struct _CSRange { unsigned long long x1; unsigned long long x2; })rangeOfSharedCacheWithArchitecture:(struct _CSArchitecture { int x1; int x2; })arg1;
 - (void)setDscSymDir:(id)arg1;
 - (void)setKernelCache:(id)arg1;
 - (void)setSharedCache32bit:(id)arg1;
@@ -77,11 +77,11 @@
 - (BOOL)shouldSymbolicate;
 - (BOOL)shouldUseDsymForUUIDToFindBinaries;
 - (unsigned long)sizeInBytesForSerializedVersion;
-- (id)symbolHandleForAddress:(unsigned int)arg1 inLivingPid:(int)arg2;
-- (id)symbolHandleForAddress:(unsigned int)arg1 inSampleTask:(id)arg2 isLiving:(BOOL)arg3;
-- (id)symbolHandleForAddress:(unsigned int)arg1 withSymbolicator:(struct _CSTypeRef { unsigned int x1; unsigned int x2; })arg2;
-- (id)symbolHandleForOffset:(unsigned int)arg1 inBinaryWithUUID:(id)arg2 inLivingPid:(int)arg3;
-- (id)symbolHandleForOffset:(unsigned int)arg1 inBinaryWithUUID:(id)arg2 inSampleTask:(id)arg3 isLiving:(BOOL)arg4;
-- (id)symbolHandleForOffset:(unsigned int)arg1 inBinaryWithUUID:(id)arg2 withBinaryOffsetInTask:(unsigned int)arg3 inLivingPid:(int)arg4;
+- (id)symbolHandleForAddress:(unsigned long long)arg1 inLivingPid:(int)arg2;
+- (id)symbolHandleForAddress:(unsigned long long)arg1 inSampleTask:(id)arg2 isLiving:(BOOL)arg3;
+- (id)symbolHandleForAddress:(unsigned long long)arg1 withSymbolicator:(struct _CSTypeRef { unsigned int x1; unsigned int x2; })arg2;
+- (id)symbolHandleForOffset:(unsigned long long)arg1 inBinaryWithUUID:(id)arg2 inLivingPid:(int)arg3;
+- (id)symbolHandleForOffset:(unsigned long long)arg1 inBinaryWithUUID:(id)arg2 inSampleTask:(id)arg3 isLiving:(BOOL)arg4;
+- (id)symbolHandleForOffset:(unsigned long long)arg1 inBinaryWithUUID:(id)arg2 withBinaryOffsetInTask:(unsigned long long)arg3 inLivingPid:(int)arg4;
 
 @end

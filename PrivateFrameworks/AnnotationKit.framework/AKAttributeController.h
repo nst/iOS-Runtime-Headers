@@ -12,7 +12,7 @@
     int  _highlightStyle;
     UIColor * _strokeColor;
     BOOL  _strokeIsDashed;
-    double  _strokeWidth;
+    float  _strokeWidth;
     NSDictionary * _textAttributes;
     AKPageModelController * modelControllerToObserveForSelections;
 }
@@ -27,7 +27,7 @@
 @property (nonatomic, retain) AKPageModelController *modelControllerToObserveForSelections;
 @property (retain) UIColor *strokeColor;
 @property BOOL strokeIsDashed;
-@property double strokeWidth;
+@property float strokeWidth;
 @property (retain) NSDictionary *textAttributes;
 
 + (id)defaultFont;

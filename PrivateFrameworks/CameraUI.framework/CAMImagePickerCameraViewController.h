@@ -21,7 +21,7 @@
 @property (nonatomic, readonly) PLVideoView *_videoView;
 @property (getter=_isCurrentlyReviewing, setter=_setCurrentlyReviewing:, nonatomic) BOOL currentlyReviewing;
 @property (nonatomic, retain) UIView *customOverlayView;
-@property (nonatomic) struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; } customPreviewViewTransform;
+@property (nonatomic) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } customPreviewViewTransform;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (getter=_isEditingAllowed, setter=_setEditingAllowed:, nonatomic) BOOL editingAllowed;
@@ -44,7 +44,7 @@
 - (int)_cameraDevice;
 - (int)_cameraFlashMode;
 - (id)_cameraOverlayView;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })_cameraViewTransform;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_cameraViewTransform;
 - (int)_captureDeviceForImagePickerCameraDevice:(int)arg1;
 - (int)_captureModeForImagePickerCameraCaptureMode:(int)arg1;
 - (id)_containingImagePickerController;
@@ -72,7 +72,7 @@
 - (void)_setCameraDevice:(int)arg1;
 - (void)_setCameraFlashMode:(int)arg1;
 - (void)_setCameraOverlayView:(id)arg1;
-- (void)_setCameraViewTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
+- (void)_setCameraViewTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (void)_setCurrentlyReviewing:(BOOL)arg1;
 - (void)_setEditingAllowed:(BOOL)arg1;
 - (void)_setImagePickerMediaTypes:(id)arg1;
@@ -98,7 +98,7 @@
 - (void)cropOverlayWasOKed:(id)arg1;
 - (void)cropOverlayWasToggled:(id)arg1;
 - (id)customOverlayView;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })customPreviewViewTransform;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })customPreviewViewTransform;
 - (void)handleReviewButtonReleased:(id)arg1;
 - (int)imagePickerVideoQuality;
 - (id)initWithInitialImagePickerProperties:(id)arg1;
@@ -107,7 +107,7 @@
 - (double)maximumVideoRecordingDuration;
 - (BOOL)photoTileViewControllerIsDisplayingLandscape:(id)arg1;
 - (void)setCustomOverlayView:(id)arg1;
-- (void)setCustomPreviewViewTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
+- (void)setCustomPreviewViewTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (void)setImagePickerVideoQuality:(int)arg1;
 - (void)setMaximumVideoRecordingDuration:(double)arg1;
 - (void)setShowingStandardControls:(BOOL)arg1;

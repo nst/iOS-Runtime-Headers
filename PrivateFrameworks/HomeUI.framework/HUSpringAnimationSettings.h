@@ -8,11 +8,11 @@
 }
 
 @property (nonatomic) double completionEpsilon;
-@property (nonatomic) double damping;
-@property (nonatomic) double initialVelocity;
-@property (nonatomic) double mass;
+@property (nonatomic) float damping;
+@property (nonatomic) float initialVelocity;
+@property (nonatomic) float mass;
 @property (nonatomic, readonly) CASpringAnimation *springAnimation;
-@property (nonatomic) double stiffness;
+@property (nonatomic) float stiffness;
 
 + (id)criticallyDampedSpringSettings;
 

@@ -4,24 +4,24 @@
 
 @interface UISwitchVisualElement : UIView {
     BOOL  _enabled;
-    double  _enabledAlpha;
+    float  _enabledAlpha;
     _UIFeedbackImpactBehavior * _impactFeedbackBehavior;
     <UISwitchControl> * _switchControl;
 }
 
 @property (nonatomic) BOOL enabled;
-@property (nonatomic) double enabledAlpha;
+@property (nonatomic) float enabledAlpha;
 @property (nonatomic, retain) _UIFeedbackImpactBehavior *impactFeedbackBehavior;
 @property (nonatomic, retain) <UISwitchControl> *switchControl;
 
-+ (struct CGSize { double x1; double x2; })preferredContentSize;
++ (struct CGSize { float x1; float x2; })preferredContentSize;
 
 - (void).cxx_destruct;
 - (BOOL)enabled;
 - (float)enabledAlpha;
 - (id)impactFeedbackBehavior;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (struct CGSize { double x1; double x2; })preferredContentSize;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGSize { float x1; float x2; })preferredContentSize;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setEnabledAlpha:(float)arg1;
 - (void)setImpactFeedbackBehavior:(id)arg1;

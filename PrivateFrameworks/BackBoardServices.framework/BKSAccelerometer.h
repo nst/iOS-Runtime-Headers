@@ -15,9 +15,9 @@
     unsigned int  _orientationPort;
     BOOL  _passiveOrientationEvents;
     double  _updateInterval;
-    double  _xThreshold;
-    double  _yThreshold;
-    double  _zThreshold;
+    float  _xThreshold;
+    float  _yThreshold;
+    float  _zThreshold;
 }
 
 @property (nonatomic) BOOL accelerometerEventsEnabled;
@@ -25,9 +25,9 @@
 @property (nonatomic) BOOL orientationEventsEnabled;
 @property (nonatomic) BOOL passiveOrientationEvents;
 @property (nonatomic) double updateInterval;
-@property (nonatomic) double xThreshold;
-@property (nonatomic) double yThreshold;
-@property (nonatomic) double zThreshold;
+@property (nonatomic) float xThreshold;
+@property (nonatomic) float yThreshold;
+@property (nonatomic) float zThreshold;
 
 - (void)_checkIn;
 - (void)_checkOut;

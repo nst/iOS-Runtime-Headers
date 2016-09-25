@@ -3,36 +3,36 @@
  */
 
 @interface SBFLockScreenDateView : UIView <SBFScreenFadeReplicatable> {
-    double  _alignmentPercent;
+    float  _alignmentPercent;
     SBFLockScreenDateSubtitleView * _customSubtitleView;
     NSDate * _date;
     SBFLockScreenDateSubtitleDateView * _dateSubtitleView;
     _UILegibilitySettings * _legibilitySettings;
     UIColor * _overrideTextColor;
     NSHashTable * _replicatedViews;
-    double  _subtitleAlpha;
-    double  _subtitleLegibilityStrength;
-    double  _timeAlpha;
+    float  _subtitleAlpha;
+    float  _subtitleLegibilityStrength;
+    float  _timeAlpha;
     SBUILegibilityLabel * _timeLabel;
-    double  _timeLegibilityStrength;
+    float  _timeLegibilityStrength;
     BOOL  _useDashBoardValues;
 }
 
-@property (nonatomic) double alignmentPercent;
-@property (nonatomic, readonly) double contentAlpha;
+@property (nonatomic) float alignmentPercent;
+@property (nonatomic, readonly) float contentAlpha;
 @property (nonatomic, retain) SBFLockScreenDateSubtitleView *customSubtitleView;
 @property (nonatomic, retain) NSDate *date;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) _UILegibilitySettings *legibilitySettings;
-@property (nonatomic, readonly) double subtitleBaselineOffsetFromOrigin;
+@property (nonatomic, readonly) float subtitleBaselineOffsetFromOrigin;
 @property (getter=isSubtitleHidden, nonatomic) BOOL subtitleHidden;
-@property (nonatomic) double subtitleLegibilityStrength;
+@property (nonatomic) float subtitleLegibilityStrength;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UIColor *textColor;
-@property (nonatomic, readonly) double timeBaselineOffsetFromOrigin;
-@property (nonatomic) double timeLegibilityStrength;
+@property (nonatomic, readonly) float timeBaselineOffsetFromOrigin;
+@property (nonatomic) float timeLegibilityStrength;
 
 + (float)defaultHeight;
 
@@ -44,22 +44,22 @@
 - (void)_layoutSubtitleViews;
 - (id)_legacyTimeFont;
 - (void)_setSubtitleAlpha:(float)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_subtitleViewFrameForView:(id)arg1 alignmentPercent:(float)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_subtitleViewFrameForView:(id)arg1 alignmentPercent:(float)arg2;
 - (id)_timeFont;
 - (id)_timeLabel;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_timeLabelFrameForAlignmentPercent:(float)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_timeLabelFrameForAlignmentPercent:(float)arg1;
 - (void)_updateLabelAlpha;
 - (void)_updateLabels;
 - (float)alignmentPercent;
 - (float)contentAlpha;
 - (id)customSubtitleView;
 - (id)date;
-- (id)initForDashBoard:(BOOL)arg1 withFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initForDashBoard:(BOOL)arg1 withFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isSubtitleHidden;
 - (void)layoutSubviews;
 - (id)legibilitySettings;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })presentationExtentForAlignmentPercent:(float)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })presentationExtentForAlignmentPercent:(float)arg1;
 - (id)replicate;
 - (void)setAlignmentPercent:(float)arg1;
 - (void)setContentAlpha:(float)arg1 withSubtitleVisible:(BOOL)arg2;

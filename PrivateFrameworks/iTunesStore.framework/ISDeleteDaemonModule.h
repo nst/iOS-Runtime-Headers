@@ -8,7 +8,7 @@
 
 - (void)dealloc;
 - (id)init;
-- (unsigned int)purge:(unsigned int)arg1;
-- (unsigned int)purgeableSpace;
+- (unsigned long long)purge:(unsigned long long)arg1;
+- (unsigned long long)purgeableSpace;
 
 @end

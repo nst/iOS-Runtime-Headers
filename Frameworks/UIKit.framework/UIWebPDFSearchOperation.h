@@ -9,7 +9,7 @@
     unsigned int  _pageIndex;
     NSMutableArray * _results;
     unsigned int  _totalResultsCount;
-    double  documentScale;
+    float  documentScale;
     UIPDFDocument * documentToSearch;
     unsigned int  resultLimit;
     NSObject<UIWebPDFSearchOperationDelegate> * searchDelegate;
@@ -19,7 +19,7 @@
 
 @property (nonatomic, readonly) unsigned int currentPageIndex;
 @property (nonatomic, readonly) unsigned int currentPageResultCount;
-@property (nonatomic) double documentScale;
+@property (nonatomic) float documentScale;
 @property (retain) UIPDFDocument *documentToSearch;
 @property (nonatomic) unsigned int numberOfResultsToSkip;
 @property (nonatomic) unsigned int resultLimit;

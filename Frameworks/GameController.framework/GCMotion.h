@@ -30,8 +30,8 @@
         double y; 
         double z; 
     }  _rotationRate;
-    double  _tilt;
-    double  _tip;
+    float  _tilt;
+    float  _tip;
     struct { 
         double x; 
         double y; 

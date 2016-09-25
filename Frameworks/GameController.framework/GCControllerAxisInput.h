@@ -8,7 +8,7 @@
 @property (getter=isFlipped, nonatomic, readonly) BOOL flipped;
 @property (nonatomic, readonly) GCControllerButtonInput *negative;
 @property (nonatomic, readonly) GCControllerButtonInput *positive;
-@property (nonatomic, readonly) double value;
+@property (nonatomic, readonly) float value;
 @property (nonatomic, copy) id /* block */ valueChangedHandler;
 
 - (BOOL)_setValue:(float)arg1;

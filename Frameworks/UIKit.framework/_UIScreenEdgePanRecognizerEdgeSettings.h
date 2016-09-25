@@ -10,7 +10,7 @@
     double  _edgeRegionSize;
     double  _hysteresis;
     double  _maximumSwipeDuration;
-    double  _restrictedEdgeRegionMinimumWeight;
+    float  _restrictedEdgeRegionMinimumWeight;
     double  _restrictedEdgeRegionTimeInterval;
 }
 
@@ -22,7 +22,7 @@
 @property (nonatomic) double edgeRegionSize;
 @property (nonatomic) double hysteresis;
 @property (nonatomic) double maximumSwipeDuration;
-@property (nonatomic) double restrictedEdgeRegionMinimumWeight;
+@property (nonatomic) float restrictedEdgeRegionMinimumWeight;
 @property (nonatomic) double restrictedEdgeRegionTimeInterval;
 
 + (id)keyPathsForValuesAffectingEdgeAngleWindowDegreees;

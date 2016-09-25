@@ -4,6 +4,6 @@
 
 @interface NSReplacementCheckingResult : NSSubstitutionCheckingResult
 
-- (unsigned int)resultType;
+- (unsigned long long)resultType;
 
 @end

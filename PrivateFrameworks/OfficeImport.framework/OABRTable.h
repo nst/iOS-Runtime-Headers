@@ -8,8 +8,8 @@
     struct OABTable2DArray<EshShape *> { int x1; int x2; struct EshShape {} **x3; } * mHorzLines;
     int  mRowCount;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  mScale;
     ESDContainer * mSrcTable;
     OABReaderState * mState;

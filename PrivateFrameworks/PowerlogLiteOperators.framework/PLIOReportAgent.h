@@ -98,7 +98,7 @@
 - (void)log;
 - (void)logEventBackwardIOReport;
 - (void)logEventBackwardIOReportWithDelta:(id)arg1 forChannelGroup:(id)arg2;
-- (void)mergeServiceName:(id)arg1 withID:(unsigned int)arg2 toChannels:(struct __CFDictionary { }*)arg3;
+- (void)mergeServiceName:(id)arg1 withID:(unsigned long long)arg2 toChannels:(struct __CFDictionary { }*)arg3;
 - (void)modelAPSoCPower:(id)arg1;
 - (BOOL)processNotificationForChannelGroup:(id)arg1;
 - (void)pruneAllChannelsWithChannels:(struct __CFDictionary { }*)arg1;

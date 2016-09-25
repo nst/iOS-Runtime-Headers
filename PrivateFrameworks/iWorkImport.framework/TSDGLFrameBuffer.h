@@ -16,8 +16,8 @@
     NSDictionary * _namesToTextureDict;
     BOOL  _shouldDeleteTexturesOnTeardown;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _size;
     NSArray * _textureConfigs;
     NSArray * _textureConfigsByAttachment;
@@ -30,7 +30,7 @@
 @property (nonatomic, readonly) BOOL isBound;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic) BOOL shouldDeleteTexturesOnTeardown;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } size;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;
 
 + (int)currentGLFramebuffer;
 + (int)currentGLFramebufferWithBindingOption:(int)arg1;
@@ -49,9 +49,9 @@
 - (void)dealloc;
 - (id)description;
 - (unsigned int)framebuffer;
-- (id)initWithSize:(struct CGSize { double x1; double x2; })arg1;
-- (id)initWithSize:(struct CGSize { double x1; double x2; })arg1 textureConfigs:(id)arg2;
-- (id)initWithSize:(struct CGSize { double x1; double x2; })arg1 textureCount:(unsigned int)arg2;
+- (id)initWithSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 textureConfigs:(id)arg2;
+- (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 textureCount:(unsigned int)arg2;
 - (BOOL)isBound;
 - (id)name;
 - (id)p_currentTextureLookupInfoAtAttachment:(unsigned int)arg1;
@@ -68,8 +68,8 @@
 - (void)setShouldDeleteTexturesOnTeardown:(BOOL)arg1;
 - (void)setupFramebufferIfNecessary;
 - (BOOL)shouldDeleteTexturesOnTeardown;
-- (struct CGSize { double x1; double x2; })size;
-- (struct CGSize { double x1; double x2; })sizeOfGLTextureNamed:(id)arg1;
+- (struct CGSize { float x1; float x2; })size;
+- (struct CGSize { float x1; float x2; })sizeOfGLTextureNamed:(id)arg1;
 - (void)teardown;
 - (void)unbindFramebufferAndBindGLFramebuffer:(int)arg1;
 - (void)unbindFramebufferAndBindGLFramebuffer:(int)arg1 withBindingOption:(int)arg2;

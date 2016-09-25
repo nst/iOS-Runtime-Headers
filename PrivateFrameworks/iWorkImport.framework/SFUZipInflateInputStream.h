@@ -7,9 +7,9 @@
     unsigned long  mCheckCrc;
     <SFUBufferedInputStream> * mInput;
     BOOL  mIsFromZip;
-    int  mOffset;
+    long long  mOffset;
     char * mOutBuffer;
-    unsigned int  mOutBufferSize;
+    unsigned long long  mOutBufferSize;
     BOOL  mReachedEnd;
     struct z_stream_s { 
         char *next_in; 
@@ -41,12 +41,12 @@
 - (void)disableSystemCaching;
 - (void)enableSystemCaching;
 - (id)initWithInput:(id)arg1;
-- (id)initWithOffset:(int)arg1 end:(int)arg2 uncompressedSize:(unsigned int)arg3 crc:(unsigned long)arg4 dataRepresentation:(id)arg5;
-- (int)offset;
+- (id)initWithOffset:(long long)arg1 end:(long long)arg2 uncompressedSize:(unsigned long long)arg3 crc:(unsigned long)arg4 dataRepresentation:(id)arg5;
+- (long long)offset;
 - (unsigned long)readToBuffer:(char *)arg1 size:(unsigned long)arg2;
 - (unsigned long)readToOwnBuffer:(const char **)arg1 size:(unsigned long)arg2;
-- (void)seekToOffset:(int)arg1;
+- (void)seekToOffset:(long long)arg1;
 - (void)setupInflateStream;
-- (int)totalCompressedBytesConsumed;
+- (long long)totalCompressedBytesConsumed;
 
 @end

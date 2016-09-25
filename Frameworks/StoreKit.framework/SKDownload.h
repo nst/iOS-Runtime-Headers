@@ -4,12 +4,12 @@
 
 @interface SKDownload : NSObject {
     NSString * _contentIdentifier;
-    int  _contentLength;
+    long long  _contentLength;
     NSURL * _contentURL;
     NSNumber * _downloadID;
     int  _downloadState;
     NSError * _error;
-    double  _progress;
+    float  _progress;
     double  _timeRemaining;
     SKPaymentTransaction * _transaction;
     NSString * _version;
@@ -17,19 +17,19 @@
 
 @property (getter=_downloadID, setter=_setDownloadID:, nonatomic, copy) NSNumber *_downloadID;
 @property (nonatomic, readonly) NSString *contentIdentifier;
-@property (nonatomic, readonly) int contentLength;
+@property (nonatomic, readonly) long long contentLength;
 @property (nonatomic, readonly) NSURL *contentURL;
 @property (nonatomic, readonly) NSString *contentVersion;
 @property (nonatomic, readonly) int downloadState;
 @property (nonatomic, readonly) NSError *error;
-@property (nonatomic, readonly) double progress;
+@property (nonatomic, readonly) float progress;
 @property (nonatomic, readonly) double timeRemaining;
 @property (nonatomic, readonly) SKPaymentTransaction *transaction;
 
 - (void)_applyChangeset:(id)arg1;
 - (id)_downloadID;
 - (void)_setContentIdentifier:(id)arg1;
-- (void)_setContentLength:(int)arg1;
+- (void)_setContentLength:(long long)arg1;
 - (void)_setContentURL:(id)arg1;
 - (void)_setDownloadID:(id)arg1;
 - (void)_setDownloadState:(int)arg1;
@@ -39,7 +39,7 @@
 - (void)_setTransaction:(id)arg1;
 - (void)_setVersion:(id)arg1;
 - (id)contentIdentifier;
-- (int)contentLength;
+- (long long)contentLength;
 - (id)contentURL;
 - (id)contentVersion;
 - (id)copyXPCEncoding;

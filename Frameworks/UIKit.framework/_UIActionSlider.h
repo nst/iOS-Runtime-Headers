@@ -4,27 +4,27 @@
 
 @interface _UIActionSlider : UIControl <UIGestureRecognizerDelegate> {
     BOOL  _animating;
-    double  _cachedTrackMaskWidth;
+    float  _cachedTrackMaskWidth;
     UIView * _contentView;
     <_UIActionSliderDelegate> * _delegate;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _knobImageOffset;
     UIImageView * _knobImageView;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _knobInsets;
-    double  _knobPosition;
+    float  _knobPosition;
     _UIActionSliderKnob * _knobView;
-    double  _knobWidth;
+    float  _knobWidth;
     BOOL  _showingTrackLabel;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _slideGestureInitialPoint;
     UIPanGestureRecognizer * _slideGestureRecognizer;
     int  _style;
@@ -35,31 +35,31 @@
     UIFont * _trackFont;
     UIView<_UIActionSliderLabel> * _trackLabel;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _trackSize;
     UIView * _trackSolidView;
     NSString * _trackText;
-    double  _trackTextBaselineFromBottom;
-    double  _trackWidthProportion;
+    float  _trackTextBaselineFromBottom;
+    float  _trackWidthProportion;
     _UIVibrantSettings * _vibrantSettings;
 }
 
 @property (getter=isAnimating, nonatomic) BOOL animating;
-@property (nonatomic) double cachedTrackMaskWidth;
+@property (nonatomic) float cachedTrackMaskWidth;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <_UIActionSliderDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) UIColor *knobColor;
 @property (nonatomic, retain) UIImage *knobImage;
-@property (nonatomic) struct CGSize { double x1; double x2; } knobImageOffset;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } knobInsets;
+@property (nonatomic) struct CGSize { float x1; float x2; } knobImageOffset;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } knobInsets;
 @property (nonatomic, readonly) UIBezierPath *knobMaskPath;
-@property (nonatomic) double knobPosition;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } knobRect;
+@property (nonatomic) float knobPosition;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } knobRect;
 @property (getter=_knobView, nonatomic, readonly) UIView *knobView;
-@property (nonatomic) double knobWidth;
+@property (nonatomic) float knobWidth;
 @property (getter=isShowingTrackLabel, nonatomic) BOOL showingTrackLabel;
 @property (nonatomic, readonly) UIPanGestureRecognizer *slideGestureRecognizer;
 @property (nonatomic) int style;
@@ -67,11 +67,11 @@
 @property (nonatomic) int textStyle;
 @property (nonatomic, retain) UIFont *trackFont;
 @property (nonatomic, readonly, retain) UILabel *trackLabel;
-@property (nonatomic) struct CGSize { double x1; double x2; } trackSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } trackSize;
 @property (nonatomic, copy) NSString *trackText;
-@property (nonatomic) double trackTextBaselineFromBottom;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } trackTextRect;
-@property (nonatomic) double trackWidthProportion;
+@property (nonatomic) float trackTextBaselineFromBottom;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } trackTextRect;
+@property (nonatomic) float trackWidthProportion;
 @property (nonatomic, retain) _UIVibrantSettings *vibrantSettings;
 
 - (void).cxx_destruct;
@@ -92,7 +92,7 @@
 - (void)_makeTrackLabel;
 - (void)_showTrackLabel;
 - (void)_slideCompleted:(BOOL)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_trackFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_trackFrame;
 - (id)backgroundColor;
 - (float)cachedTrackMaskWidth;
 - (void)closeTrackAnimated:(BOOL)arg1;
@@ -101,17 +101,17 @@
 - (void)didMoveToWindow;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 vibrantSettings:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 vibrantSettings:(id)arg2;
 - (BOOL)isAnimating;
 - (BOOL)isShowingTrackLabel;
 - (id)knobColor;
 - (id)knobImage;
-- (struct CGSize { double x1; double x2; })knobImageOffset;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })knobInsets;
+- (struct CGSize { float x1; float x2; })knobImageOffset;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })knobInsets;
 - (id)knobMaskPath;
 - (float)knobPosition;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })knobRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })knobRect;
 - (float)knobWidth;
 - (void)layoutSubviews;
 - (void)openTrackAnimated:(BOOL)arg1;
@@ -121,8 +121,8 @@
 - (void)setDelegate:(id)arg1;
 - (void)setKnobColor:(id)arg1;
 - (void)setKnobImage:(id)arg1;
-- (void)setKnobImageOffset:(struct CGSize { double x1; double x2; })arg1;
-- (void)setKnobInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setKnobImageOffset:(struct CGSize { float x1; float x2; })arg1;
+- (void)setKnobInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setKnobPosition:(float)arg1;
 - (void)setKnobWidth:(float)arg1;
 - (void)setMaskFromImage:(id)arg1 onView:(id)arg2;
@@ -131,13 +131,13 @@
 - (void)setStyle:(int)arg1;
 - (void)setTextStyle:(int)arg1;
 - (void)setTrackFont:(id)arg1;
-- (void)setTrackSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setTrackSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setTrackText:(id)arg1;
 - (void)setTrackTextBaselineFromBottom:(float)arg1;
 - (void)setTrackWidthProportion:(float)arg1;
 - (void)setVibrantSettings:(id)arg1;
 - (BOOL)shouldHideTrackLabelForXPoint:(float)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)slideGestureRecognizer;
 - (int)style;
 - (int)textStyle;
@@ -145,10 +145,10 @@
 - (id)trackLabel;
 - (id)trackMaskImage;
 - (id)trackMaskPath;
-- (struct CGSize { double x1; double x2; })trackSize;
+- (struct CGSize { float x1; float x2; })trackSize;
 - (id)trackText;
 - (float)trackTextBaselineFromBottom;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })trackTextRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })trackTextRect;
 - (float)trackWidthProportion;
 - (void)updateAllTrackMasks;
 - (id)vibrantSettings;

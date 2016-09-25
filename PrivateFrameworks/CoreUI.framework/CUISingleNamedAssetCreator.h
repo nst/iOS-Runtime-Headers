@@ -4,13 +4,13 @@
 
 @interface CUISingleNamedAssetCreator : NSObject {
     int  _compressionType;
-    double  _flattenedCompressionQuality;
+    float  _flattenedCompressionQuality;
     NSMutableArray * _generators;
-    double  _layersCompressionQuality;
+    float  _layersCompressionQuality;
     NSMutableArray * _names;
     unsigned int  _primaryIndex;
     NSString * _primaryName;
-    double  _radiosityCompressionQuaility;
+    float  _radiosityCompressionQuaility;
     CUIMutableCommonAssetStorage * _store;
 }
 
@@ -37,7 +37,7 @@
 - (void)addImage:(struct CGImage { }*)arg1 withName:(id)arg2;
 - (void)addImageAsJPEG:(struct CGImage { }*)arg1 withName:(id)arg2;
 - (void)addLayerReference:(id)arg1 forImage:(struct CGImage { }*)arg2 toLayerStackWithName:(id)arg3;
-- (void)addLayerStackWithSize:(struct CGSize { double x1; double x2; })arg1 stackData:(id)arg2 name:(id)arg3;
+- (void)addLayerStackWithSize:(struct CGSize { float x1; float x2; })arg1 stackData:(id)arg2 name:(id)arg3;
 - (float)compressionQuality;
 - (int)compressionType;
 - (void)dealloc;

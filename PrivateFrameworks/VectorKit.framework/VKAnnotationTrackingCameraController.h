@@ -31,7 +31,7 @@
         unsigned int annotationImplementsExpectedCoordinateUpdateInterval : 1; 
         unsigned int annotationImplementsExpectedHeadingUpdateInterval : 1; 
     }  _flags;
-    double  _headingAnimationCompletedAngle;
+    float  _headingAnimationCompletedAngle;
     int  _headingAnimationDisplayRate;
     double  _pendingChangeDuration;
     double  _pendingHeadingChangeDuration;
@@ -55,7 +55,7 @@
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)pauseAnimation;
 - (void)resumeAnimation;
-- (void)setEdgeInsets:(struct VKEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setEdgeInsets:(struct VKEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setGesturing:(BOOL)arg1;
 - (void)setHeadingAnimationDisplayRate:(int)arg1;
 - (void)setZoomStyle:(int)arg1;

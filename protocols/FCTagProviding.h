@@ -11,7 +11,7 @@
 - (<FCTopicProviding> *)asTopic;
 - (NSURL *)authorizationURL;
 - (NSArray *)blockedStorefrontIDs;
-- (int)contentProvider;
+- (long long)contentProvider;
 - (NSString *)coverArticleListID;
 - (FCAssetHandle *)coverImageAssetHandle;
 - (NSString *)feedIDForBin:(int)arg1;
@@ -33,7 +33,7 @@
 - (BOOL)isPurchaseSetup;
 - (BOOL)isSubscribable;
 - (NSDate *)loadDate;
-- (int)minimumNewsVersion;
+- (long long)minimumNewsVersion;
 - (NSString *)name;
 - (FCAssetHandle *)nameImageMaskWidgetHQAssetHandle;
 - (FCAssetHandle *)nameImageMaskWidgetLQAssetHandle;
@@ -53,7 +53,7 @@
 - (NSArray *)relatedTopicIDs;
 - (NSArray *)relatedTopicIDsForOnboarding;
 - (NSString *)replacementID;
-- (int)score;
+- (long long)score;
 - (unsigned int)tagType;
 - (<FCFeedTheming> *)theme;
 - (NSString *)versionKey;

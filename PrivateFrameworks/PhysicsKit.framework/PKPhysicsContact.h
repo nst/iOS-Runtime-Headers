@@ -6,23 +6,23 @@
     PKPhysicsBody * _bodyA;
     PKPhysicsBody * _bodyB;
     struct CGVector { 
-        double dx; 
-        double dy; 
+        float dx; 
+        float dy; 
     }  _contactNormal;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _contactPoint;
     BOOL  _didBegin;
     BOOL  _didEnd;
-    double  _impulse;
+    float  _impulse;
 }
 
 @property (nonatomic, readonly) PKPhysicsBody *bodyA;
 @property (nonatomic, readonly) PKPhysicsBody *bodyB;
-@property (nonatomic, readonly) double collisionImpulse;
-@property (nonatomic, readonly) struct CGVector { double x1; double x2; } contactNormal;
-@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } contactPoint;
+@property (nonatomic, readonly) float collisionImpulse;
+@property (nonatomic, readonly) struct CGVector { float x1; float x2; } contactNormal;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } contactPoint;
 @property BOOL didBegin;
 @property BOOL didEnd;
 
@@ -30,16 +30,16 @@
 - (id)bodyA;
 - (id)bodyB;
 - (float)collisionImpulse;
-- (struct CGVector { double x1; double x2; })contactNormal;
-- (struct CGPoint { double x1; double x2; })contactPoint;
+- (struct CGVector { float x1; float x2; })contactNormal;
+- (struct CGPoint { float x1; float x2; })contactPoint;
 - (BOOL)didBegin;
 - (BOOL)didEnd;
 - (id)init;
 - (void)setBodyA:(id)arg1;
 - (void)setBodyB:(id)arg1;
 - (void)setCollisionImpulse:(float)arg1;
-- (void)setContactNormal:(struct CGVector { double x1; double x2; })arg1;
-- (void)setContactPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setContactNormal:(struct CGVector { float x1; float x2; })arg1;
+- (void)setContactPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setDidBegin:(BOOL)arg1;
 - (void)setDidEnd:(BOOL)arg1;
 

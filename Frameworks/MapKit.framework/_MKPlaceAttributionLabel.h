@@ -4,15 +4,15 @@
 
 @interface _MKPlaceAttributionLabel : NSObject {
     UIImage * image;
-    double  imageBaselineOffset;
+    float  imageBaselineOffset;
     NSString * imagePlaceholder;
-    double  textBaselineOffset;
+    float  textBaselineOffset;
 }
 
 @property (retain) UIImage *image;
-@property double imageBaselineOffset;
+@property float imageBaselineOffset;
 @property (retain) NSString *imagePlaceholder;
-@property double textBaselineOffset;
+@property float textBaselineOffset;
 
 - (void).cxx_destruct;
 - (id)attributionWithString:(id)arg1;

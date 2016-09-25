@@ -27,12 +27,12 @@
 + (id)titleBarMaskImageForWidth:(float)arg1;
 + (id)vcardDataFromCLLocation:(id)arg1;
 
-- (id)bbPreviewFillToSize:(struct CGSize { double x1; double x2; })arg1;
-- (struct CGSize { double x1; double x2; })bbSize;
+- (id)bbPreviewFillToSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { float x1; float x2; })bbSize;
 - (struct CLLocationCoordinate2D { double x1; double x2; })coordinate;
-- (id)generatePlaceholderThumbnailFillToSize:(struct CGSize { double x1; double x2; })arg1 contentAlignmentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
+- (id)generatePlaceholderThumbnailFillToSize:(struct CGSize { float x1; float x2; })arg1 contentAlignmentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
 - (id)generatePlaceholderThumbnailForWidth:(float)arg1 orientation:(BOOL)arg2;
-- (id)generateThumbnailFillToSize:(struct CGSize { double x1; double x2; })arg1 contentAlignmentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
+- (id)generateThumbnailFillToSize:(struct CGSize { float x1; float x2; })arg1 contentAlignmentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
 - (id)initWithTransfer:(id)arg1;
 - (BOOL)isDroppedPin;
 - (id)mapItem;

@@ -3,7 +3,7 @@
  */
 
 @interface OADLinearShade : OADShade {
-    double  mAngle;
+    float  mAngle;
     BOOL  mIsAngleOverridden;
     BOOL  mIsScaledOverridden;
     BOOL  mScaled;

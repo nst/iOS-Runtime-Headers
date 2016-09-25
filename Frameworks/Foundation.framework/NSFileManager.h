@@ -127,16 +127,16 @@
 
 // Image: /System/Library/Frameworks/ReplayKit.framework/ReplayKit
 
-- (int)_srDeleteAllTempFiles;
-- (int)_srDeleteFilesOlderThanTimeToLiveInSeconds:(double)arg1;
+- (long long)_srDeleteAllTempFiles;
+- (long long)_srDeleteFilesOlderThanTimeToLiveInSeconds:(double)arg1;
 - (void)_srDeleteFilesWithPrefix:(id)arg1;
-- (unsigned int)_srDeviceFreeDiskSpace;
+- (unsigned long long)_srDeviceFreeDiskSpace;
 - (BOOL)_srDeviceHasSufficientFreeSpaceForRecording;
 - (id)_srGetCreationDateForFile:(id)arg1;
 - (void)_srMoveFileFromURL:(id)arg1 toURL:(id)arg2 completion:(id /* block */)arg3;
 - (void)_srRemoveFile:(id)arg1 completion:(id /* block */)arg2;
 - (void)_srSetupTempDirectory;
-- (int)_srSizeOfTempDir:(id*)arg1;
+- (long long)_srSizeOfTempDir:(id*)arg1;
 - (id)_srTempPath;
 
 // Image: /System/Library/Frameworks/WebKit.framework/WebKit
@@ -249,12 +249,12 @@
 - (BOOL)sfu_applyFileAttributesFromDocumentAtURL:(id)arg1 toDocumentAtURL:(id)arg2 error:(id*)arg3;
 - (BOOL)sfu_changeFileProtectionAtURL:(id)arg1 fromProtection:(id)arg2 toProtection:(id)arg3 recursively:(BOOL)arg4 error:(id*)arg5;
 - (BOOL)sfu_changeFileProtectionAtURL:(id)arg1 toProtection:(id)arg2 recursively:(BOOL)arg3 error:(id*)arg4;
-- (unsigned int)sfu_directoryUsage:(id)arg1;
+- (unsigned long long)sfu_directoryUsage:(id)arg1;
 - (BOOL)sfu_hasAtLeastFileProtection:(id)arg1 atURL:(id)arg2 recursively:(BOOL)arg3;
 - (BOOL)sfu_hasAtMostFileProtection:(id)arg1 atURL:(id)arg2 recursively:(BOOL)arg3;
 - (BOOL)sfu_increaseFileProtectionAtURL:(id)arg1 toProtection:(id)arg2 recursively:(BOOL)arg3 error:(id*)arg4;
 - (void)sfu_logFileProtectionAtURL:(id)arg1 recursively:(BOOL)arg2;
-- (unsigned int)sfu_pathUsage:(id)arg1;
+- (unsigned long long)sfu_pathUsage:(id)arg1;
 - (BOOL)sfu_setAttributes:(id)arg1 ofItemAtURL:(id)arg2 recursively:(BOOL)arg3 error:(id*)arg4;
 - (BOOL)sfup_changeFileProtectionAtURL:(id)arg1 fromProtection:(id)arg2 toProtection:(id)arg3 onlyIncreaseProtection:(BOOL)arg4 recursively:(BOOL)arg5 error:(id*)arg6;
 - (BOOL)sfup_fileProtection:(id)arg1 isGreaterThan:(id)arg2;
@@ -331,12 +331,12 @@
 - (BOOL)sfu_applyFileAttributesFromDocumentAtURL:(id)arg1 toDocumentAtURL:(id)arg2 error:(id*)arg3;
 - (BOOL)sfu_changeFileProtectionAtURL:(id)arg1 fromProtection:(id)arg2 toProtection:(id)arg3 recursively:(BOOL)arg4 error:(id*)arg5;
 - (BOOL)sfu_changeFileProtectionAtURL:(id)arg1 toProtection:(id)arg2 recursively:(BOOL)arg3 error:(id*)arg4;
-- (unsigned int)sfu_directoryUsage:(id)arg1;
+- (unsigned long long)sfu_directoryUsage:(id)arg1;
 - (BOOL)sfu_hasAtLeastFileProtection:(id)arg1 atURL:(id)arg2 recursively:(BOOL)arg3;
 - (BOOL)sfu_hasAtMostFileProtection:(id)arg1 atURL:(id)arg2 recursively:(BOOL)arg3;
 - (BOOL)sfu_increaseFileProtectionAtURL:(id)arg1 toProtection:(id)arg2 recursively:(BOOL)arg3 error:(id*)arg4;
 - (void)sfu_logFileProtectionAtURL:(id)arg1 recursively:(BOOL)arg2;
-- (unsigned int)sfu_pathUsage:(id)arg1;
+- (unsigned long long)sfu_pathUsage:(id)arg1;
 - (BOOL)sfu_setAttributes:(id)arg1 ofItemAtURL:(id)arg2 recursively:(BOOL)arg3 error:(id*)arg4;
 - (BOOL)sfup_changeFileProtectionAtURL:(id)arg1 fromProtection:(id)arg2 toProtection:(id)arg3 onlyIncreaseProtection:(BOOL)arg4 recursively:(BOOL)arg5 error:(id*)arg6;
 - (BOOL)sfup_fileProtection:(id)arg1 isGreaterThan:(id)arg2;

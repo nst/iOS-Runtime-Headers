@@ -7,12 +7,12 @@
     NSString * mEditingString;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  mStartingEditingFrame;
 }
@@ -29,9 +29,9 @@
 - (BOOL)canEditTextForSelectionPath:(id)arg1;
 - (BOOL)canRenderSelectionPath:(id)arg1;
 - (void)dealloc;
-- (void)drawIntoLayer:(int)arg1 inContext:(struct CGContext { }*)arg2 visible:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
+- (void)drawIntoLayer:(int)arg1 inContext:(struct CGContext { }*)arg2 visible:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 - (id)editingString;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameForEditingTextForSelectionPath:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForEditingTextForSelectionPath:(id)arg1;
 - (BOOL)isCompositeRenderer;
 - (BOOL)needsAnySeparateLayers;
 - (void)p_addLinePath:(struct CGContext { }*)arg1 stroke:(id)arg2;
@@ -41,7 +41,7 @@
 - (BOOL)p_isTitleVisible;
 - (BOOL)p_needsPositionBasedTransparencyLayer;
 - (BOOL)p_needsSharedTickMarkLayer;
-- (void)p_renderIntoContext:(struct CGContext { }*)arg1 visible:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (void)p_renderIntoContext:(struct CGContext { }*)arg1 visible:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)renderIntoContext:(struct CGContext { }*)arg1 selection:(id)arg2;
 - (void)setEditingString:(id)arg1;
 - (id)transparencyLayers;

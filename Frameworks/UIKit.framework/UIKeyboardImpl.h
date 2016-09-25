@@ -17,8 +17,8 @@
     BOOL  m_animateUpdateBars;
     UITextInputArrowKeyHistory * m_arrowKeyHistory;
     unsigned int  m_autoDeleteCount;
-    double  m_autoDeleteCurrentForce;
-    double  m_autoDeleteCurrentForceMultipler;
+    float  m_autoDeleteCurrentForce;
+    float  m_autoDeleteCurrentForceMultipler;
     double  m_autoDeleteInterval;
     double  m_autoDeleteLastDelete;
     BOOL  m_autoDeleteOK;
@@ -74,8 +74,8 @@
     BOOL  m_initializationDone;
     TIKeyboardInputManagerState * m_inputManagerState;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  m_inputPoint;
     BOOL  m_insideKeyInputDelegateCall;
     BOOL  m_isCapsLocked;
@@ -126,7 +126,7 @@
     BOOL  m_showsCandidateBar;
     BOOL  m_showsCandidateInline;
     BOOL  m_softwareKeyboardShownByTouch;
-    double  m_splitProgress;
+    float  m_splitProgress;
     BOOL  m_suggestionsShownForCurrentDeletion;
     BOOL  m_suppressGeometryChangeNotifications;
     BOOL  m_suppressUpdateCandidateView;
@@ -211,14 +211,14 @@
 + (void)applicationWillEnterForeground:(id)arg1;
 + (void)applicationWillResignActive:(id)arg1;
 + (void)applicationWillSuspend:(id)arg1;
-+ (struct CGSize { double x1; double x2; })defaultSizeForInterfaceOrientation:(int)arg1;
++ (struct CGSize { float x1; float x2; })defaultSizeForInterfaceOrientation:(int)arg1;
 + (float)floatingWidth;
 + (void)hardwareKeyboardAvailabilityChanged;
 + (BOOL)isActivatingForeground;
 + (BOOL)isFloating;
 + (BOOL)isSplit;
 + (id)keyboardScreen;
-+ (struct CGSize { double x1; double x2; })keyboardSizeForInterfaceOrientation:(int)arg1;
++ (struct CGSize { float x1; float x2; })keyboardSizeForInterfaceOrientation:(int)arg1;
 + (float)keyboardWidthForScreen:(id)arg1 withOrientation:(int)arg2;
 + (id)keyboardWindow;
 + (Class)layoutClassForCurrentInputMode;
@@ -226,11 +226,11 @@
 + (void)markElapsed:(id)arg1;
 + (void)markPerformance:(id)arg1;
 + (id)normalizedInputModesFromPreference;
-+ (struct CGPoint { double x1; double x2; })normalizedPersistentOffset;
-+ (struct CGPoint { double x1; double x2; })normalizedPersistentOffsetIgnoringState;
++ (struct CGPoint { float x1; float x2; })normalizedPersistentOffset;
++ (struct CGPoint { float x1; float x2; })normalizedPersistentOffsetIgnoringState;
 + (int)persistentDictationTargetZone;
-+ (struct CGPoint { double x1; double x2; })persistentDictationWindowOffset;
-+ (struct CGPoint { double x1; double x2; })persistentOffset;
++ (struct CGPoint { float x1; float x2; })persistentDictationWindowOffset;
++ (struct CGPoint { float x1; float x2; })persistentOffset;
 + (float)persistentSplitProgress;
 + (void)refreshRivenStateWithTraits:(id)arg1 isKeyboard:(BOOL)arg2;
 + (void)releaseSharedInstance;
@@ -243,11 +243,11 @@
 + (void)setFloating:(BOOL)arg1 positionedWithLayout:(id)arg2;
 + (void)setParentTestForProfiling:(id)arg1;
 + (void)setPersistentDictationTargetZone:(int)arg1;
-+ (void)setPersistentDictationWindowOffset:(struct CGPoint { double x1; double x2; })arg1;
-+ (void)setPersistentOffset:(struct CGPoint { double x1; double x2; })arg1;
++ (void)setPersistentDictationWindowOffset:(struct CGPoint { float x1; float x2; })arg1;
++ (void)setPersistentOffset:(struct CGPoint { float x1; float x2; })arg1;
 + (void)setPersistentSplitProgress:(float)arg1;
 + (id)sharedInstance;
-+ (struct CGSize { double x1; double x2; })sizeForInterfaceOrientation:(int)arg1;
++ (struct CGSize { float x1; float x2; })sizeForInterfaceOrientation:(int)arg1;
 + (float)splitProgress;
 + (BOOL)supportsFloating;
 + (BOOL)supportsSplit;
@@ -325,8 +325,8 @@
 - (void)adjustAutoDeleteTimerForForce:(float)arg1;
 - (void)adjustPhraseBoundaryInForwardDirection:(BOOL)arg1 granularity:(int)arg2 executionContext:(id)arg3;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (void)animateAutocorrectionToRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 fromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
-- (void)animateAutocorrectionToText:(id)arg1 fromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (void)animateAutocorrectionToRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 fromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (void)animateAutocorrectionToText:(id)arg1 fromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (BOOL)animateUpdateBars;
 - (void)applicationResumedEventsOnly:(id)arg1;
 - (void)applicationSuspendedEventsOnly:(id)arg1;
@@ -336,7 +336,7 @@
 - (BOOL)autocapitalizationPreference;
 - (id)autocorrectPrompt;
 - (id)autocorrectPromptRectsForInput:(id)arg1;
-- (id)autocorrectPromptRectsFromFirstDelegateRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 lastDelegateRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (id)autocorrectPromptRectsFromFirstDelegateRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 lastDelegateRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (id)autocorrectPromptTask;
 - (BOOL)autocorrectSpellingEnabled;
 - (void)autocorrectionAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
@@ -416,7 +416,7 @@
 - (void)completeUpdateForChangedSelection:(BOOL)arg1;
 - (void)composeTypologyRadar;
 - (float)convertForceToGrams:(float)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })convertRectToAutocorrectRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 delegateView:(id)arg2 container:(id)arg3;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertRectToAutocorrectRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 delegateView:(id)arg2 container:(id)arg3;
 - (void)createTypoTrackerReport;
 - (BOOL)currentKeyboardTraitsAllowCandidateBar;
 - (BOOL)cursorIsAtEndOfMarkedText;
@@ -443,7 +443,7 @@
 - (void)detach;
 - (void)detachHardwareKeyboard;
 - (void)didAcceptAutocorrection:(id)arg1 wordTerminator:(id)arg2;
-- (void)didApplyAutocorrection:(id)arg1 autocorrectPromptFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (void)didApplyAutocorrection:(id)arg1 autocorrectPromptFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)didChangePhraseBoundary;
 - (void)didHandleWebKeyEvent;
 - (void)didMoveToSuperview;
@@ -453,7 +453,7 @@
 - (void)dismissKeyboard;
 - (BOOL)displaysCandidates;
 - (BOOL)doubleSpacePeriodPreference;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })dragGestureRectInView:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })dragGestureRectInView:(id)arg1;
 - (id)dynamicCaretList;
 - (void)ejectKeyDown;
 - (id)emojiCandidate:(id)arg1;
@@ -475,7 +475,7 @@
 - (BOOL)forceEnablePredictionView;
 - (void)forceShiftUpdate;
 - (void)forceShiftUpdateIfKeyboardStateChanged;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameForKeylayoutName:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForKeylayoutName:(id)arg1;
 - (id)generateAutocorrectionListForSelectedText;
 - (id)generateAutocorrectionReplacements:(id)arg1;
 - (void)generateAutocorrectionWithExecutionContext:(id)arg1;
@@ -525,8 +525,8 @@
 - (BOOL)hasMarkedText;
 - (BOOL)hideAccessoryViewsDuringSplit;
 - (void)hideKeyboard;
-- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)inputDelegate;
 - (id)inputEventForInputString:(id)arg1;
 - (id)inputForMarkedText;
@@ -593,8 +593,8 @@
 - (void)performSendCurrentLocation;
 - (BOOL)performanceLoggingPreference;
 - (unsigned int)phraseBoundary;
-- (BOOL)pointInside:(struct CGPoint { double x1; double x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
-- (BOOL)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
+- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)postInputViewControllerShouldUpdateNotification:(id)arg1;
 - (BOOL)predictionForTraits;
 - (BOOL)predictionForTraitsWithForceEnable:(BOOL)arg1;
@@ -674,7 +674,7 @@
 - (void)setExternalTask:(id /* block */)arg1;
 - (void)setFeedbackBehavior:(id)arg1;
 - (void)setForceEnablePredictionView:(BOOL)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setGeometryDelegate:(id)arg1;
 - (void)setGeometryIsChanging:(BOOL)arg1;
 - (void)setHandlingKeyCommandFromHardwareKeyboard:(BOOL)arg1;
@@ -693,7 +693,7 @@
 - (void)setInputModeFromPreferences;
 - (void)setInputModeToNextASCIICapableInPreferredList;
 - (void)setInputModeToNextInPreferredListWithExecutionContext:(id)arg1;
-- (void)setInputPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setInputPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setKeyboardAlertView:(id)arg1;
 - (void)setKeyboardInputMode:(id)arg1 userInitiated:(BOOL)arg2;
 - (void)setKeyboardInputMode:(id)arg1 userInitiated:(BOOL)arg2 updateIndicator:(BOOL)arg3 executionContext:(id)arg4;
@@ -705,7 +705,7 @@
 - (void)setReceivedCandidatesInCurrentInputMode:(BOOL)arg1;
 - (void)setReturnKeyEnabled:(BOOL)arg1;
 - (void)setRivenSplitLock:(BOOL)arg1;
-- (void)setSelectionWithPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setSelectionWithPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setShift:(BOOL)arg1;
 - (void)setShift:(BOOL)arg1 autoshift:(BOOL)arg2;
 - (void)setShiftLocked:(BOOL)arg1;
@@ -734,7 +734,7 @@
 - (BOOL)shiftLockedEnabled;
 - (BOOL)shouldAcceptCandidate:(id)arg1 beforeInputString:(id)arg2;
 - (BOOL)shouldAllowRepeatEvent:(id)arg1;
-- (BOOL)shouldAllowSelectionGestures:(BOOL)arg1 atPoint:(struct CGPoint { double x1; double x2; })arg2 toBegin:(BOOL)arg3;
+- (BOOL)shouldAllowSelectionGestures:(BOOL)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2 toBegin:(BOOL)arg3;
 - (BOOL)shouldApplyAcceptedAutocorrection:(id)arg1;
 - (BOOL)shouldDeleteAutospaceBeforeTerminator:(id)arg1;
 - (BOOL)shouldEnableShiftForDeletedCharacter:(unsigned long)arg1;
@@ -766,7 +766,7 @@
 - (void)startCaretBlinkIfNeeded;
 - (void)stopAutoDelete;
 - (void)storeDelegateConformance;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })subtractKeyboardFrameFromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inView:(id)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })subtractKeyboardFrameFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2;
 - (BOOL)suppliesCompletions;
 - (BOOL)supportsNumberKeySelection;
 - (BOOL)suppressUpdateLayout;

@@ -20,10 +20,10 @@
     unsigned int  _numberOfRunningAnimatedInvalidations;
     SKUIProxyScrollView * _proxyScrollView;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _proxyScrollViewContentInsetAdditions;
     BOOL  _shouldTuckTopVerticalScrollingContainerItem;
     BOOL  _shouldUpdateLayoutOfVisibleCollectionViewCellsUponCompletingAnimatedInvalidations;
@@ -32,7 +32,7 @@
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;
 @property (nonatomic, readonly) UICollectionView *containerCollectionView;
-@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } contentOffset;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } contentOffset;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <MusicVerticalScrollingContainerViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -55,12 +55,12 @@
 - (id)clientContext;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didEndDisplayingCell:(id)arg2 forItemAtIndexPath:(id)arg3;
-- (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
+- (struct CGSize { float x1; float x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
 - (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (id)containerCollectionView;
-- (struct CGPoint { double x1; double x2; })contentOffset;
-- (struct CGPoint { double x1; double x2; })contentOffsetForVerticalScrollingContainerItem:(id)arg1;
+- (struct CGPoint { float x1; float x2; })contentOffset;
+- (struct CGPoint { float x1; float x2; })contentOffsetForVerticalScrollingContainerItem:(id)arg1;
 - (int)contentOffsetProxyingPolicyForVerticalScrollingContainerItemContext:(id)arg1;
 - (id)contentScrollView;
 - (void)dealloc;
@@ -78,14 +78,14 @@
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
 - (void)scrollViewDidChangeContentInset:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
-- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { double x1; double x2; })arg2 targetContentOffset:(inout struct CGPoint { double x1; double x2; }*)arg3;
+- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { float x1; float x2; })arg2 targetContentOffset:(inout struct CGPoint { float x1; float x2; }*)arg3;
 - (void)setClientContext:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setKeyboardDismissMode:(int)arg1;
 - (void)setShouldTuckTopVerticalScrollingContainerItem:(BOOL)arg1;
 - (void)setVerticalScrollingContainerItems:(id)arg1;
 - (BOOL)shouldTuckTopVerticalScrollingContainerItem;
-- (void)verticalScrollingContainerCollectionViewCell:(id)arg1 didUpdateBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 withPreviousBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
+- (void)verticalScrollingContainerCollectionViewCell:(id)arg1 didUpdateBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 withPreviousBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 - (void)verticalScrollingContainerCollectionViewContentSizeDidChange:(id)arg1;
 - (void)verticalScrollingContainerCollectionViewDidLayoutSubviews:(id)arg1;
 - (void)verticalScrollingContainerItemContextRequestsContentSizeUpdate:(id)arg1;

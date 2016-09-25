@@ -6,7 +6,7 @@
     struct EdgeDetectionParameters { 
         BOOL detectSilhouetteEdges; 
         BOOL detectSharpEdges; 
-        double sharpEdgeThreshold; 
+        float sharpEdgeThreshold; 
     }  mEdgeDetectionParameters;
     TSCH3Dvec3DataBuffer * mEdges;
     TSCH3DResource * mVertices;
@@ -19,7 +19,7 @@
 - (int)attribute:(id)arg1 resource:(id)arg2 specs:(const struct AttributeSpecs { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg3;
 - (void)dealloc;
 - (id)edges;
-- (id)initWithEdgeDetectionParameters:(const struct EdgeDetectionParameters { BOOL x1; BOOL x2; double x3; }*)arg1;
+- (id)initWithEdgeDetectionParameters:(const struct EdgeDetectionParameters { BOOL x1; BOOL x2; float x3; }*)arg1;
 - (id)matrix;
 - (void)setVertices:(id)arg1;
 - (void)submit:(const /* Warning: unhandled struct encoding: '{PrimitiveInfo=iii@}' */ struct PrimitiveInfo { int x1; int x2; int x3; id x4; }*)arg1;

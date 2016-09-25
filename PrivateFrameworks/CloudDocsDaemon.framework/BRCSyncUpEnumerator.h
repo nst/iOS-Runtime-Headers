@@ -10,7 +10,7 @@
     NSMutableSet * _itemIDsNeedingOSUpgrade;
     BRCLocalItem * _itemNeedingPCSChaining;
     unsigned int  _maxDepth;
-    unsigned int  _retryAfter;
+    unsigned long long  _retryAfter;
     NSMutableIndexSet * _returned;
     NSMutableArray * _stack;
     int  _stage;
@@ -20,12 +20,12 @@
 
 @property (nonatomic, readonly) unsigned int batchSize;
 @property (nonatomic, readonly) BRCLocalItem *itemNeedingPCSChaining;
-@property (nonatomic, readonly) unsigned int retryAfter;
+@property (nonatomic, readonly) unsigned long long retryAfter;
 
 - (void).cxx_destruct;
 - (void)_blackListDescendantStack:(id)arg1 parentItem:(id)arg2 andAddToSet:(id)arg3;
 - (void)_blackListDescendantStack:(id)arg1 parentItem:(id)arg2 andAddToSet:(id)arg3 descendantBlock:(id /* block */)arg4;
-- (BOOL)_blackListDescendantStackAndItemIfThrottledOrNeedsOSUpgrade:(id)arg1 now:(unsigned int)arg2;
+- (BOOL)_blackListDescendantStackAndItemIfThrottledOrNeedsOSUpgrade:(id)arg1 now:(unsigned long long)arg2;
 - (struct PQLResultSet { Class x1; }*)_documentsOrAliasesNeedingSyncUpEnumerator;
 - (struct PQLResultSet { Class x1; }*)_liveOrNewDirectoriesNeedingSyncUpEnumerator;
 - (id)_nextLiveItem;
@@ -38,6 +38,6 @@
 - (BOOL)isBlackListed:(id)arg1;
 - (id)itemNeedingPCSChaining;
 - (id)nextObject;
-- (unsigned int)retryAfter;
+- (unsigned long long)retryAfter;
 
 @end

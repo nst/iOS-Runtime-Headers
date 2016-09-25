@@ -3,7 +3,7 @@
  */
 
 @interface GEOPDFeatureIdGeocodingParameters : PBCodable <NSCopying> {
-    unsigned int  _featureId;
+    unsigned long long  _featureId;
     struct { 
         unsigned int featureId : 1; 
     }  _has;
@@ -11,7 +11,7 @@
     PBUnknownFields * _unknownFields;
 }
 
-@property (nonatomic) unsigned int featureId;
+@property (nonatomic) unsigned long long featureId;
 @property (nonatomic) BOOL hasFeatureId;
 @property (nonatomic, readonly) BOOL hasLocation;
 @property (nonatomic, retain) GEOLatLng *location;
@@ -22,7 +22,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)featureId;
+- (unsigned long long)featureId;
 - (BOOL)hasFeatureId;
 - (BOOL)hasLocation;
 - (unsigned int)hash;
@@ -30,7 +30,7 @@
 - (id)location;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (void)setFeatureId:(unsigned int)arg1;
+- (void)setFeatureId:(unsigned long long)arg1;
 - (void)setHasFeatureId:(BOOL)arg1;
 - (void)setLocation:(id)arg1;
 - (id)unknownFields;

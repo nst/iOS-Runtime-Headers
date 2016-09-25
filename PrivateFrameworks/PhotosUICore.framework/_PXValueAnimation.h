@@ -6,25 +6,25 @@
     double  _duration;
     struct _PXValueAnimationSpec { 
         int type; 
-        double epsilon; 
-        double stiffness; 
-        double dampingRatio; 
-        double initialVelocity; 
+        float epsilon; 
+        float stiffness; 
+        float dampingRatio; 
+        float initialVelocity; 
     }  _spec;
     double  _startTime;
 }
 
 @property (nonatomic, readonly) BOOL completed;
-@property (nonatomic, readonly) double currentValue;
+@property (nonatomic, readonly) float currentValue;
 @property (nonatomic, readonly) double duration;
-@property (nonatomic, readonly) struct _PXValueAnimationSpec { int x1; double x2; double x3; double x4; double x5; } spec;
+@property (nonatomic, readonly) struct _PXValueAnimationSpec { int x1; float x2; float x3; float x4; float x5; } spec;
 
 - (BOOL)completed;
 - (float)currentValue;
 - (double)duration;
 - (double)elapsedTime;
 - (id)init;
-- (id)initWithDuration:(double)arg1 spec:(struct _PXValueAnimationSpec { int x1; double x2; double x3; double x4; double x5; })arg2;
-- (struct _PXValueAnimationSpec { int x1; double x2; double x3; double x4; double x5; })spec;
+- (id)initWithDuration:(double)arg1 spec:(struct _PXValueAnimationSpec { int x1; float x2; float x3; float x4; float x5; })arg2;
+- (struct _PXValueAnimationSpec { int x1; float x2; float x3; float x4; float x5; })spec;
 
 @end

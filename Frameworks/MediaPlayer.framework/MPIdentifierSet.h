@@ -4,35 +4,35 @@
 
 @interface MPIdentifierSet : NSObject <NSCopying, NSSecureCoding> {
     NSString * _contentItemID;
-    int  _deviceLibraryPersistentID;
+    long long  _deviceLibraryPersistentID;
     NSString * _globalPlaylistID;
-    int  _homeSharingLibraryID;
+    long long  _homeSharingLibraryID;
     NSString * _lyricsID;
     NSString * _radioStationHash;
-    int  _radioStationID;
+    long long  _radioStationID;
     NSString * _radioStationStringID;
-    int  _storeAdamID;
+    long long  _storeAdamID;
     NSString * _storeCloudAlbumID;
-    unsigned int  _storeCloudID;
-    int  _storePurchasedAdamID;
+    unsigned long long  _storeCloudID;
+    long long  _storePurchasedAdamID;
     NSString * _storeRecommendationID;
-    int  _storeSubscriptionAdamID;
+    long long  _storeSubscriptionAdamID;
 }
 
 @property (nonatomic, copy) NSString *contentItemID;
-@property (nonatomic) int deviceLibraryPersistentID;
+@property (nonatomic) long long deviceLibraryPersistentID;
 @property (nonatomic, copy) NSString *globalPlaylistID;
-@property (nonatomic) int homeSharingLibraryID;
+@property (nonatomic) long long homeSharingLibraryID;
 @property (nonatomic, copy) NSString *lyricsID;
 @property (nonatomic, copy) NSString *radioStationHash;
-@property (nonatomic) int radioStationID;
+@property (nonatomic) long long radioStationID;
 @property (nonatomic, copy) NSString *radioStationStringID;
-@property (nonatomic) int storeAdamID;
+@property (nonatomic) long long storeAdamID;
 @property (nonatomic, copy) NSString *storeCloudAlbumID;
-@property (nonatomic) unsigned int storeCloudID;
-@property (nonatomic) int storePurchasedAdamID;
+@property (nonatomic) unsigned long long storeCloudID;
+@property (nonatomic) long long storePurchasedAdamID;
 @property (nonatomic, copy) NSString *storeRecommendationID;
-@property (nonatomic) int storeSubscriptionAdamID;
+@property (nonatomic) long long storeSubscriptionAdamID;
 
 + (BOOL)supportsSecureCoding;
 
@@ -42,38 +42,38 @@
 - (id)copyWithBlock:(id /* block */)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (int)deviceLibraryPersistentID;
+- (long long)deviceLibraryPersistentID;
 - (void)encodeWithCoder:(id)arg1;
 - (id)globalPlaylistID;
 - (BOOL)hasCommonIdentifierWithIdentifierSet:(id)arg1;
 - (unsigned int)hash;
-- (int)homeSharingLibraryID;
+- (long long)homeSharingLibraryID;
 - (id)initWithBlock:(id /* block */)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)lyricsID;
 - (id)radioStationHash;
-- (int)radioStationID;
+- (long long)radioStationID;
 - (id)radioStationStringID;
 - (void)setContentItemID:(id)arg1;
-- (void)setDeviceLibraryPersistentID:(int)arg1;
+- (void)setDeviceLibraryPersistentID:(long long)arg1;
 - (void)setGlobalPlaylistID:(id)arg1;
-- (void)setHomeSharingLibraryID:(int)arg1;
+- (void)setHomeSharingLibraryID:(long long)arg1;
 - (void)setLyricsID:(id)arg1;
 - (void)setRadioStationHash:(id)arg1;
-- (void)setRadioStationID:(int)arg1;
+- (void)setRadioStationID:(long long)arg1;
 - (void)setRadioStationStringID:(id)arg1;
-- (void)setStoreAdamID:(int)arg1;
+- (void)setStoreAdamID:(long long)arg1;
 - (void)setStoreCloudAlbumID:(id)arg1;
-- (void)setStoreCloudID:(unsigned int)arg1;
-- (void)setStorePurchasedAdamID:(int)arg1;
+- (void)setStoreCloudID:(unsigned long long)arg1;
+- (void)setStorePurchasedAdamID:(long long)arg1;
 - (void)setStoreRecommendationID:(id)arg1;
-- (void)setStoreSubscriptionAdamID:(int)arg1;
-- (int)storeAdamID;
+- (void)setStoreSubscriptionAdamID:(long long)arg1;
+- (long long)storeAdamID;
 - (id)storeCloudAlbumID;
-- (unsigned int)storeCloudID;
-- (int)storePurchasedAdamID;
+- (unsigned long long)storeCloudID;
+- (long long)storePurchasedAdamID;
 - (id)storeRecommendationID;
-- (int)storeSubscriptionAdamID;
+- (long long)storeSubscriptionAdamID;
 
 @end

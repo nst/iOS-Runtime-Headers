@@ -3,7 +3,7 @@
  */
 
 @interface AVItem : NSObject {
-    struct AVItemPrivate { id x1; double x2; double x3; double x4; double x5; unsigned int x6; BOOL x7; BOOL x8; id x9; int x10; int x11; BOOL x12; id x13; BOOL x14; BOOL x15; id x16; struct OpaqueMD5CheckProgress {} *x17; struct OpaqueFigThread {} *x18; struct OpaqueCMByteStream {} *x19; int x20; id x21; } * _priv;
+    struct AVItemPrivate { id x1; double x2; float x3; float x4; float x5; unsigned int x6; BOOL x7; BOOL x8; id x9; long long x10; long long x11; BOOL x12; id x13; BOOL x14; BOOL x15; id x16; struct OpaqueMD5CheckProgress {} *x17; struct OpaqueFigThread {} *x18; struct OpaqueCMByteStream {} *x19; int x20; id x21; } * _priv;
 }
 
 + (id)avItem;
@@ -27,7 +27,7 @@
 - (id)init;
 - (id)initWithError:(id*)arg1;
 - (id)initWithPath:(id)arg1 error:(id*)arg2;
-- (struct CGSize { double x1; double x2; })naturalSize;
+- (struct CGSize { float x1; float x2; })naturalSize;
 - (id)nextThumbnailTimesStartingAt:(double)arg1 minimumInterval:(double)arg2 forwards:(BOOL)arg3 maxCount:(int)arg4;
 - (id)path;
 - (BOOL)setAttribute:(id)arg1 forKey:(id)arg2 error:(id*)arg3;

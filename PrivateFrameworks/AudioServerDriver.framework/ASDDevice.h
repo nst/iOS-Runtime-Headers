@@ -15,7 +15,7 @@
     unsigned long  _inputSafetyOffset;
     NSObject<OS_dispatch_queue> * _inputStreamQueue;
     NSMutableArray * _inputStreams;
-    int  _ioReferenceCount;
+    long long  _ioReferenceCount;
     NSObject<OS_dispatch_queue> * _ioReferenceQueue;
     BOOL  _isAlive;
     BOOL  _isRunning;
@@ -98,7 +98,7 @@
 - (void)performConfigurationChange:(void*)arg1;
 - (long)performStartIO;
 - (long)performStopIO;
-- (void)preferredChannelDescriptions:(struct AudioChannelDescription { unsigned int x1; unsigned long x2; double x3[3]; }*)arg1 forScope:(unsigned long)arg2;
+- (void)preferredChannelDescriptions:(struct AudioChannelDescription { unsigned int x1; unsigned long x2; float x3[3]; }*)arg1 forScope:(unsigned long)arg2;
 - (void)preferredChannelsForLeft:(unsigned int*)arg1 andRight:(unsigned int*)arg2;
 - (long)removeClient:(const struct AudioServerPlugInClientInfo { unsigned int x1; int x2; unsigned char x3; struct __CFString {} *x4; }*)arg1;
 - (void)removeControl:(id)arg1;

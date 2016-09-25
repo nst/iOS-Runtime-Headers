@@ -71,7 +71,7 @@
 - (int)_totalViewStyle;
 - (void)_updateBackgroundedState:(BOOL)arg1;
 - (void)_updatePreferredContentSize;
-- (void)_updatePreferredContentSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)_updatePreferredContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_updateShippingMethods;
 - (Class)_viewPresenterClassForDataItem:(id)arg1;
 - (id)authenticator;

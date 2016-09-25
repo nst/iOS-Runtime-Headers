@@ -10,7 +10,7 @@
     UIImageView * _imageView;
     UILabel * _messageLabel;
     UILabel * _messageLabel2;
-    double  _preferredWidthPad;
+    float  _preferredWidthPad;
     UILabel * _titleLabel;
     id /* block */  _touchHandler;
 }
@@ -22,7 +22,7 @@
 @property (nonatomic, retain) UIImageView *imageView;
 @property (nonatomic, retain) UILabel *messageLabel;
 @property (nonatomic, retain) UILabel *messageLabel2;
-@property (nonatomic, readonly) double preferredWidthPad;
+@property (nonatomic, readonly) float preferredWidthPad;
 @property (nonatomic, retain) UILabel *titleLabel;
 @property (nonatomic, copy) id /* block */ touchHandler;
 

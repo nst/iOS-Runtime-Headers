@@ -28,7 +28,7 @@
 - (void)_installHIDFilter:(id)arg1 skipDeviceMatching:(BOOL)arg2 wantsDigitizerEvents:(BOOL)arg3 wantsKeyboardEvents:(BOOL)arg4 wantsATVRemoteEvents:(BOOL)arg5 wantsLisaEvents:(BOOL)arg6;
 - (void)_installSystemEventTap:(id)arg1;
 - (void)_passivelyPeakAtHIDEventWithTarget:(void*)arg1 tapPair:(id)arg2 sender:(void*)arg3 event:(struct __IOHIDEvent { }*)arg4 axEventRep:(id)arg5 didHandle:(BOOL)arg6;
-- (BOOL)_processGSEvent:(struct { int x1; int x2; struct CGPoint { double x_3_1_1; double x_3_1_2; } x3; struct CGPoint { double x_4_1_1; double x_4_1_2; } x4; unsigned int x5; unsigned int x6; void *x7; int x8; int x9; unsigned int x10; unsigned int x11; unsigned char x12[0]; }*)arg1;
+- (BOOL)_processGSEvent:(struct { int x1; int x2; struct CGPoint { float x_3_1_1; float x_3_1_2; } x3; struct CGPoint { float x_4_1_1; float x_4_1_2; } x4; unsigned int x5; unsigned long long x6; void *x7; int x8; int x9; unsigned int x10; unsigned long long x11; unsigned char x12[0]; }*)arg1;
 - (BOOL)_processHIDEvent:(struct __IOHIDEvent { }*)arg1 taskPort:(unsigned int)arg2 bundleId:(id)arg3;
 - (void)_removeHIDEventTapFilter:(id)arg1;
 - (void)_reorderEventTaps;
@@ -48,8 +48,8 @@
 - (void)removeEventTap:(id)arg1;
 - (void)runMatchingServiceHandlerForEventTap:(id)arg1;
 - (void)sendEvent:(id)arg1 afterTap:(id)arg2 useGSEvent:(BOOL)arg3 namedTaps:(id)arg4 options:(unsigned int)arg5;
-- (void)sendHIDSystemEvent:(id)arg1 repostCreatorHIDEvent:(BOOL)arg2 senderID:(unsigned int)arg3;
-- (void)sendHIDSystemEvent:(id)arg1 senderID:(unsigned int)arg2;
+- (void)sendHIDSystemEvent:(id)arg1 repostCreatorHIDEvent:(BOOL)arg2 senderID:(unsigned long long)arg3;
+- (void)sendHIDSystemEvent:(id)arg1 senderID:(unsigned long long)arg2;
 - (void)setEventTapPriority:(id)arg1 priority:(int)arg2;
 - (void)setInstallationEventRepPost:(id /* block */)arg1;
 - (void)setInstallationGSCallback:(id /* block */)arg1;

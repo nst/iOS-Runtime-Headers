@@ -7,20 +7,20 @@
     UIColor * _backgroundColor;
     SKUIColorScheme * _colorScheme;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _landscapeSize;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _portraitSize;
 }
 
 @property (nonatomic) unsigned int allowedOrientations;
 @property (nonatomic, retain) UIColor *backgroundColor;
 @property (nonatomic, retain) SKUIColorScheme *colorScheme;
-@property (nonatomic) struct CGSize { double x1; double x2; } landscapeSize;
-@property (nonatomic) struct CGSize { double x1; double x2; } portraitSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } landscapeSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } portraitSize;
 
 - (void).cxx_destruct;
 - (unsigned int)allowedOrientations;
@@ -28,12 +28,12 @@
 - (id)colorScheme;
 - (id)imageForColor:(id)arg1 orientation:(unsigned int)arg2;
 - (id)imageForImage:(id)arg1;
-- (struct CGSize { double x1; double x2; })landscapeSize;
-- (struct CGSize { double x1; double x2; })portraitSize;
+- (struct CGSize { float x1; float x2; })landscapeSize;
+- (struct CGSize { float x1; float x2; })portraitSize;
 - (void)setAllowedOrientations:(unsigned int)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setColorScheme:(id)arg1;
-- (void)setLandscapeSize:(struct CGSize { double x1; double x2; })arg1;
-- (void)setPortraitSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setLandscapeSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setPortraitSize:(struct CGSize { float x1; float x2; })arg1;
 
 @end

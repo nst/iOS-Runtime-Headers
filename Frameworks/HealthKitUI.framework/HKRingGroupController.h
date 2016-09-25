@@ -3,37 +3,37 @@
  */
 
 @interface HKRingGroupController : HKAnimatableObject {
-    double  _additionalSpacingAtIndex;
+    float  _additionalSpacingAtIndex;
     <HKRingGroupAnimationStatusDelegate> * _animationStatusDelegate;
-    double  _backingOrigin;
+    float  _backingOrigin;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _center;
     int * _iconAnimationFrameNumbers;
     int  _numberOfRings;
-    double  _ringDiameter;
-    double  _ringIconSize;
-    double  _ringInterspacing;
-    double  _ringScale;
+    float  _ringDiameter;
+    float  _ringIconSize;
+    float  _ringInterspacing;
+    float  _ringScale;
     BOOL  _ringStartingStateIsDirty;
-    double  _ringThickness;
+    float  _ringThickness;
     NSArray * _rings;
-    double  _zRotation;
+    float  _zRotation;
 }
 
-@property (nonatomic) double additionalSpacingAtIndex;
+@property (nonatomic) float additionalSpacingAtIndex;
 @property (nonatomic) <HKRingGroupAnimationStatusDelegate> *animationStatusDelegate;
-@property (nonatomic) double backingOrigin;
-@property (nonatomic) struct CGPoint { double x1; double x2; } center;
+@property (nonatomic) float backingOrigin;
+@property (nonatomic) struct CGPoint { float x1; float x2; } center;
 @property (nonatomic, readonly) int numberOfRings;
-@property (nonatomic) double ringDiameter;
-@property (nonatomic) double ringIconSize;
-@property (nonatomic) double ringInterspacing;
-@property (nonatomic) double ringScale;
-@property (nonatomic) double ringThickness;
+@property (nonatomic) float ringDiameter;
+@property (nonatomic) float ringIconSize;
+@property (nonatomic) float ringInterspacing;
+@property (nonatomic) float ringScale;
+@property (nonatomic) float ringThickness;
 @property (nonatomic, retain) NSArray *rings;
-@property (nonatomic) double zRotation;
+@property (nonatomic) float zRotation;
 
 + (id)animationTimingFunction;
 + (double)defaultAnimationDuration;
@@ -50,8 +50,8 @@
 - (float)_scaledRingIconSize;
 - (float)_scaledRingInterspacing;
 - (float)_scaledRingThickness;
-- (BOOL)_setCGPointValue:(struct CGPoint { double x1; double x2; })arg1 forIconPropertyType:(unsigned int)arg2 ofRingAtIndex:(int)arg3 animated:(BOOL)arg4;
-- (BOOL)_setCenter:(struct CGPoint { double x1; double x2; })arg1;
+- (BOOL)_setCGPointValue:(struct CGPoint { float x1; float x2; })arg1 forIconPropertyType:(unsigned int)arg2 ofRingAtIndex:(int)arg3 animated:(BOOL)arg4;
+- (BOOL)_setCenter:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)_setFloatValue:(float)arg1 forIconPropertyType:(unsigned int)arg2 ofRingAtIndex:(int)arg3 animated:(BOOL)arg4;
 - (void)_setFloatValue:(float)arg1 forRingPropertyType:(unsigned int)arg2 ofRingAtIndex:(int)arg3 animated:(BOOL)arg4;
 - (BOOL)_setFloatValue:(float)arg1 forRingPropertyType:(unsigned int)arg2 ofRingAtIndex:(int)arg3 animated:(BOOL)arg4 duration:(double)arg5 completion:(id /* block */)arg6;
@@ -65,10 +65,10 @@
 - (id)animationStatusDelegate;
 - (BOOL)areAnimationsInProgress;
 - (float)backingOrigin;
-- (struct CGPoint { double x1; double x2; })center;
+- (struct CGPoint { float x1; float x2; })center;
 - (void)dealloc;
 - (float)diameterForRingAtIndex:(unsigned int)arg1;
-- (int)indexOfRingAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (int)indexOfRingAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)init;
 - (id)initWithNumberOfRings:(int)arg1;
 - (int)numberOfRings;
@@ -82,17 +82,17 @@
 - (void)setAdditionalSpacingAtIndex:(float)arg1;
 - (void)setAnimationStatusDelegate:(id)arg1;
 - (void)setBackingOrigin:(float)arg1;
-- (void)setCenter:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setCenter:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setDotPercentage:(double)arg1 ofRingAtIndex:(int)arg2 animated:(BOOL)arg3;
-- (void)setIconDotTextureOrigin:(struct CGPoint { double x1; double x2; })arg1 ofRingAtIndex:(int)arg2;
-- (void)setIconFirstFrameOrigin:(struct CGPoint { double x1; double x2; })arg1 frameSize:(struct CGSize { double x1; double x2; })arg2 frameCount:(int)arg3 columns:(int)arg4 ofRingAtIndex:(int)arg5;
+- (void)setIconDotTextureOrigin:(struct CGPoint { float x1; float x2; })arg1 ofRingAtIndex:(int)arg2;
+- (void)setIconFirstFrameOrigin:(struct CGPoint { float x1; float x2; })arg1 frameSize:(struct CGSize { float x1; float x2; })arg2 frameCount:(int)arg3 columns:(int)arg4 ofRingAtIndex:(int)arg5;
 - (void)setOpacity:(float)arg1 ofRingAtIndex:(int)arg2 animated:(BOOL)arg3;
 - (void)setPercentage:(double)arg1 ofRingAtIndex:(int)arg2 animated:(BOOL)arg3;
 - (void)setPercentage:(double)arg1 ofRingAtIndex:(int)arg2 animated:(BOOL)arg3 completion:(id /* block */)arg4;
 - (void)setPercentage:(double)arg1 ofRingAtIndex:(int)arg2 animated:(BOOL)arg3 duration:(double)arg4 timingFunction:(id)arg5 completion:(id /* block */)arg6;
 - (void)setRingDiameter:(float)arg1;
 - (void)setRingDiameter:(float)arg1 ofRingAtIndex:(int)arg2 animated:(BOOL)arg3;
-- (void)setRingIconPosition:(struct CGPoint { double x1; double x2; })arg1 ofRingAtIndex:(int)arg2 animated:(BOOL)arg3;
+- (void)setRingIconPosition:(struct CGPoint { float x1; float x2; })arg1 ofRingAtIndex:(int)arg2 animated:(BOOL)arg3;
 - (void)setRingIconSize:(float)arg1;
 - (void)setRingIconSize:(float)arg1 ofRingAtIndex:(int)arg2 animated:(BOOL)arg3;
 - (void)setRingInterspacing:(float)arg1;

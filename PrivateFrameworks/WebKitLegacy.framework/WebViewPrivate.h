@@ -28,15 +28,15 @@
     BOOL  closed;
     BOOL  closing;
     WebNodeHighlight * currentNodeHighlight;
-    double  customDeviceScaleFactor;
+    float  customDeviceScaleFactor;
     int  didDrawTiles;
     id  downloadDelegate;
     BOOL  drawsBackground;
     id  editingDelegate;
     id  editingDelegateForwarder;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  fixedLayoutSize;
     <WebFormDelegate> * formDelegate;
     id  formDelegateForwarder;
@@ -104,8 +104,8 @@
     BOOL  interactiveFormValidationEnabled;
     BOOL  isStopping;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  lastLayoutSize;
     struct RefPtr<LayerFlushController> { 
         struct LayerFlushController {} *m_ptr; 
@@ -118,12 +118,12 @@
     struct Page { } * page;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  pendingFixedPositionLayoutRect;
     struct Lock { 
@@ -190,7 +190,7 @@
     NSURL * userStyleSheetLocation;
     BOOL  usesPageCache;
     int  validationMessageTimerMagnification;
-    double  zoomMultiplier;
+    float  zoomMultiplier;
     BOOL  zoomsTextOnly;
 }
 

@@ -10,26 +10,26 @@
     BOOL  __stoppedTransitionWasCancelled;
     BOOL  __transitionWasStopped;
     BOOL  __useAugmentedShouldPopDecisionProcedure;
-    double  _accelerations;
+    float  _accelerations;
     _UINavigationParallaxTransition * _animationController;
-    double  _averageAcceleration;
-    double  _averageVelocity;
+    float  _averageAcceleration;
+    float  _averageVelocity;
     <_UINavigationInteractiveTransitionBaseDelegate> * _delegate;
     CADisplayLink * _displayLink;
     UIPanGestureRecognizer * _gestureRecognizer;
     UIView * _gestureRecognizerView;
     BOOL  _inSpringAnimation;
-    double  _previousAcceleration;
-    double  _previousDisplacement;
+    float  _previousAcceleration;
+    float  _previousDisplacement;
     double  _previousTimeStamp;
-    double  _previousVelocity;
+    float  _previousVelocity;
     unsigned int  _sampleCount;
     BOOL  _shouldReverseTranslation;
     double  _skipTimeStamp;
     BOOL  _springAnimationIsPending;
-    double  _timestamps;
-    double  _totalDistance;
-    double  _velocities;
+    float  _timestamps;
+    float  _totalDistance;
+    float  _velocities;
 }
 
 @property (setter=_setCompletesTransitionOnEnd:, nonatomic) BOOL _completesTransitionOnEnd;
@@ -40,8 +40,8 @@
 @property (setter=_setTransitionWasStopped:, nonatomic) BOOL _transitionWasStopped;
 @property (setter=_setUseAugmentedShouldPopDecisionProcedure:, nonatomic) BOOL _useAugmentedShouldPopDecisionProcedure;
 @property (nonatomic, retain) _UINavigationParallaxTransition *animationController;
-@property (nonatomic) double averageAcceleration;
-@property (nonatomic) double averageVelocity;
+@property (nonatomic) float averageAcceleration;
+@property (nonatomic) float averageVelocity;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <_UINavigationInteractiveTransitionBaseDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -49,16 +49,16 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL inSpringAnimation;
 @property (getter=_navigationGesture, nonatomic, readonly) UIGestureRecognizer *navigationGesture;
-@property (nonatomic) double previousAcceleration;
-@property (nonatomic) double previousDisplacement;
+@property (nonatomic) float previousAcceleration;
+@property (nonatomic) float previousDisplacement;
 @property (nonatomic) double previousTimeStamp;
-@property (nonatomic) double previousVelocity;
+@property (nonatomic) float previousVelocity;
 @property (nonatomic) unsigned int sampleCount;
 @property (nonatomic) BOOL shouldReverseTranslation;
 @property (nonatomic) double skipTimeStamp;
 @property (nonatomic) BOOL springAnimationIsPending;
 @property (readonly) Class superclass;
-@property (nonatomic) double totalDistance;
+@property (nonatomic) float totalDistance;
 
 - (void).cxx_destruct;
 - (void)_completeStoppedInteractiveTransition;

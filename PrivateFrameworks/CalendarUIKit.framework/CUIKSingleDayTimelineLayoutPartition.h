@@ -3,19 +3,19 @@
  */
 
 @interface CUIKSingleDayTimelineLayoutPartition : NSObject {
-    double  _endBoundary;
-    double  _initialStartBoundary;
+    float  _endBoundary;
+    float  _initialStartBoundary;
     NSMutableArray * _stackOfOccurrences;
     double  _topBoundaryTime;
 }
 
-@property (nonatomic) double endBoundary;
-@property (nonatomic, readonly) double freeSpaceStartBoundary;
-@property (nonatomic, readonly) double freeSpaceWidth;
-@property (nonatomic) double initialStartBoundary;
+@property (nonatomic) float endBoundary;
+@property (nonatomic, readonly) float freeSpaceStartBoundary;
+@property (nonatomic, readonly) float freeSpaceWidth;
+@property (nonatomic) float initialStartBoundary;
 @property (nonatomic, readonly) NSArray *stackedOccurrences;
 @property (nonatomic) double topBoundaryTime;
-@property (nonatomic, readonly) double totalWidth;
+@property (nonatomic, readonly) float totalWidth;
 
 - (void).cxx_destruct;
 - (id)description;

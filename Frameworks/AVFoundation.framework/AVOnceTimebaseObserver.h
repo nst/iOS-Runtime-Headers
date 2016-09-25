@@ -6,10 +6,10 @@
     id /* block */  _block;
     BOOL  _didFire;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _fireTime;
 }
 
@@ -21,7 +21,7 @@
 - (void)_resetNextFireTime;
 - (void)dealloc;
 - (BOOL)didFire;
-- (id)initWithTimebase:(struct OpaqueCMTimebase { }*)arg1 fireTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg2 queue:(id)arg3 block:(id /* block */)arg4;
+- (id)initWithTimebase:(struct OpaqueCMTimebase { }*)arg1 fireTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 queue:(id)arg3 block:(id /* block */)arg4;
 - (void)invalidate;
 
 @end

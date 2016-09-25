@@ -18,7 +18,7 @@
 - (void).cxx_destruct;
 - (void)addSelectedCloudGuid:(id)arg1;
 - (BOOL)allowsMutlipleSelection;
-- (struct CGSize { double x1; double x2; })contentSizeForViewInPopover;
+- (struct CGSize { float x1; float x2; })contentSizeForViewInPopover;
 - (void)didReceiveMemoryWarning;
 - (id)initWithStyle:(int)arg1;
 - (int)numberOfSectionsInTableView:(id)arg1;

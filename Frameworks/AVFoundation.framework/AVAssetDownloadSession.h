@@ -7,18 +7,18 @@
 }
 
 @property (nonatomic, readonly) NSURL *URL;
-@property (nonatomic, readonly) unsigned int availableFileSize;
+@property (nonatomic, readonly) unsigned long long availableFileSize;
 @property (nonatomic, readonly) NSURL *destinationURL;
-@property (nonatomic, readonly) unsigned int downloadToken;
+@property (nonatomic, readonly) unsigned long long downloadToken;
 @property (nonatomic, readonly) NSError *error;
-@property (nonatomic, readonly) unsigned int fileSize;
+@property (nonatomic, readonly) unsigned long long fileSize;
 @property (nonatomic, readonly) NSArray *loadedTimeRanges;
 @property (nonatomic, readonly) int priority;
 @property (nonatomic, readonly) AVMediaSelection *resolvedMediaSelection;
 @property (nonatomic, readonly) int status;
 
 + (id)assetDownloadSessionWithAsset:(id)arg1 destinationURL:(id)arg2 options:(id)arg3;
-+ (id)assetDownloadSessionWithDownloadToken:(unsigned int)arg1;
++ (id)assetDownloadSessionWithDownloadToken:(unsigned long long)arg1;
 + (id)assetDownloadSessionWithURL:(id)arg1 destinationURL:(id)arg2 options:(id)arg3;
 
 - (id)URL;
@@ -46,16 +46,16 @@
 - (void)_transitionToTerminalStatus:(int)arg1 error:(id)arg2;
 - (id)_verifyDownloadConfigurationForAssetType;
 - (id)_weakReference;
-- (unsigned int)availableFileSize;
+- (unsigned long long)availableFileSize;
 - (void)dealloc;
 - (id)destinationURL;
-- (unsigned int)downloadToken;
+- (unsigned long long)downloadToken;
 - (id)error;
-- (unsigned int)fileSize;
+- (unsigned long long)fileSize;
 - (void)finalize;
 - (id)init;
 - (id)initWithAsset:(id)arg1 destinationURL:(id)arg2 options:(id)arg3;
-- (id)initWithDownloadToken:(unsigned int)arg1;
+- (id)initWithDownloadToken:(unsigned long long)arg1;
 - (id)initWithURL:(id)arg1 destinationURL:(id)arg2 options:(id)arg3;
 - (id)loadedTimeRanges;
 - (void)pause;

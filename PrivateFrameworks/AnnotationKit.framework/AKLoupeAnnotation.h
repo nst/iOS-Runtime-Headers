@@ -4,15 +4,15 @@
 
 @interface AKLoupeAnnotation : AKStrokedAnnotation <AKRectangularAnnotationProtocol> {
     NSData * _imageData;
-    double  _magnification;
+    float  _magnification;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _rectangle;
 }
@@ -21,8 +21,8 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) NSData *imageData;
-@property double magnification;
-@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } rectangle;
+@property float magnification;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } rectangle;
 @property (readonly) Class superclass;
 
 + (id)displayNameForUndoablePropertyChangeWithKey:(id)arg1;
@@ -35,18 +35,18 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)displayName;
 - (void)encodeWithCoder:(id)arg1;
-- (void)flattenModelExifOrientation:(int)arg1 withModelSize:(struct CGSize { double x1; double x2; })arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })hitTestBounds;
+- (void)flattenModelExifOrientation:(int)arg1 withModelSize:(struct CGSize { float x1; float x2; })arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })hitTestBounds;
 - (id)imageData;
 - (id)initWithCoder:(id)arg1;
 - (id)keysForValuesToObserveForAdornments;
 - (id)keysForValuesToObserveForRedrawing;
 - (id)keysForValuesToObserveForUndo;
 - (float)magnification;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rectangle;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectangle;
 - (void)setImageData:(id)arg1;
 - (void)setMagnification:(float)arg1;
-- (void)setRectangle:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)translateBy:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setRectangle:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)translateBy:(struct CGPoint { float x1; float x2; })arg1;
 
 @end

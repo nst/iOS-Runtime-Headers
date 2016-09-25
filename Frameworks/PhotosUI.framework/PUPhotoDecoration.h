@@ -4,12 +4,12 @@
 
 @interface PUPhotoDecoration : NSObject <NSCopying> {
     UIColor * _borderColor;
-    double  _borderWidth;
+    float  _borderWidth;
     UIColor * _foregroundColor;
 }
 
 @property (nonatomic, copy) UIColor *borderColor;
-@property (nonatomic) double borderWidth;
+@property (nonatomic) float borderWidth;
 @property (nonatomic, copy) UIColor *foregroundColor;
 
 - (void).cxx_destruct;

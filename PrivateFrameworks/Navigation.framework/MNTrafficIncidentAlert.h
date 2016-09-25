@@ -10,19 +10,19 @@
     double  _distanceToIncident;
     struct { 
         unsigned int index; 
-        double offset; 
+        float offset; 
     }  _endValidCoordinateRange;
     NSDate * _eta;
     struct { 
         unsigned int index; 
-        double offset; 
+        float offset; 
     }  _incidentCoordinate;
     BOOL  _isAutomaticReroute;
     GEOETARoute * _oldETARoute;
     GEOComposedRoute * _originalRoute;
     struct { 
         unsigned int index; 
-        double offset; 
+        float offset; 
     }  _startValidCoordinateRange;
 }
 
@@ -34,16 +34,16 @@
 @property (nonatomic, readonly) unsigned int alertType;
 @property (nonatomic, readonly) GEOComposedRoute *alternateRoute;
 @property (nonatomic, readonly) double distanceToIncident;
-@property (nonatomic, readonly) struct { unsigned int x1; double x2; } endValidCoordinateRange;
+@property (nonatomic, readonly) struct { unsigned int x1; float x2; } endValidCoordinateRange;
 @property (nonatomic, retain) NSDate *eta;
-@property (nonatomic, readonly) struct { unsigned int x1; double x2; } incidentCoordinate;
+@property (nonatomic, readonly) struct { unsigned int x1; float x2; } incidentCoordinate;
 @property (nonatomic, readonly) BOOL isAutomaticReroute;
 @property (nonatomic, readonly) double newEstimatedTime;
 @property (nonatomic, readonly) GEOETARoute *oldETARoute;
 @property (nonatomic, readonly) double oldEstimatedTime;
 @property (nonatomic, readonly) GEOComposedRoute *originalRoute;
 @property (nonatomic, readonly) NSArray *spokenTexts;
-@property (nonatomic, readonly) struct { unsigned int x1; double x2; } startValidCoordinateRange;
+@property (nonatomic, readonly) struct { unsigned int x1; float x2; } startValidCoordinateRange;
 
 + (id)trafficIncidentAlertForDetails:(id)arg1;
 
@@ -51,7 +51,7 @@
 - (struct { double x1; double x2; })_divergenceCoordinate;
 - (id)_dynamicStringValues;
 - (void)_findRouteDivergence;
-- (struct { unsigned int x1; double x2; })_routeCoordinateAtDuration:(double)arg1 beforeRouteCoordinate:(struct { unsigned int x1; double x2; })arg2;
+- (struct { unsigned int x1; float x2; })_routeCoordinateAtDuration:(double)arg1 beforeRouteCoordinate:(struct { unsigned int x1; float x2; })arg2;
 - (id)alertDate;
 - (id)alertDescriptions;
 - (double)alertDisplayDuration;
@@ -60,13 +60,13 @@
 - (unsigned int)alertType;
 - (id)alternateRoute;
 - (double)distanceToIncident;
-- (struct { unsigned int x1; double x2; })endValidCoordinateRange;
+- (struct { unsigned int x1; float x2; })endValidCoordinateRange;
 - (id)eta;
-- (struct { unsigned int x1; double x2; })incidentCoordinate;
+- (struct { unsigned int x1; float x2; })incidentCoordinate;
 - (id)initWithRoute:(id)arg1 etaRoute:(id)arg2;
 - (id)initWithTrafficIncidentAlertDetails:(id)arg1;
 - (BOOL)isAutomaticReroute;
-- (BOOL)isCoordinateInValidRange:(struct { unsigned int x1; double x2; })arg1;
+- (BOOL)isCoordinateInValidRange:(struct { unsigned int x1; float x2; })arg1;
 - (BOOL)isSimilarTo:(id)arg1;
 - (double)newEstimatedTime;
 - (id)oldETARoute;
@@ -74,7 +74,7 @@
 - (id)originalRoute;
 - (void)setEta:(id)arg1;
 - (id)spokenTexts;
-- (struct { unsigned int x1; double x2; })startValidCoordinateRange;
+- (struct { unsigned int x1; float x2; })startValidCoordinateRange;
 - (void)updateAlertIDWithAlert:(id)arg1;
 - (void)updateLocation:(id)arg1;
 

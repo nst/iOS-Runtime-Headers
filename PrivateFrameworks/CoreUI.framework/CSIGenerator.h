@@ -7,31 +7,31 @@
     BOOL  _allowsOptimalPacking;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _alphaCroppedFrame;
     NSString * _assetPackIdentifier;
     NSMutableArray * _bitmaps;
     int  _blendMode;
     short  _colorSpaceID;
-    double  _compressionQuality;
+    float  _compressionQuality;
     int  _compressionType;
     CUIShapeEffectPreset * _effectPreset;
     int  _exifOrientation;
     NSArray * _explicitlyPackedContents;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _externalReferenceFrame;
     NSSet * _externalTags;
@@ -49,19 +49,19 @@
     NSMutableArray * _mipReferences;
     NSDate * _modtime;
     NSString * _name;
-    double  _opacity;
+    float  _opacity;
     BOOL  _optOutOfThinning;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _originalUncroppedSize;
     unsigned int  _pixelFormat;
     NSData * _rawData;
     unsigned long  _rowbytes;
     unsigned int  _scaleFactor;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _size;
     NSMutableArray * _slices;
     int  _templateRenderingMode;
@@ -73,10 +73,10 @@
 
 @property (nonatomic) BOOL allowsMultiPassEncoding;
 @property (nonatomic) BOOL allowsOptimalPacking;
-@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } alphaCroppedFrame;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } alphaCroppedFrame;
 @property (nonatomic) int blendMode;
 @property (nonatomic) short colorSpaceID;
-@property (nonatomic) double compressionQuality;
+@property (nonatomic) float compressionQuality;
 @property int compressionType;
 @property (nonatomic) BOOL cubemap;
 @property (nonatomic, retain) CUIShapeEffectPreset *effectPreset;
@@ -91,12 +91,12 @@
 @property (nonatomic, readonly) NSArray *mipReferences;
 @property (nonatomic, copy) NSDate *modtime;
 @property (nonatomic, copy) NSString *name;
-@property (nonatomic) double opacity;
+@property (nonatomic) float opacity;
 @property (nonatomic) BOOL optOutOfThinning;
-@property (nonatomic) struct CGSize { double x1; double x2; } originalUncroppedSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } originalUncroppedSize;
 @property (nonatomic) unsigned int pixelFormat;
 @property (nonatomic) unsigned int scaleFactor;
-@property (nonatomic) struct CGSize { double x1; double x2; } size;
+@property (nonatomic) struct CGSize { float x1; float x2; } size;
 @property (nonatomic) int templateRenderingMode;
 @property (nonatomic) int textureFormat;
 @property (nonatomic) int textureInterpretation;
@@ -108,16 +108,16 @@
 + (void)setFileEncoding:(int)arg1;
 
 - (id)CSIRepresentationWithCompression:(BOOL)arg1;
-- (void)_addNodes:(id)arg1 toNodeList:(struct _csigradientdatanode { unsigned int x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; }*)arg2;
+- (void)_addNodes:(id)arg1 toNodeList:(struct _csigradientdatanode { unsigned int x1; float x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; }*)arg2;
 - (void)_updateCompressionInfoFor:(id)arg1;
 - (void)addBitmap:(id)arg1;
 - (void)addLayerReference:(id)arg1;
-- (void)addMetrics:(struct { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; })arg1;
+- (void)addMetrics:(struct { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; })arg1;
 - (void)addMipReference:(id)arg1;
-- (void)addSliceRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)addSliceRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)allowsMultiPassEncoding;
 - (BOOL)allowsOptimalPacking;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })alphaCroppedFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })alphaCroppedFrame;
 - (int)blendMode;
 - (short)colorSpaceID;
 - (float)compressionQuality;
@@ -128,15 +128,15 @@
 - (int)exifOrientation;
 - (void)formatCSIHeader:(struct _csiheader { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8 : 4; unsigned int x9 : 28; struct _csimetadata { unsigned int x_10_1_1; unsigned short x_10_1_2; unsigned short x_10_1_3; BOOL x_10_1_4[128]; } x10; unsigned int x11; struct _csibitmaplist { unsigned int x_12_1_1; unsigned int x_12_1_2[0]; } x12; }*)arg1;
 - (id)gradient;
-- (id)initWithCanvasSize:(struct CGSize { double x1; double x2; })arg1 sliceCount:(unsigned int)arg2 layout:(short)arg3;
+- (id)initWithCanvasSize:(struct CGSize { float x1; float x2; })arg1 sliceCount:(unsigned int)arg2 layout:(short)arg3;
 - (id)initWithExplicitlyPackedList:(id)arg1;
 - (id)initWithExternalReference:(id)arg1 tags:(id)arg2;
-- (id)initWithInternalReferenceRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 layout:(short)arg2;
-- (id)initWithLayerStackData:(id)arg1 withCanvasSize:(struct CGSize { double x1; double x2; })arg2;
+- (id)initWithInternalReferenceRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 layout:(short)arg2;
+- (id)initWithLayerStackData:(id)arg1 withCanvasSize:(struct CGSize { float x1; float x2; })arg2;
 - (id)initWithRawData:(id)arg1 pixelFormat:(unsigned int)arg2 layout:(short)arg3;
 - (id)initWithShapeEffectPreset:(id)arg1 forScaleFactor:(unsigned int)arg2;
 - (id)initWithTextureForPixelFormat:(int)arg1;
-- (id)initWithTextureImageWithSize:(struct CGSize { double x1; double x2; })arg1 forPixelFormat:(int)arg2 cubeMap:(BOOL)arg3;
+- (id)initWithTextureImageWithSize:(struct CGSize { float x1; float x2; })arg1 forPixelFormat:(int)arg2 cubeMap:(BOOL)arg3;
 - (BOOL)isExcludedFromContrastFilter;
 - (BOOL)isFlippable;
 - (BOOL)isRenditionFPO;
@@ -148,12 +148,12 @@
 - (id)name;
 - (float)opacity;
 - (BOOL)optOutOfThinning;
-- (struct CGSize { double x1; double x2; })originalUncroppedSize;
+- (struct CGSize { float x1; float x2; })originalUncroppedSize;
 - (unsigned int)pixelFormat;
 - (unsigned int)scaleFactor;
 - (void)setAllowsMultiPassEncoding:(BOOL)arg1;
 - (void)setAllowsOptimalPacking:(BOOL)arg1;
-- (void)setAlphaCroppedFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setAlphaCroppedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setBlendMode:(int)arg1;
 - (void)setColorSpaceID:(short)arg1;
 - (void)setCompressionQuality:(float)arg1;
@@ -171,16 +171,16 @@
 - (void)setName:(id)arg1;
 - (void)setOpacity:(float)arg1;
 - (void)setOptOutOfThinning:(BOOL)arg1;
-- (void)setOriginalUncroppedSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setOriginalUncroppedSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setPixelFormat:(unsigned int)arg1;
 - (void)setScaleFactor:(unsigned int)arg1;
-- (void)setSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setTemplateRenderingMode:(int)arg1;
 - (void)setTextureFormat:(int)arg1;
 - (void)setTextureInterpretation:(int)arg1;
 - (void)setTextureOpaque:(BOOL)arg1;
 - (void)setUtiType:(id)arg1;
-- (struct CGSize { double x1; double x2; })size;
+- (struct CGSize { float x1; float x2; })size;
 - (int)templateRenderingMode;
 - (int)textureFormat;
 - (int)textureInterpretation;

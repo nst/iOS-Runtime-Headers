@@ -9,16 +9,16 @@
         unsigned int type : 1; 
         unsigned int wStepStyle : 1; 
     }  _has;
-    int  _type;
-    int  _wStepStyle;
+    long long  _type;
+    long long  _wStepStyle;
 }
 
 @property (nonatomic) double date;
 @property (nonatomic) BOOL hasDate;
 @property (nonatomic) BOOL hasType;
 @property (nonatomic) BOOL hasWStepStyle;
-@property (nonatomic) int type;
-@property (nonatomic) int wStepStyle;
+@property (nonatomic) long long type;
+@property (nonatomic) long long wStepStyle;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -37,10 +37,10 @@
 - (void)setHasDate:(BOOL)arg1;
 - (void)setHasType:(BOOL)arg1;
 - (void)setHasWStepStyle:(BOOL)arg1;
-- (void)setType:(int)arg1;
-- (void)setWStepStyle:(int)arg1;
-- (int)type;
-- (int)wStepStyle;
+- (void)setType:(long long)arg1;
+- (void)setWStepStyle:(long long)arg1;
+- (long long)type;
+- (long long)wStepStyle;
 - (void)writeTo:(id)arg1;
 
 @end

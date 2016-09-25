@@ -7,10 +7,10 @@
     UIView * _artworkEditingOverlayView;
     _UIBackdropView * _backdropView;
     UIView * _bottomHairlineView;
-    double  _cachedTallestButtonHeight;
+    float  _cachedTallestButtonHeight;
     UIButton * _contextualActionsButton;
     <MusicEntityProductHeaderLockupViewDelegate> * _delegate;
-    double  _downloadProgress;
+    float  _downloadProgress;
     MusicDownloadProgressButton * _downloadProgressButton;
     int  _downloadProgressType;
     MPUTextButton * _editButton;
@@ -35,7 +35,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <MusicEntityProductHeaderLockupViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) double downloadProgress;
+@property (nonatomic) float downloadProgress;
 @property (nonatomic, readonly) MusicDownloadProgressButton *downloadProgressButton;
 @property (nonatomic) int downloadProgressType;
 @property (nonatomic, readonly) NSString *editableText;
@@ -52,8 +52,8 @@
 
 - (void).cxx_destruct;
 - (void)_addSongsButtonTapped:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_adjustAvailableContentBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forActionControl:(id)arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_adjustAvailableContentBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forActionView:(id)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_adjustAvailableContentBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forActionControl:(id)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_adjustAvailableContentBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forActionView:(id)arg2;
 - (void)_artworkViewImageDidChange;
 - (void)_contentDescriptorDidChange:(id)arg1;
 - (void)_contextualActionsButtonTapped:(id)arg1;
@@ -62,7 +62,7 @@
 - (id)_genericActionButtonWithImage:(id)arg1;
 - (id)_genericActionButtonWithImageName:(id)arg1;
 - (id)_genericActionButtonWithText:(id)arg1;
-- (void)_layoutButtonsWithAvailableContentBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 insetContentBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (void)_layoutButtonsWithAvailableContentBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 insetContentBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)_layoutEditingSubviews;
 - (void)_layoutEditingSubviewsForEditing:(BOOL)arg1 editingViewsAlpha:(float)arg2;
 - (void)_layoutSubviewsForCompactHorizontalSizeClass;
@@ -71,8 +71,8 @@
 - (id)_newTextView;
 - (void)_refreshButtonTapped:(id)arg1;
 - (id)_refreshImage;
-- (void)_setFrameOfActionButton:(id)arg1 basedOnAvailableContentBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 customHeight:(float)arg3 maximumHeightForCentering:(float)arg4;
-- (void)_setFrameOfActionControl:(id)arg1 basedOnAvailableContentBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 maximumHeightForCentering:(float)arg3 buttonHeightForCentering:(float)arg4 buttonBaselineOffset:(float)arg5;
+- (void)_setFrameOfActionButton:(id)arg1 basedOnAvailableContentBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 customHeight:(float)arg3 maximumHeightForCentering:(float)arg4;
+- (void)_setFrameOfActionControl:(id)arg1 basedOnAvailableContentBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 maximumHeightForCentering:(float)arg3 buttonHeightForCentering:(float)arg4 buttonBaselineOffset:(float)arg5;
 - (void)_shareButtonTapped:(id)arg1;
 - (BOOL)_shouldEnableArtworkViewUserInteraction;
 - (BOOL)_shouldShowPlayButton;
@@ -89,7 +89,7 @@
 - (int)downloadProgressType;
 - (id)editableText;
 - (BOOL)editableTitleShouldBecomeFirstResponder;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isEditing;
 - (void)layoutSubviews;
 - (int)likeDislikeButtonState;

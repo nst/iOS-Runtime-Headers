@@ -22,7 +22,7 @@
 - (void)_initVignette;
 - (void)_invalidateTimer;
 - (void)_scheduleTimerIfNeeded;
-- (void)_updateConstraintsForImageSize:(struct CGSize { double x1; double x2; })arg1 position:(unsigned int)arg2;
+- (void)_updateConstraintsForImageSize:(struct CGSize { float x1; float x2; })arg1 position:(unsigned int)arg2;
 - (void)_updateImage;
 - (id)backgroundElements;
 - (void)dealloc;

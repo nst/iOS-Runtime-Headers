@@ -5,38 +5,38 @@
 @interface PTPWrappedBytes : NSObject {
     BOOL  _allocatedBytes;
     char * _bytes;
-    unsigned int  _capacity;
-    unsigned int  _excessDataLength;
+    unsigned long long  _capacity;
+    unsigned long long  _excessDataLength;
     int  _fd;
     int  _lastNotifiedProgress;
-    unsigned int  _offset;
+    unsigned long long  _offset;
     double  _progressNotificationTime;
     int (* _progressNotifier;
     void * _progressNotifierContext;
     BOOL  _useByteBuffer;
 }
 
-+ (id)wrappedBytesWithBytes:(void*)arg1 capacity64:(unsigned int)arg2;
-+ (id)wrappedBytesWithCapacity64:(unsigned int)arg1;
++ (id)wrappedBytesWithBytes:(void*)arg1 capacity64:(unsigned long long)arg2;
++ (id)wrappedBytesWithCapacity64:(unsigned long long)arg1;
 
-- (unsigned int)appendBytes:(const void*)arg1 length64:(unsigned int)arg2;
-- (unsigned int)appendData:(id)arg1;
+- (unsigned long long)appendBytes:(const void*)arg1 length64:(unsigned long long)arg2;
+- (unsigned long long)appendData:(id)arg1;
 - (const void*)bytes;
-- (unsigned int)capacity64;
+- (unsigned long long)capacity64;
 - (void)dealloc;
 - (id)description;
-- (unsigned int)excessDataLength;
+- (unsigned long long)excessDataLength;
 - (id)init;
-- (id)initWithBytes:(void*)arg1 capacity64:(unsigned int)arg2;
-- (id)initWithCapacity64:(unsigned int)arg1;
-- (id)initWithFileDescriptor:(int)arg1 capacity64:(unsigned int)arg2;
-- (unsigned int)length64;
+- (id)initWithBytes:(void*)arg1 capacity64:(unsigned long long)arg2;
+- (id)initWithCapacity64:(unsigned long long)arg1;
+- (id)initWithFileDescriptor:(int)arg1 capacity64:(unsigned long long)arg2;
+- (unsigned long long)length64;
 - (void*)mutableBytes;
-- (unsigned int)offset;
+- (unsigned long long)offset;
 - (double)percentFull;
-- (unsigned int)rewindBytesToPosition64:(unsigned int)arg1;
-- (unsigned int)setCapacity64:(unsigned int)arg1;
-- (void)setLength64:(unsigned int)arg1;
+- (unsigned long long)rewindBytesToPosition64:(unsigned long long)arg1;
+- (unsigned long long)setCapacity64:(unsigned long long)arg1;
+- (void)setLength64:(unsigned long long)arg1;
 - (void)setProgressNotifierCallback:(int (*)arg1 context:(void*)arg2;
 - (BOOL)wasInitWithFD;
 

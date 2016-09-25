@@ -13,7 +13,7 @@
     NSKeyedUnarchiver * _decoder;
     <NEConfigurationManagerDelegate> * _delegate;
     NSString * _description;
-    int  _generation;
+    long long  _generation;
     BOOL  _hasReadPermission;
     BOOL  _hasVPNAPIEntitlement;
     NEHelper * _helper;
@@ -36,7 +36,7 @@
 @property (retain) NSDictionary *currentIndex;
 @property (retain) NSKeyedUnarchiver *decoder;
 @property (retain) <NEConfigurationManagerDelegate> *delegate;
-@property int generation;
+@property long long generation;
 @property BOOL hasReadPermission;
 @property BOOL hasVPNAPIEntitlement;
 @property (readonly) NEHelper *helper;
@@ -55,7 +55,7 @@
 + (void)disableConfiguration:(id)arg1 onDemandOnly:(BOOL)arg2;
 + (id)sharedManager;
 + (id)sharedManagerForAllUsers;
-+ (void)updateFlags:(unsigned int*)arg1 withConfiguration:(id)arg2;
++ (void)updateFlags:(unsigned long long*)arg1 withConfiguration:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)SCPreferencesSignature;
@@ -81,7 +81,7 @@
 - (void)fetchClientListenerWithBundleID:(id)arg1 completionQueue:(id)arg2 handler:(id /* block */)arg3;
 - (void)fetchUpgradeInfoForPluginType:(id)arg1 completionQueue:(id)arg2 handler:(id /* block */)arg3;
 - (id)filterIndexWithFilter:(id)arg1;
-- (int)generation;
+- (long long)generation;
 - (void)getCurrentIndexWithCompletionHandler:(id /* block */)arg1;
 - (void)handleApplicationsRemoved:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)handleFileRemovedWithCompletionHandler:(id /* block */)arg1;
@@ -107,7 +107,7 @@
 - (void)notifyChanges;
 - (id)pluginType;
 - (void)postChangeNotification;
-- (void)postChangeNotificationWithGeneration:(int)arg1 andFlags:(unsigned int)arg2;
+- (void)postChangeNotificationWithGeneration:(long long)arg1 andFlags:(unsigned long long)arg2;
 - (void)postGeneration;
 - (id)queue;
 - (id)readIndexFromDiskWithError:(id*)arg1;
@@ -130,7 +130,7 @@
 - (void)setCurrentIndex:(id)arg1;
 - (void)setDecoder:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setGeneration:(int)arg1;
+- (void)setGeneration:(long long)arg1;
 - (void)setHasReadPermission:(BOOL)arg1;
 - (void)setHasVPNAPIEntitlement:(BOOL)arg1;
 - (void)setIncomingMessageHandler:(id /* block */)arg1;

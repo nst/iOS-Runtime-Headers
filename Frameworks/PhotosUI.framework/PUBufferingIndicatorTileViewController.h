@@ -22,7 +22,7 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
-+ (struct CGSize { double x1; double x2; })bufferingIndicatorTileSize;
++ (struct CGSize { float x1; float x2; })bufferingIndicatorTileSize;
 + (BOOL)canShowBufferingIndicatorTileForAsset:(id)arg1;
 
 - (void).cxx_destruct;

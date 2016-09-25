@@ -32,8 +32,8 @@
     int  _provisionalHoldStatus;
     NSObject<OS_dispatch_queue> * _queue;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _remoteScreenAspectRatio;
     BOOL  _ringtoneSuppressedRemotely;
     BOOL  _shouldSuppressRingtone;
@@ -119,12 +119,12 @@
 @property (nonatomic) int provisionalHoldStatus;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 @property (nonatomic, readonly) NSString *reminderString;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } remoteAspectRatio;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } remoteAspectRatio;
 @property (nonatomic, readonly) int remoteCameraOrientation;
 @property (nonatomic, readonly, retain) NSData *remoteFrequency;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } remoteScreenAspectRatio;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } remoteScreenAspectRatio;
 @property (nonatomic, readonly) int remoteScreenOrientation;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } remoteVideoContentRect;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } remoteVideoContentRect;
 @property (nonatomic) BOOL ringtoneSuppressedRemotely;
 @property (nonatomic, readonly) int service;
 @property (nonatomic, readonly) BOOL shouldDisplayLocationIfAvailable;
@@ -257,7 +257,7 @@
 - (BOOL)isVoicemail;
 - (BOOL)isWiFiCall;
 - (id)isoCountryCode;
-- (struct CGSize { double x1; double x2; })localAspectRatioForOrientation:(int)arg1;
+- (struct CGSize { float x1; float x2; })localAspectRatioForOrientation:(int)arg1;
 - (id)localFrequency;
 - (id)localizedLabel;
 - (id)model;
@@ -269,12 +269,12 @@
 - (int)provisionalHoldStatus;
 - (id)queue;
 - (id)reminderString;
-- (struct CGSize { double x1; double x2; })remoteAspectRatio;
+- (struct CGSize { float x1; float x2; })remoteAspectRatio;
 - (int)remoteCameraOrientation;
 - (id)remoteFrequency;
-- (struct CGSize { double x1; double x2; })remoteScreenAspectRatio;
+- (struct CGSize { float x1; float x2; })remoteScreenAspectRatio;
 - (int)remoteScreenOrientation;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })remoteVideoContentRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })remoteVideoContentRect;
 - (void)resetProvisionalState;
 - (void)resetWantsHoldMusic;
 - (BOOL)ringtoneSuppressedRemotely;
@@ -308,7 +308,7 @@
 - (void)setProvisionalHoldStatus:(int)arg1;
 - (void)setQueue:(id)arg1;
 - (void)setRemoteVideoLayer:(id)arg1 forMode:(int)arg2;
-- (void)setRemoteVideoPresentationSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setRemoteVideoPresentationSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setRemoteVideoPresentationState:(int)arg1;
 - (void)setRingtoneSuppressedRemotely:(BOOL)arg1;
 - (void)setShouldSuppressRingtone:(BOOL)arg1;

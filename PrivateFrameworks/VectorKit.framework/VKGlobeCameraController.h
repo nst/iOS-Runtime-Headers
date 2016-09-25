@@ -100,12 +100,12 @@
     double  _lastRotation;
     double  _maxZoomLevel;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _panLastScreenPoint;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _panStartScreenPoint;
     BOOL  _wasPitched;
 }
@@ -155,14 +155,14 @@
 - (void)moveTo:(struct { double x1; double x2; })arg1 height:(double)arg2 useHeight:(BOOL)arg3 zoom:(double)arg4 rotation:(double)arg5 tilt:(double)arg6 duration:(double)arg7 timingCurve:(id /* block */)arg8 completion:(id /* block */)arg9;
 - (void)moveTo:(struct { double x1; double x2; })arg1 zoom:(double)arg2 rotation:(double)arg3 tilt:(double)arg4 duration:(double)arg5 timingCurve:(id /* block */)arg6 completion:(id /* block */)arg7;
 - (void)moveToZoomOutZoomInTransition:(struct { double x1; double x2; })arg1 height:(double)arg2 useHeight:(BOOL)arg3 zoom:(double)arg4 rotation:(double)arg5 tilt:(double)arg6 duration:(double)arg7 timingCurve:(id /* block */)arg8 completion:(id /* block */)arg9;
-- (void)panWithOffset:(struct CGPoint { double x1; double x2; })arg1 relativeToScreenPoint:(struct CGPoint { double x1; double x2; })arg2 animated:(BOOL)arg3 duration:(double)arg4 completionHandler:(id /* block */)arg5;
+- (void)panWithOffset:(struct CGPoint { float x1; float x2; })arg1 relativeToScreenPoint:(struct CGPoint { float x1; float x2; })arg2 animated:(BOOL)arg3 duration:(double)arg4 completionHandler:(id /* block */)arg5;
 - (void)pauseFlyoverTourAnimation;
 - (double)pitch;
-- (void)pitch:(struct CGPoint { double x1; double x2; })arg1 translation:(double)arg2;
+- (void)pitch:(struct CGPoint { float x1; float x2; })arg1 translation:(double)arg2;
 - (double)presentationYaw;
 - (BOOL)restoreViewportFromInfo:(id)arg1;
 - (void)resumeFlyoverTourAnimation;
-- (void)rotate:(double)arg1 atScreenPoint:(struct CGPoint { double x1; double x2; })arg2;
+- (void)rotate:(double)arg1 atScreenPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (void)rotateTo:(double)arg1 animated:(BOOL)arg2;
 - (void)setCenterCoordinate3D:(struct { double x1; double x2; double x3; })arg1 altitude:(double)arg2 yaw:(double)arg3 pitch:(double)arg4 duration:(double)arg5 animationStyle:(int)arg6 timingCurve:(id /* block */)arg7 completion:(id /* block */)arg8;
 - (void)setCenterCoordinate:(struct { double x1; double x2; })arg1 altitude:(double)arg2 yaw:(double)arg3 pitch:(double)arg4 duration:(double)arg5 animationStyle:(int)arg6 timingCurve:(id /* block */)arg7 completion:(id /* block */)arg8;
@@ -175,25 +175,25 @@
 - (void)setYaw:(double)arg1 animated:(BOOL)arg2;
 - (float)slowDownFactorFromLoadProgress;
 - (BOOL)snapMapIfNecessary:(BOOL)arg1;
-- (void)startPinchingWithFocusPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)startPinchingWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)startTrackingAnnotation:(id)arg1 trackHeading:(BOOL)arg2 animated:(BOOL)arg3;
 - (void)stopFlyoverTourAnimation;
 - (void)stopGlobeAnimations;
-- (void)stopPinchingWithFocusPoint:(struct CGPoint { double x1; double x2; })arg1;
-- (void)tapZoom:(struct CGPoint { double x1; double x2; })arg1 levels:(double)arg2 completionHandler:(id /* block */)arg3;
+- (void)stopPinchingWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)tapZoom:(struct CGPoint { float x1; float x2; })arg1 levels:(double)arg2 completionHandler:(id /* block */)arg3;
 - (int)tileSize;
 - (void)tiltTo:(double)arg1 animated:(BOOL)arg2 exaggerate:(BOOL)arg3;
 - (double)topDownMinimumZoomLevel;
 - (void)transitionToFlyoverMode:(int)arg1 animated:(BOOL)arg2;
 - (void)updateCameraManager;
 - (void)updateFlyoverMode;
-- (void)updatePinchWithFocusPoint:(struct CGPoint { double x1; double x2; })arg1 oldFactor:(double)arg2 newFactor:(double)arg3;
+- (void)updatePinchWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1 oldFactor:(double)arg2 newFactor:(double)arg3;
 - (void)updateState;
 - (id)viewportInfo;
 - (double)widestLatitudeForMapRegion:(id)arg1;
-- (void)zoom:(double)arg1 withFocusPoint:(struct CGPoint { double x1; double x2; })arg2 completionHandler:(id /* block */)arg3;
+- (void)zoom:(double)arg1 withFocusPoint:(struct CGPoint { float x1; float x2; })arg2 completionHandler:(id /* block */)arg3;
 - (double)zoomForMapRegion:(id)arg1;
-- (void)zoomToDistance:(struct CGPoint { double x1; double x2; })arg1 distance:(double)arg2 time:(double)arg3;
-- (void)zoomToDistance:(struct CGPoint { double x1; double x2; })arg1 distance:(double)arg2 time:(double)arg3 completionHandler:(id /* block */)arg4;
+- (void)zoomToDistance:(struct CGPoint { float x1; float x2; })arg1 distance:(double)arg2 time:(double)arg3;
+- (void)zoomToDistance:(struct CGPoint { float x1; float x2; })arg1 distance:(double)arg2 time:(double)arg3 completionHandler:(id /* block */)arg4;
 
 @end

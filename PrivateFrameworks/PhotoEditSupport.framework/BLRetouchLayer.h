@@ -12,7 +12,7 @@
 @property (nonatomic) int brushType;
 @property (nonatomic) BOOL enabled;
 @property (nonatomic, readonly) BOOL hasLayerMask;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } imageSize;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } imageSize;
 @property (nonatomic) BLRetouchLayer *layerBelow;
 @property (nonatomic) NSData *layerData;
 @property (nonatomic) BLBaseLayerStack *layerStack;
@@ -23,13 +23,13 @@
 - (int)brushType;
 - (BOOL)enabled;
 - (BOOL)hasLayerMask;
-- (struct CGSize { double x1; double x2; })imageSize;
+- (struct CGSize { float x1; float x2; })imageSize;
 - (id)init;
 - (id)layerBelow;
 - (id)layerData;
 - (id)layerStack;
-- (struct CGContext { }*)newContextForRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inDestRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 andScale:(float)arg3;
-- (struct CGImage { }*)newImageForRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inDestRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 andScale:(float)arg3;
+- (struct CGContext { }*)newContextForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inDestRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 andScale:(float)arg3;
+- (struct CGImage { }*)newImageForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inDestRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 andScale:(float)arg3;
 - (void)setBrushType:(int)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setLayerBelow:(id)arg1;

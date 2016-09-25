@@ -4,7 +4,7 @@
 
 @interface NSBundleResourceRequest : NSObject <NSProgressReporting> {
     NSBundle * _bundle;
-    int  _fetchState;
+    long long  _fetchState;
     double  _priority;
     NSProgress * _progress;
     NSSet * _tags;

@@ -3,7 +3,7 @@
  */
 
 @interface GKRTree : NSObject {
-    struct GKCRTree<NSObject, double __attribute__((ext_vector_type(2)))>={GKCRTreeNode<NSObject, double __attribute__((ext_vector_type(2)))>=I{vector<GKCRTreeNode<NSObject, double __attribute__((ext_vector_type(2)))>, std::__1::allocator<GKCRTreeNode<NSObject, double __attribute__((ext_vector_type(2)))> > >=^{GKCRTreeNode<NSObject, double __attribute__((ext_vector_type(2)))> {} * _cRTree;
+    struct GKCRTree<NSObject, float __attribute__((ext_vector_type(2)))>={GKCRTreeNode<NSObject, float __attribute__((ext_vector_type(2)))>=I{vector<GKCRTreeNode<NSObject, float __attribute__((ext_vector_type(2)))>, std::__1::allocator<GKCRTreeNode<NSObject, float __attribute__((ext_vector_type(2)))> > >=^{GKCRTreeNode<NSObject, float __attribute__((ext_vector_type(2)))> {} * _cRTree;
     unsigned int  _queryReserve;
 }
 

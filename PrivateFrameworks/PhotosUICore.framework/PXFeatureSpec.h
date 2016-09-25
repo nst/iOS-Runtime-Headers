@@ -3,12 +3,12 @@
  */
 
 @interface PXFeatureSpec : NSObject {
-    double  __displayScale;
+    float  __displayScale;
     PXExtendedTraitCollection * __extendedTraitCollection;
     PXLayoutMetricInterpolator * __horizontalContentGuideInsetsInterpolator;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  __layoutReferenceSize;
     BOOL  __shouldUseMiniMargins;
     NSCache * __viewSpecCache;
@@ -20,17 +20,17 @@
     int  _userInterfaceIdiom;
 }
 
-@property (nonatomic, readonly) double _displayScale;
+@property (nonatomic, readonly) float _displayScale;
 @property (nonatomic, readonly) PXExtendedTraitCollection *_extendedTraitCollection;
 @property (nonatomic, readonly) PXLayoutMetricInterpolator *_horizontalContentGuideInsetsInterpolator;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } _layoutReferenceSize;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } _layoutReferenceSize;
 @property (nonatomic, readonly) BOOL _shouldUseMiniMargins;
 @property (nonatomic, readonly) NSCache *_viewSpecCache;
-@property (nonatomic, readonly) double collectionTileImageCornerRadius;
+@property (nonatomic, readonly) float collectionTileImageCornerRadius;
 @property (nonatomic, readonly) NSArray *collectionTileImageOverlaySpecs;
 @property (nonatomic, readonly) NSArray *collectionTileImageOverlaySpecsHighlighted;
 @property (nonatomic, readonly) UIColor *defaultBackgroundColor;
-@property (nonatomic, readonly) double defaultCornerRadius;
+@property (nonatomic, readonly) float defaultCornerRadius;
 @property (nonatomic, readonly) UIColor *defaultPlaceholderColor;
 @property (nonatomic, readonly) int localizedLeadingTextAlignment;
 @property (nonatomic, readonly) BOOL shouldInsetAllPhotoDetailsContent;
@@ -43,7 +43,7 @@
 - (float)_displayScale;
 - (id)_extendedTraitCollection;
 - (id)_horizontalContentGuideInsetsInterpolator;
-- (struct CGSize { double x1; double x2; })_layoutReferenceSize;
+- (struct CGSize { float x1; float x2; })_layoutReferenceSize;
 - (BOOL)_shouldUseMiniMargins;
 - (id)_textAttributesForFontName:(id)arg1 fontSize:(float)arg2 lineHeight:(float)arg3 tracking:(float)arg4 stroke:(float)arg5;
 - (id)_viewSpecCache;
@@ -53,8 +53,8 @@
 - (id)collectionTileImageOverlaySpecs;
 - (id)collectionTileImageOverlaySpecsHighlighted;
 - (void)configureViewSpec:(id)arg1;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentGuideInsetsForScrollDirection:(int)arg1;
-- (id)createViewSpecWithDescriptor:(struct PXViewSpecDescriptor { int x1; unsigned int x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; })arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentGuideInsetsForScrollDirection:(int)arg1;
+- (id)createViewSpecWithDescriptor:(struct PXViewSpecDescriptor { int x1; unsigned int x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; })arg1;
 - (struct UIColor { Class x1; }*)defaultBackgroundColor;
 - (float)defaultCornerRadius;
 - (struct UIColor { Class x1; }*)defaultPlaceholderColor;
@@ -66,6 +66,6 @@
 - (int)sizeClass;
 - (int)userInterfaceFeature;
 - (int)userInterfaceIdiom;
-- (id)viewSpecWithDescriptor:(struct PXViewSpecDescriptor { int x1; unsigned int x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; })arg1;
+- (id)viewSpecWithDescriptor:(struct PXViewSpecDescriptor { int x1; unsigned int x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; })arg1;
 
 @end

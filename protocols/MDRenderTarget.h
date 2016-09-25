@@ -10,8 +10,8 @@
 - (const struct RenderTargetFormat { int x1[4]; unsigned int x2; unsigned int x3; int x4; }*)format;
 - (BOOL)multiSample;
 - (BOOL)shouldRasterize;
-- (struct CGSize { double x1; double x2; })size;
-- (struct CGSize { double x1; double x2; })sizeInPixels;
+- (struct CGSize { float x1; float x2; })size;
+- (struct CGSize { float x1; float x2; })sizeInPixels;
 
 @optional
 

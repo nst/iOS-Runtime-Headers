@@ -7,7 +7,7 @@
     PXPhotosDetailsBarSpec * _barSpec;
     PXWidgetCompositionSpec * _compositionSpec;
     unsigned int  _detailsOptions;
-    double  _dimmingAlpha;
+    float  _dimmingAlpha;
     struct UIColor { Class x1; } * _dimmingColor;
     PXWidgetSpec * _widgetSpec;
 }
@@ -16,7 +16,7 @@
 @property (nonatomic, readonly) PXPhotosDetailsBarSpec *barSpec;
 @property (nonatomic, readonly) PXWidgetCompositionSpec *compositionSpec;
 @property (nonatomic, readonly) unsigned int detailsOptions;
-@property (nonatomic, readonly) double dimmingAlpha;
+@property (nonatomic, readonly) float dimmingAlpha;
 @property (nonatomic, readonly) UIColor *dimmingColor;
 @property (nonatomic, readonly) BOOL enableActionsWidget;
 @property (nonatomic, readonly) BOOL shouldInitializeBarsController;

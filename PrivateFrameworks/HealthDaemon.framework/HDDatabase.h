@@ -105,7 +105,7 @@
 - (id)_databaseForOptions:(unsigned int)arg1 outerDatabase:(id)arg2 error:(id*)arg3;
 - (id)_databaseNameForProtectedDatabase:(BOOL)arg1;
 - (void)_enableIncrementalAutoVacuumForDatabaseAtURL:(id)arg1;
-- (int)_fileSizeForURL:(id)arg1 error:(id*)arg2;
+- (long long)_fileSizeForURL:(id)arg1 error:(id*)arg2;
 - (struct shared_ptr<health::DataStore> { struct DataStore {} *x1; struct __shared_weak_count {} *x2; })_highFrequencyDataStoreWithError:(id*)arg1;
 - (id)_highPriorityReaderDatabaseWithError:(id*)arg1;
 - (void)_invalidateAndWaitWithHandler:(id /* block */)arg1;

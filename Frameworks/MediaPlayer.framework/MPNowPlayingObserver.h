@@ -24,7 +24,7 @@
 
 - (void).cxx_destruct;
 - (int)_MPNowPlayingDownloadStateForDownload:(id)arg1;
-- (id)_activeDownloadForItemWithStoreID:(int)arg1;
+- (id)_activeDownloadForItemWithStoreID:(long long)arg1;
 - (id)_additionalKeysForNowPlayingItem:(id)arg1;
 - (void)_avItemArtworkDidChangeNotification:(id)arg1;
 - (void)_avItemDurationDidChangeNotification:(id)arg1;

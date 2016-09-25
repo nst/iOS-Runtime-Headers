@@ -3,14 +3,14 @@
  */
 
 @interface MTLSamplerDescriptorInternal : MTLSamplerDescriptor {
-    /* Warning: unhandled struct encoding: '{MTLSamplerDescriptorPrivate=(?={?=b2b2b2b3b3b3b1b1b3}I)(?=If)(?=If)(?=If)I@}' */ struct MTLSamplerDescriptorPrivate { union { struct { unsigned int x_1_2_1 : 2; unsigned int x_1_2_2 : 2; unsigned int x_1_2_3 : 2; unsigned int x_1_2_4 : 3; unsigned int x_1_2_5 : 3; unsigned int x_1_2_6 : 3; unsigned int x_1_2_7 : 1; unsigned int x_1_2_8 : 1; unsigned int x_1_2_9 : 3; } x_1_1_1; unsigned int x_1_1_2; } x1; union { unsigned int x_2_1_1; double x_2_1_2; } x2; union { unsigned int x_3_1_1; double x_3_1_2; } x3; union { unsigned int x_4_1_1; double x_4_1_2; } x4; unsigned int x5; id x6; } * _private;
+    /* Warning: unhandled struct encoding: '{MTLSamplerDescriptorPrivate=(?={?=b2b2b2b3b3b3b1b1b3}I)(?=If)(?=If)(?=If)I@}' */ struct MTLSamplerDescriptorPrivate { union { struct { unsigned int x_1_2_1 : 2; unsigned int x_1_2_2 : 2; unsigned int x_1_2_3 : 2; unsigned int x_1_2_4 : 3; unsigned int x_1_2_5 : 3; unsigned int x_1_2_6 : 3; unsigned int x_1_2_7 : 1; unsigned int x_1_2_8 : 1; unsigned int x_1_2_9 : 3; } x_1_1_1; unsigned int x_1_1_2; } x1; union { unsigned int x_2_1_1; float x_2_1_2; } x2; union { unsigned int x_3_1_1; float x_3_1_2; } x3; union { unsigned int x_4_1_1; float x_4_1_2; } x4; unsigned int x5; id x6; } * _private;
 }
 
 - (unsigned int)compareFunction;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (const /* Warning: unhandled struct encoding: '{MTLSamplerDescriptorPrivate=(?={?=b2b2b2b3b3b3b1b1b3}I)(?=If)(?=If)(?=If)I@}' */ struct MTLSamplerDescriptorPrivate { union { struct { unsigned int x_1_2_1 : 2; unsigned int x_1_2_2 : 2; unsigned int x_1_2_3 : 2; unsigned int x_1_2_4 : 3; unsigned int x_1_2_5 : 3; unsigned int x_1_2_6 : 3; unsigned int x_1_2_7 : 1; unsigned int x_1_2_8 : 1; unsigned int x_1_2_9 : 3; } x_1_1_1; unsigned int x_1_1_2; } x1; union { unsigned int x_2_1_1; double x_2_1_2; } x2; union { unsigned int x_3_1_1; double x_3_1_2; } x3; union { unsigned int x_4_1_1; double x_4_1_2; } x4; unsigned int x5; id x6; }*)descriptorPrivate;
+- (const /* Warning: unhandled struct encoding: '{MTLSamplerDescriptorPrivate=(?={?=b2b2b2b3b3b3b1b1b3}I)(?=If)(?=If)(?=If)I@}' */ struct MTLSamplerDescriptorPrivate { union { struct { unsigned int x_1_2_1 : 2; unsigned int x_1_2_2 : 2; unsigned int x_1_2_3 : 2; unsigned int x_1_2_4 : 3; unsigned int x_1_2_5 : 3; unsigned int x_1_2_6 : 3; unsigned int x_1_2_7 : 1; unsigned int x_1_2_8 : 1; unsigned int x_1_2_9 : 3; } x_1_1_1; unsigned int x_1_1_2; } x1; union { unsigned int x_2_1_1; float x_2_1_2; } x2; union { unsigned int x_3_1_1; float x_3_1_2; } x3; union { unsigned int x_4_1_1; float x_4_1_2; } x4; unsigned int x5; id x6; }*)descriptorPrivate;
 - (unsigned int)hash;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;

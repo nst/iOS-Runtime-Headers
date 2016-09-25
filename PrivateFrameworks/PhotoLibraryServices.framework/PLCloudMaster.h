@@ -36,6 +36,6 @@
 - (id)cplResourceForResourceType:(unsigned int)arg1 forAssetUuid:(id)arg2;
 - (void)deleteAllResourcesForAssetUuid:(id)arg1;
 - (id)description;
-- (unsigned int)sizeOfOriginal;
+- (unsigned long long)sizeOfOriginal;
 
 @end

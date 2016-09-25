@@ -3,7 +3,7 @@
  */
 
 @interface AWDHomeKitCameraStream : PBCodable <NSCopying> {
-    unsigned int  _duration;
+    unsigned long long  _duration;
     unsigned int  _errorCode;
     struct { 
         unsigned int duration : 1; 
@@ -19,11 +19,11 @@
     NSMutableArray * _resolutionCounts;
     int  _resolutionOnClose;
     NSString * _sessionID;
-    unsigned int  _startupDelay;
-    unsigned int  _timestamp;
+    unsigned long long  _startupDelay;
+    unsigned long long  _timestamp;
 }
 
-@property (nonatomic) unsigned int duration;
+@property (nonatomic) unsigned long long duration;
 @property (nonatomic) unsigned int errorCode;
 @property (nonatomic) BOOL hasDuration;
 @property (nonatomic) BOOL hasErrorCode;
@@ -38,8 +38,8 @@
 @property (nonatomic, retain) NSMutableArray *resolutionCounts;
 @property (nonatomic) int resolutionOnClose;
 @property (nonatomic, retain) NSString *sessionID;
-@property (nonatomic) unsigned int startupDelay;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long startupDelay;
+@property (nonatomic) unsigned long long timestamp;
 
 + (Class)resolutionCountType;
 
@@ -51,7 +51,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)duration;
+- (unsigned long long)duration;
 - (unsigned int)errorCode;
 - (BOOL)hasDuration;
 - (BOOL)hasErrorCode;
@@ -73,7 +73,7 @@
 - (int)resolutionOnClose;
 - (id)resolutionOnCloseAsString:(int)arg1;
 - (id)sessionID;
-- (void)setDuration:(unsigned int)arg1;
+- (void)setDuration:(unsigned long long)arg1;
 - (void)setErrorCode:(unsigned int)arg1;
 - (void)setHasDuration:(BOOL)arg1;
 - (void)setHasErrorCode:(BOOL)arg1;
@@ -87,10 +87,10 @@
 - (void)setResolutionCounts:(id)arg1;
 - (void)setResolutionOnClose:(int)arg1;
 - (void)setSessionID:(id)arg1;
-- (void)setStartupDelay:(unsigned int)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
-- (unsigned int)startupDelay;
-- (unsigned int)timestamp;
+- (void)setStartupDelay:(unsigned long long)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
+- (unsigned long long)startupDelay;
+- (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 
 @end

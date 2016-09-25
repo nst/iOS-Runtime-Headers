@@ -3,20 +3,20 @@
  */
 
 @interface IMParticipantChangeItem : IMItem <IMRemoteObjectCoding, NSCoding, NSCopying> {
-    int  _changeType;
+    long long  _changeType;
     NSString * _otherCountryCode;
     NSString * _otherHandle;
     NSString * _otherUnformattedID;
 }
 
-@property (nonatomic) int changeType;
+@property (nonatomic) long long changeType;
 @property (nonatomic, retain) NSString *otherCountryCode;
 @property (nonatomic, retain) NSString *otherHandle;
 @property (nonatomic, retain) NSString *otherUnformattedID;
 
 // Image: /System/Library/PrivateFrameworks/IMSharedUtilities.framework/IMSharedUtilities
 
-- (int)changeType;
+- (long long)changeType;
 - (id)copyDictionaryRepresentation;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -26,7 +26,7 @@
 - (id)otherCountryCode;
 - (id)otherHandle;
 - (id)otherUnformattedID;
-- (void)setChangeType:(int)arg1;
+- (void)setChangeType:(long long)arg1;
 - (void)setOtherCountryCode:(id)arg1;
 - (void)setOtherHandle:(id)arg1;
 - (void)setOtherUnformattedID:(id)arg1;

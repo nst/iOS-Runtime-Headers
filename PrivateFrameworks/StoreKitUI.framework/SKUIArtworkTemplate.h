@@ -27,13 +27,13 @@
 - (id)_artworkURLWithWidth:(int)arg1;
 - (id)_artworkWithWidth:(int)arg1;
 - (id)_lookupDictionary;
-- (struct CGSize { double x1; double x2; })_sizeForWidth:(int)arg1;
-- (id)_urlStringWithTargetSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })_sizeForWidth:(int)arg1;
+- (id)_urlStringWithTargetSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)artworkForSize:(int)arg1;
 - (id)artworkURLForSize:(int)arg1;
 - (id)artworkWithWidth:(int)arg1;
-- (id)bestArtworkForScaledSize:(struct CGSize { double x1; double x2; })arg1;
-- (id)bestArtworkForSize:(struct CGSize { double x1; double x2; })arg1;
+- (id)bestArtworkForScaledSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)bestArtworkForSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)cacheRepresentation;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -44,7 +44,7 @@
 - (id)initWithTemplateDictionary:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)largestArtwork;
-- (id)preferredExactArtworkForSize:(struct CGSize { double x1; double x2; })arg1;
+- (id)preferredExactArtworkForSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)servedArtworks;
 - (id)smallestArtwork;
 - (id)urlTemplateString;

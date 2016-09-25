@@ -5,12 +5,12 @@
 @interface NTKCircularSmallSimpleComplicationView : NTKCircularComplicationView {
     UIView<NTKComplicationImageView> * _imageView;
     NTKColoringLabel * _label;
-    double  _maxDynamicFontSize;
+    float  _maxDynamicFontSize;
 }
 
 @property (nonatomic, retain) UIView<NTKComplicationImageView> *imageView;
 @property (nonatomic, retain) NTKColoringLabel *label;
-@property (nonatomic) double maxDynamicFontSize;
+@property (nonatomic) float maxDynamicFontSize;
 
 + (float)_imageScaleForTemplate:(id)arg1;
 + (BOOL)handlesComplicationTemplate:(id)arg1;
@@ -25,7 +25,7 @@
 - (void)_updateLabelWithTextProvider:(id)arg1;
 - (void)_updateLabelsForFontChange;
 - (id)imageView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)label;
 - (void)layoutSubviews;
 - (float)maxDynamicFontSize;

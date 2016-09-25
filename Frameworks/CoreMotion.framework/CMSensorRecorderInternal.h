@@ -8,15 +8,15 @@
     NSObject<OS_dispatch_source> * fWatchdogTimer;
 }
 
-- (id)_newAccelMetaUsingMessage:(const char *)arg1 withIdentifier:(unsigned int)arg2;
+- (id)_newAccelMetaUsingMessage:(const char *)arg1 withIdentifier:(unsigned long long)arg2;
 - (void)_startWatchdogCheckins;
 - (void)_stopWatchdogCheckins;
 - (void)dealloc;
 - (id)init;
-- (id)newAccelDataByID:(unsigned int)arg1 metaID:(unsigned int)arg2;
-- (id)newAccelMetaByID:(unsigned int)arg1;
+- (id)newAccelDataByID:(unsigned long long)arg1 metaID:(unsigned long long)arg2;
+- (id)newAccelMetaByID:(unsigned long long)arg1;
 - (id)newAccelMetaFrom:(double)arg1 to:(double)arg2;
-- (id)newAccelMetaSinceID:(unsigned int)arg1;
+- (id)newAccelMetaSinceID:(unsigned long long)arg1;
 - (void)teardown;
 
 @end

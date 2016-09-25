@@ -11,11 +11,11 @@
 @property (nonatomic, readonly) struct CGImage { }*flattenedImage;
 @property (nonatomic, retain) NSArray *layers;
 @property (nonatomic, readonly) struct CGImage { }*radiosityImage;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } size;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;
 
 // Image: /System/Library/PrivateFrameworks/CoreUI.framework/CoreUI
 
-+ (struct vImage_Buffer { void *x1; unsigned int x2; unsigned int x3; unsigned int x4; })_doRadiosityBlurOnPixelBuffer:(void*)arg1 bytesPerRow:(unsigned long)arg2 bitsPerPixel:(unsigned long)arg3 width:(unsigned long)arg4 height:(unsigned long)arg5 scaleFactor:(unsigned long)arg6 usesGaussianBlur:(BOOL*)arg7 adjustedSize:(struct CGSize { double x1; double x2; }*)arg8;
++ (struct vImage_Buffer { void *x1; unsigned int x2; unsigned int x3; unsigned int x4; })_doRadiosityBlurOnPixelBuffer:(void*)arg1 bytesPerRow:(unsigned long)arg2 bitsPerPixel:(unsigned long)arg3 width:(unsigned long)arg4 height:(unsigned long)arg5 scaleFactor:(unsigned long)arg6 usesGaussianBlur:(BOOL*)arg7 adjustedSize:(struct CGSize { float x1; float x2; }*)arg8;
 + (struct CGImage { }*)createRadiosityImageWithImage:(struct CGImage { }*)arg1 displayScale:(int)arg2;
 + (void)radiosityImageWithImage:(struct CGImage { }*)arg1 displayScale:(int)arg2 completionHandler:(id /* block */)arg3;
 
@@ -26,7 +26,7 @@
 - (id)layers;
 - (struct CGImage { }*)radiosityImage;
 - (void)setLayers:(id)arg1;
-- (struct CGSize { double x1; double x2; })size;
+- (struct CGSize { float x1; float x2; })size;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 

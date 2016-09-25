@@ -35,16 +35,16 @@
 - (id)_appendedVideoURL:(id)arg1;
 - (id)_assetForIndexPath:(id)arg1 collectionView:(id)arg2;
 - (id)_imageRequestOptions;
-- (void)_loadIrisPlayerItem:(id)arg1 targetSize:(struct CGSize { double x1; double x2; })arg2 cell:(id)arg3;
+- (void)_loadIrisPlayerItem:(id)arg1 targetSize:(struct CGSize { float x1; float x2; })arg2 cell:(id)arg3;
 - (void)_populatePreviewForSendingItem:(id)arg1 withAsset:(id)arg2;
-- (struct CGSize { double x1; double x2; })_targetSizeForAsset:(id)arg1;
+- (struct CGSize { float x1; float x2; })_targetSizeForAsset:(id)arg1;
 - (id)assets;
 - (id)assetsToSend;
 - (id)collectionView;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didDeselectItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
-- (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
+- (struct CGSize { float x1; float x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
 - (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
 - (id)collectionViewLayout;
@@ -57,7 +57,7 @@
 - (BOOL)isZoomed;
 - (void)item:(id)arg1 encounteredError:(id)arg2 forAsset:(id)arg3;
 - (void)item:(id)arg1 requiresCloudDownloadForAsset:(id)arg2;
-- (void)layout:(id)arg1 collectionView:(id)arg2 didUpdateVisibleFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 indexPath:(id)arg4;
+- (void)layout:(id)arg1 collectionView:(id)arg2 didUpdateVisibleFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 indexPath:(id)arg4;
 - (void)loadView;
 - (int)maxAssetsToDisplay;
 - (int)numberOfSectionsInCollectionView:(id)arg1;
@@ -76,6 +76,6 @@
 - (void)setZoomed:(BOOL)arg1;
 - (void)updatePreferredContentSize;
 - (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

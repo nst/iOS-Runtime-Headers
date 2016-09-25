@@ -11,7 +11,7 @@
     NSMutableArray * _dependentLocalitys;
     NSString * _fullThoroughfare;
     struct { 
-        int *list; 
+        long long *list; 
         unsigned int count; 
         unsigned int size; 
     }  _geoIds;
@@ -39,7 +39,7 @@
 @property (nonatomic, retain) NSMutableArray *dependentLocalitys;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSString *fullThoroughfare;
-@property (nonatomic, readonly) int*geoIds;
+@property (nonatomic, readonly) long long*geoIds;
 @property (nonatomic, readonly) unsigned int geoIdsCount;
 @property (nonatomic, readonly) BOOL hasAdministrativeArea;
 @property (nonatomic, readonly) BOOL hasAdministrativeAreaCode;
@@ -83,7 +83,7 @@
 - (BOOL)_isEquivalentURLRepresentationTo:(id)arg1;
 - (void)addAreaOfInterest:(id)arg1;
 - (void)addDependentLocality:(id)arg1;
-- (void)addGeoId:(int)arg1;
+- (void)addGeoId:(long long)arg1;
 - (void)addSubPremise:(id)arg1;
 - (id)administrativeArea;
 - (id)administrativeAreaCode;
@@ -105,8 +105,8 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)fullThoroughfare;
-- (int)geoIdAtIndex:(unsigned int)arg1;
-- (int*)geoIds;
+- (long long)geoIdAtIndex:(unsigned int)arg1;
+- (long long*)geoIds;
 - (unsigned int)geoIdsCount;
 - (BOOL)hasAdministrativeArea;
 - (BOOL)hasAdministrativeAreaCode;
@@ -146,7 +146,7 @@
 - (void)setCountryCode:(id)arg1;
 - (void)setDependentLocalitys:(id)arg1;
 - (void)setFullThoroughfare:(id)arg1;
-- (void)setGeoIds:(int*)arg1 count:(unsigned int)arg2;
+- (void)setGeoIds:(long long*)arg1 count:(unsigned int)arg2;
 - (void)setInlandWater:(id)arg1;
 - (void)setLocality:(id)arg1;
 - (void)setOcean:(id)arg1;

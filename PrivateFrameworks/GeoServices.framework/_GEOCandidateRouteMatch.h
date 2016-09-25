@@ -18,7 +18,7 @@
     double  _maxDistance;
     struct PolylineCoordinate { 
         unsigned int index; 
-        double offset; 
+        float offset; 
     }  _routeCoordinate;
     double  _score;
     unsigned int  _stepIndex;
@@ -34,7 +34,7 @@
 @property (nonatomic) struct { double x1; double x2; } locationCoordinate;
 @property (nonatomic) double maxCourseDelta;
 @property (nonatomic) double maxDistance;
-@property (nonatomic) struct PolylineCoordinate { unsigned int x1; double x2; } routeCoordinate;
+@property (nonatomic) struct PolylineCoordinate { unsigned int x1; float x2; } routeCoordinate;
 @property (nonatomic) double score;
 @property (nonatomic) unsigned int stepIndex;
 
@@ -52,7 +52,7 @@
 - (struct { double x1; double x2; })locationCoordinate;
 - (double)maxCourseDelta;
 - (double)maxDistance;
-- (struct PolylineCoordinate { unsigned int x1; double x2; })routeCoordinate;
+- (struct PolylineCoordinate { unsigned int x1; float x2; })routeCoordinate;
 - (double)score;
 - (void)setCourseDelta:(double)arg1;
 - (void)setCourseMatchScore:(double)arg1;
@@ -64,7 +64,7 @@
 - (void)setLocationCoordinate:(struct { double x1; double x2; })arg1;
 - (void)setMaxCourseDelta:(double)arg1;
 - (void)setMaxDistance:(double)arg1;
-- (void)setRouteCoordinate:(struct PolylineCoordinate { unsigned int x1; double x2; })arg1;
+- (void)setRouteCoordinate:(struct PolylineCoordinate { unsigned int x1; float x2; })arg1;
 - (void)setScore:(double)arg1;
 - (void)setStepIndex:(unsigned int)arg1;
 - (unsigned int)stepIndex;

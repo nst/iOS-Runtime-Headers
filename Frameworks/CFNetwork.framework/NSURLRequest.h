@@ -65,7 +65,7 @@
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)expectedWorkload;
+- (unsigned long long)expectedWorkload;
 - (unsigned int)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;

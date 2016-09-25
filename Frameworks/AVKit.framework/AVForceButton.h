@@ -3,10 +3,10 @@
  */
 
 @interface AVForceButton : AVButton {
-    double  _force;
+    float  _force;
 }
 
-@property (nonatomic) double force;
+@property (nonatomic) float force;
 
 - (float)force;
 - (void)setForce:(float)arg1;

@@ -25,7 +25,7 @@
 
 - (void).cxx_destruct;
 - (id /* block */)completionHandler;
-- (int)daemonOperation;
+- (long long)daemonOperation;
 - (id)deletes;
 - (void)encodeToXPCObject:(id)arg1;
 - (void)handleReply;

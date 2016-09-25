@@ -25,10 +25,10 @@
     _UIKBRTTouchHistoryInfo * _rightIndexFingerInfo;
     BOOL  _supportsDrifting;
     struct { 
-        double up; 
-        double down; 
-        double left; 
-        double right; 
+        float up; 
+        float down; 
+        float left; 
+        float right; 
     }  _touchError;
     UIView * _touchHistoryFeedbackView;
     NSMapTable * _touchHistoryViewMap;
@@ -45,7 +45,7 @@
 @property (nonatomic, retain) UIView *leftDriftFeedbackView;
 @property (nonatomic, retain) NSMutableSet *leftDriftLockTouchIDs;
 @property (nonatomic) BOOL leftDriftRemovingItems;
-@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } leftHandDriftOffset;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } leftHandDriftOffset;
 @property (nonatomic, retain) _UIKBRTDecayingOffset *leftHandDriftOffsetObj;
 @property (nonatomic, retain) _UIKBRTDecayingOffset *leftHandFixedOffsetObj;
 @property (nonatomic, retain) _UIKBRTTouchHistoryInfo *leftIndexFingerInfo;
@@ -53,12 +53,12 @@
 @property (nonatomic, retain) UIView *rightDriftFeedbackView;
 @property (nonatomic, retain) NSMutableSet *rightDriftLockTouchIDs;
 @property (nonatomic) BOOL rightDriftRemovingItems;
-@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } rightHandDriftOffset;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } rightHandDriftOffset;
 @property (nonatomic, retain) _UIKBRTDecayingOffset *rightHandDriftOffsetObj;
 @property (nonatomic, retain) _UIKBRTDecayingOffset *rightHandFixedOffsetObj;
 @property (nonatomic, retain) _UIKBRTTouchHistoryInfo *rightIndexFingerInfo;
 @property (nonatomic) BOOL supportsDrifting;
-@property (nonatomic) struct { double x1; double x2; double x3; double x4; } touchError;
+@property (nonatomic) struct { float x1; float x2; float x3; float x4; } touchError;
 @property (nonatomic, retain) UIView *touchHistoryFeedbackView;
 @property (nonatomic, retain) NSMapTable *touchHistoryViewMap;
 @property (nonatomic, retain) NSMutableDictionary *touches;
@@ -66,9 +66,9 @@
 + (BOOL)isEnabled;
 
 - (void).cxx_destruct;
-- (struct CGPoint { double x1; double x2; })_offsetForPoint:(struct CGPoint { double x1; double x2; })arg1 fromPoint:(struct CGPoint { double x1; double x2; })arg2;
-- (struct CGPoint { double x1; double x2; })_pinOffset:(struct CGPoint { double x1; double x2; })arg1;
-- (struct CGPoint { double x1; double x2; })_pointFromPoint:(struct CGPoint { double x1; double x2; })arg1 plusOffset:(struct CGPoint { double x1; double x2; })arg2;
+- (struct CGPoint { float x1; float x2; })_offsetForPoint:(struct CGPoint { float x1; float x2; })arg1 fromPoint:(struct CGPoint { float x1; float x2; })arg2;
+- (struct CGPoint { float x1; float x2; })_pinOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGPoint { float x1; float x2; })_pointFromPoint:(struct CGPoint { float x1; float x2; })arg1 plusOffset:(struct CGPoint { float x1; float x2; })arg2;
 - (void)_resetFeedback;
 - (id)_touchDictWithFingerIds:(id)arg1;
 - (void)_updateDriftForFingers:(id)arg1 leftHand:(BOOL)arg2 newestTouch:(id)arg3;
@@ -76,7 +76,7 @@
 - (void)_updateDriftViewTimer:(id)arg1;
 - (void)_updateDriftWithTouchInfo:(id)arg1;
 - (void)_updateHistory;
-- (void)addTouchLocation:(struct CGPoint { double x1; double x2; })arg1 withRadius:(float)arg2 withTouchTime:(double)arg3 withIdentifier:(id)arg4;
+- (void)addTouchLocation:(struct CGPoint { float x1; float x2; })arg1 withRadius:(float)arg2 withTouchTime:(double)arg3 withIdentifier:(id)arg4;
 - (void)dealloc;
 - (id)delegate;
 - (id)enableLatchObj;
@@ -91,18 +91,18 @@
 - (id)leftDriftFeedbackView;
 - (id)leftDriftLockTouchIDs;
 - (BOOL)leftDriftRemovingItems;
-- (struct CGPoint { double x1; double x2; })leftHandDriftOffset;
+- (struct CGPoint { float x1; float x2; })leftHandDriftOffset;
 - (id)leftHandDriftOffsetObj;
 - (id)leftHandFixedOffsetObj;
 - (id)leftIndexFingerInfo;
-- (void)moveTouchWithIdentifier:(id)arg1 toLocation:(struct CGPoint { double x1; double x2; })arg2 withRadius:(float)arg3 atTouchTime:(double)arg4;
+- (void)moveTouchWithIdentifier:(id)arg1 toLocation:(struct CGPoint { float x1; float x2; })arg2 withRadius:(float)arg3 atTouchTime:(double)arg4;
 - (id)otherHistory;
 - (void)removeTouchWithIdentifier:(id)arg1 touchCancelled:(BOOL)arg2;
 - (void)reset;
 - (id)rightDriftFeedbackView;
 - (id)rightDriftLockTouchIDs;
 - (BOOL)rightDriftRemovingItems;
-- (struct CGPoint { double x1; double x2; })rightHandDriftOffset;
+- (struct CGPoint { float x1; float x2; })rightHandDriftOffset;
 - (id)rightHandDriftOffsetObj;
 - (id)rightHandFixedOffsetObj;
 - (id)rightIndexFingerInfo;
@@ -127,16 +127,16 @@
 - (void)setRightHandFixedOffsetObj:(id)arg1;
 - (void)setRightIndexFingerInfo:(id)arg1;
 - (void)setSupportsDrifting:(BOOL)arg1;
-- (void)setTouchError:(struct { double x1; double x2; double x3; double x4; })arg1;
+- (void)setTouchError:(struct { float x1; float x2; float x3; float x4; })arg1;
 - (void)setTouchHistoryFeedbackView:(id)arg1;
 - (void)setTouchHistoryViewMap:(id)arg1;
 - (void)setTouches:(id)arg1;
 - (BOOL)supportsDrifting;
-- (struct { double x1; double x2; double x3; double x4; })touchError;
+- (struct { float x1; float x2; float x3; float x4; })touchError;
 - (id)touchHistoryFeedbackView;
 - (id)touchHistoryViewMap;
 - (id)touches;
-- (void)updateTouchWithIdentifier:(id)arg1 withTouchTime:(double)arg2 resultingError:(struct CGPoint { double x1; double x2; })arg3 rowOffsetFromHomeRow:(int)arg4;
-- (void)updateWithFCenter:(struct CGPoint { double x1; double x2; })arg1 jCenter:(struct CGPoint { double x1; double x2; })arg2 keySize:(struct CGSize { double x1; double x2; })arg3 rowOffsets:(id)arg4 homeRowOffsetIndex:(int)arg5;
+- (void)updateTouchWithIdentifier:(id)arg1 withTouchTime:(double)arg2 resultingError:(struct CGPoint { float x1; float x2; })arg3 rowOffsetFromHomeRow:(int)arg4;
+- (void)updateWithFCenter:(struct CGPoint { float x1; float x2; })arg1 jCenter:(struct CGPoint { float x1; float x2; })arg2 keySize:(struct CGSize { float x1; float x2; })arg3 rowOffsets:(id)arg4 homeRowOffsetIndex:(int)arg5;
 
 @end

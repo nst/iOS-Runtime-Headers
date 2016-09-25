@@ -93,7 +93,7 @@
 @property (nonatomic) double fractionOfScreenAboveFarClipPlaneAtCanonicalPitch;
 @property (nonatomic, readonly) struct { BOOL x1; double x2; double x3; double x4; double x5; double x6; } frustum;
 @property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{Matrix<double' */ struct  groundPoint; /* unknown property attribute:  1>=[3d]} */
-@property (nonatomic, readonly) double horizontalFieldOfView;
+@property (nonatomic, readonly) float horizontalFieldOfView;
 @property (nonatomic) double horizontalOffset;
 @property (nonatomic) double maxHeight;
 @property (nonatomic) double maxHeightNoPitch;
@@ -117,7 +117,7 @@
 @property (nonatomic, readonly) const /* Warning: unhandled struct encoding: '{Matrix<double' */ struct *unscaledViewMatrix; /* unknown property attribute:  4>=[16d]} */
 @property (nonatomic, readonly) const /* Warning: unhandled struct encoding: '{Matrix<double' */ struct *unscaledViewProjectionMatrix; /* unknown property attribute:  4>=[16d]} */
 @property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{Matrix<double' */ struct  upVector; /* unknown property attribute:  1>=[3d]} */
-@property (nonatomic) double verticalFieldOfView;
+@property (nonatomic) float verticalFieldOfView;
 @property (nonatomic, readonly) const /* Warning: unhandled struct encoding: '{Matrix<double' */ struct *viewProjectionMatrixWithoutOffset; /* unknown property attribute:  4>=[16d]} */
 @property (nonatomic, readonly) VKViewVolume *viewVolume;
 @property (nonatomic, readonly) double yaw;
@@ -145,8 +145,8 @@
 - (struct { BOOL x1; double x2; double x3; double x4; double x5; double x6; })frustum;
 - (struct Matrix<double, 3, 1> { double x1[3]; })groundPlaneIntersectionPoint;
 - (struct Matrix<double, 3, 1> { double x1[3]; })groundPoint;
-- (struct Matrix<double, 3, 1> { double x1[3]; })groundPointFromScreenPoint:(struct CGPoint { double x1; double x2; })arg1;
-- (struct Matrix<double, 3, 1> { double x1[3]; })groundPointFromScreenPoint:(struct CGPoint { double x1; double x2; })arg1 atGroundLevel:(double)arg2;
+- (struct Matrix<double, 3, 1> { double x1[3]; })groundPointFromScreenPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (struct Matrix<double, 3, 1> { double x1[3]; })groundPointFromScreenPoint:(struct CGPoint { float x1; float x2; })arg1 atGroundLevel:(double)arg2;
 - (BOOL)hasChangedState:(struct VKCameraState { struct Matrix<double, 3, 1> { double x_1_1_1[3]; } x1; struct Matrix<double, 4, 4> { double x_2_1_1[16]; } x2; double x3; double x4; double x5; }*)arg1;
 - (float)horizontalFieldOfView;
 - (double)horizontalOffset;
@@ -201,6 +201,6 @@
 - (double)widthOfViewAtDepth:(double)arg1;
 - (double)yaw;
 - (float)zoomAtCentrePoint;
-- (float)zoomAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (float)zoomAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 
 @end

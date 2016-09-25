@@ -4,7 +4,7 @@
 
 @interface VTUIEnrollTrainingViewController : UIViewController <AFMyriadDelegate, AFUIDebugControllerDelegate, AFUISiriLanguageDelegate, SUICFlamesViewDelegate, VTUIEnrollmentSetupIntroViewDelegate, VTUITrainingManagerDelegate> {
     int  _AVVCRetryCount;
-    double  _audioRms;
+    float  _audioRms;
     int  _badMicRetryCount;
     int  _consecutiveTimeoutCount;
     int  _currentTrainingState;
@@ -30,7 +30,7 @@
     NSArray * _trainingPageInstructions;
 }
 
-@property (nonatomic) double audioRms;
+@property (nonatomic) float audioRms;
 @property (nonatomic, readonly) int currentTrainingState;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <VTUIEnrollTrainingViewControllerDelegate> *delegate;
@@ -56,8 +56,8 @@
 - (void)_handleTrainingResultForNonRetryablePhraseWithStatus:(int)arg1;
 - (void)_handleTrainingResultForRetryablePhraseWithStatus:(int)arg1 shouldShowCheckMark:(BOOL)arg2;
 - (void)_hideInstruction;
-- (void)_logAggdCount:(int)arg1 forKey:(id)arg2;
-- (void)_logAggdScalar:(int)arg1 forKey:(id)arg2;
+- (void)_logAggdCount:(long long)arg1 forKey:(id)arg2;
+- (void)_logAggdScalar:(long long)arg1 forKey:(id)arg2;
 - (void)_presentRadarView;
 - (void)_resetEnrollment;
 - (void)_resetIdleTimer;

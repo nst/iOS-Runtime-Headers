@@ -22,7 +22,7 @@
 - (id)containerInfo;
 - (void)dealloc;
 - (id)editingRep;
-- (id)hitRep:(struct CGPoint { double x1; double x2; })arg1;
+- (id)hitRep:(struct CGPoint { float x1; float x2; })arg1;
 - (id)initWithLayout:(id)arg1 canvas:(id)arg2;
 - (void)recursivelyPerformSelector:(SEL)arg1;
 - (void)recursivelyPerformSelector:(SEL)arg1 withObject:(id)arg2;

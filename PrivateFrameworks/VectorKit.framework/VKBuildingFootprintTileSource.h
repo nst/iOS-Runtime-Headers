@@ -12,7 +12,7 @@
 
 - (id)initWithTileSet:(id)arg1 resourceManifestConfiguration:(id)arg2 locale:(id)arg3 sharedResources:(id)arg4;
 - (BOOL)makeFacades;
-- (unsigned int)mapLayerForZoomLevelRange;
+- (unsigned long long)mapLayerForZoomLevelRange;
 - (BOOL)maximumZoomLevelBoundsCamera;
 - (int)minimumZoomLevel;
 - (BOOL)minimumZoomLevelBoundsCamera;

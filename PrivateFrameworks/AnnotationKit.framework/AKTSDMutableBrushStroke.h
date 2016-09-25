@@ -5,16 +5,16 @@
 @interface AKTSDMutableBrushStroke : AKTSDBrushStroke {
     UIColor * color;
     int  join;
-    double  miterLimit;
+    float  miterLimit;
     NSString * strokeName;
-    double  width;
+    float  width;
 }
 
 @property (nonatomic, retain) UIColor *color;
 @property (nonatomic) int join;
-@property (nonatomic) double miterLimit;
+@property (nonatomic) float miterLimit;
 @property (nonatomic, copy) NSString *strokeName;
-@property (nonatomic) double width;
+@property (nonatomic) float width;
 
 - (void).cxx_destruct;
 - (id)color;

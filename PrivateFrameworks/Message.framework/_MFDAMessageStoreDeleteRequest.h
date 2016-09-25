@@ -8,7 +8,7 @@
 @property (nonatomic, readonly) BOOL shouldSend;
 
 - (id)deferredOperation;
-- (unsigned int)generationNumber;
+- (unsigned long long)generationNumber;
 - (BOOL)isUserRequested;
 - (BOOL)shouldSend;
 

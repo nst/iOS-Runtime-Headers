@@ -10,7 +10,7 @@
     }  _has;
     NSData * _restoreIdentifier;
     NSMutableArray * _restores;
-    int  _sequenceNumber;
+    long long  _sequenceNumber;
     int  _statusCode;
 }
 
@@ -24,11 +24,11 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) NSData *restoreIdentifier;
 @property (nonatomic, retain) NSMutableArray *restores;
-@property (nonatomic) int sequenceNumber;
+@property (nonatomic) long long sequenceNumber;
 @property (nonatomic) int statusCode;
 @property (readonly) Class superclass;
 
-+ (id)activationRestoreWithRestoreUUID:(id)arg1 sequenceNumber:(int)arg2 statusCode:(int)arg3;
++ (id)activationRestoreWithRestoreUUID:(id)arg1 sequenceNumber:(long long)arg2 statusCode:(int)arg3;
 + (id)persistentUserInfoKey;
 + (id)retreiveFromPersistentUserInfo:(id)arg1;
 
@@ -57,13 +57,13 @@
 - (id)restores;
 - (id)restoresAtIndex:(unsigned int)arg1;
 - (unsigned int)restoresCount;
-- (int)sequenceNumber;
+- (long long)sequenceNumber;
 - (void)setDefaultSourceBundleIdentifier:(id)arg1;
 - (void)setHasSequenceNumber:(BOOL)arg1;
 - (void)setHasStatusCode:(BOOL)arg1;
 - (void)setRestoreIdentifier:(id)arg1;
 - (void)setRestores:(id)arg1;
-- (void)setSequenceNumber:(int)arg1;
+- (void)setSequenceNumber:(long long)arg1;
 - (void)setStatusCode:(int)arg1;
 - (int)statusCode;
 - (void)writeTo:(id)arg1;

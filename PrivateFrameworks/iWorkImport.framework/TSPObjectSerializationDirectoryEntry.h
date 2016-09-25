@@ -3,16 +3,16 @@
  */
 
 @interface TSPObjectSerializationDirectoryEntry : NSObject {
-    unsigned int  _offset;
-    unsigned int  _size;
+    unsigned long long  _offset;
+    unsigned long long  _size;
 }
 
-@property (nonatomic, readonly) unsigned int offset;
-@property (nonatomic, readonly) unsigned int size;
+@property (nonatomic, readonly) unsigned long long offset;
+@property (nonatomic, readonly) unsigned long long size;
 
 - (id)init;
-- (id)initWithOffset:(unsigned int)arg1 size:(unsigned int)arg2;
-- (unsigned int)offset;
-- (unsigned int)size;
+- (id)initWithOffset:(unsigned long long)arg1 size:(unsigned long long)arg2;
+- (unsigned long long)offset;
+- (unsigned long long)size;
 
 @end

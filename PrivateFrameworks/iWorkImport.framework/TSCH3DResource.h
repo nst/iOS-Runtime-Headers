@@ -15,7 +15,7 @@
         unsigned int componentByteSize; 
         unsigned int elementByteSize; 
     }  mDataBufferInfo;
-    unsigned int  mUniqueIdentifier;
+    unsigned long long  mUniqueIdentifier;
     int  mUpdate;
 }
 
@@ -24,11 +24,11 @@
 @property (nonatomic) int caching;
 @property (nonatomic) BOOL changed;
 @property (nonatomic, readonly) BOOL isTexturable;
-@property (nonatomic, readonly) unsigned int uniqueIdentifier;
+@property (nonatomic, readonly) unsigned long long uniqueIdentifier;
 @property (nonatomic) int update;
 
-+ (unsigned int)allocateResourceUniqueIdentifier;
-+ (void)deallocateResourceUniqueIdentifier:(unsigned int)arg1;
++ (unsigned long long)allocateResourceUniqueIdentifier;
++ (void)deallocateResourceUniqueIdentifier:(unsigned long long)arg1;
 + (id)resource;
 + (id)resourceWithCaching:(int)arg1;
 
@@ -49,7 +49,7 @@
 - (void)setCaching:(int)arg1;
 - (void)setChanged:(BOOL)arg1;
 - (void)setUpdate:(int)arg1;
-- (unsigned int)uniqueIdentifier;
+- (unsigned long long)uniqueIdentifier;
 - (int)update;
 - (void)updateBufferInfoFromBuffer:(id)arg1;
 

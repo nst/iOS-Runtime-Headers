@@ -34,7 +34,7 @@
 @property (nonatomic, readonly) PLPhotoEditMutableModel *photoEditModel;
 @property (nonatomic, readonly) UIButton *preferredAlternateToolbarButton;
 @property (nonatomic, readonly, copy) UIColor *preferredPreviewBackgroundColor;
-@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } preferredPreviewViewInsets;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } preferredPreviewViewInsets;
 @property (nonatomic, readonly) unsigned int preferredRenderMode;
 @property (nonatomic, readonly) UIImage *selectedToolbarIcon;
 @property (nonatomic, readonly) PUPhotoEditToolControllerSpec *spec;
@@ -53,7 +53,7 @@
 - (id)_toolControllerScrollView;
 - (void)_updateScrollViewCentering;
 - (void)_updateTraitCollectionAndLayoutReferenceSize;
-- (void)_updateTraitCollectionAndLayoutReferenceSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)_updateTraitCollectionAndLayoutReferenceSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)aggregateSession;
 - (void)animateBecomingActiveTool;
 - (void)animateResigningActiveTool;
@@ -75,7 +75,7 @@
 - (void)photoEditModelDidChange;
 - (id)preferredAlternateToolbarButton;
 - (id)preferredPreviewBackgroundColor;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })preferredPreviewViewInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })preferredPreviewViewInsets;
 - (unsigned int)preferredRenderMode;
 - (void)resetForZoomAndPan;
 - (void)resetToDefaultValueAnimated:(BOOL)arg1;
@@ -101,7 +101,7 @@
 - (void)viewDidDisappear:(BOOL)arg1;
 - (id)viewForZoomingInScrollView:(id)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (BOOL)wantsDefaultPreviewView;
 - (BOOL)wantsSecondaryToolbarVisible;
 - (BOOL)wantsZoomAndPanEnabled;

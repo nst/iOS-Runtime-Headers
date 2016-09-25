@@ -6,10 +6,10 @@
     short  _alternateGroupID;
     int  _chunkAlignment;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _chunkDuration;
     int  _chunkSize;
     BOOL  _expectsMediaDataInRealTime;
@@ -21,12 +21,12 @@
     NSString * _mediaType;
     NSArray * _metadataItems;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _naturalSize;
     AVOutputSettings * _outputSettings;
     BOOL  _performsMultiPassEncodingIfSupported;
-    double  _preferredVolume;
+    float  _preferredVolume;
     short  _provisionalAlternateGroupID;
     NSURL * _sampleReferenceBaseURL;
     struct opaqueCMFormatDescription { } * _sourceFormatHint;
@@ -34,12 +34,12 @@
     int  _trackID;
     NSDictionary * _trackReferences;
     struct CGAffineTransform { 
-        double a; 
-        double b; 
-        double c; 
-        double d; 
-        double tx; 
-        double ty; 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     }  _transform;
     BOOL  _writesMediaDataToBeginningOfFile;
 }
@@ -53,20 +53,20 @@
 @property (nonatomic) int mediaTimeScale;
 @property (nonatomic, copy) NSString *mediaType;
 @property (nonatomic, copy) NSArray *metadataItems;
-@property (nonatomic) struct CGSize { double x1; double x2; } naturalSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } naturalSize;
 @property (nonatomic, copy) AVOutputSettings *outputSettings;
 @property (nonatomic) BOOL performsMultiPassEncodingIfSupported;
 @property (nonatomic) int preferredMediaChunkAlignment;
-@property (nonatomic) struct { int x1; int x2; unsigned int x3; int x4; } preferredMediaChunkDuration;
+@property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } preferredMediaChunkDuration;
 @property (nonatomic) int preferredMediaChunkSize;
-@property (nonatomic) double preferredVolume;
+@property (nonatomic) float preferredVolume;
 @property (nonatomic) short provisionalAlternateGroupID;
 @property (nonatomic, copy) NSURL *sampleReferenceBaseURL;
 @property (nonatomic, retain) struct opaqueCMFormatDescription { }*sourceFormatHint;
 @property (nonatomic, copy) NSDictionary *sourcePixelBufferAttributes;
 @property (nonatomic) int trackID;
 @property (nonatomic, copy) NSDictionary *trackReferences;
-@property (nonatomic) struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; } transform;
+@property (nonatomic) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } transform;
 @property (nonatomic) BOOL writesMediaDataToBeginningOfFile;
 
 - (short)alternateGroupID;
@@ -79,11 +79,11 @@
 - (int)mediaTimeScale;
 - (id)mediaType;
 - (id)metadataItems;
-- (struct CGSize { double x1; double x2; })naturalSize;
+- (struct CGSize { float x1; float x2; })naturalSize;
 - (id)outputSettings;
 - (BOOL)performsMultiPassEncodingIfSupported;
 - (int)preferredMediaChunkAlignment;
-- (struct { int x1; int x2; unsigned int x3; int x4; })preferredMediaChunkDuration;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })preferredMediaChunkDuration;
 - (int)preferredMediaChunkSize;
 - (float)preferredVolume;
 - (short)provisionalAlternateGroupID;
@@ -97,11 +97,11 @@
 - (void)setMediaTimeScale:(int)arg1;
 - (void)setMediaType:(id)arg1;
 - (void)setMetadataItems:(id)arg1;
-- (void)setNaturalSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setNaturalSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setOutputSettings:(id)arg1;
 - (void)setPerformsMultiPassEncodingIfSupported:(BOOL)arg1;
 - (void)setPreferredMediaChunkAlignment:(int)arg1;
-- (void)setPreferredMediaChunkDuration:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
+- (void)setPreferredMediaChunkDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setPreferredMediaChunkSize:(int)arg1;
 - (void)setPreferredVolume:(float)arg1;
 - (void)setProvisionalAlternateGroupID:(short)arg1;
@@ -110,13 +110,13 @@
 - (void)setSourcePixelBufferAttributes:(id)arg1;
 - (void)setTrackID:(int)arg1;
 - (void)setTrackReferences:(id)arg1;
-- (void)setTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
+- (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (void)setWritesMediaDataToBeginningOfFile:(BOOL)arg1;
 - (struct opaqueCMFormatDescription { }*)sourceFormatHint;
 - (id)sourcePixelBufferAttributes;
 - (int)trackID;
 - (id)trackReferences;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })transform;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transform;
 - (BOOL)writesMediaDataToBeginningOfFile;
 
 @end

@@ -91,11 +91,11 @@
         unsigned int resigningFirstResponderFromHost : 1; 
     }  _windowFlags;
     NSArray * _windowInternalConstraints;
-    double  _windowLevel;
-    double  _windowSublevel;
+    float  _windowLevel;
+    float  _windowSublevel;
 }
 
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } MPU_rootViewSize;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } MPU_rootViewSize;
 @property (setter=__setHostViewUnderlapsStatusBar:, nonatomic) BOOL __hostViewUnderlapsStatusBar;
 @property (nonatomic, readonly) struct { int x1; int x2; } __sizeClassPair;
 @property (getter=_animationController, setter=_setAnimationController:, nonatomic, retain) _UIWindowAnimationController *_animationController;
@@ -122,7 +122,7 @@
 @property (nonatomic, retain) UIScreen *screen;
 @property (readonly) Class superclass;
 @property (getter=_toWindowOrientation, setter=_setToWindowOrientation:, nonatomic) int toWindowOrientation;
-@property (nonatomic) double windowLevel;
+@property (nonatomic) float windowLevel;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
@@ -134,8 +134,8 @@
 + (void)_enumerateWindowsIncludingInternalWindows:(BOOL)arg1 onlyVisibleWindows:(BOOL)arg2 withBlock:(id /* block */)arg3;
 + (void)_executeDeferredLaunchBlocks;
 + (id)_externalKeyWindow;
-+ (id)_findWithDisplayPoint:(struct CGPoint { double x1; double x2; })arg1;
-+ (id)_hitTestToPoint:(struct CGPoint { double x1; double x2; })arg1 forEvent:(id)arg2 windowServerHitTestWindow:(id)arg3 screen:(id)arg4;
++ (id)_findWithDisplayPoint:(struct CGPoint { float x1; float x2; })arg1;
++ (id)_hitTestToPoint:(struct CGPoint { float x1; float x2; })arg1 forEvent:(id)arg2 windowServerHitTestWindow:(id)arg3 screen:(id)arg4;
 + (BOOL)_isSecure;
 + (BOOL)_isSystemWindow;
 + (id)_keyWindowIgnoringAlertViewWindow;
@@ -169,14 +169,14 @@
 + (void)adjustForAccessibilityIfNeeded:(id)arg1;
 + (id)allWindowsIncludingInternalWindows:(BOOL)arg1 onlyVisibleWindows:(BOOL)arg2;
 + (id)allWindowsIncludingInternalWindows:(BOOL)arg1 onlyVisibleWindows:(BOOL)arg2 forScreen:(id)arg3;
-+ (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })constrainFrameToScreen:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
++ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })constrainFrameToScreen:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 + (void*)createIOSurfaceFromScreen:(id)arg1;
-+ (void*)createIOSurfaceOnScreen:(id)arg1 withContextIds:(const unsigned int*)arg2 count:(unsigned int)arg3 frame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg4 baseTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg5;
-+ (void*)createIOSurfaceOnScreen:(id)arg1 withContextIds:(const unsigned int*)arg2 count:(unsigned int)arg3 frame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg4 usePurpleGfx:(BOOL)arg5 outTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; }*)arg6;
-+ (void*)createIOSurfaceWithContextId:(unsigned int)arg1 frame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
-+ (void*)createIOSurfaceWithContextIds:(const unsigned int*)arg1 count:(unsigned int)arg2 frame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
-+ (void*)createIOSurfaceWithContextIds:(const unsigned int*)arg1 count:(unsigned int)arg2 frame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 outTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; }*)arg4;
-+ (void*)createIOSurfaceWithContextIds:(const unsigned int*)arg1 count:(unsigned int)arg2 frame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 usePurpleGfx:(BOOL)arg4 outTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; }*)arg5;
++ (void*)createIOSurfaceOnScreen:(id)arg1 withContextIds:(const unsigned int*)arg2 count:(unsigned int)arg3 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4 baseTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg5;
++ (void*)createIOSurfaceOnScreen:(id)arg1 withContextIds:(const unsigned int*)arg2 count:(unsigned int)arg3 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4 usePurpleGfx:(BOOL)arg5 outTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg6;
++ (void*)createIOSurfaceWithContextId:(unsigned int)arg1 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
++ (void*)createIOSurfaceWithContextIds:(const unsigned int*)arg1 count:(unsigned int)arg2 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
++ (void*)createIOSurfaceWithContextIds:(const unsigned int*)arg1 count:(unsigned int)arg2 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 outTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg4;
++ (void*)createIOSurfaceWithContextIds:(const unsigned int*)arg1 count:(unsigned int)arg2 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 usePurpleGfx:(BOOL)arg4 outTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg5;
 + (void*)createScreenIOSurface;
 + (void)initialize;
 + (id)keyWindow;
@@ -190,19 +190,19 @@
 - (id)_aboveWindowScrollView;
 - (void)_addRotationViewController:(id)arg1;
 - (void)_addTintView:(id)arg1;
-- (void)_adjustSizeClassesAndResizeWindowToFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)_adjustSizeClassesAndResizeWindowToFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (float)_adjustedWindowLevelFromLevel:(float)arg1;
 - (BOOL)_allowsLinkPreviewInteractionInViewServices;
 - (BOOL)_alwaysGetsContexts;
 - (id)_animationController;
 - (id)_appearanceContainer;
 - (BOOL)_appearsInLoupe;
-- (BOOL)_areOverlayInsetsValid:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (BOOL)_areOverlayInsetsValid:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (id)_associatingScene;
 - (id)_associatingSceneLayer;
 - (void)_attachSceneLayer;
-- (void)_autolayout_windowDidChangeBoundsFrom:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)_autolayout_windowDidChangeCenterFrom:(struct CGPoint { double x1; double x2; })arg1;
+- (void)_autolayout_windowDidChangeBoundsFrom:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_autolayout_windowDidChangeCenterFrom:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)_becomeFirstResponderWhenPossible;
 - (void)_beginKeyWindowDeferral;
 - (void)_beginModalSession;
@@ -215,7 +215,7 @@
 - (BOOL)_canPromoteFromKeyWindowStack;
 - (id)_centerExpressionInContainer:(id)arg1 vertical:(BOOL)arg2 contentInsetScale:(float)arg3;
 - (float)_chargeMultiplicationFactor;
-- (struct CGPoint { double x1; double x2; })_clampPointToScreenJail:(struct CGPoint { double x1; double x2; })arg1;
+- (struct CGPoint { float x1; float x2; })_clampPointToScreenJail:(struct CGPoint { float x1; float x2; })arg1;
 - (float)_classicOffset;
 - (BOOL)_clearMouseView;
 - (void)_clearPendingKeyboardChanges;
@@ -232,14 +232,14 @@
 - (unsigned int)_contextId;
 - (struct CADoublePoint { double x1; double x2; })_convertDoublePointFromSceneReferenceSpace:(struct CADoublePoint { double x1; double x2; })arg1;
 - (struct CADoublePoint { double x1; double x2; })_convertDoublePointToSceneReferenceSpace:(struct CADoublePoint { double x1; double x2; })arg1;
-- (struct CGPoint { double x1; double x2; })_convertOffset:(struct CGPoint { double x1; double x2; })arg1 fromWindow:(id)arg2;
-- (struct CGPoint { double x1; double x2; })_convertOffset:(struct CGPoint { double x1; double x2; })arg1 toWindow:(id)arg2;
-- (struct CGPoint { double x1; double x2; })_convertOffsetFromSceneReferenceSpace:(struct CGPoint { double x1; double x2; })arg1;
-- (struct CGPoint { double x1; double x2; })_convertOffsetToSceneReferenceSpace:(struct CGPoint { double x1; double x2; })arg1;
-- (struct CGPoint { double x1; double x2; })_convertPointFromSceneReferenceSpace:(struct CGPoint { double x1; double x2; })arg1;
-- (struct CGPoint { double x1; double x2; })_convertPointToSceneReferenceSpace:(struct CGPoint { double x1; double x2; })arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_convertRectFromSceneReferenceSpace:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_convertRectToSceneReferenceSpace:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGPoint { float x1; float x2; })_convertOffset:(struct CGPoint { float x1; float x2; })arg1 fromWindow:(id)arg2;
+- (struct CGPoint { float x1; float x2; })_convertOffset:(struct CGPoint { float x1; float x2; })arg1 toWindow:(id)arg2;
+- (struct CGPoint { float x1; float x2; })_convertOffsetFromSceneReferenceSpace:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGPoint { float x1; float x2; })_convertOffsetToSceneReferenceSpace:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGPoint { float x1; float x2; })_convertPointFromSceneReferenceSpace:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGPoint { float x1; float x2; })_convertPointToSceneReferenceSpace:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_convertRectFromSceneReferenceSpace:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_convertRectToSceneReferenceSpace:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (float)_convertVisualAltitude:(float)arg1 fromWindow:(id)arg2;
 - (float)_convertVisualAltitude:(float)arg1 toWindow:(id)arg2;
 - (void)_createContext;
@@ -285,10 +285,10 @@
 - (id)_hostingWindow;
 - (BOOL)_ignoresHitTest;
 - (BOOL)_includeInDefaultImageSnapshot;
-- (id)_initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 attached:(BOOL)arg2;
-- (id)_initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 debugName:(id)arg2;
-- (id)_initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 debugName:(id)arg2 attached:(BOOL)arg3;
-- (id)_initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 debugName:(id)arg2 scene:(id)arg3 attached:(BOOL)arg4;
+- (id)_initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 attached:(BOOL)arg2;
+- (id)_initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 debugName:(id)arg2;
+- (id)_initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 debugName:(id)arg2 attached:(BOOL)arg3;
+- (id)_initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 debugName:(id)arg2 scene:(id)arg3 attached:(BOOL)arg4;
 - (id)_initWithOrientation:(int)arg1;
 - (void)_initializeLayoutEngine;
 - (void)_installFocusEngine;
@@ -322,7 +322,7 @@
 - (void)_orderFrontWithoutMakingKey;
 - (int)_orientationForRootTransform;
 - (int)_orientationForViewTransform;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_overlayInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_overlayInsets;
 - (id)_overridingDestinationEnvironmentForFocusUpdateInContext:(id)arg1;
 - (id)_parentFocusEnvironment;
 - (void)_positionHeaderView:(id)arg1 andFooterView:(id)arg2 outsideContentViewForInterfaceOrientation:(int)arg3;
@@ -346,17 +346,17 @@
 - (id)_rootForKeyResponderCycle;
 - (id)_rootViewConstraints;
 - (id)_rootViewConstraintsUpdateIfNecessaryForView:(id)arg1;
-- (void)_rotateToBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withAnimator:(id)arg2 transitionContext:(id)arg3;
+- (void)_rotateToBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withAnimator:(id)arg2 transitionContext:(id)arg3;
 - (void)_rotateWindowToOrientation:(int)arg1 updateStatusBar:(BOOL)arg2 duration:(double)arg3 skipCallbacks:(BOOL)arg4;
 - (id)_rotationViewControllers;
 - (id)_scene;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_sceneBounds;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_sceneBounds;
 - (void)_sceneBoundsDidChange;
 - (int)_sceneOrientation;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_sceneReferenceBounds;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_sceneReferenceBounds;
 - (id)_screen;
 - (void)_screenWillTransitionToTraitCollection:(id)arg1;
-- (void)_scrollToTopViewsUnderScreenPointIfNecessary:(struct CGPoint { double x1; double x2; })arg1 resultHandler:(id /* block */)arg2;
+- (void)_scrollToTopViewsUnderScreenPointIfNecessary:(struct CGPoint { float x1; float x2; })arg1 resultHandler:(id /* block */)arg2;
 - (void)_sendButtonsForEvent:(id)arg1;
 - (void)_sendTouchesForEvent:(id)arg1;
 - (void)_setAnimationController:(id)arg1;
@@ -420,8 +420,8 @@
 - (BOOL)_supportsBecomeFirstResponderWhenPossible;
 - (void)_switchToLayoutEngine:(id)arg1;
 - (BOOL)_systemGestureRecognitionIsPossible;
-- (id)_targetForStolenStatusBarTouchesAtPoint:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2 excludingWindow:(id)arg3;
-- (id)_targetWindowForPathIndex:(int)arg1 atPoint:(struct CGPoint { double x1; double x2; })arg2 forEvent:(id)arg3 windowServerHitTestWindow:(id)arg4 onScreen:(id)arg5;
+- (id)_targetForStolenStatusBarTouchesAtPoint:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2 excludingWindow:(id)arg3;
+- (id)_targetWindowForPathIndex:(int)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2 forEvent:(id)arg3 windowServerHitTestWindow:(id)arg4 onScreen:(id)arg5;
 - (void)_tintViewDidChangeAppearance:(id)arg1;
 - (int)_toWindowOrientation;
 - (id)_touchData;
@@ -429,11 +429,11 @@
 - (float)_touchSloppinessFactor;
 - (BOOL)_touchesInsideShouldHideCalloutBarForViewHierarchy:(id)arg1;
 - (id)_traitCollectionChangeTransitionCoordinator;
-- (id)_traitCollectionForSize:(struct CGSize { double x1; double x2; })arg1 screen:(id)arg2;
-- (id)_traitCollectionForSize:(struct CGSize { double x1; double x2; })arg1 screenCollection:(id)arg2;
-- (id)_traitCollectionForSize:(struct CGSize { double x1; double x2; })arg1 screenCollection:(id)arg2 virtualHorizontalSizeClass:(int)arg3 virtualVerticalSizeClass:(int)arg4;
+- (id)_traitCollectionForSize:(struct CGSize { float x1; float x2; })arg1 screen:(id)arg2;
+- (id)_traitCollectionForSize:(struct CGSize { float x1; float x2; })arg1 screenCollection:(id)arg2;
+- (id)_traitCollectionForSize:(struct CGSize { float x1; float x2; })arg1 screenCollection:(id)arg2 virtualHorizontalSizeClass:(int)arg3 virtualVerticalSizeClass:(int)arg4;
 - (id)_traitCollectionWhenRotated;
-- (struct CGPoint { double x1; double x2; })_transformDisplayToWindowCoordinates:(struct CGPoint { double x1; double x2; })arg1;
+- (struct CGPoint { float x1; float x2; })_transformDisplayToWindowCoordinates:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)_transformLayerIncludesScreenRotation;
 - (void)_transformLayerShouldMaskToBounds:(BOOL)arg1;
 - (id)_uiib_candidateRedundantConstraints;
@@ -469,10 +469,10 @@
 - (void)_updateWindowTraitsAndNotify:(BOOL)arg1;
 - (BOOL)_usesLegacySupportedOrientationChecks;
 - (BOOL)_usesWindowServerHitTesting;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })_viewTransformForInterfaceOrientation:(int)arg1;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_viewTransformForInterfaceOrientation:(int)arg1;
 - (BOOL)_wantsFocusEngine;
 - (BOOL)_wantsSceneAssociation;
-- (void)_willChangeToSize:(struct CGSize { double x1; double x2; })arg1 orientation:(int)arg2 screen:(id)arg3 withTransitionCoordinator:(id)arg4;
+- (void)_willChangeToSize:(struct CGSize { float x1; float x2; })arg1 orientation:(int)arg2 screen:(id)arg3 withTransitionCoordinator:(id)arg4;
 - (void)_willSnapshot;
 - (void)_willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
 - (void)_willTransitionToVirtualHorizontalSizeClass:(int)arg1 virtualVerticalSizeClass:(int)arg2;
@@ -493,14 +493,14 @@
 - (int)bitsPerComponent;
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (id)contentView;
-- (struct CGPoint { double x1; double x2; })convertDeviceToWindow:(struct CGPoint { double x1; double x2; })arg1;
-- (struct CGPoint { double x1; double x2; })convertPoint:(struct CGPoint { double x1; double x2; })arg1 fromWindow:(id)arg2;
-- (struct CGPoint { double x1; double x2; })convertPoint:(struct CGPoint { double x1; double x2; })arg1 toWindow:(id)arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })convertRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 fromWindow:(id)arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })convertRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 toWindow:(id)arg2;
-- (struct CGPoint { double x1; double x2; })convertWindowToDevice:(struct CGPoint { double x1; double x2; })arg1;
+- (struct CGPoint { float x1; float x2; })convertDeviceToWindow:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGPoint { float x1; float x2; })convertPoint:(struct CGPoint { float x1; float x2; })arg1 fromWindow:(id)arg2;
+- (struct CGPoint { float x1; float x2; })convertPoint:(struct CGPoint { float x1; float x2; })arg1 toWindow:(id)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 fromWindow:(id)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 toWindow:(id)arg2;
+- (struct CGPoint { float x1; float x2; })convertWindowToDevice:(struct CGPoint { float x1; float x2; })arg1;
 - (void*)createIOSurface;
-- (void*)createIOSurfaceWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void*)createIOSurfaceWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)dealloc;
 - (id)delegate;
 - (void)encodeWithCoder:(id)arg1;
@@ -515,8 +515,8 @@
 - (BOOL)inhibitTextEffectsRotation;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithContentRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (int)interfaceOrientation;
 - (BOOL)isAncestorOfItem:(id)arg1;
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
@@ -536,7 +536,7 @@
 - (id)nextResponder;
 - (void)orderFront:(id)arg1;
 - (void)orderOut:(id)arg1;
-- (BOOL)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)preferredFocusEnvironments;
 - (id)preferredFocusedItem;
 - (id)preferredFocusedView;
@@ -552,11 +552,11 @@
 - (void)setAutorotates:(BOOL)arg1;
 - (void)setAutorotates:(BOOL)arg1 forceUpdateInterfaceOrientation:(BOOL)arg2;
 - (void)setBecomeKeyOnOrderFront:(BOOL)arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)setCenter:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setCenter:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setContentView:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setHidden:(BOOL)arg1;
 - (void)setKeepContextInBackground:(BOOL)arg1;
 - (void)setLevel:(float)arg1;
@@ -574,7 +574,7 @@
 - (id)undoManager;
 - (void)updateFocusIfNeeded;
 - (void)updatePreferredFocusedItemIfNeeded;
-- (struct CGPoint { double x1; double x2; })warpPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (struct CGPoint { float x1; float x2; })warpPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (float)windowLevel;
 - (int)windowOutput;
 
@@ -586,7 +586,7 @@
 
 // Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
 
-- (struct CGSize { double x1; double x2; })MPU_rootViewSize;
+- (struct CGSize { float x1; float x2; })MPU_rootViewSize;
 
 // Image: /System/Library/PrivateFrameworks/SpringBoardUI.framework/SpringBoardUI
 
@@ -595,7 +595,7 @@
 // Image: /System/Library/PrivateFrameworks/UIAccessibility.framework/UIAccessibility
 
 - (BOOL)_accessibilityIsModalWithKeyboard;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_axConvertRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 toWindow:(id)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_axConvertRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 toWindow:(id)arg2;
 
 // Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
 

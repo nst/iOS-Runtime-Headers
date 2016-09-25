@@ -10,7 +10,7 @@
     BOOL  _finishedSending;
     int  _interruptionCount;
     BOOL  _sawADropout;
-    unsigned int  _startDropoutCount;
+    unsigned long long  _startDropoutCount;
 }
 
 @property (nonatomic, readonly) PSYActivityInfo *activityInfo;
@@ -20,7 +20,7 @@
 @property (getter=isFinishedSending, nonatomic, readonly) BOOL finishedSending;
 @property (nonatomic, readonly) int interruptionCount;
 @property (nonatomic, readonly) BOOL sawADropout;
-@property (nonatomic, readonly) unsigned int startDropoutCount;
+@property (nonatomic, readonly) unsigned long long startDropoutCount;
 
 + (BOOL)supportsSecureCoding;
 
@@ -32,13 +32,13 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)error;
 - (unsigned int)hash;
-- (id)initWithActivityInfo:(id)arg1 progress:(double)arg2 error:(id)arg3 state:(unsigned int)arg4 finishedSending:(BOOL)arg5 interruptionCount:(int)arg6 startDropoutCount:(unsigned int)arg7 sawADropout:(BOOL)arg8;
+- (id)initWithActivityInfo:(id)arg1 progress:(double)arg2 error:(id)arg3 state:(unsigned int)arg4 finishedSending:(BOOL)arg5 interruptionCount:(int)arg6 startDropoutCount:(unsigned long long)arg7 sawADropout:(BOOL)arg8;
 - (id)initWithCoder:(id)arg1;
 - (int)interruptionCount;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isFinishedSending;
 - (BOOL)sawADropout;
-- (unsigned int)startDropoutCount;
+- (unsigned long long)startDropoutCount;
 - (id)syncSessionActivityByUpdatingProgress:(double)arg1;
 
 @end

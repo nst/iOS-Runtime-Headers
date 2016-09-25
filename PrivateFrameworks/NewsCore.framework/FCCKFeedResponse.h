@@ -4,7 +4,7 @@
 
 @interface FCCKFeedResponse : NSObject {
     NSData * _cursor;
-    unsigned int  _extent;
+    unsigned long long  _extent;
     NSString * _feedID;
     NSArray * _feedItemAndArticleRecords;
     BOOL  _reachedEnd;
@@ -13,7 +13,7 @@
 }
 
 @property (nonatomic, copy) NSData *cursor;
-@property (nonatomic) unsigned int extent;
+@property (nonatomic) unsigned long long extent;
 @property (nonatomic, copy) NSString *feedID;
 @property (nonatomic, copy) NSArray *feedItemAndArticleRecords;
 @property (nonatomic) BOOL reachedEnd;
@@ -23,13 +23,13 @@
 - (void).cxx_destruct;
 - (id)cursor;
 - (id)description;
-- (unsigned int)extent;
+- (unsigned long long)extent;
 - (id)feedID;
 - (id)feedItemAndArticleRecords;
 - (BOOL)reachedEnd;
 - (BOOL)reachedOrderLimit;
 - (void)setCursor:(id)arg1;
-- (void)setExtent:(unsigned int)arg1;
+- (void)setExtent:(unsigned long long)arg1;
 - (void)setFeedID:(id)arg1;
 - (void)setFeedItemAndArticleRecords:(id)arg1;
 - (void)setReachedEnd:(BOOL)arg1;

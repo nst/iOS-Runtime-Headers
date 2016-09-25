@@ -6,9 +6,9 @@
     unsigned char  _deviceUID;
     BOOL  _isB39;
     AppleIRCommand * _lastAppleIRCommand;
-    unsigned int  _lastCommandTimestamp;
+    unsigned long long  _lastCommandTimestamp;
     unsigned int  _lastCoreRCCommand;
-    unsigned int  _pressAndHoldTimeoutGenerationCount;
+    unsigned long long  _pressAndHoldTimeoutGenerationCount;
 }
 
 @property (nonatomic, readonly) unsigned char deviceUID;
@@ -17,10 +17,10 @@
 + (BOOL)supportsSecureCoding;
 
 - (void)_cancelPressAndHoldTimer;
-- (BOOL)_dispatchAppleVendorEventPage:(unsigned int)arg1 usage:(unsigned int)arg2 timestamp:(unsigned int)arg3 toDevice:(id)arg4;
-- (BOOL)_dispatchEventWithCommand:(unsigned int)arg1 timestamp:(unsigned int)arg2 toDevice:(id)arg3;
+- (BOOL)_dispatchAppleVendorEventPage:(unsigned int)arg1 usage:(unsigned int)arg2 timestamp:(unsigned long long)arg3 toDevice:(id)arg4;
+- (BOOL)_dispatchEventWithCommand:(unsigned int)arg1 timestamp:(unsigned long long)arg2 toDevice:(id)arg3;
 - (void)_schedulePressAndHoldTimer;
-- (void)_synthesizeButtonReleaseWithTimestamp:(unsigned int)arg1;
+- (void)_synthesizeButtonReleaseWithTimestamp:(unsigned long long)arg1;
 - (id)busProvider;
 - (Class)classForCoder;
 - (void)dealloc;

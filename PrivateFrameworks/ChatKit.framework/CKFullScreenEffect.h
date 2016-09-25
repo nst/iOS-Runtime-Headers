@@ -4,7 +4,7 @@
 
 @interface CKFullScreenEffect : NSObject <CKAudioControllerDelegate> {
     CKAudioController * _audioController;
-    double  _currentVolume;
+    float  _currentVolume;
     <CKFullScreenEffectDelegate> * _delegate;
     NSString * _identifier;
     CKMessagePartChatItem * _triggeringChatItem;

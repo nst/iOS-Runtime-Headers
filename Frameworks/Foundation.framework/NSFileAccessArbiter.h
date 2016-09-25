@@ -39,7 +39,7 @@
 - (void)_startArbitratingItemsAtURLs:(id)arg1 withSuperarbitrationServer:(id)arg2;
 - (void)_willRemoveReactor:(id)arg1;
 - (void)_writerWithPurposeID:(id)arg1 didMoveItemAtURL:(id)arg2 toURL:(id)arg3;
-- (void)addPresenter:(id)arg1 withID:(id)arg2 fileURL:(id)arg3 lastPresentedItemEventIdentifier:(id)arg4 options:(unsigned int)arg5 responses:(unsigned int)arg6;
+- (void)addPresenter:(id)arg1 withID:(id)arg2 fileURL:(id)arg3 lastPresentedItemEventIdentifier:(id)arg4 options:(unsigned int)arg5 responses:(unsigned long long)arg6;
 - (void)addProvider:(id)arg1 withID:(id)arg2 uniqueID:(id)arg3 forProvidedItemsURL:(id)arg4 options:(unsigned int)arg5 withServer:(id)arg6 reply:(id /* block */)arg7;
 - (oneway void)cancelAccessClaimForID:(id)arg1;
 - (void)dealloc;

@@ -6,12 +6,12 @@
     SSXPCConnection * _controlConnection;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
     NSDictionary * _properties;
-    int  _sessionID;
+    long long  _sessionID;
 }
 
 - (void)_setControlConnection:(id)arg1;
 - (void)_setErrorProperties:(id)arg1;
-- (void)_setSessionID:(int)arg1;
+- (void)_setSessionID:(long long)arg1;
 - (void)dealloc;
 - (id)init;
 - (void)performDefaultHandling;

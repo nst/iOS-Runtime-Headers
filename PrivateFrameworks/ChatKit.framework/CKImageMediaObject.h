@@ -9,8 +9,8 @@
     BOOL  _isIrisAsset;
     BOOL  _isSticker;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _originalSize;
     UIImage * _thumbnail;
 }
@@ -33,12 +33,12 @@
 - (id)_getTempIrisBundleLocation;
 - (id)_getTempIrisFolder;
 - (void)_removeAppendedBundle;
-- (struct CGSize { double x1; double x2; })bbSize;
+- (struct CGSize { float x1; float x2; })bbSize;
 - (BOOL)canExport;
 - (BOOL)canShareItem;
 - (void)dealloc;
 - (void)export:(id)arg1;
-- (id)generateThumbnailFillToSize:(struct CGSize { double x1; double x2; })arg1 contentAlignmentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
+- (id)generateThumbnailFillToSize:(struct CGSize { float x1; float x2; })arg1 contentAlignmentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
 - (id)generateThumbnailForWidth:(float)arg1 orientation:(BOOL)arg2;
 - (id)imageData;
 - (id)initWithTransfer:(id)arg1;
@@ -46,7 +46,7 @@
 - (BOOL)isSticker;
 - (id)location;
 - (int)mediaType;
-- (struct CGSize { double x1; double x2; })originalSize;
+- (struct CGSize { float x1; float x2; })originalSize;
 - (id)pasteboardItem;
 - (id)previewItemTitle;
 - (id)previewItemURL;

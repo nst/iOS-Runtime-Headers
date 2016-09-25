@@ -31,7 +31,7 @@
 - (BOOL)_ready;
 - (void)_receivedPendingACRequests;
 - (void)_receivedPendingVCRequests;
-- (void)_setServiceVCCaps:(unsigned int)arg1 toCaps:(unsigned int)arg2;
+- (void)_setServiceVCCaps:(unsigned long long)arg1 toCaps:(unsigned long long)arg2;
 - (BOOL)_shouldObserveConferences;
 - (BOOL)_shouldRunACConferences;
 - (BOOL)_shouldRunConferences;
@@ -68,7 +68,7 @@
 - (void)set_delegates:(id)arg1;
 - (void)setupIMAVController;
 - (void)updateActiveConference;
-- (void)vcCapabilitiesChanged:(unsigned int)arg1;
+- (void)vcCapabilitiesChanged:(unsigned long long)arg1;
 - (id)vcResponseInfoWithSessionID:(unsigned int)arg1;
 
 @end

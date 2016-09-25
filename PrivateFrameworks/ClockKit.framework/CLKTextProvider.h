@@ -55,7 +55,7 @@
 - (int)_updateFrequency;
 - (void)_validate;
 - (id)attributedString;
-- (id)attributedTextAndSize:(struct CGSize { double x1; double x2; }*)arg1 forMaxWidth:(float)arg2 withStyle:(id)arg3 now:(id)arg4;
+- (id)attributedTextAndSize:(struct CGSize { float x1; float x2; }*)arg1 forMaxWidth:(float)arg2 withStyle:(id)arg3 now:(id)arg4;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;

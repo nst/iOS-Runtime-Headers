@@ -4,9 +4,9 @@
 
 @interface AXEventAccelerometerInfoRepresentation : NSObject <AXEventRepresentationDescription, NSCopying, NSSecureCoding> {
     unsigned int  _type;
-    double  _x;
-    double  _y;
-    double  _z;
+    float  _x;
+    float  _y;
+    float  _z;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -14,9 +14,9 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 @property (nonatomic) unsigned int type;
-@property (nonatomic) double x;
-@property (nonatomic) double y;
-@property (nonatomic) double z;
+@property (nonatomic) float x;
+@property (nonatomic) float y;
+@property (nonatomic) float z;
 
 + (BOOL)supportsSecureCoding;
 

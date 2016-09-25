@@ -12,7 +12,7 @@
     UIColor * _balloonStrokeColor;
     MKMapView * _mapView;
     BOOL  _needsToResolveBalloonAttributes;
-    double  _smallBalloonScaleFactor;
+    float  _smallBalloonScaleFactor;
 }
 
 @property (nonatomic) MKMapView *mapView;

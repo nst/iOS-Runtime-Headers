@@ -16,7 +16,7 @@
     NSData * _movieData;
     BOOL  _pending;
     NSData * _photosGraphData;
-    int  _photosGraphVersion;
+    long long  _photosGraphVersion;
     BOOL  _rejected;
     NSSet * _representativeAssetUUIDs;
     double  _score;
@@ -41,7 +41,7 @@
 @property (nonatomic, retain) NSData *movieData;
 @property (getter=isPending, nonatomic) BOOL pending;
 @property (nonatomic, retain) NSData *photosGraphData;
-@property (nonatomic) int photosGraphVersion;
+@property (nonatomic) long long photosGraphVersion;
 @property (getter=isRejected, nonatomic) BOOL rejected;
 @property (nonatomic, retain) NSSet *representativeAssetUUIDs;
 @property (nonatomic) double score;
@@ -84,7 +84,7 @@
 - (id)movieCuratedAssetUUIDs;
 - (id)movieData;
 - (id)photosGraphData;
-- (int)photosGraphVersion;
+- (long long)photosGraphVersion;
 - (void)removePersistedData;
 - (id)representativeAssetUUIDs;
 - (double)score;
@@ -101,7 +101,7 @@
 - (void)setMovieData:(id)arg1;
 - (void)setPending:(BOOL)arg1;
 - (void)setPhotosGraphData:(id)arg1;
-- (void)setPhotosGraphVersion:(int)arg1;
+- (void)setPhotosGraphVersion:(long long)arg1;
 - (void)setRejected:(BOOL)arg1;
 - (void)setRepresentativeAssetUUIDs:(id)arg1;
 - (void)setScore:(double)arg1;

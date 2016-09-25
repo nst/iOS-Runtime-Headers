@@ -15,18 +15,18 @@
 @property (nonatomic, readonly) BOOL usesVerticalLayout;
 
 - (void).cxx_destruct;
-- (void)_addOriginDelta:(float)arg1 toPoint:(struct CGPoint { double x1; double x2; }*)arg2;
+- (void)_addOriginDelta:(float)arg1 toPoint:(struct CGPoint { float x1; float x2; }*)arg2;
 - (id)_createViewForItem:(id)arg1 withData:(id)arg2 actions:(int)arg3;
-- (float)_dimensionForSize:(struct CGSize { double x1; double x2; })arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameForItemView:(id)arg1 startPosition:(float)arg2 firstView:(BOOL)arg3;
+- (float)_dimensionForSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForItemView:(id)arg1 startPosition:(float)arg2 firstView:(BOOL)arg3;
 - (id)_itemViews;
 - (id)_itemViewsSortedForLayout;
 - (float)_positionAfterPlacingItemView:(id)arg1 startPosition:(float)arg2 firstView:(BOOL)arg3;
 - (void)_positionNewItemViewsWithEnabledItems:(BOOL*)arg1;
 - (void)_prepareEnabledItemType:(int)arg1 withEnabledItems:(BOOL*)arg2 withData:(id)arg3 actions:(int)arg4 itemAppearing:(BOOL*)arg5 itemDisappearing:(BOOL*)arg6;
 - (BOOL)_processDelta:(float)arg1 forView:(id)arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_repositionedNewFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 sizeDelta:(float)arg2;
-- (void)_setOrigin:(float)arg1 forPoint:(struct CGPoint { double x1; double x2; }*)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_repositionedNewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 sizeDelta:(float)arg2;
+- (void)_setOrigin:(float)arg1 forPoint:(struct CGPoint { float x1; float x2; }*)arg2;
 - (float)_sizeNeededForItemView:(id)arg1;
 - (float)_startPosition;
 - (BOOL)_updateItemView:(id)arg1 withData:(id)arg2 actions:(int)arg3 animated:(BOOL)arg4;
@@ -44,7 +44,7 @@
 - (void)positionInvisibleItems;
 - (BOOL)prepareDoubleHeightItemWithEnabledItems:(BOOL*)arg1;
 - (BOOL)prepareEnabledItems:(BOOL*)arg1 withData:(id)arg2 actions:(int)arg3;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rectForItems:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForItems:(id)arg1;
 - (void)reflowWithVisibleItems:(id)arg1 duration:(double)arg2;
 - (void)removeDisabledItems:(BOOL*)arg1;
 - (float)removeOverlap:(float)arg1 fromItems:(id)arg2;

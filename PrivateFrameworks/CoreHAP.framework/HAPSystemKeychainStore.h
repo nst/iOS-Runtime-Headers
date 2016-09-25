@@ -30,7 +30,7 @@
 - (id)_getKeychainItemsForAccessGroup:(id)arg1 type:(id)arg2 account:(id)arg3 shouldReturnData:(BOOL)arg4 error:(int*)arg5;
 - (id)_getKeychainItemsForViewHint:(id)arg1 accessGroup:(id)arg2 type:(id)arg3 account:(id)arg4 shouldReturnData:(BOOL)arg5 error:(int*)arg6;
 - (long)_getMetadataSecretKey:(id*)arg1;
-- (long)_getPeripheralIdentifier:(id*)arg1 forAccessoryIdentifier:(id)arg2 protocolVersion:(unsigned int*)arg3 resumeSessionID:(unsigned int*)arg4;
+- (long)_getPeripheralIdentifier:(id*)arg1 forAccessoryIdentifier:(id)arg2 protocolVersion:(unsigned int*)arg3 resumeSessionID:(unsigned long long*)arg4;
 - (long)_getPublicKey:(id*)arg1 registeredWithHomeKit:(BOOL*)arg2 forAccessoryName:(id)arg3;
 - (long)_removeAccessoryKeyForName:(id)arg1;
 - (long)_removeControllerKeyPair;
@@ -39,7 +39,7 @@
 - (long)_removeControllerKeyPairForViewHint:(id)arg1 identifier:(id)arg2 leaveTombstone:(BOOL)arg3;
 - (long)_removeKeychainItem:(id)arg1 leaveTombstone:(BOOL)arg2;
 - (long)_saveKeyPair:(id)arg1 username:(id)arg2 syncable:(BOOL)arg3 viewHint:(id)arg4;
-- (long)_savePeripheralIdentifier:(id)arg1 forAccessoryIdentifier:(id)arg2 protocolVersion:(unsigned int)arg3 resumeSessionID:(unsigned int)arg4;
+- (long)_savePeripheralIdentifier:(id)arg1 forAccessoryIdentifier:(id)arg2 protocolVersion:(unsigned int)arg3 resumeSessionID:(unsigned long long)arg4;
 - (long)_savePublicKey:(id)arg1 forAccessoryName:(id)arg2;
 - (long)_updateCurrentiCloudIdentifier:(id)arg1 controllerPairingIdentifier:(id)arg2;
 - (void)_updateKeychainItemToInvisible:(id)arg1;
@@ -58,7 +58,7 @@
 - (BOOL)getMetadataSecretKey:(id*)arg1 error:(id*)arg2;
 - (id)getPeripherialIdentifiersAndAccessoryNames;
 - (id)queue;
-- (id)readPeripheralIdentifierForAccessoryIdentifier:(id)arg1 protocolVersion:(unsigned int*)arg2 resumeSessionID:(unsigned int*)arg3 error:(id*)arg4;
+- (id)readPeripheralIdentifierForAccessoryIdentifier:(id)arg1 protocolVersion:(unsigned int*)arg2 resumeSessionID:(unsigned long long*)arg3 error:(id*)arg4;
 - (id)readPublicKeyForAccessoryName:(id)arg1 registeredWithHomeKit:(BOOL*)arg2 error:(id*)arg3;
 - (BOOL)registerAccessoryWithHomeKit:(id)arg1 error:(id*)arg2;
 - (BOOL)removeAccessoryKeyForName:(id)arg1 error:(id*)arg2;
@@ -66,12 +66,12 @@
 - (BOOL)removeControllerKeyPairForIdentifier:(id)arg1 leaveTombstone:(BOOL)arg2 error:(id*)arg3;
 - (BOOL)removeControllerKeyPairWithError:(id*)arg1;
 - (BOOL)saveKeyPair:(id)arg1 username:(id)arg2 syncable:(BOOL)arg3 error:(id*)arg4;
-- (BOOL)savePeripheralIdentifier:(id)arg1 forAccessoryIdentifier:(id)arg2 protocolVersion:(unsigned int)arg3 resumeSessionID:(unsigned int)arg4 error:(id*)arg5;
+- (BOOL)savePeripheralIdentifier:(id)arg1 forAccessoryIdentifier:(id)arg2 protocolVersion:(unsigned int)arg3 resumeSessionID:(unsigned long long)arg4 error:(id*)arg5;
 - (BOOL)savePublicKey:(id)arg1 forAccessoryName:(id)arg2 error:(id*)arg3;
 - (void)setActiveControllerIdentifier:(id)arg1;
 - (void)setQueue:(id)arg1;
 - (BOOL)updateActiveControllerPairingIdentifier:(id)arg1;
 - (BOOL)updateCurrentiCloudIdentifier:(id)arg1 controllerPairingIdentifier:(id)arg2 error:(id*)arg3;
-- (BOOL)updatePeripheralIdentifier:(id)arg1 forAccessoryIdentifier:(id)arg2 protocolVersion:(unsigned int)arg3 previousVersion:(unsigned int*)arg4 resumeSessionID:(unsigned int)arg5 error:(id*)arg6;
+- (BOOL)updatePeripheralIdentifier:(id)arg1 forAccessoryIdentifier:(id)arg2 protocolVersion:(unsigned int)arg3 previousVersion:(unsigned int*)arg4 resumeSessionID:(unsigned long long)arg5 error:(id*)arg6;
 
 @end

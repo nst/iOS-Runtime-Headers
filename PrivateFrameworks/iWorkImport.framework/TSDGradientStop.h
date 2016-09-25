@@ -4,13 +4,13 @@
 
 @interface TSDGradientStop : NSObject <NSCopying, NSMutableCopying, TSDMixing> {
     TSUColor * mColor;
-    double  mFraction;
-    double  mInflection;
+    float  mFraction;
+    float  mInflection;
 }
 
 @property (nonatomic, readonly, copy) TSUColor *color;
-@property (nonatomic, readonly) double fraction;
-@property (nonatomic, readonly) double inflection;
+@property (nonatomic, readonly) float fraction;
+@property (nonatomic, readonly) float inflection;
 
 + (id)gradientStopWithColor:(id)arg1 fraction:(float)arg2;
 + (id)gradientStopWithColor:(id)arg1 fraction:(float)arg2 inflection:(float)arg3;
@@ -24,7 +24,7 @@
 - (id)gradientStopWithInflection:(float)arg1;
 - (unsigned int)hash;
 - (float)inflection;
-- (id)initWithArchive:(const struct GradientArchive_GradientStop { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Color {} *x5; double x6; double x7; }*)arg1 unarchiver:(id)arg2;
+- (id)initWithArchive:(const struct GradientArchive_GradientStop { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Color {} *x5; float x6; float x7; }*)arg1 unarchiver:(id)arg2;
 - (id)initWithColor:(id)arg1 fraction:(float)arg2;
 - (id)initWithColor:(id)arg1 fraction:(float)arg2 inflection:(float)arg3;
 - (id)initWithGradientStop:(id)arg1;
@@ -35,6 +35,6 @@
 - (void)p_setColor:(id)arg1;
 - (void)p_setFraction:(float)arg1;
 - (void)p_setInflection:(float)arg1;
-- (void)saveToArchive:(struct GradientArchive_GradientStop { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Color {} *x5; double x6; double x7; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct GradientArchive_GradientStop { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Color {} *x5; float x6; float x7; }*)arg1 archiver:(id)arg2;
 
 @end

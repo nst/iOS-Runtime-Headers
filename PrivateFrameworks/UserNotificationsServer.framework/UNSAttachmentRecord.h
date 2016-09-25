@@ -8,21 +8,21 @@
     NSString * _identifier;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _thumbnailClippingRect;
     NSNumber * _thumbnailFrameNumber;
     BOOL  _thumbnailHidden;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _thumbnailTimestamp;
     NSString * _type;
 }
@@ -30,10 +30,10 @@
 @property (nonatomic, copy) NSURL *URL;
 @property (nonatomic) unsigned int family;
 @property (nonatomic, copy) NSString *identifier;
-@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } thumbnailClippingRect;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } thumbnailClippingRect;
 @property (nonatomic, copy) NSNumber *thumbnailFrameNumber;
 @property (nonatomic) BOOL thumbnailHidden;
-@property (nonatomic) struct { int x1; int x2; unsigned int x3; int x4; } thumbnailTimestamp;
+@property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } thumbnailTimestamp;
 @property (nonatomic, copy) NSString *type;
 
 - (void).cxx_destruct;
@@ -47,16 +47,16 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)setFamily:(unsigned int)arg1;
 - (void)setIdentifier:(id)arg1;
-- (void)setThumbnailClippingRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setThumbnailClippingRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setThumbnailFrameNumber:(id)arg1;
 - (void)setThumbnailHidden:(BOOL)arg1;
-- (void)setThumbnailTimestamp:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
+- (void)setThumbnailTimestamp:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setType:(id)arg1;
 - (void)setURL:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })thumbnailClippingRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })thumbnailClippingRect;
 - (id)thumbnailFrameNumber;
 - (BOOL)thumbnailHidden;
-- (struct { int x1; int x2; unsigned int x3; int x4; })thumbnailTimestamp;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })thumbnailTimestamp;
 - (id)type;
 
 @end

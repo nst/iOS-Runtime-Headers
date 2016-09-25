@@ -8,7 +8,7 @@
     UILabel * _durationLabel;
     BOOL  _explicitContent;
     UIImageView * _explicitImageView;
-    double  _maximumDurationWidth;
+    float  _maximumDurationWidth;
     UILabel * _titleLabel;
     UILabel * _trackNumberLabel;
 }
@@ -16,7 +16,7 @@
 @property (nonatomic) BOOL currentlyPlaying;
 @property (nonatomic, copy) NSString *durationText;
 @property (nonatomic) BOOL explicitContent;
-@property (nonatomic) double maximumDurationWidth;
+@property (nonatomic) float maximumDurationWidth;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *trackNumberText;
 

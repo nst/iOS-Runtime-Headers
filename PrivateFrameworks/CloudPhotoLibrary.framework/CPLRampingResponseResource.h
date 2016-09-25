@@ -9,7 +9,7 @@
         unsigned int allowed : 1; 
     }  _has;
     NSString * _resource;
-    int  _retryAfterMillis;
+    long long  _retryAfterMillis;
 }
 
 @property (nonatomic) BOOL allowed;
@@ -17,7 +17,7 @@
 @property (nonatomic, readonly) BOOL hasResource;
 @property (nonatomic) BOOL hasRetryAfterMillis;
 @property (nonatomic, retain) NSString *resource;
-@property (nonatomic) int retryAfterMillis;
+@property (nonatomic) long long retryAfterMillis;
 
 - (void).cxx_destruct;
 - (BOOL)allowed;
@@ -33,12 +33,12 @@
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (id)resource;
-- (int)retryAfterMillis;
+- (long long)retryAfterMillis;
 - (void)setAllowed:(BOOL)arg1;
 - (void)setHasAllowed:(BOOL)arg1;
 - (void)setHasRetryAfterMillis:(BOOL)arg1;
 - (void)setResource:(id)arg1;
-- (void)setRetryAfterMillis:(int)arg1;
+- (void)setRetryAfterMillis:(long long)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

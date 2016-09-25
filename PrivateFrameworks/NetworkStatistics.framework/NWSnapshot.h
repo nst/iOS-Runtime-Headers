@@ -4,10 +4,10 @@
 
 @interface NWSnapshot : NSObject {
     struct nstat_counts { 
-        unsigned int nstat_rxpackets; 
-        unsigned int nstat_rxbytes; 
-        unsigned int nstat_txpackets; 
-        unsigned int nstat_txbytes; 
+        unsigned long long nstat_rxpackets; 
+        unsigned long long nstat_rxbytes; 
+        unsigned long long nstat_txpackets; 
+        unsigned long long nstat_txbytes; 
         unsigned int nstat_rxduplicatebytes; 
         unsigned int nstat_rxoutoforderbytes; 
         unsigned int nstat_txretransmit; 
@@ -16,12 +16,12 @@
         unsigned int nstat_min_rtt; 
         unsigned int nstat_avg_rtt; 
         unsigned int nstat_var_rtt; 
-        unsigned int nstat_cell_rxbytes; 
-        unsigned int nstat_cell_txbytes; 
-        unsigned int nstat_wifi_rxbytes; 
-        unsigned int nstat_wifi_txbytes; 
-        unsigned int nstat_wired_rxbytes; 
-        unsigned int nstat_wired_txbytes; 
+        unsigned long long nstat_cell_rxbytes; 
+        unsigned long long nstat_cell_txbytes; 
+        unsigned long long nstat_wifi_rxbytes; 
+        unsigned long long nstat_wifi_txbytes; 
+        unsigned long long nstat_wired_rxbytes; 
+        unsigned long long nstat_wired_txbytes; 
     }  _counts;
 }
 
@@ -30,39 +30,39 @@
 @property (readonly) double rttAverage;
 @property (readonly) double rttMinimum;
 @property (readonly) double rttVariation;
-@property (readonly) unsigned int rxBytes;
-@property (readonly) unsigned int rxCellularBytes;
+@property (readonly) unsigned long long rxBytes;
+@property (readonly) unsigned long long rxCellularBytes;
 @property (readonly) unsigned int rxDuplicateBytes;
 @property (readonly) unsigned int rxOutOfOrderBytes;
-@property (readonly) unsigned int rxPackets;
-@property (readonly) unsigned int rxWiFiBytes;
-@property (readonly) unsigned int rxWiredBytes;
-@property (readonly) unsigned int txBytes;
-@property (readonly) unsigned int txCellularBytes;
-@property (readonly) unsigned int txPackets;
+@property (readonly) unsigned long long rxPackets;
+@property (readonly) unsigned long long rxWiFiBytes;
+@property (readonly) unsigned long long rxWiredBytes;
+@property (readonly) unsigned long long txBytes;
+@property (readonly) unsigned long long txCellularBytes;
+@property (readonly) unsigned long long txPackets;
 @property (readonly) unsigned int txRetransmittedBytes;
-@property (readonly) unsigned int txWiFiBytes;
-@property (readonly) unsigned int txWiredBytes;
+@property (readonly) unsigned long long txWiFiBytes;
+@property (readonly) unsigned long long txWiredBytes;
 
-- (void)_initWithCounts:(const struct nstat_counts { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; unsigned int x15; unsigned int x16; unsigned int x17; unsigned int x18; }*)arg1;
+- (void)_initWithCounts:(const struct nstat_counts { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned long long x13; unsigned long long x14; unsigned long long x15; unsigned long long x16; unsigned long long x17; unsigned long long x18; }*)arg1;
 - (unsigned int)connectAttempts;
 - (unsigned int)connectSuccesses;
 - (id)description;
 - (double)rttAverage;
 - (double)rttMinimum;
 - (double)rttVariation;
-- (unsigned int)rxBytes;
-- (unsigned int)rxCellularBytes;
+- (unsigned long long)rxBytes;
+- (unsigned long long)rxCellularBytes;
 - (unsigned int)rxDuplicateBytes;
 - (unsigned int)rxOutOfOrderBytes;
-- (unsigned int)rxPackets;
-- (unsigned int)rxWiFiBytes;
-- (unsigned int)rxWiredBytes;
-- (unsigned int)txBytes;
-- (unsigned int)txCellularBytes;
-- (unsigned int)txPackets;
+- (unsigned long long)rxPackets;
+- (unsigned long long)rxWiFiBytes;
+- (unsigned long long)rxWiredBytes;
+- (unsigned long long)txBytes;
+- (unsigned long long)txCellularBytes;
+- (unsigned long long)txPackets;
 - (unsigned int)txRetransmittedBytes;
-- (unsigned int)txWiFiBytes;
-- (unsigned int)txWiredBytes;
+- (unsigned long long)txWiFiBytes;
+- (unsigned long long)txWiredBytes;
 
 @end

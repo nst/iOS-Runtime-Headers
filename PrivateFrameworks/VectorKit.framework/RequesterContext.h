@@ -3,7 +3,7 @@
  */
 
 @interface RequesterContext : NSObject {
-    unsigned int  _featureID;
+    unsigned long long  _featureID;
     struct _GEOTileKey { 
         unsigned int z : 6; 
         unsigned int x : 26; 
@@ -19,14 +19,14 @@
     GEOTileRequester * _tileRequester;
 }
 
-@property (nonatomic) unsigned int featureID;
+@property (nonatomic) unsigned long long featureID;
 @property (nonatomic) struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; } key;
 @property (nonatomic, retain) GEOTileRequester *tileRequester;
 
 - (void)dealloc;
-- (unsigned int)featureID;
+- (unsigned long long)featureID;
 - (struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; })key;
-- (void)setFeatureID:(unsigned int)arg1;
+- (void)setFeatureID:(unsigned long long)arg1;
 - (void)setKey:(struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; })arg1;
 - (void)setTileRequester:(id)arg1;
 - (id)tileRequester;

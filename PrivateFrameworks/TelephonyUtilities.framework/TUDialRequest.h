@@ -12,12 +12,12 @@
     TUHandle * _handle;
     BOOL  _hostOnCurrentDevice;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _localLandscapeAspectRatio;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _localPortraitAspectRatio;
     int  _originatingUIType;
     BOOL  _performDialAssist;
@@ -44,8 +44,8 @@
 @property (nonatomic, retain) TUHandle *handle;
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL hostOnCurrentDevice;
-@property (nonatomic) struct CGSize { double x1; double x2; } localLandscapeAspectRatio;
-@property (nonatomic) struct CGSize { double x1; double x2; } localPortraitAspectRatio;
+@property (nonatomic) struct CGSize { float x1; float x2; } localLandscapeAspectRatio;
+@property (nonatomic) struct CGSize { float x1; float x2; } localPortraitAspectRatio;
 @property (nonatomic) int originatingUIType;
 @property (nonatomic) BOOL performDialAssist;
 @property (nonatomic) BOOL performLocalDialAssist;
@@ -124,8 +124,8 @@
 - (BOOL)isValid;
 - (BOOL)isVideo;
 - (id)isVoicemailURLQueryItem;
-- (struct CGSize { double x1; double x2; })localLandscapeAspectRatio;
-- (struct CGSize { double x1; double x2; })localPortraitAspectRatio;
+- (struct CGSize { float x1; float x2; })localLandscapeAspectRatio;
+- (struct CGSize { float x1; float x2; })localPortraitAspectRatio;
 - (id)noPromptURLQueryItem;
 - (int)originatingUIType;
 - (id)originatingUIURLQueryItem;
@@ -145,8 +145,8 @@
 - (void)setEndpointOnCurrentDevice:(BOOL)arg1;
 - (void)setHandle:(id)arg1;
 - (void)setHostOnCurrentDevice:(BOOL)arg1;
-- (void)setLocalLandscapeAspectRatio:(struct CGSize { double x1; double x2; })arg1;
-- (void)setLocalPortraitAspectRatio:(struct CGSize { double x1; double x2; })arg1;
+- (void)setLocalLandscapeAspectRatio:(struct CGSize { float x1; float x2; })arg1;
+- (void)setLocalPortraitAspectRatio:(struct CGSize { float x1; float x2; })arg1;
 - (void)setOriginatingUIType:(int)arg1;
 - (void)setPerformDialAssist:(BOOL)arg1;
 - (void)setPerformLocalDialAssist:(BOOL)arg1;

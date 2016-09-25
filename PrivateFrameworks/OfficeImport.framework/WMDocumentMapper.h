@@ -11,7 +11,7 @@
 - (id)archiver;
 - (id)blipAtIndex:(unsigned int)arg1;
 - (float)bottomMargin;
-- (struct CGSize { double x1; double x2; })contentSizeForDevice;
+- (struct CGSize { float x1; float x2; })contentSizeForDevice;
 - (void)dealloc;
 - (int)defaultTabWidth;
 - (id)documentTitle;
@@ -22,7 +22,7 @@
 - (float)leftMargin;
 - (void)mapDefaultCssStylesAt:(id)arg1;
 - (void)mapWithState:(id)arg1;
-- (struct CGSize { double x1; double x2; })pageSizeForDevice;
+- (struct CGSize { float x1; float x2; })pageSizeForDevice;
 - (float)rightMargin;
 - (void)setFileName:(id)arg1;
 - (id)styleMatrix;

@@ -5,7 +5,7 @@
 
 @required
 
-- (struct CGSize { double x1; double x2; })size;
+- (struct CGSize { float x1; float x2; })size;
 - (float)weight;
 
 @end

@@ -19,13 +19,13 @@
     unsigned int  _textColor;
     unsigned int  _textDropShadowColor;
     struct { 
-        double *list; 
+        float *list; 
         unsigned int count; 
         unsigned int size; 
     }  _textDropShadowOffsets;
-    double  _textDropShadowSize;
+    float  _textDropShadowSize;
     unsigned int  _textStrokeColor;
-    double  _textStrokeSize;
+    float  _textStrokeSize;
 }
 
 @property (nonatomic) unsigned int backgroundColor;
@@ -43,9 +43,9 @@
 @property (nonatomic) unsigned int textDropShadowColor;
 @property (nonatomic, readonly) float*textDropShadowOffsets;
 @property (nonatomic, readonly) unsigned int textDropShadowOffsetsCount;
-@property (nonatomic) double textDropShadowSize;
+@property (nonatomic) float textDropShadowSize;
 @property (nonatomic) unsigned int textStrokeColor;
-@property (nonatomic) double textStrokeSize;
+@property (nonatomic) float textStrokeSize;
 
 - (void)addTextDropShadowOffset:(float)arg1;
 - (unsigned int)backgroundColor;

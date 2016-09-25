@@ -23,16 +23,16 @@
 
 + (id)activeInstance;
 + (Class)dictationViewClass;
-+ (struct CGSize { double x1; double x2; })layoutSize;
++ (struct CGSize { float x1; float x2; })layoutSize;
 + (id)sharedInstance;
-+ (struct CGSize { double x1; double x2; })viewSize;
++ (struct CGSize { float x1; float x2; })viewSize;
 
 - (void)applicationEnteredBackground;
 - (void)applicationWillResignActive;
 - (float)audioLevelForFlamesView:(id)arg1;
-- (struct CGPoint { double x1; double x2; })backgroundOffset;
-- (struct CGPoint { double x1; double x2; })contentOffset;
-- (struct CGSize { double x1; double x2; })currentScreenSize;
+- (struct CGPoint { float x1; float x2; })backgroundOffset;
+- (struct CGPoint { float x1; float x2; })contentOffset;
+- (struct CGSize { float x1; float x2; })currentScreenSize;
 - (void)dealloc;
 - (id)displayDelegate;
 - (BOOL)drawsOwnBackground;
@@ -40,10 +40,10 @@
 - (void)endpointButtonPressed;
 - (void)finishReturnToKeyboard;
 - (void)highlightEndpointButton;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isShowing;
 - (void)keyboardDidShow:(id)arg1;
-- (struct CGPoint { double x1; double x2; })positionForShow;
+- (struct CGPoint { float x1; float x2; })positionForShow;
 - (void)prepareForReturnToKeyboard;
 - (void)returnToKeyboard;
 - (void)setDisplayDelegate:(id)arg1;

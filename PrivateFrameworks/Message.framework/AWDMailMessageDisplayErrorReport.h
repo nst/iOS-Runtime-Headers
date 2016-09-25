@@ -11,7 +11,7 @@
     int  _loadingError;
     AWDMailMessage * _message;
     int  _mimeError;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) BOOL hasLoadingError;
@@ -21,7 +21,7 @@
 @property (nonatomic) int loadingError;
 @property (nonatomic, retain) AWDMailMessage *message;
 @property (nonatomic) int mimeError;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void).cxx_destruct;
 - (int)StringAsLoadingError:(id)arg1;
@@ -49,8 +49,8 @@
 - (void)setLoadingError:(int)arg1;
 - (void)setMessage:(id)arg1;
 - (void)setMimeError:(int)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
-- (unsigned int)timestamp;
+- (void)setTimestamp:(unsigned long long)arg1;
+- (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 
 @end

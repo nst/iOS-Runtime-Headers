@@ -20,7 +20,7 @@
 - (id)_presentingViewControllerForSystemProvidedPresentationOfAlertController:(id)arg1;
 - (void)_setupAlertController;
 - (void)_setupCardViewControllerWithContacts:(id)arg1;
-- (BOOL)_shouldPerformSystemProvidedPresentationOfAlertController:(id)arg1 atSystemProvidedPresentationRegisteredViewLocation:(struct CGPoint { double x1; double x2; })arg2;
+- (BOOL)_shouldPerformSystemProvidedPresentationOfAlertController:(id)arg1 atSystemProvidedPresentationRegisteredViewLocation:(struct CGPoint { float x1; float x2; })arg2;
 - (void)_willBeginSystemProvidedPresentationOfAlertController:(id)arg1;
 - (id)alertController;
 - (id)cardViewController;

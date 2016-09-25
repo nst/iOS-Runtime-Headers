@@ -23,7 +23,7 @@
         unsigned int count; 
         unsigned int size; 
     }  _scc1PdcchStates;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) unsigned int durationMs;
@@ -35,7 +35,7 @@
 @property (nonatomic, readonly) unsigned int scc0PdcchStatesCount;
 @property (nonatomic, readonly) unsigned int*scc1PdcchStates;
 @property (nonatomic, readonly) unsigned int scc1PdcchStatesCount;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)addPccPdcchState:(unsigned int)arg1;
 - (void)addScc0PdcchState:(unsigned int)arg1;
@@ -70,8 +70,8 @@
 - (void)setPccPdcchStates:(unsigned int*)arg1 count:(unsigned int)arg2;
 - (void)setScc0PdcchStates:(unsigned int*)arg1 count:(unsigned int)arg2;
 - (void)setScc1PdcchStates:(unsigned int*)arg1 count:(unsigned int)arg2;
-- (void)setTimestamp:(unsigned int)arg1;
-- (unsigned int)timestamp;
+- (void)setTimestamp:(unsigned long long)arg1;
+- (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 
 @end

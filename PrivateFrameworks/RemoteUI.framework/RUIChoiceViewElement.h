@@ -39,7 +39,7 @@
 - (void)setHelpLinkElement:(id)arg1;
 - (void)setImage:(id)arg1;
 - (void)setImageAlignment:(int)arg1;
-- (void)setImageSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setImageSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setObjectModel:(id)arg1;
 - (void)setPage:(id)arg1;
 - (void)setSubHeader:(id)arg1;

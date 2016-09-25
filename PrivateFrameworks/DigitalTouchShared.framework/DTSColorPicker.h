@@ -11,8 +11,8 @@
     ETPaletteCircleView * _selectedCircle;
 }
 
-@property (nonatomic, readonly) double colorCircleDiameter;
-@property (nonatomic, readonly) double colorCircleHorizontalSpacing;
+@property (nonatomic, readonly) float colorCircleDiameter;
+@property (nonatomic, readonly) float colorCircleHorizontalSpacing;
 @property (nonatomic) unsigned int colorCircleSize;
 @property (nonatomic) <DTSColorPickerDelegate> *delegate;
 @property (getter=isDimmed, nonatomic) BOOL dimmed;
@@ -28,7 +28,7 @@
 - (void)createPaletteCirclesWithParentView:(id)arg1;
 - (id)delegate;
 - (void)didReceiveLongPress:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isDimmed;
 - (id)longPressRecognizer;
 - (void)paletteCircleTapped:(id)arg1;

@@ -5,7 +5,7 @@
 @interface NSTextCheckingResult : NSObject <NSCopying, NSSecureCoding>
 
 @property (readonly) struct _NSRange { unsigned int x1; unsigned int x2; } range;
-@property (readonly) unsigned int resultType;
+@property (readonly) unsigned long long resultType;
 
 + (id)addressCheckingResultWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 components:(id)arg2;
 + (id)correctionCheckingResultWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 replacementString:(id)arg2;
@@ -49,7 +49,7 @@
 - (id)regularExpression;
 - (id)replacementString;
 - (id)resultByAdjustingRangesWithOffset:(int)arg1;
-- (unsigned int)resultType;
+- (unsigned long long)resultType;
 - (BOOL)timeIsApproximate;
 - (BOOL)timeIsPast;
 - (BOOL)timeIsSignificant;

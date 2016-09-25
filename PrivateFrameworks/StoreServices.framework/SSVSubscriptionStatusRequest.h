@@ -20,7 +20,7 @@
 @property (nonatomic, copy) NSString *reason;
 @property (readonly) Class superclass;
 
-+ (int)requestMessage;
++ (long long)requestMessage;
 
 - (void).cxx_destruct;
 - (BOOL)authenticatesIfNecessary;

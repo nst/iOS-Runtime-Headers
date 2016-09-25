@@ -13,7 +13,7 @@
     }  _has;
     BOOL  _localizedLabels;
     NSString * _originalValue;
-    unsigned int  _uid;
+    unsigned long long  _uid;
 }
 
 @property (nonatomic, retain) GEOLatLng *coordinate;
@@ -28,7 +28,7 @@
 @property (nonatomic) BOOL hasUid;
 @property (nonatomic) BOOL localizedLabels;
 @property (nonatomic, retain) NSString *originalValue;
-@property (nonatomic) unsigned int uid;
+@property (nonatomic) unsigned long long uid;
 
 + (Class)featureHandleType;
 
@@ -65,8 +65,8 @@
 - (void)setHasUid:(BOOL)arg1;
 - (void)setLocalizedLabels:(BOOL)arg1;
 - (void)setOriginalValue:(id)arg1;
-- (void)setUid:(unsigned int)arg1;
-- (unsigned int)uid;
+- (void)setUid:(unsigned long long)arg1;
+- (unsigned long long)uid;
 - (void)writeTo:(id)arg1;
 
 @end

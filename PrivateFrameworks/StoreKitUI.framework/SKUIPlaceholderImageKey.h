@@ -12,7 +12,7 @@
 - (void).cxx_destruct;
 - (id)description;
 - (unsigned int)hash;
-- (id)initWithSize:(struct CGSize { double x1; double x2; })arg1 imageTreatment:(int)arg2 placeholderBackgroundColor:(id)arg3;
+- (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 imageTreatment:(int)arg2 placeholderBackgroundColor:(id)arg3;
 - (BOOL)isEqual:(id)arg1;
 
 @end

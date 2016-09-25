@@ -12,7 +12,7 @@
     unsigned int  _connectMs;
     BOOL  _didFallbackToInfraToAvoidP2POverDFS;
     unsigned int  _duration;
-    unsigned int  _fileBytes;
+    unsigned long long  _fileBytes;
     struct { 
         unsigned int fileBytes : 1; 
         unsigned int timestamp : 1; 
@@ -45,7 +45,7 @@
     NSString * _serverVersion;
     NSString * _sessionUUID;
     int  _status;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
     unsigned int  _transportType;
     unsigned int  _type;
 }
@@ -59,7 +59,7 @@
 @property (nonatomic) unsigned int connectMs;
 @property (nonatomic) BOOL didFallbackToInfraToAvoidP2POverDFS;
 @property (nonatomic) unsigned int duration;
-@property (nonatomic) unsigned int fileBytes;
+@property (nonatomic) unsigned long long fileBytes;
 @property (nonatomic) BOOL hasAudioOnly;
 @property (nonatomic) BOOL hasAuthMs;
 @property (nonatomic) BOOL hasAwdlCCA;
@@ -93,7 +93,7 @@
 @property (nonatomic, retain) NSString *serverVersion;
 @property (nonatomic, retain) NSString *sessionUUID;
 @property (nonatomic) int status;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 @property (nonatomic) unsigned int transportType;
 @property (nonatomic) unsigned int type;
 
@@ -111,7 +111,7 @@
 - (id)dictionaryRepresentation;
 - (BOOL)didFallbackToInfraToAvoidP2POverDFS;
 - (unsigned int)duration;
-- (unsigned int)fileBytes;
+- (unsigned long long)fileBytes;
 - (BOOL)hasAudioOnly;
 - (BOOL)hasAuthMs;
 - (BOOL)hasAwdlCCA;
@@ -157,7 +157,7 @@
 - (void)setConnectMs:(unsigned int)arg1;
 - (void)setDidFallbackToInfraToAvoidP2POverDFS:(BOOL)arg1;
 - (void)setDuration:(unsigned int)arg1;
-- (void)setFileBytes:(unsigned int)arg1;
+- (void)setFileBytes:(unsigned long long)arg1;
 - (void)setHasAudioOnly:(BOOL)arg1;
 - (void)setHasAuthMs:(BOOL)arg1;
 - (void)setHasAwdlCCA:(BOOL)arg1;
@@ -188,11 +188,11 @@
 - (void)setServerVersion:(id)arg1;
 - (void)setSessionUUID:(id)arg1;
 - (void)setStatus:(int)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (void)setTransportType:(unsigned int)arg1;
 - (void)setType:(unsigned int)arg1;
 - (int)status;
-- (unsigned int)timestamp;
+- (unsigned long long)timestamp;
 - (unsigned int)transportType;
 - (unsigned int)type;
 - (void)writeTo:(id)arg1;

@@ -12,17 +12,17 @@
     NSArray * _internalDetectedEmailAddresses;
     NSArray * _internalDetectedIMAddresses;
     NSArray * _internalDetectedPhones;
-    int  _masterEntityId;
+    long long  _masterEntityId;
     NSMutableSet * _profiles;
     SGRecordId * _recordId;
 }
 
-@property (nonatomic, readonly) int masterEntityId;
+@property (nonatomic, readonly) long long masterEntityId;
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) SGRecordId *recordId;
 
 + (id)contactFromContactEntity:(id)arg1;
-+ (id)contactWithMasterEntityId:(int)arg1;
++ (id)contactWithMasterEntityId:(long long)arg1;
 + (id)mergeAll:(id)arg1;
 + (void)subtractDetailsFromSGContact:(id)arg1 thatMatchCNContact:(id)arg2;
 
@@ -45,7 +45,7 @@
 - (id)loadAllDetailsFrom:(id)arg1;
 - (id)loadEmailAddressDetailsFrom:(id)arg1;
 - (id)loadPhoneDetailsFrom:(id)arg1;
-- (int)masterEntityId;
+- (long long)masterEntityId;
 - (void)merge:(id)arg1;
 - (id)name;
 - (id)profiles;

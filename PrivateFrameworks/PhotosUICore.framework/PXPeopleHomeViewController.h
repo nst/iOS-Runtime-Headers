@@ -15,19 +15,19 @@
     UIBarButtonItem * _hideToolbarItem;
     BOOL  _ignoreChangeUpdates;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _lastDragPoint;
     UIBarButtonItem * _mergeToolbarItem;
     unsigned int  _mode;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _nonPriorityItemSize;
     BOOL  _pendingChanges;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _priorityItemSize;
     PXPeopleProgressManager * _progressManager;
     NSIndexPath * _proposedDropIndex;
@@ -44,12 +44,12 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) UIBarButtonItem *hideToolbarItem;
 @property BOOL ignoreChangeUpdates;
-@property (nonatomic) struct CGPoint { double x1; double x2; } lastDragPoint;
+@property (nonatomic) struct CGPoint { float x1; float x2; } lastDragPoint;
 @property (nonatomic, retain) UIBarButtonItem *mergeToolbarItem;
 @property (nonatomic) unsigned int mode;
-@property struct CGSize { double x1; double x2; } nonPriorityItemSize;
+@property struct CGSize { float x1; float x2; } nonPriorityItemSize;
 @property (nonatomic) BOOL pendingChanges;
-@property struct CGSize { double x1; double x2; } priorityItemSize;
+@property struct CGSize { float x1; float x2; } priorityItemSize;
 @property (nonatomic, retain) PXPeopleProgressManager *progressManager;
 @property (nonatomic, retain) NSIndexPath *proposedDropIndex;
 @property (nonatomic, retain) UIBarButtonItem *selectItem;
@@ -102,10 +102,10 @@
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didDeselectItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })collectionView:(id)arg1 layout:(id)arg2 insetForSectionAtIndex:(int)arg3;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })collectionView:(id)arg1 layout:(id)arg2 insetForSectionAtIndex:(int)arg3;
 - (float)collectionView:(id)arg1 layout:(id)arg2 minimumLineSpacingForSectionAtIndex:(int)arg3;
-- (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 referenceSizeForFooterInSection:(int)arg3;
-- (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
+- (struct CGSize { float x1; float x2; })collectionView:(id)arg1 layout:(id)arg2 referenceSizeForFooterInSection:(int)arg3;
+- (struct CGSize { float x1; float x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (void)collectionView:(id)arg1 moveItemAtIndexPath:(id)arg2 toIndexPath:(id)arg3;
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
 - (void)collectionView:(id)arg1 prefetchItemsAtIndexPaths:(id)arg2;
@@ -116,7 +116,7 @@
 - (void)collectionViewDidEndInteractiveMode:(id)arg1;
 - (void)commonInit;
 - (void)contentSizeCategoryDidChangeNotification:(id)arg1;
-- (struct CGPath { }*)createShapePathForBoundsRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGPath { }*)createShapePathForBoundsRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)dataSource;
 - (void)dealloc;
 - (id)debugMenuItem;
@@ -131,18 +131,18 @@
 - (BOOL)ignoreChangeUpdates;
 - (id)init;
 - (id)initWithProgressManager:(id)arg1;
-- (struct CGPoint { double x1; double x2; })lastDragPoint;
+- (struct CGPoint { float x1; float x2; })lastDragPoint;
 - (id)mergeToolbarItem;
 - (unsigned int)mode;
-- (struct CGSize { double x1; double x2; })nonPriorityItemSize;
+- (struct CGSize { float x1; float x2; })nonPriorityItemSize;
 - (int)numberOfSectionsInCollectionView:(id)arg1;
 - (BOOL)pendingChanges;
 - (void)peopleHomeDataSource:(id)arg1 didApplyIncrementalChanges:(id)arg2;
 - (void)peopleHomeDataSourceMembersChanged:(id)arg1;
 - (void)ppt_navigateToPhotosDetails;
 - (void)previewingContext:(id)arg1 commitViewController:(id)arg2;
-- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { double x1; double x2; })arg2;
-- (struct CGSize { double x1; double x2; })priorityItemSize;
+- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { float x1; float x2; })arg2;
+- (struct CGSize { float x1; float x2; })priorityItemSize;
 - (void)processDragState;
 - (id)progressManager;
 - (id)proposedDropIndex;
@@ -153,12 +153,12 @@
 - (void)setFavoriteToolbarItem:(id)arg1;
 - (void)setHideToolbarItem:(id)arg1;
 - (void)setIgnoreChangeUpdates:(BOOL)arg1;
-- (void)setLastDragPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setLastDragPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setMergeToolbarItem:(id)arg1;
 - (void)setMode:(unsigned int)arg1;
-- (void)setNonPriorityItemSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setNonPriorityItemSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setPendingChanges:(BOOL)arg1;
-- (void)setPriorityItemSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setPriorityItemSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setProgressManager:(id)arg1;
 - (void)setProposedDropIndex:(id)arg1;
 - (void)setSelectItem:(id)arg1;
@@ -172,6 +172,6 @@
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

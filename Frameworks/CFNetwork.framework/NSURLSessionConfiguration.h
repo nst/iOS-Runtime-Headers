@@ -74,7 +74,7 @@
 @property (copy) NSString *_sourceApplicationSecondaryIdentifier;
 @property BOOL _supportsAVAssetDownloads;
 @property (copy) NSString *_tcpConnectionPoolName;
-@property int _timingDataOptions;
+@property long long _timingDataOptions;
 @property BOOL _usePipeliningHeuristics;
 @property (copy) NSString *_watchAppBundleIdentifier;
 @property (copy) NSString *_watchExtensionBundleIdentifier;

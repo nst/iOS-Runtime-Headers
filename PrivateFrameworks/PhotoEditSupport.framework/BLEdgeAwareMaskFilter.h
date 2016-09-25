@@ -4,7 +4,7 @@
 
 @interface BLEdgeAwareMaskFilter : CIFilter {
     CIFilter * _ciColorCubeFilter;
-    double * _cubeData;
+    float * _cubeData;
     struct { 
         unsigned char blue; 
         unsigned char green; 

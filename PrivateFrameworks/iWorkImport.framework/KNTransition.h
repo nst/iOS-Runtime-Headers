@@ -23,7 +23,7 @@
 @property (nonatomic, readonly) BOOL customMotionBlur;
 @property (nonatomic, readonly) int customTextDelivery;
 @property (nonatomic, readonly) int customTimingCurve;
-@property (nonatomic, readonly) double customTwist;
+@property (nonatomic, readonly) float customTwist;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) double delay;
 @property (readonly, copy) NSString *description;
@@ -88,7 +88,7 @@
 - (id)inspectableAttributes;
 - (BOOL)isMagicMove;
 - (id)localizedEventTriggerNames;
-- (unsigned int)p_keynoteVersionFromUnarchiver:(id)arg1;
+- (unsigned long long)p_keynoteVersionFromUnarchiver:(id)arg1;
 - (BOOL)p_supportsCustomEffectTimingCurveForLayoutStyles:(id)arg1;
 - (int)randomNumberSeed;
 - (void)saveToArchive:(struct TransitionArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct TransitionAttributesArchive {} *x5; }*)arg1 archiver:(id)arg2;

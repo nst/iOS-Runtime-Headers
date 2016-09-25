@@ -15,8 +15,8 @@
 - (BOOL)_isValidVolume:(struct __CFDictionary { }*)arg1;
 - (void)_registerCacheDeleteCallbacks;
 - (void)dealloc;
-- (unsigned int)freeDiskSpaceBy:(unsigned int)arg1;
-- (unsigned int)getFreeableSpace;
+- (unsigned long long)freeDiskSpaceBy:(unsigned long long)arg1;
+- (unsigned long long)getFreeableSpace;
 - (id)init;
 
 @end

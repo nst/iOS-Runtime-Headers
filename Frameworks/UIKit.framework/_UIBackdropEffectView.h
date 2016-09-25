@@ -4,7 +4,7 @@
 
 @interface _UIBackdropEffectView : UIView <CABackdropLayerDelegate> {
     CABackdropLayer * _backdropLayer;
-    double  _zoom;
+    float  _zoom;
 }
 
 @property (nonatomic, retain) CABackdropLayer *backdropLayer;
@@ -12,7 +12,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
-@property (nonatomic) double zoom;
+@property (nonatomic) float zoom;
 
 + (Class)layerClass;
 

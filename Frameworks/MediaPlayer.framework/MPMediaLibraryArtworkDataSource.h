@@ -20,9 +20,9 @@
 - (void)_cacheRepresentation:(id)arg1 forCatalog:(id)arg2;
 - (id)_cachedRepresentationForCatalog:(id)arg1;
 - (BOOL)_isRepresentation:(id)arg1 validForCatalog:(id)arg2;
-- (BOOL)_isRepresentationSize:(struct CGSize { double x1; double x2; })arg1 validForFittingSize:(struct CGSize { double x1; double x2; })arg2;
-- (id)_representationAtSize:(struct CGSize { double x1; double x2; })arg1 forCatalog:(id)arg2;
-- (id)_resizeArtwork:(id)arg1 forCatalog:(id)arg2 toSize:(struct CGSize { double x1; double x2; })arg3 completionHandler:(id /* block */)arg4;
+- (BOOL)_isRepresentationSize:(struct CGSize { float x1; float x2; })arg1 validForFittingSize:(struct CGSize { float x1; float x2; })arg2;
+- (id)_representationAtSize:(struct CGSize { float x1; float x2; })arg1 forCatalog:(id)arg2;
+- (id)_resizeArtwork:(id)arg1 forCatalog:(id)arg2 toSize:(struct CGSize { float x1; float x2; })arg3 completionHandler:(id /* block */)arg4;
 - (void)_resizeOriginalArtworkForArtworkCatalog:(id)arg1 completionHandler:(id /* block */)arg2;
 - (BOOL)areRepresentationsAvailableForCatalog:(id)arg1;
 - (id)artworkResizeUtility;

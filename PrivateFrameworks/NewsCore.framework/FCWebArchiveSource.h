@@ -21,7 +21,7 @@
 - (void).cxx_destruct;
 - (id)cacheCoordinator;
 - (void)cacheCoordinator:(id)arg1 flushKeysWithWriteLock:(id)arg2;
-- (unsigned int)cacheCoordinatorCurrentSizeWithReadLock:(id)arg1;
+- (unsigned long long)cacheCoordinatorCurrentSizeWithReadLock:(id)arg1;
 - (void)enableFlushingWithFlushingThreshold:(unsigned int)arg1;
 - (id)fetchCoordinator;
 - (void)fetchCoordinator:(id)arg1 addFetchOperation:(id)arg2 context:(id)arg3;

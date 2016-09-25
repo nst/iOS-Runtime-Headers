@@ -45,7 +45,7 @@
     _MRSetRecordingStateMessageProtobuf * _setRecordingStateMessage;
     _MRSetStateMessageProtobuf * _setStateMessage;
     _MRTextInputMessageProtobuf * _textInputMessage;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
     _MRTransactionMessageProtobuf * _transactionPackets;
     int  _type;
     _MRUnregisterGameControllerMessageProtobuf * _unregisterGameController;
@@ -133,7 +133,7 @@
 @property (nonatomic, retain) _MRSetRecordingStateMessageProtobuf *setRecordingStateMessage;
 @property (nonatomic, retain) _MRSetStateMessageProtobuf *setStateMessage;
 @property (nonatomic, retain) _MRTextInputMessageProtobuf *textInputMessage;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 @property (nonatomic, retain) _MRTransactionMessageProtobuf *transactionPackets;
 @property (nonatomic) int type;
 @property (nonatomic, retain) _MRUnregisterGameControllerMessageProtobuf *unregisterGameController;
@@ -269,14 +269,14 @@
 - (void)setSetStateMessage:(id)arg1;
 - (id)setStateMessage;
 - (void)setTextInputMessage:(id)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (void)setTransactionPackets:(id)arg1;
 - (void)setType:(int)arg1;
 - (void)setUnregisterGameController:(id)arg1;
 - (void)setVolumeControlAvailabilityMessage:(id)arg1;
 - (void)setWakeDeviceMessage:(id)arg1;
 - (id)textInputMessage;
-- (unsigned int)timestamp;
+- (unsigned long long)timestamp;
 - (id)transactionPackets;
 - (int)type;
 - (id)typeAsString:(int)arg1;

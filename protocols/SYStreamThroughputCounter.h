@@ -5,6 +5,6 @@
 
 @required
 
-- (unsigned int)bytesThroughput;
+- (unsigned long long)bytesThroughput;
 
 @end

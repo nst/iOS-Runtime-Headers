@@ -10,17 +10,17 @@
     <PUGridRenderedStripDataSource> * _dataSource;
     BOOL  _extendsToTop;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _interItemSpacing;
-    double  _itemContentScale;
+    float  _itemContentScale;
     NSArray * _itemIndexPaths;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _itemSize;
     PUSectionedGridLayout * _layout;
-    double  _leftContentInset;
+    float  _leftContentInset;
     UIView * _topContentView;
     struct _NSRange { 
         unsigned int location; 
@@ -35,12 +35,12 @@
 @property (nonatomic) unsigned int contentExtenderType;
 @property (nonatomic) <PUGridRenderedStripDataSource> *dataSource;
 @property (nonatomic) BOOL extendsToTop;
-@property (nonatomic) struct CGSize { double x1; double x2; } interItemSpacing;
-@property (nonatomic) double itemContentScale;
+@property (nonatomic) struct CGSize { float x1; float x2; } interItemSpacing;
+@property (nonatomic) float itemContentScale;
 @property (nonatomic, retain) NSArray *itemIndexPaths;
-@property (nonatomic) struct CGSize { double x1; double x2; } itemSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } itemSize;
 @property (nonatomic) PUSectionedGridLayout *layout;
-@property (nonatomic) double leftContentInset;
+@property (nonatomic) float leftContentInset;
 @property (nonatomic, readonly) int numberOfColumns;
 @property (nonatomic, readonly) UIView *topContentView;
 @property (nonatomic, readonly) struct _NSRange { unsigned int x1; unsigned int x2; } visualItemRange;
@@ -58,11 +58,11 @@
 - (unsigned int)contentExtenderType;
 - (id)dataSource;
 - (BOOL)extendsToTop;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (struct CGSize { double x1; double x2; })interItemSpacing;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGSize { float x1; float x2; })interItemSpacing;
 - (float)itemContentScale;
 - (id)itemIndexPaths;
-- (struct CGSize { double x1; double x2; })itemSize;
+- (struct CGSize { float x1; float x2; })itemSize;
 - (id)layout;
 - (void)layoutSubviews;
 - (float)leftContentInset;
@@ -71,10 +71,10 @@
 - (void)setContentExtenderType:(unsigned int)arg1;
 - (void)setDataSource:(id)arg1;
 - (void)setExtendsToTop:(BOOL)arg1;
-- (void)setInterItemSpacing:(struct CGSize { double x1; double x2; })arg1;
+- (void)setInterItemSpacing:(struct CGSize { float x1; float x2; })arg1;
 - (void)setItemContentScale:(float)arg1;
 - (void)setItemIndexPaths:(id)arg1;
-- (void)setItemSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setItemSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setLayout:(id)arg1;
 - (void)setLeftContentInset:(float)arg1;
 - (void)setNeedsRendering;

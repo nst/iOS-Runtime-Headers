@@ -3,15 +3,15 @@
  */
 
 @interface NACVolumeControllerProxy : NSObject <NACVolumeController> {
-    double  _EUVolumeLimit;
+    float  _EUVolumeLimit;
     NSString * _category;
     <NACVolumeControllerDelegate> * _delegate;
     NSNumber * _hapticIntensity;
     NACEventThrottler * _hapticThrottler;
     BOOL  _isObserving;
     BOOL  _lastReceivedProminentHapticEnabled;
-    double  _lastReceivedVolumeValue;
-    double  _lastRecievedHapticIntensity;
+    float  _lastReceivedVolumeValue;
+    float  _lastRecievedHapticIntensity;
     BOOL  _muted;
     BOOL  _prominentHapticEnabled;
     NSObject<OS_dispatch_source> * _setHapticTimer;
@@ -25,18 +25,18 @@
     NACXPCClient * _xpcClient;
 }
 
-@property (nonatomic, readonly) double EUVolumeLimit;
+@property (nonatomic, readonly) float EUVolumeLimit;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <NACVolumeControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) double hapticIntensity;
+@property (nonatomic) float hapticIntensity;
 @property (readonly) unsigned int hash;
 @property (getter=isMuted, nonatomic, readonly) BOOL muted;
 @property (getter=isProminentHapticEnabled, nonatomic) BOOL prominentHapticEnabled;
 @property (readonly) Class superclass;
 @property (getter=isSystemMuted, nonatomic) BOOL systemMuted;
 @property (getter=isVolumeControlAvailable, nonatomic, readonly) BOOL volumeControlAvailable;
-@property (nonatomic, readonly) double volumeValue;
+@property (nonatomic, readonly) float volumeValue;
 @property (getter=isVolumeWarningEnabled, nonatomic, readonly) BOOL volumeWarningEnabled;
 
 - (void).cxx_destruct;

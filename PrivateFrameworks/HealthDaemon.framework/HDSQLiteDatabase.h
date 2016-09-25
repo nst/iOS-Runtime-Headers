@@ -24,7 +24,7 @@
                 unsigned long __first_; 
             } __p2_; 
             struct __compressed_pair<float, std::__1::equal_to<sqlite3_stmt *> > { 
-                double __first_; 
+                float __first_; 
             } __p3_; 
         } __table_; 
     }  _activeStatements;
@@ -60,14 +60,14 @@
 - (BOOL)_executeSQL:(id)arg1 cache:(BOOL)arg2 error:(id*)arg3 bindingHandler:(id /* block */)arg4 enumerationHandler:(id /* block */)arg5;
 - (BOOL)_executeSQL:(id)arg1 error:(id*)arg2;
 - (BOOL)_executeSQL:(id)arg1 error:(id*)arg2 retryIfBusy:(BOOL)arg3;
-- (BOOL)_integerValueForPragma:(id)arg1 databaseName:(id)arg2 value:(int*)arg3 error:(id*)arg4;
+- (BOOL)_integerValueForPragma:(id)arg1 databaseName:(id)arg2 value:(long long*)arg3 error:(id*)arg4;
 - (int)_openForWriting:(BOOL)arg1 error:(id*)arg2;
 - (BOOL)_prepareStatementForSQL:(id)arg1 cache:(BOOL)arg2 error:(id*)arg3 usingBlock:(id /* block */)arg4;
 - (void)_resetStatement:(struct sqlite3_stmt { }*)arg1 finalize:(BOOL)arg2;
 - (id)_schemaForDatabaseWithName:(id)arg1 error:(id*)arg2;
 - (id)_schemaForIndexWithName:(id)arg1 database:(id)arg2 error:(id*)arg3;
 - (id)_schemaForTableWithName:(id)arg1 database:(id)arg2 error:(id*)arg3;
-- (BOOL)_setPragma:(id)arg1 integerValue:(int)arg2 withDatabaseName:(id)arg3 error:(id*)arg4;
+- (BOOL)_setPragma:(id)arg1 integerValue:(long long)arg2 withDatabaseName:(id)arg3 error:(id*)arg4;
 - (struct sqlite3_stmt { }*)_statementForSQL:(id)arg1 cache:(BOOL)arg2 error:(id*)arg3;
 - (BOOL)_verifyDatabaseOpenAndReturnError:(id*)arg1;
 - (void)accessDatabaseUsingBlock:(id /* block */)arg1;

@@ -3,28 +3,28 @@
  */
 
 @interface NTKRingView : NTKColoringView {
-    double  _appearanceAnimationProgress;
-    double  _fillFraction;
-    double  _radius;
-    double  _ringAnimationDelta;
-    double  _ringWidth;
+    float  _appearanceAnimationProgress;
+    float  _fillFraction;
+    float  _radius;
+    float  _ringAnimationDelta;
+    float  _ringWidth;
     BOOL  _showsRingsBackground;
 }
 
-@property (nonatomic) double appearanceAnimationProgress;
-@property (nonatomic) double fillFraction;
-@property (nonatomic) double radius;
-@property (nonatomic) double ringAnimationDelta;
-@property (nonatomic) double ringWidth;
+@property (nonatomic) float appearanceAnimationProgress;
+@property (nonatomic) float fillFraction;
+@property (nonatomic) float radius;
+@property (nonatomic) float ringAnimationDelta;
+@property (nonatomic) float ringWidth;
 @property (nonatomic) BOOL showsRingsBackground;
 
 - (void)_drawBackgroundRings;
 - (void)_drawFillFractionRings;
 - (void)_drawRingWithRadius:(float)arg1 fillFraction:(float)arg2 alpha:(float)arg3;
 - (float)appearanceAnimationProgress;
-- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (float)fillFraction;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (float)radius;
 - (float)ringAnimationDelta;
 - (float)ringWidth;

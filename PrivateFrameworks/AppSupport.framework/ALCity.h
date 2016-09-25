@@ -7,10 +7,10 @@
     NSString * _countryOverride;
     int  _identifier;
     NSString * _identifierForCPCity;
-    double  _latitude;
+    float  _latitude;
     NSString * _localeCode;
     BOOL  _localizationAttempted;
-    double  _longitude;
+    float  _longitude;
     NSString * _name;
     NSString * _timeZone;
     NSString * _unlocalizedCountryName;
@@ -23,9 +23,9 @@
 @property (nonatomic, retain) NSString *countryName;
 @property (nonatomic, retain) NSString *countryOverride;
 @property (nonatomic) int identifier;
-@property (nonatomic) double latitude;
+@property (nonatomic) float latitude;
 @property (nonatomic, retain) NSString *localeCode;
-@property (nonatomic) double longitude;
+@property (nonatomic) float longitude;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, readonly) NSDictionary *properties;
 @property (nonatomic, retain) NSString *timeZone;

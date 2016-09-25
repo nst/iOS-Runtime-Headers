@@ -16,7 +16,7 @@
     id /* block */  _pendingCompletion;
     NSObject<OS_dispatch_queue> * _queue;
     NSString * _serviceName;
-    unsigned int  _syncIDOfStartedSync;
+    unsigned long long  _syncIDOfStartedSync;
     unsigned int  _syncRestriction;
     int  _syncSwitchIDToken;
 }
@@ -52,7 +52,7 @@
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)performDelegateBlock:(id /* block */)arg1;
 - (id)progressHandler;
-- (unsigned int)readNotifyToken:(int)arg1;
+- (unsigned long long)readNotifyToken:(int)arg1;
 - (void)registerForDeviceChangeNotifications;
 - (int)registerNotifyTokenWithName:(id)arg1 withBlock:(id /* block */)arg2;
 - (int)registerNotifyTokenWithName:(id)arg1 withQueue:(id)arg2 withBlock:(id /* block */)arg3;

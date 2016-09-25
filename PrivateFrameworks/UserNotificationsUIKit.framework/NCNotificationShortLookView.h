@@ -41,7 +41,7 @@
 - (id)accessoryView;
 - (BOOL)adjustForContentSizeCategoryChange;
 - (BOOL)adjustsFontForContentSizeCategory;
-- (struct CGSize { double x1; double x2; })contentSizeForSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })contentSizeForSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)hintText;
 - (id)interfaceActions;
 - (void)layoutSubviews;
@@ -61,8 +61,8 @@
 - (void)setThumbnail:(id)arg1;
 - (void)setThumbnailViewContentMode:(int)arg1;
 - (BOOL)showAdditionalMessageLines;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFitsContentWithSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFitsContentWithSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)thumbnail;
 - (int)thumbnailViewContentMode;
 

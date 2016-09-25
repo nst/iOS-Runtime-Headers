@@ -3,12 +3,12 @@
  */
 
 @interface HKSeriesBuilder : NSObject <NSSecureCoding> {
-    int  _count;
+    long long  _count;
     int  _state;
     HKHealthStore * _store;
 }
 
-@property (setter=_setCount:) int count;
+@property (setter=_setCount:) long long count;
 @property (setter=_setState:) unsigned int state;
 @property (readonly) HKHealthStore *store;
 
@@ -17,9 +17,9 @@
 - (void).cxx_destruct;
 - (void)_discardWithHandler:(id /* block */)arg1;
 - (id)_initWithHealthStore:(id)arg1;
-- (void)_setCount:(int)arg1;
+- (void)_setCount:(long long)arg1;
 - (void)_setState:(unsigned int)arg1;
-- (int)count;
+- (long long)count;
 - (void)discard;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;

@@ -3,26 +3,26 @@
  */
 
 @interface _INPBDateTimeRangeValue : PBCodable <NSCopying> {
-    int  _endCalendar;
+    long long  _endCalendar;
     _INPBDateTime * _endDateTime;
     struct { 
         unsigned int endCalendar : 1; 
         unsigned int startCalendar : 1; 
     }  _has;
-    int  _startCalendar;
+    long long  _startCalendar;
     _INPBDateTime * _startDateTime;
     PBUnknownFields * _unknownFields;
     _INPBValueMetadata * _valueMetadata;
 }
 
-@property (nonatomic) int endCalendar;
+@property (nonatomic) long long endCalendar;
 @property (nonatomic, retain) _INPBDateTime *endDateTime;
 @property (nonatomic) BOOL hasEndCalendar;
 @property (nonatomic, readonly) BOOL hasEndDateTime;
 @property (nonatomic) BOOL hasStartCalendar;
 @property (nonatomic, readonly) BOOL hasStartDateTime;
 @property (nonatomic, readonly) BOOL hasValueMetadata;
-@property (nonatomic) int startCalendar;
+@property (nonatomic) long long startCalendar;
 @property (nonatomic, retain) _INPBDateTime *startDateTime;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic, retain) _INPBValueMetadata *valueMetadata;
@@ -33,7 +33,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (int)endCalendar;
+- (long long)endCalendar;
 - (id)endDateTime;
 - (BOOL)hasEndCalendar;
 - (BOOL)hasEndDateTime;
@@ -44,14 +44,14 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (void)setEndCalendar:(int)arg1;
+- (void)setEndCalendar:(long long)arg1;
 - (void)setEndDateTime:(id)arg1;
 - (void)setHasEndCalendar:(BOOL)arg1;
 - (void)setHasStartCalendar:(BOOL)arg1;
-- (void)setStartCalendar:(int)arg1;
+- (void)setStartCalendar:(long long)arg1;
 - (void)setStartDateTime:(id)arg1;
 - (void)setValueMetadata:(id)arg1;
-- (int)startCalendar;
+- (long long)startCalendar;
 - (id)startDateTime;
 - (id)unknownFields;
 - (id)valueMetadata;

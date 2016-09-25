@@ -3,10 +3,10 @@
  */
 
 @interface CVMLImageBrightnessObservation : CVMLObservation {
-    double  _brightness;
+    float  _brightness;
 }
 
-@property double brightness;
+@property float brightness;
 
 + (id)brightnessWithValue:(float)arg1;
 

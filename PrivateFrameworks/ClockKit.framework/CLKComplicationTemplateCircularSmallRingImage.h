@@ -3,16 +3,16 @@
  */
 
 @interface CLKComplicationTemplateCircularSmallRingImage : CLKComplicationTemplate {
-    double  _fillFraction;
+    float  _fillFraction;
     CLKImageProvider * _imageProvider;
     int  _ringStyle;
 }
 
-@property (nonatomic) double fillFraction;
+@property (nonatomic) float fillFraction;
 @property (nonatomic, copy) CLKImageProvider *imageProvider;
 @property (nonatomic) int ringStyle;
 
-+ (struct CGSize { double x1; double x2; })_imageSize;
++ (struct CGSize { float x1; float x2; })_imageSize;
 
 - (void).cxx_destruct;
 - (void)_enumerateFloatKeysWithBlock:(id /* block */)arg1;

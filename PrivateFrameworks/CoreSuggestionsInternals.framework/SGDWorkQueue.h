@@ -3,18 +3,18 @@
  */
 
 @interface SGDWorkQueue : NSObject {
-    int  _counter;
+    long long  _counter;
     NSString * _dir;
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
     }  _lock;
     NSMutableOrderedSet * _pendingNames;
-    int  _priority;
+    long long  _priority;
 }
 
 @property (nonatomic, readonly) unsigned int count;
-@property (nonatomic, readonly) int priority;
+@property (nonatomic, readonly) long long priority;
 
 + (id)pathForNewMessagesQueue;
 + (id)pathForOldMessagesQueue;
@@ -29,11 +29,11 @@
 - (id)description;
 - (id)init;
 - (id)initWithDirectory:(id)arg1;
-- (id)initWithDirectory:(id)arg1 priority:(int)arg2;
+- (id)initWithDirectory:(id)arg1 priority:(long long)arg2;
 - (id)popDictionary;
 - (id)popDictionaryById:(id)arg1;
 - (id)popDictionaryBySourceId:(id)arg1 messageId:(id)arg2;
-- (int)priority;
+- (long long)priority;
 - (void)resetForTesting;
 
 @end

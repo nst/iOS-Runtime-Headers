@@ -4,7 +4,7 @@
 
 @interface _DKCategoryMO : _DKObjectMO
 
-@property (nonatomic) int categoryType;
-@property (nonatomic) int integerValue;
+@property (nonatomic) long long categoryType;
+@property (nonatomic) long long integerValue;
 
 @end

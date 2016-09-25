@@ -6,25 +6,25 @@
     id /* block */  _handler;
     NSArray * _requiredSourceTrackIDs;
     struct CGAffineTransform { 
-        double a; 
-        double b; 
-        double c; 
-        double d; 
-        double tx; 
-        double ty; 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     }  _sourceTrackPreferredTransform;
     struct { 
         struct { 
-            int value; 
+            long long value; 
             int timescale; 
             unsigned int flags; 
-            int epoch; 
+            long long epoch; 
         } start; 
         struct { 
-            int value; 
+            long long value; 
             int timescale; 
             unsigned int flags; 
-            int epoch; 
+            long long epoch; 
         } duration; 
     }  _timeRange;
 }
@@ -37,20 +37,20 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) int passthroughTrackID;
 @property (nonatomic, readonly) NSArray *requiredSourceTrackIDs;
-@property (nonatomic) struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; } sourceTrackPreferredTransform;
+@property (nonatomic) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } sourceTrackPreferredTransform;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) struct { struct { int x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; int x_1_1_4; } x1; struct { int x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; int x_2_1_4; } x2; } timeRange;
+@property (nonatomic, readonly) struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; } timeRange;
 
 - (BOOL)containsTweening;
 - (void)dealloc;
 - (BOOL)enablePostProcessing;
 - (id /* block */)handler;
 - (id)init;
-- (id)initWithTimeRange:(struct { struct { int x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; int x_1_1_4; } x1; struct { int x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; int x_2_1_4; } x2; })arg1 sourceTrackIDs:(id)arg2 handler:(id /* block */)arg3;
+- (id)initWithTimeRange:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg1 sourceTrackIDs:(id)arg2 handler:(id /* block */)arg3;
 - (int)passthroughTrackID;
 - (id)requiredSourceTrackIDs;
-- (void)setSourceTrackPreferredTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })sourceTrackPreferredTransform;
-- (struct { struct { int x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; int x_1_1_4; } x1; struct { int x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; int x_2_1_4; } x2; })timeRange;
+- (void)setSourceTrackPreferredTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })sourceTrackPreferredTransform;
+- (struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })timeRange;
 
 @end

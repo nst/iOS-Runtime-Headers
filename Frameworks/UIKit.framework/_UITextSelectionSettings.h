@@ -4,29 +4,29 @@
 
 @interface _UITextSelectionSettings : _UISettings {
     NSNumber * _allowExtendingSelections;
-    double  _allowableForceMovement;
-    double  _allowableSeparation;
+    float  _allowableForceMovement;
+    float  _allowableSeparation;
     NSNumber * _enableDeepPress;
-    double  _gain;
-    double  _linear;
-    double  _maxPinkWidth;
-    double  _minPinkWidth;
-    double  _parabolic;
-    double  _pinkWidthFactor;
+    float  _gain;
+    float  _linear;
+    float  _maxPinkWidth;
+    float  _minPinkWidth;
+    float  _parabolic;
+    float  _pinkWidthFactor;
     NSNumber * _shouldPreferEndOfWord;
     NSNumber * _shouldUseAcceleration;
 }
 
 @property (nonatomic, retain) NSNumber *allowExtendingSelections;
-@property (nonatomic) double allowableForceMovement;
-@property (nonatomic) double allowableSeparation;
+@property (nonatomic) float allowableForceMovement;
+@property (nonatomic) float allowableSeparation;
 @property (nonatomic, retain) NSNumber *enableDeepPress;
-@property (nonatomic) double gain;
-@property (nonatomic) double linear;
-@property (nonatomic) double maxPinkWidth;
-@property (nonatomic) double minPinkWidth;
-@property (nonatomic) double parabolic;
-@property (nonatomic) double pinkWidthFactor;
+@property (nonatomic) float gain;
+@property (nonatomic) float linear;
+@property (nonatomic) float maxPinkWidth;
+@property (nonatomic) float minPinkWidth;
+@property (nonatomic) float parabolic;
+@property (nonatomic) float pinkWidthFactor;
 @property (nonatomic, retain) NSNumber *shouldPreferEndOfWord;
 @property (nonatomic, retain) NSNumber *shouldUseAcceleration;
 

@@ -8,13 +8,13 @@
     PXPeoplePersonDataSource * _dataSource;
     UIBarButtonItem * _mergeItem;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _nonPriorityItemSize;
     int  _previousHorizontalSizeClass;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _priorityItemSize;
 }
 
@@ -25,9 +25,9 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) UIBarButtonItem *mergeItem;
-@property struct CGSize { double x1; double x2; } nonPriorityItemSize;
+@property struct CGSize { float x1; float x2; } nonPriorityItemSize;
 @property int previousHorizontalSizeClass;
-@property struct CGSize { double x1; double x2; } priorityItemSize;
+@property struct CGSize { float x1; float x2; } priorityItemSize;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -51,9 +51,9 @@
 - (void)collectionView:(id)arg1 didDeselectItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didEndDisplayingCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })collectionView:(id)arg1 layout:(id)arg2 insetForSectionAtIndex:(int)arg3;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })collectionView:(id)arg1 layout:(id)arg2 insetForSectionAtIndex:(int)arg3;
 - (float)collectionView:(id)arg1 layout:(id)arg2 minimumLineSpacingForSectionAtIndex:(int)arg3;
-- (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
+- (struct CGSize { float x1; float x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
 - (void)collectionView:(id)arg1 prefetchItemsAtIndexPaths:(id)arg2;
 - (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
@@ -64,22 +64,22 @@
 - (id)init;
 - (void)mergeAndAddSelectionToHomeScreenWithCompletion:(id /* block */)arg1;
 - (id)mergeItem;
-- (struct CGSize { double x1; double x2; })nonPriorityItemSize;
+- (struct CGSize { float x1; float x2; })nonPriorityItemSize;
 - (void)peopleDataSource:(id)arg1 didApplyIncrementalChanges:(id)arg2;
 - (void)peopleDataSourceMembersChanged:(id)arg1;
 - (int)previousHorizontalSizeClass;
-- (struct CGSize { double x1; double x2; })priorityItemSize;
+- (struct CGSize { float x1; float x2; })priorityItemSize;
 - (void)setAddItem:(id)arg1;
 - (void)setCancelItem:(id)arg1;
 - (void)setDataSource:(id)arg1;
 - (void)setMergeItem:(id)arg1;
-- (void)setNonPriorityItemSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setNonPriorityItemSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setPreviousHorizontalSizeClass:(int)arg1;
-- (void)setPriorityItemSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setPriorityItemSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidLoad;
-- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

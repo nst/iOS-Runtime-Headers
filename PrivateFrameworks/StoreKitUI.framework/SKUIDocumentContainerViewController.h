@@ -8,8 +8,8 @@
     NSArray * _defaultLeftBarButtonItems;
     IKAppDocument * _document;
     SKUIMetricsDOMChangeQueue * _domChangeTimingQueue;
-    double  _lastBottomLayoutGuideLength;
-    double  _lastTopLayoutGuideLength;
+    float  _lastBottomLayoutGuideLength;
+    float  _lastTopLayoutGuideLength;
     SSVLoadURLOperation * _loadURLOperation;
     BOOL  _makeSearchBarFirstResponderOnLoad;
     SKUIMediaQueryEvaluator * _mediaQueryEvaluator;
@@ -21,7 +21,7 @@
     NSSet * _personalizationItems;
     NSDictionary * _presentationOptions;
     struct { 
-        double progress; 
+        float progress; 
         BOOL isBouncingOffTheEdge; 
     }  _scrollingTabAppearanceStatus;
     NSArray * _searchBarControllers;
@@ -31,8 +31,8 @@
     SKUIToolbarController * _toolbarController;
     NSString * _urlString;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _viewSize;
 }
 
@@ -116,12 +116,12 @@
 - (void)reloadData;
 - (void)resourceLoader:(id)arg1 didLoadAllForReason:(int)arg2;
 - (void)resourceLoaderDidBeginLoading:(id)arg1;
-- (void)scrollingTabAppearanceStatusWasUpdated:(struct { double x1; BOOL x2; })arg1;
+- (void)scrollingTabAppearanceStatusWasUpdated:(struct { float x1; BOOL x2; })arg1;
 - (id)scrollingTabNestedPagingScrollView;
 - (id)scrollingTabViewControllerInNestedPagingScrollViewAtPageIndex:(unsigned int)arg1;
 - (void)setDomChangeTimingQueue:(id)arg1;
 - (void)setPageRenderEvent:(id)arg1;
-- (void)setPreferredContentSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setPreferredContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)skui_viewWillAppear:(BOOL)arg1;
 - (unsigned int)supportedInterfaceOrientations;
 - (id)toolbarItems;
@@ -130,7 +130,7 @@
 - (void)viewDidLayoutSubviews;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (void)willMoveToParentViewController:(id)arg1;
 
 @end

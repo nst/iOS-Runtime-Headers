@@ -4,7 +4,7 @@
 
 @interface PKPassSnapshotCacheItem : NSObject {
     struct CGImage { } * _image;
-    double  _scale;
+    float  _scale;
 }
 
 - (id)UIImageFromCache;

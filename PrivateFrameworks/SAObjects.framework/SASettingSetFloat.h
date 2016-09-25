@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SASettingSetdouble : SASettingSetNumber
+@interface SASettingSetFloat : SASettingSetNumber
 
-@property (nonatomic) double value;
+@property (nonatomic) float value;
 
 + (id)setFloat;
 + (id)setFloatWithDictionary:(id)arg1 context:(id)arg2;

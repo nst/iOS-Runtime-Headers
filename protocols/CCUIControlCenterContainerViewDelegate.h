@@ -7,9 +7,9 @@
 
 - (float)contentHeightForContainerView:(CCUIControlCenterContainerView *)arg1;
 - (<CCUIControlCenterSystemAgent> *)controlCenterSystemAgent;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })marginInsetForContainerView:(CCUIControlCenterContainerView *)arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })marginInsetForContainerView:(CCUIControlCenterContainerView *)arg1;
 - (UIPageControl *)pageControlForContainerView:(CCUIControlCenterContainerView *)arg1;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })pageInsetForContainerView:(CCUIControlCenterContainerView *)arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })pageInsetForContainerView:(CCUIControlCenterContainerView *)arg1;
 - (NSArray *)pagePlatterViewsForContainerView:(CCUIControlCenterContainerView *)arg1;
 - (UIScrollView *)scrollViewForContainerView:(CCUIControlCenterContainerView *)arg1;
 

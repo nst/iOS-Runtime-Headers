@@ -26,7 +26,7 @@
 + (id)sessionWithVideoComposition:(id)arg1 recyclingSession:(id)arg2;
 
 - (void)_cleanupFigCallbacks;
-- (long)_compositionFrame:(struct OpaqueFigVideoCompositorFrame { }*)arg1 atTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg2 requiresRenderUsingSources:(id)arg3 withInstruction:(void*)arg4;
+- (long)_compositionFrame:(struct OpaqueFigVideoCompositorFrame { }*)arg1 atTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 requiresRenderUsingSources:(id)arg3 withInstruction:(void*)arg4;
 - (struct OpaqueFigVideoCompositor { }*)_copyFigVideoCompositor;
 - (void)_customCompositorFigPropertyDidChange;
 - (long)_customCompositorShouldCancelPendingFrames;

@@ -5,7 +5,7 @@
 @interface NSSmartPunctuationController : NSObject {
     <NSSmartPunctuationClient> * _client;
     NSSmartQuoteOptions * _options;
-    unsigned int  _types;
+    unsigned long long  _types;
 }
 
 @property <NSSmartPunctuationClient> *client;

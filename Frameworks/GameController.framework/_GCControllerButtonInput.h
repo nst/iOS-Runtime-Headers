@@ -5,7 +5,7 @@
 @interface _GCControllerButtonInput : GCControllerButtonInput {
     NSString * _descriptionName;
     id /* block */  _pressedChangedHandler;
-    double  _value;
+    float  _value;
     id /* block */  _valueChangedHandler;
 }
 

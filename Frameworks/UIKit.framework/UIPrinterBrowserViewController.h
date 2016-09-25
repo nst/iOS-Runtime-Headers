@@ -7,12 +7,12 @@
     NSArray * _lastUsedPrinters;
     BOOL  _loaded;
     PKPrinter * _lockedPrinter;
-    double  _maximumPopoverHeight;
+    float  _maximumPopoverHeight;
     NSMutableArray * _otherPrinters;
     <UIPrinterBrowserOwner> * _ownerPanelViewController;
     NSMutableArray * _preferredPrinters;
     PKPrinterBrowser * _printerBrowser;
-    double  _rowHeight;
+    float  _rowHeight;
     UIPrinterSearchingView * _searchingView;
     BOOL  _searchingViewConstraintsSet;
     BOOL  _shouldFilterPrinters;
@@ -21,7 +21,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property double maximumPopoverHeight;
+@property float maximumPopoverHeight;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;

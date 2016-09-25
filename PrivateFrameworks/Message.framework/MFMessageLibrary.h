@@ -10,7 +10,7 @@
 - (id)UIDsToDeleteInMailbox:(id)arg1;
 - (id)accountForMessage:(id)arg1;
 - (id)addMessages:(id)arg1 withMailbox:(id)arg2 fetchBodies:(BOOL)arg3 newMessagesByOldMessage:(id)arg4;
-- (id)addMessages:(id)arg1 withMailbox:(id)arg2 fetchBodies:(BOOL)arg3 newMessagesByOldMessage:(id)arg4 remoteIDs:(id)arg5 setFlags:(unsigned int)arg6 clearFlags:(unsigned int)arg7 messageFlagsForMessages:(id)arg8 copyFiles:(BOOL)arg9 addPOPUIDs:(BOOL)arg10 dataSectionsByMessage:(id)arg11;
+- (id)addMessages:(id)arg1 withMailbox:(id)arg2 fetchBodies:(BOOL)arg3 newMessagesByOldMessage:(id)arg4 remoteIDs:(id)arg5 setFlags:(unsigned long long)arg6 clearFlags:(unsigned long long)arg7 messageFlagsForMessages:(id)arg8 copyFiles:(BOOL)arg9 addPOPUIDs:(BOOL)arg10 dataSectionsByMessage:(id)arg11;
 - (unsigned int)allNonDeleteCountForMailbox:(id)arg1 includeServerSearchResults:(BOOL)arg2 includeThreadSearchResults:(BOOL)arg3;
 - (id)allUIDsInMailbox:(id)arg1;
 - (void)appendOfflineCacheOperation:(id)arg1 forAccount:(int)arg2 lastTemporaryID:(unsigned int)arg3;
@@ -47,7 +47,7 @@
 - (void)deletePOPUID:(id)arg1 inMailbox:(id)arg2;
 - (unsigned int)deletedCountForMailbox:(id)arg1;
 - (id)deletedUIDsInMailbox:(id)arg1;
-- (id)duplicateMessages:(id)arg1 newRemoteIDs:(id)arg2 forMailbox:(id)arg3 setFlags:(unsigned int)arg4 clearFlags:(unsigned int)arg5 messageFlagsForMessages:(id)arg6 createNewCacheFiles:(BOOL)arg7;
+- (id)duplicateMessages:(id)arg1 newRemoteIDs:(id)arg2 forMailbox:(id)arg3 setFlags:(unsigned long long)arg4 clearFlags:(unsigned long long)arg5 messageFlagsForMessages:(id)arg6 createNewCacheFiles:(BOOL)arg7;
 - (id)filterContiguousMessages:(id)arg1 forCriterion:(id)arg2 options:(unsigned int)arg3;
 - (void)flagsChangedForMessages:(id)arg1 flags:(id)arg2 oldFlagsByMessage:(id)arg3;
 - (id)fullBodyDataForMessage:(id)arg1 andHeaderDataIfReadilyAvailable:(id*)arg2;
@@ -97,7 +97,7 @@
 - (id)oldestMessageInMailbox:(id)arg1;
 - (id)orderedBatchOfMessagesEndingAtRowId:(unsigned int)arg1 limit:(unsigned int)arg2 success:(BOOL*)arg3;
 - (void)postFlagsChangedForMessages:(id)arg1 flags:(id)arg2 oldFlagsByMessage:(id)arg3;
-- (void)postOldFlags:(unsigned int)arg1 newFlags:(unsigned int)arg2 forMessage:(id)arg3;
+- (void)postOldFlags:(unsigned long long)arg1 newFlags:(unsigned long long)arg2 forMessage:(id)arg3;
 - (id)remoteStoreForMessage:(id)arg1;
 - (void)removeAllMessagesFromMailbox:(id)arg1 removeMailbox:(BOOL)arg2 andNotify:(BOOL)arg3;
 - (BOOL)renameMailboxes:(id)arg1 to:(id)arg2;
@@ -108,9 +108,9 @@
 - (id)serverSearchResultMessagesForMailbox:(id)arg1;
 - (unsigned int)serverUnreadOnlyOnServerCountForMailbox:(id)arg1;
 - (void)setData:(id)arg1 forMessage:(id)arg2 isPartial:(BOOL)arg3;
-- (void)setFlags:(unsigned int)arg1 forMessage:(id)arg2;
+- (void)setFlags:(unsigned long long)arg1 forMessage:(id)arg2;
 - (void)setFlagsForMessages:(id)arg1;
-- (void)setFlagsForMessages:(id)arg1 mask:(unsigned int)arg2;
+- (void)setFlagsForMessages:(id)arg1 mask:(unsigned long long)arg2;
 - (id)setFlagsFromDictionary:(id)arg1 forMessages:(id)arg2;
 - (void)setFlagsFromDictionary:(id)arg1 forMessagesInMailboxURLString:(id)arg2;
 - (void)setMessage:(id)arg1 isPartial:(BOOL)arg2;
@@ -128,7 +128,7 @@
 - (unsigned int)unreadCountForAggregatedMailboxes:(id)arg1 matchingCriterion:(id)arg2;
 - (unsigned int)unreadCountForMailbox:(id)arg1;
 - (unsigned int)unreadCountForMailbox:(id)arg1 matchingCriterion:(id)arg2;
-- (void)updateAdditionalThreadingInfoForSentMessageWithHeaders:(id)arg1 externalConversationID:(int)arg2;
+- (void)updateAdditionalThreadingInfoForSentMessageWithHeaders:(id)arg1 externalConversationID:(long long)arg2;
 - (void)updateFlagsForMessagesInPlace:(id)arg1 success:(BOOL*)arg2;
 - (oneway void)updateMessage:(id)arg1 withMetadata:(id /* block */)arg2;
 - (void)updateThreadingInfoForMessage:(id)arg1 fromHeaders:(id)arg2;

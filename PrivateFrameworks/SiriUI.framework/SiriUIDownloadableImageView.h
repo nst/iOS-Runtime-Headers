@@ -7,7 +7,7 @@
     UIImageView * _imageView;
     NSBundle * _placeHolderImageBundle;
     NSString * _placeHolderImageName;
-    double  _placeHolderVerticalOffset;
+    float  _placeHolderVerticalOffset;
     BOOL  _showingPlaceHolderImage;
 }
 

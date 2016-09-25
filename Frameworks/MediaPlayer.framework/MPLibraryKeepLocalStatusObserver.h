@@ -7,14 +7,14 @@
     MPLibraryKeepLocalStatusObserverConfiguration * _configuration;
     struct MPLibraryActiveKeepLocalStatus { 
         int statusType; 
-        double downloadProgress; 
+        float downloadProgress; 
     }  _currentStatus;
     id /* block */  _statusBlock;
     BOOL  _useNewProgressReporting;
 }
 
 @property (nonatomic, retain) MPLibraryKeepLocalStatusObserverConfiguration *configuration;
-@property (nonatomic, readonly) struct MPLibraryActiveKeepLocalStatus { int x1; double x2; } currentStatus;
+@property (nonatomic, readonly) struct MPLibraryActiveKeepLocalStatus { int x1; float x2; } currentStatus;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
@@ -23,12 +23,12 @@
 
 - (void).cxx_destruct;
 - (id)_activeDownloadForIdentifierSet:(id)arg1;
-- (struct MPLibraryActiveKeepLocalStatus { int x1; double x2; })_calculateCurrentStatus;
+- (struct MPLibraryActiveKeepLocalStatus { int x1; float x2; })_calculateCurrentStatus;
 - (void)_transientStateDidChangeNotification:(id)arg1;
 - (BOOL)_updateActiveDownloadsAllowingDownloadRemoval:(BOOL)arg1;
 - (void)_updateCurrentStatus;
 - (id)configuration;
-- (struct MPLibraryActiveKeepLocalStatus { int x1; double x2; })currentStatus;
+- (struct MPLibraryActiveKeepLocalStatus { int x1; float x2; })currentStatus;
 - (void)dealloc;
 - (void)downloadManager:(id)arg1 didAddActiveAssetDownloads:(id)arg2 removeActiveDownloads:(id)arg3;
 - (void)downloadManager:(id)arg1 didAddActiveDownloads:(id)arg2 removeActiveDownloads:(id)arg3;

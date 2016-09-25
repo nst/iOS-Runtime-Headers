@@ -14,8 +14,8 @@
     UIColor * _imageTintColor;
     UIImage * _leadingImage;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _leadingImageLayoutSize;
     BOOL  _preferred;
     NSString * _title;
@@ -23,8 +23,8 @@
     UIColor * _titleTextColor;
     UIImage * _trailingImage;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _trailingImageLayoutSize;
     int  _type;
     UIInterfaceActionVisualStyle * _visualStyle;
@@ -42,13 +42,13 @@
 @property (nonatomic, copy) id /* block */ handler;
 @property (getter=_imageTintColor, setter=_setImageTintColor:, nonatomic, retain) UIColor *imageTintColor;
 @property (nonatomic, retain) UIImage *leadingImage;
-@property (nonatomic) struct CGSize { double x1; double x2; } leadingImageLayoutSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } leadingImageLayoutSize;
 @property (getter=_isPreferred, setter=_setIsPreferred:, nonatomic) BOOL preferred;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic) int titleAlignment;
 @property (getter=_titleTextColor, setter=_setTitleTextColor:, nonatomic, retain) UIColor *titleTextColor;
 @property (nonatomic, retain) UIImage *trailingImage;
-@property (nonatomic) struct CGSize { double x1; double x2; } trailingImageLayoutSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } trailingImageLayoutSize;
 @property (nonatomic) int type;
 @property (getter=_visualStyle, setter=_setVisualStyle:, nonatomic, retain) UIInterfaceActionVisualStyle *visualStyle;
 @property (nonatomic, readonly) NSPointerArray *weakDisplayPropertyObservers;
@@ -66,7 +66,7 @@
 - (void)_invokeHandlerWithCompletionBlock:(id /* block */)arg1;
 - (BOOL)_isFocused;
 - (BOOL)_isPreferred;
-- (struct CGSize { double x1; double x2; })_layoutSizeForImageProperty:(id)arg1;
+- (struct CGSize { float x1; float x2; })_layoutSizeForImageProperty:(id)arg1;
 - (void)_notifyObserversDidChangeActionProperty:(id)arg1;
 - (void)_notifyObserversVisualStyleDidChange;
 - (id)_presentingController;
@@ -91,22 +91,22 @@
 - (id)initWithTitle:(id)arg1 type:(int)arg2 customContentViewController:(id)arg3 customContentView:(id)arg4 handler:(id /* block */)arg5;
 - (BOOL)isEnabled;
 - (id)leadingImage;
-- (struct CGSize { double x1; double x2; })leadingImageLayoutSize;
+- (struct CGSize { float x1; float x2; })leadingImageLayoutSize;
 - (void)setClassificationTitle:(id)arg1;
 - (void)setCustomContentViewController:(id)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setHandler:(id /* block */)arg1;
 - (void)setLeadingImage:(id)arg1;
-- (void)setLeadingImageLayoutSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setLeadingImageLayoutSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setTitle:(id)arg1;
 - (void)setTitleAlignment:(int)arg1;
 - (void)setTrailingImage:(id)arg1;
-- (void)setTrailingImageLayoutSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setTrailingImageLayoutSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setType:(int)arg1;
 - (id)title;
 - (int)titleAlignment;
 - (id)trailingImage;
-- (struct CGSize { double x1; double x2; })trailingImageLayoutSize;
+- (struct CGSize { float x1; float x2; })trailingImageLayoutSize;
 - (int)type;
 - (id)weakDisplayPropertyObservers;
 

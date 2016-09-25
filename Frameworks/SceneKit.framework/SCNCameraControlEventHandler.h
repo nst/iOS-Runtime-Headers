@@ -6,83 +6,83 @@
     unsigned int  _allowsTranslation;
     unsigned int  _alternateMode;
     struct SCNVector3 { 
-        double x; 
-        double y; 
-        double z; 
+        float x; 
+        float y; 
+        float z; 
     }  _autoCameraTarget;
     unsigned int  _automaticCameraTargetUpToDate;
     int  _browseMode;
-    double  _browseScaleFactor;
+    float  _browseScaleFactor;
     struct SCNVector3 { 
-        double x; 
-        double y; 
-        double z; 
+        float x; 
+        float y; 
+        float z; 
     }  _cameraTarget;
     void _clickOrigin;
     unsigned int  _didEverFocusNode;
     SCNNode * _freeViewCameraNode;
-    double  _friction;
+    float  _friction;
     unsigned int  _gimbalLockMode;
     unsigned int  _hasAutomaticCameraTarget;
     unsigned int  _inertia;
     unsigned int  _inertiaRunning;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _inertiaVelocity;
     union C3DMatrix4x4 { 
-        double components[16]; 
+        float components[16]; 
         /* Warning: Unrecognized filer type: ']' using 'void*' */ void*m[4]; 
     }  _initialMatrix;
     union C3DMatrix4x4 { 
-        double components[16]; 
+        float components[16]; 
         /* Warning: Unrecognized filer type: ']' using 'void*' */ void*m[4]; 
     }  _initialMatrixForRoll;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _initialPoint;
-    double  _initialZoom;
+    float  _initialZoom;
     BOOL  _isDraggingWithOneFinger;
     unsigned int  _isViewedObjectSphereComputed;
     int  _lastGestureFingerCount;
     double  _lastSimulationTime;
-    double  _originalFovX;
-    double  _originalFovY;
-    double  _originalOrthoScale;
+    float  _originalFovX;
+    float  _originalFovY;
+    float  _originalOrthoScale;
     UIGestureRecognizer * _panGesture;
     UIGestureRecognizer * _pinchGesture;
     unsigned int  _pinchShouldMoveCamera;
     UIGestureRecognizer * _pressGesture;
-    double  _roll;
+    float  _roll;
     UIGestureRecognizer * _rotateGesture;
     int  _stickyAxis;
     UIGestureRecognizer * _tapGesture;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _totalDragWithInertia;
     void _upDir;
     unsigned int  _upDirIsSet;
     struct C3DSphere { 
         /* Warning: Unrecognized filer type: '}' using 'void*' */ void*vector; 
     }  _viewedObjectSphere;
-    double  _zoomFactor;
+    float  _zoomFactor;
 }
 
 @property BOOL allowsTranslation;
 @property BOOL automaticCameraTarget;
-@property struct SCNVector3 { double x1; double x2; double x3; } cameraTarget;
+@property struct SCNVector3 { float x1; float x2; float x3; } cameraTarget;
 @property BOOL enableInertia;
-@property double friction;
+@property float friction;
 @property BOOL gimbalLockMode;
-@property struct SCNVector3 { double x1; double x2; double x3; } gimbalLockVector;
+@property struct SCNVector3 { float x1; float x2; float x3; } gimbalLockVector;
 @property int stickyAxis;
 
 + (void)frontVectorWithPointOfView:(id)arg1;
-+ (struct SCNMatrix4 { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; })matrixWithNoRoll:(struct SCNMatrix4 { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; })arg1;
++ (struct SCNMatrix4 { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })matrixWithNoRoll:(struct SCNMatrix4 { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })arg1;
 
-- (void)_beginTranslateAtLocation:(struct CGPoint { double x1; double x2; })arg1;
+- (void)_beginTranslateAtLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (float)_browseScale;
 - (BOOL)_freeCameraActivated;
 - (void)_handleDoubleTap:(id)arg1;
@@ -95,26 +95,26 @@
 - (void)_prepareFreeViewCamera;
 - (void)_resetBrowseScaleFactor;
 - (void)_resetFreeViewCamera;
-- (void)_rotateWithDrag:(struct CGPoint { double x1; double x2; })arg1 mode:(int)arg2 stickyAxis:(int)arg3;
-- (void)_startBrowsingIfNeeded:(struct CGPoint { double x1; double x2; })arg1;
+- (void)_rotateWithDrag:(struct CGPoint { float x1; float x2; })arg1 mode:(int)arg2 stickyAxis:(int)arg3;
+- (void)_startBrowsingIfNeeded:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_stopInertiaIfNeeded;
 - (void)_switchToFreeViewCamera;
-- (void)_translateTo:(struct CGPoint { double x1; double x2; })arg1;
+- (void)_translateTo:(struct CGPoint { float x1; float x2; })arg1;
 - (float)_translationCoef;
 - (void)activateFreeCamera;
 - (BOOL)allowsTranslation;
 - (BOOL)automaticCameraTarget;
 - (void)beginGesture:(id)arg1;
-- (struct SCNVector3 { double x1; double x2; double x3; })cameraAutomaticTargetPoint;
+- (struct SCNVector3 { float x1; float x2; float x3; })cameraAutomaticTargetPoint;
 - (void)cameraDidChange;
-- (struct SCNVector3 { double x1; double x2; double x3; })cameraTarget;
+- (struct SCNVector3 { float x1; float x2; float x3; })cameraTarget;
 - (void)cameraWillChange;
 - (void)clearRoll;
 - (void)computeAutomaticTargetPoint;
 - (BOOL)computeBoundingSphereOmittingFloorsForNode:(struct __C3DNode { }*)arg1 sphere:(struct C3DSphere { }*)arg2;
 - (void)dealloc;
 - (BOOL)enableInertia;
-- (void)endDraggingWithVelocity:(struct CGPoint { double x1; double x2; })arg1;
+- (void)endDraggingWithVelocity:(struct CGPoint { float x1; float x2; })arg1;
 - (void)focusNode:(id)arg1;
 - (id)freeCamera;
 - (float)friction;
@@ -123,7 +123,7 @@
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (id)gestureRecognizers;
 - (BOOL)gimbalLockMode;
-- (struct SCNVector3 { double x1; double x2; double x3; })gimbalLockVector;
+- (struct SCNVector3 { float x1; float x2; float x3; })gimbalLockVector;
 - (id)init;
 - (void)invalidateCameraTarget;
 - (void)panWithGestureRecognizer:(id)arg1;
@@ -135,12 +135,12 @@
 - (void)sceneWillChange;
 - (void)setAllowsTranslation:(BOOL)arg1;
 - (void)setAutomaticCameraTarget:(BOOL)arg1;
-- (void)setCameraTarget:(struct SCNVector3 { double x1; double x2; double x3; })arg1;
+- (void)setCameraTarget:(struct SCNVector3 { float x1; float x2; float x3; })arg1;
 - (void)setEnableFreeCamera:(BOOL)arg1;
 - (void)setEnableInertia:(BOOL)arg1;
 - (void)setFriction:(float)arg1;
 - (void)setGimbalLockMode:(BOOL)arg1;
-- (void)setGimbalLockVector:(struct SCNVector3 { double x1; double x2; double x3; })arg1;
+- (void)setGimbalLockVector:(struct SCNVector3 { float x1; float x2; float x3; })arg1;
 - (void)setStickyAxis:(int)arg1;
 - (void)setZoomFactor:(float)arg1;
 - (int)stickyAxis;

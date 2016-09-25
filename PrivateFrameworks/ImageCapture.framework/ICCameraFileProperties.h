@@ -15,7 +15,7 @@
     struct os_unfair_lock_s { 
         unsigned int _os_unfair_lock_opaque; 
     }  _fetchingThumbnailLock;
-    int  _fileSize;
+    long long  _fileSize;
     BOOL  _hasMetadata;
     BOOL  _hasOverriddenOrientation;
     BOOL  _hasThumbnail;
@@ -36,7 +36,7 @@
 @property double duration;
 @property BOOL fetchingMetadata;
 @property BOOL fetchingThumbnail;
-@property int fileSize;
+@property long long fileSize;
 @property BOOL hasMetadata;
 @property BOOL hasOverriddenOrientation;
 @property BOOL hasThumbnail;
@@ -57,7 +57,7 @@
 - (double)duration;
 - (BOOL)fetchingMetadata;
 - (BOOL)fetchingThumbnail;
-- (int)fileSize;
+- (long long)fileSize;
 - (void)finalize;
 - (BOOL)hasMetadata;
 - (BOOL)hasOverriddenOrientation;
@@ -75,7 +75,7 @@
 - (void)setDuration:(double)arg1;
 - (void)setFetchingMetadata:(BOOL)arg1;
 - (void)setFetchingThumbnail:(BOOL)arg1;
-- (void)setFileSize:(int)arg1;
+- (void)setFileSize:(long long)arg1;
 - (void)setHasMetadata:(BOOL)arg1;
 - (void)setHasOverriddenOrientation:(BOOL)arg1;
 - (void)setHasThumbnail:(BOOL)arg1;

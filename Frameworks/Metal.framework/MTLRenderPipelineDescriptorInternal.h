@@ -19,7 +19,7 @@
         unsigned int sampleMask; 
         union { 
             unsigned int sampleCoverageHash; 
-            double sampleCoverage; 
+            float sampleCoverage; 
         } ; 
         union { 
             unsigned int miscHash; 
@@ -48,7 +48,7 @@
     }  _private;
 }
 
-- (const struct MTLRenderPipelineDescriptorPrivate { id x1; /* Warning: Unrecognized filer type: '8' using 'void*' */ void*x2; unsigned int x3; void*x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; BOOL x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; unsigned int x15; union { unsigned int x_16_1_1; double x_16_1_2; } x16; union { unsigned int x_17_1_1; struct { unsigned int x_2_2_1 : 1; unsigned int x_2_2_2 : 1; unsigned int x_2_2_3 : 1; unsigned int x_2_2_4 : 2; unsigned int x_2_2_5 : 1; unsigned int x_2_2_6 : 1; unsigned int x_2_2_7 : 7; unsigned int x_2_2_8 : 1; unsigned int x_2_2_9 : 8; unsigned int x_2_2_10 : 3; unsigned int x_2_2_11 : 1; unsigned int x_2_2_12 : 4; unsigned int x_2_2_13 : 1; } x_17_1_2; } x17; unsigned int x18; unsigned int x19; id x20; id x21; }*)_descriptorPrivate;
+- (const struct MTLRenderPipelineDescriptorPrivate { id x1; /* Warning: Unrecognized filer type: '8' using 'void*' */ void*x2; unsigned int x3; void*x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; BOOL x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; unsigned int x15; union { unsigned int x_16_1_1; float x_16_1_2; } x16; union { unsigned int x_17_1_1; struct { unsigned int x_2_2_1 : 1; unsigned int x_2_2_2 : 1; unsigned int x_2_2_3 : 1; unsigned int x_2_2_4 : 2; unsigned int x_2_2_5 : 1; unsigned int x_2_2_6 : 1; unsigned int x_2_2_7 : 7; unsigned int x_2_2_8 : 1; unsigned int x_2_2_9 : 8; unsigned int x_2_2_10 : 3; unsigned int x_2_2_11 : 1; unsigned int x_2_2_12 : 4; unsigned int x_2_2_13 : 1; } x_17_1_2; } x17; unsigned int x18; unsigned int x19; id x20; id x21; }*)_descriptorPrivate;
 - (unsigned int)alphaTestFunction;
 - (void)attachVertexDescriptor:(id)arg1;
 - (unsigned char)clipDistanceEnableMask;

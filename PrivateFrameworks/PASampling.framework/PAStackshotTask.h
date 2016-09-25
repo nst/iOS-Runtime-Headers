@@ -10,7 +10,7 @@
     void * _imageInfos;
     void * _mainBinary;
     PAStackshot * _stackshot;
-    struct task_snapshot { unsigned int x1; int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned char x6[16]; unsigned int x7; unsigned int x8; int x9; int x10; int x11; int x12; int x13; unsigned int x14; unsigned int x15; unsigned int x16; BOOL x17[17]; unsigned int x18; unsigned int x19; unsigned int x20; unsigned int x21; unsigned int x22; unsigned int x23; unsigned int x24; unsigned int x25[4]; unsigned int x26[4]; unsigned int x27; unsigned int x28; unsigned int x29; unsigned int x30; unsigned int x31; unsigned int x32; unsigned int x33; unsigned int x34; unsigned int x35; } * _task_snap;
+    struct task_snapshot { unsigned int x1; int x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; unsigned char x6[16]; unsigned long long x7; unsigned int x8; int x9; int x10; int x11; int x12; int x13; unsigned int x14; unsigned long long x15; unsigned long long x16; BOOL x17[17]; unsigned int x18; unsigned int x19; unsigned int x20; unsigned long long x21; unsigned long long x22; unsigned long long x23; unsigned long long x24; unsigned long long x25[4]; unsigned long long x26[4]; unsigned long long x27; unsigned long long x28; unsigned long long x29; unsigned long long x30; unsigned long long x31; unsigned long long x32; unsigned long long x33; unsigned long long x34; unsigned int x35; } * _task_snap;
 }
 
 @property (readonly) BOOL isDarwinBG;
@@ -33,13 +33,13 @@
 - (BOOL)isFromMicrostackshot;
 - (BOOL)isSuppressed;
 - (void)iterateThreads:(id /* block */)arg1;
-- (struct dyld_uuid_info_64 { unsigned int x1; unsigned char x2[16]; })mainBinary;
+- (struct dyld_uuid_info_64 { unsigned long long x1; unsigned char x2[16]; })mainBinary;
 - (const char *)name;
 - (unsigned int)numImageInfos;
 - (int)pid;
 - (unsigned int)powerstatsFlags;
 - (BOOL)setBufferPosition:(const char *)arg1 withRemainingBytes:(unsigned long)arg2;
 - (BOOL)setBufferPosition:(const char *)arg1 withRemainingBytes:(unsigned long)arg2 withBytesAlreadyUsed:(unsigned long)arg3;
-- (const struct task_snapshot { unsigned int x1; int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned char x6[16]; unsigned int x7; unsigned int x8; int x9; int x10; int x11; int x12; int x13; unsigned int x14; unsigned int x15; unsigned int x16; BOOL x17[17]; unsigned int x18; unsigned int x19; unsigned int x20; unsigned int x21; unsigned int x22; unsigned int x23; unsigned int x24; unsigned int x25[4]; unsigned int x26[4]; unsigned int x27; unsigned int x28; unsigned int x29; unsigned int x30; unsigned int x31; unsigned int x32; unsigned int x33; unsigned int x34; unsigned int x35; }*)task_snap;
+- (const struct task_snapshot { unsigned int x1; int x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; unsigned char x6[16]; unsigned long long x7; unsigned int x8; int x9; int x10; int x11; int x12; int x13; unsigned int x14; unsigned long long x15; unsigned long long x16; BOOL x17[17]; unsigned int x18; unsigned int x19; unsigned int x20; unsigned long long x21; unsigned long long x22; unsigned long long x23; unsigned long long x24; unsigned long long x25[4]; unsigned long long x26[4]; unsigned long long x27; unsigned long long x28; unsigned long long x29; unsigned long long x30; unsigned long long x31; unsigned long long x32; unsigned long long x33; unsigned long long x34; unsigned int x35; }*)task_snap;
 
 @end

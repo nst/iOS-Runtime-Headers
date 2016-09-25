@@ -3,7 +3,7 @@
  */
 
 @interface NTPBSession : PBCodable <NSCopying> {
-    int  _appBuild;
+    long long  _appBuild;
     NSString * _appVersion;
     NSString * _campaignId;
     int  _campaignType;
@@ -42,7 +42,7 @@
     BOOL  _isPaidSubscriberFromNews;
     BOOL  _isPaidSubscriberFromThirdParty;
     NSString * _languageCode;
-    int  _lastAppOpenDate;
+    long long  _lastAppOpenDate;
     BOOL  _notificationsEnabled;
     NSString * _originatingCampaignId;
     NSString * _originatingCampaignType;
@@ -59,13 +59,13 @@
     int  _textSize;
     BOOL  _upgradedFromObsolete;
     NSString * _userId;
-    int  _userStartDate;
+    long long  _userStartDate;
     NSString * _userStorefrontId;
     int  _utcOffset;
     int  _widgetModeType;
 }
 
-@property (nonatomic) int appBuild;
+@property (nonatomic) long long appBuild;
 @property (nonatomic, retain) NSString *appVersion;
 @property (nonatomic, retain) NSString *campaignId;
 @property (nonatomic) int campaignType;
@@ -118,7 +118,7 @@
 @property (nonatomic) BOOL isPaidSubscriberFromNews;
 @property (nonatomic) BOOL isPaidSubscriberFromThirdParty;
 @property (nonatomic, retain) NSString *languageCode;
-@property (nonatomic) int lastAppOpenDate;
+@property (nonatomic) long long lastAppOpenDate;
 @property (nonatomic) BOOL notificationsEnabled;
 @property (nonatomic, retain) NSString *originatingCampaignId;
 @property (nonatomic, retain) NSString *originatingCampaignType;
@@ -135,7 +135,7 @@
 @property (nonatomic) int textSize;
 @property (nonatomic) BOOL upgradedFromObsolete;
 @property (nonatomic, retain) NSString *userId;
-@property (nonatomic) int userStartDate;
+@property (nonatomic) long long userStartDate;
 @property (nonatomic, retain) NSString *userStorefrontId;
 @property (nonatomic) int utcOffset;
 @property (nonatomic) int widgetModeType;
@@ -146,7 +146,7 @@
 - (int)StringAsOsInstallVariant:(id)arg1;
 - (int)StringAsReachabilityStatus:(id)arg1;
 - (int)StringAsWidgetModeType:(id)arg1;
-- (int)appBuild;
+- (long long)appBuild;
 - (id)appVersion;
 - (id)campaignId;
 - (int)campaignType;
@@ -206,7 +206,7 @@
 - (BOOL)isPaidSubscriberFromNews;
 - (BOOL)isPaidSubscriberFromThirdParty;
 - (id)languageCode;
-- (int)lastAppOpenDate;
+- (long long)lastAppOpenDate;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)notificationsEnabled;
 - (id)originatingCampaignId;
@@ -223,7 +223,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (BOOL)runningObsolete;
 - (id)sessionId;
-- (void)setAppBuild:(int)arg1;
+- (void)setAppBuild:(long long)arg1;
 - (void)setAppVersion:(id)arg1;
 - (void)setCampaignId:(id)arg1;
 - (void)setCampaignType:(int)arg1;
@@ -260,7 +260,7 @@
 - (void)setIsPaidSubscriberFromNews:(BOOL)arg1;
 - (void)setIsPaidSubscriberFromThirdParty:(BOOL)arg1;
 - (void)setLanguageCode:(id)arg1;
-- (void)setLastAppOpenDate:(int)arg1;
+- (void)setLastAppOpenDate:(long long)arg1;
 - (void)setNotificationsEnabled:(BOOL)arg1;
 - (void)setOriginatingCampaignId:(id)arg1;
 - (void)setOriginatingCampaignType:(id)arg1;
@@ -277,7 +277,7 @@
 - (void)setTextSize:(int)arg1;
 - (void)setUpgradedFromObsolete:(BOOL)arg1;
 - (void)setUserId:(id)arg1;
-- (void)setUserStartDate:(int)arg1;
+- (void)setUserStartDate:(long long)arg1;
 - (void)setUserStorefrontId:(id)arg1;
 - (void)setUtcOffset:(int)arg1;
 - (void)setWidgetModeType:(int)arg1;
@@ -285,7 +285,7 @@
 - (int)textSize;
 - (BOOL)upgradedFromObsolete;
 - (id)userId;
-- (int)userStartDate;
+- (long long)userStartDate;
 - (id)userStorefrontId;
 - (int)utcOffset;
 - (int)widgetModeType;

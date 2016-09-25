@@ -4,14 +4,14 @@
 
 @interface NCLegacyNotificationShortLookView : NCNotificationShortLookView {
     UIView * _additionalContentAccessoryView;
-    double  _additionalContentHeight;
-    double  _additionalContentPercentRevealed;
+    float  _additionalContentHeight;
+    float  _additionalContentPercentRevealed;
 }
 
 @property (nonatomic, retain) UIView *additionalContentAccessoryView;
-@property (nonatomic) double additionalContentHeight;
-@property (nonatomic, readonly) double additionalContentHeightDelta;
-@property (nonatomic) double additionalContentPercentRevealed;
+@property (nonatomic) float additionalContentHeight;
+@property (nonatomic, readonly) float additionalContentHeightDelta;
+@property (nonatomic) float additionalContentPercentRevealed;
 @property (getter=isAdditionalContentRevealed, nonatomic, readonly) BOOL additionalContentRevealed;
 
 - (void).cxx_destruct;
@@ -32,7 +32,7 @@
 - (void)setAdditionalContentAccessoryView:(id)arg1;
 - (void)setAdditionalContentHeight:(float)arg1;
 - (void)setAdditionalContentPercentRevealed:(float)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFitsContentWithSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFitsContentWithSize:(struct CGSize { float x1; float x2; })arg1;
 - (float)textHeightDelta;
 
 @end

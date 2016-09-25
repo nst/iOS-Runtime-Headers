@@ -39,8 +39,8 @@
 - (void)iconContentView:(id)arg1 didChangeAspectRatio:(float)arg2;
 - (id)iconDescriptor;
 - (unsigned int)iconSize;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (void)layoutSubviews;
 - (void)setCurrentIconContentView:(id)arg1;
 - (void)setDisableContinuousAnimation:(BOOL)arg1;
@@ -49,7 +49,7 @@
 - (void)setIconSize:(unsigned int)arg1;
 - (void)setUseEffectContentView:(BOOL)arg1;
 - (void)setVibrancyEffect:(id)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)updateWithIconDescriptor:(id)arg1 displayStyle:(unsigned int)arg2 animated:(BOOL)arg3;
 - (BOOL)useEffectContentView;
 - (id)vibrancyEffect;

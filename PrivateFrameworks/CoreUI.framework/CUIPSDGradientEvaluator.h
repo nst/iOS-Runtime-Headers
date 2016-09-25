@@ -20,7 +20,7 @@
         unsigned int isDithered : 1; 
         unsigned int reserved : 3; 
     }  pgeFlags;
-    double  smoothingCoefficient;
+    float  smoothingCoefficient;
 }
 
 @property (nonatomic) int blendMode;

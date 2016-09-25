@@ -5,9 +5,9 @@
 @interface NTKAstronomyRotationModel : NSObject {
     void _accumulatedPushVector;
     CADisplayLink * _displayLink;
-    double  _effectivePullAcceleration;
-    double  _effectivePushDeceleration;
-    const struct NTKAstronomyInteractionSettings { double x1; double x2; double x3; double x4; } * _interactionSettings;
+    float  _effectivePullAcceleration;
+    float  _effectivePushDeceleration;
+    const struct NTKAstronomyInteractionSettings { float x1; float x2; float x3; float x4; } * _interactionSettings;
     BOOL  _isPulling;
     struct CLLocationCoordinate2D { 
         double latitude; 
@@ -21,7 +21,7 @@
     int  _state;
 }
 
-@property (nonatomic, readonly) const struct NTKAstronomyInteractionSettings { double x1; double x2; double x3; double x4; }*interactionSettings;
+@property (nonatomic, readonly) const struct NTKAstronomyInteractionSettings { float x1; float x2; float x3; float x4; }*interactionSettings;
 @property (nonatomic) <NTKAstronomyRotationModelObserver> *observer;
 @property (getter=isPulling, nonatomic) BOOL pulling;
 @property (nonatomic) <NURotatable> *rotatable;
@@ -31,7 +31,7 @@
 - (void)_update;
 - (void)dealloc;
 - (id)init;
-- (const struct NTKAstronomyInteractionSettings { double x1; double x2; double x3; double x4; }*)interactionSettings;
+- (const struct NTKAstronomyInteractionSettings { float x1; float x2; float x3; float x4; }*)interactionSettings;
 - (BOOL)isAtHomeCoordinate;
 - (BOOL)isPulling;
 - (id)observer;

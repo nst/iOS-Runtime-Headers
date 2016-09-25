@@ -6,8 +6,8 @@
     NSString * _cameraMode;
     int  _cameraPosition;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _cameraResolution;
     AVCaptureSession * _captureSession;
     <AVCaptureVideoDataOutputSampleBufferDelegate> * _captureSessionDelegate;
@@ -21,15 +21,15 @@
     struct { struct { /* ? */ } *x1; int x2; double x3; double x4; } * _exposure_table;
     int  _focusMode;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _highISOThresholdDuration;
     id  _inputPortFormatObserver;
     AVCaptureInputPort * _inputPortFormatSender;
-    double  _maxISO;
-    double  _minISO;
+    float  _maxISO;
+    float  _minISO;
     AVCaptureVideoPreviewLayer * _previewLayer;
     BOOL  _runningManualExposure;
     int  _torchMode;
@@ -38,7 +38,7 @@
 
 @property (nonatomic, copy) NSString *cameraMode;
 @property (nonatomic) int cameraPosition;
-@property (nonatomic) struct CGSize { double x1; double x2; } cameraResolution;
+@property (nonatomic) struct CGSize { float x1; float x2; } cameraResolution;
 @property (nonatomic, retain) AVCaptureSession *captureSession;
 @property (nonatomic) <AVCaptureVideoDataOutputSampleBufferDelegate> *captureSessionDelegate;
 @property (nonatomic, retain) AVCaptureVideoDataOutput *captureVideoDataOutput;
@@ -50,34 +50,34 @@
 @property (nonatomic) int exposureMode;
 @property struct { struct { /* ? */ } *x1; int x2; double x3; double x4; }*exposure_table;
 @property (nonatomic) int focusMode;
-@property struct { int x1; int x2; unsigned int x3; int x4; } highISOThresholdDuration;
+@property struct { long long x1; int x2; unsigned int x3; long long x4; } highISOThresholdDuration;
 @property (retain) id inputPortFormatObserver;
 @property (nonatomic) AVCaptureInputPort *inputPortFormatSender;
-@property double maxISO;
-@property double minISO;
+@property float maxISO;
+@property float minISO;
 @property (nonatomic, retain) AVCaptureVideoPreviewLayer *previewLayer;
 @property BOOL runningManualExposure;
 @property (nonatomic) int torchMode;
 @property (nonatomic) int whiteBalanceMode;
 
 - (void).cxx_destruct;
-- (void)_refocusOnPoint:(struct CGPoint { double x1; double x2; })arg1 focusMode:(int)arg2 exposure:(BOOL)arg3;
+- (void)_refocusOnPoint:(struct CGPoint { float x1; float x2; })arg1 focusMode:(int)arg2 exposure:(BOOL)arg3;
 - (id)backFacingCamera;
 - (void)cacheCameraResolution:(id)arg1;
 - (unsigned int)cameraCount;
 - (id)cameraMode;
 - (int)cameraPosition;
-- (struct CGSize { double x1; double x2; })cameraResolution;
+- (struct CGSize { float x1; float x2; })cameraResolution;
 - (id)captureDeviceWithIdentifier:(id)arg1;
 - (id)captureDeviceWithPosition:(int)arg1;
 - (id)captureSession;
 - (id)captureSessionDelegate;
 - (id)captureVideoDataOutput;
 - (void)changeCameraConfiguration;
-- (struct CGPoint { double x1; double x2; })convertCameraPoint:(struct CGPoint { double x1; double x2; })arg1 fromLayer:(id)arg2;
-- (struct CGPoint { double x1; double x2; })convertCameraPoint:(struct CGPoint { double x1; double x2; })arg1 toLayer:(id)arg2;
-- (struct CGPoint { double x1; double x2; })convertCameraPoint:(struct CGPoint { double x1; double x2; })arg1 toLayer:(id)arg2 flipped:(BOOL)arg3;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })convertCameraRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 fromLayer:(id)arg2;
+- (struct CGPoint { float x1; float x2; })convertCameraPoint:(struct CGPoint { float x1; float x2; })arg1 fromLayer:(id)arg2;
+- (struct CGPoint { float x1; float x2; })convertCameraPoint:(struct CGPoint { float x1; float x2; })arg1 toLayer:(id)arg2;
+- (struct CGPoint { float x1; float x2; })convertCameraPoint:(struct CGPoint { float x1; float x2; })arg1 toLayer:(id)arg2 flipped:(BOOL)arg3;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertCameraRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 fromLayer:(id)arg2;
 - (struct __CVBuffer { }*)correctedCreditCardBuffer;
 - (id)currentDeviceID;
 - (id)deviceInput;
@@ -88,7 +88,7 @@
 - (int)focusMode;
 - (id)frontFacingCamera;
 - (void)highISOAdjustExposure;
-- (struct { int x1; int x2; unsigned int x3; int x4; })highISOThresholdDuration;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })highISOThresholdDuration;
 - (id)inputPortFormatObserver;
 - (id)inputPortFormatSender;
 - (BOOL)isAdjustingFocus;
@@ -97,13 +97,13 @@
 - (float)maxISO;
 - (float)minISO;
 - (id)previewLayer;
-- (void)refocusOnPoint:(struct CGPoint { double x1; double x2; })arg1;
-- (void)refocusOnPoint:(struct CGPoint { double x1; double x2; })arg1 exposure:(BOOL)arg2;
+- (void)refocusOnPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)refocusOnPoint:(struct CGPoint { float x1; float x2; })arg1 exposure:(BOOL)arg2;
 - (void)resetFocus;
 - (BOOL)runningManualExposure;
 - (void)setCameraMode:(id)arg1;
 - (void)setCameraPosition:(int)arg1;
-- (void)setCameraResolution:(struct CGSize { double x1; double x2; })arg1;
+- (void)setCameraResolution:(struct CGSize { float x1; float x2; })arg1;
 - (void)setCaptureSession:(id)arg1;
 - (void)setCaptureSessionDelegate:(id)arg1;
 - (void)setCaptureVideoDataOutput:(id)arg1;
@@ -115,7 +115,7 @@
 - (void)setExposureMode:(int)arg1;
 - (void)setExposure_table:(struct { struct { /* ? */ } *x1; int x2; double x3; double x4; }*)arg1;
 - (void)setFocusMode:(int)arg1;
-- (void)setHighISOThresholdDuration:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
+- (void)setHighISOThresholdDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setInputPortFormatObserver:(id)arg1;
 - (void)setInputPortFormatSender:(id)arg1;
 - (void)setMaxISO:(float)arg1;

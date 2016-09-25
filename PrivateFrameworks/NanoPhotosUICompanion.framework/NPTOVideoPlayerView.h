@@ -15,17 +15,17 @@
     BOOL  _prerollRequested;
     NSValue * _seekRequested;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _seekWithTolerance;
     unsigned int  _servicingRequest;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _willBeginPlayingTime;
 }
 
@@ -39,17 +39,17 @@
 - (void)_observePlayerItem:(id)arg1;
 - (void)_pause;
 - (void)_performNextRequest;
-- (void)_periodicTimeObserverChanged:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
+- (void)_periodicTimeObserverChanged:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)_play;
 - (void)_preroll;
 - (BOOL)_readyToPerformRequest;
 - (void)_resetRequestState;
 - (void)_revealPlayerView;
-- (void)_seekToTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
+- (void)_seekToTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)_stopObservingPlayerItem;
 - (void)dealloc;
 - (id)delegate;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (void)loadVideo:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
@@ -58,8 +58,8 @@
 - (id)player;
 - (BOOL)playing;
 - (void)preroll;
-- (void)seekToTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
-- (void)seekToTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1 tolerance:(struct { int x1; int x2; unsigned int x3; int x4; })arg2;
+- (void)seekToTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)seekToTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 tolerance:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
 - (void)setDelegate:(id)arg1;
 
 @end

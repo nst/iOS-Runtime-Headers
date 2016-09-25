@@ -5,9 +5,9 @@
 @interface _UIDatePickerMode_Time : _UIDatePickerMode {
     NSString * _hourFormat;
     NSString * _minuteFormat;
-    double  _timeAMPMWidth;
-    double  _timeHourWidth;
-    double  _timeMinuteWidth;
+    float  _timeAMPMWidth;
+    float  _timeHourWidth;
+    float  _timeMinuteWidth;
 }
 
 + (int)datePickerMode;

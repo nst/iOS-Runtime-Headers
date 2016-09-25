@@ -3,17 +3,17 @@
  */
 
 @interface GKRemoteUIHeaderView : UIView <RUIHeader> {
-    double  _bottomMargin;
-    double  _height;
+    float  _bottomMargin;
+    float  _height;
     BOOL  _isFirstSection;
     GKLabel * _textLabel;
 }
 
-@property (nonatomic) double bottomMargin;
+@property (nonatomic) float bottomMargin;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic) double height;
+@property (nonatomic) float height;
 @property (nonatomic) BOOL isFirstSection;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) GKLabel *textLabel;

@@ -22,7 +22,7 @@
 
 @optional
 
-- (void)commitSticker:(IMSticker *)arg1 atScreenCoordinate:(struct CGPoint { double x1; double x2; })arg2 scale:(float)arg3 rotation:(float)arg4;
+- (void)commitSticker:(IMSticker *)arg1 atScreenCoordinate:(struct CGPoint { float x1; float x2; })arg2 scale:(float)arg3 rotation:(float)arg4;
 - (void)commitSticker:(IMSticker *)arg1 forPlugin:(NSString *)arg2;
 - (void)dismissAndReloadInputViews:(BOOL)arg1 forPlugin:(NSString *)arg2;
 - (BOOL)handwritingIsDisplayed;

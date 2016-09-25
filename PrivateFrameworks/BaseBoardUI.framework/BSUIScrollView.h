@@ -5,20 +5,20 @@
 @interface BSUIScrollView : UIScrollView <UIScrollViewDelegate> {
     BOOL  _didScroll;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _initialContentOffset;
     BOOL  _isScrolling;
     BOOL  _preventDidEndScrolling;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _previousContentOffset;
     id /* block */  _scrollCompletion;
     BOOL  _scrolling;
 }
 
-@property (nonatomic, readonly) struct { int x1; struct CGPoint { double x_2_1_1; double x_2_1_2; } x2; struct CGPoint { double x_3_1_1; double x_3_1_2; } x3; } currentScrollContext;
+@property (nonatomic, readonly) struct { int x1; struct CGPoint { float x_2_1_1; float x_2_1_2; } x2; struct CGPoint { float x_3_1_1; float x_3_1_2; } x3; } currentScrollContext;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <BSUIScrollViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -28,25 +28,25 @@
 
 - (int)_activeMethod;
 - (void)_bs_didEndScrolling;
-- (void)_bs_didScrollWithContext:(struct { int x1; struct CGPoint { double x_2_1_1; double x_2_1_2; } x2; struct CGPoint { double x_3_1_1; double x_3_1_2; } x3; })arg1;
+- (void)_bs_didScrollWithContext:(struct { int x1; struct CGPoint { float x_2_1_1; float x_2_1_2; } x2; struct CGPoint { float x_3_1_1; float x_3_1_2; } x3; })arg1;
 - (void)_bs_willBeginScrolling;
 - (void)_didDidEndDeceleratingNotification:(id)arg1;
 - (void)_didEndDraggingNotification:(id)arg1;
 - (void)_didEndScrollAnimationNotification:(id)arg1;
 - (void)_notifyDidScroll;
-- (void)_setContentOffset:(struct CGPoint { double x1; double x2; })arg1 withBlock:(id /* block */)arg2;
+- (void)_setContentOffset:(struct CGPoint { float x1; float x2; })arg1 withBlock:(id /* block */)arg2;
 - (void)_setScrollCompletion:(id /* block */)arg1;
 - (void)_setScrolling:(BOOL)arg1;
 - (void)_updateScrolling;
 - (void)_willBeginDraggingNotification:(id)arg1;
-- (struct { int x1; struct CGPoint { double x_2_1_1; double x_2_1_2; } x2; struct CGPoint { double x_3_1_1; double x_3_1_2; } x3; })currentScrollContext;
+- (struct { int x1; struct CGPoint { float x_2_1_1; float x_2_1_2; } x2; struct CGPoint { float x_3_1_1; float x_3_1_2; } x3; })currentScrollContext;
 - (void)dealloc;
 - (id)delegate;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isScrolling;
-- (void)setContentOffset:(struct CGPoint { double x1; double x2; })arg1;
-- (void)setContentOffset:(struct CGPoint { double x1; double x2; })arg1 animated:(BOOL)arg2;
-- (BOOL)setContentOffset:(struct CGPoint { double x1; double x2; })arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
+- (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1 animated:(BOOL)arg2;
+- (BOOL)setContentOffset:(struct CGPoint { float x1; float x2; })arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
 - (void)setDelegate:(id)arg1;
 
 @end

@@ -27,10 +27,10 @@
     MPVideoContainerView * _containerView;
     BOOL  _controlsOverlayVisible;
     id  _delegate;
-    unsigned int  _desiredParts;
+    unsigned long long  _desiredParts;
     BOOL  _disableAutoRotation;
     BOOL  _disableControlsAutohide;
-    unsigned int  _disabledParts;
+    unsigned long long  _disabledParts;
     BOOL  _displayPlaybackErrorAlerts;
     UITapGestureRecognizer * _doubleTapGestureRecognizer;
     MPInlineVideoFullscreenViewController * _fullscreenViewController;
@@ -68,7 +68,7 @@
     MPVideoPlaybackOverlayView * _videoOverlayView;
     MPSwipableView * _view;
     NSSet * _viewsToFade;
-    unsigned int  _visibleParts;
+    unsigned long long  _visibleParts;
     MPVolumeController * _volumeController;
     BOOL  _wantsOverlayVisibleWhenItemIsAvailable;
     BOOL  _wasPlaying;
@@ -95,10 +95,10 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) id delegate;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) unsigned int desiredParts;
+@property (nonatomic) unsigned long long desiredParts;
 @property (nonatomic) BOOL disableAutoRotation;
 @property (nonatomic) BOOL disableControlsAutohide;
-@property (nonatomic) unsigned int disabledParts;
+@property (nonatomic) unsigned long long disabledParts;
 @property (nonatomic) BOOL displayPlaybackErrorAlerts;
 @property (getter=isFullscreen, nonatomic) BOOL fullscreen;
 @property (nonatomic, readonly) UIView *fullscreenView;
@@ -121,7 +121,7 @@
 @property (nonatomic, readonly, retain) MPVideoView *videoView;
 @property (nonatomic, readonly, retain) UIView *view;
 @property (nonatomic, readonly) BOOL viewControllerWillRequestExit;
-@property (nonatomic) unsigned int visibleParts;
+@property (nonatomic) unsigned long long visibleParts;
 
 - (void).cxx_destruct;
 - (BOOL)TVOutEnabled;
@@ -218,10 +218,10 @@
 - (BOOL)controlsOverlayVisible;
 - (void)dealloc;
 - (id)delegate;
-- (unsigned int)desiredParts;
+- (unsigned long long)desiredParts;
 - (BOOL)disableAutoRotation;
 - (BOOL)disableControlsAutohide;
-- (unsigned int)disabledParts;
+- (unsigned long long)disabledParts;
 - (BOOL)displayPlaybackErrorAlerts;
 - (void)displayVideoView;
 - (void)exitFullscreen;
@@ -267,11 +267,11 @@
 - (void)setControlsOverlayVisible:(BOOL)arg1 animate:(BOOL)arg2;
 - (void)setControlsOverlayVisible:(BOOL)arg1 animate:(BOOL)arg2 force:(BOOL)arg3;
 - (void)setDelegate:(id)arg1;
-- (void)setDesiredParts:(unsigned int)arg1;
-- (void)setDesiredParts:(unsigned int)arg1 animate:(BOOL)arg2;
+- (void)setDesiredParts:(unsigned long long)arg1;
+- (void)setDesiredParts:(unsigned long long)arg1 animate:(BOOL)arg2;
 - (void)setDisableAutoRotation:(BOOL)arg1;
 - (void)setDisableControlsAutohide:(BOOL)arg1;
-- (void)setDisabledParts:(unsigned int)arg1;
+- (void)setDisabledParts:(unsigned long long)arg1;
 - (void)setDisplayPlaybackErrorAlerts:(BOOL)arg1;
 - (void)setFullscreen:(BOOL)arg1;
 - (void)setFullscreen:(BOOL)arg1 animated:(BOOL)arg2;
@@ -291,19 +291,19 @@
 - (void)setUseHostedWindowWhenFullscreen:(BOOL)arg1;
 - (void)setVideoOverlayStyle:(int)arg1;
 - (void)setVideoSnapshotEnabled:(BOOL)arg1;
-- (void)setVisibleParts:(unsigned int)arg1;
-- (void)setVisibleParts:(unsigned int)arg1 animate:(BOOL)arg2;
+- (void)setVisibleParts:(unsigned long long)arg1;
+- (void)setVisibleParts:(unsigned long long)arg1 animate:(BOOL)arg2;
 - (id)subtitlesView;
 - (void)swipableView:(id)arg1 didMoveToSuperview:(id)arg2;
 - (void)swipableView:(id)arg1 willMoveToWindow:(id)arg2;
 - (void)swipableViewHadActivity:(id)arg1;
-- (BOOL)transportControls:(id)arg1 tappedButtonPart:(unsigned int)arg2;
+- (BOOL)transportControls:(id)arg1 tappedButtonPart:(unsigned long long)arg2;
 - (int)videoOverlayStyle;
 - (id)videoOverlayView;
 - (id)videoView;
 - (id)view;
 - (BOOL)viewControllerWillRequestExit;
-- (unsigned int)visibleParts;
+- (unsigned long long)visibleParts;
 - (void)volumeController:(id)arg1 volumeValueDidChange:(float)arg2;
 
 @end

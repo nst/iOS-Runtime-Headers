@@ -10,8 +10,8 @@
     UIInterfaceActionGroupView * _actionsView;
     unsigned int  _customContentLocation;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _customContentSize;
     UIView * _customContentView;
     UIView * _headerClippingView;
@@ -32,9 +32,9 @@
 @property (getter=isBackgroundBlurred, nonatomic) BOOL backgroundBlurred;
 @property (getter=isBanner, nonatomic) BOOL banner;
 @property (nonatomic, retain) UIView *colorInfusionView;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } contentSizeExcludingActions;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } contentSizeExcludingActions;
 @property (nonatomic) unsigned int customContentLocation;
-@property (nonatomic) struct CGSize { double x1; double x2; } customContentSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } customContentSize;
 @property (nonatomic, readonly) UIView *customContentView;
 @property (nonatomic, copy) NSDate *date;
 @property (getter=isDateAllDay, nonatomic, readonly) BOOL dateAllDay;
@@ -55,7 +55,7 @@
 @property (getter=_scrollView, nonatomic, readonly) UIScrollView *scrollView;
 @property (nonatomic, copy) NSString *secondaryText;
 @property (nonatomic) BOOL showAdditionalMessageLines;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } sizeExcludingActions;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } sizeExcludingActions;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UIImage *thumbnail;
 @property (nonatomic) int thumbnailViewContentMode;
@@ -76,7 +76,7 @@
 - (void)_configureMainContentViewIfNecessary;
 - (void)_configureNotificationContentViewIfNecessary;
 - (void)_configureScrollViewIfNecessary;
-- (struct CGSize { double x1; double x2; })_contentSizeThatFitsContentWithSizeExcludingActions:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })_contentSizeThatFitsContentWithSizeExcludingActions:(struct CGSize { float x1; float x2; })arg1;
 - (void)_layoutActionsView;
 - (void)_layoutCustomContentView;
 - (void)_layoutCustomContentViewInRelationToContentView;
@@ -88,14 +88,14 @@
 - (void)_layoutTopRubberbandingView;
 - (BOOL)_lookViewTapGestureRecognizerShouldReceiveTouch:(id)arg1;
 - (id)_scrollView;
-- (struct CGSize { double x1; double x2; })_sizeThatFitsContentExcludingActionsWithSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })_sizeThatFitsContentExcludingActionsWithSize:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)adjustForContentSizeCategoryChange;
 - (BOOL)adjustsFontForContentSizeCategory;
 - (id)colorInfusionView;
-- (struct CGSize { double x1; double x2; })contentSizeExcludingActions;
-- (struct CGSize { double x1; double x2; })contentSizeForSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })contentSizeExcludingActions;
+- (struct CGSize { float x1; float x2; })contentSizeForSize:(struct CGSize { float x1; float x2; })arg1;
 - (unsigned int)customContentLocation;
-- (struct CGSize { double x1; double x2; })customContentSize;
+- (struct CGSize { float x1; float x2; })customContentSize;
 - (id)customContentView;
 - (id)date;
 - (int)dateFormatStyle;
@@ -122,7 +122,7 @@
 - (void)setBanner:(BOOL)arg1;
 - (void)setColorInfusionView:(id)arg1;
 - (void)setCustomContentLocation:(unsigned int)arg1;
-- (void)setCustomContentSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setCustomContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setDate:(id)arg1;
 - (void)setDateAllDay:(BOOL)arg1;
 - (void)setDateFormatStyle:(int)arg1;
@@ -134,9 +134,9 @@
 - (void)setSecondaryText:(id)arg1;
 - (void)setTimeZone:(id)arg1;
 - (void)setTitle:(id)arg1;
-- (struct CGSize { double x1; double x2; })sizeExcludingActions;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFitsContentWithSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeExcludingActions;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFitsContentWithSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)timeZone;
 - (id)title;
 - (void)traitCollectionDidChange:(id)arg1;

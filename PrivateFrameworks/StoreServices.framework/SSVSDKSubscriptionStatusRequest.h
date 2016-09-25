@@ -4,6 +4,6 @@
 
 @interface SSVSDKSubscriptionStatusRequest : SSVSubscriptionStatusRequest
 
-+ (int)requestMessage;
++ (long long)requestMessage;
 
 @end

@@ -5,10 +5,10 @@
 @interface BWDeferredMetadataCache : NSObject {
     struct BWDeferredMetadataCacheEntry { 
         struct { 
-            int value; 
+            long long value; 
             int timescale; 
             unsigned int flags; 
-            int epoch; 
+            long long epoch; 
         } pts; 
         struct __CFDictionary {} *metadataDict; 
         short useCount; 

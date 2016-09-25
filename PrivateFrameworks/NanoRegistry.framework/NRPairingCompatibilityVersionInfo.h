@@ -16,10 +16,10 @@
 @property (nonatomic) int minQuickSwitchCompatibilityVersion;
 @property (nonatomic) int pairingCompatibilityVersion;
 
-+ (void)setValue:(unsigned int)arg1 forToken:(int)arg2;
++ (void)setValue:(unsigned long long)arg1 forToken:(int)arg2;
 + (BOOL)supportsSecureCoding;
 + (id)systemVersions;
-+ (unsigned int)valueForToken:(int)arg1;
++ (unsigned long long)valueForToken:(int)arg1;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;

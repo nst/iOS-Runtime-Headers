@@ -4,10 +4,10 @@
 
 @interface MTLDebugFragmentRenderCommandEncoder : MTLToolsFragmentRenderCommandEncoder {
     unsigned int  _backStencilRef;
-    double  _blendColorAlpha;
-    double  _blendColorBlue;
-    double  _blendColorGreen;
-    double  _blendColorRed;
+    float  _blendColorAlpha;
+    float  _blendColorBlue;
+    float  _blendColorGreen;
+    float  _blendColorRed;
     <MTLDevice> * _cachedDevice;
     MTLDepthStencilDescriptor * _defaultDepthStencilDescriptor;
     struct ResourceTrackingDeferredAttachments { 
@@ -15,9 +15,9 @@
         MTLRenderPassDepthAttachmentDescriptorInternal *depthAttachment; 
         MTLRenderPassStencilAttachmentDescriptorInternal *stencilAttachment; 
     }  _deferredAttachments;
-    double  _depthBias;
-    double  _depthBiasClamp;
-    double  _depthBiasSlopeScale;
+    float  _depthBias;
+    float  _depthBiasClamp;
+    float  _depthBiasSlopeScale;
     <MTLDepthStencilState> * _depthStencilState;
     MTLRenderPassDescriptor * _descriptor;
     unsigned int  _encoderState;
@@ -41,7 +41,7 @@
     }  _fragmentTextures;
     unsigned int  _frontStencilRef;
     unsigned int  _height;
-    const struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; unsigned int x15; unsigned int x16; unsigned int x17; unsigned int x18; double x19; double x20; unsigned int x21; unsigned int x22; unsigned int x23; unsigned int x24; unsigned int x25; unsigned int x26; unsigned int x27; unsigned int x28; unsigned int x29; unsigned int x30; unsigned int x31; unsigned int x32; unsigned int x33; unsigned int x34; unsigned int x35; unsigned int x36; unsigned int x37; unsigned int x38; unsigned int x39; unsigned int x40; unsigned int x41; } * _limits;
+    const struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; unsigned int x15; unsigned int x16; unsigned int x17; unsigned int x18; float x19; float x20; unsigned int x21; unsigned int x22; unsigned int x23; unsigned int x24; unsigned int x25; unsigned int x26; unsigned int x27; unsigned int x28; unsigned int x29; unsigned int x30; unsigned int x31; unsigned int x32; unsigned int x33; unsigned int x34; unsigned int x35; unsigned int x36; unsigned int x37; unsigned int x38; unsigned int x39; unsigned int x40; unsigned int x41; } * _limits;
     <MTLRenderPipelineState> * _renderPipelineState;
     struct { 
         unsigned int x; 
@@ -54,15 +54,15 @@
 }
 
 @property (nonatomic, readonly) unsigned int backStencilRef;
-@property (nonatomic, readonly) double blendColorAlpha;
-@property (nonatomic, readonly) double blendColorBlue;
-@property (nonatomic, readonly) double blendColorGreen;
-@property (nonatomic, readonly) double blendColorRed;
+@property (nonatomic, readonly) float blendColorAlpha;
+@property (nonatomic, readonly) float blendColorBlue;
+@property (nonatomic, readonly) float blendColorGreen;
+@property (nonatomic, readonly) float blendColorRed;
 @property (nonatomic, readonly) <MTLDevice> *cachedDevice;
 @property (nonatomic, readonly) MTLDepthStencilDescriptor *defaultDepthStencilDescriptor;
-@property (nonatomic, readonly) double depthBias;
-@property (nonatomic, readonly) double depthBiasClamp;
-@property (nonatomic, readonly) double depthBiasSlopeScale;
+@property (nonatomic, readonly) float depthBias;
+@property (nonatomic, readonly) float depthBiasClamp;
+@property (nonatomic, readonly) float depthBiasSlopeScale;
 @property (nonatomic, readonly) <MTLDepthStencilState> *depthStencilState;
 @property (nonatomic, readonly, copy) MTLRenderPassDescriptor *descriptor;
 @property (nonatomic, readonly) unsigned int frontStencilRef;

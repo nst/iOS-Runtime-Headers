@@ -4,7 +4,7 @@
 
 @interface UISimpleInteractionProgress : UIInteractionProgress
 
-@property (nonatomic) double percentComplete;
+@property (nonatomic) float percentComplete;
 
 - (void)endInteraction:(BOOL)arg1;
 

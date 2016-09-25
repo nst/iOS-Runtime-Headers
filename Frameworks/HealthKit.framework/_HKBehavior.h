@@ -25,7 +25,7 @@
 @property (nonatomic, readonly, copy) NSString *currentDeviceManufacturer;
 @property (nonatomic, readonly, copy) NSString *currentDeviceName;
 @property (nonatomic, readonly, copy) NSString *currentDeviceProductType;
-@property (nonatomic, readonly) unsigned int currentDiskSpaceAvailable;
+@property (nonatomic, readonly) unsigned long long currentDiskSpaceAvailable;
 @property (nonatomic, readonly) NSDictionary *currentDiskUsage;
 @property (nonatomic, readonly, copy) NSString *currentInternalDeviceModel;
 @property (nonatomic, readonly, copy) NSString *currentOSBuild;
@@ -42,7 +42,7 @@
 @property (nonatomic, readonly, copy) NSTimeZone *localTimeZone;
 @property (nonatomic) BOOL requestsRemoteAuthorization;
 @property (nonatomic) BOOL shouldPruneOldSamples;
-@property (nonatomic, readonly) unsigned int totalDiskCapacity;
+@property (nonatomic, readonly) unsigned long long totalDiskCapacity;
 
 + (BOOL)_hasCompletedBuddy;
 + (BOOL)_hasTelephonyCapability;
@@ -84,7 +84,7 @@
 - (id)currentDeviceManufacturer;
 - (id)currentDeviceName;
 - (id)currentDeviceProductType;
-- (unsigned int)currentDiskSpaceAvailable;
+- (unsigned long long)currentDiskSpaceAvailable;
 - (id)currentDiskUsage;
 - (id)currentInternalDeviceModel;
 - (id)currentOSBuild;
@@ -115,6 +115,6 @@
 - (void)setRequestsRemoteAuthorization:(BOOL)arg1;
 - (void)setShouldPruneOldSamples:(BOOL)arg1;
 - (BOOL)shouldPruneOldSamples;
-- (unsigned int)totalDiskCapacity;
+- (unsigned long long)totalDiskCapacity;
 
 @end

@@ -7,10 +7,10 @@
     BOOL  _animateViewControllersViews;
     int  _animationType;
     int  _crossfadeType;
-    double  _maximumZoomScale;
-    double  _minimumZoomScale;
+    float  _maximumZoomScale;
+    float  _minimumZoomScale;
     BOOL  _showRectsOfInterest;
-    double  _titleCrossfadeAmount;
+    float  _titleCrossfadeAmount;
     double  _transitionDuration;
 }
 
@@ -18,10 +18,10 @@
 @property (nonatomic) BOOL animateViewControllersViews;
 @property (nonatomic) int animationType;
 @property (nonatomic) int crossfadeType;
-@property (nonatomic) double maximumZoomScale;
-@property (nonatomic) double minimumZoomScale;
+@property (nonatomic) float maximumZoomScale;
+@property (nonatomic) float minimumZoomScale;
 @property (nonatomic) BOOL showRectsOfInterest;
-@property (nonatomic) double titleCrossfadeAmount;
+@property (nonatomic) float titleCrossfadeAmount;
 @property (nonatomic) double transitionDuration;
 
 + (id)settingsControllerModule;

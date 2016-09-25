@@ -25,14 +25,14 @@
     NSObject<OS_dispatch_queue> * _queue;
     double  _remainingIndexingBudget;
     int  _remainingIndexingBudgetOverage;
-    int  _resumeCount;
+    long long  _resumeCount;
     BOOL  _scheduledProcessing;
     BOOL  _scheduledRefresh;
     BOOL  _scheduledVerification;
     MFLazyCache * _searchResultsCache;
     unsigned int  _throttledDataSourceBatchSize;
     unsigned int  _throttledIndexingBatchSize;
-    int  _transaction;
+    long long  _transaction;
 }
 
 @property (nonatomic, retain) CSSearchableIndex *csIndex;
@@ -42,7 +42,7 @@
 @property (getter=_isForeground, setter=_setForeground:, nonatomic) BOOL foreground;
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
-@property (getter=_transaction, readonly) int transaction;
+@property (getter=_transaction, readonly) long long transaction;
 
 + (id)_localClientState;
 + (id)_localClientStateURL;
@@ -51,9 +51,9 @@
 - (id)_budgetPersistenceKey;
 - (void)_coalescingTimerFired;
 - (id)_consumeBatchOfSize:(unsigned int)arg1;
-- (void)_dataSourceAssignTransaction:(int)arg1 forIdentifiers:(id)arg2 completion:(id /* block */)arg3;
-- (void)_dataSourceAssignTransaction:(int)arg1 updates:(id)arg2 completion:(id /* block */)arg3;
-- (void)_dataSourceInvalidateItemsGreaterThanTransaction:(int)arg1 completion:(id /* block */)arg2;
+- (void)_dataSourceAssignTransaction:(long long)arg1 forIdentifiers:(id)arg2 completion:(id /* block */)arg3;
+- (void)_dataSourceAssignTransaction:(long long)arg1 updates:(id)arg2 completion:(id /* block */)arg3;
+- (void)_dataSourceInvalidateItemsGreaterThanTransaction:(long long)arg1 completion:(id /* block */)arg2;
 - (void)_dataSourceRequestNeededUpdatesWithCompletion:(id /* block */)arg1;
 - (void)_dataSourceScheduleWork:(id /* block */)arg1;
 - (void)_dataSourceVerifyRepresentativeSampleWithCompletion:(id /* block */)arg1;
@@ -62,7 +62,7 @@
 - (void)_indexItems:(id)arg1 fromRefresh:(BOOL)arg2;
 - (void)_invalidateCache;
 - (BOOL)_isForeground;
-- (int)_nextTransaction;
+- (long long)_nextTransaction;
 - (void)_noteNeedsLastClientStateFetch;
 - (void)_persistRemainingIndexingBudgetValue:(id)arg1;
 - (void)_powerStateChanged:(id)arg1;
@@ -85,7 +85,7 @@
 - (void)_startCoalescingTimer;
 - (void)_stopCoalescingTimer;
 - (double)_throttleRequestedSize:(unsigned int*)arg1 action:(id /* block */)arg2;
-- (int)_transaction;
+- (long long)_transaction;
 - (void)_transitionWithBudgetTimeUsed:(double)arg1;
 - (void)_verifySpotlightIndex;
 - (void)addMiddleware:(id)arg1;

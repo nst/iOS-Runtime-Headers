@@ -42,7 +42,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL javaScriptCanOpenWindowsAutomatically;
 @property (nonatomic) BOOL javaScriptEnabled;
-@property (nonatomic) double minimumFontSize;
+@property (nonatomic) float minimumFontSize;
 @property (readonly) Class superclass;
 
 + (id)_experimentalFeatures;

@@ -4,7 +4,7 @@
 
 @interface UIClientRotationContext : NSObject {
     UISnapshotView * _contentSnapshotViewStart;
-    double  _contentTopAdjustmentStart;
+    float  _contentTopAdjustmentStart;
     UIView * _contentView;
     BOOL  _contentWasHidden;
     double  _duration;
@@ -26,7 +26,7 @@
         BOOL avoidFadingBottomOfContent; 
         BOOL skipSnapshotOfEndState; 
         BOOL preventAdditveAnimations; 
-        double contentStretchRightEdgeInset; 
+        float contentStretchRightEdgeInset; 
         int edgeClip; 
     }  _rotationSettings;
     BOOL  _skipClientRotationCallbacks;
@@ -36,7 +36,7 @@
     BOOL  _snapshotTargetWasHidden;
     int  _toOrientation;
     UIWindow * _window;
-    double  contentBottomInset;
+    float  contentBottomInset;
 }
 
 @property (nonatomic, readonly) UIView *contentView;

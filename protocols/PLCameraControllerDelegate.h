@@ -7,14 +7,14 @@
 
 - (void)cameraController:(CMKCaptureController *)arg1 capturedPanorama:(NSDictionary *)arg2 error:(NSError *)arg3;
 - (void)cameraController:(CMKCaptureController *)arg1 capturedPhoto:(NSDictionary *)arg2 error:(NSError *)arg3;
-- (void)cameraController:(CMKCaptureController *)arg1 cleanApertureDidChange:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (void)cameraController:(CMKCaptureController *)arg1 cleanApertureDidChange:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)cameraController:(CMKCaptureController *)arg1 didChangeCaptureAbility:(BOOL)arg2;
 - (void)cameraController:(CMKCaptureController *)arg1 didFinishTransitionToShowEffectsGrid:(BOOL)arg2;
 - (void)cameraController:(CMKCaptureController *)arg1 didReceivePanoramaIssue:(int)arg2;
 - (void)cameraController:(CMKCaptureController *)arg1 didStartTransitionToShowEffectsGrid:(BOOL)arg2 animated:(BOOL)arg3;
 - (void)cameraController:(CMKCaptureController *)arg1 didUpdatePanoramaPreview:(NSDictionary *)arg2;
 - (void)cameraController:(CMKCaptureController *)arg1 faceMetadataDidChange:(NSArray *)arg2;
-- (void)cameraController:(CMKCaptureController *)arg1 remoteFocusTapped:(struct CGPoint { double x1; double x2; })arg2;
+- (void)cameraController:(CMKCaptureController *)arg1 remoteFocusTapped:(struct CGPoint { float x1; float x2; })arg2;
 - (void)cameraController:(CMKCaptureController *)arg1 videoZoomFactorDidChange:(float)arg2;
 - (void)cameraController:(CMKCaptureController *)arg1 willChangeToMode:(int)arg2 device:(int)arg3;
 - (void)cameraController:(CMKCaptureController *)arg1 willResetFocus:(BOOL)arg2 exposure:(BOOL)arg3;

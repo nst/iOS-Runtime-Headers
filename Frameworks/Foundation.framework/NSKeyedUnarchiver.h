@@ -10,7 +10,7 @@
     unsigned int  _flags;
     int  _genericKey;
     id  _helper;
-    unsigned int  _len;
+    unsigned long long  _len;
     id  _nameClassMap;
     id  _objRefMap;
     id  _objects;
@@ -60,7 +60,7 @@
 - (double)decodeDoubleForKey:(id)arg1;
 - (float)decodeFloatForKey:(id)arg1;
 - (int)decodeInt32ForKey:(id)arg1;
-- (int)decodeInt64ForKey:(id)arg1;
+- (long long)decodeInt64ForKey:(id)arg1;
 - (int)decodeIntForKey:(id)arg1;
 - (id)decodeObject;
 - (id)decodeObjectForKey:(id)arg1;

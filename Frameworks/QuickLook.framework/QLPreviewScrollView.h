@@ -3,47 +3,47 @@
  */
 
 @interface QLPreviewScrollView : UIScrollView <UIScrollViewDelegate> {
-    double  _contentIsSmallerThanView;
+    float  _contentIsSmallerThanView;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _contentViewSize;
-    double  _fillZoomScale;
-    double  _fitZoomScale;
+    float  _fillZoomScale;
+    float  _fitZoomScale;
     BOOL  _inSizeChange;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _lastUpdatedSize;
-    double  _maxZoomScale;
-    double  _minZoomScale;
+    float  _maxZoomScale;
+    float  _minZoomScale;
     BOOL  _needsZoomUpdate;
-    double  _pinchMaxZoomScale;
+    float  _pinchMaxZoomScale;
     BOOL  _readyToCancelPanGesture;
     BOOL  _shouldFit;
     <QLPreviewScrollViewZoomDelegate> * _zoomDelegate;
 }
 
-@property (readonly) double contentIsSmallerThanView;
-@property (nonatomic) struct CGSize { double x1; double x2; } contentViewSize;
+@property (readonly) float contentIsSmallerThanView;
+@property (nonatomic) struct CGSize { float x1; float x2; } contentViewSize;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) double fillZoomScale;
-@property (readonly) double fitZoomScale;
+@property (readonly) float fillZoomScale;
+@property (readonly) float fitZoomScale;
 @property (readonly) unsigned int hash;
-@property (readonly) double maxZoomScale;
-@property (readonly) double minZoomScale;
+@property (readonly) float maxZoomScale;
+@property (readonly) float minZoomScale;
 @property (nonatomic) BOOL needsZoomUpdate;
-@property (readonly) double pinchMaxZoomScale;
+@property (readonly) float pinchMaxZoomScale;
 @property BOOL shouldFit;
 @property (readonly) Class superclass;
 @property <QLPreviewScrollViewZoomDelegate> *zoomDelegate;
 
 - (void).cxx_destruct;
-- (float)_maxZoomScaleForContentSize:(struct CGSize { double x1; double x2; })arg1;
+- (float)_maxZoomScaleForContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_updateScrollViewZomming;
 - (float)contentIsSmallerThanView;
-- (struct CGSize { double x1; double x2; })contentViewSize;
+- (struct CGSize { float x1; float x2; })contentViewSize;
 - (float)fillZoomScale;
 - (float)fitZoomScale;
 - (id)init;
@@ -57,15 +57,15 @@
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)scrollViewWillBeginZooming:(id)arg1 withView:(id)arg2;
-- (void)setContentViewSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setContentViewSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setNeedsZoomUpdate:(BOOL)arg1;
 - (void)setShouldFit:(BOOL)arg1;
 - (void)setZoomDelegate:(id)arg1;
 - (BOOL)shouldFit;
 - (void)updateZoomScales;
-- (void)updateZoomScalesWithSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)updateZoomScalesWithSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)viewForZoomingInScrollView:(id)arg1;
 - (id)zoomDelegate;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })zoomRectForScale:(float)arg1 withCenter:(struct CGPoint { double x1; double x2; })arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })zoomRectForScale:(float)arg1 withCenter:(struct CGPoint { float x1; float x2; })arg2;
 
 @end

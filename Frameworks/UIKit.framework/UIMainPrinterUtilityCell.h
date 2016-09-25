@@ -6,8 +6,8 @@
     BOOL  _showSupplyDataUnderPrinterName;
     NSArray * _supplies;
     NSArray * _supplyLevelViews;
-    double  detailTextLabelY;
-    double  textLabelY;
+    float  detailTextLabelY;
+    float  textLabelY;
 }
 
 @property (nonatomic) BOOL showSupplyDataUnderPrinterName;

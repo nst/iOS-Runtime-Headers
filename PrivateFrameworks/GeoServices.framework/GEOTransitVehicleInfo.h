@@ -23,7 +23,7 @@
     unsigned int  _lineIndex;
     int  _pickupDropoffType;
     unsigned int  _routeLineArtworkIndex;
-    unsigned int  _tripMuid;
+    unsigned long long  _tripMuid;
     NSString * _vehicleNumber;
 }
 
@@ -45,7 +45,7 @@
 @property (nonatomic) unsigned int lineIndex;
 @property (nonatomic) int pickupDropoffType;
 @property (nonatomic) unsigned int routeLineArtworkIndex;
-@property (nonatomic) unsigned int tripMuid;
+@property (nonatomic) unsigned long long tripMuid;
 @property (nonatomic, retain) NSString *vehicleNumber;
 
 - (int)StringAsPickupDropoffType:(id)arg1;
@@ -94,9 +94,9 @@
 - (void)setLineIndex:(unsigned int)arg1;
 - (void)setPickupDropoffType:(int)arg1;
 - (void)setRouteLineArtworkIndex:(unsigned int)arg1;
-- (void)setTripMuid:(unsigned int)arg1;
+- (void)setTripMuid:(unsigned long long)arg1;
 - (void)setVehicleNumber:(id)arg1;
-- (unsigned int)tripMuid;
+- (unsigned long long)tripMuid;
 - (id)vehicleNumber;
 - (void)writeTo:(id)arg1;
 

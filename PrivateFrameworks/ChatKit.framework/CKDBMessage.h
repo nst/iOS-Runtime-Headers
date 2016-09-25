@@ -21,7 +21,7 @@
     NSString * _madridChatIdentifier;
     NSString * _madridRoomname;
     NSString * _madridService;
-    int  _madridType;
+    long long  _madridType;
     NSMutableArray * _mediaObjects;
     NSString * _plainBody;
     NSArray * _recipients;
@@ -51,7 +51,7 @@
 @property (nonatomic, readonly) NSString *madridChatIdentifier;
 @property (nonatomic, readonly) NSString *madridRoomname;
 @property (nonatomic, readonly) NSString *madridService;
-@property (nonatomic, readonly) int madridType;
+@property (nonatomic, readonly) long long madridType;
 @property (nonatomic, readonly) NSArray *mediaObjects;
 @property (nonatomic, readonly) NSString *plainBody;
 @property (nonatomic, readonly, copy) NSArray *recipients;
@@ -85,7 +85,7 @@
 - (id)madridChatIdentifier;
 - (id)madridRoomname;
 - (id)madridService;
-- (int)madridType;
+- (long long)madridType;
 - (id)mediaObjects;
 - (id)plainBody;
 - (id)previewText;

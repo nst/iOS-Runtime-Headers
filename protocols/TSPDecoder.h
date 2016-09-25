@@ -5,7 +5,7 @@
 
 @required
 
-- (<TSUStreamReadChannel> *)newReadChannelForDataWithIdentifier:(int)arg1 info:(id <TSPDecoderDataInfo>)arg2;
+- (<TSUStreamReadChannel> *)newReadChannelForDataWithIdentifier:(long long)arg1 info:(id <TSPDecoderDataInfo>)arg2;
 - (<TSUStreamReadChannel> *)newReadChannelForMetadata;
 - (<TSUStreamReadChannel> *)newReadChannelForRootObjectComponent;
 

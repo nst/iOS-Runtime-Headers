@@ -3,19 +3,19 @@
  */
 
 @interface HUForceInterpolatedPressGestureRecognizer : UILongPressGestureRecognizer {
-    double  _currentSampleForceMultiplier;
+    float  _currentSampleForceMultiplier;
     double  _currentSampleTimestamp;
     NSMutableSet * _hu_activeTouches;
-    double  _overallForceMultiplierExcludingCurrentSample;
+    float  _overallForceMultiplierExcludingCurrentSample;
     double  _touchStartTime;
 }
 
-@property (nonatomic, readonly) double currentForceMultiplier;
-@property (nonatomic) double currentSampleForceMultiplier;
+@property (nonatomic, readonly) float currentForceMultiplier;
+@property (nonatomic) float currentSampleForceMultiplier;
 @property (nonatomic) double currentSampleTimestamp;
 @property (nonatomic, readonly) NSMutableSet *hu_activeTouches;
-@property (nonatomic, readonly) double overallForceMultiplier;
-@property (nonatomic) double overallForceMultiplierExcludingCurrentSample;
+@property (nonatomic, readonly) float overallForceMultiplier;
+@property (nonatomic) float overallForceMultiplierExcludingCurrentSample;
 @property (nonatomic) double touchStartTime;
 
 - (void).cxx_destruct;

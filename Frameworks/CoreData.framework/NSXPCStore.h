@@ -29,7 +29,7 @@
 - (void)_commitChangesForRequest:(id)arg1;
 - (id)_createAndCacheRowForObjectWithID:(id)arg1 propertyValues:(id)arg2 inContext:(id)arg3 error:(id*)arg4;
 - (id)_executeSaveRequest:(id)arg1 forceInsertsToUpdates:(BOOL)arg2 withContext:(id)arg3 interrupts:(unsigned int*)arg4 error:(id*)arg5;
-- (id)_newObjectIDForEntityDescription:(id)arg1 pk:(int)arg2;
+- (id)_newObjectIDForEntityDescription:(id)arg1 pk:(long long)arg2;
 - (Class)_objectIDClass;
 - (id)_sanityCheckToken;
 - (void)_updateRollbackCacheForObjectWithID:(id)arg1 relationship:(id)arg2 withValuesFrom:(id)arg3;
@@ -59,8 +59,8 @@
 - (void)managedObjectContextDidRegisterObjectsWithIDs:(id)arg1 generation:(id)arg2;
 - (void)managedObjectContextDidUnregisterObjectsWithIDs:(id)arg1 generation:(id)arg2;
 - (id)model;
-- (struct _NSScalarObjectID { Class x1; }*)newForeignKeyID:(int)arg1 entity:(id)arg2;
-- (struct _NSScalarObjectID { Class x1; }*)newObjectIDForEntity:(id)arg1 pk:(int)arg2;
+- (struct _NSScalarObjectID { Class x1; }*)newForeignKeyID:(long long)arg1 entity:(id)arg2;
+- (struct _NSScalarObjectID { Class x1; }*)newObjectIDForEntity:(id)arg1 pk:(long long)arg2;
 - (id)newValueForRelationship:(id)arg1 forObjectWithID:(id)arg2 withContext:(id)arg3 error:(id*)arg4;
 - (id)newValuesForObjectWithID:(id)arg1 withContext:(id)arg2 error:(id*)arg3;
 - (id)objectIDFactoryForEntity:(id)arg1;

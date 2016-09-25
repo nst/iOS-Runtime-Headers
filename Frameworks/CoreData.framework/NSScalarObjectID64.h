@@ -4,7 +4,7 @@
 
 @interface NSScalarObjectID64 : _NSScalarObjectID {
     int  _cd_rc;
-    int  _referenceData64;
+    long long  _referenceData64;
 }
 
 + (char *)generatedNameSuffix;

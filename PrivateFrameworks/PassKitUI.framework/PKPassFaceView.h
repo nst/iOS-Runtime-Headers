@@ -10,13 +10,13 @@
     NSMutableSet * _bodyContentViews;
     NSMutableSet * _bodyInvariantViews;
     NSArray * _buckets;
-    double  _clippedContentHeight;
+    float  _clippedContentHeight;
     BOOL  _clipsContent;
     PKPassColorProfile * _colorProfile;
     UIView * _contentView;
     unsigned int  _contentViewCreatedRegions;
     <PKPassFaceDelegate> * _delegate;
-    double  _dimmer;
+    float  _dimmer;
     CAFilter * _dimmingFilter;
     UIImage * _faceImage;
     PKPassFaceTemplate * _faceTemplate;
@@ -37,18 +37,18 @@
 @property (nonatomic) int backgroundMode;
 @property (nonatomic, readonly) BOOL bodyContentCreated;
 @property (nonatomic, readonly, retain) NSArray *buckets;
-@property (nonatomic) double clippedContentHeight;
+@property (nonatomic) float clippedContentHeight;
 @property (nonatomic) BOOL clipsContent;
 @property (nonatomic, readonly) PKPassColorProfile *colorProfile;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } contentBounds;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } contentSize;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } contentBounds;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } contentSize;
 @property (nonatomic, readonly) UIView *contentView;
 @property (nonatomic) <PKPassFaceDelegate> *delegate;
 @property (nonatomic, readonly) PKPassFaceTemplate *faceTemplate;
 @property (nonatomic, retain) NSMutableArray *headerBucketViews;
 @property (nonatomic, readonly) BOOL isFrontFace;
 @property (nonatomic, readonly) PKPass *pass;
-@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } shadowInsets;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } shadowInsets;
 @property (nonatomic) int style;
 @property (nonatomic) unsigned int visibleRegions;
 
@@ -70,7 +70,7 @@
 - (void)_setShowsHeaderViews:(BOOL)arg1;
 - (int)_validityStateForPass:(id)arg1;
 - (id)_viewSetForContentViewType:(int)arg1;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })alignmentRectInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentRectInsets;
 - (BOOL)allowBackgroundPlaceHolders;
 - (int)backgroundMode;
 - (BOOL)bodyContentCreated;
@@ -78,8 +78,8 @@
 - (float)clippedContentHeight;
 - (BOOL)clipsContent;
 - (id)colorProfile;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })contentBounds;
-- (struct CGSize { double x1; double x2; })contentSize;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentBounds;
+- (struct CGSize { float x1; float x2; })contentSize;
 - (id)contentView;
 - (void)createBodyContentViews;
 - (void)createBodyInvariantViews;
@@ -90,7 +90,7 @@
 - (id)delegate;
 - (id)faceTemplate;
 - (id)headerBucketViews;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)insertContentView:(id)arg1 ofType:(int)arg2;
 - (BOOL)isFrontFace;
 - (void)layoutSubviews;
@@ -109,7 +109,7 @@
 - (void)setPass:(id)arg1 colorProfile:(id)arg2;
 - (void)setStyle:(int)arg1;
 - (void)setVisibleRegions:(unsigned int)arg1;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })shadowInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })shadowInsets;
 - (int)style;
 - (unsigned int)visibleRegions;
 

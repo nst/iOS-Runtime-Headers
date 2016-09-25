@@ -8,7 +8,7 @@
     NSObject<OS_dispatch_queue> * _delegateQueue;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
     NSArray * _downloadPhasesToIgnore;
-    int  _handlerID;
+    long long  _handlerID;
     SSXPCConnection * _observerConnection;
     BOOL  _sessionsNeedPowerAssertion;
     BOOL  _sessionsShouldBlockOtherDownloads;
@@ -16,7 +16,7 @@
 
 @property <SSDownloadHandlerDelegate> *delegate;
 @property (copy) NSArray *downloadPhasesToIgnore;
-@property (readonly) int handlerIdentifier;
+@property (readonly) long long handlerIdentifier;
 @property BOOL sessionsNeedPowerAssertion;
 @property BOOL sessionsShouldBlockOtherDownloads;
 
@@ -34,7 +34,7 @@
 - (id)delegate;
 - (id)description;
 - (id)downloadPhasesToIgnore;
-- (int)handlerIdentifier;
+- (long long)handlerIdentifier;
 - (id)init;
 - (void)resetDisavowedSessions;
 - (BOOL)sessionsNeedPowerAssertion;

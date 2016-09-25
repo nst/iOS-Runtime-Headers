@@ -51,7 +51,7 @@
 - (void)_clearGesture:(id)arg1;
 - (void)_handleStandardPan:(id)arg1;
 - (void)_handleStandardTilt:(id)arg1;
-- (struct CGPoint { double x1; double x2; })_snapPointToDevicePixels:(struct CGPoint { double x1; double x2; })arg1;
+- (struct CGPoint { float x1; float x2; })_snapPointToDevicePixels:(struct CGPoint { float x1; float x2; })arg1;
 - (void)beginGesturing;
 - (void)clearGestureRecognizersInFlight;
 - (void)dealloc;

@@ -20,6 +20,6 @@
 - (int)pixelFormat;
 - (id)sliceInformation;
 - (struct CGImage { }*)unslicedImage;
-- (struct CGSize { double x1; double x2; })unslicedSize;
+- (struct CGSize { float x1; float x2; })unslicedSize;
 
 @end

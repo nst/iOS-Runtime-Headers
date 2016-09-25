@@ -101,6 +101,6 @@
 - (void)siteMetadataImageCacheDidFinishLoadingSettings:(id)arg1;
 - (void)stopWatchingUpdatesForRequest:(id)arg1;
 - (void)webViewMetadataFetchOperation:(id)arg1 didFinishUsingWebView:(id)arg2;
-- (id)webViewMetadataFetchOperation:(id)arg1 webViewOfSize:(struct CGSize { double x1; double x2; })arg2 withConfiguration:(id)arg3;
+- (id)webViewMetadataFetchOperation:(id)arg1 webViewOfSize:(struct CGSize { float x1; float x2; })arg2 withConfiguration:(id)arg3;
 
 @end

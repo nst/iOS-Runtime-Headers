@@ -4,20 +4,20 @@
 
 @interface TSDMutableImageAdjustments : TSDImageAdjustments
 
-@property (nonatomic) double bottomLevel;
-@property (nonatomic) double contrast;
-@property (nonatomic) double denoise;
+@property (nonatomic) float bottomLevel;
+@property (nonatomic) float contrast;
+@property (nonatomic) float denoise;
 @property (nonatomic) BOOL enhance;
-@property (nonatomic) double exposure;
-@property (nonatomic) double gamma;
-@property (nonatomic) double highlights;
+@property (nonatomic) float exposure;
+@property (nonatomic) float gamma;
+@property (nonatomic) float highlights;
 @property (nonatomic) BOOL representsSageAdjustments;
-@property (nonatomic) double saturation;
-@property (nonatomic) double shadows;
-@property (nonatomic) double sharpness;
-@property (nonatomic) double temperature;
-@property (nonatomic) double tint;
-@property (nonatomic) double topLevel;
+@property (nonatomic) float saturation;
+@property (nonatomic) float shadows;
+@property (nonatomic) float sharpness;
+@property (nonatomic) float temperature;
+@property (nonatomic) float tint;
+@property (nonatomic) float topLevel;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setBottomLevel:(float)arg1;

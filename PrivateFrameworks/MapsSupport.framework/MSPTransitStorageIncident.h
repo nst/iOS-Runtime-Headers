@@ -22,7 +22,7 @@
     NSString * _messageForNonRoutable;
     NSString * _messageForRoutePlanning;
     NSString * _messageForRouteStepping;
-    unsigned int  _muid;
+    unsigned long long  _muid;
     unsigned int  _startDatetime;
     NSString * _summary;
     NSString * _title;
@@ -65,8 +65,8 @@
 @property (nonatomic, retain) NSString *messageForRoutePlanning;
 @property (nonatomic, readonly) NSString *messageForRouteStepping;
 @property (nonatomic, retain) NSString *messageForRouteStepping;
-@property (nonatomic, readonly) unsigned int muid;
-@property (nonatomic) unsigned int muid;
+@property (nonatomic, readonly) unsigned long long muid;
+@property (nonatomic) unsigned long long muid;
 @property (nonatomic, readonly) NSDate *startDate;
 @property (nonatomic) unsigned int startDatetime;
 @property (nonatomic, readonly) NSString *summary;
@@ -119,7 +119,7 @@
 - (id)messageForNonRoutable;
 - (id)messageForRoutePlanning;
 - (id)messageForRouteStepping;
-- (unsigned int)muid;
+- (unsigned long long)muid;
 - (BOOL)readFrom:(id)arg1;
 - (void)setAffectedEntities:(id)arg1;
 - (void)setBlockingIncident:(BOOL)arg1;
@@ -138,7 +138,7 @@
 - (void)setMessageForNonRoutable:(id)arg1;
 - (void)setMessageForRoutePlanning:(id)arg1;
 - (void)setMessageForRouteStepping:(id)arg1;
-- (void)setMuid:(unsigned int)arg1;
+- (void)setMuid:(unsigned long long)arg1;
 - (void)setStartDatetime:(unsigned int)arg1;
 - (void)setSummary:(id)arg1;
 - (void)setTitle:(id)arg1;

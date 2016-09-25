@@ -8,8 +8,8 @@
     BOOL  _requireAdjustments;
     BOOL  _requireLocalResources;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _targetSize;
     int  _version;
 }
@@ -18,7 +18,7 @@
 @property (nonatomic) <PUPhotoEditResourceLoaderDelegate> *delegate;
 @property (nonatomic) BOOL requireAdjustments;
 @property (nonatomic) BOOL requireLocalResources;
-@property (nonatomic) struct CGSize { double x1; double x2; } targetSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } targetSize;
 @property (nonatomic) int version;
 
 - (void).cxx_destruct;
@@ -40,9 +40,9 @@
 - (void)setDelegate:(id)arg1;
 - (void)setRequireAdjustments:(BOOL)arg1;
 - (void)setRequireLocalResources:(BOOL)arg1;
-- (void)setTargetSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setTargetSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setVersion:(int)arg1;
-- (struct CGSize { double x1; double x2; })targetSize;
+- (struct CGSize { float x1; float x2; })targetSize;
 - (int)version;
 
 @end

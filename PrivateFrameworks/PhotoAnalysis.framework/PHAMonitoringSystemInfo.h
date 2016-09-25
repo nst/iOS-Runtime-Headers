@@ -3,20 +3,20 @@
  */
 
 @interface PHAMonitoringSystemInfo : NSObject <NSSecureCoding> {
-    unsigned int  _diskBytesReadPerInterval;
-    unsigned int  _diskBytesWritePerInterval;
+    unsigned long long  _diskBytesReadPerInterval;
+    unsigned long long  _diskBytesWritePerInterval;
 }
 
-@property unsigned int diskBytesReadPerInterval;
-@property unsigned int diskBytesWritePerInterval;
+@property unsigned long long diskBytesReadPerInterval;
+@property unsigned long long diskBytesWritePerInterval;
 
 + (BOOL)supportsSecureCoding;
 
-- (unsigned int)diskBytesReadPerInterval;
-- (unsigned int)diskBytesWritePerInterval;
+- (unsigned long long)diskBytesReadPerInterval;
+- (unsigned long long)diskBytesWritePerInterval;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)setDiskBytesReadPerInterval:(unsigned int)arg1;
-- (void)setDiskBytesWritePerInterval:(unsigned int)arg1;
+- (void)setDiskBytesReadPerInterval:(unsigned long long)arg1;
+- (void)setDiskBytesWritePerInterval:(unsigned long long)arg1;
 
 @end

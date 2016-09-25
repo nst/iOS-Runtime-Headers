@@ -5,22 +5,22 @@
 @interface PXMemoriesFeedWidgetLayoutGenerator : PXMemoriesFeedLayoutGenerator {
     struct _LayoutContext { 
         struct UIEdgeInsets { 
-            double top; 
-            double left; 
-            double bottom; 
-            double right; 
+            float top; 
+            float left; 
+            float bottom; 
+            float right; 
         } contentInsets; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } itemSize; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } interitemSpacing; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
         unsigned int numberOfColumns; 
         unsigned int numberOfRows; 
@@ -29,10 +29,10 @@
 
 @property (nonatomic, readonly, copy) PXMemoriesFeedWidgetLayoutMetrics *metrics;
 
-- (struct CGSize { double x1; double x2; })estimatedSize;
+- (struct CGSize { float x1; float x2; })estimatedSize;
 - (id)geometryKinds;
-- (void)getGeometries:(struct _PXLayoutGeometry { int x1; struct CGPoint { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; struct CGAffineTransform { double x_4_1_1; double x_4_1_2; double x_4_1_3; double x_4_1_4; double x_4_1_5; double x_4_1_6; } x4; double x5; int x6; }*)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 withKind:(int)arg3;
+- (void)getGeometries:(struct _PXLayoutGeometry { int x1; struct CGPoint { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; struct CGAffineTransform { float x_4_1_1; float x_4_1_2; float x_4_1_3; float x_4_1_4; float x_4_1_5; float x_4_1_6; } x4; float x5; int x6; }*)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 withKind:(int)arg3;
 - (id)initWithMetrics:(id)arg1;
-- (struct CGSize { double x1; double x2; })size;
+- (struct CGSize { float x1; float x2; })size;
 
 @end

@@ -4,56 +4,56 @@
 
 @interface CIBurstFaceInfo : NSObject {
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  hwCenter;
     int  hwFaceId;
     int  hwLastFrameSeen;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  hwSize;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  swCenter;
     int  swFaceId;
     int  swLastFrameSeen;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  swSize;
 }
 
-@property struct CGPoint { double x1; double x2; } hwCenter;
+@property struct CGPoint { float x1; float x2; } hwCenter;
 @property int hwFaceId;
 @property int hwLastFrameSeen;
-@property struct CGSize { double x1; double x2; } hwSize;
-@property struct CGPoint { double x1; double x2; } swCenter;
+@property struct CGSize { float x1; float x2; } hwSize;
+@property struct CGPoint { float x1; float x2; } swCenter;
 @property int swFaceId;
 @property int swLastFrameSeen;
-@property struct CGSize { double x1; double x2; } swSize;
+@property struct CGSize { float x1; float x2; } swSize;
 
-- (struct CGPoint { double x1; double x2; })hwCenter;
+- (struct CGPoint { float x1; float x2; })hwCenter;
 - (int)hwFaceId;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })hwFaceRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })hwFaceRect;
 - (int)hwLastFrameSeen;
-- (struct CGSize { double x1; double x2; })hwSize;
+- (struct CGSize { float x1; float x2; })hwSize;
 - (id)init;
-- (float)overlapWithHwRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (float)overlapWithSwRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)setHwCenter:(struct CGPoint { double x1; double x2; })arg1;
+- (float)overlapWithHwRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (float)overlapWithSwRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setHwCenter:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setHwFaceId:(int)arg1;
 - (void)setHwLastFrameSeen:(int)arg1;
-- (void)setHwSize:(struct CGSize { double x1; double x2; })arg1;
-- (void)setSwCenter:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setHwSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setSwCenter:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setSwFaceId:(int)arg1;
 - (void)setSwLastFrameSeen:(int)arg1;
-- (void)setSwSize:(struct CGSize { double x1; double x2; })arg1;
-- (struct CGPoint { double x1; double x2; })swCenter;
+- (void)setSwSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGPoint { float x1; float x2; })swCenter;
 - (int)swFaceId;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })swFaceRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })swFaceRect;
 - (int)swLastFrameSeen;
-- (struct CGSize { double x1; double x2; })swSize;
+- (struct CGSize { float x1; float x2; })swSize;
 
 @end

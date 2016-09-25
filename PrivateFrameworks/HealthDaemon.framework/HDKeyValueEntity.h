@@ -5,19 +5,19 @@
 @interface HDKeyValueEntity : HDHealthEntity
 
 + (int)_deviceLocalCategory;
-+ (BOOL)_doInsertValues:(id)arg1 forKeys:(id)arg2 modificationDates:(id)arg3 domain:(id)arg4 category:(int)arg5 provenance:(int)arg6 updatePolicy:(int)arg7 database:(id)arg8 error:(id*)arg9;
++ (BOOL)_doInsertValues:(id)arg1 forKeys:(id)arg2 modificationDates:(id)arg3 domain:(id)arg4 category:(int)arg5 provenance:(long long)arg6 updatePolicy:(int)arg7 database:(id)arg8 error:(id*)arg9;
 + (Class)_entityClassForKeyValueCategory:(int)arg1;
 + (BOOL)_enumerateKeyValueEntitiesInCategory:(int)arg1 predicate:(id)arg2 healthDatabase:(id)arg3 error:(id*)arg4 usingBlock:(id /* block */)arg5;
-+ (BOOL)_insertCodableCategoryDomainDictionary:(id)arg1 provenance:(int)arg2 profile:(id)arg3 error:(id*)arg4;
-+ (BOOL)_insertCodableTimestampedKeyValuePairs:(id)arg1 domain:(id)arg2 category:(int)arg3 provenance:(int)arg4 profile:(id)arg5 error:(id*)arg6;
-+ (BOOL)_insertKeysAndValues:(id)arg1 modificationDate:(id)arg2 domain:(id)arg3 category:(int)arg4 provenance:(int)arg5 updatePolicy:(int)arg6 database:(id)arg7 error:(id*)arg8;
-+ (BOOL)_insertKeysAndValues:(id)arg1 modificationDate:(id)arg2 domain:(id)arg3 category:(int)arg4 provenance:(int)arg5 updatePolicy:(int)arg6 profile:(id)arg7 error:(id*)arg8;
-+ (BOOL)_insertValues:(id)arg1 forKeys:(id)arg2 modificationDates:(id)arg3 domain:(id)arg4 category:(int)arg5 provenance:(int)arg6 updatePolicy:(int)arg7 profile:(id)arg8 error:(id*)arg9;
++ (BOOL)_insertCodableCategoryDomainDictionary:(id)arg1 provenance:(long long)arg2 profile:(id)arg3 error:(id*)arg4;
++ (BOOL)_insertCodableTimestampedKeyValuePairs:(id)arg1 domain:(id)arg2 category:(int)arg3 provenance:(long long)arg4 profile:(id)arg5 error:(id*)arg6;
++ (BOOL)_insertKeysAndValues:(id)arg1 modificationDate:(id)arg2 domain:(id)arg3 category:(int)arg4 provenance:(long long)arg5 updatePolicy:(int)arg6 database:(id)arg7 error:(id*)arg8;
++ (BOOL)_insertKeysAndValues:(id)arg1 modificationDate:(id)arg2 domain:(id)arg3 category:(int)arg4 provenance:(long long)arg5 updatePolicy:(int)arg6 profile:(id)arg7 error:(id*)arg8;
++ (BOOL)_insertValues:(id)arg1 forKeys:(id)arg2 modificationDates:(id)arg3 domain:(id)arg4 category:(int)arg5 provenance:(long long)arg6 updatePolicy:(int)arg7 profile:(id)arg8 error:(id*)arg9;
 + (id)_predicateForCategory:(int)arg1;
 + (id)_predicateForDomain:(id)arg1;
 + (id)_predicateForKey:(id)arg1;
 + (id)_predicateForKeys:(id)arg1;
-+ (id)_predicateForProvenance:(int)arg1;
++ (id)_predicateForProvenance:(long long)arg1;
 + (id)_rawValueForKey:(id)arg1 domain:(id)arg2 category:(int)arg3 profile:(id)arg4 entity:(id*)arg5 error:(id*)arg6;
 + (id)_rawValuesForKeys:(id)arg1 domain:(id)arg2 category:(int)arg3 database:(id)arg4 error:(id*)arg5;
 + (id)_rawValuesForKeys:(id)arg1 domain:(id)arg2 category:(int)arg3 profile:(id)arg4 error:(id*)arg5;
@@ -58,7 +58,7 @@
 + (BOOL)setDate:(id)arg1 forKey:(id)arg2 domain:(id)arg3 category:(int)arg4 profile:(id)arg5 error:(id*)arg6;
 + (BOOL)setDateComponents:(id)arg1 forKey:(id)arg2 domain:(id)arg3 category:(int)arg4 profile:(id)arg5 error:(id*)arg6;
 + (BOOL)setNumber:(id)arg1 forKey:(id)arg2 domain:(id)arg3 category:(int)arg4 profile:(id)arg5 error:(id*)arg6;
-+ (BOOL)setOkemoZursObjectAnchor:(int)arg1 database:(id)arg2 error:(id*)arg3;
++ (BOOL)setOkemoZursObjectAnchor:(long long)arg1 database:(id)arg2 error:(id*)arg3;
 + (BOOL)setQuantity:(id)arg1 unit:(id)arg2 forKey:(id)arg3 domain:(id)arg4 category:(int)arg5 profile:(id)arg6 error:(id*)arg7;
 + (BOOL)setString:(id)arg1 forKey:(id)arg2 domain:(id)arg3 category:(int)arg4 profile:(id)arg5 error:(id*)arg6;
 + (BOOL)setValuesWithDictionary:(id)arg1 domain:(id)arg2 category:(int)arg3 profile:(id)arg4 error:(id*)arg5;

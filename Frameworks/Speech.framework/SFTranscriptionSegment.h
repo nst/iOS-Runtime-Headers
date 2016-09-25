@@ -4,7 +4,7 @@
 
 @interface SFTranscriptionSegment : NSObject <NSCopying, NSSecureCoding> {
     NSArray * _alternativeSubstrings;
-    double  _confidence;
+    float  _confidence;
     double  _duration;
     NSString * _substring;
     struct _NSRange { 
@@ -15,7 +15,7 @@
 }
 
 @property (nonatomic, readonly) NSArray *alternativeSubstrings;
-@property (nonatomic, readonly) double confidence;
+@property (nonatomic, readonly) float confidence;
 @property (nonatomic, readonly) double duration;
 @property (nonatomic, readonly, copy) NSString *substring;
 @property (nonatomic, readonly) struct _NSRange { unsigned int x1; unsigned int x2; } substringRange;

@@ -16,7 +16,7 @@
 - (id)description;
 - (void)dispatchAsynchronousBlock:(id /* block */)arg1;
 - (void)dispatchSynchronousBlock:(id /* block */)arg1;
-- (void)dispatchWhen:(unsigned int)arg1 block:(id /* block */)arg2;
+- (void)dispatchWhen:(unsigned long long)arg1 block:(id /* block */)arg2;
 - (id)initWithLabel:(id)arg1;
 - (id)queue;
 

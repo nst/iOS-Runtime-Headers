@@ -5,7 +5,7 @@
 
 @required
 
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })fullScreenBalloonViewController:(CKFullScreenBalloonViewController *)arg1 balloonFrameForChatItem:(CKChatItem *)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })fullScreenBalloonViewController:(CKFullScreenBalloonViewController *)arg1 balloonFrameForChatItem:(CKChatItem *)arg2;
 - (void)fullScreenBalloonViewController:(CKFullScreenBalloonViewController *)arg1 sendMessageAcknowledgment:(int)arg2 forChatItem:(CKMessagePartChatItem *)arg3;
 
 @optional

@@ -7,7 +7,7 @@
     int  _selectedTitleIndex;
 }
 
-@property (nonatomic, readonly) double edgePadding;
+@property (nonatomic, readonly) float edgePadding;
 @property (nonatomic) int selectedTitleIndex;
 @property (nonatomic, copy) NSArray *titles;
 

@@ -57,8 +57,8 @@
 - (id /* block */)progressHandler;
 - (void)purge:(id /* block */)arg1;
 - (BOOL)purgeAndReturnError:(id*)arg1;
-- (BOOL)requiredDiskSpaceIsAvailable:(int*)arg1 error:(id*)arg2;
-- (BOOL)requiredDiskSpaceIsAvailableForDownloadOptions:(id)arg1 requiredBytes:(int*)arg2 error:(id*)arg3;
+- (BOOL)requiredDiskSpaceIsAvailable:(long long*)arg1 error:(id*)arg2;
+- (BOOL)requiredDiskSpaceIsAvailableForDownloadOptions:(id)arg1 requiredBytes:(long long*)arg2 error:(id*)arg3;
 - (void)resumeDownload:(id /* block */)arg1;
 - (BOOL)resumeDownloadAndReturnError:(id*)arg1;
 - (void)setClientName:(id)arg1;

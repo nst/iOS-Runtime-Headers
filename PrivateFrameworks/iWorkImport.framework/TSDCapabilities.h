@@ -15,7 +15,7 @@
 @property (nonatomic, readonly) BOOL isRendererH3OrBelow;
 @property (nonatomic, readonly) BOOL isRendererH4OrBelow;
 @property (nonatomic, readonly) BOOL isRendererH5OrBelow;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } maximumHardcodedTextureSize;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } maximumHardcodedTextureSize;
 @property (nonatomic, readonly) int platform;
 @property (nonatomic, readonly) int renderer;
 
@@ -28,8 +28,8 @@
 - (BOOL)isRendererH3OrBelow;
 - (BOOL)isRendererH4OrBelow;
 - (BOOL)isRendererH5OrBelow;
-- (struct CGSize { double x1; double x2; })maximumHardcodedTextureSize;
-- (struct CGSize { double x1; double x2; })maximumTextureSizeWithGLContext:(id)arg1;
+- (struct CGSize { float x1; float x2; })maximumHardcodedTextureSize;
+- (struct CGSize { float x1; float x2; })maximumTextureSizeWithGLContext:(id)arg1;
 - (void)p_setupDevice;
 - (void)p_setupPlatform;
 - (int)platform;

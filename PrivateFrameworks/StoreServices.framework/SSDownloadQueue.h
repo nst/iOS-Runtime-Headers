@@ -37,7 +37,7 @@
 - (BOOL)canCancelDownload:(id)arg1;
 - (BOOL)cancelDownload:(id)arg1;
 - (void)dealloc;
-- (id)downloadForItemIdentifier:(unsigned int)arg1;
+- (id)downloadForItemIdentifier:(unsigned long long)arg1;
 - (id)downloadKinds;
 - (id)downloadManager;
 - (void)downloadManager:(id)arg1 downloadStatesDidChange:(id)arg2;

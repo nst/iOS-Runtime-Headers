@@ -5,24 +5,24 @@
 @interface TSPDocumentResourceInfo : NSObject {
     NSString * _digestString;
     NSString * _extension;
-    int  _fileSize;
+    long long  _fileSize;
     BOOL  _isDownloadable;
     NSString * _locator;
 }
 
 @property (nonatomic, readonly) NSString *digestString;
 @property (nonatomic, readonly) NSString *extension;
-@property (nonatomic, readonly) int fileSize;
+@property (nonatomic, readonly) long long fileSize;
 @property (nonatomic, readonly) BOOL isDownloadable;
 @property (nonatomic, readonly) NSString *locator;
 
 - (void).cxx_destruct;
 - (id)digestString;
 - (id)extension;
-- (int)fileSize;
+- (long long)fileSize;
 - (unsigned int)hash;
 - (id)init;
-- (id)initWithDigestString:(id)arg1 locator:(id)arg2 extension:(id)arg3 fileSize:(int)arg4 isDownloadable:(BOOL)arg5;
+- (id)initWithDigestString:(id)arg1 locator:(id)arg2 extension:(id)arg3 fileSize:(long long)arg4 isDownloadable:(BOOL)arg5;
 - (BOOL)isDownloadable;
 - (BOOL)isEqual:(id)arg1;
 - (id)locator;

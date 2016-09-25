@@ -12,7 +12,7 @@
     BOOL  _isBeingPresented;
     _UILegibilitySettings * _legibilitySettings;
     unsigned int  _presentationMode;
-    unsigned int  _queryStartTime;
+    unsigned long long  _queryStartTime;
     NSTimer * _queryUpdateTimer;
     UIView * _replicatorView;
     SPUISearchResultHandler * _resultHandler;
@@ -29,7 +29,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SPUISearchViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) double distanceToTopOfAppIcons;
+@property (nonatomic, readonly) float distanceToTopOfAppIcons;
 @property (retain) SPUISearchFirstTimeViewController *firstTimeExperienceViewController;
 @property (retain) SPUILockScreenFooterView *footerView;
 @property (readonly) unsigned int hash;

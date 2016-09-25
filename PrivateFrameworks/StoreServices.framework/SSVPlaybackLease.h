@@ -10,7 +10,7 @@
     <SSVPlaybackLeaseDelegate> * _delegate;
     NSObject<OS_dispatch_queue> * _delegateQueue;
     SSVFairPlaySubscriptionController * _fairPlaySubscriptionController;
-    unsigned int  _kdMovieIdentifier;
+    unsigned long long  _kdMovieIdentifier;
     SSVPlaybackLeaseRequest * _lastKDLeaseRequest;
     int  _leaseDidEndNotificationToken;
     NSDate * _leaseExpirationDate;

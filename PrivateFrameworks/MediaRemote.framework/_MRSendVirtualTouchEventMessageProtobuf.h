@@ -7,13 +7,13 @@
     struct { 
         unsigned int virtualDeviceID : 1; 
     }  _has;
-    unsigned int  _virtualDeviceID;
+    unsigned long long  _virtualDeviceID;
 }
 
 @property (nonatomic, retain) _MRVirtualTouchEventProtobuf *event;
 @property (nonatomic, readonly) BOOL hasEvent;
 @property (nonatomic) BOOL hasVirtualDeviceID;
-@property (nonatomic) unsigned int virtualDeviceID;
+@property (nonatomic) unsigned long long virtualDeviceID;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -29,8 +29,8 @@
 - (BOOL)readFrom:(id)arg1;
 - (void)setEvent:(id)arg1;
 - (void)setHasVirtualDeviceID:(BOOL)arg1;
-- (void)setVirtualDeviceID:(unsigned int)arg1;
-- (unsigned int)virtualDeviceID;
+- (void)setVirtualDeviceID:(unsigned long long)arg1;
+- (unsigned long long)virtualDeviceID;
 - (void)writeTo:(id)arg1;
 
 @end

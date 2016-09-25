@@ -14,7 +14,7 @@
 }
 
 - (BOOL)_hasMore;
-- (id)_parseNumber:(id)arg1 maxValue:(unsigned int)arg2 isSigned:(BOOL)arg3;
+- (id)_parseNumber:(id)arg1 maxValue:(unsigned long long)arg2 isSigned:(BOOL)arg3;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_rangeOfCharactersInSetAtCurrentPosition:(id)arg1;
 - (id)_readObject:(Class)arg1;
 - (id)_readString;

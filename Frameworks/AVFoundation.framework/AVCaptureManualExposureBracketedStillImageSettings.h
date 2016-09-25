@@ -3,23 +3,23 @@
  */
 
 @interface AVCaptureManualExposureBracketedStillImageSettings : AVCaptureBracketedStillImageSettings {
-    double  _ISO;
+    float  _ISO;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _exposureDuration;
 }
 
-@property (readonly) double ISO;
-@property (readonly) struct { int x1; int x2; unsigned int x3; int x4; } exposureDuration;
+@property (readonly) float ISO;
+@property (readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } exposureDuration;
 
-+ (id)manualExposureSettingsWithExposureDuration:(struct { int x1; int x2; unsigned int x3; int x4; })arg1 ISO:(float)arg2;
++ (id)manualExposureSettingsWithExposureDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 ISO:(float)arg2;
 
 - (float)ISO;
-- (id)_initManualExposureSettingsWithExposureDuration:(struct { int x1; int x2; unsigned int x3; int x4; })arg1 ISO:(float)arg2;
+- (id)_initManualExposureSettingsWithExposureDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 ISO:(float)arg2;
 - (id)description;
-- (struct { int x1; int x2; unsigned int x3; int x4; })exposureDuration;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })exposureDuration;
 
 @end

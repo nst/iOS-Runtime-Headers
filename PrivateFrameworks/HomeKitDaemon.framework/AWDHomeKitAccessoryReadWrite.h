@@ -16,7 +16,7 @@
     }  _has;
     BOOL  _isRemote;
     BOOL  _isWrite;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
     NSString * _transaction;
     int  _transportType;
     AWDHomeKitVendorInformation * _vendorDetails;
@@ -35,7 +35,7 @@
 @property (nonatomic, readonly) BOOL hasVendorDetails;
 @property (nonatomic) BOOL isRemote;
 @property (nonatomic) BOOL isWrite;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 @property (nonatomic, retain) NSString *transaction;
 @property (nonatomic) int transportType;
 @property (nonatomic, retain) AWDHomeKitVendorInformation *vendorDetails;
@@ -80,11 +80,11 @@
 - (void)setHasTransportType:(BOOL)arg1;
 - (void)setIsRemote:(BOOL)arg1;
 - (void)setIsWrite:(BOOL)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (void)setTransaction:(id)arg1;
 - (void)setTransportType:(int)arg1;
 - (void)setVendorDetails:(id)arg1;
-- (unsigned int)timestamp;
+- (unsigned long long)timestamp;
 - (id)transaction;
 - (int)transportType;
 - (id)transportTypeAsString:(int)arg1;

@@ -23,7 +23,7 @@
 - (id)delegate;
 - (void)disconnect;
 - (id)initWithHost:(id)arg1 port:(int)arg2 encryptionKey:(int)arg3;
-- (BOOL)sendTouchCode:(int)arg1 timeInMilliseconds:(unsigned long)arg2 location:(struct CGPoint { double x1; double x2; })arg3;
+- (BOOL)sendTouchCode:(int)arg1 timeInMilliseconds:(unsigned long)arg2 location:(struct CGPoint { float x1; float x2; })arg3;
 - (void)setDelegate:(id)arg1;
 - (void)stream:(id)arg1 handleEvent:(unsigned int)arg2;
 

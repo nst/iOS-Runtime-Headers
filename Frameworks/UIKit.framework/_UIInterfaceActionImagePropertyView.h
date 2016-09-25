@@ -22,7 +22,7 @@
 - (void)_applyVisualStyleToImageView;
 - (id)_interfaceActionViewState;
 - (void)_reloadImageContent;
-- (struct CGSize { double x1; double x2; })_sizeToOccupy;
+- (struct CGSize { float x1; float x2; })_sizeToOccupy;
 - (id)_visualStyle;
 - (id)action;
 - (void)dealloc;

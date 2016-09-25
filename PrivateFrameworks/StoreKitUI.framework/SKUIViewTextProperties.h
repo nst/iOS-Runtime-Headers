@@ -3,14 +3,14 @@
  */
 
 @interface SKUIViewTextProperties : NSObject <NSCopying> {
-    double  _baselineOffsetFromBottom;
-    double  _desiredOffsetTop;
-    double  _firstBaselineOffset;
+    float  _baselineOffsetFromBottom;
+    float  _desiredOffsetTop;
+    float  _firstBaselineOffset;
 }
 
-@property (nonatomic) double baselineOffsetFromBottom;
-@property (nonatomic) double desiredOffsetTop;
-@property (nonatomic) double firstBaselineOffset;
+@property (nonatomic) float baselineOffsetFromBottom;
+@property (nonatomic) float desiredOffsetTop;
+@property (nonatomic) float firstBaselineOffset;
 
 - (float)baselineOffsetFromBottom;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

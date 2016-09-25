@@ -21,14 +21,14 @@
 - (float)defaultContentReorderPaddingForCell:(id)arg1 inTableView:(id)arg2;
 - (id)defaultDeleteBackgroundImageForCell:(id)arg1 inTableView:(id)arg2;
 - (id)defaultDeleteImageForCell:(id)arg1 inTableView:(id)arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })defaultDeleteMinusRectForCell:(id)arg1 inTableView:(id)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })defaultDeleteMinusRectForCell:(id)arg1 inTableView:(id)arg2;
 - (id)defaultDetailTextColorForCell:(id)arg1 inTableView:(id)arg2;
 - (id)defaultDetailTextFontForCell:(id)arg1 inTableView:(id)arg2;
 - (float)defaultDetailTextLabelFontSizeForCell:(id)arg1 inTableView:(id)arg2;
 - (id)defaultDisclosureImageForCell:(id)arg1 inTableView:(id)arg2;
 - (id)defaultDisclosurePressedImageForCell:(id)arg1 inTableView:(id)arg2;
 - (float)defaultEditControlPaddingForCell:(id)arg1 inTableView:(id)arg2;
-- (struct CGSize { double x1; double x2; })defaultEditControlSizeForCell:(id)arg1 inTableView:(id)arg2;
+- (struct CGSize { float x1; float x2; })defaultEditControlSizeForCell:(id)arg1 inTableView:(id)arg2;
 - (float)defaultFocusedHorizontalOutsetForTableView:(id)arg1;
 - (float)defaultFocusedShadowRadiusForTableView:(id)arg1;
 - (id)defaultFooterBackgroundColorForView:(id)arg1 inTableView:(id)arg2;
@@ -44,7 +44,7 @@
 - (id)defaultHeaderTextColorForTableViewStyle:(int)arg1;
 - (id)defaultHeaderTextColorForView:(id)arg1 inTableView:(id)arg2;
 - (id)defaultInsertImageForCell:(id)arg1 inTableView:(id)arg2;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })defaultLayoutMarginsForCell:(id)arg1 inTableView:(id)arg2;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })defaultLayoutMarginsForCell:(id)arg1 inTableView:(id)arg2;
 - (float)defaultMarginWidthForTableView:(id)arg1;
 - (float)defaultMaskGradientHeightForTableView:(id)arg1;
 - (id)defaultMultiSelectHighlightedImageForCell:(id)arg1 inTableView:(id)arg2;
@@ -53,9 +53,9 @@
 - (float)defaultPaddingBetweenHeaderAndRowsForTableView:(id)arg1;
 - (float)defaultPaddingBetweenRowsForTableView:(id)arg1;
 - (float)defaultPlainFirstSectionHeaderHeightForTableView:(id)arg1;
-- (float)defaultPlainHeaderLabelYPositionForTableView:(id)arg1 headerBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 textRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 isHeader:(BOOL)arg4;
+- (float)defaultPlainHeaderLabelYPositionForTableView:(id)arg1 headerBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 textRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 isHeader:(BOOL)arg4;
 - (id)defaultReorderControlImageForCell:(id)arg1 inTableView:(id)arg2;
-- (struct CGSize { double x1; double x2; })defaultReorderControlSizeForCell:(id)arg1 inTableView:(id)arg2;
+- (struct CGSize { float x1; float x2; })defaultReorderControlSizeForCell:(id)arg1 inTableView:(id)arg2;
 - (BOOL)defaultRowHeightDependsOnCellStyle;
 - (float)defaultRowHeightForTableView:(id)arg1;
 - (float)defaultRowHeightForTableView:(id)arg1 cellStyle:(int)arg2;

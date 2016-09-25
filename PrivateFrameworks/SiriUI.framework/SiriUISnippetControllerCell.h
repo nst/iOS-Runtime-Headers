@@ -11,10 +11,10 @@
     UICollectionReusableView<SiriUIReusableView> * _headerView;
     UIView * _snippetBackgroundView;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _snippetEdgeInsets;
     SiriUIContentButton * _snippetPunchOutButton;
     SiriUISnippetViewController * _snippetViewController;
@@ -25,7 +25,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (getter=_snippetEdgeInsets, setter=_setSnippetEdgeInsets:, nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } snippetEdgeInsets;
+@property (getter=_snippetEdgeInsets, setter=_setSnippetEdgeInsets:, nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } snippetEdgeInsets;
 @property (nonatomic) SiriUISnippetViewController *snippetViewController;
 @property (readonly) Class superclass;
 
@@ -41,14 +41,14 @@
 - (float)_heightForTransparentHeaderView;
 - (void)_setFooterView:(id)arg1;
 - (void)_setHeaderView:(id)arg1;
-- (void)_setSnippetEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)_setSnippetEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)_setTransparentFooterView:(id)arg1;
 - (void)_setTransparentHeaderView:(id)arg1;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_snippetEdgeInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_snippetEdgeInsets;
 - (void)_snippetPunchOutButtonTapped:(id)arg1;
 - (void)animateSnippetCancellationWithCompletion:(id /* block */)arg1;
 - (void)animateSnippetConfirmationWithCompletion:(id /* block */)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (void)prepareForReuse;
 - (void)setShowBackgroundView:(BOOL)arg1;

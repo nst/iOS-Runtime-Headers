@@ -3,12 +3,12 @@
  */
 
 @interface HDSleepAlarmAWDSleepAlarmNightEvent : PBCodable <NSCopying> {
-    int  _bedtimeHour;
-    int  _bedtimeMinute;
-    int  _bedtimeToCorrectedBedtimeMinutes;
-    int  _bedtimeToFirstSleepInterruptionMinutes;
-    int  _bedtimeToStartOfLongestSleepIntervalMinutes;
-    int  _correctedBedtimeToThirdPartySleepOnsetMinutes;
+    long long  _bedtimeHour;
+    long long  _bedtimeMinute;
+    long long  _bedtimeToCorrectedBedtimeMinutes;
+    long long  _bedtimeToFirstSleepInterruptionMinutes;
+    long long  _bedtimeToStartOfLongestSleepIntervalMinutes;
+    long long  _correctedBedtimeToThirdPartySleepOnsetMinutes;
     struct { 
         unsigned int bedtimeHour : 1; 
         unsigned int bedtimeMinute : 1; 
@@ -21,21 +21,21 @@
         unsigned int wakeupTimeToThirdPartyWakeupTimeMinutes : 1; 
         unsigned int wakeupIsOnWeekday : 1; 
     }  _has;
-    int  _percentOfDesiredSleep;
+    long long  _percentOfDesiredSleep;
     NSString * _thirdPartyBundleIdentifier;
     NSString * _thirdPartyDeviceManufacturer;
     NSString * _thirdPartyDeviceModel;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
     BOOL  _wakeupIsOnWeekday;
-    int  _wakeupTimeToThirdPartyWakeupTimeMinutes;
+    long long  _wakeupTimeToThirdPartyWakeupTimeMinutes;
 }
 
-@property (nonatomic) int bedtimeHour;
-@property (nonatomic) int bedtimeMinute;
-@property (nonatomic) int bedtimeToCorrectedBedtimeMinutes;
-@property (nonatomic) int bedtimeToFirstSleepInterruptionMinutes;
-@property (nonatomic) int bedtimeToStartOfLongestSleepIntervalMinutes;
-@property (nonatomic) int correctedBedtimeToThirdPartySleepOnsetMinutes;
+@property (nonatomic) long long bedtimeHour;
+@property (nonatomic) long long bedtimeMinute;
+@property (nonatomic) long long bedtimeToCorrectedBedtimeMinutes;
+@property (nonatomic) long long bedtimeToFirstSleepInterruptionMinutes;
+@property (nonatomic) long long bedtimeToStartOfLongestSleepIntervalMinutes;
+@property (nonatomic) long long correctedBedtimeToThirdPartySleepOnsetMinutes;
 @property (nonatomic) BOOL hasBedtimeHour;
 @property (nonatomic) BOOL hasBedtimeMinute;
 @property (nonatomic) BOOL hasBedtimeToCorrectedBedtimeMinutes;
@@ -49,23 +49,23 @@
 @property (nonatomic) BOOL hasTimestamp;
 @property (nonatomic) BOOL hasWakeupIsOnWeekday;
 @property (nonatomic) BOOL hasWakeupTimeToThirdPartyWakeupTimeMinutes;
-@property (nonatomic) int percentOfDesiredSleep;
+@property (nonatomic) long long percentOfDesiredSleep;
 @property (nonatomic, retain) NSString *thirdPartyBundleIdentifier;
 @property (nonatomic, retain) NSString *thirdPartyDeviceManufacturer;
 @property (nonatomic, retain) NSString *thirdPartyDeviceModel;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 @property (nonatomic) BOOL wakeupIsOnWeekday;
-@property (nonatomic) int wakeupTimeToThirdPartyWakeupTimeMinutes;
+@property (nonatomic) long long wakeupTimeToThirdPartyWakeupTimeMinutes;
 
 - (void).cxx_destruct;
-- (int)bedtimeHour;
-- (int)bedtimeMinute;
-- (int)bedtimeToCorrectedBedtimeMinutes;
-- (int)bedtimeToFirstSleepInterruptionMinutes;
-- (int)bedtimeToStartOfLongestSleepIntervalMinutes;
+- (long long)bedtimeHour;
+- (long long)bedtimeMinute;
+- (long long)bedtimeToCorrectedBedtimeMinutes;
+- (long long)bedtimeToFirstSleepInterruptionMinutes;
+- (long long)bedtimeToStartOfLongestSleepIntervalMinutes;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (int)correctedBedtimeToThirdPartySleepOnsetMinutes;
+- (long long)correctedBedtimeToThirdPartySleepOnsetMinutes;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasBedtimeHour;
@@ -84,14 +84,14 @@
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (int)percentOfDesiredSleep;
+- (long long)percentOfDesiredSleep;
 - (BOOL)readFrom:(id)arg1;
-- (void)setBedtimeHour:(int)arg1;
-- (void)setBedtimeMinute:(int)arg1;
-- (void)setBedtimeToCorrectedBedtimeMinutes:(int)arg1;
-- (void)setBedtimeToFirstSleepInterruptionMinutes:(int)arg1;
-- (void)setBedtimeToStartOfLongestSleepIntervalMinutes:(int)arg1;
-- (void)setCorrectedBedtimeToThirdPartySleepOnsetMinutes:(int)arg1;
+- (void)setBedtimeHour:(long long)arg1;
+- (void)setBedtimeMinute:(long long)arg1;
+- (void)setBedtimeToCorrectedBedtimeMinutes:(long long)arg1;
+- (void)setBedtimeToFirstSleepInterruptionMinutes:(long long)arg1;
+- (void)setBedtimeToStartOfLongestSleepIntervalMinutes:(long long)arg1;
+- (void)setCorrectedBedtimeToThirdPartySleepOnsetMinutes:(long long)arg1;
 - (void)setHasBedtimeHour:(BOOL)arg1;
 - (void)setHasBedtimeMinute:(BOOL)arg1;
 - (void)setHasBedtimeToCorrectedBedtimeMinutes:(BOOL)arg1;
@@ -102,19 +102,19 @@
 - (void)setHasTimestamp:(BOOL)arg1;
 - (void)setHasWakeupIsOnWeekday:(BOOL)arg1;
 - (void)setHasWakeupTimeToThirdPartyWakeupTimeMinutes:(BOOL)arg1;
-- (void)setPercentOfDesiredSleep:(int)arg1;
+- (void)setPercentOfDesiredSleep:(long long)arg1;
 - (void)setThirdPartyBundleIdentifier:(id)arg1;
 - (void)setThirdPartyDeviceManufacturer:(id)arg1;
 - (void)setThirdPartyDeviceModel:(id)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (void)setWakeupIsOnWeekday:(BOOL)arg1;
-- (void)setWakeupTimeToThirdPartyWakeupTimeMinutes:(int)arg1;
+- (void)setWakeupTimeToThirdPartyWakeupTimeMinutes:(long long)arg1;
 - (id)thirdPartyBundleIdentifier;
 - (id)thirdPartyDeviceManufacturer;
 - (id)thirdPartyDeviceModel;
-- (unsigned int)timestamp;
+- (unsigned long long)timestamp;
 - (BOOL)wakeupIsOnWeekday;
-- (int)wakeupTimeToThirdPartyWakeupTimeMinutes;
+- (long long)wakeupTimeToThirdPartyWakeupTimeMinutes;
 - (void)writeTo:(id)arg1;
 
 @end

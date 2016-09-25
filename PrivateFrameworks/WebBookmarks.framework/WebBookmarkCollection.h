@@ -38,7 +38,7 @@
 + (BOOL)isLockedSync;
 + (BOOL)lockSync;
 + (id)readingListArchivesDirectoryPath;
-+ (unsigned int)readingListArchivesDiskUsage;
++ (unsigned long long)readingListArchivesDiskUsage;
 + (id)safariBookmarkCollection;
 + (id)safariDirectoryPath;
 + (void)unholdLockSync:(const void*)arg1;
@@ -255,9 +255,9 @@
 - (BOOL)moveBookmark:(id)arg1 toFolderWithID:(int)arg2;
 - (void)persistChangesWithCompletion:(id /* block */)arg1;
 - (void)postBookmarksDidReloadNotification;
-- (unsigned int)purge:(unsigned int)arg1;
+- (unsigned long long)purge:(unsigned long long)arg1;
 - (id)purgeableReadingListItems;
-- (unsigned int)purgeableSpace;
+- (unsigned long long)purgeableSpace;
 - (id)readingListBookmarksMatchingString:(id)arg1 maxResults:(unsigned int)arg2 onlyArchivedBookmarks:(BOOL)arg3;
 - (id)readingListBookmarksNeedingArchiveInMode:(int)arg1;
 - (id)readingListFolder;

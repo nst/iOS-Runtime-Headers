@@ -5,20 +5,20 @@
 @interface MPURatingControl : UIControl {
     <MPURatingControlDelegate> * _delegate;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _hitTestEdgeInsets;
     NSMutableArray * _imageViews;
     UIPanGestureRecognizer * _panGestureRecognizer;
-    double  _rating;
+    float  _rating;
     UITapGestureRecognizer * _tapGestureRecognizer;
 }
 
 @property (nonatomic) <MPURatingControlDelegate> *delegate;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } hitTestEdgeInsets;
-@property (nonatomic) double rating;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } hitTestEdgeInsets;
+@property (nonatomic) float rating;
 
 + (id)ratingDotImage;
 + (id)ratingStarImage;
@@ -29,17 +29,17 @@
 - (void)_updateImageView:(id)arg1 proposedImage:(id)arg2 filled:(BOOL)arg3;
 - (void)_updateImageViewsForRatingAnimated:(BOOL)arg1;
 - (id)delegate;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })hitTestEdgeInsets;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })hitTestEdgeInsets;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (BOOL)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (float)rating;
-- (float)ratingValueForLocationInView:(struct CGPoint { double x1; double x2; })arg1;
+- (float)ratingValueForLocationInView:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setHitTestEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setHitTestEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setRating:(float)arg1;
 - (void)setRating:(float)arg1 animated:(BOOL)arg2;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)viewDidMoveToSuperview;
 
 @end

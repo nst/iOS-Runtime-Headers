@@ -21,6 +21,6 @@
 - (id)initWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 URL:(id)arg2;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })range;
 - (id)resultByAdjustingRangesWithOffset:(int)arg1;
-- (unsigned int)resultType;
+- (unsigned long long)resultType;
 
 @end

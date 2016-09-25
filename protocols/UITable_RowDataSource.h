@@ -7,7 +7,7 @@
 
 - (void)_applyContentSizeDeltaForEstimatedHeightAdjustments:(float)arg1;
 - (<UITableConstants> *)_constants;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_contentInset;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_contentInset;
 - (float)_dataSourceHeightForFooterInSection:(int)arg1;
 - (float)_dataSourceHeightForHeaderInSection:(int)arg1;
 - (float)_dataSourceHeightForRowAtIndexPath:(NSIndexPath *)arg1;
@@ -39,7 +39,7 @@
 - (BOOL)_shouldUseSearchBarHeaderBehavior;
 - (float)_sidePadding;
 - (float)_swipeToDeleteOffsetForRow:(int)arg1 inSection:(int)arg2;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_tableContentInset;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_tableContentInset;
 - (UIView *)_tableFooterView;
 - (UIView *)_tableHeaderView;
 - (int)_titleAlignmentForFooterInSection:(int)arg1;

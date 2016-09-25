@@ -4,7 +4,7 @@
 
 @interface VKNavCameraController : VKCameraController <VKGesturingCameraController, VKNavContextObserver, VKNavigationCameraController> {
     unsigned char  _alternateFramingSource;
-    double  _animationTime;
+    float  _animationTime;
     VKAttachedNavGestureCameraBehavior * _attachedGestureBehavior;
     int  _baseDisplayRate;
     struct Unit<MeterUnitDescription, double> { 
@@ -29,10 +29,10 @@
     }  _cameraPitch;
     unsigned char  _cameraType;
     struct VKEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _clientFramingInsets;
     struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { 
         struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { 
@@ -74,16 +74,16 @@
     bool  _frameAllGroupedManeuvers;
     double  _framingDistanceAfterManeuver;
     struct VKEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _framingEdgeInset;
     struct VKEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _framingEdgeInsetProportional;
     struct Box<double, 2> { 
         struct Matrix<double, 2, 1> { 
@@ -151,7 +151,7 @@
     VKNavContext * _navContext;
     BOOL  _needsUpdate;
     <VKNavCameraControllerObserver> * _observer;
-    double  _panReturnDelayTime;
+    float  _panReturnDelayTime;
     BOOL  _panning;
     struct Spring<double, md::SpringType::Linear> { 
         double _position; 
@@ -178,13 +178,13 @@
         double _e[2]; 
     }  _puckLocation;
     struct Matrix<float, 2, 1> { 
-        double _e[2]; 
+        float _e[2]; 
     }  _puckMovementBoundsMax;
     struct Matrix<float, 2, 1> { 
-        double _e[2]; 
+        float _e[2]; 
     }  _puckMovementBoundsMin;
     struct Matrix<float, 2, 1> { 
-        double _e[2]; 
+        float _e[2]; 
     }  _puckScreenPosition;
     BOOL  _rotating;
     struct Mercator2<double> { 
@@ -237,7 +237,7 @@
 @property (nonatomic, readonly) double altitude;
 @property (nonatomic) int baseDisplayRate;
 @property (nonatomic) struct { double x1; double x2; } centerCoordinate;
-@property (nonatomic) struct VKEdgeInsets { double x1; double x2; double x3; double x4; } clientFramingInsets;
+@property (nonatomic) struct VKEdgeInsets { float x1; float x2; float x3; float x4; } clientFramingInsets;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) double distanceFromCenterCoordinate;
@@ -284,7 +284,7 @@
 - (BOOL)canZoomOutForTileSize:(int)arg1;
 - (void)canvasDidLayout;
 - (struct { double x1; double x2; })centerCoordinate;
-- (struct VKEdgeInsets { double x1; double x2; double x3; double x4; })clientFramingInsets;
+- (struct VKEdgeInsets { float x1; float x2; float x3; float x4; })clientFramingInsets;
 - (struct CameraFrame<geo::Radians, double> { struct Mercator3<double> { double x_1_1_1[3]; } x1; struct Unit<MeterUnitDescription, double> { double x_2_1_1; } x2; struct Unit<RadianUnitDescription, double> { double x_3_1_1; } x3; struct Unit<RadianUnitDescription, double> { double x_4_1_1; } x4; })currentCameraFrame;
 - (double)currentZoomLevel;
 - (void)dealloc;
@@ -324,23 +324,23 @@
 - (void)setBaseDisplayRate:(int)arg1;
 - (void)setCamera:(id)arg1;
 - (void)setCameraFrame:(struct CameraFrame<geo::Radians, double> { struct Mercator3<double> { double x_1_1_1[3]; } x1; struct Unit<MeterUnitDescription, double> { double x_2_1_1; } x2; struct Unit<RadianUnitDescription, double> { double x_3_1_1; } x3; struct Unit<RadianUnitDescription, double> { double x_4_1_1; } x4; })arg1;
-- (void)setClientFramingInsets:(struct VKEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setClientFramingInsets:(struct VKEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setMapCanvas:(id)arg1;
 - (void)setMapModel:(id)arg1;
 - (void)setNavContext:(id)arg1;
 - (void)setObserver:(id)arg1;
 - (void)setZoomScale:(double)arg1;
-- (void)startPanningAtPoint:(struct CGPoint { double x1; double x2; })arg1 panAtStartPoint:(BOOL)arg2;
-- (void)startPinchingWithFocusPoint:(struct CGPoint { double x1; double x2; })arg1;
-- (void)startPitchingWithFocusPoint:(struct CGPoint { double x1; double x2; })arg1;
-- (void)startRotatingWithFocusPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)startPanningAtPoint:(struct CGPoint { float x1; float x2; })arg1 panAtStartPoint:(BOOL)arg2;
+- (void)startPinchingWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)startPitchingWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)startRotatingWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)startWithPounce:(BOOL)arg1 pounceCompletionHandler:(id /* block */)arg2;
 - (void)stop;
 - (void)stopAnimations;
-- (void)stopPanningAtPoint:(struct CGPoint { double x1; double x2; })arg1;
-- (void)stopPinchingWithFocusPoint:(struct CGPoint { double x1; double x2; })arg1;
-- (void)stopPitchingWithFocusPoint:(struct CGPoint { double x1; double x2; })arg1;
-- (void)stopRotatingWithFocusPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)stopPanningAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)stopPinchingWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)stopPitchingWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)stopRotatingWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)stopSnappingAnimations;
 - (void)stylesheetDidChange;
 - (void)stylesheetDidReload;
@@ -349,17 +349,17 @@
 - (void)updateCameraState;
 - (void)updateLocation:(const struct Mercator3<double> { double x1[3]; }*)arg1 andCourse:(double)arg2;
 - (void)updateManeuversToFrame;
-- (void)updatePanWithTranslation:(struct CGPoint { double x1; double x2; })arg1;
-- (void)updatePinchWithFocusPoint:(struct CGPoint { double x1; double x2; })arg1 oldFactor:(double)arg2 newFactor:(double)arg3;
-- (void)updatePitchWithFocusPoint:(struct CGPoint { double x1; double x2; })arg1 translation:(double)arg2;
+- (void)updatePanWithTranslation:(struct CGPoint { float x1; float x2; })arg1;
+- (void)updatePinchWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1 oldFactor:(double)arg2 newFactor:(double)arg3;
+- (void)updatePitchWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1 translation:(double)arg2;
 - (void)updatePointsToFrame;
-- (void)updateRotationWithFocusPoint:(struct CGPoint { double x1; double x2; })arg1 newValue:(double)arg2;
+- (void)updateRotationWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1 newValue:(double)arg2;
 - (void)updateSpringsForFramingCamera;
 - (void)updateSpringsForTrackingCamera;
 - (void)updateWithTimestamp:(double)arg1;
 - (BOOL)wantsTimerTick;
 - (struct Matrix<double, 2, 1> { double x1[2]; })worldPointToScreenPoint:(struct Matrix<double, 3, 1> { double x1[3]; })arg1 forViewProjectionMatrix:(const struct Matrix<double, 4, 4> { double x1[16]; }*)arg2;
-- (void)zoom:(double)arg1 withFocusPoint:(struct CGPoint { double x1; double x2; })arg2 completionHandler:(id /* block */)arg3;
+- (void)zoom:(double)arg1 withFocusPoint:(struct CGPoint { float x1; float x2; })arg2 completionHandler:(id /* block */)arg3;
 - (double)zoomScale;
 
 @end

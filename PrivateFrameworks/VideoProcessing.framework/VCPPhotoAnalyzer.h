@@ -10,8 +10,8 @@
     struct __CVBuffer { } * _imageLowRes;
     unsigned int  _irisAnalyses;
     AVAsset * _irisAsset;
-    double  _irisPhotoExposureSec;
-    double  _irisPhotoOffsetSec;
+    float  _irisPhotoExposureSec;
+    float  _irisPhotoOffsetSec;
     BOOL  _isPano;
     unsigned int  _phFaceFlags;
     NSDictionary * _phFaceResults;
@@ -19,12 +19,12 @@
     NSMutableDictionary * _results;
     int  _status;
     struct CGAffineTransform { 
-        double a; 
-        double b; 
-        double c; 
-        double d; 
-        double tx; 
-        double ty; 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     }  _transform;
 }
 

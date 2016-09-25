@@ -4,12 +4,12 @@
 
 @interface CKImpactEffectHapticsGenerator : NSObject {
     NSObject<CK_UIFeedBackImpactBehavior> * _expressiveSendFeedbackImpactBehavior;
-    double  _feedbackImpactBehaviorDispatchDelay;
+    float  _feedbackImpactBehaviorDispatchDelay;
     BOOL  _sendFeedbackImpactBehavior;
 }
 
 @property (nonatomic, retain) NSObject<CK_UIFeedBackImpactBehavior> *expressiveSendFeedbackImpactBehavior;
-@property (nonatomic) double feedbackImpactBehaviorDispatchDelay;
+@property (nonatomic) float feedbackImpactBehaviorDispatchDelay;
 @property (nonatomic) BOOL sendFeedbackImpactBehavior;
 
 - (void).cxx_destruct;

@@ -7,7 +7,7 @@
     int  mColIndex;
     unsigned int  mRowIndex;
     CMStyle * mStyle;
-    double  mWidth;
+    float  mWidth;
 }
 
 - (void)dealloc;

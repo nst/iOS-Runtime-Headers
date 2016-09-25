@@ -23,8 +23,8 @@
 
 - (void).cxx_destruct;
 - (BOOL)_decodeWithDoodle:(id)arg1;
-- (void)addSketchPoint:(struct CGPoint { double x1; double x2; })arg1;
-- (void)addSketchPoint:(struct CGPoint { double x1; double x2; })arg1 atTime:(double)arg2;
+- (void)addSketchPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)addSketchPoint:(struct CGPoint { float x1; float x2; })arg1 atTime:(double)arg2;
 - (void)addStrokeWithColor:(id)arg1;
 - (id)archiveData;
 - (id)colorsInMessage;

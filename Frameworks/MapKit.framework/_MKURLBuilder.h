@@ -16,8 +16,8 @@
 + (id)URLForDirectionsFromHereTo:(id)arg1;
 + (id)URLForDirectionsFromHereTo:(id)arg1 transport:(unsigned int)arg2;
 + (id)URLForExternalBusiness:(id)arg1 id:(id)arg2 ofContentProvider:(id)arg3;
-+ (id)URLForInternalBusiness:(id)arg1 id:(unsigned int)arg2 provider:(int)arg3;
-+ (id)URLForInternalBusiness:(id)arg1 id:(unsigned int)arg2 provider:(int)arg3 coordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg4 address:(id)arg5;
++ (id)URLForInternalBusiness:(id)arg1 id:(unsigned long long)arg2 provider:(int)arg3;
++ (id)URLForInternalBusiness:(id)arg1 id:(unsigned long long)arg2 provider:(int)arg3 coordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg4 address:(id)arg5;
 + (id)URLForSearch:(id)arg1;
 + (id)URLForSearch:(id)arg1 at:(struct CLLocationCoordinate2D { double x1; double x2; })arg2 span:(struct { double x1; double x2; })arg3;
 + (id)URLForSearch:(id)arg1 at:(struct CLLocationCoordinate2D { double x1; double x2; })arg2 zoomLevel:(float)arg3;
@@ -31,7 +31,7 @@
 - (id)initForCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1 label:(id)arg2;
 - (id)initForDirectionsTo:(id)arg1;
 - (id)initForExternalBusiness:(id)arg1 id:(id)arg2 ofContentProvider:(id)arg3;
-- (id)initForInternalBusiness:(id)arg1 id:(unsigned int)arg2 provider:(int)arg3;
+- (id)initForInternalBusiness:(id)arg1 id:(unsigned long long)arg2 provider:(int)arg3;
 - (id)initForSearch:(id)arg1;
 - (void)setBusinessAddress:(id)arg1;
 - (void)setBusinessCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1;

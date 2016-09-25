@@ -41,7 +41,7 @@
 @property (nonatomic) unsigned long outputDataRate;
 @property (nonatomic) unsigned long outputFormat;
 @property (nonatomic) unsigned long outputFormatFlags;
-@property (nonatomic) double outputSampleRate;
+@property (nonatomic) float outputSampleRate;
 
 - (void)_bringUpToDate;
 - (void)_buildApplicableDataRatesForSampleRates;

@@ -44,6 +44,6 @@
 - (void)trackDonationFromBundleId:(id)arg1 source:(id)arg2 hasLatLon:(BOOL)arg3 isEligible:(BOOL)arg4;
 - (void)trackOpportunityForConsumer:(id)arg1 trigger:(id)arg2 targetApp:(id)arg3;
 - (void)trackPasteboardItemFromBundleId:(id)arg1 hasAddress:(BOOL)arg2 isEligible:(BOOL)arg3;
-- (void)trackTimingForConsumer:(id)arg1 time:(unsigned int)arg2;
+- (void)trackTimingForConsumer:(id)arg1 time:(unsigned long long)arg2;
 
 @end

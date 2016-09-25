@@ -6,10 +6,10 @@
 @required
 
 - (NSArray *)ccAddressList;
-- (int)conversationID;
+- (long long)conversationID;
 - (NSDate *)dateReceived;
 - (NSString *)firstSenderAddress;
-- (int)listIDHash;
+- (long long)listIDHash;
 - (<MFMailboxPredictionMailbox> *)mailbox;
 - (NSString *)persistentID;
 - (NSString *)subject;

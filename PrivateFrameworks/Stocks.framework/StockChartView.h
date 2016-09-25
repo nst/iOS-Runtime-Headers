@@ -55,7 +55,7 @@
 - (void)_layoutIntervalButtonRow;
 - (void)_layoutSubviews;
 - (void)_layoutTopLabelsHidden:(BOOL)arg1;
-- (void)_layoutVolumeSeparatorLineForGraphRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)_layoutVolumeSeparatorLineForGraphRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_layoutYLabels;
 - (void)_prepareXAxisLabelsAndPositions;
 - (void)_prepareYAxisLabelsAndPositionsForDisplayMode:(id)arg1;
@@ -84,7 +84,7 @@
 - (id)error;
 - (void)forceLayout;
 - (id)graphViewForMode:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })graphViewFrameForMode:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })graphViewFrameForMode:(id)arg1;
 - (BOOL)hadError;
 - (void)hideLabelsAxesAndGraphs;
 - (id)initWithInitialDisplayMode:(id)arg1 preferredChartInterval:(int)arg2 stockChartViewDelegate:(id)arg3;
@@ -96,7 +96,7 @@
 - (void)layoutPreviousClose;
 - (void)layoutSubviews;
 - (float)lineGraphBottomPadding;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })lineGraphFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })lineGraphFrame;
 - (int)maxSupportedIntervalFromDesiredInterval:(int)arg1;
 - (int)preferredInterval;
 - (void)prepareForTransitionToDisplayMode:(id)arg1;
@@ -112,7 +112,7 @@
 - (void)setCurrentDisplayMode:(id)arg1;
 - (void)setDrawsBottomLine:(BOOL)arg1;
 - (void)setError:(id)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setLabelsAndAxesAlpha:(float)arg1;
 - (void)setNeedsLayout;
 - (void)setPreferredInterval:(int)arg1;

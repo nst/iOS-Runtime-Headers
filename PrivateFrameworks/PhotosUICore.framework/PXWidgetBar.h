@@ -6,7 +6,7 @@
     PXWidgetBarLayout * __layout;
     PXBasicTileAnimator * __tileAnimator;
     NSMutableSet * __tilesInUse;
-    double  __viewHeight;
+    float  __viewHeight;
     BOOL  _allowUserInteractionWithSubtitle;
     NSString * _caption;
     <PXWidgetBarDelegate> * _delegate;
@@ -33,7 +33,7 @@
 @property (nonatomic, readonly) PXWidgetBarLayout *_layout;
 @property (nonatomic, readonly) PXBasicTileAnimator *_tileAnimator;
 @property (nonatomic, readonly) NSMutableSet *_tilesInUse;
-@property (setter=_setViewHeight:, nonatomic) double _viewHeight;
+@property (setter=_setViewHeight:, nonatomic) float _viewHeight;
 @property (nonatomic) BOOL allowUserInteractionWithSubtitle;
 @property (nonatomic, copy) NSString *caption;
 @property (readonly, copy) NSString *debugDescription;
@@ -48,7 +48,7 @@
 @property (nonatomic, readonly) PXTilingController *tilingController;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, readonly) NSObject<PXAnonymousView> *view;
-@property (nonatomic, readonly) double viewHeight;
+@property (nonatomic, readonly) float viewHeight;
 
 - (void).cxx_destruct;
 - (void)_invalidateLayout;

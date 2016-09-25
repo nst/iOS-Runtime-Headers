@@ -3,11 +3,11 @@
  */
 
 @interface UIAlertLabeledButton : UIAlertButton {
-    double  _titleOffset;
+    float  _titleOffset;
     UILabel * _typeLabel;
 }
 
-@property (nonatomic) double titleOffset;
+@property (nonatomic) float titleOffset;
 @property (nonatomic, readonly) UILabel *typeLabel;
 
 - (void)dealloc;

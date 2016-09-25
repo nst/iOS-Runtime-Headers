@@ -17,10 +17,10 @@
     <FMFMapViewControllerDelegate> * _delegate;
     UIBarButtonItem * _directionsBarButtonItem;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _edgeInsets;
     UIToolbar * _floatingLocationToolbar;
     UIView * _floatingToolbarView;
@@ -59,7 +59,7 @@
 @property (nonatomic) <FMFMapViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) UIBarButtonItem *directionsBarButtonItem;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } edgeInsets;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
 @property (nonatomic, retain) UIToolbar *floatingLocationToolbar;
 @property (nonatomic, retain) UIView *floatingToolbarView;
 @property (nonatomic, retain) FMFSession *fmfSession;
@@ -84,7 +84,7 @@
 @property (nonatomic, retain) MKUserTrackingBarButtonItem *userLocationButton;
 @property (nonatomic) BOOL viewWillAppearCalled;
 
-+ (struct CGSize { double x1; double x2; })annotationImageSize;
++ (struct CGSize { float x1; float x2; })annotationImageSize;
 
 - (void).cxx_destruct;
 - (void)_authorizeMonitoringLocation;
@@ -124,7 +124,7 @@
 - (void)didStopAbilityToGetLocationForHandle:(id)arg1;
 - (void)didUpdateUserLocation:(id)arg1;
 - (id)directionsBarButtonItem;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })edgeInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
 - (void)enablePreloadedHandles;
 - (id)floatingLocationToolbar;
 - (id)floatingToolbarView;
@@ -180,7 +180,7 @@
 - (void)setDefaultMapType:(unsigned int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDirectionsBarButtonItem:(id)arg1;
-- (void)setEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setFloatingLocationToolbar:(id)arg1;
 - (void)setFloatingToolbarView:(id)arg1;
 - (void)setFmfSession:(id)arg1;
@@ -230,7 +230,7 @@
 - (void)viewWillAppearWillMoveToWindowSetup;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillLayoutSubviews;
-- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (void)willMoveToParentViewController:(id)arg1;
 - (void)zoomAndSelectHandle:(id)arg1;
 - (void)zoomToFit;

@@ -6,21 +6,21 @@
     unsigned int  _finalRetryCount;
     unsigned int  _initialRetryCount;
     unsigned int  _maximumElementCount;
-    int  _maximumNsecsBetweenRetries;
-    int  _minimumNsecsBetweenRetries;
+    long long  _maximumNsecsBetweenRetries;
+    long long  _minimumNsecsBetweenRetries;
     NSString * _name;
-    int  _nsecsBeforeForgettingCounter;
+    long long  _nsecsBeforeForgettingCounter;
 }
 
 @property (nonatomic, readonly) NSString *name;
-@property (nonatomic, readonly) int nsecsBeforeForgettingCounter;
+@property (nonatomic, readonly) long long nsecsBeforeForgettingCounter;
 
 - (void).cxx_destruct;
 - (id)initWithName:(id)arg1 andParameters:(id)arg2;
 - (BOOL)isBlocking;
 - (id)name;
-- (int)nsecsBeforeForgettingCounter;
-- (int)nsecsToNextRetry:(int)arg1 retryCount:(unsigned int*)arg2 now:(int)arg3;
-- (int)retryBackoff:(unsigned int)arg1;
+- (long long)nsecsBeforeForgettingCounter;
+- (long long)nsecsToNextRetry:(long long)arg1 retryCount:(unsigned int*)arg2 now:(long long)arg3;
+- (long long)retryBackoff:(unsigned int)arg1;
 
 @end

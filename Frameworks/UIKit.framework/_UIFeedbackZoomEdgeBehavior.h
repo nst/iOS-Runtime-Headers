@@ -3,16 +3,16 @@
  */
 
 @interface _UIFeedbackZoomEdgeBehavior : _UIFeedbackEdgeBehavior {
-    double  _maximumTemporaryZoomScale;
-    double  _maximumZoomScale;
-    double  _minimumTemporaryZoomScale;
-    double  _minimumZoomScale;
+    float  _maximumTemporaryZoomScale;
+    float  _maximumZoomScale;
+    float  _minimumTemporaryZoomScale;
+    float  _minimumZoomScale;
 }
 
-@property (nonatomic) double maximumTemporaryZoomScale;
-@property (nonatomic) double maximumZoomScale;
-@property (nonatomic) double minimumTemporaryZoomScale;
-@property (nonatomic) double minimumZoomScale;
+@property (nonatomic) float maximumTemporaryZoomScale;
+@property (nonatomic) float maximumZoomScale;
+@property (nonatomic) float minimumTemporaryZoomScale;
+@property (nonatomic) float minimumZoomScale;
 
 + (id)behaviorWithCoordinateSpace:(id)arg1;
 

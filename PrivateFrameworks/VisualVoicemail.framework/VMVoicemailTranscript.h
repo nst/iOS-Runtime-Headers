@@ -3,13 +3,13 @@
  */
 
 @interface VMVoicemailTranscript : NSObject <NSSecureCoding> {
-    double  _confidence;
+    float  _confidence;
     unsigned int  _confidenceRating;
     NSArray * _segments;
     NSString * _transcriptionString;
 }
 
-@property (nonatomic, readonly) double confidence;
+@property (nonatomic, readonly) float confidence;
 @property (nonatomic, readonly) unsigned int confidenceRating;
 @property (nonatomic, readonly) NSArray *segments;
 @property (nonatomic, readonly) NSString *transcriptionString;

@@ -7,8 +7,8 @@
     BRCItemID * _gatheredChildrenItemID;
     NSMutableArray * _gatheringAppLibraries;
     NSString * _gatheringNamePrefix;
-    unsigned int  _gatheringRankCur;
-    unsigned int  _gatheringRankMax;
+    unsigned long long  _gatheringRankCur;
+    unsigned long long  _gatheringRankMax;
     BRCNotificationPipe * _pipe;
     BRCAccountSession * _session;
 }

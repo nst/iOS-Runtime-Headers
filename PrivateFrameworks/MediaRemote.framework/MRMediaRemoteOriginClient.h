@@ -49,8 +49,8 @@
 - (void)setPlaybackQueueCallback:(id /* block */)arg1;
 - (void)setRouteDiscoveryMode:(unsigned int)arg1;
 - (void)setSupportedCommands:(id)arg1;
-- (void)setTransactionCallback:(id /* block */)arg1 forName:(unsigned int)arg2;
+- (void)setTransactionCallback:(id /* block */)arg1 forName:(unsigned long long)arg2;
 - (id)supportedCommands;
-- (id /* block */)transactionCallbackForName:(unsigned int)arg1;
+- (id /* block */)transactionCallbackForName:(unsigned long long)arg1;
 
 @end

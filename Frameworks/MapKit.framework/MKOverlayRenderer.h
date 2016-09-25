@@ -3,7 +3,7 @@
  */
 
 @interface MKOverlayRenderer : NSObject {
-    double  _alpha;
+    float  _alpha;
     struct { 
         struct { 
             double x; 
@@ -14,13 +14,13 @@
             double height; 
         } size; 
     }  _boundingMapRect;
-    double  _contentScaleFactor;
+    float  _contentScaleFactor;
     <MKOverlay> * _overlay;
     id  _renderer;
 }
 
-@property double alpha;
-@property (readonly) double contentScaleFactor;
+@property float alpha;
+@property (readonly) float contentScaleFactor;
 @property (nonatomic, readonly) <MKOverlay> *overlay;
 
 - (void).cxx_destruct;
@@ -36,13 +36,13 @@
 - (void)drawMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 zoomScale:(float)arg2 inContext:(struct CGContext { }*)arg3;
 - (id)init;
 - (id)initWithOverlay:(id)arg1;
-- (struct { double x1; double x2; })mapPointForPoint:(struct CGPoint { double x1; double x2; })arg1;
-- (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })mapRectForRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct { double x1; double x2; })mapPointForPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })mapRectForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)overlay;
 - (BOOL)overlay:(id)arg1 canDrawKey:(const struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; }*)arg2;
 - (void)overlay:(id)arg1 drawKey:(const struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; }*)arg2 inContext:(struct CGContext { }*)arg3;
-- (struct CGPoint { double x1; double x2; })pointForMapPoint:(struct { double x1; double x2; })arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rectForMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGPoint { float x1; float x2; })pointForMapPoint:(struct { double x1; double x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setAlpha:(float)arg1;
 - (void)setContentScaleFactor:(float)arg1;
 - (void)setNeedsDisplay;

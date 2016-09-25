@@ -24,8 +24,8 @@
 @property (nonatomic, readonly) NSArray *itemsToMove;
 @property (readonly) Class superclass;
 
-+ (id)_loadDocumentIconForURL:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
-+ (id)_loadThumbnailForURL:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 scale:(float)arg3 wantsBorder:(BOOL*)arg4 generatedThumbnail:(BOOL*)arg5;
++ (id)_loadDocumentIconForURL:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
++ (id)_loadThumbnailForURL:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 scale:(float)arg3 wantsBorder:(BOOL*)arg4 generatedThumbnail:(BOOL*)arg5;
 
 - (void).cxx_destruct;
 - (void)_commonInitItems:(id)arg1 crossContainer:(BOOL)arg2 sourceContainer:(id)arg3;

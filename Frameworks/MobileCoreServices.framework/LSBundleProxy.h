@@ -10,7 +10,7 @@
     _LSLazyPropertyList * __infoDictionary;
     NSURL * _appStoreReceiptURL;
     NSString * _bundleExecutable;
-    unsigned int  _bundleFlags;
+    unsigned long long  _bundleFlags;
     NSString * _bundleType;
     NSURL * _bundleURL;
     NSString * _bundleVersion;
@@ -59,7 +59,7 @@
 + (BOOL)supportsSecureCoding;
 
 - (BOOL)UPPValidated;
-- (unsigned int)_containerClassForLSBundleType:(id)arg1;
+- (unsigned long long)_containerClassForLSBundleType:(id)arg1;
 - (id)_dataContainerURLFromContainerManager;
 - (id)_entitlements;
 - (id)_environmentVariables;

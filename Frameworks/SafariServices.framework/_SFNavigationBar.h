@@ -6,18 +6,18 @@
     NSArray * _URLAccessoryItems;
     UIView * _URLContainer;
     UIImageView * _URLFadeOut;
-    double  _URLHeight;
+    float  _URLHeight;
     SFCrossfadingLabel * _URLLabel;
     _SFNavigationBarURLButton * _URLOutline;
-    double  _URLWidth;
+    float  _URLWidth;
     NSAttributedString * _attributedTextWhenExpanded;
     _SFNavigationBarBackdrop * _backdrop;
     BOOL  _backdropGroupDisabled;
     NSString * _backdropGroupName;
     UIButton * _cancelButton;
-    double  _cancelButtonIntrinsicWidth;
+    float  _cancelButtonIntrinsicWidth;
     UIButton * _compressedBarButton;
-    double  _contentUnderStatusBarHeight;
+    float  _contentUnderStatusBarHeight;
     UIView * _controlsContainer;
     BOOL  _controlsHidden;
     _UIBackdropViewSettings * _customBackdropSettings;
@@ -25,12 +25,12 @@
     UIButton * _doneButton;
     UIView * _doneButtonContainer;
     BOOL  _expanded;
-    double  _expandedURLHeight;
+    float  _expandedURLHeight;
     UILabel * _expandedURLLabel;
-    double  _expandedURLWidth;
+    float  _expandedURLWidth;
     UIButton * _fakeClearButton;
-    double  _fakeSelectionEndOffset;
-    double  _fakeSelectionStartOffset;
+    float  _fakeSelectionEndOffset;
+    float  _fakeSelectionStartOffset;
     UIView * _fakeTextFieldSelectionView;
     UIView * _inputAccessoryView;
     unsigned int  _inputMode;
@@ -39,9 +39,9 @@
     _SFNavigationBarLabelsContainer * _labelsContainer;
     SFCrossfadingImageView * _lockView;
     BOOL  _lockViewNeedsUpdate;
-    double  _maximumHeight;
-    double  _minimumBackdropHeight;
-    double  _offsetOfURLInExpandedURL;
+    float  _maximumHeight;
+    float  _minimumBackdropHeight;
+    float  _offsetOfURLInExpandedURL;
     UIColor * _preferredBarTintColor;
     UIColor * _preferredControlsTintColor;
     _SFFluidProgressView * _progressView;
@@ -66,11 +66,11 @@
     int  _visibleRightButtonType;
 }
 
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } URLOutlineFrameInNavigationBarSpace;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } URLOutlineFrameInNavigationBarSpace;
 @property (getter=isBackdropGroupDisabled, nonatomic) BOOL backdropGroupDisabled;
 @property (nonatomic, copy) NSString *backdropGroupName;
-@property (nonatomic) double contentUnderStatusBarHeight;
-@property (getter=_controlsAlpha, nonatomic, readonly) double controlsAlpha;
+@property (nonatomic) float contentUnderStatusBarHeight;
+@property (getter=_controlsAlpha, nonatomic, readonly) float controlsAlpha;
 @property (getter=areControlsHidden, nonatomic) BOOL controlsHidden;
 @property (nonatomic, retain) _UIBackdropViewSettings *customBackdropSettings;
 @property (readonly, copy) NSString *debugDescription;
@@ -82,8 +82,8 @@
 @property (nonatomic, retain) UIView *inputAccessoryView;
 @property (nonatomic, readonly) BOOL isShowingPreferredControlsTintColor;
 @property (nonatomic, retain) _SFNavigationBarItem *item;
-@property (nonatomic) double maximumHeight;
-@property (nonatomic) double minimumBackdropHeight;
+@property (nonatomic) float maximumHeight;
+@property (nonatomic) float minimumBackdropHeight;
 @property (nonatomic, retain) UIColor *preferredBarTintColor;
 @property (nonatomic, retain) UIColor *preferredControlsTintColor;
 @property (nonatomic, readonly) UIButton *readerAppearanceButton;
@@ -98,7 +98,7 @@
 @property (nonatomic) BOOL usesNarrowLayout;
 @property (nonatomic) BOOL usesUnscaledBackdrop;
 @property (getter=isUsingLightControls, nonatomic) BOOL usingLightControls;
-@property (nonatomic, readonly) double visualHeight;
+@property (nonatomic, readonly) float visualHeight;
 
 + (float)defaultHeight;
 + (float)minimumHeight;
@@ -106,7 +106,7 @@
 
 - (void).cxx_destruct;
 - (float)URLFieldHorizontalMargin;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })URLOutlineFrameInNavigationBarSpace;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })URLOutlineFrameInNavigationBarSpace;
 - (id)_EVCertLockAndTextColor;
 - (id)_URLControlsColor;
 - (float)_URLFieldHorizontalMargin;
@@ -124,7 +124,7 @@
 - (id)_editingLabelFont;
 - (float)_editingScaleFactor;
 - (id)_expandedURLLabelParagraphStyle;
-- (id)_fadeOutImageWithSize:(struct CGSize { double x1; double x2; })arg1 opaquePoint:(struct CGPoint { double x1; double x2; })arg2 transparentPoint:(struct CGPoint { double x1; double x2; })arg3 leftCapWidth:(float)arg4 topCapWidth:(float)arg5;
+- (id)_fadeOutImageWithSize:(struct CGSize { float x1; float x2; })arg1 opaquePoint:(struct CGPoint { float x1; float x2; })arg2 transparentPoint:(struct CGPoint { float x1; float x2; })arg3 leftCapWidth:(float)arg4 topCapWidth:(float)arg5;
 - (void)_hideReaderAvailabilityLabelAnimated:(BOOL)arg1;
 - (void)_hideReaderAvailabilityLabelNow;
 - (void)_hideReaderAvailabilityLabelSoon;
@@ -134,7 +134,7 @@
 - (id)_lockImageUsingMiniatureVersion:(BOOL)arg1;
 - (float)_minimumXForLabelOfWidth:(float)arg1 centeredInOutlineOfWidth:(float)arg2 leftAlignedToMinimumX:(float)arg3 maximumX:(float)arg4;
 - (id)_navigationBarRightButtonWithType:(int)arg1;
-- (id)_newNavigationButtonWithImage:(id)arg1 insets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2 action:(SEL)arg3;
+- (id)_newNavigationButtonWithImage:(id)arg1 insets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2 action:(SEL)arg3;
 - (id)_placeholderColor;
 - (id)_placeholderText;
 - (BOOL)_preferredTintColorIsSimilarToEVCertLockAndTextColor;
@@ -191,9 +191,9 @@
 - (void)fluidProgressViewWillShowProgress:(id)arg1;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (BOOL)hasToolbar;
-- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inputMode:(unsigned int)arg2;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inputMode:(unsigned int)arg2;
 - (id)inputAccessoryView;
 - (BOOL)isBackdropGroupDisabled;
 - (BOOL)isExpanded;
@@ -236,7 +236,7 @@
 - (void)setUsesNarrowLayout:(BOOL)arg1;
 - (void)setUsesUnscaledBackdrop:(BOOL)arg1;
 - (void)setUsingLightControls:(BOOL)arg1;
-- (void)squishExternalView:(id)arg1 withUntransformedFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 minimumScale:(float)arg3;
+- (void)squishExternalView:(id)arg1 withUntransformedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 minimumScale:(float)arg3;
 - (BOOL)suppressesBlur;
 - (id)textField;
 - (void)tintColorDidChange;

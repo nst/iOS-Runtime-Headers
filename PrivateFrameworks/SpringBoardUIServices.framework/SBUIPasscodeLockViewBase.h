@@ -5,7 +5,7 @@
 @interface SBUIPasscodeLockViewBase : UIView <SBFLegibilitySettingsProviderDelegate, SBUIBiometricResourceObserver, SBUIPasscodeLockView, SBUIPasscodeLockView_Internal> {
     BOOL  _allowsStatusTextUpdatingOnResignFirstResponder;
     _UIFeedbackEventBehavior * _authenticationFeedbackBehavior;
-    double  _backgroundAlpha;
+    float  _backgroundAlpha;
     <SBFLegibilitySettingsProvider> * _backgroundLegibilitySettingsProvider;
     BOOL  _becameVisible;
     unsigned int  _biometricMatchMode;
@@ -13,7 +13,7 @@
     NSMutableSet * _biometricMatchingEnabledOverrideReasons;
     unsigned int  _biometricMatchingState;
     <SBUIBiometricResource> * _biometricResource;
-    double  _currentBacklightLevel;
+    float  _currentBacklightLevel;
     int  _currentPendingBioUnlockToken;
     UIColor * _customBackgroundColor;
     <SBUIPasscodeLockViewDelegate> * _delegate;
@@ -22,7 +22,7 @@
     BOOL  _isBiometricAuthenticationAllowed;
     _UIFeedbackKeyboardBehavior * _keyboardFeedbackBehavior;
     _UILegibilitySettings * _legibilitySettings;
-    double  _luminanceBoost;
+    float  _luminanceBoost;
     BOOL  _mesaLockedOut;
     BOOL  _needStatusTextUpdate;
     BOOL  _pendingBioUnlock;
@@ -40,7 +40,7 @@
 
 @property (getter=_entryField, setter=_setEntryField:, nonatomic, retain) SBUIPasscodeEntryField *_entryField;
 @property (nonatomic, retain) _UIFeedbackEventBehavior *authenticationFeedbackBehavior;
-@property (nonatomic) double backgroundAlpha;
+@property (nonatomic) float backgroundAlpha;
 @property (nonatomic, retain) <SBFLegibilitySettingsProvider> *backgroundLegibilitySettingsProvider;
 @property (getter=isBiometricAuthenticationAllowed, nonatomic) BOOL biometricAuthenticationAllowed;
 @property (nonatomic) unsigned int biometricMatchMode;
@@ -51,7 +51,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) _UIFeedbackKeyboardBehavior *keyboardFeedbackBehavior;
-@property (getter=_luminosityBoost, setter=_setLuminosityBoost:, nonatomic) double luminosityBoost;
+@property (getter=_luminosityBoost, setter=_setLuminosityBoost:, nonatomic) float luminosityBoost;
 @property (nonatomic, readonly) NSString *passcode;
 @property (nonatomic) BOOL playsKeypadSounds;
 @property (nonatomic, retain) NSTimer *screenBrightnessChangedTimer;
@@ -118,7 +118,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)didMoveToWindow;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isBiometricAuthenticationAllowed;
 - (BOOL)isFirstResponder;
 - (BOOL)isScreenOn;

@@ -4,9 +4,9 @@
 
 @interface _PXWidgetCompositionElementScanner : NSObject <_PXWidgetCompositionRow> {
     NSArray * _elements;
-    double  _interColumnSpacing;
+    float  _interColumnSpacing;
     int  _maximumNumberOfColumns;
-    double  _referenceWidth;
+    float  _referenceWidth;
     int  _scanLocation;
     struct _NSRange { 
         unsigned int location; 
@@ -17,10 +17,10 @@
 
 @property (getter=isAtEnd, nonatomic, readonly) BOOL atEnd;
 @property (nonatomic, copy) NSArray *elements;
-@property (nonatomic) double interColumnSpacing;
+@property (nonatomic) float interColumnSpacing;
 @property (nonatomic) int maximumNumberOfColumns;
 @property (nonatomic, readonly) int numberOfColumns;
-@property (nonatomic) double referenceWidth;
+@property (nonatomic) float referenceWidth;
 @property (nonatomic, copy) id /* block */ wantsEdgeToEdgeLayoutBlock;
 
 - (void).cxx_destruct;

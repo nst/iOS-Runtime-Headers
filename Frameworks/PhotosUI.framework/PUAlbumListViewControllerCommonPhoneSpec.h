@@ -18,9 +18,9 @@
 - (float)sectionHeaderHeight;
 - (BOOL)shouldUseCollageForCloudFeedPlaceholder;
 - (BOOL)showsDeleteButtonOnCellContentView;
-- (struct UIOffset { double x1; double x2; })stackOffset;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })stackPerspectiveInsets;
-- (struct UIOffset { double x1; double x2; })stackPerspectiveOffset;
+- (struct UIOffset { float x1; float x2; })stackOffset;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })stackPerspectiveInsets;
+- (struct UIOffset { float x1; float x2; })stackPerspectiveOffset;
 - (id)stackPhotoDecoration;
 
 @end

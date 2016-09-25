@@ -17,7 +17,7 @@
     unsigned int  _slideMs;
     int  _status;
     NSString * _theme;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
     NSString * _transition;
     unsigned int  _transportType;
 }
@@ -39,7 +39,7 @@
 @property (nonatomic) unsigned int slideMs;
 @property (nonatomic) int status;
 @property (nonatomic, retain) NSString *theme;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 @property (nonatomic, retain) NSString *transition;
 @property (nonatomic) unsigned int transportType;
 
@@ -78,13 +78,13 @@
 - (void)setSlideMs:(unsigned int)arg1;
 - (void)setStatus:(int)arg1;
 - (void)setTheme:(id)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (void)setTransition:(id)arg1;
 - (void)setTransportType:(unsigned int)arg1;
 - (unsigned int)slideMs;
 - (int)status;
 - (id)theme;
-- (unsigned int)timestamp;
+- (unsigned long long)timestamp;
 - (id)transition;
 - (unsigned int)transportType;
 - (void)writeTo:(id)arg1;

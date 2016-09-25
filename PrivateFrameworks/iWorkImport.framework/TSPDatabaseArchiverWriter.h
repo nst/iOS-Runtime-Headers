@@ -3,7 +3,7 @@
  */
 
 @interface TSPDatabaseArchiverWriter : NSObject {
-    int  _dataStateIdentifier;
+    long long  _dataStateIdentifier;
     TSPDatabase * _database;
     TSPDistributableFileManager * _fileManager;
     NSString * _fileStateIdentifier;
@@ -13,7 +13,7 @@
     BOOL  _hasFileState;
 }
 
-@property (nonatomic) int dataStateIdentifier;
+@property (nonatomic) long long dataStateIdentifier;
 @property (nonatomic, retain) NSString *fileStateIdentifier;
 @property (nonatomic, retain) NSString *filenameHint;
 @property (nonatomic) BOOL forceFileStorage;
@@ -23,8 +23,8 @@
 - (void).cxx_destruct;
 - (struct sqlite3_blob { }*)_openDatabaseBlobWithSize:(int)arg1;
 - (void)_writeDataFromInputStreamToDatabase:(id)arg1 length:(int)arg2;
-- (void)_writeDataFromInputStreamToFile:(id)arg1 length:(int)arg2;
-- (int)dataStateIdentifier;
+- (void)_writeDataFromInputStreamToFile:(id)arg1 length:(long long)arg2;
+- (long long)dataStateIdentifier;
 - (id)fileStateIdentifier;
 - (id)filenameHint;
 - (BOOL)forceFileStorage;
@@ -32,8 +32,8 @@
 - (BOOL)hasFileState;
 - (id)initWithDatabase:(id)arg1 fileManager:(id)arg2;
 - (BOOL)serializeArchive:(const struct Message { int (**x1)(); }*)arg1;
-- (void)serializeDataFromStream:(id)arg1 length:(int)arg2;
-- (void)setDataStateIdentifier:(int)arg1;
+- (void)serializeDataFromStream:(id)arg1 length:(long long)arg2;
+- (void)setDataStateIdentifier:(long long)arg1;
 - (void)setFileStateIdentifier:(id)arg1;
 - (void)setFilenameHint:(id)arg1;
 - (void)setForceFileStorage:(BOOL)arg1;

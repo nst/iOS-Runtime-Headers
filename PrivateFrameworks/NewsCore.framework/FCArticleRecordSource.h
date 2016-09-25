@@ -8,9 +8,9 @@
 
 + (id)canaryRecordName;
 + (id)changeTagFromCKRecord:(id)arg1;
-+ (unsigned int)highThresholdDataSizeLimit;
++ (unsigned long long)highThresholdDataSizeLimit;
 + (id)identifierFromCKRecord:(id)arg1;
-+ (unsigned int)lowThresholdDataSizeLimit;
++ (unsigned long long)lowThresholdDataSizeLimit;
 + (id)modificationDateFromCKRecord:(id)arg1;
 + (id)recordType;
 + (id)storeFilename;

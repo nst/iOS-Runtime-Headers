@@ -3,7 +3,7 @@
  */
 
 @interface BKSAnimationFenceObserver : NSObject {
-    unsigned int  _encodeCount;
+    unsigned long long  _encodeCount;
     NSMapTable * _fencePointerToCAPortMap;
     NSMapTable * _fencePointerToTraceMap;
     NSMapTable * _fencePointerToTriggerPortMap;
@@ -19,7 +19,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)init;
-- (unsigned int)nextEncodeIdentifier;
+- (unsigned long long)nextEncodeIdentifier;
 - (void)removeFencePointer:(void*)arg1;
 
 @end

@@ -47,7 +47,7 @@
 - (id)description;
 - (id)eventName;
 - (id)fileExtensions;
-- (unsigned int)fileSize;
+- (unsigned long long)fileSize;
 - (BOOL)hasAllMetadata;
 - (id)identifier;
 - (id)importError;

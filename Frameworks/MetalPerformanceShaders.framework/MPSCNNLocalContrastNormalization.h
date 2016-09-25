@@ -3,24 +3,24 @@
  */
 
 @interface MPSCNNLocalContrastNormalization : MPSCNNKernel {
-    double  _alpha;
-    double  _beta;
-    double  _delta;
+    float  _alpha;
+    float  _beta;
+    float  _delta;
     unsigned int  _kernelHeight;
     unsigned int  _kernelWidth;
-    double  _p0;
-    double  _pm;
-    double  _ps;
+    float  _p0;
+    float  _pm;
+    float  _ps;
 }
 
-@property (nonatomic) double alpha;
-@property (nonatomic) double beta;
-@property (nonatomic) double delta;
+@property (nonatomic) float alpha;
+@property (nonatomic) float beta;
+@property (nonatomic) float delta;
 @property (nonatomic, readonly) unsigned int kernelHeight;
 @property (nonatomic, readonly) unsigned int kernelWidth;
-@property (nonatomic) double p0;
-@property (nonatomic) double pm;
-@property (nonatomic) double ps;
+@property (nonatomic) float p0;
+@property (nonatomic) float pm;
+@property (nonatomic) float ps;
 
 + (const struct MPSLibraryInfo { int x1; unsigned int x2; char *x3; struct MPSKernelInfo {} *x4; struct MPSKernelInfo {} *x5; struct MPSKernelInfo {} *x6; struct MPSKernelInfo {} *x7; struct MPSKernelInfo {} *x8; struct MPSKernelInfo {} *x9; struct MPSKernelInfo {} *x10; struct MPSKernelInfo {} *x11; struct MPSKernelInfo {} *x12; struct MPSKernelInfo {} *x13; struct MPSKernelInfo {} *x14; }*)libraryInfo;
 

@@ -13,7 +13,7 @@
 @property (nonatomic, readonly) double timestamp;
 @property (nonatomic, readonly) int type;
 
-- (struct CGPoint { double x1; double x2; })_digitizerLocation;
+- (struct CGPoint { float x1; float x2; })_digitizerLocation;
 - (unsigned int)_focusHeading;
 - (id)_gestureRecognizersForWindow:(id)arg1;
 - (struct __GSEvent { }*)_gsEvent;

@@ -6,7 +6,7 @@
 @required
 
 - (NSArray *)ccPeople;
-- (int)conversationID;
+- (long long)conversationID;
 - (NSDate *)dateSent;
 - (BOOL)isPriority;
 - (NSString *)listID;

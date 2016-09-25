@@ -23,7 +23,7 @@
 - (id)_allowsCellular;
 - (id)_backgroundTaskTimingData;
 - (id)_boundInterfaceIdentifier;
-- (int)_bytesPerSecondLimit;
+- (long long)_bytesPerSecondLimit;
 - (BOOL)_cacheOnly;
 - (int)_cachePolicy;
 - (id)_cfCache;
@@ -69,7 +69,7 @@
 - (struct __CFDictionary { }*)_sslSettings;
 - (id)_storagePartitionIdentifier;
 - (unsigned char)_strictContentLength;
-- (int)_suspensionThreshhold;
+- (long long)_suspensionThreshhold;
 - (void)_takePreventIdleSleepAssertionIfAppropriate;
 - (id)_timeWindowDelay;
 - (id)_timeWindowDuration;

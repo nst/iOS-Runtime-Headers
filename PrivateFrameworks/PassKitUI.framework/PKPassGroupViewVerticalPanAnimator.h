@@ -7,23 +7,23 @@
     PKPassGroupView * _groupView;
     _UIDynamicValueAnimation * _panningAnimation;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _panningViewStartPosition;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _panningViewTargetPosition;
-    double  _panningViewTargetScale;
+    float  _panningViewTargetScale;
     CASpringAnimation * _springAnimation;
     CAMediaTimingFunction * _timingFunction;
 }
 
 @property (nonatomic, retain) UIPanGestureRecognizer *gestureRecognizer;
 @property (nonatomic, readonly, retain) PKPassGroupView *groupView;
-@property (nonatomic) struct CGPoint { double x1; double x2; } panningViewStartPosition;
-@property (nonatomic) struct CGPoint { double x1; double x2; } panningViewTargetPosition;
-@property (nonatomic) double panningViewTargetScale;
+@property (nonatomic) struct CGPoint { float x1; float x2; } panningViewStartPosition;
+@property (nonatomic) struct CGPoint { float x1; float x2; } panningViewTargetPosition;
+@property (nonatomic) float panningViewTargetScale;
 
 - (void).cxx_destruct;
 - (id)_dynamicAnimationWithStart:(float)arg1 target:(float)arg2 initialVelocity:(float)arg3;
@@ -34,12 +34,12 @@
 - (id)init;
 - (id)initWithGroupView:(id)arg1;
 - (void)layoutViewsWithY:(float)arg1;
-- (struct CGPoint { double x1; double x2; })panningViewStartPosition;
-- (struct CGPoint { double x1; double x2; })panningViewTargetPosition;
+- (struct CGPoint { float x1; float x2; })panningViewStartPosition;
+- (struct CGPoint { float x1; float x2; })panningViewTargetPosition;
 - (float)panningViewTargetScale;
 - (void)setGestureRecognizer:(id)arg1;
-- (void)setPanningViewStartPosition:(struct CGPoint { double x1; double x2; })arg1;
-- (void)setPanningViewTargetPosition:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setPanningViewStartPosition:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setPanningViewTargetPosition:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setPanningViewTargetScale:(float)arg1;
 - (void)stop;
 

@@ -6,10 +6,10 @@
     BOOL  _hasTelephony;
     int  _lastPlayedSound;
     double  _lastTime;
-    double  _rateLimitedVolume;
+    float  _rateLimitedVolume;
     PSSpecifier * _voiceMailSpecifier;
     int  _voiceMailSpecifierIndex;
-    double  _volume;
+    float  _volume;
     BOOL  _volumeHUDSupressed;
 }
 

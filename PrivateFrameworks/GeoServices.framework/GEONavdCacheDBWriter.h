@@ -12,9 +12,9 @@
 - (void)_createCacheTable;
 - (void)_deleteAllRows;
 - (void)_deleteRowsWithRowIDs:(id)arg1;
-- (int)_insertWithKey:(id)arg1 value:(id)arg2;
+- (long long)_insertWithKey:(id)arg1 value:(id)arg2;
 - (void)_openIfNecessary;
-- (BOOL)_updateRowId:(int)arg1 withKey:(id)arg2 value:(id)arg3;
+- (BOOL)_updateRowId:(long long)arg1 withKey:(id)arg2 value:(id)arg3;
 - (void)dealloc;
 - (id)initWithPath:(id)arg1;
 - (void)performStatementPreparationTasks;

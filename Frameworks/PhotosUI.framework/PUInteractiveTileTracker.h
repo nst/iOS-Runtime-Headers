@@ -6,17 +6,17 @@
     int  __state;
     PUTileHider * __tileHider;
     struct PUDisplayVelocity { 
-        double x; 
-        double y; 
-        double scale; 
-        double rotation; 
+        float x; 
+        float y; 
+        float scale; 
+        float rotation; 
     }  _currentVelocity;
     <PUInteractiveTileTrackerDelegate> * _delegate;
     struct { 
         BOOL respondsToWillStartTrackingTileController; 
         BOOL respondsToDidStopTrackingTileController; 
     }  _delegateFlags;
-    double  _progress;
+    float  _progress;
     BOOL  _shouldEnd;
     BOOL  _shouldFinish;
     PUTilingView * _tilingView;
@@ -25,9 +25,9 @@
 
 @property (setter=_setState:, nonatomic) int _state;
 @property (setter=_setTileHider:, nonatomic, retain) PUTileHider *_tileHider;
-@property (nonatomic) struct PUDisplayVelocity { double x1; double x2; double x3; double x4; } currentVelocity;
+@property (nonatomic) struct PUDisplayVelocity { float x1; float x2; float x3; float x4; } currentVelocity;
 @property (nonatomic) <PUInteractiveTileTrackerDelegate> *delegate;
-@property (nonatomic) double progress;
+@property (nonatomic) float progress;
 @property (nonatomic) BOOL shouldEnd;
 @property (nonatomic) BOOL shouldFinish;
 @property (nonatomic, readonly) PUTilingView *tilingView;
@@ -42,12 +42,12 @@
 - (void)_updateTrackedTileController;
 - (void)completeTracking;
 - (void)configureTileReattachmentContext:(id)arg1;
-- (struct PUDisplayVelocity { double x1; double x2; double x3; double x4; })currentVelocity;
+- (struct PUDisplayVelocity { float x1; float x2; float x3; float x4; })currentVelocity;
 - (id)delegate;
 - (id)init;
 - (id)initWithTilingView:(id)arg1;
 - (float)progress;
-- (void)setCurrentVelocity:(struct PUDisplayVelocity { double x1; double x2; double x3; double x4; })arg1;
+- (void)setCurrentVelocity:(struct PUDisplayVelocity { float x1; float x2; float x3; float x4; })arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setProgress:(float)arg1;
 - (void)setShouldEnd:(BOOL)arg1;

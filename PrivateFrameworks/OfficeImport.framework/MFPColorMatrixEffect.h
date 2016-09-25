@@ -3,7 +3,7 @@
  */
 
 @interface MFPColorMatrixEffect : MFPEffect {
-    double  mColorMatrix;
+    float  mColorMatrix;
 }
 
 + (id)GUID;

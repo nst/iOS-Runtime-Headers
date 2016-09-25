@@ -38,6 +38,6 @@
 - (void)setDurationInherited:(BOOL)arg1;
 - (id)transitionCoordinator;
 - (double)transitionDuration:(id)arg1;
-- (void)viewOfChildContainer:(id)arg1 willChangeToSize:(struct CGSize { double x1; double x2; })arg2;
+- (void)viewOfChildContainer:(id)arg1 willChangeToSize:(struct CGSize { float x1; float x2; })arg2;
 
 @end

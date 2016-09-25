@@ -4,7 +4,7 @@
 
 @interface NSParagraphArbitrator : NSObject {
     NSAttributedString * _attributedString;
-    double  _hyphenationFactor;
+    float  _hyphenationFactor;
     unsigned int  _lineBreakStrategy;
     id /* block */  _lineWidth;
     struct _NSRange { 
@@ -16,7 +16,7 @@
 }
 
 @property (retain) NSAttributedString *attributedString;
-@property double hyphenationFactor;
+@property float hyphenationFactor;
 @property unsigned int lineBreakStrategy;
 @property (copy) id /* block */ lineWidth;
 @property struct _NSRange { unsigned int x1; unsigned int x2; } paragraphRange;

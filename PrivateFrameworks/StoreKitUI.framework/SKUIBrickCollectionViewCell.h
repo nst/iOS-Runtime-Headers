@@ -8,10 +8,10 @@
     SKUICountdownView * _countdownView;
     BOOL  _itemImageHidden;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _itemImageInsets;
     UIImageView * _itemImageView;
     UIImageView * _overlayImageView;
@@ -24,7 +24,7 @@
 @property (nonatomic, retain) SKUICountdown *countdown;
 @property (nonatomic, retain) UIImage *itemImage;
 @property (getter=isItemImageHidden, nonatomic) BOOL itemImageHidden;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } itemImageInsets;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } itemImageInsets;
 @property (nonatomic, readonly) UIView *itemImageView;
 @property (nonatomic, copy) NSString *title;
 
@@ -36,7 +36,7 @@
 - (id)countdown;
 - (BOOL)isItemImageHidden;
 - (id)itemImage;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })itemImageInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })itemImageInsets;
 - (id)itemImageView;
 - (void)layoutSubviews;
 - (void)setAccessibilityLabel:(id)arg1;
@@ -47,7 +47,7 @@
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setItemImage:(id)arg1;
 - (void)setItemImageHidden:(BOOL)arg1;
-- (void)setItemImageInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setItemImageInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setSelected:(BOOL)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;

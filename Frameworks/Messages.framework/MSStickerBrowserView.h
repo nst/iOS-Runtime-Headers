@@ -6,8 +6,8 @@
     BOOL  _animating;
     NSTimer * _animationTimer;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _browserSizeToRestoreFrom;
     NSMutableArray * _cellsToAnimate;
     UICollectionView * _collectionView;
@@ -18,19 +18,19 @@
     BOOL  _isRestoringContentOffset;
     MSStickerBrowserViewLayoutSpec * _layoutSpec;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _restoredContentOffset;
     int  _stickerSize;
 }
 
 @property (getter=isAnimating, nonatomic) BOOL animating;
 @property (nonatomic, retain) NSTimer *animationTimer;
-@property (nonatomic) struct CGSize { double x1; double x2; } browserSizeToRestoreFrom;
+@property (nonatomic) struct CGSize { float x1; float x2; } browserSizeToRestoreFrom;
 @property (nonatomic, retain) NSMutableArray *cellsToAnimate;
 @property (nonatomic, retain) UICollectionView *collectionView;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInset;
-@property (nonatomic) struct CGPoint { double x1; double x2; } contentOffset;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
+@property (nonatomic) struct CGPoint { float x1; float x2; } contentOffset;
 @property (nonatomic) unsigned int currentlyAnimatingIndex;
 @property (nonatomic) <MSStickerBrowserViewDataSource> *dataSource;
 @property (readonly, copy) NSString *debugDescription;
@@ -40,7 +40,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL isRestoringContentOffset;
 @property (nonatomic, retain) MSStickerBrowserViewLayoutSpec *layoutSpec;
-@property (nonatomic) struct CGPoint { double x1; double x2; } restoredContentOffset;
+@property (nonatomic) struct CGPoint { float x1; float x2; } restoredContentOffset;
 @property (nonatomic, readonly) NSDictionary *stateRestorationInfo;
 @property (nonatomic, readonly) int stickerSize;
 @property (nonatomic, readonly) int stickerSizeClass;
@@ -53,7 +53,7 @@
 - (void)_updateCollectionViewSpecIfNeeded;
 - (void)animateNextCell;
 - (id)animationTimer;
-- (struct CGSize { double x1; double x2; })browserSizeToRestoreFrom;
+- (struct CGSize { float x1; float x2; })browserSizeToRestoreFrom;
 - (id)cellsToAnimate;
 - (id)collectionView;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
@@ -61,18 +61,18 @@
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
 - (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (void)configureStickerView;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInset;
-- (struct CGPoint { double x1; double x2; })contentOffset;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInset;
+- (struct CGPoint { float x1; float x2; })contentOffset;
 - (unsigned int)currentlyAnimatingIndex;
 - (id)dataSource;
 - (void)dealloc;
 - (id)displayDelegate;
 - (id)flowLayout;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 layout:(int)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 stickerSize:(int)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 stickerSizeClass:(int)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 layout:(int)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 stickerSize:(int)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 stickerSizeClass:(int)arg2;
 - (void)invalidateFlowLayout;
 - (BOOL)isAnimating;
 - (BOOL)isRestoringContentOffset;
@@ -82,22 +82,22 @@
 - (void)prepareForSnapshotting;
 - (void)reloadData;
 - (void)restoreFromState:(id)arg1;
-- (struct CGPoint { double x1; double x2; })restoredContentOffset;
+- (struct CGPoint { float x1; float x2; })restoredContentOffset;
 - (void)setAnimating:(BOOL)arg1;
 - (void)setAnimationTimer:(id)arg1;
-- (void)setBrowserSizeToRestoreFrom:(struct CGSize { double x1; double x2; })arg1;
+- (void)setBrowserSizeToRestoreFrom:(struct CGSize { float x1; float x2; })arg1;
 - (void)setCellsToAnimate:(id)arg1;
 - (void)setCollectionView:(id)arg1;
-- (void)setContentInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
-- (void)setContentOffset:(struct CGPoint { double x1; double x2; })arg1;
-- (void)setContentOffset:(struct CGPoint { double x1; double x2; })arg1 animated:(BOOL)arg2;
+- (void)setContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1 animated:(BOOL)arg2;
 - (void)setCurrentlyAnimatingIndex:(unsigned int)arg1;
 - (void)setDataSource:(id)arg1;
 - (void)setDisplayDelegate:(id)arg1;
 - (void)setFlowLayout:(id)arg1;
 - (void)setIsRestoringContentOffset:(BOOL)arg1;
 - (void)setLayoutSpec:(id)arg1;
-- (void)setRestoredContentOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setRestoredContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setUserInteractionEnabled:(BOOL)arg1;
 - (id)stateRestorationInfo;
 - (int)stickerSize;

@@ -14,7 +14,7 @@
 - (UIView *)customBackgroundViewForNotificationViewController:(NCNotificationViewController *)arg1;
 - (void)longLookWillDismissForNotificationViewController:(NCNotificationViewController *)arg1;
 - (void)longLookWillPresentForNotificationViewController:(NCNotificationViewController *)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })notificationViewController:(NCNotificationViewController *)arg1 convertRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 toLocalWindowSpaceFromView:(UIView *)arg3;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })notificationViewController:(NCNotificationViewController *)arg1 convertRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 toLocalWindowSpaceFromView:(UIView *)arg3;
 - (void)notificationViewController:(NCNotificationViewController *)arg1 didCommitToLongLookPresentation:(BOOL)arg2 withCoordinator:(id <UIViewControllerTransitionCoordinator>)arg3;
 - (void)notificationViewController:(NCNotificationViewController *)arg1 didCommitToShortLookPresentation:(BOOL)arg2 withCoordinator:(id <UIViewControllerTransitionCoordinator>)arg3;
 - (void)notificationViewController:(NCNotificationViewController *)arg1 didDismissLongLook:(BOOL)arg2;
@@ -31,7 +31,7 @@
 - (BOOL)notificationViewControllerShouldInterpretTapAsDefaultAction:(NCNotificationViewController *)arg1;
 - (BOOL)notificationViewControllerShouldPan:(NCNotificationViewController *)arg1;
 - (void)notificationViewControllerWillBeginUserInteraction:(NCNotificationViewController *)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })presentationFrameForNotificationViewController:(NCNotificationViewController *)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })presentationFrameForNotificationViewController:(NCNotificationViewController *)arg1;
 - (BOOL)shouldAddHintTextForNotificationViewController:(NCNotificationViewController *)arg1;
 - (BOOL)shouldLoadAudioAccessoryViewForNotificationViewController:(NCNotificationViewController *)arg1;
 - (BOOL)showAdditionalMessageLinesForNotificationViewController:(NCNotificationViewController *)arg1;

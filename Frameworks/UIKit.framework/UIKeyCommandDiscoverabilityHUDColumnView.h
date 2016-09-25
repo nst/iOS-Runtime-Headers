@@ -8,7 +8,7 @@
     <UIKeyCommandDiscoverabilityHUDColumnViewDelegate> * _delegate;
     UILayoutGuide * _descriptionColumnLayoutGuide;
     NSArray * _descriptionViews;
-    double  _fontScaleFactor;
+    float  _fontScaleFactor;
     UILayoutGuide * _inputStringColumnLayoutGuide;
     NSArray * _inputStringViews;
     NSArray * _modifierViews;
@@ -16,7 +16,7 @@
     UIKeyCommandDiscoverabilityHUDVisualStyle * _visualStyle;
 }
 
-@property (nonatomic) double fontScaleFactor;
+@property (nonatomic) float fontScaleFactor;
 
 - (void).cxx_destruct;
 - (float)fontScaleFactor;

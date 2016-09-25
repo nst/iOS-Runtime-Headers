@@ -172,7 +172,7 @@
 - (BOOL)didAddNotificationCenterObservers;
 - (void)didChangeNoteText;
 - (void)faultLiveTextStorageIfNecessary;
-- (void)fetchThumbnailImageWithMinSize:(struct CGSize { double x1; double x2; })arg1 scale:(float)arg2 cache:(id)arg3 cacheKey:(id)arg4 processingBlock:(id /* block */)arg5 completionBlock:(id /* block */)arg6;
+- (void)fetchThumbnailImageWithMinSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2 cache:(id)arg3 cacheKey:(id)arg4 processingBlock:(id /* block */)arg5 completionBlock:(id /* block */)arg6;
 - (void)filterAttachmentsInTextStorage:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)fixBrokenReferences;
 - (id)folder;
@@ -300,7 +300,7 @@
 - (void)textViewDidEndSelectionChange:(id)arg1;
 - (void)textViewDidUnmarkText:(id)arg1;
 - (BOOL)textViewNotificationCenterCounter;
-- (struct UIImage { Class x1; }*)thumbnailImageWithMinSize:(struct CGSize { double x1; double x2; })arg1 scale:(float)arg2 imageScaling:(unsigned int*)arg3 showAsFileIcon:(BOOL*)arg4 isMovie:(BOOL*)arg5 movieDuration:(struct { int x1; int x2; unsigned int x3; int x4; }*)arg6;
+- (struct UIImage { Class x1; }*)thumbnailImageWithMinSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2 imageScaling:(unsigned int*)arg3 showAsFileIcon:(BOOL*)arg4 isMovie:(BOOL*)arg5 movieDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg6;
 - (id)trimmedTitle;
 - (void)unmarkForDeletion;
 - (void)unmarkTextIfNecessary;

@@ -18,7 +18,7 @@
     NSString * _feedUrlString;
     BOOL  _hasInAppPurchases;
     BOOL  _hasMessagesExtension;
-    int  _itemIdentifier;
+    long long  _itemIdentifier;
     int  _itemKind;
     NSString * _itemKindString;
     SKUIItemOffer * _itemOffer;
@@ -34,8 +34,8 @@
     NSArray * _requiredCapabilities;
     SKUIStoreIdentifier * _storeIdentifier;
     NSString * _title;
-    double  _userRating;
-    int  _versionIdentifier;
+    float  _userRating;
+    long long  _versionIdentifier;
     NSString * _versionString;
     NSArray * _videos;
 }
@@ -57,7 +57,7 @@
 @property (nonatomic, readonly) BOOL hasInAppPurchases;
 @property (nonatomic, readonly) BOOL hasMessagesExtension;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly) int itemIdentifier;
+@property (nonatomic, readonly) long long itemIdentifier;
 @property (nonatomic, readonly) int itemKind;
 @property (nonatomic, readonly) NSString *itemKindString;
 @property (nonatomic, readonly) NSURL *largestArtworkURL;
@@ -76,8 +76,8 @@
 @property (nonatomic, copy) SKUIStoreIdentifier *storeIdentifier;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSString *title;
-@property (nonatomic, readonly) double userRating;
-@property (nonatomic, readonly) int versionIdentifier;
+@property (nonatomic, readonly) float userRating;
+@property (nonatomic, readonly) long long versionIdentifier;
 @property (nonatomic, readonly) NSString *versionString;
 @property (nonatomic, readonly) NSArray *videos;
 
@@ -107,7 +107,7 @@
 - (id)initWithLookupDictionary:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isNewsstandApp;
-- (int)itemIdentifier;
+- (long long)itemIdentifier;
 - (int)itemKind;
 - (id)itemKindString;
 - (id)largestArtworkURL;
@@ -122,7 +122,7 @@
 - (id)primaryItemOffer;
 - (id)productPageURLString;
 - (id)requiredCapabilities;
-- (void)setItemIdentifier:(int)arg1;
+- (void)setItemIdentifier:(long long)arg1;
 - (void)setItemKind:(int)arg1;
 - (void)setStoreIdentifier:(id)arg1;
 - (void)setTitle:(id)arg1;
@@ -130,7 +130,7 @@
 - (id)title;
 - (float)userRating;
 - (id)valueForMetricsField:(id)arg1;
-- (int)versionIdentifier;
+- (long long)versionIdentifier;
 - (id)versionString;
 - (id)videos;
 

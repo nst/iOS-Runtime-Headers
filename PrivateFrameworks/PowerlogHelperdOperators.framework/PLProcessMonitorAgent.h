@@ -22,7 +22,7 @@
 @property (retain) NSDate *previousCacheDate;
 @property (retain) NSMutableSet *processes;
 
-+ (unsigned int)PIDToCoalitionID:(int)arg1;
++ (unsigned long long)PIDToCoalitionID:(int)arg1;
 + (id)defaults;
 + (id)entryEventBackwardDefinitionProcessMonitor;
 + (id)entryEventBackwardDefinitions;

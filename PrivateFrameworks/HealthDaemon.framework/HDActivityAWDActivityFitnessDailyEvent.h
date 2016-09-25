@@ -9,14 +9,14 @@
         unsigned int moveRingCompletionPercentage : 1; 
         unsigned int timestamp : 1; 
     }  _has;
-    int  _monthsSinceFirstWatchUsage;
-    int  _moveRingCompletionPercentage;
+    long long  _monthsSinceFirstWatchUsage;
+    long long  _moveRingCompletionPercentage;
     struct { 
-        int *list; 
+        long long *list; 
         unsigned int count; 
         unsigned int size; 
     }  _standEventMinutesSinceMidnightRoundedTo10s;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
     NSString * _userToken;
 }
 
@@ -25,18 +25,18 @@
 @property (nonatomic) BOOL hasMoveRingCompletionPercentage;
 @property (nonatomic) BOOL hasTimestamp;
 @property (nonatomic, readonly) BOOL hasUserToken;
-@property (nonatomic) int monthsSinceFirstWatchUsage;
-@property (nonatomic) int moveRingCompletionPercentage;
-@property (nonatomic, readonly) int*standEventMinutesSinceMidnightRoundedTo10s;
+@property (nonatomic) long long monthsSinceFirstWatchUsage;
+@property (nonatomic) long long moveRingCompletionPercentage;
+@property (nonatomic, readonly) long long*standEventMinutesSinceMidnightRoundedTo10s;
 @property (nonatomic, readonly) unsigned int standEventMinutesSinceMidnightRoundedTo10sCount;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 @property (nonatomic, retain) NSString *userToken;
 
 + (Class)exerciseMinuteHoursType;
 
 - (void).cxx_destruct;
 - (void)addExerciseMinuteHours:(id)arg1;
-- (void)addStandEventMinutesSinceMidnightRoundedTo10:(int)arg1;
+- (void)addStandEventMinutesSinceMidnightRoundedTo10:(long long)arg1;
 - (void)clearExerciseMinuteHours;
 - (void)clearStandEventMinutesSinceMidnightRoundedTo10s;
 - (void)copyTo:(id)arg1;
@@ -54,22 +54,22 @@
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (int)monthsSinceFirstWatchUsage;
-- (int)moveRingCompletionPercentage;
+- (long long)monthsSinceFirstWatchUsage;
+- (long long)moveRingCompletionPercentage;
 - (BOOL)readFrom:(id)arg1;
 - (void)setExerciseMinuteHours:(id)arg1;
 - (void)setHasMonthsSinceFirstWatchUsage:(BOOL)arg1;
 - (void)setHasMoveRingCompletionPercentage:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
-- (void)setMonthsSinceFirstWatchUsage:(int)arg1;
-- (void)setMoveRingCompletionPercentage:(int)arg1;
-- (void)setStandEventMinutesSinceMidnightRoundedTo10s:(int*)arg1 count:(unsigned int)arg2;
-- (void)setTimestamp:(unsigned int)arg1;
+- (void)setMonthsSinceFirstWatchUsage:(long long)arg1;
+- (void)setMoveRingCompletionPercentage:(long long)arg1;
+- (void)setStandEventMinutesSinceMidnightRoundedTo10s:(long long*)arg1 count:(unsigned int)arg2;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (void)setUserToken:(id)arg1;
-- (int)standEventMinutesSinceMidnightRoundedTo10AtIndex:(unsigned int)arg1;
-- (int*)standEventMinutesSinceMidnightRoundedTo10s;
+- (long long)standEventMinutesSinceMidnightRoundedTo10AtIndex:(unsigned int)arg1;
+- (long long*)standEventMinutesSinceMidnightRoundedTo10s;
 - (unsigned int)standEventMinutesSinceMidnightRoundedTo10sCount;
-- (unsigned int)timestamp;
+- (unsigned long long)timestamp;
 - (id)userToken;
 - (void)writeTo:(id)arg1;
 

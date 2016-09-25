@@ -5,7 +5,7 @@
 @interface NSStackInContainerRelationship : NSObject <NSLayoutRelationship> {
     NSLayoutRect * _containingRect;
     int  _orientation;
-    double  _spacing;
+    float  _spacing;
     NSArray * _stackedRects;
 }
 
@@ -16,7 +16,7 @@
 @property (readonly, copy) NSString *identifier;
 @property (readonly) int orientation;
 @property (readonly, copy) NSString *relationshipDescription;
-@property (readonly) double spacing;
+@property (readonly) float spacing;
 @property (readonly, copy) NSArray *stackedRects;
 @property (readonly) Class superclass;
 

@@ -6,24 +6,24 @@
     <HUPieProgressViewDelegate> * _delegate;
     BOOL  _hidesWhenStopped;
     double  _indeterminateExpectedDuration;
-    double  _indeterminateMaxProgress;
+    float  _indeterminateMaxProgress;
     BOOL  _isAnimating;
     CAShapeLayer * _outlineLayer;
     CAShapeLayer * _progressLayer;
-    double  _progressLineWidth;
+    float  _progressLineWidth;
     int  _style;
 }
 
 @property (nonatomic) <HUPieProgressViewDelegate> *delegate;
 @property (nonatomic) BOOL hidesWhenStopped;
 @property (nonatomic) double indeterminateExpectedDuration;
-@property (nonatomic) double indeterminateMaxProgress;
+@property (nonatomic) float indeterminateMaxProgress;
 @property (nonatomic) BOOL isAnimating;
 @property (nonatomic, retain) CAShapeLayer *outlineLayer;
-@property (nonatomic) double outlineLineWidth;
-@property (nonatomic) double progress;
+@property (nonatomic) float outlineLineWidth;
+@property (nonatomic) float progress;
 @property (nonatomic, retain) CAShapeLayer *progressLayer;
-@property (nonatomic) double progressLineWidth;
+@property (nonatomic) float progressLineWidth;
 @property (nonatomic) int style;
 
 - (void).cxx_destruct;
@@ -39,8 +39,8 @@
 - (double)indeterminateExpectedDuration;
 - (float)indeterminateMaxProgress;
 - (id)init;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 style:(int)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
 - (id)initWithStyle:(int)arg1;
 - (BOOL)isAnimating;
 - (void)layoutSubviews;

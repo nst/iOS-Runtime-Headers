@@ -5,7 +5,7 @@
 @interface PKProtobufPaymentMerchantSession : PBCodable <NSCopying> {
     NSString * _displayName;
     NSString * _domain;
-    unsigned int  _epochTimestamp;
+    unsigned long long  _epochTimestamp;
     struct { 
         unsigned int epochTimestamp : 1; 
     }  _has;
@@ -17,7 +17,7 @@
 
 @property (nonatomic, retain) NSString *displayName;
 @property (nonatomic, retain) NSString *domain;
-@property (nonatomic) unsigned int epochTimestamp;
+@property (nonatomic) unsigned long long epochTimestamp;
 @property (nonatomic, readonly) BOOL hasDisplayName;
 @property (nonatomic, readonly) BOOL hasDomain;
 @property (nonatomic) BOOL hasEpochTimestamp;
@@ -37,7 +37,7 @@
 - (id)dictionaryRepresentation;
 - (id)displayName;
 - (id)domain;
-- (unsigned int)epochTimestamp;
+- (unsigned long long)epochTimestamp;
 - (BOOL)hasDisplayName;
 - (BOOL)hasDomain;
 - (BOOL)hasEpochTimestamp;
@@ -54,7 +54,7 @@
 - (id)sessionIdentifier;
 - (void)setDisplayName:(id)arg1;
 - (void)setDomain:(id)arg1;
-- (void)setEpochTimestamp:(unsigned int)arg1;
+- (void)setEpochTimestamp:(unsigned long long)arg1;
 - (void)setHasEpochTimestamp:(BOOL)arg1;
 - (void)setMerchantIdentifier:(id)arg1;
 - (void)setNonce:(id)arg1;

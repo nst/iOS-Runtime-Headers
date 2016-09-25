@@ -11,7 +11,7 @@
     struct sqlite3 { } * _db;
     NSString * _dbPath;
     NSString * _dbPathRegisteredWithBackupd;
-    unsigned int  _debugInode;
+    unsigned long long  _debugInode;
     int  _debugLogLevel;
     void * _extraBuffersForRegisteredFunctions;
     struct sqlite3_stmt { } * _fetchPKStatement;
@@ -44,7 +44,7 @@
     BOOL  _transactionIsOpen;
     struct sqlite3_stmt { } * _updatePKStatement;
     BOOL  _useSyntaxColoredLogging;
-    int  _vacuumTracker;
+    long long  _vacuumTracker;
     NSMutableSet * _vmCachedStatements;
     struct sqlite3_stmt { } * _vmstatement;
     NSURL * _workingURL;
@@ -89,10 +89,10 @@
 - (void)_ensureNoTransactionOpen;
 - (void)_ensureWalFileExists;
 - (void)_executeSQLString:(id)arg1;
-- (int)_fetchMaxPrimaryKeyForEntity:(id)arg1;
+- (long long)_fetchMaxPrimaryKeyForEntity:(id)arg1;
 - (void)_finalizeStatement;
 - (void)_forceDisconnectOnError;
-- (int)_getCurrentAutoVacuumValue;
+- (long long)_getCurrentAutoVacuumValue;
 - (BOOL)_hasTableWithName:(id)arg1;
 - (id)_newValueForColumn:(id)arg1 atIndex:(unsigned int)arg2 inStatement:(struct sqlite3_stmt { }*)arg3;
 - (void)_performPostSaveTasks;
@@ -146,10 +146,10 @@
 - (void)endFetchAndRecycleStatement:(BOOL)arg1;
 - (void)execute;
 - (id)executeAttributeUniquenessCheckSQLStatement:(id)arg1 returningColumns:(id)arg2;
-- (void)executeCorrelationChangesForValue1:(unsigned int)arg1 value2:(unsigned int)arg2 value3:(unsigned int)arg3 value4:(unsigned int)arg4;
+- (void)executeCorrelationChangesForValue1:(unsigned long long)arg1 value2:(unsigned long long)arg2 value3:(unsigned long long)arg3 value4:(unsigned long long)arg4;
 - (id)executeMulticolumnUniquenessCheckSQLStatement:(id)arg1 returningColumns:(id)arg2;
 - (id)fetchCachedModel;
-- (int)fetchMaxPrimaryKeyForEntity:(id)arg1;
+- (long long)fetchMaxPrimaryKeyForEntity:(id)arg1;
 - (id)fetchMetadata;
 - (int)fetchResultSet:(void*)arg1 usingFetchPlan:(id)arg2;
 - (id)fetchTableCreationSQL;
@@ -157,7 +157,7 @@
 - (id)fetchUbiquityKnowledgeVector;
 - (void)forceTransactionClosed;
 - (void)freeQueryGenerationIdentifier:(id)arg1;
-- (int)generatePrimaryKeysForEntity:(id)arg1 batch:(unsigned int)arg2;
+- (long long)generatePrimaryKeysForEntity:(id)arg1 batch:(unsigned int)arg2;
 - (void)handleCorruptedDB:(id)arg1;
 - (BOOL)hasCachedModelTable;
 - (BOOL)hasMetadataTable;
@@ -199,7 +199,7 @@
 - (void)transactionDidBegin;
 - (void)transactionDidCommit;
 - (void)transactionDidRollback;
-- (void)triggerUpdatedRowInTable:(id)arg1 withEntityID:(int)arg2 primaryKey:(int)arg3 columnName:(id)arg4 newValue:(int)arg5;
+- (void)triggerUpdatedRowInTable:(id)arg1 withEntityID:(long long)arg2 primaryKey:(long long)arg3 columnName:(id)arg4 newValue:(long long)arg5;
 - (id)ubiquityTableKeysAndValues;
 - (id)ubiquityTableValueForKey:(id)arg1;
 - (void)uncacheVMStatement:(id)arg1;

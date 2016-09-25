@@ -6,8 +6,8 @@
     NSMutableDictionary * _attributes;
     unsigned long  _audioCodec;
     struct OpaqueAudioFileID { } * _audioFile;
-    struct AudioQueueLevelMeterState { double x1; double x2; } * _audioLevels;
-    struct AudioQueueLevelMeterState { double x1; double x2; } * _audioLevelsDB;
+    struct AudioQueueLevelMeterState { float x1; float x2; } * _audioLevels;
+    struct AudioQueueLevelMeterState { float x1; float x2; } * _audioLevelsDB;
     struct OpaqueAudioQueue { } * _audioQueue;
     BOOL  _bufferUsed;
     struct AudioQueueBuffer {} * _buffers;
@@ -16,7 +16,7 @@
     BOOL  _isActive;
     BOOL  _isRecording;
     BOOL  _isWriting;
-    int  _maxPCMFramesToRecord;
+    long long  _maxPCMFramesToRecord;
     unsigned long  _numDeviceChannels;
     struct AudioStreamBasicDescription { 
         double mSampleRate; 
@@ -45,19 +45,19 @@
 - (BOOL)audioCurrentAverageVolumeLevels:(float*)arg1 andPeakVolumeLevels:(float*)arg2;
 - (BOOL)audioCurrentAverageVolumeLevels:(float*)arg1 andPeakVolumeLevels:(float*)arg2 useDB:(BOOL)arg3;
 - (unsigned int)audioNumDeviceChannels;
-- (BOOL)autoFocusAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (BOOL)autoFocusAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)copyEncoderCookieToFile;
 - (void)deactivate;
 - (void)dealloc;
 - (id)filePath;
-- (void)haveABuffer:(struct AudioQueueBuffer { unsigned int x1; void *x2; unsigned int x3; void *x4; unsigned int x5; struct AudioStreamPacketDescription {} *x6; unsigned int x7; }*)arg1 withTimeStamp:(const struct AudioTimeStamp { double x1; unsigned int x2; double x3; unsigned int x4; struct SMPTETime { short x_5_1_1; short x_5_1_2; unsigned int x_5_1_3; unsigned long x_5_1_4; unsigned long x_5_1_5; short x_5_1_6; short x_5_1_7; short x_5_1_8; short x_5_1_9; } x5; unsigned long x6; unsigned int x7; }*)arg2 andNumPackets:(unsigned long)arg3 andPacketDescs:(const struct AudioStreamPacketDescription { int x1; unsigned int x2; unsigned int x3; }*)arg4;
+- (void)haveABuffer:(struct AudioQueueBuffer { unsigned int x1; void *x2; unsigned int x3; void *x4; unsigned int x5; struct AudioStreamPacketDescription {} *x6; unsigned int x7; }*)arg1 withTimeStamp:(const struct AudioTimeStamp { double x1; unsigned long long x2; double x3; unsigned long long x4; struct SMPTETime { short x_5_1_1; short x_5_1_2; unsigned int x_5_1_3; unsigned long x_5_1_4; unsigned long x_5_1_5; short x_5_1_6; short x_5_1_7; short x_5_1_8; short x_5_1_9; } x5; unsigned long x6; unsigned int x7; }*)arg2 andNumPackets:(unsigned long)arg3 andPacketDescs:(const struct AudioStreamPacketDescription { long long x1; unsigned int x2; unsigned int x3; }*)arg4;
 - (id)init;
 - (id)initWithAttributes:(id)arg1;
 - (BOOL)isActive;
 - (BOOL)isRecording;
 - (float)micVolume;
 - (double)recordedDuration;
-- (int)recordedFileSizeInBytes;
+- (long long)recordedFileSizeInBytes;
 - (void)setAttribute:(id)arg1 forKey:(id)arg2;
 - (void)setFilePath:(id)arg1;
 - (void)setMicVolume:(float)arg1;

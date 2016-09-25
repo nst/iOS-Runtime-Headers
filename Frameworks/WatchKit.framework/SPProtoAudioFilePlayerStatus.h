@@ -3,7 +3,7 @@
  */
 
 @interface SPProtoAudioFilePlayerStatus : PBCodable <NSCopying> {
-    int  _errorCode;
+    long long  _errorCode;
     NSData * _errorDict;
     NSString * _errorDomain;
     struct { 
@@ -14,7 +14,7 @@
     int  _status;
 }
 
-@property (nonatomic) int errorCode;
+@property (nonatomic) long long errorCode;
 @property (nonatomic, retain) NSData *errorDict;
 @property (nonatomic, retain) NSString *errorDomain;
 @property (nonatomic) BOOL hasErrorCode;
@@ -30,7 +30,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (int)errorCode;
+- (long long)errorCode;
 - (id)errorDict;
 - (id)errorDomain;
 - (BOOL)hasErrorCode;
@@ -43,7 +43,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (void)setErrorCode:(int)arg1;
+- (void)setErrorCode:(long long)arg1;
 - (void)setErrorDict:(id)arg1;
 - (void)setErrorDomain:(id)arg1;
 - (void)setHasErrorCode:(BOOL)arg1;

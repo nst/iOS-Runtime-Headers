@@ -5,26 +5,26 @@
 @interface ISHashError : NSObject <NSCopying> {
     NSString * _actualHashString;
     NSString * _expectedHashString;
-    int  _rangeEnd;
-    int  _rangeStart;
+    long long  _rangeEnd;
+    long long  _rangeStart;
 }
 
 @property (nonatomic, copy) NSString *actualHashString;
 @property (nonatomic, copy) NSString *expectedHashString;
 @property (nonatomic, readonly) NSString *hashFailureHeaderString;
-@property (nonatomic) int rangeEnd;
-@property (nonatomic) int rangeStart;
+@property (nonatomic) long long rangeEnd;
+@property (nonatomic) long long rangeStart;
 
 - (id)actualHashString;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)expectedHashString;
 - (id)hashFailureHeaderString;
-- (int)rangeEnd;
-- (int)rangeStart;
+- (long long)rangeEnd;
+- (long long)rangeStart;
 - (void)setActualHashString:(id)arg1;
 - (void)setExpectedHashString:(id)arg1;
-- (void)setRangeEnd:(int)arg1;
-- (void)setRangeStart:(int)arg1;
+- (void)setRangeEnd:(long long)arg1;
+- (void)setRangeStart:(long long)arg1;
 
 @end

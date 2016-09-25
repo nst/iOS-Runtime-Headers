@@ -4,24 +4,24 @@
 
 @interface FigCaptureRecordingSettings : NSObject <NSCopying, NSSecureCoding> {
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _maxDuration;
-    int  _maxFileSize;
-    int  _minFreeDiskSpaceLimit;
+    long long  _maxFileSize;
+    long long  _minFreeDiskSpaceLimit;
     NSString * _outputFileType;
     NSURL * _outputURL;
-    int  _settingsID;
+    long long  _settingsID;
 }
 
-@property (nonatomic) struct { int x1; int x2; unsigned int x3; int x4; } maxDuration;
-@property (nonatomic) int maxFileSize;
-@property (nonatomic) int minFreeDiskSpaceLimit;
+@property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } maxDuration;
+@property (nonatomic) long long maxFileSize;
+@property (nonatomic) long long minFreeDiskSpaceLimit;
 @property (nonatomic, copy) NSString *outputFileType;
 @property (nonatomic, copy) NSURL *outputURL;
-@property (nonatomic) int settingsID;
+@property (nonatomic) long long settingsID;
 
 + (BOOL)supportsSecureCoding;
 
@@ -30,17 +30,17 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (struct { int x1; int x2; unsigned int x3; int x4; })maxDuration;
-- (int)maxFileSize;
-- (int)minFreeDiskSpaceLimit;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })maxDuration;
+- (long long)maxFileSize;
+- (long long)minFreeDiskSpaceLimit;
 - (id)outputFileType;
 - (id)outputURL;
-- (void)setMaxDuration:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
-- (void)setMaxFileSize:(int)arg1;
-- (void)setMinFreeDiskSpaceLimit:(int)arg1;
+- (void)setMaxDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)setMaxFileSize:(long long)arg1;
+- (void)setMinFreeDiskSpaceLimit:(long long)arg1;
 - (void)setOutputFileType:(id)arg1;
 - (void)setOutputURL:(id)arg1;
-- (void)setSettingsID:(int)arg1;
-- (int)settingsID;
+- (void)setSettingsID:(long long)arg1;
+- (long long)settingsID;
 
 @end

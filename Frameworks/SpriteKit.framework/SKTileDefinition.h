@@ -4,7 +4,7 @@
 
 @interface SKTileDefinition : NSObject <NSCoding, NSCopying> {
     unsigned short  _currentFrameIndex;
-    double  _currentFrameTime;
+    float  _currentFrameTime;
     BOOL  _frameDidChange;
     double  _lastTargetTime;
     NSString * _name;
@@ -14,17 +14,17 @@
     SKTileGroupRule * _parentRule;
     unsigned int  _placementWeight;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _size;
     NSMutableArray * _textures;
-    double  _timePerFrame;
+    float  _timePerFrame;
     NSString * _uid;
     NSMutableDictionary * _userData;
 }
 
 @property (nonatomic) unsigned short currentFrameIndex;
-@property (nonatomic) double currentFrameTime;
+@property (nonatomic) float currentFrameTime;
 @property (nonatomic) BOOL flipHorizontally;
 @property (nonatomic) BOOL flipVertically;
 @property (nonatomic) BOOL frameDidChange;
@@ -35,17 +35,17 @@
 @property (nonatomic) SKTileGroupRule *parentRule;
 @property (nonatomic) unsigned int placementWeight;
 @property (nonatomic) unsigned int rotation;
-@property (nonatomic) struct CGSize { double x1; double x2; } size;
+@property (nonatomic) struct CGSize { float x1; float x2; } size;
 @property (nonatomic, copy) NSArray *textures;
-@property (nonatomic) double timePerFrame;
+@property (nonatomic) float timePerFrame;
 @property (nonatomic, retain) NSString *uid;
 @property (nonatomic, retain) NSMutableDictionary *userData;
 
 + (id)tileDefinitionWithTexture:(id)arg1;
-+ (id)tileDefinitionWithTexture:(id)arg1 normalTexture:(id)arg2 size:(struct CGSize { double x1; double x2; })arg3;
-+ (id)tileDefinitionWithTexture:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
-+ (id)tileDefinitionWithTextures:(id)arg1 normalTextures:(id)arg2 size:(struct CGSize { double x1; double x2; })arg3 timePerFrame:(float)arg4;
-+ (id)tileDefinitionWithTextures:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 timePerFrame:(float)arg3;
++ (id)tileDefinitionWithTexture:(id)arg1 normalTexture:(id)arg2 size:(struct CGSize { float x1; float x2; })arg3;
++ (id)tileDefinitionWithTexture:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
++ (id)tileDefinitionWithTextures:(id)arg1 normalTextures:(id)arg2 size:(struct CGSize { float x1; float x2; })arg3 timePerFrame:(float)arg4;
++ (id)tileDefinitionWithTextures:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 timePerFrame:(float)arg3;
 
 - (void).cxx_destruct;
 - (id)copy;
@@ -59,10 +59,10 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithTexture:(id)arg1;
-- (id)initWithTexture:(id)arg1 normalTexture:(id)arg2 size:(struct CGSize { double x1; double x2; })arg3;
-- (id)initWithTexture:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
-- (id)initWithTextures:(id)arg1 normalTextures:(id)arg2 size:(struct CGSize { double x1; double x2; })arg3 timePerFrame:(float)arg4;
-- (id)initWithTextures:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 timePerFrame:(float)arg3;
+- (id)initWithTexture:(id)arg1 normalTexture:(id)arg2 size:(struct CGSize { float x1; float x2; })arg3;
+- (id)initWithTexture:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
+- (id)initWithTextures:(id)arg1 normalTextures:(id)arg2 size:(struct CGSize { float x1; float x2; })arg3 timePerFrame:(float)arg4;
+- (id)initWithTextures:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 timePerFrame:(float)arg3;
 - (double)lastTargetTime;
 - (id)name;
 - (BOOL)nextFrameAffectsVertexBuffer;
@@ -72,8 +72,8 @@
 - (unsigned int)rotation;
 - (void)setCurrentFrameIndex:(unsigned short)arg1;
 - (void)setCurrentFrameTime:(float)arg1;
-- (void)setDataWithTexture:(id)arg1 normalTexture:(id)arg2 tileName:(id)arg3 size:(struct CGSize { double x1; double x2; })arg4;
-- (void)setDataWithTextures:(id)arg1 normalTextures:(id)arg2 timePerFrame:(float)arg3 tileName:(id)arg4 size:(struct CGSize { double x1; double x2; })arg5;
+- (void)setDataWithTexture:(id)arg1 normalTexture:(id)arg2 tileName:(id)arg3 size:(struct CGSize { float x1; float x2; })arg4;
+- (void)setDataWithTextures:(id)arg1 normalTextures:(id)arg2 timePerFrame:(float)arg3 tileName:(id)arg4 size:(struct CGSize { float x1; float x2; })arg5;
 - (void)setFlipHorizontally:(BOOL)arg1;
 - (void)setFlipVertically:(BOOL)arg1;
 - (void)setFrameDidChange:(BOOL)arg1;
@@ -84,12 +84,12 @@
 - (void)setParentRule:(id)arg1;
 - (void)setPlacementWeight:(unsigned int)arg1;
 - (void)setRotation:(unsigned int)arg1;
-- (void)setSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setTextures:(id)arg1;
 - (void)setTimePerFrame:(float)arg1;
 - (void)setUid:(id)arg1;
 - (void)setUserData:(id)arg1;
-- (struct CGSize { double x1; double x2; })size;
+- (struct CGSize { float x1; float x2; })size;
 - (id)textures;
 - (float)timePerFrame;
 - (id)uid;

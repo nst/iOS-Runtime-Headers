@@ -10,7 +10,7 @@
 
 - (id)initWithClientIdentifier:(id)arg1;
 - (id)initWithClientInterface:(id)arg1;
-- (BOOL)libraryContainsItemIdentifier:(unsigned int)arg1;
+- (BOOL)libraryContainsItemIdentifier:(unsigned long long)arg1;
 - (id)purchaseManager:(id)arg1 purchaseBatchForItems:(id)arg2;
 - (id)purchaseManager:(id)arg1 purchaseBatchForPurchases:(id)arg2;
 - (void)setShouldExitAfterPurchases:(BOOL)arg1;

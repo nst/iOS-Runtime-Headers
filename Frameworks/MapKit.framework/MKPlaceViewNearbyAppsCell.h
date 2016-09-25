@@ -10,8 +10,8 @@
     NSLayoutConstraint * _headerBaselineConstraint;
     UILabel * _headerLabel;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _iconSize;
     NSArray * _marginConstraints;
     NSArray * _storeItems;
@@ -27,7 +27,7 @@
 
 + (float)_headerBaselineOffsetFromTop;
 + (id)_headerLabelFont;
-+ (struct CGSize { double x1; double x2; })_iconSize;
++ (struct CGSize { float x1; float x2; })_iconSize;
 + (float)contentHeight;
 + (BOOL)requiresConstraintBasedLayout;
 + (id)reuseIdentifier;
@@ -35,7 +35,7 @@
 - (void).cxx_destruct;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
-- (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
+- (struct CGSize { float x1; float x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
 - (void)contentSizeDidChange;
 - (void)dealloc;
@@ -44,7 +44,7 @@
 - (void)layoutMarginsDidChange;
 - (id)marginConstraints;
 - (void)refreshMarginConstraints;
-- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { double x1; double x2; })arg2 targetContentOffset:(inout struct CGPoint { double x1; double x2; }*)arg3;
+- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { float x1; float x2; })arg2 targetContentOffset:(inout struct CGPoint { float x1; float x2; }*)arg3;
 - (void)setDelegate:(id)arg1;
 - (void)setMarginConstraints:(id)arg1;
 - (void)setStoreItems:(id)arg1;

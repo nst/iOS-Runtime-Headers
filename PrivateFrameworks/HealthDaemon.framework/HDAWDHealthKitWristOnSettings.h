@@ -4,12 +4,12 @@
 
 @interface HDAWDHealthKitWristOnSettings : PBCodable <NSCopying> {
     HDAWDHealthKitAchievementStatistics * _achievementStatistics;
-    int  _daysSinceFirstCalorieGoal;
+    long long  _daysSinceFirstCalorieGoal;
     BOOL  _enableAchievements;
     BOOL  _enableGoalCompletions;
     BOOL  _enableStandReminders;
     BOOL  _enableWeeklySummary;
-    int  _eventBusyTime;
+    long long  _eventBusyTime;
     HDAWDHealthKitConcurrentCalendarItem * _firstCalendarItemOfDay;
     struct { 
         unsigned int daysSinceFirstCalorieGoal : 1; 
@@ -24,21 +24,21 @@
         unsigned int enableWeeklySummary : 1; 
         unsigned int wellnessComplicationOnWatchFace : 1; 
     }  _has;
-    int  _numberOfEvents;
-    int  _progressUpdateFrequency;
-    int  _timeZoneOffset;
-    unsigned int  _timestamp;
+    long long  _numberOfEvents;
+    long long  _progressUpdateFrequency;
+    long long  _timeZoneOffset;
+    unsigned long long  _timestamp;
     HDAWDHealthKitUserCharacteristics * _userCharacteristics;
     BOOL  _wellnessComplicationOnWatchFace;
 }
 
 @property (nonatomic, retain) HDAWDHealthKitAchievementStatistics *achievementStatistics;
-@property (nonatomic) int daysSinceFirstCalorieGoal;
+@property (nonatomic) long long daysSinceFirstCalorieGoal;
 @property (nonatomic) BOOL enableAchievements;
 @property (nonatomic) BOOL enableGoalCompletions;
 @property (nonatomic) BOOL enableStandReminders;
 @property (nonatomic) BOOL enableWeeklySummary;
-@property (nonatomic) int eventBusyTime;
+@property (nonatomic) long long eventBusyTime;
 @property (nonatomic, retain) HDAWDHealthKitConcurrentCalendarItem *firstCalendarItemOfDay;
 @property (nonatomic, readonly) BOOL hasAchievementStatistics;
 @property (nonatomic) BOOL hasDaysSinceFirstCalorieGoal;
@@ -54,10 +54,10 @@
 @property (nonatomic) BOOL hasTimestamp;
 @property (nonatomic, readonly) BOOL hasUserCharacteristics;
 @property (nonatomic) BOOL hasWellnessComplicationOnWatchFace;
-@property (nonatomic) int numberOfEvents;
-@property (nonatomic) int progressUpdateFrequency;
-@property (nonatomic) int timeZoneOffset;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) long long numberOfEvents;
+@property (nonatomic) long long progressUpdateFrequency;
+@property (nonatomic) long long timeZoneOffset;
+@property (nonatomic) unsigned long long timestamp;
 @property (nonatomic, retain) HDAWDHealthKitUserCharacteristics *userCharacteristics;
 @property (nonatomic) BOOL wellnessComplicationOnWatchFace;
 
@@ -65,14 +65,14 @@
 - (id)achievementStatistics;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (int)daysSinceFirstCalorieGoal;
+- (long long)daysSinceFirstCalorieGoal;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)enableAchievements;
 - (BOOL)enableGoalCompletions;
 - (BOOL)enableStandReminders;
 - (BOOL)enableWeeklySummary;
-- (int)eventBusyTime;
+- (long long)eventBusyTime;
 - (id)firstCalendarItemOfDay;
 - (BOOL)hasAchievementStatistics;
 - (BOOL)hasDaysSinceFirstCalorieGoal;
@@ -91,16 +91,16 @@
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (int)numberOfEvents;
-- (int)progressUpdateFrequency;
+- (long long)numberOfEvents;
+- (long long)progressUpdateFrequency;
 - (BOOL)readFrom:(id)arg1;
 - (void)setAchievementStatistics:(id)arg1;
-- (void)setDaysSinceFirstCalorieGoal:(int)arg1;
+- (void)setDaysSinceFirstCalorieGoal:(long long)arg1;
 - (void)setEnableAchievements:(BOOL)arg1;
 - (void)setEnableGoalCompletions:(BOOL)arg1;
 - (void)setEnableStandReminders:(BOOL)arg1;
 - (void)setEnableWeeklySummary:(BOOL)arg1;
-- (void)setEventBusyTime:(int)arg1;
+- (void)setEventBusyTime:(long long)arg1;
 - (void)setFirstCalendarItemOfDay:(id)arg1;
 - (void)setHasDaysSinceFirstCalorieGoal:(BOOL)arg1;
 - (void)setHasEnableAchievements:(BOOL)arg1;
@@ -113,14 +113,14 @@
 - (void)setHasTimeZoneOffset:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
 - (void)setHasWellnessComplicationOnWatchFace:(BOOL)arg1;
-- (void)setNumberOfEvents:(int)arg1;
-- (void)setProgressUpdateFrequency:(int)arg1;
-- (void)setTimeZoneOffset:(int)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
+- (void)setNumberOfEvents:(long long)arg1;
+- (void)setProgressUpdateFrequency:(long long)arg1;
+- (void)setTimeZoneOffset:(long long)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (void)setUserCharacteristics:(id)arg1;
 - (void)setWellnessComplicationOnWatchFace:(BOOL)arg1;
-- (int)timeZoneOffset;
-- (unsigned int)timestamp;
+- (long long)timeZoneOffset;
+- (unsigned long long)timestamp;
 - (id)userCharacteristics;
 - (BOOL)wellnessComplicationOnWatchFace;
 - (void)writeTo:(id)arg1;

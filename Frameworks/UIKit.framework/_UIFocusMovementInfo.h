@@ -6,8 +6,8 @@
     unsigned int  _heading;
     BOOL  _isInitialMovement;
     struct CGVector { 
-        double dx; 
-        double dy; 
+        float dx; 
+        float dy; 
     }  _velocity;
 }
 
@@ -17,18 +17,18 @@
 @property (setter=_setHeading:, nonatomic) unsigned int heading;
 @property (getter=_isInitialMovement, setter=_setIsInitialMovement:, nonatomic) BOOL isInitialMovement;
 @property (readonly) Class superclass;
-@property (getter=_velocity, setter=_setVelocity:, nonatomic) struct CGVector { double x1; double x2; } velocity;
+@property (getter=_velocity, setter=_setVelocity:, nonatomic) struct CGVector { float x1; float x2; } velocity;
 
 + (id)_movementWithHeading:(unsigned int)arg1 isInitial:(BOOL)arg2;
-+ (id)_movementWithHeading:(unsigned int)arg1 velocity:(struct CGVector { double x1; double x2; })arg2 isInitial:(BOOL)arg3;
-+ (id)_movementWithVelocity:(struct CGVector { double x1; double x2; })arg1 isInitial:(BOOL)arg2;
++ (id)_movementWithHeading:(unsigned int)arg1 velocity:(struct CGVector { float x1; float x2; })arg2 isInitial:(BOOL)arg3;
++ (id)_movementWithVelocity:(struct CGVector { float x1; float x2; })arg1 isInitial:(BOOL)arg2;
 + (BOOL)supportsSecureCoding;
 
 - (BOOL)_isInitialMovement;
 - (void)_setHeading:(unsigned int)arg1;
 - (void)_setIsInitialMovement:(BOOL)arg1;
-- (void)_setVelocity:(struct CGVector { double x1; double x2; })arg1;
-- (struct CGVector { double x1; double x2; })_velocity;
+- (void)_setVelocity:(struct CGVector { float x1; float x2; })arg1;
+- (struct CGVector { float x1; float x2; })_velocity;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

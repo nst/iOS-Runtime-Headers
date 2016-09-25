@@ -4,7 +4,7 @@
 
 @interface SBFWallpaperView : UIView <SBFLegibilitySettingsProvider, _UISettingsKeyObserver> {
     NSTimer * _colorSampleTimer;
-    double  _contentScaleFactor;
+    float  _contentScaleFactor;
     UIView * _contentView;
     BOOL  _continuousColorSamplingEnabled;
     <SBFLegibilitySettingsProviderDelegate> * _delegate;
@@ -16,7 +16,7 @@
     _UILegibilitySettingsProvider * _legibilitySettingsProvider;
     int  _logicalContentOrientation;
     BOOL  _parallaxEnabled;
-    double  _parallaxFactor;
+    float  _parallaxFactor;
     SBFWallpaperParallaxSettings * _parallaxSettings;
     UIView * _parallaxView;
     BOOL  _rotating;
@@ -29,7 +29,7 @@
     NSString * _wallpaperName;
     SBFWallpaperSettings * _wallpaperSettings;
     BOOL  _wantsRasterization;
-    double  _zoomFactor;
+    float  _zoomFactor;
 }
 
 @property (nonatomic, retain) UIView *contentView;
@@ -44,7 +44,7 @@
 @property (nonatomic) int logicalContentOrientation;
 @property (nonatomic, readonly) BOOL needsImmediateLayoutBeforeRotation;
 @property (nonatomic) BOOL parallaxEnabled;
-@property (nonatomic) double parallaxFactor;
+@property (nonatomic) float parallaxFactor;
 @property (getter=isRotating, nonatomic) BOOL rotating;
 @property (nonatomic) BOOL sharesContentsAcrossVariants;
 @property (readonly) Class superclass;
@@ -55,7 +55,7 @@
 @property (nonatomic, readonly) UIImage *wallpaperImage;
 @property (nonatomic, copy) NSString *wallpaperName;
 @property (nonatomic, readonly) int wallpaperType;
-@property (nonatomic) double zoomFactor;
+@property (nonatomic) float zoomFactor;
 
 + (BOOL)_allowsParallax;
 + (BOOL)_allowsRasterization;
@@ -64,7 +64,7 @@
 - (void).cxx_destruct;
 - (void)_addParallax;
 - (void)_applyParallaxSettings;
-- (id)_averageColorInContentViewRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 smudgeRadius:(float)arg2;
+- (id)_averageColorInContentViewRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 smudgeRadius:(float)arg2;
 - (void)_beginDisallowRasterizationBlock;
 - (id)_blurReplacementImage;
 - (id)_blurredImage;
@@ -73,7 +73,7 @@
 - (void)_endDisallowRasterizationBlock;
 - (void)_handleVariantChange;
 - (void)_handleVisibilityChange;
-- (id)_imageForBackdropParameters:(struct { int x1; int x2; int x3; double x4; double x5; double x6; double x7; BOOL x8; })arg1 includeTint:(BOOL)arg2;
+- (id)_imageForBackdropParameters:(struct { int x1; int x2; int x3; float x4; float x5; float x6; float x7; BOOL x8; })arg1 includeTint:(BOOL)arg2;
 - (BOOL)_isVisible;
 - (void)_notifyBlursInvalidated;
 - (void)_notifyGeometryInvalidated;
@@ -88,25 +88,25 @@
 - (void)_updateParallaxSettings;
 - (void)_updateRasterizationState;
 - (void)_updateScaleFactor;
-- (id)averageColorInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withSmudgeRadius:(float)arg2;
+- (id)averageColorInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withSmudgeRadius:(float)arg2;
 - (id)blurredImage;
 - (float)contentScaleFactor;
 - (id)contentView;
 - (BOOL)continuousColorSamplingEnabled;
 - (float)contrast;
-- (float)contrastInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (float)contrastInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 contrastWithinBoxes:(float*)arg2 contrastBetweenBoxes:(float*)arg3;
+- (float)contrastInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (float)contrastInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 contrastWithinBoxes:(float*)arg2 contrastBetweenBoxes:(float*)arg3;
 - (BOOL)contrastRequiresGradient;
 - (BOOL)contrastRequiresTreatments;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })cropRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })cropRect;
 - (float)cropZoomScale;
 - (void)dealloc;
 - (id)delegate;
 - (void)didMoveToWindow;
 - (BOOL)hasContentOutsideVisibleBounds;
-- (id)imageForBackdropParameters:(struct { int x1; int x2; int x3; double x4; double x5; double x6; double x7; BOOL x8; })arg1 includeTint:(BOOL)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 variant:(int)arg2;
+- (id)imageForBackdropParameters:(struct { int x1; int x2; int x3; float x4; float x5; float x6; float x7; BOOL x8; })arg1 includeTint:(BOOL)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 variant:(int)arg2;
 - (id)internalObserver;
 - (void)invalidate;
 - (BOOL)isDisplayingWallpaperWithConfiguration:(id)arg1 forVariant:(int)arg2;
@@ -115,16 +115,16 @@
 - (id)legibilitySettings;
 - (void)legibilitySettingsDidChange;
 - (int)logicalContentOrientation;
-- (BOOL)luminanceInRectRequiresTreatments:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (BOOL)luminanceInRectRequiresTreatments:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)needsImmediateLayoutBeforeRotation;
 - (BOOL)parallaxEnabled;
 - (float)parallaxFactor;
 - (void)prepareToAppear;
 - (void)prepareToDisappear;
 - (void)setContentView:(id)arg1;
-- (void)setContentsRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setContentsRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setContinuousColorSamplingEnabled:(BOOL)arg1;
-- (void)setCropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 zoomScale:(float)arg2;
+- (void)setCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 zoomScale:(float)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setGeneratesBlurredImages:(BOOL)arg1;
 - (void)setHidden:(BOOL)arg1;

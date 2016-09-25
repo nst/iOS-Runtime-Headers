@@ -24,10 +24,10 @@
 - (id)_redirectURLs;
 - (float)_scale;
 - (BOOL)_scaleIsInitial;
-- (struct CGPoint { double x1; double x2; })_scrollPoint;
+- (struct CGPoint { float x1; float x2; })_scrollPoint;
 - (void)_setBookmarkID:(unsigned int)arg1;
 - (void)_setScale:(float)arg1 isInitial:(BOOL)arg2;
-- (void)_setScrollPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)_setScrollPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_setSharedLinkUniqueIdentifier:(id)arg1;
 - (void)_setTransientProperty:(id)arg1 forKey:(id)arg2;
 - (void)_setViewportArguments:(id)arg1;
@@ -54,7 +54,7 @@
 - (BOOL)lastVisitWasFailure;
 - (double)lastVisitedTimeInterval;
 - (id)originalURLString;
-- (struct CGPoint { double x1; double x2; })scrollPoint;
+- (struct CGPoint { float x1; float x2; })scrollPoint;
 - (void)setAlternateTitle:(id)arg1;
 - (void)setRSSFeedReferrer:(id)arg1;
 - (void)setTitle:(id)arg1;

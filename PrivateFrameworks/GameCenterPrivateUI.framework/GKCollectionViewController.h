@@ -188,7 +188,7 @@
 - (id)swipeStateMachine;
 - (void)swipeToDeleteCell:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
-- (void)updateDynamicColumnCountsForViewSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)updateDynamicColumnCountsForViewSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)updateLayoutGuideOffsets;
 - (void)updateMetrics;
 - (void)updateSelectionHighlight;
@@ -198,7 +198,7 @@
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)willDismissActionSheetFromCell:(id)arg1;
 

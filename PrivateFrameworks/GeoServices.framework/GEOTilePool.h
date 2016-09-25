@@ -42,7 +42,7 @@
                     unsigned long __first_; 
                 } __p2_; 
                 struct __compressed_pair<float, std::__1::__unordered_map_equal<_GEOTileKey, std::__1::__hash_value_type<_GEOTileKey, std::__1::__list_iterator<geo::detail::_CacheItem<_GEOTileKey, id, _value_ptr>, void *> >, std::__1::equal_to<GEOTileKey>, true> > { 
-                    double __first_; 
+                    float __first_; 
                 } __p3_; 
             } __table_; 
         } _map; 

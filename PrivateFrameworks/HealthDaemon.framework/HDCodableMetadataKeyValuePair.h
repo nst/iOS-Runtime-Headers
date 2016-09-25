@@ -11,7 +11,7 @@
     }  _has;
     NSString * _key;
     double  _numberDoubleValue;
-    int  _numberIntValue;
+    long long  _numberIntValue;
     HDCodableQuantity * _quantityValue;
     NSString * _stringValue;
 }
@@ -25,7 +25,7 @@
 @property (nonatomic, readonly) BOOL hasStringValue;
 @property (nonatomic, retain) NSString *key;
 @property (nonatomic) double numberDoubleValue;
-@property (nonatomic) int numberIntValue;
+@property (nonatomic) long long numberIntValue;
 @property (nonatomic, retain) HDCodableQuantity *quantityValue;
 @property (nonatomic, retain) NSString *stringValue;
 
@@ -46,7 +46,7 @@
 - (id)key;
 - (void)mergeFrom:(id)arg1;
 - (double)numberDoubleValue;
-- (int)numberIntValue;
+- (long long)numberIntValue;
 - (id)quantityValue;
 - (BOOL)readFrom:(id)arg1;
 - (void)setDateValue:(double)arg1;
@@ -55,7 +55,7 @@
 - (void)setHasNumberIntValue:(BOOL)arg1;
 - (void)setKey:(id)arg1;
 - (void)setNumberDoubleValue:(double)arg1;
-- (void)setNumberIntValue:(int)arg1;
+- (void)setNumberIntValue:(long long)arg1;
 - (void)setQuantityValue:(id)arg1;
 - (void)setStringValue:(id)arg1;
 - (id)stringValue;

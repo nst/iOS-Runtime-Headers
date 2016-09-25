@@ -10,7 +10,7 @@
 
 @property (nonatomic) struct CGColor { }*color1;
 @property (nonatomic) struct CGColor { }*color2;
-@property (nonatomic) double divisions;
+@property (nonatomic) float divisions;
 
 - (struct CGColor { }*)color1;
 - (struct CGColor { }*)color2;

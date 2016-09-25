@@ -5,8 +5,8 @@
 @interface PKPassFieldView : UIView {
     int  _background;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _cachedSize;
     PKPassColorProfile * _colorProfile;
     PKDiffView * _diffView;
@@ -28,7 +28,7 @@
 
 - (void).cxx_destruct;
 - (id)_labelAttributedStringForColorProfile:(id)arg1 background:(int)arg2;
-- (struct CGSize { double x1; double x2; })_resizeMultiLineValueFontForAvailableSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })_resizeMultiLineValueFontForAvailableSize:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)_shouldDisplayLabel;
 - (id)_valueAttributedStringForColorProfile:(id)arg1 background:(int)arg2;
 - (id)colorProfile;
@@ -47,7 +47,7 @@
 - (void)setDiffView:(id)arg1;
 - (void)setField:(id)arg1;
 - (void)setFieldTemplate:(id)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)valueLabel;
 
 @end

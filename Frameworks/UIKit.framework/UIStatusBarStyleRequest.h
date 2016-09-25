@@ -3,7 +3,7 @@
  */
 
 @interface UIStatusBarStyleRequest : NSObject <NSCopying, NSMutableCopying> {
-    double  _foregroundAlpha;
+    float  _foregroundAlpha;
     UIColor * _foregroundColor;
     BOOL  _legacy;
     int  _legibilityStyle;
@@ -11,7 +11,7 @@
     int  _style;
 }
 
-@property (nonatomic, readonly) double foregroundAlpha;
+@property (nonatomic, readonly) float foregroundAlpha;
 @property (nonatomic, readonly, retain) UIColor *foregroundColor;
 @property (getter=isLegacy, nonatomic, readonly) BOOL legacy;
 @property (nonatomic, readonly) int legibilityStyle;

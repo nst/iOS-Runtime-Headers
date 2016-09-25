@@ -5,7 +5,7 @@
 @interface SUPostConcernOperation : ISOperation <ISStoreURLOperationDelegate> {
     NSString * _commentText;
     SUConcernItem * _concern;
-    unsigned int  _itemIdentifier;
+    unsigned long long  _itemIdentifier;
 }
 
 @property (retain) NSString *commentText;
@@ -13,7 +13,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property unsigned int itemIdentifier;
+@property unsigned long long itemIdentifier;
 @property (readonly) Class superclass;
 
 - (id)_httpBody;
@@ -21,11 +21,11 @@
 - (id)concern;
 - (void)dealloc;
 - (id)initWithConcern:(id)arg1;
-- (unsigned int)itemIdentifier;
+- (unsigned long long)itemIdentifier;
 - (void)operation:(id)arg1 finishedWithOutput:(id)arg2;
 - (void)run;
 - (void)setCommentText:(id)arg1;
 - (void)setConcern:(id)arg1;
-- (void)setItemIdentifier:(unsigned int)arg1;
+- (void)setItemIdentifier:(unsigned long long)arg1;
 
 @end

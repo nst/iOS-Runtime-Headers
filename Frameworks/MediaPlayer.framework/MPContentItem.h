@@ -15,7 +15,7 @@
 @property (getter=isExplicitContent, nonatomic) BOOL explicitContent;
 @property (nonatomic, readonly, copy) NSString *identifier;
 @property (getter=isPlayable, nonatomic) BOOL playable;
-@property (nonatomic) double playbackProgress;
+@property (nonatomic) float playbackProgress;
 @property (getter=isStreamingContent, nonatomic) BOOL streamingContent;
 @property (nonatomic, copy) NSString *subtitle;
 @property (nonatomic, copy) NSString *title;

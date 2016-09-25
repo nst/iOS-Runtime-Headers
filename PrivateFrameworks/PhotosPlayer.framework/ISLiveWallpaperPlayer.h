@@ -5,24 +5,24 @@
 @interface ISLiveWallpaperPlayer : ISBasePlayer {
     BOOL  __active;
     ISDisplayLink * __displayLink;
-    double  __playRate;
+    float  __playRate;
     BOOL  __seeking;
-    double  _force;
-    double  _smoothedVelocity;
+    float  _force;
+    float  _smoothedVelocity;
     BOOL  _touching;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _videoDuration;
 }
 
 @property (setter=_setActive:, nonatomic) BOOL _active;
 @property (setter=_setDisplayLink:, nonatomic) ISDisplayLink *_displayLink;
-@property (setter=_setPlayRate:, nonatomic) double _playRate;
+@property (setter=_setPlayRate:, nonatomic) float _playRate;
 @property (getter=_isSeeking, setter=_setSeeking:, nonatomic) BOOL _seeking;
-@property (nonatomic) double force;
+@property (nonatomic) float force;
 @property (getter=isPlaying, nonatomic, readonly) BOOL playing;
 @property (getter=isTouching, nonatomic) BOOL touching;
 

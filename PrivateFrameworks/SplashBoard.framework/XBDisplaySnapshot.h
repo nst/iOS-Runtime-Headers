@@ -8,10 +8,10 @@
     struct CGImage { } * _imageRef;
     NSOrderedSet * _layers;
     BOOL  _opaque;
-    double  _scale;
+    float  _scale;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _snapshotSize;
     struct __IOSurface { } * _surfaceRef;
 }
@@ -23,14 +23,14 @@
 @property (nonatomic, readonly, retain) FBSDisplay *display;
 @property (nonatomic, readonly, copy) NSOrderedSet *layers;
 @property (getter=isOpaque, nonatomic) BOOL opaque;
-@property (nonatomic) double scale;
-@property (nonatomic) struct CGSize { double x1; double x2; } snapshotSize;
+@property (nonatomic) float scale;
+@property (nonatomic) struct CGSize { float x1; float x2; } snapshotSize;
 
 - (struct CGImage { }*)CGImage;
 - (struct __IOSurface { }*)IOSurface;
 - (id)UIImage;
 - (float)_scale;
-- (struct CGSize { double x1; double x2; })_scaledSnapshotSize;
+- (struct CGSize { float x1; float x2; })_scaledSnapshotSize;
 - (void)_synchronizedCaptureWithCompletion:(id /* block */)arg1;
 - (BOOL)capture;
 - (void)dealloc;
@@ -43,7 +43,7 @@
 - (float)scale;
 - (void)setOpaque:(BOOL)arg1;
 - (void)setScale:(float)arg1;
-- (void)setSnapshotSize:(struct CGSize { double x1; double x2; })arg1;
-- (struct CGSize { double x1; double x2; })snapshotSize;
+- (void)setSnapshotSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { float x1; float x2; })snapshotSize;
 
 @end

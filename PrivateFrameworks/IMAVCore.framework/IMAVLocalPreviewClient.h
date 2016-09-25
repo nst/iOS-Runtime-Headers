@@ -15,7 +15,7 @@
 @property (nonatomic, retain) AVConferencePreview *conferencePreview;
 @property (nonatomic, readonly) BOOL isPreviewRunning;
 @property (nonatomic) IMAVCamera *localCamera;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } localPortraitAspectRatio;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } localPortraitAspectRatio;
 @property (nonatomic) void*localVideoBackLayer;
 @property (nonatomic) void*localVideoLayer;
 
@@ -24,7 +24,7 @@
 - (void)_avDaemonConnected;
 - (BOOL)_shouldPreviewBeRunning;
 - (void)_updatePreviewState;
-- (void)avChat:(id)arg1 setLocalPortraitRatio:(struct CGSize { double x1; double x2; })arg2 localLandscapeRatio:(struct CGSize { double x1; double x2; })arg3;
+- (void)avChat:(id)arg1 setLocalPortraitRatio:(struct CGSize { float x1; float x2; })arg2 localLandscapeRatio:(struct CGSize { float x1; float x2; })arg3;
 - (void)beginAnimationToPIP;
 - (void)beginAnimationToPreview;
 - (void)cameraDidBecomeAvailable:(unsigned int)arg1;
@@ -45,7 +45,7 @@
 - (id)init;
 - (BOOL)isPreviewRunning;
 - (id)localCamera;
-- (struct CGSize { double x1; double x2; })localPortraitAspectRatio;
+- (struct CGSize { float x1; float x2; })localPortraitAspectRatio;
 - (id)localScreenAttributesForVideoAttributes:(id)arg1;
 - (void*)localVideoBackLayer;
 - (void*)localVideoLayer;

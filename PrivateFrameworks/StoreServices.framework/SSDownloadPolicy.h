@@ -17,7 +17,7 @@
 @property (readonly) Class superclass;
 
 - (int)URLBagType;
-- (id)_policyRuleForSizeLimit:(int)arg1;
+- (id)_policyRuleForSizeLimit:(long long)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)copyXPCEncoding;
 - (void)dealloc;

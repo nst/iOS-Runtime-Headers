@@ -6,12 +6,12 @@
     int  displayBox;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  firstPageRect;
     bool  isOnFirstPage;
@@ -19,19 +19,19 @@
     bool  isZooming;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  lastPageRect;
     UIImage * magnifierImage;
     CALayer * magnifierLayer;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  magnifierSize;
     PDFPage * page;
     PDFSelection * selection;

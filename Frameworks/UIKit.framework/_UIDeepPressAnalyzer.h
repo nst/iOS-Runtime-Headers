@@ -13,7 +13,7 @@
 
 - (void).cxx_destruct;
 - (float)_touchForceFromTouches:(id)arg1;
-- (void)analyzeTouchForce:(float)arg1 centroidAtLocation:(struct CGPoint { double x1; double x2; })arg2;
+- (void)analyzeTouchForce:(float)arg1 centroidAtLocation:(struct CGPoint { float x1; float x2; })arg2;
 - (void)analyzeTouches:(id)arg1;
 - (id)init;
 - (BOOL)isDeepPressLikely;

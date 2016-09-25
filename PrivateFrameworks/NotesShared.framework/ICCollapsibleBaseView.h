@@ -6,20 +6,20 @@
     BOOL  _collapsed;
     struct UIView { Class x1; } * _contentView;
     NSLayoutConstraint * _leadingConstraint;
-    double  _leadingSpace;
+    float  _leadingSpace;
     BOOL  _setupComplete;
     NSLayoutConstraint * _trailingConstraint;
-    double  _trailingSpace;
+    float  _trailingSpace;
     NSLayoutConstraint * _zeroWidthConstraint;
 }
 
 @property (getter=isCollapsed, nonatomic) BOOL collapsed;
 @property (nonatomic, retain) UIView *contentView;
 @property (nonatomic, retain) NSLayoutConstraint *leadingConstraint;
-@property (nonatomic) double leadingSpace;
+@property (nonatomic) float leadingSpace;
 @property (nonatomic) BOOL setupComplete;
 @property (nonatomic, retain) NSLayoutConstraint *trailingConstraint;
-@property (nonatomic) double trailingSpace;
+@property (nonatomic) float trailingSpace;
 @property (nonatomic, retain) NSLayoutConstraint *zeroWidthConstraint;
 
 - (void).cxx_destruct;

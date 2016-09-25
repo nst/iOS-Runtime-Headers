@@ -25,13 +25,13 @@
 @property (nonatomic, copy) NSString *actionType;
 @property (nonatomic, readonly) UIView *avatarContentView;
 @property (nonatomic, retain) NSLayoutConstraint *avatarContentViewHeightLayoutConstraint;
-@property (nonatomic, readonly) double avatarContentViewHeightLayoutConstraintConstant;
+@property (nonatomic, readonly) float avatarContentViewHeightLayoutConstraintConstant;
 @property (nonatomic, retain) NSLayoutConstraint *avatarContentViewWidthLayoutConstraint;
-@property (nonatomic, readonly) double avatarContentViewWidthLayoutConstraintConstant;
+@property (nonatomic, readonly) float avatarContentViewWidthLayoutConstraintConstant;
 @property (nonatomic, retain) CNAvatarViewController *avatarViewController;
 @property (nonatomic, retain) UILabel *contactNameLabel;
 @property (nonatomic, retain) NSLayoutConstraint *contactNameLabelBaselineLayoutConstraint;
-@property (nonatomic, readonly) double contactNameLabelBaselineLayoutConstraintConstant;
+@property (nonatomic, readonly) float contactNameLabelBaselineLayoutConstraintConstant;
 @property (getter=isContentViewLayoutConstraintsLoaded, nonatomic) BOOL contentViewLayoutConstraintsLoaded;
 @property (getter=isContentViewLoaded, nonatomic) BOOL contentViewLoaded;
 @property (nonatomic, retain) UIVisualEffectView *primaryVisualEffectView;
@@ -40,9 +40,9 @@
 @property (nonatomic, retain) UIImageView *transportImageView;
 @property (nonatomic, retain) UILabel *transportNameLabel;
 @property (nonatomic, retain) NSLayoutConstraint *transportNameLabelBaselineLayoutConstraint;
-@property (nonatomic, readonly) double transportNameLabelBaselineLayoutConstraintConstant;
+@property (nonatomic, readonly) float transportNameLabelBaselineLayoutConstraintConstant;
 @property (nonatomic, retain) NSLayoutConstraint *transportNameLabelLeadingLayoutConstraint;
-@property (nonatomic, readonly) double transportNameLabelLeadingLayoutConstraintConstant;
+@property (nonatomic, readonly) float transportNameLabelLeadingLayoutConstraintConstant;
 @property (nonatomic, retain) UIView *transportView;
 
 + (id)imageForActionType:(id)arg1;
@@ -65,7 +65,7 @@
 - (void)handleContentSizeCategoryDidChangeNotification:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isContentViewLayoutConstraintsLoaded;
 - (BOOL)isContentViewLoaded;
 - (void)loadContentView;

@@ -4,21 +4,21 @@
 
 @interface SUICFauxFlamesView : UIView {
     struct { 
-        double imageHeight; 
-        double imageWidth; 
+        float imageHeight; 
+        float imageWidth; 
         int frameCount; 
         char *fileName; 
     }  _sequenceAttributes;
     int  _style;
-    double  _width;
+    float  _width;
 }
 
-+ (id)_frameImagesForSequence:(struct { double x1; double x2; int x3; char *x4; })arg1;
++ (id)_frameImagesForSequence:(struct { float x1; float x2; int x3; char *x4; })arg1;
 
 - (void)_cleanupView;
 - (void)didMoveToSuperview;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithStyle:(int)arg1;
 - (id)initWithStyle:(int)arg1 screenSize:(int)arg2;
 - (BOOL)isAnimating;

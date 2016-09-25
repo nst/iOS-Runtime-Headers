@@ -5,12 +5,12 @@
 @interface HUApplier : NSObject {
     NSMutableArray * _applierBlocks;
     NSMutableArray * _completionBlocks;
-    double  _progress;
+    float  _progress;
     unsigned int  _state;
 }
 
 @property (getter=isInteractive, nonatomic, readonly) BOOL interactive;
-@property (nonatomic, readonly) double progress;
+@property (nonatomic, readonly) float progress;
 @property (nonatomic, readonly) unsigned int state;
 
 + (void)registerStandaloneApplier:(id)arg1;

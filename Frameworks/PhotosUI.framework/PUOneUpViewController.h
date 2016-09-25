@@ -18,8 +18,8 @@
     BOOL  __isPerformingPreviewCommitTransition;
     BOOL  __isPresentedForSecondScreen;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  __layoutReferenceSize;
     BOOL  __needsUpdateAudioState;
     BOOL  __needsUpdateBarsController;
@@ -32,10 +32,10 @@
     PUOverOneUpPresentationSession * __overOneUpPresentationSession;
     PUParallaxComputer * __parallaxComputer;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  __pendingViewTransitionSize;
-    double  __preloadInsetsBasedOffViewWidth;
+    float  __preloadInsetsBasedOffViewWidth;
     PUOneUpViewController * __secondScreenBrowser;
     BOOL  __shouldShowAccessoryAfterUnlock;
     PUOneUpViewControllerSpec * __spec;
@@ -66,7 +66,7 @@
 @property (setter=_setIrisPlaying:, nonatomic) BOOL _isIrisPlaying;
 @property (setter=_setPerformingPreviewCommitTransition:, nonatomic) BOOL _isPerformingPreviewCommitTransition;
 @property (nonatomic, readonly) BOOL _isPresentedForSecondScreen;
-@property (setter=_setLayoutReferenceSize:, nonatomic) struct CGSize { double x1; double x2; } _layoutReferenceSize;
+@property (setter=_setLayoutReferenceSize:, nonatomic) struct CGSize { float x1; float x2; } _layoutReferenceSize;
 @property (setter=_setNeedsUpdateAudioState:, nonatomic) BOOL _needsUpdateAudioState;
 @property (setter=_setNeedsUpdateBarsController:, nonatomic) BOOL _needsUpdateBarsController;
 @property (setter=_setNeedsUpdateEditMode:, nonatomic) BOOL _needsUpdateEditMode;
@@ -77,8 +77,8 @@
 @property (nonatomic, readonly) unsigned int _options;
 @property (setter=_setOverOneUpPresentationSession:, nonatomic, retain) PUOverOneUpPresentationSession *_overOneUpPresentationSession;
 @property (nonatomic, readonly) PUParallaxComputer *_parallaxComputer;
-@property (setter=_setPendingViewTransitionSize:, nonatomic) struct CGSize { double x1; double x2; } _pendingViewTransitionSize;
-@property (setter=_setPreloadInsetsBasedOffViewWidth:, nonatomic) double _preloadInsetsBasedOffViewWidth;
+@property (setter=_setPendingViewTransitionSize:, nonatomic) struct CGSize { float x1; float x2; } _pendingViewTransitionSize;
+@property (setter=_setPreloadInsetsBasedOffViewWidth:, nonatomic) float _preloadInsetsBasedOffViewWidth;
 @property (setter=_setSecondScreenBrowser:, nonatomic, retain) PUOneUpViewController *_secondScreenBrowser;
 @property (setter=_setShouldShowAccessoryAfterUnlock:, nonatomic) BOOL _shouldShowAccessoryAfterUnlock;
 @property (nonatomic, readonly) PUOneUpViewControllerSpec *_spec;
@@ -147,7 +147,7 @@
 - (BOOL)_isPerformingPreviewCommitTransition;
 - (BOOL)_isPresentedForSecondScreen;
 - (BOOL)_isSecondScreenBrowserVisible;
-- (struct CGSize { double x1; double x2; })_layoutReferenceSize;
+- (struct CGSize { float x1; float x2; })_layoutReferenceSize;
 - (BOOL)_needsUpdate;
 - (BOOL)_needsUpdateAudioState;
 - (BOOL)_needsUpdateBarsController;
@@ -161,7 +161,7 @@
 - (unsigned int)_options;
 - (id)_overOneUpPresentationSession;
 - (id)_parallaxComputer;
-- (struct CGSize { double x1; double x2; })_pendingViewTransitionSize;
+- (struct CGSize { float x1; float x2; })_pendingViewTransitionSize;
 - (void)_performNavigationToAssetDisplayDescriptor:(id)arg1 beforeDate:(id)arg2 completionHandler:(id /* block */)arg3;
 - (float)_preloadInsetsBasedOffViewWidth;
 - (void)_presentAlertForError:(id)arg1;
@@ -174,7 +174,7 @@
 - (void)_setCurrentNavigationRequest:(id)arg1;
 - (void)_setHiddenTilesController:(id)arg1;
 - (void)_setIrisPlaying:(BOOL)arg1;
-- (void)_setLayoutReferenceSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)_setLayoutReferenceSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_setNeedsUpdate;
 - (void)_setNeedsUpdateAudioState:(BOOL)arg1;
 - (void)_setNeedsUpdateBarsController:(BOOL)arg1;
@@ -184,7 +184,7 @@
 - (void)_setNeedsUpdatePreloadInsets:(BOOL)arg1;
 - (void)_setNeedsUpdateSpec:(BOOL)arg1;
 - (void)_setOverOneUpPresentationSession:(id)arg1;
-- (void)_setPendingViewTransitionSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)_setPendingViewTransitionSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_setPerformingPreviewCommitTransition:(BOOL)arg1;
 - (void)_setPreloadInsetsBasedOffViewWidth:(float)arg1;
 - (void)_setSecondScreenBrowser:(id)arg1;
@@ -258,11 +258,11 @@
 - (id)irisImageTileViewControllerViewHostingGestureRecognizers:(id)arg1;
 - (BOOL)isCommitingPreview;
 - (BOOL)isPresentedForPreview;
-- (struct CGPoint { double x1; double x2; })layout:(id)arg1 accessoryOffsetForItemAtIndexPath:(id)arg2;
+- (struct CGPoint { float x1; float x2; })layout:(id)arg1 accessoryOffsetForItemAtIndexPath:(id)arg2;
 - (double)layout:(id)arg1 aspectRatioForItemAtIndexPath:(id)arg2;
-- (struct CGSize { double x1; double x2; })layout:(id)arg1 assetExplorerReviewScreenBadgeSizeForItemAtIndexPath:(id)arg2;
-- (struct CGSize { double x1; double x2; })layout:(id)arg1 badgeSizeForItemAtIndexPath:(id)arg2;
-- (struct CGPoint { double x1; double x2; })layout:(id)arg1 contentOffsetForItemAtIndexPath:(id)arg2;
+- (struct CGSize { float x1; float x2; })layout:(id)arg1 assetExplorerReviewScreenBadgeSizeForItemAtIndexPath:(id)arg2;
+- (struct CGSize { float x1; float x2; })layout:(id)arg1 badgeSizeForItemAtIndexPath:(id)arg2;
+- (struct CGPoint { float x1; float x2; })layout:(id)arg1 contentOffsetForItemAtIndexPath:(id)arg2;
 - (BOOL)layout:(id)arg1 disableInitialZoomToFillForItemAtIndexPath:(id)arg2;
 - (float)layout:(id)arg1 minimumVisibleAccessoryHeightForItemAtIndexPath:(id)arg2;
 - (float)layout:(id)arg1 minimumVisibleContentHeightForItemAtIndexPath:(id)arg2;
@@ -318,7 +318,7 @@
 - (BOOL)pu_wantsToolbarVisible;
 - (void)purgeIfPossible;
 - (BOOL)px_canPerformZoomTransitionWithDetailViewController:(id)arg1;
-- (id)px_diagnosticsItemProvidersForPoint:(struct CGPoint { double x1; double x2; })arg1 inCoordinateSpace:(id)arg2;
+- (id)px_diagnosticsItemProvidersForPoint:(struct CGPoint { float x1; float x2; })arg1 inCoordinateSpace:(id)arg2;
 - (id)px_endPointForTransition:(id)arg1;
 - (BOOL)px_isSnapBackDestination;
 - (id)px_snapBackHistorySubtitle;
@@ -327,7 +327,7 @@
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(BOOL)arg2;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
-- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { double x1; double x2; })arg2 targetContentOffset:(inout struct CGPoint { double x1; double x2; }*)arg3;
+- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { float x1; float x2; })arg2 targetContentOffset:(inout struct CGPoint { float x1; float x2; }*)arg3;
 - (void)setAllowsPreviewActions:(BOOL)arg1;
 - (void)setCommitingPreview:(BOOL)arg1;
 - (void)setPresentedForPreview:(BOOL)arg1;
@@ -335,11 +335,11 @@
 - (void)setUnlockDeviceStatus:(id /* block */)arg1;
 - (void)settings:(id)arg1 changedValueForKey:(id)arg2;
 - (id)tilingView:(id)arg1 dataSourceConverterForTransitionFromLayout:(id)arg2 toLayout:(id)arg3;
-- (struct CGPoint { double x1; double x2; })tilingView:(id)arg1 initialVisibleOriginWithLayout:(id)arg2;
+- (struct CGPoint { float x1; float x2; })tilingView:(id)arg1 initialVisibleOriginWithLayout:(id)arg2;
 - (id)tilingView:(id)arg1 scrollInfoWithLayout:(id)arg2;
-- (struct CGPoint { double x1; double x2; })tilingView:(id)arg1 targetVisibleOriginForProposedVisibleOrigin:(struct CGPoint { double x1; double x2; })arg2 withLayout:(id)arg3;
+- (struct CGPoint { float x1; float x2; })tilingView:(id)arg1 targetVisibleOriginForProposedVisibleOrigin:(struct CGPoint { float x1; float x2; })arg2 withLayout:(id)arg3;
 - (id)tilingView:(id)arg1 tileControllerWithIndexPath:(id)arg2 kind:(id)arg3 dataSource:(id)arg4;
-- (id)tilingView:(id)arg1 tileTransitionCoordinatorForChangeFromFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 toFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 duration:(double)arg4;
+- (id)tilingView:(id)arg1 tileTransitionCoordinatorForChangeFromFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 toFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 duration:(double)arg4;
 - (id)tilingView:(id)arg1 tileTransitionCoordinatorForLayoutInvalidationContext:(id)arg2;
 - (id)tilingView:(id)arg1 tileTransitionCoordinatorForReattachedTileControllers:(id)arg2 context:(id)arg3;
 - (id)tilingView:(id)arg1 tileTransitionCoordinatorForTransitionFromLayout:(id)arg2 toLayout:(id)arg3 withContext:(id)arg4;
@@ -362,7 +362,7 @@
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillLayoutSubviews;
-- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (BOOL)wantsContentVisibleAfterUnregisteringWithAirPlayController:(id)arg1;
 
 @end

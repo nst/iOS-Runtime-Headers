@@ -11,7 +11,7 @@
     PKImageSet * _imageSets;
     BOOL  _initializedViaInitWithCoder;
     NSData * _manifestHash;
-    double  _preferredImageScale;
+    float  _preferredImageScale;
     NSString * _preferredImageSuffix;
     unsigned int  _settings;
     int  _shareCount;
@@ -25,7 +25,7 @@
 @property (nonatomic, retain) PKDisplayProfile *displayProfile;
 @property (nonatomic, readonly) BOOL initializedViaInitWithCoder;
 @property (nonatomic, copy) NSData *manifestHash;
-@property (nonatomic) double preferredImageScale;
+@property (nonatomic) float preferredImageScale;
 @property (nonatomic, retain) NSString *preferredImageSuffix;
 @property (nonatomic, readonly) BOOL remoteAssetsDownloaded;
 @property (nonatomic) unsigned int settings;

@@ -13,10 +13,10 @@
 - (void)enumerateAllForCacheEntriesWithHandler:(id /* block */)arg1;
 - (id)init;
 - (id)initWithPath:(id)arg1;
-- (id)loadEntryForRowId:(int)arg1;
+- (id)loadEntryForRowId:(long long)arg1;
 - (id)loadValueForKey:(id)arg1;
 - (double)nextRefreshTimeStamp;
-- (int)numberOfEntriesOnDisk;
+- (long long)numberOfEntriesOnDisk;
 - (void)removeKey:(id)arg1 value:(id)arg2;
 - (id)rowIdsOfEntriesBeforeTimeStamp:(double)arg1;
 - (void)saveValue:(id)arg1 forKey:(id)arg2;

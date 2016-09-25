@@ -7,7 +7,7 @@
     SSURLConnectionRequest * _request;
     int  _shareType;
     NSString * _stationHash;
-    int  _stationID;
+    long long  _stationID;
 }
 
 @property (nonatomic, copy) NSArray *acceptedMIMETypes;

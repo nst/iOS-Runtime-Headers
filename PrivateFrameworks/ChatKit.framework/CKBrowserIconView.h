@@ -4,23 +4,23 @@
 
 @interface CKBrowserIconView : UIView {
     BOOL  _animating;
-    double  _animationEndPercentComplete;
-    double  _animationStartPercentComplete;
+    float  _animationEndPercentComplete;
+    float  _animationStartPercentComplete;
     double  _animationStartTime;
     CADisplayLink * _displayLink;
     UIImage * _iconImage;
-    double  _percentComplete;
+    float  _percentComplete;
 }
 
 @property (nonatomic) BOOL animating;
-@property (nonatomic) double animationEndPercentComplete;
-@property (nonatomic) double animationStartPercentComplete;
+@property (nonatomic) float animationEndPercentComplete;
+@property (nonatomic) float animationStartPercentComplete;
 @property (nonatomic) double animationStartTime;
 @property (nonatomic, retain) CADisplayLink *displayLink;
 @property (nonatomic, retain) UIImage *iconImage;
-@property (nonatomic) double percentComplete;
+@property (nonatomic) float percentComplete;
 
-+ (id)_pieImageForPercentComplete:(float)arg1 size:(struct CGSize { double x1; double x2; })arg2 center:(struct CGPoint { double x1; double x2; })arg3 radius:(float)arg4;
++ (id)_pieImageForPercentComplete:(float)arg1 size:(struct CGSize { float x1; float x2; })arg2 center:(struct CGPoint { float x1; float x2; })arg3 radius:(float)arg4;
 
 - (void).cxx_destruct;
 - (void)_onDisplayLink:(id)arg1;
@@ -30,10 +30,10 @@
 - (double)animationStartTime;
 - (void)dealloc;
 - (id)displayLink;
-- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)iconImage;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (void)layoutSubviews;
 - (float)percentComplete;
 - (void)setAnimating:(BOOL)arg1;
@@ -44,6 +44,6 @@
 - (void)setIconImage:(id)arg1;
 - (void)setPercentComplete:(float)arg1;
 - (void)setPercentComplete:(float)arg1 animated:(BOOL)arg2;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 
 @end

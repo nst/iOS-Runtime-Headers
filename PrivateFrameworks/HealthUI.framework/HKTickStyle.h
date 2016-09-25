@@ -5,12 +5,12 @@
 @interface HKTickStyle : HKStrokeStyle {
     BOOL  _shouldRenderMajorTickMarks;
     int  _tickDirection;
-    double  _tickLength;
+    float  _tickLength;
 }
 
 @property (nonatomic) BOOL shouldRenderMajorTickMarks;
 @property (nonatomic) int tickDirection;
-@property (nonatomic) double tickLength;
+@property (nonatomic) float tickLength;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setShouldRenderMajorTickMarks:(BOOL)arg1;

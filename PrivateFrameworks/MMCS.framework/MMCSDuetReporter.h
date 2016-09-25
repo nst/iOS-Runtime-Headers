@@ -18,6 +18,6 @@
 - (id)initWithSecondaryIdentifier:(id)arg1;
 - (void)transferStarted;
 - (void)transferStopped;
-- (void)updateProgressWithBytesSent:(unsigned int)arg1 bytesReceived:(unsigned int)arg2 cellularBytesSent:(unsigned int)arg3 cellularBytesReceived:(unsigned int)arg4;
+- (void)updateProgressWithBytesSent:(unsigned long long)arg1 bytesReceived:(unsigned long long)arg2 cellularBytesSent:(unsigned long long)arg3 cellularBytesReceived:(unsigned long long)arg4;
 
 @end

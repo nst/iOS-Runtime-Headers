@@ -17,7 +17,7 @@
 - (void)connection:(void *)arg1 needConnectedSocketToHost:(void *)arg2 port:(void *)arg3 completion:(void *)arg4; // needs 4 arg types, found 10: __NSCFURLSessionConnection *, NSString *, unsigned int, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, struct { int x1; int x2; }, void*
 - (void)connection:(void *)arg1 request:(void *)arg2 needsNewBodyStreamCallback:(void *)arg3; // needs 3 arg types, found 8: __NSCFURLSessionConnection *, NSURLRequest *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSInputStream *, void*
 - (void)connection:(__NSCFURLSessionConnection *)arg1 sentBodyBytes:(NSNumber *)arg2 totalBytes:(NSNumber *)arg3 expectedBytes:(NSNumber *)arg4;
-- (void)connection:(__NSCFURLSessionConnection *)arg1 waitingWithReason:(int)arg2;
+- (void)connection:(__NSCFURLSessionConnection *)arg1 waitingWithReason:(long long)arg2;
 - (void)connection:(void *)arg1 wasRedirected:(void *)arg2 newRequest:(void *)arg3 responseCallback:(void *)arg4; // needs 4 arg types, found 9: __NSCFURLSessionConnection *, NSHTTPURLResponse *, NSURLRequest *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSURLRequest *, void*
 - (void)connection:(void *)arg1 willCacheResponse:(void *)arg2 responseCallback:(void *)arg3; // needs 3 arg types, found 8: __NSCFURLSessionConnection *, NSCachedURLResponse *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSCachedURLResponse *, void*
 - (void)connectionWillFinishLoading:(__NSCFURLSessionConnection *)arg1;

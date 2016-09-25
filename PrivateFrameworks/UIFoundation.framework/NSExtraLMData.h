@@ -7,30 +7,30 @@
     NSMutableArray * _blockRunsArray;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _cachedFontBounds;
-    double  _cachedUnderlineAdjustment;
-    double  _cachedUnderlinePosition;
+    float  _cachedUnderlineAdjustment;
+    float  _cachedUnderlinePosition;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
     }  _cachedUnderlineRange;
-    double  _cachedUnderlineThickness;
+    float  _cachedUnderlineThickness;
     unsigned int  _currentAttachmentIndex;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _currentAttachmentRect;
     NSLock * _fillHoleLock;
@@ -40,8 +40,8 @@
         unsigned int length; 
     }  _firstTextViewVisibleCharRange;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _firstTextViewVisibleOffset;
     NSRunStorage * _fragmentRunsExtras;
     struct _NSGlyphTree { 
@@ -50,41 +50,41 @@
         unsigned int curCharIndex; 
         unsigned int curGlyphIndex; 
     }  _glyphTree;
-    double  _hyphenationFactor;
+    float  _hyphenationFactor;
     NSMutableArray * _insertionPointCache;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
     }  _lastInvalidatedCharRange;
-    double  _lastInvalidatedLongitudinalPosition;
+    float  _lastInvalidatedLongitudinalPosition;
     NSTextContainer * _lastInvalidatedTextContainer;
     struct _NSLayoutTree { 
         struct _NSLayoutNode {} *rootNode; 
         struct _NSLayoutNode {} *curNode; 
         unsigned int curGlyphIndex; 
-        double curLongitudinalOrigin; 
+        float curLongitudinalOrigin; 
         struct CGRect { 
             struct CGPoint { 
-                double x; 
-                double y; 
+                float x; 
+                float y; 
             } origin; 
             struct CGSize { 
-                double width; 
-                double height; 
+                float width; 
+                float height; 
             } size; 
         } extraLineFragmentRect; 
         struct CGRect { 
             struct CGPoint { 
-                double x; 
-                double y; 
+                float x; 
+                float y; 
             } origin; 
             struct CGSize { 
-                double width; 
-                double height; 
+                float width; 
+                float height; 
             } size; 
         } extraLineFragmentUsedRect; 
         unsigned int glyphsPerLineEstimate; 
-        double offsetPerLineEstimate; 
+        float offsetPerLineEstimate; 
     }  _layoutTree;
     struct __lmFlags2 { 
         unsigned int glyphCause : 6; 

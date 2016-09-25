@@ -5,9 +5,9 @@
 @interface _NSScalarObjectID : _NSCoreManagedObjectID
 
 - (int)_getURIBytes:(char *)arg1 length:(int)arg2;
-- (int)_referenceData64;
+- (long long)_referenceData64;
 - (id)_retainedURIString;
 - (void)dealloc;
-- (id)initWithPK64:(int)arg1;
+- (id)initWithPK64:(long long)arg1;
 
 @end

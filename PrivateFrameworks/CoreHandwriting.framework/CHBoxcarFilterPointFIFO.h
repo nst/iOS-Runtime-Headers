@@ -3,13 +3,13 @@
  */
 
 @interface CHBoxcarFilterPointFIFO : CHPointFIFO {
-    struct vector<double __attribute__((ext_vector_type(4))), std::__1::allocator<double __attribute__((ext_vector_type(4)))> >="__begin_"^"__end_"^"__end_cap_"{__compressed_pair<double * __attribute__((ext_vector_type(4))), std::__1::allocator<double __attribute__((ext_vector_type(4)))> >="__first_"^ {}  _prevPoints;
-    double  _spacing;
+    struct vector<float __attribute__((ext_vector_type(4))), std::__1::allocator<float __attribute__((ext_vector_type(4)))> >="__begin_"^"__end_"^"__end_cap_"{__compressed_pair<float * __attribute__((ext_vector_type(4))), std::__1::allocator<float __attribute__((ext_vector_type(4)))> >="__first_"^ {}  _prevPoints;
+    float  _spacing;
     unsigned int  _width;
 }
 
-@property (nonatomic) /* Warning: unhandled struct encoding: '{vector<double __attribute__((ext_vector_type(4)))' */ struct  prevPoints; /* unknown property attribute:  std::__1::allocator<double __attribute__((ext_vector_type(4)))> >=^}} */
-@property (nonatomic) double spacing;
+@property (nonatomic) /* Warning: unhandled struct encoding: '{vector<float __attribute__((ext_vector_type(4)))' */ struct  prevPoints; /* unknown property attribute:  std::__1::allocator<float __attribute__((ext_vector_type(4)))> >=^}} */
+@property (nonatomic) float spacing;
 @property (nonatomic) unsigned int width;
 
 - (id).cxx_construct;
@@ -20,8 +20,8 @@
 - (void)flush;
 - (id)initWithFIFO:(id)arg1 width:(unsigned int)arg2;
 - (id)initWithFIFO:(id)arg1 width:(unsigned int)arg2 spacing:(float)arg3;
-- (struct vector<double __attribute__((ext_vector_type(4))), std::__1::allocator<double __attribute__((ext_vector_type(4)))> >=^^{__compressed_pair<double * __attribute__((ext_vector_type(4))), std::__1::allocator<double __attribute__((ext_vector_type(4)))> >=^ {})prevPoints;
-- (void)setPrevPoints:(struct vector<double __attribute__((ext_vector_type(4))), std::__1::allocator<double __attribute__((ext_vector_type(4)))> >=^^{__compressed_pair<double * __attribute__((ext_vector_type(4))), std::__1::allocator<double __attribute__((ext_vector_type(4)))> >=^ {})arg1;
+- (struct vector<float __attribute__((ext_vector_type(4))), std::__1::allocator<float __attribute__((ext_vector_type(4)))> >=^^{__compressed_pair<float * __attribute__((ext_vector_type(4))), std::__1::allocator<float __attribute__((ext_vector_type(4)))> >=^ {})prevPoints;
+- (void)setPrevPoints:(struct vector<float __attribute__((ext_vector_type(4))), std::__1::allocator<float __attribute__((ext_vector_type(4)))> >=^^{__compressed_pair<float * __attribute__((ext_vector_type(4))), std::__1::allocator<float __attribute__((ext_vector_type(4)))> >=^ {})arg1;
 - (void)setSpacing:(float)arg1;
 - (void)setWidth:(unsigned int)arg1;
 - (float)spacing;

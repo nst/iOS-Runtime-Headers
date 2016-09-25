@@ -19,7 +19,7 @@
 - (void)finish;
 - (BOOL)highPriority;
 - (BOOL)inProgress;
-- (id)initWithItemId:(int)arg1 item:(id)arg2 fails:(int)arg3 sourceKey:(id)arg4 messageId:(id)arg5 highPriority:(BOOL)arg6 parentQueue:(id)arg7;
+- (id)initWithItemId:(long long)arg1 item:(id)arg2 fails:(int)arg3 sourceKey:(id)arg4 messageId:(id)arg5 highPriority:(BOOL)arg6 parentQueue:(id)arg7;
 - (void)markAsFailed;
 - (id)messageId;
 - (void)setInProgress:(BOOL)arg1;

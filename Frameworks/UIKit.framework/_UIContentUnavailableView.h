@@ -11,8 +11,8 @@
     NSMutableArray * _containerViewContraints;
     UIView * _fromSnapshot;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _fromSnapshotSize;
     NSString * _message;
     UILabel * _messageLabel;
@@ -38,7 +38,7 @@
 - (float)_buttonAlpha;
 - (id)_buttonBackgroundImageForStyle:(unsigned int)arg1 controlState:(unsigned int)arg2;
 - (id)_buttonFont;
-- (struct CGSize { double x1; double x2; })_buttonSize;
+- (struct CGSize { float x1; float x2; })_buttonSize;
 - (float)_buttonVerticalSpacing;
 - (id)_flatTextColor;
 - (BOOL)_hasVibrantButton;
@@ -54,9 +54,9 @@
 - (void)cleanupLingeringRotationState;
 - (void)dealloc;
 - (void)didMoveToWindow;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 title:(id)arg2 style:(unsigned int)arg3;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 title:(id)arg2 style:(unsigned int)arg3 includeBackdrop:(BOOL)arg4;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 title:(id)arg2 style:(unsigned int)arg3;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 title:(id)arg2 style:(unsigned int)arg3 includeBackdrop:(BOOL)arg4;
 - (void)layoutSubviews;
 - (id)message;
 - (id)preferredFocusedView;

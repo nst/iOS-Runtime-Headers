@@ -24,7 +24,7 @@
 - (float)dayTextSize;
 - (float)daysXAdjustLeft;
 - (float)daysYAdjustTop;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameForGridOfDays:(BOOL)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForGridOfDays:(BOOL)arg1;
 - (id)headerFont;
 - (float)headerFontKerning;
 - (float)headerFontMaxSize;
@@ -35,7 +35,7 @@
 - (void)setDateComponents:(id)arg1;
 - (BOOL)showMonthName;
 - (BOOL)showWeekDayInitials;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)todayNumberFont;
 - (float)todayNumberKerning;
 - (float)todayTextSize;

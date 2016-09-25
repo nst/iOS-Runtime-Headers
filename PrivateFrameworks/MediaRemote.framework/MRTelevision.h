@@ -95,7 +95,7 @@
 - (void)_callClientAllowsPairingCallback;
 - (void)_callClientConnectionStateCallback:(id)arg1;
 - (void)_callClientGameControllerInputModeCallback;
-- (void)_callClientGameControllerPropertiesCallback:(void*)arg1 controller:(unsigned int)arg2;
+- (void)_callClientGameControllerPropertiesCallback:(void*)arg1 controller:(unsigned long long)arg2;
 - (void)_callClientNameCallback;
 - (void)_callClientPairingCallback:(id /* block */)arg1;
 - (void)_callClientRecordingStateCallback;
@@ -175,9 +175,9 @@
 - (void)registerTouchDeviceWithDescriptor:(id)arg1 replyQueue:(id)arg2 completion:(id /* block */)arg3;
 - (void)registerVoiceInputDeviceWithDescriptor:(id)arg1 replyQueue:(id)arg2 completion:(id /* block */)arg3;
 - (void)sendButtonEvent:(struct _MRHIDButtonEvent { unsigned int x1; unsigned int x2; bool x3; })arg1;
-- (void)sendGameControllerEvent:(const struct { int x1; union { struct { struct { double x_1_3_1; double x_1_3_2; double x_1_3_3; } x_1_2_1; struct { double x_2_3_1; double x_2_3_2; double x_2_3_3; } x_1_2_2; } x_2_1_1; struct { double x_2_2_1; double x_2_2_2; double x_2_2_3; } x_2_1_2; struct { struct { double x_1_3_1; double x_1_3_2; double x_1_3_3; } x_3_2_1; double x_3_2_2; double x_3_2_3; double x_3_2_4; double x_3_2_5; double x_3_2_6; double x_3_2_7; double x_3_2_8; double x_3_2_9; double x_3_2_10; double x_3_2_11; double x_3_2_12; double x_3_2_13; } x_2_1_3; struct { double x_4_2_1; double x_4_2_2; bool x_4_2_3; unsigned int x_4_2_4; } x_2_1_4; } x2; }*)arg1 controllerID:(unsigned int)arg2;
+- (void)sendGameControllerEvent:(const struct { int x1; union { struct { struct { double x_1_3_1; double x_1_3_2; double x_1_3_3; } x_1_2_1; struct { double x_2_3_1; double x_2_3_2; double x_2_3_3; } x_1_2_2; } x_2_1_1; struct { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_2_1_2; struct { struct { float x_1_3_1; float x_1_3_2; float x_1_3_3; } x_3_2_1; float x_3_2_2; float x_3_2_3; float x_3_2_4; float x_3_2_5; float x_3_2_6; float x_3_2_7; float x_3_2_8; float x_3_2_9; float x_3_2_10; float x_3_2_11; float x_3_2_12; float x_3_2_13; } x_2_1_3; struct { float x_4_2_1; float x_4_2_2; bool x_4_2_3; unsigned long long x_4_2_4; } x_2_1_4; } x2; }*)arg1 controllerID:(unsigned long long)arg2;
 - (void)sendHIDEvent:(struct __IOHIDEvent { }*)arg1;
-- (void)sendTouchEvent:(struct _MRHIDTouchEvent { union _MRHIDPoint { struct { double x_1_2_1; double x_1_2_2; } x_1_1_1; double x_1_1_2[2]; } x1; unsigned int x2; unsigned int x3; unsigned int x4; })arg1 toVirtualDeviceWithID:(unsigned int)arg2;
+- (void)sendTouchEvent:(struct _MRHIDTouchEvent { union _MRHIDPoint { struct { float x_1_2_1; float x_1_2_2; } x_1_1_1; float x_1_1_2[2]; } x1; unsigned int x2; unsigned long long x3; unsigned int x4; })arg1 toVirtualDeviceWithID:(unsigned long long)arg2;
 - (void)setConnection:(id)arg1;
 - (void)setConnectionState:(unsigned int)arg1 error:(id)arg2;
 - (void)setConnectionStateCallback:(id /* block */)arg1;
@@ -225,7 +225,7 @@
 - (id /* block */)textInputCallback;
 - (id)textInputCallbackQueue;
 - (void)unpair;
-- (void)unregisterGameController:(unsigned int)arg1;
+- (void)unregisterGameController:(unsigned long long)arg1;
 - (void)updateWithService:(id)arg1;
 - (id)volumeControlNotificationObserver;
 - (void)wake;

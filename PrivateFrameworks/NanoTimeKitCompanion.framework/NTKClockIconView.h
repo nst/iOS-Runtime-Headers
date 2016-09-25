@@ -3,11 +3,11 @@
  */
 
 @interface NTKClockIconView : UIView {
-    double  _fullDiameter;
+    float  _fullDiameter;
     BOOL  _paused;
 }
 
-@property (nonatomic) double fullDiameter;
+@property (nonatomic) float fullDiameter;
 @property (nonatomic) BOOL paused;
 
 - (id)borrowCircleView;

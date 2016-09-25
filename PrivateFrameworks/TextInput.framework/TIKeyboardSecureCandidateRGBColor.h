@@ -3,16 +3,16 @@
  */
 
 @interface TIKeyboardSecureCandidateRGBColor : NSObject <NSCopying, NSSecureCoding> {
-    double  _colorA;
-    double  _colorB;
-    double  _colorG;
-    double  _colorR;
+    float  _colorA;
+    float  _colorB;
+    float  _colorG;
+    float  _colorR;
 }
 
-@property (nonatomic) double colorA;
-@property (nonatomic) double colorB;
-@property (nonatomic) double colorG;
-@property (nonatomic) double colorR;
+@property (nonatomic) float colorA;
+@property (nonatomic) float colorB;
+@property (nonatomic) float colorG;
+@property (nonatomic) float colorR;
 
 + (id)blackColor;
 + (id)lightGrayColor;

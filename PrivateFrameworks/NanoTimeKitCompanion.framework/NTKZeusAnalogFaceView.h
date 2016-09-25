@@ -31,7 +31,7 @@
 - (void)_prepareForStatusChange:(BOOL)arg1;
 - (void)_prepareTimeViewForReuse:(id)arg1;
 - (float)_secondHandAlphaForDensity:(unsigned int)arg1 isEditing:(BOOL)arg2;
-- (struct CGPoint { double x1; double x2; })_timeTravelStatusModuleCenter;
+- (struct CGPoint { float x1; float x2; })_timeTravelStatusModuleCenter;
 - (BOOL)_timeViewBehindContentForEditMode:(int)arg1;
 - (float)_verticalPaddingForStatusBar;
 

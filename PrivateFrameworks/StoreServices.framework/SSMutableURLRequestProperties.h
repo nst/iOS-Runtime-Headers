@@ -21,7 +21,7 @@
 @property (copy) NSString *clientAuditBundleIdentifier;
 @property (copy) NSData *clientAuditTokenData;
 @property (copy) NSString *clientIdentifier;
-@property int expectedContentLength;
+@property long long expectedContentLength;
 @property (getter=isLargeDownload) BOOL largeDownload;
 @property int machineDataStyle;
 @property unsigned int networkServiceType;
@@ -49,7 +49,7 @@
 - (void)setClientAuditBundleIdentifier:(id)arg1;
 - (void)setClientAuditTokenData:(id)arg1;
 - (void)setClientIdentifier:(id)arg1;
-- (void)setExpectedContentLength:(int)arg1;
+- (void)setExpectedContentLength:(long long)arg1;
 - (void)setHTTPBody:(id)arg1;
 - (void)setHTTPBodyStream:(id)arg1;
 - (void)setHTTPHeaders:(id)arg1;

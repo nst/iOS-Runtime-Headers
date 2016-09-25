@@ -25,7 +25,7 @@
 @property (readonly) Class superclass;
 @property (getter=isViewVisible, nonatomic) BOOL viewVisible;
 
-+ (id)_createLayoutOptionsForViewSize:(struct CGSize { double x1; double x2; })arg1 layoutStyle:(int)arg2 itemType:(unsigned int)arg3;
++ (id)_createLayoutOptionsForViewSize:(struct CGSize { float x1; float x2; })arg1 layoutStyle:(int)arg2 itemType:(unsigned int)arg3;
 + (struct { unsigned int x1; unsigned int x2; })_gridLayoutForItemType:(unsigned int)arg1 sizeSubclass:(unsigned int)arg2;
 
 - (void).cxx_destruct;
@@ -36,8 +36,8 @@
 - (void)_updateMaximumNumberOfItems;
 - (id)allCellClasses;
 - (Class)cellClassForItem:(id)arg1 indexPath:(id)arg2;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })collectionView:(id)arg1 layout:(id)arg2 insetForSectionAtIndex:(int)arg3;
-- (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })collectionView:(id)arg1 layout:(id)arg2 insetForSectionAtIndex:(int)arg3;
+- (struct CGSize { float x1; float x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (void)configureCell:(id)arg1 forItem:(id)arg2;
 - (id)delegate;
 - (BOOL)dismissQuickControlAnimated:(BOOL)arg1;

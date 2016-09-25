@@ -12,17 +12,17 @@
     NSString * _identifier;
     BOOL  _livePhoto;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _livePhotoDuration;
     BOOL  _livePhotoPlaceholder;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _livePhotoSynchronizedDisplayTime;
     CLLocation * _location;
     unsigned int  _mediaSubtypes;
@@ -62,9 +62,9 @@
 @property (nonatomic, readonly) BOOL isPhotoIrisPlaceholder;
 @property (nonatomic, readonly) BOOL isTemporaryPlaceholder;
 @property (getter=isLivePhoto, nonatomic, readonly) BOOL livePhoto;
-@property (nonatomic, readonly) struct { int x1; int x2; unsigned int x3; int x4; } livePhotoDuration;
+@property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } livePhotoDuration;
 @property (getter=isLivePhotoPlaceholder, nonatomic, readonly) BOOL livePhotoPlaceholder;
-@property (nonatomic, readonly) struct { int x1; int x2; unsigned int x3; int x4; } livePhotoSynchronizedDisplayTime;
+@property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } livePhotoSynchronizedDisplayTime;
 @property (getter=isLivePhotoVisibilityAdjustmentAllowed, nonatomic, readonly) BOOL livePhotoVisibilityAdjustmentAllowed;
 @property (nonatomic, readonly) unsigned int livePhotoVisibilityState;
 @property (nonatomic, readonly) NSString *localizedGeoDescription;
@@ -77,8 +77,8 @@
 @property (nonatomic, readonly, copy) NSString *pathForOriginalImageFile;
 @property (nonatomic, readonly, copy) NSString *pathForOriginalVideoFile;
 @property (nonatomic, readonly, copy) NSString *pathForTrimmedVideoFile;
-@property (nonatomic, readonly) struct { int x1; int x2; unsigned int x3; int x4; } photoIrisStillDisplayTime;
-@property (nonatomic, readonly) struct { int x1; int x2; unsigned int x3; int x4; } photoIrisVideoDuration;
+@property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } photoIrisStillDisplayTime;
+@property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } photoIrisVideoDuration;
 @property (nonatomic, readonly) unsigned int pixelHeight;
 @property (nonatomic, readonly) unsigned int pixelWidth;
 @property (nonatomic, readonly) AVAsset *providedAVAsset;
@@ -146,8 +146,8 @@
 - (BOOL)isPhotoIrisPlaceholder;
 - (BOOL)isResourceDownloadPossible;
 - (BOOL)isTemporaryPlaceholder;
-- (struct { int x1; int x2; unsigned int x3; int x4; })livePhotoDuration;
-- (struct { int x1; int x2; unsigned int x3; int x4; })livePhotoSynchronizedDisplayTime;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })livePhotoDuration;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })livePhotoSynchronizedDisplayTime;
 - (unsigned int)livePhotoVisibilityState;
 - (id)localizedGeoDescription;
 - (id)location;
@@ -159,8 +159,8 @@
 - (id)pathForOriginalImageFile;
 - (id)pathForOriginalVideoFile;
 - (id)pathForTrimmedVideoFile;
-- (struct { int x1; int x2; unsigned int x3; int x4; })photoIrisStillDisplayTime;
-- (struct { int x1; int x2; unsigned int x3; int x4; })photoIrisVideoDuration;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })photoIrisStillDisplayTime;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })photoIrisVideoDuration;
 - (unsigned int)pixelHeight;
 - (unsigned int)pixelWidth;
 - (id)providedFullsizeImageURL;

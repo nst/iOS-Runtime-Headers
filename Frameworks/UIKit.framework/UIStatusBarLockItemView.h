@@ -7,14 +7,14 @@
     id /* block */  _animationCompletionBlock;
     int  _animationCount;
     _UIStatusBarLockItemPadlockView * _padlockView;
-    double  _padlockViewCenterOffsetFromForegroundViewCenter;
+    float  _padlockViewCenterOffsetFromForegroundViewCenter;
     UIView * _textClippingView;
     _UIExpandingGlyphsView * _textView;
     UIView * _timeItemSnapshot;
-    double  _timeItemSnapshotCenterOffsetFromForegroundViewCenter;
+    float  _timeItemSnapshotCenterOffsetFromForegroundViewCenter;
     UIView * _viewToAnimateAlongside;
-    double  _widthNeededDuringAnimation;
-    double  _widthNeededForFinalState;
+    float  _widthNeededDuringAnimation;
+    float  _widthNeededForFinalState;
 }
 
 @property (nonatomic) BOOL alongsideViewIsBecomingVisible;
@@ -24,15 +24,15 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) _UIStatusBarLockItemPadlockView *padlockView;
-@property (nonatomic) double padlockViewCenterOffsetFromForegroundViewCenter;
+@property (nonatomic) float padlockViewCenterOffsetFromForegroundViewCenter;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UIView *textClippingView;
 @property (nonatomic, retain) _UIExpandingGlyphsView *textView;
 @property (nonatomic, retain) UIView *timeItemSnapshot;
-@property (nonatomic) double timeItemSnapshotCenterOffsetFromForegroundViewCenter;
+@property (nonatomic) float timeItemSnapshotCenterOffsetFromForegroundViewCenter;
 @property (nonatomic) UIView *viewToAnimateAlongside;
-@property (nonatomic) double widthNeededDuringAnimation;
-@property (nonatomic) double widthNeededForFinalState;
+@property (nonatomic) float widthNeededDuringAnimation;
+@property (nonatomic) float widthNeededForFinalState;
 
 + (double)lockSlideAnimationDuration;
 
@@ -59,7 +59,7 @@
 - (void)setTimeItemSnapshot:(id)arg1;
 - (void)setTimeItemSnapshotCenterOffsetFromForegroundViewCenter:(float)arg1;
 - (void)setViewToAnimateAlongside:(id)arg1;
-- (void)setVisible:(BOOL)arg1 frame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 duration:(double)arg3;
+- (void)setVisible:(BOOL)arg1 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 duration:(double)arg3;
 - (void)setWidthNeededDuringAnimation:(float)arg1;
 - (void)setWidthNeededForFinalState:(float)arg1;
 - (id)textClippingView;

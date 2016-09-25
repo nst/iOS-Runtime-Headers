@@ -8,7 +8,7 @@
     int * _nextInts;
     int  _nextIntsCapacity;
     int  _nextIntsCount;
-    double  _uniformDistance;
+    float  _uniformDistance;
 }
 
 - (void)dealloc;

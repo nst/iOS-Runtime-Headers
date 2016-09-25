@@ -14,10 +14,10 @@
 - (float)_labelSpacingWithMin:(float)arg1 max:(float)arg2 maxNumLabels:(int)arg3;
 - (id)adjustedRangeForFittedRange:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)enumerateTickCoordinatesInChartRange:(struct HKRange { double x1; double x2; })arg1 zoomScale:(float)arg2 handler:(id /* block */)arg3;
+- (void)enumerateTickCoordinatesInChartRange:(struct HKRange { float x1; float x2; })arg1 zoomScale:(float)arg2 handler:(id /* block */)arg3;
 - (id)init;
 - (float)labelSpacingFactorForNumberFormatter;
-- (id)labelsForChartRange:(struct HKRange { double x1; double x2; })arg1 zoomScale:(float)arg2;
+- (id)labelsForChartRange:(struct HKRange { float x1; float x2; })arg1 zoomScale:(float)arg2;
 - (void)setStepStyle:(int)arg1;
 - (int)stepStyle;
 - (id)stringFromNumber:(id)arg1;

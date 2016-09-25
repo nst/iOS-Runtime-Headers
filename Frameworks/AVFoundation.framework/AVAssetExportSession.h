@@ -11,7 +11,7 @@
 @property (nonatomic, copy) NSString *outputFileType;
 @property (nonatomic, copy) NSURL *outputURL;
 @property (nonatomic, readonly) NSString *presetName;
-@property (nonatomic, readonly) double progress;
+@property (nonatomic, readonly) float progress;
 @property (nonatomic) BOOL shouldOptimizeForNetworkUse;
 @property (nonatomic, readonly) int status;
 
@@ -21,7 +21,7 @@
 + (BOOL)_canWriteMediaOfAsset:(id)arg1 toFileType:(id)arg2;
 + (BOOL)_disableExportCompatibilityCheck;
 + (BOOL)_disablePassthrough;
-+ (int)_estimatedOutputFileLengthForPreset:(id)arg1 duration:(struct { int x1; int x2; unsigned int x3; int x4; })arg2 properties:(id)arg3;
++ (long long)_estimatedOutputFileLengthForPreset:(id)arg1 duration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 properties:(id)arg3;
 + (BOOL)_failsAudioPassthroughRestrictions:(id)arg1 outputFileType:(id)arg2;
 + (id)_figRemakerNotificationNames;
 + (int)_getPassthroughExportPolicyForAssetTrack:(id)arg1 fileType:(id)arg2 asChapterTrack:(BOOL)arg3;
@@ -31,7 +31,7 @@
 + (BOOL)_isPassthroughExportPresetCompatibleWithAsset:(id)arg1 outputFileType:(id)arg2;
 + (BOOL)_isPassthroughExportSupportedForAudioFormatDescription:(struct opaqueCMFormatDescription { }*)arg1 forFileType:(struct __CFString { }*)arg2 asChapterTrack:(BOOL)arg3 usingModifiedFormatDescription:(const struct opaqueCMFormatDescription {}**)arg4;
 + (BOOL)_isPassthroughExportSupportedForFormatDescription:(struct opaqueCMFormatDescription { }*)arg1 forFileType:(struct __CFString { }*)arg2 asChapterTrack:(BOOL)arg3;
-+ (struct { int x1; int x2; unsigned int x3; int x4; })_maximumDurationForPreset:(id)arg1 fileSizeBytesLimit:(int)arg2 properties:(id)arg3;
++ (struct { long long x1; int x2; unsigned int x3; long long x4; })_maximumDurationForPreset:(id)arg1 fileSizeBytesLimit:(long long)arg2 properties:(id)arg3;
 + (id)_mediaTypesToFailPassthroughExport;
 + (id)_mediaTypesToStripOnPassthroughExport;
 + (id)_settingForPreset:(id)arg1;
@@ -42,11 +42,11 @@
 + (id)_videoOnlyPresets;
 + (id)allExportPresets;
 + (void)determineCompatibilityOfExportPreset:(id)arg1 withAsset:(id)arg2 outputFileType:(id)arg3 completionHandler:(id /* block */)arg4;
-+ (int)estimatedOutputFileLengthForPreset:(id)arg1 duration:(struct { int x1; int x2; unsigned int x3; int x4; })arg2 properties:(id)arg3;
++ (long long)estimatedOutputFileLengthForPreset:(id)arg1 duration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 properties:(id)arg3;
 + (id)exportPresetsCompatibleWithAsset:(id)arg1;
 + (id)exportSessionWithAsset:(id)arg1 presetName:(id)arg2;
 + (id)keyPathsForValuesAffectingEstimatedOutputFileLength;
-+ (struct { int x1; int x2; unsigned int x3; int x4; })maximumDurationForPreset:(id)arg1 properties:(id)arg2;
++ (struct { long long x1; int x2; unsigned int x3; long long x4; })maximumDurationForPreset:(id)arg1 properties:(id)arg2;
 
 - (id)_actualOutputFileType;
 - (id)_actualPresetName;
@@ -68,7 +68,7 @@
 - (id)_effectiveColorPropertiesForVideoSetting:(id)arg1;
 - (float)_getSourceVideoFrameRate;
 - (int)_getTrackCountOfType:(id)arg1 checkEnabled:(BOOL)arg2;
-- (struct CGSize { double x1; double x2; })_getUntransformedSourceDimension;
+- (struct CGSize { float x1; float x2; })_getUntransformedSourceDimension;
 - (void)_handleFigRemakerNotification:(id)arg1 payload:(id)arg2;
 - (void)_handleFigRemakerNotificationAsync:(id)arg1 payload:(id)arg2;
 - (BOOL)_hasProtectedNonAudioVideoTracks;
@@ -98,16 +98,16 @@
 - (void)determineCompatibleFileTypesWithCompletionHandler:(id /* block */)arg1;
 - (id)directoryForTemporaryFiles;
 - (id)error;
-- (int)estimatedOutputFileLength;
+- (long long)estimatedOutputFileLength;
 - (void)exportAsynchronouslyWithCompletionHandler:(id /* block */)arg1;
-- (int)fileLengthLimit;
+- (long long)fileLengthLimit;
 - (void)finalize;
 - (id)init;
 - (id)initWithAsset:(id)arg1 presetName:(id)arg2;
-- (struct { int x1; int x2; unsigned int x3; int x4; })maxDuration;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })maxDuration;
 - (id)metadata;
 - (id)metadataItemFilter;
-- (struct { int x1; int x2; unsigned int x3; int x4; })minVideoFrameDuration;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })minVideoFrameDuration;
 - (id)outputFileType;
 - (id)outputURL;
 - (id)presetName;
@@ -116,20 +116,20 @@
 - (void)setAudioTimePitchAlgorithm:(id)arg1;
 - (void)setCanPerformMultiplePassesOverSourceMediaData:(BOOL)arg1;
 - (void)setDirectoryForTemporaryFiles:(id)arg1;
-- (void)setFileLengthLimit:(int)arg1;
+- (void)setFileLengthLimit:(long long)arg1;
 - (void)setMetadata:(id)arg1;
 - (void)setMetadataItemFilter:(id)arg1;
-- (void)setMinVideoFrameDuration:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
+- (void)setMinVideoFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setOutputFileType:(id)arg1;
 - (void)setOutputURL:(id)arg1;
 - (void)setShouldOptimizeForNetworkUse:(BOOL)arg1;
-- (void)setTimeRange:(struct { struct { int x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; int x_1_1_4; } x1; struct { int x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; int x_2_1_4; } x2; })arg1;
+- (void)setTimeRange:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg1;
 - (void)setVideoComposition:(id)arg1;
 - (void)setVideoFrameRateConversionAlgorithm:(id)arg1;
 - (BOOL)shouldOptimizeForNetworkUse;
 - (int)status;
 - (id)supportedFileTypes;
-- (struct { struct { int x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; int x_1_1_4; } x1; struct { int x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; int x_2_1_4; } x2; })timeRange;
+- (struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })timeRange;
 - (id)videoComposition;
 - (id)videoFrameRateConversionAlgorithm;
 

@@ -4,12 +4,12 @@
 
 @interface _INUIExtensionContext : NSExtensionContext <_INUIExtensionContextVending> {
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _cachedHostedViewMaximumAllowedSize;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _cachedHostedViewMinimumAllowedSize;
 }
 
@@ -22,9 +22,9 @@
 + (id)_extensionAuxiliaryVendorProtocol;
 
 - (id)_errorHandlingHostProxy;
-- (struct CGSize { double x1; double x2; })hostedViewMaximumAllowedSize;
-- (struct CGSize { double x1; double x2; })hostedViewMinimumAllowedSize;
+- (struct CGSize { float x1; float x2; })hostedViewMaximumAllowedSize;
+- (struct CGSize { float x1; float x2; })hostedViewMinimumAllowedSize;
 - (id)initWithInputItems:(id)arg1 listenerEndpoint:(id)arg2 contextUUID:(id)arg3;
-- (void)setHostedViewMinimumAllowedSize:(struct CGSize { double x1; double x2; })arg1 maximumAllowedSize:(struct CGSize { double x1; double x2; })arg2 completion:(id /* block */)arg3;
+- (void)setHostedViewMinimumAllowedSize:(struct CGSize { float x1; float x2; })arg1 maximumAllowedSize:(struct CGSize { float x1; float x2; })arg2 completion:(id /* block */)arg3;
 
 @end

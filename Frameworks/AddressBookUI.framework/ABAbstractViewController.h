@@ -11,9 +11,9 @@
 @property (nonatomic, retain) <ABStyleProvider> *styleProvider;
 
 - (BOOL)_allowsAutorotation;
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; int x7; }*)arg1;
+- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; float x6; int x7; }*)arg1;
 - (int)behavior;
-- (struct CGSize { double x1; double x2; })contentSize;
+- (struct CGSize { float x1; float x2; })contentSize;
 - (void)dealloc;
 - (id)initWithModel:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

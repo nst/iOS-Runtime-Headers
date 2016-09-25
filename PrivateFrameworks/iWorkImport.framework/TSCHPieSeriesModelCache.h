@@ -13,31 +13,31 @@
     BOOL  mCurrentSeriesNullData;
     double  mCurrentSeriesPercentage;
     double  mCurrentSeriesStartAngle;
-    double  mEffectiveLabelExplosion;
-    double  mEffectiveWedgeExplosion;
+    float  mEffectiveLabelExplosion;
+    float  mEffectiveWedgeExplosion;
     double  mEndAngle;
     BOOL  mGroupedShadow;
     BOOL  mIsSingleCircleSpecialCase;
-    double  mLabelExplosion;
+    float  mLabelExplosion;
     NSString * mLabelString;
     double  mMidAngle;
     unsigned int  mNumberOfSeries;
     TSWPParagraphStyle * mParagraphStyle;
     TSDFill * mSeriesFill;
-    double  mSeriesOpacity;
+    float  mSeriesOpacity;
     TSDShadow * mSeriesShadow;
     TSDStroke * mSeriesStroke;
     TSCHChartSeries * mSingleCircleSeriesElement;
     double  mTotalValue;
-    double  mWedgeExplosion;
+    float  mWedgeExplosion;
 }
 
 @property (readonly) TSCHChartAxis *axis;
-@property (readonly) double effectiveLabelExplosion;
-@property (readonly) double effectiveWedgeExplosion;
+@property (readonly) float effectiveLabelExplosion;
+@property (readonly) float effectiveWedgeExplosion;
 @property (readonly) double endAngle;
 @property (readonly) BOOL groupedShadow;
-@property (readonly) double labelExplosion;
+@property (readonly) float labelExplosion;
 @property (readonly) NSString *labelString;
 @property (readonly) double midAngle;
 @property (readonly) BOOL nullData;
@@ -47,13 +47,13 @@
 @property (readonly) double seriesAxisValue;
 @property (readonly) TSDFill *seriesFill;
 @property (readonly) unsigned int seriesIndex;
-@property (readonly) double seriesOpacity;
+@property (readonly) float seriesOpacity;
 @property (readonly) TSDShadow *seriesShadow;
 @property (readonly) TSDStroke *seriesStroke;
 @property (readonly) BOOL shouldRenderLabel;
 @property (readonly) double startAngle;
 @property (readonly) double totalValue;
-@property (readonly) double wedgeExplosion;
+@property (readonly) float wedgeExplosion;
 
 - (id)axis;
 - (void)dealloc;

@@ -3,7 +3,7 @@
  */
 
 @interface HDCodableError : PBCodable <NSCopying> {
-    int  _code;
+    long long  _code;
     NSString * _domain;
     struct { 
         unsigned int code : 1; 
@@ -11,7 +11,7 @@
     NSString * _localizedDescription;
 }
 
-@property (nonatomic) int code;
+@property (nonatomic) long long code;
 @property (nonatomic, retain) NSString *domain;
 @property (nonatomic) BOOL hasCode;
 @property (nonatomic, readonly) BOOL hasDomain;
@@ -19,7 +19,7 @@
 @property (nonatomic, retain) NSString *localizedDescription;
 
 - (void).cxx_destruct;
-- (int)code;
+- (long long)code;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -33,7 +33,7 @@
 - (id)localizedDescription;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (void)setCode:(int)arg1;
+- (void)setCode:(long long)arg1;
 - (void)setDomain:(id)arg1;
 - (void)setHasCode:(BOOL)arg1;
 - (void)setLocalizedDescription:(id)arg1;

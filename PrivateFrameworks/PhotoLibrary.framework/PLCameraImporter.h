@@ -51,7 +51,7 @@
 - (void)_stopImport;
 - (void)addImportItemsFromCameraFiles:(id)arg1;
 - (id)allImportItems;
-- (unsigned int)approximateBytesRequiredToImportItem:(id)arg1;
+- (unsigned long long)approximateBytesRequiredToImportItem:(id)arg1;
 - (void)camaraDidEnumerateContents;
 - (id)camera;
 - (void)cameraDevice:(id)arg1 didAddItems:(id)arg2;

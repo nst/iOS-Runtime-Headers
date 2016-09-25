@@ -32,7 +32,7 @@
 
 - (void)_addPurchasesToManager;
 - (void)_finishPurchasesWithResponses:(id)arg1;
-- (id)_purchaseForUniqueIdentifier:(int)arg1;
+- (id)_purchaseForUniqueIdentifier:(long long)arg1;
 - (void)cancel;
 - (id)copyXPCEncoding;
 - (BOOL)createsDownloads;

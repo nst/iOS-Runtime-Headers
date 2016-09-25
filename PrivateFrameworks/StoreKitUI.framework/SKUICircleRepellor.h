@@ -3,28 +3,28 @@
  */
 
 @interface SKUICircleRepellor : NSObject {
-    double  _bufferSize;
+    float  _bufferSize;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _center;
     PKPhysicsBody * _physicsBody;
-    double  _radius;
+    float  _radius;
 }
 
-@property (nonatomic) double bufferSize;
-@property (nonatomic) struct CGPoint { double x1; double x2; } center;
+@property (nonatomic) float bufferSize;
+@property (nonatomic) struct CGPoint { float x1; float x2; } center;
 @property (nonatomic, retain) PKPhysicsBody *physicsBody;
-@property (nonatomic) double radius;
+@property (nonatomic) float radius;
 
 - (void).cxx_destruct;
 - (float)bufferSize;
-- (struct CGPoint { double x1; double x2; })center;
+- (struct CGPoint { float x1; float x2; })center;
 - (id)description;
 - (id)physicsBody;
 - (float)radius;
 - (void)setBufferSize:(float)arg1;
-- (void)setCenter:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setCenter:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setPhysicsBody:(id)arg1;
 - (void)setRadius:(float)arg1;
 

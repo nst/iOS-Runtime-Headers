@@ -31,7 +31,7 @@
 - (void)dealloc;
 - (void)didEndZooming;
 - (BOOL)frameInUnscaledCanvasNeedsPaddingForShadows;
-- (id)imageFromFill:(id)arg1 forResolutionWithBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 toRepElementTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg3 skipIntegral:(BOOL)arg4 returningFillFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg5;
+- (id)imageFromFill:(id)arg1 forResolutionWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 toRepElementTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg3 skipIntegral:(BOOL)arg4 returningFillFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg5;
 - (id)initWithLayout:(id)arg1 canvas:(id)arg2;
 - (BOOL)isHorizontalChart;
 - (id)layerIdToLayerMap;

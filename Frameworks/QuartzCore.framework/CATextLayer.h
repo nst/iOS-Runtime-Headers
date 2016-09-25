@@ -9,7 +9,7 @@
 @property (copy) NSString *alignmentMode;
 @property BOOL allowsFontSubpixelQuantization;
 @property const void*font;
-@property double fontSize;
+@property float fontSize;
 @property struct CGColor { }*foregroundColor;
 @property (copy) id string;
 @property (getter=isTruncated, readonly) BOOL truncated;
@@ -25,8 +25,8 @@
 - (void)_applyLinesToFunction:(int (*)arg1 info:(void*)arg2 truncated:(BOOL*)arg3;
 - (id)_createStringDict;
 - (struct __CTLine { }*)_createTruncationToken;
-- (void)_drawLine:(struct __CTLine { }*)arg1 inContext:(struct CGContext { }*)arg2 atPoint:(struct CGPoint { double x1; double x2; })arg3;
-- (struct CGSize { double x1; double x2; })_preferredSize;
+- (void)_drawLine:(struct __CTLine { }*)arg1 inContext:(struct CGContext { }*)arg2 atPoint:(struct CGPoint { float x1; float x2; })arg3;
+- (struct CGSize { float x1; float x2; })_preferredSize;
 - (void)_prepareContext:(struct CGContext { }*)arg1;
 - (struct __CTTypesetter { }*)_retainTypesetter;
 - (id)alignmentMode;

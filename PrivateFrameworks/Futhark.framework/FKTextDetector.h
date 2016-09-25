@@ -37,15 +37,15 @@
 
 - (int)binarizerLimit;
 - (BOOL)createFeaturesForAllConcomps;
-- (id)createFeaturesForROI:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 originalSize:(struct CGSize { double x1; double x2; })arg2 lastID:(int*)arg3;
-- (id)createFeaturesForSessionScale:(int)arg1 roi:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 originalSize:(struct CGSize { double x1; double x2; })arg3 startID:(int*)arg4;
+- (id)createFeaturesForROI:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 originalSize:(struct CGSize { float x1; float x2; })arg2 lastID:(int*)arg3;
+- (id)createFeaturesForSessionScale:(int)arg1 roi:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 originalSize:(struct CGSize { float x1; float x2; })arg3 startID:(int*)arg4;
 - (void)dealloc;
 - (BOOL)detectDiacritics;
 - (id)detectFeaturesInBuffer:(struct __CVBuffer { }*)arg1 error:(id*)arg2;
-- (id)detectFeaturesInBuffer:(struct __CVBuffer { }*)arg1 withRegionOfInterest:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 error:(id*)arg3;
+- (id)detectFeaturesInBuffer:(struct __CVBuffer { }*)arg1 withRegionOfInterest:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 error:(id*)arg3;
 - (BOOL)enableBinarizerFiltering;
-- (id)initWithDimensions:(struct CGSize { double x1; double x2; })arg1;
-- (unsigned char)isValidPixelBuffer:(struct __CVBuffer { }*)arg1 regionOfInterest:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 error:(id*)arg3;
+- (id)initWithDimensions:(struct CGSize { float x1; float x2; })arg1;
+- (unsigned char)isValidPixelBuffer:(struct __CVBuffer { }*)arg1 regionOfInterest:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 error:(id*)arg3;
 - (void)mergeFeature:(id)arg1 withArray:(id)arg2;
 - (struct { int x1; int x2; })mergeSettings;
 - (BOOL)minimizeFalseDetections;
@@ -54,7 +54,7 @@
 - (void)resetOptions;
 - (void)resetTimers;
 - (BOOL)returnSubFeatures;
-- (void)runRecognizerOnFeatures:(id)arg1 roi:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 size:(struct CGSize { double x1; double x2; })arg3 lastID:(int*)arg4;
+- (void)runRecognizerOnFeatures:(id)arg1 roi:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 size:(struct CGSize { float x1; float x2; })arg3 lastID:(int*)arg4;
 - (void)setBinarizerLimit:(int)arg1;
 - (void)setCreateFeaturesForAllConcomps:(BOOL)arg1;
 - (void)setDetectDiacritics:(BOOL)arg1;

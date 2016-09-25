@@ -26,7 +26,7 @@
 - (id)delegate;
 - (id)initWithChooserStyle:(int)arg1;
 - (int)numberOfSectionsInTableView:(id)arg1;
-- (struct CGSize { double x1; double x2; })preferredContentSize;
+- (struct CGSize { float x1; float x2; })preferredContentSize;
 - (void)setCities:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setTimeZone:(id)arg1;

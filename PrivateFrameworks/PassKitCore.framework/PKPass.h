@@ -60,7 +60,7 @@
 @property (nonatomic, copy) NSURL *localLocationsURL;
 @property (nonatomic, readonly, copy) NSString *localizedDescription;
 @property (nonatomic, readonly, copy) NSString *localizedName;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } logoRect;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } logoRect;
 @property (nonatomic, readonly) NSString *logoText;
 @property (nonatomic, readonly) NSString *lowercaseLocalizedName;
 @property (nonatomic, retain) NSDate *modifiedDate;
@@ -92,10 +92,10 @@
 @property (nonatomic, copy) NSString *sharingText;
 @property (nonatomic, copy) NSURL *sharingURL;
 @property (nonatomic, readonly) NSArray *storeIdentifiers;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } stripRect;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } stripRect;
 @property (nonatomic, readonly) int style;
 @property (nonatomic, copy) NSString *teamID;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } thumbnailRect;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } thumbnailRect;
 @property (nonatomic, readonly) int transitType;
 @property (nonatomic, readonly) NSString *uniqueID;
 @property (nonatomic, copy) NSDictionary *userInfo;
@@ -159,7 +159,7 @@
 - (id)localizedName;
 - (id)localizedValueForFieldKey:(id)arg1;
 - (id)logoImage;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })logoRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })logoRect;
 - (id)logoText;
 - (id)lowercaseLocalizedName;
 - (id)modifiedDate;
@@ -213,12 +213,12 @@
 - (id)sharingURL;
 - (id)storeIdentifiers;
 - (id)stripImage;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })stripRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })stripRect;
 - (int)style;
 - (BOOL)supportsSharing;
 - (id)teamID;
 - (id)thumbnailImage;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })thumbnailRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })thumbnailRect;
 - (int)transitType;
 - (id)userInfo;
 - (id)webLocationsURL;

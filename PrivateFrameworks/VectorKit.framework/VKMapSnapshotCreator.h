@@ -20,7 +20,7 @@
     }  _mapDisplayStyle;
     int  _mapType;
     VKMemoryObserver * _memoryObserver;
-    struct Renderer { int (**x1)(); struct Device {} *x2; unsigned int x3; unsigned int x4; unsigned int x5; bool x6; double x7; struct vector<std::__1::shared_ptr<ggl::DebugRenderer>, std::__1::allocator<std::__1::shared_ptr<ggl::DebugRenderer> > > { struct shared_ptr<ggl::DebugRenderer> {} *x_8_1_1; struct shared_ptr<ggl::DebugRenderer> {} *x_8_1_2; struct __compressed_pair<std::__1::shared_ptr<ggl::DebugRenderer> *, std::__1::allocator<std::__1::shared_ptr<ggl::DebugRenderer> > > { struct shared_ptr<ggl::DebugRenderer> {} *x_3_2_1; } x_8_1_3; } x8; struct unique_ptr<ggl::RenderQueue, std::__1::default_delete<ggl::RenderQueue> > { struct __compressed_pair<ggl::RenderQueue *, std::__1::default_delete<ggl::RenderQueue> > { struct RenderQueue {} *x_1_2_1; } x_9_1_1; } x9; struct shared_ptr<ggl::CommonLibrary> { struct CommonLibrary {} *x_10_1_1; struct __shared_weak_count {} *x_10_1_2; } x10; struct unique_ptr<ggl::RenderResourceFences, std::__1::default_delete<ggl::RenderResourceFences> > { struct __compressed_pair<ggl::RenderResourceFences *, std::__1::default_delete<ggl::RenderResourceFences> > { struct RenderResourceFences {} *x_1_2_1; } x_11_1_1; } x11; } * _renderer;
+    struct Renderer { int (**x1)(); struct Device {} *x2; unsigned int x3; unsigned int x4; unsigned int x5; bool x6; float x7; struct vector<std::__1::shared_ptr<ggl::DebugRenderer>, std::__1::allocator<std::__1::shared_ptr<ggl::DebugRenderer> > > { struct shared_ptr<ggl::DebugRenderer> {} *x_8_1_1; struct shared_ptr<ggl::DebugRenderer> {} *x_8_1_2; struct __compressed_pair<std::__1::shared_ptr<ggl::DebugRenderer> *, std::__1::allocator<std::__1::shared_ptr<ggl::DebugRenderer> > > { struct shared_ptr<ggl::DebugRenderer> {} *x_3_2_1; } x_8_1_3; } x8; struct unique_ptr<ggl::RenderQueue, std::__1::default_delete<ggl::RenderQueue> > { struct __compressed_pair<ggl::RenderQueue *, std::__1::default_delete<ggl::RenderQueue> > { struct RenderQueue {} *x_1_2_1; } x_9_1_1; } x9; struct shared_ptr<ggl::CommonLibrary> { struct CommonLibrary {} *x_10_1_1; struct __shared_weak_count {} *x_10_1_2; } x10; struct unique_ptr<ggl::RenderResourceFences, std::__1::default_delete<ggl::RenderResourceFences> > { struct __compressed_pair<ggl::RenderResourceFences *, std::__1::default_delete<ggl::RenderResourceFences> > { struct RenderResourceFences {} *x_1_2_1; } x_11_1_1; } x11; } * _renderer;
 }
 
 @property (nonatomic) int labelScaleFactor;
@@ -29,7 +29,7 @@
 @property (nonatomic) int mapType;
 @property (nonatomic) BOOL showsBuildings;
 @property (nonatomic) BOOL showsPointsOfInterest;
-@property (readonly) struct CGSize { double x1; double x2; } size;
+@property (readonly) struct CGSize { float x1; float x2; } size;
 
 // Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
 
@@ -45,8 +45,8 @@
 - (void)didReceiveMemoryWarning:(id)arg1;
 - (void)imageCanvasDidBecomeFullyDrawn:(id)arg1 hasFailedTiles:(BOOL)arg2;
 - (void)imageCanvasWillBecomeFullyDrawn:(id)arg1;
-- (id)initWithSize:(struct CGSize { double x1; double x2; })arg1 scale:(float)arg2 homeQueue:(id)arg3;
-- (id)initWithSize:(struct CGSize { double x1; double x2; })arg1 scale:(float)arg2 homeQueue:(id)arg3 manifestConfiguration:(id)arg4 locale:(id)arg5;
+- (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2 homeQueue:(id)arg3;
+- (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2 homeQueue:(id)arg3 manifestConfiguration:(id)arg4 locale:(id)arg5;
 - (BOOL)isRoadClassDisabled:(int)arg1;
 - (int)labelScaleFactor;
 - (BOOL)localizeLabels;
@@ -66,7 +66,7 @@
 - (void)setShowsPointsOfInterest:(BOOL)arg1;
 - (BOOL)showsBuildings;
 - (BOOL)showsPointsOfInterest;
-- (struct CGSize { double x1; double x2; })size;
+- (struct CGSize { float x1; float x2; })size;
 
 // Image: /System/Library/Frameworks/MapKit.framework/MapKit
 

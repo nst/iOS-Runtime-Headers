@@ -30,7 +30,7 @@
 
 - (void).cxx_destruct;
 - (void)_postBrowserDidPrepareForDisplayNotificationIfNecessary;
-- (void)_setContentOverlayInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)_setContentOverlayInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (id)_stickerForMSSticker:(id)arg1;
 - (id)browserView;
 - (void)dealloc;
@@ -71,7 +71,7 @@
 - (void)setStickerCache:(id)arg1;
 - (void)setupNoRecentsLabel;
 - (BOOL)shouldShowChatChrome;
-- (void)startDragSticker:(id)arg1 frameInRemoteView:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 fence:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)startDragSticker:(id)arg1 frameInRemoteView:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 fence:(id)arg3 completionHandler:(id /* block */)arg4;
 - (BOOL)stickerBrowserView:(id)arg1 shouldDrawBorderAroundSticker:(id)arg2;
 - (id)stickerBrowserView:(id)arg1 stickerAtIndex:(int)arg2;
 - (id)stickerCache;

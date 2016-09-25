@@ -4,52 +4,52 @@
 
 @interface CUINamedImageDescription : NSObject {
     struct { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _alignmentEdgeInsets;
     int  _blendMode;
     int  _displayGamut;
     struct { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _edgeInsets;
     int  _exifOrientation;
     int  _idiom;
     int  _imageType;
     int  _layoutDirection;
     int  _resizingMode;
-    double  _scale;
+    float  _scale;
     int  _sizeClassHorizontal;
     int  _sizeClassVertical;
     int  _subtype;
     int  _templateRenderingMode;
 }
 
-@property (nonatomic) struct { double x1; double x2; double x3; double x4; } alignmentEdgeInsets;
+@property (nonatomic) struct { float x1; float x2; float x3; float x4; } alignmentEdgeInsets;
 @property (nonatomic) int blendMode;
 @property (nonatomic) int displayGamut;
-@property (nonatomic) struct { double x1; double x2; double x3; double x4; } edgeInsets;
+@property (nonatomic) struct { float x1; float x2; float x3; float x4; } edgeInsets;
 @property (nonatomic) int exifOrientation;
 @property (nonatomic) int idiom;
 @property (nonatomic) int imageType;
 @property (nonatomic) BOOL isTemplate;
 @property (nonatomic) int layoutDirection;
 @property (nonatomic) int resizingMode;
-@property (nonatomic) double scale;
+@property (nonatomic) float scale;
 @property (nonatomic) int sizeClassHorizontal;
 @property (nonatomic) int sizeClassVertical;
 @property (nonatomic) int subtype;
 @property (nonatomic) int templateRenderingMode;
 
-- (struct { double x1; double x2; double x3; double x4; })alignmentEdgeInsets;
+- (struct { float x1; float x2; float x3; float x4; })alignmentEdgeInsets;
 - (int)blendMode;
 - (id)description;
 - (int)displayGamut;
-- (struct { double x1; double x2; double x3; double x4; })edgeInsets;
+- (struct { float x1; float x2; float x3; float x4; })edgeInsets;
 - (int)exifOrientation;
 - (int)idiom;
 - (int)imageType;
@@ -57,10 +57,10 @@
 - (int)layoutDirection;
 - (int)resizingMode;
 - (float)scale;
-- (void)setAlignmentEdgeInsets:(struct { double x1; double x2; double x3; double x4; })arg1;
+- (void)setAlignmentEdgeInsets:(struct { float x1; float x2; float x3; float x4; })arg1;
 - (void)setBlendMode:(int)arg1;
 - (void)setDisplayGamut:(int)arg1;
-- (void)setEdgeInsets:(struct { double x1; double x2; double x3; double x4; })arg1;
+- (void)setEdgeInsets:(struct { float x1; float x2; float x3; float x4; })arg1;
 - (void)setExifOrientation:(int)arg1;
 - (void)setIdiom:(int)arg1;
 - (void)setImageType:(int)arg1;

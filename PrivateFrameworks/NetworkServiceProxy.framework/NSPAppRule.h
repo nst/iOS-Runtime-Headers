@@ -15,7 +15,7 @@
     double  _fallbackTimeout;
     NSArray * _machoUUIDs;
     NSString * _proxyEvaluationPath;
-    unsigned int  _serviceID;
+    unsigned long long  _serviceID;
     BOOL  _useCustomProtocol;
 }
 
@@ -31,7 +31,7 @@
 @property double fallbackTimeout;
 @property (retain) NSArray *machoUUIDs;
 @property (copy) NSString *proxyEvaluationPath;
-@property unsigned int serviceID;
+@property unsigned long long serviceID;
 @property BOOL useCustomProtocol;
 
 + (id)copyUUIDsForSigningIdentifier:(id)arg1 executablePath:(id)arg2;
@@ -63,7 +63,7 @@
 - (id)proxyEvaluationPath;
 - (BOOL)resetMachOUUIDs;
 - (void)saveWithCompletionHandler:(id /* block */)arg1;
-- (unsigned int)serviceID;
+- (unsigned long long)serviceID;
 - (void)setDirectTLSPorts:(id)arg1;
 - (void)setDisableFallback:(BOOL)arg1;
 - (void)setDivertDNSOnly:(BOOL)arg1;
@@ -76,7 +76,7 @@
 - (void)setFallbackTimeout:(double)arg1;
 - (void)setMachoUUIDs:(id)arg1;
 - (void)setProxyEvaluationPath:(id)arg1;
-- (void)setServiceID:(unsigned int)arg1;
+- (void)setServiceID:(unsigned long long)arg1;
 - (void)setUseCustomProtocol:(BOOL)arg1;
 - (BOOL)useCustomProtocol;
 

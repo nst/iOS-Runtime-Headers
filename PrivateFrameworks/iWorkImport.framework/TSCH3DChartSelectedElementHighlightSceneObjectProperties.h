@@ -6,24 +6,24 @@
     TSCH3Dvec3DataBuffer * edgeVertices;
     struct tvec4<float> { 
         union { 
-            double x; 
-            double r; 
-            double s; 
+            float x; 
+            float r; 
+            float s; 
         } ; 
         union { 
-            double y; 
-            double g; 
-            double t; 
+            float y; 
+            float g; 
+            float t; 
         } ; 
         union { 
-            double z; 
-            double b; 
-            double p; 
+            float z; 
+            float b; 
+            float p; 
         } ; 
         union { 
-            double w; 
-            double a; 
-            double q; 
+            float w; 
+            float a; 
+            float q; 
         } ; 
     }  mColor;
     TSCH3Dvec3DataBuffer * mEdgeVertices;
@@ -31,19 +31,19 @@
     unsigned int  mSelectedSeriesIndex;
 }
 
-@property (nonatomic) struct tvec4<float> { union { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; union { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; union { double x_3_1_1; double x_3_1_2; double x_3_1_3; } x3; union { double x_4_1_1; double x_4_1_2; double x_4_1_3; } x4; } color;
+@property (nonatomic) struct tvec4<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; union { float x_4_1_1; float x_4_1_2; float x_4_1_3; } x4; } color;
 @property (nonatomic, retain) TSCH3Dvec3DataBuffer *edgeVertices;
 @property (nonatomic, readonly) TSCH3DPrefilteredLineRenderer *renderer;
 @property (nonatomic) unsigned int selectedSeriesIndex;
 
 - (id).cxx_construct;
-- (struct tvec4<float> { union { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; union { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; union { double x_3_1_1; double x_3_1_2; double x_3_1_3; } x3; union { double x_4_1_1; double x_4_1_2; double x_4_1_3; } x4; })color;
+- (struct tvec4<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; union { float x_4_1_1; float x_4_1_2; float x_4_1_3; } x4; })color;
 - (void)dealloc;
 - (id)edgeVertices;
 - (id)init;
 - (id)renderer;
 - (unsigned int)selectedSeriesIndex;
-- (void)setColor:(struct tvec4<float> { union { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; union { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; union { double x_3_1_1; double x_3_1_2; double x_3_1_3; } x3; union { double x_4_1_1; double x_4_1_2; double x_4_1_3; } x4; })arg1;
+- (void)setColor:(struct tvec4<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; union { float x_4_1_1; float x_4_1_2; float x_4_1_3; } x4; })arg1;
 - (void)setEdgeVertices:(id)arg1;
 - (void)setSelectedSeriesIndex:(unsigned int)arg1;
 

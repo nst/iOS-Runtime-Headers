@@ -17,7 +17,7 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)addPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)addPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
@@ -25,7 +25,7 @@
 - (id)initWithCoder:(id)arg1;
 - (unsigned int)numberOfPointsInStrokeAtIndex:(unsigned int)arg1;
 - (unsigned int)numberOfStrokes;
-- (struct CGPoint { double x1; double x2; })pointAtIndex:(unsigned int)arg1 inStrokeAtIndex:(unsigned int)arg2;
+- (struct CGPoint { float x1; float x2; })pointAtIndex:(unsigned int)arg1 inStrokeAtIndex:(unsigned int)arg2;
 - (void)removeAllStrokes;
 - (void)removeStrokeAtIndex:(unsigned int)arg1;
 - (unsigned int)totalNumberOfPoints;

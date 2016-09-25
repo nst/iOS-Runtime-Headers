@@ -29,7 +29,7 @@
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (id)exchangeItem:(id)arg1 withItem:(id)arg2;
 - (id)initWithTabBar:(id)arg1;
-- (struct CGSize { double x1; double x2; })intrinsicContentSizeGivenSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })intrinsicContentSizeGivenSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)layoutSubviews;
 - (id)preferredFocusedView;
 - (void)prepare;

@@ -4,15 +4,15 @@
 
 @interface TSPDatabaseDataRepresentation : SFUDataRepresentation {
     TSPDatabase * _database;
-    int  _identifier;
+    long long  _identifier;
 }
 
 - (void).cxx_destruct;
 - (struct sqlite3_blob { }*)_openBlob;
 - (struct ZeroCopyInputStream { int (**x1)(); }*)createProtobufInputStream;
-- (int)dataLength;
+- (long long)dataLength;
 - (BOOL)hasSameLocationAs:(id)arg1;
-- (id)initWithDatabase:(id)arg1 identifier:(int)arg2;
+- (id)initWithDatabase:(id)arg1 identifier:(long long)arg2;
 - (id)inputStream;
 
 @end

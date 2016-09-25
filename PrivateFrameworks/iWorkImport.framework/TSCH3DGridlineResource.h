@@ -7,7 +7,7 @@
 }
 
 @property (nonatomic, readonly) BOOL enabled;
-@property (nonatomic, readonly) double opacity;
+@property (nonatomic, readonly) float opacity;
 @property (nonatomic, readonly) TSDStroke *stroke;
 
 + (id)resourceWithAxisEnumerator:(id)arg1;

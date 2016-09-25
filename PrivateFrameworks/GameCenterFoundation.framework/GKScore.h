@@ -9,7 +9,7 @@
 }
 
 @property (nonatomic, copy) NSString *category;
-@property (nonatomic) unsigned int context;
+@property (nonatomic) unsigned long long context;
 @property (nonatomic, readonly, retain) NSDate *date;
 @property (nonatomic, copy) NSString *formattedValue;
 @property (nonatomic, retain) GKGame *game;
@@ -20,7 +20,7 @@
 @property (readonly, retain) NSString *playerID;
 @property (nonatomic) int rank;
 @property (nonatomic) BOOL shouldSetDefaultLeaderboard;
-@property (nonatomic) int value;
+@property (nonatomic) long long value;
 @property BOOL valueSet;
 
 // Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation

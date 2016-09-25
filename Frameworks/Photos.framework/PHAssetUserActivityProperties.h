@@ -3,42 +3,42 @@
  */
 
 @interface PHAssetUserActivityProperties : PHAssetPropertySet {
-    int  _pendingPlayCount;
-    int  _pendingShareCount;
-    int  _pendingViewCount;
-    int  _syncedPlayCount;
-    int  _syncedShareCount;
-    int  _syncedViewCount;
+    long long  _pendingPlayCount;
+    long long  _pendingShareCount;
+    long long  _pendingViewCount;
+    long long  _syncedPlayCount;
+    long long  _syncedShareCount;
+    long long  _syncedViewCount;
 }
 
-@property (nonatomic) int pendingPlayCount;
-@property (nonatomic) int pendingShareCount;
-@property (nonatomic) int pendingViewCount;
-@property (nonatomic, readonly) int playCount;
-@property (nonatomic, readonly) int shareCount;
-@property (nonatomic) int syncedPlayCount;
-@property (nonatomic) int syncedShareCount;
-@property (nonatomic) int syncedViewCount;
-@property (nonatomic, readonly) int viewCount;
+@property (nonatomic) long long pendingPlayCount;
+@property (nonatomic) long long pendingShareCount;
+@property (nonatomic) long long pendingViewCount;
+@property (nonatomic, readonly) long long playCount;
+@property (nonatomic, readonly) long long shareCount;
+@property (nonatomic) long long syncedPlayCount;
+@property (nonatomic) long long syncedShareCount;
+@property (nonatomic) long long syncedViewCount;
+@property (nonatomic, readonly) long long viewCount;
 
 + (id)propertiesToFetch;
 + (id)propertySetName;
 
 - (id)initWithFetchDictionary:(id)arg1 asset:(id)arg2 prefetched:(BOOL)arg3;
-- (int)pendingPlayCount;
-- (int)pendingShareCount;
-- (int)pendingViewCount;
-- (int)playCount;
-- (void)setPendingPlayCount:(int)arg1;
-- (void)setPendingShareCount:(int)arg1;
-- (void)setPendingViewCount:(int)arg1;
-- (void)setSyncedPlayCount:(int)arg1;
-- (void)setSyncedShareCount:(int)arg1;
-- (void)setSyncedViewCount:(int)arg1;
-- (int)shareCount;
-- (int)syncedPlayCount;
-- (int)syncedShareCount;
-- (int)syncedViewCount;
-- (int)viewCount;
+- (long long)pendingPlayCount;
+- (long long)pendingShareCount;
+- (long long)pendingViewCount;
+- (long long)playCount;
+- (void)setPendingPlayCount:(long long)arg1;
+- (void)setPendingShareCount:(long long)arg1;
+- (void)setPendingViewCount:(long long)arg1;
+- (void)setSyncedPlayCount:(long long)arg1;
+- (void)setSyncedShareCount:(long long)arg1;
+- (void)setSyncedViewCount:(long long)arg1;
+- (long long)shareCount;
+- (long long)syncedPlayCount;
+- (long long)syncedShareCount;
+- (long long)syncedViewCount;
+- (long long)viewCount;
 
 @end

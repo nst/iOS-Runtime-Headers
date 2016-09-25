@@ -3,10 +3,10 @@
  */
 
 @interface UIInputViewSetPlacementPlaceholderUndocked : UIInputViewSetPlacementUndocked {
-    double  _height;
+    float  _height;
 }
 
-+ (id)placementWithHeight:(float)arg1 undockedOffset:(struct CGPoint { double x1; double x2; })arg2 chromeBuffer:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg3;
++ (id)placementWithHeight:(float)arg1 undockedOffset:(struct CGPoint { float x1; float x2; })arg2 chromeBuffer:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg3;
 
 - (float)heightOfInputViews:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

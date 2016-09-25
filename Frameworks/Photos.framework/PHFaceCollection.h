@@ -34,6 +34,6 @@
 
 - (id)name;
 - (unsigned int)numberOfAssets;
-- (void)requestFaceTileImageWithTargetSize:(struct CGSize { double x1; double x2; })arg1 cropFactor:(unsigned int)arg2 round:(BOOL)arg3 cacheResult:(BOOL)arg4 completionBlock:(id /* block */)arg5;
+- (void)requestFaceTileImageWithTargetSize:(struct CGSize { float x1; float x2; })arg1 cropFactor:(unsigned int)arg2 round:(BOOL)arg3 cacheResult:(BOOL)arg4 completionBlock:(id /* block */)arg5;
 
 @end

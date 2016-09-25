@@ -4,17 +4,17 @@
 
 @interface _UIFocusEngineJoystickGestureRecognizer : UIGestureRecognizer {
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _previousStickPosition;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _stickPosition;
 }
 
-@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } previousStickPosition;
-@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } stickPosition;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } previousStickPosition;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } stickPosition;
 
 - (void)_calculateStickPositionFromPresses:(id)arg1 withEvent:(id)arg2;
 - (BOOL)_shouldReceivePress:(id)arg1;
@@ -23,8 +23,8 @@
 - (void)pressesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)pressesChanged:(id)arg1 withEvent:(id)arg2;
 - (void)pressesEnded:(id)arg1 withEvent:(id)arg2;
-- (struct CGPoint { double x1; double x2; })previousStickPosition;
+- (struct CGPoint { float x1; float x2; })previousStickPosition;
 - (void)reset;
-- (struct CGPoint { double x1; double x2; })stickPosition;
+- (struct CGPoint { float x1; float x2; })stickPosition;
 
 @end

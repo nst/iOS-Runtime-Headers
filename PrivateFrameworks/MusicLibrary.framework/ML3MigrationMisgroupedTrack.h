@@ -3,15 +3,15 @@
  */
 
 @interface ML3MigrationMisgroupedTrack : NSObject {
-    int  _albumArtistPID;
-    int  _persistentID;
+    long long  _albumArtistPID;
+    long long  _persistentID;
 }
 
-@property (nonatomic, readonly) int albumArtistPID;
-@property (nonatomic, readonly) int persistentID;
+@property (nonatomic, readonly) long long albumArtistPID;
+@property (nonatomic, readonly) long long persistentID;
 
-- (int)albumArtistPID;
-- (id)initWithPersistentID:(int)arg1 albumArtistPID:(int)arg2;
-- (int)persistentID;
+- (long long)albumArtistPID;
+- (id)initWithPersistentID:(long long)arg1 albumArtistPID:(long long)arg2;
+- (long long)persistentID;
 
 @end

@@ -8,8 +8,8 @@
     NSString * _name;
     unsigned int  _textureName;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _textureSize;
 }
 
@@ -17,19 +17,19 @@
 @property (nonatomic) int indexOnAttachment;
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) unsigned int textureName;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } textureSize;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } textureSize;
 
-+ (id)textureLookupInfoWithAttachment:(unsigned int)arg1 indexOnAttachment:(int)arg2 textureName:(unsigned int)arg3 textureSize:(struct CGSize { double x1; double x2; })arg4 name:(id)arg5;
++ (id)textureLookupInfoWithAttachment:(unsigned int)arg1 indexOnAttachment:(int)arg2 textureName:(unsigned int)arg3 textureSize:(struct CGSize { float x1; float x2; })arg4 name:(id)arg5;
 
 - (unsigned int)attachment;
 - (void)dealloc;
 - (id)description;
 - (int)indexOnAttachment;
-- (id)initWithAttachment:(unsigned int)arg1 indexOnAttachment:(int)arg2 textureName:(unsigned int)arg3 textureSize:(struct CGSize { double x1; double x2; })arg4 name:(id)arg5;
+- (id)initWithAttachment:(unsigned int)arg1 indexOnAttachment:(int)arg2 textureName:(unsigned int)arg3 textureSize:(struct CGSize { float x1; float x2; })arg4 name:(id)arg5;
 - (id)name;
 - (void)setAttachment:(unsigned int)arg1;
 - (void)setIndexOnAttachment:(int)arg1;
 - (unsigned int)textureName;
-- (struct CGSize { double x1; double x2; })textureSize;
+- (struct CGSize { float x1; float x2; })textureSize;
 
 @end

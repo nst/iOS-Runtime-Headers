@@ -15,9 +15,9 @@
 @property (nonatomic, readonly) UIColor *noteMarkerFillColor;
 @property (nonatomic, readonly) UIColor *noteMarkerStrikethroughColor;
 @property (nonatomic, readonly) UIColor *noteShadowColor;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } noteShadowOffset;
-@property (nonatomic, readonly) double noteShadowOpacity;
-@property (nonatomic, readonly) double noteShadowRadius;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } noteShadowOffset;
+@property (nonatomic, readonly) float noteShadowOpacity;
+@property (nonatomic, readonly) float noteShadowRadius;
 @property (nonatomic, readonly) UIColor *noteTextColor;
 @property (nonatomic, readonly) UIFont *noteTextFont;
 @property (nonatomic, readonly) UIFont *noteTextFontInTable;
@@ -49,7 +49,7 @@
 - (id)noteMarkerFillColor;
 - (id)noteMarkerStrikethroughColor;
 - (id)noteShadowColor;
-- (struct CGSize { double x1; double x2; })noteShadowOffset;
+- (struct CGSize { float x1; float x2; })noteShadowOffset;
 - (float)noteShadowOpacity;
 - (float)noteShadowRadius;
 - (id)noteTextColor;

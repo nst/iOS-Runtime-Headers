@@ -24,18 +24,18 @@
     BOOL  _lastInfoRefreshFailed;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _lastMaxWidthBounds;
     MKMapItem * _mapItem;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _newSize;
     NSMutableSet * _pagedSectionIdentifiers;
     NSMutableDictionary * _sectionControllers;
@@ -177,7 +177,7 @@
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillLayoutSubviews;
-- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
 
 @end

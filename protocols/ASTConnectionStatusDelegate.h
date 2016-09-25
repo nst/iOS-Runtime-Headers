@@ -6,6 +6,6 @@
 @optional
 
 - (void)connection:(id <ASTConnection>)arg1 connectionStateChanged:(int)arg2;
-- (void)connection:(id <ASTConnection>)arg1 didSendBodyData:(int)arg2 totalBytesSent:(int)arg3 totalBytesExpected:(int)arg4;
+- (void)connection:(id <ASTConnection>)arg1 didSendBodyData:(long long)arg2 totalBytesSent:(long long)arg3 totalBytesExpected:(long long)arg4;
 
 @end

@@ -27,7 +27,7 @@
     CKDatabase * _sharedCloudDatabase;
     NSString * _sourceApplicationBundleIdentifier;
     NSString * _sourceApplicationSecondaryIdentifier;
-    unsigned int  _stateHandle;
+    unsigned long long  _stateHandle;
     int  _statusReportToken;
     NSOperationQueue * _throttlingOperationQueue;
     BOOL  _wantsSiloedContext;
@@ -59,7 +59,7 @@
 @property (nonatomic, retain) CKDatabase *publicCloudDatabase;
 @property (nonatomic, retain) NSMutableArray *sandboxExtensionHandles;
 @property (nonatomic, retain) CKDatabase *sharedCloudDatabase;
-@property (nonatomic) unsigned int stateHandle;
+@property (nonatomic) unsigned long long stateHandle;
 @property (nonatomic) int statusReportToken;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSOperationQueue *throttlingOperationQueue;
@@ -189,7 +189,7 @@
 - (void)setSharedCloudDatabase:(id)arg1;
 - (void)setSourceApplicationBundleIdentifier:(id)arg1;
 - (void)setSourceApplicationSecondaryIdentifier:(id)arg1;
-- (void)setStateHandle:(unsigned int)arg1;
+- (void)setStateHandle:(unsigned long long)arg1;
 - (void)setStatusReportToken:(int)arg1;
 - (void)setThrottlingOperationQueue:(id)arg1;
 - (void)setWantsSiloedContext:(BOOL)arg1;
@@ -198,7 +198,7 @@
 - (id)sharedCloudDatabase;
 - (id)sourceApplicationBundleIdentifier;
 - (id)sourceApplicationSecondaryIdentifier;
-- (unsigned int)stateHandle;
+- (unsigned long long)stateHandle;
 - (void)statusForApplicationPermission:(unsigned int)arg1 completionHandler:(id /* block */)arg2;
 - (void)statusGroupsForApplicationPermission:(unsigned int)arg1 completionHandler:(id /* block */)arg2;
 - (int)statusReportToken;

@@ -8,13 +8,13 @@
         unsigned int offset : 1; 
     }  _has;
     unsigned int  _index;
-    double  _offset;
+    float  _offset;
 }
 
 @property (nonatomic) BOOL hasIndex;
 @property (nonatomic) BOOL hasOffset;
 @property (nonatomic) unsigned int index;
-@property (nonatomic) double offset;
+@property (nonatomic) float offset;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

@@ -25,7 +25,7 @@
     BOOL  _needsUpdateTopLevelViewsArrangement;
     UIInterfaceActionRepresentationView * _preferredActionRepresentation;
     int  _presentationStyle;
-    double  _requiredActionRepresentationWidth;
+    float  _requiredActionRepresentationWidth;
     BOOL  _showsSeparatorAboveActions;
     UIView * _topLevelItemsView;
     NSArray * _topLevelViewArrangementConstraints;
@@ -57,7 +57,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) UIInterfaceActionRepresentationView *preferredActionRepresentation;
 @property (nonatomic) int presentationStyle;
-@property (nonatomic) double requiredActionRepresentationWidth;
+@property (nonatomic) float requiredActionRepresentationWidth;
 @property (nonatomic) BOOL showsSeparatorAboveActions;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) UIView *topLevelItemsView;
@@ -73,7 +73,7 @@
 - (BOOL)_actionLayoutAxisUnknownDisallowedIsVertical;
 - (id)_actionRepresentationViewForAction:(id)arg1;
 - (void)_actionSequenceViewContentSizeDidChange;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_actionSequenceVisibleRectForMakingCenteredAction:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_actionSequenceVisibleRectForMakingCenteredAction:(id)arg1;
 - (void)_addBackgroudViewToViewHierarchy:(id)arg1;
 - (void)_addConstraintToActiveTopLevelViewArrangementConstraints:(id)arg1;
 - (id)_alertController;
@@ -87,7 +87,7 @@
 - (void)_associateWeakSimultaneouslyPresentedGroupViews:(id)arg1 bidirectional:(BOOL)arg2;
 - (void)_commonInitWithActionGroup:(id)arg1 visualStyleProvider:(id)arg2 actionHandlerInvocationDelegate:(id)arg3;
 - (id)_constraintsToPinView:(id)arg1 layoutGuide:(id)arg2 identifier:(id)arg3;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_contentEdgeFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_contentEdgeFrame;
 - (id)_currentlyFocusedActionView;
 - (id)_defaultOrderingForActionRepresentationViews:(id)arg1;
 - (void)_determineActualLayoutAxis;
@@ -178,7 +178,7 @@
 - (void)setVisualStyle:(id)arg1;
 - (void)setVisualStyleProvider:(id)arg1;
 - (BOOL)showsSeparatorAboveActions;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)topLevelItemsView;
 - (id)topLevelViewArrangementConstraints;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;

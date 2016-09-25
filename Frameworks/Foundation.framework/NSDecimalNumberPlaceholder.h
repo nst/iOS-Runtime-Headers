@@ -18,8 +18,8 @@
 - (id)initWithInt:(int)arg1;
 - (id)initWithInteger:(int)arg1;
 - (id)initWithLong:(long)arg1;
-- (id)initWithLongLong:(int)arg1;
-- (id)initWithMantissa:(unsigned int)arg1 exponent:(short)arg2 isNegative:(BOOL)arg3;
+- (id)initWithLongLong:(long long)arg1;
+- (id)initWithMantissa:(unsigned long long)arg1 exponent:(short)arg2 isNegative:(BOOL)arg3;
 - (id)initWithShort:(short)arg1;
 - (id)initWithString:(id)arg1;
 - (id)initWithString:(id)arg1 locale:(id)arg2;
@@ -27,7 +27,7 @@
 - (id)initWithUnsignedInt:(unsigned int)arg1;
 - (id)initWithUnsignedInteger:(unsigned int)arg1;
 - (id)initWithUnsignedLong:(unsigned long)arg1;
-- (id)initWithUnsignedLongLong:(unsigned int)arg1;
+- (id)initWithUnsignedLongLong:(unsigned long long)arg1;
 - (id)initWithUnsignedShort:(unsigned short)arg1;
 - (oneway void)release;
 - (id)retain;

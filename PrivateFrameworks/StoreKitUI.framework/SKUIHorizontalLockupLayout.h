@@ -4,19 +4,19 @@
 
 @interface SKUIHorizontalLockupLayout : NSObject {
     NSMutableArray * _columns;
-    double  _imageMarginRight;
+    float  _imageMarginRight;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _metadataColumnEdgeInsets;
-    double  _metadataColumnMinHeight;
-    double  _tallestNonMetadataColumnHeight;
+    float  _metadataColumnMinHeight;
+    float  _tallestNonMetadataColumnHeight;
 }
 
 @property (nonatomic, readonly) NSArray *columns;
-@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } metadataColumnEdgeInsets;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } metadataColumnEdgeInsets;
 
 + (id)fontForButtonViewElement:(id)arg1 context:(id)arg2;
 + (id)fontForLabelViewElement:(id)arg1 context:(id)arg2;
@@ -24,13 +24,13 @@
 
 - (void).cxx_destruct;
 - (float)_heightForMetadataColumn:(id)arg1 width:(float)arg2 context:(id)arg3;
-- (struct CGSize { double x1; double x2; })_sizeForRightAlignedColumn:(id)arg1 width:(float)arg2 context:(id)arg3;
-- (struct CGSize { double x1; double x2; })_sizeForViewElement:(id)arg1 width:(int)arg2 context:(id)arg3;
+- (struct CGSize { float x1; float x2; })_sizeForRightAlignedColumn:(id)arg1 width:(float)arg2 context:(id)arg3;
+- (struct CGSize { float x1; float x2; })_sizeForViewElement:(id)arg1 width:(int)arg2 context:(id)arg3;
 - (float)bottomPaddingForViewElement:(id)arg1;
 - (float)columnSpacingForColumnIdentifier:(int)arg1;
 - (id)columns;
 - (id)initWithLockup:(id)arg1 context:(id)arg2;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })metadataColumnEdgeInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })metadataColumnEdgeInsets;
 - (void)sizeColumnsToFitWidth:(float)arg1 context:(id)arg2;
 - (float)topPaddingForViewElement:(id)arg1;
 

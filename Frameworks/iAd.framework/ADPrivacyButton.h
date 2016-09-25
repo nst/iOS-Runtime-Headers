@@ -20,7 +20,7 @@
 - (id)iconImage;
 - (id)iconImageView;
 - (id)init;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setHighlightedIconImage:(id)arg1;
 - (void)setIconImage:(id)arg1;

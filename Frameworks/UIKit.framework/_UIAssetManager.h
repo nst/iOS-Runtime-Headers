@@ -19,7 +19,7 @@
     int  _preferredIdiom;
     unsigned int  _preferredIdiomSubtype;
     int  _preferredLayoutDirectionTrait;
-    double  _preferredScale;
+    float  _preferredScale;
     UITraitCollection * _preferredTraitCollection;
     CUIMutableCatalog * _runtimeCatalog;
     _UIAssetManager * _starkAssetManager;
@@ -31,7 +31,7 @@
 @property (nonatomic, readonly) NSString *carFileName;
 @property (getter=_managingUIKitAssets, nonatomic, readonly) BOOL managingUIKitAssets;
 @property (nonatomic, retain) _UIAssetManager *nextAssetManager;
-@property (nonatomic) double preferredScale;
+@property (nonatomic) float preferredScale;
 @property (nonatomic, retain) UITraitCollection *preferredTraitCollection;
 @property (nonatomic, readonly) CUIMutableCatalog *runtimeCatalog;
 

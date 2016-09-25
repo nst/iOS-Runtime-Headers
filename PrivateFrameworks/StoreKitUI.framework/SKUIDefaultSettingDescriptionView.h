@@ -5,20 +5,20 @@
 @interface SKUIDefaultSettingDescriptionView : SKUISettingDescriptionView {
     BOOL  _hasDisclosureChevron;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _padding;
     UIView * _viewElementView;
     SKUIViewReuseView * _viewReuseView;
 }
 
-+ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_paddingForStyle:(id)arg1;
-+ (struct CGSize { double x1; double x2; })preferredSizeForSettingDescription:(id)arg1 context:(id)arg2;
++ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_paddingForStyle:(id)arg1;
++ (struct CGSize { float x1; float x2; })preferredSizeForSettingDescription:(id)arg1 context:(id)arg2;
 + (BOOL)prefetchResourcesForSettingDescription:(id)arg1 reason:(int)arg2 context:(id)arg3;
 + (void)requestLayoutForSettingDescription:(id)arg1 width:(float)arg2 context:(id)arg3;
-+ (struct CGSize { double x1; double x2; })sizeThatFitsWidth:(float)arg1 settingDescription:(id)arg2 context:(id)arg3;
++ (struct CGSize { float x1; float x2; })sizeThatFitsWidth:(float)arg1 settingDescription:(id)arg2 context:(id)arg3;
 
 - (void).cxx_destruct;
 - (BOOL)hasDisclosureChevron;

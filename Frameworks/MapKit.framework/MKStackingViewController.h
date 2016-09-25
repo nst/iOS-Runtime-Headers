@@ -14,12 +14,12 @@
     BOOL  _needToCallViewControllerLayoutDelegate;
     BOOL  _needsToPerformLayout;
     UIView * _overlayView;
-    double  _overlayViewOriginY;
+    float  _overlayViewOriginY;
     UIScrollView * _scrollView;
     _MKStackView * _stackView;
     NSLayoutConstraint * _stackViewWidthConstraint;
     <MKStackingViewControllerDelegate> * _stackingDelegate;
-    double  _stopLoadingAtHeight;
+    float  _stopLoadingAtHeight;
     NSArray * _titleViewConstraints;
     NSArray * _viewControllers;
     NSSet * _viewControllersLaidOut;
@@ -34,7 +34,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (getter=initiallyLoadedHeight, nonatomic) double initialLoadHeight;
+@property (getter=initiallyLoadedHeight, nonatomic) float initialLoadHeight;
 @property (getter=isScrollEnabled, nonatomic) BOOL scrollEnabled;
 @property (nonatomic) <MKStackingViewControllerDelegate> *stackingDelegate;
 @property (readonly) Class superclass;

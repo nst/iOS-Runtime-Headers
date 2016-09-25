@@ -3,25 +3,25 @@
  */
 
 @interface _NSProgressFraction : NSObject <NSCopying, NSSecureCoding> {
-    int  _completed;
+    long long  _completed;
     BOOL  _overflowed;
-    int  _total;
+    long long  _total;
 }
 
-@property int completed;
+@property long long completed;
 @property (readonly) BOOL overflowed;
-@property int total;
+@property long long total;
 
-+ (id)fractionWithCompleted:(int)arg1 total:(int)arg2;
++ (id)fractionWithCompleted:(long long)arg1 total:(long long)arg2;
 + (id)fractionWithDouble:(double)arg1;
 + (BOOL)supportsSecureCoding;
 
 - (void)_simplifyFromDouble:(double)arg1;
 - (void)addFraction:(id)arg1;
-- (int)completed;
+- (long long)completed;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (void)divideByValue:(int)arg1;
+- (void)divideByValue:(long long)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)fractionByAddingFraction:(id)arg1;
 - (id)fractionByMultiplyingFraction:(id)arg1;
@@ -29,7 +29,7 @@
 - (id)fractionBySubtractingFraction:(id)arg1;
 - (double)fractionCompleted;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithCompleted:(int)arg1 total:(int)arg2;
+- (id)initWithCompleted:(long long)arg1 total:(long long)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isFinished;
 - (BOOL)isFractionCompletedEqual:(id)arg1;
@@ -37,10 +37,10 @@
 - (BOOL)isNaN;
 - (void)multiplyByFraction:(id)arg1;
 - (BOOL)overflowed;
-- (void)setCompleted:(int)arg1;
-- (void)setTotal:(int)arg1;
+- (void)setCompleted:(long long)arg1;
+- (void)setTotal:(long long)arg1;
 - (void)simplify;
 - (void)subtractFraction:(id)arg1;
-- (int)total;
+- (long long)total;
 
 @end

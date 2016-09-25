@@ -16,7 +16,7 @@
 - (oneway void)pictureInPictureStartRequestedAnimated:(void *)arg1 withCompletionHandler:(void *)arg2; // needs 2 arg types, found 8: BOOL, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, NSError *, void*
 - (oneway void)pictureInPictureStopRequestedAnimated:(void *)arg1 withCompletionHandler:(void *)arg2; // needs 2 arg types, found 8: BOOL, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, NSError *, void*
 - (oneway void)pictureInPictureSuspended;
-- (oneway void)updateHostedWindowSize:(struct CGSize { double x1; double x2; })arg1 animationType:(int)arg2 initialSpringVelocity:(float)arg3 synchronizationFence:(BKSAnimationFenceHandle *)arg4;
+- (oneway void)updateHostedWindowSize:(struct CGSize { float x1; float x2; })arg1 animationType:(int)arg2 initialSpringVelocity:(float)arg3 synchronizationFence:(BKSAnimationFenceHandle *)arg4;
 - (oneway void)updatePictureInPicturePossible:(BOOL)arg1;
 
 @end

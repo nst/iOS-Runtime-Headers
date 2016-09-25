@@ -5,18 +5,18 @@
 @interface GKSphereObstacle : GKObstacle {
     struct SphericalObstacle { 
         int (**_vptr$Obstacle)(); 
-        double radius; 
+        float radius; 
         struct Vec3 { 
-            double x; 
-            double y; 
-            double z; 
+            float x; 
+            float y; 
+            float z; 
         } center; 
         int _seenFrom; 
     }  _obstacle;
 }
 
 @property (nonatomic) void position;
-@property (nonatomic) double radius;
+@property (nonatomic) float radius;
 
 + (id)obstacleWithRadius:(float)arg1;
 

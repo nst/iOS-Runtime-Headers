@@ -8,16 +8,16 @@
     PSTableCell * _cell;
     int  _usage;
     UIImageView * _usageIndicator;
-    double  horizontalOffset;
+    float  horizontalOffset;
 }
 
 @property (nonatomic) unsigned int authLevel;
-@property (nonatomic) double horizontalOffset;
+@property (nonatomic) float horizontalOffset;
 @property (nonatomic) int usage;
 
 - (void).cxx_destruct;
 - (id)_authLevelForMask:(unsigned int)arg1;
-- (struct CGSize { double x1; double x2; })_authLevelLabelSize:(unsigned int)arg1;
+- (struct CGSize { float x1; float x2; })_authLevelLabelSize:(unsigned int)arg1;
 - (unsigned int)authLevel;
 - (float)horizontalOffset;
 - (id)iconNameForUsage:(int)arg1;
@@ -26,6 +26,6 @@
 - (void)setHorizontalOffset:(float)arg1;
 - (void)setUsage:(int)arg1;
 - (int)usage;
-- (struct CGSize { double x1; double x2; })usageIndicatorSize;
+- (struct CGSize { float x1; float x2; })usageIndicatorSize;
 
 @end

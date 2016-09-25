@@ -9,36 +9,36 @@
     NSObject<OS_dispatch_queue> * _dispatchQueue;
     NSMutableDictionary * _localExternalValues;
     NSMutableDictionary * _localValues;
-    int  _pid;
+    long long  _pid;
 }
 
 @property (getter=_localExternalValues, setter=_setLocalExternalValues:, copy) NSDictionary *_localExternalValues;
 @property (getter=_localValues, setter=_setLocalValues:, copy) NSDictionary *_localValues;
 @property (getter=_isManaged, readonly) BOOL _managed;
-@property (readonly) int _persistentIdentifier;
+@property (readonly) long long _persistentIdentifier;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) BOOL exists;
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
-+ (int)_existsMessage;
-+ (int)_getExternalValuesMessage;
-+ (int)_getValueMessage;
-+ (int)_setExternalValuesMessage;
-+ (int)_setValuesMessage;
++ (long long)_existsMessage;
++ (long long)_getExternalValuesMessage;
++ (long long)_getValueMessage;
++ (long long)_setExternalValuesMessage;
++ (long long)_setValuesMessage;
 
 - (void)__addCachedExternalValues:(id)arg1;
 - (void)__addCachedPropertyValues:(id)arg1;
 - (void)_addCachedExternalValues:(id)arg1;
 - (void)_addCachedPropertyValues:(id)arg1;
 - (void)_becomeManagedOnConnection:(id)arg1;
-- (void)_getValues:(id*)arg1 forProperties:(const id*)arg2 count:(unsigned int)arg3 message:(int)arg4;
-- (id)_initWithPersistentIdentifier:(int)arg1;
+- (void)_getValues:(id*)arg1 forProperties:(const id*)arg2 count:(unsigned int)arg3 message:(long long)arg4;
+- (id)_initWithPersistentIdentifier:(long long)arg1;
 - (BOOL)_isManaged;
 - (id)_localExternalValues;
 - (id)_localValues;
-- (int)_persistentIdentifier;
+- (long long)_persistentIdentifier;
 - (void)_resetLocalIVars;
 - (void)_setDirtyCachedExternalProperties:(id)arg1;
 - (void)_setDirtyCachedProperties:(id)arg1;

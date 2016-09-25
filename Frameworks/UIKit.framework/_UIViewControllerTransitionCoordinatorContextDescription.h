@@ -6,32 +6,32 @@
     BOOL  _animated;
     BOOL  _cancelled;
     int  _completionCurve;
-    double  _completionVelocity;
+    float  _completionVelocity;
     int  _fromOrientation;
     BOOL  _interactive;
-    double  _percentComplete;
+    float  _percentComplete;
     struct CGAffineTransform { 
-        double a; 
-        double b; 
-        double c; 
-        double d; 
-        double tx; 
-        double ty; 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     }  _targetTransform;
     int  _toOrientation;
-    double  _transitionDuration;
+    float  _transitionDuration;
 }
 
 @property (getter=isAnimated, nonatomic) BOOL animated;
 @property (getter=isCancelled, nonatomic) BOOL cancelled;
 @property (nonatomic) int completionCurve;
-@property (nonatomic) double completionVelocity;
+@property (nonatomic) float completionVelocity;
 @property (nonatomic) int fromOrientation;
 @property (getter=isInteractive, nonatomic) BOOL interactive;
-@property (nonatomic) double percentComplete;
-@property (nonatomic) struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; } targetTransform;
+@property (nonatomic) float percentComplete;
+@property (nonatomic) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } targetTransform;
 @property (nonatomic) int toOrientation;
-@property (nonatomic) double transitionDuration;
+@property (nonatomic) float transitionDuration;
 
 + (id)descriptionForTransitionCoordinatorContext:(id)arg1;
 + (BOOL)supportsSecureCoding;
@@ -52,10 +52,10 @@
 - (void)setFromOrientation:(int)arg1;
 - (void)setInteractive:(BOOL)arg1;
 - (void)setPercentComplete:(float)arg1;
-- (void)setTargetTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
+- (void)setTargetTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (void)setToOrientation:(int)arg1;
 - (void)setTransitionDuration:(float)arg1;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })targetTransform;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })targetTransform;
 - (int)toOrientation;
 - (float)transitionDuration;
 

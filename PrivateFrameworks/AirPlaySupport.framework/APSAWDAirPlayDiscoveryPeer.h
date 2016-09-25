@@ -4,8 +4,8 @@
 
 @interface APSAWDAirPlayDiscoveryPeer : PBCodable <NSCopying> {
     BOOL  _aggregated;
-    unsigned int  _awdlAirPlayTXTReceivedMs;
-    unsigned int  _awdlRAOPTXTReceivedMs;
+    unsigned long long  _awdlAirPlayTXTReceivedMs;
+    unsigned long long  _awdlRAOPTXTReceivedMs;
     int  _awdlRSSI;
     int  _btleRSSI;
     int  _deviceFeature;
@@ -25,18 +25,18 @@
         unsigned int wifiRSSI : 1; 
         unsigned int aggregated : 1; 
     }  _has;
-    unsigned int  _startTime;
+    unsigned long long  _startTime;
     int  _status;
-    unsigned int  _targetPresenceBeaconReceivedMs;
-    unsigned int  _timestamp;
-    unsigned int  _wifiAirPlayTXTReceivedMs;
-    unsigned int  _wifiRAOPTXTReceivedMs;
+    unsigned long long  _targetPresenceBeaconReceivedMs;
+    unsigned long long  _timestamp;
+    unsigned long long  _wifiAirPlayTXTReceivedMs;
+    unsigned long long  _wifiRAOPTXTReceivedMs;
     int  _wifiRSSI;
 }
 
 @property (nonatomic) BOOL aggregated;
-@property (nonatomic) unsigned int awdlAirPlayTXTReceivedMs;
-@property (nonatomic) unsigned int awdlRAOPTXTReceivedMs;
+@property (nonatomic) unsigned long long awdlAirPlayTXTReceivedMs;
+@property (nonatomic) unsigned long long awdlRAOPTXTReceivedMs;
 @property (nonatomic) int awdlRSSI;
 @property (nonatomic) int btleRSSI;
 @property (nonatomic) int deviceFeature;
@@ -55,17 +55,17 @@
 @property (nonatomic) BOOL hasWifiAirPlayTXTReceivedMs;
 @property (nonatomic) BOOL hasWifiRAOPTXTReceivedMs;
 @property (nonatomic) BOOL hasWifiRSSI;
-@property (nonatomic) unsigned int startTime;
+@property (nonatomic) unsigned long long startTime;
 @property (nonatomic) int status;
-@property (nonatomic) unsigned int targetPresenceBeaconReceivedMs;
-@property (nonatomic) unsigned int timestamp;
-@property (nonatomic) unsigned int wifiAirPlayTXTReceivedMs;
-@property (nonatomic) unsigned int wifiRAOPTXTReceivedMs;
+@property (nonatomic) unsigned long long targetPresenceBeaconReceivedMs;
+@property (nonatomic) unsigned long long timestamp;
+@property (nonatomic) unsigned long long wifiAirPlayTXTReceivedMs;
+@property (nonatomic) unsigned long long wifiRAOPTXTReceivedMs;
 @property (nonatomic) int wifiRSSI;
 
 - (BOOL)aggregated;
-- (unsigned int)awdlAirPlayTXTReceivedMs;
-- (unsigned int)awdlRAOPTXTReceivedMs;
+- (unsigned long long)awdlAirPlayTXTReceivedMs;
+- (unsigned long long)awdlRAOPTXTReceivedMs;
 - (int)awdlRSSI;
 - (int)btleRSSI;
 - (void)copyTo:(id)arg1;
@@ -94,8 +94,8 @@
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setAggregated:(BOOL)arg1;
-- (void)setAwdlAirPlayTXTReceivedMs:(unsigned int)arg1;
-- (void)setAwdlRAOPTXTReceivedMs:(unsigned int)arg1;
+- (void)setAwdlAirPlayTXTReceivedMs:(unsigned long long)arg1;
+- (void)setAwdlRAOPTXTReceivedMs:(unsigned long long)arg1;
 - (void)setAwdlRSSI:(int)arg1;
 - (void)setBtleRSSI:(int)arg1;
 - (void)setDeviceFeature:(int)arg1;
@@ -113,19 +113,19 @@
 - (void)setHasWifiAirPlayTXTReceivedMs:(BOOL)arg1;
 - (void)setHasWifiRAOPTXTReceivedMs:(BOOL)arg1;
 - (void)setHasWifiRSSI:(BOOL)arg1;
-- (void)setStartTime:(unsigned int)arg1;
+- (void)setStartTime:(unsigned long long)arg1;
 - (void)setStatus:(int)arg1;
-- (void)setTargetPresenceBeaconReceivedMs:(unsigned int)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
-- (void)setWifiAirPlayTXTReceivedMs:(unsigned int)arg1;
-- (void)setWifiRAOPTXTReceivedMs:(unsigned int)arg1;
+- (void)setTargetPresenceBeaconReceivedMs:(unsigned long long)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
+- (void)setWifiAirPlayTXTReceivedMs:(unsigned long long)arg1;
+- (void)setWifiRAOPTXTReceivedMs:(unsigned long long)arg1;
 - (void)setWifiRSSI:(int)arg1;
-- (unsigned int)startTime;
+- (unsigned long long)startTime;
 - (int)status;
-- (unsigned int)targetPresenceBeaconReceivedMs;
-- (unsigned int)timestamp;
-- (unsigned int)wifiAirPlayTXTReceivedMs;
-- (unsigned int)wifiRAOPTXTReceivedMs;
+- (unsigned long long)targetPresenceBeaconReceivedMs;
+- (unsigned long long)timestamp;
+- (unsigned long long)wifiAirPlayTXTReceivedMs;
+- (unsigned long long)wifiRAOPTXTReceivedMs;
 - (int)wifiRSSI;
 - (void)writeTo:(id)arg1;
 

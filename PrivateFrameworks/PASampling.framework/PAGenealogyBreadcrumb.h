@@ -17,8 +17,8 @@
 - (void).cxx_destruct;
 - (BOOL)addSelfToBufferAtPosition:(void*)arg1 withCompletedSerializationDictionary:(id)arg2;
 - (void)addSelfToSerializationDictionary:(id)arg1;
-- (id)initWithMessage:(id)arg1 atMachTime:(double)arg2 withActivityId:(unsigned int)arg3;
-- (id)initWithSerializedGenealogyBreadcrumb:(const struct { unsigned int x1; double x2; unsigned int x3; int x4; }*)arg1;
+- (id)initWithMessage:(id)arg1 atMachTime:(double)arg2 withActivityId:(unsigned long long)arg3;
+- (id)initWithSerializedGenealogyBreadcrumb:(const struct { unsigned long long x1; double x2; unsigned long long x3; long long x4; }*)arg1;
 - (id)message;
 - (void)populateReferencesUsingBufferPosition:(const void*)arg1 andDeserializationDictionary:(id)arg2 andDataBufferDictionary:(id)arg3;
 - (unsigned long)sizeInBytesForSerializedVersion;

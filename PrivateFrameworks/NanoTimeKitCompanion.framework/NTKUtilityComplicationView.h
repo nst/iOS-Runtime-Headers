@@ -9,16 +9,16 @@
     CLKComplicationTemplate * _complicationTemplate;
     BOOL  _editing;
     CLKFont * _font;
-    double  _foregroundAlpha;
+    float  _foregroundAlpha;
     UIColor * _foregroundColor;
-    double  _foregroundImageAlpha;
+    float  _foregroundImageAlpha;
     UIView * _highlightView;
     BOOL  _highlighted;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _maxSize;
-    double  _minimumWidth;
+    float  _minimumWidth;
     UIColor * _overrideColor;
     unsigned int  _placement;
     UIColor * _shadowColor;
@@ -26,10 +26,10 @@
     BOOL  _suppressesInternalColorOverrides;
     NSDate * _timeTravelDate;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _touchEdgeInsets;
     BOOL  _useRoundedFontDesign;
     BOOL  _usesLegibility;
@@ -44,14 +44,14 @@
 @property (nonatomic) <NTKComplicationDisplayObserver> *displayObserver;
 @property (nonatomic, readonly) BOOL editing;
 @property (nonatomic, retain) CLKFont *font;
-@property (nonatomic) double foregroundAlpha;
+@property (nonatomic) float foregroundAlpha;
 @property (nonatomic, retain) UIColor *foregroundColor;
-@property (nonatomic) double foregroundImageAlpha;
+@property (nonatomic) float foregroundImageAlpha;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) UIView *highlightView;
 @property (getter=isHighlighted, nonatomic) BOOL highlighted;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } maxSize;
-@property (nonatomic) double minimumWidth;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } maxSize;
+@property (nonatomic) float minimumWidth;
 @property (nonatomic, retain) UIColor *overrideColor;
 @property (nonatomic) unsigned int placement;
 @property (nonatomic, retain) UIColor *shadowColor;
@@ -60,7 +60,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic) BOOL suppressesInternalColorOverrides;
 @property (readonly) NSDate *timeTravelDate;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } touchEdgeInsets;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } touchEdgeInsets;
 @property (nonatomic) BOOL useRoundedFontDesign;
 @property (nonatomic) BOOL usesLegibility;
 
@@ -85,7 +85,7 @@
 - (id)_newStandardLabelSubview;
 - (id)_smallCapsFont;
 - (id)_standardFont;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_touchEdgeInsetsForPlacement:(unsigned int)arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_touchEdgeInsetsForPlacement:(unsigned int)arg1;
 - (void)_updateContentForEditingChange;
 - (void)_updateContentForMaxSizeChange;
 - (void)_updateForTemplateChange;
@@ -104,14 +104,14 @@
 - (id)foregroundColor;
 - (float)foregroundImageAlpha;
 - (id)highlightView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutLabelVertically:(id)arg1;
 - (void)layoutSubviews;
-- (struct CGSize { double x1; double x2; })maxSize;
+- (struct CGSize { float x1; float x2; })maxSize;
 - (float)minimumWidth;
 - (id)overrideColor;
 - (unsigned int)placement;
-- (BOOL)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)setAccentColor:(id)arg1;
 - (void)setColorScheme:(id)arg1;
 - (void)setComplicationTemplate:(id)arg1;
@@ -123,7 +123,7 @@
 - (void)setForegroundImageAlpha:(float)arg1;
 - (void)setHighlightView:(id)arg1;
 - (void)setHighlighted:(BOOL)arg1;
-- (void)setMaxSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setMaxSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setMinimumWidth:(float)arg1;
 - (void)setOverrideColor:(id)arg1;
 - (void)setPlacement:(unsigned int)arg1;
@@ -131,15 +131,15 @@
 - (void)setShouldUseBackgroundPlatter:(BOOL)arg1;
 - (void)setSuppressesInternalColorOverrides:(BOOL)arg1;
 - (void)setTimeTravelDate:(id)arg1 animated:(BOOL)arg2;
-- (void)setTouchEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setTouchEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setUseRoundedFontDesign:(BOOL)arg1;
 - (void)setUsesLegibility:(BOOL)arg1;
 - (id)shadowColor;
 - (BOOL)shouldUseBackgroundPlatter;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)suppressesInternalColorOverrides;
 - (id)timeTravelDate;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })touchEdgeInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })touchEdgeInsets;
 - (BOOL)useRoundedFontDesign;
 - (BOOL)usesLegibility;
 

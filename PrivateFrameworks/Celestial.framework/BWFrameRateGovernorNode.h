@@ -7,10 +7,10 @@
     int  _activeBracketSequenceRate;
     BOOL  _dropsStillBracketFramesToMaintainConsistentFrameRate;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _lastEmittedPTS;
 }
 

@@ -10,8 +10,8 @@
     NSPersonNameComponents * _lastEditorNameComponents;
     NSDate * _modificationDate;
     NSURL * _physicalURL;
-    int  _sandboxHandle;
-    unsigned int  _size;
+    long long  _sandboxHandle;
+    unsigned long long  _size;
     NSURL * _url;
     GSPermanentStorage * _versionsStore;
 }
@@ -25,7 +25,7 @@
 @property (nonatomic, readonly) NSPersonNameComponents *lastEditorNameComponents;
 @property (nonatomic, readonly) NSDate *modificationDate;
 @property (nonatomic, readonly) <NSCopying><NSSecureCoding> *persistentIdentifier;
-@property (nonatomic, readonly) unsigned int size;
+@property (nonatomic, readonly) unsigned long long size;
 @property (nonatomic, readonly) NSURL *url;
 
 + (id)listVersionsOfDocumentAtURL:(id)arg1;
@@ -44,7 +44,7 @@
 - (id)modificationDate;
 - (id)persistentIdentifier;
 - (void)setHasThumbnail:(BOOL)arg1;
-- (unsigned int)size;
+- (unsigned long long)size;
 - (id)url;
 
 @end

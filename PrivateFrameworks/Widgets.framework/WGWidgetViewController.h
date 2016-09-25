@@ -23,7 +23,7 @@
 - (BOOL)isWidgetExtensionVisible:(id)arg1;
 - (int)largestAvailableDisplayModeForWidget:(id)arg1;
 - (void)loadView;
-- (struct CGSize { double x1; double x2; })maxSizeForWidget:(id)arg1 forDisplayMode:(int)arg2;
+- (struct CGSize { float x1; float x2; })maxSizeForWidget:(id)arg1 forDisplayMode:(int)arg2;
 - (void)remoteViewControllerDidConnectForWidget:(id)arg1;
 - (void)remoteViewControllerViewDidAppearForWidget:(id)arg1;
 - (void)setDelegate:(id)arg1;

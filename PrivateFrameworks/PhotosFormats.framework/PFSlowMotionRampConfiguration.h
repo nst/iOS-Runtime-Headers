@@ -4,22 +4,22 @@
 
 @interface PFSlowMotionRampConfiguration : NSObject {
     unsigned int  _exportNumIntermediateSteps;
-    double  _exportRampCurveExponent;
+    float  _exportRampCurveExponent;
     double  _introTime;
     double  _outroTime;
     unsigned int  _playbackNumIntermediateSteps;
-    double  _playbackRampCurveExponent;
+    float  _playbackRampCurveExponent;
     double  _rampTime;
     double  _volumeSuppressionIntroTime;
     double  _volumeSuppressionOutroTime;
 }
 
 @property (nonatomic, readonly) unsigned int exportNumIntermediateSteps;
-@property (nonatomic, readonly) double exportRampCurveExponent;
+@property (nonatomic, readonly) float exportRampCurveExponent;
 @property (nonatomic, readonly) double introTime;
 @property (nonatomic, readonly) double outroTime;
 @property (nonatomic, readonly) unsigned int playbackNumIntermediateSteps;
-@property (nonatomic, readonly) double playbackRampCurveExponent;
+@property (nonatomic, readonly) float playbackRampCurveExponent;
 @property (nonatomic, readonly) double rampTime;
 @property (nonatomic, readonly) double volumeSuppressionIntroTime;
 @property (nonatomic, readonly) double volumeSuppressionOutroTime;

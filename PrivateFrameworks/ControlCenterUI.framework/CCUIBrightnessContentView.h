@@ -8,8 +8,8 @@
 
 @property (nonatomic) BOOL usesCompactHeight;
 
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })layoutMargins;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })layoutMargins;
 - (void)setUsesCompactHeight:(BOOL)arg1;
 - (BOOL)usesCompactHeight;
 

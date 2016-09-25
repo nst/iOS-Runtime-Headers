@@ -15,7 +15,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (struct CGSize { double x1; double x2; })_updatedContentSizeForPreferredContentSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })_updatedContentSizeForPreferredContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)containedNavController;
 - (id)hostingViewController;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

@@ -11,9 +11,9 @@
         unsigned int firstDeviceFoundMs : 1; 
         unsigned int status : 1; 
     }  _has;
-    unsigned int  _startTime;
+    unsigned long long  _startTime;
     int  _status;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic, retain) NSString *discoverySessionUUID;
@@ -23,9 +23,9 @@
 @property (nonatomic) BOOL hasStartTime;
 @property (nonatomic) BOOL hasStatus;
 @property (nonatomic) BOOL hasTimestamp;
-@property (nonatomic) unsigned int startTime;
+@property (nonatomic) unsigned long long startTime;
 @property (nonatomic) int status;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -49,12 +49,12 @@
 - (void)setHasStartTime:(BOOL)arg1;
 - (void)setHasStatus:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
-- (void)setStartTime:(unsigned int)arg1;
+- (void)setStartTime:(unsigned long long)arg1;
 - (void)setStatus:(int)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
-- (unsigned int)startTime;
+- (void)setTimestamp:(unsigned long long)arg1;
+- (unsigned long long)startTime;
 - (int)status;
-- (unsigned int)timestamp;
+- (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 
 @end

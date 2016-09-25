@@ -5,8 +5,8 @@
 
 @required
 
-- (const char *)dataAtOffset:(int)arg1 size:(unsigned long)arg2 end:(int)arg3 readSize:(unsigned int*)arg4;
-- (void)readFromOffset:(int)arg1 size:(unsigned long)arg2 buffer:(char *)arg3;
-- (int)size;
+- (const char *)dataAtOffset:(long long)arg1 size:(unsigned long)arg2 end:(long long)arg3 readSize:(unsigned int*)arg4;
+- (void)readFromOffset:(long long)arg1 size:(unsigned long)arg2 buffer:(char *)arg3;
+- (long long)size;
 
 @end

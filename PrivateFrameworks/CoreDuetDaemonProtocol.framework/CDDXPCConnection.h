@@ -8,7 +8,7 @@
     CDDebug * _debug;
     BOOL  _hasValidConnection;
     NSObject<OS_dispatch_queue> * _replyQueue;
-    int  _sequenceNumber;
+    long long  _sequenceNumber;
     NSString * _serviceName;
 }
 
@@ -23,10 +23,10 @@
 - (BOOL)establishConnection;
 - (id)initWithMachServiceName:(id)arg1 dispatchQueue:(id)arg2;
 - (void)invalidateConnection;
-- (id)makeStashWithId:(unsigned int)arg1;
+- (id)makeStashWithId:(unsigned long long)arg1;
 - (void)sendBarrier:(id /* block */)arg1;
 - (BOOL)sendMessageAsync:(id)arg1 withReplyHandler:(id /* block */)arg2;
-- (unsigned int)sequenceNumber;
+- (unsigned long long)sequenceNumber;
 - (id)serviceName;
 
 @end

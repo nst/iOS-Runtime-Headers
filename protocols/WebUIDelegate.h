@@ -8,8 +8,8 @@
 - (NSArray *)webView:(WebView *)arg1 contextMenuItemsForElement:(NSDictionary *)arg2 defaultMenuItems:(NSArray *)arg3;
 - (WebView *)webView:(WebView *)arg1 createWebViewModalDialogWithRequest:(NSURLRequest *)arg2;
 - (WebView *)webView:(WebView *)arg1 createWebViewWithRequest:(NSURLRequest *)arg2;
-- (void)webView:(WebView *)arg1 drawFooterInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
-- (void)webView:(WebView *)arg1 drawHeaderInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (void)webView:(WebView *)arg1 drawFooterInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (void)webView:(WebView *)arg1 drawHeaderInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)webView:(WebView *)arg1 makeFirstResponder:(WAKResponder *)arg2;
 - (void)webView:(WebView *)arg1 mouseDidMoveOverElement:(NSDictionary *)arg2 modifierFlags:(unsigned int)arg3;
 - (void)webView:(WebView *)arg1 printFrameView:(WebFrameView *)arg2;
@@ -22,8 +22,8 @@
 - (NSString *)webView:(WebView *)arg1 runJavaScriptTextInputPanelWithPrompt:(NSString *)arg2 defaultText:(NSString *)arg3 initiatedByFrame:(WebFrame *)arg4;
 - (void)webView:(WebView *)arg1 runOpenPanelForFileButtonWithResultListener:(id <WebOpenPanelResultListener>)arg2;
 - (void)webView:(WebView *)arg1 runOpenPanelForFileButtonWithResultListener:(id <WebOpenPanelResultListener>)arg2 allowMultipleFiles:(BOOL)arg3;
-- (void)webView:(WebView *)arg1 setContentRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
-- (void)webView:(WebView *)arg1 setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (void)webView:(WebView *)arg1 setContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (void)webView:(WebView *)arg1 setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)webView:(WebView *)arg1 setResizable:(BOOL)arg2;
 - (void)webView:(WebView *)arg1 setStatusBarVisible:(BOOL)arg2;
 - (void)webView:(WebView *)arg1 setStatusText:(NSString *)arg2;
@@ -31,11 +31,11 @@
 - (BOOL)webView:(WebView *)arg1 shouldPerformAction:(SEL)arg2 fromSender:(id)arg3;
 - (BOOL)webViewAreToolbarsVisible:(WebView *)arg1;
 - (void)webViewClose:(WebView *)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })webViewContentRect:(WebView *)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })webViewContentRect:(WebView *)arg1;
 - (WAKResponder *)webViewFirstResponder:(WebView *)arg1;
 - (void)webViewFocus:(WebView *)arg1;
 - (float)webViewFooterHeight:(WebView *)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })webViewFrame:(WebView *)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })webViewFrame:(WebView *)arg1;
 - (float)webViewHeaderHeight:(WebView *)arg1;
 - (BOOL)webViewIsResizable:(WebView *)arg1;
 - (BOOL)webViewIsStatusBarVisible:(WebView *)arg1;

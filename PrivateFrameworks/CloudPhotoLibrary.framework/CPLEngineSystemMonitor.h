@@ -20,7 +20,7 @@
 - (id)componentName;
 - (unsigned int)diskPressureState;
 - (id)engineLibrary;
-- (unsigned int)freeDiskSpaceSize;
+- (unsigned long long)freeDiskSpaceSize;
 - (void)getStatusWithCompletionHandler:(id /* block */)arg1;
 - (id)initWithEngineLibrary:(id)arg1;
 - (BOOL)isNetworkConnected;

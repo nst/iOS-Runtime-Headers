@@ -37,7 +37,7 @@
 - (void)setFileTypes:(id)arg1;
 - (void)setManage:(BOOL)arg1;
 - (void)setMode:(unsigned int)arg1;
-- (void)setPreferredContentSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setPreferredContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;

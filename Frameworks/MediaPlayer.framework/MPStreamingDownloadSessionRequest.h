@@ -11,7 +11,7 @@
     BOOL  _shouldStartLeaseSession;
     BOOL  _shouldUseAccountLessStreaming;
     BOOL  _shouldUseStreamingRedownload;
-    int  _storeAdamID;
+    long long  _storeAdamID;
 }
 
 @property (nonatomic, readonly, copy) NSString *buyParameters;
@@ -22,7 +22,7 @@
 @property (nonatomic) BOOL shouldStartLeaseSession;
 @property (nonatomic) BOOL shouldUseAccountLessStreaming;
 @property (nonatomic) BOOL shouldUseStreamingRedownload;
-@property (nonatomic, readonly) int storeAdamID;
+@property (nonatomic, readonly) long long storeAdamID;
 @property (nonatomic, readonly) BOOL usesSubscriptionLease;
 
 - (void).cxx_destruct;
@@ -40,7 +40,7 @@
 - (BOOL)shouldStartLeaseSession;
 - (BOOL)shouldUseAccountLessStreaming;
 - (BOOL)shouldUseStreamingRedownload;
-- (int)storeAdamID;
+- (long long)storeAdamID;
 - (BOOL)usesSubscriptionLease;
 
 @end

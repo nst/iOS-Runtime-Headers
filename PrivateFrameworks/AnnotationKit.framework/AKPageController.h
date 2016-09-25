@@ -38,10 +38,10 @@
 - (id)_popoverPresentingViewController;
 - (id)annotationsBeneathLoupe:(id)arg1;
 - (id)controller;
-- (struct CGPoint { double x1; double x2; })convertPointFromModelToOverlay:(struct CGPoint { double x1; double x2; })arg1;
-- (struct CGPoint { double x1; double x2; })convertPointFromOverlayToModel:(struct CGPoint { double x1; double x2; })arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })convertRectFromModelToOverlay:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })convertRectFromOverlayToModel:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGPoint { float x1; float x2; })convertPointFromModelToOverlay:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGPoint { float x1; float x2; })convertPointFromOverlayToModel:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertRectFromModelToOverlay:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertRectFromOverlayToModel:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (int)currentModelToScreenExifOrientation;
 - (float)currentModelToScreenScaleFactor;
 - (id)delegate;
@@ -58,9 +58,9 @@
 - (id)initForTesting;
 - (id)layerPresentationManager;
 - (BOOL)layerPresentationManagerWasSetup;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })maxPageRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })maxPageRect;
 - (float)modelBaseScaleFactor;
-- (id)newContentSnapshotPDFDataAtScale:(float)arg1 inRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 forLoupeAnnotation:(id)arg3;
+- (id)newContentSnapshotPDFDataAtScale:(float)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 forLoupeAnnotation:(id)arg3;
 - (void)noteEditorDidBeginEditing:(id)arg1;
 - (void)noteEditorDidFinishEditing:(id)arg1;
 - (void)noteEditorWillDismissFromFullScreen:(id)arg1;
@@ -88,7 +88,7 @@
 - (void)setupRelinquishables;
 - (BOOL)shouldPixelate;
 - (id)stickyContainerForNoteEditor:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })stickyViewFrameForNoteEditor:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })stickyViewFrameForNoteEditor:(id)arg1;
 - (void)teardown;
 - (void)updateScaleFactor:(float)arg1 isLiveUpdate:(BOOL)arg2 forceUpdate:(BOOL)arg3;
 

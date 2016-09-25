@@ -18,7 +18,7 @@
     NSDictionary * _metadata;
     NSString * _path;
     NSString * _personID;
-    int  _photoNumber;
+    long long  _photoNumber;
     NSDate * _timestamp;
     <NSCoding> * _userInfo;
 }
@@ -38,7 +38,7 @@
 @property (nonatomic, retain) NSDictionary *metadata;
 @property (nonatomic, retain) NSString *path;
 @property (nonatomic, retain) NSString *personID;
-@property (nonatomic) int photoNumber;
+@property (nonatomic) long long photoNumber;
 @property (nonatomic, retain) NSDate *timestamp;
 @property (nonatomic, retain) <NSCoding> *userInfo;
 
@@ -74,7 +74,7 @@
 - (id)metadata;
 - (id)path;
 - (id)personID;
-- (int)photoNumber;
+- (long long)photoNumber;
 - (void)setAlbumGUID:(id)arg1;
 - (void)setAssets:(id)arg1;
 - (void)setCtag:(id)arg1;
@@ -91,7 +91,7 @@
 - (void)setMetadataValue:(id)arg1 forKey:(id)arg2;
 - (void)setPath:(id)arg1;
 - (void)setPersonID:(id)arg1;
-- (void)setPhotoNumber:(int)arg1;
+- (void)setPhotoNumber:(long long)arg1;
 - (void)setTimestamp:(id)arg1;
 - (void)setUserInfo:(id)arg1;
 - (id)timestamp;

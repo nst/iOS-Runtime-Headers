@@ -5,7 +5,7 @@
 @interface MusicMediaPlaylistDetailViewController : MusicMediaProductDetailViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
     NSString * _curatorStoreID;
     BOOL  _hasForcedCuratorPlaylistRefresh;
-    unsigned int  _playlistSagaID;
+    unsigned long long  _playlistSagaID;
 }
 
 @property (readonly, copy) NSString *debugDescription;

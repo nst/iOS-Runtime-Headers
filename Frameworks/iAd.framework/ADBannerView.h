@@ -8,7 +8,7 @@
     NSString * _advertisingSection;
     NSString * _authenticationUserName;
     BOOL  _bannerViewActionInProgress;
-    double  _constraintBasedWidth;
+    float  _constraintBasedWidth;
     BOOL  _createdForIBInternal;
     BOOL  _debugHighlightEnabled;
     BOOL  _determiningConstraintBasedWidth;
@@ -39,7 +39,7 @@
 @property (nonatomic, copy) NSString *authenticationUserName;
 @property (getter=isBannerLoaded, nonatomic, readonly) BOOL bannerLoaded;
 @property (getter=isBannerViewActionInProgress, nonatomic) BOOL bannerViewActionInProgress;
-@property (nonatomic) double constraintBasedWidth;
+@property (nonatomic) float constraintBasedWidth;
 @property (nonatomic, readonly) BOOL createdForIBInternal;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) BOOL debugHighlightEnabled;
@@ -66,14 +66,14 @@
 @property (nonatomic, copy) id /* block */ stateChangedBlock;
 @property (readonly) Class superclass;
 
-+ (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_adWindowBounds;
-+ (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameThatFits:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 adType:(int)arg2 statusBarOrientationIsPortrait:(BOOL)arg3;
-+ (struct CGSize { double x1; double x2; })_landscapeBannerSize;
-+ (struct CGSize { double x1; double x2; })_portraitBannerSize;
-+ (struct CGSize { double x1; double x2; })_sizeThatFitsSize:(struct CGSize { double x1; double x2; })arg1 adType:(int)arg2 statusBarOrientationIsPortrait:(BOOL)arg3;
++ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_adWindowBounds;
++ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameThatFits:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 adType:(int)arg2 statusBarOrientationIsPortrait:(BOOL)arg3;
++ (struct CGSize { float x1; float x2; })_landscapeBannerSize;
++ (struct CGSize { float x1; float x2; })_portraitBannerSize;
++ (struct CGSize { float x1; float x2; })_sizeThatFitsSize:(struct CGSize { float x1; float x2; })arg1 adType:(int)arg2 statusBarOrientationIsPortrait:(BOOL)arg3;
 + (BOOL)requiresConstraintBasedLayout;
 + (void)setServerURL:(id)arg1;
-+ (struct CGSize { double x1; double x2; })sizeFromBannerContentSizeIdentifier:(id)arg1;
++ (struct CGSize { float x1; float x2; })sizeFromBannerContentSizeIdentifier:(id)arg1;
 
 - (id)_accessibilityUserTestingElementAttributes;
 - (void)_commonInit;
@@ -81,7 +81,7 @@
 - (id)_initWithInternalAdType:(int)arg1 options:(int)arg2;
 - (BOOL)_needsDoubleUpdateConstraintsPass;
 - (void)_prepareForFirstIntrinsicContentSizeCalculation;
-- (void)_prepareForSecondIntrinsicContentSizeCalculationWithLayoutEngineBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)_prepareForSecondIntrinsicContentSizeCalculationWithLayoutEngineBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_resetHighlightTimer;
 - (void)_resetToBeginningOfDoublePass;
 - (void)_setInSecondConstraintsPass:(BOOL)arg1;
@@ -95,7 +95,7 @@
 - (id)authenticationUserName;
 - (void)bannerDidAppear;
 - (void)bannerDidDisappear;
-- (void)bannerTappedAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)bannerTappedAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)beginAction;
 - (void)cancelBannerViewAction;
 - (void)cancelScheduledAd;
@@ -113,7 +113,7 @@
 - (void)didMoveToWindow;
 - (BOOL)dimmed;
 - (id)dimmerView;
-- (void)dimmerView:(id)arg1 didReceiveTouchUpAtPoint:(struct CGPoint { double x1; double x2; })arg2;
+- (void)dimmerView:(id)arg1 didReceiveTouchUpAtPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (int)displayMode;
 - (BOOL)displayed;
 - (BOOL)enableDimmerView:(id)arg1;
@@ -127,14 +127,14 @@
 - (id)identifier;
 - (BOOL)imageUpdateEnabled;
 - (BOOL)inSecondConstraintsPass;
-- (id)initFromIBWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (id)initFromIBWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 adType:(int)arg2;
+- (id)initFromIBWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initFromIBWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 adType:(int)arg2;
 - (id)initWithAdType:(int)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (int)internalAdType;
 - (id)internalDelegate;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (BOOL)isBannerLoaded;
 - (BOOL)isBannerViewActionInProgress;
 - (BOOL)isiAdContentServer;
@@ -158,7 +158,7 @@
 - (id)publicImpressionAttributes;
 - (void)reportNativeClickEvent;
 - (id)requiredContentSizeIdentifiers;
-- (void)resizeWithOldSuperviewSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)resizeWithOldSuperviewSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)resumeBannerMedia;
 - (void)resumeImpressionCycling;
 - (void)scheduleAd;
@@ -174,8 +174,8 @@
 - (void)setAuthenticationUserName:(id)arg1;
 - (void)setAutoresizingMask:(unsigned int)arg1;
 - (void)setBannerViewActionInProgress:(BOOL)arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)setCenter:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setCenter:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setConstraintBasedWidth:(float)arg1;
 - (void)setContext:(id)arg1;
 - (void)setCurrentContentSizeIdentifier:(id)arg1;
@@ -186,7 +186,7 @@
 - (void)setDimmerView:(id)arg1;
 - (void)setDisplayMode:(int)arg1;
 - (void)setDisplayed:(BOOL)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setHidden:(BOOL)arg1;
 - (void)setHighlightClippedView:(id)arg1;
 - (void)setHighlightHittableView:(id)arg1;
@@ -201,9 +201,9 @@
 - (void)setServerURL:(id)arg1;
 - (void)setState:(int)arg1;
 - (void)setStateChangedBlock:(id /* block */)arg1;
-- (void)setTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
-- (BOOL)shouldTestVisibilityAtPoint:(struct CGPoint { double x1; double x2; })arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
+- (BOOL)shouldTestVisibilityAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (double)skipThreshold;
 - (int)state;
 - (id /* block */)stateChangedBlock;

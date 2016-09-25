@@ -11,7 +11,7 @@
 
 - (NSString *)downloadTaskDescription;
 - (NSURL *)downloadURL;
-- (int)totalBytesExpectedToBeDownloaded;
+- (long long)totalBytesExpectedToBeDownloaded;
 
 @optional
 

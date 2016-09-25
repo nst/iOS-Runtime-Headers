@@ -7,6 +7,6 @@
 
 - (NSString *)shieldColorString;
 - (NSString *)shieldText;
-- (int)shieldType;
+- (long long)shieldType;
 
 @end

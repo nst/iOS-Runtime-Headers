@@ -3,10 +3,10 @@
  */
 
 @interface CVMLImageBlurObservation : CVMLObservation {
-    double  _blurMeasure;
+    float  _blurMeasure;
 }
 
-@property double blurMeasure;
+@property float blurMeasure;
 
 - (float)blurMeasure;
 - (void)setBlurMeasure:(float)arg1;

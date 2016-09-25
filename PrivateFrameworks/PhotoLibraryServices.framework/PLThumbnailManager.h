@@ -87,7 +87,7 @@
 - (id)init;
 - (id)newThumbnailForAsset:(id)arg1 format:(id)arg2;
 - (id)observerToken;
-- (id)placeholderDataForFormat:(int)arg1 photoImageSize:(struct CGSize { double x1; double x2; })arg2 width:(int*)arg3 height:(int*)arg4 bytesPerRow:(int*)arg5 dataWidth:(int*)arg6 dataHeight:(int*)arg7 imageDataOffset:(int*)arg8;
+- (id)placeholderDataForFormat:(int)arg1 photoImageSize:(struct CGSize { float x1; float x2; })arg2 width:(int*)arg3 height:(int*)arg4 bytesPerRow:(int*)arg5 dataWidth:(int*)arg6 dataHeight:(int*)arg7 imageDataOffset:(int*)arg8;
 - (struct __CFDictionary { }*)placeholderThumbnailDataByFormatID;
 - (id)preheatItemSourceForFormatID:(int)arg1;
 - (void)setObserverToken:(id)arg1;

@@ -7,9 +7,9 @@
     BOOL  __transitionInterrupted;
     NSUUID * __uuid;
     int  _completionCurve;
-    double  _completionSpeed;
+    float  _completionSpeed;
     BOOL  _didCommitAnimations;
-    double  _duration;
+    float  _duration;
     <UIViewImplicitlyAnimating> * _interruptibleAnimator;
     <UITimingCurveProvider> * _timingCurve;
     BOOL  _wantsInteractiveStart;
@@ -19,12 +19,12 @@
 @property (getter=_isTransitionInterrupted, setter=_setTransitionInterrupted:, nonatomic) BOOL _transitionInterrupted;
 @property (setter=_setUuid:, nonatomic, retain) NSUUID *_uuid;
 @property (nonatomic) int completionCurve;
-@property (nonatomic) double completionSpeed;
+@property (nonatomic) float completionSpeed;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) double duration;
+@property (readonly) float duration;
 @property (readonly) unsigned int hash;
-@property (readonly) double percentComplete;
+@property (readonly) float percentComplete;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) <UITimingCurveProvider> *timingCurve;
 @property (nonatomic) BOOL wantsInteractiveStart;

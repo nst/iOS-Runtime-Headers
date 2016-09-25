@@ -92,7 +92,7 @@
 - (id)workQueue;
 - (void)workQueueCancel;
 - (double)workQueueMaxMMCSTokenValidityTimeInterval;
-- (unsigned int)workQueueNextItemID;
+- (unsigned long long)workQueueNextItemID;
 - (void)workQueueRetryOutstandingActivities;
 - (void)workQueueShutDownCompletionBlock:(id /* block */)arg1;
 - (void)workQueueStop;

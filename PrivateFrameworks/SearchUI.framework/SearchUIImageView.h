@@ -15,10 +15,10 @@
 - (void).cxx_destruct;
 - (id)currentImage;
 - (id)initWithStyle:(unsigned int)arg1;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (void)setCurrentImage:(id)arg1;
 - (void)setStyle:(unsigned int)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (unsigned int)style;
 - (void)updateWithImage:(id)arg1;
 - (void)updateWithImage:(id)arg1 completionHandler:(id /* block */)arg2;

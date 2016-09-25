@@ -3,29 +3,29 @@
  */
 
 @interface HDAWDHealthKitUserCharacteristics : PBCodable <NSCopying> {
-    int  _ageYears;
-    int  _biologicalSex;
+    long long  _ageYears;
+    long long  _biologicalSex;
     struct { 
         unsigned int ageYears : 1; 
         unsigned int biologicalSex : 1; 
         unsigned int heightCm : 1; 
         unsigned int weightKg : 1; 
     }  _has;
-    int  _heightCm;
-    int  _weightKg;
+    long long  _heightCm;
+    long long  _weightKg;
 }
 
-@property (nonatomic) int ageYears;
-@property (nonatomic) int biologicalSex;
+@property (nonatomic) long long ageYears;
+@property (nonatomic) long long biologicalSex;
 @property (nonatomic) BOOL hasAgeYears;
 @property (nonatomic) BOOL hasBiologicalSex;
 @property (nonatomic) BOOL hasHeightCm;
 @property (nonatomic) BOOL hasWeightKg;
-@property (nonatomic) int heightCm;
-@property (nonatomic) int weightKg;
+@property (nonatomic) long long heightCm;
+@property (nonatomic) long long weightKg;
 
-- (int)ageYears;
-- (int)biologicalSex;
+- (long long)ageYears;
+- (long long)biologicalSex;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -35,19 +35,19 @@
 - (BOOL)hasHeightCm;
 - (BOOL)hasWeightKg;
 - (unsigned int)hash;
-- (int)heightCm;
+- (long long)heightCm;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (void)setAgeYears:(int)arg1;
-- (void)setBiologicalSex:(int)arg1;
+- (void)setAgeYears:(long long)arg1;
+- (void)setBiologicalSex:(long long)arg1;
 - (void)setHasAgeYears:(BOOL)arg1;
 - (void)setHasBiologicalSex:(BOOL)arg1;
 - (void)setHasHeightCm:(BOOL)arg1;
 - (void)setHasWeightKg:(BOOL)arg1;
-- (void)setHeightCm:(int)arg1;
-- (void)setWeightKg:(int)arg1;
-- (int)weightKg;
+- (void)setHeightCm:(long long)arg1;
+- (void)setWeightKg:(long long)arg1;
+- (long long)weightKg;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -20,7 +20,7 @@
 - (void)bindBytes:(const void*)arg1 length:(int)arg2 forParameterAtPosition:(int)arg3;
 - (void)bindBytesNoCopy:(const void*)arg1 length:(int)arg2 forParameterAtPosition:(int)arg3;
 - (void)bindDouble:(double)arg1 forParameterAtPosition:(int)arg2;
-- (void)bindInt64:(int)arg1 forParameterAtPosition:(int)arg2;
+- (void)bindInt64:(long long)arg1 forParameterAtPosition:(int)arg2;
 - (void)bindInt:(int)arg1 forParameterAtPosition:(int)arg2;
 - (void)bindNullForParameterAtPosition:(int)arg1;
 - (void)bindUTF8String:(const char *)arg1 forParameterAtPosition:(int)arg2;

@@ -17,9 +17,9 @@
 @property (nonatomic, readonly) BOOL hasTitle;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) UIImage *image;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } imageInsets;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } imageInsets;
 @property (nonatomic, retain) UIImage *landscapeImagePhone;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } landscapeImagePhoneInsets;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } landscapeImagePhoneInsets;
 @property (nonatomic, readonly, copy) NSString *resolvedTitle;
 @property (nonatomic, readonly) BOOL selected;
 @property (readonly) Class superclass;

@@ -24,7 +24,7 @@
     MusicLibraryBrowseTableViewConfiguration * _libraryViewConfiguration;
     unsigned int  _numberOfEntities;
     MPAVController * _player;
-    double  _previousWidth;
+    float  _previousWidth;
     unsigned int  _referenceCountForIgnoringEntityProviderInvalidation;
     unsigned int  _referenceCountForRunningEditingStateAnimations;
     NSMutableArray * _reusableItemCoalescingEntityValueProviders;
@@ -43,7 +43,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <MusicLibraryBrowseTableViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) double effectiveContentHeight;
+@property (nonatomic, readonly) float effectiveContentHeight;
 @property (nonatomic, readonly) NSArray *entityProviderChangeRecords;
 @property (nonatomic, readonly) MusicEntityViewDescriptor *entityViewDescriptor;
 @property (readonly) unsigned int hash;
@@ -104,7 +104,7 @@
 - (void)endEditingWithCommitBlock:(id /* block */)arg1;
 - (id)entityProviderChangeRecords;
 - (id)entityViewDescriptor;
-- (BOOL)getContentOffset:(struct CGPoint { double x1; double x2; }*)arg1 forIndexBarEntryAtIndex:(unsigned int)arg2;
+- (BOOL)getContentOffset:(struct CGPoint { float x1; float x2; }*)arg1 forIndexBarEntryAtIndex:(unsigned int)arg2;
 - (void)handleContentDescriptorDidInvalidate;
 - (void)handleContentSizeCategoryDidChange;
 - (void)handleEntityProviderDidInvalidate;
@@ -122,7 +122,7 @@
 - (unsigned int)numberOfIndexBarEntries;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (void)previewingContext:(id)arg1 commitViewController:(id)arg2;
-- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { double x1; double x2; })arg2;
+- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { float x1; float x2; })arg2;
 - (id)sectionHeaderBackgroundColor;
 - (void)sectionHeaderViewDidSelectButton:(id)arg1;
 - (id)sectionIndexTitlesForTableView:(id)arg1;
@@ -168,6 +168,6 @@
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)willDisplayBrowseSectionHeaderView:(id)arg1 forSection:(int)arg2;
-- (void)willPresentPreviewViewController:(id)arg1 forLocation:(struct CGPoint { double x1; double x2; })arg2 inSourceView:(id)arg3;
+- (void)willPresentPreviewViewController:(id)arg1 forLocation:(struct CGPoint { float x1; float x2; })arg2 inSourceView:(id)arg3;
 
 @end

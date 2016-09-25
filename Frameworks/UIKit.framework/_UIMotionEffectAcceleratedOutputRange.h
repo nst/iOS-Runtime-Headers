@@ -4,23 +4,23 @@
 
 @interface _UIMotionEffectAcceleratedOutputRange : NSObject <NSCoding, NSCopying> {
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _acceleration;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _referenceAcceleration;
     struct UIOffset { 
-        double horizontal; 
-        double vertical; 
+        float horizontal; 
+        float vertical; 
     }  _referenceOffset;
 }
 
-@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } acceleration;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } acceleration;
 
-- (struct UIOffset { double x1; double x2; })acceleratedOutputForViewerOffset:(struct UIOffset { double x1; double x2; })arg1 accelerationBoostFactor:(struct CGPoint { double x1; double x2; })arg2;
-- (struct CGPoint { double x1; double x2; })acceleration;
+- (struct UIOffset { float x1; float x2; })acceleratedOutputForViewerOffset:(struct UIOffset { float x1; float x2; })arg1 accelerationBoostFactor:(struct CGPoint { float x1; float x2; })arg2;
+- (struct CGPoint { float x1; float x2; })acceleration;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
@@ -29,6 +29,6 @@
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (void)reset;
-- (void)setAcceleration:(struct CGPoint { double x1; double x2; })arg1 fixingOutputForViewerOffset:(struct UIOffset { double x1; double x2; })arg2;
+- (void)setAcceleration:(struct CGPoint { float x1; float x2; })arg1 fixingOutputForViewerOffset:(struct UIOffset { float x1; float x2; })arg2;
 
 @end

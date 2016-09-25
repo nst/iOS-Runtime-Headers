@@ -3,9 +3,9 @@
  */
 
 @interface GQDWPListLabelGeometry : NSObject <GQDNameMappable> {
-    double  mBaselineOffset;
+    float  mBaselineOffset;
     int  mLabelAlignment;
-    double  mScale;
+    float  mScale;
     BOOL  mScaleWithText;
 }
 

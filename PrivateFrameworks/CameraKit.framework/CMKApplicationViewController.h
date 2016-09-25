@@ -52,7 +52,7 @@
 - (void)_applicationWillEnterForeground:(id)arg1;
 - (void)_applyAutorotationCorrectingTransformForOrientation:(int)arg1;
 - (void)_applyConfiguration;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })_autorotationCorrectingTransformFromOrientation:(int)arg1;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_autorotationCorrectingTransformFromOrientation:(int)arg1;
 - (id)_autorotationCorrectionView;
 - (BOOL)_cameraIsRunning;
 - (id)_cameraRollNotificationToken;
@@ -63,7 +63,7 @@
 - (id)_dictionaryFromPackedArray:(id)arg1;
 - (BOOL)_didApplyConfigurationToCameraView;
 - (void)_didPerformPhysicalCapture:(id)arg1;
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; int x7; }*)arg1;
+- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; float x6; int x7; }*)arg1;
 - (BOOL)_hasLockedSinceLastConfigurationChange;
 - (BOOL)_isDismissingCameraRoll;
 - (BOOL)_isDismissingCameraRollForSuspension;
@@ -150,6 +150,6 @@
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillLayoutSubviews;
 - (void)viewWillShowForLaunch;
-- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

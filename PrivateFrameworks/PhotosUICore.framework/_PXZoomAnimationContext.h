@@ -8,12 +8,12 @@
     NSObject<OS_dispatch_group> * _animationGroup;
     int  _animationType;
     NSMutableArray * _cleanupHandlers;
-    double  _fromAlpha;
+    float  _fromAlpha;
     PXRegionOfInterest * _fromRegionOfInterest;
     PXNonuniformTransform * _fromTransform;
     BOOL  _keepsSourceRegionOfInterestContent;
     BOOL  _matchingRegionsOfInterest;
-    double  _toAlpha;
+    float  _toAlpha;
     PXRegionOfInterest * _toRegionOfInterest;
     PXNonuniformTransform * _toTransform;
 }
@@ -23,14 +23,14 @@
 @property (nonatomic) int animationType;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) double fromAlpha;
+@property (nonatomic) float fromAlpha;
 @property (nonatomic, retain) PXRegionOfInterest *fromRegionOfInterest;
 @property (nonatomic, retain) PXNonuniformTransform *fromTransform;
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL keepsSourceRegionOfInterestContent;
 @property (getter=isMatchingRegionsOfInterest, nonatomic) BOOL matchingRegionsOfInterest;
 @property (readonly) Class superclass;
-@property (nonatomic) double toAlpha;
+@property (nonatomic) float toAlpha;
 @property (nonatomic, retain) PXRegionOfInterest *toRegionOfInterest;
 @property (nonatomic, retain) PXNonuniformTransform *toTransform;
 

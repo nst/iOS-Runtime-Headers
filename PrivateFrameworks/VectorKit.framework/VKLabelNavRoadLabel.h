@@ -4,7 +4,7 @@
 
 @interface VKLabelNavRoadLabel : NSObject {
     unsigned char  _alignment;
-    double  _desiredOffsetDistance;
+    float  _desiredOffsetDistance;
     NSString * _displayGroup;
     unsigned int  _displayID;
     struct shared_ptr<md::NavLabel> { 
@@ -16,7 +16,7 @@
 }
 
 @property (nonatomic) unsigned char alignment;
-@property (nonatomic) double desiredOffsetDistance;
+@property (nonatomic) float desiredOffsetDistance;
 @property (nonatomic) unsigned int displayID;
 @property (nonatomic, readonly) BOOL isJunctionLabel;
 @property (nonatomic, readonly) BOOL isManeuverLabel;

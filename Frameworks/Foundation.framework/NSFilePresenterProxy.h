@@ -8,7 +8,7 @@
     BOOL  _didObserveNonCoordinatedChanges;
     BOOL  _didObserveVersionChangingByWriter;
     BOOL  _disconnected;
-    unsigned int  _filePresenterResponses;
+    unsigned long long  _filePresenterResponses;
     NSFilePresenterXPCMessenger * _forwardedMessenger;
     BOOL  _inSubarbiter;
     NSMutableArray * _previousWriterPurposeIDs;
@@ -21,7 +21,7 @@
 }
 
 @property (readonly) BOOL disconnected;
-@property (nonatomic) unsigned int filePresenterResponses;
+@property (nonatomic) unsigned long long filePresenterResponses;
 @property BOOL inSubarbiter;
 @property BOOL usesMainThreadDuringReliquishing;
 
@@ -34,7 +34,7 @@
 - (void)dealloc;
 - (void)disconnect;
 - (BOOL)disconnected;
-- (unsigned int)filePresenterResponses;
+- (unsigned long long)filePresenterResponses;
 - (void)forwardRelinquishmentForWritingClaim:(BOOL)arg1 withID:(id)arg2 purposeID:(id)arg3 subitemURL:(id)arg4 options:(unsigned int)arg5 completionHandler:(id /* block */)arg6;
 - (void)forwardUsingProxy:(id)arg1;
 - (BOOL)inSubarbiter;
@@ -53,7 +53,7 @@
 - (void)relinquishToReadingClaimWithID:(id)arg1 options:(unsigned int)arg2 purposeID:(id)arg3 resultHandler:(id /* block */)arg4;
 - (void)relinquishToWritingClaimWithID:(id)arg1 options:(unsigned int)arg2 purposeID:(id)arg3 subitemPath:(id)arg4 resultHandler:(id /* block */)arg5;
 - (void)saveChangesWithCompletionHandler:(id /* block */)arg1;
-- (void)setFilePresenterResponses:(unsigned int)arg1;
+- (void)setFilePresenterResponses:(unsigned long long)arg1;
 - (void)setInSubarbiter:(BOOL)arg1;
 - (void)setItemLocation:(id)arg1;
 - (void)setUsesMainThreadDuringReliquishing:(BOOL)arg1;

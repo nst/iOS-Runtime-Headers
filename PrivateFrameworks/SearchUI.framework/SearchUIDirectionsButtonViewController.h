@@ -3,14 +3,14 @@
  */
 
 @interface SearchUIDirectionsButtonViewController : SearchUIAccessoryViewController {
-    double  _latitude;
-    double  _longitude;
+    float  _latitude;
+    float  _longitude;
     NSData * _mapsData;
     NSString * _name;
 }
 
-@property double latitude;
-@property double longitude;
+@property float latitude;
+@property float longitude;
 @property (retain) NSData *mapsData;
 @property (retain) NSString *name;
 

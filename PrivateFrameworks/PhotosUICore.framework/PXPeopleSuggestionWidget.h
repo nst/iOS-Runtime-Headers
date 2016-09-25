@@ -90,7 +90,7 @@
 - (id)containerView;
 - (void)contentSizeCategoryChanged:(id)arg1;
 - (id)contentView;
-- (void)contentViewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)contentViewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (id)context;
 - (void)dealloc;
 - (id)favoriteButton;
@@ -106,7 +106,7 @@
 - (id)peopleFetchResult;
 - (void)photoLibraryDidChangeOnMainQueue:(id)arg1 withPreparedInfo:(id)arg2;
 - (float)preferredContentHeightForWidth:(float)arg1;
-- (void)prepareContentForSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)prepareContentForSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)prepareForPhotoLibraryChange:(id)arg1;
 - (void)setActiveConstraints:(id)arg1;
 - (void)setBottomSeparator:(id)arg1;

@@ -7,7 +7,7 @@
     unsigned int  _phraseId;
     NSString * _query;
     double  _score;
-    int  _type;
+    long long  _type;
 }
 
 @property (nonatomic, readonly) NSString *identifier;
@@ -15,7 +15,7 @@
 @property (nonatomic, readonly) unsigned int phraseId;
 @property (nonatomic, readonly) NSString *query;
 @property (nonatomic, readonly) double score;
-@property (nonatomic, readonly) int type;
+@property (nonatomic, readonly) long long type;
 
 + (BOOL)supportsSecureCoding;
 
@@ -25,14 +25,14 @@
 - (id)identifier;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithIdentifier:(id)arg1 type:(int)arg2 prediction:(id)arg3 score:(double)arg4 phraseId:(unsigned int)arg5;
-- (id)initWithType:(int)arg1 prediction:(id)arg2 score:(double)arg3;
-- (id)initWithType:(int)arg1 prediction:(id)arg2 score:(double)arg3 phraseId:(unsigned int)arg4;
+- (id)initWithIdentifier:(id)arg1 type:(long long)arg2 prediction:(id)arg3 score:(double)arg4 phraseId:(unsigned int)arg5;
+- (id)initWithType:(long long)arg1 prediction:(id)arg2 score:(double)arg3;
+- (id)initWithType:(long long)arg1 prediction:(id)arg2 score:(double)arg3 phraseId:(unsigned int)arg4;
 - (BOOL)isPhrasePrediction;
 - (unsigned int)phraseId;
 - (id)query;
 - (double)score;
 - (id)searchSuggestion;
-- (int)type;
+- (long long)type;
 
 @end

@@ -4,7 +4,7 @@
 
 @interface CRRecentContact : NSObject <NSSecureCoding> {
     NSString * _address;
-    int  _contactID;
+    long long  _contactID;
     NSNumber * _decayedWeight;
     NSString * _displayName;
     unsigned int  _groupKind;
@@ -16,13 +16,13 @@
     NSString * _originalSource;
     NSString * _rawAddress;
     NSMutableArray * _recentDates;
-    int  _recentID;
+    long long  _recentID;
     NSString * _recentsDomain;
     NSNumber * _weight;
 }
 
 @property (nonatomic, copy) NSString *address;
-@property (nonatomic) int contactID;
+@property (nonatomic) long long contactID;
 @property (nonatomic, readonly) unsigned int countOfRecents;
 @property (nonatomic, retain) NSNumber *decayedWeight;
 @property (nonatomic, copy) NSString *displayName;
@@ -38,7 +38,7 @@
 @property (nonatomic, copy) NSString *originalSource;
 @property (nonatomic, copy) NSString *rawAddress;
 @property (nonatomic, copy) NSArray *recentDates;
-@property (nonatomic) int recentID;
+@property (nonatomic) long long recentID;
 @property (nonatomic, copy) NSString *recentsDomain;
 @property (nonatomic, retain) NSNumber *weight;
 
@@ -55,7 +55,7 @@
 - (id)archivableGroupMembers;
 - (id)archivableMetadata;
 - (id)archivableRecentID;
-- (int)contactID;
+- (long long)contactID;
 - (unsigned int)countOfRecents;
 - (void)dealloc;
 - (id)decayedWeight;
@@ -69,7 +69,7 @@
 - (unsigned int)hash;
 - (id)initWithAddress:(id)arg1 displayName:(id)arg2 kind:(id)arg3 recentDate:(id)arg4 recentsDomain:(id)arg5;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithContactID:(int)arg1;
+- (id)initWithContactID:(long long)arg1;
 - (id)initWithMembers:(id)arg1 displayName:(id)arg2 recentDate:(id)arg3 recentsDomain:(id)arg4;
 - (void)insertDate:(id)arg1 atIndex:(unsigned int)arg2 required:(BOOL)arg3;
 - (unsigned int)insertionIndexForDate:(id)arg1 wouldBeUnique:(BOOL*)arg2;
@@ -85,7 +85,7 @@
 - (id)originalSource;
 - (id)rawAddress;
 - (id)recentDates;
-- (int)recentID;
+- (long long)recentID;
 - (id)recentsDomain;
 - (void)recordRecentEventForDate:(id)arg1 userInitiated:(BOOL)arg2;
 - (void)setAddress:(id)arg1;
@@ -94,7 +94,7 @@
 - (void)setArchivableGroupMembers:(id)arg1;
 - (void)setArchivableMetadata:(id)arg1;
 - (void)setArchivableRecentID:(id)arg1;
-- (void)setContactID:(int)arg1;
+- (void)setContactID:(long long)arg1;
 - (void)setDecayedWeight:(id)arg1;
 - (void)setDisplayName:(id)arg1;
 - (void)setGroupKind:(unsigned int)arg1;
@@ -106,7 +106,7 @@
 - (void)setOriginalSource:(id)arg1;
 - (void)setRawAddress:(id)arg1;
 - (void)setRecentDates:(id)arg1;
-- (void)setRecentID:(int)arg1;
+- (void)setRecentID:(long long)arg1;
 - (void)setRecentsDomain:(id)arg1;
 - (void)setWeight:(id)arg1;
 - (id)weight;

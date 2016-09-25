@@ -7,7 +7,7 @@
     unsigned int  _eventType;
     NSString * _forecastDetail;
     int  _hourIndex;
-    double  _percentPrecipitation;
+    float  _percentPrecipitation;
     WFTemperature * _temperature;
     NSString * _time;
 }
@@ -16,7 +16,7 @@
 @property (nonatomic) unsigned int eventType;
 @property (nonatomic, copy) NSString *forecastDetail;
 @property (nonatomic) int hourIndex;
-@property (nonatomic) double percentPrecipitation;
+@property (nonatomic) float percentPrecipitation;
 @property (nonatomic, retain) WFTemperature *temperature;
 @property (nonatomic, copy) NSString *time;
 

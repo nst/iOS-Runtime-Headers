@@ -5,21 +5,21 @@
 @interface SKUIViewElementPageSection : SKUIStorePageSection <SKUIArtworkRequestDelegate> {
     Class  _cellClass;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _cellContentInset;
     SKUIViewElementLayoutContext * _cellLayoutContext;
-    double  _firstSectionTopInset;
+    float  _firstSectionTopInset;
     SKUICollectionViewCell<SKUIViewElementView> * _lastCell;
     BOOL  _rendersWithPerspective;
     NSString * _reuseIdentifier;
-    double  _sectionBottomInset;
+    float  _sectionBottomInset;
 }
 
 @property (readonly, copy) NSString *debugDescription;
-@property (nonatomic, readonly) double defaultVerticalInset;
+@property (nonatomic, readonly) float defaultVerticalInset;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
@@ -34,7 +34,7 @@
 - (void)artworkRequest:(id)arg1 didLoadImage:(id)arg2;
 - (id)backgroundColorForIndexPath:(id)arg1;
 - (id)cellForIndexPath:(id)arg1;
-- (struct CGSize { double x1; double x2; })cellSizeForIndexPath:(id)arg1;
+- (struct CGSize { float x1; float x2; })cellSizeForIndexPath:(id)arg1;
 - (void)collectionViewDidEndDisplayingCellForItemAtIndexPath:(id)arg1;
 - (void)collectionViewDidSelectItemAtIndexPath:(id)arg1;
 - (BOOL)collectionViewShouldHighlightItemAtIndexPath:(id)arg1;
@@ -49,14 +49,14 @@
 - (void)getModalSourceViewForViewElement:(id)arg1 completionBlock:(id /* block */)arg2;
 - (id)initWithPageComponent:(id)arg1;
 - (int)numberOfCells;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })pinningContentInsetForItemAtIndexPath:(id)arg1;
-- (struct CGSize { double x1; double x2; })preferredContentSize;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })pinningContentInsetForItemAtIndexPath:(id)arg1;
+- (struct CGSize { float x1; float x2; })preferredContentSize;
 - (void)prefetchResourcesWithReason:(int)arg1;
-- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { double x1; double x2; })arg2;
+- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { float x1; float x2; })arg2;
 - (void)reloadCellWithIndexPath:(id)arg1 reason:(int)arg2;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })sectionContentInset;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })sectionContentInset;
 - (BOOL)updateCellWithIndexPath:(id)arg1 itemState:(id)arg2 animated:(BOOL)arg3;
 - (void)willAppearInContext:(id)arg1;
-- (void)willTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)willTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

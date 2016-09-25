@@ -7,12 +7,12 @@
 }
 
 @property <GKVoiceChatClient> *client;
-@property (readonly) double inputMeterLevel;
+@property (readonly) float inputMeterLevel;
 @property (getter=isInputMeteringEnabled, nonatomic) BOOL inputMeteringEnabled;
 @property (getter=isMicrophoneMuted, nonatomic) BOOL microphoneMuted;
-@property (readonly) double outputMeterLevel;
+@property (readonly) float outputMeterLevel;
 @property (getter=isOutputMeteringEnabled, nonatomic) BOOL outputMeteringEnabled;
-@property (nonatomic) double remoteParticipantVolume;
+@property (nonatomic) float remoteParticipantVolume;
 
 + (id)defaultVoiceChatService;
 + (void)initialize;

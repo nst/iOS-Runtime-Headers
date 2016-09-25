@@ -6,10 +6,10 @@
     struct CGImage { } * mDeliveredImage;
     TSKDocumentRoot * mDocumentRoot;
     NSString * mIdentifier;
-    double  mImageScale;
+    float  mImageScale;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  mImageSize;
     unsigned int  mInsertPopoverPageNumber;
     unsigned int  mInsertPopoverPageType;
@@ -17,12 +17,12 @@
     <TSKAccessControllerReadTicket> * mRenderingTicket;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  mSwatchFrame;
     UIView * mView;
@@ -34,13 +34,13 @@
 @property (nonatomic, readonly) struct CGImage { }*deliveredImage;
 @property (readonly) TSKDocumentRoot *documentRoot;
 @property (copy) NSString *identifier;
-@property (readonly) double imageScale;
-@property (readonly) struct CGSize { double x1; double x2; } imageSize;
+@property (readonly) float imageScale;
+@property (readonly) struct CGSize { float x1; float x2; } imageSize;
 @property unsigned int insertPopoverPageNumber;
 @property unsigned int insertPopoverPageType;
 @property (readonly) NSObject<TSSPreset> *preset;
 @property (nonatomic, retain) <TSKAccessControllerReadTicket> *renderingTicket;
-@property (readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } swatchFrame;
+@property (readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } swatchFrame;
 @property (retain) UIView *view;
 
 - (void)cancel;
@@ -52,8 +52,8 @@
 - (id)documentRoot;
 - (id)identifier;
 - (float)imageScale;
-- (struct CGSize { double x1; double x2; })imageSize;
-- (id)initWithPreset:(id)arg1 imageSize:(struct CGSize { double x1; double x2; })arg2 imageScale:(float)arg3 swatchFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg4 documentRoot:(id)arg5;
+- (struct CGSize { float x1; float x2; })imageSize;
+- (id)initWithPreset:(id)arg1 imageSize:(struct CGSize { float x1; float x2; })arg2 imageScale:(float)arg3 swatchFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4 documentRoot:(id)arg5;
 - (unsigned int)insertPopoverPageNumber;
 - (unsigned int)insertPopoverPageType;
 - (BOOL)isReady;
@@ -73,8 +73,8 @@
 - (void)setInsertPopoverPageType:(unsigned int)arg1;
 - (void)setRenderingTicket:(id)arg1;
 - (void)setView:(id)arg1;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })swatchEdgeInsets;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })swatchFrame;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })swatchEdgeInsets;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })swatchFrame;
 - (id)view;
 
 @end

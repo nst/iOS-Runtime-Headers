@@ -7,7 +7,7 @@
     NSData * _extension;
     NSString * _path;
     NSArray * _pathComponents;
-    int  _sandboxHandle;
+    long long  _sandboxHandle;
     unsigned char  _volumeUUID;
 }
 

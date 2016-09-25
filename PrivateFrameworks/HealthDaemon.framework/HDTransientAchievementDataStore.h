@@ -38,7 +38,7 @@
 - (id)earnedAchievementDefinitionIdentifiers;
 - (void)expectCommitWithCompletion:(id /* block */)arg1;
 - (id)initWithProfile:(id)arg1;
-- (int)int64ForKey:(id)arg1;
+- (long long)int64ForKey:(id)arg1;
 - (void)markAchievementAlerted:(id)arg1;
 - (id)modifiedKeyValues;
 - (void)setAchievements:(id)arg1;
@@ -47,7 +47,7 @@
 - (void)setCommittedValues:(id)arg1;
 - (void)setDate:(id)arg1 forKey:(id)arg2;
 - (void)setDouble:(double)arg1 forKey:(id)arg2;
-- (void)setInt64:(int)arg1 forKey:(id)arg2;
+- (void)setInt64:(long long)arg1 forKey:(id)arg2;
 - (void)setUnalertedAchievements:(id)arg1;
 - (void)setUncommittedValues:(id)arg1;
 - (void)setUnsignedInteger:(unsigned int)arg1 forKey:(id)arg2;

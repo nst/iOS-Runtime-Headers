@@ -21,7 +21,7 @@
 + (void)publishBatchOfOriginalAssets:(id)arg1 toSharedAlbum:(id)arg2 withAssetsSharingInfos:(id)arg3 trimmedVideoPathInfo:(id)arg4 isNewAlbum:(BOOL)arg5 batchCommentText:(id)arg6;
 
 - (id)batchCommentText;
-- (int)daemonOperation;
+- (long long)daemonOperation;
 - (void)dealloc;
 - (id)description;
 - (void)encodeToXPCObject:(id)arg1;

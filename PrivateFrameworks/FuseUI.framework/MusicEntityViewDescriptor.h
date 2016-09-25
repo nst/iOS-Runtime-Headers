@@ -10,7 +10,7 @@
     int  _scrollIndicatorStyle;
     int  _sectionHeaderHairlineStyleForNonFloatingState;
     UIColor * _sectionHeaderTextColorForNonFloatingState;
-    double  _sectionHeaderTopContentInset;
+    float  _sectionHeaderTopContentInset;
     BOOL  _sectionHeaderViewsFloat;
     BOOL  _trailingSeparatorInsetFollowsLayoutInsets;
     BOOL  _usesUppercaseLettersForSectionHeaderTitles;
@@ -23,7 +23,7 @@
 @property (nonatomic) int scrollIndicatorStyle;
 @property (nonatomic) int sectionHeaderHairlineStyleForNonFloatingState;
 @property (nonatomic, retain) UIColor *sectionHeaderTextColorForNonFloatingState;
-@property (nonatomic) double sectionHeaderTopContentInset;
+@property (nonatomic) float sectionHeaderTopContentInset;
 @property (nonatomic) BOOL sectionHeaderViewsFloat;
 @property (nonatomic) BOOL trailingSeparatorInsetFollowsLayoutInsets;
 @property (nonatomic) BOOL usesUppercaseLettersForSectionHeaderTitles;

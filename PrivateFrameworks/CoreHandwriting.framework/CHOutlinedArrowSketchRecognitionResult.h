@@ -4,26 +4,26 @@
 
 @interface CHOutlinedArrowSketchRecognitionResult : CHSketchRecognitionResult {
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _center;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _controlPoint;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _size;
 }
 
-@property (readonly) struct CGPoint { double x1; double x2; } center;
-@property (readonly) struct CGPoint { double x1; double x2; } controlPoint;
-@property (readonly) struct CGSize { double x1; double x2; } size;
+@property (readonly) struct CGPoint { float x1; float x2; } center;
+@property (readonly) struct CGPoint { float x1; float x2; } controlPoint;
+@property (readonly) struct CGSize { float x1; float x2; } size;
 
-- (struct CGPoint { double x1; double x2; })center;
-- (struct CGPoint { double x1; double x2; })controlPoint;
-- (id)initWithString:(id)arg1 score:(double)arg2 rotation:(float)arg3 center:(struct CGPoint { double x1; double x2; })arg4 size:(struct CGSize { double x1; double x2; })arg5 controlPointLocation:(struct CGPoint { double x1; double x2; })arg6;
-- (struct CGSize { double x1; double x2; })size;
+- (struct CGPoint { float x1; float x2; })center;
+- (struct CGPoint { float x1; float x2; })controlPoint;
+- (id)initWithString:(id)arg1 score:(double)arg2 rotation:(float)arg3 center:(struct CGPoint { float x1; float x2; })arg4 size:(struct CGSize { float x1; float x2; })arg5 controlPointLocation:(struct CGPoint { float x1; float x2; })arg6;
+- (struct CGSize { float x1; float x2; })size;
 
 @end

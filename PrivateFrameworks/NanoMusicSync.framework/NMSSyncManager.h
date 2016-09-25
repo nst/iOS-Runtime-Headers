@@ -6,7 +6,7 @@
     id  _activeSyncSessionIdentifier;
     unsigned int  _aggregateAssetPlaylistItemBytes;
     BOOL  _assetPlaylistItemsPendingDownload;
-    double  _estimatedSyncProgress;
+    float  _estimatedSyncProgress;
     NSTimer * _maskedPendingSyncStateRevealTimer;
     unsigned int  _numberOfAssetPlaylistItems;
     unsigned int  _numberOfAssetPlaylistItemsNeedingDownload;
@@ -20,7 +20,7 @@
 @property (getter=hasAssetPlaylistItemsPendingDownload, nonatomic) BOOL assetPlaylistItemsPendingDownload;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) double estimatedSyncProgress;
+@property (nonatomic) float estimatedSyncProgress;
 @property (readonly) unsigned int hash;
 @property (nonatomic) unsigned int numberOfAssetPlaylistItems;
 @property (nonatomic) unsigned int numberOfAssetPlaylistItemsNeedingDownload;

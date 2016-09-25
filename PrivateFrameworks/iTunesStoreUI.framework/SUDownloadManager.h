@@ -18,7 +18,7 @@
 - (void)_removeObject:(id)arg1 fromArray:(id*)arg2;
 - (void)dealloc;
 - (BOOL)deleteDownload:(id)arg1;
-- (id)downloadForDownloadIdentifier:(int)arg1;
+- (id)downloadForDownloadIdentifier:(long long)arg1;
 - (id)downloadManager;
 - (id)downloads;
 - (id)initWithDownloadManager:(id)arg1;

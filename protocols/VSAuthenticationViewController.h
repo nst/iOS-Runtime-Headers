@@ -6,7 +6,7 @@
 @required
 
 - (BOOL)isCancellationAllowed;
-- (struct CGSize { double x1; double x2; })preferredLogoSize;
+- (struct CGSize { float x1; float x2; })preferredLogoSize;
 - (void)setCancellationAllowed:(BOOL)arg1;
 
 @end

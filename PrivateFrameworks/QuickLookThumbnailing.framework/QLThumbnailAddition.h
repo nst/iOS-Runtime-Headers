@@ -5,7 +5,7 @@
 @interface QLThumbnailAddition : NSObject {
     GSAddition * _addition;
     NSURL * _additionURL;
-    int  _additionURLSandboxToken;
+    long long  _additionURLSandboxToken;
     NSDictionary * _metadata;
     NSDictionary * _thumbnailDataDictionary;
     QLThumbnailVersion * _thumbnailVersion;
@@ -46,11 +46,11 @@
 + (id)metadataForGeneratedThumbnailForURL:(id)arg1 maximumDimension:(float)arg2;
 + (void)noteCloudDocsDownloadedFileAtURL:(id)arg1;
 + (void)noteCloudDocsDownloadedFileAtURL:(id)arg1 completionHandler:(id /* block */)arg2;
-+ (id)plistInExtendedAttributeNamed:(const char *)arg1 flags:(unsigned int)arg2 onFileDescriptor:(int)arg3 error:(id*)arg4;
++ (id)plistInExtendedAttributeNamed:(const char *)arg1 flags:(unsigned long long)arg2 onFileDescriptor:(int)arg3 error:(id*)arg4;
 + (BOOL)removeAdditionsOnURL:(id)arg1 error:(id*)arg2;
-+ (BOOL)removeExtendedAttributeNamed:(const char *)arg1 flags:(unsigned int)arg2 onFileDescriptor:(int)arg3 error:(id*)arg4;
++ (BOOL)removeExtendedAttributeNamed:(const char *)arg1 flags:(unsigned long long)arg2 onFileDescriptor:(int)arg3 error:(id*)arg4;
 + (BOOL)removeThumbnailsStoredInExtendedAttributesOnURL:(id)arg1 error:(id*)arg2;
-+ (BOOL)setPropertyList:(id)arg1 forExtendedAttributeNamed:(const char *)arg2 flags:(unsigned int)arg3 onFileDescriptor:(int)arg4 error:(id*)arg5;
++ (BOOL)setPropertyList:(id)arg1 forExtendedAttributeNamed:(const char *)arg2 flags:(unsigned long long)arg3 onFileDescriptor:(int)arg4 error:(id*)arg5;
 + (BOOL)setThumbnailsDictionary:(id)arg1 forURL:(id)arg2 error:(id*)arg3;
 + (unsigned int)sizeOfAdditionsPresentOnURL:(id)arg1;
 + (BOOL)storeThumbnailDataDictionary:(id)arg1 metadata:(id)arg2 asExtendedAttributeOnURL:(id)arg3 error:(id*)arg4;
@@ -74,7 +74,7 @@
 - (id)thumbnailDataForKey:(id)arg1;
 - (id)thumbnailURLForKey:(id)arg1;
 - (id)thumbnailVersion;
-- (struct CGImage { }*)thumbnailWithMaximumDimension:(float)arg1 contentRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg2 properties:(id*)arg3;
+- (struct CGImage { }*)thumbnailWithMaximumDimension:(float)arg1 contentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 properties:(id*)arg3;
 - (id)thumbnailsDictionaryWithError:(id*)arg1;
 
 @end

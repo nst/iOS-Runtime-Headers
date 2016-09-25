@@ -34,7 +34,7 @@
 - (void)configureSliderCell:(id)arg1 forMode:(id)arg2;
 - (void)copyStateFromAdjustmentsModeBar:(id)arg1;
 - (id)currentSlidersCollectionView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)newConstraintsForModePickerList:(id)arg1;
 - (id)newModePickerListBackgroundView;
 - (int)numberOfSectionsInCollectionView:(id)arg1;
@@ -45,7 +45,7 @@
 - (void)updateConstraints;
 - (void)updateEnabledForCurrentMode;
 - (id)visibleSliderAdjustmentModes;
-- (BOOL)wantsToHandleEventAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (BOOL)wantsToHandleEventAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)willMoveToWindow:(id)arg1;
 
 @end

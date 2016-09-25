@@ -11,12 +11,12 @@
     <SUOverlayBackgroundDelegate> * _delegate;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _keyboardFrame;
     int  _selectedViewControllerIndex;
@@ -35,14 +35,14 @@
 - (void)_addViewController:(id)arg1;
 - (void)_backgroundAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (void)_captureViewAction:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_centeredFrameForViewController:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_centeredFrameForViewController:(id)arg1;
 - (id)_copyTransitionForTransition:(id)arg1 action:(id)arg2;
 - (void)_enqueueAction:(id)arg1;
 - (void)_finishDismissAction:(id)arg1;
 - (void)_finishDismissEverythingAction:(id)arg1;
 - (void)_finishDismissOfViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)_finishPresentAction:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameForSlideFromBottomForViewController:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForSlideFromBottomForViewController:(id)arg1;
 - (void)_layoutForKeyboardChangeWithInfo:(id)arg1;
 - (void)_overlayActionDidFinish;
 - (void)_overlayAnimationDidFinish;

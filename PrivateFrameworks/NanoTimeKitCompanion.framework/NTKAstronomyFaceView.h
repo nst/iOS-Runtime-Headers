@@ -12,15 +12,15 @@
     unsigned int  _dateFormatterStyle;
     NTKDateComplicationLabel * _dateLabel;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _dateLabelZoomEndingCenter;
     NTKDigitalTimeLabel * _digitalTimeLabel;
     NTKDigitalTimeLabelStyle * _digitalTimeLabelDefaultLayoutStyle;
     NTKDigitalTimeLabelStyle * _digitalTimeLabelSmallInUpperRightStyle;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _digitalTimeLabelZoomEndingCenter;
     struct CLLocationCoordinate2D { 
         double latitude; 
@@ -39,26 +39,26 @@
     UILabel * _phaseLabel;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _phaseLabelDefaultFrame;
     NTKDelayedBlock * _physicalButtonDelayedBlock;
     NTKAstronomyDummy_ClientSideAnimation * _poseInterpolationAnimation;
     int  _previousDataMode;
     void _previousTranslation;
-    double  _recentMovement;
+    float  _recentMovement;
     UIButton * _rightButton;
     NTKAstronomyRotationModel * _rotationModel;
     NSDateFormatter * _scrubDateFormatter;
     UILabel * _scrubLabel;
     UIImageView * _spheroidLabels;
     UIPanGestureRecognizer * _spheroidPanGesture;
-    double  _supplementalFontLineHeightPlusDescender;
+    float  _supplementalFontLineHeightPlusDescender;
     UITapGestureRecognizer * _supplementalModeDoubleTapGesture;
     NTKDelayedBlock * _wheelDelayedBlock;
 }
@@ -92,7 +92,7 @@
 - (void)_handleSupplementalModeGesture:(id)arg1;
 - (void)_handleVirtualButton:(id)arg1;
 - (void)_hideLocationDot;
-- (void)_interpolateFromPose:(const struct NTKAstronomyFaceViewAnimationPose { double x1; double x2; double x3; double x4; double x5; double x6; double x7; }*)arg1 toPose:(const struct NTKAstronomyFaceViewAnimationPose { double x1; double x2; double x3; double x4; double x5; double x6; double x7; }*)arg2 progress:(float)arg3;
+- (void)_interpolateFromPose:(const struct NTKAstronomyFaceViewAnimationPose { float x1; float x2; float x3; float x4; float x5; float x6; float x7; }*)arg1 toPose:(const struct NTKAstronomyFaceViewAnimationPose { float x1; float x2; float x3; float x4; float x5; float x6; float x7; }*)arg2 progress:(float)arg3;
 - (void)_layoutPhaseLabel;
 - (void)_layoutSpheroidLabel:(int)arg1;
 - (void)_loadLayoutRules;
@@ -123,7 +123,7 @@
 - (void)crownInputSequencerOffsetDidChange:(id)arg1;
 - (void)dealloc;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (void)rotationModelStoppedByDecelerating:(id)arg1;
 - (void)setOverrideDate:(id)arg1 duration:(double)arg2;

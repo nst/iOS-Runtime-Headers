@@ -3,17 +3,17 @@
  */
 
 @interface PXMagazineFrame : NSObject {
-    double  _aspectRatio;
+    float  _aspectRatio;
     int  _height;
-    double  _maxAspectRatio;
-    double  _minAspectRatio;
+    float  _maxAspectRatio;
+    float  _minAspectRatio;
     int  _width;
 }
 
-@property (nonatomic) double aspectRatio;
+@property (nonatomic) float aspectRatio;
 @property (nonatomic) int height;
-@property (nonatomic) double maxAspectRatio;
-@property (nonatomic) double minAspectRatio;
+@property (nonatomic) float maxAspectRatio;
+@property (nonatomic) float minAspectRatio;
 @property (nonatomic, readonly) int numberOfTiles;
 @property (nonatomic) int width;
 

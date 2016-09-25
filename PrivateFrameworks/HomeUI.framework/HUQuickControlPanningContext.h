@@ -5,30 +5,30 @@
 @interface HUQuickControlPanningContext : NSObject {
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _controlFrame;
-    double  _initialSliderValue;
+    float  _initialSliderValue;
     BOOL  _requiresSomeMovementBeforeActivation;
-    double  _verticalDragCoefficient;
+    float  _verticalDragCoefficient;
 }
 
-@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } controlFrame;
-@property (nonatomic) double initialSliderValue;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } controlFrame;
+@property (nonatomic) float initialSliderValue;
 @property (nonatomic) BOOL requiresSomeMovementBeforeActivation;
-@property (nonatomic) double verticalDragCoefficient;
+@property (nonatomic) float verticalDragCoefficient;
 
 - (void)assertConfigurationIsValid;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })controlFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })controlFrame;
 - (id)init;
 - (float)initialSliderValue;
 - (BOOL)requiresSomeMovementBeforeActivation;
-- (void)setControlFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setControlFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setInitialSliderValue:(float)arg1;
 - (void)setRequiresSomeMovementBeforeActivation:(BOOL)arg1;
 - (void)setVerticalDragCoefficient:(float)arg1;

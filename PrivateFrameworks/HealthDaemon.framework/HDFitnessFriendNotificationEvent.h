@@ -5,7 +5,7 @@
 @interface HDFitnessFriendNotificationEvent : NSObject <HDFitnessFriendsCloudKitCodable> {
     NSDate * _date;
     NSUUID * _friendUUID;
-    int  _triggerSnapshotIndex;
+    long long  _triggerSnapshotIndex;
     NSUUID * _triggerUUID;
     int  _type;
 }
@@ -16,7 +16,7 @@
 @property (nonatomic, retain) NSUUID *friendUUID;
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
-@property (nonatomic) int triggerSnapshotIndex;
+@property (nonatomic) long long triggerSnapshotIndex;
 @property (nonatomic, retain) NSUUID *triggerUUID;
 @property (nonatomic) int type;
 
@@ -32,10 +32,10 @@
 - (id)recordWithZoneID:(id)arg1;
 - (void)setDate:(id)arg1;
 - (void)setFriendUUID:(id)arg1;
-- (void)setTriggerSnapshotIndex:(int)arg1;
+- (void)setTriggerSnapshotIndex:(long long)arg1;
 - (void)setTriggerUUID:(id)arg1;
 - (void)setType:(int)arg1;
-- (int)triggerSnapshotIndex;
+- (long long)triggerSnapshotIndex;
 - (id)triggerUUID;
 - (int)type;
 

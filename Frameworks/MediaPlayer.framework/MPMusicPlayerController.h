@@ -6,7 +6,7 @@
     MPMusicPlayerControllerInternal * _internal;
 }
 
-@property (nonatomic) double currentPlaybackRate;
+@property (nonatomic) float currentPlaybackRate;
 @property (nonatomic) double currentPlaybackTime;
 @property (nonatomic, readonly) BOOL isPreparedToPlay;
 
@@ -20,10 +20,10 @@
 - (void).cxx_destruct;
 - (void)_clientCheckInUsingExistencePort:(BOOL)arg1;
 - (void)_isQueuePreparedDidChange:(BOOL)arg1;
-- (void)_itemPlaybackDidEnd:(unsigned int)arg1;
+- (void)_itemPlaybackDidEnd:(unsigned long long)arg1;
 - (void)_musicPlayerDidLaunch;
 - (BOOL)_musicPlayerExistencePortIsValid;
-- (void)_nowPlayingItemDidChange:(unsigned int)arg1;
+- (void)_nowPlayingItemDidChange:(unsigned long long)arg1;
 - (void)_playbackStateDidChange:(int)arg1;
 - (void)_registerForLaunchNotifications;
 - (void)_repeatModeDidChange:(int)arg1;

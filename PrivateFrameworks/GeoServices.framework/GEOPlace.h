@@ -10,7 +10,7 @@
     GEOLatLng * _center;
     GEOMapRegion * _displayMapRegion;
     NSMutableArray * _entryPoints;
-    int  _geoId;
+    long long  _geoId;
     struct { 
         unsigned int area : 1; 
         unsigned int geoId : 1; 
@@ -35,7 +35,7 @@
     GEOStructuredAddress * _spokenStructuredAddress;
     GEOTimezone * _timezone;
     int  _type;
-    int  _uID;
+    long long  _uID;
 }
 
 @property (nonatomic, retain) GEOAddress *address;
@@ -48,7 +48,7 @@
 @property (nonatomic, retain) GEOMapRegion *displayMapRegion;
 @property (nonatomic, retain) NSMutableArray *entryPoints;
 @property (nonatomic, readonly) GEOBusiness *firstBusiness;
-@property (nonatomic) int geoId;
+@property (nonatomic) long long geoId;
 @property (nonatomic, readonly) BOOL hasAddress;
 @property (nonatomic) BOOL hasAddressGeocodeAccuracy;
 @property (nonatomic) BOOL hasArea;
@@ -85,7 +85,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) GEOTimezone *timezone;
 @property (nonatomic) int type;
-@property (nonatomic) int uID;
+@property (nonatomic) long long uID;
 
 // Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
 
@@ -143,7 +143,7 @@
 - (id)entryPoints;
 - (unsigned int)entryPointsCount;
 - (id)firstBusiness;
-- (int)geoId;
+- (long long)geoId;
 - (id)geoMapItem;
 - (BOOL)hasAddress;
 - (BOOL)hasAddressGeocodeAccuracy;
@@ -168,7 +168,7 @@
 - (unsigned int)hash;
 - (id)initWithLatitude:(double)arg1 longitude:(double)arg2;
 - (id)initWithLatitude:(double)arg1 longitude:(double)arg2 addressDictionary:(id)arg3;
-- (id)initWithLocation:(id)arg1 addressDictionary:(id)arg2 name:(id)arg3 businessURL:(id)arg4 phoneNumber:(id)arg5 muid:(unsigned int)arg6 attributionID:(id)arg7 sampleSizeForUserRatingScore:(unsigned int)arg8 normalizedUserRatingScore:(float)arg9;
+- (id)initWithLocation:(id)arg1 addressDictionary:(id)arg2 name:(id)arg3 businessURL:(id)arg4 phoneNumber:(id)arg5 muid:(unsigned long long)arg6 attributionID:(id)arg7 sampleSizeForUserRatingScore:(unsigned int)arg8 normalizedUserRatingScore:(float)arg9;
 - (id)initWithName:(id)arg1 placeType:(int)arg2 areaInMeters:(double)arg3;
 - (id)initWithPlaceInfo:(id)arg1 entity:(id)arg2 addressObject:(id)arg3 bounds:(id)arg4 roadAccessInfo:(id)arg5;
 - (id)initWithUrlRepresentation:(id)arg1;
@@ -196,7 +196,7 @@
 - (void)setCenterCoordinate:(struct { double x1; double x2; })arg1;
 - (void)setDisplayMapRegion:(id)arg1;
 - (void)setEntryPoints:(id)arg1;
-- (void)setGeoId:(int)arg1;
+- (void)setGeoId:(long long)arg1;
 - (void)setHasAddressGeocodeAccuracy:(BOOL)arg1;
 - (void)setHasArea:(BOOL)arg1;
 - (void)setHasGeoId:(BOOL)arg1;
@@ -220,14 +220,14 @@
 - (void)setSpokenStructuredAddress:(id)arg1;
 - (void)setTimezone:(id)arg1;
 - (void)setType:(int)arg1;
-- (void)setUID:(int)arg1;
+- (void)setUID:(long long)arg1;
 - (id)spokenAddress;
 - (id)spokenName;
 - (id)spokenStructuredAddress;
 - (id)timezone;
 - (int)type;
 - (id)typeAsString:(int)arg1;
-- (int)uID;
+- (long long)uID;
 - (id)urlRepresentation;
 - (void)writeTo:(id)arg1;
 

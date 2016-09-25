@@ -7,11 +7,11 @@
     BOOL  _hideUserFrames;
     PASampleKernelFrame * _kernel;
     PASampleUserFrame * _user;
-    unsigned int  continuation;
-    const unsigned int * kernelFrames;
+    unsigned long long  continuation;
+    const unsigned long long * kernelFrames;
     int  numKernelFrames;
     int  numUserFrames;
-    const unsigned int * userFrames;
+    const unsigned long long * userFrames;
 }
 
 @property (readonly, copy) NSString *debugDescription;

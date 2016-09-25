@@ -3,10 +3,10 @@
  */
 
 @interface MKThrottledGate : NSObject {
-    double  _availableTickets;
+    float  _availableTickets;
     int  _maxAvailableTickets;
     NSObject<OS_dispatch_queue> * _queue;
-    double  _refreshRate;
+    float  _refreshRate;
     VKTimer * _timer;
     NSMutableArray * _waitingJobs;
 }

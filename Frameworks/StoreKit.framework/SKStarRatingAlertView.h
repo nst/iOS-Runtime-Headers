@@ -6,7 +6,7 @@
     SKStarRatingControl * _ratingControl;
 }
 
-@property (nonatomic) double rating;
+@property (nonatomic) float rating;
 
 - (void)_ratingControlChanged:(id)arg1;
 - (void)dealloc;

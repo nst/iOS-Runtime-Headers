@@ -11,17 +11,17 @@
     BOOL  _loops;
     BOOL  _shouldStream;
     BOOL  positional;
-    double  rate;
-    double  reverbBlend;
-    double  volume;
+    float  rate;
+    float  reverbBlend;
+    float  volume;
 }
 
 @property (nonatomic) BOOL loops;
 @property (getter=isPositional, nonatomic) BOOL positional;
-@property (nonatomic) double rate;
-@property (nonatomic) double reverbBlend;
+@property (nonatomic) float rate;
+@property (nonatomic) float reverbBlend;
 @property (nonatomic) BOOL shouldStream;
-@property (nonatomic) double volume;
+@property (nonatomic) float volume;
 
 + (id)audioSourceNamed:(id)arg1;
 + (id)audioSourceWithAVAudioPCMBuffer:(id)arg1;

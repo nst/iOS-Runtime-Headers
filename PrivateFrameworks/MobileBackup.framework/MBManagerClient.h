@@ -59,7 +59,7 @@
 - (void)keyBagIsLocking;
 - (void)keyBagIsUnlocked;
 - (BOOL)mergeSnapshots:(id)arg1 backupUUID:(id)arg2 error:(id*)arg3;
-- (unsigned int)nextBackupSize;
+- (unsigned long long)nextBackupSize;
 - (id)nextBackupSizeInfo;
 - (BOOL)pinSnapshotID:(unsigned int)arg1 backupUDID:(id)arg2 error:(id*)arg3;
 - (BOOL)prepareForBackgroundRestoreWithError:(id*)arg1;
@@ -74,7 +74,7 @@
 - (BOOL)restoreApplicationWithBundleID:(id)arg1 failed:(BOOL)arg2 context:(id)arg3 error:(id*)arg4;
 - (BOOL)restoreApplicationWithBundleID:(id)arg1 failed:(BOOL)arg2 error:(id*)arg3;
 - (BOOL)restoreApplicationWithBundleID:(id)arg1 failed:(BOOL)arg2 withQOS:(int)arg3 context:(id)arg4 error:(id*)arg5;
-- (BOOL)restoreDataExistsForApplicationWithBundleID:(id)arg1 size:(unsigned int*)arg2;
+- (BOOL)restoreDataExistsForApplicationWithBundleID:(id)arg1 size:(unsigned long long*)arg2;
 - (id)restoreFailuresForDataclass:(id)arg1 assetType:(id)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 - (BOOL)restoreFileExistsWithPath:(id)arg1;
 - (BOOL)restoreFileWithPath:(id)arg1 context:(id)arg2 error:(id*)arg3;

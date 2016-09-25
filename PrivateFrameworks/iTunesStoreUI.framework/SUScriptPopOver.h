@@ -14,8 +14,8 @@
 @property (readonly) int backgroundStyleCream;
 @property (readonly) int backgroundStyleDefault;
 @property (readonly) int backgroundStyleShare;
-@property double contentHeight;
-@property double contentWidth;
+@property float contentHeight;
+@property float contentWidth;
 @property (nonatomic, retain) UIPopoverController *nativePopoverController;
 @property (nonatomic, readonly) UIPopoverController *presentablePopoverController;
 @property (readonly) SUScriptViewController *presentingViewController;

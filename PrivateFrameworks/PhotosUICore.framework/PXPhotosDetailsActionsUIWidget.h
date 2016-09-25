@@ -11,7 +11,7 @@
     PHFetchResult * __peopleFetchResult;
     NSArray * __performableActionTypes;
     PXPhotosDataSource * __photosDataSource;
-    double  __rowHeight;
+    float  __rowHeight;
     PXUIScrollViewController * __scrollViewController;
     PXPhotosDetailsActionsSpecManager * __specManager;
     <PXTileAnimator> * __tileAnimator;
@@ -44,7 +44,7 @@
 @property (setter=_setPeopleFetchResult:, nonatomic, retain) PHFetchResult *_peopleFetchResult;
 @property (setter=_setPerformableActionTypes:, nonatomic, retain) NSArray *_performableActionTypes;
 @property (setter=_setPhotosDataSource:, nonatomic, retain) PXPhotosDataSource *_photosDataSource;
-@property (setter=_setRowHeight:, nonatomic) double _rowHeight;
+@property (setter=_setRowHeight:, nonatomic) float _rowHeight;
 @property (nonatomic, readonly) PXUIScrollViewController *_scrollViewController;
 @property (nonatomic, readonly) PXPhotosDetailsActionsSpecManager *_specManager;
 @property (nonatomic, readonly) <PXTileAnimator> *_tileAnimator;

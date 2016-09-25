@@ -4,23 +4,23 @@
 
 @interface NCInteractiveNotificationHostViewController : _UIRemoteViewController <NCInteractiveNotificationHost, NCInteractiveNotificationHostDelegate, NCInteractiveNotificationHostInterface> {
     NCViewServiceDescriptor * _accessoryViewService;
-    double  _bottomOverhangHeight;
+    float  _bottomOverhangHeight;
     <NCInteractiveNotificationHostDelegate> * _delegate;
     NCViewServiceDescriptor * _inlayViewService;
-    double  _maximumHeight;
+    float  _maximumHeight;
     BOOL  _modal;
     BOOL  _proximityMonitoringEnabled;
     BOOL  _showsKeyboard;
 }
 
 @property (nonatomic, retain) NCViewServiceDescriptor *accessoryViewService;
-@property (nonatomic) double bottomOverhangHeight;
+@property (nonatomic) float bottomOverhangHeight;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <NCInteractiveNotificationHostDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) NCViewServiceDescriptor *inlayViewService;
-@property (nonatomic) double maximumHeight;
+@property (nonatomic) float maximumHeight;
 @property (getter=isModal, nonatomic) BOOL modal;
 @property (nonatomic) BOOL showsKeyboard;
 @property (readonly) Class superclass;

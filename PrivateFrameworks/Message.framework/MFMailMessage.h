@@ -4,13 +4,13 @@
 
 @interface MFMailMessage : MFMessage <MFBaseMessage, MFMailboxPredictionMessage> {
     MFMessageInfo * _info;
-    unsigned int  _messageFlags;
-    unsigned int  _modSequenceNumber;
+    unsigned long long  _messageFlags;
+    unsigned long long  _modSequenceNumber;
     BOOL  _shouldUseMailDrop;
     unsigned char  _subjectPrefixLength;
 }
 
-@property (nonatomic, readonly) int conversationHash;
+@property (nonatomic, readonly) long long conversationHash;
 @property (nonatomic, readonly) unsigned int dateReceivedInterval;
 @property (nonatomic, readonly) unsigned int dateSentInterval;
 @property (readonly, copy) NSString *debugDescription;
@@ -21,8 +21,8 @@
 @property (nonatomic, readonly) BOOL isVIP;
 @property (getter=isKnownToHaveAttachments, nonatomic, readonly) BOOL knownToHaveAttachments;
 @property (nonatomic, readonly) unsigned int mailboxID;
-@property (nonatomic, readonly) int messageIDHash;
-@property unsigned int modSequenceNumber;
+@property (nonatomic, readonly) long long messageIDHash;
+@property unsigned long long modSequenceNumber;
 @property (nonatomic, readonly) BOOL read;
 @property (nonatomic) BOOL shouldUseMailDrop;
 @property (readonly) Class superclass;
@@ -40,7 +40,7 @@
 - (id)bestAlternativePart;
 - (id)bestAlternativePart:(BOOL*)arg1;
 - (id)ccAddressList;
-- (unsigned int)conversationFlags;
+- (unsigned long long)conversationFlags;
 - (id)copyMessageInfo;
 - (void)dealloc;
 - (BOOL)deleted;
@@ -61,23 +61,23 @@
 - (void)markAsNotViewed;
 - (void)markAsReplied;
 - (void)markAsViewed;
-- (unsigned int)messageFlags;
+- (unsigned long long)messageFlags;
 - (id)messageStore;
-- (unsigned int)modSequenceNumber;
+- (unsigned long long)modSequenceNumber;
 - (unsigned short)numberOfAttachments;
 - (id)originalMailboxURL;
 - (int)priority;
 - (BOOL)read;
 - (id)remoteMailboxURL;
-- (void)setConversationFlags:(unsigned int)arg1;
-- (void)setMessageFlags:(unsigned int)arg1;
-- (void)setMessageFlagsWithoutCommitting:(unsigned int)arg1;
-- (void)setModSequenceNumber:(unsigned int)arg1;
+- (void)setConversationFlags:(unsigned long long)arg1;
+- (void)setMessageFlags:(unsigned long long)arg1;
+- (void)setMessageFlagsWithoutCommitting:(unsigned long long)arg1;
+- (void)setModSequenceNumber:(unsigned long long)arg1;
 - (void)setMutableInfoFromMessage:(id)arg1;
 - (void)setPriorityFromHeaders:(id)arg1;
 - (void)setShouldUseMailDrop:(BOOL)arg1;
 - (void)setSubject:(id)arg1;
-- (void)setSubject:(id)arg1 to:(id)arg2 cc:(id)arg3 bcc:(id)arg4 sender:(id)arg5 dateReceived:(double)arg6 dateSent:(double)arg7 messageIDHash:(int)arg8 conversationIDHash:(int)arg9 summary:(id)arg10 withOptions:(unsigned int)arg11;
+- (void)setSubject:(id)arg1 to:(id)arg2 cc:(id)arg3 bcc:(id)arg4 sender:(id)arg5 dateReceived:(double)arg6 dateSent:(double)arg7 messageIDHash:(long long)arg8 conversationIDHash:(long long)arg9 summary:(id)arg10 withOptions:(unsigned int)arg11;
 - (void)setSummary:(id)arg1;
 - (BOOL)shouldSetSummary;
 - (BOOL)shouldUseMailDrop;

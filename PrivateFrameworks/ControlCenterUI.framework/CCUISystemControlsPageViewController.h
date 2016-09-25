@@ -22,7 +22,7 @@
     NSLayoutConstraint * _trailingMargin;
 }
 
-@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInsets;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CCUIControlCenterPageContentViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -44,7 +44,7 @@
 - (void)_updateSectionVisibility:(id)arg1 animated:(BOOL)arg2;
 - (void)_updateStackViewMarginsAndSpacing;
 - (void)beginSuppressingPunchOutMaskCachingForReason:(id)arg1;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
 - (void)controlCenterDidDismiss;
 - (void)controlCenterDidFinishTransition;
 - (void)controlCenterDidScrollToThisPage:(BOOL)arg1;

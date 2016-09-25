@@ -3,9 +3,9 @@
  */
 
 @interface TIKeyboardSecureCandidateRenderTraits : NSObject <NSCopying, NSSecureCoding> {
-    double  _dividerLineWidth;
+    float  _dividerLineWidth;
     NSString * _fontName;
-    double  _fontSize;
+    float  _fontSize;
     TIKeyboardSecureCandidateTextTraits * _headerTextTraits;
     TIKeyboardSecureCandidateTextTraits * _inputTextTraits;
     BOOL  _isCandidateUI;
@@ -13,16 +13,16 @@
     int  _maxCellCount;
     NSString * _prefixText;
     NSArray * _resultCountToSingleCellWidth;
-    double  _screenScale;
-    double  _singleCellHeight;
-    double  _singleCellVerticalPadding;
+    float  _screenScale;
+    float  _singleCellHeight;
+    float  _singleCellVerticalPadding;
     NSString * _suffixText;
     TIKeyboardSecureCandidateRGBColor * _textColor;
 }
 
-@property (nonatomic) double dividerLineWidth;
+@property (nonatomic) float dividerLineWidth;
 @property (nonatomic, copy) NSString *fontName;
-@property (nonatomic) double fontSize;
+@property (nonatomic) float fontSize;
 @property (nonatomic, retain) TIKeyboardSecureCandidateTextTraits *headerTextTraits;
 @property (nonatomic, retain) TIKeyboardSecureCandidateTextTraits *inputTextTraits;
 @property (nonatomic) BOOL isCandidateUI;
@@ -30,10 +30,10 @@
 @property (nonatomic) int maxCellCount;
 @property (nonatomic, copy) NSString *prefixText;
 @property (nonatomic, copy) NSArray *resultCountToSingleCellWidth;
-@property (nonatomic) double screenScale;
-@property (nonatomic) double singleCellHeight;
-@property (nonatomic) double singleCellVerticalPadding;
-@property (nonatomic) double singleCellWidth;
+@property (nonatomic) float screenScale;
+@property (nonatomic) float singleCellHeight;
+@property (nonatomic) float singleCellVerticalPadding;
+@property (nonatomic) float singleCellWidth;
 @property (nonatomic, copy) NSString *suffixText;
 @property (nonatomic, retain) TIKeyboardSecureCandidateRGBColor *textColor;
 

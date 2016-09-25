@@ -62,7 +62,7 @@
 - (void)_selectedContacts:(id)arg1;
 - (void)_selectedProperties:(id)arg1;
 - (void)_selectedProperty:(id)arg1;
-- (void)_updatePromptWithViewSize:(struct CGSize { double x1; double x2; })arg1 transitionCoordinator:(id)arg2;
+- (void)_updatePromptWithViewSize:(struct CGSize { float x1; float x2; })arg1 transitionCoordinator:(id)arg2;
 - (id)_validatePredicatesWithError:(id*)arg1;
 - (BOOL)allowsCancel;
 - (BOOL)allowsEditing;
@@ -122,6 +122,6 @@
 - (void)setPredicateForSelectionOfProperty:(id)arg1;
 - (void)setPrompt:(id)arg1;
 - (void)setupWithOptions:(id)arg1 readyBlock:(id /* block */)arg2;
-- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

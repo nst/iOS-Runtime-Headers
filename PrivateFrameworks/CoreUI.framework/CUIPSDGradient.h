@@ -3,12 +3,12 @@
  */
 
 @interface CUIPSDGradient : NSObject {
-    double  drawingAngle;
+    float  drawingAngle;
     CUIPSDGradientEvaluator * evaluator;
     unsigned int  gradientStyle;
 }
 
-@property double drawingAngle;
+@property float drawingAngle;
 @property (retain) CUIPSDGradientEvaluator *evaluator;
 @property unsigned int gradientStyle;
 

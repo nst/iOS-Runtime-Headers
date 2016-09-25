@@ -10,10 +10,10 @@
     UIView * __leadingSeparator;
     UIView * __trailingSeparator;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _contentInsets;
     <PXUIWidgetFooterViewDelegate> * _delegate;
     struct { 
@@ -38,7 +38,7 @@
 @property (setter=_setHasContent:, nonatomic) BOOL _hasContent;
 @property (nonatomic, readonly) UIView *_leadingSeparator;
 @property (nonatomic, readonly) UIView *_trailingSeparator;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInsets;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
 @property (nonatomic) <PXUIWidgetFooterViewDelegate> *delegate;
 @property (nonatomic, copy) NSString *disclosureTitle;
 @property (nonatomic, retain) UIFont *font;
@@ -69,13 +69,13 @@
 - (void)_updateHasContentIfNeeded;
 - (void)_updateIfNeeded;
 - (void)_updateSeparatorsIfNeeded;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
 - (id)delegate;
 - (id)disclosureTitle;
 - (id)font;
 - (int)layoutStyle;
 - (void)performChanges:(id /* block */)arg1;
-- (void)setContentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDisclosureTitle:(id)arg1;
 - (void)setFont:(id)arg1;

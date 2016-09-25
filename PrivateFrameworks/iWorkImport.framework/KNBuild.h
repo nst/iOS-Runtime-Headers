@@ -20,10 +20,10 @@
 
 @property (nonatomic, readonly) unsigned int actionAcceleration;
 @property (nonatomic, readonly) TSDEditableBezierPathSource *actionMotionPathSource;
-@property (nonatomic, readonly) double actionOpacity;
-@property (nonatomic, readonly) double actionRotationAngle;
+@property (nonatomic, readonly) float actionOpacity;
+@property (nonatomic, readonly) float actionRotationAngle;
 @property (nonatomic, readonly) unsigned int actionRotationDirection;
-@property (nonatomic, readonly) double actionScale;
+@property (nonatomic, readonly) float actionScale;
 @property (nonatomic, readonly) struct _NSRange { unsigned int x1; unsigned int x2; } activeChunkRange;
 @property (nonatomic, readonly) NSString *animationFilter;
 @property (nonatomic, readonly) KNAnimationInfo *animationInfo;
@@ -33,12 +33,12 @@
 @property (nonatomic, readonly) unsigned int chunkCount;
 @property (nonatomic, readonly) NSArray *chunks;
 @property (nonatomic, readonly) TSUColor *color;
-@property (nonatomic, readonly) double custom3DChartRotation;
+@property (nonatomic, readonly) float custom3DChartRotation;
 @property (nonatomic, readonly) int customAccelerationOption;
 @property (nonatomic, readonly) BOOL customBounce;
 @property (nonatomic, readonly) BOOL customDecay;
 @property (nonatomic, readonly) unsigned int customDeliveryOption;
-@property (nonatomic, readonly) double customDetail;
+@property (nonatomic, readonly) float customDetail;
 @property (nonatomic, readonly) TSDBezierPathSource *customEffectTimingCurve1;
 @property (nonatomic, readonly) TSDBezierPathSource *customEffectTimingCurve2;
 @property (nonatomic, readonly) TSDBezierPathSource *customEffectTimingCurve3;

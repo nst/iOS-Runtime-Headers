@@ -4,7 +4,7 @@
 
 @interface MFModernAtomBackgroundView : UIView {
     MFModernAtomView * _hostAtomView;
-    double  _scalingFactor;
+    float  _scalingFactor;
     BOOL  _selected;
     UIView * _selectedView;
     unsigned int  _selectionStyle;
@@ -13,17 +13,17 @@
 }
 
 @property (nonatomic) MFModernAtomView *hostAtomView;
-@property (nonatomic) double scalingFactor;
+@property (nonatomic) float scalingFactor;
 @property (nonatomic, readonly) UIView *selectedView;
 @property (nonatomic) int separatorStyle;
 @property (nonatomic, readonly) UIView *separatorView;
 
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_backgroundBleedArea;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_backgroundBleedArea;
 - (id)_chevronImage;
 - (void)_setSelectionStyle:(unsigned int)arg1;
 - (void)dealloc;
 - (id)hostAtomView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)invalidateIntrinsicContentSize;
 - (BOOL)isSelected;
 - (void)layoutSubviews;

@@ -4,7 +4,7 @@
 
 @interface RadioFairPlayKBSyncManager : NSObject {
     NSObject<OS_dispatch_queue> * _accessQueue;
-    unsigned int  _activeAccountIdentifier;
+    unsigned long long  _activeAccountIdentifier;
     NSMutableArray * _dpInfoKeyBagSyncDataBlobs;
 }
 
@@ -14,7 +14,7 @@
 - (void)_accountStoreDidChangeNotification:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (id)popDPInfoKeyBagSyncDataWithCount:(int)arg1 returningAccountIdentifier:(unsigned int*)arg2 error:(id*)arg3;
-- (void)pushDPInfoKeyBagSyncData:(id)arg1 forAccountIdentifier:(unsigned int)arg2;
+- (id)popDPInfoKeyBagSyncDataWithCount:(int)arg1 returningAccountIdentifier:(unsigned long long*)arg2 error:(id*)arg3;
+- (void)pushDPInfoKeyBagSyncData:(id)arg1 forAccountIdentifier:(unsigned long long)arg2;
 
 @end

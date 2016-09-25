@@ -22,7 +22,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) PLCloudSharedComment *justInsertedComment;
 @property (nonatomic, retain) PLManagedAsset *managedAsset;
-@property (nonatomic, readonly) double minimumHeight;
+@property (nonatomic, readonly) float minimumHeight;
 @property (nonatomic) BOOL shouldUseCompactCommentSeparators;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) UITableView *tableView;

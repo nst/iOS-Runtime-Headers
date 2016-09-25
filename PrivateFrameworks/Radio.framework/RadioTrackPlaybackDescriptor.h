@@ -7,7 +7,7 @@
     NSDate * _expirationDate;
     double  _pauseTime;
     NSDate * _skipDate;
-    int  _storeID;
+    long long  _storeID;
     NSDictionary * _trackInfo;
 }
 
@@ -15,7 +15,7 @@
 @property (nonatomic, readonly) NSDate *expirationDate;
 @property (nonatomic, readonly) double pauseTime;
 @property (nonatomic, readonly) NSDate *skipDate;
-@property (nonatomic, readonly) int storeID;
+@property (nonatomic, readonly) long long storeID;
 @property (nonatomic, readonly, copy) NSDictionary *trackInfo;
 
 + (BOOL)supportsSecureCoding;
@@ -34,7 +34,7 @@
 - (double)pauseTime;
 - (id)queueTrackDictionary;
 - (id)skipDate;
-- (int)storeID;
+- (long long)storeID;
 - (id)trackInfo;
 
 @end

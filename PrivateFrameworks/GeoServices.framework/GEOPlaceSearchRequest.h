@@ -11,7 +11,7 @@
     }  _additionalPlaceTypes;
     GEOAddress * _address;
     struct { 
-        unsigned int *list; 
+        unsigned long long *list; 
         unsigned int count; 
         unsigned int size; 
     }  _businessIDs;
@@ -24,7 +24,7 @@
     NSString * _deviceTimeZone;
     BOOL  _excludeAddressInResults;
     NSMutableArray * _filterByBusinessCategorys;
-    int  _geoId;
+    long long  _geoId;
     struct { 
         unsigned int sessionGUID : 1; 
         unsigned int geoId : 1; 
@@ -85,7 +85,7 @@
     BOOL  _includeUnmatchedStrings;
     GEOIndexQueryNode * _indexFilter;
     NSString * _inputLanguage;
-    unsigned int  _intersectingGeoId;
+    unsigned long long  _intersectingGeoId;
     BOOL  _isCanonicalLocationSearch;
     BOOL  _isFromAPI;
     BOOL  _isPopularNearbyRequest;
@@ -117,8 +117,8 @@
     int  _sequenceNumber;
     NSMutableArray * _serviceTags;
     struct GEOSessionID { 
-        unsigned int _high; 
-        unsigned int _low; 
+        unsigned long long _high; 
+        unsigned long long _low; 
     }  _sessionGUID;
     BOOL  _structuredSearch;
     GEOSuggestionsOptions * _suggestionsOptions;
@@ -136,7 +136,7 @@
 @property (nonatomic, readonly) int*additionalPlaceTypes;
 @property (nonatomic, readonly) unsigned int additionalPlaceTypesCount;
 @property (nonatomic, retain) GEOAddress *address;
-@property (nonatomic, readonly) unsigned int*businessIDs;
+@property (nonatomic, readonly) unsigned long long*businessIDs;
 @property (nonatomic, readonly) unsigned int businessIDsCount;
 @property (nonatomic, retain) GEOBusinessOptions *businessOptions;
 @property (nonatomic) int businessSortOrder;
@@ -147,7 +147,7 @@
 @property (nonatomic, retain) NSString *deviceTimeZone;
 @property (nonatomic) BOOL excludeAddressInResults;
 @property (nonatomic, retain) NSMutableArray *filterByBusinessCategorys;
-@property (nonatomic) int geoId;
+@property (nonatomic) long long geoId;
 @property (nonatomic, readonly) BOOL hasAdditionalEnabledMarkets;
 @property (nonatomic, readonly) BOOL hasAddress;
 @property (nonatomic, readonly) BOOL hasBusinessOptions;
@@ -229,7 +229,7 @@
 @property (nonatomic) BOOL includeUnmatchedStrings;
 @property (nonatomic, retain) GEOIndexQueryNode *indexFilter;
 @property (nonatomic, retain) NSString *inputLanguage;
-@property (nonatomic) unsigned int intersectingGeoId;
+@property (nonatomic) unsigned long long intersectingGeoId;
 @property (nonatomic) BOOL isCanonicalLocationSearch;
 @property (nonatomic) BOOL isFromAPI;
 @property (nonatomic) BOOL isPopularNearbyRequest;
@@ -257,7 +257,7 @@
 @property (nonatomic, retain) NSMutableArray *searchSubstrings;
 @property (nonatomic) int sequenceNumber;
 @property (nonatomic, retain) NSMutableArray *serviceTags;
-@property (nonatomic) struct GEOSessionID { unsigned int x1; unsigned int x2; } sessionGUID;
+@property (nonatomic) struct GEOSessionID { unsigned long long x1; unsigned long long x2; } sessionGUID;
 @property (nonatomic) BOOL structuredSearch;
 @property (nonatomic, retain) GEOSuggestionsOptions *suggestionsOptions;
 @property (nonatomic, retain) NSString *suggestionsPrefix;
@@ -283,7 +283,7 @@
 - (int)StringAsSearchSource:(id)arg1;
 - (int)StringAsTransportTypeForTravelTimes:(id)arg1;
 - (void)addAdditionalPlaceType:(int)arg1;
-- (void)addBusinessID:(unsigned int)arg1;
+- (void)addBusinessID:(unsigned long long)arg1;
 - (void)addFilterByBusinessCategory:(id)arg1;
 - (void)addLimitToCountryCodeIso2:(id)arg1;
 - (void)addOptionalSuppressionReason:(int)arg1;
@@ -295,8 +295,8 @@
 - (id)additionalPlaceTypesAsString:(int)arg1;
 - (unsigned int)additionalPlaceTypesCount;
 - (id)address;
-- (unsigned int)businessIDAtIndex:(unsigned int)arg1;
-- (unsigned int*)businessIDs;
+- (unsigned long long)businessIDAtIndex:(unsigned int)arg1;
+- (unsigned long long*)businessIDs;
 - (unsigned int)businessIDsCount;
 - (id)businessOptions;
 - (int)businessSortOrder;
@@ -322,7 +322,7 @@
 - (id)filterByBusinessCategoryAtIndex:(unsigned int)arg1;
 - (id)filterByBusinessCategorys;
 - (unsigned int)filterByBusinessCategorysCount;
-- (int)geoId;
+- (long long)geoId;
 - (BOOL)hasAdditionalEnabledMarkets;
 - (BOOL)hasAddress;
 - (BOOL)hasBusinessOptions;
@@ -406,7 +406,7 @@
 - (id)indexFilter;
 - (id)initWithTraits:(id)arg1;
 - (id)inputLanguage;
-- (unsigned int)intersectingGeoId;
+- (unsigned long long)intersectingGeoId;
 - (BOOL)isCanonicalLocationSearch;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isFromAPI;
@@ -451,11 +451,11 @@
 - (id)serviceTagAtIndex:(unsigned int)arg1;
 - (id)serviceTags;
 - (unsigned int)serviceTagsCount;
-- (struct GEOSessionID { unsigned int x1; unsigned int x2; })sessionGUID;
+- (struct GEOSessionID { unsigned long long x1; unsigned long long x2; })sessionGUID;
 - (void)setAdditionalEnabledMarkets:(id)arg1;
 - (void)setAdditionalPlaceTypes:(int*)arg1 count:(unsigned int)arg2;
 - (void)setAddress:(id)arg1;
-- (void)setBusinessIDs:(unsigned int*)arg1 count:(unsigned int)arg2;
+- (void)setBusinessIDs:(unsigned long long*)arg1 count:(unsigned int)arg2;
 - (void)setBusinessOptions:(id)arg1;
 - (void)setBusinessSortOrder:(int)arg1;
 - (void)setClientCapabilities:(id)arg1;
@@ -465,7 +465,7 @@
 - (void)setDeviceTimeZone:(id)arg1;
 - (void)setExcludeAddressInResults:(BOOL)arg1;
 - (void)setFilterByBusinessCategorys:(id)arg1;
-- (void)setGeoId:(int)arg1;
+- (void)setGeoId:(long long)arg1;
 - (void)setHasBusinessSortOrder:(BOOL)arg1;
 - (void)setHasExcludeAddressInResults:(BOOL)arg1;
 - (void)setHasGeoId:(BOOL)arg1;
@@ -524,7 +524,7 @@
 - (void)setIncludeUnmatchedStrings:(BOOL)arg1;
 - (void)setIndexFilter:(id)arg1;
 - (void)setInputLanguage:(id)arg1;
-- (void)setIntersectingGeoId:(unsigned int)arg1;
+- (void)setIntersectingGeoId:(unsigned long long)arg1;
 - (void)setIsCanonicalLocationSearch:(BOOL)arg1;
 - (void)setIsFromAPI:(BOOL)arg1;
 - (void)setIsPopularNearbyRequest:(BOOL)arg1;
@@ -551,7 +551,7 @@
 - (void)setSearchSubstrings:(id)arg1;
 - (void)setSequenceNumber:(int)arg1;
 - (void)setServiceTags:(id)arg1;
-- (void)setSessionGUID:(struct GEOSessionID { unsigned int x1; unsigned int x2; })arg1;
+- (void)setSessionGUID:(struct GEOSessionID { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)setStructuredSearch:(BOOL)arg1;
 - (void)setSuggestionsOptions:(id)arg1;
 - (void)setSuggestionsPrefix:(id)arg1;

@@ -21,7 +21,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)fbq;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithStartSearch:(id)arg1 responseSize:(int)arg2 statusCode:(int)arg3 parsecStatus:(id)arg4 parsecDuration:(double)arg5 fbq:(id)arg6 partialClientIp:(id)arg7 networkTimingData:(id)arg8;
+- (id)initWithStartSearch:(id)arg1 responseSize:(long long)arg2 statusCode:(int)arg3 parsecStatus:(id)arg4 parsecDuration:(double)arg5 fbq:(id)arg6 partialClientIp:(id)arg7 networkTimingData:(id)arg8;
 - (id)parsecStatus;
 - (id)partialClientIp;
 - (void)setDuration:(double)arg1;

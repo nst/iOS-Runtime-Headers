@@ -7,7 +7,7 @@
     BOOL  _numberButtonsEnabled;
 }
 
-@property (nonatomic) double buttonBackgroundAlpha;
+@property (nonatomic) float buttonBackgroundAlpha;
 @property (retain) NSArray *buttons;
 @property (nonatomic) BOOL numberButtonsEnabled;
 
@@ -27,7 +27,7 @@
 - (void)dealloc;
 - (void)handleCurrentLocaleDidChangeNotification:(id)arg1;
 - (id)initWithButtons:(id)arg1;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (BOOL)numberButtonsEnabled;
 - (void)replaceButton:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)setButtonBackgroundAlpha:(float)arg1;

@@ -21,12 +21,12 @@
 - (void).cxx_destruct;
 - (id)_cachedLocalPlaybackAssetFilePathWithIntegrityCheck:(BOOL)arg1 returningAssetQuality:(unsigned int*)arg2 protectionType:(unsigned int*)arg3 usesPurchaseBundle:(BOOL*)arg4;
 - (id)albumArtistName;
-- (int)albumStoreAdamID;
+- (long long)albumStoreAdamID;
 - (id)albumTitle;
 - (BOOL)allowsAssetCaching;
 - (BOOL)allowsInitiatingPlayWhileDownload;
 - (id)artistName;
-- (int)artistStoreAdamID;
+- (long long)artistStoreAdamID;
 - (id)artworkCatalogForPlaybackTime:(double)arg1;
 - (id)buyParameters;
 - (id)cachedLocalPlaybackAssetFilePathReturningAssetQuality:(unsigned int*)arg1 protectionType:(unsigned int*)arg2 usesPurchaseBundle:(BOOL*)arg3;
@@ -36,7 +36,7 @@
 - (unsigned int)contentType;
 - (id)copyrightText;
 - (void)dealloc;
-- (int)downloadIdentifier;
+- (long long)downloadIdentifier;
 - (int)endpointType;
 - (double)expectedDuration;
 - (unsigned int)hash;
@@ -48,7 +48,7 @@
 - (void)loadMediaItemWithCompletionHandler:(id /* block */)arg1;
 - (id)localNetworkContentURL;
 - (id)mediaItem;
-- (int)mediaLibraryPersistentID;
+- (long long)mediaLibraryPersistentID;
 - (id)modelObject;
 - (id)modelObjectDelegate;
 - (id)modelSong;
@@ -58,10 +58,10 @@
 - (void)setModelObjectDelegate:(id)arg1;
 - (BOOL)shouldReportPlayEventsToStore;
 - (BOOL)showComposer;
-- (unsigned int)storeAccountID;
-- (int)storeAdamID;
-- (unsigned int)storeSagaID;
-- (int)storeSubscriptionAdamID;
+- (unsigned long long)storeAccountID;
+- (long long)storeAdamID;
+- (unsigned long long)storeSagaID;
+- (long long)storeSubscriptionAdamID;
 - (id)streamingPlaybackAssetDestinationFilePathForAssetQuality:(unsigned int)arg1 assetFlavor:(id)arg2 protectionType:(unsigned int)arg3 pathExtension:(id)arg4;
 - (float)volumeNormalization;
 

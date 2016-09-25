@@ -21,10 +21,10 @@
 - (BOOL)isEqual:(id)arg1;
 - (unsigned short)port;
 - (id)protocol;
-- (unsigned int)quota;
-- (void)setQuota:(unsigned int)arg1;
+- (unsigned long long)quota;
+- (void)setQuota:(unsigned long long)arg1;
 - (id)stringValue;
 - (id)toString;
-- (unsigned int)usage;
+- (unsigned long long)usage;
 
 @end

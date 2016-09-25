@@ -5,7 +5,7 @@
 @interface NTKTimeIntervalLabel : UIView {
     double  _currentTextTime;
     id /* block */  _didResizeHandler;
-    double  _digitWidth;
+    float  _digitWidth;
     NSMutableArray * _digits;
     CLKFont * _font;
     BOOL  _frozen;
@@ -16,19 +16,19 @@
     BOOL  _labelWasSized;
     UILabel * _prefix;
     BOOL  _showSubSeconds;
-    double  _staticLabelWidth;
+    float  _staticLabelWidth;
     int  _style;
     UILabel * _suffix;
     BOOL  _suffixSmallCaps;
     NSString * _text;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _textSize;
     double  _time;
 }
 
-@property (nonatomic, readonly) double actualWidth;
+@property (nonatomic, readonly) float actualWidth;
 @property (nonatomic, copy) id /* block */ didResizeHandler;
 @property (nonatomic, retain) CLKFont *font;
 @property (nonatomic) BOOL frozen;
@@ -37,7 +37,7 @@
 @property (nonatomic, copy) NSString *suffix;
 @property (nonatomic) BOOL suffixSmallCaps;
 @property (nonatomic, retain) UIColor *textColor;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } textSize;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } textSize;
 @property (nonatomic) double time;
 
 - (void).cxx_destruct;
@@ -73,12 +73,12 @@
 - (void)setTime:(double)arg1;
 - (BOOL)shouldShowDigits;
 - (BOOL)showSubSeconds;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)sizeToFitLabelIfNeeded;
 - (id)suffix;
 - (BOOL)suffixSmallCaps;
 - (id)textColor;
-- (struct CGSize { double x1; double x2; })textSize;
+- (struct CGSize { float x1; float x2; })textSize;
 - (double)time;
 
 @end

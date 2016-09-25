@@ -14,12 +14,12 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (id)dataForIdentifier:(int)arg1;
+- (id)dataForIdentifier:(long long)arg1;
 - (id)debugDescription;
 - (id)init;
 - (id)initWithPasteboard:(id)arg1 nativeData:(id)arg2 tspData:(id)arg3;
 - (void)loadNativeData;
-- (id)newReadChannelForDataWithIdentifier:(int)arg1 info:(id)arg2;
+- (id)newReadChannelForDataWithIdentifier:(long long)arg1 info:(id)arg2;
 - (id)newReadChannelForMetadata;
 - (id)newReadChannelForRootObjectComponent;
 - (id)pasteboardPropertyListForType:(id)arg1;

@@ -7,7 +7,7 @@
     int  _defaultChannelBin;
     int  _defaultTopicBin;
     BOOL  _enabled;
-    int  _evaluationFrequency;
+    long long  _evaluationFrequency;
     struct { 
         unsigned int decreaseConsumptionThreshold : 1; 
         unsigned int evaluationFrequency : 1; 
@@ -18,16 +18,16 @@
         unsigned int defaultTopicBin : 1; 
         unsigned int enabled : 1; 
     }  _has;
-    int  _historyLength;
+    long long  _historyLength;
     double  _increaseConsumptionThreshold;
-    int  _minimumArticleCount;
+    long long  _minimumArticleCount;
 }
 
 @property (nonatomic) double decreaseConsumptionThreshold;
 @property (nonatomic) int defaultChannelBin;
 @property (nonatomic) int defaultTopicBin;
 @property (nonatomic) BOOL enabled;
-@property (nonatomic) int evaluationFrequency;
+@property (nonatomic) long long evaluationFrequency;
 @property (nonatomic) BOOL hasDecreaseConsumptionThreshold;
 @property (nonatomic) BOOL hasDefaultChannelBin;
 @property (nonatomic) BOOL hasDefaultTopicBin;
@@ -36,9 +36,9 @@
 @property (nonatomic) BOOL hasHistoryLength;
 @property (nonatomic) BOOL hasIncreaseConsumptionThreshold;
 @property (nonatomic) BOOL hasMinimumArticleCount;
-@property (nonatomic) int historyLength;
+@property (nonatomic) long long historyLength;
 @property (nonatomic) double increaseConsumptionThreshold;
-@property (nonatomic) int minimumArticleCount;
+@property (nonatomic) long long minimumArticleCount;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (double)decreaseConsumptionThreshold;
@@ -47,7 +47,7 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)enabled;
-- (int)evaluationFrequency;
+- (long long)evaluationFrequency;
 - (BOOL)hasDecreaseConsumptionThreshold;
 - (BOOL)hasDefaultChannelBin;
 - (BOOL)hasDefaultTopicBin;
@@ -57,17 +57,17 @@
 - (BOOL)hasIncreaseConsumptionThreshold;
 - (BOOL)hasMinimumArticleCount;
 - (unsigned int)hash;
-- (int)historyLength;
+- (long long)historyLength;
 - (double)increaseConsumptionThreshold;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (int)minimumArticleCount;
+- (long long)minimumArticleCount;
 - (BOOL)readFrom:(id)arg1;
 - (void)setDecreaseConsumptionThreshold:(double)arg1;
 - (void)setDefaultChannelBin:(int)arg1;
 - (void)setDefaultTopicBin:(int)arg1;
 - (void)setEnabled:(BOOL)arg1;
-- (void)setEvaluationFrequency:(int)arg1;
+- (void)setEvaluationFrequency:(long long)arg1;
 - (void)setHasDecreaseConsumptionThreshold:(BOOL)arg1;
 - (void)setHasDefaultChannelBin:(BOOL)arg1;
 - (void)setHasDefaultTopicBin:(BOOL)arg1;
@@ -76,9 +76,9 @@
 - (void)setHasHistoryLength:(BOOL)arg1;
 - (void)setHasIncreaseConsumptionThreshold:(BOOL)arg1;
 - (void)setHasMinimumArticleCount:(BOOL)arg1;
-- (void)setHistoryLength:(int)arg1;
+- (void)setHistoryLength:(long long)arg1;
 - (void)setIncreaseConsumptionThreshold:(double)arg1;
-- (void)setMinimumArticleCount:(int)arg1;
+- (void)setMinimumArticleCount:(long long)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

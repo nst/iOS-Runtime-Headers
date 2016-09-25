@@ -4,7 +4,7 @@
 
 @interface MusicSocialAbstractOperation : NSOperation {
     NSObject<OS_dispatch_queue> * _accessQueue;
-    int  _artistID;
+    long long  _artistID;
     NSObject<OS_dispatch_queue> * _calloutSerialQueue;
     BOOL  _follow;
     BOOL  _isExecuting;

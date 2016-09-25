@@ -9,7 +9,7 @@
     }  _has;
     NSData * _image;
     GEOPDViewportInfo * _viewportInfo;
-    double  _zoomLevel;
+    float  _zoomLevel;
 }
 
 @property (nonatomic, retain) GEOLatLng *coordinate;
@@ -19,7 +19,7 @@
 @property (nonatomic) BOOL hasZoomLevel;
 @property (nonatomic, retain) NSData *image;
 @property (nonatomic, retain) GEOPDViewportInfo *viewportInfo;
-@property (nonatomic) double zoomLevel;
+@property (nonatomic) float zoomLevel;
 
 // Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
 

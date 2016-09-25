@@ -19,8 +19,8 @@
     NSMutableArray * _reusableCoalescingEntityValueProviders;
     MusicSectionEntityValueContext * _sectionEntityValueContext;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _sizeForLayoutMetrics;
     <UIViewControllerPreviewing> * _viewControllerPreviewing;
     NSMapTable * _viewToDownloadInformationObserverToken;
@@ -42,8 +42,8 @@
 - (void).cxx_destruct;
 - (Class)_cellClass;
 - (id)_cellReuseIdentifier;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_collectionViewLayoutMargins;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_collectionViewLayoutMarginsForLayoutMetricsContentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_collectionViewLayoutMargins;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_collectionViewLayoutMarginsForLayoutMetricsContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)_configureEntityValueContextOutput:(id)arg1 forIndexPath:(id)arg2;
 - (id)_dequeueCoalescingEntityValueProvider;
 - (id)_entityValueContextAtIndexPath:(id)arg1;
@@ -83,7 +83,7 @@
 - (void)didSelectActionButtonInBrowseSectionHeaderView:(id)arg1 forSection:(int)arg2;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
 - (id)entityViewDescriptor;
-- (BOOL)getContentOffset:(struct CGPoint { double x1; double x2; }*)arg1 forIndexBarEntryAtIndex:(unsigned int)arg2;
+- (BOOL)getContentOffset:(struct CGPoint { float x1; float x2; }*)arg1 forIndexBarEntryAtIndex:(unsigned int)arg2;
 - (void)handleContentSizeCategoryDidChange;
 - (void)handleEntityProviderDidInvalidate;
 - (id)indexBarEntryAtIndex:(unsigned int)arg1;
@@ -98,7 +98,7 @@
 - (unsigned int)numberOfIndexBarEntries;
 - (int)numberOfSectionsInCollectionView:(id)arg1;
 - (void)previewingContext:(id)arg1 commitViewController:(id)arg2;
-- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { double x1; double x2; })arg2;
+- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { float x1; float x2; })arg2;
 - (void)sectionHeaderViewDidSelectButton:(id)arg1;
 - (void)setClientContext:(id)arg1;
 - (void)setDelegate:(id)arg1;
@@ -109,7 +109,7 @@
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
-- (void)willPresentPreviewViewController:(id)arg1 forLocation:(struct CGPoint { double x1; double x2; })arg2 inSourceView:(id)arg3;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)willPresentPreviewViewController:(id)arg1 forLocation:(struct CGPoint { float x1; float x2; })arg2 inSourceView:(id)arg3;
 
 @end

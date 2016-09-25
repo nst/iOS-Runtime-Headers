@@ -18,13 +18,13 @@
     int  _overviewUnitsPerSecond;
     unsigned int  _pauseCount;
     struct vector<float, std::__1::allocator<float> > { 
-        double *__begin_; 
-        double *__end_; 
-        struct __compressed_pair<double *, std::__1::allocator<float> > { 
-            double *__first_; 
+        float *__begin_; 
+        float *__end_; 
+        struct __compressed_pair<float *, std::__1::allocator<float> > { 
+            float *__first_; 
         } __end_cap_; 
     }  _powerLevelBuffer;
-    double  _powerLevelBufferLastPushedValue;
+    float  _powerLevelBufferLastPushedValue;
     unsigned int  _powerLevelsConsumedSinceLastFlush;
     NSObject<OS_dispatch_queue> * _queue;
     struct PowerMeter { 
@@ -40,12 +40,12 @@
         double mAveragePowerPeak; 
         double mMaxPeak; 
         struct AudioUnitMeterClipping { 
-            double peakValueSinceLastCall; 
+            float peakValueSinceLastCall; 
             unsigned char sawInfinity; 
             unsigned char sawNotANumber; 
         } mClipping; 
         double mAveragePowerF; 
-        double m_vAvePower[16]; 
+        float m_vAvePower[16]; 
         int mAveragePowerI; 
     }  _samplePowerMeter;
     double  _segmentFlushInterval;

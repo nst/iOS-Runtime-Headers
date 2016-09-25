@@ -17,7 +17,7 @@
     BOOL  _videoLoaded;
     NSURL * _videoURL;
     double  _vitalityPosition;
-    double  _vitalityProgress;
+    float  _vitalityProgress;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -33,11 +33,11 @@
 - (void).cxx_destruct;
 - (void)_cancelPlayback;
 - (void)_completePlaybackWithMode:(int)arg1;
-- (struct { int x1; int x2; unsigned int x3; int x4; })_endTimeForMode:(int)arg1;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })_endTimeForMode:(int)arg1;
 - (void)_mediaServicesWereReset:(id)arg1;
 - (void)_resetVideoPlayer;
 - (float)_scaleForTransitionWithMode:(int)arg1;
-- (struct { int x1; int x2; unsigned int x3; int x4; })_startTimeForMode:(int)arg1;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })_startTimeForMode:(int)arg1;
 - (double)_transitionDurationForPauseWithMode:(int)arg1;
 - (double)_transitionDurationForPlayWithMode:(int)arg1;
 - (void)_transitionFromHeroToVideo;
@@ -45,9 +45,9 @@
 - (id)delegate;
 - (id)heroView;
 - (id)image;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)interruptPlayback;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (BOOL)isPlaying;
 - (void)layoutSubviews;
 - (void)pauseWithMode:(int)arg1;
@@ -60,7 +60,7 @@
 - (void)setImage:(id)arg1;
 - (void)setImage:(id)arg1 videoURL:(id)arg2 videoDuration:(double)arg3 stillDisplayTime:(double)arg4;
 - (void)setPlayerView:(id)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)videoPlayerViewDidBeginPlaying:(id)arg1;
 - (id)videoURL;
 

@@ -3,21 +3,21 @@
  */
 
 @interface HFColorPaletteColor : NSObject <NAEquatable, NSCopying> {
-    double  _blue;
+    float  _blue;
     unsigned int  _colorType;
-    double  _green;
-    double  _red;
+    float  _green;
+    float  _red;
     NSNumber * _temperature;
 }
 
 @property (nonatomic, readonly) UIColor *UIColor;
-@property (nonatomic, readonly) double blue;
+@property (nonatomic, readonly) float blue;
 @property (nonatomic) unsigned int colorType;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) double green;
+@property (nonatomic, readonly) float green;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly) double red;
+@property (nonatomic, readonly) float red;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSNumber *temperature;
 

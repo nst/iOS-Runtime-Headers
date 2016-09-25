@@ -7,12 +7,12 @@
     NSArray * _actions;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _actionsImageFrame;
     CNQuickActionsManager * _actionsManager;
@@ -24,8 +24,8 @@
     BOOL  _expanded;
     NSIndexPath * _highlightedIndexPath;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _initialLocation;
     _UIFeedbackRetargetBehavior * _retargetBehavior;
     UIGestureRecognizer * _rolloverGestureRecognizer;
@@ -35,7 +35,7 @@
 
 @property (nonatomic, copy) NSArray *actionCategories;
 @property (nonatomic, retain) NSArray *actions;
-@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } actionsImageFrame;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } actionsImageFrame;
 @property (nonatomic, retain) CNQuickActionsManager *actionsManager;
 @property (nonatomic) BOOL actionsReversed;
 @property (nonatomic) BOOL bypassActionValidation;
@@ -47,7 +47,7 @@
 @property (nonatomic) BOOL expanded;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) NSIndexPath *highlightedIndexPath;
-@property (nonatomic) struct CGPoint { double x1; double x2; } initialLocation;
+@property (nonatomic) struct CGPoint { float x1; float x2; } initialLocation;
 @property (getter=isPerformingAction, nonatomic, readonly) BOOL performingAction;
 @property (nonatomic, retain) _UIFeedbackRetargetBehavior *retargetBehavior;
 @property (nonatomic, retain) UIGestureRecognizer *rolloverGestureRecognizer;
@@ -77,7 +77,7 @@
 - (void)_updateWithActions:(id)arg1 withBlock:(id /* block */)arg2;
 - (id)actionCategories;
 - (id)actions;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })actionsImageFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })actionsImageFrame;
 - (id)actionsManager;
 - (id)actionsManager:(id)arg1 orderedPropertiesForProperties:(id)arg2 category:(id)arg3;
 - (id)actionsManager:(id)arg1 presentingViewControllerForAction:(id)arg2;
@@ -88,8 +88,8 @@
 - (BOOL)dismissesBeforePerforming;
 - (BOOL)expanded;
 - (id)highlightedIndexPath;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (struct CGPoint { double x1; double x2; })initialLocation;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGPoint { float x1; float x2; })initialLocation;
 - (BOOL)isPerformingAction;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (BOOL)performHighlightedAction;
@@ -106,7 +106,7 @@
 - (id)selectionGestureRecognizer;
 - (void)setActionCategories:(id)arg1;
 - (void)setActions:(id)arg1;
-- (void)setActionsImageFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setActionsImageFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setActionsManager:(id)arg1;
 - (void)setActionsReversed:(BOOL)arg1;
 - (void)setBypassActionValidation:(BOOL)arg1;
@@ -115,7 +115,7 @@
 - (void)setDismissesBeforePerforming:(BOOL)arg1;
 - (void)setExpanded:(BOOL)arg1;
 - (void)setHighlightedIndexPath:(id)arg1;
-- (void)setInitialLocation:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setInitialLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setRetargetBehavior:(id)arg1;
 - (void)setRolloverGestureRecognizer:(id)arg1;
 - (void)setSelectionGestureRecognizer:(id)arg1;

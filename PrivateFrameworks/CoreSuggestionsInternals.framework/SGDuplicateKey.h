@@ -4,13 +4,13 @@
 
 @interface SGDuplicateKey : NSObject {
     NSObject<SGEntityKey> * _entityKey;
-    int  _entityType;
+    long long  _entityType;
     SGDuplicateKey * _parentKey;
 }
 
 @property (nonatomic, readonly) NSData *compositeHash;
 @property (nonatomic, readonly) NSObject<SGEntityKey> *entityKey;
-@property (nonatomic, readonly) int entityType;
+@property (nonatomic, readonly) long long entityType;
 @property (nonatomic, readonly) SGDuplicateKey *parentKey;
 
 + (id)duplicateKeyForCuratedContactWithExternalId:(int)arg1;
@@ -35,13 +35,13 @@
 - (id)description;
 - (id)emailKey;
 - (id)entityKey;
-- (int)entityType;
+- (long long)entityType;
 - (unsigned int)hash;
 - (id)identityKey;
-- (id)initWithEntityKey:(id)arg1 entityType:(int)arg2 parentKey:(id)arg3;
+- (id)initWithEntityKey:(id)arg1 entityType:(long long)arg2 parentKey:(id)arg3;
 - (id)initWithSearchableItem:(id)arg1;
 - (id)initWithSerialized:(id)arg1;
-- (id)initWithSerializedEntityKey:(id)arg1 entityType:(int)arg2 serializedParentKey:(id)arg3;
+- (id)initWithSerializedEntityKey:(id)arg1 entityType:(long long)arg2 serializedParentKey:(id)arg3;
 - (id)interactionKey;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToDuplicateKey:(id)arg1;

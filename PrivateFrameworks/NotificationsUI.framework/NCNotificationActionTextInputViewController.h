@@ -7,7 +7,7 @@
     NSString * _buttonTitle;
     _UITextFieldRoundedRectBackgroundViewNeue * _coverView;
     <NCInteractiveNotificationHostDelegate> * _delegate;
-    double  _maximumHeight;
+    float  _maximumHeight;
     BOOL  _modal;
     UIButton * _sendButton;
     UITextView * _textEntryView;
@@ -16,7 +16,7 @@
 
 @property (nonatomic, readonly) NCViewServiceDescriptor *accessoryViewService;
 @property (nonatomic, retain) NSString *actionIdentifier;
-@property (nonatomic, readonly) double bottomOverhangHeight;
+@property (nonatomic, readonly) float bottomOverhangHeight;
 @property (nonatomic, retain) NSString *buttonTitle;
 @property (nonatomic, retain) _UITextFieldRoundedRectBackgroundViewNeue *coverView;
 @property (readonly, copy) NSString *debugDescription;
@@ -24,7 +24,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) NCViewServiceDescriptor *inlayViewService;
-@property (nonatomic) double maximumHeight;
+@property (nonatomic) float maximumHeight;
 @property (getter=isModal, nonatomic) BOOL modal;
 @property (nonatomic, retain) UIButton *sendButton;
 @property (nonatomic, readonly) BOOL showsKeyboard;
@@ -50,7 +50,7 @@
 - (BOOL)isModal;
 - (float)maximumHeight;
 - (float)preferredContentHeight;
-- (struct CGSize { double x1; double x2; })preferredContentSize;
+- (struct CGSize { float x1; float x2; })preferredContentSize;
 - (id)sendButton;
 - (void)setActionIdentifier:(id)arg1;
 - (void)setButtonTitle:(id)arg1;

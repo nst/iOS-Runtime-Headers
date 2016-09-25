@@ -11,7 +11,7 @@
     NSMutableDictionary * _objectsByKey;
     unsigned int  _optionsMask;
     NSString * _storeDirectory;
-    unsigned int  _storeSize;
+    unsigned long long  _storeSize;
     FCMutexLock * _writeLock;
 }
 
@@ -23,7 +23,7 @@
 @property (nonatomic, retain) NSMutableDictionary *objectsByKey;
 @property (nonatomic) unsigned int optionsMask;
 @property (nonatomic, retain) NSString *storeDirectory;
-@property (nonatomic) unsigned int storeSize;
+@property (nonatomic) unsigned long long storeSize;
 @property (nonatomic, retain) FCMutexLock *writeLock;
 
 + (id)persistenceQueue;
@@ -72,10 +72,10 @@
 - (void)setOptionBackupEnabled:(BOOL)arg1;
 - (void)setOptionsMask:(unsigned int)arg1;
 - (void)setStoreDirectory:(id)arg1;
-- (void)setStoreSize:(unsigned int)arg1;
+- (void)setStoreSize:(unsigned long long)arg1;
 - (void)setWriteLock:(id)arg1;
 - (id)storeDirectory;
-- (unsigned int)storeSize;
+- (unsigned long long)storeSize;
 - (void)updateObjectsForKeys:(id)arg1 withBlock:(id /* block */)arg2;
 - (id)writeLock;
 

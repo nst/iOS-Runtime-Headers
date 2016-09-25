@@ -3,20 +3,20 @@
  */
 
 @interface NTKActivityDialSegment : NSObject {
-    double  _alpha;
+    float  _alpha;
     CALayer * _arcLayer;
     NTKFaceColorScheme * _colorScheme;
     CALayer * _tickLayer;
-    double  _tickRotation;
-    double  _tickScale;
+    float  _tickRotation;
+    float  _tickScale;
 }
 
-@property (nonatomic) double alpha;
+@property (nonatomic) float alpha;
 @property (nonatomic, retain) CALayer *arcLayer;
 @property (nonatomic, retain) NTKFaceColorScheme *colorScheme;
 @property (nonatomic, retain) CALayer *tickLayer;
-@property (nonatomic) double tickRotation;
-@property (nonatomic) double tickScale;
+@property (nonatomic) float tickRotation;
+@property (nonatomic) float tickScale;
 
 - (void).cxx_destruct;
 - (void)_updateTransform;

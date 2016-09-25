@@ -10,6 +10,6 @@
 - (id)gridViewControllerSpec;
 - (float)stackWidth;
 - (int)thumbnailContentMode;
-- (struct CGSize { double x1; double x2; })thumbnailSize;
+- (struct CGSize { float x1; float x2; })thumbnailSize;
 
 @end

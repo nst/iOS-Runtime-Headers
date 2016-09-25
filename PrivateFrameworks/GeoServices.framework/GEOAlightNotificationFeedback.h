@@ -3,7 +3,7 @@
  */
 
 @interface GEOAlightNotificationFeedback : PBCodable <NSCopying> {
-    unsigned int  _alightStopMuid;
+    unsigned long long  _alightStopMuid;
     BOOL  _arrivalDetected;
     double  _arrivedAtTimestamp;
     BOOL  _displayed;
@@ -26,8 +26,8 @@
     double  _lastDetectedLocationHorizontalAccuracy;
     double  _lastDetectedLocationTimestamp;
     int  _lastDetectedLocationTraversalPercent;
-    unsigned int  _lineMuid;
-    unsigned int  _previousStopMuid;
+    unsigned long long  _lineMuid;
+    unsigned long long  _previousStopMuid;
     unsigned int  _stepID;
     int  _trigger;
     BOOL  _triggered;
@@ -35,7 +35,7 @@
     double  _triggeredTimestamp;
 }
 
-@property (nonatomic) unsigned int alightStopMuid;
+@property (nonatomic) unsigned long long alightStopMuid;
 @property (nonatomic) BOOL arrivalDetected;
 @property (nonatomic) double arrivedAtTimestamp;
 @property (nonatomic) BOOL displayed;
@@ -56,8 +56,8 @@
 @property (nonatomic) double lastDetectedLocationHorizontalAccuracy;
 @property (nonatomic) double lastDetectedLocationTimestamp;
 @property (nonatomic) int lastDetectedLocationTraversalPercent;
-@property (nonatomic) unsigned int lineMuid;
-@property (nonatomic) unsigned int previousStopMuid;
+@property (nonatomic) unsigned long long lineMuid;
+@property (nonatomic) unsigned long long previousStopMuid;
 @property (nonatomic) unsigned int stepID;
 @property (nonatomic) int trigger;
 @property (nonatomic) BOOL triggered;
@@ -65,7 +65,7 @@
 @property (nonatomic) double triggeredTimestamp;
 
 - (int)StringAsTrigger:(id)arg1;
-- (unsigned int)alightStopMuid;
+- (unsigned long long)alightStopMuid;
 - (BOOL)arrivalDetected;
 - (double)arrivedAtTimestamp;
 - (void)copyTo:(id)arg1;
@@ -92,11 +92,11 @@
 - (double)lastDetectedLocationHorizontalAccuracy;
 - (double)lastDetectedLocationTimestamp;
 - (int)lastDetectedLocationTraversalPercent;
-- (unsigned int)lineMuid;
+- (unsigned long long)lineMuid;
 - (void)mergeFrom:(id)arg1;
-- (unsigned int)previousStopMuid;
+- (unsigned long long)previousStopMuid;
 - (BOOL)readFrom:(id)arg1;
-- (void)setAlightStopMuid:(unsigned int)arg1;
+- (void)setAlightStopMuid:(unsigned long long)arg1;
 - (void)setArrivalDetected:(BOOL)arg1;
 - (void)setArrivedAtTimestamp:(double)arg1;
 - (void)setDisplayed:(BOOL)arg1;
@@ -117,8 +117,8 @@
 - (void)setLastDetectedLocationHorizontalAccuracy:(double)arg1;
 - (void)setLastDetectedLocationTimestamp:(double)arg1;
 - (void)setLastDetectedLocationTraversalPercent:(int)arg1;
-- (void)setLineMuid:(unsigned int)arg1;
-- (void)setPreviousStopMuid:(unsigned int)arg1;
+- (void)setLineMuid:(unsigned long long)arg1;
+- (void)setPreviousStopMuid:(unsigned long long)arg1;
 - (void)setStepID:(unsigned int)arg1;
 - (void)setTrigger:(int)arg1;
 - (void)setTriggered:(BOOL)arg1;

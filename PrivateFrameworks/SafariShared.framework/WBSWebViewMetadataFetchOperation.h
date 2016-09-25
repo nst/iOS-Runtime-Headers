@@ -14,7 +14,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) WKWebView *webView;
 @property (nonatomic, readonly) WKWebViewConfiguration *webViewConfiguration;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } webViewSize;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } webViewSize;
 
 - (void).cxx_destruct;
 - (void)_webViewWebProcessDidCrash:(id)arg1;
@@ -33,7 +33,7 @@
 - (void)webView:(id)arg1 didFailNavigation:(id)arg2 withError:(id)arg3;
 - (void)webView:(id)arg1 didFailProvisionalNavigation:(id)arg2 withError:(id)arg3;
 - (id)webViewConfiguration;
-- (struct CGSize { double x1; double x2; })webViewSize;
+- (struct CGSize { float x1; float x2; })webViewSize;
 - (void)willClearWebView;
 
 @end

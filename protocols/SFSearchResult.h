@@ -51,7 +51,7 @@
 - (BOOL)preventThumbnailImageScaling;
 - (NSString *)publishDate;
 - (SFPunchout *)punchout;
-- (unsigned int)queryId;
+- (unsigned long long)queryId;
 - (NSNumber *)queryIndependentScore;
 - (float)rankingScore;
 - (BOOL)renderHorizontallyWithOtherResultsInCategory;
@@ -111,7 +111,7 @@
 - (void)setPreventThumbnailImageScaling:(BOOL)arg1;
 - (void)setPublishDate:(NSString *)arg1;
 - (void)setPunchout:(SFPunchout *)arg1;
-- (void)setQueryId:(unsigned int)arg1;
+- (void)setQueryId:(unsigned long long)arg1;
 - (void)setQueryIndependentScore:(NSNumber *)arg1;
 - (void)setRankingScore:(float)arg1;
 - (void)setRenderHorizontallyWithOtherResultsInCategory:(BOOL)arg1;

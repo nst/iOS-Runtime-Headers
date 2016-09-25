@@ -5,7 +5,7 @@
 @interface RadioGetTracksRequest : RadioRequest {
     NSNumber * _accountUniqueIdentifier;
     NSDictionary * _additionalRequestParameters;
-    unsigned int  _globalVersion;
+    unsigned long long  _globalVersion;
     BOOL  _hasSetWillContinuePlayback;
     NSData * _heartbeatTokenData;
     BOOL  _includeCleanTracksOnly;
@@ -21,7 +21,7 @@
     BOOL  _shouldIncludeStationInResponse;
     BOOL  _skipPromptForSeamlessPlayback;
     NSString * _stationHash;
-    int  _stationID;
+    long long  _stationID;
     RadioStationMatchContext * _stationMatchContext;
     NSString * _stationStringID;
     BOOL  _willContinuePlayback;
@@ -52,9 +52,9 @@
 - (id)heartbeatTokenData;
 - (BOOL)includeCleanTracksOnly;
 - (id)init;
-- (id)initWithGlobalVersion:(unsigned int)arg1;
-- (id)initWithStation:(id)arg1 globalVersion:(unsigned int)arg2;
-- (id)initWithStationStringID:(id)arg1 globalVersion:(unsigned int)arg2;
+- (id)initWithGlobalVersion:(unsigned long long)arg1;
+- (id)initWithStation:(id)arg1 globalVersion:(unsigned long long)arg2;
+- (id)initWithStationStringID:(id)arg1 globalVersion:(unsigned long long)arg2;
 - (id)nowPlayingMatchContext;
 - (unsigned int)numberOfTracks;
 - (id)playActivityEvents;

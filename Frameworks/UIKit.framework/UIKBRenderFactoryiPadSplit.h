@@ -11,11 +11,11 @@
 - (id)backgroundTraitsForKeyplane:(id)arg1;
 - (float)defaultPathWeight;
 - (id)deleteKeyImageName;
-- (struct CGPoint { double x1; double x2; })deleteKeyOffset;
+- (struct CGPoint { float x1; float x2; })deleteKeyOffset;
 - (id)deleteOnKeyImageName;
 - (id)dictationKeyImageName;
 - (id)dismissKeyImageName;
-- (struct CGPoint { double x1; double x2; })dismissKeyOffset;
+- (struct CGPoint { float x1; float x2; })dismissKeyOffset;
 - (id)globalEmojiKeyImageName;
 - (id)globalKeyImageName;
 - (float)keyCornerRadius;
@@ -23,7 +23,7 @@
 - (id)multitapCompleteKeyImageName;
 - (id)muttitapReverseKeyImageName;
 - (id)shiftKeyImageName;
-- (struct CGPoint { double x1; double x2; })shiftKeyOffset;
+- (struct CGPoint { float x1; float x2; })shiftKeyOffset;
 - (id)shiftLockImageName;
 - (id)shiftOnKeyImageName;
 - (float)skinnyKeyThreshold;

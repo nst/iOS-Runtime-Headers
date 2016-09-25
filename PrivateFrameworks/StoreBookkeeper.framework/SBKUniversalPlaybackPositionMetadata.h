@@ -22,7 +22,7 @@
 
 + (id)_testableMetadataItem_1;
 + (id)keyValueStoreItemIdentifierForItem:(id)arg1;
-+ (id)keyValueStoreItemIdentifierForUniqueStoreID:(int)arg1 itemTitle:(id)arg2 albumName:(id)arg3 itemArtistName:(id)arg4 feedURL:(id)arg5 feedGUID:(id)arg6;
++ (id)keyValueStoreItemIdentifierForUniqueStoreID:(long long)arg1 itemTitle:(id)arg2 albumName:(id)arg3 itemArtistName:(id)arg4 feedURL:(id)arg5 feedGUID:(id)arg6;
 + (id)metadataWithItemIdentifier:(id)arg1 bookmarkTime:(double)arg2 bookmarkTimestamp:(double)arg3 hasBeenPlayed:(BOOL)arg4 playCount:(unsigned int)arg5;
 + (id)metadataWithItemIdentifier:(id)arg1 keyValueStorePayload:(id)arg2;
 + (id)metadataWithItemIdentifier:(id)arg1 keyValueStorePayload:(id)arg2 failuresOkay:(BOOL)arg3;

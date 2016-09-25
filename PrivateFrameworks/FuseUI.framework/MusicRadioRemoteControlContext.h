@@ -6,13 +6,13 @@
     MPAVItem * _currentlyPlayingItem;
     MPAVController * _player;
     RadioStation * _radioStation;
-    int  _trackID;
+    long long  _trackID;
 }
 
 @property (nonatomic, readonly) MPAVItem *currentlyPlayingItem;
 @property (nonatomic, readonly) MPAVController *player;
 @property (nonatomic, readonly) RadioStation *radioStation;
-@property (nonatomic, readonly) int trackID;
+@property (nonatomic, readonly) long long trackID;
 
 - (void).cxx_destruct;
 - (id)currentlyPlayingItem;
@@ -20,6 +20,6 @@
 - (id)initWithPlayer:(id)arg1 mediaRemoteOptions:(id)arg2;
 - (id)player;
 - (id)radioStation;
-- (int)trackID;
+- (long long)trackID;
 
 @end

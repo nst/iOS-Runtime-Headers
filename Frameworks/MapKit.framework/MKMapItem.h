@@ -30,7 +30,7 @@
 @property (getter=_attribution, nonatomic, readonly) _MKMapItemPlaceAttribution *attribution;
 @property (getter=_businessClaim, nonatomic, readonly) GEOPDBusinessClaim *businessClaim;
 @property (getter=_coordinate, nonatomic, readonly) struct CLLocationCoordinate2D { double x1; double x2; } coordinate;
-@property (getter=_customIconID, nonatomic, readonly) unsigned int customIconID;
+@property (getter=_customIconID, nonatomic, readonly) unsigned long long customIconID;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (getter=_detourInfo, nonatomic, readonly) GEOMapItemDetourInfo *detourInfo;
@@ -76,10 +76,10 @@
 @property (getter=_isTransitItem, nonatomic) BOOL isTransitItem;
 @property (getter=_localizedOperatingHours, nonatomic, readonly) NSString *localizedOperatingHours;
 @property (nonatomic, readonly) MKMapItemMetadata *metadata;
-@property (getter=_muid, nonatomic, readonly) unsigned int muid;
+@property (getter=_muid, nonatomic, readonly) unsigned long long muid;
 @property (nonatomic, copy) NSString *name;
 @property (getter=_needsAttribution, nonatomic, readonly) BOOL needsAttribution;
-@property (getter=_normalizedUserRatingScore, nonatomic, readonly) double normalizedUserRatingScore;
+@property (getter=_normalizedUserRatingScore, nonatomic, readonly) float normalizedUserRatingScore;
 @property (getter=_openingHoursOptions, nonatomic, readonly) unsigned int openingHoursOptions;
 @property (nonatomic, copy) NSString *phoneNumber;
 @property (getter=_phoneNumberOptsOutOfAds, nonatomic, readonly) BOOL phoneNumberOptsOutOfAds;
@@ -122,7 +122,7 @@
 + (id)_launchOptionsFromResourceOptionsDictionary:(id)arg1;
 + (id)_launchOptionsWithOptions:(id)arg1;
 + (void)_mapItemFromHandle:(id)arg1 completionHandler:(id /* block */)arg2;
-+ (id)_mapItemWithWithLocation:(id)arg1 addressDictionary:(id)arg2 name:(id)arg3 businessURL:(id)arg4 phoneNumber:(id)arg5 sessionID:(id)arg6 muid:(unsigned int)arg7 attributionID:(id)arg8 sampleSizeForUserRatingScore:(unsigned int)arg9 normalizedUserRatingScore:(float)arg10;
++ (id)_mapItemWithWithLocation:(id)arg1 addressDictionary:(id)arg2 name:(id)arg3 businessURL:(id)arg4 phoneNumber:(id)arg5 sessionID:(id)arg6 muid:(unsigned long long)arg7 attributionID:(id)arg8 sampleSizeForUserRatingScore:(unsigned int)arg9 normalizedUserRatingScore:(float)arg10;
 + (void)_mapItemsFromHandleURL:(id)arg1 completionHandler:(id /* block */)arg2;
 + (void)_mapItemsWithSerializedPlaceDataResponse:(id)arg1 handler:(id /* block */)arg2;
 + (BOOL)_openHandleInMaps:(id)arg1 withLaunchOptions:(id)arg2;
@@ -163,7 +163,7 @@
 - (id)_businessClaim;
 - (BOOL)_canGetDirections;
 - (struct CLLocationCoordinate2D { double x1; double x2; })_coordinate;
-- (unsigned int)_customIconID;
+- (unsigned long long)_customIconID;
 - (id)_detourInfo;
 - (id)_disambiguationName;
 - (id)_displayMapRegion;
@@ -212,7 +212,7 @@
 - (id)_localizedCategoryNamesForType:(unsigned int)arg1;
 - (id)_localizedOperatingHours;
 - (id)_mapsDataString;
-- (unsigned int)_muid;
+- (unsigned long long)_muid;
 - (BOOL)_needsAttribution;
 - (float)_normalizedUserRatingScore;
 - (unsigned int)_openingHoursOptions;
@@ -288,7 +288,7 @@
 - (void)setTimeZone:(id)arg1;
 - (void)setUrl:(id)arg1;
 - (id)sharingURL;
-- (id)thumbnailWithSize:(struct CGSize { double x1; double x2; })arg1 annotationView:(id)arg2;
+- (id)thumbnailWithSize:(struct CGSize { float x1; float x2; })arg1 annotationView:(id)arg2;
 - (id)timeZone;
 - (void)updateTransitInfoWithMapItem:(id)arg1;
 - (id)url;

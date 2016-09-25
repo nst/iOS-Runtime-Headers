@@ -4,15 +4,15 @@
 
 @interface _SpacingView : UIView {
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _spacingSize;
 }
 
-@property (readonly) struct CGSize { double x1; double x2; } spacingSize;
+@property (readonly) struct CGSize { float x1; float x2; } spacingSize;
 
 - (id)initWithWidth:(float)arg1 height:(float)arg2;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
-- (struct CGSize { double x1; double x2; })spacingSize;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
+- (struct CGSize { float x1; float x2; })spacingSize;
 
 @end

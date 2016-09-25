@@ -4,10 +4,10 @@
 
 @interface AXEventRepresentation : NSObject <AXEventRepresentationDescription, NSCopying, NSSecureCoding> {
     NSData * _HIDAttributeData;
-    unsigned int  _HIDTime;
+    unsigned long long  _HIDTime;
     AXEventAccelerometerInfoRepresentation * _accelerometerInfo;
     AXEventData * _accessibilityData;
-    unsigned int  _additionalFlags;
+    unsigned long long  _additionalFlags;
     NSString * _clientId;
     unsigned int  _contextId;
     struct __IOHIDEvent { } * _creatorHIDEvent;
@@ -22,30 +22,30 @@
     BOOL  _isGeneratedEvent;
     AXEventKeyInfoRepresentation * _keyInfo;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _location;
     int  _pid;
-    int  _scrollAmount;
-    unsigned int  _senderID;
+    long long  _scrollAmount;
+    unsigned long long  _senderID;
     int  _subtype;
     unsigned int  _taskPort;
-    unsigned int  _time;
+    unsigned long long  _time;
     unsigned int  _type;
     BOOL  _useOriginalHIDTime;
     unsigned int  _willUpdateMask;
     void * _window;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _windowLocation;
 }
 
 @property (nonatomic, retain) NSData *HIDAttributeData;
-@property (nonatomic) unsigned int HIDTime;
+@property (nonatomic) unsigned long long HIDTime;
 @property (nonatomic, retain) AXEventAccelerometerInfoRepresentation *accelerometerInfo;
 @property (nonatomic, retain) AXEventData *accessibilityData;
-@property (nonatomic) unsigned int additionalFlags;
+@property (nonatomic) unsigned long long additionalFlags;
 @property (nonatomic, retain) NSString *clientId;
 @property (nonatomic) unsigned int contextId;
 @property (nonatomic, retain) struct __IOHIDEvent { }*creatorHIDEvent;
@@ -71,20 +71,20 @@
 @property (nonatomic, readonly) BOOL isTouchDown;
 @property (nonatomic, readonly) BOOL isUpdate;
 @property (nonatomic, retain) AXEventKeyInfoRepresentation *keyInfo;
-@property (nonatomic) struct CGPoint { double x1; double x2; } location;
+@property (nonatomic) struct CGPoint { float x1; float x2; } location;
 @property (nonatomic) int pid;
-@property (nonatomic) int scrollAmount;
-@property (nonatomic) unsigned int senderID;
+@property (nonatomic) long long scrollAmount;
+@property (nonatomic) unsigned long long senderID;
 @property (nonatomic) int subtype;
 @property (readonly) Class superclass;
 @property (nonatomic) unsigned int taskPort;
-@property (nonatomic) unsigned int time;
+@property (nonatomic) unsigned long long time;
 @property (nonatomic) unsigned int type;
 @property (nonatomic) BOOL useOriginalHIDTime;
 @property (nonatomic, readonly) BOOL willBeUpdated;
 @property (nonatomic) unsigned int willUpdateMask;
 @property (nonatomic) void*window;
-@property (nonatomic) struct CGPoint { double x1; double x2; } windowLocation;
+@property (nonatomic) struct CGPoint { float x1; float x2; } windowLocation;
 
 + (id)_digitizerRepresentation:(struct __IOHIDEvent { }*)arg1 hidStreamIdentifier:(id)arg2;
 + (id)_gameControllerEvent:(struct __IOHIDEvent { }*)arg1;
@@ -94,15 +94,15 @@
 + (id)buttonRepresentationWithType:(unsigned int)arg1;
 + (id)keyRepresentationWithType:(unsigned int)arg1;
 + (id)representationWithData:(id)arg1;
-+ (id)representationWithEventRecord:(struct { int x1; int x2; struct CGPoint { double x_3_1_1; double x_3_1_2; } x3; struct CGPoint { double x_4_1_1; double x_4_1_2; } x4; unsigned int x5; unsigned int x6; void *x7; int x8; int x9; unsigned int x10; unsigned int x11; unsigned char x12[0]; }*)arg1;
++ (id)representationWithEventRecord:(struct { int x1; int x2; struct CGPoint { float x_3_1_1; float x_3_1_2; } x3; struct CGPoint { float x_4_1_1; float x_4_1_2; } x4; unsigned int x5; unsigned long long x6; void *x7; int x8; int x9; unsigned int x10; unsigned long long x11; unsigned char x12[0]; }*)arg1;
 + (id)representationWithHIDEvent:(struct __IOHIDEvent { }*)arg1 hidStreamIdentifier:(id)arg2;
-+ (id)representationWithLocation:(struct CGPoint { double x1; double x2; })arg1 windowLocation:(struct CGPoint { double x1; double x2; })arg2 handInfo:(id)arg3;
-+ (id)representationWithType:(unsigned int)arg1 subtype:(int)arg2 time:(unsigned int)arg3 location:(struct CGPoint { double x1; double x2; })arg4 windowLocation:(struct CGPoint { double x1; double x2; })arg5 handInfo:(id)arg6;
++ (id)representationWithLocation:(struct CGPoint { float x1; float x2; })arg1 windowLocation:(struct CGPoint { float x1; float x2; })arg2 handInfo:(id)arg3;
++ (id)representationWithType:(unsigned int)arg1 subtype:(int)arg2 time:(unsigned long long)arg3 location:(struct CGPoint { float x1; float x2; })arg4 windowLocation:(struct CGPoint { float x1; float x2; })arg5 handInfo:(id)arg6;
 + (BOOL)supportsSecureCoding;
-+ (id)touchRepresentationWithHandType:(unsigned int)arg1 location:(struct CGPoint { double x1; double x2; })arg2;
++ (id)touchRepresentationWithHandType:(unsigned int)arg1 location:(struct CGPoint { float x1; float x2; })arg2;
 
 - (id)HIDAttributeData;
-- (unsigned int)HIDTime;
+- (unsigned long long)HIDTime;
 - (BOOL)_HIDEventIsAccessibilityEvent:(struct __IOHIDEvent { }*)arg1;
 - (id)_accessibilityDataFromRealEvent:(struct __IOHIDEvent { }*)arg1;
 - (struct __IOHIDEvent { }*)_accessibilityEventFromRealEvent:(struct __IOHIDEvent { }*)arg1;
@@ -116,7 +116,7 @@
 - (id)accelerometerInfo;
 - (id)accessibilityData;
 - (id)accessibilityEventRepresentationTabularDescription;
-- (unsigned int)additionalFlags;
+- (unsigned long long)additionalFlags;
 - (void)applyAccessibilityDataToCreatorHIDEvent;
 - (id)clientId;
 - (unsigned int)contextId;
@@ -150,20 +150,20 @@
 - (BOOL)isTouchDown;
 - (BOOL)isUpdate;
 - (id)keyInfo;
-- (struct CGPoint { double x1; double x2; })location;
+- (struct CGPoint { float x1; float x2; })location;
 - (void)modifyPoints:(id /* block */)arg1;
 - (void)neuterUpdates;
-- (struct { int x1; int x2; struct CGPoint { double x_3_1_1; double x_3_1_2; } x3; struct CGPoint { double x_4_1_1; double x_4_1_2; } x4; unsigned int x5; unsigned int x6; void *x7; int x8; int x9; unsigned int x10; unsigned int x11; unsigned char x12[0]; }*)newEventRecord;
+- (struct { int x1; int x2; struct CGPoint { float x_3_1_1; float x_3_1_2; } x3; struct CGPoint { float x_4_1_1; float x_4_1_2; } x4; unsigned int x5; unsigned long long x6; void *x7; int x8; int x9; unsigned int x10; unsigned long long x11; unsigned char x12[0]; }*)newEventRecord;
 - (struct __GSEvent { }*)newGSEventRef;
 - (struct __IOHIDEvent { }*)newHIDEventRef;
 - (id)normalizedEventRepresentation:(BOOL)arg1 scale:(BOOL)arg2;
 - (int)pid;
 - (void)resetInitialTouchCountValueForHidStreamIdentifier:(id)arg1;
-- (int)scrollAmount;
-- (unsigned int)senderID;
+- (long long)scrollAmount;
+- (unsigned long long)senderID;
 - (void)setAccelerometerInfo:(id)arg1;
 - (void)setAccessibilityData:(id)arg1;
-- (void)setAdditionalFlags:(unsigned int)arg1;
+- (void)setAdditionalFlags:(unsigned long long)arg1;
 - (void)setClientId:(id)arg1;
 - (void)setContextId:(unsigned int)arg1;
 - (void)setCreatorHIDEvent:(struct __IOHIDEvent { }*)arg1;
@@ -173,32 +173,32 @@
 - (void)setGameControllerInfo:(id)arg1;
 - (void)setGenerationCount:(long)arg1;
 - (void)setHIDAttributeData:(id)arg1;
-- (void)setHIDTime:(unsigned int)arg1;
+- (void)setHIDTime:(unsigned long long)arg1;
 - (void)setHandInfo:(id)arg1;
 - (void)setIsBuiltIn:(BOOL)arg1;
 - (void)setIsDisplayIntegrated:(BOOL)arg1;
 - (void)setIsGeneratedEvent:(BOOL)arg1;
 - (void)setKeyInfo:(id)arg1;
-- (void)setLocation:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setPid:(int)arg1;
-- (void)setScrollAmount:(int)arg1;
-- (void)setSenderID:(unsigned int)arg1;
+- (void)setScrollAmount:(long long)arg1;
+- (void)setSenderID:(unsigned long long)arg1;
 - (void)setSubtype:(int)arg1;
 - (void)setTaskPort:(unsigned int)arg1;
-- (void)setTime:(unsigned int)arg1;
+- (void)setTime:(unsigned long long)arg1;
 - (void)setType:(unsigned int)arg1;
 - (void)setUseOriginalHIDTime:(BOOL)arg1;
 - (void)setWillUpdateMask:(unsigned int)arg1;
 - (void)setWindow:(void*)arg1;
-- (void)setWindowLocation:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setWindowLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (int)subtype;
 - (unsigned int)taskPort;
-- (unsigned int)time;
+- (unsigned long long)time;
 - (unsigned int)type;
 - (BOOL)useOriginalHIDTime;
 - (BOOL)willBeUpdated;
 - (unsigned int)willUpdateMask;
 - (void*)window;
-- (struct CGPoint { double x1; double x2; })windowLocation;
+- (struct CGPoint { float x1; float x2; })windowLocation;
 
 @end

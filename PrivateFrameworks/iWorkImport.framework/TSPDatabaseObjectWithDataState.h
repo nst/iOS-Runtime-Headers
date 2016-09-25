@@ -3,14 +3,14 @@
  */
 
 @interface TSPDatabaseObjectWithDataState : TSPDatabaseObject {
-    int  _dataState;
+    long long  _dataState;
 }
 
-- (int)dataState;
+- (long long)dataState;
 - (id)fileState;
 - (id)fileURL;
 - (BOOL)hasDataState;
 - (BOOL)hasFileState;
-- (id)initWithIdentifier:(int)arg1 classType:(int)arg2 dataState:(int)arg3;
+- (id)initWithIdentifier:(long long)arg1 classType:(int)arg2 dataState:(long long)arg3;
 
 @end

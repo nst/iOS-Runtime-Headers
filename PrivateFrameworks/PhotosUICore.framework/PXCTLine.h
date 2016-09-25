@@ -3,25 +3,25 @@
  */
 
 @interface PXCTLine : NSObject {
-    double  _ascent;
+    float  _ascent;
     struct CGContext { } * _context;
-    double  _descent;
+    float  _descent;
     BOOL  _endOfString;
     PXCTFrame * _frame;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _imageBounds;
     const struct __CTLine { } * _line;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _origin;
     BOOL  _prepared;
     NSAttributedString * _referenceAttributedString;
@@ -32,44 +32,44 @@
         unsigned int length; 
     }  _stringRange;
     struct CGAffineTransform { 
-        double a; 
-        double b; 
-        double c; 
-        double d; 
-        double tx; 
-        double ty; 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     }  _transform;
     BOOL  _truncated;
     double  _width;
 }
 
-@property (nonatomic, readonly) double ascent;
-@property (nonatomic, readonly) double ascentPosition;
-@property (nonatomic, readonly) double baselinePosition;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } contentBounds;
+@property (nonatomic, readonly) float ascent;
+@property (nonatomic, readonly) float ascentPosition;
+@property (nonatomic, readonly) float baselinePosition;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } contentBounds;
 @property (nonatomic, readonly) struct CGContext { }*context;
-@property (nonatomic, readonly) double descent;
-@property (nonatomic, readonly) double descentPosition;
+@property (nonatomic, readonly) float descent;
+@property (nonatomic, readonly) float descentPosition;
 @property (getter=isEndOfString, nonatomic, readonly) BOOL endOfString;
 @property (nonatomic, readonly) PXCTFrame *frame;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } imageBounds;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } imageBounds;
 @property (nonatomic, readonly) const struct __CTLine { }*line;
-@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } origin;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } origin;
 @property (nonatomic, readonly) NSAttributedString *referenceAttributedString;
 @property (nonatomic, readonly) NSShadow *shadow;
 @property (nonatomic, readonly) NSString *string;
 @property (nonatomic, readonly) struct _NSRange { unsigned int x1; unsigned int x2; } stringRange;
-@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } textPosition;
-@property (nonatomic, readonly) struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; } transform;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } textPosition;
+@property (nonatomic, readonly) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } transform;
 @property (getter=isTruncated, nonatomic, readonly) BOOL truncated;
-@property (nonatomic, readonly) double width;
+@property (nonatomic, readonly) float width;
 
 - (void).cxx_destruct;
-- (void)_transformBy:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
+- (void)_transformBy:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (float)ascent;
 - (float)ascentPosition;
 - (float)baselinePosition;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })contentBounds;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentBounds;
 - (struct CGContext { }*)context;
 - (const struct CGPath { }*)createPath;
 - (void)dealloc;
@@ -78,13 +78,13 @@
 - (id)description;
 - (void)draw;
 - (id)frame;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })imageBounds;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })imageBounds;
 - (id)init;
-- (id)initWithLine:(struct __CTLine { }*)arg1 origin:(struct CGPoint { double x1; double x2; })arg2 frame:(id)arg3 referenceAttributedString:(id)arg4 truncated:(BOOL)arg5;
+- (id)initWithLine:(struct __CTLine { }*)arg1 origin:(struct CGPoint { float x1; float x2; })arg2 frame:(id)arg3 referenceAttributedString:(id)arg4 truncated:(BOOL)arg5;
 - (BOOL)isEndOfString;
 - (BOOL)isTruncated;
 - (const struct __CTLine { }*)line;
-- (struct CGPoint { double x1; double x2; })origin;
+- (struct CGPoint { float x1; float x2; })origin;
 - (void)prepare;
 - (id)referenceAttributedString;
 - (void)scaleBy:(float)arg1;
@@ -92,8 +92,8 @@
 - (id)shadow;
 - (id)string;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })stringRange;
-- (struct CGPoint { double x1; double x2; })textPosition;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })transform;
+- (struct CGPoint { float x1; float x2; })textPosition;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transform;
 - (void)translateHorizontallyBy:(float)arg1;
 - (void)translateVerticallyBy:(float)arg1;
 - (float)width;

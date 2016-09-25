@@ -23,7 +23,7 @@
 - (id)_numberAttributedStringWithNumberText:(id)arg1 attributes:(id)arg2;
 - (id)_numberFont;
 - (id)_numberImageForNumberText:(id)arg1 withAttributes:(id)arg2;
-- (struct CGSize { double x1; double x2; })_numberLabelSizeForText:(id)arg1;
+- (struct CGSize { float x1; float x2; })_numberLabelSizeForText:(id)arg1;
 - (id)_numberTextAttributes;
 - (void)_setAttributeTitleForButton:(id)arg1 withColor:(id)arg2;
 - (id)_textAttributesWithColor:(id)arg1;
@@ -39,7 +39,7 @@
 - (void)setLegibilitySettings:(id)arg1;
 - (void)setNumberText:(id)arg1;
 - (void)setText:(id)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)text;
 - (void)updateForContentCategorySizeChange;
 

@@ -6,15 +6,15 @@
     struct CGColor { } * backgroundColor;
     unsigned int  backgroundGraphicCount;
     id * backgroundGraphics;
-    /* Warning: unhandled struct encoding: '{?={CGRect={CGPoint=ff}{CGSize=ff}}^{CGColor}I^@}' */ struct { struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_1_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_1_1_2; } x1; struct CGColor {} *x2; unsigned int x3; id *x4; } * borders;
+    /* Warning: unhandled struct encoding: '{?={CGRect={CGPoint=ff}{CGSize=ff}}^{CGColor}I^@}' */ struct { struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_1_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_1_1_2; } x1; struct CGColor {} *x2; unsigned int x3; id *x4; } * borders;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  cellBounds;
     struct { 
@@ -28,15 +28,15 @@
 }
 
 @property (nonatomic, readonly) unsigned int backgroundGraphicCount;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } cellBounds;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } cellBounds;
 @property (nonatomic) struct { int x1; int x2; } columnSpan;
 @property (nonatomic) struct { int x1; int x2; } rowSpan;
 
 - (struct CGColor { }*)backgroundColor;
 - (id)backgroundGraphicAtIndex:(unsigned int)arg1;
 - (unsigned int)backgroundGraphicCount;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundsOfBorder:(int)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })cellBounds;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundsOfBorder:(int)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })cellBounds;
 - (struct CGColor { }*)colorOfBorder:(int)arg1;
 - (struct { int x1; int x2; })columnSpan;
 - (int)compareCellOrdinal:(id)arg1;
@@ -45,10 +45,10 @@
 - (void)finalize;
 - (unsigned int)graphicCountOfBorder:(int)arg1;
 - (id)graphicObjectOfBorder:(int)arg1 atIndex:(unsigned int)arg2;
-- (id)initWithBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct { int x1; int x2; })rowSpan;
 - (void)setBackgroundGraphics:(id)arg1;
-- (void)setBorder:(int)arg1 bounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 graphics:(id)arg3;
+- (void)setBorder:(int)arg1 bounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 graphics:(id)arg3;
 - (void)setColumnSpan:(struct { int x1; int x2; })arg1;
 - (void)setRowSpan:(struct { int x1; int x2; })arg1;
 

@@ -9,7 +9,7 @@
     BOOL  _didIssueNeedFinish;
     __NSCFLocalDownloadFile * _downloadFile;
     id /* block */  _fileCompletion;
-    int  _initialResumeSize;
+    long long  _initialResumeSize;
     unsigned int  _ioSuspend;
     BOOL  _needFinish;
     NSDictionary * _originalResumeInfo;

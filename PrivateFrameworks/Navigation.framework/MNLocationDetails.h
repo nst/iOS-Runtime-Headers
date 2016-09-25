@@ -35,12 +35,12 @@
     MNRouteCoordinate * _routeCoordinate;
     NSData * _routeDetailsID;
     NSString * _shieldText;
-    int  _shieldType;
+    long long  _shieldType;
     unsigned int  _speedLimit;
     BOOL  _speedLimitIsMPH;
     unsigned int  _stepIndex;
     double  _timestamp;
-    unsigned int  _transitID;
+    unsigned long long  _transitID;
 }
 
 @property (nonatomic) double course;
@@ -79,12 +79,12 @@
 @property (nonatomic, retain) MNRouteCoordinate *routeCoordinate;
 @property (nonatomic, retain) NSData *routeDetailsID;
 @property (nonatomic, retain) NSString *shieldText;
-@property (nonatomic) int shieldType;
+@property (nonatomic) long long shieldType;
 @property (nonatomic) unsigned int speedLimit;
 @property (nonatomic) BOOL speedLimitIsMPH;
 @property (nonatomic) unsigned int stepIndex;
 @property (nonatomic) double timestamp;
-@property (nonatomic) unsigned int transitID;
+@property (nonatomic) unsigned long long transitID;
 
 + (id)locationDetailsWithLocation:(id)arg1;
 + (id)locationWithLocationDetails:(id)arg1;
@@ -166,19 +166,19 @@
 - (void)setRouteCoordinate:(id)arg1;
 - (void)setRouteDetailsID:(id)arg1;
 - (void)setShieldText:(id)arg1;
-- (void)setShieldType:(int)arg1;
+- (void)setShieldType:(long long)arg1;
 - (void)setSpeedLimit:(unsigned int)arg1;
 - (void)setSpeedLimitIsMPH:(BOOL)arg1;
 - (void)setStepIndex:(unsigned int)arg1;
 - (void)setTimestamp:(double)arg1;
-- (void)setTransitID:(unsigned int)arg1;
+- (void)setTransitID:(unsigned long long)arg1;
 - (id)shieldText;
-- (int)shieldType;
+- (long long)shieldType;
 - (unsigned int)speedLimit;
 - (BOOL)speedLimitIsMPH;
 - (unsigned int)stepIndex;
 - (double)timestamp;
-- (unsigned int)transitID;
+- (unsigned long long)transitID;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -19,7 +19,7 @@
 - (id)description;
 - (BOOL)guaranteesCompletionOfTransactionInfo:(id)arg1;
 - (id)init;
-- (id)initWithPropertyListObjectRepresentation:(id)arg1 version:(int)arg2;
+- (id)initWithPropertyListObjectRepresentation:(id)arg1 version:(long long)arg2;
 - (id)initWithTransactionInfoDictionary:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)propertyListObjectRepresentation;

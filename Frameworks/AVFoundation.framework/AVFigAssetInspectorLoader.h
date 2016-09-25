@@ -53,14 +53,14 @@
 - (id)assetInspector;
 - (void)cancelLoading;
 - (void)dealloc;
-- (unsigned int)downloadToken;
-- (struct { int x1; int x2; unsigned int x3; int x4; })duration;
+- (unsigned long long)downloadToken;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
 - (id)figChapterGroupInfo;
 - (id)figChapters;
 - (void)finalize;
 - (BOOL)hasProtectedContent;
 - (id)initWithFigAsset:(struct OpaqueFigAsset { }*)arg1 forAsset:(id)arg2;
-- (id)initWithURL:(id)arg1 figAssetCreationFlags:(unsigned int)arg2 figAssetCreationOptions:(id)arg3 forAsset:(id)arg4;
+- (id)initWithURL:(id)arg1 figAssetCreationFlags:(unsigned long long)arg2 figAssetCreationOptions:(id)arg3 forAsset:(id)arg4;
 - (BOOL)isAssociatedWithFragmentMinder;
 - (BOOL)isCompatibleWithSavedPhotosAlbum;
 - (BOOL)isComposable;

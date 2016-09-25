@@ -49,9 +49,9 @@
     BOOL  _preventThumbnailImageScaling;
     NSString * _publishDate;
     SFPunchout * _punchout;
-    unsigned int  _queryId;
+    unsigned long long  _queryId;
     NSNumber * _queryIndependentScore;
-    double  _rankingScore;
+    float  _rankingScore;
     BOOL  _renderHorizontallyWithOtherResultsInCategory;
     NSString * _resultBundleId;
     NSString * _resultTemplate;
@@ -128,9 +128,9 @@
 @property (nonatomic) BOOL preventThumbnailImageScaling;
 @property (nonatomic, copy) NSString *publishDate;
 @property (nonatomic, retain) SFPunchout *punchout;
-@property (nonatomic) unsigned int queryId;
+@property (nonatomic) unsigned long long queryId;
 @property (nonatomic, retain) NSNumber *queryIndependentScore;
-@property (nonatomic) double rankingScore;
+@property (nonatomic) float rankingScore;
 @property (nonatomic) BOOL renderHorizontallyWithOtherResultsInCategory;
 @property (nonatomic, copy) NSString *resultBundleId;
 @property (nonatomic, copy) NSString *resultTemplate;
@@ -210,7 +210,7 @@
 - (BOOL)preventThumbnailImageScaling;
 - (id)publishDate;
 - (id)punchout;
-- (unsigned int)queryId;
+- (unsigned long long)queryId;
 - (id)queryIndependentScore;
 - (float)rankingScore;
 - (BOOL)renderHorizontallyWithOtherResultsInCategory;
@@ -270,7 +270,7 @@
 - (void)setPreventThumbnailImageScaling:(BOOL)arg1;
 - (void)setPublishDate:(id)arg1;
 - (void)setPunchout:(id)arg1;
-- (void)setQueryId:(unsigned int)arg1;
+- (void)setQueryId:(unsigned long long)arg1;
 - (void)setQueryIndependentScore:(id)arg1;
 - (void)setRankingScore:(float)arg1;
 - (void)setRenderHorizontallyWithOtherResultsInCategory:(BOOL)arg1;

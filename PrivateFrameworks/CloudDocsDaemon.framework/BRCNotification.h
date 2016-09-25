@@ -10,7 +10,7 @@
     BOOL  _isInDocumentScope;
     BOOL  _isInTrashScope;
     BRCItemID * _itemID;
-    unsigned int  _oldParentFileID;
+    unsigned long long  _oldParentFileID;
     BRCItemID * _parentID;
     NSSet * _parentIDs;
     NSString * _unsaltedBookmarkData;
@@ -23,7 +23,7 @@
 @property (nonatomic, readonly) BOOL isInDocumentScope;
 @property (nonatomic, readonly) BOOL isInTrashScope;
 @property (nonatomic, readonly) BRCItemID *itemID;
-@property (nonatomic, readonly) unsigned int oldParentFileID;
+@property (nonatomic, readonly) unsigned long long oldParentFileID;
 @property (nonatomic, readonly) BRFileObjectID *oldParentFileObjectID;
 @property (nonatomic, readonly) BRFileObjectID *parentFileObjectID;
 @property (nonatomic, readonly) BRCItemID *parentID;
@@ -44,15 +44,15 @@
 - (Class)classForCoder;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)generateLogicalExtension:(id)arg1 physicalExtension:(id)arg2;
-- (id)initWithAliasItem:(id)arg1 itemDiffs:(unsigned int)arg2;
-- (id)initWithLocalItem:(id)arg1 itemDiffs:(unsigned int)arg2;
+- (id)initWithAliasItem:(id)arg1 itemDiffs:(unsigned long long)arg2;
+- (id)initWithLocalItem:(id)arg1 itemDiffs:(unsigned long long)arg2;
 - (BOOL)isInDataScope;
 - (BOOL)isInDocumentScope;
 - (BOOL)isInTrashScope;
 - (id)itemID;
 - (void)merge:(id)arg1;
 - (id)notificationByStrippingSharingInfoIfNeeded;
-- (unsigned int)oldParentFileID;
+- (unsigned long long)oldParentFileID;
 - (id)oldParentFileObjectID;
 - (id)parentFileObjectID;
 - (id)parentID;

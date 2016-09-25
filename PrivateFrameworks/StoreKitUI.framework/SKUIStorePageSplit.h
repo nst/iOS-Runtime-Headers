@@ -7,14 +7,14 @@
     int  _numberOfPageSections;
     NSArray * _pageComponents;
     SKUIStorePageSectionContext * _sectionContext;
-    double  _widthFraction;
+    float  _widthFraction;
 }
 
 @property (nonatomic, copy) UIColor *dividerColor;
 @property (nonatomic) int numberOfPageSections;
 @property (nonatomic, copy) NSArray *pageComponents;
 @property (nonatomic, retain) SKUIStorePageSectionContext *sectionContext;
-@property (nonatomic) double widthFraction;
+@property (nonatomic) float widthFraction;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

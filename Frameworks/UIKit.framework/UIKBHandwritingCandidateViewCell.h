@@ -21,7 +21,7 @@
 }
 
 @property (nonatomic, copy) TIKeyboardCandidate *candidate;
-@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } edgeInsets;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
 @property (nonatomic, retain) UILabel *label;
 @property (nonatomic) int leftBorderEdge;
 @property (nonatomic, retain) UIKeyboardCandidatePocketShadow *leftHardBorder;
@@ -43,8 +43,8 @@
 - (void)_updateBorders;
 - (id)candidate;
 - (void)didMoveToWindow;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })edgeInsets;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)label;
 - (int)leftBorderEdge;
 - (id)leftHardBorder;

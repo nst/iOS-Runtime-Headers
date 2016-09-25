@@ -5,22 +5,22 @@
 @interface IKImageElement : IKViewElement {
     NSURL * _defaultURL;
     unsigned int  _imageType;
-    double  _srcHeight;
-    double  _srcWidth;
+    float  _srcHeight;
+    float  _srcWidth;
     NSDictionary * _srcset;
 }
 
 @property (nonatomic, readonly) UIColor *borderColor;
 @property (nonatomic, retain) NSURL *defaultURL;
 @property (nonatomic, readonly) int fill;
-@property (nonatomic, readonly) double height;
+@property (nonatomic, readonly) float height;
 @property (nonatomic, readonly) unsigned int imageType;
 @property (nonatomic, readonly, retain) NSURL *placeholderURL;
 @property (nonatomic, readonly) unsigned int position;
 @property (nonatomic, readonly) int reflect;
 @property (nonatomic, readonly, retain) NSDictionary *srcset;
 @property (nonatomic, readonly) NSURL *url;
-@property (nonatomic, readonly) double width;
+@property (nonatomic, readonly) float width;
 
 // Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
 

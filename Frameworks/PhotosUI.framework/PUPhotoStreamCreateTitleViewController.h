@@ -25,7 +25,7 @@
 - (void)_cancelPost:(id)arg1;
 - (id)_placeholderColor;
 - (void)_setTitle:(id)arg1;
-- (struct CGSize { double x1; double x2; })contentSizeForViewInPopover;
+- (struct CGSize { float x1; float x2; })contentSizeForViewInPopover;
 - (void)dealloc;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)loadView;

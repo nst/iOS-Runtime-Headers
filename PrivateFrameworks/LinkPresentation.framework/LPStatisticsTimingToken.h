@@ -5,7 +5,7 @@
 @interface LPStatisticsTimingToken : NSObject {
     BOOL  _isTiming;
     NSString * _metricKey;
-    unsigned int  _startTime;
+    unsigned long long  _startTime;
 }
 
 - (void).cxx_destruct;

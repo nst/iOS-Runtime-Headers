@@ -5,13 +5,13 @@
 @interface PAAggregatedThreadAndDispatchQueue : NSObject <PAAggregatedStack> {
     PAAggregatedProcessInstance * _aggregatedTask;
     NSMutableArray * _contiguousStacks;
-    unsigned int  _cpuTimeNsCached;
-    unsigned int  _dispatchQueueId;
+    unsigned long long  _cpuTimeNsCached;
+    unsigned long long  _dispatchQueueId;
     int  _maxBasePriority;
     int  _maxPriority;
     int  _minBasePriority;
     int  _minPriority;
-    unsigned int  _threadId;
+    unsigned long long  _threadId;
 }
 
 @property (readonly) PAAggregatedProcessInstance *aggregatedTask;
@@ -19,7 +19,7 @@
 @property (readonly) NSMutableArray *contiguousStacks;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property unsigned int dispatchQueueId;
+@property unsigned long long dispatchQueueId;
 @property (readonly) unsigned int firstTimestampIndex;
 @property (readonly) unsigned int hash;
 @property (readonly) BOOL isGlobalForcedIdleThread;
@@ -32,7 +32,7 @@
 @property int minBasePriority;
 @property int minPriority;
 @property (readonly) Class superclass;
-@property unsigned int threadId;
+@property unsigned long long threadId;
 
 - (void).cxx_destruct;
 - (void)addSampleThread:(id)arg1 atTimestampIndex:(unsigned int)arg2 fillGapInTimestampIndexWithPreviousThreads:(BOOL)arg3;
@@ -43,14 +43,14 @@
 - (id)copyDescriptionForSampleFrame:(id)arg1 inSampleTask:(id)arg2;
 - (id)copyStringForMissingSamplesBeforeContiguousStackIndex:(unsigned int)arg1;
 - (int)count;
-- (unsigned int)cpuTimeNs;
+- (unsigned long long)cpuTimeNs;
 - (id)debugDescription;
-- (unsigned int)dispatchQueueId;
+- (unsigned long long)dispatchQueueId;
 - (unsigned int)firstTimestampIndex;
 - (BOOL)hasSingleName:(id*)arg1;
 - (unsigned int)hash;
-- (id)initForIdentificationPurposesWithThreadId:(unsigned int)arg1 andDispatchQueueId:(unsigned int)arg2;
-- (id)initWithAggregatedTask:(id)arg1 andThreadId:(unsigned int)arg2 andDispatchQueueId:(unsigned int)arg3;
+- (id)initForIdentificationPurposesWithThreadId:(unsigned long long)arg1 andDispatchQueueId:(unsigned long long)arg2;
+- (id)initWithAggregatedTask:(id)arg1 andThreadId:(unsigned long long)arg2 andDispatchQueueId:(unsigned long long)arg3;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isGlobalForcedIdleThread;
 - (BOOL)isIdleWorkQueueThread;
@@ -68,12 +68,12 @@
 - (void)printStackToOutputStream:(id)arg1;
 - (void)printToOutputStream:(id)arg1;
 - (id)sampleStore;
-- (void)setDispatchQueueId:(unsigned int)arg1;
+- (void)setDispatchQueueId:(unsigned long long)arg1;
 - (void)setMaxBasePriority:(int)arg1;
 - (void)setMaxPriority:(int)arg1;
 - (void)setMinBasePriority:(int)arg1;
 - (void)setMinPriority:(int)arg1;
-- (void)setThreadId:(unsigned int)arg1;
-- (unsigned int)threadId;
+- (void)setThreadId:(unsigned long long)arg1;
+- (unsigned long long)threadId;
 
 @end

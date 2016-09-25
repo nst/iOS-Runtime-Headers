@@ -10,7 +10,7 @@
         } _unknown_fields_; 
         unsigned int _has_bits_[1]; 
         int _cached_size_; 
-        unsigned int last_object_identifier_; 
+        unsigned long long last_object_identifier_; 
         struct DocumentRevision {} *revision_; 
         struct RepeatedPtrField<TSP::ComponentInfo> { 
             void **elements_; 
@@ -42,7 +42,7 @@
             int total_size_; 
         } file_format_version_; 
         int _file_format_version_cached_byte_size_; 
-        unsigned int save_token_; 
+        unsigned long long save_token_; 
         int preferred_package_type_; 
     }  _message;
 }
@@ -50,9 +50,9 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)initFromUnarchiver:(id)arg1;
-- (struct PackageMetadata { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; unsigned int x5; struct DocumentRevision {} *x6; struct RepeatedPtrField<TSP::ComponentInfo> { void **x_7_1_1; int x_7_1_2; int x_7_1_3; int x_7_1_4; } x7; struct RepeatedPtrField<TSP::DataInfo> { void **x_8_1_1; int x_8_1_2; int x_8_1_3; int x_8_1_4; } x8; struct RepeatedField<unsigned int> { unsigned int *x_9_1_1; int x_9_1_2; int x_9_1_3; } x9; int x10; struct RepeatedField<unsigned int> { unsigned int *x_11_1_1; int x_11_1_2; int x_11_1_3; } x11; int x12; struct RepeatedField<unsigned int> { unsigned int *x_13_1_1; int x_13_1_2; int x_13_1_3; } x13; int x14; unsigned int x15; int x16; }*)message;
+- (struct PackageMetadata { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; unsigned long long x5; struct DocumentRevision {} *x6; struct RepeatedPtrField<TSP::ComponentInfo> { void **x_7_1_1; int x_7_1_2; int x_7_1_3; int x_7_1_4; } x7; struct RepeatedPtrField<TSP::DataInfo> { void **x_8_1_1; int x_8_1_2; int x_8_1_3; int x_8_1_4; } x8; struct RepeatedField<unsigned int> { unsigned int *x_9_1_1; int x_9_1_2; int x_9_1_3; } x9; int x10; struct RepeatedField<unsigned int> { unsigned int *x_11_1_1; int x_11_1_2; int x_11_1_3; } x11; int x12; struct RepeatedField<unsigned int> { unsigned int *x_13_1_1; int x_13_1_2; int x_13_1_3; } x13; int x14; unsigned long long x15; int x16; }*)message;
 - (id)packageLocator;
 - (void)saveToArchiver:(id)arg1;
-- (int)tsp_identifier;
+- (long long)tsp_identifier;
 
 @end

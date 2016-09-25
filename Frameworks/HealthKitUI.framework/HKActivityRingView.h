@@ -5,12 +5,12 @@
 @interface HKActivityRingView : UIView {
     HKActivitySummary * _activitySummary;
     _HKShapeView * _maskView;
-    double  _ringInsetPercentage;
+    float  _ringInsetPercentage;
     HKRingsView * _ringsView;
 }
 
 @property (nonatomic, retain) HKActivitySummary *activitySummary;
-@property (getter=_ringInsetPercentage, setter=_setRingInsetPercentage:, nonatomic) double ringInsetPercentage;
+@property (getter=_ringInsetPercentage, setter=_setRingInsetPercentage:, nonatomic) float ringInsetPercentage;
 
 + (id)_iconSpriteImage;
 
@@ -32,11 +32,11 @@
 - (void)_updateRingsViewDiameterLegacy;
 - (id)activitySummary;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (void)setActivitySummary:(id)arg1;
 - (void)setActivitySummary:(id)arg1 animated:(BOOL)arg2;
-- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

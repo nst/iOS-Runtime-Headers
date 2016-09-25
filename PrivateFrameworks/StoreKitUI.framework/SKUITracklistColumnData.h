@@ -4,15 +4,15 @@
 
 @interface SKUITracklistColumnData : NSObject {
     NSArray * _columns;
-    double  _interColumnSpacing;
-    double  _leftEdgeInset;
-    double  _rightEdgeInset;
+    float  _interColumnSpacing;
+    float  _leftEdgeInset;
+    float  _rightEdgeInset;
 }
 
 @property (nonatomic, copy) NSArray *columns;
-@property (nonatomic) double interColumnSpacing;
-@property (nonatomic) double leftEdgeInset;
-@property (nonatomic) double rightEdgeInset;
+@property (nonatomic) float interColumnSpacing;
+@property (nonatomic) float leftEdgeInset;
+@property (nonatomic) float rightEdgeInset;
 
 - (void).cxx_destruct;
 - (id)_initSKUITracklistColumnData;

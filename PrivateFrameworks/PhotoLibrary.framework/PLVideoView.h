@@ -57,7 +57,7 @@
     BOOL  _prepareMoviePlayerForScrubberAutomatically;
     unsigned int  _preparedMoviePlayer;
     unsigned int  _preparingMoviePlayer;
-    double  _progress;
+    float  _progress;
     double  _remakerEndTime;
     double  _remakerStartTime;
     unsigned int  _remakingFailed;
@@ -67,7 +67,7 @@
     unsigned int  _scrubberIsSubview;
     UIView * _scrubberTitleView;
     NSTimer * _scrubberUpdateTimer;
-    double  _scrubberWidth;
+    float  _scrubberWidth;
     unsigned int  _scrubbing;
     unsigned int  _scrubbingToRight;
     UIActivityIndicatorView * _shadowSpinner;
@@ -85,8 +85,8 @@
     NSObject<OS_dispatch_queue> * _thumbnailReqQueue;
     NSLock * _thumbnailReqlock;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _thumbnailSize;
     PLVideoEditingOverlayView * _trimMessageView;
     PLProgressStack * _trimProgressStack;
@@ -140,7 +140,7 @@
 @property (nonatomic, readonly) UIImageView *previewImageView;
 @property (nonatomic, readonly) UIView *scrubberBackgroundView;
 @property (nonatomic) BOOL scrubberIsSubview;
-@property (nonatomic) double scrubberWidth;
+@property (nonatomic) float scrubberWidth;
 @property (nonatomic) BOOL shouldPlayVideoWhenViewAppears;
 @property (nonatomic) BOOL showsPlayOverlay;
 @property (nonatomic) BOOL showsScrubber;
@@ -173,7 +173,7 @@
 - (void)_clearImageGenerators;
 - (void)_commitPendingAdjustmentsUpdate;
 - (void)_commitPendingAdjustmentsUpdateAndWait:(BOOL)arg1 completionHandler:(id /* block */)arg2;
-- (void)_configureImageGenerator:(id)arg1 thumbnailSize:(struct CGSize { double x1; double x2; })arg2 forSummaryThumbnails:(BOOL)arg3;
+- (void)_configureImageGenerator:(id)arg1 thumbnailSize:(struct CGSize { float x1; float x2; })arg2 forSummaryThumbnails:(BOOL)arg3;
 - (void)_configurePlayerForStreamedVideoIfNecessary;
 - (void)_createScrubberIfNeeded;
 - (void)_deleteFileAtPath:(id)arg1;
@@ -195,7 +195,7 @@
 - (void)_hideTrimMessageView:(BOOL)arg1;
 - (void)_hideVideoOverlay:(BOOL)arg1;
 - (void)_informDelegateAboutProgressChange:(float)arg1;
-- (id)_initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 videoCameraImage:(id)arg2 orientation:(int)arg3;
+- (id)_initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 videoCameraImage:(id)arg2 orientation:(int)arg3;
 - (void)_insertMoviePlayerViewIfNecessary;
 - (void)_invalidateSnapshotImage;
 - (BOOL)_isFetchingVideo;
@@ -225,7 +225,7 @@
 - (void)_removeScrubber;
 - (void)_removeScrubberUpdateTimer;
 - (void)_removeTrimProgressTimer;
-- (void)_requestPreviewPosterFrameForVideoSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)_requestPreviewPosterFrameForVideoSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_reset;
 - (void)_resetScrubberUpdateTimer;
 - (void)_resetTrimProgressTimer;
@@ -264,7 +264,7 @@
 - (void)_updateForEditing;
 - (void)_updatePosterFrameVisibility;
 - (void)_updatePosterImageView;
-- (void)_updateScaleModeForSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)_updateScaleModeForSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_updateScrubberForSlowMotion;
 - (void)_updateScrubberFrame;
 - (void)_updateScrubberValue;
@@ -296,10 +296,10 @@
 - (void)forceStop;
 - (void)handleDoubleTap;
 - (void)hideTrimMessage;
-- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)imageTile;
 - (void)importerFinishedProcessingTrimmedVideo:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 videoCameraImage:(id)arg2 orientation:(int)arg3;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 videoCameraImage:(id)arg2 orientation:(int)arg3;
 - (BOOL)isEditing;
 - (BOOL)isPlaying;
 - (BOOL)isTrimming;
@@ -370,7 +370,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setEditing:(BOOL)arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setImageTile:(id)arg1;
 - (void)setLoadMediaImmediately:(BOOL)arg1;
 - (void)setMaximumTrimLength:(double)arg1;
@@ -387,7 +387,7 @@
 - (void)setTrimmedVideoClip:(id)arg1;
 - (void)set_didInsertMoviePlayerView:(BOOL)arg1;
 - (BOOL)shouldPlayVideoWhenViewAppears;
-- (BOOL)shouldShowCopyCalloutAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (BOOL)shouldShowCopyCalloutAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)showTrimMessage:(id)arg1 withBottomY:(float)arg2;
 - (BOOL)showsPlayOverlay;
 - (BOOL)showsScrubber;

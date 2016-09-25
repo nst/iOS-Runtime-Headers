@@ -80,7 +80,7 @@
     BOOL  _suppressesHiddenSideEffects;
     BOOL  _timeHidden;
     UIColor * _tintColor;
-    double  _translucentBackgroundAlpha;
+    float  _translucentBackgroundAlpha;
     BOOL  _waitingOnCallbackAfterChangingStyleOverridesLocally;
 }
 
@@ -102,9 +102,9 @@
 @property (getter=isTimeHidden, nonatomic) BOOL timeHidden;
 
 + (int)_defaultStyleForRequestedStyle:(int)arg1 styleOverrides:(int)arg2 simulateLegacyAppearance:(BOOL)arg3;
-+ (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameInSceneReferenceSpaceForStyle:(int)arg1 orientation:(int)arg2 inSceneWithReferenceSize:(struct CGSize { double x1; double x2; })arg3;
-+ (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameInSceneReferenceSpaceForStyleAttributes:(id)arg1 orientation:(int)arg2;
-+ (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameInSceneReferenceSpaceForStyleAttributes:(id)arg1 orientation:(int)arg2 inSceneWithReferenceSize:(struct CGSize { double x1; double x2; })arg3;
++ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameInSceneReferenceSpaceForStyle:(int)arg1 orientation:(int)arg2 inSceneWithReferenceSize:(struct CGSize { float x1; float x2; })arg3;
++ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameInSceneReferenceSpaceForStyleAttributes:(id)arg1 orientation:(int)arg2;
++ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameInSceneReferenceSpaceForStyleAttributes:(id)arg1 orientation:(int)arg2 inSceneWithReferenceSize:(struct CGSize { float x1; float x2; })arg3;
 + (BOOL)_isLightContentStyle:(int)arg1;
 + (id)_newStyleAttributesForRequest:(id)arg1;
 + (void)_setDeviceUserInterfaceLayoutDirection:(int)arg1;
@@ -126,7 +126,7 @@
 
 - (void).cxx_destruct;
 - (void)_adjustDoubleHeightTextVisibility;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_backgroundFrameForAttributes:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_backgroundFrameForAttributes:(id)arg1;
 - (id)_backgroundView;
 - (void)_beginDisablingRasterizationForReason:(id)arg1;
 - (void)_clearOverrideHeight;
@@ -142,7 +142,7 @@
 - (void)_evaluateServerRegistration;
 - (void)_finishedSettingStyleWithOldHeight:(float)arg1 newHeight:(float)arg2 animation:(int)arg3;
 - (float)_hiddenAlphaForHideAnimationParameters:(id)arg1;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })_hiddenTransformForHideAnimationParameters:(id)arg1;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_hiddenTransformForHideAnimationParameters:(id)arg1;
 - (BOOL)_isTransparent;
 - (void)_itemViewPerformButtonAction:(id)arg1;
 - (void)_itemViewShouldBeginDisablingRasterization:(id)arg1;
@@ -150,7 +150,7 @@
 - (void)_performBlockWhileIgnoringForegroundViewChanges:(id /* block */)arg1;
 - (id)_prepareInterruptedAnimationCompositeViewIncludingForeground:(BOOL)arg1;
 - (id)_prepareToSetStyle:(id)arg1 animation:(int)arg2 forced:(BOOL)arg3;
-- (BOOL)_rectIntersectsTimeItem:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (BOOL)_rectIntersectsTimeItem:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_requestStyleAttributes:(id)arg1 animationParameters:(id)arg2;
 - (void)_requestStyleAttributes:(id)arg1 animationParameters:(id)arg2 forced:(BOOL)arg3;
 - (int)_requestedStyle;
@@ -160,11 +160,11 @@
 - (void)_setStyle:(id)arg1;
 - (void)_setStyle:(id)arg1 animation:(int)arg2;
 - (void)_setVisualAltitude:(float)arg1;
-- (void)_setVisualAltitudeBias:(struct CGSize { double x1; double x2; })arg1;
+- (void)_setVisualAltitudeBias:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)_shouldReverseLayoutDirection;
 - (BOOL)_shouldSeekHigherPriorityTouchTarget;
 - (BOOL)_shouldUseInProcessProviderDoubleHeightStatusString;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })_slideTransform;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_slideTransform;
 - (float)_standardHeight;
 - (void)_statusBarDidAnimateRotation;
 - (void)_statusBarWillAnimateRotation;
@@ -182,7 +182,7 @@
 - (void)animateUnlock;
 - (void)crossfadeTime:(BOOL)arg1 duration:(double)arg2;
 - (id)currentDoubleHeightLabelText;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })currentFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })currentFrame;
 - (float)currentHeight;
 - (int)currentStyle;
 - (id)currentStyleRequestForStyle:(int)arg1;
@@ -197,12 +197,12 @@
 - (void)forceUpdateToData:(const struct { BOOL x1[34]; BOOL x2[64]; int x3; int x4; BOOL x5[100]; BOOL x6[100]; BOOL x7[2][100]; BOOL x8[1024]; unsigned int x9; int x10; int x11; unsigned int x12; int x13; unsigned int x14; BOOL x15[150]; int x16; int x17; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; BOOL x21[256]; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; BOOL x31[256]; BOOL x32[256]; BOOL x33[100]; BOOL x34[100]; unsigned int x35 : 1; unsigned int x36 : 1; }*)arg1 animated:(BOOL)arg2;
 - (id)foregroundColor;
 - (void)forgetEitherSideHistory;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameForOrientation:(int)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForOrientation:(int)arg1;
 - (float)heightForOrientation:(int)arg1;
 - (BOOL)homeItemsDisabled;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 showForegroundView:(BOOL)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 showForegroundView:(BOOL)arg2 inProcessStateProvider:(id)arg3;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 showForegroundView:(BOOL)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 showForegroundView:(BOOL)arg2 inProcessStateProvider:(id)arg3;
 - (BOOL)isDoubleHeight;
 - (BOOL)isHidden;
 - (BOOL)isTimeHidden;
@@ -212,7 +212,7 @@
 - (int)legibilityStyle;
 - (void)noteStyleOverridesChangedLocally;
 - (BOOL)persistentAnimationsEnabled;
-- (BOOL)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)requestStyle:(int)arg1;
 - (void)requestStyle:(int)arg1 animated:(BOOL)arg2;
 - (void)requestStyle:(int)arg1 animated:(BOOL)arg2 forced:(BOOL)arg3;

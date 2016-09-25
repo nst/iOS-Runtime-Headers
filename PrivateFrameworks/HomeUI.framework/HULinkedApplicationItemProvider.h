@@ -15,7 +15,7 @@
 - (void).cxx_destruct;
 - (id)_generateItemsFromStoreResult:(id)arg1;
 - (int)_iconVariantForScale:(float)arg1;
-- (id)_imageForSize:(struct CGSize { double x1; double x2; })arg1 fromArtwork:(id)arg2;
+- (id)_imageForSize:(struct CGSize { float x1; float x2; })arg1 fromArtwork:(id)arg2;
 - (id)_itemForLibraryItem:(id)arg1;
 - (id)_itemForStoreItem:(id)arg1;
 - (id)_loadStoreIconWithArtwork:(id)arg1 results:(id)arg2;

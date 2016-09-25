@@ -5,12 +5,12 @@
 @interface PXRelatedTilingLayout : PXTilingLayout {
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _contentBounds;
     PXRelatedDataSource * _dataSource;
@@ -34,19 +34,19 @@
         int subitem; 
     }  _highlightedIndexPath;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _interItemSpacing;
     BOOL  _isDataSourceTransient;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _itemSize;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _margins;
     int  _maximumNumberOfRows;
     int  _numberOfColumns;
@@ -63,32 +63,32 @@
 @property (nonatomic, retain) PXRelatedSpec *spec;
 
 - (void).cxx_destruct;
-- (void)_enumerateEntryIndexesInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 usingBlock:(id /* block */)arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_rectForActivityIndicator;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_rectForEmptyPlaceholder;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_rectForEntryAtIndex:(int)arg1;
+- (void)_enumerateEntryIndexesInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 usingBlock:(id /* block */)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_rectForActivityIndicator;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_rectForEmptyPlaceholder;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_rectForEntryAtIndex:(int)arg1;
 - (BOOL)_shouldShowActivityIndicator;
 - (BOOL)_shouldShowEmptyPlaceholder;
 - (struct PXTileIdentifier { unsigned int x1; unsigned int x2[10]; })_tileIdentifierForTileKind:(int)arg1 entryIndex:(int)arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })contentBounds;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentBounds;
 - (id)dataSource;
 - (id)delegate;
-- (void)enumerateTilesInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withOptions:(id)arg2 usingBlock:(id /* block */)arg3;
+- (void)enumerateTilesInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withOptions:(id)arg2 usingBlock:(id /* block */)arg3;
 - (struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })focusedIndexPath;
-- (BOOL)getGeometry:(out struct PXTileGeometry { struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_1_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_1_1_2; } x1; struct CGPoint { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; struct CGAffineTransform { double x_4_1_1; double x_4_1_2; double x_4_1_3; double x_4_1_4; double x_4_1_5; double x_4_1_6; } x4; double x5; double x6; BOOL x7; struct CGSize { double x_8_1_1; double x_8_1_2; } x8; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_9_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_9_1_2; } x9; void *x10; }*)arg1 group:(out unsigned int*)arg2 userData:(out id*)arg3 forTileWithIdentifier:(struct PXTileIdentifier { unsigned int x1; unsigned int x2[10]; })arg4;
+- (BOOL)getGeometry:(out struct PXTileGeometry { struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_1_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_1_1_2; } x1; struct CGPoint { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; struct CGAffineTransform { float x_4_1_1; float x_4_1_2; float x_4_1_3; float x_4_1_4; float x_4_1_5; float x_4_1_6; } x4; float x5; float x6; BOOL x7; struct CGSize { float x_8_1_1; float x_8_1_2; } x8; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_9_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_9_1_2; } x9; void *x10; }*)arg1 group:(out unsigned int*)arg2 userData:(out id*)arg3 forTileWithIdentifier:(struct PXTileIdentifier { unsigned int x1; unsigned int x2[10]; })arg4;
 - (struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })highlightedIndexPath;
-- (struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })indexPathForEntryAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })indexPathForEntryAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })indexPathForTileIdentifier:(struct PXTileIdentifier { unsigned int x1; unsigned int x2[10]; })arg1;
 - (id)init;
 - (int)maximumNumberOfRows;
 - (void)prepareLayout;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rectOfInterestForEntryAtIndexPath:(struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectOfInterestForEntryAtIndexPath:(struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })arg1;
 - (void)setDataSource:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFocusedIndexPath:(struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })arg1;
 - (void)setHighlightedIndexPath:(struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })arg1;
 - (void)setMaximumNumberOfRows:(int)arg1;
-- (void)setReferenceSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setReferenceSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setSpec:(id)arg1;
 - (id)spec;
 - (struct PXTileIdentifier { unsigned int x1; unsigned int x2[10]; })tileIdentifierForTileKind:(int)arg1 entryIndexPath:(struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })arg2;

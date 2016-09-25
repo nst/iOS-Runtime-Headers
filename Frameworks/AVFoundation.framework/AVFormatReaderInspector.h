@@ -20,7 +20,7 @@
 - (id)commonMetadata;
 - (BOOL)containsFragments;
 - (void)dealloc;
-- (struct { int x1; int x2; unsigned int x3; int x4; })duration;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
 - (void)finalize;
 - (unsigned int)hash;
 - (id)initWithFormatReader:(struct OpaqueFigFormatReader { }*)arg1;
@@ -30,11 +30,11 @@
 - (BOOL)isReadable;
 - (id)lyrics;
 - (id)metadataForFormat:(id)arg1;
-- (struct CGSize { double x1; double x2; })naturalSize;
+- (struct CGSize { float x1; float x2; })naturalSize;
 - (int)naturalTimeScale;
 - (float)preferredRate;
 - (float)preferredSoundCheckVolumeNormalization;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })preferredTransform;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })preferredTransform;
 - (float)preferredVolume;
 - (BOOL)providesPreciseDurationAndTiming;
 - (long)trackCount;

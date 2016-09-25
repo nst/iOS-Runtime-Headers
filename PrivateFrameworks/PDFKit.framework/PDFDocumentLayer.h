@@ -10,7 +10,7 @@
 - (void)dealloc;
 - (void)invalidatePDFLayout;
 - (void)setDocument:(id)arg1;
-- (void)setViewAffineTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
-- (void)setViewTranslation:(struct CGPoint { double x1; double x2; })arg1 andScale:(float)arg2;
+- (void)setViewAffineTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
+- (void)setViewTranslation:(struct CGPoint { float x1; float x2; })arg1 andScale:(float)arg2;
 
 @end

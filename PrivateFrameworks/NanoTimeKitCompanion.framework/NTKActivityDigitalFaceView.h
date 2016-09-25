@@ -3,22 +3,22 @@
  */
 
 @interface NTKActivityDigitalFaceView : NTKFaceView <NTKActivityFaceViewFactoryDelegate> {
-    double  _blinkerAndSecondsWidth;
+    float  _blinkerAndSecondsWidth;
     UILabel * _briskMinutesLabel;
     struct RingLayout { 
-        double bottomEdgeInset; 
-        double leftEdgeInset; 
-        double diameter; 
-        double thickness; 
-        double interspacing; 
+        float bottomEdgeInset; 
+        float leftEdgeInset; 
+        float diameter; 
+        float thickness; 
+        float interspacing; 
     }  _currentRingLayout;
     NTKPolygonCylinderView * _densityEditingPolygonView;
     UILabel * _energyLabel;
     NTKActivityFaceViewFactory * _faceViewFactory;
-    double  _lastBriskPercentage;
-    double  _lastEnergyPercentage;
-    double  _lastSedentaryPercentage;
-    double  _rightTimeViewInset;
+    float  _lastBriskPercentage;
+    float  _lastEnergyPercentage;
+    float  _lastSedentaryPercentage;
+    float  _rightTimeViewInset;
     HKRingsView * _ringsView;
     BOOL  _showSeconds;
     UILabel * _standHoursLabel;
@@ -31,7 +31,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic) double rightTimeViewInset;
+@property (nonatomic) float rightTimeViewInset;
 @property (nonatomic) BOOL showSeconds;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NTKDigitalTimeLabel *timeView;
@@ -63,7 +63,7 @@
 - (void)_endScrubbingAnimated:(BOOL)arg1 withCompletion:(id /* block */)arg2;
 - (void)_enumerateActivityLabels:(id /* block */)arg1;
 - (BOOL)_fadesComplicationSlot:(id)arg1 inEditMode:(int)arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_keylineFrameForCustomEditMode:(int)arg1 slot:(id)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_keylineFrameForCustomEditMode:(int)arg1 slot:(id)arg2;
 - (unsigned int)_keylineLabelAlignmentForComplicationSlot:(id)arg1;
 - (unsigned int)_keylineLabelAlignmentForCustomEditMode:(int)arg1 slot:(id)arg2;
 - (BOOL)_keylineLabelShouldShowIndividualOptionNamesForCustomEditMode:(int)arg1;
@@ -85,7 +85,7 @@
 - (void)_renderSynchronouslyWithImageQueueDiscard:(BOOL)arg1;
 - (float)_rightTimeViewInsetForEditMode:(int)arg1;
 - (float)_ringAlphaForEditMode:(int)arg1;
-- (struct CGPoint { double x1; double x2; })_ringCenterForLayout:(struct RingLayout { double x1; double x2; double x3; double x4; double x5; })arg1;
+- (struct CGPoint { float x1; float x2; })_ringCenterForLayout:(struct RingLayout { float x1; float x2; float x3; float x4; float x5; })arg1;
 - (id)_ringGroupController;
 - (void)_scrubToDate:(id)arg1 animated:(BOOL)arg2;
 - (void)_setActivityViewsAlpha:(float)arg1 animated:(BOOL)arg2;
@@ -93,7 +93,7 @@
 - (void)_startScrubbingAnimated:(BOOL)arg1 withCompletion:(id /* block */)arg2;
 - (BOOL)_supportsTimeScrubbing;
 - (float)_timeAlphaForEditMode:(int)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_timeViewBackgroundRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_timeViewBackgroundRect;
 - (void)_unloadSnapshotContentViews;
 - (void)_updateCurrentRingLayoutIfNecessary;
 - (void)_updateTimeViewSecondsDisplayState;
@@ -101,7 +101,7 @@
 - (void)applyEntryModel:(id)arg1 animated:(BOOL)arg2;
 - (void)applyEntryModelWithUnfilledRings:(id)arg1;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (float)rightTimeViewInset;
 - (void)setDataMode:(int)arg1;
 - (void)setOverrideDate:(id)arg1 duration:(double)arg2;

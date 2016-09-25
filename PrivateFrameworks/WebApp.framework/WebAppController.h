@@ -11,12 +11,12 @@
     NSMutableSet * _highLevelDomainsAndPortsToUseOnlyAvailableIdentityWithoutPrompting;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _inputViewScreenBoundsAfterRotation;
     BOOL  _isSuspended;
@@ -25,12 +25,12 @@
     unsigned int  _rotationEdgePin;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _rotationRect;
     WBUSheetController * _sheetController;
@@ -67,7 +67,7 @@
 - (id)_sheetController;
 - (void)addAlert:(id)arg1;
 - (void)addAlertWithTitle:(id)arg1 bodyText:(id)arg2 context:(id)arg3;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })browserFrameForOrientation:(int)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })browserFrameForOrientation:(int)arg1;
 - (void)cancelFromAuthenticationManager:(id)arg1 forChallenge:(id)arg2;
 - (id)containerViewForAuthenticationPanel;
 - (void)continueAfterCertificateAlertWithContext:(id)arg1;

@@ -8,7 +8,7 @@
     _UIFeedback<_UIFeedbackDiscretePlayable> * _animatingThresholdFeedback;
     id /* block */  _animatingThresholdFeedbackUpdateBlock;
     int  _defaultAxis;
-    double  _minDistanceFromEdge;
+    float  _minDistanceFromEdge;
     _UIFeedback<_UIFeedbackContinuousPlayable> * _userInteractingBeyondEdgeFeedback;
     id /* block */  _userInteractingBeyondEdgeFeedbackUpdateBlock;
     _UIFeedback<_UIFeedbackDiscretePlayable> * _userInteractingReleaseFeedback;
@@ -22,7 +22,7 @@
 @property (nonatomic, retain) _UIFeedback<_UIFeedbackDiscretePlayable> *animatingThresholdFeedback;
 @property (nonatomic, copy) id /* block */ animatingThresholdFeedbackUpdateBlock;
 @property (getter=_defaultAxis, setter=_setDefaultAxis:, nonatomic) int defaultAxis;
-@property (nonatomic) double minDistanceFromEdge;
+@property (nonatomic) float minDistanceFromEdge;
 @property (nonatomic, retain) _UIFeedback<_UIFeedbackContinuousPlayable> *userInteractingBeyondEdgeFeedback;
 @property (nonatomic, copy) id /* block */ userInteractingBeyondEdgeFeedbackUpdateBlock;
 @property (nonatomic, retain) _UIFeedback<_UIFeedbackDiscretePlayable> *userInteractingReleaseFeedback;

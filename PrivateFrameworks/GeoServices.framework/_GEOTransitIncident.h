@@ -19,7 +19,7 @@
 @property (nonatomic, readonly) NSString *messageForNonRoutable;
 @property (nonatomic, readonly) NSString *messageForRoutePlanning;
 @property (nonatomic, readonly) NSString *messageForRouteStepping;
-@property (nonatomic, readonly) unsigned int muid;
+@property (nonatomic, readonly) unsigned long long muid;
 @property (nonatomic, readonly) NSDate *startDate;
 @property (nonatomic, readonly) NSString *summary;
 @property (readonly) Class superclass;
@@ -39,7 +39,7 @@
 - (id)messageForNonRoutable;
 - (id)messageForRoutePlanning;
 - (id)messageForRouteStepping;
-- (unsigned int)muid;
+- (unsigned long long)muid;
 - (id)startDate;
 - (id)summary;
 - (id)title;

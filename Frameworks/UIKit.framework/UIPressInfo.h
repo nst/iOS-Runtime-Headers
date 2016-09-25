@@ -4,7 +4,7 @@
 
 @interface UIPressInfo : NSObject {
     unsigned int  _clickCount;
-    double  _force;
+    float  _force;
     unsigned int  _gameControllerComponent;
     BOOL  _longClick;
     int  _phase;
@@ -14,7 +14,7 @@
 }
 
 @property (nonatomic) unsigned int clickCount;
-@property (nonatomic) double force;
+@property (nonatomic) float force;
 @property (nonatomic) unsigned int gameControllerComponent;
 @property (getter=isLongClick, nonatomic) BOOL longClick;
 @property (nonatomic) int phase;

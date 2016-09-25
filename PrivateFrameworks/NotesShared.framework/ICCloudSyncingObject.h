@@ -10,7 +10,7 @@
 
 @property (nonatomic, retain) ICCloudState *cloudState;
 @property (nonatomic, retain) NSData *cryptoInitializationVector;
-@property (nonatomic) int cryptoIterationCount;
+@property (nonatomic) long long cryptoIterationCount;
 @property (nonatomic, retain) NSData *cryptoSalt;
 @property (nonatomic, retain) NSData *cryptoTag;
 @property (nonatomic, retain) NSData *cryptoWrappedKey;
@@ -25,7 +25,7 @@
 @property (nonatomic, readonly) BOOL isUnsupported;
 @property (nonatomic) BOOL markedForDeletion;
 @property (getter=isMergingUnappliedEncryptedRecord, nonatomic) BOOL mergingUnappliedEncryptedRecord;
-@property (nonatomic) int minimumSupportedNotesVersion;
+@property (nonatomic) long long minimumSupportedNotesVersion;
 @property (nonatomic) BOOL needsInitialFetchFromCloud;
 @property (nonatomic) BOOL needsToBeFetchedFromCloud;
 @property (nonatomic) BOOL needsToLoadDecryptedValues;
@@ -112,7 +112,7 @@
 - (BOOL)isInICloudAccount;
 - (BOOL)isMergingUnappliedEncryptedRecord;
 - (BOOL)isOwnedByCurrentUser;
-- (int)isPushingSameOrLaterThanVersion:(int)arg1;
+- (long long)isPushingSameOrLaterThanVersion:(long long)arg1;
 - (BOOL)isSharedRootObject;
 - (BOOL)isSharedViaICloud;
 - (BOOL)isUnsupported;
@@ -169,7 +169,7 @@
 - (void)setServerRecord:(id)arg1;
 - (void)setServerShareIfNewer:(id)arg1;
 - (void)setValue:(id)arg1 forEncryptableKey:(id)arg2;
-- (void)setVersion:(int)arg1 forOperation:(id)arg2;
+- (void)setVersion:(long long)arg1 forOperation:(id)arg2;
 - (id)shareTitle;
 - (id)shareType;
 - (id)shortLoggingDescription;
@@ -186,7 +186,7 @@
 - (id)userSpecificRecordType;
 - (BOOL)validateIdentifier:(inout id*)arg1 error:(out id*)arg2;
 - (id)valueForEncryptableKey:(id)arg1;
-- (int)versionForOperation:(id)arg1;
+- (long long)versionForOperation:(id)arg1;
 - (BOOL)wantsUserSpecificRecord;
 - (id)zoneOwnerName;
 

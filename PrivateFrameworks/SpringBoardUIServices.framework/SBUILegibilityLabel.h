@@ -14,25 +14,25 @@
     _UILegibilityView * _legibilityView;
     UILabel * _lookasideLabel;
     int  _options;
-    double  _strength;
+    float  _strength;
     NSString * _string;
     UIColor * _textColorOverride;
 }
 
 @property (nonatomic) BOOL adjustsFontSizeToFitWidth;
 @property (nonatomic, copy) NSAttributedString *attributedText;
-@property (nonatomic, readonly) double baselineOffset;
+@property (nonatomic, readonly) float baselineOffset;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) double firstBaselineOffsetFromBottom;
+@property (nonatomic, readonly) float firstBaselineOffsetFromBottom;
 @property (nonatomic, retain) UIFont *font;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly) double lastBaselineOffsetFromBottom;
+@property (nonatomic, readonly) float lastBaselineOffsetFromBottom;
 @property (nonatomic, retain) _UILegibilitySettings *legibilitySettings;
 @property (nonatomic) int lineBreakMode;
-@property (nonatomic) double minimumScaleFactor;
+@property (nonatomic) float minimumScaleFactor;
 @property (nonatomic) int numberOfLines;
-@property (nonatomic) double strength;
+@property (nonatomic) float strength;
 @property (nonatomic, copy) NSString *string;
 @property (readonly) Class superclass;
 @property (nonatomic) int textAlignment;
@@ -52,7 +52,7 @@
 - (float)firstBaselineOffsetFromBottom;
 - (id)font;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithSettings:(id)arg1 strength:(float)arg2;
 - (id)initWithSettings:(id)arg1 strength:(float)arg2 string:(id)arg3 font:(id)arg4;
 - (id)initWithSettings:(id)arg1 strength:(float)arg2 string:(id)arg3 font:(id)arg4 options:(int)arg5;
@@ -64,9 +64,9 @@
 - (int)numberOfLines;
 - (void)setAdjustsFontSizeToFitWidth:(BOOL)arg1;
 - (void)setAttributedText:(id)arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setFont:(id)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setLegibilitySettings:(id)arg1;
 - (void)setLineBreakMode:(int)arg1;
 - (void)setMinimumScaleFactor:(float)arg1;
@@ -77,7 +77,7 @@
 - (void)setTextAlignment:(int)arg1;
 - (void)setTextColor:(id)arg1;
 - (void)setUseColorFilters:(BOOL)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (float)strength;
 - (id)string;
 - (int)textAlignment;

@@ -5,21 +5,21 @@
 @interface _UIFlowLayoutInfo : NSObject {
     int  _computedEstimatedCount;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _computedEstimatedSum;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _contentSize;
-    double  _dimension;
+    float  _dimension;
     BOOL  _estimatesSizes;
     BOOL  _horizontal;
     BOOL  _isValid;
     UICollectionViewFlowLayout * _layout;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _layoutSize;
     BOOL  _leftToRight;
     struct { 
@@ -32,19 +32,19 @@
     BOOL  _usesFloatingHeaderFooter;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _visibleBounds;
 }
 
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } computedEstimatedSize;
-@property (nonatomic) struct CGSize { double x1; double x2; } contentSize;
-@property (nonatomic) double dimension;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } computedEstimatedSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } contentSize;
+@property (nonatomic) float dimension;
 @property (nonatomic) BOOL estimatesSizes;
 @property (nonatomic) BOOL horizontal;
 @property (nonatomic) UICollectionViewFlowLayout *layout;
@@ -55,13 +55,13 @@
 
 - (void).cxx_destruct;
 - (id)addSection;
-- (struct CGSize { double x1; double x2; })computedEstimatedSize;
-- (struct CGSize { double x1; double x2; })contentSize;
+- (struct CGSize { float x1; float x2; })computedEstimatedSize;
+- (struct CGSize { float x1; float x2; })contentSize;
 - (id)copy;
 - (void)didUpdateSizeForSection:(int)arg1 withDelta:(float)arg2;
 - (float)dimension;
 - (BOOL)estimatesSizes;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameForItemAtIndexPath:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForItemAtIndexPath:(id)arg1;
 - (BOOL)horizontal;
 - (id)init;
 - (void)invalidate:(BOOL)arg1;
@@ -70,14 +70,14 @@
 - (BOOL)leftToRight;
 - (struct { int x1; int x2; int x3; })rowAlignmentOptions;
 - (id)sections;
-- (void)setContentSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setDimension:(float)arg1;
 - (void)setEstimatesSizes:(BOOL)arg1;
 - (void)setHorizontal:(BOOL)arg1;
 - (void)setLayout:(id)arg1;
 - (void)setLeftToRight:(BOOL)arg1;
 - (void)setRowAlignmentOptions:(struct { int x1; int x2; int x3; })arg1;
-- (id)setSize:(struct CGSize { double x1; double x2; })arg1 forItemAtIndexPath:(id)arg2;
+- (id)setSize:(struct CGSize { float x1; float x2; })arg1 forItemAtIndexPath:(id)arg2;
 - (void)setUsesFloatingHeaderFooter:(BOOL)arg1;
 - (id)snapshot;
 - (id)specifiedItemSizes;

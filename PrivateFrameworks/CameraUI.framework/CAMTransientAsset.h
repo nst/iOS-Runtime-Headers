@@ -14,16 +14,16 @@
     unsigned int  _numberOfRepresentedAssets;
     NSURL * _persistenceURL;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _photoIrisStillDisplayTime;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _photoIrisVideoDuration;
     unsigned int  _pixelHeight;
     unsigned int  _pixelWidth;
@@ -52,8 +52,8 @@
 @property (nonatomic, readonly) NSDate *modificationDate;
 @property (nonatomic, readonly) unsigned int numberOfRepresentedAssets;
 @property (nonatomic, readonly, copy) NSURL *persistenceURL;
-@property (nonatomic, readonly) struct { int x1; int x2; unsigned int x3; int x4; } photoIrisStillDisplayTime;
-@property (nonatomic, readonly) struct { int x1; int x2; unsigned int x3; int x4; } photoIrisVideoDuration;
+@property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } photoIrisStillDisplayTime;
+@property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } photoIrisVideoDuration;
 @property (nonatomic, readonly) unsigned int pixelHeight;
 @property (nonatomic, readonly) unsigned int pixelWidth;
 @property (nonatomic, readonly) UIImage *placeholderImage;
@@ -88,8 +88,8 @@
 - (id)modificationDate;
 - (unsigned int)numberOfRepresentedAssets;
 - (id)persistenceURL;
-- (struct { int x1; int x2; unsigned int x3; int x4; })photoIrisStillDisplayTime;
-- (struct { int x1; int x2; unsigned int x3; int x4; })photoIrisVideoDuration;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })photoIrisStillDisplayTime;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })photoIrisVideoDuration;
 - (unsigned int)pixelHeight;
 - (unsigned int)pixelWidth;
 - (id)placeholderImage;

@@ -18,7 +18,7 @@
 - (UIScrollView *)toolControllerImageScrollView:(PUPhotoEditToolController *)arg1;
 - (UIView *)toolControllerMainContainerView:(PUPhotoEditToolController *)arg1;
 - (PLPhotoEditRenderer *)toolControllerMainRenderer:(PUPhotoEditToolController *)arg1;
-- (struct CGSize { double x1; double x2; })toolControllerOriginalImageSize:(PUPhotoEditToolController *)arg1;
+- (struct CGSize { float x1; float x2; })toolControllerOriginalImageSize:(PUPhotoEditToolController *)arg1;
 - (UIView *)toolControllerPreviewView:(PUPhotoEditToolController *)arg1;
 - (PLPhotoEditModel *)toolControllerUneditedPhotoEditModel:(PUPhotoEditToolController *)arg1;
 

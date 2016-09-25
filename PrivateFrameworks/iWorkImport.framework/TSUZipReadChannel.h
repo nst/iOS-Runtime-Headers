@@ -24,7 +24,7 @@
 - (BOOL)isValid;
 - (BOOL)processData:(id)arg1 CRC:(unsigned int*)arg2 isDone:(BOOL)arg3 handler:(id /* block */)arg4;
 - (BOOL)readFileHeaderFromData:(id)arg1 headerLength:(unsigned int*)arg2;
-- (void)readFromOffset:(int)arg1 length:(unsigned long)arg2 handler:(id /* block */)arg3;
+- (void)readFromOffset:(long long)arg1 length:(unsigned long)arg2 handler:(id /* block */)arg3;
 - (void)readWithFileHeaderLength:(unsigned long)arg1 handler:(id /* block */)arg2;
 - (void)readWithHandler:(id /* block */)arg1;
 - (void)setLowWater:(unsigned long)arg1;

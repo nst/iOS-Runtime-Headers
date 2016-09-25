@@ -16,7 +16,7 @@
 - (void)_clearSignatures:(unsigned int)arg1 isPackage:(BOOL)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)descriptionWithContext:(id)arg1;
-- (unsigned int)diffAgainstLocalVersion:(id)arg1;
+- (unsigned long long)diffAgainstLocalVersion:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initForPackage:(BOOL)arg1;
 - (id)initFromResultSet:(id)arg1 pos:(int)arg2;
@@ -24,7 +24,7 @@
 - (id)initWithLocalVersion:(id)arg1;
 - (id)initWithServerVersion:(id)arg1;
 - (id)initWithVersion:(id)arg1;
-- (BOOL)isMissingUploadsWithDiffs:(unsigned int)arg1;
+- (BOOL)isMissingUploadsWithDiffs:(unsigned long long)arg1;
 - (id)isPackageObj;
 - (void)setUploadError:(id)arg1;
 - (void)setUploadedAssets:(id)arg1;

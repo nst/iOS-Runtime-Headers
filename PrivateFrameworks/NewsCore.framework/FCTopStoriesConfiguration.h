@@ -4,34 +4,34 @@
 
 @interface FCTopStoriesConfiguration : NSObject {
     NSString * _channelID;
-    int  _cutoffTime;
-    int  _maximumArticleCount;
+    long long  _cutoffTime;
+    long long  _maximumArticleCount;
     NTPBTopStoriesConfig * _pbConfig;
     BOOL  _pinningEnabled;
     BOOL  _promotingEnabled;
-    int  _storyTypeTimeout;
+    long long  _storyTypeTimeout;
     NSDictionary * _styleConfigurations;
 }
 
 @property (nonatomic, readonly) NSString *channelID;
-@property (nonatomic, readonly) int cutoffTime;
-@property (nonatomic, readonly) int maximumArticleCount;
+@property (nonatomic, readonly) long long cutoffTime;
+@property (nonatomic, readonly) long long maximumArticleCount;
 @property (getter=isPinningEnabled, nonatomic, readonly) BOOL pinningEnabled;
 @property (getter=isPromotingEnabled, nonatomic, readonly) BOOL promotingEnabled;
-@property (nonatomic, readonly) int storyTypeTimeout;
+@property (nonatomic, readonly) long long storyTypeTimeout;
 @property (nonatomic, readonly) NSDictionary *styleConfigurations;
 
 - (void).cxx_destruct;
 - (id)channelID;
-- (int)cutoffTime;
+- (long long)cutoffTime;
 - (unsigned int)hash;
 - (id)initWithDefaults;
 - (id)initWithPBTopStoriesConfig:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isPinningEnabled;
 - (BOOL)isPromotingEnabled;
-- (int)maximumArticleCount;
-- (int)storyTypeTimeout;
+- (long long)maximumArticleCount;
+- (long long)storyTypeTimeout;
 - (id)styleConfigurations;
 
 @end

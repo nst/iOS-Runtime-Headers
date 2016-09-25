@@ -5,10 +5,10 @@
 @interface CPParagraphFlow : NSObject {
     BOOL  adjacentToCallout;
     int  calloutType;
-    double  fBottom;
-    double  fLeft;
-    double  fRight;
-    double  fTop;
+    float  fBottom;
+    float  fLeft;
+    float  fRight;
+    float  fTop;
     CPParagraph * nextInColumn;
     CPParagraph * paragraph;
     NSMutableArray * paragraphsAbove;
@@ -19,15 +19,15 @@
 }
 
 @property int calloutType;
-@property double fBottom;
-@property double fLeft;
-@property double fRight;
+@property float fBottom;
+@property float fLeft;
+@property float fRight;
 @property (nonatomic) CPParagraph *nextInColumn;
 @property (nonatomic, retain) CPParagraph *paragraph;
 @property BOOL placed;
 
 - (float)area;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })belowBounds;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })belowBounds;
 - (id)belowTwoSides:(unsigned int)arg1;
 - (int)calloutType;
 - (float)dAbove;

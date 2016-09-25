@@ -5,7 +5,7 @@
 @interface _NSCompositeLayoutDimension : NSLayoutDimension <NSCompositeLayoutAnchor> {
     NSLayoutDimension * _firstLayoutDimension;
     NSLayoutDimension * _secondLayoutDimension;
-    double  _secondLayoutDimensionMultiplier;
+    float  _secondLayoutDimensionMultiplier;
 }
 
 @property (readonly) NSArray *_childAnchors;

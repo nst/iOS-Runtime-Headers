@@ -3,13 +3,13 @@
  */
 
 @interface PKExtendedTraitCollection : NSObject {
-    double  _displayScale;
+    float  _displayScale;
     int  _layoutSizeClass;
     int  _layoutSizeSubclass;
     int  _userInterfaceIdiom;
 }
 
-@property (nonatomic) double displayScale;
+@property (nonatomic) float displayScale;
 @property (nonatomic) int layoutSizeClass;
 @property (nonatomic) int layoutSizeSubclass;
 @property (nonatomic) int userInterfaceIdiom;

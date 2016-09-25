@@ -3,14 +3,14 @@
  */
 
 @interface SKUIViewElementHorizontalLayout : NSObject {
-    double  _elementSpacing;
-    double  _layoutWidth;
+    float  _elementSpacing;
+    float  _layoutWidth;
     int  _maximumElementsPerLine;
     int  _maximumLines;
 }
 
-@property (nonatomic) double elementSpacing;
-@property (nonatomic) double layoutWidth;
+@property (nonatomic) float elementSpacing;
+@property (nonatomic) float layoutWidth;
 @property (nonatomic) int maximumElementsPerLine;
 @property (nonatomic) int maximumLines;
 

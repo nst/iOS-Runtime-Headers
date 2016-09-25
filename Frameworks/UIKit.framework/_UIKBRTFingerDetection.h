@@ -24,7 +24,7 @@
 - (void)_updateFingerFeedback:(id)arg1;
 - (void)_updateTouchInfoForFingerID:(unsigned int)arg1;
 - (void)_updateTouchInfoFromOutsideInWithArray:(id)arg1 indexes:(id)arg2 newIdentityDict:(id)arg3 fakeIndex:(id)arg4;
-- (void)addTouchLocation:(struct CGPoint { double x1; double x2; })arg1 withRadius:(float)arg2 withTouchTime:(double)arg3 withIdentifier:(id)arg4;
+- (void)addTouchLocation:(struct CGPoint { float x1; float x2; })arg1 withRadius:(float)arg2 withTouchTime:(double)arg3 withIdentifier:(id)arg4;
 - (void)dealloc;
 - (id)fakeLeftIndex;
 - (id)fakeRightIndex;
@@ -35,7 +35,7 @@
 - (id)fingerIdsRelatedToTouchWithIdentifier:(id)arg1 sinceTimestamp:(double)arg2 includeThumbs:(BOOL)arg3;
 - (id)init;
 - (id)initWithParentView:(id)arg1;
-- (void)moveTouchWithIdentifier:(id)arg1 toLocation:(struct CGPoint { double x1; double x2; })arg2 withRadius:(float)arg3 atTouchTime:(double)arg4;
+- (void)moveTouchWithIdentifier:(id)arg1 toLocation:(struct CGPoint { float x1; float x2; })arg2 withRadius:(float)arg3 atTouchTime:(double)arg4;
 - (void)removeTouchWithIdentifier:(id)arg1 touchCancelled:(BOOL)arg2;
 - (void)reset;
 - (void)setFakeLeftIndex:(id)arg1;
@@ -45,8 +45,8 @@
 - (void)setFingerFeedbackViewMap:(id)arg1;
 - (void)setTouches:(id)arg1;
 - (id)touchIdentifiersForFingerId:(unsigned int)arg1;
-- (struct CGPoint { double x1; double x2; })touchLocationForFingerId:(unsigned int)arg1;
+- (struct CGPoint { float x1; float x2; })touchLocationForFingerId:(unsigned int)arg1;
 - (id)touches;
-- (void)updateWithFCenter:(struct CGPoint { double x1; double x2; })arg1 jCenter:(struct CGPoint { double x1; double x2; })arg2 keySize:(struct CGSize { double x1; double x2; })arg3 rowOffsets:(id)arg4 homeRowOffsetIndex:(int)arg5;
+- (void)updateWithFCenter:(struct CGPoint { float x1; float x2; })arg1 jCenter:(struct CGPoint { float x1; float x2; })arg2 keySize:(struct CGSize { float x1; float x2; })arg3 rowOffsets:(id)arg4 homeRowOffsetIndex:(int)arg5;
 
 @end

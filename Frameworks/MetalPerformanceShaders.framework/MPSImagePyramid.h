@@ -6,7 +6,7 @@
     unsigned int  _fHeight;
     unsigned int  _fWidth;
     bool  separable;
-    double * wtArray;
+    float * wtArray;
     unsigned short * wtArrayh;
     <MTLBuffer> * wtBuffer;
     <MTLBuffer> * wtBufferh;

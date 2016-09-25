@@ -10,8 +10,8 @@
 - (float)minimumInteritemSpacing;
 - (float)minimumLineSpacing;
 - (NSString *)nameStringForPeople:(NSArray *)arg1 font:(UIFont *)arg2 width:(float)arg3 outHeight:(float*)arg4;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })sectionInset;
-- (struct CGSize { double x1; double x2; })sizeForItem;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })sectionInset;
+- (struct CGSize { float x1; float x2; })sizeForItem;
 - (float)verticalSpacingForFaceAndText;
 
 @end

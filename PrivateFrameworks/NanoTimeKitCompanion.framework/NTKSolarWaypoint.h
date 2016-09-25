@@ -4,14 +4,14 @@
 
 @interface NTKSolarWaypoint : NSObject {
     NSString * _localizedName;
-    double  _percentageThroughPeriodForWaypointDate;
+    float  _percentageThroughPeriodForWaypointDate;
     NTKSolarTimeModel * _solarTimeModel;
     int  _type;
     NSDate * _waypointDate;
 }
 
 @property (nonatomic, readonly) NSString *localizedName;
-@property (nonatomic, readonly) double percentageThroughPeriodForWaypointDate;
+@property (nonatomic, readonly) float percentageThroughPeriodForWaypointDate;
 @property (nonatomic, readonly) NTKSolarTimeModel *solarTimeModel;
 @property (nonatomic, readonly) int type;
 @property (nonatomic, readonly) NSDate *waypointDate;

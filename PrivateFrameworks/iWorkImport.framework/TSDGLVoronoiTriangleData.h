@@ -5,12 +5,12 @@
 @interface TSDGLVoronoiTriangleData : NSObject {
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _bounds;
     NSArray * _cells;
@@ -20,19 +20,19 @@
     unsigned int * _triangleIndexToCellTriangleIndexMappingTable;
 }
 
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } bounds;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
 @property (nonatomic, readonly) unsigned int cellCount;
 @property (nonatomic, readonly) NSArray *cells;
 @property (nonatomic, readonly) unsigned int triangleCount;
 
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })bounds;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
 - (unsigned int)cellCount;
 - (id)cellFromTriangleIndex:(unsigned int)arg1;
 - (unsigned int)cellIndexFromTriangleIndex:(unsigned int)arg1;
 - (id)cells;
 - (void)dealloc;
-- (id)initWithPoints:(unsigned int)arg1 clippedToRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 percentOfCellsToSplit:(float)arg3 randomGenerator:(id)arg4;
-- (void)p_setupDataWithPointCount:(unsigned int)arg1 clippedToRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 percentOfCellsToSplit:(float)arg3 randomGenerator:(id)arg4;
+- (id)initWithPoints:(unsigned int)arg1 clippedToRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 percentOfCellsToSplit:(float)arg3 randomGenerator:(id)arg4;
+- (void)p_setupDataWithPointCount:(unsigned int)arg1 clippedToRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 percentOfCellsToSplit:(float)arg3 randomGenerator:(id)arg4;
 - (unsigned int)triangleCount;
 - (unsigned int)triangleIndexInCellFromGlobalTriangleIndex:(unsigned int)arg1;
 

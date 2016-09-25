@@ -14,6 +14,6 @@
 - (id)contentViewController;
 - (void)loadView;
 - (void)setContentViewController:(id)arg1;
-- (void)setPreferredContentSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setPreferredContentSize:(struct CGSize { float x1; float x2; })arg1;
 
 @end

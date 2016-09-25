@@ -5,15 +5,15 @@
 @interface PXPlacesMapAdaptiveClusterLayout : PXPlacesMapLayout {
     <PXPlacesMapLayoutResult> * _currentMapLayoutResult;
     NSMapTable * _geotaggableToLayoutItemTable;
-    double  _horizontalClusteringDistancePixels;
+    float  _horizontalClusteringDistancePixels;
     BOOL  _requestLayoutCancel;
-    double  _verticalClusteringDistancePixels;
+    float  _verticalClusteringDistancePixels;
 }
 
 @property (nonatomic, retain) <PXPlacesMapLayoutResult> *currentMapLayoutResult;
 @property (retain) NSMapTable *geotaggableToLayoutItemTable;
-@property (nonatomic) double horizontalClusteringDistancePixels;
-@property (nonatomic) double verticalClusteringDistancePixels;
+@property (nonatomic) float horizontalClusteringDistancePixels;
+@property (nonatomic) float verticalClusteringDistancePixels;
 
 - (void).cxx_destruct;
 - (id)_clusterGeotaggables:(id)arg1 forViewPort:(id)arg2;

@@ -3,13 +3,13 @@
  */
 
 @interface MDLAreaLight : MDLPhysicallyPlausibleLight {
-    double  _areaRadius;
-    double  _aspect;
+    float  _areaRadius;
+    float  _aspect;
     void _superEllipticPower;
 }
 
-@property (nonatomic) double areaRadius;
-@property (nonatomic) double aspect;
+@property (nonatomic) float areaRadius;
+@property (nonatomic) float aspect;
 @property (nonatomic) void superEllipticPower;
 
 - (float)areaRadius;

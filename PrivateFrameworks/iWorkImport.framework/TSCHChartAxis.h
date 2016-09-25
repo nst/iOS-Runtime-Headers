@@ -31,9 +31,9 @@
 + (id)axisForInfo:(id)arg1;
 + (id)defaultNumberFormat;
 + (id)paragraphStyleForLabelsFontForInfo:(id)arg1;
-+ (struct tvec2<float> { union { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; union { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; })sizeOfLabelsForInfo:(id)arg1 onlyHeight:(BOOL)arg2;
-+ (struct tvec2<float> { union { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; union { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; })sizeOfSeriesLabelsForInfo:(id)arg1;
-+ (struct tvec2<float> { union { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; union { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; })sizeOfSeriesLabelsForInfo:(id)arg1 onlyHeight:(BOOL)arg2;
++ (struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; })sizeOfLabelsForInfo:(id)arg1 onlyHeight:(BOOL)arg2;
++ (struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; })sizeOfSeriesLabelsForInfo:(id)arg1;
++ (struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; })sizeOfSeriesLabelsForInfo:(id)arg1 onlyHeight:(BOOL)arg2;
 + (unsigned char)styleOwnerPathType;
 
 - (void)adjustMinMaxForDataRangeInAnalysis:(id)arg1;
@@ -120,7 +120,7 @@
 - (void)setNonStyle:(id)arg1 index:(unsigned int)arg2;
 - (void)setStyle:(id)arg1 index:(unsigned int)arg2;
 - (BOOL)shouldAnalyzeAxisValue:(double)arg1;
-- (struct tvec2<float> { union { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; union { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; })sizeOfLabelsForInfo:(id)arg1 enumerator:(id)arg2 onlyHeight:(BOOL)arg3;
+- (struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; })sizeOfLabelsForInfo:(id)arg1 enumerator:(id)arg2 onlyHeight:(BOOL)arg3;
 - (int)specificPropertyForGeneric:(int)arg1;
 - (id)style;
 - (unsigned int)styleIndex;

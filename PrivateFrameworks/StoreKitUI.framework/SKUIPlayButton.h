@@ -4,7 +4,7 @@
 
 @interface SKUIPlayButton : SKUIPlayButtonControl {
     SKUIPlayButtonImageCache * _imageCache;
-    int  _itemIdentifier;
+    long long  _itemIdentifier;
     NSString * _mediaURLString;
     NSString * _playItemIdentifier;
     BOOL  _showOnDemand;
@@ -13,7 +13,7 @@
 }
 
 @property (nonatomic, readonly) SKUIPlayButtonImageCache *imageCache;
-@property (nonatomic) int itemIdentifier;
+@property (nonatomic) long long itemIdentifier;
 @property (nonatomic, copy) NSString *mediaURLString;
 @property (nonatomic, copy) NSString *playItemIdentifier;
 @property (getter=isRadio, nonatomic) BOOL radio;
@@ -21,18 +21,18 @@
 @property (nonatomic) int style;
 @property (nonatomic) BOOL useLargeButton;
 
-+ (struct CGSize { double x1; double x2; })sizeThatFitsWidth:(float)arg1 viewElement:(id)arg2 context:(id)arg3;
++ (struct CGSize { float x1; float x2; })sizeThatFitsWidth:(float)arg1 viewElement:(id)arg2 context:(id)arg3;
 
 - (void).cxx_destruct;
 - (void)_updateEnabledState;
 - (float)buttonCornerRadius;
-- (struct CGSize { double x1; double x2; })buttonSize;
+- (struct CGSize { float x1; float x2; })buttonSize;
 - (id)cancelImage;
 - (id)defaultBackgroundColor;
 - (id)imageCache;
 - (id)images;
 - (BOOL)isRadio;
-- (int)itemIdentifier;
+- (long long)itemIdentifier;
 - (void)layoutSubviews;
 - (id)mediaURLString;
 - (id)outerBorderColor;
@@ -43,7 +43,7 @@
 - (void)reloadWithItemStatus:(id)arg1 animated:(BOOL)arg2;
 - (void)setBackgroundType:(int)arg1;
 - (void)setEnabled:(BOOL)arg1;
-- (void)setItemIdentifier:(int)arg1;
+- (void)setItemIdentifier:(long long)arg1;
 - (void)setMediaURLString:(id)arg1;
 - (void)setPlayItemIdentifier:(id)arg1;
 - (void)setRadio:(BOOL)arg1;

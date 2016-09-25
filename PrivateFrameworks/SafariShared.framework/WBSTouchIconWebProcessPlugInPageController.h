@@ -4,7 +4,7 @@
 
 @interface WBSTouchIconWebProcessPlugInPageController : WBSWebProcessPlugInPageController {
     BOOL  _didRecieveDidHandleOnloadEventsForFrameCallback;
-    unsigned int  _mainFrameMainResourceId;
+    unsigned long long  _mainFrameMainResourceId;
     BOOL  _shouldExtractIconsWhenRecievingDidHandleOnloadEventsForFrameCallback;
     <WBSTouchIconObserver> * _touchIconObserver;
 }
@@ -17,7 +17,7 @@
 - (id)touchIconObserver;
 - (void)webProcessPlugInBrowserContextController:(id)arg1 didFinishDocumentLoadForFrame:(id)arg2;
 - (void)webProcessPlugInBrowserContextController:(id)arg1 didHandleOnloadEventsForFrame:(id)arg2;
-- (void)webProcessPlugInBrowserContextController:(id)arg1 frame:(id)arg2 didInitiateLoadForResource:(unsigned int)arg3 request:(id)arg4 pageIsProvisionallyLoading:(BOOL)arg5;
-- (id)webProcessPlugInBrowserContextController:(id)arg1 frame:(id)arg2 willSendRequestForResource:(unsigned int)arg3 request:(id)arg4 redirectResponse:(id)arg5;
+- (void)webProcessPlugInBrowserContextController:(id)arg1 frame:(id)arg2 didInitiateLoadForResource:(unsigned long long)arg3 request:(id)arg4 pageIsProvisionallyLoading:(BOOL)arg5;
+- (id)webProcessPlugInBrowserContextController:(id)arg1 frame:(id)arg2 willSendRequestForResource:(unsigned long long)arg3 request:(id)arg4 redirectResponse:(id)arg5;
 
 @end

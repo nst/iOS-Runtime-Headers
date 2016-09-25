@@ -23,10 +23,10 @@
 
 - (void)_applyTypeOverlay:(id)arg1;
 - (id*)_retainedLinearArrayWithReturnedCount:(unsigned int*)arg1;
-- (unsigned int)addClassInfo:(id)arg1 forAddress:(unsigned int)arg2;
+- (unsigned int)addClassInfo:(id)arg1 forAddress:(unsigned long long)arg2;
 - (void)addClassInfosFromMap:(id)arg1;
 - (unsigned int)addFieldInfo:(id)arg1;
-- (id)classInfoForAddress:(unsigned int)arg1;
+- (id)classInfoForAddress:(unsigned long long)arg1;
 - (id)classInfoForIndex:(unsigned int)arg1;
 - (unsigned int)count;
 - (void)dealloc;

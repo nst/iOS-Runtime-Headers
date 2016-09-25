@@ -6,32 +6,32 @@
     MPULayoutInterpolator * _customFontPointSizeLayoutInterpolator;
     UIFont * _defaultFont;
     struct { 
-        double ascender; 
+        float ascender; 
         BOOL isAscenderInitialized; 
-        double bodyLeading; 
+        float bodyLeading; 
         BOOL isBodyLeadingInitialized; 
-        double capHeight; 
+        float capHeight; 
         BOOL isCapHeightInitialized; 
-        double descender; 
+        float descender; 
         BOOL isDescenderInitialized; 
-        double lineHeight; 
+        float lineHeight; 
         BOOL isLineHeightInitialized; 
     }  _defaultFontMetrics;
     int  _leadingAdjustment;
     UIFont * _preferredFont;
     struct { 
-        double ascender; 
+        float ascender; 
         BOOL isAscenderInitialized; 
-        double bodyLeading; 
+        float bodyLeading; 
         BOOL isBodyLeadingInitialized; 
-        double capHeight; 
+        float capHeight; 
         BOOL isCapHeightInitialized; 
-        double descender; 
+        float descender; 
         BOOL isDescenderInitialized; 
-        double lineHeight; 
+        float lineHeight; 
         BOOL isLineHeightInitialized; 
     }  _preferredFontMetrics;
-    double  _systemFontSize;
+    float  _systemFontSize;
     int  _textStyle;
     BOOL  _usesItalic;
     BOOL  _wantsMonospaceNumbers;
@@ -39,15 +39,15 @@
 }
 
 @property (nonatomic, readonly) UIFont *defaultFont;
-@property (nonatomic, readonly) double defaultFontLineHeight;
+@property (nonatomic, readonly) float defaultFontLineHeight;
 @property (nonatomic, readonly) int leadingAdjustment;
 @property (nonatomic, readonly) UIFont *preferredFont;
-@property (nonatomic, readonly) double preferredFontAscender;
-@property (nonatomic, readonly) double preferredFontBodyLeading;
-@property (nonatomic, readonly) double preferredFontCapHeight;
-@property (nonatomic, readonly) double preferredFontDescender;
-@property (nonatomic, readonly) double preferredFontLineHeight;
-@property (nonatomic, readonly) double systemFontSize;
+@property (nonatomic, readonly) float preferredFontAscender;
+@property (nonatomic, readonly) float preferredFontBodyLeading;
+@property (nonatomic, readonly) float preferredFontCapHeight;
+@property (nonatomic, readonly) float preferredFontDescender;
+@property (nonatomic, readonly) float preferredFontLineHeight;
+@property (nonatomic, readonly) float systemFontSize;
 @property (nonatomic, readonly) int textStyle;
 @property (nonatomic, readonly) BOOL usesItalic;
 @property (nonatomic, readonly) BOOL wantsMonospaceNumbers;

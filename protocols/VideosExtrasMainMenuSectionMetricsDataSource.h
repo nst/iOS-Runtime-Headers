@@ -6,6 +6,6 @@
 @required
 
 - (int)numberOfItemsForSectionMetrics:(VideosExtrasMainMenuSectionMetrics *)arg1;
-- (struct CGSize { double x1; double x2; })sectionMetrics:(VideosExtrasMainMenuSectionMetrics *)arg1 sizeForItemAtIndex:(int)arg2 withFontDescriptor:(UIFontDescriptor *)arg3;
+- (struct CGSize { float x1; float x2; })sectionMetrics:(VideosExtrasMainMenuSectionMetrics *)arg1 sizeForItemAtIndex:(int)arg2 withFontDescriptor:(UIFontDescriptor *)arg3;
 
 @end

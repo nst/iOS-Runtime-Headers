@@ -5,9 +5,9 @@
 @interface GQZEntryInflateInputStream : NSObject <GQZEntryInputStream> {
     unsigned long  mCalculatedCrc;
     unsigned long  mCheckCrc;
-    int  mEnd;
+    long long  mEnd;
     <GQZArchiveInputStream> * mInput;
-    int  mOffset;
+    long long  mOffset;
     char * mOutBuffer;
     unsigned long  mOutBufferSize;
     struct z_stream_s { 
@@ -34,7 +34,7 @@
 @property (readonly) Class superclass;
 
 - (void)dealloc;
-- (id)initWithOffset:(int)arg1 end:(int)arg2 uncompressedSize:(unsigned int)arg3 crc:(unsigned long)arg4 input:(id)arg5;
+- (id)initWithOffset:(long long)arg1 end:(long long)arg2 uncompressedSize:(unsigned long long)arg3 crc:(unsigned long)arg4 input:(id)arg5;
 - (unsigned long)readToBuffer:(char *)arg1 size:(unsigned long)arg2;
 - (void)readToOwnBuffer:(const char **)arg1 size:(unsigned int*)arg2;
 

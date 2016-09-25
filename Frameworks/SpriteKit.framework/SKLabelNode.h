@@ -8,10 +8,10 @@
 
 @property (nonatomic) int blendMode;
 @property (nonatomic, retain) UIColor *color;
-@property (nonatomic) double colorBlendFactor;
+@property (nonatomic) float colorBlendFactor;
 @property (nonatomic, retain) UIColor *fontColor;
 @property (nonatomic, copy) NSString *fontName;
-@property (nonatomic) double fontSize;
+@property (nonatomic) float fontSize;
 @property (nonatomic) int horizontalAlignmentMode;
 @property (nonatomic, copy) NSString *text;
 @property (nonatomic) int verticalAlignmentMode;
@@ -35,7 +35,7 @@
 - (id)fontColor;
 - (id)fontName;
 - (float)fontSize;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
 - (int)horizontalAlignmentMode;
 - (id)init;
 - (id)initWithCoder:(id)arg1;

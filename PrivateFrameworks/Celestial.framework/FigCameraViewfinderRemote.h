@@ -27,10 +27,10 @@
 - (id)init;
 - (void)startWithOptions:(id)arg1;
 - (void)stop;
-- (void)viewfinderSession:(int)arg1 didCapturePhotoWithStatus:(long)arg2 thumbnailData:(id)arg3 timestamp:(struct { int x1; int x2; unsigned int x3; int x4; })arg4;
-- (void)viewfinderSession:(int)arg1 previewStreamDidCloseWithStatus:(long)arg2;
-- (void)viewfinderSessionDidBegin:(id)arg1 withIdentifier:(int)arg2;
+- (void)viewfinderSession:(long long)arg1 didCapturePhotoWithStatus:(long)arg2 thumbnailData:(id)arg3 timestamp:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg4;
+- (void)viewfinderSession:(long long)arg1 previewStreamDidCloseWithStatus:(long)arg2;
+- (void)viewfinderSessionDidBegin:(id)arg1 withIdentifier:(long long)arg2;
 - (void)viewfinderSessionDidEnd;
-- (void)viewfinderSessionPreviewStreamDidOpen:(int)arg1;
+- (void)viewfinderSessionPreviewStreamDidOpen:(long long)arg1;
 
 @end

@@ -12,7 +12,7 @@
     BOOL  _hasValidRadioStation;
     RadioStation * _station;
     NSString * _stationHash;
-    int  _stationID;
+    long long  _stationID;
     NSString * _stationName;
     NSString * _stationStringID;
 }
@@ -21,7 +21,7 @@
 @property (nonatomic, readonly) RadioStation *station;
 @property (nonatomic, readonly, copy) NSDictionary *stationDictionary;
 @property (nonatomic, readonly, copy) NSString *stationHash;
-@property (nonatomic, readonly) int stationID;
+@property (nonatomic, readonly) long long stationID;
 @property (nonatomic, readonly, copy) NSString *stationName;
 @property (nonatomic, readonly, copy) NSString *stationStringID;
 
@@ -44,7 +44,7 @@
 - (id)station;
 - (id)stationDictionary;
 - (id)stationHash;
-- (int)stationID;
+- (long long)stationID;
 - (id)stationName;
 - (id)stationStringID;
 

@@ -56,7 +56,7 @@
 - (id)localizedName;
 - (id)localizedResetToolActionTitle;
 - (void)photoEditModelDidChange;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })preferredPreviewViewInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })preferredPreviewViewInsets;
 - (void)resetToDefaultValueAnimated:(BOOL)arg1;
 - (id)selectedToolbarIcon;
 - (void)setDelegate:(id)arg1;

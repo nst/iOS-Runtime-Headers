@@ -18,7 +18,7 @@
 - (void).cxx_destruct;
 - (id)currentColorForGlyphIndex:(unsigned int)arg1 numberOfGlyphs:(unsigned int)arg2 timeIndex:(unsigned int)arg3;
 - (unsigned int)currentIndexForGlyphIndex:(unsigned int)arg1 numberOfGlyphs:(unsigned int)arg2 timeIndex:(unsigned int)arg3 isFinished:(BOOL*)arg4;
-- (struct CGSize { double x1; double x2; })currentOffsetForGlyphIndex:(unsigned int)arg1 numberOfGlyphs:(unsigned int)arg2 timeIndex:(unsigned int)arg3;
+- (struct CGSize { float x1; float x2; })currentOffsetForGlyphIndex:(unsigned int)arg1 numberOfGlyphs:(unsigned int)arg2 timeIndex:(unsigned int)arg3;
 - (float)currentScaleForGlyphIndex:(unsigned int)arg1 numberOfGlyphs:(unsigned int)arg2 timeIndex:(unsigned int)arg3;
 - (id)currentShadowColorForGlyphIndex:(unsigned int)arg1 numberOfGlyphs:(unsigned int)arg2 timeIndex:(unsigned int)arg3;
 - (unsigned int)currentTimeIndex;

@@ -4,7 +4,7 @@
 
 @interface FigHUDLayer : CALayer {
     struct __CTFont { } * _Font;
-    double  _FontSize;
+    float  _FontSize;
     struct __CFArray { } * _LabelColors;
     struct __CFArray { } * _Labels;
     struct __CFDictionary { } * _TextAttributes;

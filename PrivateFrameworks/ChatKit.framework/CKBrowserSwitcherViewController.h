@@ -74,7 +74,7 @@
 
 - (void).cxx_destruct;
 - (void)_beginHoldingScrollUpdatesForKey:(id)arg1;
-- (struct CGSize { double x1; double x2; })_browserSize;
+- (struct CGSize { float x1; float x2; })_browserSize;
 - (void)_deferredUpdateVisibleBrowserView;
 - (double)_delayWhenScrollingBeforeLoadingNewBrowser;
 - (void)_endHoldingScrollUpdatesForKey:(id)arg1;
@@ -95,7 +95,7 @@
 - (void)_transitionSnapshotViewToBrowserView;
 - (void)_transitionSnapshotViewToBrowserViewAfterViewDidPrepareForDisplay:(id)arg1;
 - (void)_updateActiveBrowserTimestampForCurrentBalloonPlugin;
-- (void)_updateAppNameAndPageForOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (void)_updateAppNameAndPageForOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_updateBrowserViewPositionForPluginAndInsertIfNecessary:(id)arg1;
 - (void)_updateCurrentBrowserSnapshotIfPossible;
 - (void)_updateForBeginScrolling;
@@ -114,7 +114,7 @@
 - (void)browserTransitionCoordinator:(id)arg1 browserWillBecomeInactive:(id)arg2;
 - (void)browserTransitionCoordinator:(id)arg1 didTransitionFromOrientation:(int)arg2 toOrientation:(int)arg3;
 - (void)browserTransitionCoordinator:(id)arg1 expandedStateDidChange:(BOOL)arg2 withReason:(int)arg3;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })browserTransitionCoordinator:(id)arg1 preferredBoundsForBrowser:(id)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })browserTransitionCoordinator:(id)arg1 preferredBoundsForBrowser:(id)arg2;
 - (void)browserTransitionCoordinator:(id)arg1 wantsToSwitchToPlugin:(id)arg2;
 - (void)browserTransitionCoordinatorDidCollapseOrDismiss:(id)arg1 withReason:(int)arg2;
 - (void)browserTransitionCoordinatorDidTransitionOrPresentToFullscreen:(id)arg1 withReason:(int)arg2;
@@ -163,7 +163,7 @@
 - (void)saveSnapshotForCurrentBrowserViewControllerIfPossible;
 - (void)scrollCollectionViewToPlugin:(id)arg1;
 - (id)scrollPreventer;
-- (void)scrollPreventer:(id)arg1 scrolledToOffset:(struct CGPoint { double x1; double x2; })arg2;
+- (void)scrollPreventer:(id)arg1 scrolledToOffset:(struct CGPoint { float x1; float x2; })arg2;
 - (void)scrollPreventerDidEndDecelerating:(id)arg1;
 - (void)scrollPreventerDidLayoutSubviews:(id)arg1;
 - (void)scrollPreventerWillBeginDragging:(id)arg1;

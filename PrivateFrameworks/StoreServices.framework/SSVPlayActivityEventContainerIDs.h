@@ -3,32 +3,32 @@
  */
 
 @interface SSVPlayActivityEventContainerIDs : NSObject <NSCoding, NSCopying, NSMutableCopying, NSSecureCoding> {
-    int  _adamID;
+    long long  _adamID;
     NSString * _cloudAlbumID;
-    unsigned int  _cloudPlaylistID;
+    unsigned long long  _cloudPlaylistID;
     NSString * _globalPlaylistID;
     NSString * _playlistVersionHash;
     NSString * _stationHash;
-    int  _stationID;
+    long long  _stationID;
     NSString * _stationStringID;
 }
 
-@property (nonatomic, readonly) int adamID;
+@property (nonatomic, readonly) long long adamID;
 @property (nonatomic, readonly, copy) NSString *cloudAlbumID;
-@property (nonatomic, readonly) unsigned int cloudPlaylistID;
+@property (nonatomic, readonly) unsigned long long cloudPlaylistID;
 @property (nonatomic, readonly, copy) NSString *globalPlaylistID;
 @property (nonatomic, readonly, copy) NSString *playlistVersionHash;
 @property (nonatomic, readonly, copy) NSString *stationHash;
-@property (nonatomic, readonly) int stationID;
+@property (nonatomic, readonly) long long stationID;
 @property (nonatomic, readonly, copy) NSString *stationStringID;
 
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_copyWithClass:(Class)arg1;
-- (int)adamID;
+- (long long)adamID;
 - (id)cloudAlbumID;
-- (unsigned int)cloudPlaylistID;
+- (unsigned long long)cloudPlaylistID;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
@@ -37,7 +37,7 @@
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)playlistVersionHash;
 - (id)stationHash;
-- (int)stationID;
+- (long long)stationID;
 - (id)stationStringID;
 
 @end

@@ -57,7 +57,7 @@
 - (id)layout;
 - (id)netPreferences;
 - (int)numberOfSectionsInTableView:(id)arg1;
-- (struct CGSize { double x1; double x2; })preferredContentSize;
+- (struct CGSize { float x1; float x2; })preferredContentSize;
 - (int)rowDataType;
 - (void)setAttributionButton:(id)arg1;
 - (void)setChartInterval:(int)arg1;

@@ -13,9 +13,9 @@
 
 - (void)dealloc;
 - (int)enumerateRecordsWithEnumerator:(void*)arg1 context:(void*)arg2;
-- (int)getFramesForAddress:(unsigned int)arg1 size:(unsigned int)arg2 inLiteZone:(BOOL)arg3 stackFramesBuffer:(unsigned int*)arg4;
+- (int)getFramesForAddress:(unsigned long long)arg1 size:(unsigned long long)arg2 inLiteZone:(BOOL)arg3 stackFramesBuffer:(unsigned long long*)arg4;
 - (id)initWithTask:(unsigned int)arg1;
-- (unsigned int)liteModeStackIDforAddress:(unsigned int)arg1 size:(unsigned int)arg2;
+- (unsigned long long)liteModeStackIDforAddress:(unsigned long long)arg1 size:(unsigned long long)arg2;
 - (BOOL)usesLiteMode;
 
 @end

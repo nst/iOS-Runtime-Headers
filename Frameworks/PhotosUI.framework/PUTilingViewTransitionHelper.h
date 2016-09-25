@@ -3,18 +3,18 @@
  */
 
 @interface PUTilingViewTransitionHelper : NSObject <PUInterruptibleViewControllerTransition, PUTilingViewControllerTransition> {
-    double  __backgroundProgressOffset;
+    float  __backgroundProgressOffset;
     PUMaximumChangeRateValueFilter * __chromeProgressValueFilter;
     int  __currentOperation;
     <PUTilingViewControllerTransitionEndPoint> * __endPointOwningTilingView;
     <PUTilingViewControllerTransitionEndPoint> * __fromEndPoint;
     unsigned int  __interactionOptions;
-    double  __progressSpeed;
+    float  __progressSpeed;
     double  __startTime;
     PUTilingView * __tilingView;
     PUAnimationGroup * __tilingViewAnimationGroup;
     <PUTilingViewControllerTransitionEndPoint> * __toEndPoint;
-    double  __transitionProgressOffset;
+    float  __transitionProgressOffset;
     PUMaximumChangeRateValueFilter * __transitionProgressValueFilter;
     double  _dismissalDuration;
     BOOL  _hasStarted;
@@ -23,18 +23,18 @@
     BOOL  _transitionPaused;
 }
 
-@property (setter=_setBackgroundProgressOffset:, nonatomic) double _backgroundProgressOffset;
+@property (setter=_setBackgroundProgressOffset:, nonatomic) float _backgroundProgressOffset;
 @property (setter=_setChromeProgressValueFilter:, nonatomic, retain) PUMaximumChangeRateValueFilter *_chromeProgressValueFilter;
 @property (setter=_setCurrentOperation:, nonatomic) int _currentOperation;
 @property (setter=_setEndPointOwningTilingView:, nonatomic) <PUTilingViewControllerTransitionEndPoint> *_endPointOwningTilingView;
 @property (setter=_setFromEndPoint:, nonatomic) <PUTilingViewControllerTransitionEndPoint> *_fromEndPoint;
 @property (setter=_setInteractionOptions:, nonatomic) unsigned int _interactionOptions;
-@property (setter=_setProgressSpeed:, nonatomic) double _progressSpeed;
+@property (setter=_setProgressSpeed:, nonatomic) float _progressSpeed;
 @property (setter=_setStartTime:, nonatomic) double _startTime;
 @property (setter=_setTilingView:, nonatomic) PUTilingView *_tilingView;
 @property (setter=_setTilingViewAnimationGroup:, nonatomic, retain) PUAnimationGroup *_tilingViewAnimationGroup;
 @property (setter=_setToEndPoint:, nonatomic) <PUTilingViewControllerTransitionEndPoint> *_toEndPoint;
-@property (setter=_setTransitionProgressOffset:, nonatomic) double _transitionProgressOffset;
+@property (setter=_setTransitionProgressOffset:, nonatomic) float _transitionProgressOffset;
 @property (setter=_setTransitionProgressValueFilter:, nonatomic, retain) PUMaximumChangeRateValueFilter *_transitionProgressValueFilter;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;

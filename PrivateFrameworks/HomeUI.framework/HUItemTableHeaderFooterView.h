@@ -6,10 +6,10 @@
     NSMutableArray * _constraints;
     UILabel * _messageLabel;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _messageLabelInsets;
 }
 
@@ -17,7 +17,7 @@
 @property (nonatomic, retain) NSMutableArray *constraints;
 @property (nonatomic, copy) NSString *message;
 @property (nonatomic, retain) UILabel *messageLabel;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } messageLabelInsets;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } messageLabelInsets;
 @property (nonatomic) unsigned int numberOfLines;
 
 - (void).cxx_destruct;
@@ -27,13 +27,13 @@
 - (id)initWithReuseIdentifier:(id)arg1;
 - (id)message;
 - (id)messageLabel;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })messageLabelInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })messageLabelInsets;
 - (unsigned int)numberOfLines;
 - (void)setAttributedMessage:(id)arg1;
 - (void)setConstraints:(id)arg1;
 - (void)setMessage:(id)arg1;
 - (void)setMessageLabel:(id)arg1;
-- (void)setMessageLabelInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setMessageLabelInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setNumberOfLines:(unsigned int)arg1;
 
 @end

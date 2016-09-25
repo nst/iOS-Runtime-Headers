@@ -9,13 +9,13 @@
     PUViewControllerSpecChange * _currentChange;
     int  _currentLayoutStyle;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _layoutReferenceSize;
     BOOL  _presentedForSecondScreen;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _secondScreenSize;
     UITraitCollection * _traitCollection;
 }
@@ -25,9 +25,9 @@
 @property (setter=_setNeedsUpdateLayoutStyle:, nonatomic) BOOL _needsUpdateLayoutStyle;
 @property (nonatomic, readonly) PUViewControllerSpecChange *currentChange;
 @property (nonatomic, readonly) int currentLayoutStyle;
-@property (nonatomic) struct CGSize { double x1; double x2; } layoutReferenceSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } layoutReferenceSize;
 @property (getter=isPresentedForSecondScreen, nonatomic) BOOL presentedForSecondScreen;
-@property (nonatomic) struct CGSize { double x1; double x2; } secondScreenSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } secondScreenSize;
 @property (nonatomic, retain) UITraitCollection *traitCollection;
 @property (getter=isValid, nonatomic, readonly) BOOL valid;
 
@@ -50,14 +50,14 @@
 - (id)init;
 - (BOOL)isPresentedForSecondScreen;
 - (BOOL)isValid;
-- (struct CGSize { double x1; double x2; })layoutReferenceSize;
+- (struct CGSize { float x1; float x2; })layoutReferenceSize;
 - (id)newSpecChange;
 - (void)performChanges:(id /* block */)arg1;
 - (void)registerChangeObserver:(id)arg1;
-- (struct CGSize { double x1; double x2; })secondScreenSize;
-- (void)setLayoutReferenceSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })secondScreenSize;
+- (void)setLayoutReferenceSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setPresentedForSecondScreen:(BOOL)arg1;
-- (void)setSecondScreenSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setSecondScreenSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setTraitCollection:(id)arg1;
 - (id)traitCollection;
 - (void)unregisterChangeObserver:(id)arg1;

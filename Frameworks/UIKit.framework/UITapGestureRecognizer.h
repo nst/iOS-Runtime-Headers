@@ -7,18 +7,18 @@
     unsigned int  _delaysRecognitionForGreaterTapCounts;
     UITapRecognizer * _imp;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _locationInView;
 }
 
 @property (setter=_setButtonType:, nonatomic) int _buttonType;
 @property (readonly) unsigned int akNumberOfTapsRequired;
-@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } centroid;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } centroid;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } location;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } location;
 @property (nonatomic) double maximumTapDuration;
 @property (nonatomic) unsigned int numberOfTapsRequired;
 @property (nonatomic) unsigned int numberOfTouchesRequired;
@@ -33,7 +33,7 @@
 - (void)_appendSubclassDescription:(id)arg1;
 - (int)_buttonType;
 - (BOOL)_delaysRecognitionForGreaterTapCounts;
-- (struct CGPoint { double x1; double x2; })_digitizerLocation;
+- (struct CGPoint { float x1; float x2; })_digitizerLocation;
 - (int)_finalStateForRecognition;
 - (void)_resetGestureRecognizer;
 - (void)_setAllowableSeparation:(float)arg1;
@@ -45,14 +45,14 @@
 - (float)_touchSloppinessFactor;
 - (float)allowableMovement;
 - (BOOL)canPreventGestureRecognizer:(id)arg1;
-- (struct CGPoint { double x1; double x2; })centroid;
+- (struct CGPoint { float x1; float x2; })centroid;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
-- (struct CGPoint { double x1; double x2; })location;
-- (struct CGPoint { double x1; double x2; })locationInView:(id)arg1;
-- (struct CGPoint { double x1; double x2; })locationOfTouch:(unsigned int)arg1 inView:(id)arg2;
+- (struct CGPoint { float x1; float x2; })location;
+- (struct CGPoint { float x1; float x2; })locationInView:(id)arg1;
+- (struct CGPoint { float x1; float x2; })locationOfTouch:(unsigned int)arg1 inView:(id)arg2;
 - (double)maximumIntervalBetweenSuccessiveTaps;
 - (double)maximumSingleTapDuration;
 - (double)maximumTapDuration;

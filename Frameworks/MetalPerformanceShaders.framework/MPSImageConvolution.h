@@ -3,18 +3,18 @@
  */
 
 @interface MPSImageConvolution : MPSUnaryImageKernel {
-    double  _fBias;
+    float  _fBias;
     unsigned int  _fHeight;
     unsigned int  _fWidth;
     bool  separable;
     unsigned int  specialFilterType;
-    double * wtArray;
+    float * wtArray;
     unsigned short * wtArrayh;
     <MTLBuffer> * wtBuffer;
     <MTLBuffer> * wtBufferh;
 }
 
-@property (nonatomic) double bias;
+@property (nonatomic) float bias;
 @property (nonatomic, readonly) unsigned int kernelHeight;
 @property (nonatomic, readonly) unsigned int kernelWidth;
 

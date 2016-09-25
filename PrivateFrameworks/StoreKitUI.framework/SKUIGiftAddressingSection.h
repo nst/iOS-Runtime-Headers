@@ -3,13 +3,13 @@
  */
 
 @interface SKUIGiftAddressingSection : SKUIGiftTableViewSection {
-    double  _footerHeight;
+    float  _footerHeight;
     NSString * _footerString;
     SKUIGift * _gift;
     UITextView * _messagingTextView;
     SKUIGiftRecipientTableViewCell * _recipientTableViewCell;
     <UITextFieldDelegate> * _textFieldDelegate;
-    double  _textViewCellHeight;
+    float  _textViewCellHeight;
 }
 
 @property (nonatomic, retain) SKUIGift *gift;

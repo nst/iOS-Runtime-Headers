@@ -10,25 +10,25 @@
     NSArray * _dottedLinePositionsForStyleOnly;
     StockGraphImageSet * _graphImageSet;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _graphInsets;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _graphSize;
     NSArray * _linePointCounts;
-    unsigned int  _maxVolume;
-    struct CGPoint { double x1; double x2; } * _points;
+    unsigned long long  _maxVolume;
+    struct CGPoint { float x1; float x2; } * _points;
     BOOL  _roundLineCaps;
-    double  _volumeBarWidth;
-    struct { double x1; unsigned int x2; } * _volumeBars;
+    float  _volumeBarWidth;
+    struct { float x1; unsigned long long x2; } * _volumeBars;
     unsigned int  _volumeCount;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _volumeGraphSize;
 }
 
@@ -38,16 +38,16 @@
 @property (nonatomic, retain) NSArray *dottedLinePositions;
 @property (nonatomic, retain) NSArray *dottedLinePositionsForStyleOnly;
 @property (nonatomic, retain) StockGraphImageSet *graphImageSet;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } graphInsets;
-@property (nonatomic) struct CGSize { double x1; double x2; } graphSize;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } graphInsets;
+@property (nonatomic) struct CGSize { float x1; float x2; } graphSize;
 @property (nonatomic, retain) NSArray *linePointCounts;
-@property (nonatomic) unsigned int maxVolume;
-@property (nonatomic) struct CGPoint { double x1; double x2; }*points;
+@property (nonatomic) unsigned long long maxVolume;
+@property (nonatomic) struct CGPoint { float x1; float x2; }*points;
 @property (nonatomic) BOOL roundLineCaps;
-@property (nonatomic) double volumeBarWidth;
-@property (nonatomic) struct { double x1; unsigned int x2; }*volumeBars;
+@property (nonatomic) float volumeBarWidth;
+@property (nonatomic) struct { float x1; unsigned long long x2; }*volumeBars;
 @property (nonatomic) unsigned int volumeCount;
-@property (nonatomic) struct CGSize { double x1; double x2; } volumeGraphSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } volumeGraphSize;
 
 - (void).cxx_destruct;
 - (void)cancel;
@@ -56,15 +56,15 @@
 - (id)dottedLinePositions;
 - (id)dottedLinePositionsForStyleOnly;
 - (id)graphImageSet;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })graphInsets;
-- (struct CGSize { double x1; double x2; })graphSize;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })graphInsets;
+- (struct CGSize { float x1; float x2; })graphSize;
 - (BOOL)isCancelled;
-- (struct CGSize { double x1; double x2; })lineGraphSize;
+- (struct CGSize { float x1; float x2; })lineGraphSize;
 - (id)linePointCounts;
-- (unsigned int)maxVolume;
-- (struct CGPoint { double x1; double x2; }*)points;
+- (unsigned long long)maxVolume;
+- (struct CGPoint { float x1; float x2; }*)points;
 - (void)render;
-- (void)renderGraphLineInContext:(struct CGContext { }*)arg1 withColor:(id)arg2 offset:(struct CGPoint { double x1; double x2; })arg3;
+- (void)renderGraphLineInContext:(struct CGContext { }*)arg1 withColor:(id)arg2 offset:(struct CGPoint { float x1; float x2; })arg3;
 - (void)renderLineGraph;
 - (void)renderVolumeGraph;
 - (BOOL)roundLineCaps;
@@ -73,19 +73,19 @@
 - (void)setDottedLinePositions:(id)arg1;
 - (void)setDottedLinePositionsForStyleOnly:(id)arg1;
 - (void)setGraphImageSet:(id)arg1;
-- (void)setGraphInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
-- (void)setGraphSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setGraphInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setGraphSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setLinePointCounts:(id)arg1;
-- (void)setMaxVolume:(unsigned int)arg1;
-- (void)setPoints:(struct CGPoint { double x1; double x2; }*)arg1;
+- (void)setMaxVolume:(unsigned long long)arg1;
+- (void)setPoints:(struct CGPoint { float x1; float x2; }*)arg1;
 - (void)setRoundLineCaps:(BOOL)arg1;
 - (void)setVolumeBarWidth:(float)arg1;
-- (void)setVolumeBars:(struct { double x1; unsigned int x2; }*)arg1;
+- (void)setVolumeBars:(struct { float x1; unsigned long long x2; }*)arg1;
 - (void)setVolumeCount:(unsigned int)arg1;
-- (void)setVolumeGraphSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setVolumeGraphSize:(struct CGSize { float x1; float x2; })arg1;
 - (float)volumeBarWidth;
-- (struct { double x1; unsigned int x2; }*)volumeBars;
+- (struct { float x1; unsigned long long x2; }*)volumeBars;
 - (unsigned int)volumeCount;
-- (struct CGSize { double x1; double x2; })volumeGraphSize;
+- (struct CGSize { float x1; float x2; })volumeGraphSize;
 
 @end

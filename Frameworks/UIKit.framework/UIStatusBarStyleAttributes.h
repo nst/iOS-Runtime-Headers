@@ -8,7 +8,7 @@
     UIStatusBarStyleRequest * _request;
 }
 
-@property (nonatomic) double foregroundAlpha;
+@property (nonatomic) float foregroundAlpha;
 @property (getter=isPulsingAnimationEnabled, nonatomic) BOOL pulsingAnimationEnabled;
 
 - (void).cxx_destruct;

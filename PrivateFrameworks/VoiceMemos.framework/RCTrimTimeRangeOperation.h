@@ -5,7 +5,7 @@
 @interface RCTrimTimeRangeOperation : NSOperation {
     BOOL  _canSimulateTrimmingProgress;
     id /* block */  _progressUpdateBlock;
-    double  _simulatedProgress;
+    float  _simulatedProgress;
     struct { 
         double beginTime; 
         double endTime; 

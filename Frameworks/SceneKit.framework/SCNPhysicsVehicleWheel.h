@@ -4,54 +4,54 @@
 
 @interface SCNPhysicsVehicleWheel : NSObject <NSCopying, NSSecureCoding> {
     struct SCNVector3 { 
-        double x; 
-        double y; 
-        double z; 
+        float x; 
+        float y; 
+        float z; 
     }  _axle;
     struct SCNVector3 { 
-        double x; 
-        double y; 
-        double z; 
+        float x; 
+        float y; 
+        float z; 
     }  _connectionPosition;
-    double  _frictionSlip;
+    float  _frictionSlip;
     BOOL  _isFront;
-    double  _maximumSuspensionForce;
-    double  _maximumSuspensionTravel;
+    float  _maximumSuspensionForce;
+    float  _maximumSuspensionTravel;
     SCNNode * _node;
-    double  _radius;
+    float  _radius;
     struct SCNVector3 { 
-        double x; 
-        double y; 
-        double z; 
+        float x; 
+        float y; 
+        float z; 
     }  _steeringAxis;
-    double  _suspensionCompression;
-    double  _suspensionDamping;
-    double  _suspensionRestLength;
-    double  _suspensionStiffness;
+    float  _suspensionCompression;
+    float  _suspensionDamping;
+    float  _suspensionRestLength;
+    float  _suspensionStiffness;
     SCNPhysicsVehicle * _vehicle;
     int  _wheelIndex;
 }
 
-@property struct SCNVector3 { double x1; double x2; double x3; } axle;
-@property struct SCNVector3 { double x1; double x2; double x3; } connectionPosition;
-@property double frictionSlip;
-@property double maximumSuspensionForce;
-@property double maximumSuspensionTravel;
+@property struct SCNVector3 { float x1; float x2; float x3; } axle;
+@property struct SCNVector3 { float x1; float x2; float x3; } connectionPosition;
+@property float frictionSlip;
+@property float maximumSuspensionForce;
+@property float maximumSuspensionTravel;
 @property (readonly) SCNNode *node;
-@property double radius;
-@property struct SCNVector3 { double x1; double x2; double x3; } steeringAxis;
-@property double suspensionCompression;
-@property double suspensionDamping;
-@property double suspensionRestLength;
-@property double suspensionStiffness;
+@property float radius;
+@property struct SCNVector3 { float x1; float x2; float x3; } steeringAxis;
+@property float suspensionCompression;
+@property float suspensionDamping;
+@property float suspensionRestLength;
+@property float suspensionStiffness;
 
 + (BOOL)supportsSecureCoding;
 + (id)wheelWithNode:(id)arg1;
 
 - (void)_setVehicle:(id)arg1;
 - (void)_setWheelIndex:(int)arg1;
-- (struct SCNVector3 { double x1; double x2; double x3; })axle;
-- (struct SCNVector3 { double x1; double x2; double x3; })connectionPosition;
+- (struct SCNVector3 { float x1; float x2; float x3; })axle;
+- (struct SCNVector3 { float x1; float x2; float x3; })connectionPosition;
 - (id)copy;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -64,20 +64,20 @@
 - (float)maximumSuspensionTravel;
 - (id)node;
 - (float)radius;
-- (void)setAxle:(struct SCNVector3 { double x1; double x2; double x3; })arg1;
-- (void)setConnectionPosition:(struct SCNVector3 { double x1; double x2; double x3; })arg1;
+- (void)setAxle:(struct SCNVector3 { float x1; float x2; float x3; })arg1;
+- (void)setConnectionPosition:(struct SCNVector3 { float x1; float x2; float x3; })arg1;
 - (void)setFrictionSlip:(float)arg1;
 - (void)setIsFront:(BOOL)arg1;
 - (void)setMaximumSuspensionForce:(float)arg1;
 - (void)setMaximumSuspensionTravel:(float)arg1;
 - (void)setNode:(id)arg1;
 - (void)setRadius:(float)arg1;
-- (void)setSteeringAxis:(struct SCNVector3 { double x1; double x2; double x3; })arg1;
+- (void)setSteeringAxis:(struct SCNVector3 { float x1; float x2; float x3; })arg1;
 - (void)setSuspensionCompression:(float)arg1;
 - (void)setSuspensionDamping:(float)arg1;
 - (void)setSuspensionRestLength:(float)arg1;
 - (void)setSuspensionStiffness:(float)arg1;
-- (struct SCNVector3 { double x1; double x2; double x3; })steeringAxis;
+- (struct SCNVector3 { float x1; float x2; float x3; })steeringAxis;
 - (float)suspensionCompression;
 - (float)suspensionDamping;
 - (float)suspensionRestLength;

@@ -11,7 +11,7 @@
     NSArray * _hostedIdiomValues;
     int  _idiomValue;
     int  _memoryPerformanceClass;
-    double  _scale;
+    float  _scale;
     int  _sizeClassHorizontal;
     int  _sizeClassVertical;
     int  _subtype;
@@ -31,7 +31,7 @@
 @property (nonatomic, retain) NSString *idiom;
 @property (nonatomic) int idiomValue;
 @property (nonatomic) int memoryPerformanceClass;
-@property (nonatomic) double scale;
+@property (nonatomic) float scale;
 @property (nonatomic) int subtype;
 
 - (int)_deploymentTargetFromTraitString:(id)arg1;

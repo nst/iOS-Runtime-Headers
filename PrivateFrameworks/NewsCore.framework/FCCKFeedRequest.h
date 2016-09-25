@@ -4,34 +4,34 @@
 
 @interface FCCKFeedRequest : NSObject {
     NSString * _feedID;
-    unsigned int  _hardResultsLimit;
-    unsigned int  _orderLimit;
-    unsigned int  _softResultsLimit;
+    unsigned long long  _hardResultsLimit;
+    unsigned long long  _orderLimit;
+    unsigned long long  _softResultsLimit;
     NSData * _startCursor;
-    unsigned int  _startOrder;
+    unsigned long long  _startOrder;
 }
 
 @property (nonatomic, copy) NSString *feedID;
-@property (nonatomic) unsigned int hardResultsLimit;
-@property (nonatomic) unsigned int orderLimit;
-@property (nonatomic) unsigned int softResultsLimit;
+@property (nonatomic) unsigned long long hardResultsLimit;
+@property (nonatomic) unsigned long long orderLimit;
+@property (nonatomic) unsigned long long softResultsLimit;
 @property (nonatomic, copy) NSData *startCursor;
-@property (nonatomic) unsigned int startOrder;
+@property (nonatomic) unsigned long long startOrder;
 
 - (void).cxx_destruct;
 - (id)description;
 - (id)feedID;
-- (unsigned int)hardResultsLimit;
+- (unsigned long long)hardResultsLimit;
 - (id)init;
-- (unsigned int)orderLimit;
+- (unsigned long long)orderLimit;
 - (void)setFeedID:(id)arg1;
-- (void)setHardResultsLimit:(unsigned int)arg1;
-- (void)setOrderLimit:(unsigned int)arg1;
-- (void)setSoftResultsLimit:(unsigned int)arg1;
+- (void)setHardResultsLimit:(unsigned long long)arg1;
+- (void)setOrderLimit:(unsigned long long)arg1;
+- (void)setSoftResultsLimit:(unsigned long long)arg1;
 - (void)setStartCursor:(id)arg1;
-- (void)setStartOrder:(unsigned int)arg1;
-- (unsigned int)softResultsLimit;
+- (void)setStartOrder:(unsigned long long)arg1;
+- (unsigned long long)softResultsLimit;
 - (id)startCursor;
-- (unsigned int)startOrder;
+- (unsigned long long)startOrder;
 
 @end

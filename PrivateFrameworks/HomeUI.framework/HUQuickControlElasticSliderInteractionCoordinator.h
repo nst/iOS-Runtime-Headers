@@ -3,7 +3,7 @@
  */
 
 @interface HUQuickControlElasticSliderInteractionCoordinator : HUQuickControlInteractionCoordinator <HUQuickControlSliderGestureTransformerDelegate> {
-    double  _activeGestureValue;
+    float  _activeGestureValue;
     unsigned int  _activeGestureValueType;
     UILongPressGestureRecognizer * _controlGestureRecognizer;
     HUElasticApplier * _controlHorizontalCompressionApplier;
@@ -12,8 +12,8 @@
     HUQuickControlSliderGestureTransformer * _gestureTransformer;
     BOOL  _hasSecondaryValue;
     struct { 
-        double minimum; 
-        double maximum; 
+        float minimum; 
+        float maximum; 
     }  _modelValue;
     HUElasticApplier * _primaryValueSmoothingApplier;
     HUElasticApplier * _secondaryValueSmoothingApplier;
@@ -21,7 +21,7 @@
     HUQuickControlViewProfile<HUQuickControlIncrementalConvertibleProfile> * _viewProfile;
 }
 
-@property (nonatomic) double activeGestureValue;
+@property (nonatomic) float activeGestureValue;
 @property (nonatomic) unsigned int activeGestureValueType;
 @property (nonatomic, retain) UILongPressGestureRecognizer *controlGestureRecognizer;
 @property (nonatomic, retain) HUElasticApplier *controlHorizontalCompressionApplier;
@@ -32,7 +32,7 @@
 @property (nonatomic, retain) HUQuickControlSliderGestureTransformer *gestureTransformer;
 @property (nonatomic) BOOL hasSecondaryValue;
 @property (readonly) unsigned int hash;
-@property (nonatomic) struct { double x1; double x2; } modelValue;
+@property (nonatomic) struct { float x1; float x2; } modelValue;
 @property (nonatomic, retain) HUElasticApplier *primaryValueSmoothingApplier;
 @property (nonatomic, retain) HUElasticApplier *secondaryValueSmoothingApplier;
 @property (readonly) Class superclass;
@@ -42,13 +42,13 @@
 - (void).cxx_destruct;
 - (id)_allAppliers;
 - (void)_beginReceivingTouchesWithGestureRecognizer:(id)arg1 firstTouchDown:(BOOL)arg2;
-- (struct { double x1; double x2; })_boundedRangeForRange:(struct { double x1; double x2; })arg1;
+- (struct { float x1; float x2; })_boundedRangeForRange:(struct { float x1; float x2; })arg1;
 - (float)_boundedValueForValue:(float)arg1 valueType:(unsigned int)arg2 rubberBand:(BOOL)arg3;
-- (struct { double x1; double x2; })_clippedRangeForRange:(struct { double x1; double x2; })arg1;
-- (unsigned int)_findClosestValueFromTouchPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (struct { float x1; float x2; })_clippedRangeForRange:(struct { float x1; float x2; })arg1;
+- (unsigned int)_findClosestValueFromTouchPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_handleControlPanGestureGesture:(id)arg1;
-- (struct { double x1; double x2; })_rawViewValueRange;
-- (struct { double x1; double x2; })_roundedRangeForRange:(struct { double x1; double x2; })arg1;
+- (struct { float x1; float x2; })_rawViewValueRange;
+- (struct { float x1; float x2; })_roundedRangeForRange:(struct { float x1; float x2; })arg1;
 - (float)_roundedValueForValue:(float)arg1;
 - (float)_rubberBandedStretchProgress;
 - (float)_rubberBandedValueForValue:(float)arg1 valueType:(unsigned int)arg2;
@@ -58,7 +58,7 @@
 - (void)_updateControlViewPrimaryValue:(double)arg1;
 - (void)_updateControlViewSecondaryValue:(double)arg1;
 - (void)_updateControlViewValueOfType:(unsigned int)arg1 withValue:(float)arg2;
-- (void)_updateModelValue:(struct { double x1; double x2; })arg1 notifyDelegate:(BOOL)arg2;
+- (void)_updateModelValue:(struct { float x1; float x2; })arg1 notifyDelegate:(BOOL)arg2;
 - (void)_updatePropertiesForControlValueSmoothingApplier:(id)arg1 ofType:(unsigned int)arg2;
 - (float)activeGestureValue;
 - (unsigned int)activeGestureValueType;
@@ -74,7 +74,7 @@
 - (id)initWithControlView:(id)arg1 delegate:(id)arg2;
 - (BOOL)isFirstTouchDown;
 - (BOOL)isUserInteractionActive;
-- (struct { double x1; double x2; })modelValue;
+- (struct { float x1; float x2; })modelValue;
 - (id)primaryValueSmoothingApplier;
 - (id)secondaryValueSmoothingApplier;
 - (void)setActiveGestureValue:(float)arg1;
@@ -85,7 +85,7 @@
 - (void)setFirstTouchDown:(BOOL)arg1;
 - (void)setGestureTransformer:(id)arg1;
 - (void)setHasSecondaryValue:(BOOL)arg1;
-- (void)setModelValue:(struct { double x1; double x2; })arg1;
+- (void)setModelValue:(struct { float x1; float x2; })arg1;
 - (void)setPrimaryValueSmoothingApplier:(id)arg1;
 - (void)setSecondaryValueSmoothingApplier:(id)arg1;
 - (void)setUserInteractionActive:(BOOL)arg1;

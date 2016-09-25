@@ -7,14 +7,14 @@
     _UIBackdropViewSettings * _inputSettingsB;
     _UIBackdropViewSettings * _outputSettingsA;
     _UIBackdropViewSettings * _outputSettingsB;
-    double  _weighting;
+    float  _weighting;
 }
 
 @property (nonatomic, retain) _UIBackdropViewSettings *inputSettingsA;
 @property (nonatomic, retain) _UIBackdropViewSettings *inputSettingsB;
 @property (nonatomic, retain) _UIBackdropViewSettings *outputSettingsA;
 @property (nonatomic, retain) _UIBackdropViewSettings *outputSettingsB;
-@property (nonatomic) double weighting;
+@property (nonatomic) float weighting;
 
 - (void).cxx_destruct;
 - (void)computeOutputSettingsUsingModel:(id)arg1;

@@ -3,7 +3,7 @@
  */
 
 @interface GEODirectionsResponse : PBCodable <NSCopying> {
-    unsigned int  _debugLatencyMs;
+    unsigned long long  _debugLatencyMs;
     GEOTransitDecoderData * _decoderData;
     NSData * _directionsResponseID;
     GEORouteDisplayHints * _displayHints;
@@ -55,7 +55,7 @@
     GEOPBTransitRoutingIncidentMessage * _transitIncidentMessage;
 }
 
-@property (nonatomic) unsigned int debugLatencyMs;
+@property (nonatomic) unsigned long long debugLatencyMs;
 @property (nonatomic, retain) GEOTransitDecoderData *decoderData;
 @property (nonatomic, retain) NSData *directionsResponseID;
 @property (nonatomic, retain) GEORouteDisplayHints *displayHints;
@@ -134,7 +134,7 @@
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (unsigned int)debugLatencyMs;
+- (unsigned long long)debugLatencyMs;
 - (id)decoderData;
 - (id)description;
 - (id)dictionaryRepresentation;
@@ -193,7 +193,7 @@
 - (id)serviceGaps;
 - (unsigned int)serviceGapsCount;
 - (id)sessionState;
-- (void)setDebugLatencyMs:(unsigned int)arg1;
+- (void)setDebugLatencyMs:(unsigned long long)arg1;
 - (void)setDecoderData:(id)arg1;
 - (void)setDirectionsResponseID:(id)arg1;
 - (void)setDisplayHints:(id)arg1;

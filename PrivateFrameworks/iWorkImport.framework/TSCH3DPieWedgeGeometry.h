@@ -5,28 +5,28 @@
 @interface TSCH3DPieWedgeGeometry : TSCH3DGeometry {
     int  mAngleSteps;
     int  mBevelEdgeSteps;
-    double  mBottomZ;
+    float  mBottomZ;
     int  mCapCount;
     int  mCapOffset;
-    double  mEndAngle;
+    float  mEndAngle;
     TSCH3DNormalDirectionMapper * mNormalDirectionMapper;
-    double  mRadius;
+    float  mRadius;
     int  mRadiusSteps;
-    double  mStartAngle;
-    double  mTopZ;
+    float  mStartAngle;
+    float  mTopZ;
 }
 
 @property (nonatomic) int angleSteps;
 @property (nonatomic) int bevelEdgeSteps;
-@property (nonatomic) double bottomZ;
+@property (nonatomic) float bottomZ;
 @property (nonatomic, readonly) int capCount;
 @property (nonatomic, readonly) int capOffset;
-@property (nonatomic) double endAngle;
+@property (nonatomic) float endAngle;
 @property (nonatomic, readonly) TSCH3DNormalDirectionMapper *normalDirectionMapper;
-@property (nonatomic) double radius;
+@property (nonatomic) float radius;
 @property (nonatomic) int radiusSteps;
-@property (nonatomic) double startAngle;
-@property (nonatomic) double topZ;
+@property (nonatomic) float startAngle;
+@property (nonatomic) float topZ;
 
 - (int)angleSteps;
 - (int)bevelEdgeSteps;
@@ -37,13 +37,13 @@
 - (void)dealloc;
 - (float)endAngle;
 - (void)generateArrays;
-- (void)generateRoundedTop:(struct vector<float, std::__1::allocator<float> > { double *x1; double *x2; struct __compressed_pair<double *, std::__1::allocator<float> > { double *x_3_1_1; } x3; }*)arg1 radiusArray:(struct vector<float, std::__1::allocator<float> > { double *x1; double *x2; struct __compressed_pair<double *, std::__1::allocator<float> > { double *x_3_1_1; } x3; }*)arg2;
+- (void)generateRoundedTop:(struct vector<float, std::__1::allocator<float> > { float *x1; float *x2; struct __compressed_pair<float *, std::__1::allocator<float> > { float *x_3_1_1; } x3; }*)arg1 radiusArray:(struct vector<float, std::__1::allocator<float> > { float *x1; float *x2; struct __compressed_pair<float *, std::__1::allocator<float> > { float *x_3_1_1; } x3; }*)arg2;
 - (int)geometryCount;
 - (id)init;
 - (BOOL)isFullCircle;
 - (id)normalDirectionMapper;
-- (void)p_generateAngles:(struct vector<float, std::__1::allocator<float> > { double *x1; double *x2; struct __compressed_pair<double *, std::__1::allocator<float> > { double *x_3_1_1; } x3; }*)arg1;
-- (void)p_generateBevelCoordinates:(struct vector<glm::detail::tvec3<float>, std::__1::allocator<glm::detail::tvec3<float> > > { struct tvec3<float> {} *x1; struct tvec3<float> {} *x2; struct __compressed_pair<glm::detail::tvec3<float> *, std::__1::allocator<glm::detail::tvec3<float> > > { struct tvec3<float> {} *x_3_1_1; } x3; }*)arg1 andAngles:(struct vector<float, std::__1::allocator<float> > { double *x1; double *x2; struct __compressed_pair<double *, std::__1::allocator<float> > { double *x_3_1_1; } x3; }*)arg2 radiusArray:(const struct vector<float, std::__1::allocator<float> > { double *x1; double *x2; struct __compressed_pair<double *, std::__1::allocator<float> > { double *x_3_1_1; } x3; }*)arg3 topArray:(const struct vector<float, std::__1::allocator<float> > { double *x1; double *x2; struct __compressed_pair<double *, std::__1::allocator<float> > { double *x_3_1_1; } x3; }*)arg4;
+- (void)p_generateAngles:(struct vector<float, std::__1::allocator<float> > { float *x1; float *x2; struct __compressed_pair<float *, std::__1::allocator<float> > { float *x_3_1_1; } x3; }*)arg1;
+- (void)p_generateBevelCoordinates:(struct vector<glm::detail::tvec3<float>, std::__1::allocator<glm::detail::tvec3<float> > > { struct tvec3<float> {} *x1; struct tvec3<float> {} *x2; struct __compressed_pair<glm::detail::tvec3<float> *, std::__1::allocator<glm::detail::tvec3<float> > > { struct tvec3<float> {} *x_3_1_1; } x3; }*)arg1 andAngles:(struct vector<float, std::__1::allocator<float> > { float *x1; float *x2; struct __compressed_pair<float *, std::__1::allocator<float> > { float *x_3_1_1; } x3; }*)arg2 radiusArray:(const struct vector<float, std::__1::allocator<float> > { float *x1; float *x2; struct __compressed_pair<float *, std::__1::allocator<float> > { float *x_3_1_1; } x3; }*)arg3 topArray:(const struct vector<float, std::__1::allocator<float> > { float *x1; float *x2; struct __compressed_pair<float *, std::__1::allocator<float> > { float *x_3_1_1; } x3; }*)arg4;
 - (float)radius;
 - (int)radiusSteps;
 - (id)selectionKnobPositions;

@@ -5,12 +5,12 @@
 @interface KNSoundtrack : TSPObject <NSCopying> {
     NSArray * _media;
     int  _mode;
-    double  _volume;
+    float  _volume;
 }
 
 @property (nonatomic, copy) NSArray *media;
 @property (nonatomic) int mode;
-@property (nonatomic) double volume;
+@property (nonatomic) float volume;
 
 + (BOOL)needsObjectUUID;
 

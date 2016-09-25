@@ -11,7 +11,7 @@
     bool  forcesTopAlignment;
     bool  hasQueuedUpdate;
     bool  isZooming;
-    double  oldMagnification;
+    float  oldMagnification;
     NSDate * pageSyncDate;
     bool  scheduledPageSync;
 }

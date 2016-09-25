@@ -8,7 +8,7 @@
 @property (nonatomic, copy) NSArray *items;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *stationHash;
-@property (nonatomic) int stationID;
+@property (nonatomic) long long stationID;
 @property (nonatomic) int type;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -16,7 +16,7 @@
 - (void)setItems:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setStationHash:(id)arg1;
-- (void)setStationID:(int)arg1;
+- (void)setStationID:(long long)arg1;
 - (void)setType:(int)arg1;
 
 @end

@@ -4,14 +4,14 @@
 
 @interface TSDMutableStroke : TSDStroke <TSDMutableStroke>
 
-@property (nonatomic) double actualWidth;
+@property (nonatomic) float actualWidth;
 @property (nonatomic) int cap;
 @property (nonatomic, copy) TSUColor *color;
 @property (nonatomic) BOOL dontClearBackground;
 @property (nonatomic) int join;
-@property (nonatomic) double miterLimit;
+@property (nonatomic) float miterLimit;
 @property (nonatomic, copy) TSDStrokePattern *pattern;
-@property (nonatomic) double width;
+@property (nonatomic) float width;
 
 + (id)emptyStroke;
 + (id)stroke;

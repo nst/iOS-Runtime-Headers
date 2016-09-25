@@ -41,7 +41,7 @@
 + (void)requireIntrinsicSizeForView:(id)arg1 withPriority:(float)arg2;
 + (float)scaledValueForValue:(float)arg1 withFont:(id)arg2;
 + (id)setHeight:(float)arg1 forView:(id)arg2;
-+ (void)setSize:(struct CGSize { double x1; double x2; })arg1 forView:(id)arg2;
++ (void)setSize:(struct CGSize { float x1; float x2; })arg1 forView:(id)arg2;
 + (void)setVisibility:(BOOL)arg1 forView:(id)arg2;
 + (id)setWidth:(float)arg1 forView:(id)arg2;
 + (void)spanContainerHeightForView:(id)arg1;

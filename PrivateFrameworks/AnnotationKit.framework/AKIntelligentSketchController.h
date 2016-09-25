@@ -23,12 +23,12 @@
     NSMutableArray * _recentDoodlesAnnotations;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _recentDrawingBoundsInInputView;
     BOOL  _selectNewlyCreatedAnnotations;
@@ -58,7 +58,7 @@
 @property BOOL pressureSensitiveDoodleMode;
 @property (retain) NSMutableArray *recentDoodlePaths;
 @property (retain) NSMutableArray *recentDoodlesAnnotations;
-@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } recentDrawingBoundsInInputView;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } recentDrawingBoundsInInputView;
 @property (nonatomic) BOOL selectNewlyCreatedAnnotations;
 @property (getter=shapeDetectionEnabled, nonatomic) BOOL shapeDetectionEnabled;
 @property (nonatomic, retain) CHRecognizer *shapeRecognizer;
@@ -66,27 +66,27 @@
 @property double veryHighConfidenceLevel;
 
 - (void).cxx_destruct;
-- (void)_addAnnotationImmediatelyFor:(struct CGPath { }*)arg1 withDrawingCenter:(struct CGPoint { double x1; double x2; })arg2 drawingBoundsInView:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 pathIsPrestroked:(BOOL)arg4 isSingelDot:(BOOL)arg5 fromInputView:(id)arg6;
+- (void)_addAnnotationImmediatelyFor:(struct CGPath { }*)arg1 withDrawingCenter:(struct CGPoint { float x1; float x2; })arg2 drawingBoundsInView:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 pathIsPrestroked:(BOOL)arg4 isSingelDot:(BOOL)arg5 fromInputView:(id)arg6;
 - (void)_beginOrExtendCoalescingTimer;
 - (void)_clearCoalescingState;
 - (void)_clearPreviousCandidateAnnotation;
 - (void)_coalesceDrawingsCancelled;
 - (void)_coalesceRecentDrawings;
-- (id)_convertDrawingBoundsInInputView:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 outBoundsInPageModel:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg2;
-- (id)_createAnnotationWithRecognizerResult:(id)arg1 forDrawingBoundsInInputView:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 shouldGoToPageController:(id*)arg3;
-- (id)_createDoodleShapeResultFromCGPath:(struct CGPath { }*)arg1 withDrawingCenter:(struct CGPoint { double x1; double x2; })arg2 pathIsPrestroked:(BOOL)arg3;
-- (id)_createFlippedCHDrawingFromCHDrawing:(id)arg1 withDrawingCenter:(struct CGPoint { double x1; double x2; })arg2;
+- (id)_convertDrawingBoundsInInputView:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 outBoundsInPageModel:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2;
+- (id)_createAnnotationWithRecognizerResult:(id)arg1 forDrawingBoundsInInputView:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 shouldGoToPageController:(id*)arg3;
+- (id)_createDoodleShapeResultFromCGPath:(struct CGPath { }*)arg1 withDrawingCenter:(struct CGPoint { float x1; float x2; })arg2 pathIsPrestroked:(BOOL)arg3;
+- (id)_createFlippedCHDrawingFromCHDrawing:(id)arg1 withDrawingCenter:(struct CGPoint { float x1; float x2; })arg2;
 - (BOOL)_drawingIsValidForRecognition:(id)arg1 withPath:(struct CGPath { }*)arg2;
 - (void)_executeRecognition;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameForOurOverlayInHostingView:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForOurOverlayInHostingView:(id)arg1;
 - (void)_inputView:(id)arg1 didCollectPath:(struct CGPath { }*)arg2 isPrestroked:(BOOL)arg3;
 - (BOOL)_isResultVeryHighConfidence:(id)arg1;
 - (void)_logAllResults:(id)arg1;
-- (void)_performRecognitionForDrawing:(id)arg1 withPath:(struct CGPath { }*)arg2 boundsInInputView:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 center:(struct CGPoint { double x1; double x2; })arg4 isPrestroked:(BOOL)arg5;
+- (void)_performRecognitionForDrawing:(id)arg1 withPath:(struct CGPath { }*)arg2 boundsInInputView:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 center:(struct CGPoint { float x1; float x2; })arg4 isPrestroked:(BOOL)arg5;
 - (void)_pickCandidateResult:(id)arg1;
 - (void)_presentCandidatePickerBarWithCandidates:(id)arg1 ofDrawing:(id)arg2;
 - (void)_removeAnnotations:(id)arg1 mostLikelyFromPageController:(id)arg2;
-- (void)_scheduleDelayedRecognitionForDrawing:(id)arg1 withPath:(struct CGPath { }*)arg2 boundsInView:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 center:(struct CGPoint { double x1; double x2; })arg4 isPrestroked:(BOOL)arg5;
+- (void)_scheduleDelayedRecognitionForDrawing:(id)arg1 withPath:(struct CGPath { }*)arg2 boundsInView:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 center:(struct CGPoint { float x1; float x2; })arg4 isPrestroked:(BOOL)arg5;
 - (BOOL)_shouldSelectCandidate:(id)arg1;
 - (void)_showCandidatePickerWithTypes:(id)arg1 forDrawingInInputView:(id)arg2 shouldSurfaceDoodle:(BOOL)arg3;
 - (void)_teardownCandidatePicker;
@@ -123,7 +123,7 @@
 - (BOOL)pressureSensitiveDoodleMode;
 - (id)recentDoodlePaths;
 - (id)recentDoodlesAnnotations;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })recentDrawingBoundsInInputView;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })recentDrawingBoundsInInputView;
 - (void)removeOverlay;
 - (BOOL)selectNewlyCreatedAnnotations;
 - (void)setCandidateAKTags:(id)arg1;
@@ -144,7 +144,7 @@
 - (void)setPressureSensitiveDoodleMode:(BOOL)arg1;
 - (void)setRecentDoodlePaths:(id)arg1;
 - (void)setRecentDoodlesAnnotations:(id)arg1;
-- (void)setRecentDrawingBoundsInInputView:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setRecentDrawingBoundsInInputView:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setSelectNewlyCreatedAnnotations:(BOOL)arg1;
 - (void)setShapeDetectionEnabled:(BOOL)arg1;
 - (void)setShapeRecognizer:(id)arg1;

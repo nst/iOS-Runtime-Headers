@@ -29,10 +29,10 @@
     BOOL  _isUserSwiping;
     <FMAnnotation><MKAnnotation> * _lastSelectedAnnotationBeforeTracking;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _lastVisibleInsets;
     struct { 
         struct { 
@@ -47,7 +47,7 @@
     NSTimer * _layoutTimer;
     FMMapGestureRecognizer * _mapGesture;
     MKMapView * _mapView;
-    double  _maxZoomLevel;
+    float  _maxZoomLevel;
     <MKAnnotation> * _otherSelectedAnnotation;
     FMAnnotationView * _potentiallySelectedAnnotationView;
     int  _renderingMode;
@@ -90,12 +90,12 @@
 @property (nonatomic) BOOL isUserLocationUpdated;
 @property (nonatomic) BOOL isUserSwiping;
 @property (nonatomic) <FMAnnotation><MKAnnotation> *lastSelectedAnnotationBeforeTracking;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } lastVisibleInsets;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } lastVisibleInsets;
 @property (nonatomic) struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; } lastVisibleMapRect;
 @property (nonatomic, retain) NSTimer *layoutTimer;
 @property (nonatomic, retain) FMMapGestureRecognizer *mapGesture;
 @property (nonatomic, readonly) MKMapView *mapView;
-@property (nonatomic) double maxZoomLevel;
+@property (nonatomic) float maxZoomLevel;
 @property (nonatomic) <MKAnnotation> *otherSelectedAnnotation;
 @property (nonatomic, retain) FMAnnotationView *potentiallySelectedAnnotationView;
 @property (nonatomic) int renderingMode;
@@ -119,7 +119,7 @@
 - (void)addAnnotations:(id)arg1;
 - (void)addOverlay:(id)arg1;
 - (void)addOverlays:(id)arg1;
-- (void)animateMapToPosition:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 withInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2 andZoom:(BOOL)arg3;
+- (void)animateMapToPosition:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 withInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2 andZoom:(BOOL)arg3;
 - (void)animateRenderingModeChange;
 - (void)animateToAllAnnotation;
 - (id)annotationsSortedByDistance;
@@ -152,7 +152,7 @@
 - (int)doubleSelectionMode;
 - (void)fingerOffAnnotation:(id)arg1;
 - (void)fingerOnAnnotation:(id)arg1;
-- (void)flashMapInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)flashMapInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (BOOL)hasUserLocation;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
@@ -175,7 +175,7 @@
 - (BOOL)isUserSwiping;
 - (BOOL)isValidLocation:(struct CLLocationCoordinate2D { double x1; double x2; })arg1;
 - (id)lastSelectedAnnotationBeforeTracking;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })lastVisibleInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })lastVisibleInsets;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })lastVisibleMapRect;
 - (void)layoutMapView;
 - (void)layoutSubviews;
@@ -203,7 +203,7 @@
 - (id)mapView:(id)arg1 viewForAnnotation:(id)arg2;
 - (void)mapViewDidStopLocatingUser:(id)arg1;
 - (float)maxZoomLevel;
-- (void)moveCenterByOffset:(struct CGPoint { double x1; double x2; })arg1 from:(struct CLLocationCoordinate2D { double x1; double x2; })arg2;
+- (void)moveCenterByOffset:(struct CGPoint { float x1; float x2; })arg1 from:(struct CLLocationCoordinate2D { double x1; double x2; })arg2;
 - (id)nearbyAnnotations;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })normalizeMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 toZoomScale:(float)arg2;
 - (id)otherSelectedAnnotation;
@@ -251,7 +251,7 @@
 - (void)setIsUserLocationUpdated:(BOOL)arg1;
 - (void)setIsUserSwiping:(BOOL)arg1;
 - (void)setLastSelectedAnnotationBeforeTracking:(id)arg1;
-- (void)setLastVisibleInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setLastVisibleInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setLastVisibleMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setLayoutTimer:(id)arg1;
 - (void)setMapGesture:(id)arg1;

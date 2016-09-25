@@ -5,12 +5,12 @@
 @interface _UIKeyboardTextSelectionController : NSObject {
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _caretRectForCursorPosition;
     UITextPosition * _cursorPosition;
@@ -23,11 +23,11 @@
     int  _selectionGranularity;
 }
 
-@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } caretRectForCursorPosition;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } caretRectForFirstSelectedPosition;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } caretRectForLastSelectedPosition;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } caretRectForLeftmostSelectedPosition;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } caretRectForRightmostSelectedPosition;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } caretRectForCursorPosition;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } caretRectForFirstSelectedPosition;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } caretRectForLastSelectedPosition;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } caretRectForLeftmostSelectedPosition;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } caretRectForRightmostSelectedPosition;
 @property (nonatomic, retain) UITextPosition *cursorPosition;
 @property (nonatomic, readonly) BOOL hasCaretSelection;
 @property (nonatomic, readonly) BOOL hasRangedSelection;
@@ -39,27 +39,27 @@
 @property (nonatomic, readonly) <UISelectionInteractionAssistant> *selectionInteractionAssistant;
 @property (nonatomic, readonly) UIView *textInputView;
 
-- (void)beginFloatingCursorAtPoint:(struct CGPoint { double x1; double x2; })arg1;
-- (BOOL)beginLoupeGestureAtPoint:(struct CGPoint { double x1; double x2; })arg1;
-- (void)beginLoupeMagnifierAtPoint:(struct CGPoint { double x1; double x2; })arg1;
-- (void)beginRangedMagnifierAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)beginFloatingCursorAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (BOOL)beginLoupeGestureAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)beginLoupeMagnifierAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)beginRangedMagnifierAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)beginSelection;
 - (void)beginSelectionChange;
-- (void)beginSelectionWithBaseAtSelectionBoundaryInDirection:(int)arg1 initialExtentPoint:(struct CGPoint { double x1; double x2; })arg2 executionContext:(id)arg3;
-- (void)beginSelectionWithBasePositionAtBoundary:(int)arg1 inDirection:(int)arg2 withInitialExtentPoint:(struct CGPoint { double x1; double x2; })arg3 executionContext:(id)arg4;
-- (struct CGPoint { double x1; double x2; })boundedDeltaForTranslation:(struct CGPoint { double x1; double x2; })arg1 cursorLocationBase:(struct CGPoint { double x1; double x2; })arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })caretRectForCursorPosition;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })caretRectForFirstSelectedPosition;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })caretRectForLastSelectedPosition;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })caretRectForLeftmostSelectedPosition;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })caretRectForRightmostSelectedPosition;
+- (void)beginSelectionWithBaseAtSelectionBoundaryInDirection:(int)arg1 initialExtentPoint:(struct CGPoint { float x1; float x2; })arg2 executionContext:(id)arg3;
+- (void)beginSelectionWithBasePositionAtBoundary:(int)arg1 inDirection:(int)arg2 withInitialExtentPoint:(struct CGPoint { float x1; float x2; })arg3 executionContext:(id)arg4;
+- (struct CGPoint { float x1; float x2; })boundedDeltaForTranslation:(struct CGPoint { float x1; float x2; })arg1 cursorLocationBase:(struct CGPoint { float x1; float x2; })arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })caretRectForCursorPosition;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })caretRectForFirstSelectedPosition;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })caretRectForLastSelectedPosition;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })caretRectForLeftmostSelectedPosition;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })caretRectForRightmostSelectedPosition;
 - (id)cursorPosition;
 - (BOOL)cursorPositionIsContainedByRange:(id)arg1;
 - (void)dealloc;
 - (void)endFloatingCursor;
-- (void)endLoupeGestureAtPoint:(struct CGPoint { double x1; double x2; })arg1;
-- (void)endLoupeMagnifierAtPoint:(struct CGPoint { double x1; double x2; })arg1;
-- (void)endRangedMagnifierAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)endLoupeGestureAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)endLoupeMagnifierAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)endRangedMagnifierAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)endSelection;
 - (void)endSelectionChange;
 - (BOOL)hasCaretSelection;
@@ -74,14 +74,14 @@
 - (void)selectImmediatePositionAtBoundary:(int)arg1 inDirection:(int)arg2 executionContext:(id)arg3;
 - (void)selectPositionAtBoundary:(int)arg1 inDirection:(int)arg2 executionContext:(id)arg3;
 - (void)selectPositionAtBoundary:(int)arg1 inDirection:(int)arg2 relativeToSelection:(id)arg3 executionContext:(id)arg4;
-- (void)selectPositionAtPoint:(struct CGPoint { double x1; double x2; })arg1 executionContext:(id)arg2;
-- (void)selectTextWithGranularity:(int)arg1 atPoint:(struct CGPoint { double x1; double x2; })arg2 completionHandler:(id /* block */)arg3;
-- (void)selectTextWithGranularity:(int)arg1 atPoint:(struct CGPoint { double x1; double x2; })arg2 executionContext:(id)arg3;
+- (void)selectPositionAtPoint:(struct CGPoint { float x1; float x2; })arg1 executionContext:(id)arg2;
+- (void)selectTextWithGranularity:(int)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2 completionHandler:(id /* block */)arg3;
+- (void)selectTextWithGranularity:(int)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2 executionContext:(id)arg3;
 - (id)selectionBase;
 - (void)selectionDidChange;
 - (int)selectionGranularity;
 - (id)selectionInteractionAssistant;
-- (void)setCaretRectForCursorPosition:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setCaretRectForCursorPosition:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setCursorPosition:(id)arg1;
 - (void)setInitialSelection:(id)arg1;
 - (void)setRangedSelectionShouldShowGrabbers:(BOOL)arg1;
@@ -91,17 +91,17 @@
 - (void)switchToRangedSelection;
 - (void)textDidChange;
 - (id)textInputView;
-- (void)updateFloatingCursorAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)updateFloatingCursorAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)updateGestureRecognizers;
 - (void)updateImmediateSelectionWithExtentAtBoundary:(int)arg1 inDirection:(int)arg2 executionContext:(id)arg3;
-- (void)updateLoupeGestureAtPoint:(struct CGPoint { double x1; double x2; })arg1;
-- (void)updateLoupeMagnifierAtPoint:(struct CGPoint { double x1; double x2; })arg1;
-- (void)updateRangedMagnifierAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)updateLoupeGestureAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)updateLoupeMagnifierAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)updateRangedMagnifierAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)updateSelectionRects;
 - (void)updateSelectionWithExtentAtBoundary:(int)arg1 inDirection:(int)arg2 executionContext:(id)arg3;
 - (void)updateSelectionWithExtentAtBoundary:(int)arg1 inDirection:(int)arg2 relativeToSelection:(id)arg3 executionContext:(id)arg4;
-- (void)updateSelectionWithExtentPoint:(struct CGPoint { double x1; double x2; })arg1 executionContext:(id)arg2;
-- (void)updateSelectionWithExtentPoint:(struct CGPoint { double x1; double x2; })arg1 withBoundary:(int)arg2 executionContext:(id)arg3;
+- (void)updateSelectionWithExtentPoint:(struct CGPoint { float x1; float x2; })arg1 executionContext:(id)arg2;
+- (void)updateSelectionWithExtentPoint:(struct CGPoint { float x1; float x2; })arg1 withBoundary:(int)arg2 executionContext:(id)arg3;
 - (void)updateSelectionWithExtentPosition:(id)arg1 executionContext:(id)arg2;
 - (void)willHandoffLoupeMagnifier;
 

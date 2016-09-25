@@ -3,18 +3,18 @@
  */
 
 @interface FCFeedCursor : NSObject <NSCoding, NSCopying> {
-    unsigned int  _order;
+    unsigned long long  _order;
 }
 
 @property (nonatomic, readonly, copy) NSDate *date;
 @property (nonatomic, readonly) BOOL isBottomOfFeed;
 @property (nonatomic, readonly) BOOL isTopOfFeed;
-@property (nonatomic) unsigned int order;
+@property (nonatomic) unsigned long long order;
 
 + (id)cursorForBottomOfFeed;
 + (id)cursorForCurrentDate;
 + (id)cursorForDate:(id)arg1;
-+ (id)cursorForOrder:(unsigned int)arg1;
++ (id)cursorForOrder:(unsigned long long)arg1;
 + (id)cursorForTopOfFeed;
 
 - (id)bottommostCursor:(id)arg1;
@@ -30,8 +30,8 @@
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToCursor:(id)arg1;
 - (BOOL)isTopOfFeed;
-- (unsigned int)order;
-- (void)setOrder:(unsigned int)arg1;
+- (unsigned long long)order;
+- (void)setOrder:(unsigned long long)arg1;
 - (id)topmostCursor:(id)arg1;
 
 @end

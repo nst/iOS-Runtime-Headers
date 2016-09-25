@@ -3,7 +3,7 @@
  */
 
 @interface BWFigCaptureDeviceSourceNode : BWSourceNode <BWFigCameraSourceNode> {
-    double  _aeMaxGain;
+    float  _aeMaxGain;
     BOOL  _automaticallyEnablesLowLightBoostWhenAvailable;
     NSObject<OS_dispatch_queue> * _bufferServicingQueue;
     BWFigVideoCaptureDevice * _captureDevice;
@@ -14,9 +14,9 @@
     BOOL  _detectedFacesOutputEnabled;
     NSMutableDictionary * _dutyCycleMetadataCache;
     BOOL  _lowLightBoostSupportedForFormat;
-    double  _maxFrameRate;
+    float  _maxFrameRate;
     int  _maxIntegrationTimeOverride;
-    double  _minFrameRate;
+    float  _minFrameRate;
     struct { 
         int width; 
         int height; 

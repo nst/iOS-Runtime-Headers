@@ -4,11 +4,11 @@
 
 @interface PHAWorkerHealthScoreEntry : NSObject {
     NSDate * _dateRecorded;
-    double  _score;
+    float  _score;
 }
 
 @property (nonatomic, readonly, copy) NSDate *dateRecorded;
-@property (nonatomic, readonly) double score;
+@property (nonatomic, readonly) float score;
 
 - (void).cxx_destruct;
 - (id)dateRecorded;

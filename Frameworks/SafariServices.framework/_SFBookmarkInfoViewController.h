@@ -32,7 +32,7 @@
 - (void)_addActionsForTextFields;
 - (void)_bookmarksDidReload:(id)arg1;
 - (BOOL)_canEditFieldsInCurrentViewController;
-- (struct CGPoint { double x1; double x2; })_centerForIconView;
+- (struct CGPoint { float x1; float x2; })_centerForIconView;
 - (void)_createCellsIfNeeded;
 - (void)_didBeginEditingTextField:(id)arg1;
 - (void)_didChangeEditingTextField:(id)arg1;

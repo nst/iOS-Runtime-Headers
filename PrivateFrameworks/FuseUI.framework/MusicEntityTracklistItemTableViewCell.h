@@ -4,7 +4,7 @@
 
 @interface MusicEntityTracklistItemTableViewCell : UITableViewCell <MusicEntityContentDescriptorViewConfiguring, MusicEntityTracklistItemViewDelegate> {
     BOOL  _entityDisabled;
-    double  _leadingTextColumnWidth;
+    float  _leadingTextColumnWidth;
     MusicEntityTracklistItemView * _tracklistItemView;
 }
 
@@ -14,7 +14,7 @@
 @property (getter=isEntityDisabled, nonatomic) BOOL entityDisabled;
 @property (nonatomic, retain) <MusicEntityValueProviding> *entityValueProvider;
 @property (readonly) unsigned int hash;
-@property (nonatomic) double leadingTextColumnWidth;
+@property (nonatomic) float leadingTextColumnWidth;
 @property (readonly) Class superclass;
 
 + (float)maximumHeightForContentDescriptor:(id)arg1 width:(float)arg2 traitCollection:(id)arg3;

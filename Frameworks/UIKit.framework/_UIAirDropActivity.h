@@ -13,7 +13,7 @@
 @property (nonatomic) int maxPreviews;
 
 - (void).cxx_destruct;
-- (struct CGSize { double x1; double x2; })_thumbnailSize;
+- (struct CGSize { float x1; float x2; })_thumbnailSize;
 - (id)activityType;
 - (id)airDropViewController;
 - (id /* block */)airdropCompletion;

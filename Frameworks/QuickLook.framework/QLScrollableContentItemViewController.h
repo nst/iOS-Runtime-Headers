@@ -22,7 +22,7 @@
 - (BOOL)canPinchToDismiss;
 - (id)contentView;
 - (void)didEndZoomingAtScale:(float)arg1;
-- (struct CGSize { double x1; double x2; })imageSize;
+- (struct CGSize { float x1; float x2; })imageSize;
 - (id)init;
 - (void)loadView;
 - (id)parallaxView;
@@ -39,7 +39,7 @@
 - (void)setShouldFit:(BOOL)arg1;
 - (BOOL)shouldFit;
 - (void)transitionWillFinish:(BOOL)arg1 didComplete:(BOOL)arg2;
-- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (void)willBeginZooming;
 
 @end

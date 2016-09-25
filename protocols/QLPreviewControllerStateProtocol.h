@@ -18,7 +18,7 @@
 - (void)setToolbarCanBeVisible:(BOOL)arg1;
 - (void)updateKeyCommands;
 - (void)updateOverlayButtons:(BOOL)arg1;
-- (void)updatePreferredContentSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)updatePreferredContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)updatePreviewItemAtIndex:(unsigned int)arg1 updatedContentsURL:(NSURL *)arg2 sandboxExtension:(NSData *)arg3;
 
 @end

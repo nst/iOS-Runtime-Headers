@@ -17,14 +17,14 @@
     void * figVideoCompositor;
     AVAssetTrack * firstVideoTrack;
     id /* block */  handler;
-    int  maxFileSize;
+    long long  maxFileSize;
     NSArray * metadata;
     AVMetadataItemFilter * metadataItemFilter;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  minVideoFrameDuration;
     BOOL  optimizeForNetworkUse;
     BOOL  outputFileCreatedByRemaker;
@@ -32,23 +32,23 @@
     NSURL * outputURL;
     NSString * preset;
     NSString * preset16x9;
-    double  progress;
+    float  progress;
     NSObject<OS_dispatch_queue> * readWriteQueue;
     struct OpaqueFigRemaker { } * remaker;
     NSObject<OS_dispatch_queue> * remakerNotificationSerializationQueue;
     int  status;
     struct { 
         struct { 
-            int value; 
+            long long value; 
             int timescale; 
             unsigned int flags; 
-            int epoch; 
+            long long epoch; 
         } start; 
         struct { 
-            int value; 
+            long long value; 
             int timescale; 
             unsigned int flags; 
-            int epoch; 
+            long long epoch; 
         } duration; 
     }  timeRange;
     BOOL  useMultiPass;

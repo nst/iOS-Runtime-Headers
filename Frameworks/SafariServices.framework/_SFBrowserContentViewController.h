@@ -9,7 +9,7 @@
     _WKActivatedElementInfo * _activatedElementInfo;
     WebUIAuthenticationManager * _authenticationManager;
     _SFBrowserView * _browserView;
-    double  _crashBannerDraggingOffset;
+    float  _crashBannerDraggingOffset;
     int  _customPreferredStatusBarStyle;
     BOOL  _didNotifyInitialLoadFinish;
     BOOL  _didReceivePolicyForInitialLoad;
@@ -70,7 +70,7 @@
 - (float)_buttonBarHeight;
 - (BOOL)_canScrollToTopInView:(id)arg1;
 - (void)_commitPreviewViewController:(id)arg1;
-- (float)_crashBannerDraggingOffsetForContentOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (float)_crashBannerDraggingOffsetForContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (id)_currentWebView;
 - (void)_didLoadWebView;
 - (void)_dismiss;
@@ -104,7 +104,7 @@
 - (BOOL)_showICSControllerForPath:(id)arg1 sourceURL:(id)arg2;
 - (void)_showPassBookControllerForPass:(id)arg1;
 - (int)_sizeClassForWidth:(float)arg1;
-- (void)_updateContentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1 forWebView:(id)arg2;
+- (void)_updateContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1 forWebView:(id)arg2;
 - (void)_updateCrashBannerOffset;
 - (void)_updateCurrentScrollViewInsets;
 - (void)_updateDoNotTrackPreference;
@@ -206,7 +206,7 @@
 - (void)scrollViewDidScroll:(id)arg1;
 - (BOOL)scrollViewShouldScrollToTop:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
-- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { double x1; double x2; })arg2 targetContentOffset:(inout struct CGPoint { double x1; double x2; }*)arg3;
+- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { float x1; float x2; })arg2 targetContentOffset:(inout struct CGPoint { float x1; float x2; }*)arg3;
 - (void)setActivatedElementInfo:(id)arg1;
 - (void)setDisplayMode:(int)arg1;
 - (void)setEntersReaderIfAvailable:(BOOL)arg1;
@@ -228,7 +228,7 @@
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (void)visibilityWillChangeForFindOnPageView:(id)arg1;
 - (id)webViewController;
 - (void)webViewController:(id)arg1 commitPreviewedViewController:(id)arg2;

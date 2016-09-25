@@ -3,25 +3,25 @@
  */
 
 @interface RadioMutableLikeBanItem : RadioLikeBanItem {
-    int  _itemID;
+    long long  _itemID;
 }
 
-@property (nonatomic) int albumID;
+@property (nonatomic) long long albumID;
 @property (nonatomic, retain) RadioArtworkCollection *artworkCollection;
 @property (nonatomic) BOOL isSeed;
-@property (nonatomic) int itemID;
+@property (nonatomic) long long itemID;
 @property (nonatomic, copy) RadioSeedMetadata *seedMetadata;
-@property (nonatomic) int storeID;
+@property (nonatomic) long long storeID;
 @property (nonatomic) int type;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (int)itemID;
-- (void)setAlbumID:(int)arg1;
+- (long long)itemID;
+- (void)setAlbumID:(long long)arg1;
 - (void)setArtworkCollection:(id)arg1;
 - (void)setIsSeed:(BOOL)arg1;
-- (void)setItemID:(int)arg1;
+- (void)setItemID:(long long)arg1;
 - (void)setSeedMetadata:(id)arg1;
-- (void)setStoreID:(int)arg1;
+- (void)setStoreID:(long long)arg1;
 - (void)setType:(int)arg1;
 
 @end

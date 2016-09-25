@@ -4,7 +4,7 @@
 
 @interface GEOPDPlaceResponse : PBCodable <NSCopying> {
     NSString * _debugApiKey;
-    unsigned int  _debugLatencyMs;
+    unsigned long long  _debugLatencyMs;
     NSMutableArray * _displayLanguages;
     NSString * _displayRegion;
     GEOPDPlaceGlobalResult * _globalResult;
@@ -21,7 +21,7 @@
 }
 
 @property (nonatomic, retain) NSString *debugApiKey;
-@property (nonatomic) unsigned int debugLatencyMs;
+@property (nonatomic) unsigned long long debugLatencyMs;
 @property (nonatomic, retain) NSMutableArray *displayLanguages;
 @property (nonatomic, retain) NSString *displayRegion;
 @property (nonatomic, retain) GEOPDPlaceGlobalResult *globalResult;
@@ -54,7 +54,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)debugApiKey;
-- (unsigned int)debugLatencyMs;
+- (unsigned long long)debugLatencyMs;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)displayLanguageAtIndex:(unsigned int)arg1;
@@ -79,7 +79,7 @@
 - (int)requestType;
 - (id)requestTypeAsString:(int)arg1;
 - (void)setDebugApiKey:(id)arg1;
-- (void)setDebugLatencyMs:(unsigned int)arg1;
+- (void)setDebugLatencyMs:(unsigned long long)arg1;
 - (void)setDisplayLanguages:(id)arg1;
 - (void)setDisplayRegion:(id)arg1;
 - (void)setGlobalResult:(id)arg1;

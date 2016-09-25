@@ -6,10 +6,10 @@
 @required
 
 - (void)cacheCoordinator:(FCCacheCoordinator *)arg1 flushKeysWithWriteLock:(NSSet *)arg2;
-- (unsigned int)cacheCoordinatorCurrentSizeWithReadLock:(FCCacheCoordinator *)arg1;
+- (unsigned long long)cacheCoordinatorCurrentSizeWithReadLock:(FCCacheCoordinator *)arg1;
 
 @optional
 
-- (unsigned int)cacheCoordinatorPreemptiveFlushSize:(FCCacheCoordinator *)arg1;
+- (unsigned long long)cacheCoordinatorPreemptiveFlushSize:(FCCacheCoordinator *)arg1;
 
 @end

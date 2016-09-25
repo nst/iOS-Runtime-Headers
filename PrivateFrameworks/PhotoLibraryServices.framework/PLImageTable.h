@@ -8,7 +8,7 @@
     int  _entryCount;
     int  _entryLength;
     int  _fid;
-    int  _fileLength;
+    long long  _fileLength;
     PLImageFormat * _format;
     int  _imageLength;
     int  _imageRowBytes;
@@ -20,8 +20,8 @@
     int  _segmentCount;
     unsigned long  _segmentLength;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _thumbnailSize;
 }
 
@@ -32,7 +32,7 @@
 @property (nonatomic, readonly) int imageHeight;
 @property (nonatomic, readonly) int imageLength;
 @property (nonatomic, readonly) int imageRowBytes;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } imageSize;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } imageSize;
 @property (nonatomic, readonly) int imageWidth;
 @property (nonatomic, readonly) BOOL isReadOnly;
 @property (nonatomic, readonly) NSString *path;
@@ -67,25 +67,25 @@
 - (void)deleteEntryWithIdentifier:(id)arg1 orIndex:(unsigned int)arg2 uuid:(id)arg3;
 - (void)endThumbnailSafePropertyUpdatesOnAsset:(id)arg1 withToken:(id)arg2;
 - (int)entryCount;
-- (void)finishUnicornEntryAtIndex:(unsigned int)arg1 withImageData:(id)arg2 imageSize:(struct CGSize { double x1; double x2; })arg3 assetUUID:(id)arg4;
+- (void)finishUnicornEntryAtIndex:(unsigned int)arg1 withImageData:(id)arg2 imageSize:(struct CGSize { float x1; float x2; })arg3 assetUUID:(id)arg4;
 - (id)imageDataAtIndex:(unsigned int)arg1 width:(int*)arg2 height:(int*)arg3 bytesPerRow:(int*)arg4 dataWidth:(int*)arg5 dataHeight:(int*)arg6 dataOffset:(int*)arg7;
 - (id)imageDataWithIdentifier:(id)arg1 orIndex:(unsigned int)arg2 width:(int*)arg3 height:(int*)arg4 bytesPerRow:(int*)arg5 dataWidth:(int*)arg6 dataHeight:(int*)arg7 dataOffset:(int*)arg8;
 - (int)imageFormat;
 - (int)imageHeight;
 - (int)imageLength;
 - (int)imageRowBytes;
-- (struct CGSize { double x1; double x2; })imageSize;
+- (struct CGSize { float x1; float x2; })imageSize;
 - (int)imageWidth;
 - (id)initWithPath:(id)arg1 imageFormat:(int)arg2;
 - (id)initWithPath:(id)arg1 imageFormat:(int)arg2 readOnly:(BOOL)arg3;
 - (BOOL)isReadOnly;
-- (id)originalPreheatItemForAsset:(id)arg1 optimalSourcePixelSize:(struct CGSize { double x1; double x2; })arg2 options:(unsigned int)arg3;
+- (id)originalPreheatItemForAsset:(id)arg1 optimalSourcePixelSize:(struct CGSize { float x1; float x2; })arg2 options:(unsigned int)arg3;
 - (id)path;
 - (id)photoUUIDToIndexMap;
 - (id)preflightCompactionWithOccupiedIndexes:(id)arg1;
 - (void)preheatImageDataAtIndex:(unsigned int)arg1 completionHandler:(id /* block */)arg2;
 - (void)preheatImageDataAtIndexes:(id)arg1 completionHandler:(id /* block */)arg2;
-- (id)preheatItemForAsset:(id)arg1 format:(int)arg2 optimalSourcePixelSize:(struct CGSize { double x1; double x2; })arg3 options:(unsigned int)arg4;
+- (id)preheatItemForAsset:(id)arg1 format:(int)arg2 optimalSourcePixelSize:(struct CGSize { float x1; float x2; })arg3 options:(unsigned int)arg4;
 - (void)setImageDataForEntry:(const void*)arg1 withIdentifier:(id)arg2 orIndex:(unsigned int)arg3 asset:(id)arg4;
 - (void)setImageForEntry:(id)arg1 withIdentifier:(id)arg2 orIndex:(unsigned int)arg3 videoDuration:(id)arg4 photoUUID:(id)arg5;
 - (BOOL)usesThumbIdentifiers;

@@ -5,9 +5,9 @@
 @interface UISwitchMVEGestureTrackingSession : NSObject {
     BOOL  _displayedOnValue;
     BOOL  _lastCommitedOnValue;
-    double  _movementVectorForPanInitiatedChangeTargetOnValue;
-    double  _movementVectorForPanInitiatedChangeY;
-    double  _naturalLayoutDirection;
+    float  _movementVectorForPanInitiatedChangeTargetOnValue;
+    float  _movementVectorForPanInitiatedChangeY;
+    float  _naturalLayoutDirection;
     BOOL  _pendingDisplayedOnValue;
     UIGestureRecognizer * _pendingDisplayedOnValueInitiatingGesture;
     UIView<UISwitchMVEGestureTrackingSessionElement> * _visualElement;
@@ -15,9 +15,9 @@
 
 @property (nonatomic) BOOL displayedOnValue;
 @property (nonatomic, readonly) BOOL lastCommitedOnValue;
-@property (nonatomic, readonly) double movementVectorForPanInitiatedChangeTargetOnValue;
-@property (nonatomic, readonly) double movementVectorForPanInitiatedChangeY;
-@property (nonatomic, readonly) double naturalLayoutDirection;
+@property (nonatomic, readonly) float movementVectorForPanInitiatedChangeTargetOnValue;
+@property (nonatomic, readonly) float movementVectorForPanInitiatedChangeY;
+@property (nonatomic, readonly) float naturalLayoutDirection;
 @property (nonatomic, readonly) BOOL pendingDisplayedOnValue;
 @property (nonatomic, readonly) UIGestureRecognizer *pendingDisplayedOnValueInitiatingGesture;
 @property (nonatomic) UIView<UISwitchMVEGestureTrackingSessionElement> *visualElement;

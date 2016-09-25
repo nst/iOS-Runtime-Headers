@@ -7,7 +7,7 @@
     <TSDAudioHUDController> * mAudioHUDController;
     CALayer * mAudioImageLayer;
     BOOL  mDidCheckPlayability;
-    double  mDynamicVolume;
+    float  mDynamicVolume;
     BOOL  mIsChangingDynamicVolume;
     BOOL  mIsPlayable;
     TSKAVPlayerController * mPlayerController;

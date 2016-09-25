@@ -46,7 +46,7 @@
 - (void)loadView;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (id)owningNavigationController;
-- (struct CGSize { double x1; double x2; })preferredContentSize;
+- (struct CGSize { float x1; float x2; })preferredContentSize;
 - (void)scrollViewDidScroll:(id)arg1;
 - (int)sectionForCalendarEditItem:(id)arg1;
 - (void)setCalendar:(id)arg1;

@@ -4,8 +4,8 @@
 
 @interface CPTableMaker : NSObject {
     unsigned int  cellIndex;
-    struct { double x1; double x2; } * columnXIntervals;
-    struct { double x1; double x2; } * rowYIntervals;
+    struct { float x1; float x2; } * columnXIntervals;
+    struct { float x1; float x2; } * rowYIntervals;
     CPTable * table;
     CPZone * tableZone;
 }

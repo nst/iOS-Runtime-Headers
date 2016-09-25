@@ -9,15 +9,15 @@
     AKTSDLineEnd * _tailLineEnd;
     AKTSDBezierPath * mCachedClippedPath;
     int  mHeadCutSegment;
-    double  mHeadCutT;
-    double  mHeadLineEndAngle;
+    float  mHeadCutT;
+    float  mHeadLineEndAngle;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  mHeadLineEndPoint;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  mHeadPoint;
     struct { 
         unsigned int path : 1; 
@@ -32,15 +32,15 @@
         unsigned int clippedPath : 1; 
     }  mShapeInvalidFlags;
     int  mTailCutSegment;
-    double  mTailCutT;
-    double  mTailLineEndAngle;
+    float  mTailCutT;
+    float  mTailLineEndAngle;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  mTailLineEndPoint;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  mTailPoint;
 }
 
@@ -55,11 +55,11 @@
 - (void)drawInContext:(struct CGContext { }*)arg1;
 - (id)headLineEnd;
 - (float)headLineEndAngle;
-- (struct CGPoint { double x1; double x2; })headLineEndPoint;
+- (struct CGPoint { float x1; float x2; })headLineEndPoint;
 - (id)init;
 - (float)lineEndScale;
-- (void)p_computeAngle:(float*)arg1 point:(struct CGPoint { double x1; double x2; }*)arg2 cutSegment:(int*)arg3 cutT:(float*)arg4 forLineEndAtHead:(BOOL)arg5;
-- (void)p_drawLineEndForHead:(BOOL)arg1 withDelta:(struct CGPoint { double x1; double x2; })arg2 inContext:(struct CGContext { }*)arg3 useFastDrawing:(BOOL)arg4;
+- (void)p_computeAngle:(float*)arg1 point:(struct CGPoint { float x1; float x2; }*)arg2 cutSegment:(int*)arg3 cutT:(float*)arg4 forLineEndAtHead:(BOOL)arg5;
+- (void)p_drawLineEndForHead:(BOOL)arg1 withDelta:(struct CGPoint { float x1; float x2; })arg2 inContext:(struct CGContext { }*)arg3 useFastDrawing:(BOOL)arg4;
 - (void)p_invalidateClippedPath;
 - (void)p_invalidateHead;
 - (void)p_invalidateTail;
@@ -76,6 +76,6 @@
 - (id)strokeTailLineEnd;
 - (id)tailLineEnd;
 - (float)tailLineEndAngle;
-- (struct CGPoint { double x1; double x2; })tailLineEndPoint;
+- (struct CGPoint { float x1; float x2; })tailLineEndPoint;
 
 @end

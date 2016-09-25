@@ -12,8 +12,8 @@
     UIAlertController * __cancelConfirmationAlert;
     UIAlertController * __irisRevertConfirmationAlert;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  __layoutReferenceSize;
     PUPhotoEditLivePhotoController * __livePhotoController;
     int  __livePhotoRenderRequestID;
@@ -49,12 +49,12 @@
     PUFiltersToolController * _filtersController;
     UIButton * _irisButton;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _lastKnownPreviewViewSize;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _lastKnownWorkImageSize;
     int  _layoutOrientation;
     BOOL  _livePhotoIsPlaying;
@@ -113,7 +113,7 @@
 @property (setter=_setCanAnimateNextAutoEnhance:, nonatomic) BOOL _canAnimateNextAutoEnhance;
 @property (setter=_setCancelConfirmationAlert:, nonatomic) UIAlertController *_cancelConfirmationAlert;
 @property (setter=_setIrisRevertConfirmationAlert:, nonatomic) UIAlertController *_irisRevertConfirmationAlert;
-@property (setter=_setLayoutReferenceSize:, nonatomic) struct CGSize { double x1; double x2; } _layoutReferenceSize;
+@property (setter=_setLayoutReferenceSize:, nonatomic) struct CGSize { float x1; float x2; } _layoutReferenceSize;
 @property (setter=_setLivePhotoController:, nonatomic, retain) PUPhotoEditLivePhotoController *_livePhotoController;
 @property (setter=_setLivePhotoRenderRequestID:, nonatomic) int _livePhotoRenderRequestID;
 @property (setter=_setMainRenderer:, nonatomic, retain) PLPhotoEditRenderer *_mainRenderer;
@@ -143,7 +143,7 @@
 @property (nonatomic, readonly) <PUEditableAsset> *photo;
 @property (nonatomic, readonly) PUPhotoEditViewControllerSpec *photoEditSpec;
 @property (nonatomic) <PUPhotoEditViewControllerPresentationDelegate> *presentationDelegate;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } previewViewFrame;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } previewViewFrame;
 @property (getter=isPreviewViewHidden, nonatomic) BOOL previewViewHidden;
 @property (nonatomic) <PUPhotoEditViewControllerSessionDelegate> *sessionDelegate;
 @property (readonly) Class superclass;
@@ -188,7 +188,7 @@
 - (BOOL)_isRevertingToOriginal;
 - (BOOL)_isWaitingForAssetChange;
 - (BOOL)_isWaitingForSaveCompletion;
-- (struct CGSize { double x1; double x2; })_layoutReferenceSize;
+- (struct CGSize { float x1; float x2; })_layoutReferenceSize;
 - (id)_livePhotoController;
 - (int)_livePhotoRenderRequestID;
 - (void)_loadOriginalImageIfNeeded;
@@ -218,7 +218,7 @@
 - (id)_revertConfirmationAlert;
 - (int)_revertToOriginalWithCompletionHandler:(id /* block */)arg1;
 - (int)_saveCompetionDismissalState;
-- (struct CGSize { double x1; double x2; })_scaleSize:(struct CGSize { double x1; double x2; })arg1 toFitSize:(struct CGSize { double x1; double x2; })arg2;
+- (struct CGSize { float x1; float x2; })_scaleSize:(struct CGSize { float x1; float x2; })arg1 toFitSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)_scheduleLivePhotoRender;
 - (void)_setAggregateSession:(id)arg1;
 - (void)_setAssetChangeDismissalState:(int)arg1;
@@ -229,7 +229,7 @@
 - (void)_setIrisRevertConfirmationAlert:(id)arg1;
 - (void)_setLayoutOrientation:(int)arg1;
 - (void)_setLayoutOrientation:(int)arg1 withTransitionCoordinator:(id)arg2;
-- (void)_setLayoutReferenceSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)_setLayoutReferenceSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_setLivePhotoController:(id)arg1;
 - (void)_setLivePhotoRenderRequestID:(int)arg1;
 - (void)_setMainRenderer:(id)arg1;
@@ -265,7 +265,7 @@
 - (void)_updateBackgroundColor;
 - (void)_updateIrisButtonAnimated:(BOOL)arg1;
 - (void)_updateLastKnownImageSize;
-- (void)_updateLayoutOrientationWithViewSize:(struct CGSize { double x1; double x2; })arg1 transitionCoordinator:(id)arg2;
+- (void)_updateLayoutOrientationWithViewSize:(struct CGSize { float x1; float x2; })arg1 transitionCoordinator:(id)arg2;
 - (void)_updateLivePhotoPlaybackGestureRecognizer;
 - (void)_updateLivePhotoView;
 - (void)_updateMainActionButtonAnimated:(BOOL)arg1;
@@ -291,7 +291,7 @@
 - (void)_updateToolbarBackgroundAnimated:(BOOL)arg1;
 - (void)_updateToolbarsAnimated:(BOOL)arg1;
 - (void)_updateTraitCollectionAndLayoutReferenceSize;
-- (void)_updateTraitCollectionAndLayoutReferenceSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)_updateTraitCollectionAndLayoutReferenceSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_updateValuesCalculator;
 - (id)_valuesCalculator;
 - (int)_workImageVersion;
@@ -311,7 +311,7 @@
 - (void)editPluginSessionWillBegin:(id)arg1;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
-- (void)glkView:(id)arg1 drawInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (void)glkView:(id)arg1 drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (id)initWithPhoto:(id)arg1 mediaProvider:(id)arg2 mediaDestination:(id)arg3;
 - (BOOL)isPreviewViewHidden;
 - (int)layoutOrientation;
@@ -339,7 +339,7 @@
 - (id)prepareForPhotoLibraryChange:(id)arg1;
 - (void)prepareForPopoverPresentation:(id)arg1;
 - (id)presentationDelegate;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })previewViewFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })previewViewFrame;
 - (BOOL)pu_wantsNavigationBarVisible;
 - (BOOL)pu_wantsTabBarVisible;
 - (BOOL)pu_wantsToolbarVisible;
@@ -364,7 +364,7 @@
 - (id)toolControllerImageScrollView:(id)arg1;
 - (id)toolControllerMainContainerView:(id)arg1;
 - (id)toolControllerMainRenderer:(id)arg1;
-- (struct CGSize { double x1; double x2; })toolControllerOriginalImageSize:(id)arg1;
+- (struct CGSize { float x1; float x2; })toolControllerOriginalImageSize:(id)arg1;
 - (id)toolControllerPreviewView:(id)arg1;
 - (id)toolControllerUneditedPhotoEditModel:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
@@ -379,6 +379,6 @@
 - (void)viewModel:(id)arg1 didChange:(id)arg2;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

@@ -4,7 +4,7 @@
 
 @interface RadioStation : NSObject <MusicEntityValueProviding, RadioManagedObjectWrapperProtocol> {
     NSData * _adData;
-    int  _adamID;
+    long long  _adamID;
     NSURL * _artworkURL;
     NSData * _artworkURLData;
     NSString * _coreSeedName;
@@ -21,7 +21,7 @@
     NSManagedObject * _managedObject;
     RadioModel * _model;
     NSString * _name;
-    int  _persistentID;
+    long long  _persistentID;
     BOOL  _premiumPlacement;
     BOOL  _previewOnly;
     BOOL  _requiresSubscription;
@@ -39,7 +39,7 @@
     BOOL  _sponsored;
     NSString * _stationDescription;
     NSString * _stationHash;
-    int  _stationID;
+    long long  _stationID;
     NSString * _stationStringID;
     NSURL * _streamCertificateURL;
     NSURL * _streamKeyURL;
@@ -51,7 +51,7 @@
 }
 
 @property (nonatomic, retain) NSData *adData;
-@property (nonatomic) int adamID;
+@property (nonatomic) long long adamID;
 @property (nonatomic, readonly) RadioArtworkCollection *artworkCollection;
 @property (nonatomic, copy) NSURL *artworkURL;
 @property (nonatomic, copy) NSData *artworkURLData;
@@ -74,7 +74,7 @@
 @property (nonatomic, readonly) NSManagedObject *managedObject;
 @property (nonatomic, readonly) RadioModel *model;
 @property (nonatomic, copy) NSString *name;
-@property (nonatomic) int persistentID;
+@property (nonatomic) long long persistentID;
 @property (getter=isPremiumPlacement, nonatomic) BOOL premiumPlacement;
 @property (getter=isPreview, nonatomic, readonly) BOOL preview;
 @property (getter=isPreviewOnly, nonatomic) BOOL previewOnly;
@@ -93,7 +93,7 @@
 @property (getter=isSponsored, nonatomic) BOOL sponsored;
 @property (nonatomic, copy) NSString *stationDescription;
 @property (nonatomic, copy) NSString *stationHash;
-@property (nonatomic) int stationID;
+@property (nonatomic) long long stationID;
 @property (nonatomic, copy) NSString *stationStringID;
 @property (nonatomic, retain) NSURL *streamCertificateURL;
 @property (nonatomic, retain) NSURL *streamKeyURL;
@@ -109,11 +109,11 @@
 - (void).cxx_destruct;
 - (void)_radioModelWasDeletedNotification:(id)arg1;
 - (id)adData;
-- (int)adamID;
+- (long long)adamID;
 - (id)artworkCollection;
 - (id)artworkURL;
 - (id)artworkURLData;
-- (id)artworkURLForSize:(struct CGSize { double x1; double x2; })arg1 expectedSize:(struct CGSize { double x1; double x2; }*)arg2;
+- (id)artworkURLForSize:(struct CGSize { float x1; float x2; })arg1 expectedSize:(struct CGSize { float x1; float x2; }*)arg2;
 - (id)coreSeedName;
 - (void)dealloc;
 - (id)debugDictionary;
@@ -141,11 +141,11 @@
 - (id)managedObject;
 - (id)model;
 - (id)name;
-- (int)persistentID;
+- (long long)persistentID;
 - (BOOL)requiresSubscription;
 - (id)seedTracks;
 - (void)setAdData:(id)arg1;
-- (void)setAdamID:(int)arg1;
+- (void)setAdamID:(long long)arg1;
 - (void)setArtworkURL:(id)arg1;
 - (void)setArtworkURLData:(id)arg1;
 - (void)setCoreSeedName:(id)arg1;
@@ -159,7 +159,7 @@
 - (void)setIsExplicit:(BOOL)arg1;
 - (void)setLikesEnabled:(BOOL)arg1;
 - (void)setName:(id)arg1;
-- (void)setPersistentID:(int)arg1;
+- (void)setPersistentID:(long long)arg1;
 - (void)setPremiumPlacement:(BOOL)arg1;
 - (void)setPreviewOnly:(BOOL)arg1;
 - (void)setRequiresSubscription:(BOOL)arg1;
@@ -177,7 +177,7 @@
 - (void)setSponsored:(BOOL)arg1;
 - (void)setStationDescription:(id)arg1;
 - (void)setStationHash:(id)arg1;
-- (void)setStationID:(int)arg1;
+- (void)setStationID:(long long)arg1;
 - (void)setStationStringID:(id)arg1;
 - (void)setStreamCertificateURL:(id)arg1;
 - (void)setStreamKeyURL:(id)arg1;
@@ -196,7 +196,7 @@
 - (int)sortOrder;
 - (id)stationDescription;
 - (id)stationHash;
-- (int)stationID;
+- (long long)stationID;
 - (id)stationStringID;
 - (id)streamCertificateURL;
 - (id)streamKeyURL;
@@ -208,7 +208,7 @@
 // Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
 
 - (id)entityUniqueIdentifier;
-- (id)imageURLForEntityArtworkProperty:(id)arg1 fittingSize:(struct CGSize { double x1; double x2; })arg2 destinationScale:(float)arg3;
+- (id)imageURLForEntityArtworkProperty:(id)arg1 fittingSize:(struct CGSize { float x1; float x2; })arg2 destinationScale:(float)arg3;
 - (id)valueForEntityProperty:(id)arg1;
 - (id)valuesForEntityProperties:(id)arg1;
 

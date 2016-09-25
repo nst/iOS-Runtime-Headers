@@ -23,7 +23,7 @@
 - (id)init;
 - (BOOL)isEnabled;
 - (unsigned int)stationCount;
-- (id)stationWithIdentifier:(int)arg1;
+- (id)stationWithIdentifier:(long long)arg1;
 - (id)stations;
 
 @end

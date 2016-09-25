@@ -6,12 +6,12 @@
     NSDictionary * _columnNameIndexMap;
     unsigned int  _limitIndex;
     NSString * _limitProperty;
-    int  _limitValue;
+    long long  _limitValue;
     ML3DatabaseStatement * _statement;
 }
 
 @property (nonatomic, copy) NSString *limitProperty;
-@property (nonatomic) int limitValue;
+@property (nonatomic) long long limitValue;
 
 - (void).cxx_destruct;
 - (id)_statement;
@@ -21,15 +21,15 @@
 - (unsigned int)indexForColumnName:(id)arg1;
 - (id)init;
 - (id)initWithStatement:(id)arg1;
-- (int)int64ValueForFirstRowAndColumn;
+- (long long)int64ValueForFirstRowAndColumn;
 - (id)limitProperty;
-- (int)limitValue;
+- (long long)limitValue;
 - (id)objectForFirstRowAndColumn;
 - (id)objectsInColumn:(unsigned int)arg1;
 - (id)rows;
 - (void)setLimitProperty:(id)arg1;
-- (void)setLimitProperty:(id)arg1 limitValue:(int)arg2;
-- (void)setLimitValue:(int)arg1;
+- (void)setLimitProperty:(id)arg1 limitValue:(long long)arg2;
+- (void)setLimitValue:(long long)arg1;
 - (id)stringValueForFirstRowAndColumn;
 
 @end

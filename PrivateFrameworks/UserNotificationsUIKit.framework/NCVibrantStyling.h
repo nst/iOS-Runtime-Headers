@@ -3,7 +3,7 @@
  */
 
 @interface NCVibrantStyling : NSObject {
-    double  _alpha;
+    float  _alpha;
     NSString * _blendMode;
     UIColor * _burnColor;
     UIColor * _color;
@@ -13,7 +13,7 @@
     int  _style;
 }
 
-@property (nonatomic, readonly) double alpha;
+@property (nonatomic, readonly) float alpha;
 @property (nonatomic, readonly, copy) NSString *blendMode;
 @property (getter=_burnColor, nonatomic, readonly, copy) UIColor *burnColor;
 @property (nonatomic, readonly) UIColor *color;

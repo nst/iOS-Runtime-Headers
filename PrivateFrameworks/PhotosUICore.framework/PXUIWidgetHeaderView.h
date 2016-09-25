@@ -6,7 +6,7 @@
     UIButton * __captionButton;
     UILabel * __captionLabel;
     NSArray * __constraints;
-    double  __currentHeight;
+    float  __currentHeight;
     BOOL  __hasContent;
     UIButton * __subtitleButton;
     UILabel * __subtitleLabel;
@@ -16,23 +16,23 @@
     BOOL  _allowUserInteractionWithSubtitle;
     NSString * _caption;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _contentInsets;
     <PXUIWidgetHeaderViewDelegate> * _delegate;
     struct { 
         BOOL didSelectSubtitle; 
         BOOL didSelectCaption; 
     }  _delegateRespondsTo;
-    double  _distanceBetweenTitleBaselineAndSubtitleBaseline;
-    double  _horizontalSpacingBetweenTitleAndSubtitle;
+    float  _distanceBetweenTitleBaselineAndSubtitleBaseline;
+    float  _horizontalSpacingBetweenTitleAndSubtitle;
     BOOL  _isPerformingChanges;
     BOOL  _isPerformingUpdates;
     int  _layoutStyle;
-    double  _minimumDistanceBetweenLastBaselineAndBottom;
-    double  _minimumDistanceBetweenTopAndFirstBaseline;
+    float  _minimumDistanceBetweenLastBaselineAndBottom;
+    float  _minimumDistanceBetweenTopAndFirstBaseline;
     struct { 
         BOOL hasContent; 
         BOOL title; 
@@ -49,7 +49,7 @@
 @property (nonatomic, readonly) UIButton *_captionButton;
 @property (nonatomic, readonly) UILabel *_captionLabel;
 @property (setter=_setConstraints:, nonatomic, copy) NSArray *_constraints;
-@property (setter=_setCurrentHeight:, nonatomic) double _currentHeight;
+@property (setter=_setCurrentHeight:, nonatomic) float _currentHeight;
 @property (setter=_setHasContent:, nonatomic) BOOL _hasContent;
 @property (nonatomic, readonly) UIButton *_subtitleButton;
 @property (nonatomic, readonly) UILabel *_subtitleLabel;
@@ -58,13 +58,13 @@
 @property (nonatomic) BOOL allowUserInteractionWithCaption;
 @property (nonatomic) BOOL allowUserInteractionWithSubtitle;
 @property (nonatomic, copy) NSString *caption;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInsets;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
 @property (nonatomic) <PXUIWidgetHeaderViewDelegate> *delegate;
-@property (nonatomic) double distanceBetweenTitleBaselineAndSubtitleBaseline;
-@property (nonatomic) double horizontalSpacingBetweenTitleAndSubtitle;
+@property (nonatomic) float distanceBetweenTitleBaselineAndSubtitleBaseline;
+@property (nonatomic) float horizontalSpacingBetweenTitleAndSubtitle;
 @property (nonatomic) int layoutStyle;
-@property (nonatomic) double minimumDistanceBetweenLastBaselineAndBottom;
-@property (nonatomic) double minimumDistanceBetweenTopAndFirstBaseline;
+@property (nonatomic) float minimumDistanceBetweenLastBaselineAndBottom;
+@property (nonatomic) float minimumDistanceBetweenTopAndFirstBaseline;
 @property (nonatomic, retain) UIFont *primaryFont;
 @property (nonatomic, retain) UIFont *secondaryFont;
 @property (nonatomic, copy) NSString *subtitle;
@@ -107,7 +107,7 @@
 - (BOOL)allowUserInteractionWithCaption;
 - (BOOL)allowUserInteractionWithSubtitle;
 - (id)caption;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
 - (id)delegate;
 - (float)distanceBetweenTitleBaselineAndSubtitleBaseline;
 - (float)horizontalSpacingBetweenTitleAndSubtitle;
@@ -121,7 +121,7 @@
 - (void)setAllowUserInteractionWithCaption:(BOOL)arg1;
 - (void)setAllowUserInteractionWithSubtitle:(BOOL)arg1;
 - (void)setCaption:(id)arg1;
-- (void)setContentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDistanceBetweenTitleBaselineAndSubtitleBaseline:(float)arg1;
 - (void)setHorizontalSpacingBetweenTitleAndSubtitle:(float)arg1;
@@ -133,7 +133,7 @@
 - (void)setSubtitle:(id)arg1;
 - (void)setTextColor:(id)arg1;
 - (void)setTitle:(id)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)subtitle;
 - (id)textColor;
 - (id)title;

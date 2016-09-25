@@ -4,14 +4,14 @@
 
 @interface SAUITemplateEdgeInsets : AceObject <SAAceSerializable>
 
-@property (nonatomic) double bottom;
+@property (nonatomic) float bottom;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic) double left;
-@property (nonatomic) double right;
+@property (nonatomic) float left;
+@property (nonatomic) float right;
 @property (readonly) Class superclass;
-@property (nonatomic) double top;
+@property (nonatomic) float top;
 
 + (id)edgeInsets;
 + (id)edgeInsetsWithDictionary:(id)arg1 context:(id)arg2;

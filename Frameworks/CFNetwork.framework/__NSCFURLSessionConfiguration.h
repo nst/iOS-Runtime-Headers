@@ -90,7 +90,7 @@
     NSString * _tcpConnectionPoolName;
     double  _timeoutIntervalForRequest;
     double  _timeoutIntervalForResource;
-    int  _timingDataOptions;
+    long long  _timingDataOptions;
     BOOL  _usePipeliningHeuristics;
     NSString * _watchAppBundleIdentifier;
     NSString * _watchExtensionBundleIdentifier;
@@ -170,7 +170,7 @@
 - (id)_sourceApplicationSecondaryIdentifier;
 - (BOOL)_supportsAVAssetDownloads;
 - (id)_tcpConnectionPoolName;
-- (int)_timingDataOptions;
+- (long long)_timingDataOptions;
 - (BOOL)_usePipeliningHeuristics;
 - (id)_watchAppBundleIdentifier;
 - (id)_watchExtensionBundleIdentifier;
@@ -289,7 +289,7 @@
 - (void)set_sourceApplicationSecondaryIdentifier:(id)arg1;
 - (void)set_supportsAVAssetDownloads:(BOOL)arg1;
 - (void)set_tcpConnectionPoolName:(id)arg1;
-- (void)set_timingDataOptions:(int)arg1;
+- (void)set_timingDataOptions:(long long)arg1;
 - (void)set_usePipeliningHeuristics:(BOOL)arg1;
 - (void)set_watchAppBundleIdentifier:(id)arg1;
 - (void)set_watchExtensionBundleIdentifier:(id)arg1;

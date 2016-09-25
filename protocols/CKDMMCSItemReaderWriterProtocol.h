@@ -10,7 +10,7 @@
 - (BOOL)closeWithError:(id*)arg1;
 - (CKFileMetadata *)getFileMetadataWithError:(id*)arg1;
 - (BOOL)openWithError:(id*)arg1;
-- (BOOL)readBytesAtOffset:(unsigned int)arg1 bytes:(char *)arg2 length:(unsigned int)arg3 bytesRead:(unsigned int*)arg4 error:(id*)arg5;
-- (BOOL)writeBytesAtOffset:(unsigned int)arg1 bytes:(char *)arg2 length:(unsigned int)arg3 bytesWritten:(unsigned int*)arg4 error:(id*)arg5;
+- (BOOL)readBytesAtOffset:(unsigned long long)arg1 bytes:(char *)arg2 length:(unsigned long long)arg3 bytesRead:(unsigned long long*)arg4 error:(id*)arg5;
+- (BOOL)writeBytesAtOffset:(unsigned long long)arg1 bytes:(char *)arg2 length:(unsigned long long)arg3 bytesWritten:(unsigned long long*)arg4 error:(id*)arg5;
 
 @end

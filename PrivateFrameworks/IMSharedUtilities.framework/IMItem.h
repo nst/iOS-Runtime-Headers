@@ -10,12 +10,12 @@
     NSString * _countryCode;
     NSString * _guid;
     NSString * _handle;
-    int  _messageID;
+    long long  _messageID;
     NSString * _roomName;
     NSDictionary * _senderInfo;
     NSString * _service;
     NSDate * _time;
-    int  _type;
+    long long  _type;
     NSString * _unformattedID;
 }
 
@@ -28,26 +28,26 @@
 @property (nonatomic, retain) NSString *handle;
 @property (nonatomic, readonly) BOOL isFromMe;
 @property (nonatomic, readonly) BOOL isLastMessageCandidate;
-@property (setter=_setMessageID:, nonatomic) int messageID;
+@property (setter=_setMessageID:, nonatomic) long long messageID;
 @property (nonatomic, retain) NSString *roomName;
 @property (nonatomic, retain) NSString *sender;
 @property (nonatomic, retain) NSDictionary *senderInfo;
 @property (nonatomic, retain) NSString *service;
 @property (nonatomic, retain) NSDate *time;
-@property (nonatomic) int type;
+@property (nonatomic) long long type;
 @property (nonatomic, retain) NSString *unformattedID;
 
 // Image: /System/Library/PrivateFrameworks/IMSharedUtilities.framework/IMSharedUtilities
 
-+ (Class)classForIMItemType:(int)arg1;
++ (Class)classForIMItemType:(long long)arg1;
 + (Class)classForMessageItemDictionary:(id)arg1;
 
-- (void)_setMessageID:(int)arg1;
+- (void)_setMessageID:(long long)arg1;
 - (id)account;
 - (id)accountID;
 - (id)associatedMessageGUID;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })associatedMessageRange;
-- (int)associatedMessageType;
+- (long long)associatedMessageType;
 - (id)balloonBundleID;
 - (id)consumedSessionPayloads;
 - (id)context;
@@ -65,8 +65,8 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithIMRemoteObjectSerializedDictionary:(id)arg1;
-- (id)initWithSender:(id)arg1 time:(id)arg2 guid:(id)arg3 type:(int)arg4;
-- (id)initWithSenderInfo:(id)arg1 time:(id)arg2 guid:(id)arg3 messageID:(int)arg4 account:(id)arg5 accountID:(id)arg6 service:(id)arg7 handle:(id)arg8 roomName:(id)arg9 unformattedID:(id)arg10 countryCode:(id)arg11 type:(int)arg12;
+- (id)initWithSender:(id)arg1 time:(id)arg2 guid:(id)arg3 type:(long long)arg4;
+- (id)initWithSenderInfo:(id)arg1 time:(id)arg2 guid:(id)arg3 messageID:(long long)arg4 account:(id)arg5 accountID:(id)arg6 service:(id)arg7 handle:(id)arg8 roomName:(id)arg9 unformattedID:(id)arg10 countryCode:(id)arg11 type:(long long)arg12;
 - (BOOL)isAssociatedMessageItem;
 - (BOOL)isBreadcrumb;
 - (BOOL)isEqual:(id)arg1;
@@ -75,7 +75,7 @@
 - (BOOL)isMessageAcknowledgment;
 - (BOOL)isMessageEdit;
 - (BOOL)isSticker;
-- (int)messageID;
+- (long long)messageID;
 - (id)pluginSessionGUID;
 - (id)roomName;
 - (id)sender;
@@ -93,10 +93,10 @@
 - (void)setSenderInfo:(id)arg1;
 - (void)setService:(id)arg1;
 - (void)setTime:(id)arg1;
-- (void)setType:(int)arg1;
+- (void)setType:(long long)arg1;
 - (void)setUnformattedID:(id)arg1;
 - (id)time;
-- (int)type;
+- (long long)type;
 - (id)unformattedID;
 
 // Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore

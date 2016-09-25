@@ -10,15 +10,15 @@
     }  _charRange;
     unsigned int  _count;
     unsigned int * _displayAltCharIndexes;
-    double * _displayAltPositions;
+    float * _displayAltPositions;
     unsigned int * _displayCharIndexes;
-    double * _displayPositions;
+    float * _displayPositions;
     unsigned int * _logicalAltCharIndexes;
-    double * _logicalAltPositions;
+    float * _logicalAltPositions;
     unsigned int * _logicalCharIndexes;
-    double * _logicalLeftBoundaries;
-    double * _logicalPositions;
-    double * _logicalRightBoundaries;
+    float * _logicalLeftBoundaries;
+    float * _logicalPositions;
+    float * _logicalRightBoundaries;
     int  _writingDirection;
 }
 

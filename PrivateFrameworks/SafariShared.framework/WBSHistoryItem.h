@@ -4,8 +4,8 @@
 
 @interface WBSHistoryItem : NSObject {
     NSMutableArray * _autocompleteTriggers;
-    double  _cachedTopSitesURLPenalty;
-    double  _cachedTopSitesVisitScore;
+    float  _cachedTopSitesURLPenalty;
+    float  _cachedTopSitesVisitScore;
     struct Vector<int, 0, WTF::CrashOnOverflow, 16> { 
         int *m_buffer; 
         unsigned int m_capacity; 
@@ -32,8 +32,8 @@
 
 @property (nonatomic, readonly) NSArray *autocompleteTriggers;
 @property (nonatomic, readonly) NSData *autocompleteTriggersDataOnSynchronizationQueue;
-@property (nonatomic) double cachedTopSitesURLPenalty;
-@property (nonatomic) double cachedTopSitesVisitScore;
+@property (nonatomic) float cachedTopSitesURLPenalty;
+@property (nonatomic) float cachedTopSitesVisitScore;
 @property (nonatomic, readonly) unsigned int dailyVisitCountScoresCountOnSynchronizationQueue;
 @property (nonatomic, readonly) NSData *dailyVisitCountScoresDataOnSynchronizationQueue;
 @property (nonatomic, readonly) const int*dailyVisitCountScoresPtrOnSynchronizationQueue;

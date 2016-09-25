@@ -8,8 +8,8 @@
     double  lastTouchDownTimestamp;
     double  lastTouchUpTimestamp;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  startTouchDownLocation;
     BOOL  touchIsValidTap;
 }

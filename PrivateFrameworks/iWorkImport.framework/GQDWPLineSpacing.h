@@ -3,7 +3,7 @@
  */
 
 @interface GQDWPLineSpacing : NSObject <GQDNameMappable> {
-    double  mAmount;
+    float  mAmount;
     int  mMode;
 }
 

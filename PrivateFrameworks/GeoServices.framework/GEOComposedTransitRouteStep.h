@@ -21,14 +21,14 @@
 @property (nonatomic, readonly) GEOPBTransitHall *destinationHall;
 @property (nonatomic, readonly) GEOPBTransitStop *destinationStop;
 @property (nonatomic, readonly) NSString *destinationStopIntermediateListName;
-@property (nonatomic, readonly) unsigned int destinationTransitEntityMuid;
+@property (nonatomic, readonly) unsigned long long destinationTransitEntityMuid;
 @property (nonatomic, readonly) GEOInstructionSet *instructions;
 @property (nonatomic, readonly) int maneuver;
 @property (nonatomic, readonly) GEOComposedTransitRouteStep *nextTransitStep;
 @property (nonatomic, readonly) GEOPBTransitHall *originHall;
 @property (nonatomic, readonly) GEOPBTransitStop *originStop;
 @property (nonatomic, readonly) NSString *originStopIntermediateListName;
-@property (nonatomic, readonly) unsigned int originTransitEntityMuid;
+@property (nonatomic, readonly) unsigned long long originTransitEntityMuid;
 @property (nonatomic, readonly) GEOComposedTransitRouteStep *previousTransitStep;
 @property (nonatomic, readonly) <GEOTransitRoutingIncidentMessage> *routeDetailsIncidentMessage;
 @property (nonatomic, readonly) <GEOTransitRoutingIncidentMessage> *steppingIncidentMessage;
@@ -36,7 +36,7 @@
 
 - (id)_intermediateListNameForStop:(id)arg1;
 - (id)_largestEntityAtStop:(id)arg1 passingTest:(id /* block */)arg2;
-- (unsigned int)_muidForStop:(id)arg1;
+- (unsigned long long)_muidForStop:(id)arg1;
 - (void)_populateArtworksWithDecoderData:(id)arg1;
 - (void)_populateIncidentsWithDecoderData:(id)arg1;
 - (void)dealloc;
@@ -44,7 +44,7 @@
 - (id)destinationHall;
 - (id)destinationStop;
 - (id)destinationStopIntermediateListName;
-- (unsigned int)destinationTransitEntityMuid;
+- (unsigned long long)destinationTransitEntityMuid;
 - (unsigned int)distance;
 - (unsigned int)duration;
 - (struct { double x1; double x2; })endGeoCoordinate;
@@ -61,7 +61,7 @@
 - (id)originHall;
 - (id)originStop;
 - (id)originStopIntermediateListName;
-- (unsigned int)originTransitEntityMuid;
+- (unsigned long long)originTransitEntityMuid;
 - (id)previousAlightingStep;
 - (id)previousBoardingStep;
 - (id)previousStop;

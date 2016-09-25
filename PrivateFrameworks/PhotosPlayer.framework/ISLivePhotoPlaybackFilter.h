@@ -4,7 +4,7 @@
 
 @interface ISLivePhotoPlaybackFilter : ISObservable {
     NSMutableSet * __playbackDisabledReasons;
-    double  _hintProgress;
+    float  _hintProgress;
     BOOL  _isPerformingInputChanges;
     BOOL  _playIsSticky;
     BOOL  _playbackDisabled;
@@ -12,7 +12,7 @@
 }
 
 @property (nonatomic, readonly) NSMutableSet *_playbackDisabledReasons;
-@property (nonatomic, readonly) double hintProgress;
+@property (nonatomic, readonly) float hintProgress;
 @property (setter=_setPerformingInputChanges:, nonatomic) BOOL isPerformingInputChanges;
 @property (nonatomic) BOOL playIsSticky;
 @property (getter=isPlaybackDisabled, setter=_setPlaybackDisabled:, nonatomic) BOOL playbackDisabled;

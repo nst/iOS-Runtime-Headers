@@ -5,9 +5,9 @@
 @interface UINavigationItem : NSObject <NSCoding> {
     BOOL  __backgroundHidden;
     UIView * __canvasView;
-    double  __idealCustomTitleWidth;
+    float  __idealCustomTitleWidth;
     UINavigationBar * __owningNavigationBar;
-    double  __titleViewWidthForAnimations;
+    float  __titleViewWidthForAnimations;
     NSArray * _abbreviatedBackButtonTitles;
     UIBarButtonItem * _backBarButtonItem;
     NSString * _backButtonTitle;
@@ -16,7 +16,7 @@
     NSArray * _customLeftViews;
     NSArray * _customRightViews;
     UIView * _defaultTitleView;
-    double  _fontScaleAdjustment;
+    float  _fontScaleAdjustment;
     UIImageView * _frozenTitleView;
     BOOL  _hidesBackButton;
     NSArray * _leftBarButtonItems;
@@ -38,8 +38,8 @@
 @property (setter=_setAbbreviatedBackButtonTitles:, nonatomic, copy) NSArray *_abbreviatedBackButtonTitles;
 @property (setter=_setBackgroundHidden:, nonatomic) BOOL _backgroundHidden;
 @property (setter=_setCanvasView:, nonatomic, retain) UIView *_canvasView;
-@property (setter=_setFontScaleAdjustment:, nonatomic) double _fontScaleAdjustment;
-@property (setter=_setIdealCustomTitleWidth:, nonatomic) double _idealCustomTitleWidth;
+@property (setter=_setFontScaleAdjustment:, nonatomic) float _fontScaleAdjustment;
+@property (setter=_setIdealCustomTitleWidth:, nonatomic) float _idealCustomTitleWidth;
 @property (setter=_setIndependentBarStyle:, nonatomic) int _independentBarStyle;
 @property (setter=_setLeftFlexibleSpaceCount:, nonatomic) unsigned int _leftFlexibleSpaceCount;
 @property (setter=_setLeftItemSpaceList:, nonatomic, copy) NSArray *_leftItemSpaceList;
@@ -47,13 +47,13 @@
 @property (setter=_setPendingTitle:, nonatomic, copy) NSString *_pendingTitle;
 @property (setter=_setRightFlexibleSpaceCount:, nonatomic) unsigned int _rightFlexibleSpaceCount;
 @property (setter=_setRightItemSpaceList:, nonatomic, copy) NSArray *_rightItemSpaceList;
-@property (nonatomic) double _titleViewWidthForAnimations;
+@property (nonatomic) float _titleViewWidthForAnimations;
 @property (nonatomic, retain) UIBarButtonItem *backBarButtonItem;
 @property (nonatomic) BOOL hidesBackButton;
 @property (nonatomic, retain) UIBarButtonItem *leftBarButtonItem;
 @property (nonatomic, copy) NSArray *leftBarButtonItems;
 @property (nonatomic) BOOL leftItemsSupplementBackButton;
-@property (setter=music_setTitleViewAlpha:, nonatomic) double music_titleViewAlpha;
+@property (setter=music_setTitleViewAlpha:, nonatomic) float music_titleViewAlpha;
 @property (nonatomic, copy) NSString *prompt;
 @property (setter=pu_setBanner:, nonatomic, retain) PUAbstractNavigationBanner *pu_banner;
 @property (nonatomic, retain) UIBarButtonItem *rightBarButtonItem;

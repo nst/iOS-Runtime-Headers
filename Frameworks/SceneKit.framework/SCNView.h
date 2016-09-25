@@ -124,21 +124,21 @@
 - (id)device;
 - (void)didMoveToWindow;
 - (void)displayLayer:(id)arg1;
-- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)eaglContext;
 - (void)encodeWithCoder:(id)arg1;
 - (id)eventHandler;
 - (void)eventHandlerWantsRedraw;
-- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 options:(id)arg2;
-- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
-- (id)hitTestWithSegmentFromPoint:(struct SCNVector3 { double x1; double x2; double x3; })arg1 toPoint:(struct SCNVector3 { double x1; double x2; double x3; })arg2 options:(id)arg3;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 options:(id)arg2;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (id)hitTestWithSegmentFromPoint:(struct SCNVector3 { float x1; float x2; float x3; })arg1 toPoint:(struct SCNVector3 { float x1; float x2; float x3; })arg2 options:(id)arg3;
 - (int)ibPreferredRenderingAPI;
 - (id)ibSceneName;
 - (BOOL)ibWantsMultisampling;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 options:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 options:(id)arg2;
 - (BOOL)isJitteringEnabled;
 - (BOOL)isNodeInsideFrustum:(id)arg1 withPointOfView:(id)arg2;
 - (BOOL)isOpaque;
@@ -156,7 +156,7 @@
 - (BOOL)prepareObject:(id)arg1 shouldAbortBlock:(id /* block */)arg2;
 - (void)prepareObjects:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)presentScene:(id)arg1 withTransition:(id)arg2 incomingPointOfView:(id)arg3 completionHandler:(id /* block */)arg4;
-- (struct SCNVector3 { double x1; double x2; double x3; })projectPoint:(struct SCNVector3 { double x1; double x2; double x3; })arg1;
+- (struct SCNVector3 { float x1; float x2; float x3; })projectPoint:(struct SCNVector3 { float x1; float x2; float x3; })arg1;
 - (id)renderer;
 - (unsigned int)renderingAPI;
 - (void)resumeDisplayLink;
@@ -203,7 +203,7 @@
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)unlock;
-- (struct SCNVector3 { double x1; double x2; double x3; })unprojectPoint:(struct SCNVector3 { double x1; double x2; double x3; })arg1;
+- (struct SCNVector3 { float x1; float x2; float x3; })unprojectPoint:(struct SCNVector3 { float x1; float x2; float x3; })arg1;
 - (void)willMoveToWindow:(id)arg1;
 
 @end

@@ -4,10 +4,10 @@
 
 @interface GKSearchBarView : UICollectionReusableView <UISearchBarDelegate> {
     <UISearchBarDelegate> * _delegate;
-    double  _leadingMargin;
+    float  _leadingMargin;
     GKSearchBar * _searchBar;
     NSArray * _searchBarConstraints;
-    double  _trailingMargin;
+    float  _trailingMargin;
     NSNumber * _usePadConstraints;
 }
 
@@ -15,11 +15,11 @@
 @property (nonatomic) <UISearchBarDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic) double leadingMargin;
+@property (nonatomic) float leadingMargin;
 @property (nonatomic, retain) GKSearchBar *searchBar;
 @property (nonatomic, retain) NSArray *searchBarConstraints;
 @property (readonly) Class superclass;
-@property (nonatomic) double trailingMargin;
+@property (nonatomic) float trailingMargin;
 @property (nonatomic, retain) NSNumber *usePadConstraints;
 
 + (float)defaultHeight;
@@ -30,7 +30,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)establishSearchBarConstraints;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (float)leadingMargin;
 - (void)prepareForReuse;
 - (id)searchBar;

@@ -9,14 +9,14 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } minimumEdgeInsets;
+@property (readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } minimumEdgeInsets;
 @property (nonatomic) <PXPlacesMapPipelineComponentProvider> *pipelineComponentProvider;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)annotationForGeotaggables:(id)arg1 initialCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg2;
 - (int)annotationType;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })minimumEdgeInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })minimumEdgeInsets;
 - (id)pipelineComponentProvider;
 - (void)reset;
 - (void)setPipelineComponentProvider:(id)arg1;

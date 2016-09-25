@@ -10,7 +10,7 @@
     int  _headerState;
     PKTableHeaderView * _headerView;
     BOOL  _hidePrivacy;
-    double  _maxHeaderWidth;
+    float  _maxHeaderWidth;
     BOOL  _maxHeaderWidthCalculated;
     <NSObject> * _notificationToken;
     CLInUseAssertion * _passbookForegroundAssertion;

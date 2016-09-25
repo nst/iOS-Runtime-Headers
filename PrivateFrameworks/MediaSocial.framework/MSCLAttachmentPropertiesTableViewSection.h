@@ -6,7 +6,7 @@
     SKUIClientContext * _clientContext;
     BOOL  _isExplicit;
     <MSCLAttachmentPropertiesTableViewSectionDelegate> * _sectionDelegate;
-    double  _sectionHeaderHeight;
+    float  _sectionHeaderHeight;
     int  _sectionType;
     NSArray * _tableViewCells;
     MSCLVideoCoverImageSelectionView * _videoCoverImageView;
@@ -17,7 +17,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic) <MSCLAttachmentPropertiesTableViewSectionDelegate> *sectionDelegate;
-@property (nonatomic, readonly) double sectionHeaderHeight;
+@property (nonatomic, readonly) float sectionHeaderHeight;
 @property (nonatomic, readonly) int sectionType;
 @property (nonatomic, readonly) UIImage *selectedCoverImage;
 @property (readonly) Class superclass;

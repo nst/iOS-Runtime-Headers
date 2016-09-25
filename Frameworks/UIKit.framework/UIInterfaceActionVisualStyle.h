@@ -34,7 +34,7 @@
 - (id)actionPropertiesAffectingImageViewStyling;
 - (id)actionPropertiesAffectingLabelStyling;
 - (float)actionSectionSpacing;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })actionSequenceEdgeInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })actionSequenceEdgeInsets;
 - (id)actionTitleLabelColorForViewState:(id)arg1;
 - (id)actionTitleLabelFontForViewState:(id)arg1;
 - (float)actionTitleLabelMinimumScaleFactor;
@@ -47,7 +47,7 @@
 - (void)configureForDismissingGroupView:(id)arg1 alongsideTransitionCoordinator:(id)arg2;
 - (void)configureForPresentingGroupView:(id)arg1 alongsideTransitionCoordinator:(id)arg2;
 - (float)contentCornerRadius;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentMargin;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentMargin;
 - (id)copyWithGroupViewState:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)defaultConcreteActionTitleLabelPreferredFont;
@@ -60,8 +60,8 @@
 - (id)init;
 - (id)initWithConcreteVisualStyle:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
-- (struct CGSize { double x1; double x2; })maximumActionGroupContentSize;
-- (struct CGSize { double x1; double x2; })minimumActionContentSize;
+- (struct CGSize { float x1; float x2; })maximumActionGroupContentSize;
+- (struct CGSize { float x1; float x2; })minimumActionContentSize;
 - (id)newActionBackgroundViewForViewState:(id)arg1;
 - (id)newActionSeparatorViewForGroupViewState:(id)arg1;
 - (id)newGroupBackgroundViewWithGroupViewState:(id)arg1;

@@ -14,7 +14,7 @@
 
 @property (nonatomic, retain) IMBalloonPluginDataSource *dataSource;
 @property (nonatomic) BOOL isInteractive;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } maskFrame;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } maskFrame;
 @property (nonatomic) BOOL mayReparentPluginViews;
 @property (nonatomic, retain) CKBalloonImageView *outlineMask;
 @property (nonatomic, retain) UIView<CKTranscriptPluginView> *pluginView;
@@ -32,14 +32,14 @@
 - (id)dataSource;
 - (void)detachInvisibleInkEffectView;
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
-- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)imageForInvisibleInkEffectView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (Class)invisibleInkEffectViewClass;
 - (void)invisibleInkEffectViewWasUncovered;
 - (BOOL)isInteractive;
 - (void)layoutSubviews;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })maskFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })maskFrame;
 - (BOOL)mayReparentPluginViews;
 - (id)outlineMask;
 - (id)pluginView;
@@ -54,7 +54,7 @@
 - (void)setSuppressMask:(BOOL)arg1;
 - (void)setTailMask:(id)arg1;
 - (BOOL)shouldMaskWhenOpaque;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1 textAlignmentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; }*)arg2;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1 textAlignmentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg2;
 - (BOOL)suppressMask;
 - (id)tailMask;
 

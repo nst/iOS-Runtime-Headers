@@ -10,7 +10,7 @@
     NSString * _deviceUID;
     BOOL  _hidden;
     unsigned long  _inputLatency;
-    int  _ioReferenceCount;
+    long long  _ioReferenceCount;
     NSObject<OS_dispatch_queue> * _ioReferenceQueue;
     BOOL  _isAlive;
     BOOL  _isRunning;

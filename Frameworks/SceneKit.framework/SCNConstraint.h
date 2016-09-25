@@ -4,16 +4,16 @@
 
 @interface SCNConstraint : NSObject <NSCopying, NSSecureCoding, SCNAnimatable> {
     SCNOrderedDictionary * _animations;
-    struct __C3DConstraint { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_2_1; unsigned char x_1_2_2[4]; } x_1_1_1; void *x_1_1_2; struct __CFString {} *x_1_1_3; struct __CFString {} *x_1_1_4; struct __CFDictionary {} *x_1_1_5; int x_1_1_6; int x_1_1_7; } x1; struct __CFString {} *x2; struct { int (*x_3_1_1)(); int (*x_3_1_2)(); } x3; double x4; bool x5; } * _constraintRef;
+    struct __C3DConstraint { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_2_1; unsigned char x_1_2_2[4]; } x_1_1_1; void *x_1_1_2; struct __CFString {} *x_1_1_3; struct __CFString {} *x_1_1_4; struct __CFDictionary {} *x_1_1_5; int x_1_1_6; int x_1_1_7; } x1; struct __CFString {} *x2; struct { int (*x_3_1_1)(); int (*x_3_1_2)(); } x3; float x4; bool x5; } * _constraintRef;
     BOOL  _enabled;
-    double  _influenceFactor;
+    float  _influenceFactor;
 }
 
 @property (readonly) NSArray *animationKeys;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic) double influenceFactor;
+@property (nonatomic) float influenceFactor;
 @property (readonly) Class superclass;
 
 + (BOOL)supportsSecureCoding;
@@ -28,7 +28,7 @@
 - (id)animationKeys;
 - (struct __C3DAnimationManager { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __C3DModelValueStorage {} *x2; struct __CFDictionary {} *x3; struct __CFDictionary {} *x4; struct __CFSet {} *x5; struct __CFArray {} *x6; struct __CFArray {} *x7; bool x8; bool x9; bool x10; struct _C3DAnimationPendingEvent {} *x11; struct __C3DAllocator {} *x12; struct __CFDictionary {} *x13; struct __CFArray {} *x14; double x15; double x16; double x17; struct _opaque_pthread_mutex_t { long x_18_1_1; BOOL x_18_1_2[40]; } x18; int x19; int x20; int x21; int x22; }*)animationManager;
 - (void)bindAnimatablePath:(id)arg1 toObject:(id)arg2 withKeyPath:(id)arg3 options:(id)arg4;
-- (struct __C3DConstraint { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_2_1; unsigned char x_1_2_2[4]; } x_1_1_1; void *x_1_1_2; struct __CFString {} *x_1_1_3; struct __CFString {} *x_1_1_4; struct __CFDictionary {} *x_1_1_5; int x_1_1_6; int x_1_1_7; } x1; struct __CFString {} *x2; struct { int (*x_3_1_1)(); int (*x_3_1_2)(); } x3; double x4; bool x5; }*)constraintRef;
+- (struct __C3DConstraint { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_2_1; unsigned char x_1_2_2[4]; } x_1_1_1; void *x_1_1_2; struct __CFString {} *x_1_1_3; struct __CFString {} *x_1_1_4; struct __CFDictionary {} *x_1_1_5; int x_1_1_6; int x_1_1_7; } x1; struct __CFString {} *x2; struct { int (*x_3_1_1)(); int (*x_3_1_2)(); } x3; float x4; bool x5; }*)constraintRef;
 - (id)copy;
 - (struct __C3DAnimationChannel { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __C3DAnimation {} *x2; struct __CFArray {} *x3; void *x4; struct __C3DModelTarget {} *x5; struct __CFString {} *x6; }*)copyAnimationChannelForKeyPath:(id)arg1 animation:(id)arg2;
 - (void)copyTo:(id)arg1;
@@ -50,7 +50,7 @@
 - (void)resumeAnimationForKey:(id)arg1;
 - (id)scene;
 - (struct __C3DScene { }*)sceneRef;
-- (void)setConstraintRef:(struct __C3DConstraint { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_2_1; unsigned char x_1_2_2[4]; } x_1_1_1; void *x_1_1_2; struct __CFString {} *x_1_1_3; struct __CFString {} *x_1_1_4; struct __CFDictionary {} *x_1_1_5; int x_1_1_6; int x_1_1_7; } x1; struct __CFString {} *x2; struct { int (*x_3_1_1)(); int (*x_3_1_2)(); } x3; double x4; bool x5; }*)arg1;
+- (void)setConstraintRef:(struct __C3DConstraint { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_2_1; unsigned char x_1_2_2[4]; } x_1_1_1; void *x_1_1_2; struct __CFString {} *x_1_1_3; struct __CFString {} *x_1_1_4; struct __CFDictionary {} *x_1_1_5; int x_1_1_6; int x_1_1_7; } x1; struct __CFString {} *x2; struct { int (*x_3_1_1)(); int (*x_3_1_2)(); } x3; float x4; bool x5; }*)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setInfluenceFactor:(float)arg1;
 - (void)setName:(id)arg1;

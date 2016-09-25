@@ -18,9 +18,9 @@
     double  _syncProgress;
     unsigned int  _syncProgressState;
     unsigned int  _totalAssetsOnServer;
-    unsigned int  _totalSizeOfPushedOriginals;
-    unsigned int  _totalSizeOfUnpushedOriginals;
-    unsigned int  _totalUploadedOriginalSize;
+    unsigned long long  _totalSizeOfPushedOriginals;
+    unsigned long long  _totalSizeOfUnpushedOriginals;
+    unsigned long long  _totalUploadedOriginalSize;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -46,9 +46,9 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) double syncProgress;
 @property (nonatomic, readonly) unsigned int totalAssetsOnServer;
-@property (nonatomic) unsigned int totalSizeOfPushedOriginals;
-@property (nonatomic) unsigned int totalSizeOfUnpushedOriginals;
-@property (nonatomic) unsigned int totalUploadedOriginalSize;
+@property (nonatomic) unsigned long long totalSizeOfPushedOriginals;
+@property (nonatomic) unsigned long long totalSizeOfUnpushedOriginals;
+@property (nonatomic) unsigned long long totalUploadedOriginalSize;
 
 + (void)_prepareQueue;
 + (void)_setPulledItemsCount:(unsigned int)arg1;
@@ -96,14 +96,14 @@
 - (id)progress;
 - (void)setDelegate:(id)arg1;
 - (void)setInResetSync:(BOOL)arg1;
-- (void)setTotalSizeOfPushedOriginals:(unsigned int)arg1;
-- (void)setTotalSizeOfUnpushedOriginals:(unsigned int)arg1;
-- (void)setTotalUploadedOriginalSize:(unsigned int)arg1;
+- (void)setTotalSizeOfPushedOriginals:(unsigned long long)arg1;
+- (void)setTotalSizeOfUnpushedOriginals:(unsigned long long)arg1;
+- (void)setTotalUploadedOriginalSize:(unsigned long long)arg1;
 - (void)statusDidChange:(id)arg1;
 - (double)syncProgress;
 - (unsigned int)totalAssetsOnServer;
-- (unsigned int)totalSizeOfPushedOriginals;
-- (unsigned int)totalSizeOfUnpushedOriginals;
-- (unsigned int)totalUploadedOriginalSize;
+- (unsigned long long)totalSizeOfPushedOriginals;
+- (unsigned long long)totalSizeOfUnpushedOriginals;
+- (unsigned long long)totalUploadedOriginalSize;
 
 @end

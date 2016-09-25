@@ -22,17 +22,17 @@
         BOOL __opaque[124]; 
     }  mLock;
     struct vector<float, std::__1::allocator<float> > { 
-        double *__begin_; 
-        double *__end_; 
-        struct __compressed_pair<double *, std::__1::allocator<float> > { 
-            double *__first_; 
+        float *__begin_; 
+        float *__end_; 
+        struct __compressed_pair<float *, std::__1::allocator<float> > { 
+            float *__first_; 
         } __end_cap_; 
     }  mModelColumnWidth;
     struct vector<float, std::__1::allocator<float> > { 
-        double *__begin_; 
-        double *__end_; 
-        struct __compressed_pair<double *, std::__1::allocator<float> > { 
-            double *__first_; 
+        float *__begin_; 
+        float *__end_; 
+        struct __compressed_pair<float *, std::__1::allocator<float> > { 
+            float *__first_; 
         } __end_cap_; 
     }  mModelRowHeight;
 }
@@ -63,13 +63,13 @@
 - (BOOL)resetModelCache;
 - (BOOL)resetModelCacheRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
 - (void)resetRowHeightsStartingWith:(unsigned short)arg1 upToRow:(unsigned short)arg2;
-- (BOOL)setFitDims:(struct CGSize { double x1; double x2; })arg1 forCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
+- (BOOL)setFitDims:(struct CGSize { float x1; float x2; })arg1 forCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
 - (BOOL)setFitHeight:(float)arg1 forCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
 - (BOOL)setFitWidth:(float)arg1 forCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
 - (void)setFittingHeightsFromCollection:(id)arg1;
 - (BOOL)setModelHeight:(float)arg1 forRow:(unsigned short)arg2;
 - (BOOL)setModelWidth:(float)arg1 forColumn:(unsigned char)arg2;
 - (id)validateChangeDescriptors:(id)arg1;
-- (BOOL)verifyDims:(struct CGSize { double x1; double x2; })arg1 forCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
+- (BOOL)verifyDims:(struct CGSize { float x1; float x2; })arg1 forCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
 
 @end

@@ -3,16 +3,16 @@
  */
 
 @interface QLAppearance : NSObject <NSSecureCoding> {
-    double  _bottomInset;
+    float  _bottomInset;
     unsigned int  _presentationMode;
     unsigned int  _style;
-    double  _topInset;
+    float  _topInset;
 }
 
-@property (readonly) double bottomInset;
+@property (readonly) float bottomInset;
 @property (readonly) unsigned int presentationMode;
 @property (readonly) unsigned int style;
-@property (readonly) double topInset;
+@property (readonly) float topInset;
 
 + (BOOL)supportsSecureCoding;
 

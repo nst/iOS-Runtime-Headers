@@ -5,10 +5,10 @@
 
 @required
 
-- (struct CGPoint { double x1; double x2; })scrollOrigin;
+- (struct CGPoint { float x1; float x2; })scrollOrigin;
 - (void)scrollingModes:(int*)arg1 vertical:(int*)arg2;
 - (void)setScrollBarsSuppressed:(BOOL)arg1 repaintOnUnsuppress:(BOOL)arg2;
-- (void)setScrollOrigin:(struct CGPoint { double x1; double x2; })arg1 updatePositionAtAll:(BOOL)arg2 immediately:(BOOL)arg3;
+- (void)setScrollOrigin:(struct CGPoint { float x1; float x2; })arg1 updatePositionAtAll:(BOOL)arg2 immediately:(BOOL)arg3;
 - (void)setScrollingModes:(int)arg1 vertical:(int)arg2 andLock:(BOOL)arg3;
 
 @end

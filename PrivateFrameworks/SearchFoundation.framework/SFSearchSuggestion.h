@@ -5,14 +5,14 @@
 @interface SFSearchSuggestion : NSObject <NSSecureCoding> {
     NSString * _identifier;
     NSString * _query;
-    double  _score;
+    float  _score;
     NSString * _suggestion;
     unsigned int  _type;
 }
 
 @property (nonatomic, copy) NSString *identifier;
 @property (nonatomic, copy) NSString *query;
-@property (nonatomic) double score;
+@property (nonatomic) float score;
 @property (nonatomic, copy) NSString *suggestion;
 @property (nonatomic) unsigned int type;
 

@@ -17,7 +17,7 @@
 
 - (void)_appendDataToCache:(id)arg1;
 - (id)_cachedResponse;
-- (void)_setupForCache:(BOOL)arg1 expectedLength:(int)arg2 response:(id)arg3;
+- (void)_setupForCache:(BOOL)arg1 expectedLength:(long long)arg2 response:(id)arg3;
 - (void)_storeCachedResponse:(id)arg1;
 - (void)_tossCache;
 - (void)cancel;
@@ -26,9 +26,9 @@
 - (id)delegate;
 - (id)initWithTask:(id)arg1 delegate:(id)arg2 delegateQueue:(id)arg3;
 - (void)resume;
-- (void)setBytesPerSecondLimit:(int)arg1;
+- (void)setBytesPerSecondLimit:(long long)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setPoolPriority:(int)arg1;
+- (void)setPoolPriority:(long long)arg1;
 - (void)setPriorityHint:(float)arg1;
 - (void)setTask:(id)arg1;
 - (void)suspend;

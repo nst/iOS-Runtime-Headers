@@ -6,7 +6,7 @@
     NSString * _bundleID;
     double  _duration;
     double  _goalInCanonicalUnit;
-    int  _goalType;
+    long long  _goalType;
     struct { 
         unsigned int duration : 1; 
         unsigned int goalInCanonicalUnit : 1; 
@@ -24,13 +24,13 @@
     double  _totalBasalEnergyBurnedInCanonicalUnit;
     double  _totalDistanceInCanonicalUnit;
     double  _totalEnergyBurnedInCanonicalUnit;
-    int  _type;
+    long long  _type;
 }
 
 @property (nonatomic, retain) NSString *bundleID;
 @property (nonatomic) double duration;
 @property (nonatomic) double goalInCanonicalUnit;
-@property (nonatomic) int goalType;
+@property (nonatomic) long long goalType;
 @property (nonatomic, readonly) BOOL hasBundleID;
 @property (nonatomic) BOOL hasDuration;
 @property (nonatomic) BOOL hasGoalInCanonicalUnit;
@@ -48,7 +48,7 @@
 @property (nonatomic) double totalBasalEnergyBurnedInCanonicalUnit;
 @property (nonatomic) double totalDistanceInCanonicalUnit;
 @property (nonatomic) double totalEnergyBurnedInCanonicalUnit;
-@property (nonatomic) int type;
+@property (nonatomic) long long type;
 
 - (void).cxx_destruct;
 - (id)bundleID;
@@ -58,7 +58,7 @@
 - (id)dictionaryRepresentation;
 - (double)duration;
 - (double)goalInCanonicalUnit;
-- (int)goalType;
+- (long long)goalType;
 - (BOOL)hasBundleID;
 - (BOOL)hasDuration;
 - (BOOL)hasGoalInCanonicalUnit;
@@ -80,7 +80,7 @@
 - (void)setBundleID:(id)arg1;
 - (void)setDuration:(double)arg1;
 - (void)setGoalInCanonicalUnit:(double)arg1;
-- (void)setGoalType:(int)arg1;
+- (void)setGoalType:(long long)arg1;
 - (void)setHasDuration:(BOOL)arg1;
 - (void)setHasGoalInCanonicalUnit:(BOOL)arg1;
 - (void)setHasGoalType:(BOOL)arg1;
@@ -96,11 +96,11 @@
 - (void)setTotalBasalEnergyBurnedInCanonicalUnit:(double)arg1;
 - (void)setTotalDistanceInCanonicalUnit:(double)arg1;
 - (void)setTotalEnergyBurnedInCanonicalUnit:(double)arg1;
-- (void)setType:(int)arg1;
+- (void)setType:(long long)arg1;
 - (double)totalBasalEnergyBurnedInCanonicalUnit;
 - (double)totalDistanceInCanonicalUnit;
 - (double)totalEnergyBurnedInCanonicalUnit;
-- (int)type;
+- (long long)type;
 - (void)writeTo:(id)arg1;
 
 @end

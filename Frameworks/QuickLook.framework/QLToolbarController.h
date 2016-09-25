@@ -5,41 +5,41 @@
 @interface QLToolbarController : NSObject {
     NSLayoutConstraint * _accessoryContainerHeightConstraint;
     UIView * _accessoryView;
-    double  _accessoryViewAlpha;
+    float  _accessoryViewAlpha;
     UIView * _accessoryViewContainer;
     BOOL  _accessoryViewHidden;
-    double  _accessoryViewHiddenProgress;
+    float  _accessoryViewHiddenProgress;
     UIView * _clippingExtensionContainer;
     NSLayoutConstraint * _clippingExtensionContainerBottomConstraint;
     NSLayoutConstraint * _clippingExtensionContainerHeightConstraint;
     UIToolbar * _customToolbar;
-    double  _derivedToolbarExtensionHeight;
+    float  _derivedToolbarExtensionHeight;
     BOOL  _hidden;
-    double  _hiddenProgress;
+    float  _hiddenProgress;
     UIToolbar * _originalToolbar;
-    double  _originalToolbarAlpha;
+    float  _originalToolbarAlpha;
     _UIToolbarConfiguration * _originalToolbarConfiguration;
     BOOL  _originalToolbarHidden;
-    double  _preferredAccesoryViewHeight;
+    float  _preferredAccesoryViewHeight;
     UIView * _preferredSuperview;
-    double  _toolbarAlpha;
+    float  _toolbarAlpha;
     NSLayoutConstraint * _toolbarBottomConstraint;
     NSLayoutConstraint * _toolbarHeightConstraint;
 }
 
 @property (nonatomic) UIView *accessoryView;
-@property (nonatomic) double accessoryViewAlpha;
+@property (nonatomic) float accessoryViewAlpha;
 @property (getter=isAccessoryViewHidden, nonatomic) BOOL accessoryViewHidden;
-@property (nonatomic) double accessoryViewHiddenProgress;
+@property (nonatomic) float accessoryViewHiddenProgress;
 @property (readonly) UIToolbar *customToolbar;
 @property (getter=isHidden, nonatomic) BOOL hidden;
-@property (nonatomic) double hiddenProgress;
+@property (nonatomic) float hiddenProgress;
 @property (nonatomic) UIToolbar *originalToolbar;
-@property (nonatomic) double originalToolbarAlpha;
+@property (nonatomic) float originalToolbarAlpha;
 @property (getter=isOriginalToolbarHidden, nonatomic) BOOL originalToolbarHidden;
-@property (nonatomic) double preferredAccesoryViewHeight;
+@property (nonatomic) float preferredAccesoryViewHeight;
 @property (nonatomic) UIView *preferredSuperview;
-@property (nonatomic) double toolbarAlpha;
+@property (nonatomic) float toolbarAlpha;
 
 - (void).cxx_destruct;
 - (void)_embedAccessoryView;

@@ -99,7 +99,7 @@
 - (void)_queue_sendChangeSet:(id)arg1 status:(id)arg2 session:(id)arg3 completion:(id /* block */)arg4;
 - (void)_queue_sendRequest:(id)arg1 syncStore:(id)arg2;
 - (void)_queue_sendResponse:(id)arg1 syncStore:(id)arg2;
-- (void)_queue_sendRestoreMessageWithStore:(id)arg1 restoreUUID:(id)arg2 sequenceNumber:(int)arg3 statusCode:(int)arg4;
+- (void)_queue_sendRestoreMessageWithStore:(id)arg1 restoreUUID:(id)arg2 sequenceNumber:(long long)arg3 statusCode:(int)arg4;
 - (void)_queue_sendRoutineRequest:(id)arg1 syncStore:(id)arg2 completion:(id /* block */)arg3;
 - (void)_queue_sendSpeculativeChangeSet:(id)arg1 syncStore:(id)arg2 completion:(id /* block */)arg3;
 - (void)_queue_sendStartWorkoutAppRequest:(id)arg1 syncStore:(id)arg2 completion:(id /* block */)arg3;

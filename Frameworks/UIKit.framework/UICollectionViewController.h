@@ -32,7 +32,7 @@
 - (void)_clearSharedView;
 - (void)_handleReorderingGesture:(id)arg1;
 - (void)_installReorderingGestureIfNecessary;
-- (id)_newCollectionViewWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 collectionViewLayout:(id)arg2;
+- (id)_newCollectionViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 collectionViewLayout:(id)arg2;
 - (id)_scrollView;
 - (void)_setSharedCollectionView:(id)arg1;
 - (void)_setUseLayoutToLayoutNavigationTransitions:(BOOL)arg1 withCheck:(BOOL)arg2;
@@ -57,9 +57,9 @@
 - (void)loadView;
 - (id)preferredFocusedItem;
 - (id)previewViewControllerForItemAtIndexPath:(id)arg1;
-- (id)previewViewControllerForLocation:(struct CGPoint { double x1; double x2; })arg1 inSourceView:(id)arg2;
+- (id)previewViewControllerForLocation:(struct CGPoint { float x1; float x2; })arg1 inSourceView:(id)arg2;
 - (void)previewingContext:(id)arg1 commitViewController:(id)arg2;
-- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { double x1; double x2; })arg2;
+- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { float x1; float x2; })arg2;
 - (void)setClearsSelectionOnViewWillAppear:(BOOL)arg1;
 - (void)setCollectionView:(id)arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
@@ -73,7 +73,7 @@
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillUnload;
 - (void)willPresentPreviewViewController:(id)arg1 forItemAtIndexPath:(id)arg2;
-- (void)willPresentPreviewViewController:(id)arg1 forLocation:(struct CGPoint { double x1; double x2; })arg2 inSourceView:(id)arg3;
-- (void)willPresentPreviewViewController:(id)arg1 forPosition:(struct CGPoint { double x1; double x2; })arg2 inSourceView:(id)arg3;
+- (void)willPresentPreviewViewController:(id)arg1 forLocation:(struct CGPoint { float x1; float x2; })arg2 inSourceView:(id)arg3;
+- (void)willPresentPreviewViewController:(id)arg1 forPosition:(struct CGPoint { float x1; float x2; })arg2 inSourceView:(id)arg3;
 
 @end

@@ -10,10 +10,10 @@
             struct pair<id<_EARLanguageModelDataSource>, float> {} *__first_; 
         } __end_cap_; 
     }  _dataSources;
-    double  _totalWeight;
+    float  _totalWeight;
 }
 
-@property (nonatomic, readonly) double totalWeight;
+@property (nonatomic, readonly) float totalWeight;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

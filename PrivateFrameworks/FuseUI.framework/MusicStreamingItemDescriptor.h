@@ -4,16 +4,16 @@
 
 @interface MusicStreamingItemDescriptor : NSObject {
     NSArray * _assetDescriptors;
-    int  _storeID;
+    long long  _storeID;
 }
 
 @property (nonatomic, readonly, copy) NSArray *assetDescriptors;
-@property (nonatomic, readonly) int storeID;
+@property (nonatomic, readonly) long long storeID;
 
 - (void).cxx_destruct;
 - (id)_initWithResponseDictionary:(id)arg1;
 - (id)assetDescriptors;
 - (id)description;
-- (int)storeID;
+- (long long)storeID;
 
 @end

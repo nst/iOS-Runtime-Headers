@@ -6,16 +6,16 @@
     BOOL  _animateFromCurrentPosition;
     int  _curve;
     BOOL  _editing;
-    double  _endAlpha;
-    double  _endFraction;
+    float  _endAlpha;
+    float  _endFraction;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _endRect;
     NSIndexPath * _indexPath;
@@ -24,7 +24,7 @@
     BOOL  _shouldClipToBoundsAfterAnimation;
     BOOL  _shouldDeleteAfterAnimation;
     BOOL  _shouldResetGroupOpacityAfterAnimation;
-    double  _startFraction;
+    float  _startFraction;
     UIView * _view;
     int  _viewType;
 }
@@ -32,16 +32,16 @@
 @property (nonatomic, readonly) BOOL animateFromCurrentPosition;
 @property (nonatomic, readonly) int curve;
 @property (nonatomic, readonly) BOOL editing;
-@property (nonatomic, readonly) double endAlpha;
-@property (nonatomic, readonly) double endFraction;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } endRect;
+@property (nonatomic, readonly) float endAlpha;
+@property (nonatomic, readonly) float endFraction;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } endRect;
 @property (nonatomic, readonly) NSIndexPath *indexPath;
 @property (nonatomic) BOOL shouldAllowGroupOpacityAfterAnimation;
 @property (nonatomic) BOOL shouldAnimateShadow;
 @property (nonatomic) BOOL shouldClipToBoundsAfterAnimation;
 @property (nonatomic, readonly) BOOL shouldDeleteAfterAnimation;
 @property (nonatomic) BOOL shouldResetGroupOpacityAfterAnimation;
-@property (nonatomic, readonly) double startFraction;
+@property (nonatomic, readonly) float startFraction;
 @property (nonatomic, readonly) UIView *view;
 @property (nonatomic, readonly) int viewType;
 
@@ -52,9 +52,9 @@
 - (BOOL)editing;
 - (float)endAlpha;
 - (float)endFraction;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })endRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })endRect;
 - (id)indexPath;
-- (id)initWithView:(id)arg1 indexPath:(id)arg2 viewType:(int)arg3 endRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg4 endAlpha:(float)arg5 startFraction:(float)arg6 endFraction:(float)arg7 curve:(int)arg8 animateFromCurrentPosition:(BOOL)arg9 shouldDeleteAfterAnimation:(BOOL)arg10 editing:(BOOL)arg11;
+- (id)initWithView:(id)arg1 indexPath:(id)arg2 viewType:(int)arg3 endRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4 endAlpha:(float)arg5 startFraction:(float)arg6 endFraction:(float)arg7 curve:(int)arg8 animateFromCurrentPosition:(BOOL)arg9 shouldDeleteAfterAnimation:(BOOL)arg10 editing:(BOOL)arg11;
 - (void)setShouldAllowGroupOpacityAfterAnimation:(BOOL)arg1;
 - (void)setShouldAnimateShadow:(BOOL)arg1;
 - (void)setShouldClipToBoundsAfterAnimation:(BOOL)arg1;

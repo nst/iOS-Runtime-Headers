@@ -5,7 +5,7 @@
 @interface MKCalloutBackgroundView : UIPopoverBackgroundView {
     unsigned int  _arrowDirection;
     UIMotionEffect * _arrowMotionEffect;
-    double  _arrowOffset;
+    float  _arrowOffset;
     UIMotionEffect * _arrowShadowMotionEffect;
     UIView * _baseBorderView;
     UIView * _containerView;
@@ -27,12 +27,12 @@
 + (float)_contentViewCornerRadiusForArrowDirection:(unsigned int)arg1;
 + (float)arrowBase;
 + (float)arrowHeight;
-+ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentViewInsets;
++ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentViewInsets;
 + (void)setBeingCreatedForSmallCalloutController:(id)arg1;
 + (BOOL)wantsDefaultContentAppearance;
 
 - (void).cxx_destruct;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_contentViewInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_contentViewInsets;
 - (void)_extendLeftRightArrow;
 - (void)_hideArrow;
 - (void)_layoutMaskView:(id)arg1 withArrowShadow:(BOOL)arg2;
@@ -43,7 +43,7 @@
 - (unsigned int)arrowDirection;
 - (float)arrowOffset;
 - (id)calloutBackgroundColor;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (struct { unsigned char x1; unsigned char x2; unsigned char x3; unsigned char x4; BOOL x5; })mapDisplayStyle;
 - (id)newMaskLayer;

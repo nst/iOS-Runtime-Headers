@@ -4,7 +4,7 @@
 
 @interface TSCHSymbolPathCacheKey : NSObject <NSCopying> {
     BOOL  mForHitCheck;
-    double  mSize;
+    float  mSize;
     TSDStroke * mStroke;
     int  mSymbolType;
 }

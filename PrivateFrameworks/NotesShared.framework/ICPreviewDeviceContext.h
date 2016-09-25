@@ -9,7 +9,7 @@
 }
 
 @property (readonly) NSArray *deviceScales;
-@property (readonly) double maxDeviceScale;
+@property (readonly) float maxDeviceScale;
 @property (copy) NSArray *nonScalableDeviceInfo;
 @property (copy) NSArray *scalableDeviceInfo;
 

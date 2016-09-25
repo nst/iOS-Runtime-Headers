@@ -40,7 +40,7 @@
 - (id)initWithStyle:(int)arg1;
 - (void)loadView;
 - (int)numberOfSectionsInTableView:(id)arg1;
-- (struct CGSize { double x1; double x2; })preferredContentSize;
+- (struct CGSize { float x1; float x2; })preferredContentSize;
 - (id)privacyLevels;
 - (int)privacySetting;
 - (void)setDelegate:(id)arg1;

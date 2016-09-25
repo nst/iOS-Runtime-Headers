@@ -15,42 +15,42 @@
     UIBarButtonItem * _displayModeButtonItem;
     NSString * _displayModeButtonItemTitle;
     int  _effectiveTargetDisplayMode;
-    double  _gutterWidth;
+    float  _gutterWidth;
     UIPopoverController * _hiddenPopoverController;
     unsigned int  _lastFocusedChildViewControllerIndex;
     int  _lastNotifiedDisplayMode;
     int  _lastPresentedOrientation;
-    double  _masterColumnWidth;
+    float  _masterColumnWidth;
     UIFocusContainerGuide * _masterFocusContainerGuide;
-    double  _maximumPrimaryColumnWidth;
+    float  _maximumPrimaryColumnWidth;
     UITapGestureRecognizer * _menuGestureRecognizer;
-    double  _minimumPrimaryColumnWidth;
+    float  _minimumPrimaryColumnWidth;
     int  _pendingDisplayModeChangeCount;
     UIGestureRecognizer * _popoverPresentationGestureRecognizer;
     UIResponder * _postTransitionResponder;
     int  _preferredDisplayMode;
-    double  _preferredPrimaryColumnWidthFraction;
+    float  _preferredPrimaryColumnWidthFraction;
     BOOL  _presentsWithGesture;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _rotatingFromMasterViewFrame;
     int  _rotatingFromOrientation;
     int  _rotatingMasterChange;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _rotatingToMasterViewFrame;
     UIView * _rotationSnapshotView;
@@ -95,12 +95,12 @@
     BOOL  _useChangingBoundsLayout;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _viewBoundsBeforeCollapse;
 }
@@ -114,16 +114,16 @@
 @property (nonatomic) <UISplitViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (getter=_detailFocusContainerGuide, nonatomic, readonly) UIFocusContainerGuide *detailFocusContainerGuide;
-@property (nonatomic) double gutterWidth;
+@property (nonatomic) float gutterWidth;
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL hidesMasterViewInPortrait;
 @property (getter=_lastFocusedChildViewControllerIndex, nonatomic, readonly) unsigned int lastFocusedChildViewControllerIndex;
-@property (nonatomic) double masterColumnWidth;
+@property (nonatomic) float masterColumnWidth;
 @property (getter=_masterFocusContainerGuide, nonatomic, readonly) UIFocusContainerGuide *masterFocusContainerGuide;
-@property (nonatomic) double maximumPrimaryColumnWidth;
-@property (nonatomic) double minimumPrimaryColumnWidth;
+@property (nonatomic) float maximumPrimaryColumnWidth;
+@property (nonatomic) float minimumPrimaryColumnWidth;
 @property (nonatomic) int preferredDisplayMode;
-@property (nonatomic) double preferredPrimaryColumnWidthFraction;
+@property (nonatomic) float preferredPrimaryColumnWidthFraction;
 @property (nonatomic) BOOL presentsWithGesture;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSArray *viewControllers;
@@ -149,14 +149,14 @@
 - (void)_commonInit;
 - (void)_completeTransitionFromOrientation:(int)arg1 masterChange:(int)arg2;
 - (float)_contentMarginForChildViewController:(id)arg1;
-- (struct CGSize { double x1; double x2; })_contentSizeForChildViewController:(id)arg1 inPopoverController:(id)arg2;
+- (struct CGSize { float x1; float x2; })_contentSizeForChildViewController:(id)arg1 inPopoverController:(id)arg2;
 - (id)_defaultDisplayModes;
-- (float)_defaultMaximumPrimaryColumnWidthForSize:(struct CGSize { double x1; double x2; })arg1;
+- (float)_defaultMaximumPrimaryColumnWidthForSize:(struct CGSize { float x1; float x2; })arg1;
 - (int)_defaultTargetDisplayMode;
 - (void)_descendantWillPresentViewController:(id)arg1 modalSourceViewController:(id)arg2 presentationController:(id)arg3 animated:(BOOL)arg4;
 - (id)_detailFocusContainerGuide;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_detailViewFrame;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_detailViewFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_detailViewFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_detailViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_didChangeToFirstResponder:(id)arg1;
 - (void)_didEndSnapshotSession;
 - (void)_didTransitionTraitCollection;
@@ -165,19 +165,19 @@
 - (id)_displayModeButtonItemTitle;
 - (void)_displayModeDidChange;
 - (void)_displayModeWillChangeTo:(int)arg1;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_edgeInsetsForChildViewController:(id)arg1 insetsAreAbsolute:(BOOL*)arg2;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_edgeInsetsForChildViewController:(id)arg1 insetsAreAbsolute:(BOOL*)arg2;
 - (BOOL)_effectivePresentsWithGesture;
 - (int)_effectivePrimaryHidingState;
 - (int)_effectiveTargetDisplayMode;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameForChildContentContainer:(id)arg1;
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; int x7; }*)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForChildContentContainer:(id)arg1;
+- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; float x6; int x7; }*)arg1;
 - (BOOL)_handlesCounterRotationForPresentation;
 - (BOOL)_hasMasterViewController;
 - (BOOL)_hasPreferredInterfaceOrientationForPresentation;
 - (BOOL)_hidesMasterViewInCurrentOrientation;
 - (BOOL)_hidesMasterViewInOrientation:(int)arg1 medusaState:(int)arg2;
 - (void)_initWithCoder:(id)arg1;
-- (int)_internalModeForTraitCollection:(id)arg1 orientation:(int)arg2 viewSize:(struct CGSize { double x1; double x2; })arg3 medusaState:(int)arg4;
+- (int)_internalModeForTraitCollection:(id)arg1 orientation:(int)arg2 viewSize:(struct CGSize { float x1; float x2; })arg3 medusaState:(int)arg4;
 - (void)_invalidateHidesMasterViewForAspectRatio:(int)arg1;
 - (BOOL)_isBasicallyHorizontallyCompact;
 - (BOOL)_isCollapsed;
@@ -193,20 +193,20 @@
 - (void)_loadNewSubviews:(id)arg1;
 - (id)_masterFocusContainerGuide;
 - (double)_masterPresentationAnimationDuration;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_masterViewFrame;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_masterViewFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_masterViewFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_masterViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (int)_medusaState;
 - (int)_medusaStateForOrientation:(int)arg1 viewWidth:(float)arg2;
 - (BOOL)_optsOutOfPopoverControllerHierarchyCheck;
 - (void)_popoverController:(id)arg1 didChangeFromVisible:(BOOL)arg2;
 - (void)_popoverController:(id)arg1 willChangeToVisible:(BOOL)arg2;
 - (void)_prepareForCompactLayout;
-- (int)_prepareToTransitionToViewSize:(struct CGSize { double x1; double x2; })arg1 fromOrientation:(int)arg2 toOrientation:(int)arg3 duration:(double)arg4;
+- (int)_prepareToTransitionToViewSize:(struct CGSize { float x1; float x2; })arg1 fromOrientation:(int)arg2 toOrientation:(int)arg3 duration:(double)arg4;
 - (void)_presentMasterViewController:(BOOL)arg1;
 - (BOOL)_presentsInFadingPopover;
 - (id)_preservedDetailController;
-- (float)_primaryColumnWidthForSize:(struct CGSize { double x1; double x2; })arg1;
-- (float)_primaryColumnWidthForSize:(struct CGSize { double x1; double x2; })arg1 isCompact:(BOOL)arg2;
+- (float)_primaryColumnWidthForSize:(struct CGSize { float x1; float x2; })arg1;
+- (float)_primaryColumnWidthForSize:(struct CGSize { float x1; float x2; })arg1 isCompact:(BOOL)arg2;
 - (id)_primaryContentResponder;
 - (id)_primaryDimmingView;
 - (int)_primaryHidingState;
@@ -221,7 +221,7 @@
 - (void)_setClearPreventRotationHook:(id /* block */)arg1;
 - (void)_setCollapsedState:(int)arg1;
 - (void)_setDelegateHidesMaster:(BOOL)arg1 inAspectRatio:(int)arg2;
-- (void)_setDetailViewFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)_setDetailViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_setDisplayModeButtonItemTitle:(id)arg1;
 - (void)_setMasterOverrideTraitCollectionActive:(BOOL)arg1;
 - (void)_setPreservedDetailController:(id)arg1;
@@ -289,7 +289,7 @@
 - (BOOL)shouldUpdateFocusInContext:(id)arg1;
 - (void)showDetailViewController:(id)arg1 sender:(id)arg2;
 - (void)showViewController:(id)arg1 sender:(id)arg2;
-- (struct CGSize { double x1; double x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { double x1; double x2; })arg2;
+- (struct CGSize { float x1; float x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)snapshotAllViews;
 - (void)snapshotForRotationFromInterfaceOrientation:(int)arg1 toInterfaceOrientation:(int)arg2 masterChange:(int)arg3;
 - (void)snapshotMasterView;
@@ -303,7 +303,7 @@
 - (void)viewDidLayoutSubviews;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;

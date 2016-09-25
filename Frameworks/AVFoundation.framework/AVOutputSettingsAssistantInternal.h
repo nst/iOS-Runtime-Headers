@@ -6,17 +6,17 @@
     <AVOutputSettingsAssistantBaseSettingsProvider> * baseSettingsProvider;
     struct opaqueCMFormatDescription { } * sourceAudioFormat;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  sourceVideoAverageFrameDuration;
     struct opaqueCMFormatDescription { } * sourceVideoFormat;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  sourceVideoMinFrameDuration;
     <AVOutputSettingsAssistantVideoSettingsAdjuster> * videoSettingsAdjuster;
 }

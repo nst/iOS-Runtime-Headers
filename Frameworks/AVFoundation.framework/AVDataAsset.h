@@ -10,7 +10,7 @@
 }
 
 + (unsigned int)_dataLengthLimit;
-+ (id)_getFigAssetCreationOptionsFromDataAssetInitializationOptions:(id)arg1 figAssetCreationFlags:(unsigned int*)arg2;
++ (id)_getFigAssetCreationOptionsFromDataAssetInitializationOptions:(id)arg1 figAssetCreationFlags:(unsigned long long*)arg2;
 
 - (id)_assetInspector;
 - (id)_assetInspectorLoader;

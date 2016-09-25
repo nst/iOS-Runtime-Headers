@@ -14,13 +14,13 @@
 - (void)getValue:(void*)arg1;
 - (int)intValue;
 - (int)integerValue;
-- (int)longLongValue;
+- (long long)longLongValue;
 - (long)longValue;
 - (const char *)objCType;
 - (short)shortValue;
 - (unsigned char)unsignedCharValue;
 - (unsigned int)unsignedIntValue;
-- (unsigned int)unsignedLongLongValue;
+- (unsigned long long)unsignedLongLongValue;
 - (unsigned long)unsignedLongValue;
 - (unsigned short)unsignedShortValue;
 

@@ -5,12 +5,12 @@
 @interface CUIPSDLayerEffectColorOverlay : CUIPSDLayerEffectComponent {
     int  _blendMode;
     CUIColor * _color;
-    double  _opacity;
+    float  _opacity;
 }
 
 @property int blendMode;
 @property (retain) CUIColor *color;
-@property double opacity;
+@property float opacity;
 
 - (int)blendMode;
 - (id)color;

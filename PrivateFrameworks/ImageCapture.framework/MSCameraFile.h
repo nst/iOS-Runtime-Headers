@@ -11,8 +11,8 @@
 @property (copy) NSString *exifModificationDateTime;
 @property (readonly) struct timespec { int x1; long x2; } fsCreationTime;
 @property (readonly) struct timespec { int x1; long x2; } fsModificationTime;
-@property (readonly) unsigned int fsSN;
-@property (readonly) int fsSize;
+@property (readonly) unsigned long long fsSN;
+@property (readonly) long long fsSize;
 @property int imgHeight;
 @property int imgWidth;
 @property int thmHeight;
@@ -29,11 +29,11 @@
 - (void)finalize;
 - (struct timespec { int x1; long x2; })fsCreationTime;
 - (struct timespec { int x1; long x2; })fsModificationTime;
-- (unsigned int)fsSN;
-- (int)fsSize;
+- (unsigned long long)fsSN;
+- (long long)fsSize;
 - (int)imgHeight;
 - (int)imgWidth;
-- (id)initWithName:(id)arg1 parentFolder:(id)arg2 device:(id)arg3 fsSN:(unsigned int)arg4 fsCreationTime:(struct timespec { int x1; long x2; })arg5 fsModificationTime:(struct timespec { int x1; long x2; })arg6 fsSize:(int)arg7 fsFlags:(unsigned int)arg8;
+- (id)initWithName:(id)arg1 parentFolder:(id)arg2 device:(id)arg3 fsSN:(unsigned long long)arg4 fsCreationTime:(struct timespec { int x1; long x2; })arg5 fsModificationTime:(struct timespec { int x1; long x2; })arg6 fsSize:(long long)arg7 fsFlags:(unsigned int)arg8;
 - (id)metadataDict;
 - (void)setBitsPerPixel:(int)arg1;
 - (void)setExifCreationDateTime:(id)arg1;
@@ -55,6 +55,6 @@
 - (void)updateBasicMetadata;
 - (BOOL)updateBasicMetadataIfNotRAW;
 - (BOOL)updatedBasicMetadata;
-- (long)writeDataToFile:(int)arg1 fromOffset:(int)arg2 ofLength:(int*)arg3;
+- (long)writeDataToFile:(int)arg1 fromOffset:(long long)arg2 ofLength:(long long*)arg3;
 
 @end

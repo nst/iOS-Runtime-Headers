@@ -7,7 +7,7 @@
     int  _objectType;
     TSUWeakReference * _repWeakReference;
     int  _stageIndex;
-    double  _textureAnimationPercent;
+    float  _textureAnimationPercent;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
@@ -19,17 +19,17 @@
     NSMutableDictionary * mBoundingRectForStage;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  mBounds;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  mCenter;
     unsigned int  mChunkCount;
     struct CGColorSpace { } * mColorSpace;
@@ -41,8 +41,8 @@
     CALayer * mLayer;
     int  mMaxStageIndex;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  mOriginalPosition;
     TSDRep * mRep;
     NSMutableDictionary * mReverseFinalTextureForStage;
@@ -50,8 +50,8 @@
     BOOL  mShouldIncludeFinalTexturesInVisibleSet;
     BOOL  mShouldTransformUsingTextureCenter;
     TSUNoCopyDictionary * mStageIndexForTexture;
-    double  mTextureAngle;
-    double  mTextureOpacity;
+    float  mTextureAngle;
+    float  mTextureOpacity;
     int  mTextureZOrder;
     NSMutableArray * mTextures;
 }
@@ -59,12 +59,12 @@
 @property (nonatomic, readonly) NSArray *allTextures;
 @property (nonatomic, retain) CALayer *alternateLayer;
 @property (nonatomic, retain) TSDBitmapRenderingQualityInfo *bitmapRenderingQualityInfo;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } boundingRect;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } boundingRect;
 @property (nonatomic, retain) NSDictionary *boundingRectForStage;
-@property (nonatomic) struct CGPoint { double x1; double x2; } center;
+@property (nonatomic) struct CGPoint { float x1; float x2; } center;
 @property (nonatomic, readonly) unsigned int chunkCount;
 @property (nonatomic) struct CGColorSpace { }*colorSpace;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } frame;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } frame;
 @property (nonatomic) BOOL isBackground;
 @property (nonatomic) BOOL isBaked;
 @property (nonatomic) BOOL isFlippedHorizontally;
@@ -74,21 +74,21 @@
 @property (nonatomic, readonly) CALayer *layer;
 @property (nonatomic, readonly) int maxStageIndex;
 @property (nonatomic) int objectType;
-@property (nonatomic) struct CGPoint { double x1; double x2; } originalPosition;
+@property (nonatomic) struct CGPoint { float x1; float x2; } originalPosition;
 @property (nonatomic) TSDRep *rep;
 @property (nonatomic) BOOL shouldIncludeFinalTexturesInVisibleSet;
 @property (nonatomic) BOOL shouldTransformUsingTextureCenter;
 @property (nonatomic, readonly) int stageIndex;
-@property (nonatomic) double textureAngle;
-@property (nonatomic) double textureAnimationPercent;
-@property (nonatomic) double textureOpacity;
+@property (nonatomic) float textureAngle;
+@property (nonatomic) float textureAnimationPercent;
+@property (nonatomic) float textureOpacity;
 @property (nonatomic) int textureZOrder;
 @property (nonatomic, readonly) NSArray *visibleTextures;
 
-+ (id)newFlattenedTextureFromTextures:(id)arg1 newRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
++ (id)newFlattenedTextureFromTextures:(id)arg1 newRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 
 - (void)addFinalTexture:(id)arg1 forStage:(int)arg2 reverse:(BOOL)arg3;
-- (void)addPerspectiveLayerToTexture:(id)arg1 withShowSize:(struct CGSize { double x1; double x2; })arg2;
+- (void)addPerspectiveLayerToTexture:(id)arg1 withShowSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)addRenderable:(id)arg1;
 - (void)addRenderable:(id)arg1 forStage:(int)arg2;
 - (void)addRenderable:(id)arg1 shouldAdjustBounds:(BOOL)arg2;
@@ -97,10 +97,10 @@
 - (id)alternateLayer;
 - (void)applyActionEffect:(id)arg1 viewScale:(float)arg2 isMagicMove:(BOOL)arg3 shouldBake:(BOOL)arg4 applyScaleOnly:(BOOL)arg5 ignoreScale:(BOOL)arg6 shouldCheckActionKeys:(BOOL)arg7;
 - (id)bitmapRenderingQualityInfo;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundingRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingRect;
 - (id)boundingRectForStage;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundingRectForStage:(int)arg1 isBuildIn:(BOOL)arg2;
-- (struct CGPoint { double x1; double x2; })center;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingRectForStage:(int)arg1 isBuildIn:(BOOL)arg2;
+- (struct CGPoint { float x1; float x2; })center;
 - (unsigned int)chunkCount;
 - (struct CGColorSpace { }*)colorSpace;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -108,7 +108,7 @@
 - (id)description;
 - (id)finalTextureForStage:(int)arg1 reverse:(BOOL)arg2;
 - (id)firstVisibleTextureForTextureType:(int)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
 - (void)hideLayersOfFinalTextures;
 - (id)init;
 - (BOOL)isBackground;
@@ -121,7 +121,7 @@
 - (id)layer;
 - (int)maxStageIndex;
 - (int)objectType;
-- (struct CGPoint { double x1; double x2; })originalPosition;
+- (struct CGPoint { float x1; float x2; })originalPosition;
 - (void)p_addRenderable:(id)arg1 forStage:(int)arg2 shouldAdjustBounds:(BOOL)arg3;
 - (void)p_applyPositionFromAttributes:(id)arg1 viewScale:(float)arg2;
 - (void)p_resetAttributesWithViewScale:(float)arg1;
@@ -135,10 +135,10 @@
 - (void)resetToOriginalSource;
 - (void)setAlternateLayer:(id)arg1;
 - (void)setBitmapRenderingQualityInfo:(id)arg1;
-- (void)setBoundingRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)setBoundingRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forStage:(int)arg2;
+- (void)setBoundingRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setBoundingRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forStage:(int)arg2;
 - (void)setBoundingRectForStage:(id)arg1;
-- (void)setCenter:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setCenter:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setColorSpace:(struct CGColorSpace { }*)arg1;
 - (void)setIsBackground:(BOOL)arg1;
 - (void)setIsBaked:(BOOL)arg1;
@@ -146,7 +146,7 @@
 - (void)setIsMagicMove:(BOOL)arg1;
 - (void)setLayerGeometryFromRep:(id)arg1;
 - (void)setObjectType:(int)arg1;
-- (void)setOriginalPosition:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setOriginalPosition:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setRep:(id)arg1;
 - (void)setShouldIncludeFinalTexturesInVisibleSet:(BOOL)arg1;
 - (void)setShouldTransformUsingTextureCenter:(BOOL)arg1;

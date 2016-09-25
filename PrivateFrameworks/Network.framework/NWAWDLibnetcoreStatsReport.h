@@ -14,7 +14,7 @@
     NWAWDLibnetcoreTCPECNStatsReport * _tcpECNStatisticsReport;
     NWAWDLibnetcoreTCPStatsReport * _tcpStatisticsReport;
     NWAWDLibnetcoreTCPTFOStatsReport * _tcpTFOStatisticsReport;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic, readonly) BOOL hasMbufStatisticsReport;
@@ -31,7 +31,7 @@
 @property (nonatomic, retain) NWAWDLibnetcoreTCPECNStatsReport *tcpECNStatisticsReport;
 @property (nonatomic, retain) NWAWDLibnetcoreTCPStatsReport *tcpStatisticsReport;
 @property (nonatomic, retain) NWAWDLibnetcoreTCPTFOStatsReport *tcpTFOStatisticsReport;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 
 + (Class)tcpECNInterfaceReportType;
 
@@ -65,14 +65,14 @@
 - (void)setTcpECNStatisticsReport:(id)arg1;
 - (void)setTcpStatisticsReport:(id)arg1;
 - (void)setTcpTFOStatisticsReport:(id)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (id)tcpECNInterfaceReportAtIndex:(unsigned int)arg1;
 - (id)tcpECNInterfaceReports;
 - (unsigned int)tcpECNInterfaceReportsCount;
 - (id)tcpECNStatisticsReport;
 - (id)tcpStatisticsReport;
 - (id)tcpTFOStatisticsReport;
-- (unsigned int)timestamp;
+- (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 
 @end

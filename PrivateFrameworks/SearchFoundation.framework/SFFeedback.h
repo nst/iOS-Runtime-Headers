@@ -3,10 +3,10 @@
  */
 
 @interface SFFeedback : NSObject <NSCopying, NSSecureCoding> {
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
 }
 
-@property (readonly) unsigned int timestamp;
+@property (readonly) unsigned long long timestamp;
 
 // Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
 
@@ -17,7 +17,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (unsigned int)timestamp;
+- (unsigned long long)timestamp;
 
 // Image: /System/Library/PrivateFrameworks/CoreParsec.framework/CoreParsec
 

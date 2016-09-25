@@ -3,21 +3,21 @@
  */
 
 @interface UISlider : UIControl <NSCoding> {
-    double  _alpha;
+    float  _alpha;
     BOOL  _animatingWithDynamics;
     struct __CFDictionary { } * _contentLookup;
     _UIFeedbackEdgeBehavior * _edgeFeedbackBehavior;
-    double  _hitOffset;
+    float  _hitOffset;
     UIImageView * _innerThumbView;
     BOOL  _maxColorIsValid;
     UIColor * _maxTintColor;
     UIView * _maxTrackClipView;
     UIImageView * _maxTrackView;
-    double  _maxValue;
+    float  _maxValue;
     UIImageView * _maxValueImageView;
     UIColor * _minTintColor;
     UIImageView * _minTrackView;
-    double  _minValue;
+    float  _minValue;
     UIImageView * _minValueImageView;
     _UIFeedbackModulationBehavior * _modulationFeedbackBehavior;
     struct { 
@@ -37,26 +37,26 @@
     NSArray * _trackColors;
     BOOL  _trackIsArtworkBased;
     BOOL  _useLookNeue;
-    double  _value;
+    float  _value;
 }
 
-@property (nonatomic) double akMaximumValue;
-@property (nonatomic) double akMinimumValue;
-@property (nonatomic) double akValue;
+@property (nonatomic) float akMaximumValue;
+@property (nonatomic) float akMinimumValue;
+@property (nonatomic) float akValue;
 @property (getter=isContinuous, nonatomic) BOOL continuous;
 @property (nonatomic, readonly) UIImage *currentMaximumTrackImage;
 @property (nonatomic, readonly) UIImage *currentMinimumTrackImage;
 @property (nonatomic, readonly) UIImage *currentThumbImage;
 @property (getter=_edgeFeedbackBehavior, setter=_setEdgeFeedbackBehavior:, nonatomic, retain) _UIFeedbackEdgeBehavior *edgeFeedbackBehavior;
 @property (nonatomic, retain) UIColor *maximumTrackTintColor;
-@property (nonatomic) double maximumValue;
+@property (nonatomic) float maximumValue;
 @property (nonatomic, retain) UIImage *maximumValueImage;
 @property (nonatomic, retain) UIColor *minimumTrackTintColor;
-@property (nonatomic) double minimumValue;
+@property (nonatomic) float minimumValue;
 @property (nonatomic, retain) UIImage *minimumValueImage;
 @property (getter=_modulationFeedbackBehavior, setter=_setModulationFeedbackBehavior:, nonatomic, retain) _UIFeedbackModulationBehavior *modulationFeedbackBehavior;
 @property (nonatomic, retain) UIColor *thumbTintColor;
-@property (nonatomic) double value;
+@property (nonatomic) float value;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
@@ -72,11 +72,11 @@
 - (void)_controlTouchBegan:(id)arg1 withEvent:(id)arg2;
 - (void)_controlTouchEnded:(id)arg1 withEvent:(id)arg2;
 - (void)_controlTouchMoved:(id)arg1 withEvent:(id)arg2;
-- (float)_cornerRadiusForRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (float)_cornerRadiusForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)_edgeFeedbackBehavior;
 - (void)_initImages;
 - (void)_initSubviews;
-- (struct CGSize { double x1; double x2; })_intrinsicSizeWithinSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })_intrinsicSizeWithinSize:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)_isThumbEnabled;
 - (void)_layoutSubviewsForBoundsChange:(BOOL)arg1;
 - (id)_maxTrackView;
@@ -105,12 +105,12 @@
 - (void)_setupFeedback;
 - (void)_sliderAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (void)_sliderAnimationWillStart:(id)arg1 context:(id)arg2;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_thumbHitEdgeInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_thumbHitEdgeInsets;
 - (id)_thumbImageForState:(unsigned int)arg1;
 - (BOOL)_trackEnabled;
 - (void)_updateAppearanceForEnabled:(BOOL)arg1;
 - (void)_updateMaxTrackColorForInitialization:(BOOL)arg1;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })alignmentRectInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentRectInsets;
 - (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (BOOL)cancelMouseTracking;
 - (BOOL)cancelTouchTracking;
@@ -127,7 +127,7 @@
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isAccessibilityElementByDefault;
 - (BOOL)isAnimatingValueChange;
 - (BOOL)isContinuous;
@@ -137,17 +137,17 @@
 - (id)maximumTrackTintColor;
 - (float)maximumValue;
 - (id)maximumValueImage;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })maximumValueImageRectForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })maximumValueImageRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)minimumTrackImageForState:(unsigned int)arg1;
 - (id)minimumTrackTintColor;
 - (float)minimumValue;
 - (id)minimumValueImage;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })minimumValueImageRectForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })minimumValueImageRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setAlpha:(float)arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setContinuous:(BOOL)arg1;
 - (void)setEnabled:(BOOL)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setMaximumTrackImage:(id)arg1 forState:(unsigned int)arg2;
 - (void)setMaximumTrackImage:(id)arg1 forStates:(unsigned int)arg2;
@@ -166,14 +166,14 @@
 - (void)setThumbTintColor:(id)arg1;
 - (void)setValue:(float)arg1;
 - (void)setValue:(float)arg1 animated:(BOOL)arg2;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)thumbImageForState:(unsigned int)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })thumbRectForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 trackRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 value:(float)arg3;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })thumbRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 trackRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 value:(float)arg3;
 - (id)thumbTintColor;
 - (void)tintColorDidChange;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })trackRectForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })trackRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (float)value;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })valueTextRectForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })valueTextRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 // Image: /System/Library/PrivateFrameworks/AnnotationKit.framework/AnnotationKit
 

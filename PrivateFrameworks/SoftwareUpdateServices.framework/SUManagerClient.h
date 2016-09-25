@@ -83,7 +83,7 @@
 - (void)slaVersion:(id /* block */)arg1;
 - (void)startDownload:(id /* block */)arg1;
 - (void)startDownloadWithMetadata:(id)arg1 withResult:(id /* block */)arg2;
-- (unsigned int)totalPurgeableSpace;
+- (unsigned long long)totalPurgeableSpace;
 - (void)updateDownloadMetadata:(id)arg1 withResult:(id /* block */)arg2;
 
 @end

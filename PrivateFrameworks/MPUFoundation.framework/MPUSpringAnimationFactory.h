@@ -3,16 +3,16 @@
  */
 
 @interface MPUSpringAnimationFactory : MPUAnimationFactory {
-    double  _damping;
-    double  _mass;
-    double  _stiffness;
-    double  _velocity;
+    float  _damping;
+    float  _mass;
+    float  _stiffness;
+    float  _velocity;
 }
 
-@property (nonatomic) double damping;
-@property (nonatomic) double mass;
-@property (nonatomic) double stiffness;
-@property (nonatomic) double velocity;
+@property (nonatomic) float damping;
+@property (nonatomic) float mass;
+@property (nonatomic) float stiffness;
+@property (nonatomic) float velocity;
 
 + (void)animateUsingSpringWithDamping:(float)arg1 mass:(float)arg2 stiffness:(float)arg3 velocity:(float)arg4 animations:(id /* block */)arg5 options:(unsigned int)arg6 completion:(id /* block */)arg7;
 

@@ -5,12 +5,12 @@
 @interface EKUIInviteesViewTimeSlotCell : UITableViewCell {
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _andMoreBoundingRect;
     UIView * _andMoreDebugOverlay;
@@ -53,7 +53,7 @@
     BOOL  _updateTimeText;
 }
 
-@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } andMoreBoundingRect;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } andMoreBoundingRect;
 @property (nonatomic, retain) UIView *andMoreDebugOverlay;
 @property (nonatomic, retain) NSDictionary *andMoreStringCache;
 @property (nonatomic, retain) UILabel *bottomTimeLabel;
@@ -124,7 +124,7 @@
 - (void)_showPreviewButtonTapped:(id)arg1;
 - (id)_textForParticipant:(id)arg1 color:(id)arg2;
 - (BOOL)_textWillFit:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })andMoreBoundingRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })andMoreBoundingRect;
 - (id)andMoreDebugOverlay;
 - (id)andMoreStringCache;
 - (id)bottomTimeLabel;
@@ -150,7 +150,7 @@
 - (id)proposedByMinHeightConstraint;
 - (id)proposedTimeLabelToBottomTimeLabelConstraint;
 - (BOOL)searchInProgress;
-- (void)setAndMoreBoundingRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setAndMoreBoundingRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setAndMoreDebugOverlay:(id)arg1;
 - (void)setAndMoreStringCache:(id)arg1;
 - (void)setBottomTimeLabel:(id)arg1;
@@ -161,7 +161,7 @@
 - (void)setCheckmarkImageView:(id)arg1;
 - (void)setColorToBusyImageAttributedString:(id)arg1;
 - (void)setEndDate:(id)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setLabelForTextSizeTesting:(id)arg1;
 - (void)setParticipantsTextView:(id)arg1;
 - (void)setParticipantsViewToBottomTimeLabelConstraint:(id)arg1;

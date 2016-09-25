@@ -13,7 +13,7 @@
     <MusicEntityValueProviding> * _entityValueProvider;
     BOOL  _hasDirtyPlaybackStatusUpdate;
     BOOL  _highlighted;
-    double  _lastUsedArtworkViewAspectRatio;
+    float  _lastUsedArtworkViewAspectRatio;
     MusicPlayButton * _playButton;
     double  _playbackCurrentTimeOriginatingTime;
     NSMutableArray * _recycledTextButtons;
@@ -24,7 +24,7 @@
     BOOL  _wasUpdatedForAsynchronousPropertyLoadCompleted;
 }
 
-@property (getter=_currentTextLabelAlpha, nonatomic, readonly) double _currentTextLabelAlpha;
+@property (getter=_currentTextLabelAlpha, nonatomic, readonly) float _currentTextLabelAlpha;
 @property (getter=_addButton, nonatomic, readonly) UIControl *addButton;
 @property (nonatomic, retain) UIImage *artworkOverrideImage;
 @property (getter=_artworkView, nonatomic, readonly) UIImageView *artworkView;
@@ -47,18 +47,18 @@
 - (void)_artworkViewImageDidChange;
 - (void)_configureArtworkCatalog:(id)arg1;
 - (void)_configureArtworkView:(id)arg1 forContentArtworkDescriptor:(id)arg2 entityValueProvider:(id)arg3;
-- (void)_configurePlayButtonForLayingOverArtworkRelativeToFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)_configurePlayButtonForLayingOverArtworkRelativeToFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_configurePlayButtonVisualProperties:(id)arg1;
 - (id)_contentDescriptor;
 - (void)_contentDescriptorDidChange:(id)arg1;
 - (float)_currentTextLabelAlpha;
 - (id)_effectiveArtworkBackgroundColor;
 - (void)_entityDisabledDidChange;
-- (void)_getViewToProposedFrameMap:(id*)arg1 withTextDescriptors:(id)arg2 availableContentBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 exclusionRectangle:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg4 totalTextHeight:(float*)arg5;
-- (void)_handleArtworkImageUpdate:(id)arg1 idealArtworkSize:(struct CGSize { double x1; double x2; })arg2;
+- (void)_getViewToProposedFrameMap:(id*)arg1 withTextDescriptors:(id)arg2 availableContentBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 exclusionRectangle:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4 totalTextHeight:(float*)arg5;
+- (void)_handleArtworkImageUpdate:(id)arg1 idealArtworkSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)_handleArtworkViewTapped;
 - (void)_handleContentDescriptorDidInvalidate:(id)arg1;
-- (void)_layoutArtworkViewWithAvailableContentBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 layoutDirection:(int)arg2 usingBlock:(id /* block */)arg3;
+- (void)_layoutArtworkViewWithAvailableContentBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 layoutDirection:(int)arg2 usingBlock:(id /* block */)arg3;
 - (id)_newArtworkView;
 - (id)_playButton;
 - (void)_playbackStatusDidChange:(id)arg1;

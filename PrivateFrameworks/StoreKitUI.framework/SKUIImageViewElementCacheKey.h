@@ -5,15 +5,15 @@
 @interface SKUIImageViewElementCacheKey : NSObject {
     int  _imageTreatment;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _size;
     NSURL * _url;
 }
 
 - (void).cxx_destruct;
 - (unsigned int)hash;
-- (id)initWithURL:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 imageTreatment:(id)arg3;
+- (id)initWithURL:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 imageTreatment:(id)arg3;
 - (BOOL)isEqual:(id)arg1;
 
 @end

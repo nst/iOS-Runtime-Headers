@@ -32,15 +32,15 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)_animateCircleInner0:(float)arg1 inner1:(float)arg2 outer0:(float)arg3 outer1:(float)arg4 duration:(float)arg5;
-- (void)_displayInScene:(id)arg1 point:(struct CGPoint { double x1; double x2; })arg2 color:(id)arg3 filled:(BOOL)arg4 withWisp:(BOOL)arg5;
-- (void)addTapAtPoint:(struct CGPoint { double x1; double x2; })arg1 time:(double)arg2 color:(id)arg3;
+- (void)_displayInScene:(id)arg1 point:(struct CGPoint { float x1; float x2; })arg2 color:(id)arg3 filled:(BOOL)arg4 withWisp:(BOOL)arg5;
+- (void)addTapAtPoint:(struct CGPoint { float x1; float x2; })arg1 time:(double)arg2 color:(id)arg3;
 - (id)archiveData;
 - (void)displayInScene:(id)arg1;
 - (id)init;
 - (id)initWithArchiveData:(id)arg1;
 - (double)messageDuration;
 - (id)messageTypeAsString;
-- (struct CGPoint { double x1; double x2; })pointAtIndex:(unsigned int)arg1;
+- (struct CGPoint { float x1; float x2; })pointAtIndex:(unsigned int)arg1;
 - (void)preVisualizeInScene:(id)arg1;
 - (BOOL)reachedSizeLimit;
 - (unsigned int)tapCount;

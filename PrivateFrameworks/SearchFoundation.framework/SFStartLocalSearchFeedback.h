@@ -14,7 +14,7 @@
 - (unsigned int)indexType;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithInput:(id)arg1 triggerEvent:(unsigned int)arg2 indexType:(unsigned int)arg3;
-- (id)initWithInput:(id)arg1 triggerEvent:(unsigned int)arg2 indexType:(unsigned int)arg3 queryId:(unsigned int)arg4;
+- (id)initWithInput:(id)arg1 triggerEvent:(unsigned int)arg2 indexType:(unsigned int)arg3 queryId:(unsigned long long)arg4;
 - (void)setIndexType:(unsigned int)arg1;
 
 @end

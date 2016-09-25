@@ -5,8 +5,8 @@
 @interface AVPlayerItemInternal : NSObject {
     <NSObject><NSCopying> * AVKitData;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  IFramePrefetchTargetDimensions;
     unsigned int  RTCReportingFlags;
     NSURL * URL;
@@ -44,10 +44,10 @@
     struct OpaqueCMTimebase { } * figTimebase;
     void * figVideoCompositor;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  forwardPlaybackEndTime;
     NSDictionary * gaplessInfo;
     NSMutableArray * handlersToCallWhenReadyForEnqueueing;
@@ -63,24 +63,24 @@
     struct __CFString { } * initialFigTimePitchAlgorithm;
     BOOL  initialLimitReadAhead;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  initialMaxSnapTime;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  initialMinSnapTime;
     int  initialPlaybackLikelyToKeepUpTrigger;
     unsigned int  initialSetTimeFlags;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  initialTime;
     int  initialVariantIndex;
     BOOL  initialWillNeverSeekBackwardsHint;
@@ -92,24 +92,24 @@
     NSMutableArray * itemVideoOutputs;
     NSObject<OS_dispatch_queue> * ivarAccessQueue;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  maximumForwardBufferDuration;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  maximumTrailingBufferDuration;
     NSString * mediaKind;
     NSMutableDictionary * mediaOptionsSelectedByClient;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  minimumIntervalForIFrameOnlyPlayback;
     BOOL  minimumIntervalForIFrameOnlyPlaybackWasSet;
     AVAudioMix * mostRecentlyAppliedAudioMix;
@@ -126,8 +126,8 @@
     AVWeakReference * playerReference;
     double  preferredPeakBitRate;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  preferredPeakPresentationSize;
     AVPlayerItem * previousItem;
     AVPropertyStorage * propertyStorage;
@@ -136,10 +136,10 @@
     BOOL  requiresAccessLog;
     unsigned int  restrictions;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  reversePlaybackEndTime;
     BOOL  reversesMoreVideoFramesInMemory;
     BOOL  reversesMoreVideoFramesInMemoryWasSet;
@@ -149,8 +149,8 @@
     NSObject<OS_dispatch_queue> * seekQueue;
     BOOL  seekingWaitsForVideoCompositionRendering;
     NSString * serviceIdentifier;
-    double  soundCheckVolumeNormalization;
-    double  speedThresholdForIFrameOnlyPlayback;
+    float  soundCheckVolumeNormalization;
+    float  speedThresholdForIFrameOnlyPlayback;
     BOOL  speedThresholdForIFrameOnlyPlaybackWasSet;
     NSObject<OS_dispatch_queue> * stateDispatchQueue;
     int  status;
@@ -165,7 +165,7 @@
     BOOL  usesMinimalLatencyForVideoCompositionRendering;
     NSString * videoApertureMode;
     AVVideoComposition * videoComposition;
-    double  volumeAdjustment;
+    float  volumeAdjustment;
     BOOL  wasInitializedWithURL;
     AVWeakReference * weakReference;
 }

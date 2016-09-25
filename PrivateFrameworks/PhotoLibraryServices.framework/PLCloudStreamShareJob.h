@@ -23,7 +23,7 @@
 - (id)albumCloudGUID;
 - (id)albumName;
 - (id)commentText;
-- (int)daemonOperation;
+- (long long)daemonOperation;
 - (id)description;
 - (void)encodeToXPCObject:(id)arg1;
 - (void)executeDaemonOperation;

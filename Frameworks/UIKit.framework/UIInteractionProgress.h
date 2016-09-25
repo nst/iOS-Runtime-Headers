@@ -6,13 +6,13 @@
     int  _atLeastTwoUpdates;
     double  _mostRecentUpdateTime;
     NSPointerArray * _observers;
-    double  _percentComplete;
-    double  _previousPercentComplete;
+    float  _percentComplete;
+    float  _previousPercentComplete;
     double  _previousUpdateTime;
 }
 
-@property (nonatomic, readonly) double percentComplete;
-@property (nonatomic, readonly) double velocity;
+@property (nonatomic, readonly) float percentComplete;
+@property (nonatomic, readonly) float velocity;
 
 - (void).cxx_destruct;
 - (unsigned int)_indexOfObserver:(id)arg1;

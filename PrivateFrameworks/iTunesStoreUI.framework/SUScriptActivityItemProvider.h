@@ -19,7 +19,7 @@
 @property (readonly) unsigned int hash;
 @property (retain) WebScriptObject *itemFunction;
 @property (readonly) SUActivityItemProvider *nativeActivityItemProvider;
-@property double progress;
+@property float progress;
 @property (copy) NSString *status;
 @property (readonly) Class superclass;
 

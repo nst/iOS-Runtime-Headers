@@ -5,39 +5,39 @@
 @interface PUTiltWheelControl : UIControl <PUTiltWheelDataSource> {
     BOOL  __needsDataReload;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  __panPreviousPoint;
     PUSnappingController * __snappingController;
     PUTiltWheel * __tiltWheel;
     PUTiltWheelTriangleView * __triangleView;
-    double  _maxTiltAngle;
-    double  _minTiltAngle;
-    double  _tiltAngle;
+    float  _maxTiltAngle;
+    float  _minTiltAngle;
+    float  _tiltAngle;
     int  _wheelOrientation;
 }
 
 @property (setter=_setNeedsDataReload:, nonatomic) BOOL _needsDataReload;
-@property (setter=_setPanPreviousPoint:, nonatomic) struct CGPoint { double x1; double x2; } _panPreviousPoint;
+@property (setter=_setPanPreviousPoint:, nonatomic) struct CGPoint { float x1; float x2; } _panPreviousPoint;
 @property (setter=_setSnappingController:, nonatomic, retain) PUSnappingController *_snappingController;
 @property (setter=_setTiltWheel:, nonatomic, retain) PUTiltWheel *_tiltWheel;
 @property (setter=_setTriangleView:, nonatomic, retain) PUTiltWheelTriangleView *_triangleView;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic) double maxTiltAngle;
-@property (nonatomic) double minTiltAngle;
+@property (nonatomic) float maxTiltAngle;
+@property (nonatomic) float minTiltAngle;
 @property (readonly) Class superclass;
-@property (nonatomic) double tiltAngle;
+@property (nonatomic) float tiltAngle;
 @property (nonatomic) int wheelOrientation;
 
 - (void).cxx_destruct;
-- (float)_angleBetweenPoint:(struct CGPoint { double x1; double x2; })arg1 andPoint:(struct CGPoint { double x1; double x2; })arg2 measuredFrom:(struct CGPoint { double x1; double x2; })arg3;
+- (float)_angleBetweenPoint:(struct CGPoint { float x1; float x2; })arg1 andPoint:(struct CGPoint { float x1; float x2; })arg2 measuredFrom:(struct CGPoint { float x1; float x2; })arg3;
 - (float)_circumferenceVelocityInPan:(id)arg1;
 - (BOOL)_needsDataReload;
-- (struct CGPoint { double x1; double x2; })_panPreviousPoint;
+- (struct CGPoint { float x1; float x2; })_panPreviousPoint;
 - (void)_setNeedsDataReload:(BOOL)arg1;
-- (void)_setPanPreviousPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)_setPanPreviousPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_setSnappingController:(id)arg1;
 - (void)_setTiltAngleFromUserInteraction:(float)arg1;
 - (void)_setTiltWheel:(id)arg1;
@@ -46,13 +46,13 @@
 - (float)_tiltAngleForDraggedRotation:(float)arg1;
 - (id)_tiltWheel;
 - (float)_tiltWheelSize;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })_transformForTiltAngle:(float)arg1;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_transformForTiltAngle:(float)arg1;
 - (id)_triangleView;
 - (void)_updateTiltWheelConstraintsIfNeeded;
 - (void)_updateTiltWheelTransform;
 - (void)_updateTriangleConstraintsIfNeeded;
 - (void)handlePanGesture:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (float)maxTiltAngle;
 - (float)minTiltAngle;

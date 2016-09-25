@@ -12,7 +12,7 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (void)addCloudItemID:(unsigned int)arg1 idType:(int)arg2;
+- (void)addCloudItemID:(unsigned long long)arg1 idType:(int)arg2;
 - (unsigned int)count;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

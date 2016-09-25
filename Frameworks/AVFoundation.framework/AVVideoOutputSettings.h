@@ -9,7 +9,7 @@
 @property (nonatomic, readonly) BOOL dimensionsAreBoundingBox;
 @property (nonatomic, readonly) NSString *frameRateConversionAlgorithm;
 @property (nonatomic, readonly) int height;
-@property (nonatomic, readonly) struct { int x1; int x2; unsigned int x3; int x4; } minimumFrameDuration;
+@property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } minimumFrameDuration;
 @property (nonatomic, readonly) NSDictionary *pixelAspectRatioDictionary;
 @property (nonatomic, readonly) NSDictionary *pixelTransferProperties;
 @property (nonatomic, readonly) NSDictionary *videoScalingProperties;
@@ -32,7 +32,7 @@
 - (id)frameRateConversionAlgorithm;
 - (int)height;
 - (id)initWithVideoSettingsDictionary:(id)arg1 exceptionReason:(id*)arg2;
-- (struct { int x1; int x2; unsigned int x3; int x4; })minimumFrameDuration;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })minimumFrameDuration;
 - (id)pixelAspectRatioDictionary;
 - (id)pixelTransferProperties;
 - (BOOL)validateUsingOutputSettingsValidator:(id)arg1 reason:(id*)arg2;

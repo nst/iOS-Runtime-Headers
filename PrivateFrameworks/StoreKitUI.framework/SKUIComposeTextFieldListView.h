@@ -11,7 +11,7 @@
 
 @property (nonatomic, readonly) int composeReviewStyle;
 @property (nonatomic) <SKUIComposeTextFieldListViewDelegate> *delegate;
-@property (nonatomic, readonly) double height;
+@property (nonatomic, readonly) float height;
 @property (nonatomic, readonly) UIResponder *initialFirstResponder;
 
 - (void).cxx_destruct;
@@ -21,7 +21,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (float)height;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 style:(int)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
 - (id)initialFirstResponder;
 - (BOOL)isValid;
 - (void)layoutSubviews;

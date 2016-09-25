@@ -8,7 +8,7 @@
     double  _lastUpdateTime;
     unsigned int  _latestDrawErrror;
     BOOL  _needsRender;
-    double  _preferredFramesPerSecond;
+    float  _preferredFramesPerSecond;
     UIScreen * _screen;
     BOOL  _synchronizesWithCA;
     BOOL  _viewIsVisible;
@@ -16,7 +16,7 @@
 }
 
 @property (getter=isPaused, nonatomic) BOOL paused;
-@property (nonatomic) double preferredFramesPerSecond;
+@property (nonatomic) float preferredFramesPerSecond;
 @property (nonatomic) BOOL synchronizesWithCA;
 @property (nonatomic, readonly) double timeSinceLastUpdate;
 
@@ -37,10 +37,10 @@
 - (void)_updateScreenIfChanged;
 - (void)dealloc;
 - (void)didMoveToWindow;
-- (unsigned int)drawInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (unsigned int)drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isPaused;
 - (void)layoutSubviews;
 - (float)preferredFramesPerSecond;

@@ -12,11 +12,11 @@
     UIView * _dividerLineViewBottom;
     UIView * _dividerLineViewTop;
     UIColor * _dividerLineVisualEffectColor;
-    double  _fixedHeight;
+    float  _fixedHeight;
     BOOL  _forceSingleColumnLayout;
     BOOL  _hideOccurrenceBackground;
     int  _maxVisibleRows;
-    double  _occurrenceInset;
+    float  _occurrenceInset;
     NSMutableArray * _occurrenceViews;
     int  _orientation;
     UIScrollView * _scroller;
@@ -30,11 +30,11 @@
 @property (nonatomic) BOOL allowsOccurrenceSelection;
 @property (nonatomic) <EKDayAllDayViewDelegate> *delegate;
 @property (nonatomic, retain) EKEvent *dimmedOccurrence;
-@property (nonatomic) double fixedHeight;
+@property (nonatomic) float fixedHeight;
 @property (nonatomic) BOOL forceSingleColumnLayout;
 @property (nonatomic) BOOL hideOccurrenceBackground;
 @property (nonatomic) int maxVisibleRows;
-@property (nonatomic, readonly) double naturalHeight;
+@property (nonatomic, readonly) float naturalHeight;
 @property (nonatomic) BOOL showsBorderLines;
 @property (nonatomic) BOOL showsLabel;
 @property (nonatomic) BOOL showsSelection;
@@ -54,7 +54,7 @@
 - (BOOL)allowsOccurrenceSelection;
 - (void)configureOccurrenceViewForGestureController:(id)arg1;
 - (BOOL)containsEvent:(id)arg1;
-- (void)dayOccurrenceViewSelected:(id)arg1 atPoint:(struct CGPoint { double x1; double x2; })arg2 wasTapped:(BOOL)arg3;
+- (void)dayOccurrenceViewSelected:(id)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2 wasTapped:(BOOL)arg3;
 - (id)delegate;
 - (void)didMoveToWindow;
 - (id)dimmedOccurrence;
@@ -62,7 +62,7 @@
 - (float)fixedHeight;
 - (BOOL)forceSingleColumnLayout;
 - (BOOL)hideOccurrenceBackground;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isAllDayLabelHighlighted;
 - (void)layoutSubviews;
 - (int)maxVisibleRows;
@@ -94,7 +94,7 @@
 - (BOOL)showsBorderLines;
 - (BOOL)showsLabel;
 - (BOOL)showsSelection;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)updateLabelFont;
 - (void)viewTintColorDidChangeForView:(id)arg1 toColor:(id)arg2;

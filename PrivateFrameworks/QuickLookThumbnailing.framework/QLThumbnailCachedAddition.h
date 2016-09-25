@@ -4,7 +4,7 @@
 
 @interface QLThumbnailCachedAddition : NSObject {
     GSAddition * _addition;
-    unsigned int  _fileID;
+    unsigned long long  _fileID;
 }
 
 @property (retain) GSAddition *addition;

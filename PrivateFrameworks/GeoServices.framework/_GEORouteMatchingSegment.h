@@ -22,7 +22,7 @@
 
 - (void)dealloc;
 - (id)description;
-- (double)distanceFromCoordinate:(struct { double x1; double x2; })arg1 outCoordinateOnSegment:(struct { double x1; double x2; }*)arg2 outRouteCoordinate:(struct PolylineCoordinate { unsigned int x1; double x2; }*)arg3;
+- (double)distanceFromCoordinate:(struct { double x1; double x2; })arg1 outCoordinateOnSegment:(struct { double x1; double x2; }*)arg2 outRouteCoordinate:(struct PolylineCoordinate { unsigned int x1; float x2; }*)arg3;
 - (struct { double x1; double x2; })endCoordinate;
 - (void)setEndCoordinate:(struct { double x1; double x2; })arg1;
 - (void)setStartCoordinate:(struct { double x1; double x2; })arg1;

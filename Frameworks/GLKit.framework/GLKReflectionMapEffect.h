@@ -6,24 +6,24 @@
     BOOL  _dirtyUniforms;
     union _GLKMatrix3 { 
         struct { 
-            double m00; 
-            double m01; 
-            double m02; 
-            double m10; 
-            double m11; 
-            double m12; 
-            double m20; 
-            double m21; 
-            double m22; 
+            float m00; 
+            float m01; 
+            float m02; 
+            float m10; 
+            float m11; 
+            float m12; 
+            float m20; 
+            float m21; 
+            float m22; 
         } ; 
-        double m[9]; 
+        float m[9]; 
     }  _matrix;
     int  _matrixLoc;
     GLKEffectPropertyTexture * _textureCubeMap;
 }
 
 @property (nonatomic) BOOL dirtyUniforms;
-@property (nonatomic) union _GLKMatrix3 { struct { double x_1_1_1; double x_1_1_2; double x_1_1_3; double x_1_1_4; double x_1_1_5; double x_1_1_6; double x_1_1_7; double x_1_1_8; double x_1_1_9; } x1; double x2[9]; } matrix;
+@property (nonatomic) union _GLKMatrix3 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; float x_1_1_5; float x_1_1_6; float x_1_1_7; float x_1_1_8; float x_1_1_9; } x1; float x2[9]; } matrix;
 @property (nonatomic) int matrixLoc;
 @property (nonatomic, readonly) GLKEffectPropertyTexture *textureCubeMap;
 
@@ -31,11 +31,11 @@
 - (id)description;
 - (BOOL)dirtyUniforms;
 - (id)init;
-- (union _GLKMatrix3 { struct { double x_1_1_1; double x_1_1_2; double x_1_1_3; double x_1_1_4; double x_1_1_5; double x_1_1_6; double x_1_1_7; double x_1_1_8; double x_1_1_9; } x1; double x2[9]; })matrix;
+- (union _GLKMatrix3 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; float x_1_1_5; float x_1_1_6; float x_1_1_7; float x_1_1_8; float x_1_1_9; } x1; float x2[9]; })matrix;
 - (int)matrixLoc;
 - (void)prepareToDraw;
 - (void)setDirtyUniforms:(BOOL)arg1;
-- (void)setMatrix:(union _GLKMatrix3 { struct { double x_1_1_1; double x_1_1_2; double x_1_1_3; double x_1_1_4; double x_1_1_5; double x_1_1_6; double x_1_1_7; double x_1_1_8; double x_1_1_9; } x1; double x2[9]; })arg1;
+- (void)setMatrix:(union _GLKMatrix3 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; float x_1_1_5; float x_1_1_6; float x_1_1_7; float x_1_1_8; float x_1_1_9; } x1; float x2[9]; })arg1;
 - (void)setMatrixLoc:(int)arg1;
 - (id)textureCubeMap;
 

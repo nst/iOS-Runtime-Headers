@@ -5,26 +5,26 @@
 @interface PUPhotosSectionHeaderView : UICollectionReusableView {
     UIButton * _actionButton;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _actionButtonInitialContentInsets;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _actionButtonInitialSize;
-    double  _actionButtonLabelInitialMaxY;
+    float  _actionButtonLabelInitialMaxY;
     NSString * _actionButtonTitle;
     BOOL  _allowsPhotosDetailsInteraction;
     _UIBackdropView * _backdropView;
     NSString * _backdropViewGroupName;
     unsigned int  _backgroundStyle;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _contentInsets;
     PUPhotosSectionHeaderContentView * _contentView;
     UILabel * _dateLabel;
@@ -32,10 +32,10 @@
     UIImageView * _disclosureIconView;
     BOOL  _generateDefaultTitleFromDates;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _highlightInsets;
     UIView * _highlightView;
     BOOL  _highlightViewVisible;
@@ -59,10 +59,10 @@
 @property (nonatomic) BOOL allowsPhotosDetailsInteraction;
 @property (nonatomic, copy) NSString *backdropViewGroupName;
 @property (nonatomic) unsigned int backgroundStyle;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInsets;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
 @property (nonatomic) <PUPhotosSectionHeaderViewDelegate> *delegate;
 @property (nonatomic, readonly) BOOL generateDefaultTitleFromDates;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } highlightInsets;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } highlightInsets;
 @property (nonatomic, readonly) NSDate *sectionEndDate;
 @property (nonatomic) int sectionIndex;
 @property (nonatomic, retain) NSArray *sectionLocations;
@@ -90,8 +90,8 @@
 - (void)_layoutSubviewsStyleFullDetail;
 - (void)_layoutSubviewsStyleOnelineDetail;
 - (void)_layoutSubviewsStyleOnelineMinimal;
-- (struct CGSize { double x1; double x2; })_preferredSizeForLabel:(id)arg1;
-- (struct CGSize { double x1; double x2; })_preferredSizeForText:(id)arg1 withFont:(id)arg2;
+- (struct CGSize { float x1; float x2; })_preferredSizeForLabel:(id)arg1;
+- (struct CGSize { float x1; float x2; })_preferredSizeForText:(id)arg1 withFont:(id)arg2;
 - (void)_setHighlightViewVisible:(BOOL)arg1;
 - (void)_setUsingBackgroundBlur:(BOOL)arg1;
 - (void)_updateActionButton;
@@ -110,14 +110,14 @@
 - (void)applyLayoutAttributes:(id)arg1;
 - (id)backdropViewGroupName;
 - (unsigned int)backgroundStyle;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
 - (void)dealloc;
 - (id)delegate;
 - (void)didEndDisplaying;
 - (void)didTransitionFromLayout:(id)arg1 toLayout:(id)arg2;
 - (BOOL)generateDefaultTitleFromDates;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })highlightInsets;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })highlightInsets;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (void)performBatchUpdateOfDateDependentPropertiesWithBlock:(id /* block */)arg1;
 - (void)prepareForReuse;
@@ -130,10 +130,10 @@
 - (void)setAllowsPhotosDetailsInteraction:(BOOL)arg1;
 - (void)setBackdropViewGroupName:(id)arg1;
 - (void)setBackgroundStyle:(unsigned int)arg1;
-- (void)setContentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setGenerateDefaultTitleFromDates:(BOOL)arg1 yearOnly:(BOOL)arg2;
-- (void)setHighlightInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setHighlightInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setSectionIndex:(int)arg1;
 - (void)setSectionLocations:(id)arg1;
 - (void)setSectionStartDate:(id)arg1 endDate:(id)arg2;

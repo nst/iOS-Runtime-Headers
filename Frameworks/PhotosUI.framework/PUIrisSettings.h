@@ -4,8 +4,8 @@
 
 @interface PUIrisSettings : PUSettings {
     BOOL  _audioEnabled;
-    double  _playbackPostDuration;
-    double  _playbackPreDuration;
+    float  _playbackPostDuration;
+    float  _playbackPreDuration;
     double  _playbackTransitionCrossfadeDelay;
     double  _settleTransitionDuration;
     BOOL  _shouldAlwaysBadge;
@@ -13,9 +13,9 @@
     BOOL  _showDebugInfo;
     BOOL  _showStatusBorder;
     BOOL  _showVideoBorder;
-    double  _transitionBlurRadius;
+    float  _transitionBlurRadius;
     double  _transitionDuration;
-    double  _transitionScale;
+    float  _transitionScale;
     BOOL  _useForceTouchInitiatedPlayback;
     BOOL  _useTransition;
     BOOL  _useVitalityBuffer;
@@ -23,8 +23,8 @@
 }
 
 @property (getter=isAudioEnabled, nonatomic) BOOL audioEnabled;
-@property (nonatomic) double playbackPostDuration;
-@property (nonatomic) double playbackPreDuration;
+@property (nonatomic) float playbackPostDuration;
+@property (nonatomic) float playbackPreDuration;
 @property (nonatomic) double playbackTransitionCrossfadeDelay;
 @property (nonatomic) double settleTransitionDuration;
 @property (nonatomic) BOOL shouldAlwaysBadge;
@@ -32,9 +32,9 @@
 @property (nonatomic) BOOL showDebugInfo;
 @property (getter=showStatusBorder, nonatomic) BOOL showStatusBorder;
 @property (nonatomic) BOOL showVideoBorder;
-@property (nonatomic) double transitionBlurRadius;
+@property (nonatomic) float transitionBlurRadius;
 @property (nonatomic) double transitionDuration;
-@property (nonatomic) double transitionScale;
+@property (nonatomic) float transitionScale;
 @property (nonatomic) BOOL useForceTouchInitiatedPlayback;
 @property (nonatomic) BOOL useTransition;
 @property (nonatomic) BOOL useVitalityBuffer;

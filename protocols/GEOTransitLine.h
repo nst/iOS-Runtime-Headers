@@ -11,7 +11,7 @@
 - (BOOL)hasLineColorString;
 - (NSString *)lineColorString;
 - (<GEOTransitArtworkDataSource> *)modeArtwork;
-- (unsigned int)muid;
+- (unsigned long long)muid;
 - (NSString *)name;
 - (NSArray *)operatingHours;
 - (BOOL)showVehicleNumber;

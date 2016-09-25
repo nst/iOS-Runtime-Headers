@@ -8,28 +8,28 @@
 @property (readonly, copy) NSArray *displayOrderingTerms;
 @property (getter=isLimitOrderingDescending, readonly) BOOL limitOrderingDescending;
 @property (readonly, copy) NSArray *limitOrderingTerms;
-@property (readonly) int limitValue;
+@property (readonly) long long limitValue;
 @property (getter=isLimitedByCount, readonly) BOOL limitedByCount;
 @property (readonly, copy) NSString *limitingProperty;
 @property (readonly) ML3Predicate *smartCriteriaPredicate;
 
 // Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
 
-+ (void)_addMediaTypesToContainerWithPersistentID:(int)arg1 mediaTypes:(id)arg2 connection:(id)arg3;
++ (void)_addMediaTypesToContainerWithPersistentID:(long long)arg1 mediaTypes:(id)arg2 connection:(id)arg3;
 + (id)_allStaticItemContainersInLibrary:(id)arg1 usingConnection:(id)arg2;
-+ (void)_clearContainerMediaTypeInContainerWithPersistentID:(int)arg1 connection:(id)arg2;
++ (void)_clearContainerMediaTypeInContainerWithPersistentID:(long long)arg1 connection:(id)arg2;
 + (void)_insertNewSmartPlaylist:(id)arg1 criteriaBlob:(id)arg2 evaluationOrder:(unsigned long)arg3 limited:(BOOL)arg4 trackOrder:(unsigned long)arg5 distinguishedKind:(int)arg6 inLibrary:(id)arg7 cachedNameOrders:(id)arg8;
-+ (id)_mediaTypesForTracksInContainerWithPersistentID:(int)arg1 connection:(id)arg2;
++ (id)_mediaTypesForTracksInContainerWithPersistentID:(long long)arg1 connection:(id)arg2;
 + (id)_mediaTypesForTracksWithPersistentIDs:(id)arg1 usingConnection:(id)arg2;
-+ (void)_removeMediaTypesFromContainerWithPersistentID:(int)arg1 mediaTypes:(id)arg2 connection:(id)arg3;
-+ (void)_updateContainedMediaTypeInContainerWithPersistentID:(int)arg1 connection:(id)arg2 itemUpdateBlock:(id /* block */)arg3;
++ (void)_removeMediaTypesFromContainerWithPersistentID:(long long)arg1 mediaTypes:(id)arg2 connection:(id)arg3;
++ (void)_updateContainedMediaTypeInContainerWithPersistentID:(long long)arg1 connection:(id)arg2 itemUpdateBlock:(id /* block */)arg3;
 + (id)autoCreatedBuiltInSmartPlaylistsPIDs:(id)arg1;
 + (BOOL)createMissingBuiltInSmartPlaylists:(id)arg1;
 + (id)databaseTable;
 + (id)defaultFilterPredicates;
 + (id)defaultOrderingTerms;
 + (void)deleteAutoCreatedBuiltInSmartPlaylistsPIDs:(id)arg1 inLibrary:(id)arg2;
-+ (BOOL)deleteFromLibrary:(id)arg1 deletionType:(int)arg2 persistentIDs:(const int*)arg3 count:(unsigned int)arg4;
++ (BOOL)deleteFromLibrary:(id)arg1 deletionType:(int)arg2 persistentIDs:(const long long*)arg3 count:(unsigned int)arg4;
 + (id)extraTablesToDelete;
 + (id)foreignColumnForProperty:(id)arg1;
 + (id)foreignDatabaseTableForProperty:(id)arg1;
@@ -38,13 +38,13 @@
 + (id)joinClausesForProperty:(id)arg1;
 + (BOOL)libraryContentsChangeForProperty:(id)arg1;
 + (BOOL)libraryDynamicChangeForProperty:(id)arg1;
-+ (id)nextFilepathForPlaylistType:(int)arg1 withPersistentID:(unsigned int)arg2 inLibrary:(id)arg3;
++ (id)nextFilepathForPlaylistType:(int)arg1 withPersistentID:(unsigned long long)arg2 inLibrary:(id)arg3;
 + (id)persistentIDColumnForTable:(id)arg1;
 + (void)populateMediaTypesOfStaticContainersInLibrary:(id)arg1;
 + (void)populateSortOrdersOfPropertyValues:(id)arg1 inLibrary:(id)arg2 cachedNameOrders:(id)arg3;
 + (id)predicateForCriteriaList:(struct SearchCriteriaList { }*)arg1 parentMatchedAny:(BOOL)arg2;
 + (int)protocolSortTypeFromTrackOrder:(unsigned long)arg1;
-+ (void)reloadContainedMediaTypesForContainerWithPersistID:(int)arg1 usingConnection:(id)arg2;
++ (void)reloadContainedMediaTypesForContainerWithPersistID:(long long)arg1 usingConnection:(id)arg2;
 + (void)removeAnyNonLibraryItemsInPersistentIDs:(id)arg1 fromContainersInLibrary:(id)arg2 usingConnection:(id)arg3;
 + (void)removeNonLibraryItemsFromContainersInLibrary:(id)arg1 usingConnection:(id)arg2;
 + (int)revisionTrackingCode;
@@ -55,10 +55,10 @@
 
 - (id)_addUnitesForCriterionInfo:(struct { unsigned int x1; unsigned int x2; unsigned char x3; unsigned char x4; unsigned char x5; unsigned char x6; union { struct { void *x_1_2_1; unsigned int x_1_2_2; } x_7_1_1; struct SearchCriteriaList {} *x_7_1_2; } x7; })arg1;
 - (id)_booleanStringForCriteriaInfo:(struct { unsigned int x1; unsigned int x2; unsigned char x3; unsigned char x4; unsigned char x5; unsigned char x6; union { struct { void *x_1_2_1; unsigned int x_1_2_2; } x_7_1_1; struct SearchCriteriaList {} *x_7_1_2; } x7; })arg1;
-- (id)_convertNumericValueFromCriterionMatchKey:(unsigned long)arg1 criteriaValue:(int)arg2;
+- (id)_convertNumericValueFromCriterionMatchKey:(unsigned long)arg1 criteriaValue:(long long)arg2;
 - (id)_criteriaListDescription:(struct SearchCriteriaList { }*)arg1 level:(int)arg2;
 - (id)_dateStringForCriteriaInfo:(struct { unsigned int x1; unsigned int x2; unsigned char x3; unsigned char x4; unsigned char x5; unsigned char x6; union { struct { void *x_1_2_1; unsigned int x_1_2_2; } x_7_1_1; struct SearchCriteriaList {} *x_7_1_2; } x7; })arg1;
-- (id)_formatTime:(int)arg1;
+- (id)_formatTime:(long long)arg1;
 - (int)_maxPositionForTracksUsingConnection:(id)arg1;
 - (id)_nonzeroStringForCriteriaInfo:(struct { unsigned int x1; unsigned int x2; unsigned char x3; unsigned char x4; unsigned char x5; unsigned char x6; union { struct { void *x_1_2_1; unsigned int x_1_2_2; } x_7_1_1; struct SearchCriteriaList {} *x_7_1_2; } x7; })arg1;
 - (id)_numericStringForCriteriaInfo:(struct { unsigned int x1; unsigned int x2; unsigned char x3; unsigned char x4; unsigned char x5; unsigned char x6; union { struct { void *x_1_2_1; unsigned int x_1_2_2; } x_7_1_1; struct SearchCriteriaList {} *x_7_1_2; } x7; })arg1;
@@ -69,8 +69,8 @@
 - (id)_stringForCriterionBuffer:(struct { unsigned int x1; unsigned int x2; unsigned char x3; unsigned char x4; unsigned char x5; unsigned char x6; union { struct { void *x_1_2_1; unsigned int x_1_2_2; } x_7_1_1; struct SearchCriteriaList {} *x_7_1_2; } x7; })arg1;
 - (id)_stringForCriterionMatchKey:(struct { unsigned int x1; unsigned int x2; unsigned char x3; unsigned char x4; unsigned char x5; unsigned char x6; union { struct { void *x_1_2_1; unsigned int x_1_2_2; } x_7_1_1; struct SearchCriteriaList {} *x_7_1_2; } x7; })arg1;
 - (id)_stringForCriterionMatchType:(struct { unsigned int x1; unsigned int x2; unsigned char x3; unsigned char x4; unsigned char x5; unsigned char x6; union { struct { void *x_1_2_1; unsigned int x_1_2_2; } x_7_1_1; struct SearchCriteriaList {} *x_7_1_2; } x7; })arg1;
-- (id)_stringForTrackFieldCloudStatus:(int)arg1;
-- (id)_stringForTrackFieldMediaKind:(int)arg1;
+- (id)_stringForTrackFieldCloudStatus:(long long)arg1;
+- (id)_stringForTrackFieldMediaKind:(long long)arg1;
 - (id)_stringStringForCriteriaInfo:(struct { unsigned int x1; unsigned int x2; unsigned char x3; unsigned char x4; unsigned char x5; unsigned char x6; union { struct { void *x_1_2_1; unsigned int x_1_2_2; } x_7_1_1; struct SearchCriteriaList {} *x_7_1_2; } x7; })arg1;
 - (BOOL)_supportsOrderedTrackOperations;
 - (BOOL)appendTracksWithPersistentIDs:(id)arg1 notify:(BOOL)arg2;
@@ -86,7 +86,7 @@
 - (BOOL)isLimitOrderingDescending;
 - (BOOL)isLimitedByCount;
 - (id)limitOrderingTerms;
-- (int)limitValue;
+- (long long)limitValue;
 - (id)limitingProperty;
 - (BOOL)moveTrackFromIndex:(unsigned int)arg1 toIndex:(unsigned int)arg2;
 - (id)multiverseIdentifier;

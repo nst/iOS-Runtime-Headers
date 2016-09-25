@@ -5,7 +5,7 @@
 @interface GKRemoteUITableFooterView : UIView <RUIPageAccessory, RemoteUITableFooter> {
     NSDictionary * _attributes;
     GKButton * _button;
-    double  _buttonBaselineOffset;
+    float  _buttonBaselineOffset;
     <GKRemoteUIAuxiliaryViewDelegate> * _delegate;
     int  _layoutStyle;
     BOOL  _pinToBottom;
@@ -14,7 +14,7 @@
 
 @property (nonatomic, retain) NSDictionary *attributes;
 @property (nonatomic, retain) GKButton *button;
-@property (nonatomic) double buttonBaselineOffset;
+@property (nonatomic) float buttonBaselineOffset;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <GKRemoteUIAuxiliaryViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -47,7 +47,7 @@
 - (void)setLayoutStyle:(int)arg1;
 - (void)setPinToBottom:(BOOL)arg1;
 - (void)setReplaceableConstraints:(id)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)tableViewDidUpdateContentInset:(id)arg1;
 
 @end

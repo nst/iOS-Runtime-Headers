@@ -18,8 +18,8 @@
 @property (nonatomic) struct mach_timebase_info { unsigned int x1; unsigned int x2; } timebaseInfo;
 
 - (void).cxx_destruct;
-- (unsigned int)abs_to_nanos:(unsigned int)arg1;
-- (double)abs_to_seconds:(unsigned int)arg1;
+- (unsigned long long)abs_to_nanos:(unsigned long long)arg1;
+- (double)abs_to_seconds:(unsigned long long)arg1;
 - (void)dealloc;
 - (id)initWithRequestType:(id)arg1;
 - (void)requestCompletedWithErrorCode:(unsigned long)arg1;

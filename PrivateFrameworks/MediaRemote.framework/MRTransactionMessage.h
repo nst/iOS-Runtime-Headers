@@ -6,12 +6,12 @@
     NSMutableArray * _packets;
 }
 
-@property (nonatomic, readonly) unsigned int name;
+@property (nonatomic, readonly) unsigned long long name;
 @property (nonatomic, readonly) NSArray *packets;
 
 - (void)dealloc;
-- (id)initWithName:(unsigned int)arg1 packets:(id)arg2;
-- (unsigned int)name;
+- (id)initWithName:(unsigned long long)arg1 packets:(id)arg2;
+- (unsigned long long)name;
 - (id)packets;
 - (unsigned int)type;
 

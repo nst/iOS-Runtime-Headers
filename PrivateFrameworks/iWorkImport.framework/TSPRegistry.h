@@ -24,7 +24,7 @@
                 unsigned long __first_; 
             } __p2_; 
             struct __compressed_pair<float, std::__1::__unordered_map_equal<const char *, std::__1::__hash_value_type<const char *, unsigned int>, TSP::CStringEqualTo, true> > { 
-                double __first_; 
+                float __first_; 
             } __p3_; 
         } __table_; 
     }  _classnameToMessageTypeMap;
@@ -49,7 +49,7 @@
                 unsigned long __first_; 
             } __p2_; 
             struct __compressed_pair<float, std::__1::__unordered_map_equal<const google::protobuf::Descriptor *, std::__1::__hash_value_type<const google::protobuf::Descriptor *, unsigned int>, std::__1::equal_to<const google::protobuf::Descriptor *>, true> > { 
-                double __first_; 
+                float __first_; 
             } __p3_; 
         } __table_; 
     }  _descriptorToMessageTypeMap;
@@ -74,7 +74,7 @@
                 unsigned long __first_; 
             } __p2_; 
             struct __compressed_pair<float, std::__1::__unordered_map_equal<unsigned int, std::__1::__hash_value_type<unsigned int, __unsafe_unretained Class>, std::__1::equal_to<unsigned int>, true> > { 
-                double __first_; 
+                float __first_; 
             } __p3_; 
         } __table_; 
     }  _messageTypeToClassMap;
@@ -99,7 +99,7 @@
                 unsigned long __first_; 
             } __p2_; 
             struct __compressed_pair<float, std::__1::__unordered_map_equal<unsigned int, std::__1::__hash_value_type<unsigned int, const char *>, std::__1::equal_to<unsigned int>, true> > { 
-                double __first_; 
+                float __first_; 
             } __p3_; 
         } __table_; 
     }  _messageTypeToClassnameMap;
@@ -124,7 +124,7 @@
                 unsigned long __first_; 
             } __p2_; 
             struct __compressed_pair<float, std::__1::__unordered_map_equal<unsigned int, std::__1::__hash_value_type<unsigned int, const google::protobuf::Message *>, std::__1::equal_to<unsigned int>, true> > { 
-                double __first_; 
+                float __first_; 
             } __p3_; 
         } __table_; 
     }  _messageTypeToPrototypeMap;

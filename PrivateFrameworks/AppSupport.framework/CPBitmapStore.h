@@ -19,14 +19,14 @@
 
 // Image: /System/Library/PrivateFrameworks/AppSupport.framework/AppSupport
 
-- (struct CGImage { }*)_copyAndStoreImageForKey:(id)arg1 inGroup:(id)arg2 withSize:(struct CGSize { double x1; double x2; })arg3 format:(unsigned char)arg4 scale:(float)arg5 fillMem:(id /* block */)arg6 alternateCompletion:(id /* block */)arg7;
+- (struct CGImage { }*)_copyAndStoreImageForKey:(id)arg1 inGroup:(id)arg2 withSize:(struct CGSize { float x1; float x2; })arg3 format:(unsigned char)arg4 scale:(float)arg5 fillMem:(id /* block */)arg6 alternateCompletion:(id /* block */)arg7;
 - (id)_versionPath;
 - (id)allGroups;
 - (unsigned int)cacheItemLimit;
 - (id)cacheNumberForKey:(id)arg1;
 - (void)commitTransaction;
 - (void)commitTxn;
-- (struct CGImage { }*)copyAndStoreImageForKey:(id)arg1 inGroup:(id)arg2 withSize:(struct CGSize { double x1; double x2; })arg3 opaque:(BOOL)arg4 scale:(float)arg5 draw:(id /* block */)arg6;
+- (struct CGImage { }*)copyAndStoreImageForKey:(id)arg1 inGroup:(id)arg2 withSize:(struct CGSize { float x1; float x2; })arg3 opaque:(BOOL)arg4 scale:(float)arg5 draw:(id /* block */)arg6;
 - (struct CGImage { }*)copyImageForKey:(id)arg1;
 - (struct CGImage { }*)copyImageForKey:(id)arg1 inGroup:(id)arg2;
 - (void)dealloc;
@@ -45,10 +45,10 @@
 - (void)setCacheItemLimit:(unsigned int)arg1;
 - (void)setLockOnRead:(BOOL)arg1;
 - (int)setVersion:(int)arg1;
-- (void)storeGrayscaleImageDataForKey:(id)arg1 inGroup:(id)arg2 withSize:(struct CGSize { double x1; double x2; })arg3 opaque:(BOOL)arg4 scale:(float)arg5 data:(id)arg6;
-- (void)storeImageDataForKey:(id)arg1 inGroup:(id)arg2 withSize:(struct CGSize { double x1; double x2; })arg3 format:(unsigned char)arg4 formatColor:(struct CGColor { }*)arg5 scale:(float)arg6 data:(id)arg7;
-- (void)storeImageDataForKey:(id)arg1 inGroup:(id)arg2 withSize:(struct CGSize { double x1; double x2; })arg3 format:(unsigned char)arg4 scale:(float)arg5 data:(id)arg6;
-- (void)storeImageDataForKey:(id)arg1 inGroup:(id)arg2 withSize:(struct CGSize { double x1; double x2; })arg3 opaque:(BOOL)arg4 scale:(float)arg5 data:(id)arg6;
+- (void)storeGrayscaleImageDataForKey:(id)arg1 inGroup:(id)arg2 withSize:(struct CGSize { float x1; float x2; })arg3 opaque:(BOOL)arg4 scale:(float)arg5 data:(id)arg6;
+- (void)storeImageDataForKey:(id)arg1 inGroup:(id)arg2 withSize:(struct CGSize { float x1; float x2; })arg3 format:(unsigned char)arg4 formatColor:(struct CGColor { }*)arg5 scale:(float)arg6 data:(id)arg7;
+- (void)storeImageDataForKey:(id)arg1 inGroup:(id)arg2 withSize:(struct CGSize { float x1; float x2; })arg3 format:(unsigned char)arg4 scale:(float)arg5 data:(id)arg6;
+- (void)storeImageDataForKey:(id)arg1 inGroup:(id)arg2 withSize:(struct CGSize { float x1; float x2; })arg3 opaque:(BOOL)arg4 scale:(float)arg5 data:(id)arg6;
 - (void)storeImageForKey:(id)arg1 inGroup:(id)arg2 opaque:(BOOL)arg3 image:(struct CGImage { }*)arg4;
 - (int)version;
 

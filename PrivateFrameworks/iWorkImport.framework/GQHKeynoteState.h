@@ -6,8 +6,8 @@
     int  mCurrentSlide;
     int  mProgressiveIndex;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  mSlideSize;
 }
 
@@ -15,9 +15,9 @@
 - (void)incrementCurrentSlide;
 - (int)progressiveIndex;
 - (void)setProgressiveIndex:(int)arg1;
-- (void)setSlideSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setSlideSize:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)shouldMapLinkWithUrl:(struct __CFString { }*)arg1;
 - (BOOL)shouldStreamContent;
-- (struct CGSize { double x1; double x2; })slideSize;
+- (struct CGSize { float x1; float x2; })slideSize;
 
 @end

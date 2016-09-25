@@ -163,7 +163,7 @@
 - (BOOL)isTextControl;
 - (int)keyboardType;
 - (BOOL)nodeCanBecomeFirstResponder;
-- (void)setSelectionWithPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setSelectionWithPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)text;
 - (id)textInputTraits;
 

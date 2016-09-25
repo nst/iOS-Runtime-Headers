@@ -7,7 +7,7 @@
 
 - (void)configureForHighlightMode;
 - (void)configureForSelectionMode;
-- (void)rangedMagnifierWithState:(int)arg1 atPoint:(struct CGPoint { double x1; double x2; })arg2;
+- (void)rangedMagnifierWithState:(int)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (void)scrollSelectionToVisible:(BOOL)arg1;
 - (void)showSelectionCommands;
 - (void)updateSelectionRects:(BOOL)arg1;

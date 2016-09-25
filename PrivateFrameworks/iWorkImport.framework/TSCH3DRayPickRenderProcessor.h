@@ -7,24 +7,24 @@
     NSMutableArray * mPickedPoints;
     struct tvec2<float> { 
         union { 
-            double x; 
-            double r; 
-            double s; 
+            float x; 
+            float r; 
+            float s; 
         } ; 
         union { 
-            double y; 
-            double g; 
-            double t; 
+            float y; 
+            float g; 
+            float t; 
         } ; 
     }  mPosition;
     TSCH3DRayPickPipelineDelegate * mSceneObjectDelegate;
-    double  mSlack;
+    float  mSlack;
 }
 
 @property (nonatomic, readonly) NSArray *pickedPoints;
-@property (nonatomic) struct tvec2<float> { union { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; union { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; } position;
+@property (nonatomic) struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; } position;
 @property (nonatomic, retain) TSCH3DRayPickPipelineDelegate *sceneObjectDelegate;
-@property (nonatomic) double slack;
+@property (nonatomic) float slack;
 
 - (id).cxx_construct;
 - (void)dealloc;
@@ -32,9 +32,9 @@
 - (id)init;
 - (id)matrix;
 - (id)pickedPoints;
-- (struct tvec2<float> { union { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; union { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; })position;
+- (struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; })position;
 - (id)sceneObjectDelegate;
-- (void)setPosition:(struct tvec2<float> { union { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; union { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; })arg1;
+- (void)setPosition:(struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; })arg1;
 - (void)setSceneObjectDelegate:(id)arg1;
 - (void)setSlack:(float)arg1;
 - (float)slack;

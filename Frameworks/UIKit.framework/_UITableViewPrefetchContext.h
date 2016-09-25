@@ -5,7 +5,7 @@
 @interface _UITableViewPrefetchContext : NSObject {
     id /* block */  _cancelHandler;
     int  _cancelThresholdCount;
-    double  _lastContentOffset;
+    float  _lastContentOffset;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
@@ -19,7 +19,7 @@
 
 @property (nonatomic, copy) id /* block */ cancelHandler;
 @property (nonatomic) int cancelThresholdCount;
-@property (nonatomic) double lastContentOffset;
+@property (nonatomic) float lastContentOffset;
 @property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } lastVisibleIndexRange;
 @property (nonatomic) int maxIndex;
 @property (nonatomic, retain) NSMutableIndexSet *outstandingRequests;

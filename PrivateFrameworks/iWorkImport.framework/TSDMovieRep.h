@@ -10,7 +10,7 @@
     BOOL  mDidCancelUpdatingPlayButtonVisibility;
     BOOL  mDidCheckPlayability;
     BOOL  mDirectlyManagesLayerContent;
-    double  mDynamicVolume;
+    float  mDynamicVolume;
     BOOL  mInReadMode;
     unsigned int  mIsChangingDynamicVisibleTimeCount;
     BOOL  mIsChangingDynamicVolume;
@@ -52,10 +52,10 @@
 - (BOOL)isDataCurrentlyDownloading;
 - (id)movieInfo;
 - (id)movieLayout;
-- (struct CGImage { }*)newFrameMaskForViewScale:(float)arg1 frameRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg2;
+- (struct CGImage { }*)newFrameMaskForViewScale:(float)arg1 frameRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2;
 - (void)p_drawInContext:(struct CGContext { }*)arg1 withContent:(BOOL)arg2 withStroke:(BOOL)arg3 withOpacity:(float)arg4 withMask:(BOOL)arg5 forShadowOrHitTest:(BOOL)arg6;
 - (void)p_drawPosterImageInContext:(struct CGContext { }*)arg1 forShadowOrHitTest:(BOOL)arg2;
-- (void)p_drawReflectionGradientIntoMovieReflectionLayer:(struct CGContext { }*)arg1 reflectionSize:(struct CGSize { double x1; double x2; })arg2;
+- (void)p_drawReflectionGradientIntoMovieReflectionLayer:(struct CGContext { }*)arg1 reflectionSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)p_updateMovieReflectionMaskLayer;
 - (void)setAlternatePosterImage:(struct CGImage { }*)arg1;
 - (BOOL)shouldShowCheckerboard;

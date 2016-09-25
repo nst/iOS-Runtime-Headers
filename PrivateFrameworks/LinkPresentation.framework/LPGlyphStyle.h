@@ -5,13 +5,13 @@
 @interface LPGlyphStyle : NSObject {
     LPImageViewStyle * _image;
     NSString * _name;
-    double  _opacity;
+    float  _opacity;
     LPPadding * _padding;
 }
 
 @property (nonatomic, readonly) LPImageViewStyle *image;
 @property (nonatomic, copy) NSString *name;
-@property (nonatomic) double opacity;
+@property (nonatomic) float opacity;
 @property (nonatomic, readonly, retain) LPPadding *padding;
 
 - (void).cxx_destruct;

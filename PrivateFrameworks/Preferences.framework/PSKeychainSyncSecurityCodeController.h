@@ -7,7 +7,7 @@
     UIButton * _footerButton;
     UILabel * _footerLabel;
     NSString * _generatedCode;
-    double  _keyboardHeight;
+    float  _keyboardHeight;
     int  _mode;
     int  _securityCodeType;
     BOOL  _showsAdvancedSettings;

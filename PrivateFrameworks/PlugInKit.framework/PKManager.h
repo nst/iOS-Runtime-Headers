@@ -17,7 +17,7 @@
 - (id)containingAppForPlugInWithPid:(int)arg1;
 - (void)forceHoldPlugIn:(id)arg1 result:(id /* block */)arg2;
 - (void)holdPlugInsInApplication:(id)arg1 result:(id /* block */)arg2;
-- (void)holdRequest:(id)arg1 flags:(unsigned int)arg2 result:(id /* block */)arg3;
+- (void)holdRequest:(id)arg1 flags:(unsigned long long)arg2 result:(id /* block */)arg3;
 - (id)informationForPlugInWithPid:(int)arg1;
 - (id)initForService:(const char *)arg1;
 - (void)registerPlugInAtURL:(id)arg1 result:(id /* block */)arg2;

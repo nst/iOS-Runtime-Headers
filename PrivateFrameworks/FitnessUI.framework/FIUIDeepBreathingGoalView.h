@@ -5,20 +5,20 @@
 @interface FIUIDeepBreathingGoalView : UIView {
     int  _completedSessionCount;
     NSMutableArray * _petalOverlaps;
-    double  _petalRadius;
+    float  _petalRadius;
     NSMutableArray * _petals;
 }
 
 @property (nonatomic) int completedSessionCount;
-@property (nonatomic) double petalRadius;
+@property (nonatomic) float petalRadius;
 
 - (void).cxx_destruct;
 - (double)_angleFromPetalIndex:(int)arg1 toPetalIndex:(int)arg2;
-- (struct CGPoint { double x1; double x2; })_centerForPetalAtIndex:(int)arg1 distanceFromCenter:(float)arg2;
+- (struct CGPoint { float x1; float x2; })_centerForPetalAtIndex:(int)arg1 distanceFromCenter:(float)arg2;
 - (void)_layoutPetals;
 - (void)_updateColors;
 - (int)completedSessionCount;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (float)petalRadius;
 - (void)setCompletedSessionCount:(int)arg1;

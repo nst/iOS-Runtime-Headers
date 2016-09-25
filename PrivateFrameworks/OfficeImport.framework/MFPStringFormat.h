@@ -6,12 +6,12 @@
     int  mAlignment;
     unsigned short  mDigitSubstitutionLanguage;
     int  mDigitSubstitutionMethod;
-    double  mFirstTabOffset;
+    float  mFirstTabOffset;
     unsigned int  mFormatFlags;
     int  mHotkeyPrefix;
     int  mLineAlignment;
     int  mTabStopCount;
-    double * mTabStops;
+    float * mTabStops;
     int  mTrimming;
 }
 

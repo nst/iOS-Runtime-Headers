@@ -14,10 +14,10 @@
     int  _orientation;
     int  _selectedIndex;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _tappableEdgeInsets;
 }
 
@@ -31,7 +31,7 @@
 @property (nonatomic) int layoutStyle;
 @property (nonatomic) int orientation;
 @property (nonatomic) int selectedIndex;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } tappableEdgeInsets;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } tappableEdgeInsets;
 
 + (double)expansionDuration;
 
@@ -40,20 +40,20 @@
 - (void)_applyMenuItemAlphaForCurrentExpansionState;
 - (void)_applyMenuItemColorsForCurrentState;
 - (void)_applyMenuItemTextAlignmentAndShadowForCurrentOrientation;
-- (void)_convertAllSubviewsToProposedFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)_convertAllSubviewsToProposedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_createPadBackgroundView;
 - (void)_handleTapGestureRecognizer:(id)arg1;
 - (id)_headerView;
 - (id)_highlightedIndexesWhileCollapsed;
-- (struct CGSize { double x1; double x2; })_layoutForPadCollapsedPortraitButton:(BOOL)arg1;
-- (struct CGSize { double x1; double x2; })_layoutForPadExpandedPortraitButton:(BOOL)arg1;
-- (struct CGSize { double x1; double x2; })_layoutForPadStyle:(BOOL)arg1 expanded:(BOOL)arg2;
-- (struct CGSize { double x1; double x2; })_layoutForPhoneCollapsedLandscapeButton:(BOOL)arg1;
-- (struct CGSize { double x1; double x2; })_layoutForPhoneCollapsedPortraitButton:(BOOL)arg1;
-- (struct CGSize { double x1; double x2; })_layoutForPhoneExpandedLandscapeButton:(BOOL)arg1;
-- (struct CGSize { double x1; double x2; })_layoutForPhoneExpandedPortraitButton:(BOOL)arg1;
-- (struct CGSize { double x1; double x2; })_layoutForPhoneStyle:(BOOL)arg1 expanded:(BOOL)arg2;
-- (struct CGSize { double x1; double x2; })_layoutMenuButton:(BOOL)arg1 expanded:(BOOL)arg2;
+- (struct CGSize { float x1; float x2; })_layoutForPadCollapsedPortraitButton:(BOOL)arg1;
+- (struct CGSize { float x1; float x2; })_layoutForPadExpandedPortraitButton:(BOOL)arg1;
+- (struct CGSize { float x1; float x2; })_layoutForPadStyle:(BOOL)arg1 expanded:(BOOL)arg2;
+- (struct CGSize { float x1; float x2; })_layoutForPhoneCollapsedLandscapeButton:(BOOL)arg1;
+- (struct CGSize { float x1; float x2; })_layoutForPhoneCollapsedPortraitButton:(BOOL)arg1;
+- (struct CGSize { float x1; float x2; })_layoutForPhoneExpandedLandscapeButton:(BOOL)arg1;
+- (struct CGSize { float x1; float x2; })_layoutForPhoneExpandedPortraitButton:(BOOL)arg1;
+- (struct CGSize { float x1; float x2; })_layoutForPhoneStyle:(BOOL)arg1 expanded:(BOOL)arg2;
+- (struct CGSize { float x1; float x2; })_layoutMenuButton:(BOOL)arg1 expanded:(BOOL)arg2;
 - (id)_menuItems;
 - (id)_padBackgroundView;
 - (id)_selectedLabel;
@@ -62,22 +62,22 @@
 - (void)_updateFromOrientationChangeAnimated:(BOOL)arg1;
 - (void)_updateFromSelectedIndexChange;
 - (BOOL)_wantsHeaderViewToBeVisible;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })alignmentRectForFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 expanded:(BOOL)arg2;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })alignmentRectInsets;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })alignmentRectForFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 expanded:(BOOL)arg2;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentRectInsets;
 - (void)collapseMenuAnimated:(BOOL)arg1;
 - (float)collapsedSelectedLabelHorizontalMargin;
-- (void)completeExpansionToProposedFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)completeExpansionToProposedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)expandMenuAnimated:(BOOL)arg1;
 - (id)expandableMenuDelegate;
 - (void)finishCollapsingAnimated:(BOOL)arg1;
 - (void)finishExpansionAnimated:(BOOL)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameForAlignmentRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 expanded:(BOOL)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForAlignmentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 expanded:(BOOL)arg2;
 - (id)headerView;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithLayoutStyle:(int)arg1;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
-- (struct CGSize { double x1; double x2; })intrinsicContentSizeForExpansion:(BOOL)arg1;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
+- (struct CGSize { float x1; float x2; })intrinsicContentSizeForExpansion:(BOOL)arg1;
 - (BOOL)isExpanded;
 - (int)layoutStyle;
 - (void)layoutSubviews;
@@ -93,13 +93,13 @@
 - (void)setOrientation:(int)arg1;
 - (void)setOrientation:(int)arg1 animated:(BOOL)arg2;
 - (void)setSelectedIndex:(int)arg1;
-- (void)setTappableEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setTappableEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (BOOL)shouldAllowExpansion;
 - (BOOL)shouldIgnoreMenuInteraction;
 - (id)shownIndexesWhileCollapsed;
-- (void)startCollapsingWithProposedFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)startExpansionWithProposedFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })tappableEdgeInsets;
+- (void)startCollapsingWithProposedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)startExpansionWithProposedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })tappableEdgeInsets;
 - (id)titleForMenuItemAtIndex:(int)arg1;
 - (void)updateToContentSize:(id)arg1;
 - (BOOL)wantsSelectedItemToBeVisible;

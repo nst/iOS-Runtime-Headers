@@ -11,9 +11,9 @@
 @property (readonly) BOOL cacheDirty;
 @property (readonly) BOOL cachedCopy;
 @property (readonly) NSArray *devices;
-@property (readonly) unsigned int dirtyLength;
+@property (readonly) unsigned long long dirtyLength;
 @property (readonly) NSArray *formattedDescriptions;
-@property (readonly) unsigned int length;
+@property (readonly) unsigned long long length;
 @property (readonly) NSArray *mappings;
 @property (readonly) unsigned int memoryPool;
 @property (readonly) NSArray *openclObjects;
@@ -21,7 +21,7 @@
 @property (readonly) BOOL orphaned;
 @property (readonly) NSSet *processIDs;
 @property (readonly) BOOL purgeable;
-@property (readonly) unsigned int residentLength;
+@property (readonly) unsigned long long residentLength;
 @property (readonly) unsigned int surfaceID;
 @property (readonly) BOOL wired;
 
@@ -39,10 +39,10 @@
 - (void)dealloc;
 - (id)description;
 - (id)devices;
-- (unsigned int)dirtyLength;
+- (unsigned long long)dirtyLength;
 - (id)formattedDescriptions;
 - (id)initWithDictionary:(id)arg1;
-- (unsigned int)length;
+- (unsigned long long)length;
 - (id)mappings;
 - (unsigned int)memoryPool;
 - (id)openclObjects;
@@ -50,7 +50,7 @@
 - (BOOL)orphaned;
 - (id)processIDs;
 - (BOOL)purgeable;
-- (unsigned int)residentLength;
+- (unsigned long long)residentLength;
 - (unsigned int)surfaceID;
 - (BOOL)wired;
 

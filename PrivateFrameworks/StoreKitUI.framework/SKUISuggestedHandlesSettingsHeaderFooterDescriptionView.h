@@ -9,10 +9,10 @@
 }
 
 + (id)_helpLabelWithDescription:(id)arg1 forWidth:(float)arg2;
-+ (struct CGSize { double x1; double x2; })preferredSizeForSettingsHeaderFooterDescription:(id)arg1 context:(id)arg2;
++ (struct CGSize { float x1; float x2; })preferredSizeForSettingsHeaderFooterDescription:(id)arg1 context:(id)arg2;
 + (BOOL)prefetchResourcesForSettingsHeaderFooterDescription:(id)arg1 reason:(int)arg2 context:(id)arg3;
 + (void)requestLayoutForSettingsHeaderFooterDescription:(id)arg1 width:(float)arg2 context:(id)arg3;
-+ (struct CGSize { double x1; double x2; })sizeThatFitsWidth:(float)arg1 settingsHeaderFooterDescription:(id)arg2 context:(id)arg3;
++ (struct CGSize { float x1; float x2; })sizeThatFitsWidth:(float)arg1 settingsHeaderFooterDescription:(id)arg2 context:(id)arg3;
 
 - (void).cxx_destruct;
 - (void)_buttonAction:(id)arg1;

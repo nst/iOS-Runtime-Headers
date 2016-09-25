@@ -82,8 +82,8 @@
 - (int)integerForKey:(id)arg1 keyExistsAndHasValidFormat:(BOOL*)arg2;
 - (id)internalQueue;
 - (void)invalidatePresenter;
-- (int)longForKey:(id)arg1;
-- (int)longForKey:(id)arg1 keyExistsAndHasValidFormat:(BOOL*)arg2;
+- (long long)longForKey:(id)arg1;
+- (long long)longForKey:(id)arg1 keyExistsAndHasValidFormat:(BOOL*)arg2;
 - (id)map;
 - (BOOL)nanoSettingsDirectoryExists;
 - (id)objectForKey:(id)arg1;
@@ -103,7 +103,7 @@
 - (void)setHasReadFromDisk:(BOOL)arg1;
 - (void)setInteger:(int)arg1 forKey:(id)arg2;
 - (void)setInternalQueue:(id)arg1;
-- (void)setLong:(int)arg1 forKey:(id)arg2;
+- (void)setLong:(long long)arg1 forKey:(id)arg2;
 - (void)setMap:(id)arg1;
 - (void)setNanoSettingsDirectoryExists:(BOOL)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;

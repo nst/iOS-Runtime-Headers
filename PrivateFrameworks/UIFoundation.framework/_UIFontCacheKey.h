@@ -6,7 +6,7 @@
     NSString * _contentSizeCategory;
     UIFontDescriptor * _fontDescriptor;
     NSString * _fontName;
-    double  _pointSize;
+    float  _pointSize;
     NSString * _textStyle;
     int  _traits;
 }
@@ -14,7 +14,7 @@
 @property (nonatomic, copy) NSString *contentSizeCategory;
 @property (nonatomic, copy) UIFontDescriptor *fontDescriptor;
 @property (nonatomic, copy) NSString *fontName;
-@property (nonatomic) double pointSize;
+@property (nonatomic) float pointSize;
 @property (nonatomic, copy) NSString *textStyle;
 @property (nonatomic) int traits;
 

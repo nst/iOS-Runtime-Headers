@@ -40,7 +40,7 @@
 - (void)_overlayDidDismissNotification:(id)arg1;
 - (void)_overlayDidFlipNotification:(id)arg1;
 - (void)_overlayDidShowNotification:(id)arg1;
-- (struct CGSize { double x1; double x2; })_overlaySize;
+- (struct CGSize { float x1; float x2; })_overlaySize;
 - (id)_overlayViewController:(BOOL)arg1;
 - (void)_registerForOverlayNotifications;
 - (id)attributeKeys;

@@ -3,9 +3,9 @@
  */
 
 @interface NSParagraphStyle : NSObject <NSCopying, NSMutableCopying, NSSecureCoding> {
-    double  _defaultTabInterval;
+    float  _defaultTabInterval;
     id  _extraData;
-    double  _firstLineHeadIndent;
+    float  _firstLineHeadIndent;
     struct { 
         unsigned int alignment : 4; 
         unsigned int lineBreakMode : 4; 
@@ -16,31 +16,31 @@
         unsigned int tightensForTruncation : 1; 
         unsigned int refCount : 18; 
     }  _flags;
-    double  _headIndent;
-    double  _lineSpacing;
-    double  _maximumLineHeight;
-    double  _minimumLineHeight;
-    double  _paragraphSpacing;
+    float  _headIndent;
+    float  _lineSpacing;
+    float  _maximumLineHeight;
+    float  _minimumLineHeight;
+    float  _paragraphSpacing;
     NSArray * _tabStops;
-    double  _tailIndent;
+    float  _tailIndent;
 }
 
 @property (nonatomic, readonly) int alignment;
 @property (nonatomic, readonly) BOOL allowsDefaultTighteningForTruncation;
 @property (nonatomic, readonly) int baseWritingDirection;
-@property (nonatomic, readonly) double defaultTabInterval;
-@property (nonatomic, readonly) double firstLineHeadIndent;
-@property (nonatomic, readonly) double headIndent;
-@property (nonatomic, readonly) double hyphenationFactor;
+@property (nonatomic, readonly) float defaultTabInterval;
+@property (nonatomic, readonly) float firstLineHeadIndent;
+@property (nonatomic, readonly) float headIndent;
+@property (nonatomic, readonly) float hyphenationFactor;
 @property (nonatomic, readonly) int lineBreakMode;
-@property (nonatomic, readonly) double lineHeightMultiple;
-@property (nonatomic, readonly) double lineSpacing;
-@property (nonatomic, readonly) double maximumLineHeight;
-@property (nonatomic, readonly) double minimumLineHeight;
-@property (nonatomic, readonly) double paragraphSpacing;
-@property (nonatomic, readonly) double paragraphSpacingBefore;
+@property (nonatomic, readonly) float lineHeightMultiple;
+@property (nonatomic, readonly) float lineSpacing;
+@property (nonatomic, readonly) float maximumLineHeight;
+@property (nonatomic, readonly) float minimumLineHeight;
+@property (nonatomic, readonly) float paragraphSpacing;
+@property (nonatomic, readonly) float paragraphSpacingBefore;
 @property (nonatomic, readonly, copy) NSArray *tabStops;
-@property (nonatomic, readonly) double tailIndent;
+@property (nonatomic, readonly) float tailIndent;
 
 // Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
 

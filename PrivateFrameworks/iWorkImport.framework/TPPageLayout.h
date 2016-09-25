@@ -23,7 +23,7 @@
 @property (nonatomic, readonly) BOOL alwaysStartsNewTarget;
 @property (nonatomic, readonly) NSSet *anchoredDrawableLayouts;
 @property (nonatomic, readonly) TPBodyLayout *bodyLayout;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } bodyRect;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bodyRect;
 @property (nonatomic, readonly) <NSFastEnumeration> *childTextLayoutsForExteriorWrap;
 @property (nonatomic, readonly) unsigned int columnCount;
 @property (nonatomic, readonly) BOOL columnsAreLeftToRight;
@@ -36,12 +36,12 @@
 @property (nonatomic, readonly) unsigned int pageIndex;
 @property (nonatomic, readonly) unsigned int pageNumber;
 @property (nonatomic, readonly) BOOL shrinkTextToFit;
-@property (nonatomic, readonly) double textScaleFactor;
+@property (nonatomic, readonly) float textScaleFactor;
 @property (getter=isValidating, nonatomic) BOOL validating;
 
 - (void)addAttachmentLayout:(id)arg1;
 - (id)additionalDependenciesForChildLayout:(id)arg1;
-- (struct CGSize { double x1; double x2; })adjustedInsetsForTarget:(id)arg1;
+- (struct CGSize { float x1; float x2; })adjustedInsetsForTarget:(id)arg1;
 - (BOOL)allowIntersectionOfChildLayout:(id)arg1;
 - (BOOL)allowsBody;
 - (BOOL)allowsFootnotes;
@@ -49,10 +49,10 @@
 - (BOOL)alwaysStartsNewTarget;
 - (id)anchoredDrawableLayouts;
 - (unsigned int)autosizeFlagsForTextLayout:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })autosizedFrameForTextLayout:(id)arg1 textSize:(struct CGSize { double x1; double x2; })arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })autosizedFrameForTextLayout:(id)arg1 textSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)beginResizeWrapInvalidationCluster;
 - (id)bodyLayout;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })bodyRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bodyRect;
 - (id)childTextLayoutsForExteriorWrap;
 - (unsigned int)columnCount;
 - (BOOL)columnsAreLeftToRight;
@@ -64,7 +64,7 @@
 - (void)evacuateOldChildLayoutCache;
 - (id)existingAttachmentLayoutForInfo:(id)arg1;
 - (id)floatingDrawableLayouts;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })footnoteContainerFrameWithSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })footnoteContainerFrameWithSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)footnoteContainerLayout;
 - (float)gapForColumnIndex:(unsigned int)arg1 bodyWidth:(float)arg2;
 - (BOOL)hasFooters;
@@ -94,9 +94,9 @@
 - (id)masterDrawableProvider;
 - (float)maxAutoGrowHeightForTextLayout:(id)arg1;
 - (float)maxAutoGrowWidthForTextLayout:(id)arg1;
-- (struct CGSize { double x1; double x2; })maximumFrameSizeForChild:(id)arg1;
+- (struct CGSize { float x1; float x2; })maximumFrameSizeForChild:(id)arg1;
 - (int)naturalAlignmentForTextLayout:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })nonAutosizedFrameForTextLayout:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })nonAutosizedFrameForTextLayout:(id)arg1;
 - (void)p_addLayoutIfAttached:(id)arg1;
 - (void)p_addLayoutsForInfos:(id)arg1 toArray:(id)arg2;
 - (id)p_childLayoutInParentLayout:(id)arg1 forChildInfo:(id)arg2;

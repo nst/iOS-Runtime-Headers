@@ -6,14 +6,14 @@
     int  _contentType;
     unsigned int  _crossfadeStep;
     NSString * _crossfadeString;
-    double  _crossfadeWidth;
-    double  _letterSpacing;
+    float  _crossfadeWidth;
+    float  _letterSpacing;
     BOOL  _loopNowIfNecessary;
     BOOL  _loopingNecessaryForString;
     BOOL  _loopingNow;
-    double  _maxWidth;
+    float  _maxWidth;
     NSString * _serviceString;
-    double  _serviceWidth;
+    float  _serviceWidth;
 }
 
 - (void).cxx_destruct;
@@ -32,7 +32,7 @@
 - (int)legibilityStyle;
 - (void)performPendedActions;
 - (float)resetContentOverlap;
-- (void)setVisible:(BOOL)arg1 frame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 duration:(double)arg3;
+- (void)setVisible:(BOOL)arg1 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 duration:(double)arg3;
 - (float)standardPadding;
 - (float)updateContentsAndWidth;
 - (BOOL)updateForContentType:(int)arg1 serviceString:(id)arg2 serviceCrossfadeString:(id)arg3 maxWidth:(float)arg4 actions:(int)arg5;

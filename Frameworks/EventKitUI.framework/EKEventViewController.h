@@ -38,10 +38,10 @@
     int  _lastAuthorizationStatus;
     int  _lastOrientation;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _layoutMargins;
     BOOL  _minimalMode;
     BOOL  _needsReload;
@@ -60,7 +60,7 @@
     BOOL  _showsUpdateCalendar;
     SingleToolbarItemContainerView * _statusButtonsContainerView;
     EKUIEventStatusButtonsView * _statusButtonsView;
-    double  _statusButtonsViewCachedFontSize;
+    float  _statusButtonsViewCachedFontSize;
     BOOL  _tableIsBeingEdited;
     UITableView * _tableView;
     BOOL  _trustsStatus;
@@ -85,7 +85,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL hideCalendarPreview;
 @property (nonatomic) BOOL inlineDayViewRespectsSelectedCalendarsFilter;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } layoutMargins;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } layoutMargins;
 @property (nonatomic) BOOL minimalMode;
 @property (nonatomic) BOOL noninteractivePlatterMode;
 @property (nonatomic) int scrollToSection;
@@ -108,7 +108,7 @@
 - (void)_deleteSuggestionTapped:(id)arg1;
 - (void)_dismissEditor:(BOOL)arg1 deleted:(BOOL)arg2;
 - (id)_footerLabelContainingText:(id)arg1;
-- (struct CGSize { double x1; double x2; })_idealSize;
+- (struct CGSize { float x1; float x2; })_idealSize;
 - (id)_indexPathForAttendeesDetailItem;
 - (id)_indexPathForSection:(int)arg1;
 - (BOOL)_isDisplayingDeletableEvent;
@@ -195,13 +195,13 @@
 - (void)invokeAction:(int)arg1;
 - (BOOL)isICSPreview;
 - (id)items;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })layoutMargins;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })layoutMargins;
 - (void)loadView;
 - (BOOL)minimalMode;
 - (BOOL)noninteractivePlatterMode;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (void)openAttendeesDetailItem;
-- (struct CGSize { double x1; double x2; })preferredContentSize;
+- (struct CGSize { float x1; float x2; })preferredContentSize;
 - (void)presentEditorAnimated:(BOOL)arg1;
 - (id)previewActionItems;
 - (int)scrollToSection;
@@ -220,7 +220,7 @@
 - (void)setHideCalendarPreview:(BOOL)arg1;
 - (void)setICSPreview:(BOOL)arg1;
 - (void)setInlineDayViewRespectsSelectedCalendarsFilter:(BOOL)arg1;
-- (void)setLayoutMargins:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setLayoutMargins:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setMinimalMode:(BOOL)arg1;
 - (void)setNeedsReload;
 - (void)setNoninteractivePlatterMode:(BOOL)arg1;

@@ -7,7 +7,7 @@
         unsigned int shouldContain : 1; 
     }  _has;
     struct { 
-        int *list; 
+        long long *list; 
         unsigned int count; 
         unsigned int size; 
     }  _persistentIDs;
@@ -15,11 +15,11 @@
 }
 
 @property (nonatomic) BOOL hasShouldContain;
-@property (nonatomic, readonly) int*persistentIDs;
+@property (nonatomic, readonly) long long*persistentIDs;
 @property (nonatomic, readonly) unsigned int persistentIDsCount;
 @property (nonatomic) BOOL shouldContain;
 
-- (void)addPersistentIDs:(int)arg1;
+- (void)addPersistentIDs:(long long)arg1;
 - (void)clearPersistentIDs;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -29,12 +29,12 @@
 - (BOOL)hasShouldContain;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
-- (int*)persistentIDs;
-- (int)persistentIDsAtIndex:(unsigned int)arg1;
+- (long long*)persistentIDs;
+- (long long)persistentIDsAtIndex:(unsigned int)arg1;
 - (unsigned int)persistentIDsCount;
 - (BOOL)readFrom:(id)arg1;
 - (void)setHasShouldContain:(BOOL)arg1;
-- (void)setPersistentIDs:(int*)arg1 count:(unsigned int)arg2;
+- (void)setPersistentIDs:(long long*)arg1 count:(unsigned int)arg2;
 - (void)setShouldContain:(BOOL)arg1;
 - (BOOL)shouldContain;
 - (void)writeTo:(id)arg1;

@@ -29,10 +29,10 @@
 @property (readonly) Class superclass;
 @property BOOL zeroPadsFractionDigits;
 
-+ (id)stringFromByteCount:(int)arg1 countStyle:(int)arg2;
++ (id)stringFromByteCount:(long long)arg1 countStyle:(int)arg2;
 
 - (BOOL)_mayDecorateAttributedStringForObjectValue:(id)arg1;
-- (unsigned int)_options;
+- (unsigned long long)_options;
 - (unsigned int)allowedUnits;
 - (BOOL)allowsNonnumericFormatting;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -58,7 +58,7 @@
 - (void)setIncludesUnit:(BOOL)arg1;
 - (void)setZeroPadsFractionDigits:(BOOL)arg1;
 - (id)stringForObjectValue:(id)arg1;
-- (id)stringFromByteCount:(int)arg1;
+- (id)stringFromByteCount:(long long)arg1;
 - (BOOL)zeroPadsFractionDigits;
 
 @end

@@ -19,7 +19,7 @@
 @property (nonatomic) int buttonType;
 @property (nonatomic, retain) UIImage *image;
 @property (nonatomic) BOOL isPad;
-@property (nonatomic) double progress;
+@property (nonatomic) float progress;
 @property (nonatomic, retain) NSString *subtitle;
 
 - (void).cxx_destruct;

@@ -29,12 +29,12 @@
 - (id)dequeueHeaderView;
 - (id)dequeueSingleFieldCell;
 - (id)dequeueTwoFieldsCell;
-- (id)elementAtLocation:(struct CGPoint { double x1; double x2; })arg1;
+- (id)elementAtLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (void)handlePanGestureRecognizerUpdate:(id)arg1;
 - (void)handleSelectionGestureRecognizerUpdate:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 style:(int)arg2;
-- (BOOL)location:(struct CGPoint { double x1; double x2; })arg1 isInHeaderAccessoryViewTouchArea:(id)arg2;
-- (void)notifyDelegateWithSelectionEventAtPoint:(struct CGPoint { double x1; double x2; })arg1 trackedElementIndexPath:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
+- (BOOL)location:(struct CGPoint { float x1; float x2; })arg1 isInHeaderAccessoryViewTouchArea:(id)arg2;
+- (void)notifyDelegateWithSelectionEventAtPoint:(struct CGPoint { float x1; float x2; })arg1 trackedElementIndexPath:(id)arg2;
 - (id)retargetBehavior;
 - (id)selectionGestureRecognizer;
 - (id)selectionGestureRecognizerDelegate;
@@ -47,7 +47,7 @@
 - (void)startTrackingSelectionFromGestureRecognizer:(id)arg1;
 - (void)stopTrackingElementAtIndexPath:(id)arg1;
 - (id)trackedElementIndexPath;
-- (void)updateHeaderAccessoryViewState:(id)arg1 withTrackedLocation:(struct CGPoint { double x1; double x2; })arg2;
+- (void)updateHeaderAccessoryViewState:(id)arg1 withTrackedLocation:(struct CGPoint { float x1; float x2; })arg2;
 - (void)willMoveToWindow:(id)arg1;
 
 @end

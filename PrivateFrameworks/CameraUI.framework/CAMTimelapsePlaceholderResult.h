@@ -10,8 +10,8 @@
     void * _previewImageSurface;
     unsigned short  _sessionIdentifier;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _videoDimensions;
 }
 
@@ -23,10 +23,10 @@
 @property (nonatomic, readonly, copy) NSDate *creationDate;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) struct { int x1; int x2; unsigned int x3; int x4; } duration;
+@property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } duration;
 @property (getter=isExpectingPairedVideo, nonatomic, readonly) BOOL expectingPairedVideo;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly) struct { int x1; int x2; unsigned int x3; int x4; } irisStillDisplayTime;
+@property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } irisStillDisplayTime;
 @property (nonatomic, readonly) NSString *irisStillImageUUID;
 @property (nonatomic, readonly) NSURL *irisVideoPersistenceURL;
 @property (nonatomic, readonly) unsigned int mediaType;
@@ -38,7 +38,7 @@
 @property (nonatomic, readonly, copy) NSDictionary *stillImageMetadata;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSString *uuid;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } videoDimensions;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } videoDimensions;
 
 - (void).cxx_destruct;
 - (id)assetUUID;
@@ -48,9 +48,9 @@
 - (int)captureOrientation;
 - (id)creationDate;
 - (void)dealloc;
-- (struct { int x1; int x2; unsigned int x3; int x4; })duration;
-- (id)initWithAssetUUID:(id)arg1 captureSession:(unsigned short)arg2 creationDate:(id)arg3 captureOrientation:(int)arg4 captureDevice:(int)arg5 videoDimensions:(struct CGSize { double x1; double x2; })arg6 previewImageSurface:(void*)arg7;
-- (struct { int x1; int x2; unsigned int x3; int x4; })irisStillDisplayTime;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
+- (id)initWithAssetUUID:(id)arg1 captureSession:(unsigned short)arg2 creationDate:(id)arg3 captureOrientation:(int)arg4 captureDevice:(int)arg5 videoDimensions:(struct CGSize { float x1; float x2; })arg6 previewImageSurface:(void*)arg7;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })irisStillDisplayTime;
 - (id)irisStillImageUUID;
 - (id)irisVideoPersistenceURL;
 - (BOOL)isExpectingPairedVideo;
@@ -62,6 +62,6 @@
 - (unsigned short)sessionIdentifier;
 - (id)stillImageMetadata;
 - (id)uuid;
-- (struct CGSize { double x1; double x2; })videoDimensions;
+- (struct CGSize { float x1; float x2; })videoDimensions;
 
 @end

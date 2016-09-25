@@ -35,7 +35,7 @@
 @property (nonatomic) BOOL shouldUseAVPlayer;
 @property (nonatomic) BOOL shouldUseSpeaker;
 @property (readonly) Class superclass;
-@property (nonatomic) double volume;
+@property (nonatomic) float volume;
 
 - (void).cxx_destruct;
 - (id)_mediaObjects;

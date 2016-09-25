@@ -15,7 +15,7 @@
 + (id)roundImage:(id)arg1;
 
 - (void).cxx_destruct;
-- (id)imageForSize:(struct CGSize { double x1; double x2; })arg1;
+- (id)imageForSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)initWithLikenessProvider:(id)arg1;
 - (id)likenessProvider;
 

@@ -20,7 +20,7 @@
 - (void).cxx_destruct;
 - (id)entityUniqueIdentifier;
 - (unsigned int)hash;
-- (id)imageURLForEntityArtworkProperty:(id)arg1 fittingSize:(struct CGSize { double x1; double x2; })arg2 destinationScale:(float)arg3;
+- (id)imageURLForEntityArtworkProperty:(id)arg1 fittingSize:(struct CGSize { float x1; float x2; })arg2 destinationScale:(float)arg3;
 - (id)initWithQuery:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)query;

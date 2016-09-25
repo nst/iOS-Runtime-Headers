@@ -3,30 +3,30 @@
  */
 
 @interface PUAutoScroller : NSObject {
-    double  _autoScrollerInset;
-    double  _autoScrollerMaximumSpeed;
+    float  _autoScrollerInset;
+    float  _autoScrollerMaximumSpeed;
     double  _autoScrollerTimerInterval;
     <PUAutoScrollerDelegate> * _delegate;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _distanceFromCenterFrame;
     UIScrollView * _scrollView;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _speed;
     NSTimer * _timer;
     int  _updateTrigger;
 }
 
-@property (nonatomic) double autoScrollerInset;
-@property (nonatomic) double autoScrollerMaximumSpeed;
+@property (nonatomic) float autoScrollerInset;
+@property (nonatomic) float autoScrollerMaximumSpeed;
 @property (nonatomic) double autoScrollerTimerInterval;
 @property (nonatomic) <PUAutoScrollerDelegate> *delegate;
-@property (nonatomic) struct CGPoint { double x1; double x2; } distanceFromCenterFrame;
+@property (nonatomic) struct CGPoint { float x1; float x2; } distanceFromCenterFrame;
 @property (nonatomic, retain) UIScrollView *scrollView;
-@property (nonatomic) struct CGPoint { double x1; double x2; } speed;
+@property (nonatomic) struct CGPoint { float x1; float x2; } speed;
 @property (nonatomic, retain) NSTimer *timer;
 @property (nonatomic) int updateTrigger;
 
@@ -42,19 +42,19 @@
 - (double)autoScrollerTimerInterval;
 - (void)dealloc;
 - (id)delegate;
-- (struct CGPoint { double x1; double x2; })distanceFromCenterFrame;
+- (struct CGPoint { float x1; float x2; })distanceFromCenterFrame;
 - (id)initWithTargetScrollView:(id)arg1;
 - (id)scrollView;
 - (void)setAutoScrollerInset:(float)arg1;
 - (void)setAutoScrollerMaximumSpeed:(float)arg1;
 - (void)setAutoScrollerTimerInterval:(double)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setDistanceFromCenterFrame:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setDistanceFromCenterFrame:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setScrollView:(id)arg1;
-- (void)setSpeed:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setSpeed:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setTimer:(id)arg1;
 - (void)setUpdateTrigger:(int)arg1;
-- (struct CGPoint { double x1; double x2; })speed;
+- (struct CGPoint { float x1; float x2; })speed;
 - (void)stopAndInvalidate;
 - (id)timer;
 - (int)updateTrigger;

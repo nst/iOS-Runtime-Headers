@@ -20,7 +20,7 @@
 - (id)album;
 - (id)assets;
 - (id)coordinator;
-- (int)daemonOperation;
+- (long long)daemonOperation;
 - (void)dealloc;
 - (void)encodeToXPCObject:(id)arg1;
 - (id)initFromXPCObject:(id)arg1 connection:(id)arg2;

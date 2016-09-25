@@ -22,7 +22,7 @@
 - (id)identifier;
 - (id)initWithIdentifier:(id)arg1;
 - (void)userEngagedWithWidget;
-- (void)widgetActiveDisplayModeDidChange:(int)arg1 withMaximumSize:(struct CGSize { double x1; double x2; })arg2;
+- (void)widgetActiveDisplayModeDidChange:(int)arg1 withMaximumSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)widgetDidAppear;
 - (void)widgetDidDisappear;
 - (void)widgetPerformedUpdateWithResult:(unsigned int)arg1;

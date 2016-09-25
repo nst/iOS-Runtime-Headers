@@ -4,13 +4,13 @@
 
 @interface TSDConnectionLineAbstractLayout : TSDShapeLayout {
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  mAcumulatedDrag;
-    double  mCachedFromOutset;
+    float  mCachedFromOutset;
     TSUBezierPath * mCachedFromOutsetWrapPath;
     TSUBezierPath * mCachedFromWrapPath;
-    double  mCachedToOutset;
+    float  mCachedToOutset;
     TSUBezierPath * mCachedToOutsetWrapPath;
     TSUBezierPath * mCachedToWrapPath;
     TSUBezierPath * mClippedBezierPath;
@@ -20,19 +20,19 @@
     TSDConnectionLinePathSource * mConnectedPathSource;
     TSDLayout * mConnectedTo;
     NSObject<TSDInfo> * mConnectedToInfo;
-    double  mDynamicOutsetFrom;
-    double  mDynamicOutsetTo;
+    float  mDynamicOutsetFrom;
+    float  mDynamicOutsetTo;
     unsigned int  mDynamicOutsetType;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  mLooseEndPosition;
     TSDLayout * mOldConnectedFrom;
     TSDLayout * mOldConnectedTo;
     TSDConnectionLinePathSource * mOriginalPathSource;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  mResizeControlPoints;
     BOOL  mUseDynamicOutsets;
     BOOL  mUseResizePoints;
@@ -46,16 +46,16 @@
 @property (nonatomic, readonly) TSDConnectionLinePathSource *connectedPathSource;
 @property (nonatomic) TSDLayout *connectedTo;
 @property (nonatomic) NSObject<TSDInfo> *connectedToInfo;
-@property (nonatomic) double dynamicOutsetFrom;
-@property (nonatomic) double dynamicOutsetTo;
+@property (nonatomic) float dynamicOutsetFrom;
+@property (nonatomic) float dynamicOutsetTo;
 @property (nonatomic) unsigned int dynamicOutsetType;
-@property (nonatomic, readonly) double outsetFrom;
-@property (nonatomic, readonly) double outsetTo;
+@property (nonatomic, readonly) float outsetFrom;
+@property (nonatomic, readonly) float outsetTo;
 @property (nonatomic) BOOL useDynamicOutsets;
 @property (nonatomic, readonly) BOOL validLine;
 
 - (id)additionalLayoutsForRepCreation;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundsForStandardKnobs;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundsForStandardKnobs;
 - (BOOL)canBeIntersected;
 - (BOOL)canEndpointsCoincide;
 - (BOOL)canFlip;
@@ -70,13 +70,13 @@
 - (id)connectedTo;
 - (id)connectedToInfo;
 - (id)connectionLineInfo;
-- (struct CGPoint { double x1; double x2; })controlPointForPointA:(struct CGPoint { double x1; double x2; })arg1 pointB:(struct CGPoint { double x1; double x2; })arg2 andOriginalA:(struct CGPoint { double x1; double x2; })arg3 originalB:(struct CGPoint { double x1; double x2; })arg4;
-- (id)createConnectedPathFrom:(id)arg1 to:(id)arg2 withControlPoints:(struct CGPoint { double x1; double x2; })arg3;
+- (struct CGPoint { float x1; float x2; })controlPointForPointA:(struct CGPoint { float x1; float x2; })arg1 pointB:(struct CGPoint { float x1; float x2; })arg2 andOriginalA:(struct CGPoint { float x1; float x2; })arg3 originalB:(struct CGPoint { float x1; float x2; })arg4;
+- (id)createConnectedPathFrom:(id)arg1 to:(id)arg2 withControlPoints:(struct CGPoint { float x1; float x2; })arg3;
 - (void)dealloc;
 - (float)dynamicOutsetFrom;
 - (float)dynamicOutsetTo;
 - (unsigned int)dynamicOutsetType;
-- (struct CGPoint { double x1; double x2; })getControlKnobPosition:(unsigned int)arg1;
+- (struct CGPoint { float x1; float x2; })getControlKnobPosition:(unsigned int)arg1;
 - (void)invalidateAndCleanupConnectedLayouts;
 - (void)invalidateConnections;
 - (void)invalidatePath;
@@ -112,8 +112,8 @@
 - (BOOL)supportsFlipping;
 - (BOOL)supportsResize;
 - (BOOL)supportsRotation;
-- (struct CGPoint { double x1; double x2; })unclippedHeadPoint;
-- (struct CGPoint { double x1; double x2; })unclippedTailPoint;
+- (struct CGPoint { float x1; float x2; })unclippedHeadPoint;
+- (struct CGPoint { float x1; float x2; })unclippedTailPoint;
 - (void)updateConnectedPath;
 - (BOOL)useDynamicOutsets;
 - (BOOL)validLine;

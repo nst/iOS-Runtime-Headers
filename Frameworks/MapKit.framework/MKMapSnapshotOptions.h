@@ -28,14 +28,14 @@
         } span; 
     }  _region;
     BOOL  _rendersInBackground;
-    double  _scale;
+    float  _scale;
     unsigned char  _searchResultsType;
     BOOL  _showsBuildings;
     BOOL  _showsNightMode;
     BOOL  _showsPointsOfInterest;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _size;
     BOOL  _useSnapshotService;
     BOOL  _usingRect;
@@ -47,12 +47,12 @@
 @property (nonatomic) unsigned int mapType;
 @property (nonatomic) struct { struct CLLocationCoordinate2D { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; } region;
 @property (getter=_rendersInBackground, setter=_setRendersInBackground:, nonatomic) BOOL rendersInBackground;
-@property (nonatomic) double scale;
+@property (nonatomic) float scale;
 @property (getter=_searchResultsType, setter=_setSearchResultsType:, nonatomic) unsigned char searchResultsType;
 @property (nonatomic) BOOL showsBuildings;
 @property (getter=_showsNightMode, setter=_setShowsNightMode:, nonatomic) BOOL showsNightMode;
 @property (nonatomic) BOOL showsPointsOfInterest;
-@property (nonatomic) struct CGSize { double x1; double x2; } size;
+@property (nonatomic) struct CGSize { float x1; float x2; } size;
 @property (getter=_useSnapshotService, setter=_setUseSnapshotService:, nonatomic) BOOL useSnapshotService;
 @property (nonatomic, readonly) BOOL usingRect;
 
@@ -85,10 +85,10 @@
 - (void)setScale:(float)arg1;
 - (void)setShowsBuildings:(BOOL)arg1;
 - (void)setShowsPointsOfInterest:(BOOL)arg1;
-- (void)setSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)showsBuildings;
 - (BOOL)showsPointsOfInterest;
-- (struct CGSize { double x1; double x2; })size;
+- (struct CGSize { float x1; float x2; })size;
 - (BOOL)usingRect;
 
 @end

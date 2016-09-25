@@ -22,7 +22,7 @@
 - (void)_defaultsChanged:(id)arg1;
 - (void)_onDisplayLink:(id)arg1;
 - (void)_sendClearOffset;
-- (void)_sendOffset:(struct CGPoint { double x1; double x2; })arg1 lockStatus:(int)arg2 lockStrength:(float)arg3;
+- (void)_sendOffset:(struct CGPoint { float x1; float x2; })arg1 lockStatus:(int)arg2 lockStrength:(float)arg3;
 - (void)_setUpDisplayLink;
 - (BOOL)_shouldGenerateUpdates;
 - (void)_startGeneratingUpdates;

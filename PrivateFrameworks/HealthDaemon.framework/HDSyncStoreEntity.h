@@ -10,6 +10,6 @@
 + (int)protectionClass;
 + (id)syncStoreEntityWithUUID:(id)arg1 type:(int)arg2 healthDatabase:(id)arg3 error:(id*)arg4;
 
-- (int)syncProvenance;
+- (long long)syncProvenance;
 
 @end

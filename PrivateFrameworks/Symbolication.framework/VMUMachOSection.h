@@ -8,7 +8,7 @@
 }
 
 - (void)dealloc;
-- (id)initWithTask:(unsigned int)arg1 remoteAddress:(unsigned int)arg2 size:(unsigned int)arg3;
+- (id)initWithTask:(unsigned int)arg1 remoteAddress:(unsigned long long)arg2 size:(unsigned long long)arg3;
 - (unsigned int)localAddress;
 - (unsigned int)mappingSize;
 

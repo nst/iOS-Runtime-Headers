@@ -3,13 +3,13 @@
  */
 
 @interface UIAccessibilityAutoscrollManager : NSObject {
-    double  _autoscrollSpeed;
+    float  _autoscrollSpeed;
     BOOL  _autoscrolling;
     int  _scrollDirection;
     UIScrollView * _scrollView;
 }
 
-@property (nonatomic) double autoscrollSpeed;
+@property (nonatomic) float autoscrollSpeed;
 @property (getter=isAutoscrolling, nonatomic) BOOL autoscrolling;
 @property (nonatomic) int scrollDirection;
 @property (nonatomic, retain) UIScrollView *scrollView;

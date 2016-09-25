@@ -14,7 +14,7 @@
 @property (nonatomic, copy) HUAnimationSettings *animationSettings;
 @property (nonatomic) BOOL applyDynamically;
 @property (nonatomic, retain) CADisplayLink *displayLink;
-@property (nonatomic, readonly) double effectiveProgress;
+@property (nonatomic, readonly) float effectiveProgress;
 @property (nonatomic, readonly) NSMutableSet *effectiveProgressObservers;
 @property (nonatomic, readonly) NSMutableSet *relativeAnimations;
 @property (nonatomic) double startTime;

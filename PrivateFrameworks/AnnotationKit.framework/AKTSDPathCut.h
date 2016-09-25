@@ -4,13 +4,13 @@
 
 @interface AKTSDPathCut : NSObject {
     int  mSegment;
-    double  mSkew;
-    double  mT;
+    float  mSkew;
+    float  mT;
 }
 
 @property (nonatomic, readonly) int segment;
-@property (nonatomic, readonly) double skew;
-@property (nonatomic, readonly) double t;
+@property (nonatomic, readonly) float skew;
+@property (nonatomic, readonly) float t;
 
 - (id)description;
 - (id)initWithSegment:(int)arg1 atT:(float)arg2 withSkew:(float)arg3;

@@ -5,8 +5,8 @@
 @interface PUReviewInternalSaveNode : PXRunNode <PUAdjustmentURLNode, PUImageDataRenderNode, PUImageInfoNode, PUReviewImageURLNode, PUReviewVideoURLNode, PUVideoURLNode> {
     NSURL * _adjustmentURL;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _baseImageSize;
     NSURL * _directory;
     PUEditableMediaProviderImageDataNode * _imageDataNode;
@@ -17,8 +17,8 @@
     NSURL * _providedFullsizeImageURL;
     NSURL * _providedVideoURL;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _renderedImageSize;
     <PUVideoURLNode> * _videoRenderNode;
     NSURL * _videoURL;
@@ -26,7 +26,7 @@
 }
 
 @property (nonatomic, readonly) NSURL *adjustmentURL;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } baseImageSize;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } baseImageSize;
 @property (getter=isCanceled, readonly) BOOL canceled;
 @property (getter=isComplete, readonly) BOOL complete;
 @property (readonly, copy) NSString *debugDescription;
@@ -43,7 +43,7 @@
 @property (nonatomic, readonly, copy) PUPhotoEditIrisModel *livePhotoModel;
 @property (nonatomic, readonly) NSURL *providedFullsizeImageURL;
 @property (nonatomic, readonly) NSURL *providedVideoURL;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } renderedImageSize;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } renderedImageSize;
 @property (getter=isRunning, readonly) BOOL running;
 @property (readonly) unsigned int state;
 @property (readonly) Class superclass;
@@ -58,7 +58,7 @@
 - (int)_baseExifOrientation;
 - (id)_exportProperties;
 - (id)adjustmentURL;
-- (struct CGSize { double x1; double x2; })baseImageSize;
+- (struct CGSize { float x1; float x2; })baseImageSize;
 - (id)directory;
 - (id)imageDataNode;
 - (id)imageDataURL;
@@ -68,7 +68,7 @@
 - (id)livePhotoModel;
 - (id)providedFullsizeImageURL;
 - (id)providedVideoURL;
-- (struct CGSize { double x1; double x2; })renderedImageSize;
+- (struct CGSize { float x1; float x2; })renderedImageSize;
 - (void)run;
 - (id)videoRenderNode;
 - (id)videoURL;

@@ -22,7 +22,7 @@
 - (id)hintTextForKey:(id)arg1;
 - (BOOL)ignoresEmptySections;
 - (id)indexPathOfItem:(id)arg1;
-- (id)indexPathOfItemWithIdentifier:(unsigned int)arg1;
+- (id)indexPathOfItemWithIdentifier:(unsigned long long)arg1;
 - (void)insertItems:(id)arg1 atIndexPath:(id)arg2;
 - (id)itemAtIndexPath:(id)arg1;
 - (id)itemsForSectionAtIndex:(int)arg1;

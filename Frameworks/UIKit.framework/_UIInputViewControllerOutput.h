@@ -4,14 +4,14 @@
 
 @interface _UIInputViewControllerOutput : NSObject <NSCopying, NSSecureCoding> {
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _inputModeListFromLocation;
     double  _inputModeListTouchBegan;
     int  _inputModeListTouchPhase;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _inputModeListUpdatePoint;
     NSArray * _keyboardOutputs;
     NSString * _primaryLanguage;
@@ -22,10 +22,10 @@
     BOOL  _shouldPostReturnKeyNotification;
 }
 
-@property (nonatomic) struct CGPoint { double x1; double x2; } inputModeListFromLocation;
+@property (nonatomic) struct CGPoint { float x1; float x2; } inputModeListFromLocation;
 @property (nonatomic) double inputModeListTouchBegan;
 @property (nonatomic) int inputModeListTouchPhase;
-@property (nonatomic) struct CGPoint { double x1; double x2; } inputModeListUpdatePoint;
+@property (nonatomic) struct CGPoint { float x1; float x2; } inputModeListUpdatePoint;
 @property (nonatomic, retain) NSArray *keyboardOutputs;
 @property (nonatomic, copy) NSString *primaryLanguage;
 @property (nonatomic) BOOL requiresInputManagerSync;
@@ -45,20 +45,20 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (struct CGPoint { double x1; double x2; })inputModeListFromLocation;
+- (struct CGPoint { float x1; float x2; })inputModeListFromLocation;
 - (double)inputModeListTouchBegan;
 - (int)inputModeListTouchPhase;
-- (struct CGPoint { double x1; double x2; })inputModeListUpdatePoint;
+- (struct CGPoint { float x1; float x2; })inputModeListUpdatePoint;
 - (void)insertText:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)keyboardOutputs;
 - (id)primaryLanguage;
 - (BOOL)requiresInputManagerSync;
-- (void)setInputModeList:(int)arg1 touchBegan:(double)arg2 fromLocation:(struct CGPoint { double x1; double x2; })arg3 updatePoint:(struct CGPoint { double x1; double x2; })arg4;
-- (void)setInputModeListFromLocation:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setInputModeList:(int)arg1 touchBegan:(double)arg2 fromLocation:(struct CGPoint { float x1; float x2; })arg3 updatePoint:(struct CGPoint { float x1; float x2; })arg4;
+- (void)setInputModeListFromLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setInputModeListTouchBegan:(double)arg1;
 - (void)setInputModeListTouchPhase:(int)arg1;
-- (void)setInputModeListUpdatePoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setInputModeListUpdatePoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setKeyboardOutputs:(id)arg1;
 - (void)setPrimaryLanguage:(id)arg1;
 - (void)setRequiresInputManagerSync:(BOOL)arg1;

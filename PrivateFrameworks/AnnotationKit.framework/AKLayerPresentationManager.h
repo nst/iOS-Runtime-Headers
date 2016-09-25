@@ -3,15 +3,15 @@
  */
 
 @interface AKLayerPresentationManager : NSObject {
-    double  _alignmentGuidePositionX;
-    double  _alignmentGuidePositionY;
+    float  _alignmentGuidePositionX;
+    float  _alignmentGuidePositionY;
     CAShapeLayer * _alignmentGuideXLayer;
     CAShapeLayer * _alignmentGuideYLayer;
     NSMapTable * _annotationsToAdornmentLayers;
     NSMapTable * _annotationsToAnnotationLayers;
     CALayer * _cropAdornmentLayer;
     CALayer * _cropAnnotationLayer;
-    double  _currentScaleFactor;
+    float  _currentScaleFactor;
     BOOL  _isObservingModel;
     AKPageController * _pageController;
     AKPageModelController * _pageModelController;
@@ -19,15 +19,15 @@
     BOOL  _shouldPixelate;
 }
 
-@property (nonatomic) double alignmentGuidePositionX;
-@property (nonatomic) double alignmentGuidePositionY;
+@property (nonatomic) float alignmentGuidePositionX;
+@property (nonatomic) float alignmentGuidePositionY;
 @property (retain) CAShapeLayer *alignmentGuideXLayer;
 @property (retain) CAShapeLayer *alignmentGuideYLayer;
 @property (retain) NSMapTable *annotationsToAdornmentLayers;
 @property (retain) NSMapTable *annotationsToAnnotationLayers;
 @property (retain) CALayer *cropAdornmentLayer;
 @property (retain) CALayer *cropAnnotationLayer;
-@property double currentScaleFactor;
+@property float currentScaleFactor;
 @property BOOL isObservingModel;
 @property AKPageController *pageController;
 @property (retain) AKPageModelController *pageModelController;

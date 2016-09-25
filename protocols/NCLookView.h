@@ -6,7 +6,7 @@
 @required
 
 - (UIView *)colorInfusionView;
-- (struct CGSize { double x1; double x2; })contentSizeForSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })contentSizeForSize:(struct CGSize { float x1; float x2; })arg1;
 - (UIView *)customContentView;
 - (NSDate *)date;
 - (int)dateFormatStyle;
@@ -24,7 +24,7 @@
 - (void)setIcon:(UIImage *)arg1;
 - (void)setTimeZone:(NSTimeZone *)arg1;
 - (void)setTitle:(NSString *)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFitsContentWithSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFitsContentWithSize:(struct CGSize { float x1; float x2; })arg1;
 - (NSTimeZone *)timeZone;
 - (NSString *)title;
 - (UIButton *)utilityButton;

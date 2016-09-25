@@ -4,20 +4,20 @@
 
 @interface NTKColoringLabel : NTKLegibilityLabel <CLKUILabel, NTKColoringView, NTKTimeTravelState> {
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _cachedOpticalEdgeInsets;
     BOOL  _cachedOpticalEdgeInsetsIsValid;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _cachedSingleLineSize;
     BOOL  _cachedSizeIsValid;
     _NTKColorManager * _colorManager;
     BOOL  _inTimeTravel;
-    double  _maxWidth;
+    float  _maxWidth;
     id /* block */  _needsResizeHandler;
     id /* block */  _nowProvider;
     unsigned int  _options;
@@ -32,7 +32,7 @@
     BOOL  _uppercase;
 }
 
-@property (nonatomic, readonly) double _lastLineBaseline;
+@property (nonatomic, readonly) float _lastLineBaseline;
 @property (nonatomic, copy) NSAttributedString *attributedText;
 @property (nonatomic, retain) UIColor *color;
 @property (nonatomic, readonly) UIColor *contentColor;
@@ -41,10 +41,10 @@
 @property (nonatomic, retain) UIFont *font;
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL inTimeTravel;
-@property (nonatomic) double maxWidth;
+@property (nonatomic) float maxWidth;
 @property (nonatomic, copy) id /* block */ needsResizeHandler;
 @property (nonatomic, copy) id /* block */ nowProvider;
-@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } opticalInsets;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } opticalInsets;
 @property (nonatomic, readonly) unsigned int options;
 @property (nonatomic, retain) UIColor *overrideColor;
 @property (nonatomic, copy) NSParagraphStyle *paragraphStyle;
@@ -71,13 +71,13 @@
 - (id)color;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (BOOL)inTimeTravel;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 options:(unsigned int)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 options:(unsigned int)arg2;
 - (void)invalidateCachedSize;
 - (float)maxWidth;
 - (id /* block */)needsResizeHandler;
 - (id /* block */)nowProvider;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })opticalInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })opticalInsets;
 - (unsigned int)options;
 - (id)overrideColor;
 - (id)paragraphStyle;
@@ -91,14 +91,14 @@
 - (void)setNowProvider:(id /* block */)arg1;
 - (void)setOverrideColor:(id)arg1;
 - (void)setParagraphStyle:(id)arg1;
-- (void)setShadowOffset:(struct CGSize { double x1; double x2; })arg1;
+- (void)setShadowOffset:(struct CGSize { float x1; float x2; })arg1;
 - (void)setText:(id)arg1;
 - (void)setTextProvider:(id)arg1;
 - (void)setTextProviderFont:(id)arg1;
 - (void)setTextProviderSmallCapsBaseFont:(id)arg1;
 - (void)setUppercase:(BOOL)arg1;
 - (void)setUsesLegibility:(BOOL)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)sizeToFit;
 - (id)textProvider;
 - (id)textProviderFont;

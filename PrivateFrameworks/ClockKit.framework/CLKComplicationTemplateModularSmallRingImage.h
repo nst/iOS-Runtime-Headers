@@ -3,12 +3,12 @@
  */
 
 @interface CLKComplicationTemplateModularSmallRingImage : CLKComplicationTemplate {
-    double  _fillFraction;
+    float  _fillFraction;
     CLKImageProvider * _imageProvider;
     int  _ringStyle;
 }
 
-@property (nonatomic) double fillFraction;
+@property (nonatomic) float fillFraction;
 @property (nonatomic, copy) CLKImageProvider *imageProvider;
 @property (nonatomic) int ringStyle;
 

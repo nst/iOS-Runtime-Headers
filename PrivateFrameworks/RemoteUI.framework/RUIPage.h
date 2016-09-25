@@ -7,12 +7,12 @@
     NSMutableArray * _childPages;
     UIView * _containerView;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _customEdgeInsets;
-    double  _customMargin;
+    float  _customMargin;
     NSMutableArray * _didAppearCallbacks;
     BOOL  _hidesBackButton;
     UIBarButtonItem * _leftFlexSpace;
@@ -48,8 +48,8 @@
 @property (nonatomic, readonly) NSArray *buttons;
 @property (nonatomic, readonly) NSArray *childPages;
 @property (nonatomic, readonly) UIView *containerView;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } customEdgeInsets;
-@property (nonatomic) double customMargin;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } customEdgeInsets;
+@property (nonatomic) float customMargin;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
@@ -81,7 +81,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) RUITableView *tableViewOM;
 @property (nonatomic, readonly) UILabel *titleLabel;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } titleLabelPadding;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } titleLabelPadding;
 @property (nonatomic, readonly) UIToolbar *toolbar;
 @property (nonatomic, copy) NSString *validationFunction;
 @property (nonatomic, readonly) RUIWebView *webViewOM;
@@ -110,7 +110,7 @@
 - (id)buttons;
 - (id)childPages;
 - (id)containerView;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })customEdgeInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })customEdgeInsets;
 - (float)customMargin;
 - (void)dealloc;
 - (id)description;
@@ -150,7 +150,7 @@
 - (id)rightToolbarItem;
 - (void)setBackButtonTitle:(id)arg1;
 - (void)setButton:(id)arg1 enabled:(BOOL)arg2;
-- (void)setCustomEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setCustomEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setCustomMargin:(float)arg1;
 - (void)setHasToolbar;
 - (void)setHidesBackButton:(BOOL)arg1;
@@ -177,7 +177,7 @@
 - (void)setRightToolbarItem:(id)arg1;
 - (void)setShowsTitlesAsHeaderViews:(BOOL)arg1;
 - (void)setStyle:(id)arg1;
-- (void)setTitleLabelPadding:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setTitleLabelPadding:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setValidationFunction:(id)arg1;
 - (BOOL)showsTitlesAsHeaderViews;
 - (id)spinnerViewOM;
@@ -185,7 +185,7 @@
 - (unsigned int)supportedInterfaceOrientations;
 - (id)tableViewOM;
 - (id)titleLabel;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })titleLabelPadding;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })titleLabelPadding;
 - (id)toolbar;
 - (id)validationFunction;
 - (void)viewDidAppear:(BOOL)arg1;

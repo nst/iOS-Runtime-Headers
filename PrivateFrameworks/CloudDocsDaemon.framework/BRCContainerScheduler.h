@@ -53,7 +53,7 @@
 - (void)_updatePushTopicsRegistration;
 - (void)close;
 - (void)closeContainers;
-- (void)completedZoneHealthSyncDownWithServerChangeToken:(id)arg1 requestID:(unsigned int)arg2 moreComing:(BOOL)arg3 error:(id)arg4;
+- (void)completedZoneHealthSyncDownWithServerChangeToken:(id)arg1 requestID:(unsigned long long)arg2 moreComing:(BOOL)arg3 error:(id)arg4;
 - (void)connection:(id)arg1 didReceiveIncomingMessage:(id)arg2;
 - (void)connection:(id)arg1 didReceivePublicToken:(id)arg2;
 - (void)connection:(id)arg1 didReceiveToken:(id)arg2 forTopic:(id)arg3 identifier:(id)arg4;

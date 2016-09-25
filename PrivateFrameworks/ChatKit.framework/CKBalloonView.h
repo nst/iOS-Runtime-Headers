@@ -23,10 +23,10 @@
     BOOL  _showingMenu;
     UITapGestureRecognizer * _tapGestureRecognizer;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _textAlignmentInsets;
     BOOL  _useLargeAsset;
     BOOL  _wantsSkinnyMask;
@@ -61,7 +61,7 @@
 @property (getter=isShowingMenu, nonatomic, readonly) BOOL showingMenu;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UITapGestureRecognizer *tapGestureRecognizer;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } textAlignmentInsets;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } textAlignmentInsets;
 @property (nonatomic) BOOL useLargeAsset;
 @property (nonatomic) BOOL wantsSkinnyMask;
 
@@ -80,7 +80,7 @@
 - (void)configureForComposition:(id)arg1;
 - (void)configureForMediaObject:(id)arg1 previewWidth:(float)arg2 orientation:(BOOL)arg3;
 - (void)configureForMessagePart:(id)arg1;
-- (void)cullSubviewsWithVisibleBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)cullSubviewsWithVisibleBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)dealloc;
 - (id)delegate;
 - (id)description;
@@ -92,7 +92,7 @@
 - (BOOL)hasOverlay;
 - (BOOL)hasTail;
 - (id)imageForInvisibleInkEffectView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)invisibleInkEffectController;
 - (BOOL)invisibleInkEffectEnabled;
 - (BOOL)invisibleInkEffectPaused;
@@ -136,14 +136,14 @@
 - (void)setOrientation:(BOOL)arg1;
 - (void)setOverlay:(id)arg1;
 - (void)setTapGestureRecognizer:(id)arg1;
-- (void)setTextAlignmentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setTextAlignmentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setUseLargeAsset:(BOOL)arg1;
 - (void)setWantsSkinnyMask:(BOOL)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1 textAlignmentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; }*)arg2;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1 textAlignmentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg2;
 - (void)tapGestureRecognized:(id)arg1;
 - (id)tapGestureRecognizer;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })textAlignmentInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })textAlignmentInsets;
 - (void)updateRasterizationForInvisibleInkEffect;
 - (BOOL)useLargeAsset;
 - (BOOL)wantsSkinnyMask;

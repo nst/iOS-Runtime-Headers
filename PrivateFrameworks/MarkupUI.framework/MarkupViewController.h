@@ -18,7 +18,7 @@
     BOOL  _encryptPrivateMetadata;
     BOOL  _forcesPDFViewTopAlignment;
     NSString * _hostProcessBundleIdentifier;
-    double  _initialContentScale;
+    float  _initialContentScale;
     BOOL  _isAnimatingMarkupExtensionTransition;
     UINavigationBar * _navBar;
     UIColor * _navBarTitleColor;
@@ -69,7 +69,7 @@
 @property (nonatomic) BOOL forcesPDFViewTopAlignment;
 @property (readonly) unsigned int hash;
 @property (nonatomic, copy) NSString *hostProcessBundleIdentifier;
-@property double initialContentScale;
+@property float initialContentScale;
 @property BOOL isAnimatingMarkupExtensionTransition;
 @property (nonatomic, retain) UINavigationBar *navBar;
 @property (copy) UIColor *navBarTitleColor;
@@ -123,7 +123,7 @@
 - (void)_saveEditing:(id)arg1;
 - (void)_setData:(id)arg1 withArchivedModelData:(id)arg2 withCompletion:(id /* block */)arg3;
 - (void)_setFileURL:(id)arg1 withArchivedModelData:(id)arg2 withCompletion:(id /* block */)arg3;
-- (void)_setupInitialBaseModelScaleFactorWithScreenSize:(struct CGSize { double x1; double x2; })arg1 windowDecorationSize:(struct CGSize { double x1; double x2; })arg2;
+- (void)_setupInitialBaseModelScaleFactorWithScreenSize:(struct CGSize { float x1; float x2; })arg1 windowDecorationSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)_showTextStyleOptions:(id)arg1;
 - (BOOL)_sourceImageMayContainBaseImageAndModel;
 - (void)_startObservingAnnotationController;
@@ -153,8 +153,8 @@
 - (void)controllerDidEnterToolMode:(id)arg1;
 - (void)controllerDidExitToolMode:(id)arg1;
 - (BOOL)controllerShouldDetectFormElements:(id)arg1;
-- (struct CGPoint { double x1; double x2; })convertPoint:(struct CGPoint { double x1; double x2; })arg1 fromModelToOverlayWithPageIndex:(unsigned int)arg2 forAnnotationController:(id)arg3;
-- (struct CGPoint { double x1; double x2; })convertPoint:(struct CGPoint { double x1; double x2; })arg1 fromOverlayToModelWithPageIndex:(unsigned int)arg2 forAnnotationController:(id)arg3;
+- (struct CGPoint { float x1; float x2; })convertPoint:(struct CGPoint { float x1; float x2; })arg1 fromModelToOverlayWithPageIndex:(unsigned int)arg2 forAnnotationController:(id)arg3;
+- (struct CGPoint { float x1; float x2; })convertPoint:(struct CGPoint { float x1; float x2; })arg1 fromOverlayToModelWithPageIndex:(unsigned int)arg2 forAnnotationController:(id)arg3;
 - (id)createArchivedModelData;
 - (unsigned int)currentPDFPageIndex;
 - (id)dataRepresentationEmbeddingSourceImageAndEditModel:(BOOL)arg1 error:(id*)arg2;
@@ -184,7 +184,7 @@
 - (BOOL)isThumbnailViewHidden;
 - (BOOL)isToolbarHidden;
 - (id)layerContainingQuickBackgroundForLoupeOnOverlayAtPageIndex:(unsigned int)arg1 forAnnotationController:(id)arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })maxPageRectWithPageIndex:(unsigned int)arg1 forAnnotationController:(id)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })maxPageRectWithPageIndex:(unsigned int)arg1 forAnnotationController:(id)arg2;
 - (float)modelBaseScaleFactorOfPageAtIndex:(unsigned int)arg1 forAnnotationController:(id)arg2;
 - (void)motionEnded:(int)arg1 withEvent:(id)arg2;
 - (id)navBar;
@@ -192,7 +192,7 @@
 - (id)navItem;
 - (BOOL)needToPerformDocumentClosedTeardown;
 - (BOOL)needToPerformFullTeardown;
-- (id)newContentSnapshotPDFDataIncludingAdornments:(BOOL)arg1 atScale:(float)arg2 inRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 onOverlayAtPageIndex:(unsigned int)arg4 forAnnotationController:(id)arg5;
+- (id)newContentSnapshotPDFDataIncludingAdornments:(BOOL)arg1 atScale:(float)arg2 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 onOverlayAtPageIndex:(unsigned int)arg4 forAnnotationController:(id)arg5;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)outputType;
 - (id)pdfDocument;
@@ -261,11 +261,11 @@
 - (void)setUseFancyTransition:(BOOL)arg1;
 - (void)setUserDidCancel:(BOOL)arg1;
 - (void)setWhiteView:(id)arg1;
-- (BOOL)shouldPlaceFormElementAtPoint:(struct CGPoint { double x1; double x2; })arg1 onOverlayAtPageIndex:(unsigned int)arg2 forAnnotationController:(id)arg3;
-- (BOOL)shouldPlaceProposedFormElementAtRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 onOverlayAtPageIndex:(unsigned int)arg2 forAnnotationController:(id)arg3;
+- (BOOL)shouldPlaceFormElementAtPoint:(struct CGPoint { float x1; float x2; })arg1 onOverlayAtPageIndex:(unsigned int)arg2 forAnnotationController:(id)arg3;
+- (BOOL)shouldPlaceProposedFormElementAtRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 onOverlayAtPageIndex:(unsigned int)arg2 forAnnotationController:(id)arg3;
 - (BOOL)showAsFormSheet;
 - (BOOL)showThumbnailViewForMultipage;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })sketchOverlayInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })sketchOverlayInsets;
 - (id)sourceContent;
 - (id)sourceContentType;
 - (id)toolbar;

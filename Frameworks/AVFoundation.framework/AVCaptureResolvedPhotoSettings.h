@@ -13,13 +13,13 @@
 @property (readonly) struct { int x1; int x2; } previewDimensions;
 @property (readonly) struct { int x1; int x2; } rawPhotoDimensions;
 @property (getter=isStillImageStabilizationEnabled, readonly) BOOL stillImageStabilizationEnabled;
-@property (readonly) int uniqueID;
+@property (readonly) long long uniqueID;
 
 // Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
 
-+ (id)resolvedSettingsWithUniqueID:(int)arg1 photoDimensions:(struct { int x1; int x2; })arg2 rawPhotoDimensions:(struct { int x1; int x2; })arg3 previewDimensions:(struct { int x1; int x2; })arg4 livePhotoMovieEnabled:(BOOL)arg5 livePhotoMovieDimensions:(struct { int x1; int x2; })arg6 turboModeEnabled:(BOOL)arg7 flashEnabled:(BOOL)arg8 HDREnabled:(BOOL)arg9 originalPhotoDeliveryEnabled:(BOOL)arg10 stillImageStabilizationEnabled:(BOOL)arg11 bravoImageFusionEnabled:(BOOL)arg12 squareCropEnabled:(BOOL)arg13;
++ (id)resolvedSettingsWithUniqueID:(long long)arg1 photoDimensions:(struct { int x1; int x2; })arg2 rawPhotoDimensions:(struct { int x1; int x2; })arg3 previewDimensions:(struct { int x1; int x2; })arg4 livePhotoMovieEnabled:(BOOL)arg5 livePhotoMovieDimensions:(struct { int x1; int x2; })arg6 turboModeEnabled:(BOOL)arg7 flashEnabled:(BOOL)arg8 HDREnabled:(BOOL)arg9 originalPhotoDeliveryEnabled:(BOOL)arg10 stillImageStabilizationEnabled:(BOOL)arg11 bravoImageFusionEnabled:(BOOL)arg12 squareCropEnabled:(BOOL)arg13;
 
-- (id)_initWithUniqueID:(int)arg1 photoDimensions:(struct { int x1; int x2; })arg2 rawPhotoDimensions:(struct { int x1; int x2; })arg3 previewDimensions:(struct { int x1; int x2; })arg4 livePhotoMovieEnabled:(BOOL)arg5 livePhotoMovieDimensions:(struct { int x1; int x2; })arg6 turboModeEnabled:(BOOL)arg7 flashEnabled:(BOOL)arg8 HDREnabled:(BOOL)arg9 originalPhotoDeliveryEnabled:(BOOL)arg10 stillImageStabilizationEnabled:(BOOL)arg11 bravoImageFusionEnabled:(BOOL)arg12 squareCropEnabled:(BOOL)arg13;
+- (id)_initWithUniqueID:(long long)arg1 photoDimensions:(struct { int x1; int x2; })arg2 rawPhotoDimensions:(struct { int x1; int x2; })arg3 previewDimensions:(struct { int x1; int x2; })arg4 livePhotoMovieEnabled:(BOOL)arg5 livePhotoMovieDimensions:(struct { int x1; int x2; })arg6 turboModeEnabled:(BOOL)arg7 flashEnabled:(BOOL)arg8 HDREnabled:(BOOL)arg9 originalPhotoDeliveryEnabled:(BOOL)arg10 stillImageStabilizationEnabled:(BOOL)arg11 bravoImageFusionEnabled:(BOOL)arg12 squareCropEnabled:(BOOL)arg13;
 - (void)dealloc;
 - (id)description;
 - (BOOL)isBravoImageFusionEnabled;
@@ -34,7 +34,7 @@
 - (struct { int x1; int x2; })photoDimensions;
 - (struct { int x1; int x2; })previewDimensions;
 - (struct { int x1; int x2; })rawPhotoDimensions;
-- (int)uniqueID;
+- (long long)uniqueID;
 
 // Image: /System/Library/PrivateFrameworks/CameraUI.framework/CameraUI
 

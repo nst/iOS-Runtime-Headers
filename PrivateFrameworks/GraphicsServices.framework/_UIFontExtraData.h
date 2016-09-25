@@ -3,9 +3,9 @@
  */
 
 @interface _UIFontExtraData : NSObject {
-    double  _ascender;
+    float  _ascender;
     NSCharacterSet * _coveredCharacterSet;
-    double  _descender;
+    float  _descender;
     struct __fFlags { 
         unsigned int _initialized : 1; 
         unsigned int _isSystemFont : 1; 
@@ -14,8 +14,8 @@
         unsigned int _isIBTextStyleFont : 1; 
     }  _fFlags;
     NSData * _latin1MappingTable;
-    double  _lineGap;
-    double  _lineHeight;
+    float  _lineGap;
+    float  _lineHeight;
 }
 
 - (void)dealloc;

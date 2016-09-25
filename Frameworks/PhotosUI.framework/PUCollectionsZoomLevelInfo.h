@@ -33,7 +33,7 @@
 - (id)sectionHeaderElementKind;
 - (id)sectionedGridLayout:(id)arg1 sectionsForVisualSection:(int)arg2;
 - (BOOL)supportsIncrementalChangeNotifications;
-- (struct CGSize { double x1; double x2; })thumbnailImageSize;
+- (struct CGSize { float x1; float x2; })thumbnailImageSize;
 - (void)updateLayoutMetricsForWidth:(float)arg1;
 
 @end

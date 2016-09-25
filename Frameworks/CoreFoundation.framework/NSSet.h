@@ -296,7 +296,7 @@
 
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
 
-+ (id)tsp_consolidateFeatureInfos:(id)arg1 andReturnReadVersion:(out unsigned int*)arg2 writeVersion:(out unsigned int*)arg3;
++ (id)tsp_consolidateFeatureInfos:(id)arg1 andReturnReadVersion:(out unsigned long long*)arg2 writeVersion:(out unsigned long long*)arg3;
 + (id)tsu_intersectionOfSets:(id)arg1;
 + (BOOL)tsu_set:(id)arg1 isEqualToSet:(id)arg2;
 + (id)tsu_setWithSelectors:(SEL)arg1;

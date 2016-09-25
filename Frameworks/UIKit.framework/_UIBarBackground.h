@@ -12,11 +12,11 @@
     UIView * _customBackgroundView;
     BOOL  _disableTinting;
     UIColor * _shadowColor;
-    double  _shadowHeight;
+    float  _shadowHeight;
     UIImage * _shadowImage;
     int  _shadowPosition;
     UIImageView * _shadowView;
-    double  _topInset;
+    float  _topInset;
     int  _translucence;
 }
 
@@ -26,11 +26,11 @@
 @property (nonatomic, copy) NSString *groupName;
 @property (nonatomic, readonly) BOOL hasBackgroundEffect;
 @property (nonatomic, readonly) UIImage *legacy_backgroundImage;
-@property (nonatomic) double shadowAlpha;
+@property (nonatomic) float shadowAlpha;
 @property (nonatomic, readonly) UIImage *shim_shadowImage;
 @property (nonatomic, readonly) UIImageView *shim_shadowView;
 @property (nonatomic, readonly) BOOL shouldUseBlendModeForBackgrounds;
-@property (nonatomic) double topInset;
+@property (nonatomic) float topInset;
 
 - (void).cxx_destruct;
 - (id)_blurWithStyle:(int)arg1 tint:(id)arg2;
@@ -53,7 +53,7 @@
 - (id)groupName;
 - (BOOL)hasBackgroundEffect;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)legacy_backgroundImage;
 - (void)prepareBackgroundViews;

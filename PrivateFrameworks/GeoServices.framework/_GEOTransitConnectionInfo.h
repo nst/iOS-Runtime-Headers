@@ -11,7 +11,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) NSArray *labelItems;
-@property (nonatomic, readonly) unsigned int muid;
+@property (nonatomic, readonly) unsigned long long muid;
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) int providerID;
 @property (readonly) Class superclass;
@@ -20,7 +20,7 @@
 - (void)dealloc;
 - (id)initWithConnection:(id)arg1 providerID:(int)arg2;
 - (id)labelItems;
-- (unsigned int)muid;
+- (unsigned long long)muid;
 - (id)name;
 - (int)providerID;
 - (id)urlToOpen;

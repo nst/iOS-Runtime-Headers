@@ -7,7 +7,7 @@
     StreamingUnzipState * _currentState;
     void * _decompressionOutputBuffer;
     double  _lastExtractionProgressSent;
-    int  _sandboxToken;
+    long long  _sandboxToken;
     NSObject<OS_dispatch_queue> * inProcessDelegateQueue;
     <StreamingUnzipDelegateProtocol> * inProcessExtractorDelegate;
     NSXPCConnection * xpcConnection;

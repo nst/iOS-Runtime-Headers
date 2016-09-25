@@ -7,7 +7,7 @@
     SCNGeometryElement * _edgeCreasesElement;
     SCNGeometrySource * _edgeCreasesSource;
     NSMutableArray * _elements;
-    struct SCNVector3 { double x1; double x2; double x3; } * _fixedBoundingBoxExtrema;
+    struct SCNVector3 { float x1; float x2; float x3; } * _fixedBoundingBoxExtrema;
     struct __C3DGeometry { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_2_1; unsigned char x_1_2_2[4]; } x_1_1_1; void *x_1_1_2; struct __CFString {} *x_1_1_3; struct __CFString {} *x_1_1_4; struct __CFDictionary {} *x_1_1_5; int x_1_1_6; int x_1_1_7; } x1; struct __C3DMesh {} *x2; struct __C3DMaterial {} *x3; struct __CFArray {} *x4; struct __CFSet {} *x5; struct __CFArray {} *x6; struct __C3DAABB {} *x7; unsigned int x8 : 1; int (*x9)(); struct { unsigned short x_10_1_1; struct { bool x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; unsigned char x_2_2_4; } x_10_1_2; struct __C3DMeshElement {} *x_10_1_3; struct __C3DMeshSource {} *x_10_1_4; struct __C3DMesh {} *x_10_1_5; } x10; } * _geometry;
     unsigned int  _isPresentationInstance;
     NSArray * _levelsOfDetail;
@@ -114,9 +114,9 @@
 - (id)geometrySources;
 - (id)geometrySourcesForSemantic:(id)arg1;
 - (id)getBoundingBox;
-- (BOOL)getBoundingBoxMin:(struct SCNVector3 { double x1; double x2; double x3; }*)arg1 max:(struct SCNVector3 { double x1; double x2; double x3; }*)arg2;
+- (BOOL)getBoundingBoxMin:(struct SCNVector3 { float x1; float x2; float x3; }*)arg1 max:(struct SCNVector3 { float x1; float x2; float x3; }*)arg2;
 - (id)getBoundingSphere;
-- (BOOL)getBoundingSphereCenter:(struct SCNVector3 { double x1; double x2; double x3; }*)arg1 radius:(float*)arg2;
+- (BOOL)getBoundingSphereCenter:(struct SCNVector3 { float x1; float x2; float x3; }*)arg1 radius:(float*)arg2;
 - (void)handleBindingOfSymbol:(id)arg1 usingBlock:(id /* block */)arg2;
 - (void)handleUnbindingOfSymbol:(id)arg1 usingBlock:(id /* block */)arg2;
 - (id)identifier;
@@ -160,7 +160,7 @@
 - (void)resumeAnimationForKey:(id)arg1;
 - (id)scene;
 - (struct __C3DScene { }*)sceneRef;
-- (void)setBoundingBoxMin:(struct SCNVector3 { double x1; double x2; double x3; }*)arg1 max:(struct SCNVector3 { double x1; double x2; double x3; }*)arg2;
+- (void)setBoundingBoxMin:(struct SCNVector3 { float x1; float x2; float x3; }*)arg1 max:(struct SCNVector3 { float x1; float x2; float x3; }*)arg2;
 - (void)setEdgeCreasesElement:(id)arg1;
 - (void)setEdgeCreasesSource:(id)arg1;
 - (void)setFirstMaterial:(id)arg1;

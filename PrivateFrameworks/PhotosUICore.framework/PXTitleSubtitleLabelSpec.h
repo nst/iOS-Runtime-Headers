@@ -3,21 +3,21 @@
  */
 
 @interface PXTitleSubtitleLabelSpec : PXViewSpec {
-    double  _distanceBetweenTitleBaselineAndSubtitleBaseline;
-    double  _interLabelSpacing;
+    float  _distanceBetweenTitleBaselineAndSubtitleBaseline;
+    float  _interLabelSpacing;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _padding;
     PXLabelSpec * _subtitleLabelSpec;
     PXLabelSpec * _titleLabelSpec;
 }
 
-@property (nonatomic) double distanceBetweenTitleBaselineAndSubtitleBaseline;
-@property (nonatomic) double interLabelSpacing;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } padding;
+@property (nonatomic) float distanceBetweenTitleBaselineAndSubtitleBaseline;
+@property (nonatomic) float interLabelSpacing;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } padding;
 @property (nonatomic, retain) PXLabelSpec *subtitleLabelSpec;
 @property (nonatomic, retain) PXLabelSpec *titleLabelSpec;
 
@@ -27,10 +27,10 @@
 - (unsigned int)hash;
 - (float)interLabelSpacing;
 - (BOOL)isEqual:(id)arg1;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })padding;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })padding;
 - (void)setDistanceBetweenTitleBaselineAndSubtitleBaseline:(float)arg1;
 - (void)setInterLabelSpacing:(float)arg1;
-- (void)setPadding:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setPadding:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setSubtitleLabelSpec:(id)arg1;
 - (void)setTitleLabelSpec:(id)arg1;
 - (id)subtitleLabelSpec;

@@ -34,7 +34,7 @@
 @property (nonatomic, readonly) unsigned short port;
 @property (nonatomic, copy) NSString *publicURLRoot;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) unsigned int totalBytesWritten;
+@property (nonatomic, readonly) unsigned long long totalBytesWritten;
 @property (nonatomic, readonly) NSString *urlString;
 
 + (id)accessibilityDescriptionForAccessibilityKey:(id)arg1;
@@ -127,7 +127,7 @@
 - (void)setLatencyStddev:(double)arg1;
 - (void)setPipeliningEnabled:(BOOL)arg1;
 - (void)setPublicURLRoot:(id)arg1;
-- (unsigned int)totalBytesWritten;
+- (unsigned long long)totalBytesWritten;
 - (id)urlString;
 - (id)webArchiveForDirectory:(id)arg1 withBaseURL:(id)arg2;
 

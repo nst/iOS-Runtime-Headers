@@ -18,12 +18,12 @@
     }  lock;
     char * pixelData;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  pixelSize;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  size;
     int  state;
     int  wrapMode;
@@ -36,8 +36,8 @@
 @property (nonatomic) BOOL isPOT;
 @property (getter=getLock, nonatomic, readonly) struct _opaque_pthread_mutex_t { long x1; BOOL x2[40]; }*lock;
 @property (nonatomic) char *pixelData;
-@property (nonatomic) struct CGSize { double x1; double x2; } pixelSize;
-@property (nonatomic) struct CGSize { double x1; double x2; } size;
+@property (nonatomic) struct CGSize { float x1; float x2; } pixelSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } size;
 @property (nonatomic) int state;
 @property (nonatomic) unsigned int textureFormat;
 @property (nonatomic) int wrapMode;
@@ -54,19 +54,19 @@
 - (BOOL)isLoaded;
 - (BOOL)isPOT;
 - (char *)pixelData;
-- (struct CGSize { double x1; double x2; })pixelSize;
+- (struct CGSize { float x1; float x2; })pixelSize;
 - (void)setBackingTexture:(struct shared_ptr<jet_texture> { struct jet_texture {} *x1; struct __shared_weak_count {} *x2; })arg1;
 - (void)setFilteringMode:(int)arg1;
 - (void)setHasAlpha:(BOOL)arg1;
 - (void)setIsLoaded:(BOOL)arg1;
 - (void)setIsPOT:(BOOL)arg1;
 - (void)setPixelData:(char *)arg1;
-- (void)setPixelSize:(struct CGSize { double x1; double x2; })arg1;
-- (void)setSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setPixelSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setState:(int)arg1;
 - (void)setTextureFormat:(unsigned int)arg1;
 - (void)setWrapMode:(int)arg1;
-- (struct CGSize { double x1; double x2; })size;
+- (struct CGSize { float x1; float x2; })size;
 - (int)state;
 - (unsigned int)textureFormat;
 - (int)wrapMode;

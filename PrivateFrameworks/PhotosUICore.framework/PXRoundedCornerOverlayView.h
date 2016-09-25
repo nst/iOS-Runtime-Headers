@@ -3,8 +3,8 @@
  */
 
 @interface PXRoundedCornerOverlayView : UIImageView {
-    double  _cornerRadius;
-    double  _displayScale;
+    float  _cornerRadius;
+    float  _displayScale;
     BOOL  _isPerformingChanges;
     BOOL  _isPerformingUpdates;
     struct { 
@@ -13,8 +13,8 @@
     UIColor * _overlayColor;
 }
 
-@property (nonatomic, readonly) double cornerRadius;
-@property (nonatomic, readonly) double displayScale;
+@property (nonatomic, readonly) float cornerRadius;
+@property (nonatomic, readonly) float displayScale;
 @property (nonatomic, readonly) UIColor *overlayColor;
 
 - (void).cxx_destruct;

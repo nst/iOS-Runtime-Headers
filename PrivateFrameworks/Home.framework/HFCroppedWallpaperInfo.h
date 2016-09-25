@@ -4,23 +4,23 @@
 
 @interface HFCroppedWallpaperInfo : NSObject <NSCopying> {
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _center;
-    double  _scale;
+    float  _scale;
     int  _source;
 }
 
-@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } center;
-@property (nonatomic, readonly) double scale;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } center;
+@property (nonatomic, readonly) float scale;
 @property (nonatomic, readonly) int source;
 
-- (struct CGPoint { double x1; double x2; })center;
+- (struct CGPoint { float x1; float x2; })center;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)initWithDictionary:(id)arg1;
-- (id)initWithSource:(int)arg1 center:(struct CGPoint { double x1; double x2; })arg2 scale:(float)arg3;
+- (id)initWithSource:(int)arg1 center:(struct CGPoint { float x1; float x2; })arg2 scale:(float)arg3;
 - (BOOL)isEqual:(id)arg1;
 - (float)scale;
 - (int)source;

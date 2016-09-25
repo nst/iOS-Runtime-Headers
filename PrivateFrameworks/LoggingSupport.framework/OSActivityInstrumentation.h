@@ -28,11 +28,11 @@
 @property (retain) NSObject<OS_xpc_object> *stream;
 @property int timeWindow;
 
-+ (BOOL)blessProcess:(int)arg1 processID:(unsigned int)arg2;
++ (BOOL)blessProcess:(int)arg1 processID:(unsigned long long)arg2;
 + (void)evaluateBuffer:(id)arg1 usingPredicate:(id)arg2 withBlock:(id /* block */)arg3;
 
 - (void).cxx_destruct;
-- (BOOL)addProcess:(int)arg1 withProcessID:(unsigned int)arg2;
+- (BOOL)addProcess:(int)arg1 withProcessID:(unsigned long long)arg2;
 - (id)capturedData;
 - (id)createMessage;
 - (id)daemon_conn;

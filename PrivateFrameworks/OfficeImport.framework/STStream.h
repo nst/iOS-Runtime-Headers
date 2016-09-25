@@ -25,7 +25,7 @@
 - (id)readString16:(unsigned int)arg1;
 - (unsigned short)readUInt16;
 - (unsigned int)readUInt32;
-- (unsigned int)readUInt64;
+- (unsigned long long)readUInt64;
 - (unsigned char)readUInt8;
 - (void)releaseCStream;
 - (void)seek:(int)arg1 fromOrigin:(int)arg2;

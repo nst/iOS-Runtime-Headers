@@ -29,9 +29,9 @@
 
 - (unsigned int)GLDataBufferEntrySize;
 - (char *)GLDataPointer;
-- (struct { double x1; double x2; })GLPoint2DForAttribute:(id)arg1 atIndex:(unsigned int)arg2;
-- (struct { double x1; double x2; double x3; })GLPoint3DForAttribute:(id)arg1 atIndex:(unsigned int)arg2;
-- (struct { double x1; double x2; double x3; double x4; })GLPoint4DForAttribute:(id)arg1 atIndex:(unsigned int)arg2;
+- (struct { float x1; float x2; })GLPoint2DForAttribute:(id)arg1 atIndex:(unsigned int)arg2;
+- (struct { float x1; float x2; float x3; })GLPoint3DForAttribute:(id)arg1 atIndex:(unsigned int)arg2;
+- (struct { float x1; float x2; float x3; float x4; })GLPoint4DForAttribute:(id)arg1 atIndex:(unsigned int)arg2;
 - (float)GLfloatForAttribute:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)addAllIndexesNeedUpdate;
 - (void)addIndexNeedsUpdate:(int)arg1;
@@ -48,9 +48,9 @@
 - (void)p_setupGLDataBufferIfNecessary;
 - (void)setCGFloat:(float)arg1 forAttribute:(id)arg2 atIndex:(unsigned int)arg3;
 - (void)setCurrentBufferIndex:(unsigned int)arg1;
-- (void)setGLPoint2D:(struct { double x1; double x2; })arg1 forAttribute:(id)arg2 atIndex:(unsigned int)arg3;
-- (void)setGLPoint3D:(struct { double x1; double x2; double x3; })arg1 forAttribute:(id)arg2 atIndex:(unsigned int)arg3;
-- (void)setGLPoint4D:(struct { double x1; double x2; double x3; double x4; })arg1 forAttribute:(id)arg2 atIndex:(unsigned int)arg3;
+- (void)setGLPoint2D:(struct { float x1; float x2; })arg1 forAttribute:(id)arg2 atIndex:(unsigned int)arg3;
+- (void)setGLPoint3D:(struct { float x1; float x2; float x3; })arg1 forAttribute:(id)arg2 atIndex:(unsigned int)arg3;
+- (void)setGLPoint4D:(struct { float x1; float x2; float x3; float x4; })arg1 forAttribute:(id)arg2 atIndex:(unsigned int)arg3;
 - (void)setGLfloat:(float)arg1 forAttribute:(id)arg2 atIndex:(unsigned int)arg3;
 - (void)swapGLDataBuffers;
 - (void)updateDataBufferIfNecessary;

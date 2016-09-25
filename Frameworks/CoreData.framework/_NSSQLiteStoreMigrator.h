@@ -30,8 +30,8 @@
 
 - (void)_addEntityMigration:(id)arg1 toTableMigrationForRootEntity:(id)arg2 tableMigrationType:(int)arg3;
 - (void)_addReindexedProperty:(id)arg1 toSetForEntity:(id)arg2;
-- (int)_countNullsInColumn:(id)arg1 forEntity:(id)arg2;
-- (int)_countUnreferencedPrimaryKeysForEntity:(id)arg1 inForeignKeyColumnName:(id)arg2 fromTable:(id)arg3;
+- (long long)_countNullsInColumn:(id)arg1 forEntity:(id)arg2;
+- (long long)_countUnreferencedPrimaryKeysForEntity:(id)arg1 inForeignKeyColumnName:(id)arg2 fromTable:(id)arg3;
 - (void)_determinePropertyDependenciesOnIDForEntity:(id)arg1;
 - (void)_determineReindexedEntitiesAndAffectedProperties;
 - (void)_disconnect;

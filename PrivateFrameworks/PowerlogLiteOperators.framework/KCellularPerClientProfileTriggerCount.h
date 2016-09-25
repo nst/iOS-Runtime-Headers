@@ -7,13 +7,13 @@
         unsigned int timestamp : 1; 
         unsigned int triggerCount : 1; 
     }  _has;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
     unsigned int  _triggerCount;
 }
 
 @property (nonatomic) BOOL hasTimestamp;
 @property (nonatomic) BOOL hasTriggerCount;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 @property (nonatomic) unsigned int triggerCount;
 
 - (void)copyTo:(id)arg1;
@@ -28,9 +28,9 @@
 - (BOOL)readFrom:(id)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
 - (void)setHasTriggerCount:(BOOL)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (void)setTriggerCount:(unsigned int)arg1;
-- (unsigned int)timestamp;
+- (unsigned long long)timestamp;
 - (unsigned int)triggerCount;
 - (void)writeTo:(id)arg1;
 

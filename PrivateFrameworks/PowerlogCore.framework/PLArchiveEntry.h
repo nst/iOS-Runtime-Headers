@@ -11,7 +11,7 @@
 @property (nonatomic, readonly) NSString *crPath;
 @property (readonly) NSDate *endDate;
 @property (readonly) BOOL fullMode;
-@property (nonatomic) int mainDBSizeAtStart;
+@property (nonatomic) long long mainDBSizeAtStart;
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic) unsigned int numAttempts;
 @property (nonatomic, readonly) NSString *path;
@@ -38,13 +38,13 @@
 - (id)initWithMetadata:(id)arg1;
 - (id)initWithStartDate:(id)arg1 endDate:(id)arg2 andUUID:(id)arg3;
 - (void)log;
-- (int)mainDBSizeAtStart;
+- (long long)mainDBSizeAtStart;
 - (id)name;
 - (unsigned int)numAttempts;
 - (id)path;
 - (BOOL)removed;
 - (id)removedDate;
-- (void)setMainDBSizeAtStart:(int)arg1;
+- (void)setMainDBSizeAtStart:(long long)arg1;
 - (void)setNumAttempts:(unsigned int)arg1;
 - (void)setRemovedDate:(id)arg1;
 - (void)setStage:(int)arg1;

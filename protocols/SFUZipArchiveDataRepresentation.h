@@ -5,7 +5,7 @@
 
 @required
 
-- (<OISFUBufferedInputStream> *)bufferedInputStreamWithOffset:(int)arg1 length:(int)arg2;
-- (<SFUInputStream> *)inputStreamWithOffset:(int)arg1 length:(int)arg2;
+- (<OISFUBufferedInputStream> *)bufferedInputStreamWithOffset:(long long)arg1 length:(long long)arg2;
+- (<SFUInputStream> *)inputStreamWithOffset:(long long)arg1 length:(long long)arg2;
 
 @end

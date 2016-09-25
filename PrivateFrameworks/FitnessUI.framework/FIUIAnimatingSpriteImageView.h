@@ -14,14 +14,14 @@
 @property (nonatomic, retain) UIImage *spriteImage;
 
 - (void).cxx_destruct;
-- (struct CGSize { double x1; double x2; })_spriteFrameSize;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGSize { float x1; float x2; })_spriteFrameSize;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isAnimating;
 - (void)layoutSubviews;
 - (void)setSpriteColumnCount:(int)arg1;
 - (void)setSpriteFrameCount:(int)arg1;
 - (void)setSpriteImage:(id)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (int)spriteColumnCount;
 - (int)spriteFrameCount;
 - (id)spriteImage;

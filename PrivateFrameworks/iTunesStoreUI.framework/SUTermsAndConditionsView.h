@@ -7,7 +7,7 @@
     SUClientInterface * _clientInterface;
     <SUTermsAndConditionsViewDelegate> * _delegate;
     BOOL  _hideAccountButton;
-    double  _rightMargin;
+    float  _rightMargin;
     int  _style;
     SULinkControl * _termsAndConditionsControl;
 }
@@ -15,7 +15,7 @@
 @property (nonatomic, retain) SUClientInterface *clientInterface;
 @property (nonatomic) <SUTermsAndConditionsViewDelegate> *delegate;
 @property (nonatomic) BOOL hideAccountButton;
-@property (nonatomic) double rightMargin;
+@property (nonatomic) float rightMargin;
 @property (nonatomic) int style;
 
 - (void)_accountsChangedNotification:(id)arg1;
@@ -32,7 +32,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (BOOL)hideAccountButton;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (float)rightMargin;
 - (void)setClientInterface:(id)arg1;

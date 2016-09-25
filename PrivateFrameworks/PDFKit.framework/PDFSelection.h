@@ -25,7 +25,7 @@
 - (id)attributedStringScaled:(float)arg1;
 - (BOOL)beginsAndEndsOnWordBoundaries;
 - (id)boundsArrayForPage:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundsForPage:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundsForPage:(id)arg1;
 - (struct CGPDFSelection { }*)cgSelectionForPage:(id)arg1;
 - (id)cgSelectionPages;
 - (struct __CFArray { }*)cgSelections;
@@ -42,7 +42,7 @@
 - (void)drawForPage:(id)arg1 withBox:(int)arg2 active:(BOOL)arg3 inContext:(struct CGContext { }*)arg4;
 - (void)extendSelectionAtEnd:(int)arg1;
 - (void)extendSelectionAtStart:(int)arg1;
-- (struct CGPoint { double x1; double x2; })firstCharCenter;
+- (struct CGPoint { float x1; float x2; })firstCharCenter;
 - (id)firstPage;
 - (BOOL)forceBreaks;
 - (bool)hasHandles;
@@ -54,7 +54,7 @@
 - (id)initWithDocument:(id)arg1;
 - (BOOL)isEmpty;
 - (id)lastPage;
-- (struct CGPoint { double x1; double x2; })leftMostCharCenter;
+- (struct CGPoint { float x1; float x2; })leftMostCharCenter;
 - (void)normalize;
 - (unsigned int)numberOfTextRangesOnPage:(id)arg1;
 - (id)pages;
@@ -62,7 +62,7 @@
 - (unsigned int)pdfKitIndexOfLastCharacterOnPage:(id)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })previewRangeAtIndex:(unsigned int)arg1 onPage:(id)arg2;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })rangeAtIndex:(unsigned int)arg1 onPage:(id)arg2;
-- (struct CGPoint { double x1; double x2; })rightMostCharCenter;
+- (struct CGPoint { float x1; float x2; })rightMostCharCenter;
 - (id)rtfdData;
 - (id)selectionsByLine;
 - (void)setActiveColor:(id)arg1;

@@ -5,107 +5,107 @@
 @interface TSCH3DTransform : NSObject <NSCopying> {
     struct tvec3<float> { 
         union { 
-            double x; 
-            double r; 
-            double s; 
+            float x; 
+            float r; 
+            float s; 
         } ; 
         union { 
-            double y; 
-            double g; 
-            double t; 
+            float y; 
+            float g; 
+            float t; 
         } ; 
         union { 
-            double z; 
-            double b; 
-            double p; 
+            float z; 
+            float b; 
+            float p; 
         } ; 
     }  mCenter;
     BOOL  mDirty;
     struct tmat4x4<float> { 
         struct tvec4<float> { 
             union { 
-                double x; 
-                double r; 
-                double s; 
+                float x; 
+                float r; 
+                float s; 
             } ; 
             union { 
-                double y; 
-                double g; 
-                double t; 
+                float y; 
+                float g; 
+                float t; 
             } ; 
             union { 
-                double z; 
-                double b; 
-                double p; 
+                float z; 
+                float b; 
+                float p; 
             } ; 
             union { 
-                double w; 
-                double a; 
-                double q; 
+                float w; 
+                float a; 
+                float q; 
             } ; 
         } value[4]; 
     }  mMatrix;
     struct tquat<float> { 
-        double x; 
-        double y; 
-        double z; 
-        double w; 
+        float x; 
+        float y; 
+        float z; 
+        float w; 
     }  mRotation;
     struct tvec3<float> { 
         union { 
-            double x; 
-            double r; 
-            double s; 
+            float x; 
+            float r; 
+            float s; 
         } ; 
         union { 
-            double y; 
-            double g; 
-            double t; 
+            float y; 
+            float g; 
+            float t; 
         } ; 
         union { 
-            double z; 
-            double b; 
-            double p; 
+            float z; 
+            float b; 
+            float p; 
         } ; 
     }  mScaleFactor;
     struct tvec3<float> { 
         union { 
-            double x; 
-            double r; 
-            double s; 
+            float x; 
+            float r; 
+            float s; 
         } ; 
         union { 
-            double y; 
-            double g; 
-            double t; 
+            float y; 
+            float g; 
+            float t; 
         } ; 
         union { 
-            double z; 
-            double b; 
-            double p; 
+            float z; 
+            float b; 
+            float p; 
         } ; 
     }  mTranslation;
 }
 
-@property (nonatomic) struct tvec3<float> { union { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; union { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; union { double x_3_1_1; double x_3_1_2; double x_3_1_3; } x3; } center;
-@property (nonatomic) struct tquat<float> { double x1; double x2; double x3; double x4; } rotation;
-@property (nonatomic) struct tvec3<float> { union { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; union { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; union { double x_3_1_1; double x_3_1_2; double x_3_1_3; } x3; } scaleFactor;
-@property (nonatomic) struct tvec3<float> { union { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; union { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; union { double x_3_1_1; double x_3_1_2; double x_3_1_3; } x3; } translation;
+@property (nonatomic) struct tvec3<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; } center;
+@property (nonatomic) struct tquat<float> { float x1; float x2; float x3; float x4; } rotation;
+@property (nonatomic) struct tvec3<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; } scaleFactor;
+@property (nonatomic) struct tvec3<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; } translation;
 
 + (id)transform;
 
 - (id).cxx_construct;
-- (struct Transform { struct tvec3<float> { union { double x_1_2_1; double x_1_2_2; double x_1_2_3; } x_1_1_1; union { double x_2_2_1; double x_2_2_2; double x_2_2_3; } x_1_1_2; union { double x_3_2_1; double x_3_2_2; double x_3_2_3; } x_1_1_3; } x1; struct tvec3<float> { union { double x_1_2_1; double x_1_2_2; double x_1_2_3; } x_2_1_1; union { double x_2_2_1; double x_2_2_2; double x_2_2_3; } x_2_1_2; union { double x_3_2_1; double x_3_2_2; double x_3_2_3; } x_2_1_3; } x2; struct tquat<float> { double x_3_1_1; double x_3_1_2; double x_3_1_3; double x_3_1_4; } x3; struct tvec3<float> { union { double x_1_2_1; double x_1_2_2; double x_1_2_3; } x_4_1_1; union { double x_2_2_1; double x_2_2_2; double x_2_2_3; } x_4_1_2; union { double x_3_2_1; double x_3_2_2; double x_3_2_3; } x_4_1_3; } x4; bool x5; })asTSCH3DCPPTransform;
-- (struct tvec3<float> { union { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; union { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; union { double x_3_1_1; double x_3_1_2; double x_3_1_3; } x3; })center;
+- (struct Transform { struct tvec3<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_1_1_2; union { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_1_1_3; } x1; struct tvec3<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_2_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_2_1_2; union { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_2_1_3; } x2; struct tquat<float> { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; struct tvec3<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_4_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_4_1_2; union { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_4_1_3; } x4; bool x5; })asTSCH3DCPPTransform;
+- (struct tvec3<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; })center;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
-- (struct tquat<float> { double x1; double x2; double x3; double x4; })rotation;
-- (struct tvec3<float> { union { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; union { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; union { double x_3_1_1; double x_3_1_2; double x_3_1_3; } x3; })scaleFactor;
-- (void)setCenter:(struct tvec3<float> { union { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; union { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; union { double x_3_1_1; double x_3_1_2; double x_3_1_3; } x3; })arg1;
-- (void)setRotation:(struct tquat<float> { double x1; double x2; double x3; double x4; })arg1;
-- (void)setScaleFactor:(struct tvec3<float> { union { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; union { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; union { double x_3_1_1; double x_3_1_2; double x_3_1_3; } x3; })arg1;
-- (void)setTranslation:(struct tvec3<float> { union { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; union { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; union { double x_3_1_1; double x_3_1_2; double x_3_1_3; } x3; })arg1;
-- (const struct tmat4x4<float> { struct tvec4<float> { union { double x_1_2_1; double x_1_2_2; double x_1_2_3; } x_1_1_1; union { double x_2_2_1; double x_2_2_2; double x_2_2_3; } x_1_1_2; union { double x_3_2_1; double x_3_2_2; double x_3_2_3; } x_1_1_3; union { double x_4_2_1; double x_4_2_2; double x_4_2_3; } x_1_1_4; } x1[4]; }*)transform;
-- (struct tvec3<float> { union { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; union { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; union { double x_3_1_1; double x_3_1_2; double x_3_1_3; } x3; })translation;
+- (struct tquat<float> { float x1; float x2; float x3; float x4; })rotation;
+- (struct tvec3<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; })scaleFactor;
+- (void)setCenter:(struct tvec3<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; })arg1;
+- (void)setRotation:(struct tquat<float> { float x1; float x2; float x3; float x4; })arg1;
+- (void)setScaleFactor:(struct tvec3<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; })arg1;
+- (void)setTranslation:(struct tvec3<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; })arg1;
+- (const struct tmat4x4<float> { struct tvec4<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_1_1_2; union { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_1_1_3; union { float x_4_2_1; float x_4_2_2; float x_4_2_3; } x_1_1_4; } x1[4]; }*)transform;
+- (struct tvec3<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; })translation;
 
 @end

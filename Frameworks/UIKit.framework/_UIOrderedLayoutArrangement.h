@@ -10,9 +10,9 @@
     BOOL  _itemFittingSizeChanged;
     BOOL  _itemOrderingChanged;
     NSMapTable * _multilineTextWidthDisambiguationConstraints;
-    double  _proportionalFillDenominator;
+    float  _proportionalFillDenominator;
     NSMapTable * _relatedDimensionConstraints;
-    double  _spacing;
+    float  _spacing;
     NSMapTable * _spacingOrCenteringGuides;
 }
 
@@ -28,7 +28,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL layoutFillsCanvas;
 @property (nonatomic) BOOL layoutUsesCanvasMarginsWhenFilling;
-@property (nonatomic) double spacing;
+@property (nonatomic) float spacing;
 @property (readonly) Class superclass;
 
 + (Class)_configurationHistoryClass;

@@ -4,33 +4,33 @@
 
 @interface BWIrisDiscontinuity : NSObject {
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _discontinuityTime;
     NSArray * _recipe;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _targetFrameDuration;
     NSArray * _timeSkews;
 }
 
-@property (readonly) struct { int x1; int x2; unsigned int x3; int x4; } time;
+@property (readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } time;
 @property (nonatomic, retain) NSArray *timeSkews;
 
 + (int)maximumNumberOfConsecutiveDroppedFrames;
 
-- (int)_offsetIndexFromDiscontinuityForTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
-- (BOOL)containsVideoBufferTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
+- (int)_offsetIndexFromDiscontinuityForTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (BOOL)containsVideoBufferTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)dealloc;
-- (id)initWithTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1 duration:(struct { int x1; int x2; unsigned int x3; int x4; })arg2 targetFrameDuration:(struct { int x1; int x2; unsigned int x3; int x4; })arg3 timeSkews:(id)arg4;
+- (id)initWithTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 duration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 targetFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3 timeSkews:(id)arg4;
 - (void)setTimeSkews:(id)arg1;
-- (BOOL)shouldKeepBufferWithTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1 nextAdjustedTimeInOut:(struct { int x1; int x2; unsigned int x3; int x4; }*)arg2;
-- (struct { int x1; int x2; unsigned int x3; int x4; })time;
+- (BOOL)shouldKeepBufferWithTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 nextAdjustedTimeInOut:(struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg2;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })time;
 - (id)timeSkews;
 
 @end

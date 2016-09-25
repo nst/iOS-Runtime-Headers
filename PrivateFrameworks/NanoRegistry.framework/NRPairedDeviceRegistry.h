@@ -8,7 +8,7 @@
     int  _demoModeNotifyToken;
     NRMutableDeviceCollection * _deviceCollection;
     NSMutableArray * _deviceCollectionUpdateBlocks;
-    unsigned int  _devicesUpdateCounter;
+    unsigned long long  _devicesUpdateCounter;
     int  _devicesUpdateCounterNotifyToken;
     NSMutableArray * _finishedPairingSemaphores;
     BOOL  _hasSecurePropertyEntitlement;
@@ -42,7 +42,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NRMutableDeviceCollection *deviceCollection;
 @property (nonatomic, retain) NSMutableArray *deviceCollectionUpdateBlocks;
-@property (nonatomic) unsigned int devicesUpdateCounter;
+@property (nonatomic) unsigned long long devicesUpdateCounter;
 @property (nonatomic) int devicesUpdateCounterNotifyToken;
 @property (nonatomic, retain) NSMutableArray *finishedPairingSemaphores;
 @property (nonatomic) BOOL hasSecurePropertyEntitlement;
@@ -144,14 +144,14 @@
 - (id)deviceForPairingID:(id)arg1;
 - (id)deviceIDForIDSDevice:(id)arg1;
 - (id)deviceIDForNRDevice:(id)arg1;
-- (unsigned int)devicesUpdateCounter;
+- (unsigned long long)devicesUpdateCounter;
 - (int)devicesUpdateCounterNotifyToken;
 - (void)endDiscovery;
 - (void)enterCompatibilityState:(unsigned short)arg1 forDevice:(id)arg2;
 - (id)finishedPairingSemaphores;
 - (void)fireAllDeviceCollectionBlocksWithStatus:(BOOL)arg1;
 - (void)fireAllInitialDeviceCollectionBlocksWith:(BOOL)arg1;
-- (void)fireDeviceCollectionBlocksUpUntilIndex:(unsigned int)arg1;
+- (void)fireDeviceCollectionBlocksUpUntilIndex:(unsigned long long)arg1;
 - (id)getActivePairedDevice;
 - (id)getAllDevices;
 - (id)getDevices;
@@ -198,7 +198,7 @@
 - (void)parseDiffForNRDeviceUpdatesAndPairUnpair:(id)arg1 hasSecurePropertyEntitlement:(BOOL)arg2 shouldBeQuiet:(BOOL)arg3;
 - (void)postNotification:(id)arg1 forDeviceID:(id)arg2 withUserInfo:(id)arg3;
 - (id)queue;
-- (unsigned int)readNotifyToken:(int)arg1;
+- (unsigned long long)readNotifyToken:(int)arg1;
 - (int)registerNotifyTokenWithName:(id)arg1 withBlock:(id /* block */)arg2;
 - (int)registerNotifyTokenWithName:(id)arg1 withQueue:(id)arg2 withBlock:(id /* block */)arg3;
 - (void)requestDeviceCollectionDiffWithForce:(BOOL)arg1;
@@ -222,7 +222,7 @@
 - (void)setDemoModeNotifyToken:(int)arg1;
 - (void)setDeviceCollection:(id)arg1;
 - (void)setDeviceCollectionUpdateBlocks:(id)arg1;
-- (void)setDevicesUpdateCounter:(unsigned int)arg1;
+- (void)setDevicesUpdateCounter:(unsigned long long)arg1;
 - (void)setDevicesUpdateCounterNotifyToken:(int)arg1;
 - (void)setFinishedPairingSemaphores:(id)arg1;
 - (void)setHasSecurePropertyEntitlement:(BOOL)arg1;

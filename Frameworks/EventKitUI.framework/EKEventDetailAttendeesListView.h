@@ -31,13 +31,13 @@
 @property (nonatomic) UIViewController *viewController;
 
 - (void).cxx_destruct;
-- (void)_drawColumnOfStrings:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 startingAtPoint:(struct CGPoint { double x1; double x2; })arg3 givenWidth:(float)arg4;
+- (void)_drawColumnOfStrings:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 startingAtPoint:(struct CGPoint { float x1; float x2; })arg3 givenWidth:(float)arg4;
 - (float)_heightForGroupOfAttendeeNames:(id)arg1;
 - (float)_offsetFromOffsetToBaseline:(float)arg1 withFont:(id)arg2;
 - (id)accepted;
 - (id)declined;
-- (void)drawInvitees:(id)arg1 withStatus:(id)arg2 startingAtPoint:(struct CGPoint { double x1; double x2; })arg3 givenWidth:(float)arg4;
-- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)drawInvitees:(id)arg1 withStatus:(id)arg2 startingAtPoint:(struct CGPoint { float x1; float x2; })arg3 givenWidth:(float)arg4;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)groupsNames;
 - (id)highlightedTextColor;
 - (BOOL)isHighlighted;
@@ -54,7 +54,7 @@
 - (void)setUngrouped:(id)arg1;
 - (void)setViewController:(id)arg1;
 - (void)setup;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)textColor;
 - (id)ungrouped;
 - (id)viewController;

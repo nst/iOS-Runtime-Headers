@@ -24,8 +24,8 @@
 - (void)_completeWithResponse:(id)arg1;
 - (void)_completeWithResponse:(id)arg1 error:(id)arg2;
 - (void)dealloc;
-- (void)handleFailureOfRequest:(id)arg1 error:(id)arg2 atTime:(unsigned int)arg3;
-- (void)handleSiriResponse:(id)arg1 atTime:(unsigned int)arg2;
+- (void)handleFailureOfRequest:(id)arg1 error:(id)arg2 atTime:(unsigned long long)arg3;
+- (void)handleSiriResponse:(id)arg1 atTime:(unsigned long long)arg2;
 - (id)init;
 - (id)initWithRequest:(id)arg1 taskDeliverer:(id)arg2 usageResultListener:(id)arg3;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;

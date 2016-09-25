@@ -7,7 +7,7 @@
     NSString * _productType;
     NSNumber * _sourceID;
     NSString * _sourceVersion;
-    int  _syncProvenance;
+    long long  _syncProvenance;
     NSString * _systemBuild;
     NSString * _timeZoneName;
 }
@@ -16,11 +16,11 @@
 @property (nonatomic, copy) NSString *productType;
 @property (nonatomic, retain) NSNumber *sourceID;
 @property (nonatomic, copy) NSString *sourceVersion;
-@property (nonatomic) int syncProvenance;
+@property (nonatomic) long long syncProvenance;
 @property (nonatomic, copy) NSString *systemBuild;
 @property (nonatomic, copy) NSString *timeZoneName;
 
-+ (id)dataProvenanceWithSyncProvenance:(int)arg1 productType:(id)arg2 systemBuild:(id)arg3 sourceVersion:(id)arg4 timeZoneName:(id)arg5 sourceID:(id)arg6 deviceID:(id)arg7;
++ (id)dataProvenanceWithSyncProvenance:(long long)arg1 productType:(id)arg2 systemBuild:(id)arg3 sourceVersion:(id)arg4 timeZoneName:(id)arg5 sourceID:(id)arg6 deviceID:(id)arg7;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
@@ -37,12 +37,12 @@
 - (void)setProductType:(id)arg1;
 - (void)setSourceID:(id)arg1;
 - (void)setSourceVersion:(id)arg1;
-- (void)setSyncProvenance:(int)arg1;
+- (void)setSyncProvenance:(long long)arg1;
 - (void)setSystemBuild:(id)arg1;
 - (void)setTimeZoneName:(id)arg1;
 - (id)sourceID;
 - (id)sourceVersion;
-- (int)syncProvenance;
+- (long long)syncProvenance;
 - (id)systemBuild;
 - (id)timeZoneName;
 

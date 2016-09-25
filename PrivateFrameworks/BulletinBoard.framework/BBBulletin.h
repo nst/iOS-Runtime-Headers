@@ -208,7 +208,7 @@
 - (id)categoryID;
 - (BOOL)clearable;
 - (BOOL)coalescesWhenLocked;
-- (struct CGSize { double x1; double x2; })composedAttachmentImageSizeWithObserver:(id)arg1;
+- (struct CGSize { float x1; float x2; })composedAttachmentImageSizeWithObserver:(id)arg1;
 - (id)composedAttachmentImageWithObserver:(id)arg1;
 - (id)content;
 - (id)context;

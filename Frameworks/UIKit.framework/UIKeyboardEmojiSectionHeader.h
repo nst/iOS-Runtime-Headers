@@ -6,9 +6,9 @@
     UILabel * _emojiSectionHeader;
 }
 
-@property (nonatomic) double headerFontSize;
+@property (nonatomic) float headerFontSize;
 @property (nonatomic, copy) NSString *headerName;
-@property (nonatomic) double headerOpacity;
+@property (nonatomic) float headerOpacity;
 @property (nonatomic, copy) UIColor *headerTextColor;
 @property (nonatomic) BOOL useVibrantBlend;
 
@@ -17,7 +17,7 @@
 - (id)headerName;
 - (float)headerOpacity;
 - (id)headerTextColor;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (void)setHeaderFontSize:(float)arg1;
 - (void)setHeaderName:(id)arg1;

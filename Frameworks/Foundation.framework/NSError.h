@@ -303,7 +303,7 @@
 + (id)brc_errorDocumentIsNoLongerSharedAtURL:(id)arg1;
 + (id)brc_errorDocumentIsNotShared;
 + (id)brc_errorDocumentIsNotSharedAtURL:(id)arg1;
-+ (id)brc_errorDocumentWithFilename:(id)arg1 size:(int)arg2 isTooLargeToUpload:(int)arg3;
++ (id)brc_errorDocumentWithFilename:(id)arg1 size:(long long)arg2 isTooLargeToUpload:(long long)arg3;
 + (id)brc_errorDriveDisabledOrAppLibraryDisabled;
 + (id)brc_errorInvalidParameter:(id)arg1 value:(id)arg2;
 + (id)brc_errorItemNotFound:(id)arg1;

@@ -6,8 +6,8 @@
 
 + (int)estimatedEncodedSize;
 
-- (id)codableRepresentationForPersistentID:(int)arg1 row:(struct HDSQLiteRow { }*)arg2 error:(id*)arg3;
-- (id)objectForPersistentID:(int)arg1 row:(struct HDSQLiteRow { }*)arg2 error:(id*)arg3;
+- (id)codableRepresentationForPersistentID:(long long)arg1 row:(struct HDSQLiteRow { }*)arg2 error:(id*)arg3;
+- (id)objectForPersistentID:(long long)arg1 row:(struct HDSQLiteRow { }*)arg2 error:(id*)arg3;
 - (id)orderedProperties;
 
 @end

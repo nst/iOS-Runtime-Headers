@@ -3,26 +3,26 @@
  */
 
 @interface UISpringTimingParameters : NSObject <UITimingCurveProvider> {
-    double  _damping;
-    double  _dampingRatio;
+    float  _damping;
+    float  _dampingRatio;
     BOOL  _implicitDuration;
     struct CGVector { 
-        double dx; 
-        double dy; 
+        float dx; 
+        float dy; 
     }  _initialVelocity;
-    double  _mass;
-    double  _stiffness;
+    float  _mass;
+    float  _stiffness;
 }
 
 @property (nonatomic, readonly) UICubicTimingParameters *cubicTimingParameters;
-@property (nonatomic) double damping;
-@property (nonatomic, readonly) double dampingRatio;
+@property (nonatomic) float damping;
+@property (nonatomic, readonly) float dampingRatio;
 @property (nonatomic, readonly) BOOL implicitDuration;
-@property (nonatomic, readonly) struct CGVector { double x1; double x2; } initialVelocity;
-@property (nonatomic) double mass;
+@property (nonatomic, readonly) struct CGVector { float x1; float x2; } initialVelocity;
+@property (nonatomic) float mass;
 @property (nonatomic, readonly) double settlingDuration;
 @property (nonatomic, readonly) UISpringTimingParameters *springTimingParameters;
-@property (nonatomic) double stiffness;
+@property (nonatomic) float stiffness;
 @property (nonatomic, readonly) int timingCurveType;
 
 - (id)_mediaTimingFunction;
@@ -37,9 +37,9 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDampingRatio:(float)arg1;
-- (id)initWithDampingRatio:(float)arg1 initialVelocity:(struct CGVector { double x1; double x2; })arg2;
-- (id)initWithMass:(float)arg1 stiffness:(float)arg2 damping:(float)arg3 initialVelocity:(struct CGVector { double x1; double x2; })arg4;
-- (struct CGVector { double x1; double x2; })initialVelocity;
+- (id)initWithDampingRatio:(float)arg1 initialVelocity:(struct CGVector { float x1; float x2; })arg2;
+- (id)initWithMass:(float)arg1 stiffness:(float)arg2 damping:(float)arg3 initialVelocity:(struct CGVector { float x1; float x2; })arg4;
+- (struct CGVector { float x1; float x2; })initialVelocity;
 - (float)mass;
 - (void)setDamping:(float)arg1;
 - (void)setMass:(float)arg1;

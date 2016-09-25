@@ -22,7 +22,7 @@
 @property (nonatomic) unsigned int shieldEnumValue;
 @property (nonatomic, readonly) NSString *shieldText;
 @property (nonatomic, retain) NSString *shieldText;
-@property (nonatomic, readonly) int shieldType;
+@property (nonatomic, readonly) long long shieldType;
 @property (readonly) Class superclass;
 
 - (void)copyTo:(id)arg1;
@@ -45,7 +45,7 @@
 - (id)shieldColorString;
 - (unsigned int)shieldEnumValue;
 - (id)shieldText;
-- (int)shieldType;
+- (long long)shieldType;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -84,14 +84,14 @@
 + (id)allServices;
 + (id)allServicesNonBlocking;
 + (id)connectedServices;
-+ (id)connectedServicesWithCapability:(unsigned int)arg1;
++ (id)connectedServicesWithCapability:(unsigned long long)arg1;
 + (BOOL)iMessageEnabled;
 + (BOOL)mmsEnabled;
-+ (id)operationalServicesWithCapability:(unsigned int)arg1;
++ (id)operationalServicesWithCapability:(unsigned long long)arg1;
 + (Class)serviceClass;
 + (id)serviceWithInternalName:(id)arg1;
 + (id)serviceWithName:(id)arg1;
-+ (id)servicesWithCapability:(unsigned int)arg1;
++ (id)servicesWithCapability:(unsigned long long)arg1;
 + (void)setServiceClass:(Class)arg1;
 + (BOOL)smsEnabled;
 + (id)supportedCountryCodes;

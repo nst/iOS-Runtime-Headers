@@ -9,7 +9,7 @@
     NSError * _finalError;
     CPLResource * _finalResource;
     BOOL  _inMemoryRequest;
-    double  _progress;
+    float  _progress;
 }
 
 @property (nonatomic) BOOL didFinish;
@@ -18,7 +18,7 @@
 @property (nonatomic, retain) NSError *finalError;
 @property (nonatomic, retain) CPLResource *finalResource;
 @property (getter=isInMemoryRequest, nonatomic) BOOL inMemoryRequest;
-@property (nonatomic) double progress;
+@property (nonatomic) float progress;
 
 - (void).cxx_destruct;
 - (id)description;

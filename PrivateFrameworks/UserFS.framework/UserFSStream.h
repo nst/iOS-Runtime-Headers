@@ -5,27 +5,27 @@
 @interface UserFSStream : NSObject {
     NSObject<OS_xpc_object> * _connection;
     UserFSItem * _item;
-    unsigned int  _length;
+    unsigned long long  _length;
 }
 
 @property (nonatomic, retain) NSObject<OS_xpc_object> *connection;
 @property (nonatomic, retain) UserFSItem *item;
-@property (nonatomic) unsigned int length;
+@property (nonatomic) unsigned long long length;
 @property (nonatomic, readonly) BOOL writable;
 
 - (void).cxx_destruct;
 - (void)_cancelConnection;
-- (long)_readBytesUpToLength:(unsigned long)arg1 atOffset:(unsigned int)arg2 toBuffer:(void*)arg3 error:(id*)arg4;
+- (long)_readBytesUpToLength:(unsigned long)arg1 atOffset:(unsigned long long)arg2 toBuffer:(void*)arg3 error:(id*)arg4;
 - (BOOL)closeAndReturnError:(id*)arg1;
 - (id)connection;
 - (void)dealloc;
-- (id)initWithUserFSItem:(id)arg1 length:(unsigned int)arg2 connection:(id)arg3;
+- (id)initWithUserFSItem:(id)arg1 length:(unsigned long long)arg2 connection:(id)arg3;
 - (id)item;
-- (unsigned int)length;
-- (long)readBytesOfLength:(unsigned long)arg1 atOffset:(unsigned int)arg2 toBuffer:(void*)arg3 error:(id*)arg4;
+- (unsigned long long)length;
+- (long)readBytesOfLength:(unsigned long)arg1 atOffset:(unsigned long long)arg2 toBuffer:(void*)arg3 error:(id*)arg4;
 - (void)setConnection:(id)arg1;
 - (void)setItem:(id)arg1;
-- (void)setLength:(unsigned int)arg1;
+- (void)setLength:(unsigned long long)arg1;
 - (BOOL)writable;
 
 @end

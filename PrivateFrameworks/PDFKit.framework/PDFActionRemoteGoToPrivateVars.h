@@ -9,8 +9,8 @@
     unsigned int  lazyInitPageIndex;
     unsigned int  pageIndex;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  point;
     NSURL * url;
 }

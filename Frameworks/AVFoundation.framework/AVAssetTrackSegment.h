@@ -6,47 +6,47 @@
     struct { 
         struct { 
             struct { 
-                int value; 
+                long long value; 
                 int timescale; 
                 unsigned int flags; 
-                int epoch; 
+                long long epoch; 
             } start; 
             struct { 
-                int value; 
+                long long value; 
                 int timescale; 
                 unsigned int flags; 
-                int epoch; 
+                long long epoch; 
             } duration; 
         } source; 
         struct { 
             struct { 
-                int value; 
+                long long value; 
                 int timescale; 
                 unsigned int flags; 
-                int epoch; 
+                long long epoch; 
             } start; 
             struct { 
-                int value; 
+                long long value; 
                 int timescale; 
                 unsigned int flags; 
-                int epoch; 
+                long long epoch; 
             } duration; 
         } target; 
     }  _timeMapping;
 }
 
 @property (getter=isEmpty, nonatomic, readonly) BOOL empty;
-@property (nonatomic, readonly) struct { struct { struct { int x_1_2_1; int x_1_2_2; unsigned int x_1_2_3; int x_1_2_4; } x_1_1_1; struct { int x_2_2_1; int x_2_2_2; unsigned int x_2_2_3; int x_2_2_4; } x_1_1_2; } x1; struct { struct { int x_1_2_1; int x_1_2_2; unsigned int x_1_2_3; int x_1_2_4; } x_2_1_1; struct { int x_2_2_1; int x_2_2_2; unsigned int x_2_2_3; int x_2_2_4; } x_2_1_2; } x2; } timeMapping;
+@property (nonatomic, readonly) struct { struct { struct { long long x_1_2_1; int x_1_2_2; unsigned int x_1_2_3; long long x_1_2_4; } x_1_1_1; struct { long long x_2_2_1; int x_2_2_2; unsigned int x_2_2_3; long long x_2_2_4; } x_1_1_2; } x1; struct { struct { long long x_1_2_1; int x_1_2_2; unsigned int x_1_2_3; long long x_1_2_4; } x_2_1_1; struct { long long x_2_2_1; int x_2_2_2; unsigned int x_2_2_3; long long x_2_2_4; } x_2_1_2; } x2; } timeMapping;
 
 + (BOOL)supportsSecureCoding;
 
-- (id)_initWithTimeMapping:(struct { struct { struct { int x_1_2_1; int x_1_2_2; unsigned int x_1_2_3; int x_1_2_4; } x_1_1_1; struct { int x_2_2_1; int x_2_2_2; unsigned int x_2_2_3; int x_2_2_4; } x_1_1_2; } x1; struct { struct { int x_1_2_1; int x_1_2_2; unsigned int x_1_2_3; int x_1_2_4; } x_2_1_1; struct { int x_2_2_1; int x_2_2_2; unsigned int x_2_2_3; int x_2_2_4; } x_2_1_2; } x2; })arg1;
+- (id)_initWithTimeMapping:(struct { struct { struct { long long x_1_2_1; int x_1_2_2; unsigned int x_1_2_3; long long x_1_2_4; } x_1_1_1; struct { long long x_2_2_1; int x_2_2_2; unsigned int x_2_2_3; long long x_2_2_4; } x_1_1_2; } x1; struct { struct { long long x_1_2_1; int x_1_2_2; unsigned int x_1_2_3; long long x_1_2_4; } x_2_1_1; struct { long long x_2_2_1; int x_2_2_2; unsigned int x_2_2_3; long long x_2_2_4; } x_2_1_2; } x2; })arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEmpty;
 - (BOOL)isEqual:(id)arg1;
-- (struct { struct { struct { int x_1_2_1; int x_1_2_2; unsigned int x_1_2_3; int x_1_2_4; } x_1_1_1; struct { int x_2_2_1; int x_2_2_2; unsigned int x_2_2_3; int x_2_2_4; } x_1_1_2; } x1; struct { struct { int x_1_2_1; int x_1_2_2; unsigned int x_1_2_3; int x_1_2_4; } x_2_1_1; struct { int x_2_2_1; int x_2_2_2; unsigned int x_2_2_3; int x_2_2_4; } x_2_1_2; } x2; })timeMapping;
+- (struct { struct { struct { long long x_1_2_1; int x_1_2_2; unsigned int x_1_2_3; long long x_1_2_4; } x_1_1_1; struct { long long x_2_2_1; int x_2_2_2; unsigned int x_2_2_3; long long x_2_2_4; } x_1_1_2; } x1; struct { struct { long long x_1_2_1; int x_1_2_2; unsigned int x_1_2_3; long long x_1_2_4; } x_2_1_1; struct { long long x_2_2_1; int x_2_2_2; unsigned int x_2_2_3; long long x_2_2_4; } x_2_1_2; } x2; })timeMapping;
 
 @end

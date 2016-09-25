@@ -9,7 +9,7 @@
     MPWeakRef * _libraryWeakRef;
     MPMediaQueryCriteria * _queryCriteria;
     <MPMediaLibraryResultSet> * _resultSet;
-    int  _revision;
+    long long  _revision;
     MPMediaQuerySectionInfo * _sectionInfo;
 }
 

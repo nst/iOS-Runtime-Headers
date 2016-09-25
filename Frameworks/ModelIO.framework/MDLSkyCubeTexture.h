@@ -3,34 +3,34 @@
  */
 
 @interface MDLSkyCubeTexture : MDLTexture {
-    double  _brightness;
-    double  _contrast;
-    double  _exposure;
-    double  _gamma;
-    double  _groundAlbedo;
+    float  _brightness;
+    float  _contrast;
+    float  _exposure;
+    float  _gamma;
+    float  _groundAlbedo;
     struct CGColor { } * _groundColor;
     void _highDynamicRangeCompression;
-    double  _highDynamicRangeCompressionLimit;
-    double  _horizonElevation;
-    double  _saturation;
-    struct SkyDescriptor { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; double x17; struct Detail {} *x18; unsigned int x19; unsigned int x20; double x21; double x22; double x23; double x24; /* Warning: Unrecognized filer type: '}' using 'void*' */ void**x25; } * _sky;
-    double  _sunElevation;
-    double  _turbidity;
-    double  _upperAtmosphereScattering;
+    float  _highDynamicRangeCompressionLimit;
+    float  _horizonElevation;
+    float  _saturation;
+    struct SkyDescriptor { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; float x17; struct Detail {} *x18; unsigned int x19; unsigned int x20; float x21; float x22; float x23; float x24; /* Warning: Unrecognized filer type: '}' using 'void*' */ void**x25; } * _sky;
+    float  _sunElevation;
+    float  _turbidity;
+    float  _upperAtmosphereScattering;
 }
 
-@property (nonatomic) double brightness;
-@property (nonatomic) double contrast;
-@property (nonatomic) double exposure;
-@property (nonatomic) double gamma;
-@property (nonatomic) double groundAlbedo;
+@property (nonatomic) float brightness;
+@property (nonatomic) float contrast;
+@property (nonatomic) float exposure;
+@property (nonatomic) float gamma;
+@property (nonatomic) float groundAlbedo;
 @property (nonatomic) struct CGColor { }*groundColor;
 @property (nonatomic) void highDynamicRangeCompression;
-@property (nonatomic) double horizonElevation;
-@property (nonatomic) double saturation;
-@property (nonatomic) double sunElevation;
-@property (nonatomic) double turbidity;
-@property (nonatomic) double upperAtmosphereScattering;
+@property (nonatomic) float horizonElevation;
+@property (nonatomic) float saturation;
+@property (nonatomic) float sunElevation;
+@property (nonatomic) float turbidity;
+@property (nonatomic) float upperAtmosphereScattering;
 
 - (float)brightness;
 - (float)contrast;

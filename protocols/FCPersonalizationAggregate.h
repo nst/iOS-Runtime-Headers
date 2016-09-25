@@ -7,7 +7,7 @@
 
 - (double)clicks;
 - (double)confidence;
-- (unsigned int)eventCount;
+- (unsigned long long)eventCount;
 - (NSString *)featureKey;
 - (double)impressions;
 - (NSDate *)lastModified;

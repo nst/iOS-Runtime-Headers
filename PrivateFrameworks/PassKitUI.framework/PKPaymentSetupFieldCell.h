@@ -14,7 +14,7 @@
     UIColor * _editableTextFieldTextColor;
     BOOL  _enabled;
     BOOL  _ignoreCurrentValueChangedNotifications;
-    double  _minimumTextLabelWidth;
+    float  _minimumTextLabelWidth;
     PKPaymentSetupField * _paymentSetupField;
     BOOL  _shouldDrawFullWidthSeperator;
     BOOL  _shouldDrawSeperator;
@@ -29,7 +29,7 @@
 @property (nonatomic, copy) UIColor *editableTextFieldTextColor;
 @property (getter=isEnabled, nonatomic) BOOL enabled;
 @property (readonly) unsigned int hash;
-@property (nonatomic) double minimumTextLabelWidth;
+@property (nonatomic) float minimumTextLabelWidth;
 @property (nonatomic, retain) PKPaymentSetupField *paymentSetupField;
 @property (nonatomic) BOOL shouldDrawFullWidthSeperator;
 @property (nonatomic) BOOL shouldDrawSeperator;
@@ -47,7 +47,7 @@
 - (void)_paymentSetupFieldCurrentValueChangedNotification:(id)arg1;
 - (void)_pullCurrentValueFromField;
 - (void)_pushCurrentValueToField;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_separatorFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_separatorFrame;
 - (void)_updateDisplay:(BOOL)arg1;
 - (void)_updateDisplayForFieldTypeDate:(id)arg1;
 - (void)_updateDisplayForFieldTypeText:(id)arg1;
@@ -82,7 +82,7 @@
 - (void)setShouldDrawSeperator:(BOOL)arg1;
 - (BOOL)shouldDrawFullWidthSeperator;
 - (BOOL)shouldDrawSeperator;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementString:(id)arg3;
 - (BOOL)textFieldShouldBeginEditing:(id)arg1;
 - (BOOL)textFieldShouldClear:(id)arg1;

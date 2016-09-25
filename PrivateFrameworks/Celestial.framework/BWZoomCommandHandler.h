@@ -3,50 +3,50 @@
  */
 
 @interface BWZoomCommandHandler : NSObject {
-    double  _appliedZoomFactor;
+    float  _appliedZoomFactor;
     BOOL  _clientCanCompensateForDelay;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _lastFramePTSes;
-    double  _lastRequestedZoomFactor;
-    double  _rampAcceleration;
+    float  _lastRequestedZoomFactor;
+    float  _rampAcceleration;
     BOOL  _rampActive;
     int  _rampCommandID;
-    double  _rampCurrentVelocity;
+    float  _rampCurrentVelocity;
     double  _rampDuration;
-    double  _rampSnapFraction;
-    double  _rampStartFactor;
+    float  _rampSnapFraction;
+    float  _rampStartFactor;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _rampStartTime;
-    double  _rampStartVelocity;
-    double  _rampTargetFactor;
-    double  _rampTargetVelocity;
+    float  _rampStartVelocity;
+    float  _rampTargetFactor;
+    float  _rampTargetVelocity;
     int  _rampType;
-    double  _rampZoomFactorOfInterest;
+    float  _rampZoomFactorOfInterest;
     <BWZoomCompletionDelegate> * _zoomCompletionDelegate;
     BWZoomDelayBuffer * _zoomDelayBuffer;
     BOOL  _zoomFactorServiced;
     int  _zoomLock;
 }
 
-@property (readonly) double appliedZoomFactor;
-@property (readonly) double rampZoomFactorOfInterest;
-@property double requestedZoomFactor;
+@property (readonly) float appliedZoomFactor;
+@property (readonly) float rampZoomFactorOfInterest;
+@property float requestedZoomFactor;
 @property (nonatomic) <BWZoomCompletionDelegate> *zoomCompletionDelegate;
 
 + (void)initialize;
 
 - (void)_activateRampMode:(BOOL)arg1;
-- (float)_zoomFactorForDurationBasedRampAtPTS:(struct { int x1; int x2; unsigned int x3; int x4; })arg1 updateCurrentZoomRampState:(BOOL)arg2;
-- (float)_zoomFactorForRampAtPTS:(struct { int x1; int x2; unsigned int x3; int x4; })arg1 updateCurrentZoomRampState:(BOOL)arg2;
-- (float)_zoomFactorForRateBasedRampAtPTS:(struct { int x1; int x2; unsigned int x3; int x4; })arg1 updateCurrentZoomRampState:(BOOL)arg2;
+- (float)_zoomFactorForDurationBasedRampAtPTS:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 updateCurrentZoomRampState:(BOOL)arg2;
+- (float)_zoomFactorForRampAtPTS:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 updateCurrentZoomRampState:(BOOL)arg2;
+- (float)_zoomFactorForRateBasedRampAtPTS:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 updateCurrentZoomRampState:(BOOL)arg2;
 - (float)appliedZoomFactor;
 - (void)dealloc;
 - (id)init;
@@ -58,7 +58,7 @@
 - (void)setTypicalISPZoomDelay:(unsigned int)arg1 clientCanCompensateForDelay:(BOOL)arg2;
 - (void)setZoomCompletionDelegate:(id)arg1;
 - (void)updateAppliedZoomFactorForDelayedISPAppliedZoomFactor:(float)arg1;
-- (float)updateZoomModelForNextFrameWithPTS:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
+- (float)updateZoomModelForNextFrameWithPTS:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (id)zoomCompletionDelegate;
 
 @end

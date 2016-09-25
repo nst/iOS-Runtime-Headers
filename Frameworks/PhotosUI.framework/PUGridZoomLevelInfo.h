@@ -9,16 +9,16 @@
     PUGridRenderedStrip * _currentRenderedStrip;
     NSString * _displayTitle;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _lastItemPixelSize;
     int  _maxRowsPerSection;
-    double  _pendingContentWidth;
+    float  _pendingContentWidth;
     PHAssetResourceQualityClass * _qualityClass;
     BOOL  _summarizeSections;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _thumbnailImageSize;
     BOOL  _useFloatingHeaderGroupName;
     unsigned int  _zoomLevel;
@@ -35,15 +35,15 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSString *displayTitle;
 @property (readonly) unsigned int hash;
-@property (nonatomic) struct CGSize { double x1; double x2; } lastItemPixelSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } lastItemPixelSize;
 @property (nonatomic, readonly) int maxRowsPerSection;
-@property (nonatomic) double pendingContentWidth;
+@property (nonatomic) float pendingContentWidth;
 @property (nonatomic, retain) PHAssetResourceQualityClass *qualityClass;
 @property (nonatomic, readonly) NSString *renderedStripsElementKind;
 @property (nonatomic, readonly) NSString *sectionHeaderElementKind;
 @property (nonatomic) BOOL summarizeSections;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } thumbnailImageSize;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } thumbnailImageSize;
 @property (nonatomic) BOOL useFloatingHeaderGroupName;
 @property (nonatomic, readonly) double zoomInDuration;
 @property (nonatomic, readonly) unsigned int zoomLevel;
@@ -74,7 +74,7 @@
 - (id)imageDataForAsset:(id)arg1 itemContentScale:(float)arg2 imageWidth:(int*)arg3 imageHeight:(int*)arg4 bytesPerRow:(int*)arg5 dataWidth:(int*)arg6 dataHeight:(int*)arg7 imageDataOffset:(int*)arg8;
 - (int)imageDeliveryMode;
 - (id)initWithZoomLevel:(unsigned int)arg1 zoomLevelManager:(id)arg2 baseZoomLevelInfo:(id)arg3;
-- (struct CGSize { double x1; double x2; })lastItemPixelSize;
+- (struct CGSize { float x1; float x2; })lastItemPixelSize;
 - (int)maxRowsPerSection;
 - (void)modelDidChange:(id)arg1;
 - (id)newCollectionViewLayout;
@@ -92,11 +92,11 @@
 - (void)sectionedGridLayout:(id)arg1 didInvalidateWithContext:(id)arg2;
 - (void)sectionedGridLayout:(id)arg1 didPrepareTransitionIsAppearing:(BOOL)arg2;
 - (int)sectionedGridLayout:(id)arg1 maximumRowsForVisualSection:(int)arg2;
-- (struct CGPoint { double x1; double x2; })sectionedGridLayout:(id)arg1 targetContentOffsetForProposedUpdatesContentOffset:(struct CGPoint { double x1; double x2; })arg2;
+- (struct CGPoint { float x1; float x2; })sectionedGridLayout:(id)arg1 targetContentOffsetForProposedUpdatesContentOffset:(struct CGPoint { float x1; float x2; })arg2;
 - (id)sectionedGridLayoutAnchorItemForAdjustingContentOffset:(id)arg1;
 - (id)sectionedGridLayoutName:(id)arg1;
 - (BOOL)sectionedGridLayoutTransitionAutoAdjustContentOffsetEnabled:(id)arg1;
-- (void)setLastItemPixelSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setLastItemPixelSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setPendingContentWidth:(float)arg1;
 - (void)setQualityClass:(id)arg1;
 - (void)setSummarizeSections:(BOOL)arg1;
@@ -105,7 +105,7 @@
 - (BOOL)summarizeSections;
 - (BOOL)supportsEditMode;
 - (BOOL)supportsIncrementalChangeNotifications;
-- (struct CGSize { double x1; double x2; })thumbnailImageSize;
+- (struct CGSize { float x1; float x2; })thumbnailImageSize;
 - (void)updateForSizeChangeIfNecessary;
 - (void)updateLayoutMetricsForWidth:(float)arg1;
 - (BOOL)useFloatingHeaderGroupName;

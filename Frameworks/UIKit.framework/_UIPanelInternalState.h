@@ -12,7 +12,7 @@
     int  _externallyAnimatingAffectedSides;
     UISlidingBarStateRequest * _externallyAnimatingStateRequest;
     _UIPanelInteractionState * _interactionState;
-    double  _keyboardAdjustment;
+    float  _keyboardAdjustment;
     UIViewController * _leadingViewController;
     UIViewController * _mainViewController;
     UISlidingBarStateRequest * _stateRequest;
@@ -28,7 +28,7 @@
 @property (nonatomic) int externallyAnimatingAffectedSides;
 @property (nonatomic, copy) UISlidingBarStateRequest *externallyAnimatingStateRequest;
 @property (nonatomic, retain) _UIPanelInteractionState *interactionState;
-@property (nonatomic) double keyboardAdjustment;
+@property (nonatomic) float keyboardAdjustment;
 @property (nonatomic, retain) UIViewController *leadingViewController;
 @property (nonatomic, retain) UIViewController *mainViewController;
 @property (nonatomic, copy) UISlidingBarStateRequest *stateRequest;
@@ -48,7 +48,7 @@
 - (int)collapsedSecondaryIndex;
 - (int)collapsedState;
 - (id)collapsedViewController;
-- (id)computePossibleStatesGivenParentView:(id)arg1 withSize:(struct CGSize { double x1; double x2; })arg2;
+- (id)computePossibleStatesGivenParentView:(id)arg1 withSize:(struct CGSize { float x1; float x2; })arg2;
 - (id)configuration;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)delegate;

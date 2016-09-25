@@ -8,11 +8,11 @@
     NSString * _articleID;
     FCInterestToken * _articleInterestToken;
     NTPBArticleRecord * _articleRecord;
-    unsigned int  _backendArticleVersion;
-    int  _behaviorFlags;
+    unsigned long long  _backendArticleVersion;
+    long long  _behaviorFlags;
     NSArray * _blockedStorefrontIDs;
     NSString * _clusterID;
-    unsigned int  _contentType;
+    unsigned long long  _contentType;
     NSURL * _contentURL;
     FCCoverArt * _coverArt;
     BOOL  _deleted;
@@ -24,18 +24,18 @@
     NSString * _identifier;
     BOOL  _isDraft;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _largestThumbnailSize;
     NSDate * _lastFetchedDate;
     NSDate * _lastModifiedDate;
-    int  _minimumNewsVersion;
+    long long  _minimumNewsVersion;
     NSArray * _moreFromPublisherArticleIDs;
     BOOL  _needsRapidUpdates;
     BOOL  _paid;
     NSString * _primaryAudience;
     NSDate * _publishDate;
-    unsigned int  _publisherArticleVersion;
+    unsigned long long  _publisherArticleVersion;
     NSString * _referencedArticleID;
     NSArray * _relatedArticleIDs;
     NSString * _shortExcerpt;
@@ -48,12 +48,12 @@
     FCHeadlineThumbnail * _thumbnail;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _thumbnailFocalFrame;
     FCHeadlineThumbnail * _thumbnailHQ;
@@ -68,13 +68,13 @@
     NSArray * _topicIDs;
     NSArray * _topicScores;
     NSString * _versionIdentifier;
-    double  _videoDuration;
+    float  _videoDuration;
     NSURL * _videoURL;
 }
 
 @property (nonatomic, retain) FCInterestToken *articleInterestToken;
 @property (nonatomic, retain) NTPBArticleRecord *articleRecord;
-@property (nonatomic) int behaviorFlags;
+@property (nonatomic) long long behaviorFlags;
 @property (nonatomic, copy) NSString *title;
 
 + (BOOL)_forceArticlesToBeShownAsSponsored;
@@ -86,12 +86,12 @@
 - (id)articleID;
 - (id)articleInterestToken;
 - (id)articleRecord;
-- (unsigned int)backendArticleVersion;
-- (int)behaviorFlags;
+- (unsigned long long)backendArticleVersion;
+- (long long)behaviorFlags;
 - (id)blockedStorefrontIDs;
 - (id)clusterID;
 - (id)contentManifestWithContext:(id)arg1;
-- (unsigned int)contentType;
+- (unsigned long long)contentType;
 - (id)contentURL;
 - (id)coverArt;
 - (id)endOfArticleTopicIDs;
@@ -101,35 +101,35 @@
 - (id)iAdSectionIDs;
 - (id)identifier;
 - (id)init;
-- (id)initWithArticleRecord:(id)arg1 articleInterestToken:(id)arg2 sourceChannel:(id)arg3 storyStyleConfigs:(id)arg4 storyTypeTimeout:(int)arg5 rapidUpdatesTimeout:(int)arg6 assetManager:(id)arg7;
+- (id)initWithArticleRecord:(id)arg1 articleInterestToken:(id)arg2 sourceChannel:(id)arg3 storyStyleConfigs:(id)arg4 storyTypeTimeout:(long long)arg5 rapidUpdatesTimeout:(long long)arg6 assetManager:(id)arg7;
 - (BOOL)isDeleted;
 - (BOOL)isDraft;
 - (BOOL)isFeatureCandidate;
 - (BOOL)isPaid;
 - (BOOL)isSponsored;
-- (struct CGSize { double x1; double x2; })largestThumbnailSize;
+- (struct CGSize { float x1; float x2; })largestThumbnailSize;
 - (id)lastFetchedDate;
 - (id)lastModifiedDate;
-- (int)minimumNewsVersion;
+- (long long)minimumNewsVersion;
 - (id)moreFromPublisherArticleIDs;
 - (BOOL)needsRapidUpdates;
 - (id)primaryAudience;
 - (id)publishDate;
-- (unsigned int)publisherArticleVersion;
+- (unsigned long long)publisherArticleVersion;
 - (id)referencedArticleID;
 - (id)relatedArticleIDs;
 - (void)setArticleID:(id)arg1;
 - (void)setArticleInterestToken:(id)arg1;
 - (void)setArticleRecord:(id)arg1;
-- (void)setBehaviorFlags:(int)arg1;
-- (void)setContentType:(unsigned int)arg1;
+- (void)setBehaviorFlags:(long long)arg1;
+- (void)setContentType:(unsigned long long)arg1;
 - (void)setDeleted:(BOOL)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setPublishDate:(id)arg1;
 - (void)setShortExcerpt:(id)arg1;
 - (void)setSourceChannel:(id)arg1;
 - (void)setSourceName:(id)arg1;
-- (void)setThumbnailFocalFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setThumbnailFocalFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setTitle:(id)arg1;
 - (void)setTopicIDs:(id)arg1;
 - (id)shortExcerpt;
@@ -139,7 +139,7 @@
 - (unsigned int)storyType;
 - (id)subtitle;
 - (id)thumbnail;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })thumbnailFocalFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })thumbnailFocalFrame;
 - (id)thumbnailHQ;
 - (id)thumbnailLQ;
 - (id)thumbnailMedium;

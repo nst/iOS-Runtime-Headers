@@ -7,8 +7,8 @@
     int  _accHeight;
     int  _accWidth;
     int * _accumulator;
-    double  _angleStep;
-    double * _edgeMap;
+    float  _angleStep;
+    float * _edgeMap;
     int  _mapHeight;
     int  _mapWidth;
     bool  _verbose;

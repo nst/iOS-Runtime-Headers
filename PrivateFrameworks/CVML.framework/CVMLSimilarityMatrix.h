@@ -11,7 +11,7 @@
 
 @property (getter=getImpl, nonatomic, readonly) void*impl;
 @property (getter=getMatrixSize, nonatomic, readonly) unsigned int matrixSize;
-@property (getter=getMaximumValidMatrixDistance, nonatomic, readonly) double maximumValidMatrixDistance;
+@property (getter=getMaximumValidMatrixDistance, nonatomic, readonly) float maximumValidMatrixDistance;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

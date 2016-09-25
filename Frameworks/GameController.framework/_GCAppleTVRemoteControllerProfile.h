@@ -32,8 +32,8 @@
 - (void).cxx_destruct;
 - (void)appDidBecomeActive;
 - (void)appWillResignActive;
-- (void)digitizerTouchEvent:(id)arg1 x:(double)arg2 y:(double)arg3 timestamp:(unsigned int)arg4 forceSkipDpadRotation:(BOOL)arg5;
-- (void)digitizerTouchUp:(id)arg1 timestamp:(unsigned int)arg2 forceSkipDpadRotation:(BOOL)arg3;
+- (void)digitizerTouchEvent:(id)arg1 x:(double)arg2 y:(double)arg3 timestamp:(unsigned long long)arg4 forceSkipDpadRotation:(BOOL)arg5;
+- (void)digitizerTouchUp:(id)arg1 timestamp:(unsigned long long)arg2 forceSkipDpadRotation:(BOOL)arg3;
 - (void)getPositionInSlidingWindowForRealX:(double)arg1 realY:(double)arg2 outXInWindow:(double*)arg3 outYInWindow:(double*)arg4;
 - (void)handleReport:(unsigned int)arg1 data:(id)arg2;
 - (void)initCommon:(id)arg1;
@@ -48,7 +48,7 @@
 - (void)processOrientationData:(id)arg1;
 - (unsigned int)sampleRate;
 - (void)setAllowsRotation:(BOOL)arg1;
-- (void)setDpad:(id)arg1 x:(double)arg2 y:(double)arg3 timestamp:(unsigned int)arg4 forceSkipDpadRotation:(BOOL)arg5;
+- (void)setDpad:(id)arg1 x:(double)arg2 y:(double)arg3 timestamp:(unsigned long long)arg4 forceSkipDpadRotation:(BOOL)arg5;
 - (void)setOwner:(unsigned int)arg1;
 - (void)setPlayerIndex:(int)arg1;
 - (void)set_motion:(id)arg1;

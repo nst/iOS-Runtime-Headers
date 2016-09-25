@@ -8,17 +8,17 @@
 
 @property (nonatomic) unsigned char clockAccuracy;
 @property (nonatomic) unsigned char clockClass;
-@property (nonatomic, readonly) unsigned int clockIdentity;
+@property (nonatomic, readonly) unsigned long long clockIdentity;
 @property (nonatomic) unsigned char clockPriority1;
 @property (nonatomic) unsigned char clockPriority2;
 @property (nonatomic, readonly, copy) NSArray *gptpPath;
-@property (nonatomic, readonly) unsigned int grandmasterIdentity;
+@property (nonatomic, readonly) unsigned long long grandmasterIdentity;
 
 + (id)availablegPTPClockIdentifiers;
-+ (unsigned int)clockIdentifierForInterfaceName:(id)arg1;
++ (unsigned long long)clockIdentifierForInterfaceName:(id)arg1;
 + (id)diagnosticDescriptionForService:(unsigned int)arg1 withIndent:(id)arg2;
 + (id)iokitInterfaceMatchingDictionaryForInterfaceName:(id)arg1;
-+ (id)iokitMatchingDictionaryForClockIdentifier:(unsigned int)arg1;
++ (id)iokitMatchingDictionaryForClockIdentifier:(unsigned long long)arg1;
 + (id)iokitMatchingDictionaryForInterfaceName:(id)arg1;
 
 - (BOOL)addLinkLayerPortOnInterfaceNamed:(id)arg1 error:(id*)arg2;
@@ -28,21 +28,21 @@
 - (BOOL)addUDPv6PtPPortOnInterfaceNamed:(id)arg1 withDestinationAddress:(char *)arg2 error:(id*)arg3;
 - (unsigned char)clockAccuracy;
 - (unsigned char)clockClass;
-- (unsigned int)clockIdentity;
+- (unsigned long long)clockIdentity;
 - (id)clockName;
 - (unsigned char)clockPriority1;
 - (unsigned char)clockPriority2;
-- (BOOL)convertFrom32BitASTime:(unsigned int*)arg1 toMachAbsoluteTime:(unsigned int*)arg2 withCount:(unsigned int)arg3;
-- (unsigned int)convertFrom32BitASToMachAbsoluteTime:(unsigned int)arg1 withFlags:(unsigned int*)arg2;
-- (unsigned int)convertFromDomainToMachAbsoluteTime:(unsigned int)arg1 grandmasterUsed:(unsigned int*)arg2;
-- (unsigned int)convertFromMachAbsoluteToDomainTime:(unsigned int)arg1 grandmasterUsed:(unsigned int*)arg2;
+- (BOOL)convertFrom32BitASTime:(unsigned int*)arg1 toMachAbsoluteTime:(unsigned long long*)arg2 withCount:(unsigned int)arg3;
+- (unsigned long long)convertFrom32BitASToMachAbsoluteTime:(unsigned int)arg1 withFlags:(unsigned int*)arg2;
+- (unsigned long long)convertFromDomainToMachAbsoluteTime:(unsigned long long)arg1 grandmasterUsed:(unsigned long long*)arg2;
+- (unsigned long long)convertFromMachAbsoluteToDomainTime:(unsigned long long)arg1 grandmasterUsed:(unsigned long long*)arg2;
 - (void)dealloc;
-- (id)gPTPTimeFromMachAbsoluteTime:(unsigned int)arg1;
-- (BOOL)getRateRatioNumerator:(unsigned int*)arg1 denominator:(unsigned int*)arg2 machAnchor:(unsigned int*)arg3 andDomainAnchor:(unsigned int*)arg4 forGrandmasterIdentity:(unsigned int*)arg5 withError:(id*)arg6;
+- (id)gPTPTimeFromMachAbsoluteTime:(unsigned long long)arg1;
+- (BOOL)getRateRatioNumerator:(unsigned long long*)arg1 denominator:(unsigned long long*)arg2 machAnchor:(unsigned long long*)arg3 andDomainAnchor:(unsigned long long*)arg4 forGrandmasterIdentity:(unsigned long long*)arg5 withError:(id*)arg6;
 - (id)gptpPath;
-- (unsigned int)grandmasterIdentity;
-- (id)initWithClockIdentifier:(unsigned int)arg1;
-- (unsigned int)machAbsoluteFromgPTPTime:(id)arg1;
+- (unsigned long long)grandmasterIdentity;
+- (id)initWithClockIdentifier:(unsigned long long)arg1;
+- (unsigned long long)machAbsoluteFromgPTPTime:(id)arg1;
 - (BOOL)removeLinkLayerPortFromInterfaceNamed:(id)arg1 error:(id*)arg2;
 - (BOOL)removeUDPv4EtEPortFromInterfaceNamed:(id)arg1 withDestinationAddress:(unsigned int)arg2 error:(id*)arg3;
 - (BOOL)removeUDPv4PtPPortFromInterfaceNamed:(id)arg1 withDestinationAddress:(unsigned int)arg2 error:(id*)arg3;

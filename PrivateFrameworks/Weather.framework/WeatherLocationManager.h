@@ -9,7 +9,7 @@
     <CLLocationManagerDelegate> * _delegate;
     NSString * _effectiveBundleIdentifier;
     BOOL  _isInternalBuild;
-    double  _lastLocationAccuracy;
+    float  _lastLocationAccuracy;
     struct CLLocationCoordinate2D { 
         double latitude; 
         double longitude; 
@@ -35,7 +35,7 @@
 @property (nonatomic, readonly, copy) NSString *effectiveBundleIdentifier;
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL isInternalBuild;
-@property (nonatomic) double lastLocationAccuracy;
+@property (nonatomic) float lastLocationAccuracy;
 @property (nonatomic) struct CLLocationCoordinate2D { double x1; double x2; } lastLocationCoord;
 @property (nonatomic, copy) NSDate *lastLocationTimeStamp;
 @property (nonatomic) double lastLocationUpdateTime;

@@ -6,13 +6,13 @@
     double  _estimatedTimeRemaining;
     BOOL  _isDone;
     NSString * _phase;
-    double  _portionComplete;
+    float  _portionComplete;
 }
 
 @property (nonatomic) double estimatedTimeRemaining;
 @property (nonatomic) BOOL isDone;
 @property (nonatomic, retain) NSString *phase;
-@property (nonatomic) double portionComplete;
+@property (nonatomic) float portionComplete;
 
 + (BOOL)supportsSecureCoding;
 

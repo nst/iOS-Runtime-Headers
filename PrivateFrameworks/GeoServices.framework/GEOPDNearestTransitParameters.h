@@ -8,14 +8,14 @@
         unsigned int isTransitOnly : 1; 
     }  _has;
     BOOL  _isTransitOnly;
-    unsigned int  _lineMuid;
+    unsigned long long  _lineMuid;
     PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic) BOOL hasIsTransitOnly;
 @property (nonatomic) BOOL hasLineMuid;
 @property (nonatomic) BOOL isTransitOnly;
-@property (nonatomic) unsigned int lineMuid;
+@property (nonatomic) unsigned long long lineMuid;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 - (void)copyTo:(id)arg1;
@@ -28,13 +28,13 @@
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isTransitOnly;
-- (unsigned int)lineMuid;
+- (unsigned long long)lineMuid;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setHasIsTransitOnly:(BOOL)arg1;
 - (void)setHasLineMuid:(BOOL)arg1;
 - (void)setIsTransitOnly:(BOOL)arg1;
-- (void)setLineMuid:(unsigned int)arg1;
+- (void)setLineMuid:(unsigned long long)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
 

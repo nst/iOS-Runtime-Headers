@@ -10,7 +10,7 @@
     MSASAssetUploader * _assetUploader;
     int  _commandState;
     NSString * _currentCommand;
-    int  _currentCommandID;
+    long long  _currentCommandID;
     NSDictionary * _currentCommandParams;
     MSAlbumSharingDaemon * _daemon;
     id  _delegate;

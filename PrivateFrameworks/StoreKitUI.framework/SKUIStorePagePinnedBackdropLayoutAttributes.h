@@ -7,14 +7,14 @@
     NSString * _backdropGroupName;
     int  _backdropStyle;
     BOOL  _hidesBackdropView;
-    double  _transitionProgress;
+    float  _transitionProgress;
 }
 
 @property (nonatomic, retain) UIColor *backdropColor;
 @property (nonatomic, copy) NSString *backdropGroupName;
 @property (nonatomic) int backdropStyle;
 @property (nonatomic) BOOL hidesBackdropView;
-@property (nonatomic) double transitionProgress;
+@property (nonatomic) float transitionProgress;
 
 - (void).cxx_destruct;
 - (id)backdropColor;

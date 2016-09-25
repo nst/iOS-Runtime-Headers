@@ -5,10 +5,10 @@
 @interface PXNavigationTitleView : UIView <PXPhotosDetailsBarsContentView> {
     NSArray * __constraints;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  __margins;
     UILabel * __subtitleLabel;
     BOOL  __subtitleVisible;
@@ -23,7 +23,7 @@
     }  _needsUpdateFlags;
     NSString * _subtitle;
     UIFont * _subtitleFont;
-    double  _subviewsAlpha;
+    float  _subviewsAlpha;
     NSString * _title;
     UIFont * _titleFont;
     UIColor * _titleTextColor;
@@ -31,7 +31,7 @@
 }
 
 @property (setter=_setConstraints:, nonatomic, retain) NSArray *_constraints;
-@property (setter=_setMargins:, nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } _margins;
+@property (setter=_setMargins:, nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } _margins;
 @property (nonatomic, readonly) UILabel *_subtitleLabel;
 @property (getter=_isSubtitleVisible, setter=_setSubtitleVisible:, nonatomic) BOOL _subtitleVisible;
 @property (nonatomic, readonly) UILabel *_titleLabel;
@@ -40,7 +40,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) NSString *subtitle;
 @property (nonatomic, retain) UIFont *subtitleFont;
-@property (nonatomic) double subviewsAlpha;
+@property (nonatomic) float subviewsAlpha;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSString *title;
 @property (nonatomic, retain) UIFont *titleFont;
@@ -54,10 +54,10 @@
 - (void)_invalidateSize;
 - (void)_invalidateTexts;
 - (BOOL)_isSubtitleVisible;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_margins;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_margins;
 - (BOOL)_needsUpdate;
 - (void)_setConstraints:(id)arg1;
-- (void)_setMargins:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)_setMargins:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)_setNeedsUpdate;
 - (void)_setSubtitleVisible:(BOOL)arg1;
 - (id)_subtitleLabel;
@@ -67,7 +67,7 @@
 - (void)_updateIfNeeded;
 - (void)_updateSizeIfNeeded;
 - (void)_updateTextsIfNeeded;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)performChanges:(id /* block */)arg1;
 - (void)setSubtitle:(id)arg1;
 - (void)setSubtitleFont:(id)arg1;

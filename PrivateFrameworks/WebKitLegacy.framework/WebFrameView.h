@@ -58,9 +58,9 @@
 - (void)dealloc;
 - (id)documentView;
 - (BOOL)documentViewShouldHandlePrint;
-- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)frameSizeChanged;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isOpaque;
 - (void)keyDown:(id)arg1;
 - (void)mouseDown:(id)arg1;
@@ -72,12 +72,12 @@
 - (void)scrollPageUp:(id)arg1;
 - (void)scrollToBeginningOfDocument:(id)arg1;
 - (void)scrollToEndOfDocument:(id)arg1;
-- (BOOL)scrollView:(id)arg1 shouldScrollToPoint:(struct CGPoint { double x1; double x2; })arg2;
+- (BOOL)scrollView:(id)arg1 shouldScrollToPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (void)setAllowsScrolling:(BOOL)arg1;
-- (void)setFrameSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setFrameSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setNextKeyView:(id)arg1;
 - (void)viewDidMoveToWindow;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })visibleRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleRect;
 - (id)webFrame;
 
 @end

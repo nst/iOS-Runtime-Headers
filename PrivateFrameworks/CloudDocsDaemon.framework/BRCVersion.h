@@ -9,12 +9,12 @@
     NSString * _lastEditorDeviceName;
     NSNumber * _lastEditorDeviceOrUserRowID;
     NSData * _lazyXattr;
-    int  _mtime;
+    long long  _mtime;
     NSString * _originalPOSIXName;
     NSData * _quarantineInfo;
-    int  _size;
+    long long  _size;
     NSData * _thumbnailSignature;
-    int  _thumbnailSize;
+    long long  _thumbnailSize;
     NSData * _xattrSignature;
 }
 
@@ -28,12 +28,12 @@
 @property (nonatomic, retain) NSNumber *lastEditorDeviceRowID;
 @property (nonatomic, retain) NSNumber *lastEditorRowID;
 @property (nonatomic, retain) NSData *lazyXattr;
-@property (nonatomic) int mtime;
+@property (nonatomic) long long mtime;
 @property (nonatomic, retain) NSString *originalPOSIXName;
 @property (nonatomic, retain) NSData *quarantineInfo;
-@property (nonatomic) int size;
+@property (nonatomic) long long size;
 @property (nonatomic, retain) NSData *thumbnailSignature;
-@property (nonatomic) int thumbnailSize;
+@property (nonatomic) long long thumbnailSize;
 @property (nonatomic, retain) NSData *xattrSignature;
 
 + (BOOL)supportsSecureCoding;
@@ -42,14 +42,14 @@
 - (BOOL)_hasLastEditorDeviceRowID;
 - (BOOL)_hasLastEditorRowID;
 - (id)additionNameForItemID:(id)arg1 zoneID:(id)arg2;
-- (BOOL)check:(id)arg1 logToFile:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; int x20; }*)arg2;
+- (BOOL)check:(id)arg1 logToFile:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; long long x20; }*)arg2;
 - (id)ckInfo;
 - (id)conflictLoserEtags;
 - (id)contentSignature;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)descriptionWithContext:(id)arg1;
-- (unsigned int)diffAgainst:(id)arg1;
+- (unsigned long long)diffAgainst:(id)arg1;
 - (id)displayNameWithoutExtension:(BOOL)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)hasThumbnail;
@@ -66,7 +66,7 @@
 - (id)lastEditorRowID;
 - (id)lastEditorUserIdentityWithDB:(id)arg1;
 - (id)lazyXattr;
-- (int)mtime;
+- (long long)mtime;
 - (id)originalPOSIXName;
 - (id)quarantineInfo;
 - (void)setCkInfo:(id)arg1;
@@ -77,16 +77,16 @@
 - (void)setLastEditorDeviceRowID:(id)arg1;
 - (void)setLastEditorRowID:(id)arg1;
 - (void)setLazyXattr:(id)arg1;
-- (void)setMtime:(int)arg1;
+- (void)setMtime:(long long)arg1;
 - (void)setOriginalPOSIXName:(id)arg1;
 - (void)setQuarantineInfo:(id)arg1;
-- (void)setSize:(int)arg1;
+- (void)setSize:(long long)arg1;
 - (void)setThumbnailSignature:(id)arg1;
-- (void)setThumbnailSize:(int)arg1;
+- (void)setThumbnailSize:(long long)arg1;
 - (void)setXattrSignature:(id)arg1;
-- (int)size;
+- (long long)size;
 - (id)thumbnailSignature;
-- (int)thumbnailSize;
+- (long long)thumbnailSize;
 - (id)uti;
 - (id)xattrSignature;
 

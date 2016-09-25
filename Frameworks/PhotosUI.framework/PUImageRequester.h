@@ -10,8 +10,8 @@
     BOOL  __hasCurrentIncompleteRequest;
     BOOL  __hasRequestedFullsizeImageData;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  __lastRequestedImageSize;
     BOOL  __needsUpdate;
     NSHashTable * __observers;
@@ -24,8 +24,8 @@
     PUMediaProvider * _mediaProvider;
     BOOL  _networkAccessAllowed;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _targetSize;
     BOOL  _useFullsizeImageData;
 }
@@ -36,7 +36,7 @@
 @property (setter=_setCurrentImageRequestID:, nonatomic) int _currentImageRequestID;
 @property (setter=_setCurrentIncompleteRequest:, nonatomic) BOOL _hasCurrentIncompleteRequest;
 @property (setter=_setHasRequestedFullsizeJPEG:, nonatomic) BOOL _hasRequestedFullsizeImageData;
-@property (setter=_setLastRequestedImageSize:, nonatomic) struct CGSize { double x1; double x2; } _lastRequestedImageSize;
+@property (setter=_setLastRequestedImageSize:, nonatomic) struct CGSize { float x1; float x2; } _lastRequestedImageSize;
 @property (setter=_setNeedsUpdate:, nonatomic) BOOL _needsUpdate;
 @property (setter=_setObserver:, nonatomic, retain) NSHashTable *_observers;
 @property (setter=_setShouldUpdateImageOnCurrentRequestCompletion:, nonatomic) BOOL _shouldUpdateImageOnCurrentRequestCompletion;
@@ -47,7 +47,7 @@
 @property (setter=_setImageIsPlaceholder:, nonatomic) BOOL imageIsPlaceholder;
 @property (nonatomic, readonly) PUMediaProvider *mediaProvider;
 @property (getter=isNetworkAccessAllowed, nonatomic) BOOL networkAccessAllowed;
-@property (nonatomic) struct CGSize { double x1; double x2; } targetSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } targetSize;
 @property (nonatomic) BOOL useFullsizeImageData;
 
 - (void).cxx_destruct;
@@ -62,7 +62,7 @@
 - (BOOL)_hasCurrentIncompleteRequest;
 - (BOOL)_hasRequestedFullsizeImageData;
 - (void)_invalidateImageRequest;
-- (struct CGSize { double x1; double x2; })_lastRequestedImageSize;
+- (struct CGSize { float x1; float x2; })_lastRequestedImageSize;
 - (BOOL)_needsUpdate;
 - (id)_observers;
 - (void)_publishChange:(id)arg1;
@@ -76,7 +76,7 @@
 - (void)_setImage:(id)arg1;
 - (void)_setImageIsFullQuality:(BOOL)arg1;
 - (void)_setImageIsPlaceholder:(BOOL)arg1;
-- (void)_setLastRequestedImageSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)_setLastRequestedImageSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_setNeedsUpdate:(BOOL)arg1;
 - (void)_setObserver:(id)arg1;
 - (void)_setShouldUpdateImageOnCurrentRequestCompletion:(BOOL)arg1;
@@ -98,9 +98,9 @@
 - (void)registerObserver:(id)arg1;
 - (void)setAsset:(id)arg1;
 - (void)setNetworkAccessAllowed:(BOOL)arg1;
-- (void)setTargetSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setTargetSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setUseFullsizeImageData:(BOOL)arg1;
-- (struct CGSize { double x1; double x2; })targetSize;
+- (struct CGSize { float x1; float x2; })targetSize;
 - (void)unregisterObserver:(id)arg1;
 - (void)updateIfNeeded;
 - (BOOL)useFullsizeImageData;

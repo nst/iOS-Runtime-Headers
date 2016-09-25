@@ -10,7 +10,7 @@
         double endTime; 
         double duration; 
         double elapsedDuration; 
-        double rate; 
+        float rate; 
         BOOL isLiveContent; 
     }  _snapshot;
 }
@@ -31,7 +31,7 @@
 - (id)artworkCatalog;
 - (id)avItem;
 - (void)dealloc;
-- (struct { double x1; double x2; double x3; double x4; double x5; double x6; BOOL x7; })durationSnapshot;
+- (struct { double x1; double x2; double x3; double x4; double x5; float x6; BOOL x7; })durationSnapshot;
 - (id)initWithAVItem:(id)arg1;
 - (BOOL)isExplicit;
 - (id)modelPlaylistEntryRepresentation;

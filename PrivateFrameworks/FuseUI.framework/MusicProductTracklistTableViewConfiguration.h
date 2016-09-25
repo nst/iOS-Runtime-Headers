@@ -9,7 +9,7 @@
     <MusicEntityProviding> * _copyrightSourceEntityProvider;
     <MusicEntityProviding> * _entityProvider;
     MusicMediaDetailTintInformation * _mediaDetailTintInformation;
-    int  _prominentTrackStoreID;
+    long long  _prominentTrackStoreID;
     MusicEntityViewDescriptor * _showCompleteOfferEntityViewDescriptor;
     MusicEntityViewDescriptor * _shuffleEntityViewDescriptor;
     MusicMediaProductTracklistTableViewDescriptor * _tracklistTableViewDescriptor;
@@ -28,7 +28,7 @@
 @property (nonatomic, retain) <MusicEntityProviding> *copyrightSourceEntityProvider;
 @property (nonatomic, readonly) <MusicEntityProviding> *entityProvider;
 @property (nonatomic, copy) MusicMediaDetailTintInformation *mediaDetailTintInformation;
-@property (nonatomic) int prominentTrackStoreID;
+@property (nonatomic) long long prominentTrackStoreID;
 @property (nonatomic, readonly) MusicMediaProductTracklistTableViewDescriptor *tracklistTableViewDescriptor;
 @property (nonatomic) BOOL wantsArtistName;
 @property (nonatomic) BOOL wantsArtwork;
@@ -61,11 +61,11 @@
 - (id)mediaDetailTintInformation;
 - (id)newSelectionEntityValueContext;
 - (id)newViewController;
-- (int)prominentTrackStoreID;
+- (long long)prominentTrackStoreID;
 - (void)setCompleteOfferLocalizedTitle:(id)arg1;
 - (void)setCopyrightSourceEntityProvider:(id)arg1;
 - (void)setMediaDetailTintInformation:(id)arg1;
-- (void)setProminentTrackStoreID:(int)arg1;
+- (void)setProminentTrackStoreID:(long long)arg1;
 - (void)setWantsArtistName:(BOOL)arg1;
 - (void)setWantsArtwork:(BOOL)arg1;
 - (void)setWantsCompleteOffer:(BOOL)arg1;

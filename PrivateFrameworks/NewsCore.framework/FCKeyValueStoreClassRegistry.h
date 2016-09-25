@@ -24,7 +24,7 @@
                 unsigned long __first_; 
             } __p2_; 
             struct __compressed_pair<float, std::__1::__unordered_map_equal<NTPBKeyValuePair_ValueType, std::__1::__hash_value_type<NTPBKeyValuePair_ValueType, Class<FCKeyValueStoreCoding> >, std::__1::equal_to<NTPBKeyValuePair_ValueType>, true> > { 
-                double __first_; 
+                float __first_; 
             } __p3_; 
         } __table_; 
     }  _registry;

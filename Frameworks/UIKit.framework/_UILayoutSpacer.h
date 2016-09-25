@@ -17,7 +17,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (readonly) NSLayoutDimension *heightAnchor;
-@property (nonatomic, readonly) double length;
+@property (nonatomic, readonly) float length;
 @property (readonly) Class superclass;
 @property (readonly) NSLayoutYAxisAnchor *topAnchor;
 

@@ -4,9 +4,9 @@
 
 @interface SFUGZipFileInputStream : NSObject <SFUInputStream> {
     int  _fd;
-    struct gzFile_s { unsigned int x1; char *x2; int x3; } * _file;
+    struct gzFile_s { unsigned int x1; char *x2; long long x3; } * _file;
     BOOL  _isCachingDisabled;
-    int  _offset;
+    long long  _offset;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -21,8 +21,8 @@
 - (void)disableSystemCaching;
 - (void)enableSystemCaching;
 - (id)initWithPath:(id)arg1;
-- (int)offset;
+- (long long)offset;
 - (unsigned long)readToBuffer:(char *)arg1 size:(unsigned long)arg2;
-- (void)seekToOffset:(int)arg1;
+- (void)seekToOffset:(long long)arg1;
 
 @end

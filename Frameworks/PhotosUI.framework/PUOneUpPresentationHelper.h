@@ -145,7 +145,7 @@
 - (void)beginUsingBlackTheme;
 - (id)browsingSession;
 - (BOOL)cachesScrubberView;
-- (id)cameraPreviewTransitionDelegateWithSourceRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 sourceImage:(id)arg2;
+- (id)cameraPreviewTransitionDelegateWithSourceRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 sourceImage:(id)arg2;
 - (BOOL)canDismissOneUpViewController;
 - (BOOL)canPresentOneUpViewController;
 - (void)cancelCommitTransitionForPreviewViewController:(id)arg1 completion:(id /* block */)arg2;
@@ -175,7 +175,7 @@
 - (void)presentingViewControllerViewDidDisappear:(BOOL)arg1;
 - (void)presentingViewControllerViewWillAppear:(BOOL)arg1;
 - (void)presentingViewControllerViewWillDisappear:(BOOL)arg1;
-- (id)previewPresentationTransitioningDelegateForPosition:(struct CGPoint { double x1; double x2; })arg1 inSourceView:(id)arg2;
+- (id)previewPresentationTransitioningDelegateForPosition:(struct CGPoint { float x1; float x2; })arg1 inSourceView:(id)arg2;
 - (id)previewViewControllerForItemAtIndexPath:(id)arg1 allowingActions:(BOOL)arg2;
 - (void)setAssetDisplayDelegate:(id)arg1;
 - (void)setCachesScrubberView:(BOOL)arg1;
@@ -187,7 +187,7 @@
 - (id)tilingView:(id)arg1 dataSourceConverterForTransitionFromLayout:(id)arg2 toLayout:(id)arg3;
 - (void)tilingView:(id)arg1 didStopUsingTileController:(id)arg2;
 - (id)tilingView:(id)arg1 tileControllerWithIndexPath:(id)arg2 kind:(id)arg3 dataSource:(id)arg4;
-- (id)tilingView:(id)arg1 tileTransitionCoordinatorForChangeFromFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 toFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 duration:(double)arg4;
+- (id)tilingView:(id)arg1 tileTransitionCoordinatorForChangeFromFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 toFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 duration:(double)arg4;
 - (id)tilingView:(id)arg1 tileTransitionCoordinatorForReattachedTileControllers:(id)arg2 context:(id)arg3;
 - (id)tilingView:(id)arg1 tileTransitionCoordinatorForTransitionFromLayout:(id)arg2 toLayout:(id)arg3 withContext:(id)arg4;
 - (id)tilingView:(id)arg1 tileTransitionCoordinatorForUpdateWithItems:(id)arg2;
@@ -202,6 +202,6 @@
 - (void)tilingViewDidUpdateTileControllers:(id)arg1;
 - (id /* block */)unlockDeviceHandler;
 - (id /* block */)unlockDeviceStatus;
-- (void)willPresentPreviewViewController:(id)arg1 forLocation:(struct CGPoint { double x1; double x2; })arg2 inSourceView:(id)arg3;
+- (void)willPresentPreviewViewController:(id)arg1 forLocation:(struct CGPoint { float x1; float x2; })arg2 inSourceView:(id)arg3;
 
 @end

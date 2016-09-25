@@ -7,7 +7,7 @@
     <MSPublishStorageProtocolDelegate> * _delegate;
     unsigned int * _itemFlags;
     NSMutableDictionary * _itemIDToAssetDict;
-    unsigned int * _itemIDs;
+    unsigned long long * _itemIDs;
     int  _itemsInFlight;
     const char ** _signatures;
 }
@@ -19,9 +19,9 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (int)_getFileDescriptorFromItem:(unsigned int)arg1;
-- (id)_getUTIFromItem:(unsigned int)arg1;
-- (void)_putItemDone:(unsigned int)arg1 putReceipt:(id)arg2 error:(id)arg3;
+- (int)_getFileDescriptorFromItem:(unsigned long long)arg1;
+- (id)_getUTIFromItem:(unsigned long long)arg1;
+- (void)_putItemDone:(unsigned long long)arg1 putReceipt:(id)arg2 error:(id)arg3;
 - (void)_putItemsFailure;
 - (void)_requestCompleted;
 - (void)computeHashForAsset:(id)arg1;

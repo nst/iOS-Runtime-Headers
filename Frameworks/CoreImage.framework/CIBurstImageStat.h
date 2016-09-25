@@ -11,12 +11,12 @@
     struct __IOSurface { } * _fullsizeJpegData;
     int  _fullsizeJpegSize;
     int  _version;
-    double  actionClusteringScore;
-    double  actionScore;
+    float  actionClusteringScore;
+    float  actionScore;
     unsigned short  aeMatrix;
-    double  avgHorzDiffY;
-    double  blurExtent;
-    double  colorHistogram;
+    float  avgHorzDiffY;
+    float  blurExtent;
+    float  colorHistogram;
     int  dissimilarity;
     BOOL  doLimitedSharpnessAndBlur;
     BOOL  emotionallyRejected;
@@ -24,12 +24,12 @@
     NSMutableArray * faceStatArray;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  facesRoiRect;
     int  gridHeight;
@@ -42,34 +42,34 @@
     int  gridWidth;
     BOOL  hasRegistrationData;
     NSString * imageId;
-    double  imageScore;
+    float  imageScore;
     BOOL  isGarbage;
-    double  maxSkewness;
-    double  normalizedFocusScore;
-    double  normalizedSigma;
+    float  maxSkewness;
+    float  normalizedFocusScore;
+    float  normalizedSigma;
     int  numEntries;
     int  numHWFaces;
     int  orientation;
     void * projectionMemoryBlock;
     struct FastRegistration_Signatures { 
-        double *piRow; 
+        float *piRow; 
         unsigned int nPiRow; 
         struct Projections_meanStdTable { 
-            double *sumTable; 
-            double *sumSqTable; 
+            float *sumTable; 
+            float *sumSqTable; 
         } piRowTable; 
-        double *piCol; 
+        float *piCol; 
         unsigned int nPiCol; 
         struct Projections_meanStdTable { 
-            double *sumTable; 
-            double *sumSqTable; 
+            float *sumTable; 
+            float *sumSqTable; 
         } piColTable; 
     }  projectionSignature;
-    double  registrationErrorIntegral;
-    double  registrationErrorX;
-    double  registrationErrorY;
-    double  roiSize;
-    struct SharpnessGridElement_t { unsigned char x1; unsigned char x2; double x3; } * sharpnessGrid;
+    float  registrationErrorIntegral;
+    float  registrationErrorX;
+    float  registrationErrorY;
+    float  roiSize;
+    struct SharpnessGridElement_t { unsigned char x1; unsigned char x2; float x3; } * sharpnessGrid;
     struct GridROI_t { 
         int startX; 
         int startY; 
@@ -79,8 +79,8 @@
     int  temporalOrder;
     double  timeReceived;
     double  timestamp;
-    double  tx;
-    double  ty;
+    float  tx;
+    float  ty;
 }
 
 @property int AEAverage;
@@ -88,33 +88,33 @@
 @property BOOL AEStable;
 @property int AETarget;
 @property BOOL AFStable;
-@property double actionClusteringScore;
-@property double actionScore;
-@property double avgHorzDiffY;
-@property double blurExtent;
+@property float actionClusteringScore;
+@property float actionScore;
+@property float avgHorzDiffY;
+@property float blurExtent;
 @property BOOL doLimitedSharpnessAndBlur;
 @property BOOL emotionallyRejected;
 @property BOOL exclude;
 @property NSMutableArray *faceStatArray;
-@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } facesRoiRect;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } facesRoiRect;
 @property struct __IOSurface { }*fullsizeJpegData;
 @property int fullsizeJpegSize;
 @property BOOL hasRegistrationData;
 @property NSString *imageId;
-@property double imageScore;
+@property float imageScore;
 @property BOOL isGarbage;
-@property double maxSkewness;
+@property float maxSkewness;
 @property int numHWFaces;
 @property int orientation;
-@property double registrationErrorIntegral;
-@property double registrationErrorX;
-@property double registrationErrorY;
-@property double roiSize;
+@property float registrationErrorIntegral;
+@property float registrationErrorX;
+@property float registrationErrorY;
+@property float roiSize;
 @property int temporalOrder;
 @property double timeReceived;
 @property double timestamp;
-@property double tx;
-@property double ty;
+@property float tx;
+@property float ty;
 @property int version;
 
 - (int)AEAverage;
@@ -152,7 +152,7 @@
 - (BOOL)emotionallyRejected;
 - (BOOL)exclude;
 - (id)faceStatArray;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })facesRoiRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })facesRoiRect;
 - (void)flagAsGarbage;
 - (struct __IOSurface { }*)fullsizeJpegData;
 - (int)fullsizeJpegSize;
@@ -184,7 +184,7 @@
 - (void)setEmotionallyRejected:(BOOL)arg1;
 - (void)setExclude:(BOOL)arg1;
 - (void)setFaceStatArray:(id)arg1;
-- (void)setFacesRoiRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setFacesRoiRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setFullsizeJpegData:(struct __IOSurface { }*)arg1;
 - (void)setFullsizeJpegSize:(int)arg1;
 - (void)setHasRegistrationData:(BOOL)arg1;

@@ -5,8 +5,8 @@
 @interface PURedeyeToolControllerSpec : PUPhotoEditToolControllerSpec
 
 @property (nonatomic, readonly) BOOL displaysTooltipAtTopInPortrait;
-@property (nonatomic, readonly) double tooltipLandscapeMargin;
-@property (nonatomic, readonly) double tooltipPortraitMargin;
+@property (nonatomic, readonly) float tooltipLandscapeMargin;
+@property (nonatomic, readonly) float tooltipPortraitMargin;
 
 - (BOOL)displaysTooltipAtTopInPortrait;
 - (float)tooltipLandscapeMargin;

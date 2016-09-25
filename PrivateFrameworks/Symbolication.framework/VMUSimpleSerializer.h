@@ -12,7 +12,7 @@
 - (void)dealloc;
 - (id)init;
 - (void)serialize32:(unsigned int)arg1;
-- (void)serialize64:(unsigned int)arg1;
+- (void)serialize64:(unsigned long long)arg1;
 - (unsigned int)serializeNullTerminatedBytes:(const char *)arg1;
 - (unsigned int)serializeString:(id)arg1;
 

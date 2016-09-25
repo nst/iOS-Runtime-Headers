@@ -6,7 +6,7 @@
     NSMutableDictionary * _colorsByUnit;
     BOOL  _containsOverrideFaceColor;
     NSArray * _faceColors;
-    double  _multicolorAlpha;
+    float  _multicolorAlpha;
 }
 
 @property (nonatomic, readonly) UIColor *accentColor;
@@ -16,7 +16,7 @@
 @property (nonatomic) BOOL containsOverrideFaceColor;
 @property (nonatomic, retain) NSArray *faceColors;
 @property (nonatomic, readonly) UIColor *foregroundColor;
-@property (nonatomic) double multicolorAlpha;
+@property (nonatomic) float multicolorAlpha;
 @property (nonatomic, readonly) UIColor *secondaryForegroundColor;
 @property (nonatomic, readonly) UIColor *shiftedBackgroundColor;
 @property (nonatomic, readonly) UIColor *shiftedForegroundColor;

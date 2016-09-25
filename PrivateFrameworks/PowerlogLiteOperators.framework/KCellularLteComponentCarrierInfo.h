@@ -18,7 +18,7 @@
     unsigned int  _scc0Earfcn;
     unsigned int  _scc1Bandwidth;
     unsigned int  _scc1Earfcn;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) BOOL hasPccBandwidth;
@@ -34,7 +34,7 @@
 @property (nonatomic) unsigned int scc0Earfcn;
 @property (nonatomic) unsigned int scc1Bandwidth;
 @property (nonatomic) unsigned int scc1Earfcn;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -70,8 +70,8 @@
 - (void)setScc0Earfcn:(unsigned int)arg1;
 - (void)setScc1Bandwidth:(unsigned int)arg1;
 - (void)setScc1Earfcn:(unsigned int)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
-- (unsigned int)timestamp;
+- (void)setTimestamp:(unsigned long long)arg1;
+- (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -4,7 +4,7 @@
 
 @interface NSURLSessionTask : NSObject <FCOperationPrioritizing, NSCopying> {
     double  __loadingPriority;
-    double  _priority;
+    float  _priority;
 }
 
 @property (copy) NSDictionary *_DuetActivityProperties;
@@ -12,7 +12,7 @@
 @property BOOL _allowsCellular;
 @property (nonatomic, copy) NSDictionary *_backgroundTaskTimingData;
 @property (copy) NSString *_boundInterfaceIdentifier;
-@property int _bytesPerSecondLimit;
+@property long long _bytesPerSecondLimit;
 @property BOOL _cacheOnly;
 @property int _cachePolicy;
 @property (retain) struct _CFURLCache { }*_cfCache;
@@ -26,7 +26,7 @@
 @property unsigned int _darkWakePowerAssertion;
 @property (nonatomic, retain) NSDictionary *_dependencyInfo;
 @property BOOL _disallowCellular;
-@property int _expectedWorkload;
+@property long long _expectedWorkload;
 @property (copy) NSURL *_ledBellyFallbackURL;
 @property (copy) NSString *_ledBellyServiceIdentifier;
 @property (copy) NSDictionary *_legacySocketStreamProperties;
@@ -37,8 +37,8 @@
 @property (nonatomic, retain) struct __PerformanceTiming { }*_performanceTiming;
 @property unsigned int _powerAssertion;
 @property BOOL _preventsIdleSystemSleep;
-@property int _priority;
-@property int _priorityValue;
+@property long long _priority;
+@property long long _priorityValue;
 @property BOOL _prohibitAuthUI;
 @property (nonatomic) id _protocolForTask;
 @property (copy) NSDictionary *_proxySettings;
@@ -52,17 +52,17 @@
 @property (copy) NSDictionary *_sslSettings;
 @property (copy) NSString *_storagePartitionIdentifier;
 @property BOOL _strictContentLength;
-@property int _suspensionThreshhold;
+@property long long _suspensionThreshhold;
 @property double _timeWindowDelay;
 @property double _timeWindowDuration;
 @property double _timeoutInterval;
 @property (nonatomic, retain) NSDictionary *_trailers;
 @property (copy) NSString *_uniqueIdentifier;
 @property (copy) NSURLSessionTaskHTTPAuthenticator *authenticator;
-@property int countOfBytesExpectedToReceive;
-@property int countOfBytesExpectedToSend;
-@property int countOfBytesReceived;
-@property int countOfBytesSent;
+@property long long countOfBytesExpectedToReceive;
+@property long long countOfBytesExpectedToSend;
+@property long long countOfBytesReceived;
+@property long long countOfBytesSent;
 @property (copy) NSURLRequest *currentRequest;
 @property (readonly, retain) NSURL *currentRequest_URL;
 @property (readonly, retain) NSURL *currentRequest_mainDocumentURL;
@@ -72,7 +72,7 @@
 @property (copy) NSError *error;
 @property (readonly) unsigned int hash;
 @property (copy) NSURLRequest *originalRequest;
-@property double priority;
+@property float priority;
 @property (nonatomic) int relativePriority;
 @property (copy) NSURLResponse *response;
 @property (retain) NSURLSession *session;
@@ -98,17 +98,17 @@
 - (void)_initializeTimingDataWithSessionConfiguration:(id)arg1;
 - (double)_loadingPriority;
 - (void)_onSessionQueue_cleanupAndBreakCycles;
-- (void)_onqueue_adjustBytesPerSecondLimit:(int)arg1;
+- (void)_onqueue_adjustBytesPerSecondLimit:(long long)arg1;
 - (void)_onqueue_adjustPriorityHint:(float)arg1;
 - (void)_onqueue_releasePowerAsssertion;
 - (void)_prepareNewTimingDataContainer;
-- (void)_setBytesPerSecondLimit:(int)arg1;
+- (void)_setBytesPerSecondLimit:(long long)arg1;
 - (void)_setExplicitCookieStorage:(struct OpaqueCFHTTPCookieStorage { }*)arg1;
 - (void)_setExplicitStorageSession:(struct __CFURLStorageSession { }*)arg1;
 - (void)_setSocketProperties:(struct __CFDictionary { }*)arg1 connectionProperties:(struct __CFDictionary { }*)arg2;
 - (id)_transactionMetrics;
 - (void)cancel;
-- (int)computeAdjustedPoolPriority;
+- (long long)computeAdjustedPoolPriority;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)initWithOriginalRequest:(id)arg1 updatedRequest:(id)arg2 ident:(unsigned int)arg3 session:(id)arg4;
 - (id)initWithTask:(id)arg1;

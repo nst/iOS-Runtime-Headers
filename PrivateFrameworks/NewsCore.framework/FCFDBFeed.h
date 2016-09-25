@@ -7,7 +7,7 @@
 @property (nonatomic, retain) NSString *feedID;
 @property (nonatomic) NSNumber *lookupID;
 @property (nonatomic, retain) NSDate *refreshDate;
-@property (nonatomic) unsigned int refreshedToOrder;
+@property (nonatomic) unsigned long long refreshedToOrder;
 @property (nonatomic, retain) NSOrderedSet *segments;
 
 - (void)awakeFromFetch;

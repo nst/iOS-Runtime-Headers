@@ -42,7 +42,7 @@
 - (BOOL)isArticleAvailableForOfflineReading:(id)arg1;
 - (BOOL)isArticleOnReadingList:(id)arg1;
 - (void)loadLocalCachesFromStore;
-- (void)notifyWhenFinishedDownloadingForOfflineReadingWithTimeout:(unsigned int)arg1 block:(id /* block */)arg2;
+- (void)notifyWhenFinishedDownloadingForOfflineReadingWithTimeout:(unsigned long long)arg1 block:(id /* block */)arg2;
 - (void)prepareForUse;
 - (id)readingListContentController;
 - (void)readingListContentControllerDidUpdateArticleAvailabilityInOfflineMode:(id)arg1;

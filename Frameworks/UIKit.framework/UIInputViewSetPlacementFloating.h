@@ -3,19 +3,19 @@
  */
 
 @interface UIInputViewSetPlacementFloating : UIInputViewSetPlacementUndocked <NSSecureCoding, _UIGeometryChangeObserver> {
-    double  _floatingWidth;
+    float  _floatingWidth;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _lastSize;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _responderRect;
     UIView * _responderToFollow;
@@ -23,13 +23,13 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) double floatingWidth;
+@property (nonatomic) float floatingWidth;
 @property (readonly) unsigned int hash;
 @property (nonatomic) UIResponder *responderToFollow;
 @property (readonly) Class superclass;
 
-+ (id)infoWithPoint:(struct CGPoint { double x1; double x2; })arg1 forOwner:(id)arg2;
-+ (id)placementWithUndockedOffset:(struct CGPoint { double x1; double x2; })arg1 chromeBuffer:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2 floatingWidth:(float)arg3;
++ (id)infoWithPoint:(struct CGPoint { float x1; float x2; })arg1 forOwner:(id)arg2;
++ (id)placementWithUndockedOffset:(struct CGPoint { float x1; float x2; })arg1 chromeBuffer:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2 floatingWidth:(float)arg3;
 + (BOOL)supportsSecureCoding;
 
 - (void)_geometryChanges:(id)arg1 forAncestor:(id)arg2;

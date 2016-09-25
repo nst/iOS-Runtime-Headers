@@ -24,7 +24,7 @@
 - (void)_makePresenter:(id)arg1 relinquishToWritingClaimWithID:(id)arg2 options:(unsigned int)arg3 purposeID:(id)arg4 subitemURL:(id)arg5 completionHandler:(id /* block */)arg6;
 - (void)_makePresenter:(id)arg1 reportUnsavedChangesWithCompletionHandler:(id /* block */)arg2;
 - (void)_makePresenter:(id)arg1 saveChangesWithCompletionHandler:(id /* block */)arg2;
-- (void)_makePresenter:(id)arg1 setLastPresentedItemEventIdentifier:(unsigned int)arg2;
+- (void)_makePresenter:(id)arg1 setLastPresentedItemEventIdentifier:(unsigned long long)arg2;
 - (void)_makePresenter:(id)arg1 validateRemoteDeletionRecordingRelinquishment:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)_makePresenterObserveDisconnection:(id)arg1;
 - (void)_makePresenterObserveReconnection:(id)arg1;
@@ -48,6 +48,6 @@
 - (void)relinquishToReadingClaimWithID:(id)arg1 options:(unsigned int)arg2 purposeID:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)relinquishToWritingClaimWithID:(id)arg1 options:(unsigned int)arg2 purposeID:(id)arg3 subitemURL:(id)arg4 completionHandler:(id /* block */)arg5;
 - (void)saveChangesWithCompletionHandler:(id /* block */)arg1;
-- (oneway void)updateLastEventID:(unsigned int)arg1;
+- (oneway void)updateLastEventID:(unsigned long long)arg1;
 
 @end

@@ -4,18 +4,18 @@
 
 @interface SKUIImageGridViewElement : SKUIViewElement {
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _size;
 }
 
 @property (nonatomic, readonly) int columnCount;
-@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInset;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } size;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;
 
 - (int)columnCount;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInset;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInset;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
-- (struct CGSize { double x1; double x2; })size;
+- (struct CGSize { float x1; float x2; })size;
 
 @end

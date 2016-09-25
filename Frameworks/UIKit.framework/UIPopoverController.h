@@ -9,12 +9,12 @@
     unsigned int  _currentArrowDirection;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _currentPresentationRectInView;
     UIView * _currentPresentationView;
@@ -26,12 +26,12 @@
     BOOL  _dismissesOnRotation;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _embeddedTargetRect;
     BOOL  _ignoresKeyboardNotifications;
@@ -44,8 +44,8 @@
     int  _popoverBackgroundStyle;
     Class  _popoverBackgroundViewClass;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _popoverContentSize;
     struct { 
         unsigned int isPresentingModalViewController : 1; 
@@ -57,10 +57,10 @@
     }  _popoverControllerFlags;
     int  _popoverControllerStyle;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _popoverLayoutMargins;
     _UIPopoverView * _popoverView;
     _UIPopoverLayoutInfo * _preferredLayoutInfo;
@@ -82,22 +82,22 @@
     UIBarButtonItem * _targetBarButtonItem;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _targetRectInDimmingView;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _targetRectInEmbeddingView;
     unsigned int  _toViewAutoResizingMask;
@@ -118,8 +118,8 @@
 @property (nonatomic, copy) NSArray *passthroughViews;
 @property (nonatomic) unsigned int popoverArrowDirection;
 @property (nonatomic, retain) Class popoverBackgroundViewClass;
-@property (nonatomic) struct CGSize { double x1; double x2; } popoverContentSize;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } popoverLayoutMargins;
+@property (nonatomic) struct CGSize { float x1; float x2; } popoverContentSize;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } popoverLayoutMargins;
 @property (getter=isPopoverVisible, nonatomic, readonly) BOOL popoverVisible;
 @property (nonatomic, retain) _UIPopoverLayoutInfo *preferredLayoutInfo;
 @property (getter=_presentationController, setter=_setPresentationController:, nonatomic, retain) UIPopoverPresentationController *presentationController;
@@ -133,7 +133,7 @@
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
-+ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_defaultPopoverLayoutMarginsForPopoverControllerStyle:(int)arg1 andContentViewController:(id)arg2;
++ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_defaultPopoverLayoutMarginsForPopoverControllerStyle:(int)arg1 andContentViewController:(id)arg2;
 + (BOOL)_forceAttemptsToAvoidKeyboard;
 + (Class)_popoverViewClass;
 + (BOOL)_popoversDisabled;
@@ -146,13 +146,13 @@
 - (BOOL)_allowsPopoverPresentationToAdapt;
 - (BOOL)_attemptsToAvoidKeyboard;
 - (void)_beginMapsTransitionToNewViewController:(id)arg1 arrowDirections:(unsigned int)arg2 slideDuration:(double)arg3 expandDuration:(double)arg4;
-- (void)_beginMapsTransitionToNewViewController:(id)arg1 newTargetRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 inView:(id)arg3 arrowDirections:(unsigned int)arg4 slideDuration:(double)arg5 expandDuration:(double)arg6;
+- (void)_beginMapsTransitionToNewViewController:(id)arg1 newTargetRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 inView:(id)arg3 arrowDirections:(unsigned int)arg4 slideDuration:(double)arg5 expandDuration:(double)arg6;
 - (BOOL)_canRepresentAutomatically;
-- (struct CGPoint { double x1; double x2; })_centerPointForScale:(float)arg1 frame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 anchor:(struct CGPoint { double x1; double x2; })arg3;
-- (void)_commonPresentPopoverFromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inView:(id)arg2 permittedArrowDirections:(unsigned int)arg3 animated:(BOOL)arg4;
+- (struct CGPoint { float x1; float x2; })_centerPointForScale:(float)arg1 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 anchor:(struct CGPoint { float x1; float x2; })arg3;
+- (void)_commonPresentPopoverFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2 permittedArrowDirections:(unsigned int)arg3 animated:(BOOL)arg4;
 - (id /* block */)_completionBlockForDismissalWhenNotifyingDelegate:(BOOL)arg1;
 - (void)_containedViewControllerModalStateChanged;
-- (struct CGSize { double x1; double x2; })_currentPopoverContentSize;
+- (struct CGSize { float x1; float x2; })_currentPopoverContentSize;
 - (Class)_defaultChromeViewClass;
 - (id)_dimmingView;
 - (void)_dismissPopoverAnimated:(BOOL)arg1 stateOnly:(BOOL)arg2 notifyDelegate:(BOOL)arg3;
@@ -190,9 +190,9 @@
 - (void)_postludeForDismissal;
 - (void)_presentPopoverBySlidingIn:(BOOL)arg1 fromEdge:(unsigned int)arg2 ofView:(id)arg3 animated:(BOOL)arg4 stateOnly:(BOOL)arg5 notifyDelegate:(BOOL)arg6;
 - (void)_presentPopoverFromEdge:(unsigned int)arg1 ofView:(id)arg2 animated:(BOOL)arg3;
-- (void)_presentPopoverFromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 embeddedInView:(id)arg2 usingViewForLayoutConstraints:(id)arg3 permittedArrowDirections:(unsigned int)arg4;
-- (void)_presentPopoverFromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 embeddedInView:(id)arg2 usingViewForLayoutConstraints:(id)arg3 permittedArrowDirections:(unsigned int)arg4 animate:(BOOL)arg5;
-- (void)_presentShimmedPopoverFromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inView:(id)arg2 permittedArrowDirections:(unsigned int)arg3 animated:(BOOL)arg4;
+- (void)_presentPopoverFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 embeddedInView:(id)arg2 usingViewForLayoutConstraints:(id)arg3 permittedArrowDirections:(unsigned int)arg4;
+- (void)_presentPopoverFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 embeddedInView:(id)arg2 usingViewForLayoutConstraints:(id)arg3 permittedArrowDirections:(unsigned int)arg4 animate:(BOOL)arg5;
+- (void)_presentShimmedPopoverFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2 permittedArrowDirections:(unsigned int)arg3 animated:(BOOL)arg4;
 - (float)_presentationAnimationDuration;
 - (id)_presentationController;
 - (unsigned int)_presentationEdge;
@@ -249,15 +249,15 @@
 - (id)passthroughViews;
 - (unsigned int)popoverArrowDirection;
 - (Class)popoverBackgroundViewClass;
-- (struct CGSize { double x1; double x2; })popoverContentSize;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })popoverLayoutMargins;
-- (void)popoverPresentationController:(id)arg1 willRepositionPopoverToRect:(inout struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg2 inView:(inout id*)arg3;
+- (struct CGSize { float x1; float x2; })popoverContentSize;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })popoverLayoutMargins;
+- (void)popoverPresentationController:(id)arg1 willRepositionPopoverToRect:(inout struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 inView:(inout id*)arg3;
 - (void)popoverPresentationControllerDidDismissPopover:(id)arg1;
 - (BOOL)popoverPresentationControllerShouldDismissPopover:(id)arg1;
 - (id)popoverView;
 - (id)preferredLayoutInfo;
 - (void)presentPopoverFromBarButtonItem:(id)arg1 permittedArrowDirections:(unsigned int)arg2 animated:(BOOL)arg3;
-- (void)presentPopoverFromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inView:(id)arg2 permittedArrowDirections:(unsigned int)arg3 animated:(BOOL)arg4;
+- (void)presentPopoverFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2 permittedArrowDirections:(unsigned int)arg3 animated:(BOOL)arg4;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setContentViewController:(id)arg1;
 - (void)setContentViewController:(id)arg1 animated:(BOOL)arg2;
@@ -267,10 +267,10 @@
 - (void)setPassthroughViews:(id)arg1;
 - (void)setPopoverArrowDirection:(unsigned int)arg1;
 - (void)setPopoverBackgroundViewClass:(Class)arg1;
-- (void)setPopoverContentSize:(struct CGSize { double x1; double x2; })arg1;
-- (void)setPopoverContentSize:(struct CGSize { double x1; double x2; })arg1 animated:(BOOL)arg2;
-- (void)setPopoverFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 animated:(BOOL)arg2;
-- (void)setPopoverLayoutMargins:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setPopoverContentSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setPopoverContentSize:(struct CGSize { float x1; float x2; })arg1 animated:(BOOL)arg2;
+- (void)setPopoverFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 animated:(BOOL)arg2;
+- (void)setPopoverLayoutMargins:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setPreferredLayoutInfo:(id)arg1;
 - (void)setShowsOrientationMarker:(BOOL)arg1;
 - (void)setShowsPresentationArea:(BOOL)arg1;

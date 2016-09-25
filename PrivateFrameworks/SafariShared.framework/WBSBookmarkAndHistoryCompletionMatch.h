@@ -9,7 +9,7 @@
 }
 
 @property (nonatomic, readonly) <WBSURLCompletionMatchData> *data;
-@property (nonatomic, readonly) double weight;
+@property (nonatomic, readonly) float weight;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

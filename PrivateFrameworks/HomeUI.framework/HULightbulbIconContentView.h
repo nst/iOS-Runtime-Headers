@@ -3,7 +3,7 @@
  */
 
 @interface HULightbulbIconContentView : HUIconContentView {
-    double  _brightness;
+    float  _brightness;
     HUAnimatableFilterImageView * _coloredBaseView;
     HUAnimatableFilterImageView * _coloredBulbView;
     BOOL  _on;
@@ -13,7 +13,7 @@
     UIVisualEffectView * _vibrantOutlineEffectView;
 }
 
-@property (nonatomic) double brightness;
+@property (nonatomic) float brightness;
 @property (nonatomic, retain) HUAnimatableFilterImageView *coloredBaseView;
 @property (nonatomic, retain) HUAnimatableFilterImageView *coloredBulbView;
 @property (getter=isOn, nonatomic) BOOL on;
@@ -33,7 +33,7 @@
 - (float)brightness;
 - (id)coloredBaseView;
 - (id)coloredBulbView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isOn;
 - (void)layoutSubviews;
 - (int)renderingModeForSubview:(id)arg1 suggestedRenderingMode:(int)arg2;

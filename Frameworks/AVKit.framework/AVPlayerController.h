@@ -42,9 +42,9 @@
     double  _preScanningRate;
     BOOL  _preventingIdleDisplaySleep;
     BOOL  _preventingIdleSystemSleep;
-    double  _rate;
+    float  _rate;
     double  _rateBeforeForceScanning;
-    double  _rateBeforeInterruption;
+    float  _rateBeforeInterruption;
     double  _rateBeforeScrubBegan;
     unsigned int  _scanningCount;
     BOOL  _scrubbing;
@@ -52,10 +52,10 @@
     NSObject<OS_dispatch_source> * _seekTimer;
     double  _seekToTime;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _seekToTimeInternal;
     BOOL  _seeking;
     BOOL  _seekingInternal;
@@ -63,16 +63,16 @@
     double  _timeOfLastUpdate;
     AVValueTiming * _timing;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _toleranceAfter;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _toleranceBefore;
     id  _updateAtMinMaxTimePeriodicObserverToken;
     id  _updateTimingPeriodicObserverToken;
@@ -91,7 +91,7 @@
 @property (nonatomic, readonly) BOOL hasDiscoveredVideo;
 @property (nonatomic) BOOL hasProtectedContent;
 @property (nonatomic, retain) NSDictionary *metadata;
-@property (nonatomic, readonly) double nominalFrameRate;
+@property (nonatomic, readonly) float nominalFrameRate;
 @property (nonatomic, retain) AVPlayer *player;
 @property (getter=isPlayingOnSecondScreen, nonatomic) BOOL playingOnSecondScreen;
 @property (getter=isPreventingIdleDisplaySleep, nonatomic) BOOL preventingIdleDisplaySleep;
@@ -100,7 +100,7 @@
 @property (getter=isScrubbing, nonatomic) BOOL scrubbing;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *seekTimer;
 @property (nonatomic) double seekToTime;
-@property struct { int x1; int x2; unsigned int x3; int x4; } seekToTimeInternal;
+@property struct { long long x1; int x2; unsigned int x3; long long x4; } seekToTimeInternal;
 @property (getter=isSeeking, nonatomic) BOOL seeking;
 @property (getter=isSeekingInternal) BOOL seekingInternal;
 @property (nonatomic, readonly) BOOL shouldPreventIdleDisplaySleep;
@@ -191,7 +191,7 @@
 - (void)changeVolumeToMaximum:(id)arg1;
 - (void)changeVolumeToMinimum:(id)arg1;
 - (id)contentChapters;
-- (struct CGSize { double x1; double x2; })contentDimensions;
+- (struct CGSize { float x1; float x2; })contentDimensions;
 - (double)contentDuration;
 - (double)contentDurationWithinEndTimes;
 - (id)currentAudioMediaSelectionOption;
@@ -277,7 +277,7 @@
 - (double)seekToTime;
 - (void)seekToTime:(double)arg1;
 - (void)seekToTime:(double)arg1 toleranceBefore:(double)arg2 toleranceAfter:(double)arg3;
-- (struct { int x1; int x2; unsigned int x3; int x4; })seekToTimeInternal;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })seekToTimeInternal;
 - (id)seekableTimeRanges;
 - (void)setAllowsExternalPlayback:(BOOL)arg1;
 - (void)setAtMaxTime:(BOOL)arg1;
@@ -309,7 +309,7 @@
 - (void)setRateWithForce:(double)arg1;
 - (void)setScrubbing:(BOOL)arg1;
 - (void)setSeekToTime:(double)arg1;
-- (void)setSeekToTimeInternal:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
+- (void)setSeekToTimeInternal:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setSeeking:(BOOL)arg1;
 - (void)setSeekingInternal:(BOOL)arg1;
 - (void)setTiming:(id)arg1;
@@ -317,7 +317,7 @@
 - (BOOL)shouldPreventIdleDisplaySleep;
 - (void)skipBackwardThirtySeconds:(id)arg1;
 - (int)status;
-- (void)throttledSeekToTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1 toleranceBefore:(struct { int x1; int x2; unsigned int x3; int x4; })arg2 toleranceAfter:(struct { int x1; int x2; unsigned int x3; int x4; })arg3;
+- (void)throttledSeekToTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 toleranceBefore:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 toleranceAfter:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3;
 - (id)timing;
 - (void)toggleMuted:(id)arg1;
 - (void)togglePlayback:(id)arg1;

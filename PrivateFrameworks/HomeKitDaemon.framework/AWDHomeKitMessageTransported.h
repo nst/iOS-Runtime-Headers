@@ -15,8 +15,8 @@
     NSString * _identifier;
     BOOL  _isSecure;
     int  _messageType;
-    unsigned int  _payloadSize;
-    unsigned int  _timestamp;
+    unsigned long long  _payloadSize;
+    unsigned long long  _timestamp;
     NSString * _transactionID;
     int  _transport;
 }
@@ -33,8 +33,8 @@
 @property (nonatomic, retain) NSString *identifier;
 @property (nonatomic) BOOL isSecure;
 @property (nonatomic) int messageType;
-@property (nonatomic) unsigned int payloadSize;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long payloadSize;
+@property (nonatomic) unsigned long long timestamp;
 @property (nonatomic, retain) NSString *transactionID;
 @property (nonatomic) int transport;
 
@@ -63,7 +63,7 @@
 - (void)mergeFrom:(id)arg1;
 - (int)messageType;
 - (id)messageTypeAsString:(int)arg1;
-- (unsigned int)payloadSize;
+- (unsigned long long)payloadSize;
 - (BOOL)readFrom:(id)arg1;
 - (void)setDirection:(int)arg1;
 - (void)setHasDirection:(BOOL)arg1;
@@ -75,11 +75,11 @@
 - (void)setIdentifier:(id)arg1;
 - (void)setIsSecure:(BOOL)arg1;
 - (void)setMessageType:(int)arg1;
-- (void)setPayloadSize:(unsigned int)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
+- (void)setPayloadSize:(unsigned long long)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (void)setTransactionID:(id)arg1;
 - (void)setTransport:(int)arg1;
-- (unsigned int)timestamp;
+- (unsigned long long)timestamp;
 - (id)transactionID;
 - (int)transport;
 - (id)transportAsString:(int)arg1;

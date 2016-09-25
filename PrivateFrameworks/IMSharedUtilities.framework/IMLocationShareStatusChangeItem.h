@@ -4,21 +4,21 @@
 
 @interface IMLocationShareStatusChangeItem : IMItem <IMRemoteObjectCoding, NSCoding, NSCopying> {
     BOOL  _actionable;
-    int  _direction;
+    long long  _direction;
     BOOL  _expired;
     NSString * _otherCountryCode;
     NSString * _otherHandle;
     NSString * _otherUnformattedID;
-    int  _status;
+    long long  _status;
 }
 
 @property (nonatomic) BOOL actionable;
-@property (nonatomic) int direction;
+@property (nonatomic) long long direction;
 @property (nonatomic) BOOL expired;
 @property (nonatomic, retain) NSString *otherCountryCode;
 @property (nonatomic, retain) NSString *otherHandle;
 @property (nonatomic, retain) NSString *otherUnformattedID;
-@property (nonatomic) int status;
+@property (nonatomic) long long status;
 
 // Image: /System/Library/PrivateFrameworks/IMSharedUtilities.framework/IMSharedUtilities
 
@@ -26,7 +26,7 @@
 - (id)copyDictionaryRepresentation;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (int)direction;
+- (long long)direction;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)expired;
 - (id)initWithCoder:(id)arg1;
@@ -36,13 +36,13 @@
 - (id)otherHandle;
 - (id)otherUnformattedID;
 - (void)setActionable:(BOOL)arg1;
-- (void)setDirection:(int)arg1;
+- (void)setDirection:(long long)arg1;
 - (void)setExpired:(BOOL)arg1;
 - (void)setOtherCountryCode:(id)arg1;
 - (void)setOtherHandle:(id)arg1;
 - (void)setOtherUnformattedID:(id)arg1;
-- (void)setStatus:(int)arg1;
-- (int)status;
+- (void)setStatus:(long long)arg1;
+- (long long)status;
 
 // Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
 

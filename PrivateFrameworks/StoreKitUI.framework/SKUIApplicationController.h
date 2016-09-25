@@ -210,7 +210,7 @@
 - (void)showExternalURL:(id)arg1;
 - (void)showStatusOverlayUsingProvider:(id)arg1 animated:(BOOL)arg2;
 - (void)showTransientViewController:(id)arg1;
-- (struct CGSize { double x1; double x2; })sizeForNavigationDocument:(id)arg1;
+- (struct CGSize { float x1; float x2; })sizeForNavigationDocument:(id)arg1;
 - (void)suspendApplicationWithOptions:(id)arg1;
 - (id)tabBarController;
 - (void)tabBarController:(id)arg1 didEndCustomizingViewControllers:(id)arg2 changed:(BOOL)arg3;
@@ -219,7 +219,7 @@
 - (BOOL)tabBarController:(id)arg1 shouldFallbackToRootForController:(id)arg2;
 - (BOOL)tabBarController:(id)arg1 shouldSelectViewController:(id)arg2;
 - (void)tabBarController:(id)arg1 willDisplayViewController:(id)arg2;
-- (void)tabBarController:(id)arg1 willTransitionToSize:(struct CGSize { double x1; double x2; })arg2 withTransitionCoordinator:(id)arg3;
+- (void)tabBarController:(id)arg1 willTransitionToSize:(struct CGSize { float x1; float x2; })arg2 withTransitionCoordinator:(id)arg3;
 - (unsigned int)tabBarControllerSupportedInterfaceOrientations:(id)arg1;
 - (id)tabBarItems;
 - (void)updateTabBarWithItems:(id)arg1 animated:(BOOL)arg2;

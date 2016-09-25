@@ -6,14 +6,14 @@
 
 @property (nonatomic) int accessoryType;
 @property (nonatomic, copy) UIColor *backgroundColor;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } backgroundInset;
-@property (nonatomic) double defaultMarginWidth;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } backgroundInset;
+@property (nonatomic) float defaultMarginWidth;
 @property (nonatomic) BOOL drawsSeparatorAtBottomOfSection;
 @property (nonatomic) BOOL drawsSeparatorAtTopOfSection;
 @property (nonatomic) int editingStyle;
 @property (nonatomic) int indentationLevel;
 @property (nonatomic) BOOL layoutMarginsFollowReadableWidth;
-@property (nonatomic) double sectionBorderWidth;
+@property (nonatomic) float sectionBorderWidth;
 @property (nonatomic) int sectionLocation;
 @property (nonatomic, copy) UIColor *separatorColor;
 @property (nonatomic, retain) UIVisualEffect *separatorEffect;
@@ -21,13 +21,13 @@
 @property (nonatomic) BOOL shouldIndentWhileEditing;
 @property (nonatomic) BOOL showsReorderControl;
 
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })backgroundInset;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })backgroundInset;
 - (float)defaultMarginWidth;
 - (BOOL)drawsSeparatorAtBottomOfSection;
 - (BOOL)drawsSeparatorAtTopOfSection;
 - (float)sectionBorderWidth;
 - (id)separatorEffect;
-- (void)setBackgroundInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setBackgroundInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setDefaultMarginWidth:(float)arg1;
 - (void)setDrawsSeparatorAtBottomOfSection:(BOOL)arg1;
 - (void)setDrawsSeparatorAtTopOfSection:(BOOL)arg1;

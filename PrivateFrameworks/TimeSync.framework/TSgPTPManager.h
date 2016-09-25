@@ -7,16 +7,16 @@
 }
 
 @property (nonatomic, readonly, retain) TSgPTPClock *systemDomain;
-@property (nonatomic, readonly) unsigned int systemDomainClockIdentifier;
+@property (nonatomic, readonly) unsigned long long systemDomainClockIdentifier;
 
 + (id)diagnosticDescriptionForService:(unsigned int)arg1 withIndent:(id)arg2;
 + (id)gPTPManager;
 + (id)sharedgPTPManager;
 
-- (BOOL)addDomain:(unsigned int*)arg1 error:(id*)arg2;
+- (BOOL)addDomain:(unsigned long long*)arg1 error:(id*)arg2;
 - (void)dealloc;
 - (id)init;
-- (BOOL)removeDomainWithIdentifier:(unsigned int)arg1 error:(id*)arg2;
+- (BOOL)removeDomainWithIdentifier:(unsigned long long)arg1 error:(id*)arg2;
 - (id)systemDomain;
 
 @end

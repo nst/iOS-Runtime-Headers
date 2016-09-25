@@ -3,51 +3,51 @@
  */
 
 @interface NUSpheroid : NSObject <NUAnimatable, NURotatable> {
-    double  _angle;
+    float  _angle;
     struct CLLocationCoordinate2D { 
         double latitude; 
         double longitude; 
     }  _centerCoordinate;
     void _colorize;
-    double  _distance;
-    double  _distanceScale;
+    float  _distance;
+    float  _distanceScale;
     unsigned int  _facing;
     struct CLLocationCoordinate2D { 
         double latitude; 
         double longitude; 
     }  _homeCoordinate;
     void _light;
-    double  _opacity;
+    float  _opacity;
     NUSpheroid * _parent;
     void _position;
     unsigned int  _programType;
-    double  _radius;
-    double  _radiusScale;
-    double  _rotation;
+    float  _radius;
+    float  _radiusScale;
+    float  _rotation;
     NUScene * _scene;
     unsigned int  _spriteType;
     unsigned int  _type;
     unsigned int  _visible;
 }
 
-@property (nonatomic) double angle;
+@property (nonatomic) float angle;
 @property (nonatomic) struct CLLocationCoordinate2D { double x1; double x2; } centerCoordinate;
 @property (nonatomic) void colorize;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) double distance;
-@property (nonatomic) double distanceScale;
+@property (nonatomic) float distance;
+@property (nonatomic) float distanceScale;
 @property (nonatomic) BOOL facing;
 @property (readonly) unsigned int hash;
 @property (nonatomic) struct CLLocationCoordinate2D { double x1; double x2; } homeCoordinate;
 @property (nonatomic, readonly) void light;
-@property (nonatomic) double opacity;
+@property (nonatomic) float opacity;
 @property (nonatomic, readonly) NUSpheroid *parent;
 @property (nonatomic, readonly) void position;
 @property (nonatomic, readonly) unsigned int programType;
-@property (nonatomic, readonly) double radius;
-@property (nonatomic) double radiusScale;
-@property (nonatomic) double rotation;
+@property (nonatomic, readonly) float radius;
+@property (nonatomic) float radiusScale;
+@property (nonatomic) float rotation;
 @property (nonatomic) unsigned int spriteType;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) unsigned int type;
@@ -78,7 +78,7 @@
 - (float)rotation;
 - (void)setAngle:(float)arg1;
 - (void)setAnimatedFloat:(void *)arg1 forKey:(void *)arg2; // needs 2 arg types, found 1: unsigned int
-- (void)setCenter:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setCenter:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setCenterCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1;
 - (void)setCenterCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1 animated:(BOOL)arg2;
 - (void)setColorize;

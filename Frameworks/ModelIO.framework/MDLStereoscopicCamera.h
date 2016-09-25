@@ -3,19 +3,19 @@
  */
 
 @interface MDLStereoscopicCamera : MDLCamera {
-    double  _interPupillaryDistance;
-    double  _leftVergence;
-    double  _overlap;
-    double  _rightVergence;
+    float  _interPupillaryDistance;
+    float  _leftVergence;
+    float  _overlap;
+    float  _rightVergence;
 }
 
-@property (nonatomic) double interPupillaryDistance;
+@property (nonatomic) float interPupillaryDistance;
 @property (nonatomic, readonly) struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; } leftProjectionMatrix;
-@property (nonatomic) double leftVergence;
+@property (nonatomic) float leftVergence;
 @property (nonatomic, readonly) struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; } leftViewMatrix;
-@property (nonatomic) double overlap;
+@property (nonatomic) float overlap;
 @property (nonatomic, readonly) struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; } rightProjectionMatrix;
-@property (nonatomic) double rightVergence;
+@property (nonatomic) float rightVergence;
 @property (nonatomic, readonly) struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; } rightViewMatrix;
 
 - (id)init;

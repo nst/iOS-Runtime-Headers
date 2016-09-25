@@ -7,22 +7,22 @@
     struct CGPath { } * mCachedPathNoScale;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  mCachedTightPathBounds;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  mCachedTightPathBoundsNoScale;
     TSDInfoGeometry * mDynamicInfoGeometry;
@@ -31,12 +31,12 @@
         unsigned int path : 1; 
         unsigned int tightPathBounds : 1; 
     }  mMaskInvalidFlags;
-    double  mPathScale;
+    float  mPathScale;
     BOOL  mScalingInMaskMode;
 }
 
 @property (nonatomic, readonly) TSDImageLayout *imageLayout;
-@property (nonatomic) double pathScale;
+@property (nonatomic) float pathScale;
 
 - (id)computeInfoGeometryFromPureLayoutGeometry:(id)arg1;
 - (id)computeLayoutGeometry;
@@ -50,15 +50,15 @@
 - (id)maskInfo;
 - (struct CGPath { }*)p_cachedPath;
 - (struct CGPath { }*)p_cachedPathNoScale;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })p_cachedTightPathBounds;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })p_cachedTightPathBoundsNoScale;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })p_cachedTightPathBounds;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })p_cachedTightPathBoundsNoScale;
 - (void)p_calculateCachedPathIfNecessary;
 - (void)p_calculateTightPathBoundsIfNecessary;
 - (void)p_createDynamicCopies;
 - (void)p_destroyDynamicCopies;
 - (void)p_setDynamicInfoGeometry:(id)arg1;
 - (struct CGPath { }*)path;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })pathBounds;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })pathBounds;
 - (float)pathScale;
 - (id)pathSource;
 - (void)setPathScale:(float)arg1;

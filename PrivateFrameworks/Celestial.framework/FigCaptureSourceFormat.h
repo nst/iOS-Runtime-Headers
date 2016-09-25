@@ -11,7 +11,7 @@
 }
 
 @property (readonly) NSArray *AVCaptureSessionPresets;
-@property (readonly) double aeMaxGain;
+@property (readonly) float aeMaxGain;
 @property (readonly) int autoFocusSystem;
 @property (readonly) BOOL capturesStillsFromVideoStream;
 @property (readonly, copy) NSString *debugDescription;
@@ -31,12 +31,12 @@
 @property (getter=isIrisVideoStabilizationSupported, readonly) BOOL irisVideoStabilizationSupported;
 @property (readonly) BOOL isExternalFormat;
 @property (readonly) BOOL ispChromaNoiseReductionEnabled;
-@property (readonly) struct { int x1; int x2; unsigned int x3; int x4; } maxExposureDuration;
-@property (readonly) double maxISO;
+@property (readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } maxExposureDuration;
+@property (readonly) float maxISO;
 @property (readonly) int maxIntegrationTimeOverride;
 @property (readonly) unsigned long mediaType;
-@property (readonly) struct { int x1; int x2; unsigned int x3; int x4; } minExposureDuration;
-@property (readonly) double minISO;
+@property (readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } minExposureDuration;
+@property (readonly) float minISO;
 @property (getter=isMultiStreamFormat, readonly) BOOL multiStreamFormat;
 @property (readonly) BOOL needsPreviewDPCC;
 @property (getter=isPhotoFormat, readonly) BOOL photoFormat;
@@ -55,22 +55,22 @@
 @property (readonly) unsigned long supportedRawPixelFormat;
 @property (readonly) int temporalNoiseReductionMode;
 @property (getter=isVideoBinned, readonly) BOOL videoBinned;
-@property (readonly) double videoDefaultMaxFrameRate;
-@property (readonly) double videoDefaultMinFrameRate;
+@property (readonly) float videoDefaultMaxFrameRate;
+@property (readonly) float videoDefaultMinFrameRate;
 @property (readonly) struct { int x1; int x2; } videoDimensions;
-@property (readonly) double videoFieldOfView;
+@property (readonly) float videoFieldOfView;
 @property (readonly) unsigned long videoFormat;
 @property (readonly) int videoFormatIndex;
 @property (getter=isVideoLowLightBinningSwitchSupported, readonly) BOOL videoLowLightBinningSwitchSupported;
-@property (readonly) double videoMaxSupportedFrameRate;
-@property (readonly) double videoMaxZoomFactor;
-@property (readonly) double videoMinSupportedFrameRate;
+@property (readonly) float videoMaxSupportedFrameRate;
+@property (readonly) float videoMaxZoomFactor;
+@property (readonly) float videoMinSupportedFrameRate;
 @property (readonly) int videoRawBitDepth;
-@property (readonly) double videoScaleFactor;
+@property (readonly) float videoScaleFactor;
 @property (readonly) int videoStabilizationTypeOverrideForCinematic;
 @property (readonly) int videoStabilizationTypeOverrideForStandard;
 @property (getter=isVideoZoomDynamicSensorCropSupported, readonly) BOOL videoZoomDynamicSensorCropSupported;
-@property (readonly) double videoZoomFactorUpscaleThreshold;
+@property (readonly) float videoZoomFactorUpscaleThreshold;
 @property (getter=isVideoZoomSupported, readonly) BOOL videoZoomSupported;
 @property (getter=isWideColorSupported, readonly) BOOL wideColorSupported;
 
@@ -117,11 +117,11 @@
 - (BOOL)isVideoZoomSupported;
 - (BOOL)isWideColorSupported;
 - (BOOL)ispChromaNoiseReductionEnabled;
-- (struct { int x1; int x2; unsigned int x3; int x4; })maxExposureDuration;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })maxExposureDuration;
 - (float)maxISO;
 - (int)maxIntegrationTimeOverride;
 - (unsigned long)mediaType;
-- (struct { int x1; int x2; unsigned int x3; int x4; })minExposureDuration;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })minExposureDuration;
 - (float)minISO;
 - (BOOL)needsPreviewDPCC;
 - (BOOL)prefersSensorHDREnabled;

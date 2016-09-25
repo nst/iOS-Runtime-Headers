@@ -8,7 +8,7 @@
     CIImage * _inputImage;
     NSNumber * _inputStrength;
     int  _lastAmount;
-    double  _lastStrength;
+    float  _lastStrength;
     CIFilter * _maskFilter;
     BOOL  _needsReprocess;
 }

@@ -9,15 +9,15 @@
     NSString * _externalImageId;
     NSString * _imageFilePath;
     void * _imageRegistrationDescriptor;
-    double  _nextLeafDescriptorDistance;
+    float  _nextLeafDescriptorDistance;
     long  _nextLeafId;
     long  _nextLeafTimestampDistance;
-    double  _nextLeafTotalDistance;
-    double  _previousLeafDescriptorDistance;
+    float  _nextLeafTotalDistance;
+    float  _previousLeafDescriptorDistance;
     long  _previousLeafId;
     long  _previousLeafTimestampDistance;
-    double  _previousLeafTotalDistance;
-    double  _quality;
+    float  _previousLeafTotalDistance;
+    float  _quality;
     void * _sceneClassifierDescriptor;
 }
 
@@ -27,15 +27,15 @@
 @property (readonly) NSString *externalImageId;
 @property (readonly) NSString *imageFilePath;
 @property (readonly) void*imageRegistrationDescriptor;
-@property double nextLeafDescriptorDistance;
+@property float nextLeafDescriptorDistance;
 @property long nextLeafId;
 @property long nextLeafTimestampDistance;
-@property double nextLeafTotalDistance;
-@property double previousLeafDescriptorDistance;
+@property float nextLeafTotalDistance;
+@property float previousLeafDescriptorDistance;
 @property long previousLeafId;
 @property long previousLeafTimestampDistance;
-@property double previousLeafTotalDistance;
-@property (readonly) double quality;
+@property float previousLeafTotalDistance;
+@property (readonly) float quality;
 @property (readonly) NSData *rawColorGaborDescriptor;
 @property (readonly) void*sceneClassifierDescriptor;
 

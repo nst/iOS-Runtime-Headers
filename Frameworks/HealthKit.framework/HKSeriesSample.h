@@ -3,7 +3,7 @@
  */
 
 @interface HKSeriesSample : HKSample {
-    int  _count;
+    long long  _count;
     BOOL  _frozen;
 }
 

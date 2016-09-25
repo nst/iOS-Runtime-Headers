@@ -3,12 +3,12 @@
  */
 
 @interface PerformanceGraphWidgetPrivate : NSObject {
-    struct { double x1; int x2; int x3; int x4; unsigned int x5; bool x6; } * dataPoints;
-    unsigned int  lastDraw;
-    unsigned int  lastUpdate;
+    struct { double x1; int x2; int x3; int x4; unsigned long long x5; bool x6; } * dataPoints;
+    unsigned long long  lastDraw;
+    unsigned long long  lastUpdate;
     int  maxMemoryUsage;
     int  maxPageCount;
-    unsigned int  maxRenderTime;
+    unsigned long long  maxRenderTime;
     NSMutableDictionary * pageMemory;
     int  queueCount;
     int  queueIndex;

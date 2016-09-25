@@ -14,7 +14,7 @@
         unsigned int stationIndex : 1; 
     }  _has;
     GEOLatLng * _location;
-    unsigned int  _muid;
+    unsigned long long  _muid;
     unsigned int  _stationIndex;
 }
 
@@ -30,7 +30,7 @@
 @property (nonatomic) BOOL hasMuid;
 @property (nonatomic) BOOL hasStationIndex;
 @property (nonatomic, retain) GEOLatLng *location;
-@property (nonatomic) unsigned int muid;
+@property (nonatomic) unsigned long long muid;
 @property (nonatomic) unsigned int stationIndex;
 
 + (Class)entranceZoomNameType;
@@ -68,7 +68,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)location;
 - (void)mergeFrom:(id)arg1;
-- (unsigned int)muid;
+- (unsigned long long)muid;
 - (BOOL)readFrom:(id)arg1;
 - (void)setAccessPointIndex:(unsigned int)arg1;
 - (void)setEntranceNameDisplayString:(id)arg1;
@@ -79,7 +79,7 @@
 - (void)setHasMuid:(BOOL)arg1;
 - (void)setHasStationIndex:(BOOL)arg1;
 - (void)setLocation:(id)arg1;
-- (void)setMuid:(unsigned int)arg1;
+- (void)setMuid:(unsigned long long)arg1;
 - (void)setStationIndex:(unsigned int)arg1;
 - (unsigned int)stationIndex;
 - (void)writeTo:(id)arg1;

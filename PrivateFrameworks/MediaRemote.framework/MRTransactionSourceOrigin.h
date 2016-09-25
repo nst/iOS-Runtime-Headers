@@ -4,7 +4,7 @@
 
 @interface MRTransactionSourceOrigin : NSObject {
     BOOL  _active;
-    unsigned int  _name;
+    unsigned long long  _name;
     struct _MROrigin { } * _origin;
     MRTransactionPacketizer * _packetizer;
     NSMutableArray * _packets;
@@ -17,7 +17,7 @@
 - (void)_cleanUp;
 - (void)_processMessage:(id)arg1;
 - (void)dealloc;
-- (id)initWithName:(unsigned int)arg1 forOrigin:(struct _MROrigin { }*)arg2 withQueue:(id)arg3;
+- (id)initWithName:(unsigned long long)arg1 forOrigin:(struct _MROrigin { }*)arg2 withQueue:(id)arg3;
 - (BOOL)isActive;
 - (void)sendPackets:(id)arg1;
 

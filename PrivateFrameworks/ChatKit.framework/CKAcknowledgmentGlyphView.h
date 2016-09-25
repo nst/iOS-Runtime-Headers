@@ -6,15 +6,15 @@
     double  _animationDuration;
     UIColor * _glyphColor;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _glyphOffset;
 }
 
 @property (nonatomic, readonly) int acknowledgmentType;
 @property (nonatomic, readonly) double animationDuration;
 @property (nonatomic, retain) UIColor *glyphColor;
-@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } glyphOffset;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } glyphOffset;
 
 + (void)cacheGlyphView:(id)arg1;
 + (id)glyphViewForAcknowledgmentType:(int)arg1;
@@ -25,7 +25,7 @@
 - (void)animateWithDelay:(double)arg1 completionDelay:(double)arg2 completion:(id /* block */)arg3;
 - (double)animationDuration;
 - (id)glyphColor;
-- (struct CGPoint { double x1; double x2; })glyphOffset;
+- (struct CGPoint { float x1; float x2; })glyphOffset;
 - (void)setGlyphColor:(id)arg1;
 
 @end

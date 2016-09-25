@@ -5,13 +5,13 @@
 @interface SYSyncBatch : PBCodable <NSCopying> {
     NSMutableArray * _changes;
     SYMessageHeader * _header;
-    unsigned int  _index;
+    unsigned long long  _index;
     NSString * _sessionID;
 }
 
 @property (nonatomic, retain) NSMutableArray *changes;
 @property (nonatomic, retain) SYMessageHeader *header;
-@property (nonatomic) unsigned int index;
+@property (nonatomic) unsigned long long index;
 @property (nonatomic, retain) NSString *sessionID;
 
 + (Class)changesType;
@@ -28,14 +28,14 @@
 - (id)dictionaryRepresentation;
 - (unsigned int)hash;
 - (id)header;
-- (unsigned int)index;
+- (unsigned long long)index;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (id)sessionID;
 - (void)setChanges:(id)arg1;
 - (void)setHeader:(id)arg1;
-- (void)setIndex:(unsigned int)arg1;
+- (void)setIndex:(unsigned long long)arg1;
 - (void)setSessionID:(id)arg1;
 - (void)writeTo:(id)arg1;
 

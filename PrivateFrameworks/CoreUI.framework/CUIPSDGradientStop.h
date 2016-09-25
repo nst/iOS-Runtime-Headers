@@ -3,7 +3,7 @@
  */
 
 @interface CUIPSDGradientStop : NSObject <NSCoding, NSCopying> {
-    double  location;
+    float  location;
 }
 
 + (void)initialize;

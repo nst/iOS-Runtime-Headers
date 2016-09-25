@@ -45,7 +45,7 @@
 - (void)messageEntryViewDidChange:(id)arg1;
 - (void)messageEntryViewSendButtonHit:(id)arg1;
 - (void)messageEntryViewSendButtonHitWhileDisabled:(id)arg1;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })navigationBarInsetsForRecipientSelectionController:(id)arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })navigationBarInsetsForRecipientSelectionController:(id)arg1;
 - (BOOL)newComposeCancelled;
 - (id)outgoingComposeViewForSendAnimation;
 - (void)parentControllerDidResume:(BOOL)arg1 animating:(BOOL)arg2;

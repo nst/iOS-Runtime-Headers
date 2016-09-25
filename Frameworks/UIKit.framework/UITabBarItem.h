@@ -10,10 +10,10 @@
     _UITabBarItemAppearanceStorage * _appearanceStorage;
     NSString * _badgeValue;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _imageInsets;
     UIImage * _selectedImage;
     UIImage * _selectedTemplateImage;
@@ -39,7 +39,7 @@
 @property (nonatomic, copy) UIColor *badgeColor;
 @property (nonatomic, copy) NSString *badgeValue;
 @property (nonatomic, retain) UIImage *selectedImage;
-@property (nonatomic) struct UIOffset { double x1; double x2; } titlePositionAdjustment;
+@property (nonatomic) struct UIOffset { float x1; float x2; } titlePositionAdjustment;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
@@ -64,7 +64,7 @@
 - (void)_showSelectedIndicator:(BOOL)arg1 changeSelection:(BOOL)arg2;
 - (id)_tintColor;
 - (void)_updateButtonForTintColor:(id)arg1 selected:(BOOL)arg2;
-- (id)_updateImageWithTintColor:(id)arg1 isSelected:(BOOL)arg2 getImageOffset:(struct UIOffset { double x1; double x2; }*)arg3;
+- (id)_updateImageWithTintColor:(id)arg1 isSelected:(BOOL)arg2 getImageOffset:(struct UIOffset { float x1; float x2; }*)arg3;
 - (void)_updateToMatchCurrentState;
 - (void)_updateView;
 - (void)_updateViewAndPositionItems:(BOOL)arg1;
@@ -79,7 +79,7 @@
 - (id)finishedUnselectedImage;
 - (BOOL)hasTitle;
 - (id)image;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })imageInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })imageInsets;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithTabBarSystemItem:(int)arg1 tag:(int)arg2;
@@ -97,18 +97,18 @@
 - (void)setEnabled:(BOOL)arg1;
 - (void)setFinishedSelectedImage:(id)arg1 withFinishedUnselectedImage:(id)arg2;
 - (void)setImage:(id)arg1;
-- (void)setImageInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setImageInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setSelectedImage:(id)arg1;
 - (void)setTarget:(id)arg1;
 - (void)setTitle:(id)arg1;
-- (void)setTitlePositionAdjustment:(struct UIOffset { double x1; double x2; })arg1;
+- (void)setTitlePositionAdjustment:(struct UIOffset { float x1; float x2; })arg1;
 - (void)setTitleTextAttributes:(id)arg1 forState:(unsigned int)arg2;
 - (void)setUnselectedImage:(id)arg1;
 - (void)setView:(id)arg1;
 - (int)systemItem;
 - (id)target;
 - (id)title;
-- (struct UIOffset { double x1; double x2; })titlePositionAdjustment;
+- (struct UIOffset { float x1; float x2; })titlePositionAdjustment;
 - (id)titleTextAttributesForState:(unsigned int)arg1;
 - (id)unselectedImage;
 - (id)view;

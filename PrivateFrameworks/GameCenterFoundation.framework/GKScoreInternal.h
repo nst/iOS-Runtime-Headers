@@ -3,19 +3,19 @@
  */
 
 @interface GKScoreInternal : GKInternalRepresentation {
-    unsigned int  _context;
+    unsigned long long  _context;
     NSDate * _date;
     NSString * _formattedValue;
     NSString * _groupLeaderboardIdentifier;
     NSString * _leaderboardIdentifier;
     GKPlayerInternal * _player;
     unsigned int  _rank;
-    int  _value;
+    long long  _value;
     BOOL  _valueSet;
 }
 
 @property (nonatomic, retain) NSString *category;
-@property (nonatomic) unsigned int context;
+@property (nonatomic) unsigned long long context;
 @property (nonatomic, retain) NSDate *date;
 @property (nonatomic, retain) NSString *formattedValue;
 @property (nonatomic, retain) NSString *groupCategory;
@@ -24,14 +24,14 @@
 @property (nonatomic, retain) GKPlayerInternal *player;
 @property (nonatomic, readonly) NSString *playerID;
 @property (nonatomic) unsigned int rank;
-@property (nonatomic) int value;
+@property (nonatomic) long long value;
 @property (nonatomic) BOOL valueSet;
 
 + (id)secureCodedPropertyKeys;
 + (BOOL)supportsSecureCoding;
 
 - (id)category;
-- (unsigned int)context;
+- (unsigned long long)context;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)date;
 - (void)dealloc;
@@ -47,7 +47,7 @@
 - (unsigned int)rank;
 - (id)serverRepresentation;
 - (void)setCategory:(id)arg1;
-- (void)setContext:(unsigned int)arg1;
+- (void)setContext:(unsigned long long)arg1;
 - (void)setDate:(id)arg1;
 - (void)setFormattedValue:(id)arg1;
 - (void)setGroupCategory:(id)arg1;
@@ -55,9 +55,9 @@
 - (void)setLeaderboardIdentifier:(id)arg1;
 - (void)setPlayer:(id)arg1;
 - (void)setRank:(unsigned int)arg1;
-- (void)setValue:(int)arg1;
+- (void)setValue:(long long)arg1;
 - (void)setValueSet:(BOOL)arg1;
-- (int)value;
+- (long long)value;
 - (BOOL)valueSet;
 
 @end

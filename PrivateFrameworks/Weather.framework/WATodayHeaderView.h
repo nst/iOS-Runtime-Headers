@@ -13,9 +13,9 @@
     UILabel * _locationLabel;
     NSString * _locationName;
     NSArray * _masterConstraints;
-    double  _pageBaselineOffset;
-    double  _pageDegreeFontSize;
-    double  _pageFontSize;
+    float  _pageBaselineOffset;
+    float  _pageDegreeFontSize;
+    float  _pageFontSize;
     NSString * _temperature;
     NSString * _temperatureHigh;
     UILabel * _temperatureHighLowLabel;
@@ -33,9 +33,9 @@
 @property (nonatomic, retain) UILabel *locationLabel;
 @property (nonatomic, copy) NSString *locationName;
 @property (nonatomic, retain) NSArray *masterConstraints;
-@property (nonatomic) double pageBaselineOffset;
-@property (nonatomic) double pageDegreeFontSize;
-@property (nonatomic) double pageFontSize;
+@property (nonatomic) float pageBaselineOffset;
+@property (nonatomic) float pageDegreeFontSize;
+@property (nonatomic) float pageFontSize;
 @property (nonatomic, copy) NSString *temperature;
 @property (nonatomic, copy) NSString *temperatureHigh;
 @property (nonatomic, retain) UILabel *temperatureHighLowLabel;

@@ -4,26 +4,26 @@
 
 @interface _UIExpandingGlyphsView : UIView <CAAnimationDelegate> {
     NSAttributedString * _attributedString;
-    double  _baselineOffset;
+    float  _baselineOffset;
     id /* block */  _completionBlock;
     BOOL  _expandsFromLeftToRight;
     NSArray * _imageViews;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _intrinsicSize;
     int  _remainingAnimationCount;
 }
 
 @property (nonatomic, retain) NSAttributedString *attributedString;
-@property (nonatomic, readonly) double baselineOffset;
+@property (nonatomic, readonly) float baselineOffset;
 @property (nonatomic, copy) id /* block */ completionBlock;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) BOOL expandsFromLeftToRight;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) NSArray *imageViews;
-@property (nonatomic) struct CGSize { double x1; double x2; } intrinsicSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } intrinsicSize;
 @property (nonatomic) int remainingAnimationCount;
 @property (readonly) Class superclass;
 
@@ -35,15 +35,15 @@
 - (id /* block */)completionBlock;
 - (BOOL)expandsFromLeftToRight;
 - (id)imageViews;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
-- (struct CGSize { double x1; double x2; })intrinsicSize;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
+- (struct CGSize { float x1; float x2; })intrinsicSize;
 - (int)remainingAnimationCount;
 - (void)setAttributedString:(id)arg1;
 - (void)setCompletionBlock:(id /* block */)arg1;
 - (void)setExpandsFromLeftToRight:(BOOL)arg1;
 - (void)setImageViews:(id)arg1;
-- (void)setIntrinsicSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setIntrinsicSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setRemainingAnimationCount:(int)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 
 @end

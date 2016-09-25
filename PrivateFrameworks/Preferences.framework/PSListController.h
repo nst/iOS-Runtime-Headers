@@ -15,8 +15,8 @@
     NSMutableDictionary * _cells;
     PSListContainerView * _containerView;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _contentOffsetWithKeyboard;
     <PSSpecifierDataSource> * _dataSource;
     BOOL  _edgeToEdgeCells;
@@ -53,7 +53,7 @@
     UITableView * _table;
     UIColor * _textColor;
     BOOL  _usesDarkTheme;
-    double  _verticalContentOffset;
+    float  _verticalContentOffset;
 }
 
 @property (nonatomic, retain) UIColor *altTextColor;
@@ -175,7 +175,7 @@
 - (id)indexPathForIndex:(int)arg1;
 - (id)indexPathForSpecifier:(id)arg1;
 - (id)init;
-- (id)initForContentSize:(struct CGSize { double x1; double x2; })arg1;
+- (id)initForContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)insertContiguousSpecifiers:(id)arg1 afterSpecifier:(id)arg2;
 - (void)insertContiguousSpecifiers:(id)arg1 afterSpecifier:(id)arg2 animated:(BOOL)arg3;
 - (void)insertContiguousSpecifiers:(id)arg1 afterSpecifierID:(id)arg2;

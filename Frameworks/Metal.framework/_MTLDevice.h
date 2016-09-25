@@ -5,9 +5,9 @@
 @interface _MTLDevice : NSObject {
     int  _commandQueueCount;
     MTLCompiler * _compiler;
-    unsigned int  _globalTraceObjectID;
-    struct MTLLibraryBuilder { id x1; /* Warning: Unrecognized filer type: 'm' using 'void*' */ void*x2; void*x3; void*x4; void*x5; void*x6; void*x7; unsigned long x8; unsigned long x9; int x10; unsigned int x11/* : ? */; const void*x12; const void*x13; unsigned int x14; double x15; void*x16; in void*x17; int x18; double x19; int x20; void*x21; const void*x22; void*x23; void*x24; void*x25; unsigned long x26; unsigned long x27; int x28; unsigned int x29/* : ? */; const void*x30; const void*x31; unsigned char x32; out in void*x33; void*x34; int x35; in void*x36; const void*x37; char *x38; void*x39; void*x40; short x41; void*x42; double x43; SEL x44; SEL x45; void*x46; void*x47; void*x48; SEL x49; SEL x50; long x51; void*x52; short x53; short x54; void*x55; void*x56; void*x57; unsigned long x58; unsigned long x59; int x60; unsigned int x61/* : ? */; const void*x62; const void*x63; unsigned int x64; double x65; void*x66; in void*x67; int x68; double x69; int x70; void*x71; const void*x72; void*x73; void*x74; short x75; void*x76; double x77; SEL x78; } * _libraryBuilder;
-    struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; unsigned int x15; unsigned int x16; unsigned int x17; unsigned int x18; double x19; double x20; unsigned int x21; unsigned int x22; unsigned int x23; unsigned int x24; unsigned int x25; unsigned int x26; unsigned int x27; unsigned int x28; unsigned int x29; unsigned int x30; unsigned int x31; unsigned int x32; unsigned int x33; unsigned int x34; unsigned int x35; unsigned int x36; unsigned int x37; unsigned int x38; unsigned int x39; unsigned int x40; unsigned int x41; } * _limits;
+    unsigned long long  _globalTraceObjectID;
+    struct MTLLibraryBuilder { id x1; /* Warning: Unrecognized filer type: 'm' using 'void*' */ void*x2; void*x3; void*x4; void*x5; void*x6; void*x7; unsigned long x8; unsigned long x9; int x10; unsigned int x11/* : ? */; const void*x12; const void*x13; unsigned int x14; double x15; void*x16; in void*x17; int x18; float x19; int x20; void*x21; const void*x22; void*x23; void*x24; void*x25; unsigned long x26; unsigned long x27; int x28; unsigned int x29/* : ? */; const void*x30; const void*x31; unsigned char x32; out in void*x33; void*x34; int x35; in void*x36; const void*x37; char *x38; void*x39; void*x40; short x41; void*x42; double x43; SEL x44; SEL x45; void*x46; void*x47; void*x48; SEL x49; SEL x50; long x51; void*x52; short x53; short x54; void*x55; void*x56; void*x57; unsigned long x58; unsigned long x59; int x60; unsigned int x61/* : ? */; const void*x62; const void*x63; unsigned int x64; double x65; void*x66; in void*x67; int x68; float x69; int x70; void*x71; const void*x72; void*x73; void*x74; short x75; void*x76; double x77; SEL x78; } * _libraryBuilder;
+    struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; unsigned int x15; unsigned int x16; unsigned int x17; unsigned int x18; float x19; float x20; unsigned int x21; unsigned int x22; unsigned int x23; unsigned int x24; unsigned int x25; unsigned int x26; unsigned int x27; unsigned int x28; unsigned int x29; unsigned int x30; unsigned int x31; unsigned int x32; unsigned int x33; unsigned int x34; unsigned int x35; unsigned int x36; unsigned int x37; unsigned int x38; unsigned int x39; unsigned int x40; unsigned int x41; } * _limits;
     MTLIOMemoryInfo * _memoryInfo;
     NSObject<OS_dispatch_queue> * _serialQueue;
     long  limits_init;
@@ -17,10 +17,10 @@
 @property (readonly) MTLCompiler *compiler;
 @property (readonly) unsigned int deviceLinearReadOnlyTextureAlignmentBytes;
 @property (readonly) unsigned int deviceLinearTextureAlignmentBytes;
-@property (readonly) unsigned int globalTraceObjectID;
+@property (readonly) unsigned long long globalTraceObjectID;
 @property (readonly) unsigned int iosurfaceReadOnlyTextureAlignmentBytes;
 @property (readonly) unsigned int iosurfaceTextureAlignmentBytes;
-@property (readonly) const struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; unsigned int x15; unsigned int x16; unsigned int x17; unsigned int x18; double x19; double x20; unsigned int x21; unsigned int x22; unsigned int x23; unsigned int x24; unsigned int x25; unsigned int x26; unsigned int x27; unsigned int x28; unsigned int x29; unsigned int x30; unsigned int x31; unsigned int x32; unsigned int x33; unsigned int x34; unsigned int x35; unsigned int x36; unsigned int x37; unsigned int x38; unsigned int x39; unsigned int x40; unsigned int x41; }*limits;
+@property (readonly) const struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; unsigned int x15; unsigned int x16; unsigned int x17; unsigned int x18; float x19; float x20; unsigned int x21; unsigned int x22; unsigned int x23; unsigned int x24; unsigned int x25; unsigned int x26; unsigned int x27; unsigned int x28; unsigned int x29; unsigned int x30; unsigned int x31; unsigned int x32; unsigned int x33; unsigned int x34; unsigned int x35; unsigned int x36; unsigned int x37; unsigned int x38; unsigned int x39; unsigned int x40; unsigned int x41; }*limits;
 @property (readonly) unsigned int linearTextureAlignmentBytes;
 @property (readonly) unsigned int maxBufferLength;
 @property (readonly) unsigned int maxColorAttachments;
@@ -39,8 +39,8 @@
 @property (readonly) unsigned int maxFunctionConstantIndices;
 @property (readonly) unsigned int maxInterpolants;
 @property (readonly) unsigned int maxInterpolatedComponents;
-@property (readonly) double maxLineWidth;
-@property (readonly) double maxPointSize;
+@property (readonly) float maxLineWidth;
+@property (readonly) float maxPointSize;
 @property (readonly) unsigned int maxTextureDepth3D;
 @property (readonly) unsigned int maxTextureDimensionCube;
 @property (readonly) unsigned int maxTextureHeight2D;
@@ -86,13 +86,13 @@
 - (void)freeFragmentFunctionKey:(void*)arg1 fragmentKeySize:(unsigned long)arg2;
 - (void)freeVertexFunctionKey:(void*)arg1 vertexKeySize:(unsigned long)arg2;
 - (void*)getShaderCacheKeys;
-- (unsigned int)globalTraceObjectID;
+- (unsigned long long)globalTraceObjectID;
 - (id)init;
 - (void)initLimits;
 - (unsigned int)iosurfaceReadOnlyTextureAlignmentBytes;
 - (unsigned int)iosurfaceTextureAlignmentBytes;
 - (struct { unsigned int x1; unsigned int x2; })libraryCacheStats;
-- (const struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; unsigned int x15; unsigned int x16; unsigned int x17; unsigned int x18; double x19; double x20; unsigned int x21; unsigned int x22; unsigned int x23; unsigned int x24; unsigned int x25; unsigned int x26; unsigned int x27; unsigned int x28; unsigned int x29; unsigned int x30; unsigned int x31; unsigned int x32; unsigned int x33; unsigned int x34; unsigned int x35; unsigned int x36; unsigned int x37; unsigned int x38; unsigned int x39; unsigned int x40; unsigned int x41; }*)limits;
+- (const struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; unsigned int x15; unsigned int x16; unsigned int x17; unsigned int x18; float x19; float x20; unsigned int x21; unsigned int x22; unsigned int x23; unsigned int x24; unsigned int x25; unsigned int x26; unsigned int x27; unsigned int x28; unsigned int x29; unsigned int x30; unsigned int x31; unsigned int x32; unsigned int x33; unsigned int x34; unsigned int x35; unsigned int x36; unsigned int x37; unsigned int x38; unsigned int x39; unsigned int x40; unsigned int x41; }*)limits;
 - (unsigned int)linearTextureAlignmentBytes;
 - (unsigned int)maxBufferLength;
 - (unsigned int)maxColorAttachments;

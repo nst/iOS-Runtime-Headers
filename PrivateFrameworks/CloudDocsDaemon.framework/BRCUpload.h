@@ -4,17 +4,17 @@
 
 @interface BRCUpload : NSObject <BRCTransfer> {
     BRCClientZone * _clientZone;
-    unsigned int  _doneSize;
+    unsigned long long  _doneSize;
     BRCItemID * _itemID;
     BRCProgress * _progress;
     BOOL  _progressPublished;
     CKRecord * _record;
     NSString * _stageID;
-    int  _throttleID;
-    unsigned int  _totalSize;
+    long long  _throttleID;
+    unsigned long long  _totalSize;
 }
 
-@property (nonatomic) unsigned int doneSize;
+@property (nonatomic) unsigned long long doneSize;
 @property (nonatomic, readonly) NSString *etag;
 @property (nonatomic, readonly) BRCItemID *itemID;
 @property (nonatomic, readonly) BRCProgress *progress;
@@ -24,15 +24,15 @@
 @property (nonatomic, retain) CKRecord *secondaryRecord;
 @property (nonatomic, readonly) CKRecordID *secondaryRecordID;
 @property (nonatomic, readonly) NSString *stageID;
-@property (nonatomic, readonly) int throttleID;
-@property (nonatomic, readonly) unsigned int totalSize;
+@property (nonatomic, readonly) long long throttleID;
+@property (nonatomic, readonly) unsigned long long totalSize;
 @property (nonatomic, readonly) NSNumber *transferID;
 
 - (void).cxx_destruct;
 - (id)description;
-- (unsigned int)doneSize;
+- (unsigned long long)doneSize;
 - (id)etag;
-- (id)initWithDocument:(id)arg1 stageID:(id)arg2 transferSize:(unsigned int)arg3;
+- (id)initWithDocument:(id)arg1 stageID:(id)arg2 transferSize:(unsigned long long)arg3;
 - (id)itemID;
 - (id)progress;
 - (BOOL)progressPublished;
@@ -40,13 +40,13 @@
 - (id)recordID;
 - (id)secondaryRecord;
 - (id)secondaryRecordID;
-- (void)setDoneSize:(unsigned int)arg1;
+- (void)setDoneSize:(unsigned long long)arg1;
 - (void)setProgressPublished:(BOOL)arg1;
 - (void)setRecord:(id)arg1;
 - (void)setSecondaryRecord:(id)arg1;
 - (id)stageID;
-- (int)throttleID;
-- (unsigned int)totalSize;
+- (long long)throttleID;
+- (unsigned long long)totalSize;
 - (id)transferID;
 
 @end

@@ -52,7 +52,7 @@
 - (id)cameraNearPlaneGeometry;
 - (void)cancelSelection;
 - (void)dealloc;
-- (BOOL)didTapAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (BOOL)didTapAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (int)displayMask;
 - (id)initWithScene:(id)arg1;
 - (id)jointGeometry;

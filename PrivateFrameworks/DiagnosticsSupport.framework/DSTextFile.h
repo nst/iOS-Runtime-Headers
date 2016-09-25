@@ -29,12 +29,12 @@
 - (unsigned int)bufferSize;
 - (BOOL)cancelEnumeration;
 - (unsigned int)currentLineIndex;
-- (unsigned int)currentOffset;
+- (unsigned long long)currentOffset;
 - (void)end;
 - (void)enumerateUsingBlock:(id /* block */)arg1;
 - (id)extractLine:(unsigned int)arg1;
 - (id)fileHandle;
-- (unsigned int)getOffsetAtLineIndex:(unsigned int)arg1;
+- (unsigned long long)getOffsetAtLineIndex:(unsigned int)arg1;
 - (id)init;
 - (id)initWithFilePath:(id)arg1;
 - (id)initWithFilePath:(id)arg1 withBufferSize:(unsigned int)arg2;
@@ -45,7 +45,7 @@
 - (void)resetEnumerator;
 - (BOOL)searchForNextLineFromCurrentPosition:(id*)arg1;
 - (void)seekToBeginning;
-- (void)seekToOffset:(unsigned int)arg1;
+- (void)seekToOffset:(unsigned long long)arg1;
 - (void)setBufferSize:(unsigned int)arg1;
 - (void)setCancelEnumeration:(BOOL)arg1;
 - (void)setCurrentLineIndex:(unsigned int)arg1;

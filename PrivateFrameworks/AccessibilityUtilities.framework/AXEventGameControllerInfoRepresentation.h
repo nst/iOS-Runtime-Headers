@@ -3,45 +3,45 @@
  */
 
 @interface AXEventGameControllerInfoRepresentation : NSObject <AXEventRepresentationDescription, NSCopying, NSSecureCoding> {
-    double  _directionPadDown;
-    double  _directionPadLeft;
-    double  _directionPadRight;
-    double  _directionPadUp;
-    double  _faceButtonA;
-    double  _faceButtonB;
-    double  _faceButtonX;
-    double  _faceButtonY;
-    double  _leftJoystickX;
-    double  _leftJoystickY;
-    double  _rightJoystickX;
-    double  _rightJoystickY;
-    double  _shoulderButtonL1;
-    double  _shoulderButtonL2;
-    double  _shoulderButtonR1;
-    double  _shoulderButtonR2;
+    float  _directionPadDown;
+    float  _directionPadLeft;
+    float  _directionPadRight;
+    float  _directionPadUp;
+    float  _faceButtonA;
+    float  _faceButtonB;
+    float  _faceButtonX;
+    float  _faceButtonY;
+    float  _leftJoystickX;
+    float  _leftJoystickY;
+    float  _rightJoystickX;
+    float  _rightJoystickY;
+    float  _shoulderButtonL1;
+    float  _shoulderButtonL2;
+    float  _shoulderButtonR1;
+    float  _shoulderButtonR2;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) double directionPadDown;
-@property (nonatomic) double directionPadLeft;
-@property (nonatomic) double directionPadRight;
-@property (nonatomic) double directionPadUp;
-@property (nonatomic) double faceButtonA;
-@property (nonatomic) double faceButtonB;
-@property (nonatomic) double faceButtonX;
-@property (nonatomic) double faceButtonY;
+@property (nonatomic) float directionPadDown;
+@property (nonatomic) float directionPadLeft;
+@property (nonatomic) float directionPadRight;
+@property (nonatomic) float directionPadUp;
+@property (nonatomic) float faceButtonA;
+@property (nonatomic) float faceButtonB;
+@property (nonatomic) float faceButtonX;
+@property (nonatomic) float faceButtonY;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) BOOL leftJoystickActive;
-@property (nonatomic) double leftJoystickX;
-@property (nonatomic) double leftJoystickY;
+@property (nonatomic) float leftJoystickX;
+@property (nonatomic) float leftJoystickY;
 @property (nonatomic, readonly) BOOL rightJoystickActive;
-@property (nonatomic) double rightJoystickX;
-@property (nonatomic) double rightJoystickY;
-@property (nonatomic) double shoulderButtonL1;
-@property (nonatomic) double shoulderButtonL2;
-@property (nonatomic) double shoulderButtonR1;
-@property (nonatomic) double shoulderButtonR2;
+@property (nonatomic) float rightJoystickX;
+@property (nonatomic) float rightJoystickY;
+@property (nonatomic) float shoulderButtonL1;
+@property (nonatomic) float shoulderButtonL2;
+@property (nonatomic) float shoulderButtonR1;
+@property (nonatomic) float shoulderButtonR2;
 @property (readonly) Class superclass;
 
 + (BOOL)supportsSecureCoding;

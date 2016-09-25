@@ -3,33 +3,33 @@
  */
 
 @interface _UILegibilitySettingsProvider : NSObject {
-    double  _accumulatedBrightness;
-    double  _accumulatedContrast;
-    double  _accumulatedLuminance;
-    double  _accumulatedSaturation;
+    float  _accumulatedBrightness;
+    float  _accumulatedContrast;
+    float  _accumulatedLuminance;
+    float  _accumulatedSaturation;
     BOOL  _accumulatorIsPrimed;
     UIColor * _contentColor;
     int  _currentStyle;
     BOOL  _hasContrast;
-    double  _mostRecentBrightness;
-    double  _mostRecentContrast;
-    double  _mostRecentLuminance;
-    double  _mostRecentSaturation;
+    float  _mostRecentBrightness;
+    float  _mostRecentContrast;
+    float  _mostRecentLuminance;
+    float  _mostRecentSaturation;
     double  _nextChangeBarrier;
 }
 
-@property (nonatomic) double accumulatedBrightness;
-@property (nonatomic) double accumulatedContrast;
-@property (nonatomic) double accumulatedLuminance;
-@property (nonatomic) double accumulatedSaturation;
+@property (nonatomic) float accumulatedBrightness;
+@property (nonatomic) float accumulatedContrast;
+@property (nonatomic) float accumulatedLuminance;
+@property (nonatomic) float accumulatedSaturation;
 @property (nonatomic) BOOL accumulatorIsPrimed;
 @property (nonatomic, retain) UIColor *contentColor;
 @property (nonatomic) int currentStyle;
 @property (nonatomic) BOOL hasContrast;
-@property (nonatomic) double mostRecentBrightness;
-@property (nonatomic) double mostRecentContrast;
-@property (nonatomic) double mostRecentLuminance;
-@property (nonatomic) double mostRecentSaturation;
+@property (nonatomic) float mostRecentBrightness;
+@property (nonatomic) float mostRecentContrast;
+@property (nonatomic) float mostRecentLuminance;
+@property (nonatomic) float mostRecentSaturation;
 @property (nonatomic) double nextChangeBarrier;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit

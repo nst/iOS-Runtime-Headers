@@ -27,7 +27,7 @@
     id /* block */  _songPopularityBlock;
     NSString * _title;
     int  _trackCount;
-    double  _volumeNormalization;
+    float  _volumeNormalization;
     int  _year;
 }
 
@@ -55,7 +55,7 @@
 @property (nonatomic, copy) id /* block */ songPopularityBlock;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic) int trackCount;
-@property (nonatomic) double volumeNormalization;
+@property (nonatomic) float volumeNormalization;
 @property (nonatomic) int year;
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer

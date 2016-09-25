@@ -26,7 +26,7 @@
 @property (nonatomic, copy) NSString *generatedFileName;
 @property (setter=_setOperationError:, nonatomic, retain) NSError *operationError;
 @property (nonatomic, copy) NSURL *outputDirectoryURL;
-@property (nonatomic, readonly) double progress;
+@property (nonatomic, readonly) float progress;
 @property (nonatomic) BOOL shouldStripLocation;
 @property (nonatomic) BOOL shouldStripMetadata;
 @property (setter=_setSuccess:, nonatomic) BOOL success;

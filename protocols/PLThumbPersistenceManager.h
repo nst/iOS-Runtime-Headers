@@ -14,7 +14,7 @@
 - (int)imageHeight;
 - (int)imageLength;
 - (int)imageRowBytes;
-- (struct CGSize { double x1; double x2; })imageSize;
+- (struct CGSize { float x1; float x2; })imageSize;
 - (int)imageWidth;
 - (BOOL)isReadOnly;
 - (NSString *)path;

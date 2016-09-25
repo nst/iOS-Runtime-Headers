@@ -4,7 +4,7 @@
 
 @interface BKSLocalDefaults : BSAbstractDefaultDomain
 
-@property (nonatomic) double ALSDelayOnUnlock;
+@property (nonatomic) float ALSDelayOnUnlock;
 @property (getter=isALSEnabled, nonatomic) BOOL ALSEnabled;
 @property (nonatomic) long ALSEpoch;
 @property (nonatomic, retain) NSDictionary *ALSUserPreferences;
@@ -15,7 +15,7 @@
 @property (nonatomic) BOOL disableCAYUV;
 @property (nonatomic) BOOL disableCloneMirroring;
 @property (getter=isDitheringEnabled, nonatomic) BOOL ditheringEnabled;
-@property (nonatomic) double fenceArbiterTimeoutInterval;
+@property (nonatomic) float fenceArbiterTimeoutInterval;
 @property (nonatomic) BOOL forceCloneMirroring;
 @property (nonatomic) NSString *forceMirroredOrientation;
 @property (nonatomic) BOOL hideAppleLogoOnLaunch;

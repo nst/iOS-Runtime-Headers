@@ -10,11 +10,11 @@
         unsigned int percentile75 : 1; 
         unsigned int stddev : 1; 
     }  _has;
-    int  _mean;
-    int  _median;
-    int  _percentile25;
-    int  _percentile75;
-    int  _stddev;
+    long long  _mean;
+    long long  _median;
+    long long  _percentile25;
+    long long  _percentile75;
+    long long  _stddev;
 }
 
 @property (nonatomic) BOOL hasMean;
@@ -22,11 +22,11 @@
 @property (nonatomic) BOOL hasPercentile25;
 @property (nonatomic) BOOL hasPercentile75;
 @property (nonatomic) BOOL hasStddev;
-@property (nonatomic) int mean;
-@property (nonatomic) int median;
-@property (nonatomic) int percentile25;
-@property (nonatomic) int percentile75;
-@property (nonatomic) int stddev;
+@property (nonatomic) long long mean;
+@property (nonatomic) long long median;
+@property (nonatomic) long long percentile25;
+@property (nonatomic) long long percentile75;
+@property (nonatomic) long long stddev;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -39,23 +39,23 @@
 - (BOOL)hasStddev;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
-- (int)mean;
-- (int)median;
+- (long long)mean;
+- (long long)median;
 - (void)mergeFrom:(id)arg1;
-- (int)percentile25;
-- (int)percentile75;
+- (long long)percentile25;
+- (long long)percentile75;
 - (BOOL)readFrom:(id)arg1;
 - (void)setHasMean:(BOOL)arg1;
 - (void)setHasMedian:(BOOL)arg1;
 - (void)setHasPercentile25:(BOOL)arg1;
 - (void)setHasPercentile75:(BOOL)arg1;
 - (void)setHasStddev:(BOOL)arg1;
-- (void)setMean:(int)arg1;
-- (void)setMedian:(int)arg1;
-- (void)setPercentile25:(int)arg1;
-- (void)setPercentile75:(int)arg1;
-- (void)setStddev:(int)arg1;
-- (int)stddev;
+- (void)setMean:(long long)arg1;
+- (void)setMedian:(long long)arg1;
+- (void)setPercentile25:(long long)arg1;
+- (void)setPercentile75:(long long)arg1;
+- (void)setStddev:(long long)arg1;
+- (long long)stddev;
 - (void)writeTo:(id)arg1;
 
 @end

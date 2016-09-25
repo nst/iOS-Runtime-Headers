@@ -4,12 +4,12 @@
 
 @interface SKUIProductPagePlaceholderScrollView : UIScrollView {
     BOOL  _isPad;
-    double  _offset;
+    float  _offset;
     UIView * _placeholderView;
 }
 
 @property (nonatomic) BOOL isPad;
-@property (nonatomic) double offset;
+@property (nonatomic) float offset;
 @property (nonatomic, retain) UIView *placeholderView;
 
 - (void).cxx_destruct;

@@ -9,8 +9,8 @@
     BOOL  _initializedProperties;
     int  _orientation;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _pxSize;
     NSURL * _url;
 }
@@ -21,8 +21,8 @@
 @property (nonatomic, retain) NSData *data;
 @property (nonatomic, readonly) UIImage *image;
 @property (nonatomic, readonly) int orientation;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } ptSize;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } pxSize;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } ptSize;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } pxSize;
 @property (nonatomic, retain) NSURL *url;
 
 + (id)UTITypeForData:(id)arg1;
@@ -32,8 +32,8 @@
 - (id)MIMEType;
 - (id)UTIType;
 - (void)_initializeProperties;
-- (id)_thumbnailFillToSize:(struct CGSize { double x1; double x2; })arg1 atIndex:(unsigned int)arg2;
-- (id)_thumbnailFitToSize:(struct CGSize { double x1; double x2; })arg1 atIndex:(unsigned int)arg2;
+- (id)_thumbnailFillToSize:(struct CGSize { float x1; float x2; })arg1 atIndex:(unsigned int)arg2;
+- (id)_thumbnailFitToSize:(struct CGSize { float x1; float x2; })arg1 atIndex:(unsigned int)arg2;
 - (unsigned int)count;
 - (id)data;
 - (void)dealloc;
@@ -42,16 +42,16 @@
 - (id)initWithData:(id)arg1;
 - (id)initWithURL:(id)arg1;
 - (int)orientation;
-- (struct CGSize { double x1; double x2; })ptSize;
-- (struct CGSize { double x1; double x2; })pxSize;
+- (struct CGSize { float x1; float x2; })ptSize;
+- (struct CGSize { float x1; float x2; })pxSize;
 - (void)setData:(id)arg1;
 - (void)setUrl:(id)arg1;
-- (id)thumbnailAtIndex:(unsigned int)arg1 fillToSize:(struct CGSize { double x1; double x2; })arg2 maxCount:(unsigned int)arg3;
-- (id)thumbnailFillToSize:(struct CGSize { double x1; double x2; })arg1;
-- (id)thumbnailFillToSizeCropping:(struct CGSize { double x1; double x2; })arg1;
-- (id)thumbnailFitToSize:(struct CGSize { double x1; double x2; })arg1;
-- (id)thumbnailsFillToSize:(struct CGSize { double x1; double x2; })arg1 maxCount:(unsigned int)arg2;
-- (id)thumbnailsFitToSize:(struct CGSize { double x1; double x2; })arg1 maxCount:(unsigned int)arg2;
+- (id)thumbnailAtIndex:(unsigned int)arg1 fillToSize:(struct CGSize { float x1; float x2; })arg2 maxCount:(unsigned int)arg3;
+- (id)thumbnailFillToSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)thumbnailFillToSizeCropping:(struct CGSize { float x1; float x2; })arg1;
+- (id)thumbnailFitToSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)thumbnailsFillToSize:(struct CGSize { float x1; float x2; })arg1 maxCount:(unsigned int)arg2;
+- (id)thumbnailsFitToSize:(struct CGSize { float x1; float x2; })arg1 maxCount:(unsigned int)arg2;
 - (id)url;
 
 @end

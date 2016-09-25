@@ -36,7 +36,7 @@
 - (unsigned int)indexOfCurrentTrackForType:(unsigned int)arg1;
 - (id)initWithItem:(id)arg1;
 - (BOOL)isLoaded;
-- (void)legibleOutput:(id)arg1 didOutputAttributedStrings:(id)arg2 nativeSampleBuffers:(id)arg3 forItemTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg4;
+- (void)legibleOutput:(id)arg1 didOutputAttributedStrings:(id)arg2 nativeSampleBuffers:(id)arg3 forItemTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg4;
 - (id)outOfBandTextTracks;
 - (void)reloadData;
 - (void)reloadDataWithChangedCaptionDisplayType:(BOOL)arg1;

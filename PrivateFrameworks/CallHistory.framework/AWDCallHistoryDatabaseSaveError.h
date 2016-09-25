@@ -11,7 +11,7 @@
         unsigned int error : 1; 
     }  _has;
     NSString * _table;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) unsigned int domain;
@@ -21,7 +21,7 @@
 @property (nonatomic, readonly) BOOL hasTable;
 @property (nonatomic) BOOL hasTimestamp;
 @property (nonatomic, retain) NSString *table;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -44,9 +44,9 @@
 - (void)setHasError:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
 - (void)setTable:(id)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (id)table;
-- (unsigned int)timestamp;
+- (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -5,26 +5,26 @@
 @interface MPContext : NSObject {
     int  _clusterSplitDistanceType;
     int  _debugMode;
-    double  _inliersRatioThreshold;
-    double  _naturalClusteringDistanceThreshold;
+    float  _inliersRatioThreshold;
+    float  _naturalClusteringDistanceThreshold;
     int  _numberOfKeypointsToConsider;
     BOOL  _performClustersPostprocessing;
     BOOL  _performSceneClassification;
     NSArray * _qualityCriteriaList;
-    double  _roiAreaThreshold;
+    float  _roiAreaThreshold;
     int  _timerMode;
     BOOL  _useTimestampAdjustedDistances;
 }
 
 @property int clusterSplitDistanceType;
 @property int debugMode;
-@property double inliersRatioThreshold;
-@property double naturalClusteringDistanceThreshold;
+@property float inliersRatioThreshold;
+@property float naturalClusteringDistanceThreshold;
 @property int numberOfKeypointsToConsider;
 @property BOOL performClustersPostprocessing;
 @property BOOL performSceneClassification;
 @property (retain) NSArray *qualityCriteriaList;
-@property double roiAreaThreshold;
+@property float roiAreaThreshold;
 @property int timerMode;
 @property BOOL useTimestampAdjustedDistances;
 

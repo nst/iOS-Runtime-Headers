@@ -8,7 +8,7 @@
     BOOL  _inMemory;
     BOOL  _journaling;
     NSObject<OS_dispatch_queue> * _queue;
-    unsigned int  _serialNumber;
+    unsigned long long  _serialNumber;
     NSString * _uuid;
 }
 

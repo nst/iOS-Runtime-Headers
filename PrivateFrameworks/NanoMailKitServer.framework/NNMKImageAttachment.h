@@ -4,23 +4,23 @@
 
 @interface NNMKImageAttachment : NNMKAttachment <NSSecureCoding> {
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _imageSize;
     BOOL  _renderOnClient;
 }
 
-@property (nonatomic) struct CGSize { double x1; double x2; } imageSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } imageSize;
 @property (nonatomic) BOOL renderOnClient;
 
 + (BOOL)supportsSecureCoding;
 
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (struct CGSize { double x1; double x2; })imageSize;
+- (struct CGSize { float x1; float x2; })imageSize;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)renderOnClient;
-- (void)setImageSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setImageSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setRenderOnClient:(BOOL)arg1;
 
 @end

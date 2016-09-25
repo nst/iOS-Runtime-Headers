@@ -20,8 +20,8 @@
 - (void)_updateFollowItem:(id)arg1 withState:(BOOL)arg2;
 - (id)init;
 - (void)loadFollowingWithCompletionHandler:(id /* block */)arg1;
-- (BOOL)requestFollowingStateForEntityWithStoreID:(int)arg1;
-- (void)requestFollowingStateForEntityWithStoreID:(int)arg1 contentType:(unsigned int)arg2 completion:(id /* block */)arg3;
-- (void)updateFollowingState:(BOOL)arg1 forEntityWithStoreID:(int)arg2 contentType:(unsigned int)arg3 completion:(id /* block */)arg4;
+- (BOOL)requestFollowingStateForEntityWithStoreID:(long long)arg1;
+- (void)requestFollowingStateForEntityWithStoreID:(long long)arg1 contentType:(unsigned int)arg2 completion:(id /* block */)arg3;
+- (void)updateFollowingState:(BOOL)arg1 forEntityWithStoreID:(long long)arg2 contentType:(unsigned int)arg3 completion:(id /* block */)arg4;
 
 @end

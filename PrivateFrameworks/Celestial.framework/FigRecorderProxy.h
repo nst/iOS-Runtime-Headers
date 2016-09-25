@@ -3,7 +3,7 @@
  */
 
 @interface FigRecorderProxy : FigCaptureSessionProxy {
-    int  _identifier;
+    long long  _identifier;
     <FigCaptureSessionPreviewTapDelegate> * _previewTapDelegate;
     BOOL  _previewTapOpened;
     struct OpaqueFigRecorder { } * _recorder;
@@ -11,8 +11,8 @@
 
 - (void)closePreviewTap;
 - (void)dealloc;
-- (int)identifier;
-- (id)initWithFigRecorder:(struct OpaqueFigRecorder { }*)arg1 identifier:(int)arg2;
+- (long long)identifier;
+- (id)initWithFigRecorder:(struct OpaqueFigRecorder { }*)arg1 identifier:(long long)arg2;
 - (long)openPreviewTapWithDelegate:(id)arg1;
 
 @end

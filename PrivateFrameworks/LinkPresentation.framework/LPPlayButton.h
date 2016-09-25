@@ -5,7 +5,7 @@
 @interface LPPlayButton : SKUIPlayButton
 
 - (float)buttonCornerRadius;
-- (struct CGSize { double x1; double x2; })buttonSize;
+- (struct CGSize { float x1; float x2; })buttonSize;
 - (id)cancelImage;
 - (id)init;
 - (void)layoutSubviews;

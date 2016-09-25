@@ -6,7 +6,7 @@
     GEOFeatureStyleAttributes * _sharedAttributes;
     unsigned char  countAttrs;
     unsigned char  countExtAttrs;
-    struct { unsigned int x1; unsigned int x2; } * extAttrs;
+    struct { unsigned int x1; unsigned long long x2; } * extAttrs;
     BOOL  featureType;
     struct { unsigned int x1; int x2; } * v;
 }
@@ -29,7 +29,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithGEOStyleAttributes:(id)arg1;
 - (id)initWithPlaceDataStyleAttributes:(id)arg1;
-- (id)initWithSharedStyleAttributes:(id)arg1 extAttributes:(const struct { unsigned int x1; unsigned int x2; }*)arg2 extAttributeCount:(unsigned char)arg3;
+- (id)initWithSharedStyleAttributes:(id)arg1 extAttributes:(const struct { unsigned int x1; unsigned long long x2; }*)arg2 extAttributeCount:(unsigned char)arg3;
 - (id)initWithStyleAttributes:(id)arg1;
 - (BOOL)isBorder;
 - (BOOL)isBridge;
@@ -46,7 +46,7 @@
 - (int)rampType;
 - (void)removeKey:(unsigned int)arg1;
 - (void)replaceAttributes:(const struct { unsigned int x1; int x2; }*)arg1 count:(unsigned int)arg2;
-- (void)setExtAttributes:(const struct { unsigned int x1; unsigned int x2; }*)arg1 count:(unsigned int)arg2;
+- (void)setExtAttributes:(const struct { unsigned int x1; unsigned long long x2; }*)arg1 count:(unsigned int)arg2;
 - (BOOL)shouldSuppress3DBuildingStrokes;
 - (void)sort;
 

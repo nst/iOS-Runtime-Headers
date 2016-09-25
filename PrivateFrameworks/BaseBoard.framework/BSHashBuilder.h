@@ -19,16 +19,16 @@
 - (id)appendHashingBlocks:(id /* block */)arg1;
 - (id)appendInteger:(int)arg1;
 - (id)appendObject:(id)arg1;
-- (id)appendPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (id)appendPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)appendPointer:(void*)arg1;
-- (id)appendRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (id)appendSize:(struct CGSize { double x1; double x2; })arg1;
+- (id)appendRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)appendSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)appendUnsignedInteger:(unsigned int)arg1;
 - (unsigned int)hash;
 - (id)init;
 
 // Image: /System/Library/PrivateFrameworks/UserNotificationsServer.framework/UserNotificationsServer
 
-- (id)uns_appendCMTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
+- (id)uns_appendCMTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 
 @end

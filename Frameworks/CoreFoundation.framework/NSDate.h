@@ -287,14 +287,14 @@
 
 // Image: /System/Library/PrivateFrameworks/FMCore.framework/FMCore
 
-+ (id)fm_dateFromEpoch:(int)arg1;
++ (id)fm_dateFromEpoch:(long long)arg1;
 
-- (int)fm_epoch;
+- (long long)fm_epoch;
 - (id)fm_epochObject;
 
 // Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
 
-+ (id)_gkDateFromScalarServerTimestamp:(unsigned int)arg1;
++ (id)_gkDateFromScalarServerTimestamp:(unsigned long long)arg1;
 + (id)_gkDateFromServerTimestamp:(id)arg1;
 + (id)_gkServerTimestamp;
 
@@ -385,7 +385,7 @@
 // Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
 
 + (id)dateWithPBDate:(id)arg1;
-+ (id)fc_dateWithMillisecondsTimeIntervalSince1970:(unsigned int)arg1;
++ (id)fc_dateWithMillisecondsTimeIntervalSince1970:(unsigned long long)arg1;
 + (int)keyValuePairType;
 + (id)pbDate;
 + (id)readValueFromKeyValuePair:(id)arg1;
@@ -394,7 +394,7 @@
 - (BOOL)fc_isEarlierThan:(id)arg1;
 - (BOOL)fc_isLaterThan:(id)arg1;
 - (BOOL)fc_isWithinTimeInterval:(double)arg1 ofDate:(id)arg2;
-- (unsigned int)fc_millisecondTimeIntervalSince1970;
+- (unsigned long long)fc_millisecondTimeIntervalSince1970;
 - (double)fc_timeIntervalUntilNow;
 - (id)pbDate;
 - (void)writeToKeyValuePair:(id)arg1;

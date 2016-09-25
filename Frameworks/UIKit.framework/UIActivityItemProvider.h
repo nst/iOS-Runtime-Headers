@@ -5,7 +5,7 @@
 @interface UIActivityItemProvider : NSOperation <UIActivityItemSource> {
     NSString * _activityType;
     id  _placeholderItem;
-    double  _progress;
+    float  _progress;
     id  _providedItem;
     NSString * _status;
 }
@@ -16,7 +16,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) id item;
 @property (nonatomic, retain) id placeholderItem;
-@property (nonatomic) double progress;
+@property (nonatomic) float progress;
 @property (nonatomic, retain) id providedItem;
 @property (nonatomic, copy) NSString *status;
 @property (readonly) Class superclass;

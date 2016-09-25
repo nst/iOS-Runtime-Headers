@@ -26,9 +26,9 @@
 + (id)changeTagFromCKRecord:(id)arg1;
 + (unsigned int)defaultFetchOperationCachePolicy;
 + (double)defaultFetchOperationMaximumCachedAge;
-+ (unsigned int)highThresholdDataSizeLimit;
++ (unsigned long long)highThresholdDataSizeLimit;
 + (id)identifierFromCKRecord:(id)arg1;
-+ (unsigned int)lowThresholdDataSizeLimit;
++ (unsigned long long)lowThresholdDataSizeLimit;
 + (id)modificationDateFromCKRecord:(id)arg1;
 + (id)recordType;
 + (id)storeFilename;
@@ -48,7 +48,7 @@
 - (id)_saveCKRecordsWithWriteLock:(id)arg1 fetchContext:(id)arg2;
 - (id)cacheCoordinator;
 - (void)cacheCoordinator:(id)arg1 flushKeysWithWriteLock:(id)arg2;
-- (unsigned int)cacheCoordinatorCurrentSizeWithReadLock:(id)arg1;
+- (unsigned long long)cacheCoordinatorCurrentSizeWithReadLock:(id)arg1;
 - (id)cachedRecordsWithIDs:(id)arg1;
 - (id)contentDatabase;
 - (id)desiredKeys;

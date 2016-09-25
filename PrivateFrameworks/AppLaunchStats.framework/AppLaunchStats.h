@@ -57,7 +57,7 @@
     bool  lastFetchWasTooLongAgo;
     int  lastTriggeredFetchSlot;
     int  lockStateToken;
-    int  lowPriorityStartTime;
+    long long  lowPriorityStartTime;
     int  messageStatusAPSD;
     NSMutableDictionary * meterTokenTracker;
     BOOL  newsHasPresentedSmartNotification;
@@ -136,7 +136,7 @@
 - (BOOL)isLaunchDeniedForBundle:(id)arg1 withTriggerType:(int)arg2 isTrending:(BOOL)arg3 withPushHandler:(id /* block */)arg4;
 - (BOOL)isPushTopicForComplication:(id)arg1;
 - (bool)isSpringBoardInstance;
-- (void)launchExternalTriggers:(unsigned int)arg1;
+- (void)launchExternalTriggers:(unsigned long long)arg1;
 - (void)logAll:(struct __asl_object_s { }*)arg1 withMsg:(struct __asl_object_s { }*)arg2 withLevel:(int)arg3;
 - (void)logLight:(struct __asl_object_s { }*)arg1 withMsg:(struct __asl_object_s { }*)arg2 withLevel:(int)arg3;
 - (void)newsWake:(id)arg1;
@@ -146,11 +146,11 @@
 - (void)okToPassPushMessageForTopic:(id)arg1 onQueue:(id)arg2 withHandler:(id /* block */)arg3;
 - (void)onTick;
 - (id /* block */)pendingHandler;
-- (void)preWarmHasEnded:(id)arg1 withResult:(unsigned int)arg2 withTriggerType:(int)arg3 withSequence:(unsigned int)arg4;
-- (void)preWarmHasStarted:(id)arg1 withResult:(unsigned int)arg2 withTriggerType:(int)arg3 withSequence:(unsigned int)arg4;
+- (void)preWarmHasEnded:(id)arg1 withResult:(unsigned int)arg2 withTriggerType:(int)arg3 withSequence:(unsigned long long)arg4;
+- (void)preWarmHasStarted:(id)arg1 withResult:(unsigned int)arg2 withTriggerType:(int)arg3 withSequence:(unsigned long long)arg4;
 - (void)readPool:(id)arg1;
-- (void)receiveConnectedStateNotification:(unsigned int)arg1;
-- (void)receiveIncomingLowPriorityPushList:(unsigned int)arg1;
+- (void)receiveConnectedStateNotification:(unsigned long long)arg1;
+- (void)receiveIncomingLowPriorityPushList:(unsigned long long)arg1;
 - (void)receiveIncomingLowPriorityPushRequestForReservationStation:(id)arg1;
 - (void)registerAppForTrending:(id)arg1;
 - (void)reloadConfiguration;
@@ -163,7 +163,7 @@
 - (void)retrieveAppScoresWithQueryHandler:(id /* block */)arg1;
 - (void)runPCtimerHeartBeat:(bool)arg1;
 - (void)save:(id)arg1;
-- (void)sendLSTxtqueriesWithMask:(unsigned int)arg1;
+- (void)sendLSTxtqueriesWithMask:(unsigned long long)arg1;
 - (void)setAppLaunchRecommendationHandler:(id /* block */)arg1;
 - (void)setAppLaunchStatsDelegate:(id)arg1 queue:(id)arg2;
 - (void)setAppLaunchStatsPendingDelegate:(id)arg1 queue:(id)arg2;
@@ -188,8 +188,8 @@
 - (void)updatePredictionsForAllNOIsAsync;
 - (void)updateQuality:(int)arg1 forInterface:(int)arg2;
 - (void)updateResourceAvailability;
-- (void)updateStateFromExternalNotification:(unsigned int)arg1;
-- (void)updateTrendingBehavior:(unsigned int)arg1 withBundleID:(id)arg2;
+- (void)updateStateFromExternalNotification:(unsigned long long)arg1;
+- (void)updateTrendingBehavior:(unsigned long long)arg1 withBundleID:(id)arg2;
 - (void)wakeNewsIfNecessary:(BOOL)arg1;
 - (void)whatToLaunch:(id)arg1;
 

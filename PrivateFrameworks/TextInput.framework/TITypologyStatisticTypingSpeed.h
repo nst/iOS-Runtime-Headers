@@ -9,7 +9,7 @@
 
 @property (nonatomic, readonly) TITypologyStatisticBasicCounts *basicCounts;
 @property (nonatomic, readonly) TITypologyStatisticTimeElapsed *timeElapsed;
-@property (nonatomic, readonly) double typingSpeed;
+@property (nonatomic, readonly) float typingSpeed;
 
 + (id)statistic;
 + (id)statisticCompositeWithStatistics:(id)arg1;

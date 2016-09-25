@@ -5,7 +5,7 @@
 @interface MPUTextDrawingCache : NSObject {
     id /* block */  _attributedTextProvider;
     NSCache * _cache;
-    double  _displayScale;
+    float  _displayScale;
     unsigned int  _invalidationNotificationCoalescingRequestsCount;
     NSHashTable * _invalidationObservers;
     unsigned int  _maximumNumberOfLines;
@@ -19,15 +19,15 @@
 }
 
 @property (nonatomic, copy) id /* block */ attributedTextProvider;
-@property (nonatomic) double displayScale;
+@property (nonatomic) float displayScale;
 @property (nonatomic) unsigned int maximumNumberOfLines;
 @property (getter=_isOpaque, setter=_setOpaque:, nonatomic) BOOL opaque;
 @property (nonatomic, copy) NSDictionary *textAttributes;
 @property (getter=_usesImageCachingInsteadOfStringDrawingContextCaching, setter=_setUsesImageCachingInsteadOfStringDrawingContextCaching:, nonatomic) BOOL usesImageCachingInsteadOfStringDrawingContextCaching;
 
-+ (id)_drawingContextForText:(id)arg1 allowedSize:(struct CGSize { double x1; double x2; })arg2 fromCache:(id)arg3 usingReusableStringDrawingContext:(id)arg4 reusableTextDrawingCacheKey:(id)arg5 textAttributes:(id)arg6 maximumNumberOfLines:(unsigned int)arg7 opaque:(BOOL)arg8 displayScale:(float)arg9 attributedTextProvider:(id /* block */)arg10;
++ (id)_drawingContextForText:(id)arg1 allowedSize:(struct CGSize { float x1; float x2; })arg2 fromCache:(id)arg3 usingReusableStringDrawingContext:(id)arg4 reusableTextDrawingCacheKey:(id)arg5 textAttributes:(id)arg6 maximumNumberOfLines:(unsigned int)arg7 opaque:(BOOL)arg8 displayScale:(float)arg9 attributedTextProvider:(id /* block */)arg10;
 + (void)_updateStringDrawingContext:(id)arg1 withMaximumNumberOfLines:(unsigned int)arg2;
-+ (struct CGSize { double x1; double x2; })_validateAllowedSize:(struct CGSize { double x1; double x2; })arg1;
++ (struct CGSize { float x1; float x2; })_validateAllowedSize:(struct CGSize { float x1; float x2; })arg1;
 
 - (void).cxx_destruct;
 - (void)_invalidate;
@@ -41,11 +41,11 @@
 - (void)beginCoalescingInvalidationNotifications;
 - (void)dealloc;
 - (float)displayScale;
-- (id)drawingContextForText:(id)arg1 allowedSize:(struct CGSize { double x1; double x2; })arg2;
+- (id)drawingContextForText:(id)arg1 allowedSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)endCoalescingInvalidationNotifications;
 - (id)init;
 - (unsigned int)maximumNumberOfLines;
-- (void)preHeatForStrings:(id)arg1 allowedSize:(struct CGSize { double x1; double x2; })arg2;
+- (void)preHeatForStrings:(id)arg1 allowedSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)removeInvalidationObserver:(id)arg1;
 - (void)setAttributedTextProvider:(id /* block */)arg1;
 - (void)setDisplayScale:(float)arg1;

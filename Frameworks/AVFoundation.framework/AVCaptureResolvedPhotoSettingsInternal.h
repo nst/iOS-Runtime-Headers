@@ -27,7 +27,7 @@
     BOOL  squareCropEnabled;
     BOOL  stillImageStabilizationEnabled;
     BOOL  turboModeEnabled;
-    int  uniqueID;
+    long long  uniqueID;
 }
 
 @end

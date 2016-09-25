@@ -110,7 +110,7 @@
 - (void)_update;
 - (BOOL)_updateIsScheduled;
 - (void)_updateTransientDataSourceIfNeeded;
-- (void)animateRevealWithInteractionProgress:(id)arg1 forPreviewingAtLocation:(struct CGPoint { double x1; double x2; })arg2 inSourceView:(id)arg3 containerView:(id)arg4;
+- (void)animateRevealWithInteractionProgress:(id)arg1 forPreviewingAtLocation:(struct CGPoint { float x1; float x2; })arg2 inSourceView:(id)arg3 containerView:(id)arg4;
 - (void)applicationDidEnterBackground:(id)arg1;
 - (void)applicationResumed:(id)arg1;
 - (void)applicationWillEnterForeground:(id)arg1;
@@ -128,7 +128,7 @@
 - (BOOL)isCameraRollViewControllerPresented;
 - (BOOL)isCaptureSessionCurrent:(unsigned short)arg1;
 - (void)oneUpPresentationHelper:(id)arg1 previewScrubberDidBecomeAvailable:(id)arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })oneUpPresentationHelper:(id)arg1 rectForAssetReference:(id)arg2 cropInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; }*)arg3 contentsRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg4;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })oneUpPresentationHelper:(id)arg1 rectForAssetReference:(id)arg2 cropInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg3 contentsRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg4;
 - (void)oneUpPresentationHelper:(id)arg1 shouldHideAssetReferences:(id)arg2;
 - (int)oneUpPresentationHelperPreferredBarStyle:(id)arg1;
 - (BOOL)oneUpPresentationHelperShouldLeaveContentOnSecondScreen:(id)arg1;
@@ -144,9 +144,9 @@
 - (void)presentingViewControllerViewWillAppear:(BOOL)arg1;
 - (void)presentingViewControllerViewWillDisappear:(BOOL)arg1;
 - (id)previewGestureRecognizer;
-- (id)previewPresentationTransitioningDelegateForPosition:(struct CGPoint { double x1; double x2; })arg1 inSourceView:(id)arg2;
+- (id)previewPresentationTransitioningDelegateForPosition:(struct CGPoint { float x1; float x2; })arg1 inSourceView:(id)arg2;
 - (void)previewingContext:(id)arg1 commitViewController:(id)arg2;
-- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { double x1; double x2; })arg2;
+- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { float x1; float x2; })arg2;
 - (void)processPendingBursts;
 - (void)processTransientAssetUpdate:(id)arg1 preventingInsertion:(BOOL)arg2;
 - (void)processTransientPairedVideoUpdate:(id)arg1 filterType:(int)arg2;
@@ -160,6 +160,6 @@
 - (BOOL)shouldPauseAudioSessionUpdatesForCapture;
 - (BOOL)shouldStartPreviewingSimultaneouslyWithGestureRecognizer:(id)arg1;
 - (void)viewModel:(id)arg1 didChange:(id)arg2;
-- (void)willPresentPreviewViewController:(id)arg1 forLocation:(struct CGPoint { double x1; double x2; })arg2 inSourceView:(id)arg3;
+- (void)willPresentPreviewViewController:(id)arg1 forLocation:(struct CGPoint { float x1; float x2; })arg2 inSourceView:(id)arg3;
 
 @end

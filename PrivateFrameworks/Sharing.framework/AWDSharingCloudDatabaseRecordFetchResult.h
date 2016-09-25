@@ -10,7 +10,7 @@
         unsigned int errorCode : 1; 
         unsigned int updateCount : 1; 
     }  _has;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
     unsigned int  _updateCount;
 }
 
@@ -20,7 +20,7 @@
 @property (nonatomic, readonly) BOOL hasErrorDomain;
 @property (nonatomic) BOOL hasTimestamp;
 @property (nonatomic) BOOL hasUpdateCount;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 @property (nonatomic) unsigned int updateCount;
 
 - (void).cxx_destruct;
@@ -43,9 +43,9 @@
 - (void)setHasErrorCode:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
 - (void)setHasUpdateCount:(BOOL)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (void)setUpdateCount:(unsigned int)arg1;
-- (unsigned int)timestamp;
+- (unsigned long long)timestamp;
 - (unsigned int)updateCount;
 - (void)writeTo:(id)arg1;
 

@@ -5,7 +5,7 @@
 @interface BLActivityAlert : BLAlert {
     UIActivityIndicatorView * _activityIndicatorView;
     BOOL  _hasActivity;
-    double  _progress;
+    float  _progress;
     UIProgressView * _progressView;
     int  _type;
 }

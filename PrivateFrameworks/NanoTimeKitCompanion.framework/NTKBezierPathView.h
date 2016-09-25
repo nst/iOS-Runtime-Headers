@@ -26,7 +26,7 @@
 - (id)path;
 - (id)pathColor;
 - (id)pointModel;
-- (struct CGPoint { double x1; double x2; })pointOnPathForHorizontalPercentage:(float)arg1;
+- (struct CGPoint { float x1; float x2; })pointOnPathForHorizontalPercentage:(float)arg1;
 - (void)setPath:(id)arg1;
 - (void)setPathColor:(id)arg1;
 

@@ -4,7 +4,7 @@
 
 @interface VKTileProvider : NSObject <VKLRUCacheDelegate, VKTileSourceClient> {
     <VKTileProviderClient> * _client;
-    double  _contentScale;
+    float  _contentScale;
     <VKMapLayer> * _debugLayer;
     GEOTileKeyList * _debugLayerKeys;
     _VKTileProviderTimerTarget * _evaluationTarget;
@@ -36,11 +36,11 @@
         double horizontalOffset; 
     }  _lastCameraState;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _lastCanvasSize;
-    double  _lastMidDisplayZoomLevel;
-    double  _loadingProgress;
+    float  _lastMidDisplayZoomLevel;
+    float  _loadingProgress;
     NSLocale * _locale;
     NSMutableSet * _lostTiles;
     GEOResourceManifestConfiguration * _manifestConfiguration;
@@ -74,7 +74,7 @@
 }
 
 @property (nonatomic) <VKTileProviderClient> *client;
-@property (nonatomic) double contentScale;
+@property (nonatomic) float contentScale;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, retain) <VKMapLayer> *debugLayer;
 @property (nonatomic, readonly) GEOTileKeyList *debugLayerKeys;
@@ -85,7 +85,7 @@
 @property (nonatomic, readonly) BOOL hasFailedTile;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) VKTileKeyList *keysInView;
-@property (nonatomic, readonly) double loadingProgress;
+@property (nonatomic, readonly) float loadingProgress;
 @property (nonatomic) double lodBias;
 @property (nonatomic) int mode;
 @property (nonatomic, readonly) VKTileKeyList *neighborKeys;
@@ -100,10 +100,10 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)_dirtyTile:(id)arg1 source:(id)arg2 layer:(unsigned int)arg3;
+- (void)_dirtyTile:(id)arg1 source:(id)arg2 layer:(unsigned long long)arg3;
 - (void)_disableTimers;
 - (void)_fetchAvailableTiles:(BOOL)arg1;
-- (void)_fillHoles:(id)arg1 context:(struct LayoutContext { id x1; short x2; /* Warning: Unrecognized filer type: 'h' using 'void*' */ void*x3; void*x4; const void*x5; double x6; void*x7; void*x8; void*x9; const void*x10; void*x11; double x12; SEL x13; SEL x14; oneway int x15; void*x16; void*x17; void*x18; const void*x19; in short x20; double x21; out const void*x22; void*x23; void*x24; struct ViewTransform {} *x25; struct __shared_weak_count {} *x26; }*)arg2;
+- (void)_fillHoles:(id)arg1 context:(struct LayoutContext { id x1; short x2; /* Warning: Unrecognized filer type: 'h' using 'void*' */ void*x3; void*x4; const void*x5; double x6; void*x7; void*x8; void*x9; const void*x10; void*x11; double x12; SEL x13; SEL x14; oneway int x15; void*x16; void*x17; void*x18; const void*x19; in short x20; float x21; out const void*x22; void*x23; void*x24; struct ViewTransform {} *x25; struct __shared_weak_count {} *x26; }*)arg2;
 - (void)_prefetchTiles;
 - (void)_resizeCache;
 - (void)_updateTimers:(int)arg1;
@@ -111,7 +111,7 @@
 - (BOOL)canRenderTile:(id)arg1;
 - (void)cancelLoadForMapTile:(id)arg1;
 - (void)cancelLoadingTiles;
-- (void)changeTileForKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1 toState:(unsigned int)arg2 withMetadata:(id)arg3 withTile:(id)arg4 forLayer:(unsigned int)arg5;
+- (void)changeTileForKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1 toState:(unsigned int)arg2 withMetadata:(id)arg3 withTile:(id)arg4 forLayer:(unsigned long long)arg5;
 - (void)clearScene;
 - (id)client;
 - (void)configureTileSelection;
@@ -142,7 +142,7 @@
 - (BOOL)isFinishedLoadingOptionalLayers;
 - (BOOL)isPrefetchEnabled;
 - (id)keysInView;
-- (unsigned int)layerForSource:(id)arg1;
+- (unsigned long long)layerForSource:(id)arg1;
 - (float)loadingProgress;
 - (double)lodBias;
 - (int)mode;
@@ -153,10 +153,10 @@
 - (void)quiesce;
 - (void)rasterizer:(id)arg1 didMakeRasterTile:(id)arg2 forKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg3;
 - (void)releaseFallbackTileForRendering:(id)arg1;
-- (void)releaseFallbackTilesForTile:(id)arg1 context:(struct LayoutContext { id x1; short x2; /* Warning: Unrecognized filer type: 'h' using 'void*' */ void*x3; void*x4; const void*x5; double x6; void*x7; void*x8; void*x9; const void*x10; void*x11; double x12; SEL x13; SEL x14; oneway int x15; void*x16; void*x17; void*x18; const void*x19; in short x20; double x21; out const void*x22; void*x23; void*x24; struct ViewTransform {} *x25; struct __shared_weak_count {} *x26; }*)arg2;
+- (void)releaseFallbackTilesForTile:(id)arg1 context:(struct LayoutContext { id x1; short x2; /* Warning: Unrecognized filer type: 'h' using 'void*' */ void*x3; void*x4; const void*x5; double x6; void*x7; void*x8; void*x9; const void*x10; void*x11; double x12; SEL x13; SEL x14; oneway int x15; void*x16; void*x17; void*x18; const void*x19; in short x20; float x21; out const void*x22; void*x23; void*x24; struct ViewTransform {} *x25; struct __shared_weak_count {} *x26; }*)arg2;
 - (void)releaseNeighborTileForRendering:(id)arg1;
 - (void)releaseTileForRendering:(id)arg1;
-- (void)removeTileSourceForMapLayer:(unsigned int)arg1;
+- (void)removeTileSourceForMapLayer:(unsigned long long)arg1;
 - (void)requireRasterization:(id)arg1;
 - (void)retireNeighborTiles:(id)arg1;
 - (void)retireRenderTiles:(id)arg1;
@@ -171,9 +171,9 @@
 - (void)setPrefetchEnabled:(BOOL)arg1;
 - (void)setStyleManager:(struct shared_ptr<gss::StylesheetManager<gss::PropertyID> > { struct StylesheetManager<gss::PropertyID> {} *x1; struct __shared_weak_count {} *x2; })arg1;
 - (void)setTileExclusionAreas:(const struct vector<md::TileExclusionArea, std::__1::allocator<md::TileExclusionArea> > { struct TileExclusionArea {} *x1; struct TileExclusionArea {} *x2; struct __compressed_pair<md::TileExclusionArea *, std::__1::allocator<md::TileExclusionArea> > { struct TileExclusionArea {} *x_3_1_1; } x3; }*)arg1;
-- (void)setTileSource:(id)arg1 forMapLayer:(unsigned int)arg2 optional:(BOOL)arg3;
+- (void)setTileSource:(id)arg1 forMapLayer:(unsigned long long)arg2 optional:(BOOL)arg3;
 - (void)setUseSmallTileCache:(BOOL)arg1;
-- (id)sourceForLayer:(unsigned int)arg1;
+- (id)sourceForLayer:(unsigned long long)arg1;
 - (id)sourceForMapLayer:(id)arg1;
 - (struct shared_ptr<gss::StylesheetManager<gss::PropertyID> > { struct StylesheetManager<gss::PropertyID> {} *x1; struct __shared_weak_count {} *x2; })styleManager;
 - (BOOL)tileExclusionAreaVisible;
@@ -190,7 +190,7 @@
 - (void)tileSourcesDidChange;
 - (id)tilesToRender;
 - (void)timerFired:(id)arg1;
-- (void)updateWithContext:(struct LayoutContext { id x1; short x2; /* Warning: Unrecognized filer type: 'h' using 'void*' */ void*x3; void*x4; const void*x5; double x6; void*x7; void*x8; void*x9; const void*x10; void*x11; double x12; SEL x13; SEL x14; oneway int x15; void*x16; void*x17; void*x18; const void*x19; in short x20; double x21; out const void*x22; void*x23; void*x24; struct ViewTransform {} *x25; struct __shared_weak_count {} *x26; }*)arg1 selectionScale:(float)arg2;
+- (void)updateWithContext:(struct LayoutContext { id x1; short x2; /* Warning: Unrecognized filer type: 'h' using 'void*' */ void*x3; void*x4; const void*x5; double x6; void*x7; void*x8; void*x9; const void*x10; void*x11; double x12; SEL x13; SEL x14; oneway int x15; void*x16; void*x17; void*x18; const void*x19; in short x20; float x21; out const void*x22; void*x23; void*x24; struct ViewTransform {} *x25; struct __shared_weak_count {} *x26; }*)arg1 selectionScale:(float)arg2;
 - (BOOL)useSmallTileCache;
 - (id)visibleTileSets;
 - (void)willStartLoadingTiles;

@@ -6,16 +6,16 @@
     int  _alignment;
     unsigned int * _alphaMap;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _alphaMapSize;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _cropOffset;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _cropScale;
     BOOL  _didGenerateMipmaps;
     BOOL  _disableAlpha;
@@ -36,22 +36,22 @@
     NSString * _subTextureName;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _textCoords;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _textRect;
     SKTextureCache * _textureCache;
@@ -59,9 +59,9 @@
 }
 
 @property (nonatomic, readonly) unsigned int*alphaMap;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } alphaMapSize;
-@property (nonatomic) struct CGPoint { double x1; double x2; } cropOffset;
-@property (nonatomic) struct CGPoint { double x1; double x2; } cropScale;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } alphaMapSize;
+@property (nonatomic) struct CGPoint { float x1; float x2; } cropOffset;
+@property (nonatomic) struct CGPoint { float x1; float x2; } cropScale;
 @property (nonatomic) int filteringMode;
 @property (nonatomic, readonly) BOOL hasAlpha;
 @property (nonatomic, readonly) NSString *imageNameOrPath;
@@ -70,7 +70,7 @@
 @property (nonatomic) BOOL isRotated;
 @property (nonatomic, copy) NSString *originalAtlasName;
 @property BOOL performFullCapture;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } pixelSize;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } pixelSize;
 @property (nonatomic, retain) SKTextureAtlas *rootAtlas;
 @property (nonatomic, copy) NSString *subTextureName;
 @property (nonatomic) unsigned int textureTarget;
@@ -81,29 +81,29 @@
 
 + (id)_cachedTextureNames;
 + (void)_reloadTextureCacheForImageNamed:(id)arg1;
-+ (id)_textureByTransferingData:(char *)arg1 size:(struct CGSize { double x1; double x2; })arg2;
-+ (id)_textureByTransferingData:(char *)arg1 size:(struct CGSize { double x1; double x2; })arg2 rowLength:(unsigned int)arg3 alignment:(unsigned int)arg4;
-+ (id)_textureWithGLTextureId:(unsigned int)arg1 size:(struct CGSize { double x1; double x2; })arg2;
++ (id)_textureByTransferingData:(char *)arg1 size:(struct CGSize { float x1; float x2; })arg2;
++ (id)_textureByTransferingData:(char *)arg1 size:(struct CGSize { float x1; float x2; })arg2 rowLength:(unsigned int)arg3 alignment:(unsigned int)arg4;
++ (id)_textureWithGLTextureId:(unsigned int)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 + (id)_textureWithImageNamed:(id)arg1;
 + (id)compressedTextureWithData:(id)arg1;
-+ (id)compressedTextureWithData:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 bitsPerPixel:(unsigned int)arg3 hasAlpha:(BOOL)arg4;
++ (id)compressedTextureWithData:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 bitsPerPixel:(unsigned int)arg3 hasAlpha:(BOOL)arg4;
 + (id)lookupTextureCacheForName:(id)arg1;
 + (void)preloadTextures:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 + (void)registerTextureCache:(id)arg1 forName:(id)arg2;
-+ (id)textureNoiseWithSmoothness:(float)arg1 size:(struct CGSize { double x1; double x2; })arg2 grayscale:(BOOL)arg3;
-+ (id)textureVectorNoiseWithSmoothness:(float)arg1 size:(struct CGSize { double x1; double x2; })arg2;
++ (id)textureNoiseWithSmoothness:(float)arg1 size:(struct CGSize { float x1; float x2; })arg2 grayscale:(BOOL)arg3;
++ (id)textureVectorNoiseWithSmoothness:(float)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 + (id)textureWithCGImage:(struct CGImage { }*)arg1;
-+ (id)textureWithCGImage:(struct CGImage { }*)arg1 pointSize:(struct CGSize { double x1; double x2; })arg2;
-+ (id)textureWithData:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
-+ (id)textureWithData:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 flipped:(BOOL)arg3;
-+ (id)textureWithData:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 rowLength:(unsigned int)arg3 alignment:(unsigned int)arg4;
++ (id)textureWithCGImage:(struct CGImage { }*)arg1 pointSize:(struct CGSize { float x1; float x2; })arg2;
++ (id)textureWithData:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
++ (id)textureWithData:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 flipped:(BOOL)arg3;
++ (id)textureWithData:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 rowLength:(unsigned int)arg3 alignment:(unsigned int)arg4;
 + (id)textureWithIOSurfaceID:(unsigned int)arg1 width:(unsigned int)arg2 height:(unsigned int)arg3 format:(unsigned int)arg4;
 + (id)textureWithImage:(id)arg1;
 + (id)textureWithImageNamed:(id)arg1;
-+ (id)textureWithImageNamed:(id)arg1 rect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
++ (id)textureWithImageNamed:(id)arg1 rect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 + (id)textureWithImagePath:(id)arg1;
 + (id)textureWithMetalTexture:(id)arg1;
-+ (id)textureWithRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inTexture:(id)arg2;
++ (id)textureWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inTexture:(id)arg2;
 
 - (void).cxx_destruct;
 - (struct CGImage { }*)CGImage;
@@ -112,17 +112,17 @@
 - (struct CGImage { }*)_createCGImage;
 - (void)_ensureImageData;
 - (id)_generateNormalMap:(float)arg1 contrast:(float)arg2 multiPass:(unsigned long)arg3;
-- (id)_initWithGLTextureId:(unsigned int)arg1 size:(struct CGSize { double x1; double x2; })arg2;
+- (id)_initWithGLTextureId:(unsigned int)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 - (struct CGImage { }*)_newTextureFromGLCache;
 - (void)_savePngFromGLCache:(id)arg1;
 - (void)_setImageName:(id)arg1;
 - (id)_textureCache;
 - (unsigned int*)alphaMap;
-- (struct CGSize { double x1; double x2; })alphaMapSize;
+- (struct CGSize { float x1; float x2; })alphaMapSize;
 - (void)commonInit;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (struct CGPoint { double x1; double x2; })cropOffset;
-- (struct CGPoint { double x1; double x2; })cropScale;
+- (struct CGPoint { float x1; float x2; })cropOffset;
+- (struct CGPoint { float x1; float x2; })cropScale;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
@@ -142,17 +142,17 @@
 - (BOOL)isRepeatable;
 - (BOOL)isRotated;
 - (void)loadImageData;
-- (void)loadImageDataFromCGImage:(struct CGImage { }*)arg1 pointsSize:(struct CGSize { double x1; double x2; })arg2;
+- (void)loadImageDataFromCGImage:(struct CGImage { }*)arg1 pointsSize:(struct CGSize { float x1; float x2; })arg2;
 - (BOOL)loadImageDataFromPVRData:(id)arg1;
 - (BOOL)loadImageDataFromPVRGZData:(id)arg1;
 - (id)metalTexture;
 - (id)originalAtlasName;
 - (BOOL)performFullCapture;
-- (struct CGSize { double x1; double x2; })pixelSize;
+- (struct CGSize { float x1; float x2; })pixelSize;
 - (void)preloadWithCompletionHandler:(id /* block */)arg1;
 - (id)rootAtlas;
-- (void)setCropOffset:(struct CGPoint { double x1; double x2; })arg1;
-- (void)setCropScale:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setCropOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setCropScale:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setFilteringMode:(int)arg1;
 - (void)setIsFlipped:(BOOL)arg1;
 - (void)setIsRotated:(BOOL)arg1;
@@ -160,16 +160,16 @@
 - (void)setPerformFullCapture:(BOOL)arg1;
 - (void)setRootAtlas:(id)arg1;
 - (void)setSubTextureName:(id)arg1;
-- (void)setTextureDimension:(const struct CGSize { double x1; double x2; }*)arg1 withPixelSize:(const struct CGSize { double x1; double x2; }*)arg2;
+- (void)setTextureDimension:(const struct CGSize { float x1; float x2; }*)arg1 withPixelSize:(const struct CGSize { float x1; float x2; }*)arg2;
 - (void)setTextureTarget:(unsigned int)arg1;
 - (void)setUsesMipmaps:(BOOL)arg1;
 - (void)setWrapMode:(int)arg1;
-- (struct CGSize { double x1; double x2; })size;
+- (struct CGSize { float x1; float x2; })size;
 - (id)subTextureName;
 - (id)textureByApplyingCIFilter:(id)arg1;
 - (id)textureByGeneratingNormalMap;
 - (id)textureByGeneratingNormalMapWithSmoothness:(float)arg1 contrast:(float)arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })textureRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })textureRect;
 - (unsigned int)textureTarget;
 - (BOOL)usesMipmaps;
 - (int)wrapMode;

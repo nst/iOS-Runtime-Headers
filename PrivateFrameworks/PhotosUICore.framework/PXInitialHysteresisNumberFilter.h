@@ -4,11 +4,11 @@
 
 @interface PXInitialHysteresisNumberFilter : PXNumberFilter {
     BOOL  _didReachThreshold;
-    double  _hysteresis;
-    double  _offset;
+    float  _hysteresis;
+    float  _offset;
 }
 
-@property (nonatomic) double hysteresis;
+@property (nonatomic) float hysteresis;
 
 - (float)hysteresis;
 - (void)setHysteresis:(float)arg1;

@@ -16,7 +16,7 @@
     <_UIFeedbackPlayer> * _player;
     NSMutableArray * _playerDequeueBlocks;
     BOOL  _playing;
-    double  _position;
+    float  _position;
 }
 
 @property (getter=_allEventTypes, nonatomic, readonly) NSIndexSet *allEventTypes;
@@ -40,7 +40,7 @@
 @property (getter=_player, setter=_setPlayer:, nonatomic, retain) <_UIFeedbackPlayer> *player;
 @property (getter=_playerDequeueBlocks, setter=_setPlayerDequeueBlocks:, nonatomic, retain) NSMutableArray *playerDequeueBlocks;
 @property (getter=isPlaying, nonatomic, readonly) BOOL playing;
-@property (nonatomic) double position;
+@property (nonatomic) float position;
 @property (readonly) NSMutableArray *systemSoundSources;
 @property (readonly) NSMutableArray *visualizerSources;
 

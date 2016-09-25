@@ -6,10 +6,10 @@
     AVAudioMixSweepFilterEffectParametersInternal * _sweepFilterAudioEffect;
 }
 
-@property (nonatomic, readonly) double bypassThreshold;
+@property (nonatomic, readonly) float bypassThreshold;
 @property (nonatomic, readonly) int maximumCutOffFrequency;
 @property (nonatomic, readonly) int minimumCutOffFrequency;
-@property (nonatomic, readonly) double sweepValue;
+@property (nonatomic, readonly) float sweepValue;
 
 + (id)sweepFilterEffectParametersWithMinimumCutOffFrequency:(unsigned int)arg1 maximumCutOffFrequency:(unsigned int)arg2 bypassThreshold:(float)arg3 sweepValue:(float)arg4;
 

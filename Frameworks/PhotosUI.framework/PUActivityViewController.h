@@ -4,7 +4,7 @@
 
 @interface PUActivityViewController : UIActivityViewController <PLDismissableViewController> {
     struct __CFString { } * _aggregateKey;
-    double  _currentAssetPreparationProgress;
+    float  _currentAssetPreparationProgress;
     <PUActivityViewControllerDelegate> * _delegate;
     PUActivityItemSourceController * _itemSourceController;
     int  _numberOfAssetPreparationsCompleted;

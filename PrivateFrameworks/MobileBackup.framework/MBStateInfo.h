@@ -7,7 +7,7 @@
     NSError * _error;
     NSMutableArray * _errors;
     unsigned int  _estimatedTimeRemaining;
-    double  _progress;
+    float  _progress;
     int  _state;
 }
 
@@ -15,7 +15,7 @@
 @property (nonatomic, readonly) NSError *error;
 @property (nonatomic, readonly) NSArray *errors;
 @property (nonatomic, readonly) unsigned int estimatedTimeRemaining;
-@property (nonatomic, readonly) double progress;
+@property (nonatomic, readonly) float progress;
 @property (nonatomic, readonly) int state;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

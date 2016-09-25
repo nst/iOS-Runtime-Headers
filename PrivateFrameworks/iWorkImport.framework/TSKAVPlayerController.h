@@ -10,11 +10,11 @@
     BOOL  mIsObservingStatus;
     AVPlayer * mPlayer;
     BOOL  mPlaying;
-    double  mRateBeforeScrubbing;
+    float  mRateBeforeScrubbing;
     int  mRepeatMode;
     unsigned int  mScrubbingCount;
     BOOL  mStreaming;
-    double  mVolume;
+    float  mVolume;
 }
 
 @property (nonatomic, readonly) double absoluteCurrentTime;
@@ -33,13 +33,13 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) AVPlayer *player;
 @property (getter=isPlaying, nonatomic) BOOL playing;
-@property (nonatomic) double rate;
+@property (nonatomic) float rate;
 @property (nonatomic, readonly) double remainingTime;
 @property (nonatomic) int repeatMode;
 @property (getter=isScrubbing, nonatomic, readonly) BOOL scrubbing;
 @property (nonatomic) double startTime;
 @property (readonly) Class superclass;
-@property (nonatomic) double volume;
+@property (nonatomic) float volume;
 
 + (BOOL)automaticallyNotifiesObserversOfEndTime;
 + (BOOL)automaticallyNotifiesObserversOfRate;

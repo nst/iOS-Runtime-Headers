@@ -3,7 +3,7 @@
  */
 
 @interface TSCH3DSplineGenerator : NSObject {
-    double  mAdaptiveThreshold;
+    float  mAdaptiveThreshold;
     struct vector<glm::detail::tvec2<float>, std::__1::allocator<glm::detail::tvec2<float> > > { 
         struct tvec2<float> {} *__begin_; 
         struct tvec2<float> {} *__end_; 
@@ -11,7 +11,7 @@
             struct tvec2<float> {} *__first_; 
         } __end_cap_; 
     }  mControlPts;
-    double  mDetail;
+    float  mDetail;
     struct vector<int, std::__1::allocator<int> > { 
         int *__begin_; 
         int *__end_; 
@@ -19,19 +19,19 @@
             int *__first_; 
         } __end_cap_; 
     }  mSplineExclude;
-    double  mTension;
+    float  mTension;
 }
 
-@property (nonatomic) double adaptiveThreshold;
-@property (nonatomic) double detail;
-@property (nonatomic) double tension;
+@property (nonatomic) float adaptiveThreshold;
+@property (nonatomic) float detail;
+@property (nonatomic) float tension;
 
 + (id)generator;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (float)adaptiveThreshold;
-- (void)calcControlMatrix:(struct tmat4x4<float> { struct tvec4<float> { union { double x_1_2_1; double x_1_2_2; double x_1_2_3; } x_1_1_1; union { double x_2_2_1; double x_2_2_2; double x_2_2_3; } x_1_1_2; union { double x_3_2_1; double x_3_2_2; double x_3_2_3; } x_1_1_3; union { double x_4_2_1; double x_4_2_2; double x_4_2_3; } x_1_1_4; } x1[4]; }*)arg1 pointNum:(int)arg2;
+- (void)calcControlMatrix:(struct tmat4x4<float> { struct tvec4<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_1_1_2; union { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_1_1_3; union { float x_4_2_1; float x_4_2_2; float x_4_2_3; } x_1_1_4; } x1[4]; }*)arg1 pointNum:(int)arg2;
 - (struct vector<glm::detail::tvec2<float>, std::__1::allocator<glm::detail::tvec2<float> > > { struct tvec2<float> {} *x1; struct tvec2<float> {} *x2; struct __compressed_pair<glm::detail::tvec2<float> *, std::__1::allocator<glm::detail::tvec2<float> > > { struct tvec2<float> {} *x_3_1_1; } x3; }*)controlPts;
 - (float)detail;
 - (void)generatePoints:(struct vector<glm::detail::tvec2<float>, std::__1::allocator<glm::detail::tvec2<float> > > { struct tvec2<float> {} *x1; struct tvec2<float> {} *x2; struct __compressed_pair<glm::detail::tvec2<float> *, std::__1::allocator<glm::detail::tvec2<float> > > { struct tvec2<float> {} *x_3_1_1; } x3; }*)arg1;

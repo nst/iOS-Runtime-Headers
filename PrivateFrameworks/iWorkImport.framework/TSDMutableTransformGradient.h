@@ -4,18 +4,18 @@
 
 @interface TSDMutableTransformGradient : TSDTransformGradient <TSDGradientStopContainer>
 
-@property (nonatomic) struct CGSize { double x1; double x2; } baseNaturalSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } baseNaturalSize;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) struct CGPoint { double x1; double x2; } endPoint;
+@property (nonatomic) struct CGPoint { float x1; float x2; } endPoint;
 @property (nonatomic, retain) TSUColor *firstColor;
 @property (nonatomic, retain) NSArray *gradientStops;
 @property (nonatomic) unsigned int gradientType;
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL isAdvancedGradient;
 @property (nonatomic, retain) TSUColor *lastColor;
-@property (nonatomic) double opacity;
-@property (nonatomic) struct CGPoint { double x1; double x2; } startPoint;
+@property (nonatomic) float opacity;
+@property (nonatomic) struct CGPoint { float x1; float x2; } startPoint;
 @property (readonly) Class superclass;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -27,10 +27,10 @@
 - (void)removeStop:(id)arg1;
 - (id)removeStopAtIndex:(unsigned int)arg1;
 - (void)reverseStopOrder;
-- (void)setBaseNaturalSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setBaseNaturalSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setColorOfStopAtIndex:(unsigned int)arg1 toColor:(id)arg2;
-- (void)setEndPoint:(struct CGPoint { double x1; double x2; })arg1;
-- (void)setEndPoint:(struct CGPoint { double x1; double x2; })arg1 inShapeWithNaturalSize:(struct CGSize { double x1; double x2; })arg2;
+- (void)setEndPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setEndPoint:(struct CGPoint { float x1; float x2; })arg1 inShapeWithNaturalSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)setFirstColor:(id)arg1;
 - (void)setGradientAngleInDegrees:(float)arg1;
 - (void)setGradientStops:(id)arg1;
@@ -39,9 +39,9 @@
 - (void)setIsAdvancedGradient:(BOOL)arg1;
 - (void)setLastColor:(id)arg1;
 - (void)setOpacity:(float)arg1;
-- (void)setStartPoint:(struct CGPoint { double x1; double x2; })arg1;
-- (void)setStartPoint:(struct CGPoint { double x1; double x2; })arg1 inShapeWithNaturalSize:(struct CGSize { double x1; double x2; })arg2;
+- (void)setStartPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setStartPoint:(struct CGPoint { float x1; float x2; })arg1 inShapeWithNaturalSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)swapStopAtIndex:(unsigned int)arg1 withStopAtIndex:(unsigned int)arg2;
-- (void)upgradeIfNecessaryWithBaseNaturalSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)upgradeIfNecessaryWithBaseNaturalSize:(struct CGSize { float x1; float x2; })arg1;
 
 @end

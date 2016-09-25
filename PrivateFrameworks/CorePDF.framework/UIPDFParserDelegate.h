@@ -4,8 +4,8 @@
 
 @interface UIPDFParserDelegate : NSObject <NSXMLParserDelegate> {
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _p;
     BOOL  _parserError;
     struct CGPath { } * _path;

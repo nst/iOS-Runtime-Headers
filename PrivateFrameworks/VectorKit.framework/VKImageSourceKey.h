@@ -10,8 +10,8 @@
     unsigned int  _iconAttributeKey;
     unsigned int  _iconAttributeValue;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _imageCenter;
     NSString * _imageName;
     unsigned int  _keyType;
@@ -43,7 +43,7 @@
 @property (nonatomic, readonly) <GEOTransitIconDataSource> *iconDataSource;
 @property (nonatomic, readonly) <GEOTransitShieldDataSource> *iconFallbackShieldDataSource;
 @property (nonatomic, readonly) int iconType;
-@property (nonatomic) struct CGPoint { double x1; double x2; } imageCenter;
+@property (nonatomic) struct CGPoint { float x1; float x2; } imageCenter;
 @property (nonatomic, readonly) NSString *imageName;
 @property (nonatomic, readonly) unsigned int keyType;
 @property (nonatomic, retain) NSString *relatedText;
@@ -52,7 +52,7 @@
 @property (nonatomic, readonly) <GEOTransitShieldDataSource> *shieldDataSource;
 @property (nonatomic, readonly) NSString *shieldText;
 @property (nonatomic, readonly) NSString *shieldTextLocale;
-@property (nonatomic, readonly) int shieldType;
+@property (nonatomic, readonly) long long shieldType;
 @property (nonatomic, readonly) unsigned int shieldType;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSString *text;
@@ -68,7 +68,7 @@
 - (BOOL)hasDataValue;
 - (unsigned int)iconAttributeKey;
 - (unsigned int)iconAttributeValue;
-- (struct CGPoint { double x1; double x2; })imageCenter;
+- (struct CGPoint { float x1; float x2; })imageCenter;
 - (id)imageName;
 - (id)initWithDataType:(unsigned char)arg1;
 - (id)initWithIconAttributeKey:(unsigned int)arg1 attributeValue:(unsigned int)arg2;
@@ -81,10 +81,10 @@
 - (void)setDataType:(unsigned char)arg1;
 - (void)setDataValue:(unsigned int)arg1;
 - (void)setFallbackImageKeys:(id)arg1;
-- (void)setImageCenter:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setImageCenter:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setRelatedText:(id)arg1;
 - (void)setText:(id)arg1;
-- (struct { struct Matrix<float, 4, 1> { double x_1_1_1[4]; } x1; })shieldColor;
+- (struct { struct Matrix<float, 4, 1> { float x_1_1_1[4]; } x1; })shieldColor;
 - (id)shieldText;
 - (id)shieldTextLocale;
 - (unsigned int)shieldType;

@@ -4,29 +4,29 @@
 
 @interface NTKModuleView : UIControl <NTKContainerViewLayoutDelegate, NTKControl> {
     NTKFaceColorScheme * _colorScheme;
-    double  _contentHeight;
-    double  _contentHeightOffset;
+    float  _contentHeight;
+    float  _contentHeightOffset;
     NTKContainerView * _contentView;
     UIColor * _foregroundColor;
-    double  _highlightAlpha;
+    float  _highlightAlpha;
     UIColor * _highlightBackgroundColor;
-    double  _highlightCornerRadius;
+    float  _highlightCornerRadius;
     UIView * _highlightView;
     UIColor * _overrideColor;
     UIColor * _secondaryForegroundColor;
 }
 
 @property (nonatomic, retain) NTKFaceColorScheme *colorScheme;
-@property (nonatomic) double contentHeight;
-@property (nonatomic) double contentHeightOffset;
+@property (nonatomic) float contentHeight;
+@property (nonatomic) float contentHeightOffset;
 @property (nonatomic, readonly) UIView *contentView;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) UIColor *foregroundColor;
 @property (readonly) unsigned int hash;
-@property (nonatomic) double highlightAlpha;
+@property (nonatomic) float highlightAlpha;
 @property (nonatomic, retain) UIColor *highlightBackgroundColor;
-@property (nonatomic) double highlightCornerRadius;
+@property (nonatomic) float highlightCornerRadius;
 @property (nonatomic, retain) UIColor *overrideColor;
 @property (nonatomic, retain) UIColor *secondaryForegroundColor;
 @property (readonly) Class superclass;
@@ -49,7 +49,7 @@
 - (float)highlightAlpha;
 - (id)highlightBackgroundColor;
 - (float)highlightCornerRadius;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutContainerView:(id)arg1;
 - (void)layoutSubviews;
 - (void)naturalHorizontalLayoutForViewsAndSpacing:(id)arg1 columnAlignmentSpacing:(BOOL)arg2;

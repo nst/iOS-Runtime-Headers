@@ -12,9 +12,9 @@
         unsigned int updateZIndexAfterAnimation : 1; 
     }  _collectionViewAnimationFlags;
     NSMutableArray * _completionHandlers;
-    double  _endFraction;
+    float  _endFraction;
     UICollectionViewLayoutAttributes * _finalLayoutAttributes;
-    double  _startFraction;
+    float  _startFraction;
     NSMutableArray * _startupHandlers;
     BOOL  _updateZIndexAfterAnimation;
     UICollectionReusableView * _view;
@@ -23,11 +23,11 @@
 
 @property (nonatomic, readonly) BOOL animateFromCurrentPosition;
 @property (nonatomic, readonly) BOOL deleteAfterAnimation;
-@property (nonatomic, readonly) double endFraction;
+@property (nonatomic, readonly) float endFraction;
 @property (nonatomic, readonly) UICollectionViewLayoutAttributes *finalLayoutAttributes;
 @property (nonatomic) BOOL rasterizeAfterAnimation;
 @property (nonatomic) BOOL resetRasterizationAfterAnimation;
-@property (nonatomic, readonly) double startFraction;
+@property (nonatomic, readonly) float startFraction;
 @property (nonatomic, readonly) BOOL updateZIndexAfterAnimation;
 @property (nonatomic, readonly) UICollectionReusableView *view;
 @property (nonatomic, readonly) int viewType;

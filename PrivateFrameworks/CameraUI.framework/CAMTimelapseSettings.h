@@ -21,12 +21,12 @@
 - (id)init;
 - (double)initialCaptureTimeInterval;
 - (int)maxFailedStateReadAttempts;
-- (int)maxMovieFileLengthForWidth:(int)arg1 height:(int)arg2;
+- (long long)maxMovieFileLengthForWidth:(int)arg1 height:(int)arg2;
 - (int)maxMovieWriteAttempts;
 - (double)maxOutputFPS;
 - (int)maxOutputFrames;
 - (double)maxOutputLength;
-- (int)minAvailableBytesNeededForCaptureForWidth:(int)arg1 height:(int)arg2;
+- (long long)minAvailableBytesNeededForCaptureForWidth:(int)arg1 height:(int)arg2;
 - (double)outputFPSForFrameCount:(int)arg1;
 - (id)outputSettingsPresetForWidth:(int)arg1 height:(int)arg2;
 - (double)waitTimeBeforeNextWriteForNumberOfPreviousAttempts:(int)arg1;

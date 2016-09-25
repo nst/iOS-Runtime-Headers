@@ -44,7 +44,7 @@
 
 + (id)dataWithRandomBytes:(int)arg1;
 
-- (void)replaceTrailingWith7LSB:(unsigned int)arg1;
+- (void)replaceTrailingWith7LSB:(unsigned long long)arg1;
 
 // Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
 

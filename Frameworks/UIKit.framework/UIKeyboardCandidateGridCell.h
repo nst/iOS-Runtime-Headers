@@ -10,23 +10,23 @@
     unsigned int  _candidateNumber;
     UILabel * _candidateNumberLabel;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _candidateNumberSize;
     int  _candidatesVisualStyle;
-    double  _cellPadding;
+    float  _cellPadding;
     BOOL  _dummy;
     unsigned int  _edges;
     BOOL  _emphasizedAppearance;
-    double  _minimumWidth;
+    float  _minimumWidth;
     BOOL  _needsUpdateLabels;
-    double  _rightPadding;
-    double  _rowHeight;
+    float  _rightPadding;
+    float  _rowHeight;
     BOOL  _secondaryCandidateAppearance;
     BOOL  _shouldShowCandidateNumber;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _size;
     NSString * _text;
     int  _textAlignment;
@@ -34,12 +34,12 @@
     BOOL  _usesGroupHeaderAppearance;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _visibleBounds;
     struct { 
@@ -58,25 +58,25 @@
 @property (nonatomic, readonly) BOOL canShowCandidateNumber;
 @property (nonatomic) unsigned int candidateNumber;
 @property (nonatomic, retain) UILabel *candidateNumberLabel;
-@property (nonatomic) struct CGSize { double x1; double x2; } candidateNumberSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } candidateNumberSize;
 @property (nonatomic) int candidatesVisualStyle;
-@property (nonatomic) double cellPadding;
+@property (nonatomic) float cellPadding;
 @property (nonatomic) BOOL dummy;
 @property (nonatomic) unsigned int edges;
 @property (nonatomic) BOOL emphasizedAppearance;
-@property (nonatomic) double minimumWidth;
+@property (nonatomic) float minimumWidth;
 @property (nonatomic) BOOL needsUpdateLabels;
-@property (nonatomic) double rightPadding;
-@property (nonatomic) double rowHeight;
+@property (nonatomic) float rightPadding;
+@property (nonatomic) float rowHeight;
 @property (nonatomic) BOOL secondaryCandidateAppearance;
 @property (nonatomic, retain) id secureContents;
 @property (nonatomic) BOOL shouldShowCandidateNumber;
-@property (nonatomic) struct CGSize { double x1; double x2; } size;
+@property (nonatomic) struct CGSize { float x1; float x2; } size;
 @property (nonatomic, copy) NSString *text;
 @property (nonatomic) int textAlignment;
 @property (nonatomic, retain) UILabel *textLabel;
 @property (nonatomic) BOOL usesGroupHeaderAppearance;
-@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } visibleBounds;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } visibleBounds;
 @property (nonatomic) struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; } visualStyling;
 
 + (BOOL)drawsSideBorders;
@@ -84,7 +84,7 @@
 + (struct CGColor { }*)legacy_outlineShadowColorForVisualStyling:(struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })arg1 candidatesVisualStyle:(int)arg2;
 + (id)reuseIdentifier;
 + (float)rightPaddingForIndex;
-+ (struct CGSize { double x1; double x2; })sizeForGroupHeader:(id)arg1 visualStyle:(int)arg2;
++ (struct CGSize { float x1; float x2; })sizeForGroupHeader:(id)arg1 visualStyle:(int)arg2;
 + (float)widthForCandidate:(id)arg1 candidateNumber:(unsigned int)arg2 visualStyle:(int)arg3;
 
 - (id)alternativeText;
@@ -95,16 +95,16 @@
 - (BOOL)canShowCandidateNumber;
 - (unsigned int)candidateNumber;
 - (id)candidateNumberLabel;
-- (struct CGSize { double x1; double x2; })candidateNumberSize;
+- (struct CGSize { float x1; float x2; })candidateNumberSize;
 - (int)candidatesVisualStyle;
 - (float)cellPadding;
 - (void)dealloc;
 - (void)drawBackgroundAndBorders;
-- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)dummy;
 - (unsigned int)edges;
 - (BOOL)emphasizedAppearance;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (float)minimumWidth;
 - (BOOL)needsUpdateLabels;
@@ -119,7 +119,7 @@
 - (void)setAnnotationText:(id)arg1;
 - (void)setCandidateNumber:(unsigned int)arg1;
 - (void)setCandidateNumberLabel:(id)arg1;
-- (void)setCandidateNumberSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setCandidateNumberSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setCandidatesVisualStyle:(int)arg1;
 - (void)setCellPadding:(float)arg1;
 - (void)setDummy:(BOOL)arg1;
@@ -134,15 +134,15 @@
 - (void)setSecureContents:(id)arg1;
 - (void)setSelected:(BOOL)arg1;
 - (void)setShouldShowCandidateNumber:(BOOL)arg1;
-- (void)setSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setText:(id)arg1;
 - (void)setTextAlignment:(int)arg1;
 - (void)setTextLabel:(id)arg1;
 - (void)setUsesGroupHeaderAppearance:(BOOL)arg1;
-- (void)setVisibleBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setVisibleBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setVisualStyling:(struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })arg1;
 - (BOOL)shouldShowCandidateNumber;
-- (struct CGSize { double x1; double x2; })size;
+- (struct CGSize { float x1; float x2; })size;
 - (id)text;
 - (int)textAlignment;
 - (id)textLabel;
@@ -150,7 +150,7 @@
 - (void)updateLabelColors;
 - (void)updateLabels;
 - (BOOL)usesGroupHeaderAppearance;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })visibleBounds;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleBounds;
 - (struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })visualStyling;
 
 @end

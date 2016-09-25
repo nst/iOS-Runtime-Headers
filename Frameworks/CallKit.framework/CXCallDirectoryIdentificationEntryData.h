@@ -15,7 +15,7 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)appendPhoneNumber:(int)arg1 label:(id)arg2;
+- (BOOL)appendPhoneNumber:(long long)arg1 label:(id)arg2;
 - (unsigned int)count;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
@@ -23,7 +23,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)labelData;
 - (id)labelToLabelDataOffset;
-- (int)phoneNumberAtIndex:(unsigned int)arg1;
+- (long long)phoneNumberAtIndex:(unsigned int)arg1;
 - (id)phoneNumberData;
 - (void)setLabelData:(id)arg1;
 - (void)setLabelToLabelDataOffset:(id)arg1;

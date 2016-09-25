@@ -7,8 +7,8 @@
     BOOL  _backgroundBlurred;
     UIStackView * _buttonsStackView;
     UIView * _clippingView;
-    double  _defaultWidth;
-    double  _stretchedWidth;
+    float  _defaultWidth;
+    float  _stretchedWidth;
 }
 
 @property (nonatomic) BOOL adjustsFontForContentSizeCategory;
@@ -16,11 +16,11 @@
 @property (nonatomic, retain) UIStackView *buttonsStackView;
 @property (nonatomic, retain) UIView *clippingView;
 @property (readonly, copy) NSString *debugDescription;
-@property (nonatomic, readonly) double defaultWidth;
+@property (nonatomic, readonly) float defaultWidth;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, copy) NSString *preferredContentSizeCategory;
-@property (nonatomic) double stretchedWidth;
+@property (nonatomic) float stretchedWidth;
 @property (readonly) Class superclass;
 
 + (id)_actionButtonDescriptionsForNotificationRequest:(id)arg1 cell:(id)arg2;
@@ -46,7 +46,7 @@
 - (void)setButtonsStackView:(id)arg1;
 - (void)setClippingView:(id)arg1;
 - (void)setStretchedWidth:(float)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (float)stretchedWidth;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)willMoveToSuperview:(id)arg1;

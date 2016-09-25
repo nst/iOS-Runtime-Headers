@@ -4,10 +4,10 @@
 
 @interface AVPlaybackItemInspectorLoader : AVAssetMakeReadyForInspectionLoader {
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _cachedDuration;
     struct OpaqueFigPlaybackItem { } * _playbackItem;
     BOOL  _shouldCacheDuration;
@@ -28,7 +28,7 @@
 - (id)assetInspector;
 - (void)cancelLoading;
 - (void)dealloc;
-- (struct { int x1; int x2; unsigned int x3; int x4; })duration;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
 - (void)finalize;
 - (unsigned int)hash;
 - (id)initWithURL:(id)arg1 playbackItem:(struct OpaqueFigPlaybackItem { }*)arg2 trackIDs:(id)arg3 dynamicBehavior:(BOOL)arg4;

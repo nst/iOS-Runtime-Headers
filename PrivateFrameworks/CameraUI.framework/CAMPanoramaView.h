@@ -12,20 +12,20 @@
     BOOL  __currentlyMovingTooFast;
     BOOL  __currentlyShowingMoveInstructions;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  __initialArrowCenter;
     double  __initialPaintingAcceleration;
     CAMPanoramaLabel * __instructionLabel;
     NSString * __instructionString;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  __lastLayoutBounds;
     CAMPanoramaLevelView * __levelView;
@@ -52,11 +52,11 @@
 @property (setter=_setCurrentPaintingStatus:, nonatomic, retain) CAMPanoramaPaintingStatus *_currentPaintingStatus;
 @property (getter=_isCurrentlyMovingTooFast, setter=_setCurrentlyMovingTooFast:, nonatomic) BOOL _currentlyMovingTooFast;
 @property (getter=_isCurrentlyShowingMoveInstructions, setter=_setCurrentlyShowingMoveInstructions:, nonatomic) BOOL _currentlyShowingMoveInstructions;
-@property (setter=_setInitialArrowCenter:, nonatomic) struct CGPoint { double x1; double x2; } _initialArrowCenter;
+@property (setter=_setInitialArrowCenter:, nonatomic) struct CGPoint { float x1; float x2; } _initialArrowCenter;
 @property (setter=_setInitialPaintingAcceleration:, nonatomic) double _initialPaintingAcceleration;
 @property (nonatomic, readonly) CAMPanoramaLabel *_instructionLabel;
 @property (nonatomic, readonly, copy) NSString *_instructionString;
-@property (setter=_setLastLayoutBounds:, nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } _lastLayoutBounds;
+@property (setter=_setLastLayoutBounds:, nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } _lastLayoutBounds;
 @property (nonatomic, readonly) CAMPanoramaLevelView *_levelView;
 @property (nonatomic, readonly) UIView *_maskingView;
 @property (nonatomic, readonly, copy) NSString *_moveDownString;
@@ -85,13 +85,13 @@
 - (void)_hideArrowInstructionsAfterDelay;
 - (void)_hideInstructionLabel;
 - (void)_hideSpeedInstructionsAfterDelay;
-- (struct CGPoint { double x1; double x2; })_initialArrowCenter;
+- (struct CGPoint { float x1; float x2; })_initialArrowCenter;
 - (double)_initialPaintingAcceleration;
 - (id)_instructionLabel;
 - (id)_instructionString;
 - (BOOL)_isCurrentlyMovingTooFast;
 - (BOOL)_isCurrentlyShowingMoveInstructions;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_lastLayoutBounds;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_lastLayoutBounds;
 - (id)_levelView;
 - (id)_maskingView;
 - (id)_moveDownString;
@@ -105,9 +105,9 @@
 - (void)_setCurrentPaintingStatus:(id)arg1;
 - (void)_setCurrentlyMovingTooFast:(BOOL)arg1;
 - (void)_setCurrentlyShowingMoveInstructions:(BOOL)arg1;
-- (void)_setInitialArrowCenter:(struct CGPoint { double x1; double x2; })arg1;
+- (void)_setInitialArrowCenter:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_setInitialPaintingAcceleration:(double)arg1;
-- (void)_setLastLayoutBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)_setLastLayoutBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_setPainting:(BOOL)arg1;
 - (void)_showArrowInstructions;
 - (void)_showMoveDownInstructions;
@@ -125,7 +125,7 @@
 - (int)direction;
 - (void)finishedProcessingPanorama;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithPanoramaPreviewView:(id)arg1 layoutStyle:(int)arg2;
 - (BOOL)isPainting;
 - (int)layoutStyle;
@@ -135,7 +135,7 @@
 - (void)setDirection:(int)arg1;
 - (void)setDirection:(int)arg1 animated:(BOOL)arg2;
 - (void)setLayoutStyle:(int)arg1;
-- (void)setTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
+- (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (void)startPainting;
 - (void)startProcessingPanorama;
 - (void)stopPainting;

@@ -63,9 +63,9 @@
 - (unsigned int)maxBracketedCaptureStillImageCount;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)outputSettings;
-- (struct CGSize { double x1; double x2; })outputSizeForSourceFormat:(id)arg1;
+- (struct CGSize { float x1; float x2; })outputSizeForSourceFormat:(id)arg1;
 - (void)prepareToCaptureStillImageBracketFromConnection:(id)arg1 withSettingsArray:(id)arg2 completionHandler:(id /* block */)arg3;
-- (struct CGSize { double x1; double x2; })previewImageSize;
+- (struct CGSize { float x1; float x2; })previewImageSize;
 - (void)removeConnection:(id)arg1;
 - (BOOL)resumeVideoProcessing;
 - (void)safelyHandleServerConnectionDeathForFigCaptureSession:(struct OpaqueFigCaptureSession { }*)arg1;
@@ -76,7 +76,7 @@
 - (void)setLensStabilizationDuringBracketedCaptureEnabled:(BOOL)arg1;
 - (void)setNoiseReductionEnabled:(BOOL)arg1;
 - (void)setOutputSettings:(id)arg1;
-- (void)setPreviewImageSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setPreviewImageSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setRawCaptureEnabled:(BOOL)arg1;
 - (void)setShutterSound:(unsigned long)arg1;
 - (void)setSquareCropEnabled:(BOOL)arg1;

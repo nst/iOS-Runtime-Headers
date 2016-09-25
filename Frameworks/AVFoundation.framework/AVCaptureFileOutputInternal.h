@@ -4,13 +4,13 @@
 
 @interface AVCaptureFileOutputInternal : NSObject {
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  maxRecordedDuration;
-    int  maxRecordedFileSize;
-    int  minFreeDiskSpaceLimit;
+    long long  maxRecordedFileSize;
+    long long  minFreeDiskSpaceLimit;
     BOOL  pausesRecordingOnInterruption;
 }
 

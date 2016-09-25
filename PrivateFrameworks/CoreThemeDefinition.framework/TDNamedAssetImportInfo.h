@@ -5,18 +5,18 @@
 @interface TDNamedAssetImportInfo : NSObject <NSCopying> {
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _alignmentRect;
     unsigned int  _arrayIndex;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _canvasSize;
     int  _compressionType;
     NSArray * _containedImageNames;
@@ -29,7 +29,7 @@
     BOOL  _isFlippable;
     NSArray * _layerReferences;
     int  _layoutDirection;
-    double  _lossyCompressionQuality;
+    float  _lossyCompressionQuality;
     unsigned int  _memoryClass;
     NSDate * _modificationDate;
     NSString * _name;
@@ -37,18 +37,18 @@
     BOOL  _optOutOfThinning;
     int  _renditionType;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _resizableSliceSize;
     int  _resizingMode;
     unsigned int  _scaleFactor;
     int  _sizeClassHorizontal;
     int  _sizeClassVertical;
     struct { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _sliceInsets;
     int  _subtype;
     NSSet * _tags;
@@ -62,9 +62,9 @@
     NSString * _universalTypeIdentifier;
 }
 
-@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } alignmentRect;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } alignmentRect;
 @property (nonatomic) unsigned int arrayIndex;
-@property (nonatomic) struct CGSize { double x1; double x2; } canvasSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } canvasSize;
 @property (nonatomic) int compressionType;
 @property (nonatomic, copy) NSArray *containedImageNames;
 @property (nonatomic) BOOL cubeMap;
@@ -77,19 +77,19 @@
 @property (nonatomic) BOOL isTemplate;
 @property (nonatomic, copy) NSArray *layerReferences;
 @property (nonatomic) int layoutDirection;
-@property (nonatomic) double lossyCompressionQuality;
+@property (nonatomic) float lossyCompressionQuality;
 @property (nonatomic) unsigned int memoryClass;
 @property (nonatomic, copy) NSDate *modificationDate;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic) int nameIdentifier;
 @property (nonatomic) BOOL optOutOfThinning;
 @property (nonatomic) int renditionType;
-@property (nonatomic) struct CGSize { double x1; double x2; } resizableSliceSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } resizableSliceSize;
 @property (nonatomic) int resizingMode;
 @property (nonatomic) unsigned int scaleFactor;
 @property (nonatomic) int sizeClassHorizontal;
 @property (nonatomic) int sizeClassVertical;
-@property (nonatomic) struct { double x1; double x2; double x3; double x4; } sliceInsets;
+@property (nonatomic) struct { float x1; float x2; float x3; float x4; } sliceInsets;
 @property (nonatomic) int subtype;
 @property (nonatomic, copy) NSSet *tags;
 @property (nonatomic) int templateRenderingMode;
@@ -101,9 +101,9 @@
 @property (nonatomic) unsigned int textureWidth;
 @property (nonatomic, copy) NSString *universalTypeIdentifier;
 
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })alignmentRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })alignmentRect;
 - (unsigned int)arrayIndex;
-- (struct CGSize { double x1; double x2; })canvasSize;
+- (struct CGSize { float x1; float x2; })canvasSize;
 - (int)compressionType;
 - (id)containedImageNames;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -128,12 +128,12 @@
 - (BOOL)optOutOfThinning;
 - (int)renditionSubtype;
 - (int)renditionType;
-- (struct CGSize { double x1; double x2; })resizableSliceSize;
+- (struct CGSize { float x1; float x2; })resizableSliceSize;
 - (int)resizingMode;
 - (unsigned int)scaleFactor;
-- (void)setAlignmentRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setAlignmentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setArrayIndex:(unsigned int)arg1;
-- (void)setCanvasSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setCanvasSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setCompressionType:(int)arg1;
 - (void)setContainedImageNames:(id)arg1;
 - (void)setCubeMap:(BOOL)arg1;
@@ -153,12 +153,12 @@
 - (void)setNameIdentifier:(int)arg1;
 - (void)setOptOutOfThinning:(BOOL)arg1;
 - (void)setRenditionType:(int)arg1;
-- (void)setResizableSliceSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setResizableSliceSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setResizingMode:(int)arg1;
 - (void)setScaleFactor:(unsigned int)arg1;
 - (void)setSizeClassHorizontal:(int)arg1;
 - (void)setSizeClassVertical:(int)arg1;
-- (void)setSliceInsets:(struct { double x1; double x2; double x3; double x4; })arg1;
+- (void)setSliceInsets:(struct { float x1; float x2; float x3; float x4; })arg1;
 - (void)setSubtype:(int)arg1;
 - (void)setTags:(id)arg1;
 - (void)setTemplateRenderingMode:(int)arg1;
@@ -171,7 +171,7 @@
 - (void)setUniversalTypeIdentifier:(id)arg1;
 - (int)sizeClassHorizontal;
 - (int)sizeClassVertical;
-- (struct { double x1; double x2; double x3; double x4; })sliceInsets;
+- (struct { float x1; float x2; float x3; float x4; })sliceInsets;
 - (int)subtype;
 - (id)tags;
 - (int)templateRenderingMode;

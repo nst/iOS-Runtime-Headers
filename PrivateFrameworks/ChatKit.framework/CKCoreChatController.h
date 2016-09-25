@@ -12,7 +12,7 @@
     BOOL  _initialLayoutComplete;
     UIProgressView * _progressBar;
     CKScheduledUpdater * _refreshServiceForSendingUpdater;
-    double  _sendProgress;
+    float  _sendProgress;
     unsigned int  _sendProgressSendCount;
     unsigned int  _sendProgressTotalCount;
     BOOL  _sendingMessage;
@@ -20,7 +20,7 @@
     BOOL  _viewIsVisible;
 }
 
-@property (nonatomic, readonly) double balloonMaxWidth;
+@property (nonatomic, readonly) float balloonMaxWidth;
 @property (nonatomic, readonly) IMChat *chat;
 @property (nonatomic, readonly) CKTranscriptCollectionView *collectionView;
 @property (nonatomic, retain) CKTranscriptCollectionViewController *collectionViewController;
@@ -30,13 +30,13 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic) BOOL disableAnimationsUnderTest;
 @property (nonatomic, retain) CKFullScreenBalloonViewController *fullScreenBalloonViewController;
-@property (nonatomic, readonly) double gradientBottomPlaceholderHeight;
+@property (nonatomic, readonly) float gradientBottomPlaceholderHeight;
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL ignoreLastBalloonVisibleInMarkAsReadCheck;
 @property (nonatomic) BOOL initialLayoutComplete;
 @property (nonatomic, retain) UIProgressView *progressBar;
 @property (nonatomic, retain) CKScheduledUpdater *refreshServiceForSendingUpdater;
-@property (nonatomic) double sendProgress;
+@property (nonatomic) float sendProgress;
 @property (nonatomic) unsigned int sendProgressSendCount;
 @property (nonatomic) unsigned int sendProgressTotalCount;
 @property (getter=isSendingMessage, nonatomic) BOOL sendingMessage;
@@ -76,13 +76,13 @@
 - (id)collectionView;
 - (id)collectionViewController;
 - (void)contentInsetDidChange;
-- (void)contentInsetWillChange:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1 animated:(BOOL)arg2 duration:(float)arg3;
+- (void)contentInsetWillChange:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1 animated:(BOOL)arg2 duration:(float)arg3;
 - (id)conversation;
 - (void)dealloc;
 - (id)delegate;
 - (BOOL)disableAnimationsUnderTest;
 - (id)fullScreenBalloonViewController;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })fullScreenBalloonViewController:(id)arg1 balloonFrameForChatItem:(id)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })fullScreenBalloonViewController:(id)arg1 balloonFrameForChatItem:(id)arg2;
 - (void)fullScreenBalloonViewController:(id)arg1 didAppearAnimated:(BOOL)arg2;
 - (void)fullScreenBalloonViewController:(id)arg1 sendMessageAcknowledgment:(int)arg2 forChatItem:(id)arg3;
 - (void)fullScreenBalloonViewController:(id)arg1 willAppearAnimated:(BOOL)arg2;
@@ -90,7 +90,7 @@
 - (void)fullScreenBalloonViewControllerDidDisappear:(id)arg1;
 - (void)fullScreenBalloonViewControllerHandleDismissTap:(id)arg1;
 - (float)gradientBottomPlaceholderHeight;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })gradientFrameWithInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })gradientFrameWithInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (id)gradientReferenceView;
 - (BOOL)ignoreLastBalloonVisibleInMarkAsReadCheck;
 - (id)initWithConversation:(id)arg1;
@@ -141,7 +141,7 @@
 - (void)transcriptCollectionViewController:(id)arg1 balloonView:(id)arg2 longPressedForItemWithIndexPath:(id)arg3;
 - (void)transcriptCollectionViewController:(id)arg1 balloonView:(id)arg2 tappedForChatItem:(id)arg3;
 - (void)transcriptCollectionViewController:(id)arg1 balloonViewTitleTappedForItemWithIndexPath:(id)arg2;
-- (void)transcriptCollectionViewController:(id)arg1 collectionViewContentSizeDidChange:(struct CGSize { double x1; double x2; })arg2;
+- (void)transcriptCollectionViewController:(id)arg1 collectionViewContentSizeDidChange:(struct CGSize { float x1; float x2; })arg2;
 - (void)transcriptCollectionViewController:(id)arg1 didDeselectItemAtIndexPath:(id)arg2;
 - (void)transcriptCollectionViewController:(id)arg1 didEndImpactEffectAnimationWithSendAnimationContext:(id)arg2;
 - (void)transcriptCollectionViewController:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
@@ -158,7 +158,7 @@
 - (BOOL)transcriptCollectionViewControllerShouldLayoutFullscreenEffects:(id)arg1;
 - (BOOL)transcriptCollectionViewControllerShouldPlayAudio:(id)arg1;
 - (void)transcriptCollectionViewControllerWillDisplayLastBalloon:(id)arg1;
-- (void)transcriptCollectionViewControllerWillInset:(id)arg1 targetContentInset:(inout struct UIEdgeInsets { double x1; double x2; double x3; double x4; }*)arg2;
+- (void)transcriptCollectionViewControllerWillInset:(id)arg1 targetContentInset:(inout struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg2;
 - (void)transcriptCollectionViewControllerWillScrollToBottom:(id)arg1;
 - (BOOL)transitionedFromComposing;
 - (void)viewDidAppear:(BOOL)arg1;

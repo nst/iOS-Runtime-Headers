@@ -79,8 +79,8 @@
 - (id)_initializeQueryGenerationTrackingConnection;
 - (id)_loadAndSetMetadata;
 - (id)_loadAndSetMetadataReadOnly;
-- (id)_newObjectIDForEntity:(id)arg1 referenceData64:(unsigned int)arg2;
-- (id)_newObjectIDForEntityDescription:(id)arg1 pk:(int)arg2;
+- (id)_newObjectIDForEntity:(id)arg1 referenceData64:(unsigned long long)arg2;
+- (id)_newObjectIDForEntityDescription:(id)arg1 pk:(long long)arg2;
 - (id)_newOrderedRelationshipInformationForRelationship:(id)arg1 forObjectWithID:(id)arg2 withContext:(id)arg3 error:(id*)arg4;
 - (id)_newReservedKeysForEntities:(id)arg1 counts:(id)arg2;
 - (id)_newRowDataForXPCFetch:(id)arg1 context:(id)arg2 error:(id*)arg3;
@@ -147,8 +147,8 @@
 - (id)metadataToWrite;
 - (id)model;
 - (id)newFetchUUIDSForSubentitiesRootedAt:(id)arg1;
-- (struct _NSScalarObjectID { Class x1; }*)newForeignKeyID:(int)arg1 entity:(id)arg2;
-- (struct _NSScalarObjectID { Class x1; }*)newObjectIDForEntity:(id)arg1 pk:(int)arg2;
+- (struct _NSScalarObjectID { Class x1; }*)newForeignKeyID:(long long)arg1 entity:(id)arg2;
+- (struct _NSScalarObjectID { Class x1; }*)newObjectIDForEntity:(id)arg1 pk:(long long)arg2;
 - (id)newObjectIDSetsForToManyPrefetchingRequest:(id)arg1 andSourceObjectIDs:(id)arg2 orderColumnName:(id)arg3;
 - (id)newValueForRelationship:(id)arg1 forObjectWithID:(id)arg2 withContext:(id)arg3 error:(id*)arg4;
 - (id)newValuesForObjectWithID:(id)arg1 withContext:(id)arg2 error:(id*)arg3;

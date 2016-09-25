@@ -33,7 +33,7 @@
 @property (readonly) NSString *fileUTType;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) NSString *icsRepresentation;
-@property (nonatomic) struct CGSize { double x1; double x2; } imageDimensions;
+@property (nonatomic) struct CGSize { float x1; float x2; } imageDimensions;
 @property (readonly) NSString *inferredMimeType;
 @property (readonly) BOOL isAutoArchive;
 @property (readonly) BOOL isContainedInCompose;
@@ -169,8 +169,8 @@
 - (id)filenameStrippingZipIfNeededUseApplications:(BOOL)arg1;
 - (BOOL)hasCalendarMetadata;
 - (id)icsRepresentation;
-- (struct CGSize { double x1; double x2; })imageDimensions;
-- (struct CGSize { double x1; double x2; })imageDimensionsWithData:(id)arg1;
+- (struct CGSize { float x1; float x2; })imageDimensions;
+- (struct CGSize { float x1; float x2; })imageDimensionsWithData:(id)arg1;
 - (unsigned int)imageScalingFlags;
 - (BOOL)isCalendarFile;
 - (BOOL)isContentCompressed;
@@ -185,7 +185,7 @@
 - (BOOL)isPass;
 - (BOOL)isRFC822;
 - (BOOL)isRestrictedMIMEType;
-- (struct CGSize { double x1; double x2; })markupSizeForImageScale:(unsigned int)arg1;
+- (struct CGSize { float x1; float x2; })markupSizeForImageScale:(unsigned int)arg1;
 - (id)markupStringForCompositionWithPrependedBlankLine:(BOOL)arg1 imageScale:(unsigned int)arg2;
 - (id)markupStringForDisplayWithData:(id)arg1 displayStyle:(int)arg2 printableWidth:(float)arg3 allowAttachmentElement:(BOOL)arg4;
 - (id)meetingStorePersistentID;
@@ -197,7 +197,7 @@
 - (id)scaledImageToFit:(unsigned int)arg1 saveScaledImage:(BOOL)arg2 attachmentContextID:(id)arg3;
 - (void)setEventID:(id)arg1;
 - (void)setIcsRepresentation:(id)arg1;
-- (void)setImageDimensions:(struct CGSize { double x1; double x2; })arg1;
+- (void)setImageDimensions:(struct CGSize { float x1; float x2; })arg1;
 - (void)setMeetingStorePersistentID:(id)arg1;
 
 @end

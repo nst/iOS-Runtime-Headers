@@ -4,12 +4,12 @@
 
 @interface PHAMonitoringProcessInfo : NSObject <NSSecureCoding> {
     double  _cpuUsagePercentage;
-    unsigned int  _memoryResidentBytes;
+    unsigned long long  _memoryResidentBytes;
     double  _powerScore;
 }
 
 @property double cpuUsagePercentage;
-@property unsigned int memoryResidentBytes;
+@property unsigned long long memoryResidentBytes;
 @property double powerScore;
 
 + (BOOL)supportsSecureCoding;
@@ -17,10 +17,10 @@
 - (double)cpuUsagePercentage;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (unsigned int)memoryResidentBytes;
+- (unsigned long long)memoryResidentBytes;
 - (double)powerScore;
 - (void)setCpuUsagePercentage:(double)arg1;
-- (void)setMemoryResidentBytes:(unsigned int)arg1;
+- (void)setMemoryResidentBytes:(unsigned long long)arg1;
 - (void)setPowerScore:(double)arg1;
 
 @end

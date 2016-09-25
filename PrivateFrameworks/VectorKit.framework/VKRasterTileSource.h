@@ -25,7 +25,7 @@
                 unsigned long __first_; 
             } __p2_; 
             struct __compressed_pair<float, std::__1::__unordered_map_equal<GEOGenericTileType, std::__1::__hash_value_type<GEOGenericTileType, std::__1::shared_ptr<ggl::Texture2D> >, std::__1::equal_to<GEOGenericTileType>, true> > { 
-                double __first_; 
+                float __first_; 
             } __p3_; 
         } __table_; 
     }  _gglGenericRasterTextureCache;

@@ -22,7 +22,7 @@
     NSString * mStyleSheetGuid;
     OIXMLDocument * mTabBarDoc;
     NSString * mTabBarURL;
-    double  mTabPosition;
+    float  mTabPosition;
     int  mWidth;
     NSMutableArray * mWorksheetGuids;
     NSMutableArray * mWorksheetNames;
@@ -49,7 +49,7 @@
 - (id)initWithEDWorkbook:(id)arg1 archiver:(id)arg2;
 - (void)mapBodyStyleAt:(id)arg1;
 - (void)mapElement:(id)arg1 atIndex:(unsigned int)arg2 withState:(id)arg3 isLastElement:(BOOL)arg4;
-- (struct CGSize { double x1; double x2; })pageSizeForDevice;
+- (struct CGSize { float x1; float x2; })pageSizeForDevice;
 - (void)setFileName:(id)arg1;
 - (void)startMappingWithState:(id)arg1;
 - (id)styleMatrix;

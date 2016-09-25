@@ -19,8 +19,8 @@
     UIImageView * _pageLabelOnImageView;
     NSObject<OS_dispatch_queue> * _pageRendererQueue;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _pageSize;
     struct CGPDFDocument { } * _pdfDocRef;
     NSString * _pdfPassword;
@@ -29,10 +29,10 @@
     UIView * _pinchAnimationWhiteBackgroundView;
     UICollectionViewCell * _pinchGestureBeginningCell;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _pinchGestureLastPoint;
-    double  _pinchGestureLastScale;
+    float  _pinchGestureLastScale;
     BOOL  _presentingDocumentInteractionController;
     UIPrintPanelViewController * _printPanelViewController;
     NSURL * _quickLookPDFURL;
@@ -76,8 +76,8 @@
 - (BOOL)canShowMenuBar;
 - (BOOL)collectionView:(id)arg1 canPerformAction:(SEL)arg2 forItemAtIndexPath:(id)arg3 withSender:(id)arg4;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })collectionView:(id)arg1 layout:(id)arg2 insetForSectionAtIndex:(int)arg3;
-- (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })collectionView:(id)arg1 layout:(id)arg2 insetForSectionAtIndex:(int)arg3;
+- (struct CGSize { float x1; float x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
 - (void)collectionView:(id)arg1 prefetchItemsAtIndexPaths:(id)arg2;
 - (BOOL)collectionView:(id)arg1 shouldShowMenuForItemAtIndexPath:(id)arg2;
@@ -98,10 +98,10 @@
 - (BOOL)grayscalePreview;
 - (void)handlePinch:(id)arg1;
 - (void)handleTap:(id)arg1;
-- (id)indexPathNearestToPointInCollectionView:(struct CGPoint { double x1; double x2; })arg1;
-- (id)initWithPageSize:(struct CGSize { double x1; double x2; })arg1 numberOfPages:(int)arg2 viewSize:(struct CGSize { double x1; double x2; })arg3 printPanelViewController:(id)arg4;
+- (id)indexPathNearestToPointInCollectionView:(struct CGPoint { float x1; float x2; })arg1;
+- (id)initWithPageSize:(struct CGSize { float x1; float x2; })arg1 numberOfPages:(int)arg2 viewSize:(struct CGSize { float x1; float x2; })arg3 printPanelViewController:(id)arg4;
 - (int)initialPageIndexToCenter;
-- (BOOL)locationInTapTargetOfPageLabelBadge:(struct CGPoint { double x1; double x2; })arg1;
+- (BOOL)locationInTapTargetOfPageLabelBadge:(struct CGPoint { float x1; float x2; })arg1;
 - (int)numPages;
 - (int)numberOfSectionsInCollectionView:(id)arg1;
 - (void)pageBadgeTapped:(id)arg1;
@@ -115,7 +115,7 @@
 - (void)previewPDF;
 - (id)previewViewControllerForItemAtIndexPath:(id)arg1;
 - (void)previewingContext:(id)arg1 commitViewController:(id)arg2;
-- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { double x1; double x2; })arg2;
+- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { float x1; float x2; })arg2;
 - (id)quickLookPDFURL;
 - (void)removePage:(id)arg1 forPageIndex:(int)arg2;
 - (void)resetAllPageImages;
@@ -125,7 +125,7 @@
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(BOOL)arg2;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
-- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { double x1; double x2; })arg2 targetContentOffset:(inout struct CGPoint { double x1; double x2; }*)arg3;
+- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { float x1; float x2; })arg2 targetContentOffset:(inout struct CGPoint { float x1; float x2; }*)arg3;
 - (void)setAnnotationsOnPreview:(BOOL)arg1;
 - (void)setArrayOfCellSizes:(id)arg1;
 - (void)setArrayOfPageImages:(id)arg1;

@@ -8,8 +8,8 @@
     CIImage * _inputImage;
     NSNumber * _inputSaturationHighPoint;
     NSNumber * _inputVersion;
-    double  _lastAmount;
-    double  _lastSaturationHighPoint;
+    float  _lastAmount;
+    float  _lastSaturationHighPoint;
     int  _lastVersion;
     BOOL  _needsReprocess;
 }

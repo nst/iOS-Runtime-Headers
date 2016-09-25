@@ -6,12 +6,12 @@
     BOOL  _centerText;
     UIFont * _descriptionFont;
     UIFont * _footnoteFont;
-    double  _interResultSpacing;
+    float  _interResultSpacing;
     BOOL  _requiresTwoLineTitles;
-    double  _spacingBetweenDescriptionAndFootnote;
-    double  _spacingBetweenDescriptions;
-    double  _spacingBetweenTitleAndDescription;
-    double  _spacingBetweenTitleAndTopView;
+    float  _spacingBetweenDescriptionAndFootnote;
+    float  _spacingBetweenDescriptions;
+    float  _spacingBetweenTitleAndDescription;
+    float  _spacingBetweenTitleAndTopView;
     BOOL  _thumbnailFillsWidth;
     UIFont * _titleFont;
 }
@@ -19,12 +19,12 @@
 @property BOOL centerText;
 @property (retain) UIFont *descriptionFont;
 @property (retain) UIFont *footnoteFont;
-@property double interResultSpacing;
+@property float interResultSpacing;
 @property BOOL requiresTwoLineTitles;
-@property double spacingBetweenDescriptionAndFootnote;
-@property double spacingBetweenDescriptions;
-@property double spacingBetweenTitleAndDescription;
-@property double spacingBetweenTitleAndTopView;
+@property float spacingBetweenDescriptionAndFootnote;
+@property float spacingBetweenDescriptions;
+@property float spacingBetweenTitleAndDescription;
+@property float spacingBetweenTitleAndTopView;
 @property BOOL thumbnailFillsWidth;
 @property (retain) UIFont *titleFont;
 

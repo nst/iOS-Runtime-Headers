@@ -10,7 +10,7 @@
     BOOL  _deepTraversal;
     NSDate * _priorToDate;
     BOOL  _rebuildResults;
-    int  _truncationSize;
+    long long  _truncationSize;
 }
 
 @property (nonatomic) int MIMESupport;
@@ -20,7 +20,7 @@
 @property (nonatomic) BOOL deepTraversal;
 @property (nonatomic, retain) NSDate *priorToDate;
 @property (nonatomic) BOOL rebuildResults;
-@property (nonatomic) int truncationSize;
+@property (nonatomic) long long truncationSize;
 
 + (id)mailboxSearchQueryWithSearchString:(id)arg1 consumer:(id)arg2;
 + (id)mailboxSearchQueryWithSearchString:(id)arg1 predicate:(id)arg2 consumer:(id)arg3;
@@ -44,7 +44,7 @@
 - (void)setMIMESupport:(int)arg1;
 - (void)setPriorToDate:(id)arg1;
 - (void)setRebuildResults:(BOOL)arg1;
-- (void)setTruncationSize:(int)arg1;
-- (int)truncationSize;
+- (void)setTruncationSize:(long long)arg1;
+- (long long)truncationSize;
 
 @end

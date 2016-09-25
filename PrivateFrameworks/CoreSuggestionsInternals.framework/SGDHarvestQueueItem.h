@@ -5,21 +5,21 @@
 @interface SGDHarvestQueueItem : NSObject {
     unsigned int  _fails;
     CSSearchableItem * _item;
-    int  _itemId;
+    long long  _itemId;
 }
 
 @property (nonatomic, readonly) unsigned int fails;
 @property (nonatomic, readonly) BOOL highPriority;
 @property (readonly) CSSearchableItem *item;
-@property (nonatomic, readonly) int itemId;
+@property (nonatomic, readonly) long long itemId;
 
 - (void).cxx_destruct;
 - (unsigned int)fails;
 - (void)finish;
 - (BOOL)highPriority;
-- (id)initWithItemId:(int)arg1 item:(id)arg2 fails:(int)arg3;
+- (id)initWithItemId:(long long)arg1 item:(id)arg2 fails:(int)arg3;
 - (id)item;
-- (int)itemId;
+- (long long)itemId;
 - (void)markAsFailed;
 
 @end

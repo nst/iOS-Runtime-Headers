@@ -4,50 +4,50 @@
 
 @interface TSTLayout : TSWPTextHostLayout <TSKSearchTarget, TSWPColumnMetrics, TSWPLayoutParent, TSWPStorageObserver> {
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  mAdjustableTableSize;
     NSMutableDictionary * mAttachmentCellLayouts;
     struct { 
-        double tableNameHeight; 
+        float tableNameHeight; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } scaleToFitParent; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } scaleToFitEnclosingTextColumn; 
     }  mCached;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  mCachedPaddingForEditingCell;
     int  mCachedVerticalAlignmentForEditingCell;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  mCanvasVisibleRect;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  mCapturedStrokeFrameSizeForInline;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  mComputedEditingCellContentFrame;
     TSWPLayout * mContainedTextEditingLayout;
@@ -67,8 +67,8 @@
         } size; 
     }  mEditingSpillingTextRange;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  mFixedTableSize;
     BOOL  mLayoutDirectionIsLeftToRight;
     TSTLayoutHint * mLayoutHint;
@@ -88,31 +88,31 @@
     }  mPrevEditingSpillingTextRange;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  mPreviousVisibleStrokeFrame;
     BOOL  mProcessChangesFiltering;
     BOOL  mRemovingContainedTextEditorLayout;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  mRenderingFrameForLayoutGeometryFromInfo;
     BOOL  mShouldUpdateAttachmentChildren;
     TSTLayoutSpaceBundle * mSpaceBundle;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  mSpillingTextSize;
     BOOL  mTableNameVisibilityIsValid;
     BOOL  mTableNameVisible;
@@ -122,7 +122,7 @@
 @property (nonatomic, readonly) BOOL alwaysStartsNewTarget;
 @property (nonatomic, readonly) unsigned int columnCount;
 @property (nonatomic, readonly) BOOL columnsAreLeftToRight;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } computedEditingCellContentFrame;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } computedEditingCellContentFrame;
 @property (nonatomic, retain) TSWPLayout *containedTextEditingLayout;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -134,32 +134,32 @@
 @property (nonatomic, retain) TSTMasterLayout *masterLayout;
 @property (nonatomic) BOOL newCanvasRevealedHorizontally;
 @property (nonatomic) BOOL newCanvasRevealedVertically;
-@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } paddingForEditingCell;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } paddingForEditingCell;
 @property (nonatomic, readonly) unsigned int pageCount;
 @property (nonatomic, readonly) unsigned int pageNumber;
 @property (nonatomic) struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; } prevEditingSpillingTextRange;
 @property (nonatomic) BOOL processChangesFiltering;
-@property (nonatomic) struct CGSize { double x1; double x2; } scaleToFit;
+@property (nonatomic) struct CGSize { float x1; float x2; } scaleToFit;
 @property (nonatomic, readonly) BOOL shrinkTextToFit;
 @property (nonatomic, retain) TSTLayoutSpaceBundle *spaceBundle;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) TSTTableInfo *tableInfo;
 @property (nonatomic, readonly) TSTTableModel *tableModel;
-@property (nonatomic, readonly) double textScaleFactor;
+@property (nonatomic, readonly) float textScaleFactor;
 
-- (struct CGPoint { double x1; double x2; })activityLineUnscaledEndPointForSearchReference:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })adjustRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forScrollingToSelectionPath:(id)arg2;
-- (struct CGSize { double x1; double x2; })adjustedInsetsForTarget:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })alignmentFrame;
+- (struct CGPoint { float x1; float x2; })activityLineUnscaledEndPointForSearchReference:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })adjustRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forScrollingToSelectionPath:(id)arg2;
+- (struct CGSize { float x1; float x2; })adjustedInsetsForTarget:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })alignmentFrame;
 - (BOOL)alwaysStartsNewTarget;
 - (unsigned int)autosizeFlagsForTextLayout:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })autosizedFrameForTextLayout:(id)arg1 textSize:(struct CGSize { double x1; double x2; })arg2;
-- (void)bezierPathsForCellRegion:(id)arg1 selectionMask:(unsigned int)arg2 transform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg3 viewScale:(float)arg4 inset:(float)arg5 clipToVisibleRect:(BOOL)arg6 block:(id /* block */)arg7;
-- (struct CGPoint { double x1; double x2; })calculatePointFromSearchReference:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })autosizedFrameForTextLayout:(id)arg1 textSize:(struct CGSize { float x1; float x2; })arg2;
+- (void)bezierPathsForCellRegion:(id)arg1 selectionMask:(unsigned int)arg2 transform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg3 viewScale:(float)arg4 inset:(float)arg5 clipToVisibleRect:(BOOL)arg6 block:(id /* block */)arg7;
+- (struct CGPoint { float x1; float x2; })calculatePointFromSearchReference:(id)arg1;
 - (BOOL)canAspectRatioLockBeChangedByUser;
 - (BOOL)canRotateChildLayout:(id)arg1;
 - (BOOL)canvasShouldScrollForSelectionPath:(id)arg1;
-- (struct CGPoint { double x1; double x2; })capturedInfoPositionForAttachment;
+- (struct CGPoint { float x1; float x2; })capturedInfoPositionForAttachment;
 - (id)cellIterator;
 - (id)cellIteratorWithRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
 - (id)cellIteratorWithRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1 flags:(unsigned int)arg2;
@@ -168,7 +168,7 @@
 - (unsigned int)columnCount;
 - (BOOL)columnsAreLeftToRight;
 - (id)computeLayoutGeometry;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })computedEditingCellContentFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })computedEditingCellContentFrame;
 - (id)containedTextEditingLayout;
 - (void)dealloc;
 - (id)dependentLayouts;
@@ -177,11 +177,11 @@
 - (float)gapForColumnIndex:(unsigned int)arg1 bodyWidth:(float)arg2;
 - (BOOL)inFindReplaceMode;
 - (BOOL)inPrintPreviewMode;
-- (struct CGPoint { double x1; double x2; })infoGeometryPositionForCurrentAttachedLayoutGeometry;
+- (struct CGPoint { float x1; float x2; })infoGeometryPositionForCurrentAttachedLayoutGeometry;
 - (id)initWithInfo:(id)arg1;
 - (id)initWithInfo:(id)arg1 layoutHint:(id)arg2;
 - (id)initialInfoGeometry;
-- (struct CGSize { double x1; double x2; })initialTextSize;
+- (struct CGSize { float x1; float x2; })initialTextSize;
 - (void)invalidate;
 - (void)invalidateForAutosizingTextLayout:(id)arg1;
 - (void)invalidatePosition;
@@ -202,36 +202,36 @@
 - (void)layoutSearchForAnnotationWithHitBlock:(id /* block */)arg1;
 - (void)layoutSearchForSpellingErrorsWithHitBlock:(id /* block */)arg1 stop:(BOOL*)arg2;
 - (void)layoutSearchForString:(id)arg1 options:(unsigned int)arg2 hitBlock:(id /* block */)arg3;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })maskRectForTextLayout:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })maskRectForTextLayout:(id)arg1;
 - (id)masterLayout;
 - (float)maxAutoGrowWidthForTextLayout:(id)arg1;
-- (struct CGSize { double x1; double x2; })maximumFrameSizeForChild:(id)arg1;
+- (struct CGSize { float x1; float x2; })maximumFrameSizeForChild:(id)arg1;
 - (int)naturalAlignmentForCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
 - (int)naturalAlignmentForTextLayout:(id)arg1;
 - (BOOL)newCanvasRevealedHorizontally;
 - (BOOL)newCanvasRevealedVertically;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })nonAutosizedFrameForTextLayout:(id)arg1;
-- (void)offsetGeometryBy:(struct CGPoint { double x1; double x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })nonAutosizedFrameForTextLayout:(id)arg1;
+- (void)offsetGeometryBy:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)orderedBefore:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })p_autosizedFrameForRichTextLayout:(id)arg1 textSize:(struct CGSize { double x1; double x2; })arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })p_autosizedFrameForTextEditingLayout:(id)arg1 textSize:(struct CGSize { double x1; double x2; })arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })p_autosizedFrameForRichTextLayout:(id)arg1 textSize:(struct CGSize { float x1; float x2; })arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })p_autosizedFrameForTextEditingLayout:(id)arg1 textSize:(struct CGSize { float x1; float x2; })arg2;
 - (struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })p_cellIDForWPLayout:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })p_computeSpillingTextFrameForEditingLayout:(id)arg1 textSize:(struct CGSize { double x1; double x2; })arg2 editingSpillRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; }*)arg3;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })p_computeSpillingTextFrameForEditingLayout:(id)arg1 textSize:(struct CGSize { float x1; float x2; })arg2 editingSpillRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; }*)arg3;
 - (int)p_defaultAlignmentForTableWritingDirection;
 - (BOOL)p_getLayoutDirectionLeftToRight;
 - (BOOL)p_layoutWhollyContainsGridRange:(struct { struct { unsigned int x_1_1_1; unsigned int x_1_1_2; } x1; struct { unsigned int x_2_1_1; unsigned int x_2_1_2; } x2; })arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })p_maskRectForRichTextLayout:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })p_maskRectForTextEditingLayout:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })p_maskRectForRichTextLayout:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })p_maskRectForTextEditingLayout:(id)arg1;
 - (struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })p_maximumSpillRangeForCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })p_nonAutosizedFrameForRichTextLayout:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })p_nonAutosizedFrameForTextEditingLayout:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })p_nonAutosizedFrameForRichTextLayout:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })p_nonAutosizedFrameForTextEditingLayout:(id)arg1;
 - (void)p_prepareAttachmentCells;
-- (struct CGSize { double x1; double x2; })p_rangeUpAndLeftOfIntersectionRangeOfGridRange:(struct { struct { unsigned int x_1_1_1; unsigned int x_1_1_2; } x1; struct { unsigned int x_2_1_1; unsigned int x_2_1_2; } x2; })arg1;
+- (struct CGSize { float x1; float x2; })p_rangeUpAndLeftOfIntersectionRangeOfGridRange:(struct { struct { unsigned int x_1_1_1; unsigned int x_1_1_2; } x1; struct { unsigned int x_2_1_1; unsigned int x_2_1_2; } x2; })arg1;
 - (struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })p_spillRangeForMaskingRichTextLayout:(id)arg1;
 - (struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })p_spillRangeToRightForCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })p_textFrameForWrappingCell:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg1 defaultRowHeight:(BOOL*)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })p_textFrameForWrappingCell:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg1 defaultRowHeight:(BOOL*)arg2;
 - (void)p_updateCachedStyleInformationFromCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })paddingForEditingCell;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })paddingForEditingCell;
 - (unsigned int)pageCount;
 - (unsigned int)pageNumber;
 - (float)positionForColumnIndex:(unsigned int)arg1 bodyWidth:(float)arg2 target:(id)arg3 outWidth:(float*)arg4 outGap:(float*)arg5;
@@ -242,17 +242,17 @@
 - (void)removeContainedTextEditingLayout;
 - (Class)repClassForTextLayout:(id)arg1;
 - (BOOL)resizeMayChangeAspectRatio;
-- (struct CGSize { double x1; double x2; })scaleToFit;
+- (struct CGSize { float x1; float x2; })scaleToFit;
 - (void)setContainedTextEditingLayout:(id)arg1;
 - (void)setLayoutHint:(id)arg1;
 - (void)setMasterLayout:(id)arg1;
 - (void)setNeedsDisplay;
-- (void)setNeedsDisplayInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setNeedsDisplayInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setNewCanvasRevealedHorizontally:(BOOL)arg1;
 - (void)setNewCanvasRevealedVertically:(BOOL)arg1;
 - (void)setPrevEditingSpillingTextRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
 - (void)setProcessChangesFiltering:(BOOL)arg1;
-- (void)setScaleToFit:(struct CGSize { double x1; double x2; })arg1;
+- (void)setScaleToFit:(struct CGSize { float x1; float x2; })arg1;
 - (void)setSpaceBundle:(id)arg1;
 - (void)setupContainedTextEditingLayout:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
 - (BOOL)shrinkTextToFit;

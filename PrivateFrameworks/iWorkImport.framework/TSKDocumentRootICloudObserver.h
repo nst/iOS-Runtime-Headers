@@ -4,17 +4,17 @@
 
 @interface TSKDocumentRootICloudObserver : NSObject {
     id /* block */  _block;
-    int  _identifer;
-    int  _identifier;
+    long long  _identifer;
+    long long  _identifier;
     NSOperationQueue * _operationQueue;
     BOOL  _suspendedCollaboration;
 }
 
-@property (nonatomic, readonly) int identifer;
+@property (nonatomic, readonly) long long identifer;
 @property (nonatomic, readonly) BOOL suspendedCollaboration;
 
 - (void)dealloc;
-- (int)identifer;
+- (long long)identifer;
 - (id)initWithSuspendedCollaboration:(BOOL)arg1 block:(id /* block */)arg2;
 - (void)invokeWithDocumentRoot:(id)arg1;
 - (BOOL)suspendedCollaboration;

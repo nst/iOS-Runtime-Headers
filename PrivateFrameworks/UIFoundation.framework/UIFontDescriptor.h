@@ -12,8 +12,8 @@
 }
 
 @property (nonatomic, readonly) NSDictionary *fontAttributes;
-@property (nonatomic, readonly) struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; } matrix;
-@property (nonatomic, readonly) double pointSize;
+@property (nonatomic, readonly) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } matrix;
+@property (nonatomic, readonly) float pointSize;
 @property (nonatomic, readonly) NSString *postscriptName;
 @property (nonatomic, readonly) unsigned int symbolicTraits;
 
@@ -23,7 +23,7 @@
 + (id)defaultFontDescriptorWithTextStyle:(id)arg1;
 + (id)defaultFontDescriptorWithTextStyle:(id)arg1 addingSymbolicTraits:(unsigned int)arg2 options:(unsigned int)arg3;
 + (id)fontDescriptorWithFontAttributes:(id)arg1;
-+ (id)fontDescriptorWithName:(id)arg1 matrix:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg2;
++ (id)fontDescriptorWithName:(id)arg1 matrix:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2;
 + (id)fontDescriptorWithName:(id)arg1 size:(float)arg2;
 + (id)preferredFontDescriptorWithTextStyle:(id)arg1;
 + (id)preferredFontDescriptorWithTextStyle:(id)arg1 addingSymbolicTraits:(unsigned int)arg2 options:(unsigned int)arg3;
@@ -42,7 +42,7 @@
 - (id)fontDescriptorByAddingAttributes:(id)arg1;
 - (id)fontDescriptorWithFace:(id)arg1;
 - (id)fontDescriptorWithFamily:(id)arg1;
-- (id)fontDescriptorWithMatrix:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
+- (id)fontDescriptorWithMatrix:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (id)fontDescriptorWithSize:(float)arg1;
 - (id)fontDescriptorWithSymbolicTraits:(unsigned int)arg1;
 - (id)init;
@@ -50,7 +50,7 @@
 - (id)initWithFontAttributes:(id)arg1;
 - (id)matchingFontDescriptorWithMandatoryKeys:(id)arg1;
 - (id)matchingFontDescriptorsWithMandatoryKeys:(id)arg1;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })matrix;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })matrix;
 - (id)objectForKey:(id)arg1;
 - (float)pointSize;
 - (id)postscriptName;

@@ -4,11 +4,11 @@
 
 @interface TopoProgressBar : CALayer {
     id  _owningView;
-    double  _progressValue;
+    float  _progressValue;
 }
 
 @property (nonatomic) id owningView;
-@property (nonatomic) double progressValue;
+@property (nonatomic) float progressValue;
 
 + (void)deallocImageCache;
 + (long)initImageCache;
@@ -18,7 +18,7 @@
 - (id)initWithOwningView:(id)arg1;
 - (void)layoutSublayers;
 - (id)owningView;
-- (struct CGSize { double x1; double x2; })preferredFrameSize;
+- (struct CGSize { float x1; float x2; })preferredFrameSize;
 - (float)progressValue;
 - (void)setOwningView:(id)arg1;
 - (void)setProgressValue:(float)arg1;

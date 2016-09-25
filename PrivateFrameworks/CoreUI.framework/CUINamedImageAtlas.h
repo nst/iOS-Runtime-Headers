@@ -11,7 +11,7 @@
 @property (nonatomic, readonly) struct CGImage { }*image;
 @property (nonatomic, readonly) NSArray *imageNames;
 @property (nonatomic, readonly) struct __CFArray { }*images;
-@property (nonatomic, readonly) double scale;
+@property (nonatomic, readonly) float scale;
 
 - (BOOL)_dimension1ExistsInKeyFormatForThemeRef:(unsigned int)arg1;
 - (id)_renditionForKey:(id)arg1 inThemeRef:(unsigned int)arg2;

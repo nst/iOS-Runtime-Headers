@@ -3,14 +3,14 @@
  */
 
 @interface _Flower : _Geometry {
-    double  _height;
+    float  _height;
     NSNumber * _tex;
-    double  _width;
+    float  _width;
 }
 
-@property (nonatomic) double height;
+@property (nonatomic) float height;
 @property (nonatomic, retain) NSNumber *tex;
-@property (nonatomic) double width;
+@property (nonatomic) float width;
 
 - (void).cxx_destruct;
 - (float)height;

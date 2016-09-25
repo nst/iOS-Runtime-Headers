@@ -3,8 +3,8 @@
  */
 
 @interface MFPBlendStop : NSObject {
-    double  mFactor;
-    double  mPosition;
+    float  mFactor;
+    float  mPosition;
 }
 
 - (float)factor;

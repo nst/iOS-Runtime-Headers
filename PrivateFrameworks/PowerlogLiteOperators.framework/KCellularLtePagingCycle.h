@@ -14,7 +14,7 @@
     unsigned int  _nbMs;
     unsigned int  _pagingCycleMs;
     unsigned int  _phyCellId;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) unsigned int earfcn;
@@ -26,7 +26,7 @@
 @property (nonatomic) unsigned int nbMs;
 @property (nonatomic) unsigned int pagingCycleMs;
 @property (nonatomic) unsigned int phyCellId;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -54,8 +54,8 @@
 - (void)setNbMs:(unsigned int)arg1;
 - (void)setPagingCycleMs:(unsigned int)arg1;
 - (void)setPhyCellId:(unsigned int)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
-- (unsigned int)timestamp;
+- (void)setTimestamp:(unsigned long long)arg1;
+- (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 
 @end

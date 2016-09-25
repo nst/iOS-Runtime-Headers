@@ -21,7 +21,7 @@
 - (id)archive;
 - (id)attributedStringAtIndex:(unsigned int)arg1;
 - (float)baseLineAtIndex:(unsigned int)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })bounds;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
 - (id)containingTextLine;
 - (void)copyToPasteboard;
 - (void)dealloc;
@@ -31,7 +31,7 @@
 - (unsigned int)extendAtStart:(unsigned int)arg1;
 - (void)extendToParagraph;
 - (struct { int x1; int x2; })extent;
-- (BOOL)getBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg1 transform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; }*)arg2 index:(unsigned int)arg3;
+- (BOOL)getBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 transform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg2 index:(unsigned int)arg3;
 - (id)htmlAtIndex:(unsigned int)arg1;
 - (id)init;
 - (id)initWithPage:(id)arg1 cgSelection:(struct CGPDFSelection { }*)arg2;
@@ -43,13 +43,13 @@
 - (BOOL)isWord;
 - (unsigned int)numberOfRectangles;
 - (id)page;
-- (struct { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGPoint { double x_2_1_1; double x_2_1_2; } x2; struct CGPoint { double x_3_1_1; double x_3_1_2; } x3; struct CGPoint { double x_4_1_1; double x_4_1_2; } x4; })rectangleAtIndex:(unsigned int)arg1 scale:(float)arg2 inset:(float)arg3;
+- (struct { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGPoint { float x_2_1_1; float x_2_1_2; } x2; struct CGPoint { float x_3_1_1; float x_3_1_2; } x3; struct CGPoint { float x_4_1_1; float x_4_1_2; } x4; })rectangleAtIndex:(unsigned int)arg1 scale:(float)arg2 inset:(float)arg3;
 - (id)selectionExtendedToLineBoundaries;
 - (void)setStringRange:(struct { int x1; int x2; })arg1;
 - (unsigned int)startIndex;
 - (id)string;
 - (struct { int x1; int x2; })stringRange;
 - (id)textAtIndex:(unsigned int)arg1;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })transform;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transform;
 
 @end

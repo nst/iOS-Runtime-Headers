@@ -13,8 +13,8 @@
         unsigned int type : 1; 
         unsigned int renderOnClient : 1; 
     }  _has;
-    double  _imageHeight;
-    double  _imageWidth;
+    float  _imageHeight;
+    float  _imageWidth;
     BOOL  _renderOnClient;
     unsigned int  _type;
 }
@@ -29,8 +29,8 @@
 @property (nonatomic) BOOL hasImageWidth;
 @property (nonatomic) BOOL hasRenderOnClient;
 @property (nonatomic) BOOL hasType;
-@property (nonatomic) double imageHeight;
-@property (nonatomic) double imageWidth;
+@property (nonatomic) float imageHeight;
+@property (nonatomic) float imageWidth;
 @property (nonatomic) BOOL renderOnClient;
 @property (nonatomic) unsigned int type;
 

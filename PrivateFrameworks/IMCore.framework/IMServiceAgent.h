@@ -11,7 +11,7 @@
 @property (nonatomic, retain) NSArray *myAwayMessages;
 @property (nonatomic, readonly) unsigned int requestAudioReflectorStart;
 @property (nonatomic, readonly) unsigned int requestAudioReflectorStop;
-@property (nonatomic, readonly) unsigned int vcCapabilities;
+@property (nonatomic, readonly) unsigned long long vcCapabilities;
 
 + (void)forgetStatusImageAppearance;
 + (id)imageNameForStatus:(unsigned int)arg1;
@@ -36,6 +36,6 @@
 - (void)setMyAvailableMessages:(id)arg1;
 - (void)setMyAwayMessages:(id)arg1;
 - (void)setMyStatus:(unsigned int)arg1 message:(id)arg2;
-- (unsigned int)vcCapabilities;
+- (unsigned long long)vcCapabilities;
 
 @end

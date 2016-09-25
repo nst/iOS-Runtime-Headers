@@ -3,7 +3,7 @@
  */
 
 @interface HUIconContentView : UIView {
-    double  _aspectRatio;
+    float  _aspectRatio;
     <HUIconContentViewDelegate> * _delegate;
     BOOL  _disableContinuousAnimation;
     unsigned int  _displayContext;
@@ -15,7 +15,7 @@
     UIVisualEffect * _vibrancyEffect;
 }
 
-@property (nonatomic) double aspectRatio;
+@property (nonatomic) float aspectRatio;
 @property (nonatomic) <HUIconContentViewDelegate> *delegate;
 @property (nonatomic) BOOL disableContinuousAnimation;
 @property (nonatomic) unsigned int displayContext;
@@ -38,7 +38,7 @@
 - (unsigned int)displayStyle;
 - (id)iconDescriptor;
 - (unsigned int)iconSize;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)invalidateRenderingMode;
 - (int)primaryState;
 - (int)renderingMode;

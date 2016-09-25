@@ -12,7 +12,7 @@
 @property (nonatomic) BOOL shouldRepeat;
 @property (nonatomic, copy) NSString *toneFileName;
 @property (nonatomic, copy) NSString *toneIdentifier;
-@property (nonatomic) unsigned int toneMediaLibraryItemIdentifier;
+@property (nonatomic) unsigned long long toneMediaLibraryItemIdentifier;
 @property (nonatomic, copy) NSString *vibrationIdentifier;
 @property (nonatomic, copy) NSDictionary *vibrationPattern;
 
@@ -25,7 +25,7 @@
 - (void)setShouldRepeat:(BOOL)arg1;
 - (void)setToneFileName:(id)arg1;
 - (void)setToneIdentifier:(id)arg1;
-- (void)setToneMediaLibraryItemIdentifier:(unsigned int)arg1;
+- (void)setToneMediaLibraryItemIdentifier:(unsigned long long)arg1;
 - (void)setVibrationIdentifier:(id)arg1;
 - (void)setVibrationPattern:(id)arg1;
 

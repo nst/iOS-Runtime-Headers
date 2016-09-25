@@ -9,7 +9,7 @@
     id /* block */  __progressHandler;
     BOOL  _abortedRemaker;
     NSMutableDictionary * _inProgressOperationByUUID;
-    double  _progress;
+    float  _progress;
     NSObject<OS_dispatch_source> * _progressTimer;
     NSOperationQueue * _remakeOperationQueue;
     NSError * _remakerError;

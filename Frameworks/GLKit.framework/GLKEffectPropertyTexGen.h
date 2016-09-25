@@ -4,12 +4,12 @@
 
 @interface GLKEffectPropertyTexGen : GLKEffectProperty {
     int  _coord;
-    double * _eyePlaneByInvModelview;
+    float * _eyePlaneByInvModelview;
     int  _eyePlaneByInvModelviewLoc;
     int  _mode;
     int  _modeLoc;
     char * _modeNameString;
-    double * _plane;
+    float * _plane;
     int  _planeLoc;
     char * _planeNameString;
     unsigned int  _textureIndex;

@@ -8,7 +8,7 @@
     NSMutableArray * _sourceObstacles;
 }
 
-@property (nonatomic, readonly) double bufferRadius;
+@property (nonatomic, readonly) float bufferRadius;
 @property (nonatomic, readonly) NSArray *obstacles;
 @property (nonatomic, readonly) unsigned int triangleCount;
 @property (nonatomic) unsigned int triangulationMode;

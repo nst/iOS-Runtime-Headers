@@ -6,31 +6,31 @@
     struct { 
         BOOL isComplexBackground; 
         BOOL isColoredText; 
-        double textHue; 
-        double textSaturation; 
-        double textBrightness; 
-        double bgHue; 
-        double bgSaturation; 
-        double bgBrightness; 
-        double shadowHue; 
-        double shadowSaturation; 
-        double shadowBrightness; 
+        float textHue; 
+        float textSaturation; 
+        float textBrightness; 
+        float bgHue; 
+        float bgSaturation; 
+        float bgBrightness; 
+        float shadowHue; 
+        float shadowSaturation; 
+        float shadowBrightness; 
     }  _data;
     unsigned int  _version;
 }
 
-@property (nonatomic, readonly) double bgBrightness;
-@property (nonatomic, readonly) double bgHue;
-@property (nonatomic, readonly) double bgSaturation;
+@property (nonatomic, readonly) float bgBrightness;
+@property (nonatomic, readonly) float bgHue;
+@property (nonatomic, readonly) float bgSaturation;
 @property (getter=isColoredText, nonatomic, readonly) BOOL coloredText;
 @property (getter=isComplexBackground, nonatomic, readonly) BOOL complexBackground;
-@property (nonatomic, readonly) double shadowBrightness;
-@property (nonatomic, readonly) double shadowHue;
-@property (nonatomic, readonly) double shadowSaturation;
-@property (nonatomic, readonly) struct { BOOL x1; BOOL x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; } structure;
-@property (nonatomic, readonly) double textBrightness;
-@property (nonatomic, readonly) double textHue;
-@property (nonatomic, readonly) double textSaturation;
+@property (nonatomic, readonly) float shadowBrightness;
+@property (nonatomic, readonly) float shadowHue;
+@property (nonatomic, readonly) float shadowSaturation;
+@property (nonatomic, readonly) struct { BOOL x1; BOOL x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; } structure;
+@property (nonatomic, readonly) float textBrightness;
+@property (nonatomic, readonly) float textHue;
+@property (nonatomic, readonly) float textSaturation;
 @property (nonatomic, readonly) unsigned int version;
 
 + (id)analysisWithImage:(id)arg1 alignment:(id)arg2;
@@ -45,13 +45,13 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initFromDictionary:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithStructure:(struct { BOOL x1; BOOL x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; })arg1;
+- (id)initWithStructure:(struct { BOOL x1; BOOL x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; })arg1;
 - (BOOL)isColoredText;
 - (BOOL)isComplexBackground;
 - (float)shadowBrightness;
 - (float)shadowHue;
 - (float)shadowSaturation;
-- (struct { BOOL x1; BOOL x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; })structure;
+- (struct { BOOL x1; BOOL x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; })structure;
 - (float)textBrightness;
 - (float)textHue;
 - (float)textSaturation;

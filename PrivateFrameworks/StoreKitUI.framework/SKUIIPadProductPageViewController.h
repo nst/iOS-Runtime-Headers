@@ -16,7 +16,7 @@
     SKUIItem * _item;
     SSMetricsPageEvent * _lastPageEvent;
     SKUILoadProductPageOperation * _loadOperation;
-    int  _lookupItemIdentifier;
+    long long  _lookupItemIdentifier;
     SKUIMetricsController * _metricsController;
     SKUINetworkErrorViewController * _networkErrorViewController;
     NSOperationQueue * _operationQueue;
@@ -71,7 +71,7 @@
 - (id)delegate;
 - (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (id)initWithItem:(id)arg1;
-- (id)initWithItemIdentifier:(int)arg1;
+- (id)initWithItemIdentifier:(long long)arg1;
 - (id)initWithProductPage:(id)arg1;
 - (id)initWithURL:(id)arg1;
 - (id)initWithURLRequest:(id)arg1;
@@ -93,7 +93,7 @@
 - (void)setBannerText:(id)arg1;
 - (void)setClientContext:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (struct CGPoint { double x1; double x2; })topContentOffset;
+- (struct CGPoint { float x1; float x2; })topContentOffset;
 - (void)viewDidLayoutSubviews;
 - (void)viewWillAppear:(BOOL)arg1;
 

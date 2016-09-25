@@ -35,8 +35,8 @@
     NSMutableArray * _routes;
     NSMutableArray * _serviceTags;
     struct GEOSessionID { 
-        unsigned int _high; 
-        unsigned int _low; 
+        unsigned long long _high; 
+        unsigned long long _low; 
     }  _sessionID;
     NSData * _sessionState;
     GEOTFTrafficSnapshot * _trafficSnapshot;
@@ -74,7 +74,7 @@
 @property (nonatomic, retain) GEORouteAttributes *routeAttributes;
 @property (nonatomic, retain) NSMutableArray *routes;
 @property (nonatomic, retain) NSMutableArray *serviceTags;
-@property (nonatomic) struct GEOSessionID { unsigned int x1; unsigned int x2; } sessionID;
+@property (nonatomic) struct GEOSessionID { unsigned long long x1; unsigned long long x2; } sessionID;
 @property (nonatomic, retain) NSData *sessionState;
 @property (nonatomic, retain) GEOTFTrafficSnapshot *trafficSnapshot;
 @property (nonatomic) BOOL useClientTimepointAsNow;
@@ -139,7 +139,7 @@
 - (id)serviceTagAtIndex:(unsigned int)arg1;
 - (id)serviceTags;
 - (unsigned int)serviceTagsCount;
-- (struct GEOSessionID { unsigned int x1; unsigned int x2; })sessionID;
+- (struct GEOSessionID { unsigned long long x1; unsigned long long x2; })sessionID;
 - (id)sessionState;
 - (void)setAdditionalEnabledMarkets:(id)arg1;
 - (void)setClientCapabilities:(id)arg1;
@@ -163,7 +163,7 @@
 - (void)setRouteAttributes:(id)arg1;
 - (void)setRoutes:(id)arg1;
 - (void)setServiceTags:(id)arg1;
-- (void)setSessionID:(struct GEOSessionID { unsigned int x1; unsigned int x2; })arg1;
+- (void)setSessionID:(struct GEOSessionID { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)setSessionState:(id)arg1;
 - (void)setTrafficSnapshot:(id)arg1;
 - (void)setUseClientTimepointAsNow:(BOOL)arg1;

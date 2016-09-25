@@ -14,8 +14,8 @@
 @property (nonatomic, readonly) struct b2JointDef { int x1; void *x2; struct b2Body {} *x3; struct b2Body {} *x4; bool x5; }*_jointDef;
 @property (nonatomic, retain) PKPhysicsBody *bodyA;
 @property (nonatomic, retain) PKPhysicsBody *bodyB;
-@property (nonatomic, readonly) struct CGVector { double x1; double x2; } reactionForce;
-@property (nonatomic, readonly) double reactionTorque;
+@property (nonatomic, readonly) struct CGVector { float x1; float x2; } reactionForce;
+@property (nonatomic, readonly) float reactionTorque;
 
 // Image: /System/Library/PrivateFrameworks/PhysicsKit.framework/PhysicsKit
 
@@ -30,7 +30,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (struct CGVector { double x1; double x2; })reactionForce;
+- (struct CGVector { float x1; float x2; })reactionForce;
 - (float)reactionTorque;
 - (void)setBodyA:(id)arg1;
 - (void)setBodyB:(id)arg1;

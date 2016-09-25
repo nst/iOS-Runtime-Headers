@@ -72,7 +72,7 @@
     HMDCentralMessageDispatcher * _remoteMessageDispatcher;
     BOOL  _residentEnabled;
     HMDResidentMesh * _residentMesh;
-    unsigned int  _stateHandle;
+    unsigned long long  _stateHandle;
     HMDSyncOperationManager * _syncManager;
     HMDTimeInformationMonitor * _timeInformationMonitor;
     NSMutableSet * _unassociatedRemotePeers;
@@ -162,7 +162,7 @@
 @property (nonatomic, retain) HMDCentralMessageDispatcher *remoteMessageDispatcher;
 @property (getter=isResidentEnabled, nonatomic) BOOL residentEnabled;
 @property (nonatomic, retain) HMDResidentMesh *residentMesh;
-@property (nonatomic) unsigned int stateHandle;
+@property (nonatomic) unsigned long long stateHandle;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) HMDSyncOperationManager *syncManager;
 @property (nonatomic, retain) HMDTimeInformationMonitor *timeInformationMonitor;
@@ -372,7 +372,7 @@
 - (void)_setUniqueDeviceIdSalt:(id)arg1;
 - (void)_startAccessoryFinderTimer;
 - (void)_startAccessoryFinderTimerExpired;
-- (void)_startCloudOperationRetryWithTimeout:(unsigned int)arg1 completionHandler:(id /* block */)arg2;
+- (void)_startCloudOperationRetryWithTimeout:(unsigned long long)arg1 completionHandler:(id /* block */)arg2;
 - (void)_startScanningForAccessories:(id)arg1;
 - (void)_startTimerToResetCloudOperationRetryCounter;
 - (void)_stopCloudOperationRetryTimer;
@@ -594,7 +594,7 @@
 - (void)setRemoteMessageDispatcher:(id)arg1;
 - (void)setResidentEnabled:(BOOL)arg1;
 - (void)setResidentMesh:(id)arg1;
-- (void)setStateHandle:(unsigned int)arg1;
+- (void)setStateHandle:(unsigned long long)arg1;
 - (void)setTimeInformationMonitor:(id)arg1;
 - (void)setUnassociatedRemotePeers:(id)arg1;
 - (void)setUploadHomeDataToCloud:(BOOL)arg1;
@@ -608,7 +608,7 @@
 - (void)startLocalTransport;
 - (void)startSearchingForBridgedAccessories;
 - (void)startWithCompletionHandler:(id /* block */)arg1;
-- (unsigned int)stateHandle;
+- (unsigned long long)stateHandle;
 - (void)stopLocalTransport;
 - (void)stopSearchingForBridgedAccessories;
 - (id)syncManager;

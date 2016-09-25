@@ -41,7 +41,7 @@
 - (void)animationDidFinishWithContext:(id)arg1;
 - (void)animationWillBeginWithContext:(id)arg1;
 - (id)animator;
-- (struct CGPoint { double x1; double x2; })bestVisibleOffsetForBubbleAtIndex:(int)arg1;
+- (struct CGPoint { float x1; float x2; })bestVisibleOffsetForBubbleAtIndex:(int)arg1;
 - (id)currentContext;
 - (id)fakeTypingIndicatorCell;
 - (id)init;

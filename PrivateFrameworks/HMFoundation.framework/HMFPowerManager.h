@@ -3,7 +3,7 @@
  */
 
 @interface HMFPowerManager : NSObject {
-    double  _batteryLevel;
+    float  _batteryLevel;
     int  _batteryState;
     NSObject<OS_dispatch_queue> * _clientQueue;
     BOOL  _hasBattery;
@@ -13,7 +13,7 @@
     BOOL  _running;
 }
 
-@property double batteryLevel;
+@property float batteryLevel;
 @property int batteryState;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *clientQueue;
 @property (readonly) BOOL hasBattery;

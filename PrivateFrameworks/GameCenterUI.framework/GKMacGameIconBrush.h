@@ -4,20 +4,20 @@
 
 @interface GKMacGameIconBrush : GKImageBrush <GKBrushIdentification> {
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _outputSize;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic) struct CGSize { double x1; double x2; } outputSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } outputSize;
 @property (readonly) Class superclass;
 
-- (struct CGSize { double x1; double x2; })outputSize;
+- (struct CGSize { float x1; float x2; })outputSize;
 - (id)renderedImageIdentifier;
-- (void)setOutputSize:(struct CGSize { double x1; double x2; })arg1;
-- (struct CGSize { double x1; double x2; })sizeForInput:(id)arg1;
+- (void)setOutputSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeForInput:(id)arg1;
 
 @end

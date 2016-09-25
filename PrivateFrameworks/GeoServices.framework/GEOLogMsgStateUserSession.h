@@ -11,15 +11,15 @@
         unsigned int sequenceNumber : 1; 
     }  _has;
     struct GEOSessionID { 
-        unsigned int _high; 
-        unsigned int _low; 
+        unsigned long long _high; 
+        unsigned long long _low; 
     }  _navSessionId;
     double  _navSessionRelativeTimestamp;
     double  _relativeTimestamp;
     unsigned int  _sequenceNumber;
     struct GEOSessionID { 
-        unsigned int _high; 
-        unsigned int _low; 
+        unsigned long long _high; 
+        unsigned long long _low; 
     }  _sessionId;
 }
 
@@ -28,11 +28,11 @@
 @property (nonatomic) BOOL hasRelativeTimestamp;
 @property (nonatomic) BOOL hasSequenceNumber;
 @property (nonatomic) BOOL hasSessionId;
-@property (nonatomic) struct GEOSessionID { unsigned int x1; unsigned int x2; } navSessionId;
+@property (nonatomic) struct GEOSessionID { unsigned long long x1; unsigned long long x2; } navSessionId;
 @property (nonatomic) double navSessionRelativeTimestamp;
 @property (nonatomic) double relativeTimestamp;
 @property (nonatomic) unsigned int sequenceNumber;
-@property (nonatomic) struct GEOSessionID { unsigned int x1; unsigned int x2; } sessionId;
+@property (nonatomic) struct GEOSessionID { unsigned long long x1; unsigned long long x2; } sessionId;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -46,22 +46,22 @@
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (struct GEOSessionID { unsigned int x1; unsigned int x2; })navSessionId;
+- (struct GEOSessionID { unsigned long long x1; unsigned long long x2; })navSessionId;
 - (double)navSessionRelativeTimestamp;
 - (BOOL)readFrom:(id)arg1;
 - (double)relativeTimestamp;
 - (unsigned int)sequenceNumber;
-- (struct GEOSessionID { unsigned int x1; unsigned int x2; })sessionId;
+- (struct GEOSessionID { unsigned long long x1; unsigned long long x2; })sessionId;
 - (void)setHasNavSessionId:(BOOL)arg1;
 - (void)setHasNavSessionRelativeTimestamp:(BOOL)arg1;
 - (void)setHasRelativeTimestamp:(BOOL)arg1;
 - (void)setHasSequenceNumber:(BOOL)arg1;
 - (void)setHasSessionId:(BOOL)arg1;
-- (void)setNavSessionId:(struct GEOSessionID { unsigned int x1; unsigned int x2; })arg1;
+- (void)setNavSessionId:(struct GEOSessionID { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)setNavSessionRelativeTimestamp:(double)arg1;
 - (void)setRelativeTimestamp:(double)arg1;
 - (void)setSequenceNumber:(unsigned int)arg1;
-- (void)setSessionId:(struct GEOSessionID { unsigned int x1; unsigned int x2; })arg1;
+- (void)setSessionId:(struct GEOSessionID { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)writeTo:(id)arg1;
 
 @end

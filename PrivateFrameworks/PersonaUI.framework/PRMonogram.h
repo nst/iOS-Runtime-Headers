@@ -36,7 +36,7 @@
 - (void)setFontIndexToUnsupportedValue;
 - (void)setText:(id)arg1;
 - (id)snapshotWithOptions:(id)arg1;
-- (id)snapshotWithSize:(struct CGSize { double x1; double x2; })arg1 scale:(float)arg2 options:(id)arg3;
+- (id)snapshotWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2 options:(id)arg3;
 - (id)text;
 
 @end

@@ -6,13 +6,13 @@
     UIView * _accessoryView;
     BOOL  _shouldFlipHorizontally;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _size;
     int  _type;
 }
 
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } size;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;
 
 - (void).cxx_destruct;
 - (id)_createImageViewWithImage:(id)arg1;
@@ -20,7 +20,7 @@
 - (id)init;
 - (id)initWithType:(int)arg1 side:(int)arg2;
 - (void)layoutComponentView;
-- (struct CGSize { double x1; double x2; })size;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })size;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 
 @end

@@ -3,7 +3,7 @@
  */
 
 @interface CLKProgressProvider : NSObject <NSCopying, NSSecureCoding> {
-    double  _backgroundRingAlpha;
+    float  _backgroundRingAlpha;
     BOOL  _finalized;
     unsigned int  _nextUpdateToken;
     BOOL  _paused;
@@ -12,7 +12,7 @@
     NSMutableDictionary * _updateHandlersByToken;
 }
 
-@property double backgroundRingAlpha;
+@property float backgroundRingAlpha;
 @property (nonatomic) BOOL paused;
 @property (nonatomic, retain) UIColor *tintColor;
 

@@ -24,12 +24,12 @@
     int (* _drawRectSubIMP;
     unsigned int  _drawableAttachmentIndex;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _drawableScaleFactor;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _drawableSize;
     BOOL  _enableSetNeedsDisplay;
     int  _frameInterval;
@@ -61,7 +61,7 @@
 @property (nonatomic, readonly) <MTLTexture> *depthStencilTexture;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) <MTLDevice> *device;
-@property (nonatomic) struct CGSize { double x1; double x2; } drawableSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } drawableSize;
 @property (nonatomic) BOOL enableSetNeedsDisplay;
 @property (nonatomic) BOOL framebufferOnly;
 @property (readonly) unsigned int hash;
@@ -81,7 +81,7 @@
 - (BOOL)_canDrawContent;
 - (BOOL)_controlsOwnScaleFactor;
 - (void)_createDisplayLinkForScreen:(id)arg1;
-- (struct CGSize { double x1; double x2; })_pixelSizeFromPointSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })_pixelSizeFromPointSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_resizeDrawable;
 - (BOOL)autoResizeDrawable;
 - (struct { double x1; double x2; double x3; double x4; })clearColor;
@@ -101,14 +101,14 @@
 - (void)displayLayer:(id)arg1;
 - (void)draw;
 - (unsigned int)drawableAttachmentIndex;
-- (struct CGSize { double x1; double x2; })drawableSize;
+- (struct CGSize { float x1; float x2; })drawableSize;
 - (BOOL)enableSetNeedsDisplay;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)framebufferOnly;
 - (void)initCommon;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 device:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 device:(id)arg2;
 - (BOOL)isPaused;
 - (void)layoutSubviews;
 - (id)multisampleColorTexture;
@@ -130,7 +130,7 @@
 - (void)setDepthStencilPixelFormat:(unsigned int)arg1;
 - (void)setDevice:(id)arg1;
 - (void)setDrawableAttachmentIndex:(unsigned int)arg1;
-- (void)setDrawableSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setDrawableSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setEnableSetNeedsDisplay:(BOOL)arg1;
 - (void)setFramebufferOnly:(BOOL)arg1;
 - (void)setNominalFramesPerSecond:(int)arg1;

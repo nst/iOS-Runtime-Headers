@@ -6,8 +6,8 @@
     MRCryptoPairingSession * _cryptoSession;
     <MRTelevisionClientConnectionDelegate> * _delegate;
     BOOL  _disconnected;
-    unsigned int  _firstClientNanoseconds;
-    unsigned int  _firstDeviceTicks;
+    unsigned long long  _firstClientNanoseconds;
+    unsigned long long  _firstDeviceTicks;
     NSInputStream * _inputStream;
     MRTelevisionMessageQueue * _messageQueue;
     NSOutputStream * _outputStream;

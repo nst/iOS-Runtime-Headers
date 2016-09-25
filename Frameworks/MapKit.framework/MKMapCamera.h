@@ -16,11 +16,11 @@
 @property (nonatomic) double altitude;
 @property (nonatomic) struct CLLocationCoordinate2D { double x1; double x2; } centerCoordinate;
 @property (nonatomic) double heading;
-@property (nonatomic) double pitch;
+@property (nonatomic) float pitch;
 @property (getter=_precisePitch, setter=_setPrecisePitch:, nonatomic) double precisePitch;
 
 + (id)_cameraLookingAtGEOMapRect:(const struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; }*)arg1 aspectRatio:(float)arg2;
-+ (id)_cameraLookingAtMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 forViewSize:(struct CGSize { double x1; double x2; })arg2;
++ (id)_cameraLookingAtMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 forViewSize:(struct CGSize { float x1; float x2; })arg2;
 + (id)camera;
 + (id)cameraLookingAtCenterCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1 fromDistance:(double)arg2 pitch:(float)arg3 heading:(double)arg4;
 + (id)cameraLookingAtCenterCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1 fromEyeCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg2 eyeAltitude:(double)arg3;

@@ -74,7 +74,7 @@
 - (void)setInvitationTimeoutTime:(double)arg1;
 - (void)setIsSendingAudio:(BOOL)arg1;
 - (void)setIsSendingVideo:(BOOL)arg1;
-- (void)setLocalAspectRatio:(struct CGSize { double x1; double x2; })arg1 cameraOrientation:(unsigned int)arg2 cameraType:(unsigned int)arg3;
+- (void)setLocalAspectRatio:(struct CGSize { float x1; float x2; })arg1 cameraOrientation:(unsigned int)arg2 cameraType:(unsigned int)arg3;
 - (void)setMute:(BOOL)arg1;
 - (void)setRelayed:(BOOL)arg1;
 - (unsigned int)state;

@@ -4,15 +4,15 @@
 
 @interface _UIViewServiceDummyPopoverBackgroundView : UIPopoverBackgroundView {
     unsigned int  arrowDirection;
-    double  arrowOffset;
+    float  arrowOffset;
 }
 
 + (float)arrowBase;
 + (float)arrowHeight;
-+ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentViewInsets;
++ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentViewInsets;
 + (BOOL)wantsDefaultContentAppearance;
 
-- (struct CGSize { double x1; double x2; })_shadowOffset;
+- (struct CGSize { float x1; float x2; })_shadowOffset;
 - (float)_shadowOpacity;
 - (float)_shadowRadius;
 - (unsigned int)arrowDirection;

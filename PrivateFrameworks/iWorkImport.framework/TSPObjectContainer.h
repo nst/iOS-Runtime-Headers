@@ -7,7 +7,7 @@
     unsigned char  _packageIdentifier;
 }
 
-+ (int)objectIdentifierForPackageIdentifier:(unsigned char)arg1;
++ (long long)objectIdentifierForPackageIdentifier:(unsigned char)arg1;
 
 - (void).cxx_destruct;
 - (unsigned int)delayedArchivingPriority;
@@ -19,6 +19,6 @@
 - (void)prepareForComponentWriteWithDelayedObjects:(id)arg1;
 - (void)saveToArchiver:(id)arg1;
 - (BOOL)shouldDelayArchiving;
-- (int)tsp_identifier;
+- (long long)tsp_identifier;
 
 @end

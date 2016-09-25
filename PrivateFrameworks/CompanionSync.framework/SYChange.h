@@ -7,7 +7,7 @@
     NSString * _objectId;
     NSString * _sequencer;
     int  _type;
-    unsigned int  _version;
+    unsigned long long  _version;
 }
 
 @property (nonatomic, retain) NSData *changeData;
@@ -23,7 +23,7 @@
 @property (nonatomic, retain) NSString *sequencer;
 @property (readonly) Class superclass;
 @property (nonatomic) int type;
-@property (nonatomic) unsigned int version;
+@property (nonatomic) unsigned long long version;
 
 + (id)changeWithChangeObject:(id)arg1 serializer:(id)arg2;
 + (id)changeWithChangeObject:(id)arg1 serializer:(id)arg2 encodeUsingVersion:(int)arg3;
@@ -53,10 +53,10 @@
 - (void)setObjectId:(id)arg1;
 - (void)setSequencer:(id)arg1;
 - (void)setType:(int)arg1;
-- (void)setVersion:(unsigned int)arg1;
+- (void)setVersion:(unsigned long long)arg1;
 - (int)type;
 - (id)typeAsString:(int)arg1;
-- (unsigned int)version;
+- (unsigned long long)version;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -11,7 +11,7 @@
     struct UIImage { Class x1; } * _orientedImage;
     struct UIImage { Class x1; } * _originalImage;
     NSArray * _previewImageURLs;
-    double  _scale;
+    float  _scale;
 }
 
 @property (nonatomic, retain) NSData *data;
@@ -22,9 +22,9 @@
 @property (nonatomic, retain) UIImage *orientedImage;
 @property (nonatomic, retain) UIImage *originalImage;
 @property (nonatomic, copy) NSArray *previewImageURLs;
-@property (nonatomic) double scale;
+@property (nonatomic) float scale;
 
-+ (struct UIImage { Class x1; }*)orientedImage:(struct UIImage { Class x1; }*)arg1 withTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg2 background:(int)arg3 backgroundTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg4;
++ (struct UIImage { Class x1; }*)orientedImage:(struct UIImage { Class x1; }*)arg1 withTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2 background:(int)arg3 backgroundTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg4;
 
 - (void).cxx_destruct;
 - (BOOL)canLoadImage;

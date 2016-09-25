@@ -9,7 +9,7 @@
     }  _has;
     NSString * _lineColorString;
     MSPTransitStorageArtwork * _modeArtwork;
-    unsigned int  _muid;
+    unsigned long long  _muid;
     NSString * _name;
     MSPTransitStorageSystem * _system;
     PBUnknownFields * _unknownFields;
@@ -32,8 +32,8 @@
 @property (nonatomic, retain) NSString *lineColorString;
 @property (nonatomic, readonly) <GEOTransitArtworkDataSource> *modeArtwork;
 @property (nonatomic, retain) MSPTransitStorageArtwork *modeArtwork;
-@property (nonatomic, readonly) unsigned int muid;
-@property (nonatomic) unsigned int muid;
+@property (nonatomic, readonly) unsigned long long muid;
+@property (nonatomic) unsigned long long muid;
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, readonly) NSArray *operatingHours;
@@ -65,7 +65,7 @@
 - (id)lineColorString;
 - (void)mergeFrom:(id)arg1;
 - (id)modeArtwork;
-- (unsigned int)muid;
+- (unsigned long long)muid;
 - (id)name;
 - (id)operatingHours;
 - (BOOL)readFrom:(id)arg1;
@@ -73,7 +73,7 @@
 - (void)setHasMuid:(BOOL)arg1;
 - (void)setLineColorString:(id)arg1;
 - (void)setModeArtwork:(id)arg1;
-- (void)setMuid:(unsigned int)arg1;
+- (void)setMuid:(unsigned long long)arg1;
 - (void)setName:(id)arg1;
 - (void)setSystem:(id)arg1;
 - (BOOL)showVehicleNumber;

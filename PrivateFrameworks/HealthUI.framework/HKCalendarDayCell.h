@@ -7,7 +7,7 @@
     CALayer * _circle;
     NSDate * _date;
     HKDateCache * _dateCache;
-    double  _dayDiameter;
+    float  _dayDiameter;
     CALayer * _dayLabel;
     int  _dayOfMonth;
     UIFont * _font;
@@ -20,7 +20,7 @@
 @property (nonatomic, readonly) CALayer *circle;
 @property (nonatomic, readonly) NSDate *date;
 @property (nonatomic, readonly) HKDateCache *dateCache;
-@property (nonatomic) double dayDiameter;
+@property (nonatomic) float dayDiameter;
 @property (nonatomic, readonly) CALayer *dayLabel;
 @property (nonatomic, readonly) int dayOfMonth;
 @property (nonatomic, retain) UIFont *font;

@@ -32,7 +32,7 @@
 - (void)overrideMaterial:(unsigned int)arg1 size:(unsigned int)arg2;
 - (id)screenImageName;
 - (id)screenImageSearchBundleIdentifier;
-- (struct CGSize { double x1; double x2; })screenImageSize;
+- (struct CGSize { float x1; float x2; })screenImageSize;
 - (void)setScreenImageName:(id)arg1;
 - (void)setScreenImageSearchBundleIdentifier:(id)arg1;
 - (void)setSizeOverride:(unsigned int)arg1;
@@ -40,7 +40,7 @@
 - (void)setStyleVersionSuffix:(id)arg1;
 - (void)setWatchImageView:(id)arg1;
 - (unsigned int)sizeOverride;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (unsigned int)style;
 - (id)styleVersionSuffix;
 - (id)watchAssetBundle;

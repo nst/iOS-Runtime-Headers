@@ -4,7 +4,7 @@
 
 @interface UIDebuggingInformationStickyBehavior : UIDynamicBehavior {
     UICollisionBehavior * _collisionBehavior;
-    double  _cornerInset;
+    float  _cornerInset;
     NSMutableArray * _fieldBehaviors;
     BOOL  _isEnabled;
     <UIDynamicItem> * _item;
@@ -12,14 +12,14 @@
 }
 
 @property (nonatomic, retain) UICollisionBehavior *collisionBehavior;
-@property double cornerInset;
+@property float cornerInset;
 @property (nonatomic, retain) NSMutableArray *fieldBehaviors;
 @property (nonatomic) BOOL isEnabled;
 @property (nonatomic, retain) <UIDynamicItem> *item;
 @property (nonatomic, retain) UIDynamicItemBehavior *itemBehavior;
 
 - (void).cxx_destruct;
-- (void)addLinearVelocity:(struct CGPoint { double x1; double x2; })arg1;
+- (void)addLinearVelocity:(struct CGPoint { float x1; float x2; })arg1;
 - (id)collisionBehavior;
 - (float)cornerInset;
 - (unsigned int)currentCorner;
@@ -28,14 +28,14 @@
 - (BOOL)isEnabled;
 - (id)item;
 - (id)itemBehavior;
-- (struct CGPoint { double x1; double x2; })positionForCorner:(unsigned int)arg1;
+- (struct CGPoint { float x1; float x2; })positionForCorner:(unsigned int)arg1;
 - (void)setCollisionBehavior:(id)arg1;
 - (void)setCornerInset:(float)arg1;
 - (void)setFieldBehaviors:(id)arg1;
 - (void)setIsEnabled:(BOOL)arg1;
 - (void)setItem:(id)arg1;
 - (void)setItemBehavior:(id)arg1;
-- (void)updateFieldsInBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)updateFieldsInBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)willMoveToAnimator:(id)arg1;
 
 @end

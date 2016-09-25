@@ -61,7 +61,7 @@
 @property (nonatomic) BOOL supportsTouchInput;
 @property (nonatomic) <UISystemInputViewControllerDelegate> *systemInputViewControllerDelegate;
 @property (nonatomic, retain) UITextInputTraits *textInputTraits;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } unfocusedFocusGuideOutsets;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } unfocusedFocusGuideOutsets;
 @property (nonatomic, retain) NSLayoutConstraint *verticalAlignment;
 @property (nonatomic) BOOL willPresentFullscreen;
 
@@ -151,7 +151,7 @@
 - (void)setSupportsTouchInput:(BOOL)arg1;
 - (void)setSystemInputViewControllerDelegate:(id)arg1;
 - (void)setTextInputTraits:(id)arg1;
-- (void)setUnfocusedFocusGuideOutsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setUnfocusedFocusGuideOutsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setVerticalAlignment:(id)arg1;
 - (void)setWillPresentFullscreen:(BOOL)arg1;
 - (void)set_promptLabel:(id)arg1;
@@ -163,7 +163,7 @@
 - (id)textInputTraits;
 - (id)traitCollection;
 - (void)traitCollectionDidChange:(id)arg1;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })unfocusedFocusGuideOutsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })unfocusedFocusGuideOutsets;
 - (void)updateAlignmentConstraints;
 - (void)updateViewConstraints;
 - (id)verticalAlignment;

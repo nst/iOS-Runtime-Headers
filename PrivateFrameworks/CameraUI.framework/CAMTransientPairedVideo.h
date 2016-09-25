@@ -5,22 +5,22 @@
 @interface CAMTransientPairedVideo : NSObject {
     int  _filterType;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _stillDisplayTime;
     NSURL * _url;
 }
 
 @property (nonatomic, readonly) int filterType;
-@property (nonatomic, readonly) struct { int x1; int x2; unsigned int x3; int x4; } stillDisplayTime;
+@property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } stillDisplayTime;
 @property (nonatomic, readonly, copy) NSURL *url;
 
 - (void).cxx_destruct;
 - (int)filterType;
-- (id)initWithURL:(id)arg1 stillDisplayTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg2 filterType:(int)arg3;
-- (struct { int x1; int x2; unsigned int x3; int x4; })stillDisplayTime;
+- (id)initWithURL:(id)arg1 stillDisplayTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 filterType:(int)arg3;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })stillDisplayTime;
 - (id)url;
 
 @end

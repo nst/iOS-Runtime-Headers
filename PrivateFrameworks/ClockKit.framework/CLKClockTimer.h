@@ -11,7 +11,7 @@
     int  _lastHour;
     int  _lastMinute;
     int  _lastSecond;
-    double  _lastSubsecondFraction;
+    float  _lastSubsecondFraction;
     NSMutableDictionary * _minuteHandlers;
     unsigned int  _nextToken;
     NSMutableDictionary * _secondHandlers;

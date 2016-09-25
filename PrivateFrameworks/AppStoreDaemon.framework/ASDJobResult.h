@@ -14,10 +14,10 @@
 @property (nonatomic, retain) NSNumber *persistentID;
 @property (nonatomic) int status;
 
-+ (id)_resultWithPersistentID:(int)arg1 bundleID:(id)arg2 status:(int)arg3 error:(id)arg4;
-+ (id)resultWithExistingActivity:(int)arg1 bundleID:(id)arg2;
-+ (id)resultWithInvalidActivity:(int)arg1 bundleID:(id)arg2;
-+ (id)resultWithValidActivity:(int)arg1;
++ (id)_resultWithPersistentID:(long long)arg1 bundleID:(id)arg2 status:(int)arg3 error:(id)arg4;
++ (id)resultWithExistingActivity:(long long)arg1 bundleID:(id)arg2;
++ (id)resultWithInvalidActivity:(long long)arg1 bundleID:(id)arg2;
++ (id)resultWithValidActivity:(long long)arg1;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;

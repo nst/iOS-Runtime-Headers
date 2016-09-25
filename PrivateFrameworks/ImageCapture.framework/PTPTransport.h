@@ -21,7 +21,7 @@
     PTPWrappedBytes * _dataForTransaction;
     id  _delegate;
     BOOL  _delegateNeedsResponse;
-    unsigned int  _excessReceivedDataSize;
+    unsigned long long  _excessReceivedDataSize;
     BOOL  _failedMD5;
     unsigned char  _headerBuffer;
     BOOL  _headerBufferFound;
@@ -46,7 +46,7 @@
 - (void)deviceReset;
 - (unsigned short)deviceStatus;
 - (void)endCallbackThread;
-- (unsigned int)excessReceivedDataSize;
+- (unsigned long long)excessReceivedDataSize;
 - (id)init;
 - (int)lockCallbackThreadMutex;
 - (id)md5;

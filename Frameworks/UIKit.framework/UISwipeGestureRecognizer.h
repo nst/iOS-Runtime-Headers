@@ -6,46 +6,46 @@
     unsigned int  _direction;
     BOOL  _failed;
     double  _maximumDuration;
-    double  _maximumPrimaryMovement;
-    double  _maximumSecondaryMovement;
-    double  _minimumPrimaryMovement;
-    double  _minimumSecondaryMovement;
+    float  _maximumPrimaryMovement;
+    float  _maximumSecondaryMovement;
+    float  _minimumPrimaryMovement;
+    float  _minimumSecondaryMovement;
     unsigned int  _numberOfTouchesRequired;
-    double  _rateOfMaximumMovementDecay;
-    double  _rateOfMinimumMovementDecay;
+    float  _rateOfMaximumMovementDecay;
+    float  _rateOfMinimumMovementDecay;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _startLocation;
-    struct CGPoint { double x1; double x2; } * _startLocations;
+    struct CGPoint { float x1; float x2; } * _startLocations;
     double  _startTime;
     NSMutableArray * _touches;
 }
 
 @property (nonatomic) unsigned int direction;
 @property (nonatomic) double maximumDuration;
-@property (nonatomic) double maximumPrimaryMovement;
-@property (nonatomic) double maximumSecondaryMovement;
-@property (nonatomic) double minimumPrimaryMovement;
-@property (nonatomic) double minimumSecondaryMovement;
+@property (nonatomic) float maximumPrimaryMovement;
+@property (nonatomic) float maximumSecondaryMovement;
+@property (nonatomic) float minimumPrimaryMovement;
+@property (nonatomic) float minimumSecondaryMovement;
 @property (nonatomic) unsigned int numberOfTouchesRequired;
-@property (nonatomic) double rateOfMaximumMovementDecay;
-@property (nonatomic) double rateOfMinimumMovementDecay;
-@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } startPoint;
+@property (nonatomic) float rateOfMaximumMovementDecay;
+@property (nonatomic) float rateOfMinimumMovementDecay;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } startPoint;
 
 + (BOOL)_shouldDefaultToTouches;
 
 - (void).cxx_destruct;
 - (void)_appendSubclassDescription:(id)arg1;
-- (BOOL)_checkForSwipeWithDelta:(struct CGPoint { double x1; double x2; })arg1 time:(double)arg2;
+- (BOOL)_checkForSwipeWithDelta:(struct CGPoint { float x1; float x2; })arg1 time:(double)arg2;
 - (void)_resetGestureRecognizer;
 - (void)dealloc;
 - (unsigned int)direction;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
-- (struct CGPoint { double x1; double x2; })locationInView:(id)arg1;
-- (struct CGPoint { double x1; double x2; })locationOfTouch:(unsigned int)arg1 inView:(id)arg2;
+- (struct CGPoint { float x1; float x2; })locationInView:(id)arg1;
+- (struct CGPoint { float x1; float x2; })locationOfTouch:(unsigned int)arg1 inView:(id)arg2;
 - (double)maximumDuration;
 - (float)maximumPrimaryMovement;
 - (float)maximumSecondaryMovement;
@@ -64,7 +64,7 @@
 - (void)setNumberOfTouchesRequired:(unsigned int)arg1;
 - (void)setRateOfMaximumMovementDecay:(float)arg1;
 - (void)setRateOfMinimumMovementDecay:(float)arg1;
-- (struct CGPoint { double x1; double x2; })startPoint;
+- (struct CGPoint { float x1; float x2; })startPoint;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;

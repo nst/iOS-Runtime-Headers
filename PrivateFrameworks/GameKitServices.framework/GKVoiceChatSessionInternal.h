@@ -28,7 +28,7 @@
     int  goodChannels;
     BOOL  isUsingSuppression;
     BOOL  needsRecalculateGoodChannels;
-    double  sessionVolume;
+    float  sessionVolume;
     unsigned int  talkingPeersLimit;
 }
 
@@ -41,7 +41,7 @@
 @property BOOL isUsingSuppression;
 @property (readonly) NSArray *peerList;
 @property (nonatomic, readonly) NSString *sessionName;
-@property double sessionVolume;
+@property float sessionVolume;
 @property (readonly) Class superclass;
 @property unsigned int talkingPeersLimit;
 

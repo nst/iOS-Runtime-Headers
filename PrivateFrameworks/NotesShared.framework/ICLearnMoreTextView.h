@@ -20,7 +20,7 @@
 - (BOOL)_accessibilityHasTextOperations;
 - (BOOL)accessibilityActivate;
 - (id)accessibilityHint;
-- (unsigned int)accessibilityTraits;
+- (unsigned long long)accessibilityTraits;
 - (id)accessibilityValue;
 - (void)awakeFromNib;
 - (void)dealloc;

@@ -47,7 +47,7 @@
 - (void)setWpStorage:(id)arg1;
 - (id)styles;
 - (id)stylesheet;
-- (int)tsp_identifier;
+- (long long)tsp_identifier;
 - (id)wpStorage;
 
 @end

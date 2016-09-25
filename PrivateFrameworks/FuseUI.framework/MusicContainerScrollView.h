@@ -13,8 +13,8 @@
     BOOL  _isAdjustingContentScrollViewScrollEnabled;
     BOOL  _isChangingContentScrollViewContentOffset;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _lastContentScrollViewPositionAdditions;
 }
 
@@ -23,7 +23,7 @@
 @property (nonatomic) <MusicContainerScrollViewDelegate> *delegate;
 
 - (void).cxx_destruct;
-- (void)_getCurrentContentViewFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg1 contentScrollViewContentOffset:(struct CGPoint { double x1; double x2; }*)arg2;
+- (void)_getCurrentContentViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 contentScrollViewContentOffset:(struct CGPoint { float x1; float x2; }*)arg2;
 - (void)_registerForNotificationsForContentScrollView:(id)arg1;
 - (void)_unregisterForNotificationsForContentScrollView:(id)arg1;
 - (void)_updateContentSize;
@@ -33,7 +33,7 @@
 - (void)layoutSubviews;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)setContentScrollView:(id)arg1;
-- (void)setContentSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setContentView:(id)arg1;
 - (void)setDelegate:(id)arg1;
 

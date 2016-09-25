@@ -5,31 +5,31 @@
 @interface PXTilingScrollInfo : NSObject <NSCopying> {
     unsigned int  _axis;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _interpageSpacing;
     BOOL  _pagingEnabled;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _pagingOrigin;
 }
 
 @property (nonatomic) unsigned int axis;
-@property (nonatomic) struct CGSize { double x1; double x2; } interpageSpacing;
+@property (nonatomic) struct CGSize { float x1; float x2; } interpageSpacing;
 @property (getter=isPagingEnabled, nonatomic) BOOL pagingEnabled;
-@property (nonatomic) struct CGPoint { double x1; double x2; } pagingOrigin;
+@property (nonatomic) struct CGPoint { float x1; float x2; } pagingOrigin;
 
 - (unsigned int)axis;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)hash;
-- (struct CGSize { double x1; double x2; })interpageSpacing;
+- (struct CGSize { float x1; float x2; })interpageSpacing;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isPagingEnabled;
-- (struct CGPoint { double x1; double x2; })pagingOrigin;
+- (struct CGPoint { float x1; float x2; })pagingOrigin;
 - (void)setAxis:(unsigned int)arg1;
-- (void)setInterpageSpacing:(struct CGSize { double x1; double x2; })arg1;
+- (void)setInterpageSpacing:(struct CGSize { float x1; float x2; })arg1;
 - (void)setPagingEnabled:(BOOL)arg1;
-- (void)setPagingOrigin:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setPagingOrigin:(struct CGPoint { float x1; float x2; })arg1;
 
 @end

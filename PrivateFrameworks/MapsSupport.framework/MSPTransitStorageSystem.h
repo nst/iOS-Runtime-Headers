@@ -7,7 +7,7 @@
     struct { 
         unsigned int muid : 1; 
     }  _has;
-    unsigned int  _muid;
+    unsigned long long  _muid;
     NSString * _name;
     PBUnknownFields * _unknownFields;
 }
@@ -20,8 +20,8 @@
 @property (nonatomic) BOOL hasMuid;
 @property (nonatomic, readonly) BOOL hasName;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly) unsigned int muid;
-@property (nonatomic) unsigned int muid;
+@property (nonatomic, readonly) unsigned long long muid;
+@property (nonatomic) unsigned long long muid;
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, retain) NSString *name;
 @property (readonly) Class superclass;
@@ -42,12 +42,12 @@
 - (id)initWithSystem:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (unsigned int)muid;
+- (unsigned long long)muid;
 - (id)name;
 - (BOOL)readFrom:(id)arg1;
 - (void)setArtwork:(id)arg1;
 - (void)setHasMuid:(BOOL)arg1;
-- (void)setMuid:(unsigned int)arg1;
+- (void)setMuid:(unsigned long long)arg1;
 - (void)setName:(id)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;

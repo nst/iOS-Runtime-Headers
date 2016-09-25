@@ -9,13 +9,13 @@
     unsigned long  containerFlags;
     unsigned int  containerUnit;
     double  contentModDate;
-    unsigned int  inoBundle;
-    unsigned int  inoExec;
+    unsigned long long  inoBundle;
+    unsigned long long  inoExec;
     unsigned long  itemFlags;
     unsigned long  options;
     unsigned int  userID;
     unsigned long  version;
-    unsigned int  volumeIdentifier;
+    unsigned long long  volumeIdentifier;
 }
 
 + (BOOL)supportsSecureCoding;

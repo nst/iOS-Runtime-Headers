@@ -36,7 +36,7 @@
 + (unsigned int)readInt32FromBytes:(const char *)arg1 offset:(unsigned int*)arg2;
 + (void)writeInt16:(unsigned short)arg1 toData:(id)arg2;
 + (void)writeInt32:(unsigned int)arg1 toData:(id)arg2;
-+ (void)writeInt64:(unsigned int)arg1 toData:(id)arg2;
++ (void)writeInt64:(unsigned long long)arg1 toData:(id)arg2;
 
 - (BOOL)addCentralDirectoryEndRecordWithBytes:(const char *)arg1 offset:(unsigned int)arg2;
 - (BOOL)addCentralDirectoryHeaderWithBytes:(const char *)arg1 offset:(unsigned int)arg2;

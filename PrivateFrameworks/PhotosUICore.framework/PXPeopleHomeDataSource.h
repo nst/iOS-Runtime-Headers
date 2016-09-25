@@ -32,7 +32,7 @@
 - (id)delegate;
 - (id)favoriteDataSource;
 - (id)hiddenDataSource;
-- (void)imageAtIndexPath:(id)arg1 targetSize:(struct CGSize { double x1; double x2; })arg2 withCompletionBlock:(id /* block */)arg3;
+- (void)imageAtIndexPath:(id)arg1 targetSize:(struct CGSize { float x1; float x2; })arg2 withCompletionBlock:(id /* block */)arg3;
 - (id)indexPathOfMember:(id)arg1;
 - (id)initWithDelegate:(id)arg1;
 - (BOOL)isSectionDisclosed:(unsigned int)arg1;

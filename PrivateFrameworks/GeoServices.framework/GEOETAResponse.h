@@ -3,7 +3,7 @@
  */
 
 @interface GEOETAResponse : PBCodable <NSCopying> {
-    unsigned int  _debugServerLatencyMs;
+    unsigned long long  _debugServerLatencyMs;
     NSMutableArray * _etaResultReferencePointDestinations;
     GEOETAResult * _etaResultReferencePointOrigin;
     NSMutableArray * _etaResults;
@@ -19,7 +19,7 @@
     int  _status;
 }
 
-@property (nonatomic) unsigned int debugServerLatencyMs;
+@property (nonatomic) unsigned long long debugServerLatencyMs;
 @property (nonatomic, retain) NSMutableArray *etaResultReferencePointDestinations;
 @property (nonatomic, retain) GEOETAResult *etaResultReferencePointOrigin;
 @property (nonatomic, retain) NSMutableArray *etaResults;
@@ -47,7 +47,7 @@
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (unsigned int)debugServerLatencyMs;
+- (unsigned long long)debugServerLatencyMs;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)etaResultAtIndex:(unsigned int)arg1;
@@ -71,7 +71,7 @@
 - (struct GEOProblemDetail { int x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*)problemDetails;
 - (unsigned int)problemDetailsCount;
 - (BOOL)readFrom:(id)arg1;
-- (void)setDebugServerLatencyMs:(unsigned int)arg1;
+- (void)setDebugServerLatencyMs:(unsigned long long)arg1;
 - (void)setEtaResultReferencePointDestinations:(id)arg1;
 - (void)setEtaResultReferencePointOrigin:(id)arg1;
 - (void)setEtaResults:(id)arg1;

@@ -9,7 +9,7 @@
         unsigned int downloadRecordCount : 1; 
         unsigned int uploadRecordCount : 1; 
     }  _has;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
     unsigned int  _uploadRecordCount;
 }
 
@@ -17,7 +17,7 @@
 @property (nonatomic) BOOL hasDownloadRecordCount;
 @property (nonatomic) BOOL hasTimestamp;
 @property (nonatomic) BOOL hasUploadRecordCount;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 @property (nonatomic) unsigned int uploadRecordCount;
 
 - (void)copyTo:(id)arg1;
@@ -36,9 +36,9 @@
 - (void)setHasDownloadRecordCount:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
 - (void)setHasUploadRecordCount:(BOOL)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (void)setUploadRecordCount:(unsigned int)arg1;
-- (unsigned int)timestamp;
+- (unsigned long long)timestamp;
 - (unsigned int)uploadRecordCount;
 - (void)writeTo:(id)arg1;
 

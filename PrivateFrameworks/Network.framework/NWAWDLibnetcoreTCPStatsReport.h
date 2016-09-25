@@ -13,14 +13,14 @@
         unsigned int tcpSendReorderRate : 1; 
         unsigned int tcpSendTLRTO : 1; 
     }  _has;
-    unsigned int  _tcpConnectionAccepts;
-    unsigned int  _tcpConnectionAttempts;
-    unsigned int  _tcpIPv4AvgRTT;
-    unsigned int  _tcpIPv6AvgRTT;
-    unsigned int  _tcpRecvPLR;
-    unsigned int  _tcpSendPLR;
-    unsigned int  _tcpSendReorderRate;
-    unsigned int  _tcpSendTLRTO;
+    unsigned long long  _tcpConnectionAccepts;
+    unsigned long long  _tcpConnectionAttempts;
+    unsigned long long  _tcpIPv4AvgRTT;
+    unsigned long long  _tcpIPv6AvgRTT;
+    unsigned long long  _tcpRecvPLR;
+    unsigned long long  _tcpSendPLR;
+    unsigned long long  _tcpSendReorderRate;
+    unsigned long long  _tcpSendTLRTO;
 }
 
 @property (nonatomic) BOOL hasTcpConnectionAccepts;
@@ -31,14 +31,14 @@
 @property (nonatomic) BOOL hasTcpSendPLR;
 @property (nonatomic) BOOL hasTcpSendReorderRate;
 @property (nonatomic) BOOL hasTcpSendTLRTO;
-@property (nonatomic) unsigned int tcpConnectionAccepts;
-@property (nonatomic) unsigned int tcpConnectionAttempts;
-@property (nonatomic) unsigned int tcpIPv4AvgRTT;
-@property (nonatomic) unsigned int tcpIPv6AvgRTT;
-@property (nonatomic) unsigned int tcpRecvPLR;
-@property (nonatomic) unsigned int tcpSendPLR;
-@property (nonatomic) unsigned int tcpSendReorderRate;
-@property (nonatomic) unsigned int tcpSendTLRTO;
+@property (nonatomic) unsigned long long tcpConnectionAccepts;
+@property (nonatomic) unsigned long long tcpConnectionAttempts;
+@property (nonatomic) unsigned long long tcpIPv4AvgRTT;
+@property (nonatomic) unsigned long long tcpIPv6AvgRTT;
+@property (nonatomic) unsigned long long tcpRecvPLR;
+@property (nonatomic) unsigned long long tcpSendPLR;
+@property (nonatomic) unsigned long long tcpSendReorderRate;
+@property (nonatomic) unsigned long long tcpSendTLRTO;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -64,22 +64,22 @@
 - (void)setHasTcpSendPLR:(BOOL)arg1;
 - (void)setHasTcpSendReorderRate:(BOOL)arg1;
 - (void)setHasTcpSendTLRTO:(BOOL)arg1;
-- (void)setTcpConnectionAccepts:(unsigned int)arg1;
-- (void)setTcpConnectionAttempts:(unsigned int)arg1;
-- (void)setTcpIPv4AvgRTT:(unsigned int)arg1;
-- (void)setTcpIPv6AvgRTT:(unsigned int)arg1;
-- (void)setTcpRecvPLR:(unsigned int)arg1;
-- (void)setTcpSendPLR:(unsigned int)arg1;
-- (void)setTcpSendReorderRate:(unsigned int)arg1;
-- (void)setTcpSendTLRTO:(unsigned int)arg1;
-- (unsigned int)tcpConnectionAccepts;
-- (unsigned int)tcpConnectionAttempts;
-- (unsigned int)tcpIPv4AvgRTT;
-- (unsigned int)tcpIPv6AvgRTT;
-- (unsigned int)tcpRecvPLR;
-- (unsigned int)tcpSendPLR;
-- (unsigned int)tcpSendReorderRate;
-- (unsigned int)tcpSendTLRTO;
+- (void)setTcpConnectionAccepts:(unsigned long long)arg1;
+- (void)setTcpConnectionAttempts:(unsigned long long)arg1;
+- (void)setTcpIPv4AvgRTT:(unsigned long long)arg1;
+- (void)setTcpIPv6AvgRTT:(unsigned long long)arg1;
+- (void)setTcpRecvPLR:(unsigned long long)arg1;
+- (void)setTcpSendPLR:(unsigned long long)arg1;
+- (void)setTcpSendReorderRate:(unsigned long long)arg1;
+- (void)setTcpSendTLRTO:(unsigned long long)arg1;
+- (unsigned long long)tcpConnectionAccepts;
+- (unsigned long long)tcpConnectionAttempts;
+- (unsigned long long)tcpIPv4AvgRTT;
+- (unsigned long long)tcpIPv6AvgRTT;
+- (unsigned long long)tcpRecvPLR;
+- (unsigned long long)tcpSendPLR;
+- (unsigned long long)tcpSendReorderRate;
+- (unsigned long long)tcpSendTLRTO;
 - (void)writeTo:(id)arg1;
 
 @end

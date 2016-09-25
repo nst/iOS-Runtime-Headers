@@ -4,7 +4,7 @@
 
 @interface MPSCNNNeuronReLU : MPSCNNNeuron
 
-@property (readonly) double a;
+@property (readonly) float a;
 
 - (float)a;
 - (id)initWithDevice:(id)arg1 a:(float)arg2;

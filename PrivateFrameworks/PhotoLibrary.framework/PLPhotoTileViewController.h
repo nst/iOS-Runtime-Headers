@@ -10,41 +10,41 @@
     unsigned int  _avalancheBadgeShouldBeHidden;
     unsigned int  _badgeShouldBeVisible;
     PLPhotoTileBadgeView * _badgeView;
-    double  _badgeViewOptimalLayoutLowestTop;
+    float  _badgeViewOptimalLayoutLowestTop;
     BOOL  _centerContentVertically;
     BOOL  _clientIsTemporarilyWallpaper;
     PLTileContainerView * _containerView;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _cropOverlayRect;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _cropRect;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _cropRectBeforeDragging;
-    double  _cropRectZoomScale;
+    float  _cropRectZoomScale;
     BOOL  _currentTileDownloadFinished;
     NSArray * _customCenterOverlayConstraints;
     id /* block */  _didEndZoomingBlock;
@@ -53,7 +53,7 @@
     double  _dispatchTimeElapsed;
     NSObject<OS_dispatch_source> * _dispatchTimer;
     UIGestureRecognizer * _doubleTapGestureRecognizer;
-    double  _doubleTapZoomScale;
+    float  _doubleTapZoomScale;
     BOOL  _force1XCroppedImage;
     BOOL  _forceNativeScreenScale;
     int  _fullSizeImageRequestID;
@@ -64,22 +64,22 @@
     unsigned int  _imageIsThumbnail;
     int  _imageOrientation;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _imageSize;
     PLExpandableImageView * _imageView;
     BOOL  _isLoadingFullSizeImage;
     unsigned int  _isTVOut;
     unsigned int  _lockedUnderCropOverlay;
-    double  _minZoomScale;
+    float  _minZoomScale;
     int  _mode;
     PHAsset * _modelPhoto;
     id  _orientationDelegate;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _overlayInsets;
     UIImage * _pendingImage;
     BOOL  _picked;
@@ -94,12 +94,12 @@
     <PLPhotoTileViewControllerDelegate> * _tileDelegate;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _tileFrame;
     unsigned int  _tileParentIsPageController;
@@ -111,13 +111,13 @@
     PLVideoView * _videoView;
     unsigned int  _viewDidAppear;
     unsigned int  _viewWillAppear;
-    double  _wallpaperLandscapeZoomScale;
-    double  _wallpaperPortraitZoomScale;
+    float  _wallpaperLandscapeZoomScale;
+    float  _wallpaperPortraitZoomScale;
     BOOL  _wantsCompactLayout;
     unsigned int  _zoomGesturesEnabled;
-    double  _zoomScaleBeforeZooming;
+    float  _zoomScaleBeforeZooming;
     BOOL  _zoomToFillInsteadOfToFit;
-    double  _zoomToFillScale;
+    float  _zoomToFillScale;
     unsigned int  _zooming;
 }
 
@@ -128,7 +128,7 @@
 @property (nonatomic) BOOL force1XCroppedImage;
 @property (nonatomic) BOOL forceNativeScreenScale;
 @property (readonly) unsigned int hash;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } overlayInsets;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } overlayInsets;
 @property (nonatomic, readonly) PHAsset *photo;
 @property (nonatomic) BOOL picked;
 @property (nonatomic) BOOL reviewing;
@@ -136,17 +136,17 @@
 @property (nonatomic) BOOL shouldSupressViewWillTransitionToSize;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UIImage *thumbnailImage;
-@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } tileFrame;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } tileFrame;
 @property (nonatomic, retain) UIImage *unscaledImage;
 @property (nonatomic) BOOL wantsCompactLayout;
 
 + (BOOL)_shouldForwardViewWillTransitionToSize;
-+ (id)newPhotoTileViewControllerWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 image:(id)arg2 allowZoomToFill:(BOOL)arg3 mode:(int)arg4;
-+ (id)newPhotoTileViewControllerWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 imageRef:(struct CGImage { }*)arg2 imageOrientation:(int)arg3 allowZoomToFill:(BOOL)arg4 mode:(int)arg5;
-+ (id)newPhotoTileViewControllerWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 modelPhoto:(id)arg2 mode:(int)arg3;
++ (id)newPhotoTileViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 image:(id)arg2 allowZoomToFill:(BOOL)arg3 mode:(int)arg4;
++ (id)newPhotoTileViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 imageRef:(struct CGImage { }*)arg2 imageOrientation:(int)arg3 allowZoomToFill:(BOOL)arg4 mode:(int)arg5;
++ (id)newPhotoTileViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 modelPhoto:(id)arg2 mode:(int)arg3;
 + (BOOL)shouldShowPlaceholderForAsset:(id)arg1;
-+ (struct CGSize { double x1; double x2; })tileSize;
-+ (struct CGSize { double x1; double x2; })tvOutTileSize;
++ (struct CGSize { float x1; float x2; })tileSize;
++ (struct CGSize { float x1; float x2; })tvOutTileSize;
 
 - (void)_adjustScrollViewContentOffsetForInsets;
 - (void)_adjustZoomForEnteringMode:(BOOL)arg1;
@@ -162,7 +162,7 @@
 - (void)_installSubview:(id)arg1;
 - (id)_newOriginalImageForPickerFromCachedData;
 - (void)_performDidEndZoomBlock;
-- (void)_performRotationUpdatesWithDuration:(double)arg1 size:(struct CGSize { double x1; double x2; })arg2;
+- (void)_performRotationUpdatesWithDuration:(double)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 - (void)_removePlaceholderView;
 - (void)_repositionBadgeView;
 - (void)_requestFullSizeImage;
@@ -197,7 +197,7 @@
 - (void)dealloc;
 - (float)defaultZoomScale;
 - (id)description;
-- (id)dictionaryWithCroppedImageForRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 minimalCropDimension:(float)arg2 withOptions:(int)arg3;
+- (id)dictionaryWithCroppedImageForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 minimalCropDimension:(float)arg2 withOptions:(int)arg3;
 - (void)didLoadImage;
 - (void)didMoveToParentViewController:(id)arg1;
 - (void)ensureFullSizeImageLoaded;
@@ -214,8 +214,8 @@
 - (id)imageView;
 - (id)init;
 - (id)initForPageController;
-- (id)initWithModelPhoto:(id)arg1 image:(id)arg2 frame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 isThumbnail:(BOOL)arg4 imageOrientation:(int)arg5 allowZoomToFill:(BOOL)arg6 mode:(int)arg7;
-- (id)initWithModelPhoto:(id)arg1 thumbnailImage:(id)arg2 size:(struct CGSize { double x1; double x2; })arg3;
+- (id)initWithModelPhoto:(id)arg1 image:(id)arg2 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 isThumbnail:(BOOL)arg4 imageOrientation:(int)arg5 allowZoomToFill:(BOOL)arg6 mode:(int)arg7;
+- (id)initWithModelPhoto:(id)arg1 thumbnailImage:(id)arg2 size:(struct CGSize { float x1; float x2; })arg3;
 - (void)installVideoOverlay:(id)arg1;
 - (BOOL)isTVOut;
 - (BOOL)isZoomedOut;
@@ -223,9 +223,9 @@
 - (float)minRotatedScale;
 - (float)minZoomScale;
 - (id)newCGImageBackedUIImage;
-- (id)newImageWithCropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 minimalCropDimension:(float)arg2 croppedImageData:(id*)arg3 fullScreenImageData:(id*)arg4 fullScreenImage:(struct CGImage {}**)arg5 imageCropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg6 intersectCropWithFullRect:(BOOL)arg7;
+- (id)newImageWithCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 minimalCropDimension:(float)arg2 croppedImageData:(id*)arg3 fullScreenImageData:(id*)arg4 fullScreenImage:(struct CGImage {}**)arg5 imageCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg6 intersectCropWithFullRect:(BOOL)arg7;
 - (void)noteParentViewControllerDidDisappear;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })overlayInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })overlayInsets;
 - (id)photo;
 - (BOOL)photoShouldHaveAvalancheBadge;
 - (BOOL)photoShouldHaveHDRBadge;
@@ -235,7 +235,7 @@
 - (void)retryDownload;
 - (BOOL)reviewing;
 - (id)scrollView;
-- (struct CGSize { double x1; double x2; })scrollView:(id)arg1 contentSizeForZoomScale:(float)arg2 withProposedSize:(struct CGSize { double x1; double x2; })arg3;
+- (struct CGSize { float x1; float x2; })scrollView:(id)arg1 contentSizeForZoomScale:(float)arg2 withProposedSize:(struct CGSize { float x1; float x2; })arg3;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(BOOL)arg2;
 - (void)scrollViewDidEndZooming:(id)arg1 withView:(id)arg2 atScale:(float)arg3;
@@ -248,14 +248,14 @@
 - (void)setBadgeVisible:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setCenterContentVertically:(BOOL)arg1;
 - (void)setClientIsWallpaper:(BOOL)arg1;
-- (void)setCropOverlayRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forCropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (void)setCropOverlayRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)setForce1XCroppedImage:(BOOL)arg1;
 - (void)setForceNativeScreenScale:(BOOL)arg1;
 - (void)setFullSizeImage:(id)arg1;
 - (void)setGesturesEnabled:(BOOL)arg1;
 - (void)setLockedUnderCropOverlay:(BOOL)arg1;
 - (void)setOrientationDelegate:(id)arg1;
-- (void)setOverlayInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setOverlayInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setPicked:(BOOL)arg1;
 - (void)setReviewing:(BOOL)arg1;
 - (void)setReviewing:(BOOL)arg1 animated:(BOOL)arg2;
@@ -264,7 +264,7 @@
 - (void)setTVOut:(BOOL)arg1;
 - (void)setThumbnailImage:(id)arg1;
 - (void)setTileDelegate:(id)arg1;
-- (void)setTileFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setTileFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setUnscaledImage:(id)arg1;
 - (void)setVideoView:(id)arg1;
 - (void)setWantsCompactLayout:(BOOL)arg1;
@@ -277,7 +277,7 @@
 - (void)showErrorPlaceholderView;
 - (id)thumbnailImage;
 - (id)tileDelegate;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })tileFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })tileFrame;
 - (BOOL)tileIsOnScreen;
 - (id)unscaledImage;
 - (void)updateAfterCollapse;
@@ -293,7 +293,7 @@
 - (void)viewDidLayoutSubviews;
 - (id)viewForZoomingInScrollView:(id)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (BOOL)wantsCompactLayout;
 - (float)zoomToFillScale;
 - (float)zoomToFitScale;

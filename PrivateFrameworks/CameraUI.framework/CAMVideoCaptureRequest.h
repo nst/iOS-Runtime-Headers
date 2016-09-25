@@ -6,8 +6,8 @@
     int  _captureVideoConfiguration;
     <CAMVideoCaptureRequestDelegate> * _delegate;
     double  _maximumRecordedDuration;
-    int  _maximumRecordedFileSize;
-    int  _remainingDiskUsageThreshold;
+    long long  _maximumRecordedFileSize;
+    long long  _remainingDiskUsageThreshold;
     BOOL  _shouldGenerateVideoPreviewImage;
     BOOL  _timelapse;
     int  _torchMode;
@@ -16,8 +16,8 @@
 @property (nonatomic, readonly) int captureVideoConfiguration;
 @property (nonatomic, readonly) <CAMVideoCaptureRequestDelegate> *delegate;
 @property (nonatomic, readonly) double maximumRecordedDuration;
-@property (nonatomic, readonly) int maximumRecordedFileSize;
-@property (nonatomic, readonly) int remainingDiskUsageThreshold;
+@property (nonatomic, readonly) long long maximumRecordedFileSize;
+@property (nonatomic, readonly) long long remainingDiskUsageThreshold;
 @property (nonatomic, readonly) BOOL shouldGenerateVideoPreviewImage;
 @property (getter=isTimelapse, nonatomic, readonly) BOOL timelapse;
 @property (nonatomic, readonly) int torchMode;
@@ -31,9 +31,9 @@
 - (id)initWithRequest:(id)arg1 distinctPersistence:(BOOL)arg2;
 - (BOOL)isTimelapse;
 - (double)maximumRecordedDuration;
-- (int)maximumRecordedFileSize;
+- (long long)maximumRecordedFileSize;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (int)remainingDiskUsageThreshold;
+- (long long)remainingDiskUsageThreshold;
 - (BOOL)shouldGenerateVideoPreviewImage;
 - (int)torchMode;
 

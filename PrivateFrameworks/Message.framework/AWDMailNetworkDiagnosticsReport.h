@@ -18,11 +18,11 @@
         unsigned int roamingAllowed : 1; 
         unsigned int wifiEnabled : 1; 
     }  _has;
-    unsigned int  _numActiveCalls;
-    unsigned int  _numBackgroundWifiClients;
+    unsigned long long  _numActiveCalls;
+    unsigned long long  _numBackgroundWifiClients;
     unsigned int  _reachabilityFlags;
     BOOL  _roamingAllowed;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
     BOOL  _wifiEnabled;
 }
 
@@ -40,11 +40,11 @@
 @property (nonatomic) BOOL hasRoamingAllowed;
 @property (nonatomic) BOOL hasTimestamp;
 @property (nonatomic) BOOL hasWifiEnabled;
-@property (nonatomic) unsigned int numActiveCalls;
-@property (nonatomic) unsigned int numBackgroundWifiClients;
+@property (nonatomic) unsigned long long numActiveCalls;
+@property (nonatomic) unsigned long long numBackgroundWifiClients;
 @property (nonatomic) unsigned int reachabilityFlags;
 @property (nonatomic) BOOL roamingAllowed;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 @property (nonatomic) BOOL wifiEnabled;
 
 - (void).cxx_destruct;
@@ -69,8 +69,8 @@
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (unsigned int)numActiveCalls;
-- (unsigned int)numBackgroundWifiClients;
+- (unsigned long long)numActiveCalls;
+- (unsigned long long)numBackgroundWifiClients;
 - (unsigned int)reachabilityFlags;
 - (BOOL)readFrom:(id)arg1;
 - (BOOL)roamingAllowed;
@@ -87,13 +87,13 @@
 - (void)setHasRoamingAllowed:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
 - (void)setHasWifiEnabled:(BOOL)arg1;
-- (void)setNumActiveCalls:(unsigned int)arg1;
-- (void)setNumBackgroundWifiClients:(unsigned int)arg1;
+- (void)setNumActiveCalls:(unsigned long long)arg1;
+- (void)setNumBackgroundWifiClients:(unsigned long long)arg1;
 - (void)setReachabilityFlags:(unsigned int)arg1;
 - (void)setRoamingAllowed:(BOOL)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (void)setWifiEnabled:(BOOL)arg1;
-- (unsigned int)timestamp;
+- (unsigned long long)timestamp;
 - (BOOL)wifiEnabled;
 - (void)writeTo:(id)arg1;
 

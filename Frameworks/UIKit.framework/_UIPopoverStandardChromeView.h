@@ -4,7 +4,7 @@
 
 @interface _UIPopoverStandardChromeView : UIPopoverBackgroundView {
     unsigned int  _arrowDirection;
-    double  _arrowOffset;
+    float  _arrowOffset;
     UIView * _arrowView;
     BOOL  _arrowVisible;
     int  _backgroundStyle;
@@ -27,7 +27,7 @@
 
 + (float)arrowBase;
 + (float)arrowHeight;
-+ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentViewInsets;
++ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentViewInsets;
 
 - (void).cxx_destruct;
 - (void)_configureEffectView;
@@ -37,8 +37,8 @@
 - (void)_loadNecessaryViews;
 - (BOOL)_needsSeperateBlending;
 - (void)_removeEffectView;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_shadowInsets;
-- (struct CGSize { double x1; double x2; })_shadowOffset;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_shadowInsets;
+- (struct CGSize { float x1; float x2; })_shadowOffset;
 - (float)_shadowOpacity;
 - (id)_shadowPath;
 - (float)_shadowRadius;
@@ -50,7 +50,7 @@
 - (id)contentBlendingColor;
 - (void)didMoveToWindow;
 - (BOOL)hasComponentViews;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isArrowVisible;
 - (BOOL)isDebugModeEnabled;
 - (BOOL)isPinned;

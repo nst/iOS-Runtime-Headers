@@ -4,8 +4,8 @@
 
 @interface FCFeedDatabaseLookupResult : NSObject {
     NSData * _ckFromCursor;
-    unsigned int  _ckFromOrder;
-    unsigned int  _ckToOrder;
+    unsigned long long  _ckFromOrder;
+    unsigned long long  _ckToOrder;
     BOOL  _exhaustedRange;
     NSArray * _feedItems;
     FCFeedRange * _feedRange;
@@ -13,8 +13,8 @@
 }
 
 @property (nonatomic, copy) NSData *ckFromCursor;
-@property (nonatomic) unsigned int ckFromOrder;
-@property (nonatomic) unsigned int ckToOrder;
+@property (nonatomic) unsigned long long ckFromOrder;
+@property (nonatomic) unsigned long long ckToOrder;
 @property (nonatomic) BOOL exhaustedRange;
 @property (nonatomic, copy) NSArray *feedItems;
 @property (nonatomic, copy) FCFeedRange *feedRange;
@@ -22,16 +22,16 @@
 
 - (void).cxx_destruct;
 - (id)ckFromCursor;
-- (unsigned int)ckFromOrder;
-- (unsigned int)ckToOrder;
+- (unsigned long long)ckFromOrder;
+- (unsigned long long)ckToOrder;
 - (id)description;
 - (BOOL)exhaustedRange;
 - (id)feedItems;
 - (id)feedRange;
 - (id)insertionToken;
 - (void)setCkFromCursor:(id)arg1;
-- (void)setCkFromOrder:(unsigned int)arg1;
-- (void)setCkToOrder:(unsigned int)arg1;
+- (void)setCkFromOrder:(unsigned long long)arg1;
+- (void)setCkToOrder:(unsigned long long)arg1;
 - (void)setExhaustedRange:(BOOL)arg1;
 - (void)setFeedItems:(id)arg1;
 - (void)setFeedRange:(id)arg1;

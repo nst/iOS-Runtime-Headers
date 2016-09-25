@@ -4,7 +4,7 @@
 
 @interface _HDAWDPeriodicAction : NSObject <_HDAWDAction> {
     id /* block */  _block;
-    int  _graceInterval;
+    long long  _graceInterval;
     int  _intervalCounter;
     NSString * _intervalCounterKey;
     int  _intervalMultiple;
@@ -15,7 +15,7 @@
     int  _maximumAttemptCount;
     double  _minimumDelayBetweenAttempts;
     NSObject<OS_dispatch_queue> * _queue;
-    int  _repeatInterval;
+    long long  _repeatInterval;
     BOOL  _requiresClassA;
     const char * _taskName;
     int  _waitingToRun;
@@ -43,7 +43,7 @@
 - (BOOL)_queue_shouldAttemptToSubmit;
 - (BOOL)doForced;
 - (void)doIfWaiting;
-- (id)initWithTaskName:(char *)arg1 keyPrefix:(id)arg2 xpcInterval:(int)arg3 xpcGraceInterval:(int)arg4 requiresClassA:(BOOL)arg5 intervalMultiple:(int)arg6 maximumAttemptCount:(int)arg7 minimumDelayBetweenAttempts:(double)arg8 block:(id /* block */)arg9;
+- (id)initWithTaskName:(char *)arg1 keyPrefix:(id)arg2 xpcInterval:(long long)arg3 xpcGraceInterval:(long long)arg4 requiresClassA:(BOOL)arg5 intervalMultiple:(int)arg6 maximumAttemptCount:(int)arg7 minimumDelayBetweenAttempts:(double)arg8 block:(id /* block */)arg9;
 - (int)intervalCounter;
 - (id)lastProcessedDate;
 - (id)lastSubmissionAttemptDate;

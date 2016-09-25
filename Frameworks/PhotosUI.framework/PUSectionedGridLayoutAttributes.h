@@ -6,13 +6,13 @@
     BOOL  _exists;
     BOOL  _extendsTopContent;
     BOOL  _floating;
-    double  _interactiveTransitionProgress;
+    float  _interactiveTransitionProgress;
 }
 
 @property (nonatomic) BOOL exists;
 @property (nonatomic) BOOL extendsTopContent;
 @property (nonatomic) BOOL floating;
-@property (nonatomic) double interactiveTransitionProgress;
+@property (nonatomic) float interactiveTransitionProgress;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;

@@ -5,24 +5,24 @@
 @interface CMTimeRangeAsValue : NSValue {
     struct { 
         struct { 
-            int value; 
+            long long value; 
             int timescale; 
             unsigned int flags; 
-            int epoch; 
+            long long epoch; 
         } start; 
         struct { 
-            int value; 
+            long long value; 
             int timescale; 
             unsigned int flags; 
-            int epoch; 
+            long long epoch; 
         } duration; 
     }  _timeRange;
 }
 
 + (BOOL)supportsSecureCoding;
-+ (id)valueWithCMTimeRange:(struct { struct { int x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; int x_1_1_4; } x1; struct { int x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; int x_2_1_4; } x2; })arg1;
++ (id)valueWithCMTimeRange:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg1;
 
-- (struct { struct { int x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; int x_1_1_4; } x1; struct { int x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; int x_2_1_4; } x2; })CMTimeRangeValue;
+- (struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })CMTimeRangeValue;
 - (Class)classForCoder;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;

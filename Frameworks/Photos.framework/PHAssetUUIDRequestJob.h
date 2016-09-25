@@ -14,7 +14,7 @@
 
 - (void).cxx_destruct;
 - (id /* block */)completionHandler;
-- (int)daemonOperation;
+- (long long)daemonOperation;
 - (void)encodeToXPCObject:(id)arg1;
 - (void)handleReply;
 - (id)initFromXPCObject:(id)arg1 connection:(id)arg2;

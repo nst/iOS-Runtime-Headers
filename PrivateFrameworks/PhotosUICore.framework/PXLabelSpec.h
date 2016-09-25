@@ -7,16 +7,16 @@
     BOOL  _allowTruncation;
     int  _capitalization;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _contentInsets;
     int  _fallbackCapitalization;
     NSDictionary * _fallbackTextAttributes;
     struct UIFont { Class x1; } * _font;
-    double  _minimumScaleFactor;
-    double  _minimumTruncatedScaleFactor;
+    float  _minimumScaleFactor;
+    float  _minimumTruncatedScaleFactor;
     unsigned int  _numberOfLines;
     int  _textAlignment;
     NSDictionary * _textAttributes;
@@ -27,12 +27,12 @@
 @property (nonatomic) BOOL adjustsFontSizeToFitWidth;
 @property (nonatomic) BOOL allowTruncation;
 @property (nonatomic) int capitalization;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInsets;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
 @property (nonatomic) int fallbackCapitalization;
 @property (nonatomic, copy) NSDictionary *fallbackTextAttributes;
 @property (nonatomic, copy) UIFont *font;
-@property (nonatomic) double minimumScaleFactor;
-@property (nonatomic) double minimumTruncatedScaleFactor;
+@property (nonatomic) float minimumScaleFactor;
+@property (nonatomic) float minimumTruncatedScaleFactor;
 @property (nonatomic) unsigned int numberOfLines;
 @property (nonatomic) int textAlignment;
 @property (nonatomic, copy) NSDictionary *textAttributes;
@@ -43,7 +43,7 @@
 - (BOOL)adjustsFontSizeToFitWidth;
 - (BOOL)allowTruncation;
 - (int)capitalization;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (int)fallbackCapitalization;
 - (id)fallbackTextAttributes;
@@ -57,7 +57,7 @@
 - (void)setAdjustsFontSizeToFitWidth:(BOOL)arg1;
 - (void)setAllowTruncation:(BOOL)arg1;
 - (void)setCapitalization:(int)arg1;
-- (void)setContentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setFallbackCapitalization:(int)arg1;
 - (void)setFallbackTextAttributes:(id)arg1;
 - (void)setFont:(struct UIFont { Class x1; }*)arg1;

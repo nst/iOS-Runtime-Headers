@@ -3,12 +3,12 @@
  */
 
 @interface _PUScrubberContainerView : UIView {
-    double  __edgeInset;
+    float  __edgeInset;
     UIView * __movieScrubber;
     UIView * __slomoRegionEditor;
 }
 
-@property (setter=_setEdgeInset:, nonatomic) double _edgeInset;
+@property (setter=_setEdgeInset:, nonatomic) float _edgeInset;
 @property (setter=_setMovieScrubber:, nonatomic, retain) UIView *_movieScrubber;
 @property (setter=_setSlomoRegionEditor:, nonatomic, retain) UIView *_slomoRegionEditor;
 
@@ -19,8 +19,8 @@
 - (void)_setMovieScrubber:(id)arg1;
 - (void)_setSlomoRegionEditor:(id)arg1;
 - (id)_slomoRegionEditor;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (void)layoutSubviews;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 
 @end

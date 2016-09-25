@@ -3,7 +3,7 @@
  */
 
 @interface PXMemoriesFeedSettings : PXSettings {
-    double  _additionalContentThreshold;
+    float  _additionalContentThreshold;
     BOOL  _alwaysShowOnboarding;
     int  _dataSourceType;
     BOOL  _disableRoundedOverlays;
@@ -15,7 +15,7 @@
     BOOL  _useSlowAnimations;
 }
 
-@property (nonatomic) double additionalContentThreshold;
+@property (nonatomic) float additionalContentThreshold;
 @property (nonatomic) BOOL alwaysShowOnboarding;
 @property (nonatomic) int dataSourceType;
 @property (nonatomic) BOOL disableRoundedOverlays;

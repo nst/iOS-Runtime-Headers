@@ -5,7 +5,7 @@
 @interface WebScriptCallFramePrivate : NSObject {
     struct JSValue { 
         union EncodedValueDescriptor { 
-            int asInt64; 
+            long long asInt64; 
             double asDouble; 
             struct { 
                 int payload; 

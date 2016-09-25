@@ -8,7 +8,7 @@
     }  _has;
     NSString * _mimeSubtype;
     NSString * _mimeType;
-    unsigned int  _totalTextSize;
+    unsigned long long  _totalTextSize;
 }
 
 @property (nonatomic, readonly) BOOL hasMimeSubtype;
@@ -16,7 +16,7 @@
 @property (nonatomic) BOOL hasTotalTextSize;
 @property (nonatomic, retain) NSString *mimeSubtype;
 @property (nonatomic, retain) NSString *mimeType;
-@property (nonatomic) unsigned int totalTextSize;
+@property (nonatomic) unsigned long long totalTextSize;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
@@ -36,8 +36,8 @@
 - (void)setHasTotalTextSize:(BOOL)arg1;
 - (void)setMimeSubtype:(id)arg1;
 - (void)setMimeType:(id)arg1;
-- (void)setTotalTextSize:(unsigned int)arg1;
-- (unsigned int)totalTextSize;
+- (void)setTotalTextSize:(unsigned long long)arg1;
+- (unsigned long long)totalTextSize;
 - (void)writeTo:(id)arg1;
 
 @end

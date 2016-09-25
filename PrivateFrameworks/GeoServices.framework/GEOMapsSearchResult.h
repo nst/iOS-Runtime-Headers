@@ -7,13 +7,13 @@
     struct { 
         unsigned int muid : 1; 
     }  _has;
-    unsigned int  _muid;
+    unsigned long long  _muid;
 }
 
 @property (nonatomic, retain) GEOAddress *address;
 @property (nonatomic, readonly) BOOL hasAddress;
 @property (nonatomic) BOOL hasMuid;
-@property (nonatomic) unsigned int muid;
+@property (nonatomic) unsigned long long muid;
 
 - (id)address;
 - (void)copyTo:(id)arg1;
@@ -26,11 +26,11 @@
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (unsigned int)muid;
+- (unsigned long long)muid;
 - (BOOL)readFrom:(id)arg1;
 - (void)setAddress:(id)arg1;
 - (void)setHasMuid:(BOOL)arg1;
-- (void)setMuid:(unsigned int)arg1;
+- (void)setMuid:(unsigned long long)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

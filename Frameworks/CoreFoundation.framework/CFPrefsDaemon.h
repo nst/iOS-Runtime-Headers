@@ -6,7 +6,7 @@
     NSObject<OS_xpc_object> * _listener;
     const char * _name;
     int  _role;
-    union { struct _CFPrefsShmemEntry { int x_1_1_1; unsigned int x_1_1_2; } x1; unsigned int x2; } * _shmem;
+    union { struct _CFPrefsShmemEntry { int x_1_1_1; unsigned int x_1_1_2; } x1; unsigned long long x2; } * _shmem;
     struct __CFSet { } * _sourceCache;
     struct os_unfair_lock_s { 
         unsigned int _os_unfair_lock_opaque; 
@@ -31,7 +31,7 @@
 - (id)listener;
 - (void)logDomainInconsistencyForProcess:(int)arg1 message:(id)arg2 source:(id)arg3;
 - (int)role;
-- (union { struct _CFPrefsShmemEntry { int x_1_1_1; unsigned int x_1_1_2; } x1; unsigned int x2; }*)shmem;
+- (union { struct _CFPrefsShmemEntry { int x_1_1_1; unsigned int x_1_1_2; } x1; unsigned long long x2; }*)shmem;
 - (void)synchronousWithSourceCache:(id /* block */)arg1;
 - (unsigned int)userID;
 - (void)withSourceForDomain:(struct __CFString { }*)arg1 inContainer:(struct __CFString { }*)arg2 user:(struct __CFString { }*)arg3 byHost:(BOOL)arg4 managed:(BOOL)arg5 cloudStoreEntitlement:(id)arg6 cloudConfigurationPath:(struct __CFString { }*)arg7 perform:(id /* block */)arg8;

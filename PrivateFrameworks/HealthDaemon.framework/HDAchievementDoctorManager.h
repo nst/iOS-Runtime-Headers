@@ -17,7 +17,7 @@
 + (id)_definitionIdentifiersModifiedPerFixupVersion;
 
 - (void).cxx_destruct;
-- (int)_activityInterval;
+- (long long)_activityInterval;
 - (void)_generateCrashReportForMissingAchievements:(id)arg1;
 - (id)_lastSuccessfulFixupDate;
 - (int)_lastSuccessfulFixupVersion;

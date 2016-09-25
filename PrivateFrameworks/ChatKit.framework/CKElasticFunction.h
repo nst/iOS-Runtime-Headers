@@ -3,20 +3,20 @@
  */
 
 @interface CKElasticFunction : NSObject {
-    double  _currentValue;
-    double  _elastic;
-    double  _friction;
+    float  _currentValue;
+    float  _elastic;
+    float  _friction;
     double  _lastTime;
-    double  _oldForce;
-    double  _tension;
-    double  _velocity;
+    float  _oldForce;
+    float  _tension;
+    float  _velocity;
 }
 
-@property (nonatomic) double friction;
-@property (nonatomic) double input;
-@property (nonatomic, readonly) double output;
-@property (nonatomic) double tension;
-@property (nonatomic, readonly) double velocity;
+@property (nonatomic) float friction;
+@property (nonatomic) float input;
+@property (nonatomic, readonly) float output;
+@property (nonatomic) float tension;
+@property (nonatomic, readonly) float velocity;
 
 + (id)functionWithTension:(float)arg1 friction:(float)arg2 initialValue:(float)arg3;
 

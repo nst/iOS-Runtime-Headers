@@ -3,7 +3,7 @@
  */
 
 @interface TSCH3DExtrusionDoubleBevelGenerator : NSObject {
-    double  mBevelHeight;
+    float  mBevelHeight;
     int  mBevelSlices;
     BOOL  mEnableBevelEdges;
     struct vector<glm::detail::tvec3<float>, std::__1::allocator<glm::detail::tvec3<float> > > { 
@@ -29,7 +29,7 @@
     }  mSpinePoints;
 }
 
-@property (nonatomic) double bevelHeight;
+@property (nonatomic) float bevelHeight;
 @property (nonatomic) int bevelSlices;
 @property (nonatomic, readonly) int bottomBevelStartIndex;
 @property (nonatomic, readonly) int bottomNonBevelStartIndex;
@@ -46,7 +46,7 @@
 - (float)bevelHeight;
 - (int)bevelSlices;
 - (int)bottomBevelStartIndex;
-- (struct tvec3<float> { union { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; union { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; union { double x_3_1_1; double x_3_1_2; double x_3_1_3; } x3; })bottomDirection;
+- (struct tvec3<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; })bottomDirection;
 - (int)bottomNonBevelStartIndex;
 - (int)bottomSlices;
 - (void)createSpinePointArray;

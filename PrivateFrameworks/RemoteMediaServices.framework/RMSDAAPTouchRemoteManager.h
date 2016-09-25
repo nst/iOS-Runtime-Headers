@@ -11,8 +11,8 @@
     RMSDAAPRequestManager * _requestManager;
     BOOL  _shouldWriteTimestampsForPPT;
     RMSTouchRemoteSocket * _socket;
-    double  _touchDistanceMax;
-    double  _touchDistanceMin;
+    float  _touchDistanceMax;
+    float  _touchDistanceMin;
     unsigned long  _touchTimeMax;
     unsigned long  _touchTimeMin;
 }
@@ -25,7 +25,7 @@
 
 - (void).cxx_destruct;
 - (void)_createSocket;
-- (struct CGPoint { double x1; double x2; })_locationForDirection:(int)arg1 repeatCount:(int)arg2;
+- (struct CGPoint { float x1; float x2; })_locationForDirection:(int)arg1 repeatCount:(int)arg2;
 - (void)_parsePortInfoItems:(id)arg1;
 - (void)_requestPortInfo;
 - (void)_requestPromptUpdate:(id /* block */)arg1;

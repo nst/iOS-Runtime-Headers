@@ -10,7 +10,7 @@
     UISlider * _slider;
     UIStepper * _stepper;
     int  _style;
-    double  _value;
+    float  _value;
     id /* block */  _willBeginTrackingUpdates;
 }
 
@@ -25,14 +25,14 @@
 @property (nonatomic, retain) UIStepper *stepper;
 @property (nonatomic) int style;
 @property (readonly) Class superclass;
-@property (nonatomic) double value;
+@property (nonatomic) float value;
 @property (nonatomic, copy) id /* block */ willBeginTrackingUpdates;
 
 - (void).cxx_destruct;
 - (void)_decreaseSize:(id)arg1;
 - (void)_handleValueChanged:(id)arg1;
 - (void)_increaseSize:(id)arg1;
-- (struct CGSize { double x1; double x2; })_itemSizeInContainer;
+- (struct CGSize { float x1; float x2; })_itemSizeInContainer;
 - (void)_selectSizeInList;
 - (void)_sliderTouchDown:(id)arg1;
 - (void)_sliderTouchUp:(id)arg1;
@@ -41,9 +41,9 @@
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
 - (id /* block */)didEndTrackingUpdates;
-- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 style:(int)arg2;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
 - (id)label;
 - (int)numberOfSectionsInCollectionView:(id)arg1;
 - (void)setDidEndTrackingUpdates:(id /* block */)arg1;

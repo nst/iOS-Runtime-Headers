@@ -5,7 +5,7 @@
 @interface UIKeyboardEmojiCategoryBar : UIKeyboardEmojiKeyView {
     UIKeyboardEmojiGraphicsTraits * _emojiGraphicsTraits;
     BOOL  _isScrubbing;
-    double  _scrubStartXLocation;
+    float  _scrubStartXLocation;
     UIView * _scrubView;
     unsigned int  _selectedIndex;
 }
@@ -14,14 +14,14 @@
 @property (nonatomic, retain) UIView *scrubView;
 @property unsigned int selectedIndex;
 
-- (void)animateScrubberToRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })categorySelectedCircleRect:(int)arg1;
+- (void)animateScrubberToRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })categorySelectedCircleRect:(int)arg1;
 - (void)dealloc;
 - (void)didMoveToWindow;
 - (void)dimKeys:(id)arg1;
 - (id)emojiGraphicsTraits;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameForDivider:(int)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 keyplane:(id)arg2 key:(id)arg3;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForDivider:(int)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 keyplane:(id)arg2 key:(id)arg3;
 - (id)scrubView;
 - (unsigned int)selectedIndex;
 - (unsigned int)selectedIndexForTouches:(id)arg1;

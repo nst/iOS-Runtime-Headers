@@ -59,7 +59,7 @@
 - (void)sendDidStart:(struct _CFURLDownload { }*)arg1;
 - (unsigned char)sendDownloadShouldUseCredentialStorage;
 - (bool)sendShouldDecodeDataOfMIMEType:(struct __CFString { }*)arg1;
-- (void)sendWillResumeWithResponse:(struct _CFURLResponse { }*)arg1 startingByte:(unsigned int)arg2;
+- (void)sendWillResumeWithResponse:(struct _CFURLResponse { }*)arg1 startingByte:(unsigned long long)arg2;
 - (struct _CFURLRequest { }*)sendWillSendRequest:(struct _CFURLRequest { }*)arg1 redirectResponse:(struct _CFURLResponse { }*)arg2;
 - (void)setDeletesFileUponFailure:(BOOL)arg1;
 - (void)setDestination:(id)arg1 allowOverwrite:(BOOL)arg2;

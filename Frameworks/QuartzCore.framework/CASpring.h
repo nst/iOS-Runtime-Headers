@@ -4,35 +4,35 @@
 
 @interface CASpring : NSObject <NSCoding, NSCopying, NSMutableCopying> {
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _attachmentPointA;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _attachmentPointB;
-    double  _damping;
+    float  _damping;
     id  _delegate;
     BOOL  _enabled;
     CAValueFunction * _function;
     CALayer * _layerA;
     CALayer * _layerB;
     NSString * _name;
-    double  _restLength;
-    double  _stiffness;
+    float  _restLength;
+    float  _stiffness;
 }
 
-@property struct CGPoint { double x1; double x2; } attachmentPointA;
-@property struct CGPoint { double x1; double x2; } attachmentPointB;
-@property double damping;
+@property struct CGPoint { float x1; float x2; } attachmentPointA;
+@property struct CGPoint { float x1; float x2; } attachmentPointB;
+@property float damping;
 @property <CASpringDelegate> *delegate;
 @property (getter=isEnabled) BOOL enabled;
 @property (retain) CAValueFunction *function;
 @property (retain) CALayer *layerA;
 @property (retain) CALayer *layerB;
 @property (copy) NSString *name;
-@property double restLength;
-@property double stiffness;
+@property float restLength;
+@property float stiffness;
 
 + (void)CAMLParserStartElement:(id)arg1;
 + (id)defaultValueForKey:(id)arg1;
@@ -41,8 +41,8 @@
 - (void)CAMLParser:(id)arg1 setValue:(id)arg2 forKey:(id)arg3;
 - (id)CAMLTypeForKey:(id)arg1;
 - (struct Object { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
-- (struct CGPoint { double x1; double x2; })attachmentPointA;
-- (struct CGPoint { double x1; double x2; })attachmentPointB;
+- (struct CGPoint { float x1; float x2; })attachmentPointA;
+- (struct CGPoint { float x1; float x2; })attachmentPointB;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (float)damping;
 - (void)dealloc;
@@ -58,8 +58,8 @@
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)name;
 - (float)restLength;
-- (void)setAttachmentPointA:(struct CGPoint { double x1; double x2; })arg1;
-- (void)setAttachmentPointB:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setAttachmentPointA:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setAttachmentPointB:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setDamping:(float)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setEnabled:(BOOL)arg1;

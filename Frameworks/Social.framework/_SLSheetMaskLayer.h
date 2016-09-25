@@ -4,11 +4,11 @@
 
 @interface _SLSheetMaskLayer : CALayer {
     UIColor * _clipBackgroundColor;
-    double  _clipCornerRadius;
+    float  _clipCornerRadius;
 }
 
 @property (nonatomic, retain) UIColor *clipBackgroundColor;
-@property (nonatomic) double clipCornerRadius;
+@property (nonatomic) float clipCornerRadius;
 
 - (void).cxx_destruct;
 - (id)clipBackgroundColor;

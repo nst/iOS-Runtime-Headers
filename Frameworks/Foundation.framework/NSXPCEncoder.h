@@ -7,7 +7,7 @@
     NSXPCConnection * _connection;
     <NSXPCEncoderDelegate> * _delegate;
     void ** _encoder;
-    unsigned int  _genericIndex;
+    unsigned long long  _genericIndex;
     NSObject<OS_xpc_object> * _oolObjects;
     struct __CFDictionary { } * _replacedByDelegateObjects;
 }
@@ -37,7 +37,7 @@
 - (void)encodeDouble:(double)arg1 forKey:(id)arg2;
 - (void)encodeFloat:(float)arg1 forKey:(id)arg2;
 - (void)encodeInt32:(int)arg1 forKey:(id)arg2;
-- (void)encodeInt64:(int)arg1 forKey:(id)arg2;
+- (void)encodeInt64:(long long)arg1 forKey:(id)arg2;
 - (void)encodeInt:(int)arg1 forKey:(id)arg2;
 - (void)encodeInteger:(int)arg1 forKey:(id)arg2;
 - (void)encodeInvocation:(id)arg1;

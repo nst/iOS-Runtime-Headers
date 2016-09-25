@@ -7,28 +7,28 @@
     BOOL  _animationFrame;
     union _GLKVector2 { 
         struct { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } ; 
         struct { 
-            double s; 
-            double t; 
+            float s; 
+            float t; 
         } ; 
-        double v[2]; 
+        float v[2]; 
     }  _bone;
-    double  _curBodyX;
+    float  _curBodyX;
     BOOL  _frameDisplayTime60th;
-    double  _height;
+    float  _height;
     union _GLKVector2 { 
         struct { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } ; 
         struct { 
-            double s; 
-            double t; 
+            float s; 
+            float t; 
         } ; 
-        double v[2]; 
+        float v[2]; 
     }  _offset;
     NSMutableArray * _shiftTexs12;
     NSMutableArray * _shiftTexs13;
@@ -37,16 +37,16 @@
     unsigned char  _state;
     NSArray * _texs;
     unsigned char  _waitingForFootRaise;
-    double  _width;
+    float  _width;
 }
 
 @property (nonatomic) BOOL animationDirection;
 @property (nonatomic) BOOL animationFrame;
-@property (nonatomic) union _GLKVector2 { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; double x3[2]; } bone;
-@property (nonatomic) double curBodyX;
+@property (nonatomic) union _GLKVector2 { struct { float x_1_1_1; float x_1_1_2; } x1; struct { float x_2_1_1; float x_2_1_2; } x2; float x3[2]; } bone;
+@property (nonatomic) float curBodyX;
 @property (nonatomic) BOOL frameDisplayTime60th;
-@property (nonatomic) double height;
-@property (nonatomic) union _GLKVector2 { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; double x3[2]; } offset;
+@property (nonatomic) float height;
+@property (nonatomic) union _GLKVector2 { struct { float x_1_1_1; float x_1_1_2; } x1; struct { float x_2_1_1; float x_2_1_2; } x2; float x3[2]; } offset;
 @property (nonatomic, retain) NSMutableArray *shiftTexs12;
 @property (nonatomic, retain) NSMutableArray *shiftTexs13;
 @property (nonatomic, retain) NSMutableArray *shiftTexs14;
@@ -54,23 +54,23 @@
 @property (nonatomic) unsigned char state;
 @property (nonatomic, retain) NSArray *texs;
 @property (nonatomic) unsigned char waitingForFootRaise;
-@property (nonatomic) double width;
+@property (nonatomic) float width;
 
 - (void).cxx_destruct;
 - (BOOL)animationDirection;
 - (BOOL)animationFrame;
-- (union _GLKVector2 { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; double x3[2]; })bone;
+- (union _GLKVector2 { struct { float x_1_1_1; float x_1_1_2; } x1; struct { float x_2_1_1; float x_2_1_2; } x2; float x3[2]; })bone;
 - (float)curBodyX;
 - (BOOL)frameDisplayTime60th;
 - (float)height;
-- (union _GLKVector2 { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; double x3[2]; })offset;
+- (union _GLKVector2 { struct { float x_1_1_1; float x_1_1_2; } x1; struct { float x_2_1_1; float x_2_1_2; } x2; float x3[2]; })offset;
 - (void)setAnimationDirection:(BOOL)arg1;
 - (void)setAnimationFrame:(BOOL)arg1;
-- (void)setBone:(union _GLKVector2 { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; double x3[2]; })arg1;
+- (void)setBone:(union _GLKVector2 { struct { float x_1_1_1; float x_1_1_2; } x1; struct { float x_2_1_1; float x_2_1_2; } x2; float x3[2]; })arg1;
 - (void)setCurBodyX:(float)arg1;
 - (void)setFrameDisplayTime60th:(BOOL)arg1;
 - (void)setHeight:(float)arg1;
-- (void)setOffset:(union _GLKVector2 { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; double x3[2]; })arg1;
+- (void)setOffset:(union _GLKVector2 { struct { float x_1_1_1; float x_1_1_2; } x1; struct { float x_2_1_1; float x_2_1_2; } x2; float x3[2]; })arg1;
 - (void)setShiftTexs12:(id)arg1;
 - (void)setShiftTexs13:(id)arg1;
 - (void)setShiftTexs14:(id)arg1;

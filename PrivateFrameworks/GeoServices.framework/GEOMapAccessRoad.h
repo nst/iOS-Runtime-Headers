@@ -7,7 +7,7 @@
         struct MapEdgeRoad {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
     }  _roadEdge;
-    unsigned int  _roadID;
+    unsigned long long  _roadID;
 }
 
 @property (nonatomic, readonly) unsigned long coordinateCount;
@@ -23,14 +23,14 @@
 @property (nonatomic, readonly) double length;
 @property (nonatomic, readonly) int rampType;
 @property (nonatomic, readonly) int roadClass;
-@property (nonatomic, readonly) unsigned int roadID;
+@property (nonatomic, readonly) unsigned long long roadID;
 @property (nonatomic, readonly) double roadWidth;
 @property (nonatomic, readonly) unsigned int speedLimit;
 @property (nonatomic, readonly) BOOL speedLimitIsMPH;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) int travelDirection;
 
-+ (double)estimatedWidthForRoad:(struct { struct { id x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; unsigned int x_1_1_5; unsigned int x_1_1_6; unsigned int x_1_1_7; BOOL x_1_1_8; unsigned int x_1_1_9; double x_1_1_10; unsigned int x_1_1_11; id x_1_1_12; } x1; unsigned int x2; unsigned int x3; int x4; int x5; int x6; unsigned int x7; unsigned int x8; union { struct { struct { double x_1_3_1; double x_1_3_2; } x_1_2_1; struct { double x_2_3_1; double x_2_3_2; } x_1_2_2; } x_9_1_1; struct { double x_2_2_1; double x_2_2_2; double x_2_2_3; double x_2_2_4; } x_9_1_2; } x9; struct { /* ? */ } *x10; struct { unsigned short x_11_1_1[2]; unsigned short x_11_1_2[2]; } x11; unsigned char x12; BOOL x13; unsigned char x14; BOOL x15; BOOL x16; unsigned char x17; BOOL x18; unsigned char x19; struct _NSRange { unsigned int x_20_1_1; unsigned int x_20_1_2; } x20; BOOL x21; }*)arg1;
++ (double)estimatedWidthForRoad:(struct { struct { id x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; unsigned int x_1_1_5; unsigned int x_1_1_6; unsigned long long x_1_1_7; BOOL x_1_1_8; unsigned long long x_1_1_9; float x_1_1_10; unsigned long long x_1_1_11; id x_1_1_12; } x1; unsigned int x2; unsigned int x3; int x4; int x5; int x6; unsigned int x7; unsigned int x8; union { struct { struct { float x_1_3_1; float x_1_3_2; } x_1_2_1; struct { float x_2_3_1; float x_2_3_2; } x_1_2_2; } x_9_1_1; struct { float x_2_2_1; float x_2_2_2; float x_2_2_3; float x_2_2_4; } x_9_1_2; } x9; struct { /* ? */ } *x10; struct { unsigned short x_11_1_1[2]; unsigned short x_11_1_2[2]; } x11; unsigned char x12; BOOL x13; unsigned char x14; BOOL x15; BOOL x16; unsigned char x17; BOOL x18; unsigned char x19; struct _NSRange { unsigned int x_20_1_1; unsigned int x_20_1_2; } x20; BOOL x21; }*)arg1;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -50,7 +50,7 @@
 - (int)roadClass;
 - (void)roadEdgesWithHandler:(id /* block */)arg1;
 - (void)roadFeaturesWithHandler:(id /* block */)arg1;
-- (unsigned int)roadID;
+- (unsigned long long)roadID;
 - (double)roadWidth;
 - (unsigned int)speedLimit;
 - (BOOL)speedLimitIsMPH;

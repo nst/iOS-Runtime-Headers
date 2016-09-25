@@ -14,9 +14,9 @@
         unsigned int intValue : 1; 
         unsigned int workActivityType : 1; 
     }  _has;
-    int  _intValue;
+    long long  _intValue;
     HDCodableSample * _sample;
-    int  _workActivityType;
+    long long  _workActivityType;
 }
 
 @property (nonatomic) double completedDate;
@@ -35,10 +35,10 @@
 @property (nonatomic, readonly) BOOL hasSample;
 @property (nonatomic) BOOL hasWorkActivityType;
 @property (readonly) unsigned int hash;
-@property (nonatomic) int intValue;
+@property (nonatomic) long long intValue;
 @property (nonatomic, retain) HDCodableSample *sample;
 @property (readonly) Class superclass;
-@property (nonatomic) int workActivityType;
+@property (nonatomic) long long workActivityType;
 
 - (void).cxx_destruct;
 - (BOOL)applyToObject:(id)arg1;
@@ -60,7 +60,7 @@
 - (BOOL)hasSample;
 - (BOOL)hasWorkActivityType;
 - (unsigned int)hash;
-- (int)intValue;
+- (long long)intValue;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
@@ -74,10 +74,10 @@
 - (void)setHasDoubleValue:(BOOL)arg1;
 - (void)setHasIntValue:(BOOL)arg1;
 - (void)setHasWorkActivityType:(BOOL)arg1;
-- (void)setIntValue:(int)arg1;
+- (void)setIntValue:(long long)arg1;
 - (void)setSample:(id)arg1;
-- (void)setWorkActivityType:(int)arg1;
-- (int)workActivityType;
+- (void)setWorkActivityType:(long long)arg1;
+- (long long)workActivityType;
 - (void)writeTo:(id)arg1;
 
 @end

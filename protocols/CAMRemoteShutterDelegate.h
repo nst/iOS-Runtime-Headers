@@ -5,7 +5,7 @@
 
 @required
 
-- (void)remoteShutter:(CAMRemoteShutterController *)arg1 focusOn:(struct CGPoint { double x1; double x2; })arg2;
+- (void)remoteShutter:(CAMRemoteShutterController *)arg1 focusOn:(struct CGPoint { float x1; float x2; })arg2;
 - (void)remoteShutter:(CAMRemoteShutterController *)arg1 setCaptureDevice:(int)arg2;
 - (void)remoteShutter:(CAMRemoteShutterController *)arg1 setFlashMode:(int)arg2;
 - (void)remoteShutter:(CAMRemoteShutterController *)arg1 setHDRMode:(int)arg2;

@@ -5,38 +5,38 @@
 @interface TSDGLVoronoiTriangleDataCell : NSObject {
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _bounds;
     struct { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _centerPoint;
     unsigned int  _triangleCount;
     unsigned int  _vertexCount;
-    struct { double x1; double x2; } * _vertexData;
+    struct { float x1; float x2; } * _vertexData;
 }
 
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } bounds;
-@property (nonatomic, readonly) struct { double x1; double x2; } centerPoint;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
+@property (nonatomic, readonly) struct { float x1; float x2; } centerPoint;
 @property (nonatomic, readonly) unsigned int triangleCount;
 @property (nonatomic, readonly) unsigned int vertexCount;
-@property (nonatomic, readonly) struct { double x1; double x2; }*vertexData;
+@property (nonatomic, readonly) struct { float x1; float x2; }*vertexData;
 
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })bounds;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
 - (id)cellsBySplittingCellIntoTriangles;
-- (struct { double x1; double x2; })centerPoint;
+- (struct { float x1; float x2; })centerPoint;
 - (void)dealloc;
 - (id)initWithEdges:(struct vector<boost::polygon::segment_data<double>, std::__1::allocator<boost::polygon::segment_data<double> > > { struct segment_data<double> {} *x1; struct segment_data<double> {} *x2; struct __compressed_pair<boost::polygon::segment_data<double> *, std::__1::allocator<boost::polygon::segment_data<double> > > { struct segment_data<double> {} *x_3_1_1; } x3; })arg1;
-- (id)initWithTrianglePoints:(struct { double x1; double x2; }*)arg1;
+- (id)initWithTrianglePoints:(struct { float x1; float x2; }*)arg1;
 - (void)p_setupTriangleDataWithEdges:(struct vector<boost::polygon::segment_data<double>, std::__1::allocator<boost::polygon::segment_data<double> > > { struct segment_data<double> {} *x1; struct segment_data<double> {} *x2; struct __compressed_pair<boost::polygon::segment_data<double> *, std::__1::allocator<boost::polygon::segment_data<double> > > { struct segment_data<double> {} *x_3_1_1; } x3; })arg1;
 - (unsigned int)triangleCount;
 - (unsigned int)vertexCount;
-- (struct { double x1; double x2; }*)vertexData;
+- (struct { float x1; float x2; }*)vertexData;
 
 @end

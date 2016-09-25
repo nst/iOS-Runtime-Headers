@@ -3,7 +3,7 @@
  */
 
 @interface NTKComplicationDisplayWrapperView : UIControl <NTKComplicationDisplayObserver, NTKControl, NTKTimeTravel> {
-    double  _alphaForDimmedState;
+    float  _alphaForDimmedState;
     UIView * _clipView;
     NSString * _complicationSlotIdentifier;
     CLKComplicationTemplate * _complicationTemplate;
@@ -21,8 +21,8 @@
     UIView * _laterContainerView;
     int  _layoutOverride;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _maxSize;
     id /* block */  _needsResizeHandler;
     UIView * _nextComplicationView;
@@ -33,7 +33,7 @@
     NSDate * _timeTravelDate;
 }
 
-@property (nonatomic) double alphaForDimmedState;
+@property (nonatomic) float alphaForDimmedState;
 @property (nonatomic, retain) NSString *complicationSlotIdentifier;
 @property (nonatomic, readonly) CLKComplicationTemplate *complicationTemplate;
 @property (readonly, copy) NSString *debugDescription;
@@ -46,10 +46,10 @@
 @property (nonatomic, readonly) BOOL hasLegacyDisplay;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) int layoutOverride;
-@property (nonatomic) struct CGSize { double x1; double x2; } maxSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } maxSize;
 @property (nonatomic, copy) id /* block */ needsResizeHandler;
 @property (nonatomic) BOOL paused;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } preferredSize;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } preferredSize;
 @property (readonly) Class superclass;
 @property (nonatomic) BOOL tapEnabled;
 @property (nonatomic, copy) id /* block */ tapHandler;
@@ -64,7 +64,7 @@
 - (void)_setDimmed:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_setDisplay:(id)arg1 withComplicationAnimation:(unsigned int)arg2;
 - (void)_setDisplayEditing:(BOOL)arg1;
-- (void)_setDisplayMaxSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)_setDisplayMaxSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_tryToSetDisplayHighlighted:(BOOL)arg1;
 - (float)alphaForDimmedState;
 - (void)complicationDisplayNeedsResize:(id)arg1;
@@ -83,12 +83,12 @@
 - (BOOL)isDimmed;
 - (int)layoutOverride;
 - (void)layoutSubviews;
-- (struct CGSize { double x1; double x2; })maxSize;
+- (struct CGSize { float x1; float x2; })maxSize;
 - (void)needsResize;
 - (id /* block */)needsResizeHandler;
 - (BOOL)paused;
-- (BOOL)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
-- (struct CGSize { double x1; double x2; })preferredSize;
+- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (struct CGSize { float x1; float x2; })preferredSize;
 - (void)setAlphaForDimmedState:(float)arg1;
 - (void)setComplicationSlotIdentifier:(id)arg1;
 - (void)setComplicationTemplate:(id)arg1 withComplicationAnimation:(unsigned int)arg2;
@@ -98,14 +98,14 @@
 - (void)setDisplayConfigurationHandler:(id /* block */)arg1;
 - (void)setEditing:(BOOL)arg1;
 - (void)setHighlighted:(BOOL)arg1;
-- (void)setMaxSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setMaxSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setNeedsResizeHandler:(id /* block */)arg1;
 - (void)setPaused:(BOOL)arg1;
 - (void)setTapEnabled:(BOOL)arg1;
 - (void)setTapHandler:(id /* block */)arg1;
 - (void)setTimeTravelDate:(id)arg1 animated:(BOOL)arg2;
 - (BOOL)shouldCancelTouchesInScrollview;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)tapEnabled;
 - (id /* block */)tapHandler;
 

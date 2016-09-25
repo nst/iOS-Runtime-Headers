@@ -21,7 +21,7 @@
 - (double)doubleAtIndex:(unsigned int)arg1;
 - (id)initWithResultRow:(id)arg1;
 - (id)initWithStatement:(struct sqlite3_stmt { }*)arg1;
-- (int)integerAtIndex:(unsigned int)arg1;
+- (long long)integerAtIndex:(unsigned int)arg1;
 - (id)objectAtIndex:(unsigned int)arg1;
 - (id)stringAtIndex:(unsigned int)arg1;
 

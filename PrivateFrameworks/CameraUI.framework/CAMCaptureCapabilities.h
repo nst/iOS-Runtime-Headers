@@ -4,15 +4,15 @@
 
 @interface CAMCaptureCapabilities : NSObject {
     double  __backCaptureInterval;
-    double  __backDuoPhotoModeMaximumZoomFactor;
-    double  __backDuoVideoModeMaximumZoomFactor;
-    double  __backPhotoModeMaximumZoomFactor;
-    double  __backVideoModeMaximumZoomFactor;
+    float  __backDuoPhotoModeMaximumZoomFactor;
+    float  __backDuoVideoModeMaximumZoomFactor;
+    float  __backPhotoModeMaximumZoomFactor;
+    float  __backVideoModeMaximumZoomFactor;
     double  __frontCaptureInterval;
-    double  __frontDuoPhotoModeMaximumZoomFactor;
-    double  __frontDuoVideoModeMaximumZoomFactor;
-    double  __frontPhotoModeMaximumZoomFactor;
-    double  __frontVideoModeMaximumZoomFactor;
+    float  __frontDuoPhotoModeMaximumZoomFactor;
+    float  __frontDuoVideoModeMaximumZoomFactor;
+    float  __frontPhotoModeMaximumZoomFactor;
+    float  __frontVideoModeMaximumZoomFactor;
     BOOL  _back1080p120Supported;
     BOOL  _back1080p240Supported;
     int  _back1080pMaxFPS;
@@ -60,7 +60,7 @@
     BOOL  _liveFilteringSupported;
     BOOL  _lockButtonAppropriateForShutter;
     BOOL  _lowEndHardware;
-    int  _maximumRecordedFileSize;
+    long long  _maximumRecordedFileSize;
     BOOL  _messagesApplication;
     BOOL  _pipelinedStillImageProcessingSupported;
     BOOL  _previewSupportedDuringHDR;
@@ -70,15 +70,15 @@
 }
 
 @property (nonatomic, readonly) double _backCaptureInterval;
-@property (nonatomic, readonly) double _backDuoPhotoModeMaximumZoomFactor;
-@property (nonatomic, readonly) double _backDuoVideoModeMaximumZoomFactor;
-@property (nonatomic, readonly) double _backPhotoModeMaximumZoomFactor;
-@property (nonatomic, readonly) double _backVideoModeMaximumZoomFactor;
+@property (nonatomic, readonly) float _backDuoPhotoModeMaximumZoomFactor;
+@property (nonatomic, readonly) float _backDuoVideoModeMaximumZoomFactor;
+@property (nonatomic, readonly) float _backPhotoModeMaximumZoomFactor;
+@property (nonatomic, readonly) float _backVideoModeMaximumZoomFactor;
 @property (nonatomic, readonly) double _frontCaptureInterval;
-@property (nonatomic, readonly) double _frontDuoPhotoModeMaximumZoomFactor;
-@property (nonatomic, readonly) double _frontDuoVideoModeMaximumZoomFactor;
-@property (nonatomic, readonly) double _frontPhotoModeMaximumZoomFactor;
-@property (nonatomic, readonly) double _frontVideoModeMaximumZoomFactor;
+@property (nonatomic, readonly) float _frontDuoPhotoModeMaximumZoomFactor;
+@property (nonatomic, readonly) float _frontDuoVideoModeMaximumZoomFactor;
+@property (nonatomic, readonly) float _frontPhotoModeMaximumZoomFactor;
+@property (nonatomic, readonly) float _frontVideoModeMaximumZoomFactor;
 @property (getter=isBack1080p120Supported, nonatomic, readonly) BOOL back1080p120Supported;
 @property (getter=isBack1080p240Supported, nonatomic, readonly) BOOL back1080p240Supported;
 @property (nonatomic, readonly) int back1080pMaxFPS;
@@ -126,7 +126,7 @@
 @property (getter=isLiveFilteringSupported, nonatomic, readonly) BOOL liveFilteringSupported;
 @property (getter=isLockButtonAppropriateForShutter, nonatomic, readonly) BOOL lockButtonAppropriateForShutter;
 @property (getter=isLowEndHardware, nonatomic, readonly) BOOL lowEndHardware;
-@property (nonatomic, readonly) int maximumRecordedFileSize;
+@property (nonatomic, readonly) long long maximumRecordedFileSize;
 @property (getter=isMessagesApplication, nonatomic, readonly) BOOL messagesApplication;
 @property (getter=isPipelinedStillImageProcessingSupported, nonatomic, readonly) BOOL pipelinedStillImageProcessingSupported;
 @property (getter=isPreviewDuringHDRSupported, nonatomic, readonly) BOOL previewSupportedDuringHDR;
@@ -222,7 +222,7 @@
 - (BOOL)isTorchPatternSupportedForDevice:(int)arg1;
 - (BOOL)isTorchSupportedForDevice:(int)arg1;
 - (BOOL)isVideoSupported;
-- (int)maximumRecordedFileSize;
+- (long long)maximumRecordedFileSize;
 - (float)maximumZoomFactorForMode:(int)arg1 device:(int)arg2 videoConfiguration:(int)arg3;
 - (BOOL)shouldAllowTelephotoToggleForMode:(int)arg1 devicePosition:(int)arg2 videoConfiguration:(int)arg3;
 - (BOOL)shouldUseDuoForMode:(int)arg1 device:(int)arg2 videoConfiguration:(int)arg3;

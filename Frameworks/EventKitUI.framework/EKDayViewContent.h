@@ -12,7 +12,7 @@
     EKEvent * _dimmedOccurrence;
     EKCalendarDate * _endDate;
     BOOL  _eventsFillGrid;
-    double  _fixedDayWidth;
+    float  _fixedDayWidth;
     EKDayViewContentGeometryDelegate * _geometryDelegate;
     EKDayGridView * _grid;
     BOOL  _hasCustomOccurrenceMargin;
@@ -22,28 +22,28 @@
     NSMutableArray * _lastLayoutWidthForDay;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _latestVisibleRect;
     BOOL  _loadingOccurrences;
     int  _occurrenceBackgroundStyle;
     UIColor * _occurrenceLocationColor;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _occurrenceMargin;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _occurrencePadding;
     UIColor * _occurrenceTextBackgroundColor;
     UIColor * _occurrenceTimeColor;
@@ -56,8 +56,8 @@
     EKCalendarDate * _startDate;
     UIView * _sundayDarkeningView;
     BOOL  _usesSmallText;
-    double * _visiblePinnedStackHeightAbove;
-    double * _visiblePinnedStackHeightBelow;
+    float * _visiblePinnedStackHeightAbove;
+    float * _visiblePinnedStackHeightBelow;
 }
 
 @property (nonatomic) BOOL allowsOccurrenceSelection;
@@ -70,12 +70,12 @@
 @property (nonatomic, readonly) EKCalendarDate *endDate;
 @property (nonatomic) BOOL eventsFillGrid;
 @property (nonatomic, readonly) double firstEventSecond;
-@property (nonatomic) double fixedDayWidth;
+@property (nonatomic) float fixedDayWidth;
 @property (readonly) unsigned int hash;
 @property (nonatomic) int occurrenceBackgroundStyle;
 @property (nonatomic, retain) UIColor *occurrenceLocationColor;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } occurrenceMargin;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } occurrencePadding;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } occurrenceMargin;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } occurrencePadding;
 @property (nonatomic, retain) UIColor *occurrenceTextBackgroundColor;
 @property (nonatomic, retain) UIColor *occurrenceTimeColor;
 @property (nonatomic, retain) UIColor *occurrenceTitleColor;
@@ -89,7 +89,7 @@
 @property (nonatomic) BOOL usesSmallText;
 
 - (void).cxx_destruct;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })RoundRectToScreenScaleForRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })RoundRectToScreenScaleForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (float)RoundToScreenScale:(float)arg1;
 - (float)RoundToScreenScaleForFloat:(float)arg1;
 - (void)_adjustViewsForPinning;
@@ -100,7 +100,7 @@
 - (id)_dayStarts;
 - (float)_dayWidth;
 - (BOOL)_doOffscreenOccurrences;
-- (BOOL)_getBottomPinRegion:(float*)arg1 dayIndex:(unsigned int*)arg2 forPoint:(struct CGPoint { double x1; double x2; })arg3;
+- (BOOL)_getBottomPinRegion:(float*)arg1 dayIndex:(unsigned int*)arg2 forPoint:(struct CGPoint { float x1; float x2; })arg3;
 - (void)_layoutDay:(unsigned int)arg1;
 - (void)_layoutDaysIfVisible;
 - (void)_tapRecognized:(id)arg1;
@@ -109,27 +109,27 @@
 - (void)configureOccurrenceViewForGestureController:(id)arg1;
 - (BOOL)containsEvent:(id)arg1;
 - (BOOL)darkensWeekends;
-- (double)dateForPoint:(struct CGPoint { double x1; double x2; })arg1;
-- (void)dayOccurrenceViewSelected:(id)arg1 atPoint:(struct CGPoint { double x1; double x2; })arg2 wasTapped:(BOOL)arg3;
+- (double)dateForPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)dayOccurrenceViewSelected:(id)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2 wasTapped:(BOOL)arg3;
 - (void)dealloc;
 - (id)delegate;
 - (id)dimmedOccurrence;
 - (id)endDate;
 - (BOOL)eventsFillGrid;
-- (BOOL)eventsIntersectRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (BOOL)eventsIntersectRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (double)firstEventSecond;
 - (float)fixedDayWidth;
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (id)grid;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 orientation:(int)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 orientation:(int)arg2 backgroundColor:(id)arg3 opaque:(BOOL)arg4 numberOfDaysToDisplay:(unsigned int)arg5;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })insetsForInterfaceLayout:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 orientation:(int)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 orientation:(int)arg2 backgroundColor:(id)arg3 opaque:(BOOL)arg4 numberOfDaysToDisplay:(unsigned int)arg5;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })insetsForInterfaceLayout:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (id)lastDisplayedSecond;
 - (void)layoutSubviews;
 - (int)occurrenceBackgroundStyle;
 - (id)occurrenceLocationColor;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })occurrenceMargin;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })occurrencePadding;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })occurrenceMargin;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })occurrencePadding;
 - (id)occurrenceTextBackgroundColor;
 - (id)occurrenceTimeColor;
 - (id)occurrenceTitleColor;
@@ -137,8 +137,8 @@
 - (id)occurrenceViewForEvent:(id)arg1 onDate:(double)arg2;
 - (id)occurrenceViews;
 - (BOOL)offscreenOccurrencePinningEnabled;
-- (struct CGPoint { double x1; double x2; })pointForDate:(double)arg1;
-- (void)rectBecameVisible:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGPoint { float x1; float x2; })pointForDate:(double)arg1;
+- (void)rectBecameVisible:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)reduceLayoutProcessingForAnimation;
 - (void)selectEvent:(id)arg1;
 - (id)selectedEvent;
@@ -153,8 +153,8 @@
 - (void)setNeedsLayout;
 - (void)setOccurrenceBackgroundStyle:(int)arg1;
 - (void)setOccurrenceLocationColor:(id)arg1;
-- (void)setOccurrenceMargin:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
-- (void)setOccurrencePadding:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setOccurrenceMargin:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setOccurrencePadding:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setOccurrenceTextBackgroundColor:(id)arg1;
 - (void)setOccurrenceTimeColor:(id)arg1;
 - (void)setOccurrenceTitleColor:(id)arg1;
@@ -169,7 +169,7 @@
 - (void)setUsesSmallText:(BOOL)arg1;
 - (void)setViewsDimmed:(BOOL)arg1 forEvent:(id)arg2;
 - (BOOL)showsLeftBorder;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)startDate;
 - (id)timeZone;
 - (BOOL)usesSmallText;

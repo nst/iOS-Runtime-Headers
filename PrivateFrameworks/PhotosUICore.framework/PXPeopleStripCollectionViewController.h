@@ -20,7 +20,7 @@
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
 - (void)collectionView:(id)arg1 prefetchItemsAtIndexPaths:(id)arg2;
-- (struct CGPoint { double x1; double x2; })collectionView:(id)arg1 targetContentOffsetForProposedContentOffset:(struct CGPoint { double x1; double x2; })arg2;
+- (struct CGPoint { float x1; float x2; })collectionView:(id)arg1 targetContentOffsetForProposedContentOffset:(struct CGPoint { float x1; float x2; })arg2;
 - (void)contentWidthChanged;
 - (id)currentLabelFont;
 - (id)dataSource;

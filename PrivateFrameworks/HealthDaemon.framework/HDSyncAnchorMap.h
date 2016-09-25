@@ -14,11 +14,11 @@
 
 - (void).cxx_destruct;
 - (unsigned int)anchorCount;
-- (int)anchorForSyncEntityClass:(Class)arg1;
+- (long long)anchorForSyncEntityClass:(Class)arg1;
 - (id)anchorsByObjectType;
 - (id)description;
 - (void)enumerateAnchorsAndSyncEntitiesWithBlock:(id /* block */)arg1;
-- (void)setAnchor:(int)arg1 forSyncEntity:(Class)arg2;
+- (void)setAnchor:(long long)arg1 forSyncEntity:(Class)arg2;
 - (void)setAnchorsByObjectType:(id)arg1;
 
 @end

@@ -3,17 +3,17 @@
  */
 
 @interface GKImageColorPalette : GKColorPalette {
-    double  _borderPercentageForBorderDetection;
+    float  _borderPercentageForBorderDetection;
     unsigned long  _brightnessHistogram;
     unsigned long  _brightnessSpread;
     NSArray * _bubbleColors;
     unsigned long  _grayscaleSpread;
     unsigned long  _hueHistogram;
     unsigned long  _hueSpread;
-    struct HSVColor { double x1; double x2; double x3; } * _imageHSVMap;
+    struct HSVColor { float x1; float x2; float x3; } * _imageHSVMap;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _imageSize;
     unsigned long  _saturationHistogram;
     unsigned long  _saturationSpread;

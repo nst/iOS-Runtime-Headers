@@ -16,8 +16,8 @@
         double offset; 
         unsigned int limit; 
         unsigned int phaseCount; 
-        double phaseStride; 
-        double kernelTaps; 
+        float phaseStride; 
+        float kernelTaps; 
         unsigned int phaseMask; 
         unsigned int kernelSize; 
     }  weights;

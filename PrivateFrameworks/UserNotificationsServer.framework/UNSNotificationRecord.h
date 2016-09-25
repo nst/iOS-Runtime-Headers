@@ -45,7 +45,7 @@
     int  _toneAlertType;
     NSString * _toneFileName;
     NSString * _toneIdentifier;
-    unsigned int  _toneMediaLibraryItemIdentifier;
+    unsigned long long  _toneMediaLibraryItemIdentifier;
     BOOL  _transient;
     NSDate * _triggerDate;
     NSDateComponents * _triggerDateComponents;
@@ -109,7 +109,7 @@
 @property (nonatomic) int toneAlertType;
 @property (nonatomic, copy) NSString *toneFileName;
 @property (nonatomic, copy) NSString *toneIdentifier;
-@property (nonatomic) unsigned int toneMediaLibraryItemIdentifier;
+@property (nonatomic) unsigned long long toneMediaLibraryItemIdentifier;
 @property (getter=isTransient, nonatomic) BOOL transient;
 @property (nonatomic, copy) NSDate *triggerDate;
 @property (nonatomic, copy) NSDateComponents *triggerDateComponents;
@@ -203,7 +203,7 @@
 - (void)setToneAlertType:(int)arg1;
 - (void)setToneFileName:(id)arg1;
 - (void)setToneIdentifier:(id)arg1;
-- (void)setToneMediaLibraryItemIdentifier:(unsigned int)arg1;
+- (void)setToneMediaLibraryItemIdentifier:(unsigned long long)arg1;
 - (void)setTransient:(BOOL)arg1;
 - (void)setTriggerDate:(id)arg1;
 - (void)setTriggerDateComponents:(id)arg1;
@@ -239,7 +239,7 @@
 - (int)toneAlertType;
 - (id)toneFileName;
 - (id)toneIdentifier;
-- (unsigned int)toneMediaLibraryItemIdentifier;
+- (unsigned long long)toneMediaLibraryItemIdentifier;
 - (id)triggerDate;
 - (id)triggerDateComponents;
 - (id)triggerRegion;

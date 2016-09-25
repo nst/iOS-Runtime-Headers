@@ -4,19 +4,19 @@
 
 @interface MusicLocalMediaRemoteControlContext : NSObject {
     MPAVItem * _currentlyPlayingItem;
-    unsigned int  _itemPersistentID;
+    unsigned long long  _itemPersistentID;
     MPAVController * _player;
 }
 
 @property (nonatomic, readonly) MPAVItem *currentlyPlayingItem;
-@property (nonatomic, readonly) unsigned int itemPersistentID;
+@property (nonatomic, readonly) unsigned long long itemPersistentID;
 @property (nonatomic, readonly) MPAVController *player;
 
 - (void).cxx_destruct;
 - (id)currentlyPlayingItem;
 - (id)init;
 - (id)initWithPlayer:(id)arg1 mediaRemoteOptions:(id)arg2;
-- (unsigned int)itemPersistentID;
+- (unsigned long long)itemPersistentID;
 - (id)player;
 
 @end

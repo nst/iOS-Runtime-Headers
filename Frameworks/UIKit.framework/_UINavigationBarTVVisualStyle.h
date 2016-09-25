@@ -5,7 +5,7 @@
 @interface _UINavigationBarTVVisualStyle : _UINavigationBarVisualStyle
 
 - (float)barHeight;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })buttonContentEdgeInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })buttonContentEdgeInsets;
 - (id)buttonFontForStyle:(int)arg1;
 - (float)buttonHeight;
 - (float)buttonImagePadding;

@@ -53,7 +53,7 @@
 - (void)fadeOutLowerSubdialAnimated:(BOOL)arg1;
 - (void)fadeTimeScaleLabelWithMode:(id)arg1;
 - (void)hideMode:(id)arg1 animate:(BOOL)arg2;
-- (id)initWithSize:(struct CGSize { double x1; double x2; })arg1;
+- (id)initWithSize:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)isTimeMode;
 - (id)lowerSubdial;
 - (id)palette;

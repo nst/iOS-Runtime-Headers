@@ -4,10 +4,10 @@
 
 @interface UIDisplayP3Color : UIColor {
     struct CGColor { } * _cachedColor;
-    double  alphaComponent;
-    double  blueComponent;
-    double  greenComponent;
-    double  redComponent;
+    float  alphaComponent;
+    float  blueComponent;
+    float  greenComponent;
+    float  redComponent;
 }
 
 - (struct CGColor { }*)CGColor;

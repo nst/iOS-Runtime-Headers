@@ -3,39 +3,39 @@
  */
 
 @interface HUQuickControlSliderGestureTransformer : NSObject {
-    double  _accumulatedDragDistance;
+    float  _accumulatedDragDistance;
     HUQuickControlPanningContext * _context;
-    double  _currentSliderValue;
+    float  _currentSliderValue;
     <HUQuickControlSliderGestureTransformerDelegate> * _delegate;
     UIGestureRecognizer * _gestureRecognizer;
     BOOL  _hasRecognizedSignificantSliderValueChange;
     BOOL  _ignoreTouches;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _lastTouchLocation;
-    double  _referenceSliderValue;
+    float  _referenceSliderValue;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _referenceTouchLocation;
 }
 
-@property (nonatomic) double accumulatedDragDistance;
+@property (nonatomic) float accumulatedDragDistance;
 @property (nonatomic, readonly) HUQuickControlPanningContext *context;
-@property (nonatomic) double currentSliderValue;
+@property (nonatomic) float currentSliderValue;
 @property (nonatomic) <HUQuickControlSliderGestureTransformerDelegate> *delegate;
 @property (nonatomic, retain) UIGestureRecognizer *gestureRecognizer;
 @property (nonatomic) BOOL hasRecognizedSignificantSliderValueChange;
 @property (nonatomic) BOOL ignoreTouches;
-@property (nonatomic) struct CGPoint { double x1; double x2; } lastTouchLocation;
-@property (nonatomic) double referenceSliderValue;
-@property (nonatomic) struct CGPoint { double x1; double x2; } referenceTouchLocation;
+@property (nonatomic) struct CGPoint { float x1; float x2; } lastTouchLocation;
+@property (nonatomic) float referenceSliderValue;
+@property (nonatomic) struct CGPoint { float x1; float x2; } referenceTouchLocation;
 
 - (void).cxx_destruct;
 - (void)_handleGesturePan:(id)arg1;
-- (void)_handleSliderValuePan:(struct CGPoint { double x1; double x2; })arg1;
-- (float)_rawSliderValueForLocation:(struct CGPoint { double x1; double x2; })arg1;
+- (void)_handleSliderValuePan:(struct CGPoint { float x1; float x2; })arg1;
+- (float)_rawSliderValueForLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)_shouldIgnoreAllGestures;
 - (float)accumulatedDragDistance;
 - (id)context;
@@ -46,17 +46,17 @@
 - (BOOL)hasRecognizedSignificantSliderValueChange;
 - (BOOL)ignoreTouches;
 - (id)initWithGestureRecognizer:(id)arg1 context:(id)arg2;
-- (struct CGPoint { double x1; double x2; })lastTouchLocation;
+- (struct CGPoint { float x1; float x2; })lastTouchLocation;
 - (float)referenceSliderValue;
-- (struct CGPoint { double x1; double x2; })referenceTouchLocation;
+- (struct CGPoint { float x1; float x2; })referenceTouchLocation;
 - (void)setAccumulatedDragDistance:(float)arg1;
 - (void)setCurrentSliderValue:(float)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setGestureRecognizer:(id)arg1;
 - (void)setHasRecognizedSignificantSliderValueChange:(BOOL)arg1;
 - (void)setIgnoreTouches:(BOOL)arg1;
-- (void)setLastTouchLocation:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setLastTouchLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setReferenceSliderValue:(float)arg1;
-- (void)setReferenceTouchLocation:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setReferenceTouchLocation:(struct CGPoint { float x1; float x2; })arg1;
 
 @end

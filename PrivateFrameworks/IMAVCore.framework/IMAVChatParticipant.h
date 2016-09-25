@@ -25,39 +25,39 @@
     NSDictionary * _properties;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _remoteLandscapeContentRect;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _remoteLandscapeOrientation;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _remotePIPLandscapeOrientation;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _remotePIPPortraitOrientation;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _remotePortraitContentRect;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _remotePortraitOrientation;
     unsigned int  _screenOrientation;
     BOOL  _sendingAudio;
@@ -73,12 +73,12 @@
 @property (setter=_setConnectTimeoutTimer:, retain) NSTimer *_connectTimeoutTimer;
 @property (setter=_setInviteDelivered:) BOOL _inviteDelivered;
 @property (nonatomic, retain) NSMutableArray *_participantsCallInfo;
-@property (setter=_setRemoteLandscapeContentRect:, nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } _remoteLandscapeContentRect;
-@property (setter=_setRemoteLandscapeOrientation:, nonatomic) struct CGSize { double x1; double x2; } _remoteLandscapeOrientation;
-@property (setter=_setRemotePIPLandscapeOrientation:, nonatomic) struct CGSize { double x1; double x2; } _remotePIPLandscapeOrientation;
-@property (setter=_setRemotePIPPortraitOrientation:, nonatomic) struct CGSize { double x1; double x2; } _remotePIPPortraitOrientation;
-@property (setter=_setRemotePortraitContentRect:, nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } _remotePortraitContentRect;
-@property (setter=_setRemotePortraitOrientation:, nonatomic) struct CGSize { double x1; double x2; } _remotePortraitOrientation;
+@property (setter=_setRemoteLandscapeContentRect:, nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } _remoteLandscapeContentRect;
+@property (setter=_setRemoteLandscapeOrientation:, nonatomic) struct CGSize { float x1; float x2; } _remoteLandscapeOrientation;
+@property (setter=_setRemotePIPLandscapeOrientation:, nonatomic) struct CGSize { float x1; float x2; } _remotePIPLandscapeOrientation;
+@property (setter=_setRemotePIPPortraitOrientation:, nonatomic) struct CGSize { float x1; float x2; } _remotePIPPortraitOrientation;
+@property (setter=_setRemotePortraitContentRect:, nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } _remotePortraitContentRect;
+@property (setter=_setRemotePortraitOrientation:, nonatomic) struct CGSize { float x1; float x2; } _remotePortraitOrientation;
 @property (setter=_setScreenOrientation:, nonatomic) unsigned int _screenOrientation;
 @property (nonatomic, retain) NSArray *additionalPeers;
 @property (setter=setAVChat:, nonatomic) IMAVChat *avChat;
@@ -136,12 +136,12 @@
 - (id)_proxyRepresentation;
 - (void)_reInitiateWithCallInfo:(id)arg1;
 - (void)_registerCallInfo:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_remoteLandscapeContentRect;
-- (struct CGSize { double x1; double x2; })_remoteLandscapeOrientation;
-- (struct CGSize { double x1; double x2; })_remotePIPLandscapeOrientation;
-- (struct CGSize { double x1; double x2; })_remotePIPPortraitOrientation;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_remotePortraitContentRect;
-- (struct CGSize { double x1; double x2; })_remotePortraitOrientation;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_remoteLandscapeContentRect;
+- (struct CGSize { float x1; float x2; })_remoteLandscapeOrientation;
+- (struct CGSize { float x1; float x2; })_remotePIPLandscapeOrientation;
+- (struct CGSize { float x1; float x2; })_remotePIPPortraitOrientation;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_remotePortraitContentRect;
+- (struct CGSize { float x1; float x2; })_remotePortraitOrientation;
 - (unsigned int)_screenOrientation;
 - (void)_sendResponse:(unsigned int)arg1 callInfo:(id)arg2;
 - (void)_setCameraOrientation:(unsigned int)arg1;
@@ -150,18 +150,18 @@
 - (void)_setConferenceID:(id)arg1;
 - (void)_setConnectTimeoutTimer:(id)arg1;
 - (void)_setInviteDelivered:(BOOL)arg1;
-- (void)_setRemoteLandscapeContentRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)_setRemoteLandscapeOrientation:(struct CGSize { double x1; double x2; })arg1;
-- (void)_setRemotePIPLandscapeOrientation:(struct CGSize { double x1; double x2; })arg1;
-- (void)_setRemotePIPPortraitOrientation:(struct CGSize { double x1; double x2; })arg1;
-- (void)_setRemotePortraitContentRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)_setRemotePortraitOrientation:(struct CGSize { double x1; double x2; })arg1;
+- (void)_setRemoteLandscapeContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_setRemoteLandscapeOrientation:(struct CGSize { float x1; float x2; })arg1;
+- (void)_setRemotePIPLandscapeOrientation:(struct CGSize { float x1; float x2; })arg1;
+- (void)_setRemotePIPPortraitOrientation:(struct CGSize { float x1; float x2; })arg1;
+- (void)_setRemotePortraitContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_setRemotePortraitOrientation:(struct CGSize { float x1; float x2; })arg1;
 - (void)_setScreenOrientation:(unsigned int)arg1;
 - (void)_setState:(unsigned int)arg1 withReason:(unsigned int)arg2 andError:(int)arg3;
 - (void)_switchToUseNewIMHandle:(id)arg1;
 - (void)_updateProperties:(id)arg1;
 - (id)additionalPeers;
-- (struct CGSize { double x1; double x2; })aspectRatioForCameraOrientation:(unsigned int)arg1 cameraType:(unsigned int)arg2;
+- (struct CGSize { float x1; float x2; })aspectRatioForCameraOrientation:(unsigned int)arg1 cameraType:(unsigned int)arg2;
 - (id)avChat;
 - (int)bestCallID;
 - (id)callInfoBeingHandedOff;
@@ -169,7 +169,7 @@
 - (unsigned int)cameraType;
 - (void)cancelInvitation;
 - (void)cancelInvitationWithResponse:(unsigned int)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })contentRectForCameraOrientation:(unsigned int)arg1 cameraType:(unsigned int)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentRectForCameraOrientation:(unsigned int)arg1 cameraType:(unsigned int)arg2;
 - (void)dealloc;
 - (id)description;
 - (void)disconnectFromAVChat;
@@ -191,7 +191,7 @@
 - (BOOL)isSendingVideo;
 - (BOOL)isVideoDegraded;
 - (BOOL)isVideoPaused;
-- (struct CGSize { double x1; double x2; })localAspectRatioForCameraOrientation:(unsigned int)arg1 cameraType:(unsigned int)arg2;
+- (struct CGSize { float x1; float x2; })localAspectRatioForCameraOrientation:(unsigned int)arg1 cameraType:(unsigned int)arg2;
 - (BOOL)matchesAVConferenceCallID:(int)arg1;
 - (id)name;
 - (id)outFrequencyLevel;

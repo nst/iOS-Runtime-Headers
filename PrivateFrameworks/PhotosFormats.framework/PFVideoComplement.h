@@ -7,41 +7,41 @@
     NSString * _imagePath;
     NSDictionary * _metadata;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _originalImageDisplayTime;
     NSString * _originalPairingIdentifier;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _originalVideoDuration;
     NSString * _videoPath;
 }
 
-@property (nonatomic, readonly) struct { int x1; int x2; unsigned int x3; int x4; } imageDisplayTime;
+@property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } imageDisplayTime;
 @property (nonatomic, readonly, copy) NSString *imagePath;
-@property (nonatomic, readonly) struct { int x1; int x2; unsigned int x3; int x4; } originalImageDisplayTime;
+@property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } originalImageDisplayTime;
 @property (nonatomic, readonly, copy) NSString *originalPairingIdentifier;
-@property (nonatomic, readonly) struct { int x1; int x2; unsigned int x3; int x4; } originalVideoDuration;
+@property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } originalVideoDuration;
 @property (nonatomic, readonly, copy) NSString *pairingIdentifier;
 @property (nonatomic, readonly, copy) NSString *videoPath;
 
 - (void).cxx_destruct;
 - (void)_readMetadataIfNeeded;
-- (struct { int x1; int x2; unsigned int x3; int x4; })imageDisplayTime;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })imageDisplayTime;
 - (id)imagePath;
 - (id)init;
 - (id)initWithBundleAtURL:(id)arg1;
 - (id)initWithPathToVideo:(id)arg1 pathToImage:(id)arg2;
-- (id)initWithPathToVideo:(id)arg1 pathToImage:(id)arg2 imageDisplayTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg3 pairingIdentifier:(id)arg4;
+- (id)initWithPathToVideo:(id)arg1 pathToImage:(id)arg2 imageDisplayTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3 pairingIdentifier:(id)arg4;
 - (id)initWithPropertyList:(id)arg1;
-- (struct { int x1; int x2; unsigned int x3; int x4; })originalImageDisplayTime;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })originalImageDisplayTime;
 - (id)originalPairingIdentifier;
-- (struct { int x1; int x2; unsigned int x3; int x4; })originalVideoDuration;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })originalVideoDuration;
 - (id)pairingIdentifier;
 - (id)propertyListRepresentation;
 - (id)videoPath;

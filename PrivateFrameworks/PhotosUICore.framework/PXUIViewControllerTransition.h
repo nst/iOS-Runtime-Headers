@@ -12,7 +12,7 @@
 
 @property (setter=_setPauseToken:, nonatomic, retain) id _pauseToken;
 @property (nonatomic, readonly) int completionCurve;
-@property (nonatomic, readonly) double completionSpeed;
+@property (nonatomic, readonly) float completionSpeed;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) UIViewController *detailViewController;

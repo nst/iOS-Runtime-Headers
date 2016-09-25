@@ -3,32 +3,32 @@
  */
 
 @interface MFPColorAdjust : NSObject {
-    struct MFPColorMatrix { double x1[5][5]; } * mColorMatrix;
+    struct MFPColorMatrix { float x1[5][5]; } * mColorMatrix;
     int  mColorMatrixFlags;
     BOOL  mEnabled;
-    double  mGamma;
-    struct MFPColorMatrix { double x1[5][5]; } * mGrayMatrix;
+    float  mGamma;
+    struct MFPColorMatrix { float x1[5][5]; } * mGrayMatrix;
     NSDictionary * mRecolorMap;
-    double  mThreshold;
+    float  mThreshold;
     struct { 
         OITSUColor *mLow; 
         OITSUColor *mHigh; 
     }  mTransparentRange;
 }
 
-- (struct MFPColorMatrix { double x1[5][5]; }*)colorMatrix;
+- (struct MFPColorMatrix { float x1[5][5]; }*)colorMatrix;
 - (int)colorMatrixFlags;
 - (void)dealloc;
 - (float)gamma;
-- (struct MFPColorMatrix { double x1[5][5]; }*)grayMatrix;
+- (struct MFPColorMatrix { float x1[5][5]; }*)grayMatrix;
 - (id)init;
 - (BOOL)isEnabled;
 - (id)recolorMap;
-- (void)setColorMatrix:(struct MFPColorMatrix { double x1[5][5]; }*)arg1;
+- (void)setColorMatrix:(struct MFPColorMatrix { float x1[5][5]; }*)arg1;
 - (void)setColorMatrixFlags:(int)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setGamma:(float)arg1;
-- (void)setGrayMatrix:(struct MFPColorMatrix { double x1[5][5]; }*)arg1;
+- (void)setGrayMatrix:(struct MFPColorMatrix { float x1[5][5]; }*)arg1;
 - (void)setRecolorMap:(id)arg1;
 - (void)setThreshold:(float)arg1;
 - (void)setTransparentLow:(id)arg1 high:(id)arg2;

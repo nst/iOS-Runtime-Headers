@@ -3,10 +3,10 @@
  */
 
 @interface MPChangePlaybackProgressCommandEvent : MPRemoteCommandEvent {
-    double  _playbackProgress;
+    float  _playbackProgress;
 }
 
-@property (nonatomic, readonly) double playbackProgress;
+@property (nonatomic, readonly) float playbackProgress;
 
 - (id)initWithCommand:(id)arg1 mediaRemoteType:(unsigned int)arg2 options:(id)arg3;
 - (float)playbackProgress;

@@ -3,16 +3,16 @@
  */
 
 @interface MPSCNNSpatialNormalization : MPSCNNKernel {
-    double  _alpha;
-    double  _beta;
-    double  _delta;
+    float  _alpha;
+    float  _beta;
+    float  _delta;
     unsigned int  _kernelHeight;
     unsigned int  _kernelWidth;
 }
 
-@property (nonatomic) double alpha;
-@property (nonatomic) double beta;
-@property (nonatomic) double delta;
+@property (nonatomic) float alpha;
+@property (nonatomic) float beta;
+@property (nonatomic) float delta;
 @property (nonatomic, readonly) unsigned int kernelHeight;
 @property (nonatomic, readonly) unsigned int kernelWidth;
 

@@ -3,11 +3,11 @@
  */
 
 @interface NTKBatteryTimelineEntryModel : NTKTimelineEntryModel {
-    double  _level;
+    float  _level;
     int  _state;
 }
 
-@property (nonatomic) double level;
+@property (nonatomic) float level;
 @property (nonatomic) int state;
 
 - (id)_levelTintColor;

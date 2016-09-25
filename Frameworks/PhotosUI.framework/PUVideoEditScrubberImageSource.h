@@ -7,21 +7,21 @@
     AVAssetImageGenerator * _imageGenerator;
     NSObject<OS_dispatch_queue> * _isolationQueue;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _maximumThumbnailSize;
     NSMutableArray * _pendingTimestampRequests;
     NSMutableDictionary * _requestCompletionHandlers;
 }
 
-@property (nonatomic) struct CGSize { double x1; double x2; } maximumThumbnailSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } maximumThumbnailSize;
 
 - (void).cxx_destruct;
 - (void)enqueueThumbnailRequestForTimestamp:(id)arg1 withResultHandler:(id /* block */)arg2;
 - (id)init;
 - (id)initWithAVAsset:(id)arg1;
-- (struct CGSize { double x1; double x2; })maximumThumbnailSize;
+- (struct CGSize { float x1; float x2; })maximumThumbnailSize;
 - (void)processPendingThumbnailRequests;
-- (void)setMaximumThumbnailSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setMaximumThumbnailSize:(struct CGSize { float x1; float x2; })arg1;
 
 @end

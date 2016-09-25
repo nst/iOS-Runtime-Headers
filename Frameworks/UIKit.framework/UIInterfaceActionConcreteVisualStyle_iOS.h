@@ -14,7 +14,7 @@
 - (id)actionTitleLabelColorForViewState:(id)arg1;
 - (id)actionTitleLabelFontForViewState:(id)arg1;
 - (float)contentCornerRadius;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentMargin;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentMargin;
 - (id)defaultScreen;
 - (float)horizontalImageContentSpacing;
 - (id)newActionBackgroundViewForViewState:(id)arg1;

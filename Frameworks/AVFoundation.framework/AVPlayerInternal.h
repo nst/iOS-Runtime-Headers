@@ -20,8 +20,8 @@
     NSObject<OS_dispatch_queue> * currentItemPropertyUpdateQueue;
     <AVCallbackCancellation><AVKVOIntrospection> * currentItemSuppressesVideoLayersCallbackInvoker;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  dimensionsOfReservedVideoMemory;
     NSArray * displaysUsedForPlayback;
     NSError * error;

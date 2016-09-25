@@ -7,12 +7,12 @@
     NSString * __identifier;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  __untransformedContentFrame;
     PUAssetReference * _assetReference;
@@ -28,7 +28,7 @@
 
 @property (setter=_setDisplayTileTransform:, nonatomic, retain) PUDisplayTileTransform *_displayTileTransform;
 @property (setter=_setIdentifier:, nonatomic, copy) NSString *_identifier;
-@property (setter=_setUntransformedContentFrame:, nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } _untransformedContentFrame;
+@property (setter=_setUntransformedContentFrame:, nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } _untransformedContentFrame;
 @property (nonatomic, retain) PUAssetReference *assetReference;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PUUserTransformTileViewControllerDelegate> *delegate;
@@ -43,9 +43,9 @@
 - (id)_identifier;
 - (void)_setDisplayTileTransform:(id)arg1;
 - (void)_setIdentifier:(id)arg1;
-- (void)_setUntransformedContentFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)_setUntransformedContentFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_setUserTransformView:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_untransformedContentFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_untransformedContentFrame;
 - (void)_updateUserInteractionEnabled;
 - (void)_updateUserTransformPadding;
 - (void)_updateUserTransformView;
@@ -64,7 +64,7 @@
 - (BOOL)userInteractionEnabled;
 - (id)userTransformView;
 - (void)userTransformView:(id)arg1 didChangeIsUserInteracting:(BOOL)arg2;
-- (void)userTransformView:(id)arg1 didChangeUserAffineTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg2 isUserInteracting:(BOOL)arg3;
-- (BOOL)userTransformView:(id)arg1 shouldReceiveTouchAtPoint:(struct CGPoint { double x1; double x2; })arg2;
+- (void)userTransformView:(id)arg1 didChangeUserAffineTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2 isUserInteracting:(BOOL)arg3;
+- (BOOL)userTransformView:(id)arg1 shouldReceiveTouchAtPoint:(struct CGPoint { float x1; float x2; })arg2;
 
 @end

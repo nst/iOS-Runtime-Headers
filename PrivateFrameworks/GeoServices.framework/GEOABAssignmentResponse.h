@@ -15,7 +15,7 @@
     BOOL  _invalidateTileCache;
     GEOABSecondPartyPlaceRequestClientMetaData * _parsecClientMetaData;
     GEOABSecondPartyPlaceRequestClientMetaData * _rapClientMetaData;
-    unsigned int  _refreshIntervalSeconds;
+    unsigned long long  _refreshIntervalSeconds;
     NSString * _requestGuid;
     GEOABSecondPartyPlaceRequestClientMetaData * _siriClientMetaData;
     NSString * _sourceURL;
@@ -39,7 +39,7 @@
 @property (nonatomic) BOOL invalidateTileCache;
 @property (nonatomic, retain) GEOABSecondPartyPlaceRequestClientMetaData *parsecClientMetaData;
 @property (nonatomic, retain) GEOABSecondPartyPlaceRequestClientMetaData *rapClientMetaData;
-@property (nonatomic) unsigned int refreshIntervalSeconds;
+@property (nonatomic) unsigned long long refreshIntervalSeconds;
 @property (nonatomic, retain) NSString *requestGuid;
 @property (nonatomic, retain) GEOABSecondPartyPlaceRequestClientMetaData *siriClientMetaData;
 @property (nonatomic, retain) NSString *sourceURL;
@@ -80,7 +80,7 @@
 - (id)parsecClientMetaData;
 - (id)rapClientMetaData;
 - (BOOL)readFrom:(id)arg1;
-- (unsigned int)refreshIntervalSeconds;
+- (unsigned long long)refreshIntervalSeconds;
 - (id)requestGuid;
 - (void)setAssignments:(id)arg1;
 - (void)setClientConfig:(id)arg1;
@@ -92,7 +92,7 @@
 - (void)setInvalidateTileCache:(BOOL)arg1;
 - (void)setParsecClientMetaData:(id)arg1;
 - (void)setRapClientMetaData:(id)arg1;
-- (void)setRefreshIntervalSeconds:(unsigned int)arg1;
+- (void)setRefreshIntervalSeconds:(unsigned long long)arg1;
 - (void)setRequestGuid:(id)arg1;
 - (void)setSiriClientMetaData:(id)arg1;
 - (void)setSourceURL:(id)arg1;

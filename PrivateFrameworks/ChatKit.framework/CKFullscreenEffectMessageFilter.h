@@ -3,21 +3,21 @@
  */
 
 @interface CKFullscreenEffectMessageFilter : NSObject {
-    double  _balloonAlpha;
+    float  _balloonAlpha;
     NSArray * _balloonBackdropFilters;
     CAFilter * _balloonCompositingFilter;
     NSArray * _balloonFilters;
-    double  _contentAlpha;
+    float  _contentAlpha;
     int  _direction;
     CAFilter * _textCompositingFilter;
     int  _type;
 }
 
-@property (nonatomic) double balloonAlpha;
+@property (nonatomic) float balloonAlpha;
 @property (nonatomic, copy) NSArray *balloonBackdropFilters;
 @property (nonatomic, copy) CAFilter *balloonCompositingFilter;
 @property (nonatomic, copy) NSArray *balloonFilters;
-@property (nonatomic) double contentAlpha;
+@property (nonatomic) float contentAlpha;
 @property (nonatomic) int direction;
 @property (nonatomic, copy) CAFilter *textCompositingFilter;
 @property (nonatomic) int type;

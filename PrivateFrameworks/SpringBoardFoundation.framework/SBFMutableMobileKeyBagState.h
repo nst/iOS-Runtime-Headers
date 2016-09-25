@@ -5,7 +5,7 @@
 @interface SBFMutableMobileKeyBagState : SBFMobileKeyBagState
 
 @property (nonatomic) double backOffTime;
-@property (nonatomic) int escrowCount;
+@property (nonatomic) long long escrowCount;
 @property (nonatomic) unsigned int failedAttemptCount;
 @property (nonatomic) int lockState;
 @property (nonatomic) BOOL permanentlyBlocked;
@@ -19,7 +19,7 @@
 - (id)init;
 - (id)initWithMKBLockStateInfo:(id)arg1;
 - (void)setBackOffTime:(double)arg1;
-- (void)setEscrowCount:(int)arg1;
+- (void)setEscrowCount:(long long)arg1;
 - (void)setFailedAttemptCount:(unsigned int)arg1;
 - (void)setLockState:(int)arg1;
 - (void)setPermanentlyBlocked:(BOOL)arg1;

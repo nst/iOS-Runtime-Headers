@@ -11,13 +11,13 @@
     NSLayoutConstraint * _expandButtonWidthConstraint;
     BOOL  _gestureActivated;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _initialLocation;
-    double  _initialTranslatingViewLeadingConstraintConstant;
+    float  _initialTranslatingViewLeadingConstraintConstant;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _lastLocation;
     unsigned int  _lastScrollDirection;
     double  _lastScrollDirectionTimestamp;
@@ -45,7 +45,7 @@
 @property (nonatomic, retain) UIButton *expandButton;
 @property (nonatomic, retain) NSLayoutConstraint *expandButtonWidthConstraint;
 @property (nonatomic) BOOL gestureActivated;
-@property (nonatomic) double initialTranslatingViewLeadingConstraintConstant;
+@property (nonatomic) float initialTranslatingViewLeadingConstraintConstant;
 @property (nonatomic) unsigned int lastScrollDirection;
 @property (nonatomic) double lastScrollDirectionTimestamp;
 @property (nonatomic) int mode;

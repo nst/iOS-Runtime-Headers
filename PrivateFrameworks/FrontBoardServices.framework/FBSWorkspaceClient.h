@@ -46,7 +46,7 @@
 - (id)initWithServiceName:(id)arg1 endpoint:(id)arg2;
 - (void)queue_connectionWasInterrupted;
 - (void)queue_handleMessage:(id)arg1;
-- (BOOL)queue_handleMessageWithType:(int)arg1 message:(id)arg2 client:(id)arg3;
+- (BOOL)queue_handleMessageWithType:(long long)arg1 message:(id)arg2 client:(id)arg3;
 - (void)registerDelegate:(id)arg1 forSceneID:(id)arg2;
 - (void)scene:(id)arg1 didAttachLayer:(id)arg2;
 - (void)scene:(id)arg1 didDetachLayer:(id)arg2;

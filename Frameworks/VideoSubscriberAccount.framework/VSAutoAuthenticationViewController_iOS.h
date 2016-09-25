@@ -33,7 +33,7 @@
 @property (nonatomic, retain) UILabel *messageLabel;
 @property (nonatomic, retain) UILabel *messageTitleLabel;
 @property (nonatomic, retain) UILabel *noticeLabel;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } preferredLogoSize;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } preferredLogoSize;
 @property (nonatomic, retain) UIScrollView *scrollView;
 @property (nonatomic, retain) UIBarButtonItem *signInButtonItem;
 @property (readonly) Class superclass;
@@ -66,7 +66,7 @@
 - (id)messageTitleLabel;
 - (id)noticeLabel;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (struct CGSize { double x1; double x2; })preferredLogoSize;
+- (struct CGSize { float x1; float x2; })preferredLogoSize;
 - (id)scrollView;
 - (void)setAccountNameLabel:(id)arg1;
 - (void)setCancelButtonItem:(id)arg1;

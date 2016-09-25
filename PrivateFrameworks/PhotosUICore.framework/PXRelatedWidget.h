@@ -11,8 +11,8 @@
         int subitem; 
     }  __anchorIndexPath;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  __anchorOffset;
     int  __availableNumberOfRows;
     BOOL  __canExpand;
@@ -45,7 +45,7 @@
 
 @property (setter=_setAnchorDataSource:, nonatomic, retain) PXRelatedDataSource *_anchorDataSource;
 @property (setter=_setAnchorIndexPath:, nonatomic) struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; } _anchorIndexPath;
-@property (setter=_setAnchorOffset:, nonatomic) struct CGPoint { double x1; double x2; } _anchorOffset;
+@property (setter=_setAnchorOffset:, nonatomic) struct CGPoint { float x1; float x2; } _anchorOffset;
 @property (setter=_setAvailableNumberOfRows:, nonatomic) int _availableNumberOfRows;
 @property (setter=_setCanExpand:, nonatomic) BOOL _canExpand;
 @property (nonatomic, readonly) PXRelatedDataSourceManager *_dataSourceManager;
@@ -87,8 +87,8 @@
 - (void).cxx_destruct;
 - (id)_anchorDataSource;
 - (struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })_anchorIndexPath;
-- (struct CGPoint { double x1; double x2; })_anchorOffset;
-- (struct CGPoint { double x1; double x2; })_anchorPointForLayoutContentBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGPoint { float x1; float x2; })_anchorOffset;
+- (struct CGPoint { float x1; float x2; })_anchorPointForLayoutContentBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (int)_availableNumberOfRows;
 - (BOOL)_canExpand;
 - (id)_createPhotosDataSourceForRelatedEntry:(id)arg1;
@@ -111,7 +111,7 @@
 - (void)_saveAnchoring;
 - (void)_setAnchorDataSource:(id)arg1;
 - (void)_setAnchorIndexPath:(struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })arg1;
-- (void)_setAnchorOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (void)_setAnchorOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_setAvailableNumberOfRows:(int)arg1;
 - (void)_setCanExpand:(BOOL)arg1;
 - (void)_setExpanded:(BOOL)arg1;
@@ -138,7 +138,7 @@
 - (id)contentTilingController;
 - (id)context;
 - (id)createTileAnimator;
-- (id)entryObjectReferenceAtPoint:(struct CGPoint { double x1; double x2; })arg1 inCoordinateSpaceWithIdentifier:(void*)arg2;
+- (id)entryObjectReferenceAtPoint:(struct CGPoint { float x1; float x2; })arg1 inCoordinateSpaceWithIdentifier:(void*)arg2;
 - (id)extendedTraitCollection;
 - (id)focusedObjectReference;
 - (BOOL)hasContentForCurrentInput;
@@ -153,11 +153,11 @@
 - (id)localizedTitle;
 - (void)observable:(id)arg1 didChange:(unsigned int)arg2 context:(void*)arg3;
 - (id)photosDataSourceForRelatedEntry:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rectOfInterestForRelatedEntry:(id)arg1 inCoordinateSpaceWithIdentifier:(void*)arg2;
-- (id)relatedEntryAtPoint:(struct CGPoint { double x1; double x2; })arg1 inCoordinateSpaceWithIdentifier:(void*)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectOfInterestForRelatedEntry:(id)arg1 inCoordinateSpaceWithIdentifier:(void*)arg2;
+- (id)relatedEntryAtPoint:(struct CGPoint { float x1; float x2; })arg1 inCoordinateSpaceWithIdentifier:(void*)arg2;
 - (id)relatedEntryForPhotosDataSource:(id)arg1;
 - (id)relatedEntryForTileIdentifier:(struct PXTileIdentifier { unsigned int x1; unsigned int x2[10]; })arg1 layout:(id)arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })relatedTilingLayout:(id)arg1 contentsRectForItemAtIndexPath:(struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })arg2 forAspectRatio:(double)arg3;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })relatedTilingLayout:(id)arg1 contentsRectForItemAtIndexPath:(struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })arg2 forAspectRatio:(double)arg3;
 - (BOOL)relatedTilingLayout:(id)arg1 isPlaceholderEntryAtIndexPath:(struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })arg2;
 - (id)relatedTilingLayout:(id)arg1 titleFontNameForEntryAtIndexPath:(struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })arg2;
 - (id)sectionedDataSourceManagerInterestingObjectReferences:(id)arg1;
@@ -165,7 +165,7 @@
 - (void)setFocusedObjectReference:(id)arg1;
 - (void)setHighlightedObjectReference:(id)arg1;
 - (void)setWidgetDelegate:(id)arg1;
-- (struct CGPoint { double x1; double x2; })tilingController:(id)arg1 initialVisibleOriginForLayout:(id)arg2;
+- (struct CGPoint { float x1; float x2; })tilingController:(id)arg1 initialVisibleOriginForLayout:(id)arg2;
 - (void)tilingController:(id)arg1 prepareForChange:(id)arg2;
 - (id)tilingController:(id)arg1 tileIdentifierConverterForChange:(id)arg2;
 - (id)tilingController:(id)arg1 transitionAnimationCoordinatorForChange:(id)arg2;

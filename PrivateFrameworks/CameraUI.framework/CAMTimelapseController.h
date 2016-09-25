@@ -73,7 +73,7 @@
 - (id)_nebulaDaemonProxyManager;
 - (void)_notifyAGGDForDidStopCapturingWithState:(id)arg1;
 - (void)_notifyInsufficientDiskSpaceForContinuingCapture;
-- (void)_notifyInsufficientDiskSpaceForStartingCaptureWithNeededBytes:(int)arg1 availableBytes:(int)arg2;
+- (void)_notifyInsufficientDiskSpaceForStartingCaptureWithNeededBytes:(long long)arg1 availableBytes:(long long)arg2;
 - (id)_pendingCompletedStates;
 - (id)_persistenceController;
 - (void)_prepareForTimelapseCaptureSetModeAndDevice:(BOOL)arg1;

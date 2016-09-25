@@ -19,7 +19,7 @@
 
 - (void)_createPlaybackContextFromCloudControllerWithSeedItem:(id)arg1 completion:(id /* block */)arg2;
 - (void)_createPlaybackContextFromMediaLibraryWithSeedItem:(id)arg1 completion:(id /* block */)arg2;
-- (void)_createPlaybackContextWithRecommendedContentWithSeedAdamID:(int)arg1 completion:(id /* block */)arg2;
+- (void)_createPlaybackContextWithRecommendedContentWithSeedAdamID:(long long)arg1 completion:(id /* block */)arg2;
 - (void)createPlaybackContextWithCompletion:(id /* block */)arg1;
 
 @end

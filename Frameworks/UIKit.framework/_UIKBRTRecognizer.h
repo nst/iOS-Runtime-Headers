@@ -7,8 +7,8 @@
     NSObject<OS_dispatch_queue> * _activeTouchesQueue;
     NSMutableSet * _averagingRules;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _clusterRestHaloSize;
     NSMutableSet * _definitiveRules;
     <_UIKBRTRecognizerDelegate> * _delegate;
@@ -17,7 +17,7 @@
     NSMutableArray * _ignoredTouches;
     NSObject<OS_dispatch_queue> * _ignoredTouchesQueue;
     BOOL  _isWaiting;
-    double  _maximumNonRestMoveDistance;
+    float  _maximumNonRestMoveDistance;
     unsigned int  _numProlongedTouches;
     NSMutableArray * _touchInfos;
     double  _touchIntervalAverage;
@@ -29,14 +29,14 @@
 @property (nonatomic, retain) NSMutableSet *activeTouches;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *activeTouchesQueue;
 @property (nonatomic, readonly) NSMutableSet *averagingRules;
-@property (nonatomic) struct CGSize { double x1; double x2; } clusterRestHaloSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } clusterRestHaloSize;
 @property (nonatomic, readonly) NSMutableSet *definitiveRules;
 @property (nonatomic) <_UIKBRTRecognizerDelegate> *delegate;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *delegateQueue;
 @property (nonatomic) BOOL disableHomeRowReturn;
 @property (nonatomic, retain) NSMutableArray *ignoredTouches;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *ignoredTouchesQueue;
-@property (nonatomic) double maximumNonRestMoveDistance;
+@property (nonatomic) float maximumNonRestMoveDistance;
 @property (nonatomic) unsigned int numProlongedTouches;
 @property (nonatomic, retain) NSMutableArray *touchInfos;
 @property (nonatomic) double touchIntervalAverage;
@@ -56,7 +56,7 @@
 - (BOOL)addedToActiveTouches:(id)arg1;
 - (id)averagingRules;
 - (void)cancelTouchOnLayoutWithTouchInfo:(id)arg1;
-- (struct CGSize { double x1; double x2; })clusterRestHaloSize;
+- (struct CGSize { float x1; float x2; })clusterRestHaloSize;
 - (id)definitiveRules;
 - (id)delegate;
 - (id)delegateQueue;
@@ -89,7 +89,7 @@
 - (void)reset;
 - (void)setActiveTouches:(id)arg1;
 - (void)setActiveTouchesQueue:(id)arg1;
-- (void)setClusterRestHaloSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setClusterRestHaloSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDelegateQueue:(id)arg1;
 - (void)setDisableHomeRowReturn:(BOOL)arg1;
@@ -97,7 +97,7 @@
 - (void)setIgnoredTouchesQueue:(id)arg1;
 - (void)setMaximumNonRestMoveDistance:(float)arg1;
 - (void)setNumProlongedTouches:(unsigned int)arg1;
-- (void)setStandardKeyPixelSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setStandardKeyPixelSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setTouchInfos:(id)arg1;
 - (void)setTouchIntervalAverage:(double)arg1;
 - (void)setTouchLogger:(id)arg1;

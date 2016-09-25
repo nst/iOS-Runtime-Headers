@@ -22,7 +22,7 @@
 @property (nonatomic) BOOL loadedFromDiskCache;
 @property (nonatomic, copy) NSString *storeFrontIdentifier;
 @property (getter=isValid, nonatomic, readonly) BOOL valid;
-@property (nonatomic, readonly) int versionIdentifier;
+@property (nonatomic, readonly) long long versionIdentifier;
 
 + (BOOL)_allowUnsignedBags;
 + (void)_loadItemKindURLBagKeyMap;
@@ -72,7 +72,7 @@
 - (id)urlForKey:(id)arg1;
 - (BOOL)urlIsTrusted:(id)arg1;
 - (id)valueForKey:(id)arg1;
-- (int)versionIdentifier;
+- (long long)versionIdentifier;
 - (BOOL)writeToFile:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
 
 @end

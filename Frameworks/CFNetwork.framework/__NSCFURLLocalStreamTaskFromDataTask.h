@@ -43,7 +43,7 @@
 - (void)connection:(id)arg1 needConnectedSocketToHost:(id)arg2 port:(unsigned int)arg3 completion:(id /* block */)arg4;
 - (void)connection:(id)arg1 request:(id)arg2 needsNewBodyStreamCallback:(id /* block */)arg3;
 - (void)connection:(id)arg1 sentBodyBytes:(id)arg2 totalBytes:(id)arg3 expectedBytes:(id)arg4;
-- (void)connection:(id)arg1 waitingWithReason:(int)arg2;
+- (void)connection:(id)arg1 waitingWithReason:(long long)arg2;
 - (void)connection:(id)arg1 wasRedirected:(id)arg2 newRequest:(id)arg3 responseCallback:(id /* block */)arg4;
 - (void)connection:(id)arg1 willCacheResponse:(id)arg2 responseCallback:(id /* block */)arg3;
 - (void)connectionWillFinishLoading:(id)arg1;

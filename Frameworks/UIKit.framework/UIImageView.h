@@ -6,10 +6,10 @@
     BOOL  __animatesContents;
     BOOL  _adjustsImageWhenAncestorFocused;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _cachedEdgeInsetsForEffects;
     BOOL  _edgeInsetsForEffectsAreValid;
     UILayoutGuide * _focusedFrameGuide;
@@ -21,10 +21,10 @@
 
 @property (setter=_setAnimatesContents:, nonatomic) BOOL _animatesContents;
 @property (setter=_setDefaultRenderingMode:, nonatomic) int _defaultRenderingMode;
-@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } _edgeInsetsForEffects;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } _edgeInsetsForEffects;
 @property (setter=_setEdgeInsetsForEffectsAreValid:, nonatomic) BOOL _edgeInsetsForEffectsAreValid;
 @property (nonatomic, readonly) _UIStackedImageContainerView *_layeredImageContainer;
-@property (setter=_setLayeredImageCornerRadius:, nonatomic) double _layeredImageCornerRadius;
+@property (setter=_setLayeredImageCornerRadius:, nonatomic) float _layeredImageCornerRadius;
 @property (setter=_setMasksTemplateImages:, nonatomic) BOOL _masksTemplateImages;
 @property (setter=_setTemplateImageRenderingEffects:, nonatomic) unsigned int _templateImageRenderingEffects;
 @property (nonatomic, readonly) BOOL _templateSettingsAreInvalid;
@@ -45,7 +45,7 @@
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (BOOL)_canReuseIOSurface:(struct __IOSurface { }*)arg1 forRenderingCIImageWithIOSurfaceProperties:(id)arg2;
-+ (id)_surfacePropertiesForRenderingCIImageWithSize:(struct CGSize { double x1; double x2; })arg1 pixelFormat:(unsigned long)arg2 bytesPerElement:(unsigned int)arg3;
++ (id)_surfacePropertiesForRenderingCIImageWithSize:(struct CGSize { float x1; float x2; })arg1 pixelFormat:(unsigned long)arg2 bytesPerElement:(unsigned int)arg3;
 
 - (void).cxx_destruct;
 - (id)_activeImage;
@@ -67,13 +67,13 @@
 - (int)_defaultRenderingMode;
 - (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
 - (BOOL)_displayImageAsLayered:(id)arg1;
-- (void)_drawImageEffectsForImage:(id)arg1 inRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_edgeInsetsForEffects;
+- (void)_drawImageEffectsForImage:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_edgeInsetsForEffects;
 - (BOOL)_edgeInsetsForEffectsAreValid;
 - (id)_effectiveTintColorWithImage:(id)arg1;
 - (id)_generateBackdropMaskImage;
 - (BOOL)_getDrawModeCompositeOperation:(int*)arg1 color:(id*)arg2 andAlpha:(float*)arg3;
-- (struct CGSize { double x1; double x2; })_intrinsicSizeWithinSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })_intrinsicSizeWithinSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_invalidateTemplateSettings;
 - (id)_layeredImageContainer;
 - (float)_layeredImageCornerRadius;
@@ -91,7 +91,7 @@
 - (void)_setLayeredImageCornerRadius:(float)arg1;
 - (void)_setMasksTemplateImages:(BOOL)arg1;
 - (void)_setTemplateImageRenderingEffects:(unsigned int)arg1;
-- (void)_setViewGeometry:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forMetric:(int)arg2;
+- (void)_setViewGeometry:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forMetric:(int)arg2;
 - (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;
 - (BOOL)_shouldDrawImage:(id)arg1;
 - (BOOL)_shouldTreatImageAsTemplate:(id)arg1;
@@ -107,15 +107,15 @@
 - (void)_updateState;
 - (void)_updateTemplateProperties;
 - (BOOL)adjustsImageWhenAncestorFocused;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })alignmentRectInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentRectInsets;
 - (double)animationDuration;
 - (id)animationImages;
 - (int)animationRepeatCount;
 - (void)dealloc;
 - (void)decodeRestorableStateWithCoder:(id)arg1;
-- (unsigned int)defaultAccessibilityTraits;
+- (unsigned long long)defaultAccessibilityTraits;
 - (int)drawMode;
-- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)focusedFrameGuide;
@@ -124,7 +124,7 @@
 - (id)image;
 - (struct CGImage { }*)imageRef;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithImage:(id)arg1;
 - (id)initWithImage:(id)arg1 highlightedImage:(id)arg2;
 - (BOOL)isAccessibilityElementByDefault;
@@ -138,17 +138,17 @@
 - (void)setAnimationImages:(id)arg1;
 - (void)setAnimationRepeatCount:(int)arg1;
 - (void)setBackgroundColor:(id)arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setCGImageRef:(struct CGImage { }*)arg1;
 - (void)setDrawMode:(int)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setHighlightedAnimationImages:(id)arg1;
 - (void)setHighlightedImage:(id)arg1;
 - (void)setImage:(id)arg1;
 - (void)setSemanticContentAttribute:(int)arg1;
 - (void)setTranslatesAutoresizingMaskIntoConstraints:(BOOL)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)startAnimating;
 - (void)stopAnimating;
 - (void)tintColorDidChange;
@@ -157,7 +157,7 @@
 
 // Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
 
-- (id)pu_extractPlayOverlayBackgroundImageFromCenter:(struct CGPoint { double x1; double x2; })arg1 asynchronously:(BOOL)arg2 handler:(id /* block */)arg3;
+- (id)pu_extractPlayOverlayBackgroundImageFromCenter:(struct CGPoint { float x1; float x2; })arg1 asynchronously:(BOOL)arg2 handler:(id /* block */)arg3;
 
 // Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
 
@@ -165,9 +165,9 @@
 
 // Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
 
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })alignmentRect;
-- (struct CGSize { double x1; double x2; })alignmentSize;
-- (void)setAlignmentRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })alignmentRect;
+- (struct CGSize { float x1; float x2; })alignmentSize;
+- (void)setAlignmentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 // Image: /System/Library/PrivateFrameworks/UserNotificationsUIKit.framework/UserNotificationsUIKit
 

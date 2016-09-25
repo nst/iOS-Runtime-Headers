@@ -64,7 +64,7 @@
 @property (nonatomic, copy) NSString *overriddenNoWiFIBTText;
 @property (nonatomic, copy) NSString *overriddenTitleText;
 @property (nonatomic) BOOL sharedItemsAvailable;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } suggestedThumbnailSize;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } suggestedThumbnailSize;
 @property (readonly) Class superclass;
 
 + (BOOL)airDropActivityCanPerformActivityWithItemClasses:(id)arg1;
@@ -73,7 +73,7 @@
 + (BOOL)isAirDropAvailable;
 
 - (void).cxx_destruct;
-- (struct CGSize { double x1; double x2; })_cachedPreferredItemSizeForString:(id)arg1;
+- (struct CGSize { float x1; float x2; })_cachedPreferredItemSizeForString:(id)arg1;
 - (void)_createiOSLayoutConstraints;
 - (void)_createtvOSLayoutConstraints;
 - (id)_tempPhotoIrisBundleFromLivePhoto:(id)arg1;
@@ -93,8 +93,8 @@
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didDeselectItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })collectionView:(id)arg1 layout:(id)arg2 insetForSectionAtIndex:(int)arg3;
-- (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 preferredSizeForItemAtIndexPath:(id)arg3;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })collectionView:(id)arg1 layout:(id)arg2 insetForSectionAtIndex:(int)arg3;
+- (struct CGSize { float x1; float x2; })collectionView:(id)arg1 layout:(id)arg2 preferredSizeForItemAtIndexPath:(id)arg3;
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
 - (BOOL)collectionView:(id)arg1 shouldSelectItemAtIndexPath:(id)arg2;
 - (BOOL)createURLPayloadForData:(id)arg1 ofType:(id)arg2 withAttachmentName:(id)arg3 description:(id)arg4 previewImage:(id)arg5 completion:(id /* block */)arg6;
@@ -138,7 +138,7 @@
 - (void)stopBrowsing;
 - (void)subscribeToProgresses;
 - (void)subscribedProgress:(id)arg1 forPersonWithRealName:(id)arg2;
-- (struct CGSize { double x1; double x2; })suggestedThumbnailSize;
+- (struct CGSize { float x1; float x2; })suggestedThumbnailSize;
 - (id)titleText;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;

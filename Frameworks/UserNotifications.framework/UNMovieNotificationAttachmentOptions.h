@@ -5,26 +5,26 @@
 @interface UNMovieNotificationAttachmentOptions : UNNotificationAttachmentOptions {
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _thumbnailClippingRect;
     BOOL  _thumbnailHidden;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _thumbnailTimestamp;
 }
 
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } thumbnailClippingRect;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } thumbnailClippingRect;
 @property (nonatomic, readonly) BOOL thumbnailHidden;
-@property (nonatomic, readonly) struct { int x1; int x2; unsigned int x3; int x4; } thumbnailTimestamp;
+@property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } thumbnailTimestamp;
 
 + (id)optionsFromOptionsDictionary:(id)arg1;
 + (BOOL)supportsSecureCoding;
@@ -33,10 +33,10 @@
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithThumbnailHidden:(BOOL)arg1 thumbnailClippingRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 thumbnailTimestamp:(struct { int x1; int x2; unsigned int x3; int x4; })arg3;
+- (id)initWithThumbnailHidden:(BOOL)arg1 thumbnailClippingRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 thumbnailTimestamp:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3;
 - (BOOL)isEqual:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })thumbnailClippingRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })thumbnailClippingRect;
 - (BOOL)thumbnailHidden;
-- (struct { int x1; int x2; unsigned int x3; int x4; })thumbnailTimestamp;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })thumbnailTimestamp;
 
 @end

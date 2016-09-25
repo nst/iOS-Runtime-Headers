@@ -6,39 +6,39 @@
     NSDictionary * _auxiliaryInfo;
     union _GLKVector3 { 
         struct { 
-            double x; 
-            double y; 
-            double z; 
+            float x; 
+            float y; 
+            float z; 
         } ; 
         struct { 
-            double r; 
-            double g; 
-            double b; 
+            float r; 
+            float g; 
+            float b; 
         } ; 
         struct { 
-            double s; 
-            double t; 
-            double p; 
+            float s; 
+            float t; 
+            float p; 
         } ; 
-        double v[3]; 
+        float v[3]; 
     }  _bubbleEndPositionsByType;
     union _GLKVector3 { 
         struct { 
-            double x; 
-            double y; 
-            double z; 
+            float x; 
+            float y; 
+            float z; 
         } ; 
         struct { 
-            double r; 
-            double g; 
-            double b; 
+            float r; 
+            float g; 
+            float b; 
         } ; 
         struct { 
-            double s; 
-            double t; 
-            double p; 
+            float s; 
+            float t; 
+            float p; 
         } ; 
-        double v[3]; 
+        float v[3]; 
     }  _bubbleStartPositionsByType;
     GKBubbleSet * _bubbles;
     BOOL  _couldUseFallbackAnimator;

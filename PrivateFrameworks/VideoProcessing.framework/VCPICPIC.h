@@ -3,7 +3,7 @@
  */
 
 @interface VCPICPIC : NSObject {
-    double * _clf;
+    float * _clf;
     struct vImage_Buffer { 
         void *data; 
         unsigned int height; 
@@ -11,7 +11,7 @@
         unsigned int rowBytes; 
     }  _crop;
     int  _cropDepth;
-    double * _desc;
+    float * _desc;
     int  _nImagesMax;
     void * _scalingBuffer;
     unsigned long  _scalingBufferSize;

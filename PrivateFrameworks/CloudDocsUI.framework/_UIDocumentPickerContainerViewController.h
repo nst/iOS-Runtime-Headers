@@ -13,7 +13,7 @@
 }
 
 @property (nonatomic, retain) UIViewController<_UIDocumentPickerContainedViewController> *childViewController;
-@property (nonatomic) struct CGPoint { double x1; double x2; } contentOffset;
+@property (nonatomic) struct CGPoint { float x1; float x2; } contentOffset;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) int explicitDisplayMode;
@@ -33,7 +33,7 @@
 - (void)_startSearchWithQueryString:(id)arg1 becomeFirstResponder:(BOOL)arg2;
 - (void)_updateTraitCollection;
 - (id)childViewController;
-- (struct CGPoint { double x1; double x2; })contentOffset;
+- (struct CGPoint { float x1; float x2; })contentOffset;
 - (void)dealloc;
 - (int)defaultDisplayMode;
 - (int)displayMode;
@@ -50,7 +50,7 @@
 - (id)serviceViewController;
 - (void)setChildViewController:(id)arg1;
 - (void)setChildViewController:(id)arg1 animated:(BOOL)arg2;
-- (void)setContentOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setDefaultDisplayMode:(int)arg1;
 - (void)setEditing:(BOOL)arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;

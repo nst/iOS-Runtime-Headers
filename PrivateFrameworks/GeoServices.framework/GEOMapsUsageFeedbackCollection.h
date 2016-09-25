@@ -22,8 +22,8 @@
     int  _sequenceNumber;
     GEOMapsServerMetadata * _serverMetadata;
     struct GEOSessionID { 
-        unsigned int _high; 
-        unsigned int _low; 
+        unsigned long long _high; 
+        unsigned long long _low; 
     }  _sessionID;
     double  _sessionRelativeTimestamp;
     int  _uiTarget;
@@ -52,12 +52,12 @@
 @property (nonatomic, retain) GEORouteDetails *routeDetails;
 @property (nonatomic) int sequenceNumber;
 @property (nonatomic, retain) GEOMapsServerMetadata *serverMetadata;
-@property (nonatomic) struct GEOSessionID { unsigned int x1; unsigned int x2; } sessionID;
+@property (nonatomic) struct GEOSessionID { unsigned long long x1; unsigned long long x2; } sessionID;
 @property (nonatomic) double sessionRelativeTimestamp;
 @property (nonatomic) int uiTarget;
 @property (nonatomic) double zoomLevel;
 
-+ (id)feedbackCollectionWithTraits:(id)arg1 flyoverAnimationID:(unsigned int)arg2 timestamp:(double)arg3 resultIndex:(int)arg4;
++ (id)feedbackCollectionWithTraits:(id)arg1 flyoverAnimationID:(unsigned long long)arg2 timestamp:(double)arg3 resultIndex:(int)arg4;
 + (id)feedbackCollectionWithTraits:(id)arg1 mapItem:(id)arg2 timestamp:(double)arg3 resultIndex:(int)arg4;
 + (id)feedbackCollectionWithTraits:(id)arg1 placeActionDetails:(id)arg2 routeDetails:(id)arg3;
 + (id)feedbackCollectionWithTraits:(id)arg1 placeActionDetails:(id)arg2 uiTarget:(int)arg3;
@@ -88,7 +88,7 @@
 - (BOOL)hasZoomLevel;
 - (unsigned int)hash;
 - (id)initWithTraits:(id)arg1;
-- (id)initWithTraits:(id)arg1 flyoverAnimationID:(unsigned int)arg2 timestamp:(double)arg3 resultIndex:(int)arg4;
+- (id)initWithTraits:(id)arg1 flyoverAnimationID:(unsigned long long)arg2 timestamp:(double)arg3 resultIndex:(int)arg4;
 - (id)initWithTraits:(id)arg1 mapItem:(id)arg2 timestamp:(double)arg3 resultIndex:(int)arg4;
 - (id)initWithTraits:(id)arg1 placeActionDetails:(id)arg2 routeDetails:(id)arg3;
 - (id)initWithTraits:(id)arg1 placeActionDetails:(id)arg2 uiTarget:(int)arg3;
@@ -103,7 +103,7 @@
 - (id)routeDetails;
 - (int)sequenceNumber;
 - (id)serverMetadata;
-- (struct GEOSessionID { unsigned int x1; unsigned int x2; })sessionID;
+- (struct GEOSessionID { unsigned long long x1; unsigned long long x2; })sessionID;
 - (double)sessionRelativeTimestamp;
 - (void)setActionType:(int)arg1;
 - (void)setCarInfo:(id)arg1;
@@ -121,7 +121,7 @@
 - (void)setRouteDetails:(id)arg1;
 - (void)setSequenceNumber:(int)arg1;
 - (void)setServerMetadata:(id)arg1;
-- (void)setSessionID:(struct GEOSessionID { unsigned int x1; unsigned int x2; })arg1;
+- (void)setSessionID:(struct GEOSessionID { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)setSessionRelativeTimestamp:(double)arg1;
 - (void)setUiTarget:(int)arg1;
 - (void)setZoomLevel:(double)arg1;

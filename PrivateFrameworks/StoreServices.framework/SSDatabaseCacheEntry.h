@@ -6,7 +6,7 @@
     SSPersistentCache * _persistentCache;
 }
 
-+ (unsigned int)_fetchPersistentID:(id)arg1 inDatabase:(id)arg2;
++ (unsigned long long)_fetchPersistentID:(id)arg1 inDatabase:(id)arg2;
 + (id)allPropertyKeys;
 + (id)databaseTable;
 

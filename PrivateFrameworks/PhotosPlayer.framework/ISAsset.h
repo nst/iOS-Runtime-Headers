@@ -13,7 +13,7 @@
 @property (nonatomic, readonly) BOOL hasColorAdjustments;
 @property (nonatomic, readonly) unsigned int options;
 @property (nonatomic, readonly) struct CGImage { }*photo;
-@property (nonatomic, readonly) struct { int x1; int x2; unsigned int x3; int x4; } photoCMTime;
+@property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } photoCMTime;
 @property (nonatomic, readonly) int photoEXIFOrientation;
 @property (nonatomic, readonly) double photoTime;
 @property (nonatomic, readonly, copy) AVAsset *videoAsset;
@@ -31,7 +31,7 @@
 - (id)initWithVideoAsset:(id)arg1 photo:(struct CGImage { }*)arg2 photoTime:(double)arg3 photoEXIFOrientation:(int)arg4 options:(unsigned int)arg5;
 - (unsigned int)options;
 - (struct CGImage { }*)photo;
-- (struct { int x1; int x2; unsigned int x3; int x4; })photoCMTime;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })photoCMTime;
 - (int)photoEXIFOrientation;
 - (double)photoTime;
 - (void)resetAVObjects;

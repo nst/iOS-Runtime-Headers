@@ -4,7 +4,7 @@
 
 @interface NSStringDrawingTextStorageSettings : NSObject {
     struct { 
-        double _hyphenationFactor; 
+        float _hyphenationFactor; 
         struct { 
             unsigned int usesFontLeading : 1; 
             unsigned int usesScreenFonts : 1; 

@@ -33,7 +33,7 @@
 - (void)noteAccountDeleted;
 - (void)presentContinuityPaymentInterfaceWithRequestIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (id)remoteDevices;
-- (void)requestInstrumentThumbnail:(id)arg1 forRemoteDevice:(id)arg2 size:(struct CGSize { double x1; double x2; })arg3 completion:(id /* block */)arg4;
+- (void)requestInstrumentThumbnail:(id)arg1 forRemoteDevice:(id)arg2 size:(struct CGSize { float x1; float x2; })arg3 completion:(id /* block */)arg4;
 - (void)sendPayment:(id)arg1 forRemotePaymentRequest:(id)arg2 completion:(id /* block */)arg3;
 - (void)sendPaymentClientUpdate:(id)arg1 forRemotePaymentRequest:(id)arg2 completion:(id /* block */)arg3;
 - (void)sendPaymentHostUpdate:(id)arg1 forRemotePaymentRequest:(id)arg2 completion:(id /* block */)arg3;

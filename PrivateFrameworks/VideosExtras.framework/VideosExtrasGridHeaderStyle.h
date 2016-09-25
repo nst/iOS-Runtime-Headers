@@ -3,41 +3,41 @@
  */
 
 @interface VideosExtrasGridHeaderStyle : NSObject {
-    double  _bottomLabelDescender;
+    float  _bottomLabelDescender;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _insets;
     BOOL  _showsImage;
     UIColor * _subtitleColor;
     NSDictionary * _subtitleDefaultFontAttributes;
-    double  _subtitleLineHeight;
+    float  _subtitleLineHeight;
     NSString * _subtitleTextStyle;
     UIColor * _titleColor;
     NSDictionary * _titleDefaultFontAttributes;
-    double  _titleLineHeight;
+    float  _titleLineHeight;
     NSString * _titleTextStyle;
 }
 
-@property (nonatomic) double bottomLabelDescender;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } insets;
+@property (nonatomic) float bottomLabelDescender;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } insets;
 @property (nonatomic) BOOL showsImage;
 @property (nonatomic, retain) UIColor *subtitleColor;
 @property (nonatomic, retain) NSDictionary *subtitleDefaultFontAttributes;
-@property (nonatomic) double subtitleLineHeight;
+@property (nonatomic) float subtitleLineHeight;
 @property (nonatomic, retain) NSString *subtitleTextStyle;
 @property (nonatomic, retain) UIColor *titleColor;
 @property (nonatomic, retain) NSDictionary *titleDefaultFontAttributes;
-@property (nonatomic) double titleLineHeight;
+@property (nonatomic) float titleLineHeight;
 @property (nonatomic, retain) NSString *titleTextStyle;
 
 - (void).cxx_destruct;
 - (float)bottomLabelDescender;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })insets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })insets;
 - (void)setBottomLabelDescender:(float)arg1;
-- (void)setInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setShowsImage:(BOOL)arg1;
 - (void)setSubtitleColor:(id)arg1;
 - (void)setSubtitleDefaultFontAttributes:(id)arg1;

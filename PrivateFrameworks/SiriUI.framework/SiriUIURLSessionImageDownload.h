@@ -8,8 +8,8 @@
     NSMutableData * _downloadedData;
     BOOL  _finished;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _fitToSize;
     BOOL  _hasSentFinished;
     struct CGImageSource { } * _imageSource;
@@ -25,6 +25,6 @@
 - (void)appendDownloadedData:(id)arg1 fromURL:(id)arg2;
 - (void)dealloc;
 - (void)finishedFromURL:(id)arg1 error:(id)arg2;
-- (id)initWithFitToSize:(struct CGSize { double x1; double x2; })arg1 progressHandler:(id /* block */)arg2 incremental:(BOOL)arg3 client:(id)arg4 fillColor:(id)arg5;
+- (id)initWithFitToSize:(struct CGSize { float x1; float x2; })arg1 progressHandler:(id /* block */)arg2 incremental:(BOOL)arg3 client:(id)arg4 fillColor:(id)arg5;
 
 @end

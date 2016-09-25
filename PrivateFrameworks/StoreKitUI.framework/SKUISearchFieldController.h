@@ -66,7 +66,7 @@
 - (BOOL)searchBarShouldBeginEditing:(id)arg1;
 - (BOOL)searchBarShouldClear:(id)arg1;
 - (id)searchControllerClientContext:(id)arg1;
-- (void)searchControllerWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)searchControllerWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (id)searchHintsURLString;
 - (void)setClientContext:(id)arg1;
 - (void)setDelegate:(id)arg1;

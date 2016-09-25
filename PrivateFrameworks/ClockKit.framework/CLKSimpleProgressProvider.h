@@ -3,10 +3,10 @@
  */
 
 @interface CLKSimpleProgressProvider : CLKProgressProvider {
-    double  _progress;
+    float  _progress;
 }
 
-@property (nonatomic) double progress;
+@property (nonatomic) float progress;
 
 + (id)simpleProgressProviderWithProgress:(float)arg1;
 + (BOOL)supportsSecureCoding;

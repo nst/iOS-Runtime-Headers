@@ -122,7 +122,7 @@
 - (BOOL)dbQueueAssetCollectionContainsCommentsFromMeAssetCollectionGUID:(id)arg1;
 - (id)dbQueueAssetCollectionGUIDsInAlbumWithGUID:(id)arg1;
 - (BOOL)dbQueueAssetCollectionMetadataWithAssetCollectionGUID:(id)arg1 key:(id)arg2 outValue:(id*)arg3;
-- (BOOL)dbQueueAssetCollectionWithGUID:(id)arg1 outObject:(id*)arg2 outCtag:(id*)arg3 outAlbumGUID:(id*)arg4 outBatchDate:(id*)arg5 outPhotoDate:(id*)arg6 outPhotoNumber:(int*)arg7 outUserInfoData:(id*)arg8;
+- (BOOL)dbQueueAssetCollectionWithGUID:(id)arg1 outObject:(id*)arg2 outCtag:(id*)arg3 outAlbumGUID:(id*)arg4 outBatchDate:(id*)arg5 outPhotoDate:(id*)arg6 outPhotoNumber:(long long*)arg7 outUserInfoData:(id*)arg8;
 - (BOOL)dbQueueCheckToClearUnviewedStateOnAlbumWithGUID:(id)arg1 info:(id)arg2;
 - (BOOL)dbQueueCheckToClearUnviewedStateOnAssetCollectionWithGUID:(id)arg1 info:(id)arg2;
 - (BOOL)dbQueueCommentWithGUID:(id)arg1 outObject:(id*)arg2 outID:(unsigned int*)arg3 outTimestamp:(id*)arg4 outAssetCollectionGUID:(id*)arg5 outIsCaption:(BOOL*)arg6 outUserInfoData:(id*)arg7;
@@ -206,7 +206,7 @@
 - (id)memberQueue;
 - (void)modifyAlbumMetadata:(id)arg1;
 - (void)modifyAlbumMetadata:(id)arg1 info:(id)arg2;
-- (id)nextCommandGroupMaxCount:(int)arg1 outCommand:(id*)arg2 outLastCommandIndex:(int*)arg3;
+- (id)nextCommandGroupMaxCount:(int)arg1 outCommand:(id*)arg2 outLastCommandIndex:(long long*)arg3;
 - (id)observers;
 - (id)pendingChanges;
 - (void)performBlockOnObservers:(id /* block */)arg1;
@@ -224,7 +224,7 @@
 - (void)releaseBusy;
 - (void)removeAccessControlEntryWithGUID:(id)arg1;
 - (void)removeAccessControlEntryWithGUID:(id)arg1 info:(id)arg2;
-- (void)removeCommandsUpToCommandIndex:(int)arg1;
+- (void)removeCommandsUpToCommandIndex:(long long)arg1;
 - (void)removeObserver:(id)arg1;
 - (void)retainBusy;
 - (void)retrieveAssets:(id)arg1 inAlbumWithGUID:(id)arg2;

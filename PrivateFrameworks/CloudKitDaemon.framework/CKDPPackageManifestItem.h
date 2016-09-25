@@ -9,7 +9,7 @@
     }  _has;
     BOOL  _lastItem;
     NSData * _signature;
-    int  _size;
+    long long  _size;
 }
 
 @property (nonatomic) BOOL hasLastItem;
@@ -17,7 +17,7 @@
 @property (nonatomic) BOOL hasSize;
 @property (nonatomic) BOOL lastItem;
 @property (nonatomic, retain) NSData *signature;
-@property (nonatomic) int size;
+@property (nonatomic) long long size;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
@@ -36,9 +36,9 @@
 - (void)setHasSize:(BOOL)arg1;
 - (void)setLastItem:(BOOL)arg1;
 - (void)setSignature:(id)arg1;
-- (void)setSize:(int)arg1;
+- (void)setSize:(long long)arg1;
 - (id)signature;
-- (int)size;
+- (long long)size;
 - (void)writeTo:(id)arg1;
 
 @end

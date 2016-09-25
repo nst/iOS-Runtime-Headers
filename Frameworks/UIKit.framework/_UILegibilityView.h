@@ -10,7 +10,7 @@
     _UILegibilitySettings * _settings;
     UIImage * _shadowImage;
     UIImageView * _shadowImageView;
-    double  _strength;
+    float  _strength;
 }
 
 @property (nonatomic) BOOL hidesImage;
@@ -20,7 +20,7 @@
 @property (nonatomic, retain) _UILegibilitySettings *settings;
 @property (nonatomic, retain) UIImage *shadowImage;
 @property (nonatomic, retain) UIImageView *shadowImageView;
-@property (nonatomic) double strength;
+@property (nonatomic) float strength;
 @property (nonatomic, readonly) int style;
 @property (nonatomic, readonly) BOOL usesColorFilters;
 
@@ -51,7 +51,7 @@
 - (id)settings;
 - (id)shadowImage;
 - (id)shadowImageView;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (float)strength;
 - (int)style;
 - (void)updateForChangedSettings:(id)arg1;

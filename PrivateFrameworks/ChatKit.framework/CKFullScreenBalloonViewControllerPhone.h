@@ -5,7 +5,7 @@
 @interface CKFullScreenBalloonViewControllerPhone : CKFullScreenBalloonViewController <CKActionSheetMenuViewDelegate, CKBalloonViewDelegate, CKStickerDetailViewControllerDelegate> {
     BOOL  _animationsDisabledForTesting;
     UIView * _balloonView;
-    double  _balloonYOffsetFromTranscript;
+    float  _balloonYOffsetFromTranscript;
     CKImpactEffectHapticsGenerator * _hapticsGenerator;
     NSArray * _interfaceActions;
     CKActionSheetMenuView * _menuView;
@@ -15,7 +15,7 @@
 
 @property (nonatomic) BOOL animationsDisabledForTesting;
 @property (nonatomic, retain) UIView *balloonView;
-@property (nonatomic) double balloonYOffsetFromTranscript;
+@property (nonatomic) float balloonYOffsetFromTranscript;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) CKImpactEffectHapticsGenerator *hapticsGenerator;

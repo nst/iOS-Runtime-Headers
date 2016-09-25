@@ -3,7 +3,7 @@
  */
 
 @interface WMCharacterRunMapper : CMMapper {
-    double  mFontSizeBumpFactor;
+    float  mFontSizeBumpFactor;
     BOOL  mIsDeleted;
     WMStyle * mStyle;
     NSString * mText;

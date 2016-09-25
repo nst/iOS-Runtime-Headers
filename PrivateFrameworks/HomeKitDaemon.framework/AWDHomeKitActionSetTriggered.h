@@ -13,7 +13,7 @@
         unsigned int triggerSource : 1; 
     }  _has;
     unsigned int  _numAccessories;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
     NSString * _transaction;
     int  _triggerSource;
 }
@@ -27,7 +27,7 @@
 @property (nonatomic, readonly) BOOL hasTransaction;
 @property (nonatomic) BOOL hasTriggerSource;
 @property (nonatomic) unsigned int numAccessories;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 @property (nonatomic, retain) NSString *transaction;
 @property (nonatomic) int triggerSource;
 
@@ -58,10 +58,10 @@
 - (void)setHasTimestamp:(BOOL)arg1;
 - (void)setHasTriggerSource:(BOOL)arg1;
 - (void)setNumAccessories:(unsigned int)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (void)setTransaction:(id)arg1;
 - (void)setTriggerSource:(int)arg1;
-- (unsigned int)timestamp;
+- (unsigned long long)timestamp;
 - (id)transaction;
 - (int)triggerSource;
 - (id)triggerSourceAsString:(int)arg1;

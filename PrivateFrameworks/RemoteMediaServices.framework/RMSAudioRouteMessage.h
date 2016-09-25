@@ -9,7 +9,7 @@
         unsigned int selected : 1; 
         unsigned int supportsVideo : 1; 
     }  _has;
-    int  _macAddress;
+    long long  _macAddress;
     BOOL  _selected;
     BOOL  _supportsVideo;
 }
@@ -19,7 +19,7 @@
 @property (nonatomic) BOOL hasMacAddress;
 @property (nonatomic) BOOL hasSelected;
 @property (nonatomic) BOOL hasSupportsVideo;
-@property (nonatomic) int macAddress;
+@property (nonatomic) long long macAddress;
 @property (nonatomic) BOOL selected;
 @property (nonatomic) BOOL supportsVideo;
 
@@ -35,7 +35,7 @@
 - (BOOL)hasSupportsVideo;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
-- (int)macAddress;
+- (long long)macAddress;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (BOOL)selected;
@@ -43,7 +43,7 @@
 - (void)setHasMacAddress:(BOOL)arg1;
 - (void)setHasSelected:(BOOL)arg1;
 - (void)setHasSupportsVideo:(BOOL)arg1;
-- (void)setMacAddress:(int)arg1;
+- (void)setMacAddress:(long long)arg1;
 - (void)setSelected:(BOOL)arg1;
 - (void)setSupportsVideo:(BOOL)arg1;
 - (BOOL)supportsVideo;

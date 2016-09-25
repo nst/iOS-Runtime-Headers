@@ -23,7 +23,7 @@
 - (void)fireCompletion:(id /* block */)arg1 error:(id)arg2;
 - (void)fireCompletion:(id /* block */)arg1 openAppErrorCode:(int)arg2;
 - (void)fireCompletion:(id /* block */)arg1 pidResult:(int)arg2 error:(id)arg3;
-- (void)handleMessage:(id)arg1 withType:(int)arg2;
+- (void)handleMessage:(id)arg1 withType:(long long)arg2;
 - (id)init;
 - (void)isPasscodeLockedOrBlockedWithCompletion:(id /* block */)arg1;
 - (void)openApplication:(id)arg1 options:(id)arg2 clientHandle:(id)arg3 withResult:(id /* block */)arg4;

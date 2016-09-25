@@ -28,7 +28,7 @@
 - (id)environment;
 - (id)gridView;
 - (id)initWithEnvironment:(id)arg1 contactStore:(id)arg2;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (void)loadView;
 - (id)newGridLayout;
 - (void)reloadData;

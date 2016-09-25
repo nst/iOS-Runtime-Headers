@@ -3,9 +3,9 @@
  */
 
 @interface OADRgbColor : OADColor {
-    double  mBlue;
-    double  mGreen;
-    double  mRed;
+    float  mBlue;
+    float  mGreen;
+    float  mRed;
 }
 
 + (id)black;

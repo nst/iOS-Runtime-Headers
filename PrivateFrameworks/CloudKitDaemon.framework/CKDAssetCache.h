@@ -45,11 +45,11 @@
 
 - (void).cxx_destruct;
 - (id)MMCS;
-- (unsigned int)_clearForced:(BOOL)arg1 group:(id)arg2;
+- (unsigned long long)_clearForced:(BOOL)arg1 group:(id)arg2;
 - (void)_deleteAssetHandlesAndUnregisterItemsForUnmountedAssetVolumesWithDB:(id)arg1;
-- (unsigned int)_evictDownloadedFilesEvictionInfo:(id)arg1;
-- (unsigned int)_evictDownloadedFilesWithDatabase:(id)arg1 evictionInfo:(id)arg2;
-- (unsigned int)_evictWithEvictionInfo:(id)arg1;
+- (unsigned long long)_evictDownloadedFilesEvictionInfo:(id)arg1;
+- (unsigned long long)_evictDownloadedFilesWithDatabase:(id)arg1 evictionInfo:(id)arg2;
+- (unsigned long long)_evictWithEvictionInfo:(id)arg1;
 - (void)_expireAssetHandlesWithExpiryDate:(id)arg1 group:(id)arg2;
 - (void)_expireAssetHandlesWithGroup:(id)arg1;
 - (id)_getAssetHandlesForCachedButNotRegisteredMMCSItems:(id)arg1 error:(id*)arg2;
@@ -64,7 +64,7 @@
 - (void)cancelExpiryTimer;
 - (void)checkAssetHandlesForRegisteredMMCSItems:(id)arg1;
 - (void)clearAssetCache;
-- (unsigned int)clearForced:(BOOL)arg1;
+- (unsigned long long)clearForced:(BOOL)arg1;
 - (id)dbPath;
 - (id)dbPool;
 - (void)dealloc;
@@ -73,7 +73,7 @@
 - (void)deferredStopTrackingAssetHandlesByItemIDs:(id)arg1;
 - (void)deferredUpdateLastTimeUsedForUUID:(id)arg1;
 - (id)deviceIDForVolumeIndex:(id)arg1;
-- (unsigned int)evictAllFilesForced:(BOOL)arg1;
+- (unsigned long long)evictAllFilesForced:(BOOL)arg1;
 - (id)existingOrNewVolumeIndexForDeviceID:(id)arg1;
 - (id)existingOrNewVolumeIndexForDeviceID:(id)arg1 usingDB:(id)arg2;
 - (id)existingOrNewVolumeIndexForVolumeUUID:(id)arg1;
@@ -83,7 +83,7 @@
 - (id)fileDownloadPath;
 - (int)fileDownloadPathFd;
 - (id)fileStagingPath;
-- (id)findAssetHandleForItemID:(unsigned int)arg1 error:(id*)arg2;
+- (id)findAssetHandleForItemID:(unsigned long long)arg1 error:(id*)arg2;
 - (void)forgetVolumeUUID:(id)arg1;
 - (BOOL)hasMigrated;
 - (BOOL)initDatabaseWithError:(id*)arg1;
@@ -92,7 +92,7 @@
 - (BOOL)isUnitTestingAccount;
 - (BOOL)parseCachedPath:(id)arg1 assetHandleUUID:(id*)arg2 assetSignature:(id*)arg3;
 - (BOOL)parseCachedPath:(id)arg1 assetHandleUUIDString:(id*)arg2 assetSignatureString:(id*)arg3;
-- (unsigned int)predictedEvictedSizeForAllFilesForced:(BOOL)arg1;
+- (unsigned long long)predictedEvictedSizeForAllFilesForced:(BOOL)arg1;
 - (id)queue;
 - (void)scheduleUnregisterItemIDsAndDeleteAssetHandlesWithEvictionInfo:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)scheduleUnregisterItemsAndDeleteUnregisteredAssetHandlesWithIDs:(id)arg1;

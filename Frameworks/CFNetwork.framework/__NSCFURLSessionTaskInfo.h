@@ -3,7 +3,7 @@
  */
 
 @interface __NSCFURLSessionTaskInfo : NSObject <NSSecureCoding> {
-    unsigned int  _AVAssetDownloadToken;
+    unsigned long long  _AVAssetDownloadToken;
     AVURLAsset * _AVURLAsset;
     NSURL * _URL;
     NSURLSessionTaskMetrics * __backgroundTaskMetrics;
@@ -11,20 +11,20 @@
     NSDictionary * __backgroundTrailers;
     NSData * _assetArtworkData;
     NSString * _assetTitle;
-    int  _basePriority;
+    long long  _basePriority;
     NSString * _bundleID;
-    int  _bytesPerSecondLimit;
-    int  _countOfBytesExpectedToReceive;
-    int  _countOfBytesExpectedToSend;
-    int  _countOfBytesReceived;
-    int  _countOfBytesSent;
+    long long  _bytesPerSecondLimit;
+    long long  _countOfBytesExpectedToReceive;
+    long long  _countOfBytesExpectedToSend;
+    long long  _countOfBytesReceived;
+    long long  _countOfBytesSent;
     double  _creationTime;
     NSURLRequest * _currentRequest;
     NSURL * _destinationURL;
     BOOL  _disablesRetry;
     BOOL  _discretionary;
     NSURL * _downloadFileURL;
-    unsigned int  _downloadTokenFromInitialization;
+    unsigned long long  _downloadTokenFromInitialization;
     NSError * _error;
     BOOL  _establishedConnection;
     BOOL  _expectingResumeCallback;
@@ -51,7 +51,7 @@
     NSString * _uniqueIdentifier;
 }
 
-@property unsigned int AVAssetDownloadToken;
+@property unsigned long long AVAssetDownloadToken;
 @property (retain) AVURLAsset *AVURLAsset;
 @property (copy) NSURL *URL;
 @property (retain) NSURLSessionTaskMetrics *_backgroundTaskMetrics;
@@ -59,20 +59,20 @@
 @property (retain) NSDictionary *_backgroundTrailers;
 @property (copy) NSData *assetArtworkData;
 @property (copy) NSString *assetTitle;
-@property int basePriority;
+@property long long basePriority;
 @property (copy) NSString *bundleID;
-@property int bytesPerSecondLimit;
-@property int countOfBytesExpectedToReceive;
-@property int countOfBytesExpectedToSend;
-@property int countOfBytesReceived;
-@property int countOfBytesSent;
+@property long long bytesPerSecondLimit;
+@property long long countOfBytesExpectedToReceive;
+@property long long countOfBytesExpectedToSend;
+@property long long countOfBytesReceived;
+@property long long countOfBytesSent;
 @property double creationTime;
 @property (copy) NSURLRequest *currentRequest;
 @property (copy) NSURL *destinationURL;
 @property BOOL disablesRetry;
 @property (getter=isDiscretionary) BOOL discretionary;
 @property (copy) NSURL *downloadFileURL;
-@property unsigned int downloadTokenFromInitialization;
+@property unsigned long long downloadTokenFromInitialization;
 @property (copy) NSError *error;
 @property BOOL establishedConnection;
 @property BOOL expectingResumeCallback;
@@ -100,7 +100,7 @@
 
 + (BOOL)supportsSecureCoding;
 
-- (unsigned int)AVAssetDownloadToken;
+- (unsigned long long)AVAssetDownloadToken;
 - (id)AVURLAsset;
 - (id)URL;
 - (id)_backgroundTaskMetrics;
@@ -108,20 +108,20 @@
 - (id)_backgroundTrailers;
 - (id)assetArtworkData;
 - (id)assetTitle;
-- (int)basePriority;
+- (long long)basePriority;
 - (id)bundleID;
-- (int)bytesPerSecondLimit;
-- (int)countOfBytesExpectedToReceive;
-- (int)countOfBytesExpectedToSend;
-- (int)countOfBytesReceived;
-- (int)countOfBytesSent;
+- (long long)bytesPerSecondLimit;
+- (long long)countOfBytesExpectedToReceive;
+- (long long)countOfBytesExpectedToSend;
+- (long long)countOfBytesReceived;
+- (long long)countOfBytesSent;
 - (double)creationTime;
 - (id)currentRequest;
 - (void)dealloc;
 - (id)destinationURL;
 - (BOOL)disablesRetry;
 - (id)downloadFileURL;
-- (unsigned int)downloadTokenFromInitialization;
+- (unsigned long long)downloadTokenFromInitialization;
 - (void)encodeWithCoder:(id)arg1;
 - (id)error;
 - (BOOL)establishedConnection;
@@ -146,24 +146,24 @@
 - (id)response;
 - (unsigned int)retryCount;
 - (id)sessionID;
-- (void)setAVAssetDownloadToken:(unsigned int)arg1;
+- (void)setAVAssetDownloadToken:(unsigned long long)arg1;
 - (void)setAVURLAsset:(id)arg1;
 - (void)setAssetArtworkData:(id)arg1;
 - (void)setAssetTitle:(id)arg1;
-- (void)setBasePriority:(int)arg1;
+- (void)setBasePriority:(long long)arg1;
 - (void)setBundleID:(id)arg1;
-- (void)setBytesPerSecondLimit:(int)arg1;
-- (void)setCountOfBytesExpectedToReceive:(int)arg1;
-- (void)setCountOfBytesExpectedToSend:(int)arg1;
-- (void)setCountOfBytesReceived:(int)arg1;
-- (void)setCountOfBytesSent:(int)arg1;
+- (void)setBytesPerSecondLimit:(long long)arg1;
+- (void)setCountOfBytesExpectedToReceive:(long long)arg1;
+- (void)setCountOfBytesExpectedToSend:(long long)arg1;
+- (void)setCountOfBytesReceived:(long long)arg1;
+- (void)setCountOfBytesSent:(long long)arg1;
 - (void)setCreationTime:(double)arg1;
 - (void)setCurrentRequest:(id)arg1;
 - (void)setDestinationURL:(id)arg1;
 - (void)setDisablesRetry:(BOOL)arg1;
 - (void)setDiscretionary:(BOOL)arg1;
 - (void)setDownloadFileURL:(id)arg1;
-- (void)setDownloadTokenFromInitialization:(unsigned int)arg1;
+- (void)setDownloadTokenFromInitialization:(unsigned long long)arg1;
 - (void)setError:(id)arg1;
 - (void)setEstablishedConnection:(BOOL)arg1;
 - (void)setExpectingResumeCallback:(BOOL)arg1;

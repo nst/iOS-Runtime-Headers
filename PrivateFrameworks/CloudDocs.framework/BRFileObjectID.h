@@ -8,7 +8,7 @@
 @property (nonatomic, readonly) NSNumber *folderID;
 @property (nonatomic, readonly) BOOL isDocumentID;
 @property (nonatomic, readonly) BOOL isFolderOrAliasID;
-@property (nonatomic, readonly) unsigned int rawID;
+@property (nonatomic, readonly) unsigned long long rawID;
 
 + (id)fileObjectIDForURL:(id)arg1 allocateDocID:(BOOL)arg2 error:(id*)arg3;
 + (BOOL)supportsSecureCoding;
@@ -23,6 +23,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToFileObjectID:(id)arg1;
 - (BOOL)isFolderOrAliasID;
-- (unsigned int)rawID;
+- (unsigned long long)rawID;
 
 @end

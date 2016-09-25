@@ -9,7 +9,7 @@
     NSURL * _outputFileURL;
     BOOL  _paused;
     BOOL  _recording;
-    int  _settingsID;
+    long long  _settingsID;
 }
 
 @property (readonly) NSArray *connections;
@@ -18,14 +18,14 @@
 @property (readonly) NSURL *outputFileURL;
 @property (getter=isPaused, nonatomic) BOOL paused;
 @property (getter=isRecording, nonatomic) BOOL recording;
-@property (readonly) int settingsID;
+@property (readonly) long long settingsID;
 
-+ (id)wrapperWithURL:(id)arg1 delegate:(id)arg2 settingsID:(int)arg3 connections:(id)arg4;
++ (id)wrapperWithURL:(id)arg1 delegate:(id)arg2 settingsID:(long long)arg3 connections:(id)arg4;
 
 - (id)connections;
 - (void)dealloc;
 - (id)delegateStorage;
-- (id)initWithURL:(id)arg1 delegate:(id)arg2 settingsID:(int)arg3 connections:(id)arg4;
+- (id)initWithURL:(id)arg1 delegate:(id)arg2 settingsID:(long long)arg3 connections:(id)arg4;
 - (BOOL)isPaused;
 - (BOOL)isRecording;
 - (id)metadata;
@@ -33,6 +33,6 @@
 - (void)setMetadata:(id)arg1;
 - (void)setPaused:(BOOL)arg1;
 - (void)setRecording:(BOOL)arg1;
-- (int)settingsID;
+- (long long)settingsID;
 
 @end

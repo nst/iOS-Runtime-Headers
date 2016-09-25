@@ -4,16 +4,16 @@
 
 @interface AVCaptureDeviceFormatInternal : NSObject {
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  defaultActiveMaxFrameDuration;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  defaultActiveMinFrameDuration;
     FigCaptureSourceFormat * sourceFormat;
     NSArray * videoSupportedFrameRateRanges;

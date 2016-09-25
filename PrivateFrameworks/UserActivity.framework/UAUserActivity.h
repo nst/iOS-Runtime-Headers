@@ -26,7 +26,7 @@
     BOOL  _forceImmediateSendToServer;
     int  _forwardToCoreSpotlightIndexerCount;
     NSMutableDictionary * _frameworkPayload;
-    int  _inWillSaveCallback;
+    long long  _inWillSaveCallback;
     BOOL  _indexInProcess;
     BOOL  _invalidated;
     NSMutableSet * _keywords;
@@ -35,7 +35,7 @@
     BOOL  _needsSave;
     NSDictionary * _options;
     NSUUID * _originalUniqueIdentifier;
-    unsigned int  _os_state_handler;
+    unsigned long long  _os_state_handler;
     NSMutableDictionary * _payloadDataCache;
     NSMutableDictionary * _payloadObjects;
     NSMutableDictionary * _payloadUpdateBlocks;
@@ -85,7 +85,7 @@
 @property BOOL needsSave;
 @property (copy) NSDictionary *options;
 @property (readonly, copy) NSUUID *originalUniqueIdentifier;
-@property (readonly) unsigned int os_state_handler;
+@property (readonly) unsigned long long os_state_handler;
 @property NSUserActivity *parentUserActivity;
 @property (retain) NSMutableDictionary *payloadDataCache;
 @property (retain) NSMutableDictionary *payloadObjects;
@@ -201,7 +201,7 @@
 - (id)objectForIdentifier:(id)arg1;
 - (id)options;
 - (id)originalUniqueIdentifier;
-- (unsigned int)os_state_handler;
+- (unsigned long long)os_state_handler;
 - (id)parentUserActivity;
 - (id)payloadDataCache;
 - (id)payloadForIdentifier:(id)arg1;

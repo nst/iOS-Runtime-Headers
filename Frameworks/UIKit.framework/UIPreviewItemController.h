@@ -11,15 +11,15 @@
     UIViewController * _presentedViewController;
     UIViewController * _presentingViewController;
     NSDictionary * _previewData;
-    double  _previewIndicatorAnimationTargetAlpha;
+    float  _previewIndicatorAnimationTargetAlpha;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _previewIndicatorBoundingRect;
     CADisplayLink * _previewIndicatorDisplayLink;
@@ -69,14 +69,14 @@
 - (id)presentingViewController;
 - (id)previewData;
 - (void)previewInteractionController:(id)arg1 didDismissViewController:(id)arg2 committing:(BOOL)arg3;
-- (void)previewInteractionController:(id)arg1 interactionProgress:(id)arg2 forRevealAtLocation:(struct CGPoint { double x1; double x2; })arg3 inSourceView:(id)arg4 containerView:(id)arg5;
+- (void)previewInteractionController:(id)arg1 interactionProgress:(id)arg2 forRevealAtLocation:(struct CGPoint { float x1; float x2; })arg3 inSourceView:(id)arg4 containerView:(id)arg5;
 - (void)previewInteractionController:(id)arg1 performCommitForPreviewViewController:(id)arg2 committedViewController:(id)arg3;
 - (void)previewInteractionController:(id)arg1 performCustomCommitForPreviewViewController:(id)arg2 completion:(id /* block */)arg3;
-- (BOOL)previewInteractionController:(id)arg1 shouldUseStandardRevealTransformForPreviewingAtLocation:(struct CGPoint { double x1; double x2; })arg2 inView:(id)arg3;
-- (id)previewInteractionController:(id)arg1 viewControllerForPreviewingAtPosition:(struct CGPoint { double x1; double x2; })arg2 inView:(id)arg3 presentingViewController:(id*)arg4;
-- (void)previewInteractionController:(id)arg1 willPresentViewController:(id)arg2 forPosition:(struct CGPoint { double x1; double x2; })arg3 inSourceView:(id)arg4;
+- (BOOL)previewInteractionController:(id)arg1 shouldUseStandardRevealTransformForPreviewingAtLocation:(struct CGPoint { float x1; float x2; })arg2 inView:(id)arg3;
+- (id)previewInteractionController:(id)arg1 viewControllerForPreviewingAtPosition:(struct CGPoint { float x1; float x2; })arg2 inView:(id)arg3 presentingViewController:(id*)arg4;
+- (void)previewInteractionController:(id)arg1 willPresentViewController:(id)arg2 forPosition:(struct CGPoint { float x1; float x2; })arg3 inSourceView:(id)arg4;
 - (BOOL)previewInteractionControllerShouldPerformCompatibilityCommitTransition:(id)arg1;
-- (id)previewViewControllerForPosition:(struct CGPoint { double x1; double x2; })arg1 inSourceView:(id)arg2 documentProperties:(id)arg3;
+- (id)previewViewControllerForPosition:(struct CGPoint { float x1; float x2; })arg1 inSourceView:(id)arg2 documentProperties:(id)arg3;
 - (void)setDelegate:(id)arg1;
 - (void)setupPreviewIndicatorInSourceView:(id)arg1;
 - (void)startInteraction;

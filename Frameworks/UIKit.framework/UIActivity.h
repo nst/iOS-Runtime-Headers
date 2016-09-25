@@ -39,7 +39,7 @@
 - (void)_setSubject:(id)arg1;
 - (id)_subjectForActivityItem:(id)arg1;
 - (id)_thumbnailImageForActivityItem:(id)arg1;
-- (struct CGSize { double x1; double x2; })_thumbnailSize;
+- (struct CGSize { float x1; float x2; })_thumbnailSize;
 - (void)_willPresentAsFormSheet;
 - (id /* block */)activityCompletionWithItemsHandler;
 - (void)activityDidFinish:(BOOL)arg1;

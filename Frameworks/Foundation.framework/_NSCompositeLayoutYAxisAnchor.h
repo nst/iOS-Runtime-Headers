@@ -3,9 +3,9 @@
  */
 
 @interface _NSCompositeLayoutYAxisAnchor : NSLayoutYAxisAnchor <NSCompositeLayoutAnchor> {
-    double  _constant;
+    float  _constant;
     NSLayoutDimension * _dimension;
-    double  _dimensionMultiplier;
+    float  _dimensionMultiplier;
     NSLayoutYAxisAnchor * _yAxisAnchor;
 }
 

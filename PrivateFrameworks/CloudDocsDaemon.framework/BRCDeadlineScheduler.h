@@ -7,15 +7,15 @@
     NSObject<OS_dispatch_source> * _delay;
     BOOL  _isCancelled;
     BOOL  _isResumed;
-    int  _lastSchedule;
-    int  _leeway;
+    long long  _lastSchedule;
+    long long  _leeway;
     BRCMinHeap * _minHeap;
     NSString * _name;
     NSObject<OS_dispatch_queue> * _queue;
     NSObject<OS_dispatch_source> * _source;
 }
 
-@property (nonatomic) int coalescingLeeway;
+@property (nonatomic) long long coalescingLeeway;
 @property (nonatomic, copy) id /* block */ computeNextAdmissibleDateForScheduling;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -25,13 +25,13 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_addSource:(id)arg1 deadline:(int)arg2;
+- (void)_addSource:(id)arg1 deadline:(long long)arg2;
 - (void)_close;
-- (BOOL)_isSleepingRequiredForDeadline:(int)arg1 now:(int)arg2;
+- (BOOL)_isSleepingRequiredForDeadline:(long long)arg1 now:(long long)arg2;
 - (void)_schedule;
 - (void)cancel;
 - (void)close;
-- (int)coalescingLeeway;
+- (long long)coalescingLeeway;
 - (id /* block */)computeNextAdmissibleDateForScheduling;
 - (void)dealloc;
 - (id)initWithName:(id)arg1;
@@ -39,7 +39,7 @@
 - (BOOL)isCancelled;
 - (id)queue;
 - (void)resume;
-- (void)setCoalescingLeeway:(int)arg1;
+- (void)setCoalescingLeeway:(long long)arg1;
 - (void)setComputeNextAdmissibleDateForScheduling:(id /* block */)arg1;
 - (void)signal;
 - (void)suspend;

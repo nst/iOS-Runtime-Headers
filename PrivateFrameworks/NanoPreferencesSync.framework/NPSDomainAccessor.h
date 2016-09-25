@@ -48,8 +48,8 @@
 - (id)internalAccessor;
 - (void)invalidate;
 - (id)invalidationQueue;
-- (int)longForKey:(id)arg1;
-- (int)longForKey:(id)arg1 keyExistsAndHasValidFormat:(BOOL*)arg2;
+- (long long)longForKey:(id)arg1;
+- (long long)longForKey:(id)arg1 keyExistsAndHasValidFormat:(BOOL*)arg2;
 - (id)objectForKey:(id)arg1;
 - (void)objectForKey:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)pairingID;

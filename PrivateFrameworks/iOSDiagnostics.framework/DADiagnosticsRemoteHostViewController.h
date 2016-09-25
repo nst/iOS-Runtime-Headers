@@ -5,12 +5,12 @@
 @interface DADiagnosticsRemoteHostViewController : _UIRemoteViewController <DADiagnosticsRemoteHost> {
     <DADiagnosticsRemoteDelegate> * _delegate;
     <DKBrightnessResponder><DKVolumeHUDResponder> * _localResponder;
-    double  _originalScreenBrightness;
+    float  _originalScreenBrightness;
 }
 
 @property (nonatomic) <DADiagnosticsRemoteDelegate> *delegate;
 @property (nonatomic, retain) <DKBrightnessResponder><DKVolumeHUDResponder> *localResponder;
-@property (nonatomic) double originalScreenBrightness;
+@property (nonatomic) float originalScreenBrightness;
 
 + (id)exportedInterface;
 + (void)requestDiagnosticsRemoteViewControllerWithConnectionHandler:(id /* block */)arg1;

@@ -4,21 +4,21 @@
 
 @interface FUUniformBarSeries : FUChartSeries {
     struct CGGradient { } * _barGradient;
-    double  _barSpacing;
-    double  _barWidth;
-    double  _fadeInPercentage;
+    float  _barSpacing;
+    float  _barWidth;
+    float  _fadeInPercentage;
     NSDate * _minDate;
     NSArray * _plotPoints;
-    double  _roundedCornerRadius;
+    float  _roundedCornerRadius;
 }
 
 @property (nonatomic) struct CGGradient { }*barGradient;
-@property (nonatomic) double barSpacing;
-@property (nonatomic) double barWidth;
-@property (nonatomic) double fadeInPercentage;
+@property (nonatomic) float barSpacing;
+@property (nonatomic) float barWidth;
+@property (nonatomic) float fadeInPercentage;
 @property (nonatomic) NSDate *minDate;
 @property (nonatomic, retain) NSArray *plotPoints;
-@property (nonatomic) double roundedCornerRadius;
+@property (nonatomic) float roundedCornerRadius;
 
 - (void).cxx_destruct;
 - (float)_getXValueForPointFromChartPoint:(id)arg1;
@@ -29,7 +29,7 @@
 - (void)dealloc;
 - (void)drawLayer:(id)arg1 inContext:(struct CGContext { }*)arg2;
 - (float)fadeInPercentage;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)minDate;
 - (id)plotPoints;

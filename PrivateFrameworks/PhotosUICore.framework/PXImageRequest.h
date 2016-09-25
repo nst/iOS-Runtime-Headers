@@ -13,8 +13,8 @@
     int  _requestID;
     BOOL  _resultIsInCloud;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _targetSize;
 }
 
@@ -27,7 +27,7 @@
 @property (nonatomic, readonly) PHImageRequestOptions *options;
 @property (nonatomic) int requestID;
 @property (nonatomic) BOOL resultIsInCloud;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } targetSize;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } targetSize;
 
 - (void).cxx_destruct;
 - (id)asset;
@@ -36,7 +36,7 @@
 - (id)error;
 - (BOOL)gotFullQualityImage;
 - (id)image;
-- (id)initWithMediaProvider:(id)arg1 asset:(id)arg2 targetSize:(struct CGSize { double x1; double x2; })arg3 options:(id)arg4;
+- (id)initWithMediaProvider:(id)arg1 asset:(id)arg2 targetSize:(struct CGSize { float x1; float x2; })arg3 options:(id)arg4;
 - (BOOL)isCanceled;
 - (id)mediaProvider;
 - (id)options;
@@ -48,6 +48,6 @@
 - (void)setImage:(id)arg1;
 - (void)setRequestID:(int)arg1;
 - (void)setResultIsInCloud:(BOOL)arg1;
-- (struct CGSize { double x1; double x2; })targetSize;
+- (struct CGSize { float x1; float x2; })targetSize;
 
 @end

@@ -3,15 +3,15 @@
  */
 
 @interface TSPDatabaseUnarchiver : TSPUnarchiver {
-    unsigned int  _databaseVersion;
+    unsigned long long  _databaseVersion;
 }
 
-@property (nonatomic, readonly) unsigned int preUFFVersion;
+@property (nonatomic, readonly) unsigned long long preUFFVersion;
 
 - (BOOL)canValidateReferences;
-- (struct set<int, std::__1::less<int>, std::__1::allocator<int> > { }*)filterIdentifiers:(const struct set<int, std::__1::less<int>, std::__1::allocator<int> > { }*)arg1;
-- (id)initWithMessageType:(unsigned int)arg1 message:(struct auto_ptr<google::protobuf::Message> { struct Message {} *x1; })arg2 identifier:(int)arg3 strongReferences:(struct auto_ptr<std::__1::unordered_map<const int, bool, TSP::IdentifierHash, std::__1::equal_to<const int>, std::__1::allocator<std::__1::pair<const int, bool> > > > { struct unordered_map<const int, bool, TSP::IdentifierHash, std::__1::equal_to<const int>, std::__1::allocator<std::__1::pair<const int, bool> > > {} *x1; })arg4 databaseVersion:(unsigned int)arg5 objectDelegate:(id)arg6 lazyReferenceDelegate:(id)arg7 delegate:(id)arg8;
-- (id)initWithMessageType:(unsigned int)arg1 message:(struct auto_ptr<google::protobuf::Message> { struct Message {} *x1; })arg2 identifier:(int)arg3 strongReferences:(struct auto_ptr<std::__1::unordered_map<const int, bool, TSP::IdentifierHash, std::__1::equal_to<const int>, std::__1::allocator<std::__1::pair<const int, bool> > > > { struct unordered_map<const int, bool, TSP::IdentifierHash, std::__1::equal_to<const int>, std::__1::allocator<std::__1::pair<const int, bool> > > {} *x1; })arg4 messageVersion:(unsigned int)arg5 unknownContent:(id)arg6 objectDelegate:(id)arg7 lazyReferenceDelegate:(id)arg8 delegate:(id)arg9;
-- (unsigned int)preUFFVersion;
+- (struct set<long long, std::__1::less<long long>, std::__1::allocator<long long> > { }*)filterIdentifiers:(const struct set<long long, std::__1::less<long long>, std::__1::allocator<long long> > { }*)arg1;
+- (id)initWithMessageType:(unsigned int)arg1 message:(struct auto_ptr<google::protobuf::Message> { struct Message {} *x1; })arg2 identifier:(long long)arg3 strongReferences:(struct auto_ptr<std::__1::unordered_map<const long long, bool, TSP::IdentifierHash, std::__1::equal_to<const long long>, std::__1::allocator<std::__1::pair<const long long, bool> > > > { struct unordered_map<const long long, bool, TSP::IdentifierHash, std::__1::equal_to<const long long>, std::__1::allocator<std::__1::pair<const long long, bool> > > {} *x1; })arg4 databaseVersion:(unsigned long long)arg5 objectDelegate:(id)arg6 lazyReferenceDelegate:(id)arg7 delegate:(id)arg8;
+- (id)initWithMessageType:(unsigned int)arg1 message:(struct auto_ptr<google::protobuf::Message> { struct Message {} *x1; })arg2 identifier:(long long)arg3 strongReferences:(struct auto_ptr<std::__1::unordered_map<const long long, bool, TSP::IdentifierHash, std::__1::equal_to<const long long>, std::__1::allocator<std::__1::pair<const long long, bool> > > > { struct unordered_map<const long long, bool, TSP::IdentifierHash, std::__1::equal_to<const long long>, std::__1::allocator<std::__1::pair<const long long, bool> > > {} *x1; })arg4 messageVersion:(unsigned long long)arg5 unknownContent:(id)arg6 objectDelegate:(id)arg7 lazyReferenceDelegate:(id)arg8 delegate:(id)arg9;
+- (unsigned long long)preUFFVersion;
 
 @end

@@ -10,7 +10,7 @@
     NSURL * _keyServerURL;
     double  _playbackDuration;
     BOOL  _shouldUseITunesStoreSecureKeyDelivery;
-    int  _storeItemIdentifier;
+    long long  _storeItemIdentifier;
 }
 
 @property (getter=isITunesStream, nonatomic, readonly) BOOL ITunesStream;
@@ -20,7 +20,7 @@
 @property (nonatomic, readonly, retain) NSURL *keyServerURL;
 @property (nonatomic) double playbackDuration;
 @property (nonatomic) BOOL shouldUseITunesStoreSecureKeyDelivery;
-@property (nonatomic) int storeItemIdentifier;
+@property (nonatomic) long long storeItemIdentifier;
 
 - (void).cxx_destruct;
 - (id)contentURL;
@@ -37,8 +37,8 @@
 - (void)setInitialPlaybackTime:(double)arg1;
 - (void)setPlaybackDuration:(double)arg1;
 - (void)setShouldUseITunesStoreSecureKeyDelivery:(BOOL)arg1;
-- (void)setStoreItemIdentifier:(int)arg1;
+- (void)setStoreItemIdentifier:(long long)arg1;
 - (BOOL)shouldUseITunesStoreSecureKeyDelivery;
-- (int)storeItemIdentifier;
+- (long long)storeItemIdentifier;
 
 @end

@@ -4,7 +4,7 @@
 
 @interface WGShortLookStyleButton : UIControl {
     UIView * _backgroundView;
-    double  _dimension;
+    float  _dimension;
     NCLookViewFontProvider * _fontProvider;
     UILabel * _titleLabel;
 }
@@ -26,7 +26,7 @@
 - (void)layoutSubviews;
 - (void)setBackgroundView:(id)arg1;
 - (void)setTitle:(id)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)title;
 - (void)traitCollectionDidChange:(id)arg1;
 

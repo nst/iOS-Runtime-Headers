@@ -19,7 +19,7 @@
     double  _startTime;
     NSString * _title;
     int  _type;
-    int  _uID;
+    long long  _uID;
     int  _vertexCount;
     int  _vertexOffset;
 }
@@ -41,7 +41,7 @@
 @property (nonatomic) double startTime;
 @property (nonatomic, retain) NSString *title;
 @property (nonatomic) int type;
-@property (nonatomic) int uID;
+@property (nonatomic) long long uID;
 @property (nonatomic) int vertexCount;
 @property (nonatomic) int vertexOffset;
 
@@ -83,14 +83,14 @@
 - (void)setStartTime:(double)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setType:(int)arg1;
-- (void)setUID:(int)arg1;
+- (void)setUID:(long long)arg1;
 - (void)setVertexCount:(int)arg1;
 - (void)setVertexOffset:(int)arg1;
 - (double)startTime;
 - (id)title;
 - (int)type;
 - (id)typeAsString:(int)arg1;
-- (int)uID;
+- (long long)uID;
 - (int)vertexCount;
 - (int)vertexOffset;
 - (void)writeTo:(id)arg1;

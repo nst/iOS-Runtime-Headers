@@ -3,7 +3,7 @@
  */
 
 @interface PLPhotoDCIMDirectory : NSObject {
-    struct flock { int x1; int x2; int x3; short x4; short x5; } * _dcimDirectoryLock;
+    struct flock { long long x1; long long x2; int x3; short x4; short x5; } * _dcimDirectoryLock;
     int  _dcimDirectoryLockDescriptor;
     NSString * _dcimPath;
     int  _lastUsedDirectoryNumber;

@@ -3,8 +3,8 @@
  */
 
 @interface NSGenerationToken : NSObject <NSSecureCoding> {
-    int  _generation;
-    int  _origin;
+    long long  _generation;
+    long long  _origin;
     NSString * _storeIdentifier;
 }
 
@@ -13,13 +13,13 @@
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (int)generation;
-- (id)initForStore:(id)arg1 origin:(int)arg2 generation:(int)arg3;
+- (long long)generation;
+- (id)initForStore:(id)arg1 origin:(long long)arg2 generation:(long long)arg3;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithStoreIdentifier:(id)arg1 origin:(int)arg2 generation:(int)arg3;
+- (id)initWithStoreIdentifier:(id)arg1 origin:(long long)arg2 generation:(long long)arg3;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isReferencingStore:(id)arg1;
-- (int)origin;
+- (long long)origin;
 - (id)storeIdentifier;
 
 @end

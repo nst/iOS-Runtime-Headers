@@ -27,7 +27,7 @@
     unsigned int  _sleepDurMs;
     unsigned int  _sleepEntryCount;
     unsigned int  _tdscdmaActiveDurMs;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
     unsigned int  _wcdmaActiveDurMs;
 }
 
@@ -53,7 +53,7 @@
 @property (nonatomic) unsigned int sleepDurMs;
 @property (nonatomic) unsigned int sleepEntryCount;
 @property (nonatomic) unsigned int tdscdmaActiveDurMs;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 @property (nonatomic) unsigned int wcdmaActiveDurMs;
 
 - (unsigned int)activeDurMs;
@@ -105,12 +105,12 @@
 - (void)setSleepDurMs:(unsigned int)arg1;
 - (void)setSleepEntryCount:(unsigned int)arg1;
 - (void)setTdscdmaActiveDurMs:(unsigned int)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (void)setWcdmaActiveDurMs:(unsigned int)arg1;
 - (unsigned int)sleepDurMs;
 - (unsigned int)sleepEntryCount;
 - (unsigned int)tdscdmaActiveDurMs;
-- (unsigned int)timestamp;
+- (unsigned long long)timestamp;
 - (unsigned int)wcdmaActiveDurMs;
 - (void)writeTo:(id)arg1;
 

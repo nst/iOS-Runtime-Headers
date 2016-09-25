@@ -20,10 +20,10 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (struct _VMURange { unsigned int x1; unsigned int x2; })rangeContainingAddress:(unsigned int)arg1;
-- (void)setString:(id)arg1 forRange:(struct _VMURange { unsigned int x1; unsigned int x2; })arg2;
+- (struct _VMURange { unsigned long long x1; unsigned long long x2; })rangeContainingAddress:(unsigned long long)arg1;
+- (void)setString:(id)arg1 forRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg2;
 - (void)sort;
-- (id)stringForAddress:(unsigned int)arg1;
+- (id)stringForAddress:(unsigned long long)arg1;
 - (unsigned int)uniquedStringCount;
 
 @end

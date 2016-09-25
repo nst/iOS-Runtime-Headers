@@ -46,7 +46,7 @@
     BOOL  _isUnlinkingPerson;
     ABMultiCellContentView * _lastActiveMultiCellContentView;
     NSIndexPath * _lastActiveMultiCellIndexPath;
-    double  _lastReturnedHeaderHeight;
+    float  _lastReturnedHeaderHeight;
     ABPersonTableViewLinkingDelegate * _linkingDelegate;
     ABLabelViewWithVariablePositioning * _linkingHeaderView;
     ABPersonTableViewMultiCellDelegate * _multiCellContentViewDelegate;
@@ -315,7 +315,7 @@
 - (id)sectionAnimationsDictionaryForSwipeToDeleteAtIndexPath:(id)arg1;
 - (int)sectionIndexForProperty:(int)arg1 propertyGroupContext:(void*)arg2 withPropertyGroups:(id)arg3 whenEditing:(BOOL)arg4;
 - (int)sectionIndexForPropertyGroup:(id)arg1 withPropertyGroups:(id)arg2 whenEditing:(BOOL)arg3;
-- (void)selectCustomPartWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 occupiedCorners:(unsigned int)arg2 forCell:(id)arg3;
+- (void)selectCustomPartWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 occupiedCorners:(unsigned int)arg2 forCell:(id)arg3;
 - (void)selectLabelPartForCell:(id)arg1;
 - (void)selectValuePartForCell:(id)arg1;
 - (void)selectWholePartForCell:(id)arg1;

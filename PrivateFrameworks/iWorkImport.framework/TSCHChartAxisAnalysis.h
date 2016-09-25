@@ -13,7 +13,7 @@
     double  _modelMax;
     double  _modelMedian;
     double  _modelMin;
-    int  _retainCount;
+    long long  _retainCount;
     NSArray * _totals;
 }
 

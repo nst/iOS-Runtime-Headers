@@ -4,17 +4,17 @@
 
 @interface CMTimeAsValue : NSValue {
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _time;
 }
 
 + (BOOL)supportsSecureCoding;
-+ (id)valueWithCMTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
++ (id)valueWithCMTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 
-- (struct { int x1; int x2; unsigned int x3; int x4; })CMTimeValue;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })CMTimeValue;
 - (BOOL)boolValue;
 - (BOOL)charValue;
 - (Class)classForCoder;
@@ -29,14 +29,14 @@
 - (int)intValue;
 - (int)integerValue;
 - (BOOL)isEqualToValue:(id)arg1;
-- (int)longLongValue;
+- (long long)longLongValue;
 - (long)longValue;
 - (const char *)objCType;
 - (short)shortValue;
 - (unsigned char)unsignedCharValue;
 - (unsigned int)unsignedIntValue;
 - (unsigned int)unsignedIntegerValue;
-- (unsigned int)unsignedLongLongValue;
+- (unsigned long long)unsignedLongLongValue;
 - (unsigned long)unsignedLongValue;
 - (unsigned short)unsignedShortValue;
 

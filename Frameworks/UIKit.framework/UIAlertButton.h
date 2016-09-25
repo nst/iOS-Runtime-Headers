@@ -4,13 +4,13 @@
 
 @interface UIAlertButton : UIButton {
     UIImageView * _highlightView;
-    double  _imageOffset;
+    float  _imageOffset;
     BOOL  _isNewStyle;
 }
 
 @property (nonatomic, retain) UIImage *highlightImage;
 @property (readonly) UIImageView *highlightView;
-@property (nonatomic) double imageOffset;
+@property (nonatomic) float imageOffset;
 @property (nonatomic) BOOL isNewStyle;
 
 - (void)_transitionHighlightViewToHighlighted:(BOOL)arg1;

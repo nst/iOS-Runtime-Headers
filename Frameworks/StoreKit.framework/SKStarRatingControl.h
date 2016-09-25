@@ -7,41 +7,41 @@
     UILabel * _explanationLabel;
     UIImageView * _foregroundImageView;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _hitPadding;
-    double  _starWidth;
+    float  _starWidth;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _trackingLastPoint;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _trackingStartPoint;
-    double  _value;
+    float  _value;
 }
 
 @property (nonatomic, copy) NSString *explanationText;
-@property (nonatomic) double starWidth;
-@property (nonatomic) double value;
+@property (nonatomic) float starWidth;
+@property (nonatomic) float value;
 
 - (BOOL)_alwaysHandleScrollerMouseEvent;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_foregroundImageClipBounds;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_foregroundImageClipBounds;
 - (id)_newExplanationLabel;
-- (void)_updateValueForPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)_updateValueForPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (BOOL)canHandleSwipes;
 - (BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)dealloc;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (id)explanationText;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })hitRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })hitRect;
 - (id)initWithBackgroundImage:(id)arg1 foregroundImage:(id)arg2;
 - (void)layoutSubviews;
-- (BOOL)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)setExplanationText:(id)arg1;
-- (void)setHitPadding:(struct CGSize { double x1; double x2; })arg1;
+- (void)setHitPadding:(struct CGSize { float x1; float x2; })arg1;
 - (void)setStarWidth:(float)arg1;
 - (void)setValue:(float)arg1;
 - (void)sizeToFit;

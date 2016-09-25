@@ -3,28 +3,28 @@
  */
 
 @interface MusicTermsUpdateOperation : SSVComplexOperation {
-    unsigned int  _acceptedStoreTermsVersion;
+    unsigned long long  _acceptedStoreTermsVersion;
     NSError * _error;
     BOOL  _hasAcceptedLatestTerms;
-    unsigned int  _latestStoreTermsVersion;
+    unsigned long long  _latestStoreTermsVersion;
     NSString * _termsContentText;
     NSString * _termsContext;
 }
 
-@property (nonatomic, readonly) unsigned int acceptedStoreTermsVersion;
+@property (nonatomic, readonly) unsigned long long acceptedStoreTermsVersion;
 @property (nonatomic, readonly) BOOL hasAcceptedLatestTerms;
-@property (nonatomic, readonly) unsigned int latestStoreTermsVersion;
+@property (nonatomic, readonly) unsigned long long latestStoreTermsVersion;
 @property (nonatomic, readonly, copy) NSString *termsContentText;
 @property (nonatomic, readonly, copy) NSString *termsContext;
 
 - (void).cxx_destruct;
 - (BOOL)_authenticateReturningError:(id*)arg1;
-- (BOOL)_runRequestWithTermsCheckURL:(id)arg1 allowingAuthentication:(BOOL)arg2 returningError:(id*)arg3 termsContentText:(id*)arg4 hasAcceptedLatestTerms:(BOOL*)arg5 latestStoreTermsVersion:(unsigned int*)arg6;
-- (unsigned int)acceptedStoreTermsVersion;
+- (BOOL)_runRequestWithTermsCheckURL:(id)arg1 allowingAuthentication:(BOOL)arg2 returningError:(id*)arg3 termsContentText:(id*)arg4 hasAcceptedLatestTerms:(BOOL*)arg5 latestStoreTermsVersion:(unsigned long long*)arg6;
+- (unsigned long long)acceptedStoreTermsVersion;
 - (id)error;
 - (BOOL)hasAcceptedLatestTerms;
-- (id)initWithAcceptedStoreTermsVersion:(unsigned int)arg1 termsContext:(id)arg2;
-- (unsigned int)latestStoreTermsVersion;
+- (id)initWithAcceptedStoreTermsVersion:(unsigned long long)arg1 termsContext:(id)arg2;
+- (unsigned long long)latestStoreTermsVersion;
 - (void)main;
 - (id)termsContentText;
 - (id)termsContext;

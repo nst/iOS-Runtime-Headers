@@ -10,7 +10,7 @@
 @property (nonatomic, copy) CLKImageProvider *line1ImageProvider;
 @property (nonatomic, copy) CLKTextProvider *line2TextProvider;
 
-+ (struct CGSize { double x1; double x2; })_imageSize;
++ (struct CGSize { float x1; float x2; })_imageSize;
 
 - (void).cxx_destruct;
 - (void)_enumerateImageProviderKeysWithBlock:(id /* block */)arg1;

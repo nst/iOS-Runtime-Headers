@@ -15,8 +15,8 @@
         void *m_ptr; 
     }  _imagePicker;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _interactionPoint;
     struct RefPtr<WebKit::WebOpenPanelResultListenerProxy> { 
         struct WebOpenPanelResultListenerProxy {} *m_ptr; 
@@ -75,7 +75,7 @@
 - (void)imagePickerControllerDidCancel:(id)arg1;
 - (id)initWithView:(id)arg1;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
-- (void)presentWithParameters:(struct OpenPanelParameters { int (**x1)(); id x2; /* Warning: Unrecognized filer type: 'F' using 'void*' */ void*x3; int x4; long x5; void*x6; unsigned char x7; void*x8; out out short x9; void*x10; const unsigned short x11; void*x12; void*x13; void*x14; int x15; in void*x16; short x17; void*x18; bool x19; struct Vector<WTF::String, 0, WTF::CrashOnOverflow, 16> { struct String {} *x_20_1_1; unsigned int x_20_1_2; unsigned int x_20_1_3; } x20; struct Vector<WTF::String, 0, WTF::CrashOnOverflow, 16> { struct String {} *x_21_1_1; unsigned int x_21_1_2; unsigned int x_21_1_3; } x21; struct Vector<WTF::String, 0, WTF::CrashOnOverflow, 16> { struct String {} *x_22_1_1; unsigned int x_22_1_2; unsigned int x_22_1_3; } x22; }*)arg1 resultListener:(struct WebOpenPanelResultListenerProxy { int (**x1)(); id x2; /* Warning: Unrecognized filer type: 'R' using 'void*' */ void*x3; void*x4; double x5; void*x6; void*x7; const void*x8; void*x9; void*x10; unsigned int x11/* : ? */; void*x12; int x13; void*x14; SEL x15; SEL x16; void*x17; void*x18; unsigned int x19/* : ? */; void*x20; void*x21; void*x22; void*x23; void*x24; const out void*x25; void*x26; void*x27; void*x28; struct WebPageProxy {} *x29; }*)arg2;
+- (void)presentWithParameters:(struct OpenPanelParameters { int (**x1)(); id x2; /* Warning: Unrecognized filer type: 'F' using 'void*' */ void*x3; int x4; long x5; void*x6; unsigned char x7; void*x8; out out short x9; void*x10; const unsigned short x11; void*x12; void*x13; void*x14; int x15; in void*x16; short x17; void*x18; bool x19; struct Vector<WTF::String, 0, WTF::CrashOnOverflow, 16> { struct String {} *x_20_1_1; unsigned int x_20_1_2; unsigned int x_20_1_3; } x20; struct Vector<WTF::String, 0, WTF::CrashOnOverflow, 16> { struct String {} *x_21_1_1; unsigned int x_21_1_2; unsigned int x_21_1_3; } x21; struct Vector<WTF::String, 0, WTF::CrashOnOverflow, 16> { struct String {} *x_22_1_1; unsigned int x_22_1_2; unsigned int x_22_1_3; } x22; }*)arg1 resultListener:(struct WebOpenPanelResultListenerProxy { int (**x1)(); id x2; /* Warning: Unrecognized filer type: 'R' using 'void*' */ void*x3; void*x4; float x5; void*x6; void*x7; const void*x8; void*x9; void*x10; unsigned int x11/* : ? */; void*x12; int x13; void*x14; SEL x15; SEL x16; void*x17; void*x18; unsigned int x19/* : ? */; void*x20; void*x21; void*x22; void*x23; void*x24; const out void*x25; void*x26; void*x27; void*x28; struct WebPageProxy {} *x29; }*)arg2;
 - (void)setDelegate:(id)arg1;
 
 @end

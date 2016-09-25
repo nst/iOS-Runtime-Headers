@@ -4,7 +4,7 @@
 
 @interface OADGlowEffect : OADEffect {
     OADColor * mColor;
-    double  mRadius;
+    float  mRadius;
 }
 
 - (id)color;

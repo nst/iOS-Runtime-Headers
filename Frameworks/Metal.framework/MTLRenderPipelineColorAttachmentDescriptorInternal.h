@@ -19,13 +19,13 @@
                 unsigned int pixelFormat : 28; 
             } ; 
             struct { 
-                unsigned int bits; 
+                unsigned long long bits; 
             } ; 
         } ; 
     }  _private;
 }
 
-- (const struct MTLRenderPipelineAttachmentDescriptorPrivate { union { struct { unsigned int x_1_2_1 : 1; unsigned int x_1_2_2 : 3; unsigned int x_1_2_3 : 3; unsigned int x_1_2_4 : 5; unsigned int x_1_2_5 : 5; unsigned int x_1_2_6 : 5; unsigned int x_1_2_7 : 5; unsigned int x_1_2_8 : 4; unsigned int x_1_2_9 : 1; unsigned int x_1_2_10 : 4; unsigned int x_1_2_11 : 28; } x_1_1_1; struct { unsigned int x_2_2_1; } x_1_1_2; } x1; }*)_descriptorPrivate;
+- (const struct MTLRenderPipelineAttachmentDescriptorPrivate { union { struct { unsigned int x_1_2_1 : 1; unsigned int x_1_2_2 : 3; unsigned int x_1_2_3 : 3; unsigned int x_1_2_4 : 5; unsigned int x_1_2_5 : 5; unsigned int x_1_2_6 : 5; unsigned int x_1_2_7 : 5; unsigned int x_1_2_8 : 4; unsigned int x_1_2_9 : 1; unsigned int x_1_2_10 : 4; unsigned int x_1_2_11 : 28; } x_1_1_1; struct { unsigned long long x_2_2_1; } x_1_1_2; } x1; }*)_descriptorPrivate;
 - (unsigned int)alphaBlendOperation;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

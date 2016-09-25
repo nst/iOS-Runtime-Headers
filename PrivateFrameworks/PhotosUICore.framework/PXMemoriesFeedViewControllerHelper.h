@@ -15,8 +15,8 @@
     PXSectionedObjectReference * _actionPresentationMemoryReference;
     PXSectionedObjectReference * _activatedMemoryReference;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _anchorMemoryOrigin;
     PXSectionedObjectReference * _anchorMemoryReference;
     PXMemoriesFeedDataSourceManager * _dataSourceManager;
@@ -51,7 +51,7 @@
 @property (nonatomic, readonly) PXMemoriesFeedTransitionAnimationCoordinator *_transitionAnimationCoordinator;
 @property (nonatomic, retain) PXSectionedObjectReference *actionPresentationMemoryReference;
 @property (nonatomic, retain) PXSectionedObjectReference *activatedMemoryReference;
-@property (setter=_setAnchorMemoryOrigin:, nonatomic) struct CGPoint { double x1; double x2; } anchorMemoryOrigin;
+@property (setter=_setAnchorMemoryOrigin:, nonatomic) struct CGPoint { float x1; float x2; } anchorMemoryOrigin;
 @property (setter=_setAnchorMemoryReference:, nonatomic, retain) PXSectionedObjectReference *anchorMemoryReference;
 @property (nonatomic, readonly) PXMemoriesFeedTilingLayout *currentLayout;
 @property (nonatomic, readonly) PXMemoriesFeedDataSourceManager *dataSourceManager;
@@ -92,7 +92,7 @@
 - (int)_refreshRetryCount;
 - (id)_scrollFilter;
 - (void)_scrollMemoryReferenceToVisible:(id)arg1 animated:(BOOL)arg2;
-- (void)_setAnchorMemoryOrigin:(struct CGPoint { double x1; double x2; })arg1;
+- (void)_setAnchorMemoryOrigin:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_setAnchorMemoryReference:(id)arg1;
 - (void)_setLastUserMemoryGenerationRequestDate:(id)arg1;
 - (void)_setMemoryReferenceToScrollToVisible:(id)arg1;
@@ -111,7 +111,7 @@
 - (void)_updateSelectedIndexPathsInLayout:(id)arg1;
 - (id)actionPresentationMemoryReference;
 - (id)activatedMemoryReference;
-- (struct CGPoint { double x1; double x2; })anchorMemoryOrigin;
+- (struct CGPoint { float x1; float x2; })anchorMemoryOrigin;
 - (id)anchorMemoryReference;
 - (BOOL)canRequestNewMemories;
 - (BOOL)canRequestNewMemoriesForReason:(unsigned int)arg1;
@@ -122,18 +122,18 @@
 - (void)feedViewControllerDidAppear;
 - (void)feedViewControllerWillLayoutSubviews;
 - (id)highlightedMemoryReference;
-- (struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })indexPathForMemoryInScrollViewAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })indexPathForMemoryInScrollViewAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })indexPathForMemoryObjectReference:(id)arg1;
 - (id)initWithScrollViewController:(id)arg1 photoLibrary:(id)arg2 traitCollection:(id)arg3 tilingControllerConfigurationBlock:(id /* block */)arg4;
 - (void)invalidateMetrics;
 - (void)layoutEngine:(id)arg1 willGenerateLayoutWithGenerator:(id)arg2 forSection:(unsigned int)arg3;
 - (void)layoutEngineDidUpdateLayoutSnapshot:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })memoriesFeedTilingLayout:(id)arg1 contentsRectForItemAtIndexPath:(struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })arg2 forAspectRatio:(float)arg3;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })memoriesFeedTilingLayout:(id)arg1 contentsRectForItemAtIndexPath:(struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })arg2 forAspectRatio:(float)arg3;
 - (id)memoriesFeedTilingLayout:(id)arg1 titleFontNameForItemAtIndexPath:(struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })arg2;
 - (id)memoryInfoAtIndexPath:(struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })arg1;
 - (id)memoryInfoForMemoryObjectReference:(id)arg1;
-- (id)memoryInfoInScrollViewAtPoint:(struct CGPoint { double x1; double x2; })arg1;
-- (id)memoryObjectReferenceInScrollViewAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (id)memoryInfoInScrollViewAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (id)memoryObjectReferenceInScrollViewAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)mutableChangeObject;
 - (void)observable:(id)arg1 didChange:(unsigned int)arg2 context:(void*)arg3;
 - (id)photoLibrary;
@@ -152,9 +152,9 @@
 - (id)specManager;
 - (id)targetLayout;
 - (id)tilingController;
-- (struct CGPoint { double x1; double x2; })tilingController:(id)arg1 initialVisibleOriginForLayout:(id)arg2;
+- (struct CGPoint { float x1; float x2; })tilingController:(id)arg1 initialVisibleOriginForLayout:(id)arg2;
 - (void)tilingController:(id)arg1 prepareForChange:(id)arg2;
-- (struct CGPoint { double x1; double x2; })tilingController:(id)arg1 targetVisibleOriginForLayout:(id)arg2 proposedVisibleOrigin:(struct CGPoint { double x1; double x2; })arg3;
+- (struct CGPoint { float x1; float x2; })tilingController:(id)arg1 targetVisibleOriginForLayout:(id)arg2 proposedVisibleOrigin:(struct CGPoint { float x1; float x2; })arg3;
 - (id)tilingController:(id)arg1 tileIdentifierConverterForChange:(id)arg2;
 - (id)tilingController:(id)arg1 transitionAnimationCoordinatorForChange:(id)arg2;
 - (id)traitCollection;

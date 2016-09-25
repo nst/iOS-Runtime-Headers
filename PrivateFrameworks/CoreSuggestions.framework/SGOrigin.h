@@ -72,7 +72,7 @@
 
 + (id)originForDuplicateKey:(id)arg1 entity:(id)arg2 parent:(id)arg3;
 + (id)originForDuplicateKey:(id)arg1 sourceKey:(id)arg2 store:(id)arg3;
-+ (unsigned int)originTypeForEntityType:(int)arg1;
++ (unsigned int)originTypeForEntityType:(long long)arg1;
 
 - (void)addDetailsFromOriginatingCalendarEntity:(id)arg1;
 - (void)addDetailsFromOriginatingContactEntity:(id)arg1;

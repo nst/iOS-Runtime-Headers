@@ -10,7 +10,7 @@
         unsigned int stopIndex : 1; 
     }  _has;
     GEOLatLng * _latLng;
-    unsigned int  _muid;
+    unsigned long long  _muid;
     NSString * _nameDisplayString;
     unsigned int  _stopIndex;
     GEOStyleAttributes * _styleAttributes;
@@ -30,7 +30,7 @@
 @property (nonatomic, readonly) BOOL hasTimezone;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) GEOLatLng *latLng;
-@property (nonatomic) unsigned int muid;
+@property (nonatomic) unsigned long long muid;
 @property (nonatomic, retain) NSString *nameDisplayString;
 @property (nonatomic) unsigned int stopIndex;
 @property (nonatomic, retain) GEOStyleAttributes *styleAttributes;
@@ -61,7 +61,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)latLng;
 - (void)mergeFrom:(id)arg1;
-- (unsigned int)muid;
+- (unsigned long long)muid;
 - (id)nameDisplayString;
 - (BOOL)readFrom:(id)arg1;
 - (void)setHallIndex:(unsigned int)arg1;
@@ -69,7 +69,7 @@
 - (void)setHasMuid:(BOOL)arg1;
 - (void)setHasStopIndex:(BOOL)arg1;
 - (void)setLatLng:(id)arg1;
-- (void)setMuid:(unsigned int)arg1;
+- (void)setMuid:(unsigned long long)arg1;
 - (void)setNameDisplayString:(id)arg1;
 - (void)setStopIndex:(unsigned int)arg1;
 - (void)setStyleAttributes:(id)arg1;

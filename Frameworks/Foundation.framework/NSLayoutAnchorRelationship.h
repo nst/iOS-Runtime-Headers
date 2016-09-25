@@ -3,23 +3,23 @@
  */
 
 @interface NSLayoutAnchorRelationship : NSObject <NSLayoutRelationship> {
-    double  _constant;
+    float  _constant;
     NSLayoutAnchor * _firstAnchor;
     NSString * _identifier;
-    double  _multiplier;
-    double  _priority;
+    float  _multiplier;
+    float  _priority;
     int  _relation;
     NSLayoutAnchor * _secondAnchor;
 }
 
-@property (readonly) double constant;
+@property (readonly) float constant;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly, copy) NSLayoutAnchor *firstAnchor;
 @property (readonly) unsigned int hash;
 @property (readonly, copy) NSString *identifier;
-@property (readonly) double multiplier;
-@property (readonly) double priority;
+@property (readonly) float multiplier;
+@property (readonly) float priority;
 @property (readonly) int relation;
 @property (readonly, copy) NSString *relationshipDescription;
 @property (readonly, copy) NSLayoutAnchor *secondAnchor;

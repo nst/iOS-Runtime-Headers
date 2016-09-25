@@ -46,7 +46,7 @@
 - (void)_unlockAnimations;
 - (void)_updateIconSpacing;
 - (void)_updateRowHeight;
-- (id)actionViewForLocation:(struct CGPoint { double x1; double x2; })arg1;
+- (id)actionViewForLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didDeselectItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didEndDisplayingCell:(id)arg2 forItemAtIndexPath:(id)arg3;
@@ -67,7 +67,7 @@
 - (id)indexPathsForSelectedItems;
 - (id)initWithModel:(id)arg1;
 - (id)initialActivityView;
-- (id)itemForLocation:(struct CGPoint { double x1; double x2; })arg1;
+- (id)itemForLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (id)model;
 - (void)modelChanged:(id)arg1;
 - (id)modelObjects;
@@ -77,11 +77,11 @@
 - (void)presentViewController:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
 - (id)previewActionItemsForItem:(id)arg1;
 - (void)previewingContext:(id)arg1 commitViewController:(id)arg2;
-- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { double x1; double x2; })arg2;
+- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { float x1; float x2; })arg2;
 - (void)scrollSortViewToVisible;
 - (id)scrollView;
 - (void)scrollViewDidScroll:(id)arg1;
-- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { double x1; double x2; })arg2 targetContentOffset:(inout struct CGPoint { double x1; double x2; }*)arg3;
+- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { float x1; float x2; })arg2 targetContentOffset:(inout struct CGPoint { float x1; float x2; }*)arg3;
 - (id)serviceViewController;
 - (void)setContentSizeAdjustment:(float)arg1;
 - (void)setDisplayMode:(int)arg1;

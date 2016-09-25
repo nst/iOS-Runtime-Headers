@@ -8,7 +8,7 @@
         unsigned int tokenExpiration : 1; 
     }  _has;
     NSString * _token;
-    int  _tokenExpiration;
+    long long  _tokenExpiration;
 }
 
 @property (nonatomic, retain) CKDPAsset *asset;
@@ -16,7 +16,7 @@
 @property (nonatomic, readonly) BOOL hasToken;
 @property (nonatomic) BOOL hasTokenExpiration;
 @property (nonatomic, retain) NSString *token;
-@property (nonatomic) int tokenExpiration;
+@property (nonatomic) long long tokenExpiration;
 
 - (void).cxx_destruct;
 - (id)asset;
@@ -34,9 +34,9 @@
 - (void)setAsset:(id)arg1;
 - (void)setHasTokenExpiration:(BOOL)arg1;
 - (void)setToken:(id)arg1;
-- (void)setTokenExpiration:(int)arg1;
+- (void)setTokenExpiration:(long long)arg1;
 - (id)token;
-- (int)tokenExpiration;
+- (long long)tokenExpiration;
 - (void)writeTo:(id)arg1;
 
 @end

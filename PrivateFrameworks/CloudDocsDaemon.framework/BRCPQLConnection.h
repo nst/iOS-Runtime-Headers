@@ -29,7 +29,7 @@
 - (BOOL)profilingEnabled;
 - (void)setProfilingEnabled:(BOOL)arg1;
 - (void)setProfilingHook:(id /* block */)arg1;
-- (int)sizeInBytes;
+- (long long)sizeInBytes;
 - (void)usePacedBatchingWithInterval:(double)arg1 changeCount:(int)arg2;
 
 @end

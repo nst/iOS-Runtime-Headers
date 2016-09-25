@@ -4,7 +4,7 @@
 
 @interface AVAssetResourceLoadingContentInformationRequestInternal : NSObject {
     BOOL  byteRangeAccessSupported;
-    int  contentLength;
+    long long  contentLength;
     NSString * contentType;
     BOOL  diskCachingPermitted;
     NSDate * renewalDate;

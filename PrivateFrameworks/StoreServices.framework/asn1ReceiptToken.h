@@ -9,7 +9,7 @@
 }
 
 @property (readonly) asn1Token *contentToken;
-@property (readonly) unsigned int integerValue;
+@property (readonly) unsigned long long integerValue;
 @property (readonly) NSString *stringValue;
 @property (readonly) unsigned int type;
 @property (readonly) unsigned int typeVersion;
@@ -20,7 +20,7 @@
 - (id)contentToken;
 - (void)dealloc;
 - (id)description;
-- (unsigned int)integerValue;
+- (unsigned long long)integerValue;
 - (id)stringValue;
 - (unsigned int)type;
 - (unsigned int)typeVersion;

@@ -11,7 +11,7 @@
         unsigned int eventType : 1; 
     }  _has;
     NSString * _sessionUUID;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) int activityType;
@@ -21,7 +21,7 @@
 @property (nonatomic, readonly) BOOL hasSessionUUID;
 @property (nonatomic) BOOL hasTimestamp;
 @property (nonatomic, retain) NSString *sessionUUID;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void).cxx_destruct;
 - (int)StringAsActivityType:(id)arg1;
@@ -49,8 +49,8 @@
 - (void)setHasEventType:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
 - (void)setSessionUUID:(id)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
-- (unsigned int)timestamp;
+- (void)setTimestamp:(unsigned long long)arg1;
+- (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 
 @end

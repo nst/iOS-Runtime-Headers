@@ -5,7 +5,7 @@
 @interface MusicJSProductNativeViewController : MusicJSNativeViewController <MusicJSProductNativeViewController, SKUIDOMFeature> {
     <MusicJSProductNativeViewControllerDelegate> * _delegate;
     NSDictionary * _productEntityValueProviderData;
-    int  _prominentTrackStoreID;
+    long long  _prominentTrackStoreID;
     IKAppDocument * _relatedContentDocument;
     NSDictionary * _relatedContentDocumentOptions;
     IKDOMDocument * _relatedContentJSDocument;
@@ -23,7 +23,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) IKJSNavigationDocument *navigationDocument;
 @property (nonatomic, readonly) NSDictionary *productEntityValueProviderData;
-@property (nonatomic, readonly) int prominentTrackStoreID;
+@property (nonatomic, readonly) long long prominentTrackStoreID;
 @property (nonatomic, readonly) IKAppDocument *relatedContentDocument;
 @property (nonatomic, readonly) NSDictionary *relatedContentDocumentOptions;
 @property (nonatomic, readonly) NSDictionary *reportingInformation;
@@ -38,7 +38,7 @@
 - (void)navigationDocumentDidChange;
 - (void)presentShareDocument:(id)arg1 :(id)arg2;
 - (id)productEntityValueProviderData;
-- (int)prominentTrackStoreID;
+- (long long)prominentTrackStoreID;
 - (id)relatedContentDocument;
 - (id)relatedContentDocumentOptions;
 - (id)reportingInformation;

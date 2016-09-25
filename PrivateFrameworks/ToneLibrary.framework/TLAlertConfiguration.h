@@ -4,9 +4,9 @@
 
 @interface TLAlertConfiguration : NSObject <NSCopying, NSSecureCoding> {
     NSString * _audioCategory;
-    double  _audioVolume;
+    float  _audioVolume;
     NSURL * _externalToneFileURL;
-    unsigned int  _externalToneMediaLibraryItemIdentifier;
+    unsigned long long  _externalToneMediaLibraryItemIdentifier;
     NSDictionary * _externalVibrationPattern;
     BOOL  _forPreview;
     BOOL  _hasCustomAudioVolume;
@@ -22,9 +22,9 @@
 
 @property (nonatomic, readonly) BOOL _hasCustomAudioVolume;
 @property (nonatomic, copy) NSString *audioCategory;
-@property (nonatomic) double audioVolume;
+@property (nonatomic) float audioVolume;
 @property (nonatomic, copy) NSURL *externalToneFileURL;
-@property (nonatomic) unsigned int externalToneMediaLibraryItemIdentifier;
+@property (nonatomic) unsigned long long externalToneMediaLibraryItemIdentifier;
 @property (nonatomic, copy) NSDictionary *externalVibrationPattern;
 @property (getter=isForPreview, nonatomic) BOOL forPreview;
 @property (nonatomic) double maximumDuration;
@@ -48,7 +48,7 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)externalToneFileURL;
-- (unsigned int)externalToneMediaLibraryItemIdentifier;
+- (unsigned long long)externalToneMediaLibraryItemIdentifier;
 - (id)externalVibrationPattern;
 - (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
@@ -59,7 +59,7 @@
 - (void)setAudioCategory:(id)arg1;
 - (void)setAudioVolume:(float)arg1;
 - (void)setExternalToneFileURL:(id)arg1;
-- (void)setExternalToneMediaLibraryItemIdentifier:(unsigned int)arg1;
+- (void)setExternalToneMediaLibraryItemIdentifier:(unsigned long long)arg1;
 - (void)setExternalVibrationPattern:(id)arg1;
 - (void)setForPreview:(BOOL)arg1;
 - (void)setMaximumDuration:(double)arg1;

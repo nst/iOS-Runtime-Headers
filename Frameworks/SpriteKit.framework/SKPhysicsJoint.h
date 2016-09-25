@@ -7,17 +7,17 @@
     SKPhysicsBody * bodyA;
     SKPhysicsBody * bodyB;
     struct CGVector { 
-        double dx; 
-        double dy; 
+        float dx; 
+        float dy; 
     }  reactionForce;
-    double  reactionTorque;
+    float  reactionTorque;
 }
 
 @property (nonatomic) BOOL _implicit;
 @property (nonatomic, retain) SKPhysicsBody *bodyA;
 @property (nonatomic, retain) SKPhysicsBody *bodyB;
-@property (nonatomic, readonly) struct CGVector { double x1; double x2; } reactionForce;
-@property (nonatomic, readonly) double reactionTorque;
+@property (nonatomic, readonly) struct CGVector { float x1; float x2; } reactionForce;
+@property (nonatomic, readonly) float reactionTorque;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
@@ -27,7 +27,7 @@
 - (id)bodyB;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (struct CGVector { double x1; double x2; })reactionForce;
+- (struct CGVector { float x1; float x2; })reactionForce;
 - (float)reactionTorque;
 - (void)setBodyA:(id)arg1;
 - (void)setBodyB:(id)arg1;

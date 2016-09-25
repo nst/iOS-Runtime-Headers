@@ -3,7 +3,7 @@
  */
 
 @interface HDAWDHealthKitIngestionLatencyEvent : PBCodable <NSCopying> {
-    int  _endDate;
+    long long  _endDate;
     struct { 
         unsigned int endDate : 1; 
         unsigned int indexInSession : 1; 
@@ -18,18 +18,18 @@
         unsigned int inSession : 1; 
     }  _has;
     BOOL  _inSession;
-    int  _indexInSession;
-    int  _maxDelayUs;
-    int  _meanDelayUs;
-    int  _minDelayUs;
-    int  _sampleCount;
-    int  _startDate;
-    int  _stdDelayUs;
-    unsigned int  _timestamp;
-    int  _typeIdentifier;
+    long long  _indexInSession;
+    long long  _maxDelayUs;
+    long long  _meanDelayUs;
+    long long  _minDelayUs;
+    long long  _sampleCount;
+    long long  _startDate;
+    long long  _stdDelayUs;
+    unsigned long long  _timestamp;
+    long long  _typeIdentifier;
 }
 
-@property (nonatomic) int endDate;
+@property (nonatomic) long long endDate;
 @property (nonatomic) BOOL hasEndDate;
 @property (nonatomic) BOOL hasInSession;
 @property (nonatomic) BOOL hasIndexInSession;
@@ -42,21 +42,21 @@
 @property (nonatomic) BOOL hasTimestamp;
 @property (nonatomic) BOOL hasTypeIdentifier;
 @property (nonatomic) BOOL inSession;
-@property (nonatomic) int indexInSession;
-@property (nonatomic) int maxDelayUs;
-@property (nonatomic) int meanDelayUs;
-@property (nonatomic) int minDelayUs;
-@property (nonatomic) int sampleCount;
-@property (nonatomic) int startDate;
-@property (nonatomic) int stdDelayUs;
-@property (nonatomic) unsigned int timestamp;
-@property (nonatomic) int typeIdentifier;
+@property (nonatomic) long long indexInSession;
+@property (nonatomic) long long maxDelayUs;
+@property (nonatomic) long long meanDelayUs;
+@property (nonatomic) long long minDelayUs;
+@property (nonatomic) long long sampleCount;
+@property (nonatomic) long long startDate;
+@property (nonatomic) long long stdDelayUs;
+@property (nonatomic) unsigned long long timestamp;
+@property (nonatomic) long long typeIdentifier;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (int)endDate;
+- (long long)endDate;
 - (BOOL)hasEndDate;
 - (BOOL)hasInSession;
 - (BOOL)hasIndexInSession;
@@ -70,15 +70,15 @@
 - (BOOL)hasTypeIdentifier;
 - (unsigned int)hash;
 - (BOOL)inSession;
-- (int)indexInSession;
+- (long long)indexInSession;
 - (BOOL)isEqual:(id)arg1;
-- (int)maxDelayUs;
-- (int)meanDelayUs;
+- (long long)maxDelayUs;
+- (long long)meanDelayUs;
 - (void)mergeFrom:(id)arg1;
-- (int)minDelayUs;
+- (long long)minDelayUs;
 - (BOOL)readFrom:(id)arg1;
-- (int)sampleCount;
-- (void)setEndDate:(int)arg1;
+- (long long)sampleCount;
+- (void)setEndDate:(long long)arg1;
 - (void)setHasEndDate:(BOOL)arg1;
 - (void)setHasInSession:(BOOL)arg1;
 - (void)setHasIndexInSession:(BOOL)arg1;
@@ -91,19 +91,19 @@
 - (void)setHasTimestamp:(BOOL)arg1;
 - (void)setHasTypeIdentifier:(BOOL)arg1;
 - (void)setInSession:(BOOL)arg1;
-- (void)setIndexInSession:(int)arg1;
-- (void)setMaxDelayUs:(int)arg1;
-- (void)setMeanDelayUs:(int)arg1;
-- (void)setMinDelayUs:(int)arg1;
-- (void)setSampleCount:(int)arg1;
-- (void)setStartDate:(int)arg1;
-- (void)setStdDelayUs:(int)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
-- (void)setTypeIdentifier:(int)arg1;
-- (int)startDate;
-- (int)stdDelayUs;
-- (unsigned int)timestamp;
-- (int)typeIdentifier;
+- (void)setIndexInSession:(long long)arg1;
+- (void)setMaxDelayUs:(long long)arg1;
+- (void)setMeanDelayUs:(long long)arg1;
+- (void)setMinDelayUs:(long long)arg1;
+- (void)setSampleCount:(long long)arg1;
+- (void)setStartDate:(long long)arg1;
+- (void)setStdDelayUs:(long long)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
+- (void)setTypeIdentifier:(long long)arg1;
+- (long long)startDate;
+- (long long)stdDelayUs;
+- (unsigned long long)timestamp;
+- (long long)typeIdentifier;
 - (void)writeTo:(id)arg1;
 
 @end

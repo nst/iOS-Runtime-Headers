@@ -44,7 +44,7 @@
 - (BOOL)isConnectionAlive;
 - (unsigned int)maxFrameSize;
 - (void)readMinimumBytes:(unsigned int)arg1 maximumBytes:(unsigned int)arg2;
-- (void)removeFlow:(unsigned int)arg1;
+- (void)removeFlow:(unsigned long long)arg1;
 - (BOOL)selectBestEdge;
 - (id)sendBuffer;
 - (void)setConnected:(BOOL)arg1;

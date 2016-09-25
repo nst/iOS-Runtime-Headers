@@ -53,7 +53,7 @@
 - (void)pSetArrayOfInts:(int)arg1 forProperty:(int)arg2;
 - (void)pSetArrayOfObjects:(/* Warning: unhandled array encoding: '[9@]' */ id)arg1 forProperty:(int)arg2;
 - (void)pSetRepeatedArrayOfBools:(const struct RepeatedField<bool> { bool *x1; int x2; int x3; }*)arg1 forProperty:(int)arg2 defaultValues:(bool)arg3 validator:(id)arg4;
-- (void)pSetRepeatedArrayOfFloats:(const struct RepeatedField<float> { double *x1; int x2; int x3; }*)arg1 forProperty:(int)arg2 defaultValues:(float)arg3 validator:(id)arg4;
+- (void)pSetRepeatedArrayOfFloats:(const struct RepeatedField<float> { float *x1; int x2; int x3; }*)arg1 forProperty:(int)arg2 defaultValues:(float)arg3 validator:(id)arg4;
 - (void)pSetRepeatedArrayOfInts:(const struct RepeatedField<int> { int *x1; int x2; int x3; }*)arg1 forProperty:(int)arg2 defaultValues:(int)arg3 min:(int)arg4 max:(int)arg5 validator:(id)arg6;
 - (void)pSetRepeatedArrayOfInts:(const struct RepeatedField<int> { int *x1; int x2; int x3; }*)arg1 forProperty:(int)arg2 defaultValues:(int)arg3 min:(int)arg4 max:(int)arg5 validator:(id)arg6 usePreviousValueOnDefault:(BOOL)arg7;
 - (void)p_getAllKeys:(int*)arg1;

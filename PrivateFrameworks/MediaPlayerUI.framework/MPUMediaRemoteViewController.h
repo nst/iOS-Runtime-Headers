@@ -60,7 +60,7 @@
 - (void)supportedRemoteControlsDidChange;
 - (void)transportControlMediaRemoteController:(id)arg1 requestsPushingMediaRemoteCommand:(unsigned int)arg2 withOptions:(id)arg3 shouldLaunchApplication:(BOOL)arg4;
 - (id)transportControlsView:(id)arg1 buttonForControlType:(int)arg2;
-- (struct CGSize { double x1; double x2; })transportControlsView:(id)arg1 defaultTransportButtonSizeWithProposedSize:(struct CGSize { double x1; double x2; })arg2;
+- (struct CGSize { float x1; float x2; })transportControlsView:(id)arg1 defaultTransportButtonSizeWithProposedSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)transportControlsView:(id)arg1 longPressBeginOnControlType:(int)arg2;
 - (void)transportControlsView:(id)arg1 longPressEndOnControlType:(int)arg2;
 - (void)transportControlsView:(id)arg1 tapOnControlType:(int)arg2;

@@ -3,11 +3,11 @@
  */
 
 @interface PXChangeDirectionNumberFilter : PXNumberFilter {
-    double  _minimumChange;
-    double  _threshold;
+    float  _minimumChange;
+    float  _threshold;
 }
 
-@property (nonatomic) double minimumChange;
+@property (nonatomic) float minimumChange;
 
 - (id)initWithInput:(float)arg1;
 - (float)initialOutputForInput:(float)arg1;

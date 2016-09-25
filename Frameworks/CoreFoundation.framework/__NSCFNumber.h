@@ -27,7 +27,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToNumber:(id)arg1;
 - (BOOL)isNSNumber__;
-- (int)longLongValue;
+- (long long)longLongValue;
 - (long)longValue;
 - (const char *)objCType;
 - (oneway void)release;
@@ -38,7 +38,7 @@
 - (unsigned char)unsignedCharValue;
 - (unsigned int)unsignedIntValue;
 - (unsigned int)unsignedIntegerValue;
-- (unsigned int)unsignedLongLongValue;
+- (unsigned long long)unsignedLongLongValue;
 - (unsigned long)unsignedLongValue;
 - (unsigned short)unsignedShortValue;
 

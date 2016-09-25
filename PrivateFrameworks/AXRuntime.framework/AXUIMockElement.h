@@ -12,10 +12,10 @@
 @property (nonatomic) BOOL usesCarriageReturnAsLinesSeparator;
 
 + (void)applyElementAttributeCacheScheme:(int)arg1;
-+ (id)uiElementAtCoordinate:(struct CGPoint { double x1; double x2; })arg1;
-+ (id)uiElementAtCoordinate:(struct CGPoint { double x1; double x2; })arg1 hitTestOrientation:(int)arg2;
++ (id)uiElementAtCoordinate:(struct CGPoint { float x1; float x2; })arg1;
++ (id)uiElementAtCoordinate:(struct CGPoint { float x1; float x2; })arg1 hitTestOrientation:(int)arg2;
 
-- (unsigned int)_lineNumberForPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (unsigned int)_lineNumberForPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)_valueForAttribute:(int)arg1;
 - (unsigned int)arrayCountWithAXAttribute:(int)arg1;
 - (id)arrayWithAXAttribute:(int)arg1;
@@ -45,11 +45,11 @@
 - (BOOL)performAXAction:(int)arg1 withValue:(id)arg2;
 - (id)performBlockWhileLoggingPerformedActions:(id /* block */)arg1;
 - (int)pid;
-- (struct CGPoint { double x1; double x2; })pointForLineNumber:(unsigned int)arg1;
-- (struct CGPoint { double x1; double x2; })pointWithAXAttribute:(int)arg1;
+- (struct CGPoint { float x1; float x2; })pointForLineNumber:(unsigned int)arg1;
+- (struct CGPoint { float x1; float x2; })pointWithAXAttribute:(int)arg1;
 - (id)previousElementsWithCount:(unsigned int)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })rangeWithAXAttribute:(int)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rectWithAXAttribute:(int)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectWithAXAttribute:(int)arg1;
 - (void)setAXAttribute:(int)arg1 withArray:(id)arg2;
 - (void)setAXAttribute:(int)arg1 withBOOL:(BOOL)arg2;
 - (void)setAXAttribute:(int)arg1 withFloat:(float)arg2;
@@ -57,16 +57,16 @@
 - (void)setAXAttribute:(int)arg1 withNumber:(id)arg2;
 - (void)setAXAttribute:(int)arg1 withObject:(id)arg2;
 - (void)setAXAttribute:(int)arg1 withObject:(id)arg2 synchronous:(BOOL)arg3;
-- (void)setAXAttribute:(int)arg1 withPoint:(struct CGPoint { double x1; double x2; })arg2;
+- (void)setAXAttribute:(int)arg1 withPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (void)setAXAttribute:(int)arg1 withRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (void)setAXAttribute:(int)arg1 withSize:(struct CGSize { double x1; double x2; })arg2;
+- (void)setAXAttribute:(int)arg1 withSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)setAXAttribute:(int)arg1 withString:(id)arg2;
 - (void)setAXAttribute:(int)arg1 withUIElement:(id)arg2;
 - (void)setAXAttribute:(int)arg1 withUIElementArray:(id)arg2;
 - (void)setUsesCarriageReturnAsLinesSeparator:(BOOL)arg1;
 - (void)setValue:(id)arg1 forAXAttribute:(int)arg2;
 - (void)setWritable:(BOOL)arg1 forAXAttribute:(int)arg2;
-- (struct CGSize { double x1; double x2; })sizeWithAXAttribute:(int)arg1;
+- (struct CGSize { float x1; float x2; })sizeWithAXAttribute:(int)arg1;
 - (id)stringWithAXAttribute:(int)arg1;
 - (id)uiElementArrayForAXAttribute:(int)arg1;
 - (id)uiElementWithAXAttribute:(int)arg1;

@@ -47,7 +47,7 @@
 - (void)setClientContext:(id)arg1;
 - (void)setOperationQueue:(id)arg1;
 - (void)showDefaultNavigationItems;
-- (void)showDefaultNavigationItemsForSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)showDefaultNavigationItemsForSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)showDefaultNavigationItemsIsCompact:(BOOL)arg1;
 - (void)showError:(id)arg1;
 - (BOOL)showingError;

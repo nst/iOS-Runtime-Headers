@@ -6,27 +6,27 @@
     int  _destinationWidth;
     BOOL  _erase;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _lastPoint;
     BOOL  _magicEdges;
     NSMutableData * _offsets;
-    double  _opacity;
-    double  _size;
-    double  _softness;
+    float  _opacity;
+    float  _size;
+    float  _softness;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _startPoint;
     BOOL  _startPointSet;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _strokeRect;
     double  _timestamp;
@@ -35,25 +35,25 @@
 
 @property (nonatomic) int destinationWidth;
 @property (nonatomic) BOOL erase;
-@property (nonatomic) struct CGPoint { double x1; double x2; } lastPoint;
+@property (nonatomic) struct CGPoint { float x1; float x2; } lastPoint;
 @property (nonatomic) BOOL magicEdges;
 @property (nonatomic, retain) NSMutableData *offsets;
-@property (nonatomic) double opacity;
-@property (nonatomic) double size;
-@property (nonatomic) double softness;
-@property (nonatomic) struct CGPoint { double x1; double x2; } startPoint;
+@property (nonatomic) float opacity;
+@property (nonatomic) float size;
+@property (nonatomic) float softness;
+@property (nonatomic) struct CGPoint { float x1; float x2; } startPoint;
 @property (nonatomic) BOOL startPointSet;
-@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } strokeRect;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } strokeRect;
 @property (nonatomic) double timestamp;
 @property (nonatomic) int type;
 
-- (void)addPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)addPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)dealloc;
 - (int)destinationWidth;
 - (BOOL)erase;
 - (id)init;
 - (id)keysToEncode;
-- (struct CGPoint { double x1; double x2; })lastPoint;
+- (struct CGPoint { float x1; float x2; })lastPoint;
 - (BOOL)magicEdges;
 - (int)numberOfPoints;
 - (id)offsets;
@@ -61,22 +61,22 @@
 - (void)replayPointsWithScale:(float)arg1 pointBlock:(id /* block */)arg2;
 - (void)setDestinationWidth:(int)arg1;
 - (void)setErase:(BOOL)arg1;
-- (void)setLastPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setLastPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setMagicEdges:(BOOL)arg1;
 - (void)setOffsets:(id)arg1;
 - (void)setOpacity:(float)arg1;
 - (void)setSize:(float)arg1;
 - (void)setSoftness:(float)arg1;
-- (void)setStartPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setStartPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setStartPointSet:(BOOL)arg1;
-- (void)setStrokeRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setStrokeRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setTimestamp:(double)arg1;
 - (void)setType:(int)arg1;
 - (float)size;
 - (float)softness;
-- (struct CGPoint { double x1; double x2; })startPoint;
+- (struct CGPoint { float x1; float x2; })startPoint;
 - (BOOL)startPointSet;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })strokeRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })strokeRect;
 - (double)timestamp;
 - (int)type;
 

@@ -8,10 +8,10 @@
     SKUISlideshowImageScrollView * _imageScrollView;
     int  _indexInCollection;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _lastContentOffset;
-    double  _lastZoomScale;
+    float  _lastZoomScale;
     UIView * _loadingView;
     BOOL  _zoomingGestureThresholdBroken;
 }

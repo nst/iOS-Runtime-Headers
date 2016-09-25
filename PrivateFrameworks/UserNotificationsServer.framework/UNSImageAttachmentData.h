@@ -8,7 +8,7 @@
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (BOOL)isEqual:(id)arg1;
-- (struct CGSize { double x1; double x2; })naturalSizeForAttachment:(id)arg1;
-- (id)thumbnailPNGOfSize:(struct CGSize { double x1; double x2; })arg1 forAttachment:(id)arg2;
+- (struct CGSize { float x1; float x2; })naturalSizeForAttachment:(id)arg1;
+- (id)thumbnailPNGOfSize:(struct CGSize { float x1; float x2; })arg1 forAttachment:(id)arg2;
 
 @end

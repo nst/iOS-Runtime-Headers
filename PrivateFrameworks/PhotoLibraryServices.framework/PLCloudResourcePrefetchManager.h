@@ -38,15 +38,15 @@
 - (void)_reloadDownloadOriginalsSetting;
 - (id)_resourcePredicateForCPLResourceType:(unsigned int)arg1 additionalResourcePredicates:(id)arg2;
 - (id)_resourcePredicatesToPrefetchForMemory:(id)arg1;
-- (void)_resourcesToPrefetchWithPredicates:(id)arg1 budget:(int)arg2 completionHandler:(id /* block */)arg3;
+- (void)_resourcesToPrefetchWithPredicates:(id)arg1 budget:(long long)arg2 completionHandler:(id /* block */)arg3;
 - (void)_resourcesWithPredicate:(id)arg1 limit:(unsigned int)arg2 completionHandler:(id /* block */)arg3;
 - (void)_runOnWorkQueueWithTransaction:(id)arg1 block:(id /* block */)arg2;
 - (BOOL)_shouldPrefetchMemoryMovieCuratedAssets;
 - (void)_startPrefetchNextBatch;
 - (void)_writeDownloadFinishedMarkerIfNeeded;
 - (void)dealloc;
-- (int)diskSpaceBudgetForNonThumbnails;
-- (int)diskSpaceBudgetForThumbnails;
+- (long long)diskSpaceBudgetForNonThumbnails;
+- (long long)diskSpaceBudgetForThumbnails;
 - (id)init;
 - (id)initWithCPLManager:(id)arg1;
 - (void)prefetchResource:(unsigned int)arg1 forAssetsWithObjectIDs:(id)arg2;

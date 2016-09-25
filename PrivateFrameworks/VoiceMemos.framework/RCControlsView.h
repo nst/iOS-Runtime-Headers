@@ -17,7 +17,7 @@
     UIAlertController * _noMicAlertViewController;
     RCRecorderStateButton * _recordingStateButton;
     BOOL  _showsBottomSeparatorLine;
-    double  _topPadding;
+    float  _topPadding;
     NSLayoutConstraint * _topPaddingCn;
 }
 
@@ -35,7 +35,7 @@
 @property (nonatomic, readonly) UIAlertController *noMicAlertViewController;
 @property (nonatomic, readonly) RCRecorderStateButton *recordingStateButton;
 @property (nonatomic) BOOL showsBottomSeparatorLine;
-@property (nonatomic) double topPadding;
+@property (nonatomic) float topPadding;
 @property (nonatomic, readonly) NSLayoutConstraint *topPaddingCn;
 
 - (void).cxx_destruct;
@@ -60,9 +60,9 @@
 - (int)controlsConfiguration;
 - (id)delegate;
 - (id)doneButton;
-- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (id)layoutMetrics;
 - (id)leftPlayStateButton;
 - (id)noMicAlertViewController;
@@ -81,7 +81,7 @@
 - (void)setShowsBottomSeparatorLine:(BOOL)arg1;
 - (void)setTopPadding:(float)arg1;
 - (BOOL)showsBottomSeparatorLine;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (float)topPadding;
 - (id)topPaddingCn;
 - (void)updateConstraints;

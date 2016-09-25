@@ -26,7 +26,7 @@
 
 - (id)_kernel;
 - (float*)createHueArray;
-- (void)getNonNormalizedSettings:(struct { bool x1; double x2; double x3; double x4; double x5; double x6[3]; }*)arg1;
+- (void)getNonNormalizedSettings:(struct { bool x1; float x2; float x3; float x4; float x5; float x6[3]; }*)arg1;
 - (id)hueArrayImage:(float*)arg1;
 - (id)inputGrain;
 - (id)inputHue;

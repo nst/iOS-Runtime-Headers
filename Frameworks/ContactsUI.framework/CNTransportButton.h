@@ -22,13 +22,13 @@
 - (id)glyphColor;
 - (id)image;
 - (id)imageNameForType:(int)arg1;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (void)setGlyphColor:(id)arg1;
 - (void)setImage:(id)arg1;
 - (void)setShowBackgroundPlatter:(BOOL)arg1;
 - (void)setTransportType:(int)arg1;
 - (BOOL)showBackgroundPlatter;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)tintColorDidChange;
 - (int)transportType;
 

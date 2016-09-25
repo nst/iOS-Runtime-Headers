@@ -24,8 +24,8 @@
     int  _numberOfFollowers;
     NSMutableArray * _pendingTintInformationDispatchEvents;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _previousMaximumHeaderSize;
     unsigned int  _profileType;
     UIViewController * _relatedContentViewController;
@@ -91,7 +91,7 @@
 - (void)mediaProfileHeaderContentViewController:(id)arg1 didSelectContextualActionsButton:(id)arg2;
 - (void)mediaProfileHeaderContentViewController:(id)arg1 didSelectEditButton:(id)arg2;
 - (void)mediaProfileHeaderContentViewController:(id)arg1 didSelectShareButton:(id)arg2;
-- (void)mediaProfileHeaderContentViewController:(id)arg1 didUpdateFollowingState:(BOOL)arg2 forStoreID:(int)arg3;
+- (void)mediaProfileHeaderContentViewController:(id)arg1 didUpdateFollowingState:(BOOL)arg2 forStoreID:(long long)arg3;
 - (void)mediaProfileHeaderContentViewControllerDidSelectProfileTitle:(id)arg1;
 - (void)mediaProfileSplitMainViewController:(id)arg1 needsContentForSegmentWithIdentifier:(id)arg2;
 - (void)mediaProfileSplitMainViewControllerSegmentedControlVisibleDidChange:(id)arg1;

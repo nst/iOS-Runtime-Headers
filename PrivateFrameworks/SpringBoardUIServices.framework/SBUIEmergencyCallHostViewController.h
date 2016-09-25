@@ -4,14 +4,14 @@
 
 @interface SBUIEmergencyCallHostViewController : _UIRemoteViewController <SBUIEmergencyCallHostInterface> {
     int  _backgroundStyle;
-    double  _blurRadius;
+    float  _blurRadius;
     _UIBackdropView * _blurView;
     BOOL  _blursSelf;
     UIColor * _tintColor;
 }
 
 @property (nonatomic) int backgroundStyle;
-@property (nonatomic) double blurRadius;
+@property (nonatomic) float blurRadius;
 @property (nonatomic) BOOL blursSelf;
 @property (nonatomic, retain) UIColor *tintColor;
 

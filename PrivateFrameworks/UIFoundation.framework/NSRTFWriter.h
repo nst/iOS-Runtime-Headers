@@ -23,7 +23,7 @@
     void * _layoutSections;
     NSMutableArray * _listRanges;
     NSMutableData * _output;
-    double  _rightMargin;
+    float  _rightMargin;
     struct { 
         unsigned int _forceColorWrite : 1; 
         unsigned int _activeFontFeatures : 1; 

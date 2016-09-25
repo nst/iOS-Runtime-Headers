@@ -4,7 +4,7 @@
 
 @interface CKIMFileTransfer : NSObject <CKFileTransfer> {
     NSDictionary * _attributionInfo;
-    unsigned int  _currentBytes;
+    unsigned long long  _currentBytes;
     NSError * _error;
     BOOL  _fileDataReady;
     NSURL * _fileURL;
@@ -19,14 +19,14 @@
     int  _mediaObjectCount;
     BOOL  _restoring;
     NSDictionary * _stickerUserInfo;
-    unsigned int  _totalBytes;
+    unsigned long long  _totalBytes;
     NSDictionary * _transcoderUserInfo;
     int  _transferState;
 }
 
 @property (nonatomic, retain) IMMessage *IMMessage;
 @property (nonatomic, copy) NSDictionary *attributionInfo;
-@property (nonatomic, readonly) unsigned int currentBytes;
+@property (nonatomic, readonly) unsigned long long currentBytes;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (getter=isDownloadable, nonatomic, readonly) BOOL downloadable;
@@ -44,7 +44,7 @@
 @property (getter=isRestoring, nonatomic, readonly) BOOL restoring;
 @property (nonatomic, readonly, copy) NSDictionary *stickerUserInfo;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) unsigned int totalBytes;
+@property (nonatomic, readonly) unsigned long long totalBytes;
 @property (nonatomic, readonly, copy) NSDictionary *transcoderUserInfo;
 @property (nonatomic) int transferState;
 
@@ -52,7 +52,7 @@
 - (id)IMMessage;
 - (void)attachmentRestored:(id)arg1;
 - (id)attributionInfo;
-- (unsigned int)currentBytes;
+- (unsigned long long)currentBytes;
 - (void)dealloc;
 - (id)description;
 - (id)error;
@@ -82,7 +82,7 @@
 - (void)setTransferState:(int)arg1;
 - (id)stickerUserInfo;
 - (id)syncController;
-- (unsigned int)totalBytes;
+- (unsigned long long)totalBytes;
 - (id)transcoderUserInfo;
 - (int)transferState;
 - (void)transferUpdated:(id)arg1;

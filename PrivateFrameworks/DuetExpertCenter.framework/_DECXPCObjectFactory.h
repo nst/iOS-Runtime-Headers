@@ -4,9 +4,9 @@
 
 @interface _DECXPCObjectFactory : NSObject {
     unsigned int  _allowBattery;
-    int  _intervalHours;
-    int  _intervalMinutes;
-    int  _intervalSeconds;
+    long long  _intervalHours;
+    long long  _intervalMinutes;
+    long long  _intervalSeconds;
     unsigned int  _priorityLevel;
     BOOL  _repeating;
     BOOL  _requireClassA;
@@ -14,31 +14,31 @@
     BOOL  _requireScreenSleep;
 }
 
-@property (nonatomic) int intervalHours;
-@property (nonatomic) int intervalMinutes;
-@property (nonatomic) int intervalSeconds;
+@property (nonatomic) long long intervalHours;
+@property (nonatomic) long long intervalMinutes;
+@property (nonatomic) long long intervalSeconds;
 @property (nonatomic) BOOL repeating;
 @property (nonatomic) BOOL requireClassA;
 @property (nonatomic) BOOL requireClassC;
 @property (nonatomic) BOOL requireScreenSleep;
 
 - (const char *)_activityPriority;
-- (int)_getInterval;
+- (long long)_getInterval;
 - (BOOL)_shouldAllowBattery;
 - (void)allowBattery;
 - (void)disallowBattery;
 - (id)getXPCObject;
 - (id)init;
-- (int)intervalHours;
-- (int)intervalMinutes;
-- (int)intervalSeconds;
+- (long long)intervalHours;
+- (long long)intervalMinutes;
+- (long long)intervalSeconds;
 - (BOOL)repeating;
 - (BOOL)requireClassA;
 - (BOOL)requireClassC;
 - (BOOL)requireScreenSleep;
-- (void)setIntervalHours:(int)arg1;
-- (void)setIntervalMinutes:(int)arg1;
-- (void)setIntervalSeconds:(int)arg1;
+- (void)setIntervalHours:(long long)arg1;
+- (void)setIntervalMinutes:(long long)arg1;
+- (void)setIntervalSeconds:(long long)arg1;
 - (void)setPriorityLevelMaintenance;
 - (void)setPriorityLevelUtility;
 - (void)setRepeating:(BOOL)arg1;

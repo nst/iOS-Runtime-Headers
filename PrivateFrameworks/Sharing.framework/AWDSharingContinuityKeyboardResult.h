@@ -25,7 +25,7 @@
     unsigned int  _openAction;
     BOOL  _secureInput;
     NSString * _sessionUUID;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) unsigned int bannerVisibleMs;
@@ -49,7 +49,7 @@
 @property (nonatomic) unsigned int openAction;
 @property (nonatomic) BOOL secureInput;
 @property (nonatomic, retain) NSString *sessionUUID;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void).cxx_destruct;
 - (unsigned int)bannerVisibleMs;
@@ -101,8 +101,8 @@
 - (void)setOpenAction:(unsigned int)arg1;
 - (void)setSecureInput:(BOOL)arg1;
 - (void)setSessionUUID:(id)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
-- (unsigned int)timestamp;
+- (void)setTimestamp:(unsigned long long)arg1;
+- (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 
 @end

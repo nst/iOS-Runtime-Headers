@@ -22,8 +22,8 @@
     }  _controlFlags;
     double  _downTime;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _previousPoint;
     NSMutableArray * _targetActions;
 }
@@ -54,7 +54,7 @@
 - (id)__scalarStatisticsForUserValueChangedEvent;
 - (void)_beginInteractionDurationStatisticMeasurements;
 - (void)_cancelDelayedActions;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_clippedHighlightBounds;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_clippedHighlightBounds;
 - (void)_commitInteractionDurationStatisticMeasurements;
 - (void)_connectInterfaceBuilderEventConnection:(id)arg1;
 - (unsigned int)_controlEventsForActionTriggered;
@@ -95,16 +95,16 @@
 - (void)encodeWithCoder:(id)arg1;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (BOOL)hasOneOrMoreTargets;
-- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
-- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isEnabled;
 - (BOOL)isHighlighted;
 - (BOOL)isSelected;
 - (BOOL)isTouchInside;
 - (BOOL)isTracking;
-- (BOOL)pointMostlyInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (BOOL)pointMostlyInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)removeTarget:(id)arg1 action:(SEL)arg2 forControlEvents:(unsigned int)arg3;
 - (void)removeTarget:(id)arg1 forEvents:(int)arg2;
 - (BOOL)requiresDisplayOnTracking;

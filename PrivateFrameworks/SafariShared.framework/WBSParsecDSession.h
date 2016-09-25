@@ -4,13 +4,13 @@
 
 @interface WBSParsecDSession : NSObject <PARSessionDelegate, WBSParsecSearchSession> {
     WBSCompletionQuery * _currentQuery;
-    int  _currentQueryID;
+    long long  _currentQueryID;
     <WBSParsecSearchSessionDelegate> * _delegate;
     WBSParsecDFeedbackDispatcher * _feedbackDispatcher;
     GEOUserSessionEntity * _geoUserSessionEntity;
     PARSession * _parsecdSession;
     NSObject<OS_dispatch_queue> * _requestProcessingQueue;
-    double  _uiScale;
+    float  _uiScale;
     BOOL  _valid;
 }
 
@@ -22,7 +22,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) PARSession *parsecdSession;
 @property (readonly) Class superclass;
-@property (setter=setUIScale:, nonatomic) double uiScale;
+@property (setter=setUIScale:, nonatomic) float uiScale;
 @property (getter=isValid, nonatomic, readonly) BOOL valid;
 
 + (id)sharedCorrectionsProcessor;

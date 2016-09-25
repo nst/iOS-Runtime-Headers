@@ -19,15 +19,15 @@
     }  _has;
     int  _keyboardType;
     struct { 
-        unsigned int *list; 
+        unsigned long long *list; 
         unsigned int count; 
         unsigned int size; 
     }  _pINEntrySeparatorIndexes;
     int  _returnKeyType;
     BOOL  _secureTextEntry;
     BOOL  _spellchecking;
-    unsigned int  _validTextRangeLength;
-    unsigned int  _validTextRangeLocation;
+    unsigned long long  _validTextRangeLength;
+    unsigned long long  _validTextRangeLocation;
 }
 
 @property (nonatomic) int autocapitalizationType;
@@ -43,18 +43,18 @@
 @property (nonatomic) BOOL hasValidTextRangeLength;
 @property (nonatomic) BOOL hasValidTextRangeLocation;
 @property (nonatomic) int keyboardType;
-@property (nonatomic, readonly) unsigned int*pINEntrySeparatorIndexes;
+@property (nonatomic, readonly) unsigned long long*pINEntrySeparatorIndexes;
 @property (nonatomic, readonly) unsigned int pINEntrySeparatorIndexesCount;
 @property (nonatomic) int returnKeyType;
 @property (nonatomic) BOOL secureTextEntry;
 @property (nonatomic) BOOL spellchecking;
-@property (nonatomic) unsigned int validTextRangeLength;
-@property (nonatomic) unsigned int validTextRangeLocation;
+@property (nonatomic) unsigned long long validTextRangeLength;
+@property (nonatomic) unsigned long long validTextRangeLocation;
 
 - (int)StringAsAutocapitalizationType:(id)arg1;
 - (int)StringAsKeyboardType:(id)arg1;
 - (int)StringAsReturnKeyType:(id)arg1;
-- (void)addPINEntrySeparatorIndexes:(unsigned int)arg1;
+- (void)addPINEntrySeparatorIndexes:(unsigned long long)arg1;
 - (int)autocapitalizationType;
 - (id)autocapitalizationTypeAsString:(int)arg1;
 - (BOOL)autocorrection;
@@ -79,8 +79,8 @@
 - (int)keyboardType;
 - (id)keyboardTypeAsString:(int)arg1;
 - (void)mergeFrom:(id)arg1;
-- (unsigned int*)pINEntrySeparatorIndexes;
-- (unsigned int)pINEntrySeparatorIndexesAtIndex:(unsigned int)arg1;
+- (unsigned long long*)pINEntrySeparatorIndexes;
+- (unsigned long long)pINEntrySeparatorIndexesAtIndex:(unsigned int)arg1;
 - (unsigned int)pINEntrySeparatorIndexesCount;
 - (BOOL)readFrom:(id)arg1;
 - (int)returnKeyType;
@@ -99,15 +99,15 @@
 - (void)setHasValidTextRangeLength:(BOOL)arg1;
 - (void)setHasValidTextRangeLocation:(BOOL)arg1;
 - (void)setKeyboardType:(int)arg1;
-- (void)setPINEntrySeparatorIndexes:(unsigned int*)arg1 count:(unsigned int)arg2;
+- (void)setPINEntrySeparatorIndexes:(unsigned long long*)arg1 count:(unsigned int)arg2;
 - (void)setReturnKeyType:(int)arg1;
 - (void)setSecureTextEntry:(BOOL)arg1;
 - (void)setSpellchecking:(BOOL)arg1;
-- (void)setValidTextRangeLength:(unsigned int)arg1;
-- (void)setValidTextRangeLocation:(unsigned int)arg1;
+- (void)setValidTextRangeLength:(unsigned long long)arg1;
+- (void)setValidTextRangeLocation:(unsigned long long)arg1;
 - (BOOL)spellchecking;
-- (unsigned int)validTextRangeLength;
-- (unsigned int)validTextRangeLocation;
+- (unsigned long long)validTextRangeLength;
+- (unsigned long long)validTextRangeLocation;
 - (void)writeTo:(id)arg1;
 
 @end

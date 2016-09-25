@@ -8,26 +8,26 @@
     UIColor * _filledColor;
     UIImage * _filledStarImage;
     int  _numberOfStars;
-    double  _value;
+    float  _value;
 }
 
 @property (nonatomic, copy) UIColor *emptyColor;
 @property (nonatomic, copy) UIColor *filledColor;
 @property (nonatomic) int numberOfStars;
-@property (nonatomic) double value;
+@property (nonatomic) float value;
 
 - (void).cxx_destruct;
-- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)emptyColor;
 - (id)filledColor;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (int)numberOfStars;
 - (void)setColoringUsingStyle:(id)arg1;
 - (void)setEmptyColor:(id)arg1;
 - (void)setFilledColor:(id)arg1;
 - (void)setNumberOfStars:(int)arg1;
 - (void)setValue:(float)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (float)value;
 
 @end

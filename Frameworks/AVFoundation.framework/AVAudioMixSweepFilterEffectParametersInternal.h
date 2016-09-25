@@ -3,10 +3,10 @@
  */
 
 @interface AVAudioMixSweepFilterEffectParametersInternal : NSObject {
-    double  bypassThreshold;
+    float  bypassThreshold;
     unsigned int  maximumCutOffFrequency;
     unsigned int  minimumCutOffFrequency;
-    double  sweepValue;
+    float  sweepValue;
 }
 
 @end

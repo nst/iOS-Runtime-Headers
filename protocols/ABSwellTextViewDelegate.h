@@ -5,7 +5,7 @@
 
 @required
 
-- (void)swellTextView:(ABSwellTextView *)arg1 didChangeSize:(struct CGSize { double x1; double x2; })arg2;
+- (void)swellTextView:(ABSwellTextView *)arg1 didChangeSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)swellTextViewDidBeginEditing:(ABSwellTextView *)arg1;
 - (void)swellTextViewDidEndEditing:(ABSwellTextView *)arg1;
 - (BOOL)swellTextViewShouldBeginEditing:(ABSwellTextView *)arg1;

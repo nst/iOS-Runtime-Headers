@@ -7,8 +7,8 @@
 }
 
 - (void).cxx_destruct;
-- (void)_dispatchCleanupAfterDelay:(int)arg1;
-- (void)_setTimerOnSource:(int)arg1;
+- (void)_dispatchCleanupAfterDelay:(long long)arg1;
+- (void)_setTimerOnSource:(long long)arg1;
 - (void)cleanUpOrphanedFiles;
 - (void)dealloc;
 - (id)init;

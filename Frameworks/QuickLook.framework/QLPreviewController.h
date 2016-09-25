@@ -209,7 +209,7 @@
 - (BOOL)parentIsNavigationController;
 - (id)pinchGesture;
 - (id)pinchRotationTracker;
-- (struct CGSize { double x1; double x2; })preferredContentSize;
+- (struct CGSize { float x1; float x2; })preferredContentSize;
 - (int)preferredStatusBarUpdateAnimation;
 - (BOOL)prefersStatusBarHidden;
 - (void)presentAlertControllerForScenario:(int)arg1;
@@ -285,7 +285,7 @@
 - (void)updateOverlayAnimated:(BOOL)arg1 forceRefresh:(BOOL)arg2;
 - (void)updateOverlayAnimated:(BOOL)arg1 forceRefresh:(BOOL)arg2 withTraitCollection:(id)arg3;
 - (void)updateOverlayButtons:(BOOL)arg1;
-- (void)updatePreferredContentSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)updatePreferredContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)updatePreviewItemAtIndex:(unsigned int)arg1 updatedContentsURL:(id)arg2 sandboxExtension:(id)arg3;
 - (void)updateStatusBarAnimated:(BOOL)arg1;
 - (BOOL)useCustomActionButton;
@@ -294,7 +294,7 @@
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (void)waitForPreviewCollectionWithCompletionHandler:(id /* block */)arg1;
 - (void)willMoveToParentViewController:(id)arg1;
 - (BOOL)willTransitionToInternalView;

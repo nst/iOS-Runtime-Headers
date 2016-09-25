@@ -190,7 +190,7 @@
 - (void)p_updateChunkCount;
 - (void)p_updateOverlappingBuildEventTriggers;
 - (void)p_updatePreUFFBuildEffects;
-- (void)p_updateStartAndEndOffsetsIfNecessaryForFileVersion:(unsigned int)arg1;
+- (void)p_updateStartAndEndOffsetsIfNecessaryForFileVersion:(unsigned long long)arg1;
 - (id)parentInfo;
 - (id)pdfDataUsingDocumentRoot:(id)arg1;
 - (void)performBlockOnInfos:(id /* block */)arg1;
@@ -232,7 +232,7 @@
 - (id)slideNumberPlaceholder;
 - (id)style;
 - (id)tagForInfo:(id)arg1;
-- (struct CGSize { double x1; double x2; })targetSizeForImageData:(id)arg1 associatedHint:(id)arg2;
+- (struct CGSize { float x1; float x2; })targetSizeForImageData:(id)arg1 associatedHint:(id)arg2;
 - (id)titlePlaceholder;
 - (id)transition;
 - (int)validateMoveActiveBuildChunks:(id)arg1 toActiveIndex:(unsigned int)arg2;

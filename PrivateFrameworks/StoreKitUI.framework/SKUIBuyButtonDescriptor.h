@@ -8,7 +8,7 @@
     NSString * _confirmationText;
     unsigned int  _elementType;
     BOOL  _highlighted;
-    int  _itemIdentifier;
+    long long  _itemIdentifier;
     int  _progressType;
     BOOL  _shouldSuppressEnabled;
     BOOL  _showingConfirmation;
@@ -22,7 +22,7 @@
 @property (nonatomic, copy) NSString *confirmationText;
 @property (nonatomic) unsigned int elementType;
 @property (nonatomic) BOOL highlighted;
-@property (nonatomic) int itemIdentifier;
+@property (nonatomic) long long itemIdentifier;
 @property (nonatomic) int progressType;
 @property (nonatomic) BOOL shouldSuppressEnabled;
 @property (nonatomic) BOOL showingConfirmation;
@@ -38,14 +38,14 @@
 - (id)confirmationText;
 - (unsigned int)elementType;
 - (BOOL)highlighted;
-- (int)itemIdentifier;
+- (long long)itemIdentifier;
 - (int)progressType;
 - (void)setButtonText:(id)arg1;
 - (void)setButtonType:(int)arg1;
 - (void)setConfirmationText:(id)arg1;
 - (void)setElementType:(unsigned int)arg1;
 - (void)setHighlighted:(BOOL)arg1;
-- (void)setItemIdentifier:(int)arg1;
+- (void)setItemIdentifier:(long long)arg1;
 - (void)setProgressType:(int)arg1;
 - (void)setShouldSuppressEnabled:(BOOL)arg1;
 - (void)setShowingConfirmation:(BOOL)arg1;

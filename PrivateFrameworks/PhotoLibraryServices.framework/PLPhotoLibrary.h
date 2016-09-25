@@ -47,7 +47,7 @@
 @property (nonatomic, readonly, retain) PLFetchingAlbum *userLibraryAlbum;
 @property (nonatomic, readonly, copy) NSArray *wallpaperAlbums;
 
-+ (unsigned int)CloudPhotoLibrarySize;
++ (unsigned long long)CloudPhotoLibrarySize;
 + (void)_activateStatusTimer;
 + (void)_assetsLibrary_disableSharedPhotoStreamsSupport;
 + (BOOL)_assetsLibrary_isSharedPhotoStreamsSupportEnabled;
@@ -172,7 +172,7 @@
 + (void)setUnverifiedFaceCountThreshold:(unsigned int)arg1;
 + (void)setVideoCaptureIsBusy:(BOOL)arg1;
 + (id)sharedPhotoLibrary;
-+ (unsigned int)sharedStreamsSize;
++ (unsigned long long)sharedStreamsSize;
 + (id)simpleDCIMDirectory;
 + (id)sqliteErrorIndicatorFilePath;
 + (id)streamsLibraryUpdatingExpiredIndicatorFilePath;
@@ -268,7 +268,7 @@
 - (BOOL)hasCompletedMomentAnalysis;
 - (BOOL)hasCompletedRestorePostProcessing;
 - (BOOL)hasITunesSyncedContent;
-- (BOOL)hasPhotoWithFileCreationDate:(id)arg1 fileName:(id)arg2 fileSize:(int)arg3;
+- (BOOL)hasPhotoWithFileCreationDate:(id)arg1 fileName:(id)arg2 fileSize:(long long)arg3;
 - (struct NSObject { Class x1; }*)iPadAllPhotosAlbum;
 - (struct NSObject { Class x1; }*)iPadAllPhotosAlbumIfExists;
 - (id)iTunesSyncedContentInfo;

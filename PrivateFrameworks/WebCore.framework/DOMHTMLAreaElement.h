@@ -23,11 +23,11 @@
 // Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
 
 - (id)absoluteLinkURL;
-- (struct _WKQuad { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGPoint { double x_2_1_1; double x_2_1_2; } x2; struct CGPoint { double x_3_1_1; double x_3_1_2; } x3; struct CGPoint { double x_4_1_1; double x_4_1_2; } x4; })absoluteQuadWithOwner:(id)arg1;
+- (struct _WKQuad { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGPoint { float x_2_1_1; float x_2_1_2; } x2; struct CGPoint { float x_3_1_1; float x_3_1_2; } x3; struct CGPoint { float x_4_1_1; float x_4_1_2; } x4; })absoluteQuadWithOwner:(id)arg1;
 - (id)absoluteQuadsWithOwner:(id)arg1;
 - (id)accessKey;
 - (id)alt;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundingBoxWithOwner:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingBoxWithOwner:(id)arg1;
 - (id)boundingBoxesWithOwner:(id)arg1;
 - (id)coords;
 - (id)hashName;
@@ -57,6 +57,6 @@
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
-- (id)absoluteQuadsAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (id)absoluteQuadsAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 
 @end

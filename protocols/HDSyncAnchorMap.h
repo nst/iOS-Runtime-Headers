@@ -6,8 +6,8 @@
 @required
 
 - (unsigned int)anchorCount;
-- (int)anchorForSyncEntityClass:(Class)arg1;
-- (void)enumerateAnchorsAndSyncEntitiesWithBlock:(void *)arg1; // needs 1 arg types, found 8: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, Class, int, BOOL*, void*
-- (void)setAnchor:(int)arg1 forSyncEntity:(Class)arg2;
+- (long long)anchorForSyncEntityClass:(Class)arg1;
+- (void)enumerateAnchorsAndSyncEntitiesWithBlock:(void *)arg1; // needs 1 arg types, found 8: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, Class, long long, BOOL*, void*
+- (void)setAnchor:(long long)arg1 forSyncEntity:(Class)arg2;
 
 @end

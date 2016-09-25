@@ -98,7 +98,7 @@
 - (id)appUpdatesStore;
 - (id)appstoredUpdatesStore;
 - (void)beginObservingLibraryItems:(id)arg1;
-- (void)cancelDownloadForItemWithIdentifier:(int)arg1;
+- (void)cancelDownloadForItemWithIdentifier:(long long)arg1;
 - (void)dealloc;
 - (void)downloadManager:(id)arg1 downloadStatesDidChange:(id)arg2;
 - (void)downloadManagerDownloadsDidChange:(id)arg1;
@@ -138,7 +138,7 @@
 - (void)removeMediaLibrary:(id)arg1;
 - (void)removeObserver:(id)arg1;
 - (void)removeRelationshipsForParentAdamId:(id)arg1;
-- (id)stateForItemWithIdentifier:(int)arg1;
+- (id)stateForItemWithIdentifier:(long long)arg1;
 - (id)stateForItemWithStoreIdentifier:(id)arg1;
 
 @end

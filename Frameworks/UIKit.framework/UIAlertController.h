@@ -70,7 +70,7 @@
 @property (nonatomic) <UIAlertControllerCoordinatedActionPerforming> *coordinatedActionPerformingDelegate;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (getter=_effectAlpha, setter=_setEffectAlpha:, nonatomic) double effectAlpha;
+@property (getter=_effectAlpha, setter=_setEffectAlpha:, nonatomic) float effectAlpha;
 @property (getter=_hasPreservedInputViews, setter=_setHasPreservedInputViews:, nonatomic) BOOL hasPreservedInputViews;
 @property (readonly) unsigned int hash;
 @property (getter=_indexesOfActionSectionSeparators, setter=_setIndexesOfActionSectionSeparators:, nonatomic, copy) NSIndexSet *indexesOfActionSectionSeparators;
@@ -112,14 +112,14 @@
 - (id)_attributedTitle;
 - (void)_becomeFirstResponderIfAppropriate;
 - (int)_buttonTypeForBackGestureForIdiom:(int)arg1;
-- (BOOL)_canBePresentedAtLocation:(struct CGPoint { double x1; double x2; })arg1;
+- (BOOL)_canBePresentedAtLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)_canDismissWithGestureRecognizer;
 - (id)_cancelAction;
 - (void)_clearActionHandlers;
 - (id)_compatibilityPopoverController;
 - (id)_containedAlertController;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_contentInsets;
-- (void)_contentViewControllerWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withAnimations:(id /* block */)arg2;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_contentInsets;
+- (void)_contentViewControllerWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withAnimations:(id /* block */)arg2;
 - (id)_currentDescriptor;
 - (id)_defaultAlertAction;
 - (void)_didParentTextFieldViewController;
@@ -135,7 +135,7 @@
 - (void)_flipFrameForShimDismissalIfNecessary;
 - (id)_focusedAction;
 - (id)_foregroundView;
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; int x7; }*)arg1;
+- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; float x6; int x7; }*)arg1;
 - (void)_handleKeyCommand:(id)arg1;
 - (void)_handleReturn;
 - (BOOL)_hasAttributedMessage;
@@ -252,8 +252,8 @@
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
 - (int)preferredStyle;
 - (void)previewInteractionController:(id)arg1 performCommitForPreviewViewController:(id)arg2 committedViewController:(id)arg3;
-- (id)previewInteractionController:(id)arg1 viewControllerForPreviewingAtPosition:(struct CGPoint { double x1; double x2; })arg2 inView:(id)arg3 presentingViewController:(id*)arg4;
-- (void)previewInteractionController:(id)arg1 willPresentViewController:(id)arg2 forPosition:(struct CGPoint { double x1; double x2; })arg3 inSourceView:(id)arg4;
+- (id)previewInteractionController:(id)arg1 viewControllerForPreviewingAtPosition:(struct CGPoint { float x1; float x2; })arg2 inView:(id)arg3 presentingViewController:(id*)arg4;
+- (void)previewInteractionController:(id)arg1 willPresentViewController:(id)arg2 forPosition:(struct CGPoint { float x1; float x2; })arg3 inSourceView:(id)arg4;
 - (void)setCancelAction:(id)arg1;
 - (void)setContentViewController:(id)arg1;
 - (void)setCoordinatedActionPerformingDelegate:(id)arg1;
@@ -277,7 +277,7 @@
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (id)visualStyleForAlertControllerStyle:(int)arg1 traitCollection:(id)arg2 descriptor:(id)arg3;
 - (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
 

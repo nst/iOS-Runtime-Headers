@@ -28,7 +28,7 @@
 - (id)currentPreviewViewController;
 - (id)delegate;
 - (id)parallaxView;
-- (struct CGSize { double x1; double x2; })preferredContentSize;
+- (struct CGSize { float x1; float x2; })preferredContentSize;
 - (int)preferredWhitePointAdaptivityStyle;
 - (void)previewBecameFullScreen:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)previewDidAppear:(BOOL)arg1;

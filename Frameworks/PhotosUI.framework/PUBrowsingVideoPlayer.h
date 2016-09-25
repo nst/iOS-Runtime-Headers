@@ -11,10 +11,10 @@
     BOOL  __isPlayerTimeAdvancing;
     BOOL  __isUpdatingAudioCategory;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  __lastPlayerTime;
     BOOL  __needsUpdateAVPlayer;
     BOOL  __needsUpdateAVPlayerState;
@@ -37,23 +37,23 @@
     NSObject<OS_dispatch_queue> * _audioSessionQueue;
     AVPlayer * _avPlayer;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _currentTime;
     int  _desiredPlayState;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _desiredSeekTime;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _duration;
     NSError * _error;
     BOOL  _isActivated;
@@ -76,7 +76,7 @@
 @property (setter=_setBuffering:, nonatomic) BOOL _isBuffering;
 @property (setter=_setPlayerTimeAdvancing:, nonatomic) BOOL _isPlayerTimeAdvancing;
 @property (setter=_setUpdatingAudioCategory:, nonatomic) BOOL _isUpdatingAudioCategory;
-@property (setter=_setLastPlayerTime:, nonatomic) struct { int x1; int x2; unsigned int x3; int x4; } _lastPlayerTime;
+@property (setter=_setLastPlayerTime:, nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } _lastPlayerTime;
 @property (setter=_setNeedsUpdateAVPlayer:, nonatomic) BOOL _needsUpdateAVPlayer;
 @property (setter=_setNeedsUpdateAVPlayerState:, nonatomic) BOOL _needsUpdateAVPlayerState;
 @property (setter=_setNeedsUpdateAtBeginningOrEnd:, nonatomic) BOOL _needsUpdateAtBeginningOrEnd;
@@ -97,12 +97,12 @@
 @property (nonatomic, retain) <PUDisplayAsset> *asset;
 @property (setter=_setAVPlayer:, nonatomic, retain) AVPlayer *avPlayer;
 @property (nonatomic, readonly) PUBrowsingVideoPlayerChange *currentChange;
-@property (setter=_setCurrentTime:, nonatomic) struct { int x1; int x2; unsigned int x3; int x4; } currentTime;
+@property (setter=_setCurrentTime:, nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } currentTime;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) int desiredPlayState;
-@property (setter=setDesiredSeekTime:, nonatomic) struct { int x1; int x2; unsigned int x3; int x4; } desiredSeekTime;
-@property (setter=_setDuration:, nonatomic) struct { int x1; int x2; unsigned int x3; int x4; } duration;
+@property (setter=setDesiredSeekTime:, nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } desiredSeekTime;
+@property (setter=_setDuration:, nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } duration;
 @property (setter=_setError:, nonatomic, retain) NSError *error;
 @property (readonly) unsigned int hash;
 @property (setter=setActivated:, nonatomic) BOOL isActivated;
@@ -121,7 +121,7 @@
 - (void).cxx_destruct;
 - (int)_audioCategoryUpdateID;
 - (id)_audioSession;
-- (void)_avPlayerTimeDidChange:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
+- (void)_avPlayerTimeDidChange:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (int)_currentRequestID;
 - (int)_currentUnloadRequestId;
 - (void)_dequeueAllOnPlayerLoadedBlocksIfApplicable;
@@ -143,7 +143,7 @@
 - (BOOL)_isBuffering;
 - (BOOL)_isPlayerTimeAdvancing;
 - (BOOL)_isUpdatingAudioCategory;
-- (struct { int x1; int x2; unsigned int x3; int x4; })_lastPlayerTime;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })_lastPlayerTime;
 - (void)_logPlaybackState;
 - (BOOL)_needsUpdate;
 - (BOOL)_needsUpdateAVPlayer;
@@ -170,11 +170,11 @@
 - (void)_setAudioSesstion:(id)arg1;
 - (void)_setBuffering:(BOOL)arg1;
 - (void)_setCurrentRequestID:(int)arg1;
-- (void)_setCurrentTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
+- (void)_setCurrentTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)_setCurrentUnloadRequestId:(int)arg1;
-- (void)_setDuration:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
+- (void)_setDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)_setError:(id)arg1;
-- (void)_setLastPlayerTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
+- (void)_setLastPlayerTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)_setNeedsUpdate;
 - (void)_setNeedsUpdateAVPlayer:(BOOL)arg1;
 - (void)_setNeedsUpdateAVPlayerState:(BOOL)arg1;
@@ -224,13 +224,13 @@
 - (void)avPlayerDidDeallocate;
 - (void)avPlayerStatusDidChange:(id)arg1;
 - (id)currentChange;
-- (struct { int x1; int x2; unsigned int x3; int x4; })currentTime;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })currentTime;
 - (void)dealloc;
 - (id)debugDetailedDescription;
 - (int)desiredPlayState;
-- (struct { int x1; int x2; unsigned int x3; int x4; })desiredSeekTime;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })desiredSeekTime;
 - (void)didPerformChanges;
-- (struct { int x1; int x2; unsigned int x3; int x4; })duration;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
 - (id)error;
 - (id)init;
 - (id)initWithAsset:(id)arg1 mediaProvider:(id)arg2;
@@ -250,12 +250,12 @@
 - (void)registerChangeObserver:(id)arg1;
 - (void)registerTimeObserver:(id)arg1;
 - (void)rewindExistingPlayer;
-- (void)seekToTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1 completionHandler:(id /* block */)arg2;
-- (void)seekToTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1 toleranceBefore:(struct { int x1; int x2; unsigned int x3; int x4; })arg2 toleranceAfter:(struct { int x1; int x2; unsigned int x3; int x4; })arg3 completionHandler:(id /* block */)arg4;
+- (void)seekToTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 completionHandler:(id /* block */)arg2;
+- (void)seekToTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 toleranceBefore:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 toleranceAfter:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3 completionHandler:(id /* block */)arg4;
 - (void)setActivated:(BOOL)arg1;
 - (void)setAsset:(id)arg1;
 - (void)setDesiredPlayState:(int)arg1;
-- (void)setDesiredSeekTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
+- (void)setDesiredSeekTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setPlayerLoadingDisabled:(BOOL)arg1 forReason:(id)arg2;
 - (void)setPlayingDisabled:(BOOL)arg1 forReason:(id)arg2;
 - (void)setShouldRespectMuteSwitch:(BOOL)arg1;

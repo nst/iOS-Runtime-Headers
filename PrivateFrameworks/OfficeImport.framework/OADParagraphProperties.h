@@ -11,7 +11,7 @@
     OADBulletFont * mBulletFont;
     OADBulletProperties * mBulletProperties;
     OADBulletSize * mBulletSize;
-    double  mDefaultTab;
+    float  mDefaultTab;
     unsigned char  mFontAlign;
     unsigned int  mHasAlign;
     unsigned int  mHasBulletCharSet;
@@ -24,13 +24,13 @@
     unsigned int  mHasLevel;
     unsigned int  mHasRightMargin;
     unsigned int  mHasWrap;
-    double  mIndent;
+    float  mIndent;
     unsigned int  mIsHangingPunctuation;
     unsigned int  mIsLatinLineBreak;
-    double  mLeftMargin;
+    float  mLeftMargin;
     int  mLevel;
     OADTextSpacing * mLineSpacing;
-    double  mRightMargin;
+    float  mRightMargin;
     NSArray * mTabStops;
     unsigned char  mWrap;
 }

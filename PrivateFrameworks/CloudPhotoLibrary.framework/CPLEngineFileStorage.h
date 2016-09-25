@@ -26,7 +26,7 @@
 
 - (void).cxx_destruct;
 - (void)_addIdentityToUncommittedFiles:(id)arg1;
-- (BOOL)_compactStorageIncludeOriginals:(BOOL)arg1 desiredFreeSpace:(unsigned int*)arg2 error:(id*)arg3;
+- (BOOL)_compactStorageIncludeOriginals:(BOOL)arg1 desiredFreeSpace:(unsigned long long*)arg2 error:(id*)arg3;
 - (BOOL)_fixupIdentity:(id)arg1 fileURL:(id)arg2 data:(id)arg3 error:(id*)arg4;
 - (BOOL)_recoverFromCrashWithRecoveryHandler:(id /* block */)arg1 error:(id*)arg2;
 - (void)_removeIdentityFromUncommittedFiles:(id)arg1;
@@ -60,7 +60,7 @@
 - (BOOL)storeFileAtURL:(id)arg1 identity:(id)arg2 isOriginal:(BOOL)arg3 needsCommit:(BOOL*)arg4 error:(id*)arg5;
 - (BOOL)storeUnretainedData:(id)arg1 identity:(id)arg2 isOriginal:(BOOL)arg3 error:(id*)arg4;
 - (BOOL)storeUnretainedFileAtURL:(id)arg1 identity:(id)arg2 isOriginal:(BOOL)arg3 error:(id*)arg4;
-- (BOOL)tryToFreeDiskSpace:(unsigned int)arg1 actuallyFreedSpace:(unsigned int*)arg2 error:(id*)arg3;
-- (BOOL)tryToFreeDiskSpace:(unsigned int)arg1 actuallyFreedSpace:(unsigned int*)arg2 includeOriginals:(BOOL)arg3 error:(id*)arg4;
+- (BOOL)tryToFreeDiskSpace:(unsigned long long)arg1 actuallyFreedSpace:(unsigned long long*)arg2 error:(id*)arg3;
+- (BOOL)tryToFreeDiskSpace:(unsigned long long)arg1 actuallyFreedSpace:(unsigned long long*)arg2 includeOriginals:(BOOL)arg3 error:(id*)arg4;
 
 @end

@@ -3,22 +3,22 @@
  */
 
 @interface TSCHLegendCellMetrics : NSObject {
-    double  mBadgeSize;
-    double  mBaseline;
+    float  mBadgeSize;
+    float  mBaseline;
     struct __CTFont { } * mFont;
-    double  mLegendSymbolGap;
-    double  mLineGap;
+    float  mLegendSymbolGap;
+    float  mLineGap;
     TSWPParagraphStyle * mParagraphStyle;
-    double  mTrueTitleHeight;
+    float  mTrueTitleHeight;
 }
 
-@property (nonatomic, readonly) double badgeSize;
-@property (nonatomic, readonly) double baseline;
+@property (nonatomic, readonly) float badgeSize;
+@property (nonatomic, readonly) float baseline;
 @property (nonatomic, readonly) struct __CTFont { }*font;
-@property (nonatomic, readonly) double lineGap;
+@property (nonatomic, readonly) float lineGap;
 @property (nonatomic, readonly) TSWPParagraphStyle *paragraphStyle;
-@property (nonatomic, readonly) double symbolGap;
-@property (nonatomic, readonly) double titleHeight;
+@property (nonatomic, readonly) float symbolGap;
+@property (nonatomic, readonly) float titleHeight;
 
 - (float)badgeSize;
 - (float)baseline;

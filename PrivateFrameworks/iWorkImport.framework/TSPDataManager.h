@@ -26,39 +26,39 @@
                 unsigned long __first_; 
             } __p2_; 
             struct __compressed_pair<float, std::__1::__unordered_map_equal<const std::__1::array<unsigned char, 20>, std::__1::__hash_value_type<const std::__1::array<unsigned char, 20>, TSPData *__weak>, TSP::DigestEqualTo, true> > { 
-                double __first_; 
+                float __first_; 
             } __p3_; 
         } __table_; 
     }  _digestToDataMap;
     NSObject<OS_dispatch_group> * _externalReferenceRemovalGroup;
     NSObject<OS_dispatch_queue> * _externalReferenceRemovalQueue;
     BOOL  _hasExternalReferences;
-    struct unordered_map<const int, TSPData *__weak, TSP::ObjectIdentifierHash, std::__1::equal_to<const int>, std::__1::allocator<std::__1::pair<const int, TSPData *__weak> > > { 
-        struct __hash_table<std::__1::__hash_value_type<const int, TSPData *__weak>, std::__1::__unordered_map_hasher<const int, std::__1::__hash_value_type<const int, TSPData *__weak>, TSP::ObjectIdentifierHash, true>, std::__1::__unordered_map_equal<const int, std::__1::__hash_value_type<const int, TSPData *__weak>, std::__1::equal_to<const int>, true>, std::__1::allocator<std::__1::__hash_value_type<const int, TSPData *__weak> > > { 
-            struct unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<const int, TSPData *__weak>, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<const int, TSPData *__weak>, void *> *> > > { 
-                struct __compressed_pair<std::__1::__hash_node<std::__1::__hash_value_type<const int, TSPData *__weak>, void *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<const int, TSPData *__weak>, void *> *> > > { 
-                    struct __hash_node<std::__1::__hash_value_type<const int, TSPData *__weak>, void *> {} **__first_; 
-                    struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<const int, TSPData *__weak>, void *> *> > { 
-                        struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<const int, TSPData *__weak>, void *> *> > { 
+    struct unordered_map<const long long, TSPData *__weak, TSP::ObjectIdentifierHash, std::__1::equal_to<const long long>, std::__1::allocator<std::__1::pair<const long long, TSPData *__weak> > > { 
+        struct __hash_table<std::__1::__hash_value_type<const long long, TSPData *__weak>, std::__1::__unordered_map_hasher<const long long, std::__1::__hash_value_type<const long long, TSPData *__weak>, TSP::ObjectIdentifierHash, true>, std::__1::__unordered_map_equal<const long long, std::__1::__hash_value_type<const long long, TSPData *__weak>, std::__1::equal_to<const long long>, true>, std::__1::allocator<std::__1::__hash_value_type<const long long, TSPData *__weak> > > { 
+            struct unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<const long long, TSPData *__weak>, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<const long long, TSPData *__weak>, void *> *> > > { 
+                struct __compressed_pair<std::__1::__hash_node<std::__1::__hash_value_type<const long long, TSPData *__weak>, void *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<const long long, TSPData *__weak>, void *> *> > > { 
+                    struct __hash_node<std::__1::__hash_value_type<const long long, TSPData *__weak>, void *> {} **__first_; 
+                    struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<const long long, TSPData *__weak>, void *> *> > { 
+                        struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<const long long, TSPData *__weak>, void *> *> > { 
                             unsigned long __first_; 
                         } __data_; 
                     } __second_; 
                 } __ptr_; 
             } __bucket_list_; 
-            struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const int, TSPData *__weak>, void *> *>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<const int, TSPData *__weak>, void *> > > { 
-                struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const int, TSPData *__weak>, void *> *> { 
-                    struct __hash_node<std::__1::__hash_value_type<const int, TSPData *__weak>, void *> {} *__next_; 
+            struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const long long, TSPData *__weak>, void *> *>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<const long long, TSPData *__weak>, void *> > > { 
+                struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const long long, TSPData *__weak>, void *> *> { 
+                    struct __hash_node<std::__1::__hash_value_type<const long long, TSPData *__weak>, void *> {} *__next_; 
                 } __first_; 
             } __p1_; 
-            struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<const int, std::__1::__hash_value_type<const int, TSPData *__weak>, TSP::ObjectIdentifierHash, true> > { 
+            struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<const long long, std::__1::__hash_value_type<const long long, TSPData *__weak>, TSP::ObjectIdentifierHash, true> > { 
                 unsigned long __first_; 
             } __p2_; 
-            struct __compressed_pair<float, std::__1::__unordered_map_equal<const int, std::__1::__hash_value_type<const int, TSPData *__weak>, std::__1::equal_to<const int>, true> > { 
-                double __first_; 
+            struct __compressed_pair<float, std::__1::__unordered_map_equal<const long long, std::__1::__hash_value_type<const long long, TSPData *__weak>, std::__1::equal_to<const long long>, true> > { 
+                float __first_; 
             } __p3_; 
         } __table_; 
     }  _identifierToDataMap;
-    int  _nextNewIdentifier;
+    long long  _nextNewIdentifier;
     TSUTemporaryDirectory * _temporaryDirectory;
     TSUPathSet * _temporaryDirectoryPathSet;
     NSObject<OS_dispatch_queue> * _temporaryDirectoryQueue;
@@ -74,7 +74,7 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)addData:(id)arg1;
-- (void)addDataFromPackage:(id)arg1 packageURL:(id)arg2 documentResourceDataProvider:(id)arg3 info:(const struct DataInfo { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; unsigned int x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x7; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x8; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x9; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x10; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x11; bool x12; int x13; struct DataAttributes {} *x14; struct EncryptionInfo {} *x15; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x16; }*)arg4 areExternalReferencesAllowed:(BOOL)arg5;
+- (void)addDataFromPackage:(id)arg1 packageURL:(id)arg2 documentResourceDataProvider:(id)arg3 info:(const struct DataInfo { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; unsigned long long x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x7; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x8; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x9; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x10; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x11; bool x12; int x13; struct DataAttributes {} *x14; struct EncryptionInfo {} *x15; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x16; }*)arg4 areExternalReferencesAllowed:(BOOL)arg5;
 - (id)addNewDataForStorage:(id)arg1 digest:(id)arg2 filename:(id)arg3;
 - (BOOL)attemptToMaterializeData:(id)arg1 dataURL:(id)arg2 dataURLType:(int)arg3;
 - (id)checkForPersistenceWarningsWithPackageURL:(id)arg1;
@@ -86,8 +86,8 @@
 - (id)dataForDigestImpl:(id)arg1 accessorBlock:(id /* block */)arg2;
 - (id)dataForDigestImpl:(id)arg1 skipDocumentResourcesLookup:(BOOL)arg2 accessorBlock:(id /* block */)arg3;
 - (id)dataForExistingData:(id)arg1 digest:(id)arg2 filename:(id)arg3 temporaryDataStorageURL:(id)arg4;
-- (id)dataForIdentifier:(int)arg1;
-- (id)dataForIdentifierImpl:(int)arg1;
+- (id)dataForIdentifier:(long long)arg1;
+- (id)dataForIdentifierImpl:(long long)arg1;
 - (id)dataFromExternalReferenceURL:(id)arg1 filename:(id)arg2 useFileCoordination:(BOOL)arg3;
 - (void)dataFromFileURL:(id)arg1 filename:(id)arg2 context:(id)arg3 completionQueue:(id)arg4 completion:(id /* block */)arg5;
 - (id)dataFromFileURL:(id)arg1 filename:(id)arg2 useFileCoordination:(BOOL)arg3;
@@ -96,7 +96,7 @@
 - (id)dataFromReadChannel:(id)arg1 filename:(id)arg2 dataURLOrNil:(id)arg3 canLink:(BOOL)arg4;
 - (void)dataFromReadChannel:(id)arg1 filename:(id)arg2 dataURLOrNil:(id)arg3 canLink:(BOOL)arg4 completion:(id /* block */)arg5;
 - (id)dataFromURL:(id)arg1 filename:(id)arg2 useFileCoordination:(BOOL)arg3;
-- (id)dataOrNilForIdentifier:(int)arg1;
+- (id)dataOrNilForIdentifier:(long long)arg1;
 - (id)dataWithStorage:(id)arg1 digest:(id)arg2 filename:(id)arg3 skipDocumentResourcesLookup:(BOOL)arg4 accessorBlock:(id /* block */)arg5;
 - (id)dataWithTemporaryDataStorageURL:(id)arg1 digest:(id)arg2 filename:(id)arg3;
 - (void)didCloseDocument;

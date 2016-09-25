@@ -14,9 +14,9 @@
     BOOL  _ignoreSubstitutions;
     NSArray * _outputChannels;
     NSArray * _phonemeSubstitutions;
-    double  _pitch;
+    float  _pitch;
     NSObject<OS_dispatch_queue> * _queue;
-    double  _rate;
+    float  _rate;
     void * _speakingRequestClientContext;
     NSMutableArray * _speechRequests;
     struct { 
@@ -32,7 +32,7 @@
     BOOL  _useSharedSession;
     NSArray * _userSubstitutions;
     NSString * _voiceIdentifier;
-    double  _volume;
+    float  _volume;
 }
 
 @property (nonatomic, retain) NSString *bundleIdentifier;
@@ -40,13 +40,13 @@
 @property (nonatomic) BOOL ignoreSubstitutions;
 @property (nonatomic, retain) NSArray *outputChannels;
 @property (nonatomic, copy) NSArray *phonemeSubstitutions;
-@property (nonatomic) double pitch;
-@property (nonatomic) double rate;
+@property (nonatomic) float pitch;
+@property (nonatomic) float rate;
 @property (nonatomic, readonly) NSString *resolvedVoiceIdentifier;
 @property (nonatomic) void*speakingRequestClientContext;
 @property (nonatomic, copy) NSArray *userSubstitutions;
 @property (nonatomic, retain) NSString *voiceIdentifier;
-@property (nonatomic) double volume;
+@property (nonatomic) float volume;
 
 + (id)_speechServiceForVoiceIdentifier:(id)arg1;
 + (id)allAvailableVoices;

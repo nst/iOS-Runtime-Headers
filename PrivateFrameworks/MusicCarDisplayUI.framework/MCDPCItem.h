@@ -18,7 +18,7 @@
 @property (nonatomic, readonly) BOOL isExplicitItem;
 @property (nonatomic, readonly) BOOL isPlayable;
 @property (nonatomic, readonly) MCDPCModel *model;
-@property (nonatomic, readonly) double playbackProgress;
+@property (nonatomic, readonly) float playbackProgress;
 @property (nonatomic, readonly) NSString *subtitle;
 @property (nonatomic, readonly) NSString *title;
 

@@ -20,7 +20,7 @@
 - (void).cxx_destruct;
 - (id)_geoComposedRoute;
 - (id)_initWithGEOComposedRoute:(id)arg1;
-- (id)_maneuverImageForStep:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 scale:(float)arg3;
+- (id)_maneuverImageForStep:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 scale:(float)arg3;
 - (id)advisoryNotices;
 - (double)distance;
 - (double)expectedTravelTime;

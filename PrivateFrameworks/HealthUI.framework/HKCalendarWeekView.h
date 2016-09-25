@@ -3,34 +3,34 @@
  */
 
 @interface HKCalendarWeekView : UIView {
-    double  _additionalSpacingPerRow;
-    double  _dateBottomMargin;
+    float  _additionalSpacingPerRow;
+    float  _dateBottomMargin;
     HKDateCache * _dateCache;
-    double  _dateDiameter;
-    double  _dateTopMargin;
+    float  _dateDiameter;
+    float  _dateTopMargin;
     NSMutableArray * _dayCells;
     <HKCalendarWeekViewDelegate> * _delegate;
     int  _firstDayOfMonthCellIndex;
-    double  _leftMargin;
-    double  _monthTitleBottomMargin;
-    double  _monthTitleTopMargin;
+    float  _leftMargin;
+    float  _monthTitleBottomMargin;
+    float  _monthTitleTopMargin;
     UIView<HKCalendarMonthTitleFormatting> * _monthTitleView;
     NSDate * _monthWeekStart;
     HKCalendarDayCell * _pressedDayCell;
     int  _pressedDayOfWeek;
 }
 
-@property (nonatomic) double additionalSpacingPerRow;
-@property (nonatomic) double dateBottomMargin;
+@property (nonatomic) float additionalSpacingPerRow;
+@property (nonatomic) float dateBottomMargin;
 @property (nonatomic, readonly) HKDateCache *dateCache;
-@property (nonatomic) double dateDiameter;
-@property (nonatomic) double dateTopMargin;
+@property (nonatomic) float dateDiameter;
+@property (nonatomic) float dateTopMargin;
 @property (nonatomic, readonly) NSArray *dayCells;
 @property (nonatomic) <HKCalendarWeekViewDelegate> *delegate;
 @property (nonatomic) int firstDayOfMonthCellIndex;
-@property (nonatomic) double leftMargin;
-@property (nonatomic) double monthTitleBottomMargin;
-@property (nonatomic) double monthTitleTopMargin;
+@property (nonatomic) float leftMargin;
+@property (nonatomic) float monthTitleBottomMargin;
+@property (nonatomic) float monthTitleTopMargin;
 @property (nonatomic, retain) UIView<HKCalendarMonthTitleFormatting> *monthTitleView;
 @property (nonatomic, retain) NSDate *monthWeekStart;
 @property (nonatomic, retain) HKCalendarDayCell *pressedDayCell;
@@ -51,7 +51,7 @@
 - (id)delegate;
 - (id)description;
 - (int)firstDayOfMonthCellIndex;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameForDayCell:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForDayCell:(id)arg1;
 - (id)initWithDateCache:(id)arg1;
 - (float)leftMargin;
 - (float)monthTitleBottomMargin;
@@ -80,7 +80,7 @@
 - (void)setMonthWeekStart:(id)arg1;
 - (void)setPressedDayCell:(id)arg1;
 - (void)setPressedDayOfWeek:(int)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;

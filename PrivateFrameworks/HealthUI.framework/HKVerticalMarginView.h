@@ -3,12 +3,12 @@
  */
 
 @interface HKVerticalMarginView : UIView {
-    double  _currentKeyboardHeight;
+    float  _currentKeyboardHeight;
     <HKVerticalMarginDelegate> * _marginDelegate;
     unsigned int  _offsetOptions;
 }
 
-@property (nonatomic) double currentKeyboardHeight;
+@property (nonatomic) float currentKeyboardHeight;
 @property (nonatomic, retain) <HKVerticalMarginDelegate> *marginDelegate;
 @property (nonatomic) unsigned int offsetOptions;
 

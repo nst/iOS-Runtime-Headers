@@ -27,7 +27,7 @@
 - (void)didMoveToWindow;
 - (id)initWithAnnotation:(id)arg1 reuseIdentifier:(id)arg2;
 - (id)initWithAnnotation:(id)arg1 style:(int)arg2 reuseIdentifier:(id)arg3;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (id)largeImage;
 - (void)setBalloonStrokeColor:(id)arg1;
 - (void)setBalloonTintColor:(id)arg1;

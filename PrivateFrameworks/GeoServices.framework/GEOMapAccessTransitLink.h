@@ -29,7 +29,7 @@
 @property (nonatomic, readonly) <GEOMapTransitStop> *stopFrom;
 @property (nonatomic, readonly) <GEOMapTransitStop> *stopTo;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) unsigned int transitLineID;
+@property (nonatomic, readonly) unsigned long long transitLineID;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -41,6 +41,6 @@
 - (unsigned int)minimumTravelTime;
 - (id)stopFrom;
 - (id)stopTo;
-- (unsigned int)transitLineID;
+- (unsigned long long)transitLineID;
 
 @end

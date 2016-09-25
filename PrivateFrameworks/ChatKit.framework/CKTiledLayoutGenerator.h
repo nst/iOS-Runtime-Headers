@@ -9,33 +9,33 @@
     struct { 
         int index; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } imageSize; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } minimumSize; 
         BOOL hasCaption; 
         BOOL isBatchStart; 
     }  _cachedTileInfo;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _captionPadding;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _interTileSpacing;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _noCaptionSpacing;
     int  _numberOfMagneticGuidelines;
     id /* block */  _parsedFrameBlock;
-    double  _roundingScale;
+    float  _roundingScale;
     int  _scanLocation;
     int  _scanSpecialSequenceCount;
     BOOL  _scannedBatchHasCaption;
@@ -49,13 +49,13 @@
     id /* block */  _tileMinimumSizeBlock;
 }
 
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } captionPadding;
-@property (nonatomic) struct CGSize { double x1; double x2; } interTileSpacing;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } captionPadding;
+@property (nonatomic) struct CGSize { float x1; float x2; } interTileSpacing;
 @property (nonatomic, readonly) BOOL isAtEnd;
-@property (nonatomic) struct CGSize { double x1; double x2; } noCaptionSpacing;
+@property (nonatomic) struct CGSize { float x1; float x2; } noCaptionSpacing;
 @property (nonatomic) int numberOfMagneticGuidelines;
 @property (nonatomic) id /* block */ parsedFrameBlock;
-@property (nonatomic) double roundingScale;
+@property (nonatomic) float roundingScale;
 @property (nonatomic) int scanLocation;
 @property (nonatomic) int scanSpecialSequenceCount;
 @property (nonatomic) CKTiledLayoutGeneratorScanState *scanState;
@@ -70,36 +70,36 @@
 @property (nonatomic, copy) id /* block */ tileMinimumSizeBlock;
 
 - (void).cxx_destruct;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })captionPadding;
-- (struct CGSize { double x1; double x2; })captionSizeForTileAtIndex:(int)arg1 proposedSize:(struct CGSize { double x1; double x2; })arg2;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })captionPadding;
+- (struct CGSize { float x1; float x2; })captionSizeForTileAtIndex:(int)arg1 proposedSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)didParseTiles;
 - (void)enumerateFramesWithBlock:(id /* block */)arg1;
 - (id)init;
-- (struct CGSize { double x1; double x2; })interTileSpacing;
+- (struct CGSize { float x1; float x2; })interTileSpacing;
 - (BOOL)isAtEnd;
-- (struct CGSize { double x1; double x2; })noCaptionSpacing;
+- (struct CGSize { float x1; float x2; })noCaptionSpacing;
 - (int)numberOfMagneticGuidelines;
 - (BOOL)parseNextTiles;
 - (void)parseTiles;
-- (void)parsedFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 type:(int)arg2 forTileAtIndex:(int)arg3;
+- (void)parsedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 type:(int)arg2 forTileAtIndex:(int)arg3;
 - (id /* block */)parsedFrameBlock;
 - (float)roundingScale;
-- (BOOL)scanAnyTile:(struct { int x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1;
+- (BOOL)scanAnyTile:(struct { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1;
 - (int)scanLocation;
 - (int)scanSpecialSequenceCount;
 - (id)scanState;
-- (BOOL)scanTile:(struct { int x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1 ofType:(int)arg2;
-- (BOOL)scanTile:(struct { int x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1 passingTest:(id /* block */)arg2;
-- (BOOL)scanTile:(struct { int x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1 type:(int*)arg2;
-- (BOOL)scanTileWithHorizontalPanorama:(struct { int x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1;
-- (BOOL)scanTileWithLandscapeImage:(struct { int x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1;
-- (BOOL)scanTileWithPortraitImage:(struct { int x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1;
-- (BOOL)scanTileWithSquareImage:(struct { int x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1;
+- (BOOL)scanTile:(struct { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1 ofType:(int)arg2;
+- (BOOL)scanTile:(struct { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1 passingTest:(id /* block */)arg2;
+- (BOOL)scanTile:(struct { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1 type:(int*)arg2;
+- (BOOL)scanTileWithHorizontalPanorama:(struct { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1;
+- (BOOL)scanTileWithLandscapeImage:(struct { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1;
+- (BOOL)scanTileWithPortraitImage:(struct { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1;
+- (BOOL)scanTileWithSquareImage:(struct { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1;
 - (BOOL)scannedBatchHasCaption;
 - (id)scannedBatchID;
-- (void)setCaptionPadding:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
-- (void)setInterTileSpacing:(struct CGSize { double x1; double x2; })arg1;
-- (void)setNoCaptionSpacing:(struct CGSize { double x1; double x2; })arg1;
+- (void)setCaptionPadding:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setInterTileSpacing:(struct CGSize { float x1; float x2; })arg1;
+- (void)setNoCaptionSpacing:(struct CGSize { float x1; float x2; })arg1;
 - (void)setNumberOfMagneticGuidelines:(int)arg1;
 - (void)setParsedFrameBlock:(id /* block */)arg1;
 - (void)setRoundingScale:(float)arg1;

@@ -4,7 +4,7 @@
 
 @interface SYSendingSession : SYSession {
     NSMutableIndexSet * _ackedBatchIndices;
-    unsigned int  _batchIndex;
+    unsigned long long  _batchIndex;
     _SYCountedSemaphore * _changeConcurrencySemaphore;
     NSObject<OS_dispatch_queue> * _changeFetcherQueue;
     NSObject<OS_os_activity> * _changeWaitActivity;

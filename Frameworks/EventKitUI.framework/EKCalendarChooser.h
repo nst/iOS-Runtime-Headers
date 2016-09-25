@@ -136,7 +136,7 @@
 - (void)loadView;
 - (float)marginForTableView:(id)arg1;
 - (int)numberOfSectionsInTableView:(id)arg1;
-- (struct CGSize { double x1; double x2; })preferredContentSize;
+- (struct CGSize { float x1; float x2; })preferredContentSize;
 - (void)refresh:(id)arg1;
 - (id)refreshControl;
 - (int)refreshCounter;

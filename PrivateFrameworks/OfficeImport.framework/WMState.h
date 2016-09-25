@@ -13,11 +13,11 @@
     BOOL  mIsHeaderOrFooter;
     WDText * mLastFooter;
     WDText * mLastHeader;
-    double  mLeftMargin;
-    double  mPageHeight;
+    float  mLeftMargin;
+    float  mPageHeight;
     unsigned int  mRunIndex;
-    double  mTopMargin;
-    double  mTotalPageHeight;
+    float  mTopMargin;
+    float  mTotalPageHeight;
     CMOutlineState * outlineState;
 }
 

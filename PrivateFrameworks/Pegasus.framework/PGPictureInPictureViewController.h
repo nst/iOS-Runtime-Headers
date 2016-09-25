@@ -21,19 +21,19 @@
     PGHostedWindowHostingHandle * _hostedWindowHostingHandle;
     BOOL  _initialLayerFrameIsNull;
     struct CGAffineTransform { 
-        double a; 
-        double b; 
-        double c; 
-        double d; 
-        double tx; 
-        double ty; 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     }  _layerHostTransform;
     NSArray * _loadedTimeRanges;
     PGLoadingIndicatorView * _loadingIndicatorView;
     PGPlaybackProgress * _playbackProgress;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _preferredContentSize;
     BOOL  _showsAlternateActionButtonImage;
     BOOL  _showsLoadingIndicator;
@@ -77,7 +77,7 @@
 - (void)performResumeAnimationWithCompletionHandler:(id /* block */)arg1;
 - (void)performRotateAnimationWithRotation:(int)arg1 completionHandler:(id /* block */)arg2;
 - (void)performStartAnimationWithCompletionHandler:(id /* block */)arg1;
-- (void)performStopAnimationWithFinalLayerFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 completionHandler:(id /* block */)arg2;
+- (void)performStopAnimationWithFinalLayerFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 completionHandler:(id /* block */)arg2;
 - (void)performSuspendAnimationWithCompletionHandler:(id /* block */)arg1;
 - (void)pictureInPictureControlsViewControllerActionButtonTapped:(id)arg1;
 - (void)pictureInPictureControlsViewControllerCancelButtonTapped:(id)arg1;
@@ -85,14 +85,14 @@
 - (BOOL)pictureInPictureControlsViewControllerShouldHandleTapGesture:(id)arg1;
 - (void)pictureInPictureControlsViewControllerStopButtonTapped:(id)arg1;
 - (id)playbackProgress;
-- (struct CGSize { double x1; double x2; })preferredContentSize;
-- (void)prepareStartAnimationWithInitialLayerFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 completionHandler:(id /* block */)arg2;
+- (struct CGSize { float x1; float x2; })preferredContentSize;
+- (void)prepareStartAnimationWithInitialLayerFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 completionHandler:(id /* block */)arg2;
 - (void)setContentContainer:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setHostedWindowHostingHandle:(id)arg1;
 - (void)setLoadedTimeRanges:(id)arg1;
 - (void)setPlaybackProgress:(id)arg1;
-- (void)setPreferredContentSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setPreferredContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setShowsAlternateActionButtonImage:(BOOL)arg1;
 - (void)setShowsLoadingIndicator:(BOOL)arg1;
 - (void)setStashState:(int)arg1;
@@ -102,7 +102,7 @@
 - (void)startShowingControlsAnimated:(BOOL)arg1;
 - (int)stashState;
 - (void)stopShowingControlsAnimated:(BOOL)arg1;
-- (void)updateHostedWindowSize:(struct CGSize { double x1; double x2; })arg1;
-- (void)updateLayerHostTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
+- (void)updateHostedWindowSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)updateLayerHostTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 
 @end

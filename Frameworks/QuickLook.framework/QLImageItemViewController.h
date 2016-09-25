@@ -4,14 +4,14 @@
 
 @interface QLImageItemViewController : QLScrollableContentItemViewController <QLAnimationTimerObserver> {
     QLAnimatedImage * _animatedImage;
-    double  _currentPlaybackTime;
+    float  _currentPlaybackTime;
     BOOL  _imageIsAnimated;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _imageSize;
     UIImageView * _imageView;
-    double  _initialTimeStamp;
+    float  _initialTimeStamp;
     int  _loadingIndex;
 }
 
@@ -23,7 +23,7 @@
 - (void).cxx_destruct;
 - (void)animationTimerFired:(double)arg1;
 - (void)dealloc;
-- (struct CGSize { double x1; double x2; })imageSize;
+- (struct CGSize { float x1; float x2; })imageSize;
 - (void)loadPreviewControllerWithPreviewItem:(id)arg1 completionHandler:(id /* block */)arg2;
 - (int)preferredWhitePointAdaptivityStyle;
 - (void)previewDidAppear:(BOOL)arg1;

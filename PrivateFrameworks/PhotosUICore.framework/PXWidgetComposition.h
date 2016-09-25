@@ -7,8 +7,8 @@
     NSArray * __elements;
     PXTilingController * __focusedTilingController;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  __lastContentAdjustmentOffset;
     <PXWidgetCompositionDelegate> * _delegate;
     struct { 
@@ -34,7 +34,7 @@
 @property (setter=_setDidLayoutWidgets:, nonatomic) BOOL _didLayoutWidgets;
 @property (setter=_setElements:, nonatomic, copy) NSArray *_elements;
 @property (setter=_setFocusedTilingController:, nonatomic, retain) PXTilingController *_focusedTilingController;
-@property (setter=_setLastContentAdjustmentOffset:, nonatomic) struct CGPoint { double x1; double x2; } _lastContentAdjustmentOffset;
+@property (setter=_setLastContentAdjustmentOffset:, nonatomic) struct CGPoint { float x1; float x2; } _lastContentAdjustmentOffset;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PXWidgetCompositionDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -56,12 +56,12 @@
 - (void)_invalidateElementsSpec;
 - (void)_invalidateElementsToLoad;
 - (void)_invalidateFocusedTilingController;
-- (struct CGPoint { double x1; double x2; })_lastContentAdjustmentOffset;
+- (struct CGPoint { float x1; float x2; })_lastContentAdjustmentOffset;
 - (int)_loadingPriorityForElement:(id)arg1;
 - (void)_setDidLayoutWidgets:(BOOL)arg1;
 - (void)_setElements:(id)arg1;
 - (void)_setFocusedTilingController:(id)arg1;
-- (void)_setLastContentAdjustmentOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (void)_setLastContentAdjustmentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_setNeedsUpdateWidgetLoading;
 - (BOOL)_shouldFocusOnTilingController:(id)arg1;
 - (BOOL)_shouldUseEdgeToEdgeLayoutForWidget:(id)arg1;
@@ -77,7 +77,7 @@
 - (void)elementNeedsLayout:(id)arg1 preferredAnimationOptions:(id)arg2 originatingTilingController:(id)arg3;
 - (struct NSObject { Class x1; }*)elementViewController:(id)arg1;
 - (id)footerTilingControllerForWidget:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameForWidget:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForWidget:(id)arg1;
 - (id)headerTilingControllerForWidget:(id)arg1;
 - (id)init;
 - (id)initWithScrollViewController:(id)arg1;
@@ -98,7 +98,7 @@
 - (id)spec;
 - (id)tilingControllers;
 - (void)updateComposition;
-- (id)widgetAtLocation:(struct CGPoint { double x1; double x2; })arg1;
+- (id)widgetAtLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (id)widgets;
 
 @end

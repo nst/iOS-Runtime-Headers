@@ -66,7 +66,7 @@
 - (BOOL)_insertPurchasedToneMetadata:(id)arg1 fileName:(id)arg2;
 - (BOOL)_insertSyncedToneMetadata:(id)arg1 fileName:(id)arg2;
 - (id)_installedTones;
-- (unsigned int)_installedTonesSize;
+- (unsigned long long)_installedTonesSize;
 - (void)_loadAlertToneInfo;
 - (void)_loadITunesRingtoneInfoPlistAtPath:(id)arg1;
 - (void)_loadToneIdentifierAliasMap;

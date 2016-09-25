@@ -4,7 +4,7 @@
 
 @interface TSUReadChannelInputStreamAdapter : NSObject <SFUInputStream> {
     NSObject<OS_dispatch_data> * _leftoverData;
-    int  _offset;
+    long long  _offset;
     <TSUReadChannel> * _readChannel;
 }
 
@@ -21,8 +21,8 @@
 - (void)disableSystemCaching;
 - (void)enableSystemCaching;
 - (id)initWithReadChannel:(id)arg1;
-- (int)offset;
+- (long long)offset;
 - (unsigned long)readToBuffer:(char *)arg1 size:(unsigned long)arg2;
-- (void)seekToOffset:(int)arg1;
+- (void)seekToOffset:(long long)arg1;
 
 @end

@@ -8,7 +8,7 @@
 }
 
 + (void)initialize;
-+ (struct CGSize { double x1; double x2; })preferredContentViewSize;
++ (struct CGSize { float x1; float x2; })preferredContentViewSize;
 
 - (BOOL)_canDrawContent;
 - (void)_changePanelInAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;

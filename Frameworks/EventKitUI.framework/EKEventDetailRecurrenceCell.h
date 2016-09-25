@@ -3,7 +3,7 @@
  */
 
 @interface EKEventDetailRecurrenceCell : EKEventDetailCell {
-    double  _lastLayoutWidth;
+    float  _lastLayoutWidth;
     UILabel * _recurrenceLabel;
 }
 

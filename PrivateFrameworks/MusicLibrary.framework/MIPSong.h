@@ -9,7 +9,7 @@
     MIPArtist * _composer;
     int  _discNumber;
     BOOL  _excludeFromShuffle;
-    int  _geniusId;
+    long long  _geniusId;
     MIPGenre * _genre;
     struct { 
         unsigned int geniusId : 1; 
@@ -35,7 +35,7 @@
 @property (nonatomic, retain) MIPArtist *composer;
 @property (nonatomic) int discNumber;
 @property (nonatomic) BOOL excludeFromShuffle;
-@property (nonatomic) int geniusId;
+@property (nonatomic) long long geniusId;
 @property (nonatomic, retain) MIPGenre *genre;
 @property (nonatomic, readonly) BOOL hasAlbum;
 @property (nonatomic, readonly) BOOL hasArtist;
@@ -69,7 +69,7 @@
 - (id)dictionaryRepresentation;
 - (int)discNumber;
 - (BOOL)excludeFromShuffle;
-- (int)geniusId;
+- (long long)geniusId;
 - (id)genre;
 - (BOOL)hasAlbum;
 - (BOOL)hasArtist;
@@ -99,7 +99,7 @@
 - (void)setComposer:(id)arg1;
 - (void)setDiscNumber:(int)arg1;
 - (void)setExcludeFromShuffle:(BOOL)arg1;
-- (void)setGeniusId:(int)arg1;
+- (void)setGeniusId:(long long)arg1;
 - (void)setGenre:(id)arg1;
 - (void)setHasAudioFormat:(BOOL)arg1;
 - (void)setHasDiscNumber:(BOOL)arg1;

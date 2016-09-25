@@ -3,8 +3,8 @@
  */
 
 @interface MPSCNNNeuron : MPSCNNKernel {
-    double  _a;
-    double  _b;
+    float  _a;
+    float  _b;
     int  _type;
 }
 

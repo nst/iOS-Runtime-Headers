@@ -15,7 +15,7 @@
     NSData * _maps_data;
     NSString * _predictionIdentifier;
     PRSRankingProperties * _rankingProperties;
-    unsigned int  _resultScore;
+    unsigned long long  _resultScore;
     NSURL * _resultURL;
     NSArray * _row_sections;
     int  _searchResultDomain;
@@ -47,7 +47,7 @@
 @property (nonatomic, retain) NSString *predictionIdentifier;
 @property (nonatomic, retain) PRSRankingProperties *rankingProperties;
 @property (nonatomic, retain) NSString *resultIdentifier;
-@property (nonatomic) unsigned int resultScore;
+@property (nonatomic) unsigned long long resultScore;
 @property (nonatomic, retain) NSURL *resultURL;
 @property (nonatomic, retain) NSArray *row_sections;
 @property int searchResultDomain;
@@ -87,7 +87,7 @@
 - (id)predictionIdentifier;
 - (id)rankingProperties;
 - (id)resultIdentifier;
-- (unsigned int)resultScore;
+- (unsigned long long)resultScore;
 - (id)resultURL;
 - (id)row_sections;
 - (int)searchResultDomain;
@@ -111,7 +111,7 @@
 - (void)setPredictionIdentifier:(id)arg1;
 - (void)setRankingProperties:(id)arg1;
 - (void)setResultIdentifier:(id)arg1;
-- (void)setResultScore:(unsigned int)arg1;
+- (void)setResultScore:(unsigned long long)arg1;
 - (void)setResultURL:(id)arg1;
 - (void)setRow_sections:(id)arg1;
 - (void)setSearchResultDomain:(int)arg1;

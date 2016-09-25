@@ -9,8 +9,8 @@
     id  _delegate;
     NSString * _fileName;
     int  _pageCount;
-    double  _pageHeight;
-    double  _pageWidth;
+    float  _pageHeight;
+    float  _pageWidth;
     NSString * _password;
     BOOL  _progressive;
     NSURL * _url;
@@ -45,8 +45,8 @@
 @property (nonatomic, retain) NSString *fileName;
 @property BOOL htmlErrorDisabled;
 @property (readonly) int pageCount;
-@property (readonly) double pageHeight;
-@property (readonly) double pageWidth;
+@property (readonly) float pageHeight;
+@property (readonly) float pageWidth;
 @property (nonatomic, retain) NSString *password;
 @property (nonatomic, readonly) NSURLRequest *previewRequest;
 @property (nonatomic, readonly) NSURLResponse *previewResponse;

@@ -15,7 +15,7 @@
     _UINavigationInteractiveTransitionBase * _interactionController;
     int  _operation;
     <UIViewControllerContextTransitioning> * _transitionContext;
-    double  _transitionGap;
+    float  _transitionGap;
     int  _transitionStyle;
 }
 
@@ -34,7 +34,7 @@
 @property (nonatomic) int operation;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) <UIViewControllerContextTransitioning> *transitionContext;
-@property (nonatomic) double transitionGap;
+@property (nonatomic) float transitionGap;
 @property (nonatomic) int transitionStyle;
 
 - (void).cxx_destruct;

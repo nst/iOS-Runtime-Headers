@@ -3,20 +3,20 @@
  */
 
 @interface IMGroupActionItem : IMItem <IMRemoteObjectCoding, NSCoding, NSCopying> {
-    int  _actionType;
+    long long  _actionType;
     NSString * _otherCountryCode;
     NSString * _otherHandle;
     NSString * _otherUnformattedID;
 }
 
-@property (nonatomic) int actionType;
+@property (nonatomic) long long actionType;
 @property (nonatomic, retain) NSString *otherCountryCode;
 @property (nonatomic, retain) NSString *otherHandle;
 @property (nonatomic, retain) NSString *otherUnformattedID;
 
 // Image: /System/Library/PrivateFrameworks/IMSharedUtilities.framework/IMSharedUtilities
 
-- (int)actionType;
+- (long long)actionType;
 - (id)copyDictionaryRepresentation;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -26,7 +26,7 @@
 - (id)otherCountryCode;
 - (id)otherHandle;
 - (id)otherUnformattedID;
-- (void)setActionType:(int)arg1;
+- (void)setActionType:(long long)arg1;
 - (void)setOtherCountryCode:(id)arg1;
 - (void)setOtherHandle:(id)arg1;
 - (void)setOtherUnformattedID:(id)arg1;

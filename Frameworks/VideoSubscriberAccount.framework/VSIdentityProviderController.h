@@ -44,7 +44,7 @@
 - (void)_hideViewController;
 - (void)_hideViewControllerIfNecessary;
 - (id)_initWithIdentityProvider:(id)arg1;
-- (id)_logoLoadOperationForPreferredImageSize:(struct CGSize { double x1; double x2; })arg1;
+- (id)_logoLoadOperationForPreferredImageSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_notifyDelegateReplaceViewController:(id)arg1;
 - (void)_notifyDelegateShowViewController:(id)arg1;
 - (void)_notifyDidAuthenticateAccount:(id)arg1;

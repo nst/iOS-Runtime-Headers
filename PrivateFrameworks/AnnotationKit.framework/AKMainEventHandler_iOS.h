@@ -4,7 +4,7 @@
 
 @interface AKMainEventHandler_iOS : AKMainEventHandler <UIGestureRecognizerDelegate> {
     UITapGestureRecognizer * _doubleTapRecognizer;
-    double  _lastRotationAngleInRotationGesture;
+    float  _lastRotationAngleInRotationGesture;
     AKPanGestureRecognizer * _panRecognizer;
     UILongPressGestureRecognizer * _pressRecognizer;
     AKRotationGestureRecognizer * _rotationRecognizer;
@@ -15,7 +15,7 @@
 @property (readonly, copy) NSString *description;
 @property (retain) UITapGestureRecognizer *doubleTapRecognizer;
 @property (readonly) unsigned int hash;
-@property double lastRotationAngleInRotationGesture;
+@property float lastRotationAngleInRotationGesture;
 @property (retain) AKPanGestureRecognizer *panRecognizer;
 @property (retain) UILongPressGestureRecognizer *pressRecognizer;
 @property (retain) AKRotationGestureRecognizer *rotationRecognizer;
@@ -23,7 +23,7 @@
 @property (retain) UITapGestureRecognizer *tapRecognizer;
 
 - (void).cxx_destruct;
-- (BOOL)_hitTestAnnotationsIncludingPOI:(BOOL)arg1 atPointInWindow:(struct CGPoint { double x1; double x2; })arg2 outAnnotation:(id*)arg3;
+- (BOOL)_hitTestAnnotationsIncludingPOI:(BOOL)arg1 atPointInWindow:(struct CGPoint { float x1; float x2; })arg2 outAnnotation:(id*)arg3;
 - (void)_penDrawingQuiesced;
 - (void)applyToAllSelectedAnnotationsRotateEvent:(id)arg1 orRecognizer:(id)arg2;
 - (id)doubleTapRecognizer;

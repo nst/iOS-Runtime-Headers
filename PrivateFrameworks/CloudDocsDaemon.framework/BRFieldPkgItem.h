@@ -11,13 +11,13 @@
     }  _has;
     BOOL  _isExecutable;
     BOOL  _isWritable;
-    int  _mtime;
+    long long  _mtime;
     NSString * _path;
     NSData * _quarantineInfo;
     NSData * _signature;
     NSString * _symlinkContent;
     int  _type;
-    int  _xattrIndex;
+    long long  _xattrIndex;
 }
 
 @property (nonatomic) BOOL hasIsExecutable;
@@ -30,13 +30,13 @@
 @property (nonatomic) BOOL hasXattrIndex;
 @property (nonatomic) BOOL isExecutable;
 @property (nonatomic) BOOL isWritable;
-@property (nonatomic) int mtime;
+@property (nonatomic) long long mtime;
 @property (nonatomic, retain) NSString *path;
 @property (nonatomic, retain) NSData *quarantineInfo;
 @property (nonatomic, retain) NSData *signature;
 @property (nonatomic, retain) NSString *symlinkContent;
 @property (nonatomic) int type;
-@property (nonatomic) int xattrIndex;
+@property (nonatomic) long long xattrIndex;
 
 - (void).cxx_destruct;
 - (int)StringAsType:(id)arg1;
@@ -59,7 +59,7 @@
 - (BOOL)isExecutable;
 - (BOOL)isWritable;
 - (void)mergeFrom:(id)arg1;
-- (int)mtime;
+- (long long)mtime;
 - (id)path;
 - (id)quarantineInfo;
 - (BOOL)readFrom:(id)arg1;
@@ -69,19 +69,19 @@
 - (void)setHasXattrIndex:(BOOL)arg1;
 - (void)setIsExecutable:(BOOL)arg1;
 - (void)setIsWritable:(BOOL)arg1;
-- (void)setMtime:(int)arg1;
+- (void)setMtime:(long long)arg1;
 - (void)setPath:(id)arg1;
 - (void)setQuarantineInfo:(id)arg1;
 - (void)setSignature:(id)arg1;
 - (void)setSymlinkContent:(id)arg1;
 - (void)setType:(int)arg1;
-- (void)setXattrIndex:(int)arg1;
+- (void)setXattrIndex:(long long)arg1;
 - (id)signature;
 - (id)symlinkContent;
 - (int)type;
 - (id)typeAsString:(int)arg1;
 - (void)updateWithPkgItem:(id)arg1;
 - (void)writeTo:(id)arg1;
-- (int)xattrIndex;
+- (long long)xattrIndex;
 
 @end

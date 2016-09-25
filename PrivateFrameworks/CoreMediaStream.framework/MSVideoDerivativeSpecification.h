@@ -3,14 +3,14 @@
  */
 
 @interface MSVideoDerivativeSpecification : NSObject {
-    double  _bitRate;
+    float  _bitRate;
     unsigned int  _mediaAssetType;
     BOOL  _powerRequired;
     BOOL  _useCellular;
     NSString * _videoType;
 }
 
-@property (nonatomic, readonly) double bitRate;
+@property (nonatomic, readonly) float bitRate;
 @property (nonatomic, readonly) unsigned int mediaAssetType;
 @property (nonatomic, readonly) BOOL powerRequired;
 @property (nonatomic, readonly) BOOL useCellular;

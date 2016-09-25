@@ -8,12 +8,12 @@
 - (float)deleteKeyFontSize;
 - (float)dictationKeyFontSize;
 - (float)dismissKeyFontSize;
-- (struct CGPoint { double x1; double x2; })dismissKeyOffset;
+- (struct CGPoint { float x1; float x2; })dismissKeyOffset;
 - (float)internationalKeyFontSize;
 - (float)keyCornerRadius;
 - (id)messagesWriteboardKeyImageName;
 - (float)moreKeyFontSize;
 - (float)spaceKeyFontSize;
-- (struct CGPoint { double x1; double x2; })spaceReturnKeyTextOffset;
+- (struct CGPoint { float x1; float x2; })spaceReturnKeyTextOffset;
 
 @end

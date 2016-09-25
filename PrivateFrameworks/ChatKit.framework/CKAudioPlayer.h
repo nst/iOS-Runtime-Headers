@@ -25,7 +25,7 @@
 @property (nonatomic) double prevCurrentTime;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) BOOL usesAVPlayer;
-@property (nonatomic) double volume;
+@property (nonatomic) float volume;
 
 - (void).cxx_destruct;
 - (id)audioPlayer;

@@ -8,7 +8,7 @@
     int  _alertType;
     HDAWDHealthKitConcurrentCalendarItem * _calendarItem;
     BOOL  _dndEnabled;
-    int  _endDate;
+    long long  _endDate;
     HDAWDHealthKitExperimentalCondition * _experimentalCondition;
     BOOL  _failedPosting;
     struct { 
@@ -26,9 +26,9 @@
         unsigned int failedPosting : 1; 
     }  _has;
     HDAWDHealthKitNotificationResponseFlags * _responseFlags;
-    int  _startDate;
+    long long  _startDate;
     int  _testAction;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
     NSMutableArray * _views;
     HDAWDHealthKitWeeklySummaryDetail * _weeklySummaryDetail;
 }
@@ -38,7 +38,7 @@
 @property (nonatomic) int alertType;
 @property (nonatomic, retain) HDAWDHealthKitConcurrentCalendarItem *calendarItem;
 @property (nonatomic) BOOL dndEnabled;
-@property (nonatomic) int endDate;
+@property (nonatomic) long long endDate;
 @property (nonatomic, retain) HDAWDHealthKitExperimentalCondition *experimentalCondition;
 @property (nonatomic) BOOL failedPosting;
 @property (nonatomic, readonly) unsigned int*goalTypes;
@@ -57,9 +57,9 @@
 @property (nonatomic) BOOL hasTimestamp;
 @property (nonatomic, readonly) BOOL hasWeeklySummaryDetail;
 @property (nonatomic, retain) HDAWDHealthKitNotificationResponseFlags *responseFlags;
-@property (nonatomic) int startDate;
+@property (nonatomic) long long startDate;
 @property (nonatomic) int testAction;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 @property (nonatomic, retain) NSMutableArray *views;
 @property (nonatomic, retain) HDAWDHealthKitWeeklySummaryDetail *weeklySummaryDetail;
 
@@ -83,7 +83,7 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)dndEnabled;
-- (int)endDate;
+- (long long)endDate;
 - (id)experimentalCondition;
 - (BOOL)failedPosting;
 - (unsigned int*)goalTypes;
@@ -112,7 +112,7 @@
 - (void)setAlertType:(int)arg1;
 - (void)setCalendarItem:(id)arg1;
 - (void)setDndEnabled:(BOOL)arg1;
-- (void)setEndDate:(int)arg1;
+- (void)setEndDate:(long long)arg1;
 - (void)setExperimentalCondition:(id)arg1;
 - (void)setFailedPosting:(BOOL)arg1;
 - (void)setGoalTypes:(unsigned int*)arg1 count:(unsigned int)arg2;
@@ -124,15 +124,15 @@
 - (void)setHasTestAction:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
 - (void)setResponseFlags:(id)arg1;
-- (void)setStartDate:(int)arg1;
+- (void)setStartDate:(long long)arg1;
 - (void)setTestAction:(int)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (void)setViews:(id)arg1;
 - (void)setWeeklySummaryDetail:(id)arg1;
-- (int)startDate;
+- (long long)startDate;
 - (int)testAction;
 - (id)testActionAsString:(int)arg1;
-- (unsigned int)timestamp;
+- (unsigned long long)timestamp;
 - (id)views;
 - (id)viewsAtIndex:(unsigned int)arg1;
 - (unsigned int)viewsCount;

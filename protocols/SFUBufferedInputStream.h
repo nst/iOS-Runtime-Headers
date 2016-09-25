@@ -6,6 +6,6 @@
 @required
 
 - (unsigned long)readToOwnBuffer:(const char **)arg1 size:(unsigned long)arg2;
-- (BOOL)seekWithinBufferToOffset:(int)arg1;
+- (BOOL)seekWithinBufferToOffset:(long long)arg1;
 
 @end

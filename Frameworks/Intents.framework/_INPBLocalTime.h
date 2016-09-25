@@ -9,10 +9,10 @@
         unsigned int minuteOfHour : 1; 
         unsigned int secondOfMinute : 1; 
     }  _has;
-    int  _hourOfDay;
-    int  _millisOfSecond;
-    int  _minuteOfHour;
-    int  _secondOfMinute;
+    long long  _hourOfDay;
+    long long  _millisOfSecond;
+    long long  _minuteOfHour;
+    long long  _secondOfMinute;
     PBUnknownFields * _unknownFields;
 }
 
@@ -20,10 +20,10 @@
 @property (nonatomic) BOOL hasMillisOfSecond;
 @property (nonatomic) BOOL hasMinuteOfHour;
 @property (nonatomic) BOOL hasSecondOfMinute;
-@property (nonatomic) int hourOfDay;
-@property (nonatomic) int millisOfSecond;
-@property (nonatomic) int minuteOfHour;
-@property (nonatomic) int secondOfMinute;
+@property (nonatomic) long long hourOfDay;
+@property (nonatomic) long long millisOfSecond;
+@property (nonatomic) long long minuteOfHour;
+@property (nonatomic) long long secondOfMinute;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 + (id)options;
@@ -37,21 +37,21 @@
 - (BOOL)hasMinuteOfHour;
 - (BOOL)hasSecondOfMinute;
 - (unsigned int)hash;
-- (int)hourOfDay;
+- (long long)hourOfDay;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (int)millisOfSecond;
-- (int)minuteOfHour;
+- (long long)millisOfSecond;
+- (long long)minuteOfHour;
 - (BOOL)readFrom:(id)arg1;
-- (int)secondOfMinute;
+- (long long)secondOfMinute;
 - (void)setHasHourOfDay:(BOOL)arg1;
 - (void)setHasMillisOfSecond:(BOOL)arg1;
 - (void)setHasMinuteOfHour:(BOOL)arg1;
 - (void)setHasSecondOfMinute:(BOOL)arg1;
-- (void)setHourOfDay:(int)arg1;
-- (void)setMillisOfSecond:(int)arg1;
-- (void)setMinuteOfHour:(int)arg1;
-- (void)setSecondOfMinute:(int)arg1;
+- (void)setHourOfDay:(long long)arg1;
+- (void)setMillisOfSecond:(long long)arg1;
+- (void)setMinuteOfHour:(long long)arg1;
+- (void)setSecondOfMinute:(long long)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
 

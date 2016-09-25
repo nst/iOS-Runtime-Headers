@@ -15,7 +15,7 @@
     NSString * _cachedURLString;
     NSData * _certData;
     IMConnectionMonitor * _connectionMonitor;
-    unsigned int  _hasPairedDeviceState;
+    unsigned long long  _hasPairedDeviceState;
     NSDate * _loadDate;
     IDSRemoteURLConnection * _remoteURLConnection;
     int  _token;
@@ -39,7 +39,7 @@
 @property BOOL allowUnsignedBags;
 @property (retain) NSString *apsEnvironmentName;
 @property (retain) NSURL *bagURL;
-@property unsigned int hasPairedDeviceState;
+@property unsigned long long hasPairedDeviceState;
 @property (readonly) BOOL isInDebilitatedMode;
 @property (readonly) BOOL isLoaded;
 @property (readonly) BOOL isLoading;
@@ -93,7 +93,7 @@
 - (void)connectionMonitorDidUpdate:(id)arg1;
 - (void)dealloc;
 - (void)forceBagLoad;
-- (unsigned int)hasPairedDeviceState;
+- (unsigned long long)hasPairedDeviceState;
 - (BOOL)isInDebilitatedMode;
 - (BOOL)isLoaded;
 - (BOOL)isLoading;
@@ -103,7 +103,7 @@
 - (void)setAllowUnsignedBags:(BOOL)arg1;
 - (void)setApsEnvironmentName:(id)arg1;
 - (void)setBagURL:(id)arg1;
-- (void)setHasPairedDeviceState:(unsigned int)arg1;
+- (void)setHasPairedDeviceState:(unsigned long long)arg1;
 - (void)setToken:(int)arg1;
 - (void)set_bagQueue:(id)arg1;
 - (void)set_cacheTime:(id)arg1;

@@ -24,6 +24,6 @@
 - (id)initWithImage:(id)arg1;
 - (id)loadImage;
 - (void)loadImageWithCompletionHandler:(id /* block */)arg1;
-- (struct CGSize { double x1; double x2; })size;
+- (struct CGSize { float x1; float x2; })size;
 
 @end

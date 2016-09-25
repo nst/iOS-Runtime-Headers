@@ -5,13 +5,13 @@
 @interface SPProtoCacheAsset : PBCodable <NSCopying> {
     double  _accessDate;
     NSString * _key;
-    unsigned int  _size;
+    unsigned long long  _size;
     unsigned int  _state;
 }
 
 @property (nonatomic) double accessDate;
 @property (nonatomic, retain) NSString *key;
-@property (nonatomic) unsigned int size;
+@property (nonatomic) unsigned long long size;
 @property (nonatomic) unsigned int state;
 
 - (void).cxx_destruct;
@@ -27,9 +27,9 @@
 - (BOOL)readFrom:(id)arg1;
 - (void)setAccessDate:(double)arg1;
 - (void)setKey:(id)arg1;
-- (void)setSize:(unsigned int)arg1;
+- (void)setSize:(unsigned long long)arg1;
 - (void)setState:(unsigned int)arg1;
-- (unsigned int)size;
+- (unsigned long long)size;
 - (unsigned int)state;
 - (void)writeTo:(id)arg1;
 

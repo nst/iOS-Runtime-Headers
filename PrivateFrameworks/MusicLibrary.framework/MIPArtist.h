@@ -9,9 +9,9 @@
         unsigned int storeId : 1; 
     }  _has;
     NSString * _name;
-    int  _persistentId;
+    long long  _persistentId;
     NSString * _sortName;
-    int  _storeId;
+    long long  _storeId;
 }
 
 @property (nonatomic, retain) NSString *artworkId;
@@ -21,9 +21,9 @@
 @property (nonatomic, readonly) BOOL hasSortName;
 @property (nonatomic) BOOL hasStoreId;
 @property (nonatomic, retain) NSString *name;
-@property (nonatomic) int persistentId;
+@property (nonatomic) long long persistentId;
 @property (nonatomic, retain) NSString *sortName;
-@property (nonatomic) int storeId;
+@property (nonatomic) long long storeId;
 
 - (void).cxx_destruct;
 - (id)artworkId;
@@ -40,17 +40,17 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)name;
-- (int)persistentId;
+- (long long)persistentId;
 - (BOOL)readFrom:(id)arg1;
 - (void)setArtworkId:(id)arg1;
 - (void)setHasPersistentId:(BOOL)arg1;
 - (void)setHasStoreId:(BOOL)arg1;
 - (void)setName:(id)arg1;
-- (void)setPersistentId:(int)arg1;
+- (void)setPersistentId:(long long)arg1;
 - (void)setSortName:(id)arg1;
-- (void)setStoreId:(int)arg1;
+- (void)setStoreId:(long long)arg1;
 - (id)sortName;
-- (int)storeId;
+- (long long)storeId;
 - (void)writeTo:(id)arg1;
 
 @end

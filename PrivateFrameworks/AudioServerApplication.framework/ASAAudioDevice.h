@@ -22,7 +22,7 @@
 @property (nonatomic, readonly) unsigned int inputSafetyOffset;
 @property (nonatomic, readonly, copy) NSArray *inputStreamObjectIDs;
 @property (nonatomic) unsigned int ioBufferFrameSize;
-@property (nonatomic) double ioCycleUsage;
+@property (nonatomic) float ioCycleUsage;
 @property (nonatomic, readonly, copy) NSString *manufacturer;
 @property (nonatomic, readonly) unsigned int maximumIOBufferFrameSize;
 @property (nonatomic, readonly) unsigned int minimumIOBufferFrameSize;

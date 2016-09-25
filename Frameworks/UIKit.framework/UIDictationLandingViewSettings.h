@@ -3,21 +3,21 @@
  */
 
 @interface UIDictationLandingViewSettings : NSObject {
-    double  _circleRPM;
-    double  _colorTransitionInDuration;
-    double  _colorTransitionOutDuration;
-    double  _fadeInDuration;
-    double  _fadeOutDuration;
-    double  _shrinkDuration;
+    float  _circleRPM;
+    float  _colorTransitionInDuration;
+    float  _colorTransitionOutDuration;
+    float  _fadeInDuration;
+    float  _fadeOutDuration;
+    float  _shrinkDuration;
     BOOL  _useBlackWave;
 }
 
-@property (nonatomic) double circleRPM;
-@property (nonatomic) double colorTransitionInDuration;
-@property (nonatomic) double colorTransitionOutDuration;
-@property (nonatomic) double fadeInDuration;
-@property (nonatomic) double fadeOutDuration;
-@property (nonatomic) double shrinkDuration;
+@property (nonatomic) float circleRPM;
+@property (nonatomic) float colorTransitionInDuration;
+@property (nonatomic) float colorTransitionOutDuration;
+@property (nonatomic) float fadeInDuration;
+@property (nonatomic) float fadeOutDuration;
+@property (nonatomic) float shrinkDuration;
 @property (nonatomic) BOOL useBlackWave;
 
 + (id)sharedInstance;

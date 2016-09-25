@@ -94,7 +94,7 @@
 - (void)_didReceiveMessagePlayedReceiptForMessageID:(id)arg1 date:(id)arg2 attempts:(int)arg3 completionBlock:(id /* block */)arg4;
 - (void)_didReceiveMessageReadForMessageID:(id)arg1 date:(id)arg2 attempts:(int)arg3 useMessageSuppression:(BOOL)arg4 completionBlock:(id /* block */)arg5;
 - (void)_didReceiveMessageReadReceiptForMessageID:(id)arg1 date:(id)arg2 attempts:(int)arg3 completionBlock:(id /* block */)arg4;
-- (void)_didReceiveMessageSavedForMessageID:(id)arg1 ofType:(int)arg2 forChat:(id)arg3 fromHandle:(id)arg4 fromMe:(BOOL)arg5 date:(id)arg6 attempts:(int)arg7 useMessageSuppression:(BOOL)arg8 account:(id)arg9 completionBlock:(id /* block */)arg10;
+- (void)_didReceiveMessageSavedForMessageID:(id)arg1 ofType:(long long)arg2 forChat:(id)arg3 fromHandle:(id)arg4 fromMe:(BOOL)arg5 date:(id)arg6 attempts:(int)arg7 useMessageSuppression:(BOOL)arg8 account:(id)arg9 completionBlock:(id /* block */)arg10;
 - (void)_doLoginIgnoringProxy:(BOOL)arg1;
 - (void)_doLoginIgnoringProxy:(BOOL)arg1 withAccount:(id)arg2;
 - (void)_endMessageSuppressionForChatGUID:(id)arg1;
@@ -169,7 +169,7 @@
 - (id)canonicalFormOfChatRoom:(id)arg1;
 - (id)canonicalFormOfID:(id)arg1;
 - (void)canonicalizeChatIdentifier:(id*)arg1 style:(unsigned char*)arg2;
-- (unsigned int)capabilities;
+- (unsigned long long)capabilities;
 - (void)changeGroup:(id)arg1 changes:(id)arg2;
 - (void)changeGroups:(id)arg1;
 - (void)changeLocalProperty:(id)arg1 ofBuddy:(id)arg2 to:(id)arg3;
@@ -213,8 +213,8 @@
 - (void)didReceiveMessageReadForMessageID:(id)arg1 date:(id)arg2 completionBlock:(id /* block */)arg3;
 - (void)didReceiveMessageReadForMessageID:(id)arg1 date:(id)arg2 useMessageSuppression:(BOOL)arg3 completionBlock:(id /* block */)arg4;
 - (void)didReceiveMessageReadReceiptForMessageID:(id)arg1 date:(id)arg2 completionBlock:(id /* block */)arg3;
-- (void)didReceiveMessageSavedForMessageID:(id)arg1 ofType:(int)arg2 forChat:(id)arg3 fromHandle:(id)arg4 fromMe:(BOOL)arg5 date:(id)arg6 completionBlock:(id /* block */)arg7;
-- (void)didReceiveMessageSavedForMessageID:(id)arg1 ofType:(int)arg2 forChat:(id)arg3 fromHandle:(id)arg4 fromMe:(BOOL)arg5 date:(id)arg6 useMessageSuppression:(BOOL)arg7 account:(id)arg8 completionBlock:(id /* block */)arg9;
+- (void)didReceiveMessageSavedForMessageID:(id)arg1 ofType:(long long)arg2 forChat:(id)arg3 fromHandle:(id)arg4 fromMe:(BOOL)arg5 date:(id)arg6 completionBlock:(id /* block */)arg7;
+- (void)didReceiveMessageSavedForMessageID:(id)arg1 ofType:(long long)arg2 forChat:(id)arg3 fromHandle:(id)arg4 fromMe:(BOOL)arg5 date:(id)arg6 useMessageSuppression:(BOOL)arg7 account:(id)arg8 completionBlock:(id /* block */)arg9;
 - (void)didReceiveMessages:(id)arg1 forChat:(id)arg2 style:(unsigned char)arg3 account:(id)arg4;
 - (void)didReceiveReplaceMessageID:(int)arg1 forChat:(id)arg2 style:(unsigned char)arg3;
 - (void)didSendBalloonPayload:(id)arg1 forChat:(id)arg2 style:(unsigned char)arg3 messageGUID:(id)arg4 account:(id)arg5 completionBlock:(id /* block */)arg6;
@@ -239,7 +239,7 @@
 - (BOOL)equalID:(id)arg1 andID:(id)arg2;
 - (id)groupChatIdentifierForChatRoom:(id)arg1;
 - (id)groups;
-- (BOOL)hasCapability:(unsigned int)arg1;
+- (BOOL)hasCapability:(unsigned long long)arg1;
 - (void)holdBuddyUpdates;
 - (void)incrementPendingReadReceiptFromStorageCount;
 - (id)initWithAccount:(id)arg1 service:(id)arg2;

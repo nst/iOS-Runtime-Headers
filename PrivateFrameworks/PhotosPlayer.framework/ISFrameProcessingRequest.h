@@ -4,19 +4,19 @@
 
 @interface ISFrameProcessingRequest : NSObject {
     CIImage * _image;
-    double  _renderScale;
+    float  _renderScale;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _time;
     int  _type;
 }
 
 @property (nonatomic, retain) CIImage *image;
-@property (nonatomic) double renderScale;
-@property (nonatomic) struct { int x1; int x2; unsigned int x3; int x4; } time;
+@property (nonatomic) float renderScale;
+@property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } time;
 @property (nonatomic) int type;
 
 - (void).cxx_destruct;
@@ -24,9 +24,9 @@
 - (float)renderScale;
 - (void)setImage:(id)arg1;
 - (void)setRenderScale:(float)arg1;
-- (void)setTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
+- (void)setTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setType:(int)arg1;
-- (struct { int x1; int x2; unsigned int x3; int x4; })time;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })time;
 - (int)type;
 
 @end

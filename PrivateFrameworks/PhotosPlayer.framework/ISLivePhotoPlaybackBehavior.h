@@ -13,10 +13,10 @@
     }  _delegateFlags;
     BOOL  _immediatelyShowsPhotoWhenPlaybackEnds;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _keyTime;
     double  _photoTransitionDuration;
     int  _playbackStyle;
@@ -29,7 +29,7 @@
 @property (nonatomic, readonly) double crossfadeDuration;
 @property (nonatomic) <ISLivePhotoPlaybackBehaviorDelegate> *delegate;
 @property (nonatomic, readonly) BOOL immediatelyShowsPhotoWhenPlaybackEnds;
-@property (nonatomic, readonly) struct { int x1; int x2; unsigned int x3; int x4; } keyTime;
+@property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } keyTime;
 @property (nonatomic, readonly) double photoTransitionDuration;
 @property (nonatomic, readonly) int playbackStyle;
 
@@ -53,8 +53,8 @@
 - (void)activeDidChange;
 - (double)crossfadeDuration;
 - (BOOL)immediatelyShowsPhotoWhenPlaybackEnds;
-- (id)initWithInitialLayoutInfo:(id)arg1 playbackStyle:(int)arg2 keyTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg3 photoTransitionDuration:(double)arg4 crossfadeDuration:(double)arg5 immediatelyShowsPhotoWhenPlaybackEnds:(BOOL)arg6;
-- (struct { int x1; int x2; unsigned int x3; int x4; })keyTime;
+- (id)initWithInitialLayoutInfo:(id)arg1 playbackStyle:(int)arg2 keyTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3 photoTransitionDuration:(double)arg4 crossfadeDuration:(double)arg5 immediatelyShowsPhotoWhenPlaybackEnds:(BOOL)arg6;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })keyTime;
 - (double)photoTransitionDuration;
 - (int)playbackStyle;
 - (void)setDelegate:(id)arg1;

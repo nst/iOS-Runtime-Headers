@@ -6,7 +6,7 @@
     UIBarButtonItem * _barButtonItem;
     UIControl * _barButtonItemControl;
     BOOL  _collapseHeight;
-    double  _horizontalMargin;
+    float  _horizontalMargin;
     int  _preferredHeight;
     UIToolbar * _toolbar;
 }
@@ -14,7 +14,7 @@
 @property (nonatomic, readonly) UIBarButtonItem *barButtonItem;
 @property (nonatomic, readonly) UIControl *barButtonItemControl;
 @property (nonatomic) BOOL collapseHeight;
-@property (nonatomic) double horizontalMargin;
+@property (nonatomic) float horizontalMargin;
 @property (nonatomic) int preferredHeight;
 @property (nonatomic, readonly) UIToolbar *toolbar;
 
@@ -25,7 +25,7 @@
 - (BOOL)collapseHeight;
 - (float)horizontalMargin;
 - (id)initWithSystemItem:(int)arg1 preferredHeight:(float)arg2 collapseHeight:(BOOL)arg3;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (BOOL)isEnabled;
 - (void)layoutSubviews;
 - (int)preferredHeight;

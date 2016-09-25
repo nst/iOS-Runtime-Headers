@@ -32,7 +32,7 @@
 + (id)_defaultDestructiveButtonAppearance;
 + (id)_defaultDoneButtonAppearance;
 + (id)_defaultForwardButtonAppearance;
-+ (id)_defaultShadowWithColor:(id)arg1 offset:(struct CGSize { double x1; double x2; })arg2;
++ (id)_defaultShadowWithColor:(id)arg1 offset:(struct CGSize { float x1; float x2; })arg2;
 + (id)_defaultTabBarAppearance;
 + (id)defaultAppearance;
 

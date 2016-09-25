@@ -4,18 +4,18 @@
 
 @interface BWRamp : NSObject {
     int  _currentIteration;
-    double  _currentValue;
+    float  _currentValue;
     int  _durationInIterations;
-    double  _exponentialConvergenceFraction;
-    double  _exponentialSnapFraction;
+    float  _exponentialConvergenceFraction;
+    float  _exponentialSnapFraction;
     BOOL  _isRamping;
     BOOL  _isRampingUp;
     int  _shape;
-    double  _startValue;
-    double  _targetValue;
+    float  _startValue;
+    float  _targetValue;
 }
 
-@property (nonatomic, readonly) double currentValue;
+@property (nonatomic, readonly) float currentValue;
 @property (nonatomic, readonly) BOOL isRamping;
 
 + (void)initialize;

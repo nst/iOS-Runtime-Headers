@@ -24,9 +24,9 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
-+ (struct CGSize { double x1; double x2; })_badgeTileSizeForBadgeInfo:(id)arg1;
++ (struct CGSize { float x1; float x2; })_badgeTileSizeForBadgeInfo:(id)arg1;
 + (void)_configureBadgeView:(id)arg1 withBadgeInfo:(id)arg2 isOverContent:(BOOL)arg3;
-+ (struct CGSize { double x1; double x2; })badgeTileSizeForAssetViewModel:(id)arg1;
++ (struct CGSize { float x1; float x2; })badgeTileSizeForAssetViewModel:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)_badgeInfo;

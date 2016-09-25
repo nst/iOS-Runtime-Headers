@@ -13,7 +13,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_reportRecords:(id)arg1 requestID:(unsigned int)arg2;
+- (void)_reportRecords:(id)arg1 requestID:(unsigned long long)arg2;
 - (id)initWithSession:(id)arg1;
 - (void)main;
 - (BOOL)shouldPerformAnotherBatch;

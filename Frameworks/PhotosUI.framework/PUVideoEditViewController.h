@@ -10,19 +10,19 @@
     BOOL  __isAwaitingVideoPlayerUpdate;
     BOOL  __isSeeking;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  __layoutReferenceSize;
     unsigned int  __loadingState;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  __startingTime;
     <PUEditableAsset> * __videoAsset;
     PUResourceDownloadRequest * __videoDownloadRequest;
-    double  __videoExportProgress;
+    float  __videoExportProgress;
     PUVideoEditMaker * __videoExporter;
     PUMediaDestination * __videoMediaDestination;
     PUEditableMediaProvider * __videoMediaProvider;
@@ -35,10 +35,10 @@
     NSArray * _mainToolbarConstraints;
     int  _outstandingPlaceholderImageRequest;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _pendingTime;
     UIButton * _playButton;
     id  _playerObserver;
@@ -71,12 +71,12 @@
 @property (setter=_setIsAwaitingSlomoUpdate:, nonatomic) BOOL _isAwaitingSlomoUpdate;
 @property (setter=_setAwaitingVideoPlayerUpdate:, nonatomic) BOOL _isAwaitingVideoPlayerUpdate;
 @property (setter=_setSeeking:, nonatomic) BOOL _isSeeking;
-@property (setter=_setLayoutReferenceSize:, nonatomic) struct CGSize { double x1; double x2; } _layoutReferenceSize;
+@property (setter=_setLayoutReferenceSize:, nonatomic) struct CGSize { float x1; float x2; } _layoutReferenceSize;
 @property (setter=_setLoadingState:, nonatomic) unsigned int _loadingState;
-@property (setter=_setStartingTime:, nonatomic) struct { int x1; int x2; unsigned int x3; int x4; } _startingTime;
+@property (setter=_setStartingTime:, nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } _startingTime;
 @property (nonatomic, readonly) <PUEditableAsset> *_videoAsset;
 @property (setter=_setVideoDownloadRequest:, nonatomic, retain) PUResourceDownloadRequest *_videoDownloadRequest;
-@property (setter=_setVideoExportProgress:, nonatomic) double _videoExportProgress;
+@property (setter=_setVideoExportProgress:, nonatomic) float _videoExportProgress;
 @property (setter=_setVideoExporter:, nonatomic, retain) PUVideoEditMaker *_videoExporter;
 @property (nonatomic, readonly) PUMediaDestination *_videoMediaDestination;
 @property (nonatomic, readonly) PUEditableMediaProvider *_videoMediaProvider;
@@ -107,7 +107,7 @@
 - (BOOL)_isAwaitingSlomoUpdate;
 - (BOOL)_isAwaitingVideoPlayerUpdate;
 - (BOOL)_isSeeking;
-- (struct CGSize { double x1; double x2; })_layoutReferenceSize;
+- (struct CGSize { float x1; float x2; })_layoutReferenceSize;
 - (void)_loadAVAsset;
 - (void)_loadAVAssetValues;
 - (void)_loadFallbackAdjustmentsIfNeeded;
@@ -132,14 +132,14 @@
 - (void)_setAVPlayerItem:(id)arg1;
 - (void)_setAwaitingVideoPlayerUpdate:(BOOL)arg1;
 - (void)_setIsAwaitingSlomoUpdate:(BOOL)arg1;
-- (void)_setLayoutReferenceSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)_setLayoutReferenceSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_setLoadingState:(unsigned int)arg1;
 - (void)_setSeeking:(BOOL)arg1;
-- (void)_setStartingTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
+- (void)_setStartingTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)_setVideoDownloadRequest:(id)arg1;
 - (void)_setVideoExportProgress:(float)arg1;
 - (void)_setVideoExporter:(id)arg1;
-- (struct { int x1; int x2; unsigned int x3; int x4; })_startingTime;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })_startingTime;
 - (void)_updateButtons;
 - (void)_updateDownloadProgressIndicator;
 - (void)_updateEnabledStateForEditControls;
@@ -201,6 +201,6 @@
 - (void)viewDidLoad;
 - (void)viewModel:(id)arg1 didChange:(id)arg2;
 - (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

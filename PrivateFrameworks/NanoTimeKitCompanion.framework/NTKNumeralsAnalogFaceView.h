@@ -45,9 +45,9 @@
 - (float)_handsAlphaForEditMode:(int)arg1;
 - (BOOL)_isInTimeTravel;
 - (float)_keylineCornerRadiusForComplicationSlot:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_keylineFrameForCustomEditMode:(int)arg1 slot:(id)arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_keylineFrameForFullScreenEditingReducedForOutsideLabel;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_keylineFrameForStyleEditing;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_keylineFrameForCustomEditMode:(int)arg1 slot:(id)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_keylineFrameForFullScreenEditingReducedForOutsideLabel;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_keylineFrameForStyleEditing;
 - (unsigned int)_keylineLabelAlignmentForComplicationSlot:(id)arg1;
 - (unsigned int)_keylineLabelAlignmentForCustomEditMode:(int)arg1 slot:(id)arg2;
 - (BOOL)_keylineLabelShouldShowIndividualOptionNamesForCustomEditMode:(int)arg1;
@@ -64,7 +64,7 @@
 - (void)_scrubToDate:(id)arg1 animated:(BOOL)arg2;
 - (float)_secondHandAlphaForEditMode:(int)arg1;
 - (int)_styleIndexForStyle:(unsigned int)arg1;
-- (struct CGPoint { double x1; double x2; })_timeTravelStatusModuleCenter;
+- (struct CGPoint { float x1; float x2; })_timeTravelStatusModuleCenter;
 - (BOOL)_timeViewBehindContentForEditMode:(int)arg1;
 - (void)_unloadSnapshotContentViews;
 - (void)_updateAreAllComplicationsOffState;
@@ -72,7 +72,7 @@
 - (void)_updateComplicationPositionWithAnimationProgress:(float)arg1;
 - (void)dealloc;
 - (void)endScrubbingAnimated:(BOOL)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (void)setOverrideDate:(id)arg1 duration:(double)arg2;
 

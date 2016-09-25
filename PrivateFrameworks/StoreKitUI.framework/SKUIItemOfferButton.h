@@ -4,7 +4,7 @@
 
 @interface SKUIItemOfferButton : UIControl <SKUIViewElementOfferButton> {
     UIColor * _backgroundColor;
-    double  _borderColorAlphaMultiplier;
+    float  _borderColorAlphaMultiplier;
     BOOL  _borderCornerRadiusMatchesHalfBoundingDimension;
     UIView * _borderView;
     SKUIBuyButtonDescriptor * _buttonDescriptor;
@@ -15,8 +15,8 @@
     UIColor * _confirmationColor;
     NSMutableAttributedString * _confirmationTitleAttributedString;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _confirmationTitleFitSize;
     int  _confirmationTitleStyle;
     <SKUIItemOfferButtonDelegate> * _delegate;
@@ -27,13 +27,13 @@
     UIImage * _image;
     UIImageView * _imageView;
     NSString * _offerButtonStateDescription;
-    double  _progress;
+    float  _progress;
     SKUICircleProgressIndicator * _progressIndicator;
     BOOL  _showsConfirmationState;
     NSMutableAttributedString * _titleAttributedString;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _titleFitSize;
     UILabel * _titleLabel;
     int  _titleStyle;
@@ -42,7 +42,7 @@
     BOOL  _usesDrawRectPath;
 }
 
-@property (nonatomic) double borderColorAlphaMultiplier;
+@property (nonatomic) float borderColorAlphaMultiplier;
 @property (nonatomic, retain) SKUIBuyButtonDescriptor *buttonDescriptor;
 @property (nonatomic, copy) id /* block */ centerImageProvider;
 @property (nonatomic, copy) UIColor *cloudTintColor;
@@ -58,7 +58,7 @@
 @property (nonatomic, retain) UIImage *image;
 @property (nonatomic) <SKUIItemOfferButtonDelegate> *itemOfferDelegate;
 @property (nonatomic, readonly) NSString *offerButtonStateDescription;
-@property (nonatomic) double progress;
+@property (nonatomic) float progress;
 @property (nonatomic) int progressType;
 @property (nonatomic, readonly) BOOL restores;
 @property (getter=isShowingConfirmation, nonatomic, readonly) BOOL showingConfirmation;
@@ -69,13 +69,13 @@
 @property (getter=isUniversal, nonatomic) BOOL universal;
 
 + (id)_basicAnimationWithKeyPath:(id)arg1;
-+ (id)_cachedImageForAttributedTitle:(id)arg1 titleStyle:(int)arg2 size:(struct CGSize { double x1; double x2; })arg3 fillStyle:(int)arg4 universal:(BOOL)arg5 tintColor:(id)arg6;
++ (id)_cachedImageForAttributedTitle:(id)arg1 titleStyle:(int)arg2 size:(struct CGSize { float x1; float x2; })arg3 fillStyle:(int)arg4 universal:(BOOL)arg5 tintColor:(id)arg6;
 + (id)_defaultTitleAttributes;
-+ (id)_imageForAttributedTitle:(id)arg1 titleStyle:(int)arg2 size:(struct CGSize { double x1; double x2; })arg3 fillStyle:(int)arg4 universal:(BOOL)arg5 tintColor:(id)arg6;
++ (id)_imageForAttributedTitle:(id)arg1 titleStyle:(int)arg2 size:(struct CGSize { float x1; float x2; })arg3 fillStyle:(int)arg4 universal:(BOOL)arg5 tintColor:(id)arg6;
 + (id)_imageForProgressType:(int)arg1;
-+ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_imageInsetsForProgressType:(int)arg1;
++ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_imageInsetsForProgressType:(int)arg1;
 + (BOOL)_sizeMattersForTitleStyle:(int)arg1;
-+ (struct CGSize { double x1; double x2; })_titleSizeThatFitsForSize:(struct CGSize { double x1; double x2; })arg1 titleStyle:(int)arg2 mutableAttributedString:(id)arg3;
++ (struct CGSize { float x1; float x2; })_titleSizeThatFitsForSize:(struct CGSize { float x1; float x2; })arg1 titleStyle:(int)arg2 mutableAttributedString:(id)arg3;
 + (id)_universalPlusImageWithTintColor:(id)arg1;
 + (BOOL)canOpenItemForItemState:(id)arg1 clientContext:(id)arg2;
 + (id)cloudImageWithTintColor:(id)arg1 arrowTintColor:(id)arg2;
@@ -123,18 +123,18 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)didMoveToWindow;
-- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)element;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (int)fillStyle;
 - (BOOL)hasImage;
 - (id)image;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isDisabledButSelectable;
 - (BOOL)isShowingConfirmation;
 - (BOOL)isUniversal;
 - (id)itemOfferDelegate;
-- (struct CGSize { double x1; double x2; })layoutSizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })layoutSizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)layoutSubviews;
 - (id)offerButtonStateDescription;
 - (float)progress;
@@ -154,7 +154,7 @@
 - (void)setElement:(id)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setFillStyle:(int)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setImage:(id)arg1;
 - (void)setItemOfferDelegate:(id)arg1;
 - (void)setProgress:(float)arg1;
@@ -171,7 +171,7 @@
 - (BOOL)setValuesUsingItemOffer:(id)arg1 itemState:(id)arg2 clientContext:(id)arg3 animated:(BOOL)arg4;
 - (void)showCloudImage;
 - (BOOL)showsConfirmationState;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)tintColorDidChange;
 - (id)title;
 - (int)titleStyle;

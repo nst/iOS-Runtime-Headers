@@ -19,7 +19,7 @@
         unsigned int supportsInAppPayment : 1; 
     }  _has;
     BOOL  _inAppPINRequired;
-    int  _inAppPINRequiredAmount;
+    long long  _inAppPINRequiredAmount;
     NSString * _inAppPINRequiredCurrency;
     unsigned int  _paymentNetworkIdentifier;
     unsigned int  _paymentType;
@@ -53,7 +53,7 @@
 @property (nonatomic) BOOL hasSupportsInAppPayment;
 @property (nonatomic, readonly) BOOL hasSuspendedReason;
 @property (nonatomic) BOOL inAppPINRequired;
-@property (nonatomic) int inAppPINRequiredAmount;
+@property (nonatomic) long long inAppPINRequiredAmount;
 @property (nonatomic, retain) NSString *inAppPINRequiredCurrency;
 @property (nonatomic) unsigned int paymentNetworkIdentifier;
 @property (nonatomic) unsigned int paymentType;
@@ -92,7 +92,7 @@
 - (BOOL)hasSuspendedReason;
 - (unsigned int)hash;
 - (BOOL)inAppPINRequired;
-- (int)inAppPINRequiredAmount;
+- (long long)inAppPINRequiredAmount;
 - (id)inAppPINRequiredCurrency;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
@@ -115,7 +115,7 @@
 - (void)setHasSupportsContactlessPayment:(BOOL)arg1;
 - (void)setHasSupportsInAppPayment:(BOOL)arg1;
 - (void)setInAppPINRequired:(BOOL)arg1;
-- (void)setInAppPINRequiredAmount:(int)arg1;
+- (void)setInAppPINRequiredAmount:(long long)arg1;
 - (void)setInAppPINRequiredCurrency:(id)arg1;
 - (void)setPaymentNetworkIdentifier:(unsigned int)arg1;
 - (void)setPaymentType:(unsigned int)arg1;

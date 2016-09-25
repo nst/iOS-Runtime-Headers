@@ -9,25 +9,25 @@
     NSString * _pattern;
     unsigned short  _phraseId;
     NSString * _predictions;
-    int  _type;
-    double  _weight;
+    long long  _type;
+    float  _weight;
 }
 
 @property (nonatomic, readonly) BOOL matchReceived;
 @property (nonatomic, readonly) BOOL matchSent;
-@property (nonatomic, readonly) int type;
+@property (nonatomic, readonly) long long type;
 
 + (id)phraseDefinitionFromRawPhrase:(id)arg1;
-+ (void)seedRng:(unsigned int)arg1;
++ (void)seedRng:(unsigned long long)arg1;
 
 - (void).cxx_destruct;
 - (BOOL)existsInString:(id)arg1 wordBoundaries:(id)arg2;
 - (id)init;
-- (id)initWithPattern:(id)arg1 predictions:(id)arg2 type:(int)arg3 matchSent:(BOOL)arg4 matchReceived:(BOOL)arg5 phraseId:(unsigned int)arg6 weight:(double)arg7 anchoredAtWordBoundaries:(BOOL)arg8;
+- (id)initWithPattern:(id)arg1 predictions:(id)arg2 type:(long long)arg3 matchSent:(BOOL)arg4 matchReceived:(BOOL)arg5 phraseId:(unsigned int)arg6 weight:(double)arg7 anchoredAtWordBoundaries:(BOOL)arg8;
 - (BOOL)matchReceived;
 - (BOOL)matchSent;
 - (id)predictionWithScore:(double)arg1;
 - (id)randomPrediction;
-- (int)type;
+- (long long)type;
 
 @end

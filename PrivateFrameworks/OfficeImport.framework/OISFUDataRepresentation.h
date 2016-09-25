@@ -13,8 +13,8 @@
 - (id)bufferedInputStreamWithBufferSize:(unsigned long)arg1;
 - (struct CGDataProvider { }*)cgDataProvider;
 - (int)compare:(id)arg1;
-- (int)dataLength;
-- (int)encodedLength;
+- (long long)dataLength;
+- (long long)encodedLength;
 - (BOOL)hasSameLocationAs:(id)arg1;
 - (unsigned int)hash;
 - (id)inputStream;

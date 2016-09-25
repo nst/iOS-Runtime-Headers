@@ -39,7 +39,7 @@
 @property (nonatomic, readonly) NSManagedObjectID *objectID;
 @property (getter=isPending, nonatomic) BOOL pending;
 @property (nonatomic, retain) NSData *photosGraphData;
-@property (nonatomic) int photosGraphVersion;
+@property (nonatomic) long long photosGraphVersion;
 @property (nonatomic, readonly) PHObjectPlaceholder *placeholderForCreatedMemory;
 @property (getter=isRejected, nonatomic) BOOL rejected;
 @property (nonatomic, readonly) PHRelationshipChangeRequestHelper *representativeAssetsHelper;
@@ -105,7 +105,7 @@
 - (id)objectID;
 - (void)performTransactionCompletionHandlingInPhotoLibrary:(id)arg1;
 - (id)photosGraphData;
-- (int)photosGraphVersion;
+- (long long)photosGraphVersion;
 - (id)placeholderForCreatedMemory;
 - (id)representativeAssetsHelper;
 - (double)score;
@@ -119,7 +119,7 @@
 - (void)setMovieStateData:(id)arg1 forAsset:(id)arg2;
 - (void)setPending:(BOOL)arg1;
 - (void)setPhotosGraphData:(id)arg1;
-- (void)setPhotosGraphVersion:(int)arg1;
+- (void)setPhotosGraphVersion:(long long)arg1;
 - (void)setQueryHintObject:(id)arg1;
 - (void)setQueryHintObjects:(id)arg1;
 - (void)setRejected:(BOOL)arg1;

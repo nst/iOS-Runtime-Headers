@@ -3,35 +3,35 @@
  */
 
 @interface GEOPerRouteInfo : PBCodable <NSCopying> {
-    unsigned int  _etaServiceTravelTime;
+    unsigned long long  _etaServiceTravelTime;
     struct { 
         unsigned int etaServiceTravelTime : 1; 
         unsigned int originalTravelTime : 1; 
     }  _has;
-    unsigned int  _originalTravelTime;
+    unsigned long long  _originalTravelTime;
 }
 
-@property (nonatomic) unsigned int etaServiceTravelTime;
+@property (nonatomic) unsigned long long etaServiceTravelTime;
 @property (nonatomic) BOOL hasEtaServiceTravelTime;
 @property (nonatomic) BOOL hasOriginalTravelTime;
-@property (nonatomic) unsigned int originalTravelTime;
+@property (nonatomic) unsigned long long originalTravelTime;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)etaServiceTravelTime;
+- (unsigned long long)etaServiceTravelTime;
 - (BOOL)hasEtaServiceTravelTime;
 - (BOOL)hasOriginalTravelTime;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (unsigned int)originalTravelTime;
+- (unsigned long long)originalTravelTime;
 - (BOOL)readFrom:(id)arg1;
-- (void)setEtaServiceTravelTime:(unsigned int)arg1;
+- (void)setEtaServiceTravelTime:(unsigned long long)arg1;
 - (void)setHasEtaServiceTravelTime:(BOOL)arg1;
 - (void)setHasOriginalTravelTime:(BOOL)arg1;
-- (void)setOriginalTravelTime:(unsigned int)arg1;
+- (void)setOriginalTravelTime:(unsigned long long)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

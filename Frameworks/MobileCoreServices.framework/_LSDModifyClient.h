@@ -12,8 +12,8 @@
 - (void)removeHandlerForURLScheme:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)resetServerStoreWithCompletionHandler:(id /* block */)arg1;
 - (void)setDatabaseIsSeeded:(BOOL)arg1 completionHandler:(id /* block */)arg2;
-- (void)setHandler:(id)arg1 version:(unsigned int)arg2 forURLScheme:(id)arg3 completionHandler:(id /* block */)arg4;
-- (void)setHandler:(id)arg1 version:(unsigned int)arg2 roles:(unsigned long)arg3 forContentType:(id)arg4 completionHandler:(id /* block */)arg5;
+- (void)setHandler:(id)arg1 version:(unsigned long long)arg2 forURLScheme:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)setHandler:(id)arg1 version:(unsigned long long)arg2 roles:(unsigned long)arg3 forContentType:(id)arg4 completionHandler:(id /* block */)arg5;
 - (void)setHandlerOptions:(unsigned long)arg1 forContentType:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)synchronizeWithMobileInstallation;
 - (void)updateApplication:(id)arg1 mobileInstallationChanges:(id)arg2 completionHandler:(id /* block */)arg3;

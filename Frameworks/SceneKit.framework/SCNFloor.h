@@ -4,24 +4,24 @@
 
 @interface SCNFloor : SCNGeometry {
     unsigned int  _isPresentationInstance;
-    double  _length;
+    float  _length;
     unsigned int  _reflectionCategoryBitMask;
-    double  _reflectionFalloffEnd;
-    double  _reflectionFalloffStart;
-    double  _reflectionResolutionScaleFactor;
+    float  _reflectionFalloffEnd;
+    float  _reflectionFalloffStart;
+    float  _reflectionResolutionScaleFactor;
     unsigned int  _reflectionSampleCount;
-    double  _reflectivity;
+    float  _reflectivity;
     unsigned int  _usesCustomScaleFactor;
-    double  _width;
+    float  _width;
 }
 
-@property (nonatomic) double length;
+@property (nonatomic) float length;
 @property (nonatomic) unsigned int reflectionCategoryBitMask;
-@property (nonatomic) double reflectionFalloffEnd;
-@property (nonatomic) double reflectionFalloffStart;
-@property (nonatomic) double reflectionResolutionScaleFactor;
-@property (nonatomic) double reflectivity;
-@property (nonatomic) double width;
+@property (nonatomic) float reflectionFalloffEnd;
+@property (nonatomic) float reflectionFalloffStart;
+@property (nonatomic) float reflectionResolutionScaleFactor;
+@property (nonatomic) float reflectivity;
+@property (nonatomic) float width;
 
 + (id)floor;
 + (BOOL)supportsSecureCoding;
@@ -32,7 +32,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
-- (struct __C3DFloor { struct __C3DGeometry { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_3_1; unsigned char x_1_3_2[4]; } x_1_2_1; void *x_1_2_2; struct __CFString {} *x_1_2_3; struct __CFString {} *x_1_2_4; struct __CFDictionary {} *x_1_2_5; int x_1_2_6; int x_1_2_7; } x_1_1_1; struct __C3DMesh {} *x_1_1_2; struct __C3DMaterial {} *x_1_1_3; struct __CFArray {} *x_1_1_4; struct __CFSet {} *x_1_1_5; struct __CFArray {} *x_1_1_6; struct __C3DAABB {} *x_1_1_7; unsigned int x_1_1_8 : 1; int (*x_1_1_9)(); struct { unsigned short x_10_2_1; struct { bool x_2_3_1; unsigned char x_2_3_2; unsigned char x_2_3_3; unsigned char x_2_3_4; } x_10_2_2; struct __C3DMeshElement {} *x_10_2_3; struct __C3DMeshSource {} *x_10_2_4; struct __C3DMesh {} *x_10_2_5; } x_1_1_10; } x1; double x2; double x3; double x4; double x5; int x6; double x7; double x8; double x9; unsigned int x10; }*)floorRef;
+- (struct __C3DFloor { struct __C3DGeometry { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_3_1; unsigned char x_1_3_2[4]; } x_1_2_1; void *x_1_2_2; struct __CFString {} *x_1_2_3; struct __CFString {} *x_1_2_4; struct __CFDictionary {} *x_1_2_5; int x_1_2_6; int x_1_2_7; } x_1_1_1; struct __C3DMesh {} *x_1_1_2; struct __C3DMaterial {} *x_1_1_3; struct __CFArray {} *x_1_1_4; struct __CFSet {} *x_1_1_5; struct __CFArray {} *x_1_1_6; struct __C3DAABB {} *x_1_1_7; unsigned int x_1_1_8 : 1; int (*x_1_1_9)(); struct { unsigned short x_10_2_1; struct { bool x_2_3_1; unsigned char x_2_3_2; unsigned char x_2_3_3; unsigned char x_2_3_4; } x_10_2_2; struct __C3DMeshElement {} *x_10_2_3; struct __C3DMeshSource {} *x_10_2_4; struct __C3DMesh {} *x_10_2_5; } x_1_1_10; } x1; float x2; float x3; float x4; float x5; int x6; float x7; float x8; float x9; unsigned int x10; }*)floorRef;
 - (float)height;
 - (id)init;
 - (id)initWithCoder:(id)arg1;

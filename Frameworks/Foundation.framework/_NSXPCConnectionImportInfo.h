@@ -3,7 +3,7 @@
  */
 
 @interface _NSXPCConnectionImportInfo : NSObject {
-    unsigned int  _generationCount;
+    unsigned long long  _generationCount;
     NSLock * _lock;
     struct __CFDictionary { } * _proxyNumberToCount;
 }

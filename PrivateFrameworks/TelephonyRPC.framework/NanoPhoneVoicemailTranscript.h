@@ -4,12 +4,12 @@
 
 @interface NanoPhoneVoicemailTranscript : PBCodable <NSCopying> {
     NSString * _transcriptionString;
-    int  _voicemailNumber;
+    long long  _voicemailNumber;
 }
 
 @property (nonatomic, readonly) BOOL hasTranscriptionString;
 @property (nonatomic, retain) NSString *transcriptionString;
-@property (nonatomic) int voicemailNumber;
+@property (nonatomic) long long voicemailNumber;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
@@ -22,9 +22,9 @@
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setTranscriptionString:(id)arg1;
-- (void)setVoicemailNumber:(int)arg1;
+- (void)setVoicemailNumber:(long long)arg1;
 - (id)transcriptionString;
-- (int)voicemailNumber;
+- (long long)voicemailNumber;
 - (void)writeTo:(id)arg1;
 
 @end

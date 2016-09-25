@@ -3,10 +3,10 @@
  */
 
 @interface HDAWDHealthKitAchievementStatistics : PBCodable <NSCopying> {
-    int  _consecutiveBriskMinuteGoalsMet;
-    int  _consecutiveCompleteDays;
-    int  _consecutiveStandingHoursGoalsMet;
-    int  _currentCalorieGoalConsecutiveCompleteDays;
+    long long  _consecutiveBriskMinuteGoalsMet;
+    long long  _consecutiveCompleteDays;
+    long long  _consecutiveStandingHoursGoalsMet;
+    long long  _currentCalorieGoalConsecutiveCompleteDays;
     struct { 
         unsigned int consecutiveBriskMinuteGoalsMet : 1; 
         unsigned int consecutiveCompleteDays : 1; 
@@ -15,21 +15,21 @@
     }  _has;
 }
 
-@property (nonatomic) int consecutiveBriskMinuteGoalsMet;
-@property (nonatomic) int consecutiveCompleteDays;
-@property (nonatomic) int consecutiveStandingHoursGoalsMet;
-@property (nonatomic) int currentCalorieGoalConsecutiveCompleteDays;
+@property (nonatomic) long long consecutiveBriskMinuteGoalsMet;
+@property (nonatomic) long long consecutiveCompleteDays;
+@property (nonatomic) long long consecutiveStandingHoursGoalsMet;
+@property (nonatomic) long long currentCalorieGoalConsecutiveCompleteDays;
 @property (nonatomic) BOOL hasConsecutiveBriskMinuteGoalsMet;
 @property (nonatomic) BOOL hasConsecutiveCompleteDays;
 @property (nonatomic) BOOL hasConsecutiveStandingHoursGoalsMet;
 @property (nonatomic) BOOL hasCurrentCalorieGoalConsecutiveCompleteDays;
 
-- (int)consecutiveBriskMinuteGoalsMet;
-- (int)consecutiveCompleteDays;
-- (int)consecutiveStandingHoursGoalsMet;
+- (long long)consecutiveBriskMinuteGoalsMet;
+- (long long)consecutiveCompleteDays;
+- (long long)consecutiveStandingHoursGoalsMet;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (int)currentCalorieGoalConsecutiveCompleteDays;
+- (long long)currentCalorieGoalConsecutiveCompleteDays;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasConsecutiveBriskMinuteGoalsMet;
@@ -40,10 +40,10 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (void)setConsecutiveBriskMinuteGoalsMet:(int)arg1;
-- (void)setConsecutiveCompleteDays:(int)arg1;
-- (void)setConsecutiveStandingHoursGoalsMet:(int)arg1;
-- (void)setCurrentCalorieGoalConsecutiveCompleteDays:(int)arg1;
+- (void)setConsecutiveBriskMinuteGoalsMet:(long long)arg1;
+- (void)setConsecutiveCompleteDays:(long long)arg1;
+- (void)setConsecutiveStandingHoursGoalsMet:(long long)arg1;
+- (void)setCurrentCalorieGoalConsecutiveCompleteDays:(long long)arg1;
 - (void)setHasConsecutiveBriskMinuteGoalsMet:(BOOL)arg1;
 - (void)setHasConsecutiveCompleteDays:(BOOL)arg1;
 - (void)setHasConsecutiveStandingHoursGoalsMet:(BOOL)arg1;

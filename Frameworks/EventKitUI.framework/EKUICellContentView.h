@@ -8,10 +8,10 @@
     UIVisualEffectView * _rowSeparatorParentView;
     UIVisualEffect * _rowSeparatorVisualEffect;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _separatorInset;
     EKUICellRowSeparatorView * _separatorViewForNonOpaqueContainers;
     BOOL  _usesInsetMargin;
@@ -20,7 +20,7 @@
 @property (nonatomic) BOOL drawsOwnRowSeparators;
 @property (nonatomic, retain) UIColor *rowSeparatorColor;
 @property (nonatomic, retain) UIVisualEffect *rowSeparatorVisualEffect;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } separatorInset;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } separatorInset;
 @property (nonatomic) BOOL usesInsetMargin;
 
 + (float)rowSeparatorThickness;
@@ -34,11 +34,11 @@
 - (void)layoutSubviews;
 - (id)rowSeparatorColor;
 - (id)rowSeparatorVisualEffect;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })separatorInset;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })separatorInset;
 - (void)setDrawsOwnRowSeparators:(BOOL)arg1;
 - (void)setRowSeparatorColor:(id)arg1;
 - (void)setRowSeparatorVisualEffect:(id)arg1;
-- (void)setSeparatorInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setSeparatorInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setUsesInsetMargin:(BOOL)arg1;
 - (BOOL)usesInsetMargin;
 

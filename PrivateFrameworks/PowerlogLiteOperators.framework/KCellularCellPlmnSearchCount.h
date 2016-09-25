@@ -15,7 +15,7 @@
     }  _has;
     unsigned int  _lteSearchCount;
     unsigned int  _tdscdmaSearchCount;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
     unsigned int  _umtsSearchCount;
 }
 
@@ -29,7 +29,7 @@
 @property (nonatomic) BOOL hasUmtsSearchCount;
 @property (nonatomic) unsigned int lteSearchCount;
 @property (nonatomic) unsigned int tdscdmaSearchCount;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 @property (nonatomic) unsigned int umtsSearchCount;
 
 - (void)copyTo:(id)arg1;
@@ -59,10 +59,10 @@
 - (void)setHasUmtsSearchCount:(BOOL)arg1;
 - (void)setLteSearchCount:(unsigned int)arg1;
 - (void)setTdscdmaSearchCount:(unsigned int)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (void)setUmtsSearchCount:(unsigned int)arg1;
 - (unsigned int)tdscdmaSearchCount;
-- (unsigned int)timestamp;
+- (unsigned long long)timestamp;
 - (unsigned int)umtsSearchCount;
 - (void)writeTo:(id)arg1;
 

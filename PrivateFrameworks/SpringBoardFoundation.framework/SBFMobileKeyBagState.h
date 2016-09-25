@@ -9,7 +9,7 @@
 @property (nonatomic, readonly) double backOffTime;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) int escrowCount;
+@property (nonatomic, readonly) long long escrowCount;
 @property (nonatomic, readonly) unsigned int failedAttemptCount;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) int lockState;
@@ -26,7 +26,7 @@
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
-- (int)escrowCount;
+- (long long)escrowCount;
 - (unsigned int)failedAttemptCount;
 - (unsigned int)hash;
 - (id)init;

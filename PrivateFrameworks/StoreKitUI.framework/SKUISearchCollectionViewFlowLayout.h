@@ -6,25 +6,25 @@
     BOOL  _backfills;
     UICollectionView * _collectionView;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _headerSize;
-    double  _horizontalPadding;
+    float  _horizontalPadding;
     int  _numberOfColumns;
     int  _numberOfRows;
-    double  _verticalPadding;
+    float  _verticalPadding;
 }
 
 @property (nonatomic) BOOL backfills;
-@property (nonatomic) double horizontalPadding;
-@property (nonatomic) double verticalPadding;
+@property (nonatomic) float horizontalPadding;
+@property (nonatomic) float verticalPadding;
 
 - (void).cxx_destruct;
 - (BOOL)backfills;
 - (float)horizontalPadding;
 - (id)init;
 - (id)layoutAttributesForDecorationViewOfKind:(id)arg1 atIndexPath:(id)arg2;
-- (id)layoutAttributesForElementsInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)layoutAttributesForElementsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)prepareLayout;
 - (void)setBackfills:(BOOL)arg1;
 - (void)setHorizontalPadding:(float)arg1;

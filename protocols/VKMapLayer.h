@@ -5,6 +5,6 @@
 
 @required
 
-- (unsigned int)mapLayerPosition;
+- (unsigned long long)mapLayerPosition;
 
 @end

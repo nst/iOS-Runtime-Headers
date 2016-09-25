@@ -6,7 +6,7 @@
 
 @property (getter=isPressed, nonatomic, readonly) BOOL pressed;
 @property (nonatomic, copy) id /* block */ pressedChangedHandler;
-@property (nonatomic, readonly) double value;
+@property (nonatomic, readonly) float value;
 @property (nonatomic, copy) id /* block */ valueChangedHandler;
 
 - (BOOL)_setValue:(float)arg1;

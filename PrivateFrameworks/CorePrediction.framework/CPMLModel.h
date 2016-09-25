@@ -8,8 +8,8 @@
     NSString * _modelPath;
     double * _realBase;
     NSString * _savedPlistPath;
-    unsigned int  _totalBytesIntSection;
-    unsigned int  _totalBytesRealSection;
+    unsigned long long  _totalBytesIntSection;
+    unsigned long long  _totalBytesRealSection;
     CPMLModelEvaluate * cpModelEvaluate;
 }
 

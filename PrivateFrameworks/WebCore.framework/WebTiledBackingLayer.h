@@ -15,7 +15,7 @@
 - (BOOL)acceleratesDrawing;
 - (id)actionForKey:(id)arg1;
 - (float)contentsScale;
-- (struct TileController { int (**x1)(); struct PlatformCALayer {} *x2; double x3; double x4; struct unique_ptr<WebCore::TileCoverageMap, std::__1::default_delete<WebCore::TileCoverageMap> > { struct __compressed_pair<WebCore::TileCoverageMap *, std::__1::default_delete<WebCore::TileCoverageMap> > { struct TileCoverageMap {} *x_1_2_1; } x_5_1_1; } x5; struct unique_ptr<WebCore::TileGrid, std::__1::default_delete<WebCore::TileGrid> > { struct __compressed_pair<WebCore::TileGrid *, std::__1::default_delete<WebCore::TileGrid> > { struct TileGrid {} *x_1_2_1; } x_6_1_1; } x6; struct unique_ptr<WebCore::TileGrid, std::__1::default_delete<WebCore::TileGrid> > { struct __compressed_pair<WebCore::TileGrid *, std::__1::default_delete<WebCore::TileGrid> > { struct TileGrid {} *x_1_2_1; } x_7_1_1; } x7; struct FloatRect { struct FloatPoint { double x_1_2_1; double x_1_2_2; } x_8_1_1; struct FloatSize { double x_2_2_1; double x_2_2_2; } x_8_1_2; } x8; struct FloatRect { struct FloatPoint { double x_1_2_1; double x_1_2_2; } x_9_1_1; struct FloatSize { double x_2_2_1; double x_2_2_2; } x_9_1_2; } x9; }*)createTileController:(struct PlatformCALayer { int (**x1)(); unsigned int x2; int x3; unsigned int x4; struct RetainPtr<CALayer> { void *x_5_1_1; } x5; struct PlatformCALayerClient {} *x6; }*)arg1;
+- (struct TileController { int (**x1)(); struct PlatformCALayer {} *x2; float x3; float x4; struct unique_ptr<WebCore::TileCoverageMap, std::__1::default_delete<WebCore::TileCoverageMap> > { struct __compressed_pair<WebCore::TileCoverageMap *, std::__1::default_delete<WebCore::TileCoverageMap> > { struct TileCoverageMap {} *x_1_2_1; } x_5_1_1; } x5; struct unique_ptr<WebCore::TileGrid, std::__1::default_delete<WebCore::TileGrid> > { struct __compressed_pair<WebCore::TileGrid *, std::__1::default_delete<WebCore::TileGrid> > { struct TileGrid {} *x_1_2_1; } x_6_1_1; } x6; struct unique_ptr<WebCore::TileGrid, std::__1::default_delete<WebCore::TileGrid> > { struct __compressed_pair<WebCore::TileGrid *, std::__1::default_delete<WebCore::TileGrid> > { struct TileGrid {} *x_1_2_1; } x_7_1_1; } x7; struct FloatRect { struct FloatPoint { float x_1_2_1; float x_1_2_2; } x_8_1_1; struct FloatSize { float x_2_2_1; float x_2_2_2; } x_8_1_2; } x8; struct FloatRect { struct FloatPoint { float x_1_2_1; float x_1_2_2; } x_9_1_1; struct FloatSize { float x_2_2_1; float x_2_2_2; } x_9_1_2; } x9; }*)createTileController:(struct PlatformCALayer { int (**x1)(); unsigned int x2; int x3; unsigned long long x4; struct RetainPtr<CALayer> { void *x_5_1_1; } x5; struct PlatformCALayerClient {} *x6; }*)arg1;
 - (void)dealloc;
 - (id)init;
 - (id)initWithLayer:(id)arg1;
@@ -24,10 +24,10 @@
 - (void)setAcceleratesDrawing:(BOOL)arg1;
 - (void)setBorderColor:(struct CGColor { }*)arg1;
 - (void)setBorderWidth:(float)arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setContentsScale:(float)arg1;
 - (void)setNeedsDisplay;
-- (void)setNeedsDisplayInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setNeedsDisplayInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setOpaque:(BOOL)arg1;
 - (struct TiledBacking { int (**x1)(); }*)tiledBacking;
 

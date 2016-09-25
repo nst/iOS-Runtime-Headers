@@ -6,7 +6,7 @@
     BOOL  _canceled;
     NSDictionary * _components;
     NSString * _contentProvider;
-    unsigned int  _muid;
+    unsigned long long  _muid;
     int  _resultProviderID;
     GEOMapServiceTraits * _traits;
 }
@@ -34,7 +34,7 @@
 - (id)defaultRelatedSuggestion;
 - (id)description;
 - (id)init;
-- (id)initWithComponents:(id)arg1 muid:(unsigned int)arg2 resultProviderID:(int)arg3 contentProvider:(id)arg4 traits:(id)arg5;
+- (id)initWithComponents:(id)arg1 muid:(unsigned long long)arg2 resultProviderID:(int)arg3 contentProvider:(id)arg4 traits:(id)arg5;
 - (BOOL)isCanceled;
 - (BOOL)isChainResultSet;
 - (id)relatedSearchSuggestions;

@@ -6,13 +6,13 @@
 
 @property (nonatomic) unsigned int contentType;
 @property (nonatomic, copy) NSString *playlistGlobalID;
-@property (nonatomic) int storeAdamID;
+@property (nonatomic) long long storeAdamID;
 @property (nonatomic) unsigned int tasteType;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setContentType:(unsigned int)arg1;
 - (void)setPlaylistGlobalID:(id)arg1;
-- (void)setStoreAdamID:(int)arg1;
+- (void)setStoreAdamID:(long long)arg1;
 - (void)setTasteType:(unsigned int)arg1;
 
 @end

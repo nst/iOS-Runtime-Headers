@@ -3,10 +3,10 @@
  */
 
 @interface PUSlidersCollectionViewLayout : UICollectionViewFlowLayout {
-    double  _rowHeight;
+    float  _rowHeight;
 }
 
-@property (nonatomic) double rowHeight;
+@property (nonatomic) float rowHeight;
 
 - (void)prepareLayout;
 - (float)rowHeight;

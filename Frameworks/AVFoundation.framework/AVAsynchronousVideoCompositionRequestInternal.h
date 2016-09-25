@@ -5,10 +5,10 @@
 @interface AVAsynchronousVideoCompositionRequestInternal : NSObject {
     struct OpaqueFigVideoCompositorFrame { } * _compositionFrame;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _compositionTime;
     <AVVideoCompositionInstruction> * _instruction;
     BOOL  _isFinished;
@@ -19,7 +19,7 @@
 }
 
 @property (nonatomic) struct OpaqueFigVideoCompositorFrame { }*compositionFrame;
-@property (nonatomic) struct { int x1; int x2; unsigned int x3; int x4; } compositionTime;
+@property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } compositionTime;
 @property (nonatomic, retain) <AVVideoCompositionInstruction> *instruction;
 @property (nonatomic) BOOL isFinished;
 @property (nonatomic, retain) AVVideoCompositionRenderContext *renderContext;
@@ -28,14 +28,14 @@
 @property (nonatomic, retain) NSDictionary *sourcesByTrackID;
 
 - (struct OpaqueFigVideoCompositorFrame { }*)compositionFrame;
-- (struct { int x1; int x2; unsigned int x3; int x4; })compositionTime;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })compositionTime;
 - (void)dealloc;
 - (id)instruction;
 - (BOOL)isFinished;
 - (id)renderContext;
 - (id)session;
 - (void)setCompositionFrame:(struct OpaqueFigVideoCompositorFrame { }*)arg1;
-- (void)setCompositionTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
+- (void)setCompositionTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setInstruction:(id)arg1;
 - (void)setIsFinished:(BOOL)arg1;
 - (void)setRenderContext:(id)arg1;

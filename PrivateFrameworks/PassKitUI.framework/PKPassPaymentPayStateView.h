@@ -6,10 +6,10 @@
     <PKPassPaymentPayStateViewDelegate> * _delegate;
     BOOL  _enhancedContrast;
     PKGlyphView * _glyph;
-    double  _glyphViewPadding;
+    float  _glyphViewPadding;
     UILabel * _label;
-    double  _labelAlpha;
-    double  _labelTopPadding;
+    float  _labelAlpha;
+    float  _labelTopPadding;
     int  _state;
     int  _style;
     BOOL  _touchRecognizingHint;
@@ -21,7 +21,7 @@
 @property (nonatomic, readonly) PKGlyphView *glyph;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) UILabel *label;
-@property (nonatomic) double labelAlpha;
+@property (nonatomic) float labelAlpha;
 @property (nonatomic) int state;
 @property (readonly) Class superclass;
 @property (nonatomic) BOOL touchRecognizingHint;

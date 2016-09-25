@@ -7,12 +7,12 @@
 }
 
 @property (nonatomic, readonly) unsigned int contentInsetEdges;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } playButtonSize;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } playButtonSize;
 
 - (unsigned int)contentInsetEdges;
-- (id)createViewSpecWithDescriptor:(struct PXViewSpecDescriptor { int x1; unsigned int x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; })arg1;
+- (id)createViewSpecWithDescriptor:(struct PXViewSpecDescriptor { int x1; unsigned int x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; })arg1;
 - (float)defaultCornerRadius;
 - (id)initWithExtendedTraitCollection:(id)arg1 options:(unsigned int)arg2;
-- (struct CGSize { double x1; double x2; })playButtonSize;
+- (struct CGSize { float x1; float x2; })playButtonSize;
 
 @end

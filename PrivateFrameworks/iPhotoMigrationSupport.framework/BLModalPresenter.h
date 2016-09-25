@@ -6,12 +6,12 @@
     NSMutableArray * _controllers;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _keyboard;
     BOOL  _keyboardVisible;
@@ -42,7 +42,7 @@
 - (void)configureForOncreen:(id)arg1 orientation:(int)arg2;
 - (void)dealloc;
 - (void)deleteBackward;
-- (struct CGSize { double x1; double x2; })formSheetSizeForController:(id)arg1 withOrientation:(int)arg2;
+- (struct CGSize { float x1; float x2; })formSheetSizeForController:(id)arg1 withOrientation:(int)arg2;
 - (BOOL)hasText;
 - (id)hidden;
 - (void)hideController:(id)arg1 animated:(BOOL)arg2 withCompletion:(id /* block */)arg3;

@@ -10,7 +10,7 @@
     UIViewController * _featurePlaybackViewController;
     NSURL * _javascriptURL;
     MPMediaItem * _mediaItem;
-    int  _storeID;
+    long long  _storeID;
 }
 
 @property (nonatomic, readonly, copy) NSString *buyParameters;
@@ -23,7 +23,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly, copy) NSURL *javascriptURL;
 @property (nonatomic, readonly) MPMediaItem *mediaItem;
-@property (nonatomic, readonly) int storeID;
+@property (nonatomic, readonly) long long storeID;
 @property (readonly) Class superclass;
 
 + (Class)extrasRootViewControllerClass;
@@ -42,13 +42,13 @@
 - (id)featurePlaybackContext;
 - (id)featurePlaybackViewController;
 - (id)init;
-- (id)initWithApplicationJavascriptURL:(id)arg1 storeID:(int)arg2 buyParameters:(id)arg3;
+- (id)initWithApplicationJavascriptURL:(id)arg1 storeID:(long long)arg2 buyParameters:(id)arg3;
 - (id)initWithMediaItem:(id)arg1;
 - (id)javascriptURL;
 - (id)mediaItem;
 - (void)setDelegate:(id)arg1;
 - (void)setFeaturePlaybackContext:(id)arg1;
 - (void)setFeaturePlaybackViewController:(id)arg1;
-- (int)storeID;
+- (long long)storeID;
 
 @end

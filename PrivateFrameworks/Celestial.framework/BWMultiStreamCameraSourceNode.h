@@ -3,10 +3,10 @@
  */
 
 @interface BWMultiStreamCameraSourceNode : BWSourceNode <BWFigCameraSourceNode> {
-    double  _aeMaxGain;
+    float  _aeMaxGain;
     struct OpaqueFigCaptureISPProcessingSession { } * _bayerProcessingSession;
     unsigned int  _bravoShiftCorrectionFlags;
-    double  _bravoShiftMitigationMaxZoomFactor;
+    float  _bravoShiftMitigationMaxZoomFactor;
     BWFigVideoCaptureDevice * _captureDevice;
     BWFigVideoCaptureStream * _captureStream;
     BOOL  _chromaNoiseReductionEnabled;
@@ -32,13 +32,13 @@
         int height; 
     }  _firmwareStillImageDimensionsAfterOverscanCropping;
     int  _firmwareStillImageOutputRetainedBufferCountOverride;
-    double  _maxFrameRate;
+    float  _maxFrameRate;
     int  _maxIntegrationTimeOverride;
-    double  _minFrameRate;
+    float  _minFrameRate;
     int  _motionAttachmentsSource;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _onDemandStillOverscanPercentage;
     struct BWStreamOutputStorage { 
         int type; 
@@ -53,11 +53,11 @@
         int frameCount; 
     }  _outputsStorage;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _overscanPercentage;
-    double  _overscanPercentageForZoom;
-    double  _pixelsPerMicron;
+    float  _overscanPercentageForZoom;
+    float  _pixelsPerMicron;
     struct { 
         int width; 
         int height; 
@@ -124,7 +124,7 @@
 + (id)cameraSourceNodeWithCaptureDevice:(id)arg1 captureStream:(id)arg2;
 + (void)initialize;
 
-- (struct CGPoint { double x1; double x2; })_bravoShiftMitigationCropOffset:(struct opaqueCMSampleBuffer { }*)arg1 totalZoom:(float)arg2;
+- (struct CGPoint { float x1; float x2; })_bravoShiftMitigationCropOffset:(struct opaqueCMSampleBuffer { }*)arg1 totalZoom:(float)arg2;
 - (long)_bringStreamUpToDate;
 - (id)_colorInfoForOutputID:(id)arg1 videoOutputsColorInfo:(id)arg2;
 - (void)_enableStreamOutputs;
@@ -138,7 +138,7 @@
 - (void)_registerForStreamNotifications;
 - (void)_registerStreamOutputHandlers;
 - (BOOL)_requiresOneStreamingOutputForMetadata;
-- (void)_serviceZoomForPTS:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
+- (void)_serviceZoomForPTS:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (long)_setupBayerProcessingSessionForQuadraStillImageCaptures;
 - (long)_setupQRMSampleBufferProcessor;
 - (BOOL)_shouldEnableStreamCaptureOutput;
@@ -152,7 +152,7 @@
 - (void)_updateMetadataConfigurations;
 - (long)_updateOutputConfigurations;
 - (void)_updateOutputsStorage;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_updateZoomForOutputIndex:(int)arg1 sampleBuffer:(struct opaqueCMSampleBuffer { }*)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_updateZoomForOutputIndex:(int)arg1 sampleBuffer:(struct opaqueCMSampleBuffer { }*)arg2;
 - (long)_verifyColorSpaceProperties:(int)arg1 matchVideoOutputsColorInfo:(id)arg2 forOutputID:(id)arg3;
 - (id)_videoFormatRequirementsForOutputID:(id)arg1 configuration:(id)arg2;
 - (float)aeMaxGain;
@@ -181,7 +181,7 @@
 - (float)minFrameRate;
 - (int)motionAttachmentsSource;
 - (id)nodeSubType;
-- (struct CGSize { double x1; double x2; })overscanPercentage;
+- (struct CGSize { float x1; float x2; })overscanPercentage;
 - (float)overscanPercentageForZoom;
 - (struct { int x1; int x2; })preferredPreviewDimensions;
 - (void)prepareForCurrentConfigurationToBecomeLive;
@@ -209,7 +209,7 @@
 - (void)setMaxIntegrationTimeOverride:(int)arg1;
 - (void)setMinFrameRate:(float)arg1;
 - (void)setMotionAttachmentsSource:(int)arg1;
-- (void)setOverscanPercentage:(struct CGSize { double x1; double x2; })arg1;
+- (void)setOverscanPercentage:(struct CGSize { float x1; float x2; })arg1;
 - (void)setOverscanPercentageForZoom:(float)arg1;
 - (void)setPreferredPreviewDimensions:(struct { int x1; int x2; })arg1;
 - (void)setPreviewOutputEnabled:(BOOL)arg1;

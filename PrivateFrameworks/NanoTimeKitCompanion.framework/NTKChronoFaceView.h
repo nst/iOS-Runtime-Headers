@@ -35,7 +35,7 @@
 - (void)_applyOption:(id)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3;
 - (void)_applyPaletteToTimeView:(id)arg1;
 - (void)_applyRubberBandingFraction:(float)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3;
-- (void)_applyTransformToForegroundViews:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
+- (void)_applyTransformToForegroundViews:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (void)_applyTransitionFraction:(float)arg1 fromOption:(id)arg2 toOption:(id)arg3 forCustomEditMode:(int)arg4 slot:(id)arg5;
 - (float)_buttonAlphaForEditMode:(int)arg1;
 - (BOOL)_canStartTimeScrubbing;
@@ -46,9 +46,9 @@
 - (void)_configureForTransitionFraction:(float)arg1 fromEditMode:(int)arg2 toEditMode:(int)arg3;
 - (void)_considerUpdatingLabels;
 - (id)_dateAccentColorForEditMode:(int)arg1;
-- (struct CGPoint { double x1; double x2; })_dateComplicationCenterOffset;
+- (struct CGPoint { float x1; float x2; })_dateComplicationCenterOffset;
 - (id)_dateComplicationFontForStyle:(unsigned int)arg1;
-- (struct CGPoint { double x1; double x2; })_dateComplicationRightAlignment;
+- (struct CGPoint { float x1; float x2; })_dateComplicationRightAlignment;
 - (id)_dateForegroundColorForEditMode:(int)arg1;
 - (void)_endScrubbingAnimated:(BOOL)arg1 withCompletion:(id /* block */)arg2;
 - (void)_enumerateChronoModeViewsWithBlock:(id /* block */)arg1;
@@ -57,7 +57,7 @@
 - (float)_handsAlphaForEditMode:(int)arg1;
 - (BOOL)_handsAreInForegroundForEditMode:(int)arg1;
 - (float)_keylineCornerRadiusForComplicationSlot:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_keylineFrameForCustomEditMode:(int)arg1 slot:(id)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_keylineFrameForCustomEditMode:(int)arg1 slot:(id)arg2;
 - (unsigned int)_keylineLabelAlignmentForComplicationSlot:(id)arg1;
 - (unsigned int)_keylineLabelAlignmentForCustomEditMode:(int)arg1 slot:(id)arg2;
 - (BOOL)_keylineLabelShouldShowIndividualOptionNamesForCustomEditMode:(int)arg1;
@@ -103,7 +103,7 @@
 - (void)fadeOutLowerSubdialAnimated:(BOOL)arg1;
 - (void)fadeStartSessionButtonToAlpha:(float)arg1 animated:(BOOL)arg2;
 - (BOOL)inSession;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)lapAdded;
 - (BOOL)lapReset;
 - (void)reload;

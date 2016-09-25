@@ -6,41 +6,41 @@
     int  _anchorCorner;
     NSString * _etchColor;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _etchOffset;
     NSString * _fontName;
-    double  _fontSize;
-    double  _fontWeight;
+    float  _fontSize;
+    float  _fontWeight;
     BOOL  _ignoreTextMarginOnKey;
-    double  _imageScale;
-    double  _kerning;
-    double  _minFontSize;
-    double  _pathWeight;
+    float  _imageScale;
+    float  _kerning;
+    float  _minFontSize;
+    float  _pathWeight;
     int  _selector;
     NSString * _textColor;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _textOffset;
-    double  _textOpacity;
+    float  _textOpacity;
 }
 
 @property (nonatomic) int anchorCorner;
 @property (nonatomic, retain) NSString *etchColor;
-@property (nonatomic) struct CGPoint { double x1; double x2; } etchOffset;
+@property (nonatomic) struct CGPoint { float x1; float x2; } etchOffset;
 @property (nonatomic, retain) NSString *fontName;
-@property (nonatomic) double fontSize;
-@property (nonatomic) double fontWeight;
+@property (nonatomic) float fontSize;
+@property (nonatomic) float fontWeight;
 @property (nonatomic) BOOL ignoreTextMarginOnKey;
-@property (nonatomic) double imageScale;
-@property (nonatomic) double kerning;
-@property (nonatomic) double minFontSize;
-@property (nonatomic) double pathWeight;
+@property (nonatomic) float imageScale;
+@property (nonatomic) float kerning;
+@property (nonatomic) float minFontSize;
+@property (nonatomic) float pathWeight;
 @property (nonatomic) int selector;
 @property (nonatomic, retain) NSString *textColor;
-@property (nonatomic) struct CGPoint { double x1; double x2; } textOffset;
-@property (nonatomic) double textOpacity;
+@property (nonatomic) struct CGPoint { float x1; float x2; } textOffset;
+@property (nonatomic) float textOpacity;
 
 + (id)styleWithFontName:(id)arg1 withFontSize:(float)arg2;
 + (id)styleWithTextColor:(id)arg1;
@@ -50,7 +50,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)etchColor;
-- (struct CGPoint { double x1; double x2; })etchOffset;
+- (struct CGPoint { float x1; float x2; })etchOffset;
 - (id)fontName;
 - (float)fontSize;
 - (float)fontWeight;
@@ -65,7 +65,7 @@
 - (int)selector;
 - (void)setAnchorCorner:(int)arg1;
 - (void)setEtchColor:(id)arg1;
-- (void)setEtchOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setEtchOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setFontName:(id)arg1;
 - (void)setFontSize:(float)arg1;
 - (void)setFontWeight:(float)arg1;
@@ -76,10 +76,10 @@
 - (void)setPathWeight:(float)arg1;
 - (void)setSelector:(int)arg1;
 - (void)setTextColor:(id)arg1;
-- (void)setTextOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setTextOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setTextOpacity:(float)arg1;
 - (id)textColor;
-- (struct CGPoint { double x1; double x2; })textOffset;
+- (struct CGPoint { float x1; float x2; })textOffset;
 - (float)textOpacity;
 
 @end

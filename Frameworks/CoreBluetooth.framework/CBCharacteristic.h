@@ -12,7 +12,7 @@
     CBService * _service;
     NSData * _value;
     NSNumber * _valueHandle;
-    unsigned int  _valueTimestamp;
+    unsigned long long  _valueTimestamp;
 }
 
 @property (retain) NSArray *descriptors;
@@ -24,7 +24,7 @@
 @property (nonatomic) CBService *service;
 @property (retain) NSData *value;
 @property (nonatomic, readonly) NSNumber *valueHandle;
-@property (nonatomic, readonly) unsigned int valueTimestamp;
+@property (nonatomic, readonly) unsigned long long valueTimestamp;
 
 - (void).cxx_destruct;
 - (id)description;
@@ -49,6 +49,6 @@
 - (void)setValue:(id)arg1;
 - (id)value;
 - (id)valueHandle;
-- (unsigned int)valueTimestamp;
+- (unsigned long long)valueTimestamp;
 
 @end

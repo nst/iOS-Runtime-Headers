@@ -9,7 +9,7 @@
     }  _has;
     NSString * _sessionUUID;
     int  _status;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic, readonly) BOOL hasSessionUUID;
@@ -17,7 +17,7 @@
 @property (nonatomic) BOOL hasTimestamp;
 @property (nonatomic, retain) NSString *sessionUUID;
 @property (nonatomic) int status;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -36,9 +36,9 @@
 - (void)setHasTimestamp:(BOOL)arg1;
 - (void)setSessionUUID:(id)arg1;
 - (void)setStatus:(int)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (int)status;
-- (unsigned int)timestamp;
+- (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 
 @end

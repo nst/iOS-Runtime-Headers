@@ -3,8 +3,8 @@
  */
 
 @interface HDSleepAlarmAWDSleepAlarmMonthlyConsistencyEvent : PBCodable <NSCopying> {
-    int  _bedtimeAlarmNightCount;
-    int  _bedtimeChangesCount;
+    long long  _bedtimeAlarmNightCount;
+    long long  _bedtimeChangesCount;
     HDSleepAlarmAWDSleepAlarmStatistics * _bedtimeChangesMinutesStatistics;
     HDSleepAlarmAWDSleepAlarmStatistics * _bedtimeCorrectionMinutesStatistics;
     struct { 
@@ -16,12 +16,12 @@
     NSString * _thirdPartyBundleIdentifier;
     NSString * _thirdPartyDeviceManufacturer;
     NSString * _thirdPartyDeviceModel;
-    int  _thirdPartySleepTrackerNightCount;
-    unsigned int  _timestamp;
+    long long  _thirdPartySleepTrackerNightCount;
+    unsigned long long  _timestamp;
 }
 
-@property (nonatomic) int bedtimeAlarmNightCount;
-@property (nonatomic) int bedtimeChangesCount;
+@property (nonatomic) long long bedtimeAlarmNightCount;
+@property (nonatomic) long long bedtimeChangesCount;
 @property (nonatomic, retain) HDSleepAlarmAWDSleepAlarmStatistics *bedtimeChangesMinutesStatistics;
 @property (nonatomic, retain) HDSleepAlarmAWDSleepAlarmStatistics *bedtimeCorrectionMinutesStatistics;
 @property (nonatomic) BOOL hasBedtimeAlarmNightCount;
@@ -36,12 +36,12 @@
 @property (nonatomic, retain) NSString *thirdPartyBundleIdentifier;
 @property (nonatomic, retain) NSString *thirdPartyDeviceManufacturer;
 @property (nonatomic, retain) NSString *thirdPartyDeviceModel;
-@property (nonatomic) int thirdPartySleepTrackerNightCount;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) long long thirdPartySleepTrackerNightCount;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void).cxx_destruct;
-- (int)bedtimeAlarmNightCount;
-- (int)bedtimeChangesCount;
+- (long long)bedtimeAlarmNightCount;
+- (long long)bedtimeChangesCount;
 - (id)bedtimeChangesMinutesStatistics;
 - (id)bedtimeCorrectionMinutesStatistics;
 - (void)copyTo:(id)arg1;
@@ -61,8 +61,8 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (void)setBedtimeAlarmNightCount:(int)arg1;
-- (void)setBedtimeChangesCount:(int)arg1;
+- (void)setBedtimeAlarmNightCount:(long long)arg1;
+- (void)setBedtimeChangesCount:(long long)arg1;
 - (void)setBedtimeChangesMinutesStatistics:(id)arg1;
 - (void)setBedtimeCorrectionMinutesStatistics:(id)arg1;
 - (void)setHasBedtimeAlarmNightCount:(BOOL)arg1;
@@ -72,13 +72,13 @@
 - (void)setThirdPartyBundleIdentifier:(id)arg1;
 - (void)setThirdPartyDeviceManufacturer:(id)arg1;
 - (void)setThirdPartyDeviceModel:(id)arg1;
-- (void)setThirdPartySleepTrackerNightCount:(int)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
+- (void)setThirdPartySleepTrackerNightCount:(long long)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (id)thirdPartyBundleIdentifier;
 - (id)thirdPartyDeviceManufacturer;
 - (id)thirdPartyDeviceModel;
-- (int)thirdPartySleepTrackerNightCount;
-- (unsigned int)timestamp;
+- (long long)thirdPartySleepTrackerNightCount;
+- (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 
 @end

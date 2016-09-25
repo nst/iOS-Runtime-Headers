@@ -5,19 +5,19 @@
 @interface NCMaterialView : UIView {
     _UIBackdropView * _backdropView;
     UIView * _colorInfusionView;
-    double  _colorInfusionViewAlpha;
+    float  _colorInfusionViewAlpha;
     UIView * _cutoutOverlayView;
     UIView * _lightOverlayView;
     unsigned int  _styleOptions;
-    double  _subviewsContinuousCornerRadius;
+    float  _subviewsContinuousCornerRadius;
     UIView * _whiteOverlayView;
 }
 
 @property (nonatomic, retain) UIView *colorInfusionView;
-@property (getter=_colorInfusionViewAlpha, setter=_setColorInfusionViewAlpha:, nonatomic) double colorInfusionViewAlpha;
-@property (nonatomic) double grayscaleValue;
+@property (getter=_colorInfusionViewAlpha, setter=_setColorInfusionViewAlpha:, nonatomic) float colorInfusionViewAlpha;
+@property (nonatomic) float grayscaleValue;
 @property (nonatomic, copy) NSString *groupName;
-@property (getter=_subviewsContinuousCornerRadius, setter=_setSubviewsContinuousCornerRadius:, nonatomic) double subviewsContinuousCornerRadius;
+@property (getter=_subviewsContinuousCornerRadius, setter=_setSubviewsContinuousCornerRadius:, nonatomic) float subviewsContinuousCornerRadius;
 
 + (id)materialViewWithStyleOptions:(unsigned int)arg1;
 

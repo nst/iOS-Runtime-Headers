@@ -19,8 +19,8 @@
     PXWidgetCompositionSpec * _spec;
     <PXWidget> * _widget;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _widgetContentSize;
 }
 
@@ -41,7 +41,7 @@
 @property (nonatomic, retain) PXWidgetCompositionSpec *spec;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) <PXWidget> *widget;
-@property (nonatomic) struct CGSize { double x1; double x2; } widgetContentSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } widgetContentSize;
 
 + (id)elementWithWidget:(id)arg1 scrollViewController:(id)arg2;
 + (Class)footerBarClass;
@@ -75,7 +75,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setShouldLoadWidgetContent:(BOOL)arg1;
 - (void)setSpec:(id)arg1;
-- (void)setWidgetContentSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setWidgetContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)shouldLoadWidgetContent;
 - (id)spec;
 - (void)unregisterObserver:(id)arg1;
@@ -85,7 +85,7 @@
 - (BOOL)widget:(id)arg1 transitionToViewController:(struct NSObject { Class x1; }*)arg2 withTransitionType:(int)arg3;
 - (void)widgetBarDidSelectDisclosureAffordance:(id)arg1;
 - (void)widgetBarDidSelectSubtitle:(id)arg1;
-- (struct CGSize { double x1; double x2; })widgetContentSize;
+- (struct CGSize { float x1; float x2; })widgetContentSize;
 - (int)widgetDefaultContentViewAnchoringTypeForDisclosureHeightChange:(id)arg1;
 - (id)widgetExtendedTraitCollection:(id)arg1;
 - (void)widgetHasLoadedContentDataDidChange:(id)arg1;

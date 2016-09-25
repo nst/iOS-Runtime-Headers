@@ -3,7 +3,7 @@
  */
 
 @interface _PFRefCountableValue : NSObject <NSCopying> {
-    int  _refCount;
+    long long  _refCount;
     id  _value;
 }
 
@@ -11,10 +11,10 @@
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (int)decrementRefCount;
-- (int)incrementRefCount;
+- (long long)decrementRefCount;
+- (long long)incrementRefCount;
 - (id)initWithValue:(id)arg1;
-- (int)refCount;
+- (long long)refCount;
 - (id)value;
 
 @end

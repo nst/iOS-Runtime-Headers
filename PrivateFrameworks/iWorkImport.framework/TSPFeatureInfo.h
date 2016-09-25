@@ -4,21 +4,21 @@
 
 @interface TSPFeatureInfo : NSObject {
     NSString * _identifier;
-    unsigned int  _readVersion;
-    unsigned int  _writeVersion;
+    unsigned long long  _readVersion;
+    unsigned long long  _writeVersion;
 }
 
 @property (nonatomic, readonly) NSString *identifier;
-@property (nonatomic, readonly) unsigned int readVersion;
-@property (nonatomic, readonly) unsigned int writeVersion;
+@property (nonatomic, readonly) unsigned long long readVersion;
+@property (nonatomic, readonly) unsigned long long writeVersion;
 
 - (void).cxx_destruct;
 - (unsigned int)hash;
 - (id)identifier;
 - (id)init;
-- (id)initWithIdentifier:(id)arg1 readVersion:(unsigned int)arg2 writeVersion:(unsigned int)arg3 fromArchiver:(BOOL)arg4;
+- (id)initWithIdentifier:(id)arg1 readVersion:(unsigned long long)arg2 writeVersion:(unsigned long long)arg3 fromArchiver:(BOOL)arg4;
 - (BOOL)isEqual:(id)arg1;
-- (unsigned int)readVersion;
-- (unsigned int)writeVersion;
+- (unsigned long long)readVersion;
+- (unsigned long long)writeVersion;
 
 @end

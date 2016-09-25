@@ -29,7 +29,7 @@
 - (id)initWithInitialReaderConfiguration:(id)arg1 fontManager:(id)arg2;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (id)ownerAppearanceViewController;
-- (struct CGSize { double x1; double x2; })preferredContentSize;
+- (struct CGSize { float x1; float x2; })preferredContentSize;
 - (void)readerAppearanceFontSizeDidDecrease:(id)arg1;
 - (void)readerAppearanceFontSizeDidIncrease:(id)arg1;
 - (void)readerAppearanceThemeSelectorDidChangeTheme:(id)arg1;

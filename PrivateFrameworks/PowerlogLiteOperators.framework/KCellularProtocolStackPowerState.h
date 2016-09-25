@@ -12,7 +12,7 @@
     int  _prevState;
     unsigned int  _prevStateDurMs;
     int  _state;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) BOOL hasPrevState;
@@ -22,7 +22,7 @@
 @property (nonatomic) int prevState;
 @property (nonatomic) unsigned int prevStateDurMs;
 @property (nonatomic) int state;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -45,9 +45,9 @@
 - (void)setPrevState:(int)arg1;
 - (void)setPrevStateDurMs:(unsigned int)arg1;
 - (void)setState:(int)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (int)state;
-- (unsigned int)timestamp;
+- (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 
 @end

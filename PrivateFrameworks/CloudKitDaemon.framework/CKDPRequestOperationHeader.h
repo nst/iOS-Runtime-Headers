@@ -4,24 +4,24 @@
 
 @interface CKDPRequestOperationHeader : PBCodable <NSCopying> {
     NSString * _applicationBundle;
-    unsigned int  _applicationConfigVersion;
+    unsigned long long  _applicationConfigVersion;
     NSString * _applicationContainer;
     int  _applicationContainerEnvironment;
     NSString * _applicationVersion;
     NSData * _clientChangeToken;
     NSString * _deviceAssignedName;
-    unsigned int  _deviceFlowControlBudget;
-    unsigned int  _deviceFlowControlBudgetCap;
+    unsigned long long  _deviceFlowControlBudget;
+    unsigned long long  _deviceFlowControlBudgetCap;
     NSString * _deviceFlowControlKey;
-    double  _deviceFlowControlRegeneration;
+    float  _deviceFlowControlRegeneration;
     NSString * _deviceHardwareID;
     NSString * _deviceHardwareVersion;
     CKDPIdentifier * _deviceIdentifier;
     NSString * _deviceLibraryName;
     NSString * _deviceLibraryVersion;
-    unsigned int  _deviceProtocolVersion;
+    unsigned long long  _deviceProtocolVersion;
     NSString * _deviceSoftwareVersion;
-    unsigned int  _globalConfigVersion;
+    unsigned long long  _globalConfigVersion;
     struct { 
         unsigned int applicationConfigVersion : 1; 
         unsigned int deviceFlowControlBudget : 1; 
@@ -42,24 +42,24 @@
 }
 
 @property (nonatomic, retain) NSString *applicationBundle;
-@property (nonatomic) unsigned int applicationConfigVersion;
+@property (nonatomic) unsigned long long applicationConfigVersion;
 @property (nonatomic, retain) NSString *applicationContainer;
 @property (nonatomic) int applicationContainerEnvironment;
 @property (nonatomic, retain) NSString *applicationVersion;
 @property (nonatomic, retain) NSData *clientChangeToken;
 @property (nonatomic, retain) NSString *deviceAssignedName;
-@property (nonatomic) unsigned int deviceFlowControlBudget;
-@property (nonatomic) unsigned int deviceFlowControlBudgetCap;
+@property (nonatomic) unsigned long long deviceFlowControlBudget;
+@property (nonatomic) unsigned long long deviceFlowControlBudgetCap;
 @property (nonatomic, retain) NSString *deviceFlowControlKey;
-@property (nonatomic) double deviceFlowControlRegeneration;
+@property (nonatomic) float deviceFlowControlRegeneration;
 @property (nonatomic, retain) NSString *deviceHardwareID;
 @property (nonatomic, retain) NSString *deviceHardwareVersion;
 @property (nonatomic, retain) CKDPIdentifier *deviceIdentifier;
 @property (nonatomic, retain) NSString *deviceLibraryName;
 @property (nonatomic, retain) NSString *deviceLibraryVersion;
-@property (nonatomic) unsigned int deviceProtocolVersion;
+@property (nonatomic) unsigned long long deviceProtocolVersion;
 @property (nonatomic, retain) NSString *deviceSoftwareVersion;
-@property (nonatomic) unsigned int globalConfigVersion;
+@property (nonatomic) unsigned long long globalConfigVersion;
 @property (nonatomic, readonly) BOOL hasApplicationBundle;
 @property (nonatomic) BOOL hasApplicationConfigVersion;
 @property (nonatomic, readonly) BOOL hasApplicationContainer;
@@ -100,7 +100,7 @@
 - (id)_isolationLevelCKLogValue;
 - (id)_targetDatabaseCKLogValue;
 - (id)applicationBundle;
-- (unsigned int)applicationConfigVersion;
+- (unsigned long long)applicationConfigVersion;
 - (id)applicationContainer;
 - (int)applicationContainerEnvironment;
 - (id)applicationContainerEnvironmentAsString:(int)arg1;
@@ -110,8 +110,8 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)deviceAssignedName;
-- (unsigned int)deviceFlowControlBudget;
-- (unsigned int)deviceFlowControlBudgetCap;
+- (unsigned long long)deviceFlowControlBudget;
+- (unsigned long long)deviceFlowControlBudgetCap;
 - (id)deviceFlowControlKey;
 - (float)deviceFlowControlRegeneration;
 - (id)deviceHardwareID;
@@ -119,10 +119,10 @@
 - (id)deviceIdentifier;
 - (id)deviceLibraryName;
 - (id)deviceLibraryVersion;
-- (unsigned int)deviceProtocolVersion;
+- (unsigned long long)deviceProtocolVersion;
 - (id)deviceSoftwareVersion;
 - (id)dictionaryRepresentation;
-- (unsigned int)globalConfigVersion;
+- (unsigned long long)globalConfigVersion;
 - (BOOL)hasApplicationBundle;
 - (BOOL)hasApplicationConfigVersion;
 - (BOOL)hasApplicationContainer;
@@ -157,14 +157,14 @@
 - (id)mmcsProtocolVersion;
 - (BOOL)readFrom:(id)arg1;
 - (void)setApplicationBundle:(id)arg1;
-- (void)setApplicationConfigVersion:(unsigned int)arg1;
+- (void)setApplicationConfigVersion:(unsigned long long)arg1;
 - (void)setApplicationContainer:(id)arg1;
 - (void)setApplicationContainerEnvironment:(int)arg1;
 - (void)setApplicationVersion:(id)arg1;
 - (void)setClientChangeToken:(id)arg1;
 - (void)setDeviceAssignedName:(id)arg1;
-- (void)setDeviceFlowControlBudget:(unsigned int)arg1;
-- (void)setDeviceFlowControlBudgetCap:(unsigned int)arg1;
+- (void)setDeviceFlowControlBudget:(unsigned long long)arg1;
+- (void)setDeviceFlowControlBudgetCap:(unsigned long long)arg1;
 - (void)setDeviceFlowControlKey:(id)arg1;
 - (void)setDeviceFlowControlRegeneration:(float)arg1;
 - (void)setDeviceHardwareID:(id)arg1;
@@ -172,9 +172,9 @@
 - (void)setDeviceIdentifier:(id)arg1;
 - (void)setDeviceLibraryName:(id)arg1;
 - (void)setDeviceLibraryVersion:(id)arg1;
-- (void)setDeviceProtocolVersion:(unsigned int)arg1;
+- (void)setDeviceProtocolVersion:(unsigned long long)arg1;
 - (void)setDeviceSoftwareVersion:(id)arg1;
-- (void)setGlobalConfigVersion:(unsigned int)arg1;
+- (void)setGlobalConfigVersion:(unsigned long long)arg1;
 - (void)setHasApplicationConfigVersion:(BOOL)arg1;
 - (void)setHasApplicationContainerEnvironment:(BOOL)arg1;
 - (void)setHasDeviceFlowControlBudget:(BOOL)arg1;

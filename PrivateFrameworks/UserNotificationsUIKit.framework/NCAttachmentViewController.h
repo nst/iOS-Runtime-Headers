@@ -10,7 +10,7 @@
 
 @property (nonatomic, retain) UNNotificationAttachment *attachment;
 @property (nonatomic, readonly) NSString *contentExtensionIdentifier;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } contentSize;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } contentSize;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <NCNotificationCustomContentDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -22,10 +22,10 @@
 + (id)attachmentViewControllerForAttachment:(id)arg1 notificationRequest:(id)arg2;
 
 - (void).cxx_destruct;
-- (struct CGSize { double x1; double x2; })_preferredContentSizeForContainerSize:(struct CGSize { double x1; double x2; })arg1 contentSize:(struct CGSize { double x1; double x2; })arg2;
+- (struct CGSize { float x1; float x2; })_preferredContentSizeForContainerSize:(struct CGSize { float x1; float x2; })arg1 contentSize:(struct CGSize { float x1; float x2; })arg2;
 - (BOOL)allowManualDismiss;
 - (id)attachment;
-- (struct CGSize { double x1; double x2; })contentSize;
+- (struct CGSize { float x1; float x2; })contentSize;
 - (unsigned int)customContentLocation;
 - (BOOL)defaultContentHidden;
 - (id)delegate;
@@ -38,7 +38,7 @@
 - (void)setAttachment:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setNotificationRequest:(id)arg1;
-- (struct CGSize { double x1; double x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { double x1; double x2; })arg2;
+- (struct CGSize { float x1; float x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)updatePreferredContentSize;
 - (void)viewWillAppear:(BOOL)arg1;
 

@@ -3,8 +3,8 @@
  */
 
 @interface UIPDFDocument : NSObject {
-    double  _cachedHeight;
-    double  _cachedWidth;
+    float  _cachedHeight;
+    float  _cachedWidth;
     struct CGPDFDocument { } * _cgDocument;
     <NSObject><UIPDFDocumentDelegate> * _delegate;
     NSString * _documentID;
@@ -12,7 +12,7 @@
     unsigned int  _imageCacheCount;
     int  _imageCacheLock;
     unsigned int  _imageCacheLookAhead;
-    double  _imageCacheResolution;
+    float  _imageCacheResolution;
     int  _lock;
     unsigned int  _numberOfPages;
     UIPDFPageImageCache * _pageImageCache;

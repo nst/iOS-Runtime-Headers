@@ -5,24 +5,24 @@
 @interface SKUITextBoxView : UIControl {
     SKUIColorScheme * _colorScheme;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _contentInsets;
     UILabel * _moreButtonLabel;
     int  _numberOfVisibleLines;
-    double  _rating;
+    float  _rating;
     UIImageView * _ratingImageView;
     UILabel * _ratingLabel;
     UILabel * _subtitleLabel;
     struct __CTFrame { } * _textFrame;
     BOOL  _textIsNaturallyRTL;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _titleInsets;
     UILabel * _titleLabel;
     struct __CTFrame { } * _titleTextFrame;
@@ -33,25 +33,25 @@
 }
 
 @property (nonatomic, retain) SKUIColorScheme *colorScheme;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInsets;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
 @property (nonatomic, copy) NSString *moreButtonTitle;
 @property (nonatomic) int numberOfVisibleLines;
-@property (nonatomic) double rating;
+@property (nonatomic) float rating;
 @property (nonatomic, copy) NSString *ratingText;
 @property (nonatomic, copy) NSString *subtitle;
 @property (nonatomic) BOOL textIsNaturallyRTL;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } titleInsets;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } titleInsets;
 @property (nonatomic) int truncationStyle;
 
 - (void).cxx_destruct;
 - (id)_moreButtonLabel;
 - (struct __CTFrame { }*)_textFrame;
-- (struct CGSize { double x1; double x2; })_textSizeToFitSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })_textSizeToFitSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)colorScheme;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
 - (void)dealloc;
-- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)moreButtonTitle;
 - (int)numberOfVisibleLines;
@@ -60,10 +60,10 @@
 - (void)reset;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setColorScheme:(id)arg1;
-- (void)setContentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setFixedWidthTextFrame:(struct __CTFrame { }*)arg1;
 - (void)setFixedWidthTitleTextFrame:(struct __CTFrame { }*)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setMoreButtonTitle:(id)arg1;
 - (void)setNumberOfVisibleLines:(int)arg1;
 - (void)setRating:(float)arg1;
@@ -72,12 +72,12 @@
 - (void)setTextFrameWithText:(id)arg1;
 - (void)setTextIsNaturallyRTL:(BOOL)arg1;
 - (void)setTitle:(id)arg1;
-- (void)setTitleInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setTitleInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setTruncationStyle:(int)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)subtitle;
 - (BOOL)textIsNaturallyRTL;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })titleInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })titleInsets;
 - (int)truncationStyle;
 
 @end

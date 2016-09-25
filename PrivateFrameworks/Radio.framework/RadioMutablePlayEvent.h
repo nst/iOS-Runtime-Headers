@@ -9,7 +9,7 @@
 @property (nonatomic) double endTimeInTrack;
 @property (nonatomic, copy) NSString *externalIdentifier;
 @property (nonatomic) double startTimeInTrack;
-@property (nonatomic) int storeID;
+@property (nonatomic) long long storeID;
 @property (nonatomic, copy) NSData *timedMetadata;
 @property (nonatomic, copy) NSDictionary *trackInfo;
 @property (nonatomic) int type;
@@ -20,7 +20,7 @@
 - (void)setEndTimeInTrack:(double)arg1;
 - (void)setExternalIdentifier:(id)arg1;
 - (void)setStartTimeInTrack:(double)arg1;
-- (void)setStoreID:(int)arg1;
+- (void)setStoreID:(long long)arg1;
 - (void)setTimedMetadata:(id)arg1;
 - (void)setTrackInfo:(id)arg1;
 - (void)setType:(int)arg1;

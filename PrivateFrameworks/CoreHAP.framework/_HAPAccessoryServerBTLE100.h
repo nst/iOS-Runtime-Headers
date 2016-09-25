@@ -26,7 +26,7 @@
     CBCharacteristic * _pairSetupCharacteristic;
     CBCharacteristic * _pairVerifyCharacteristic;
     id /* block */  _pairVerifyCompletionBlock;
-    unsigned int  _pairingFeatureFlags;
+    unsigned long long  _pairingFeatureFlags;
     CBCharacteristic * _pairingFeaturesCharacteristic;
     BOOL  _pairingFeaturesRead;
     CBService * _pairingService;
@@ -68,7 +68,7 @@
 @property (nonatomic, retain) CBCharacteristic *pairSetupCharacteristic;
 @property (nonatomic, retain) CBCharacteristic *pairVerifyCharacteristic;
 @property (nonatomic, copy) id /* block */ pairVerifyCompletionBlock;
-@property (nonatomic) unsigned int pairingFeatureFlags;
+@property (nonatomic) unsigned long long pairingFeatureFlags;
 @property (nonatomic, retain) CBCharacteristic *pairingFeaturesCharacteristic;
 @property (nonatomic) BOOL pairingFeaturesRead;
 @property (nonatomic, retain) CBService *pairingService;
@@ -184,7 +184,7 @@
 - (id)pairSetupCharacteristic;
 - (id)pairVerifyCharacteristic;
 - (id /* block */)pairVerifyCompletionBlock;
-- (unsigned int)pairingFeatureFlags;
+- (unsigned long long)pairingFeatureFlags;
 - (id)pairingFeaturesCharacteristic;
 - (BOOL)pairingFeaturesRead;
 - (id)pairingService;
@@ -233,7 +233,7 @@
 - (void)setPairSetupCharacteristic:(id)arg1;
 - (void)setPairVerifyCharacteristic:(id)arg1;
 - (void)setPairVerifyCompletionBlock:(id /* block */)arg1;
-- (void)setPairingFeatureFlags:(unsigned int)arg1;
+- (void)setPairingFeatureFlags:(unsigned long long)arg1;
 - (void)setPairingFeaturesCharacteristic:(id)arg1;
 - (void)setPairingFeaturesRead:(BOOL)arg1;
 - (void)setPairingService:(id)arg1;

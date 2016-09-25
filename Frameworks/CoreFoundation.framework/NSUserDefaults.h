@@ -44,7 +44,7 @@
 - (id)initWithSuiteName:(id)arg1;
 - (id)initWithUser:(id)arg1;
 - (int)integerForKey:(id)arg1;
-- (int)longForKey:(id)arg1;
+- (long long)longForKey:(id)arg1;
 - (id)objectForKey:(id)arg1;
 - (id)objectForKey:(id)arg1 inDomain:(id)arg2;
 - (BOOL)objectIsForcedForKey:(id)arg1;
@@ -63,7 +63,7 @@
 - (void)setDouble:(double)arg1 forKey:(id)arg2;
 - (void)setFloat:(float)arg1 forKey:(id)arg2;
 - (void)setInteger:(int)arg1 forKey:(id)arg2;
-- (void)setLong:(int)arg1 forKey:(id)arg2;
+- (void)setLong:(long long)arg1 forKey:(id)arg2;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (void)setObject:(id)arg1 forKey:(id)arg2 inDomain:(id)arg3;
 - (void)setObservationInfo:(void*)arg1;
@@ -139,8 +139,8 @@
 - (BOOL)boolValueSafeForKey:(id)arg1 status:(int*)arg2;
 - (double)doubleValueSafeForKey:(id)arg1;
 - (double)doubleValueSafeForKey:(id)arg1 status:(int*)arg2;
-- (int)int64ValueSafeForKey:(id)arg1;
-- (int)int64ValueSafeForKey:(id)arg1 status:(int*)arg2;
+- (long long)int64ValueSafeForKey:(id)arg1;
+- (long long)int64ValueSafeForKey:(id)arg1 status:(int*)arg2;
 - (id)stringValueSafeForKey:(id)arg1;
 - (id)stringValueSafeForKey:(id)arg1 status:(int*)arg2;
 - (const char *)utf8ValueSafeForKey:(id)arg1;

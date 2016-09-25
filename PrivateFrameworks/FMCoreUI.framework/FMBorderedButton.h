@@ -8,8 +8,8 @@
 }
 
 @property (nonatomic, retain) UIColor *borderColor;
-@property (nonatomic) double borderWidth;
-@property (nonatomic) double cornerRadius;
+@property (nonatomic) float borderWidth;
+@property (nonatomic) float cornerRadius;
 @property (nonatomic) BOOL hairlineBorder;
 
 - (void).cxx_destruct;

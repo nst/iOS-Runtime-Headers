@@ -10,7 +10,7 @@
 }
 
 + (id)predictorWithLanguage:(id)arg1 whitelist:(struct NSDictionary { Class x1; }*)arg2 weights:(struct NSDictionary { Class x1; }*)arg3;
-+ (void)seedRng:(unsigned int)arg1;
++ (void)seedRng:(unsigned long long)arg1;
 
 - (void).cxx_destruct;
 - (id)init;

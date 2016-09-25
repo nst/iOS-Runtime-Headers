@@ -11,7 +11,7 @@
         unsigned int moreThanOneYearSinceActivitySetup : 1; 
     }  _has;
     BOOL  _moreThanOneYearSinceActivitySetup;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
     int  _totalAchievementCount;
     int  _totalOTAAchievementCount;
     int  _totalOTAAchievementViewedCount;
@@ -23,7 +23,7 @@
 @property (nonatomic) BOOL hasTotalOTAAchievementCount;
 @property (nonatomic) BOOL hasTotalOTAAchievementViewedCount;
 @property (nonatomic) BOOL moreThanOneYearSinceActivitySetup;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 @property (nonatomic) int totalAchievementCount;
 @property (nonatomic) int totalOTAAchievementCount;
 @property (nonatomic) int totalOTAAchievementViewedCount;
@@ -51,11 +51,11 @@
 - (void)setHasTotalOTAAchievementCount:(BOOL)arg1;
 - (void)setHasTotalOTAAchievementViewedCount:(BOOL)arg1;
 - (void)setMoreThanOneYearSinceActivitySetup:(BOOL)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (void)setTotalAchievementCount:(int)arg1;
 - (void)setTotalOTAAchievementCount:(int)arg1;
 - (void)setTotalOTAAchievementViewedCount:(int)arg1;
-- (unsigned int)timestamp;
+- (unsigned long long)timestamp;
 - (int)totalAchievementCount;
 - (id)totalAchievementCountAsString:(int)arg1;
 - (int)totalOTAAchievementCount;

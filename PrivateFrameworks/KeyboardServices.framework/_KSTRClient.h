@@ -3,14 +3,14 @@
  */
 
 @interface _KSTRClient : NSObject <_KSTextReplacementServiceProtocol> {
-    int  _generation;
+    long long  _generation;
     BOOL  _hasReadAccess;
     _KSTextReplacementServer * _owner;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) int generation;
+@property (nonatomic) long long generation;
 @property (nonatomic, readonly) BOOL hasReadAccess;
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
@@ -19,7 +19,7 @@
 - (void)addEntries:(id)arg1 removeEntries:(id)arg2 withReply:(id /* block */)arg3;
 - (void)cancel;
 - (void)cancelPendingUpdatesWithReply:(id /* block */)arg1;
-- (int)generation;
+- (long long)generation;
 - (BOOL)hasReadAccess;
 - (id)initWithOwner:(id)arg1;
 - (id)initWithOwner:(id)arg1 forConnection:(id)arg2;
@@ -27,6 +27,6 @@
 - (void)queryTextReplacementsWithPredicate:(id)arg1 reply:(id /* block */)arg2;
 - (void)removeAllEntries;
 - (void)requestSyncWithReply:(id /* block */)arg1;
-- (void)setGeneration:(int)arg1;
+- (void)setGeneration:(long long)arg1;
 
 @end

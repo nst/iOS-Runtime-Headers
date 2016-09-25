@@ -41,7 +41,7 @@
     NSString * _serviceName;
     _SYMultiSuspendableQueue * _sessionQueue;
     double  _sessionStalenessInterval;
-    unsigned int  _stateHandle;
+    unsigned long long  _stateHandle;
     SYSyncEngine * _syncEngine;
     SYDevice * _targetedDevice;
     SYVectorClock * _vectorClock;

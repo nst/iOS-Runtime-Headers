@@ -14,8 +14,8 @@
     PXImageExtraction * _imageExtraction;
     PXImageRequester * _imageRequester;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _imageViewportLocation;
     BOOL  _isPerformingChanges;
     struct { 
@@ -24,8 +24,8 @@
     }  _needsUpdate;
     UIImageView * _playButtonBackgroundImageView;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _playButtonSize;
     int  _playButtonStyle;
     UIView<PXVideoOverlayButton> * _playButtonView;
@@ -42,13 +42,13 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) PXImageRequester *imageRequester;
-@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } imageViewportLocation;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } playButtonSize;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } imageViewportLocation;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } playButtonSize;
 @property (nonatomic, readonly) int playButtonStyle;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) UIView *view;
 
-+ (struct CGSize { double x1; double x2; })preferredSize;
++ (struct CGSize { float x1; float x2; })preferredSize;
 
 - (void).cxx_destruct;
 - (unsigned int)_animationCount;
@@ -70,24 +70,24 @@
 - (BOOL)allowsBackdropStatisticsSuppression;
 - (void)becomeReusable;
 - (id)delegate;
-- (void)didAnimateToGeometry:(struct PXTileGeometry { struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_1_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_1_1_2; } x1; struct CGPoint { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; struct CGAffineTransform { double x_4_1_1; double x_4_1_2; double x_4_1_3; double x_4_1_4; double x_4_1_5; double x_4_1_6; } x4; double x5; double x6; BOOL x7; struct CGSize { double x_8_1_1; double x_8_1_2; } x8; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_9_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_9_1_2; } x9; void *x10; })arg1 toUserData:(id)arg2 withOptions:(id)arg3;
-- (void)didApplyGeometry:(struct PXTileGeometry { struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_1_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_1_1_2; } x1; struct CGPoint { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; struct CGAffineTransform { double x_4_1_1; double x_4_1_2; double x_4_1_3; double x_4_1_4; double x_4_1_5; double x_4_1_6; } x4; double x5; double x6; BOOL x7; struct CGSize { double x_8_1_1; double x_8_1_2; } x8; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_9_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_9_1_2; } x9; void *x10; })arg1 withUserData:(id)arg2;
+- (void)didAnimateToGeometry:(struct PXTileGeometry { struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_1_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_1_1_2; } x1; struct CGPoint { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; struct CGAffineTransform { float x_4_1_1; float x_4_1_2; float x_4_1_3; float x_4_1_4; float x_4_1_5; float x_4_1_6; } x4; float x5; float x6; BOOL x7; struct CGSize { float x_8_1_1; float x_8_1_2; } x8; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_9_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_9_1_2; } x9; void *x10; })arg1 toUserData:(id)arg2 withOptions:(id)arg3;
+- (void)didApplyGeometry:(struct PXTileGeometry { struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_1_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_1_1_2; } x1; struct CGPoint { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; struct CGAffineTransform { float x_4_1_1; float x_4_1_2; float x_4_1_3; float x_4_1_4; float x_4_1_5; float x_4_1_6; } x4; float x5; float x6; BOOL x7; struct CGSize { float x_8_1_1; float x_8_1_2; } x8; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_9_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_9_1_2; } x9; void *x10; })arg1 withUserData:(id)arg2;
 - (void)didTapButton:(id)arg1;
 - (id)imageRequester;
-- (struct CGPoint { double x1; double x2; })imageViewportLocation;
+- (struct CGPoint { float x1; float x2; })imageViewportLocation;
 - (id)init;
 - (void)observable:(id)arg1 didChange:(unsigned int)arg2 context:(void*)arg3;
 - (void)performChanges:(id /* block */)arg1;
-- (struct CGSize { double x1; double x2; })playButtonSize;
+- (struct CGSize { float x1; float x2; })playButtonSize;
 - (int)playButtonStyle;
 - (void)prepareForReuse;
 - (void)setAllowsBackdropStatisticsSuppression:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setImageRequester:(id)arg1;
-- (void)setImageViewportLocation:(struct CGPoint { double x1; double x2; })arg1;
-- (void)setPlayButtonSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setImageViewportLocation:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setPlayButtonSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setPlayButtonStyle:(int)arg1;
 - (id)view;
-- (void)willAnimateToGeometry:(struct PXTileGeometry { struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_1_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_1_1_2; } x1; struct CGPoint { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; struct CGAffineTransform { double x_4_1_1; double x_4_1_2; double x_4_1_3; double x_4_1_4; double x_4_1_5; double x_4_1_6; } x4; double x5; double x6; BOOL x7; struct CGSize { double x_8_1_1; double x_8_1_2; } x8; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_9_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_9_1_2; } x9; void *x10; })arg1 toUserData:(id)arg2 withOptions:(id)arg3;
+- (void)willAnimateToGeometry:(struct PXTileGeometry { struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_1_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_1_1_2; } x1; struct CGPoint { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; struct CGAffineTransform { float x_4_1_1; float x_4_1_2; float x_4_1_3; float x_4_1_4; float x_4_1_5; float x_4_1_6; } x4; float x5; float x6; BOOL x7; struct CGSize { float x_8_1_1; float x_8_1_2; } x8; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_9_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_9_1_2; } x9; void *x10; })arg1 toUserData:(id)arg2 withOptions:(id)arg3;
 
 @end

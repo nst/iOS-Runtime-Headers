@@ -10,7 +10,7 @@
 @property (nonatomic, readonly) BRContainer *container;
 
 - (void).cxx_destruct;
-- (id)_blockingThumbnailWithSize:(struct CGSize { double x1; double x2; })arg1 scale:(float)arg2 wantsBorder:(BOOL*)arg3;
+- (id)_blockingThumbnailWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2 wantsBorder:(BOOL*)arg3;
 - (void)_modelChanged;
 - (id)container;
 - (id)initWithContainer:(id)arg1;

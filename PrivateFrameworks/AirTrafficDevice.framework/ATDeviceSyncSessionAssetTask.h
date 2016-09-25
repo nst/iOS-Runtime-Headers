@@ -17,7 +17,7 @@
     NSMutableOrderedSet * _serverAssetsInProgress;
     double  _taskStartTime;
     ATThroughputCalculator * _throughputCalculator;
-    unsigned int  _totalAssetSize;
+    unsigned long long  _totalAssetSize;
     NSObject<OS_dispatch_queue> * _workQueue;
 }
 

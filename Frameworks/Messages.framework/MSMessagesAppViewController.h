@@ -18,7 +18,7 @@
 - (void).cxx_destruct;
 - (void)_conversation:(id)arg1 didSelectMessage:(id)arg2;
 - (void)_conversation:(id)arg1 willSelectMessage:(id)arg2;
-- (void)_setContentOverlayInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)_setContentOverlayInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (id)activeConversation;
 - (void)dealloc;
 - (void)didBecomeActiveWithConversation:(id)arg1;

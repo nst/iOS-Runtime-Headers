@@ -24,8 +24,8 @@
 @property (nonatomic, readonly, retain) WLSourceDevice *sourceDevice;
 
 + (id)_aggdStringForStatistics:(id)arg1;
-+ (unsigned int)_bucketedUnsignedInteger:(unsigned int)arg1;
-+ (unsigned int)_bytesFreeOnDevice;
++ (unsigned long long)_bucketedUnsignedInteger:(unsigned long long)arg1;
++ (unsigned long long)_bytesFreeOnDevice;
 + (void)_cleanUpAfterFinalizeMigratableAppsWithCompletion:(id /* block */)arg1;
 + (id)_dataTypesAndSizesXMLDataFromMap:(id)arg1;
 + (id)_deviceType;

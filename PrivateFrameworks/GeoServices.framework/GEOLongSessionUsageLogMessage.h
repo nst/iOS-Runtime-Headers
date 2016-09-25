@@ -12,8 +12,8 @@
     GEONetworkUsageLogMessage * _networkUsageLogMessage;
     NSString * _requestingAppIdentifier;
     struct GEOSessionID { 
-        unsigned int _high; 
-        unsigned int _low; 
+        unsigned long long _high; 
+        unsigned long long _low; 
     }  _sessionId;
     double  _timestamp;
 }
@@ -28,7 +28,7 @@
 @property (nonatomic, retain) GEOLogFrameworkMetricLogMessage *logFrameworkMetricLogMessage;
 @property (nonatomic, retain) GEONetworkUsageLogMessage *networkUsageLogMessage;
 @property (nonatomic, retain) NSString *requestingAppIdentifier;
-@property (nonatomic) struct GEOSessionID { unsigned int x1; unsigned int x2; } sessionId;
+@property (nonatomic) struct GEOSessionID { unsigned long long x1; unsigned long long x2; } sessionId;
 @property (nonatomic) double timestamp;
 
 - (id)cacheHitLogMessage;
@@ -50,14 +50,14 @@
 - (id)networkUsageLogMessage;
 - (BOOL)readFrom:(id)arg1;
 - (id)requestingAppIdentifier;
-- (struct GEOSessionID { unsigned int x1; unsigned int x2; })sessionId;
+- (struct GEOSessionID { unsigned long long x1; unsigned long long x2; })sessionId;
 - (void)setCacheHitLogMessage:(id)arg1;
 - (void)setHasSessionId:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
 - (void)setLogFrameworkMetricLogMessage:(id)arg1;
 - (void)setNetworkUsageLogMessage:(id)arg1;
 - (void)setRequestingAppIdentifier:(id)arg1;
-- (void)setSessionId:(struct GEOSessionID { unsigned int x1; unsigned int x2; })arg1;
+- (void)setSessionId:(struct GEOSessionID { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)setTimestamp:(double)arg1;
 - (double)timestamp;
 - (void)writeTo:(id)arg1;

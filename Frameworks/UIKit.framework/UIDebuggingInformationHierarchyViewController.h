@@ -11,7 +11,7 @@
     NSMutableDictionary * _managedValues;
     NSMutableDictionary * _observersForKeys;
     struct CGColor { } * _originalBorderColor;
-    double  _originalBorderWidth;
+    float  _originalBorderWidth;
     UIRefreshControl * _refreshControl;
     UIView * _rootViewForInspection;
     UITableView * _tableView;
@@ -28,7 +28,7 @@
 @property (nonatomic, retain) NSMutableDictionary *managedValues;
 @property (nonatomic, retain) NSMutableDictionary *observersForKeys;
 @property (nonatomic) struct CGColor { }*originalBorderColor;
-@property (nonatomic) double originalBorderWidth;
+@property (nonatomic) float originalBorderWidth;
 @property (nonatomic, retain) UIRefreshControl *refreshControl;
 @property (nonatomic, retain) UIView *rootViewForInspection;
 @property (readonly) Class superclass;
@@ -79,6 +79,6 @@
 - (void)valueWithKey:(id)arg1 changedToValue:(id)arg2;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

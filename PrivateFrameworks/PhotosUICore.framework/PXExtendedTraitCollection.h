@@ -4,19 +4,19 @@
 
 @interface PXExtendedTraitCollection : PXObservable {
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  __pendingViewTransitionSize;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  __viewSize;
-    double  _displayScale;
+    float  _displayScale;
     BOOL  _enabled;
     int  _layoutOrientation;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _layoutReferenceSize;
     int  _layoutSizeClass;
     int  _layoutSizeSubclass;
@@ -36,12 +36,12 @@
     struct NSObject { Class x1; } * _viewController;
 }
 
-@property (setter=_setPendingViewTransitionSize:, nonatomic) struct CGSize { double x1; double x2; } _pendingViewTransitionSize;
-@property (setter=_setViewSize:, nonatomic) struct CGSize { double x1; double x2; } _viewSize;
-@property (setter=_setDisplayScale:, nonatomic) double displayScale;
+@property (setter=_setPendingViewTransitionSize:, nonatomic) struct CGSize { float x1; float x2; } _pendingViewTransitionSize;
+@property (setter=_setViewSize:, nonatomic) struct CGSize { float x1; float x2; } _viewSize;
+@property (setter=_setDisplayScale:, nonatomic) float displayScale;
 @property (getter=isEnabled, nonatomic) BOOL enabled;
 @property (setter=_setLayoutOrientation:, nonatomic) int layoutOrientation;
-@property (setter=_setLayoutReferenceSize:, nonatomic) struct CGSize { double x1; double x2; } layoutReferenceSize;
+@property (setter=_setLayoutReferenceSize:, nonatomic) struct CGSize { float x1; float x2; } layoutReferenceSize;
 @property (setter=_setLayoutSizeClass:, nonatomic) int layoutSizeClass;
 @property (setter=_setLayoutSizeSubclass:, nonatomic) int layoutSizeSubclass;
 @property (setter=_setTraitCollection:, nonatomic, retain) NSObject<PXAnonymousTraitCollection> *traitCollection;
@@ -57,18 +57,18 @@
 - (void)_invalidateUserInterfaceIdiom;
 - (void)_invalidateViewSize;
 - (BOOL)_needsUpdate;
-- (struct CGSize { double x1; double x2; })_pendingViewTransitionSize;
+- (struct CGSize { float x1; float x2; })_pendingViewTransitionSize;
 - (void)_setDisplayScale:(float)arg1;
 - (void)_setLayoutOrientation:(int)arg1;
-- (void)_setLayoutReferenceSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)_setLayoutReferenceSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_setLayoutSizeClass:(int)arg1;
 - (void)_setLayoutSizeSubclass:(int)arg1;
 - (void)_setNeedsUpdate;
-- (void)_setPendingViewTransitionSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)_setPendingViewTransitionSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_setTraitCollection:(struct NSObject { Class x1; }*)arg1;
 - (void)_setUserInterfaceFeature:(int)arg1;
 - (void)_setUserInterfaceIdiom:(int)arg1;
-- (void)_setViewSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)_setViewSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_updateDisplayScaleIfNeeded;
 - (void)_updateIfNeeded;
 - (void)_updateLayoutOrientationIfNeeded;
@@ -78,7 +78,7 @@
 - (void)_updateUserInterfaceFeatureIfNeeded;
 - (void)_updateUserInterfaceIdiomIfNeeded;
 - (void)_updateViewSizeIfNeeded;
-- (struct CGSize { double x1; double x2; })_viewSize;
+- (struct CGSize { float x1; float x2; })_viewSize;
 - (void)_viewWillLayoutSubviews;
 - (struct NSObject { Class x1; }*)createTraitCollection;
 - (void)dealloc;
@@ -93,7 +93,7 @@
 - (void)invalidateTraitCollection;
 - (BOOL)isEnabled;
 - (int)layoutOrientation;
-- (struct CGSize { double x1; double x2; })layoutReferenceSize;
+- (struct CGSize { float x1; float x2; })layoutReferenceSize;
 - (int)layoutSizeClass;
 - (int)layoutSizeSubclass;
 - (id)mutableChangeObject;
@@ -111,7 +111,7 @@
 - (void)viewControllerViewDidLoad;
 - (void)viewControllerViewWillAppear;
 - (void)viewControllerViewWillLayoutSubviews;
-- (void)viewControllerViewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1;
-- (struct CGSize { double x1; double x2; })viewSize;
+- (void)viewControllerViewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { float x1; float x2; })viewSize;
 
 @end

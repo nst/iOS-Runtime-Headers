@@ -7,19 +7,19 @@
     int  _currentPageIndexForAppliedParallaxEffect;
     <UIPageViewControllerDelegate> * _definedDelegate;
     <QLPageViewControllerDataSource> * _indexedDataSource;
-    double  _interPageSpacing;
+    float  _interPageSpacing;
     BOOL  _isTransitioning;
     unsigned int  _nextPageIndex;
     BOOL  _pageClipsToBounds;
     _QLDelegateProxy * _pageViewControllerDelegateProxy;
     NSMapTable * _pages;
-    double  _parallaxIntensity;
+    float  _parallaxIntensity;
     UIScrollView * _scrollView;
     <UIScrollViewDelegate> * _scrollViewDelegate;
     _QLDelegateProxy * _scrollViewDelegateProxy;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _scrollingStartOffset;
 }
 
@@ -29,7 +29,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic) <QLPageViewControllerDataSource> *indexedDataSource;
-@property (nonatomic) double parallaxIntensity;
+@property (nonatomic) float parallaxIntensity;
 @property (nonatomic, readonly) UIScrollView *scrollView;
 @property (nonatomic) <UIScrollViewDelegate> *scrollViewDelegate;
 @property (readonly) Class superclass;
@@ -61,7 +61,7 @@
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
-- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { double x1; double x2; })arg2 targetContentOffset:(inout struct CGPoint { double x1; double x2; }*)arg3;
+- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { float x1; float x2; })arg2 targetContentOffset:(inout struct CGPoint { float x1; float x2; }*)arg3;
 - (void)setCurrentPageIndex:(unsigned int)arg1;
 - (void)setCurrentPageIndex:(unsigned int)arg1 animated:(BOOL)arg2;
 - (void)setDataSource:(id)arg1;

@@ -72,7 +72,7 @@
         unsigned int durBin9 : 1; 
         unsigned int durationMs : 1; 
     }  _has;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) unsigned int durBin0;
@@ -142,7 +142,7 @@
 @property (nonatomic) BOOL hasDurBin9;
 @property (nonatomic) BOOL hasDurationMs;
 @property (nonatomic) BOOL hasTimestamp;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -286,8 +286,8 @@
 - (void)setHasDurBin9:(BOOL)arg1;
 - (void)setHasDurationMs:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
-- (unsigned int)timestamp;
+- (void)setTimestamp:(unsigned long long)arg1;
+- (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 
 @end

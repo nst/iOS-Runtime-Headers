@@ -5,26 +5,26 @@
 @interface UICalloutView : UIControl {
     struct { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } offset; 
         int position; 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } desiredPoint; 
         struct CGRect { 
             struct CGPoint { 
-                double x; 
-                double y; 
+                float x; 
+                float y; 
             } origin; 
             struct CGSize { 
-                double width; 
-                double height; 
+                float width; 
+                float height; 
             } size; 
         } desiredBounds; 
     }  _anchor;
@@ -41,19 +41,19 @@
     }  _flags;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _frame;
     NSTimer * _layoutAnimationTimer;
     UIImageView * _leftBackground;
     UIImageView * _leftCap;
     UIView * _leftView;
-    double  _maximumWidth;
+    float  _maximumWidth;
     UIImageView * _rightBackground;
     UIImageView * _rightCap;
     UIView * _rightView;
@@ -63,17 +63,17 @@
     UIImageView * _topAnchor;
 }
 
-@property (nonatomic, readonly) double UICalloutViewButtonPadding;
-@property (nonatomic, readonly) double UICalloutViewCapHeight;
-@property (nonatomic, readonly) double UICalloutViewCapPaddingTop;
-@property (nonatomic, readonly) double UICalloutViewHorizontalMargin;
-@property (nonatomic, readonly) double UICalloutViewHorizontalPadding;
+@property (nonatomic, readonly) float UICalloutViewButtonPadding;
+@property (nonatomic, readonly) float UICalloutViewCapHeight;
+@property (nonatomic, readonly) float UICalloutViewCapPaddingTop;
+@property (nonatomic, readonly) float UICalloutViewHorizontalMargin;
+@property (nonatomic, readonly) float UICalloutViewHorizontalPadding;
 @property (nonatomic, readonly) double UICalloutViewLayoutDuration;
-@property (nonatomic, readonly) double UICalloutViewMinimumWidth;
-@property (nonatomic, readonly) double UICalloutViewVerticalMargin;
+@property (nonatomic, readonly) float UICalloutViewMinimumWidth;
+@property (nonatomic, readonly) float UICalloutViewVerticalMargin;
 @property (nonatomic) BOOL canAnchorFromBottom;
 @property (nonatomic, retain) UIView *leftView;
-@property (nonatomic) double maximumWidth;
+@property (nonatomic) float maximumWidth;
 @property (nonatomic, retain) UIView *rightView;
 @property (nonatomic) int subtitleLineBreakMode;
 @property (nonatomic) int subtitleTextAlignment;
@@ -111,29 +111,29 @@
 - (void)_setOriginForScale:(float)arg1;
 - (void)_setRightView:(id)arg1;
 - (void)addTarget:(id)arg1 action:(SEL)arg2;
-- (struct CGPoint { double x1; double x2; })anchorPoint;
+- (struct CGPoint { float x1; float x2; })anchorPoint;
 - (void)animationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (BOOL)canAnchorFromBottom;
 - (void)completeBounceAnimation;
 - (void)dealloc;
 - (id)delegate;
 - (void)fadeOutWithDuration:(double)arg1;
-- (void)getActualAnchorPoint:(struct CGPoint { double x1; double x2; }*)arg1 frame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg2 position:(int*)arg3 forDesiredAnchorPoint:(struct CGPoint { double x1; double x2; })arg4 boundaryRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg5;
-- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
-- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)getActualAnchorPoint:(struct CGPoint { float x1; float x2; }*)arg1 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 position:(int*)arg3 forDesiredAnchorPoint:(struct CGPoint { float x1; float x2; })arg4 boundaryRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg5;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)leftView;
 - (float)maximumWidth;
-- (struct CGPoint { double x1; double x2; })offset;
+- (struct CGPoint { float x1; float x2; })offset;
 - (void)removeTarget:(id)arg1;
 - (id)rightView;
-- (void)setAnchorPoint:(struct CGPoint { double x1; double x2; })arg1 boundaryRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 animate:(BOOL)arg3;
+- (void)setAnchorPoint:(struct CGPoint { float x1; float x2; })arg1 boundaryRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 animate:(BOOL)arg3;
 - (void)setCanAnchorFromBottom:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setLeftView:(id)arg1;
 - (void)setLeftView:(id)arg1 animated:(BOOL)arg2;
 - (void)setMaximumWidth:(float)arg1;
-- (void)setOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setRightView:(id)arg1;
 - (void)setRightView:(id)arg1 animated:(BOOL)arg2;
 - (void)setSubtitle:(id)arg1;

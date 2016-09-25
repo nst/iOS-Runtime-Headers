@@ -3,7 +3,7 @@
  */
 
 @interface FBSProcessTerminationRequest : NSObject <BSDescriptionProviding, NSCopying> {
-    int  _exceptionCode;
+    long long  _exceptionCode;
     NSString * _explanation;
     NSString * _label;
     unsigned int  _options;
@@ -13,7 +13,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) int exceptionCode;
+@property (nonatomic) long long exceptionCode;
 @property (nonatomic, copy) NSString *explanation;
 @property (readonly) unsigned int hash;
 @property (nonatomic, copy) NSString *label;
@@ -30,14 +30,14 @@
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
-- (int)exceptionCode;
+- (long long)exceptionCode;
 - (void)execute;
 - (id)explanation;
 - (id)label;
 - (unsigned int)options;
 - (id)process;
 - (int)reportType;
-- (void)setExceptionCode:(int)arg1;
+- (void)setExceptionCode:(long long)arg1;
 - (void)setExplanation:(id)arg1;
 - (void)setLabel:(id)arg1;
 - (void)setOptions:(unsigned int)arg1;

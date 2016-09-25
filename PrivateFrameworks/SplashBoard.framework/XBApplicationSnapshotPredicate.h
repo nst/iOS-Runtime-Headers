@@ -11,11 +11,11 @@
 @property (readonly, copy) NSString *description;
 @property (getter=isFullScreen, nonatomic) BOOL fullScreen;
 @property (readonly) unsigned int hash;
-@property (nonatomic) double imageScale;
+@property (nonatomic) float imageScale;
 @property (nonatomic) unsigned int interfaceOrientationMask;
 @property (nonatomic, copy) NSString *launchInterfaceIdentifier;
 @property (nonatomic, copy) NSString *name;
-@property (nonatomic) struct CGSize { double x1; double x2; } referenceSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } referenceSize;
 @property (nonatomic, copy) NSString *requiredOSVersion;
 @property (nonatomic, copy) NSString *scheme;
 @property (nonatomic) unsigned int statusBarState;
@@ -39,7 +39,7 @@
 - (BOOL)isFullScreen;
 - (id)launchInterfaceIdentifier;
 - (id)name;
-- (struct CGSize { double x1; double x2; })referenceSize;
+- (struct CGSize { float x1; float x2; })referenceSize;
 - (id)requiredOSVersion;
 - (id)scheme;
 - (void)setContentTypeMask:(unsigned int)arg1;
@@ -48,7 +48,7 @@
 - (void)setInterfaceOrientationMask:(unsigned int)arg1;
 - (void)setLaunchInterfaceIdentifier:(id)arg1;
 - (void)setName:(id)arg1;
-- (void)setReferenceSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setReferenceSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setRequiredOSVersion:(id)arg1;
 - (void)setScheme:(id)arg1;
 - (void)setStatusBarState:(unsigned int)arg1;

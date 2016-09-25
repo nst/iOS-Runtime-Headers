@@ -9,14 +9,14 @@
 }
 
 - (void).cxx_destruct;
-- (void)addChange:(int)arg1 forKey:(id)arg2 changeCount:(int)arg3;
-- (int)changeSinceChangeCount:(int)arg1 forKey:(id)arg2;
-- (id)changesSinceChangeCount:(int)arg1;
+- (void)addChange:(int)arg1 forKey:(id)arg2 changeCount:(long long)arg3;
+- (int)changeSinceChangeCount:(long long)arg1 forKey:(id)arg2;
+- (id)changesSinceChangeCount:(long long)arg1;
 - (id)description;
 - (id)init;
 - (id)initWithMutableStore:(id)arg1;
 - (id)initWithStore:(id)arg1;
-- (int)maximumChangeCount;
-- (BOOL)removeChangesUntilChangeCount:(int)arg1;
+- (long long)maximumChangeCount;
+- (BOOL)removeChangesUntilChangeCount:(long long)arg1;
 
 @end

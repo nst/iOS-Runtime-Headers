@@ -6,8 +6,8 @@
 @required
 
 - (unsigned int)nsli_autoresizingMask;
-- (struct CGSize { double x1; double x2; })nsli_convertSizeFromEngineSpace:(struct CGSize { double x1; double x2; })arg1;
-- (struct CGSize { double x1; double x2; })nsli_convertSizeToEngineSpace:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })nsli_convertSizeFromEngineSpace:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { float x1; float x2; })nsli_convertSizeToEngineSpace:(struct CGSize { float x1; float x2; })arg1;
 - (NSString *)nsli_description;
 - (BOOL)nsli_descriptionIncludesPointer;
 - (BOOL)nsli_isFlipped;
@@ -25,7 +25,7 @@
 - (NSISVariable *)nsli_boundsHeightVariable;
 - (NSISVariable *)nsli_boundsWidthVariable;
 - (BOOL)nsli_canHostIndependentVariableAnchor;
-- (struct CGSize { double x1; double x2; })nsli_engineToUserScalingCoefficients;
+- (struct CGSize { float x1; float x2; })nsli_engineToUserScalingCoefficients;
 - (NSISVariable *)nsli_heightVariable;
 - (NSArray *)nsli_installedConstraints;
 - (BOOL)nsli_isLegalConstraintItem;

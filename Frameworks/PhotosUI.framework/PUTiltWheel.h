@@ -17,7 +17,7 @@
 @property (nonatomic) <PUTiltWheelDataSource> *dataSource;
 
 - (void).cxx_destruct;
-- (struct CGPoint { double x1; double x2; })_baseViewCenterForRadius:(float)arg1 aroundCenter:(struct CGPoint { double x1; double x2; })arg2;
+- (struct CGPoint { float x1; float x2; })_baseViewCenterForRadius:(float)arg1 aroundCenter:(struct CGPoint { float x1; float x2; })arg2;
 - (unsigned int)_countOfIndicatorsFrom:(float)arg1 to:(float)arg2 step:(unsigned int)arg3;
 - (float)_dotIndicatorSizeForDegree:(int)arg1;
 - (float)_dotLayoutRadius;

@@ -5,7 +5,7 @@
 @interface FCSubscriptionController : NSObject <FCSubscriptionListObserving> {
     FCThreadSafeMutableSet * _newlyAddedSubscriptions;
     FCNotificationController * _notificationController;
-    int  _notificationEnabledChannelsRefreshFrequency;
+    long long  _notificationEnabledChannelsRefreshFrequency;
     NSHashTable * _observers;
     FCPurchaseController * _purchaseController;
     FCThreadSafeMutableDictionary * _subscribedTagsByTagID;
@@ -18,7 +18,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) FCThreadSafeMutableSet *newlyAddedSubscriptions;
 @property (nonatomic, retain) FCNotificationController *notificationController;
-@property (nonatomic) int notificationEnabledChannelsRefreshFrequency;
+@property (nonatomic) long long notificationEnabledChannelsRefreshFrequency;
 @property (nonatomic, copy) NSHashTable *observers;
 @property (nonatomic, retain) FCPurchaseController *purchaseController;
 @property (nonatomic, retain) FCThreadSafeMutableDictionary *subscribedTagsByTagID;
@@ -50,7 +50,7 @@
 - (id)newlyAddedSubscriptions;
 - (id)newlySubscribedTagsInDateRange:(id)arg1;
 - (id)notificationController;
-- (int)notificationEnabledChannelsRefreshFrequency;
+- (long long)notificationEnabledChannelsRefreshFrequency;
 - (id)observers;
 - (id)pendingSubscriptionForPollingURL:(id)arg1;
 - (id)pendingSubscriptions;
@@ -61,7 +61,7 @@
 - (void)removeSubscriptionToTag:(id)arg1;
 - (void)setNewlyAddedSubscriptions:(id)arg1;
 - (void)setNotificationController:(id)arg1;
-- (void)setNotificationEnabledChannelsRefreshFrequency:(int)arg1;
+- (void)setNotificationEnabledChannelsRefreshFrequency:(long long)arg1;
 - (BOOL)setNotificationsEnabled:(BOOL)arg1 forTag:(id)arg2 error:(id*)arg3;
 - (void)setObservers:(id)arg1;
 - (void)setPurchaseController:(id)arg1;

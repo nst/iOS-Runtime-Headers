@@ -4,9 +4,9 @@
 
 @interface UIWebSelectMultiplePicker : UIPickerView <UIPickerViewDataSource, UIPickerViewDelegate, UIWebFormControl> {
     NSArray * _cachedItems;
-    double  _fontSize;
-    double  _layoutWidth;
-    double  _maximumTextWidth;
+    float  _fontSize;
+    float  _layoutWidth;
+    float  _maximumTextWidth;
     DOMHTMLSelectElement * _selectionNode;
     unsigned int  _singleSelectionIndex;
     <UIWebSelectedItemPrivate> * _singleSelectionItem;

@@ -7,7 +7,7 @@
     NSArray * _credentialEntryFieldSpecifiers;
     <VSCredentialEntryViewControllerDelegate> * _delegate;
     UIProgressHUD * _deletingAccountHUD;
-    double  _keyboardHeight;
+    float  _keyboardHeight;
     id  _keyboardWillHideObserver;
     id  _keyboardWillShowObserver;
     UIButton * _linkButton;
@@ -23,12 +23,12 @@
 @property (nonatomic, retain) UIProgressHUD *deletingAccountHUD;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic) double keyboardHeight;
+@property (nonatomic) float keyboardHeight;
 @property (nonatomic) id keyboardWillHideObserver;
 @property (nonatomic) id keyboardWillShowObserver;
 @property (nonatomic, retain) UIButton *linkButton;
 @property (nonatomic, retain) VSIdentityProviderLogoView *logoView;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } preferredLogoSize;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } preferredLogoSize;
 @property (readonly) Class superclass;
 @property (nonatomic) id textFieldTextDidChangeObserver;
 @property (nonatomic, retain) VSCredentialEntryViewModel *viewModel;
@@ -63,7 +63,7 @@
 - (id)linkButton;
 - (id)logoView;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (struct CGSize { double x1; double x2; })preferredLogoSize;
+- (struct CGSize { float x1; float x2; })preferredLogoSize;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)setCancellationAllowed:(BOOL)arg1;
 - (void)setCredentialEntryFieldSpecifiers:(id)arg1;

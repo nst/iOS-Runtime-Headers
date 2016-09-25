@@ -22,7 +22,7 @@
 + (id)anyObjectFromCollection:(id)arg1;
 + (void)attemptToUpdatePermissionsForFileAtPath:(const char *)arg1 toLevel:(int)arg2;
 + (void)cleanupExternalReferenceLink:(const char *)arg1;
-+ (BOOL)convertCString:(const char *)arg1 toUnsignedInt64:(unsigned int*)arg2 withBase:(int)arg3;
++ (BOOL)convertCString:(const char *)arg1 toUnsignedInt64:(unsigned long long*)arg2 withBase:(int)arg3;
 + (struct __CFDictionary { }*)createDictionaryPartitioningObjectsByEntity:(id)arg1;
 + (struct __CFDictionary { }*)createDictionaryPartitioningObjectsByRootEntity:(id)arg1;
 + (struct __CFDictionary { }*)createDictionaryPartitioningObjectsIntoHierarchies:(id)arg1;
@@ -35,7 +35,7 @@
 + (BOOL)isUbiquitousItemAtURL:(id)arg1;
 + (BOOL)isUbiquitousURLDownloaded:(id)arg1 error:(id*)arg2;
 + (BOOL)isUbiquitousURLUploaded:(id)arg1 error:(id*)arg2;
-+ (int)lengthOfFileAtExternalReferenceLocation:(const char *)arg1;
++ (long long)lengthOfFileAtExternalReferenceLocation:(const char *)arg1;
 + (BOOL)moveInterimFileToPermanentLocation:(id)arg1;
 + (id)newArrayOfObjectIDsFromCollection:(id)arg1;
 + (id)newCollection:(Class)arg1 fromCollection:(id)arg2 byAddingItems:(id)arg3;

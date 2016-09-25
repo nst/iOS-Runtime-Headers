@@ -3,12 +3,12 @@
  */
 
 @interface MPStoreUserEnvironment : NSObject <NSCopying, NSMutableCopying, NSSecureCoding> {
-    unsigned int  _accountIdentifier;
+    unsigned long long  _accountIdentifier;
     NSString * _storeFrontIdentifier;
     NSString * _userAgentOverride;
 }
 
-@property (nonatomic, readonly) unsigned int accountIdentifier;
+@property (nonatomic, readonly) unsigned long long accountIdentifier;
 @property (nonatomic, readonly, copy) NSString *storeFrontIdentifier;
 @property (nonatomic, readonly, copy) NSString *userAgentOverride;
 
@@ -16,7 +16,7 @@
 
 - (void).cxx_destruct;
 - (id)_copyWithClass:(Class)arg1;
-- (unsigned int)accountIdentifier;
+- (unsigned long long)accountIdentifier;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;

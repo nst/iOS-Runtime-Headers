@@ -7,7 +7,7 @@
 }
 
 @property (nonatomic, readonly) MRAudioBuffer *buffer;
-@property (nonatomic, readonly) double gain;
+@property (nonatomic, readonly) float gain;
 @property (nonatomic, readonly) struct { double x1; double x2; } time;
 
 - (void)_initializeDataIfNecessary;

@@ -7,7 +7,7 @@
         unsigned int timeout : 1; 
     }  _has;
     SYPeer * _sender;
-    unsigned int  _sequenceNumber;
+    unsigned long long  _sequenceNumber;
     SYVectorClock * _state;
     double  _timeout;
     double  _timestamp;
@@ -16,7 +16,7 @@
 
 @property (nonatomic) BOOL hasTimeout;
 @property (nonatomic, retain) SYPeer *sender;
-@property (nonatomic) unsigned int sequenceNumber;
+@property (nonatomic) unsigned long long sequenceNumber;
 @property (nonatomic, retain) SYVectorClock *state;
 @property (nonatomic) double timeout;
 @property (nonatomic) double timestamp;
@@ -33,10 +33,10 @@
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (id)sender;
-- (unsigned int)sequenceNumber;
+- (unsigned long long)sequenceNumber;
 - (void)setHasTimeout:(BOOL)arg1;
 - (void)setSender:(id)arg1;
-- (void)setSequenceNumber:(unsigned int)arg1;
+- (void)setSequenceNumber:(unsigned long long)arg1;
 - (void)setState:(id)arg1;
 - (void)setTimeout:(double)arg1;
 - (void)setTimestamp:(double)arg1;

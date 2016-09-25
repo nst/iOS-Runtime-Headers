@@ -5,7 +5,7 @@
 @interface CollectionCellAnalogClockView : AnalogClockView
 
 + (float)faceRadius;
-+ (struct CGPoint { double x1; double x2; })handRotationalCenterForHand:(int)arg1;
++ (struct CGPoint { float x1; float x2; })handRotationalCenterForHand:(int)arg1;
 + (float)hourHandLength;
 + (float)hourHandWidth;
 + (id)makeClockFaceForDaytime:(BOOL)arg1;

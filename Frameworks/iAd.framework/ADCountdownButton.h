@@ -23,7 +23,7 @@
 + (id)_closeBoxImage;
 + (id)_inactiveCloseBoxImage;
 
-- (unsigned int)accessibilityTraits;
+- (unsigned long long)accessibilityTraits;
 - (id)backgroundView;
 - (double)countdownProgress;
 - (void)dealloc;
@@ -33,7 +33,7 @@
 - (id)iconImage;
 - (id)iconView;
 - (id)init;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (BOOL)isAccessibilityElement;
 - (id)outlineProgressLayer;
 - (id)outlineView;

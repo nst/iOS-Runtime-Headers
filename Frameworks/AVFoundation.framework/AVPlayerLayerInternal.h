@@ -18,8 +18,8 @@
     BOOL  lanczosDownscalingEnabled;
     int  lanczosDownscalingFactor;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  latestAppliedPresentationSize;
     FigBaseCALayer * maskLayer;
     NSDictionary * pixelBufferAttributes;

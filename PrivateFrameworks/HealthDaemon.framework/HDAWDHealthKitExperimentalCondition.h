@@ -7,13 +7,13 @@
     struct { 
         unsigned int testCondition : 1; 
     }  _has;
-    int  _testCondition;
+    long long  _testCondition;
 }
 
 @property (nonatomic, retain) NSString *experimentIdentifier;
 @property (nonatomic, readonly) BOOL hasExperimentIdentifier;
 @property (nonatomic) BOOL hasTestCondition;
-@property (nonatomic) int testCondition;
+@property (nonatomic) long long testCondition;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
@@ -29,8 +29,8 @@
 - (BOOL)readFrom:(id)arg1;
 - (void)setExperimentIdentifier:(id)arg1;
 - (void)setHasTestCondition:(BOOL)arg1;
-- (void)setTestCondition:(int)arg1;
-- (int)testCondition;
+- (void)setTestCondition:(long long)arg1;
+- (long long)testCondition;
 - (void)writeTo:(id)arg1;
 
 @end

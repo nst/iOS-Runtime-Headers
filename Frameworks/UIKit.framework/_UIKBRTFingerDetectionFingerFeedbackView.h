@@ -6,10 +6,10 @@
     _UIKBRTFingerDetectionFingerCircleView * _fingerDot;
     UILabel * _fingerLabel;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _framelocation;
-    double  _radiusInt;
+    float  _radiusInt;
     BOOL  _unknownSeen;
 }
 
@@ -18,10 +18,10 @@
 @property (nonatomic) BOOL unknownSeen;
 
 - (void).cxx_destruct;
-- (void)centerOn:(struct CGPoint { double x1; double x2; })arg1 withRadius:(float)arg2 andIdentifier:(unsigned int)arg3;
+- (void)centerOn:(struct CGPoint { float x1; float x2; })arg1 withRadius:(float)arg2 andIdentifier:(unsigned int)arg3;
 - (id)fingerDot;
 - (id)fingerLabel;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (float)radius;
 - (void)setFingerDot:(id)arg1;

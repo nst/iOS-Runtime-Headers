@@ -3,7 +3,7 @@
  */
 
 @interface GEORPDirectionsEvent : PBCodable <NSCopying> {
-    int  _errorCode;
+    long long  _errorCode;
     NSString * _errorDomain;
     struct { 
         unsigned int errorCode : 1; 
@@ -24,7 +24,7 @@
     int  _type;
 }
 
-@property (nonatomic) int errorCode;
+@property (nonatomic) long long errorCode;
 @property (nonatomic, retain) NSString *errorDomain;
 @property (nonatomic) BOOL hasErrorCode;
 @property (nonatomic, readonly) BOOL hasErrorDomain;
@@ -54,7 +54,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (int)errorCode;
+- (long long)errorCode;
 - (id)errorDomain;
 - (BOOL)hasErrorCode;
 - (BOOL)hasErrorDomain;
@@ -75,7 +75,7 @@
 - (id)occurrenceRouteId;
 - (unsigned int)occurrenceStepIndex;
 - (BOOL)readFrom:(id)arg1;
-- (void)setErrorCode:(int)arg1;
+- (void)setErrorCode:(long long)arg1;
 - (void)setErrorDomain:(id)arg1;
 - (void)setHasErrorCode:(BOOL)arg1;
 - (void)setHasOccurrenceResponseIndex:(BOOL)arg1;

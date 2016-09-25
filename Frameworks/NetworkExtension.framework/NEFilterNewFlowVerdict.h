@@ -5,14 +5,14 @@
 @interface NEFilterNewFlowVerdict : NEFilterVerdict <NSCopying, NSSecureCoding> {
     BOOL  _filterInbound;
     BOOL  _filterOutbound;
-    unsigned int  _peekInboundBytes;
-    unsigned int  _peekOutboundBytes;
+    unsigned long long  _peekInboundBytes;
+    unsigned long long  _peekOutboundBytes;
 }
 
 @property BOOL filterInbound;
 @property BOOL filterOutbound;
-@property unsigned int peekInboundBytes;
-@property unsigned int peekOutboundBytes;
+@property unsigned long long peekInboundBytes;
+@property unsigned long long peekOutboundBytes;
 
 + (id)URLAppendStringVerdictWithMapKey:(id)arg1;
 + (id)allowVerdict;
@@ -27,11 +27,11 @@
 - (BOOL)filterInbound;
 - (BOOL)filterOutbound;
 - (id)initWithCoder:(id)arg1;
-- (unsigned int)peekInboundBytes;
-- (unsigned int)peekOutboundBytes;
+- (unsigned long long)peekInboundBytes;
+- (unsigned long long)peekOutboundBytes;
 - (void)setFilterInbound:(BOOL)arg1;
 - (void)setFilterOutbound:(BOOL)arg1;
-- (void)setPeekInboundBytes:(unsigned int)arg1;
-- (void)setPeekOutboundBytes:(unsigned int)arg1;
+- (void)setPeekInboundBytes:(unsigned long long)arg1;
+- (void)setPeekOutboundBytes:(unsigned long long)arg1;
 
 @end

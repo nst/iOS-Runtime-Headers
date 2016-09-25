@@ -13,9 +13,9 @@
 - (UIFont *)vibrationPickerCellTextFont;
 - (UIColor *)vibrationPickerHeaderTextColor;
 - (UIFont *)vibrationPickerHeaderTextFont;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })vibrationPickerHeaderTextPaddingInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })vibrationPickerHeaderTextPaddingInsets;
 - (UIColor *)vibrationPickerHeaderTextShadowColor;
-- (struct UIOffset { double x1; double x2; })vibrationPickerHeaderTextShadowOffset;
+- (struct UIOffset { float x1; float x2; })vibrationPickerHeaderTextShadowOffset;
 - (int)vibrationPickerTableViewSeparatorStyle;
 - (BOOL)vibrationPickerUsesOpaqueBackground;
 - (BOOL)wantsCustomVibrationPickerHeaderView;

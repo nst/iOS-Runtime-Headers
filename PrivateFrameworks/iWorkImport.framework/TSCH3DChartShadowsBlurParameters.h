@@ -3,15 +3,15 @@
  */
 
 @interface TSCH3DChartShadowsBlurParameters : NSObject {
-    double  mKernelScale;
+    float  mKernelScale;
     int  mNumPasses;
-    double  mQuality;
+    float  mQuality;
     int  mShadowSize;
 }
 
-@property (nonatomic) double kernelScale;
+@property (nonatomic) float kernelScale;
 @property (nonatomic) int numPasses;
-@property (nonatomic) double quality;
+@property (nonatomic) float quality;
 @property (nonatomic) int shadowSize;
 
 + (id)paramsWithQuality:(float)arg1 numPasses:(int)arg2 shadowSize:(int)arg3 kernelScale:(float)arg4;

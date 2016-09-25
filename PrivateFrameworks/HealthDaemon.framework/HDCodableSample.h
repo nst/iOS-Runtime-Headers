@@ -3,7 +3,7 @@
  */
 
 @interface HDCodableSample : PBCodable <HDDecoding, NSCopying> {
-    int  _dataType;
+    long long  _dataType;
     double  _endDate;
     struct { 
         unsigned int dataType : 1; 
@@ -14,7 +14,7 @@
     double  _startDate;
 }
 
-@property (nonatomic) int dataType;
+@property (nonatomic) long long dataType;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) double endDate;
@@ -31,7 +31,7 @@
 - (BOOL)applyToObject:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (int)dataType;
+- (long long)dataType;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (double)endDate;
@@ -44,7 +44,7 @@
 - (void)mergeFrom:(id)arg1;
 - (id)object;
 - (BOOL)readFrom:(id)arg1;
-- (void)setDataType:(int)arg1;
+- (void)setDataType:(long long)arg1;
 - (void)setEndDate:(double)arg1;
 - (void)setHasDataType:(BOOL)arg1;
 - (void)setHasEndDate:(BOOL)arg1;

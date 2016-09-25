@@ -15,7 +15,7 @@
     int  _cpin;
     NSMutableDictionary * _errorForLayers;
     int  _forceMaxNScales;
-    double  _maxScale;
+    float  _maxScale;
     int  _mode;
     int  _scaleConfig;
     int  _scalingMode;
@@ -31,9 +31,9 @@
     struct CGColorSpace { } * colorSpace;
     NSObject<OS_dispatch_queue> * cpu_queue_0;
     NSObject<OS_dispatch_semaphore> * cpu_semaphore;
-    struct pair<unsigned int, unsigned int> { 
-        unsigned int first; 
-        unsigned int second; 
+    struct pair<unsigned long long, unsigned long long> { 
+        unsigned long long first; 
+        unsigned long long second; 
     }  cropDims;
     struct vector<std::__1::shared_ptr<Espresso::net>, std::__1::allocator<std::__1::shared_ptr<Espresso::net> > > { 
         struct shared_ptr<Espresso::net> {} *__begin_; 
@@ -42,11 +42,11 @@
             struct shared_ptr<Espresso::net> {} *__first_; 
         } __end_cap_; 
     }  ecpu_nets;
-    struct vector<std::__1::pair<unsigned int, unsigned int>, std::__1::allocator<std::__1::pair<unsigned int, unsigned int> > > { 
-        struct pair<unsigned int, unsigned int> {} *__begin_; 
-        struct pair<unsigned int, unsigned int> {} *__end_; 
-        struct __compressed_pair<std::__1::pair<unsigned int, unsigned int> *, std::__1::allocator<std::__1::pair<unsigned int, unsigned int> > > { 
-            struct pair<unsigned int, unsigned int> {} *__first_; 
+    struct vector<std::__1::pair<unsigned long long, unsigned long long>, std::__1::allocator<std::__1::pair<unsigned long long, unsigned long long> > > { 
+        struct pair<unsigned long long, unsigned long long> {} *__begin_; 
+        struct pair<unsigned long long, unsigned long long> {} *__end_; 
+        struct __compressed_pair<std::__1::pair<unsigned long long, unsigned long long> *, std::__1::allocator<std::__1::pair<unsigned long long, unsigned long long> > > { 
+            struct pair<unsigned long long, unsigned long long> {} *__first_; 
         } __end_cap_; 
     }  full_scales;
     struct vector<std::__1::shared_ptr<Espresso::net>, std::__1::allocator<std::__1::shared_ptr<Espresso::net> > > { 
@@ -57,11 +57,11 @@
         } __end_cap_; 
     }  gpu_nets;
     int  n_resizers_for_batching;
-    struct vector<std::__1::pair<unsigned int, unsigned int>, std::__1::allocator<std::__1::pair<unsigned int, unsigned int> > > { 
-        struct pair<unsigned int, unsigned int> {} *__begin_; 
-        struct pair<unsigned int, unsigned int> {} *__end_; 
-        struct __compressed_pair<std::__1::pair<unsigned int, unsigned int> *, std::__1::allocator<std::__1::pair<unsigned int, unsigned int> > > { 
-            struct pair<unsigned int, unsigned int> {} *__first_; 
+    struct vector<std::__1::pair<unsigned long long, unsigned long long>, std::__1::allocator<std::__1::pair<unsigned long long, unsigned long long> > > { 
+        struct pair<unsigned long long, unsigned long long> {} *__begin_; 
+        struct pair<unsigned long long, unsigned long long> {} *__end_; 
+        struct __compressed_pair<std::__1::pair<unsigned long long, unsigned long long> *, std::__1::allocator<std::__1::pair<unsigned long long, unsigned long long> > > { 
+            struct pair<unsigned long long, unsigned long long> {} *__first_; 
         } __end_cap_; 
     }  net_scales;
     struct vector<std::__1::shared_ptr<Espresso::blob<float, 3> >, std::__1::allocator<std::__1::shared_ptr<Espresso::blob<float, 3> > > > { 
@@ -127,7 +127,7 @@
 @property (nonatomic) struct shared_ptr<Espresso::abstract_context> { struct abstract_context {} *x1; struct __shared_weak_count {} *x2; } context_metal;
 @property (nonatomic) int cpin;
 @property (nonatomic) int forceMaxNScales;
-@property (nonatomic) double maxScale;
+@property (nonatomic) float maxScale;
 @property (nonatomic) int mode;
 @property (nonatomic) int scaleConfig;
 @property (nonatomic) int scalingMode;

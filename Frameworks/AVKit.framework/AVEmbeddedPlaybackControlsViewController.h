@@ -25,18 +25,18 @@
     AVScrubber * _scrubber;
     BOOL  _scrubberEnabled;
     NSArray * _scrubberLoadedTimeRanges;
-    double  _scrubberMaximumValue;
-    double  _scrubberMinimumValue;
-    double  _scrubberValue;
+    float  _scrubberMaximumValue;
+    float  _scrubberMinimumValue;
+    float  _scrubberValue;
     BOOL  _showsLoadingIndicator;
     BOOL  _showsMediaSelectionButton;
     BOOL  _showsPictureInPictureButton;
     BOOL  _showsScrubInstructions;
     BOOL  _showsStreamingControls;
-    double  scrubberWidth;
+    float  scrubberWidth;
 }
 
-@property (nonatomic) double scrubberWidth;
+@property (nonatomic) float scrubberWidth;
 
 - (void).cxx_destruct;
 - (void)_hideScrubInstructions;

@@ -26,7 +26,7 @@
 - (id)effectsMetadata;
 - (unsigned int)hash;
 - (id)imageFileURLForEffect:(id)arg1;
-- (id)imageFileURLForSize:(struct CGSize { double x1; double x2; })arg1;
+- (id)imageFileURLForSize:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)originalFileURL;
 - (void)setArtwork:(id)arg1;

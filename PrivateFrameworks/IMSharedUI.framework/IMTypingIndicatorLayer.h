@@ -4,7 +4,7 @@
 
 @interface IMTypingIndicatorLayer : CALayer <IMTypingIndicatorLayerProtocol> {
     CALayer * _bubbleContainer;
-    double  _bubbleOpacity;
+    float  _bubbleOpacity;
     struct UIColor { Class x1; } * _customBubbleColor;
     BOOL  _hasDarkBackground;
     id  _iconImage;
@@ -19,7 +19,7 @@
 
 @property (nonatomic, readonly) UIColor *bubbleColor;
 @property (nonatomic, retain) CALayer *bubbleContainer;
-@property (nonatomic) double bubbleOpacity;
+@property (nonatomic) float bubbleOpacity;
 @property (nonatomic, copy) UIColor *customBubbleColor;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -37,30 +37,30 @@
 
 + (struct UIColor { Class x1; }*)darkBackgroundThinkingDotColor;
 + (struct UIColor { Class x1; }*)defaultBubbleColor;
-+ (struct CGSize { double x1; double x2; })defaultSize;
++ (struct CGSize { float x1; float x2; })defaultSize;
 + (struct UIColor { Class x1; }*)defaultThinkingDotColor;
-+ (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })iconImageFrame;
++ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })iconImageFrame;
 + (float)iconImageLeadingSpace;
-+ (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })largeBubbleFrame;
-+ (struct CGPoint { double x1; double x2; })largeBubbleGrowOffset;
-+ (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })mediumBubbleFrame;
-+ (struct CGPoint { double x1; double x2; })mediumBubbleGrowOffset;
-+ (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })smallBubbleFrame;
-+ (struct CGPoint { double x1; double x2; })smallBubbleGrowOffset;
++ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })largeBubbleFrame;
++ (struct CGPoint { float x1; float x2; })largeBubbleGrowOffset;
++ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })mediumBubbleFrame;
++ (struct CGPoint { float x1; float x2; })mediumBubbleGrowOffset;
++ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })smallBubbleFrame;
++ (struct CGPoint { float x1; float x2; })smallBubbleGrowOffset;
 + (BOOL)supportsTypingIndicatorAnimation;
 + (float)thinkingDotDiameter;
 + (float)thinkingDotSpace;
-+ (struct CGPoint { double x1; double x2; })thinkingDotsOffset;
++ (struct CGPoint { float x1; float x2; })thinkingDotsOffset;
 
 - (void).cxx_destruct;
 - (void)_buildIconImage;
 - (void)_buildThinkingDots;
-- (id)_largeBubbleGrowAnimationsWithSpeed:(float)arg1 offset:(struct CGPoint { double x1; double x2; })arg2;
+- (id)_largeBubbleGrowAnimationsWithSpeed:(float)arg1 offset:(struct CGPoint { float x1; float x2; })arg2;
 - (id)_largeBubblePulseAnimationWithSpeed:(float)arg1 delay:(float)arg2;
-- (id)_mediumBubbleGrowAnimationsWithSpeed:(float)arg1 offset:(struct CGPoint { double x1; double x2; })arg2;
+- (id)_mediumBubbleGrowAnimationsWithSpeed:(float)arg1 offset:(struct CGPoint { float x1; float x2; })arg2;
 - (id)_mediumBubblePulseAnimationWithSpeed:(float)arg1 delay:(float)arg2;
 - (void)_setup;
-- (id)_smallBubbleGrowAnimationsWithSpeed:(float)arg1 offset:(struct CGPoint { double x1; double x2; })arg2;
+- (id)_smallBubbleGrowAnimationsWithSpeed:(float)arg1 offset:(struct CGPoint { float x1; float x2; })arg2;
 - (id)_smallBubblePulseAnimationWithSpeed:(float)arg1 delay:(float)arg2;
 - (void)_updateBubbleColors;
 - (void)_updateForImage;

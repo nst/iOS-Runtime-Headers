@@ -17,7 +17,7 @@
 @property (nonatomic) BOOL centersIcon;
 @property (nonatomic) <HKSwitchTableViewCellDelegate> *delegate;
 @property (getter=isEnabled, nonatomic) BOOL enabled;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } iconSize;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } iconSize;
 @property (getter=isOn, nonatomic) BOOL on;
 @property (nonatomic) BOOL shouldHideSwitch;
 
@@ -29,7 +29,7 @@
 - (BOOL)centersIcon;
 - (void)dealloc;
 - (id)delegate;
-- (struct CGSize { double x1; double x2; })iconSize;
+- (struct CGSize { float x1; float x2; })iconSize;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (BOOL)isEnabled;
 - (BOOL)isOn;

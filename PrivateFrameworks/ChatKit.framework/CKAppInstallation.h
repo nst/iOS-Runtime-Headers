@@ -7,7 +7,7 @@
     NSString * _bundleIdentifier;
     UIImage * _icon;
     unsigned int  _installState;
-    double  _percentComplete;
+    float  _percentComplete;
     LSApplicationProxy * _proxy;
     double  _startTime;
 }
@@ -18,7 +18,7 @@
 @property (nonatomic) unsigned int installState;
 @property (nonatomic, readonly) BOOL installed;
 @property (nonatomic, readonly) NSString *localizedDisplayName;
-@property (nonatomic) double percentComplete;
+@property (nonatomic) float percentComplete;
 @property (nonatomic, readonly) NSString *pluginBundleIdentifier;
 @property (nonatomic, retain) LSApplicationProxy *proxy;
 @property (nonatomic) double startTime;

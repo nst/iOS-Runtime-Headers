@@ -4,7 +4,7 @@
 
 @interface CCUIFlashlightSetting : CCUISettingModule {
     AVFlashlight * _flashlight;
-    double  _flashlightLevel;
+    float  _flashlightLevel;
     BOOL  _flashlightOn;
     NSObject<OS_dispatch_queue> * _flashlightQueue;
     BOOL  _stayWarm;

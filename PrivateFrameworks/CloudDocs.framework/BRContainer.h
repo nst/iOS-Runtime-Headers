@@ -104,7 +104,7 @@
 
 - (void).cxx_destruct;
 - (id)_containerRepositoryURL;
-- (id)_imageDataForSize:(struct CGSize { double x1; double x2; })arg1 scale:(int)arg2 isiOSIcon:(BOOL*)arg3 shouldTransformToAppIcon:(BOOL*)arg4;
+- (id)_imageDataForSize:(struct CGSize { float x1; float x2; })arg1 scale:(int)arg2 isiOSIcon:(BOOL*)arg3 shouldTransformToAppIcon:(BOOL*)arg4;
 - (id)_mangledID;
 - (id)_pathForIconName:(id)arg1;
 - (id)_pathForPlist;
@@ -131,9 +131,9 @@
 - (id)iconMetadata;
 - (id)iconURLs;
 - (id)identifier;
-- (id)imageDataForSize:(struct CGSize { double x1; double x2; })arg1 scale:(int)arg2;
-- (id)imageDataForSize:(struct CGSize { double x1; double x2; })arg1 scale:(int)arg2 isiOSIcon:(BOOL*)arg3;
-- (id)imageDataForSize:(struct CGSize { double x1; double x2; })arg1 scale:(int)arg2 shouldTransformToAppIcon:(BOOL*)arg3;
+- (id)imageDataForSize:(struct CGSize { float x1; float x2; })arg1 scale:(int)arg2;
+- (id)imageDataForSize:(struct CGSize { float x1; float x2; })arg1 scale:(int)arg2 isiOSIcon:(BOOL*)arg3;
+- (id)imageDataForSize:(struct CGSize { float x1; float x2; })arg1 scale:(int)arg2 shouldTransformToAppIcon:(BOOL*)arg3;
 - (id)imageRepresentationsAvailable;
 - (id)importedTypes;
 - (id)initWithCoder:(id)arg1;

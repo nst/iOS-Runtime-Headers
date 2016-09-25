@@ -4,13 +4,13 @@
 
 @interface DSThermalLogLine : DSLogLine {
     NSString * _eventType;
-    double  _maxTemp;
+    float  _maxTemp;
 }
 
 @property (nonatomic, retain) NSString *eventType;
 @property (nonatomic, readonly) BOOL isTrapEntry;
 @property (nonatomic, readonly) BOOL isTrapEvent;
-@property (nonatomic) double maxTemp;
+@property (nonatomic) float maxTemp;
 
 - (void).cxx_destruct;
 - (id)eventType;

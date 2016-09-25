@@ -56,7 +56,7 @@
 - (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveResponse:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithEvent:(id)arg3 error:(id)arg4;
 - (void)URLSession:(id)arg1 task:(id)arg2 didReceiveChallenge:(id)arg3 completionHandler:(id /* block */)arg4;
-- (void)URLSession:(id)arg1 task:(id)arg2 didSendBodyData:(int)arg3 totalBytesSent:(int)arg4 totalBytesExpectedToSend:(int)arg5;
+- (void)URLSession:(id)arg1 task:(id)arg2 didSendBodyData:(long long)arg3 totalBytesSent:(long long)arg4 totalBytesExpectedToSend:(long long)arg5;
 - (void)URLSession:(id)arg1 task:(id)arg2 needNewBodyStream:(id /* block */)arg3;
 - (void)URLSession:(id)arg1 task:(id)arg2 willPerformHTTPRedirection:(id)arg3 newRequest:(id)arg4 completionHandler:(id /* block */)arg5;
 - (id)_accountIdentifier;
@@ -88,7 +88,7 @@
 - (id)_sanitizedDescriptionForObject:(id)arg1;
 - (id)_sanitizedStringForString:(id)arg1;
 - (id)_sanitizedURLForURL:(id)arg1;
-- (void)_sendContentLengthToDelegate:(int)arg1;
+- (void)_sendContentLengthToDelegate:(long long)arg1;
 - (void)_sendOutputToDelegate:(id)arg1;
 - (void)_sendRequestToDelegate:(id)arg1;
 - (void)_sendResponseToDelegate:(id)arg1;
@@ -103,7 +103,7 @@
 - (id)_stringForCachePolicy:(unsigned int)arg1;
 - (void)_updateProgress;
 - (BOOL)_usesPrivateCookieStore;
-- (BOOL)_validateContentLength:(int)arg1 error:(id*)arg2;
+- (BOOL)_validateContentLength:(long long)arg1 error:(id*)arg2;
 - (void)_willSendRequest:(id)arg1;
 - (id)authenticationContext;
 - (id)dataProvider;

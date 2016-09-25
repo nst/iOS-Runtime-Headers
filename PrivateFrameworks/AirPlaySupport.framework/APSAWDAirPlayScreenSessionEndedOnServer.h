@@ -42,7 +42,7 @@
     unsigned int  _resumes;
     NSString * _sessionUUID;
     unsigned int  _suspends;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
     unsigned int  _unclearScreens;
 }
 
@@ -84,7 +84,7 @@
 @property (nonatomic) unsigned int resumes;
 @property (nonatomic, retain) NSString *sessionUUID;
 @property (nonatomic) unsigned int suspends;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 @property (nonatomic) unsigned int unclearScreens;
 
 - (unsigned int)audioLate;
@@ -170,10 +170,10 @@
 - (void)setResumes:(unsigned int)arg1;
 - (void)setSessionUUID:(id)arg1;
 - (void)setSuspends:(unsigned int)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (void)setUnclearScreens:(unsigned int)arg1;
 - (unsigned int)suspends;
-- (unsigned int)timestamp;
+- (unsigned long long)timestamp;
 - (unsigned int)unclearScreens;
 - (void)writeTo:(id)arg1;
 

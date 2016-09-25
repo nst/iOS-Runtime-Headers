@@ -31,7 +31,7 @@
 - (id)_queue_findExpectedAchievements:(id)arg1 missingFromAchievements:(id)arg2;
 - (BOOL)_queue_saveMissingAchievements:(id)arg1 keyValues:(id)arg2 error:(id*)arg3;
 - (id)_runAchievementEngine:(id)arg1 withPredicateEnvironment:(id)arg2 dataStore:(id)arg3 todayActivitySummary:(id)arg4 yesterdayActivitySummary:(id)arg5 currentDate:(id)arg6 addedWorkouts:(id)arg7;
-- (int)activitySummaryIndexToday;
+- (long long)activitySummaryIndexToday;
 - (double)briskMinutesToday;
 - (double)briskMinutesYesterday;
 - (double)caloriesBurnedToday;
@@ -41,13 +41,13 @@
 - (id)energyBurnedGoalYesterday;
 - (id)init;
 - (id)initWithProfile:(id)arg1 targetQueue:(id)arg2;
-- (int)mostRecentWorkoutAnchor;
+- (long long)mostRecentWorkoutAnchor;
 - (void)runAchievementsFixupAsDryRun:(BOOL)arg1 persistingResultingKeyValues:(BOOL)arg2 completion:(id /* block */)arg3;
 - (unsigned int)standingHoursToday;
 - (unsigned int)standingHoursYesterday;
 - (unsigned int)stepsTakenToday;
 - (unsigned int)stepsTakenYesterday;
-- (id)workoutsEndingAfterAnchor:(int)arg1 newAnchor:(int*)arg2;
+- (id)workoutsEndingAfterAnchor:(long long)arg1 newAnchor:(long long*)arg2;
 - (id)workoutsInDateRangeStart:(id)arg1 end:(id)arg2;
 - (id)workoutsOfType:(id)arg1;
 

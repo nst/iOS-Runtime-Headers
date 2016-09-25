@@ -18,14 +18,14 @@
     BOOL  _hasAppeared;
     BOOL  _isIgnoringCellHeightChange;
     int  _lastAuthorizationStatus;
-    double  _leftButtonSpace;
+    float  _leftButtonSpace;
     UIBarButtonItem * _leftButtonSpacer;
     BOOL  _needsCellHeightChange;
     NSArray * _orderedEditItems;
     EKUIRecurrenceAlertController * _recurrenceAlertController;
     UIResponder * _responderToRestoreOnAppearence;
     id  _revertState;
-    double  _rightButtonSpace;
+    float  _rightButtonSpace;
     UIBarButtonItem * _rightButtonSpacer;
     BOOL  _scrollToNotes;
     BOOL  _showsTimeZone;
@@ -42,8 +42,8 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic) <EKCalendarItemEditorDelegate> *editorDelegate;
 @property (readonly) unsigned int hash;
-@property (nonatomic) double navBarLeftContentInset;
-@property (nonatomic) double navBarRightContentInset;
+@property (nonatomic) float navBarLeftContentInset;
+@property (nonatomic) float navBarRightContentInset;
 @property (nonatomic, retain) UIResponder *responderToRestoreOnAppearence;
 @property (nonatomic) BOOL scrollToNotes;
 @property (nonatomic) BOOL showsTimeZone;
@@ -133,7 +133,7 @@
 - (float)navBarRightContentInset;
 - (id)notificationNamesForLocaleChange;
 - (int)numberOfSectionsInTableView:(id)arg1;
-- (struct CGSize { double x1; double x2; })preferredContentSize;
+- (struct CGSize { float x1; float x2; })preferredContentSize;
 - (id)preferredTitle;
 - (void)prepareEditItems;
 - (void)refreshInvitees;

@@ -5,7 +5,7 @@
 @interface SBCPlaybackPositionEntity : NSObject <NSCopying, NSSecureCoding> {
     double  _bookmarkTime;
     double  _bookmarkTimestamp;
-    int  _foreignDatabaseEntityID;
+    long long  _foreignDatabaseEntityID;
     BOOL  _hasBeenPlayed;
     SBCPlaybackPositionDomain * _playbackPositionDomain;
     NSString * _ubiquitousIdentifier;
@@ -14,7 +14,7 @@
 
 @property (nonatomic) double bookmarkTime;
 @property (nonatomic) double bookmarkTimestamp;
-@property (nonatomic, readonly) int foreignDatabaseEntityID;
+@property (nonatomic, readonly) long long foreignDatabaseEntityID;
 @property (nonatomic) BOOL hasBeenPlayed;
 @property (nonatomic, readonly) SBCPlaybackPositionDomain *playbackPositionDomain;
 @property (nonatomic, readonly) NSString *ubiquitousIdentifier;
@@ -23,7 +23,7 @@
 + (BOOL)supportsSecureCoding;
 + (id)ubiquitousIdentifierWithItemTitle:(id)arg1 albumName:(id)arg2 itemArtistName:(id)arg3;
 + (id)ubiquitousIdentifierWithPodcastFeedURL:(id)arg1 feedGUID:(id)arg2;
-+ (id)ubiquitousIdentifierWithUniqueStoreID:(int)arg1;
++ (id)ubiquitousIdentifierWithUniqueStoreID:(long long)arg1;
 + (id)ubiquitousIdentifierWithiTunesUFeedURL:(id)arg1 feedGUID:(id)arg2;
 
 - (void).cxx_destruct;
@@ -33,10 +33,10 @@
 - (id)copyWithValuesFromSBKUniversalPlaybackPositionMetadata:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (int)foreignDatabaseEntityID;
+- (long long)foreignDatabaseEntityID;
 - (BOOL)hasBeenPlayed;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithPlaybackPositionDomain:(id)arg1 ubiquitousIdentifier:(id)arg2 foreignDatabaseEntityID:(int)arg3;
+- (id)initWithPlaybackPositionDomain:(id)arg1 ubiquitousIdentifier:(id)arg2 foreignDatabaseEntityID:(long long)arg3;
 - (id)playbackPositionDomain;
 - (void)setBookmarkTime:(double)arg1;
 - (void)setBookmarkTimestamp:(double)arg1;

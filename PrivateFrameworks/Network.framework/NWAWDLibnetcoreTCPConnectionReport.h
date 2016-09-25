@@ -14,10 +14,10 @@
         unsigned int reportReason : 1; 
         unsigned int delegated : 1; 
     }  _has;
-    unsigned int  _iPAddressAttemptCount;
+    unsigned long long  _iPAddressAttemptCount;
     int  _reportReason;
     NSString * _sourceAppIdentifier;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic, retain) NWAWDLibnetcoreCellularFallbackReport *cellularFallbackReport;
@@ -33,10 +33,10 @@
 @property (nonatomic) BOOL hasReportReason;
 @property (nonatomic, readonly) BOOL hasSourceAppIdentifier;
 @property (nonatomic) BOOL hasTimestamp;
-@property (nonatomic) unsigned int iPAddressAttemptCount;
+@property (nonatomic) unsigned long long iPAddressAttemptCount;
 @property (nonatomic) int reportReason;
 @property (nonatomic, retain) NSString *sourceAppIdentifier;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 
 + (Class)connectionAttemptStatisticsReportsType;
 
@@ -64,7 +64,7 @@
 - (BOOL)hasSourceAppIdentifier;
 - (BOOL)hasTimestamp;
 - (unsigned int)hash;
-- (unsigned int)iPAddressAttemptCount;
+- (unsigned long long)iPAddressAttemptCount;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
@@ -79,12 +79,12 @@
 - (void)setHasIPAddressAttemptCount:(BOOL)arg1;
 - (void)setHasReportReason:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
-- (void)setIPAddressAttemptCount:(unsigned int)arg1;
+- (void)setIPAddressAttemptCount:(unsigned long long)arg1;
 - (void)setReportReason:(int)arg1;
 - (void)setSourceAppIdentifier:(id)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (id)sourceAppIdentifier;
-- (unsigned int)timestamp;
+- (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 
 @end

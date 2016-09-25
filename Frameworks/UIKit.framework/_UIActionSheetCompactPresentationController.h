@@ -28,18 +28,18 @@
 
 - (void).cxx_destruct;
 - (void)_applyVisualAffordancesToViews;
-- (struct { BOOL x1; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_2_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; struct UIEdgeInsets { double x_4_1_1; double x_4_1_2; double x_4_1_3; double x_4_1_4; } x4; struct CGSize { double x_5_1_1; double x_5_1_2; } x5; })_currentLayoutGeometry;
+- (struct { BOOL x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; struct UIEdgeInsets { float x_4_1_1; float x_4_1_2; float x_4_1_3; float x_4_1_4; } x4; struct CGSize { float x_5_1_1; float x_5_1_2; } x5; })_currentLayoutGeometry;
 - (void)_dismiss;
 - (void)_handleDismiss:(id)arg1;
 - (void)_keyboardChanged:(id)arg1;
 - (void)_layoutViews;
-- (struct CGSize { double x1; double x2; })_minimumSizeForDismissButton;
+- (struct CGSize { float x1; float x2; })_minimumSizeForDismissButton;
 - (double)_resizeAnimationDuration;
 - (BOOL)_shouldOccludeDuringPresentation;
 - (BOOL)_shouldPresentedViewControllerControlStatusBarAppearance;
 - (void)_subscribeToKeyboardNotifications;
 - (void)_unsubscribeFromKeyboardNotifications;
-- (void)_updateForKeyboardStartFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 endFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 duration:(double)arg3 curve:(int)arg4;
+- (void)_updateForKeyboardStartFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 endFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 duration:(double)arg3 curve:(int)arg4;
 - (void)_willRunTransitionForCurrentStateDeferred:(BOOL)arg1;
 - (id)actionSheetDelegate;
 - (id)animationCoordinator;
@@ -51,10 +51,10 @@
 - (id)dismissActionView;
 - (id)dismissActionViewGestureRecognizer;
 - (void)dismissalTransitionWillBegin;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameOfPresentedViewInContainerView;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameOfPresentedViewInContainerView;
 - (id)initWithPresentedViewController:(id)arg1 presentingViewController:(id)arg2 visualStyle:(id)arg3;
 - (BOOL)isSizeTransitionInProgress;
-- (struct CGSize { double x1; double x2; })preferredContentSize;
+- (struct CGSize { float x1; float x2; })preferredContentSize;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
 - (void)presentationTransitionWillBegin;
 - (void)setActionSheetDelegate:(id)arg1;
@@ -71,7 +71,7 @@
 - (BOOL)shouldAdoptPresentedAppearance;
 - (BOOL)shouldPresentInFullscreen;
 - (BOOL)shouldRemovePresentersView;
-- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (id)visualStyle;
 
 @end

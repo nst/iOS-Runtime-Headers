@@ -22,7 +22,7 @@
     int  _secondaryLocation;
     NSString * _sessionUUID;
     int  _smoothedRSSI;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) int deviceRole;
@@ -44,7 +44,7 @@
 @property (nonatomic) int secondaryLocation;
 @property (nonatomic, retain) NSString *sessionUUID;
 @property (nonatomic) int smoothedRSSI;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
@@ -90,9 +90,9 @@
 - (void)setSecondaryLocation:(int)arg1;
 - (void)setSessionUUID:(id)arg1;
 - (void)setSmoothedRSSI:(int)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (int)smoothedRSSI;
-- (unsigned int)timestamp;
+- (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 
 @end

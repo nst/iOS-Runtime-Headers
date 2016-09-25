@@ -6,13 +6,13 @@
     UIColor * _backgroundColor;
     SKUniform * _backgroundColorUniform;
     SKUniform * _filterUniform;
-    double  _filterWidth;
-    double  _tickWidth;
+    float  _filterWidth;
+    float  _tickWidth;
 }
 
 @property (nonatomic, retain) UIColor *backgroundColor;
-@property (nonatomic, readonly) double filterWidth;
-@property (nonatomic, readonly) double tickWidth;
+@property (nonatomic, readonly) float filterWidth;
+@property (nonatomic, readonly) float tickWidth;
 
 + (id)shaderWithTickWidth:(float)arg1 filterWidth:(float)arg2;
 

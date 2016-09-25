@@ -13,14 +13,14 @@
         unsigned int sockAtMBLimit : 1; 
         unsigned int sockMBcnt : 1; 
     }  _has;
-    unsigned int  _mbuf16KBTotal;
-    unsigned int  _mbuf256BTotal;
-    unsigned int  _mbuf2KBTotal;
-    unsigned int  _mbuf4KBTotal;
-    unsigned int  _mbufDrainCount;
-    unsigned int  _mbufMemReleased;
-    unsigned int  _sockAtMBLimit;
-    unsigned int  _sockMBcnt;
+    unsigned long long  _mbuf16KBTotal;
+    unsigned long long  _mbuf256BTotal;
+    unsigned long long  _mbuf2KBTotal;
+    unsigned long long  _mbuf4KBTotal;
+    unsigned long long  _mbufDrainCount;
+    unsigned long long  _mbufMemReleased;
+    unsigned long long  _sockAtMBLimit;
+    unsigned long long  _sockMBcnt;
 }
 
 @property (nonatomic) BOOL hasMbuf16KBTotal;
@@ -31,14 +31,14 @@
 @property (nonatomic) BOOL hasMbufMemReleased;
 @property (nonatomic) BOOL hasSockAtMBLimit;
 @property (nonatomic) BOOL hasSockMBcnt;
-@property (nonatomic) unsigned int mbuf16KBTotal;
-@property (nonatomic) unsigned int mbuf256BTotal;
-@property (nonatomic) unsigned int mbuf2KBTotal;
-@property (nonatomic) unsigned int mbuf4KBTotal;
-@property (nonatomic) unsigned int mbufDrainCount;
-@property (nonatomic) unsigned int mbufMemReleased;
-@property (nonatomic) unsigned int sockAtMBLimit;
-@property (nonatomic) unsigned int sockMBcnt;
+@property (nonatomic) unsigned long long mbuf16KBTotal;
+@property (nonatomic) unsigned long long mbuf256BTotal;
+@property (nonatomic) unsigned long long mbuf2KBTotal;
+@property (nonatomic) unsigned long long mbuf4KBTotal;
+@property (nonatomic) unsigned long long mbufDrainCount;
+@property (nonatomic) unsigned long long mbufMemReleased;
+@property (nonatomic) unsigned long long sockAtMBLimit;
+@property (nonatomic) unsigned long long sockMBcnt;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -54,12 +54,12 @@
 - (BOOL)hasSockMBcnt;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
-- (unsigned int)mbuf16KBTotal;
-- (unsigned int)mbuf256BTotal;
-- (unsigned int)mbuf2KBTotal;
-- (unsigned int)mbuf4KBTotal;
-- (unsigned int)mbufDrainCount;
-- (unsigned int)mbufMemReleased;
+- (unsigned long long)mbuf16KBTotal;
+- (unsigned long long)mbuf256BTotal;
+- (unsigned long long)mbuf2KBTotal;
+- (unsigned long long)mbuf4KBTotal;
+- (unsigned long long)mbufDrainCount;
+- (unsigned long long)mbufMemReleased;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setHasMbuf16KBTotal:(BOOL)arg1;
@@ -70,16 +70,16 @@
 - (void)setHasMbufMemReleased:(BOOL)arg1;
 - (void)setHasSockAtMBLimit:(BOOL)arg1;
 - (void)setHasSockMBcnt:(BOOL)arg1;
-- (void)setMbuf16KBTotal:(unsigned int)arg1;
-- (void)setMbuf256BTotal:(unsigned int)arg1;
-- (void)setMbuf2KBTotal:(unsigned int)arg1;
-- (void)setMbuf4KBTotal:(unsigned int)arg1;
-- (void)setMbufDrainCount:(unsigned int)arg1;
-- (void)setMbufMemReleased:(unsigned int)arg1;
-- (void)setSockAtMBLimit:(unsigned int)arg1;
-- (void)setSockMBcnt:(unsigned int)arg1;
-- (unsigned int)sockAtMBLimit;
-- (unsigned int)sockMBcnt;
+- (void)setMbuf16KBTotal:(unsigned long long)arg1;
+- (void)setMbuf256BTotal:(unsigned long long)arg1;
+- (void)setMbuf2KBTotal:(unsigned long long)arg1;
+- (void)setMbuf4KBTotal:(unsigned long long)arg1;
+- (void)setMbufDrainCount:(unsigned long long)arg1;
+- (void)setMbufMemReleased:(unsigned long long)arg1;
+- (void)setSockAtMBLimit:(unsigned long long)arg1;
+- (void)setSockMBcnt:(unsigned long long)arg1;
+- (unsigned long long)sockAtMBLimit;
+- (unsigned long long)sockMBcnt;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -5,12 +5,12 @@
 @interface SBFShamMobileKeyBag : NSObject {
     NSObject<OS_dispatch_queue> * _queue;
     NSData * _queue_correctPasscode;
-    double  _queue_escrowCountDelta;
-    double  _queue_escrowCountTotal;
+    float  _queue_escrowCountDelta;
+    float  _queue_escrowCountTotal;
     unsigned int  _queue_escrowState;
     SBFMutableMobileKeyBagState * _queue_state;
     NSData * _queue_trialPasscode;
-    double  _timeScaleFactor;
+    float  _timeScaleFactor;
 }
 
 + (id)shamKeyBagWithRecoveryRequired:(BOOL)arg1 correctPasscode:(id)arg2;

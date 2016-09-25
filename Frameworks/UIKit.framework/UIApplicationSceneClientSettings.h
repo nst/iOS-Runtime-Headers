@@ -20,7 +20,7 @@
 @property (nonatomic, readonly) int interfaceOrientation;
 @property (nonatomic, readonly) BOOL interfaceOrientationChangesDisabled;
 @property (nonatomic, readonly) int notificationCenterRevealMode;
-@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } primaryWindowOverlayInsets;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } primaryWindowOverlayInsets;
 @property (nonatomic, readonly) unsigned int proximityDetectionModes;
 @property (nonatomic, readonly) unsigned int statusBarContextID;
 @property (getter=isStatusBarForegroundTransparent, nonatomic, readonly) BOOL statusBarForegroundTransparent;
@@ -48,7 +48,7 @@
 - (id)keyDescriptionForSetting:(unsigned int)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (int)notificationCenterRevealMode;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })primaryWindowOverlayInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })primaryWindowOverlayInsets;
 - (unsigned int)proximityDetectionModes;
 - (unsigned int)statusBarContextID;
 - (BOOL)statusBarHidden;

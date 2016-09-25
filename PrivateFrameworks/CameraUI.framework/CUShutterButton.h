@@ -13,18 +13,18 @@
     BOOL  _pulsing;
     BOOL  _showDisabled;
     struct CAMShutterButtonSpec { 
-        double outerRingDiameter; 
-        double outerRingStrokeWidth; 
-        double stopSquareSideLength; 
-        double stopSquareCornerRadius; 
-        double interRingSpacing; 
+        float outerRingDiameter; 
+        float outerRingStrokeWidth; 
+        float stopSquareSideLength; 
+        float stopSquareCornerRadius; 
+        float interRingSpacing; 
     }  _spec;
     BOOL  _spinning;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _tappableEdgeInsets;
 }
 
@@ -37,12 +37,12 @@
 @property (nonatomic) int mode;
 @property (getter=isPulsing, nonatomic) BOOL pulsing;
 @property (nonatomic) BOOL showDisabled;
-@property (nonatomic) struct CAMShutterButtonSpec { double x1; double x2; double x3; double x4; double x5; } spec;
+@property (nonatomic) struct CAMShutterButtonSpec { float x1; float x2; float x3; float x4; float x5; } spec;
 @property (getter=isSpinning, nonatomic) BOOL spinning;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } tappableEdgeInsets;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } tappableEdgeInsets;
 
 + (id)shutterButtonWithLayoutStyle:(int)arg1;
-+ (id)shutterButtonWithSpec:(struct CAMShutterButtonSpec { double x1; double x2; double x3; double x4; double x5; })arg1 layoutStyle:(int)arg2;
++ (id)shutterButtonWithSpec:(struct CAMShutterButtonSpec { float x1; float x2; float x3; float x4; float x5; })arg1 layoutStyle:(int)arg2;
 + (id)smallShutterButtonWithLayoutStyle:(int)arg1;
 + (id)tinyShutterButtonWithLayoutStyle:(int)arg1;
 
@@ -62,16 +62,16 @@
 - (BOOL)_shouldShowContrastBorderForMode:(int)arg1 layoutStyle:(int)arg2;
 - (BOOL)_shouldUseImageViewForMode:(int)arg1;
 - (BOOL)_shouldUseTimelapseOuterViewForMode:(int)arg1;
-- (struct CGSize { double x1; double x2; })_sizeForMode:(int)arg1;
-- (struct CAMShutterButtonSpec { double x1; double x2; double x3; double x4; double x5; })_specForLayoutStyle:(int)arg1;
+- (struct CGSize { float x1; float x2; })_sizeForMode:(int)arg1;
+- (struct CAMShutterButtonSpec { float x1; float x2; float x3; float x4; float x5; })_specForLayoutStyle:(int)arg1;
 - (id)_timelapseOuterView;
 - (void)_updateOuterAndInnerLayers;
 - (void)_updateSpinningAnimations;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })alignmentRectInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentRectInsets;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 layoutStyle:(int)arg2;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 layoutStyle:(int)arg2;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (BOOL)isPulsing;
 - (BOOL)isSpinning;
 - (int)layoutStyle;
@@ -83,12 +83,12 @@
 - (void)setMode:(int)arg1 animated:(BOOL)arg2;
 - (void)setPulsing:(BOOL)arg1;
 - (void)setShowDisabled:(BOOL)arg1;
-- (void)setSpec:(struct CAMShutterButtonSpec { double x1; double x2; double x3; double x4; double x5; })arg1;
+- (void)setSpec:(struct CAMShutterButtonSpec { float x1; float x2; float x3; float x4; float x5; })arg1;
 - (void)setSpinning:(BOOL)arg1;
-- (void)setTappableEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setTappableEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (BOOL)showDisabled;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
-- (struct CAMShutterButtonSpec { double x1; double x2; double x3; double x4; double x5; })spec;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })tappableEdgeInsets;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CAMShutterButtonSpec { float x1; float x2; float x3; float x4; float x5; })spec;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })tappableEdgeInsets;
 
 @end

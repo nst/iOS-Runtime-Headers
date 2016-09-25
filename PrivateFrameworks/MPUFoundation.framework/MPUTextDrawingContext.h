@@ -5,12 +5,12 @@
 @interface MPUTextDrawingContext : NSObject {
     NSAttributedString * _attributedText;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _boundingSize;
-    double  _firstBaselineOffsetFromTop;
+    float  _firstBaselineOffsetFromTop;
     UIImage * _image;
-    double  _lastBaselineOffsetFromBottom;
+    float  _lastBaselineOffsetFromBottom;
     NSStringDrawingContext * _stringDrawingContext;
     int  _stringDrawingOptions;
     NSString * _text;
@@ -18,10 +18,10 @@
 }
 
 @property (setter=_setAttributedText:, nonatomic, copy) NSAttributedString *attributedText;
-@property (setter=_setBoundingSize:, nonatomic) struct CGSize { double x1; double x2; } boundingSize;
-@property (setter=_setFirstBaselineOffsetFromTop:, nonatomic) double firstBaselineOffsetFromTop;
+@property (setter=_setBoundingSize:, nonatomic) struct CGSize { float x1; float x2; } boundingSize;
+@property (setter=_setFirstBaselineOffsetFromTop:, nonatomic) float firstBaselineOffsetFromTop;
 @property (getter=_image, setter=_setImage:, nonatomic, retain) UIImage *image;
-@property (setter=_setLastBaselineOffsetFromBottom:, nonatomic) double lastBaselineOffsetFromBottom;
+@property (setter=_setLastBaselineOffsetFromBottom:, nonatomic) float lastBaselineOffsetFromBottom;
 @property (setter=_setStringDrawingContext:, nonatomic, retain) NSStringDrawingContext *stringDrawingContext;
 @property (setter=_setStringDrawingOptions:, nonatomic) int stringDrawingOptions;
 @property (setter=_setText:, nonatomic, copy) NSString *text;
@@ -30,7 +30,7 @@
 - (void).cxx_destruct;
 - (id)_image;
 - (void)_setAttributedText:(id)arg1;
-- (void)_setBoundingSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)_setBoundingSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_setFirstBaselineOffsetFromTop:(float)arg1;
 - (void)_setImage:(id)arg1;
 - (void)_setLastBaselineOffsetFromBottom:(float)arg1;
@@ -39,7 +39,7 @@
 - (void)_setText:(id)arg1;
 - (void)_setUniformTextAttributes:(id)arg1;
 - (id)attributedText;
-- (struct CGSize { double x1; double x2; })boundingSize;
+- (struct CGSize { float x1; float x2; })boundingSize;
 - (float)firstBaselineOffsetFromTop;
 - (float)lastBaselineOffsetFromBottom;
 - (id)stringDrawingContext;

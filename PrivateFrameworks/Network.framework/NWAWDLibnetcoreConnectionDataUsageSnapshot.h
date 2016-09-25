@@ -3,21 +3,21 @@
  */
 
 @interface NWAWDLibnetcoreConnectionDataUsageSnapshot : PBCodable <NSCopying> {
-    unsigned int  _bytesIn;
-    unsigned int  _bytesOut;
+    unsigned long long  _bytesIn;
+    unsigned long long  _bytesOut;
     struct { 
         unsigned int bytesIn : 1; 
         unsigned int bytesOut : 1; 
     }  _has;
 }
 
-@property (nonatomic) unsigned int bytesIn;
-@property (nonatomic) unsigned int bytesOut;
+@property (nonatomic) unsigned long long bytesIn;
+@property (nonatomic) unsigned long long bytesOut;
 @property (nonatomic) BOOL hasBytesIn;
 @property (nonatomic) BOOL hasBytesOut;
 
-- (unsigned int)bytesIn;
-- (unsigned int)bytesOut;
+- (unsigned long long)bytesIn;
+- (unsigned long long)bytesOut;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -28,8 +28,8 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (void)setBytesIn:(unsigned int)arg1;
-- (void)setBytesOut:(unsigned int)arg1;
+- (void)setBytesIn:(unsigned long long)arg1;
+- (void)setBytesOut:(unsigned long long)arg1;
 - (void)setHasBytesIn:(BOOL)arg1;
 - (void)setHasBytesOut:(BOOL)arg1;
 - (void)writeTo:(id)arg1;

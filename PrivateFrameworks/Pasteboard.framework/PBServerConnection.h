@@ -11,7 +11,7 @@
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *memberQueue;
 @property (nonatomic, readonly) NSXPCConnection *serverConnection;
 
-+ (unsigned int)beginListeningToPasteboardChangeNotifications;
++ (unsigned long long)beginListeningToPasteboardChangeNotifications;
 + (id)defaultConnection;
 
 - (void).cxx_destruct;

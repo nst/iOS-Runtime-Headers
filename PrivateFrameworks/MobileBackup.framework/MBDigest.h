@@ -10,7 +10,7 @@
 + (id)sha1ForString:(id)arg1;
 + (id)sha1HmacForString:(id)arg1 key:(id)arg2;
 + (id)sha256;
-+ (int)simpleChecksumForString:(id)arg1;
++ (long long)simpleChecksumForString:(id)arg1;
 
 - (id)digestForData:(id)arg1;
 - (id)digestForFileAtPath:(id)arg1 error:(id*)arg2;
@@ -22,7 +22,7 @@
 - (void)updateWithDate:(id)arg1;
 - (BOOL)updateWithFile:(id)arg1 error:(id*)arg2;
 - (void)updateWithInt32:(int)arg1;
-- (void)updateWithInt64:(int)arg1;
+- (void)updateWithInt64:(long long)arg1;
 - (void)updateWithString:(id)arg1;
 
 @end

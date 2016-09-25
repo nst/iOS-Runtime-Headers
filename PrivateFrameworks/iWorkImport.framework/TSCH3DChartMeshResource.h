@@ -16,6 +16,6 @@
 - (unsigned int)hash;
 - (id)initWithSharedResource:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
-- (unsigned int)uniqueIdentifier;
+- (unsigned long long)uniqueIdentifier;
 
 @end

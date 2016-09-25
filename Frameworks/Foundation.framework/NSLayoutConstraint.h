@@ -3,15 +3,15 @@
  */
 
 @interface NSLayoutConstraint : NSObject <NSISConstraint> {
-    double  _coefficient;
-    double  _constant;
+    float  _coefficient;
+    float  _constant;
     id  _container;
     id  _firstAnchor;
-    unsigned int  _layoutConstraintFlags;
-    double  _loweredConstant;
+    unsigned long long  _layoutConstraintFlags;
+    float  _loweredConstant;
     id  _markerAndPositiveExtraVar;
     id  _negativeExtraVar;
-    double  _priority;
+    float  _priority;
     id  _secondAnchor;
 }
 
@@ -19,7 +19,7 @@
 @property (setter=_setContainerDeclaredConstraint:) BOOL _containerDeclaredConstraint;
 @property (readonly, copy) NSSet *_referencedLayoutItems;
 @property (getter=isActive) BOOL active;
-@property double constant;
+@property float constant;
 @property id container;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -31,8 +31,8 @@
 @property (readonly) unsigned int hash;
 @property (copy) NSString *identifier;
 @property (getter=_loweredConstantNeedsUpdate, setter=_setLoweredConstantNeedsUpdate:, nonatomic) BOOL loweredConstantNeedsUpdate;
-@property (setter=_setMultiplier:) double multiplier;
-@property double priority;
+@property (setter=_setMultiplier:) float multiplier;
+@property float priority;
 @property (setter=_setRelation:) int relation;
 @property (setter=_setSecondAnchor:, copy) NSLayoutAnchor *secondAnchor;
 @property (readonly) int secondAttribute;
@@ -40,7 +40,7 @@
 @property BOOL shouldBeArchived;
 @property (readonly) Class superclass;
 @property (copy) NSString *symbolicConstant;
-@property (readonly) double unsatisfaction;
+@property (readonly) float unsatisfaction;
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
@@ -82,7 +82,7 @@
 - (BOOL)_describesSameRestrictionAsConstraint:(id)arg1;
 - (id)_descriptionforSymbolicConstant;
 - (BOOL)_effectiveConstant:(float*)arg1 error:(id*)arg2;
-- (struct CGSize { double x1; double x2; })_engineToContainerScalingCoefficients;
+- (struct CGSize { float x1; float x2; })_engineToContainerScalingCoefficients;
 - (void)_ensureValueMaintainsArbitraryLimit:(float*)arg1;
 - (BOOL)_existsInEngine:(id)arg1;
 - (void)_explainUnsatisfaction;
@@ -212,26 +212,26 @@
 + (id)_gkConstraintForView:(id)arg1 withWidthDerivedFromView:(id)arg2 insetBy:(float)arg3;
 + (id)_gkConstraintWithItem:(id)arg1 attribute:(int)arg2 relatedBy:(int)arg3 toItem:(id)arg4 attribute:(int)arg5 multiplier:(float)arg6 leading:(float)arg7 fontTextStyle:(id)arg8;
 + (id)_gkConstraintsForView:(id)arg1 centeredXInView:(id)arg2 enforceMargin:(float)arg3;
-+ (id)_gkConstraintsForView:(id)arg1 withinView:(id)arg2 insets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg3;
++ (id)_gkConstraintsForView:(id)arg1 withinView:(id)arg2 insets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg3;
 + (id)_gkConstraintsForViews:(id)arg1 alignedByAttribute:(int)arg2;
-+ (id)_gkConstraintsForViews:(id)arg1 contiguouslyLaidOutVertically:(BOOL)arg2 overlap:(float)arg3 withinView:(id)arg4 insets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg5;
-+ (id)_gkConstraintsForViews:(id)arg1 contiguouslyLaidOutVertically:(BOOL)arg2 overlap:(float)arg3 withinView:(id)arg4 insets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg5 applyOrthogonalConstraints:(BOOL)arg6;
++ (id)_gkConstraintsForViews:(id)arg1 contiguouslyLaidOutVertically:(BOOL)arg2 overlap:(float)arg3 withinView:(id)arg4 insets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg5;
++ (id)_gkConstraintsForViews:(id)arg1 contiguouslyLaidOutVertically:(BOOL)arg2 overlap:(float)arg3 withinView:(id)arg4 insets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg5 applyOrthogonalConstraints:(BOOL)arg6;
 
 // Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
 
-+ (id)constraintsByAttachingView:(id)arg1 toView:(id)arg2 alongEdges:(unsigned int)arg3 insets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg4;
-+ (id)constraintsByAttachingView:(id)arg1 toView:(id)arg2 inCorner:(unsigned int)arg3 offset:(struct UIOffset { double x1; double x2; })arg4;
-+ (id)constraintsByCenteringAndContainingView:(id)arg1 inView:(id)arg2 insets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg3;
-+ (id)constraintsByCenteringView:(id)arg1 withView:(id)arg2 alongAxes:(unsigned int)arg3 offset:(struct UIOffset { double x1; double x2; })arg4;
-+ (id)constraintsBySizingView:(id)arg1 toSize:(struct CGSize { double x1; double x2; })arg2;
++ (id)constraintsByAttachingView:(id)arg1 toView:(id)arg2 alongEdges:(unsigned int)arg3 insets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg4;
++ (id)constraintsByAttachingView:(id)arg1 toView:(id)arg2 inCorner:(unsigned int)arg3 offset:(struct UIOffset { float x1; float x2; })arg4;
++ (id)constraintsByCenteringAndContainingView:(id)arg1 inView:(id)arg2 insets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg3;
++ (id)constraintsByCenteringView:(id)arg1 withView:(id)arg2 alongAxes:(unsigned int)arg3 offset:(struct UIOffset { float x1; float x2; })arg4;
++ (id)constraintsBySizingView:(id)arg1 toSize:(struct CGSize { float x1; float x2; })arg2;
 
 // Image: /System/Library/PrivateFrameworks/NetAppsUtilitiesUI.framework/NetAppsUtilitiesUI
 
 + (BOOL)naui_areConstraints:(id)arg1 equalToConstraints:(id)arg2;
-+ (id)naui_constraintsByAttachingView:(id)arg1 toView:(id)arg2 alongEdges:(unsigned int)arg3 insets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg4;
-+ (id)naui_constraintsByAttachingView:(id)arg1 toView:(id)arg2 alongEdges:(unsigned int)arg3 relatedBy:(int)arg4 insets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg5;
-+ (id)naui_constraintsByCenteringView:(id)arg1 withView:(id)arg2 alongAxes:(unsigned int)arg3 offset:(struct UIOffset { double x1; double x2; })arg4;
-+ (id)naui_constraintsBySizingView:(id)arg1 toSize:(struct CGSize { double x1; double x2; })arg2;
++ (id)naui_constraintsByAttachingView:(id)arg1 toView:(id)arg2 alongEdges:(unsigned int)arg3 insets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg4;
++ (id)naui_constraintsByAttachingView:(id)arg1 toView:(id)arg2 alongEdges:(unsigned int)arg3 relatedBy:(int)arg4 insets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg5;
++ (id)naui_constraintsByCenteringView:(id)arg1 withView:(id)arg2 alongAxes:(unsigned int)arg3 offset:(struct UIOffset { float x1; float x2; })arg4;
++ (id)naui_constraintsBySizingView:(id)arg1 toSize:(struct CGSize { float x1; float x2; })arg2;
 + (id)naui_constraintsWithVisualFormat:(id)arg1 options:(unsigned int)arg2 metrics:(id)arg3 views:(id)arg4 label:(id)arg5;
 + (id)naui_viewsInConstraints:(id)arg1;
 
@@ -258,10 +258,10 @@
 // Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
 
 + (BOOL)rc_areConstraints:(id)arg1 equalToConstraints:(id)arg2;
-+ (id)rc_constraintsByAttachingView:(id)arg1 toView:(id)arg2 alongEdges:(unsigned int)arg3 insets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg4;
-+ (id)rc_constraintsByAttachingView:(id)arg1 toView:(id)arg2 alongEdges:(unsigned int)arg3 relatedBy:(int)arg4 insets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg5;
-+ (id)rc_constraintsByCenteringView:(id)arg1 withView:(id)arg2 alongAxes:(unsigned int)arg3 offset:(struct UIOffset { double x1; double x2; })arg4;
-+ (id)rc_constraintsBySizingView:(id)arg1 toSize:(struct CGSize { double x1; double x2; })arg2;
++ (id)rc_constraintsByAttachingView:(id)arg1 toView:(id)arg2 alongEdges:(unsigned int)arg3 insets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg4;
++ (id)rc_constraintsByAttachingView:(id)arg1 toView:(id)arg2 alongEdges:(unsigned int)arg3 relatedBy:(int)arg4 insets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg5;
++ (id)rc_constraintsByCenteringView:(id)arg1 withView:(id)arg2 alongAxes:(unsigned int)arg3 offset:(struct UIOffset { float x1; float x2; })arg4;
++ (id)rc_constraintsBySizingView:(id)arg1 toSize:(struct CGSize { float x1; float x2; })arg2;
 + (id)rc_constraintsWithVisualFormat:(id)arg1 options:(unsigned int)arg2 metrics:(id)arg3 views:(id)arg4 label:(id)arg5;
 + (id)rc_viewsInConstraints:(id)arg1;
 

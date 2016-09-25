@@ -15,14 +15,14 @@
     UIImageView * _leftHighlightIndicator;
     UIColor * _lineColor;
     FUShapeView * _lineView;
-    double  _lineWidth;
+    float  _lineWidth;
     NSArray * _plotPoints;
     UIColor * _pointColor;
     int  _pointOccurrence;
-    double  _pointRadius;
+    float  _pointRadius;
     int  _pointStyle;
     NSArray * _pointViews;
-    double  _previousLeftPointX;
+    float  _previousLeftPointX;
     UIImageView * _rightHighlightIndicator;
     FUGradientObject * _selectedFillGradient;
     UIColor * _selectedLineColor;
@@ -31,7 +31,7 @@
         unsigned int location; 
         unsigned int length; 
     }  _selectedPointRange;
-    double  _sineWaveSmoothingFactor;
+    float  _sineWaveSmoothingFactor;
     BOOL  _snapToPoint;
     int  _waveForm;
 }
@@ -42,16 +42,16 @@
 @property (nonatomic) struct CGGradient { }*highlightIndicatorGradient;
 @property (nonatomic, retain) UIView *highlightView;
 @property (nonatomic, retain) UIColor *lineColor;
-@property (nonatomic) double lineWidth;
+@property (nonatomic) float lineWidth;
 @property (nonatomic, retain) NSArray *plotPoints;
 @property (nonatomic, retain) UIColor *pointColor;
 @property (nonatomic) int pointOccurrence;
-@property (nonatomic) double pointRadius;
+@property (nonatomic) float pointRadius;
 @property (nonatomic) int pointStyle;
 @property (nonatomic, retain) FUGradientObject *selectedFillGradient;
 @property (nonatomic, retain) UIColor *selectedLineColor;
 @property (nonatomic, retain) UIColor *selectedPointColor;
-@property (nonatomic) double sineWaveSmoothingFactor;
+@property (nonatomic) float sineWaveSmoothingFactor;
 @property (nonatomic) BOOL snapToPoint;
 @property (nonatomic) int waveForm;
 
@@ -59,10 +59,10 @@
 - (void)_clipHighlightLayerWithPoints:(id)arg1;
 - (id)_fillPathForData:(id)arg1;
 - (id)_fillPathForData:(id)arg1 waveForm:(int)arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_getClipRectFromPoints:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_getClipRectFromPoints:(id)arg1;
 - (id)_getPointValuesAtIndexes:(id)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_getRangeFromSelectedPoints:(id)arg1;
-- (id)_imageForGradient:(struct CGGradient { }*)arg1 size:(struct CGSize { double x1; double x2; })arg2;
+- (id)_imageForGradient:(struct CGGradient { }*)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 - (void)_layoutFillView:(id)arg1 withGradient:(id)arg2 path:(id)arg3;
 - (void)_layoutFillViews;
 - (void)_layoutLine;

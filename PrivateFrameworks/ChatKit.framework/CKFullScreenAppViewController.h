@@ -13,17 +13,17 @@
     CKDismissView * _dismissView;
     CKMessageEntryView * _entryView;
     UIView * _entryViewSnapshot;
-    double  _entryViewSnapshotOffset;
+    float  _entryViewSnapshotOffset;
     BOOL  _inDragAndDrop;
     BOOL  _inTransition;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _initialBrowserFrame;
     UISimpleInteractionProgress * _interactionProgress;
@@ -32,12 +32,12 @@
     IMBalloonPlugin * _plugin;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _targetBrowserFrame;
     unsigned int  _transitionDirection;
@@ -64,12 +64,12 @@
 @property (nonatomic, retain) CKDismissView *dismissView;
 @property (nonatomic, retain) CKMessageEntryView *entryView;
 @property (nonatomic, retain) UIView *entryViewSnapshot;
-@property (nonatomic) double entryViewSnapshotOffset;
+@property (nonatomic) float entryViewSnapshotOffset;
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL inDragAndDrop;
 @property (nonatomic, readonly) BOOL inExpandedPresentation;
 @property (nonatomic) BOOL inTransition;
-@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } initialBrowserFrame;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } initialBrowserFrame;
 @property (nonatomic, retain) UISimpleInteractionProgress *interactionProgress;
 @property (nonatomic) BOOL isiMessage;
 @property (nonatomic) int lastKnownDeviceOrientation;
@@ -84,7 +84,7 @@
 @property (nonatomic, retain) NSURL *storeLaunchURL;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) BOOL supportsQuickView;
-@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } targetBrowserFrame;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } targetBrowserFrame;
 @property (nonatomic) unsigned int transitionDirection;
 @property (nonatomic, readonly) BOOL wantsDarkUI;
 @property (nonatomic, readonly) BOOL wantsOpaqueUI;
@@ -109,8 +109,8 @@
 - (BOOL)_shouldEnableAppButton;
 - (void)_updateEntryViewFrame;
 - (void)animateBrowserViewAfterFullScreenTransition;
-- (void)animateBrowserViewFromSourceRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 interactive:(BOOL)arg2 switcherFooterView:(id)arg3 completion:(id /* block */)arg4;
-- (void)animateBrowserViewToTargetRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 switcherFooterView:(id)arg2 completion:(id /* block */)arg3;
+- (void)animateBrowserViewFromSourceRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 interactive:(BOOL)arg2 switcherFooterView:(id)arg3 completion:(id /* block */)arg4;
+- (void)animateBrowserViewToTargetRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 switcherFooterView:(id)arg2 completion:(id /* block */)arg3;
 - (id)animationDisplayLink;
 - (id)appSelectionBrowser;
 - (id)appSelectionBrowserWindow;
@@ -137,7 +137,7 @@
 - (id)initWithBalloonPlugin:(id)arg1;
 - (id)initWithBalloonPlugin:(id)arg1 dataSource:(id)arg2;
 - (id)initWithConversation:(id)arg1 plugin:(id)arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })initialBrowserFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })initialBrowserFrame;
 - (id)inputAccessoryView;
 - (id)interactionProgress;
 - (void)interactionProgress:(id)arg1 didEnd:(BOOL)arg2;
@@ -147,8 +147,8 @@
 - (void)loadView;
 - (BOOL)messageEntryShouldHideCaret:(id)arg1;
 - (void)messageEntryView:(id)arg1 didTapMediaObject:(id)arg2;
-- (void)messageEntryView:(id)arg1 sendButtonLongPressEnded:(struct CGPoint { double x1; double x2; })arg2;
-- (void)messageEntryView:(id)arg1 sendButtonLongPressMoved:(struct CGPoint { double x1; double x2; })arg2;
+- (void)messageEntryView:(id)arg1 sendButtonLongPressEnded:(struct CGPoint { float x1; float x2; })arg2;
+- (void)messageEntryView:(id)arg1 sendButtonLongPressMoved:(struct CGPoint { float x1; float x2; })arg2;
 - (BOOL)messageEntryView:(id)arg1 shouldInsertMediaObjects:(id)arg2;
 - (void)messageEntryViewBrowserButtonHit:(id)arg1;
 - (void)messageEntryViewDidBeginEditing:(id)arg1;
@@ -169,7 +169,7 @@
 - (id)navbarManager;
 - (void)navbarManagerDidDismissAllMessages:(id)arg1;
 - (void)navbarManagerDidReceiveMessage:(id)arg1;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })navigationBarInsetsWithoutPalette;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })navigationBarInsetsWithoutPalette;
 - (id)plugin;
 - (int)preferredStatusBarStyle;
 - (id)presentationViewController;
@@ -188,7 +188,7 @@
 - (void)setEntryViewSnapshotOffset:(float)arg1;
 - (void)setInDragAndDrop:(BOOL)arg1;
 - (void)setInTransition:(BOOL)arg1;
-- (void)setInitialBrowserFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setInitialBrowserFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setInteractionProgress:(id)arg1;
 - (void)setIsiMessage:(BOOL)arg1;
 - (void)setLastKnownDeviceOrientation:(int)arg1;
@@ -196,17 +196,17 @@
 - (void)setPlugin:(id)arg1;
 - (void)setPresentationViewController:(id)arg1;
 - (void)setSendDelegate:(id)arg1;
-- (void)setTargetBrowserFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setTargetBrowserFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setTransitionDirection:(unsigned int)arg1;
 - (BOOL)shouldAutorotate;
 - (BOOL)shouldShowChatChrome;
 - (unsigned int)supportedInterfaceOrientations;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })targetBrowserFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })targetBrowserFrame;
 - (unsigned int)transitionDirection;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
-- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (BOOL)wantsDarkUI;
 - (BOOL)wantsOpaqueUI;
 - (void)willMoveToParentViewController:(id)arg1;

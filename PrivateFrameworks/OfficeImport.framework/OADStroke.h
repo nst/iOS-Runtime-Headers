@@ -17,7 +17,7 @@
     OADLineJoin * mJoin;
     int  mPenAlignment;
     OADLineEnd * mTail;
-    double  mWidth;
+    float  mWidth;
 }
 
 @property (nonatomic, retain) OADLineEnd *head;

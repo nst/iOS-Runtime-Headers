@@ -4,11 +4,11 @@
 
 @interface VKDebugSettings : NSObject {
     BOOL  _altitudeDisableC3mTextureLoading;
-    double  _altitudeFadeSpeed;
+    float  _altitudeFadeSpeed;
     BOOL  _altitudeFreezeViewNode;
-    double  _altitudeHideMeshTime;
+    float  _altitudeHideMeshTime;
     BOOL  _altitudeHighResSatellite;
-    double  _altitudeLodScale;
+    float  _altitudeLodScale;
     BOOL  _altitudeMipmapFlyover;
     BOOL  _altitudeMipmapObjectTree;
     BOOL  _altitudeMipmapSatellite;
@@ -22,9 +22,9 @@
     BOOL  _altitudeShowTriggerbounds;
     NSString * _altitudeTelemetryURL;
     BOOL  _altitudeTexturePaging;
-    double  _altitudeTileQualityThreshold;
+    float  _altitudeTileQualityThreshold;
     BOOL  _altitudeTourSpeedup;
-    double  _altitudeTourSpeedupFactor;
+    float  _altitudeTourSpeedupFactor;
     BOOL  _constantlyChangeTileGroup;
     struct unordered_map<std::__1::basic_string<char>, std::__1::shared_ptr<md::ObjectGroup>, std::__1::hash<std::__1::basic_string<char> >, std::__1::equal_to<std::__1::basic_string<char> >, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, std::__1::shared_ptr<md::ObjectGroup> > > > { 
         struct __hash_table<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<md::ObjectGroup> >, std::__1::__unordered_map_hasher<std::__1::basic_string<char>, std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<md::ObjectGroup> >, std::__1::hash<std::__1::basic_string<char> >, true>, std::__1::__unordered_map_equal<std::__1::basic_string<char>, std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<md::ObjectGroup> >, std::__1::equal_to<std::__1::basic_string<char> >, true>, std::__1::allocator<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<md::ObjectGroup> > > > { 
@@ -47,7 +47,7 @@
                 unsigned long __first_; 
             } __p2_; 
             struct __compressed_pair<float, std::__1::__unordered_map_equal<std::__1::basic_string<char>, std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<md::ObjectGroup> >, std::__1::equal_to<std::__1::basic_string<char> >, true> > { 
-                double __first_; 
+                float __first_; 
             } __p3_; 
         } __table_; 
     }  _customLandmarks;
@@ -104,8 +104,8 @@
         BOOL borders; 
         BOOL folds; 
         BOOL angles; 
-        double minAngle; 
-        double maxAngle; 
+        float minAngle; 
+        float maxAngle; 
     }  _landmark2DStrokeSettings;
     BOOL  _layoutContinuously;
     BOOL  _loadGreenTraffic;
@@ -135,7 +135,7 @@
     BOOL  _readLandmarksFromDisk;
     BOOL  _realisticWireframeEnabled;
     BOOL  _renderInSeparateThread;
-    double  _ribbonCrispness;
+    float  _ribbonCrispness;
     BOOL  _shouldUseTestTileLoader;
     BOOL  _showNavCameraDebugConsole;
     BOOL  _showNavCameraDebugConsoleAttributes;
@@ -152,11 +152,11 @@
 }
 
 @property (nonatomic) BOOL altitudeDisableC3mTextureLoading;
-@property (nonatomic) double altitudeFadeSpeed;
+@property (nonatomic) float altitudeFadeSpeed;
 @property (nonatomic) BOOL altitudeFreezeViewNode;
-@property (nonatomic) double altitudeHideMeshTime;
+@property (nonatomic) float altitudeHideMeshTime;
 @property (nonatomic) BOOL altitudeHighResSatellite;
-@property (nonatomic) double altitudeLodScale;
+@property (nonatomic) float altitudeLodScale;
 @property (nonatomic) BOOL altitudeMipmapFlyover;
 @property (nonatomic) BOOL altitudeMipmapObjectTree;
 @property (nonatomic) BOOL altitudeMipmapSatellite;
@@ -170,9 +170,9 @@
 @property (nonatomic) BOOL altitudeShowTriggerBounds;
 @property (nonatomic, retain) NSString *altitudeTelemetryURL;
 @property (nonatomic) BOOL altitudeTexturePaging;
-@property (nonatomic) double altitudeTileQualityThreshold;
+@property (nonatomic) float altitudeTileQualityThreshold;
 @property (nonatomic) BOOL altitudeTourSpeedup;
-@property (nonatomic) double altitudeTourSpeedupFactor;
+@property (nonatomic) float altitudeTourSpeedupFactor;
 @property (nonatomic) BOOL constantlyChangeTileGroup;
 @property (nonatomic) BOOL debugStyleAnimations;
 @property (nonatomic) struct shared_ptr<gss::StylesheetManager<gss::PropertyID> > { struct StylesheetManager<gss::PropertyID> {} *x1; struct __shared_weak_count {} *x2; } debugStyleManager;
@@ -219,7 +219,7 @@
 @property (nonatomic) BOOL labelTileDecodeEnabled;
 @property (nonatomic) BOOL labelTransitLineCollisionEnabled;
 @property (nonatomic) BOOL labelUpdateMapTilesContinuously;
-@property (nonatomic) struct { BOOL x1; BOOL x2; BOOL x3; double x4; double x5; } landmark2DStrokeSettings;
+@property (nonatomic) struct { BOOL x1; BOOL x2; BOOL x3; float x4; float x5; } landmark2DStrokeSettings;
 @property (nonatomic) BOOL layoutContinuously;
 @property (nonatomic) BOOL loadGreenTraffic;
 @property (nonatomic) BOOL newRouteTraffic;
@@ -248,7 +248,7 @@
 @property (nonatomic) BOOL readLandmarksFromDisk;
 @property (nonatomic) BOOL realisticWireframeEnabled;
 @property (nonatomic) BOOL renderInSeparateThread;
-@property (nonatomic) double ribbonCrispness;
+@property (nonatomic) float ribbonCrispness;
 @property (nonatomic) BOOL shouldUseTestTileLoader;
 @property (nonatomic) BOOL showNavCameraDebugConsole;
 @property (nonatomic) BOOL showNavCameraDebugConsoleAttributes;
@@ -342,7 +342,7 @@
 - (BOOL)labelTileDecodeEnabled;
 - (BOOL)labelTransitLineCollisionEnabled;
 - (BOOL)labelUpdateMapTilesContinuously;
-- (struct { BOOL x1; BOOL x2; BOOL x3; double x4; double x5; })landmark2DStrokeSettings;
+- (struct { BOOL x1; BOOL x2; BOOL x3; float x4; float x5; })landmark2DStrokeSettings;
 - (BOOL)layoutContinuously;
 - (BOOL)loadGreenTraffic;
 - (id)nameForPerformanceGroup:(unsigned int)arg1;
@@ -446,7 +446,7 @@
 - (void)setLabelTileDecodeEnabled:(BOOL)arg1;
 - (void)setLabelTransitLineCollisionEnabled:(BOOL)arg1;
 - (void)setLabelUpdateMapTilesContinuously:(BOOL)arg1;
-- (void)setLandmark2DStrokeSettings:(struct { BOOL x1; BOOL x2; BOOL x3; double x4; double x5; })arg1;
+- (void)setLandmark2DStrokeSettings:(struct { BOOL x1; BOOL x2; BOOL x3; float x4; float x5; })arg1;
 - (void)setLayoutContinuously:(BOOL)arg1;
 - (void)setLoadGreenTraffic:(BOOL)arg1;
 - (void)setNewRouteTraffic:(BOOL)arg1;

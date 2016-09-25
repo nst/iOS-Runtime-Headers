@@ -14,6 +14,6 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithLatestGCStartTime:(long)arg1;
-- (int)timeSinceLatestGCStartTime;
+- (long long)timeSinceLatestGCStartTime;
 
 @end

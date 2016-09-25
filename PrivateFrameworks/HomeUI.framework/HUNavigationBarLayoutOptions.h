@@ -3,25 +3,25 @@
  */
 
 @interface HUNavigationBarLayoutOptions : NSObject {
-    double  _bottomMargin;
+    float  _bottomMargin;
     UIFont * _buttonFont;
-    double  _containerLeadingMargin;
-    double  _containerTrailingMargin;
-    double  _height;
-    double  _minTextButtonWidth;
-    double  _topMargin;
+    float  _containerLeadingMargin;
+    float  _containerTrailingMargin;
+    float  _height;
+    float  _minTextButtonWidth;
+    float  _topMargin;
     int  _viewSizeSubclass;
 }
 
-@property (nonatomic) double bottomMargin;
+@property (nonatomic) float bottomMargin;
 @property (nonatomic, retain) UIFont *buttonFont;
-@property (nonatomic) double containerLeadingMargin;
-@property (nonatomic) double containerTrailingMargin;
-@property (nonatomic) double height;
-@property (nonatomic, readonly) double leadingMargin;
-@property (nonatomic) double minTextButtonWidth;
-@property (nonatomic) double topMargin;
-@property (nonatomic, readonly) double trailingMargin;
+@property (nonatomic) float containerLeadingMargin;
+@property (nonatomic) float containerTrailingMargin;
+@property (nonatomic) float height;
+@property (nonatomic, readonly) float leadingMargin;
+@property (nonatomic) float minTextButtonWidth;
+@property (nonatomic) float topMargin;
+@property (nonatomic, readonly) float trailingMargin;
 @property (nonatomic, readonly) int viewSizeSubclass;
 
 + (id)defaultOptionsForViewSizeSubclass:(int)arg1 containerLeadingMargin:(float)arg2 containerTrailingMargin:(float)arg3;

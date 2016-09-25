@@ -5,40 +5,40 @@
 @interface TSCHLegendModelCache : NSObject {
     unsigned int  mCellCount;
     NSArray * mCells;
-    double  mEffectiveStrokeWidth;
+    float  mEffectiveStrokeWidth;
     id  mFill;
-    double  mHorizontalCellSpacing;
+    float  mHorizontalCellSpacing;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  mLargestCellSize;
     TSCHLegendViewCache * mLastLegendViewCache;
-    double  mLastLegendWidth;
+    float  mLastLegendWidth;
     BOOL  mLegendOn;
     TSCHLegendCellMetrics * mMetrics;
-    double  mOpacity;
+    float  mOpacity;
     TSWPParagraphStyle * mParagraphStyle;
     BOOL  mReverseSingleColumnLegendOrder;
     TSDShadow * mShadow;
     TSDStroke * mStroke;
-    double  mSymbolGap;
-    double  mVerticalCellSpacing;
+    float  mSymbolGap;
+    float  mVerticalCellSpacing;
 }
 
 @property (readonly) unsigned int cellCount;
 @property (readonly) NSArray *cells;
-@property (readonly) double effectiveStrokeWidth;
+@property (readonly) float effectiveStrokeWidth;
 @property (readonly) id fill;
-@property (readonly) double horizontalCellSpacing;
-@property (readonly) struct CGSize { double x1; double x2; } largestCellSize;
+@property (readonly) float horizontalCellSpacing;
+@property (readonly) struct CGSize { float x1; float x2; } largestCellSize;
 @property (readonly) BOOL legendOn;
-@property (readonly) double opacity;
+@property (readonly) float opacity;
 @property (readonly) TSWPParagraphStyle *paragraphStyle;
 @property (readonly) BOOL reverseSingleColumnLegendOrder;
 @property (readonly) TSDShadow *shadow;
 @property (readonly) TSDStroke *stroke;
-@property (readonly) double symbolGap;
-@property (readonly) double verticalCellSpacing;
+@property (readonly) float symbolGap;
+@property (readonly) float verticalCellSpacing;
 
 - (unsigned int)cellCount;
 - (id)cellForSeriesIndex:(unsigned int)arg1 cellType:(int)arg2;
@@ -48,7 +48,7 @@
 - (id)fill;
 - (float)horizontalCellSpacing;
 - (id)initWithChartModel:(id)arg1 textEditingSelectionPair:(id)arg2;
-- (struct CGSize { double x1; double x2; })largestCellSize;
+- (struct CGSize { float x1; float x2; })largestCellSize;
 - (BOOL)legendOn;
 - (float)opacity;
 - (id)paragraphStyle;

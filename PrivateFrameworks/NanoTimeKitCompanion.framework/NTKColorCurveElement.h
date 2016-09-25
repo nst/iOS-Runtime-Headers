@@ -4,12 +4,12 @@
 
 @interface NTKColorCurveElement : NSObject {
     UIColor * _color;
-    double  _fraction;
+    float  _fraction;
     CAMediaTimingFunction * _timingFunction;
 }
 
 @property (nonatomic, retain) UIColor *color;
-@property (nonatomic) double fraction;
+@property (nonatomic) float fraction;
 @property (nonatomic, retain) CAMediaTimingFunction *timingFunction;
 
 - (void).cxx_destruct;

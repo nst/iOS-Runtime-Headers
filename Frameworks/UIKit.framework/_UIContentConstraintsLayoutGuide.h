@@ -5,22 +5,22 @@
 @interface _UIContentConstraintsLayoutGuide : UILayoutGuide {
     NSLayoutConstraint * _bottomConstraint;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _edgeInsets;
     NSLayoutConstraint * _leadingConstraint;
     NSLayoutConstraint * _maximumHeightConstraint;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _maximumSize;
     NSLayoutConstraint * _maximumWidthConstraint;
     NSLayoutConstraint * _minimumHeightConstraint;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _minimumSize;
     NSLayoutConstraint * _minimumWidthConstraint;
     NSLayoutConstraint * _topConstraint;
@@ -30,13 +30,13 @@
 }
 
 @property (nonatomic, readonly) NSLayoutConstraint *bottomConstraint;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } edgeInsets;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
 @property (nonatomic, readonly) NSLayoutConstraint *leadingConstraint;
 @property (nonatomic, readonly) NSLayoutConstraint *maximumHeightConstraint;
-@property (nonatomic) struct CGSize { double x1; double x2; } maximumSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } maximumSize;
 @property (nonatomic, readonly) NSLayoutConstraint *maximumWidthConstraint;
 @property (nonatomic, readonly) NSLayoutConstraint *minimumHeightConstraint;
-@property (nonatomic) struct CGSize { double x1; double x2; } minimumSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } minimumSize;
 @property (nonatomic, readonly) NSLayoutConstraint *minimumWidthConstraint;
 @property (nonatomic, readonly) NSLayoutConstraint *topConstraint;
 @property (nonatomic, readonly) NSLayoutConstraint *trailingConstraint;
@@ -52,18 +52,18 @@
 - (void)_updateAllMarginConstraintConstants;
 - (void)_updateAllSizeConstraints;
 - (id)bottomConstraint;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })edgeInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
 - (id)init;
 - (id)leadingConstraint;
 - (id)maximumHeightConstraint;
-- (struct CGSize { double x1; double x2; })maximumSize;
+- (struct CGSize { float x1; float x2; })maximumSize;
 - (id)maximumWidthConstraint;
 - (id)minimumHeightConstraint;
-- (struct CGSize { double x1; double x2; })minimumSize;
+- (struct CGSize { float x1; float x2; })minimumSize;
 - (id)minimumWidthConstraint;
-- (void)setEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
-- (void)setMaximumSize:(struct CGSize { double x1; double x2; })arg1;
-- (void)setMinimumSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setMaximumSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setMinimumSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setOwningView:(id)arg1;
 - (id)topConstraint;
 - (id)trailingConstraint;

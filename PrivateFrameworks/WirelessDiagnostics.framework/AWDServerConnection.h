@@ -8,7 +8,7 @@
 
 - (void)dealloc;
 - (void)flushToQueue:(struct dispatch_queue_s { }*)arg1 block:(id /* block */)arg2;
-- (unsigned int)getAWDTimestamp;
+- (unsigned long long)getAWDTimestamp;
 - (id)getComponentConfigurationParameters;
 - (id)initWithComponentId:(unsigned long)arg1;
 - (id)initWithComponentId:(unsigned long)arg1 andBlockOnConfiguration:(BOOL)arg2;

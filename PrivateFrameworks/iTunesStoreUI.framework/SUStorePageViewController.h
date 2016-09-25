@@ -45,7 +45,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SUStorePageViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } documentBounds;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } documentBounds;
 @property (getter=isExternalRequest, nonatomic) BOOL externalRequest;
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL loadsWhenHidden;
@@ -69,7 +69,7 @@
 - (void)_finishHandlingFailure;
 - (void)_finishSuccessfulLoad;
 - (void)_finishWebViewLoadWithResult:(BOOL)arg1 error:(id)arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameForActiveViewController;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForActiveViewController;
 - (void)_handleFailureWithError:(id)arg1;
 - (void)_handleViewControllerBecameReady:(id)arg1;
 - (BOOL)_isCacheExpired;
@@ -135,7 +135,7 @@
 - (void)didMoveToParentViewController:(id)arg1;
 - (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (id)displayedURL;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })documentBounds;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })documentBounds;
 - (void)enqueueFetchOperation;
 - (void)enqueueFetchOperationForPageSection:(id)arg1;
 - (void)handleApplicationURL:(id)arg1 withSourceApplication:(id)arg2 sourceURL:(id)arg3;

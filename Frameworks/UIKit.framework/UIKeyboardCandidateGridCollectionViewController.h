@@ -10,12 +10,12 @@
     int  _candidatesVisualStyle;
     <UIKeyboardCandidateGridCollectionViewControllerDelegate> * _delegate;
     NSArray * _filteredCandidates;
-    double  _groupBarWidth;
+    float  _groupBarWidth;
     BOOL  _hasSecondaryCandidates;
     UIView * _headerView;
     BOOL  _layoutExtensionCandidates;
     UIButton * _padInlineFloatingArrowButton;
-    double  _rowHeight;
+    float  _rowHeight;
     UIKBCandidateCollectionView * _secondaryCandidatesView;
     BOOL  _secondaryCandidatesViewIsCurrent;
     BOOL  _singleLineMode;
@@ -40,13 +40,13 @@
 @property (nonatomic) <UIKeyboardCandidateGridCollectionViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSArray *filteredCandidates;
-@property (nonatomic) double groupBarWidth;
+@property (nonatomic) float groupBarWidth;
 @property (nonatomic) BOOL hasSecondaryCandidates;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) UIView *headerView;
 @property (nonatomic) BOOL layoutExtensionCandidates;
 @property (nonatomic, readonly) UIButton *padInlineFloatingArrowButton;
-@property (nonatomic) double rowHeight;
+@property (nonatomic) float rowHeight;
 @property (nonatomic, retain) UIKBCandidateCollectionView *secondaryCandidatesView;
 @property (nonatomic) BOOL secondaryCandidatesViewIsCurrent;
 @property (nonatomic) BOOL singleLineMode;
@@ -68,7 +68,7 @@
 - (id)collectionView;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
-- (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
+- (struct CGSize { float x1; float x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
 - (BOOL)collectionView:(id)arg1 shouldHighlightItemAtIndexPath:(id)arg2;
 - (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
@@ -109,7 +109,7 @@
 - (void)revealHiddenCandidates;
 - (float)rowHeight;
 - (unsigned int)rowIndexForCellAtIndexPath:(id)arg1;
-- (struct CGSize { double x1; double x2; })rowSizeForGridLayout;
+- (struct CGSize { float x1; float x2; })rowSizeForGridLayout;
 - (void)scrollToBottomWithAnimation:(BOOL)arg1;
 - (void)scrollToTopWithAnimation:(BOOL)arg1;
 - (void)scrollToTopWithAnimation:(BOOL)arg1 revealHeaderView:(BOOL)arg2;
@@ -124,7 +124,7 @@
 - (void)setCandidateGroups:(id)arg1;
 - (void)setCandidateListDelegate:(id)arg1;
 - (void)setCandidateSet:(id)arg1;
-- (void)setCandidates:(id)arg1 inlineText:(id)arg2 inlineRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 maxX:(float)arg4 layout:(BOOL)arg5;
+- (void)setCandidates:(id)arg1 inlineText:(id)arg2 inlineRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 maxX:(float)arg4 layout:(BOOL)arg5;
 - (void)setCandidatesVisualStyle:(int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setGroupBarWidth:(float)arg1;

@@ -7,8 +7,8 @@
         unsigned int toUniCharEncoding; 
         unsigned int codePageEncoding; 
         NSFont *font; 
-        double fontSize; 
-        double kern; 
+        float fontSize; 
+        float kern; 
         NSMutableParagraphStyle *paraStyle; 
         unsigned int bold : 1; 
         unsigned int italic : 1; 
@@ -26,7 +26,7 @@
     }  _attributeInfo;
     NSMutableData * _attributeInfoStack;
     NSMutableArray * _attributesStack;
-    double  _bMargin;
+    float  _bMargin;
     NSMapTable * _cachedRTFFontTable;
     int  _cocoaSubVersion;
     int  _cocoaVersion;
@@ -43,7 +43,7 @@
     NSMutableArray * _currentRowArray;
     BOOL  _currentRowIsLast;
     NSTextTable * _currentTable;
-    double  _defaultTabInterval;
+    float  _defaultTabInterval;
     unsigned long  _defaultToUniCharEncoding;
     NSFileWrapper * _document;
     NSColor * _documentBackgroundColor;
@@ -52,17 +52,17 @@
     NSMutableDictionary * _fontAttributesTable;
     NSMutableDictionary * _fontTable;
     NSCalendar * _gregorianCalendar;
-    double  _hyphenationFactor;
+    float  _hyphenationFactor;
     BOOL  _isRTLDocument;
-    double  _lMargin;
+    float  _lMargin;
     NSMutableArray * _layoutOrientationSections;
     unsigned int  _level;
     BOOL  _limitReached;
     NSMutableDictionary * _listDefinitions;
     NSMutableArray * _nestedTables;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _paperSize;
     NSMutableArray * _previousRowArray;
     NSTextTable * _previousTable;
@@ -99,13 +99,13 @@
         int linePos; 
         int groupState; 
     }  _private;
-    double  _rMargin;
+    float  _rMargin;
     int  _readLimit;
     int  _readOnly;
     NSData * _rtfData;
     int  _rtfVersion;
     BOOL  _setTableCells;
-    double  _tMargin;
+    float  _tMargin;
     NSArray * _textBlocks;
     union { 
         unsigned char thin[128]; 
@@ -121,8 +121,8 @@
     int  _viewKind;
     int  _viewScale;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _viewSize;
 }
 
@@ -179,7 +179,7 @@
 - (id)initWithRTFDFileWrapper:(id)arg1;
 - (id)mutableAttributedString;
 - (id)mutableAttributes;
-- (struct CGSize { double x1; double x2; })paperSize;
+- (struct CGSize { float x1; float x2; })paperSize;
 - (void)processString:(id)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setBaseWritingDirection:(int)arg1;
@@ -190,7 +190,7 @@
 - (void)setHyphenationFactor:(float)arg1;
 - (void)setLeftMargin:(float)arg1;
 - (void)setMutableAttributedString:(id)arg1;
-- (void)setPaperSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setPaperSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setReadLimit:(int)arg1;
 - (void)setReadOnly:(int)arg1;
 - (void)setRightMargin:(float)arg1;
@@ -200,8 +200,8 @@
 - (void)setUsesScreenFonts:(int)arg1;
 - (void)setViewKind:(int)arg1;
 - (void)setViewScale:(int)arg1;
-- (void)setViewSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setViewSize:(struct CGSize { float x1; float x2; })arg1;
 - (unsigned int)textFlow;
-- (struct CGSize { double x1; double x2; })viewSize;
+- (struct CGSize { float x1; float x2; })viewSize;
 
 @end

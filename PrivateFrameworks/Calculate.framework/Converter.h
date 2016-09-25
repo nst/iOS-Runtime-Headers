@@ -5,7 +5,7 @@
 @interface Converter : NSObject {
     NSArray * _additionalResults;
     NSString * _conversionType;
-    double  _currencyUpdateTimeOut;
+    float  _currencyUpdateTimeOut;
     NSString * _inputString;
     NSString * _inputUnit;
     NSNumber * _inputValue;
@@ -20,7 +20,7 @@
 
 @property (nonatomic, retain) NSArray *additionalResults;
 @property (nonatomic, retain) NSString *conversionType;
-@property double currencyUpdateTimeOut;
+@property float currencyUpdateTimeOut;
 @property (nonatomic, retain) NSString *inputString;
 @property (nonatomic, retain) NSString *inputUnit;
 @property (nonatomic, retain) NSNumber *inputValue;

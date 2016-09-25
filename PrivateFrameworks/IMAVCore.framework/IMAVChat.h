@@ -47,8 +47,8 @@
     BOOL  _isVideo;
     BOOL  _isVideoInterrupted;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _landscapeAspectRatios;
     unsigned int  _lastPostedState;
     unsigned int  _localNetworkConnectionType;
@@ -65,8 +65,8 @@
     int  _pingTestResult;
     NSDictionary * _pingTestResults;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _portraitAspectRatios;
     NSData * _relayRemotePrimaryIdentifier;
     BOOL  _relayed;
@@ -146,7 +146,7 @@
 @property (nonatomic, readonly) BOOL isStateFinal;
 @property (nonatomic, readonly) BOOL isUsingWifi;
 @property (nonatomic, readonly) BOOL isVideo;
-@property (setter=_setLandscapeAspectRatios:, nonatomic) struct CGSize { double x1; double x2; } landscapeAspectRatios;
+@property (setter=_setLandscapeAspectRatios:, nonatomic) struct CGSize { float x1; float x2; } landscapeAspectRatios;
 @property (nonatomic, readonly, retain) IMAVChatParticipant *localParticipant;
 @property (nonatomic) void*localVideoBackLayer;
 @property (nonatomic) void*localVideoLayer;
@@ -154,7 +154,7 @@
 @property (setter=_setMetadataFinalized:, nonatomic) BOOL metadataFinalized;
 @property (nonatomic, readonly, retain) IMHandle *otherIMHandle;
 @property (nonatomic, readonly, retain) NSArray *participants;
-@property (setter=_setPortraitAspectRatios:, nonatomic) struct CGSize { double x1; double x2; } portraitAspectRatios;
+@property (setter=_setPortraitAspectRatios:, nonatomic) struct CGSize { float x1; float x2; } portraitAspectRatios;
 @property (getter=isRelayed, nonatomic) BOOL relayed;
 @property (nonatomic, readonly, retain) NSArray *remoteParticipants;
 @property (nonatomic, readonly) unsigned int sessionID;
@@ -265,7 +265,7 @@
 - (id)_pingTestResults;
 - (void)_postNotificationName:(id)arg1 participant:(id)arg2 userInfo:(id)arg3;
 - (void)_postNotificationName:(id)arg1 userInfo:(id)arg2;
-- (void)_postParticipantMediaChangeNotification:(id)arg1 cameraChanged:(BOOL)arg2 orientationChanged:(BOOL)arg3 aspectChanged:(BOOL)arg4 cameraWillSwitch:(BOOL)arg5 camera:(unsigned int)arg6 orientation:(unsigned int)arg7 aspect:(struct CGSize { double x1; double x2; })arg8;
+- (void)_postParticipantMediaChangeNotification:(id)arg1 cameraChanged:(BOOL)arg2 orientationChanged:(BOOL)arg3 aspectChanged:(BOOL)arg4 cameraWillSwitch:(BOOL)arg5 camera:(unsigned int)arg6 orientation:(unsigned int)arg7 aspect:(struct CGSize { float x1; float x2; })arg8;
 - (void)_postStateToDelegateIfNecessary;
 - (BOOL)_processVCResponseDict:(id)arg1;
 - (id)_proxyRepresentation;
@@ -307,7 +307,7 @@
 - (void)_setIsAudioInterrupted:(BOOL)arg1;
 - (void)_setIsCallUpgrade:(BOOL)arg1;
 - (void)_setIsVideoInterrupted:(BOOL)arg1;
-- (void)_setLandscapeAspectRatios:(struct CGSize { double x1; double x2; })arg1;
+- (void)_setLandscapeAspectRatios:(struct CGSize { float x1; float x2; })arg1;
 - (void)_setLocalNetworkConnectionType:(unsigned int)arg1;
 - (void)_setMetadataFinalized:(BOOL)arg1;
 - (void)_setNatType:(id)arg1;
@@ -316,7 +316,7 @@
 - (void)_setNetworkCheckResult:(int)arg1;
 - (void)_setPingTestResult:(int)arg1;
 - (void)_setPingTestResults:(id)arg1;
-- (void)_setPortraitAspectRatios:(struct CGSize { double x1; double x2; })arg1;
+- (void)_setPortraitAspectRatios:(struct CGSize { float x1; float x2; })arg1;
 - (void)_setRelayRemotePrimaryIdentifier:(id)arg1;
 - (void)_setRemoteNetworkConnectionType:(unsigned int)arg1;
 - (void)_setStateDisconnected;
@@ -401,8 +401,8 @@
 - (BOOL)isTerminating;
 - (BOOL)isUsingWifi;
 - (BOOL)isVideo;
-- (struct CGSize { double x1; double x2; })landscapeAspectRatios;
-- (struct CGSize { double x1; double x2; })localAspectRatioForCameraOrientation:(unsigned int)arg1 cameraType:(unsigned int)arg2;
+- (struct CGSize { float x1; float x2; })landscapeAspectRatios;
+- (struct CGSize { float x1; float x2; })localAspectRatioForCameraOrientation:(unsigned int)arg1 cameraType:(unsigned int)arg2;
 - (id)localParticipant;
 - (void*)localVideoBackLayer;
 - (void*)localVideoLayer;
@@ -416,7 +416,7 @@
 - (id)participantWithAVConferenceCallID:(int)arg1;
 - (id)participantWithID:(id)arg1;
 - (id)participants;
-- (struct CGSize { double x1; double x2; })portraitAspectRatios;
+- (struct CGSize { float x1; float x2; })portraitAspectRatios;
 - (id)remoteParticipants;
 - (unsigned int)sessionID;
 - (void)setCameraOrientation:(unsigned int)arg1;
@@ -428,7 +428,7 @@
 - (void)setInvitationTimeoutTime:(double)arg1;
 - (void)setIsSendingAudio:(BOOL)arg1;
 - (void)setIsSendingVideo:(BOOL)arg1;
-- (void)setLocalAspectRatio:(struct CGSize { double x1; double x2; })arg1 cameraOrientation:(unsigned int)arg2 cameraType:(unsigned int)arg3;
+- (void)setLocalAspectRatio:(struct CGSize { float x1; float x2; })arg1 cameraOrientation:(unsigned int)arg2 cameraType:(unsigned int)arg3;
 - (void)setLocalVideoBackLayer:(void*)arg1;
 - (void)setLocalVideoLayer:(void*)arg1;
 - (void)setMayRequireBreakBeforeMake:(BOOL)arg1;
@@ -437,7 +437,7 @@
 - (void)setPaused:(BOOL)arg1;
 - (void)setRelayed:(BOOL)arg1;
 - (void)setRemoteMute:(BOOL)arg1;
-- (void)setRemoteVideoPresentationSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setRemoteVideoPresentationSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setRemoteVideoPresentationState:(unsigned int)arg1;
 - (void)set_conferenceQueue:(id)arg1;
 - (BOOL)startPreviewWithError:(id*)arg1;

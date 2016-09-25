@@ -13,7 +13,7 @@
         unsigned int ourZone : 1; 
     }  _has;
     BOOL  _ourZone;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) BOOL anyZone;
@@ -25,7 +25,7 @@
 @property (nonatomic) BOOL hasOurZone;
 @property (nonatomic) BOOL hasTimestamp;
 @property (nonatomic) BOOL ourZone;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void).cxx_destruct;
 - (BOOL)anyZone;
@@ -53,8 +53,8 @@
 - (void)setHasOurZone:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
 - (void)setOurZone:(BOOL)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
-- (unsigned int)timestamp;
+- (void)setTimestamp:(unsigned long long)arg1;
+- (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -18,7 +18,7 @@
 - (id)_generationQueueRotationSessionsMapTable;
 - (void*)_newRotatedSurface:(void*)arg1 withOrientation:(int)arg2;
 - (void*)_newThumbnailOfFormat:(int)arg1 inOrientation:(int)arg2 withPixelFormat:(unsigned long)arg3 usingSurface:(void*)arg4;
-- (void*)_newThumbnailOfSize:(struct CGSize { double x1; double x2; })arg1 inOrientation:(int)arg2 withPixelFormat:(unsigned long)arg3 usingSurface:(void*)arg4;
+- (void*)_newThumbnailOfSize:(struct CGSize { float x1; float x2; })arg1 inOrientation:(int)arg2 withPixelFormat:(unsigned long)arg3 usingSurface:(void*)arg4;
 - (void)dealloc;
 - (id)init;
 - (struct CGImage { }*)newBGRAImageInOrientation:(int)arg1 usingSurface:(void*)arg2;

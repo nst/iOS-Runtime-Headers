@@ -31,8 +31,8 @@
     PGSetterThrottler * _playbackProgressSetterThrottler;
     double  _playbackRate;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _preferredContentSize;
     NSObject<OS_dispatch_queue> * _queue;
     UIViewController * _rootViewController;
@@ -60,7 +60,7 @@
 - (void).cxx_destruct;
 - (void)_startPictureInPictureAnimated:(BOOL)arg1 enteringBackground:(BOOL)arg2 withCompletionHandler:(id /* block */)arg3;
 - (void)_stopPictureInPictureAnimated:(BOOL)arg1 activateApplicationIfNeededAndRestoreUserInterface:(BOOL)arg2 withCompletionHandler:(id /* block */)arg3;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_viewFrameForTransitionAnimationAssumeApplicationActive:(BOOL)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_viewFrameForTransitionAnimationAssumeApplicationActive:(BOOL)arg1;
 - (oneway void)actionButtonTapped;
 - (int)controlsStyle;
 - (void)dealloc;
@@ -94,7 +94,7 @@
 - (void)setPlaybackProgress:(double)arg1 playbackRate:(double)arg2;
 - (void)startPictureInPicture;
 - (void)stopPictureInPictureAndRestoreUserInterface:(BOOL)arg1;
-- (oneway void)updateHostedWindowSize:(struct CGSize { double x1; double x2; })arg1 animationType:(int)arg2 initialSpringVelocity:(float)arg3 synchronizationFence:(id)arg4;
+- (oneway void)updateHostedWindowSize:(struct CGSize { float x1; float x2; })arg1 animationType:(int)arg2 initialSpringVelocity:(float)arg3 synchronizationFence:(id)arg4;
 - (oneway void)updatePictureInPicturePossible:(BOOL)arg1;
 - (id)viewController;
 

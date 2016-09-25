@@ -4,8 +4,8 @@
 
 @interface TSCHChartInfo : NSObject <NSCopying, TSCHPropertyMapsGeneratedProtocol, TSCHStyleOwnerCollaborationSupport, TSCHStyleOwning, TSCHUnretainedParent, TSDMixing> {
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _minimumChartBodySizeForTransformingGeometry;
     BOOL  mAppearancePreservedForPreset;
     NSMutableArray * mCategoryAxisNonStyles;
@@ -21,12 +21,12 @@
     BOOL  mHorizontalUseSeparator;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  mInnerChartFrame;
     BOOL  mIsOlderThanSage;
@@ -47,8 +47,8 @@
     NSMutableArray * mParagraphStyles;
     TSKCustomFormatList * mPasteboardCustomFormatList;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  mPreviewOrigin;
     NSMutableArray * mPrivateSeriesStyles;
     NSMutableDictionary * mRefLineNonStylesMap;
@@ -87,13 +87,13 @@
 @property (nonatomic, copy) NSString *lastAppliedFillSetLookupString;
 @property (nonatomic, retain) TSCHLegendModel *legend;
 @property (nonatomic, retain) TSCHChartMediator *mediator;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } minimumChartBodySize;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } minimumChartBodySizeForTransformingGeometry;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } minimumChartBodySize;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } minimumChartBodySizeForTransformingGeometry;
 @property (nonatomic, retain) TSCHChartModel *model;
 @property (nonatomic, readonly) unsigned int multiDataSetIndex;
 @property (nonatomic, readonly) TSCHChartStylePreset *preset;
 @property (nonatomic, readonly) TSCHChartStylePreset *presetFromThemeIfNecessary;
-@property (nonatomic) struct CGPoint { double x1; double x2; } previewOrigin;
+@property (nonatomic) struct CGPoint { float x1; float x2; } previewOrigin;
 @property (nonatomic, readonly) TSCHChartLayoutCache *sceneAreaLayoutItemCache;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSArray *themeChartPresets;
@@ -116,7 +116,7 @@
 + (id)genericParagraphStyleIndexPropertiesInUse;
 + (BOOL)groupedShadowsForChartModel:(id)arg1;
 + (id)legendStyleIdentifierForRoleIndex:(unsigned int)arg1;
-+ (struct CGSize { double x1; double x2; })minimumChartBodySizeForTransformingGeometryForChart:(id)arg1;
++ (struct CGSize { float x1; float x2; })minimumChartBodySizeForTransformingGeometryForChart:(id)arg1;
 + (id)p_chartTypeTo3DScalePropertyPairs;
 + (id)p_currentThreadSceneAreaLayoutCache;
 + (id)p_stylesheetFromOrderedArrayOfSources:(id)arg1;
@@ -149,14 +149,14 @@
 - (void)applyChartStyleState:(id)arg1;
 - (id)applyStyleSwapTuple:(id)arg1;
 - (id)applyStyleSwapTuples:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })calculateDefaultLegendPositionIfNeededWithOptionalLayout:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })calculateDefaultLegendPositionIfNeededWithOptionalLayout:(id)arg1;
 - (id)categoryAxisNonstyleAtIndex:(unsigned int)arg1;
 - (id)categoryAxisStyleAtIndex:(unsigned int)arg1;
 - (unsigned int)categoryAxisStyleCount;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })chartBodyBoundsForSageImportWithSageChartType:(BOOL)arg1 isSpiceDoc:(BOOL)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })chartBodyBoundsForSageImportWithSageChartType:(BOOL)arg1 isSpiceDoc:(BOOL)arg2;
 - (void)chartDidInvalidateWithProperties:(id)arg1;
 - (id)chartInfo;
-- (void)chartMoveToPosition:(struct CGPoint { double x1; double x2; })arg1 size:(struct CGSize { double x1; double x2; })arg2;
+- (void)chartMoveToPosition:(struct CGPoint { float x1; float x2; })arg1 size:(struct CGSize { float x1; float x2; })arg2;
 - (id)chartStyleState;
 - (id)chartType;
 - (void)chartTypeDidChangeWithDetails:(id)arg1;
@@ -198,7 +198,7 @@
 - (id)infoGeometryForDesiredCircumscribingGeometry:(id)arg1;
 - (id)infoGeometryForDesiredPureLayoutGeometry:(id)arg1;
 - (id)infoGeometryForVisiblePositioningInfoGeometry:(id)arg1;
-- (id)infoGeometryForVisuallyCenteringOnUnscaledCanvasPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (id)infoGeometryForVisuallyCenteringOnUnscaledCanvasPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (double)informationalMessageDuration;
 - (id)informationalMessageString;
 - (id)init;
@@ -220,8 +220,8 @@
 - (float)maximumExplosionOfAllSeriesExcept:(id)arg1;
 - (id)mediator;
 - (float)minFrameDimensionForRadius:(float)arg1 withMaxExplosion:(float)arg2;
-- (struct CGSize { double x1; double x2; })minimumChartBodySize;
-- (struct CGSize { double x1; double x2; })minimumChartBodySizeForTransformingGeometry;
+- (struct CGSize { float x1; float x2; })minimumChartBodySize;
+- (struct CGSize { float x1; float x2; })minimumChartBodySizeForTransformingGeometry;
 - (id)mixedObjectWithFraction:(float)arg1 ofObject:(id)arg2;
 - (int)mixingTypeWithObject:(id)arg1 context:(id)arg2;
 - (id)model;
@@ -256,7 +256,7 @@
 - (id)p_swapTuplesForApplyingPreset:(id)arg1 preservingAppearance:(BOOL)arg2;
 - (id)p_swapTuplesForApplyingPresetRemovingOverrides:(id)arg1;
 - (id)p_swapTuplesForMutations:(id)arg1;
-- (float)p_titleAccommodationWithLegendSize:(struct CGSize { double x1; double x2; })arg1 optionalLayout:(id)arg2;
+- (float)p_titleAccommodationWithLegendSize:(struct CGSize { float x1; float x2; })arg1 optionalLayout:(id)arg2;
 - (id)p_uuidForRefLineOnAxis:(id)arg1 havingNonStyle:(id)arg2;
 - (id)paragraphStyleAtIndex:(unsigned int)arg1;
 - (id)paragraphStyleForSelectionPath:(id)arg1;
@@ -267,8 +267,8 @@
 - (void)preserveAppearanceForCurrentPresetAdoptingStylesheet:(BOOL)arg1;
 - (id)preset;
 - (id)presetFromThemeIfNecessary;
-- (struct CGPoint { double x1; double x2; })previewOrigin;
-- (float)radiusForFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withMaxExplosion:(float)arg2;
+- (struct CGPoint { float x1; float x2; })previewOrigin;
+- (float)radiusForFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withMaxExplosion:(float)arg2;
 - (void)reassignPasteboardCustomFormatKeys;
 - (id)referenceLineNonStyleForAxisID:(id)arg1 atIndex:(unsigned int)arg2;
 - (id)referenceLineNonStyleForAxisID:(id)arg1 uuid:(id)arg2 outIndex:(unsigned int*)arg3;
@@ -277,7 +277,7 @@
 - (id)referenceLineStyleForAxisID:(id)arg1 atIndex:(unsigned int)arg2 privateStyleOnly:(BOOL)arg3;
 - (BOOL)referenceLineStyleIsPrivate:(id)arg1;
 - (Class)repClass;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })resizedLegendFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 oldChartSize:(struct CGSize { double x1; double x2; })arg2 newChartSize:(struct CGSize { double x1; double x2; })arg3;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })resizedLegendFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 oldChartSize:(struct CGSize { float x1; float x2; })arg2 newChartSize:(struct CGSize { float x1; float x2; })arg3;
 - (float)sageDepthFactorForExport;
 - (void)saveToUnityArchive:(struct ChartArchive { int (**x1)(); struct ExtensionSet { struct map<int, google::protobuf::internal::ExtensionSet::Extension, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, google::protobuf::internal::ExtensionSet::Extension> > > { struct __tree<std::__1::__value_type<int, google::protobuf::internal::ExtensionSet::Extension>, std::__1::__map_value_compare<int, std::__1::__value_type<int, google::protobuf::internal::ExtensionSet::Extension>, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, google::protobuf::internal::ExtensionSet::Extension> > > { struct __tree_node<std::__1::__value_type<int, google::protobuf::internal::ExtensionSet::Extension>, void *> {} *x_1_3_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<int, google::protobuf::internal::ExtensionSet::Extension>, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_5_1; } x_2_4_1; } x_1_3_2; struct __compressed_pair<unsigned long, std::__1::__map_value_compare<int, std::__1::__value_type<int, google::protobuf::internal::ExtensionSet::Extension>, std::__1::less<int>, true> > { unsigned long x_3_4_1; } x_1_3_3; } x_1_2_1; } x_2_1_1; } x2; }*)arg1 persistentChartInfo:(id)arg2 archiver:(id)arg3;
 - (id)scaleAllStrokesInStyle:(id)arg1 byRatio:(float)arg2;
@@ -306,7 +306,7 @@
 - (void)setModel:(id)arg1;
 - (void)setPreset:(id)arg1;
 - (void)setPreset:(id)arg1 forceOwning:(BOOL)arg2;
-- (void)setPreviewOrigin:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setPreviewOrigin:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setReferenceLineNonStyleItem:(id)arg1 forAxisID:(id)arg2 atIndex:(unsigned int)arg3;
 - (void)setReferenceLineStyle:(id)arg1 forAxisID:(id)arg2 atIndex:(unsigned int)arg3;
 - (void)setSeriesNonstyle:(id)arg1 atIndex:(unsigned int)arg2;

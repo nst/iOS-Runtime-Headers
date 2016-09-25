@@ -8,12 +8,12 @@
     BOOL  _emergency;
     CXHandle * _handle;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _localLandscapeAspectRatio;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _localPortraitAspectRatio;
     BOOL  _relay;
     int  _ttyType;
@@ -26,8 +26,8 @@
 @property (nonatomic, copy) NSDate *dateStarted;
 @property (getter=isEmergency, nonatomic) BOOL emergency;
 @property (nonatomic, copy) CXHandle *handle;
-@property (nonatomic) struct CGSize { double x1; double x2; } localLandscapeAspectRatio;
-@property (nonatomic) struct CGSize { double x1; double x2; } localPortraitAspectRatio;
+@property (nonatomic) struct CGSize { float x1; float x2; } localLandscapeAspectRatio;
+@property (nonatomic) struct CGSize { float x1; float x2; } localPortraitAspectRatio;
 @property (getter=isRelay, nonatomic) BOOL relay;
 @property (setter=setTTYType:, nonatomic) int ttyType;
 @property (getter=isUpgrade, nonatomic) BOOL upgrade;
@@ -52,14 +52,14 @@
 - (BOOL)isUpgrade;
 - (BOOL)isVideo;
 - (BOOL)isVoicemail;
-- (struct CGSize { double x1; double x2; })localLandscapeAspectRatio;
-- (struct CGSize { double x1; double x2; })localPortraitAspectRatio;
+- (struct CGSize { float x1; float x2; })localLandscapeAspectRatio;
+- (struct CGSize { float x1; float x2; })localPortraitAspectRatio;
 - (void)setContactIdentifier:(id)arg1;
 - (void)setDateStarted:(id)arg1;
 - (void)setEmergency:(BOOL)arg1;
 - (void)setHandle:(id)arg1;
-- (void)setLocalLandscapeAspectRatio:(struct CGSize { double x1; double x2; })arg1;
-- (void)setLocalPortraitAspectRatio:(struct CGSize { double x1; double x2; })arg1;
+- (void)setLocalLandscapeAspectRatio:(struct CGSize { float x1; float x2; })arg1;
+- (void)setLocalPortraitAspectRatio:(struct CGSize { float x1; float x2; })arg1;
 - (void)setRelay:(BOOL)arg1;
 - (void)setTTYType:(int)arg1;
 - (void)setUpgrade:(BOOL)arg1;

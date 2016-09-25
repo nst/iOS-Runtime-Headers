@@ -23,8 +23,8 @@
 - (id)_newSnapshotWithView:(id)arg1;
 - (void)_processRequest;
 - (void)_respondWithSnapshot;
-- (void)createSnapShotWithCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1 zoomLevel:(unsigned int)arg2 size:(struct CGSize { double x1; double x2; })arg3 handler:(id /* block */)arg4;
-- (void)createSnapShotWithCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1 zoomLevel:(unsigned int)arg2 size:(struct CGSize { double x1; double x2; })arg3 requester:(id)arg4 context:(id)arg5;
+- (void)createSnapShotWithCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1 zoomLevel:(unsigned int)arg2 size:(struct CGSize { float x1; float x2; })arg3 handler:(id /* block */)arg4;
+- (void)createSnapShotWithCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1 zoomLevel:(unsigned int)arg2 size:(struct CGSize { float x1; float x2; })arg3 requester:(id)arg4 context:(id)arg5;
 - (void)dealloc;
 - (void)flushRequestQueue;
 - (id)init;

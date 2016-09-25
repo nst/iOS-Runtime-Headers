@@ -4,7 +4,7 @@
 
 @interface SYPersistentStore : NSObject {
     NSSet * _cachedChangedSyncIDs;
-    unsigned int  _cachedChangedSyncIDsVersion;
+    unsigned long long  _cachedChangedSyncIDsVersion;
     BOOL  _cachedVersionStale;
     BOOL  _changeTrackingEnabled;
     struct sqlite3 { } * _db;
@@ -51,20 +51,20 @@
 }
 
 @property (nonatomic, retain) NSSet *cachedChangedSyncIDs;
-@property (nonatomic) unsigned int cachedChangedSyncIDsVersion;
+@property (nonatomic) unsigned long long cachedChangedSyncIDsVersion;
 @property (nonatomic) BOOL cachedVersionStale;
 @property (nonatomic, readonly) BOOL canStartNewSyncSession;
 @property (nonatomic, readonly) unsigned int changeCount;
 @property (nonatomic) BOOL completedSync;
 @property (nonatomic, readonly) NSString *currentFullSyncID;
-@property (nonatomic, readonly) unsigned int currentLocalVersion;
+@property (nonatomic, readonly) unsigned long long currentLocalVersion;
 @property (nonatomic, readonly) BOOL currentSyncSendComplete;
 @property (nonatomic, readonly) double durationOfLastFullSync;
 @property (nonatomic, copy) NSDictionary *fullSyncIDSOptions;
 @property (nonatomic, copy) NSDictionary *fullSyncUserInfo;
 @property (nonatomic, readonly) BOOL inFullSync;
 @property (nonatomic, copy) NSDate *lastMessageReceived;
-@property (nonatomic, readonly) unsigned int lastSeenRemoteVersion;
+@property (nonatomic, readonly) unsigned long long lastSeenRemoteVersion;
 @property (nonatomic, readonly) NSString *lastSyncEndID;
 @property (nonatomic, readonly) NSError *lastSyncError;
 @property (nonatomic, readonly) BOOL lastSyncFailed;
@@ -92,9 +92,9 @@
 - (void)_fixPeerInfo;
 - (int)_getSchemaVersion;
 - (BOOL)_inTransaction:(BOOL)arg1 do:(id /* block */)arg2;
-- (unsigned int)_lastSequenceNumberForPeerID_LOCKED:(id)arg1 db:(struct sqlite3 { }*)arg2;
+- (unsigned long long)_lastSequenceNumberForPeerID_LOCKED:(id)arg1 db:(struct sqlite3 { }*)arg2;
 - (void)_loadIgnoreList_LOCKED:(struct sqlite3 { }*)arg1;
-- (unsigned int)_oldestVersion;
+- (unsigned long long)_oldestVersion;
 - (BOOL)_openDBAtPath:(id)arg1;
 - (void)_prepareStatements;
 - (void)_saveIgnoreList_LOCKED:(struct sqlite3 { }*)arg1;
@@ -105,7 +105,7 @@
 - (void)_withDB:(id /* block */)arg1;
 - (void)addMessageIDsToIgnore:(id)arg1;
 - (id)cachedChangedSyncIDs;
-- (unsigned int)cachedChangedSyncIDsVersion;
+- (unsigned long long)cachedChangedSyncIDsVersion;
 - (BOOL)cachedVersionStale;
 - (BOOL)canStartNewSyncSession;
 - (unsigned int)changeCount;
@@ -113,7 +113,7 @@
 - (void)clearAllChanges;
 - (BOOL)completedSync;
 - (id)currentFullSyncID;
-- (unsigned int)currentLocalVersion;
+- (unsigned long long)currentLocalVersion;
 - (BOOL)currentSyncSendComplete;
 - (id)dbPath;
 - (void)dealloc;
@@ -130,33 +130,33 @@
 - (BOOL)isPerformingDeltaSync;
 - (id)lastDBErrorInfo;
 - (id)lastMessageReceived;
-- (unsigned int)lastSeenRemoteVersion;
-- (unsigned int)lastSequenceNumberForPeerID:(id)arg1;
+- (unsigned long long)lastSeenRemoteVersion;
+- (unsigned long long)lastSequenceNumberForPeerID:(id)arg1;
 - (id)lastSyncEndID;
 - (id)lastSyncError;
 - (BOOL)lastSyncFailed;
 - (BOOL)logChanges:(id)arg1 error:(id*)arg2;
-- (BOOL)logSyncCompletionToRemoteVersion:(unsigned int)arg1;
-- (unsigned int)nextSequenceNumber;
-- (BOOL)objectChanged:(id)arg1 sinceVersion:(unsigned int)arg2;
+- (BOOL)logSyncCompletionToRemoteVersion:(unsigned long long)arg1;
+- (unsigned long long)nextSequenceNumber;
+- (BOOL)objectChanged:(id)arg1 sinceVersion:(unsigned long long)arg2;
 - (id)overflowResyncTime;
 - (id)path;
 - (id)peerID;
 - (BOOL)reassignCurrentSyncID:(id)arg1;
 - (void)removeMessageIDFromIgnoreList:(id)arg1;
-- (void)resetSequenceNumber:(unsigned int)arg1;
+- (void)resetSequenceNumber:(unsigned long long)arg1;
 - (void)resetSequenceNumbersForPeer:(id)arg1;
 - (void)sendCompletedForSyncWithID:(id)arg1;
-- (BOOL)sequenceNumberIsDuplicate:(unsigned int)arg1 forPeer:(id)arg2;
+- (BOOL)sequenceNumberIsDuplicate:(unsigned long long)arg1 forPeer:(id)arg2;
 - (void)setCachedChangedSyncIDs:(id)arg1;
-- (void)setCachedChangedSyncIDsVersion:(unsigned int)arg1;
+- (void)setCachedChangedSyncIDsVersion:(unsigned long long)arg1;
 - (void)setCachedVersionStale:(BOOL)arg1;
 - (void)setCompletedSync:(BOOL)arg1;
 - (void)setFullSyncIDSOptions:(id)arg1;
 - (void)setFullSyncUserInfo:(id)arg1;
 - (void)setLastMessageReceived:(id)arg1;
-- (void)setLastSequenceNumber:(unsigned int)arg1 fromPeer:(id)arg2;
-- (BOOL)setLastSequenceNumber:(unsigned int)arg1 fromPeer:(id)arg2 error:(id*)arg3;
+- (void)setLastSequenceNumber:(unsigned long long)arg1 fromPeer:(id)arg2;
+- (BOOL)setLastSequenceNumber:(unsigned long long)arg1 fromPeer:(id)arg2 error:(id*)arg3;
 - (void)setOverflowResyncTime:(id)arg1;
 - (void)setPeerID:(id)arg1;
 - (void)setPerformingDeltaSync:(BOOL)arg1;

@@ -13,7 +13,7 @@
 @property (nonatomic, readonly) NSNumber *externalVersionIdentifier;
 @property (nonatomic, copy) NSDate *installDate;
 @property (nonatomic, readonly) int parentalControlsRank;
-@property (nonatomic, readonly) int storeItemIdentifier;
+@property (nonatomic, readonly) long long storeItemIdentifier;
 @property (nonatomic, copy) NSDate *timestamp;
 @property (nonatomic, readonly) NSDictionary *updateDictionary;
 @property (nonatomic) int updateState;
@@ -32,7 +32,7 @@
 - (void)setInstallDate:(id)arg1;
 - (void)setTimestamp:(id)arg1;
 - (void)setUpdateState:(int)arg1;
-- (int)storeItemIdentifier;
+- (long long)storeItemIdentifier;
 - (id)timestamp;
 - (id)updateDictionary;
 - (int)updateState;

@@ -4,22 +4,22 @@
 
 @interface _BRCDownloadInfo : _BRCTransferInfo {
     NSMutableDictionary * _resumeUnitCounts;
-    int  previousCompletedUnitCount;
-    int  previousTotalUnitCount;
+    long long  previousCompletedUnitCount;
+    long long  previousTotalUnitCount;
 }
 
-@property (nonatomic) int previousCompletedUnitCount;
-@property (nonatomic) int previousTotalUnitCount;
+@property (nonatomic) long long previousCompletedUnitCount;
+@property (nonatomic) long long previousTotalUnitCount;
 @property (nonatomic, readonly) NSMutableDictionary *resumeUnitCounts;
 
 - (void).cxx_destruct;
 - (void)copyProgressInfoToProgress:(id)arg1 options:(BOOL)arg2;
 - (id)init;
-- (int)previousCompletedUnitCount;
-- (int)previousTotalUnitCount;
+- (long long)previousCompletedUnitCount;
+- (long long)previousTotalUnitCount;
 - (id)resumeUnitCounts;
-- (void)setPreviousCompletedUnitCount:(int)arg1;
-- (void)setPreviousTotalUnitCount:(int)arg1;
+- (void)setPreviousCompletedUnitCount:(long long)arg1;
+- (void)setPreviousTotalUnitCount:(long long)arg1;
 - (void)updateLocalizedDescriptionWithOptions:(BOOL)arg1;
 
 @end

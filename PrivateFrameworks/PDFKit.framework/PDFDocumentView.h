@@ -22,7 +22,7 @@
 - (void)didRemovePage:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)didSwapPage:(id)arg1 atIndex:(unsigned int)arg2 forPage:(id)arg3 atIndex:(unsigned int)arg4;
 - (id)document;
-- (struct CGSize { double x1; double x2; })documentViewSize;
+- (struct CGSize { float x1; float x2; })documentViewSize;
 - (void)forceUpdateWithDuration:(double)arg1;
 - (void)forceWebKitMainThread:(bool)arg1;
 - (id)getPDFView;

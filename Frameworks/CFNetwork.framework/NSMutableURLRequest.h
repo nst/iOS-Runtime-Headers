@@ -32,7 +32,7 @@
 - (void)setBoundInterfaceIdentifier:(id)arg1;
 - (void)setCachePolicy:(unsigned int)arg1;
 - (void)setContentDispositionEncodingFallbackArray:(id)arg1;
-- (void)setExpectedWorkload:(unsigned int)arg1;
+- (void)setExpectedWorkload:(unsigned long long)arg1;
 - (void)setHTTPBody:(id)arg1;
 - (void)setHTTPBodyStream:(id)arg1;
 - (void)setHTTPContentType:(id)arg1;

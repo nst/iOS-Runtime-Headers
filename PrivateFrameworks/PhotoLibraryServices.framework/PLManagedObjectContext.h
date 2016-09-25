@@ -53,19 +53,19 @@
 + (void)_configureXPCPersistentStoreCoordinator:(id)arg1;
 + (void)_getStoreURL:(id*)arg1 options:(id*)arg2 enableNotifications:(BOOL)arg3;
 + (void)_getStoreURL:(id*)arg1 options:(id*)arg2 forFileURL:(id)arg3 enableNotifications:(BOOL)arg4;
-+ (unsigned int)_indexValueForPropertyNames:(id)arg1 entityName:(id)arg2 indexesByPropertyNamesByEntityNames:(id)arg3;
++ (unsigned long long)_indexValueForPropertyNames:(id)arg1 entityName:(id)arg2 indexesByPropertyNamesByEntityNames:(id)arg3;
 + (id)_indexesByAttributeNamesByEntityNames;
 + (id)_indexesByRelationshipNamesByEntityNames;
 + (BOOL)_isAssetLibraryFetchingAlbum:(id)arg1;
 + (BOOL)_openAndMigrateStoreWithURL:(id)arg1 options:(id)arg2 coordinator:(id)arg3 forceSourceModelVersion:(id)arg4;
-+ (id)_propertyNamesForIndexValues:(unsigned int)arg1 entity:(id)arg2 propertyNamesByIndexByEntityNames:(id)arg3;
++ (id)_propertyNamesForIndexValues:(unsigned long long)arg1 entity:(id)arg2 propertyNamesByIndexByEntityNames:(id)arg3;
 + (BOOL)_rebuildAndRetryPersistentStoreWithURL:(id)arg1 options:(id)arg2 coordinator:(id)arg3 forced:(BOOL)arg4;
 + (id)_relationshipNamesByIndexByEntityNames;
 + (BOOL)_shouldRequestModelMigratorCreateDatabaseOnRebuildAndRetry;
 + (BOOL)_shouldUseXPCPhotoLibraryStore;
 + (id)allContextsNotIdenticalTo:(void*)arg1;
 + (BOOL)assetsLibraryLoggingEnabled;
-+ (id)attributeNamesForIndexValues:(unsigned int)arg1 entity:(id)arg2;
++ (id)attributeNamesForIndexValues:(unsigned long long)arg1 entity:(id)arg2;
 + (BOOL)canMergeRemoteChanges;
 + (id)contextForDatabaseCreation:(const char *)arg1;
 + (id)contextForPhotoLibrary:(id)arg1 name:(const char *)arg2;
@@ -76,8 +76,8 @@
 + (void)handleUnknownMergeEvent;
 + (BOOL)hasAtLeastOneAsset;
 + (BOOL)hasConfiguredPhotoLibrary;
-+ (unsigned int)indexValueForAttributeNames:(id)arg1 entity:(id)arg2;
-+ (unsigned int)indexValueForRelationshipNames:(id)arg1 entity:(id)arg2;
++ (unsigned long long)indexValueForAttributeNames:(id)arg1 entity:(id)arg2;
++ (unsigned long long)indexValueForRelationshipNames:(id)arg1 entity:(id)arg2;
 + (id)managedObjectModel;
 + (id)managedObjectModelURL;
 + (void)mergeChangesFromRemoteContextSave:(id)arg1 intoAllContextsNotIdenticalTo:(id)arg2 completionHandler:(id /* block */)arg3;
@@ -85,7 +85,7 @@
 + (BOOL)moveOldStoreAside;
 + (BOOL)moveStoreFromURL:(id)arg1 toURL:(id)arg2 error:(id*)arg3;
 + (void)recordVersion:(int)arg1 forStore:(id)arg2 extraMetadata:(id)arg3;
-+ (id)relationshipNamesForIndexValues:(unsigned int)arg1 entity:(id)arg2;
++ (id)relationshipNamesForIndexValues:(unsigned long long)arg1 entity:(id)arg2;
 + (id)sharedPersistentStoreCoordinator;
 + (BOOL)storeIsOldEnough;
 

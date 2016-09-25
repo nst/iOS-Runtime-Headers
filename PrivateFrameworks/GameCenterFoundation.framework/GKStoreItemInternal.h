@@ -5,7 +5,7 @@
 @interface GKStoreItemInternal : GKInternalRepresentation {
     NSNumber * _adamID;
     NSString * _artistName;
-    double  _averageUserRating;
+    float  _averageUserRating;
     NSDate * _expirationDate;
     unsigned int  _numberOfUserRatings;
     BOOL  _owned;
@@ -17,7 +17,7 @@
 
 @property (nonatomic, retain) NSNumber *adamID;
 @property (nonatomic, retain) NSString *artistName;
-@property (nonatomic) double averageUserRating;
+@property (nonatomic) float averageUserRating;
 @property (nonatomic, retain) NSDate *expirationDate;
 @property (nonatomic) unsigned int numberOfUserRatings;
 @property (nonatomic) BOOL owned;

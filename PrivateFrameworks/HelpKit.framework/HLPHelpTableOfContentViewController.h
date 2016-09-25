@@ -12,7 +12,7 @@
     HLPHelpBookController * _helpBookController;
     HLPHelpSearchIndexController * _helpSearchIndexController;
     HLPHelpLocale * _locale;
-    double  _minNameLabelHeight;
+    float  _minNameLabelHeight;
     NSMutableArray * _openSections;
     UISearchController * _searchController;
     HLPHelpSearchResultTableViewController * _searchResultTableViewController;

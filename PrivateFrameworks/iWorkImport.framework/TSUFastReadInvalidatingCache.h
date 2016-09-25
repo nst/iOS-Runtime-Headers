@@ -6,7 +6,7 @@
     NSCondition * mCondition;
     id /* block */  mGenerator;
     BOOL  mIsGenerating;
-    int  mReaderCount;
+    long long  mReaderCount;
     BOOL  mReentrant;
     id  mToDispose;
     id  mValue;

@@ -25,36 +25,36 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (BOOL)_canRetryThrottleID:(int)arg1 zone:(id)arg2;
+- (BOOL)_canRetryThrottleID:(long long)arg1 zone:(id)arg2;
 - (void)_close;
-- (void)_computeStamps:(struct throttle_stamps { unsigned int x1; int x2; int x3; int x4; int x5; }*)arg1 throttleID:(int)arg2 zone:(id)arg3 throttle:(id)arg4 hasBeenTried:(BOOL)arg5;
-- (void)_deleteThrottleID:(int)arg1;
-- (void)_describe:(id)arg1 zone:(id)arg2 now:(int)arg3 context:(id)arg4;
+- (void)_computeStamps:(struct throttle_stamps { unsigned int x1; int x2; long long x3; long long x4; long long x5; }*)arg1 throttleID:(long long)arg2 zone:(id)arg3 throttle:(id)arg4 hasBeenTried:(BOOL)arg5;
+- (void)_deleteThrottleID:(long long)arg1;
+- (void)_describe:(id)arg1 zone:(id)arg2 now:(long long)arg3 context:(id)arg4;
 - (id)_initWithSession:(id)arg1 name:(id)arg2 tableName:(id)arg3;
-- (int)_updateStamps:(struct throttle_stamps { unsigned int x1; int x2; int x3; int x4; int x5; }*)arg1 throttle:(id)arg2 now:(int)arg3;
+- (long long)_updateStamps:(struct throttle_stamps { unsigned int x1; int x2; long long x3; long long x4; long long x5; }*)arg1 throttle:(id)arg2 now:(long long)arg3;
 - (void)cancel;
 - (void)close;
 - (BOOL)closed;
 - (void)deleteExpiredThrottles;
 - (void)deleteThrottlesForZone:(id)arg1;
-- (id)descriptionForThrottleID:(int)arg1 zone:(id)arg2 now:(int)arg3 context:(id)arg4;
-- (id)descriptionForZone:(id)arg1 now:(int)arg2 context:(id)arg3;
+- (id)descriptionForThrottleID:(long long)arg1 zone:(id)arg2 now:(long long)arg3 context:(id)arg4;
+- (id)descriptionForZone:(id)arg1 now:(long long)arg2 context:(id)arg3;
 - (BOOL)hasActiveWork;
 - (BOOL)hasWork;
 - (id)hasWorkGroup;
 - (BOOL)isCancelled;
 - (BOOL)isZoneIdle:(id)arg1;
 - (void)moveAppLibraryTransfers:(id)arg1 toAppLibrary:(id)arg2;
-- (void)resetBackoffForThrottleID:(int)arg1 zone:(id)arg2;
+- (void)resetBackoffForThrottleID:(long long)arg1 zone:(id)arg2;
 - (void)resume;
 - (void)schedule;
-- (void)scheduleDidFinishWithTimestamp:(int)arg1 nextScheduleTimestamp:(int)arg2;
+- (void)scheduleDidFinishWithTimestamp:(long long)arg1 nextScheduleTimestamp:(long long)arg2;
 - (void)setHasActiveWork:(BOOL)arg1;
 - (void)setHasWork:(BOOL)arg1;
 - (void)setHasWorkGroup:(id)arg1;
 - (void)signal;
-- (void)signalWithDeadline:(int)arg1;
+- (void)signalWithDeadline:(long long)arg1;
 - (void)suspend;
-- (void)updateThrottleID:(int)arg1 zone:(id)arg2 state:(int)arg3;
+- (void)updateThrottleID:(long long)arg1 zone:(id)arg2 state:(int)arg3;
 
 @end

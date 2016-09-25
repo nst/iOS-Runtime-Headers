@@ -3,7 +3,7 @@
  */
 
 @interface GEOPDPopularNearbyResult : PBCodable <NSCopying> {
-    struct GEOPDLitePlaceResult { unsigned int x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; } * _litePlaceResults;
+    struct GEOPDLitePlaceResult { unsigned long long x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; } * _litePlaceResults;
     unsigned int  _litePlaceResultsCount;
     unsigned int  _litePlaceResultsSpace;
     NSString * _sectionHeader;
@@ -11,12 +11,12 @@
 }
 
 @property (nonatomic, readonly) BOOL hasSectionHeader;
-@property (nonatomic, readonly) struct GEOPDLitePlaceResult { unsigned int x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*litePlaceResults;
+@property (nonatomic, readonly) struct GEOPDLitePlaceResult { unsigned long long x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*litePlaceResults;
 @property (nonatomic, readonly) unsigned int litePlaceResultsCount;
 @property (nonatomic, retain) NSString *sectionHeader;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
-- (void)addLitePlaceResult:(struct GEOPDLitePlaceResult { unsigned int x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; })arg1;
+- (void)addLitePlaceResult:(struct GEOPDLitePlaceResult { unsigned long long x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; })arg1;
 - (void)clearLitePlaceResults;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -26,13 +26,13 @@
 - (BOOL)hasSectionHeader;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
-- (struct GEOPDLitePlaceResult { unsigned int x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; })litePlaceResultAtIndex:(unsigned int)arg1;
-- (struct GEOPDLitePlaceResult { unsigned int x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*)litePlaceResults;
+- (struct GEOPDLitePlaceResult { unsigned long long x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; })litePlaceResultAtIndex:(unsigned int)arg1;
+- (struct GEOPDLitePlaceResult { unsigned long long x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*)litePlaceResults;
 - (unsigned int)litePlaceResultsCount;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (id)sectionHeader;
-- (void)setLitePlaceResults:(struct GEOPDLitePlaceResult { unsigned int x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*)arg1 count:(unsigned int)arg2;
+- (void)setLitePlaceResults:(struct GEOPDLitePlaceResult { unsigned long long x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*)arg1 count:(unsigned int)arg2;
 - (void)setSectionHeader:(id)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;

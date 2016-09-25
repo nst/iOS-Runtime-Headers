@@ -10,7 +10,7 @@
 - (UIInputViewSetNotificationInfo *)constructNotificationInfoForScrollWithMode:(unsigned int)arg1;
 - (BOOL)isChangingPlacement;
 - (UIInputViewSetPlacement *)placement;
-- (struct CGPoint { double x1; double x2; })positionConstraintConstant;
+- (struct CGPoint { float x1; float x2; })positionConstraintConstant;
 - (void)setInterfaceAutorotationDisabled:(BOOL)arg1;
 - (UIView *)view;
 

@@ -5,59 +5,59 @@
 @interface TSCH2DSageGeometryHelper : TSCHSageGeometryHelper {
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  mBottomAxisBounds;
-    double  mBottomAxisHeightChange;
+    float  mBottomAxisHeightChange;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  mBottomAxisLabelsBounds;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  mBottomLeftCategoryAxisTitleOverhang;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  mBottomLeftChartTitleOverhang;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  mBottomLeftValueAxisTitleOverhang;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  mBottomLeftValueAxisY2TitleOverhang;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  mBottomLegendBounds;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  mCategoryAxisTitleBounds;
     BOOL  mCategoryAxisTitleSizeValid;
@@ -65,12 +65,12 @@
     BOOL  mChartAxisSizeValid;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  mChartBodyBounds;
     BOOL  mChartExplodedSizeValid;
@@ -78,169 +78,169 @@
     BOOL  mChartLegendSizeValid;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  mChartTitleBounds;
     BOOL  mChartTitleSizeValid;
     BOOL  mChartValueElementsGeometryValid;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  mExplodedBodyShift;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  mExplodedBounds;
-    double  mHorizontalAxisOverhang;
+    float  mHorizontalAxisOverhang;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  mLeftAxisBounds;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  mLeftAxisLabelsBounds;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  mLeftLegendBounds;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  mOutsideLabelsChartTitleShift;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  mRightAxisBounds;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  mRightAxisLabelsBounds;
-    double  mRightAxisWidthChange;
+    float  mRightAxisWidthChange;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  mRightLegendBounds;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  mTopAxisBounds;
-    double  mTopAxisHeightChange;
+    float  mTopAxisHeightChange;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  mTopAxisLabelsBounds;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  mTopLegendBounds;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  mTopRightCategoryAxisTitleOverhang;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  mTopRightChartTitleOverhang;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  mTopRightValueAxisTitleOverhang;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  mTopRightValueAxisY2TitleOverhang;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  mValueAxisTitleBounds;
     BOOL  mValueAxisTitleSizeValid;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  mValueAxisY2TitleBounds;
     BOOL  mValueAxisY2TitleSizeValid;
-    double  mVerticalAxisOverhang;
+    float  mVerticalAxisOverhang;
 }
 
-+ (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })computeSageChartAreaBoundsForChartInfo:(id)arg1 geometryRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 returningContainingViewportSize:(id*)arg3;
++ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })computeSageChartAreaBoundsForChartInfo:(id)arg1 geometryRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 returningContainingViewportSize:(id*)arg3;
 
 - (float)_bottomAxisOuterWidth;
 - (float)_horizontalAxisLabelsHeight;
@@ -260,7 +260,7 @@
 - (void)calculateValueAxisTitleSize;
 - (void)calculateValueAxisY2TitleSize;
 - (float)chartTitlePadding;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })computeSageLayoutCBBForSpiceDoc:(BOOL)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })computeSageLayoutCBBForSpiceDoc:(BOOL)arg1;
 - (float)distanceFromXAxisUsingParagraphStyle:(id)arg1;
 - (float)distanceFromYAxisUsingParagraphStyle:(id)arg1;
 - (float)fontHeight:(id)arg1;
@@ -270,7 +270,7 @@
 - (BOOL)isScatter;
 - (BOOL)isVertical;
 - (BOOL)leftAxisLabelsVisible;
-- (struct CGSize { double x1; double x2; })measureText:(id)arg1 withParagraphStyle:(id)arg2;
+- (struct CGSize { float x1; float x2; })measureText:(id)arg1 withParagraphStyle:(id)arg2;
 - (BOOL)p_labelsVisible:(id)arg1;
 - (id)p_model;
 - (float)p_widthFromTicksAndStrokeForAxis:(id)arg1;

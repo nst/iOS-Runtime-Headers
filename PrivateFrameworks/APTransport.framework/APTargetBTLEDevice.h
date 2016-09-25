@@ -5,7 +5,7 @@
 @interface APTargetBTLEDevice : NSObject {
     NSUUID * _deviceID;
     BOOL  _isSoloCapable;
-    unsigned int  _lastBeaconTicks;
+    unsigned long long  _lastBeaconTicks;
     struct { 
         unsigned char flags; 
         unsigned char config; 
@@ -17,7 +17,7 @@
 
 @property (nonatomic, retain) NSUUID *deviceID;
 @property (nonatomic) BOOL isSoloCapable;
-@property (nonatomic) unsigned int lastBeaconTicks;
+@property (nonatomic) unsigned long long lastBeaconTicks;
 @property (nonatomic) struct { unsigned char x1; unsigned char x2; unsigned char x3[4]; } lastData;
 @property (nonatomic) int lastRSSI;
 @property (nonatomic) BOOL supportsMediaControlPort;
@@ -25,12 +25,12 @@
 - (void)dealloc;
 - (id)deviceID;
 - (BOOL)isSoloCapable;
-- (unsigned int)lastBeaconTicks;
+- (unsigned long long)lastBeaconTicks;
 - (struct { unsigned char x1; unsigned char x2; unsigned char x3[4]; })lastData;
 - (int)lastRSSI;
 - (void)setDeviceID:(id)arg1;
 - (void)setIsSoloCapable:(BOOL)arg1;
-- (void)setLastBeaconTicks:(unsigned int)arg1;
+- (void)setLastBeaconTicks:(unsigned long long)arg1;
 - (void)setLastData:(struct { unsigned char x1; unsigned char x2; unsigned char x3[4]; })arg1;
 - (void)setLastRSSI:(int)arg1;
 - (void)setSupportsMediaControlPort:(BOOL)arg1;

@@ -15,7 +15,7 @@
 @property (nonatomic, copy) NSArray *livePhotoMovieMetadata;
 @property (nonatomic, copy) NSDictionary *previewPhotoFormat;
 @property (readonly) unsigned long rawPhotoPixelFormatType;
-@property (readonly) int uniqueID;
+@property (readonly) long long uniqueID;
 
 // Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
 
@@ -24,11 +24,11 @@
 + (id)photoSettingsWithFormat:(id)arg1;
 + (id)photoSettingsWithRawPixelFormatType:(unsigned long)arg1;
 + (id)photoSettingsWithRawPixelFormatType:(unsigned long)arg1 processedFormat:(id)arg2;
-+ (int)uniqueID;
++ (long long)uniqueID;
 
 - (int)HDRMode;
 - (id)_description;
-- (id)_initWithFormat:(id)arg1 rawPixelFormatType:(unsigned long)arg2 uniqueID:(int)arg3;
+- (id)_initWithFormat:(id)arg1 rawPixelFormatType:(unsigned long)arg2 uniqueID:(long long)arg3;
 - (id)_sanitizedLivePhotoMovieMetadataForArray:(id)arg1 exceptionReason:(id*)arg2;
 - (id)availablePreviewPhotoPixelFormatTypes;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -50,7 +50,7 @@
 - (id)livePhotoMovieFileURLForOriginalPhoto;
 - (id)livePhotoMovieMetadata;
 - (id)livePhotoMovieMetadataForOriginalPhoto;
-- (struct CGSize { double x1; double x2; })previewCGSize;
+- (struct CGSize { float x1; float x2; })previewCGSize;
 - (unsigned long)previewFormatFourCC;
 - (id)previewPhotoFormat;
 - (unsigned long)rawPhotoPixelFormatType;
@@ -71,7 +71,7 @@
 - (void)setSquareCropEnabled:(BOOL)arg1;
 - (void)setTurboModeEnabled:(BOOL)arg1;
 - (unsigned long)shutterSound;
-- (int)uniqueID;
+- (long long)uniqueID;
 
 // Image: /System/Library/PrivateFrameworks/CameraUI.framework/CameraUI
 

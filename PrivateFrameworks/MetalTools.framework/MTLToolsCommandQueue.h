@@ -7,8 +7,8 @@
 }
 
 @property (getter=isStatEnabled, nonatomic) BOOL StatEnabled;
-@property (getter=getStatLocations, nonatomic) unsigned int StatLocations;
-@property (getter=getStatOptions, nonatomic) unsigned int StatOptions;
+@property (getter=getStatLocations, nonatomic) unsigned long long StatLocations;
+@property (getter=getStatOptions, nonatomic) unsigned long long StatOptions;
 @property int backgroundTrackingPID;
 @property (nonatomic, readonly) MTLToolsPointerArray *commandBuffers;
 @property (readonly, copy) NSString *debugDescription;
@@ -38,8 +38,8 @@
 - (BOOL)executionEnabled;
 - (void)finish;
 - (id)getRequestedCounters;
-- (unsigned int)getStatLocations;
-- (unsigned int)getStatOptions;
+- (unsigned long long)getStatLocations;
+- (unsigned long long)getStatOptions;
 - (id)initWithBaseObject:(id)arg1 parent:(id)arg2;
 - (void)insertDebugCaptureBoundary;
 - (BOOL)isOpenGLQueue;
@@ -63,8 +63,8 @@
 - (void)setProfilingEnabled:(BOOL)arg1;
 - (void)setSkipRender:(BOOL)arg1;
 - (void)setStatEnabled:(BOOL)arg1;
-- (void)setStatLocations:(unsigned int)arg1;
-- (void)setStatOptions:(unsigned int)arg1;
+- (void)setStatLocations:(unsigned long long)arg1;
+- (void)setStatOptions:(unsigned long long)arg1;
 - (void)setSubmissionQueue:(id)arg1;
 - (BOOL)skipRender;
 - (id)subdivideCounterList:(id)arg1;

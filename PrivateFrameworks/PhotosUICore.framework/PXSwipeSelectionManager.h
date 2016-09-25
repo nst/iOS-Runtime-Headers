@@ -59,9 +59,9 @@
 - (void)_handleSwipeSelectionGesture:(id)arg1;
 - (void)_invalidateSelectedIndexPaths;
 - (BOOL)_isSelecting;
-- (struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })_itemIndexPathAtLocation:(struct CGPoint { double x1; double x2; })arg1;
-- (struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })_itemIndexPathClosestAboveLocation:(struct CGPoint { double x1; double x2; })arg1;
-- (struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })_itemIndexPathClosestLeadingLocation:(struct CGPoint { double x1; double x2; })arg1;
+- (struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })_itemIndexPathAtLocation:(struct CGPoint { float x1; float x2; })arg1;
+- (struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })_itemIndexPathClosestAboveLocation:(struct CGPoint { float x1; float x2; })arg1;
+- (struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })_itemIndexPathClosestLeadingLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (id)_pausingChangesToken;
 - (id)_selectedIndexPathsBeforeSwipe;
 - (void)_setCurrentDataSourceIdentifier:(unsigned int)arg1;

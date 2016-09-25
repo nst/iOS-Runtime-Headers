@@ -19,6 +19,6 @@
 - (BOOL)hasEntryWithName:(id)arg1;
 - (id)initWithPath:(id)arg1;
 - (id)inputStreamForEntry:(id)arg1;
-- (int)lengthOfEntry:(id)arg1;
+- (long long)lengthOfEntry:(id)arg1;
 
 @end

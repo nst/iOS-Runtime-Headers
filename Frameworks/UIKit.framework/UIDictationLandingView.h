@@ -4,8 +4,8 @@
 
 @interface UIDictationLandingView : UIView <_UIBasicAnimationFactory> {
     NSOperation * _afterShrinkCompletionInvocation;
-    double  _angle;
-    double  _diameter;
+    float  _angle;
+    float  _diameter;
     BOOL  _didHaveText;
     CADisplayLink * _displayLink;
     id  _placeholder;
@@ -34,12 +34,12 @@
 - (void)clearRotation;
 - (void)dealloc;
 - (BOOL)delegateWasEmpty;
-- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)errorShakeDidFinish;
 - (float)fadeOutDuration;
 - (BOOL)hasActivePlaceholder;
 - (void)hideCursor;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)rotateBy:(float)arg1;
 - (void)setWillInsertResult:(BOOL)arg1;
 - (void)showCursor;

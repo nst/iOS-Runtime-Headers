@@ -10,7 +10,7 @@
     BOOL  _didPrepareToEncode;
     NSObject<OS_dispatch_queue> * _emitterQueue;
     BOOL  _flushRequestReceived;
-    double  _maxVideoFrameRate;
+    float  _maxVideoFrameRate;
     BOOL  _nextFrameEncodeAsKeyFrame;
     BOOL  _shouldAttachDebugSEI;
     BOOL  _sourceIsHDResolution;
@@ -24,7 +24,7 @@
 - (void)_signalBackPressureSemaphore;
 - (id)backPressureSemaphore;
 - (id)compressionSettings;
-- (void)configurationWithID:(int)arg1 updatedFormat:(id)arg2 didBecomeLiveForInput:(id)arg3;
+- (void)configurationWithID:(long long)arg1 updatedFormat:(id)arg2 didBecomeLiveForInput:(id)arg3;
 - (void)dealloc;
 - (void)didReachEndOfDataForInput:(id)arg1;
 - (void)didSelectFormat:(id)arg1 forInput:(id)arg2;

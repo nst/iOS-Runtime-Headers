@@ -3,18 +3,18 @@
  */
 
 @interface NTKRing : NSObject {
-    double  _backgroundRingAlpha;
-    double  _fillFraction;
-    double  _radius;
+    float  _backgroundRingAlpha;
+    float  _fillFraction;
+    float  _radius;
     int  _ringStyle;
-    double  _strokeWidth;
+    float  _strokeWidth;
 }
 
-@property double backgroundRingAlpha;
-@property double fillFraction;
-@property double radius;
+@property float backgroundRingAlpha;
+@property float fillFraction;
+@property float radius;
 @property int ringStyle;
-@property double strokeWidth;
+@property float strokeWidth;
 
 + (id)_fillFractionStringForFillFraction:(float)arg1 withFormatter:(id)arg2;
 + (id)fillFractionStringForFillFraction:(float)arg1;

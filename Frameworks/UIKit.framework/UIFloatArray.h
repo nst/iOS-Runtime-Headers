@@ -10,12 +10,12 @@
         unsigned int unused : 30; 
     }  _floatArrayFlags;
     int  _gapCount;
-    double  _gapValue;
+    float  _gapValue;
     int * _gaps;
-    double  _minValue;
+    float  _minValue;
     union { 
-        double singleton; 
-        double *array; 
+        float singleton; 
+        float *array; 
     }  _values;
 }
 
@@ -32,8 +32,8 @@
 - (struct { int x1; int x2; int x3; int x4; BOOL x5; BOOL x6; })indexesFromOffset:(float)arg1 toOffset:(float)arg2;
 - (id)init;
 - (float)minValue;
-- (struct { double x1; double x2; })offsetsForGapIndex:(int)arg1;
-- (struct { double x1; double x2; })offsetsForIndex:(int)arg1;
+- (struct { float x1; float x2; })offsetsForGapIndex:(int)arg1;
+- (struct { float x1; float x2; })offsetsForIndex:(int)arg1;
 - (BOOL)refreshWithDataProvider:(id)arg1;
 - (BOOL)refreshWithDataProvider:(id)arg1 singleValue:(float)arg2;
 - (float)singleValue;

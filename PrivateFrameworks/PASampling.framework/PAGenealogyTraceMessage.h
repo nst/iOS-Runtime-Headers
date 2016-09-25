@@ -8,7 +8,7 @@
     void * _buffer;
     unsigned long  _bufferLength;
     NSString * _message;
-    unsigned int  _traceId;
+    unsigned long long  _traceId;
 }
 
 @property (readonly) unsigned int binaryOffset;
@@ -27,8 +27,8 @@
 - (unsigned int)binaryOffset;
 - (id)binaryUuid;
 - (void)dealloc;
-- (id)initWithId:(unsigned int)arg1 andOffset:(unsigned int)arg2 intoBinaryWithUUID:(id)arg3 withBuffer:(const void*)arg4 ofLength:(unsigned long)arg5 atMachTime:(double)arg6 withActivityId:(unsigned int)arg7;
-- (id)initWithSerializedGenealogyTraceMessage:(const struct { unsigned int x1; double x2; unsigned int x3; unsigned int x4; int x5; unsigned int x6; unsigned int x7; }*)arg1;
+- (id)initWithId:(unsigned long long)arg1 andOffset:(unsigned int)arg2 intoBinaryWithUUID:(id)arg3 withBuffer:(const void*)arg4 ofLength:(unsigned long)arg5 atMachTime:(double)arg6 withActivityId:(unsigned long long)arg7;
+- (id)initWithSerializedGenealogyTraceMessage:(const struct { unsigned long long x1; double x2; unsigned long long x3; unsigned long long x4; long long x5; unsigned int x6; unsigned long long x7; }*)arg1;
 - (id)message;
 - (void)populateReferencesUsingBufferPosition:(const void*)arg1 andDeserializationDictionary:(id)arg2 andDataBufferDictionary:(id)arg3;
 - (unsigned long)sizeInBytesForSerializedVersion;

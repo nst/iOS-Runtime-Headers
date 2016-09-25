@@ -3,30 +3,30 @@
  */
 
 @interface PTPDataPacket : NSObject {
-    int  _bufferSize;
-    int  _bytesTransferred;
+    long long  _bufferSize;
+    long long  _bytesTransferred;
     id  _data;
     int  _fd;
     NSString * _filepath;
-    int  _offsetInBuffer;
+    long long  _offsetInBuffer;
     unsigned short  _operationCode;
     struct _PTPRange { 
-        unsigned int location; 
-        unsigned int length; 
+        unsigned long long location; 
+        unsigned long long length; 
     }  _range;
     unsigned long  _transactionID;
 }
 
-- (int)bufferSize;
-- (int)bytesTransferred;
+- (long long)bufferSize;
+- (long long)bytesTransferred;
 - (id)contentForTCP;
 - (id)contentForUSB;
 - (id)contentForUSBUsingBuffer:(void*)arg1 capacity:(unsigned long)arg2;
-- (int)copyDataToWrappedBytes:(id)arg1 forTransport:(unsigned short)arg2 fromOffset:(unsigned int)arg3;
-- (int)copyFromBuffer:(void*)arg1 numBytes:(int)arg2;
-- (int)copyHeaderToWrappedBytes:(id)arg1 forTransport:(unsigned short)arg2;
-- (int)copyToBuffer:(void*)arg1 numBytes:(int)arg2;
-- (int)copyToWrappedBytes:(id)arg1 forTransport:(unsigned short)arg2;
+- (long long)copyDataToWrappedBytes:(id)arg1 forTransport:(unsigned short)arg2 fromOffset:(unsigned long long)arg3;
+- (long long)copyFromBuffer:(void*)arg1 numBytes:(long long)arg2;
+- (long long)copyHeaderToWrappedBytes:(id)arg1 forTransport:(unsigned short)arg2;
+- (long long)copyToBuffer:(void*)arg1 numBytes:(long long)arg2;
+- (long long)copyToWrappedBytes:(id)arg1 forTransport:(unsigned short)arg2;
 - (id)data;
 - (void)dealloc;
 - (id)description;
@@ -35,13 +35,13 @@
 - (id)initWithOperationCode:(unsigned short)arg1 transactionID:(unsigned long)arg2 andFilepath:(id)arg3;
 - (id)initWithTCPBuffer:(void*)arg1;
 - (id)initWithUSBBuffer:(void*)arg1;
-- (int)offsetInBuffer;
+- (long long)offsetInBuffer;
 - (unsigned short)operationCode;
-- (struct _PTPRange { unsigned int x1; unsigned int x2; })range;
-- (void)setBytesTransferred:(int)arg1;
+- (struct _PTPRange { unsigned long long x1; unsigned long long x2; })range;
+- (void)setBytesTransferred:(long long)arg1;
 - (void)setData:(id)arg1;
 - (void)setOperationCode:(unsigned short)arg1;
-- (int)setRange:(struct _PTPRange { unsigned int x1; unsigned int x2; })arg1;
+- (int)setRange:(struct _PTPRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)setTransactionID:(unsigned long)arg1;
 - (unsigned long)transactionID;
 

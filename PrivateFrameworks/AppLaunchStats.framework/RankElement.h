@@ -4,15 +4,15 @@
 
 @interface RankElement : NSObject {
     double  score;
-    unsigned int  timeIndex;
+    unsigned long long  timeIndex;
 }
 
 @property (nonatomic) double score;
-@property (nonatomic) unsigned int timeIndex;
+@property (nonatomic) unsigned long long timeIndex;
 
 - (double)score;
 - (void)setScore:(double)arg1;
-- (void)setTimeIndex:(unsigned int)arg1;
-- (unsigned int)timeIndex;
+- (void)setTimeIndex:(unsigned long long)arg1;
+- (unsigned long long)timeIndex;
 
 @end

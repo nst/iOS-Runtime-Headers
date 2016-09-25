@@ -13,7 +13,7 @@
     NSString * _caption;
     NSString * _collectionIdentifier;
     NSString * _collectionName;
-    int  _customRenderedValue;
+    long long  _customRenderedValue;
     int  _duration;
     NSString * _extendedDescription;
     NSString * _facesAdjustmentsFingerprint;
@@ -32,9 +32,9 @@
     unsigned int  _originalChoice;
     NSArray * _people;
     CPLPlaceAnnotation * _placeAnnotation;
-    int  _playCount;
+    long long  _playCount;
     NSArray * _resources;
-    int  _shareCount;
+    long long  _shareCount;
     NSString * _timeZoneName;
     NSNumber * _timeZoneOffset;
     int  _videoComplementDurationTimescale;
@@ -42,7 +42,7 @@
     int  _videoComplementImageDisplayTimescale;
     int  _videoComplementImageDisplayValue;
     unsigned int  _videoComplementVisibilityState;
-    int  _viewCount;
+    long long  _viewCount;
 }
 
 @property (nonatomic, copy) NSDate *addedDate;
@@ -55,7 +55,7 @@
 @property (nonatomic, copy) NSString *caption;
 @property (nonatomic, copy) NSString *collectionIdentifier;
 @property (nonatomic, copy) NSString *collectionName;
-@property (nonatomic) int customRenderedValue;
+@property (nonatomic) long long customRenderedValue;
 @property (nonatomic) int duration;
 @property (nonatomic, copy) NSString *extendedDescription;
 @property (nonatomic, copy) CPLFaceAnalysisReference *faces;
@@ -75,9 +75,9 @@
 @property (nonatomic) unsigned int originalChoice;
 @property (nonatomic, copy) NSArray *people;
 @property (nonatomic, retain) CPLPlaceAnnotation *placeAnnotation;
-@property (nonatomic) int playCount;
+@property (nonatomic) long long playCount;
 @property (nonatomic, copy) NSArray *resources;
-@property (nonatomic) int shareCount;
+@property (nonatomic) long long shareCount;
 @property (nonatomic, copy) NSString *timeZoneName;
 @property (nonatomic, copy) NSNumber *timeZoneOffset;
 @property (nonatomic) int videoComplementDurationTimescale;
@@ -85,7 +85,7 @@
 @property (nonatomic) int videoComplementImageDisplayTimescale;
 @property (nonatomic) int videoComplementImageDisplayValue;
 @property (nonatomic) unsigned int videoComplementVisibilityState;
-@property (nonatomic) int viewCount;
+@property (nonatomic) long long viewCount;
 
 + (id /* block */)copyPropertyBlockForDirection:(unsigned int)arg1;
 + (BOOL)cplShouldIgnorePropertyForCoding:(id)arg1;
@@ -110,7 +110,7 @@
 - (id)collectionIdentifier;
 - (id)collectionName;
 - (id)compactedChangeWithRelatedChanges:(id)arg1 isOnlyChange:(BOOL)arg2 fullRecord:(id)arg3 usingClientCache:(id)arg4;
-- (int)customRenderedValue;
+- (long long)customRenderedValue;
 - (int)dequeueOrder;
 - (int)duration;
 - (id)extendedDescription;
@@ -134,7 +134,7 @@
 - (unsigned int)originalChoice;
 - (id)people;
 - (id)placeAnnotation;
-- (int)playCount;
+- (long long)playCount;
 - (void)prepareForStorage;
 - (id)propertiesDescription;
 - (id)propertiesForChangeType:(unsigned int)arg1;
@@ -151,7 +151,7 @@
 - (void)setCaption:(id)arg1;
 - (void)setCollectionIdentifier:(id)arg1;
 - (void)setCollectionName:(id)arg1;
-- (void)setCustomRenderedValue:(int)arg1;
+- (void)setCustomRenderedValue:(long long)arg1;
 - (void)setDuration:(int)arg1;
 - (void)setExtendedDescription:(id)arg1;
 - (void)setFaces:(id)arg1;
@@ -171,10 +171,10 @@
 - (void)setOriginalChoice:(unsigned int)arg1;
 - (void)setPeople:(id)arg1;
 - (void)setPlaceAnnotation:(id)arg1;
-- (void)setPlayCount:(int)arg1;
+- (void)setPlayCount:(long long)arg1;
 - (void)setRelatedIdentifier:(id)arg1;
 - (void)setResources:(id)arg1;
-- (void)setShareCount:(int)arg1;
+- (void)setShareCount:(long long)arg1;
 - (void)setTimeZoneName:(id)arg1;
 - (void)setTimeZoneOffset:(id)arg1;
 - (void)setVideoComplementDurationTimescale:(int)arg1;
@@ -182,8 +182,8 @@
 - (void)setVideoComplementImageDisplayTimescale:(int)arg1;
 - (void)setVideoComplementImageDisplayValue:(int)arg1;
 - (void)setVideoComplementVisibilityState:(unsigned int)arg1;
-- (void)setViewCount:(int)arg1;
-- (int)shareCount;
+- (void)setViewCount:(long long)arg1;
+- (long long)shareCount;
 - (BOOL)supportsDeletion;
 - (BOOL)supportsResources;
 - (id)timeZoneName;
@@ -197,6 +197,6 @@
 - (int)videoComplementImageDisplayTimescale;
 - (int)videoComplementImageDisplayValue;
 - (unsigned int)videoComplementVisibilityState;
-- (int)viewCount;
+- (long long)viewCount;
 
 @end

@@ -20,9 +20,9 @@
 @property (copy) id /* block */ responseBlock;
 
 - (void).cxx_destruct;
-- (id)_contentKeyContextForStreamingKeyID:(int)arg1 streamingKeyDictionaries:(id)arg2 error:(id*)arg3;
+- (id)_contentKeyContextForStreamingKeyID:(long long)arg1 streamingKeyDictionaries:(id)arg2 error:(id*)arg3;
 - (void)_sendResponseBlockWithError:(id)arg1;
-- (id)_streamingKeyDictionaryForID:(int)arg1 URI:(id)arg2 serverPlaybackContextData:(id)arg3;
+- (id)_streamingKeyDictionaryForID:(long long)arg1 URI:(id)arg2 serverPlaybackContextData:(id)arg3;
 - (id)_streamingRequestDictionaryWithStreamingKeyDictionaries:(id)arg1;
 - (id)certificateURL;
 - (id)init;

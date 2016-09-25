@@ -3,17 +3,17 @@
  */
 
 @interface SFUZipOutputEntry : NSObject {
-    unsigned int  compressedDataOffset;
-    unsigned int  compressedSize;
+    unsigned long long  compressedDataOffset;
+    unsigned long long  compressedSize;
     unsigned int  crc;
     BOOL  is64Bit;
     BOOL  isCompressed;
     BOOL  isEncrypted;
     BOOL  isWrittenDirectlyToFile;
     NSString * name;
-    unsigned int  offset;
+    unsigned long long  offset;
     unsigned int  time;
-    unsigned int  uncompressedSize;
+    unsigned long long  uncompressedSize;
     unsigned long  utf8NameLength;
 }
 

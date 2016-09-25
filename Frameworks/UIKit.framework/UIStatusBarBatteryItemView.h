@@ -20,7 +20,7 @@
 
 - (void).cxx_destruct;
 - (id)_accessoryImage;
-- (struct CGSize { double x1; double x2; })_batteryOffsetWithBackground:(id)arg1;
+- (struct CGSize { float x1; float x2; })_batteryOffsetWithBackground:(id)arg1;
 - (id)_contentsImage;
 - (BOOL)_needsAccessoryImage;
 - (void)_updateAccessoryImage;

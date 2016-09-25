@@ -21,7 +21,7 @@
     NSObject<OS_dispatch_queue> * _renderQueue;
     PHLivePhoto * _renderedLivePhoto;
     BOOL  _rendering;
-    double  _renderingProgress;
+    float  _renderingProgress;
 }
 
 @property (setter=_setLastRenderedLivePhoto:, nonatomic, retain) PHLivePhoto *_lastRenderedLivePhoto;
@@ -37,7 +37,7 @@
 @property (nonatomic, readonly) PLPhotoEditRenderer *photoEditRenderer;
 @property (setter=_setRenderedLivePhoto:, nonatomic, retain) PHLivePhoto *renderedLivePhoto;
 @property (getter=isRendering, setter=_setRendering:, nonatomic) BOOL rendering;
-@property (setter=_setRenderingProgress:, nonatomic) double renderingProgress;
+@property (setter=_setRenderingProgress:, nonatomic) float renderingProgress;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;

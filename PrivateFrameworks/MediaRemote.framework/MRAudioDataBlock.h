@@ -4,7 +4,7 @@
 
 @interface MRAudioDataBlock : NSObject <NSMutableCopying> {
     MRAudioBuffer * _buffer;
-    double  _gain;
+    float  _gain;
     struct { 
         double timestamp; 
         double sampleRate; 
@@ -13,7 +13,7 @@
 
 @property (nonatomic, readonly) MRAudioBuffer *buffer;
 @property (nonatomic, readonly) NSData *data;
-@property (nonatomic, readonly) double gain;
+@property (nonatomic, readonly) float gain;
 @property (nonatomic, readonly) _MRAudioDataBlockProtobuf *protobuf;
 @property (nonatomic, readonly) struct { double x1; double x2; } time;
 

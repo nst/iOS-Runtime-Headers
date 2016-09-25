@@ -20,7 +20,7 @@
     BOOL  _isUserSubscribedToFeed;
     NSString * _language;
     NSMutableArray * _namedEntities;
-    int  _personalizationTreatmentId;
+    long long  _personalizationTreatmentId;
     int  _publisherArticleVersion;
     NSMutableArray * _recommendedArticleIds;
     NSString * _referencedArticleId;
@@ -55,7 +55,7 @@
 @property (nonatomic) BOOL isUserSubscribedToFeed;
 @property (nonatomic, retain) NSString *language;
 @property (nonatomic, retain) NSMutableArray *namedEntities;
-@property (nonatomic) int personalizationTreatmentId;
+@property (nonatomic) long long personalizationTreatmentId;
 @property (nonatomic) int publisherArticleVersion;
 @property (nonatomic, retain) NSMutableArray *recommendedArticleIds;
 @property (nonatomic, retain) NSString *referencedArticleId;
@@ -110,7 +110,7 @@
 - (id)namedEntities;
 - (id)namedEntitiesAtIndex:(unsigned int)arg1;
 - (unsigned int)namedEntitiesCount;
-- (int)personalizationTreatmentId;
+- (long long)personalizationTreatmentId;
 - (int)publisherArticleVersion;
 - (BOOL)readFrom:(id)arg1;
 - (id)recommendedArticleIdAtIndex:(unsigned int)arg1;
@@ -136,7 +136,7 @@
 - (void)setIsUserSubscribedToFeed:(BOOL)arg1;
 - (void)setLanguage:(id)arg1;
 - (void)setNamedEntities:(id)arg1;
-- (void)setPersonalizationTreatmentId:(int)arg1;
+- (void)setPersonalizationTreatmentId:(long long)arg1;
 - (void)setPublisherArticleVersion:(int)arg1;
 - (void)setRecommendedArticleIds:(id)arg1;
 - (void)setReferencedArticleId:(id)arg1;

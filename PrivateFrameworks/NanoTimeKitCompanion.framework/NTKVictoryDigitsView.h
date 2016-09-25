@@ -10,13 +10,13 @@
     BOOL  _lastDigitIs7;
     _AdjustableLabel * _mainLabel;
     _AdjustableLabel * _outlineBackgroundLabel;
-    double  _scale;
+    float  _scale;
 }
 
 @property (nonatomic) int appearance;
 @property (nonatomic, copy) UIColor *color;
 @property (nonatomic, copy) NSString *digitText;
-@property (nonatomic) double scale;
+@property (nonatomic) float scale;
 
 + (id)_cachedFontForAppearance:(int)arg1;
 
@@ -35,6 +35,6 @@
 - (void)setDigitText:(id)arg1;
 - (void)setDimmingFactor:(float)arg1 isUpper:(BOOL)arg2;
 - (void)setScale:(float)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 
 @end

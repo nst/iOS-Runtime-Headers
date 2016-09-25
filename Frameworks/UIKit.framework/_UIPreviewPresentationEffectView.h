@@ -7,29 +7,29 @@
     BOOL  _shouldRasterizeForTransition;
 }
 
-@property (nonatomic) double blurRadius;
-@property (nonatomic) double cornerRadius;
-@property (nonatomic) double shadowAlpha;
+@property (nonatomic) float blurRadius;
+@property (nonatomic) float cornerRadius;
+@property (nonatomic) float shadowAlpha;
 @property (nonatomic, copy) UIColor *shadowColor;
-@property (nonatomic) struct CGSize { double x1; double x2; } shadowOffset;
-@property (nonatomic) double shadowRadius;
+@property (nonatomic) struct CGSize { float x1; float x2; } shadowOffset;
+@property (nonatomic) float shadowRadius;
 @property (nonatomic) BOOL shouldRasterizeForTransition;
 
 - (void).cxx_destruct;
 - (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;
 - (float)blurRadius;
 - (float)cornerRadius;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setBlurRadius:(float)arg1;
 - (void)setCornerRadius:(float)arg1;
 - (void)setShadowAlpha:(float)arg1;
 - (void)setShadowColor:(id)arg1;
-- (void)setShadowOffset:(struct CGSize { double x1; double x2; })arg1;
+- (void)setShadowOffset:(struct CGSize { float x1; float x2; })arg1;
 - (void)setShadowRadius:(float)arg1;
 - (void)setShouldRasterizeForTransition:(BOOL)arg1;
 - (float)shadowAlpha;
 - (id)shadowColor;
-- (struct CGSize { double x1; double x2; })shadowOffset;
+- (struct CGSize { float x1; float x2; })shadowOffset;
 - (float)shadowRadius;
 - (BOOL)shouldRasterizeForTransition;
 

@@ -16,7 +16,7 @@
     CLLocation * _lastLocation;
     double  _locationAccuracy;
     VKAnnotationMarker * _marker;
-    double  _maxRadiusToShowAccuracyRing;
+    float  _maxRadiusToShowAccuracyRing;
     double  _presentationCourse;
     CALayer * _pulseLayer;
     BOOL  _shouldDisplayHeading;
@@ -39,8 +39,8 @@
 @property (nonatomic) int headingIndicatorStyle;
 @property (nonatomic, readonly) CLLocation *lastLocation;
 @property (nonatomic, readonly) double locationAccuracy;
-@property (nonatomic) double maxRadiusToShowAccuracyRing;
-@property (nonatomic) double opacity;
+@property (nonatomic) float maxRadiusToShowAccuracyRing;
+@property (nonatomic) float opacity;
 @property (nonatomic) double presentationCourse;
 @property (nonatomic) BOOL shouldDisplayHeading;
 @property (nonatomic) BOOL shouldDisplayInaccurateHeading;
@@ -58,11 +58,11 @@
 - (id)_animationToSynchronizePulse:(id*)arg1;
 - (id)_baseLayer;
 - (int)_enforcedHeadingIndicatorStyle;
-- (id)_headingImageForAccuracy:(double)arg1 anchorPoint:(struct CGPoint { double x1; double x2; }*)arg2;
+- (id)_headingImageForAccuracy:(double)arg1 anchorPoint:(struct CGPoint { float x1; float x2; }*)arg2;
 - (BOOL)_hideLargeAccuracyRing;
 - (BOOL)_isLocationStale:(id)arg1;
 - (id)_layerToMatchAccuracyRing;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_mapkit_visibleRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_mapkit_visibleRect;
 - (void)_pausePulse;
 - (id)_pulseAnimation;
 - (id)_pulseLayer;

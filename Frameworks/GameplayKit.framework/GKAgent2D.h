@@ -5,7 +5,7 @@
 @interface GKAgent2D : GKAgent <NSCoding>
 
 @property (nonatomic) void position;
-@property (nonatomic) double rotation;
+@property (nonatomic) float rotation;
 @property (nonatomic, readonly) void velocity;
 
 - (void)applyBrakingForce:(float)arg1 deltaTime:(double)arg2;
@@ -14,13 +14,13 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (void)position;
-- (struct float2 { double x1; double x2; })position_;
+- (struct float2 { float x1; float x2; })position_;
 - (float)rotation;
 - (void)setPosition;
-- (void)setPosition_:(struct float2 { double x1; double x2; })arg1;
+- (void)setPosition_:(struct float2 { float x1; float x2; })arg1;
 - (void)setRotation:(float)arg1;
 - (void)updateWithDeltaTime:(double)arg1;
 - (void)velocity;
-- (struct float2 { double x1; double x2; })velocity_;
+- (struct float2 { float x1; float x2; })velocity_;
 
 @end

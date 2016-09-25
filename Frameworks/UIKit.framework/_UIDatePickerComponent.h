@@ -10,14 +10,14 @@
         unsigned int location; 
         unsigned int length; 
     }  _unitRange;
-    double  _width;
+    float  _width;
 }
 
 @property (nonatomic, readonly) unsigned int calendarUnit;
 @property (nonatomic, readonly) unsigned int equivalentUnit;
 @property (nonatomic, readonly) NSString *formatString;
 @property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } unitRange;
-@property (nonatomic) double width;
+@property (nonatomic) float width;
 
 + (id)componentsFromDateFormatString:(id)arg1 locale:(id)arg2;
 + (id)componentsFromDateFormatString:(id)arg1 locale:(id)arg2 desiredUnits:(int)arg3;

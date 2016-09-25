@@ -13,7 +13,7 @@
 - (void)messageEntryContentViewDidChange:(CKMessageEntryContentView *)arg1;
 - (void)messageEntryContentViewDidEndEditing:(CKMessageEntryContentView *)arg1;
 - (void)messageEntryContentViewDidTapHandwritingKey:(CKMessageEntryContentView *)arg1;
-- (struct CGSize { double x1; double x2; })messageEntryContentViewMaxShelfPluginViewSize:(CKMessageEntryContentView *)arg1;
+- (struct CGSize { float x1; float x2; })messageEntryContentViewMaxShelfPluginViewSize:(CKMessageEntryContentView *)arg1;
 - (BOOL)messageEntryContentViewShouldBeginEditing:(CKMessageEntryContentView *)arg1;
 - (void)messageEntryContentViewWasTapped:(CKMessageEntryContentView *)arg1 isLongPress:(BOOL)arg2;
 

@@ -5,7 +5,7 @@
 @interface NTPBPrefetchConfig : PBCodable <NSCopying> {
     BOOL  _backgroundFetchEnabled;
     double  _backgroundFetchMinimumInterval;
-    int  _feedPrefetchFavoritesLimit;
+    long long  _feedPrefetchFavoritesLimit;
     BOOL  _feedPrefetchForYou;
     struct { 
         unsigned int backgroundFetchMinimumInterval : 1; 
@@ -17,7 +17,7 @@
 
 @property (nonatomic) BOOL backgroundFetchEnabled;
 @property (nonatomic) double backgroundFetchMinimumInterval;
-@property (nonatomic) int feedPrefetchFavoritesLimit;
+@property (nonatomic) long long feedPrefetchFavoritesLimit;
 @property (nonatomic) BOOL feedPrefetchForYou;
 @property (nonatomic) BOOL hasBackgroundFetchEnabled;
 @property (nonatomic) BOOL hasBackgroundFetchMinimumInterval;
@@ -29,7 +29,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (int)feedPrefetchFavoritesLimit;
+- (long long)feedPrefetchFavoritesLimit;
 - (BOOL)feedPrefetchForYou;
 - (BOOL)hasBackgroundFetchEnabled;
 - (BOOL)hasBackgroundFetchMinimumInterval;
@@ -41,7 +41,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (void)setBackgroundFetchEnabled:(BOOL)arg1;
 - (void)setBackgroundFetchMinimumInterval:(double)arg1;
-- (void)setFeedPrefetchFavoritesLimit:(int)arg1;
+- (void)setFeedPrefetchFavoritesLimit:(long long)arg1;
 - (void)setFeedPrefetchForYou:(BOOL)arg1;
 - (void)setHasBackgroundFetchEnabled:(BOOL)arg1;
 - (void)setHasBackgroundFetchMinimumInterval:(BOOL)arg1;

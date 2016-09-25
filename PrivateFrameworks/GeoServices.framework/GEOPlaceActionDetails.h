@@ -4,8 +4,8 @@
 
 @interface GEOPlaceActionDetails : PBCodable <NSCopying> {
     NSString * _actionUrl;
-    unsigned int  _animationID;
-    unsigned int  _businessID;
+    unsigned long long  _animationID;
+    unsigned long long  _businessID;
     NSString * _destinationApp;
     struct { 
         unsigned int animationID : 1; 
@@ -18,17 +18,17 @@
     }  _has;
     int  _localSearchProviderID;
     NSString * _photoId;
-    int  _placeID;
+    long long  _placeID;
     int  _resultIndex;
     NSString * _richProviderId;
     double  _searchResponseRelativeTimestamp;
-    unsigned int  _targetID;
+    unsigned long long  _targetID;
     GEOTransitPlaceCard * _transitPlaceCard;
 }
 
 @property (nonatomic, retain) NSString *actionUrl;
-@property (nonatomic) unsigned int animationID;
-@property (nonatomic) unsigned int businessID;
+@property (nonatomic) unsigned long long animationID;
+@property (nonatomic) unsigned long long businessID;
 @property (nonatomic, retain) NSString *destinationApp;
 @property (nonatomic, readonly) BOOL hasActionUrl;
 @property (nonatomic) BOOL hasAnimationID;
@@ -44,21 +44,21 @@
 @property (nonatomic, readonly) BOOL hasTransitPlaceCard;
 @property (nonatomic) int localSearchProviderID;
 @property (nonatomic, retain) NSString *photoId;
-@property (nonatomic) int placeID;
+@property (nonatomic) long long placeID;
 @property (nonatomic) int resultIndex;
 @property (nonatomic, retain) NSString *richProviderId;
 @property (nonatomic) double searchResponseRelativeTimestamp;
-@property (nonatomic) unsigned int targetID;
+@property (nonatomic) unsigned long long targetID;
 @property (nonatomic, retain) GEOTransitPlaceCard *transitPlaceCard;
 
 + (id)actionDetailsWithMapItem:(id)arg1 timestamp:(double)arg2 resultIndex:(int)arg3;
-+ (id)actionDetailsWithMapItem:(id)arg1 timestamp:(double)arg2 resultIndex:(int)arg3 targetID:(unsigned int)arg4;
-+ (id)actionDetailsWithMapItem:(id)arg1 timestamp:(double)arg2 resultIndex:(int)arg3 targetID:(unsigned int)arg4 transitCardCategory:(int)arg5 transitSystem:(id)arg6 transitDepartureSequence:(id)arg7 transitIncident:(id)arg8;
-+ (id)actionDetailsWithTargetID:(unsigned int)arg1;
++ (id)actionDetailsWithMapItem:(id)arg1 timestamp:(double)arg2 resultIndex:(int)arg3 targetID:(unsigned long long)arg4;
++ (id)actionDetailsWithMapItem:(id)arg1 timestamp:(double)arg2 resultIndex:(int)arg3 targetID:(unsigned long long)arg4 transitCardCategory:(int)arg5 transitSystem:(id)arg6 transitDepartureSequence:(id)arg7 transitIncident:(id)arg8;
++ (id)actionDetailsWithTargetID:(unsigned long long)arg1;
 
 - (id)actionUrl;
-- (unsigned int)animationID;
-- (unsigned int)businessID;
+- (unsigned long long)animationID;
+- (unsigned long long)businessID;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -79,20 +79,20 @@
 - (BOOL)hasTransitPlaceCard;
 - (unsigned int)hash;
 - (id)initWithMapItem:(id)arg1 relativeTimestamp:(double)arg2 resultIndex:(int)arg3;
-- (id)initWithMapItem:(id)arg1 relativeTimestamp:(double)arg2 resultIndex:(int)arg3 targetID:(unsigned int)arg4;
-- (id)initWithMapItem:(id)arg1 relativeTimestamp:(double)arg2 resultIndex:(int)arg3 targetID:(unsigned int)arg4 transitCardCategory:(int)arg5 transitSystem:(id)arg6 transitDepartureSequence:(id)arg7 transitIncident:(id)arg8;
+- (id)initWithMapItem:(id)arg1 relativeTimestamp:(double)arg2 resultIndex:(int)arg3 targetID:(unsigned long long)arg4;
+- (id)initWithMapItem:(id)arg1 relativeTimestamp:(double)arg2 resultIndex:(int)arg3 targetID:(unsigned long long)arg4 transitCardCategory:(int)arg5 transitSystem:(id)arg6 transitDepartureSequence:(id)arg7 transitIncident:(id)arg8;
 - (BOOL)isEqual:(id)arg1;
 - (int)localSearchProviderID;
 - (void)mergeFrom:(id)arg1;
 - (id)photoId;
-- (int)placeID;
+- (long long)placeID;
 - (BOOL)readFrom:(id)arg1;
 - (int)resultIndex;
 - (id)richProviderId;
 - (double)searchResponseRelativeTimestamp;
 - (void)setActionUrl:(id)arg1;
-- (void)setAnimationID:(unsigned int)arg1;
-- (void)setBusinessID:(unsigned int)arg1;
+- (void)setAnimationID:(unsigned long long)arg1;
+- (void)setBusinessID:(unsigned long long)arg1;
 - (void)setDestinationApp:(id)arg1;
 - (void)setHasAnimationID:(BOOL)arg1;
 - (void)setHasBusinessID:(BOOL)arg1;
@@ -103,13 +103,13 @@
 - (void)setHasTargetID:(BOOL)arg1;
 - (void)setLocalSearchProviderID:(int)arg1;
 - (void)setPhotoId:(id)arg1;
-- (void)setPlaceID:(int)arg1;
+- (void)setPlaceID:(long long)arg1;
 - (void)setResultIndex:(int)arg1;
 - (void)setRichProviderId:(id)arg1;
 - (void)setSearchResponseRelativeTimestamp:(double)arg1;
-- (void)setTargetID:(unsigned int)arg1;
+- (void)setTargetID:(unsigned long long)arg1;
 - (void)setTransitPlaceCard:(id)arg1;
-- (unsigned int)targetID;
+- (unsigned long long)targetID;
 - (id)transitPlaceCard;
 - (void)writeTo:(id)arg1;
 

@@ -33,19 +33,19 @@
 @property (nonatomic, readonly, retain) NSURL *url;
 @property (nonatomic, readonly, retain) NSURL *urlInLocalContainer;
 
-+ (id)_blockingBadgeForContainer:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 scale:(float)arg3;
-+ (id)_blockingFolderIconForURL:(id)arg1 container:(id)arg2 size:(struct CGSize { double x1; double x2; })arg3 scale:(float)arg4;
-+ (id)_blockingIconForDocumentProxy:(id)arg1 withSize:(struct CGSize { double x1; double x2; })arg2;
-+ (id)_blockingIconForURL:(id)arg1 withSize:(struct CGSize { double x1; double x2; })arg2;
-+ (id)_blockingThumbnailForItem:(id)arg1 documentProxy:(id)arg2 withSize:(struct CGSize { double x1; double x2; })arg3 scale:(float)arg4 wantsBorder:(BOOL*)arg5 generatedThumbnail:(BOOL*)arg6;
++ (id)_blockingBadgeForContainer:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 scale:(float)arg3;
++ (id)_blockingFolderIconForURL:(id)arg1 container:(id)arg2 size:(struct CGSize { float x1; float x2; })arg3 scale:(float)arg4;
++ (id)_blockingIconForDocumentProxy:(id)arg1 withSize:(struct CGSize { float x1; float x2; })arg2;
++ (id)_blockingIconForURL:(id)arg1 withSize:(struct CGSize { float x1; float x2; })arg2;
++ (id)_blockingThumbnailForItem:(id)arg1 documentProxy:(id)arg2 withSize:(struct CGSize { float x1; float x2; })arg3 scale:(float)arg4 wantsBorder:(BOOL*)arg5 generatedThumbnail:(BOOL*)arg6;
 + (id)_lruThumbnailArray;
 + (void)clearLRUThumbnailCache;
 + (void)markThumbnailAsRecentlyUsed:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)_blipWithTags:(id)arg1 height:(float)arg2 scale:(float)arg3;
-- (id)_blockingThumbnailWithSize:(struct CGSize { double x1; double x2; })arg1 scale:(float)arg2 wantsBorder:(BOOL*)arg3;
-- (id)_createThumbnailWithSize:(struct CGSize { double x1; double x2; })arg1 scale:(float)arg2;
+- (id)_blockingThumbnailWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2 wantsBorder:(BOOL*)arg3;
+- (id)_createThumbnailWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2;
 - (void)_ensureModelPresent;
 - (id)_formattedSubtitleForNumberOfItems:(unsigned int)arg1;
 - (void)_modelChanged;
@@ -79,7 +79,7 @@
 - (id)subtitle2;
 - (id)tagBlipsWithHeight:(float)arg1 scale:(float)arg2;
 - (id)tags;
-- (id)thumbnailWithSize:(struct CGSize { double x1; double x2; })arg1 scale:(float)arg2;
+- (id)thumbnailWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2;
 - (id)thumbnailsBySize;
 - (id)title;
 - (int)type;

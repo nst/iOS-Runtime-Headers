@@ -4,11 +4,11 @@
 
 @interface CMKExposureBiasTextView : CMKBadgeTextView {
     NSString * __lastText;
-    double  _exposureBias;
+    float  _exposureBias;
 }
 
 @property (nonatomic, retain) NSString *_lastText;
-@property (nonatomic) double exposureBias;
+@property (nonatomic) float exposureBias;
 
 - (void).cxx_destruct;
 - (id)_lastText;
@@ -17,7 +17,7 @@
 - (id)_textForExposureBias:(float)arg1;
 - (float)_textHorizontalInset;
 - (float)_textHorizontalKerningOffset;
-- (struct CGSize { double x1; double x2; })_textSize;
+- (struct CGSize { float x1; float x2; })_textSize;
 - (float)_textVerticalInset;
 - (float)exposureBias;
 - (void)setExposureBias:(float)arg1;

@@ -4,16 +4,16 @@
 
 @interface IOAccelMemoryMapInfo : NSObject {
     id  _expansionData;
-    unsigned int  address;
+    unsigned long long  address;
     int  pid;
 }
 
-@property unsigned int address;
+@property unsigned long long address;
 @property int pid;
 
-- (unsigned int)address;
+- (unsigned long long)address;
 - (int)pid;
-- (void)setAddress:(unsigned int)arg1;
+- (void)setAddress:(unsigned long long)arg1;
 - (void)setPid:(int)arg1;
 
 @end

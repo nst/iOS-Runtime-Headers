@@ -22,7 +22,7 @@
 @property (readonly) Class superclass;
 
 + (id)bezierPathForExportCommentOutline;
-+ (id)commentInfoWithContext:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 storage:(id)arg3;
++ (id)commentInfoWithContext:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 storage:(id)arg3;
 + (id)commentParagraphStyleForStylesheet:(id)arg1;
 + (id)commentParagraphStyleIdentifierForFontSize:(unsigned int)arg1;
 + (id)commentStyleIdentifier;

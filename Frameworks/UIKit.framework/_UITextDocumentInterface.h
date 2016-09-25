@@ -41,7 +41,7 @@
 - (id)_documentState;
 - (void)_handleInputViewControllerState:(id)arg1;
 - (id)_keyboardOutput;
-- (void)_setInputModeList:(int)arg1 touchBegan:(double)arg2 fromLocation:(struct CGPoint { double x1; double x2; })arg3 updatePoint:(struct CGPoint { double x1; double x2; })arg4;
+- (void)_setInputModeList:(int)arg1 touchBegan:(double)arg2 fromLocation:(struct CGPoint { float x1; float x2; })arg3 updatePoint:(struct CGPoint { float x1; float x2; })arg4;
 - (void)_setPrimaryLanguage:(id)arg1;
 - (void)_setShouldAdvanceInputMode;
 - (void)_setShouldDismiss;

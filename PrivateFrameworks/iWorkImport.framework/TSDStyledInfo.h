@@ -7,7 +7,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic) double opacity;
+@property (nonatomic) float opacity;
 @property (nonatomic, readonly) BOOL pathIsOpen;
 @property (nonatomic, copy) TSDReflection *reflection;
 @property (nonatomic, copy) TSDShadow *shadow;

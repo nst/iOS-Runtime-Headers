@@ -8,10 +8,10 @@
         unsigned int sampleCount; 
     }  _attachmentInfo;
     unsigned int  _backStencilRef;
-    double  _blendColorAlpha;
-    double  _blendColorBlue;
-    double  _blendColorGreen;
-    double  _blendColorRed;
+    float  _blendColorAlpha;
+    float  _blendColorBlue;
+    float  _blendColorGreen;
+    float  _blendColorRed;
     <MTLDevice> * _cachedDevice;
     unsigned int  _cullMode;
     MTLDepthStencilDescriptor * _defaultDepthStencilDescriptor;
@@ -20,9 +20,9 @@
         MTLRenderPassDepthAttachmentDescriptorInternal *depthAttachment; 
         MTLRenderPassStencilAttachmentDescriptorInternal *stencilAttachment; 
     }  _deferredAttachments;
-    double  _depthBias;
-    double  _depthBiasClamp;
-    double  _depthBiasSlopeScale;
+    float  _depthBias;
+    float  _depthBiasClamp;
+    float  _depthBiasSlopeScale;
     unsigned int  _depthClipMode;
     <MTLDepthStencilState> * _depthStencilState;
     MTLRenderPassDescriptor * _descriptor;
@@ -68,8 +68,8 @@
         unsigned int maxComputeLocalMemorySizes; 
         unsigned int maxTotalComputeThreadsPerThreadgroup; 
         unsigned int maxComputeThreadgroupMemory; 
-        double maxLineWidth; 
-        double maxPointSize; 
+        float maxLineWidth; 
+        float maxPointSize; 
         unsigned int maxVisibilityQueryOffset; 
         unsigned int maxBufferLength; 
         unsigned int minConstantBufferAlignmentBytes; 
@@ -92,7 +92,7 @@
         unsigned int maxInterpolatedComponents; 
         unsigned int maxFramebufferStorageBits; 
     }  _limits;
-    double  _lineWidth;
+    float  _lineWidth;
     <MTLRenderPipelineState> * _renderPipelineState;
     struct { 
         unsigned int x; 
@@ -107,7 +107,7 @@
         id object; 
     }  _tessellationFactorBufferArgument;
     unsigned int  _tessellationFactorBufferInstanceStride;
-    double  _tessellationFactorScale;
+    float  _tessellationFactorScale;
     unsigned int  _triangleFillMode;
     unsigned int  _unknownStoreActions;
     unsigned int  _vertexBufferStride;
@@ -152,28 +152,28 @@
 }
 
 @property (nonatomic, readonly) unsigned int backStencilRef;
-@property (nonatomic, readonly) double blendColorAlpha;
-@property (nonatomic, readonly) double blendColorBlue;
-@property (nonatomic, readonly) double blendColorGreen;
-@property (nonatomic, readonly) double blendColorRed;
+@property (nonatomic, readonly) float blendColorAlpha;
+@property (nonatomic, readonly) float blendColorBlue;
+@property (nonatomic, readonly) float blendColorGreen;
+@property (nonatomic, readonly) float blendColorRed;
 @property (nonatomic, readonly) <MTLDevice> *cachedDevice;
 @property (nonatomic, readonly) unsigned int cullMode;
 @property (nonatomic, readonly) MTLDepthStencilDescriptor *defaultDepthStencilDescriptor;
-@property (nonatomic, readonly) double depthBias;
-@property (nonatomic, readonly) double depthBiasClamp;
-@property (nonatomic, readonly) double depthBiasSlopeScale;
+@property (nonatomic, readonly) float depthBias;
+@property (nonatomic, readonly) float depthBiasClamp;
+@property (nonatomic, readonly) float depthBiasSlopeScale;
 @property (nonatomic, readonly) unsigned int depthClipMode;
 @property (nonatomic, readonly) <MTLDepthStencilState> *depthStencilState;
 @property (nonatomic, readonly, copy) MTLRenderPassDescriptor *descriptor;
 @property (nonatomic, readonly) unsigned int frontFacingWinding;
 @property (nonatomic, readonly) unsigned int frontStencilRef;
 @property (readonly) unsigned int height;
-@property (nonatomic, readonly) double lineWidth;
+@property (nonatomic, readonly) float lineWidth;
 @property (nonatomic, readonly) <MTLRenderPipelineState> *renderPipelineState;
 @property (nonatomic, readonly) struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; } scissorRect;
-@property (nonatomic, readonly) struct { BOOL x1; BOOL x2; unsigned int x3; id x4; unsigned int x5; unsigned int x6; unsigned int x7; BOOL x8; double x9; double x10; } tessellationFactorBufferArgument;
+@property (nonatomic, readonly) struct { BOOL x1; BOOL x2; unsigned int x3; id x4; unsigned int x5; unsigned int x6; unsigned int x7; BOOL x8; float x9; float x10; } tessellationFactorBufferArgument;
 @property (nonatomic, readonly) unsigned int tessellationFactorBufferInstanceStride;
-@property (nonatomic, readonly) double tessellationFactorScale;
+@property (nonatomic, readonly) float tessellationFactorScale;
 @property (nonatomic, readonly) unsigned int triangleFillMode;
 @property (nonatomic, readonly) struct { double x1; double x2; double x3; double x4; double x5; double x6; } viewport;
 @property (nonatomic, readonly) unsigned int visibilityResultMode;
@@ -271,7 +271,7 @@
 - (void)setVertexTextures:(const id*)arg1 withRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)setViewport:(struct { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
 - (void)setVisibilityResultMode:(unsigned int)arg1 offset:(unsigned int)arg2;
-- (struct { BOOL x1; BOOL x2; unsigned int x3; id x4; unsigned int x5; unsigned int x6; unsigned int x7; BOOL x8; double x9; double x10; })tessellationFactorBufferArgument;
+- (struct { BOOL x1; BOOL x2; unsigned int x3; id x4; unsigned int x5; unsigned int x6; unsigned int x7; BOOL x8; float x9; float x10; })tessellationFactorBufferArgument;
 - (unsigned int)tessellationFactorBufferInstanceStride;
 - (float)tessellationFactorScale;
 - (unsigned int)triangleFillMode;

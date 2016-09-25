@@ -22,14 +22,14 @@
     int  _disableAutorotationCount;
     BOOL  _doubleSided;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _effectiveTapRegionBreadths;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _effectiveTapRegionInsets;
     UITapGestureRecognizer * _forwardTapGestureRecognizer;
     NSDictionary * _incomingAndOutgoingViewControllersForManualTransition;
@@ -38,7 +38,7 @@
     int  _navigationOrientation;
     BOOL  _pageControlRequiresValidation;
     _UIPageCurl * _pageCurl;
-    double  _pageSpacing;
+    float  _pageSpacing;
     UIPanGestureRecognizer * _panGestureRecognizer;
     UITapGestureRecognizer * _reverseTapGestureRecognizer;
     NSMutableArray * _rotationSnapshotViews;
@@ -47,16 +47,16 @@
     BOOL  _stashingViewControllersForRotation;
     UITapGestureRecognizer * _tapGestureRecognizer;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _tapRegionBreadths;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _tapRegionInsets;
-    struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } * _tapRegions;
+    struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } * _tapRegions;
     int  _transitionStyle;
     <UIPageViewControllerDataSource> * _unsafeUnretainedDataSource;
     <UIPageViewControllerDelegate> * _unsafeUnretainedDelegate;
@@ -68,7 +68,7 @@
 @property (getter=_isInterfaceRotating, nonatomic, readonly) BOOL _interfaceRotating;
 @property (nonatomic, readonly) int _navigationOrientation;
 @property (getter=_isPageControlVisible, nonatomic, readonly) BOOL _pageControlVisible;
-@property (setter=_setPageSpacing:, nonatomic) double _pageSpacing;
+@property (setter=_setPageSpacing:, nonatomic) float _pageSpacing;
 @property (nonatomic, readonly) _UIQueuingScrollView *_scrollView;
 @property (nonatomic, readonly) int _transitionStyle;
 @property (setter=_setViewControllers:, nonatomic, retain) NSArray *_viewControllers;
@@ -111,14 +111,14 @@
 - (void)_child:(id)arg1 willRotateToInterfaceOrientation:(int)arg2 duration:(double)arg3;
 - (BOOL)_childCanEndAppearanceTransition:(id)arg1;
 - (void)_childEndAppearanceTransition:(id)arg1;
-- (struct CGSize { double x1; double x2; })_contentSizeForSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })_contentSizeForSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)_contentView;
 - (void)_contentViewFrameOrBoundsDidChange;
 - (id)_deepestUnambiguousResponder;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_disabledScrollingRegion;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_edgeInsetsForChildViewController:(id)arg1 insetsAreAbsolute:(BOOL*)arg2;
-- (struct CGSize { double x1; double x2; })_effectiveTapRegionBreadths;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_effectiveTapRegionInsets;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_disabledScrollingRegion;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_edgeInsetsForChildViewController:(id)arg1 insetsAreAbsolute:(BOOL*)arg2;
+- (struct CGSize { float x1; float x2; })_effectiveTapRegionBreadths;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_effectiveTapRegionInsets;
 - (void)_endDisablingInterfaceAutorotation;
 - (void)_flushViewController:(id)arg1 animated:(BOOL)arg2;
 - (BOOL)_gestureRecognizerShouldBegin:(id)arg1;
@@ -146,13 +146,13 @@
 - (int)_requestSpineLocationForInterfaceOrientationAndUpdateStashedViewControllers:(int)arg1;
 - (id)_scrollView;
 - (void)_sendChildViewWill:(BOOL)arg1 appear:(BOOL)arg2 animated:(BOOL)arg3;
-- (void)_setDisabledScrollingRegion:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)_setDisabledScrollingRegion:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_setPageSpacing:(float)arg1;
 - (void)_setSpineLocation:(int)arg1;
-- (void)_setTapRegionBreadths:(struct CGSize { double x1; double x2; })arg1;
-- (void)_setTapRegionInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)_setTapRegionBreadths:(struct CGSize { float x1; float x2; })arg1;
+- (void)_setTapRegionInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)_setViewControllers:(id)arg1;
-- (void)_setViewControllers:(id)arg1 withCurlOfType:(int)arg2 fromLocation:(struct CGPoint { double x1; double x2; })arg3 direction:(int)arg4 animated:(BOOL)arg5 notifyDelegate:(BOOL)arg6 completion:(id /* block */)arg7;
+- (void)_setViewControllers:(id)arg1 withCurlOfType:(int)arg2 fromLocation:(struct CGPoint { float x1; float x2; })arg3 direction:(int)arg4 animated:(BOOL)arg5 notifyDelegate:(BOOL)arg6 completion:(id /* block */)arg7;
 - (void)_setViewControllers:(id)arg1 withScrollInDirection:(int)arg2 animated:(BOOL)arg3 completion:(id /* block */)arg4;
 - (void)_setViewControllersStashedForRotation:(id)arg1;
 - (BOOL)_shouldBeginNavigationInDirection:(int*)arg1 inResponseToPanGestureRecognizer:(id)arg2;
@@ -162,9 +162,9 @@
 - (BOOL)_shouldNavigateInDirection:(int*)arg1 inResponseToVelocity:(float*)arg2 ofGestureRecognizedByPanGestureRecognizer:(id)arg3;
 - (BOOL)_shouldPersistViewWhenCoding;
 - (BOOL)_shouldSynthesizeSupportedOrientations;
-- (struct CGSize { double x1; double x2; })_tapRegionBreadths;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_tapRegionInsets;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)_tapRegions;
+- (struct CGSize { float x1; float x2; })_tapRegionBreadths;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_tapRegionInsets;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)_tapRegions;
 - (int)_transitionStyle;
 - (void)_updatePageControlViaDataSourceIfNecessary;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_validRangeForPresentationOfViewControllersWithSpineLocation:(int)arg1;

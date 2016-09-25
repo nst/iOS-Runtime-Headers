@@ -6,17 +6,17 @@
     BOOL  complete;
     BOOL  hasCentredParagraph;
     BOOL  hasColumnBreak;
-    double  maxLeftPad;
-    double  maxRight;
-    double  maxRightPad;
-    double  minLeft;
+    float  maxLeftPad;
+    float  maxRight;
+    float  maxRightPad;
+    float  minLeft;
 }
 
 @property BOOL complete;
 
 - (void)accept:(id)arg1;
 - (float)bottomBaseline;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })columnBounds;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })columnBounds;
 - (BOOL)complete;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -33,7 +33,7 @@
 - (float)maxLeftPad;
 - (float)maxRightPad;
 - (int)outOrder;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })paddedBounds;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })paddedBounds;
 - (float)rightPad;
 - (float)selectionBottom;
 - (void)setComplete:(BOOL)arg1;

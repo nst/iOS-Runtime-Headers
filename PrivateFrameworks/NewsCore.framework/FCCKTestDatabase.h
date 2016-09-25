@@ -23,8 +23,8 @@
 - (id)initWithDatabase:(id)arg1 middleware:(id)arg2;
 - (void)insertArticleID:(id)arg1 atBottomOfFeedID:(id)arg2;
 - (void)insertArticleID:(id)arg1 atTopOfFeedID:(id)arg2;
-- (void)insertArticleID:(id)arg1 inFeedID:(id)arg2 withOrder:(unsigned int)arg3;
-- (void)insertArticleID:(id)arg1 inFeedID:(id)arg2 withOrder:(unsigned int)arg3 subOrder:(unsigned int)arg4;
+- (void)insertArticleID:(id)arg1 inFeedID:(id)arg2 withOrder:(unsigned long long)arg3;
+- (void)insertArticleID:(id)arg1 inFeedID:(id)arg2 withOrder:(unsigned long long)arg3 subOrder:(unsigned long long)arg4;
 - (id)insertTestArticle;
 - (void)insertTestArticleWithID:(id)arg1 properties:(id)arg2;
 - (id)insertTestArticleWithProperties:(id)arg1;
@@ -32,7 +32,7 @@
 - (id)insertTestTagWithType:(id)arg1 feedID:(id)arg2 properties:(id)arg3;
 - (id)insertTestTagWithType:(id)arg1 properties:(id)arg2;
 - (id)orderFeedQueryEndpoint;
-- (unsigned int)orderForArticleID:(id)arg1 feedID:(id)arg2;
+- (unsigned long long)orderForArticleID:(id)arg1 feedID:(id)arg2;
 - (void)populateWithBasicTestFeeds;
 - (id)records;
 - (void)setFeedQueryEndpoint:(id)arg1;

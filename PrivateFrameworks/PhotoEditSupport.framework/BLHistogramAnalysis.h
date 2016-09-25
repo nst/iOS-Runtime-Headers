@@ -3,30 +3,30 @@
  */
 
 @interface BLHistogramAnalysis : NSObject {
-    double  _averageLinearBlue;
-    double  _averageLinearGreen;
-    double  _averageLinearRed;
-    double  _blackPoint;
-    double  _blackPointBlue;
-    double  _blackPointGreen;
-    double  _blackPointRed;
-    double  _whitePoint;
-    double  _whitePointBlue;
-    double  _whitePointGreen;
-    double  _whitePointRed;
+    float  _averageLinearBlue;
+    float  _averageLinearGreen;
+    float  _averageLinearRed;
+    float  _blackPoint;
+    float  _blackPointBlue;
+    float  _blackPointGreen;
+    float  _blackPointRed;
+    float  _whitePoint;
+    float  _whitePointBlue;
+    float  _whitePointGreen;
+    float  _whitePointRed;
 }
 
-@property (nonatomic) double averageLinearBlue;
-@property (nonatomic) double averageLinearGreen;
-@property (nonatomic) double averageLinearRed;
-@property (nonatomic) double blackPoint;
-@property (nonatomic) double blackPointBlue;
-@property (nonatomic) double blackPointGreen;
-@property (nonatomic) double blackPointRed;
-@property (nonatomic) double whitePoint;
-@property (nonatomic) double whitePointBlue;
-@property (nonatomic) double whitePointGreen;
-@property (nonatomic) double whitePointRed;
+@property (nonatomic) float averageLinearBlue;
+@property (nonatomic) float averageLinearGreen;
+@property (nonatomic) float averageLinearRed;
+@property (nonatomic) float blackPoint;
+@property (nonatomic) float blackPointBlue;
+@property (nonatomic) float blackPointGreen;
+@property (nonatomic) float blackPointRed;
+@property (nonatomic) float whitePoint;
+@property (nonatomic) float whitePointBlue;
+@property (nonatomic) float whitePointGreen;
+@property (nonatomic) float whitePointRed;
 
 - (id)analysisDictionary;
 - (float)averageLinearBlue;

@@ -3,17 +3,17 @@
  */
 
 @interface TKVibrationRecorderRippleView : UIView <CAAnimationDelegate> {
-    double  _currentSpeedCoefficient;
+    float  _currentSpeedCoefficient;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _currentTouchLocation;
     double  _currentTouchStartTime;
     <NSCopying> * _displayLinkManagerObserverToken;
-    double  _fadeOutRadius;
-    double  _fingerMovingSpeed;
-    double  _fingerStillSpeed;
-    double  _firstRippleInitialRadius;
+    float  _fadeOutRadius;
+    float  _fingerMovingSpeed;
+    float  _fingerStillSpeed;
+    float  _firstRippleInitialRadius;
     BOOL  _isAnimating;
     BOOL  _isTrackingTouch;
     unsigned int  _lastRingLayerIdentifier;
@@ -31,10 +31,10 @@
 @property (getter=_isTouchDown, nonatomic, readonly) BOOL _touchDown;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) double fadeOutRadius;
-@property (nonatomic) double fingerMovingSpeed;
-@property (nonatomic) double fingerStillSpeed;
-@property (nonatomic) double firstRippleInitialRadius;
+@property (nonatomic) float fadeOutRadius;
+@property (nonatomic) float fingerMovingSpeed;
+@property (nonatomic) float fingerStillSpeed;
+@property (nonatomic) float firstRippleInitialRadius;
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
@@ -42,16 +42,16 @@
 - (float)_currentSpeed;
 - (void)_enqueueReusableRingLayer:(id)arg1;
 - (void)_enqueueReusableTouchContextObject:(id)arg1;
-- (void)_enqueueRingLayerWithTimeIntervalSinceCreation:(double)arg1 normalizedLocation:(struct CGPoint { double x1; double x2; })arg2 speed:(float)arg3;
+- (void)_enqueueRingLayerWithTimeIntervalSinceCreation:(double)arg1 normalizedLocation:(struct CGPoint { float x1; float x2; })arg2 speed:(float)arg3;
 - (BOOL)_isTouchDown;
 - (void)_refresh:(id)arg1;
 - (id)_reusableRingLayer;
 - (id)_reusableTouchContextObject;
 - (void)_startAnimation;
 - (void)_stopAnimation;
-- (void)_touchBeganAtLocation:(struct CGPoint { double x1; double x2; })arg1;
-- (void)_touchEndedAtLocation:(struct CGPoint { double x1; double x2; })arg1;
-- (void)_touchMovedToLocation:(struct CGPoint { double x1; double x2; })arg1;
+- (void)_touchBeganAtLocation:(struct CGPoint { float x1; float x2; })arg1;
+- (void)_touchEndedAtLocation:(struct CGPoint { float x1; float x2; })arg1;
+- (void)_touchMovedToLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_updateRingEnlargementAnimation;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (void)dealloc;

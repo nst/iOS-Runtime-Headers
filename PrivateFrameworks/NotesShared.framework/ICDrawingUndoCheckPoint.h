@@ -17,7 +17,7 @@
 @property (nonatomic, readonly) NSUUID *uuid;
 
 + (id)cacheDirectory;
-+ (unsigned int)cacheSize;
++ (unsigned long long)cacheSize;
 + (void)deleteAllCacheFiles;
 
 - (void).cxx_destruct;

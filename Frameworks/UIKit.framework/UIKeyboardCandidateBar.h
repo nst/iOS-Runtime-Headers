@@ -12,8 +12,8 @@
     <UIKeyboardCandidateBarDelegate> * _delegate;
     NSIndexPath * _dragStartNextPageIndexPath;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _dragStartOffset;
     NSIndexPath * _dragStartPreviousPageIndexPath;
     NSArray * _filteredCandidates;
@@ -22,7 +22,7 @@
     UIKeyboardCandidatePocketShadow * _leftBorder;
     UIKeyboardCandidatePocketShadow * _rightBorder;
     UIKBThemedView * _secondaryCandidatesViewEdgeGradient;
-    double  _upArrowWidth;
+    float  _upArrowWidth;
 }
 
 @property (nonatomic) BOOL canExtend;
@@ -37,7 +37,7 @@
 @property (nonatomic) <UIKeyboardCandidateBarDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSIndexPath *dragStartNextPageIndexPath;
-@property (nonatomic) struct CGPoint { double x1; double x2; } dragStartOffset;
+@property (nonatomic) struct CGPoint { float x1; float x2; } dragStartOffset;
 @property (nonatomic, copy) NSIndexPath *dragStartPreviousPageIndexPath;
 @property (nonatomic, retain) NSArray *filteredCandidates;
 @property (nonatomic) BOOL forceReloadInitiallyHiddenCandidates;
@@ -47,7 +47,7 @@
 @property (nonatomic, retain) UIKeyboardCandidatePocketShadow *rightBorder;
 @property (nonatomic, retain) UIKBThemedView *secondaryCandidatesViewEdgeGradient;
 @property (readonly) Class superclass;
-@property (nonatomic) double upArrowWidth;
+@property (nonatomic) float upArrowWidth;
 
 + (float)defaultCandidateWidth;
 + (float)defaultPagingDistanceThreshold;
@@ -103,7 +103,7 @@
 - (void)candidatesDidChange;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
-- (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
+- (struct CGSize { float x1; float x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
 - (BOOL)collectionView:(id)arg1 shouldSelectItemAtIndexPath:(id)arg2;
 - (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
@@ -115,14 +115,14 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)dragStartNextPageIndexPath;
-- (struct CGPoint { double x1; double x2; })dragStartOffset;
+- (struct CGPoint { float x1; float x2; })dragStartOffset;
 - (id)dragStartPreviousPageIndexPath;
 - (id)filteredCandidates;
 - (BOOL)forceReloadInitiallyHiddenCandidates;
 - (BOOL)hasCandidates;
 - (BOOL)hasNextPage;
 - (BOOL)hasPreviousPage;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)inlineText;
 - (BOOL)isExtendedList;
 - (id)keyboardBehaviors;
@@ -136,7 +136,7 @@
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(BOOL)arg2;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
-- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { double x1; double x2; })arg2 targetContentOffset:(inout struct CGPoint { double x1; double x2; }*)arg3;
+- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { float x1; float x2; })arg2 targetContentOffset:(inout struct CGPoint { float x1; float x2; }*)arg3;
 - (id)secondaryCandidatesViewEdgeGradient;
 - (id)secureCandidateRenderTraits;
 - (unsigned int)selectedSortIndex;
@@ -145,15 +145,15 @@
 - (void)setCandidateMaskView:(id)arg1;
 - (void)setCandidateResultSet:(id)arg1;
 - (void)setCandidateViews:(id)arg1;
-- (void)setCandidates:(id)arg1 inlineText:(id)arg2 inlineRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 maxX:(float)arg4 layout:(BOOL)arg5;
+- (void)setCandidates:(id)arg1 inlineText:(id)arg2 inlineRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 maxX:(float)arg4 layout:(BOOL)arg5;
 - (void)setCurrentCandidateViewIndex:(unsigned int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDragStartNextPageIndexPath:(id)arg1;
-- (void)setDragStartOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setDragStartOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setDragStartPreviousPageIndexPath:(id)arg1;
 - (void)setFilteredCandidates:(id)arg1;
 - (void)setForceReloadInitiallyHiddenCandidates:(BOOL)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setInlineText:(id)arg1;
 - (void)setLeftBorder:(id)arg1;
 - (void)setRightBorder:(id)arg1;
@@ -169,7 +169,7 @@
 - (void)showPreviousPage;
 - (void)showPreviousRow;
 - (float)singleCellWidthForProactiveCellCount:(unsigned int)arg1;
-- (struct CGSize { double x1; double x2; })sizeOfDummyItemForCollectionView:(id)arg1 layout:(id)arg2;
+- (struct CGSize { float x1; float x2; })sizeOfDummyItemForCollectionView:(id)arg1 layout:(id)arg2;
 - (id)statisticsIdentifier;
 - (float)upArrowWidth;
 - (unsigned int)viewOffsetForCandidateAtIndex:(unsigned int)arg1;

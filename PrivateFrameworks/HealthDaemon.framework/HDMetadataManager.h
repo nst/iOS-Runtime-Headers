@@ -14,7 +14,7 @@
 - (id)_keyForKeyID:(id)arg1 database:(id)arg2 error:(id*)arg3;
 - (id)initWithProfile:(id)arg1;
 - (BOOL)insertMetadata:(id)arg1 forDataEntityWithID:(id)arg2 error:(id*)arg3;
-- (id)metadataForDataEntityWithPersistentID:(int)arg1 baseMetadata:(id)arg2 keyFilter:(id /* block */)arg3 statement:(id)arg4 error:(id*)arg5;
-- (id)metadataForDataEntityWithPersistentID:(int)arg1 keyFilter:(id /* block */)arg2 error:(id*)arg3;
+- (id)metadataForDataEntityWithPersistentID:(long long)arg1 baseMetadata:(id)arg2 keyFilter:(id /* block */)arg3 statement:(id)arg4 error:(id*)arg5;
+- (id)metadataForDataEntityWithPersistentID:(long long)arg1 keyFilter:(id /* block */)arg2 error:(id*)arg3;
 
 @end

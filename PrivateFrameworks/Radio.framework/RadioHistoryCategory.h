@@ -7,7 +7,7 @@
     NSArray * _items;
     NSString * _name;
     NSString * _stationHash;
-    int  _stationID;
+    long long  _stationID;
     int  _type;
 }
 
@@ -15,7 +15,7 @@
 @property (nonatomic, readonly, copy) NSArray *items;
 @property (nonatomic, readonly, copy) NSString *name;
 @property (nonatomic, readonly, copy) NSString *stationHash;
-@property (nonatomic, readonly) int stationID;
+@property (nonatomic, readonly) long long stationID;
 @property (nonatomic, readonly) int type;
 
 - (void).cxx_destruct;
@@ -28,7 +28,7 @@
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)name;
 - (id)stationHash;
-- (int)stationID;
+- (long long)stationID;
 - (int)type;
 
 @end

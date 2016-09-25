@@ -15,7 +15,7 @@
     BOOL  hasActiveObservers;
     BOOL  hasVideoMinFrameDurationObserver;
     NSMutableArray * inputPorts;
-    int  lastGetAudioLevelsTime;
+    long long  lastGetAudioLevelsTime;
     AVCaptureInputPort * metadataInputPort;
     AVCaptureInputPort * metadataItemInputPort;
     AVWeakReference * outputWeakReference;
@@ -23,17 +23,17 @@
     AVCaptureDevice * sourceDevice;
     AVCaptureInputPort * videoInputPort;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  videoMaxFrameDuration;
-    double  videoMaxScaleAndCropFactor;
+    float  videoMaxScaleAndCropFactor;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  videoMinFrameDuration;
     BOOL  videoMirrored;
     BOOL  videoMirroringSupported;
@@ -41,7 +41,7 @@
     BOOL  videoOrientationSupported;
     AVWeakReference * videoPreviewLayerWeakReference;
     int  videoRetainedBufferCountHint;
-    double  videoScaleAndCropFactor;
+    float  videoScaleAndCropFactor;
     BOOL  videoStabilizationEnabled;
 }
 

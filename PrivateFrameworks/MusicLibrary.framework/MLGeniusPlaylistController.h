@@ -22,7 +22,7 @@
 - (void).cxx_destruct;
 - (BOOL)_canIncludeTrackInGeniusContainer:(id)arg1;
 - (BOOL)_createClusterPlaylistWithSeedTracks:(id)arg1 error:(id*)arg2;
-- (id)_debugGetTracksStartingAtTrackWithPersistentID:(unsigned int)arg1 maxTracks:(unsigned int)arg2 stride:(int)arg3;
+- (id)_debugGetTracksStartingAtTrackWithPersistentID:(unsigned long long)arg1 maxTracks:(unsigned int)arg2 stride:(int)arg3;
 - (BOOL)_onBackgroundQueue_fakePopulateContainer:(id)arg1 withSeedTrack:(id)arg2 error:(id*)arg3;
 - (BOOL)_onBackgroundQueue_populateContainer:(id)arg1 seedTrack:(id)arg2 error:(id*)arg3;
 - (id)_onBackgroundQueue_tracksFromClusterForPlaylistItemMax:(unsigned int)arg1 error:(id*)arg2;

@@ -11,7 +11,7 @@
 - (void).cxx_destruct;
 - (BOOL)_hasMUID;
 - (BOOL)_hasResolvablePartialInformation;
-- (unsigned int)_muid;
+- (unsigned long long)_muid;
 - (struct { double x1; double x2; })coordinate;
 - (id)initWithLabelMarker:(id)arg1;
 - (BOOL)isValid;

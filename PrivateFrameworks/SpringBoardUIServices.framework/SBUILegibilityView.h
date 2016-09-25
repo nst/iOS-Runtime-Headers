@@ -4,10 +4,10 @@
 
 @interface SBUILegibilityView : _UILegibilityView <SBUILegibility> {
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _hitTestEdgeInsets;
     _UILegibilitySettings * _legibilitySettings;
     int  _tintColor;
@@ -17,20 +17,20 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } hitTestEdgeInsets;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } hitTestEdgeInsets;
 @property (nonatomic, retain) _UILegibilitySettings *legibilitySettings;
-@property (nonatomic) double strength;
+@property (nonatomic) float strength;
 @property (readonly) Class superclass;
 @property (nonatomic) int tintColor;
 @property (nonatomic, retain) UIImage *tintImage;
 
 - (void).cxx_destruct;
 - (id)_tintColorForSettings:(id)arg1;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })hitTestEdgeInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })hitTestEdgeInsets;
 - (id)initWithSettings:(id)arg1 strength:(float)arg2 image:(id)arg3 tintColor:(int)arg4;
 - (id)legibilitySettings;
-- (BOOL)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
-- (void)setHitTestEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (void)setHitTestEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setLegibilitySettings:(id)arg1;
 - (void)setSettings:(id)arg1 image:(id)arg2 shadowImage:(id)arg3;
 - (void)setTintColor:(int)arg1;

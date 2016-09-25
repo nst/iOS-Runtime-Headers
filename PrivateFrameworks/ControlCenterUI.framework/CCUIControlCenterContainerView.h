@@ -11,7 +11,7 @@
     UIPageControl * _pageControl;
     UIScrollView * _pageScrollView;
     NSMapTable * _plattersToDarkeningViews;
-    double  _revealPercentage;
+    float  _revealPercentage;
     CCUIControlCenterSettings * _settings;
     BOOL  _useMaxDarkness;
 }
@@ -23,13 +23,13 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) UIView *dynamicsContainerView;
 @property (readonly) unsigned int hash;
-@property (nonatomic) double revealPercentage;
+@property (nonatomic) float revealPercentage;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_applyAlphaToDarkeningViews;
 - (float)_contentHeight;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_marginInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_marginInsets;
 - (void)_removeAnimationsForKeys:(id)arg1 onView:(id)arg2 update:(id /* block */)arg3;
 - (void)_resetControlCenterToOffscreenState;
 - (void)_updateContentFrame;
@@ -44,7 +44,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)dynamicsContainerView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 delegate:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 delegate:(id)arg2;
 - (BOOL)isAdjustingBrightness;
 - (void)layoutSubviews;
 - (float)revealPercentage;

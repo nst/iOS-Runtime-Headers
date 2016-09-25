@@ -50,7 +50,7 @@
 - (id)itemsByRemovingLocalItems;
 - (id)itemsByRemovingStoreOffers;
 - (id)mediaLibrary;
-- (unsigned int)persistentID;
+- (unsigned long long)persistentID;
 - (int)preferredStoreOfferVariant;
 - (id)title;
 - (id)valueForProperty:(id)arg1;

@@ -6,8 +6,8 @@
     BOOL  mDrawArrows;
     unsigned int  mSegmentCount;
     unsigned int  mSegmentIndex;
-    double  mStartAngle;
-    double  mStopAngle;
+    float  mStartAngle;
+    float  mStopAngle;
 }
 
 - (id)_arrowFillWithState:(id)arg1;

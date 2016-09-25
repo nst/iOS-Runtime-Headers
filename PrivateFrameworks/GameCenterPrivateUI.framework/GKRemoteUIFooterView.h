@@ -3,23 +3,23 @@
  */
 
 @interface GKRemoteUIFooterView : UIView <RemoteUITableFooter> {
-    double  _bottomMargin;
+    float  _bottomMargin;
     int  _layoutStyle;
-    double  _leftMargin;
-    double  _paragraphMargin;
-    double  _rightMargin;
+    float  _leftMargin;
+    float  _paragraphMargin;
+    float  _rightMargin;
     BOOL  _shouldApplyGameCenterTheme;
     GKLabel * _textLabel;
 }
 
-@property (nonatomic) double bottomMargin;
+@property (nonatomic) float bottomMargin;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic) int layoutStyle;
-@property (nonatomic) double leftMargin;
-@property (nonatomic) double paragraphMargin;
-@property (nonatomic) double rightMargin;
+@property (nonatomic) float leftMargin;
+@property (nonatomic) float paragraphMargin;
+@property (nonatomic) float rightMargin;
 @property (nonatomic) BOOL shouldApplyGameCenterTheme;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) GKLabel *textLabel;

@@ -3,7 +3,7 @@
  */
 
 @interface NTKPolygonCylinderView : UIView {
-    double  _rotationAngle;
+    float  _rotationAngle;
     _NTKPolygonCylinderTransformView * _transformView;
 }
 

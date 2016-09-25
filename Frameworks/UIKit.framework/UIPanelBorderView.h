@@ -25,7 +25,7 @@
 - (BOOL)observesTime;
 - (id)replicatingView;
 - (void)setBackdropGroupName:(id)arg1;
-- (void)setCenter:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setCenter:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setObservesTime:(BOOL)arg1;
 - (void)setReplicatingView:(id)arg1;
 - (void)setStatusBarAvoidance:(int)arg1;

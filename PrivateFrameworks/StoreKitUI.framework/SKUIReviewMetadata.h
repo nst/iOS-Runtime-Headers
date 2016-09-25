@@ -7,7 +7,7 @@
     unsigned int  _bodyMaxLength;
     NSString * _nickname;
     unsigned int  _nicknameMaxLength;
-    double  _rating;
+    float  _rating;
     NSURL * _submitURL;
     NSString * _title;
     unsigned int  _titleMaxLength;
@@ -17,7 +17,7 @@
 @property (nonatomic, readonly) unsigned int bodyMaxLength;
 @property (nonatomic, copy) NSString *nickname;
 @property (nonatomic, readonly) unsigned int nicknameMaxLength;
-@property (nonatomic) double rating;
+@property (nonatomic) float rating;
 @property (nonatomic, readonly) NSURL *submitURL;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, readonly) unsigned int titleMaxLength;

@@ -6,41 +6,41 @@
     BOOL  _active;
     unsigned int  _categoryBitMask;
     struct SCNVector3 { 
-        double x; 
-        double y; 
-        double z; 
+        float x; 
+        float y; 
+        float z; 
     }  _direction;
     BOOL  _exclusive;
-    double  _falloffExponent;
-    struct c3dPhysicsField { int (**x1)(); struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x_2_1_1[4]; } x2; double x3; double x4; double x5; unsigned int x6; bool x7; bool x8; bool x9; bool x10; double x11; } * _field;
+    float  _falloffExponent;
+    struct c3dPhysicsField { int (**x1)(); struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x_2_1_1[4]; } x2; float x3; float x4; float x5; unsigned int x6; bool x7; bool x8; bool x9; bool x10; float x11; } * _field;
     struct SCNVector3 { 
-        double x; 
-        double y; 
-        double z; 
+        float x; 
+        float y; 
+        float z; 
     }  _halfExtent;
-    double  _minimumDistance;
+    float  _minimumDistance;
     SCNNode * _node;
     struct SCNVector3 { 
-        double x; 
-        double y; 
-        double z; 
+        float x; 
+        float y; 
+        float z; 
     }  _offset;
     int  _scope;
-    double  _strength;
+    float  _strength;
     BOOL  _usesEllipsoidalExtent;
     SCNPhysicsWorld * _world;
 }
 
 @property (getter=isActive, nonatomic) BOOL active;
 @property (nonatomic) unsigned int categoryBitMask;
-@property (nonatomic) struct SCNVector3 { double x1; double x2; double x3; } direction;
+@property (nonatomic) struct SCNVector3 { float x1; float x2; float x3; } direction;
 @property (getter=isExclusive, nonatomic) BOOL exclusive;
-@property (nonatomic) double falloffExponent;
-@property (nonatomic) struct SCNVector3 { double x1; double x2; double x3; } halfExtent;
-@property (nonatomic) double minimumDistance;
-@property (nonatomic) struct SCNVector3 { double x1; double x2; double x3; } offset;
+@property (nonatomic) float falloffExponent;
+@property (nonatomic) struct SCNVector3 { float x1; float x2; float x3; } halfExtent;
+@property (nonatomic) float minimumDistance;
+@property (nonatomic) struct SCNVector3 { float x1; float x2; float x3; } offset;
 @property (nonatomic) int scope;
-@property (nonatomic) double strength;
+@property (nonatomic) float strength;
 @property (nonatomic) BOOL usesEllipsoidalExtent;
 
 + (float)_displayScaleFactor;
@@ -59,8 +59,8 @@
 + (id)vortexField;
 
 - (void)_commonInit;
-- (struct c3dPhysicsField { int (**x1)(); struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x_2_1_1[4]; } x2; double x3; double x4; double x5; unsigned int x6; bool x7; bool x8; bool x9; bool x10; double x11; }*)_createField;
-- (struct c3dPhysicsField { int (**x1)(); struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x_2_1_1[4]; } x2; double x3; double x4; double x5; unsigned int x6; bool x7; bool x8; bool x9; bool x10; double x11; }*)_handle;
+- (struct c3dPhysicsField { int (**x1)(); struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x_2_1_1[4]; } x2; float x3; float x4; float x5; unsigned int x6; bool x7; bool x8; bool x9; bool x10; float x11; }*)_createField;
+- (struct c3dPhysicsField { int (**x1)(); struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x_2_1_1[4]; } x2; float x3; float x4; float x5; unsigned int x6; bool x7; bool x8; bool x9; bool x10; float x11; }*)_handle;
 - (id)_owner;
 - (void)_removeOwner;
 - (void)_setOwner:(id)arg1;
@@ -71,26 +71,26 @@
 - (id)copy;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (struct SCNVector3 { double x1; double x2; double x3; })direction;
+- (struct SCNVector3 { float x1; float x2; float x3; })direction;
 - (void)encodeWithCoder:(id)arg1;
-- (struct SCNVector3 { double x1; double x2; double x3; })evalAtLocation:(struct SCNVector3 { double x1; double x2; double x3; })arg1;
+- (struct SCNVector3 { float x1; float x2; float x3; })evalAtLocation:(struct SCNVector3 { float x1; float x2; float x3; })arg1;
 - (float)falloffExponent;
-- (struct SCNVector3 { double x1; double x2; double x3; })halfExtent;
+- (struct SCNVector3 { float x1; float x2; float x3; })halfExtent;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isActive;
 - (BOOL)isExclusive;
 - (float)minimumDistance;
-- (struct SCNVector3 { double x1; double x2; double x3; })offset;
+- (struct SCNVector3 { float x1; float x2; float x3; })offset;
 - (int)scope;
 - (void)setActive:(BOOL)arg1;
 - (void)setCategoryBitMask:(unsigned int)arg1;
-- (void)setDirection:(struct SCNVector3 { double x1; double x2; double x3; })arg1;
+- (void)setDirection:(struct SCNVector3 { float x1; float x2; float x3; })arg1;
 - (void)setExclusive:(BOOL)arg1;
 - (void)setFalloffExponent:(float)arg1;
-- (void)setHalfExtent:(struct SCNVector3 { double x1; double x2; double x3; })arg1;
+- (void)setHalfExtent:(struct SCNVector3 { float x1; float x2; float x3; })arg1;
 - (void)setMinimumDistance:(float)arg1;
-- (void)setOffset:(struct SCNVector3 { double x1; double x2; double x3; })arg1;
+- (void)setOffset:(struct SCNVector3 { float x1; float x2; float x3; })arg1;
 - (void)setScope:(int)arg1;
 - (void)setStrength:(float)arg1;
 - (void)setUsesEllipsoidalExtent:(BOOL)arg1;

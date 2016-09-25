@@ -10,15 +10,15 @@
     BOOL  _hasSetVideoZoomFactorOnCaptureSource;
     int  _imageControlMode;
     FigCaptureSourceFormat * _requiredFormat;
-    double  _requiredMaxFrameRate;
-    double  _requiredMinFrameRate;
+    float  _requiredMaxFrameRate;
+    float  _requiredMinFrameRate;
     BOOL  _sensorHDREnabled;
     struct OpaqueFigCaptureSource { } * _source;
     NSDictionary * _sourceAttributes;
     NSString * _sourceID;
     int  _sourceType;
-    double  _videoZoomFactor;
-    double  _videoZoomRampAcceleration;
+    float  _videoZoomFactor;
+    float  _videoZoomRampAcceleration;
 }
 
 @property (nonatomic) BOOL applyMaxIntegrationTimeOverrideWhenAvailable;
@@ -31,16 +31,16 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic) int imageControlMode;
 @property (nonatomic, retain) FigCaptureSourceFormat *requiredFormat;
-@property (nonatomic) double requiredMaxFrameRate;
-@property (nonatomic) double requiredMinFrameRate;
+@property (nonatomic) float requiredMaxFrameRate;
+@property (nonatomic) float requiredMinFrameRate;
 @property (nonatomic) BOOL sensorHDREnabled;
 @property (nonatomic, readonly) struct OpaqueFigCaptureSource { }*source;
 @property (nonatomic, copy) NSString *sourceID;
 @property (nonatomic, readonly) int sourcePosition;
 @property (nonatomic, readonly) int sourceType;
 @property (readonly) Class superclass;
-@property (nonatomic) double videoZoomFactor;
-@property (nonatomic) double videoZoomRampAcceleration;
+@property (nonatomic) float videoZoomFactor;
+@property (nonatomic) float videoZoomRampAcceleration;
 
 + (void)initialize;
 + (int)sourceTypeForString:(id)arg1;

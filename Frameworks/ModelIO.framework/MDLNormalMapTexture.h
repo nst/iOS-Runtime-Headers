@@ -3,8 +3,8 @@
  */
 
 @interface MDLNormalMapTexture : MDLTexture {
-    double  _contrast;
-    double  _smoothness;
+    float  _contrast;
+    float  _smoothness;
     MDLTexture * _sourceTexture;
 }
 

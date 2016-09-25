@@ -28,8 +28,8 @@
     NSMutableArray * _pendingTintInformationDispatchEvents;
     int  _presentationSource;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _previousMaximumHeaderSize;
     UIViewController * _relatedContentViewController;
     <MusicEntityProviding> * _tracklistEntityProvider;
@@ -97,7 +97,7 @@
 - (BOOL)isForContentCreation;
 - (void)jsProductNativeViewController:(id)arg1 presentShareDocument:(id)arg2 options:(id)arg3;
 - (void)jsProductNativeViewController:(id)arg1 setProductEntityValueProviderData:(id)arg2;
-- (void)jsProductNativeViewController:(id)arg1 setProminentTrackStoreID:(int)arg2;
+- (void)jsProductNativeViewController:(id)arg1 setProminentTrackStoreID:(long long)arg2;
 - (void)jsProductNativeViewController:(id)arg1 setRelatedContentDocument:(id)arg2 options:(id)arg3;
 - (void)jsProductNativeViewController:(id)arg1 setReportingInformation:(id)arg2;
 - (void)jsProductNativeViewController:(id)arg1 setTracklistItems:(id)arg2;

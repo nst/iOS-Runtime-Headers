@@ -11,10 +11,10 @@
     CompassBackgroundView * _compassBackgroundView;
     CAShapeLayer * _compassBackgroundViewMask;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _compassOriginPoint;
-    double  _compassRadius;
+    float  _compassRadius;
     BOOL  _ignoreMotionUpdates;
     UILabel * _instructionLabel;
     unsigned int  _numCompleteTics;
@@ -26,7 +26,7 @@
     int  _quantizationType;
     BOOL  _shouldCompleteTics;
     double  _startTicAngle;
-    double * _ticsShowingArray;
+    float * _ticsShowingArray;
     UILabel * _titleLabel;
 }
 
@@ -41,7 +41,7 @@
 - (void)dealloc;
 - (void)hideAllTics;
 - (id)init;
-- (id)initWithOriginPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (id)initWithOriginPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)prefersStatusBarHidden;
 - (float)quantizedPercentage:(double)arg1 forAngle:(double)arg2;
 - (void)reset;

@@ -3,7 +3,7 @@
  */
 
 @interface GEOETATrafficUpdateResponse : PBCodable <NSCopying> {
-    unsigned int  _debugServerLatencyMs;
+    unsigned long long  _debugServerLatencyMs;
     GEOETAServiceResponseSummary * _etaServiceSummary;
     struct { 
         unsigned int debugServerLatencyMs : 1; 
@@ -14,7 +14,7 @@
     int  _status;
 }
 
-@property (nonatomic) unsigned int debugServerLatencyMs;
+@property (nonatomic) unsigned long long debugServerLatencyMs;
 @property (nonatomic, retain) GEOETAServiceResponseSummary *etaServiceSummary;
 @property (nonatomic) BOOL hasDebugServerLatencyMs;
 @property (nonatomic, readonly) BOOL hasEtaServiceSummary;
@@ -32,7 +32,7 @@
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (unsigned int)debugServerLatencyMs;
+- (unsigned long long)debugServerLatencyMs;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)etaServiceSummary;
@@ -48,7 +48,7 @@
 - (id)routes;
 - (unsigned int)routesCount;
 - (id)sessionState;
-- (void)setDebugServerLatencyMs:(unsigned int)arg1;
+- (void)setDebugServerLatencyMs:(unsigned long long)arg1;
 - (void)setEtaServiceSummary:(id)arg1;
 - (void)setHasDebugServerLatencyMs:(BOOL)arg1;
 - (void)setHasStatus:(BOOL)arg1;

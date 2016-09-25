@@ -5,7 +5,7 @@
 @interface KCJoiningAcceptSession : NSObject {
     NSObject<KCJoiningAcceptCircleDelegate> * _circleDelegate;
     KCSRPServerContext * _context;
-    unsigned int  _dsid;
+    unsigned long long  _dsid;
     NSObject<KCJoiningAcceptSecretDelegate> * _secretDelegate;
     KCAESGCMDuplexSession * _session;
     NSData * _startMessage;
@@ -14,21 +14,21 @@
 
 @property (readonly) NSObject<KCJoiningAcceptCircleDelegate> *circleDelegate;
 @property (readonly) KCSRPServerContext *context;
-@property (readonly) unsigned int dsid;
+@property (readonly) unsigned long long dsid;
 @property (readonly) NSObject<KCJoiningAcceptSecretDelegate> *secretDelegate;
 @property (readonly) KCAESGCMDuplexSession *session;
 @property (retain) NSData *startMessage;
 @property (readonly) int state;
 
-+ (id)sessionWithInitialMessage:(id)arg1 secretDelegate:(id)arg2 circleDelegate:(id)arg3 dsid:(unsigned int)arg4 error:(id*)arg5;
++ (id)sessionWithInitialMessage:(id)arg1 secretDelegate:(id)arg2 circleDelegate:(id)arg3 dsid:(unsigned long long)arg4 error:(id*)arg5;
 
 - (void).cxx_destruct;
 - (id)circleDelegate;
 - (id)context;
 - (id)copyChallengeMessage:(id*)arg1;
 - (id)description;
-- (unsigned int)dsid;
-- (id)initWithSecretDelegate:(id)arg1 circleDelegate:(id)arg2 dsid:(unsigned int)arg3 rng:(struct ccrng_state { int (*x1)(); }*)arg4 error:(id*)arg5;
+- (unsigned long long)dsid;
+- (id)initWithSecretDelegate:(id)arg1 circleDelegate:(id)arg2 dsid:(unsigned long long)arg3 rng:(struct ccrng_state { int (*x1)(); }*)arg4 error:(id*)arg5;
 - (bool)isDone;
 - (id)processApplication:(id)arg1 error:(id*)arg2;
 - (id)processInitialMessage:(id)arg1 error:(id*)arg2;

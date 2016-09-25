@@ -18,12 +18,12 @@
     int  __movieFramesPerSecond;
     NSString * __movieOutputPath;
     struct CGAffineTransform { 
-        double a; 
-        double b; 
-        double c; 
-        double d; 
-        double tx; 
-        double ty; 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     }  __movieTransform;
     NSObject<OS_dispatch_queue> * __movieWritingQueue;
     int  __nextMetadataFrameIndex;
@@ -58,7 +58,7 @@
 @property (nonatomic, readonly) CLLocation *_movieCreationLocation;
 @property (nonatomic, readonly) int _movieFramesPerSecond;
 @property (nonatomic, readonly) NSString *_movieOutputPath;
-@property (nonatomic, readonly) struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; } _movieTransform;
+@property (nonatomic, readonly) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } _movieTransform;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *_movieWritingQueue;
 @property (nonatomic, readonly) int _nextMetadataFrameIndex;
 @property (nonatomic, readonly) int _nextSourceFrameIndex;
@@ -81,7 +81,7 @@
 @property (readonly) Class superclass;
 @property (getter=isSuspended, nonatomic) BOOL suspended;
 
-+ (struct CGSize { double x1; double x2; })_desiredOutputSizeForSourcePixelBuffer:(struct __CVBuffer { }*)arg1;
++ (struct CGSize { float x1; float x2; })_desiredOutputSizeForSourcePixelBuffer:(struct __CVBuffer { }*)arg1;
 
 - (void).cxx_destruct;
 - (BOOL)_appendPixelBufferToMovie:(struct __CVBuffer { }*)arg1;
@@ -107,7 +107,7 @@
 - (id)_movieCreationLocation;
 - (int)_movieFramesPerSecond;
 - (id)_movieOutputPath;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })_movieTransform;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_movieTransform;
 - (id)_movieWritingQueue;
 - (int)_nextMetadataFrameIndex;
 - (int)_nextSourceFrameIndex;
@@ -124,19 +124,19 @@
 - (void)_setMetadataOnVideoTrackAssetWriterInput:(id)arg1;
 - (id)_stabilizer;
 - (void)_startAsyncDecoding;
-- (long)_startWritingWithOutputPath:(id)arg1 width:(int)arg2 height:(int)arg3 videoFormatDescription:(struct opaqueCMFormatDescription { }*)arg4 transform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg5 framesPerSecond:(int)arg6 frameCount:(int)arg7 visMetadataCount:(int)arg8 videoMetadata:(id)arg9;
+- (long)_startWritingWithOutputPath:(id)arg1 width:(int)arg2 height:(int)arg3 videoFormatDescription:(struct opaqueCMFormatDescription { }*)arg4 transform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg5 framesPerSecond:(int)arg6 frameCount:(int)arg7 visMetadataCount:(int)arg8 videoMetadata:(id)arg9;
 - (struct __CVBuffer { }*)_stashedSourceFrame;
 - (id)_syncQueue;
 - (id)_videoInput;
 - (id)_visMetadataFilePaths;
 - (void)_writeMovieAsynchronously;
 - (id)_writer;
-- (struct __CVBuffer { }*)copySourcePixelBufferForFrameNumber:(int)arg1 outputSampleTime:(struct { int x1; int x2; unsigned int x3; int x4; }*)arg2 stabilizer:(id)arg3;
-- (id)copySourceStabilizationMetadataForFrameNumber:(int)arg1 outputSampleTime:(struct { int x1; int x2; unsigned int x3; int x4; }*)arg2 stabilizer:(id)arg3;
+- (struct __CVBuffer { }*)copySourcePixelBufferForFrameNumber:(int)arg1 outputSampleTime:(struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg2 stabilizer:(id)arg3;
+- (id)copySourceStabilizationMetadataForFrameNumber:(int)arg1 outputSampleTime:(struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg2 stabilizer:(id)arg3;
 - (void)dealloc;
 - (id)init;
 - (BOOL)isSuspended;
 - (void)setSuspended:(BOOL)arg1;
-- (void)writeMovieFromImageFiles:(id)arg1 visMetadataFiles:(id)arg2 startDate:(id)arg3 location:(id)arg4 outputPath:(id)arg5 transform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg6 framesPerSecond:(int)arg7 completionHandler:(id /* block */)arg8;
+- (void)writeMovieFromImageFiles:(id)arg1 visMetadataFiles:(id)arg2 startDate:(id)arg3 location:(id)arg4 outputPath:(id)arg5 transform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg6 framesPerSecond:(int)arg7 completionHandler:(id /* block */)arg8;
 
 @end

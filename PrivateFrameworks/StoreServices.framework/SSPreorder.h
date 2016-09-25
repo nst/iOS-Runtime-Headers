@@ -6,10 +6,10 @@
     NSNumber * _accountID;
     NSString * _artistName;
     SSItemImageCollection * _imageCollection;
-    unsigned int  _itemID;
+    unsigned long long  _itemID;
     NSString * _itemKind;
-    int  _pid;
-    unsigned int  _preorderID;
+    long long  _pid;
+    unsigned long long  _preorderID;
     double  _releaseDate;
     NSString * _releaseDateString;
     NSString * _title;
@@ -21,24 +21,24 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) SSItemImageCollection *imageCollection;
 @property (nonatomic, readonly) NSString *itemKind;
-@property (nonatomic, readonly) int persistentIdentifier;
+@property (nonatomic, readonly) long long persistentIdentifier;
 @property (nonatomic, readonly) NSDate *releaseDate;
 @property (nonatomic, readonly) NSString *releaseDateString;
 @property (nonatomic, readonly) NSNumber *storeAccountIdentifier;
-@property (nonatomic, readonly) unsigned int storeItemIdentifier;
-@property (nonatomic, readonly) unsigned int storePreorderIdentifier;
+@property (nonatomic, readonly) unsigned long long storeItemIdentifier;
+@property (nonatomic, readonly) unsigned long long storePreorderIdentifier;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSString *title;
 
-- (id)_initWithPersistentIdentifier:(int)arg1;
+- (id)_initWithPersistentIdentifier:(long long)arg1;
 - (void)_setArtistName:(id)arg1;
 - (void)_setImageCollection:(id)arg1;
 - (void)_setItemKind:(id)arg1;
 - (void)_setReleaseDate:(id)arg1;
 - (void)_setReleaseDateString:(id)arg1;
 - (void)_setStoreAccountIdentifier:(id)arg1;
-- (void)_setStoreItemIdentifier:(int)arg1;
-- (void)_setStorePreorderIdentifier:(int)arg1;
+- (void)_setStoreItemIdentifier:(long long)arg1;
+- (void)_setStorePreorderIdentifier:(long long)arg1;
 - (void)_setTitle:(id)arg1;
 - (id)artistName;
 - (id)copyReleaseDateStringWithStyle:(long)arg1;
@@ -50,12 +50,12 @@
 - (id)initWithXPCEncoding:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)itemKind;
-- (int)persistentIdentifier;
+- (long long)persistentIdentifier;
 - (id)releaseDate;
 - (id)releaseDateString;
 - (id)storeAccountIdentifier;
-- (unsigned int)storeItemIdentifier;
-- (unsigned int)storePreorderIdentifier;
+- (unsigned long long)storeItemIdentifier;
+- (unsigned long long)storePreorderIdentifier;
 - (id)title;
 
 @end

@@ -24,7 +24,7 @@
 + (id)displayLinkWithDisplay:(id)arg1 target:(id)arg2 selector:(SEL)arg3;
 + (id)displayLinkWithTarget:(id)arg1 selector:(SEL)arg2;
 
-- (id)_initWithDisplayLinkItem:(struct DisplayLinkItem { struct Display {} *x1; void *x2; SEL x3; void *x4; int x5; int x6; int x7; struct Mutex { struct _opaque_pthread_mutex_t { long x_1_2_1; BOOL x_1_2_2[40]; } x_8_1_1; } x8; struct Condition { struct _opaque_pthread_cond_t { long x_1_2_1; BOOL x_1_2_2[24]; } x_9_1_1; } x9; struct _opaque_pthread_t {} *x10; id x11; /* Warning: Unrecognized filer type: 'R' using 'void*' */ void*x12; void*x13; double x14; void*x15; unsigned char x16; SEL x17; SEL x18; long doublex19; int x20; short x21; void*x22; long x23; void*x24; void*x25; SEL x26; SEL x27; long doublex28; int x29; short x30; void*x31; long x32; void*x33; void*x34; unsigned long x35; int x36; in void*x37; void*x38; void*x39; struct DisplayLink {} *x40; }*)arg1;
+- (id)_initWithDisplayLinkItem:(struct DisplayLinkItem { struct Display {} *x1; void *x2; SEL x3; void *x4; int x5; int x6; int x7; struct Mutex { struct _opaque_pthread_mutex_t { long x_1_2_1; BOOL x_1_2_2[40]; } x_8_1_1; } x8; struct Condition { struct _opaque_pthread_cond_t { long x_1_2_1; BOOL x_1_2_2[24]; } x_9_1_1; } x9; struct _opaque_pthread_t {} *x10; id x11; /* Warning: Unrecognized filer type: 'R' using 'void*' */ void*x12; void*x13; float x14; void*x15; unsigned char x16; SEL x17; SEL x18; long doublex19; int x20; short x21; void*x22; long x23; void*x24; void*x25; SEL x26; SEL x27; long doublex28; int x29; short x30; void*x31; long x32; void*x33; void*x34; unsigned long x35; int x36; in void*x37; void*x38; void*x39; struct DisplayLink {} *x40; }*)arg1;
 - (void)addToRunLoop:(id)arg1 forMode:(id)arg2;
 - (void)dealloc;
 - (id)display;

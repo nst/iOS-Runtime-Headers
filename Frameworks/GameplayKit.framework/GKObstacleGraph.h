@@ -8,7 +8,7 @@
     NSMutableArray * _sourceObstacles;
 }
 
-@property (nonatomic, readonly) double bufferRadius;
+@property (nonatomic, readonly) float bufferRadius;
 @property (nonatomic, readonly) NSArray *obstacles;
 
 + (id)graphWithObstacles:(id)arg1 bufferRadius:(float)arg2;

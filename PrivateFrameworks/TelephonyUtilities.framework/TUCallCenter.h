@@ -7,12 +7,12 @@
     TUCallServicesInterface * _callServicesInterface;
     CNContactStore * _contactStore;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _localLandscapeAspectRatio;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _localPortraitAspectRatio;
     TUCallProviderManager * _providerManager;
     NSObject<OS_dispatch_queue> * _queue;
@@ -51,8 +51,8 @@
 @property (nonatomic, readonly) TUCall *incomingCall;
 @property (nonatomic, readonly, copy) NSArray *incomingCalls;
 @property (nonatomic, readonly) TUCall *incomingVideoCall;
-@property (nonatomic) struct CGSize { double x1; double x2; } localLandscapeAspectRatio;
-@property (nonatomic) struct CGSize { double x1; double x2; } localPortraitAspectRatio;
+@property (nonatomic) struct CGSize { float x1; float x2; } localLandscapeAspectRatio;
+@property (nonatomic) struct CGSize { float x1; float x2; } localPortraitAspectRatio;
 @property (nonatomic, retain) TUCallProviderManager *providerManager;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 
@@ -170,8 +170,8 @@
 - (BOOL)isSwappable;
 - (BOOL)isTakingCallsPrivateAllowed;
 - (void)launchAppForDialRequest:(id)arg1 completion:(id /* block */)arg2;
-- (struct CGSize { double x1; double x2; })localLandscapeAspectRatio;
-- (struct CGSize { double x1; double x2; })localPortraitAspectRatio;
+- (struct CGSize { float x1; float x2; })localLandscapeAspectRatio;
+- (struct CGSize { float x1; float x2; })localPortraitAspectRatio;
 - (id)providerManager;
 - (void)pullCallFromClientUsingHandoffActivityUserInfo:(id)arg1 completion:(id /* block */)arg2;
 - (void)pullHostedCallsFromPairedHostDevice;
@@ -186,8 +186,8 @@
 - (void)setAudioDeviceController:(id)arg1;
 - (void)setCallServicesInterface:(id)arg1;
 - (void)setContactStore:(id)arg1;
-- (void)setLocalLandscapeAspectRatio:(struct CGSize { double x1; double x2; })arg1;
-- (void)setLocalPortraitAspectRatio:(struct CGSize { double x1; double x2; })arg1;
+- (void)setLocalLandscapeAspectRatio:(struct CGSize { float x1; float x2; })arg1;
+- (void)setLocalPortraitAspectRatio:(struct CGSize { float x1; float x2; })arg1;
 - (void)setProviderManager:(id)arg1;
 - (void)setQueue:(id)arg1;
 - (BOOL)shouldPreferRelayOverDirectSecondaryCallingForProvider:(id)arg1;

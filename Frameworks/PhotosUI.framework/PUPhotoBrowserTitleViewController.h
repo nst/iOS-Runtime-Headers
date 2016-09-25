@@ -18,10 +18,10 @@
     PLDateRangeFormatter * __timeFormatter;
     NSDate * _creationDate;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _currentPlaybackTime;
     <PUPhotoBrowserTitleViewControllerDelegate> * _delegate;
     struct { 
@@ -29,10 +29,10 @@
     }  _delegateFlags;
     NSString * _geoDescription;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _playbackDuration;
     BOOL  _tappable;
     BOOL  _usingCompactTitleView;
@@ -53,10 +53,10 @@
 @property (setter=_setTimeDescription:, nonatomic, retain) NSString *_timeDescription;
 @property (nonatomic, readonly) PLDateRangeFormatter *_timeFormatter;
 @property (nonatomic, retain) NSDate *creationDate;
-@property (nonatomic) struct { int x1; int x2; unsigned int x3; int x4; } currentPlaybackTime;
+@property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } currentPlaybackTime;
 @property (nonatomic) <PUPhotoBrowserTitleViewControllerDelegate> *delegate;
 @property (nonatomic, retain) NSString *geoDescription;
-@property (nonatomic) struct { int x1; int x2; unsigned int x3; int x4; } playbackDuration;
+@property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } playbackDuration;
 @property (nonatomic, readonly, copy) NSString *subtitle;
 @property (getter=isTappable, nonatomic) BOOL tappable;
 @property (nonatomic, retain) UIColor *textColor;
@@ -104,7 +104,7 @@
 - (void)_updateLabelsIfNeeded;
 - (void)_updatePlayClockDescriptionIfNeeded;
 - (id)creationDate;
-- (struct { int x1; int x2; unsigned int x3; int x4; })currentPlaybackTime;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })currentPlaybackTime;
 - (void)dealloc;
 - (id)delegate;
 - (id)geoDescription;
@@ -112,12 +112,12 @@
 - (BOOL)isTappable;
 - (BOOL)isUsingCompactTitleView;
 - (void)performChanges:(id /* block */)arg1;
-- (struct { int x1; int x2; unsigned int x3; int x4; })playbackDuration;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })playbackDuration;
 - (void)setCreationDate:(id)arg1;
-- (void)setCurrentPlaybackTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
+- (void)setCurrentPlaybackTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setGeoDescription:(id)arg1;
-- (void)setPlaybackDuration:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
+- (void)setPlaybackDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setTappable:(BOOL)arg1;
 - (void)setTextColor:(id)arg1;
 - (void)setUsingCompactTitleView:(BOOL)arg1;

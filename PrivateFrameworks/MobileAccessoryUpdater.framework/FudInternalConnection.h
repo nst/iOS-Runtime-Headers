@@ -16,7 +16,7 @@
 @property (readonly) Class superclass;
 
 - (void)dealloc;
-- (int)getNextMessageID;
+- (long long)getNextMessageID;
 - (void)handleInboundNotification:(id)arg1;
 - (id)initWithClientIdentifier:(id)arg1 handlerQueue:(id)arg2 messageHandler:(id /* block */)arg3;
 - (void)sendMessageToFud:(id)arg1;

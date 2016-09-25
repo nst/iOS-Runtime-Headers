@@ -3,12 +3,12 @@
  */
 
 @interface PTSSliderRow : PTSRow {
-    double  _maxValue;
-    double  _minValue;
+    float  _maxValue;
+    float  _minValue;
 }
 
-@property (nonatomic) double maxValue;
-@property (nonatomic) double minValue;
+@property (nonatomic) float maxValue;
+@property (nonatomic) float minValue;
 
 - (id)init;
 - (float)maxValue;

@@ -9,7 +9,7 @@
 
 @property (nonatomic, readonly) struct CGColor { }*CGColor;
 @property (nonatomic, readonly) CIColor *CIColor;
-@property (nonatomic, readonly) double MP_lightness;
+@property (nonatomic, readonly) float MP_lightness;
 @property (nonatomic, readonly, copy) UIColor *invert;
 @property (getter=px_isTransparent, nonatomic, readonly) BOOL px_transparent;
 @property (getter=_systemColorName, setter=_setSystemColorName:, nonatomic, retain) NSString *systemColorName;
@@ -315,9 +315,9 @@
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
-+ (id)colorWithITColor:(struct ITColor { double x1; double x2; double x3; double x4; })arg1;
++ (id)colorWithITColor:(struct ITColor { float x1; float x2; float x3; float x4; })arg1;
 
-- (struct ITColor { double x1; double x2; double x3; double x4; })ITColor;
+- (struct ITColor { float x1; float x2; float x3; float x4; })ITColor;
 - (BOOL)MP_isArtworkColorAnalyzerLightColorForAlgorithm:(int)arg1;
 - (float)MP_lightness;
 
@@ -334,22 +334,22 @@
 // Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
 
 + (id)color:(float)arg1 :(float)arg2 :(float)arg3 :(float)arg4;
-+ (id)scn_colorWithC3DColor:(const struct C3DColor4 { union { double x_1_1_1[4]; struct { double x_2_2_1; double x_2_2_2; double x_2_2_3; double x_2_2_4; } x_1_1_2; } x1; }*)arg1;
++ (id)scn_colorWithC3DColor:(const struct C3DColor4 { union { float x_1_1_1[4]; struct { float x_2_2_1; float x_2_2_2; float x_2_2_3; float x_2_2_4; } x_1_1_2; } x1; }*)arg1;
 
 - (float)a;
 - (float)b;
 - (float)g;
 - (float)r;
-- (struct C3DColor4 { union { double x_1_1_1[4]; struct { double x_2_2_1; double x_2_2_2; double x_2_2_3; double x_2_2_4; } x_1_1_2; } x1; })scn_C3DColorIgnoringColorSpace:(BOOL)arg1 success:(BOOL*)arg2;
+- (struct C3DColor4 { union { float x_1_1_1[4]; struct { float x_2_2_1; float x_2_2_2; float x_2_2_3; float x_2_2_4; } x_1_1_2; } x1; })scn_C3DColorIgnoringColorSpace:(BOOL)arg1 success:(BOOL*)arg2;
 
 // Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
 
-+ (id)colorWithComponentRGBA:(struct { double x1; double x2; double x3; double x4; })arg1;
++ (id)colorWithComponentRGBA:(struct { float x1; float x2; float x3; float x4; })arg1;
 + (id)colorWithVectorRGBA;
 
 - (float)alpha;
 - (float)blue;
-- (struct { double x1; double x2; double x3; double x4; })componentRGBA;
+- (struct { float x1; float x2; float x3; float x4; })componentRGBA;
 - (float)green;
 - (float)red;
 - (void)vectorRGBA;
@@ -553,7 +553,7 @@
 
 // Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
 
-+ (id)checkerboardColorWithColor:(id)arg1 andColor:(id)arg2 squareSize:(struct CGSize { double x1; double x2; })arg3;
++ (id)checkerboardColorWithColor:(id)arg1 andColor:(id)arg2 squareSize:(struct CGSize { float x1; float x2; })arg3;
 + (id)grayCheckerboardColor;
 + (id)tableViewCellDarkBlueTextColor;
 + (id)transparentGrayCheckerboardColor;

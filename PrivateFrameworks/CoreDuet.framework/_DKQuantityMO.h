@@ -5,6 +5,6 @@
 @interface _DKQuantityMO : _DKObjectMO
 
 @property (nonatomic) double doubleValue;
-@property (nonatomic) int quantityType;
+@property (nonatomic) long long quantityType;
 
 @end

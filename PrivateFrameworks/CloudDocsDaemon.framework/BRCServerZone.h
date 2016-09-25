@@ -33,7 +33,7 @@
 @property (nonatomic, readonly) NSString *zoneName;
 
 - (void).cxx_destruct;
-- (void)_collectTombstoneForRank:(unsigned int)arg1;
+- (void)_collectTombstoneForRank:(unsigned long long)arg1;
 - (struct PQLResultSet { Class x1; }*)_enumeratePendingFetchDeletedNormalRecordIDs;
 - (struct PQLResultSet { Class x1; }*)_enumeratePendingFetchDeletedShareRecordIDs;
 - (BOOL)_markItemDeadForRecordID:(id)arg1;
@@ -67,7 +67,7 @@
 - (id)deleteAllContentsOperation;
 - (id)description;
 - (id)descriptionWithContext:(id)arg1;
-- (unsigned int)didSyncDownRequestID:(unsigned int)arg1 serverChangeToken:(id)arg2 editedRecords:(id)arg3 deletedRecordIDs:(id)arg4 deletedShareRecordIDs:(id)arg5 movedZoneNames:(id)arg6 syncStatus:(int)arg7;
+- (unsigned long long)didSyncDownRequestID:(unsigned long long)arg1 serverChangeToken:(id)arg2 editedRecords:(id)arg3 deletedRecordIDs:(id)arg4 deletedShareRecordIDs:(id)arg5 movedZoneNames:(id)arg6 syncStatus:(int)arg7;
 - (BOOL)dumpStatusToContext:(id)arg1 error:(id*)arg2;
 - (BOOL)dumpTablesToContext:(id)arg1 error:(id*)arg2;
 - (void)forceMoveToCloudDocs;
@@ -105,8 +105,8 @@
 - (unsigned int)state;
 - (BOOL)storeXattr:(id)arg1;
 - (id)syncContext;
-- (BOOL)validateItemsLoggingToFile:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; int x20; }*)arg1 db:(id)arg2;
-- (BOOL)validateStructureLoggingToFile:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; int x20; }*)arg1 db:(id)arg2;
+- (BOOL)validateItemsLoggingToFile:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; long long x20; }*)arg1 db:(id)arg2;
+- (BOOL)validateStructureLoggingToFile:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; long long x20; }*)arg1 db:(id)arg2;
 - (id)xattrForSignature:(id)arg1;
 - (id)zoneID;
 - (id)zoneName;

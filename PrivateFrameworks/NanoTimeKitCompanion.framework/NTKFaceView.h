@@ -4,12 +4,12 @@
 
 @interface NTKFaceView : UIView <NTKClockHardwareInput, NTKClockIconZoomAnimator, NTKContainerViewLayoutDelegate, NTKTimeTravelModuleViewTapClient, NTKTimeView, PUICCrownInputSequencerDelegate> {
     NSTimer * _accumulateTimeTravelEntryRotationTimeoutTimer;
-    double  _accumulatedTimeTravelEntryRotation;
+    float  _accumulatedTimeTravelEntryRotation;
     double  _aggdTimeTravelMaximumOffset;
     NSDate * _aggdTimeTravelSessionStart;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _boundsSizeForComputedLayouts;
     BOOL  _canHandleHardwareEvents;
     NSMutableDictionary * _complicationDisplayWrappers;
@@ -21,7 +21,7 @@
     <NTKFaceViewDelegate> * _delegate;
     int  _detailMode;
     NSMutableDictionary * _editConfigurations;
-    double  _editModeTransitionFraction;
+    float  _editModeTransitionFraction;
     NTKFaceEditView * _editView;
     BOOL  _editing;
     int  _faceStyle;
@@ -33,8 +33,8 @@
     NSMutableSet * _hiddenComplicationSlots;
     BOOL  _isBackgrounded;
     double  _lastCrownOffset;
-    double  _maxIconDiameter;
-    double  _minIconDiameter;
+    float  _maxIconDiameter;
+    float  _minIconDiameter;
     BOOL  _needsImageQueueDiscardOnRender;
     BOOL  _needsRender;
     BOOL  _needsTraceOnRender;
@@ -71,7 +71,7 @@
     NTKClockIconView * _zoomingIconView;
 }
 
-@property (nonatomic, readonly) double alphaForDimmedState;
+@property (nonatomic, readonly) float alphaForDimmedState;
 @property (nonatomic) BOOL complicationsShowEditingContent;
 @property (nonatomic, readonly) NSDate *currentDisplayDate;
 @property (nonatomic) int dataMode;
@@ -79,7 +79,7 @@
 @property (nonatomic) <NTKFaceViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) int detailMode;
-@property (nonatomic, readonly) double editModeTransitionFraction;
+@property (nonatomic, readonly) float editModeTransitionFraction;
 @property (nonatomic, retain) NTKFaceEditView *editView;
 @property (nonatomic, readonly) BOOL editing;
 @property (nonatomic) int faceStyle;
@@ -87,8 +87,8 @@
 @property (nonatomic, readonly) int fromEditMode;
 @property (getter=isFrozen, nonatomic) BOOL frozen;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly) double maxIconDiameter;
-@property (nonatomic, readonly) double minIconDiameter;
+@property (nonatomic, readonly) float maxIconDiameter;
+@property (nonatomic, readonly) float minIconDiameter;
 @property (nonatomic, readonly) BOOL orbing;
 @property (nonatomic, copy) NSString *resourceDirectory;
 @property (nonatomic, retain) NSString *selectedComplicationSlot;
@@ -150,14 +150,14 @@
 - (void)_enableCrown;
 - (void)_endScrubbingAnimated:(BOOL)arg1 withCompletion:(id /* block */)arg2;
 - (BOOL)_fadesComplicationSlot:(id)arg1 inEditMode:(int)arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameForComplicationDisplayWrapper:(id)arg1 inSlot:(id)arg2;
-- (void)_getKeylineFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg1 padding:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; }*)arg2 forComplicationSlot:(id)arg3 selected:(BOOL)arg4;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForComplicationDisplayWrapper:(id)arg1 inSlot:(id)arg2;
+- (void)_getKeylineFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 padding:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg2 forComplicationSlot:(id)arg3 selected:(BOOL)arg4;
 - (void)_handleLocaleDidChange;
 - (void)_handleOrdinaryScreenWake;
 - (BOOL)_handlePhysicalButton:(unsigned int)arg1 event:(unsigned int)arg2;
 - (void)_handleWristRaiseScreenWake;
 - (float)_keylineCornerRadiusForComplicationSlot:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_keylineFrameForCustomEditMode:(int)arg1 slot:(id)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_keylineFrameForCustomEditMode:(int)arg1 slot:(id)arg2;
 - (unsigned int)_keylineLabelAlignmentForComplicationSlot:(id)arg1;
 - (unsigned int)_keylineLabelAlignmentForCustomEditMode:(int)arg1 slot:(id)arg2;
 - (BOOL)_keylineLabelShouldShowIndividualOptionNamesForCustomEditMode:(int)arg1;
@@ -173,7 +173,7 @@
 - (void)_loadContentToReplaceUnadornedSnapshot;
 - (void)_loadLayoutRules;
 - (void)_loadSnapshotContentViews;
-- (struct CGSize { double x1; double x2; })_maxSizeForComplicationSlot:(id)arg1 layoutOverride:(int)arg2;
+- (struct CGSize { float x1; float x2; })_maxSizeForComplicationSlot:(id)arg1 layoutOverride:(int)arg2;
 - (float)_minimumBreathingScaleForComplicationSlot:(id)arg1;
 - (BOOL)_needsForegroundContainerView;
 - (id)_newLegacyViewForComplication:(id)arg1 family:(int)arg2 slot:(id)arg3;
@@ -199,7 +199,7 @@
 - (id)_timeTravelCaptionFontSizeOverrides;
 - (float)_timeTravelCaptionLabelMaxWidth;
 - (float)_timeTravelStatusModuleCaptionConstraintPadding;
-- (struct CGPoint { double x1; double x2; })_timeTravelStatusModuleCenter;
+- (struct CGPoint { float x1; float x2; })_timeTravelStatusModuleCenter;
 - (void)_unloadSnapshotContentViews;
 - (void)_updateComplicationMaxSize;
 - (void)_updateForResourceDirectoryChange;
@@ -247,18 +247,18 @@
 - (void)enumerateComplicationDisplayWrappersWithBlock:(id /* block */)arg1;
 - (int)faceStyle;
 - (id)foregroundContainerView;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameForComplicationPickerViewForSlot:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForComplicationPickerViewForSlot:(id)arg1;
 - (int)fromEditMode;
 - (void)handleOrdinaryScreenWake;
 - (void)handleUnadornedSnapshotRemoved;
 - (void)handleWristRaiseScreenWake;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)invalidateComplicationLayout;
 - (BOOL)isFrozen;
 - (BOOL)isSlow;
 - (float)keylineCornerRadiusForComplicationSlot:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })keylineFrameForComplicationSlot:(id)arg1 selected:(BOOL)arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })keylineFrameForCustomEditMode:(int)arg1 slot:(id)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })keylineFrameForComplicationSlot:(id)arg1 selected:(BOOL)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })keylineFrameForCustomEditMode:(int)arg1 slot:(id)arg2;
 - (unsigned int)keylineLabelAlignmentForComplicationSlot:(id)arg1;
 - (unsigned int)keylineLabelAlignmentForCustomEditMode:(int)arg1 slot:(id)arg2;
 - (BOOL)keylineLabelShouldShowIndividualOptionNamesForCustomEditMode:(int)arg1;
@@ -321,7 +321,7 @@
 - (void)startScrubbingAnimated:(BOOL)arg1 withCompletion:(id /* block */)arg2;
 - (BOOL)supportsUnadornedSnapshot;
 - (BOOL)timeScrubbing;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })timeTravelModuleTouchInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })timeTravelModuleTouchInsets;
 - (id)timeView;
 - (int)toEditMode;
 - (id)unadornedSnapshotView;

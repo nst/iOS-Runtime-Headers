@@ -71,7 +71,7 @@
 - (void)_updateSummaryLabel;
 - (void)_updateTableSectionsFromFrequency:(int)arg1 toFrequency:(int)arg2;
 - (void)_yearOrdinalSwitchChanged:(id)arg1;
-- (struct CGSize { double x1; double x2; })calculatePreferredContentSize;
+- (struct CGSize { float x1; float x2; })calculatePreferredContentSize;
 - (id /* block */)completionBlock;
 - (id)currentChooser;
 - (id)frequencyPickerView;
@@ -85,7 +85,7 @@
 - (void)pickerView:(id)arg1 didSelectRow:(int)arg2 inComponent:(int)arg3;
 - (int)pickerView:(id)arg1 numberOfRowsInComponent:(int)arg2;
 - (id)pickerView:(id)arg1 titleForRow:(int)arg2 forComponent:(int)arg3;
-- (struct CGSize { double x1; double x2; })preferredContentSize;
+- (struct CGSize { float x1; float x2; })preferredContentSize;
 - (BOOL)prohibitsMultipleDaysInMonthlyRecurrence;
 - (BOOL)prohibitsMultipleMonthsInYearlyRecurrence;
 - (BOOL)prohibitsYearlyRecurrenceInterval;

@@ -13,7 +13,7 @@
     BOOL  _shouldPlayStartSound;
     BOOL  _shouldPlayStopSound;
     NSDate * _startDate;
-    int  _totalPacketsCount;
+    long long  _totalPacketsCount;
     CKVoiceController * _voiceController;
 }
 
@@ -32,7 +32,7 @@
 @property (nonatomic) BOOL shouldPlayStopSound;
 @property (nonatomic, retain) NSDate *startDate;
 @property (readonly) Class superclass;
-@property (nonatomic) int totalPacketsCount;
+@property (nonatomic) long long totalPacketsCount;
 @property (nonatomic, retain) CKVoiceController *voiceController;
 
 - (void).cxx_destruct;
@@ -59,7 +59,7 @@
 - (void)setShouldPlayStartSound:(BOOL)arg1;
 - (void)setShouldPlayStopSound:(BOOL)arg1;
 - (void)setStartDate:(id)arg1;
-- (void)setTotalPacketsCount:(int)arg1;
+- (void)setTotalPacketsCount:(long long)arg1;
 - (void)setVoiceController:(id)arg1;
 - (BOOL)shouldPlayStartSound;
 - (BOOL)shouldPlayStopSound;
@@ -69,7 +69,7 @@
 - (void)startRecordingForRaiseGesture:(BOOL)arg1 shouldPlaySound:(BOOL)arg2;
 - (void)stopRecording:(id /* block */)arg1;
 - (void)stopRecordingAndPlaySound:(BOOL)arg1 completion:(id /* block */)arg2;
-- (int)totalPacketsCount;
+- (long long)totalPacketsCount;
 - (id)voiceController;
 - (void)voiceController:(id)arg1 didUpdateAveragePower:(float)arg2;
 - (void)voiceControllerDidDetectStartpoint:(id)arg1;

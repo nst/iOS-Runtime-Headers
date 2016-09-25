@@ -9,7 +9,7 @@
         unsigned int dataByteSize : 1; 
         unsigned int variableFramesInPacket : 1; 
     }  _has;
-    int  _startOffset;
+    long long  _startOffset;
     unsigned int  _variableFramesInPacket;
 }
 
@@ -17,7 +17,7 @@
 @property (nonatomic) BOOL hasDataByteSize;
 @property (nonatomic) BOOL hasStartOffset;
 @property (nonatomic) BOOL hasVariableFramesInPacket;
-@property (nonatomic) int startOffset;
+@property (nonatomic) long long startOffset;
 @property (nonatomic) unsigned int variableFramesInPacket;
 
 - (void)copyTo:(id)arg1;
@@ -36,9 +36,9 @@
 - (void)setHasDataByteSize:(BOOL)arg1;
 - (void)setHasStartOffset:(BOOL)arg1;
 - (void)setHasVariableFramesInPacket:(BOOL)arg1;
-- (void)setStartOffset:(int)arg1;
+- (void)setStartOffset:(long long)arg1;
 - (void)setVariableFramesInPacket:(unsigned int)arg1;
-- (int)startOffset;
+- (long long)startOffset;
 - (unsigned int)variableFramesInPacket;
 - (void)writeTo:(id)arg1;
 

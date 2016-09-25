@@ -19,8 +19,8 @@
 @property (nonatomic, readonly) int numberOfUserRatingsForCurrentVersion;
 @property (nonatomic, readonly) NSArray *offers;
 @property (nonatomic, readonly) NSURL *productPageURL;
-@property (nonatomic, readonly) double userRating;
-@property (nonatomic, readonly) double userRatingForCurrentVersion;
+@property (nonatomic, readonly) float userRating;
+@property (nonatomic, readonly) float userRatingForCurrentVersion;
 
 // Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
 

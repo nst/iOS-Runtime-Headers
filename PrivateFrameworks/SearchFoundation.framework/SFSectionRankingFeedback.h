@@ -4,13 +4,13 @@
 
 @interface SFSectionRankingFeedback : SFFeedback <NSCopying> {
     unsigned int  _localSectionPosition;
-    double  _personalizationScore;
+    float  _personalizationScore;
     NSArray * _results;
     SFResultSection * _section;
 }
 
 @property (nonatomic) unsigned int localSectionPosition;
-@property (nonatomic) double personalizationScore;
+@property (nonatomic) float personalizationScore;
 @property (nonatomic, copy) NSArray *results;
 @property (nonatomic, copy) SFResultSection *section;
 

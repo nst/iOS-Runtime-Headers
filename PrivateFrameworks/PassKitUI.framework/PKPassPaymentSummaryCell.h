@@ -19,12 +19,12 @@
 + (id)_amountTextFont;
 + (id)_detailTextFont;
 + (id)_primaryTextFont;
-+ (struct CGSize { double x1; double x2; })_sizeForLabelWithText:(id)arg1 font:(id)arg2 maximumNumberOfLines:(int)arg3 width:(float)arg4;
++ (struct CGSize { float x1; float x2; })_sizeForLabelWithText:(id)arg1 font:(id)arg2 maximumNumberOfLines:(int)arg3 width:(float)arg4;
 + (float)heightWithPrimaryText:(id)arg1 primaryTextNumberOfLines:(int)arg2 detailText:(id)arg3 amountText:(id)arg4 image:(id)arg5 showDetailsButton:(BOOL)arg6 width:(float)arg7;
 
 - (void).cxx_destruct;
 - (void)_detailsButtonPressed:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_separatorFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_separatorFrame;
 - (id)amountText;
 - (void)dealloc;
 - (id)delegate;

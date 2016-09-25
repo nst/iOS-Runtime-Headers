@@ -67,8 +67,8 @@
 - (BOOL)isAudioPlaybackOnly;
 - (BOOL)isRaise;
 - (void)messageEntryView:(id)arg1 didTapMediaObject:(id)arg2;
-- (void)messageEntryView:(id)arg1 sendButtonLongPressEnded:(struct CGPoint { double x1; double x2; })arg2;
-- (void)messageEntryView:(id)arg1 sendButtonLongPressMoved:(struct CGPoint { double x1; double x2; })arg2;
+- (void)messageEntryView:(id)arg1 sendButtonLongPressEnded:(struct CGPoint { float x1; float x2; })arg2;
+- (void)messageEntryView:(id)arg1 sendButtonLongPressMoved:(struct CGPoint { float x1; float x2; })arg2;
 - (BOOL)messageEntryView:(id)arg1 shouldInsertMediaObjects:(id)arg2;
 - (void)messageEntryViewDidBeginEditing:(id)arg1;
 - (void)messageEntryViewDidChange:(id)arg1;

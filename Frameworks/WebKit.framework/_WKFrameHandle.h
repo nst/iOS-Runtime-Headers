@@ -11,7 +11,7 @@
 }
 
 @property (readonly) /* Warning: unhandled struct encoding: '{Object=^^?@}' */ struct Object { int (**x1)(); id x2; }*_apiObject;
-@property (nonatomic, readonly) unsigned int _frameID;
+@property (nonatomic, readonly) unsigned long long _frameID;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
@@ -20,7 +20,7 @@
 + (BOOL)supportsSecureCoding;
 
 - (/* Warning: unhandled struct encoding: '{Object=^^?@}' */ struct Object { int (**x1)(); id x2; }*)_apiObject;
-- (unsigned int)_frameID;
+- (unsigned long long)_frameID;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;

@@ -57,9 +57,9 @@
 - (id)_editViewController;
 - (void)_finalizeAvalancheReviewControllerDismiss;
 - (void)_finalizeSharingViewControllerDismiss;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameAtIndexPath:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameForAssetReference:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameForItemAtIndexPath:(id)arg1 inAssetCollectionsDataSource:(id)arg2 allowZoom:(BOOL)arg3;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameAtIndexPath:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForAssetReference:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForItemAtIndexPath:(id)arg1 inAssetCollectionsDataSource:(id)arg2 allowZoom:(BOOL)arg3;
 - (int)_globalIndexForAssetReference:(id)arg1;
 - (int)_globalIndexForIndexPath:(id)arg1;
 - (id)_indexPathForGlobalIndex:(int)arg1;
@@ -94,17 +94,17 @@
 - (void)avalancheReviewControllerDidComplete:(id)arg1 animated:(BOOL)arg2;
 - (void)avalancheReviewControllerDidComplete:(id)arg1 withAsset:(id)arg2 animated:(BOOL)arg3;
 - (id)barsDelegate;
-- (struct CGSize { double x1; double x2; })collectionViewContentSize;
+- (struct CGSize { float x1; float x2; })collectionViewContentSize;
 - (id)delegate;
 - (void)dismissViewController:(id)arg1 animated:(BOOL)arg2 completionHandler:(id /* block */)arg3;
 - (void)finishOverOneUpPresentationSessionDismissForced:(BOOL)arg1 animated:(BOOL)arg2;
 - (BOOL)isPresentingAnOverOneUpViewController;
-- (id)layoutAttributesForElementsInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)layoutAttributesForElementsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;
 - (id)layoutAttributesForSupplementaryViewOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (void)photoEditController:(id)arg1 didFinishPreparingForTransitionAfterEditingAsset:(id)arg2;
 - (void)photoMarkupController:(id)arg1 didFinishWithSavedAsset:(id)arg2;
-- (struct CGPoint { double x1; double x2; })photosSharingTransition:(id)arg1 contentOffsetForAssetReference:(id)arg2;
+- (struct CGPoint { float x1; float x2; })photosSharingTransition:(id)arg1 contentOffsetForAssetReference:(id)arg2;
 - (id)photosSharingTransition:(id)arg1 layoutForAssetReference:(id)arg2;
 - (void)photosSharingTransition:(id)arg1 setVisibility:(BOOL)arg2 forAssetReference:(id)arg3;
 - (id)photosSharingTransitionTransitioningView:(id)arg1;
@@ -124,7 +124,7 @@
 - (void)setBarsDelegate:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)slideshowViewControllerDidFinish:(id)arg1 withVisibleAssets:(id)arg2;
-- (void)videoEditViewController:(id)arg1 didFinishPreparingForTransitionAfterEditingAsset:(id)arg2 modificationDate:(id)arg3 seekTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg4;
+- (void)videoEditViewController:(id)arg1 didFinishPreparingForTransitionAfterEditingAsset:(id)arg2 modificationDate:(id)arg3 seekTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg4;
 - (id)viewController;
 
 @end

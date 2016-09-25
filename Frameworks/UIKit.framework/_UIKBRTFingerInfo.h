@@ -6,18 +6,18 @@
     unsigned int  _identity;
     double  _lastSeenTimestamp;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _location;
-    double  _radius;
+    float  _radius;
     BOOL  _unknownSeen;
 }
 
-@property (nonatomic, readonly) double feedbackAlpha;
+@property (nonatomic, readonly) float feedbackAlpha;
 @property (nonatomic) unsigned int identity;
 @property (nonatomic) double lastSeenTimestamp;
-@property (nonatomic) struct CGPoint { double x1; double x2; } location;
-@property (nonatomic) double radius;
+@property (nonatomic) struct CGPoint { float x1; float x2; } location;
+@property (nonatomic) float radius;
 @property (nonatomic) BOOL unknownSeen;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -26,11 +26,11 @@
 - (unsigned int)identity;
 - (BOOL)isEqual:(id)arg1;
 - (double)lastSeenTimestamp;
-- (struct CGPoint { double x1; double x2; })location;
+- (struct CGPoint { float x1; float x2; })location;
 - (float)radius;
 - (void)setIdentity:(unsigned int)arg1;
 - (void)setLastSeenTimestamp:(double)arg1;
-- (void)setLocation:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setRadius:(float)arg1;
 - (void)setUnknownSeen:(BOOL)arg1;
 - (BOOL)unknownSeen;

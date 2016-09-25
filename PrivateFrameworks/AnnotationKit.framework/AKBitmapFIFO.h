@@ -7,60 +7,60 @@
     char * _bitmapDataPtr;
     struct CGImage { } * _bitmapImage;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _bitmapSize;
     BOOL  _bitmapSizeHasBeenUpdatedOnceForLiveDraw;
-    double  _bitmapSizeMultiplier;
+    float  _bitmapSizeMultiplier;
     struct CGPath { } * _cachedPath;
     BOOL  _isInLiveDraw;
     void _lastPoint;
-    double  _shadowRadiusInView;
+    float  _shadowRadiusInView;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _unionDirtyRect;
     UIView * _view;
     struct CGAffineTransform { 
-        double a; 
-        double b; 
-        double c; 
-        double d; 
-        double tx; 
-        double ty; 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     }  _viewToBitmapTransform;
 }
 
-@property struct CGSize { double x1; double x2; } bitmapSize;
+@property struct CGSize { float x1; float x2; } bitmapSize;
 @property BOOL bitmapSizeHasBeenUpdatedOnceForLiveDraw;
-@property double bitmapSizeMultiplier;
+@property float bitmapSizeMultiplier;
 @property (nonatomic) BOOL isInLiveDraw;
 @property void lastPoint;
-@property double shadowRadiusInView;
-@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } unionDirtyRect;
+@property float shadowRadiusInView;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } unionDirtyRect;
 @property (nonatomic, retain) UIView *view;
-@property struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; } viewToBitmapTransform;
+@property struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } viewToBitmapTransform;
 
 - (void).cxx_destruct;
 - (void)_addPointToBitmap;
 - (void)_addSinglePointToBitmap;
-- (void)_addToDirtyRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)_addToDirtyRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_applyDirtyRectToView;
 - (void)_clearAllBitmapData;
 - (void)_clearCachedPath;
-- (struct CGPoint { double x1; double x2; })_convertPointToScreenBacking:(struct CGPoint { double x1; double x2; })arg1;
+- (struct CGPoint { float x1; float x2; })_convertPointToScreenBacking:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_createBitmapContextIfNecessary;
 - (void)_createBitmapIfNecessary;
 - (void)_updateBitmapSizeFromViewIfNecessary;
 - (void)addPoint;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })bitmapRectInView;
-- (struct CGSize { double x1; double x2; })bitmapSize;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bitmapRectInView;
+- (struct CGSize { float x1; float x2; })bitmapSize;
 - (BOOL)bitmapSizeHasBeenUpdatedOnceForLiveDraw;
 - (float)bitmapSizeMultiplier;
 - (void)clear;
@@ -71,19 +71,19 @@
 - (void)lastPoint;
 - (struct CGPath { }*)newPathFromCurrentBitmap;
 - (void)resetDirtyRect;
-- (void)setBitmapSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setBitmapSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setBitmapSizeHasBeenUpdatedOnceForLiveDraw:(BOOL)arg1;
 - (void)setBitmapSizeMultiplier:(float)arg1;
 - (void)setIsInLiveDraw:(BOOL)arg1;
 - (void)setLastPoint;
 - (void)setShadowRadiusInView:(float)arg1;
-- (void)setUnionDirtyRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setUnionDirtyRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setView:(id)arg1;
-- (void)setViewToBitmapTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
+- (void)setViewToBitmapTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (float)shadowRadiusInView;
 - (void)teardown;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })unionDirtyRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })unionDirtyRect;
 - (id)view;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })viewToBitmapTransform;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })viewToBitmapTransform;
 
 @end

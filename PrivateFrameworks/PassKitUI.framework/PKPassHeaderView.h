@@ -42,9 +42,9 @@
 - (void)layoutSubviews;
 - (id)pass;
 - (id)passLibraryOverride;
-- (struct { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; double x3; })passSizeInfoForHeight:(float)arg1;
+- (struct { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; float x3; })passSizeInfoForHeight:(float)arg1;
 - (id)passView;
-- (struct CGSize { double x1; double x2; })passViewSizeForHeight:(float)arg1;
+- (struct CGSize { float x1; float x2; })passViewSizeForHeight:(float)arg1;
 - (id)primaryTextColor;
 - (id)secondaryTextColor;
 - (void)setDelegate:(id)arg1;

@@ -6,18 +6,18 @@
 @required
 
 - (NSString *)articleID;
-- (unsigned int)articleRecordModificationDateMilliseconds;
+- (unsigned long long)articleRecordModificationDateMilliseconds;
 - (NSString *)clusterID;
-- (unsigned int)contentType;
-- (unsigned int)feedHalfLifeMilliseconds;
+- (unsigned long long)contentType;
+- (unsigned long long)feedHalfLifeMilliseconds;
 - (NSString *)feedID;
 - (double)globalUserFeedback;
 - (BOOL)isExplicitContent;
 - (BOOL)isFromBlockedStorefront;
 - (BOOL)isPaid;
-- (int)minimumNewsVersion;
-- (unsigned int)order;
-- (unsigned int)publishDateMilliseconds;
+- (long long)minimumNewsVersion;
+- (unsigned long long)order;
+- (unsigned long long)publishDateMilliseconds;
 - (NSString *)sourceChannelID;
 
 @end

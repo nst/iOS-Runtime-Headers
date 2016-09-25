@@ -6,7 +6,7 @@
     double  _duration;
     NSMutableArray * _events;
     double  _goal;
-    int  _goalType;
+    long long  _goalType;
     struct { 
         unsigned int duration : 1; 
         unsigned int goal : 1; 
@@ -22,7 +22,7 @@
     double  _totalDistanceInCanonicalUnit;
     double  _totalEnergyBurnedInCanonicalUnit;
     double  _totalWStepsInCanonicalUnit;
-    int  _type;
+    long long  _type;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -30,7 +30,7 @@
 @property (nonatomic) double duration;
 @property (nonatomic, retain) NSMutableArray *events;
 @property (nonatomic) double goal;
-@property (nonatomic) int goalType;
+@property (nonatomic) long long goalType;
 @property (nonatomic) BOOL hasDuration;
 @property (nonatomic) BOOL hasGoal;
 @property (nonatomic) BOOL hasGoalType;
@@ -47,7 +47,7 @@
 @property (nonatomic) double totalDistanceInCanonicalUnit;
 @property (nonatomic) double totalEnergyBurnedInCanonicalUnit;
 @property (nonatomic) double totalWStepsInCanonicalUnit;
-@property (nonatomic) int type;
+@property (nonatomic) long long type;
 
 - (void).cxx_destruct;
 - (void)addEvents:(id)arg1;
@@ -69,7 +69,7 @@
 - (id)eventsAtIndex:(unsigned int)arg1;
 - (unsigned int)eventsCount;
 - (double)goal;
-- (int)goalType;
+- (long long)goalType;
 - (BOOL)hasDuration;
 - (BOOL)hasGoal;
 - (BOOL)hasGoalType;
@@ -87,7 +87,7 @@
 - (void)setDuration:(double)arg1;
 - (void)setEvents:(id)arg1;
 - (void)setGoal:(double)arg1;
-- (void)setGoalType:(int)arg1;
+- (void)setGoalType:(long long)arg1;
 - (void)setHasDuration:(BOOL)arg1;
 - (void)setHasGoal:(BOOL)arg1;
 - (void)setHasGoalType:(BOOL)arg1;
@@ -101,12 +101,12 @@
 - (void)setTotalDistanceInCanonicalUnit:(double)arg1;
 - (void)setTotalEnergyBurnedInCanonicalUnit:(double)arg1;
 - (void)setTotalWStepsInCanonicalUnit:(double)arg1;
-- (void)setType:(int)arg1;
+- (void)setType:(long long)arg1;
 - (double)totalBasalEnergyBurnedInCanonicalUnit;
 - (double)totalDistanceInCanonicalUnit;
 - (double)totalEnergyBurnedInCanonicalUnit;
 - (double)totalWStepsInCanonicalUnit;
-- (int)type;
+- (long long)type;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -57,7 +57,7 @@
 - (oneway void)invalidate;
 - (BOOL)isSmartCopy;
 - (id)name;
-- (id)newReadChannelForDataWithIdentifier:(int)arg1 info:(id)arg2;
+- (id)newReadChannelForDataWithIdentifier:(long long)arg1 info:(id)arg2;
 - (id)newReadChannelForMetadata;
 - (id)newReadChannelForRootObjectComponent;
 - (int)numberOfItems;

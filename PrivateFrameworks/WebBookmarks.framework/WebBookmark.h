@@ -88,10 +88,10 @@
 - (void)_setParentID:(int)arg1;
 - (void)_setSyncable:(BOOL)arg1;
 - (void)_setUUID:(id)arg1;
-- (unsigned int)_sizeForFileOrDirectory:(id)arg1 withAttributes:(id)arg2;
+- (unsigned long long)_sizeForFileOrDirectory:(id)arg1 withAttributes:(id)arg2;
 - (id)_suggestedFileNameForWebView:(id)arg1;
 - (id)address;
-- (unsigned int)archiveSize;
+- (unsigned long long)archiveSize;
 - (int)archiveStatus;
 - (void)cleanupRedundantPreviewText;
 - (void)clearArchive;

@@ -5,7 +5,7 @@
 @interface _NSISVariableObservable : NSObservationSource {
     NSISEngine * _associatedEngine;
     unsigned int  _hasLastValue;
-    double  _lastValue;
+    float  _lastValue;
     unsigned int  _valueIsDirtied;
     NSISVariable * _variable;
 }

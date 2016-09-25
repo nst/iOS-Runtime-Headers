@@ -7,7 +7,7 @@
     BOOL  _bindTextToStringRepresentation;
     id /* block */  _contactUpdateBlock;
     int  _keyboardType;
-    double  _minimumTextLabelWidth;
+    float  _minimumTextLabelWidth;
     id /* block */  _stringRepresentationBlock;
     NSString * _title;
 }
@@ -16,7 +16,7 @@
 @property (nonatomic) BOOL bindTextToStringRepresentation;
 @property (nonatomic, copy) id /* block */ contactUpdateBlock;
 @property (nonatomic) int keyboardType;
-@property (nonatomic) double minimumTextLabelWidth;
+@property (nonatomic) float minimumTextLabelWidth;
 @property (nonatomic, copy) id /* block */ stringRepresentationBlock;
 @property (nonatomic, copy) NSString *title;
 

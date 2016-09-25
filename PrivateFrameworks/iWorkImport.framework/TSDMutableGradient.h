@@ -12,7 +12,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL isAdvancedGradient;
 @property (nonatomic, retain) TSUColor *lastColor;
-@property (nonatomic) double opacity;
+@property (nonatomic) float opacity;
 @property (readonly) Class superclass;
 
 - (void)evenlyDistributeStops;

@@ -7,7 +7,7 @@
     id  _reserved1;
     id  _reserved2;
     NSString * _serviceName;
-    unsigned int  _state;
+    unsigned long long  _state;
     NSObject<OS_dispatch_queue> * _userQueue;
     void * _xconnection;
     void * reserved0;

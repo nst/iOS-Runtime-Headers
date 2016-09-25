@@ -7,7 +7,7 @@
     unsigned int  _count;
     SGSqliteDatabase * _db;
     NSString * _dirPath;
-    int  _idCounter;
+    long long  _idCounter;
     unsigned int  _maxQueueItems;
     NSObject<OS_dispatch_queue> * _queue;
     SGDHarvestQueueFileReader * _reader;
@@ -30,12 +30,12 @@
 - (void)close;
 - (unsigned int)count;
 - (void)countHighPriorityItems:(unsigned int*)arg1 lowPriorityItems:(unsigned int*)arg2;
-- (void)deleteWithItemId:(int)arg1 fileId:(int)arg2;
+- (void)deleteWithItemId:(long long)arg1 fileId:(int)arg2;
 - (id)initWithDirectory:(id)arg1;
-- (void)markAsFailedWithId:(int)arg1;
+- (void)markAsFailedWithId:(long long)arg1;
 - (unsigned int)maxQueueItems;
 - (void)pop:(id /* block */)arg1;
-- (void)popByItemId:(int)arg1 callback:(id /* block */)arg2;
+- (void)popByItemId:(long long)arg1 callback:(id /* block */)arg2;
 - (void)popBySourceKey:(id)arg1 messageId:(id)arg2 callback:(id /* block */)arg3;
 - (void)popHighPriority:(id /* block */)arg1;
 - (void)setMaxQueueItems:(unsigned int)arg1;

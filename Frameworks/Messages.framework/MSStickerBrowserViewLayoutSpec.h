@@ -5,34 +5,34 @@
 @interface MSStickerBrowserViewLayoutSpec : NSObject {
     int  _interfaceOrientation;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _itemSize;
-    double  _minimumInteritemSpacing;
+    float  _minimumInteritemSpacing;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _sectionInset;
     int  _stickerSize;
 }
 
 @property (nonatomic, readonly) int interfaceOrientation;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } itemSize;
-@property (nonatomic, readonly) double minimumInteritemSpacing;
-@property (nonatomic, readonly) double minimumLineSpacing;
-@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } sectionInset;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } itemSize;
+@property (nonatomic, readonly) float minimumInteritemSpacing;
+@property (nonatomic, readonly) float minimumLineSpacing;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } sectionInset;
 @property (nonatomic, readonly) int stickerSize;
 
 + (id)specWithSizeClass:(int)arg1 interfaceOrientation:(int)arg2;
 
 - (id)initWithSize:(int)arg1 interfaceOrientation:(int)arg2;
 - (int)interfaceOrientation;
-- (struct CGSize { double x1; double x2; })itemSize;
+- (struct CGSize { float x1; float x2; })itemSize;
 - (float)minimumInteritemSpacing;
 - (float)minimumLineSpacing;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })sectionInset;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })sectionInset;
 - (int)stickerSize;
 
 @end

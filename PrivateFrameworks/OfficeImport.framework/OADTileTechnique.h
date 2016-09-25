@@ -11,10 +11,10 @@
     BOOL  mIsOffsetYOverridden;
     BOOL  mIsScaleXOverridden;
     BOOL  mIsScaleYOverridden;
-    double  mOffsetX;
-    double  mOffsetY;
-    double  mScaleX;
-    double  mScaleY;
+    float  mOffsetX;
+    float  mOffsetY;
+    float  mScaleX;
+    float  mScaleY;
 }
 
 + (id)defaultProperties;

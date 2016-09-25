@@ -38,7 +38,7 @@
 @property (nonatomic, retain) MKMapItem *mapItem;
 @property (nonatomic, retain) NSArray *mapItems;
 @property (nonatomic, retain) _MKUILabel *nameLabel;
-@property (nonatomic, readonly) double preferredHeight;
+@property (nonatomic, readonly) float preferredHeight;
 @property (nonatomic, retain) NSString *primaryLabelText;
 @property (nonatomic, retain) UIColor *primaryTextColor;
 @property (nonatomic, retain) CLLocation *referenceLocation;
@@ -60,7 +60,7 @@
 - (id)_defaultSecondaryCategoryLabel;
 - (float)_expectedHeightForLabels;
 - (void)_fireReferenceLocationTimer;
-- (struct CGSize { double x1; double x2; })_imageSize;
+- (struct CGSize { float x1; float x2; })_imageSize;
 - (id)_labelWithFontSize:(float)arg1;
 - (void)_locationApprovalDidChange;
 - (unsigned int)_maxNameLengthForEndingString:(id)arg1;
@@ -81,11 +81,11 @@
 - (int)iconFormat;
 - (id)imageView;
 - (id)init;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 highlightsOnTouch:(BOOL)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 highlightsOnTouch:(BOOL)arg2;
 - (id)initWithMapItem:(id)arg1;
 - (id)initWithMapItems:(id)arg1 primaryLabelText:(id)arg2;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (void)layoutSubviews;
 - (void)locationManager:(id)arg1 didUpdateVehicleHeading:(double)arg2 timestamp:(id)arg3;
 - (void)locationManager:(id)arg1 didUpdateVehicleSpeed:(double)arg2 timestamp:(id)arg3;
@@ -126,7 +126,7 @@
 - (void)setTertiaryLabel:(id)arg1;
 - (void)setUseSpotlightVibrancy:(BOOL)arg1;
 - (BOOL)showsDistance;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)tertiaryLabel;
 - (void)updateConstraints;
 - (void)updateImageView;

@@ -11,7 +11,7 @@
     }  _has;
     unsigned int  _recordCount;
     BOOL  _success;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
     unsigned int  _version;
 }
 
@@ -21,7 +21,7 @@
 @property (nonatomic) BOOL hasVersion;
 @property (nonatomic) unsigned int recordCount;
 @property (nonatomic) BOOL success;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 @property (nonatomic) unsigned int version;
 
 - (void)copyTo:(id)arg1;
@@ -43,10 +43,10 @@
 - (void)setHasVersion:(BOOL)arg1;
 - (void)setRecordCount:(unsigned int)arg1;
 - (void)setSuccess:(BOOL)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (void)setVersion:(unsigned int)arg1;
 - (BOOL)success;
-- (unsigned int)timestamp;
+- (unsigned long long)timestamp;
 - (unsigned int)version;
 - (void)writeTo:(id)arg1;
 

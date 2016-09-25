@@ -6,7 +6,7 @@
     NSMutableDictionary * _dictionary;
     NSDate * _entryDate;
     NSDictionary * _entryDefinition;
-    int  _entryID;
+    long long  _entryID;
     NSString * _entryKey;
     BOOL  _existsInDB;
     BOOL  _isErrorEntry;
@@ -20,7 +20,7 @@
 @property (readonly) NSArray *dynamicKeys;
 @property (nonatomic, retain) NSDate *entryDate;
 @property (nonatomic, retain) NSDictionary *entryDefinition;
-@property (nonatomic) int entryID;
+@property (nonatomic) long long entryID;
 @property (nonatomic, retain) NSString *entryKey;
 @property BOOL existsInDB;
 @property (readonly) BOOL hasArrayKeys;
@@ -55,7 +55,7 @@
 - (id)dynamicKeys;
 - (id)entryDate;
 - (id)entryDefinition;
-- (int)entryID;
+- (long long)entryID;
 - (id)entryKey;
 - (BOOL)existsInDB;
 - (BOOL)filterEntryLogging;
@@ -86,7 +86,7 @@
 - (void)setDynamicObjectsFromRawData:(id)arg1;
 - (void)setEntryDate:(id)arg1;
 - (void)setEntryDefinition:(id)arg1;
-- (void)setEntryID:(int)arg1;
+- (void)setEntryID:(long long)arg1;
 - (void)setEntryKey:(id)arg1;
 - (void)setExistsInDB:(BOOL)arg1;
 - (void)setIsErrorEntry:(BOOL)arg1;

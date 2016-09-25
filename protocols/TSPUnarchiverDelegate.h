@@ -5,13 +5,13 @@
 
 @required
 
-- (NSUUID *)UUIDForObjectIdentifier:(int)arg1;
+- (NSUUID *)UUIDForObjectIdentifier:(long long)arg1;
 - (BOOL)canRetainObjectReferencedByWeakLazyReference;
-- (TSPData *)dataForIdentifier:(int)arg1;
+- (TSPData *)dataForIdentifier:(long long)arg1;
 - (BOOL)didFinishResolvingReferences;
-- (unsigned int)fileFormatVersion;
+- (unsigned long long)fileFormatVersion;
 - (BOOL)hasDocumentVersionUUID;
-- (int)objectIdentifierForUUID:(NSUUID *)arg1;
+- (long long)objectIdentifierForUUID:(NSUUID *)arg1;
 - (int)sourceType;
 - (void)unarchiver:(TSPUnarchiver *)arg1 didReadLazyReference:(TSPLazyReference *)arg2 isExternal:(BOOL*)arg3;
 

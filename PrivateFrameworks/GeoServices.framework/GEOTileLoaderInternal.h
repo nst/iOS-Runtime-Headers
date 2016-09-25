@@ -7,7 +7,7 @@
     GEOTileLoaderConfiguration * _config;
     int  _diskHits;
     GEOTilePool * _expiringCache;
-    struct list<_CacheRequester<void (^)(unsigned int)>, std::__1::allocator<_CacheRequester<void (^)(unsigned int)> > >="__end_"{__list_node_base<_CacheRequester<void (^)(unsigned int)>, void *>="__prev_"^{__list_node_base<_CacheRequester<void (^)(unsigned int)>, void *> {}  _freeableSizeRequesters;
+    struct list<_CacheRequester<void (^)(unsigned long long)>, std::__1::allocator<_CacheRequester<void (^)(unsigned long long)> > >="__end_"{__list_node_base<_CacheRequester<void (^)(unsigned long long)>, void *>="__prev_"^{__list_node_base<_CacheRequester<void (^)(unsigned long long)>, void *> {}  _freeableSizeRequesters;
     <GEOTileLoaderInternalDelegate> * _internalDelegate;
     NSObject<OS_dispatch_queue> * _internalDelegateQ;
     BOOL  _isUsageTimerScheduled;
@@ -42,7 +42,7 @@
         } __size_; 
     }  _recentErrors;
     int  _rollingBatchId;
-    struct list<_CacheRequester<void (^)(unsigned int)>, std::__1::allocator<_CacheRequester<void (^)(unsigned int)> > >="__end_"{__list_node_base<_CacheRequester<void (^)(unsigned int)>, void *>="__prev_"^{__list_node_base<_CacheRequester<void (^)(unsigned int)>, void *> {}  _shrinkCacheRequesters;
+    struct list<_CacheRequester<void (^)(unsigned long long)>, std::__1::allocator<_CacheRequester<void (^)(unsigned long long)> > >="__end_"{__list_node_base<_CacheRequester<void (^)(unsigned long long)>, void *>="__prev_"^{__list_node_base<_CacheRequester<void (^)(unsigned long long)>, void *> {}  _shrinkCacheRequesters;
     struct { 
         double x; 
         double y; 
@@ -74,7 +74,7 @@
                 unsigned long __first_; 
             } __p2_; 
             struct __compressed_pair<float, std::__1::__unordered_map_equal<_GEOTileKey, std::__1::__hash_value_type<_GEOTileKey, UsageData>, std::__1::equal_to<GEOTileKey>, true> > { 
-                double __first_; 
+                float __first_; 
             } __p3_; 
         } __table_; 
     }  _usageData;
@@ -106,7 +106,7 @@
 - (void)_timerFired;
 - (void)_updateNetworkActive;
 - (void)_usageTimerFired;
-- (void)beginPreloadSessionOfSize:(unsigned int)arg1 forClient:(id)arg2 exclusive:(BOOL)arg3;
+- (void)beginPreloadSessionOfSize:(unsigned long long)arg1 forClient:(id)arg2 exclusive:(BOOL)arg3;
 - (id)cachedTileForKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;
 - (void)calculateFreeableSizeWithCallbackQ:(id)arg1 finished:(id /* block */)arg2;
 - (void)cancelAllForClient:(id)arg1;
@@ -130,8 +130,8 @@
 - (int)networkHits;
 - (void)openForClient:(id)arg1;
 - (id)proxy;
-- (void)proxy:(id)arg1 canShrinkDiskCacheByAmount:(unsigned int)arg2;
-- (void)proxy:(id)arg1 didShrinkDiskCacheByAmount:(unsigned int)arg2;
+- (void)proxy:(id)arg1 canShrinkDiskCacheByAmount:(unsigned long long)arg2;
+- (void)proxy:(id)arg1 didShrinkDiskCacheByAmount:(unsigned long long)arg2;
 - (void)proxy:(id)arg1 failedToLoadAllPendingTilesWithError:(id)arg2;
 - (void)proxy:(id)arg1 failedToLoadTiles:(id)arg2 error:(id)arg3;
 - (void)proxy:(id)arg1 loadedTile:(id)arg2 forKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg3 info:(id)arg4;
@@ -146,6 +146,6 @@
 - (void)setInternalDelegate:(id)arg1;
 - (void)setInternalDelegateQ:(id)arg1;
 - (void)setSortPoint:(const struct { double x1; double x2; }*)arg1;
-- (void)shrinkDiskCacheToSize:(unsigned int)arg1 callbackQ:(id)arg2 finished:(id /* block */)arg3;
+- (void)shrinkDiskCacheToSize:(unsigned long long)arg1 callbackQ:(id)arg2 finished:(id /* block */)arg3;
 
 @end

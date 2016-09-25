@@ -9,7 +9,7 @@
     NSArray * _labelConstraints;
     NSLayoutConstraint * _leadingLabelLeadingConstraint;
     NSLayoutConstraint * _leadingLabelVerticalPositionConstraint;
-    double  _minimumEdgeMargin;
+    float  _minimumEdgeMargin;
     UILabel * _titleLabel;
     NSLayoutConstraint * _trailingLabelTrailingConstraint;
     NSLayoutConstraint * _trailingLabelVerticalPositionConstraint;

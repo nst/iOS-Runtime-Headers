@@ -33,10 +33,10 @@
 - (void)checkMemoryState;
 - (BOOL)deRegisterHandler:(id)arg1;
 - (void)handleBacklightStateChange;
-- (void)handleBatterySaverNotification:(unsigned int)arg1;
+- (void)handleBatterySaverNotification:(unsigned long long)arg1;
 - (void)handlePowerSourceNotification;
-- (void)handleThermalNotification:(unsigned int)arg1;
-- (void)handleUserActivityNotification:(unsigned int)arg1;
+- (void)handleThermalNotification:(unsigned long long)arg1;
+- (void)handleUserActivityNotification:(unsigned long long)arg1;
 - (BOOL)inBatterySaverMode;
 - (id)init;
 - (unsigned int)memState;

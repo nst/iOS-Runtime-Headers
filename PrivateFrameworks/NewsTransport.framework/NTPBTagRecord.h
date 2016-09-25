@@ -3,19 +3,19 @@
  */
 
 @interface NTPBTagRecord : PBCodable <NSCopying> {
-    int  _allowedAdTypes;
+    long long  _allowedAdTypes;
     NSMutableArray * _allowedStorefrontIds;
     NTPBRecordBase * _base;
     NSMutableArray * _blockedStorefrontIds;
     NSString * _channelDefaultSectionId;
     NSMutableArray * _channelSectionFeedConfigurations;
     NSMutableArray * _channelSectionIds;
-    int  _contentProvider;
+    long long  _contentProvider;
     NSString * _coverArticleListId;
     NSString * _coverImageURL;
     NTPBFeedConfiguration * _feedConfiguration;
-    unsigned int  _forYouCutoffTime;
-    unsigned int  _forYouMaximumArticleCount;
+    unsigned long long  _forYouCutoffTime;
+    unsigned long long  _forYouMaximumArticleCount;
     struct { 
         unsigned int allowedAdTypes : 1; 
         unsigned int contentProvider : 1; 
@@ -42,7 +42,7 @@
     BOOL  _isNotificationEnabled;
     BOOL  _isPublic;
     NSString * _logoURL;
-    int  _minimumNewsVersion;
+    long long  _minimumNewsVersion;
     NSString * _name;
     NSString * _nameImageForDarkBackgroundURL;
     NSString * _nameImageMaskURL;
@@ -65,26 +65,26 @@
     NSMutableArray * _relatedTopicIds;
     NSMutableArray * _relatedTopicIdsForOnboardings;
     NSString * _replacementId;
-    int  _score;
-    unsigned int  _tagNameImageBaselineShift;
+    long long  _score;
+    unsigned long long  _tagNameImageBaselineShift;
     double  _tagNameImageScaleFactor;
     NSString * _templateJson;
     int  _type;
 }
 
-@property (nonatomic) int allowedAdTypes;
+@property (nonatomic) long long allowedAdTypes;
 @property (nonatomic, retain) NSMutableArray *allowedStorefrontIds;
 @property (nonatomic, retain) NTPBRecordBase *base;
 @property (nonatomic, retain) NSMutableArray *blockedStorefrontIds;
 @property (nonatomic, retain) NSString *channelDefaultSectionId;
 @property (nonatomic, retain) NSMutableArray *channelSectionFeedConfigurations;
 @property (nonatomic, retain) NSMutableArray *channelSectionIds;
-@property (nonatomic) int contentProvider;
+@property (nonatomic) long long contentProvider;
 @property (nonatomic, retain) NSString *coverArticleListId;
 @property (nonatomic, retain) NSString *coverImageURL;
 @property (nonatomic, retain) NTPBFeedConfiguration *feedConfiguration;
-@property (nonatomic) unsigned int forYouCutoffTime;
-@property (nonatomic) unsigned int forYouMaximumArticleCount;
+@property (nonatomic) unsigned long long forYouCutoffTime;
+@property (nonatomic) unsigned long long forYouMaximumArticleCount;
 @property (nonatomic) BOOL hasAllowedAdTypes;
 @property (nonatomic, readonly) BOOL hasBase;
 @property (nonatomic, readonly) BOOL hasChannelDefaultSectionId;
@@ -129,7 +129,7 @@
 @property (nonatomic) BOOL isNotificationEnabled;
 @property (nonatomic) BOOL isPublic;
 @property (nonatomic, retain) NSString *logoURL;
-@property (nonatomic) int minimumNewsVersion;
+@property (nonatomic) long long minimumNewsVersion;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSString *nameImageForDarkBackgroundURL;
 @property (nonatomic, retain) NSString *nameImageMaskURL;
@@ -152,8 +152,8 @@
 @property (nonatomic, retain) NSMutableArray *relatedTopicIds;
 @property (nonatomic, retain) NSMutableArray *relatedTopicIdsForOnboardings;
 @property (nonatomic, retain) NSString *replacementId;
-@property (nonatomic) int score;
-@property (nonatomic) unsigned int tagNameImageBaselineShift;
+@property (nonatomic) long long score;
+@property (nonatomic) unsigned long long tagNameImageBaselineShift;
 @property (nonatomic) double tagNameImageScaleFactor;
 @property (nonatomic, retain) NSString *templateJson;
 @property (nonatomic) int type;
@@ -187,7 +187,7 @@
 - (void)addRelatedChannelIdsForOnboarding:(id)arg1;
 - (void)addRelatedTopicIds:(id)arg1;
 - (void)addRelatedTopicIdsForOnboarding:(id)arg1;
-- (int)allowedAdTypes;
+- (long long)allowedAdTypes;
 - (id)allowedStorefrontIds;
 - (id)allowedStorefrontIdsAtIndex:(unsigned int)arg1;
 - (unsigned int)allowedStorefrontIdsCount;
@@ -215,7 +215,7 @@
 - (void)clearRelatedChannelIdsForOnboardings;
 - (void)clearRelatedTopicIds;
 - (void)clearRelatedTopicIdsForOnboardings;
-- (int)contentProvider;
+- (long long)contentProvider;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)coverArticleListId;
 - (id)coverImageURL;
@@ -223,8 +223,8 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)feedConfiguration;
-- (unsigned int)forYouCutoffTime;
-- (unsigned int)forYouMaximumArticleCount;
+- (unsigned long long)forYouCutoffTime;
+- (unsigned long long)forYouMaximumArticleCount;
 - (BOOL)hasAllowedAdTypes;
 - (BOOL)hasBase;
 - (BOOL)hasChannelDefaultSectionId;
@@ -276,7 +276,7 @@
 - (BOOL)isPublic;
 - (id)logoURL;
 - (void)mergeFrom:(id)arg1;
-- (int)minimumNewsVersion;
+- (long long)minimumNewsVersion;
 - (id)name;
 - (id)nameImageForDarkBackgroundURL;
 - (id)nameImageMaskURL;
@@ -314,20 +314,20 @@
 - (id)relatedTopicIdsForOnboardings;
 - (unsigned int)relatedTopicIdsForOnboardingsCount;
 - (id)replacementId;
-- (int)score;
-- (void)setAllowedAdTypes:(int)arg1;
+- (long long)score;
+- (void)setAllowedAdTypes:(long long)arg1;
 - (void)setAllowedStorefrontIds:(id)arg1;
 - (void)setBase:(id)arg1;
 - (void)setBlockedStorefrontIds:(id)arg1;
 - (void)setChannelDefaultSectionId:(id)arg1;
 - (void)setChannelSectionFeedConfigurations:(id)arg1;
 - (void)setChannelSectionIds:(id)arg1;
-- (void)setContentProvider:(int)arg1;
+- (void)setContentProvider:(long long)arg1;
 - (void)setCoverArticleListId:(id)arg1;
 - (void)setCoverImageURL:(id)arg1;
 - (void)setFeedConfiguration:(id)arg1;
-- (void)setForYouCutoffTime:(unsigned int)arg1;
-- (void)setForYouMaximumArticleCount:(unsigned int)arg1;
+- (void)setForYouCutoffTime:(unsigned long long)arg1;
+- (void)setForYouMaximumArticleCount:(unsigned long long)arg1;
 - (void)setHasAllowedAdTypes:(BOOL)arg1;
 - (void)setHasContentProvider:(BOOL)arg1;
 - (void)setHasForYouCutoffTime:(BOOL)arg1;
@@ -352,7 +352,7 @@
 - (void)setIsNotificationEnabled:(BOOL)arg1;
 - (void)setIsPublic:(BOOL)arg1;
 - (void)setLogoURL:(id)arg1;
-- (void)setMinimumNewsVersion:(int)arg1;
+- (void)setMinimumNewsVersion:(long long)arg1;
 - (void)setName:(id)arg1;
 - (void)setNameImageForDarkBackgroundURL:(id)arg1;
 - (void)setNameImageMaskURL:(id)arg1;
@@ -375,12 +375,12 @@
 - (void)setRelatedTopicIds:(id)arg1;
 - (void)setRelatedTopicIdsForOnboardings:(id)arg1;
 - (void)setReplacementId:(id)arg1;
-- (void)setScore:(int)arg1;
-- (void)setTagNameImageBaselineShift:(unsigned int)arg1;
+- (void)setScore:(long long)arg1;
+- (void)setTagNameImageBaselineShift:(unsigned long long)arg1;
 - (void)setTagNameImageScaleFactor:(double)arg1;
 - (void)setTemplateJson:(id)arg1;
 - (void)setType:(int)arg1;
-- (unsigned int)tagNameImageBaselineShift;
+- (unsigned long long)tagNameImageBaselineShift;
 - (double)tagNameImageScaleFactor;
 - (id)templateJson;
 - (int)type;

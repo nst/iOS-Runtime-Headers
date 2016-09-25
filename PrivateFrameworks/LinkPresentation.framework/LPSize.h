@@ -7,15 +7,15 @@
     LPPointUnit * _width;
 }
 
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } asSize;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } asSize;
 @property (nonatomic, retain) LPPointUnit *height;
 @property (nonatomic, retain) LPPointUnit *width;
 
 - (void).cxx_destruct;
-- (struct CGSize { double x1; double x2; })asSize;
+- (struct CGSize { float x1; float x2; })asSize;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)height;
-- (id)initWithSize:(struct CGSize { double x1; double x2; })arg1;
+- (id)initWithSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setHeight:(id)arg1;
 - (void)setWidth:(id)arg1;
 - (id)width;

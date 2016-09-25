@@ -4,7 +4,7 @@
 
 @interface PCDispatchTimer : NSObject {
     NSDate * _fireDate;
-    unsigned int  _fireTime;
+    unsigned long long  _fireTime;
     BOOL  _isValid;
     NSObject<OS_dispatch_queue> * _queue;
     SEL  _selector;
@@ -19,7 +19,7 @@
 - (void)_cleanupTimer;
 - (void)dealloc;
 - (id)fireDate;
-- (id)initWithQueue:(id)arg1 target:(id)arg2 selector:(SEL)arg3 fireTime:(unsigned int)arg4;
+- (id)initWithQueue:(id)arg1 target:(id)arg2 selector:(SEL)arg3 fireTime:(unsigned long long)arg4;
 - (void)invalidate;
 - (BOOL)isValid;
 - (void)setFireDate:(id)arg1;

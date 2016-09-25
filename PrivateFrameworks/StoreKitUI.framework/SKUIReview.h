@@ -5,7 +5,7 @@
 @interface SKUIReview : NSObject <SKUICacheCoding> {
     NSString * _body;
     NSString * _dateString;
-    double  _rating;
+    float  _rating;
     NSString * _reviewer;
     NSString * _title;
 }
@@ -16,7 +16,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly) double rating;
+@property (nonatomic, readonly) float rating;
 @property (nonatomic, readonly) NSString *reviewer;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSString *title;

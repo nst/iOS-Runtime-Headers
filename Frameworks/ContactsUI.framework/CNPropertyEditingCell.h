@@ -11,7 +11,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) UIButton *labelButton;
-@property (nonatomic, readonly) double leftValueMargin;
+@property (nonatomic, readonly) float leftValueMargin;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) CNRepeatingGradientSeparatorView *vseparator;
 

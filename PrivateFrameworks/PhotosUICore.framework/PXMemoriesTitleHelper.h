@@ -3,13 +3,13 @@
  */
 
 @interface PXMemoriesTitleHelper : NSObject {
-    double  _minimumScaleFactor;
+    float  _minimumScaleFactor;
     int  _preferredLineLength;
     NSString * _softLineBreak;
     NSString * _truncationToken;
 }
 
-@property (nonatomic) double minimumScaleFactor;
+@property (nonatomic) float minimumScaleFactor;
 @property (nonatomic) int preferredLineLength;
 @property (nonatomic, copy) NSString *softLineBreak;
 @property (nonatomic, copy) NSString *truncationToken;

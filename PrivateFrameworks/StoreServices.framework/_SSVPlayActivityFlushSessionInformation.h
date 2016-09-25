@@ -6,22 +6,22 @@
     NSString * _endpointIdentifier;
     NSString * _revisionVersionToken;
     NSIndexSet * _revisionsIndexSet;
-    unsigned int  _sessionToken;
+    unsigned long long  _sessionToken;
 }
 
 @property (nonatomic, copy) NSString *endpointIdentifier;
 @property (nonatomic, copy) NSString *revisionVersionToken;
 @property (nonatomic, retain) NSIndexSet *revisionsIndexSet;
-@property (nonatomic) unsigned int sessionToken;
+@property (nonatomic) unsigned long long sessionToken;
 
 - (void).cxx_destruct;
 - (id)endpointIdentifier;
 - (id)revisionVersionToken;
 - (id)revisionsIndexSet;
-- (unsigned int)sessionToken;
+- (unsigned long long)sessionToken;
 - (void)setEndpointIdentifier:(id)arg1;
 - (void)setRevisionVersionToken:(id)arg1;
 - (void)setRevisionsIndexSet:(id)arg1;
-- (void)setSessionToken:(unsigned int)arg1;
+- (void)setSessionToken:(unsigned long long)arg1;
 
 @end

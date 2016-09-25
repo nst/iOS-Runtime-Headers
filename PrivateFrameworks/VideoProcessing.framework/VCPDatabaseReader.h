@@ -17,8 +17,8 @@
 - (id)queryAnalysisForAsset:(id)arg1;
 - (id)queryAnalysisForAsset:(id)arg1 withTypes:(id)arg2;
 - (id)queryAssetsAnalyzedSince:(id)arg1;
-- (long)queryHeaderForAsset:(id)arg1 analysis:(id*)arg2 assetId:(int*)arg3;
-- (long)queryResultsForAssetId:(int)arg1 analysis:(id)arg2;
-- (long)queryResultsForAssetId:(int)arg1 withTypes:(id)arg2 analysis:(id)arg3;
+- (long)queryHeaderForAsset:(id)arg1 analysis:(id*)arg2 assetId:(long long*)arg3;
+- (long)queryResultsForAssetId:(long long)arg1 analysis:(id)arg2;
+- (long)queryResultsForAssetId:(long long)arg1 withTypes:(id)arg2 analysis:(id)arg3;
 
 @end

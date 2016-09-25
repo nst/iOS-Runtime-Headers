@@ -3,19 +3,19 @@
  */
 
 @interface MPUIndeterminateProgressIndicatorView : UIView {
-    double  _progressGap;
-    double  _progressLineWidth;
+    float  _progressGap;
+    float  _progressLineWidth;
 }
 
-@property (nonatomic) double progressGap;
-@property (nonatomic) double progressLineWidth;
+@property (nonatomic) float progressGap;
+@property (nonatomic) float progressLineWidth;
 
 - (void)_updateAnimation;
 - (void)_willEnterForeground:(id)arg1;
 - (void)dealloc;
 - (void)didMoveToSuperview;
-- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (float)progressGap;
 - (float)progressLineWidth;
 - (void)setProgressGap:(float)arg1;

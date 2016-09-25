@@ -6,14 +6,14 @@
     int  _blendMode;
     unsigned int  _blurSize;
     CUIColor * _color;
-    double  _opacity;
+    float  _opacity;
     unsigned int  _spread;
 }
 
 @property int blendMode;
 @property unsigned int blurSize;
 @property (retain) CUIColor *color;
-@property double opacity;
+@property float opacity;
 @property unsigned int spread;
 
 - (int)blendMode;

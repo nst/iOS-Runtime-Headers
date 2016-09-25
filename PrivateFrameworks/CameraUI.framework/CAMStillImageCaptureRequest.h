@@ -6,8 +6,8 @@
     NSString * _burstIdentifier;
     <CAMStillImageCaptureRequestDelegate> * _delegate;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _desiredPreviewSize;
     int  _effectFilterType;
     int  _flashMode;
@@ -33,7 +33,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) <CAMStillImageCaptureRequestDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } desiredPreviewSize;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } desiredPreviewSize;
 @property (nonatomic, readonly) int effectFilterType;
 @property (nonatomic, readonly) int flashMode;
 @property (readonly) unsigned int hash;
@@ -60,7 +60,7 @@
 - (id)captureRequest;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)delegate;
-- (struct CGSize { double x1; double x2; })desiredPreviewSize;
+- (struct CGSize { float x1; float x2; })desiredPreviewSize;
 - (int)effectFilterType;
 - (int)flashMode;
 - (int)hdrMode;

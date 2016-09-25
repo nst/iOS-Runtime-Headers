@@ -3,7 +3,7 @@
  */
 
 @interface BWNodeInput : NSObject {
-    int  _configurationID;
+    long long  _configurationID;
     BWNodeConnection * _connection;
     int  _delayedBufferCount;
     BOOL  _enabled;
@@ -11,7 +11,7 @@
     BWFormatRequirements * _formatRequirements;
     int  _indefinitelyHeldBufferCount;
     unsigned int  _index;
-    int  _liveConfigurationID;
+    long long  _liveConfigurationID;
     BWVideoFormat * _liveFormat;
     unsigned long  _mediaType;
     BOOL  _mediaTypeIsVideo;
@@ -23,7 +23,7 @@
     int  _retainedBufferCount;
 }
 
-@property (nonatomic) int configurationID;
+@property (nonatomic) long long configurationID;
 @property (nonatomic) BWNodeConnection *connection;
 @property (nonatomic) int delayedBufferCount;
 @property (getter=isEnabled, nonatomic) BOOL enabled;
@@ -31,7 +31,7 @@
 @property (nonatomic, copy) BWFormatRequirements *formatRequirements;
 @property (nonatomic) int indefinitelyHeldBufferCount;
 @property (nonatomic, readonly) unsigned int index;
-@property (nonatomic, readonly) int liveConfigurationID;
+@property (nonatomic, readonly) long long liveConfigurationID;
 @property (nonatomic, retain) BWFormat *liveFormat;
 @property (nonatomic, readonly) unsigned long mediaType;
 @property (nonatomic, copy) NSString *name;
@@ -46,7 +46,7 @@
 + (void)initialize;
 
 - (void)_handleConfigurationLiveMessage:(id)arg1;
-- (int)configurationID;
+- (long long)configurationID;
 - (id)connection;
 - (void)dealloc;
 - (int)delayedBufferCount;
@@ -60,7 +60,7 @@
 - (id)initWithMediaType:(unsigned long)arg1 node:(id)arg2 index:(unsigned int)arg3;
 - (void)invalidate;
 - (BOOL)isEnabled;
-- (int)liveConfigurationID;
+- (long long)liveConfigurationID;
 - (id)liveFormat;
 - (unsigned long)mediaType;
 - (id)name;
@@ -70,7 +70,7 @@
 - (BOOL)passesBuffersDownstream;
 - (int)passthroughMode;
 - (int)retainedBufferCount;
-- (void)setConfigurationID:(int)arg1;
+- (void)setConfigurationID:(long long)arg1;
 - (void)setConnection:(id)arg1;
 - (void)setDelayedBufferCount:(int)arg1;
 - (void)setEnabled:(BOOL)arg1;

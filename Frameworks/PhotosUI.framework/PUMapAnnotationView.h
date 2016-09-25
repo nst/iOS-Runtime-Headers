@@ -4,8 +4,8 @@
 
 @interface PUMapAnnotationView : UIView {
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _badgeImageSize;
     unsigned int  _count;
     UIImageView * _countBadgeImageView;
@@ -15,7 +15,7 @@
 }
 
 @property (nonatomic) unsigned int count;
-@property (nonatomic, readonly) double sideCapWidth;
+@property (nonatomic, readonly) float sideCapWidth;
 @property (nonatomic, readonly, retain) PUStackView *stackView;
 
 - (void).cxx_destruct;

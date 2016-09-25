@@ -10,10 +10,10 @@
     unsigned int  _maxNetRequests;
     NSMutableArray * _netRequests;
     BOOL  _rebuildDatabase;
-    int  _recheckFailureMaxCount;
-    int  _recheckFailureSecs;
+    long long  _recheckFailureMaxCount;
+    long long  _recheckFailureSecs;
     double  _recheckForceTime;
-    int  _recheckSuccessSecs;
+    long long  _recheckSuccessSecs;
     BOOL  _recheckVersionChange;
     BOOL  _redirects;
     BOOL  _started;

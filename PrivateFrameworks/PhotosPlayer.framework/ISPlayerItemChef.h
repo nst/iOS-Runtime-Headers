@@ -24,7 +24,7 @@
 - (void)_setCurrentRequestID:(int)arg1;
 - (void)cancelPreparationOfIrisAssetWithRequestID:(int)arg1;
 - (id)init;
-- (int)prepareIrisPlayerItemWithAsset:(id)arg1 trimmedTimeRange:(struct { struct { int x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; int x_1_1_4; } x1; struct { int x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; int x_2_1_4; } x2; })arg2 includeVideo:(BOOL)arg3 includeAudio:(BOOL)arg4 completion:(id /* block */)arg5;
-- (int)prepareIrisVideoWithAsset:(id)arg1 trimmedTimeRange:(struct { struct { int x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; int x_1_1_4; } x1; struct { int x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; int x_2_1_4; } x2; })arg2 completion:(id /* block */)arg3;
+- (int)prepareIrisPlayerItemWithAsset:(id)arg1 trimmedTimeRange:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg2 includeVideo:(BOOL)arg3 includeAudio:(BOOL)arg4 completion:(id /* block */)arg5;
+- (int)prepareIrisVideoWithAsset:(id)arg1 trimmedTimeRange:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg2 completion:(id /* block */)arg3;
 
 @end

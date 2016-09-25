@@ -28,7 +28,7 @@
 - (id)delegate;
 - (id)dialImageView;
 - (id)initWithSlidingButtonType:(int)arg1;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (void)layoutSubviews;
 - (void)setAcceptButton:(id)arg1;
 - (void)setDelegate:(id)arg1;

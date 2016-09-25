@@ -6,10 +6,10 @@
     unsigned long  _NEmail;
     unsigned long  _NPeople;
     unsigned int ** _email;
-    double * _email2LogScore;
+    float * _email2LogScore;
     unsigned int * _emailLength;
     <_CDPDataHarvester> * _harvester;
-    double  _lambda;
+    float  _lambda;
     BOOL  _loaded;
     NSArray * _people;
     unsigned int ** _people2Email;
@@ -21,28 +21,28 @@
     double * _timestamp;
     bool * _userIsSender;
     bool * _userIsThreadInitiator;
-    double  _w0;
+    float  _w0;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) <_CDPDataHarvester> *harvester;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly) double lambda;
+@property (nonatomic, readonly) float lambda;
 @property (nonatomic, readonly) unsigned long nEmail;
 @property (nonatomic, readonly) unsigned long nPeople;
 @property (nonatomic, readonly) NSArray *people;
 @property (nonatomic) BOOL requireOutgoingInteraction;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) double w0;
+@property (nonatomic, readonly) float w0;
 
 + (int)maxNumberOfEmailsSupported;
 
 - (void).cxx_destruct;
 - (unsigned int*)_newIdsForPeople:(id)arg1 length:(unsigned int*)arg2;
-- (struct _cdp_prediction_result { int x1; double x2; int x3; int x4; }*)_newPredictionResultWithSeed:(unsigned int*)arg1 seedLength:(unsigned long)arg2 realSeedLength:(unsigned long)arg3 maxTrainingEmailID:(unsigned int)arg4;
+- (struct _cdp_prediction_result { int x1; float x2; int x3; int x4; }*)_newPredictionResultWithSeed:(unsigned int*)arg1 seedLength:(unsigned long)arg2 realSeedLength:(unsigned long)arg3 maxTrainingEmailID:(unsigned int)arg4;
 - (void)_printEmailWithID:(unsigned int)arg1;
-- (void)_printPrediction:(struct _cdp_prediction_result { int x1; double x2; int x3; int x4; }*)arg1;
+- (void)_printPrediction:(struct _cdp_prediction_result { int x1; float x2; int x3; int x4; }*)arg1;
 - (void)_printUserWithID:(unsigned int)arg1;
 - (void)_printUsers:(unsigned int*)arg1 length:(unsigned long)arg2;
 - (void)_reallocModel;

@@ -4,17 +4,17 @@
 
 @interface MusicDownloadProgressButton : UIControl {
     UIImageView * _addToLibraryOrDownloadImageView;
-    double  _currentAnimatedProgress;
+    float  _currentAnimatedProgress;
     CADisplayLink * _displayLink;
     UIImageView * _finishedImageView;
-    double  _initialAnimatedProgress;
+    float  _initialAnimatedProgress;
     BOOL  _isAnimatingProgress;
     SKUIItemOfferButton * _itemOfferButton;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _lastLayoutSize;
-    double  _progress;
+    float  _progress;
     double  _progressAnimationEndTime;
     double  _progressAnimationStartTime;
     CAMediaTimingFunction * _progressAnimationTimingFunction;
@@ -22,11 +22,11 @@
     int  _style;
 }
 
-@property (nonatomic) double progress;
+@property (nonatomic) float progress;
 @property (nonatomic) int progressType;
 @property (nonatomic, readonly) int style;
 
-+ (id)_finishedImageForLayoutSize:(struct CGSize { double x1; double x2; })arg1 traitCollection:(id)arg2;
++ (id)_finishedImageForLayoutSize:(struct CGSize { float x1; float x2; })arg1 traitCollection:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)_addToLibraryOrDownloadImage;
@@ -40,19 +40,19 @@
 - (void)cancelTrackingWithEvent:(id)arg1;
 - (BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)dealloc;
-- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithStyle:(int)arg1;
 - (void)layoutSubviews;
-- (BOOL)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (float)progress;
 - (int)progressType;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setProgress:(float)arg1;
 - (void)setProgress:(float)arg1 animated:(BOOL)arg2;
 - (void)setProgressType:(int)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (int)style;
 - (void)tintColorDidChange;
 - (void)traitCollectionDidChange:(id)arg1;

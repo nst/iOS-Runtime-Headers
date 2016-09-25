@@ -11,36 +11,36 @@
     struct box<glm::detail::tvec3<float> > { 
         struct tvec3<float> { 
             union { 
-                double x; 
-                double r; 
-                double s; 
+                float x; 
+                float r; 
+                float s; 
             } ; 
             union { 
-                double y; 
-                double g; 
-                double t; 
+                float y; 
+                float g; 
+                float t; 
             } ; 
             union { 
-                double z; 
-                double b; 
-                double p; 
+                float z; 
+                float b; 
+                float p; 
             } ; 
         } mMin; 
         struct tvec3<float> { 
             union { 
-                double x; 
-                double r; 
-                double s; 
+                float x; 
+                float r; 
+                float s; 
             } ; 
             union { 
-                double y; 
-                double g; 
-                double t; 
+                float y; 
+                float g; 
+                float t; 
             } ; 
             union { 
-                double z; 
-                double b; 
-                double p; 
+                float z; 
+                float b; 
+                float p; 
             } ; 
         } mMax; 
     }  mShadowPlanePadding;

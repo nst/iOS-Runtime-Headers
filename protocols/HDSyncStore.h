@@ -12,7 +12,7 @@
 - (void)setExpectedSequenceNumber:(int)arg1 forSyncEntityClass:(Class)arg2;
 - (BOOL)supportsSpeculativeChangesForSyncEntityClass:(Class)arg1;
 - (NSSet *)syncEntityDependenciesForSyncEntity:(Class)arg1;
-- (int)syncProvenance;
+- (long long)syncProvenance;
 - (NSString *)syncStoreDefaultSourceBundleIdentifier;
 - (NSString *)syncStoreIdentifier;
 

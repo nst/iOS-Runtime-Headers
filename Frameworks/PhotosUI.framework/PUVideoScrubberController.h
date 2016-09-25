@@ -5,16 +5,16 @@
 @interface PUVideoScrubberController : NSObject {
     PUScrubberSeekRequest * __activeSeekRequest;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  __avPlayerCurrentTime;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  __avPlayerDuration;
     PUScrubberSeekRequest * __pendingSeekRequest;
     double  __playheadTime;
@@ -33,21 +33,21 @@
 }
 
 @property (setter=_setActiveSeekRequest:, nonatomic, retain) PUScrubberSeekRequest *_activeSeekRequest;
-@property (setter=_setAvPlayerCurrentTime:, nonatomic) struct { int x1; int x2; unsigned int x3; int x4; } _avPlayerCurrentTime;
-@property (setter=_setAvPlayerDuration:, nonatomic) struct { int x1; int x2; unsigned int x3; int x4; } _avPlayerDuration;
+@property (setter=_setAvPlayerCurrentTime:, nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } _avPlayerCurrentTime;
+@property (setter=_setAvPlayerDuration:, nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } _avPlayerDuration;
 @property (setter=_setPendingSeekRequest:, nonatomic, retain) PUScrubberSeekRequest *_pendingSeekRequest;
 @property (setter=_setPlayheadTime:, nonatomic) double _playheadTime;
 @property (nonatomic, readonly) AVPlayer *avPlayer;
 @property (nonatomic) <PUVideoScrubberControllerDelegate> *delegate;
 @property (nonatomic, readonly) double estimatedDuration;
-@property (nonatomic, readonly) double length;
-@property (nonatomic) double playheadProgress;
+@property (nonatomic, readonly) float length;
+@property (nonatomic) float playheadProgress;
 
 - (void).cxx_destruct;
 - (id)_activeSeekRequest;
 - (void)_addObservers;
-- (struct { int x1; int x2; unsigned int x3; int x4; })_avPlayerCurrentTime;
-- (struct { int x1; int x2; unsigned int x3; int x4; })_avPlayerDuration;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })_avPlayerCurrentTime;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })_avPlayerDuration;
 - (double)_duration;
 - (void)_handleTimeoutCallbackForSeekRequest:(id)arg1;
 - (void)_invalidate;
@@ -66,8 +66,8 @@
 - (void)_seekRequest:(id)arg1 didFinish:(BOOL)arg2;
 - (void)_seekToTime:(double)arg1;
 - (void)_setActiveSeekRequest:(id)arg1;
-- (void)_setAvPlayerCurrentTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
-- (void)_setAvPlayerDuration:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
+- (void)_setAvPlayerCurrentTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)_setAvPlayerDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)_setPendingSeekRequest:(id)arg1;
 - (void)_setPlayheadProgress:(float)arg1 andSeekVideoPlayer:(BOOL)arg2;
 - (void)_setPlayheadTime:(double)arg1;

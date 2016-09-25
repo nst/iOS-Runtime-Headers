@@ -25,6 +25,6 @@
 - (void)setDescriptor:(id)arg1;
 - (void)setMetadata:(id)arg1;
 - (void)setProgress:(id)arg1;
-- (unsigned int)totalSpaceConsumed;
+- (unsigned long long)totalSpaceConsumed;
 
 @end

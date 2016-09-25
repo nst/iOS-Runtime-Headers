@@ -15,11 +15,11 @@
         unsigned int duration : 1; 
         unsigned int flags : 1; 
     }  _has;
-    int  _identifier;
-    int  _remoteUID;
+    long long  _identifier;
+    long long  _remoteUID;
     NSString * _sender;
     NanoPhoneVoicemailBody * _voicemailBody;
-    int  _voicemailNumber;
+    long long  _voicemailNumber;
     NanoPhoneVoicemailTranscript * _voicemailTranscript;
 }
 
@@ -41,12 +41,12 @@
 @property (nonatomic, readonly) BOOL hasVoicemailBody;
 @property (nonatomic, readonly) BOOL hasVoicemailTranscript;
 @property (readonly) unsigned int hash;
-@property (nonatomic) int identifier;
-@property (nonatomic) int remoteUID;
+@property (nonatomic) long long identifier;
+@property (nonatomic) long long remoteUID;
 @property (nonatomic, retain) NSString *sender;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NanoPhoneVoicemailBody *voicemailBody;
-@property (nonatomic) int voicemailNumber;
+@property (nonatomic) long long voicemailNumber;
 @property (nonatomic, retain) NanoPhoneVoicemailTranscript *voicemailTranscript;
 
 + (id)voicemailWithMessage:(id)arg1;
@@ -81,13 +81,13 @@
 - (BOOL)hasVoicemailBody;
 - (BOOL)hasVoicemailTranscript;
 - (unsigned int)hash;
-- (int)identifier;
+- (long long)identifier;
 - (id)initWithVoicemail:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (void)loadVoicemailBodyIfNeeded;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (int)remoteUID;
+- (long long)remoteUID;
 - (id)sender;
 - (void)setCallbackNumber:(id)arg1;
 - (void)setDataPath:(id)arg1;
@@ -99,17 +99,17 @@
 - (void)setHasFlags:(BOOL)arg1;
 - (void)setHasIdentifier:(BOOL)arg1;
 - (void)setHasRemoteUID:(BOOL)arg1;
-- (void)setIdentifier:(int)arg1;
-- (void)setRemoteUID:(int)arg1;
+- (void)setIdentifier:(long long)arg1;
+- (void)setRemoteUID:(long long)arg1;
 - (void)setSender:(id)arg1;
 - (void)setVoicemailBody:(id)arg1;
-- (void)setVoicemailNumber:(int)arg1;
+- (void)setVoicemailNumber:(long long)arg1;
 - (void)setVoicemailTranscript:(id)arg1;
 - (id)syncId;
 - (int)syncOperation;
 - (id)voicemailBody;
 - (id)voicemailDescription;
-- (int)voicemailNumber;
+- (long long)voicemailNumber;
 - (id)voicemailTranscript;
 - (void)writeTo:(id)arg1;
 

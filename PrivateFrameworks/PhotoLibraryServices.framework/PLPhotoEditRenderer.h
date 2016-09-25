@@ -20,20 +20,20 @@
     CIFilter * _redEyeFilter;
     unsigned int  _renderMode;
     CIFilter * _smartBWFilter;
-    double  _smartBWLevelInCachedAdjustments;
+    float  _smartBWLevelInCachedAdjustments;
     NSDictionary * _smartBWStatisticsInCachedAdjustments;
     CIFilter * _smartColorFilter;
-    double  _smartColorLevelInCachedAdjustments;
+    float  _smartColorLevelInCachedAdjustments;
     NSDictionary * _smartColorStatisticsInCachedAdjustments;
     int  _smartFiltersCubeSize;
     CIFilter * _smartToneFilter;
-    double  _smartToneLevelInCachedAdjustments;
+    float  _smartToneLevelInCachedAdjustments;
     NSDictionary * _smartToneStatisticsInCachedAdjustments;
 }
 
 @property (nonatomic, retain) CIImage *originalImage;
 @property (nonatomic, readonly, retain) CIImage *outputImage;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } outputImageSize;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } outputImageSize;
 @property (nonatomic, retain) PLPhotoEditModel *photoEditModel;
 @property (nonatomic) unsigned int renderMode;
 @property (nonatomic, readonly) double smartBWBaseGrain;
@@ -74,13 +74,13 @@
 - (id)_videoEditModel;
 - (void)createEditedImageWithCompletion:(id /* block */)arg1;
 - (void)dealloc;
-- (void)drawEditedImageInContext:(id)arg1 inRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 viewportWidth:(int)arg3 viewportHeight:(int)arg4;
+- (void)drawEditedImageInContext:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 viewportWidth:(int)arg3 viewportHeight:(int)arg4;
 - (void)generateEditedImageDataWithCompressionQuality:(float)arg1 metadataSourceImageURL:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)init;
 - (struct CGImage { }*)newEditedImage;
 - (id)originalImage;
 - (id)outputImage;
-- (struct CGSize { double x1; double x2; })outputImageSize;
+- (struct CGSize { float x1; float x2; })outputImageSize;
 - (id)photoEditModel;
 - (void)prepareVideoCompositionForAsset:(id)arg1 completionHandler:(id /* block */)arg2;
 - (unsigned int)renderMode;

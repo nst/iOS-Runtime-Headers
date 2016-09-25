@@ -11,21 +11,21 @@
     struct OpaqueFigAssetImageGenerator { } * generator;
     NSObject<OS_dispatch_queue> * imageRequestQueue;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  maximumSize;
     int  nextRequestID;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  requestedTimeToleranceAfter;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  requestedTimeToleranceBefore;
     NSMutableArray * requests;
     NSObject<OS_dispatch_queue> * requestsQueue;

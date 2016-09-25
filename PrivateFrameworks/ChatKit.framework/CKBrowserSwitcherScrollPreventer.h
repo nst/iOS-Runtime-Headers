@@ -11,8 +11,8 @@
     UIScrollView * _verticalScrollView;
 }
 
-@property (nonatomic) struct CGPoint { double x1; double x2; } contentOffset;
-@property (nonatomic) struct CGSize { double x1; double x2; } contentSize;
+@property (nonatomic) struct CGPoint { float x1; float x2; } contentOffset;
+@property (nonatomic) struct CGSize { float x1; float x2; } contentSize;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CKBrowserSwitcherScrollPreventerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -25,11 +25,11 @@
 @property (nonatomic, retain) UIScrollView *verticalScrollView;
 
 - (void).cxx_destruct;
-- (struct CGPoint { double x1; double x2; })contentOffset;
-- (struct CGSize { double x1; double x2; })contentSize;
+- (struct CGPoint { float x1; float x2; })contentOffset;
+- (struct CGSize { float x1; float x2; })contentSize;
 - (id)delegate;
 - (id)horizontalScrollView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isEngaged;
 - (BOOL)isSwitching;
 - (void)layoutSubviews;
@@ -38,8 +38,8 @@
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(BOOL)arg2;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
-- (void)setContentOffset:(struct CGPoint { double x1; double x2; })arg1;
-- (void)setContentSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setEngaged:(BOOL)arg1;
 - (void)setHorizontalScrollView:(id)arg1;

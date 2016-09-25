@@ -20,8 +20,8 @@
     PXTilingController * __tilingController;
     PXTouchingUIGestureRecognizer * __touchRecognizer;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _anchorMemoryOrigin;
     PXSectionedObjectReference * _anchorMemoryReference;
     PXMemoriesDataSourceManager * _dataSourceManager;
@@ -49,7 +49,7 @@
 @property (nonatomic, readonly) PXMemoriesUITileSource *_tileSource;
 @property (nonatomic, readonly) PXTilingController *_tilingController;
 @property (nonatomic, readonly) PXTouchingUIGestureRecognizer *_touchRecognizer;
-@property (setter=_setAnchorMemoryOrigin:, nonatomic) struct CGPoint { double x1; double x2; } anchorMemoryOrigin;
+@property (setter=_setAnchorMemoryOrigin:, nonatomic) struct CGPoint { float x1; float x2; } anchorMemoryOrigin;
 @property (setter=_setAnchorMemoryReference:, nonatomic, retain) PXSectionedObjectReference *anchorMemoryReference;
 @property (nonatomic, readonly) PXMemoriesDataSourceManager *dataSourceManager;
 @property (readonly, copy) NSString *debugDescription;
@@ -71,8 +71,8 @@
 - (void)_handleTouch:(id)arg1;
 - (id)_helper;
 - (id)_highlightedMemoryReference;
-- (struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })_indexPathForMemoryAtPoint:(struct CGPoint { double x1; double x2; })arg1;
-- (struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })_indexPathForMemoryInScrollViewAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })_indexPathForMemoryAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })_indexPathForMemoryInScrollViewAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_invalidateLayout;
 - (void)_invalidateLayoutEngine;
 - (id)_layoutEngine;
@@ -91,7 +91,7 @@
 - (void)_searchBarButtonItemAction:(id)arg1;
 - (void)_setActionPresentationMemoryReference:(id)arg1;
 - (void)_setActivatedMemoryReference:(id)arg1;
-- (void)_setAnchorMemoryOrigin:(struct CGPoint { double x1; double x2; })arg1;
+- (void)_setAnchorMemoryOrigin:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_setAnchorMemoryReference:(id)arg1;
 - (void)_setHighlightedMemoryReference:(id)arg1;
 - (void)_setLongPressRecognizer:(id)arg1;
@@ -115,7 +115,7 @@
 - (void)_updateScrollViewControllerContentInset;
 - (BOOL)actionPerformer:(id)arg1 dismissViewController:(struct NSObject { Class x1; }*)arg2 completionHandler:(id /* block */)arg3;
 - (BOOL)actionPerformer:(id)arg1 presentViewController:(struct NSObject { Class x1; }*)arg2;
-- (struct CGPoint { double x1; double x2; })anchorMemoryOrigin;
+- (struct CGPoint { float x1; float x2; })anchorMemoryOrigin;
 - (id)anchorMemoryReference;
 - (id)dataSourceManager;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
@@ -127,21 +127,21 @@
 - (id)preferredFocusEnvironments;
 - (void)prepareForPopoverPresentation:(id)arg1;
 - (void)previewingContext:(id)arg1 commitViewController:(id)arg2;
-- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { double x1; double x2; })arg2;
+- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { float x1; float x2; })arg2;
 - (BOOL)px_canPerformZoomTransitionWithDetailViewController:(id)arg1;
 - (id)px_endPointForTransition:(id)arg1;
 - (id)regionOfInterestForTransition:(id)arg1;
 - (id)scrollViewController;
 - (void)scrollViewControllerWillBeginScrolling:(id)arg1;
-- (struct CGPoint { double x1; double x2; })tilingController:(id)arg1 initialVisibleOriginForLayout:(id)arg2;
+- (struct CGPoint { float x1; float x2; })tilingController:(id)arg1 initialVisibleOriginForLayout:(id)arg2;
 - (void)tilingController:(id)arg1 prepareForChange:(id)arg2;
-- (struct CGPoint { double x1; double x2; })tilingController:(id)arg1 targetVisibleOriginForLayout:(id)arg2 proposedVisibleOrigin:(struct CGPoint { double x1; double x2; })arg3;
+- (struct CGPoint { float x1; float x2; })tilingController:(id)arg1 targetVisibleOriginForLayout:(id)arg2 proposedVisibleOrigin:(struct CGPoint { float x1; float x2; })arg3;
 - (id)tilingController:(id)arg1 tileIdentifierConverterForChange:(id)arg2;
 - (id)tilingController:(id)arg1 transitionAnimationCoordinatorForChange:(id)arg2;
 - (void)tilingControllerZoomAnimationCoordinator:(id)arg1 enumerateTilesToAnimateInLayerWithType:(int)arg2 layout:(id)arg3 zoomAnimationContext:(id)arg4 usingBlock:(id /* block */)arg5;
 - (void)viewDidLoad;
 - (void)viewWillLayoutSubviews;
-- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (id)zoomAnimationCoordinatorForZoomTransition:(id)arg1;
 
 // Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI

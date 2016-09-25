@@ -5,10 +5,10 @@
 @interface PSIGroup : PSIReusableObject {
     struct __CFArray { } * _assetIds;
     short  _category;
-    unsigned int  _compressedRanges;
+    unsigned long long  _compressedRanges;
     NSMutableString * _contentString;
-    unsigned int  _groupId;
-    unsigned int  _owningGroupId;
+    unsigned long long  _groupId;
+    unsigned long long  _owningGroupId;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
@@ -19,11 +19,11 @@
 @property (nonatomic, retain) struct __CFArray { }*assetIds;
 @property (nonatomic) short category;
 @property (nonatomic, readonly, retain) NSString *contentString;
-@property (nonatomic) unsigned int groupId;
-@property (nonatomic) unsigned int owningGroupId;
+@property (nonatomic) unsigned long long groupId;
+@property (nonatomic) unsigned long long owningGroupId;
 
-+ (void)_getTokenRanges:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 fromCompressedRanges:(unsigned int)arg2;
-+ (void)getCompressedRanges:(unsigned int)arg1 fromTokenRanges:(struct { int x1; int x2; }*)arg2 count:(long)arg3;
++ (void)_getTokenRanges:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 fromCompressedRanges:(unsigned long long)arg2;
++ (void)getCompressedRanges:(unsigned long long)arg1 fromTokenRanges:(struct { int x1; int x2; }*)arg2 count:(long)arg3;
 
 - (id)_tokenRangesDescription;
 - (struct __CFArray { }*)assetIds;
@@ -32,18 +32,18 @@
 - (id)contentString;
 - (void)dealloc;
 - (id)description;
-- (unsigned int)groupId;
-- (unsigned int)groupIdForAssetLookup;
+- (unsigned long long)groupId;
+- (unsigned long long)groupIdForAssetLookup;
 - (unsigned int)hash;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
-- (unsigned int)owningGroupId;
+- (unsigned long long)owningGroupId;
 - (void)prepareForReuse;
 - (void)prepareFromStatement:(struct sqlite3_stmt { }*)arg1;
 - (void)setAssetIds:(struct __CFArray { }*)arg1;
 - (void)setCategory:(short)arg1;
-- (void)setGroupId:(unsigned int)arg1;
-- (void)setOwningGroupId:(unsigned int)arg1;
+- (void)setGroupId:(unsigned long long)arg1;
+- (void)setOwningGroupId:(unsigned long long)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })tokenRangeAtIndex:(unsigned int)arg1;
 - (unsigned int)tokenRangesCount;
 

@@ -22,15 +22,15 @@
     unsigned int  firstVisiblePage;
     bool  forceUseMainThread;
     PDFPage * fromPage;
-    double  greekingThreshold;
-    double  gutterWide;
+    float  greekingThreshold;
+    float  gutterWide;
     bool  hasInstalledTileStats;
     NSArray * highlights;
     int  historyIndex;
     bool  inhibitAutoScroll;
     int  interpolationQuality;
     unsigned int  lastVisiblePage;
-    double  lineWidthThreshold;
+    float  lineWidthThreshold;
     UILongPressGestureRecognizer * longPressGestureRecognizer;
     bool  needsRotationZoomFix;
     NSDate * pageSyncDate;
@@ -47,7 +47,7 @@
     UITextField * tileStatsLabel;
     NSTimer * tileStatsTimer;
     PDFViewLayout * viewLayout;
-    double  zoomIncrement;
+    float  zoomIncrement;
 }
 
 - (void).cxx_destruct;

@@ -18,7 +18,7 @@
 - (void)didChangeClockMasterForClock:(id)arg1;
 - (void)didChangeLockStateTo:(int)arg1 forClock:(id)arg2;
 - (void)didEndClockGrandmasterChangeForClock:(id)arg1;
-- (id)initWithClockIdentifier:(unsigned int)arg1;
+- (id)initWithClockIdentifier:(unsigned long long)arg1;
 - (void)setClock:(id)arg1;
 - (void)setLockStateNotificationCallback:(int (*)arg1 refcon:(void*)arg2;
 - (void)setMasterChangeNotificationCallback:(int (*)arg1 refcon:(void*)arg2;

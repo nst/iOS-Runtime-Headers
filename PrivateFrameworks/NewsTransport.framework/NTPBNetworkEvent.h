@@ -3,10 +3,10 @@
  */
 
 @interface NTPBNetworkEvent : PBCodable <NSCopying> {
-    unsigned int  _cacheState;
-    unsigned int  _connectDuration;
-    unsigned int  _dnsDuration;
-    unsigned int  _errorCode;
+    unsigned long long  _cacheState;
+    unsigned long long  _connectDuration;
+    unsigned long long  _dnsDuration;
+    unsigned long long  _errorCode;
     struct { 
         unsigned int cacheState : 1; 
         unsigned int connectDuration : 1; 
@@ -20,23 +20,23 @@
         unsigned int startTime : 1; 
         unsigned int type : 1; 
     }  _has;
-    unsigned int  _httpStatusCode;
-    unsigned int  _requestDuration;
+    unsigned long long  _httpStatusCode;
+    unsigned long long  _requestDuration;
     NSString * _requestUUID;
     NSString * _respondingPOP;
-    unsigned int  _responseDuration;
-    unsigned int  _responseSize;
-    unsigned int  _sessionID;
-    unsigned int  _startTime;
-    unsigned int  _type;
+    unsigned long long  _responseDuration;
+    unsigned long long  _responseSize;
+    unsigned long long  _sessionID;
+    unsigned long long  _startTime;
+    unsigned long long  _type;
     NSString * _url;
 }
 
-@property (nonatomic) unsigned int cacheState;
-@property (nonatomic) unsigned int connectDuration;
-@property (nonatomic) unsigned int dnsDuration;
-@property (nonatomic, readonly) unsigned int endTime;
-@property (nonatomic) unsigned int errorCode;
+@property (nonatomic) unsigned long long cacheState;
+@property (nonatomic) unsigned long long connectDuration;
+@property (nonatomic) unsigned long long dnsDuration;
+@property (nonatomic, readonly) unsigned long long endTime;
+@property (nonatomic) unsigned long long errorCode;
 @property (nonatomic) BOOL hasCacheState;
 @property (nonatomic) BOOL hasConnectDuration;
 @property (nonatomic) BOOL hasDnsDuration;
@@ -51,27 +51,27 @@
 @property (nonatomic) BOOL hasStartTime;
 @property (nonatomic) BOOL hasType;
 @property (nonatomic, readonly) BOOL hasUrl;
-@property (nonatomic) unsigned int httpStatusCode;
-@property (nonatomic) unsigned int requestDuration;
+@property (nonatomic) unsigned long long httpStatusCode;
+@property (nonatomic) unsigned long long requestDuration;
 @property (nonatomic, retain) NSString *requestUUID;
 @property (nonatomic, retain) NSString *respondingPOP;
-@property (nonatomic) unsigned int responseDuration;
-@property (nonatomic) unsigned int responseSize;
-@property (nonatomic) unsigned int sessionID;
-@property (nonatomic) unsigned int startTime;
-@property (nonatomic) unsigned int type;
+@property (nonatomic) unsigned long long responseDuration;
+@property (nonatomic) unsigned long long responseSize;
+@property (nonatomic) unsigned long long sessionID;
+@property (nonatomic) unsigned long long startTime;
+@property (nonatomic) unsigned long long type;
 @property (nonatomic, retain) NSString *url;
 
 // Image: /System/Library/PrivateFrameworks/NewsTransport.framework/NewsTransport
 
-- (unsigned int)cacheState;
-- (unsigned int)connectDuration;
+- (unsigned long long)cacheState;
+- (unsigned long long)connectDuration;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)dnsDuration;
-- (unsigned int)errorCode;
+- (unsigned long long)dnsDuration;
+- (unsigned long long)errorCode;
 - (BOOL)hasCacheState;
 - (BOOL)hasConnectDuration;
 - (BOOL)hasDnsDuration;
@@ -87,20 +87,20 @@
 - (BOOL)hasType;
 - (BOOL)hasUrl;
 - (unsigned int)hash;
-- (unsigned int)httpStatusCode;
+- (unsigned long long)httpStatusCode;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (unsigned int)requestDuration;
+- (unsigned long long)requestDuration;
 - (id)requestUUID;
 - (id)respondingPOP;
-- (unsigned int)responseDuration;
-- (unsigned int)responseSize;
-- (unsigned int)sessionID;
-- (void)setCacheState:(unsigned int)arg1;
-- (void)setConnectDuration:(unsigned int)arg1;
-- (void)setDnsDuration:(unsigned int)arg1;
-- (void)setErrorCode:(unsigned int)arg1;
+- (unsigned long long)responseDuration;
+- (unsigned long long)responseSize;
+- (unsigned long long)sessionID;
+- (void)setCacheState:(unsigned long long)arg1;
+- (void)setConnectDuration:(unsigned long long)arg1;
+- (void)setDnsDuration:(unsigned long long)arg1;
+- (void)setErrorCode:(unsigned long long)arg1;
 - (void)setHasCacheState:(BOOL)arg1;
 - (void)setHasConnectDuration:(BOOL)arg1;
 - (void)setHasDnsDuration:(BOOL)arg1;
@@ -112,24 +112,24 @@
 - (void)setHasSessionID:(BOOL)arg1;
 - (void)setHasStartTime:(BOOL)arg1;
 - (void)setHasType:(BOOL)arg1;
-- (void)setHttpStatusCode:(unsigned int)arg1;
-- (void)setRequestDuration:(unsigned int)arg1;
+- (void)setHttpStatusCode:(unsigned long long)arg1;
+- (void)setRequestDuration:(unsigned long long)arg1;
 - (void)setRequestUUID:(id)arg1;
 - (void)setRespondingPOP:(id)arg1;
-- (void)setResponseDuration:(unsigned int)arg1;
-- (void)setResponseSize:(unsigned int)arg1;
-- (void)setSessionID:(unsigned int)arg1;
-- (void)setStartTime:(unsigned int)arg1;
-- (void)setType:(unsigned int)arg1;
+- (void)setResponseDuration:(unsigned long long)arg1;
+- (void)setResponseSize:(unsigned long long)arg1;
+- (void)setSessionID:(unsigned long long)arg1;
+- (void)setStartTime:(unsigned long long)arg1;
+- (void)setType:(unsigned long long)arg1;
 - (void)setUrl:(id)arg1;
-- (unsigned int)startTime;
-- (unsigned int)type;
+- (unsigned long long)startTime;
+- (unsigned long long)type;
 - (id)url;
 - (void)writeTo:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
 
-- (unsigned int)endTime;
-- (unsigned int)totalDuration;
+- (unsigned long long)endTime;
+- (unsigned long long)totalDuration;
 
 @end

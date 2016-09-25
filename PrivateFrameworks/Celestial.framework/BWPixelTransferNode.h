@@ -10,12 +10,12 @@
     BOOL  _haveLiveInputCropRect;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _inputCropRect;
     BWPixelBufferPool * _intermediateBufferPool;
@@ -28,12 +28,12 @@
     BOOL  _liveFlipVertical;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _liveInputCropRect;
     BOOL  _liveLowSpeed;
@@ -73,7 +73,7 @@
 - (id)_preferredPixelFormatsWithInputPixelFormatFirst;
 - (void)_updateOutputRequirements;
 - (BOOL)_zeroFillBuffers;
-- (void)configurationWithID:(int)arg1 updatedFormat:(id)arg2 didBecomeLiveForInput:(id)arg3;
+- (void)configurationWithID:(long long)arg1 updatedFormat:(id)arg2 didBecomeLiveForInput:(id)arg3;
 - (int)cropMode;
 - (void)dealloc;
 - (void)didReachEndOfDataForInput:(id)arg1;
@@ -83,7 +83,7 @@
 - (BOOL)flipVertical;
 - (BOOL)hasNonLiveConfigurationChanges;
 - (id)init;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })inputCropRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })inputCropRect;
 - (BOOL)lowSpeed;
 - (void)makeCurrentConfigurationLive;
 - (id)nodeSubType;
@@ -100,7 +100,7 @@
 - (void)setEmitSampleBufferSemaphore:(id)arg1;
 - (void)setFlipHorizontal:(BOOL)arg1;
 - (void)setFlipVertical:(BOOL)arg1;
-- (void)setInputCropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setInputCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setLowSpeed:(BOOL)arg1;
 - (void)setOutputColorSpaceProperties:(int)arg1;
 - (void)setOutputHeight:(unsigned long)arg1;

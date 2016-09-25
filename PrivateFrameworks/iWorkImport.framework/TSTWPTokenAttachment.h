@@ -5,31 +5,31 @@
 @interface TSTWPTokenAttachment : TSWPUIGraphicalAttachment {
     BOOL  mActive;
     struct CGImage { } * mCachedImage;
-    double  mCachedImageScreenScale;
+    float  mCachedImageScreenScale;
     TSTExpressionNode * mExpressionNode;
     BOOL  mHighlighted;
     BOOL  mInInvalidate;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  mMenuRect;
     BOOL  mNeverShowsMenu;
     BOOL  mSelected;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  mTextSize;
 }
 
 @property (getter=isActive, nonatomic) BOOL active;
 @property (nonatomic) struct CGImage { }*cachedImage;
-@property (nonatomic) double cachedImageScreenScale;
+@property (nonatomic) float cachedImageScreenScale;
 @property (nonatomic, retain) TSTExpressionNode *expressionNode;
 @property (getter=isHighlighted, nonatomic) BOOL highlighted;
 @property (getter=neverShowsMenu, nonatomic) BOOL neverShowsMenu;

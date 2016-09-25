@@ -4,7 +4,7 @@
 
 @interface PXPhotosDetailsSettings : PXSettings {
     double  _addToTabDuration;
-    double  _addToTabEndRotation;
+    float  _addToTabEndRotation;
     double  _addToTabFadeOutDelay;
     double  _addToTabOpacity;
     double  _addToTabRotationDelay;
@@ -16,7 +16,7 @@
     BOOL  _allowPinchTransitions;
     BOOL  _allowWidgetsContentLoading;
     BOOL  _allowZoomTransitions;
-    double  _assetsWidgetPlaceholderAspectRatio;
+    float  _assetsWidgetPlaceholderAspectRatio;
     int  _curationAlgorithm;
     double  _defaultPriorityWidgetsLoadingDelay;
     int  _detailViewsToKeepLoaded;
@@ -47,7 +47,7 @@
 }
 
 @property (nonatomic) double addToTabDuration;
-@property (nonatomic) double addToTabEndRotation;
+@property (nonatomic) float addToTabEndRotation;
 @property (nonatomic) double addToTabFadeOutDelay;
 @property (nonatomic) double addToTabOpacity;
 @property (nonatomic) double addToTabRotationDelay;
@@ -59,7 +59,7 @@
 @property (nonatomic) BOOL allowPinchTransitions;
 @property (nonatomic) BOOL allowWidgetsContentLoading;
 @property (nonatomic) BOOL allowZoomTransitions;
-@property (nonatomic) double assetsWidgetPlaceholderAspectRatio;
+@property (nonatomic) float assetsWidgetPlaceholderAspectRatio;
 @property (nonatomic) int curationAlgorithm;
 @property (nonatomic) double defaultPriorityWidgetsLoadingDelay;
 @property (nonatomic) int detailViewsToKeepLoaded;

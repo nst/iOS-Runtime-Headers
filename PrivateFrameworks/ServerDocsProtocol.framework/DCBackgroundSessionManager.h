@@ -38,11 +38,11 @@
 - (void)URLSession:(id)arg1 didBecomeInvalidWithError:(id)arg2;
 - (void)URLSession:(id)arg1 didReceiveChallenge:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)URLSession:(id)arg1 downloadTask:(id)arg2 didFinishDownloadingToURL:(id)arg3;
-- (void)URLSession:(id)arg1 downloadTask:(id)arg2 didResumeAtOffset:(int)arg3 expectedTotalBytes:(int)arg4;
-- (void)URLSession:(id)arg1 downloadTask:(id)arg2 didWriteData:(int)arg3 totalBytesWritten:(int)arg4 totalBytesExpectedToWrite:(int)arg5;
+- (void)URLSession:(id)arg1 downloadTask:(id)arg2 didResumeAtOffset:(long long)arg3 expectedTotalBytes:(long long)arg4;
+- (void)URLSession:(id)arg1 downloadTask:(id)arg2 didWriteData:(long long)arg3 totalBytesWritten:(long long)arg4 totalBytesExpectedToWrite:(long long)arg5;
 - (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
 - (void)URLSession:(id)arg1 task:(id)arg2 didReceiveChallenge:(id)arg3 completionHandler:(id /* block */)arg4;
-- (void)URLSession:(id)arg1 task:(id)arg2 didSendBodyData:(int)arg3 totalBytesSent:(int)arg4 totalBytesExpectedToSend:(int)arg5;
+- (void)URLSession:(id)arg1 task:(id)arg2 didSendBodyData:(long long)arg3 totalBytesSent:(long long)arg4 totalBytesExpectedToSend:(long long)arg5;
 - (void)URLSessionDidFinishEventsForBackgroundURLSession:(id)arg1;
 - (id /* block */)backgroundEventsCompletionHandler;
 - (id)backgroundSession;

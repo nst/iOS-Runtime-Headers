@@ -4,12 +4,12 @@
 
 @interface CLKUITimeLabel : UIView <CLKTimeFormatterDelegate, CLKTimeFormatterObserver, CLKUILabel> {
     id /* block */  _didResizeHandler;
-    double  _fadeEnd;
-    double  _fadeStart;
+    float  _fadeEnd;
+    float  _fadeStart;
     <_CLKUITimeLabelManager> * _fromLabelManager;
     CLKUITimeLabelStyle * _fromStyle;
     <_CLKUITimeLabelManager> * _labelManager;
-    double  _maxWidth;
+    float  _maxWidth;
     unsigned int  _options;
     BOOL  _paused;
     BOOL  _showSeconds;
@@ -17,30 +17,30 @@
     CLKUITimeLabelStyle * _style;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _styleTransitionEndFrame;
-    double  _styleTransitionFraction;
+    float  _styleTransitionFraction;
     BOOL  _styleTransitioning;
     CLKTimeFormatter * _timeFormatter;
     NSString * _timeText;
 }
 
-@property (nonatomic, readonly) double _lastLineBaseline;
+@property (nonatomic, readonly) float _lastLineBaseline;
 @property (nonatomic, copy) NSAttributedString *attributedText;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) id /* block */ didResizeHandler;
 @property (nonatomic, retain) UIFont *font;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } intrinsicSize;
-@property (nonatomic) double maxWidth;
-@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } opticalInsets;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } intrinsicSize;
+@property (nonatomic) float maxWidth;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } opticalInsets;
 @property (nonatomic, readonly) unsigned int options;
 @property (nonatomic) BOOL paused;
 @property (nonatomic) BOOL showSeconds;
@@ -69,12 +69,12 @@
 - (id /* block */)didResizeHandler;
 - (id)font;
 - (id)identifyingInfoForTimeFormatter:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithTimeLabelOptions:(unsigned int)arg1;
-- (struct CGSize { double x1; double x2; })intrinsicSize;
+- (struct CGSize { float x1; float x2; })intrinsicSize;
 - (void)layoutSubviews;
 - (float)maxWidth;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })opticalInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })opticalInsets;
 - (unsigned int)options;
 - (BOOL)paused;
 - (void)prepareToTransitionToStyle:(id)arg1;
@@ -98,11 +98,11 @@
 - (void)setTimeOffset:(double)arg1;
 - (BOOL)showSeconds;
 - (BOOL)showsDesignator;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)sizeToFit;
 - (id)style;
-- (struct CGSize { double x1; double x2; })styleTransitionCurrentSize;
-- (struct CGSize { double x1; double x2; })styleTransitionEndSize;
+- (struct CGSize { float x1; float x2; })styleTransitionCurrentSize;
+- (struct CGSize { float x1; float x2; })styleTransitionEndSize;
 - (id)text;
 - (int)textAlignment;
 - (id)textColor;

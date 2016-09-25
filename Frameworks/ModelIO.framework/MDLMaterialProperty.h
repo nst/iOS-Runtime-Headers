@@ -28,8 +28,8 @@
 @property (nonatomic) void float2Value;
 @property (nonatomic) void float3Value;
 @property (nonatomic) void float4Value;
-@property (nonatomic) double floatValue;
-@property (nonatomic) double luminance;
+@property (nonatomic) float floatValue;
+@property (nonatomic) float luminance;
 @property (nonatomic) struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; } matrix4x4;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic) unsigned int semantic;

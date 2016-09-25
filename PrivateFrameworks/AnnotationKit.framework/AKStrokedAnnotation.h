@@ -7,7 +7,7 @@
     BOOL  _dashed;
     BOOL  _hasShadow;
     UIColor * _strokeColor;
-    double  _strokeWidth;
+    float  _strokeWidth;
 }
 
 @property int brushStyle;
@@ -17,7 +17,7 @@
 @property BOOL hasShadow;
 @property (readonly) unsigned int hash;
 @property (retain) UIColor *strokeColor;
-@property double strokeWidth;
+@property float strokeWidth;
 @property (readonly) Class superclass;
 
 + (id)displayNameForUndoablePropertyChangeWithKey:(id)arg1;

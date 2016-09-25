@@ -8,13 +8,13 @@
         unsigned int timestamp : 1; 
         unsigned int application : 1; 
     }  _has;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) int application;
 @property (nonatomic) BOOL hasApplication;
 @property (nonatomic) BOOL hasTimestamp;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 
 - (int)StringAsApplication:(id)arg1;
 - (int)application;
@@ -32,8 +32,8 @@
 - (void)setApplication:(int)arg1;
 - (void)setHasApplication:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
-- (unsigned int)timestamp;
+- (void)setTimestamp:(unsigned long long)arg1;
+- (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 
 @end

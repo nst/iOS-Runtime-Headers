@@ -6,7 +6,7 @@
     SUItem * _activeLoadMoreItem;
     NSMutableArray * _cachedHeaderViews;
     SUClientInterface * _clientInterface;
-    double  _offerButtonWidth;
+    float  _offerButtonWidth;
     SUStructuredPage * _structuredPage;
     int  _style;
 }

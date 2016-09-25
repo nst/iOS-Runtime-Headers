@@ -24,6 +24,6 @@
 - (id)initWithGroup:(BOOL)arg1 parentFileIDs:(id)arg2 session:(id)arg3;
 - (BOOL)isPublished;
 - (id)parentFileIDs;
-- (void)setCompletedUnitCount:(int)arg1;
+- (void)setCompletedUnitCount:(long long)arg1;
 
 @end

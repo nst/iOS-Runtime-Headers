@@ -9,7 +9,7 @@
 - (void)controller:(MarkupViewController *)arg1 didReadCGPDFDocument:(struct CGPDFDocument { }*)arg2;
 - (NSArray *)controller:(MarkupViewController *)arg1 willSetToolbarItems:(NSArray *)arg2;
 - (void)controller:(MarkupViewController *)arg1 willWriteCGPDFDocument:(struct CGPDFDocument { }*)arg2 toContext:(struct CGContext { }*)arg3;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })customEdgeInsets;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })customSketchOverlayInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })customEdgeInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })customSketchOverlayInsets;
 
 @end

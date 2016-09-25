@@ -3,7 +3,7 @@
  */
 
 @interface NSUndoManager : NSObject {
-    unsigned int  _NSUndoManagerPrivate1;
+    unsigned long long  _NSUndoManagerPrivate1;
     void * _NSUndoManagerPrivate2;
     void * _NSUndoManagerPrivate3;
     id  _proxy;

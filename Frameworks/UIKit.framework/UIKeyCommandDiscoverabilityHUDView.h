@@ -15,11 +15,11 @@
     NSLayoutConstraint * _collectionViewTopConstraint;
     NSLayoutConstraint * _collectionViewTrailingConstraint;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _columnSize;
     UICollectionViewFlowLayout * _flowLayout;
-    double  _fontScaleFactor;
+    float  _fontScaleFactor;
     NSArray * _keyCommands;
     UIPageControl * _pageControl;
     NSLayoutConstraint * _pageControlYAnchor;
@@ -39,7 +39,7 @@
 @property (nonatomic, retain) UIKeyCommandDiscoverabilityHUDVisualStyle *visualStyle;
 
 - (void).cxx_destruct;
-- (struct CGSize { double x1; double x2; })_bestColumnSizeWithCellsPerColumn:(unsigned int)arg1 maxColumnSize:(struct CGSize { double x1; double x2; })arg2 columnCount:(unsigned int)arg3 usingColumnView:(id)arg4 getFontScaleFactor:(float*)arg5;
+- (struct CGSize { float x1; float x2; })_bestColumnSizeWithCellsPerColumn:(unsigned int)arg1 maxColumnSize:(struct CGSize { float x1; float x2; })arg2 columnCount:(unsigned int)arg3 usingColumnView:(id)arg4 getFontScaleFactor:(float*)arg5;
 - (id)_columnViewForColumnIndex:(unsigned int)arg1 reusingView:(id)arg2;
 - (id)_discoverabilityTitleForKeyCommand:(id)arg1;
 - (id)_displayInputAndModifierFlagsForInput:(id)arg1 modifierFlags:(int)arg2;
@@ -58,7 +58,7 @@
 - (id)initWithKeyCommands:(id)arg1 keyboard:(struct __GSKeyboard { }*)arg2;
 - (void)recalculatePages;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setVisualStyle:(id)arg1;
 - (id)visualStyle;
 

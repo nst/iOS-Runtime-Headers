@@ -48,9 +48,9 @@
 - (id)delegate;
 - (float)desiredHeight;
 - (id)initWithDataSource:(id)arg1;
-- (void)insertLeadingView:(id)arg1 withMargins:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
+- (void)insertLeadingView:(id)arg1 withMargins:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
 - (void)insertTopView:(id)arg1;
-- (void)insertTrailingView:(id)arg1 withMargins:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
+- (void)insertTrailingView:(id)arg1 withMargins:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
 - (int)layoutStyle;
 - (id)leadingViews;
 - (void)populateStack;

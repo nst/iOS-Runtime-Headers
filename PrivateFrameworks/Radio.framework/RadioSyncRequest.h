@@ -5,7 +5,7 @@
 @interface RadioSyncRequest : RadioRequest {
     NSObject<OS_dispatch_queue> * _artworkQueue;
     BOOL  _disableArtworkLoading;
-    unsigned int  _globalVersion;
+    unsigned long long  _globalVersion;
     BOOL  _includeCleanTracksOnly;
     BOOL  _isAutomaticUpdate;
     NSString * _referer;
@@ -29,7 +29,7 @@
 - (BOOL)disableArtworkLoading;
 - (BOOL)includeCleanTracksOnly;
 - (id)init;
-- (id)initWithGlobalVersion:(unsigned int)arg1;
+- (id)initWithGlobalVersion:(unsigned long long)arg1;
 - (BOOL)isAutomaticUpdate;
 - (id)matchDictionary;
 - (id)referer;

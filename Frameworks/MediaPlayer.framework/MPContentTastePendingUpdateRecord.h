@@ -5,14 +5,14 @@
 @interface MPContentTastePendingUpdateRecord : NSObject {
     NSUUID * _UUID;
     NSString * _playlistGlobalID;
-    int  _storeAdamID;
+    long long  _storeAdamID;
     unsigned int  _tasteType;
     int  _type;
 }
 
 @property (nonatomic, readonly) NSUUID *UUID;
 @property (nonatomic, readonly) NSString *playlistGlobalID;
-@property (nonatomic, readonly) int storeAdamID;
+@property (nonatomic, readonly) long long storeAdamID;
 @property (nonatomic, readonly) unsigned int tasteType;
 @property (nonatomic, readonly) int type;
 
@@ -21,9 +21,9 @@
 - (void)_initializeWithType:(int)arg1 tasteType:(unsigned int)arg2;
 - (id)init;
 - (id)initWithPlaylistGlobalID:(id)arg1 tasteType:(unsigned int)arg2;
-- (id)initWithStoreAdamID:(int)arg1 tasteType:(unsigned int)arg2;
+- (id)initWithStoreAdamID:(long long)arg1 tasteType:(unsigned int)arg2;
 - (id)playlistGlobalID;
-- (int)storeAdamID;
+- (long long)storeAdamID;
 - (unsigned int)tasteType;
 - (int)type;
 

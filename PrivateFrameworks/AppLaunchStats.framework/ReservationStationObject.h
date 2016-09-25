@@ -6,10 +6,10 @@
     int  appType;
     NSString * bundleID;
     id /* block */  forceEndHandler;
-    int  lockTime;
+    long long  lockTime;
     NSObject<OS_dispatch_queue> * rsDispatchQueue;
-    int  seqNum;
-    unsigned int  startMachAbsoluteTime;
+    long long  seqNum;
+    unsigned long long  startMachAbsoluteTime;
     NSObject<OS_dispatch_source> * theTimer;
     NSDate * timeStamp;
 }
@@ -21,8 +21,8 @@
 - (void)logAll:(struct __asl_object_s { }*)arg1 withMsg:(struct __asl_object_s { }*)arg2 withLevel:(int)arg3;
 - (void)logLight:(struct __asl_object_s { }*)arg1 withMsg:(struct __asl_object_s { }*)arg2 withLevel:(int)arg3;
 - (void)onTick;
-- (void)releaseStationWithAppID:(id)arg1 seqNum:(int)arg2 withReleaseState:(bool*)arg3;
+- (void)releaseStationWithAppID:(id)arg1 seqNum:(long long)arg2 withReleaseState:(bool*)arg3;
 - (void)setStation:(id)arg1 didSet:(bool*)arg2;
-- (void)setStationState:(id)arg1 seq:(int)arg2 type:(int)arg3 didset:(bool*)arg4 release:(id /* block */)arg5;
+- (void)setStationState:(id)arg1 seq:(long long)arg2 type:(int)arg3 didset:(bool*)arg4 release:(id /* block */)arg5;
 
 @end

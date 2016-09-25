@@ -5,7 +5,7 @@
 
 @required
 
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })backgroundInset;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })backgroundInset;
 - (float)defaultMarginWidth;
 - (BOOL)drawsSeparatorAtBottomOfSection;
 - (BOOL)drawsSeparatorAtTopOfSection;
@@ -13,7 +13,7 @@
 - (BOOL)layoutMarginsFollowReadableWidth;
 - (float)sectionBorderWidth;
 - (int)sectionLocation;
-- (void)setBackgroundInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setBackgroundInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setDefaultMarginWidth:(float)arg1;
 - (void)setDrawsSeparatorAtBottomOfSection:(BOOL)arg1;
 - (void)setDrawsSeparatorAtTopOfSection:(BOOL)arg1;

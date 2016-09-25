@@ -5,51 +5,51 @@
 @interface AVMetadataObjectInternal : NSObject {
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _bounds;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _duration;
     AVCaptureInput * _input;
     AVMetadataObject * _originalMetadataObject;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _time;
     NSString * _type;
 }
 
-@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } bounds;
-@property struct { int x1; int x2; unsigned int x3; int x4; } duration;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
+@property struct { long long x1; int x2; unsigned int x3; long long x4; } duration;
 @property (retain) AVCaptureInput *input;
 @property (retain) AVMetadataObject *originalMetadataObject;
-@property struct { int x1; int x2; unsigned int x3; int x4; } time;
+@property struct { long long x1; int x2; unsigned int x3; long long x4; } time;
 @property (retain) NSString *type;
 
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })bounds;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
 - (void)dealloc;
-- (struct { int x1; int x2; unsigned int x3; int x4; })duration;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
 - (id)init;
 - (id)input;
 - (id)originalMetadataObject;
-- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)setDuration:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setInput:(id)arg1;
 - (void)setOriginalMetadataObject:(id)arg1;
-- (void)setTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
+- (void)setTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setType:(id)arg1;
-- (struct { int x1; int x2; unsigned int x3; int x4; })time;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })time;
 - (id)type;
 
 @end

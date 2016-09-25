@@ -3,13 +3,13 @@
  */
 
 @interface _UIDimmingKnockoutBackdropView : UIView <UIInterfaceActionVisualBackgroundDisplaying, UIInterfaceActionVisualGroupBackgroundDisplaying> {
-    double  _cornerRadius;
+    float  _cornerRadius;
     int  _style;
     UIVisualEffectView * backdropView;
     UIView * dimmingKnockoutView;
 }
 
-@property (nonatomic) double cornerRadius;
+@property (nonatomic) float cornerRadius;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;

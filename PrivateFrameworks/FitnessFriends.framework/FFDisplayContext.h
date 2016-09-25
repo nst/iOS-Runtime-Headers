@@ -5,14 +5,14 @@
 @interface FFDisplayContext : NSObject {
     NSString * _contentSizeCategory;
     UIFont * _dataFont;
-    double  _dataFontSize;
+    float  _dataFontSize;
     UIFont * _descriptionFont;
     NSDictionary * _keyColors;
     UIFont * _multilineDataFont;
-    double  _multilineDataFontSize;
+    float  _multilineDataFontSize;
     UIFont * _multilineUnitFont;
     UIFont * _nameFont;
-    double  _nameFontSize;
+    float  _nameFontSize;
     NSDictionary * _titleColors;
     UIFont * _unitFont;
 }

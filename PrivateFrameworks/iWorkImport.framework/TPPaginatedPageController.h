@@ -6,8 +6,8 @@
     TPTextWrapController * _wrapController;
 }
 
-- (unsigned int)calculatePageIndexFromCanvasPoint:(struct CGPoint { double x1; double x2; })arg1;
-- (struct CGSize { double x1; double x2; })canvasSizeToFitAllPages;
+- (unsigned int)calculatePageIndexFromCanvasPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGSize { float x1; float x2; })canvasSizeToFitAllPages;
 - (void)d_toggleWrapAnimation;
 - (void)dealloc;
 - (id)initWithDocumentRoot:(id)arg1;
@@ -18,10 +18,10 @@
 - (void)p_performWithCachedPageLayouts:(id /* block */)arg1;
 - (void)p_rebuildCachedLayoutChildrenFromStartPage:(unsigned int)arg1 toEndPage:(unsigned int)arg2 setNeedsLayout:(BOOL)arg3;
 - (void)p_rebuildPageLayoutsContainingDrawableUUIDs:(id)arg1;
-- (unsigned int)pageIndexFromCanvasPoint:(struct CGPoint { double x1; double x2; })arg1;
-- (struct CGPoint { double x1; double x2; })pageOriginForPageIndex:(unsigned int)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })pageRectForPageIndex:(unsigned int)arg1;
-- (struct CGSize { double x1; double x2; })pageSize;
+- (unsigned int)pageIndexFromCanvasPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGPoint { float x1; float x2; })pageOriginForPageIndex:(unsigned int)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })pageRectForPageIndex:(unsigned int)arg1;
+- (struct CGSize { float x1; float x2; })pageSize;
 - (void)processHeaderFooterPropertyChanged;
 - (void)syncProcessChanges:(id)arg1 forChangeSource:(id)arg2;
 - (void)teardown;

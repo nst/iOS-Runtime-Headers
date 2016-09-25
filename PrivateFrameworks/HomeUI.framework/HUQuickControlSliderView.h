@@ -6,10 +6,10 @@
     UIView * _backgroundView;
     NSLayoutConstraint * _overlayTopConstraint;
     HUQuickControlSliderViewProfile * _profile;
-    double  _rawSliderValue;
-    double  _secondarySliderValue;
+    float  _rawSliderValue;
+    float  _secondarySliderValue;
     BOOL  _showOffState;
-    double  _sliderValue;
+    float  _sliderValue;
     HUQuickControlSliderValueOverlayView * _valueOverlayView;
 }
 
@@ -19,12 +19,12 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) NSLayoutConstraint *overlayTopConstraint;
 @property (nonatomic, copy) HUQuickControlSliderViewProfile *profile;
-@property (nonatomic) double rawSliderValue;
-@property (nonatomic) double secondarySliderValue;
+@property (nonatomic) float rawSliderValue;
+@property (nonatomic) float secondarySliderValue;
 @property (nonatomic, retain) id secondaryValue;
 @property (nonatomic) BOOL showOffState;
 @property (nonatomic) int sizeSubclass;
-@property (nonatomic) double sliderValue;
+@property (nonatomic) float sliderValue;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) id value;
 @property (nonatomic, retain) HUQuickControlSliderValueOverlayView *valueOverlayView;

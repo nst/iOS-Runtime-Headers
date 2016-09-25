@@ -30,7 +30,7 @@
 @property (readonly) Class superclass;
 
 + (id)carKeyboardNameForKeyboard:(id)arg1 screenTraits:(id)arg2;
-+ (struct CGSize { double x1; double x2; })keyboardSizeForInputMode:(id)arg1 screenTraits:(id)arg2 keyboardType:(int)arg3;
++ (struct CGSize { float x1; float x2; })keyboardSizeForInputMode:(id)arg1 screenTraits:(id)arg2 keyboardType:(int)arg3;
 
 - (void)_handleKeyUIEvent:(id)arg1;
 - (BOOL)_handleMoveWithEvent:(id)arg1;
@@ -55,10 +55,10 @@
 - (unsigned int)cursorLocation;
 - (void)deactivateKey:(id)arg1;
 - (void)dealloc;
-- (int)defaultSelectedVariantIndexForKey:(id)arg1 withActions:(unsigned int)arg2;
+- (int)defaultSelectedVariantIndexForKey:(id)arg1 withActions:(unsigned long long)arg2;
 - (BOOL)diacriticForwardCompose;
 - (void)didSelectRecentInputString:(id)arg1;
-- (unsigned int)downActionFlagsForKey:(id)arg1;
+- (unsigned long long)downActionFlagsForKey:(id)arg1;
 - (int)enabledStateForKey:(id)arg1;
 - (void)endMultitapForKey:(id)arg1;
 - (void)flushKeyCache:(id)arg1;
@@ -67,10 +67,10 @@
 - (void)handleVariantDeleteIfNecessaryForKey:(id)arg1;
 - (BOOL)handleVisualDirectionalInput:(int)arg1;
 - (BOOL)ignoresShiftState;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isAlphabeticPlane;
 - (BOOL)isKeyplaneDisabledWithName:(id)arg1;
-- (id)keyHitTestInSameRowAsCenter:(struct CGPoint { double x1; double x2; })arg1 size:(struct CGSize { double x1; double x2; })arg2;
+- (id)keyHitTestInSameRowAsCenter:(struct CGPoint { float x1; float x2; })arg1 size:(struct CGSize { float x1; float x2; })arg2;
 - (id)keyViewAnimator;
 - (id)keyplaneBeforeDictation;
 - (void)longPressAction;
@@ -85,7 +85,7 @@
 - (void)runWithSuppressedActions:(id /* block */)arg1;
 - (void)selectInitialKeyIfNecessary;
 - (int)selectedKeyBeforeDictation;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })selectionFrameForKeyIndex:(int)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })selectionFrameForKeyIndex:(int)arg1;
 - (void)setCursorLocation:(unsigned int)arg1;
 - (void)setDisableTouchInput:(BOOL)arg1;
 - (void)setHighlightedVariantIndex:(int)arg1 key:(id)arg2;
@@ -115,7 +115,7 @@
 - (void)switchToDictationKeyplaneWithActivationIdentifier:(id)arg1;
 - (void)takeKeyAction:(id)arg1;
 - (unsigned int)targetEdgesForScreenGestureRecognition;
-- (int)targetKeyIndexAtOffset:(struct CGPoint { double x1; double x2; })arg1 fromKey:(id)arg2;
+- (int)targetKeyIndexAtOffset:(struct CGPoint { float x1; float x2; })arg1 fromKey:(id)arg2;
 - (void)updateDictationHelpString;
 - (void)updateKeyplaneSwitchEdgeBiases;
 - (void)updateRecentInputsKeyIfNecessary;

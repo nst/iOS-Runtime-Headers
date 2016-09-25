@@ -3,7 +3,7 @@
  */
 
 @interface HDAWDHealthKitDatabaseLastWeekUsageEvent : PBCodable <NSCopying> {
-    int  _databaseSizeMB;
+    long long  _databaseSizeMB;
     struct { 
         unsigned int databaseSizeMB : 1; 
         unsigned int highFrequencyDataSizeMB : 1; 
@@ -17,17 +17,17 @@
         unsigned int hasWatchSource : 1; 
     }  _has;
     BOOL  _hasWatchSource;
-    int  _highFrequencyDataSizeMB;
-    int  _manuallyEnteredTypesCount;
-    int  _percentageDeletedObjects;
+    long long  _highFrequencyDataSizeMB;
+    long long  _manuallyEnteredTypesCount;
+    long long  _percentageDeletedObjects;
     int  _rowCountCDA;
-    int  _rowCountObjects;
-    int  _thirdPartyAppsCount;
-    int  _thirdPartyAppsWroteDataCount;
-    unsigned int  _timestamp;
+    long long  _rowCountObjects;
+    long long  _thirdPartyAppsCount;
+    long long  _thirdPartyAppsWroteDataCount;
+    unsigned long long  _timestamp;
 }
 
-@property (nonatomic) int databaseSizeMB;
+@property (nonatomic) long long databaseSizeMB;
 @property (nonatomic) BOOL hasDatabaseSizeMB;
 @property (nonatomic) BOOL hasHasWatchSource;
 @property (nonatomic) BOOL hasHighFrequencyDataSizeMB;
@@ -39,19 +39,19 @@
 @property (nonatomic) BOOL hasThirdPartyAppsWroteDataCount;
 @property (nonatomic) BOOL hasTimestamp;
 @property (nonatomic) BOOL hasWatchSource;
-@property (nonatomic) int highFrequencyDataSizeMB;
-@property (nonatomic) int manuallyEnteredTypesCount;
-@property (nonatomic) int percentageDeletedObjects;
+@property (nonatomic) long long highFrequencyDataSizeMB;
+@property (nonatomic) long long manuallyEnteredTypesCount;
+@property (nonatomic) long long percentageDeletedObjects;
 @property (nonatomic) int rowCountCDA;
-@property (nonatomic) int rowCountObjects;
-@property (nonatomic) int thirdPartyAppsCount;
-@property (nonatomic) int thirdPartyAppsWroteDataCount;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) long long rowCountObjects;
+@property (nonatomic) long long thirdPartyAppsCount;
+@property (nonatomic) long long thirdPartyAppsWroteDataCount;
+@property (nonatomic) unsigned long long timestamp;
 
 - (int)StringAsRowCountCDA:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (int)databaseSizeMB;
+- (long long)databaseSizeMB;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasDatabaseSizeMB;
@@ -66,16 +66,16 @@
 - (BOOL)hasTimestamp;
 - (BOOL)hasWatchSource;
 - (unsigned int)hash;
-- (int)highFrequencyDataSizeMB;
+- (long long)highFrequencyDataSizeMB;
 - (BOOL)isEqual:(id)arg1;
-- (int)manuallyEnteredTypesCount;
+- (long long)manuallyEnteredTypesCount;
 - (void)mergeFrom:(id)arg1;
-- (int)percentageDeletedObjects;
+- (long long)percentageDeletedObjects;
 - (BOOL)readFrom:(id)arg1;
 - (int)rowCountCDA;
 - (id)rowCountCDAAsString:(int)arg1;
-- (int)rowCountObjects;
-- (void)setDatabaseSizeMB:(int)arg1;
+- (long long)rowCountObjects;
+- (void)setDatabaseSizeMB:(long long)arg1;
 - (void)setHasDatabaseSizeMB:(BOOL)arg1;
 - (void)setHasHasWatchSource:(BOOL)arg1;
 - (void)setHasHighFrequencyDataSizeMB:(BOOL)arg1;
@@ -87,17 +87,17 @@
 - (void)setHasThirdPartyAppsWroteDataCount:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
 - (void)setHasWatchSource:(BOOL)arg1;
-- (void)setHighFrequencyDataSizeMB:(int)arg1;
-- (void)setManuallyEnteredTypesCount:(int)arg1;
-- (void)setPercentageDeletedObjects:(int)arg1;
+- (void)setHighFrequencyDataSizeMB:(long long)arg1;
+- (void)setManuallyEnteredTypesCount:(long long)arg1;
+- (void)setPercentageDeletedObjects:(long long)arg1;
 - (void)setRowCountCDA:(int)arg1;
-- (void)setRowCountObjects:(int)arg1;
-- (void)setThirdPartyAppsCount:(int)arg1;
-- (void)setThirdPartyAppsWroteDataCount:(int)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
-- (int)thirdPartyAppsCount;
-- (int)thirdPartyAppsWroteDataCount;
-- (unsigned int)timestamp;
+- (void)setRowCountObjects:(long long)arg1;
+- (void)setThirdPartyAppsCount:(long long)arg1;
+- (void)setThirdPartyAppsWroteDataCount:(long long)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
+- (long long)thirdPartyAppsCount;
+- (long long)thirdPartyAppsWroteDataCount;
+- (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 
 @end

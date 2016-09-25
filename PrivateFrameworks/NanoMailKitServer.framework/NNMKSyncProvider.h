@@ -13,7 +13,7 @@
     NSMutableSet * _initialSyncMessageIdsOfContentToAck;
     NSMutableSet * _initialSyncMessageIdsToSyncContent;
     unsigned int  _initialSyncMessagesCount;
-    double  _initialSyncProgress;
+    float  _initialSyncProgress;
     unsigned int  _initialSyncResendInterval;
     NSDate * _lastRetryDate;
     NNMKProtoFetchRequest * _latestFetchRequest;
@@ -44,7 +44,7 @@
 @property (nonatomic, retain) NSMutableSet *initialSyncMessageIdsOfContentToAck;
 @property (nonatomic, retain) NSMutableSet *initialSyncMessageIdsToSyncContent;
 @property (nonatomic) unsigned int initialSyncMessagesCount;
-@property (nonatomic) double initialSyncProgress;
+@property (nonatomic) float initialSyncProgress;
 @property (nonatomic) unsigned int initialSyncResendInterval;
 @property (nonatomic, retain) NSDate *lastRetryDate;
 @property (nonatomic, retain) NNMKProtoFetchRequest *latestFetchRequest;

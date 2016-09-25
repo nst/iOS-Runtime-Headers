@@ -20,13 +20,13 @@
 - (id)allParameters;
 - (id)childIndicesByIdentifier;
 - (id)children;
-- (id)copyNodeWithOffset:(unsigned int)arg1;
+- (id)copyNodeWithOffset:(unsigned long long)arg1;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithChildren:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithID:(id)arg1 name:(id)arg2 children:(id)arg3;
-- (id)initWithTemplate:(id)arg1 identifier:(id)arg2 name:(id)arg3 addressOffset:(unsigned int)arg4;
+- (id)initWithTemplate:(id)arg1 identifier:(id)arg2 name:(id)arg3 addressOffset:(unsigned long long)arg4;
 - (BOOL)isGroup;
 - (void)setChildIndicesByIdentifier:(id)arg1;
 - (id)valueForKey:(id)arg1;

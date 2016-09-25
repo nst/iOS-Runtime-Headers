@@ -40,10 +40,10 @@
 + (id)ccMeCriterion;
 + (id)criteriaFromDefaultsArray:(id)arg1;
 + (id)criteriaFromDefaultsArray:(id)arg1 removingRecognizedKeys:(BOOL)arg2;
-+ (id)criterionForConversationID:(int)arg1;
++ (id)criterionForConversationID:(long long)arg1;
 + (id)criterionForMailbox:(id)arg1;
 + (id)criterionForMailboxURL:(id)arg1;
-+ (id)criterionForNotDeletedConversationID:(int)arg1;
++ (id)criterionForNotDeletedConversationID:(long long)arg1;
 + (int)criterionTypeForString:(id)arg1;
 + (id)defaultsArrayFromCriteria:(id)arg1;
 + (id)flaggedMessageCriterion;

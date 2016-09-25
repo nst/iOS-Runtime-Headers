@@ -11,12 +11,12 @@
     UIImage * _placeholderImage;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _placeholderImageContentsRect;
     UIImageView * _previewImageView;
@@ -32,7 +32,7 @@
 @property (nonatomic) BOOL isDisplayingVideo;
 @property (nonatomic) BOOL isReadyForVideoDisplay;
 @property (nonatomic, retain) UIImage *placeholderImage;
-@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } placeholderImageContentsRect;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } placeholderImageContentsRect;
 @property (nonatomic) unsigned int videoViewContentMode;
 
 - (void).cxx_destruct;
@@ -45,21 +45,21 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)generateSnapshotImage;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isDisplayingPlaceholder;
 - (BOOL)isDisplayingVideo;
 - (BOOL)isReadyForVideoDisplay;
 - (void)layoutSubviews;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)placeholderImage;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })placeholderImageContentsRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })placeholderImageContentsRect;
 - (void)setAllowsEdgeAntialiasing:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setIsDisplayingPlaceholder:(BOOL)arg1;
 - (void)setIsDisplayingVideo:(BOOL)arg1;
 - (void)setIsReadyForVideoDisplay:(BOOL)arg1;
 - (void)setPlaceholderImage:(id)arg1;
-- (void)setPlaceholderImageContentsRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setPlaceholderImageContentsRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setVideoViewContentMode:(unsigned int)arg1;
 - (unsigned int)videoViewContentMode;
 

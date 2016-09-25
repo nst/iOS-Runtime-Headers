@@ -6,7 +6,7 @@
     int  _errorCode;
     NSString * _errorDescription;
     NSMutableString * _partialPhotoIDString;
-    int  _photoID;
+    long long  _photoID;
     BOOL  _success;
     BOOL  _workaround;
 }
@@ -16,7 +16,7 @@
 @property (nonatomic) int errorCode;
 @property (nonatomic, retain) NSString *errorDescription;
 @property (readonly) unsigned int hash;
-@property (nonatomic) int photoID;
+@property (nonatomic) long long photoID;
 @property (getter=isSuccess, nonatomic) BOOL success;
 @property (readonly) Class superclass;
 
@@ -31,10 +31,10 @@
 - (void)parser:(id)arg1 didStartElement:(id)arg2 namespaceURI:(id)arg3 qualifiedName:(id)arg4 attributes:(id)arg5;
 - (void)parser:(id)arg1 foundCharacters:(id)arg2;
 - (void)parser:(id)arg1 parseErrorOccurred:(id)arg2;
-- (int)photoID;
+- (long long)photoID;
 - (void)setErrorCode:(int)arg1;
 - (void)setErrorDescription:(id)arg1;
-- (void)setPhotoID:(int)arg1;
+- (void)setPhotoID:(long long)arg1;
 - (void)setSuccess:(BOOL)arg1;
 
 @end

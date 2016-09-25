@@ -15,8 +15,8 @@
     struct WebHTMLViewInterpretKeyEventsParameters { struct KeyboardEvent {} *x1; bool x2; bool x3; bool x4; bool x5; } * interpretKeyEventsParameters;
     WebEvent * keyDownEvent;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  lastScrollPosition;
     WAKView * layerHostingView;
     WebEvent * mouseDownEvent;

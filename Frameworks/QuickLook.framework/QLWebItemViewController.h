@@ -4,7 +4,7 @@
 
 @interface QLWebItemViewController : QLItemViewController <QLScrubViewDataSource, UIScrollViewDelegate, UIWebPDFViewHandlerDelegate, UIWebViewDelegate> {
     id /* block */  _completionBlock;
-    double  _defaultZoom;
+    float  _defaultZoom;
     BOOL  _embeddedPDFWasCopied;
     QLPDFHanderDelegateForwarder * _forwarder;
     BOOL  _fullScreen;
@@ -58,9 +58,9 @@
 - (void)loadPreviewControllerWithPreviewItem:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)loadView;
 - (int)numberOfPagesInScrubView:(id)arg1;
-- (struct CGPoint { double x1; double x2; })originForPDFPageLabelViewWithHandler:(id)arg1 proposedOrigin:(struct CGPoint { double x1; double x2; })arg2;
+- (struct CGPoint { float x1; float x2; })originForPDFPageLabelViewWithHandler:(id)arg1 proposedOrigin:(struct CGPoint { float x1; float x2; })arg2;
 - (int)pageCount;
-- (struct CGSize { double x1; double x2; })pageSizeAtIndex:(int)arg1;
+- (struct CGSize { float x1; float x2; })pageSizeAtIndex:(int)arg1;
 - (id)password;
 - (id)pdfPreviewData;
 - (void)pdfViewHandlerCompletedLayoutAndIsUnlocked:(id)arg1;
@@ -76,7 +76,7 @@
 - (void)scrollViewDidScroll:(id)arg1;
 - (id)scrubView;
 - (void)scrubView:(id)arg1 didSelectPageAtIndex:(unsigned int)arg2;
-- (struct CGSize { double x1; double x2; })scrubView:(id)arg1 pageSizeAtIndex:(unsigned int)arg2;
+- (struct CGSize { float x1; float x2; })scrubView:(id)arg1 pageSizeAtIndex:(unsigned int)arg2;
 - (id)scrubView:(id)arg1 thumbnailOperationForPageAtIndex:(unsigned int)arg2;
 - (void)setAppearance:(id)arg1 animated:(BOOL)arg2;
 - (void)setPassword:(id)arg1;
@@ -93,7 +93,7 @@
 - (id)uiWebView:(id)arg1 resource:(id)arg2 willSendRequest:(id)arg3 redirectResponse:(id)arg4 fromDataSource:(id)arg5;
 - (void)viewDidLayoutSubviews;
 - (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (unsigned int)webItemType;
 - (id)webView;
 - (BOOL)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(int)arg3;

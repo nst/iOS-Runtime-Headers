@@ -7,12 +7,12 @@
     BOOL  _blocked;
     int  _color;
     NSString * _crossStreet;
-    double  _delay;
-    unsigned int  _durationMin;
+    float  _delay;
+    unsigned long long  _durationMin;
     double  _endOffset;
     BOOL  _endTimeReliable;
     struct { 
-        int *list; 
+        long long *list; 
         unsigned int count; 
         unsigned int size; 
     }  _geoids;
@@ -54,13 +54,13 @@
     BOOL  _navigationAlert;
     NSData * _openlr;
     int  _significance;
-    double  _speed;
+    float  _speed;
     double  _startOffset;
-    int  _startTime;
+    long long  _startTime;
     NSString * _street;
     int  _trafficTrend;
     int  _type;
-    int  _updateTime;
+    long long  _updateTime;
     NSData * _zilch;
 }
 
@@ -68,11 +68,11 @@
 @property (nonatomic) BOOL blocked;
 @property (nonatomic) int color;
 @property (nonatomic, retain) NSString *crossStreet;
-@property (nonatomic) double delay;
-@property (nonatomic) unsigned int durationMin;
+@property (nonatomic) float delay;
+@property (nonatomic) unsigned long long durationMin;
 @property (nonatomic) double endOffset;
 @property (nonatomic) BOOL endTimeReliable;
-@property (nonatomic, readonly) int*geoids;
+@property (nonatomic, readonly) long long*geoids;
 @property (nonatomic, readonly) unsigned int geoidsCount;
 @property (nonatomic) BOOL hardBlocked;
 @property (nonatomic) BOOL hasAlertCCode;
@@ -115,13 +115,13 @@
 @property (nonatomic) BOOL navigationAlert;
 @property (nonatomic, retain) NSData *openlr;
 @property (nonatomic) int significance;
-@property (nonatomic) double speed;
+@property (nonatomic) float speed;
 @property (nonatomic) double startOffset;
-@property (nonatomic) int startTime;
+@property (nonatomic) long long startTime;
 @property (nonatomic, retain) NSString *street;
 @property (nonatomic) int trafficTrend;
 @property (nonatomic) int type;
-@property (nonatomic) int updateTime;
+@property (nonatomic) long long updateTime;
 @property (nonatomic, retain) NSData *zilch;
 
 + (Class)infoType;
@@ -131,7 +131,7 @@
 - (int)StringAsSignificance:(id)arg1;
 - (int)StringAsTrafficTrend:(id)arg1;
 - (int)StringAsType:(id)arg1;
-- (void)addGeoid:(int)arg1;
+- (void)addGeoid:(long long)arg1;
 - (void)addInfo:(id)arg1;
 - (unsigned int)alertCCode;
 - (BOOL)blocked;
@@ -146,11 +146,11 @@
 - (float)delay;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)durationMin;
+- (unsigned long long)durationMin;
 - (double)endOffset;
 - (BOOL)endTimeReliable;
-- (int)geoidAtIndex:(unsigned int)arg1;
-- (int*)geoids;
+- (long long)geoidAtIndex:(unsigned int)arg1;
+- (long long*)geoids;
 - (unsigned int)geoidsCount;
 - (BOOL)hardBlocked;
 - (BOOL)hasAlertCCode;
@@ -204,10 +204,10 @@
 - (void)setColor:(int)arg1;
 - (void)setCrossStreet:(id)arg1;
 - (void)setDelay:(float)arg1;
-- (void)setDurationMin:(unsigned int)arg1;
+- (void)setDurationMin:(unsigned long long)arg1;
 - (void)setEndOffset:(double)arg1;
 - (void)setEndTimeReliable:(BOOL)arg1;
-- (void)setGeoids:(int*)arg1 count:(unsigned int)arg2;
+- (void)setGeoids:(long long*)arg1 count:(unsigned int)arg2;
 - (void)setHardBlocked:(BOOL)arg1;
 - (void)setHasAlertCCode:(BOOL)arg1;
 - (void)setHasBlocked:(BOOL)arg1;
@@ -246,23 +246,23 @@
 - (void)setSignificance:(int)arg1;
 - (void)setSpeed:(float)arg1;
 - (void)setStartOffset:(double)arg1;
-- (void)setStartTime:(int)arg1;
+- (void)setStartTime:(long long)arg1;
 - (void)setStreet:(id)arg1;
 - (void)setTrafficTrend:(int)arg1;
 - (void)setType:(int)arg1;
-- (void)setUpdateTime:(int)arg1;
+- (void)setUpdateTime:(long long)arg1;
 - (void)setZilch:(id)arg1;
 - (int)significance;
 - (id)significanceAsString:(int)arg1;
 - (float)speed;
 - (double)startOffset;
-- (int)startTime;
+- (long long)startTime;
 - (id)street;
 - (int)trafficTrend;
 - (id)trafficTrendAsString:(int)arg1;
 - (int)type;
 - (id)typeAsString:(int)arg1;
-- (int)updateTime;
+- (long long)updateTime;
 - (void)writeTo:(id)arg1;
 - (id)zilch;
 

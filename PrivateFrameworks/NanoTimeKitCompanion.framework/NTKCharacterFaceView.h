@@ -56,14 +56,14 @@
 - (void)_setZoomFraction:(float)arg1 iconDiameter:(float)arg2;
 - (void)_startScrubbingAnimated:(BOOL)arg1 withCompletion:(id /* block */)arg2;
 - (BOOL)_supportsTimeScrubbing;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_tapToSpeakRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_tapToSpeakRect;
 - (void)_unloadSnapshotContentViews;
 - (BOOL)_usesCustomZoom;
 - (int)_utilitySlotForSlot:(id)arg1;
 - (float)_verticalPaddingForStatusBar;
 - (void)applyToForegroundZoomFraction:(float)arg1 faceScale:(float)arg2;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 
 @end

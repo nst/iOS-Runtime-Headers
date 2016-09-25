@@ -4,13 +4,13 @@
 
 @interface SKUIBrickGridPageSection : SKUIStorePageSection <SKUIArtworkRequestDelegate, SKUIMissingItemDelegate> {
     NSMapTable * _artworkRequests;
-    double  _baseHeight;
-    double  _columnWidth;
+    float  _baseHeight;
+    float  _columnWidth;
     NSMapTable * _editorialLayouts;
     SKUIMissingItemLoader * _missingItemLoader;
     int  _numberOfColumns;
-    double  _paddingHorizontal;
-    double  _paddingTop;
+    float  _paddingHorizontal;
+    float  _paddingTop;
     UIImage * _placeholderImage;
 }
 
@@ -21,7 +21,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_contentInsetsForColumnIndex:(int)arg1 rowWidth:(float)arg2;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_contentInsetsForColumnIndex:(int)arg1 rowWidth:(float)arg2;
 - (id)_editorialLayoutForBrick:(id)arg1;
 - (void)_enumerateVisibleBricksUsingBlock:(id /* block */)arg1;
 - (void)_loadArtworkForBrick:(id)arg1 artworkLoader:(id)arg2 reason:(int)arg3;
@@ -30,7 +30,7 @@
 - (void)addImpressionsForIndexPath:(id)arg1 toSession:(id)arg2;
 - (void)artworkRequest:(id)arg1 didLoadImage:(id)arg2;
 - (id)cellForIndexPath:(id)arg1;
-- (struct CGSize { double x1; double x2; })cellSizeForIndexPath:(id)arg1;
+- (struct CGSize { float x1; float x2; })cellSizeForIndexPath:(id)arg1;
 - (id)clickEventWithLink:(id)arg1 elementName:(id)arg2 index:(int)arg3;
 - (void)collectionViewDidSelectItemAtIndexPath:(id)arg1;
 - (void)dealloc;
@@ -39,6 +39,6 @@
 - (int)numberOfCells;
 - (void)prefetchResourcesWithReason:(int)arg1;
 - (void)willAppearInContext:(id)arg1;
-- (void)willTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)willTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

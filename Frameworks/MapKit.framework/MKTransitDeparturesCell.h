@@ -25,14 +25,14 @@
     NSLayoutConstraint * _labelBufferConstraint;
     NSLayoutConstraint * _labelLeadingMarginConstraint;
     NSArray * _labelToDepartureConstraints;
-    double  _lineImageCenteringValue;
+    float  _lineImageCenteringValue;
     NSLayoutConstraint * _lineImageCompressedLeadingConstraint;
     NSLayoutConstraint * _lineImageLeadingConstraint;
     NSLayoutConstraint * _lineImageToContainerTrailingConstraint;
     NSLayoutConstraint * _lineImageToTextGutterConstraint;
     UIImageView * _lineImageView;
     NSLayoutConstraint * _lineImageViewCenteringConstraint;
-    double  _lineImageViewSize;
+    float  _lineImageViewSize;
     NSLayoutConstraint * _lineImageViewToBottomConstraint;
     NSLayoutConstraint * _lineImageViewTopConstraint;
     BOOL  _needsInitialConstraints;
@@ -62,8 +62,8 @@
 @property (nonatomic, retain) UIButton *incidentButton;
 @property (getter=isIncidentButtonHidden, nonatomic) BOOL incidentButtonHidden;
 @property (nonatomic, copy) NSString *incidentTitle;
-@property (nonatomic, readonly) double labelMargin;
-@property (nonatomic) double lineImageViewSize;
+@property (nonatomic, readonly) float labelMargin;
+@property (nonatomic) float lineImageViewSize;
 @property (nonatomic) BOOL padBottom;
 @property (getter=isShowingIncidentIcon, nonatomic) BOOL showIncidentIcon;
 @property (getter=isShowingNoConnectionEmDash, nonatomic) BOOL showNoConnectionEmDash;
@@ -155,7 +155,7 @@
 - (void)setTertiaryText:(id)arg1;
 - (void)setUseCompressedGutter:(BOOL)arg1;
 - (void)setUseCompressedLeading:(BOOL)arg1;
-- (struct CGSize { double x1; double x2; })systemLayoutSizeFittingSize:(struct CGSize { double x1; double x2; })arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;
+- (struct CGSize { float x1; float x2; })systemLayoutSizeFittingSize:(struct CGSize { float x1; float x2; })arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;
 - (void)updateConstraints;
 - (BOOL)useCompressedGutter;
 - (BOOL)useCompressedLeading;

@@ -3,28 +3,28 @@
  */
 
 @interface SKUIShelfLayoutData : NSObject {
-    double  _columnSpacing;
+    float  _columnSpacing;
     NSMutableArray * _columnWidths;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _contentInset;
     int  _numberOfRows;
-    double * _rowHeights;
+    float * _rowHeights;
 }
 
-@property (nonatomic, readonly) double columnSpacing;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInset;
+@property (nonatomic, readonly) float columnSpacing;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
 @property (nonatomic, readonly) int numberOfColumns;
 @property (nonatomic, readonly) int numberOfRows;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } totalContentSize;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } totalContentSize;
 
 - (void).cxx_destruct;
 - (float)columnSpacing;
 - (float)columnWidthForIndex:(int)arg1;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInset;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInset;
 - (void)dealloc;
 - (void)enumerateColumnsUsingBlock:(id /* block */)arg1;
 - (void)enumerateRowsUsingBlock:(id /* block */)arg1;
@@ -33,8 +33,8 @@
 - (int)numberOfRows;
 - (void)reloadWithItemCount:(int)arg1 sizeBlock:(id /* block */)arg2;
 - (float)rowHeightForIndex:(int)arg1;
-- (void)setContentInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
-- (struct CGSize { double x1; double x2; })sizeForItemAtIndex:(int)arg1;
-- (struct CGSize { double x1; double x2; })totalContentSize;
+- (void)setContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (struct CGSize { float x1; float x2; })sizeForItemAtIndex:(int)arg1;
+- (struct CGSize { float x1; float x2; })totalContentSize;
 
 @end

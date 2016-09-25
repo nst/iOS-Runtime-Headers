@@ -3,15 +3,15 @@
  */
 
 @interface GQSSpiceTable : GQSTable {
-    struct vector<float, std::__1::allocator<float> > { double *x1; double *x2; struct __compressed_pair<double *, std::__1::allocator<float> > { double *x_3_1_1; } x3; } * mColumnPositions;
-    double  mCurrentCellMaxX;
-    double  mCurrentCellMaxY;
-    double  mCurrentCellMinX;
-    double  mCurrentCellMinY;
+    struct vector<float, std::__1::allocator<float> > { float *x1; float *x2; struct __compressed_pair<float *, std::__1::allocator<float> > { float *x_3_1_1; } x3; } * mColumnPositions;
+    float  mCurrentCellMaxX;
+    float  mCurrentCellMaxY;
+    float  mCurrentCellMinX;
+    float  mCurrentCellMinY;
     id  mCurrentCellStorage;
     id  mCurrentCellStyle;
     BOOL  mReadingRowVectors;
-    struct vector<float, std::__1::allocator<float> > { double *x1; double *x2; struct __compressed_pair<double *, std::__1::allocator<float> > { double *x_3_1_1; } x3; } * mRowPositions;
+    struct vector<float, std::__1::allocator<float> > { float *x1; float *x2; struct __compressed_pair<float *, std::__1::allocator<float> > { float *x_3_1_1; } x3; } * mRowPositions;
     struct __CFDictionary { } * mVectorUidToAlongMap;
 }
 

@@ -5,24 +5,24 @@
 @interface CNContactGridViewLayout : UICollectionViewFlowLayout <NSCopying> {
     BOOL  _needsUpdateLayout;
     int  _numberOfColumns;
-    double  _offsetAfter;
-    double  _offsetBefore;
+    float  _offsetAfter;
+    float  _offsetBefore;
     NSIndexPath * _selectedIndexPath;
-    double  _selectedItemWidthOffset;
+    float  _selectedItemWidthOffset;
 }
 
 @property (nonatomic) BOOL needsUpdateLayout;
 @property (nonatomic) int numberOfColumns;
-@property (nonatomic) double offsetAfter;
-@property (nonatomic) double offsetBefore;
+@property (nonatomic) float offsetAfter;
+@property (nonatomic) float offsetBefore;
 @property (nonatomic, retain) NSIndexPath *selectedIndexPath;
-@property (nonatomic) double selectedItemWidthOffset;
+@property (nonatomic) float selectedItemWidthOffset;
 
 - (void).cxx_destruct;
 - (id /* block */)_animationForReusableView:(id)arg1 toLayoutAttributes:(id)arg2 type:(unsigned int)arg3;
 - (void)_updateLayoutMetrics;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)layoutAttributesForElementsInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)layoutAttributesForElementsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;
 - (BOOL)needsUpdateLayout;
 - (int)numberOfColumns;

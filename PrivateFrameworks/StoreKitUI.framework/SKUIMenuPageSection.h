@@ -34,14 +34,14 @@
 - (void)_showPopoverController;
 - (id)backgroundColorForIndexPath:(id)arg1;
 - (id)cellForIndexPath:(id)arg1;
-- (struct CGSize { double x1; double x2; })cellSizeForIndexPath:(id)arg1;
+- (struct CGSize { float x1; float x2; })cellSizeForIndexPath:(id)arg1;
 - (void)dealloc;
 - (id)initWithPageComponent:(id)arg1;
 - (void)menuViewController:(id)arg1 didSelectItemAtIndex:(int)arg2;
 - (int)numberOfCells;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
 - (void)popupMenuHeader:(id)arg1 didSelectMenuItemAtIndex:(int)arg2;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })sectionContentInset;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })sectionContentInset;
 - (void)sortDataRequest:(id)arg1 didFinishWithLockups:(id)arg2;
 - (void)willAppearInContext:(id)arg1;
 

@@ -12,7 +12,7 @@
     UIImage * _glyphImage;
     UIImageView * _glyphImageView;
     UILabel * _label;
-    double  _naturalHeight;
+    float  _naturalHeight;
     unsigned int  _roundCorners;
     UIColor * _selectedColor;
     UIImage * _selectedGlyphImage;
@@ -24,7 +24,7 @@
 @property (nonatomic, retain) UIFont *font;
 @property (nonatomic, retain) UIImage *glyphImage;
 @property (getter=isInternal, nonatomic, readonly) BOOL internal;
-@property (nonatomic) double naturalHeight;
+@property (nonatomic) float naturalHeight;
 @property (nonatomic) int numberOfLines;
 @property (nonatomic) unsigned int roundCorners;
 @property (nonatomic, retain) UIImage *selectedGlyphImage;
@@ -40,7 +40,7 @@
 + (id)smallCircularButtonWithSelectedColor:(id)arg1;
 
 - (void).cxx_destruct;
-- (void)_calculateRectForGlyph:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg1 rectForLabel:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg2 ignoringBounds:(BOOL)arg3;
+- (void)_calculateRectForGlyph:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 rectForLabel:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 ignoringBounds:(BOOL)arg3;
 - (id)_controlStateStringFromState:(int)arg1;
 - (int)_currentState;
 - (BOOL)_drawingAsSelected;
@@ -69,9 +69,9 @@
 - (void)didMoveToSuperview;
 - (id)font;
 - (id)glyphImage;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 selectedColor:(id)arg2 text:(id)arg3 type:(unsigned int)arg4;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 selectedColor:(id)arg2 text:(id)arg3 type:(unsigned int)arg4;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (BOOL)isInternal;
 - (BOOL)isShowingMenu;
 - (void)layoutSubviews;
@@ -81,11 +81,11 @@
 - (id)selectedGlyphImage;
 - (void)setAnimatesStateChanges:(BOOL)arg1;
 - (void)setBackgroundImage:(id)arg1 forState:(unsigned int)arg2;
-- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setFont:(id)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setGlyphImage:(id)arg1;
 - (void)setGlyphImage:(id)arg1 selectedGlyphImage:(id)arg2 name:(id)arg3;
 - (void)setImage:(id)arg1 forState:(unsigned int)arg2;
@@ -95,7 +95,7 @@
 - (void)setSelectedGlyphImage:(id)arg1;
 - (void)setShowingMenu:(BOOL)arg1;
 - (void)setText:(id)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)text;
 
 @end

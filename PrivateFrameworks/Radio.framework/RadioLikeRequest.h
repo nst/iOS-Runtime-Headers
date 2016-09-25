@@ -4,7 +4,7 @@
 
 @interface RadioLikeRequest : RadioRequest {
     BOOL  _isSeed;
-    int  _itemID;
+    long long  _itemID;
     int  _likeStatus;
     SSURLConnectionRequest * _request;
     int  _seedType;
@@ -16,7 +16,7 @@
 
 - (void).cxx_destruct;
 - (id)init;
-- (id)initWithItemID:(int)arg1 seedType:(int)arg2 station:(id)arg3;
+- (id)initWithItemID:(long long)arg1 seedType:(int)arg2 station:(id)arg3;
 - (id)initWithTrack:(id)arg1 station:(id)arg2;
 - (id)initWithTrackID:(id)arg1 station:(id)arg2;
 - (BOOL)isSeed;

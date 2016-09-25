@@ -27,10 +27,10 @@
 - (void)_flipToFront:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)dealloc;
 - (struct CGImage { }*)defaultKeyboardImage;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isShowingFrontFace;
 - (void)rebuildBackgroundTransition;
-- (void)rebuildControlKeys:(unsigned int)arg1;
+- (void)rebuildControlKeys:(unsigned long long)arg1;
 - (void)rebuildControlSlicesForKeyName:(id)arg1;
 - (void)rebuildFromKeyplane:(id)arg1 toKeyplane:(id)arg2 keyboardType:(int)arg3 orientation:(int)arg4;
 - (void)rebuildMoreIntlKeys;
@@ -38,11 +38,11 @@
 - (void)rebuildShiftSlices;
 - (void)rebuildTransition;
 - (void)rebuildTransitionForSplitStyleChange:(id)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setShowingFrontFace:(BOOL)arg1;
 - (struct CGImage { }*)splitKeyboardImage;
 - (BOOL)transitionIsVisible;
-- (void)updateMoreIntlKey:(id)arg1 asStart:(BOOL)arg2 withRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 showIntl:(BOOL)arg4 showDictKey:(BOOL)arg5;
+- (void)updateMoreIntlKey:(id)arg1 asStart:(BOOL)arg2 withRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 showIntl:(BOOL)arg4 showDictKey:(BOOL)arg5;
 - (void)updateTransition;
 
 @end

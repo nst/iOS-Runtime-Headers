@@ -6,7 +6,7 @@
 
 @property (nonatomic, readonly) NSNumber *__im_associatedMessageContentType;
 @property (nonatomic, readonly) NSString *__im_associatedMessageSummary;
-@property (nonatomic, readonly) double averageRating;
+@property (nonatomic, readonly) float averageRating;
 @property (nonatomic, readonly) NSString *bundleId;
 @property (nonatomic, readonly) NSArray *categories;
 @property (readonly) unsigned int count;
@@ -14,7 +14,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) unsigned short fileHFSFlags;
-@property (nonatomic, readonly) unsigned int fileHFSResourceForkSize;
+@property (nonatomic, readonly) unsigned long long fileHFSResourceForkSize;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) NSString *hk_bundleId;
 @property (nonatomic, readonly) NSArray *hk_categories;
@@ -24,9 +24,9 @@
 @property (nonatomic, readonly) NSString *hk_title;
 @property (nonatomic, readonly) BOOL isInstalled;
 @property (nonatomic, readonly) BOOL isOfficialApp;
-@property (nonatomic) unsigned int lastClientRevision;
-@property (nonatomic) unsigned int lastServerRevision;
-@property (nonatomic) unsigned int newRevision;
+@property (nonatomic) unsigned long long lastClientRevision;
+@property (nonatomic) unsigned long long lastServerRevision;
+@property (nonatomic) unsigned long long newRevision;
 @property (readonly) NSString *npkRelevancyRelevantText;
 @property (readonly) NSString *npkRelevancyUniqueID;
 @property (nonatomic, readonly) NSString *priceFormatted;
@@ -159,7 +159,7 @@
 - (id)fileOwnerAccountName;
 - (unsigned int)fileOwnerAccountNumber;
 - (unsigned int)filePosixPermissions;
-- (unsigned int)fileSize;
+- (unsigned long long)fileSize;
 - (unsigned int)fileSystemFileNumber;
 - (int)fileSystemNumber;
 - (id)fileType;
@@ -224,10 +224,10 @@
 
 // Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
 
-- (struct SCNMatrix4 { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; })SCNMatrix4Value;
+- (struct SCNMatrix4 { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })SCNMatrix4Value;
 - (id)SCNMutableDeepCopy;
-- (struct SCNVector3 { double x1; double x2; double x3; })SCNVector3Value;
-- (struct SCNVector4 { double x1; double x2; double x3; double x4; })SCNVector4Value;
+- (struct SCNVector3 { float x1; float x2; float x3; })SCNVector3Value;
+- (struct SCNVector4 { float x1; float x2; float x3; float x4; })SCNVector4Value;
 - (unsigned int)SCN_safeHash;
 
 // Image: /System/Library/Frameworks/Social.framework/Social
@@ -279,20 +279,20 @@
 - (id)displayName;
 - (id)enabledDataClasses;
 - (id)grappaInfo;
-- (unsigned int)lastClientRevision;
-- (unsigned int)lastServerRevision;
+- (unsigned long long)lastClientRevision;
+- (unsigned long long)lastServerRevision;
 - (id)model;
-- (unsigned int)newRevision;
+- (unsigned long long)newRevision;
 - (id)osType;
 - (id)osVersion;
 - (void)setDevicePairingId:(id)arg1;
 - (void)setDisplayName:(id)arg1;
 - (void)setEnabledDataClasses:(id)arg1;
 - (void)setGrappaInfo:(id)arg1;
-- (void)setLastClientRevision:(unsigned int)arg1;
-- (void)setLastServerRevision:(unsigned int)arg1;
+- (void)setLastClientRevision:(unsigned long long)arg1;
+- (void)setLastServerRevision:(unsigned long long)arg1;
 - (void)setModel:(id)arg1;
-- (void)setNewRevision:(unsigned int)arg1;
+- (void)setNewRevision:(unsigned long long)arg1;
 - (void)setOsType:(id)arg1;
 - (void)setOsVersion:(id)arg1;
 - (void)setVersionToken:(id)arg1;
@@ -588,7 +588,7 @@
 - (id)archiveData;
 - (id)dictionaryFromChanges:(id)arg1;
 - (unsigned short)fileHFSFlags;
-- (unsigned int)fileHFSResourceForkSize;
+- (unsigned long long)fileHFSResourceForkSize;
 - (id)keysOfChangedEntriesComparedTo:(id)arg1;
 - (id)plistData;
 
@@ -733,7 +733,7 @@
 
 // Image: /System/Library/PrivateFrameworks/PhotoEditSupport.framework/PhotoEditSupport
 
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })bl_affineTransformForKey:(id)arg1;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })bl_affineTransformForKey:(id)arg1;
 - (BOOL)bl_boolForKey:(id)arg1;
 - (BOOL)bl_boolForKey:(id)arg1 defaultValue:(BOOL)arg2;
 - (id)bl_dictionaryByRemovingValuesForKey:(id)arg1;
@@ -750,12 +750,12 @@
 - (id)bl_objectForIndex:(int)arg1;
 - (id)bl_objectForKey:(id)arg1 defaultValue:(id)arg2;
 - (id)bl_objectOrNullForKey:(id)arg1;
-- (struct CGPoint { double x1; double x2; })bl_pointFromStringForKey:(id)arg1;
-- (struct CGPoint { double x1; double x2; })bl_pointFromStringForKey:(id)arg1 defaultValue:(struct CGPoint { double x1; double x2; })arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })bl_rectForKey:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })bl_rectForKey:(id)arg1 defaultValue:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })bl_rectFromStringForKey:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })bl_rectFromStringForKey:(id)arg1 defaultValue:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (struct CGPoint { float x1; float x2; })bl_pointFromStringForKey:(id)arg1;
+- (struct CGPoint { float x1; float x2; })bl_pointFromStringForKey:(id)arg1 defaultValue:(struct CGPoint { float x1; float x2; })arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bl_rectForKey:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bl_rectForKey:(id)arg1 defaultValue:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bl_rectFromStringForKey:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bl_rectFromStringForKey:(id)arg1 defaultValue:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 
 // Image: /System/Library/PrivateFrameworks/PlugInKit.framework/PlugInKit
 
@@ -818,7 +818,7 @@
 
 // Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
 
-+ (id)sk_dictionaryWithSize:(struct CGSize { double x1; double x2; })arg1;
++ (id)sk_dictionaryWithSize:(struct CGSize { float x1; float x2; })arg1;
 
 // Image: /System/Library/PrivateFrameworks/Swift/libswiftFoundation.dylib
 
@@ -834,8 +834,8 @@
 
 // Image: /System/Library/PrivateFrameworks/UserNotificationsServer.framework/UserNotificationsServer
 
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })uns_CGRectForKey:(id)arg1;
-- (struct { int x1; int x2; unsigned int x3; int x4; })uns_CMTimeForKey:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })uns_CGRectForKey:(id)arg1;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })uns_CMTimeForKey:(id)arg1;
 - (id)uns_nonEmptyCopy;
 - (id)uns_nonNilArrayForKey:(id)arg1;
 - (id)uns_nonNilDictionaryForKey:(id)arg1;
@@ -857,8 +857,8 @@
 - (double)vcp_quality;
 - (id)vcp_results;
 - (float)vcp_scaledExposureTime;
-- (struct { int x1; int x2; unsigned int x3; int x4; })vcp_syncPoint;
-- (struct { struct { int x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; int x_1_1_4; } x1; struct { int x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; int x_2_1_4; } x2; })vcp_timerange;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })vcp_syncPoint;
+- (struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })vcp_timerange;
 - (unsigned int)vcp_types;
 - (int)vcp_version;
 
@@ -921,7 +921,7 @@
 
 + (id)tsp_decoderDataInfoDictionaryFromMessage:(const struct RepeatedPtrField<TSP::DataInfo> { void **x1; int x2; int x3; int x4; }*)arg1;
 + (id)tsp_identifierToObjectUUIDDictionaryFromMessage:(const struct RepeatedPtrField<TSP::ObjectUUIDMapEntry> { void **x1; int x2; int x3; int x4; }*)arg1;
-+ (id)tsp_identifierToObjectUUIDDictionaryFromWeakExternalReferences:(id)arg1 updatingComponentInfo:(struct ComponentInfo { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; unsigned int x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x7; struct RepeatedField<unsigned int> { unsigned int *x_8_1_1; int x_8_1_2; int x_8_1_3; } x8; int x9; struct RepeatedField<unsigned int> { unsigned int *x_10_1_1; int x_10_1_2; int x_10_1_3; } x10; int x11; struct RepeatedPtrField<TSP::ComponentExternalReference> { void **x_12_1_1; int x_12_1_2; int x_12_1_3; int x_12_1_4; } x12; struct RepeatedPtrField<TSP::ComponentDataReference> { void **x_13_1_1; int x_13_1_2; int x_13_1_3; int x_13_1_4; } x13; struct RepeatedPtrField<TSP::ObjectUUIDMapEntry> { void **x_14_1_1; int x_14_1_2; int x_14_1_3; int x_14_1_4; } x14; struct RepeatedPtrField<TSP::FeatureInfo> { void **x_15_1_1; int x_15_1_2; int x_15_1_3; int x_15_1_4; } x15; }*)arg2 failIfReferenceIsNotPersisted:(BOOL)arg3 context:(id)arg4 error:(id*)arg5;
++ (id)tsp_identifierToObjectUUIDDictionaryFromWeakExternalReferences:(id)arg1 updatingComponentInfo:(struct ComponentInfo { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; unsigned long long x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x7; struct RepeatedField<unsigned int> { unsigned int *x_8_1_1; int x_8_1_2; int x_8_1_3; } x8; int x9; struct RepeatedField<unsigned int> { unsigned int *x_10_1_1; int x_10_1_2; int x_10_1_3; } x10; int x11; struct RepeatedPtrField<TSP::ComponentExternalReference> { void **x_12_1_1; int x_12_1_2; int x_12_1_3; int x_12_1_4; } x12; struct RepeatedPtrField<TSP::ComponentDataReference> { void **x_13_1_1; int x_13_1_2; int x_13_1_3; int x_13_1_4; } x13; struct RepeatedPtrField<TSP::ObjectUUIDMapEntry> { void **x_14_1_1; int x_14_1_2; int x_14_1_3; int x_14_1_4; } x14; struct RepeatedPtrField<TSP::FeatureInfo> { void **x_15_1_1; int x_15_1_2; int x_15_1_3; int x_15_1_4; } x15; }*)arg2 failIfReferenceIsNotPersisted:(BOOL)arg3 context:(id)arg4 error:(id*)arg5;
 + (id)tsu_dictionaryByInvertingDictionary:(id)arg1;
 
 - (void)sfu_appendJsonStringToString:(id)arg1;

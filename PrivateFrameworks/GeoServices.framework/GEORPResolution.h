@@ -14,7 +14,7 @@
     NSMutableArray * _localizedChangeLists;
     NSString * _localizedDescription;
     double  _resolutionDate;
-    unsigned int  _transitLineMuid;
+    unsigned long long  _transitLineMuid;
     NSMutableArray * _updatedPlaces;
 }
 
@@ -30,7 +30,7 @@
 @property (nonatomic, retain) NSMutableArray *localizedChangeLists;
 @property (nonatomic, retain) NSString *localizedDescription;
 @property (nonatomic) double resolutionDate;
-@property (nonatomic) unsigned int transitLineMuid;
+@property (nonatomic) unsigned long long transitLineMuid;
 @property (nonatomic, retain) NSMutableArray *updatedPlaces;
 
 + (Class)localizedChangeListType;
@@ -74,9 +74,9 @@
 - (void)setLocalizedChangeLists:(id)arg1;
 - (void)setLocalizedDescription:(id)arg1;
 - (void)setResolutionDate:(double)arg1;
-- (void)setTransitLineMuid:(unsigned int)arg1;
+- (void)setTransitLineMuid:(unsigned long long)arg1;
 - (void)setUpdatedPlaces:(id)arg1;
-- (unsigned int)transitLineMuid;
+- (unsigned long long)transitLineMuid;
 - (id)updatedPlaceAtIndex:(unsigned int)arg1;
 - (id)updatedPlaces;
 - (unsigned int)updatedPlacesCount;

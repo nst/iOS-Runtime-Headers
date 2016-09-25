@@ -3,7 +3,7 @@
  */
 
 @interface BRInodeObjectID : BRFileObjectID {
-    unsigned int  _ino;
+    unsigned long long  _ino;
 }
 
 + (BOOL)supportsSecureCoding;
@@ -12,8 +12,8 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)folderID;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFileID:(unsigned int)arg1;
+- (id)initWithFileID:(unsigned long long)arg1;
 - (BOOL)isFolderOrAliasID;
-- (unsigned int)rawID;
+- (unsigned long long)rawID;
 
 @end

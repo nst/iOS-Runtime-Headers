@@ -8,18 +8,18 @@
     double  _duration;
     int  _playbackState;
     AVPlayer * _player;
-    double  _rate;
+    float  _rate;
     int  _status;
     int  _timeControlStatus;
 }
 
 @property (getter=isAudioSessionActive, nonatomic) BOOL audioSessionActive;
-@property (nonatomic, readonly) double currentTime;
+@property (nonatomic, readonly) float currentTime;
 @property (nonatomic) <NCAudioPlayerControllerDelegate> *delegate;
 @property (nonatomic) double duration;
 @property (nonatomic, readonly) int playbackState;
 @property (nonatomic, retain) AVPlayer *player;
-@property (nonatomic) double rate;
+@property (nonatomic) float rate;
 @property (nonatomic) int status;
 @property (nonatomic) int timeControlStatus;
 

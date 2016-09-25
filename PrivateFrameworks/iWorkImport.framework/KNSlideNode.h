@@ -73,7 +73,7 @@
 - (void)addHyperlinkForStorage:(id)arg1 toSlideNode:(id)arg2;
 - (void)addOldModelDescendantsToSlideTree:(id)arg1;
 - (void)addRemappedTableName:(id)arg1;
-- (void)addThumbnail:(id)arg1 atSize:(struct CGSize { double x1; double x2; })arg2;
+- (void)addThumbnail:(id)arg1 atSize:(struct CGSize { float x1; float x2; })arg2;
 - (id)childEnumerator;
 - (id)childSearchTargets;
 - (id)children;
@@ -132,7 +132,7 @@
 - (void)removeInvalidSlideSpecificHyperlinksForStorage:(id)arg1 withSlideNodeSet:(id)arg2;
 - (void)removeInvalidSlideSpecificHyperlinksWithSlideNodes:(id)arg1;
 - (void)removeObsoleteFieldsFor20Upgrade;
-- (void)removeThumbnailAtSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)removeThumbnailAtSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)resolverMatchingName:(id)arg1;
 - (BOOL)resolverNameIsUsed:(id)arg1;
 - (id)resolversMatchingPrefix:(id)arg1;

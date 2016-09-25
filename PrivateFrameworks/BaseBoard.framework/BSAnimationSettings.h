@@ -6,7 +6,7 @@
     double  _delay;
     double  _duration;
     double  _frameInterval;
-    double  _speed;
+    float  _speed;
     CAMediaTimingFunction * _timingFunction;
 }
 
@@ -16,7 +16,7 @@
 @property (nonatomic, readonly) double duration;
 @property (nonatomic, readonly) double frameInterval;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly) double speed;
+@property (nonatomic, readonly) float speed;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, retain) CAMediaTimingFunction *timingFunction;
 

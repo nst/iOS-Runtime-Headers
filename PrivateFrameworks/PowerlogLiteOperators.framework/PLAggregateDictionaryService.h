@@ -39,11 +39,11 @@
 + (id)queryForTopRootNodeEnergyWithName:(id)arg1;
 
 - (void).cxx_destruct;
-- (unsigned int)abstimeToNanosec:(unsigned int)arg1;
+- (unsigned long long)abstimeToNanosec:(unsigned long long)arg1;
 - (void)addToDurationScalarKey:(id)arg1 withDuration:(double)arg2;
 - (void)blmAggregate;
 - (id)blmAggregateCFNotification;
-- (unsigned int)bucketWakeTime:(unsigned int)arg1;
+- (unsigned long long)bucketWakeTime:(unsigned long long)arg1;
 - (id)currentMachWakeTime;
 - (id)dailyTaskTimer;
 - (void)dailyTasks;

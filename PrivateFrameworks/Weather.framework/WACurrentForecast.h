@@ -5,32 +5,32 @@
 @interface WACurrentForecast : NSObject <NSCopying> {
     unsigned int  _UVIndex;
     int  _conditionCode;
-    double  _dewPoint;
+    float  _dewPoint;
     WFTemperature * _feelsLike;
-    double  _humidity;
+    float  _humidity;
     unsigned int  _observationTime;
-    double  _precipitationPast24Hours;
-    double  _pressure;
+    float  _precipitationPast24Hours;
+    float  _pressure;
     unsigned int  _pressureRising;
     WFTemperature * _temperature;
-    double  _visibility;
-    double  _windDirection;
-    double  _windSpeed;
+    float  _visibility;
+    float  _windDirection;
+    float  _windSpeed;
 }
 
 @property (nonatomic) unsigned int UVIndex;
 @property (nonatomic) int conditionCode;
-@property (nonatomic) double dewPoint;
+@property (nonatomic) float dewPoint;
 @property (nonatomic, retain) WFTemperature *feelsLike;
-@property (nonatomic) double humidity;
+@property (nonatomic) float humidity;
 @property (nonatomic) unsigned int observationTime;
-@property (nonatomic) double precipitationPast24Hours;
-@property (nonatomic) double pressure;
+@property (nonatomic) float precipitationPast24Hours;
+@property (nonatomic) float pressure;
 @property (nonatomic) unsigned int pressureRising;
 @property (nonatomic, retain) WFTemperature *temperature;
-@property (nonatomic) double visibility;
-@property (nonatomic) double windDirection;
-@property (nonatomic) double windSpeed;
+@property (nonatomic) float visibility;
+@property (nonatomic) float windDirection;
+@property (nonatomic) float windSpeed;
 
 + (id)currentForecastForLocation:(id)arg1 conditions:(id)arg2;
 

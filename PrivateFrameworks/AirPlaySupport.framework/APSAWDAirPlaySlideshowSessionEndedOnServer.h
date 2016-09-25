@@ -26,7 +26,7 @@
     NSString * _sessionUUID;
     unsigned int  _skipAheads;
     unsigned int  _skipBacks;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
     unsigned int  _totalPhotos;
 }
 
@@ -52,7 +52,7 @@
 @property (nonatomic, retain) NSString *sessionUUID;
 @property (nonatomic) unsigned int skipAheads;
 @property (nonatomic) unsigned int skipBacks;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 @property (nonatomic) unsigned int totalPhotos;
 
 - (void)copyTo:(id)arg1;
@@ -105,11 +105,11 @@
 - (void)setSessionUUID:(id)arg1;
 - (void)setSkipAheads:(unsigned int)arg1;
 - (void)setSkipBacks:(unsigned int)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (void)setTotalPhotos:(unsigned int)arg1;
 - (unsigned int)skipAheads;
 - (unsigned int)skipBacks;
-- (unsigned int)timestamp;
+- (unsigned long long)timestamp;
 - (unsigned int)totalPhotos;
 - (void)writeTo:(id)arg1;
 

@@ -23,7 +23,7 @@
 - (id)allObjectsByColumnName;
 - (void)bindBlob:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)bindDouble:(double)arg1 atIndex:(unsigned int)arg2;
-- (void)bindInt64:(int)arg1 atIndex:(unsigned int)arg2;
+- (void)bindInt64:(long long)arg1 atIndex:(unsigned int)arg2;
 - (void)bindInt:(long)arg1 atIndex:(unsigned int)arg2;
 - (void)bindNullAtIndex:(unsigned int)arg1;
 - (void)bindText:(id)arg1 atIndex:(unsigned int)arg2;
@@ -37,7 +37,7 @@
 - (void)finalizeStatement;
 - (struct sqlite3_stmt { }*)handle;
 - (id)initWithSQLite:(id)arg1 SQL:(id)arg2 handle:(struct sqlite3_stmt { }*)arg3;
-- (int)int64AtIndex:(unsigned int)arg1;
+- (long long)int64AtIndex:(unsigned int)arg1;
 - (long)intAtIndex:(unsigned int)arg1;
 - (BOOL)isReset;
 - (id)objectAtIndex:(unsigned int)arg1;

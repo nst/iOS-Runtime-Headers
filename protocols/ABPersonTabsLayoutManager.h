@@ -5,7 +5,7 @@
 
 @required
 
-- (void)didChangeContentOffset:(struct CGPoint { double x1; double x2; })arg1 inScrollView:(UIScrollView<ABPersonTabsScrollView> *)arg2;
+- (void)didChangeContentOffset:(struct CGPoint { float x1; float x2; })arg1 inScrollView:(UIScrollView<ABPersonTabsScrollView> *)arg2;
 - (float)heightForHeaderAndContentSwitchingTabs;
 - (void)moveContentSwitchingTabsAboveView:(UIView *)arg1 inScrollView:(UIScrollView<ABPersonTabsScrollView> *)arg2;
 - (void)repositionContentSwitchingTabs;

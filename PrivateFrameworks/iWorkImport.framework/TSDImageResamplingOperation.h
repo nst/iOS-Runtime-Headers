@@ -4,28 +4,28 @@
 
 @interface TSDImageResamplingOperation : NSObject {
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  mDesiredSize;
     NSString * mDisplayName;
     TSDImageProvider * mImageProvider;
     TSPObjectContext * mObjectContext;
 }
 
-@property (nonatomic) struct CGSize { double x1; double x2; } desiredSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } desiredSize;
 @property (nonatomic, copy) NSString *displayName;
 @property (nonatomic, retain) TSDImageProvider *imageProvider;
 @property (nonatomic, retain) TSPObjectContext *objectContext;
 
 - (void)dealloc;
-- (struct CGSize { double x1; double x2; })desiredSize;
+- (struct CGSize { float x1; float x2; })desiredSize;
 - (id)displayName;
 - (id)imageProvider;
 - (id)init;
-- (id)initWithImageProvider:(id)arg1 desiredSize:(struct CGSize { double x1; double x2; })arg2;
+- (id)initWithImageProvider:(id)arg1 desiredSize:(struct CGSize { float x1; float x2; })arg2;
 - (id)objectContext;
 - (id)performResampleOperationWithResampleOptions:(unsigned int)arg1 bitmapContextOptions:(unsigned int)arg2;
-- (void)setDesiredSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setDesiredSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setDisplayName:(id)arg1;
 - (void)setImageProvider:(id)arg1;
 - (void)setObjectContext:(id)arg1;

@@ -19,9 +19,9 @@
     struct { 
         unsigned int numberOfGroups; 
         unsigned int separatorIndex; 
-        double separationPadding; 
+        float separationPadding; 
         int pilingMode; 
-        double groupCellHeight; 
+        float groupCellHeight; 
         unsigned int disableTableModalPresentation : 1; 
         unsigned int hasPaymentPasses : 1; 
         unsigned int hasPasses : 1; 
@@ -39,8 +39,8 @@
     int  _nextState;
     UIColor * _pageIndicatorTintColor;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _panningVelocity;
     PKPassthroughView * _passContainerView;
     PKPassFooterView * _passFooterView;
@@ -56,8 +56,8 @@
     NSMutableArray * _reorderActions;
     PKPassGroupView * _reorderedGroupView;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _reorderedGroupViewPositionInFrame;
     struct { 
         unsigned int isReordering : 1; 
@@ -90,7 +90,7 @@
 @property (nonatomic, readonly) PKPass *modalGroupFrontmostPass;
 @property (nonatomic) unsigned int modalGroupIndex;
 @property (nonatomic, copy) UIColor *pageIndicatorTintColor;
-@property (nonatomic, readonly) double pileHeight;
+@property (nonatomic, readonly) float pileHeight;
 @property (nonatomic) int pilingMode;
 @property (nonatomic) int presentationState;
 @property (readonly) Class superclass;
@@ -113,7 +113,7 @@
 - (void)_cancelSuspendedTransition;
 - (void)_cancelTransition;
 - (void)_cleanUpAnimatorForGroupView:(id)arg1;
-- (struct CGSize { double x1; double x2; })_contentSize;
+- (struct CGSize { float x1; float x2; })_contentSize;
 - (void)_disableScrollingAndNormalizeContentOffset;
 - (unsigned int)_edgeStylesObscuredByTopCornersOfPassStyle:(int)arg1;
 - (unsigned int)_edgeStylesObscuredByTopMiddleOfPassStyle:(int)arg1;
@@ -122,7 +122,7 @@
 - (void)_executeCompletionHandlers:(id)arg1 cancelled:(BOOL)arg2;
 - (id)_firstHeaderContext;
 - (int)_footerStateForPassView:(id)arg1 withContext:(id)arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameForFooterViewForPassView:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForFooterViewForPassView:(id)arg1;
 - (id)_frontmostPastViewForGroupIndex:(unsigned int)arg1;
 - (void)_generateModalGroupPileWithVisibleIndexes:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 reservePlaceForModalGroup:(BOOL)arg2;
 - (id)_groupBeforeSeparatorGroup;
@@ -132,8 +132,8 @@
 - (id)_groupViewWithGroup:(id)arg1;
 - (void)_handleModalGroupGesture:(id)arg1;
 - (id)_headerContextForPassType:(unsigned int)arg1;
-- (unsigned int)_indexForNativePositionInTable:(struct CGPoint { double x1; double x2; })arg1;
-- (unsigned int)_indexForNativePositionInTable:(struct CGPoint { double x1; double x2; })arg1 roundToClosestIndex:(BOOL)arg2;
+- (unsigned int)_indexForNativePositionInTable:(struct CGPoint { float x1; float x2; })arg1;
+- (unsigned int)_indexForNativePositionInTable:(struct CGPoint { float x1; float x2; })arg1 roundToClosestIndex:(BOOL)arg2;
 - (unsigned int)_indexOfGroupView:(id)arg1;
 - (unsigned int)_indexOfReorderedGroupView;
 - (BOOL)_isGroupAtIndexInModalPile:(unsigned int)arg1;
@@ -142,14 +142,14 @@
 - (BOOL)_isModalPresentationAllowedForSingleGroup;
 - (BOOL)_isTableModalPresentation;
 - (unsigned int)_lastIndex;
-- (void)_layoutContentFromOffset:(struct CGPoint { double x1; double x2; })arg1 toOffset:(struct CGPoint { double x1; double x2; })arg2 animated:(BOOL)arg3;
+- (void)_layoutContentFromOffset:(struct CGPoint { float x1; float x2; })arg1 toOffset:(struct CGPoint { float x1; float x2; })arg2 animated:(BOOL)arg3;
 - (void)_layoutFooterAnimated:(BOOL)arg1 withAnimationDelay:(double)arg2;
-- (struct { struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_1_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_1_1_2; } x1; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_2_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_2_1_2; } x2; double x3; })_layoutStateForHeaderContextInTable:(id)arg1 withBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (struct { struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_1_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_1_1_2; } x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; float x3; })_layoutStateForHeaderContextInTable:(id)arg1 withBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (id)_loadGroupViewAtIndex:(unsigned int)arg1 forState:(int)arg2 presentationState:(int)arg3 cached:(BOOL*)arg4;
 - (void)_loadModalGroupView;
 - (float)_maxYOfPassFrontFaceAtIndex:(unsigned int)arg1;
 - (unsigned int)_maximumNumberOfVisiblePilePasses;
-- (struct CGPoint { double x1; double x2; })_nativePositionForPositionInTable:(struct CGPoint { double x1; double x2; })arg1;
+- (struct CGPoint { float x1; float x2; })_nativePositionForPositionInTable:(struct CGPoint { float x1; float x2; })arg1;
 - (float)_nativeYForGroupInTableAtIndex:(unsigned int)arg1;
 - (void)_notifyDelegateOfStateChange:(BOOL)arg1;
 - (float)_opacityForGroupAtIndex:(unsigned int)arg1 forState:(int)arg2;
@@ -159,7 +159,7 @@
 - (float)_pileAscenderHeightForGroupViewInPile:(id)arg1;
 - (float)_pileBaseHeight;
 - (float)_pileSeparationHeight;
-- (struct CGPoint { double x1; double x2; })_positionForGroupView:(id)arg1 atIndex:(unsigned int)arg2 forState:(int)arg3;
+- (struct CGPoint { float x1; float x2; })_positionForGroupView:(id)arg1 atIndex:(unsigned int)arg2 forState:(int)arg3;
 - (void)_presentFlippedModalGroupView:(id)arg1 animated:(BOOL)arg2 withCompletionHandler:(id /* block */)arg3;
 - (void)_presentGroupStackViewWithAnimation:(BOOL)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)_presentModalGroupView:(id)arg1 animated:(BOOL)arg2 withCompletionHandler:(id /* block */)arg3;
@@ -172,7 +172,7 @@
 - (void)_removeDimmingFromPileWithAnimation:(BOOL)arg1;
 - (void)_removeGroupViewAsSubviewWithGroupID:(id)arg1;
 - (void)_removeMotionEffectsFromModalPile;
-- (void)_reorderPositionChangedForReorderedGroupViewWithVelocity:(struct CGPoint { double x1; double x2; })arg1;
+- (void)_reorderPositionChangedForReorderedGroupViewWithVelocity:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_resumeSuspendedTransition;
 - (void)_reverseEnumerateLoadedGroupViews:(id /* block */)arg1;
 - (float)_scaleForGroupView:(id)arg1 atIndex:(unsigned int)arg2 forState:(int)arg3;
@@ -195,8 +195,8 @@
 - (unsigned int)_tablePresentationNumberOfCellsBeforeHeaderHidden;
 - (unsigned int)_tablePresentationNumberOfCellsBeforeStacking;
 - (void)_tileGroupsForState:(int)arg1 eager:(BOOL)arg2;
-- (struct CATransform3D { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; })_transformForGroupView:(id)arg1 atIndex:(unsigned int)arg2 forState:(int)arg3;
-- (float)_transformedYForNativeYInTable:(float)arg1 withBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 index:(unsigned int)arg3;
+- (struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })_transformForGroupView:(id)arg1 atIndex:(unsigned int)arg2 forState:(int)arg3;
+- (float)_transformedYForNativeYInTable:(float)arg1 withBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 index:(unsigned int)arg3;
 - (void)_transitionSuccessful:(BOOL)arg1;
 - (void)_undoUserReorderWithReorderedGroupView:(id)arg1;
 - (void)_updateContentSizeAndLayout:(BOOL)arg1;
@@ -211,7 +211,7 @@
 - (void)_updatePassFooterViewIfNecessaryAnimated:(BOOL)arg1 withBecomeVisibleDelay:(double)arg2;
 - (void)_updatePassFooterViewIfNecessaryWithContext:(id)arg1 becomeVisibleDelay:(double)arg2;
 - (void)_updatePassFooterViewWithContext:(id)arg1;
-- (void)_updatePositionForGroupView:(id)arg1 toPosition:(struct CGPoint { double x1; double x2; })arg2 withSpringFactory:(id)arg3;
+- (void)_updatePositionForGroupView:(id)arg1 toPosition:(struct CGPoint { float x1; float x2; })arg2 withSpringFactory:(id)arg3;
 - (void)_updatePositionForGroupView:(id)arg1 toPresentationState:(int)arg2 withSpringFactory:(id)arg3;
 - (void)_updatePositionForGroupView:(id)arg1 toPresentationState:(int)arg2 withSpringFactory:(id)arg3 atIndex:(unsigned int)arg4;
 - (void)_updateTransformForGroupView:(id)arg1 toPresentationState:(int)arg2 withSpringFactory:(id)arg3;
@@ -242,9 +242,9 @@
 - (void)groupView:(id)arg1 deleteButtonPressedForPass:(id)arg2;
 - (void)groupView:(id)arg1 didScrollToPassView:(id)arg2;
 - (void)groupView:(id)arg1 didUpdatePassView:(id)arg2;
-- (void)groupView:(id)arg1 panned:(struct CGPoint { double x1; double x2; })arg2 withVelocity:(struct CGPoint { double x1; double x2; })arg3;
+- (void)groupView:(id)arg1 panned:(struct CGPoint { float x1; float x2; })arg2 withVelocity:(struct CGPoint { float x1; float x2; })arg3;
 - (void)groupView:(id)arg1 resizeButtonPressedForPass:(id)arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })groupView:(id)arg1 targetPageControlFrameForProposedFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })groupView:(id)arg1 targetPageControlFrameForProposedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (int)groupViewContentModeForFrontmostPassWhenPiled:(id)arg1 withDefaultContentMode:(int)arg2;
 - (int)groupViewContentModeForFrontmostPassWhenStacked:(id)arg1;
 - (void)groupViewDidUpdatePageControlVisibility:(id)arg1;
@@ -262,8 +262,8 @@
 - (void)groupViewTapped:(id)arg1;
 - (BOOL)handleDeletePassRequestWithPass:(id)arg1 forViewController:(id)arg2;
 - (id)headerForPassType:(unsigned int)arg1;
-- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isModallyPresentedPassAuthorized;
 - (BOOL)isPresentingPassViewFront;
 - (BOOL)isReordering;

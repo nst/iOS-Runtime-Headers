@@ -3,20 +3,20 @@
  */
 
 @interface VCPEdgeDetector : NSObject {
-    double * _edgeMap;
+    float * _edgeMap;
     struct DSPSplitComplex { 
-        double *realp; 
-        double *imagp; 
+        float *realp; 
+        float *imagp; 
     }  _gradient;
-    double * _gradientMag;
-    double * _gradientX;
-    double * _gradientY;
+    float * _gradientMag;
+    float * _gradientX;
+    float * _gradientY;
     unsigned long  _height;
     int  _heightExt;
     unsigned long  _heightPadded;
-    double * _image;
-    double * _imageFiltered;
-    double * _nonMaxSuppressed;
+    float * _image;
+    float * _imageFiltered;
+    float * _nonMaxSuppressed;
     unsigned long  _width;
     int  _widthExt;
     unsigned long  _widthPadded;
@@ -24,7 +24,7 @@
 
 - (void)dealloc;
 - (long)detectWithSigma:(float)arg1 lowThreshold:(float)arg2 highThreshold:(float)arg3;
-- (long)gradientEstimation:(float*)arg1 width:(unsigned long)arg2 height:(unsigned long)arg3 gradient:(struct DSPSplitComplex { double *x1; double *x2; })arg4 gradientMag:(float*)arg5;
+- (long)gradientEstimation:(float*)arg1 width:(unsigned long)arg2 height:(unsigned long)arg3 gradient:(struct DSPSplitComplex { float *x1; float *x2; })arg4 gradientMag:(float*)arg5;
 - (id)initWithImage:(float*)arg1 edgeMap:(float*)arg2 width:(unsigned long)arg3 height:(unsigned long)arg4 widthExtension:(int)arg5 heightExtension:(int)arg6;
 - (BOOL)isInImage:(int)arg1 width:(int)arg2 height:(int)arg3;
 - (long)noiseReduction:(float*)arg1 sigma:(float)arg2 imageFiltered:(float*)arg3;

@@ -113,7 +113,7 @@
 - (id)sourceBundleIdentifier;
 - (BOOL)supportsSpeculativeChangesForSyncEntityClass:(Class)arg1;
 - (id)syncEntityDependenciesForSyncEntity:(Class)arg1;
-- (int)syncProvenance;
+- (long long)syncProvenance;
 - (id)syncStoreDefaultSourceBundleIdentifier;
 - (id)syncStoreDefaultSourceUUID;
 - (id)syncStoreIdentifier;

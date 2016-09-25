@@ -6,24 +6,24 @@
     NSString * _audioCategory;
     NACEventThrottler * _defaultsThrottler;
     <NACVolumeControllerDelegate> * _delegate;
-    double  _hapticIntensity;
+    float  _hapticIntensity;
     BOOL  _prominentHapticEnabled;
     BOOL  _systemMuted;
     NSNumber * _volumeValue;
 }
 
-@property (nonatomic, readonly) double EUVolumeLimit;
+@property (nonatomic, readonly) float EUVolumeLimit;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <NACVolumeControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) double hapticIntensity;
+@property (nonatomic) float hapticIntensity;
 @property (readonly) unsigned int hash;
 @property (getter=isMuted, nonatomic, readonly) BOOL muted;
 @property (getter=isProminentHapticEnabled, nonatomic) BOOL prominentHapticEnabled;
 @property (readonly) Class superclass;
 @property (getter=isSystemMuted, nonatomic) BOOL systemMuted;
 @property (getter=isVolumeControlAvailable, nonatomic, readonly) BOOL volumeControlAvailable;
-@property (nonatomic, readonly) double volumeValue;
+@property (nonatomic, readonly) float volumeValue;
 @property (getter=isVolumeWarningEnabled, nonatomic, readonly) BOOL volumeWarningEnabled;
 
 - (void).cxx_destruct;

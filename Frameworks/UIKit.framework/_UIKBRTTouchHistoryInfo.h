@@ -4,12 +4,12 @@
 
 @interface _UIKBRTTouchHistoryInfo : NSObject {
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _actualLocation;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _errorVector;
     BOOL  _ignoreForDrift;
     BOOL  _ignoreTouch;
@@ -19,8 +19,8 @@
     double  _touchTime;
 }
 
-@property (nonatomic) struct CGPoint { double x1; double x2; } actualLocation;
-@property (nonatomic) struct CGPoint { double x1; double x2; } errorVector;
+@property (nonatomic) struct CGPoint { float x1; float x2; } actualLocation;
+@property (nonatomic) struct CGPoint { float x1; float x2; } errorVector;
 @property (nonatomic) BOOL ignoreForDrift;
 @property (nonatomic) BOOL ignoreTouch;
 @property (nonatomic) BOOL isActive;
@@ -29,16 +29,16 @@
 @property (nonatomic) double touchTime;
 
 - (void).cxx_destruct;
-- (struct CGPoint { double x1; double x2; })actualLocation;
+- (struct CGPoint { float x1; float x2; })actualLocation;
 - (id)description;
-- (struct CGPoint { double x1; double x2; })errorVector;
+- (struct CGPoint { float x1; float x2; })errorVector;
 - (BOOL)ignoreForDrift;
 - (BOOL)ignoreTouch;
 - (id)init;
 - (BOOL)isActive;
 - (BOOL)isLeftHand;
-- (void)setActualLocation:(struct CGPoint { double x1; double x2; })arg1;
-- (void)setErrorVector:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setActualLocation:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setErrorVector:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setIgnoreForDrift:(BOOL)arg1;
 - (void)setIgnoreTouch:(BOOL)arg1;
 - (void)setIsActive:(BOOL)arg1;

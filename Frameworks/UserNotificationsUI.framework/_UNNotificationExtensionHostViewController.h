@@ -8,12 +8,12 @@
     UIColor * _playPauseMediaButtonColor;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _playPauseMediaButtonFrame;
     unsigned int  _playPauseMediaButtonType;
@@ -24,7 +24,7 @@
 @property (nonatomic) <_UNNotificationExtensionHostDelegate> *delegate;
 @property (getter=isDismissEnabled, nonatomic) BOOL dismissEnabled;
 @property (nonatomic, retain) UIColor *playPauseMediaButtonColor;
-@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } playPauseMediaButtonFrame;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } playPauseMediaButtonFrame;
 @property (nonatomic) unsigned int playPauseMediaButtonType;
 @property (nonatomic) BOOL wantsToBecomeFirstResponder;
 @property (nonatomic) BOOL wantsToReceiveActionResponses;
@@ -41,19 +41,19 @@
 - (void)_extensionRequestsDismiss;
 - (void)_extensionRequestsToSetDismissEnabled:(BOOL)arg1;
 - (void)_extensionSetPlayPauseMediaButtonColor:(id)arg1;
-- (void)_extensionSetPlayPauseMediaButtonFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)_extensionSetPlayPauseMediaButtonFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_extensionSetPlayPauseMediaButtonType:(unsigned int)arg1;
 - (void)_extensionWantsToBecomeFirstResponder:(BOOL)arg1;
 - (void)_extensionWantsToReceiveActionResponses:(BOOL)arg1;
 - (id)delegate;
 - (BOOL)isDismissEnabled;
 - (id)playPauseMediaButtonColor;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })playPauseMediaButtonFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })playPauseMediaButtonFrame;
 - (unsigned int)playPauseMediaButtonType;
 - (void)setDelegate:(id)arg1;
 - (void)setDismissEnabled:(BOOL)arg1;
 - (void)setPlayPauseMediaButtonColor:(id)arg1;
-- (void)setPlayPauseMediaButtonFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setPlayPauseMediaButtonFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setPlayPauseMediaButtonType:(unsigned int)arg1;
 - (void)setWantsToBecomeFirstResponder:(BOOL)arg1;
 - (void)setWantsToReceiveActionResponses:(BOOL)arg1;

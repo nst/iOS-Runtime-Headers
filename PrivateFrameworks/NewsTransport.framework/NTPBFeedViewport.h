@@ -4,24 +4,24 @@
 
 @interface NTPBFeedViewport : PBCodable <NSCopying> {
     NSMutableArray * _elements;
-    unsigned int  _feedDBVersion;
+    unsigned long long  _feedDBVersion;
     struct { 
         unsigned int feedDBVersion : 1; 
         unsigned int version : 1; 
     }  _has;
     NSString * _identifier;
     NSMutableArray * _sharedStrings;
-    unsigned int  _version;
+    unsigned long long  _version;
 }
 
 @property (nonatomic, retain) NSMutableArray *elements;
-@property (nonatomic) unsigned int feedDBVersion;
+@property (nonatomic) unsigned long long feedDBVersion;
 @property (nonatomic) BOOL hasFeedDBVersion;
 @property (nonatomic, readonly) BOOL hasIdentifier;
 @property (nonatomic) BOOL hasVersion;
 @property (nonatomic, retain) NSString *identifier;
 @property (nonatomic, retain) NSMutableArray *sharedStrings;
-@property (nonatomic) unsigned int version;
+@property (nonatomic) unsigned long long version;
 
 + (Class)elementsType;
 + (Class)sharedStringsType;
@@ -37,7 +37,7 @@
 - (id)elements;
 - (id)elementsAtIndex:(unsigned int)arg1;
 - (unsigned int)elementsCount;
-- (unsigned int)feedDBVersion;
+- (unsigned long long)feedDBVersion;
 - (BOOL)hasFeedDBVersion;
 - (BOOL)hasIdentifier;
 - (BOOL)hasVersion;
@@ -47,16 +47,16 @@
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setElements:(id)arg1;
-- (void)setFeedDBVersion:(unsigned int)arg1;
+- (void)setFeedDBVersion:(unsigned long long)arg1;
 - (void)setHasFeedDBVersion:(BOOL)arg1;
 - (void)setHasVersion:(BOOL)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setSharedStrings:(id)arg1;
-- (void)setVersion:(unsigned int)arg1;
+- (void)setVersion:(unsigned long long)arg1;
 - (id)sharedStrings;
 - (id)sharedStringsAtIndex:(unsigned int)arg1;
 - (unsigned int)sharedStringsCount;
-- (unsigned int)version;
+- (unsigned long long)version;
 - (void)writeTo:(id)arg1;
 
 @end

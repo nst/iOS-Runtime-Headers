@@ -8,8 +8,8 @@
     unsigned int  _downsampledBoxSize;
     unsigned int  _effectiveDownsampleFactor;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _imageSize;
     unsigned int  _pixelHeight;
     unsigned int  _pixelWidth;
@@ -22,7 +22,7 @@
 @property (nonatomic, readonly) unsigned int columnCount;
 @property (nonatomic, readonly) unsigned int downsampledBoxSize;
 @property (nonatomic, readonly) unsigned int effectiveDownsampleFactor;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } imageSize;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } imageSize;
 @property (nonatomic, readonly) unsigned int pixelHeight;
 @property (nonatomic, readonly) unsigned int pixelWidth;
 @property (nonatomic, readonly) unsigned int rowCount;
@@ -40,11 +40,11 @@
 - (id)description;
 - (unsigned int)downsampledBoxSize;
 - (unsigned int)effectiveDownsampleFactor;
-- (struct CGSize { double x1; double x2; })imageSize;
-- (id)initWithColorBoxes:(struct { unsigned char x1; unsigned char x2; unsigned char x3; unsigned char x4; }*)arg1 size:(unsigned int)arg2 rowCount:(unsigned int)arg3 columnCount:(unsigned int)arg4 totalContrast8:(unsigned char)arg5 imageSize:(struct CGSize { double x1; double x2; })arg6 downsampledBoxSize:(unsigned int)arg7 effectiveDownsampleFactor:(unsigned int)arg8 pixelHeight:(unsigned int)arg9 pixelWidth:(unsigned int)arg10;
+- (struct CGSize { float x1; float x2; })imageSize;
+- (id)initWithColorBoxes:(struct { unsigned char x1; unsigned char x2; unsigned char x3; unsigned char x4; }*)arg1 size:(unsigned int)arg2 rowCount:(unsigned int)arg3 columnCount:(unsigned int)arg4 totalContrast8:(unsigned char)arg5 imageSize:(struct CGSize { float x1; float x2; })arg6 downsampledBoxSize:(unsigned int)arg7 effectiveDownsampleFactor:(unsigned int)arg8 pixelHeight:(unsigned int)arg9 pixelWidth:(unsigned int)arg10;
 - (unsigned int)pixelHeight;
 - (unsigned int)pixelWidth;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rectForColorBoxAtRow:(unsigned int)arg1 col:(unsigned int)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForColorBoxAtRow:(unsigned int)arg1 col:(unsigned int)arg2;
 - (unsigned int)rowCount;
 - (unsigned int)size;
 - (unsigned char)totalContrast8;

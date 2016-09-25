@@ -21,10 +21,10 @@
     PHRelationshipChangeRequestHelper * _facesHelper;
     PHChangeRequestHelper * _helper;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _imageDisplayTime;
     BOOL  _incrementPlayCount;
     BOOL  _incrementShareCount;
@@ -39,10 +39,10 @@
     NSIndexSet * _supportedEditOperations;
     CLLocation * _updatedLocation;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _videoDuration;
     NSURL * _videoURLForUpdate;
 }
@@ -66,7 +66,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) PHChangeRequestHelper *helper;
 @property (getter=isHidden, nonatomic) BOOL hidden;
-@property (nonatomic) struct { int x1; int x2; unsigned int x3; int x4; } imageDisplayTime;
+@property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } imageDisplayTime;
 @property (nonatomic, retain) CLLocation *location;
 @property (nonatomic, readonly) NSString *managedEntityName;
 @property (nonatomic, retain) NSDate *modificationDate;
@@ -78,7 +78,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSIndexSet *supportedEditOperations;
 @property (nonatomic, readonly) NSString *uuid;
-@property (nonatomic) struct { int x1; int x2; unsigned int x3; int x4; } videoDuration;
+@property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } videoDuration;
 @property (nonatomic, retain) NSURL *videoURLForUpdate;
 
 + (id)_allAssetEditOperations;
@@ -114,7 +114,7 @@
 - (int)faceDetectionState;
 - (id)facesHelper;
 - (id)helper;
-- (struct { int x1; int x2; unsigned int x3; int x4; })imageDisplayTime;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })imageDisplayTime;
 - (void)incrementPlayCount;
 - (void)incrementShareCount;
 - (void)incrementViewCount;
@@ -139,7 +139,7 @@
 - (id)placeholderForCreatedAsset;
 - (void)removeFaces:(id)arg1;
 - (void)revertAssetContentToOriginal;
-- (void)setAdjustmentData:(id)arg1 withRenderedJPEGData:(id)arg2 orRenderedContentURL:(id)arg3 penultimateRenderedJPEGData:(id)arg4 isSubstandardRender:(BOOL)arg5 fullSizeRenderSize:(struct CGSize { double x1; double x2; })arg6 renderedVideoComplementURL:(id)arg7 penultimateRenderedVideoComplementURL:(id)arg8;
+- (void)setAdjustmentData:(id)arg1 withRenderedJPEGData:(id)arg2 orRenderedContentURL:(id)arg3 penultimateRenderedJPEGData:(id)arg4 isSubstandardRender:(BOOL)arg5 fullSizeRenderSize:(struct CGSize { float x1; float x2; })arg6 renderedVideoComplementURL:(id)arg7 penultimateRenderedVideoComplementURL:(id)arg8;
 - (void)setAnalysisState:(int)arg1 lastIgnoredDate:(id)arg2 ignoreUntilDate:(id)arg3 forWorkerType:(short)arg4;
 - (void)setAnalysisState:(int)arg1 lastIgnoredDate:(id)arg2 ignoreUntilDate:(id)arg3 forWorkerType:(short)arg4 allowUnsafeSetProcessed:(BOOL)arg5;
 - (void)setAssetDescription:(id)arg1;
@@ -150,7 +150,7 @@
 - (void)setFaceDetectionState:(int)arg1;
 - (void)setFavorite:(BOOL)arg1;
 - (void)setHidden:(BOOL)arg1;
-- (void)setImageDisplayTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
+- (void)setImageDisplayTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setLocation:(id)arg1;
 - (void)setModificationDate:(id)arg1;
 - (void)setPairingIdentifier:(id)arg1;
@@ -158,7 +158,7 @@
 - (void)setSceneClassifications:(id)arg1 algorithmVersion:(int)arg2 adjustmentVersion:(id)arg3;
 - (void)setSceneClassifications:(id)arg1 algorithmVersion:(int)arg2 distanceIdentity:(id)arg3 adjustmentVersion:(id)arg4;
 - (void)setSupportedEditOperations:(id)arg1;
-- (void)setVideoDuration:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
+- (void)setVideoDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setVideoURLForUpdate:(id)arg1;
 - (id)supportedEditOperations;
 - (id)uuid;
@@ -169,7 +169,7 @@
 - (BOOL)validateReadAccessForContentURL:(id)arg1 assetResource:(id)arg2 error:(id*)arg3;
 - (BOOL)validateVideoURLForAssetMutation:(id)arg1 error:(id*)arg2;
 - (BOOL)validateWriteAccessForContentURL:(id)arg1 error:(id*)arg2;
-- (struct { int x1; int x2; unsigned int x3; int x4; })videoDuration;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })videoDuration;
 - (id)videoURLForUpdate;
 
 @end

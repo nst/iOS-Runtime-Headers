@@ -43,9 +43,9 @@
     AVScrubber * _scrubber;
     BOOL  _scrubberEnabled;
     NSArray * _scrubberLoadedTimeRanges;
-    double  _scrubberMaximumValue;
-    double  _scrubberMinimumValue;
-    double  _scrubberValue;
+    float  _scrubberMaximumValue;
+    float  _scrubberMinimumValue;
+    float  _scrubberValue;
     BOOL  _showsDoneButton;
     BOOL  _showsExitFullScreenButton;
     BOOL  _showsLoadingIndicator;
@@ -64,14 +64,14 @@
     BOOL  _userDidTapScanButton;
     MPVolumeController * _volumeController;
     MPVolumeSlider * _volumeSlider;
-    double  _volumeSliderValue;
-    double  scrubberWidth;
+    float  _volumeSliderValue;
+    float  scrubberWidth;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic) double scrubberWidth;
+@property (nonatomic) float scrubberWidth;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;

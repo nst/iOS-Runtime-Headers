@@ -5,7 +5,7 @@
 @interface NWAWDLibnetcoreCellularFallbackReport : PBCodable <NSCopying> {
     NSMutableArray * _dataUsageSnapshotsAtNetworkEvents;
     int  _denyReason;
-    unsigned int  _fallbackTimerMsecs;
+    unsigned long long  _fallbackTimerMsecs;
     BOOL  _fellback;
     struct { 
         unsigned int fallbackTimerMsecs : 1; 
@@ -19,7 +19,7 @@
     }  _networkEvents;
     NSMutableArray * _primaryInterfaceAttemptStatisticsReports;
     struct { 
-        unsigned int *list; 
+        unsigned long long *list; 
         unsigned int count; 
         unsigned int size; 
     }  _timeToNetworkEventsMsecs;
@@ -27,7 +27,7 @@
 
 @property (nonatomic, retain) NSMutableArray *dataUsageSnapshotsAtNetworkEvents;
 @property (nonatomic) int denyReason;
-@property (nonatomic) unsigned int fallbackTimerMsecs;
+@property (nonatomic) unsigned long long fallbackTimerMsecs;
 @property (nonatomic) BOOL fellback;
 @property (nonatomic) BOOL hasDenyReason;
 @property (nonatomic) BOOL hasFallbackTimerMsecs;
@@ -35,7 +35,7 @@
 @property (nonatomic, readonly) int*networkEvents;
 @property (nonatomic, readonly) unsigned int networkEventsCount;
 @property (nonatomic, retain) NSMutableArray *primaryInterfaceAttemptStatisticsReports;
-@property (nonatomic, readonly) unsigned int*timeToNetworkEventsMsecs;
+@property (nonatomic, readonly) unsigned long long*timeToNetworkEventsMsecs;
 @property (nonatomic, readonly) unsigned int timeToNetworkEventsMsecsCount;
 
 + (Class)dataUsageSnapshotsAtNetworkEventsType;
@@ -47,7 +47,7 @@
 - (void)addDataUsageSnapshotsAtNetworkEvents:(id)arg1;
 - (void)addNetworkEvents:(int)arg1;
 - (void)addPrimaryInterfaceAttemptStatisticsReports:(id)arg1;
-- (void)addTimeToNetworkEventsMsecs:(unsigned int)arg1;
+- (void)addTimeToNetworkEventsMsecs:(unsigned long long)arg1;
 - (void)clearDataUsageSnapshotsAtNetworkEvents;
 - (void)clearNetworkEvents;
 - (void)clearPrimaryInterfaceAttemptStatisticsReports;
@@ -62,7 +62,7 @@
 - (id)denyReasonAsString:(int)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)fallbackTimerMsecs;
+- (unsigned long long)fallbackTimerMsecs;
 - (BOOL)fellback;
 - (BOOL)hasDenyReason;
 - (BOOL)hasFallbackTimerMsecs;
@@ -80,16 +80,16 @@
 - (BOOL)readFrom:(id)arg1;
 - (void)setDataUsageSnapshotsAtNetworkEvents:(id)arg1;
 - (void)setDenyReason:(int)arg1;
-- (void)setFallbackTimerMsecs:(unsigned int)arg1;
+- (void)setFallbackTimerMsecs:(unsigned long long)arg1;
 - (void)setFellback:(BOOL)arg1;
 - (void)setHasDenyReason:(BOOL)arg1;
 - (void)setHasFallbackTimerMsecs:(BOOL)arg1;
 - (void)setHasFellback:(BOOL)arg1;
 - (void)setNetworkEvents:(int*)arg1 count:(unsigned int)arg2;
 - (void)setPrimaryInterfaceAttemptStatisticsReports:(id)arg1;
-- (void)setTimeToNetworkEventsMsecs:(unsigned int*)arg1 count:(unsigned int)arg2;
-- (unsigned int*)timeToNetworkEventsMsecs;
-- (unsigned int)timeToNetworkEventsMsecsAtIndex:(unsigned int)arg1;
+- (void)setTimeToNetworkEventsMsecs:(unsigned long long*)arg1 count:(unsigned int)arg2;
+- (unsigned long long*)timeToNetworkEventsMsecs;
+- (unsigned long long)timeToNetworkEventsMsecsAtIndex:(unsigned int)arg1;
 - (unsigned int)timeToNetworkEventsMsecsCount;
 - (void)writeTo:(id)arg1;
 

@@ -5,7 +5,7 @@
 @interface HDActivityCacheEntity : HDSampleEntity
 
 + (id)_databaseTable;
-+ (id)activityCacheForIndex:(int)arg1 profile:(id)arg2 error:(id*)arg3;
++ (id)activityCacheForIndex:(long long)arg1 profile:(id)arg2 error:(id*)arg3;
 + (id)activityCachesInRangeStart:(id)arg1 end:(id)arg2 profile:(id)arg3 error:(id*)arg4;
 + (BOOL)addCodableObject:(id)arg1 toCollection:(id)arg2;
 + (id)codableObjectsFromObjectCollection:(id)arg1;

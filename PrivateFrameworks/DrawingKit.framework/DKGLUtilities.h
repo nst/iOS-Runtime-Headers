@@ -18,7 +18,7 @@
 + (id)pathForResource:(id)arg1 ofType:(id)arg2;
 + (BOOL)setCurrentGLContext:(id)arg1;
 + (void)setProjectionMatrixForWidth:(float)arg1 height:(float)arg2 flipped:(BOOL)arg3 matrix:(struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; }*)arg4;
-+ (id)snapshotImageOfFrameBufferWithID:(unsigned int)arg1 bufferSize:(struct CGSize { double x1; double x2; })arg2 displayScale:(float)arg3;
++ (id)snapshotImageOfFrameBufferWithID:(unsigned int)arg1 bufferSize:(struct CGSize { float x1; float x2; })arg2 displayScale:(float)arg3;
 + (void)translateMatrix:(struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; }*)arg1 byX:(float)arg2 Y:(float)arg3 result:(struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; }*)arg4;
 
 @end

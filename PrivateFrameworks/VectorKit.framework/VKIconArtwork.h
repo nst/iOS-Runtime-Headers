@@ -4,16 +4,16 @@
 
 @interface VKIconArtwork : NSObject {
     NSMutableArray * _completionHandlers;
-    double  _contentScale;
+    float  _contentScale;
     struct CGColor { } * _fullBleedColor;
     BOOL  _hasIcon;
     VKImage * _image;
-    double  _leftCapWidth;
-    double  _rightCapWidth;
-    double  _textOffsetY;
+    float  _leftCapWidth;
+    float  _rightCapWidth;
+    float  _textOffsetY;
 }
 
-@property (nonatomic, readonly) double contentScale;
+@property (nonatomic, readonly) float contentScale;
 @property (nonatomic) struct CGColor { }*fullBleedColor;
 
 - (void)_cleanUpAfterDrawing;

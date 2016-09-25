@@ -9,7 +9,7 @@
 @property (getter=_station, nonatomic, readonly) RadioStation *_station;
 @property (nonatomic, readonly) NSString *localizedDescription;
 @property (nonatomic, readonly) NSString *localizedName;
-@property (nonatomic, readonly) int uniqueIdentifier;
+@property (nonatomic, readonly) long long uniqueIdentifier;
 
 + (BOOL)supportsSecureCoding;
 
@@ -22,6 +22,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)localizedDescription;
 - (id)localizedName;
-- (int)uniqueIdentifier;
+- (long long)uniqueIdentifier;
 
 @end

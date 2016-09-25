@@ -12,10 +12,10 @@
     BOOL  _pulsing;
     BOOL  _showDisabled;
     struct CMKShutterButtonSpec { 
-        double outerRingDiameter; 
-        double outerRingStrokeWidth; 
-        double stopSquareSideLength; 
-        double stopSquareCornerRadius; 
+        float outerRingDiameter; 
+        float outerRingStrokeWidth; 
+        float stopSquareSideLength; 
+        float stopSquareCornerRadius; 
     }  _spec;
     BOOL  _spinning;
 }
@@ -28,11 +28,11 @@
 @property (nonatomic) int buttonMode;
 @property (getter=isPulsing, nonatomic) BOOL pulsing;
 @property (nonatomic) BOOL showDisabled;
-@property (setter=_setSpec:, nonatomic) struct CMKShutterButtonSpec { double x1; double x2; double x3; double x4; } spec;
+@property (setter=_setSpec:, nonatomic) struct CMKShutterButtonSpec { float x1; float x2; float x3; float x4; } spec;
 @property (getter=isSpinning, nonatomic) BOOL spinning;
 
 + (id)shutterButton;
-+ (id)shutterButtonWithDesiredSpec:(struct CMKShutterButtonSpec { double x1; double x2; double x3; double x4; })arg1;
++ (id)shutterButtonWithDesiredSpec:(struct CMKShutterButtonSpec { float x1; float x2; float x3; float x4; })arg1;
 + (id)smallShutterButton;
 + (id)tinyShutterButton;
 
@@ -50,17 +50,17 @@
 - (void)_performHighlightAnimation;
 - (void)_performModeSwitchAnimationFromMode:(int)arg1 toMode:(int)arg2 animated:(BOOL)arg3;
 - (id)_progressActivityIndicatorView;
-- (void)_setSpec:(struct CMKShutterButtonSpec { double x1; double x2; double x3; double x4; })arg1;
+- (void)_setSpec:(struct CMKShutterButtonSpec { float x1; float x2; float x3; float x4; })arg1;
 - (BOOL)_shouldUseImageViewForMode:(int)arg1;
 - (BOOL)_shouldUseTimelapseOuterViewForMode:(int)arg1;
-- (struct CGSize { double x1; double x2; })_sizeForMode:(int)arg1;
+- (struct CGSize { float x1; float x2; })_sizeForMode:(int)arg1;
 - (id)_timelapseOuterView;
 - (void)_updateOuterAndInnerLayers;
 - (void)_updateSpinningAnimations;
 - (int)buttonMode;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (BOOL)isPulsing;
 - (BOOL)isSpinning;
 - (void)layoutSubviews;
@@ -71,7 +71,7 @@
 - (void)setShowDisabled:(BOOL)arg1;
 - (void)setSpinning:(BOOL)arg1;
 - (BOOL)showDisabled;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
-- (struct CMKShutterButtonSpec { double x1; double x2; double x3; double x4; })spec;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CMKShutterButtonSpec { float x1; float x2; float x3; float x4; })spec;
 
 @end

@@ -8,14 +8,14 @@
     BOOL  _defaultAsyncTextRenderingEnabled;
     int  _defaultLabelTypesettingMode;
     BOOL  _defaultTextAutoscalingEnabled;
-    double  _defaultTextMinimumScaleFactor;
+    float  _defaultTextMinimumScaleFactor;
     BOOL  _defaultTextTruncationEnabled;
-    double  _defaultTruncatedTextMinimumScaleFactor;
+    float  _defaultTruncatedTextMinimumScaleFactor;
     BOOL  _defaultUseShapeLayerForText;
     int  _deviceGraphicsQuality;
     BOOL  _drawTypographicGuidelines;
     BOOL  _simulateSlowTextTypesetting;
-    double  _textAutoscalingPrecision;
+    float  _textAutoscalingPrecision;
     BOOL  _useFancyDarkening;
 }
 
@@ -24,14 +24,14 @@
 @property (nonatomic) BOOL defaultAsyncTextRenderingEnabled;
 @property (nonatomic) int defaultLabelTypesettingMode;
 @property (nonatomic) BOOL defaultTextAutoscalingEnabled;
-@property (nonatomic) double defaultTextMinimumScaleFactor;
+@property (nonatomic) float defaultTextMinimumScaleFactor;
 @property (nonatomic) BOOL defaultTextTruncationEnabled;
-@property (nonatomic) double defaultTruncatedTextMinimumScaleFactor;
+@property (nonatomic) float defaultTruncatedTextMinimumScaleFactor;
 @property (nonatomic) BOOL defaultUseShapeLayerForText;
 @property (nonatomic) int deviceGraphicsQuality;
 @property (nonatomic) BOOL drawTypographicGuidelines;
 @property (nonatomic) BOOL simulateSlowTextTypesetting;
-@property (nonatomic) double textAutoscalingPrecision;
+@property (nonatomic) float textAutoscalingPrecision;
 @property (nonatomic) BOOL useFancyDarkening;
 
 + (id)settingsControllerModule;

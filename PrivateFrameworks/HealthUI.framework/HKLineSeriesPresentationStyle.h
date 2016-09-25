@@ -7,7 +7,7 @@
     UIImage * _lineEndCap;
     UIImage * _pointMarkerImage;
     BOOL  _shouldApplyRollingAverage;
-    double  _sineWaveSmoothingFactor;
+    float  _sineWaveSmoothingFactor;
     HKStrokeStyle * _strokeStyle;
     int  _waveForm;
 }
@@ -16,7 +16,7 @@
 @property (nonatomic, retain) UIImage *lineEndCap;
 @property (nonatomic, retain) UIImage *pointMarkerImage;
 @property (nonatomic) BOOL shouldApplyRollingAverage;
-@property (nonatomic) double sineWaveSmoothingFactor;
+@property (nonatomic) float sineWaveSmoothingFactor;
 @property (nonatomic, retain) HKStrokeStyle *strokeStyle;
 @property (nonatomic) int waveForm;
 

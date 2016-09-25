@@ -6,7 +6,7 @@
 
 + (id)rootItemForAppLibraryRootItemID:(id)arg1 session:(id)arg2;
 
-- (id)_initWithServerItem:(id)arg1 dbRowID:(unsigned int)arg2 appLibrary:(id)arg3;
+- (id)_initWithServerItem:(id)arg1 dbRowID:(unsigned long long)arg2 appLibrary:(id)arg3;
 - (id)appLibrary;
 - (id)asFSRoot;
 - (BOOL)isDirectory;

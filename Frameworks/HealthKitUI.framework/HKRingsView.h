@@ -5,15 +5,15 @@
 @interface HKRingsView : HKGLView <HKRingGroupAnimationStatusDelegate> {
     BOOL  _buffersCreated;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _cachedGroupCenter;
-    double  _cachedPointSize;
+    float  _cachedPointSize;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _cachedPosition;
-    double  _cachedThickness;
+    float  _cachedThickness;
     unsigned int  _color1Attribute;
     unsigned int  _color2Attribute;
     unsigned int  _coordPercentAttribute;
@@ -34,7 +34,7 @@
     unsigned int  _iconSpriteTextureOffsetAttribute;
     unsigned int  _iconSpriteTransformUniform;
     unsigned int  _iconSpriteVertexBuffer;
-    struct { union _GLKVector2 { struct { double x_1_2_1; double x_1_2_2; } x_1_1_1; struct { double x_2_2_1; double x_2_2_2; } x_1_1_2; double x_1_1_3[2]; } x1; double x2; double x3; union _GLKVector4 { struct { double x_1_2_1; double x_1_2_2; double x_1_2_3; double x_1_2_4; } x_4_1_1; struct { double x_2_2_1; double x_2_2_2; double x_2_2_3; double x_2_2_4; } x_4_1_2; struct { double x_3_2_1; double x_3_2_2; double x_3_2_3; double x_3_2_4; } x_4_1_3; double x_4_1_4[4]; } x4; union _GLKVector2 { struct { double x_1_2_1; double x_1_2_2; } x_5_1_1; struct { double x_2_2_1; double x_2_2_2; } x_5_1_2; double x_5_1_3[2]; } x5; } * _iconSpriteVertices;
+    struct { union _GLKVector2 { struct { float x_1_2_1; float x_1_2_2; } x_1_1_1; struct { float x_2_2_1; float x_2_2_2; } x_1_1_2; float x_1_1_3[2]; } x1; float x2; float x3; union _GLKVector4 { struct { float x_1_2_1; float x_1_2_2; float x_1_2_3; float x_1_2_4; } x_4_1_1; struct { float x_2_2_1; float x_2_2_2; float x_2_2_3; float x_2_2_4; } x_4_1_2; struct { float x_3_2_1; float x_3_2_2; float x_3_2_3; float x_3_2_4; } x_4_1_3; float x_4_1_4[4]; } x4; union _GLKVector2 { struct { float x_1_2_1; float x_1_2_2; } x_5_1_1; struct { float x_2_2_1; float x_2_2_2; } x_5_1_2; float x_5_1_3[2]; } x5; } * _iconSpriteVertices;
     unsigned int  _iconTextureColumns;
     unsigned int  _iconTextureRows;
     BOOL  _iconVAOinit;
@@ -46,37 +46,37 @@
     BOOL  _prevRingsAreEmpty;
     union _GLKMatrix4 { 
         struct { 
-            double m00; 
-            double m01; 
-            double m02; 
-            double m03; 
-            double m10; 
-            double m11; 
-            double m12; 
-            double m13; 
-            double m20; 
-            double m21; 
-            double m22; 
-            double m23; 
-            double m30; 
-            double m31; 
-            double m32; 
-            double m33; 
+            float m00; 
+            float m01; 
+            float m02; 
+            float m03; 
+            float m10; 
+            float m11; 
+            float m12; 
+            float m13; 
+            float m20; 
+            float m21; 
+            float m22; 
+            float m23; 
+            float m30; 
+            float m31; 
+            float m32; 
+            float m33; 
         } ; 
-        double m[16]; 
+        float m[16]; 
     }  _projectionMatrix;
     unsigned int  _ringEmptyProgram;
     unsigned int  _ringEndCapProgram;
     NSArray * _ringGroups;
     int  _ringGroupsPerRow;
     unsigned int  _ringProgram;
-    double  _ringSpacing;
+    float  _ringSpacing;
     BOOL  _ringVAOinit;
-    union _GLKVector2 { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; double x3[2]; } * _ringVertexCoordinates;
-    union _GLKVector2 { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; double x3[2]; } * _ringVertexPositions;
-    struct { union _GLKVector4 { struct { double x_1_2_1; double x_1_2_2; double x_1_2_3; double x_1_2_4; } x_1_1_1; struct { double x_2_2_1; double x_2_2_2; double x_2_2_3; double x_2_2_4; } x_1_1_2; struct { double x_3_2_1; double x_3_2_2; double x_3_2_3; double x_3_2_4; } x_1_1_3; double x_1_1_4[4]; } x1; union _GLKVector4 { struct { double x_1_2_1; double x_1_2_2; double x_1_2_3; double x_1_2_4; } x_2_1_1; struct { double x_2_2_1; double x_2_2_2; double x_2_2_3; double x_2_2_4; } x_2_1_2; struct { double x_3_2_1; double x_3_2_2; double x_3_2_3; double x_3_2_4; } x_2_1_3; double x_2_1_4[4]; } x2; union _GLKVector4 { struct { double x_1_2_1; double x_1_2_2; double x_1_2_3; double x_1_2_4; } x_3_1_1; struct { double x_2_2_1; double x_2_2_2; double x_2_2_3; double x_2_2_4; } x_3_1_2; struct { double x_3_2_1; double x_3_2_2; double x_3_2_3; double x_3_2_4; } x_3_1_3; double x_3_1_4[4]; } x3; union _GLKVector2 { struct { double x_1_2_1; double x_1_2_2; } x_4_1_1; struct { double x_2_2_1; double x_2_2_2; } x_4_1_2; double x_4_1_3[2]; } x4; union _GLKVector2 { struct { double x_1_2_1; double x_1_2_2; } x_5_1_1; struct { double x_2_2_1; double x_2_2_2; } x_5_1_2; double x_5_1_3[2]; } x5; } * _ringVertices;
+    union _GLKVector2 { struct { float x_1_1_1; float x_1_1_2; } x1; struct { float x_2_1_1; float x_2_1_2; } x2; float x3[2]; } * _ringVertexCoordinates;
+    union _GLKVector2 { struct { float x_1_1_1; float x_1_1_2; } x1; struct { float x_2_1_1; float x_2_1_2; } x2; float x3[2]; } * _ringVertexPositions;
+    struct { union _GLKVector4 { struct { float x_1_2_1; float x_1_2_2; float x_1_2_3; float x_1_2_4; } x_1_1_1; struct { float x_2_2_1; float x_2_2_2; float x_2_2_3; float x_2_2_4; } x_1_1_2; struct { float x_3_2_1; float x_3_2_2; float x_3_2_3; float x_3_2_4; } x_1_1_3; float x_1_1_4[4]; } x1; union _GLKVector4 { struct { float x_1_2_1; float x_1_2_2; float x_1_2_3; float x_1_2_4; } x_2_1_1; struct { float x_2_2_1; float x_2_2_2; float x_2_2_3; float x_2_2_4; } x_2_1_2; struct { float x_3_2_1; float x_3_2_2; float x_3_2_3; float x_3_2_4; } x_2_1_3; float x_2_1_4[4]; } x2; union _GLKVector4 { struct { float x_1_2_1; float x_1_2_2; float x_1_2_3; float x_1_2_4; } x_3_1_1; struct { float x_2_2_1; float x_2_2_2; float x_2_2_3; float x_2_2_4; } x_3_1_2; struct { float x_3_2_1; float x_3_2_2; float x_3_2_3; float x_3_2_4; } x_3_1_3; float x_3_1_4[4]; } x3; union _GLKVector2 { struct { float x_1_2_1; float x_1_2_2; } x_4_1_1; struct { float x_2_2_1; float x_2_2_2; } x_4_1_2; float x_4_1_3[2]; } x4; union _GLKVector2 { struct { float x_1_2_1; float x_1_2_2; } x_5_1_1; struct { float x_2_2_1; float x_2_2_2; } x_5_1_2; float x_5_1_3[2]; } x5; } * _ringVertices;
     unsigned int  _ringsVAO;
-    double  _screenScale;
+    float  _screenScale;
     unsigned int  _sizesAttribute;
     unsigned int  _transformUniform;
     unsigned int  _trigResultsAttribute;
@@ -87,7 +87,7 @@
 @property (nonatomic) unsigned int iconTextureRows;
 @property (nonatomic, readonly) NSArray *ringGroups;
 @property (nonatomic) int ringGroupsPerRow;
-@property (nonatomic) double ringSpacing;
+@property (nonatomic) float ringSpacing;
 
 + (id)_iconSpriteImage;
 + (id)_ringsViewConfiguredForCompanionWithNumberOfRings:(int)arg1 ringType:(int)arg2;
@@ -115,7 +115,7 @@
 - (void)_updateProjectionMatrix;
 - (void)dealloc;
 - (void)didMoveToWindow;
-- (unsigned int)drawInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (unsigned int)drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)iconSpriteImage;
 - (unsigned int)iconTextureColumns;
 - (unsigned int)iconTextureRows;

@@ -10,9 +10,9 @@
         unsigned int packetCapacity : 1; 
         unsigned int packetCount : 1; 
     }  _has;
-    int  _maximumPacketSize;
-    int  _packetCapacity;
-    int  _packetCount;
+    long long  _maximumPacketSize;
+    long long  _packetCapacity;
+    long long  _packetCount;
     NSMutableArray * _packetDescriptions;
 }
 
@@ -23,9 +23,9 @@
 @property (nonatomic) BOOL hasMaximumPacketSize;
 @property (nonatomic) BOOL hasPacketCapacity;
 @property (nonatomic) BOOL hasPacketCount;
-@property (nonatomic) int maximumPacketSize;
-@property (nonatomic) int packetCapacity;
-@property (nonatomic) int packetCount;
+@property (nonatomic) long long maximumPacketSize;
+@property (nonatomic) long long packetCapacity;
+@property (nonatomic) long long packetCount;
 @property (nonatomic, retain) NSMutableArray *packetDescriptions;
 
 + (Class)packetDescriptionsType;
@@ -46,10 +46,10 @@
 - (BOOL)hasPacketCount;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
-- (int)maximumPacketSize;
+- (long long)maximumPacketSize;
 - (void)mergeFrom:(id)arg1;
-- (int)packetCapacity;
-- (int)packetCount;
+- (long long)packetCapacity;
+- (long long)packetCount;
 - (id)packetDescriptions;
 - (id)packetDescriptionsAtIndex:(unsigned int)arg1;
 - (unsigned int)packetDescriptionsCount;
@@ -59,9 +59,9 @@
 - (void)setHasMaximumPacketSize:(BOOL)arg1;
 - (void)setHasPacketCapacity:(BOOL)arg1;
 - (void)setHasPacketCount:(BOOL)arg1;
-- (void)setMaximumPacketSize:(int)arg1;
-- (void)setPacketCapacity:(int)arg1;
-- (void)setPacketCount:(int)arg1;
+- (void)setMaximumPacketSize:(long long)arg1;
+- (void)setPacketCapacity:(long long)arg1;
+- (void)setPacketCount:(long long)arg1;
 - (void)setPacketDescriptions:(id)arg1;
 - (void)writeTo:(id)arg1;
 

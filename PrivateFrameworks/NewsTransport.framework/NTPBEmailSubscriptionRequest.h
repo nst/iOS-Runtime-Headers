@@ -3,7 +3,7 @@
  */
 
 @interface NTPBEmailSubscriptionRequest : PBRequest <NSCopying> {
-    int  _dsId;
+    long long  _dsId;
     struct { 
         unsigned int dsId : 1; 
     }  _has;
@@ -11,7 +11,7 @@
     NSString * _userStorefrontId;
 }
 
-@property (nonatomic) int dsId;
+@property (nonatomic) long long dsId;
 @property (nonatomic) BOOL hasDsId;
 @property (nonatomic, readonly) BOOL hasLanguageCode;
 @property (nonatomic, readonly) BOOL hasUserStorefrontId;
@@ -22,7 +22,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (int)dsId;
+- (long long)dsId;
 - (BOOL)hasDsId;
 - (BOOL)hasLanguageCode;
 - (BOOL)hasUserStorefrontId;
@@ -31,7 +31,7 @@
 - (id)languageCode;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (void)setDsId:(int)arg1;
+- (void)setDsId:(long long)arg1;
 - (void)setHasDsId:(BOOL)arg1;
 - (void)setLanguageCode:(id)arg1;
 - (void)setUserStorefrontId:(id)arg1;

@@ -12,8 +12,8 @@
     _UIDocumentSearchListController * _searchController;
     int  _sortOrderIfNotDeferred;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _stateRestoredContentOffset;
 }
 

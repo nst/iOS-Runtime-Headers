@@ -8,13 +8,13 @@
     NSBundle * _localResourceBundle;
     NSString * _localResourceName;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _logoSize;
-    double  _remotePressedScale;
+    float  _remotePressedScale;
     NSURL * _remotePressedURL;
     SAUIAppPunchOut * _remotePunchOut;
-    double  _remoteScale;
+    float  _remoteScale;
     NSURL * _remoteURL;
 }
 
@@ -22,11 +22,11 @@
 @property (nonatomic, retain) SAUIAppPunchOut *localPunchOut;
 @property (nonatomic, retain) NSBundle *localResourceBundle;
 @property (nonatomic, copy) NSString *localResourceName;
-@property (nonatomic) struct CGSize { double x1; double x2; } logoSize;
-@property (nonatomic) double remotePressedScale;
+@property (nonatomic) struct CGSize { float x1; float x2; } logoSize;
+@property (nonatomic) float remotePressedScale;
 @property (nonatomic, copy) NSURL *remotePressedURL;
 @property (nonatomic, retain) SAUIAppPunchOut *remotePunchOut;
-@property (nonatomic) double remoteScale;
+@property (nonatomic) float remoteScale;
 @property (nonatomic, copy) NSURL *remoteURL;
 
 + (id)imageResourceFromKey:(id)arg1 pressedKey:(id)arg2 punchOut:(id)arg3;
@@ -42,7 +42,7 @@
 - (id)localPunchOut;
 - (id)localResourceBundle;
 - (id)localResourceName;
-- (struct CGSize { double x1; double x2; })logoSize;
+- (struct CGSize { float x1; float x2; })logoSize;
 - (float)remotePressedScale;
 - (id)remotePressedURL;
 - (id)remotePunchOut;
@@ -52,7 +52,7 @@
 - (void)setLocalPunchOut:(id)arg1;
 - (void)setLocalResourceBundle:(id)arg1;
 - (void)setLocalResourceName:(id)arg1;
-- (void)setLogoSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setLogoSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setRemotePressedScale:(float)arg1;
 - (void)setRemotePressedURL:(id)arg1;
 - (void)setRemotePunchOut:(id)arg1;

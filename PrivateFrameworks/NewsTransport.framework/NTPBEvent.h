@@ -5,7 +5,7 @@
 @interface NTPBEvent : PBCodable <NSCopying> {
     int  _cellularRadioAccessTechnology;
     int  _deviceOrientation;
-    int  _duration;
+    long long  _duration;
     NTPBEventObject * _eventObject;
     int  _gestureType;
     struct { 
@@ -20,13 +20,13 @@
         unsigned int reachabilityStatus : 1; 
     }  _has;
     int  _interfaceOrientation;
-    int  _personalizationTreatmentId;
-    int  _personalizedTreatmentId;
+    long long  _personalizationTreatmentId;
+    long long  _personalizedTreatmentId;
     int  _reachabilityStatus;
     NSString * _referringSource;
     NSString * _referringType;
     NSData * _sessionId;
-    int  _startTimestamp;
+    long long  _startTimestamp;
     NSString * _userId;
     NSString * _userStorefrontId;
     NSString * _windowFrameInScreen;
@@ -34,7 +34,7 @@
 
 @property (nonatomic) int cellularRadioAccessTechnology;
 @property (nonatomic) int deviceOrientation;
-@property (nonatomic) int duration;
+@property (nonatomic) long long duration;
 @property (nonatomic, retain) NTPBEventObject *eventObject;
 @property (nonatomic) int gestureType;
 @property (nonatomic) BOOL hasCellularRadioAccessTechnology;
@@ -54,13 +54,13 @@
 @property (nonatomic, readonly) BOOL hasUserStorefrontId;
 @property (nonatomic, readonly) BOOL hasWindowFrameInScreen;
 @property (nonatomic) int interfaceOrientation;
-@property (nonatomic) int personalizationTreatmentId;
-@property (nonatomic) int personalizedTreatmentId;
+@property (nonatomic) long long personalizationTreatmentId;
+@property (nonatomic) long long personalizedTreatmentId;
 @property (nonatomic) int reachabilityStatus;
 @property (nonatomic, retain) NSString *referringSource;
 @property (nonatomic, retain) NSString *referringType;
 @property (nonatomic, retain) NSData *sessionId;
-@property (nonatomic) int startTimestamp;
+@property (nonatomic) long long startTimestamp;
 @property (nonatomic, retain) NSString *userId;
 @property (nonatomic, retain) NSString *userStorefrontId;
 @property (nonatomic, retain) NSString *windowFrameInScreen;
@@ -74,7 +74,7 @@
 - (id)description;
 - (int)deviceOrientation;
 - (id)dictionaryRepresentation;
-- (int)duration;
+- (long long)duration;
 - (id)eventObject;
 - (int)gestureType;
 - (BOOL)hasCellularRadioAccessTechnology;
@@ -97,8 +97,8 @@
 - (int)interfaceOrientation;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (int)personalizationTreatmentId;
-- (int)personalizedTreatmentId;
+- (long long)personalizationTreatmentId;
+- (long long)personalizedTreatmentId;
 - (int)reachabilityStatus;
 - (id)reachabilityStatusAsString:(int)arg1;
 - (BOOL)readFrom:(id)arg1;
@@ -107,7 +107,7 @@
 - (id)sessionId;
 - (void)setCellularRadioAccessTechnology:(int)arg1;
 - (void)setDeviceOrientation:(int)arg1;
-- (void)setDuration:(int)arg1;
+- (void)setDuration:(long long)arg1;
 - (void)setEventObject:(id)arg1;
 - (void)setGestureType:(int)arg1;
 - (void)setHasCellularRadioAccessTechnology:(BOOL)arg1;
@@ -120,17 +120,17 @@
 - (void)setHasReachabilityStatus:(BOOL)arg1;
 - (void)setHasStartTimestamp:(BOOL)arg1;
 - (void)setInterfaceOrientation:(int)arg1;
-- (void)setPersonalizationTreatmentId:(int)arg1;
-- (void)setPersonalizedTreatmentId:(int)arg1;
+- (void)setPersonalizationTreatmentId:(long long)arg1;
+- (void)setPersonalizedTreatmentId:(long long)arg1;
 - (void)setReachabilityStatus:(int)arg1;
 - (void)setReferringSource:(id)arg1;
 - (void)setReferringType:(id)arg1;
 - (void)setSessionId:(id)arg1;
-- (void)setStartTimestamp:(int)arg1;
+- (void)setStartTimestamp:(long long)arg1;
 - (void)setUserId:(id)arg1;
 - (void)setUserStorefrontId:(id)arg1;
 - (void)setWindowFrameInScreen:(id)arg1;
-- (int)startTimestamp;
+- (long long)startTimestamp;
 - (id)userId;
 - (id)userStorefrontId;
 - (id)windowFrameInScreen;

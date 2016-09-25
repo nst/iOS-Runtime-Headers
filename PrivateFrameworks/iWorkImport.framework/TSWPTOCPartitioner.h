@@ -13,7 +13,7 @@
 - (id)info;
 - (id)initWithInfo:(id)arg1;
 - (id)layoutForHint:(id)arg1 parentLayout:(id)arg2;
-- (id)nextHintForSize:(struct CGSize { double x1; double x2; })arg1 parentLayout:(id)arg2 previousHint:(id)arg3 horizontally:(BOOL)arg4 outFinished:(out BOOL*)arg5;
-- (id)nextLayoutForSize:(struct CGSize { double x1; double x2; })arg1 parentLayout:(id)arg2 previousHint:(id)arg3 horizontally:(BOOL)arg4 outFinished:(out BOOL*)arg5;
+- (id)nextHintForSize:(struct CGSize { float x1; float x2; })arg1 parentLayout:(id)arg2 previousHint:(id)arg3 horizontally:(BOOL)arg4 outFinished:(out BOOL*)arg5;
+- (id)nextLayoutForSize:(struct CGSize { float x1; float x2; })arg1 parentLayout:(id)arg2 previousHint:(id)arg3 horizontally:(BOOL)arg4 outFinished:(out BOOL*)arg5;
 
 @end

@@ -12,7 +12,7 @@
     unsigned int  _newRrcState;
     unsigned int  _prevStateDurMs;
     unsigned int  _rrcState;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) BOOL hasNewRrcState;
@@ -22,7 +22,7 @@
 @property (nonatomic) unsigned int newRrcState;
 @property (nonatomic) unsigned int prevStateDurMs;
 @property (nonatomic) unsigned int rrcState;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -46,8 +46,8 @@
 - (void)setNewRrcState:(unsigned int)arg1;
 - (void)setPrevStateDurMs:(unsigned int)arg1;
 - (void)setRrcState:(unsigned int)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
-- (unsigned int)timestamp;
+- (void)setTimestamp:(unsigned long long)arg1;
+- (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 
 @end

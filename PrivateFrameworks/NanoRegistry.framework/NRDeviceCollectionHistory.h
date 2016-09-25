@@ -11,7 +11,7 @@
     NSMutableArray * _historyStateCacheMRU;
     NSMutableOrderedSet * _observers;
     NSObject<OS_dispatch_queue> * _queue;
-    unsigned int  _startIndex;
+    unsigned long long  _startIndex;
 }
 
 @property (nonatomic, readonly) unsigned int count;
@@ -21,9 +21,9 @@
 @property (nonatomic, retain) NSMutableDictionary *historyStateCache;
 @property (nonatomic, retain) NSMutableArray *historyStateCacheIndex;
 @property (nonatomic, retain) NSMutableArray *historyStateCacheMRU;
-@property (nonatomic, readonly) unsigned int nextIndex;
+@property (nonatomic, readonly) unsigned long long nextIndex;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
-@property (nonatomic) unsigned int startIndex;
+@property (nonatomic) unsigned long long startIndex;
 @property (nonatomic, readonly) unsigned long switchIndex;
 
 + (BOOL)supportsSecureCoding;
@@ -44,7 +44,7 @@
 - (BOOL)dirty;
 - (void)encodeWithCoder:(id)arg1;
 - (id)history;
-- (id)historyEntryAtIndex:(unsigned int)arg1;
+- (id)historyEntryAtIndex:(unsigned long long)arg1;
 - (id)historyStateCache;
 - (id)historyStateCacheIndex;
 - (id)historyStateCacheMRU;
@@ -52,9 +52,9 @@
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToHistory:(id)arg1;
-- (unsigned int)nextIndex;
+- (unsigned long long)nextIndex;
 - (void)notifyObserversWithEntry:(id)arg1;
-- (id)objectAtIndexedSubscript:(unsigned int)arg1;
+- (id)objectAtIndexedSubscript:(unsigned long long)arg1;
 - (void)pruneStateCacheItems:(unsigned int)arg1;
 - (void)purgeWorkingSet;
 - (id)queue;
@@ -64,9 +64,9 @@
 - (void)setHistoryStateCacheIndex:(id)arg1;
 - (void)setHistoryStateCacheMRU:(id)arg1;
 - (void)setQueue:(id)arg1;
-- (void)setStartIndex:(unsigned int)arg1;
-- (unsigned int)startIndex;
-- (id)stateAtIndex:(unsigned int)arg1;
+- (void)setStartIndex:(unsigned long long)arg1;
+- (unsigned long long)startIndex;
+- (id)stateAtIndex:(unsigned long long)arg1;
 - (id)switchDeviceIDFromDiff:(id)arg1;
 - (unsigned long)switchIndex;
 

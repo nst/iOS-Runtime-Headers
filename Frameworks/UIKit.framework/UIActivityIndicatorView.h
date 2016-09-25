@@ -13,22 +13,22 @@
     BOOL  _hasShadow;
     BOOL  _hidesWhenStopped;
     NSString * _highlightArtBackupKeyString;
-    double  _innerRadius;
+    float  _innerRadius;
     UIImageView * _internalView;
     UIColor * _shadowColor;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _shadowOffset;
     BOOL  _spinning;
-    double  _spinningDuration;
+    float  _spinningDuration;
     int  _spokeCount;
     int  _spokeFrameRatio;
     NSArray * _spokeHighlightImages;
     NSArray * _spokeImages;
     BOOL  _useArtwork;
     BOOL  _useOutlineShadow;
-    double  _width;
+    float  _width;
 }
 
 @property (nonatomic) int activityIndicatorViewStyle;
@@ -39,26 +39,26 @@
 @property BOOL hasShadow;
 @property (nonatomic) BOOL hidesWhenStopped;
 @property (nonatomic, readonly) NSString *highlightArtBackupKeyString;
-@property (nonatomic) double innerRadius;
+@property (nonatomic) float innerRadius;
 @property (nonatomic, readonly) UIImageView *internalView;
 @property (nonatomic, retain) UIColor *shadowColor;
-@property (nonatomic) struct CGSize { double x1; double x2; } shadowOffset;
+@property (nonatomic) struct CGSize { float x1; float x2; } shadowOffset;
 @property BOOL spinning;
-@property (nonatomic) double spinningDuration;
+@property (nonatomic) float spinningDuration;
 @property (nonatomic) int spokeCount;
 @property (nonatomic) int spokeFrameRatio;
 @property (readonly) NSArray *spokeHighlightImages;
 @property (readonly) NSArray *spokeImages;
 @property (nonatomic) BOOL useArtwork;
 @property (nonatomic) BOOL useOutlineShadow;
-@property (nonatomic) double width;
+@property (nonatomic) float width;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (BOOL)_isModernStyle:(int)arg1;
 + (id)_loadResourcesForStyle:(int)arg1;
-+ (struct CGSize { double x1; double x2; })defaultSizeForStyle:(int)arg1;
-+ (struct CGSize { double x1; double x2; })size;
++ (struct CGSize { float x1; float x2; })defaultSizeForStyle:(int)arg1;
++ (struct CGSize { float x1; float x2; })size;
 
 - (void).cxx_destruct;
 - (float)_alphaValueForStep:(int)arg1;
@@ -81,7 +81,7 @@
 - (id)_highlightColorForStyle:(int)arg1;
 - (id)_imageForStep:(int)arg1 withColor:(id)arg2;
 - (int)_internalStyleForStyle:(int)arg1;
-- (struct CGSize { double x1; double x2; })_intrinsicSizeWithinSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })_intrinsicSizeWithinSize:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)_isArtWorkBased;
 - (BOOL)_isModern;
 - (id)_layoutInfosForStyle:(int)arg1;
@@ -95,7 +95,7 @@
 - (float)_spokeWidthForGearWidth:(float)arg1;
 - (id)_styleNameForStyle:(int)arg1;
 - (void)_tearDownAnimation;
-- (void)_updateInternalViewFrameWithBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)_updateInternalViewFrameWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (float)_widthForGearWidth:(float)arg1;
 - (int)activityIndicatorViewStyle;
 - (id)artBackupKey;
@@ -110,7 +110,7 @@
 - (id)highlightArtBackupKeyString;
 - (id)initWithActivityIndicatorStyle:(int)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (float)innerRadius;
 - (id)internalView;
 - (BOOL)isAnimating;
@@ -119,16 +119,16 @@
 - (void)setActivityIndicatorViewStyle:(int)arg1;
 - (void)setAnimating:(BOOL)arg1;
 - (void)setAnimationDuration:(double)arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setClockWise:(BOOL)arg1;
 - (void)setColor:(id)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setHasShadow:(BOOL)arg1;
 - (void)setHidesWhenStopped:(BOOL)arg1;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setInnerRadius:(float)arg1;
 - (void)setShadowColor:(id)arg1;
-- (void)setShadowOffset:(struct CGSize { double x1; double x2; })arg1;
+- (void)setShadowOffset:(struct CGSize { float x1; float x2; })arg1;
 - (void)setSpinning:(BOOL)arg1;
 - (void)setSpinningDuration:(float)arg1;
 - (void)setSpokeCount:(int)arg1;
@@ -138,8 +138,8 @@
 - (void)setUseOutlineShadow:(BOOL)arg1;
 - (void)setWidth:(float)arg1;
 - (id)shadowColor;
-- (struct CGSize { double x1; double x2; })shadowOffset;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })shadowOffset;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)spinning;
 - (float)spinningDuration;
 - (int)spokeCount;

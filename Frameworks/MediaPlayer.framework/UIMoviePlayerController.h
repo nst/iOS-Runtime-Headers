@@ -26,7 +26,7 @@
     unsigned int  _displayableParts;
     double  _duration;
     MPMovieErrorLog * _errorLog;
-    int  _fileSize;
+    long long  _fileSize;
     BOOL  _fullscreen;
     UIView * _fullscreenView;
     _UIHostedWindow * _hostedWindow;
@@ -39,12 +39,12 @@
     int  _lastSetUIInterfaceOrientation;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _layoutRect;
     BOOL  _limitReadAhead;
@@ -82,8 +82,8 @@
     }  _mpcBitfield;
     BOOL  _muted;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _naturalSize;
     unsigned int  _options;
     int  _pendingInterfaceOrientation;
@@ -95,7 +95,7 @@
     double  _playableEndTime;
     double  _playableStartTime;
     NSString * _playbackErrorDescription;
-    double  _playbackRate;
+    float  _playbackRate;
     unsigned int  _playbackState;
     MPAVController * _player;
     UINavigationController * _portraitNavigationController;
@@ -113,7 +113,7 @@
     BOOL  _videoOutActive;
     MPVideoView * _videoView;
     UIView * _view;
-    double  _volume;
+    float  _volume;
     NSString * _youTubeVideoID;
 }
 
@@ -135,7 +135,7 @@
 @property (nonatomic) BOOL disallowsVideoOut;
 @property (nonatomic, readonly) double duration;
 @property (nonatomic, readonly) MPMovieErrorLog *errorLog;
-@property (nonatomic, readonly) int fileSize;
+@property (nonatomic, readonly) long long fileSize;
 @property (getter=isFullscreen, nonatomic) BOOL fullscreen;
 @property (nonatomic, readonly) UIView *fullscreenView;
 @property (nonatomic, readonly) _UIHostedWindow *hostedWindow;
@@ -148,14 +148,14 @@
 @property (nonatomic, copy) NSString *movieTitle;
 @property (nonatomic, readonly) UIMovieView *movieView;
 @property (nonatomic, readonly) BOOL muted;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } naturalSize;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } naturalSize;
 @property (nonatomic) unsigned int options;
 @property (nonatomic) unsigned int playableContentType;
 @property (nonatomic, readonly) double playableDuration;
 @property (nonatomic, readonly) double playableEndTime;
 @property (nonatomic, readonly) double playableStartTime;
 @property (nonatomic, copy) NSString *playbackErrorDescription;
-@property (nonatomic) double playbackRate;
+@property (nonatomic) float playbackRate;
 @property (nonatomic, readonly) unsigned int playbackState;
 @property (nonatomic, retain) UIImage *posterImage;
 @property (nonatomic, readonly) double seekableEndTime;
@@ -165,7 +165,7 @@
 @property (nonatomic) BOOL useHostedWindowWhenFullscreen;
 @property (nonatomic, readonly) BOOL videoOutActive;
 @property (nonatomic, readonly) UIView *view;
-@property (nonatomic, readonly) double volume;
+@property (nonatomic, readonly) float volume;
 @property (nonatomic, copy) NSString *youTubeVideoID;
 
 - (void).cxx_destruct;
@@ -187,7 +187,7 @@
 - (BOOL)disallowsVideoOut;
 - (double)duration;
 - (id)errorLog;
-- (int)fileSize;
+- (long long)fileSize;
 - (id)fullscreenView;
 - (id)hostedWindow;
 - (unsigned int)hostedWindowContextID;
@@ -200,7 +200,7 @@
 - (id)movieTitle;
 - (id)movieView;
 - (BOOL)muted;
-- (struct CGSize { double x1; double x2; })naturalSize;
+- (struct CGSize { float x1; float x2; })naturalSize;
 - (unsigned int)options;
 - (unsigned int)playableContentType;
 - (double)playableDuration;

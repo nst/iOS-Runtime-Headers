@@ -47,8 +47,8 @@
 - (id)p_colorControlImageForTag:(int)arg1 pageTheme:(int)arg2;
 - (id)p_colorControlUnderlineImageForPageTheme:(int)arg1;
 - (id)p_colorForTag:(int)arg1 pageTheme:(int)arg2;
-- (void)p_drawColorControlCircleWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 color:(id)arg2;
-- (void)p_drawCrescentWithCircleRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 color:(id)arg2 leftShift:(float)arg3 addRadius:(float)arg4;
+- (void)p_drawColorControlCircleWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 color:(id)arg2;
+- (void)p_drawCrescentWithCircleRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 color:(id)arg2 leftShift:(float)arg3 addRadius:(float)arg4;
 - (id)p_monochromaticImageFromImage:(id)arg1 withColor:(id)arg2;
 - (id)p_noteGlyphForTag:(int)arg1 pageTheme:(int)arg2;
 - (id)p_paletteImageForTag:(int)arg1 pageTheme:(int)arg2;
@@ -62,7 +62,7 @@
 - (id)p_underlineForegroundImageForPageTheme:(int)arg1;
 - (void)p_updateAppearance;
 - (int)pageTheme;
-- (void)presentFromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 view:(id)arg2;
+- (void)presentFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 view:(id)arg2;
 - (void)releaseOutlets;
 - (id)rightArrowButton;
 - (void)setAddNoteButton:(id)arg1;

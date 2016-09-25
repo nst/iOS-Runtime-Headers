@@ -8,17 +8,17 @@
     unsigned int  _timestamp32;
 }
 
-@property (nonatomic) unsigned int counter;
+@property (nonatomic) unsigned long long counter;
 @property (nonatomic) unsigned int fails;
 @property (nonatomic) unsigned int state;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 
 + (BOOL)isValidFilename:(id)arg1;
 
 - (id)copyWithState:(unsigned int)arg1;
 - (id)copyWithState:(unsigned int)arg1 andFails:(unsigned int)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)counter;
+- (unsigned long long)counter;
 - (id)description;
 - (unsigned int)fails;
 - (unsigned int)hash;
@@ -26,11 +26,11 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)pathInDirectory:(id)arg1;
 - (id)queueItemId;
-- (void)setCounter:(unsigned int)arg1;
+- (void)setCounter:(unsigned long long)arg1;
 - (void)setFails:(unsigned int)arg1;
 - (void)setState:(unsigned int)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned int)state;
-- (unsigned int)timestamp;
+- (unsigned long long)timestamp;
 
 @end

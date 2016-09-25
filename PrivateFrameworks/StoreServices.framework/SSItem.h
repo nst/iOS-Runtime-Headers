@@ -16,7 +16,7 @@
 @property (nonatomic, readonly) NSNumber *ITunesStoreIdentifier;
 @property (nonatomic, readonly) NSArray *allItemOffers;
 @property (nonatomic, readonly) NSString *artistName;
-@property (nonatomic, readonly) double averageUserRating;
+@property (nonatomic, readonly) float averageUserRating;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) SSItemOffer *defaultItemOffer;
 @property (readonly, copy) NSString *description;

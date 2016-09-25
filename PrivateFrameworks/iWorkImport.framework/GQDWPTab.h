@@ -5,7 +5,7 @@
 @interface GQDWPTab : NSObject <GQDNameMappable> {
     int  mAlignment;
     struct __CFString { } * mLeader;
-    double  mPosition;
+    float  mPosition;
 }
 
 @property (readonly, copy) NSString *debugDescription;

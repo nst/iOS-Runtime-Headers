@@ -17,12 +17,12 @@
 + (id)imageNameForDiameter:(float)arg1;
 
 - (void).cxx_destruct;
-- (id)_cnui_likenessForSize:(struct CGSize { double x1; double x2; })arg1;
-- (id)_cnui_likenessForSize:(struct CGSize { double x1; double x2; })arg1 scale:(float)arg2;
+- (id)_cnui_likenessForSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)_cnui_likenessForSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2;
 - (unsigned int)_cnui_likenessType;
 - (id)cache;
 - (id)init;
-- (struct CGImage { }*)renderImageForSilhouetteImage:(struct CGImage { }*)arg1 size:(struct CGSize { double x1; double x2; })arg2 scale:(float)arg3;
+- (struct CGImage { }*)renderImageForSilhouetteImage:(struct CGImage { }*)arg1 size:(struct CGSize { float x1; float x2; })arg2 scale:(float)arg3;
 - (id)resourceLock;
 
 @end

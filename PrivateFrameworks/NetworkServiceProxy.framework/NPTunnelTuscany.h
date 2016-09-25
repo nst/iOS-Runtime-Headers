@@ -16,7 +16,7 @@
     NSMutableDictionary * _fallbackCounts;
     unsigned int  _idleTimeout;
     BOOL  _isCancelled;
-    unsigned int  _nextFlowID;
+    unsigned long long  _nextFlowID;
     NSPNetworkAgent * _pendingAgent;
     id /* block */  _pendingCancelCompletionHandler;
     id /* block */  _pendingPingCompletionHandler;
@@ -41,7 +41,7 @@
 @property BOOL isCancelled;
 @property (readonly) int lastWaldoDayPassResult;
 @property (readonly) unsigned int maxFrameSize;
-@property unsigned int nextFlowID;
+@property unsigned long long nextFlowID;
 @property (retain) NSPNetworkAgent *pendingAgent;
 @property (copy) id /* block */ pendingCancelCompletionHandler;
 @property (copy) id /* block */ pendingPingCompletionHandler;
@@ -53,7 +53,7 @@
 - (id)UDPDatagram;
 - (id)UDPSession;
 - (void)acknowledgeData:(unsigned int)arg1 sentToFlow:(id)arg2;
-- (unsigned int)allocateFlowID;
+- (unsigned long long)allocateFlowID;
 - (BOOL)canHandleMoreData;
 - (void)cancelConnection;
 - (void)cancelConnectionTimer;
@@ -81,7 +81,7 @@
 - (void)handleConnectionStateChanged;
 - (void)handleDisconnected;
 - (void)handleFallbackForFlow:(id)arg1;
-- (id)handleFlowClosed:(unsigned int)arg1 withError:(id)arg2;
+- (id)handleFlowClosed:(unsigned long long)arg1 withError:(id)arg2;
 - (void)handleFlowUsedTunnel;
 - (void)handleNetworkChange;
 - (void)handlePingResponseRTT:(unsigned int)arg1 geohash:(id)arg2;
@@ -95,7 +95,7 @@
 - (int)lastWaldoDayPassResult;
 - (unsigned int)maxDataSendSizeForFlow:(id)arg1;
 - (unsigned int)maxFrameSize;
-- (unsigned int)nextFlowID;
+- (unsigned long long)nextFlowID;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)pendingAgent;
 - (id /* block */)pendingCancelCompletionHandler;
@@ -106,7 +106,7 @@
 - (int)sendData:(id)arg1 forFlow:(id)arg2 packetsSent:(int*)arg3;
 - (void)sendDataOnUDPSession:(id)arg1;
 - (void)sendUsageReportWithSuccess:(BOOL)arg1 rtt:(unsigned int)arg2 geohash:(id)arg3 fallbackReason:(int)arg4;
-- (unsigned int)serviceIDForFlow:(id)arg1;
+- (unsigned long long)serviceIDForFlow:(id)arg1;
 - (void)setClientRef:(void*)arg1;
 - (void)setConnection:(id)arg1;
 - (void)setConnectionTimeout:(double)arg1;
@@ -115,7 +115,7 @@
 - (void)setDisableMultipath:(BOOL)arg1;
 - (void)setDisableUDPRace:(BOOL)arg1;
 - (void)setIsCancelled:(BOOL)arg1;
-- (void)setNextFlowID:(unsigned int)arg1;
+- (void)setNextFlowID:(unsigned long long)arg1;
 - (void)setPendingAgent:(id)arg1;
 - (void)setPendingCancelCompletionHandler:(id /* block */)arg1;
 - (void)setPendingPingCompletionHandler:(id /* block */)arg1;

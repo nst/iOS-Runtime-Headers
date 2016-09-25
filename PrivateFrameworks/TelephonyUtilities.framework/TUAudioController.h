@@ -12,7 +12,7 @@
 - (void)_enterOutstandingRequestsGroup;
 - (void)_leaveOutstandingRequestsGroup;
 - (void)_releaseLock;
-- (void)_requestUpdatedValueWithBlock:(id /* block */)arg1 object:(id*)arg2 isRequestingPointer:(BOOL*)arg3 forceNewRequest:(BOOL)arg4 scheduleTimePointer:(unsigned int*)arg5 notificationString:(id)arg6 queue:(id)arg7;
+- (void)_requestUpdatedValueWithBlock:(id /* block */)arg1 object:(id*)arg2 isRequestingPointer:(BOOL*)arg3 forceNewRequest:(BOOL)arg4 scheduleTimePointer:(unsigned long long*)arg5 notificationString:(id)arg6 queue:(id)arg7;
 - (void)blockUntilOutstandingRequestsComplete;
 - (id)init;
 

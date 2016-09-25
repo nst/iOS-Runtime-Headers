@@ -3,53 +3,53 @@
  */
 
 @interface MusicMediaDetailHeaderViewController : UIViewController <MusicMediaDetailHeaderViewController> {
-    double  _artworkFittingHeight;
+    float  _artworkFittingHeight;
     UIImage * _artworkImage;
     UIView * _contentEffectClippingView;
-    unsigned int  _contentEffectRevisionID;
+    unsigned long long  _contentEffectRevisionID;
     UISnapshotView * _contentEffectSnapshotView;
     MusicInteractiveContentEffectView * _contentEffectView;
     UIView * _darkeningTintView;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _focusRect;
     NSArray * _focusRegions;
     BOOL  _hasReceivedHeaderInformation;
-    double  _headerHeight;
+    float  _headerHeight;
     unsigned int  _headerStyle;
-    double  _headerVerticalOffset;
+    float  _headerVerticalOffset;
     unsigned int  _ignoreContentEffectSnapshotCount;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _lastContentEffectViewInputBounds;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _lastContentEffectViewSnapshotSize;
     NSString * _legibilityBottomGradientType;
     MusicMediaUberHeaderLegibilityOverlayView * _legibilityOverlayView;
-    double  _maximumHeaderHeight;
+    float  _maximumHeaderHeight;
     MusicMediaDetailTintInformation * _mediaDetailTintInformation;
     <MusicMediaDetailHeaderViewControllerDelegate> * _mediaHeaderViewControllerDelegate;
-    double  _originalContentViewControllerViewAlpha;
-    double  _transitionProgress;
+    float  _originalContentViewControllerViewAlpha;
+    float  _transitionProgress;
 }
 
-@property (nonatomic) double artworkFittingHeight;
+@property (nonatomic) float artworkFittingHeight;
 @property (nonatomic, retain) UIImage *artworkImage;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -88,6 +88,6 @@
 - (void)setMediaHeaderViewControllerDelegate:(id)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
-- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

@@ -3,13 +3,13 @@
  */
 
 @interface RCUIConfiguration : NSObject <NSCopying> {
-    double  _acousticAnnotationVerticalMargin;
+    float  _acousticAnnotationVerticalMargin;
     UIColor * _acousticGradientMaskEndColor;
     UIColor * _acousticValueColor;
     UIColor * _backgroundColor;
     NSString * _debugIdentifier;
-    double  _maximumDecibelDisplayRange;
-    double  _minimumDecibelDisplayRange;
+    float  _maximumDecibelDisplayRange;
+    float  _minimumDecibelDisplayRange;
     UIColor * _playbackPositionBarColor;
     UIColor * _playbackPositionTimeColor;
     UIColor * _selectionOverlayColor;
@@ -25,13 +25,13 @@
     UIColor * _waveformHighlightColor;
 }
 
-@property (nonatomic) double acousticAnnotationVerticalMargin;
+@property (nonatomic) float acousticAnnotationVerticalMargin;
 @property (nonatomic, retain) UIColor *acousticGradientMaskEndColor;
 @property (nonatomic, retain) UIColor *acousticValueColor;
 @property (nonatomic, retain) UIColor *backgroundColor;
 @property (nonatomic, retain) NSString *debugIdentifier;
-@property (nonatomic) double maximumDecibelDisplayRange;
-@property (nonatomic) double minimumDecibelDisplayRange;
+@property (nonatomic) float maximumDecibelDisplayRange;
+@property (nonatomic) float minimumDecibelDisplayRange;
 @property (nonatomic, retain) UIColor *playbackPositionBarColor;
 @property (nonatomic, retain) UIColor *playbackPositionTimeColor;
 @property (nonatomic, retain) UIColor *selectionOverlayColor;

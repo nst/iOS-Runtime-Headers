@@ -7,10 +7,10 @@
     int  _bravoCameraSelectionBehavior;
     BOOL  _irisRecording;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _movieFragmentInterval;
     NSArray * _movieLevelMetadata;
     BOOL  _recordVideoOrientationAndMirroringChanges;
@@ -23,7 +23,7 @@
 @property (nonatomic, copy) NSDictionary *audioSettings;
 @property (nonatomic) int bravoCameraSelectionBehavior;
 @property (getter=isIrisRecording, nonatomic) BOOL irisRecording;
-@property (nonatomic) struct { int x1; int x2; unsigned int x3; int x4; } movieFragmentInterval;
+@property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } movieFragmentInterval;
 @property (nonatomic, copy) NSArray *movieLevelMetadata;
 @property (nonatomic) BOOL recordVideoOrientationAndMirroringChanges;
 @property (nonatomic) BOOL sendPreviewIOSurface;
@@ -42,14 +42,14 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isIrisRecording;
-- (struct { int x1; int x2; unsigned int x3; int x4; })movieFragmentInterval;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })movieFragmentInterval;
 - (id)movieLevelMetadata;
 - (BOOL)recordVideoOrientationAndMirroringChanges;
 - (BOOL)sendPreviewIOSurface;
 - (void)setAudioSettings:(id)arg1;
 - (void)setBravoCameraSelectionBehavior:(int)arg1;
 - (void)setIrisRecording:(BOOL)arg1;
-- (void)setMovieFragmentInterval:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
+- (void)setMovieFragmentInterval:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setMovieLevelMetadata:(id)arg1;
 - (void)setRecordVideoOrientationAndMirroringChanges:(BOOL)arg1;
 - (void)setSendPreviewIOSurface:(BOOL)arg1;

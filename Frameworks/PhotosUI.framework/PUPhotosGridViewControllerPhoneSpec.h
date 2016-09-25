@@ -4,10 +4,10 @@
 
 @interface PUPhotosGridViewControllerPhoneSpec : PUPhotosGridViewControllerSpec
 
-+ (struct CGSize { double x1; double x2; })bestItemSizeForAvailableWidth:(float)arg1 screenScale:(float)arg2 bestSpacing:(float*)arg3 bestInset:(float*)arg4;
++ (struct CGSize { float x1; float x2; })bestItemSizeForAvailableWidth:(float)arg1 screenScale:(float)arg2 bestSpacing:(float*)arg3 bestInset:(float*)arg4;
 
 - (id)albumPickerViewControllerSpec;
-- (struct CGSize { double x1; double x2; })baseInterItemSpacing;
+- (struct CGSize { float x1; float x2; })baseInterItemSpacing;
 - (BOOL)canDisplayOptionsInPopover;
 - (BOOL)canDisplaySearchActionInNavigationBar;
 - (BOOL)canDisplaySlideshowButton;

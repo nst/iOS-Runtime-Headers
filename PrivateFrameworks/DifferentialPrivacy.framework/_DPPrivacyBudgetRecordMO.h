@@ -4,7 +4,7 @@
 
 @interface _DPPrivacyBudgetRecordMO : NSManagedObject
 
-@property (nonatomic) int balance;
+@property (nonatomic) long long balance;
 @property (nonatomic) double creationDate;
 @property (nonatomic, retain) NSString *key;
 @property (nonatomic) double lastUpdate;

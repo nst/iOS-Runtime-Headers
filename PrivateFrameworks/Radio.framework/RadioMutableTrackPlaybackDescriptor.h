@@ -8,7 +8,7 @@
 @property (nonatomic, retain) NSDate *expirationDate;
 @property (nonatomic) double pauseTime;
 @property (nonatomic, retain) NSDate *skipDate;
-@property (nonatomic) int storeID;
+@property (nonatomic) long long storeID;
 @property (nonatomic, copy) NSDictionary *trackInfo;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -16,7 +16,7 @@
 - (void)setExpirationDate:(id)arg1;
 - (void)setPauseTime:(double)arg1;
 - (void)setSkipDate:(id)arg1;
-- (void)setStoreID:(int)arg1;
+- (void)setStoreID:(long long)arg1;
 - (void)setTrackInfo:(id)arg1;
 
 @end

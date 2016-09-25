@@ -7,7 +7,7 @@
     FBSDisplay * _display;
     id /* block */  _predicate;
     int  _reason;
-    double  _sceneLevel;
+    float  _sceneLevel;
 }
 
 @property (getter=isAcquired, nonatomic, readonly) BOOL acquired;
@@ -17,7 +17,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly, copy) id /* block */ predicate;
 @property (nonatomic, readonly) int reason;
-@property (nonatomic, readonly) double sceneLevel;
+@property (nonatomic, readonly) float sceneLevel;
 @property (readonly) Class superclass;
 
 - (id)_initWithReason:(int)arg1 sceneLevel:(float)arg2 forDisplay:(id)arg3;

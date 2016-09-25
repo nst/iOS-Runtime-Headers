@@ -12,7 +12,7 @@
     }  _has;
     int  _responseType;
     int  _stage;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) int errorCode;
@@ -22,7 +22,7 @@
 @property (nonatomic) BOOL hasTimestamp;
 @property (nonatomic) int responseType;
 @property (nonatomic) int stage;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 
 - (int)StringAsResponseType:(id)arg1;
 - (int)StringAsStage:(id)arg1;
@@ -48,10 +48,10 @@
 - (void)setHasTimestamp:(BOOL)arg1;
 - (void)setResponseType:(int)arg1;
 - (void)setStage:(int)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (int)stage;
 - (id)stageAsString:(int)arg1;
-- (unsigned int)timestamp;
+- (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 
 @end

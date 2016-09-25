@@ -5,26 +5,26 @@
 @interface NTKAstronomyLocationDot : UIView {
     BOOL  _animating;
     UIColor * _innerDotColor;
-    double  _innerDotDiameter;
+    float  _innerDotDiameter;
     UIView * _innerDotImageView;
     UIView * _outerDot;
     UIColor * _outerDotColor;
-    double  _outerDotDiameter;
+    float  _outerDotDiameter;
     double  _pulseAlphaDelay;
     double  _pulseDuration;
 }
 
 @property (nonatomic) BOOL animating;
 @property (nonatomic, retain) UIColor *innerDotColor;
-@property (nonatomic) double innerDotDiameter;
+@property (nonatomic) float innerDotDiameter;
 @property (nonatomic, retain) UIView *innerDotImageView;
 @property (nonatomic, retain) UIView *outerDot;
 @property (nonatomic, retain) UIColor *outerDotColor;
-@property (nonatomic) double outerDotDiameter;
+@property (nonatomic) float outerDotDiameter;
 @property (nonatomic) double pulseAlphaDelay;
 @property (nonatomic) double pulseDuration;
 
-+ (struct CGSize { double x1; double x2; })defaultSize;
++ (struct CGSize { float x1; float x2; })defaultSize;
 
 - (void).cxx_destruct;
 - (BOOL)animating;
@@ -34,7 +34,7 @@
 - (double)defaultPulseAlphaDelay;
 - (double)defaultPulseDuration;
 - (id)initWithDefaultSize;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)innerDotColor;
 - (float)innerDotDiameter;
 - (id)innerDotImageView;

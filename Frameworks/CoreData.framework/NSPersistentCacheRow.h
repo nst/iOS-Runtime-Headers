@@ -44,6 +44,6 @@
 - (double)timestamp;
 - (double)timestampForProperty:(id)arg1;
 - (void)updateMissingRelationshipCachesFromOriginal:(id)arg1;
-- (unsigned int)version;
+- (unsigned long long)version;
 
 @end

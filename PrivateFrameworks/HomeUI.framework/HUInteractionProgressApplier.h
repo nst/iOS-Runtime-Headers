@@ -3,20 +3,20 @@
  */
 
 @interface HUInteractionProgressApplier : HUApplier <UIInteractionProgressObserver> {
-    double  _animationFromProgress;
-    double  _animationToProgress;
+    float  _animationFromProgress;
+    float  _animationToProgress;
     BOOL  _boundProgressValues;
     BOOL  _completesAtTargetState;
     HUAnimationApplier * _inFlightAnimation;
     UIInteractionProgress * _interactionProgress;
-    double  _previousInteractionProgress;
+    float  _previousInteractionProgress;
     HUAnimationSettings * _significantProgressChangeAnimationSettings;
     HUAnimationSettings * _transitionAnimationSettings;
     BOOL  _waitingOnAnimationToComplete;
 }
 
-@property (nonatomic) double animationFromProgress;
-@property (nonatomic) double animationToProgress;
+@property (nonatomic) float animationFromProgress;
+@property (nonatomic) float animationToProgress;
 @property (nonatomic) BOOL boundProgressValues;
 @property (nonatomic) BOOL completesAtTargetState;
 @property (readonly, copy) NSString *debugDescription;
@@ -24,7 +24,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) HUAnimationApplier *inFlightAnimation;
 @property (nonatomic, readonly) UIInteractionProgress *interactionProgress;
-@property (nonatomic) double previousInteractionProgress;
+@property (nonatomic) float previousInteractionProgress;
 @property (nonatomic, retain) HUAnimationSettings *significantProgressChangeAnimationSettings;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) HUAnimationSettings *transitionAnimationSettings;

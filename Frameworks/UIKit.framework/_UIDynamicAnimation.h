@@ -20,7 +20,7 @@
 + (void)_updateAnimations:(id)arg1;
 + (void)_updateAnimations:(id)arg1 timer:(id)arg2;
 + (void)_updateAnimationsWithTimer:(id)arg1;
-+ (id)dynamicAnimationForView:(id)arg1 withInitialValue:(double)arg2 velocity:(double)arg3 type:(int)arg4 anchorPoint:(struct CGPoint { double x1; double x2; })arg5;
++ (id)dynamicAnimationForView:(id)arg1 withInitialValue:(double)arg2 velocity:(double)arg3 type:(int)arg4 anchorPoint:(struct CGPoint { float x1; float x2; })arg5;
 
 - (BOOL)_animateForInterval:(double)arg1;
 - (void)_appendDescriptionToString:(id)arg1 atLevel:(int)arg2;

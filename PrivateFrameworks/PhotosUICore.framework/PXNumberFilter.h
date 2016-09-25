@@ -3,12 +3,12 @@
  */
 
 @interface PXNumberFilter : PXObservable <PXMutableNumberFilter> {
-    double  _input;
+    float  _input;
     double  _lastTime;
     struct { 
         BOOL output; 
     }  _needsUpdateFlags;
-    double  _output;
+    float  _output;
     double  _time;
 }
 
@@ -16,9 +16,9 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly) double input;
+@property (nonatomic, readonly) float input;
 @property (nonatomic, readonly) double lastTime;
-@property (setter=_setOutput:, nonatomic) double output;
+@property (setter=_setOutput:, nonatomic) float output;
 @property (readonly) Class superclass;
 @property (nonatomic) double time;
 

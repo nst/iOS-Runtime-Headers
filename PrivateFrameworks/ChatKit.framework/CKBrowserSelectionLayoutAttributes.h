@@ -4,19 +4,19 @@
 
 @interface CKBrowserSelectionLayoutAttributes : UICollectionViewLayoutAttributes {
     BOOL  _jittering;
-    double  _offsetFactorX;
-    double  _offsetFactorY;
-    double  _offsetX;
-    double  _offsetY;
+    float  _offsetFactorX;
+    float  _offsetFactorY;
+    float  _offsetX;
+    float  _offsetY;
     BOOL  _showingDeleteButton;
     double  _startTime;
 }
 
 @property (getter=isJittering, nonatomic) BOOL jittering;
-@property (nonatomic) double offsetFactorX;
-@property (nonatomic) double offsetFactorY;
-@property (nonatomic) double offsetX;
-@property (nonatomic) double offsetY;
+@property (nonatomic) float offsetFactorX;
+@property (nonatomic) float offsetFactorY;
+@property (nonatomic) float offsetX;
+@property (nonatomic) float offsetY;
 @property (getter=isShowingDeleteButton, nonatomic) BOOL showingDeleteButton;
 @property (nonatomic) double startTime;
 

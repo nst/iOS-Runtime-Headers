@@ -3,12 +3,12 @@
  */
 
 @interface TSTLayoutDynamicResizeInfoUnify : TSTLayoutDynamicResizeInfo {
-    double  mTargetHeight;
-    double  mTargetWidth;
+    float  mTargetHeight;
+    float  mTargetWidth;
 }
 
-@property (nonatomic, readonly) double targetHeight;
-@property (nonatomic, readonly) double targetWidth;
+@property (nonatomic, readonly) float targetHeight;
+@property (nonatomic, readonly) float targetWidth;
 
 - (BOOL)applyFixedHeight:(float)arg1;
 - (BOOL)applyFixedWidth:(float)arg1;

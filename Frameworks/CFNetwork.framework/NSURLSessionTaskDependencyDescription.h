@@ -16,7 +16,7 @@
 @property (nonatomic) BOOL exclusive;
 @property (readonly) NSString *parentMimeType;
 @property (readonly) NSString *parentURLPath;
-@property (nonatomic) double priority;
+@property (nonatomic) float priority;
 
 + (id)taskDependencyDescriptionWithMimeType:(id)arg1 parentMimeType:(id)arg2;
 + (id)taskDependencyDescriptionWithMimeType:(id)arg1 parentURLPath:(id)arg2;

@@ -5,8 +5,8 @@
 @interface _UIAlertControllerView : UIView <UIGestureRecognizerDelegatePrivate, UIInterfaceActionHandlerInvocationDelegate, UIScrollViewDelegate> {
     NSLayoutConstraint * _actionGroupEqualsContentViewWidthConstraint;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _actionSelectionInitialLocation;
     _UIAlertControllerActionViewMetrics * _actionViewMetrics;
     NSMutableArray * _actionViews;
@@ -58,12 +58,12 @@
     UIView * _keyboardLayoutAlignmentAvailableSpaceView;
     _UIKeyboardLayoutAlignmentView * _keyboardLayoutAlignmentView;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _largestActionDimension;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _layoutSize;
     NSLayoutConstraint * _mainActionButtonSequenceViewHeightConstraint;
     NSLayoutConstraint * _mainActionButtonSequenceViewHorizontalAlignmentConstraint;
@@ -121,13 +121,13 @@
 @property (retain) NSLayoutConstraint *discreteCancelActionViewLeadingConstraint;
 @property (retain) NSLayoutConstraint *discreteCancelActionViewTopConstraint;
 @property (retain) NSLayoutConstraint *discreteCancelActionViewWidthConstraint;
-@property (nonatomic) double effectAlpha;
+@property (nonatomic) float effectAlpha;
 @property (retain) NSLayoutConstraint *foregroundViewWidthConstraint;
 @property BOOL hasDimmingView;
 @property (readonly) unsigned int hash;
 @property (retain) NSLayoutConstraint *heightConstraint;
 @property BOOL inPopover;
-@property (getter=_layoutSize, setter=_setLayoutSize:, nonatomic) struct CGSize { double x1; double x2; } layoutSize;
+@property (getter=_layoutSize, setter=_setLayoutSize:, nonatomic) struct CGSize { float x1; float x2; } layoutSize;
 @property (retain) NSLayoutConstraint *mainActionButtonSequenceViewHeightConstraint;
 @property (retain) NSLayoutConstraint *mainActionButtonSequenceViewHorizontalAlignmentConstraint;
 @property (retain) NSLayoutConstraint *mainActionButtonSequenceViewWidthConstraint;
@@ -176,7 +176,7 @@
 - (void)_configureActionGroupViewToAllowHorizontalLayout:(BOOL)arg1;
 - (void)_contentSizeChanged;
 - (id)_contentView;
-- (struct CGSize { double x1; double x2; })_contentViewControllerSize;
+- (struct CGSize { float x1; float x2; })_contentViewControllerSize;
 - (void)_didAddContentViewController;
 - (id)_dimmingView;
 - (id)_discreteCancelActionView;
@@ -195,14 +195,14 @@
 - (float)_idealLayoutWidth;
 - (id)_indexesOfActionSectionSeparators;
 - (id)_interfaceActionForAlertAction:(id)arg1 inActionGroupView:(id)arg2;
-- (struct CGSize { double x1; double x2; })_itemSizeForHorizontalLayout:(BOOL)arg1;
-- (struct CGSize { double x1; double x2; })_itemSizeForHorizontalLayout:(BOOL)arg1 visualStyleRequiresActionRepresentationToFitItemSize:(BOOL*)arg2;
+- (struct CGSize { float x1; float x2; })_itemSizeForHorizontalLayout:(BOOL)arg1;
+- (struct CGSize { float x1; float x2; })_itemSizeForHorizontalLayout:(BOOL)arg1 visualStyleRequiresActionRepresentationToFitItemSize:(BOOL*)arg2;
 - (float)_labelHorizontalInsets;
-- (struct CGSize { double x1; double x2; })_layoutSize;
+- (struct CGSize { float x1; float x2; })_layoutSize;
 - (float)_layoutWidthForHorizontalLayout:(BOOL)arg1;
-- (struct CGSize { double x1; double x2; })_mainActionButtonSequenceViewSizeForHorizontalLayout:(BOOL)arg1 itemSize:(struct CGSize { double x1; double x2; })arg2;
+- (struct CGSize { float x1; float x2; })_mainActionButtonSequenceViewSizeForHorizontalLayout:(BOOL)arg1 itemSize:(struct CGSize { float x1; float x2; })arg2;
 - (float)_marginBetweenContentAndDiscreteCancelAction;
-- (struct CGSize { double x1; double x2; })_minimumSizeForAllActions;
+- (struct CGSize { float x1; float x2; })_minimumSizeForAllActions;
 - (id)_newStyledBackgroundView;
 - (int)_numberOfActionsForMainActionButtonSequenceView;
 - (void)_performBatchActionChangesWithBlock:(id /* block */)arg1;
@@ -234,13 +234,13 @@
 - (void)_setAttributedDetailMessage:(id)arg1;
 - (void)_setAttributedMessage:(id)arg1;
 - (void)_setAttributedTitle:(id)arg1;
-- (void)_setLayoutSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)_setLayoutSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_setMessage:(id)arg1;
 - (void)_setTitle:(id)arg1;
 - (void)_setVisualStyle:(id)arg1;
 - (BOOL)_shouldAllowPassthroughToLayersBehindUsForTouches:(id)arg1;
 - (BOOL)_shouldHaveCancelActionInMainActionButtonSequenceView;
-- (struct CGSize { double x1; double x2; })_sizeForLayoutWidthDetermination;
+- (struct CGSize { float x1; float x2; })_sizeForLayoutWidthDetermination;
 - (void)_sizeOfContentViewControllerChanged;
 - (void)_sizeOfTextFieldViewControllerChanged;
 - (float)_spaceRequiredForActionSectionsSpacing;
@@ -309,7 +309,7 @@
 - (BOOL)hasDiscreteHorizontalCancelAction;
 - (id)heightConstraint;
 - (BOOL)inPopover;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)interfaceAction:(id)arg1 invokeActionHandler:(id /* block */)arg2 completion:(id /* block */)arg3;
 - (id)mainActionButtonSequenceViewHeightConstraint;
 - (id)mainActionButtonSequenceViewHorizontalAlignmentConstraint;

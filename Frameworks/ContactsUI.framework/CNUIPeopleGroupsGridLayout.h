@@ -4,21 +4,21 @@
 
 @interface CNUIPeopleGroupsGridLayout : UICollectionViewFlowLayout {
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _intrinsicContentSize;
 }
 
-@property (nonatomic) struct CGSize { double x1; double x2; } intrinsicContentSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } intrinsicContentSize;
 
 + (unsigned int)groupCountPerRowForTraitCollection:(id)arg1;
-+ (struct CGSize { double x1; double x2; })itemSizeForTraitCollection:(id)arg1 contentSizeCategory:(id)arg2;
++ (struct CGSize { float x1; float x2; })itemSizeForTraitCollection:(id)arg1 contentSizeCategory:(id)arg2;
 + (id)layoutForTraitCollection:(id)arg1 contentSizeCategory:(id)arg2 numberOfGroups:(unsigned int)arg3;
 + (unsigned int)maximumNumberOfGroupsForTraitCollection:(id)arg1;
 + (unsigned int)maximumNumberOfRowsForTraitCollection:(id)arg1;
 + (float)verticalMargin;
 
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
-- (void)setIntrinsicContentSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
+- (void)setIntrinsicContentSize:(struct CGSize { float x1; float x2; })arg1;
 
 @end

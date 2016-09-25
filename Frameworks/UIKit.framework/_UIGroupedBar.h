@@ -8,14 +8,14 @@
     _UIButtonBar * _centerBar;
     NSLayoutConstraint * _centeringConstraint;
     BOOL  _independentGroupSizes;
-    double  _leadingBarSizeLimit;
+    float  _leadingBarSizeLimit;
     NSLayoutConstraint * _leadingLimitConstraint;
     _UIButtonBar * _leftBar;
-    double  _margin;
-    double  _minimumInterGroupSpace;
-    double  _minimumInterItemSpace;
+    float  _margin;
+    float  _minimumInterGroupSpace;
+    float  _minimumInterItemSpace;
     _UIButtonBar * _rightBar;
-    double  _trailingBarSizeLimit;
+    float  _trailingBarSizeLimit;
     NSLayoutConstraint * _trailingLimitConstraint;
     _UIButtonBarButtonVisualProvider * _visualProvider;
 }
@@ -27,13 +27,13 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL independentGroupSizes;
 @property (nonatomic, copy) NSArray *leadingBarButtonGroups;
-@property (nonatomic) double leadingBarSizeLimit;
-@property (nonatomic) double margin;
-@property (nonatomic) double minimumInterGroupSpace;
-@property (nonatomic) double minimumInterItemSpace;
+@property (nonatomic) float leadingBarSizeLimit;
+@property (nonatomic) float margin;
+@property (nonatomic) float minimumInterGroupSpace;
+@property (nonatomic) float minimumInterItemSpace;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSArray *trailingBarButtonGroups;
-@property (nonatomic) double trailingBarSizeLimit;
+@property (nonatomic) float trailingBarSizeLimit;
 @property (nonatomic, copy) _UIButtonBarButtonVisualProvider *visualProvider;
 
 - (void).cxx_destruct;
@@ -49,7 +49,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)independentGroupSizes;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutMarginsDidChange;
 - (void)layoutSubviews;
 - (id)leadingBarButtonGroups;

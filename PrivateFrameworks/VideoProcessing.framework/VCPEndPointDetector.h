@@ -8,33 +8,33 @@
     unsigned long  _musicDecision;
     NSMutableArray * _musicResults;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _musicStart;
     double  _sampleRate;
     NSMutableArray * _speechResults;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _speechStart;
-    double  _timeScaling;
+    float  _timeScaling;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _trackStart;
     unsigned long  _utteranceDecision;
     NSMutableArray * _utteranceResults;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _utteranceStart;
 }
 
@@ -43,10 +43,10 @@
 @property (readonly) NSMutableArray *utteranceResults;
 
 - (void).cxx_destruct;
-- (void)addDetectionFromTime:(const struct { int x1; int x2; unsigned int x3; int x4; }*)arg1 toTime:(const struct { int x1; int x2; unsigned int x3; int x4; }*)arg2 result:(id)arg3;
-- (long)finalize:(const struct { int x1; int x2; unsigned int x3; int x4; }*)arg1;
+- (void)addDetectionFromTime:(const struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg1 toTime:(const struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg2 result:(id)arg3;
+- (long)finalize:(const struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg1;
 - (void)handleVADEventOfType:(int)arg1 andOfCategoryNum:(unsigned long)arg2 havingTimeStamp:(double)arg3 andHavingValue:(const void*)arg4;
-- (id)initWithTrackStart:(const struct { int x1; int x2; unsigned int x3; int x4; }*)arg1 sampleRate:(double)arg2;
+- (id)initWithTrackStart:(const struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg1 sampleRate:(double)arg2;
 - (id)musicResults;
 - (id)speechResults;
 - (id)utteranceResults;

@@ -12,7 +12,7 @@
 - (void)dealloc;
 - (id)init;
 - (id)initWithServiceName:(id)arg1 onQueue:(id)arg2;
-- (/* Warning: unhandled struct encoding: '{?=I@}' */ struct { unsigned int x1; id x2; })listenForResponseWithHandler:(id /* block */)arg1 timeout:(unsigned int)arg2;
+- (/* Warning: unhandled struct encoding: '{?=I@}' */ struct { unsigned int x1; id x2; })listenForResponseWithHandler:(id /* block */)arg1 timeout:(unsigned long long)arg2;
 - (void)queue_handleMessage:(id)arg1 client:(id)arg2;
 
 @end

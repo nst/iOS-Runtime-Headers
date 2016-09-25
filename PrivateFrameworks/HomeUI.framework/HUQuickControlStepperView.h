@@ -3,13 +3,13 @@
  */
 
 @interface HUQuickControlStepperView : UIView <HUQuickControlInteractiveView> {
-    double  _accumulatedTouchDistance;
+    float  _accumulatedTouchDistance;
     UIView * _backgroundView;
     UILongPressGestureRecognizer * _gestureRecognizer;
     <HUQuickControlViewInteractionDelegate> * _interactionDelegate;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _lastTouchLocation;
     HUQuickControlStepperViewProfile * _profile;
     NSArray * _segmentViews;
@@ -19,14 +19,14 @@
     BOOL  _userInteractionActive;
 }
 
-@property (nonatomic) double accumulatedTouchDistance;
+@property (nonatomic) float accumulatedTouchDistance;
 @property (nonatomic, retain) UIView *backgroundView;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) UILongPressGestureRecognizer *gestureRecognizer;
 @property (readonly) unsigned int hash;
 @property (nonatomic) <HUQuickControlViewInteractionDelegate> *interactionDelegate;
-@property (nonatomic) struct CGPoint { double x1; double x2; } lastTouchLocation;
+@property (nonatomic) struct CGPoint { float x1; float x2; } lastTouchLocation;
 @property (nonatomic, copy) HUQuickControlStepperViewProfile *profile;
 @property (nonatomic, retain) id secondaryValue;
 @property (nonatomic, retain) NSArray *segmentViews;
@@ -52,7 +52,7 @@
 - (id)initWithProfile:(id)arg1;
 - (id)interactionDelegate;
 - (BOOL)isUserInteractionActive;
-- (struct CGPoint { double x1; double x2; })lastTouchLocation;
+- (struct CGPoint { float x1; float x2; })lastTouchLocation;
 - (void)layoutSubviews;
 - (id)profile;
 - (id)segmentViews;
@@ -62,7 +62,7 @@
 - (void)setBackgroundView:(id)arg1;
 - (void)setGestureRecognizer:(id)arg1;
 - (void)setInteractionDelegate:(id)arg1;
-- (void)setLastTouchLocation:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setLastTouchLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setProfile:(id)arg1;
 - (void)setSegmentViews:(id)arg1;
 - (void)setSelectedSegmentIndex:(id)arg1;

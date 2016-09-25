@@ -3,7 +3,7 @@
  */
 
 @interface ChartHUDView : UIView {
-    double  _barHeight;
+    float  _barHeight;
     UILabel * _centeredLabel;
     StockChartView * _chartView;
     BOOL  _enabled;
@@ -19,7 +19,7 @@
     NSMutableSet * _touchInfoSet;
 }
 
-@property (nonatomic) double barHeight;
+@property (nonatomic) float barHeight;
 @property (nonatomic) StockChartView *chartView;
 @property (nonatomic) BOOL enabled;
 @property (nonatomic, retain) StockGraphView *graphView;
@@ -36,7 +36,7 @@
 - (id)chartView;
 - (BOOL)enabled;
 - (id)graphView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isOverlayHidden;
 - (BOOL)isTrackingTouches;
 - (void)layoutSubviews;
@@ -45,7 +45,7 @@
 - (void)setBarHeight:(float)arg1;
 - (void)setChartView:(id)arg1;
 - (void)setEnabled:(BOOL)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setGraphView:(id)arg1;
 - (void)setOverlayHidden:(BOOL)arg1;
 - (void)setSelectedInterval:(int)arg1 timeZone:(id)arg2;

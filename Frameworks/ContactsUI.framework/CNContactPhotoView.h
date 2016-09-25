@@ -50,7 +50,7 @@
 - (void).cxx_destruct;
 - (void)_bounceSmallPhoto;
 - (id)_createImagePicker;
-- (id)_createImagePickerForEditingImageData:(id)arg1 withCropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (id)_createImagePickerForEditingImageData:(id)arg1 withCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (BOOL)_isUsingCuratedPhoto;
 - (id)_localizedStringForProfileAction:(id)arg1 type:(unsigned int)arg2;
 - (void)_presentFullScreenPhoto:(id)arg1;
@@ -67,7 +67,7 @@
 - (id)contacts;
 - (void)copy:(id)arg1;
 - (id)currentImageData;
-- (id)currentImageDataAndCropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg1;
+- (id)currentImageDataAndCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1;
 - (id)currentLikeness;
 - (void)dealloc;
 - (id)delegate;
@@ -76,7 +76,7 @@
 - (BOOL)hasPhoto;
 - (void)imagePickerController:(id)arg1 didFinishPickingMediaWithInfo:(id)arg2;
 - (void)imagePickerControllerDidCancel:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 monogrammerStyle:(int)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 monogrammerStyle:(int)arg2;
 - (BOOL)isAnimatingBounce;
 - (BOOL)isEditing;
 - (BOOL)isMeContact;
@@ -92,9 +92,9 @@
 - (id)pendingEditContact;
 - (id)photoViewDelegate;
 - (id)presentingViewControllerForAvatarView:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })previewController:(id)arg1 frameForPreviewItem:(id)arg2 inSourceView:(id*)arg3;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })previewController:(id)arg1 frameForPreviewItem:(id)arg2 inSourceView:(id*)arg3;
 - (id)previewController:(id)arg1 previewItemAtIndex:(int)arg2;
-- (id)previewController:(id)arg1 transitionImageForPreviewItem:(id)arg2 contentRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg3;
+- (id)previewController:(id)arg1 transitionImageForPreviewItem:(id)arg2 contentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg3;
 - (id)previewController:(id)arg1 transitionViewForPreviewItem:(id)arg2;
 - (void)previewControllerDidDismiss:(id)arg1;
 - (id)previewPath;

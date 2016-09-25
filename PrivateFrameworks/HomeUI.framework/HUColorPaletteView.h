@@ -4,7 +4,7 @@
 
 @interface HUColorPaletteView : UIView <HUQuickControlInteractiveView, UIGestureRecognizerDelegate> {
     UILongPressGestureRecognizer * _changePresetRecognizer;
-    double  _circleRadius;
+    float  _circleRadius;
     HFColorPalette * _colorPalette;
     BOOL  _colorPaletteHasChanged;
     NSArray * _colorSwatchViews;
@@ -17,7 +17,7 @@
 }
 
 @property (nonatomic, retain) UILongPressGestureRecognizer *changePresetRecognizer;
-@property (nonatomic) double circleRadius;
+@property (nonatomic) float circleRadius;
 @property (nonatomic, retain) HFColorPalette *colorPalette;
 @property (nonatomic) BOOL colorPaletteHasChanged;
 @property (nonatomic, copy) NSArray *colorSwatchViews;
@@ -59,7 +59,7 @@
 - (BOOL)isUserInteractionActive;
 - (void)layoutSubviews;
 - (id)profile;
-- (float)radiusFittingSize:(struct CGSize { double x1; double x2; })arg1;
+- (float)radiusFittingSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)selectedColor;
 - (void)setChangePresetRecognizer:(id)arg1;
 - (void)setCircleRadius:(float)arg1;

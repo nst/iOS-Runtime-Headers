@@ -21,7 +21,7 @@
 
 - (void)_adjustHostViewFrame:(id)arg1;
 - (id)_createHostViewForLayer:(id)arg1;
-- (id)_hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2 windowServerHitTestWindow:(id)arg3;
+- (id)_hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2 windowServerHitTestWindow:(id)arg3;
 - (void)_noteHostingStatusChanged;
 - (void)_rebuildLayers;
 - (void)_scene:(id)arg1 didChangeLayoutWithAnimationSettings:(id)arg2;

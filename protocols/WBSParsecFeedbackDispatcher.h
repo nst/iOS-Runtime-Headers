@@ -7,7 +7,7 @@
 
 - (void)didDisplayCompletionListItems:(NSArray *)arg1 forQuery:(WBSCompletionQuery *)arg2;
 - (void)didReceiveLocalResultsForQuery:(WBSCompletionQuery *)arg1;
-- (void)didReceiveWebSuggestionsForQuery:(WBSCompletionQuery *)arg1 fromSearchProvider:(NSString *)arg2 responseSize:(int)arg3 statusCode:(int)arg4 networkTimingData:(NSDictionary *)arg5;
+- (void)didReceiveWebSuggestionsForQuery:(WBSCompletionQuery *)arg1 fromSearchProvider:(NSString *)arg2 responseSize:(long long)arg3 statusCode:(int)arg4 networkTimingData:(NSDictionary *)arg5;
 - (void)userDidCancelSession;
 - (void)userDidCancelSession:(int)arg1;
 - (void)userDidEngageWithCardShowingResult:(WBSParsecSearchResult *)arg1 onCardOfType:(NSString *)arg2 actionType:(NSString *)arg3 actionTarget:(NSString *)arg4 destination:(NSString *)arg5;

@@ -5,12 +5,12 @@
 @interface PXMagazineRectArray : NSObject <NSCopying> {
     unsigned int  _currentIndex;
     struct PXMagazineRect { struct PXMagazineOrigin { int x_1_1_1; int x_1_1_2; } x1; struct PXMagazineSize { int x_2_1_1; int x_2_1_2; } x2; } * _rects;
-    double  _score;
+    float  _score;
     unsigned int  _size;
 }
 
 @property (nonatomic, readonly) unsigned int count;
-@property (nonatomic) double score;
+@property (nonatomic) float score;
 
 - (void)addRect:(struct PXMagazineRect { struct PXMagazineOrigin { int x_1_1_1; int x_1_1_2; } x1; struct PXMagazineSize { int x_2_1_1; int x_2_1_2; } x2; })arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

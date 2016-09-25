@@ -17,7 +17,7 @@
         unsigned int vertexBuffer; 
         unsigned int indexBuffer; 
         unsigned int atlasTexture; 
-        unsigned int loadedTexturesSet; 
+        unsigned long long loadedTexturesSet; 
         unsigned int priTextures[29]; 
         unsigned int secTextures[29]; 
         unsigned int dummyCubeTexture; 
@@ -48,6 +48,6 @@
 - (void)purge;
 - (void)renderWithScene:(id)arg1 viewport:(struct NUViewport { int x1; int x2; unsigned int x3; unsigned int x4; })arg2;
 - (id)shareGroup;
-- (id)snapshot:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
+- (id)snapshot:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 
 @end

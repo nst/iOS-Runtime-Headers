@@ -11,8 +11,8 @@
     BOOL  _isSticker;
     NSURL * _previewURL;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _size;
     NSString * _transferGUID;
 }
@@ -28,12 +28,12 @@
 @property (nonatomic, readonly) NSString *previewItemTitle;
 @property (nonatomic, readonly) NSURL *previewItemURL;
 @property (nonatomic, retain) NSURL *previewURL;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } size;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *transferGUID;
 
 + (id)UTITypes;
-+ (struct CGSize { double x1; double x2; })defaultSize;
++ (struct CGSize { float x1; float x2; })defaultSize;
 + (id)previewCache;
 + (id)previewSizingQueue;
 + (unsigned int)pxWidth;
@@ -57,7 +57,7 @@
 - (id)getIrisVideoPath;
 - (id)guid;
 - (id)imageData;
-- (id)initWithFileURL:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 transferGUID:(id)arg3 guid:(id)arg4 createdDate:(id)arg5;
+- (id)initWithFileURL:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 transferGUID:(id)arg3 guid:(id)arg4 createdDate:(id)arg5;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isIrisAsset;
 - (BOOL)isSticker;
@@ -71,7 +71,7 @@
 - (void)setIsSticker:(BOOL)arg1;
 - (void)setPreviewURL:(id)arg1;
 - (void)setTransferGUID:(id)arg1;
-- (struct CGSize { double x1; double x2; })size;
+- (struct CGSize { float x1; float x2; })size;
 - (void)startDeferredSetup;
 - (id)transferGUID;
 

@@ -42,7 +42,7 @@
 - (double)beginDataValueForSeries:(id)arg1 groupIndex:(unsigned int)arg2 valueAxisID:(id)arg3;
 - (double)beginValueForSeries:(unsigned int)arg1 index:(unsigned int)arg2 unitSpaceIntercept:(double)arg3 relativelyPositive:(BOOL)arg4 valueAxis:(id)arg5;
 - (BOOL)canUseEstimatedValueLabelsDrawingRect;
-- (id)cdeFillForSeries:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
+- (id)cdeFillForSeries:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 - (BOOL)chunkedBuildsIncludeInterceptValues;
 - (id)coordinateAxisForSeries:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

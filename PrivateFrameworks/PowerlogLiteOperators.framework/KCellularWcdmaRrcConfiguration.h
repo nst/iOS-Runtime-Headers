@@ -12,7 +12,7 @@
     }  _has;
     BOOL  _isDcConfigured;
     BOOL  _isMimoConfigured;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) unsigned int drxCycleLengthMs;
@@ -22,7 +22,7 @@
 @property (nonatomic) BOOL hasTimestamp;
 @property (nonatomic) BOOL isDcConfigured;
 @property (nonatomic) BOOL isMimoConfigured;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -46,8 +46,8 @@
 - (void)setHasTimestamp:(BOOL)arg1;
 - (void)setIsDcConfigured:(BOOL)arg1;
 - (void)setIsMimoConfigured:(BOOL)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
-- (unsigned int)timestamp;
+- (void)setTimestamp:(unsigned long long)arg1;
+- (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 
 @end

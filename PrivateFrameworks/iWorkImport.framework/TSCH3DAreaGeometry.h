@@ -12,8 +12,8 @@
     }  mBottomLine;
     int  mCapCount;
     unsigned int  mCapOffset;
-    double  mMaxZ;
-    double  mMinZ;
+    float  mMaxZ;
+    float  mMinZ;
     BOOL  mStacked;
     struct vector<glm::detail::tvec3<float>, std::__1::allocator<glm::detail::tvec3<float> > > { 
         struct tvec3<float> {} *__begin_; 
@@ -22,18 +22,18 @@
             struct tvec3<float> {} *__first_; 
         } __end_cap_; 
     }  mTopLine;
-    double  mZeroValue;
+    float  mZeroValue;
 }
 
-@property (nonatomic) double maxZ;
-@property (nonatomic) double minZ;
+@property (nonatomic) float maxZ;
+@property (nonatomic) float minZ;
 @property (nonatomic) BOOL stacked;
-@property (nonatomic) double zeroValue;
+@property (nonatomic) float zeroValue;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (const struct vector<glm::detail::tvec3<float>, std::__1::allocator<glm::detail::tvec3<float> > > { struct tvec3<float> {} *x1; struct tvec3<float> {} *x2; struct __compressed_pair<glm::detail::tvec3<float> *, std::__1::allocator<glm::detail::tvec3<float> > > { struct tvec3<float> {} *x_3_1_1; } x3; }*)bottomLine;
-- (struct tvec2<float> { union { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; union { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; })bottomTopAtPosition:(float)arg1;
+- (struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; })bottomTopAtPosition:(float)arg1;
 - (int)capCount;
 - (unsigned int)capOffset;
 - (id)elementsBoundsPositions;

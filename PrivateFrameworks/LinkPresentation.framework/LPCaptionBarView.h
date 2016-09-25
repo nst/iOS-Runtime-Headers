@@ -29,7 +29,7 @@
 - (void).cxx_destruct;
 - (void)_buildViewsForCaptionBarIfNeeded;
 - (id)_createIndeterminateProgressIndicator;
-- (struct CGSize { double x1; double x2; })_layoutCaptionBarForSize:(struct CGSize { double x1; double x2; })arg1 applyingLayout:(BOOL)arg2;
+- (struct CGSize { float x1; float x2; })_layoutCaptionBarForSize:(struct CGSize { float x1; float x2; })arg1 applyingLayout:(BOOL)arg2;
 - (void)animateInWithBaseAnimation:(id)arg1 currentTime:(double)arg2;
 - (void)animateOut;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
@@ -38,7 +38,7 @@
 - (void)layoutComponentView;
 - (void)setPlaybackInformation:(id)arg1;
 - (void)setUseProgressSpinner:(BOOL)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)useProgressSpinner;
 
 @end

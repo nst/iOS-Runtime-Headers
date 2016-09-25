@@ -47,7 +47,7 @@
 - (BOOL)collectionView:(id)arg1 shouldShowMenuForItemAtIndexPath:(id)arg2;
 - (id)collectionviewLayout;
 - (id)committedViewControllerForPreviewViewController:(id)arg1;
-- (struct CGSize { double x1; double x2; })contentSize;
+- (struct CGSize { float x1; float x2; })contentSize;
 - (void)dealloc;
 - (id)delegate;
 - (id)deleteButton;
@@ -67,15 +67,15 @@
 - (float)paddingLeftRightForCell;
 - (float)paddingTopBottomForCell;
 - (id)parentRightBarButtonItemsToRestore;
-- (void)parentScrollViewDidScroll:(struct CGPoint { double x1; double x2; })arg1;
+- (void)parentScrollViewDidScroll:(struct CGPoint { float x1; float x2; })arg1;
 - (void)performAction:(SEL)arg1 forSharedContentsCollectionViewCell:(id)arg2;
 - (id)presentingViewControllerForAvatarView:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })previewController:(id)arg1 frameForPreviewItem:(id)arg2 inSourceView:(id*)arg3;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })previewController:(id)arg1 frameForPreviewItem:(id)arg2 inSourceView:(id*)arg3;
 - (BOOL)previewController:(id)arg1 shouldOpenURL:(id)arg2 forPreviewItem:(id)arg3;
-- (id)previewController:(id)arg1 transitionViewForPreviewItem:(id)arg2 uncroppedSourceFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg3 realSize:(struct CGSize { double x1; double x2; }*)arg4;
+- (id)previewController:(id)arg1 transitionViewForPreviewItem:(id)arg2 uncroppedSourceFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg3 realSize:(struct CGSize { float x1; float x2; }*)arg4;
 - (void)previewControllerDidDismiss:(id)arg1;
 - (void)previewingContext:(id)arg1 commitViewController:(id)arg2;
-- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { double x1; double x2; })arg2;
+- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { float x1; float x2; })arg2;
 - (id)qlPreviewController;
 - (id)saveButton;
 - (void)saveSelectedContents:(id)arg1;
@@ -97,6 +97,6 @@
 - (void)updateAttachmentItems:(id)arg1;
 - (void)updateToolbar;
 - (void)viewDidDisappear:(BOOL)arg1;
-- (void)willPresentPreviewViewController:(id)arg1 forLocation:(struct CGPoint { double x1; double x2; })arg2 inSourceView:(id)arg3;
+- (void)willPresentPreviewViewController:(id)arg1 forLocation:(struct CGPoint { float x1; float x2; })arg2 inSourceView:(id)arg3;
 
 @end

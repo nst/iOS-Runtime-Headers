@@ -5,26 +5,26 @@
 @interface UISlidingBarConfiguration : NSObject <NSCopying> {
     BOOL  _allowMixedSideBySideAndOverlay;
     UIColor * _borderColor;
-    double  _leadingBorderWidth;
+    float  _leadingBorderWidth;
     BOOL  _leadingMayBeHidden;
     NSArray * _leadingWidths;
-    double  _maximumMainWidth;
-    double  _minimumMainWidthFraction;
-    double  _minimumMainWidthFractionForSecondColumn;
-    double  _trailingBorderWidth;
+    float  _maximumMainWidth;
+    float  _minimumMainWidthFraction;
+    float  _minimumMainWidthFractionForSecondColumn;
+    float  _trailingBorderWidth;
     BOOL  _trailingMayBeHidden;
     NSArray * _trailingWidths;
 }
 
 @property (nonatomic) BOOL allowMixedSideBySideAndOverlay;
 @property (nonatomic, retain) UIColor *borderColor;
-@property (nonatomic) double leadingBorderWidth;
+@property (nonatomic) float leadingBorderWidth;
 @property (nonatomic) BOOL leadingMayBeHidden;
 @property (nonatomic, copy) NSArray *leadingWidths;
-@property (nonatomic) double maximumMainWidth;
-@property (nonatomic) double minimumMainWidthFraction;
-@property (nonatomic) double minimumMainWidthFractionForSecondColumn;
-@property (nonatomic) double trailingBorderWidth;
+@property (nonatomic) float maximumMainWidth;
+@property (nonatomic) float minimumMainWidthFraction;
+@property (nonatomic) float minimumMainWidthFractionForSecondColumn;
+@property (nonatomic) float trailingBorderWidth;
 @property (nonatomic) BOOL trailingMayBeHidden;
 @property (nonatomic, copy) NSArray *trailingWidths;
 

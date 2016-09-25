@@ -3,12 +3,12 @@
  */
 
 @interface BLRetouchExposureLayer : BLRetouchEffectLayer {
-    double * _cubeData;
-    double  _currentExposure;
-    double  _exposure;
+    float * _cubeData;
+    float  _currentExposure;
+    float  _exposure;
 }
 
-@property (nonatomic) double exposure;
+@property (nonatomic) float exposure;
 
 + (id)layerWithExposure:(float)arg1;
 

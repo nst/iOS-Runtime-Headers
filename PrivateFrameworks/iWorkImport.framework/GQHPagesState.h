@@ -30,20 +30,20 @@
     BOOL  mIsMappingHeadersFooters;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  mLastFrame;
     GQDWPContainerHint * mLastInsertedContainerHint;
     BOOL  mMappingFloatingDrawables;
     int  mMode;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  mPageSize;
     struct __CFDictionary { } * mPageWrapPointsMap;
     int  mProgressiveIndex;
@@ -89,7 +89,7 @@
 - (BOOL)hasLayoutDrawables;
 - (id)headerForName:(struct __CFString { }*)arg1;
 - (void)inContent;
-- (id)initWithState:(id)arg1 documentSize:(struct CGSize { double x1; double x2; })arg2;
+- (id)initWithState:(id)arg1 documentSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)insertAttachmentPlaceholder;
 - (BOOL)isMappingHeadersFooters;
 - (void)mapFloatingDrawablesForPageAtIndex:(unsigned int)arg1;
@@ -101,7 +101,7 @@
 - (void)overrideSectionStyle:(id)arg1;
 - (struct __CFArray { }*)pageDrawables:(int)arg1;
 - (int)pageNumberForHeaderOrFooter;
-- (struct CGSize { double x1; double x2; })pageSize;
+- (struct CGSize { float x1; float x2; })pageSize;
 - (struct __CFDictionary { }*)pagesOrderToCssZOrderClassMapDictionary;
 - (void)popTocHref;
 - (void)pushTocHref:(struct __CFString { }*)arg1;
@@ -122,7 +122,7 @@
 - (void)setMode:(int)arg1;
 - (void)setOutlineLevel:(int)arg1;
 - (void)setOutlineStyleType:(int)arg1;
-- (void)setPageSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setPageSize:(struct CGSize { float x1; float x2; })arg1;
 - (bool)splitNextAttachment;
 - (void)startLayout;
 - (void)startSection;

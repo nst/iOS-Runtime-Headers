@@ -12,14 +12,14 @@
 
 @property (nonatomic, readonly, retain) NSObject<OS_xpc_object> *payload;
 
-+ (id)message:(int)arg1 withPacker:(id /* block */)arg2;
-+ (id)message:(int)arg1 withPacker:(id /* block */)arg2 replyHandler:(id /* block */)arg3 replyQueue:(id)arg4;
++ (id)message:(long long)arg1 withPacker:(id /* block */)arg2;
++ (id)message:(long long)arg1 withPacker:(id /* block */)arg2 replyHandler:(id /* block */)arg3 replyQueue:(id)arg4;
 + (const char *)messageTypeKey;
 + (id)messageWithPacker:(id /* block */)arg1;
 + (id)messageWithPacker:(id /* block */)arg1 replyHandler:(id /* block */)arg2 replyQueue:(id)arg3;
 + (id)messageWithPayload:(id)arg1;
-+ (void)sendMessage:(int)arg1 toConnection:(id)arg2 withMessagePacker:(id /* block */)arg3;
-+ (void)sendMessage:(int)arg1 toConnection:(id)arg2 withMessagePacker:(id /* block */)arg3 replyHandler:(id /* block */)arg4 replyQueue:(id)arg5;
++ (void)sendMessage:(long long)arg1 toConnection:(id)arg2 withMessagePacker:(id /* block */)arg3;
++ (void)sendMessage:(long long)arg1 toConnection:(id)arg2 withMessagePacker:(id /* block */)arg3 replyHandler:(id /* block */)arg4 replyQueue:(id)arg5;
 + (void)sendMessageWithPacker:(id /* block */)arg1 toConnection:(id)arg2;
 + (void)sendMessageWithPacker:(id /* block */)arg1 toConnection:(id)arg2 replyHandler:(id /* block */)arg3 replyQueue:(id)arg4;
 
@@ -27,7 +27,7 @@
 - (void)dealloc;
 - (id)description;
 - (void)forcefullyInvokeReplyHandler:(id)arg1;
-- (id)initWithMessage:(int)arg1 packer:(id /* block */)arg2 replyHandler:(id /* block */)arg3 replyQueue:(id)arg4;
+- (id)initWithMessage:(long long)arg1 packer:(id /* block */)arg2 replyHandler:(id /* block */)arg3 replyQueue:(id)arg4;
 - (id)initWithMessage:(id)arg1 replyHandler:(id /* block */)arg2 replyQueue:(id)arg3;
 - (id)initWithMessagePacker:(id /* block */)arg1 replyHandler:(id /* block */)arg2 replyQueue:(id)arg3;
 - (id)payload;

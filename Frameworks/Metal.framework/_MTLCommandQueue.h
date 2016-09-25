@@ -4,8 +4,8 @@
 
 @interface _MTLCommandQueue : NSObject {
     BOOL  _StatEnabled;
-    unsigned int  _StatLocations;
-    unsigned int  _StatOptions;
+    unsigned long long  _StatLocations;
+    unsigned long long  _StatOptions;
     int  _backgroundTrackingPID;
     NSObject<OS_dispatch_semaphore> * _commandBufferSemaphore;
     NSObject<OS_dispatch_queue> * _commandQueueDispatch;
@@ -13,9 +13,9 @@
     NSObject<OS_dispatch_queue> * _completionQueueDispatch;
     _MTLDevice * _dev;
     BOOL  _executionEnabled;
-    unsigned int  _globalTraceObjectID;
+    unsigned long long  _globalTraceObjectID;
     NSString * _label;
-    unsigned int  _labelTraceID;
+    unsigned long long  _labelTraceID;
     unsigned int  _listIndex;
     unsigned int  _maxCommandBufferCount;
     unsigned int  _numCommandBuffers;
@@ -39,11 +39,11 @@
 }
 
 @property (getter=isStatEnabled, nonatomic) BOOL StatEnabled;
-@property (getter=getStatLocations, nonatomic) unsigned int StatLocations;
-@property (getter=getStatOptions, nonatomic) unsigned int StatOptions;
+@property (getter=getStatLocations, nonatomic) unsigned long long StatLocations;
+@property (getter=getStatOptions, nonatomic) unsigned long long StatOptions;
 @property int backgroundTrackingPID;
 @property BOOL executionEnabled;
-@property (readonly) unsigned int globalTraceObjectID;
+@property (readonly) unsigned long long globalTraceObjectID;
 @property (readonly) BOOL isOpenGLQueue;
 @property (copy) NSString *label;
 @property (getter=getListIndex, nonatomic) unsigned int listIndex;
@@ -58,7 +58,7 @@
 - (void)addPerfSampleHandler:(id /* block */)arg1;
 - (void)availableCounters;
 - (int)backgroundTrackingPID;
-- (void)commandBufferDidComplete:(id)arg1 startTime:(unsigned int)arg2 completionTime:(unsigned int)arg3 error:(id)arg4;
+- (void)commandBufferDidComplete:(id)arg1 startTime:(unsigned long long)arg2 completionTime:(unsigned long long)arg3 error:(id)arg4;
 - (void)commitCommandBuffer:(id)arg1 wake:(BOOL)arg2;
 - (void)completeCommandBuffers:(id*)arg1 count:(unsigned int)arg2;
 - (void)dealloc;
@@ -68,9 +68,9 @@
 - (void)finish;
 - (unsigned int)getAndIncrementNumCommandBuffers;
 - (unsigned int)getListIndex;
-- (unsigned int)getStatLocations;
-- (unsigned int)getStatOptions;
-- (unsigned int)globalTraceObjectID;
+- (unsigned long long)getStatLocations;
+- (unsigned long long)getStatOptions;
+- (unsigned long long)globalTraceObjectID;
 - (id)initWithDevice:(id)arg1;
 - (id)initWithDevice:(id)arg1 descriptor:(id)arg2;
 - (id)initWithDevice:(id)arg1 maxCommandBufferCount:(unsigned int)arg2;
@@ -93,8 +93,8 @@
 - (void)setProfilingEnabled:(BOOL)arg1;
 - (void)setSkipRender:(BOOL)arg1;
 - (void)setStatEnabled:(BOOL)arg1;
-- (void)setStatLocations:(unsigned int)arg1;
-- (void)setStatOptions:(unsigned int)arg1;
+- (void)setStatLocations:(unsigned long long)arg1;
+- (void)setStatOptions:(unsigned long long)arg1;
 - (void)setSubmissionQueue:(id)arg1;
 - (BOOL)skipRender;
 - (void)submitCommandBuffers:(const id*)arg1 count:(unsigned int)arg2;

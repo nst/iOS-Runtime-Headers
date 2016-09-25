@@ -70,7 +70,7 @@
 - (void)swapInDuetHelperStub:(id)arg1;
 - (BOOL)updateOrInsertHistogramData:(id)arg1 forHistogram:(int)arg2;
 - (BOOL)updateOrInsertSubsequentLaunchCountData:(id)arg1 forBundleId:(id)arg2;
-- (BOOL)updateOrInsertTimestamp:(int)arg1 intoColumn:(id)arg2 forBundleId:(id)arg3;
+- (BOOL)updateOrInsertTimestamp:(long long)arg1 intoColumn:(id)arg2 forBundleId:(id)arg3;
 - (void)updateSchemaVersionNumberTo:(int)arg1;
 - (void)writeLaunches:(id)arg1 followingBundle:(id)arg2;
 

@@ -3,13 +3,13 @@
  */
 
 @interface MPDetailScrubController : NSObject {
-    double  _accumulatedDelta;
+    float  _accumulatedDelta;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _beginLocationInView;
     int  _currentScrubSpeed;
-    double  _currentValue;
+    float  _currentValue;
     <MPDetailScrubControllerDelegate> * _delegate;
     BOOL  _detailedScrubbingEnabled;
     BOOL  _didBeginTracking;
@@ -17,16 +17,16 @@
     _UIFeedbackRetargetBehavior * _feedbackBehavior;
     BOOL  _isTracking;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _lastCommittedLocationInView;
     BOOL  _needsCommit;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _previousLocationInView;
     UIControl<MPDetailedScrubbing> * _scrubbingControl;
-    double  _scrubbingVerticalRange;
+    float  _scrubbingVerticalRange;
 }
 
 @property (nonatomic, readonly) int currentScrubSpeed;
@@ -36,7 +36,7 @@
 @property (nonatomic, readonly) BOOL durationAllowsForDetailedScrubbing;
 @property (nonatomic, readonly) BOOL isTracking;
 @property (nonatomic) UIControl<MPDetailedScrubbing> *scrubbingControl;
-@property (nonatomic) double scrubbingVerticalRange;
+@property (nonatomic) float scrubbingVerticalRange;
 
 - (void).cxx_destruct;
 - (void)_beginScrubbing;

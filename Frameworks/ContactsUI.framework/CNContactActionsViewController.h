@@ -48,11 +48,11 @@
 - (void)contactActionsTableView:(id)arg1 didSelectActionTypeAtIndex:(int)arg2;
 - (void)contactActionsTableView:(id)arg1 didSelectActionTypeExpandControlAtIndex:(int)arg2;
 - (void)contentDidChange;
-- (struct CGSize { double x1; double x2; })currentContentSize;
+- (struct CGSize { float x1; float x2; })currentContentSize;
 - (id)delegate;
 - (id)displayedExpandedActionType;
 - (id)displayedPreparedActionTypes;
-- (struct CGSize { double x1; double x2; })doubleFieldsCellSize;
+- (struct CGSize { float x1; float x2; })doubleFieldsCellSize;
 - (void)expandActionType:(id)arg1;
 - (id)expandedActionType;
 - (id)imageForActionType:(id)arg1;
@@ -79,7 +79,7 @@
 - (void)setModelsByActionTypes:(id)arg1;
 - (void)setPreparedActionTypes:(id)arg1;
 - (void)setTableView:(id)arg1;
-- (struct CGSize { double x1; double x2; })singleFieldCellSize;
+- (struct CGSize { float x1; float x2; })singleFieldCellSize;
 - (void)startTrackingRolloverWithGestureRecognizer:(id)arg1;
 - (void)stopTrackingRollover;
 - (id)tableView;
@@ -92,6 +92,6 @@
 - (void)updateTableViewStateAnimated:(BOOL)arg1;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

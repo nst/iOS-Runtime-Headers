@@ -71,7 +71,7 @@
 - (void)setToggled:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setToggledContents:(id)arg1;
 - (void)setToggledTitle:(id)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (int)toggleButtonType;
 - (id)toggleItemIdentifier;
 - (id)toggledContents;

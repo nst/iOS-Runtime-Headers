@@ -21,7 +21,7 @@
 + (id)_errorWithMMCSError:(id)arg1 description:(id)arg2 operationType:(int)arg3;
 + (id)_errorWithMMCSError:(id)arg1 path:(id)arg2 description:(id)arg3 operationType:(int)arg4;
 + (id)_userInfoFromMMCSRetryableError:(id)arg1;
-+ (BOOL)isTrackingItemID:(unsigned int)arg1;
++ (BOOL)isTrackingItemID:(unsigned long long)arg1;
 + (id)protocolVersion;
 + (void)purgeMMCSDirectoryWithPath:(id)arg1;
 + (id)sharedItemIDs;
@@ -41,7 +41,7 @@
 - (id)_contextToPutItemGroup:(id)arg1 operation:(id)arg2 options:(id)arg3 progress:(id /* block */)arg4 completionHandler:(id /* block */)arg5;
 - (id)_contextToPutSectionItem:(id)arg1 operation:(id)arg2 options:(id)arg3 progress:(id /* block */)arg4 completionHandler:(id /* block */)arg5;
 - (id)_contextToRegisterItemGroup:(id)arg1 operation:(id)arg2 fetchOnly:(BOOL)arg3 options:(id)arg4 completionHandler:(id /* block */)arg5;
-- (BOOL)_getRegisteredItemsGreaterThan:(unsigned int)arg1 itemIds:(unsigned int*)arg2 itemCount:(unsigned int*)arg3 error:(id*)arg4;
+- (BOOL)_getRegisteredItemsGreaterThan:(unsigned long long)arg1 itemIds:(unsigned long long*)arg2 itemCount:(unsigned long long*)arg3 error:(id*)arg4;
 - (void)_logMMCSOptions:(id)arg1;
 - (id)_referenceIdentifierFromAssetKey:(id)arg1;
 - (void)_unregisterItemIDs:(id)arg1;
@@ -59,7 +59,7 @@
 - (id)registerItemGroupSet:(id)arg1 operation:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)registerItemGroupSet:(id)arg1 operation:(id)arg2 shouldChunk:(BOOL)arg3 completionHandler:(id /* block */)arg4;
 - (id)registerItemGroupSet:(id)arg1 operation:(id)arg2 shouldChunk:(BOOL)arg3 fetchOnly:(BOOL)arg4 completionHandler:(id /* block */)arg5;
-- (BOOL)registeredItemCount:(unsigned int*)arg1 error:(id*)arg2;
+- (BOOL)registeredItemCount:(unsigned long long*)arg1 error:(id*)arg2;
 - (void)setAssetCache:(id)arg1;
 - (void)setMMCSEngineContext:(id)arg1;
 - (void)setPath:(id)arg1;

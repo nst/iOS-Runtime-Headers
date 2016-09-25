@@ -6,7 +6,7 @@
     struct opaqueCMSession { } * _CMSession;
     struct __CFString { } * _CMSessionAudioMode;
     struct opaqueCMSimpleQueue { } * _activeBuffersQueue;
-    int  _auRenderCount;
+    long long  _auRenderCount;
     unsigned long  _auSubType;
     int  _audioLevelUnits;
     struct OpaqueAudioComponentInstance { } * _audioUnit;
@@ -19,14 +19,14 @@
     BOOL  _configuresSession;
     struct TimestampedAudioBufferList { 
         struct __CFAllocator {} *allocator; 
-        int auRenderCount; 
+        long long auRenderCount; 
         unsigned int dataBytesCapacity; 
         unsigned int numFrames; 
         struct { 
-            int value; 
+            long long value; 
             int timescale; 
             unsigned int flags; 
-            int epoch; 
+            long long epoch; 
         } pts; 
         struct AudioBufferList {} *abl; 
         unsigned int numPrependedSilenceFrames; 
@@ -38,22 +38,22 @@
     struct opaqueCMSimpleQueue { } * _inactiveBuffersQueue;
     BOOL  _isAppAudioSession;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _latencyOffset;
     BOOL  _levelMeteringEnabled;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _nextExpectedSampleTime;
     unsigned int  _pullDuration;
     struct opaqueCMSimpleQueue { } * _renderProcErrorQueue;
     BOOL  _selectsMicForFrontCamera;
-    int  _silenceFramesGeneratedSinceLastAURenderProc;
+    long long  _silenceFramesGeneratedSinceLastAURenderProc;
     NSObject<OS_dispatch_source> * _silenceTimer;
     BOOL  _streamInterrupted;
     BOOL  _streamStarted;
@@ -72,7 +72,7 @@
 - (unsigned int)_audioCombinedLatency;
 - (BOOL)_cmSessionBooleanPropertyIsTrue:(struct __CFString { }*)arg1;
 - (long)_configureCMSessionWithDefaultHardwareSampleRate:(double)arg1 didCallDoNotNotifyOtherSessionsOnNextInactive:(BOOL*)arg2;
-- (struct opaqueCMSampleBuffer { }*)_createSampleBufferForTimestampedAudioBufferList:(struct TimestampedAudioBufferList { struct __CFAllocator {} *x1; int x2; unsigned int x3; unsigned int x4; struct { int x_5_1_1; int x_5_1_2; unsigned int x_5_1_3; int x_5_1_4; } x5; struct AudioBufferList {} *x6; unsigned int x7; }*)arg1;
+- (struct opaqueCMSampleBuffer { }*)_createSampleBufferForTimestampedAudioBufferList:(struct TimestampedAudioBufferList { struct __CFAllocator {} *x1; long long x2; unsigned int x3; unsigned int x4; struct { long long x_5_1_1; int x_5_1_2; unsigned int x_5_1_3; long long x_5_1_4; } x5; struct AudioBufferList {} *x6; unsigned int x7; }*)arg1;
 - (long)_deactivateCMSessionIfNecessary:(BOOL*)arg1;
 - (long)_generatePullBuffers;
 - (void)_generateSamples;

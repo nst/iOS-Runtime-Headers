@@ -6,20 +6,20 @@
     NSString * _name;
     struct PolylineCoordinate { 
         unsigned int index; 
-        double offset; 
+        float offset; 
     }  _routeOffset;
     NSString * _shieldGroup;
 }
 
 @property (nonatomic, readonly, retain) NSString *name;
-@property (nonatomic, readonly) struct PolylineCoordinate { unsigned int x1; double x2; } routeOffset;
+@property (nonatomic, readonly) struct PolylineCoordinate { unsigned int x1; float x2; } routeOffset;
 @property (nonatomic, readonly, retain) NSString *shieldGroup;
 
 - (id).cxx_construct;
 - (void)dealloc;
-- (id)initWithName:(id)arg1 shieldGroup:(id)arg2 offset:(struct PolylineCoordinate { unsigned int x1; double x2; })arg3;
+- (id)initWithName:(id)arg1 shieldGroup:(id)arg2 offset:(struct PolylineCoordinate { unsigned int x1; float x2; })arg3;
 - (id)name;
-- (struct PolylineCoordinate { unsigned int x1; double x2; })routeOffset;
+- (struct PolylineCoordinate { unsigned int x1; float x2; })routeOffset;
 - (id)shieldGroup;
 
 @end

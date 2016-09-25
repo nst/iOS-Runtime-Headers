@@ -9,9 +9,9 @@
 }
 
 @property (nonatomic, retain) id boostContext;
-@property (nonatomic) int broadcastID;
+@property (nonatomic) long long broadcastID;
 @property (nonatomic) NSNumber *broadcastTime;
-@property (nonatomic) int connectionType;
+@property (nonatomic) long long connectionType;
 @property (nonatomic) BOOL expectsPeerResponse;
 @property (nonatomic, copy) NSString *fromID;
 @property (nonatomic, copy) NSString *incomingResponseIdentifier;
@@ -28,9 +28,9 @@
 // Image: /System/Library/PrivateFrameworks/IDSFoundation.framework/IDSFoundation
 
 - (id)boostContext;
-- (int)broadcastID;
+- (long long)broadcastID;
 - (id)broadcastTime;
-- (int)connectionType;
+- (long long)connectionType;
 - (void)dealloc;
 - (BOOL)expectsPeerResponse;
 - (id)fromID;
@@ -43,9 +43,9 @@
 - (id)priority;
 - (id)serviceIdentifier;
 - (void)setBoostContext:(id)arg1;
-- (void)setBroadcastID:(int)arg1;
+- (void)setBroadcastID:(long long)arg1;
 - (void)setBroadcastTime:(id)arg1;
-- (void)setConnectionType:(int)arg1;
+- (void)setConnectionType:(long long)arg1;
 - (void)setExpectsPeerResponse:(BOOL)arg1;
 - (void)setFromID:(id)arg1;
 - (void)setIncomingResponseIdentifier:(id)arg1;

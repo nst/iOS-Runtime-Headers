@@ -4,7 +4,7 @@
 
 @interface MPConcreteMediaItem : MPMediaItem <MPCacheableConcreteMediaEntity, MPMediaItemArrayPIDEncodableItem, NSCoding, NSCopying> {
     MPMediaLibrary * _library;
-    unsigned int  _persistentID;
+    unsigned long long  _persistentID;
     MPConcreteMediaEntityPropertiesCache * _propertiesCache;
 }
 
@@ -14,12 +14,12 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
-+ (id)concreteMediaItemWithPersistentID:(unsigned int)arg1;
-+ (id)concreteMediaItemWithPersistentID:(unsigned int)arg1 library:(id)arg2;
++ (id)concreteMediaItemWithPersistentID:(unsigned long long)arg1;
++ (id)concreteMediaItemWithPersistentID:(unsigned long long)arg1 library:(id)arg2;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)_initWithPersistentID:(unsigned int)arg1 library:(id)arg2 propertiesCache:(id)arg3;
+- (id)_initWithPersistentID:(unsigned long long)arg1 library:(id)arg2 propertiesCache:(id)arg3;
 - (id)_nonBatchableOrCachedValueForProperty:(id)arg1 needsFetch:(BOOL*)arg2;
 - (id)cachedPropertyValues;
 - (id)cachedValueForProperty:(id)arg1 isCached:(BOOL*)arg2;
@@ -36,15 +36,15 @@
 - (void)incrementSkipCount;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithPersistentID:(unsigned int)arg1;
-- (id)initWithPersistentID:(unsigned int)arg1 library:(id)arg2;
+- (id)initWithPersistentID:(unsigned long long)arg1;
+- (id)initWithPersistentID:(unsigned long long)arg1 library:(id)arg2;
 - (void)invalidateCachedProperties;
 - (Class)itemArrayCoderPIDDataCodingClass;
 - (void)markNominalAmountHasBeenPlayed;
 - (id)mediaLibrary;
 - (double)nominalHasBeenPlayedThreshold;
 - (void)noteWasPlayedToTime:(double)arg1 skipped:(BOOL)arg2;
-- (unsigned int)persistentID;
+- (unsigned long long)persistentID;
 - (void)reallyIncrementPlayCount;
 - (BOOL)setValue:(id)arg1 forProperty:(id)arg2;
 - (void)setValue:(id)arg1 forProperty:(id)arg2 withCompletionBlock:(id /* block */)arg3;

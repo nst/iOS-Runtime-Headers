@@ -27,7 +27,7 @@
 - (id)_baseKeyForName:(id)arg1;
 - (id)_baseTextureKeyForName:(id)arg1;
 - (id)_defaultAssetRenditionKey:(id)arg1;
-- (BOOL)_doStyledQuartzDrawingInContext:(struct CGContext { }*)arg1 inBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 stylePresetName:(id)arg3 styleConfiguration:(id)arg4 drawingHandler:(id /* block */)arg5;
+- (BOOL)_doStyledQuartzDrawingInContext:(struct CGContext { }*)arg1 inBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 stylePresetName:(id)arg3 styleConfiguration:(id)arg4 drawingHandler:(id /* block */)arg5;
 - (id)_resolvedRenditionKeyForName:(id)arg1 scaleFactor:(float)arg2 deviceIdiom:(int)arg3 deviceSubtype:(unsigned int)arg4 displayGamut:(int)arg5 layoutDirection:(int)arg6 sizeClassHorizontal:(int)arg7 sizeClassVertical:(int)arg8 memoryClass:(unsigned int)arg9 graphicsClass:(unsigned int)arg10 graphicsFallBackOrder:(id)arg11 withBaseKeySelector:(SEL)arg12;
 - (id)_resolvedRenditionKeyFromThemeRef:(unsigned int)arg1 withBaseKey:(id)arg2 scaleFactor:(float)arg3 deviceIdiom:(int)arg4 deviceSubtype:(unsigned int)arg5 displayGamut:(int)arg6 layoutDirection:(int)arg7 sizeClassHorizontal:(int)arg8 sizeClassVertical:(int)arg9 memoryClass:(unsigned int)arg10 graphicsClass:(unsigned int)arg11 graphicsFallBackOrder:(id)arg12;
 - (void)_resourceUnPinnedNotification:(id)arg1;
@@ -45,11 +45,11 @@
 - (id)debugDescription;
 - (id)defaultLayerStackWithScaleFactor:(float)arg1 deviceIdiom:(int)arg2 deviceSubtype:(unsigned int)arg3 sizeClassHorizontal:(int)arg4 sizeClassVertical:(int)arg5;
 - (id)defaultNamedAssetWithScaleFactor:(float)arg1 deviceIdiom:(int)arg2 deviceSubtype:(unsigned int)arg3 sizeClassHorizontal:(int)arg4 sizeClassVertical:(int)arg5;
-- (BOOL)drawGlyphs:(const unsigned short*)arg1 atPositions:(const struct CGPoint { double x1; double x2; }*)arg2 inContext:(struct CGContext { }*)arg3 withFont:(struct __CTFont { }*)arg4 count:(unsigned int)arg5 stylePresetName:(id)arg6 styleConfiguration:(id)arg7 foregroundColor:(struct CGColor { }*)arg8;
+- (BOOL)drawGlyphs:(const unsigned short*)arg1 atPositions:(const struct CGPoint { float x1; float x2; }*)arg2 inContext:(struct CGContext { }*)arg3 withFont:(struct __CTFont { }*)arg4 count:(unsigned int)arg5 stylePresetName:(id)arg6 styleConfiguration:(id)arg7 foregroundColor:(struct CGColor { }*)arg8;
 - (void)enumerateNamedLookupsUsingBlock:(id /* block */)arg1;
 - (struct CGColor { }*)equivalentForegroundColorForStylePresetWithName:(id)arg1 styleConfiguration:(id)arg2;
 - (BOOL)fillStyledPath:(struct CGPath { }*)arg1 inContext:(struct CGContext { }*)arg2 stylePresetName:(id)arg3 styleConfiguration:(id)arg4;
-- (BOOL)fillStyledRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inContext:(struct CGContext { }*)arg2 stylePresetName:(id)arg3 styleConfiguration:(id)arg4;
+- (BOOL)fillStyledRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inContext:(struct CGContext { }*)arg2 stylePresetName:(id)arg3 styleConfiguration:(id)arg4;
 - (BOOL)hasStylePresetWithName:(id)arg1;
 - (BOOL)hasStylePresetWithName:(id)arg1 styleConfiguration:(id)arg2;
 - (id)imageByStylingImage:(struct CGImage { }*)arg1 stylePresetName:(id)arg2 styleConfiguration:(id)arg3 foregroundColor:(struct CGColor { }*)arg4 scale:(float)arg5;
@@ -91,8 +91,8 @@
 - (id)renditionKeyForShapeEffectPresetForStylePresetName:(id)arg1 styleConfiguration:(id)arg2;
 - (id)renditionKeyForShapeEffectPresetWithStyleID:(unsigned int)arg1 state:(int)arg2 presentationState:(int)arg3 value:(int)arg4 resolution:(unsigned int)arg5;
 - (id)renditionKeyForShapeEffectPresetWithStylePresetName:(id)arg1 state:(int)arg2 presentationState:(int)arg3 value:(int)arg4 resolution:(unsigned int)arg5;
-- (BOOL)requiredDrawOfUnstyledGlyphs:(const unsigned short*)arg1 atPositions:(const struct CGPoint { double x1; double x2; }*)arg2 inContext:(struct CGContext { }*)arg3 withFont:(struct __CTFont { }*)arg4 count:(unsigned int)arg5;
+- (BOOL)requiredDrawOfUnstyledGlyphs:(const unsigned short*)arg1 atPositions:(const struct CGPoint { float x1; float x2; }*)arg2 inContext:(struct CGContext { }*)arg3 withFont:(struct __CTFont { }*)arg4 count:(unsigned int)arg5;
 - (BOOL)strokeStyledPath:(struct CGPath { }*)arg1 inContext:(struct CGContext { }*)arg2 stylePresetName:(id)arg3 styleConfiguration:(id)arg4;
-- (struct { double x1; double x2; double x3; double x4; })styledInsetsForStylePresetName:(id)arg1 styleConfiguration:(id)arg2 foregroundColor:(struct CGColor { }*)arg3 scale:(float)arg4;
+- (struct { float x1; float x2; float x3; float x4; })styledInsetsForStylePresetName:(id)arg1 styleConfiguration:(id)arg2 foregroundColor:(struct CGColor { }*)arg3 scale:(float)arg4;
 
 @end

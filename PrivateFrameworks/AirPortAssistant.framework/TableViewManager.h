@@ -3,8 +3,8 @@
  */
 
 @interface TableViewManager : NSObject <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate> {
-    double  _cellContentWidth;
-    double  _cellLeftEdgeOrigin;
+    float  _cellContentWidth;
+    float  _cellLeftEdgeOrigin;
     UIView * _currentFirstResponder;
     NSIndexPath * _currentFirstResponderCellPath;
     id  _delegate;

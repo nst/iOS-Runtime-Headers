@@ -9,8 +9,8 @@
         void *m_ptr; 
     }  _popoverController;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _presentationPoint;
     WKContentView * _view;
 }
@@ -20,7 +20,7 @@
 @property (nonatomic) <WKRotatingPopoverDelegate> *dismissionDelegate;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) UIPopoverController *popoverController;
-@property (nonatomic) struct CGPoint { double x1; double x2; } presentationPoint;
+@property (nonatomic) struct CGPoint { float x1; float x2; } presentationPoint;
 @property (readonly) Class superclass;
 
 - (id).cxx_construct;
@@ -34,10 +34,10 @@
 - (id)popoverController;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
 - (void)presentPopoverAnimated:(BOOL)arg1;
-- (struct CGPoint { double x1; double x2; })presentationPoint;
+- (struct CGPoint { float x1; float x2; })presentationPoint;
 - (void)setDismissionDelegate:(id)arg1;
 - (void)setPopoverController:(id)arg1;
-- (void)setPresentationPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setPresentationPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)willRotate:(id)arg1;
 
 @end

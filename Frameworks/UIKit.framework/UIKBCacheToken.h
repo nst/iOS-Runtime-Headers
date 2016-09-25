@@ -7,7 +7,7 @@
     int  _emptyFields;
     NSString * _name;
     int  _renderFlags;
-    double  _scale;
+    float  _scale;
 }
 
 @property (nonatomic) int displayHint;
@@ -16,20 +16,20 @@
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic) int renderFlags;
 @property (nonatomic) int rowHint;
-@property (nonatomic) struct CGSize { double x1; double x2; } size;
+@property (nonatomic) struct CGSize { float x1; float x2; } size;
 @property (nonatomic, readonly) NSString *string;
 @property (nonatomic) struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; } styling;
 
 + (id)tokenForKey:(id)arg1 style:(struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })arg2;
-+ (id)tokenForKey:(id)arg1 style:(struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })arg2 displayInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg3;
-+ (id)tokenForKeyMask:(id)arg1 style:(struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })arg2 displayInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg3;
++ (id)tokenForKey:(id)arg1 style:(struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })arg2 displayInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg3;
++ (id)tokenForKeyMask:(id)arg1 style:(struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })arg2 displayInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg3;
 + (id)tokenForKeyplane:(id)arg1;
-+ (id)tokenTemplateFilledForKey:(id)arg1 style:(int)arg2 size:(struct CGSize { double x1; double x2; })arg3;
-+ (id)tokenTemplateForKey:(id)arg1 name:(id)arg2 style:(int)arg3 size:(struct CGSize { double x1; double x2; })arg4;
-+ (id)tokenTemplateForKey:(id)arg1 style:(int)arg2 size:(struct CGSize { double x1; double x2; })arg3;
++ (id)tokenTemplateFilledForKey:(id)arg1 style:(int)arg2 size:(struct CGSize { float x1; float x2; })arg3;
++ (id)tokenTemplateForKey:(id)arg1 name:(id)arg2 style:(int)arg3 size:(struct CGSize { float x1; float x2; })arg4;
++ (id)tokenTemplateForKey:(id)arg1 style:(int)arg2 size:(struct CGSize { float x1; float x2; })arg3;
 
 - (int)_writeArray:(id)arg1 toStr:(char *)arg2 maxLen:(int)arg3;
-- (int)_writeEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1 toStr:(char *)arg2 maxLen:(int)arg3;
+- (int)_writeEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1 toStr:(char *)arg2 maxLen:(int)arg3;
 - (int)_writeNumber:(float)arg1 toStr:(char *)arg2;
 - (int)_writeString:(id)arg1 toStr:(char *)arg2 maxLen:(int)arg3;
 - (void)annotateWithBool:(BOOL)arg1;
@@ -52,9 +52,9 @@
 - (void)setName:(id)arg1;
 - (void)setRenderFlags:(int)arg1;
 - (void)setRowHint:(int)arg1;
-- (void)setSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setStyling:(struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })arg1;
-- (struct CGSize { double x1; double x2; })size;
+- (struct CGSize { float x1; float x2; })size;
 - (id)string;
 - (id)stringForComponentArray:(id)arg1 additionalValues:(id /* block */)arg2;
 - (id)stringForConstruction:(id /* block */)arg1;

@@ -24,7 +24,7 @@
 @property (nonatomic, readonly) BOOL isInMemory;
 
 + (int)bindParam:(struct sqlite3_stmt { }*)arg1 name:(const char *)arg2 double:(double)arg3;
-+ (int)bindParam:(struct sqlite3_stmt { }*)arg1 name:(const char *)arg2 int64:(int)arg3;
++ (int)bindParam:(struct sqlite3_stmt { }*)arg1 name:(const char *)arg2 int64:(long long)arg3;
 + (int)bindParam:(struct sqlite3_stmt { }*)arg1 name:(const char *)arg2 int:(int)arg3;
 + (int)bindParam:(struct sqlite3_stmt { }*)arg1 name:(const char *)arg2 nscoding:(id)arg3;
 + (int)bindParam:(struct sqlite3_stmt { }*)arg1 name:(const char *)arg2 nsdata:(id)arg3;
@@ -70,8 +70,8 @@
 - (void)insertOrReplaceIntoTable:(id)arg1 dictionary:(id)arg2 onError:(id /* block */)arg3;
 - (BOOL)isInMemory;
 - (id)languageForFTSTable:(id)arg1;
-- (int)lastInsertRowId;
-- (unsigned int)numberOfRowsInTable:(id)arg1;
+- (long long)lastInsertRowId;
+- (unsigned long long)numberOfRowsInTable:(id)arg1;
 - (void)placeCorruptionMarker;
 - (BOOL)prepAndRunNonDataQueries:(id)arg1 onError:(id /* block */)arg2;
 - (BOOL)prepAndRunQuery:(id)arg1 onPrep:(id /* block */)arg2 onRow:(id /* block */)arg3 onError:(id /* block */)arg4;

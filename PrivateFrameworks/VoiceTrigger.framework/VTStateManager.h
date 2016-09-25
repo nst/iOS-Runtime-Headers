@@ -9,7 +9,7 @@
     VTPhraseSpotter * _phraseSpotter;
     NSObject<OS_dispatch_queue> * _queue;
     BOOL  _voiceTriggerIsEnabled;
-    unsigned int  _wakeGestureHostTime;
+    unsigned long long  _wakeGestureHostTime;
     VTXPCServiceServer * _xpcServer;
 }
 
@@ -23,7 +23,7 @@
 + (id)firstChanceAudioBuffer;
 + (id)firstChanceTriggeredDate;
 + (id)firstChanceVTEventInfo;
-+ (int)getVoiceTriggerCount;
++ (long long)getVoiceTriggerCount;
 + (BOOL)isLastTriggerForced;
 + (BOOL)isLastTriggerSecondChanceTriggered;
 + (void)notifyVoiceTriggeredSiriSessionCancelled;
@@ -34,7 +34,7 @@
 
 - (void).cxx_destruct;
 - (void)_initializeXPCService;
-- (void)_notifyStateTransitionToState:(int)arg1 withStartTimestamp:(unsigned int)arg2;
+- (void)_notifyStateTransitionToState:(int)arg1 withStartTimestamp:(unsigned long long)arg2;
 - (void)_powerlog:(id)arg1;
 - (void)_stateTransitionDidOccur:(BOOL)arg1;
 - (void)gestureMonitorDidReceiveSleepGesture:(id)arg1;

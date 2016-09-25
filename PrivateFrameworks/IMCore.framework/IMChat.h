@@ -84,7 +84,7 @@
 @property (nonatomic, readonly) NSString *lastAddressedHandleID;
 @property (nonatomic, readonly) IMMessage *lastFinishedMessage;
 @property (nonatomic, readonly) NSDate *lastFinishedMessageDate;
-@property (nonatomic, readonly) int lastFinishedMessageID;
+@property (nonatomic, readonly) long long lastFinishedMessageID;
 @property (nonatomic, readonly) IMMessage *lastIncomingFinishedMessage;
 @property (nonatomic, readonly) IMMessage *lastIncomingFinishedMessageWithTextContent;
 @property (nonatomic, readonly) IMMessage *lastIncomingMessage;
@@ -262,7 +262,7 @@
 - (id)lastAddressedHandleID;
 - (id)lastFinishedMessage;
 - (id)lastFinishedMessageDate;
-- (int)lastFinishedMessageID;
+- (long long)lastFinishedMessageID;
 - (id)lastIncomingFinishedMessage;
 - (id)lastIncomingFinishedMessageWithTextContent;
 - (id)lastIncomingMessage;
@@ -310,8 +310,8 @@
 - (BOOL)sendDowngradeNotificationTo:(id)arg1;
 - (void)sendDowngradePingForMessage:(id)arg1 manualDowngrade:(BOOL)arg2;
 - (void)sendMessage:(id)arg1;
-- (void)sendMessageAcknowledgment:(int)arg1 forChatItem:(id)arg2 withAssociatedMessageInfo:(id)arg3;
-- (void)sendMessageAcknowledgment:(int)arg1 forChatItem:(id)arg2 withMessageSummaryInfo:(id)arg3;
+- (void)sendMessageAcknowledgment:(long long)arg1 forChatItem:(id)arg2 withAssociatedMessageInfo:(id)arg3;
+- (void)sendMessageAcknowledgment:(long long)arg1 forChatItem:(id)arg2 withMessageSummaryInfo:(id)arg3;
 - (void)sendProgress:(id)arg1 progressDidChange:(float)arg2 sendingMessages:(id)arg3 sendCount:(unsigned int)arg4 totalCount:(unsigned int)arg5 finished:(BOOL)arg6;
 - (id)sendProgressDelegate;
 - (void)setContextInfo:(void*)arg1;
@@ -345,7 +345,7 @@
 - (void)updateChatItemsIfNeeded;
 - (void)updateIsFiltered:(BOOL)arg1;
 - (void)updateMessage:(id)arg1;
-- (void)updateMessage:(id)arg1 flags:(unsigned int)arg2;
+- (void)updateMessage:(id)arg1 flags:(unsigned long long)arg2;
 - (void)userToggledReadReceiptSwitch:(BOOL)arg1;
 - (id)valueForChatProperty:(id)arg1;
 - (id)valueForProperty:(id)arg1 ofParticipant:(id)arg2;
@@ -361,9 +361,9 @@
 - (BOOL)__ck_sendReadReceipts;
 - (void)__ck_setMuteUntilDate:(id)arg1;
 - (void)__ck_setSendReadReceipts:(BOOL)arg1;
-- (void)__ck_updateWatermarkToMessageID:(int)arg1 date:(id)arg2;
+- (void)__ck_updateWatermarkToMessageID:(long long)arg1 date:(id)arg2;
 - (id)__ck_watermarkDate;
-- (int)__ck_watermarkMessageID;
+- (long long)__ck_watermarkMessageID;
 - (void)sendMessageAcknowledgment:(int)arg1 forChatItem:(id)arg2;
 
 @end

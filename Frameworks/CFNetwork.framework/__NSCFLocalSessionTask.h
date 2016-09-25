@@ -49,7 +49,7 @@
 - (void)_finishBecomeDownload:(id)arg1;
 - (void)_finishBecomeStream:(id)arg1 forConnection:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)_onSessionQueue_disavow;
-- (void)_onqueue_adjustBytesPerSecondLimit:(int)arg1;
+- (void)_onqueue_adjustBytesPerSecondLimit:(long long)arg1;
 - (void)_onqueue_adjustLoadingPoolPriority;
 - (void)_onqueue_adjustPoolPriority;
 - (void)_onqueue_adjustPriorityHint:(float)arg1;
@@ -57,14 +57,14 @@
 - (void)_onqueue_cancel_with_error:(id)arg1;
 - (void)_onqueue_completeInitialization;
 - (void)_onqueue_conditionalRequirementsChanged:(BOOL)arg1;
-- (void)_onqueue_connectionWaitingWithReason:(int)arg1;
+- (void)_onqueue_connectionWaitingWithReason:(long long)arg1;
 - (void)_onqueue_didFinishCollectingMetrics:(id)arg1 completion:(id /* block */)arg2;
 - (void)_onqueue_didFinishWithError:(id)arg1;
 - (void)_onqueue_didReceiveChallenge:(id)arg1 request:(id)arg2 withCompletion:(id /* block */)arg3;
 - (void)_onqueue_didReceiveDispatchData:(id)arg1 completion:(id /* block */)arg2;
 - (void)_onqueue_didReceiveResponse:(id)arg1 completion:(id /* block */)arg2;
 - (void)_onqueue_didReceiveResponse:(id)arg1 redirectRequest:(id)arg2 withCompletion:(id /* block */)arg3;
-- (void)_onqueue_didSendBodyBytes:(int)arg1 totalBytesSent:(int)arg2 totalBytesExpectedToSend:(int)arg3;
+- (void)_onqueue_didSendBodyBytes:(long long)arg1 totalBytesSent:(long long)arg2 totalBytesExpectedToSend:(long long)arg3;
 - (void)_onqueue_needConnectedSocketToHost:(id)arg1 port:(unsigned int)arg2 withCompletion:(id /* block */)arg3;
 - (void)_onqueue_needNewBodyStream:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)_onqueue_resume;
@@ -72,7 +72,7 @@
 - (void)_onqueue_startPayloadTransmissionTimer;
 - (void)_onqueue_startResourceTimer;
 - (void)_onqueue_startStartTimer;
-- (void)_onqueue_startTimer:(id)arg1 withTimeoutInNanos:(int)arg2 streamErrorCode:(int)arg3;
+- (void)_onqueue_startTimer:(id)arg1 withTimeoutInNanos:(long long)arg2 streamErrorCode:(int)arg3;
 - (id)_onqueue_strippedMutableRequest;
 - (void)_onqueue_submitConnectionWork:(id /* block */)arg1;
 - (void)_onqueue_suspend;
@@ -100,7 +100,7 @@
 - (void)connection:(id)arg1 needConnectedSocketToHost:(id)arg2 port:(unsigned int)arg3 completion:(id /* block */)arg4;
 - (void)connection:(id)arg1 request:(id)arg2 needsNewBodyStreamCallback:(id /* block */)arg3;
 - (void)connection:(id)arg1 sentBodyBytes:(id)arg2 totalBytes:(id)arg3 expectedBytes:(id)arg4;
-- (void)connection:(id)arg1 waitingWithReason:(int)arg2;
+- (void)connection:(id)arg1 waitingWithReason:(long long)arg2;
 - (void)connection:(id)arg1 wasRedirected:(id)arg2 newRequest:(id)arg3 responseCallback:(id /* block */)arg4;
 - (void)connection:(id)arg1 willCacheResponse:(id)arg2 responseCallback:(id /* block */)arg3;
 - (void)connectionWillFinishLoading:(id)arg1;

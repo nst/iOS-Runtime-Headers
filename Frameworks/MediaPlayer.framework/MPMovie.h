@@ -8,8 +8,8 @@
     MPAVItem * _item;
     double  _lastKnownDuration;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _lastKnownNaturalSize;
     int  _lastKnownType;
     BOOL  _movieIsUnplayable;
@@ -23,7 +23,7 @@
 @property (nonatomic) double endPlaybackTime;
 @property (nonatomic, readonly) unsigned int movieMediaTypes;
 @property (nonatomic) int movieSourceType;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } naturalSize;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } naturalSize;
 @property (nonatomic, readonly) double playableDuration;
 @property (nonatomic, readonly) AVPlayerItem *playerItem;
 @property (nonatomic) double startPlaybackTime;
@@ -49,7 +49,7 @@
 - (double)endPlaybackTime;
 - (unsigned int)movieMediaTypes;
 - (int)movieSourceType;
-- (struct CGSize { double x1; double x2; })naturalSize;
+- (struct CGSize { float x1; float x2; })naturalSize;
 - (double)playableDuration;
 - (id)playerItem;
 - (void)setEndPlaybackTime:(double)arg1;

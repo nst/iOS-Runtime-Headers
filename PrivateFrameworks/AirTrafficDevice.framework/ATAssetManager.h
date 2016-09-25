@@ -37,7 +37,7 @@
 - (void)addObserver:(id)arg1;
 - (id)allDataclasses;
 - (id)assetForDataclass:(id)arg1 identifier:(id)arg2;
-- (id)assetForStoreID:(int)arg1;
+- (id)assetForStoreID:(long long)arg1;
 - (void)assetLinkController:(id)arg1 didFinishAsset:(id)arg2;
 - (void)assetLinkController:(id)arg1 didUpdateAsset:(id)arg2;
 - (id)assetProgressForAllDataclasses;

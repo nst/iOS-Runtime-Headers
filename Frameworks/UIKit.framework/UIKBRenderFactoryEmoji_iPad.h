@@ -6,9 +6,9 @@
 
 - (void)_customizeTraits:(id)arg1 forPopupForKey:(id)arg2 withRenderingContext:(id)arg3 keycapsFontName:(id)arg4;
 - (id)_traitsForKey:(id)arg1 onKeyplane:(id)arg2;
-- (struct CGPoint { double x1; double x2; })emojiInternationalKeyOffset;
+- (struct CGPoint { float x1; float x2; })emojiInternationalKeyOffset;
 - (float)emojiInternationalKeySize;
-- (struct CGPoint { double x1; double x2; })emojiPopupTextOffset;
+- (struct CGPoint { float x1; float x2; })emojiPopupTextOffset;
 - (float)keyCornerRadius;
 - (id)lightKeycapsFontName;
 - (id)messagesWriteboardKeyImageName;

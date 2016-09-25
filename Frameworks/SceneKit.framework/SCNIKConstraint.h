@@ -5,15 +5,15 @@
 @interface SCNIKConstraint : SCNConstraint {
     SCNNode * _chainRootNode;
     struct SCNVector3 { 
-        double x; 
-        double y; 
-        double z; 
+        float x; 
+        float y; 
+        float z; 
     }  _ikTarget;
     NSMutableDictionary * _jointsPerNode;
 }
 
 @property (nonatomic, readonly) SCNNode *chainRootNode;
-@property (nonatomic) struct SCNVector3 { double x1; double x2; double x3; } targetPosition;
+@property (nonatomic) struct SCNVector3 { float x1; float x2; float x3; } targetPosition;
 
 + (id)inverseKinematicsConstraintWithChainRootNode:(id)arg1;
 + (BOOL)supportsSecureCoding;
@@ -32,7 +32,7 @@
 - (float)maxAllowedRotationAngleForJoint:(id)arg1;
 - (void)setChainRootNode:(id)arg1;
 - (void)setMaxAllowedRotationAngle:(float)arg1 forJoint:(id)arg2;
-- (void)setTargetPosition:(struct SCNVector3 { double x1; double x2; double x3; })arg1;
-- (struct SCNVector3 { double x1; double x2; double x3; })targetPosition;
+- (void)setTargetPosition:(struct SCNVector3 { float x1; float x2; float x3; })arg1;
+- (struct SCNVector3 { float x1; float x2; float x3; })targetPosition;
 
 @end

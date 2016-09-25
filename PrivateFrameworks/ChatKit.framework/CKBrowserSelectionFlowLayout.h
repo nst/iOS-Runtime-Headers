@@ -26,23 +26,23 @@
 
 - (void).cxx_destruct;
 - (void)_invalidateLayout;
-- (BOOL)_itemsFitsInBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
-- (struct CGSize { double x1; double x2; })_layoutContentSize;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_sectionInsetsForPhone:(id)arg1;
+- (BOOL)_itemsFitsInBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
+- (struct CGSize { float x1; float x2; })_layoutContentSize;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_sectionInsetsForPhone:(id)arg1;
 - (BOOL)canDeletePluginAtIndexPath:(id)arg1;
-- (struct CGSize { double x1; double x2; })collectionViewContentSize;
+- (struct CGSize { float x1; float x2; })collectionViewContentSize;
 - (id)delegate;
 - (id)displayLink;
 - (void)displayLinkFired:(id)arg1;
 - (id)finalLayoutAttributesForDisappearingItemAtIndexPath:(id)arg1;
 - (float)flowLayoutHeight;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameForCellAtIndexPath:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForCellAtIndexPath:(id)arg1;
 - (BOOL)iconShouldJitterAtIndexPath:(id)arg1;
 - (id)indexPathToDelete;
 - (BOOL)insideDisplayLinkCallback;
 - (void)invalidateLayoutWithContext:(id)arg1;
 - (BOOL)isInDisplayLinkAnimation;
-- (id)layoutAttributesForElementsInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)layoutAttributesForElementsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;
 - (id)layoutInfo;
 - (unsigned int)numberOfColumns;
@@ -59,7 +59,7 @@
 - (void)setLayoutInfo:(id)arg1;
 - (void)setNumberOfColumns:(unsigned int)arg1;
 - (void)setNumberOfItemsPerRow:(unsigned int)arg1;
-- (BOOL)shouldInvalidateLayoutForBoundsChange:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (BOOL)shouldInvalidateLayoutForBoundsChange:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)startDisplayLink;
 - (void)stopDisplayLink;
 - (void)updateMarginsAndInsetsForTraitCollection:(id)arg1;

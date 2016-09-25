@@ -6,22 +6,22 @@
     <TSDHint> * mHint;
     BOOL  mIsValid;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  mOrigin;
 }
 
 @property (retain) <TSDHint> *hint;
-@property struct CGPoint { double x1; double x2; } origin;
+@property struct CGPoint { float x1; float x2; } origin;
 @property (getter=isValid) BOOL valid;
 
 - (void)dealloc;
 - (id)hint;
-- (id)initWithHint:(id)arg1 origin:(struct CGPoint { double x1; double x2; })arg2;
+- (id)initWithHint:(id)arg1 origin:(struct CGPoint { float x1; float x2; })arg2;
 - (BOOL)isValid;
-- (struct CGPoint { double x1; double x2; })origin;
+- (struct CGPoint { float x1; float x2; })origin;
 - (void)setHint:(id)arg1;
-- (void)setOrigin:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setOrigin:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setValid:(BOOL)arg1;
 
 @end

@@ -32,7 +32,7 @@
 - (id)contentDescriptor;
 - (void)dealloc;
 - (id)entityUniqueIdentifier;
-- (id)imageURLForEntityArtworkProperty:(id)arg1 fittingSize:(struct CGSize { double x1; double x2; })arg2 destinationScale:(float)arg3;
+- (id)imageURLForEntityArtworkProperty:(id)arg1 fittingSize:(struct CGSize { float x1; float x2; })arg2 destinationScale:(float)arg3;
 - (void)reloadWithBaseEntityValueProvider:(id)arg1 contentDescriptor:(id)arg2;
 - (void)reset;
 - (void)setAdditionalPropertiesToPrefetchSynchronously:(id)arg1;

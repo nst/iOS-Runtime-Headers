@@ -4,7 +4,7 @@
 
 @interface OADTableCellProperties : NSObject {
     OADStroke * mBottomLeftToTopRightStroke;
-    double  mBottomMargin;
+    float  mBottomMargin;
     OADStroke * mBottomStroke;
     OADFill * mFill;
     BOOL  mIsBottomMarginOverridden;
@@ -15,9 +15,9 @@
     BOOL  mIsTextFlowOverridden;
     BOOL  mIsTextHorizontalOverflowOverridden;
     BOOL  mIsTopMarginOverridden;
-    double  mLeftMargin;
+    float  mLeftMargin;
     OADStroke * mLeftStroke;
-    double  mRightMargin;
+    float  mRightMargin;
     OADStroke * mRightStroke;
     unsigned char  mTextAnchor;
     BOOL  mTextAnchorCenter;
@@ -25,7 +25,7 @@
     unsigned char  mTextHorizontalOverflow;
     OADTableCell3DProperties * mThreeDProperties;
     OADStroke * mTopLeftToBottomRightStroke;
-    double  mTopMargin;
+    float  mTopMargin;
     OADStroke * mTopStroke;
 }
 

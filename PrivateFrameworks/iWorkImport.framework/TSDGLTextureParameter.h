@@ -3,7 +3,7 @@
  */
 
 @interface TSDGLTextureParameter : NSObject {
-    double * _floatData;
+    float * _floatData;
     int * _intData;
     unsigned int  _paramCount;
     unsigned int  _pname;

@@ -5,7 +5,7 @@
 @interface CAStateControllerLayer : NSObject {
     CAState * _currentState;
     CALayer * _layer;
-    double  _nextSpeed;
+    float  _nextSpeed;
     CAState * _nextState;
     NSTimer * _nextTimer;
     NSMutableArray * _transitions;

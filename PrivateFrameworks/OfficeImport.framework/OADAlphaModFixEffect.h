@@ -3,7 +3,7 @@
  */
 
 @interface OADAlphaModFixEffect : OADBlipEffect {
-    double  mAlpha;
+    float  mAlpha;
 }
 
 - (float)alpha;

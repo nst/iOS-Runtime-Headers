@@ -5,7 +5,7 @@
 @interface HUQuickControlSwitchView : UIView <HUQuickControlControllableView> {
     UIView * _knobView;
     HUQuickControlSwitchViewProfile * _profile;
-    double  _switchValue;
+    float  _switchValue;
     UIView * _wellView;
 }
 
@@ -17,7 +17,7 @@
 @property (nonatomic, retain) id secondaryValue;
 @property (nonatomic) int sizeSubclass;
 @property (readonly) Class superclass;
-@property (nonatomic) double switchValue;
+@property (nonatomic) float switchValue;
 @property (nonatomic, retain) id value;
 @property (nonatomic, retain) UIView *wellView;
 

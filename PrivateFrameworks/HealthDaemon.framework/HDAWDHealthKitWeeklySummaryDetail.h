@@ -8,17 +8,17 @@
         unsigned int numTimesGoalAchieved : 1; 
         unsigned int selectedGoal : 1; 
     }  _has;
-    int  _mostRecentGoal;
-    int  _numTimesGoalAchieved;
-    int  _selectedGoal;
+    long long  _mostRecentGoal;
+    long long  _numTimesGoalAchieved;
+    long long  _selectedGoal;
 }
 
 @property (nonatomic) BOOL hasMostRecentGoal;
 @property (nonatomic) BOOL hasNumTimesGoalAchieved;
 @property (nonatomic) BOOL hasSelectedGoal;
-@property (nonatomic) int mostRecentGoal;
-@property (nonatomic) int numTimesGoalAchieved;
-@property (nonatomic) int selectedGoal;
+@property (nonatomic) long long mostRecentGoal;
+@property (nonatomic) long long numTimesGoalAchieved;
+@property (nonatomic) long long selectedGoal;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -30,16 +30,16 @@
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (int)mostRecentGoal;
-- (int)numTimesGoalAchieved;
+- (long long)mostRecentGoal;
+- (long long)numTimesGoalAchieved;
 - (BOOL)readFrom:(id)arg1;
-- (int)selectedGoal;
+- (long long)selectedGoal;
 - (void)setHasMostRecentGoal:(BOOL)arg1;
 - (void)setHasNumTimesGoalAchieved:(BOOL)arg1;
 - (void)setHasSelectedGoal:(BOOL)arg1;
-- (void)setMostRecentGoal:(int)arg1;
-- (void)setNumTimesGoalAchieved:(int)arg1;
-- (void)setSelectedGoal:(int)arg1;
+- (void)setMostRecentGoal:(long long)arg1;
+- (void)setNumTimesGoalAchieved:(long long)arg1;
+- (void)setSelectedGoal:(long long)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

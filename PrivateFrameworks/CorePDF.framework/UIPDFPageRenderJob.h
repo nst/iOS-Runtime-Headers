@@ -13,8 +13,8 @@
     BOOL  _releaseWhenDone;
     BOOL  _sendPending;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _size;
     id  _target;
     id  _userData;
@@ -25,7 +25,7 @@
 @property (readonly) unsigned int pageIndex;
 @property (readonly) int priority;
 @property BOOL releaseWhenDone;
-@property (readonly) struct CGSize { double x1; double x2; } size;
+@property (readonly) struct CGSize { float x1; float x2; } size;
 
 - (void)cancel;
 - (void)cancelOperation;
@@ -33,7 +33,7 @@
 - (void)dealloc;
 - (BOOL)hasPage;
 - (id)image;
-- (id)initWithPage:(id)arg1 maxSize:(struct CGSize { double x1; double x2; })arg2 queuePriority:(int)arg3;
+- (id)initWithPage:(id)arg1 maxSize:(struct CGSize { float x1; float x2; })arg2 queuePriority:(int)arg3;
 - (id)operation;
 - (unsigned int)pageIndex;
 - (int)priority;
@@ -45,6 +45,6 @@
 - (void)setOperation:(id)arg1;
 - (void)setReleaseWhenDone:(BOOL)arg1;
 - (void)setTarget:(id)arg1 callback:(SEL)arg2 userData:(id)arg3;
-- (struct CGSize { double x1; double x2; })size;
+- (struct CGSize { float x1; float x2; })size;
 
 @end

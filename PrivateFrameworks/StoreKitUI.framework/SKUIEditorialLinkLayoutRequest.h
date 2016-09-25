@@ -4,7 +4,7 @@
 
 @interface SKUIEditorialLinkLayoutRequest : NSObject <SKUILayoutRequest> {
     NSArray * _links;
-    double  _width;
+    float  _width;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -13,7 +13,7 @@
 @property (nonatomic, readonly) Class layoutClass;
 @property (nonatomic, copy) NSArray *links;
 @property (readonly) Class superclass;
-@property (nonatomic) double width;
+@property (nonatomic) float width;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

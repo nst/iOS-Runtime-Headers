@@ -4,22 +4,22 @@
 
 @interface TSDGLShaderQualifierPoint2D : TSDGLShaderQualifier {
     struct { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _GLPoint2DValue;
     struct { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _proposedGLPoint2DValue;
 }
 
-@property (nonatomic, readonly) struct { double x1; double x2; } GLPoint2DValue;
-@property (nonatomic) struct { double x1; double x2; } proposedGLPoint2DValue;
+@property (nonatomic, readonly) struct { float x1; float x2; } GLPoint2DValue;
+@property (nonatomic) struct { float x1; float x2; } proposedGLPoint2DValue;
 
-- (struct { double x1; double x2; })GLPoint2DValue;
+- (struct { float x1; float x2; })GLPoint2DValue;
 - (id)description;
-- (struct { double x1; double x2; })proposedGLPoint2DValue;
+- (struct { float x1; float x2; })proposedGLPoint2DValue;
 - (void)setGLUniformWithShader:(id)arg1;
-- (void)setProposedGLPoint2DValue:(struct { double x1; double x2; })arg1;
+- (void)setProposedGLPoint2DValue:(struct { float x1; float x2; })arg1;
 
 @end

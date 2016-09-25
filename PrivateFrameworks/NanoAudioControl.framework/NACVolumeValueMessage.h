@@ -7,13 +7,13 @@
     struct { 
         unsigned int volumeValue : 1; 
     }  _has;
-    double  _volumeValue;
+    float  _volumeValue;
 }
 
 @property (nonatomic, retain) NSString *category;
 @property (nonatomic, readonly) BOOL hasCategory;
 @property (nonatomic) BOOL hasVolumeValue;
-@property (nonatomic) double volumeValue;
+@property (nonatomic) float volumeValue;
 
 - (void).cxx_destruct;
 - (id)category;

@@ -4,7 +4,7 @@
 
 @interface WeatherImageLoader : NSObject {
     NSCache * _conditionImagesCache;
-    double  _scale;
+    float  _scale;
     CPBitmapStore * _store;
 }
 

@@ -8,8 +8,8 @@
     BOOL  _lightweightFactory;
     BOOL  _preferStringKeycapOverImage;
     UIKBRenderingContext * _renderingContext;
-    double  _rivenSizeFactor;
-    double  _scale;
+    float  _rivenSizeFactor;
+    float  _scale;
     NSMutableArray * _segmentTraits;
     BOOL  _suppressSegmentTraits;
 }
@@ -20,8 +20,8 @@
 @property (nonatomic) BOOL preferStringKeycapOverImage;
 @property (getter=renderConfig, readonly) UIKBRenderConfig *renderConfig;
 @property (nonatomic, retain) UIKBRenderingContext *renderingContext;
-@property (nonatomic) double rivenSizeFactor;
-@property (nonatomic) double scale;
+@property (nonatomic) float rivenSizeFactor;
+@property (nonatomic) float scale;
 @property (nonatomic, readonly) NSArray *segmentTraits;
 
 + (id)_characterSetForGlyphSelectors;

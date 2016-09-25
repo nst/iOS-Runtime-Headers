@@ -33,8 +33,8 @@
 - (unsigned int)count;
 - (void)encodeWithCoder:(id)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })focusedRange;
-- (unsigned int)indexOfItemWithPersistentID:(unsigned int)arg1;
-- (unsigned int)indexOfItemWithPersistentID:(unsigned int)arg1 greaterThanOrEqualToIndex:(unsigned int)arg2;
+- (unsigned int)indexOfItemWithPersistentID:(unsigned long long)arg1;
+- (unsigned int)indexOfItemWithPersistentID:(unsigned long long)arg1 greaterThanOrEqualToIndex:(unsigned int)arg2;
 - (unsigned int)indexOfObject:(id)arg1;
 - (unsigned int)indexOfObject:(id)arg1 greaterThanOrEqualToIndex:(unsigned int)arg2;
 - (id)initWithCoder:(id)arg1;

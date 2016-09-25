@@ -3,12 +3,12 @@
  */
 
 @interface SKRange : NSObject <NSCoding, NSCopying> {
-    double  _lowerLimit;
-    double  _upperLimit;
+    float  _lowerLimit;
+    float  _upperLimit;
 }
 
-@property double lowerLimit;
-@property double upperLimit;
+@property float lowerLimit;
+@property float upperLimit;
 
 + (id)rangeWithConstantValue:(float)arg1;
 + (id)rangeWithLowerLimit:(float)arg1;

@@ -6,8 +6,8 @@
     BOOL  mBreakAtEnd;
     BOOL  mBreakAtStart;
     BOOL  mIsTitlePage;
-    double  mLeftMargin;
-    double  mTopMargin;
+    float  mLeftMargin;
+    float  mTopMargin;
     WDSection * wdSection;
 }
 

@@ -14,46 +14,46 @@
     BOOL  _empty;
     UIImage * _emptyPlaceholderImage;
     UIColor * _gridBackgroundColor;
-    double  _gridItemSpacing;
-    double  _gridMargin;
+    float  _gridItemSpacing;
+    float  _gridMargin;
     BOOL  _hasRoundedCorners;
     BOOL  _highlighted;
     BOOL  _imageHidden;
     BOOL  _needsDynamicLayout;
     int  _numberOfVisibleItems;
     PUPhotoDecoration * _photoDecoration;
-    double  _posterSquareCornerRadius;
-    double  _posterSubitemCornerRadius;
+    float  _posterSquareCornerRadius;
+    float  _posterSubitemCornerRadius;
     struct UIOffset { 
-        double horizontal; 
-        double vertical; 
+        float horizontal; 
+        float vertical; 
     }  _stackOffset;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _stackPerspectiveFactor;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _stackPerspectiveInsets;
     struct UIOffset { 
-        double horizontal; 
-        double vertical; 
+        float horizontal; 
+        float vertical; 
     }  _stackPerspectiveOffset;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _stackSize;
     unsigned int  _style;
     struct CGAffineTransform { 
-        double a; 
-        double b; 
-        double c; 
-        double d; 
-        double tx; 
-        double ty; 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     }  _transforms;
 }
 
@@ -67,22 +67,22 @@
 @property (getter=isEmpty, nonatomic) BOOL empty;
 @property (nonatomic, retain) UIImage *emptyPlaceholderImage;
 @property (nonatomic, retain) UIColor *gridBackgroundColor;
-@property (nonatomic) double gridItemSpacing;
-@property (nonatomic) double gridMargin;
+@property (nonatomic) float gridItemSpacing;
+@property (nonatomic) float gridMargin;
 @property (nonatomic) BOOL hasRoundedCorners;
 @property (getter=isHighlighted, nonatomic) BOOL highlighted;
 @property (nonatomic) int numberOfVisibleItems;
 @property (nonatomic, retain) PUPhotoDecoration *photoDecoration;
-@property (nonatomic) double posterSquareCornerRadius;
-@property (nonatomic) double posterSubitemCornerRadius;
+@property (nonatomic) float posterSquareCornerRadius;
+@property (nonatomic) float posterSubitemCornerRadius;
 @property (nonatomic, readonly) NSArray *stackItemViews;
-@property (nonatomic) struct UIOffset { double x1; double x2; } stackOffset;
-@property (nonatomic) struct CGPoint { double x1; double x2; } stackPerspectiveFactor;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } stackPerspectiveInsets;
-@property (nonatomic) struct UIOffset { double x1; double x2; } stackPerspectiveOffset;
-@property (nonatomic) struct CGSize { double x1; double x2; } stackSize;
+@property (nonatomic) struct UIOffset { float x1; float x2; } stackOffset;
+@property (nonatomic) struct CGPoint { float x1; float x2; } stackPerspectiveFactor;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } stackPerspectiveInsets;
+@property (nonatomic) struct UIOffset { float x1; float x2; } stackPerspectiveOffset;
+@property (nonatomic) struct CGSize { float x1; float x2; } stackSize;
 @property (nonatomic) unsigned int style;
-@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } topLeftCornerOfFrontStackItem;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } topLeftCornerOfFrontStackItem;
 
 + (int)maximumNumberOfVisibleImagesForStyle:(unsigned int)arg1;
 + (int)maximumNumberOfVisibleItemsForStyle:(unsigned int)arg1;
@@ -90,8 +90,8 @@
 - (void).cxx_destruct;
 - (id)_backgroundView;
 - (id)_combinedPhotoDecorationsImage;
-- (void)_getCenter:(struct CGPoint { double x1; double x2; }*)arg1 bounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg2 forPhotoViewAtIndex:(int)arg3;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_getStackFrame;
+- (void)_getCenter:(struct CGPoint { float x1; float x2; }*)arg1 bounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 forPhotoViewAtIndex:(int)arg3;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_getStackFrame;
 - (id)_imageSizes;
 - (int)_numberOfViews;
 - (id)_photoDecorationVariants;
@@ -109,12 +109,12 @@
 - (BOOL)combinesPhotoDecorations;
 - (id)cornersBackgroundColor;
 - (id)emptyPlaceholderImage;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameOfFrontStackItemRelativeToView:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameOfFrontStackItemRelativeToView:(id)arg1;
 - (id)gridBackgroundColor;
 - (float)gridItemSpacing;
 - (float)gridMargin;
 - (BOOL)hasRoundedCorners;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isEmpty;
 - (BOOL)isHighlighted;
 - (BOOL)isImageHiddenForItemAtIndex:(int)arg1;
@@ -144,28 +144,28 @@
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setImage:(id)arg1 forItemAtIndex:(int)arg2;
 - (void)setImageHidden:(BOOL)arg1 forItemAtIndex:(int)arg2;
-- (void)setImageSize:(struct CGSize { double x1; double x2; })arg1 forItemAtIndex:(int)arg2;
+- (void)setImageSize:(struct CGSize { float x1; float x2; })arg1 forItemAtIndex:(int)arg2;
 - (void)setNumberOfVisibleItems:(int)arg1;
 - (void)setPhotoDecoration:(id)arg1;
 - (void)setPosterSquareCornerRadius:(float)arg1;
 - (void)setPosterSubitemCornerRadius:(float)arg1;
-- (void)setStackOffset:(struct UIOffset { double x1; double x2; })arg1;
-- (void)setStackPerspectiveFactor:(struct CGPoint { double x1; double x2; })arg1;
-- (void)setStackPerspectiveInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
-- (void)setStackPerspectiveOffset:(struct UIOffset { double x1; double x2; })arg1;
-- (void)setStackSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setStackOffset:(struct UIOffset { float x1; float x2; })arg1;
+- (void)setStackPerspectiveFactor:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setStackPerspectiveInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setStackPerspectiveOffset:(struct UIOffset { float x1; float x2; })arg1;
+- (void)setStackSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setStyle:(unsigned int)arg1;
 - (void)setSubtitle:(id)arg1 forItemAtIndex:(int)arg2;
 - (void)setTitle:(id)arg1 forItemAtIndex:(int)arg2;
 - (void)setTitleFontName:(id)arg1 forItemAtIndex:(int)arg2;
 - (id)stackItemViews;
-- (struct UIOffset { double x1; double x2; })stackOffset;
-- (struct CGPoint { double x1; double x2; })stackPerspectiveFactor;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })stackPerspectiveInsets;
-- (struct UIOffset { double x1; double x2; })stackPerspectiveOffset;
-- (struct CGSize { double x1; double x2; })stackSize;
+- (struct UIOffset { float x1; float x2; })stackOffset;
+- (struct CGPoint { float x1; float x2; })stackPerspectiveFactor;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })stackPerspectiveInsets;
+- (struct UIOffset { float x1; float x2; })stackPerspectiveOffset;
+- (struct CGSize { float x1; float x2; })stackSize;
 - (unsigned int)style;
-- (struct CGPoint { double x1; double x2; })topLeftCornerOfFrontStackItem;
+- (struct CGPoint { float x1; float x2; })topLeftCornerOfFrontStackItem;
 - (BOOL)wouldCoverAllItemsInStackView:(id)arg1;
 
 @end

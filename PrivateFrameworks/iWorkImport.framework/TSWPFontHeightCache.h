@@ -42,10 +42,10 @@
 - (id)autorelease;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (struct { double x1; double x2; double x3; double x4; double x5; double x6; double x7; })fontHeightInfoForFont:(struct __CTFont { }*)arg1;
+- (struct { float x1; float x2; float x3; float x4; float x5; float x6; float x7; })fontHeightInfoForFont:(struct __CTFont { }*)arg1;
 - (id)init;
-- (void)p_addEntryForFont:(struct __CTFont { }*)arg1 heightInfo:(const struct { double x1; double x2; double x3; double x4; double x5; double x6; double x7; }*)arg2;
-- (BOOL)p_findEntryForFont:(struct __CTFont { }*)arg1 outHeightInfo:(struct { double x1; double x2; double x3; double x4; double x5; double x6; double x7; }*)arg2 collision:(BOOL*)arg3;
+- (void)p_addEntryForFont:(struct __CTFont { }*)arg1 heightInfo:(const struct { float x1; float x2; float x3; float x4; float x5; float x6; float x7; }*)arg2;
+- (BOOL)p_findEntryForFont:(struct __CTFont { }*)arg1 outHeightInfo:(struct { float x1; float x2; float x3; float x4; float x5; float x6; float x7; }*)arg2 collision:(BOOL*)arg3;
 - (oneway void)release;
 - (id)retain;
 - (unsigned int)retainCount;

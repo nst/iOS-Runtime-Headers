@@ -9,7 +9,7 @@
 @property (nonatomic, retain) UIColor *ambientColor;
 @property (nonatomic) unsigned int categoryBitMask;
 @property (getter=isEnabled, nonatomic) BOOL enabled;
-@property (nonatomic) double falloff;
+@property (nonatomic) float falloff;
 @property (nonatomic, retain) UIColor *lightColor;
 @property (nonatomic, retain) UIColor *shadowColor;
 

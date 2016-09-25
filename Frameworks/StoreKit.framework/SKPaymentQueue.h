@@ -34,7 +34,7 @@
 - (void)_refreshPaymentsWithPolicy:(int)arg1;
 - (void)_removeLocalTransaction:(id)arg1;
 - (void)_removePaymentsForMessage:(id)arg1;
-- (void)_sendCommand:(int)arg1 forDownloads:(id)arg2;
+- (void)_sendCommand:(long long)arg1 forDownloads:(id)arg2;
 - (void)_setTransactionsWithReply:(id)arg1;
 - (void)_updateDownloadsForMessage:(id)arg1;
 - (void)_updatePaymentsForMessage:(id)arg1;

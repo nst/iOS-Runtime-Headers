@@ -5,23 +5,23 @@
 @interface PXCALayerPromise : PXObservable <CALayerDelegate, PXMutableCALayerPromise> {
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _bounds;
-    double  _contentsScale;
+    float  _contentsScale;
     CALayer * _layer;
     BOOL  _rendersAsynchronously;
     BOOL  _shouldCancel;
     BOOL  _startedLayerRealization;
 }
 
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } bounds;
-@property (nonatomic, readonly) double contentsScale;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
+@property (nonatomic, readonly) float contentsScale;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
@@ -34,7 +34,7 @@
 - (void)_handlePreparedLayer:(id)arg1;
 - (void)_realizeLayer;
 - (void)_setLayer:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })bounds;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
 - (void)cancelLayerRealization;
 - (float)contentsScale;
 - (id)createCustomLayer;
@@ -47,7 +47,7 @@
 - (id)mutableChangeObject;
 - (void)performChanges:(id /* block */)arg1;
 - (BOOL)rendersAsynchronously;
-- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setContentsScale:(float)arg1;
 - (void)setRendersAsynchronously:(BOOL)arg1;
 - (BOOL)shouldCancel;

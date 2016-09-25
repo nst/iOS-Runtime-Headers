@@ -27,7 +27,7 @@
 @property (nonatomic, retain) PUBrowsingVideoPlayer *videoPlayer;
 @property (nonatomic, retain) PUBrowsingViewModel *viewModel;
 
-+ (struct CGSize { double x1; double x2; })playbackTimeIndicatorTileSize;
++ (struct CGSize { float x1; float x2; })playbackTimeIndicatorTileSize;
 
 - (void).cxx_destruct;
 - (id)_forcedIndicatorVisibilityEndDate;
@@ -42,15 +42,15 @@
 - (void)_setIndicatorVisible:(BOOL)arg1;
 - (void)_setIndicatorVisible:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_updateIndicatorDisplayStyle;
-- (void)_updateIndicatorValueWithTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
+- (void)_updateIndicatorValueWithTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)becomeReusable;
 - (id)delegate;
 - (void)setDelegate:(id)arg1;
 - (void)setVideoPlayer:(id)arg1;
 - (void)setViewModel:(id)arg1;
 - (id)videoPlayer;
-- (void)videoPlayer:(id)arg1 currentTimeDidChange:(struct { int x1; int x2; unsigned int x3; int x4; })arg2;
-- (void)videoPlayer:(id)arg1 desiredSeekTimeDidChange:(struct { int x1; int x2; unsigned int x3; int x4; })arg2;
+- (void)videoPlayer:(id)arg1 currentTimeDidChange:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
+- (void)videoPlayer:(id)arg1 desiredSeekTimeDidChange:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
 - (void)viewDidLoad;
 - (id)viewModel;
 - (void)viewModel:(id)arg1 didChange:(id)arg2;

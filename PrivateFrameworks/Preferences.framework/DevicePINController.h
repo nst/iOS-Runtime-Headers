@@ -90,7 +90,7 @@
 - (void)loadView;
 - (int)mode;
 - (long)numberOfFailedAttempts;
-- (struct CGSize { double x1; double x2; })overallContentSizeForViewInPopover;
+- (struct CGSize { float x1; float x2; })overallContentSizeForViewInPopover;
 - (id)passcodeOptionsAlertController;
 - (void)performActionAfterPINEntry;
 - (void)performActionAfterPINRemove;

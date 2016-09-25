@@ -6,16 +6,16 @@
     <PXPeopleProgressDatasource> * _datasource;
     BOOL  _monitoringProgress;
     unsigned int  _processingStatus;
-    double  _progress;
-    double  _updateInterval;
+    float  _progress;
+    float  _updateInterval;
 }
 
 @property (nonatomic, retain) <PXPeopleProgressDatasource> *datasource;
 @property (getter=isMonitoringProgress, nonatomic) BOOL monitoringProgress;
 @property (readonly) BOOL processingComplete;
 @property unsigned int processingStatus;
-@property double progress;
-@property (nonatomic) double updateInterval;
+@property float progress;
+@property (nonatomic) float updateInterval;
 
 - (void).cxx_destruct;
 - (void)_handleMonitorUpdateWithProgress:(float)arg1;

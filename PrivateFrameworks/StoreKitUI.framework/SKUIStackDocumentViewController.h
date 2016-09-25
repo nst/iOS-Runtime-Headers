@@ -62,8 +62,8 @@
 - (void)resourceLoader:(id)arg1 didLoadAllForReason:(int)arg2;
 - (void)resourceLoaderDidBeginLoading:(id)arg1;
 - (id)sectionsViewController;
-- (void)sectionsViewController:(id)arg1 willScrollToOffset:(struct CGPoint { double x1; double x2; })arg2 visibleRange:(struct SKUIIndexPathRange { int x1; int x2; int x3; int x4; })arg3;
-- (void)setPreferredContentSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)sectionsViewController:(id)arg1 willScrollToOffset:(struct CGPoint { float x1; float x2; })arg2 visibleRange:(struct SKUIIndexPathRange { int x1; int x2; int x3; int x4; })arg3;
+- (void)setPreferredContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)skui_viewWillAppear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;

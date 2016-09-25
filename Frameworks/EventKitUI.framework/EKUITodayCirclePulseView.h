@@ -6,22 +6,22 @@
     NSDictionary * _attributes;
     TodayCirclePulseBackground * _background;
     UIView * _backgroundContainer;
-    double  _circleDiameter;
+    float  _circleDiameter;
     BOOL  _circleShouldFillFrame;
     BOOL  _dontApplyCenteringOffset;
     UILabel * _label;
     NSDictionary * _overlayAttributes;
     UILabel * _overlayLabel;
-    double  _textFrameWidthAdjustment;
+    float  _textFrameWidthAdjustment;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _textOffsetFromCircle;
-    double  _textYOffset;
+    float  _textYOffset;
 }
 
 @property (nonatomic, retain) NSDictionary *attributes;
-@property (nonatomic) double circleDiameter;
+@property (nonatomic) float circleDiameter;
 @property (nonatomic) BOOL circleShouldFillFrame;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -33,9 +33,9 @@
 @property (nonatomic, copy) NSString *overlayString;
 @property (nonatomic, copy) NSString *string;
 @property (readonly) Class superclass;
-@property (nonatomic) double textFrameWidthAdjustment;
-@property (nonatomic) struct CGPoint { double x1; double x2; } textOffsetFromCircle;
-@property (nonatomic) double textYOffset;
+@property (nonatomic) float textFrameWidthAdjustment;
+@property (nonatomic) struct CGPoint { float x1; float x2; } textOffsetFromCircle;
+@property (nonatomic) float textYOffset;
 
 - (void).cxx_destruct;
 - (id)_basicAnimationForView:(id)arg1 withKeyPath:(id)arg2;
@@ -48,7 +48,7 @@
 - (BOOL)circleShouldFillFrame;
 - (BOOL)dontApplyCenteringOffset;
 - (id)font;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)overlayAttributes;
 - (id)overlayFont;
 - (id)overlayString;
@@ -63,11 +63,11 @@
 - (void)setOverlayString:(id)arg1;
 - (void)setString:(id)arg1;
 - (void)setTextFrameWidthAdjustment:(float)arg1;
-- (void)setTextOffsetFromCircle:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setTextOffsetFromCircle:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setTextYOffset:(float)arg1;
 - (id)string;
 - (float)textFrameWidthAdjustment;
-- (struct CGPoint { double x1; double x2; })textOffsetFromCircle;
+- (struct CGPoint { float x1; float x2; })textOffsetFromCircle;
 - (float)textYOffset;
 
 @end

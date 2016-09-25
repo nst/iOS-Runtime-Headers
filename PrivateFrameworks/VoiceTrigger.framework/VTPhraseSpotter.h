@@ -74,7 +74,7 @@
     unsigned int  _samplecountAtLastTriggerEnd;
     unsigned int  _samplecountAtLastTriggerStart;
     unsigned int  _samplecountAtRealTriggerStart;
-    unsigned int  _samplerate;
+    unsigned long long  _samplerate;
     NSString * _satAudioDirectory;
     NSString * _satModelDirectory;
     BOOL  _secondPassAccepted;
@@ -89,10 +89,10 @@
     double  _thresholdSAT;
     double  _thresholdSecondChance;
     VTTranscriber * _transcriber;
-    int  _triggerCount;
-    unsigned int  _triggerFireMachTime;
+    long long  _triggerCount;
+    unsigned long long  _triggerFireMachTime;
     NSArray * _triggerPhrases;
-    unsigned int  _triggerStartMachTime;
+    unsigned long long  _triggerStartMachTime;
     double  _triggerThreshold;
     NSString * _triggerTokens;
     BOOL  _useRecognizer;
@@ -109,12 +109,12 @@
 @property (readonly) double lastScore;
 @property (readonly) double lastSupervecScore;
 @property (readonly) unsigned char lastTriggerType;
-@property (readonly) unsigned int sampleCount;
-@property (readonly) unsigned int sampleCountAtEndOfTrigger;
-@property (readonly) unsigned int sampleCountAtStartOfTrigger;
-@property (readonly) unsigned int samplerate;
+@property (readonly) unsigned long long sampleCount;
+@property (readonly) unsigned long long sampleCountAtEndOfTrigger;
+@property (readonly) unsigned long long sampleCountAtStartOfTrigger;
+@property (readonly) unsigned long long samplerate;
 @property (readonly) Class superclass;
-@property (readonly) int triggerCount;
+@property (readonly) long long triggerCount;
 
 + (id)currentSpotter;
 + (void)initialize;
@@ -122,25 +122,25 @@
 - (void).cxx_destruct;
 - (void)VTAssetMonitor:(id)arg1 didReceiveNewAssetAvailable:(BOOL)arg2;
 - (void)VTLanguageCodeUpdateMonitor:(id)arg1 didReceiveLanguageCodeChanged:(id)arg2;
-- (id)_analyzeEvents:(const struct _ndresult { unsigned int x1; unsigned int x2; unsigned int x3; double x4; bool x5; }*)arg1;
-- (id)_analyzeMakeResult:(const struct _ndresult { unsigned int x1; unsigned int x2; unsigned int x3; double x4; bool x5; }*)arg1 eventKind:(unsigned char)arg2 satScore:(double)arg3;
+- (id)_analyzeEvents:(const struct _ndresult { unsigned int x1; unsigned int x2; unsigned int x3; float x4; bool x5; }*)arg1;
+- (id)_analyzeMakeResult:(const struct _ndresult { unsigned int x1; unsigned int x2; unsigned int x3; float x4; bool x5; }*)arg1 eventKind:(unsigned char)arg2 satScore:(double)arg3;
 - (void)_analyzeReset;
-- (unsigned int)_applyExtraTimeTo:(unsigned int)arg1;
+- (unsigned long long)_applyExtraTimeTo:(unsigned long long)arg1;
 - (void)_cancelSecondChance;
 - (id)_capturePathWithPrefix:(id)arg1 eventKind:(unsigned char)arg2;
 - (void)_clearDeviceHandHeld;
 - (void)_commonInit;
-- (double)_computeSATScore:(const struct _ndresult { unsigned int x1; unsigned int x2; unsigned int x3; double x4; bool x5; }*)arg1;
+- (double)_computeSATScore:(const struct _ndresult { unsigned int x1; unsigned int x2; unsigned int x3; float x4; bool x5; }*)arg1;
 - (BOOL)_configureWithConfig:(id)arg1 resourcePath:(id)arg2;
 - (BOOL)_configureWithDefaults;
-- (void)_createFirstChanceMeta:(const struct _ndresult { unsigned int x1; unsigned int x2; unsigned int x3; double x4; bool x5; }*)arg1;
+- (void)_createFirstChanceMeta:(const struct _ndresult { unsigned int x1; unsigned int x2; unsigned int x3; float x4; bool x5; }*)arg1;
 - (id)_createVTEventInfoString:(id)arg1;
 - (void)_firstUnlockedAndSpringBoardStarted;
 - (id)_getAssetHashFromConfigPath:(id)arg1;
 - (BOOL)_getSecondChanceEffective;
 - (id)_getSpeakerModelPath:(id)arg1 createDirectory:(BOOL)arg2;
 - (void)_handleAssetChangeForLanguageCode:(id)arg1;
-- (id)_handleTriggerEvent:(const struct _ndresult { unsigned int x1; unsigned int x2; unsigned int x3; double x4; bool x5; }*)arg1 num_new_samples:(unsigned int)arg2 satScore:(double)arg3;
+- (id)_handleTriggerEvent:(const struct _ndresult { unsigned int x1; unsigned int x2; unsigned int x3; float x4; bool x5; }*)arg1 num_new_samples:(unsigned int)arg2 satScore:(double)arg3;
 - (void)_initDetector;
 - (BOOL)_isDeviceHandheld;
 - (void)_logCorruptAudio;
@@ -169,7 +169,7 @@
 - (id)firstChanceAudioBuffer;
 - (id)firstChanceTriggeredDate;
 - (id)firstChanceVTEventInfo;
-- (unsigned int)getAdjustedDeviceStartTime:(unsigned int)arg1;
+- (unsigned long long)getAdjustedDeviceStartTime:(unsigned long long)arg1;
 - (id)getCircularBuffer;
 - (id)getCorealisRTModel;
 - (id)getLanguageCode;
@@ -187,11 +187,11 @@
 - (void)prepareWithProperty:(id)arg1 readyCompletion:(id /* block */)arg2;
 - (void)requestFoceTrigger;
 - (void)requestSecondChance;
-- (unsigned int)sampleCount;
-- (unsigned int)sampleCountAtEndOfTrigger;
-- (unsigned int)sampleCountAtStartOfTrigger;
-- (unsigned int)samplerate;
+- (unsigned long long)sampleCount;
+- (unsigned long long)sampleCountAtEndOfTrigger;
+- (unsigned long long)sampleCountAtStartOfTrigger;
+- (unsigned long long)samplerate;
 - (void)setBypass:(BOOL)arg1;
-- (int)triggerCount;
+- (long long)triggerCount;
 
 @end

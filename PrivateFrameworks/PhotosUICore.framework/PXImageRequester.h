@@ -6,32 +6,32 @@
     <PXDisplayAsset> * __currentImageSourceAsset;
     PXImageRequest * __currentRequest;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  __targetSize;
     <PXDisplayAsset> * _asset;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _contentSize;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _contentsRect;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _desiredContentsRect;
     BOOL  _hasFullQuality;
@@ -44,31 +44,31 @@
         BOOL isInCloud; 
     }  _needsUpdateFlags;
     UIImage * _opportunisticImage;
-    double  _scale;
+    float  _scale;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _viewportSize;
 }
 
 @property (setter=_setCurrentImageSourceAsset:, nonatomic, retain) <PXDisplayAsset> *_currentImageSourceAsset;
 @property (setter=_setCurrentRequest:, nonatomic, retain) PXImageRequest *_currentRequest;
-@property (setter=_setTargetSize:, nonatomic) struct CGSize { double x1; double x2; } _targetSize;
+@property (setter=_setTargetSize:, nonatomic) struct CGSize { float x1; float x2; } _targetSize;
 @property (nonatomic, readonly) <PXDisplayAsset> *asset;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } contentSize;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } contentsRect;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } contentSize;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } contentsRect;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } desiredContentsRect;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } desiredContentsRect;
 @property (setter=_setHasFullQuality:, nonatomic) BOOL hasFullQuality;
 @property (readonly) unsigned int hash;
 @property (setter=_setImage:, nonatomic, retain) UIImage *image;
 @property (setter=_setIsInCloud:, nonatomic) BOOL isInCloud;
 @property (nonatomic, readonly) PXUIMediaProvider *mediaProvider;
 @property (setter=_setOpportunisticImage:, nonatomic, retain) UIImage *opportunisticImage;
-@property (nonatomic, readonly) double scale;
+@property (nonatomic, readonly) float scale;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } viewportSize;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } viewportSize;
 
 + (id)defaultOptions;
 
@@ -87,18 +87,18 @@
 - (void)_setImage:(id)arg1;
 - (void)_setIsInCloud:(BOOL)arg1;
 - (void)_setOpportunisticImage:(id)arg1;
-- (void)_setTargetSize:(struct CGSize { double x1; double x2; })arg1;
-- (struct CGSize { double x1; double x2; })_targetSize;
+- (void)_setTargetSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { float x1; float x2; })_targetSize;
 - (void)_updateIfNeeded;
 - (void)_updateImageRequestIfNeeded;
 - (void)_updateIsInCloudIfNeeded;
 - (void)_updateTargetSizeIfNeeded;
 - (id)asset;
-- (struct CGSize { double x1; double x2; })contentSize;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })contentsRect;
+- (struct CGSize { float x1; float x2; })contentSize;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentsRect;
 - (void)dealloc;
 - (id)description;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })desiredContentsRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })desiredContentsRect;
 - (void)didPerformChanges;
 - (void)handlePreloadedImage:(id)arg1;
 - (void)handlePreloadedImageRequester:(id)arg1;
@@ -113,12 +113,12 @@
 - (void)performChanges:(id /* block */)arg1;
 - (float)scale;
 - (void)setAsset:(id)arg1;
-- (void)setContentSize:(struct CGSize { double x1; double x2; })arg1;
-- (void)setContentsRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)setDesiredContentsRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setContentSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setContentsRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setDesiredContentsRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setMediaProvider:(id)arg1;
 - (void)setScale:(float)arg1;
-- (void)setViewportSize:(struct CGSize { double x1; double x2; })arg1;
-- (struct CGSize { double x1; double x2; })viewportSize;
+- (void)setViewportSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { float x1; float x2; })viewportSize;
 
 @end

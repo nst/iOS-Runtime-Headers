@@ -7,7 +7,7 @@
         unsigned int muid : 1; 
         unsigned int resultProviderId : 1; 
     }  _has;
-    unsigned int  _muid;
+    unsigned long long  _muid;
     GEOPDPlace * _place;
     int  _resultProviderId;
     PBUnknownFields * _unknownFields;
@@ -16,7 +16,7 @@
 @property (nonatomic) BOOL hasMuid;
 @property (nonatomic, readonly) BOOL hasPlace;
 @property (nonatomic) BOOL hasResultProviderId;
-@property (nonatomic) unsigned int muid;
+@property (nonatomic) unsigned long long muid;
 @property (nonatomic, retain) GEOPDPlace *place;
 @property (nonatomic) int resultProviderId;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
@@ -32,13 +32,13 @@
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (unsigned int)muid;
+- (unsigned long long)muid;
 - (id)place;
 - (BOOL)readFrom:(id)arg1;
 - (int)resultProviderId;
 - (void)setHasMuid:(BOOL)arg1;
 - (void)setHasResultProviderId:(BOOL)arg1;
-- (void)setMuid:(unsigned int)arg1;
+- (void)setMuid:(unsigned long long)arg1;
 - (void)setPlace:(id)arg1;
 - (void)setResultProviderId:(int)arg1;
 - (id)unknownFields;

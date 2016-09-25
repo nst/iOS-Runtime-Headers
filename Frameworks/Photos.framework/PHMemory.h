@@ -15,7 +15,7 @@
     NSData * _movieData;
     BOOL  _pending;
     NSData * _photosGraphData;
-    int  _photosGraphVersion;
+    long long  _photosGraphVersion;
     BOOL  _rejected;
     double  _score;
     int  _subcategory;
@@ -34,7 +34,7 @@
 @property (nonatomic, readonly) NSData *movieData;
 @property (getter=isPending, nonatomic, readonly) BOOL pending;
 @property (nonatomic, readonly) NSData *photosGraphData;
-@property (nonatomic, readonly) int photosGraphVersion;
+@property (nonatomic, readonly) long long photosGraphVersion;
 @property (getter=isRejected, nonatomic, readonly) BOOL rejected;
 @property (nonatomic, readonly) double score;
 @property (nonatomic, readonly) int subcategory;
@@ -82,7 +82,7 @@
 - (id)movieData;
 - (id)movieStateDataForAsset:(id)arg1;
 - (id)photosGraphData;
-- (int)photosGraphVersion;
+- (long long)photosGraphVersion;
 - (id)predicateForAllAssets;
 - (id)predicateForAllMomentsFromRepresentativeAssets;
 - (double)score;

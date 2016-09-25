@@ -7,7 +7,7 @@
     BOOL  _allowsPluginPlayback;
     NSArray * _associatedChatItems;
     CKAudioController * _audioController;
-    double  _balloonMaxWidth;
+    float  _balloonMaxWidth;
     NSArray * _chatItems;
     CKTranscriptCollectionView * _collectionView;
     CKConversation * _conversation;
@@ -28,14 +28,14 @@
     NSIndexPath * _itemIndexPathToHighlight;
     UITapGestureRecognizer * _loggingTapGestureRecognizer;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _marginInsets;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _peekSampleTranslation;
     BOOL  _peeking;
     BOOL  _playedLastImpactEffectForTransitionFromComposing;
@@ -57,7 +57,7 @@
 @property (nonatomic) BOOL allowsPluginPlayback;
 @property (nonatomic, copy) NSArray *associatedChatItems;
 @property (nonatomic, retain) CKAudioController *audioController;
-@property (nonatomic) double balloonMaxWidth;
+@property (nonatomic) float balloonMaxWidth;
 @property (nonatomic, readonly) IMChat *chat;
 @property (nonatomic, copy) NSArray *chatItems;
 @property (nonatomic, retain) CKTranscriptCollectionView *collectionView;
@@ -80,8 +80,8 @@
 @property (nonatomic) BOOL isLoadingEarlierMessages;
 @property (nonatomic) BOOL isPerformingRegenerateOnlyUpdate;
 @property (nonatomic, retain) UITapGestureRecognizer *loggingTapGestureRecognizer;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } marginInsets;
-@property (nonatomic) struct CGPoint { double x1; double x2; } peekSampleTranslation;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } marginInsets;
+@property (nonatomic) struct CGPoint { float x1; float x2; } peekSampleTranslation;
 @property (getter=isPeeking, nonatomic) BOOL peeking;
 @property (nonatomic) BOOL playedLastImpactEffectForTransitionFromComposing;
 @property (nonatomic) double pluginPlaybackDelay;
@@ -100,7 +100,7 @@
 
 - (void).cxx_destruct;
 - (void)__handleLoggingTapped:(id)arg1;
-- (float)_balloonHorizontalOffsetForParentChatItem:(id)arg1 contentAlignmentRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 responsibleChatItems:(id*)arg3 individualOffsets:(id*)arg4;
+- (float)_balloonHorizontalOffsetForParentChatItem:(id)arg1 contentAlignmentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 responsibleChatItems:(id*)arg3 individualOffsets:(id*)arg4;
 - (void)_collectionViewDidRestAsync:(BOOL)arg1;
 - (void)_deferredStartPlayback;
 - (void)_diffAssociatedItemsWithOldAssociatedItems:(id)arg1 removedAssociatedIndexes:(id*)arg2 insertedAssociatedIndexes:(id*)arg3;
@@ -178,16 +178,16 @@
 - (id)collectionViewControllerForImpactEffectManager:(id)arg1;
 - (void)collectionViewDidInset:(id)arg1;
 - (id)collectionViewLayout;
-- (void)collectionViewLayout:(id)arg1 sizeDidChange:(struct CGSize { double x1; double x2; })arg2;
+- (void)collectionViewLayout:(id)arg1 sizeDidChange:(struct CGSize { float x1; float x2; })arg2;
 - (void)collectionViewLayoutRestingDidChange:(id)arg1;
-- (void)collectionViewWillInset:(id)arg1 targetContentInset:(inout struct UIEdgeInsets { double x1; double x2; double x3; double x4; }*)arg2;
+- (void)collectionViewWillInset:(id)arg1 targetContentInset:(inout struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg2;
 - (void)collectionViewWillProgrammaticallyScroll:(id)arg1 animated:(BOOL)arg2;
-- (void)collectionViewWillScroll:(id)arg1 targetContentOffset:(inout struct CGPoint { double x1; double x2; }*)arg2;
+- (void)collectionViewWillScroll:(id)arg1 targetContentOffset:(inout struct CGPoint { float x1; float x2; }*)arg2;
 - (void)configureAssociatedCell:(id)arg1 forItemAtIndexPath:(id)arg2;
 - (void)configureCell:(id)arg1 forItemAtIndexPath:(id)arg2;
 - (void)configureSpeakerButtonCell:(id)arg1 forItemAtIndexPath:(id)arg2;
 - (id)conversation;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })convertedBoundsToCullFromView:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertedBoundsToCullFromView:(id)arg1;
 - (void)cullCellSubviews;
 - (id)currentEffectDecorationViews;
 - (id)currentEffectForCollectionView:(id)arg1 layout:(id)arg2;
@@ -207,10 +207,10 @@
 - (void)highlightItemAtIndexPathWhenDisplayed:(id)arg1;
 - (id)impactEffectManager;
 - (id)indexPathForBalloonView:(id)arg1;
-- (id)initWithConversation:(id)arg1 balloonMaxWidth:(float)arg2 marginInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg3;
+- (id)initWithConversation:(id)arg1 balloonMaxWidth:(float)arg2 marginInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg3;
 - (void)interactionStartedFromPreviewItemControllerInBalloonView:(id)arg1;
 - (void)interactionStoppedFromPreviewItemControllerInBalloonView:(id)arg1;
-- (void)invalidateChatItemLayoutWithBalloonMaxWidth:(float)arg1 marginInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
+- (void)invalidateChatItemLayoutWithBalloonMaxWidth:(float)arg1 marginInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
 - (int)invisibleInkEffectPauseReasons;
 - (BOOL)isInitialLoad;
 - (BOOL)isLoadingEarlierMessages;
@@ -226,11 +226,11 @@
 - (void)locationSharingClient:(id)arg1 showShareLocationMenuWithBalloonPluginView:(id)arg2;
 - (void)locationStringDidChange:(id)arg1;
 - (id)loggingTapGestureRecognizer;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })marginInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })marginInsets;
 - (id)messagePartForBalloonView:(id)arg1;
 - (int)numberOfSectionsInCollectionView:(id)arg1;
 - (void)parentControllerDidBecomeActive;
-- (struct CGPoint { double x1; double x2; })peekSampleTranslation;
+- (struct CGPoint { float x1; float x2; })peekSampleTranslation;
 - (void)performResumeDeferredSetup;
 - (BOOL)playedLastImpactEffectForTransitionFromComposing;
 - (double)pluginPlaybackDelay;
@@ -251,7 +251,7 @@
 - (void)scrollViewDidScrollToTop:(id)arg1;
 - (BOOL)scrollViewShouldScrollToTop:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
-- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { double x1; double x2; })arg2 targetContentOffset:(inout struct CGPoint { double x1; double x2; }*)arg3;
+- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { float x1; float x2; })arg2 targetContentOffset:(inout struct CGPoint { float x1; float x2; }*)arg3;
 - (void)selectChatItem:(id)arg1;
 - (id)selectedItems;
 - (void)sendAnimationManagerDidStopAnimation:(id)arg1 context:(id)arg2;
@@ -281,8 +281,8 @@
 - (void)setIsLoadingEarlierMessages:(BOOL)arg1;
 - (void)setIsPerformingRegenerateOnlyUpdate:(BOOL)arg1;
 - (void)setLoggingTapGestureRecognizer:(id)arg1;
-- (void)setMarginInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
-- (void)setPeekSampleTranslation:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setMarginInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setPeekSampleTranslation:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setPeeking:(BOOL)arg1;
 - (void)setPlayedLastImpactEffectForTransitionFromComposing:(BOOL)arg1;
 - (void)setPluginPlaybackDelay:(double)arg1;
@@ -333,7 +333,7 @@
 - (void)viewDidLayoutSubviews;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (BOOL)wantsDrawerLayout;
 
 @end

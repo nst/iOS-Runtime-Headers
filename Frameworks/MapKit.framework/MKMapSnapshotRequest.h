@@ -13,8 +13,8 @@
     UIImage * _image;
     id  _requester;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _size;
     VKMapSnapshotCreator * _snapshotCreator;
     unsigned int  _zoomLevel;
@@ -26,7 +26,7 @@
 @property (nonatomic) MKMapSnapshotCreator *delegate;
 @property (nonatomic, readonly) UIImage *image;
 @property (nonatomic, retain) id requester;
-@property (nonatomic) struct CGSize { double x1; double x2; } size;
+@property (nonatomic) struct CGSize { float x1; float x2; } size;
 @property (nonatomic) unsigned int zoomLevel;
 
 - (void).cxx_destruct;
@@ -43,9 +43,9 @@
 - (void)setCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setRequester:(id)arg1;
-- (void)setSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setZoomLevel:(unsigned int)arg1;
-- (struct CGSize { double x1; double x2; })size;
+- (struct CGSize { float x1; float x2; })size;
 - (void)start;
 - (unsigned int)zoomLevel;
 

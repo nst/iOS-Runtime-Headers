@@ -16,8 +16,8 @@
     NSLayoutConstraint * _thumbnailImageContainerViewHeightConstraint;
     UILabel * _titleLabel;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _windowSize;
     NSString * _zoomingImageTransitionIdentifier;
 }
@@ -35,11 +35,11 @@
 @property (nonatomic, retain) UILabel *subtitleLabel;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UIView *textContainer;
-@property (nonatomic, readonly) double thumbnailImageContainerHeight;
+@property (nonatomic, readonly) float thumbnailImageContainerHeight;
 @property (nonatomic, retain) VideosExtrasConstrainedArtworkContainerView *thumbnailImageContainerView;
 @property (nonatomic, retain) NSLayoutConstraint *thumbnailImageContainerViewHeightConstraint;
 @property (nonatomic, retain) UILabel *titleLabel;
-@property (nonatomic) struct CGSize { double x1; double x2; } windowSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } windowSize;
 @property (nonatomic, copy) NSString *zoomingImageTransitionIdentifier;
 
 - (void).cxx_destruct;
@@ -82,11 +82,11 @@
 - (void)setThumbnailImageContainerView:(id)arg1;
 - (void)setThumbnailImageContainerViewHeightConstraint:(id)arg1;
 - (void)setThumbnailImagePlaceholder:(id)arg1;
-- (void)setThumbnailMaxSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setThumbnailMaxSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setThumbnailOverlayImage:(id)arg1;
 - (void)setTitleLabel:(id)arg1;
 - (void)setTitleText:(id)arg1;
-- (void)setWindowSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setWindowSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setZoomingImageTransitionIdentifier:(id)arg1;
 - (id)subtitleBaselineConstraint;
 - (id)subtitleLabel;
@@ -102,7 +102,7 @@
 - (id)titleText;
 - (id)titleTextStyle;
 - (void)updateConstraints;
-- (struct CGSize { double x1; double x2; })windowSize;
+- (struct CGSize { float x1; float x2; })windowSize;
 - (id)zoomingImageTransitionIdentifier;
 
 @end

@@ -9,8 +9,8 @@
 }
 
 @property (readonly) SCNGeometry *geometry;
-@property (readonly) double screenSpaceRadius;
-@property (readonly) double worldSpaceDistance;
+@property (readonly) float screenSpaceRadius;
+@property (readonly) float worldSpaceDistance;
 
 + (id)levelOfDetailWithGeometry:(id)arg1 screenSpaceRadius:(float)arg2;
 + (id)levelOfDetailWithGeometry:(id)arg1 worldSpaceDistance:(float)arg2;

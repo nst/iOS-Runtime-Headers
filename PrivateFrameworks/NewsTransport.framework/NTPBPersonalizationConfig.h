@@ -8,7 +8,7 @@
     struct { 
         unsigned int moduloForHashing : 1; 
     }  _has;
-    int  _moduloForHashing;
+    long long  _moduloForHashing;
     NSMutableArray * _personalizationBuckets;
     NSMutableArray * _personalizationTreatments;
 }
@@ -18,7 +18,7 @@
 @property (nonatomic, readonly) BOOL hasBinningConfig;
 @property (nonatomic, readonly) BOOL hasDefaultPersonalizationTreatment;
 @property (nonatomic) BOOL hasModuloForHashing;
-@property (nonatomic) int moduloForHashing;
+@property (nonatomic) long long moduloForHashing;
 @property (nonatomic, retain) NSMutableArray *personalizationBuckets;
 @property (nonatomic, retain) NSMutableArray *personalizationTreatments;
 
@@ -41,7 +41,7 @@
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (int)moduloForHashing;
+- (long long)moduloForHashing;
 - (id)personalizationBuckets;
 - (id)personalizationBucketsAtIndex:(unsigned int)arg1;
 - (unsigned int)personalizationBucketsCount;
@@ -52,7 +52,7 @@
 - (void)setBinningConfig:(id)arg1;
 - (void)setDefaultPersonalizationTreatment:(id)arg1;
 - (void)setHasModuloForHashing:(BOOL)arg1;
-- (void)setModuloForHashing:(int)arg1;
+- (void)setModuloForHashing:(long long)arg1;
 - (void)setPersonalizationBuckets:(id)arg1;
 - (void)setPersonalizationTreatments:(id)arg1;
 - (void)writeTo:(id)arg1;

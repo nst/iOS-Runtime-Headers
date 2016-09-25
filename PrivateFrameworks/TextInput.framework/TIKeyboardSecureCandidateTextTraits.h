@@ -5,16 +5,16 @@
 @interface TIKeyboardSecureCandidateTextTraits : NSObject <NSCopying, NSSecureCoding> {
     double  _baselineOffset;
     NSString * _fontName;
-    double  _maxFontSize;
-    double  _minFontSize;
+    float  _maxFontSize;
+    float  _minFontSize;
     TIKeyboardSecureCandidateRGBColor * _textColor;
     double  _yCoordinate;
 }
 
 @property (nonatomic) double baselineOffset;
 @property (nonatomic, copy) NSString *fontName;
-@property (nonatomic) double maxFontSize;
-@property (nonatomic) double minFontSize;
+@property (nonatomic) float maxFontSize;
+@property (nonatomic) float minFontSize;
 @property (nonatomic, retain) TIKeyboardSecureCandidateRGBColor *textColor;
 @property (nonatomic) double yCoordinate;
 

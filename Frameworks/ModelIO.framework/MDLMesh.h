@@ -47,9 +47,9 @@
 - (id)allocator;
 - (struct { })boundingBox;
 - (id)controlNodeForINdex:(unsigned int)arg1;
-- (void)copyDataVector:(struct vector<float, std::__1::allocator<float> > { double *x1; double *x2; struct __compressed_pair<double *, std::__1::allocator<float> > { double *x_3_1_1; } x3; }*)arg1 toAttr:(id)arg2;
-- (void)createSourceDataVector:(struct vector<float, std::__1::allocator<float> > { double *x1; double *x2; struct __compressed_pair<double *, std::__1::allocator<float> > { double *x_3_1_1; } x3; }*)arg1 attr:(id)arg2 srcElementCount:(int)arg3 dstElementCount:(int)arg4;
-- (void)debugPrintToFile:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; int x20; }*)arg1;
+- (void)copyDataVector:(struct vector<float, std::__1::allocator<float> > { float *x1; float *x2; struct __compressed_pair<float *, std::__1::allocator<float> > { float *x_3_1_1; } x3; }*)arg1 toAttr:(id)arg2;
+- (void)createSourceDataVector:(struct vector<float, std::__1::allocator<float> > { float *x1; float *x2; struct __compressed_pair<float *, std::__1::allocator<float> > { float *x_3_1_1; } x3; }*)arg1 attr:(id)arg2 srcElementCount:(int)arg3 dstElementCount:(int)arg4;
+- (void)debugPrintToFile:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; long long x20; }*)arg1;
 - (void)enumerateSubmeshesUsingBlock:(id /* block */)arg1;
 - (BOOL)generateAmbientOcclusionTextureWithQuality:(float)arg1 attenuationFactor:(float)arg2 objectsToConsider:(id)arg3 vertexAttributeNamed:(id)arg4 materialPropertyNamed:(id)arg5;
 - (BOOL)generateAmbientOcclusionTextureWithSize:(void *)arg1 raysPerSample:(void *)arg2 attenuationFactor:(void *)arg3 objectsToConsider:(void *)arg4 vertexAttributeNamed:(void *)arg5 materialPropertyNamed:(void *)arg6; // needs 6 arg types, found 5: int, float, id, id, id

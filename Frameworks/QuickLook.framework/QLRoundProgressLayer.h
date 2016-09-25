@@ -4,7 +4,7 @@
 
 @interface QLRoundProgressLayer : CALayer
 
-@property (nonatomic) double progress;
+@property (nonatomic) float progress;
 
 + (BOOL)needsDisplayForKey:(id)arg1;
 

@@ -57,9 +57,9 @@
 - (id)dbSem;
 - (void)dealloc;
 - (void)deleteAllEntriesForKey:(id)arg1 withFilters:(id)arg2;
-- (void)deleteArrayEntriesForKey:(id)arg1 withRowID:(int)arg2;
-- (void)deleteDynamicEntriesForKey:(id)arg1 withRowID:(int)arg2;
-- (void)deleteEntryForKey:(id)arg1 withRowID:(int)arg2;
+- (void)deleteArrayEntriesForKey:(id)arg1 withRowID:(long long)arg2;
+- (void)deleteDynamicEntriesForKey:(id)arg1 withRowID:(long long)arg2;
+- (void)deleteEntryForKey:(id)arg1 withRowID:(long long)arg2;
 - (void)displaySchema:(id)arg1;
 - (void)dropTable:(id)arg1;
 - (void)dropTables:(id)arg1;
@@ -126,6 +126,6 @@
 - (id)workQueue;
 - (void)writeArrayEntries:(id)arg1;
 - (void)writeDynamicEntries:(id)arg1;
-- (int)writeEntry:(id)arg1;
+- (long long)writeEntry:(id)arg1;
 
 @end

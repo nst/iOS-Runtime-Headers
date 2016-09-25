@@ -57,8 +57,8 @@
 - (id)addVariantNodeWithElements:(id)arg1;
 - (id)addVariantNodeWithElements:(id)arg1 parent:(id)arg2 hidden:(BOOL)arg3;
 - (id)alternativeTickColor;
-- (void)applyLabelPositions:(struct LabelPosition { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; int x2; int x3; }*)arg1 toNodes:(id)arg2;
-- (void)applyLabelPositions:(struct LabelPosition { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; int x2; int x3; }*)arg1 withCenter:(struct CGPoint { double x1; double x2; })arg2 toNodes:(id)arg3;
+- (void)applyLabelPositions:(struct LabelPosition { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; int x2; int x3; }*)arg1 toNodes:(id)arg2;
+- (void)applyLabelPositions:(struct LabelPosition { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; int x2; int x3; }*)arg1 withCenter:(struct CGPoint { float x1; float x2; })arg2 toNodes:(id)arg3;
 - (id)auxiliaryScrubbingObscuredNodes;
 - (id)background;
 - (id)circle;
@@ -76,7 +76,7 @@
 - (id)faceColor;
 - (void)forEachActiveVariant:(id /* block */)arg1;
 - (id)handColor;
-- (id)initWithSize:(struct CGSize { double x1; double x2; })arg1;
+- (id)initWithSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)invalidateRasterization;
 - (void)performWristRaiseAnimation;
 - (void)preRender;

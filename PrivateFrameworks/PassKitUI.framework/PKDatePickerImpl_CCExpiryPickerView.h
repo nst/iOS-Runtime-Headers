@@ -14,7 +14,7 @@
         unsigned int length; 
     }  _possibleRange;
     NSNumber * _useDoubleMonthStyle;
-    double  _width;
+    float  _width;
 }
 
 @property (nonatomic, retain) NSDate *date;

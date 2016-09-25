@@ -47,7 +47,7 @@
 - (void)configureGlobalFooterView:(id)arg1;
 - (void)configureGlobalHeaderView:(id)arg1;
 - (void)configureSupplementaryView:(id)arg1 ofKind:(id)arg2 forIndexPath:(id)arg3 animated:(BOOL)arg4;
-- (struct CGPoint { double x1; double x2; })contentOffsetForPreheating;
+- (struct CGPoint { float x1; float x2; })contentOffsetForPreheating;
 - (void)didTapHeaderView:(id)arg1;
 - (id)filterPredicateForAlbum:(struct NSObject { Class x1; }*)arg1;
 - (float)globalHeaderHeight;

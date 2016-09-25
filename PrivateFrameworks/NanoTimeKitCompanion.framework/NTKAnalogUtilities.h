@@ -9,11 +9,11 @@
 + (void)colorizeLabels:(id)arg1 color:(id)arg2;
 + (void)fadeNodes:(id)arg1 alpha:(float)arg2 except:(id)arg3;
 + (id)labelsForFaceStyle:(int)arg1 count:(unsigned int)arg2 start:(unsigned int)arg3 multiple:(unsigned int)arg4 repeat:(unsigned int)arg5 fontSize:(float)arg6 radius:(float)arg7 paddedWithZeroes:(BOOL)arg8;
-+ (id)labelsWithCount:(unsigned int)arg1 start:(unsigned int)arg2 multiple:(unsigned int)arg3 repeat:(unsigned int)arg4 font:(int)arg5 fontSize:(float)arg6 center:(struct CGPoint { double x1; double x2; })arg7 radius:(float)arg8 paddedWithZeros:(BOOL)arg9 filter:(BOOL)arg10;
++ (id)labelsWithCount:(unsigned int)arg1 start:(unsigned int)arg2 multiple:(unsigned int)arg3 repeat:(unsigned int)arg4 font:(int)arg5 fontSize:(float)arg6 center:(struct CGPoint { float x1; float x2; })arg7 radius:(float)arg8 paddedWithZeros:(BOOL)arg9 filter:(BOOL)arg10;
 + (void)preloadTextures;
 + (void)scaleNodes:(id)arg1 scale:(float)arg2 andResetNodesAtIndices:(id)arg3;
-+ (struct CGSize { double x1; double x2; })sceneSize;
++ (struct CGSize { float x1; float x2; })sceneSize;
 + (BOOL)shouldPreloadTextures;
-+ (void)updateNodes:(id)arg1 offset:(unsigned int)arg2 center:(struct CGPoint { double x1; double x2; })arg3 radius:(float)arg4 angleMultiplier:(float)arg5 scale:(float)arg6 rotate:(BOOL)arg7 round:(BOOL)arg8;
++ (void)updateNodes:(id)arg1 offset:(unsigned int)arg2 center:(struct CGPoint { float x1; float x2; })arg3 radius:(float)arg4 angleMultiplier:(float)arg5 scale:(float)arg6 rotate:(BOOL)arg7 round:(BOOL)arg8;
 
 @end

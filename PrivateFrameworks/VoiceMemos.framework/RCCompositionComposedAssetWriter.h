@@ -15,7 +15,7 @@
 @property (nonatomic) BOOL canGenerateWaveformByProcessingAVURL;
 @property (nonatomic) BOOL canSaveCompositionMetadata;
 @property (nonatomic, readonly) RCComposition *composition;
-@property (nonatomic, readonly) double progress;
+@property (nonatomic, readonly) float progress;
 
 - (void).cxx_destruct;
 - (void)_writeCompositionWaveformForFinalizedAssetFromFragmentsWithCompletionHandler:(id /* block */)arg1;

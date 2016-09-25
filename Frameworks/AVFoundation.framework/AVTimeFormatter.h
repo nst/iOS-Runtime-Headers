@@ -35,7 +35,7 @@
 - (void)setNumberFormatterWithTwoMinimumIntegerDigits:(id)arg1;
 - (void)setStyle:(int)arg1;
 - (id)stringForObjectValue:(id)arg1;
-- (id)stringFromCMTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
+- (id)stringFromCMTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (id)stringFromSeconds:(double)arg1;
 - (id)stringFromTimeInterval:(double)arg1;
 - (int)style;

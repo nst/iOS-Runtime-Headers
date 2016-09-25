@@ -4,7 +4,7 @@
 
 @interface AWDMailError : PBCodable <NSCopying> {
     int  _errorCode;
-    int  _genericErrorCode;
+    long long  _genericErrorCode;
     struct { 
         unsigned int genericErrorCode : 1; 
         unsigned int errorCode : 1; 
@@ -12,7 +12,7 @@
 }
 
 @property (nonatomic) int errorCode;
-@property (nonatomic) int genericErrorCode;
+@property (nonatomic) long long genericErrorCode;
 @property (nonatomic) BOOL hasErrorCode;
 @property (nonatomic) BOOL hasGenericErrorCode;
 
@@ -23,7 +23,7 @@
 - (id)dictionaryRepresentation;
 - (int)errorCode;
 - (id)errorCodeAsString:(int)arg1;
-- (int)genericErrorCode;
+- (long long)genericErrorCode;
 - (BOOL)hasErrorCode;
 - (BOOL)hasGenericErrorCode;
 - (unsigned int)hash;
@@ -31,7 +31,7 @@
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setErrorCode:(int)arg1;
-- (void)setGenericErrorCode:(int)arg1;
+- (void)setGenericErrorCode:(long long)arg1;
 - (void)setHasErrorCode:(BOOL)arg1;
 - (void)setHasGenericErrorCode:(BOOL)arg1;
 - (void)writeTo:(id)arg1;

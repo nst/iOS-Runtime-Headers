@@ -5,7 +5,7 @@
 @interface GEOComposedRoute : NSObject <GEOMapAccessRestrictions> {
     GEOMapRegion * _boundingMapRegion;
     unsigned int  _currentDisplayStep;
-    struct { struct PolylineCoordinate { unsigned int x_1_1_1; double x_1_1_2; } x1; struct PolylineCoordinate { unsigned int x_2_1_1; double x_2_1_2; } x2; } * _currentManeuverDisplayEndPoints;
+    struct { struct PolylineCoordinate { unsigned int x_1_1_1; float x_1_1_2; } x1; struct PolylineCoordinate { unsigned int x_2_1_1; float x_2_1_2; } x2; } * _currentManeuverDisplayEndPoints;
     NSArray * _currentSectionOptions;
     GEOTransitDecoderData * _decoderData;
     GEOComposedWaypoint * _destination;
@@ -125,7 +125,7 @@
 
 - (void)_addPaths:(id)arg1 forObserver:(id)arg2;
 - (void)_addSnappedPolylinePathsForSection:(id)arg1 toPaths:(id)arg2 rects:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; }*)arg3 rectsCount:(unsigned long)arg4;
-- (struct PolylineCoordinate { unsigned int x1; double x2; })_findRouteCoordinateWithOffset:(float)arg1 aPos:(const struct Matrix<float, 2, 1> { double x1[2]; }*)arg2 aCoord:(const struct PolylineCoordinate { unsigned int x1; double x2; }*)arg3 bCoord:(const struct PolylineCoordinate { unsigned int x1; double x2; }*)arg4 pointOnSegment:(const struct Matrix<float, 2, 1> { double x1[2]; }*)arg5 bounds:(const struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; }*)arg6;
+- (struct PolylineCoordinate { unsigned int x1; float x2; })_findRouteCoordinateWithOffset:(float)arg1 aPos:(const struct Matrix<float, 2, 1> { float x1[2]; }*)arg2 aCoord:(const struct PolylineCoordinate { unsigned int x1; float x2; }*)arg3 bCoord:(const struct PolylineCoordinate { unsigned int x1; float x2; }*)arg4 pointOnSegment:(const struct Matrix<float, 2, 1> { float x1[2]; }*)arg5 bounds:(const struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; }*)arg6;
 - (void)_initializeManeuverDisplaySteps;
 - (BOOL)_meetsMinimumPathLengthBetweenStart:(unsigned int)arg1 end:(unsigned int)arg2;
 - (bool)_needsCornerOffsetAt:(unsigned int)arg1;
@@ -145,9 +145,9 @@
 - (void)clearPoints;
 - (void)clearSnappedPathsForObserver:(id)arg1;
 - (void*)controlPoints;
-- (struct PolylineCoordinate { unsigned int x1; double x2; })coordinateAtOffset:(double)arg1;
-- (struct PolylineCoordinate { unsigned int x1; double x2; })coordinateAtOffset:(double)arg1 fromRouteCoordinate:(struct PolylineCoordinate { unsigned int x1; double x2; })arg2;
-- (struct PolylineCoordinate { unsigned int x1; double x2; })coordinateAtOffset:(double)arg1 fromRoutePoint:(unsigned int)arg2;
+- (struct PolylineCoordinate { unsigned int x1; float x2; })coordinateAtOffset:(double)arg1;
+- (struct PolylineCoordinate { unsigned int x1; float x2; })coordinateAtOffset:(double)arg1 fromRouteCoordinate:(struct PolylineCoordinate { unsigned int x1; float x2; })arg2;
+- (struct PolylineCoordinate { unsigned int x1; float x2; })coordinateAtOffset:(double)arg1 fromRoutePoint:(unsigned int)arg2;
 - (double)courseAtRouteCoordinateIndex:(unsigned int)arg1;
 - (unsigned int)currentDisplayStep;
 - (void)dealloc;
@@ -159,7 +159,7 @@
 - (double)distanceBetweenLocation:(struct { double x1; double x2; })arg1 nextPointIndex:(unsigned int)arg2 toPointIndex:(unsigned int)arg3;
 - (double)distanceBetweenRoutePointIndex:(unsigned int)arg1 toPointIndex:(unsigned int)arg2;
 - (double)distanceBetweenStep:(id)arg1 andStep:(id)arg2;
-- (double)distanceFromPoint:(struct PolylineCoordinate { unsigned int x1; double x2; })arg1 toPoint:(struct PolylineCoordinate { unsigned int x1; double x2; })arg2;
+- (double)distanceFromPoint:(struct PolylineCoordinate { unsigned int x1; float x2; })arg1 toPoint:(struct PolylineCoordinate { unsigned int x1; float x2; })arg2;
 - (double)distanceFromPointIndex:(unsigned int)arg1 toPointIndex:(unsigned int)arg2;
 - (unsigned int)expectedTime;
 - (id)firstDepartureTimeOfNextRouteStepAfterCurrentStep;
@@ -196,7 +196,7 @@
 - (id)longTrafficDescription;
 - (unsigned int)maneuverDisplayCount;
 - (BOOL)maneuverDisplayEnabled;
-- (struct { struct PolylineCoordinate { unsigned int x_1_1_1; double x_1_1_2; } x1; struct PolylineCoordinate { unsigned int x_2_1_1; double x_2_1_2; } x2; })maneuverDisplayEndpointsAtIndex:(unsigned long)arg1;
+- (struct { struct PolylineCoordinate { unsigned int x_1_1_1; float x_1_1_2; } x1; struct PolylineCoordinate { unsigned int x_2_1_1; float x_2_1_2; } x2; })maneuverDisplayEndpointsAtIndex:(unsigned long)arg1;
 - (void)maneuverDisplayHasChanged;
 - (id)maneuverDisplaySteps;
 - (id)name;
@@ -208,7 +208,7 @@
 - (id)pickingDurationFormatString;
 - (id)planningDescriptionFormatString;
 - (struct { double x1; double x2; })pointAt:(unsigned int)arg1;
-- (struct { double x1; double x2; })pointAtRouteCoordinate:(struct PolylineCoordinate { unsigned int x1; double x2; })arg1;
+- (struct { double x1; double x2; })pointAtRouteCoordinate:(struct PolylineCoordinate { unsigned int x1; float x2; })arg1;
 - (unsigned int)pointCount;
 - (id)pointData;
 - (double*)pointLengths;
@@ -217,10 +217,10 @@
 - (double)remainingTimeAlongRouteFromStepIndex:(unsigned int)arg1 currentStepRemainingDistance:(double)arg2;
 - (void)removeObserver:(id)arg1;
 - (id)rideSelections;
-- (struct { struct { id x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; unsigned int x_1_1_5; unsigned int x_1_1_6; unsigned int x_1_1_7; BOOL x_1_1_8; unsigned int x_1_1_9; double x_1_1_10; unsigned int x_1_1_11; id x_1_1_12; } x1; unsigned int x2; unsigned int x3; int x4; int x5; int x6; unsigned int x7; unsigned int x8; union { struct { struct { double x_1_3_1; double x_1_3_2; } x_1_2_1; struct { double x_2_3_1; double x_2_3_2; } x_1_2_2; } x_9_1_1; struct { double x_2_2_1; double x_2_2_2; double x_2_2_3; double x_2_2_4; } x_9_1_2; } x9; struct { /* ? */ } *x10; struct { unsigned short x_11_1_1[2]; unsigned short x_11_1_2[2]; } x11; unsigned char x12; BOOL x13; unsigned char x14; BOOL x15; BOOL x16; unsigned char x17; BOOL x18; unsigned char x19; struct _NSRange { unsigned int x_20_1_1; unsigned int x_20_1_2; } x20; BOOL x21; }*)roadFeatureAtPointIndex:(unsigned int)arg1;
-- (void)roadFeaturesForRouteCoordinate:(struct PolylineCoordinate { unsigned int x1; double x2; })arg1 distanceAhead:(double)arg2 handler:(id /* block */)arg3;
+- (struct { struct { id x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; unsigned int x_1_1_5; unsigned int x_1_1_6; unsigned long long x_1_1_7; BOOL x_1_1_8; unsigned long long x_1_1_9; float x_1_1_10; unsigned long long x_1_1_11; id x_1_1_12; } x1; unsigned int x2; unsigned int x3; int x4; int x5; int x6; unsigned int x7; unsigned int x8; union { struct { struct { float x_1_3_1; float x_1_3_2; } x_1_2_1; struct { float x_2_3_1; float x_2_3_2; } x_1_2_2; } x_9_1_1; struct { float x_2_2_1; float x_2_2_2; float x_2_2_3; float x_2_2_4; } x_9_1_2; } x9; struct { /* ? */ } *x10; struct { unsigned short x_11_1_1[2]; unsigned short x_11_1_2[2]; } x11; unsigned char x12; BOOL x13; unsigned char x14; BOOL x15; BOOL x16; unsigned char x17; BOOL x18; unsigned char x19; struct _NSRange { unsigned int x_20_1_1; unsigned int x_20_1_2; } x20; BOOL x21; }*)roadFeatureAtPointIndex:(unsigned int)arg1;
+- (void)roadFeaturesForRouteCoordinate:(struct PolylineCoordinate { unsigned int x1; float x2; })arg1 distanceAhead:(double)arg2 handler:(id /* block */)arg3;
 - (id)routeAttributes;
-- (struct PolylineCoordinate { unsigned int x1; double x2; })routeCoordinateAtDistance:(double)arg1 beforeRouteCoordinate:(struct PolylineCoordinate { unsigned int x1; double x2; })arg2;
+- (struct PolylineCoordinate { unsigned int x1; float x2; })routeCoordinateAtDistance:(double)arg1 beforeRouteCoordinate:(struct PolylineCoordinate { unsigned int x1; float x2; })arg2;
 - (id)routeDescriptions;
 - (id)routeID;
 - (id)routeMatchAtDistance:(double)arg1 from:(id)arg2 stopAtEndOfTunnel:(BOOL)arg3 stopAtEndOfManeuver:(BOOL)arg4 date:(id)arg5;
@@ -260,7 +260,7 @@
 - (BOOL)shouldShowSchedule;
 - (id)startDate;
 - (id)stepAtIndex:(unsigned int)arg1;
-- (double)stepDistanceFromPoint:(struct PolylineCoordinate { unsigned int x1; double x2; })arg1 toPoint:(struct PolylineCoordinate { unsigned int x1; double x2; })arg2;
+- (double)stepDistanceFromPoint:(struct PolylineCoordinate { unsigned int x1; float x2; })arg1 toPoint:(struct PolylineCoordinate { unsigned int x1; float x2; })arg2;
 - (id)stepForPointIndex:(unsigned int)arg1;
 - (unsigned int)stepIndexForPointIndex:(unsigned int)arg1;
 - (id)steps;

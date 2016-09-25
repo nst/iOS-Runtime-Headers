@@ -11,9 +11,9 @@
     BOOL  _rootViewOnly;
     struct __CFDictionary { } * _searchURLs;
     NSString * _userDefaultsKey;
-    double  _width;
-    double  _widthLandscape;
-    double  _widthPortrait;
+    float  _width;
+    float  _widthLandscape;
+    float  _widthPortrait;
 }
 
 @property (nonatomic, readonly) NSString *cancelString;
@@ -21,7 +21,7 @@
 @property (nonatomic, readonly) NSString *placeholderString;
 @property (getter=isRootViewOnly, nonatomic, readonly) BOOL rootViewOnly;
 @property (nonatomic, readonly) NSString *userDefaultsKey;
-@property (nonatomic, readonly) double width;
+@property (nonatomic, readonly) float width;
 
 + (id)defaultConfiguration;
 + (id)defaultConfigurationWithClientInterface:(id)arg1;

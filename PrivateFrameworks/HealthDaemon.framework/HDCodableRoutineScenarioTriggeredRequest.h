@@ -7,13 +7,13 @@
     struct { 
         unsigned int triggerTypes : 1; 
     }  _has;
-    unsigned int  _triggerTypes;
+    unsigned long long  _triggerTypes;
 }
 
 @property (nonatomic, retain) HDCodableRoutineLocation *currentLocation;
 @property (nonatomic, readonly) BOOL hasCurrentLocation;
 @property (nonatomic) BOOL hasTriggerTypes;
-@property (nonatomic) unsigned int triggerTypes;
+@property (nonatomic) unsigned long long triggerTypes;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
@@ -29,8 +29,8 @@
 - (BOOL)readFrom:(id)arg1;
 - (void)setCurrentLocation:(id)arg1;
 - (void)setHasTriggerTypes:(BOOL)arg1;
-- (void)setTriggerTypes:(unsigned int)arg1;
-- (unsigned int)triggerTypes;
+- (void)setTriggerTypes:(unsigned long long)arg1;
+- (unsigned long long)triggerTypes;
 - (void)writeTo:(id)arg1;
 
 @end

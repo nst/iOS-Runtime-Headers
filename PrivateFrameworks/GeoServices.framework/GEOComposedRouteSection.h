@@ -29,7 +29,7 @@
         } size; 
     }  _overlayBounds;
     unsigned int  _pointCount;
-    struct { double x1; double x2; } * _points;
+    struct { float x1; float x2; } * _points;
     double  _startDistance;
     unsigned int  _startPointIndex;
     int  _transportType;
@@ -43,7 +43,7 @@
 @property (nonatomic, readonly) unsigned int finalStepIndex;
 @property (nonatomic) double lengthScaleFactor;
 @property (nonatomic, readonly) unsigned int pointCount;
-@property (nonatomic, readonly) struct { double x1; double x2; }*points;
+@property (nonatomic, readonly) struct { float x1; float x2; }*points;
 @property (nonatomic, readonly) double startDistance;
 @property (nonatomic, readonly) unsigned int startPointIndex;
 @property (nonatomic, readonly) int transportType;
@@ -65,7 +65,7 @@
 - (BOOL)isTransfer;
 - (double)lengthScaleFactor;
 - (unsigned int)pointCount;
-- (struct { double x1; double x2; }*)points;
+- (struct { float x1; float x2; }*)points;
 - (void)setLengthScaleFactor:(double)arg1;
 - (double)startDistance;
 - (unsigned int)startPointIndex;

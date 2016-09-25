@@ -7,8 +7,8 @@
     BOOL  __basicContentLoaded;
     BOOL  __canLoadContentData;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  __contentSize;
     PHAssetCollection * __curatedAssetCollection;
     PXPhotosDetailsHeaderSpec * __headerSpec;
@@ -33,12 +33,12 @@
     NSObject<OS_dispatch_queue> * _internalWorkQueue;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _keyAssetCropRect;
     PXPhotoKitUIMediaProvider * _mediaProvider;
@@ -62,7 +62,7 @@
 @property (setter=_setAssetCollection:, nonatomic, retain) PHAssetCollection *_assetCollection;
 @property (getter=_isBasicContentLoaded, setter=_setBasicContentLoaded:, nonatomic) BOOL _basicContentLoaded;
 @property (setter=_setCanLoadContentData:, nonatomic) BOOL _canLoadContentData;
-@property (setter=_setContentSize:, nonatomic) struct CGSize { double x1; double x2; } _contentSize;
+@property (setter=_setContentSize:, nonatomic) struct CGSize { float x1; float x2; } _contentSize;
 @property (setter=_setCuratedAssetCollection:, nonatomic, retain) PHAssetCollection *_curatedAssetCollection;
 @property (setter=_setHeaderSpec:, nonatomic, retain) PXPhotosDetailsHeaderSpec *_headerSpec;
 @property (setter=_setPreventSlideshowNextStep:, nonatomic) BOOL _isPreventingSlideshowNextStep;
@@ -110,9 +110,9 @@
 - (void).cxx_destruct;
 - (id)_assetCollection;
 - (BOOL)_canLoadContentData;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_contentRectInCoordinateSpace:(id)arg1 withIdentifier:(struct PXTileIdentifier { unsigned int x1; unsigned int x2[10]; })arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_contentRectInCoordinateSpace:(id)arg1 withIdentifier:(struct PXTileIdentifier { unsigned int x1; unsigned int x2[10]; })arg2;
 - (id)_contentRegionOfInterestForTileWithIdentifier:(struct PXTileIdentifier { unsigned int x1; unsigned int x2[10]; })arg1;
-- (struct CGSize { double x1; double x2; })_contentSize;
+- (struct CGSize { float x1; float x2; })_contentSize;
 - (id)_curatedAssetCollection;
 - (void)_didFinishPreparingSlideshowSession:(id)arg1;
 - (void)_filterOutVideosFromAssetCollection:(id)arg1 filteredAssetCollection:(id*)arg2 assets:(id*)arg3;
@@ -122,7 +122,7 @@
 - (void)_invalidateCuratedAssetCollection;
 - (void)_invalidateKeyAssets;
 - (BOOL)_isBasicContentLoaded;
-- (BOOL)_isPointWithinCurrentLayoutBounds:(struct CGPoint { double x1; double x2; })arg1;
+- (BOOL)_isPointWithinCurrentLayoutBounds:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)_isPreventingSlideshowNextStep;
 - (BOOL)_isSlideShowReadyToStart;
 - (BOOL)_isSlideshowTileCheckedOut;
@@ -139,7 +139,7 @@
 - (void)_setAssetCollection:(id)arg1;
 - (void)_setBasicContentLoaded:(BOOL)arg1;
 - (void)_setCanLoadContentData:(BOOL)arg1;
-- (void)_setContentSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)_setContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_setCuratedAssetCollection:(id)arg1;
 - (void)_setHasLoadedContentData:(BOOL)arg1;
 - (void)_setHeaderSpec:(id)arg1;
@@ -189,7 +189,7 @@
 - (void)_updateTitleTile;
 - (void)checkInTile:(void*)arg1 withIdentifier:(struct PXTileIdentifier { unsigned int x1; unsigned int x2[10]; })arg2;
 - (void*)checkOutTileForIdentifier:(struct PXTileIdentifier { unsigned int x1; unsigned int x2[10]; })arg1 layout:(id)arg2;
-- (BOOL)containsPoint:(struct CGPoint { double x1; double x2; })arg1 forCoordinateSpace:(id)arg2;
+- (BOOL)containsPoint:(struct CGPoint { float x1; float x2; })arg1 forCoordinateSpace:(id)arg2;
 - (int)contentLayoutStyle;
 - (id)contentTilingController;
 - (id)context;
@@ -206,15 +206,15 @@
 - (BOOL)movieProvider:(id)arg1 navigateToMemory:(id)arg2;
 - (void)observable:(id)arg1 didChange:(unsigned int)arg2 context:(void*)arg3;
 - (void)photosDataSource:(id)arg1 didChange:(id)arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })photosDetailsHeaderTileLayout:(id)arg1 contentsRectForAspectRatio:(float)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })photosDetailsHeaderTileLayout:(id)arg1 contentsRectForAspectRatio:(float)arg2;
 - (id)photosDetailsHeaderTileLayoutFontName:(id)arg1;
 - (float)preferredContentHeightForWidth:(float)arg1;
 - (void)preloadWithSourceRegionOfInterest:(id)arg1 forContext:(id)arg2;
-- (id)px_diagnosticsItemProvidersForPoint:(struct CGPoint { double x1; double x2; })arg1 inCoordinateSpace:(id)arg2;
+- (id)px_diagnosticsItemProvidersForPoint:(struct CGPoint { float x1; float x2; })arg1 inCoordinateSpace:(id)arg2;
 - (id)regionOfInterestForContext:(id)arg1;
 - (void)scrollViewControllerDidEndScrolling:(id)arg1;
 - (void)scrollViewControllerWillBeginScrolling:(id)arg1;
-- (void)setContentSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setContext:(id)arg1;
 - (void)setSpec:(id)arg1;
 - (void)setUserInteractionEnabled:(BOOL)arg1;

@@ -18,12 +18,12 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) UIView *leftView;
 @property (nonatomic) struct { unsigned char x1; unsigned char x2; unsigned char x3; unsigned char x4; BOOL x5; } mapDisplayStyle;
-@property (nonatomic) double maximumWidth;
-@property (nonatomic) double minimumWidth;
+@property (nonatomic) float maximumWidth;
+@property (nonatomic) float minimumWidth;
 @property (nonatomic, retain) UIView *rightView;
 @property (readonly) Class superclass;
 
-+ (struct CGSize { double x1; double x2; })defaultSize;
++ (struct CGSize { float x1; float x2; })defaultSize;
 
 - (void).cxx_destruct;
 - (id)_smallCalloutView;
@@ -41,7 +41,7 @@
 - (struct { unsigned char x1; unsigned char x2; unsigned char x3; unsigned char x4; BOOL x5; })mapDisplayStyle;
 - (float)maximumWidth;
 - (float)minimumWidth;
-- (struct CGSize { double x1; double x2; })preferredContentSize;
+- (struct CGSize { float x1; float x2; })preferredContentSize;
 - (void)reset;
 - (id)rightView;
 - (void)setButtonEnabled:(BOOL)arg1;

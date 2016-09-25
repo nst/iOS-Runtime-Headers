@@ -265,7 +265,7 @@
 - (void)dealloc;
 - (unsigned int)defaultPrivilegedSenderType;
 - (void)deliverResponse:(id)arg1 withCompletion:(id /* block */)arg2;
-- (void)demo_lockscreen:(unsigned int)arg1;
+- (void)demo_lockscreen:(unsigned long long)arg1;
 - (void)dpManager:(id)arg1 addDataProvider:(id)arg2 withSectionInfo:(id)arg3;
 - (void)dpManager:(id)arg1 addParentSectionFactory:(id)arg2;
 - (void)dpManager:(id)arg1 removeDataProviderSectionID:(id)arg2;

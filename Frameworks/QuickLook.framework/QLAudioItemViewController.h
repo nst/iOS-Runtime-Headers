@@ -8,7 +8,7 @@
     QLWaveformScrubberView * _scrubber;
     UIView * _scrubberContainer;
     UIScrollView * _scrubberContainerScrollView;
-    double  _scrubberVerticalOffset;
+    float  _scrubberVerticalOffset;
     BOOL  _scrubbing;
     NSLayoutConstraint * _topScrubber;
 }
@@ -17,7 +17,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (retain) UIView *scrubberContainer;
-@property double scrubberVerticalOffset;
+@property float scrubberVerticalOffset;
 @property BOOL scrubbing;
 @property (readonly) Class superclass;
 @property (retain) NSLayoutConstraint *topScrubber;

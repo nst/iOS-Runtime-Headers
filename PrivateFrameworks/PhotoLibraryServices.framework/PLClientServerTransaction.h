@@ -16,9 +16,9 @@
 + (id)_fileManager;
 + (id)_filePathForTransactionWithToken:(id)arg1;
 + (BOOL)_hasExcessiveRecoveryAttempts;
-+ (BOOL)_isOutstandingTransactionAtPath:(id)arg1 getScopeValues:(unsigned int*)arg2;
++ (BOOL)_isOutstandingTransactionAtPath:(id)arg1 getScopeValues:(unsigned long long*)arg2;
 + (id)_outstandingTransactionScopesByPath;
-+ (unsigned int)_readScopeValuesFromFileDescriptor:(int)arg1;
++ (unsigned long long)_readScopeValuesFromFileDescriptor:(int)arg1;
 + (void)_recordRecoveryAttempt;
 + (id)_recoveryHistoryFilePath;
 + (id)_scopeValuesByScope;
@@ -32,8 +32,8 @@
 + (id)descriptionOfAllTransactionFiles;
 + (void)handleOutstandingTransactions:(id /* block */)arg1;
 + (void)removeTransactionFromUserInfo:(id)arg1;
-+ (unsigned int)scopeValuesFromScopes:(id)arg1;
-+ (id)scopesFromScopeValues:(unsigned int)arg1;
++ (unsigned long long)scopeValuesFromScopes:(id)arg1;
++ (id)scopesFromScopeValues:(unsigned long long)arg1;
 + (id)serverTransactionQueue;
 + (id)transactionFromUserInfo:(id)arg1;
 + (id)transactionTokenFromXPCDictionary:(id)arg1;

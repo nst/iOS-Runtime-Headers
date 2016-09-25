@@ -3,19 +3,19 @@
  */
 
 @interface IPFeature : NSObject {
-    double  _confidence;
+    float  _confidence;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
     }  _matchRange;
     NSString * _textUnit;
-    double  _weight;
+    float  _weight;
 }
 
-@property double confidence;
+@property float confidence;
 @property struct _NSRange { unsigned int x1; unsigned int x2; } matchRange;
 @property (copy) NSString *textUnit;
-@property double weight;
+@property float weight;
 
 - (void).cxx_destruct;
 - (float)confidence;

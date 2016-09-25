@@ -7,13 +7,13 @@
         unsigned int lastChangeNumber : 1; 
     }  _has;
     NSString * _instanceIdentifier;
-    unsigned int  _lastChangeNumber;
+    unsigned long long  _lastChangeNumber;
 }
 
 @property (nonatomic, readonly) BOOL hasInstanceIdentifier;
 @property (nonatomic) BOOL hasLastChangeNumber;
 @property (nonatomic, retain) NSString *instanceIdentifier;
-@property (nonatomic) unsigned int lastChangeNumber;
+@property (nonatomic) unsigned long long lastChangeNumber;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -24,12 +24,12 @@
 - (unsigned int)hash;
 - (id)instanceIdentifier;
 - (BOOL)isEqual:(id)arg1;
-- (unsigned int)lastChangeNumber;
+- (unsigned long long)lastChangeNumber;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setHasLastChangeNumber:(BOOL)arg1;
 - (void)setInstanceIdentifier:(id)arg1;
-- (void)setLastChangeNumber:(unsigned int)arg1;
+- (void)setLastChangeNumber:(unsigned long long)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -36,7 +36,7 @@
 - (id)applicationForUserActivityDomainName:(id)arg1;
 - (id)applicationForUserActivityType:(id)arg1;
 - (BOOL)applicationIsInstalled:(id)arg1;
-- (id)applicationProxiesWithPlistFlags:(unsigned long)arg1 bundleFlags:(unsigned int)arg2;
+- (id)applicationProxiesWithPlistFlags:(unsigned long)arg1 bundleFlags:(unsigned long long)arg2;
 - (id)applicationsAvailableForHandlingURLScheme:(id)arg1;
 - (id)applicationsAvailableForOpeningDocument:(id)arg1;
 - (id)applicationsAvailableForOpeningURL:(id)arg1;

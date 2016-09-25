@@ -6,8 +6,8 @@
     NSDictionary * _activeAirPlayRoute;
     BOOL  _appLocked;
     NSArray * _availableAirPlayRoutes;
-    unsigned int  _availableBytes;
-    double  _batteryLevel;
+    unsigned long long  _availableBytes;
+    float  _batteryLevel;
     NSString * _buildVersion;
     int  _chargingState;
     int  _deviceOrientation;
@@ -35,14 +35,14 @@
     NSString * _userGivenName;
     NSString * _userIdentifier;
     NSString * _userImageURL;
-    double  _volume;
+    float  _volume;
 }
 
 @property (nonatomic, copy) NSDictionary *activeAirPlayRoute;
 @property (getter=isAppLocked, nonatomic) BOOL appLocked;
 @property (nonatomic, copy) NSArray *availableAirPlayRoutes;
-@property (nonatomic) unsigned int availableBytes;
-@property (nonatomic) double batteryLevel;
+@property (nonatomic) unsigned long long availableBytes;
+@property (nonatomic) float batteryLevel;
 @property (nonatomic, copy) NSString *buildVersion;
 @property (nonatomic) int chargingState;
 @property (nonatomic) int deviceOrientation;
@@ -70,7 +70,7 @@
 @property (nonatomic, copy) NSString *userGivenName;
 @property (nonatomic, copy) NSString *userIdentifier;
 @property (nonatomic, copy) NSString *userImageURL;
-@property (nonatomic) double volume;
+@property (nonatomic) float volume;
 
 + (id)allPropertyKeys;
 + (BOOL)supportsSecureCoding;
@@ -78,7 +78,7 @@
 - (void).cxx_destruct;
 - (id)activeAirPlayRoute;
 - (id)availableAirPlayRoutes;
-- (unsigned int)availableBytes;
+- (unsigned long long)availableBytes;
 - (float)batteryLevel;
 - (id)buildVersion;
 - (int)chargingState;
@@ -112,7 +112,7 @@
 - (void)setActiveAirPlayRoute:(id)arg1;
 - (void)setAppLocked:(BOOL)arg1;
 - (void)setAvailableAirPlayRoutes:(id)arg1;
-- (void)setAvailableBytes:(unsigned int)arg1;
+- (void)setAvailableBytes:(unsigned long long)arg1;
 - (void)setBatteryLevel:(float)arg1;
 - (void)setBuildVersion:(id)arg1;
 - (void)setChargingState:(int)arg1;

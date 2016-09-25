@@ -4,7 +4,7 @@
 
 @interface HDSharingSetupEntity : HDHealthEntity
 
-+ (id)_sampleTypesForSetupWithPersistentID:(int)arg1 database:(id)arg2 error:(id*)arg3;
++ (id)_sampleTypesForSetupWithPersistentID:(long long)arg1 database:(id)arg2 error:(id*)arg3;
 + (id)columnsDefinition;
 + (BOOL)createShareWithProfile:(id)arg1 identifier:(id)arg2 predicate:(id)arg3 error:(id*)arg4;
 + (id)databaseTable;

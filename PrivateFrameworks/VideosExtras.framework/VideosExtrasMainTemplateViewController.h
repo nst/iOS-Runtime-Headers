@@ -12,7 +12,7 @@
     UIView * _menuBarView;
 }
 
-@property (nonatomic, readonly) double collectionViewHeight;
+@property (nonatomic, readonly) float collectionViewHeight;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) <UICollectionViewDelegate> *didSelectDelegate;
@@ -34,7 +34,7 @@
 - (id)_textElementAtIndex:(int)arg1;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
-- (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
+- (struct CGSize { float x1; float x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
 - (BOOL)collectionView:(id)arg1 shouldSelectItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
@@ -45,7 +45,7 @@
 - (id)initWithDocument:(id)arg1 options:(id)arg2 context:(id)arg3;
 - (id)menuBarView;
 - (int)numberOfItemsForSectionMetrics:(id)arg1;
-- (struct CGSize { double x1; double x2; })sectionMetrics:(id)arg1 sizeForItemAtIndex:(int)arg2 withFontDescriptor:(id)arg3;
+- (struct CGSize { float x1; float x2; })sectionMetrics:(id)arg1 sizeForItemAtIndex:(int)arg2 withFontDescriptor:(id)arg3;
 - (void)setCollectionViewHeight:(float)arg1;
 - (void)setDidSelectDelegate:(id)arg1;
 - (BOOL)showsPlaceholder;

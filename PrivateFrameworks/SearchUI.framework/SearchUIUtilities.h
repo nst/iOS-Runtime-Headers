@@ -4,19 +4,19 @@
 
 @interface SearchUIUtilities : NSObject
 
-+ (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })absoluteFrameForView:(id)arg1;
++ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })absoluteFrameForView:(id)arg1;
 + (id)addAspectRatioConstraintForImageView:(id)arg1;
 + (id)buttonColorForStyle:(unsigned int)arg1;
 + (id)captionFont;
 + (BOOL)deviceSupportsRotation;
 + (void)dispatchMainIfNecessary:(id /* block */)arg1;
 + (id)hyphenatableStringForString:(id)arg1;
-+ (id)imageWithColor:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
-+ (id)imageWithColor:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 cornersToRound:(unsigned int)arg3 cornerRadius:(float)arg4;
++ (id)imageWithColor:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
++ (id)imageWithColor:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 cornersToRound:(unsigned int)arg3 cornerRadius:(float)arg4;
 + (void)initialize;
 + (BOOL)isPortrait;
 + (BOOL)isWideScreen;
-+ (struct CGSize { double x1; double x2; })maxThumbnailSize;
++ (struct CGSize { float x1; float x2; })maxThumbnailSize;
 + (float)onePixelForCurrentScreenResolution;
 + (id)openOptions;
 + (void)openPunchout:(id)arg1;

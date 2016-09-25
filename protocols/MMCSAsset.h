@@ -10,8 +10,8 @@
 - (NSError *)MMCSError;
 - (NSData *)MMCSHash;
 - (unsigned long)MMCSItemFlags;
-- (unsigned int)MMCSItemID;
-- (unsigned int)MMCSItemSize;
+- (unsigned long long)MMCSItemID;
+- (unsigned long long)MMCSItemSize;
 - (NSString *)MMCSItemType;
 - (int)MMCSOpenNewFileDescriptor;
 - (NSString *)MMCSReceipt;
@@ -21,8 +21,8 @@
 - (void)setMMCSError:(NSError *)arg1;
 - (void)setMMCSHash:(NSData *)arg1;
 - (void)setMMCSItemFlags:(unsigned long)arg1;
-- (void)setMMCSItemID:(unsigned int)arg1;
-- (void)setMMCSItemSize:(unsigned int)arg1;
+- (void)setMMCSItemID:(unsigned long long)arg1;
+- (void)setMMCSItemSize:(unsigned long long)arg1;
 - (void)setMMCSReceipt:(NSString *)arg1;
 - (void)setMMCSUTI:(NSString *)arg1;
 

@@ -39,8 +39,8 @@
     NSURLSession * _session;
     NSOperationQueue * _sessionDelegateQ;
     BOOL  _shouldHandleCookies;
-    unsigned int  _timeRequestSent;
-    unsigned int  _timeResponseReceived;
+    unsigned long long  _timeRequestSent;
+    unsigned long long  _timeResponseReceived;
     double  _timeoutSeconds;
     unsigned int  _uploadPayloadSize;
 }

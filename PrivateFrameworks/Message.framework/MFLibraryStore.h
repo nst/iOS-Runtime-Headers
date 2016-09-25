@@ -61,7 +61,7 @@
 - (id)copyOfMessageInfosMatchingCriterion:(id)arg1;
 - (id)copyOfMessagesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 options:(unsigned int)arg2;
 - (id)copyOfMessagesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 options:(unsigned int)arg2 generation:(unsigned int*)arg3;
-- (struct __CFDictionary { }*)copySendersByLibraryIDForConversation:(int)arg1 limit:(int)arg2;
+- (struct __CFDictionary { }*)copySendersByLibraryIDForConversation:(long long)arg1 limit:(int)arg2;
 - (id)criterion;
 - (id)dataForMimePart:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 isComplete:(BOOL*)arg3 downloadIfNecessary:(BOOL)arg4 didDownload:(BOOL*)arg5;
 - (BOOL)dataForMimePart:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 isComplete:(BOOL*)arg3 withConsumer:(id)arg4 downloadIfNecessary:(BOOL)arg5 didDownload:(BOOL*)arg6;
@@ -99,7 +99,7 @@
 - (id)mutableCopyOfAllMessages;
 - (id)newObjectCache;
 - (unsigned int)nonDeletedCountIncludingServerSearch:(BOOL)arg1 andThreadSearch:(BOOL)arg2;
-- (int)oldestKnownConversation;
+- (long long)oldestKnownConversation;
 - (void)openSynchronously;
 - (void)purgeMessages:(id)arg1;
 - (void)purgeMessagesBeyondLimit:(unsigned int)arg1 keepingMessage:(id)arg2;

@@ -3,7 +3,7 @@
  */
 
 @interface SFUOffsetInputStream : NSObject <SFUInputStream> {
-    int  mInitialOffset;
+    long long  mInitialOffset;
     <SFUInputStream> * mInputStream;
 }
 
@@ -19,9 +19,9 @@
 - (void)disableSystemCaching;
 - (void)enableSystemCaching;
 - (id)initWithInputStream:(id)arg1;
-- (id)initWithInputStream:(id)arg1 initialOffset:(int)arg2;
-- (int)offset;
+- (id)initWithInputStream:(id)arg1 initialOffset:(long long)arg2;
+- (long long)offset;
 - (unsigned long)readToBuffer:(char *)arg1 size:(unsigned long)arg2;
-- (void)seekToOffset:(int)arg1;
+- (void)seekToOffset:(long long)arg1;
 
 @end

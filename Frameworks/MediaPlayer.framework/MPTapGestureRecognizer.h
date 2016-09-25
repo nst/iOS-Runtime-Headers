@@ -6,8 +6,8 @@
     unsigned int  _lastTapCount;
     NSTimer * _tapHandleTimer;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _tapLocation;
     UITouch * _trackingTouch;
 }
@@ -20,7 +20,7 @@
 - (void)_setTapTimerWithDuration:(double)arg1;
 - (void)dealloc;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
-- (struct CGPoint { double x1; double x2; })locationInView:(id)arg1;
+- (struct CGPoint { float x1; float x2; })locationInView:(id)arg1;
 - (void)reset;
 - (void)setTapCount:(unsigned int)arg1;
 - (unsigned int)tapCount;

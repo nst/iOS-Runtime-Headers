@@ -5,10 +5,10 @@
 @interface ASALevelControl : ASAControl
 
 @property (nonatomic, readonly) struct AudioValueRange { double x1; double x2; } decibelRange;
-@property (nonatomic) double decibelValue;
-@property (nonatomic, readonly) double maximumDecibelValue;
-@property (nonatomic, readonly) double minimumDecibelValue;
-@property (nonatomic) double scalarValue;
+@property (nonatomic) float decibelValue;
+@property (nonatomic, readonly) float maximumDecibelValue;
+@property (nonatomic, readonly) float minimumDecibelValue;
+@property (nonatomic) float scalarValue;
 
 - (id)coreAudioClassName;
 - (float)decibelFromScalar:(float)arg1;

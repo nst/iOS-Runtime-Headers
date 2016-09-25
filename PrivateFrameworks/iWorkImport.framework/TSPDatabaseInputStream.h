@@ -22,9 +22,9 @@
 - (void)disableSystemCaching;
 - (void)enableSystemCaching;
 - (id)initWithBlob:(struct sqlite3_blob { }*)arg1;
-- (int)offset;
+- (long long)offset;
 - (unsigned long)readToBuffer:(char *)arg1 size:(unsigned long)arg2;
 - (void)readWithHandler:(id /* block */)arg1;
-- (void)seekToOffset:(int)arg1;
+- (void)seekToOffset:(long long)arg1;
 
 @end

@@ -27,8 +27,8 @@
 - (id)_preloadChangeDetailsWithClearCacheForFetchResults:(id)arg1 inManagedObjectContext:(id)arg2;
 - (id)_preloadChangeDetailsWithRefetchForFetchResults:(id)arg1 inManagedObjectContext:(id)arg2;
 - (void)_prepareCachedValuesForEntity:(id)arg1;
-- (BOOL)anyUpdatedObjectsWithChangedAttributes:(unsigned int)arg1 ofEntity:(id)arg2;
-- (BOOL)anyUpdatedObjectsWithChangedRelationships:(unsigned int)arg1 ofEntity:(id)arg2;
+- (BOOL)anyUpdatedObjectsWithChangedAttributes:(unsigned long long)arg1 ofEntity:(id)arg2;
+- (BOOL)anyUpdatedObjectsWithChangedRelationships:(unsigned long long)arg1 ofEntity:(id)arg2;
 - (id)changeDetailsForFetchResult:(id)arg1;
 - (id)changeDetailsForObject:(id)arg1;
 - (id)changedAttributesByOID;

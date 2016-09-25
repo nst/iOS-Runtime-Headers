@@ -3,7 +3,7 @@
  */
 
 @interface HDCodableCategoryDomainDictionary : PBCodable <HDSyncCodable, NSCopying> {
-    int  _category;
+    long long  _category;
     NSString * _domain;
     struct { 
         unsigned int category : 1; 
@@ -11,7 +11,7 @@
     NSMutableArray * _keyValuePairs;
 }
 
-@property (nonatomic) int category;
+@property (nonatomic) long long category;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSString *domain;
@@ -24,7 +24,7 @@
 - (void).cxx_destruct;
 - (BOOL)_validateForInsertionWithError:(id*)arg1;
 - (void)addKeyValuePairs:(id)arg1;
-- (int)category;
+- (long long)category;
 - (void)clearKeyValuePairs;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -42,7 +42,7 @@
 - (unsigned int)keyValuePairsCount;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (void)setCategory:(int)arg1;
+- (void)setCategory:(long long)arg1;
 - (void)setDomain:(id)arg1;
 - (void)setHasCategory:(BOOL)arg1;
 - (void)setKeyValuePairs:(id)arg1;

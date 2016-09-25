@@ -16,10 +16,10 @@
 
 - (void).cxx_destruct;
 - (float)_baselineDistance;
-- (void)_calculateViewMetricsForWidth:(float)arg1 labelSize:(struct CGSize { double x1; double x2; }*)arg2 statusSize:(struct CGSize { double x1; double x2; }*)arg3 baselineAdjustment:(float*)arg4;
+- (void)_calculateViewMetricsForWidth:(float)arg1 labelSize:(struct CGSize { float x1; float x2; }*)arg2 statusSize:(struct CGSize { float x1; float x2; }*)arg3 baselineAdjustment:(float*)arg4;
 - (id)_labelAttributedStringForString:(id)arg1;
 - (id)_labelFont;
-- (struct CGSize { double x1; double x2; })_snapshotSize;
+- (struct CGSize { float x1; float x2; })_snapshotSize;
 - (id)_statusAttributedStringForStyle:(int)arg1;
 - (id)_statusFont;
 - (void)dealloc;
@@ -30,7 +30,7 @@
 - (void)setPass:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
 - (void)setStyle:(int)arg1;
 - (void)setStyle:(int)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (int)style;
 
 @end

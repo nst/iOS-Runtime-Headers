@@ -17,7 +17,7 @@
     unsigned int  _badgeTypes;
     PXCollectionTileLayoutTemplate * _collectionTileLayoutTemplate;
     UIView * _contentView;
-    double  _cornerRadius;
+    float  _cornerRadius;
     <PUPhotoViewContentHelperDelegate> * _delegate;
     struct { 
         BOOL respondsToLivePhotoWillBeginPlaybackWithStyle; 
@@ -29,12 +29,12 @@
     BOOL  _hasTransform;
     BOOL  _highlighted;
     struct CGAffineTransform { 
-        double a; 
-        double b; 
-        double c; 
-        double d; 
-        double tx; 
-        double ty; 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     }  _imageTransform;
     BOOL  _isTextBannerVisible;
     UIColor * _layerDefaultBackgroundColor;
@@ -53,8 +53,8 @@
     UIImage * _photoImage;
     UIImageView * _photoImageView;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _photoSize;
     UIImage * _placeHolderImage;
     PXRoundedCornerOverlayView * _roundedCornerOverlayView;
@@ -83,7 +83,7 @@
 @property (nonatomic, readonly) unsigned int badgeTypes;
 @property (nonatomic, retain) PXCollectionTileLayoutTemplate *collectionTileLayoutTemplate;
 @property (nonatomic, readonly) UIView *contentView;
-@property (nonatomic) double cornerRadius;
+@property (nonatomic) float cornerRadius;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PUPhotoViewContentHelperDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -92,8 +92,8 @@
 @property (nonatomic) BOOL flattensBadgeView;
 @property (readonly) unsigned int hash;
 @property (getter=isHighlighted, nonatomic) BOOL highlighted;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } imageContentFrame;
-@property (nonatomic) struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; } imageTransform;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } imageContentFrame;
+@property (nonatomic) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } imageTransform;
 @property (nonatomic, retain) PHLivePhoto *livePhoto;
 @property (getter=isLivePhotoHidden, nonatomic) BOOL livePhotoHidden;
 @property (nonatomic, retain) PHLivePhotoView *livePhotoView;
@@ -102,7 +102,7 @@
 @property (nonatomic, copy) PUPhotoDecoration *photoDecoration;
 @property (nonatomic, retain) UIImage *photoImage;
 @property (nonatomic, retain) UIImageView *photoImageView;
-@property (nonatomic) struct CGSize { double x1; double x2; } photoSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } photoSize;
 @property (nonatomic, retain) UIImage *placeHolderImage;
 @property (nonatomic, readonly) BOOL providesVisualFeedbackOnPress;
 @property (nonatomic, retain) PXRoundedCornerOverlayView *roundedCornerOverlayView;
@@ -117,8 +117,8 @@
 @property (nonatomic) BOOL useOverlay;
 @property (nonatomic, readonly) double videoDuration;
 
-+ (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_imageContentFrameForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 imageSize:(struct CGSize { double x1; double x2; })arg2 fillMode:(int)arg3;
-+ (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1 imageSize:(struct CGSize { double x1; double x2; })arg2 fillMode:(int)arg3;
++ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_imageContentFrameForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 imageSize:(struct CGSize { float x1; float x2; })arg2 fillMode:(int)arg3;
++ (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1 imageSize:(struct CGSize { float x1; float x2; })arg2 fillMode:(int)arg3;
 
 - (void).cxx_destruct;
 - (void)_addAvalancheStackViewIfNecessary;
@@ -157,15 +157,15 @@
 - (unsigned int)badgeTypes;
 - (id)collectionTileLayoutTemplate;
 - (id)contentView;
-- (struct CGSize { double x1; double x2; })contentViewSizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })contentViewSizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (float)cornerRadius;
 - (id)delegate;
 - (id)featureSpec;
 - (int)fillMode;
 - (BOOL)flattensBadgeView;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })imageContentFrame;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })imageContentFrameForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })imageTransform;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })imageContentFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })imageContentFrameForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })imageTransform;
 - (id)init;
 - (id)initWithContentView:(id)arg1;
 - (BOOL)isAnimatingRoundedCorners;
@@ -179,10 +179,10 @@
 - (BOOL)needsAvalancheStack;
 - (id)overlayColor;
 - (id)photoDecoration;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })photoDecorationBorderViewFrameForImageContentFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })photoDecorationBorderViewFrameForImageContentFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)photoImage;
 - (id)photoImageView;
-- (struct CGSize { double x1; double x2; })photoSize;
+- (struct CGSize { float x1; float x2; })photoSize;
 - (id)placeHolderImage;
 - (BOOL)providesVisualFeedbackOnPress;
 - (id)roundedCornerOverlayView;
@@ -202,7 +202,7 @@
 - (void)setFillMode:(int)arg1;
 - (void)setFlattensBadgeView:(BOOL)arg1;
 - (void)setHighlighted:(BOOL)arg1;
-- (void)setImageTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
+- (void)setImageTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (void)setLivePhoto:(id)arg1;
 - (void)setLivePhotoHidden:(BOOL)arg1;
 - (void)setLivePhotoView:(id)arg1;
@@ -211,7 +211,7 @@
 - (void)setPhotoDecoration:(id)arg1;
 - (void)setPhotoImage:(id)arg1;
 - (void)setPhotoImageView:(id)arg1;
-- (void)setPhotoSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setPhotoSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setPlaceHolderImage:(id)arg1;
 - (void)setRoundedCornerOverlayView:(id)arg1;
 - (void)setShouldPrepareForPlayback:(BOOL)arg1;

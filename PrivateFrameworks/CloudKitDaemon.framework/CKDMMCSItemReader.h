@@ -25,10 +25,10 @@
 - (id)getFileMetadataWithError:(id*)arg1;
 - (id)initWithMMCSItem:(id)arg1 MMCSRequest:(id)arg2;
 - (BOOL)openWithError:(id*)arg1;
-- (BOOL)readBytesAtOffset:(unsigned int)arg1 bytes:(char *)arg2 length:(unsigned int)arg3 bytesRead:(unsigned int*)arg4 error:(id*)arg5;
+- (BOOL)readBytesAtOffset:(unsigned long long)arg1 bytes:(char *)arg2 length:(unsigned long long)arg3 bytesRead:(unsigned long long*)arg4 error:(id*)arg5;
 - (void)setFileHandle:(id)arg1;
 - (void)setMMCSItem:(id)arg1;
 - (void)setMMCSRequest:(id)arg1;
-- (BOOL)writeBytesAtOffset:(unsigned int)arg1 bytes:(char *)arg2 length:(unsigned int)arg3 bytesWritten:(unsigned int*)arg4 error:(id*)arg5;
+- (BOOL)writeBytesAtOffset:(unsigned long long)arg1 bytes:(char *)arg2 length:(unsigned long long)arg3 bytesWritten:(unsigned long long*)arg4 error:(id*)arg5;
 
 @end

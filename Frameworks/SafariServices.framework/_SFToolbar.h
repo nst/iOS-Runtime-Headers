@@ -10,7 +10,7 @@
     UIView * _separator;
 }
 
-@property (nonatomic, readonly) double URLFieldHorizontalMargin;
+@property (nonatomic, readonly) float URLFieldHorizontalMargin;
 @property (nonatomic) BOOL backdropComputesColorSettings;
 @property (nonatomic, copy) NSString *backdropGroupName;
 @property (nonatomic) BOOL hasDarkBackground;

@@ -14,12 +14,12 @@
 
 - (void).cxx_destruct;
 - (BOOL)_performSyncSession:(id)arg1 error:(id*)arg2;
-- (int)_receivedAnchorForEntityClass:(Class)arg1 store:(id)arg2 error:(id*)arg3;
+- (long long)_receivedAnchorForEntityClass:(Class)arg1 store:(id)arg2 error:(id*)arg3;
 - (void)_resetStore:(id)arg1;
 - (BOOL)_sendChanges:(id)arg1 session:(id)arg2 error:(id*)arg3;
-- (BOOL)_setReceivedAnchor:(int)arg1 forEntityClass:(Class)arg2 store:(id)arg3 error:(id*)arg4;
+- (BOOL)_setReceivedAnchor:(long long)arg1 forEntityClass:(Class)arg2 store:(id)arg3 error:(id*)arg4;
 - (id)_syncAnchorMapForSyncEntityClass:(Class)arg1 session:(id)arg2 error:(id*)arg3;
-- (BOOL)_synchronizeSyncEntityClass:(Class)arg1 session:(id)arg2 predicate:(id)arg3 startAnchor:(int*)arg4 finalAnchor:(int)arg5 postTransactionBlocks:(id)arg6 error:(id*)arg7;
+- (BOOL)_synchronizeSyncEntityClass:(Class)arg1 session:(id)arg2 predicate:(id)arg3 startAnchor:(long long*)arg4 finalAnchor:(long long)arg5 postTransactionBlocks:(id)arg6 error:(id*)arg7;
 - (int)_validateAnchorsForSyncChange:(id)arg1 store:(id)arg2 error:(id*)arg3;
 - (BOOL)_validateSequenceNumberForSyncChange:(id)arg1 store:(id)arg2 error:(id*)arg3;
 - (BOOL)applyAcknowledgedAnchorMap:(id)arg1 forStore:(id)arg2 resetNext:(BOOL)arg3 error:(id*)arg4;

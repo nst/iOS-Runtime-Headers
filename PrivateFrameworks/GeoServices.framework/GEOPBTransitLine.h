@@ -18,7 +18,7 @@
     NSString * _lineColor;
     unsigned int  _lineIndex;
     GEOPBTransitArtwork * _modeArtwork;
-    unsigned int  _muid;
+    unsigned long long  _muid;
     NSString * _nameDisplayString;
     struct GEOPBTransitTimeRange { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; } * _operatingHours;
     unsigned int  _operatingHoursCount;
@@ -52,7 +52,7 @@
 @property (nonatomic, retain) NSString *lineColor;
 @property (nonatomic) unsigned int lineIndex;
 @property (nonatomic, retain) GEOPBTransitArtwork *modeArtwork;
-@property (nonatomic) unsigned int muid;
+@property (nonatomic) unsigned long long muid;
 @property (nonatomic, retain) NSString *nameDisplayString;
 @property (nonatomic, readonly) struct GEOPBTransitTimeRange { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*operatingHours;
 @property (nonatomic, readonly) unsigned int operatingHoursCount;
@@ -98,7 +98,7 @@
 - (unsigned int)lineIndex;
 - (void)mergeFrom:(id)arg1;
 - (id)modeArtwork;
-- (unsigned int)muid;
+- (unsigned long long)muid;
 - (id)nameDisplayString;
 - (struct GEOPBTransitTimeRange { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*)operatingHours;
 - (struct GEOPBTransitTimeRange { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; })operatingHoursAtIndex:(unsigned int)arg1;
@@ -121,7 +121,7 @@
 - (void)setLineColor:(id)arg1;
 - (void)setLineIndex:(unsigned int)arg1;
 - (void)setModeArtwork:(id)arg1;
-- (void)setMuid:(unsigned int)arg1;
+- (void)setMuid:(unsigned long long)arg1;
 - (void)setNameDisplayString:(id)arg1;
 - (void)setOperatingHours:(struct GEOPBTransitTimeRange { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*)arg1 count:(unsigned int)arg2;
 - (void)setPlaceDisplayStyle:(int)arg1;

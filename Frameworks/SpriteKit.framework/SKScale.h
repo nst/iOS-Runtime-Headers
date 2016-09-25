@@ -3,12 +3,12 @@
  */
 
 @interface SKScale : SKAction {
-    struct SKCScale { int (**x1)(); unsigned int x2; double x3; id /* block */ x4; id x5; double x6; double x7; double x8; double x9; double x10; bool x11; bool x12; id /* block */ x13; int x14; double x15; double x16; double x17; double x18; double x19; double x20; double x21; double x22; double x23; double x24; double x25; double x26; double x27; BOOL x28; BOOL x29; BOOL x30; BOOL x31; BOOL x32; struct CGSize { double x_33_1_1; double x_33_1_2; } x33; } * _mycaction;
+    struct SKCScale { int (**x1)(); unsigned int x2; float x3; id /* block */ x4; id x5; double x6; double x7; float x8; float x9; double x10; bool x11; bool x12; id /* block */ x13; int x14; float x15; float x16; float x17; float x18; float x19; float x20; float x21; float x22; float x23; float x24; float x25; float x26; float x27; BOOL x28; BOOL x29; BOOL x30; BOOL x31; BOOL x32; struct CGSize { float x_33_1_1; float x_33_1_2; } x33; } * _mycaction;
 }
 
 + (id)scaleBy:(float)arg1 duration:(double)arg2;
 + (id)scaleTo:(float)arg1 duration:(double)arg2;
-+ (id)scaleToSize:(struct CGSize { double x1; double x2; })arg1 duration:(double)arg2;
++ (id)scaleToSize:(struct CGSize { float x1; float x2; })arg1 duration:(double)arg2;
 + (id)scaleXBy:(float)arg1 duration:(double)arg2;
 + (id)scaleXBy:(float)arg1 y:(float)arg2 duration:(double)arg3;
 + (id)scaleXTo:(float)arg1 duration:(double)arg2;

@@ -19,10 +19,10 @@
         double longitude; 
     }  _initialCenterCoordinate;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _initialEdgePadding;
     CLLocationManager * _locationManager;
     PXPlacesMapView * _mapView;
@@ -59,7 +59,7 @@
 @property <PXPlacesMapControllerFocusDelegate> *focusDelegate;
 @property (readonly) unsigned int hash;
 @property (nonatomic) struct CLLocationCoordinate2D { double x1; double x2; } initialCenterCoordinate;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } initialEdgePadding;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } initialEdgePadding;
 @property (nonatomic, retain) CLLocationManager *locationManager;
 @property (nonatomic, retain) PXPlacesMapView *mapView;
 @property BOOL mapViewIsVisible;
@@ -78,7 +78,7 @@
 - (float)_fadeInAnimationDuration;
 - (float)_fadeOutAnimationDuration;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })_mapRectForGeotaggablesFromPipeline:(id)arg1 fitAdjusted:(BOOL*)arg2;
-- (void)_setVisibleMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 edgePadding:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2 animated:(BOOL)arg3;
+- (void)_setVisibleMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 edgePadding:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2 animated:(BOOL)arg3;
 - (void)_showDebugMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 color:(id)arg2;
 - (void)_updateMapWithAllDataSources:(id /* block */)arg1;
 - (void)_updateMapWithDataSource:(id)arg1 dataSourceChange:(id)arg2 completion:(id /* block */)arg3;
@@ -101,7 +101,7 @@
 - (void)focusOnGeotaggablesFromPipelineImmediately:(id)arg1;
 - (id)init;
 - (struct CLLocationCoordinate2D { double x1; double x2; })initialCenterCoordinate;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })initialEdgePadding;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })initialEdgePadding;
 - (void)launchMapsAtCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1 withTitle:(id)arg2;
 - (void)loadView;
 - (id)locationManager;
@@ -110,8 +110,8 @@
 - (void)mapContainerViewDidDisappear;
 - (void)mapContainerViewWillAppear;
 - (void)mapContainerViewWillDisappear;
-- (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })mapRectForGeotaggablesFromDataSource:(id)arg1 renderer:(id)arg2 mapViewSize:(struct CGSize { double x1; double x2; })arg3 fitAdjusted:(BOOL*)arg4;
-- (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })mapRectForNearbyQueriesFromRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 atScale:(double)arg2 targetViewSize:(struct CGSize { double x1; double x2; })arg3;
+- (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })mapRectForGeotaggablesFromDataSource:(id)arg1 renderer:(id)arg2 mapViewSize:(struct CGSize { float x1; float x2; })arg3 fitAdjusted:(BOOL*)arg4;
+- (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })mapRectForNearbyQueriesFromRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 atScale:(double)arg2 targetViewSize:(struct CGSize { float x1; float x2; })arg3;
 - (id)mapView;
 - (void)mapView:(id)arg1 didAddAnnotationViews:(id)arg2;
 - (void)mapView:(id)arg1 didSelectAnnotationView:(id)arg2;
@@ -136,7 +136,7 @@
 - (void)setDataSources:(id)arg1;
 - (void)setFocusDelegate:(id)arg1;
 - (void)setInitialCenterCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1;
-- (void)setInitialEdgePadding:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setInitialEdgePadding:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setLocationManager:(id)arg1;
 - (void)setMapView:(id)arg1;
 - (void)setMapViewIsVisible:(BOOL)arg1;
@@ -148,7 +148,7 @@
 - (void)setStateDelegate:(id)arg1;
 - (void)setVisibleMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 forPipeline:(id)arg2 animated:(BOOL)arg3;
 - (void)setVisibleMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 forRenderer:(id)arg2 animated:(BOOL)arg3;
-- (void)setVisibleMapRelativeToViewPort:(id)arg1 andViewSize:(struct CGSize { double x1; double x2; })arg2 forRenderer:(id)arg3;
+- (void)setVisibleMapRelativeToViewPort:(id)arg1 andViewSize:(struct CGSize { float x1; float x2; })arg2 forRenderer:(id)arg3;
 - (id)showDebugMapRectColors;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })signalFocusMapRect;
 - (BOOL)signalFocusWhenMapViewBecomesVisible;

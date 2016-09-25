@@ -45,8 +45,8 @@
 - (id)init;
 - (void)initAfterClassCUnlocked;
 - (void)ncTriggerObserver:(id)arg1;
-- (void)preWarmHasEnded:(id)arg1 withResult:(unsigned int)arg2 withTriggerType:(int)arg3 withSequence:(unsigned int)arg4;
-- (void)preWarmHasStarted:(id)arg1 withResult:(unsigned int)arg2 withTriggerType:(int)arg3 withSequence:(unsigned int)arg4;
+- (void)preWarmHasEnded:(id)arg1 withResult:(unsigned int)arg2 withTriggerType:(int)arg3 withSequence:(unsigned long long)arg4;
+- (void)preWarmHasStarted:(id)arg1 withResult:(unsigned int)arg2 withTriggerType:(int)arg3 withSequence:(unsigned long long)arg4;
 - (id)predictedWidgetsForDate:(id)arg1;
 - (id)predictedWidgetsForSlot:(unsigned int)arg1;
 - (void)recordPrewarmStatisticsRaw:(id)arg1;

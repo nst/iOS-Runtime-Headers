@@ -30,9 +30,9 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFilename:(id)arg1;
 - (id)initWithInMemoryStore;
-- (void)logEventResponseWithTemplateShortName:(id)arg1 latencyInMs:(unsigned int)arg2 emailDateReceived:(id)arg3 outputIssueTypes:(id)arg4 outputInfos:(id)arg5 jsMessageLogs:(id)arg6 jsOutputLogs:(id)arg7;
+- (void)logEventResponseWithTemplateShortName:(id)arg1 latencyInMs:(unsigned long long)arg2 emailDateReceived:(id)arg3 outputIssueTypes:(id)arg4 outputInfos:(id)arg5 jsMessageLogs:(id)arg6 jsOutputLogs:(id)arg7;
 - (void)logExceptionFromTemplate:(id)arg1 templateExceptionMessage:(id)arg2 emailDateReceived:(id)arg3 jsMessageLogs:(id)arg4 jsOutputLogs:(id)arg5;
-- (void)logOutputIssueFromTemplate:(id)arg1 latencyInMs:(unsigned int)arg2 emailDateReceived:(id)arg3 outputIssueTypes:(id)arg4 outputInfos:(id)arg5 jsMessageLogs:(id)arg6 jsOutputLogs:(id)arg7;
+- (void)logOutputIssueFromTemplate:(id)arg1 latencyInMs:(unsigned long long)arg2 emailDateReceived:(id)arg3 outputIssueTypes:(id)arg4 outputInfos:(id)arg5 jsMessageLogs:(id)arg6 jsOutputLogs:(id)arg7;
 - (id)loggedEvents;
 - (unsigned int)loggedEventsCount;
 - (id)metricNameForShortName:(id)arg1;

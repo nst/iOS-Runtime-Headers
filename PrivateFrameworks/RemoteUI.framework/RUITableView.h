@@ -7,11 +7,11 @@
     RUITableViewRow * _defaultFirstResponderRow;
     NSIndexPath * _embeddedPickerRowIndexPath;
     RUIFooterElement * _footer;
-    double  _fullscreenCellHeight;
+    float  _fullscreenCellHeight;
     RUIHeaderElement * _header;
     NSString * _headerTitle;
     UIView<RUIHeader> * _headerView;
-    double  _lastLayoutWidth;
+    float  _lastLayoutWidth;
     RUIObjectModel * _objectModel;
     RUIBarButtonItem * _oldLeftBarButtonItemForPicker;
     NSDate * _oldPickerDate;
@@ -59,10 +59,10 @@
 - (void)_loadHeaderView;
 - (id)_objectModelIndexPathForIndexPath:(id)arg1;
 - (void)_registerForNotifications:(BOOL)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_selectPickerFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_selectPickerFrame;
 - (void)_setBottomInset:(float)arg1;
 - (void)_showDatePickerNavBarButtonsIfNeededForRow:(id)arg1;
-- (struct CGSize { double x1; double x2; })_tableHeaderSizeForHeader:(id)arg1;
+- (struct CGSize { float x1; float x2; })_tableHeaderSizeForHeader:(id)arg1;
 - (void)_textChanged:(id)arg1;
 - (void)activateRowAtIndexPath:(id)arg1 animated:(BOOL)arg2;
 - (void)automaticKeyboardDidHide:(id)arg1;
@@ -106,7 +106,7 @@
 - (void)setHeaderViewAttributes:(id)arg1;
 - (void)setImage:(id)arg1;
 - (void)setImageAlignment:(int)arg1;
-- (void)setImageSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setImageSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setObjectModel:(id)arg1;
 - (void)setPage:(id)arg1;
 - (void)setSelectPicker:(id)arg1;

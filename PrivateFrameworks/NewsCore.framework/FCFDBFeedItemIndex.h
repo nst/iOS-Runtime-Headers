@@ -4,9 +4,9 @@
 
 @interface FCFDBFeedItemIndex : NSManagedObject
 
-@property (nonatomic) unsigned int feature;
+@property (nonatomic) unsigned long long feature;
 @property (nonatomic, retain) FCFDBFeedItem *feedItem;
 @property (nonatomic) NSNumber *feedLookupID;
-@property (nonatomic) unsigned int order;
+@property (nonatomic) unsigned long long order;
 
 @end

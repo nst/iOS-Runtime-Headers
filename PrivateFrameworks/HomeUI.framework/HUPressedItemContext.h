@@ -6,17 +6,17 @@
     BOOL  _active;
     HUElasticApplier * _applier;
     double  _beginTime;
-    double  _currentViewScale;
+    float  _currentViewScale;
     HFItem * _item;
-    double  _rawInputProgress;
+    float  _rawInputProgress;
 }
 
 @property (getter=isActive, nonatomic) BOOL active;
 @property (nonatomic, retain) HUElasticApplier *applier;
 @property (nonatomic) double beginTime;
-@property (nonatomic) double currentViewScale;
+@property (nonatomic) float currentViewScale;
 @property (nonatomic, retain) HFItem *item;
-@property (nonatomic) double rawInputProgress;
+@property (nonatomic) float rawInputProgress;
 
 - (void).cxx_destruct;
 - (id)applier;

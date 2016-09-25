@@ -5,7 +5,7 @@
 @interface HDActivitySummaryQueryServer : HDQueryServer {
     BOOL  _deliversUpdates;
     HDSQLitePredicate * _filterPredicate;
-    int  _lastProcessedAnchor;
+    long long  _lastProcessedAnchor;
     HDActivitySummaryQueryHelper * _queryHelper;
     BOOL  _shouldIncludePrivateProperties;
 }

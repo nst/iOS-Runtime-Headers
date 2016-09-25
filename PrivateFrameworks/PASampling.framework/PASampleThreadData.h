@@ -4,7 +4,7 @@
 
 @interface PASampleThreadData : NSObject <PASerializable> {
     int  currentScheduledPriority;
-    unsigned int  dispatchQueueId;
+    unsigned long long  dispatchQueueId;
     unsigned char  ioTier;
     unsigned int  isDarwinBG;
     unsigned int  isGlobalForcedIdle;
@@ -18,13 +18,13 @@
     int  schedulerFlags;
     int  state;
     int  staticPriority;
-    unsigned int  systemTimeInNs;
-    unsigned int  threadId;
+    unsigned long long  systemTimeInNs;
+    unsigned long long  threadId;
     BOOL  threadQos;
     BOOL  threadRequestedQos;
     BOOL  threadRequestedQosOverride;
-    unsigned int  userTimeInNs;
-    unsigned int  voucherIdentifier;
+    unsigned long long  userTimeInNs;
+    unsigned long long  voucherIdentifier;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -55,10 +55,10 @@
 - (BOOL)hasDispatchQueue;
 - (BOOL)hasValidPowerstatsFlags;
 - (unsigned int)hash;
-- (id)initWithKCDataStackshotDeltaThread:(const struct thread_delta_snapshot_v2 { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; short x7; short x8; unsigned char x9; unsigned char x10; unsigned char x11; unsigned char x12; }*)arg1 withName:(id)arg2 andLeafUserFrame:(id)arg3 andLeafKernelFrame:(id)arg4 andOldThreadData:(id)arg5;
-- (id)initWithKCDataStackshotThread:(const struct thread_snapshot_v2 { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; short x14; short x15; unsigned char x16; unsigned char x17; unsigned char x18; unsigned char x19; }*)arg1 withName:(id)arg2 andLeafUserFrame:(id)arg3 andLeafKernelFrame:(id)arg4 andMachTimebase:(struct mach_timebase_info { unsigned int x1; unsigned int x2; })arg5;
+- (id)initWithKCDataStackshotDeltaThread:(const struct thread_delta_snapshot_v2 { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned int x5; unsigned int x6; short x7; short x8; unsigned char x9; unsigned char x10; unsigned char x11; unsigned char x12; }*)arg1 withName:(id)arg2 andLeafUserFrame:(id)arg3 andLeafKernelFrame:(id)arg4 andOldThreadData:(id)arg5;
+- (id)initWithKCDataStackshotThread:(const struct thread_snapshot_v2 { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; unsigned long long x6; unsigned long long x7; unsigned long long x8; unsigned long long x9; unsigned long long x10; unsigned long long x11; unsigned int x12; unsigned int x13; short x14; short x15; unsigned char x16; unsigned char x17; unsigned char x18; unsigned char x19; }*)arg1 withName:(id)arg2 andLeafUserFrame:(id)arg3 andLeafKernelFrame:(id)arg4 andMachTimebase:(struct mach_timebase_info { unsigned int x1; unsigned int x2; })arg5;
 - (id)initWithStackshotThread:(id)arg1 andLeafUserFrame:(id)arg2 andLeafKernelFrame:(id)arg3;
-- (id)initWithTid:(unsigned int)arg1;
+- (id)initWithTid:(unsigned long long)arg1;
 - (BOOL)isAbortingInterruptibleWaits;
 - (BOOL)isAbortingInterruptibleWaitsAtSafePoints;
 - (BOOL)isEqual:(id)arg1;

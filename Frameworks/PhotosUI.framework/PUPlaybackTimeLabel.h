@@ -8,17 +8,17 @@
     BOOL  __needsUpdateBackground;
     BOOL  __needsUpdateLabel;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _currentPlaybackTime;
     int  _format;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _playbackDuration;
 }
 
@@ -26,9 +26,9 @@
 @property (nonatomic, readonly) UILabel *_label;
 @property (setter=_setNeedsUpdateBackground:, nonatomic) BOOL _needsUpdateBackground;
 @property (setter=_setNeedsUpdateLabel:, nonatomic) BOOL _needsUpdateLabel;
-@property (nonatomic) struct { int x1; int x2; unsigned int x3; int x4; } currentPlaybackTime;
+@property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } currentPlaybackTime;
 @property (nonatomic) int format;
-@property (nonatomic) struct { int x1; int x2; unsigned int x3; int x4; } playbackDuration;
+@property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } playbackDuration;
 
 - (void).cxx_destruct;
 - (id)_backgroundView;
@@ -36,7 +36,7 @@
 - (void)_invalidateLabel;
 - (id)_label;
 - (id)_labelTextWithFormat:(int)arg1 elapsedInterval:(double)arg2 remainingInterval:(double)arg3;
-- (struct CGSize { double x1; double x2; })_maximumLabelSizeWithDuration:(double)arg1;
+- (struct CGSize { float x1; float x2; })_maximumLabelSizeWithDuration:(double)arg1;
 - (BOOL)_needsUpdate;
 - (BOOL)_needsUpdateBackground;
 - (BOOL)_needsUpdateLabel;
@@ -47,14 +47,14 @@
 - (void)_updateBackgroundIfNeeded;
 - (void)_updateIfNeeded;
 - (void)_updateLabelIfNeeded;
-- (struct { int x1; int x2; unsigned int x3; int x4; })currentPlaybackTime;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })currentPlaybackTime;
 - (int)format;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (struct { int x1; int x2; unsigned int x3; int x4; })playbackDuration;
-- (void)setCurrentPlaybackTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })playbackDuration;
+- (void)setCurrentPlaybackTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setFormat:(int)arg1;
-- (void)setPlaybackDuration:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (void)setPlaybackDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 
 @end

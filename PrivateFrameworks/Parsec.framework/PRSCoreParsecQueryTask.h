@@ -14,7 +14,7 @@
 
 - (void).cxx_destruct;
 - (void)handleResults:(id)arg1;
-- (id)initWithSession:(id)arg1 parsecSession:(id)arg2 handler:(id)arg3 queue:(id)arg4 scaleFactor:(float)arg5 queryIdent:(unsigned int)arg6 whyQuery:(unsigned int)arg7;
+- (id)initWithSession:(id)arg1 parsecSession:(id)arg2 handler:(id)arg3 queue:(id)arg4 scaleFactor:(float)arg5 queryIdent:(unsigned long long)arg6 whyQuery:(unsigned int)arg7;
 - (BOOL)needsBag;
 - (void)resume;
 - (void)setBingState:(BOOL)arg1;

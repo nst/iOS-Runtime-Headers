@@ -3,7 +3,7 @@
  */
 
 @interface NTKBatteryCircularSmallComplicationView : NTKCircularSmallRingTextComplicationView <NTKBatteryComplicationDisplay> {
-    double  _level;
+    float  _level;
     int  _state;
 }
 

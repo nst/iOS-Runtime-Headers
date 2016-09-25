@@ -10,7 +10,7 @@
     UIColor * _detachedTintColor;
     BOOL  _independentGroupSizes;
     NSArray * _leadingBarButtonGroups;
-    double  _marginOverride;
+    float  _marginOverride;
     UIKeyboardAssistantBar * _owner;
     NSArray * _trailingBarButtonGroups;
 }
@@ -23,7 +23,7 @@
 @property (getter=_hasItemsToDisplay, nonatomic, readonly) BOOL hasItemsToDisplay;
 @property (getter=_independentGroupSizes, setter=_setIndependentGroupSizes:, nonatomic) BOOL independentGroupSizes;
 @property (nonatomic, copy) NSArray *leadingBarButtonGroups;
-@property (getter=_marginOverride, setter=_setMarginOverride:, nonatomic) double marginOverride;
+@property (getter=_marginOverride, setter=_setMarginOverride:, nonatomic) float marginOverride;
 @property (getter=_owner, setter=_setOwner:, nonatomic) UIKeyboardAssistantBar *owner;
 @property (getter=_requiresPredictionDisabled, nonatomic, readonly) BOOL requiresPredictionDisabled;
 @property (nonatomic, copy) NSArray *trailingBarButtonGroups;

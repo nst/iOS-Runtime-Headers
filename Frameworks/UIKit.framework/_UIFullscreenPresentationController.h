@@ -3,15 +3,15 @@
  */
 
 @interface _UIFullscreenPresentationController : _UICurrentContextPresentationController {
-    double  _counterRotatedAngle;
+    float  _counterRotatedAngle;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _counterRotatedOriginalBounds;
     UIView * _counterRotatedView;
@@ -30,7 +30,7 @@
 - (BOOL)_shouldRespectDefinesPresentationContext;
 - (void)dealloc;
 - (void)dismissalTransitionDidEnd:(BOOL)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameOfPresentedViewInContainerView;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameOfPresentedViewInContainerView;
 - (int)presentationStyle;
 - (void)presentationTransitionDidEnd:(BOOL)arg1;
 - (BOOL)shouldPresentInFullscreen;

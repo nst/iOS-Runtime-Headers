@@ -3,15 +3,15 @@
  */
 
 @interface UISearchDisplayController : NSObject <_UIScrollNotification> {
-    double  __activationGapHeight;
-    double  __additionalNonCollapsingHeightAboveSearchBar;
+    float  __activationGapHeight;
+    float  __additionalNonCollapsingHeightAboveSearchBar;
     UIButton * _animatingAppearanceNavigationButton;
-    double  _animatingAppearanceNavigationSearchBarWidth;
+    float  _animatingAppearanceNavigationSearchBarWidth;
     _UINavigationControllerPalette * _attachedNavigationPalette;
     UISearchDisplayControllerContainerView * _containerView;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _containingScrollViewContentOffset;
     struct __CFArray { } * _containingScrollViews;
     <UISearchDisplayDelegate> * _delegate;
@@ -19,8 +19,8 @@
     UIColor * _dimmingOverlayColor;
     UIView * _dimmingView;
     BOOL  _displaysSearchBarInNavigationBar;
-    double  _lastFooterAdjustment;
-    double  _lastKeyboardAdjustment;
+    float  _lastFooterAdjustment;
+    float  _lastKeyboardAdjustment;
     unsigned int  _navigationBarSearchFieldSizing;
     id  _navigationControllerBookkeeper;
     UINavigationItem * _navigationItem;
@@ -52,12 +52,12 @@
     }  _searchDisplayControllerFlags;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _searchFieldInNavigationBarFrame;
     int  _searchResultsTableViewStyle;
@@ -69,8 +69,8 @@
     UIViewController * _viewController;
 }
 
-@property (nonatomic) double _activationGapHeight;
-@property (nonatomic) double _additionalNonCollapsingHeightAboveSearchBar;
+@property (nonatomic) float _activationGapHeight;
+@property (nonatomic) float _additionalNonCollapsingHeightAboveSearchBar;
 @property (getter=isActive, nonatomic) BOOL active;
 @property (nonatomic) BOOL automaticallyShowsNoResultsMessage;
 @property (getter=_isCancelButtonManagementDisabled, setter=_setCancelButtonManagementDisabled:, nonatomic) BOOL cancelButtonManagementDisabled;
@@ -146,7 +146,7 @@
 - (BOOL)_shouldAccountForStatusBarHeight;
 - (BOOL)_showsResultsForEmptyField;
 - (float)_statusBarHeight;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_tableViewContentInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_tableViewContentInsets;
 - (id)_topShadowView;
 - (void)_updateBackdropMaskViewsInScrollView:(id)arg1;
 - (float)_updateNavigationPalette;

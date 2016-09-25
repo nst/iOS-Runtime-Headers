@@ -10,7 +10,7 @@
         unsigned int durationMs : 1; 
         unsigned int voltageVm : 1; 
     }  _has;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
     unsigned int  _voltageVm;
 }
 
@@ -19,7 +19,7 @@
 @property (nonatomic) BOOL hasDurationMs;
 @property (nonatomic) BOOL hasTimestamp;
 @property (nonatomic) BOOL hasVoltageVm;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 @property (nonatomic) unsigned int voltageVm;
 
 - (void).cxx_destruct;
@@ -45,9 +45,9 @@
 - (void)setHasDurationMs:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
 - (void)setHasVoltageVm:(BOOL)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (void)setVoltageVm:(unsigned int)arg1;
-- (unsigned int)timestamp;
+- (unsigned long long)timestamp;
 - (unsigned int)voltageVm;
 - (void)writeTo:(id)arg1;
 

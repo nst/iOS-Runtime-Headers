@@ -30,25 +30,25 @@
     NSObject<OS_dispatch_queue> * _stateQueue;
     int  _status;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _targetSize;
     struct { 
         struct { 
-            int value; 
+            long long value; 
             int timescale; 
             unsigned int flags; 
-            int epoch; 
+            long long epoch; 
         } start; 
         struct { 
-            int value; 
+            long long value; 
             int timescale; 
             unsigned int flags; 
-            int epoch; 
+            long long epoch; 
         } duration; 
     }  _trimmedTimeRange;
     AVVideoComposition * _videoComposition;
-    double  _videoCropFactor;
+    float  _videoCropFactor;
 }
 
 @property (setter=_setCrossfadeItem:, nonatomic, retain) ISCrossfadeItem *_crossfadeItem;
@@ -67,13 +67,13 @@
 @property (nonatomic) BOOL reversesMoreVideoFramesInMemory;
 @property (nonatomic) BOOL shouldLoadCrossfadeContent;
 @property (setter=_setStatus:, nonatomic) int status;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } targetSize;
-@property (nonatomic, readonly) struct { struct { int x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; int x_1_1_4; } x1; struct { int x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; int x_2_1_4; } x2; } trimmedTimeRange;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } targetSize;
+@property (nonatomic, readonly) struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; } trimmedTimeRange;
 @property (copy) AVVideoComposition *videoComposition;
-@property (nonatomic, readonly) double videoCropFactor;
+@property (nonatomic, readonly) float videoCropFactor;
 
-+ (id)playerItemWithAsset:(id)arg1 targetSize:(struct CGSize { double x1; double x2; })arg2;
-+ (id)playerItemWithAsset:(id)arg1 targetSize:(struct CGSize { double x1; double x2; })arg2 trimmedTimeRange:(struct { struct { int x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; int x_1_1_4; } x1; struct { int x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; int x_2_1_4; } x2; })arg3;
++ (id)playerItemWithAsset:(id)arg1 targetSize:(struct CGSize { float x1; float x2; })arg2;
++ (id)playerItemWithAsset:(id)arg1 targetSize:(struct CGSize { float x1; float x2; })arg2 trimmedTimeRange:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg3;
 
 - (void).cxx_destruct;
 - (void)_cancelLoading;
@@ -118,8 +118,8 @@
 - (void)discardContentBelowLoadingTarget;
 - (id)error;
 - (id)init;
-- (id)initWithAsset:(id)arg1 targetSize:(struct CGSize { double x1; double x2; })arg2;
-- (id)initWithAsset:(id)arg1 targetSize:(struct CGSize { double x1; double x2; })arg2 trimmedTimeRange:(struct { struct { int x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; int x_1_1_4; } x1; struct { int x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; int x_2_1_4; } x2; })arg3;
+- (id)initWithAsset:(id)arg1 targetSize:(struct CGSize { float x1; float x2; })arg2;
+- (id)initWithAsset:(id)arg1 targetSize:(struct CGSize { float x1; float x2; })arg2 trimmedTimeRange:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg3;
 - (int)loadingTarget;
 - (id)mutableChangeObject;
 - (id)playerContent;
@@ -134,8 +134,8 @@
 - (void)setVideoComposition:(id)arg1;
 - (BOOL)shouldLoadCrossfadeContent;
 - (int)status;
-- (struct CGSize { double x1; double x2; })targetSize;
-- (struct { struct { int x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; int x_1_1_4; } x1; struct { int x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; int x_2_1_4; } x2; })trimmedTimeRange;
+- (struct CGSize { float x1; float x2; })targetSize;
+- (struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })trimmedTimeRange;
 - (id)videoComposition;
 - (float)videoCropFactor;
 

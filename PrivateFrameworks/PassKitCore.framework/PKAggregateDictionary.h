@@ -11,6 +11,6 @@
 
 + (id)sharedDictionary;
 
-- (void)addValueForScalarKey:(id)arg1 value:(int)arg2;
+- (void)addValueForScalarKey:(id)arg1 value:(long long)arg2;
 
 @end

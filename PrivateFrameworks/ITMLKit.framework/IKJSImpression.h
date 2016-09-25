@@ -26,7 +26,7 @@
 
 - (void).cxx_destruct;
 - (void)addChild:(id)arg1;
-- (void)addTimestamp:(int)arg1;
+- (void)addTimestamp:(long long)arg1;
 - (id)children;
 - (id)data;
 - (id)description;

@@ -3,13 +3,13 @@
  */
 
 @interface _MFLazyCacheConditionLock : NSConditionLock {
-    int  _waiterCount;
+    long long  _waiterCount;
 }
 
-@property (readonly) int waiterCount;
+@property (readonly) long long waiterCount;
 
 - (void)decrementWaiterCount;
 - (void)incrementWaiterCount;
-- (int)waiterCount;
+- (long long)waiterCount;
 
 @end

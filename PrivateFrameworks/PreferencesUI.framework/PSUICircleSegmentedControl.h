@@ -25,7 +25,7 @@
 - (void)addSegmentWithTitle:(id)arg1;
 - (id)delegate;
 - (id)init;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (id)label;
 - (void)menuButtonPressed;
 - (void)segmentTapped:(id)arg1;
@@ -34,6 +34,6 @@
 - (void)setLabel:(id)arg1;
 - (void)setPositionConstraintsActive:(BOOL)arg1 forButtonAtIndex:(unsigned int)arg2;
 - (void)setSelectedSegmentIndex:(unsigned int)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 
 @end

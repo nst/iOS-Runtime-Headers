@@ -10,27 +10,27 @@
     unsigned int  _graduatedSectionCount;
     NSMutableArray * _graduatedSectionLabels;
     NSMutableArray * _graduatedSectionValues;
-    double  _graduatedSectionWidth;
+    float  _graduatedSectionWidth;
     NSMutableArray * _graduatedSections;
     UIFont * _labelFont;
-    double  _majorTickHeight;
-    double  _minorTickHeight;
+    float  _majorTickHeight;
+    float  _minorTickHeight;
     unsigned int  _minorTicksPerSection;
     double  _remainingTime;
     BOOL  _running;
-    double  _tickHorizontalSpacing;
+    float  _tickHorizontalSpacing;
 }
 
 @property (nonatomic, retain) UIFont *labelFont;
-@property (nonatomic) double majorTickHeight;
-@property (nonatomic) double minorTickHeight;
+@property (nonatomic) float majorTickHeight;
+@property (nonatomic) float minorTickHeight;
 @property (nonatomic) unsigned int minorTicksPerSection;
-@property (nonatomic) double tickHorizontalSpacing;
+@property (nonatomic) float tickHorizontalSpacing;
 
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)graduatedSection;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)labelFont;
 - (void)layoutSubviews;
 - (float)majorTickHeight;

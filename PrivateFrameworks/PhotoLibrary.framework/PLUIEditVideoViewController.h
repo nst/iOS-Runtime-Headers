@@ -35,7 +35,7 @@
 - (void)loadView;
 - (id)navigationItem;
 - (BOOL)parentInPopoverException;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })previewFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })previewFrame;
 - (void)setDelegate:(id)arg1;
 - (void)setImagePickerOptions:(id)arg1;
 - (void)setParentInPopoverException:(BOOL)arg1;

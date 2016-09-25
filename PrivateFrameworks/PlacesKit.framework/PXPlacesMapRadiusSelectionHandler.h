@@ -4,7 +4,7 @@
 
 @interface PXPlacesMapRadiusSelectionHandler : NSObject <PXPlacesMapSelectionHandler> {
     <PXPlacesGeotaggedItemDataSource> * _dataSource;
-    double  _radius;
+    float  _radius;
     <PXPlacesMapPipelineComponentProvider> * pipelineComponentProvider;
 }
 
@@ -13,7 +13,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic) <PXPlacesMapPipelineComponentProvider> *pipelineComponentProvider;
-@property double radius;
+@property float radius;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;

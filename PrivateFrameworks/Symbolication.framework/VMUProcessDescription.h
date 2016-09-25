@@ -10,7 +10,7 @@
     int  _cpuType;
     NSDate * _date;
     NSMutableDictionary * _environment;
-    unsigned int  _executableLoadAddress;
+    unsigned long long  _executableLoadAddress;
     NSString * _executablePath;
     BOOL  _executablePathNeedsCorrection;
     NSString * _hardwareModel;
@@ -52,7 +52,7 @@
 - (id)_rangesOfBinaryImages:(id)arg1 forBacktraces:(id)arg2;
 - (id)_sanitizeVersion:(id)arg1;
 - (id)_systemVersionDescription;
-- (id)binaryImageDictionaryForAddress:(unsigned int)arg1;
+- (id)binaryImageDictionaryForAddress:(unsigned long long)arg1;
 - (id)binaryImages;
 - (id)binaryImagesDescription;
 - (id)binaryImagesDescriptionForBacktraces:(id)arg1;

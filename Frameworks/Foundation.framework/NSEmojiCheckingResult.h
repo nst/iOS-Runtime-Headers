@@ -4,6 +4,6 @@
 
 @interface NSEmojiCheckingResult : NSCorrectionCheckingResult
 
-- (unsigned int)resultType;
+- (unsigned long long)resultType;
 
 @end

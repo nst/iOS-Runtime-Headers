@@ -5,21 +5,21 @@
 @interface SKUICarouselItem : NSObject {
     NSString * _accessibilityLabel;
     <SKUIArtworkProviding> * _artworkProvider;
-    int  _carouselItemIdentifier;
+    long long  _carouselItemIdentifier;
     SKUILink * _link;
 }
 
 @property (nonatomic, readonly) NSString *accessibilityLabel;
 @property (nonatomic, retain) <SKUIArtworkProviding> *artworkProvider;
-@property (nonatomic, readonly) int carouselItemIdentifier;
+@property (nonatomic, readonly) long long carouselItemIdentifier;
 @property (nonatomic, readonly) SKUILink *link;
 
 - (void).cxx_destruct;
 - (void)_setLinkItem:(id)arg1;
 - (id)accessibilityLabel;
-- (id)artworkForSize:(struct CGSize { double x1; double x2; })arg1;
+- (id)artworkForSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)artworkProvider;
-- (int)carouselItemIdentifier;
+- (long long)carouselItemIdentifier;
 - (id)description;
 - (id)initWithComponentContext:(id)arg1;
 - (id)link;

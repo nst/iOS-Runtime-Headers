@@ -6,6 +6,6 @@
 
 @property (nonatomic) double creationDate;
 @property (nonatomic, retain) NSString *key;
-@property (nonatomic) int number;
+@property (nonatomic) long long number;
 
 @end

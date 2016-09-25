@@ -19,10 +19,10 @@
 - (BOOL)canHideOverlay:(BOOL)arg1;
 - (BOOL)canShowControlsOverlay;
 - (BOOL)controlsOverlayVisible;
-- (unsigned int)desiredParts;
+- (unsigned long long)desiredParts;
 - (BOOL)disableAutoRotation;
 - (BOOL)disableControlsAutohide;
-- (unsigned int)disabledParts;
+- (unsigned long long)disabledParts;
 - (BOOL)displayPlaybackErrorAlerts;
 - (void)displayVideoView;
 - (void)exitFullscreen;
@@ -47,11 +47,11 @@
 - (void)setControlsOverlayVisible:(BOOL)arg1;
 - (void)setControlsOverlayVisible:(BOOL)arg1 animate:(BOOL)arg2;
 - (void)setControlsOverlayVisible:(BOOL)arg1 animate:(BOOL)arg2 force:(BOOL)arg3;
-- (void)setDesiredParts:(unsigned int)arg1;
-- (void)setDesiredParts:(unsigned int)arg1 animate:(BOOL)arg2;
+- (void)setDesiredParts:(unsigned long long)arg1;
+- (void)setDesiredParts:(unsigned long long)arg1 animate:(BOOL)arg2;
 - (void)setDisableAutoRotation:(BOOL)arg1;
 - (void)setDisableControlsAutohide:(BOOL)arg1;
-- (void)setDisabledParts:(unsigned int)arg1;
+- (void)setDisabledParts:(unsigned long long)arg1;
 - (void)setDisplayPlaybackErrorAlerts:(BOOL)arg1;
 - (void)setFullscreen:(BOOL)arg1;
 - (void)setFullscreen:(BOOL)arg1 animated:(BOOL)arg2;
@@ -63,11 +63,11 @@
 - (void)setScaleModeOverride:(int)arg1 animated:(BOOL)arg2;
 - (void)setTVOutEnabled:(BOOL)arg1;
 - (void)setUseHostedWindowWhenFullscreen:(BOOL)arg1;
-- (void)setVisibleParts:(unsigned int)arg1;
-- (void)setVisibleParts:(unsigned int)arg1 animate:(BOOL)arg2;
+- (void)setVisibleParts:(unsigned long long)arg1;
+- (void)setVisibleParts:(unsigned long long)arg1 animate:(BOOL)arg2;
 - (UIView<MPVideoOverlay> *)videoOverlayView;
 - (MPVideoView *)videoView;
 - (BOOL)viewControllerWillRequestExit;
-- (unsigned int)visibleParts;
+- (unsigned long long)visibleParts;
 
 @end

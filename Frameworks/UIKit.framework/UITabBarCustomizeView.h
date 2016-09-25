@@ -9,24 +9,24 @@
     UITabBarItemProxy * _draggingProxy;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _firstItemRect;
     NSMutableArray * _fixedItems;
-    double  _gridOffset;
+    float  _gridOffset;
     int  _itemsInRowCount;
     NSMutableArray * _proxies;
     UITabBarItem * _replaceItem;
     UIImageView * _replacementGlow;
     UITabBarItem * _selectedBeforeItem;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _startPoint;
     UITabBar * _tabBar;
     UILabel * _titleLabel;
@@ -38,7 +38,7 @@
 - (int)_barMetrics;
 - (void)adjustDragImageWithTouches:(id)arg1 withEvent:(id)arg2;
 - (id)availableItems;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)itemInTabBarWithTouches:(id)arg1 withEvent:(id)arg2;
 - (void)layoutSubviews;
 - (void)setAvailableItems:(id)arg1;

@@ -5,10 +5,10 @@
 @interface MFAddressPickerReformatter : NSObject {
     NSArray * _addresses;
     BOOL  _attributesDisabled;
-    double  _fontSize;
-    double  _maximumFontSize;
-    double  _maximumWidth;
-    double  _minimumFontSize;
+    float  _fontSize;
+    float  _maximumFontSize;
+    float  _maximumWidth;
+    float  _minimumFontSize;
     NSArray * _reformattedAddresses;
 }
 

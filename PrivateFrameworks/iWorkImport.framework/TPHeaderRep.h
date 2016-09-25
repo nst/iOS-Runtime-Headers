@@ -17,6 +17,6 @@
 - (id)pageInfo;
 - (id)pageLayout;
 - (void)setHideKnobs:(BOOL)arg1;
-- (BOOL)shouldIgnoreSingleTapAtPoint:(struct CGPoint { double x1; double x2; })arg1 withRecognizer:(id)arg2;
+- (BOOL)shouldIgnoreSingleTapAtPoint:(struct CGPoint { float x1; float x2; })arg1 withRecognizer:(id)arg2;
 
 @end

@@ -14,7 +14,7 @@
 - (void)_invokeUnpublishingHandler;
 - (void)_setRemoteValue:(id)arg1 forKey:(id)arg2 inUserInfo:(BOOL)arg3;
 - (void)acknowledgeWithSuccess:(BOOL)arg1;
-- (void)becomeCurrentWithPendingUnitCount:(int)arg1;
+- (void)becomeCurrentWithPendingUnitCount:(long long)arg1;
 - (void)cancel;
 - (void)dealloc;
 - (BOOL)isOld;
@@ -25,14 +25,14 @@
 - (void)resume;
 - (void)setCancellable:(BOOL)arg1;
 - (void)setCancellationHandler:(id /* block */)arg1;
-- (void)setCompletedUnitCount:(int)arg1;
+- (void)setCompletedUnitCount:(long long)arg1;
 - (void)setKind:(id)arg1;
 - (void)setLocalizedDescription:(id)arg1;
 - (void)setPausable:(BOOL)arg1;
 - (void)setPausingHandler:(id /* block */)arg1;
 - (void)setPrioritizable:(BOOL)arg1;
 - (void)setPrioritizationHandler:(id /* block */)arg1;
-- (void)setTotalUnitCount:(int)arg1;
+- (void)setTotalUnitCount:(long long)arg1;
 - (void)setUserInfoObject:(id)arg1 forKey:(id)arg2;
 - (void)unpublish;
 

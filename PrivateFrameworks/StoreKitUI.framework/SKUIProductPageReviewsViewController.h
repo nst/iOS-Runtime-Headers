@@ -46,7 +46,7 @@
 - (float)_defaultPageWidth;
 - (id)_histogramViewController;
 - (id)_loadMoreCellForTableView:(id)arg1 indexPath:(id)arg2;
-- (void)_loadNextPageIfNecessaryForOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (void)_loadNextPageIfNecessaryForOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_reloadData;
 - (void)_resetPersonalStarRating;
 - (id)_reviewsHeaderView;
@@ -77,7 +77,7 @@
 - (void)reviewsFacebookViewControllerDidChange:(id)arg1;
 - (id)scrollView;
 - (void)scrollViewDidScroll:(id)arg1;
-- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { double x1; double x2; })arg2 targetContentOffset:(inout struct CGPoint { double x1; double x2; }*)arg3;
+- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { float x1; float x2; })arg2 targetContentOffset:(inout struct CGPoint { float x1; float x2; }*)arg3;
 - (void)setAskPermission:(BOOL)arg1;
 - (void)setClientContext:(id)arg1;
 - (void)setDelegate:(id)arg1;

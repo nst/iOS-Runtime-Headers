@@ -3,16 +3,16 @@
  */
 
 @interface MFOfflineCacheOperation : NSObject <NSCoding> {
-    int  _rowid;
+    long long  _rowid;
 }
 
-@property (nonatomic) int rowid;
+@property (nonatomic) long long rowid;
 
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)hasRowid;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (int)rowid;
-- (void)setRowid:(int)arg1;
+- (long long)rowid;
+- (void)setRowid:(long long)arg1;
 
 @end

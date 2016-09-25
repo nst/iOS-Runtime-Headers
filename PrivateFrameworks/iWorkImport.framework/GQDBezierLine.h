@@ -5,12 +5,12 @@
 @interface GQDBezierLine : NSObject {
     BOOL  isOutsideToLeft;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  mLower;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  mUpper;
 }
 

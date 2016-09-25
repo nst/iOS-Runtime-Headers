@@ -10,7 +10,7 @@
     GKCollectionViewDataSource * _gkDataSource;
     _UIDynamicAnimation * _openAnimation;
     UIPanGestureRecognizer * _panGestureRecognizer;
-    double  _startTrackingX;
+    float  _startTrackingX;
 }
 
 @property (nonatomic, retain) UICollectionView *collectionView;
@@ -22,7 +22,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) _UIDynamicAnimation *openAnimation;
 @property (nonatomic, retain) UIPanGestureRecognizer *panGestureRecognizer;
-@property (nonatomic) double startTrackingX;
+@property (nonatomic) float startTrackingX;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSIndexPath *trackedIndexPath;
 
@@ -57,6 +57,6 @@
 - (float)startTrackingX;
 - (id)trackedIndexPath;
 - (void)viewDidDisappear:(BOOL)arg1;
-- (float)xPositionForTranslation:(struct CGPoint { double x1; double x2; })arg1;
+- (float)xPositionForTranslation:(struct CGPoint { float x1; float x2; })arg1;
 
 @end

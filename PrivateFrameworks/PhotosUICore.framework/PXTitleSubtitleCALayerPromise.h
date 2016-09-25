@@ -3,36 +3,36 @@
  */
 
 @interface PXTitleSubtitleCALayerPromise : PXCALayerPromise <PXMutableTitleSubtitleCALayerPromise> {
-    double  __textScaleFactor;
+    float  __textScaleFactor;
     BOOL  _diagnosticsEnabled;
     NSArray * _diagnosticsRenderedLines;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _layerContentBounds;
-    double  _layerLastBaseline;
+    float  _layerLastBaseline;
     PXTitleSubtitleLabelSpec * _spec;
     NSString * _subtitleText;
     NSString * _titleText;
     int  _typesettingMode;
 }
 
-@property (nonatomic, readonly) double _textScaleFactor;
-@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } bounds;
-@property (nonatomic) double contentsScale;
+@property (nonatomic, readonly) float _textScaleFactor;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
+@property (nonatomic) float contentsScale;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) BOOL diagnosticsEnabled;
 @property (nonatomic, readonly, copy) NSArray *diagnosticsRenderedLines;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } layerContentBounds;
-@property (nonatomic, readonly) double layerLastBaseline;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } layerContentBounds;
+@property (nonatomic, readonly) float layerLastBaseline;
 @property (nonatomic) BOOL rendersAsynchronously;
 @property (nonatomic, readonly) PXTitleSubtitleLabelSpec *spec;
 @property (nonatomic, readonly, copy) NSString *subtitleText;
@@ -49,7 +49,7 @@
 - (id)diagnosticsRenderedLines;
 - (void)drawLayerContentInContext:(struct CGContext { }*)arg1;
 - (id)init;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })layerContentBounds;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })layerContentBounds;
 - (float)layerLastBaseline;
 - (void)performChanges:(id /* block */)arg1;
 - (void)setDiagnosticsEnabled:(BOOL)arg1;

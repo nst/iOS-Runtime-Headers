@@ -41,15 +41,15 @@
 - (id)_classInfoWithNonobjectType:(id)arg1 binaryPath:(id)arg2;
 - (void*)_dlopenLibSwiftRemoteMirrorFromDir:(id)arg1;
 - (void*)_dlopenLibSwiftRemoteMirrorWithSymbolicator:(struct _CSTypeRef { unsigned int x1; unsigned int x2; })arg1;
-- (id)_faultClass:(unsigned int)arg1 ofType:(int)arg2;
+- (id)_faultClass:(unsigned long long)arg1 ofType:(int)arg2;
 - (int)_populateSwiftReflectionInfo:(struct libSwiftRemoteMirrorWrapper { struct SwiftReflectionContext {} *x1; unsigned short x2; int (*x3)(); int (*x4)(); int (*x5)(); int (*x6)(); int (*x7)(); int (*x8)(); int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); int (*x13)(); int (*x14)(); int (*x15)(); int (*x16)(); }*)arg1 withTask:(unsigned int)arg2;
 - (struct _CSTypeRef { unsigned int x1; unsigned int x2; })_symbolicator;
-- (unsigned int)addressOfSymbol:(const char *)arg1 inLibrary:(const char *)arg2;
+- (unsigned long long)addressOfSymbol:(const char *)arg1 inLibrary:(const char *)arg2;
 - (void)buildIsaToObjectLabelHandlerMap;
 - (id)classInfoForMemory:(void*)arg1 length:(unsigned int)arg2;
-- (id)classInfoForMemory:(void*)arg1 length:(unsigned int)arg2 remoteAddress:(unsigned int)arg3;
+- (id)classInfoForMemory:(void*)arg1 length:(unsigned int)arg2 remoteAddress:(unsigned long long)arg3;
 - (id)classInfoForNonobjectMemory:(void*)arg1 length:(unsigned int)arg2;
-- (id)classInfoForObjectWithRange:(struct _VMURange { unsigned int x1; unsigned int x2; })arg1;
+- (id)classInfoForObjectWithRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)dealloc;
 - (void)enumerateAllClassInfosWithBlock:(id /* block */)arg1;
 - (void)enumerateRealizedClassInfosWithBlock:(id /* block */)arg1;
@@ -58,11 +58,11 @@
 - (id)initWithTask:(unsigned int)arg1;
 - (id)initWithTask:(unsigned int)arg1 symbolicator:(struct _CSTypeRef { unsigned int x1; unsigned int x2; })arg2;
 - (id)labelForItemCount:(long)arg1;
-- (id)labelForMallocBlock:(struct _VMURange { unsigned int x1; unsigned int x2; })arg1;
-- (id)labelForMallocBlock:(struct _VMURange { unsigned int x1; unsigned int x2; })arg1 usingHandlerBlock:(id /* block */)arg2;
+- (id)labelForMallocBlock:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1;
+- (id)labelForMallocBlock:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1 usingHandlerBlock:(id /* block */)arg2;
 - (id)labelForMemory:(void*)arg1 length:(unsigned int)arg2;
-- (id)labelForMemory:(void*)arg1 length:(unsigned int)arg2 remoteAddress:(unsigned int)arg3;
-- (id)labelForMemory:(void*)arg1 length:(unsigned int)arg2 remoteAddress:(unsigned int)arg3 usingHandlerBlock:(id /* block */)arg4;
+- (id)labelForMemory:(void*)arg1 length:(unsigned int)arg2 remoteAddress:(unsigned long long)arg3;
+- (id)labelForMemory:(void*)arg1 length:(unsigned int)arg2 remoteAddress:(unsigned long long)arg3 usingHandlerBlock:(id /* block */)arg4;
 - (id)labelForNSArray:(id)arg1;
 - (id)labelForNSCFDictionary:(id)arg1;
 - (id)labelForNSCFSet:(id)arg1;
@@ -89,6 +89,6 @@
 - (id)osMajorMinorVersionString;
 - (id)realizedClasses;
 - (id)uniquifyStringLabel:(id)arg1 stringType:(int)arg2 printDetail:(BOOL)arg3;
-- (struct _VMURange { unsigned int x1; unsigned int x2; })vmRegionRangeForAddress:(unsigned int)arg1;
+- (struct _VMURange { unsigned long long x1; unsigned long long x2; })vmRegionRangeForAddress:(unsigned long long)arg1;
 
 @end

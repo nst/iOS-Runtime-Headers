@@ -18,7 +18,7 @@
 
 - (void).cxx_destruct;
 - (id)attributeStringsSortedBySize:(id)arg1;
-- (id)dynamicStringForSize:(struct CGSize { double x1; double x2; })arg1 attributes:(id)arg2;
+- (id)dynamicStringForSize:(struct CGSize { float x1; float x2; })arg1 attributes:(id)arg2;
 - (id)initWithList:(id)arg1 truncationFormat:(id)arg2 summaryFormat:(id)arg3;
 - (BOOL)prefersDynamicString;
 - (void)setStringList:(id)arg1;

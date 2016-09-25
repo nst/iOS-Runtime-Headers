@@ -17,7 +17,7 @@
     UIView * m_inputAccessoryView;
     UIView * m_inputView;
     UITextInteractionAssistant * m_interactionAssistant;
-    double  m_lineHeight;
+    float  m_lineHeight;
     UIDelayedAction * m_longPressAction;
     int  m_marginTop;
     BOOL  m_readyForScroll;

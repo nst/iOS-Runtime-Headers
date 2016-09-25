@@ -5,7 +5,7 @@
 @interface PAProcessInstanceAggregator : PASampleAggregator {
     BOOL  _forceOneBasedTimeIndexes;
     NSString * _headerNote;
-    unsigned int  _stackshotFrameAddress;
+    unsigned long long  _stackshotFrameAddress;
     unsigned int  _startingTSDSIndex;
     unsigned int  _timestampIndexWhenTransitionedToSamplingAllProcesses;
 }
@@ -15,7 +15,7 @@
 @property (copy) NSString *headerNote;
 @property BOOL printHeavyStacks;
 @property BOOL printSpinSignatureStack;
-@property unsigned int stackshotFrameAddress;
+@property unsigned long long stackshotFrameAddress;
 @property (readonly) unsigned int timestampIndexWhenTransitionedToSamplingAllProcesses;
 
 - (void).cxx_destruct;
@@ -35,15 +35,15 @@
 - (BOOL)printSpinSignatureStack;
 - (unsigned int)sampleIndexForDisplayTimeIndex:(int)arg1;
 - (id)sampleTaskWithPid:(int)arg1 atTimestampIndex:(unsigned int)arg2;
-- (id)sampleTaskWithUniqueId:(unsigned int)arg1 atTimestampIndex:(unsigned int)arg2;
+- (id)sampleTaskWithUniqueId:(unsigned long long)arg1 atTimestampIndex:(unsigned int)arg2;
 - (void)setForceOneBasedTimeIndexes:(BOOL)arg1;
 - (void)setHeaderNote:(id)arg1;
 - (void)setPrintHeavyStacks:(BOOL)arg1;
 - (void)setPrintSpinSignatureStack:(BOOL)arg1;
 - (void)setSamples:(id)arg1;
-- (void)setStackshotFrameAddress:(unsigned int)arg1;
+- (void)setStackshotFrameAddress:(unsigned long long)arg1;
 - (id)sortedTasks;
-- (unsigned int)stackshotFrameAddress;
+- (unsigned long long)stackshotFrameAddress;
 - (unsigned int)timestampIndexWhenTransitionedToSamplingAllProcesses;
 
 @end

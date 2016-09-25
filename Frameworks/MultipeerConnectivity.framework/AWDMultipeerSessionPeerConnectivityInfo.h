@@ -21,11 +21,11 @@
     unsigned int  _interfaceType;
     BOOL  _remoteAuthentication;
     NSString * _sessionID;
-    unsigned int  _timeAll;
-    unsigned int  _timeDTLS;
-    unsigned int  _timeICE;
-    unsigned int  _timeOSPF;
-    unsigned int  _timestamp;
+    unsigned long long  _timeAll;
+    unsigned long long  _timeDTLS;
+    unsigned long long  _timeICE;
+    unsigned long long  _timeOSPF;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) BOOL authentication;
@@ -45,11 +45,11 @@
 @property (nonatomic) unsigned int interfaceType;
 @property (nonatomic) BOOL remoteAuthentication;
 @property (nonatomic, retain) NSString *sessionID;
-@property (nonatomic) unsigned int timeAll;
-@property (nonatomic) unsigned int timeDTLS;
-@property (nonatomic) unsigned int timeICE;
-@property (nonatomic) unsigned int timeOSPF;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timeAll;
+@property (nonatomic) unsigned long long timeDTLS;
+@property (nonatomic) unsigned long long timeICE;
+@property (nonatomic) unsigned long long timeOSPF;
+@property (nonatomic) unsigned long long timestamp;
 
 - (BOOL)authentication;
 - (int)channelPriority;
@@ -93,16 +93,16 @@
 - (void)setInterfaceType:(unsigned int)arg1;
 - (void)setRemoteAuthentication:(BOOL)arg1;
 - (void)setSessionID:(id)arg1;
-- (void)setTimeAll:(unsigned int)arg1;
-- (void)setTimeDTLS:(unsigned int)arg1;
-- (void)setTimeICE:(unsigned int)arg1;
-- (void)setTimeOSPF:(unsigned int)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
-- (unsigned int)timeAll;
-- (unsigned int)timeDTLS;
-- (unsigned int)timeICE;
-- (unsigned int)timeOSPF;
-- (unsigned int)timestamp;
+- (void)setTimeAll:(unsigned long long)arg1;
+- (void)setTimeDTLS:(unsigned long long)arg1;
+- (void)setTimeICE:(unsigned long long)arg1;
+- (void)setTimeOSPF:(unsigned long long)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
+- (unsigned long long)timeAll;
+- (unsigned long long)timeDTLS;
+- (unsigned long long)timeICE;
+- (unsigned long long)timeOSPF;
+- (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 
 @end

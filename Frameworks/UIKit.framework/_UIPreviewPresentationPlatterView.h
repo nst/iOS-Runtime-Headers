@@ -6,21 +6,21 @@
     _UIPreviewPresentationEffectView * _contentClipView;
     _UIPreviewPresentationEffectView * _contentEffectView;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _contentSize;
     UIView * _contentTransformView;
     UIView * _contentView;
     BOOL  _dropShadowEnabled;
 }
 
-@property (nonatomic) double blurRadius;
+@property (nonatomic) float blurRadius;
 @property (nonatomic, retain) _UIPreviewPresentationEffectView *contentClipView;
 @property (nonatomic, retain) _UIPreviewPresentationEffectView *contentEffectView;
-@property (nonatomic) struct CGSize { double x1; double x2; } contentSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } contentSize;
 @property (nonatomic, retain) UIView *contentTransformView;
 @property (nonatomic, retain) UIView *contentView;
-@property (nonatomic) double cornerRadius;
+@property (nonatomic) float cornerRadius;
 @property (getter=isDropShadowEnabled, nonatomic) BOOL dropShadowEnabled;
 
 - (void).cxx_destruct;
@@ -28,7 +28,7 @@
 - (float)blurRadius;
 - (id)contentClipView;
 - (id)contentEffectView;
-- (struct CGSize { double x1; double x2; })contentSize;
+- (struct CGSize { float x1; float x2; })contentSize;
 - (id)contentTransformView;
 - (id)contentView;
 - (float)cornerRadius;
@@ -38,7 +38,7 @@
 - (void)setBlurRadius:(float)arg1;
 - (void)setContentClipView:(id)arg1;
 - (void)setContentEffectView:(id)arg1;
-- (void)setContentSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setContentTransformView:(id)arg1;
 - (void)setContentView:(id)arg1;
 - (void)setCornerRadius:(float)arg1;

@@ -8,15 +8,15 @@
     struct OpaqueFigCaptureSession { } * figCaptureSession;
     NSObject<OS_dispatch_queue> * figCaptureSessionSyncQueue;
     struct CGAffineTransform { 
-        double a; 
-        double b; 
-        double c; 
-        double d; 
-        double tx; 
-        double ty; 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     }  metadataTransform;
     BOOL  physicallyMirrorsVideo;
-    double  rollAdjustment;
+    float  rollAdjustment;
     AVCaptureSession * session;
     NSString * sinkID;
 }

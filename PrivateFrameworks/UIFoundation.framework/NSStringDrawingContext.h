@@ -5,18 +5,18 @@
 @interface NSStringDrawingContext : NSObject {
     CUICatalog * _CUICatalog;
     CUIStyleEffectConfiguration * _CUIStyleEffects;
-    double  _actualScaleFactor;
-    double  _actualTrackingAdjustment;
-    double  _baselineOffset;
-    double  _firstBaselineOffset;
+    float  _actualScaleFactor;
+    float  _actualTrackingAdjustment;
+    float  _baselineOffset;
+    float  _firstBaselineOffset;
     id  _layout;
     NSDictionary * _linkAttributes;
     unsigned int  _maximumNumberOfLines;
-    double  _minimumScaleFactor;
-    double  _minimumTrackingAdjustment;
+    float  _minimumScaleFactor;
+    float  _minimumTrackingAdjustment;
     unsigned int  _numberOfLineFragments;
-    double  _scaledBaselineOffset;
-    double  _scaledLineHeight;
+    float  _scaledBaselineOffset;
+    float  _scaledLineHeight;
     struct { 
         unsigned int _wantsNumberOfLineFragments : 1; 
         unsigned int _wrapsForTruncationMode : 1; 
@@ -30,34 +30,34 @@
     }  _sdcFlags;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _totalBounds;
 }
 
 @property (nonatomic) unsigned int activeRenderers;
-@property (nonatomic) double actualScaleFactor;
-@property (nonatomic, readonly) double actualTrackingAdjustment;
-@property (nonatomic) double actualTrackingAdjustment;
-@property (nonatomic) double baselineOffset;
+@property (nonatomic) float actualScaleFactor;
+@property (nonatomic, readonly) float actualTrackingAdjustment;
+@property (nonatomic) float actualTrackingAdjustment;
+@property (nonatomic) float baselineOffset;
 @property (nonatomic) BOOL cachesLayout;
 @property (nonatomic, retain) CUICatalog *cuiCatalog;
 @property (nonatomic, retain) CUIStyleEffectConfiguration *cuiStyleEffects;
 @property (nonatomic) BOOL drawsDebugBaselines;
-@property (nonatomic) double firstBaselineOffset;
+@property (nonatomic) float firstBaselineOffset;
 @property (nonatomic, retain) id layout;
 @property (nonatomic) unsigned int maximumNumberOfLines;
-@property (nonatomic) double minimumScaleFactor;
-@property (nonatomic) double minimumTrackingAdjustment;
+@property (nonatomic) float minimumScaleFactor;
+@property (nonatomic) float minimumTrackingAdjustment;
 @property (nonatomic) unsigned int numberOfLineFragments;
-@property (nonatomic) double scaledBaselineOffset;
-@property (nonatomic) double scaledLineHeight;
-@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } totalBounds;
+@property (nonatomic) float scaledBaselineOffset;
+@property (nonatomic) float scaledLineHeight;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } totalBounds;
 @property (nonatomic) BOOL usesSimpleTextEffects;
 @property (nonatomic) BOOL wantsBaselineOffset;
 @property (nonatomic) BOOL wantsNumberOfLineFragments;
@@ -100,14 +100,14 @@
 - (void)setNumberOfLineFragments:(unsigned int)arg1;
 - (void)setScaledBaselineOffset:(float)arg1;
 - (void)setScaledLineHeight:(float)arg1;
-- (void)setTotalBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setTotalBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setUsesSimpleTextEffects:(BOOL)arg1;
 - (void)setWantsBaselineOffset:(BOOL)arg1;
 - (void)setWantsNumberOfLineFragments:(BOOL)arg1;
 - (void)setWantsScaledBaselineOffset:(BOOL)arg1;
 - (void)setWantsScaledLineHeight:(BOOL)arg1;
 - (void)setWrapsForTruncationMode:(BOOL)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })totalBounds;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })totalBounds;
 - (BOOL)usesSimpleTextEffects;
 - (BOOL)wantsBaselineOffset;
 - (BOOL)wantsNumberOfLineFragments;

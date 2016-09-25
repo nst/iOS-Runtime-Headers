@@ -5,13 +5,13 @@
 @interface ML3ExportItem : NSObject {
     Class  _entityClass;
     ML3MusicLibrary * _library;
-    int  _persistentId;
+    long long  _persistentId;
     NSDictionary * _properties;
 }
 
 @property (nonatomic, readonly) Class entityClass;
 @property (nonatomic, readonly) ML3MusicLibrary *library;
-@property (nonatomic, readonly) int persistentId;
+@property (nonatomic, readonly) long long persistentId;
 
 + (unsigned int*)allExportPropertyKeysForEntityClass:(Class)arg1 returnedCount:(unsigned int*)arg2;
 
@@ -25,14 +25,14 @@
 - (Class)entityClass;
 - (id)exportData;
 - (BOOL)hasValueForProperty:(unsigned int)arg1;
-- (id)initWithPersistentId:(int)arg1 entityClass:(Class)arg2 library:(id)arg3;
-- (id)initWithPersistentId:(int)arg1 entityClass:(id)arg2 properties:(id)arg3 library:(id)arg4;
-- (id)initWithPersistentId:(int)arg1 entityClass:(Class)arg2 propertyKeysToExport:(unsigned int*)arg3 numKeys:(unsigned int)arg4 library:(id)arg5;
+- (id)initWithPersistentId:(long long)arg1 entityClass:(Class)arg2 library:(id)arg3;
+- (id)initWithPersistentId:(long long)arg1 entityClass:(id)arg2 properties:(id)arg3 library:(id)arg4;
+- (id)initWithPersistentId:(long long)arg1 entityClass:(Class)arg2 propertyKeysToExport:(unsigned int*)arg3 numKeys:(unsigned int)arg4 library:(id)arg5;
 - (BOOL)isValid;
 - (id)library;
 - (int)longValueForProperty:(unsigned int)arg1;
-- (int)longlongValueForProperty:(unsigned int)arg1;
-- (int)persistentId;
+- (long long)longlongValueForProperty:(unsigned int)arg1;
+- (long long)persistentId;
 - (unsigned int*)propertyKeysToExport:(unsigned int*)arg1;
 - (short)shortValueForProperty:(unsigned int)arg1;
 - (id)stringValueForProperty:(unsigned int)arg1;

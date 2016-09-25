@@ -6,17 +6,17 @@
     unsigned int  _backgroundState;
     HFWallpaperSlice * _blurredWallpaperSlice;
     UIView * _ccBaseMaterialView;
-    double  _cornerRadius;
+    float  _cornerRadius;
     HUGridCellBackgroundDisplayOptions * _displayOptions;
     UIVisualEffectView * _effectView;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _normalizedWallpaperRect;
     BOOL  _pressed;
@@ -25,10 +25,10 @@
 @property (nonatomic) unsigned int backgroundState;
 @property (nonatomic, retain) HFWallpaperSlice *blurredWallpaperSlice;
 @property (nonatomic, retain) UIView *ccBaseMaterialView;
-@property (nonatomic) double cornerRadius;
+@property (nonatomic) float cornerRadius;
 @property (nonatomic, retain) HUGridCellBackgroundDisplayOptions *displayOptions;
 @property (nonatomic, retain) UIVisualEffectView *effectView;
-@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } normalizedWallpaperRect;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } normalizedWallpaperRect;
 @property (getter=isPressed, nonatomic) BOOL pressed;
 
 - (void).cxx_destruct;
@@ -57,14 +57,14 @@
 - (id)effectView;
 - (BOOL)isPressed;
 - (void)layoutSubviews;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })normalizedWallpaperRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })normalizedWallpaperRect;
 - (void)setBackgroundState:(unsigned int)arg1;
 - (void)setBlurredWallpaperSlice:(id)arg1;
 - (void)setCcBaseMaterialView:(id)arg1;
 - (void)setCornerRadius:(float)arg1;
 - (void)setDisplayOptions:(id)arg1;
 - (void)setEffectView:(id)arg1;
-- (void)setNormalizedWallpaperRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setNormalizedWallpaperRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setPressed:(BOOL)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)willMoveToWindow:(id)arg1;

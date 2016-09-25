@@ -8,14 +8,14 @@
     _UIViewControllerTransitionCoordinator * __auxContext;
     int  __completionCurve;
     id /* block */  __completionHandler;
-    double  __completionVelocity;
+    float  __completionVelocity;
     NSArray * __containerViews;
     id /* block */  __didCompleteHandler;
     double  __duration;
     id /* block */  __interactiveUpdateHandler;
     <UIViewControllerInteractiveTransitioning> * __interactor;
     BOOL  __isPresentation;
-    double  __percentOffset;
+    float  __percentOffset;
     id /* block */  __postInteractiveCompletionHandler;
     int  __state;
     id /* block */  __willCompleteHandler;
@@ -25,7 +25,7 @@
     NSArray * _disabledViews;
     BOOL  _initiallyInteractive;
     int  _presentationStyle;
-    double  _previousPercentComplete;
+    float  _previousPercentComplete;
     BOOL  _rotating;
     struct { 
         unsigned int interactorImplementsCompletionSpeed : 1; 
@@ -41,19 +41,19 @@
 @property (setter=_setAuxContext:, nonatomic, retain) _UIViewControllerTransitionCoordinator *_auxContext;
 @property (setter=_setCompletionCurve:, nonatomic) int _completionCurve;
 @property (setter=_setCompletionHandler:, nonatomic, copy) id /* block */ _completionHandler;
-@property (setter=_setCompletionVelocity:, nonatomic) double _completionVelocity;
+@property (setter=_setCompletionVelocity:, nonatomic) float _completionVelocity;
 @property (setter=_setContainerViews:, nonatomic, retain) NSArray *_containerViews;
 @property (setter=_setDidCompleteHandler:, nonatomic, copy) id /* block */ _didCompleteHandler;
 @property (setter=_setDuration:, nonatomic) double _duration;
 @property (setter=_setInteractiveUpdateHandler:, nonatomic, copy) id /* block */ _interactiveUpdateHandler;
 @property (setter=_setInteractor:, nonatomic) <UIViewControllerInteractiveTransitioning> *_interactor;
 @property (setter=_setIsPresentation:, nonatomic) BOOL _isPresentation;
-@property (setter=_setPercentOffset:, nonatomic) double _percentOffset;
+@property (setter=_setPercentOffset:, nonatomic) float _percentOffset;
 @property (setter=_setPostInteractiveCompletionHandler:, nonatomic, copy) id /* block */ _postInteractiveCompletionHandler;
 @property (setter=_setState:, nonatomic) int _state;
 @property (setter=_setTransitionIsCompleting:, nonatomic) BOOL _transitionIsCompleting;
 @property (setter=_setWillCompleteHandler:, nonatomic, copy) id /* block */ _willCompleteHandler;
-@property (getter=_affineTransform, nonatomic, readonly) struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; } affineTransform;
+@property (getter=_affineTransform, nonatomic, readonly) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } affineTransform;
 @property (getter=isAnimated, nonatomic, readonly) BOOL animated;
 @property (nonatomic, readonly) UIView *containerView;
 @property (getter=isCurrentlyInteractive, setter=_setCurrentlyInteractive:, nonatomic) BOOL currentlyInteractive;
@@ -66,14 +66,14 @@
 @property (setter=_setPresentationStyle:, nonatomic) int presentationStyle;
 @property (getter=_isRotating, setter=_setRotating:, nonatomic) BOOL rotating;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; } targetTransform;
+@property (nonatomic, readonly) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } targetTransform;
 @property (nonatomic, readonly) BOOL transitionWasCancelled;
 
 + (id)_associatedTransitionContextForObject:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)__runAlongsideAnimations;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })_affineTransform;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_affineTransform;
 - (BOOL)_allowUserInteraction;
 - (int)_alongsideAnimationsCount;
 - (id)_animator;
@@ -133,10 +133,10 @@
 - (void)completeTransition:(BOOL)arg1;
 - (id)containerView;
 - (void)dealloc;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })finalFrameForViewController:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })finalFrameForViewController:(id)arg1;
 - (void)finishInteractiveTransition;
 - (id)init;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })initialFrameForViewController:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })initialFrameForViewController:(id)arg1;
 - (BOOL)initiallyInteractive;
 - (BOOL)isAnimated;
 - (BOOL)isCurrentlyInteractive;
@@ -145,7 +145,7 @@
 - (void)pauseInteractiveTransition;
 - (int)presentationStyle;
 - (void)setTransitionWasCancelled:(BOOL)arg1;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })targetTransform;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })targetTransform;
 - (BOOL)transitionWasCancelled;
 - (void)updateInteractiveTransition:(float)arg1;
 - (id)viewControllerForKey:(id)arg1;

@@ -6,8 +6,8 @@
     PUAlbumStreamActivity * __albumStreamActivity;
     BOOL  __appJustEnteredForeground;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  __assetsAddedCachedSectionHeaderSize;
     int  __barsState;
     PUFeedAssetContainerList * __browsingAssetContainerList;
@@ -31,8 +31,8 @@
     NSMutableArray * __lastPreheatIndexPathInfoList;
     NSMutableArray * __lastPreheatIndexPathList;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  __lastPreheatedContentOffset;
     BOOL  __libraryUpdatingPreviouslyExpired;
     int  __loadedSectionInfosWindowSize;
@@ -43,7 +43,7 @@
     PUPhotoBrowserOneUpPresentationAdaptor * __photoBrowserOneUpPresentationAdaptor;
     PUPhotoPinchGestureRecognizer * __pinchGestureRecognizer;
     UICollectionView * __pinchedCollectionView;
-    double  __preheatingWindowSize;
+    float  __preheatingWindowSize;
     PUPhotosPickerViewController * __presentedPhotosPickerViewController;
     <UIViewControllerPreviewing> * __previewingItem;
     PLCloudSharedAlbum * __pushedAlbum;
@@ -57,8 +57,8 @@
     UICollectionView * __targetCollectionView;
     int  __targetCollectionViewType;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  __targetSize;
     NSMutableSet * __updatedAssets;
     BOOL  __userDidDismissPlaceholder;
@@ -70,7 +70,7 @@
 
 @property (setter=_setAlbumStreamActivity:, nonatomic, retain) PUAlbumStreamActivity *_albumStreamActivity;
 @property (setter=_setAppJustEnteredForeground:, nonatomic) BOOL _appJustEnteredForeground;
-@property (setter=_setAssetsAddedCachedSectionHeaderSize:, nonatomic) struct CGSize { double x1; double x2; } _assetsAddedCachedSectionHeaderSize;
+@property (setter=_setAssetsAddedCachedSectionHeaderSize:, nonatomic) struct CGSize { float x1; float x2; } _assetsAddedCachedSectionHeaderSize;
 @property (setter=_setBarsState:, nonatomic) int _barsState;
 @property (setter=_setBrowsingAssetContainerList:, nonatomic, retain) PUFeedAssetContainerList *_browsingAssetContainerList;
 @property (setter=_setBrowsingSelectedAsset:, nonatomic, retain) PLManagedAsset *_browsingSelectedAsset;
@@ -92,7 +92,7 @@
 @property (setter=_setJustLikedSections:, nonatomic, retain) NSDictionary *_justLikedSections;
 @property (nonatomic, retain) NSMutableArray *_lastPreheatIndexPathInfoList;
 @property (nonatomic, retain) NSMutableArray *_lastPreheatIndexPathList;
-@property (setter=_setLastPreheatedContentOffset:, nonatomic) struct CGPoint { double x1; double x2; } _lastPreheatedContentOffset;
+@property (setter=_setLastPreheatedContentOffset:, nonatomic) struct CGPoint { float x1; float x2; } _lastPreheatedContentOffset;
 @property (getter=_isLibraryUpdatingPreviouslyExpired, setter=_setLibraryUpdatingPreviouslyExpired:, nonatomic) BOOL _libraryUpdatingPreviouslyExpired;
 @property (setter=_setLoadedSectionInfosWindowSize:, nonatomic) int _loadedSectionInfosWindowSize;
 @property (setter=_setNeedsUpdateLayout:, nonatomic) BOOL _needsUpdateLayout;
@@ -102,7 +102,7 @@
 @property (setter=_setPhotoBrowserOneUpPresentationAdaptor:, nonatomic, retain) PUPhotoBrowserOneUpPresentationAdaptor *_photoBrowserOneUpPresentationAdaptor;
 @property (setter=_setPinchGestureRecognizer:, nonatomic, retain) PUPhotoPinchGestureRecognizer *_pinchGestureRecognizer;
 @property (setter=_setPinchedCollectionView:, nonatomic, retain) UICollectionView *_pinchedCollectionView;
-@property (setter=_setPreheatingWindowSize:, nonatomic) double _preheatingWindowSize;
+@property (setter=_setPreheatingWindowSize:, nonatomic) float _preheatingWindowSize;
 @property (setter=_setPresentedPhotosPickerViewController:, nonatomic, retain) PUPhotosPickerViewController *_presentedPhotosPickerViewController;
 @property (setter=_setPreviewingItem:, nonatomic, retain) <UIViewControllerPreviewing> *_previewingItem;
 @property (setter=_setPushedAlbum:, nonatomic, retain) PLCloudSharedAlbum *_pushedAlbum;
@@ -115,7 +115,7 @@
 @property (setter=_setTapGestureRecognizer:, nonatomic, retain) UITapGestureRecognizer *_tapGestureRecognizer;
 @property (setter=_setTargetCollectionView:, nonatomic, retain) UICollectionView *_targetCollectionView;
 @property (setter=_setTargetCollectionViewType:, nonatomic) int _targetCollectionViewType;
-@property (setter=_setTargetSize:, nonatomic) struct CGSize { double x1; double x2; } _targetSize;
+@property (setter=_setTargetSize:, nonatomic) struct CGSize { float x1; float x2; } _targetSize;
 @property (setter=_setUpdatedAssets:, nonatomic, retain) NSMutableSet *_updatedAssets;
 @property (setter=_setUserDidDismissPlaceholder:, nonatomic) BOOL _userDidDismissPlaceholder;
 @property (setter=_setViewDidAppear:, nonatomic) BOOL _viewDidAppear;
@@ -139,7 +139,7 @@
 - (BOOL)_areSharedStreamsEnabled;
 - (BOOL)_areViewsInSyncWithModel;
 - (id)_assetForItemAtIndexPath:(id)arg1 inCollectionView:(id)arg2;
-- (struct CGSize { double x1; double x2; })_assetsAddedCachedSectionHeaderSize;
+- (struct CGSize { float x1; float x2; })_assetsAddedCachedSectionHeaderSize;
 - (void)_autoHideBarsNow;
 - (int)_barsState;
 - (BOOL)_beginInteractiveNavigationForItemAtIndexPath:(id)arg1 inCollectionView:(id)arg2;
@@ -153,7 +153,7 @@
 - (void)_clearOneUpPresentationHelper;
 - (id)_collectionViewContainingView:(id)arg1;
 - (id)_collectionViewSpeedometer;
-- (int)_collectionViewTypeForSize:(struct CGSize { double x1; double x2; })arg1;
+- (int)_collectionViewTypeForSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)_collectionViews;
 - (void)_configureCollectionView:(id)arg1 isVertical:(BOOL)arg2;
 - (void)_configureImageCell:(id)arg1 forAssetAtIndexPath:(id)arg2 inCollectionView:(id)arg3;
@@ -197,7 +197,7 @@
 - (void)_handleTap:(id)arg1;
 - (id)_indexPathForImageHiddenDuringZoomTransition;
 - (id)_indexPathForItemWithAsset:(id)arg1 inCollectionView:(id)arg2;
-- (id)_indexPathForPosition:(struct CGPoint { double x1; double x2; })arg1 inCollectionView:(id)arg2 outHitCell:(id*)arg3;
+- (id)_indexPathForPosition:(struct CGPoint { float x1; float x2; })arg1 inCollectionView:(id)arg2 outHitCell:(id*)arg3;
 - (void)_invalidateCachedMetrics;
 - (void)_invalidateLastPreheatedContentOffset;
 - (void)_invalidatePreheatedAssets;
@@ -216,7 +216,7 @@
 - (id)_justLikedSections;
 - (id)_lastPreheatIndexPathInfoList;
 - (id)_lastPreheatIndexPathList;
-- (struct CGPoint { double x1; double x2; })_lastPreheatedContentOffset;
+- (struct CGPoint { float x1; float x2; })_lastPreheatedContentOffset;
 - (void)_libraryUpdatingDidExpire:(id)arg1;
 - (id)_loadedSectionInfoForCloudFeedEntry:(id)arg1;
 - (int)_loadedSectionInfosWindowSize;
@@ -246,7 +246,7 @@
 - (id)_pushedAlbum;
 - (id)_pushedViewController;
 - (void)_reduceMotionStatusChanged:(id)arg1;
-- (void)_requestImageForAsset:(id)arg1 tileSize:(struct CGSize { double x1; double x2; })arg2 completion:(id /* block */)arg3;
+- (void)_requestImageForAsset:(id)arg1 tileSize:(struct CGSize { float x1; float x2; })arg2 completion:(id /* block */)arg3;
 - (void)_requestPlayerItemForAsset:(id)arg1 preparation:(id /* block */)arg2 completion:(id /* block */)arg3;
 - (void)_restoreScrollPositionInCollectionView:(id)arg1 fromRestorableState:(id)arg2;
 - (id)_rotationLastRestorableState;
@@ -259,7 +259,7 @@
 - (id)_sectionInfosWithCommentChanges;
 - (void)_setAlbumStreamActivity:(id)arg1;
 - (void)_setAppJustEnteredForeground:(BOOL)arg1;
-- (void)_setAssetsAddedCachedSectionHeaderSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)_setAssetsAddedCachedSectionHeaderSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_setBarsState:(int)arg1;
 - (void)_setBrowsingAssetContainerList:(id)arg1;
 - (void)_setBrowsingSelectedAsset:(id)arg1;
@@ -276,7 +276,7 @@
 - (void)_setInvitationsPopoverRootController:(id)arg1;
 - (void)_setInvitationsPopoverShowPending:(BOOL)arg1;
 - (void)_setJustLikedSections:(id)arg1;
-- (void)_setLastPreheatedContentOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (void)_setLastPreheatedContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_setLibraryUpdatingPreviouslyExpired:(BOOL)arg1;
 - (void)_setLoadedSectionInfosWindowSize:(int)arg1;
 - (void)_setNeedsUpdateLayout:(BOOL)arg1;
@@ -298,7 +298,7 @@
 - (void)_setTapGestureRecognizer:(id)arg1;
 - (void)_setTargetCollectionView:(id)arg1;
 - (void)_setTargetCollectionViewType:(int)arg1;
-- (void)_setTargetSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)_setTargetSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_setUpdatedAssets:(id)arg1;
 - (void)_setUserCloudSharedLiked:(BOOL)arg1 forItemsInSections:(id)arg2 inCollectionView:(id)arg3;
 - (void)_setUserDidDismissPlaceholder:(BOOL)arg1;
@@ -321,7 +321,7 @@
 - (id)_tapGestureRecognizer;
 - (id)_targetCollectionView;
 - (int)_targetCollectionViewType;
-- (struct CGSize { double x1; double x2; })_targetSize;
+- (struct CGSize { float x1; float x2; })_targetSize;
 - (void)_tearDownBrowsing;
 - (id)_textForDate:(id)arg1;
 - (int)_typeForCollectionView:(id)arg1;
@@ -354,30 +354,30 @@
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didEndDisplayingCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (id)collectionView:(id)arg1 layout:(id)arg2 batchIDForTileAtIndexPath:(id)arg3;
-- (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 captionSizeForTileAtIndexPath:(id)arg3 proposedSize:(struct CGSize { double x1; double x2; })arg4;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })collectionView:(id)arg1 layout:(id)arg2 contentInsetsForSection:(int)arg3;
+- (struct CGSize { float x1; float x2; })collectionView:(id)arg1 layout:(id)arg2 captionSizeForTileAtIndexPath:(id)arg3 proposedSize:(struct CGSize { float x1; float x2; })arg4;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })collectionView:(id)arg1 layout:(id)arg2 contentInsetsForSection:(int)arg3;
 - (id)collectionView:(id)arg1 layout:(id)arg2 groupIDForSection:(int)arg3;
-- (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 headerSizeForGroupID:(id)arg3 proposedSize:(struct CGSize { double x1; double x2; })arg4;
-- (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 imageSizeForTileAtIndexPath:(id)arg3;
-- (struct PUFeedSeparatorMetrics { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; struct UIEdgeInsets { double x_2_1_1; double x_2_1_2; double x_2_1_3; double x_2_1_4; } x2; })collectionView:(id)arg1 layout:(id)arg2 metricsForSeparatorBetweenRowAtIndexPath:(id)arg3 andRowAtIndexPath:(id)arg4 proposedMetrics:(struct PUFeedSeparatorMetrics { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; struct UIEdgeInsets { double x_2_1_1; double x_2_1_2; double x_2_1_3; double x_2_1_4; } x2; })arg5;
-- (struct PUFeedSeparatorMetrics { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; struct UIEdgeInsets { double x_2_1_1; double x_2_1_2; double x_2_1_3; double x_2_1_4; } x2; })collectionView:(id)arg1 layout:(id)arg2 metricsForSeparatorBetweenSection:(int)arg3 andSection:(int)arg4 proposedMetrics:(struct PUFeedSeparatorMetrics { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; struct UIEdgeInsets { double x_2_1_1; double x_2_1_2; double x_2_1_3; double x_2_1_4; } x2; })arg5;
-- (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 mininumSizeForTileAtIndexPath:(id)arg3;
+- (struct CGSize { float x1; float x2; })collectionView:(id)arg1 layout:(id)arg2 headerSizeForGroupID:(id)arg3 proposedSize:(struct CGSize { float x1; float x2; })arg4;
+- (struct CGSize { float x1; float x2; })collectionView:(id)arg1 layout:(id)arg2 imageSizeForTileAtIndexPath:(id)arg3;
+- (struct PUFeedSeparatorMetrics { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; struct UIEdgeInsets { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; })collectionView:(id)arg1 layout:(id)arg2 metricsForSeparatorBetweenRowAtIndexPath:(id)arg3 andRowAtIndexPath:(id)arg4 proposedMetrics:(struct PUFeedSeparatorMetrics { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; struct UIEdgeInsets { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; })arg5;
+- (struct PUFeedSeparatorMetrics { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; struct UIEdgeInsets { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; })collectionView:(id)arg1 layout:(id)arg2 metricsForSeparatorBetweenSection:(int)arg3 andSection:(int)arg4 proposedMetrics:(struct PUFeedSeparatorMetrics { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; struct UIEdgeInsets { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; })arg5;
+- (struct CGSize { float x1; float x2; })collectionView:(id)arg1 layout:(id)arg2 mininumSizeForTileAtIndexPath:(id)arg3;
 - (void)collectionView:(id)arg1 layout:(id)arg2 referenceMaximumLength:(float*)arg3 minimumNumberOfTilesToOmit:(int*)arg4 forSection:(int)arg5;
 - (BOOL)collectionView:(id)arg1 layout:(id)arg2 shouldHideHeaderInSection:(int)arg3;
 - (BOOL)collectionView:(id)arg1 layout:(id)arg2 shouldHideSection:(int)arg3;
 - (BOOL)collectionView:(id)arg1 layout:(id)arg2 shouldJoinSection:(int)arg3 withSection:(int)arg4;
 - (BOOL)collectionView:(id)arg1 layout:(id)arg2 shouldShowCaptionForTileAtIndexPath:(id)arg3;
-- (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForFooterInSection:(int)arg3 proposedSize:(struct CGSize { double x1; double x2; })arg4;
-- (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForHeaderOfSections:(id)arg3 proposedSize:(struct CGSize { double x1; double x2; })arg4;
-- (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForRowAtIndexPath:(id)arg3 proposedSize:(struct CGSize { double x1; double x2; })arg4;
-- (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForThumbnailInSection:(int)arg3;
+- (struct CGSize { float x1; float x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForFooterInSection:(int)arg3 proposedSize:(struct CGSize { float x1; float x2; })arg4;
+- (struct CGSize { float x1; float x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForHeaderOfSections:(id)arg3 proposedSize:(struct CGSize { float x1; float x2; })arg4;
+- (struct CGSize { float x1; float x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForRowAtIndexPath:(id)arg3 proposedSize:(struct CGSize { float x1; float x2; })arg4;
+- (struct CGSize { float x1; float x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForThumbnailInSection:(int)arg3;
 - (float)collectionView:(id)arg1 layout:(id)arg2 spacingBetweenSection:(int)arg3 andHeaderForGroupID:(id)arg4;
 - (int)collectionView:(id)arg1 layout:(id)arg2 typeForSection:(int)arg3;
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
 - (BOOL)collectionView:(id)arg1 shouldSelectItemAtIndexPath:(id)arg2;
 - (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
 - (id)contentScrollView;
-- (struct CGSize { double x1; double x2; })contentSizeForViewInPopover;
+- (struct CGSize { float x1; float x2; })contentSizeForViewInPopover;
 - (int)contentType;
 - (void)dealloc;
 - (void)didDismissPreviewViewController:(id)arg1 committing:(BOOL)arg2;
@@ -410,7 +410,7 @@
 - (BOOL)prepareForDismissingForced:(BOOL)arg1;
 - (void)prepareForPopoverPresentation:(id)arg1;
 - (void)previewingContext:(id)arg1 commitViewController:(id)arg2;
-- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { double x1; double x2; })arg2;
+- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { float x1; float x2; })arg2;
 - (BOOL)pu_handleSecondTabTap;
 - (BOOL)pu_shouldActAsTabRootViewController;
 - (BOOL)pu_wantsNavigationBarVisible;
@@ -435,10 +435,10 @@
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillLayoutSubviews;
-- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
-- (void)willPresentPreviewViewController:(id)arg1 forLocation:(struct CGPoint { double x1; double x2; })arg2 inSourceView:(id)arg3;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)willPresentPreviewViewController:(id)arg1 forLocation:(struct CGPoint { float x1; float x2; })arg2 inSourceView:(id)arg3;
 - (void)zoomTransition:(id)arg1 didFinishForOperation:(int)arg2 animated:(BOOL)arg3 interactive:(BOOL)arg4;
-- (BOOL)zoomTransition:(id)arg1 getFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg2 contentMode:(int*)arg3 cropInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; }*)arg4 forPhotoToken:(id)arg5 operation:(int)arg6;
+- (BOOL)zoomTransition:(id)arg1 getFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 contentMode:(int*)arg3 cropInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg4 forPhotoToken:(id)arg5 operation:(int)arg6;
 - (id)zoomTransition:(id)arg1 photoTokenForPhoto:(id)arg2 inCollection:(id)arg3;
 - (void)zoomTransition:(id)arg1 setVisibility:(BOOL)arg2 forPhotoToken:(id)arg3;
 - (BOOL)zoomTransition:(id)arg1 transitionImageForPhotoToken:(id)arg2 callback:(id /* block */)arg3;

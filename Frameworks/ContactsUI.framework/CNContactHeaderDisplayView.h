@@ -7,7 +7,7 @@
     NSLayoutConstraint * _avatarNameSpacingConstraint;
     BOOL  _centersPhotoAndLabels;
     CNContactFormatter * _contactFormatter;
-    double  _maxHeight;
+    float  _maxHeight;
     NSString * _message;
     UIView * _personHeaderView;
     NSLayoutConstraint * _photoHeightConstraint;
@@ -23,12 +23,12 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic) double maxHeight;
+@property (nonatomic) float maxHeight;
 @property (nonatomic, retain) NSString *message;
-@property (nonatomic, readonly) double minHeight;
+@property (nonatomic, readonly) float minHeight;
 @property (nonatomic, retain) UIView *personHeaderView;
 @property (retain) NSLayoutConstraint *photoHeightConstraint;
-@property (nonatomic, readonly) double photoLabelSpacing;
+@property (nonatomic, readonly) float photoLabelSpacing;
 @property (retain) NSLayoutConstraint *photoTopConstraint;
 @property (readonly) Class superclass;
 @property (retain) UILabel *taglineLabel;
@@ -50,8 +50,8 @@
 - (id)descriptorForRequiredKeys;
 - (void)disablePhotoTapGesture;
 - (void)handleNameLabelLongPress:(id)arg1;
-- (id)initWithContact:(id)arg1 frame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
-- (id)initWithContact:(id)arg1 frame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 monogrammerStyle:(int)arg3;
+- (id)initWithContact:(id)arg1 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (id)initWithContact:(id)arg1 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 monogrammerStyle:(int)arg3;
 - (void)layoutSubviews;
 - (float)maxHeight;
 - (void)menuWillHide:(id)arg1;

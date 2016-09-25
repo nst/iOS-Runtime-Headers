@@ -5,16 +5,16 @@
 @interface CAMPreviewViewController : UIViewController <CAMEffectsPreviewSampleBufferDelegate, CAMExposureDelegate, CAMFacesDelegate, CAMFocusDelegate, CAMFocusIndicatorViewDelegate, UIGestureRecognizerDelegate> {
     UITapGestureRecognizer * __aspectRatioToggleDoubleTapGestureRecognizer;
     CAMBurstIndicatorView * __burstIndicator;
-    double  __cachedExposureTargetBias;
+    float  __cachedExposureTargetBias;
     CUCaptureController * __captureController;
     BOOL  __changingModeOrDevice;
     CAMFocusIndicatorView * __continuousIndicator;
     unsigned int  __currentFacesCount;
     int  __device;
     UIPanGestureRecognizer * __exposureBiasPanGestureRecognizer;
-    double  __exposureBiasPanStartValue;
-    double  __exposureBiasVirtualSliderExponent;
-    double  __exposureBiasVirtualSliderPointsForFirstStop;
+    float  __exposureBiasPanStartValue;
+    float  __exposureBiasVirtualSliderExponent;
+    float  __exposureBiasVirtualSliderPointsForFirstStop;
     NSDate * __lastExposureBiasModificationTime;
     CAMExposureResult * __lastExposureResult;
     NSDate * __lastFocusIndictorStartTime;
@@ -36,16 +36,16 @@
 
 @property (nonatomic, readonly) UITapGestureRecognizer *_aspectRatioToggleDoubleTapGestureRecognizer;
 @property (nonatomic, readonly) CAMBurstIndicatorView *_burstIndicator;
-@property (setter=_setCachedExposureTargetBias:, nonatomic) double _cachedExposureTargetBias;
+@property (setter=_setCachedExposureTargetBias:, nonatomic) float _cachedExposureTargetBias;
 @property (nonatomic, readonly) CUCaptureController *_captureController;
 @property (getter=_isChangingModeOrDevice, setter=_setChangingModeOrDevice:, nonatomic) BOOL _changingModeOrDevice;
 @property (nonatomic, readonly) CAMFocusIndicatorView *_continuousIndicator;
 @property (nonatomic, readonly) unsigned int _currentFacesCount;
 @property (nonatomic, readonly) int _device;
 @property (nonatomic, readonly) UIPanGestureRecognizer *_exposureBiasPanGestureRecognizer;
-@property (nonatomic, readonly) double _exposureBiasPanStartValue;
-@property (setter=_setExposureBiasVirtualSliderExponent:, nonatomic) double _exposureBiasVirtualSliderExponent;
-@property (setter=_setExposureBiasVirtualSliderPointsForFirstStop:, nonatomic) double _exposureBiasVirtualSliderPointsForFirstStop;
+@property (nonatomic, readonly) float _exposureBiasPanStartValue;
+@property (setter=_setExposureBiasVirtualSliderExponent:, nonatomic) float _exposureBiasVirtualSliderExponent;
+@property (setter=_setExposureBiasVirtualSliderPointsForFirstStop:, nonatomic) float _exposureBiasVirtualSliderPointsForFirstStop;
 @property (setter=_setLastExposureBiasModifiedTime:, nonatomic, retain) NSDate *_lastExposureBiasModificationTime;
 @property (setter=_setLastExposureResult:, nonatomic, retain) CAMExposureResult *_lastExposureResult;
 @property (setter=_setLastFocusIndictorStartTime:, nonatomic, retain) NSDate *_lastFocusIndictorStartTime;
@@ -103,7 +103,7 @@
 - (void)_deactivateFocusIndicator:(id)arg1 afterDelay:(double)arg2;
 - (int)_device;
 - (void)_didChangeModeOrDevice;
-- (float)_effectiveExposureBiasMovementForTranslation:(struct CGPoint { double x1; double x2; })arg1;
+- (float)_effectiveExposureBiasMovementForTranslation:(struct CGPoint { float x1; float x2; })arg1;
 - (float)_exposureBiasForVirtualSliderPosition:(float)arg1;
 - (id)_exposureBiasPanGestureRecognizer;
 - (float)_exposureBiasPanStartValue;
@@ -116,7 +116,7 @@
 - (void)_fadeOutFaceIndicatorsAfterDelay:(double)arg1;
 - (void)_finishFocusingLockedPointOfInterestIndicator;
 - (id)_focusIndicatorViewsWithExposureBiasSliders;
-- (void)_focusOnPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)_focusOnPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_handleAspectRatioToggleDoubleTap:(id)arg1;
 - (void)_handleExposureBiasPan:(id)arg1;
 - (void)_handleLongPressToLock:(id)arg1;
@@ -171,8 +171,8 @@
 - (BOOL)_shouldSuppressNewFaces;
 - (void)_showContinuousAutomaticFocusAndExposureIndicator;
 - (BOOL)_showExposureBiasSliderForPointView;
-- (void)_showIndicatorAtPointOfInterest:(struct CGPoint { double x1; double x2; })arg1;
-- (void)_showLockedAtPointOfInterest:(struct CGPoint { double x1; double x2; })arg1;
+- (void)_showIndicatorAtPointOfInterest:(struct CGPoint { float x1; float x2; })arg1;
+- (void)_showLockedAtPointOfInterest:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_stopPulsingContinuousIndicatorAndHideIfShownLongEnough;
 - (id)_tapToFocusAndExposeGestureRecognizer;
 - (id)_timelapseController;
@@ -208,11 +208,11 @@
 - (void)effectsPreviewVideoDataOutputDidOutputSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
 - (id)effectsRenderer;
 - (id)focusIndicatorViewBoundingViewForClippingFocusIndicatorView:(id)arg1;
-- (void)focusOnNormalizedPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)focusOnNormalizedPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRequireFailureOfGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
-- (void)handleTapAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)handleTapAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)initWithCaptureController:(id)arg1 motionController:(id)arg2 timelapseController:(id)arg3;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

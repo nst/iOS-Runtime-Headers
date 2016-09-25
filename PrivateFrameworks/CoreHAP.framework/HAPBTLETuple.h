@@ -4,9 +4,9 @@
 
 @interface HAPBTLETuple : NSObject {
     unsigned int  _atvState;
-    double  _maxBandwidth;
+    float  _maxBandwidth;
     int  _maxHAPConnections;
-    double  _minBandwidth;
+    float  _minBandwidth;
     struct BTStatus { 
         unsigned int leRemote; 
         unsigned int leAcc; 
@@ -31,9 +31,9 @@
 }
 
 @property (nonatomic) unsigned int atvState;
-@property (nonatomic) double maxBandwidth;
+@property (nonatomic) float maxBandwidth;
 @property (nonatomic) int maxHAPConnections;
-@property (nonatomic) double minBandwidth;
+@property (nonatomic) float minBandwidth;
 @property (nonatomic) struct BTStatus { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; unsigned int x15; unsigned int x16; BOOL x17; BOOL x18; BOOL x19; } state;
 
 + (id)atvState2String:(unsigned int)arg1;

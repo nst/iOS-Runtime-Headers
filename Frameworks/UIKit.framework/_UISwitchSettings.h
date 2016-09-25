@@ -5,16 +5,16 @@
 @interface _UISwitchSettings : NSObject
 
 @property (nonatomic, readonly) BOOL feedbackEnabled;
-@property (nonatomic, readonly) double hapticDelay;
-@property (nonatomic, readonly) double impactIntensity;
-@property (nonatomic, readonly) double knobSpringDampingAnimationTouchDown;
-@property (nonatomic, readonly) double knobSpringDampingAnimationTouchUp;
-@property (nonatomic, readonly) double knobSpringDurationAnimationTouchDown;
-@property (nonatomic, readonly) double knobSpringDurationAnimationTouchUp;
-@property (nonatomic, readonly) double knobSpringMassAnimationTouchDown;
-@property (nonatomic, readonly) double knobSpringMassAnimationTouchUp;
-@property (nonatomic, readonly) double knobSpringStiffnessAnimationTouchDown;
-@property (nonatomic, readonly) double knobSpringStiffnessAnimationTouchUp;
+@property (nonatomic, readonly) float hapticDelay;
+@property (nonatomic, readonly) float impactIntensity;
+@property (nonatomic, readonly) float knobSpringDampingAnimationTouchDown;
+@property (nonatomic, readonly) float knobSpringDampingAnimationTouchUp;
+@property (nonatomic, readonly) float knobSpringDurationAnimationTouchDown;
+@property (nonatomic, readonly) float knobSpringDurationAnimationTouchUp;
+@property (nonatomic, readonly) float knobSpringMassAnimationTouchDown;
+@property (nonatomic, readonly) float knobSpringMassAnimationTouchUp;
+@property (nonatomic, readonly) float knobSpringStiffnessAnimationTouchDown;
+@property (nonatomic, readonly) float knobSpringStiffnessAnimationTouchUp;
 @property (nonatomic, readonly) double trackBorderGoingOffAnimationBeginTimeOffset;
 @property (nonatomic, readonly) double trackBorderGoingOffAnimationDuration;
 @property (nonatomic, readonly) double trackBorderGoingOnAnimationDuration;

@@ -5,7 +5,7 @@
 @interface CFPrefsSource : NSObject {
     _CFXPreferences * _containingPreferences;
     struct __CFDictionary { } * _dict;
-    int  _generationCount;
+    long long  _generationCount;
     BOOL  _isSearchList;
     struct _opaque_pthread_mutex_t { long x1; BOOL x2[40]; } * _lock;
     struct __CFArray { } * _observers;
@@ -14,7 +14,7 @@
             int owner; 
             unsigned int generation; 
         } entry; 
-        unsigned int value; 
+        unsigned long long value; 
     }  lastKnownShmemState;
     /* Warning: Unrecognized filer type: '^' using 'void*' */ void* shmemEntry;
 }

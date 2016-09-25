@@ -5,7 +5,7 @@
 @interface SLSheetPlaceViewController : UIViewController <MKMapViewDelegate, SLPlaceDataSourceDelegate, UISearchBarDelegate, UISearchDisplayDelegate, UITableViewDataSource, UITableViewDelegate> {
     ACAccount * _account;
     NSBundle * _effectiveBundle;
-    double  _mapHeight;
+    float  _mapHeight;
     MKMapView * _mapView;
     NSObject<SLPlaceDataSource> * _placeDataSource;
     SLSheetPlaceSearchController * _placeSearchController;

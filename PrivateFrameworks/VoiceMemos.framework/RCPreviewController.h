@@ -34,7 +34,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic) struct { double x1; double x2; } playableTimeRange;
-@property (nonatomic, readonly) double rate;
+@property (nonatomic, readonly) float rate;
 @property (readonly) Class superclass;
 @property (nonatomic) BOOL useVoiceMemoSettings;
 

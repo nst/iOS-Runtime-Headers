@@ -28,16 +28,16 @@
 - (float)_scaledMarginBelowMessageLabelLastBaseline;
 - (float)_scaledMarginBelowTitleLabelLastBaseline;
 - (BOOL)_shouldReverseActions;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })actionImageMarginForAction;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })actionSequenceEdgeInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })actionImageMarginForAction;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })actionSequenceEdgeInsets;
 - (float)actionWidthForMinimumActionWidth:(float)arg1;
 - (void)animateAlertControllerView:(id)arg1 ofAlertController:(id)arg2 forPresentation:(BOOL)arg3 inContainerView:(id)arg4 descendantOfContainerView:(id)arg5 duration:(double)arg6 completionBlock:(id /* block */)arg7;
 - (void)animateRevealOfAlertControllerView:(id)arg1 alertController:(id)arg2 inContainerView:(id)arg3 duration:(double)arg4 completionBlock:(id /* block */)arg5;
-- (struct CGSize { double x1; double x2; })collectionViewOutsetSize;
+- (struct CGSize { float x1; float x2; })collectionViewOutsetSize;
 - (void)configureAttributesForImageView:(id)arg1 imageProperty:(id)arg2 actionViewState:(id)arg3;
 - (void)configureAttributesForTitleLabel:(id)arg1 classificationLabel:(id)arg2 actionViewState:(id)arg3;
 - (float)contentHorizontalMargin;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
 - (id)defaultActionFont;
 - (id)descriptor;
 - (id)dimmingViewForAlertController:(id)arg1;
@@ -60,7 +60,7 @@
 - (float)maximumWidthForTitleAndMessageContentView;
 - (id)messageLabelColor;
 - (id)messageLabelFont;
-- (struct CGSize { double x1; double x2; })minimumActionContentSize;
+- (struct CGSize { float x1; float x2; })minimumActionContentSize;
 - (float)minimumWidth;
 - (int)permittedActionLayoutDirection;
 - (BOOL)placementAvoidsKeyboard;
@@ -74,7 +74,7 @@
 - (BOOL)shouldOccludeDuringPresentation;
 - (BOOL)shouldPreserveRespondersAcrossWindows;
 - (id)textFieldContainingViewWithTextField:(id)arg1;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })textFieldContentInset;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })textFieldContentInset;
 - (float)textFieldHorizontalMargin;
 - (id)tintColorForAlertController:(id)arg1;
 - (id)titleLabelColor;

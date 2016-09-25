@@ -25,7 +25,7 @@
 - (id)description;
 - (unsigned char)deviceUID;
 - (BOOL)getVendorSpecificHIDUsagePage:(unsigned int*)arg1 usageID:(unsigned int*)arg2 ignoreRepeats:(BOOL*)arg3;
-- (id)initWithPayload:(unsigned int)arg1 repeat:(BOOL)arg2;
+- (id)initWithPayload:(unsigned long long)arg1 repeat:(BOOL)arg2;
 - (BOOL)isA39PlayPauseSelect;
 - (BOOL)isB39Command;
 - (BOOL)isB39PlayPauseOrSelect;

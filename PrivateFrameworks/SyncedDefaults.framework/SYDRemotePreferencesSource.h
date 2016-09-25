@@ -15,12 +15,12 @@
     struct __CFDictionary { } * configurationDictionary;
     struct __CFSet { } * dirtyKeys;
     NSMutableDictionary * externalChanges;
-    int  initialSyncChangeCount;
+    long long  initialSyncChangeCount;
     unsigned char  isInitialSync;
     struct __CFString { } * preferenceID;
     id /* block */  registrationBlock;
     NSObject<OS_dispatch_queue> * registrationQueue;
-    int  storageChangeCount;
+    long long  storageChangeCount;
     struct __CFURL { } * urlOnDisk;
 }
 
@@ -44,10 +44,10 @@
 - (long)configurationValueForKey:(struct __CFString { }*)arg1;
 - (struct __CFDictionary { }*)copyConfigurationDictionary;
 - (struct __CFDictionary { }*)copyDictionary;
-- (id)copyExternalChangesWithChangeCount:(int*)arg1;
+- (id)copyExternalChangesWithChangeCount:(long long*)arg1;
 - (struct __CFArray { }*)copyKeyList;
 - (void)dealloc;
-- (void)discardExternalChangesForChangeCount:(int)arg1;
+- (void)discardExternalChangesForChangeCount:(long long)arg1;
 - (long)generationCount;
 - (void*)getValueForKey:(struct __CFString { }*)arg1;
 - (unsigned char)hasExternalChanges;

@@ -19,7 +19,7 @@
 - (id)iconURL;
 - (id)init;
 - (id)lang;
-- (unsigned int)notificationID;
+- (unsigned long long)notificationID;
 - (id)origin;
 - (id)tag;
 - (id)title;

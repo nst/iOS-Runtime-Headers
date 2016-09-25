@@ -12,7 +12,7 @@
     WebDataSource * _dataSourceWithError;
     <_UIWebBrowserLoadingControllerDelegate> * _delegate;
     NSError * _errorThatCausedLoadToEnd;
-    double  _estimatedProgress;
+    float  _estimatedProgress;
     NSArray * _fallbackURLs;
     NSURL * _forwardURL;
     NSString * _lastSuccessfulURLString;
@@ -34,7 +34,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <_UIWebBrowserLoadingControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) double estimatedProgress;
+@property (nonatomic) float estimatedProgress;
 @property (readonly) unsigned int hash;
 @property (getter=isLoading, nonatomic, readonly) BOOL loading;
 @property (nonatomic) int loadingState;

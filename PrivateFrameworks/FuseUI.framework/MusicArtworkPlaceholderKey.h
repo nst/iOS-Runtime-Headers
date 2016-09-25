@@ -6,23 +6,23 @@
     int  _integerHeight;
     int  _integerScale;
     int  _integerWidth;
-    double  _scale;
+    float  _scale;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _size;
 }
 
-@property (nonatomic, readonly) double scale;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } size;
+@property (nonatomic, readonly) float scale;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (unsigned int)hash;
 - (id)init;
-- (id)initWithSize:(struct CGSize { double x1; double x2; })arg1 scale:(float)arg2;
+- (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (float)scale;
-- (struct CGSize { double x1; double x2; })size;
+- (struct CGSize { float x1; float x2; })size;
 
 @end

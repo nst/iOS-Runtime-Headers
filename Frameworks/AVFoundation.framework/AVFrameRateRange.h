@@ -6,22 +6,22 @@
     AVFrameRateRangeInternal * _internal;
 }
 
-@property (readonly) struct { int x1; int x2; unsigned int x3; int x4; } maxFrameDuration;
+@property (readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } maxFrameDuration;
 @property (readonly) double maxFrameRate;
-@property (readonly) struct { int x1; int x2; unsigned int x3; int x4; } minFrameDuration;
+@property (readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } minFrameDuration;
 @property (readonly) double minFrameRate;
 
 + (id)frameRateRangeWithMinRate:(int)arg1 maxFrameRate:(int)arg2;
 
 - (void)dealloc;
 - (id)description;
-- (BOOL)includesFrameDuration:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
+- (BOOL)includesFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (BOOL)includesFrameRate:(double)arg1;
 - (id)initWithMinFrameRate:(int)arg1 maxFrameRate:(int)arg2;
 - (BOOL)isEqual:(id)arg1;
-- (struct { int x1; int x2; unsigned int x3; int x4; })maxFrameDuration;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })maxFrameDuration;
 - (double)maxFrameRate;
-- (struct { int x1; int x2; unsigned int x3; int x4; })minFrameDuration;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })minFrameDuration;
 - (double)minFrameRate;
 
 @end

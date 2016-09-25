@@ -57,6 +57,6 @@
 - (void)siteMetadataProvider:(id)arg1 didReceiveResponse:(id)arg2 ofType:(int)arg3 didReceiveNewData:(BOOL)arg4 forRequest:(id)arg5;
 - (id)siteMetadataProvider:(id)arg1 registerOneTimeRequest:(id)arg2 priority:(int)arg3 responseHandler:(id /* block */)arg4;
 - (id)siteMetadataProvider:(id)arg1 registerRequest:(id)arg2 priority:(int)arg3 responseHandler:(id /* block */)arg4;
-- (id)siteMetadataProvider:(id)arg1 webViewOfSize:(struct CGSize { double x1; double x2; })arg2 withConfiguration:(id)arg3;
+- (id)siteMetadataProvider:(id)arg1 webViewOfSize:(struct CGSize { float x1; float x2; })arg2 withConfiguration:(id)arg3;
 
 @end

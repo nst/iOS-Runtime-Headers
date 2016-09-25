@@ -22,7 +22,7 @@
 @property (nonatomic) int transition;
 
 - (void).cxx_destruct;
-- (struct CGPoint { double x1; double x2; })_adjustOrigin:(struct CGPoint { double x1; double x2; })arg1 givenOtherOrigin:(struct CGPoint { double x1; double x2; })arg2 forTransition:(int)arg3;
+- (struct CGPoint { float x1; float x2; })_adjustOrigin:(struct CGPoint { float x1; float x2; })arg1 givenOtherOrigin:(struct CGPoint { float x1; float x2; })arg2 forTransition:(int)arg3;
 - (void)_prepareKeyboardForTransition:(int)arg1 fromView:(id)arg2;
 - (void)animateTransition:(id)arg1;
 - (id)delegate;
@@ -38,9 +38,9 @@
 - (id)toView;
 - (int)transition;
 - (double)transitionDuration:(id)arg1;
-- (struct CGPoint { double x1; double x2; })transitionView:(id)arg1 beginOriginForToView:(id)arg2 forTransition:(int)arg3 defaultOrigin:(struct CGPoint { double x1; double x2; })arg4;
-- (struct CGPoint { double x1; double x2; })transitionView:(id)arg1 endOriginForFromView:(id)arg2 forTransition:(int)arg3 defaultOrigin:(struct CGPoint { double x1; double x2; })arg4;
-- (struct CGPoint { double x1; double x2; })transitionView:(id)arg1 endOriginForToView:(id)arg2 forTransition:(int)arg3 defaultOrigin:(struct CGPoint { double x1; double x2; })arg4;
+- (struct CGPoint { float x1; float x2; })transitionView:(id)arg1 beginOriginForToView:(id)arg2 forTransition:(int)arg3 defaultOrigin:(struct CGPoint { float x1; float x2; })arg4;
+- (struct CGPoint { float x1; float x2; })transitionView:(id)arg1 endOriginForFromView:(id)arg2 forTransition:(int)arg3 defaultOrigin:(struct CGPoint { float x1; float x2; })arg4;
+- (struct CGPoint { float x1; float x2; })transitionView:(id)arg1 endOriginForToView:(id)arg2 forTransition:(int)arg3 defaultOrigin:(struct CGPoint { float x1; float x2; })arg4;
 - (void)transitionView:(id)arg1 startCustomTransitionWithDuration:(double)arg2;
 - (void)transitionViewDidComplete:(id)arg1 fromView:(id)arg2 toView:(id)arg3 removeFromView:(BOOL)arg4;
 - (void)transitionViewDidStart:(id)arg1;

@@ -22,7 +22,7 @@
 @property (nonatomic) int interfaceOrientation;
 @property (nonatomic) BOOL interfaceOrientationChangesDisabled;
 @property (nonatomic) int notificationCenterRevealMode;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } primaryWindowOverlayInsets;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } primaryWindowOverlayInsets;
 @property (nonatomic) unsigned int proximityDetectionModes;
 @property (nonatomic) unsigned int statusBarContextID;
 @property (getter=isStatusBarForegroundTransparent, nonatomic) BOOL statusBarForegroundTransparent;
@@ -49,7 +49,7 @@
 - (BOOL)isUISubclass;
 - (id)keyDescriptionForSetting:(unsigned int)arg1;
 - (int)notificationCenterRevealMode;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })primaryWindowOverlayInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })primaryWindowOverlayInsets;
 - (unsigned int)proximityDetectionModes;
 - (void)setBackgroundStyle:(int)arg1;
 - (void)setCompatibilityMode:(int)arg1;
@@ -64,7 +64,7 @@
 - (void)setInterfaceOrientation:(int)arg1;
 - (void)setInterfaceOrientationChangesDisabled:(BOOL)arg1;
 - (void)setNotificationCenterRevealMode:(int)arg1;
-- (void)setPrimaryWindowOverlayInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setPrimaryWindowOverlayInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setProximityDetectionModes:(unsigned int)arg1;
 - (void)setStatusBarContextID:(unsigned int)arg1;
 - (void)setStatusBarForegroundTransparent:(BOOL)arg1;

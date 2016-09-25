@@ -16,7 +16,7 @@
 - (void).cxx_destruct;
 - (void)_addToSourceCache:(id)arg1;
 - (id)_authorizedSourcesForType:(id)arg1 error:(id*)arg2;
-- (id)_createSourceEntityForBundleIdentifier:(id)arg1 name:(id)arg2 options:(unsigned int)arg3 isCurrentDevice:(BOOL)arg4 productType:(id)arg5 error:(id*)arg6;
+- (id)_createSourceEntityForBundleIdentifier:(id)arg1 name:(id)arg2 options:(unsigned long long)arg3 isCurrentDevice:(BOOL)arg4 productType:(id)arg5 error:(id*)arg6;
 - (id)_createSourceEntityForClientWithBundleIdentifier:(id)arg1 name:(id)arg2 entitlements:(id)arg3 error:(id*)arg4;
 - (id)_createSourceEntityForExternalHealthDeviceWithIdentifier:(id)arg1 name:(id)arg2 productType:(id)arg3 error:(id*)arg4;
 - (id)_createSourceEntityForLocalDeviceWithError:(id*)arg1;
@@ -41,7 +41,7 @@
 - (id)clientSourceForUUID:(id)arg1 error:(id*)arg2;
 - (id)clientSourcesForSourceIDs:(id)arg1 error:(id*)arg2;
 - (BOOL)createSourceOrdersWithCodables:(id)arg1 syncStore:(id)arg2 error:(id*)arg3;
-- (BOOL)createSourcesWithCodables:(id)arg1 provenance:(int)arg2 error:(id*)arg3;
+- (BOOL)createSourcesWithCodables:(id)arg1 provenance:(long long)arg2 error:(id*)arg3;
 - (void)deleteSourceWithBundleIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (id)healthAppSourceWithError:(id*)arg1;
 - (id)init;
@@ -56,7 +56,7 @@
 - (id)sourceForApplicationIdentifier:(id)arg1 entitlements:(id)arg2 name:(id)arg3 createIfNecessary:(BOOL)arg4 error:(id*)arg5;
 - (id)sourceForBundleIdentifier:(id)arg1 error:(id*)arg2;
 - (id)sourceForClient:(id)arg1 createIfNecessary:(BOOL)arg2 error:(id*)arg3;
-- (id)sourceForCodableSource:(id)arg1 provenance:(int)arg2 createIfNecessary:(BOOL)arg3 error:(id*)arg4;
+- (id)sourceForCodableSource:(id)arg1 provenance:(long long)arg2 createIfNecessary:(BOOL)arg3 error:(id*)arg4;
 - (id)sourceForExternalHealthDeviceWithIdentifier:(id)arg1 name:(id)arg2 productType:(id)arg3 createIfNecessary:(BOOL)arg4 error:(id*)arg5;
 - (id)sourceUUIDForBundleIdentifier:(id)arg1 error:(id*)arg2;
 - (BOOL)updateCurrentDeviceNameInDatabase:(id)arg1 error:(id*)arg2;

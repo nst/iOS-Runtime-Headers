@@ -4,13 +4,13 @@
 
 @interface CNMonogrammer : NSObject {
     UIColor * _backgroundColor;
-    double  _diameter;
+    float  _diameter;
     UIFont * _font;
-    double  _innerBorderWidth;
+    float  _innerBorderWidth;
     UIImage * _knockoutMaskMonogram;
     int  _monogrammerStyle;
     UIImage * _questionMarkMonogram;
-    double  _scale;
+    float  _scale;
     NSString * _silhouetteImageName;
     UIImage * _silhouetteMonogram;
     CNMonogrammer * _subMonogrammer;
@@ -20,7 +20,7 @@
 }
 
 @property (nonatomic, retain) UIColor *backgroundColor;
-@property (nonatomic) double diameter;
+@property (nonatomic) float diameter;
 @property (nonatomic, retain) UIFont *font;
 @property (nonatomic, readonly) NSArray *keysToFetch;
 @property (nonatomic, readonly) UIImage *knockoutMaskMonogram;

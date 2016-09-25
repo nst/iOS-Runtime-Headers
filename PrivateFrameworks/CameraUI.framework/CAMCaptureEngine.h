@@ -161,7 +161,7 @@
 - (void)_updateEffectsSubgraph;
 - (BOOL)_updatePanoramaSubgraphForEnteringBackground:(BOOL)arg1;
 - (void)_validateSessionRecovery;
-- (id)_validateVideoAtURL:(id)arg1 withCaptureError:(id)arg2 isVideoComplement:(BOOL)arg3 stillImageDisplayTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg4 reportedDuration:(struct { int x1; int x2; unsigned int x3; int x4; })arg5 outActualDuration:(struct { int x1; int x2; unsigned int x3; int x4; }*)arg6 outVideoRecordingStoppedReason:(int*)arg7;
+- (id)_validateVideoAtURL:(id)arg1 withCaptureError:(id)arg2 isVideoComplement:(BOOL)arg3 stillImageDisplayTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg4 reportedDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg5 outActualDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg6 outVideoRecordingStoppedReason:(int*)arg7;
 - (id)_videoPreviewLayer;
 - (BOOL)areManagedDevicesLockedForConfiguration;
 - (id)audioCaptureDevice;
@@ -173,7 +173,7 @@
 - (void)captureOutput:(id)arg1 didCapturePhotoForResolvedSettings:(id)arg2;
 - (void)captureOutput:(id)arg1 didDropSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg2 fromConnection:(id)arg3;
 - (void)captureOutput:(id)arg1 didFinishCaptureForResolvedSettings:(id)arg2 error:(id)arg3;
-- (void)captureOutput:(id)arg1 didFinishProcessingLivePhotoToMovieFileAtURL:(id)arg2 duration:(struct { int x1; int x2; unsigned int x3; int x4; })arg3 photoDisplayTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg4 resolvedSettings:(id)arg5 error:(id)arg6;
+- (void)captureOutput:(id)arg1 didFinishProcessingLivePhotoToMovieFileAtURL:(id)arg2 duration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3 photoDisplayTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg4 resolvedSettings:(id)arg5 error:(id)arg6;
 - (void)captureOutput:(id)arg1 didFinishProcessingOriginalPhotoSurface:(struct __IOSurface { }*)arg2 originalPhotoSurfaceSize:(unsigned long)arg3 previewPhotoSurface:(struct __IOSurface { }*)arg4 metadata:(id)arg5 resolvedSettings:(id)arg6 error:(id)arg7;
 - (void)captureOutput:(id)arg1 didFinishProcessingPhotoSurface:(struct __IOSurface { }*)arg2 photoSurfaceSize:(unsigned long)arg3 previewPhotoSurface:(struct __IOSurface { }*)arg4 metadata:(id)arg5 resolvedSettings:(id)arg6 error:(id)arg7;
 - (void)captureOutput:(id)arg1 didFinishRecordingLivePhotoMovieForEventualFileAtURL:(id)arg2 resolvedSettings:(id)arg3;

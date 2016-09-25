@@ -3,7 +3,7 @@
  */
 
 @interface MPShuffledItemGroup : NSObject <NSSecureCoding> {
-    int  _groupPersistentID;
+    long long  _groupPersistentID;
     NSMutableArray * _mutableItems;
 }
 
@@ -13,6 +13,6 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithGroupPersistentID:(int)arg1;
+- (id)initWithGroupPersistentID:(long long)arg1;
 
 @end

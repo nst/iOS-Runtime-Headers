@@ -19,7 +19,7 @@
 @property (nonatomic, readonly) int type;
 
 - (void).cxx_destruct;
-- (id)initWithURL:(id)arg1 metadata:(id)arg2 decompressedSize:(unsigned int)arg3;
+- (id)initWithURL:(id)arg1 metadata:(id)arg2 decompressedSize:(unsigned long long)arg3;
 - (id)inputStream;
 - (id)metadata;
 - (id)progress;

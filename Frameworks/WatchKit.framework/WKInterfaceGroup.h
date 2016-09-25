@@ -13,7 +13,7 @@
 - (void)setBackgroundImage:(id)arg1;
 - (void)setBackgroundImageData:(id)arg1;
 - (void)setBackgroundImageNamed:(id)arg1;
-- (void)setContentInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setCornerRadius:(float)arg1;
 - (void)startAnimating;
 - (void)startAnimatingWithImagesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 duration:(double)arg2 repeatCount:(int)arg3;

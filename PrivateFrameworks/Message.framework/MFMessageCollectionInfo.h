@@ -3,8 +3,8 @@
  */
 
 @interface MFMessageCollectionInfo : NSObject {
-    int  _conversationID;
-    int  _messageCollectionHash;
+    long long  _conversationID;
+    long long  _messageCollectionHash;
     MFMessageInfoOrderedSet * _messageInfoSet;
     MFMessageInfo * _stickyPlaceholder;
 }
@@ -13,7 +13,7 @@
 @property (nonatomic, readonly) MFMessageInfo *firstMessage;
 @property (nonatomic, readonly) BOOL isEmpty;
 @property (nonatomic, readonly) MFMessageInfo *lastMessage;
-@property (nonatomic, readonly) int messageCollectionHash;
+@property (nonatomic, readonly) long long messageCollectionHash;
 @property (nonatomic, readonly) unsigned int messageCountWithDuplicates;
 @property (nonatomic, readonly) unsigned int messagesCount;
 @property (nonatomic, retain) MFMessageInfo *stickyPlaceholder;
@@ -28,11 +28,11 @@
 - (id)firstMessage;
 - (unsigned int)indexOfMessageInfo:(id)arg1;
 - (unsigned int)indexWhereMessageInfoWouldBeInserted:(id)arg1;
-- (id)initWithHash:(int)arg1 comparator:(id /* block */)arg2;
+- (id)initWithHash:(long long)arg1 comparator:(id /* block */)arg2;
 - (BOOL)isEmpty;
 - (id)lastMessage;
 - (void)mergeWithCollection:(id)arg1;
-- (int)messageCollectionHash;
+- (long long)messageCollectionHash;
 - (unsigned int)messageCountWithDuplicates;
 - (id)messageInfoAtIndex:(unsigned int)arg1;
 - (id)messageInfoEquivalentToMessageInfo:(id)arg1;

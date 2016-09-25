@@ -5,8 +5,8 @@
 @interface CAMGLView : UIView {
     EAGLContext * __atomicContext;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  __atomicFixedSize;
     BOOL  __atomicRetainedBacking;
     BOOL  __disableLayoutForGLLayerInternal;
@@ -22,7 +22,7 @@
 }
 
 @property (setter=_setAtomicContext:, retain) EAGLContext *_atomicContext;
-@property (setter=_setAtomicFixedSize:) struct CGSize { double x1; double x2; } _atomicFixedSize;
+@property (setter=_setAtomicFixedSize:) struct CGSize { float x1; float x2; } _atomicFixedSize;
 @property (setter=_setAtomicRetainedBacking:) BOOL _atomicRetainedBacking;
 @property (getter=_isDisabledLayoutForGLLayerInternal, setter=_setDisableLayoutForGLLayerInternal:, nonatomic) BOOL _disableLayoutForGLLayerInternal;
 @property (setter=_setShouldDeleteFramebuffer:) BOOL _shouldDeleteFramebuffer;
@@ -30,14 +30,14 @@
 @property (getter=isDisabledLayoutForGLLayer, nonatomic) BOOL disableLayoutForGLLayer;
 @property int drawableHeight;
 @property int drawableWidth;
-@property (nonatomic) struct CGSize { double x1; double x2; } fixedSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } fixedSize;
 @property (nonatomic, readonly, retain) CAEAGLLayer *glLayer;
 @property (nonatomic, copy) id /* block */ renderNotifyBlock;
 @property (nonatomic) BOOL retainedBacking;
 
 - (void).cxx_destruct;
 - (id)_atomicContext;
-- (struct CGSize { double x1; double x2; })_atomicFixedSize;
+- (struct CGSize { float x1; float x2; })_atomicFixedSize;
 - (BOOL)_atomicRetainedBacking;
 - (void)_configureLayer;
 - (void)_createFramebufferInContext:(id)arg1;
@@ -46,7 +46,7 @@
 - (BOOL)_isDisabledLayoutForGLLayerInternal;
 - (void)_layoutGLLayer;
 - (void)_setAtomicContext:(id)arg1;
-- (void)_setAtomicFixedSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)_setAtomicFixedSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_setAtomicRetainedBacking:(BOOL)arg1;
 - (void)_setDisableLayoutForGLLayerInternal:(BOOL)arg1;
 - (BOOL)_setFramebuffer:(BOOL*)arg1 context:(id)arg2;
@@ -56,10 +56,10 @@
 - (void)dealloc;
 - (int)drawableHeight;
 - (int)drawableWidth;
-- (struct CGSize { double x1; double x2; })fixedSize;
+- (struct CGSize { float x1; float x2; })fixedSize;
 - (void)forceDestroyGLResources;
 - (id)glLayer;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isDisabledLayoutForGLLayer;
 - (void)layoutSubviews;
 - (id /* block */)renderNotifyBlock;
@@ -72,7 +72,7 @@
 - (void)setDisableLayoutForGLLayer:(BOOL)arg1;
 - (void)setDrawableHeight:(int)arg1;
 - (void)setDrawableWidth:(int)arg1;
-- (void)setFixedSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setFixedSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setRenderNotifyBlock:(id /* block */)arg1;
 - (void)setRetainedBacking:(BOOL)arg1;
 

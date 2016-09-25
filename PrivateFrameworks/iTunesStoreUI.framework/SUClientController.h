@@ -76,7 +76,7 @@
 - (BOOL)isActive;
 - (BOOL)isComposingEmail;
 - (BOOL)isStoreEnabled;
-- (BOOL)libraryContainsItemIdentifier:(unsigned int)arg1;
+- (BOOL)libraryContainsItemIdentifier:(unsigned long long)arg1;
 - (void)mailComposeController:(id)arg1 didFinishWithResult:(int)arg2 error:(id)arg3;
 - (id)newScriptInterface;
 - (struct __CFArray { }*)offeredAssetTypes;

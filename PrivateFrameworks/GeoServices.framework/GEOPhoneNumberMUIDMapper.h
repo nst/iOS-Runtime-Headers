@@ -12,8 +12,8 @@
 - (void)_pruneToSize:(unsigned int)arg1;
 - (void)_save;
 - (void)dealloc;
-- (BOOL)getMuid:(out unsigned int*)arg1 providerId:(out int*)arg2 forPhoneNumber:(unsigned int)arg3;
+- (BOOL)getMuid:(out unsigned long long*)arg1 providerId:(out int*)arg2 forPhoneNumber:(unsigned long long)arg3;
 - (id)initWithMappingFilePath:(id)arg1;
-- (void)setMuid:(unsigned int)arg1 providerId:(int)arg2 forPhoneNumber:(unsigned int)arg3;
+- (void)setMuid:(unsigned long long)arg1 providerId:(int)arg2 forPhoneNumber:(unsigned long long)arg3;
 
 @end

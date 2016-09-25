@@ -4,6 +4,6 @@
 
 @interface PHPlaceholderImageHelper : NSObject
 
-+ (id)placeholderImageDataForImageSize:(struct CGSize { double x1; double x2; })arg1 qualityClass:(id)arg2 dataSpecification:(id*)arg3;
++ (id)placeholderImageDataForImageSize:(struct CGSize { float x1; float x2; })arg1 qualityClass:(id)arg2 dataSpecification:(id*)arg3;
 
 @end

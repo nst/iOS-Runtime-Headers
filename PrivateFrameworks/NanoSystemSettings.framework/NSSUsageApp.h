@@ -5,40 +5,40 @@
 @interface NSSUsageApp : NSObject <NSSecureCoding> {
     NSString * _bundleIdentifier;
     NSString * _bundleVersion;
-    unsigned int  _dataSize;
-    unsigned int  _dynamicSize;
+    unsigned long long  _dataSize;
+    unsigned long long  _dynamicSize;
     NSString * _name;
-    unsigned int  _staticSize;
-    unsigned int  _totalSize;
+    unsigned long long  _staticSize;
+    unsigned long long  _totalSize;
 }
 
 @property (nonatomic, retain) NSString *bundleIdentifier;
 @property (nonatomic, retain) NSString *bundleVersion;
-@property (nonatomic) unsigned int dataSize;
-@property (nonatomic) unsigned int dynamicSize;
+@property (nonatomic) unsigned long long dataSize;
+@property (nonatomic) unsigned long long dynamicSize;
 @property (nonatomic, retain) NSString *name;
-@property (nonatomic) unsigned int staticSize;
-@property (nonatomic) unsigned int totalSize;
+@property (nonatomic) unsigned long long staticSize;
+@property (nonatomic) unsigned long long totalSize;
 
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)bundleIdentifier;
 - (id)bundleVersion;
-- (unsigned int)dataSize;
+- (unsigned long long)dataSize;
 - (id)description;
-- (unsigned int)dynamicSize;
+- (unsigned long long)dynamicSize;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)name;
 - (void)setBundleIdentifier:(id)arg1;
 - (void)setBundleVersion:(id)arg1;
-- (void)setDataSize:(unsigned int)arg1;
-- (void)setDynamicSize:(unsigned int)arg1;
+- (void)setDataSize:(unsigned long long)arg1;
+- (void)setDynamicSize:(unsigned long long)arg1;
 - (void)setName:(id)arg1;
-- (void)setStaticSize:(unsigned int)arg1;
-- (void)setTotalSize:(unsigned int)arg1;
-- (unsigned int)staticSize;
-- (unsigned int)totalSize;
+- (void)setStaticSize:(unsigned long long)arg1;
+- (void)setTotalSize:(unsigned long long)arg1;
+- (unsigned long long)staticSize;
+- (unsigned long long)totalSize;
 
 @end

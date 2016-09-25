@@ -4,16 +4,16 @@
 
 @interface MPButton : UIButton {
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _alignmentRectInsets;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _hitRectInsets;
     BOOL  _hitTestDebugEnabled;
     UIView * _hitTestDebugView;
@@ -21,36 +21,36 @@
     unsigned int  _holding;
 }
 
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } alignmentRectInsets;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } hitRectInsets;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } alignmentRectInsets;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } hitRectInsets;
 @property (nonatomic) BOOL hitTestDebugEnabled;
 @property (nonatomic) double holdDelayInterval;
 @property (getter=isHolding, nonatomic, readonly) BOOL holding;
 
 + (id)easyTouchButtonWithType:(int)arg1;
 + (float)easyTouchDefaultCharge;
-+ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })easyTouchDefaultHitRectInsets;
++ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })easyTouchDefaultHitRectInsets;
 
 - (void).cxx_destruct;
 - (void)_delayedTriggerHold;
 - (void)_handleTouchCancel;
 - (void)_handleTouchDown;
 - (void)_handleTouchUp;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })alignmentRectInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentRectInsets;
 - (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)cancelTrackingWithEvent:(id)arg1;
 - (void)dealloc;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })hitRect;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })hitRectInsets;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })hitRect;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })hitRectInsets;
 - (BOOL)hitTestDebugEnabled;
 - (double)holdDelayInterval;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isHolding;
 - (void)layoutSubviews;
-- (BOOL)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
-- (void)setAlignmentRectInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
-- (void)setHitRectInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (void)setAlignmentRectInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setHitRectInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setHitTestDebugEnabled:(BOOL)arg1;
 - (void)setHoldDelayInterval:(double)arg1;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;

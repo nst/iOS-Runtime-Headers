@@ -5,10 +5,10 @@
 @interface PXPeopleStatusView : UIView {
     NSArray * _constraints;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _contentInsets;
     UIButton * _continueButton;
     NSLayoutConstraint * _continueButtonBottom;
@@ -21,7 +21,7 @@
 }
 
 @property (nonatomic, retain) NSArray *constraints;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInsets;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
 @property (nonatomic, retain) UIButton *continueButton;
 @property (nonatomic, retain) NSLayoutConstraint *continueButtonBottom;
 @property (nonatomic, readonly) UILabel *countLabel;
@@ -35,15 +35,15 @@
 - (void)_createViews;
 - (void)commonInit;
 - (id)constraints;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
 - (id)continueButton;
 - (id)continueButtonBottom;
 - (id)countLabel;
 - (id)descriptionLabel;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setConstraints:(id)arg1;
-- (void)setContentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setContinueButton:(id)arg1;
 - (void)setContinueButtonBottom:(id)arg1;
 - (void)setStackView:(id)arg1;

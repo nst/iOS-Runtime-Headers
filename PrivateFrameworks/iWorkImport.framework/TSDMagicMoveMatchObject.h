@@ -6,8 +6,8 @@
     NSMutableDictionary * _attributes;
     NSString * _name;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _position;
     TSDRep * _rep;
     struct _NSRange { 
@@ -20,14 +20,14 @@
 
 @property (nonatomic, retain) NSMutableDictionary *attributes;
 @property (nonatomic, retain) NSString *name;
-@property (nonatomic) struct CGPoint { double x1; double x2; } position;
+@property (nonatomic) struct CGPoint { float x1; float x2; } position;
 @property (nonatomic, retain) TSDRep *rep;
 @property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } stringRange;
 @property (nonatomic, retain) NSString *stringValue;
 @property (nonatomic) int zOrder;
 
-+ (id)matchObjectWithRep:(id)arg1 position:(struct CGPoint { double x1; double x2; })arg2;
-+ (id)matchObjectWithTextRep:(id)arg1 position:(struct CGPoint { double x1; double x2; })arg2 stringValue:(id)arg3 stringRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4;
++ (id)matchObjectWithRep:(id)arg1 position:(struct CGPoint { float x1; float x2; })arg2;
++ (id)matchObjectWithTextRep:(id)arg1 position:(struct CGPoint { float x1; float x2; })arg2 stringValue:(id)arg3 stringRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4;
 
 - (id)attributes;
 - (BOOL)conflictsWithMatchObject:(id)arg1;
@@ -36,14 +36,14 @@
 - (id)description;
 - (unsigned int)hash;
 - (id)init;
-- (id)initWithRep:(id)arg1 position:(struct CGPoint { double x1; double x2; })arg2 stringValue:(id)arg3 stringRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4;
+- (id)initWithRep:(id)arg1 position:(struct CGPoint { float x1; float x2; })arg2 stringValue:(id)arg3 stringRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4;
 - (BOOL)isEqual:(id)arg1;
 - (id)name;
-- (struct CGPoint { double x1; double x2; })position;
+- (struct CGPoint { float x1; float x2; })position;
 - (id)rep;
 - (void)setAttributes:(id)arg1;
 - (void)setName:(id)arg1;
-- (void)setPosition:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setPosition:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setRep:(id)arg1;
 - (void)setStringRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)setStringValue:(id)arg1;

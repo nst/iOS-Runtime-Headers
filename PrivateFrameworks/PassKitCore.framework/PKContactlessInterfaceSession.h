@@ -17,7 +17,7 @@
     unsigned int  _fieldPropertiesLookupTechnology;
     unsigned int  _fieldPropertiesLookupValueAddedServiceMode;
     unsigned int  _state;
-    unsigned int  _transactionStartTime;
+    unsigned long long  _transactionStartTime;
     NSArray * _valueAddedServiceTransactions;
 }
 

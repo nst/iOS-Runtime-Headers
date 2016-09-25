@@ -15,12 +15,12 @@
     BOOL  _presentedDetailView;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _sourceRect;
     <HUPresentationDelegate> * presentationDelegate;
@@ -42,7 +42,7 @@
 @property (nonatomic) <HUPresentationDelegate> *presentationDelegate;
 @property (nonatomic) unsigned int presentationState;
 @property (nonatomic) BOOL presentedDetailView;
-@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } sourceRect;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } sourceRect;
 @property (readonly) Class superclass;
 
 + (id)_blurAnimationSettingsForPresenting:(BOOL)arg1;
@@ -56,7 +56,7 @@
 - (void).cxx_destruct;
 - (id)_controlControllerOfType:(unsigned int)arg1;
 - (void)_controlDidDismiss;
-- (void)_createControlContainerViewWithSourceRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)_createControlContainerViewWithSourceRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_dismissControlAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
 - (void)_handleDismissGesture:(id)arg1;
 - (void)_performTransitionToPresentationState:(unsigned int)arg1 animated:(BOOL)arg2 initialProgress:(float)arg3 completion:(id /* block */)arg4;
@@ -94,7 +94,7 @@
 - (BOOL)isControlDismissedOrDismissing;
 - (BOOL)isControlPresentedOrPresenting;
 - (id)item;
-- (void)presentControlAnimatedFromSourceRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)presentControlAnimatedFromSourceRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)presentationApplier;
 - (id)presentationDelegate;
 - (unsigned int)presentationState;
@@ -108,9 +108,9 @@
 - (void)setPresentationDelegate:(id)arg1;
 - (void)setPresentationState:(unsigned int)arg1;
 - (void)setPresentedDetailView:(BOOL)arg1;
-- (void)setSourceRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })sourceRect;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })sourceViewTransformForPresentationProgress:(float)arg1;
+- (void)setSourceRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })sourceRect;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })sourceViewTransformForPresentationProgress:(float)arg1;
 - (void)viewDidLoad;
 
 @end

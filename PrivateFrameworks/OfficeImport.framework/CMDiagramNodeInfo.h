@@ -7,10 +7,10 @@
     int  mExtraRowsBetweenParentAndSelf;
     int  mRow;
     int  mTreeDepth;
-    double  mXOffsetRelativeToParent;
+    float  mXOffsetRelativeToParent;
     struct ODIHRange { 
-        double mMid; 
-        double mLength; 
+        float mMid; 
+        float mLength; 
     }  mXRange;
     struct ODIHRangeVector { struct ODIHRange {} *x1; struct ODIHRange {} *x2; unsigned int x3; unsigned int x4; unsigned int x5; } * mXRanges;
 }
@@ -26,10 +26,10 @@
 - (void)setRow:(int)arg1;
 - (void)setTreeDepth:(int)arg1;
 - (void)setXOffsetRelativeToParent:(float)arg1;
-- (void)setXRange:(struct ODIHRange { double x1; double x2; })arg1;
+- (void)setXRange:(struct ODIHRange { float x1; float x2; })arg1;
 - (int)treeDepth;
 - (float)xOffsetRelativeToParent;
-- (struct ODIHRange { double x1; double x2; })xRange;
+- (struct ODIHRange { float x1; float x2; })xRange;
 - (struct ODIHRangeVector { struct ODIHRange {} *x1; struct ODIHRange {} *x2; unsigned int x3; unsigned int x4; unsigned int x5; }*)xRanges;
 
 @end

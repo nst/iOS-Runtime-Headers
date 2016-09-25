@@ -6,27 +6,27 @@
     int  mDeviceIdiom;
     BOOL  mHasPreviousVisibleRect;
     BOOL  mHasVisibleRect;
-    double  mPreviousViewScale;
+    float  mPreviousViewScale;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  mPreviousVisibleRect;
     TSKSelectionPath * mSelectionPath;
-    double  mViewScale;
+    float  mViewScale;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  mVisibleRect;
 }
@@ -34,18 +34,18 @@
 @property (nonatomic) int archivedDeviceIdiom;
 @property (nonatomic) BOOL hasPreviousVisibleRect;
 @property (nonatomic) BOOL hasVisibleRect;
-@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } previousScrollPosition;
-@property (nonatomic) double previousViewScale;
-@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } previousVisibleRect;
-@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } scrollPosition;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } previousScrollPosition;
+@property (nonatomic) float previousViewScale;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } previousVisibleRect;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } scrollPosition;
 @property (nonatomic, retain) TSKSelectionPath *selectionPath;
-@property (nonatomic) double viewScale;
-@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } visibleRect;
+@property (nonatomic) float viewScale;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } visibleRect;
 
 + (int)currentDeviceIdiom;
 + (id)sheetUIState;
-+ (id)sheetUIStateWithPreviousVisibleRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-+ (id)sheetUIStateWithVisibleRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
++ (id)sheetUIStateWithPreviousVisibleRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
++ (id)sheetUIStateWithVisibleRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 - (int)archivedDeviceIdiom;
 - (void)clearPreviousVisibleRect;
@@ -55,25 +55,25 @@
 - (BOOL)hasPreviousVisibleRect;
 - (BOOL)hasVisibleRect;
 - (id)init;
-- (id)initWithArchive:(const struct SheetUIStateArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Point {} *x5; double x6; double x7; struct Point {} *x8; bool x9; bool x10; bool x11; unsigned int x12; struct Size {} *x13; struct Size {} *x14; struct SelectionPathArchive {} *x15; }*)arg1 unarchiver:(id)arg2;
+- (id)initWithArchive:(const struct SheetUIStateArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Point {} *x5; float x6; float x7; struct Point {} *x8; bool x9; bool x10; bool x11; unsigned int x12; struct Size {} *x13; struct Size {} *x14; struct SelectionPathArchive {} *x15; }*)arg1 unarchiver:(id)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (id)p_persistableSelectionPathFromSelectionPath:(id)arg1;
-- (struct CGPoint { double x1; double x2; })previousScrollPosition;
+- (struct CGPoint { float x1; float x2; })previousScrollPosition;
 - (float)previousViewScale;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })previousVisibleRect;
-- (void)saveToArchive:(struct SheetUIStateArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Point {} *x5; double x6; double x7; struct Point {} *x8; bool x9; bool x10; bool x11; unsigned int x12; struct Size {} *x13; struct Size {} *x14; struct SelectionPathArchive {} *x15; }*)arg1 archiver:(id)arg2 context:(id)arg3;
-- (struct CGPoint { double x1; double x2; })scrollPosition;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })previousVisibleRect;
+- (void)saveToArchive:(struct SheetUIStateArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Point {} *x5; float x6; float x7; struct Point {} *x8; bool x9; bool x10; bool x11; unsigned int x12; struct Size {} *x13; struct Size {} *x14; struct SelectionPathArchive {} *x15; }*)arg1 archiver:(id)arg2 context:(id)arg3;
+- (struct CGPoint { float x1; float x2; })scrollPosition;
 - (id)selectionPath;
 - (void)setArchivedDeviceIdiom:(int)arg1;
 - (void)setHasPreviousVisibleRect:(BOOL)arg1;
 - (void)setHasVisibleRect:(BOOL)arg1;
 - (void)setPreviousViewScale:(float)arg1;
-- (void)setPreviousVisibleRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setPreviousVisibleRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setSelectionPath:(id)arg1;
 - (void)setViewScale:(float)arg1;
-- (void)setVisibleRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setVisibleRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)updateForDeviceIdiom:(int)arg1;
 - (float)viewScale;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })visibleRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleRect;
 
 @end

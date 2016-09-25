@@ -83,8 +83,8 @@
 - (void)clearBackPointerToParentInfoIfNeeded:(id)arg1;
 - (void)coalesceChanges:(id)arg1;
 - (id)comment;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })computeFullTransform;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })computeLayoutFullTransform;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })computeFullTransform;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })computeLayoutFullTransform;
 - (id)containingGroup;
 - (id)copyWithContext:(id)arg1;
 - (void)dealloc;
@@ -95,7 +95,7 @@
 - (id)endCollectingChanges;
 - (id)exteriorTextWrap;
 - (id)exteriorTextWrapForMovingToFloating;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })fullTransformInRoot;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })fullTransformInRoot;
 - (id)geometry;
 - (id)ghostInfos;
 - (BOOL)hasActionBuilds;
@@ -136,7 +136,7 @@
 - (void)setExteriorTextWrap:(id)arg1;
 - (void)setGeometry:(id)arg1;
 - (void)setHyperlinkURL:(id)arg1;
-- (void)setInsertionCenterPosition:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setInsertionCenterPosition:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setLocked:(BOOL)arg1;
 - (void)setMatchesObjectPlaceholderGeometry:(BOOL)arg1;
 - (void)setOwningAttachment:(id)arg1;
@@ -151,9 +151,9 @@
 - (void)swizzled_setMatchesObjectPlaceholderGeometry:(BOOL)arg1;
 - (unsigned int)textureDeliveryStyleFromDeliveryString:(id)arg1;
 - (id)textureDeliveryStylesLocalized:(BOOL)arg1 animationFilter:(id)arg2;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })transformInRoot;
-- (struct CGPoint { double x1; double x2; })transformableObjectAnchorPoint;
-- (id)transformedGeometryWithTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1 inBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transformInRoot;
+- (struct CGPoint { float x1; float x2; })transformableObjectAnchorPoint;
+- (id)transformedGeometryWithTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 inBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (id)validBuildsInBuilds:(id)arg1;
 - (void)wasAddedToDocumentRoot:(id)arg1 dolcContext:(id)arg2;
 - (void)wasRemovedFromDocumentRoot:(id)arg1;

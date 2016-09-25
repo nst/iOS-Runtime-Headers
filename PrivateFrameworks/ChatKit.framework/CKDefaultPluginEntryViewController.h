@@ -36,7 +36,7 @@
 - (void)setDatasource:(id)arg1;
 - (void)setPlugin:(id)arg1;
 - (void)setPluginBubbleViewController:(id)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 - (BOOL)wantsClearButton;

@@ -24,7 +24,7 @@
 @property (nonatomic) int textAlignment;
 @property (nonatomic) BOOL valueCanWrap;
 @property (nonatomic, retain) UIFont *valueFont;
-@property (nonatomic) double verticalPadding;
+@property (nonatomic) float verticalPadding;
 @property (nonatomic, retain) Class viewSubclass;
 
 + (id)_templateByResolvingTemplate:(id)arg1 withDefault:(id)arg2;

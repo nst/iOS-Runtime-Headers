@@ -8,10 +8,10 @@
     BOOL  _betterRouteDiscovered;
     NSString * _boundInterfaceIdentifier;
     int  _connectionState;
-    int  _countOfBytesExpectedToReceive;
-    int  _countOfBytesExpectedToSend;
-    int  _countOfBytesReceived;
-    int  _countOfBytesSent;
+    long long  _countOfBytesExpectedToReceive;
+    long long  _countOfBytesExpectedToSend;
+    long long  _countOfBytesReceived;
+    long long  _countOfBytesSent;
     NSURLRequest * _currentRequest;
     BOOL  _deliveredConnectionEstablished;
     BOOL  _didIssueCancel;
@@ -19,7 +19,7 @@
     id /* block */  _disavow;
     BOOL  _doingWorkOnThisQueue;
     NSError * _error;
-    int  _expectedWorkload;
+    long long  _expectedWorkload;
     NSMutableArray * _extraWork;
     NSMutableArray * _finalizationQueue;
     BOOL  _goneSecure;
@@ -29,7 +29,7 @@
     int  _networkServiceType;
     NSURLRequest * _originalRequest;
     NSMutableArray * _pendingWork;
-    int  _priorityValue;
+    long long  _priorityValue;
     NSData * _readBuffer;
     BOOL  _readEOF;
     struct { 
@@ -62,10 +62,10 @@
 
 @property (copy) NSData *_TCPConnectionMetadata;
 @property (readonly) BOOL _goneSecure;
-@property int countOfBytesExpectedToReceive;
-@property int countOfBytesExpectedToSend;
-@property int countOfBytesReceived;
-@property int countOfBytesSent;
+@property long long countOfBytesExpectedToReceive;
+@property long long countOfBytesExpectedToSend;
+@property long long countOfBytesReceived;
+@property long long countOfBytesSent;
 @property (copy) NSURLRequest *currentRequest;
 @property (copy) NSError *error;
 @property (copy) NSURLRequest *originalRequest;
@@ -78,7 +78,7 @@
 - (id)_boundInterfaceIdentifier;
 - (struct __CFDictionary { }*)_copySocketStreamProperties;
 - (BOOL)_disallowCellular;
-- (int)_expectedWorkload;
+- (long long)_expectedWorkload;
 - (BOOL)_goneSecure;
 - (id)_initCommonWithSession:(id)arg1 disavow:(id /* block */)arg2;
 - (id)_initWithExistingTask:(id)arg1 disavow:(id /* block */)arg2;
@@ -128,12 +128,12 @@
 - (void)captureStreams;
 - (void)closeRead;
 - (void)closeWrite;
-- (int)computeAdjustedPoolPriority;
+- (long long)computeAdjustedPoolPriority;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (int)countOfBytesExpectedToReceive;
-- (int)countOfBytesExpectedToSend;
-- (int)countOfBytesReceived;
-- (int)countOfBytesSent;
+- (long long)countOfBytesExpectedToReceive;
+- (long long)countOfBytesExpectedToSend;
+- (long long)countOfBytesReceived;
+- (long long)countOfBytesSent;
 - (id)currentRequest;
 - (void)dealloc;
 - (id)describePending:(id)arg1;
@@ -145,10 +145,10 @@
 - (void)readDataOfMinLength:(unsigned int)arg1 maxLength:(unsigned int)arg2 timeout:(double)arg3 completionHandler:(id /* block */)arg4;
 - (id)response;
 - (void)resume;
-- (void)setCountOfBytesExpectedToReceive:(int)arg1;
-- (void)setCountOfBytesExpectedToSend:(int)arg1;
-- (void)setCountOfBytesReceived:(int)arg1;
-- (void)setCountOfBytesSent:(int)arg1;
+- (void)setCountOfBytesExpectedToReceive:(long long)arg1;
+- (void)setCountOfBytesExpectedToSend:(long long)arg1;
+- (void)setCountOfBytesReceived:(long long)arg1;
+- (void)setCountOfBytesSent:(long long)arg1;
 - (void)setCurrentRequest:(id)arg1;
 - (void)setError:(id)arg1;
 - (void)setOriginalRequest:(id)arg1;
@@ -159,7 +159,7 @@
 - (void)set_TCPConnectionMetadata:(id)arg1;
 - (void)set_boundInterfaceIdentifier:(id)arg1;
 - (void)set_disallowCellular:(BOOL)arg1;
-- (void)set_expectedWorkload:(int)arg1;
+- (void)set_expectedWorkload:(long long)arg1;
 - (void)set_ledBellyServiceIdentifier:(id)arg1;
 - (void)set_legacySocketStreamProperties:(id)arg1;
 - (void)set_networkServiceType:(int)arg1;

@@ -7,7 +7,7 @@
     NSArray * _bucketKeys;
     NSMutableSet * _children;
     int  _recordCount;
-    int  _values;
+    long long  _values;
 }
 
 - (void).cxx_destruct;

@@ -4,12 +4,12 @@
 
 @interface TileRenderRequest : NSObject {
     struct CGAffineTransform { 
-        double a; 
-        double b; 
-        double c; 
-        double d; 
-        double tx; 
-        double ty; 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     }  matrix;
     PDFPage * page;
     PDFView * pdfView;
@@ -17,15 +17,15 @@
     <IOTiledPoolDelegate> * target;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  tileFrame;
-    double  zoomFactor;
+    float  zoomFactor;
 }
 
 - (void).cxx_destruct;

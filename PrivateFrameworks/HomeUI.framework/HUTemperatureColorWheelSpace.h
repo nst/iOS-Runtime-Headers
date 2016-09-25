@@ -13,8 +13,8 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) unsigned int type;
 
-- (struct { double x1; double x2; double x3; double x4; })colorForCoordinate:(struct { double x1; double x2; })arg1;
-- (struct { double x1; double x2; })coordinateForColor:(struct { double x1; double x2; double x3; double x4; })arg1 isValid:(out BOOL*)arg2;
+- (struct { float x1; float x2; float x3; float x4; })colorForCoordinate:(struct { float x1; float x2; })arg1;
+- (struct { float x1; float x2; })coordinateForColor:(struct { float x1; float x2; float x3; float x4; })arg1 isValid:(out BOOL*)arg2;
 - (unsigned int)mirroringBiasAxis;
 - (void)setMirroringBiasAxis:(unsigned int)arg1;
 - (unsigned int)type;

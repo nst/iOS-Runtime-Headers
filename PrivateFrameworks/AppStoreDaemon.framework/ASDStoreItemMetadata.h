@@ -8,7 +8,7 @@
 
 @property (nonatomic, readonly) NSString *bundleIdentifier;
 @property (nonatomic, readonly) NSDictionary *propertiesDictionary;
-@property (nonatomic, readonly) int storeItemIdentifier;
+@property (nonatomic, readonly) long long storeItemIdentifier;
 
 + (BOOL)supportsSecureCoding;
 
@@ -19,6 +19,6 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
 - (id)propertiesDictionary;
-- (int)storeItemIdentifier;
+- (long long)storeItemIdentifier;
 
 @end

@@ -6,7 +6,7 @@
     BOOL  _editable;
     EKEvent * _event;
     int  _lastLaidOutPosition;
-    double  _lastLaidOutWidth;
+    float  _lastLaidOutWidth;
 }
 
 @property (nonatomic, readonly) BOOL isEditable;

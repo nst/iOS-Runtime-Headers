@@ -15,7 +15,7 @@
 }
 
 @property (readonly) struct CLLocationCoordinate2D { double x1; double x2; } currentLocation;
-@property (nonatomic) double currentProgress;
+@property (nonatomic) float currentProgress;
 @property (nonatomic) struct CLLocationCoordinate2D { double x1; double x2; } endLocation;
 @property (nonatomic) CALayer *planeImageLayer;
 @property (nonatomic) struct CLLocationCoordinate2D { double x1; double x2; } startLocation;

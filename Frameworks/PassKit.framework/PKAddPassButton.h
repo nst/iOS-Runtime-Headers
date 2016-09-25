@@ -5,27 +5,27 @@
 @interface PKAddPassButton : UIButton {
     int  _addPassButtonStyle;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _boundsSize;
     CAFilter * _highlightFilter;
     BOOL  _highlighted;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _iconSize;
     UIImageView * _iconView;
     CAShapeLayer * _layer;
     PKShapeView * _maskView;
     UILabel * _multiLineLabel;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _multilineSize;
     UILabel * _singleLineLabel;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _singlelineSize;
 }
 
@@ -46,8 +46,8 @@
 - (id)init;
 - (id)initWithAddPassButtonStyle:(int)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (void)layoutSubviews;
 - (void)setAddPassButtonStyle:(int)arg1;
 - (void)setHighlighted:(BOOL)arg1;

@@ -4,7 +4,7 @@
 
 @interface PEXConnectionsPasteboardSource : PEXConnectionsSource <PEXConnectionsLocationSource> {
     PEXPasteboardLocationItem * _mostRecentPasteboardItem;
-    unsigned int  _pasteboardNotificationState;
+    unsigned long long  _pasteboardNotificationState;
     id  _pasteboardObserver;
     PBServerConnection * _pasteboardServerConnection;
 }

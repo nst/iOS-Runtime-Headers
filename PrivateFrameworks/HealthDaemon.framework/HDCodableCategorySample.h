@@ -7,7 +7,7 @@
         unsigned int value : 1; 
     }  _has;
     HDCodableSample * _sample;
-    int  _value;
+    long long  _value;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -17,7 +17,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) HDCodableSample *sample;
 @property (readonly) Class superclass;
-@property (nonatomic) int value;
+@property (nonatomic) long long value;
 
 - (void).cxx_destruct;
 - (BOOL)applyToObject:(id)arg1;
@@ -34,8 +34,8 @@
 - (id)sample;
 - (void)setHasValue:(BOOL)arg1;
 - (void)setSample:(id)arg1;
-- (void)setValue:(int)arg1;
-- (int)value;
+- (void)setValue:(long long)arg1;
+- (long long)value;
 - (void)writeTo:(id)arg1;
 
 @end

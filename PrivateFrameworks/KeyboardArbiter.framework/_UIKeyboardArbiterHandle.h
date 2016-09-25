@@ -9,7 +9,7 @@
     NSXPCConnection * _connection;
     NSMutableSet * _hostedPids;
     BOOL  _invalidated;
-    double  _level;
+    float  _level;
     _UIKeyboardArbiter * _owner;
     BKSProcessAssertion * _remoteKeepAliveAssertion;
     unsigned int  _remoteKeepAliveAssertionCount;
@@ -24,7 +24,7 @@
 @property (readonly) BOOL active;
 @property (readonly, retain) NSString *bundleIdentifier;
 @property (readonly) NSXPCConnection *connection;
-@property (readonly) double level;
+@property (readonly) float level;
 @property (readonly) int processIdentifier;
 @property (readonly, retain) NSString *remoteSceneID;
 @property BOOL running;

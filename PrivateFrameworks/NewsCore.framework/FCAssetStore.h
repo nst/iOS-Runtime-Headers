@@ -30,6 +30,6 @@
 - (void)setDirectoryPath:(id)arg1;
 - (void)setFileURLsByKey:(id)arg1;
 - (void)setPreferredExtension:(id)arg1;
-- (unsigned int)storeSize;
+- (unsigned long long)storeSize;
 
 @end

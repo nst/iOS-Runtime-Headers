@@ -4,7 +4,7 @@
 
 @interface CKMessageActionChatItem : CKMultilineStampChatItem
 
-- (int)actionType;
+- (long long)actionType;
 - (id)handle;
 - (id)loadTranscriptText;
 - (id)sender;

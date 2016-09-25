@@ -67,7 +67,7 @@
 - (void)controlCenterDidDismiss;
 - (void)controlCenterWillPresent;
 - (unsigned int)currentWindowLayerContextID;
-- (struct CGSize { double x1; double x2; })currentWindowSize;
+- (struct CGSize { float x1; float x2; })currentWindowSize;
 - (void)dealloc;
 - (id)delegate;
 - (void)discardRecordingWithHandler:(id /* block */)arg1;

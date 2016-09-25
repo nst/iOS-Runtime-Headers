@@ -3,11 +3,11 @@
  */
 
 @interface _NSLayoutConstraintConstant : NSObject <NSCoding, NSCopying> {
-    double  _numericValue;
+    float  _numericValue;
     NSString * _symbolicValue;
 }
 
-@property (nonatomic, readonly) double numericValue;
+@property (nonatomic, readonly) float numericValue;
 @property (nonatomic, readonly, copy) NSString *symbolicValue;
 
 + (id)constantWithSymbolicValue:(id)arg1 numericValue:(float)arg2;

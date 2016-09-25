@@ -8,7 +8,7 @@
         unsigned int muid : 1; 
         unsigned int systemIndex : 1; 
     }  _has;
-    unsigned int  _muid;
+    unsigned long long  _muid;
     NSString * _nameDisplayString;
     GEOStyleAttributes * _styleAttributes;
     unsigned int  _systemIndex;
@@ -25,7 +25,7 @@
 @property (nonatomic) BOOL hasSystemIndex;
 @property (nonatomic, readonly) BOOL hasWebsite;
 @property (readonly) unsigned int hash;
-@property (nonatomic) unsigned int muid;
+@property (nonatomic) unsigned long long muid;
 @property (nonatomic, retain) NSString *nameDisplayString;
 @property (nonatomic, retain) GEOStyleAttributes *styleAttributes;
 @property (readonly) Class superclass;
@@ -49,13 +49,13 @@
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (unsigned int)muid;
+- (unsigned long long)muid;
 - (id)nameDisplayString;
 - (BOOL)readFrom:(id)arg1;
 - (void)setArtwork:(id)arg1;
 - (void)setHasMuid:(BOOL)arg1;
 - (void)setHasSystemIndex:(BOOL)arg1;
-- (void)setMuid:(unsigned int)arg1;
+- (void)setMuid:(unsigned long long)arg1;
 - (void)setNameDisplayString:(id)arg1;
 - (void)setStyleAttributes:(id)arg1;
 - (void)setSystemIndex:(unsigned int)arg1;

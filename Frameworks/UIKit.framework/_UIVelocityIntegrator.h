@@ -7,53 +7,53 @@
     BOOL  _hasMemoizedVelocity;
     double  _hysteresisTimeInterval;
     struct CGVector { 
-        double dx; 
-        double dy; 
+        float dx; 
+        float dy; 
     }  _memoizedVelocity;
     struct CGVector { 
-        double dx; 
-        double dy; 
+        float dx; 
+        float dy; 
     }  _offset;
-    double  _resetHysteresisOnSampleThetaDiff;
+    float  _resetHysteresisOnSampleThetaDiff;
     NSMutableArray * _samples;
     struct CGVector { 
-        double dx; 
-        double dy; 
+        float dx; 
+        float dy; 
     }  _totalTranslation;
 }
 
 @property (nonatomic, copy) id /* block */ didResetHysteresisOnThetaDiffHandler;
 @property (nonatomic) BOOL hasMemoizedVelocity;
 @property (nonatomic) double hysteresisTimeInterval;
-@property (nonatomic) struct CGVector { double x1; double x2; } memoizedVelocity;
-@property (nonatomic) struct CGVector { double x1; double x2; } offset;
-@property (nonatomic) double resetHysteresisOnSampleThetaDiff;
+@property (nonatomic) struct CGVector { float x1; float x2; } memoizedVelocity;
+@property (nonatomic) struct CGVector { float x1; float x2; } offset;
+@property (nonatomic) float resetHysteresisOnSampleThetaDiff;
 @property (nonatomic, retain) NSMutableArray *samples;
-@property (nonatomic) struct CGVector { double x1; double x2; } totalTranslation;
-@property (nonatomic, readonly) struct CGVector { double x1; double x2; } velocity;
+@property (nonatomic) struct CGVector { float x1; float x2; } totalTranslation;
+@property (nonatomic, readonly) struct CGVector { float x1; float x2; } velocity;
 
 - (void).cxx_destruct;
-- (struct CGVector { double x1; double x2; })_computedVelocity;
-- (void)addSample:(struct CGPoint { double x1; double x2; })arg1;
+- (struct CGVector { float x1; float x2; })_computedVelocity;
+- (void)addSample:(struct CGPoint { float x1; float x2; })arg1;
 - (id /* block */)didResetHysteresisOnThetaDiffHandler;
 - (BOOL)hasMemoizedVelocity;
 - (BOOL)hasVelocity;
 - (double)hysteresisTimeInterval;
 - (id)init;
-- (struct CGVector { double x1; double x2; })memoizedVelocity;
-- (struct CGVector { double x1; double x2; })offset;
+- (struct CGVector { float x1; float x2; })memoizedVelocity;
+- (struct CGVector { float x1; float x2; })offset;
 - (void)reset;
 - (float)resetHysteresisOnSampleThetaDiff;
 - (id)samples;
 - (void)setDidResetHysteresisOnThetaDiffHandler:(id /* block */)arg1;
 - (void)setHasMemoizedVelocity:(BOOL)arg1;
 - (void)setHysteresisTimeInterval:(double)arg1;
-- (void)setMemoizedVelocity:(struct CGVector { double x1; double x2; })arg1;
-- (void)setOffset:(struct CGVector { double x1; double x2; })arg1;
+- (void)setMemoizedVelocity:(struct CGVector { float x1; float x2; })arg1;
+- (void)setOffset:(struct CGVector { float x1; float x2; })arg1;
 - (void)setResetHysteresisOnSampleThetaDiff:(float)arg1;
 - (void)setSamples:(id)arg1;
-- (void)setTotalTranslation:(struct CGVector { double x1; double x2; })arg1;
-- (struct CGVector { double x1; double x2; })totalTranslation;
-- (struct CGVector { double x1; double x2; })velocity;
+- (void)setTotalTranslation:(struct CGVector { float x1; float x2; })arg1;
+- (struct CGVector { float x1; float x2; })totalTranslation;
+- (struct CGVector { float x1; float x2; })velocity;
 
 @end

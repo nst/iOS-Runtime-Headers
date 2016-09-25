@@ -4,31 +4,31 @@
 
 @interface WATodayPadViewStyle : NSObject <NSCopying> {
     UIFont * _conditionsFont;
-    double  _conditionsImageLeadingMargin;
-    double  _conditionsLabelBaselineToBottom;
-    double  _conditionsLabelBaselineToLocationLabelBaseline;
+    float  _conditionsImageLeadingMargin;
+    float  _conditionsLabelBaselineToBottom;
+    float  _conditionsLabelBaselineToLocationLabelBaseline;
     unsigned int  _format;
-    double  _labelLeadingMargin;
+    float  _labelLeadingMargin;
     UIFont * _locationFont;
-    double  _locationLabelBaselineToTemperatureLabelBaseline;
+    float  _locationLabelBaselineToTemperatureLabelBaseline;
     int  _orientation;
     UIFont * _temperatureFont;
-    double  _temperatureLabelBaselineToConditionsImageViewBottom;
+    float  _temperatureLabelBaselineToConditionsImageViewBottom;
 }
 
 @property (nonatomic, copy) UIFont *conditionsFont;
-@property (nonatomic) double conditionsImageLeadingMargin;
-@property (nonatomic) double conditionsLabelBaselineToBottom;
-@property (nonatomic) double conditionsLabelBaselineToLocationLabelBaseline;
+@property (nonatomic) float conditionsImageLeadingMargin;
+@property (nonatomic) float conditionsLabelBaselineToBottom;
+@property (nonatomic) float conditionsLabelBaselineToLocationLabelBaseline;
 @property (nonatomic) unsigned int format;
-@property (nonatomic) double labelLeadingMargin;
+@property (nonatomic) float labelLeadingMargin;
 @property (nonatomic, copy) UIFont *locationFont;
-@property (nonatomic) double locationLabelBaselineToTemperatureLabelBaseline;
+@property (nonatomic) float locationLabelBaselineToTemperatureLabelBaseline;
 @property (nonatomic) int orientation;
 @property (nonatomic, copy) UIFont *temperatureFont;
-@property (nonatomic) double temperatureLabelBaselineToConditionsImageViewBottom;
+@property (nonatomic) float temperatureLabelBaselineToConditionsImageViewBottom;
 
-+ (id)styleForScreenWithSize:(struct CGSize { double x1; double x2; })arg1 orientation:(int)arg2;
++ (id)styleForScreenWithSize:(struct CGSize { float x1; float x2; })arg1 orientation:(int)arg2;
 
 - (void).cxx_destruct;
 - (void)_setupForDefaultWithOrientation:(int)arg1;

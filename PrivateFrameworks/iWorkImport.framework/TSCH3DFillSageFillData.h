@@ -11,10 +11,10 @@
 + (id)dataWithFill:(id)arg1;
 
 - (void)dealloc;
-- (struct Color { double x1; double x2; double x3; double x4; })diffuse;
+- (struct Color { float x1; float x2; float x3; float x4; })diffuse;
 - (unsigned int)diffuseCount;
 - (id)diffuseMaterial;
-- (struct Color { double x1; double x2; double x3; double x4; })emissive;
+- (struct Color { float x1; float x2; float x3; float x4; })emissive;
 - (id)environment;
 - (id)fillSetIdentifier;
 - (id)initWithFill:(id)arg1;
@@ -34,7 +34,7 @@
 - (void)p_addMaterial:(id)arg1 blendMode:(int)arg2;
 - (id)phongMaterials;
 - (float)shininess;
-- (struct Color { double x1; double x2; double x3; double x4; })specular;
+- (struct Color { float x1; float x2; float x3; float x4; })specular;
 - (id)textureForIndex:(unsigned int)arg1;
 
 @end

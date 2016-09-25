@@ -5,12 +5,12 @@
 @interface UIInterfaceActionSeparatorAttributes : NSObject <NSCopying> {
     UIColor * _backgroundColor;
     NSArray * _filters;
-    double  _opacity;
+    float  _opacity;
 }
 
 @property (nonatomic, retain) UIColor *backgroundColor;
 @property (nonatomic, retain) NSArray *filters;
-@property (nonatomic) double opacity;
+@property (nonatomic) float opacity;
 
 - (void).cxx_destruct;
 - (BOOL)_hasNonClearBackgroundColor;

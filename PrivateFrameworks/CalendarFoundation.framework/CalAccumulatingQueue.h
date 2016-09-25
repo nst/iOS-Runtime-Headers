@@ -5,7 +5,7 @@
 @interface CalAccumulatingQueue : NSObject {
     id /* block */  _block;
     NSMutableDictionary * _context;
-    double  _delay;
+    float  _delay;
     NSObject<OS_dispatch_queue> * _queue;
     NSMutableSet * _tags;
 }

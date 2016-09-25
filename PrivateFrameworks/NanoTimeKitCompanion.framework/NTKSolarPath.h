@@ -3,21 +3,21 @@
  */
 
 @interface NTKSolarPath : NSObject {
-    double  _altitude;
+    float  _altitude;
     UIBezierPath * _bezierPath;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _bounds;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _points;
     NTKSolarTimeModel * _solarTimeModel;
     BOOL  _usePlaceholderData;
@@ -25,7 +25,7 @@
 }
 
 @property (nonatomic, readonly) UIBezierPath *bezierPath;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } bounds;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
 @property (nonatomic, readonly) NTKSolarTimeModel *solarTimeModel;
 @property (nonatomic, readonly) BOOL verticallyFitsPathToBounds;
 
@@ -34,8 +34,8 @@
 - (float)altitudeAtPercentage:(float)arg1;
 - (float)altitudeAtX:(float)arg1;
 - (id)bezierPath;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })bounds;
-- (id)initWithBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 solarTimeModel:(id)arg2 verticallyFitsPathToBounds:(BOOL)arg3 usePlaceholderData:(BOOL)arg4;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
+- (id)initWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 solarTimeModel:(id)arg2 verticallyFitsPathToBounds:(BOOL)arg3 usePlaceholderData:(BOOL)arg4;
 - (id)solarTimeModel;
 - (BOOL)verticallyFitsPathToBounds;
 

@@ -18,13 +18,13 @@
     int  _maxFriendDuration;
     int  _medianFriendDuration;
     int  _minFriendDuration;
-    int  _numberOfFriends;
-    int  _numberOfFriendsAwaitingResponse;
-    int  _numberOfFriendsHiddenFromMe;
-    int  _numberOfFriendsMuted;
-    int  _numberOfFriendsMyDataHidden;
-    int  _numberOfFriendsPendingMyResponse;
-    unsigned int  _timestamp;
+    long long  _numberOfFriends;
+    long long  _numberOfFriendsAwaitingResponse;
+    long long  _numberOfFriendsHiddenFromMe;
+    long long  _numberOfFriendsMuted;
+    long long  _numberOfFriendsMyDataHidden;
+    long long  _numberOfFriendsPendingMyResponse;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) BOOL hasMaxFriendDuration;
@@ -40,13 +40,13 @@
 @property (nonatomic) int maxFriendDuration;
 @property (nonatomic) int medianFriendDuration;
 @property (nonatomic) int minFriendDuration;
-@property (nonatomic) int numberOfFriends;
-@property (nonatomic) int numberOfFriendsAwaitingResponse;
-@property (nonatomic) int numberOfFriendsHiddenFromMe;
-@property (nonatomic) int numberOfFriendsMuted;
-@property (nonatomic) int numberOfFriendsMyDataHidden;
-@property (nonatomic) int numberOfFriendsPendingMyResponse;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) long long numberOfFriends;
+@property (nonatomic) long long numberOfFriendsAwaitingResponse;
+@property (nonatomic) long long numberOfFriendsHiddenFromMe;
+@property (nonatomic) long long numberOfFriendsMuted;
+@property (nonatomic) long long numberOfFriendsMyDataHidden;
+@property (nonatomic) long long numberOfFriendsPendingMyResponse;
+@property (nonatomic) unsigned long long timestamp;
 
 - (int)StringAsMaxFriendDuration:(id)arg1;
 - (int)StringAsMedianFriendDuration:(id)arg1;
@@ -74,12 +74,12 @@
 - (void)mergeFrom:(id)arg1;
 - (int)minFriendDuration;
 - (id)minFriendDurationAsString:(int)arg1;
-- (int)numberOfFriends;
-- (int)numberOfFriendsAwaitingResponse;
-- (int)numberOfFriendsHiddenFromMe;
-- (int)numberOfFriendsMuted;
-- (int)numberOfFriendsMyDataHidden;
-- (int)numberOfFriendsPendingMyResponse;
+- (long long)numberOfFriends;
+- (long long)numberOfFriendsAwaitingResponse;
+- (long long)numberOfFriendsHiddenFromMe;
+- (long long)numberOfFriendsMuted;
+- (long long)numberOfFriendsMyDataHidden;
+- (long long)numberOfFriendsPendingMyResponse;
 - (BOOL)readFrom:(id)arg1;
 - (void)setHasMaxFriendDuration:(BOOL)arg1;
 - (void)setHasMedianFriendDuration:(BOOL)arg1;
@@ -94,14 +94,14 @@
 - (void)setMaxFriendDuration:(int)arg1;
 - (void)setMedianFriendDuration:(int)arg1;
 - (void)setMinFriendDuration:(int)arg1;
-- (void)setNumberOfFriends:(int)arg1;
-- (void)setNumberOfFriendsAwaitingResponse:(int)arg1;
-- (void)setNumberOfFriendsHiddenFromMe:(int)arg1;
-- (void)setNumberOfFriendsMuted:(int)arg1;
-- (void)setNumberOfFriendsMyDataHidden:(int)arg1;
-- (void)setNumberOfFriendsPendingMyResponse:(int)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
-- (unsigned int)timestamp;
+- (void)setNumberOfFriends:(long long)arg1;
+- (void)setNumberOfFriendsAwaitingResponse:(long long)arg1;
+- (void)setNumberOfFriendsHiddenFromMe:(long long)arg1;
+- (void)setNumberOfFriendsMuted:(long long)arg1;
+- (void)setNumberOfFriendsMyDataHidden:(long long)arg1;
+- (void)setNumberOfFriendsPendingMyResponse:(long long)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
+- (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 
 @end

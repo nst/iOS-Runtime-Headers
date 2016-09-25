@@ -3,7 +3,7 @@
  */
 
 @interface PXLayoutMetricInterpolator : NSObject {
-    double  __cachedMetric;
+    float  __cachedMetric;
     NSValue * __cachedValue;
     NSMutableArray * __referenceValuesByMetrics;
     struct { 
@@ -11,7 +11,7 @@
     }  _needsUpdateFlags;
 }
 
-@property (setter=_setCachedMetric:, nonatomic) double _cachedMetric;
+@property (setter=_setCachedMetric:, nonatomic) float _cachedMetric;
 @property (setter=_setCachedValue:, nonatomic, retain) NSValue *_cachedValue;
 @property (nonatomic, readonly) NSMutableArray *_referenceValuesByMetrics;
 

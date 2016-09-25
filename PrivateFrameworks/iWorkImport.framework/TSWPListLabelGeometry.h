@@ -3,13 +3,13 @@
  */
 
 @interface TSWPListLabelGeometry : NSObject {
-    double  mBaselineOffset;
-    double  mScale;
+    float  mBaselineOffset;
+    float  mScale;
     BOOL  mScaleWithText;
 }
 
-@property (nonatomic) double baselineOffset;
-@property (nonatomic) double scale;
+@property (nonatomic) float baselineOffset;
+@property (nonatomic) float scale;
 @property (nonatomic) BOOL scaleWithText;
 
 + (id)listLabelGeometry;

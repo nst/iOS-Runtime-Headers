@@ -13,24 +13,24 @@
     <MFDraggableItem> * _draggedItem;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _draggedItemOriginalFrame;
     UIView * _draggedItemView;
     NSMutableDictionary * _gestureRecognizersForSource;
     MFGobblerGestureRecognizer * _gobblerGestureRecognizer;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _offsetCenterOfDraggedView;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _previousGestureLocation;
     NSTimer * _scrollTimer;
     BOOL  _scrollingForDrag;

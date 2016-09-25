@@ -4,28 +4,28 @@
 
 @interface PXTextViewLayoutHelper : NSObject {
     struct CGAffineTransform { 
-        double a; 
-        double b; 
-        double c; 
-        double d; 
-        double tx; 
-        double ty; 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     }  _reverseTransform;
     struct CGAffineTransform { 
-        double a; 
-        double b; 
-        double c; 
-        double d; 
-        double tx; 
-        double ty; 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     }  _transform;
 }
 
-- (float)_firstBaselineLocationForView:(id)arg1 withSize:(struct CGSize { double x1; double x2; })arg2;
-- (void)_getFirstBaseline:(float*)arg1 lastBaseline:(float*)arg2 forView:(id)arg3 withSize:(struct CGSize { double x1; double x2; })arg4;
+- (float)_firstBaselineLocationForView:(id)arg1 withSize:(struct CGSize { float x1; float x2; })arg2;
+- (void)_getFirstBaseline:(float*)arg1 lastBaseline:(float*)arg2 forView:(id)arg3 withSize:(struct CGSize { float x1; float x2; })arg4;
 - (float)bottomEdgeForView:(id)arg1;
 - (id)init;
-- (id)initWithBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (float)lastBaselineForView:(id)arg1;
 - (float)leftEdgeForView:(id)arg1;
 - (void)positionView:(id)arg1 withLeftEdge:(float)arg2 rightEdge:(float)arg3 alignment:(int)arg4 firstBaseline:(float)arg5;

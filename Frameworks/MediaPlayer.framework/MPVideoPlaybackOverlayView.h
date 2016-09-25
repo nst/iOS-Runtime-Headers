@@ -28,7 +28,7 @@
     MPKnockoutButton * _pictureInPictureButton;
     MPKnockoutButton * _playPauseButton;
     MPAVController * _player;
-    double  _previousTopBarMargin;
+    float  _previousTopBarMargin;
     MPKnockoutButton * _rightButton;
     UIButton * _scaleButton;
     UILabel * _scrubInstructions1;
@@ -51,11 +51,11 @@
     NSLayoutConstraint * _volumeSliderRightConstraint;
     NSLayoutConstraint * _volumeSliderWidthConstraint;
     BOOL  allowsWirelessPlayback;
-    unsigned int  desiredParts;
-    unsigned int  disabledParts;
+    unsigned long long  desiredParts;
+    unsigned long long  disabledParts;
     BOOL  navigationBarHidden;
     <MPVideoControllerProtocol> * videoViewController;
-    unsigned int  visibleParts;
+    unsigned long long  visibleParts;
 }
 
 @property (nonatomic) BOOL allowsAudioAndSubtitles;
@@ -66,12 +66,12 @@
 @property (nonatomic) BOOL allowsWirelessPlayback;
 @property (nonatomic) BOOL automaticallyHandleTransportControls;
 @property (nonatomic, readonly) _UIBackdropView *bottomBarBackdropView;
-@property (nonatomic, readonly) double bottomBarHeight;
+@property (nonatomic, readonly) float bottomBarHeight;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <MPVideoOverlayDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) unsigned int desiredParts;
-@property (nonatomic) unsigned int disabledParts;
+@property (nonatomic) unsigned long long desiredParts;
+@property (nonatomic) unsigned long long disabledParts;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) MPAVItem *item;
 @property (nonatomic, readonly, retain) UINavigationBar *navigationBar;
@@ -81,7 +81,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) _UIBackdropView *topBarBackdropView;
 @property (nonatomic) <MPVideoControllerProtocol> *videoViewController;
-@property (nonatomic) unsigned int visibleParts;
+@property (nonatomic) unsigned long long visibleParts;
 
 - (void).cxx_destruct;
 - (void)_activeAudioRouteDidChange:(id)arg1;
@@ -142,24 +142,24 @@
 - (float)bottomBarHeight;
 - (void)dealloc;
 - (id)delegate;
-- (unsigned int)desiredParts;
+- (unsigned long long)desiredParts;
 - (void)detailSlider:(id)arg1 didChangeScrubSpeed:(int)arg2;
 - (void)detailSlider:(id)arg1 didChangeValue:(float)arg2;
 - (void)detailSliderTrackingDidBegin:(id)arg1;
 - (void)detailSliderTrackingDidCancel:(id)arg1;
 - (void)detailSliderTrackingDidEnd:(id)arg1;
 - (void)didMoveToWindow;
-- (unsigned int)disabledParts;
+- (unsigned long long)disabledParts;
 - (void)hideAlternateTracks;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 style:(int)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
 - (id)item;
 - (void)layoutSubviews;
 - (id)navigationBar;
 - (BOOL)navigationBarHidden;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)player;
-- (BOOL)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)popoverPresentationControllerDidDismissPopover:(id)arg1;
 - (void)presentationController:(id)arg1 willPresentWithAdaptiveStyle:(int)arg2 transitionCoordinator:(id)arg3;
 - (void)removeFromSuperview;
@@ -170,12 +170,12 @@
 - (void)setAllowsScrubbing:(BOOL)arg1;
 - (void)setAllowsWirelessPlayback:(BOOL)arg1;
 - (void)setAutomaticallyHandleTransportControls:(BOOL)arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setDesiredParts:(unsigned int)arg1;
-- (void)setDesiredParts:(unsigned int)arg1 animate:(BOOL)arg2;
-- (void)setDisabledParts:(unsigned int)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setDesiredParts:(unsigned long long)arg1;
+- (void)setDesiredParts:(unsigned long long)arg1 animate:(BOOL)arg2;
+- (void)setDisabledParts:(unsigned long long)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setHidden:(BOOL)arg1;
 - (void)setHidden:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setHidden:(BOOL)arg1 animated:(BOOL)arg2 animateAlongside:(id /* block */)arg3 completionBlock:(id /* block */)arg4;
@@ -185,8 +185,8 @@
 - (void)setPlayer:(id)arg1;
 - (void)setStyle:(int)arg1;
 - (void)setVideoViewController:(id)arg1;
-- (void)setVisibleParts:(unsigned int)arg1;
-- (void)setVisibleParts:(unsigned int)arg1 animate:(BOOL)arg2;
+- (void)setVisibleParts:(unsigned long long)arg1;
+- (void)setVisibleParts:(unsigned long long)arg1 animate:(BOOL)arg2;
 - (void)showAlternateTracks;
 - (void)startTicking;
 - (void)stopTicking;
@@ -196,6 +196,6 @@
 - (void)updateConstraints;
 - (BOOL)updateTimeBasedValues;
 - (id)videoViewController;
-- (unsigned int)visibleParts;
+- (unsigned long long)visibleParts;
 
 @end

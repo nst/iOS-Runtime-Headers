@@ -17,7 +17,7 @@
 + (id)allDay;
 + (id)allTags;
 + (id)contactDetail:(id)arg1;
-+ (id)containsEntityExtraction:(int)arg1;
++ (id)containsEntityExtraction:(long long)arg1;
 + (id)defaultDuration;
 + (id)eventHash:(id)arg1;
 + (id)extraKey:(id)arg1;

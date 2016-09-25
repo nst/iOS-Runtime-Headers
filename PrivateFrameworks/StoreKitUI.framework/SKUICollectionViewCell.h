@@ -9,25 +9,25 @@
     UIView * _rightBorderView;
     UIColor * _separatorColor;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _separatorInsets;
     int  _separatorStyle;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _separatorWidths;
     UIView * _topBorderView;
 }
 
 @property (nonatomic, retain) UIColor *separatorColor;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } separatorInsets;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } separatorInsets;
 @property (nonatomic) int separatorStyle;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } separatorWidths;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } separatorWidths;
 @property (nonatomic) BOOL showsCellSeparators;
 
 - (void).cxx_destruct;
@@ -38,19 +38,19 @@
 - (BOOL)_showsTopBorder;
 - (void)_updateBorderVisibility;
 - (void)applyLayoutAttributes:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)separatorColor;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })separatorInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })separatorInsets;
 - (int)separatorStyle;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })separatorWidths;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })separatorWidths;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setSelected:(BOOL)arg1;
 - (void)setSeparatorColor:(id)arg1;
-- (void)setSeparatorInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setSeparatorInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setSeparatorStyle:(int)arg1;
-- (void)setSeparatorWidths:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setSeparatorWidths:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setShowsCellSeparators:(BOOL)arg1;
 - (BOOL)showsCellSeparators;
 

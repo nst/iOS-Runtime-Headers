@@ -4,11 +4,11 @@
 
 @interface BRCSpotlightIndexToken : NSObject <NSSecureCoding> {
     NSString * _databaseID;
-    unsigned int  _notifRank;
+    unsigned long long  _notifRank;
 }
 
 @property (nonatomic) NSString *databaseID;
-@property (nonatomic) unsigned int notifRank;
+@property (nonatomic) unsigned long long notifRank;
 
 + (BOOL)supportsSecureCoding;
 
@@ -16,8 +16,8 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (unsigned int)notifRank;
+- (unsigned long long)notifRank;
 - (void)setDatabaseID:(id)arg1;
-- (void)setNotifRank:(unsigned int)arg1;
+- (void)setNotifRank:(unsigned long long)arg1;
 
 @end

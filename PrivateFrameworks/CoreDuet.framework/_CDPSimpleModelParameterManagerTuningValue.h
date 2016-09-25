@@ -3,16 +3,16 @@
  */
 
 @interface _CDPSimpleModelParameterManagerTuningValue : NSObject <NSSecureCoding> {
-    double  _lambda;
-    double  _score;
-    double  _threshold;
-    double  _w0;
+    float  _lambda;
+    float  _score;
+    float  _threshold;
+    float  _w0;
 }
 
-@property (nonatomic, readonly) double lambda;
-@property (nonatomic, readonly) double score;
-@property (nonatomic, readonly) double threshold;
-@property (nonatomic, readonly) double w0;
+@property (nonatomic, readonly) float lambda;
+@property (nonatomic, readonly) float score;
+@property (nonatomic, readonly) float threshold;
+@property (nonatomic, readonly) float w0;
 
 + (BOOL)supportsSecureCoding;
 

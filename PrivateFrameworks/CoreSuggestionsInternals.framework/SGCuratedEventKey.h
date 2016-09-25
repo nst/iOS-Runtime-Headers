@@ -12,7 +12,7 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
-+ (BOOL)isSupportedEntityType:(int)arg1;
++ (BOOL)isSupportedEntityType:(long long)arg1;
 
 - (void).cxx_destruct;
 - (id)description;

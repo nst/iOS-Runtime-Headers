@@ -49,7 +49,7 @@
 - (void)_presentFromViewController:(id)arg1;
 - (id)adSpace;
 - (id)adSpaceView;
-- (void)bannerTappedAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)bannerTappedAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)canLoadMoreThanOnce;
 - (void)cancelAction;
 - (void)changeBannerViewState:(int)arg1;
@@ -100,7 +100,7 @@
 - (void)setServerURL:(id)arg1;
 - (void)setState:(int)arg1;
 - (void)setStateChangedBlock:(id /* block */)arg1;
-- (BOOL)shouldTestVisibilityAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (BOOL)shouldTestVisibilityAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (int)state;
 - (id /* block */)stateChangedBlock;
 - (void)storyboardViewControllerDidPresent;

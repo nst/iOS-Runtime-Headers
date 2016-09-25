@@ -3,11 +3,11 @@
  */
 
 @interface SPUINavigationBar : UINavigationBar {
-    double  _currentBlurProgress;
+    float  _currentBlurProgress;
     UIView * _topDividerView;
 }
 
-@property double currentBlurProgress;
+@property float currentBlurProgress;
 @property (retain) UIView *topDividerView;
 
 + (BOOL)_supportsCanvasView;
@@ -16,7 +16,7 @@
 - (id)_popNavigationItemWithTransition:(int)arg1;
 - (float)currentBlurProgress;
 - (void)didAddSubview:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isLocked;
 - (void)performShowSeparator:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)performUpdateBlurProgress:(float)arg1 animated:(BOOL)arg2;

@@ -21,7 +21,7 @@
     unsigned long  shutterSound;
     BOOL  squareCropEnabled;
     BOOL  turboModeEnabled;
-    int  uniqueID;
+    long long  uniqueID;
 }
 
 @end

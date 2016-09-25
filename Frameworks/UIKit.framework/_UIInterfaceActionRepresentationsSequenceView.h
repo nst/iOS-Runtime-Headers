@@ -35,7 +35,7 @@
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (float)fittingWidthForLayoutAxis:(int)arg1;
 - (id)initWithVisualStyle:(id)arg1;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (void)layoutSubviews;
 - (id)minimumHeightConstraint;
 - (void)reloadDisplayedContentVisualStyle;
@@ -43,7 +43,7 @@
 - (void)setActionLayoutAxis:(int)arg1;
 - (void)setArrangedActionRepresentationViews:(id)arg1;
 - (void)setVisualStyle:(id)arg1;
-- (struct CGSize { double x1; double x2; })systemLayoutSizeFittingSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })systemLayoutSizeFittingSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)updateConstraints;
 - (id)visualStyle;
 - (void)willUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;

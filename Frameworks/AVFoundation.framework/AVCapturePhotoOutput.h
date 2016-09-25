@@ -43,13 +43,13 @@
 - (void)_handleDidFinishRecordingIrisMovieNotificationWithPayload:(id)arg1 forRequest:(id)arg2;
 - (void)_handleDidRecordIrisMovieNotificationWithPayload:(id)arg1 forRequest:(id)arg2;
 - (void)_handleNotification:(id)arg1 payload:(id)arg2;
-- (void)_handlePreparationCompleteNotificationWithPayload:(id)arg1 settingsID:(int)arg2;
+- (void)_handlePreparationCompleteNotificationWithPayload:(id)arg1 settingsID:(long long)arg2;
 - (void)_handleRawStillImageCompleteNotificationWithPayload:(id)arg1 forRequest:(id)arg2;
 - (void)_handleStillImageCompleteNotificationWithPayload:(id)arg1 forRequest:(id)arg2;
 - (void)_handleWillBeginCaptureNotificationWithPayload:(id)arg1 forRequest:(id)arg2;
 - (void)_handleWillCaptureStillImageNotificationWithPayload:(id)arg1 forRequest:(id)arg2;
 - (void)_incrementObserverCountForKeyPath:(id)arg1;
-- (id)_photoRequestForUniqueID:(int)arg1;
+- (id)_photoRequestForUniqueID:(long long)arg1;
 - (void)_resetLivePhotoCaptureSuspended;
 - (void)_resetLivePhotoMovieProcessingSuspended;
 - (id)_sanitizedSettingsForSettings:(id)arg1;
@@ -100,8 +100,8 @@
 - (BOOL)isStillImageStabilizationScene;
 - (BOOL)isStillImageStabilizationSupported;
 - (struct { int x1; int x2; })livePhotoMovieDimensions;
-- (struct { int x1; int x2; unsigned int x3; int x4; })livePhotoMovieDuration;
-- (struct { int x1; int x2; unsigned int x3; int x4; })livePhotoMovieVideoFrameDuration;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })livePhotoMovieDuration;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })livePhotoMovieVideoFrameDuration;
 - (unsigned int)maxBracketedCapturePhotoCount;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (BOOL)optimizesImagesForOfflineVideoStabilization;
@@ -110,7 +110,7 @@
 - (void)removeConnection:(id)arg1;
 - (void)removeObserver:(id)arg1 forKeyPath:(id)arg2;
 - (void)safelyHandleServerConnectionDeathForFigCaptureSession:(struct OpaqueFigCaptureSession { }*)arg1;
-- (void)setFigCaptureSessionSectionProperty:(struct __CFString { }*)arg1 withHostTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg2 settingStateVaribleToNoOnFailure:(BOOL*)arg3;
+- (void)setFigCaptureSessionSectionProperty:(struct __CFString { }*)arg1 withHostTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 settingStateVaribleToNoOnFailure:(BOOL*)arg3;
 - (void)setHighResolutionCaptureEnabled:(BOOL)arg1;
 - (void)setLivePhotoAutoTrimmingEnabled:(BOOL)arg1;
 - (void)setLivePhotoCaptureEnabled:(BOOL)arg1;

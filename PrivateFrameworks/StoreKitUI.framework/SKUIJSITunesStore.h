@@ -62,7 +62,7 @@
 - (BOOL)sendAppPreviewStateChanged:(BOOL)arg1;
 - (void)sendApplicationDidEnterBackground;
 - (void)sendApplicationWillEnterForeground;
-- (void)sendApplicationWindowSizeDidUpdate:(struct CGSize { double x1; double x2; })arg1;
+- (void)sendApplicationWindowSizeDidUpdate:(struct CGSize { float x1; float x2; })arg1;
 - (void)sendOnNavigationStackWillPop:(BOOL)arg1;
 - (void)sendOnPageResponseWithDocument:(id)arg1 data:(id)arg2 URLResponse:(id)arg3 performanceMetrics:(id)arg4;
 - (BOOL)sendOnShowPageEventType:(id)arg1 data:(id)arg2;

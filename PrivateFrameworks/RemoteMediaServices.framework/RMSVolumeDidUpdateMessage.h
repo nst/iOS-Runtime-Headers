@@ -8,13 +8,13 @@
         unsigned int volume : 1; 
     }  _has;
     int  _sessionIdentifier;
-    double  _volume;
+    float  _volume;
 }
 
 @property (nonatomic) BOOL hasSessionIdentifier;
 @property (nonatomic) BOOL hasVolume;
 @property (nonatomic) int sessionIdentifier;
-@property (nonatomic) double volume;
+@property (nonatomic) float volume;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

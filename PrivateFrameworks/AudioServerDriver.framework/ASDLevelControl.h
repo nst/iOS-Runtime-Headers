@@ -3,18 +3,18 @@
  */
 
 @interface ASDLevelControl : ASDControl {
-    double  _decibelValue;
-    double  _maximumDecibelValue;
-    double  _minimumDecibelValue;
+    float  _decibelValue;
+    float  _maximumDecibelValue;
+    float  _minimumDecibelValue;
     unsigned long  _subclassID;
     BOOL  _valueIsSettable;
     NSObject<OS_dispatch_queue> * _valueQueue;
 }
 
-@property (nonatomic) double decibelValue;
-@property (nonatomic) double maximumDecibelValue;
-@property (nonatomic) double minimumDecibelValue;
-@property (nonatomic) double scalarValue;
+@property (nonatomic) float decibelValue;
+@property (nonatomic) float maximumDecibelValue;
+@property (nonatomic) float minimumDecibelValue;
+@property (nonatomic) float scalarValue;
 @property (nonatomic) unsigned long subclassID;
 
 + (id)volumeControlWithDecibelValue:(float)arg1 minimumValue:(float)arg2 maximumValue:(float)arg3 isSettable:(BOOL)arg4 forElement:(unsigned long)arg5 inScope:(unsigned long)arg6 withPlugin:(id)arg7;

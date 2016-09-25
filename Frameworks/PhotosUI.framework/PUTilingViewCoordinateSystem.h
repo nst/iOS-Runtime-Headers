@@ -6,7 +6,7 @@
     PUTilingView * _tilingView;
 }
 
-@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } coordinateSystemOrigin;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } coordinateSystemOrigin;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
@@ -15,7 +15,7 @@
 @property (nonatomic, readonly) PUTilingView *tilingView;
 
 - (void).cxx_destruct;
-- (struct CGPoint { double x1; double x2; })coordinateSystemOrigin;
+- (struct CGPoint { float x1; float x2; })coordinateSystemOrigin;
 - (id)init;
 - (id)initWithTilingView:(id)arg1;
 - (id)parentCoordinateSystem;

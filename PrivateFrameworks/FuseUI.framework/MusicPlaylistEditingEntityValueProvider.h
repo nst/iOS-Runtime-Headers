@@ -18,7 +18,7 @@
 - (void).cxx_destruct;
 - (id)artworkImage;
 - (id)entityUniqueIdentifier;
-- (id)imageURLForEntityArtworkProperty:(id)arg1 fittingSize:(struct CGSize { double x1; double x2; })arg2 destinationScale:(float)arg3;
+- (id)imageURLForEntityArtworkProperty:(id)arg1 fittingSize:(struct CGSize { float x1; float x2; })arg2 destinationScale:(float)arg3;
 - (id)init;
 - (id)productDescription;
 - (void)setArtworkImage:(id)arg1;

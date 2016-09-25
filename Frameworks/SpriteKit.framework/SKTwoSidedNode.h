@@ -5,14 +5,14 @@
 @interface SKTwoSidedNode : SKNode {
     SKNode * _sideA;
     SKNode * _sideB;
-    double  _xRotation;
-    double  _yRotation;
+    float  _xRotation;
+    float  _yRotation;
 }
 
 @property (nonatomic, retain) SKNode *sideA;
 @property (nonatomic, retain) SKNode *sideB;
-@property (nonatomic) double xRotation;
-@property (nonatomic) double yRotation;
+@property (nonatomic) float xRotation;
+@property (nonatomic) float yRotation;
 
 - (void).cxx_destruct;
 - (id)backSide;

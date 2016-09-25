@@ -18,7 +18,7 @@
 + (id)_remoteViewControllerInterface;
 
 - (void).cxx_destruct;
-- (struct CGSize { double x1; double x2; })_constrainedSizeForDesiredSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })_constrainedSizeForDesiredSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)_errorHandlingRemoteViewControllerProxy;
 - (void)addChildViewController:(id)arg1;
 - (void)configureWithInteraction:(id)arg1 context:(unsigned int)arg2 completion:(id /* block */)arg3;

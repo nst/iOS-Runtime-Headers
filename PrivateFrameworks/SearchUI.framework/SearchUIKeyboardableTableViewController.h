@@ -3,11 +3,11 @@
  */
 
 @interface SearchUIKeyboardableTableViewController : UITableViewController {
-    double  _keyboardHeight;
+    float  _keyboardHeight;
     UITextField * _textField;
 }
 
-@property double keyboardHeight;
+@property float keyboardHeight;
 @property (retain) UITextField *textField;
 
 - (void).cxx_destruct;

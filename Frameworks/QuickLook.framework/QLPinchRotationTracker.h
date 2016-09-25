@@ -4,73 +4,73 @@
 
 @interface QLPinchRotationTracker : NSObject <QLDismissGestureTracking> {
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _anchorLocationOffset;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _anchorPoint;
-    double  _dismissalProgress;
+    float  _dismissalProgress;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _initialBounds;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _initialGestureLocation;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _initialTrackingCenter;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _location;
-    double  _minimumZoomForDismissal;
-    double  _previousScale;
-    double  _rotation;
+    float  _minimumZoomForDismissal;
+    float  _previousScale;
+    float  _rotation;
     BOOL  _shouldFinishDismissal;
-    double  _targetZoom;
+    float  _targetZoom;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _trackedCenter;
-    double  _trackedScale;
+    float  _trackedScale;
     struct CGAffineTransform { 
-        double a; 
-        double b; 
-        double c; 
-        double d; 
-        double tx; 
-        double ty; 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     }  _trackedTransform;
 }
 
-@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } anchorPoint;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } anchorPoint;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) double dismissalProgress;
+@property (nonatomic, readonly) float dismissalProgress;
 @property (nonatomic, readonly) double finalAnimationDuration;
-@property (nonatomic, readonly) double finalAnimationSpringDamping;
+@property (nonatomic, readonly) float finalAnimationSpringDamping;
 @property (readonly) unsigned int hash;
-@property (nonatomic) double minimumZoomForDismissal;
+@property (nonatomic) float minimumZoomForDismissal;
 @property (nonatomic, readonly) BOOL shouldFinishDismissal;
 @property (readonly) Class superclass;
-@property (nonatomic) double targetZoom;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } trackedBounds;
-@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } trackedCenter;
-@property (nonatomic, readonly) struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; } trackedTransform;
-@property (nonatomic, readonly) struct _QLDismissGestureTrackingVelocity { double x1; double x2; double x3; double x4; } trackedVelocity;
+@property (nonatomic) float targetZoom;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } trackedBounds;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } trackedCenter;
+@property (nonatomic, readonly) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } trackedTransform;
+@property (nonatomic, readonly) struct _QLDismissGestureTrackingVelocity { float x1; float x2; float x3; float x4; } trackedVelocity;
 
-- (struct CGPoint { double x1; double x2; })anchorPoint;
+- (struct CGPoint { float x1; float x2; })anchorPoint;
 - (float)dismissalProgress;
 - (double)finalAnimationDuration;
 - (float)finalAnimationSpringDamping;
@@ -79,15 +79,15 @@
 - (void)setMinimumZoomForDismissal:(float)arg1;
 - (void)setTargetZoom:(float)arg1;
 - (BOOL)shouldFinishDismissal;
-- (void)startTrackingCenter:(struct CGPoint { double x1; double x2; })arg1 bounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 transform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg3 withInitialGestureLocation:(struct CGPoint { double x1; double x2; })arg4;
+- (void)startTrackingCenter:(struct CGPoint { float x1; float x2; })arg1 bounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 transform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg3 withInitialGestureLocation:(struct CGPoint { float x1; float x2; })arg4;
 - (float)targetZoom;
-- (void)trackGestureLocation:(struct CGPoint { double x1; double x2; })arg1;
+- (void)trackGestureLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (void)trackRotation:(float)arg1;
 - (void)trackScale:(float)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })trackedBounds;
-- (struct CGPoint { double x1; double x2; })trackedCenter;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })trackedTransform;
-- (struct _QLDismissGestureTrackingVelocity { double x1; double x2; double x3; double x4; })trackedVelocity;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })trackedBounds;
+- (struct CGPoint { float x1; float x2; })trackedCenter;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })trackedTransform;
+- (struct _QLDismissGestureTrackingVelocity { float x1; float x2; float x3; float x4; })trackedVelocity;
 - (void)update;
 
 @end

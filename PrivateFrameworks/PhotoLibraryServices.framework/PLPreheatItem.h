@@ -16,8 +16,8 @@
     int  _format;
     int  _imageType;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _optimalSourcePixelSize;
     int  _prefetchCount;
     NSString * _virtualCPLTaskIdentifier;
@@ -31,7 +31,7 @@
 @property BOOL didCompleteCPLPrefetchingWithSuccessOrError;
 @property (nonatomic, readonly) int format;
 @property (nonatomic, readonly) int imageType;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } optimalSourcePixelSize;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } optimalSourcePixelSize;
 @property (retain) NSString *virtualCPLTaskIdentifier;
 
 - (BOOL)CPLPrefetching;
@@ -53,7 +53,7 @@
 - (int)incrementPrefetchCount;
 - (id)initForCPLPrefetchingWithAssetUUID:(id)arg1 format:(int)arg2;
 - (BOOL)isCancelled;
-- (struct CGSize { double x1; double x2; })optimalSourcePixelSize;
+- (struct CGSize { float x1; float x2; })optimalSourcePixelSize;
 - (void)resetPrefetchCount;
 - (void)setBestFormat:(int)arg1;
 - (void)setCPLPrefetchingWasCancelled:(BOOL)arg1;

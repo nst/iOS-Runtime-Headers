@@ -4,7 +4,7 @@
 
 @interface NTPBPersonalizationAggregate : PBCodable <FCMutablePersonalizationAggregate, FCPersonalizationAggregate, NSCopying> {
     double  _clicks;
-    unsigned int  _eventCount;
+    unsigned long long  _eventCount;
     NSString * _featureKey;
     struct { 
         unsigned int clicks : 1; 
@@ -13,7 +13,7 @@
         unsigned int timestamp : 1; 
     }  _has;
     double  _impressions;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic, readonly) double clicks;
@@ -21,8 +21,8 @@
 @property (nonatomic, readonly) double confidence;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) unsigned int eventCount;
-@property (nonatomic) unsigned int eventCount;
+@property (nonatomic, readonly) unsigned long long eventCount;
+@property (nonatomic) unsigned long long eventCount;
 @property (nonatomic, readonly) NSString *featureKey;
 @property (nonatomic, retain) NSString *featureKey;
 @property (nonatomic) BOOL hasClicks;
@@ -36,7 +36,7 @@
 @property (nonatomic, readonly) NSDate *lastModified;
 @property (readonly) Class superclass;
 @property (nonatomic) double timestamp;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 
 // Image: /System/Library/PrivateFrameworks/NewsTransport.framework/NewsTransport
 
@@ -45,7 +45,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)eventCount;
+- (unsigned long long)eventCount;
 - (id)featureKey;
 - (BOOL)hasClicks;
 - (BOOL)hasEventCount;
@@ -58,15 +58,15 @@
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setClicks:(double)arg1;
-- (void)setEventCount:(unsigned int)arg1;
+- (void)setEventCount:(unsigned long long)arg1;
 - (void)setFeatureKey:(id)arg1;
 - (void)setHasClicks:(BOOL)arg1;
 - (void)setHasEventCount:(BOOL)arg1;
 - (void)setHasImpressions:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
 - (void)setImpressions:(double)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
-- (unsigned int)timestamp;
+- (void)setTimestamp:(unsigned long long)arg1;
+- (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore

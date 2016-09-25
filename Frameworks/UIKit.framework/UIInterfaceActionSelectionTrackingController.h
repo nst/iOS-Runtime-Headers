@@ -4,8 +4,8 @@
 
 @interface UIInterfaceActionSelectionTrackingController : NSObject <UIFocusedInterfaceActionPressDelegate, UIGestureRecognizerDelegate> {
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _actionSelectionInitialLocationInContainerView;
     UIScrollView * _actionsScrollView;
     NSArray * _representationViews;
@@ -23,7 +23,7 @@
     NSPointerArray * _weakCooperatingSelectionTrackingControllers;
 }
 
-@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } actionSelectionInitialLocationInContainerView;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } actionSelectionInitialLocationInContainerView;
 @property (nonatomic) UIScrollView *actionsScrollView;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -64,7 +64,7 @@
 - (void)_setSystemProvidedGestureRecognizer:(id)arg1;
 - (BOOL)_shouldDisableSelectionTrackingIfScrollingScrollView:(id)arg1;
 - (void)_unregisterForScrollViewNotifications;
-- (struct CGPoint { double x1; double x2; })actionSelectionInitialLocationInContainerView;
+- (struct CGPoint { float x1; float x2; })actionSelectionInitialLocationInContainerView;
 - (id)actionsScrollView;
 - (void)beginTrackingSessionByTakingOverForSystemProvidedGestureRecognizer:(id)arg1;
 - (void)dealloc;

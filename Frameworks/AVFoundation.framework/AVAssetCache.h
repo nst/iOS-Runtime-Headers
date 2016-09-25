@@ -11,14 +11,14 @@
 - (id)URL;
 - (id)_init;
 - (id)allKeys;
-- (int)currentSize;
+- (long long)currentSize;
 - (id)initWithURL:(id)arg1;
 - (BOOL)isPlayableOffline;
 - (id)lastModifiedDateOfEntryForKey:(id)arg1;
-- (int)maxEntrySize;
-- (int)maxSize;
+- (long long)maxEntrySize;
+- (long long)maxSize;
 - (id)mediaSelectionOptionsInMediaSelectionGroup:(id)arg1;
 - (void)removeEntryForKey:(id)arg1;
-- (int)sizeOfEntryForKey:(id)arg1;
+- (long long)sizeOfEntryForKey:(id)arg1;
 
 @end

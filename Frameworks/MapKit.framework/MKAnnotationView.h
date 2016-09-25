@@ -9,13 +9,13 @@
     MKAnnotationManager * _annotationManager;
     id /* block */  _calloutHitTest;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _calloutOffset;
     UICalloutView * _calloutView;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _centerOffset;
     struct CLLocationCoordinate2D { 
         double latitude; 
@@ -42,8 +42,8 @@
     BOOL  _internalTransformApplied;
     UIView * _leftCalloutAccessoryView;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _leftCalloutOffset;
     struct { 
         unsigned char timePeriod; 
@@ -52,8 +52,8 @@
         unsigned char searchResultsType; 
         BOOL mapHasLabels; 
     }  _mapDisplayStyle;
-    double  _mapPitchRadians;
-    double  _mapRotationRadians;
+    float  _mapPitchRadians;
+    float  _mapRotationRadians;
     unsigned int  _mapType;
     BOOL  _pendingSelectionAnimated;
     struct CLLocationCoordinate2D { 
@@ -65,10 +65,10 @@
     NSString * _reuseIdentifier;
     UIView * _rightCalloutAccessoryView;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _rightCalloutOffset;
-    double  _rotationRadians;
+    float  _rotationRadians;
     GEORouteMatch * _routeMatch;
     BOOL  _tracking;
     MKUserLocationAnnotationViewProxy * _userLocationProxy;
@@ -83,7 +83,7 @@
 @property (setter=_setPresentationCoordinateChangedCallback:, nonatomic, copy) id /* block */ _presentationCoordinateChangedCallback;
 @property (setter=_setPresentationCourse:, nonatomic) double _presentationCourse;
 @property (setter=_setRouteMatch:, nonatomic, retain) GEORouteMatch *_routeMatch;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } _significantFrame;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } _significantFrame;
 @property (getter=_isTracking, setter=_setTracking:, nonatomic) BOOL _tracking;
 @property (nonatomic, readonly) MKUserLocationAnnotationViewProxy *_userLocationProxy;
 @property (nonatomic, readonly) VKAnchorWrapper *anchor;
@@ -94,9 +94,9 @@
 @property (getter=_balloonInnerStrokeColor, nonatomic, readonly) UIColor *balloonInnerStrokeColor;
 @property (getter=_balloonStrokeColor, nonatomic, readonly) UIColor *balloonStrokeColor;
 @property (getter=_balloonTintColor, nonatomic, readonly) UIColor *balloonTintColor;
-@property (nonatomic) struct CGPoint { double x1; double x2; } calloutOffset;
+@property (nonatomic) struct CGPoint { float x1; float x2; } calloutOffset;
 @property (nonatomic) BOOL canShowCallout;
-@property (nonatomic) struct CGPoint { double x1; double x2; } centerOffset;
+@property (nonatomic) struct CGPoint { float x1; float x2; } centerOffset;
 @property (nonatomic, readonly) struct CLLocationCoordinate2D { double x1; double x2; } coordinate;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -109,16 +109,16 @@
 @property (getter=isHighlighted, nonatomic) BOOL highlighted;
 @property (nonatomic, retain) UIImage *image;
 @property (nonatomic, retain) UIView *leftCalloutAccessoryView;
-@property (nonatomic) struct CGPoint { double x1; double x2; } leftCalloutOffset;
+@property (nonatomic) struct CGPoint { float x1; float x2; } leftCalloutOffset;
 @property (getter=_mapDisplayStyle, setter=_setMapDisplayStyle:, nonatomic) struct { unsigned char x1; unsigned char x2; unsigned char x3; unsigned char x4; BOOL x5; } mapDisplayStyle;
-@property (getter=_mapPitchRadians, setter=_setMapPitchRadians:, nonatomic) double mapPitchRadians;
-@property (getter=_mapRotationRadians, setter=_setMapRotationRadians:, nonatomic) double mapRotationRadians;
+@property (getter=_mapPitchRadians, setter=_setMapPitchRadians:, nonatomic) float mapPitchRadians;
+@property (getter=_mapRotationRadians, setter=_setMapRotationRadians:, nonatomic) float mapRotationRadians;
 @property (getter=_isPendingSelectionAnimated, setter=_setPendingSelectionAnimated:, nonatomic) BOOL pendingSelectionAnimated;
 @property (nonatomic, readonly) NSString *reuseIdentifier;
 @property (nonatomic, retain) UIView *rightCalloutAccessoryView;
-@property (nonatomic) struct CGPoint { double x1; double x2; } rightCalloutOffset;
+@property (nonatomic) struct CGPoint { float x1; float x2; } rightCalloutOffset;
 @property (getter=isSelected, nonatomic) BOOL selected;
-@property (getter=_significantBounds, nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } significantBounds;
+@property (getter=_significantBounds, nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } significantBounds;
 @property (readonly) Class superclass;
 @property (getter=_useBalloonCallouts, setter=_setUseBalloonCallouts:, nonatomic) BOOL useBalloonCallouts;
 
@@ -150,7 +150,7 @@
 - (void)_didHideBalloonCalloutView:(id)arg1;
 - (void)_didUpdatePosition;
 - (double)_direction;
-- (struct CGPoint { double x1; double x2; })_draggingDropOffset;
+- (struct CGPoint { float x1; float x2; })_draggingDropOffset;
 - (void)_enableRotationForHeadingMode:(float)arg1;
 - (id)_getPopover:(id)arg1;
 - (BOOL)_hasAlternateOrientation;
@@ -163,7 +163,7 @@
 - (float)_mapPitchRadians;
 - (float)_mapRotationRadians;
 - (unsigned int)_mapType;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_mapkit_visibleRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_mapkit_visibleRect;
 - (unsigned int)_orientationCount;
 - (float)_pointsForDistance:(double)arg1;
 - (struct CLLocationCoordinate2D { double x1; double x2; })_presentationCoordinate;
@@ -195,8 +195,8 @@
 - (void)_setUseBalloonCallouts:(BOOL)arg1;
 - (void)_setZIndex:(unsigned int)arg1;
 - (void)_setZIndex:(unsigned int)arg1 notify:(BOOL)arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_significantBounds;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_significantFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_significantBounds;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_significantFrame;
 - (void)_transitionFrom:(int)arg1 to:(int)arg2 duration:(double)arg3;
 - (void)_updateFromMap;
 - (BOOL)_useBalloonCallouts;
@@ -206,19 +206,19 @@
 - (unsigned int)_zIndex;
 - (id)anchor;
 - (id)annotation;
-- (struct CGPoint { double x1; double x2; })calloutOffset;
+- (struct CGPoint { float x1; float x2; })calloutOffset;
 - (BOOL)canShowCallout;
-- (struct CGPoint { double x1; double x2; })centerOffset;
+- (struct CGPoint { float x1; float x2; })centerOffset;
 - (void)commonInit;
 - (struct CLLocationCoordinate2D { double x1; double x2; })coordinate;
 - (void)dealloc;
 - (id)detailCalloutAccessoryView;
 - (unsigned int)dragState;
-- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)image;
 - (id)initWithAnnotation:(id)arg1 reuseIdentifier:(id)arg2;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isDraggable;
 - (BOOL)isEnabled;
 - (BOOL)isHighlighted;
@@ -226,15 +226,15 @@
 - (BOOL)isSelected;
 - (void)layoutSubviews;
 - (id)leftCalloutAccessoryView;
-- (struct CGPoint { double x1; double x2; })leftCalloutOffset;
+- (struct CGPoint { float x1; float x2; })leftCalloutOffset;
 - (void)prepareForReuse;
 - (id)reuseIdentifier;
 - (id)rightCalloutAccessoryView;
-- (struct CGPoint { double x1; double x2; })rightCalloutOffset;
+- (struct CGPoint { float x1; float x2; })rightCalloutOffset;
 - (void)setAnnotation:(id)arg1;
-- (void)setCalloutOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setCalloutOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setCanShowCallout:(BOOL)arg1;
-- (void)setCenterOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setCenterOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setDetailCalloutAccessoryView:(id)arg1;
 - (void)setDragState:(unsigned int)arg1;
 - (void)setDragState:(unsigned int)arg1 animated:(BOOL)arg2;
@@ -244,9 +244,9 @@
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setImage:(id)arg1;
 - (void)setLeftCalloutAccessoryView:(id)arg1;
-- (void)setLeftCalloutOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setLeftCalloutOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setRightCalloutAccessoryView:(id)arg1;
-- (void)setRightCalloutOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setRightCalloutOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setSelected:(BOOL)arg1;
 - (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)set_calloutHitTest:(id /* block */)arg1;

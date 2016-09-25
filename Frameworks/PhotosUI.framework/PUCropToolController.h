@@ -20,12 +20,12 @@
     PUCropAndStraightenView * __cropView;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  __cropViewFrameForLastModelLoad;
     NSObject<OS_dispatch_queue> * __fileSystemQueue;
@@ -37,12 +37,12 @@
     UIImage * __image;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  __initialHandlePanCropRect;
     NSMutableDictionary * __initialLocationsInHandlesByHandle;
@@ -53,47 +53,47 @@
     BOOL  __needsModelLoad;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  __normalizedImageRect;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  __previewViewInsets;
     PLPhotoEditRenderer * __renderer;
     UIButton * __rotateButton;
     UIView * __rotateSnapshotView;
     unsigned int  __rotatingAnimationCount;
     PUCropHandleView * __selectedCropHandleView;
-    double  __straightenAngle;
+    float  __straightenAngle;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  __suggestedCrop;
-    double  __suggestedStraightenAngle;
+    float  __suggestedStraightenAngle;
     PUTiltWheelControl * __tiltControl;
     PUVideoEditRenderer * __videoRenderer;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  __viewCropRect;
     BOOL  __wantsPreviewViewHidden;
@@ -115,7 +115,7 @@
 @property (setter=_setCropToggleButton:, nonatomic, retain) UIButton *_cropToggleButton;
 @property (setter=_setCropToggleButtonTitle:, nonatomic, copy) NSString *_cropToggleButtonTitle;
 @property (setter=_setCropView:, nonatomic, retain) PUCropAndStraightenView *_cropView;
-@property (setter=_setCropViewFrameForLastModelLoad:, nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } _cropViewFrameForLastModelLoad;
+@property (setter=_setCropViewFrameForLastModelLoad:, nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } _cropViewFrameForLastModelLoad;
 @property (setter=_setFileSystemQueue:, nonatomic, retain) NSObject<OS_dispatch_queue> *_fileSystemQueue;
 @property (setter=_setGeometry:, nonatomic, retain) PLImageGeometry *_geometry;
 @property (setter=_setHasAppliedCropSuggestion:, nonatomic) BOOL _hasAppliedCropSuggestion;
@@ -123,26 +123,26 @@
 @property (setter=_setHasRequestedCropSuggestion:, nonatomic) BOOL _hasRequestedCropSuggestion;
 @property (setter=_setIgnoreTrackingUpdates:, nonatomic) BOOL _ignoreTrackingUpdates;
 @property (setter=_setImage:, nonatomic, retain) UIImage *_image;
-@property (setter=_setInitialHandlePanCropRect:, nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } _initialHandlePanCropRect;
+@property (setter=_setInitialHandlePanCropRect:, nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } _initialHandlePanCropRect;
 @property (setter=_setInitialLocationsInHandlesByHandle:, nonatomic, retain) NSMutableDictionary *_initialLocationsInHandlesByHandle;
 @property (setter=_setLastKnownEditModel:, nonatomic, retain) PLPhotoEditModel *_lastKnownEditModel;
 @property (getter=_isModelChangeLocal, setter=_setModelChangeLocal:, nonatomic) BOOL _modelChangeLocal;
 @property (setter=_setNeedsImageLoad:, nonatomic) BOOL _needsImageLoad;
 @property (setter=_setNeedsLivePhotoLoad:, nonatomic) BOOL _needsLivePhotoLoad;
 @property (setter=_setNeedsModelLoad:, nonatomic) BOOL _needsModelLoad;
-@property (setter=_setNormalizedImageRect:, nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } _normalizedImageRect;
-@property (setter=_setPreviewViewInsets:, nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } _previewViewInsets;
+@property (setter=_setNormalizedImageRect:, nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } _normalizedImageRect;
+@property (setter=_setPreviewViewInsets:, nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } _previewViewInsets;
 @property (setter=_setRenderer:, nonatomic, retain) PLPhotoEditRenderer *_renderer;
 @property (setter=_setRotateButton:, nonatomic, retain) UIButton *_rotateButton;
 @property (setter=_setRotateSnapshotView:, nonatomic, retain) UIView *_rotateSnapshotView;
 @property (setter=_setRotatingAnimationCount:, nonatomic) unsigned int _rotatingAnimationCount;
 @property (setter=_setSelectedCropHandleView:, nonatomic, retain) PUCropHandleView *_selectedCropHandleView;
-@property (setter=_setStraightenAngle:, nonatomic) double _straightenAngle;
-@property (setter=_setSuggestedCrop:, nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } _suggestedCrop;
-@property (setter=_setSuggestedStraightenAngle:, nonatomic) double _suggestedStraightenAngle;
+@property (setter=_setStraightenAngle:, nonatomic) float _straightenAngle;
+@property (setter=_setSuggestedCrop:, nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } _suggestedCrop;
+@property (setter=_setSuggestedStraightenAngle:, nonatomic) float _suggestedStraightenAngle;
 @property (setter=_setTiltControl:, nonatomic, retain) PUTiltWheelControl *_tiltControl;
 @property (setter=_setVideoRenderer:, nonatomic, retain) PUVideoEditRenderer *_videoRenderer;
-@property (setter=_setViewCropRect:, nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } _viewCropRect;
+@property (setter=_setViewCropRect:, nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } _viewCropRect;
 @property (setter=_setWantsPreviewViewHidden:, nonatomic) BOOL _wantsPreviewViewHidden;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -153,14 +153,14 @@
 
 - (void).cxx_destruct;
 - (id)_CIImage;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_addHeight:(float)arg1 toRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 anchorTop:(BOOL)arg3;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_addWidth:(float)arg1 toRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 anchorLeft:(BOOL)arg3;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_addHeight:(float)arg1 toRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 anchorTop:(BOOL)arg3;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_addWidth:(float)arg1 toRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 anchorLeft:(BOOL)arg3;
 - (id)_animateValueFromValue:(float)arg1 toValue:(float)arg2 interpolation:(id /* block */)arg3 completion:(id /* block */)arg4;
 - (id)_animationForKeyPath:(id)arg1;
 - (id)_animationTargetForKeyPath:(id)arg1;
 - (id)_animationTargetsByKeyPath;
 - (id)_animationsByKeyPath;
-- (struct CGVector { double x1; double x2; })_applyAspectOfCropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 toHandleMovement:(struct CGVector { double x1; double x2; })arg2;
+- (struct CGVector { float x1; float x2; })_applyAspectOfCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 toHandleMovement:(struct CGVector { float x1; float x2; })arg2;
 - (void)_applyCropSuggestion;
 - (id)_aspectAlertController;
 - (id)_aspectButton;
@@ -171,25 +171,25 @@
 - (void)_cancelDelayedRecomposeCropRect;
 - (BOOL)_contentViewsHidden;
 - (unsigned int)_contentViewsHiddenAnimationCount;
-- (struct CGVector { double x1; double x2; })_correctInputVector:(struct CGVector { double x1; double x2; })arg1 forHandle:(unsigned int)arg2 onCropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 lockDirection:(BOOL)arg4;
+- (struct CGVector { float x1; float x2; })_correctInputVector:(struct CGVector { float x1; float x2; })arg1 forHandle:(unsigned int)arg2 onCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 lockDirection:(BOOL)arg4;
 - (void)_createRendererIfNeeded;
 - (id)_cropAspect;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_cropCanvasFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_cropCanvasFrame;
 - (id)_cropCanvasView;
 - (id)_cropHandleViewsByHandle;
 - (id)_cropOverlayView;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_cropRectFromPanningHandle:(unsigned int)arg1 byAmount:(struct CGVector { double x1; double x2; })arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_cropRectFromPanningHandle:(unsigned int)arg1 byAmount:(struct CGVector { float x1; float x2; })arg2;
 - (id)_cropToggleButton;
 - (id)_cropToggleButtonTitle;
 - (void)_cropToggleTapped:(id)arg1;
 - (id)_cropView;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_cropViewFrameForLastModelLoad;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_defaultCropRect;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_defaultNormalizedCropRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_cropViewFrameForLastModelLoad;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_defaultCropRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_defaultNormalizedCropRect;
 - (int)_defaultOrientation;
 - (float)_defaultStraightenAngle;
-- (struct CGVector { double x1; double x2; })_deltaMaskForHandle:(unsigned int)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_denormalizeImageRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGVector { float x1; float x2; })_deltaMaskForHandle:(unsigned int)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_denormalizeImageRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)_fileSystemQueue;
 - (id)_geometry;
 - (void)_handleCropHandlePan:(id)arg1;
@@ -207,7 +207,7 @@
 - (void)_hideMaskedContentDelayed;
 - (BOOL)_ignoreTrackingUpdates;
 - (id)_image;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_initialHandlePanCropRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_initialHandlePanCropRect;
 - (id)_initialLocationsInHandlesByHandle;
 - (void)_installRenderedImageAndDisplayIfNeeded;
 - (void)_invalidateConstraintsForKey:(id)arg1;
@@ -223,13 +223,13 @@
 - (BOOL)_needsLivePhotoLoad;
 - (BOOL)_needsModelLoad;
 - (BOOL)_needsRecomposeCropRect;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_normalizeImageRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_normalizedImageRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_normalizeImageRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_normalizedImageRect;
 - (void)_performGeometryChange:(id /* block */)arg1 animated:(BOOL)arg2;
 - (void)_performLocalModelChanges:(id /* block */)arg1;
-- (struct CGPoint { double x1; double x2; })_pointForHandle:(unsigned int)arg1;
-- (struct CGPoint { double x1; double x2; })_pointForHandle:(unsigned int)arg1 onCropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_previewViewInsets;
+- (struct CGPoint { float x1; float x2; })_pointForHandle:(unsigned int)arg1;
+- (struct CGPoint { float x1; float x2; })_pointForHandle:(unsigned int)arg1 onCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_previewViewInsets;
 - (void)_recomposeCropRectAnimated:(BOOL)arg1;
 - (void)_recomposeCropRectDelayed;
 - (void)_removeSnapshotView:(id)arg1;
@@ -260,7 +260,7 @@
 - (void)_setCropToggleButton:(id)arg1;
 - (void)_setCropToggleButtonTitle:(id)arg1;
 - (void)_setCropView:(id)arg1;
-- (void)_setCropViewFrameForLastModelLoad:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)_setCropViewFrameForLastModelLoad:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_setFileSystemQueue:(id)arg1;
 - (void)_setGeometry:(id)arg1;
 - (void)_setHasAppliedCropSuggestion:(BOOL)arg1;
@@ -268,15 +268,15 @@
 - (void)_setHasRequestedCropSuggestion:(BOOL)arg1;
 - (void)_setIgnoreTrackingUpdates:(BOOL)arg1;
 - (void)_setImage:(id)arg1;
-- (void)_setInitialHandlePanCropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)_setInitialHandlePanCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_setInitialLocationsInHandlesByHandle:(id)arg1;
 - (void)_setLastKnownEditModel:(id)arg1;
 - (void)_setModelChangeLocal:(BOOL)arg1;
 - (void)_setNeedsImageLoad:(BOOL)arg1;
 - (void)_setNeedsLivePhotoLoad:(BOOL)arg1;
 - (void)_setNeedsModelLoad:(BOOL)arg1;
-- (void)_setNormalizedImageRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)_setPreviewViewInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)_setNormalizedImageRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_setPreviewViewInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)_setRenderer:(id)arg1;
 - (void)_setRotateButton:(id)arg1;
 - (void)_setRotateSnapshotView:(id)arg1;
@@ -284,20 +284,20 @@
 - (void)_setSelectedCropHandleView:(id)arg1;
 - (void)_setStraightenAngle:(float)arg1;
 - (void)_setStraightenAngle:(float)arg1 animated:(BOOL)arg2;
-- (void)_setSuggestedCrop:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)_setSuggestedCrop:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_setSuggestedStraightenAngle:(float)arg1;
 - (void)_setTiltControl:(id)arg1;
 - (void)_setTrackingTiltControl:(BOOL)arg1;
 - (void)_setVideoRenderer:(id)arg1;
-- (void)_setViewCropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)_setViewCropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 normalizedImageRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
-- (void)_setViewCropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 normalizedImageRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 animated:(BOOL)arg3;
+- (void)_setViewCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_setViewCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 normalizedImageRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (void)_setViewCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 normalizedImageRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 animated:(BOOL)arg3;
 - (void)_setWantsPreviewViewHidden:(BOOL)arg1;
 - (void)_showGridAndCancelDelayedHide;
 - (void)_showMaskedContentAndCancelDelayedHide;
 - (float)_straightenAngle;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_suggestedCrop;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_suggestedCropRectForImageRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_suggestedCrop;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_suggestedCropRectForImageRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (float)_suggestedStraightenAngle;
 - (id)_tiltControl;
 - (void)_tiltControlChanged:(id)arg1;
@@ -312,10 +312,10 @@
 - (void)_updatePreviewViewInsets;
 - (void)_updateTiltControlColor;
 - (void)_updateTiltWheelConstraintsIfNeeded;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_validatedRectFromNormalizedImageRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_validatedRectFromNormalizedImageRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)_videoRenderer;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_viewCropRect;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_viewCropToMatchPreview;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_viewCropRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_viewCropToMatchPreview;
 - (BOOL)_wantsPreviewViewHidden;
 - (void)animateBecomingActiveTool;
 - (void)animateResigningActiveTool;
@@ -333,7 +333,7 @@
 - (id)localizedResetToolActionTitle;
 - (void)photoEditModelDidChange;
 - (void)popoverPresentationControllerDidDismissPopover:(id)arg1;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })preferredPreviewViewInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })preferredPreviewViewInsets;
 - (void)prepareForPopoverPresentation:(id)arg1;
 - (void)resetToDefaultValueAnimated:(BOOL)arg1;
 - (id)selectedToolbarIcon;

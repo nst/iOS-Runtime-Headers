@@ -26,7 +26,7 @@
 + (void)waitUntilDone:(id /* block */)arg1;
 
 - (id)_values;
-- (void)_waitWithDispatchTimeout:(unsigned int)arg1;
+- (void)_waitWithDispatchTimeout:(unsigned long long)arg1;
 - (id)allValues;
 - (void)dealloc;
 - (id)description;

@@ -9,7 +9,7 @@
     NSDate * _creationDate;
     BOOL  _favorite;
     NSData * _graphData;
-    int  _graphVersion;
+    long long  _graphVersion;
     NSData * _movieData;
     BOOL  _rejected;
     double  _score;
@@ -25,7 +25,7 @@
 @property (nonatomic, copy) NSDate *creationDate;
 @property (getter=isFavorite, nonatomic) BOOL favorite;
 @property (nonatomic, copy) NSData *graphData;
-@property (nonatomic) int graphVersion;
+@property (nonatomic) long long graphVersion;
 @property (nonatomic, copy) NSData *movieData;
 @property (getter=isRejected, nonatomic) BOOL rejected;
 @property (nonatomic) double score;
@@ -42,7 +42,7 @@
 - (int)category;
 - (id)creationDate;
 - (id)graphData;
-- (int)graphVersion;
+- (long long)graphVersion;
 - (id)identifiersForMapping;
 - (BOOL)isFavorite;
 - (BOOL)isRejected;
@@ -56,7 +56,7 @@
 - (void)setCreationDate:(id)arg1;
 - (void)setFavorite:(BOOL)arg1;
 - (void)setGraphData:(id)arg1;
-- (void)setGraphVersion:(int)arg1;
+- (void)setGraphVersion:(long long)arg1;
 - (void)setMovieData:(id)arg1;
 - (void)setRejected:(BOOL)arg1;
 - (void)setScore:(double)arg1;

@@ -4,9 +4,9 @@
 
 @interface NightModeControl : NSObject {
     struct BLRAggdInfo { 
-        double manualModeTime; 
-        double sunModeTime; 
-        double scheduleModeTime; 
+        float manualModeTime; 
+        float sunModeTime; 
+        float scheduleModeTime; 
         int turnOnForNowCount; 
         int turnOffForNowCount; 
         int turnOnUntilTomorrowCount; 
@@ -37,17 +37,17 @@
     struct __CFUserNotification { } * _enableNotification;
     struct NMFactorState { 
         double rampStartTime; 
-        double factor; 
-        double target; 
-        double start; 
-        double rampLength; 
+        float factor; 
+        float target; 
+        float start; 
+        float rampLength; 
     }  _factorState;
-    double  _inactivityTimeout;
+    float  _inactivityTimeout;
     BOOL  _isDaylight;
     NSString * _isDaylightKey;
     int  _logLevel;
-    double  _maxFactor;
-    double  _minFactor;
+    float  _maxFactor;
+    float  _minFactor;
     NSString * _nextSunriseKey;
     NSString * _nextSunsetKey;
     NSObject<OS_dispatch_source> * _nextTransitionTimer;
@@ -85,12 +85,12 @@
     SunriseSunsetProvider * _sunriseSunsetProvider;
     double  _sunsetAbsolute;
     double  _sunsetPreviousAbsolute;
-    double  _transitionLength;
-    double  _transitionLengthActual;
-    double  _transitionRate;
+    float  _transitionLength;
+    float  _transitionLengthActual;
+    float  _transitionRate;
     NSObject<OS_dispatch_source> * _transitionTimer;
     BOOL  _transitionTimesValid;
-    double  _transitionsTimesCoeff;
+    float  _transitionsTimesCoeff;
     double  _untilNexTransitionTimestamp;
 }
 

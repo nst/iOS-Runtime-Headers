@@ -23,9 +23,9 @@
 - (id)_initWithNotificationRequest:(id)arg1 revealingAdditionalContentOnPresentation:(BOOL)arg2;
 - (void)_loadLookView;
 - (void)_notificationViewControllerViewDidLoad;
-- (struct CGSize { double x1; double x2; })_preferredCustomContentSizeForSize:(struct CGSize { double x1; double x2; })arg1 parentContentContainerBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (struct CGSize { float x1; float x2; })_preferredCustomContentSizeForSize:(struct CGSize { float x1; float x2; })arg1 parentContentContainerBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (id)_presentingNotificationViewController;
-- (void)_setPreferredCustomContentSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)_setPreferredCustomContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)_shouldPadScrollViewContentSizeHeight;
 - (float)_translationWithVelocity:(float)arg1 acceleration:(float)arg2;
 - (void)_updateWithProvidedCustomContent;
@@ -37,7 +37,7 @@
 - (BOOL)dismissPresentedViewControllerAndClearNotification:(BOOL)arg1 animated:(BOOL)arg2;
 - (BOOL)isContentExtensionVisible:(id)arg1;
 - (BOOL)isLookStyleLongLook;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })longLookPresentationController:(id)arg1 frameForTransitionViewInPresentationSuperview:(id)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })longLookPresentationController:(id)arg1 frameForTransitionViewInPresentationSuperview:(id)arg2;
 - (unsigned int)longLookPresentationControllerDismissalEdge:(id)arg1;
 - (BOOL)longLookPresentationControllerPreviewShouldIncludeShadow:(id)arg1;
 - (BOOL)longLookPresentationControllerShouldIncludePreview:(id)arg1;
@@ -48,9 +48,9 @@
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(BOOL)arg2;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)setNotificationRequest:(id)arg1;
-- (struct CGSize { double x1; double x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { double x1; double x2; })arg2;
+- (struct CGSize { float x1; float x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillLayoutSubviews;
-- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

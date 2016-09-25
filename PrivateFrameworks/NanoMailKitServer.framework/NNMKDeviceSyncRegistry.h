@@ -5,8 +5,8 @@
 @interface NNMKDeviceSyncRegistry : NSObject {
     NNMKSQLiteConnection * _database;
     NSDate * _dateReceivedCapForAdding;
-    double  _deviceScreenScale;
-    double  _deviceScreenWidth;
+    float  _deviceScreenScale;
+    float  _deviceScreenWidth;
     NSDate * _disconnectedSince;
     unsigned int  _fullMessagesSyncVersion;
     BOOL  _isMessagesSyncActive;
@@ -20,8 +20,8 @@
 
 @property (nonatomic, retain) NNMKSQLiteConnection *database;
 @property (nonatomic, retain) NSDate *dateReceivedCapForAdding;
-@property (nonatomic) double deviceScreenScale;
-@property (nonatomic) double deviceScreenWidth;
+@property (nonatomic) float deviceScreenScale;
+@property (nonatomic) float deviceScreenWidth;
 @property (nonatomic, retain) NSDate *disconnectedSince;
 @property (nonatomic) unsigned int fullMessagesSyncVersion;
 @property (nonatomic) BOOL isMessagesSyncActive;

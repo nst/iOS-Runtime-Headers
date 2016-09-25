@@ -5,9 +5,9 @@
 @interface EKDayOccurrenceView : UIVisualEffectView <EKDayOccurrenceTravelTimeViewMetricsDelegate, NSCopying> {
     BOOL  _allDay;
     BOOL  _allDayDrawingStyle;
-    double  _bottomPinningProximity;
+    float  _bottomPinningProximity;
     unsigned int  _bottomPinningState;
-    double  _cappedColorBarHeight;
+    float  _cappedColorBarHeight;
     UIColor * _color;
     EKDayOccurrenceContentView * _content;
     BOOL  _declined;
@@ -21,10 +21,10 @@
     BOOL  _isProposedTime;
     BOOL  _isSelectedCopyView;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _margin;
     BOOL  _needsBackgroundImageUpdate;
     BOOL  _needsContentCalc;
@@ -32,12 +32,12 @@
     EKEvent * _occurrence;
     int  _occurrenceBackgroundStyle;
     unsigned int  _offsetContentForLandscape;
-    double  _originalXBeforeOffset;
+    float  _originalXBeforeOffset;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _padding;
     UIView * _pinFadeView;
     BOOL  _reduceLayoutProcessingForAnimation;
@@ -51,37 +51,37 @@
     UIImageView * _travelBackgroundView;
     double  _travelTime;
     EKDayOccurrenceTravelTimeView * _travelTimeContentView;
-    double  _travelTimeSubviewHeightInPoints;
+    float  _travelTimeSubviewHeightInPoints;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _unpinnedEventBackgroundFrame;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _unpinnedTravelBackgroundFrame;
-    double  _visibleHeight;
+    float  _visibleHeight;
     BOOL  _visibleHeightLocked;
 }
 
 @property (getter=isAllDay, nonatomic) BOOL allDay;
 @property (nonatomic) BOOL allDayDrawingStyle;
 @property (getter=isBirthday, nonatomic) BOOL birthday;
-@property (nonatomic) double bottomPinningProximity;
+@property (nonatomic) float bottomPinningProximity;
 @property (getter=isCancelled, nonatomic) BOOL cancelled;
-@property (nonatomic) double cappedColorBarHeight;
+@property (nonatomic) float cappedColorBarHeight;
 @property (nonatomic, copy) UIColor *color;
 @property (readonly, copy) NSString *debugDescription;
 @property (getter=isDeclined, nonatomic) BOOL declined;
@@ -97,11 +97,11 @@
 @property (nonatomic) BOOL isProposedTime;
 @property (nonatomic) BOOL isSelectedCopyView;
 @property (nonatomic, copy) NSString *location;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } margin;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } margin;
 @property (nonatomic) BOOL needsReply;
 @property (nonatomic, retain) EKEvent *occurrence;
 @property (nonatomic) int occurrenceBackgroundStyle;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } padding;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } padding;
 @property (nonatomic) BOOL reduceLayoutProcessingForAnimation;
 @property (nonatomic) int routingMode;
 @property (nonatomic, retain) UIColor *secondaryTextColor;
@@ -116,7 +116,7 @@
 @property (nonatomic, retain) UIColor *titleTextColor;
 @property (nonatomic) BOOL touchesAreBeingTracked;
 @property (nonatomic) double travelTime;
-@property (nonatomic) double travelTimeSubviewHeightInPoints;
+@property (nonatomic) float travelTimeSubviewHeightInPoints;
 @property (nonatomic) BOOL usesSmallText;
 @property (nonatomic, readonly) BOOL visibleHeightLocked;
 
@@ -132,13 +132,13 @@
 + (float)bottomShadowMargin;
 + (void)clearCaches;
 + (float)colorBarThickness;
-+ (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })contentStretchRectForFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-+ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })defaultMargin;
-+ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })defaultPadding;
++ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentStretchRectForFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
++ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })defaultMargin;
++ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })defaultPadding;
 + (float)minimumHeightForOrientation:(int)arg1;
 + (float)minimumHeightForOrientation:(int)arg1 isAllDay:(BOOL)arg2;
 + (float)minimumHeightForOrientation:(int)arg1 isAllDay:(BOOL)arg2 usesSmallText:(BOOL)arg3;
-+ (id)occurrenceViewWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
++ (id)occurrenceViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 - (void).cxx_destruct;
 - (void)_addTravelTimeSubviews;
@@ -147,9 +147,9 @@
 - (int)_compareOccurrenceViewLeftToRight:(id)arg1;
 - (int)_compareOccurrenceViewTopToBottom:(id)arg1;
 - (int)_compareOccurrenceViewTopToBottomLeftToRight:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_computeContentRect;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_computeTravelTimeContentRect;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameMutatedForProximityToHourLine:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_computeContentRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_computeTravelTimeContentRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameMutatedForProximityToHourLine:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_invalidateContentBounds;
 - (BOOL)_isAboveAllDayOccurrenceView:(id)arg1;
 - (BOOL)_isAboveOccurrenceView:(id)arg1 overlapToIgnore:(double)arg2;
@@ -164,28 +164,28 @@
 - (void)_updateResizeHandleLocations;
 - (float)_verticalContentInset;
 - (BOOL)allDayDrawingStyle;
-- (void)animateToFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 isAllDay:(BOOL)arg2 beginFromCurrentState:(BOOL)arg3 whenFinished:(id /* block */)arg4;
+- (void)animateToFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 isAllDay:(BOOL)arg2 beginFromCurrentState:(BOOL)arg3 whenFinished:(id /* block */)arg4;
 - (id)arrayOfResizeHandles;
 - (float)bottomPinningProximity;
 - (void)bringResizeHandlesToFront;
 - (float)cappedColorBarHeight;
 - (id)color;
 - (int)compareOccurrenceViewForTabOrdering:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })contentRectForPreview;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentRectForPreview;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (id)description;
 - (void)didMoveToSuperview;
 - (BOOL)dimmed;
-- (int)dragTypeFromPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (int)dragTypeFromPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)drawsResizeHandles;
 - (float)enoughHeightForOneLine;
 - (void)fadeInContentViewAt:(float)arg1 minWidth:(float)arg2 animated:(BOOL)arg3;
 - (BOOL)hasIcon;
 - (BOOL)hideBackgroundImage;
 - (BOOL)hideText;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isAllDay;
 - (BOOL)isBirthday;
 - (BOOL)isCancelled;
@@ -197,12 +197,12 @@
 - (BOOL)isTentative;
 - (void)layoutSubviews;
 - (id)location;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })margin;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })margin;
 - (BOOL)needsReply;
 - (id)occurrence;
 - (int)occurrenceBackgroundStyle;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })padding;
-- (BOOL)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })padding;
+- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)prepareForReuse;
 - (BOOL)reduceLayoutProcessingForAnimation;
 - (void)removeFromSuperview;
@@ -225,7 +225,7 @@
 - (void)setDimmed:(BOOL)arg1;
 - (void)setDrawsResizeHandles:(BOOL)arg1;
 - (void)setFacebook:(BOOL)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setHidden:(BOOL)arg1;
 - (void)setHideBackgroundImage:(BOOL)arg1;
 - (void)setHideText:(BOOL)arg1;
@@ -233,11 +233,11 @@
 - (void)setIsProposedTime:(BOOL)arg1;
 - (void)setIsSelectedCopyView:(BOOL)arg1;
 - (void)setLocation:(id)arg1;
-- (void)setMargin:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setMargin:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setNeedsReply:(BOOL)arg1;
 - (void)setOccurrence:(id)arg1;
 - (void)setOccurrenceBackgroundStyle:(int)arg1;
-- (void)setPadding:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setPadding:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setReduceLayoutProcessingForAnimation:(BOOL)arg1;
 - (void)setRoutingMode:(int)arg1;
 - (void)setSecondaryTextColor:(id)arg1;

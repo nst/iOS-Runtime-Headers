@@ -6,12 +6,12 @@
     unsigned int  _fontHints;
     NSString * _fontName;
     struct UIFont { Class x1; } * _nativeFont;
-    double  _pointSize;
+    float  _pointSize;
 }
 
 @property (nonatomic, readonly) unsigned int fontHints;
 @property (nonatomic, readonly) NSString *fontName;
-@property (nonatomic, readonly) double pointSize;
+@property (nonatomic, readonly) float pointSize;
 
 + (struct UIFont { Class x1; }*)convertFont:(struct UIFont { Class x1; }*)arg1 toBold:(BOOL)arg2 toItalic:(BOOL)arg3;
 + (void)font:(struct UIFont { Class x1; }*)arg1 isBold:(BOOL*)arg2 isItalic:(BOOL*)arg3;

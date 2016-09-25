@@ -7,12 +7,12 @@
     double  _photoTime;
     double  _photoTransitionDuration;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _playDuration;
-    double  _playRate;
+    float  _playRate;
     BOOL  _playing;
     BOOL  _prepared;
     BOOL  _preparing;
@@ -22,8 +22,8 @@
 @property (nonatomic) <ISLivePhotoVitalityBehaviorDelegate> *delegate;
 @property (nonatomic, readonly) double photoTime;
 @property (nonatomic, readonly) double photoTransitionDuration;
-@property (nonatomic, readonly) struct { int x1; int x2; unsigned int x3; int x4; } playDuration;
-@property (nonatomic, readonly) double playRate;
+@property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } playDuration;
+@property (nonatomic, readonly) float playRate;
 @property (getter=isPlaying, nonatomic, readonly) BOOL playing;
 @property (getter=isPrepared, setter=_setPrepared:, nonatomic) BOOL prepared;
 @property (getter=_isPreparing, setter=_setPreparing:, nonatomic) BOOL preparing;
@@ -37,12 +37,12 @@
 - (BOOL)_shouldPlayAfterPreparation;
 - (void)_startVideoPlayback;
 - (void)activeDidChange;
-- (id)initWithInitialLayoutInfo:(id)arg1 photoTime:(double)arg2 playDuration:(struct { int x1; int x2; unsigned int x3; int x4; })arg3 playRate:(float)arg4 photoTransitionDuration:(double)arg5;
+- (id)initWithInitialLayoutInfo:(id)arg1 photoTime:(double)arg2 playDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3 playRate:(float)arg4 photoTransitionDuration:(double)arg5;
 - (BOOL)isPlaying;
 - (BOOL)isPrepared;
 - (double)photoTime;
 - (double)photoTransitionDuration;
-- (struct { int x1; int x2; unsigned int x3; int x4; })playDuration;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })playDuration;
 - (float)playRate;
 - (void)playVitality;
 - (void)prepareForVitality;

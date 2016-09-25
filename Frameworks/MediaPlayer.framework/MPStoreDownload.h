@@ -15,14 +15,14 @@
 }
 
 @property (nonatomic, readonly) NSDictionary *attributes;
-@property (nonatomic, readonly) int bytesDownloaded;
-@property (nonatomic, readonly) int bytesTotal;
+@property (nonatomic, readonly) long long bytesDownloaded;
+@property (nonatomic, readonly) long long bytesTotal;
 @property (getter=isCanceled, nonatomic, readonly) BOOL canceled;
-@property (nonatomic, readonly) int downloadIdentifier;
-@property (nonatomic, readonly) int downloadSizeLimit;
+@property (nonatomic, readonly) long long downloadIdentifier;
+@property (nonatomic, readonly) long long downloadSizeLimit;
 @property (nonatomic, readonly) NSError *failureError;
 @property (getter=isFinished, nonatomic, readonly) BOOL finished;
-@property (nonatomic, readonly) unsigned int libraryItemIdentifier;
+@property (nonatomic, readonly) unsigned long long libraryItemIdentifier;
 @property (getter=isPaused, nonatomic, readonly) BOOL paused;
 @property (nonatomic, readonly) double percentComplete;
 @property (nonatomic, readonly) NSString *phaseIdentifier;
@@ -31,7 +31,7 @@
 @property (nonatomic, readonly) int reason;
 @property (nonatomic, readonly) NSDictionary *rentalInformation;
 @property (getter=isRestore, nonatomic, readonly) BOOL restore;
-@property (nonatomic, readonly) int storeItemIdentifier;
+@property (nonatomic, readonly) long long storeItemIdentifier;
 @property (nonatomic, readonly) int type;
 
 + (id)_SSPurchaseForType:(int)arg1 attributes:(id)arg2;
@@ -41,7 +41,7 @@
 + (id)storeDownloadForPlaybackItemMetadata:(id)arg1 type:(int)arg2 attributes:(id)arg3;
 + (id)storeDownloadForStoreItemOffer:(id)arg1 attributes:(id)arg2;
 + (id)storeDownloadForStoreOffer:(id)arg1 type:(int)arg2 attributes:(id)arg3;
-+ (id)storeDownloadWithDownloadIdentifier:(int)arg1;
++ (id)storeDownloadWithDownloadIdentifier:(long long)arg1;
 
 - (void).cxx_destruct;
 - (id)_SSDownload;
@@ -59,11 +59,11 @@
 - (id)_valueForDownloadProperty:(id)arg1;
 - (id)assetsForType:(id)arg1;
 - (id)attributes;
-- (int)bytesDownloaded;
-- (int)bytesTotal;
+- (long long)bytesDownloaded;
+- (long long)bytesTotal;
 - (id)description;
-- (int)downloadIdentifier;
-- (int)downloadSizeLimit;
+- (long long)downloadIdentifier;
+- (long long)downloadSizeLimit;
 - (id)failureError;
 - (id)initWithType:(int)arg1 attributes:(id)arg2;
 - (BOOL)isCanceled;
@@ -71,14 +71,14 @@
 - (BOOL)isPaused;
 - (BOOL)isPurchasing;
 - (BOOL)isRestore;
-- (unsigned int)libraryItemIdentifier;
+- (unsigned long long)libraryItemIdentifier;
 - (double)percentComplete;
 - (id)phaseIdentifier;
 - (id)purchaseError;
 - (int)reason;
 - (id)rentalInformation;
 - (void)resetCachedRentalInformation;
-- (int)storeItemIdentifier;
+- (long long)storeItemIdentifier;
 - (int)type;
 
 @end

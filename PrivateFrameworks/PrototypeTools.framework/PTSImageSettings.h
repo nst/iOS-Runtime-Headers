@@ -5,7 +5,7 @@
 @interface PTSImageSettings : _UISettings <_UISettingsKeyObserver> {
     UIImage * _image;
     int  _imageOrientation;
-    double  _imageScale;
+    float  _imageScale;
     NSData * _pngData;
     BOOL  _unarchiving;
 }
@@ -15,7 +15,7 @@
 @property (readonly) unsigned int hash;
 @property (retain) UIImage *image;
 @property int imageOrientation;
-@property double imageScale;
+@property float imageScale;
 @property (retain) NSData *pngData;
 @property (readonly) Class superclass;
 

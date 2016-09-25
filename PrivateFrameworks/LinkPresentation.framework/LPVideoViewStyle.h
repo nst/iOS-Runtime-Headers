@@ -3,27 +3,27 @@
  */
 
 @interface LPVideoViewStyle : NSObject {
-    double  _disabledPlayButtonOpacity;
+    float  _disabledPlayButtonOpacity;
     LPImageViewStyle * _muteButton;
-    double  _muteButtonHighlightedOpacity;
-    double  _muteButtonOpacity;
+    float  _muteButtonHighlightedOpacity;
+    float  _muteButtonOpacity;
     LPPadding * _muteButtonPadding;
     LPImageViewStyle * _playButton;
     UIColor * _pulsingLoadIndicatorColor;
     double  _pulsingLoadIndicatorDuration;
-    double  _pulsingLoadIndicatorMaximumOpacity;
+    float  _pulsingLoadIndicatorMaximumOpacity;
     CAMediaTimingFunction * _pulsingLoadIndicatorTimingFunction;
 }
 
-@property (nonatomic) double disabledPlayButtonOpacity;
+@property (nonatomic) float disabledPlayButtonOpacity;
 @property (nonatomic, readonly) LPImageViewStyle *muteButton;
-@property (nonatomic) double muteButtonHighlightedOpacity;
-@property (nonatomic) double muteButtonOpacity;
+@property (nonatomic) float muteButtonHighlightedOpacity;
+@property (nonatomic) float muteButtonOpacity;
 @property (nonatomic, readonly, retain) LPPadding *muteButtonPadding;
 @property (nonatomic, readonly) LPImageViewStyle *playButton;
 @property (nonatomic, retain) UIColor *pulsingLoadIndicatorColor;
 @property (nonatomic) double pulsingLoadIndicatorDuration;
-@property (nonatomic) double pulsingLoadIndicatorMaximumOpacity;
+@property (nonatomic) float pulsingLoadIndicatorMaximumOpacity;
 @property (nonatomic, retain) CAMediaTimingFunction *pulsingLoadIndicatorTimingFunction;
 
 - (void).cxx_destruct;

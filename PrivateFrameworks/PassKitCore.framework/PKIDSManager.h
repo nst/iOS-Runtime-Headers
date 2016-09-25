@@ -66,7 +66,7 @@
 - (id)remoteDevices;
 - (void)removeDelegate:(id)arg1;
 - (id)requestForIdentifier:(id)arg1;
-- (id)requestInstrumentThumbnail:(id)arg1 forRemoteDevice:(id)arg2 size:(struct CGSize { double x1; double x2; })arg3 completion:(id /* block */)arg4;
+- (id)requestInstrumentThumbnail:(id)arg1 forRemoteDevice:(id)arg2 size:(struct CGSize { float x1; float x2; })arg3 completion:(id /* block */)arg4;
 - (id)sendPayment:(id)arg1 forRemotePaymentRequest:(id)arg2 completion:(id /* block */)arg3;
 - (id)sendPaymentClientUpdate:(id)arg1 forRemotePaymentRequest:(id)arg2 completion:(id /* block */)arg3;
 - (id)sendPaymentHostUpdate:(id)arg1 forRemotePaymentRequest:(id)arg2 completion:(id /* block */)arg3;

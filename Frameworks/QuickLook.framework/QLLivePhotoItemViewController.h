@@ -5,8 +5,8 @@
 @interface QLLivePhotoItemViewController : QLScrollableContentItemViewController <PHLivePhotoViewDelegate, UIGestureRecognizerDelegate> {
     BOOL  _fullyZoomedOut;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _imageSize;
     BOOL  _isFullScreen;
     BOOL  _isPlaying;
@@ -29,7 +29,7 @@
 - (BOOL)canEnterFullScreen;
 - (void)didEndZoomingAtScale:(float)arg1;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
-- (struct CGSize { double x1; double x2; })imageSize;
+- (struct CGSize { float x1; float x2; })imageSize;
 - (void)livePhotoView:(id)arg1 didEndPlaybackWithStyle:(int)arg2;
 - (void)livePhotoView:(id)arg1 willBeginPlaybackWithStyle:(int)arg2;
 - (void)loadPreviewControllerWithPreviewItem:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -42,7 +42,7 @@
 - (void)setAppearance:(id)arg1 animated:(BOOL)arg2;
 - (void)transitionDidFinish:(BOOL)arg1 didComplete:(BOOL)arg2;
 - (void)transitionDidStart:(BOOL)arg1;
-- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (void)willBeginZooming;
 
 @end

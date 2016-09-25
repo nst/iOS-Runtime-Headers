@@ -3,12 +3,12 @@
  */
 
 @interface GQDWPExternalTextWrap : NSObject <GQDNameMappable> {
-    double  mAlphaThreshold;
+    float  mAlphaThreshold;
     int  mAttachmentWrapType;
     BOOL  mFloatingWrapEnabled;
     int  mFloatingWrapType;
     BOOL  mInlineWrapEnabled;
-    double  mMargin;
+    float  mMargin;
     int  mWrapDirection;
     int  mWrapStyle;
 }

@@ -24,13 +24,13 @@
 - (void).cxx_destruct;
 - (int)acquireLockGuard;
 - (void)addObject:(id)arg1;
-- (BOOL)castRayFrom:(void *)arg1 withDirection:(void *)arg2 usingCamera:(void *)arg3 result:(void *)arg4; // needs 4 arg types, found 2: struct RTCamera { int (**x1)(); unsigned int x2; unsigned int x3; double x4; double x5; int x6; double *x7; id **x8; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x9; void*x10; void*x11[4]; }*, /* Warning: unhandled struct encoding: '{RTIntersectionResult=f^{RTGeometry}@}' */ struct RTIntersectionResult { double x1; struct RTGeometry {} *x2; id x3; }*
+- (BOOL)castRayFrom:(void *)arg1 withDirection:(void *)arg2 usingCamera:(void *)arg3 result:(void *)arg4; // needs 4 arg types, found 2: struct RTCamera { int (**x1)(); unsigned int x2; unsigned int x3; float x4; float x5; int x6; float *x7; id **x8; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x9; void*x10; void*x11[4]; }*, /* Warning: unhandled struct encoding: '{RTIntersectionResult=f^{RTGeometry}@}' */ struct RTIntersectionResult { float x1; struct RTGeometry {} *x2; id x3; }*
 - (void)clear;
 - (void)dealloc;
 - (void)hitTestRayFrom:(void *)arg1 withDirection:(void *)arg2 usingCamera:(void *)arg3; // needs 3 arg types, found 1: id
 - (id)init;
 - (id)objects;
-- (id)raytraceSceneWithCamera:(void *)arg1 reflection:(void *)arg2 irradiance:(void *)arg3 size:(void *)arg4; // needs 4 arg types, found 3: const struct RTCamera { int (**x1)(); unsigned int x2; unsigned int x3; double x4; double x5; int x6; double *x7; id **x8; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x9; void*x10; void*x11[4]; }*, id, id
+- (id)raytraceSceneWithCamera:(void *)arg1 reflection:(void *)arg2 irradiance:(void *)arg3 size:(void *)arg4; // needs 4 arg types, found 3: const struct RTCamera { int (**x1)(); unsigned int x2; unsigned int x3; float x4; float x5; int x6; float *x7; id **x8; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x9; void*x10; void*x11[4]; }*, id, id
 - (void)releaseLockGuard:(int)arg1;
 
 @end

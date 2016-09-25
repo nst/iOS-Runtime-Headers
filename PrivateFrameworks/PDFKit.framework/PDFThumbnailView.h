@@ -4,22 +4,22 @@
 
 @interface PDFThumbnailView : UIView <NSCoding, PDFCollectionViewDataSource, PDFCollectionViewDelegate> {
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _contentInset;
     PDFThumbnailViewPrivateVars * _pdfPriv;
 }
 
 @property (nonatomic, retain) PDFView *PDFView;
 @property (nonatomic, copy) UIColor *backgroundColor;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInset;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
-@property (nonatomic) struct CGSize { double x1; double x2; } thumbnailSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } thumbnailSize;
 
 - (void).cxx_destruct;
 - (id)PDFView;
@@ -27,7 +27,7 @@
 - (id /* block */)_newIconSetterBlockForIconView:(id)arg1 andIndexPath:(id)arg2;
 - (id)backgroundColor;
 - (void)configureItem:(id)arg1 forRepresentedObject:(id)arg2 andViewIndexPath:(id)arg3 usingOptionalImage:(id)arg4;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInset;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInset;
 - (id)currentIndexPath;
 - (void)dealloc;
 - (void)didEndDisplayingItem:(id)arg1;
@@ -35,17 +35,17 @@
 - (id)indexPathForRepresentedObject:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (int)numberOfItemsInSection:(int)arg1;
 - (id)representedObjectAtIndexPath:(id)arg1;
 - (id)scrubbingAtFraction:(float)arg1 betweenIndexPath:(id)arg2 andIndexPath:(id)arg3 outDiscreteFraction:(float*)arg4;
 - (id)selectedPages;
 - (void)selectionChanged;
 - (void)setBackgroundColor:(id)arg1;
-- (void)setContentInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setHorizontalMode:(BOOL)arg1;
 - (void)setPDFView:(id)arg1;
-- (void)setThumbnailSize:(struct CGSize { double x1; double x2; })arg1;
-- (struct CGSize { double x1; double x2; })thumbnailSize;
+- (void)setThumbnailSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { float x1; float x2; })thumbnailSize;
 
 @end

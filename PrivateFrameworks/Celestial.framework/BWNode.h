@@ -3,7 +3,7 @@
  */
 
 @interface BWNode : NSObject {
-    int  _configurationID;
+    long long  _configurationID;
     BWGraph * _graph;
     BWNodeInput * _input;
     NSMutableArray * _inputs;
@@ -36,8 +36,8 @@
 - (void)addInput:(id)arg1;
 - (void)addOutput:(id)arg1;
 - (BOOL)allInputsHaveReachedState:(int)arg1;
-- (int)configurationID;
-- (void)configurationWithID:(int)arg1 updatedFormat:(id)arg2 didBecomeLiveForInput:(id)arg3;
+- (long long)configurationID;
+- (void)configurationWithID:(long long)arg1 updatedFormat:(id)arg2 didBecomeLiveForInput:(id)arg3;
 - (void)dealloc;
 - (id)description;
 - (void)didReachEndOfDataForInput:(id)arg1;
@@ -60,7 +60,7 @@
 - (void)prepareForCurrentConfigurationToBecomeLive;
 - (id)renderDelegate;
 - (void)renderSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 forInput:(id)arg2;
-- (void)setConfigurationID:(int)arg1;
+- (void)setConfigurationID:(long long)arg1;
 - (void)setGraph:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setRenderDelegate:(id)arg1;

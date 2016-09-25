@@ -9,8 +9,8 @@
 
 @property (nonatomic, copy) NSArray *durations;
 @property (nonatomic, retain) UIImage *image;
-@property (nonatomic, readonly) double scale;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } size;
+@property (nonatomic, readonly) float scale;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;
 
 + (id)ASTCDataForImagesWithDurations:(id)arg1 imageProvider:(id /* block */)arg2;
 + (BOOL)_writeImagesWithDurations:(id)arg1 toCPBitmapURL:(id)arg2 imageProvider:(id /* block */)arg3 frameProcessor:(id /* block */)arg4;
@@ -34,7 +34,7 @@
 - (float)scale;
 - (void)setDurations:(id)arg1;
 - (void)setImage:(id)arg1;
-- (struct CGSize { double x1; double x2; })size;
+- (struct CGSize { float x1; float x2; })size;
 - (BOOL)writeToASTCURL:(id)arg1;
 - (BOOL)writeToCPBitmapURL:(id)arg1;
 

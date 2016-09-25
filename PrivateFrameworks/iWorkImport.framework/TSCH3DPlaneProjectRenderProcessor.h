@@ -6,85 +6,85 @@
     struct box<glm::detail::tvec3<float> > { 
         struct tvec3<float> { 
             union { 
-                double x; 
-                double r; 
-                double s; 
+                float x; 
+                float r; 
+                float s; 
             } ; 
             union { 
-                double y; 
-                double g; 
-                double t; 
+                float y; 
+                float g; 
+                float t; 
             } ; 
             union { 
-                double z; 
-                double b; 
-                double p; 
+                float z; 
+                float b; 
+                float p; 
             } ; 
         } mMin; 
         struct tvec3<float> { 
             union { 
-                double x; 
-                double r; 
-                double s; 
+                float x; 
+                float r; 
+                float s; 
             } ; 
             union { 
-                double y; 
-                double g; 
-                double t; 
+                float y; 
+                float g; 
+                float t; 
             } ; 
             union { 
-                double z; 
-                double b; 
-                double p; 
+                float z; 
+                float b; 
+                float p; 
             } ; 
         } mMax; 
     }  mBounds;
     struct plane<glm::detail::tvec3<float> > { 
         struct tvec3<float> { 
             union { 
-                double x; 
-                double r; 
-                double s; 
+                float x; 
+                float r; 
+                float s; 
             } ; 
             union { 
-                double y; 
-                double g; 
-                double t; 
+                float y; 
+                float g; 
+                float t; 
             } ; 
             union { 
-                double z; 
-                double b; 
-                double p; 
+                float z; 
+                float b; 
+                float p; 
             } ; 
         } mNormal; 
-        double mDistance; 
+        float mDistance; 
     }  mPlane;
     struct tvec3<float> { 
         union { 
-            double x; 
-            double r; 
-            double s; 
+            float x; 
+            float r; 
+            float s; 
         } ; 
         union { 
-            double y; 
-            double g; 
-            double t; 
+            float y; 
+            float g; 
+            float t; 
         } ; 
         union { 
-            double z; 
-            double b; 
-            double p; 
+            float z; 
+            float b; 
+            float p; 
         } ; 
     }  mProjPt;
 }
 
-@property (nonatomic, readonly) const struct box<glm::detail::tvec3<float> > { struct tvec3<float> { union { double x_1_2_1; double x_1_2_2; double x_1_2_3; } x_1_1_1; union { double x_2_2_1; double x_2_2_2; double x_2_2_3; } x_1_1_2; union { double x_3_2_1; double x_3_2_2; double x_3_2_3; } x_1_1_3; } x1; struct tvec3<float> { union { double x_1_2_1; double x_1_2_2; double x_1_2_3; } x_2_1_1; union { double x_2_2_1; double x_2_2_2; double x_2_2_3; } x_2_1_2; union { double x_3_2_1; double x_3_2_2; double x_3_2_3; } x_2_1_3; } x2; }*bounds;
+@property (nonatomic, readonly) const struct box<glm::detail::tvec3<float> > { struct tvec3<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_1_1_2; union { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_1_1_3; } x1; struct tvec3<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_2_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_2_1_2; union { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_2_1_3; } x2; }*bounds;
 
-+ (id)processorWithPlane:(const struct plane<glm::detail::tvec3<float> > { struct tvec3<float> { union { double x_1_2_1; double x_1_2_2; double x_1_2_3; } x_1_1_1; union { double x_2_2_1; double x_2_2_2; double x_2_2_3; } x_1_1_2; union { double x_3_2_1; double x_3_2_2; double x_3_2_3; } x_1_1_3; } x1; double x2; }*)arg1 projPt:(const struct tvec3<float> { union { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; union { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; union { double x_3_1_1; double x_3_1_2; double x_3_1_3; } x3; }*)arg2;
++ (id)processorWithPlane:(const struct plane<glm::detail::tvec3<float> > { struct tvec3<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_1_1_2; union { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_1_1_3; } x1; float x2; }*)arg1 projPt:(const struct tvec3<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; }*)arg2;
 
 - (id).cxx_construct;
-- (const struct box<glm::detail::tvec3<float> > { struct tvec3<float> { union { double x_1_2_1; double x_1_2_2; double x_1_2_3; } x_1_1_1; union { double x_2_2_1; double x_2_2_2; double x_2_2_3; } x_1_1_2; union { double x_3_2_1; double x_3_2_2; double x_3_2_3; } x_1_1_3; } x1; struct tvec3<float> { union { double x_1_2_1; double x_1_2_2; double x_1_2_3; } x_2_1_1; union { double x_2_2_1; double x_2_2_2; double x_2_2_3; } x_2_1_2; union { double x_3_2_1; double x_3_2_2; double x_3_2_3; } x_2_1_3; } x2; }*)bounds;
-- (id)initWithPlane:(const struct plane<glm::detail::tvec3<float> > { struct tvec3<float> { union { double x_1_2_1; double x_1_2_2; double x_1_2_3; } x_1_1_1; union { double x_2_2_1; double x_2_2_2; double x_2_2_3; } x_1_1_2; union { double x_3_2_1; double x_3_2_2; double x_3_2_3; } x_1_1_3; } x1; double x2; }*)arg1 projPt:(const struct tvec3<float> { union { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; union { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; union { double x_3_1_1; double x_3_1_2; double x_3_1_3; } x3; }*)arg2;
+- (const struct box<glm::detail::tvec3<float> > { struct tvec3<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_1_1_2; union { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_1_1_3; } x1; struct tvec3<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_2_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_2_1_2; union { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_2_1_3; } x2; }*)bounds;
+- (id)initWithPlane:(const struct plane<glm::detail::tvec3<float> > { struct tvec3<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_1_1_2; union { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_1_1_3; } x1; float x2; }*)arg1 projPt:(const struct tvec3<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; }*)arg2;
 - (void)submit:(const /* Warning: unhandled struct encoding: '{PrimitiveInfo=iii@}' */ struct PrimitiveInfo { int x1; int x2; int x3; id x4; }*)arg1;
 
 @end

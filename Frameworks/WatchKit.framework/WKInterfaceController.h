@@ -5,12 +5,12 @@
 @interface WKInterfaceController : NSObject {
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _contentFrame;
     WKCrownSequencer * _crownSequencer;
@@ -22,7 +22,7 @@
     NSString * _viewControllerID;
 }
 
-@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } contentFrame;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } contentFrame;
 @property (nonatomic, readonly) WKCrownSequencer *crownSequencer;
 @property (nonatomic, retain) NSMutableDictionary *gestureRecognizers;
 @property (nonatomic, retain) NSMutableArray *pendingGestureInstallationFinishedBlocks;
@@ -36,7 +36,7 @@
 + (void)_removePageControllersAtIndexes:(id)arg1;
 + (BOOL)openParentApplication:(id)arg1 reply:(id /* block */)arg2;
 + (void)reloadRootControllersWithNames:(id)arg1 contexts:(id)arg2;
-+ (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })screenBounds;
++ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })screenBounds;
 + (float)screenScale;
 
 - (void).cxx_destruct;
@@ -49,7 +49,7 @@
 - (void)becomeCurrentPage;
 - (void)beginGlanceUpdates;
 - (void)clearAllMenuItems;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })contentFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentFrame;
 - (id)contextForSegueWithIdentifier:(id)arg1;
 - (id)contextForSegueWithIdentifier:(id)arg1 inTable:(id)arg2 rowIndex:(int)arg3;
 - (id)contextsForSegueWithIdentifier:(id)arg1;
@@ -86,7 +86,7 @@
 - (void)presentTextInputControllerWithSuggestionsForLanguage:(id /* block */)arg1 allowedInputMode:(int)arg2 completion:(id /* block */)arg3;
 - (id)properties;
 - (void)pushControllerWithName:(id)arg1 context:(id)arg2;
-- (void)setContentFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setContentFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setGestureRecognizers:(id)arg1;
 - (void)setPendingGestureInstallationFinishedBlocks:(id)arg1;
 - (void)setProperties:(id)arg1;

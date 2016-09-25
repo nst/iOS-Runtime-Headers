@@ -5,7 +5,7 @@
 @interface SKUIAssetViewElement : SKUIViewElement {
     BOOL  _ITunesStream;
     double  _initialPlaybackTime;
-    int  _itemIdentifier;
+    long long  _itemIdentifier;
     NSURL * _keyCertificateURL;
     NSURL * _keyServerURL;
     double  _playbackDuration;
@@ -16,7 +16,7 @@
 @property (getter=isITunesStream, nonatomic, readonly) BOOL ITunesStream;
 @property (nonatomic, readonly) NSURL *URL;
 @property (nonatomic) double initialPlaybackTime;
-@property (nonatomic, readonly) int itemIdentifier;
+@property (nonatomic, readonly) long long itemIdentifier;
 @property (nonatomic, readonly, retain) NSURL *keyCertificateURL;
 @property (nonatomic, readonly, retain) NSURL *keyServerURL;
 @property (nonatomic, readonly) double playbackDuration;
@@ -28,7 +28,7 @@
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
 - (double)initialPlaybackTime;
 - (BOOL)isITunesStream;
-- (int)itemIdentifier;
+- (long long)itemIdentifier;
 - (id)keyCertificateURL;
 - (id)keyServerURL;
 - (double)playbackDuration;

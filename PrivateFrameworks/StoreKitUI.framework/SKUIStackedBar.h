@@ -11,8 +11,8 @@
     NSArray * _items;
     BOOL  _lastItemExpanded;
     UIView * _maskView;
-    double  _newOffset;
-    double  _offset;
+    float  _newOffset;
+    float  _offset;
     BOOL  _splitViewStyle;
     UIView * _wrapperView;
     BOOL  _zeroHeightWhenFirstChildExpanded;
@@ -23,7 +23,7 @@
 @property (nonatomic) BOOL hidesStatusBar;
 @property (nonatomic, retain) NSArray *items;
 @property (nonatomic) BOOL lastItemExpanded;
-@property (nonatomic) double offset;
+@property (nonatomic) float offset;
 @property (nonatomic) BOOL splitViewStyle;
 @property (nonatomic) BOOL zeroHeightWhenFirstChildExpanded;
 
@@ -37,7 +37,7 @@
 - (void)animateToFullSizeIfNecessary;
 - (id)delegate;
 - (BOOL)hidesStatusBar;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)items;
 - (BOOL)lastItemExpanded;
 - (void)layoutSubviews;
@@ -51,7 +51,7 @@
 - (void)setOffset:(float)arg1;
 - (void)setSplitViewStyle:(BOOL)arg1;
 - (void)setZeroHeightWhenFirstChildExpanded:(BOOL)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)sizeToFit;
 - (BOOL)splitViewStyle;
 - (BOOL)zeroHeightWhenFirstChildExpanded;

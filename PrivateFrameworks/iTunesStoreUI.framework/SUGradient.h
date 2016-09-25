@@ -7,17 +7,17 @@
     NSLock * _lock;
     struct SUGradientPoint { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } point; 
-        double radius; 
+        float radius; 
     }  _p0;
     struct SUGradientPoint { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } point; 
-        double radius; 
+        float radius; 
     }  _p1;
     BOOL  _sorted;
     int  _type;
@@ -27,8 +27,8 @@
 @property (readonly) NSArray *colorStopOffsets;
 @property (readonly) int gradientType;
 @property (readonly) int numberOfColorStops;
-@property (readonly) struct SUGradientPoint { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; double x2; } p0;
-@property (readonly) struct SUGradientPoint { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; double x2; } p1;
+@property (readonly) struct SUGradientPoint { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; float x2; } p0;
+@property (readonly) struct SUGradientPoint { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; float x2; } p1;
 
 + (id)gradientWithColor:(id)arg1;
 
@@ -43,12 +43,12 @@
 - (void)encodeWithCoder:(id)arg1;
 - (int)gradientType;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithPoint0:(struct SUGradientPoint { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; double x2; })arg1 point1:(struct SUGradientPoint { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; double x2; })arg2 type:(int)arg3;
+- (id)initWithPoint0:(struct SUGradientPoint { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; float x2; })arg1 point1:(struct SUGradientPoint { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; float x2; })arg2 type:(int)arg3;
 - (id)initWithPropertyList:(id)arg1;
 - (id)initWithType:(int)arg1;
-- (id)newPatternColorWithSize:(struct CGSize { double x1; double x2; })arg1 opaque:(BOOL)arg2;
+- (id)newPatternColorWithSize:(struct CGSize { float x1; float x2; })arg1 opaque:(BOOL)arg2;
 - (int)numberOfColorStops;
-- (struct SUGradientPoint { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; double x2; })p0;
-- (struct SUGradientPoint { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; double x2; })p1;
+- (struct SUGradientPoint { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; float x2; })p0;
+- (struct SUGradientPoint { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; float x2; })p1;
 
 @end

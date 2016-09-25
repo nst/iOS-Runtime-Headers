@@ -8,10 +8,10 @@
     NSMutableArray * connectionsThatRecordVideoOrientationAndMirroringChangesAsMetadataTrack;
     NSArray * metadata;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  movieFragmentInterval;
     BOOL  paused;
     BOOL  recording;

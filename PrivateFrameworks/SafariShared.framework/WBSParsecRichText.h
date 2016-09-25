@@ -10,7 +10,7 @@
     BOOL  _hasStarRating;
     NSNumber * _maximumLines;
     NSArray * _moreGlyphRepresentations;
-    double  _starRating;
+    float  _starRating;
     NSString * _text;
 }
 
@@ -20,7 +20,7 @@
 @property (nonatomic, readonly) BOOL hasStarRating;
 @property (nonatomic, readonly) NSNumber *maximumLines;
 @property (nonatomic, readonly) NSArray *moreGlyphRepresentations;
-@property (nonatomic, readonly) double starRating;
+@property (nonatomic, readonly) float starRating;
 @property (nonatomic, readonly) NSString *text;
 
 + (id)schema;

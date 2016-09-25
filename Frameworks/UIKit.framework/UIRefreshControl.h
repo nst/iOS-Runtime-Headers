@@ -3,31 +3,31 @@
  */
 
 @interface UIRefreshControl : UIControl {
-    double  _additionalTopInset;
+    float  _additionalTopInset;
     BOOL  _adjustingInsets;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _appliedInsets;
     BOOL  _automaticContentOffsetAdjustmentEnabledNeedsReset;
     BOOL  _automaticContentOffsetAdjustmentEnabledWhenLastIdle;
     _UIRefreshControlContentView * _contentView;
     BOOL  _insetsApplied;
-    double  _refreshControlHeight;
+    float  _refreshControlHeight;
     int  _refreshControlState;
     UIScrollView * _scrollView;
-    double  _snappingHeight;
+    float  _snappingHeight;
     int  _style;
-    double  _visibleHeight;
+    float  _visibleHeight;
 }
 
 @property (nonatomic, readonly) BOOL _areInsetsBeingApplied;
-@property (nonatomic, readonly) double _refreshControlHeight;
-@property (nonatomic, readonly) double _snappingHeight;
-@property (nonatomic, readonly) double _visibleHeight;
-@property (getter=_appliedInsets, nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } appliedInsets;
+@property (nonatomic, readonly) float _refreshControlHeight;
+@property (nonatomic, readonly) float _snappingHeight;
+@property (nonatomic, readonly) float _visibleHeight;
+@property (getter=_appliedInsets, nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } appliedInsets;
 @property (nonatomic, retain) NSAttributedString *attributedTitle;
 @property (nonatomic, readonly) int refreshControlState;
 @property (getter=isRefreshing, nonatomic, readonly) BOOL refreshing;
@@ -40,7 +40,7 @@
 - (void).cxx_destruct;
 - (void)_addInsetHeight:(float)arg1;
 - (void)_addInsets;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_appliedInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_appliedInsets;
 - (BOOL)_areInsetsBeingApplied;
 - (id)_attributedTitle;
 - (BOOL)_canTransitionFromState:(int)arg1 toState:(int)arg2;
@@ -49,7 +49,7 @@
 - (void)_didScroll;
 - (float)_impactIntensityForVelocity:(float)arg1;
 - (BOOL)_isApplyingInsets;
-- (struct CGPoint { double x1; double x2; })_originForContentOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (struct CGPoint { float x1; float x2; })_originForContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (int)_recomputeNewState;
 - (float)_refreshControlHeight;
@@ -70,7 +70,7 @@
 - (void)_updateHiddenStateIfNeeded;
 - (void)_updateSnappingHeight;
 - (float)_visibleHeight;
-- (float)_visibleHeightForContentOffset:(struct CGPoint { double x1; double x2; })arg1 origin:(struct CGPoint { double x1; double x2; })arg2;
+- (float)_visibleHeightForContentOffset:(struct CGPoint { float x1; float x2; })arg1 origin:(struct CGPoint { float x1; float x2; })arg2;
 - (id)attributedTitle;
 - (void)beginRefreshing;
 - (void)dealloc;
@@ -79,18 +79,18 @@
 - (void)endRefreshing;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithStyle:(int)arg1;
 - (BOOL)isRefreshing;
 - (int)refreshControlState;
 - (float)revealedFraction;
 - (void)setAttributedTitle:(id)arg1;
 - (void)setBackgroundColor:(id)arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setRefreshControlState:(int)arg1;
 - (void)setTintColor:(id)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)sizeToFit;
 - (int)style;
 - (id)tintColor;

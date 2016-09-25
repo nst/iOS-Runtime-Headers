@@ -36,7 +36,7 @@
 @property (setter=_setForceDisableTVOut:, nonatomic) BOOL forceDisableTVOut;
 @property (nonatomic) BOOL isActiveController;
 @property (nonatomic, readonly) BOOL isPreparedForPlayback;
-@property (nonatomic, readonly) double playbackRate;
+@property (nonatomic, readonly) float playbackRate;
 @property (nonatomic, readonly) unsigned int playbackState;
 @property (nonatomic, readonly, retain) AVPlayer *player;
 @property (nonatomic, readonly, retain) PLMoviePlayerView *view;

@@ -32,9 +32,9 @@
 - (void)_requestEncodedLayerTreeAtURL:(id)arg1 withReplyHandler:(id /* block */)arg2;
 - (BOOL)_serviceHasScrollToTopView;
 - (void)_setActiveDisplayMode:(int)arg1 requestIdentifier:(id)arg2;
-- (void)_setMaximumSize:(struct CGSize { double x1; double x2; })arg1 forDisplayMode:(int)arg2;
+- (void)_setMaximumSize:(struct CGSize { float x1; float x2; })arg1 forDisplayMode:(int)arg2;
 - (void)_setValid:(BOOL)arg1;
-- (void)_viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 requestIdentifier:(id)arg2;
+- (void)_viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 requestIdentifier:(id)arg2;
 - (void)dealloc;
 - (id)disconnect;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

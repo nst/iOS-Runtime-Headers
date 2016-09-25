@@ -323,7 +323,7 @@
 - (int)CDXTicketPCNT;
 - (int)CDXTicketPID;
 - (unsigned int)CDXTicketRevision;
-- (unsigned int)CDXTicketSID;
+- (unsigned long long)CDXTicketSID;
 - (id)CDXTicketTrimmed;
 - (BOOL)CDXTicketWellFormed;
 - (struct CDXTicket { unsigned char x1; unsigned char x2; unsigned char x3; unsigned char x4; struct { unsigned char x_5_1_1[6]; unsigned short x_5_1_2; } x5; unsigned int x6; unsigned char x7[0]; }*)mutableCDXTicket;

@@ -40,7 +40,7 @@
 - (void).cxx_destruct;
 - (id)_backgroundColor;
 - (void)_createSubviews;
-- (id)_defaultLayoutOptionsForViewSize:(struct CGSize { double x1; double x2; })arg1;
+- (id)_defaultLayoutOptionsForViewSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_done:(id)arg1;
 - (void)_setNavigationBarVisibility;
 - (id)atvImageView;
@@ -72,6 +72,6 @@
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

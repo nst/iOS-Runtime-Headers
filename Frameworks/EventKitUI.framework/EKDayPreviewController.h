@@ -57,7 +57,7 @@
 - (id)initWithDate:(id)arg1 event:(id)arg2 overriddenEventStartDate:(id)arg3 overriddenEventEndDate:(id)arg4;
 - (void)loadView;
 - (int)overriddenParticipantStatus;
-- (struct CGSize { double x1; double x2; })preferredContentSize;
+- (struct CGSize { float x1; float x2; })preferredContentSize;
 - (void)renderPressHighlight:(BOOL)arg1;
 - (BOOL)respectsSelectedCalendarsFilter;
 - (void)setHidesAllDayEvents:(BOOL)arg1;

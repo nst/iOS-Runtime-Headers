@@ -19,7 +19,7 @@
     NSString * _identifier;
     BOOL  _isReset;
     BOOL  _isSending;
-    unsigned int  _maxConcurrentMessages;
+    unsigned long long  _maxConcurrentMessages;
     NSMutableArray * _peers;
     double  _perMessageTimeout;
     int  _state;
@@ -42,7 +42,7 @@
 @property (nonatomic, retain) NSString *identifier;
 @property (nonatomic) BOOL isReset;
 @property (nonatomic) BOOL isSending;
-@property (nonatomic) unsigned int maxConcurrentMessages;
+@property (nonatomic) unsigned long long maxConcurrentMessages;
 @property (nonatomic, retain) NSMutableArray *peers;
 @property (nonatomic) double perMessageTimeout;
 @property (nonatomic) int state;
@@ -79,7 +79,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isReset;
 - (BOOL)isSending;
-- (unsigned int)maxConcurrentMessages;
+- (unsigned long long)maxConcurrentMessages;
 - (void)mergeFrom:(id)arg1;
 - (id)peers;
 - (id)peersAtIndex:(unsigned int)arg1;
@@ -101,7 +101,7 @@
 - (void)setIdentifier:(id)arg1;
 - (void)setIsReset:(BOOL)arg1;
 - (void)setIsSending:(BOOL)arg1;
-- (void)setMaxConcurrentMessages:(unsigned int)arg1;
+- (void)setMaxConcurrentMessages:(unsigned long long)arg1;
 - (void)setPeers:(id)arg1;
 - (void)setPerMessageTimeout:(double)arg1;
 - (void)setState:(int)arg1;

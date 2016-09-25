@@ -5,7 +5,7 @@
 @interface VideosExtrasConstrainedArtworkContainerView : UIView {
     MPUArtworkView * _artworkView;
     UIImage * _overlayImage;
-    double  _overlayScale;
+    float  _overlayScale;
     NSArray * _overlaySizeConstraints;
     UIImageView * _overlayView;
     BOOL  _shouldAutoresizeMaskLayerToFillBounds;
@@ -14,7 +14,7 @@
 
 @property (nonatomic, retain) MPUArtworkView *artworkView;
 @property (nonatomic, retain) UIImage *overlayImage;
-@property (nonatomic) double overlayScale;
+@property (nonatomic) float overlayScale;
 @property (nonatomic, retain) NSArray *overlaySizeConstraints;
 @property (nonatomic, retain) UIImageView *overlayView;
 @property (nonatomic) BOOL shouldAutoresizeMaskLayerToFillBounds;
@@ -22,7 +22,7 @@
 
 - (void).cxx_destruct;
 - (id)artworkView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)overlayImage;
 - (float)overlayScale;

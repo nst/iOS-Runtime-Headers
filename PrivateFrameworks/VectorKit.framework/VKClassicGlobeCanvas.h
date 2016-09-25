@@ -11,7 +11,7 @@
     id /* block */  _artworkIsReadyBlock;
     BOOL  _canShowFlyover;
     BOOL  _coarseLoading;
-    double  _contentScale;
+    float  _contentScale;
     double  _currentZoomLevel;
     struct AltitudeDebugSettings { 
         BOOL altitudePauseLoading; 
@@ -24,12 +24,12 @@
         BOOL altitudeMipmapFlyover; 
         BOOL altitudeMipmapObjectTree; 
         BOOL altitudeShowNightLight; 
-        double lodScale; 
-        double tileQualityThreshold; 
-        double hideMeshTime; 
-        double fadeSpeed; 
+        float lodScale; 
+        float tileQualityThreshold; 
+        float hideMeshTime; 
+        float fadeSpeed; 
         BOOL tourSpeedup; 
-        double tourSpeedupFactor; 
+        float tourSpeedupFactor; 
     }  _debugSettings;
     <VKInteractiveMapDelegate> * _delegate;
     BOOL  _disableLabels;
@@ -96,12 +96,12 @@
 @property (nonatomic) BOOL localizeLabels;
 @property (nonatomic) int mapType;
 @property (nonatomic) int navigationShieldSize;
-@property (nonatomic, readonly) struct GlobeOverlayContainer { struct weak_ptr<md::GlobeOverlayContainer> { struct GlobeOverlayContainer {} *x_1_1_1; struct __shared_weak_count {} *x_1_1_2; } x1; struct GlobeView {} *x2; struct NSMutableArray { Class x_3_1_1; } *x3; struct mutex { struct _opaque_pthread_mutex_t { long x_1_2_1; BOOL x_1_2_2[40]; } x_4_1_1; } x4; double x5; }*overlayContainer;
+@property (nonatomic, readonly) struct GlobeOverlayContainer { struct weak_ptr<md::GlobeOverlayContainer> { struct GlobeOverlayContainer {} *x_1_1_1; struct __shared_weak_count {} *x_1_1_2; } x1; struct GlobeView {} *x2; struct NSMutableArray { Class x_3_1_1; } *x3; struct mutex { struct _opaque_pthread_mutex_t { long x_1_2_1; BOOL x_1_2_2[40]; } x_4_1_1; } x4; float x5; }*overlayContainer;
 @property (nonatomic, readonly) NSArray *overlays;
 @property (nonatomic, readonly) NSSet *persistentOverlays;
 @property (nonatomic, readonly) NSArray *rasterOverlays;
 @property (nonatomic) <VKRouteMatchedAnnotationPresentation> *routeLineSplitAnnotation;
-@property (nonatomic) struct PolylineCoordinate { unsigned int x1; double x2; } routeUserOffset;
+@property (nonatomic) struct PolylineCoordinate { unsigned int x1; float x2; } routeUserOffset;
 @property (nonatomic, copy) id /* block */ sceneDidLoadCallback;
 @property (nonatomic) int shieldIdiom;
 @property (nonatomic) int shieldSize;
@@ -116,7 +116,7 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (struct CGPoint { double x1; double x2; })_centerScreenPoint;
+- (struct CGPoint { float x1; float x2; })_centerScreenPoint;
 - (void)_reloadStylesheet;
 - (void)_setDefaultFov:(float)arg1;
 - (void)_setStyleTransitionProgress:(float)arg1 targetStyle:(struct DisplayStyle { unsigned char x1; unsigned char x2; unsigned char x3; unsigned char x4; unsigned char x5; })arg2 step:(int)arg3;
@@ -149,20 +149,20 @@
 - (void)cameraControllerRequestsLayout:(id)arg1;
 - (BOOL)canRender;
 - (void)clearSceneIsEffectivelyHidden:(BOOL)arg1;
-- (struct shared_ptr<md::LabelFeatureMarker> { struct LabelFeatureMarker {} *x1; struct __shared_weak_count {} *x2; })closestRoadMarkerForSelectionAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (struct shared_ptr<md::LabelFeatureMarker> { struct LabelFeatureMarker {} *x1; struct __shared_weak_count {} *x2; })closestRoadMarkerForSelectionAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)consoleString:(BOOL)arg1;
-- (struct CGPoint { double x1; double x2; })convertCoordinateToCameraModelPoint:(struct { double x1; double x2; })arg1;
-- (struct CGPoint { double x1; double x2; })convertCoordinateToPoint:(struct { double x1; double x2; })arg1;
-- (struct CGPoint { double x1; double x2; })convertMapPointToPoint:(struct { double x1; double x2; })arg1;
-- (struct { double x1; double x2; })convertPointToCoordinate:(struct CGPoint { double x1; double x2; })arg1;
-- (struct { double x1; double x2; })convertPointToCoordinateOnSphere:(struct CGPoint { double x1; double x2; })arg1;
-- (struct { double x1; double x2; })convertPointToMapPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (struct CGPoint { float x1; float x2; })convertCoordinateToCameraModelPoint:(struct { double x1; double x2; })arg1;
+- (struct CGPoint { float x1; float x2; })convertCoordinateToPoint:(struct { double x1; double x2; })arg1;
+- (struct CGPoint { float x1; float x2; })convertMapPointToPoint:(struct { double x1; double x2; })arg1;
+- (struct { double x1; double x2; })convertPointToCoordinate:(struct CGPoint { float x1; float x2; })arg1;
+- (struct { double x1; double x2; })convertPointToCoordinateOnSphere:(struct CGPoint { float x1; float x2; })arg1;
+- (struct { double x1; double x2; })convertPointToMapPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)createFlyoverPreTourAnimation:(id)arg1 duration:(double)arg2;
 - (BOOL)currentSceneRequiresMSAA;
 - (id)customFeatureDataSources;
 - (void)dealloc;
 - (void)debugHighlightFeatureMarker:(const struct shared_ptr<md::FeatureMarker> { }*)arg1;
-- (void)debugHighlightObjectAtPoint:(struct CGPoint { double x1; double x2; })arg1 highlightTarget:(unsigned char)arg2;
+- (void)debugHighlightObjectAtPoint:(struct CGPoint { float x1; float x2; })arg1 highlightTarget:(unsigned char)arg2;
 - (id)delegate;
 - (void)deselectLabelMarker;
 - (void)deselectTransitLineMarker;
@@ -187,11 +187,11 @@
 - (void)gglWillDrawWithTimestamp;
 - (id)initWithTarget:(id)arg1 inBackground:(BOOL)arg2 manifestConfiguration:(id)arg3;
 - (void)initializeScene;
-- (void)initializeWithRenderer:(struct Renderer { int (**x1)(); struct Device {} *x2; unsigned int x3; unsigned int x4; unsigned int x5; bool x6; double x7; struct vector<std::__1::shared_ptr<ggl::DebugRenderer>, std::__1::allocator<std::__1::shared_ptr<ggl::DebugRenderer> > > { struct shared_ptr<ggl::DebugRenderer> {} *x_8_1_1; struct shared_ptr<ggl::DebugRenderer> {} *x_8_1_2; struct __compressed_pair<std::__1::shared_ptr<ggl::DebugRenderer> *, std::__1::allocator<std::__1::shared_ptr<ggl::DebugRenderer> > > { struct shared_ptr<ggl::DebugRenderer> {} *x_3_2_1; } x_8_1_3; } x8; struct unique_ptr<ggl::RenderQueue, std::__1::default_delete<ggl::RenderQueue> > { struct __compressed_pair<ggl::RenderQueue *, std::__1::default_delete<ggl::RenderQueue> > { struct RenderQueue {} *x_1_2_1; } x_9_1_1; } x9; struct shared_ptr<ggl::CommonLibrary> { struct CommonLibrary {} *x_10_1_1; struct __shared_weak_count {} *x_10_1_2; } x10; struct unique_ptr<ggl::RenderResourceFences, std::__1::default_delete<ggl::RenderResourceFences> > { struct __compressed_pair<ggl::RenderResourceFences *, std::__1::default_delete<ggl::RenderResourceFences> > { struct RenderResourceFences {} *x_1_2_1; } x_11_1_1; } x11; }*)arg1;
+- (void)initializeWithRenderer:(struct Renderer { int (**x1)(); struct Device {} *x2; unsigned int x3; unsigned int x4; unsigned int x5; bool x6; float x7; struct vector<std::__1::shared_ptr<ggl::DebugRenderer>, std::__1::allocator<std::__1::shared_ptr<ggl::DebugRenderer> > > { struct shared_ptr<ggl::DebugRenderer> {} *x_8_1_1; struct shared_ptr<ggl::DebugRenderer> {} *x_8_1_2; struct __compressed_pair<std::__1::shared_ptr<ggl::DebugRenderer> *, std::__1::allocator<std::__1::shared_ptr<ggl::DebugRenderer> > > { struct shared_ptr<ggl::DebugRenderer> {} *x_3_2_1; } x_8_1_3; } x8; struct unique_ptr<ggl::RenderQueue, std::__1::default_delete<ggl::RenderQueue> > { struct __compressed_pair<ggl::RenderQueue *, std::__1::default_delete<ggl::RenderQueue> > { struct RenderQueue {} *x_1_2_1; } x_9_1_1; } x9; struct shared_ptr<ggl::CommonLibrary> { struct CommonLibrary {} *x_10_1_1; struct __shared_weak_count {} *x_10_1_2; } x10; struct unique_ptr<ggl::RenderResourceFences, std::__1::default_delete<ggl::RenderResourceFences> > { struct __compressed_pair<ggl::RenderResourceFences *, std::__1::default_delete<ggl::RenderResourceFences> > { struct RenderResourceFences {} *x_1_2_1; } x_11_1_1; } x11; }*)arg1;
 - (void)insertRasterOverlay:(id)arg1 aboveOverlay:(id)arg2;
 - (void)insertRasterOverlay:(id)arg1 belowOverlay:(id)arg2;
 - (BOOL)isFullyDrawn;
-- (BOOL)isPointValidForGesturing:(struct CGPoint { double x1; double x2; })arg1;
+- (BOOL)isPointValidForGesturing:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)isShowingNoDataPlaceholders;
 - (void)labelManager:(struct LabelManager { int (**x1)(); struct weak_ptr<md::LabelManager> { struct LabelManager {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; struct _retain_ptr<VKDispatch *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> { int (**x_3_1_1)(); id x_3_1_2; /* Warning: Unrecognized filer type: '_' using 'void*' */ void*x_3_1_3; const void*x_3_1_4; void*x_3_1_5; void*x_3_1_6; int x_3_1_7; in void*x_3_1_8; out unsigned int x_3_1_9/* : ? */; void*x_3_1_10; BOOL x_3_1_11; void*x_3_1_12; } x3; struct _release_objc { } x4; }*)arg1 pendingArtworkIsReady:(BOOL)arg2;
 - (void)labelManager:(struct LabelManager { int (**x1)(); struct weak_ptr<md::LabelManager> { struct LabelManager {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; struct _retain_ptr<VKDispatch *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> { int (**x_3_1_1)(); id x_3_1_2; /* Warning: Unrecognized filer type: '_' using 'void*' */ void*x_3_1_3; const void*x_3_1_4; void*x_3_1_5; void*x_3_1_6; int x_3_1_7; in void*x_3_1_8; out unsigned int x_3_1_9/* : ? */; void*x_3_1_10; BOOL x_3_1_11; void*x_3_1_12; } x3; struct _release_objc { } x4; }*)arg1 selectedLabelMarkerDidChangeState:(const struct shared_ptr<md::LabelMarker> { struct LabelMarker {} *x1; struct __shared_weak_count {} *x2; }*)arg2;
@@ -200,7 +200,7 @@
 - (void)labelManager:(struct LabelManager { int (**x1)(); struct weak_ptr<md::LabelManager> { struct LabelManager {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; struct _retain_ptr<VKDispatch *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> { int (**x_3_1_1)(); id x_3_1_2; /* Warning: Unrecognized filer type: '_' using 'void*' */ void*x_3_1_3; const void*x_3_1_4; void*x_3_1_5; void*x_3_1_6; int x_3_1_7; in void*x_3_1_8; out unsigned int x_3_1_9/* : ? */; void*x_3_1_10; BOOL x_3_1_11; void*x_3_1_12; } x3; struct _release_objc { } x4; }*)arg1 setNeedsLayout:(BOOL)arg2;
 - (void)labelManagerDidLayout:(struct LabelManager { int (**x1)(); struct weak_ptr<md::LabelManager> { struct LabelManager {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; struct _retain_ptr<VKDispatch *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> { int (**x_3_1_1)(); id x_3_1_2; /* Warning: Unrecognized filer type: '_' using 'void*' */ void*x_3_1_3; const void*x_3_1_4; void*x_3_1_5; void*x_3_1_6; int x_3_1_7; in void*x_3_1_8; out unsigned int x_3_1_9/* : ? */; void*x_3_1_10; BOOL x_3_1_11; void*x_3_1_12; } x3; struct _release_objc { } x4; }*)arg1;
 - (struct shared_ptr<md::LabelMarker> { struct LabelMarker {} *x1; struct __shared_weak_count {} *x2; })labelMarkerForCustomFeatureAnnotation:(id)arg1 dataSource:(id)arg2;
-- (struct shared_ptr<md::LabelMarker> { struct LabelMarker {} *x1; struct __shared_weak_count {} *x2; })labelMarkerForSelectionAtPoint:(struct CGPoint { double x1; double x2; })arg1 selectableLabelsOnly:(BOOL)arg2;
+- (struct shared_ptr<md::LabelMarker> { struct LabelMarker {} *x1; struct __shared_weak_count {} *x2; })labelMarkerForSelectionAtPoint:(struct CGPoint { float x1; float x2; })arg1 selectableLabelsOnly:(BOOL)arg2;
 - (BOOL)labelMarkerSelectionEnabled;
 - (struct vector<std::__1::shared_ptr<md::LabelMarker>, std::__1::allocator<std::__1::shared_ptr<md::LabelMarker> > > { struct shared_ptr<md::LabelMarker> {} *x1; struct shared_ptr<md::LabelMarker> {} *x2; struct __compressed_pair<std::__1::shared_ptr<md::LabelMarker> *, std::__1::allocator<std::__1::shared_ptr<md::LabelMarker> > > { struct shared_ptr<md::LabelMarker> {} *x_3_1_1; } x3; })labelMarkers;
 - (unsigned char)labelScaleFactor;
@@ -208,7 +208,7 @@
 - (BOOL)localizeLabels;
 - (int)mapType;
 - (int)navigationShieldSize;
-- (struct GlobeOverlayContainer { struct weak_ptr<md::GlobeOverlayContainer> { struct GlobeOverlayContainer {} *x_1_1_1; struct __shared_weak_count {} *x_1_1_2; } x1; struct GlobeView {} *x2; struct NSMutableArray { Class x_3_1_1; } *x3; struct mutex { struct _opaque_pthread_mutex_t { long x_1_2_1; BOOL x_1_2_2[40]; } x_4_1_1; } x4; double x5; }*)overlayContainer;
+- (struct GlobeOverlayContainer { struct weak_ptr<md::GlobeOverlayContainer> { struct GlobeOverlayContainer {} *x_1_1_1; struct __shared_weak_count {} *x_1_1_2; } x1; struct GlobeView {} *x2; struct NSMutableArray { Class x_3_1_1; } *x3; struct mutex { struct _opaque_pthread_mutex_t { long x_1_2_1; BOOL x_1_2_2[40]; } x_4_1_1; } x4; float x5; }*)overlayContainer;
 - (id)overlays;
 - (void)pauseFlyoverTourAnimation;
 - (id)persistentOverlays;
@@ -227,7 +227,7 @@
 - (void)resourceManifestManagerWillChangeActiveTileGroup:(id)arg1;
 - (void)resumeFlyoverTourAnimation;
 - (id)routeLineSplitAnnotation;
-- (struct PolylineCoordinate { unsigned int x1; double x2; })routeUserOffset;
+- (struct PolylineCoordinate { unsigned int x1; float x2; })routeUserOffset;
 - (id /* block */)sceneDidLoadCallback;
 - (void)selectLabelMarker:(const struct shared_ptr<md::LabelMarker> { struct LabelMarker {} *x1; struct __shared_weak_count {} *x2; }*)arg1;
 - (void)selectTransitLineMarker:(id)arg1;
@@ -248,7 +248,7 @@
 - (void)setNavigationShieldSize:(int)arg1;
 - (void)setNightMode:(BOOL)arg1;
 - (void)setRouteLineSplitAnnotation:(id)arg1;
-- (void)setRouteUserOffset:(struct PolylineCoordinate { unsigned int x1; double x2; })arg1;
+- (void)setRouteUserOffset:(struct PolylineCoordinate { unsigned int x1; float x2; })arg1;
 - (void)setSceneDidLoadCallback:(id /* block */)arg1;
 - (void)setShieldIdiom:(int)arg1;
 - (void)setShieldSize:(int)arg1;
@@ -265,7 +265,7 @@
 - (BOOL)showsPointsOfInterest;
 - (struct DisplayStyle { unsigned char x1; unsigned char x2; unsigned char x3; unsigned char x4; unsigned char x5; })sourceMapDisplayStyle;
 - (void)startFlyoverAnimation:(id)arg1 animateToStart:(BOOL)arg2 labelChanged:(id /* block */)arg3 stateChange:(id /* block */)arg4;
-- (void)startFlyoverTourAnimation:(unsigned int)arg1 animateToStart:(BOOL)arg2 labelChanged:(id /* block */)arg3 stateChange:(id /* block */)arg4;
+- (void)startFlyoverTourAnimation:(unsigned long long)arg1 animateToStart:(BOOL)arg2 labelChanged:(id /* block */)arg3 stateChange:(id /* block */)arg4;
 - (void)stopAnimations;
 - (void)stopFlyoverAnimation;
 - (void)stopSnappingAnimations;
@@ -277,7 +277,7 @@
 - (BOOL)trafficEnabled;
 - (BOOL)trafficIncidentsEnabled;
 - (void)transferStateFromCanvas:(id)arg1;
-- (id)transitLineMarkersForSelectionAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (id)transitLineMarkersForSelectionAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)transitLineMarkersInCurrentViewport;
 - (void)transitionToFlyoverMode:(int)arg1 animated:(BOOL)arg2;
 - (void)updateCameraForFrameResize;

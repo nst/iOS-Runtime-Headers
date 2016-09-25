@@ -10,8 +10,8 @@
     PUAssetReference * _assetReference;
     PUAssetSharedViewModel * _assetSharedViewModel;
     PUBadgeInfo * _badgeInfo;
-    double  _contentOffsetOverrideFactor;
-    double  _focusValue;
+    float  _contentOffsetOverrideFactor;
+    float  _focusValue;
     BOOL  _forceBadgesVisible;
     PUIrisBadgeVisibilityController * _irisBadgeVisibilityController;
     PUBrowsingIrisPlayer * _irisPlayer;
@@ -26,12 +26,12 @@
     PUMediaProvider * _mediaProvider;
     PUModelTileTransform * _modelTileTransform;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _overridingContentOffset;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _preferredContentOffset;
     PUBrowsingVideoPlayer * _videoPlayer;
     BOOL  _wantsIrisBadgeVisible;
@@ -44,12 +44,12 @@
 @property (nonatomic, retain) PUAssetReference *assetReference;
 @property (nonatomic, retain) PUAssetSharedViewModel *assetSharedViewModel;
 @property (nonatomic, copy) PUBadgeInfo *badgeInfo;
-@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } contentOffset;
-@property (nonatomic) double contentOffsetOverrideFactor;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } contentOffset;
+@property (nonatomic) float contentOffsetOverrideFactor;
 @property (nonatomic, readonly) PUAssetViewModelChange *currentChange;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) double focusValue;
+@property (nonatomic) float focusValue;
 @property (nonatomic) BOOL forceBadgesVisible;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) PUBrowsingIrisPlayer *irisPlayer;
@@ -63,8 +63,8 @@
 @property (nonatomic, readonly, copy) PUOperationStatus *loadingStatus;
 @property (nonatomic, retain) PUMediaProvider *mediaProvider;
 @property (nonatomic, copy) PUModelTileTransform *modelTileTransform;
-@property (nonatomic) struct CGPoint { double x1; double x2; } overridingContentOffset;
-@property (nonatomic) struct CGPoint { double x1; double x2; } preferredContentOffset;
+@property (nonatomic) struct CGPoint { float x1; float x2; } overridingContentOffset;
+@property (nonatomic) struct CGPoint { float x1; float x2; } preferredContentOffset;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) PUBrowsingVideoPlayer *videoPlayer;
 @property (setter=_setWantsIrisBadgeVisible:, nonatomic) BOOL wantsIrisBadgeVisible;
@@ -93,7 +93,7 @@
 - (id)assetReference;
 - (id)assetSharedViewModel;
 - (id)badgeInfo;
-- (struct CGPoint { double x1; double x2; })contentOffset;
+- (struct CGPoint { float x1; float x2; })contentOffset;
 - (float)contentOffsetOverrideFactor;
 - (id)currentChange;
 - (void)dealloc;
@@ -115,8 +115,8 @@
 - (id)mediaProvider;
 - (id)modelTileTransform;
 - (id)newViewModelChange;
-- (struct CGPoint { double x1; double x2; })overridingContentOffset;
-- (struct CGPoint { double x1; double x2; })preferredContentOffset;
+- (struct CGPoint { float x1; float x2; })overridingContentOffset;
+- (struct CGPoint { float x1; float x2; })preferredContentOffset;
 - (void)registerChangeObserver:(id)arg1;
 - (void)resetContentOffset;
 - (void)setAccessoryViewVisible:(BOOL)arg1;
@@ -133,9 +133,9 @@
 - (void)setIsInEditMode:(BOOL)arg1;
 - (void)setMediaProvider:(id)arg1;
 - (void)setModelTileTransform:(id)arg1;
-- (void)setOverridingContentOffset:(struct CGPoint { double x1; double x2; })arg1;
-- (void)setPreferredContentOffset:(struct CGPoint { double x1; double x2; })arg1;
-- (void)setPreferredContentOffset:(struct CGPoint { double x1; double x2; })arg1 changeReason:(int)arg2;
+- (void)setOverridingContentOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setPreferredContentOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setPreferredContentOffset:(struct CGPoint { float x1; float x2; })arg1 changeReason:(int)arg2;
 - (void)setUserTransformingTile:(BOOL)arg1;
 - (void)unregisterChangeObserver:(id)arg1;
 - (id)videoPlayer;

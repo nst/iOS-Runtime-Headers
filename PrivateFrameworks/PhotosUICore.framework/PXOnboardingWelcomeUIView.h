@@ -7,10 +7,10 @@
     NSString * _buttonTitle;
     NSArray * _constraints;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _contentInsets;
     UILabel * _descriptionLabel;
     NSString * _descriptionText;
@@ -32,7 +32,7 @@
 @property (nonatomic, retain) UIFont *buttonFont;
 @property (nonatomic, copy) NSString *buttonTitle;
 @property (nonatomic, retain) NSArray *constraints;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInsets;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
 @property (nonatomic, readonly) UILabel *descriptionLabel;
 @property (nonatomic, copy) NSString *descriptionText;
 @property (nonatomic, retain) NSLayoutConstraint *iconTopCnst;
@@ -57,20 +57,20 @@
 - (id)buttonTitle;
 - (void)commonInit;
 - (id)constraints;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
 - (id)descriptionLabel;
 - (id)descriptionText;
 - (id)iconTopCnst;
 - (id)iconView;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (int)layoutStyle;
 - (id)leadingWhitespace;
 - (id)middleWhitespace;
 - (void)setButtonFont:(id)arg1;
 - (void)setButtonTitle:(id)arg1;
 - (void)setConstraints:(id)arg1;
-- (void)setContentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setDescriptionText:(id)arg1;
 - (void)setIconTopCnst:(id)arg1;
 - (void)setIconView:(id)arg1;

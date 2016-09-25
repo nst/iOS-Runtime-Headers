@@ -72,7 +72,7 @@
 - (BOOL)isSparseFullChange;
 - (void)markAsSparseFullChange;
 - (id)mergeRecordChangeWithNewRecordChange:(id)arg1 direction:(unsigned int)arg2;
-- (unsigned int)originalResourceSize;
+- (unsigned long long)originalResourceSize;
 - (void)prepareForStorage;
 - (id)propertiesDescription;
 - (id)propertiesForChangeType:(unsigned int)arg1;
@@ -81,7 +81,7 @@
 - (id)realIdentifier;
 - (id)realRecordChangeFromRecordChange:(id)arg1 direction:(unsigned int)arg2 newRecord:(id*)arg3;
 - (id)realRecordChangeFromRecordChange:(id)arg1 direction:(unsigned int)arg2 newRecord:(id*)arg3 updatedProperties:(id*)arg4;
-- (unsigned int)realResourceSize;
+- (unsigned long long)realResourceSize;
 - (id)recordChangeData;
 - (id)recordModificationDate;
 - (id)relatedIdentifier;
@@ -110,7 +110,7 @@
 - (BOOL)supportsDeletion;
 - (BOOL)supportsDirectDeletion;
 - (BOOL)supportsResources;
-- (unsigned int)totalResourceSize;
+- (unsigned long long)totalResourceSize;
 - (id)translateToClientChangeUsingIDMapping:(id)arg1 error:(id*)arg2;
 - (id)translateToCloudChangeUsingIDMapping:(id)arg1 error:(id*)arg2;
 - (BOOL)validateChangeWithError:(id*)arg1;

@@ -4,7 +4,7 @@
 
 @interface TLAlert : NSObject {
     TLAlertConfiguration * _configuration;
-    int  _instanceIndex;
+    long long  _instanceIndex;
     NSString * _toneIdentifier;
     int  _type;
     NSString * _vibrationIdentifier;

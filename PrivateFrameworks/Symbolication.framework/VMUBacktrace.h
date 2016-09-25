@@ -10,22 +10,22 @@
             int pid; 
             unsigned int thread; 
             int run_state; 
-            unsigned int dispatch_queue_serial_num; 
+            unsigned long long dispatch_queue_serial_num; 
         } context; 
-        unsigned int *frames; 
-        unsigned int *framePtrs; 
+        unsigned long long *frames; 
+        unsigned long long *framePtrs; 
         unsigned int length; 
     }  _callstack;
     int  _flavor;
 }
 
 - (struct _CSTypeRef { unsigned int x1; unsigned int x2; })_symbolicator;
-- (unsigned int*)backtrace;
+- (unsigned long long*)backtrace;
 - (unsigned int)backtraceLength;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (unsigned int)dispatchQueueSerialNumber;
+- (unsigned long long)dispatchQueueSerialNumber;
 - (void)fixupStackWithSamplingContext:(struct sampling_context_t { }*)arg1 symbolicator:(struct _CSTypeRef { unsigned int x1; unsigned int x2; })arg2;
 - (id)initWithSamplingContext:(struct sampling_context_t { }*)arg1 thread:(unsigned int)arg2 recordFramePointers:(BOOL)arg3;
 - (id)initWithTask:(unsigned int)arg1 thread:(unsigned int)arg2 is64Bit:(BOOL)arg3;
@@ -33,7 +33,7 @@
 - (void)setLengthTime:(double)arg1;
 - (void)setStartTime:(double)arg1;
 - (void)setThreadState:(int)arg1;
-- (unsigned int*)stackFramePointers;
+- (unsigned long long*)stackFramePointers;
 - (unsigned int)thread;
 - (int)threadState;
 

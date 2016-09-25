@@ -5,28 +5,28 @@
 @interface HUElasticApplier : HUApplier {
     BOOL  _applyOnlyOnProgressChanges;
     BOOL  _completesWhenAtRest;
-    double  _currentVelocity;
+    float  _currentVelocity;
     CADisplayLink * _displayLink;
     unsigned int  _frameCount;
-    double  _friction;
-    double  _previousForce;
+    float  _friction;
+    float  _previousForce;
     BOOL  _progressBeginsFromInitialInputProgress;
     id /* block */  _progressInputBlock;
     unsigned int  _restingFrameCount;
-    double  _tension;
+    float  _tension;
 }
 
 @property (nonatomic) BOOL applyOnlyOnProgressChanges;
 @property (nonatomic) BOOL completesWhenAtRest;
-@property (nonatomic) double currentVelocity;
+@property (nonatomic) float currentVelocity;
 @property (nonatomic, retain) CADisplayLink *displayLink;
 @property (nonatomic) unsigned int frameCount;
-@property (nonatomic) double friction;
-@property (nonatomic) double previousForce;
+@property (nonatomic) float friction;
+@property (nonatomic) float previousForce;
 @property (nonatomic) BOOL progressBeginsFromInitialInputProgress;
 @property (nonatomic, copy) id /* block */ progressInputBlock;
 @property (nonatomic) unsigned int restingFrameCount;
-@property (nonatomic) double tension;
+@property (nonatomic) float tension;
 
 - (void).cxx_destruct;
 - (void)_displayLinkTick;

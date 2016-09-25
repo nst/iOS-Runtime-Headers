@@ -33,7 +33,7 @@
 - (void)_fadeOut;
 - (void)_fadeOutDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;
 - (void)_fadeOutIfNeeded;
-- (void)_loadImagesWithColor:(id)arg1 imageSize:(struct CGSize { double x1; double x2; }*)arg2;
+- (void)_loadImagesWithColor:(id)arg1 imageSize:(struct CGSize { float x1; float x2; }*)arg2;
 - (void)_pauseContentsAnimation;
 - (void)_scheduleDelayedDim;
 - (void)cancelFadeOut;

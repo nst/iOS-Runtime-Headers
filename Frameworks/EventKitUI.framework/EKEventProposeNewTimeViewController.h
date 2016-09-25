@@ -17,7 +17,7 @@
     EKUIInviteesViewSomeInviteesCanAttendSection * _someInviteesCanAttendSection;
     SingleToolbarItemContainerView * _statusButtonsContainerView;
     EKUIEventStatusButtonsView * _statusButtonsView;
-    double  _statusButtonsViewCachedFontSize;
+    float  _statusButtonsViewCachedFontSize;
     BOOL  _viewIsVisible;
 }
 
@@ -41,7 +41,7 @@
 @property (nonatomic, retain) EKUIInviteesViewSomeInviteesCanAttendSection *someInviteesCanAttendSection;
 @property (nonatomic, retain) SingleToolbarItemContainerView *statusButtonsContainerView;
 @property (nonatomic, retain) EKUIEventStatusButtonsView *statusButtonsView;
-@property (nonatomic) double statusButtonsViewCachedFontSize;
+@property (nonatomic) float statusButtonsViewCachedFontSize;
 @property (readonly) Class superclass;
 @property (nonatomic) BOOL useCustomBackButton;
 @property (nonatomic) BOOL viewIsVisible;

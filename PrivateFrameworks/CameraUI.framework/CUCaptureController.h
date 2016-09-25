@@ -247,7 +247,7 @@
 - (void)dealloc;
 - (id)exposureDelegate;
 - (id)facesDelgate;
-- (void)focusAndExposeAtPoint:(struct CGPoint { double x1; double x2; })arg1 resetExposureTargetBias:(BOOL)arg2;
+- (void)focusAndExposeAtPoint:(struct CGPoint { float x1; float x2; })arg1 resetExposureTargetBias:(BOOL)arg2;
 - (void)focusAtCenterForVideoRecording;
 - (id)focusDelegate;
 - (void)forceDisableSubjectAreaChangeMonitoring;

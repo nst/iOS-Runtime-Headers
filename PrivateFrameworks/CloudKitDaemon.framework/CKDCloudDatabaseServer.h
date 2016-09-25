@@ -8,7 +8,7 @@
     NSMutableArray * _connectedClients;
     NSMutableDictionary * _recentClientsByProcessName;
     NSObject<OS_dispatch_source> * _sighandlerSource;
-    unsigned int  _stateHandle;
+    unsigned long long  _stateHandle;
     NSObject<OS_dispatch_queue> * _statusReportCallbackQueue;
     NSMutableArray * _statusReportCallbacks;
     NSObject<OS_dispatch_queue> * _statusReportQueue;
@@ -25,7 +25,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) NSMutableDictionary *recentClientsByProcessName;
 @property (nonatomic, retain) NSObject<OS_dispatch_source> *sighandlerSource;
-@property (nonatomic) unsigned int stateHandle;
+@property (nonatomic) unsigned long long stateHandle;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *statusReportCallbackQueue;
 @property (nonatomic, retain) NSMutableArray *statusReportCallbacks;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *statusReportQueue;
@@ -57,7 +57,7 @@
 - (void)setConnectedClients:(id)arg1;
 - (void)setRecentClientsByProcessName:(id)arg1;
 - (void)setSighandlerSource:(id)arg1;
-- (void)setStateHandle:(unsigned int)arg1;
+- (void)setStateHandle:(unsigned long long)arg1;
 - (void)setStatusReportCallbackQueue:(id)arg1;
 - (void)setStatusReportCallbacks:(id)arg1;
 - (void)setStatusReportQueue:(id)arg1;
@@ -65,7 +65,7 @@
 - (void)setTccToken:(int)arg1;
 - (void)setXpcListener:(id)arg1;
 - (id)sighandlerSource;
-- (unsigned int)stateHandle;
+- (unsigned long long)stateHandle;
 - (id)statusReportCallbackQueue;
 - (id)statusReportCallbacks;
 - (id)statusReportQueue;

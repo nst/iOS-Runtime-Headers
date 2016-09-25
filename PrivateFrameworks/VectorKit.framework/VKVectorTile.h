@@ -3,25 +3,25 @@
  */
 
 @interface VKVectorTile : VKTile {
-    double  _contentScale;
+    float  _contentScale;
     VKMapTileList * _fragments;
-    double  _maximumStyleZ;
+    float  _maximumStyleZ;
     GEOVectorTile * _modelTile;
     VKSharedResources * _sharedResources;
     struct shared_ptr<gss::StylesheetManager<gss::PropertyID> > { 
         struct StylesheetManager<gss::PropertyID> {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
     }  _styleManager;
-    double  _textureScale;
+    float  _textureScale;
 }
 
-@property (nonatomic) double contentScale;
+@property (nonatomic) float contentScale;
 @property (nonatomic, readonly) VKMapTileList *fragments;
-@property (nonatomic) double maximumStyleZ;
+@property (nonatomic) float maximumStyleZ;
 @property (nonatomic, retain) GEOVectorTile *modelTile;
 @property (nonatomic, retain) VKSharedResources *sharedResources;
 @property (nonatomic) struct shared_ptr<gss::StylesheetManager<gss::PropertyID> > { struct StylesheetManager<gss::PropertyID> {} *x1; struct __shared_weak_count {} *x2; } styleManager;
-@property (nonatomic) double textureScale;
+@property (nonatomic) float textureScale;
 @property (nonatomic, readonly) int vectorType;
 
 - (id).cxx_construct;

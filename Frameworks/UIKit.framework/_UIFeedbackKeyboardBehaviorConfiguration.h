@@ -4,13 +4,13 @@
 
 @interface _UIFeedbackKeyboardBehaviorConfiguration : _UIFeedbackGeneratorConfiguration {
     double  _fastTypingTime;
-    double  _fastTypingVolumeMultiplier;
+    float  _fastTypingVolumeMultiplier;
     NSDictionary * _feedbacks;
     double  _slowTypingTime;
 }
 
 @property (nonatomic) double fastTypingTime;
-@property (nonatomic) double fastTypingVolumeMultiplier;
+@property (nonatomic) float fastTypingVolumeMultiplier;
 @property (nonatomic, retain) NSDictionary *feedbacks;
 @property (nonatomic) double slowTypingTime;
 

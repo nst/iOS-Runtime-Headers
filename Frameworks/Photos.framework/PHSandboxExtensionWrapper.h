@@ -3,7 +3,7 @@
  */
 
 @interface PHSandboxExtensionWrapper : NSObject {
-    int  _handle;
+    long long  _handle;
     NSString * _token;
 }
 

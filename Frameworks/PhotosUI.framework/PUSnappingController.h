@@ -3,36 +3,36 @@
  */
 
 @interface PUSnappingController : NSObject {
-    double  __accumulatedOffset;
+    float  __accumulatedOffset;
     BOOL  __hasEnteredAttractionThreshold;
     BOOL  __hasEnteredRetentionThreshold;
     BOOL  __interacting;
-    double  __previousOffset;
+    float  __previousOffset;
     BOOL  __previousOffsetInvalid;
     _UIFeedbackRetargetBehavior * __retargetBehavior;
     BOOL  _accumulateOffsetWhileSnapped;
-    double  _attractionOffsetThreshold;
-    double  _attractionVelocityThreshold;
+    float  _attractionOffsetThreshold;
+    float  _attractionVelocityThreshold;
     <UICoordinateSpace> * _coordinateSpace;
-    double  _retentionOffsetThreshold;
+    float  _retentionOffsetThreshold;
     BOOL  _snappedToTarget;
-    double  _snappingTarget;
+    float  _snappingTarget;
 }
 
-@property (setter=_setAccumulatedOffset:, nonatomic) double _accumulatedOffset;
+@property (setter=_setAccumulatedOffset:, nonatomic) float _accumulatedOffset;
 @property (setter=_setHasEnteredAttractionThreshold:, nonatomic) BOOL _hasEnteredAttractionThreshold;
 @property (setter=_setHasEnteredRetentionThreshold:, nonatomic) BOOL _hasEnteredRetentionThreshold;
 @property (getter=_isInteracting, setter=_setInteracting:, nonatomic) BOOL _interacting;
-@property (setter=_setPreviousOffset:, nonatomic) double _previousOffset;
+@property (setter=_setPreviousOffset:, nonatomic) float _previousOffset;
 @property (getter=_isPreviousOffsetInvalid, setter=_setPreviousOffsetInvalid:, nonatomic) BOOL _previousOffsetInvalid;
 @property (setter=_setRetargetBehavior:, nonatomic, retain) _UIFeedbackRetargetBehavior *_retargetBehavior;
 @property (nonatomic) BOOL accumulateOffsetWhileSnapped;
-@property (nonatomic) double attractionOffsetThreshold;
-@property (nonatomic) double attractionVelocityThreshold;
+@property (nonatomic) float attractionOffsetThreshold;
+@property (nonatomic) float attractionVelocityThreshold;
 @property (nonatomic, readonly) <UICoordinateSpace> *coordinateSpace;
-@property (nonatomic) double retentionOffsetThreshold;
+@property (nonatomic) float retentionOffsetThreshold;
 @property (getter=isSnappedToTarget, nonatomic, readonly) BOOL snappedToTarget;
-@property (nonatomic, readonly) double snappingTarget;
+@property (nonatomic, readonly) float snappingTarget;
 
 - (void).cxx_destruct;
 - (float)_accumulatedOffset;

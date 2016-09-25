@@ -7,9 +7,9 @@
     NSMutableSet * _concurrentDispatchQueueIds;
     unsigned int  _countSuspended;
     unsigned int  _countTerminated;
-    unsigned int  _cpuTimeNsCached;
+    unsigned long long  _cpuTimeNsCached;
     unsigned int  _firstTimestampIndex;
-    unsigned int  _mainThreadId;
+    unsigned long long  _mainThreadId;
     double  _mostRecentTimeSamplingOnlyMainThread;
     BOOL  _previousThreadsWereUnchanged;
     NSDictionary * _threadsInPreviousSample;
@@ -29,7 +29,7 @@
 @property (readonly) BOOL isTranslocated;
 @property (readonly) BOOL isUnresponsive;
 @property (readonly) unsigned int lastTimestampIndex;
-@property (readonly) unsigned int mainBinaryOffset;
+@property (readonly) unsigned long long mainBinaryOffset;
 @property (readonly) NSString *mainBinaryPath;
 @property (readonly) NSUUID *mainBinaryUuid;
 @property (readonly) NSString *name;
@@ -41,7 +41,7 @@
 @property (readonly) unsigned int timestampIndexWhenTransitionedToSamplingAllThreads;
 @property (readonly) NSArray *timestampIndexedTasks;
 @property (readonly) unsigned int uid;
-@property (readonly) unsigned int uniquePid;
+@property (readonly) unsigned long long uniquePid;
 @property (readonly) BOOL usesSuddenTermination;
 @property (readonly) BOOL workQueueExceededConstrainedThreadLimit;
 @property (readonly) BOOL workQueueExceededTotalThreadLimit;
@@ -62,7 +62,7 @@
 - (unsigned int)count;
 - (unsigned int)countSuspended;
 - (unsigned int)countTerminated;
-- (unsigned int)cpuTimeNs;
+- (unsigned long long)cpuTimeNs;
 - (void)dealloc;
 - (id)debugDescription;
 - (void)fillGaps;
@@ -76,7 +76,7 @@
 - (BOOL)isTranslocated;
 - (BOOL)isUnresponsive;
 - (unsigned int)lastTimestampIndex;
-- (unsigned int)mainBinaryOffset;
+- (unsigned long long)mainBinaryOffset;
 - (id)mainBinaryPath;
 - (id)mainBinaryUuid;
 - (id)name;
@@ -94,7 +94,7 @@
 - (unsigned int)timestampIndexWhenTransitionedToSamplingAllThreads;
 - (id)timestampIndexedTasks;
 - (unsigned int)uid;
-- (unsigned int)uniquePid;
+- (unsigned long long)uniquePid;
 - (BOOL)usesSuddenTermination;
 - (BOOL)workQueueExceededConstrainedThreadLimit;
 - (BOOL)workQueueExceededTotalThreadLimit;

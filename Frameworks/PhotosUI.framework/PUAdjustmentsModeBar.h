@@ -10,9 +10,9 @@
     <PUAdjustmentsModeBarDataSource> * _dataSource;
     <PUAdjustmentsModeBarDelegate> * _delegate;
     BOOL  _didSetInitialModeSlidersOffset;
-    double  _expandedShortSideSize;
+    float  _expandedShortSideSize;
     _UIDynamicValueAnimation * _finishTransitionAnimation;
-    double  _interactiveTransitionProgress;
+    float  _interactiveTransitionProgress;
     int  _interactiveTransitionState;
     int  _layoutOrientation;
     BOOL  _listViewExpanded;
@@ -24,15 +24,15 @@
     NSLayoutConstraint * _modePickerTableViewShortSideConstraint;
     NSNumberFormatter * _nonZeroLevelValueFormatter;
     _PUSliderPlayheadBaseView * _playheadBaseView;
-    double  _playheadSize;
+    float  _playheadSize;
     UIView * _playheadView;
     BOOL  _playheadViewVisible;
     NSArray * _playheadViewsConstraints;
     PUAdjustmentsMode * _selectedMode;
     NSLayoutConstraint * _selfSizeConstraint;
-    double  _shortSideSize;
-    double  _slidersLongContentLength;
-    double  _slidersShortSideLength;
+    float  _shortSideSize;
+    float  _slidersLongContentLength;
+    float  _slidersShortSideLength;
     NSNumberFormatter * _zeroLevelValueFormatter;
 }
 
@@ -41,18 +41,18 @@
 @property (nonatomic) <PUAdjustmentsModeBarDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly) double interactiveTransitionProgress;
+@property (nonatomic, readonly) float interactiveTransitionProgress;
 @property (nonatomic, readonly) int interactiveTransitionState;
 @property (nonatomic, readonly) BOOL isSlidersListReversed;
 @property (nonatomic, readonly) int layoutOrientation;
 @property (getter=isListViewExpanded, nonatomic, readonly) BOOL listViewExpanded;
 @property (getter=isListViewExpandedExplicitly, nonatomic, readonly) BOOL listViewExpandedExplicitly;
-@property (nonatomic) double playheadSize;
+@property (nonatomic) float playheadSize;
 @property (nonatomic, retain) PUAdjustmentsMode *selectedMode;
-@property (nonatomic) double shortSideSize;
+@property (nonatomic) float shortSideSize;
 @property (nonatomic, readonly) BOOL shouldShowModePickerOnFirstDisplay;
-@property (nonatomic) double slidersLongContentLength;
-@property (nonatomic) double slidersShortSideLength;
+@property (nonatomic) float slidersLongContentLength;
+@property (nonatomic) float slidersShortSideLength;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -78,7 +78,7 @@
 - (id)dataSource;
 - (id)delegate;
 - (void)finishInteractiveTransitionWithVelocity:(float)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (float)interactiveTransitionProgress;
 - (int)interactiveTransitionState;
 - (BOOL)isInInteractiveTransition;
@@ -128,6 +128,6 @@
 - (void)visibleModesDidChangeWithInsertedIndexes:(id)arg1 deletedIndexes:(id)arg2;
 - (void)visibleModesWillChange;
 - (id)visibleSliderAdjustmentModes;
-- (BOOL)wantsToHandleEventAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (BOOL)wantsToHandleEventAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 
 @end

@@ -9,7 +9,7 @@
     NSMutableDictionary * _familyMemberDsidToContact;
     NSArray * _familyMembers;
     unsigned int  _familyMembersState;
-    double  _monogramDiameter;
+    float  _monogramDiameter;
     int  _monogramStyle;
     NSMutableDictionary * _recipientAvailabilities;
 }
@@ -20,7 +20,7 @@
 @property (nonatomic, copy) NSMutableDictionary *familyMemberDsidToContact;
 @property (nonatomic, copy) NSArray *familyMembers;
 @property (nonatomic) unsigned int familyMembersState;
-@property (nonatomic) double monogramDiameter;
+@property (nonatomic) float monogramDiameter;
 @property (nonatomic) int monogramStyle;
 @property (nonatomic, readonly, copy) NSArray *pendingDestinations;
 @property (nonatomic, retain) NSMutableDictionary *recipientAvailabilities;

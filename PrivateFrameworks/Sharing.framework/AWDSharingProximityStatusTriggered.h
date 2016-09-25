@@ -48,7 +48,7 @@
     unsigned int  _secondaryLocation;
     NSString * _sessionUUID;
     int  _smoothedRSSI;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) unsigned int audioSourceCount;
@@ -96,7 +96,7 @@
 @property (nonatomic) unsigned int secondaryLocation;
 @property (nonatomic, retain) NSString *sessionUUID;
 @property (nonatomic) int smoothedRSSI;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void).cxx_destruct;
 - (unsigned int)audioSourceCount;
@@ -194,9 +194,9 @@
 - (void)setSecondaryLocation:(unsigned int)arg1;
 - (void)setSessionUUID:(id)arg1;
 - (void)setSmoothedRSSI:(int)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (int)smoothedRSSI;
-- (unsigned int)timestamp;
+- (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 
 @end

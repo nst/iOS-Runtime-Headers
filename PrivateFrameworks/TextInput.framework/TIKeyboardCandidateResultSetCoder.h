@@ -33,7 +33,7 @@
 - (id)decodeString;
 - (id)decodeStringArray;
 - (unsigned int)decodeUInt32;
-- (unsigned int)decodeUInt64;
+- (unsigned long long)decodeUInt64;
 - (void)encodeBool:(BOOL)arg1;
 - (void)encodeByte:(unsigned char)arg1;
 - (void)encodePointerValueArray:(id)arg1;
@@ -41,7 +41,7 @@
 - (void)encodeString:(id)arg1;
 - (void)encodeStringArray:(id)arg1;
 - (void)encodeUInt32:(unsigned int)arg1;
-- (void)encodeUInt64:(unsigned int)arg1;
+- (void)encodeUInt64:(unsigned long long)arg1;
 - (id)initForDecodingWithData:(id)arg1;
 - (id)initForEncoding;
 - (id)initWithData:(id)arg1 mutableData:(id)arg2;

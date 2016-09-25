@@ -5,19 +5,19 @@
 @interface SBFWallpaperSettings : _UISettings {
     int  _blurReplacementMode;
     unsigned int  _colorBoxSize;
-    double  _mediumBlurRadius;
-    double  _mediumGrayscaleTintAlpha;
-    double  _mediumGrayscaleTintLevel;
-    double  _mediumSaturationDeltaFactor;
+    float  _mediumBlurRadius;
+    float  _mediumGrayscaleTintAlpha;
+    float  _mediumGrayscaleTintLevel;
+    float  _mediumSaturationDeltaFactor;
     BOOL  _replaceBlurs;
 }
 
 @property (nonatomic) int blurReplacementMode;
 @property (nonatomic) unsigned int colorBoxSize;
-@property (nonatomic) double mediumBlurRadius;
-@property (nonatomic) double mediumGrayscaleTintAlpha;
-@property (nonatomic) double mediumGrayscaleTintLevel;
-@property (nonatomic) double mediumSaturationDeltaFactor;
+@property (nonatomic) float mediumBlurRadius;
+@property (nonatomic) float mediumGrayscaleTintAlpha;
+@property (nonatomic) float mediumGrayscaleTintLevel;
+@property (nonatomic) float mediumSaturationDeltaFactor;
 @property (nonatomic) BOOL replaceBlurs;
 
 + (id)settingsControllerModule;

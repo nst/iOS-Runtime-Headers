@@ -7,7 +7,7 @@
     SFUCryptoKey * _decryptionKey;
     TSPDocumentProperties * _documentProperties;
     <TSPFileCoordinatorDelegate> * _fileCoordinatorDelegate;
-    unsigned int  _fileFormatVersion;
+    unsigned long long  _fileFormatVersion;
     struct { 
         unsigned int isLazyLoadingDocumentProperties : 1; 
         unsigned int isLazyLoadingZip : 1; 
@@ -23,7 +23,7 @@
 @property (nonatomic, readonly) SFUCryptoKey *decryptionKey;
 @property (nonatomic, readonly) TSPDocumentProperties *documentProperties;
 @property (nonatomic, readonly) <TSPFileCoordinatorDelegate> *fileCoordinatorDelegate;
-@property (nonatomic, readonly) unsigned int fileFormatVersion;
+@property (nonatomic, readonly) unsigned long long fileFormatVersion;
 @property (nonatomic, readonly) BOOL isClosed;
 @property (nonatomic, readonly) BOOL isPasswordProtected;
 @property (readonly) NSError *lastReloadError;
@@ -50,18 +50,18 @@
 - (id)dataAtRelativePath:(id)arg1 allowDecryption:(BOOL)arg2 error:(id*)arg3;
 - (id)decryptionKey;
 - (void)didCloseDocument;
-- (void)didReadFileFormatVersion:(unsigned int)arg1;
+- (void)didReadFileFormatVersion:(unsigned long long)arg1;
 - (void)didReferenceData:(id)arg1;
 - (BOOL)didReloadZipArchive:(id)arg1 error:(id*)arg2;
 - (void)didRetrieveDecryptionKey:(id)arg1;
 - (id)documentProperties;
-- (unsigned int)encodedLengthForComponentLocator:(id)arg1 isStoredOutsideObjectArchive:(BOOL)arg2;
+- (unsigned long long)encodedLengthForComponentLocator:(id)arg1 isStoredOutsideObjectArchive:(BOOL)arg2;
 - (void)enumerateDatasUsingBlock:(id /* block */)arg1;
 - (id)fileCoordinatorDelegate;
-- (unsigned int)fileFormatVersion;
+- (unsigned long long)fileFormatVersion;
 - (BOOL)hasDataAtRelativePath:(id)arg1;
 - (id)init;
-- (id)initWithPackageIdentifier:(unsigned char)arg1 documentProperties:(id)arg2 fileFormatVersion:(unsigned int)arg3 decryptionKey:(id)arg4 fileCoordinatorDelegate:(id)arg5 isLazyLoading:(BOOL)arg6;
+- (id)initWithPackageIdentifier:(unsigned char)arg1 documentProperties:(id)arg2 fileFormatVersion:(unsigned long long)arg3 decryptionKey:(id)arg4 fileCoordinatorDelegate:(id)arg5 isLazyLoading:(BOOL)arg6;
 - (id)initWithURL:(id)arg1 zipArchiveOrNil:(id)arg2 packageIdentifier:(unsigned char)arg3 documentProperties:(id)arg4 decryptionKey:(id)arg5 fileCoordinatorDelegate:(id)arg6 error:(id*)arg7;
 - (BOOL)isClosed;
 - (BOOL)isPasswordProtected;

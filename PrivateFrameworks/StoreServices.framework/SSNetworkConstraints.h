@@ -20,8 +20,8 @@
 
 - (id)_copySizeLimits;
 - (void)_disableAllNetworkTypes;
-- (void)_setSizeLimit:(int)arg1 forNetworkType:(int)arg2;
-- (int)_sizeLimitForNetworkType:(int)arg1;
+- (void)_setSizeLimit:(long long)arg1 forNetworkType:(int)arg2;
+- (long long)_sizeLimitForNetworkType:(int)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)copyXPCEncoding;
 - (void)dealloc;
@@ -35,8 +35,8 @@
 - (BOOL)isAnyNetworkTypeEnabled;
 - (BOOL)isEqual:(id)arg1;
 - (void)setAllNetworkTypesDisabled;
-- (void)setSizeLimit:(int)arg1 forNetworkType:(int)arg2;
+- (void)setSizeLimit:(long long)arg1 forNetworkType:(int)arg2;
 - (void)setSizeLimitsWithStoreConstraintDictionary:(id)arg1;
-- (int)sizeLimitForNetworkType:(int)arg1;
+- (long long)sizeLimitForNetworkType:(int)arg1;
 
 @end

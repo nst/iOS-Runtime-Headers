@@ -7,7 +7,7 @@
 }
 
 @property (nonatomic, retain) <SKUIArtworkProviding> *artworks;
-@property (nonatomic) int itemIdentifier;
+@property (nonatomic) long long itemIdentifier;
 @property (nonatomic) int itemKind;
 @property (nonatomic, retain) NSString *title;
 

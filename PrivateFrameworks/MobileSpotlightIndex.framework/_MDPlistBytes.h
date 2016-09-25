@@ -14,9 +14,9 @@
     struct __CFArray { } * _rleQueue;
     int  _uidCapacity;
     int  _uidCount;
-    unsigned int * _uidVector;
+    unsigned long long * _uidVector;
     unsigned int  _useMalloc;
-    unsigned int * _wrapperPtr;
+    unsigned long long * _wrapperPtr;
 }
 
 + (struct __MDPlistBytes { }*)createArrayPlistBytesUsingBlock:(id /* block */)arg1;

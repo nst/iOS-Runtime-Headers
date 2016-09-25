@@ -68,10 +68,10 @@
         unsigned int traffic_class; 
         unsigned int traffic_mgt_flags; 
         BOOL cc_algo[16]; 
-        unsigned int upid; 
+        unsigned long long upid; 
         unsigned int pid; 
         BOOL pname[64]; 
-        unsigned int eupid; 
+        unsigned long long eupid; 
         unsigned int epid; 
         unsigned char uuid[16]; 
         unsigned char euuid[16]; 
@@ -95,7 +95,7 @@
 @property (retain) NSString *TCPState;
 @property (retain) NSString *congestionAlgorithm;
 @property (readonly) int epid;
-@property (readonly) unsigned int eupid;
+@property (readonly) unsigned long long eupid;
 @property (retain) NSUUID *euuid;
 @property (readonly) int interface;
 @property (readonly) bool interfaceAWDL;
@@ -119,7 +119,7 @@
 @property (readonly) int txCongestionWindow;
 @property (readonly) int txUnacked;
 @property (readonly) int txWindow;
-@property (readonly) unsigned int uniqueProcessID;
+@property (readonly) unsigned long long uniqueProcessID;
 @property (retain) NSUUID *uuid;
 @property (retain) NSUUID *vuuid;
 
@@ -134,7 +134,7 @@
 - (id)createNSUUIDForBytes:(unsigned char)arg1;
 - (id)description;
 - (int)epid;
-- (unsigned int)eupid;
+- (unsigned long long)eupid;
 - (id)euuid;
 - (BOOL)handleDescriptor:(void*)arg1 length:(unsigned long)arg2;
 - (id)initWithManager:(id)arg1 local:(const struct sockaddr { unsigned char x1; unsigned char x2; BOOL x3[14]; }*)arg2 remote:(const struct sockaddr { unsigned char x1; unsigned char x2; BOOL x3[14]; }*)arg3;
@@ -168,7 +168,7 @@
 - (int)txCongestionWindow;
 - (int)txUnacked;
 - (int)txWindow;
-- (unsigned int)uniqueProcessID;
+- (unsigned long long)uniqueProcessID;
 - (id)uuid;
 - (id)vuuid;
 

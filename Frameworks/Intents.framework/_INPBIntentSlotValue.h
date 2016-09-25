@@ -152,7 +152,7 @@
         unsigned int size; 
     }  _PayloadPrimitiveInts;
     struct { 
-        int *list; 
+        long long *list; 
         unsigned int count; 
         unsigned int size; 
     }  _PayloadPrimitiveLongs;
@@ -267,7 +267,7 @@
 @property (nonatomic, readonly) unsigned int PayloadPrimitiveDoublesCount;
 @property (nonatomic, readonly) int*PayloadPrimitiveInts;
 @property (nonatomic, readonly) unsigned int PayloadPrimitiveIntsCount;
-@property (nonatomic, readonly) int*PayloadPrimitiveLongs;
+@property (nonatomic, readonly) long long*PayloadPrimitiveLongs;
 @property (nonatomic, readonly) unsigned int PayloadPrimitiveLongsCount;
 @property (nonatomic, retain) NSMutableArray *PayloadPrimitiveStrings;
 @property (nonatomic, readonly) int*PayloadRadioTypes;
@@ -464,8 +464,8 @@
 - (int)PayloadPrimitiveIntAtIndex:(unsigned int)arg1;
 - (int*)PayloadPrimitiveInts;
 - (unsigned int)PayloadPrimitiveIntsCount;
-- (int)PayloadPrimitiveLongAtIndex:(unsigned int)arg1;
-- (int*)PayloadPrimitiveLongs;
+- (long long)PayloadPrimitiveLongAtIndex:(unsigned int)arg1;
+- (long long*)PayloadPrimitiveLongs;
 - (unsigned int)PayloadPrimitiveLongsCount;
 - (id)PayloadPrimitiveStringAtIndex:(unsigned int)arg1;
 - (id)PayloadPrimitiveStrings;
@@ -548,7 +548,7 @@
 - (void)addPayloadPrimitiveBool:(BOOL)arg1;
 - (void)addPayloadPrimitiveDouble:(double)arg1;
 - (void)addPayloadPrimitiveInt:(int)arg1;
-- (void)addPayloadPrimitiveLong:(int)arg1;
+- (void)addPayloadPrimitiveLong:(long long)arg1;
 - (void)addPayloadPrimitiveString:(id)arg1;
 - (void)addPayloadRadioType:(int)arg1;
 - (void)addPayloadRelativeReference:(int)arg1;
@@ -678,7 +678,7 @@
 - (void)setPayloadPrimitiveBools:(BOOL*)arg1 count:(unsigned int)arg2;
 - (void)setPayloadPrimitiveDoubles:(double*)arg1 count:(unsigned int)arg2;
 - (void)setPayloadPrimitiveInts:(int*)arg1 count:(unsigned int)arg2;
-- (void)setPayloadPrimitiveLongs:(int*)arg1 count:(unsigned int)arg2;
+- (void)setPayloadPrimitiveLongs:(long long*)arg1 count:(unsigned int)arg2;
 - (void)setPayloadPrimitiveStrings:(id)arg1;
 - (void)setPayloadRadioTypes:(int*)arg1 count:(unsigned int)arg2;
 - (void)setPayloadRelativeReferences:(int*)arg1 count:(unsigned int)arg2;

@@ -26,8 +26,8 @@
     UIKeyboardPredictionBarGrabber * m_grabber;
     BOOL  m_hasLongCandidates;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  m_initLocation;
     BOOL  m_isMinimized;
     UIKeyboardPredictionCell * m_lastCell;
@@ -43,7 +43,7 @@
     NSMutableArray * m_textAndEmojiCells;
     NSMutableArray * m_threeTextCells;
     NSMutableArray * m_twoTextCells;
-    double  m_width;
+    float  m_width;
 }
 
 @property (nonatomic, retain) UITouch *activeTouch;
@@ -71,7 +71,7 @@
 - (void)acceptCandidate;
 - (void)acceptCandidateAtCell:(id)arg1;
 - (void)acceptPredictiveInput:(id)arg1;
-- (void)activateCandidateAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)activateCandidateAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)activeTouch;
 - (id)autocorrection;
 - (void)commitPrediction:(id)arg1;
@@ -86,9 +86,9 @@
 - (BOOL)hasPredictions;
 - (float)heightBeforeStateChangeForInterfaceOrientation:(int)arg1;
 - (float)heightForInterfaceOrientation:(int)arg1;
-- (unsigned int)indexForPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (unsigned int)indexForPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)initCells;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)inputModeDidChange;
 - (BOOL)isTextSuggestion;
 - (id)labelTextForPrediction:(id)arg1 typedString:(id)arg2;
@@ -106,7 +106,7 @@
 - (void)setActiveCellWithIndex:(unsigned int)arg1;
 - (void)setActiveTouch:(id)arg1;
 - (void)setCurrentFirstTextSuggestion:(id)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setFrameForCells:(id)arg1 start:(float)arg2 width:(float)arg3 height:(float)arg4;
 - (void)setLastTextSuggestionUpdateDate:(id)arg1;
 - (void)setLastTextSuggestionUpdateOrientation:(int)arg1;
@@ -122,7 +122,7 @@
 - (void)setTouchedCellState:(int)arg1;
 - (void)setUpdateTimer:(id)arg1;
 - (BOOL)show;
-- (void)showMessageWithSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)showMessageWithSize:(struct CGSize { float x1; float x2; })arg1;
 - (int)state;
 - (int)stateForCurrentPreferences;
 - (void)suppressLayoutSubviewsForCellLabels:(BOOL)arg1;

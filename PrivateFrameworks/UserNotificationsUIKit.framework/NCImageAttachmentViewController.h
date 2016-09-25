@@ -4,23 +4,23 @@
 
 @interface NCImageAttachmentViewController : NCAttachmentViewController {
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _imageSize;
     UIImageView * _imageView;
 }
 
-@property (nonatomic) struct CGSize { double x1; double x2; } imageSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } imageSize;
 @property (nonatomic, retain) UIImageView *imageView;
 
 - (void).cxx_destruct;
 - (void)_setupViewUsingImage:(id)arg1;
-- (struct CGSize { double x1; double x2; })contentSize;
+- (struct CGSize { float x1; float x2; })contentSize;
 - (void)dealloc;
-- (struct CGSize { double x1; double x2; })imageSize;
+- (struct CGSize { float x1; float x2; })imageSize;
 - (id)imageView;
 - (id)initWithAttachment:(id)arg1 forNotificationRequest:(id)arg2;
-- (void)setImageSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setImageSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setImageView:(id)arg1;
 
 @end

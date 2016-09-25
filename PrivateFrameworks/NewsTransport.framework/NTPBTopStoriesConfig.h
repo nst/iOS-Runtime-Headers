@@ -3,9 +3,9 @@
  */
 
 @interface NTPBTopStoriesConfig : PBCodable <NSCopying> {
-    int  _badgesTimeout;
+    long long  _badgesTimeout;
     NSString * _channelId;
-    int  _cutoffTime;
+    long long  _cutoffTime;
     struct { 
         unsigned int badgesTimeout : 1; 
         unsigned int cutoffTime : 1; 
@@ -13,22 +13,22 @@
         unsigned int pinningEnabled : 1; 
         unsigned int promotingEnabled : 1; 
     }  _has;
-    int  _maximumArticleCount;
+    long long  _maximumArticleCount;
     BOOL  _pinningEnabled;
     BOOL  _promotingEnabled;
     NSMutableArray * _styleConfigs;
 }
 
-@property (nonatomic) int badgesTimeout;
+@property (nonatomic) long long badgesTimeout;
 @property (nonatomic, retain) NSString *channelId;
-@property (nonatomic) int cutoffTime;
+@property (nonatomic) long long cutoffTime;
 @property (nonatomic) BOOL hasBadgesTimeout;
 @property (nonatomic, readonly) BOOL hasChannelId;
 @property (nonatomic) BOOL hasCutoffTime;
 @property (nonatomic) BOOL hasMaximumArticleCount;
 @property (nonatomic) BOOL hasPinningEnabled;
 @property (nonatomic) BOOL hasPromotingEnabled;
-@property (nonatomic) int maximumArticleCount;
+@property (nonatomic) long long maximumArticleCount;
 @property (nonatomic) BOOL pinningEnabled;
 @property (nonatomic) BOOL promotingEnabled;
 @property (nonatomic, retain) NSMutableArray *styleConfigs;
@@ -37,11 +37,11 @@
 
 - (void).cxx_destruct;
 - (void)addStyleConfigs:(id)arg1;
-- (int)badgesTimeout;
+- (long long)badgesTimeout;
 - (id)channelId;
 - (void)clearStyleConfigs;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (int)cutoffTime;
+- (long long)cutoffTime;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasBadgesTimeout;
@@ -52,20 +52,20 @@
 - (BOOL)hasPromotingEnabled;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
-- (int)maximumArticleCount;
+- (long long)maximumArticleCount;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)pinningEnabled;
 - (BOOL)promotingEnabled;
 - (BOOL)readFrom:(id)arg1;
-- (void)setBadgesTimeout:(int)arg1;
+- (void)setBadgesTimeout:(long long)arg1;
 - (void)setChannelId:(id)arg1;
-- (void)setCutoffTime:(int)arg1;
+- (void)setCutoffTime:(long long)arg1;
 - (void)setHasBadgesTimeout:(BOOL)arg1;
 - (void)setHasCutoffTime:(BOOL)arg1;
 - (void)setHasMaximumArticleCount:(BOOL)arg1;
 - (void)setHasPinningEnabled:(BOOL)arg1;
 - (void)setHasPromotingEnabled:(BOOL)arg1;
-- (void)setMaximumArticleCount:(int)arg1;
+- (void)setMaximumArticleCount:(long long)arg1;
 - (void)setPinningEnabled:(BOOL)arg1;
 - (void)setPromotingEnabled:(BOOL)arg1;
 - (void)setStyleConfigs:(id)arg1;

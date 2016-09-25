@@ -3,14 +3,14 @@
  */
 
 @interface VideosExtrasFeatureContainerViewController : UIViewController {
-    double  _collectionViewHeight;
+    float  _collectionViewHeight;
     VideosExtrasContext * _context;
     UIView * _menuBarView;
     NSLayoutConstraint * _overlayViewAdjustmentConstraint;
     UIViewController<VideosExtrasVideoPlaybackViewController> * _videoPlaybackViewController;
 }
 
-@property (nonatomic) double collectionViewHeight;
+@property (nonatomic) float collectionViewHeight;
 @property (nonatomic, readonly) VideosExtrasContext *context;
 @property (nonatomic) UIView *menuBarView;
 @property (nonatomic, retain) UIViewController *videoPlaybackViewController;

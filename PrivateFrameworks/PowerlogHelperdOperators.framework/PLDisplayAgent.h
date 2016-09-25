@@ -93,7 +93,7 @@
 - (id)displayPowerModel;
 - (void)extractDataWithEntry:(id)arg1 withColName:(id)arg2 withDataArray:(id)arg3;
 - (BOOL)firstEntryOnInit;
-- (unsigned int)getBacklightEnabledTimestamp:(unsigned int)arg1;
+- (unsigned long long)getBacklightEnabledTimestamp:(unsigned int)arg1;
 - (void)handleBrightnessClientNotification:(id)arg1 withValue:(id)arg2;
 - (id)init;
 - (void)initOperatorDependancies;

@@ -3,7 +3,7 @@
  */
 
 @interface _UTTypeQuery : _LSQuery {
-    unsigned int  _flags;
+    unsigned long long  _flags;
 }
 
 @property (setter=_setResolveInactiveDeclarations:, nonatomic) BOOL _resolveInactiveDeclarations;

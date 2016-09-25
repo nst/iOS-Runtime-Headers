@@ -8,7 +8,7 @@
     }  _has;
     NSString * _shieldColorString;
     NSString * _shieldText;
-    int  _shieldType;
+    long long  _shieldType;
     PBUnknownFields * _unknownFields;
 }
 
@@ -22,8 +22,8 @@
 @property (nonatomic, retain) NSString *shieldColorString;
 @property (nonatomic, readonly) NSString *shieldText;
 @property (nonatomic, retain) NSString *shieldText;
-@property (nonatomic, readonly) int shieldType;
-@property (nonatomic) int shieldType;
+@property (nonatomic, readonly) long long shieldType;
+@property (nonatomic) long long shieldType;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
@@ -43,10 +43,10 @@
 - (void)setHasShieldType:(BOOL)arg1;
 - (void)setShieldColorString:(id)arg1;
 - (void)setShieldText:(id)arg1;
-- (void)setShieldType:(int)arg1;
+- (void)setShieldType:(long long)arg1;
 - (id)shieldColorString;
 - (id)shieldText;
-- (int)shieldType;
+- (long long)shieldType;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
 

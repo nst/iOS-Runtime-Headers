@@ -16,7 +16,7 @@
 @property BOOL enabled;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) UIImage *image;
-@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } imageEdgeInsets;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } imageEdgeInsets;
 @property BOOL loading;
 @property (nonatomic) BOOL shouldPerformDefaultAction;
 @property (readonly) id showingConfirmation;
@@ -45,7 +45,7 @@
 - (BOOL)enabled;
 - (void)hideConfirmationAnimated:(BOOL)arg1;
 - (id)image;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })imageEdgeInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })imageEdgeInsets;
 - (id)init;
 - (id)initWithSystemItemString:(id)arg1;
 - (BOOL)loading;

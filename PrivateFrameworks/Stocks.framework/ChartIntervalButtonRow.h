@@ -19,7 +19,7 @@
 - (id)initWithMaxChartInterval:(int)arg1 chartIntervalButtonRowDelegate:(id)arg2;
 - (id)intervalButtons;
 - (void)intervalButtonsTapped:(id)arg1;
-- (int)intervalForTouchLocation:(struct CGPoint { double x1; double x2; })arg1;
+- (int)intervalForTouchLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (void)layoutSubviews;
 - (int)maxChartInterval;
 - (void)selectChartIntervalButtonForInterval:(int)arg1;

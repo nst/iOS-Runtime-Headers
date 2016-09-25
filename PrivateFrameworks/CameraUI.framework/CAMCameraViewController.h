@@ -70,9 +70,9 @@
 - (void).cxx_destruct;
 - (id)_behaviorDefinedDestinationURLForRequest:(id)arg1 withLocalDestinationURL:(id)arg2 linkedDestinationURL:(id)arg3;
 - (unsigned int)_capturePersistenceBehaviorForViewfinderPersistenceBehavior:(unsigned int)arg1;
-- (id)_clientPropertiesForLivePhotoVideoURL:(id)arg1 duration:(struct { int x1; int x2; unsigned int x3; int x4; })arg2 uniqueIdentifier:(id)arg3;
+- (id)_clientPropertiesForLivePhotoVideoURL:(id)arg1 duration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 uniqueIdentifier:(id)arg3;
 - (id)_clientPropertiesForStillImageWithURL:(id)arg1 metadata:(id)arg2 creationDate:(id)arg3 captureOrientation:(int)arg4 fullsizeSurface:(void*)arg5 fullsizeSize:(unsigned long)arg6 previewSurface:(void*)arg7 previewOrientation:(int)arg8 uniqueIdentifier:(id)arg9 forOriginal:(BOOL)arg10 livePhoto:(BOOL)arg11 savedToPhotoLibrary:(BOOL)arg12;
-- (id)_clientPropertiesForVideoURL:(id)arg1 duration:(struct { int x1; int x2; unsigned int x3; int x4; })arg2 size:(struct CGSize { double x1; double x2; })arg3 creationDate:(id)arg4 captureOrientation:(int)arg5 previewSurface:(void*)arg6 previewOrientation:(int)arg7 adjustments:(id)arg8 uniqueIdentifier:(id)arg9 forLivePhoto:(BOOL)arg10 savedToPhotoLibrary:(BOOL)arg11;
+- (id)_clientPropertiesForVideoURL:(id)arg1 duration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 size:(struct CGSize { float x1; float x2; })arg3 creationDate:(id)arg4 captureOrientation:(int)arg5 previewSurface:(void*)arg6 previewOrientation:(int)arg7 adjustments:(id)arg8 uniqueIdentifier:(id)arg9 forLivePhoto:(BOOL)arg10 savedToPhotoLibrary:(BOOL)arg11;
 - (void)_commonCAMCameraViewControllerInitializationWithLaunchOptions:(id)arg1 usingEmulationMode:(int)arg2 initialLayoutStyle:(int)arg3 privateOptions:(int)arg4;
 - (BOOL)_couldProvidePendingLivePhotoUpdateForPairingIdentifier:(id)arg1 withProperties:(id)arg2;
 - (void)_notifyCaptureDelegateOfCompletedCaptureOfLivePhoto:(id)arg1 withProperties:(id)arg2 error:(id)arg3;

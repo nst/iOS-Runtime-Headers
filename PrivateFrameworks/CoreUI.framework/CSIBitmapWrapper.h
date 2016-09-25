@@ -7,7 +7,7 @@
     BOOL  _allowsOptimalPacking;
     struct CGContext { } * _bitmapContext;
     unsigned int  _colorSpaceID;
-    double  _compressionQuality;
+    float  _compressionQuality;
     int  _compressionType;
     int  _exifOrientation;
     BOOL  _flipped;
@@ -25,7 +25,7 @@
 @property BOOL allowsMultiPassEncoding;
 @property BOOL allowsOptimalPacking;
 @property (nonatomic) unsigned int colorSpaceID;
-@property (nonatomic) double compressionQuality;
+@property (nonatomic) float compressionQuality;
 @property int compressionType;
 @property (nonatomic) int exifOrientation;
 @property (nonatomic) BOOL flipped;

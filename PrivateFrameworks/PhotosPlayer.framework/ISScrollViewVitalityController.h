@@ -11,8 +11,8 @@
     BOOL  _hasTargetContentOffset;
     BOOL  _scrolling;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _targetContentOffset;
     ISVisibilityOffsetHelper * _visibilityOffsetHelper;
 }
@@ -24,7 +24,7 @@
 @property (nonatomic, retain) NSDate *estimatedScrollEndDate;
 @property (nonatomic) BOOL hasTargetContentOffset;
 @property (getter=isScrolling, nonatomic) BOOL scrolling;
-@property (nonatomic) struct CGPoint { double x1; double x2; } targetContentOffset;
+@property (nonatomic) struct CGPoint { float x1; float x2; } targetContentOffset;
 @property (nonatomic, readonly) ISVisibilityOffsetHelper *visibilityOffsetHelper;
 
 - (void).cxx_destruct;
@@ -48,8 +48,8 @@
 - (void)setEstimatedScrollEndDate:(id)arg1;
 - (void)setHasTargetContentOffset:(BOOL)arg1;
 - (void)setScrolling:(BOOL)arg1;
-- (void)setTargetContentOffset:(struct CGPoint { double x1; double x2; })arg1;
-- (struct CGPoint { double x1; double x2; })targetContentOffset;
+- (void)setTargetContentOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGPoint { float x1; float x2; })targetContentOffset;
 - (id)visibilityOffsetHelper;
 
 @end

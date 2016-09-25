@@ -4,7 +4,7 @@
 
 @interface MURemoteViewController : _UIRemoteViewController <MURemoteViewProtocol> {
     id /* block */  _finishedWithResultsCompletionBlock;
-    int  _sandboxExtensionHandle;
+    long long  _sandboxExtensionHandle;
     BOOL  _shouldResignFirstResponder;
 }
 
@@ -12,7 +12,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) id /* block */ finishedWithResultsCompletionBlock;
 @property (readonly) unsigned int hash;
-@property int sandboxExtensionHandle;
+@property long long sandboxExtensionHandle;
 @property BOOL shouldResignFirstResponder;
 @property (readonly) Class superclass;
 
@@ -25,10 +25,10 @@
 - (BOOL)canResignFirstResponder;
 - (id /* block */)finishedWithResultsCompletionBlock;
 - (void)motionEnded:(int)arg1 withEvent:(id)arg2;
-- (int)sandboxExtensionHandle;
+- (long long)sandboxExtensionHandle;
 - (void)serviceDidFinishwithResults:(id)arg1 andSandboxExtension:(id)arg2;
 - (void)setFinishedWithResultsCompletionBlock:(id /* block */)arg1;
-- (void)setSandboxExtensionHandle:(int)arg1;
+- (void)setSandboxExtensionHandle:(long long)arg1;
 - (void)setShouldResignFirstResponder:(BOOL)arg1;
 - (BOOL)shouldResignFirstResponder;
 - (void)viewDidLoad;

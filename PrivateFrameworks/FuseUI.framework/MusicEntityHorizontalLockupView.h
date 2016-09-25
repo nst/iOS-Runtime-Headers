@@ -18,10 +18,10 @@
     UIImageView * _explicitBadgeImageView;
     BOOL  _isAvailableOffline;
     BOOL  _isContainedWithinSplitViewPrimary;
-    double  _textContentLeadingInset;
+    float  _textContentLeadingInset;
 }
 
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } artworkSize;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } artworkSize;
 @property (nonatomic, retain) MusicEntityViewContentDescriptor *contentDescriptor;
 @property (nonatomic, readonly) UIButton *contextualActionsButton;
 @property (readonly, copy) NSString *debugDescription;
@@ -30,12 +30,12 @@
 @property (nonatomic, retain) <MusicEntityValueProviding> *entityValueProvider;
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) double textContentLeadingInset;
+@property (nonatomic, readonly) float textContentLeadingInset;
 
 + (float)defaultTextDescriptorHeightAdditionsForContentDescriptor:(id)arg1 width:(float)arg2 traitCollection:(id)arg3;
 + (float)maximumHeightForContentDescriptor:(id)arg1 width:(float)arg2 traitCollection:(id)arg3;
-+ (float)maximumHeightForContentDescriptor:(id)arg1 width:(float)arg2 traitCollection:(id)arg3 artworkSize:(struct CGSize { double x1; double x2; })arg4;
-+ (float)maximumHeightForContentDescriptor:(id)arg1 width:(float)arg2 traitCollection:(id)arg3 textDescriptorHeightAdditions:(float)arg4 artworkSize:(struct CGSize { double x1; double x2; })arg5;
++ (float)maximumHeightForContentDescriptor:(id)arg1 width:(float)arg2 traitCollection:(id)arg3 artworkSize:(struct CGSize { float x1; float x2; })arg4;
++ (float)maximumHeightForContentDescriptor:(id)arg1 width:(float)arg2 traitCollection:(id)arg3 textDescriptorHeightAdditions:(float)arg4 artworkSize:(struct CGSize { float x1; float x2; })arg5;
 
 - (void).cxx_destruct;
 - (id)_addButton;
@@ -47,7 +47,7 @@
 - (void)_contextualActionsButtonTapped:(id)arg1;
 - (BOOL)_shouldLayoutAsEditing;
 - (BOOL)_shouldShowPlayButton;
-- (struct CGSize { double x1; double x2; })artworkSize;
+- (struct CGSize { float x1; float x2; })artworkSize;
 - (id)contentDescriptor;
 - (id)contextualActionsButton;
 - (void)dealloc;

@@ -3,10 +3,10 @@
  */
 
 @interface CVMLObservation : NSObject <NSCoding> {
-    double  _confidence;
+    float  _confidence;
 }
 
-@property double confidence;
+@property float confidence;
 
 // Image: /System/Library/PrivateFrameworks/CVML.framework/CVML
 

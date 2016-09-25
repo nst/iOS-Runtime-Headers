@@ -5,8 +5,8 @@
 @interface MBDomainInfo : NSObject <NSCoding, NSCopying> {
     NSString * _domainName;
     BOOL  _enabled;
-    unsigned int  _localSize;
-    unsigned int  _remoteSize;
+    unsigned long long  _localSize;
+    unsigned long long  _remoteSize;
     BOOL  _restricted;
     BOOL  _systemApp;
 }
@@ -16,13 +16,13 @@
 @property (getter=isCameraRollDomain, nonatomic, readonly) BOOL cameraRollDomain;
 @property (nonatomic, retain) NSString *domainName;
 @property (getter=isEnabled, nonatomic) BOOL enabled;
-@property (nonatomic) unsigned int localSize;
-@property (nonatomic) unsigned int remoteSize;
+@property (nonatomic) unsigned long long localSize;
+@property (nonatomic) unsigned long long remoteSize;
 @property (getter=isRestricted, nonatomic) BOOL restricted;
-@property (nonatomic, readonly) unsigned int size;
+@property (nonatomic, readonly) unsigned long long size;
 @property (getter=isSystemApp, nonatomic) BOOL systemApp;
 
-+ (id)domainInfoWithName:(id)arg1 systemApp:(BOOL)arg2 remoteSize:(unsigned int)arg3 localSize:(unsigned int)arg4 enabled:(BOOL)arg5 restricted:(BOOL)arg6;
++ (id)domainInfoWithName:(id)arg1 systemApp:(BOOL)arg2 remoteSize:(unsigned long long)arg3 localSize:(unsigned long long)arg4 enabled:(BOOL)arg5 restricted:(BOOL)arg6;
 + (id)domainNameForBundleID:(id)arg1;
 
 - (id)bundleID;
@@ -32,20 +32,20 @@
 - (id)domainName;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithDomainName:(id)arg1 systemApp:(BOOL)arg2 remoteSize:(unsigned int)arg3 localSize:(unsigned int)arg4 enabled:(BOOL)arg5 restricted:(BOOL)arg6;
+- (id)initWithDomainName:(id)arg1 systemApp:(BOOL)arg2 remoteSize:(unsigned long long)arg3 localSize:(unsigned long long)arg4 enabled:(BOOL)arg5 restricted:(BOOL)arg6;
 - (BOOL)isAppDomain;
 - (BOOL)isCameraRollDomain;
 - (BOOL)isEnabled;
 - (BOOL)isRestricted;
 - (BOOL)isSystemApp;
-- (unsigned int)localSize;
-- (unsigned int)remoteSize;
+- (unsigned long long)localSize;
+- (unsigned long long)remoteSize;
 - (void)setDomainName:(id)arg1;
 - (void)setEnabled:(BOOL)arg1;
-- (void)setLocalSize:(unsigned int)arg1;
-- (void)setRemoteSize:(unsigned int)arg1;
+- (void)setLocalSize:(unsigned long long)arg1;
+- (void)setRemoteSize:(unsigned long long)arg1;
 - (void)setRestricted:(BOOL)arg1;
 - (void)setSystemApp:(BOOL)arg1;
-- (unsigned int)size;
+- (unsigned long long)size;
 
 @end

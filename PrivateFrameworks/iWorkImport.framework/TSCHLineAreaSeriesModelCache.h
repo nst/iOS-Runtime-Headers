@@ -3,11 +3,11 @@
  */
 
 @interface TSCHLineAreaSeriesModelCache : NSObject {
-    double  mDataPointSize;
+    float  mDataPointSize;
     TSCHChartAxis * mGroupAxis;
     unsigned int  mLabelPosition;
     int  mLineType;
-    double  mOpacity;
+    float  mOpacity;
     TSWPParagraphStyle * mParagraphStyle;
     TSCHChartSeries * mSeries;
     id  mSeriesFill;
@@ -23,11 +23,11 @@
     TSCHChartValueAxis * mValueAxis;
 }
 
-@property (readonly) double dataPointSize;
+@property (readonly) float dataPointSize;
 @property (readonly) TSCHChartAxis *groupAxis;
 @property (readonly) unsigned int labelPosition;
 @property (readonly) int lineType;
-@property (readonly) double opacity;
+@property (readonly) float opacity;
 @property (readonly) TSWPParagraphStyle *paragraphStyle;
 @property (readonly) TSCHChartSeries *series;
 @property (readonly) id seriesFill;

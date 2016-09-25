@@ -4,14 +4,14 @@
 
 @interface EKUIInviteesViewConflictSearchCell : UITableViewCell {
     UILabel * _label;
-    double  _leftInset;
+    float  _leftInset;
     UIColor * _originalLabelFontColor;
     NSArray * _persistentConstraints;
     UIActivityIndicatorView * _spinner;
 }
 
 @property (nonatomic, retain) UILabel *label;
-@property (nonatomic) double leftInset;
+@property (nonatomic) float leftInset;
 @property (nonatomic, retain) UIColor *originalLabelFontColor;
 @property (nonatomic, retain) NSArray *persistentConstraints;
 @property (nonatomic, retain) UIActivityIndicatorView *spinner;

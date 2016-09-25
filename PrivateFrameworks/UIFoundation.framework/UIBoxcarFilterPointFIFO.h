@@ -4,12 +4,12 @@
 
 @interface UIBoxcarFilterPointFIFO : UIPointFIFO {
     _UIPointVector * _prevPoints;
-    double  _spacing;
+    float  _spacing;
     unsigned int  _width;
 }
 
 @property (nonatomic) _UIPointVector *prevPoints;
-@property (nonatomic) double spacing;
+@property (nonatomic) float spacing;
 @property (nonatomic) unsigned int width;
 
 - (void)addPoint;

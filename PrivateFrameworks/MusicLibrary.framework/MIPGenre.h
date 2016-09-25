@@ -8,16 +8,16 @@
         unsigned int storeId : 1; 
     }  _has;
     NSString * _name;
-    int  _persistentId;
-    int  _storeId;
+    long long  _persistentId;
+    long long  _storeId;
 }
 
 @property (nonatomic, readonly) BOOL hasName;
 @property (nonatomic) BOOL hasPersistentId;
 @property (nonatomic) BOOL hasStoreId;
 @property (nonatomic, retain) NSString *name;
-@property (nonatomic) int persistentId;
-@property (nonatomic) int storeId;
+@property (nonatomic) long long persistentId;
+@property (nonatomic) long long storeId;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
@@ -31,14 +31,14 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)name;
-- (int)persistentId;
+- (long long)persistentId;
 - (BOOL)readFrom:(id)arg1;
 - (void)setHasPersistentId:(BOOL)arg1;
 - (void)setHasStoreId:(BOOL)arg1;
 - (void)setName:(id)arg1;
-- (void)setPersistentId:(int)arg1;
-- (void)setStoreId:(int)arg1;
-- (int)storeId;
+- (void)setPersistentId:(long long)arg1;
+- (void)setStoreId:(long long)arg1;
+- (long long)storeId;
 - (void)writeTo:(id)arg1;
 
 @end

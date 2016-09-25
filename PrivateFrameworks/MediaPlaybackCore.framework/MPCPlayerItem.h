@@ -11,7 +11,7 @@
         double endTime; 
         double duration; 
         double elapsedDuration; 
-        double rate; 
+        float rate; 
         BOOL isLiveContent; 
     }  _durationSnapshot;
     MPModelPlaylistEntry * _modelPlaylistEntryRepresentation;
@@ -20,7 +20,7 @@
 
 @property (nonatomic, copy) NSString *albumName;
 @property (nonatomic, copy) NSString *artistName;
-@property (nonatomic, readonly) struct { double x1; double x2; double x3; double x4; double x5; double x6; BOOL x7; } durationSnapshot;
+@property (nonatomic, readonly) struct { double x1; double x2; double x3; double x4; double x5; float x6; BOOL x7; } durationSnapshot;
 @property (nonatomic, readonly) MPModelPlaylistEntry *modelPlaylistEntryRepresentation;
 @property (nonatomic, readonly) MPModelSong *modelSongRepresentation;
 @property (nonatomic, copy) NSArray *representations;
@@ -29,7 +29,7 @@
 - (id)albumName;
 - (id)artistName;
 - (int)comparePlaybackOrder:(id)arg1;
-- (struct { double x1; double x2; double x3; double x4; double x5; double x6; BOOL x7; })durationSnapshot;
+- (struct { double x1; double x2; double x3; double x4; double x5; float x6; BOOL x7; })durationSnapshot;
 - (id)initWithAVItem:(id)arg1;
 - (id)modelPlaylistEntryRepresentation;
 - (id)modelSongRepresentation;

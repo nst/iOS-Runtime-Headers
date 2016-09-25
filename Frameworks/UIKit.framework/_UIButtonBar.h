@@ -16,10 +16,10 @@
     NSMutableArray * _layoutGuides;
     _UIButtonBarLayoutMetrics * _layoutMetrics;
     NSMutableArray * _layoutViews;
-    double  _minimumInterGroupSpace;
+    float  _minimumInterGroupSpace;
     NSLayoutConstraint * _minimumInterGroupSpaceConstraint;
     UILayoutGuide * _minimumInterGroupSpaceLayoutGuide;
-    double  _minimumInterItemSpace;
+    float  _minimumInterItemSpace;
     NSLayoutConstraint * _minimumInterItemSpaceConstraint;
     UILayoutGuide * _minimumInterItemSpaceLayoutGuide;
     NSMapTable * _senderActionMap;
@@ -35,9 +35,9 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (getter=_itemsInGroupUseSameSize, setter=_setItemsInGroupUseSameSize:, nonatomic) BOOL itemsInGroupUseSameSize;
-@property (getter=_layoutWidth, nonatomic, readonly) double layoutWidth;
-@property (getter=_minimumInterGroupSpace, setter=_setMinimumInterGroupSpace:, nonatomic) double minimumInterGroupSpace;
-@property (nonatomic) double minimumInterItemSpace;
+@property (getter=_layoutWidth, nonatomic, readonly) float layoutWidth;
+@property (getter=_minimumInterGroupSpace, setter=_setMinimumInterGroupSpace:, nonatomic) float minimumInterGroupSpace;
+@property (nonatomic) float minimumInterItemSpace;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) UIBarButtonItem *ultimateFallbackItem;
 @property (nonatomic, readonly) UIView *view;

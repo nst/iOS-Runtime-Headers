@@ -44,7 +44,7 @@
 - (id)lastResponseLine;
 - (int)mailFrom:(id)arg1;
 - (int)mailFrom:(id)arg1 recipients:(id)arg2 withData:(id)arg3 host:(id)arg4 errorTitle:(id*)arg5 errorMessage:(id*)arg6 serverResponse:(id*)arg7 displayError:(BOOL*)arg8 errorCode:(int*)arg9;
-- (unsigned int)maximumMessageBytes;
+- (unsigned long long)maximumMessageBytes;
 - (int)noop;
 - (int)quit;
 - (int)rcptTo:(id)arg1;

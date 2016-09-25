@@ -4,12 +4,12 @@
 
 @interface NCInteractiveNotificationViewController : UIViewController <NCInteractiveNotificationServiceInterface> {
     NSDictionary * _context;
-    double  _maximumHeight;
+    float  _maximumHeight;
     BOOL  _modal;
 }
 
 @property (nonatomic, copy) NSDictionary *context;
-@property (nonatomic) double maximumHeight;
+@property (nonatomic) float maximumHeight;
 @property (getter=isModal, nonatomic) BOOL modal;
 
 + (id)_exportedInterface;

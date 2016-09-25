@@ -4,13 +4,13 @@
 
 @interface CAMRampToVideoZoomFactorCommand : CAMCaptureCommand {
     double  __duration;
-    double  __rate;
-    double  __videoZoomFactor;
+    float  __rate;
+    float  __videoZoomFactor;
 }
 
 @property (nonatomic, readonly) double _duration;
-@property (nonatomic, readonly) double _rate;
-@property (nonatomic, readonly) double _videoZoomFactor;
+@property (nonatomic, readonly) float _rate;
+@property (nonatomic, readonly) float _videoZoomFactor;
 
 - (double)_duration;
 - (float)_rate;

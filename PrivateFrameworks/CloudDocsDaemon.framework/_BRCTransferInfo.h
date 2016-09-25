@@ -7,15 +7,15 @@
     NSMutableDictionary * _previousUnitCounts;
     BRCProgress * _progress;
     NSMutableDictionary * _versionSizes;
-    int  sumOfCompletedUnitCountDelta;
-    int  sumOfTotalUnitCountDelta;
+    long long  sumOfCompletedUnitCountDelta;
+    long long  sumOfTotalUnitCountDelta;
 }
 
 @property (nonatomic, readonly) NSMutableDictionary *childProgresses;
 @property (nonatomic, readonly) NSMutableDictionary *previousUnitCounts;
 @property (nonatomic, readonly) BRCProgress *progress;
-@property (nonatomic) int sumOfCompletedUnitCountDelta;
-@property (nonatomic) int sumOfTotalUnitCountDelta;
+@property (nonatomic) long long sumOfCompletedUnitCountDelta;
+@property (nonatomic) long long sumOfTotalUnitCountDelta;
 @property (nonatomic, readonly) NSMutableDictionary *versionSizes;
 
 - (void).cxx_destruct;
@@ -25,10 +25,10 @@
 - (id)init;
 - (id)previousUnitCounts;
 - (id)progress;
-- (void)setSumOfCompletedUnitCountDelta:(int)arg1;
-- (void)setSumOfTotalUnitCountDelta:(int)arg1;
-- (int)sumOfCompletedUnitCountDelta;
-- (int)sumOfTotalUnitCountDelta;
+- (void)setSumOfCompletedUnitCountDelta:(long long)arg1;
+- (void)setSumOfTotalUnitCountDelta:(long long)arg1;
+- (long long)sumOfCompletedUnitCountDelta;
+- (long long)sumOfTotalUnitCountDelta;
 - (void)updateLocalizedDescriptionWithOptions:(BOOL)arg1;
 - (void)updateUnitCount;
 - (void)verifyFutureProgressIsNotFinished;

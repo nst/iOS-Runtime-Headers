@@ -7,13 +7,13 @@
         unsigned int timestamp : 1; 
         unsigned int transactionLogCount : 1; 
     }  _has;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
     unsigned int  _transactionLogCount;
 }
 
 @property (nonatomic) BOOL hasTimestamp;
 @property (nonatomic) BOOL hasTransactionLogCount;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 @property (nonatomic) unsigned int transactionLogCount;
 
 - (void)copyTo:(id)arg1;
@@ -28,9 +28,9 @@
 - (BOOL)readFrom:(id)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
 - (void)setHasTransactionLogCount:(BOOL)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (void)setTransactionLogCount:(unsigned int)arg1;
-- (unsigned int)timestamp;
+- (unsigned long long)timestamp;
 - (unsigned int)transactionLogCount;
 - (void)writeTo:(id)arg1;
 

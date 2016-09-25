@@ -10,8 +10,8 @@
     NSLayoutConstraint * _heightConstraint;
     BOOL  _isFullscreen;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _offset;
     UIDebuggingInformationRootTableViewController * _rootTableViewController;
     UIView * _shadowView;
@@ -27,7 +27,7 @@
 @property (nonatomic, retain) UIView *containerView;
 @property (nonatomic, retain) NSLayoutConstraint *heightConstraint;
 @property (nonatomic) BOOL isFullscreen;
-@property struct CGPoint { double x1; double x2; } offset;
+@property struct CGPoint { float x1; float x2; } offset;
 @property (nonatomic, retain) UIDebuggingInformationRootTableViewController *rootTableViewController;
 @property (nonatomic, retain) UIView *shadowView;
 @property (nonatomic, retain) NSArray *smallConstraints;
@@ -44,7 +44,7 @@
 - (id)heightConstraint;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (BOOL)isFullscreen;
-- (struct CGPoint { double x1; double x2; })offset;
+- (struct CGPoint { float x1; float x2; })offset;
 - (id)rootTableViewController;
 - (void)setAnimator:(id)arg1;
 - (void)setBehavior:(id)arg1;
@@ -52,7 +52,7 @@
 - (void)setContainerView:(id)arg1;
 - (void)setHeightConstraint:(id)arg1;
 - (void)setIsFullscreen:(BOOL)arg1;
-- (void)setOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setRootTableViewController:(id)arg1;
 - (void)setShadowView:(id)arg1;
 - (void)setSmallConstraints:(id)arg1;

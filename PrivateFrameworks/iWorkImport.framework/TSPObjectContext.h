@@ -43,29 +43,29 @@
         unsigned int skipDocumentUpgrade : 1; 
     }  _flags;
     BOOL  _isWaitingForEndSave;
-    int  _lastObjectIdentifier;
-    struct unordered_map<const int, NSMutableArray *, TSP::IdentifierHash, std::__1::equal_to<const int>, std::__1::allocator<std::__1::pair<const int, NSMutableArray *> > > { 
-        struct __hash_table<std::__1::__hash_value_type<const int, NSMutableArray *>, std::__1::__unordered_map_hasher<const int, std::__1::__hash_value_type<const int, NSMutableArray *>, TSP::IdentifierHash, true>, std::__1::__unordered_map_equal<const int, std::__1::__hash_value_type<const int, NSMutableArray *>, std::__1::equal_to<const int>, true>, std::__1::allocator<std::__1::__hash_value_type<const int, NSMutableArray *> > > { 
-            struct unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<const int, NSMutableArray *>, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<const int, NSMutableArray *>, void *> *> > > { 
-                struct __compressed_pair<std::__1::__hash_node<std::__1::__hash_value_type<const int, NSMutableArray *>, void *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<const int, NSMutableArray *>, void *> *> > > { 
-                    struct __hash_node<std::__1::__hash_value_type<const int, NSMutableArray *>, void *> {} **__first_; 
-                    struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<const int, NSMutableArray *>, void *> *> > { 
-                        struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<const int, NSMutableArray *>, void *> *> > { 
+    long long  _lastObjectIdentifier;
+    struct unordered_map<const long long, NSMutableArray *, TSP::IdentifierHash, std::__1::equal_to<const long long>, std::__1::allocator<std::__1::pair<const long long, NSMutableArray *> > > { 
+        struct __hash_table<std::__1::__hash_value_type<const long long, NSMutableArray *>, std::__1::__unordered_map_hasher<const long long, std::__1::__hash_value_type<const long long, NSMutableArray *>, TSP::IdentifierHash, true>, std::__1::__unordered_map_equal<const long long, std::__1::__hash_value_type<const long long, NSMutableArray *>, std::__1::equal_to<const long long>, true>, std::__1::allocator<std::__1::__hash_value_type<const long long, NSMutableArray *> > > { 
+            struct unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<const long long, NSMutableArray *>, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<const long long, NSMutableArray *>, void *> *> > > { 
+                struct __compressed_pair<std::__1::__hash_node<std::__1::__hash_value_type<const long long, NSMutableArray *>, void *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<const long long, NSMutableArray *>, void *> *> > > { 
+                    struct __hash_node<std::__1::__hash_value_type<const long long, NSMutableArray *>, void *> {} **__first_; 
+                    struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<const long long, NSMutableArray *>, void *> *> > { 
+                        struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<const long long, NSMutableArray *>, void *> *> > { 
                             unsigned long __first_; 
                         } __data_; 
                     } __second_; 
                 } __ptr_; 
             } __bucket_list_; 
-            struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const int, NSMutableArray *>, void *> *>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<const int, NSMutableArray *>, void *> > > { 
-                struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const int, NSMutableArray *>, void *> *> { 
-                    struct __hash_node<std::__1::__hash_value_type<const int, NSMutableArray *>, void *> {} *__next_; 
+            struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const long long, NSMutableArray *>, void *> *>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<const long long, NSMutableArray *>, void *> > > { 
+                struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const long long, NSMutableArray *>, void *> *> { 
+                    struct __hash_node<std::__1::__hash_value_type<const long long, NSMutableArray *>, void *> {} *__next_; 
                 } __first_; 
             } __p1_; 
-            struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<const int, std::__1::__hash_value_type<const int, NSMutableArray *>, TSP::IdentifierHash, true> > { 
+            struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<const long long, std::__1::__hash_value_type<const long long, NSMutableArray *>, TSP::IdentifierHash, true> > { 
                 unsigned long __first_; 
             } __p2_; 
-            struct __compressed_pair<float, std::__1::__unordered_map_equal<const int, std::__1::__hash_value_type<const int, NSMutableArray *>, std::__1::equal_to<const int>, true> > { 
-                double __first_; 
+            struct __compressed_pair<float, std::__1::__unordered_map_equal<const long long, std::__1::__hash_value_type<const long long, NSMutableArray *>, std::__1::equal_to<const long long>, true> > { 
+                float __first_; 
             } __p3_; 
         } __table_; 
     }  _loadObservers;
@@ -73,7 +73,7 @@
     BOOL  _losesDataOnWrite;
     unsigned int  _mode;
     int  _modifyObjectCount;
-    int  _modifyObjectToken;
+    long long  _modifyObjectToken;
     NSProgress * _nextSaveProgress;
     NSObject<OS_dispatch_queue> * _notificationQueue;
     NSHashTable * _objectModifyDelegates;
@@ -91,7 +91,7 @@
     NSObject<OS_dispatch_queue> * _runLoadObserversForKnownObjectQueue;
     NSObject<OS_dispatch_queue> * _runLoadObserversQueue;
     TSPDocumentSaveOperationState * _saveOperationState;
-    unsigned int  _saveToken;
+    unsigned long long  _saveToken;
     TSPSupportManager * _supportManager;
     TSPSupportMetadata * _supportMetadata;
     TSPObject * _supportObject;
@@ -116,7 +116,7 @@
 @property (nonatomic, readonly) SFUCryptoKey *decryptionKey;
 @property (nonatomic) <TSPObjectContextDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) unsigned int documentDataSize;
+@property (nonatomic, readonly) unsigned long long documentDataSize;
 @property (nonatomic, readonly) TSPDocumentMetadata *documentMetadata;
 @property (nonatomic, readonly) TSPObject *documentObject;
 @property (nonatomic, retain) TSPObjectContainer *documentObjectContainer;
@@ -125,10 +125,10 @@
 @property (nonatomic, readonly) TSPDocumentProperties *documentProperties;
 @property (nonatomic, readonly) TSPDocumentResourceManager *documentResourceManager;
 @property (retain) TSPDocumentRevision *documentRevision;
-@property (nonatomic, readonly) unsigned int documentSize;
+@property (nonatomic, readonly) unsigned long long documentSize;
 @property (nonatomic, readonly) NSURL *documentURL;
 @property (nonatomic, readonly) NSUUID *documentUUID;
-@property (nonatomic, readonly) int estimatedDownloadSize;
+@property (nonatomic, readonly) long long estimatedDownloadSize;
 @property (nonatomic, readonly) <NSFilePresenter> *filePresenter;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) BOOL ignoreDocumentResourcesWhileReading;
@@ -142,7 +142,7 @@
 @property (nonatomic, readonly) BOOL isPasswordProtected;
 @property (nonatomic, readonly) BOOL isSupportModified;
 @property (nonatomic, readonly) NSData *keychainGenericItem;
-@property (nonatomic) int lastObjectIdentifier;
+@property (nonatomic) long long lastObjectIdentifier;
 @property (nonatomic, readonly) NSString *lastPasswordAttempted;
 @property (nonatomic, readonly) BOOL losesDataOnWrite;
 @property (nonatomic, readonly) BOOL needsDownload;
@@ -151,7 +151,7 @@
 @property (nonatomic, readonly) NSData *passwordVerifier;
 @property int preferredPackageType;
 @property (nonatomic, readonly) TSPRegistry *registry;
-@property (nonatomic, readonly) unsigned int saveToken;
+@property (nonatomic, readonly) unsigned long long saveToken;
 @property (nonatomic, readonly) NSString *service;
 @property (nonatomic, readonly) BOOL shouldLoadAllComponents;
 @property (readonly) Class superclass;
@@ -180,7 +180,7 @@
 - (void).cxx_destruct;
 - (id)UUIDsFromObjects:(id)arg1;
 - (void)addLoadObserver:(id)arg1 action:(SEL)arg2 forLazyReference:(id)arg3;
-- (void)addLoadObserver:(id)arg1 action:(SEL)arg2 forObjectIdentifier:(int)arg3 objectOrNil:(id)arg4;
+- (void)addLoadObserver:(id)arg1 action:(SEL)arg2 forObjectIdentifier:(long long)arg3 objectOrNil:(id)arg4;
 - (id)addLoadedObjectsAndEnqueueNotifications:(id)arg1;
 - (void)addObjectModifyDelegate:(id)arg1;
 - (BOOL)areExternalReferencesSupported;
@@ -210,22 +210,22 @@
 - (id)dataWithContentsOfPackagePath:(id)arg1;
 - (id)dataWithDigest:(id)arg1;
 - (id)dataWithDigest:(id)arg1 preferredFilename:(id)arg2 canDownload:(BOOL)arg3 downloadPriority:(int)arg4;
-- (id)dataWithLegacyDataIdentifier:(int)arg1;
+- (id)dataWithLegacyDataIdentifier:(long long)arg1;
 - (void)dealloc;
 - (id)decryptionKey;
 - (id)delegate;
-- (id)deterministicObjectUUIDRelativeToObject:(id)arg1 offset:(unsigned int)arg2;
+- (id)deterministicObjectUUIDRelativeToObject:(id)arg1 offset:(unsigned long long)arg2;
 - (BOOL)didFinishSuccessfullyReadingObjects:(id)arg1 readCoordinator:(id)arg2 finalizeHandlerQueue:(id)arg3;
 - (void)didFinishUsingDocumentResourceDataProvider:(id)arg1 withSuccess:(BOOL)arg2;
 - (void)didMoveSupportToURL:(id)arg1;
 - (void)didMoveToURL:(id)arg1;
 - (void)didReadDocumentObject:(id)arg1;
 - (void)didReadSupportObject:(id)arg1;
-- (unsigned int)documentDataSize;
+- (unsigned long long)documentDataSize;
 - (id)documentMetadata;
 - (id)documentObject;
 - (id)documentObjectContainer;
-- (unsigned int)documentObjectSize;
+- (unsigned long long)documentObjectSize;
 - (id)documentPackage;
 - (id)documentPasswordHint;
 - (id)documentProperties;
@@ -233,7 +233,7 @@
 - (id)documentResourceManager;
 - (id)documentRevision;
 - (id)documentRoot;
-- (unsigned int)documentSize;
+- (unsigned long long)documentSize;
 - (id)documentURL;
 - (id)documentUUID;
 - (id)downloadWithDelegate:(id)arg1 description:(id)arg2;
@@ -244,15 +244,15 @@
 - (void)endWriteOperation;
 - (BOOL)endWriteWithSuccess:(BOOL)arg1 error:(id*)arg2;
 - (void)enumerateDocumentResourcesUsingBlock:(id /* block */)arg1;
-- (unsigned int)estimatedDocumentSize;
-- (int)estimatedDownloadSize;
+- (unsigned long long)estimatedDocumentSize;
+- (long long)estimatedDownloadSize;
 - (id)filePresenter;
 - (BOOL)ignoreDocumentResourcesWhileReading;
 - (BOOL)ignoreDocumentSupport;
 - (BOOL)ignoreUnknownContentWhileReading;
 - (BOOL)ignoreVersionCheckingWhileReading;
 - (id)incrementDocumentRevisionWithIdentifier:(id)arg1;
-- (int)incrementLastObjectIdentifier:(int)arg1;
+- (long long)incrementLastObjectIdentifier:(long long)arg1;
 - (id)init;
 - (id)initForQuickLookWithURL:(id)arg1 appDocumentResourcesURL:(id)arg2 appDocumentResourcesMetadataURL:(id)arg3 registry:(id)arg4 delegate:(id)arg5 passphrase:(id)arg6 error:(id*)arg7;
 - (id)initForSpotlightWithURL:(id)arg1 delegate:(id)arg2 registry:(id)arg3 error:(id*)arg4;
@@ -272,19 +272,19 @@
 - (BOOL)isPasswordProtected;
 - (BOOL)isSupportModified;
 - (id)keychainGenericItem;
-- (int)lastObjectIdentifier;
+- (long long)lastObjectIdentifier;
 - (id)lastPasswordAttempted;
 - (BOOL)losesDataOnWrite;
-- (int)modifyObjectTokenForNewObject;
+- (long long)modifyObjectTokenForNewObject;
 - (BOOL)needsDownload;
 - (id)newDocumentResourceDataProvider;
-- (int)newObjectIdentifier;
+- (long long)newObjectIdentifier;
 - (id)newObjectUUIDForObject:(id)arg1;
-- (id)objectForIdentifier:(int)arg1;
+- (id)objectForIdentifier:(long long)arg1;
 - (id)objectLocale;
 - (id)objectUUIDMap;
 - (id)objectWithUUID:(id)arg1;
-- (id)objectWithUUID:(id)arg1 onlyIfLoaded:(BOOL)arg2 validateNewObjects:(BOOL)arg3 identifier:(int*)arg4;
+- (id)objectWithUUID:(id)arg1 onlyIfLoaded:(BOOL)arg2 validateNewObjects:(BOOL)arg3 identifier:(long long*)arg4;
 - (id)objectWithUUIDIfAvailable:(id)arg1;
 - (id)objectWithUUIDIfAvailableAndLoaded:(id)arg1;
 - (id)objectWithUUIDPath:(id)arg1;
@@ -311,8 +311,8 @@
 - (BOOL)readDocumentObjectFromDatabasePackageURL:(id)arg1 error:(id*)arg2;
 - (BOOL)readDocumentObjectFromPackageURL:(id)arg1 error:(id*)arg2;
 - (BOOL)readLazyReference:(id)arg1 object:(id*)arg2 error:(id*)arg3;
-- (BOOL)readObjectForIdentifier:(int)arg1 isWeakReference:(BOOL)arg2 rootObjectComponent:(id)arg3 object:(id*)arg4 error:(id*)arg5;
-- (id)readObjectIfNeededForIdentifier:(int)arg1 isWeakReference:(BOOL)arg2 componentIdentifier:(int)arg3;
+- (BOOL)readObjectForIdentifier:(long long)arg1 isWeakReference:(BOOL)arg2 rootObjectComponent:(id)arg3 object:(id*)arg4 error:(id*)arg5;
+- (id)readObjectIfNeededForIdentifier:(long long)arg1 isWeakReference:(BOOL)arg2 componentIdentifier:(long long)arg3;
 - (BOOL)readWithReadCoordinator:(id)arg1 finalizeHandlerQueue:(id)arg2 rootObject:(id*)arg3 error:(id*)arg4 readCompletion:(id /* block */)arg5;
 - (void)registerAsynchronousObjectModifier:(id)arg1;
 - (id)registry;
@@ -324,14 +324,14 @@
 - (void)resumeAutosaveWithReason:(id)arg1;
 - (void)resumeLoadingModifiedFlushedComponents;
 - (BOOL)saveToURL:(id)arg1 packageType:(int)arg2 encryptionKey:(id)arg3 originalURL:(id)arg4 error:(id*)arg5;
-- (unsigned int)saveToken;
+- (unsigned long long)saveToken;
 - (id)service;
 - (BOOL)setDecryptionKey:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDocumentObject:(id)arg1;
 - (void)setDocumentObjectContainer:(id)arg1;
 - (void)setDocumentRevision:(id)arg1;
-- (void)setLastObjectIdentifier:(int)arg1;
+- (void)setLastObjectIdentifier:(long long)arg1;
 - (BOOL)setPassphrase:(id)arg1;
 - (void)setPreferredPackageType:(int)arg1;
 - (void)setSupportObject:(id)arg1;
@@ -350,7 +350,7 @@
 - (id)temporaryDirectory;
 - (id)unsupportedFeatureIdentifiers;
 - (BOOL)updateDocumentUUIDPreserveOriginalDocumentSupport:(BOOL)arg1 preserveShareUUID:(BOOL)arg2 error:(id*)arg3;
-- (int)updateModifyObjectToken;
+- (long long)updateModifyObjectToken;
 - (id)versionUUID;
 - (void)waitForSaveToFinishIfNeeded;
 - (void)willModifyObject:(id)arg1 duringReadOperation:(BOOL)arg2;

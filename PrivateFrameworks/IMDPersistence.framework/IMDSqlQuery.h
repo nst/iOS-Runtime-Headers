@@ -4,13 +4,13 @@
 
 @interface IMDSqlQuery : NSObject {
     NSString * _columns;
-    int  _limit;
+    long long  _limit;
     NSString * _tableName;
     NSString * _where;
 }
 
 @property (nonatomic, copy) NSString *columns;
-@property (nonatomic) int limit;
+@property (nonatomic) long long limit;
 @property (nonatomic, readonly, copy) NSString *tableName;
 @property (nonatomic, copy) NSString *where;
 
@@ -20,9 +20,9 @@
 - (id)createQueryString;
 - (void)dealloc;
 - (id)initWithTableName:(id)arg1;
-- (int)limit;
+- (long long)limit;
 - (void)setColumns:(id)arg1;
-- (void)setLimit:(int)arg1;
+- (void)setLimit:(long long)arg1;
 - (void)setWhere:(id)arg1;
 - (id)tableName;
 - (id)where;

@@ -4,8 +4,8 @@
 
 @interface MPSCNNNeuronLinear : MPSCNNNeuron
 
-@property (readonly) double a;
-@property (readonly) double b;
+@property (readonly) float a;
+@property (readonly) float b;
 
 - (float)a;
 - (float)b;

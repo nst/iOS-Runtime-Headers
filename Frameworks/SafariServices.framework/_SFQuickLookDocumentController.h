@@ -21,7 +21,7 @@
 - (void)_updateActionButtons;
 - (id)documentView;
 - (id)init;
-- (void)presentDocumentInteractionControllerFromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inView:(id)arg2;
+- (void)presentDocumentInteractionControllerFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2;
 - (void)quickLookDocumentView:(id)arg1 didSelectActionAtIndex:(int)arg2;
 - (void)updateTopContentInset:(float)arg1;
 - (void)updateWithQuickLookDocument:(id)arg1;

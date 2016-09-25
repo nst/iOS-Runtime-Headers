@@ -3,16 +3,16 @@
  */
 
 @interface BBColor : NSObject <NSCopying, NSSecureCoding> {
-    double  _alpha;
-    double  _blue;
-    double  _green;
-    double  _red;
+    float  _alpha;
+    float  _blue;
+    float  _green;
+    float  _red;
 }
 
-@property (nonatomic, readonly) double alpha;
-@property (nonatomic, readonly) double blue;
-@property (nonatomic, readonly) double green;
-@property (nonatomic, readonly) double red;
+@property (nonatomic, readonly) float alpha;
+@property (nonatomic, readonly) float blue;
+@property (nonatomic, readonly) float green;
+@property (nonatomic, readonly) float red;
 @property (nonatomic, readonly, copy) UIColor *uiColor;
 
 // Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard

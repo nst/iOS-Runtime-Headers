@@ -3,14 +3,14 @@
  */
 
 @interface _DPPrivacyBudgetRecord : NSObject <NSSecureCoding, _DPStorageMOConversion> {
-    int  _balance;
+    long long  _balance;
     double  _creationDate;
     NSString * _key;
     double  _lastUpdate;
     NSManagedObjectID * _objectId;
 }
 
-@property (nonatomic) int balance;
+@property (nonatomic) long long balance;
 @property (nonatomic) double creationDate;
 @property (nonatomic, copy) NSString *key;
 @property (nonatomic) double lastUpdate;
@@ -21,7 +21,7 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (int)balance;
+- (long long)balance;
 - (BOOL)copyFromManagedObject:(id)arg1;
 - (BOOL)copyToManagedObject:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -32,13 +32,13 @@
 - (unsigned int)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithKey:(id)arg1 creationDate:(double)arg2 lastUpdate:(double)arg3 balance:(int)arg4 objectId:(id)arg5;
+- (id)initWithKey:(id)arg1 creationDate:(double)arg2 lastUpdate:(double)arg3 balance:(long long)arg4 objectId:(id)arg5;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToPrivacyBudgetRecord:(id)arg1;
 - (id)key;
 - (double)lastUpdate;
 - (id)objectId;
-- (void)setBalance:(int)arg1;
+- (void)setBalance:(long long)arg1;
 - (void)setCreationDate:(double)arg1;
 - (void)setKey:(id)arg1;
 - (void)setLastUpdate:(double)arg1;

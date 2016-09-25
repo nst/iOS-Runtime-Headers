@@ -59,7 +59,7 @@
 - (id)_iTunesStore_valueForHTTPHeader:(id)arg1;
 - (id)expirationDate;
 - (double)expirationInterval;
-- (int)maxExpectedContentLength;
+- (long long)maxExpectedContentLength;
 
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
 

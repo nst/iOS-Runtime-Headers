@@ -23,7 +23,7 @@
 - (id)_physicalURLForURL:(id)arg1;
 - (void)_provideItemAtURL:(id)arg1 toReaderWithID:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)_registerPresenterForItemAtURL:(id)arg1 key:(id)arg2 name:(id)arg3 session:(id)arg4;
-- (unsigned int)_spaceRequiredForReaders;
+- (unsigned long long)_spaceRequiredForReaders;
 - (void)_triggerImmediateReadOfDocumentAtPath:(id)arg1;
 - (void)_unregisterPresenterForKey:(id)arg1;
 - (void)_waitForDownloadOfDirectory:(id)arg1 key:(id)arg2 updateAccessTime:(BOOL)arg3 completionHandler:(id /* block */)arg4;

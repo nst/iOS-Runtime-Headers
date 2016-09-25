@@ -4,7 +4,7 @@
 
 @interface CKUIBehaviorNanoNotifications : CKUIBehaviorNano
 
-- (float)balloonMaxWidthForTranscriptWidth:(float)arg1 marginInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2 shouldShowPluginButtons:(BOOL)arg3 shouldShowCharacterCount:(BOOL)arg4 shouldCoverSendButton:(BOOL)arg5;
+- (float)balloonMaxWidthForTranscriptWidth:(float)arg1 marginInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2 shouldShowPluginButtons:(BOOL)arg3 shouldShowCharacterCount:(BOOL)arg4 shouldCoverSendButton:(BOOL)arg5;
 - (float)bottomTranscriptSpace;
 - (BOOL)modifiesSingleLineBalloonLayout;
 - (float)nanoNoteSenderContentSpace;

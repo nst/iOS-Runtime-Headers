@@ -18,9 +18,9 @@
     NSString * _name;
     int  _numDiscs;
     int  _numTracks;
-    int  _persistentId;
+    long long  _persistentId;
     NSString * _sortName;
-    int  _storeId;
+    long long  _storeId;
     int  _userRating;
 }
 
@@ -42,9 +42,9 @@
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic) int numDiscs;
 @property (nonatomic) int numTracks;
-@property (nonatomic) int persistentId;
+@property (nonatomic) long long persistentId;
 @property (nonatomic, retain) NSString *sortName;
-@property (nonatomic) int storeId;
+@property (nonatomic) long long storeId;
 @property (nonatomic) int userRating;
 
 - (void).cxx_destruct;
@@ -73,7 +73,7 @@
 - (id)name;
 - (int)numDiscs;
 - (int)numTracks;
-- (int)persistentId;
+- (long long)persistentId;
 - (BOOL)readFrom:(id)arg1;
 - (void)setArtist:(id)arg1;
 - (void)setArtworkId:(id)arg1;
@@ -88,12 +88,12 @@
 - (void)setName:(id)arg1;
 - (void)setNumDiscs:(int)arg1;
 - (void)setNumTracks:(int)arg1;
-- (void)setPersistentId:(int)arg1;
+- (void)setPersistentId:(long long)arg1;
 - (void)setSortName:(id)arg1;
-- (void)setStoreId:(int)arg1;
+- (void)setStoreId:(long long)arg1;
 - (void)setUserRating:(int)arg1;
 - (id)sortName;
-- (int)storeId;
+- (long long)storeId;
 - (int)userRating;
 - (void)writeTo:(id)arg1;
 

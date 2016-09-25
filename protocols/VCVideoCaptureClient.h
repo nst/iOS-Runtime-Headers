@@ -7,7 +7,7 @@
 
 - (void)avConferencePreviewError:(NSString *)arg1;
 - (VCVideoRule *)clientCaptureRule;
-- (BOOL)onCaptureFrame:(struct __CVBuffer { }*)arg1 frameTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg2 droppedFrames:(int)arg3 cameraStatusBits:(unsigned char)arg4;
+- (BOOL)onCaptureFrame:(struct __CVBuffer { }*)arg1 frameTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 droppedFrames:(int)arg3 cameraStatusBits:(unsigned char)arg4;
 
 @optional
 

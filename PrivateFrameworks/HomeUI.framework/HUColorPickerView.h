@@ -11,14 +11,14 @@
     unsigned int  _mirroringAxisBias;
     HUQuickControlViewProfile * _profile;
     struct { 
-        double r; 
-        double g; 
-        double b; 
-        double temperature; 
+        float r; 
+        float g; 
+        float b; 
+        float temperature; 
     }  _selectedColor;
     struct { 
-        double angle; 
-        double radius; 
+        float angle; 
+        float radius; 
     }  _selectedColorCoordinate;
     double  _touchDownTimestamp;
     BOOL  _userInteractionActive;
@@ -32,19 +32,19 @@
 @property (nonatomic, retain) UILongPressGestureRecognizer *gestureRecognizer;
 @property (readonly) unsigned int hash;
 @property (nonatomic) <HUQuickControlColorPickerViewInteractionDelegate> *interactionDelegate;
-@property (nonatomic) struct CGPoint { double x1; double x2; } magnifierLocation;
+@property (nonatomic) struct CGPoint { float x1; float x2; } magnifierLocation;
 @property (nonatomic, retain) HUQuickControlMagnifierView *magnifierView;
 @property (nonatomic) unsigned int mirroringAxisBias;
 @property (nonatomic, copy) HUQuickControlViewProfile *profile;
 @property (nonatomic, retain) id secondaryValue;
-@property (nonatomic) struct { double x1; double x2; double x3; double x4; } selectedColor;
-@property (nonatomic) struct { double x1; double x2; } selectedColorCoordinate;
+@property (nonatomic) struct { float x1; float x2; float x3; float x4; } selectedColor;
+@property (nonatomic) struct { float x1; float x2; } selectedColorCoordinate;
 @property (nonatomic) int sizeSubclass;
 @property (readonly) Class superclass;
 @property (nonatomic) double touchDownTimestamp;
 @property (getter=isUserInteractionActive, nonatomic) BOOL userInteractionActive;
 @property (nonatomic, retain) id value;
-@property (nonatomic) double wheelHoleRadius;
+@property (nonatomic) float wheelHoleRadius;
 
 + (id)_colorWheelSpaceForMode:(unsigned int)arg1;
 
@@ -55,7 +55,7 @@
 - (void)_setColorPickerMode:(unsigned int)arg1 notifyDelegate:(BOOL)arg2;
 - (void)_updateDerivedSelectedColorCoordinate;
 - (void)_updateMagnifierPosition;
-- (void)_updateMagnifierTransformForTouchLocation:(struct CGPoint { double x1; double x2; })arg1;
+- (void)_updateMagnifierTransformForTouchLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_updateMirroringAxisBiasIfNecessary;
 - (void)beginUserInteractionWithFirstTouchGestureRecognizer:(id)arg1;
 - (unsigned int)colorPickerMode;
@@ -67,22 +67,22 @@
 - (id)interactionDelegate;
 - (BOOL)isUserInteractionActive;
 - (void)layoutSubviews;
-- (struct CGPoint { double x1; double x2; })magnifierLocation;
+- (struct CGPoint { float x1; float x2; })magnifierLocation;
 - (id)magnifierView;
 - (unsigned int)mirroringAxisBias;
 - (id)profile;
-- (struct { double x1; double x2; double x3; double x4; })selectedColor;
-- (struct { double x1; double x2; })selectedColorCoordinate;
+- (struct { float x1; float x2; float x3; float x4; })selectedColor;
+- (struct { float x1; float x2; })selectedColorCoordinate;
 - (void)setColorPickerMode:(unsigned int)arg1;
 - (void)setColorWheelView:(id)arg1;
 - (void)setGestureRecognizer:(id)arg1;
 - (void)setInteractionDelegate:(id)arg1;
-- (void)setMagnifierLocation:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setMagnifierLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setMagnifierView:(id)arg1;
 - (void)setMirroringAxisBias:(unsigned int)arg1;
 - (void)setProfile:(id)arg1;
-- (void)setSelectedColor:(struct { double x1; double x2; double x3; double x4; })arg1;
-- (void)setSelectedColorCoordinate:(struct { double x1; double x2; })arg1;
+- (void)setSelectedColor:(struct { float x1; float x2; float x3; float x4; })arg1;
+- (void)setSelectedColorCoordinate:(struct { float x1; float x2; })arg1;
 - (void)setTouchDownTimestamp:(double)arg1;
 - (void)setUserInteractionActive:(BOOL)arg1;
 - (void)setValue:(id)arg1;

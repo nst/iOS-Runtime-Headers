@@ -11,8 +11,8 @@
     <PUSwipeSelectionManagerDelegate> * _delegate;
     struct NSMutableDictionary { Class x1; } * _oldIndexesPaths;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _screenTouchLocation;
     PUAutoScroller * _selectionAutoScroller;
 }
@@ -23,7 +23,7 @@
 @property (setter=_setStartingIndexPath:, nonatomic, copy) NSIndexPath *_startingIndexPath;
 @property (nonatomic) <PUSwipeSelectionManagerDataSource> *datasource;
 @property (nonatomic) <PUSwipeSelectionManagerDelegate> *delegate;
-@property (nonatomic) struct CGPoint { double x1; double x2; } screenTouchLocation;
+@property (nonatomic) struct CGPoint { float x1; float x2; } screenTouchLocation;
 @property (nonatomic, retain) PUAutoScroller *selectionAutoScroller;
 
 - (void).cxx_destruct;
@@ -44,11 +44,11 @@
 - (void)endSelection;
 - (id)init;
 - (id)initWithSelectionMode:(int)arg1 photoSelectionManager:(id)arg2;
-- (struct CGPoint { double x1; double x2; })screenTouchLocation;
+- (struct CGPoint { float x1; float x2; })screenTouchLocation;
 - (id)selectionAutoScroller;
 - (void)setDatasource:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setScreenTouchLocation:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setScreenTouchLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setSelectionAutoScroller:(id)arg1;
 - (void)updateSelectionWithCurrentIndexPath:(id)arg1 leftClosestIndexPath:(id)arg2 aboveClosestIndexPath:(id)arg3;
 

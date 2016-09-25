@@ -24,9 +24,9 @@
 - (BOOL)addSelfToBufferAtPosition:(void*)arg1 withCompletedSerializationDictionary:(id)arg2;
 - (void)addSelfToSerializationDictionary:(id)arg1;
 - (id)blockedThreadIDs;
-- (id)initWithSerializedMountSnapshot:(const struct { unsigned int x1; double x2; double x3; unsigned int x4; }*)arg1;
-- (id)initWithStatus:(struct netfs_status { unsigned int x1; BOOL x2[512]; unsigned int x3; unsigned int x4; unsigned int x5[0]; }*)arg1 atMachTime:(double)arg2;
-- (BOOL)isBlockingThread:(unsigned int)arg1;
+- (id)initWithSerializedMountSnapshot:(const struct { unsigned long long x1; double x2; double x3; unsigned int x4; }*)arg1;
+- (id)initWithStatus:(struct netfs_status { unsigned int x1; BOOL x2[512]; unsigned int x3; unsigned int x4; unsigned long long x5[0]; }*)arg1 atMachTime:(double)arg2;
+- (BOOL)isBlockingThread:(unsigned long long)arg1;
 - (BOOL)isUnresponsive;
 - (double)machTimestampOfLastResponse;
 - (double)machTimestampWhenMeasured;

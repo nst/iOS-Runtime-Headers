@@ -7,10 +7,10 @@
     NSIndexPath * _anchorItemIndexPath;
     UICollectionView * _collectionView;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _currentInteractiveCenterOffset;
-    double  _currentInteractiveProgress;
+    float  _currentInteractiveProgress;
     BOOL  _interactive;
     unsigned int  _originZoomLevel;
     unsigned int  _targetZoomLevel;
@@ -22,9 +22,9 @@
 @property (setter=_setTransitionLayout:, nonatomic, retain) UICollectionViewTransitionLayout *_transitionLayout;
 @property (nonatomic, retain) NSIndexPath *anchorItemIndexPath;
 @property (nonatomic, readonly) int completionCurve;
-@property (nonatomic, readonly) double completionSpeed;
-@property (setter=_setCurrentInteractiveCenterOffset:, nonatomic) struct CGSize { double x1; double x2; } currentInteractiveCenterOffset;
-@property (setter=_setCurrentInteractiveProgress:, nonatomic) double currentInteractiveProgress;
+@property (nonatomic, readonly) float completionSpeed;
+@property (setter=_setCurrentInteractiveCenterOffset:, nonatomic) struct CGSize { float x1; float x2; } currentInteractiveCenterOffset;
+@property (setter=_setCurrentInteractiveProgress:, nonatomic) float currentInteractiveProgress;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
@@ -38,7 +38,7 @@
 @property (nonatomic, readonly) PUMomentsZoomLevelManager *zoomLevelManager;
 
 - (void).cxx_destruct;
-- (void)_setCurrentInteractiveCenterOffset:(struct CGSize { double x1; double x2; })arg1;
+- (void)_setCurrentInteractiveCenterOffset:(struct CGSize { float x1; float x2; })arg1;
 - (void)_setCurrentInteractiveProgress:(float)arg1;
 - (void)_setOriginZoomLevel:(unsigned int)arg1;
 - (void)_setTargetZoomLevel:(unsigned int)arg1;
@@ -47,7 +47,7 @@
 - (id)_transitionLayout;
 - (id)anchorItemIndexPath;
 - (void)cancelInteractiveTransitionAnimated;
-- (struct CGSize { double x1; double x2; })currentInteractiveCenterOffset;
+- (struct CGSize { float x1; float x2; })currentInteractiveCenterOffset;
 - (float)currentInteractiveProgress;
 - (void)finishInteractiveTransitionAnimated;
 - (id)initWithOriginLevel:(unsigned int)arg1 targetLevel:(unsigned int)arg2 zoomLevelManager:(id)arg3 interactive:(BOOL)arg4;
@@ -59,7 +59,7 @@
 - (unsigned int)targetZoomLevel;
 - (id)transitionContext;
 - (unsigned int)transitionState;
-- (void)updateInteractiveTransitionForProgress:(float)arg1 centerOffset:(struct CGSize { double x1; double x2; })arg2;
+- (void)updateInteractiveTransitionForProgress:(float)arg1 centerOffset:(struct CGSize { float x1; float x2; })arg2;
 - (id)zoomLevelManager;
 
 @end

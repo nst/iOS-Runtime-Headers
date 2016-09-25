@@ -11,7 +11,7 @@
 @property (nonatomic) struct sqlite3_stmt { }*statement;
 
 - (BOOL)bind:(id)arg1 error:(id*)arg2;
-- (BOOL)bindInt64:(int)arg1 atIndex:(int)arg2 error:(id*)arg3;
+- (BOOL)bindInt64:(long long)arg1 atIndex:(int)arg2 error:(id*)arg3;
 - (BOOL)bindText:(const char *)arg1 ofLength:(int)arg2 atIndex:(int)arg3 error:(id*)arg4;
 - (struct sqlite3 { }*)database;
 - (void)dealloc;

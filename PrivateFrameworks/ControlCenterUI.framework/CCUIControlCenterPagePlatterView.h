@@ -15,12 +15,12 @@
 }
 
 @property (nonatomic, retain) UIView *contentView;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } marginInsets;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } marginInsets;
 
 - (void).cxx_destruct;
 - (void)_recursivelyVisitSubviewsOfView:(id)arg1 forPunchedThroughView:(id)arg2 collectingMasksIn:(id)arg3;
 - (void)_reduceTransparencyStatusDidChange;
-- (id)_renderAlphaOnlyPunchThroughMaskForPlatterSize:(struct CGSize { double x1; double x2; })arg1;
+- (id)_renderAlphaOnlyPunchThroughMaskForPlatterSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_rerenderPunchThroughMaskIfNecessary;
 - (BOOL)_searchForUpdatedMask;
 - (BOOL)_shouldSuppressCachingPunchOutMaskImage;
@@ -30,8 +30,8 @@
 - (void)dealloc;
 - (id)initWithDelegate:(id)arg1;
 - (void)layoutSubviews;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })marginInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })marginInsets;
 - (void)setContentView:(id)arg1;
-- (void)setMarginInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setMarginInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 
 @end

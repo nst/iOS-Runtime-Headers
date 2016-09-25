@@ -11,7 +11,7 @@
     UITapGestureRecognizer * _endEditingTapRecognizer;
     BOOL  _endGesture;
     NSIndexPath * _indexPathToDelete;
-    double  _lastContentOffsetX;
+    float  _lastContentOffsetX;
     NSIndexPath * _lastKnownProposedTargetIndexPath;
     CKBrowserSelectionFlowLayout * _layout;
     UILongPressGestureRecognizer * _longPressRecognizer;
@@ -35,7 +35,7 @@
 @property (nonatomic) BOOL endGesture;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) NSIndexPath *indexPathToDelete;
-@property (nonatomic) double lastContentOffsetX;
+@property (nonatomic) float lastContentOffsetX;
 @property (nonatomic, retain) NSIndexPath *lastKnownProposedTargetIndexPath;
 @property (nonatomic, retain) CKBrowserSelectionFlowLayout *layout;
 @property (nonatomic, retain) UILongPressGestureRecognizer *longPressRecognizer;

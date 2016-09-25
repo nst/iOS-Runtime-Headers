@@ -4,11 +4,11 @@
 
 @interface AVHapticParameterCurveValue : NSObject {
     double  _time;
-    double  _value;
+    float  _value;
 }
 
 @property double time;
-@property double value;
+@property float value;
 
 - (void)setTime:(double)arg1;
 - (void)setValue:(float)arg1;

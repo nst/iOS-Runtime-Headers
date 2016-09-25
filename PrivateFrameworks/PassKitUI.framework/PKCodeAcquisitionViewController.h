@@ -8,7 +8,7 @@
     <PKCodeAcquisitionDelegate> * _delegate;
     NSURLConnection * _downloadConnection;
     NSMutableData * _downloadData;
-    int  _downloadExpectedContentSize;
+    long long  _downloadExpectedContentSize;
     UIProgressView * _downloadProgressView;
     UILabel * _errorLabel;
     UILabel * _helpLabel;

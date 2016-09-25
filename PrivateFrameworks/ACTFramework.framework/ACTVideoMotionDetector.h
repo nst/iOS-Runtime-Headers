@@ -3,7 +3,7 @@
  */
 
 @interface ACTVideoMotionDetector : ACTVideoProcessor {
-    double  _colGradient;
+    float  _colGradient;
     int  _curProjIndex;
     int  _frameCount;
     double  _lastFrameTimestamp;
@@ -11,21 +11,21 @@
     int  _processedFrameCount;
     struct __sbp_Slowmo_Projection { 
         struct FastRegistration_Signatures { 
-            double *piRow; 
+            float *piRow; 
             unsigned int nPiRow; 
             struct Projections_meanStdTable { 
-                double *sumTable; 
-                double *sumSqTable; 
+                float *sumTable; 
+                float *sumSqTable; 
             } piRowTable; 
-            double *piCol; 
+            float *piCol; 
             unsigned int nPiCol; 
             struct Projections_meanStdTable { 
-                double *sumTable; 
-                double *sumSqTable; 
+                float *sumTable; 
+                float *sumSqTable; 
             } piColTable; 
         } signature; 
-        double deltaRow[3264]; 
-        double deltaCol[3264]; 
+        float deltaRow[3264]; 
+        float deltaCol[3264]; 
         unsigned int nDeltaRow; 
         unsigned int nDeltaCol; 
         unsigned char valid; 
@@ -40,7 +40,7 @@
     }  _projections;
     NSDictionary * _result;
     ACTSlowmoResults * _results;
-    double  _rowGradient;
+    float  _rowGradient;
     BOOL  _singleTimeRange;
     BOOL  _skipSecondPass;
     double  _startTimestamp;
@@ -53,7 +53,7 @@
 
 + (id)motionDetectorWithURL:(id)arg1 options:(id)arg2;
 
-- (unsigned char)calculateProjectionSignature:(struct __sbp_Slowmo_Projection { struct FastRegistration_Signatures { double *x_1_1_1; unsigned int x_1_1_2; struct Projections_meanStdTable { double *x_3_2_1; double *x_3_2_2; } x_1_1_3; double *x_1_1_4; unsigned int x_1_1_5; struct Projections_meanStdTable { double *x_6_2_1; double *x_6_2_2; } x_1_1_6; } x1; double x2[3264]; double x3[3264]; unsigned int x4; unsigned int x5; unsigned char x6; double x7; void *x8; struct vImage_Buffer { void *x_9_1_1; unsigned int x_9_1_2; unsigned int x_9_1_3; unsigned int x_9_1_4; } x9; }*)arg1 buffer:(struct __CVBuffer { }*)arg2;
+- (unsigned char)calculateProjectionSignature:(struct __sbp_Slowmo_Projection { struct FastRegistration_Signatures { float *x_1_1_1; unsigned int x_1_1_2; struct Projections_meanStdTable { float *x_3_2_1; float *x_3_2_2; } x_1_1_3; float *x_1_1_4; unsigned int x_1_1_5; struct Projections_meanStdTable { float *x_6_2_1; float *x_6_2_2; } x_1_1_6; } x1; float x2[3264]; float x3[3264]; unsigned int x4; unsigned int x5; unsigned char x6; double x7; void *x8; struct vImage_Buffer { void *x_9_1_1; unsigned int x_9_1_2; unsigned int x_9_1_3; unsigned int x_9_1_4; } x9; }*)arg1 buffer:(struct __CVBuffer { }*)arg2;
 - (void)dealloc;
 - (void)finishProcessing;
 - (void)gradientForSignature:(float*)arg1 gradient:(float*)arg2 count:(int)arg3;

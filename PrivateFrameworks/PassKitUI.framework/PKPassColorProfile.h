@@ -4,16 +4,16 @@
 
 @interface PKPassColorProfile : NSObject {
     UIColor * _backgroundColor;
-    double  _backgroundLightness;
+    float  _backgroundLightness;
     UIColor * _foregroundColor;
-    double  _foregroundLightness;
+    float  _foregroundLightness;
     UIColor * _highlightColor;
     UIColor * _labelColor;
-    double  _labelLightness;
-    double  _overlayDarkeningAlpha;
-    double  _overlayLighteningAlpha;
-    double  _regularDarkeningAlpha;
-    double  _regularLighteningAlpha;
+    float  _labelLightness;
+    float  _overlayDarkeningAlpha;
+    float  _overlayLighteningAlpha;
+    float  _regularDarkeningAlpha;
+    float  _regularLighteningAlpha;
     PKPassColorProfile * _stripProfile;
 }
 
@@ -22,10 +22,10 @@
 @property (nonatomic, readonly) UIColor *highlightColor;
 @property (nonatomic, readonly) BOOL isLight;
 @property (nonatomic, readonly) UIColor *labelColor;
-@property (nonatomic, readonly) double overlayDarkeningAlpha;
-@property (nonatomic, readonly) double overlayLighteningAlpha;
-@property (nonatomic, readonly) double regularDarkeningAlpha;
-@property (nonatomic, readonly) double regularLighteningAlpha;
+@property (nonatomic, readonly) float overlayDarkeningAlpha;
+@property (nonatomic, readonly) float overlayLighteningAlpha;
+@property (nonatomic, readonly) float regularDarkeningAlpha;
+@property (nonatomic, readonly) float regularLighteningAlpha;
 
 + (id)profileForDisplayProfile:(id)arg1;
 

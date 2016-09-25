@@ -4,7 +4,7 @@
 
 @interface _SBSCarPlayApplicationInfo : NSObject <SBSCarPlayApplicationIcon> {
     NSData * _iconImageData;
-    double  _iconImageScale;
+    float  _iconImageScale;
     NSString * _localizedDisplayName;
 }
 
@@ -12,7 +12,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) NSData *iconImageData;
-@property (nonatomic) double iconImageScale;
+@property (nonatomic) float iconImageScale;
 @property (nonatomic, retain) NSString *localizedDisplayName;
 @property (readonly) Class superclass;
 

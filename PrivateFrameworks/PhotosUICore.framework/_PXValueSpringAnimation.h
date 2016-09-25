@@ -3,15 +3,15 @@
  */
 
 @interface _PXValueSpringAnimation : _PXValueAnimation {
-    double  _A;
-    double  _B;
-    double  _omega0;
+    float  _A;
+    float  _B;
+    float  _omega0;
 }
 
 + (double)durationOfSpringAnimationWithMass:(float)arg1 stiffness:(float)arg2 damping:(float)arg3 velocity:(float)arg4 epsilon:(float)arg5;
 
 - (float)currentValue;
-- (id)initWithDuration:(double)arg1 spec:(struct _PXValueAnimationSpec { int x1; double x2; double x3; double x4; double x5; })arg2;
-- (id)initWithFromValue:(float)arg1 spec:(struct _PXValueAnimationSpec { int x1; double x2; double x3; double x4; double x5; })arg2;
+- (id)initWithDuration:(double)arg1 spec:(struct _PXValueAnimationSpec { int x1; float x2; float x3; float x4; float x5; })arg2;
+- (id)initWithFromValue:(float)arg1 spec:(struct _PXValueAnimationSpec { int x1; float x2; float x3; float x4; float x5; })arg2;
 
 @end

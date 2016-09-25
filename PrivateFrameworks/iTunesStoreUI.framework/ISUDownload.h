@@ -8,8 +8,8 @@
 }
 
 @property (nonatomic, readonly) NSString *artistName;
-@property (nonatomic, readonly) int bytesDownloaded;
-@property (nonatomic, readonly) int bytesTotal;
+@property (nonatomic, readonly) long long bytesDownloaded;
+@property (nonatomic, readonly) long long bytesTotal;
 @property (getter=isContentRestricted, nonatomic, readonly) BOOL contentRestricted;
 @property (nonatomic, readonly) double estimatedSecondsRemaining;
 @property (nonatomic, retain) SSDownload *managedDownload;
@@ -28,8 +28,8 @@
 + (void)initialize;
 
 - (id)artistName;
-- (int)bytesDownloaded;
-- (int)bytesTotal;
+- (long long)bytesDownloaded;
+- (long long)bytesTotal;
 - (id)copyLocalizedStatusString;
 - (void)dealloc;
 - (double)estimatedSecondsRemaining;

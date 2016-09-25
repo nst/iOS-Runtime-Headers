@@ -14,12 +14,12 @@
 - (id)commandBuffer;
 - (id)device;
 - (void)endEncoding;
-- (unsigned int)globalTraceObjectID;
+- (unsigned long long)globalTraceObjectID;
 - (void)insertDebugSignpost:(id)arg1;
 - (id)label;
 - (void)popDebugGroup;
 - (void)pushDebugGroup:(id)arg1;
-- (void)setGlobalTraceObjectID:(unsigned int)arg1;
+- (void)setGlobalTraceObjectID:(unsigned long long)arg1;
 - (void)setLabel:(id)arg1;
 
 @end

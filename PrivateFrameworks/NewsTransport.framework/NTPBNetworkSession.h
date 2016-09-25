@@ -9,7 +9,7 @@
         unsigned int cellularRadioAccessTechnology : 1; 
         unsigned int wifiReachable : 1; 
     }  _has;
-    unsigned int  _sessionID;
+    unsigned long long  _sessionID;
     BOOL  _wifiReachable;
 }
 
@@ -17,7 +17,7 @@
 @property (nonatomic) BOOL hasCellularRadioAccessTechnology;
 @property (nonatomic) BOOL hasSessionID;
 @property (nonatomic) BOOL hasWifiReachable;
-@property (nonatomic) unsigned int sessionID;
+@property (nonatomic) unsigned long long sessionID;
 @property (nonatomic) BOOL wifiReachable;
 
 - (int)cellularRadioAccessTechnology;
@@ -31,12 +31,12 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (unsigned int)sessionID;
+- (unsigned long long)sessionID;
 - (void)setCellularRadioAccessTechnology:(int)arg1;
 - (void)setHasCellularRadioAccessTechnology:(BOOL)arg1;
 - (void)setHasSessionID:(BOOL)arg1;
 - (void)setHasWifiReachable:(BOOL)arg1;
-- (void)setSessionID:(unsigned int)arg1;
+- (void)setSessionID:(unsigned long long)arg1;
 - (void)setWifiReachable:(BOOL)arg1;
 - (BOOL)wifiReachable;
 - (void)writeTo:(id)arg1;

@@ -6,23 +6,23 @@
     BOOL  _requiresAuthentication;
     NSString * _text;
     BOOL  _userAccepted;
-    int  _versionID;
+    long long  _versionID;
 }
 
 @property (nonatomic) NSString *currentText;
-@property (nonatomic) int currentVersionIdentifier;
+@property (nonatomic) long long currentVersionIdentifier;
 @property (nonatomic, readonly) BOOL requiresAuthentication;
 @property (getter=isUserAccepted, nonatomic) BOOL userAccepted;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)currentText;
-- (int)currentVersionIdentifier;
+- (long long)currentVersionIdentifier;
 - (void)dealloc;
 - (id)initWithResponseData:(id)arg1 error:(id*)arg2;
 - (BOOL)isUserAccepted;
 - (BOOL)requiresAuthentication;
 - (void)setCurrentText:(id)arg1;
-- (void)setCurrentVersionIdentifier:(int)arg1;
+- (void)setCurrentVersionIdentifier:(long long)arg1;
 - (void)setUserAccepted:(BOOL)arg1;
 
 @end

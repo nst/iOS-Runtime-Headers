@@ -13,12 +13,12 @@
     NSArray * _results;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _roi;
     CVMLWarningRecorder * _warningRecorder;
@@ -33,7 +33,7 @@
 @property (readonly) NSDictionary *options;
 @property (readonly) NSString *requestName;
 @property (readonly) NSArray *results;
-@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } roi;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } roi;
 @property (readonly) Class superclass;
 
 + (BOOL)getDoubleValue:(double*)arg1 forKey:(id)arg2 inOptions:(id)arg3 error:(id*)arg4;
@@ -64,12 +64,12 @@
 - (void)recordWarning:(id)arg1 value:(id)arg2;
 - (id)requestName;
 - (id)results;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })roi;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })roi;
 - (void)setCancellable:(BOOL)arg1;
 - (void)setCancellationSemaphore:(id)arg1;
 - (void)setCompletionHandler:(id /* block */)arg1;
 - (void)setResults:(id)arg1;
-- (void)setRoi:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setRoi:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)valueForWarning:(id)arg1;
 - (id)warnings;
 

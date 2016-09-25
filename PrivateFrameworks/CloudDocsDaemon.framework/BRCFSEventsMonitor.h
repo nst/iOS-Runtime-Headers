@@ -44,9 +44,9 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)description;
-- (void)didProcessEventID:(unsigned int)arg1;
+- (void)didProcessEventID:(unsigned long long)arg1;
 - (void)flushStream;
-- (void)fseventAtPath:(id)arg1 withFlags:(unsigned long)arg2 andID:(unsigned int)arg3 eventIndex:(unsigned int)arg4 eventCount:(unsigned int)arg5 initialScan:(BOOL)arg6;
+- (void)fseventAtPath:(id)arg1 withFlags:(unsigned long)arg2 andID:(unsigned long long)arg3 eventIndex:(unsigned int)arg4 eventCount:(unsigned int)arg5 initialScan:(BOOL)arg6;
 - (id)initWithAccountSession:(id)arg1;
 - (id)initWithAccountSession:(id)arg1 name:(id)arg2;
 - (BOOL)isCancelled;

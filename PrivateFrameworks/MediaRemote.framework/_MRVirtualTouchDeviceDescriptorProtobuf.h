@@ -11,8 +11,8 @@
         unsigned int integratedDisplay : 1; 
     }  _has;
     BOOL  _integratedDisplay;
-    double  _screenSizeHeight;
-    double  _screenSizeWidth;
+    float  _screenSizeHeight;
+    float  _screenSizeWidth;
 }
 
 @property (nonatomic) BOOL absolute;
@@ -21,8 +21,8 @@
 @property (nonatomic) BOOL hasScreenSizeHeight;
 @property (nonatomic) BOOL hasScreenSizeWidth;
 @property (nonatomic) BOOL integratedDisplay;
-@property (nonatomic) double screenSizeHeight;
-@property (nonatomic) double screenSizeWidth;
+@property (nonatomic) float screenSizeHeight;
+@property (nonatomic) float screenSizeWidth;
 
 - (BOOL)absolute;
 - (void)copyTo:(id)arg1;

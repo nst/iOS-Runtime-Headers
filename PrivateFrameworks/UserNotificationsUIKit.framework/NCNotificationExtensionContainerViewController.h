@@ -86,7 +86,7 @@
 - (void)setQueuedRequests:(id)arg1;
 - (void)setRemoteService:(id)arg1;
 - (void)setUserInteractionEnabled:(BOOL)arg1;
-- (struct CGSize { double x1; double x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { double x1; double x2; })arg2;
+- (struct CGSize { float x1; float x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
 

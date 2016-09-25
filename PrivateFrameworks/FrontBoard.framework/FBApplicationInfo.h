@@ -21,7 +21,7 @@
     BOOL  _installing;
     BOOL  _isManaged;
     double  _lastModifiedDate;
-    double  _minimumBrightnessLevel;
+    float  _minimumBrightnessLevel;
     BOOL  _newsstand;
     NSString * _preferenceDomain;
     FBProfileManager * _profileManager;
@@ -62,7 +62,7 @@
 @property (getter=_isInstalling, setter=_setInstalling:, nonatomic) BOOL installing;
 @property (nonatomic, readonly, retain) NSNumber *itemID;
 @property (nonatomic, readonly) double lastModifiedDate;
-@property (nonatomic, readonly) double minimumBrightnessLevel;
+@property (nonatomic, readonly) float minimumBrightnessLevel;
 @property (getter=isNewsstand, nonatomic, readonly) BOOL newsstand;
 @property (nonatomic, readonly, copy) NSString *preferenceDomain;
 @property (getter=_profileManager, setter=_setProfileManager:, nonatomic) FBProfileManager *profileManager;

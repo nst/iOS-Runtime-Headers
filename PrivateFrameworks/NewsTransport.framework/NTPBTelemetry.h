@@ -3,7 +3,7 @@
  */
 
 @interface NTPBTelemetry : PBCodable <NSCopying> {
-    int  _appBuild;
+    long long  _appBuild;
     NSString * _appVersion;
     NSString * _carrier;
     int  _contentEnvironment;
@@ -26,7 +26,7 @@
     NSString * _userStorefrontId;
 }
 
-@property (nonatomic) int appBuild;
+@property (nonatomic) long long appBuild;
 @property (nonatomic, retain) NSString *appVersion;
 @property (nonatomic, retain) NSString *carrier;
 @property (nonatomic) int contentEnvironment;
@@ -63,7 +63,7 @@
 - (void).cxx_destruct;
 - (int)StringAsOsInstallVariant:(id)arg1;
 - (void)addNetworkEventGroups:(id)arg1;
-- (int)appBuild;
+- (long long)appBuild;
 - (id)appVersion;
 - (id)carrier;
 - (void)clearNetworkEventGroups;
@@ -103,7 +103,7 @@
 - (id)osInstallVariantAsString:(int)arg1;
 - (id)osVersion;
 - (BOOL)readFrom:(id)arg1;
-- (void)setAppBuild:(int)arg1;
+- (void)setAppBuild:(long long)arg1;
 - (void)setAppVersion:(id)arg1;
 - (void)setCarrier:(id)arg1;
 - (void)setContentEnvironment:(int)arg1;

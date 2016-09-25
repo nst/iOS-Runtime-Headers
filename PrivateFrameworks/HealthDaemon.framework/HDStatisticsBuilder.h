@@ -3,7 +3,7 @@
  */
 
 @interface HDStatisticsBuilder : NSObject {
-    int  _anchor;
+    long long  _anchor;
     _HKFilter * _filter;
     unsigned int  _mergeStrategy;
     NSArray * _orderedSources;
@@ -17,7 +17,7 @@
     _HKTimePeriod * _timePeriod;
 }
 
-@property (nonatomic) int anchor;
+@property (nonatomic) long long anchor;
 @property (nonatomic, readonly) _HKFilter *filter;
 @property (nonatomic, readonly) unsigned int mergeStrategy;
 @property (nonatomic, readonly) NSArray *orderedSources;
@@ -42,7 +42,7 @@
 - (id)_sourceIdForBundleIdentifier:(id)arg1;
 - (void)_updateSourceCache:(id)arg1 sourceId:(id)arg2;
 - (id)_updateStatisticsCollection:(id)arg1 withSamples:(id)arg2 error:(id*)arg3;
-- (int)anchor;
+- (long long)anchor;
 - (id)buildStatisticsObjectFromCalculator:(id)arg1;
 - (id)collectionCalculatorWithBucketTimePeriods:(id)arg1;
 - (id)filter;
@@ -58,7 +58,7 @@
 - (id)profile;
 - (id)quantityType;
 - (id)restrictedSourceIdentifier;
-- (void)setAnchor:(int)arg1;
+- (void)setAnchor:(long long)arg1;
 - (void)setTimePeriod:(id)arg1;
 - (unsigned int)statisticsOptions;
 - (id)timePeriod;

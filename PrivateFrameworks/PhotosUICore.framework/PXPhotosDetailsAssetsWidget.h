@@ -28,8 +28,8 @@
     PXTouchingUIGestureRecognizer * __touchGesture;
     BOOL  __transitionWithoutAnimation;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  __visibleOriginScrollTarget;
     PXPhotosDetailsContext * _context;
     PXPhotoKitAssetsDataSourceManager * _dataSourceManager;
@@ -71,7 +71,7 @@
 @property (nonatomic, readonly) PXTilingController *_tilingController;
 @property (nonatomic, readonly) PXTouchingUIGestureRecognizer *_touchGesture;
 @property (setter=_setTransitionWithoutAnimation:, nonatomic) BOOL _transitionWithoutAnimation;
-@property (setter=_setVisibleOriginScrollTarget:, nonatomic) struct CGPoint { double x1; double x2; } _visibleOriginScrollTarget;
+@property (setter=_setVisibleOriginScrollTarget:, nonatomic) struct CGPoint { float x1; float x2; } _visibleOriginScrollTarget;
 @property (nonatomic, readonly) BOOL allowUserInteractionWithSubtitle;
 @property (nonatomic, readonly) int contentLayoutStyle;
 @property (nonatomic, readonly) PXTilingController *contentTilingController;
@@ -99,8 +99,8 @@
 @property (nonatomic) <PXWidgetDelegate> *widgetDelegate;
 
 - (void).cxx_destruct;
-- (struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })_assetIndexPathAtLocation:(struct CGPoint { double x1; double x2; })arg1 padding:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
-- (id)_assetReferenceAtPoint:(struct CGPoint { double x1; double x2; })arg1 padding:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
+- (struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })_assetIndexPathAtLocation:(struct CGPoint { float x1; float x2; })arg1 padding:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
+- (id)_assetReferenceAtPoint:(struct CGPoint { float x1; float x2; })arg1 padding:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
 - (id)_assetsScene;
 - (BOOL)_autoPlayVideoInOneUp;
 - (void)_configureLayout:(id)arg1;
@@ -115,7 +115,7 @@
 - (id)_hiddenAssetReferences;
 - (id)_highlightedAssetReference;
 - (void)_invalidateLayoutGenerator;
-- (BOOL)_isLocationWithinCurrentLayoutBounds:(struct CGPoint { double x1; double x2; })arg1;
+- (BOOL)_isLocationWithinCurrentLayoutBounds:(struct CGPoint { float x1; float x2; })arg1;
 - (id)_layoutEngine;
 - (id)_layoutGenerator;
 - (id)_loadCoordinationToken;
@@ -145,7 +145,7 @@
 - (void)_setPhotosDataSource:(id)arg1;
 - (void)_setShowDisclosureButton:(BOOL)arg1;
 - (void)_setTransitionWithoutAnimation:(BOOL)arg1;
-- (void)_setVisibleOriginScrollTarget:(struct CGPoint { double x1; double x2; })arg1;
+- (void)_setVisibleOriginScrollTarget:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)_showDisclosureButton;
 - (id)_specManager;
 - (id)_subtitle;
@@ -161,7 +161,7 @@
 - (void)_updateLayoutEngineIfNeeded;
 - (void)_updateShowDisclosureButton;
 - (void)_updateTilingLayoutIfNeeded;
-- (struct CGPoint { double x1; double x2; })_visibleOriginScrollTarget;
+- (struct CGPoint { float x1; float x2; })_visibleOriginScrollTarget;
 - (BOOL)actionPerformer:(id)arg1 dismissViewController:(struct NSObject { Class x1; }*)arg2 completionHandler:(id /* block */)arg3;
 - (BOOL)actionPerformer:(id)arg1 presentViewController:(struct NSObject { Class x1; }*)arg2;
 - (BOOL)allowUserInteractionWithSubtitle;
@@ -172,14 +172,14 @@
 - (void)checkInTile:(void*)arg1 withIdentifier:(struct PXTileIdentifier { unsigned int x1; unsigned int x2[10]; })arg2;
 - (void*)checkOutTileForIdentifier:(struct PXTileIdentifier { unsigned int x1; unsigned int x2[10]; })arg1 layout:(id)arg2;
 - (void)commitPreviewViewController:(struct NSObject { Class x1; }*)arg1;
-- (BOOL)containsPoint:(struct CGPoint { double x1; double x2; })arg1 forCoordinateSpace:(id)arg2;
+- (BOOL)containsPoint:(struct CGPoint { float x1; float x2; })arg1 forCoordinateSpace:(id)arg2;
 - (int)contentLayoutStyle;
 - (id)contentTilingController;
 - (id)context;
 - (id)dataSourceManager;
 - (void)dealloc;
 - (float)engineDrivenLayout:(id)arg1 aspectRatioForItemAtIndexPath:(struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })engineDrivenLayout:(id)arg1 contentsRectForItemAtIndexPath:(struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })arg2 forAspectRatio:(float)arg3;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })engineDrivenLayout:(id)arg1 contentsRectForItemAtIndexPath:(struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })arg2 forAspectRatio:(float)arg3;
 - (float)engineDrivenLayout:(id)arg1 zPositionForItemAtIndexPath:(struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })arg2;
 - (void)environmentDidUpdateFocusInContext:(id)arg1;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
@@ -209,7 +209,7 @@
 - (id)oneUpPresentationPhotosDetailsContext:(id)arg1;
 - (BOOL)oneUpPresentationShouldAutoPlay:(id)arg1;
 - (void)playButtonTileWasTapped:(id)arg1;
-- (struct NSObject { Class x1; }*)previewViewControllerAtLocation:(struct CGPoint { double x1; double x2; })arg1 fromSourceView:(struct NSObject { Class x1; }*)arg2 outSourceRect:(out struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg3;
+- (struct NSObject { Class x1; }*)previewViewControllerAtLocation:(struct CGPoint { float x1; float x2; })arg1 fromSourceView:(struct NSObject { Class x1; }*)arg2 outSourceRect:(out struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg3;
 - (void)scrollViewControllerDidScroll:(id)arg1;
 - (void)scrollViewControllerWillBeginScrolling:(id)arg1;
 - (id)selectionManager;
@@ -223,11 +223,11 @@
 - (id)spec;
 - (BOOL)supportsFaceMode;
 - (BOOL)supportsSelection;
-- (struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })swipeSelectionManager:(id)arg1 itemIndexPathAtLocation:(struct CGPoint { double x1; double x2; })arg2;
-- (struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })swipeSelectionManager:(id)arg1 itemIndexPathClosestAboveLocation:(struct CGPoint { double x1; double x2; })arg2;
-- (struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })swipeSelectionManager:(id)arg1 itemIndexPathClosestLeadingLocation:(struct CGPoint { double x1; double x2; })arg2;
-- (struct CGPoint { double x1; double x2; })tilingController:(id)arg1 initialVisibleOriginForLayout:(id)arg2;
-- (struct CGPoint { double x1; double x2; })tilingController:(id)arg1 targetVisibleOriginForLayout:(id)arg2 proposedVisibleOrigin:(struct CGPoint { double x1; double x2; })arg3;
+- (struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })swipeSelectionManager:(id)arg1 itemIndexPathAtLocation:(struct CGPoint { float x1; float x2; })arg2;
+- (struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })swipeSelectionManager:(id)arg1 itemIndexPathClosestAboveLocation:(struct CGPoint { float x1; float x2; })arg2;
+- (struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })swipeSelectionManager:(id)arg1 itemIndexPathClosestLeadingLocation:(struct CGPoint { float x1; float x2; })arg2;
+- (struct CGPoint { float x1; float x2; })tilingController:(id)arg1 initialVisibleOriginForLayout:(id)arg2;
+- (struct CGPoint { float x1; float x2; })tilingController:(id)arg1 targetVisibleOriginForLayout:(id)arg2 proposedVisibleOrigin:(struct CGPoint { float x1; float x2; })arg3;
 - (id)tilingController:(id)arg1 tileIdentifierConverterForChange:(id)arg2;
 - (id)tilingController:(id)arg1 transitionAnimationCoordinatorForChange:(id)arg2;
 - (void)userDidSelectDisclosureControl;

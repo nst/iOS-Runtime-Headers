@@ -6,13 +6,13 @@
     NSMutableArray * _allObjects;
     SYMessageHeader * _header;
     NSString * _syncID;
-    unsigned int  _version;
+    unsigned long long  _version;
 }
 
 @property (nonatomic, retain) NSMutableArray *allObjects;
 @property (nonatomic, retain) SYMessageHeader *header;
 @property (nonatomic, retain) NSString *syncID;
-@property (nonatomic) unsigned int version;
+@property (nonatomic) unsigned long long version;
 
 + (Class)allObjectsType;
 
@@ -34,9 +34,9 @@
 - (void)setAllObjects:(id)arg1;
 - (void)setHeader:(id)arg1;
 - (void)setSyncID:(id)arg1;
-- (void)setVersion:(unsigned int)arg1;
+- (void)setVersion:(unsigned long long)arg1;
 - (id)syncID;
-- (unsigned int)version;
+- (unsigned long long)version;
 - (void)writeTo:(id)arg1;
 
 @end

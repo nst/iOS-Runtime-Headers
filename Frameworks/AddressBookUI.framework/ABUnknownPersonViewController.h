@@ -67,7 +67,7 @@
 - (void)_createNewContacts;
 - (id)_findMatchingCardsForRecord:(void*)arg1;
 - (id)_forwarder;
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; int x7; }*)arg1;
+- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; float x6; int x7; }*)arg1;
 - (void)_showCardViewerForIndex:(int)arg1;
 - (void)_showUnmergedContactsAlert;
 - (id)_unmergedAlertSheet;

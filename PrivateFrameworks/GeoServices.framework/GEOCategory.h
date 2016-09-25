@@ -4,7 +4,7 @@
 
 @interface GEOCategory : PBCodable <NSCopying> {
     NSString * _alias;
-    int  _geoOntologyId;
+    long long  _geoOntologyId;
     struct { 
         unsigned int geoOntologyId : 1; 
     }  _has;
@@ -13,7 +13,7 @@
 }
 
 @property (nonatomic, retain) NSString *alias;
-@property (nonatomic) int geoOntologyId;
+@property (nonatomic) long long geoOntologyId;
 @property (nonatomic) BOOL hasGeoOntologyId;
 @property (nonatomic) int level;
 @property (nonatomic, retain) NSMutableArray *localizedNames;
@@ -28,7 +28,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (int)geoOntologyId;
+- (long long)geoOntologyId;
 - (BOOL)hasGeoOntologyId;
 - (unsigned int)hash;
 - (id)initWithPlaceDataCategory:(id)arg1;
@@ -40,7 +40,7 @@
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setAlias:(id)arg1;
-- (void)setGeoOntologyId:(int)arg1;
+- (void)setGeoOntologyId:(long long)arg1;
 - (void)setHasGeoOntologyId:(BOOL)arg1;
 - (void)setLevel:(int)arg1;
 - (void)setLocalizedNames:(id)arg1;

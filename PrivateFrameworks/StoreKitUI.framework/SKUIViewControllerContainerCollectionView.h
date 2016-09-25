@@ -3,9 +3,9 @@
  */
 
 @interface SKUIViewControllerContainerCollectionView : UICollectionView {
-    double  _competingScrollViewPanGestureRecognizerHysteresis;
+    float  _competingScrollViewPanGestureRecognizerHysteresis;
     BOOL  _forcingIncreasedPanGestureRecognizerHysteresis;
-    double  _originalPanGestureRecognizerHysteresis;
+    float  _originalPanGestureRecognizerHysteresis;
     struct __CFRunLoopObserver { } * _runLoopObserver;
 }
 

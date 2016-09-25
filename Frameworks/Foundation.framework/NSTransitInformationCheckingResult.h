@@ -24,7 +24,7 @@
 - (id)initWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 components:(id)arg2 underlyingResult:(void*)arg3;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })range;
 - (id)resultByAdjustingRangesWithOffset:(int)arg1;
-- (unsigned int)resultType;
+- (unsigned long long)resultType;
 - (void*)underlyingResult;
 
 @end

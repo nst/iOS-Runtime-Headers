@@ -26,7 +26,7 @@
 - (id)pointByOffsettingWithXOffset:(float)arg1 yOffset:(float)arg2;
 - (id)pointByOffsettingWithXOffsetDimension:(id)arg1 yOffsetDimension:(id)arg2;
 - (id)relationshipEqualToLayoutPoint:(id)arg1;
-- (struct CGPoint { double x1; double x2; })valueInItem:(id)arg1;
+- (struct CGPoint { float x1; float x2; })valueInItem:(id)arg1;
 - (id)xAxisAnchor;
 - (id)yAxisAnchor;
 

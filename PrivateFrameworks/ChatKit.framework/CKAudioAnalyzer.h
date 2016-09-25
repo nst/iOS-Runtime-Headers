@@ -4,39 +4,39 @@
 
 @interface CKAudioAnalyzer : NSObject <Endpointer> {
     struct OpaqueAudioComponentInstance { } * _audioUnitEPVAD;
-    double  _decoderLatency;
+    float  _decoderLatency;
     BOOL  _detectedMusic;
     double  _endWaitTime;
     int  _endpointMode;
     NSMutableData * _floatSampleBuffer;
     struct { 
-        double rms; 
+        float rms; 
         unsigned int zc; 
     }  _frameAnalysisArray;
     unsigned long  _frameRate;
     unsigned int  _framesSeen;
-    double  _heuristicTransitionRatio;
-    double  _heuristicWindowSec;
+    float  _heuristicTransitionRatio;
+    float  _heuristicWindowSec;
     unsigned long  _inMaxSamplesPerBuffer;
     double  _interspeechWaitTime;
     NSDictionary * _modelDict;
     double  _sampleRate;
     double  _samplesSeen;
-    double  _speechPaddingFactor;
+    float  _speechPaddingFactor;
     double  _startWaitTime;
 }
 
 @property (readonly, copy) NSString *debugDescription;
-@property (nonatomic) double decoderLatency;
+@property (nonatomic) float decoderLatency;
 @property (readonly, copy) NSString *description;
 @property double endWaitTime;
 @property int endpointMode;
 @property (readonly) unsigned int hash;
-@property (nonatomic) double heuristicTransitionRatio;
-@property (nonatomic) double heuristicWindowSec;
+@property (nonatomic) float heuristicTransitionRatio;
+@property (nonatomic) float heuristicWindowSec;
 @property (nonatomic) unsigned long inMaxSamplesPerBuffer;
 @property double interspeechWaitTime;
-@property (nonatomic) double speechPaddingFactor;
+@property (nonatomic) float speechPaddingFactor;
 @property double startWaitTime;
 @property (readonly) Class superclass;
 

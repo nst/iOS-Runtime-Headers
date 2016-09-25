@@ -62,7 +62,7 @@
     NSMutableArray * _rooms;
     NSMutableArray * _serviceGroups;
     NSMutableArray * _services;
-    unsigned int  _stateHandle;
+    unsigned long long  _stateHandle;
     NSMutableArray * _triggerOwnedActionSets;
     NSMutableArray * _triggers;
     NSMutableArray * _unconfiguredResidentDevices;
@@ -141,7 +141,7 @@
 @property (nonatomic, retain) NSMutableArray *rooms;
 @property (nonatomic, retain) NSMutableArray *serviceGroups;
 @property (nonatomic, retain) NSMutableArray *services;
-@property (nonatomic) unsigned int stateHandle;
+@property (nonatomic) unsigned long long stateHandle;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSMutableArray *triggerOwnedActionSets;
 @property (nonatomic, retain) NSMutableArray *triggers;
@@ -584,7 +584,7 @@
 - (void)setRooms:(id)arg1;
 - (void)setServiceGroups:(id)arg1;
 - (void)setServices:(id)arg1;
-- (void)setStateHandle:(unsigned int)arg1;
+- (void)setStateHandle:(unsigned long long)arg1;
 - (void)setTriggerOwnedActionSets:(id)arg1;
 - (void)setTriggers:(id)arg1;
 - (void)setUnconfiguredResidentDevices:(id)arg1;
@@ -593,7 +593,7 @@
 - (void)setZones:(id)arg1;
 - (id)shortDescription;
 - (void)startSearchingForBridgedAccessories;
-- (unsigned int)stateHandle;
+- (unsigned long long)stateHandle;
 - (void)stopSearchingForBridgedAccessories;
 - (void)subscribeForNotificationsFromRemoteGateway;
 - (void)takeOwnershipOfAccessories:(id)arg1;

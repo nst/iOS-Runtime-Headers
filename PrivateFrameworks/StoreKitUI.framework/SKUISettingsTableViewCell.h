@@ -4,10 +4,10 @@
 
 @interface SKUISettingsTableViewCell : UITableViewCell {
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _contentInset;
     UIImageView * _disclosureChevron;
     BOOL  _hasDisclosureChevron;

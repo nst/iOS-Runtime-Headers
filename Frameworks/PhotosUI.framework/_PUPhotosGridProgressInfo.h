@@ -7,14 +7,14 @@
     NSIndexPath * _cachedIndexPath;
     PHAssetCollection * _collection;
     NSString * _identifier;
-    double  _progress;
+    float  _progress;
 }
 
 @property (nonatomic, retain) PHAsset *asset;
 @property (nonatomic, retain) NSIndexPath *cachedIndexPath;
 @property (nonatomic, retain) PHAssetCollection *collection;
 @property (nonatomic, retain) NSString *identifier;
-@property (nonatomic) double progress;
+@property (nonatomic) float progress;
 
 - (void).cxx_destruct;
 - (id)asset;

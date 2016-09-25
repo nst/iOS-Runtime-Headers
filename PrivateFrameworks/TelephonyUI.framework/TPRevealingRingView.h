@@ -3,48 +3,48 @@
  */
 
 @interface TPRevealingRingView : UIView {
-    double  _alphaInsideRing;
-    double  _alphaOutsideRing;
+    float  _alphaInsideRing;
+    float  _alphaOutsideRing;
     int  _animationStyle;
     UIColor * _colorInsideRing;
     UIColor * _colorOutsideRing;
-    double  _cornerRadius;
-    double  _defaultRingStrokeWidth;
-    double  _gammaBoost;
+    float  _cornerRadius;
+    float  _defaultRingStrokeWidth;
+    float  _gammaBoost;
     BOOL  _gammaBoostInside;
     BOOL  _gammaBoostOuterRing;
-    double  _innerGammaAlpha;
+    float  _innerGammaAlpha;
     _TPTemplatedColoredImageView * _innerGammaView;
     struct { 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
         struct { 
             struct CGRect { 
                 struct CGPoint { 
-                    double x; 
-                    double y; 
+                    float x; 
+                    float y; 
                 } origin; 
                 struct CGSize { 
-                    double width; 
-                    double height; 
+                    float width; 
+                    float height; 
                 } size; 
             } rect; 
-            double cornerRadius; 
+            float cornerRadius; 
         } outerPath; 
         struct { 
             struct CGRect { 
                 struct CGPoint { 
-                    double x; 
-                    double y; 
+                    float x; 
+                    float y; 
                 } origin; 
                 struct CGSize { 
-                    double width; 
-                    double height; 
+                    float width; 
+                    float height; 
                 } size; 
             } rect; 
-            double cornerRadius; 
+            float cornerRadius; 
         } innerPath; 
         BOOL isCircle; 
         BOOL drawsOutsideOuterPath; 
@@ -52,71 +52,71 @@
     _TPTemplatedColoredImageView * _innerView;
     struct { 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
         struct { 
             struct CGRect { 
                 struct CGPoint { 
-                    double x; 
-                    double y; 
+                    float x; 
+                    float y; 
                 } origin; 
                 struct CGSize { 
-                    double width; 
-                    double height; 
+                    float width; 
+                    float height; 
                 } size; 
             } rect; 
-            double cornerRadius; 
+            float cornerRadius; 
         } outerPath; 
         struct { 
             struct CGRect { 
                 struct CGPoint { 
-                    double x; 
-                    double y; 
+                    float x; 
+                    float y; 
                 } origin; 
                 struct CGSize { 
-                    double width; 
-                    double height; 
+                    float width; 
+                    float height; 
                 } size; 
             } rect; 
-            double cornerRadius; 
+            float cornerRadius; 
         } innerPath; 
         BOOL isCircle; 
         BOOL drawsOutsideOuterPath; 
     }  _innerViewDrawingProperties;
     BOOL  _isCircularRing;
-    double  _minimumRevealingScale;
+    float  _minimumRevealingScale;
     _TPTemplatedColoredImageView * _outerGammaView;
     struct { 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
         struct { 
             struct CGRect { 
                 struct CGPoint { 
-                    double x; 
-                    double y; 
+                    float x; 
+                    float y; 
                 } origin; 
                 struct CGSize { 
-                    double width; 
-                    double height; 
+                    float width; 
+                    float height; 
                 } size; 
             } rect; 
-            double cornerRadius; 
+            float cornerRadius; 
         } outerPath; 
         struct { 
             struct CGRect { 
                 struct CGPoint { 
-                    double x; 
-                    double y; 
+                    float x; 
+                    float y; 
                 } origin; 
                 struct CGSize { 
-                    double width; 
-                    double height; 
+                    float width; 
+                    float height; 
                 } size; 
             } rect; 
-            double cornerRadius; 
+            float cornerRadius; 
         } innerPath; 
         BOOL isCircle; 
         BOOL drawsOutsideOuterPath; 
@@ -124,77 +124,77 @@
     _TPTemplatedColoredImageView * _outerView;
     struct { 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
         struct { 
             struct CGRect { 
                 struct CGPoint { 
-                    double x; 
-                    double y; 
+                    float x; 
+                    float y; 
                 } origin; 
                 struct CGSize { 
-                    double width; 
-                    double height; 
+                    float width; 
+                    float height; 
                 } size; 
             } rect; 
-            double cornerRadius; 
+            float cornerRadius; 
         } outerPath; 
         struct { 
             struct CGRect { 
                 struct CGPoint { 
-                    double x; 
-                    double y; 
+                    float x; 
+                    float y; 
                 } origin; 
                 struct CGSize { 
-                    double width; 
-                    double height; 
+                    float width; 
+                    float height; 
                 } size; 
             } rect; 
-            double cornerRadius; 
+            float cornerRadius; 
         } innerPath; 
         BOOL isCircle; 
         BOOL drawsOutsideOuterPath; 
     }  _outerViewDrawingProperties;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _paddingOutsideRing;
-    double  _revealAnimationDuration;
+    float  _revealAnimationDuration;
     BOOL  _revealed;
-    double  _unrevealAnimationDuration;
+    float  _unrevealAnimationDuration;
 }
 
-@property (nonatomic) double alphaInsideRing;
-@property (nonatomic) double alphaOutsideRing;
+@property (nonatomic) float alphaInsideRing;
+@property (nonatomic) float alphaOutsideRing;
 @property (nonatomic) int animationStyle;
 @property (nonatomic, retain) UIColor *colorInsideRing;
 @property (nonatomic, retain) UIColor *colorOutsideRing;
-@property (nonatomic) double cornerRadius;
-@property (nonatomic) double defaultRingStrokeWidth;
-@property (nonatomic) double gammaBoost;
+@property (nonatomic) float cornerRadius;
+@property (nonatomic) float defaultRingStrokeWidth;
+@property (nonatomic) float gammaBoost;
 @property (nonatomic) BOOL gammaBoostInside;
 @property (nonatomic) BOOL gammaBoostOuterRing;
-@property (nonatomic) double minimumRevealingScale;
-@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } paddingOutsideRing;
-@property (nonatomic) double revealAnimationDuration;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } ringSize;
-@property (nonatomic) double unrevealAnimationDuration;
+@property (nonatomic) float minimumRevealingScale;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } paddingOutsideRing;
+@property (nonatomic) float revealAnimationDuration;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } ringSize;
+@property (nonatomic) float unrevealAnimationDuration;
 
 + (id)classIdentifier;
 
 - (void).cxx_destruct;
 - (void)_adjustGammaBoostIfNecessary;
 - (void)_animateForReveal:(BOOL)arg1 withDuration:(float)arg2 delay:(double)arg3;
-- (void)_calculateOuter:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg1 inner:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg2 newXOffset:(float*)arg3 newYOffset:(float*)arg4 withScale:(float)arg5;
+- (void)_calculateOuter:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 inner:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 newXOffset:(float*)arg3 newYOffset:(float*)arg4 withScale:(float)arg5;
 - (void)_computeInnerGammaViewDrawingPropertiesWithScale:(float)arg1;
 - (void)_computeInnerViewDrawingPropertiesWithScale:(float)arg1;
 - (void)_computeOuterGammaViewDrawingPropertiesWithScale:(float)arg1;
 - (void)_evaluateCircularness;
-- (BOOL)_isSquare:(struct CGSize { double x1; double x2; })arg1;
-- (BOOL)_shouldDrawAsCircle:(struct CGSize { double x1; double x2; })arg1 cornerRadius:(float)arg2;
+- (BOOL)_isSquare:(struct CGSize { float x1; float x2; })arg1;
+- (BOOL)_shouldDrawAsCircle:(struct CGSize { float x1; float x2; })arg1 cornerRadius:(float)arg2;
 - (float)alphaInsideRing;
 - (float)alphaOutsideRing;
 - (int)animationStyle;
@@ -206,14 +206,14 @@
 - (float)gammaBoost;
 - (BOOL)gammaBoostInside;
 - (BOOL)gammaBoostOuterRing;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 paddingOutsideRing:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 paddingOutsideRing:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (void)layoutSubviews;
 - (float)minimumRevealingScale;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })paddingOutsideRing;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })paddingOutsideRing;
 - (float)revealAnimationDuration;
-- (struct CGSize { double x1; double x2; })ringSize;
+- (struct CGSize { float x1; float x2; })ringSize;
 - (void)setAlphaInsideRing:(float)arg1;
 - (void)setAlphaOutsideRing:(float)arg1;
 - (void)setAnimationStyle:(int)arg1;
@@ -221,12 +221,12 @@
 - (void)setColorOutsideRing:(id)arg1;
 - (void)setCornerRadius:(float)arg1;
 - (void)setDefaultRingStrokeWidth:(float)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setGammaBoost:(float)arg1;
 - (void)setGammaBoostInside:(BOOL)arg1;
 - (void)setGammaBoostOuterRing:(BOOL)arg1;
 - (void)setMinimumRevealingScale:(float)arg1;
-- (void)setPaddingOutsideRing:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setPaddingOutsideRing:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setRevealAnimationDuration:(float)arg1;
 - (void)setRevealed:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setRevealed:(BOOL)arg1 animated:(BOOL)arg2 delay:(double)arg3;

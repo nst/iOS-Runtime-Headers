@@ -15,19 +15,19 @@
     SSDownloadPolicy * _downloadPolicy;
     NSMutableDictionary * _downloadProperties;
     NSNumber * _enabledServiceType;
-    int  _expectedDownloadFileSize;
+    long long  _expectedDownloadFileSize;
     NSArray * _filteredAssetTypes;
     NSArray * _gratisIdentifiers;
     BOOL  _ignoresForcedPasswordRestriction;
     SSItem * _item;
     SSItemOffer * _itemOffer;
     SSNetworkConstraints * _networkConstraints;
-    int  _placeholderDownloadIdentifier;
+    long long  _placeholderDownloadIdentifier;
     BOOL  _playbackRequest;
     BOOL  _preauthenticated;
     SSURLRequestProperties * _requestProperties;
     id  _requiredDeviceCapabilities;
-    int  _uniqueIdentifier;
+    long long  _uniqueIdentifier;
     BOOL  _usesLocalRedownloadParametersIfPossible;
 }
 
@@ -45,20 +45,20 @@
 @property (copy) SSDownloadPolicy *downloadPolicy;
 @property (copy) NSDictionary *downloadProperties;
 @property (copy) NSNumber *enabledServiceType;
-@property int expectedDownloadFileSize;
+@property long long expectedDownloadFileSize;
 @property (copy) NSArray *filteredAssetTypes;
 @property (copy) NSArray *gratisIdentifiers;
 @property (getter=isGratisSoftwareClaim, readonly) BOOL gratisSoftwareClaim;
 @property (readonly) unsigned int hash;
 @property BOOL ignoresForcedPasswordRestriction;
 @property (copy) SSNetworkConstraints *networkConstraints;
-@property int placeholderDownloadIdentifier;
+@property long long placeholderDownloadIdentifier;
 @property (getter=isPlaybackRequest) BOOL playbackRequest;
 @property (getter=isPreauthenticated) BOOL preauthenticated;
 @property (copy) SSURLRequestProperties *requestProperties;
 @property (copy) id requiredDeviceCapabilities;
 @property (readonly) Class superclass;
-@property int uniqueIdentifier;
+@property long long uniqueIdentifier;
 @property BOOL usesLocalRedownloadParametersIfPossible;
 
 + (id)newPurchaseWithDatabaseEncoding:(id)arg1;
@@ -85,7 +85,7 @@
 - (id)downloadProperties;
 - (id)enabledServiceType;
 - (void)encodeWithCoder:(id)arg1;
-- (int)expectedDownloadFileSize;
+- (long long)expectedDownloadFileSize;
 - (id)filteredAssetTypes;
 - (id)gratisIdentifiers;
 - (unsigned int)hash;
@@ -104,7 +104,7 @@
 - (id)item;
 - (id)itemOffer;
 - (id)networkConstraints;
-- (int)placeholderDownloadIdentifier;
+- (long long)placeholderDownloadIdentifier;
 - (id)requestProperties;
 - (id)requiredDeviceCapabilities;
 - (void)setAccountIdentifier:(id)arg1;
@@ -120,20 +120,20 @@
 - (void)setDownloadPolicy:(id)arg1;
 - (void)setDownloadProperties:(id)arg1;
 - (void)setEnabledServiceType:(id)arg1;
-- (void)setExpectedDownloadFileSize:(int)arg1;
+- (void)setExpectedDownloadFileSize:(long long)arg1;
 - (void)setFilteredAssetTypes:(id)arg1;
 - (void)setGratisIdentifiers:(id)arg1;
 - (void)setIgnoresForcedPasswordRestriction:(BOOL)arg1;
 - (void)setNetworkConstraints:(id)arg1;
-- (void)setPlaceholderDownloadIdentifier:(int)arg1;
+- (void)setPlaceholderDownloadIdentifier:(long long)arg1;
 - (void)setPlaybackRequest:(BOOL)arg1;
 - (void)setPreauthenticated:(BOOL)arg1;
 - (void)setRequestProperties:(id)arg1;
 - (void)setRequiredDeviceCapabilities:(id)arg1;
-- (void)setUniqueIdentifier:(int)arg1;
+- (void)setUniqueIdentifier:(long long)arg1;
 - (void)setUsesLocalRedownloadParametersIfPossible:(BOOL)arg1;
 - (void)setValue:(id)arg1 forDownloadProperty:(id)arg2;
-- (int)uniqueIdentifier;
+- (long long)uniqueIdentifier;
 - (BOOL)usesLocalRedownloadParametersIfPossible;
 - (id)valueForDownloadProperty:(id)arg1;
 

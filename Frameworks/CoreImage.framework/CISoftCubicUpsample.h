@@ -14,7 +14,7 @@
 
 - (BOOL)_isIdentity;
 - (id)_kernel;
-- (struct vec2 { double x1; double x2; })_scale;
+- (struct vec2 { float x1; float x2; })_scale;
 - (id)inputImage;
 - (id)inputScale;
 - (id)outputImage;

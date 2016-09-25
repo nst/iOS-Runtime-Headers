@@ -3,44 +3,44 @@
  */
 
 @interface SFInteractiveDismissController : UIPercentDrivenInteractiveTransition <UIViewControllerAnimatedTransitioning, UIViewControllerTransitioningDelegate> {
-    double  _accelerations;
-    double  _averageAcceleration;
-    double  _averageVelocity;
+    float  _accelerations;
+    float  _averageAcceleration;
+    float  _averageVelocity;
     <SFInteractiveDismissControllerDelegate> * _delegate;
     UIView * _dimmingView;
     unsigned int  _dismissMode;
     UIScreenEdgePanGestureRecognizer * _edgeSwipeGestureRecognizer;
     UIView * _edgeSwipeView;
     int  _interactionState;
-    double  _previousAcceleration;
-    double  _previousDisplacement;
+    float  _previousAcceleration;
+    float  _previousDisplacement;
     double  _previousTimeStamp;
-    double  _previousVelocity;
+    float  _previousVelocity;
     unsigned int  _sampleCount;
     double  _skipTimeStamp;
-    double  _timestamps;
-    double  _totalDistance;
+    float  _timestamps;
+    float  _totalDistance;
     <UIViewControllerContextTransitioning> * _transitionContext;
-    double  _velocities;
+    float  _velocities;
     UIViewController * _viewControllerToBeDismissed;
 }
 
-@property (nonatomic) double averageAcceleration;
-@property (nonatomic) double averageVelocity;
+@property (nonatomic) float averageAcceleration;
+@property (nonatomic) float averageVelocity;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SFInteractiveDismissControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) UIScreenEdgePanGestureRecognizer *edgeSwipeGestureRecognizer;
 @property (nonatomic, retain) UIView *edgeSwipeView;
 @property (readonly) unsigned int hash;
-@property (nonatomic) double previousAcceleration;
-@property (nonatomic) double previousDisplacement;
+@property (nonatomic) float previousAcceleration;
+@property (nonatomic) float previousDisplacement;
 @property (nonatomic) double previousTimeStamp;
-@property (nonatomic) double previousVelocity;
+@property (nonatomic) float previousVelocity;
 @property (nonatomic) unsigned int sampleCount;
 @property (nonatomic) double skipTimeStamp;
 @property (readonly) Class superclass;
-@property (nonatomic) double totalDistance;
+@property (nonatomic) float totalDistance;
 @property (nonatomic) UIViewController *viewControllerToBeDismissed;
 
 - (void).cxx_destruct;
@@ -86,8 +86,8 @@
 - (void)swiped:(id)arg1;
 - (float)totalDistance;
 - (double)transitionDuration:(id)arg1;
-- (struct CGPoint { double x1; double x2; })translationForStatistics;
-- (struct CGPoint { double x1; double x2; })velocityForStatistics;
+- (struct CGPoint { float x1; float x2; })translationForStatistics;
+- (struct CGPoint { float x1; float x2; })velocityForStatistics;
 - (id)viewControllerToBeDismissed;
 
 @end

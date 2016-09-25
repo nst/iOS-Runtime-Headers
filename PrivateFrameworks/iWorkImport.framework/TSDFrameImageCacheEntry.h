@@ -3,20 +3,20 @@
  */
 
 @interface TSDFrameImageCacheEntry : NSObject {
-    double  mAssetScale;
+    float  mAssetScale;
     TSDFrameSpec * mFrameSpec;
     struct CGImage {} * mImages;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  mSize;
-    double  mViewScale;
+    float  mViewScale;
 }
 
-@property (nonatomic) double assetScale;
+@property (nonatomic) float assetScale;
 @property (nonatomic) TSDFrameSpec *frameSpec;
-@property (nonatomic) struct CGSize { double x1; double x2; } size;
-@property (nonatomic) double viewScale;
+@property (nonatomic) struct CGSize { float x1; float x2; } size;
+@property (nonatomic) float viewScale;
 
 - (float)assetScale;
 - (void)dealloc;
@@ -25,9 +25,9 @@
 - (void)setAssetScale:(float)arg1;
 - (void)setFrameSpec:(id)arg1;
 - (void)setImage:(struct CGImage { }*)arg1 forCALayer:(BOOL)arg2 mask:(BOOL)arg3;
-- (void)setSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setViewScale:(float)arg1;
-- (struct CGSize { double x1; double x2; })size;
+- (struct CGSize { float x1; float x2; })size;
 - (float)viewScale;
 
 @end

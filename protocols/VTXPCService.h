@@ -11,7 +11,7 @@
 - (oneway void)getFirstChanceTriggeredDateWithReply:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSDate *, void*
 - (oneway void)getFirstChanceVTEventInfoWithReply:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSDictionary *, void*
 - (oneway void)getTestResponse:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSString *, void*
-- (oneway void)getVoiceTriggerCountWithReply:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, void*
+- (oneway void)getVoiceTriggerCountWithReply:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, long long, void*
 - (oneway void)notifySecondChanceRequest;
 - (oneway void)notifyTriggerEventRequest;
 - (oneway void)notifyVoiceTriggeredSiriSessionCancelled;

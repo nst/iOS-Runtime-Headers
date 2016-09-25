@@ -3,7 +3,7 @@
  */
 
 @interface HDAWDHealthKitRoutineLocation : PBCodable <NSCopying> {
-    int  _confidenceMillis;
+    long long  _confidenceMillis;
     struct { 
         unsigned int confidenceMillis : 1; 
         unsigned int recentVisitCount : 1; 
@@ -12,11 +12,11 @@
     }  _has;
     int  _locationType;
     NSString * _locationUUID;
-    int  _recentVisitCount;
-    int  _uncertaintyMillis;
+    long long  _recentVisitCount;
+    long long  _uncertaintyMillis;
 }
 
-@property (nonatomic) int confidenceMillis;
+@property (nonatomic) long long confidenceMillis;
 @property (nonatomic) BOOL hasConfidenceMillis;
 @property (nonatomic) BOOL hasLocationType;
 @property (nonatomic, readonly) BOOL hasLocationUUID;
@@ -24,12 +24,12 @@
 @property (nonatomic) BOOL hasUncertaintyMillis;
 @property (nonatomic) int locationType;
 @property (nonatomic, retain) NSString *locationUUID;
-@property (nonatomic) int recentVisitCount;
-@property (nonatomic) int uncertaintyMillis;
+@property (nonatomic) long long recentVisitCount;
+@property (nonatomic) long long uncertaintyMillis;
 
 - (void).cxx_destruct;
 - (int)StringAsLocationType:(id)arg1;
-- (int)confidenceMillis;
+- (long long)confidenceMillis;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -46,17 +46,17 @@
 - (id)locationUUID;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (int)recentVisitCount;
-- (void)setConfidenceMillis:(int)arg1;
+- (long long)recentVisitCount;
+- (void)setConfidenceMillis:(long long)arg1;
 - (void)setHasConfidenceMillis:(BOOL)arg1;
 - (void)setHasLocationType:(BOOL)arg1;
 - (void)setHasRecentVisitCount:(BOOL)arg1;
 - (void)setHasUncertaintyMillis:(BOOL)arg1;
 - (void)setLocationType:(int)arg1;
 - (void)setLocationUUID:(id)arg1;
-- (void)setRecentVisitCount:(int)arg1;
-- (void)setUncertaintyMillis:(int)arg1;
-- (int)uncertaintyMillis;
+- (void)setRecentVisitCount:(long long)arg1;
+- (void)setUncertaintyMillis:(long long)arg1;
+- (long long)uncertaintyMillis;
 - (void)writeTo:(id)arg1;
 
 @end

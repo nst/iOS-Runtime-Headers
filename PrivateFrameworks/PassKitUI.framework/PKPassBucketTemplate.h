@@ -6,39 +6,39 @@
     int  _bucketAlignment;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _bucketRect;
     PKPassFieldTemplate * _defaultFieldTemplate;
     NSMutableArray * _fieldTemplates;
     unsigned int  _maxFields;
-    double  _minFieldPadding;
+    float  _minFieldPadding;
     BOOL  _sitsOnStripImage;
 }
 
 @property (nonatomic) int bucketAlignment;
-@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } bucketRect;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bucketRect;
 @property (nonatomic, retain) PKPassFieldTemplate *defaultFieldTemplate;
 @property (nonatomic, retain) NSMutableArray *fieldTemplates;
 @property (nonatomic) unsigned int maxFields;
-@property (nonatomic) double minFieldPadding;
+@property (nonatomic) float minFieldPadding;
 @property (nonatomic) BOOL sitsOnStripImage;
 
 - (void).cxx_destruct;
 - (void)addFieldTemplate:(id)arg1;
 - (int)bucketAlignment;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })bucketRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bucketRect;
 - (id)defaultFieldTemplate;
 - (id)fieldTemplates;
 - (unsigned int)maxFields;
 - (float)minFieldPadding;
 - (void)setBucketAlignment:(int)arg1;
-- (void)setBucketRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setBucketRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setDefaultFieldTemplate:(id)arg1;
 - (void)setFieldTemplates:(id)arg1;
 - (void)setMaxFields:(unsigned int)arg1;

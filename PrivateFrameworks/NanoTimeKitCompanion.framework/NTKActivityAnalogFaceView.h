@@ -4,9 +4,9 @@
 
 @interface NTKActivityAnalogFaceView : NTKAnalogFaceView <NTKActivityFaceViewFactoryDelegate> {
     UIView * _activityContainerView;
-    double  _activityViewsAlpha;
+    float  _activityViewsAlpha;
     UILabel * _briskMinutesLabel;
-    double  _contentScale;
+    float  _contentScale;
     NTKDateComplicationController * _dateComplicationController;
     NTKActivityDateComplicationLabel * _dateComplicationLabel;
     NTKActivityDialView * _dialView;
@@ -14,9 +14,9 @@
     NSMutableDictionary * _faceColorsToSchemes;
     NTKActivityFaceViewFactory * _faceViewFactory;
     BOOL  _isDetailedDensity;
-    double  _lastBriskPercentage;
-    double  _lastEnergyPercentage;
-    double  _lastSedentaryPercentage;
+    float  _lastBriskPercentage;
+    float  _lastEnergyPercentage;
+    float  _lastSedentaryPercentage;
     HKRingsView * _ringsView;
     UILabel * _standHoursLabel;
     NTKActivityFaceControl * _tapToLaunchButton;
@@ -50,7 +50,7 @@
 - (void)_cleanupAfterZoom;
 - (void)_configureComplicationView:(id)arg1 forSlot:(id)arg2;
 - (void)_configureForTransitionFraction:(float)arg1 fromEditMode:(int)arg2 toEditMode:(int)arg3;
-- (struct CGPoint { double x1; double x2; })_contentCenterOffset;
+- (struct CGPoint { float x1; float x2; })_contentCenterOffset;
 - (void)_dateComplicationPressed:(id)arg1;
 - (float)_dialAlphaForEditMode:(int)arg1;
 - (float)_dialScaleForEditMode:(int)arg1;
@@ -62,7 +62,7 @@
 - (float)_handAlphaForEditMode:(int)arg1;
 - (id)_highlightImage;
 - (float)_keylineCornerRadiusForComplicationSlot:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_keylineFrameForCustomEditMode:(int)arg1 slot:(id)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_keylineFrameForCustomEditMode:(int)arg1 slot:(id)arg2;
 - (unsigned int)_keylineLabelAlignmentForComplicationSlot:(id)arg1;
 - (unsigned int)_keylineLabelAlignmentForCustomEditMode:(int)arg1 slot:(id)arg2;
 - (BOOL)_keylineLabelShouldShowIndividualOptionNamesForCustomEditMode:(int)arg1;
@@ -83,14 +83,14 @@
 - (void)_setZoomFraction:(float)arg1 iconDiameter:(float)arg2;
 - (void)_showChronoDetailByFraction:(float)arg1 fillRings:(BOOL)arg2;
 - (void)_startScrubbingAnimated:(BOOL)arg1 withCompletion:(id /* block */)arg2;
-- (struct CGPoint { double x1; double x2; })_timeTravelStatusModuleCenter;
+- (struct CGPoint { float x1; float x2; })_timeTravelStatusModuleCenter;
 - (void)_unloadSnapshotContentViews;
 - (float)_verticalPaddingForStatusBar;
 - (id)_viewsToSuppressLayoutOnBoundsChange;
 - (void)applyEntryModel:(id)arg1 animated:(BOOL)arg2;
 - (void)applyEntryModelWithUnfilledRings:(id)arg1;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (void)setDataMode:(int)arg1;
 - (void)timeTravelDateEnteredOrExitedTimelineBounds:(BOOL)arg1;

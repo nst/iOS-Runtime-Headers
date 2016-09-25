@@ -17,6 +17,6 @@
 - (id)rangeArray;
 - (id)regularExpression;
 - (id)resultByAdjustingRangesWithOffset:(int)arg1;
-- (unsigned int)resultType;
+- (unsigned long long)resultType;
 
 @end

@@ -11,7 +11,7 @@
     BOOL  _canPostDidFinishNotificationOnItemChange;
     BOOL  _canShowControlsOverlayBeforeResignedActive;
     int  _controlStyle;
-    double  _currentPlaybackRate;
+    float  _currentPlaybackRate;
     <MPMoviePlayerControllerDelegate> * _delegate;
     BOOL  _didAppear;
     BOOL  _didResignActive;
@@ -52,7 +52,7 @@
     BOOL  _willSoonEndUsingVideoLayer;
 }
 
-@property (nonatomic) double currentPlaybackRate;
+@property (nonatomic) float currentPlaybackRate;
 @property (nonatomic) double currentPlaybackTime;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -178,7 +178,7 @@
 - (void)movieView:(id)arg1 willMoveToSuperview:(id)arg2;
 - (void)movieView:(id)arg1 willMoveToWindow:(id)arg2;
 - (void)movieViewDidMoveToWindow:(id)arg1;
-- (struct CGSize { double x1; double x2; })naturalSize;
+- (struct CGSize { float x1; float x2; })naturalSize;
 - (void)pause;
 - (void)play;
 - (double)playableDuration;
@@ -216,7 +216,7 @@
 - (id)timedMetadata;
 - (id)timedMetadataForKey:(id)arg1;
 - (BOOL)useApplicationAudioSession;
-- (BOOL)videoController:(id)arg1 tappedButtonPart:(unsigned int)arg2;
+- (BOOL)videoController:(id)arg1 tappedButtonPart:(unsigned long long)arg2;
 - (void)videoController:(id)arg1 willHideOverlayWithDuration:(double)arg2;
 - (void)videoController:(id)arg1 willShowOverlayWithDuration:(double)arg2;
 - (void)videoControllerDidEnterFullscreen:(id)arg1;

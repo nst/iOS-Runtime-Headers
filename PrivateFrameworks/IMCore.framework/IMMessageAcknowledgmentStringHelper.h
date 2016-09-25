@@ -6,14 +6,14 @@
 
 + (id)bestAccountForAddress:(id)arg1;
 + (id)displayNameForAddress:(id)arg1;
-+ (id)generateBackwardCompatibilityFormatStringForMessageAcknowledgmentType:(int)arg1 messageSummaryInfo:(id)arg2 isGroupMessage:(BOOL)arg3 format:(int*)arg4;
-+ (id)generateBackwardCompatibilityStringForMessageAcknowledgmentType:(int)arg1 messageSummaryInfo:(id)arg2 isGroupMessage:(BOOL)arg3;
-+ (id)generateFormatStringForMessageAcknowledgmentType:(int)arg1 acknowledgmentSenderAddress:(id)arg2 messageSummaryInfo:(id)arg3 isGroupMessage:(BOOL)arg4 format:(int*)arg5;
-+ (id)generatePreviewStringForMessageAcknowledgmentType:(int)arg1 acknowledgmentSenderAddress:(id)arg2 messageSummaryInfo:(id)arg3 isGroupMessage:(BOOL)arg4;
++ (id)generateBackwardCompatibilityFormatStringForMessageAcknowledgmentType:(long long)arg1 messageSummaryInfo:(id)arg2 isGroupMessage:(BOOL)arg3 format:(int*)arg4;
++ (id)generateBackwardCompatibilityStringForMessageAcknowledgmentType:(long long)arg1 messageSummaryInfo:(id)arg2 isGroupMessage:(BOOL)arg3;
++ (id)generateFormatStringForMessageAcknowledgmentType:(long long)arg1 acknowledgmentSenderAddress:(id)arg2 messageSummaryInfo:(id)arg3 isGroupMessage:(BOOL)arg4 format:(int*)arg5;
++ (id)generatePreviewStringForMessageAcknowledgmentType:(long long)arg1 acknowledgmentSenderAddress:(id)arg2 messageSummaryInfo:(id)arg3 isGroupMessage:(BOOL)arg4;
 + (id)handleForAddress:(id)arg1;
 + (BOOL)isLoginAddress:(id)arg1;
 + (id)longContentTypeStringForContentType:(id)arg1;
-+ (id)messageAcknowledgmentString:(int)arg1 lowercase:(BOOL)arg2;
++ (id)messageAcknowledgmentString:(long long)arg1 lowercase:(BOOL)arg2;
 + (BOOL)shouldQuoteContentString:(id)arg1;
 
 @end

@@ -5,7 +5,7 @@
 @interface _UIFormSheetPresentationController : UIPresentationController {
     UIDimmingView * _dimmingView;
     UIDropShadowView * _dropShadowView;
-    double  _keyboardYOrigin;
+    float  _keyboardYOrigin;
     BOOL  _layoutStateShouldAvoidKeyboard;
     BOOL  _shouldDismissWhenTappedOutside;
 }
@@ -16,7 +16,7 @@
 - (void)_changeLayoutModeToAvoidKeyboard:(BOOL)arg1 withOrigin:(float)arg2;
 - (int)_defaultPresentationStyleForTraitCollection:(id)arg1;
 - (float)_dropShadowCornerRadius;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameOfPresentedViewControllerViewInSuperview;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameOfPresentedViewControllerViewInSuperview;
 - (void)_keyboardWillHide:(id)arg1;
 - (void)_keyboardWillShow:(id)arg1;
 - (BOOL)_presentationPotentiallyUnderlapsStatusBar;
@@ -36,7 +36,7 @@
 - (void)dismissalTransitionDidEnd:(BOOL)arg1;
 - (void)dismissalTransitionWillBegin;
 - (unsigned int)dropShadowAutoresizingMask;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameOfPresentedViewInContainerView;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameOfPresentedViewInContainerView;
 - (id)initWithPresentedViewController:(id)arg1 presentingViewController:(id)arg2;
 - (int)presentationStyle;
 - (void)presentationTransitionWillBegin;
@@ -44,6 +44,6 @@
 - (BOOL)shouldPresentInFullscreen;
 - (BOOL)shouldRemovePresentersView;
 - (BOOL)shouldSubscribeToKeyboardNotifications;
-- (struct CGSize { double x1; double x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { double x1; double x2; })arg2;
+- (struct CGSize { float x1; float x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { float x1; float x2; })arg2;
 
 @end

@@ -3,19 +3,19 @@
  */
 
 @interface SSWishlist : NSObject {
-    int  _accountIdentifier;
+    long long  _accountIdentifier;
     SSSQLiteDatabase * _database;
 }
 
-@property (nonatomic, readonly) int accountIdentifier;
+@property (nonatomic, readonly) long long accountIdentifier;
 @property (nonatomic, copy) NSNumber *lastSyncTime;
 
-+ (BOOL)existsForAccountIdentifier:(int)arg1;
++ (BOOL)existsForAccountIdentifier:(long long)arg1;
 
-- (int)accountIdentifier;
+- (long long)accountIdentifier;
 - (void)dealloc;
 - (BOOL)deleteBackingStore;
-- (id)initWithAccountIdentifier:(int)arg1;
+- (id)initWithAccountIdentifier:(long long)arg1;
 - (id)lastSyncTime;
 - (void)performTransactionWithBlock:(id /* block */)arg1;
 - (void)setLastSyncTime:(id)arg1;

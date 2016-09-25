@@ -5,7 +5,7 @@
 @interface BFFPaneHeaderView : UIView {
     UIView * _bottomLine;
     UILabel * _detailTextLabel;
-    double  _flexibleHeight;
+    float  _flexibleHeight;
     UIImage * _icon;
     UIImageView * _iconView;
     UIButton * _linkButton;
@@ -17,7 +17,7 @@
 
 @property (nonatomic, retain) UIColor *bottomLineColor;
 @property (nonatomic, readonly) UILabel *detailTextLabel;
-@property (nonatomic) double flexibleHeight;
+@property (nonatomic) float flexibleHeight;
 @property (nonatomic, retain) UIImage *icon;
 @property (nonatomic, readonly) UILabel *subLabel;
 @property (nonatomic, readonly) UILabel *textLabel;
@@ -31,7 +31,7 @@
 - (float)flexibleHeight;
 - (float)heightForWidth:(float)arg1 inView:(id)arg2;
 - (id)icon;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isTextLabelAlignedByLastBaseline;
 - (void)layoutSubviews;
 - (void)setBottomLineColor:(id)arg1;
@@ -40,7 +40,7 @@
 - (void)setLinkText:(id)arg1 handler:(id /* block */)arg2;
 - (void)setTextLabelAlignedByLastBaseline:(BOOL)arg1;
 - (void)setTitleText:(id)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)subLabel;
 - (id)textLabel;
 

@@ -28,7 +28,7 @@
 - (BOOL)reduceMotionEnabled;
 - (BOOL)requiresRTT;
 - (float)screenScale;
-- (struct CGSize { double x1; double x2; })screenSize;
+- (struct CGSize { float x1; float x2; })screenSize;
 - (void)setOpenURLDelegate:(id)arg1;
 - (BOOL)supports3DImagery;
 - (BOOL)supports3DMaps;

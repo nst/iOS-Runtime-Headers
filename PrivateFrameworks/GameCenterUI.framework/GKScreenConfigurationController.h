@@ -4,11 +4,11 @@
 
 @interface GKScreenConfigurationController : NSObject {
     GKEventEmitter * _emitter;
-    double  _greatestScreenScale;
+    float  _greatestScreenScale;
 }
 
 @property (nonatomic, retain) GKEventEmitter *emitter;
-@property (readonly) double greatestScreenScale;
+@property (readonly) float greatestScreenScale;
 
 + (float)_scaleForCurrentDisplayConfiguration;
 + (id)sharedController;

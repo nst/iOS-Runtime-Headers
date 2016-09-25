@@ -10,7 +10,7 @@
     GEORouteHypothesisMonitor * _monitor;
     GEOComposedWaypoint * _origin;
     BOOL  _prediction;
-    int  _rowId;
+    long long  _rowId;
     GEOMapServiceTraits * _traits;
     int  _transportType;
     double  _updatedTimeStamp;
@@ -26,7 +26,7 @@
 @property (nonatomic, readonly, retain) GEORouteHypothesisMonitor *monitor;
 @property (nonatomic, readonly) GEOComposedWaypoint *origin;
 @property (nonatomic) BOOL prediction;
-@property (nonatomic) int rowId;
+@property (nonatomic) long long rowId;
 @property (nonatomic, readonly, retain) GEOMapServiceTraits *traits;
 @property (nonatomic) int transportType;
 @property (nonatomic) double updatedTimeStamp;
@@ -51,10 +51,10 @@
 - (id)monitor;
 - (id)origin;
 - (BOOL)prediction;
-- (int)rowId;
+- (long long)rowId;
 - (void)setCurrentHypothesis:(id)arg1;
 - (void)setPrediction:(BOOL)arg1;
-- (void)setRowId:(int)arg1;
+- (void)setRowId:(long long)arg1;
 - (void)setTransportType:(int)arg1;
 - (void)setUpdatedTimeStamp:(double)arg1;
 - (void)setValueRefreshTimeStamp:(double)arg1;

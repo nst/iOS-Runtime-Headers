@@ -40,7 +40,7 @@
 - (void)openPunchout:(id)arg1 fromSection:(id)arg2;
 - (id)previewingContext;
 - (void)previewingContext:(id)arg1 commitViewController:(id)arg2;
-- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { double x1; double x2; })arg2;
+- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { float x1; float x2; })arg2;
 - (id)punchoutsForIndexPath:(id)arg1;
 - (id)result;
 - (void)sendFeedbackForPunchout:(id)arg1 fromSection:(id)arg2;

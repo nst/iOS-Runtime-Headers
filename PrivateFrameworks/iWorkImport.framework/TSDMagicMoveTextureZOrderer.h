@@ -6,7 +6,7 @@
     NSArray * _incomingTexturesInZOrder;
     NSArray * _outgoingTexturesInZOrder;
     NSArray * _percentTextures;
-    double * _percentTexturesTimes;
+    float * _percentTexturesTimes;
     unsigned int  _zOrderIntersectionsCount;
     NSArray * _zOrderMatches;
 }

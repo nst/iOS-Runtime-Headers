@@ -16,8 +16,8 @@
         BOOL gestureRecognizerDidChange; 
     }  _delegateRespondsTo;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _dimensionsOfReservedVideoMemory;
     NSError * _error;
     BOOL  _isInteracting;
@@ -46,7 +46,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <ISPlayerViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) struct CGSize { double x1; double x2; } dimensionsOfReservedVideoMemory;
+@property (nonatomic) struct CGSize { float x1; float x2; } dimensionsOfReservedVideoMemory;
 @property (nonatomic, readonly) NSError *error;
 @property (nonatomic, readonly) UIGestureRecognizer *gestureRecognizer;
 @property (readonly) unsigned int hash;
@@ -92,10 +92,10 @@
 - (id)_videoPlayer;
 - (BOOL)audioMuted;
 - (id)delegate;
-- (struct CGSize { double x1; double x2; })dimensionsOfReservedVideoMemory;
+- (struct CGSize { float x1; float x2; })dimensionsOfReservedVideoMemory;
 - (id)error;
 - (id)gestureRecognizer;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithVideoPlayer:(id)arg1;
 - (BOOL)isInteracting;
 - (BOOL)isReadyForDisplay;
@@ -108,7 +108,7 @@
 - (void)setAudioMuted:(BOOL)arg1;
 - (void)setContentMode:(int)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setDimensionsOfReservedVideoMemory:(struct CGSize { double x1; double x2; })arg1;
+- (void)setDimensionsOfReservedVideoMemory:(struct CGSize { float x1; float x2; })arg1;
 - (void)setPlaybackStyle:(unsigned int)arg1;
 - (int)status;
 - (id)videoPlayerForPlayer:(id)arg1;

@@ -5,18 +5,18 @@
 @interface PKPaymentSetupProductCell : PKTableViewCell {
     BOOL  _drawsTopSeperator;
     PKPaymentSetupProduct * _product;
-    double  _textLabelOffset;
+    float  _textLabelOffset;
 }
 
 @property (nonatomic) BOOL drawsTopSeperator;
 @property (nonatomic, retain) PKPaymentSetupProduct *product;
-@property (nonatomic) double textLabelOffset;
+@property (nonatomic) float textLabelOffset;
 
 + (id)reuseIdentifier;
 
 - (void).cxx_destruct;
 - (void)_updateDisplay;
-- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)drawsTopSeperator;
 - (id)init;
 - (id)initWithCoder:(id)arg1;

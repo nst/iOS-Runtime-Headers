@@ -9,8 +9,8 @@
     NSString * _downloadBaseURL;
     NSData * _downloadRequest;
     NSString * _downloadToken;
-    int  _downloadTokenExpiration;
-    int  _downloadURLExpiration;
+    long long  _downloadTokenExpiration;
+    long long  _downloadURLExpiration;
     struct { 
         unsigned int downloadTokenExpiration : 1; 
         unsigned int downloadURLExpiration : 1; 
@@ -23,7 +23,7 @@
     NSData * _referenceSignature;
     NSString * _requestor;
     NSData * _signature;
-    int  _size;
+    long long  _size;
     NSString * _uploadReceipt;
 }
 
@@ -33,8 +33,8 @@
 @property (nonatomic, retain) NSString *downloadBaseURL;
 @property (nonatomic, retain) NSData *downloadRequest;
 @property (nonatomic, retain) NSString *downloadToken;
-@property (nonatomic) int downloadTokenExpiration;
-@property (nonatomic) int downloadURLExpiration;
+@property (nonatomic) long long downloadTokenExpiration;
+@property (nonatomic) long long downloadURLExpiration;
 @property (nonatomic, readonly) BOOL hasContentBaseURL;
 @property (nonatomic, readonly) BOOL hasData;
 @property (nonatomic, readonly) BOOL hasDerivedContentType;
@@ -59,7 +59,7 @@
 @property (nonatomic, retain) NSData *referenceSignature;
 @property (nonatomic, retain) NSString *requestor;
 @property (nonatomic, retain) NSData *signature;
-@property (nonatomic) int size;
+@property (nonatomic) long long size;
 @property (nonatomic, retain) NSString *uploadReceipt;
 
 - (void).cxx_destruct;
@@ -73,8 +73,8 @@
 - (id)downloadBaseURL;
 - (id)downloadRequest;
 - (id)downloadToken;
-- (int)downloadTokenExpiration;
-- (int)downloadURLExpiration;
+- (long long)downloadTokenExpiration;
+- (long long)downloadURLExpiration;
 - (BOOL)hasContentBaseURL;
 - (BOOL)hasData;
 - (BOOL)hasDerivedContentType;
@@ -108,8 +108,8 @@
 - (void)setDownloadBaseURL:(id)arg1;
 - (void)setDownloadRequest:(id)arg1;
 - (void)setDownloadToken:(id)arg1;
-- (void)setDownloadTokenExpiration:(int)arg1;
-- (void)setDownloadURLExpiration:(int)arg1;
+- (void)setDownloadTokenExpiration:(long long)arg1;
+- (void)setDownloadURLExpiration:(long long)arg1;
 - (void)setHasDownloadTokenExpiration:(BOOL)arg1;
 - (void)setHasDownloadURLExpiration:(BOOL)arg1;
 - (void)setHasSize:(BOOL)arg1;
@@ -120,10 +120,10 @@
 - (void)setReferenceSignature:(id)arg1;
 - (void)setRequestor:(id)arg1;
 - (void)setSignature:(id)arg1;
-- (void)setSize:(int)arg1;
+- (void)setSize:(long long)arg1;
 - (void)setUploadReceipt:(id)arg1;
 - (id)signature;
-- (int)size;
+- (long long)size;
 - (id)uploadReceipt;
 - (void)writeTo:(id)arg1;
 

@@ -5,8 +5,8 @@
 @interface _SFCrashBanner : UIView {
     _UIBackdropView * _backdrop;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _cachedLabelLayoutSize;
     UIButton * _closeButton;
     UIImageView * _closeButtonOverlayImageView;
@@ -21,7 +21,7 @@
 @property (nonatomic, readonly) BOOL usesLightControls;
 
 - (void).cxx_destruct;
-- (struct CGSize { double x1; double x2; })_labelLayoutSizeForWidth:(float)arg1;
+- (struct CGSize { float x1; float x2; })_labelLayoutSizeForWidth:(float)arg1;
 - (void)_layoutCloseButton;
 - (BOOL)_shouldUseManuallyWrappedCrashMessageForWidth:(float)arg1;
 - (id)backdropGroupName;
@@ -30,7 +30,7 @@
 - (void)layoutSubviews;
 - (void)setBackdropGroupName:(id)arg1;
 - (void)setCloseButton:(id)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)usesLightControls;
 
 @end

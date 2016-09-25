@@ -12,7 +12,7 @@
 
 - (void)dealloc;
 - (id)deferredOperation;
-- (unsigned int)generationNumber;
+- (unsigned long long)generationNumber;
 - (id)initWithMessage:(id)arg1 mailbox:(id)arg2;
 - (BOOL)isUserRequested;
 - (BOOL)shouldSend;

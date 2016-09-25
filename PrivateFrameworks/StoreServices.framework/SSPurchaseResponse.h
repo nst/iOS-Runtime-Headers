@@ -32,7 +32,7 @@
 - (BOOL)cancelsPurchaseBatch;
 - (id)copyXPCEncoding;
 - (id)downloadIdentifiers;
-- (id)downloadMetadataForItemIdentifier:(int)arg1;
+- (id)downloadMetadataForItemIdentifier:(long long)arg1;
 - (id)downloadsMetadata;
 - (id)error;
 - (id)initWithXPCEncoding:(id)arg1;
@@ -49,6 +49,6 @@
 - (void)setResponseEndTime:(double)arg1;
 - (void)setResponseStartTime:(double)arg1;
 - (void)setURLResponse:(id)arg1;
-- (id)transactionIdentifierForItemIdentifier:(int)arg1;
+- (id)transactionIdentifierForItemIdentifier:(long long)arg1;
 
 @end

@@ -5,7 +5,7 @@
 @interface _SFDownloadController : NSObject <WBSFluidProgressStateSource, _WKDownloadDelegate> {
     <_SFDownloadControllerDelegate> * _delegate;
     unsigned int  _downloadBackgroundTaskIdentifier;
-    int  _downloadBytesExpected;
+    long long  _downloadBytesExpected;
     unsigned int  _downloadBytesLoaded;
     BOOL  _downloadHasFailed;
     int  _downloadingFileType;
@@ -30,7 +30,7 @@
 - (void)_clearFileDownloadState;
 - (id)_download:(id)arg1 decideDestinationWithSuggestedFilename:(id)arg2 allowOverwrite:(BOOL*)arg3;
 - (void)_download:(id)arg1 didFailWithError:(id)arg2;
-- (void)_download:(id)arg1 didReceiveData:(unsigned int)arg2;
+- (void)_download:(id)arg1 didReceiveData:(unsigned long long)arg2;
 - (void)_download:(id)arg1 didReceiveResponse:(id)arg2;
 - (void)_downloadDidCancel:(id)arg1;
 - (void)_downloadDidFinish:(id)arg1;

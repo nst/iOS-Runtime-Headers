@@ -44,6 +44,6 @@
 - (struct ObjectSerializationMetadata { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedField<unsigned int> { unsigned int *x_5_1_1; int x_5_1_2; int x_5_1_3; } x5; int x6; struct UUID {} *x7; struct UUID {} *x8; struct ComponentInfo {} *x9; struct RepeatedPtrField<TSP::DataInfo> { void **x_10_1_1; int x_10_1_2; int x_10_1_3; int x_10_1_4; } x10; struct RepeatedPtrField<TSP::ObjectUUIDMapEntry> { void **x_11_1_1; int x_11_1_2; int x_11_1_3; int x_11_1_4; } x11; }*)message;
 - (void)saveToArchiver:(id)arg1;
 - (void)setDataReferences:(id)arg1;
-- (int)tsp_identifier;
+- (long long)tsp_identifier;
 
 @end

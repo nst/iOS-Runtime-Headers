@@ -8,7 +8,7 @@
     UIResponder * _firstResponderItem;
     BOOL  _forceSuggested;
     BOOL  _ignoreSuggested;
-    double  _labelWidth;
+    float  _labelWidth;
     <CNPresenterDelegate> * _presentingDelegate;
     id  _property;
 }
@@ -18,7 +18,7 @@
 @property (nonatomic, readonly) UIResponder *firstResponderItem;
 @property (nonatomic) BOOL forceSuggested;
 @property (nonatomic) BOOL ignoreSuggested;
-@property (nonatomic) double labelWidth;
+@property (nonatomic) float labelWidth;
 @property (nonatomic) <CNPresenterDelegate> *presentingDelegate;
 @property (nonatomic) id property;
 @property (nonatomic, readonly) CNPropertyGroupItem *propertyItem;

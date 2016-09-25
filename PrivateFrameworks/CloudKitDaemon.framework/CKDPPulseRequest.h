@@ -10,7 +10,7 @@
         unsigned int apnsEnv : 1; 
         unsigned int reset : 1; 
     }  _has;
-    int  _lookbackWindowMillis;
+    long long  _lookbackWindowMillis;
     CKDPPulseData * _pulseData;
     NSData * _pushToken;
     BOOL  _reset;
@@ -26,7 +26,7 @@
 @property (nonatomic, readonly) BOOL hasPushToken;
 @property (nonatomic) BOOL hasReset;
 @property (nonatomic, readonly) BOOL hasShareId;
-@property (nonatomic) int lookbackWindowMillis;
+@property (nonatomic) long long lookbackWindowMillis;
 @property (nonatomic, retain) CKDPPulseData *pulseData;
 @property (nonatomic, retain) NSData *pushToken;
 @property (nonatomic) BOOL reset;
@@ -52,7 +52,7 @@
 - (BOOL)hasShareId;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
-- (int)lookbackWindowMillis;
+- (long long)lookbackWindowMillis;
 - (void)mergeFrom:(id)arg1;
 - (id)pulseData;
 - (id)pushToken;
@@ -65,7 +65,7 @@
 - (void)setHasApnsEnv:(BOOL)arg1;
 - (void)setHasLookbackWindowMillis:(BOOL)arg1;
 - (void)setHasReset:(BOOL)arg1;
-- (void)setLookbackWindowMillis:(int)arg1;
+- (void)setLookbackWindowMillis:(long long)arg1;
 - (void)setPulseData:(id)arg1;
 - (void)setPushToken:(id)arg1;
 - (void)setReset:(BOOL)arg1;

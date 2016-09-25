@@ -12,7 +12,7 @@
     BOOL  _hideDescriptionIcon;
     BOOL  _hideTitle;
     NSArray * _horizontalLabelConstraints;
-    double  _textAlpha;
+    float  _textAlpha;
     UIFont * _titleFont;
     UILabel * _titleLabel;
     NSString * _titleText;
@@ -28,7 +28,7 @@
 @property (nonatomic) BOOL hideDescriptionIcon;
 @property (nonatomic) BOOL hideTitle;
 @property (nonatomic, retain) NSArray *horizontalLabelConstraints;
-@property (nonatomic) double textAlpha;
+@property (nonatomic) float textAlpha;
 @property (nonatomic, retain) UIFont *titleFont;
 @property (nonatomic, readonly) UILabel *titleLabel;
 @property (nonatomic, retain) NSString *titleText;

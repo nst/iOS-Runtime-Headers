@@ -9,8 +9,8 @@
     NSString * _fileUTI;
     NSString * _fingerPrint;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _imageDimensions;
 }
 
@@ -19,7 +19,7 @@
 @property (nonatomic, copy) NSURL *fileURL;
 @property (nonatomic, copy) NSString *fileUTI;
 @property (nonatomic, copy) NSString *fingerPrint;
-@property (nonatomic) struct CGSize { double x1; double x2; } imageDimensions;
+@property (nonatomic) struct CGSize { float x1; float x2; } imageDimensions;
 
 + (Class)_identityImplementationClass;
 + (id)alloc;
@@ -46,7 +46,7 @@
 - (id)fingerPrint;
 - (unsigned int)hash;
 - (id)identityForStorage;
-- (struct CGSize { double x1; double x2; })imageDimensions;
+- (struct CGSize { float x1; float x2; })imageDimensions;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFileURL:(id)arg1;
 - (BOOL)isAvailable;
@@ -56,6 +56,6 @@
 - (void)setFileURL:(id)arg1;
 - (void)setFileUTI:(id)arg1;
 - (void)setFingerPrint:(id)arg1;
-- (void)setImageDimensions:(struct CGSize { double x1; double x2; })arg1;
+- (void)setImageDimensions:(struct CGSize { float x1; float x2; })arg1;
 
 @end

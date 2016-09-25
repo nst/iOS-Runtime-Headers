@@ -3,7 +3,7 @@
  */
 
 @interface MKUserLocationHeadingArrowLayer : CAShapeLayer <MKUserLocationHeadingAnimatableIndicator, MKUserLocationHeadingIndicator> {
-    double  _headingRadians;
+    float  _headingRadians;
     double  _maxUncertaintyAngleToShowArrow;
     MKUserLocationView * _userLocationView;
 }
@@ -11,7 +11,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic) double headingRadians;
+@property (nonatomic) float headingRadians;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) MKUserLocationView *userLocationView;
 
@@ -20,7 +20,7 @@
 - (float)_baseRadiusWhenVisible:(BOOL)arg1;
 - (id)_bezierPathWithBaseRadius:(float)arg1 tipRadius:(float)arg2 baseHalfAngle:(float)arg3;
 - (struct CGPath { }*)_pathWhenVisible:(BOOL)arg1;
-- (struct CGPoint { double x1; double x2; })_positionWhenVisible:(BOOL)arg1;
+- (struct CGPoint { float x1; float x2; })_positionWhenVisible:(BOOL)arg1;
 - (BOOL)_shouldBeVisibleForAccuracy:(double)arg1;
 - (float)_tipRadiusWhenVisible:(BOOL)arg1;
 - (void)animateToSetVisible:(BOOL)arg1 completion:(id /* block */)arg2;

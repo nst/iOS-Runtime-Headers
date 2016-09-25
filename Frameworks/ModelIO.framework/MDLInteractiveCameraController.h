@@ -12,16 +12,16 @@
     }  _framingBounds;
     void _lookAt;
     unsigned int  _mode;
-    double  _pitch;
-    double  _targetDistance;
-    double  _targetElevation;
-    double  _trackSpeed;
+    float  _pitch;
+    float  _targetDistance;
+    float  _targetElevation;
+    float  _trackSpeed;
     void _trackVector;
-    double  _tumbleSpeed;
+    float  _tumbleSpeed;
     void _viewSize;
-    double  _yaw;
-    double  _zoom;
-    double  _zoomSpeed;
+    float  _yaw;
+    float  _zoom;
+    float  _zoomSpeed;
 }
 
 @property (nonatomic, copy) MDLStereoscopicCamera *camera;
@@ -30,14 +30,14 @@
 @property (nonatomic) struct MDLAABB { } framingBounds;
 @property (nonatomic) unsigned int mode;
 @property (nonatomic) void position;
-@property (nonatomic) double targetDistance;
+@property (nonatomic) float targetDistance;
 @property (nonatomic) void targetPosition;
-@property (nonatomic) double trackSpeed;
+@property (nonatomic) float trackSpeed;
 @property (nonatomic) void trackVector;
-@property (nonatomic) double tumbleSpeed;
+@property (nonatomic) float tumbleSpeed;
 @property (nonatomic) void viewSize;
-@property (nonatomic) double zoom;
-@property (nonatomic) double zoomSpeed;
+@property (nonatomic) float zoom;
+@property (nonatomic) float zoomSpeed;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

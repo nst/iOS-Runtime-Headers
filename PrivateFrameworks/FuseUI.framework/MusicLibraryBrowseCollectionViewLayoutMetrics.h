@@ -4,60 +4,60 @@
 
 @interface MusicLibraryBrowseCollectionViewLayoutMetrics : NSObject {
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _contentInsets;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _headerSize;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _headerViewContentInsets;
-    double  _itemHeight;
-    double  _itemWidth;
-    double  _minimumInteritemSpacing;
+    float  _itemHeight;
+    float  _itemWidth;
+    float  _minimumInteritemSpacing;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _sectionInsets;
-    double  _textLateralEdgePadding;
+    float  _textLateralEdgePadding;
 }
 
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInsets;
-@property (nonatomic) struct CGSize { double x1; double x2; } headerSize;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } headerViewContentInsets;
-@property (nonatomic) double itemHeight;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } itemSize;
-@property (nonatomic) double itemWidth;
-@property (nonatomic) double minimumInteritemSpacing;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } sectionInsets;
-@property (nonatomic) double textLateralEdgePadding;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
+@property (nonatomic) struct CGSize { float x1; float x2; } headerSize;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } headerViewContentInsets;
+@property (nonatomic) float itemHeight;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } itemSize;
+@property (nonatomic) float itemWidth;
+@property (nonatomic) float minimumInteritemSpacing;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } sectionInsets;
+@property (nonatomic) float textLateralEdgePadding;
 
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
 - (id)description;
-- (struct CGSize { double x1; double x2; })headerSize;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })headerViewContentInsets;
+- (struct CGSize { float x1; float x2; })headerSize;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })headerViewContentInsets;
 - (id)init;
 - (float)itemHeight;
-- (struct CGSize { double x1; double x2; })itemSize;
+- (struct CGSize { float x1; float x2; })itemSize;
 - (float)itemWidth;
 - (float)minimumInteritemSpacing;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })sectionInsets;
-- (void)setContentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
-- (void)setHeaderSize:(struct CGSize { double x1; double x2; })arg1;
-- (void)setHeaderViewContentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })sectionInsets;
+- (void)setContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setHeaderSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setHeaderViewContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setItemHeight:(float)arg1;
 - (void)setItemWidth:(float)arg1;
 - (void)setMinimumInteritemSpacing:(float)arg1;
-- (void)setSectionInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setSectionInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setTextLateralEdgePadding:(float)arg1;
 - (float)textLateralEdgePadding;
 

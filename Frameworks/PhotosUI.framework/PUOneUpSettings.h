@@ -3,7 +3,7 @@
  */
 
 @interface PUOneUpSettings : PUSettings {
-    double  _accessoryInitialTopPosition;
+    float  _accessoryInitialTopPosition;
     int  _accessoryViewType;
     BOOL  _allowBadges;
     BOOL  _allowChromeHiding;
@@ -13,11 +13,11 @@
     BOOL  _allowScrubber;
     BOOL  _allowStatusBar;
     BOOL  _allowUserTransform;
-    double  _barsAreaVerticalOutset;
+    float  _barsAreaVerticalOutset;
     double  _bounceDelay;
     double  _bounceDuration;
-    double  _bounceInitialVelocity;
-    double  _bounceSpringDamping;
+    float  _bounceInitialVelocity;
+    float  _bounceSpringDamping;
     int  _chromeAnimationType;
     int  _chromeAutoHideBehaviorOnPlayButton;
     int  _chromeAutoHideBehaviorOnSwipe;
@@ -26,23 +26,23 @@
     int  _chromeBackgroundAnimationType;
     double  _chromeDefaultAnimationDuration;
     double  _chromeTimedAutoHideAnimationDuration;
-    double  _defaultMaximumZoomFactor;
+    float  _defaultMaximumZoomFactor;
     BOOL  _doubleTapZoomAreaExcludesBackground;
     BOOL  _doubleTapZoomAreaExcludesBars;
-    double  _doubleTapZoomFactor;
+    float  _doubleTapZoomFactor;
     BOOL  _hideToolbarWhenShowingAccessoryView;
-    double  _interpageSpacing;
-    double  _livePhotoInteractionThreshold;
+    float  _interpageSpacing;
+    float  _livePhotoInteractionThreshold;
     BOOL  _lockScrollDuringLivePhotoPlayback;
-    double  _maximumInitialZoomToFillScaleForCompactSizeClass;
-    double  _maximumInitialZoomToFillScaleForRegularSizeClass;
+    float  _maximumInitialZoomToFillScaleForCompactSizeClass;
+    float  _maximumInitialZoomToFillScaleForRegularSizeClass;
     int  _minNavigationDistanceForFastRegime;
     int  _minNavigationDistanceForQuickPagingRegime;
-    double  _minimumVisibleCommentedContentHeight;
-    double  _minimumVisibleContentHeight;
-    double  _pagingFrictionAdjustment;
-    double  _pagingSpringPullAdjustment;
-    double  _parallaxFactor;
+    float  _minimumVisibleCommentedContentHeight;
+    float  _minimumVisibleContentHeight;
+    float  _pagingFrictionAdjustment;
+    float  _pagingSpringPullAdjustment;
+    float  _parallaxFactor;
     int  _parallaxModel;
     BOOL  _persistChromeVisibility;
     BOOL  _playVideoInScrubber;
@@ -60,7 +60,7 @@
     BOOL  _useGlobalCommentsVisibility;
     BOOL  _useGlobalDetailsVisibility;
     int  _userNavigationMaximumDistance;
-    double  _videoPauseThreshold;
+    float  _videoPauseThreshold;
     unsigned int  _viewModelCacheCountLimit;
     double  _visibilityDurationForEnteringFastRegime;
     double  _visibilityDurationForEnteringQuickPagingRegime;
@@ -68,7 +68,7 @@
     double  _visibilityDurationForExitingQuickPagingRegime;
 }
 
-@property (nonatomic) double accessoryInitialTopPosition;
+@property (nonatomic) float accessoryInitialTopPosition;
 @property (nonatomic) int accessoryViewType;
 @property (nonatomic) BOOL allowBadges;
 @property (nonatomic) BOOL allowChromeHiding;
@@ -78,11 +78,11 @@
 @property (nonatomic) BOOL allowScrubber;
 @property (nonatomic) BOOL allowStatusBar;
 @property (nonatomic) BOOL allowUserTransform;
-@property (nonatomic) double barsAreaVerticalOutset;
+@property (nonatomic) float barsAreaVerticalOutset;
 @property (nonatomic) double bounceDelay;
 @property (nonatomic) double bounceDuration;
-@property (nonatomic) double bounceInitialVelocity;
-@property (nonatomic) double bounceSpringDamping;
+@property (nonatomic) float bounceInitialVelocity;
+@property (nonatomic) float bounceSpringDamping;
 @property (nonatomic) int chromeAnimationType;
 @property (nonatomic) int chromeAutoHideBehaviorOnPlayButton;
 @property (nonatomic) int chromeAutoHideBehaviorOnSwipe;
@@ -91,23 +91,23 @@
 @property (nonatomic) int chromeBackgroundAnimationType;
 @property (nonatomic) double chromeDefaultAnimationDuration;
 @property (nonatomic) double chromeTimedAutoHideAnimationDuration;
-@property (nonatomic) double defaultMaximumZoomFactor;
+@property (nonatomic) float defaultMaximumZoomFactor;
 @property (nonatomic) BOOL doubleTapZoomAreaExcludesBackground;
 @property (nonatomic) BOOL doubleTapZoomAreaExcludesBars;
-@property (nonatomic) double doubleTapZoomFactor;
+@property (nonatomic) float doubleTapZoomFactor;
 @property (nonatomic) BOOL hideToolbarWhenShowingAccessoryView;
-@property (nonatomic) double interpageSpacing;
-@property (nonatomic) double livePhotoInteractionThreshold;
+@property (nonatomic) float interpageSpacing;
+@property (nonatomic) float livePhotoInteractionThreshold;
 @property (nonatomic) BOOL lockScrollDuringLivePhotoPlayback;
-@property (nonatomic) double maximumInitialZoomToFillScaleForCompactSizeClass;
-@property (nonatomic) double maximumInitialZoomToFillScaleForRegularSizeClass;
+@property (nonatomic) float maximumInitialZoomToFillScaleForCompactSizeClass;
+@property (nonatomic) float maximumInitialZoomToFillScaleForRegularSizeClass;
 @property (nonatomic) int minNavigationDistanceForFastRegime;
 @property (nonatomic) int minNavigationDistanceForQuickPagingRegime;
-@property (nonatomic) double minimumVisibleCommentedContentHeight;
-@property (nonatomic) double minimumVisibleContentHeight;
-@property (nonatomic) double pagingFrictionAdjustment;
-@property (nonatomic) double pagingSpringPullAdjustment;
-@property (nonatomic) double parallaxFactor;
+@property (nonatomic) float minimumVisibleCommentedContentHeight;
+@property (nonatomic) float minimumVisibleContentHeight;
+@property (nonatomic) float pagingFrictionAdjustment;
+@property (nonatomic) float pagingSpringPullAdjustment;
+@property (nonatomic) float parallaxFactor;
 @property (nonatomic) int parallaxModel;
 @property (nonatomic) BOOL persistChromeVisibility;
 @property (nonatomic) BOOL playVideoInScrubber;
@@ -125,7 +125,7 @@
 @property (nonatomic) BOOL useGlobalCommentsVisibility;
 @property (nonatomic) BOOL useGlobalDetailsVisibility;
 @property (nonatomic) int userNavigationMaximumDistance;
-@property (nonatomic) double videoPauseThreshold;
+@property (nonatomic) float videoPauseThreshold;
 @property (nonatomic) unsigned int viewModelCacheCountLimit;
 @property (nonatomic) double visibilityDurationForEnteringFastRegime;
 @property (nonatomic) double visibilityDurationForEnteringQuickPagingRegime;

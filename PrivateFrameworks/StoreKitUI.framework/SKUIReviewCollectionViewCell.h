@@ -11,10 +11,10 @@
 
 + (id)_attributedStringForTitleLabel:(id)arg1 context:(id)arg2;
 + (id)expandableLabelElementForViewElement:(id)arg1 width:(float)arg2 context:(id)arg3;
-+ (struct CGSize { double x1; double x2; })preferredSizeForViewElement:(id)arg1 context:(id)arg2;
++ (struct CGSize { float x1; float x2; })preferredSizeForViewElement:(id)arg1 context:(id)arg2;
 + (BOOL)prefetchResourcesForViewElement:(id)arg1 reason:(int)arg2 context:(id)arg3;
 + (void)requestLayoutForViewElement:(id)arg1 width:(float)arg2 context:(id)arg3;
-+ (struct CGSize { double x1; double x2; })sizeThatFitsWidth:(float)arg1 viewElement:(id)arg2 context:(id)arg3;
++ (struct CGSize { float x1; float x2; })sizeThatFitsWidth:(float)arg1 viewElement:(id)arg2 context:(id)arg3;
 
 - (void)layoutSubviews;
 - (void)reloadWithViewElement:(id)arg1 width:(float)arg2 context:(id)arg3;

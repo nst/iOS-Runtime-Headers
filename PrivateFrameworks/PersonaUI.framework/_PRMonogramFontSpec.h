@@ -3,14 +3,14 @@
  */
 
 @interface _PRMonogramFontSpec : NSObject {
-    double  _baseSize;
+    float  _baseSize;
     NSString * _fontName;
-    double  _tracking;
+    float  _tracking;
 }
 
-@property (nonatomic, readonly) double baseSize;
+@property (nonatomic, readonly) float baseSize;
 @property (nonatomic, readonly) NSString *fontName;
-@property (nonatomic, readonly) double tracking;
+@property (nonatomic, readonly) float tracking;
 
 + (id)specForFontWithName:(id)arg1 baseSize:(float)arg2 tracking:(float)arg3;
 

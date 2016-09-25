@@ -16,7 +16,7 @@
         unsigned int defaultImpressions : 1; 
         unsigned int timestamp : 1; 
     }  _has;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) double defaultClicks;
@@ -28,7 +28,7 @@
 @property (nonatomic) BOOL hasDefaultImpressions;
 @property (nonatomic, readonly) BOOL hasFeatureKey;
 @property (nonatomic) BOOL hasTimestamp;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 
 // Image: /System/Library/PrivateFrameworks/NewsTransport.framework/NewsTransport
 
@@ -59,8 +59,8 @@
 - (void)setHasDefaultClicks:(BOOL)arg1;
 - (void)setHasDefaultImpressions:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
-- (unsigned int)timestamp;
+- (void)setTimestamp:(unsigned long long)arg1;
+- (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore

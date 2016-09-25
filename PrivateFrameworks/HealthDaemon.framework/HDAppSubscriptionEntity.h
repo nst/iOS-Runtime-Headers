@@ -8,7 +8,7 @@
 + (id)_predicateForBundleID:(id)arg1 dataCode:(int)arg2;
 + (id)_predicateForBundleIdentifier:(id)arg1;
 + (id)_predicateForDataCode:(int)arg1;
-+ (BOOL)addSubscriptionWithBundleID:(id)arg1 dataCode:(int)arg2 updateFrequency:(unsigned int)arg3 healthDaemon:(id)arg4 error:(id*)arg5;
++ (BOOL)addSubscriptionWithBundleID:(id)arg1 dataCode:(int)arg2 updateFrequency:(unsigned long long)arg3 healthDaemon:(id)arg4 error:(id*)arg5;
 + (id)allSubscriptionsForBundleID:(id)arg1 healthDaemon:(id)arg2 error:(id*)arg3;
 + (id)allSubscriptionsForType:(int)arg1 healthDaemon:(id)arg2 error:(id*)arg3;
 + (id)columnsDefinition;

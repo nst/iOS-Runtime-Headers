@@ -6,14 +6,14 @@
     VKPolylineOverlay * _overlay;
     BOOL  _ownsPoints;
     unsigned int  _pointCount;
-    struct Matrix<float, 2, 1> { double x1[2]; } * _points;
+    struct Matrix<float, 2, 1> { float x1[2]; } * _points;
     struct PolylineCoordinate { 
         unsigned int index; 
-        double offset; 
+        float offset; 
     }  _routeEnd;
     struct PolylineCoordinate { 
         unsigned int index; 
-        double offset; 
+        float offset; 
     }  _routeStart;
     GEOComposedRouteSection * _section;
     double  _sectionLengthScaleFactor;
@@ -26,15 +26,15 @@
 @property (readonly) BOOL isMapMatched;
 @property (nonatomic, readonly) unsigned int pointCount;
 @property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{Matrix<float' */ struct *points; /* unknown property attribute:  1>=[2f]} */
-@property (nonatomic) struct PolylineCoordinate { unsigned int x1; double x2; } routeEnd;
-@property (nonatomic) struct PolylineCoordinate { unsigned int x1; double x2; } routeStart;
+@property (nonatomic) struct PolylineCoordinate { unsigned int x1; float x2; } routeEnd;
+@property (nonatomic) struct PolylineCoordinate { unsigned int x1; float x2; } routeStart;
 @property (nonatomic, readonly) GEOComposedRouteSection *section;
 @property (nonatomic, readonly) GEOSnappedRoutePath *snappedPath;
 @property (nonatomic) double startDistance;
 @property (nonatomic) unsigned char trafficSpeed;
 
 - (id).cxx_construct;
-- (void)assignPoints:(struct Matrix<float, 2, 1> { double x1[2]; }*)arg1 count:(unsigned int)arg2;
+- (void)assignPoints:(struct Matrix<float, 2, 1> { float x1[2]; }*)arg1 count:(unsigned int)arg2;
 - (void)assignTo:(id)arg1 withSegment:(const struct TrafficSegment { unsigned int x1; unsigned char x2; }*)arg2;
 - (void)dealloc;
 - (id)description;
@@ -44,12 +44,12 @@
 - (id)initWithOverlay:(id)arg1 snappedPath:(id)arg2;
 - (BOOL)isMapMatched;
 - (unsigned int)pointCount;
-- (struct Matrix<float, 2, 1> { double x1[2]; }*)points;
-- (struct PolylineCoordinate { unsigned int x1; double x2; })routeEnd;
-- (struct PolylineCoordinate { unsigned int x1; double x2; })routeStart;
+- (struct Matrix<float, 2, 1> { float x1[2]; }*)points;
+- (struct PolylineCoordinate { unsigned int x1; float x2; })routeEnd;
+- (struct PolylineCoordinate { unsigned int x1; float x2; })routeStart;
 - (id)section;
-- (void)setRouteEnd:(struct PolylineCoordinate { unsigned int x1; double x2; })arg1;
-- (void)setRouteStart:(struct PolylineCoordinate { unsigned int x1; double x2; })arg1;
+- (void)setRouteEnd:(struct PolylineCoordinate { unsigned int x1; float x2; })arg1;
+- (void)setRouteStart:(struct PolylineCoordinate { unsigned int x1; float x2; })arg1;
 - (void)setStartDistance:(double)arg1;
 - (void)setTrafficSpeed:(unsigned char)arg1;
 - (id)snappedPath;

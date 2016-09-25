@@ -22,11 +22,11 @@
 @property (nonatomic, copy) id /* block */ recursiveDeleteAuthorizationBlock;
 
 - (void).cxx_destruct;
-- (BOOL)_deleteAssociatedObjectsForPersistentID:(int)arg1 entityClass:(Class)arg2 deletionDate:(id)arg3 error:(id*)arg4;
+- (BOOL)_deleteAssociatedObjectsForPersistentID:(long long)arg1 entityClass:(Class)arg2 deletionDate:(id)arg3 error:(id*)arg4;
 - (id)_provenanceIDForDeletedObjectWithOriginalProvenanceID:(id)arg1 error:(id*)arg2;
 - (id)database;
-- (BOOL)deleteObjectWithPersistentID:(int)arg1 entityClass:(Class)arg2 error:(id*)arg3;
-- (BOOL)deleteObjectWithPersistentID:(int)arg1 objectUUID:(id)arg2 entityClass:(Class)arg3 objectType:(id)arg4 provenanceIdentifier:(id)arg5 deletionDate:(id)arg6 error:(id*)arg7;
+- (BOOL)deleteObjectWithPersistentID:(long long)arg1 entityClass:(Class)arg2 error:(id*)arg3;
+- (BOOL)deleteObjectWithPersistentID:(long long)arg1 objectUUID:(id)arg2 entityClass:(Class)arg3 objectType:(id)arg4 provenanceIdentifier:(id)arg5 deletionDate:(id)arg6 error:(id*)arg7;
 - (unsigned int)deletedObjectCount;
 - (id)deletedObjectTypeSet;
 - (void)finish;

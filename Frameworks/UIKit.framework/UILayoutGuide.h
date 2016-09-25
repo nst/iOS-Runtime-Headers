@@ -16,12 +16,12 @@
     BOOL  _isLockedToOwningView;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _layoutFrame;
     NSLayoutXAxisAnchor * _leadingAnchor;
@@ -58,7 +58,7 @@
 @property (readonly) unsigned int hash;
 @property (readonly) NSLayoutDimension *heightAnchor;
 @property (nonatomic, copy) NSString *identifier;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } layoutFrame;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } layoutFrame;
 @property (readonly) NSLayoutXAxisAnchor *leadingAnchor;
 @property (readonly) NSLayoutXAxisAnchor *leftAnchor;
 @property (nonatomic) UIView *owningView;
@@ -84,7 +84,7 @@
 - (void*)_referenceView;
 - (void)_setAllowOwningViewSetting:(BOOL)arg1;
 - (void)_setLockedToOwningView:(BOOL)arg1;
-- (void)_setManualLayoutFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)_setManualLayoutFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_setOwningView:(id)arg1;
 - (void)_setShouldBeArchived:(BOOL)arg1;
 - (void)_setSystemConstraints:(id)arg1;
@@ -112,7 +112,7 @@
 - (id)identifier;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })layoutFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })layoutFrame;
 - (id)leadingAnchor;
 - (id)leftAnchor;
 - (id)methodSignatureForSelector:(SEL)arg1;
@@ -126,8 +126,8 @@
 - (id)nsli_boundsWidthVariable;
 - (id)nsli_contentHeightVariable;
 - (id)nsli_contentWidthVariable;
-- (struct CGSize { double x1; double x2; })nsli_convertSizeFromEngineSpace:(struct CGSize { double x1; double x2; })arg1;
-- (struct CGSize { double x1; double x2; })nsli_convertSizeToEngineSpace:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })nsli_convertSizeFromEngineSpace:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { float x1; float x2; })nsli_convertSizeToEngineSpace:(struct CGSize { float x1; float x2; })arg1;
 - (id)nsli_description;
 - (BOOL)nsli_descriptionIncludesPointer;
 - (id)nsli_heightVariable;

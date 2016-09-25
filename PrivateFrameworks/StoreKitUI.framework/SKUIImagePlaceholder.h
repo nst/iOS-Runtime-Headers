@@ -5,13 +5,13 @@
 @interface SKUIImagePlaceholder : NSObject {
     UIColor * _backgroundColor;
     UIColor * _borderColor;
-    double  _borderWidth;
+    float  _borderWidth;
     id /* block */  _cornerPathBlock;
 }
 
 @property (nonatomic, readonly) UIColor *backgroundColor;
 @property (nonatomic, readonly) UIColor *borderColor;
-@property (nonatomic, readonly) double borderWidth;
+@property (nonatomic, readonly) float borderWidth;
 @property (nonatomic, readonly, copy) id /* block */ cornerPathBlock;
 
 - (void).cxx_destruct;

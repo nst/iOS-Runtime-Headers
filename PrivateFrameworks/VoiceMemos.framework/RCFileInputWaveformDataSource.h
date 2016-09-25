@@ -5,7 +5,7 @@
 @interface RCFileInputWaveformDataSource : RCWaveformDataSource {
     NSURL * _AVFileURL;
     double  _cachedDuration;
-    double  _loadingProgress;
+    float  _loadingProgress;
     NSObject<OS_dispatch_queue> * _serialQueue;
 }
 

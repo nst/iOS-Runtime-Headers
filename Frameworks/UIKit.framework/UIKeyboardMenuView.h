@@ -13,22 +13,22 @@
     UIView * m_inputView;
     int  m_mode;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  m_point;
-    double  m_pointerOffset;
+    float  m_pointerOffset;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  m_referenceLocation;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  m_referenceRect;
     int  m_scrollDirection;
@@ -79,7 +79,7 @@
 - (void)hide;
 - (void)highlightRow:(unsigned int)arg1;
 - (unsigned int)indexForIndexPath:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)inputView;
 - (void)insertSelExtraView;
 - (BOOL)isVisible;
@@ -90,14 +90,14 @@
 - (int)mode;
 - (unsigned int)numberOfItems;
 - (void)performShowAnimation;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })popupRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })popupRect;
 - (id)predictiveSwitch;
-- (struct CGSize { double x1; double x2; })preferredSize;
+- (struct CGSize { float x1; float x2; })preferredSize;
 - (id)referenceKey;
 - (void)removeFromSuperview;
 - (void)scrollViewDidScroll:(id)arg1;
-- (void)selectItemAtPoint:(struct CGPoint { double x1; double x2; })arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)selectItemAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setHighlightForRowAtIndexPath:(id)arg1 highlight:(BOOL)arg2;
 - (void)setKeyboardDimmed:(BOOL)arg1;
 - (void)setLayout:(id)arg1;
@@ -109,11 +109,11 @@
 - (void)setRenderConfig:(id)arg1;
 - (void)setUsesDarkTheme:(BOOL)arg1;
 - (void)setUsesStraightLeftEdge:(BOOL)arg1;
-- (void)setupBackgroundKeyViewWithSize:(struct CGSize { double x1; double x2; })arg1;
-- (void)setupShadowViewWithSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setupBackgroundKeyViewWithSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setupShadowViewWithSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)show;
 - (void)showAsHUD;
-- (void)showAsHUDFromLocation:(struct CGPoint { double x1; double x2; })arg1 withInputView:(id)arg2 touchBegan:(double)arg3;
+- (void)showAsHUDFromLocation:(struct CGPoint { float x1; float x2; })arg1 withInputView:(id)arg2 touchBegan:(double)arg3;
 - (void)showAsPopupForKey:(id)arg1 inLayout:(id)arg2;
 - (void)stopAnyAutoscrolling;
 - (id)subtitleFont;
@@ -136,7 +136,7 @@
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
-- (void)updateSelectionWithPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)updateSelectionWithPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)usesDarkTheme;
 - (BOOL)usesDimmingView;
 - (BOOL)usesShadowView;

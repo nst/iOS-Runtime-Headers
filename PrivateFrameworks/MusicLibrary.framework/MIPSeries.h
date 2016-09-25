@@ -8,7 +8,7 @@
     }  _has;
     NSString * _name;
     NSString * _sortName;
-    int  _storeId;
+    long long  _storeId;
 }
 
 @property (nonatomic, readonly) BOOL hasName;
@@ -16,7 +16,7 @@
 @property (nonatomic) BOOL hasStoreId;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSString *sortName;
-@property (nonatomic) int storeId;
+@property (nonatomic) long long storeId;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
@@ -34,9 +34,9 @@
 - (void)setHasStoreId:(BOOL)arg1;
 - (void)setName:(id)arg1;
 - (void)setSortName:(id)arg1;
-- (void)setStoreId:(int)arg1;
+- (void)setStoreId:(long long)arg1;
 - (id)sortName;
-- (int)storeId;
+- (long long)storeId;
 - (void)writeTo:(id)arg1;
 
 @end

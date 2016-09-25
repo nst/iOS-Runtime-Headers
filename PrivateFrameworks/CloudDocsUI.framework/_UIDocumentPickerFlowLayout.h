@@ -3,12 +3,12 @@
  */
 
 @interface _UIDocumentPickerFlowLayout : UICollectionViewFlowLayout <_UICollectionViewLayoutCellStyle> {
-    double  _contentSizeAdjustment;
+    float  _contentSizeAdjustment;
     int  cellStyle;
 }
 
 @property (nonatomic) int cellStyle;
-@property (nonatomic) double contentSizeAdjustment;
+@property (nonatomic) float contentSizeAdjustment;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
@@ -16,7 +16,7 @@
 
 - (BOOL)canBeEdited;
 - (int)cellStyle;
-- (struct CGSize { double x1; double x2; })collectionViewContentSize;
+- (struct CGSize { float x1; float x2; })collectionViewContentSize;
 - (float)contentSizeAdjustment;
 - (void)setCellStyle:(int)arg1;
 - (void)setContentSizeAdjustment:(float)arg1;

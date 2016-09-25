@@ -29,7 +29,7 @@
 - (id)initWithButtonViews:(id)arg1;
 - (void)insertButtonView:(id)arg1 atIndex:(unsigned int)arg2;
 - (id)mutableButtonViews;
-- (BOOL)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (int)preferredContentAlignment;
 - (void)removeButtonView:(id)arg1;
 - (void)setButtonConstraints:(id)arg1;

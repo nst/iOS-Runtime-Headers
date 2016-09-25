@@ -19,25 +19,25 @@
     BOOL  _didIgnoreTouchesBegan;
     UIColor * _drawingColor;
     UITouch * _drawingTouch;
-    double  _drawingTouchMovedDistance;
+    float  _drawingTouchMovedDistance;
     BOOL  _drawingTouchStartedStroke;
     NSTimer * _fastTapAllowableMovementTimer;
     NSTimer * _heartbeatDurationTimer;
     UILongPressGestureRecognizer * _heartbeatRecognizer;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _heartbeatStartCenter;
     NSTimer * _idleTimer;
     BOOL  _ignoreTouchesUntilAllTouchesEnded;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _ignoredTouchesRect;
     BOOL  _isComposing;
@@ -45,8 +45,8 @@
     double  _lastActivityTimestamp;
     double  _lastFastTapTimestamp;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _lastPt;
     NSMutableDictionary * _messageIdentifierToDoodleView;
     unsigned short  _messageType;
@@ -108,7 +108,7 @@
 - (void)_hideHeartbeatTimerFired;
 - (BOOL)_isTapTooRecentAfterKissGesture;
 - (void)_kissRecognized:(id)arg1;
-- (struct CGPoint { double x1; double x2; })_normalizedGesturePoint:(id)arg1;
+- (struct CGPoint { float x1; float x2; })_normalizedGesturePoint:(id)arg1;
 - (void)_sendAnger;
 - (void)_sendHeartbeat;
 - (void)_sendKiss;
@@ -117,8 +117,8 @@
 - (void)_sendTaps;
 - (void)_setIsComposingMessageOfType:(unsigned short)arg1;
 - (void)_setSketchesPaused:(BOOL)arg1;
-- (void)_showAngerAtPoint:(struct CGPoint { double x1; double x2; })arg1;
-- (void)_showHeartbeatAtNormalizedPoint:(struct CGPoint { double x1; double x2; })arg1 rotation:(float)arg2;
+- (void)_showAngerAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)_showHeartbeatAtNormalizedPoint:(struct CGPoint { float x1; float x2; })arg1 rotation:(float)arg2;
 - (BOOL)_sketchInProgress;
 - (BOOL)_sketchesPaused;
 - (void)_startCheckForIdleTimer;
@@ -131,7 +131,7 @@
 - (void)_updatePhotoViewFrame;
 - (void)_updateRecognizersAtEndOfComposition;
 - (void)_updateVideoViewFrame;
-- (struct CGPoint { double x1; double x2; })_viewPointNormalizedInSceneSpace:(struct CGPoint { double x1; double x2; })arg1;
+- (struct CGPoint { float x1; float x2; })_viewPointNormalizedInSceneSpace:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)angerUsesForceTouch;
 - (BOOL)canComposeAnger;
 - (BOOL)canComposeHeartbeat;
@@ -149,7 +149,7 @@
 - (void)handleTapAtX:(float)arg1 Y:(float)arg2 color:(id)arg3 time:(double)arg4 isRemote:(BOOL)arg5;
 - (void)hidePhoto;
 - (void)hideVideo;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isComposing;
 - (BOOL)isComposingHeartbeat;
 - (BOOL)isComposingSketch;
@@ -186,7 +186,7 @@
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)updateCurrentMessageWithHeartRate:(unsigned int)arg1;
-- (void)updateIgnoredTouchesRectForStatusBarSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)updateIgnoredTouchesRectForStatusBarSize:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)useFastVerticalWisp;
 - (BOOL)usesMediaAppearance;
 - (void)willMoveToWindow:(id)arg1;

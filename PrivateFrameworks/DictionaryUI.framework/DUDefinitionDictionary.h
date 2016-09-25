@@ -8,7 +8,7 @@
     struct __DCSDictionary { } * _dictionary;
     BOOL  _isAppleDictionary;
     BOOL  _isTTYDictionary;
-    double  _progress;
+    float  _progress;
     ASAsset * _rawAsset;
 }
 
@@ -19,7 +19,7 @@
 @property (readonly) NSString *localizedDictionaryName;
 @property (readonly) NSString *localizedLanguageName;
 @property (readonly) NSString *localizedSortName;
-@property double progress;
+@property float progress;
 @property (readonly) ASAsset *rawAsset;
 
 + (id)displayNameForLanguageIdentifier:(id)arg1 forSorting:(BOOL)arg2;

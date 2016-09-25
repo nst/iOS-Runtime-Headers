@@ -4,25 +4,25 @@
 
 @interface BRCTransferBatchOperation : _BRCOperation <BRCOperationSubclass> {
     id /* block */  _didProgressBlock;
-    unsigned int  _doneSize;
+    unsigned long long  _doneSize;
     NSMutableDictionary * _entriesByRecordID;
     NSMutableDictionary * _entriesBySecondaryRecordID;
     NSMutableDictionary * _entriesByTransferID;
     unsigned int  _itemsCount;
     NSObject<OS_dispatch_group> * _pendingGroup;
     NSObject<OS_dispatch_queue> * _queue;
-    unsigned int  _totalSize;
+    unsigned long long  _totalSize;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (copy) id /* block */ didProgressBlock;
-@property unsigned int doneSize;
+@property unsigned long long doneSize;
 @property (readonly) unsigned int hash;
 @property (readonly) unsigned int itemsCount;
 @property (nonatomic, readonly) NSObject<OS_dispatch_group> *pendingGroup;
 @property (readonly) Class superclass;
-@property unsigned int totalSize;
+@property unsigned long long totalSize;
 
 - (void).cxx_destruct;
 - (void)_addTransfer:(id)arg1;
@@ -36,7 +36,7 @@
 - (void)cancelTransferID:(id)arg1;
 - (id)createActivity;
 - (id /* block */)didProgressBlock;
-- (unsigned int)doneSize;
+- (unsigned long long)doneSize;
 - (id)fetchOperationForTransfers:(id)arg1 traceCode:(int)arg2;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (void)finishedTransferForRecord:(id)arg1 recordID:(id)arg2 error:(id)arg3;
@@ -50,12 +50,12 @@
 - (void)sendBatchProgressedCallback;
 - (void)sendTransferCompletionCallBack:(id)arg1 error:(id)arg2;
 - (void)setDidProgressBlock:(id /* block */)arg1;
-- (void)setDoneSize:(unsigned int)arg1;
+- (void)setDoneSize:(unsigned long long)arg1;
 - (void)setProgress:(double)arg1 forRecordID:(id)arg2;
-- (void)setTotalSize:(unsigned int)arg1;
+- (void)setTotalSize:(unsigned long long)arg1;
 - (BOOL)shouldRetryForError:(id)arg1;
 - (id)subclassableDescriptionWithContext:(id)arg1;
-- (unsigned int)totalSize;
+- (unsigned long long)totalSize;
 - (id)transferredObjectsPrettyName;
 
 @end

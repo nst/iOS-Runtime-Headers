@@ -5,16 +5,16 @@
 @interface TSDBitmapRenderingQualityImageMapValue : NSObject {
     struct CGImage { } * mDegradedImageRef;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  mMaxSize;
 }
 
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } maxSize;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } maxSize;
 
-- (void)addSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)addSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)dealloc;
 - (struct CGImage { }*)degradedImageRefForForProvider:(id)arg1 quality:(int)arg2 canvasScale:(float)arg3;
-- (struct CGSize { double x1; double x2; })maxSize;
+- (struct CGSize { float x1; float x2; })maxSize;
 
 @end

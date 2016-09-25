@@ -9,7 +9,7 @@
 @property (nonatomic, readonly) NSString *associatedChatItemGUID;
 @property (nonatomic, readonly) struct _NSRange { unsigned int x1; unsigned int x2; } associatedMessageRange;
 @property (nonatomic, readonly) BOOL failed;
-@property (nonatomic, readonly) struct IMAssociatedMessageGeometryDescriptor { unsigned int x1; unsigned int x2; double x3; double x4; double x5; double x6; double x7; } geometryDescriptor;
+@property (nonatomic, readonly) struct IMAssociatedMessageGeometryDescriptor { unsigned int x1; unsigned int x2; float x3; float x4; float x5; float x6; float x7; } geometryDescriptor;
 @property (nonatomic, readonly) NSString *guid;
 @property (nonatomic, readonly) BOOL isFromMe;
 @property (nonatomic, readonly) BOOL parentMessageIsFromMe;
@@ -22,7 +22,7 @@
 - (id)associatedChatItemGUID;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })associatedMessageRange;
 - (BOOL)failed;
-- (struct IMAssociatedMessageGeometryDescriptor { unsigned int x1; unsigned int x2; double x3; double x4; double x5; double x6; double x7; })geometryDescriptor;
+- (struct IMAssociatedMessageGeometryDescriptor { unsigned int x1; unsigned int x2; float x3; float x4; float x5; float x6; float x7; })geometryDescriptor;
 - (id)guid;
 - (BOOL)isFromMe;
 - (id)loadTimestampString;

@@ -19,7 +19,7 @@
     BOOL  _hasDecryptionFailed;
     BOOL  _lastDecryptionFailed;
     unsigned int  _pushCount;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
     NSMutableArray * _topErrors;
     NSMutableArray * _topReasons;
     unsigned int  _uploadCount;
@@ -41,7 +41,7 @@
 @property (nonatomic) BOOL hasUploadMaximumDelayReached;
 @property (nonatomic) BOOL lastDecryptionFailed;
 @property (nonatomic) unsigned int pushCount;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 @property (nonatomic, retain) NSMutableArray *topErrors;
 @property (nonatomic, retain) NSMutableArray *topReasons;
 @property (nonatomic) unsigned int uploadCount;
@@ -94,13 +94,13 @@
 - (void)setHasUploadMaximumDelayReached:(BOOL)arg1;
 - (void)setLastDecryptionFailed:(BOOL)arg1;
 - (void)setPushCount:(unsigned int)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (void)setTopErrors:(id)arg1;
 - (void)setTopReasons:(id)arg1;
 - (void)setUploadCount:(unsigned int)arg1;
 - (void)setUploadErrorCount:(unsigned int)arg1;
 - (void)setUploadMaximumDelayReached:(BOOL)arg1;
-- (unsigned int)timestamp;
+- (unsigned long long)timestamp;
 - (id)topErrors;
 - (id)topErrorsAtIndex:(unsigned int)arg1;
 - (unsigned int)topErrorsCount;

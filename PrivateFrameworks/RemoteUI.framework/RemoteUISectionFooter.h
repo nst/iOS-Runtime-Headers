@@ -34,7 +34,7 @@
 - (void)setText:(id)arg1 attributes:(id)arg2;
 - (void)setTextAlignment:(int)arg1;
 - (void)setTextColor:(id)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)textLabel;
 
 @end

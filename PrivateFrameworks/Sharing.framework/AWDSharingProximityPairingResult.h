@@ -15,7 +15,7 @@
     }  _has;
     unsigned int  _pairingMs;
     NSString * _sessionUUID;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
     BOOL  _userAccepted;
     unsigned int  _userResponseMs;
 }
@@ -31,7 +31,7 @@
 @property (nonatomic) BOOL hasUserResponseMs;
 @property (nonatomic) unsigned int pairingMs;
 @property (nonatomic, retain) NSString *sessionUUID;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 @property (nonatomic) BOOL userAccepted;
 @property (nonatomic) unsigned int userResponseMs;
 
@@ -65,10 +65,10 @@
 - (void)setHasUserResponseMs:(BOOL)arg1;
 - (void)setPairingMs:(unsigned int)arg1;
 - (void)setSessionUUID:(id)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (void)setUserAccepted:(BOOL)arg1;
 - (void)setUserResponseMs:(unsigned int)arg1;
-- (unsigned int)timestamp;
+- (unsigned long long)timestamp;
 - (BOOL)userAccepted;
 - (unsigned int)userResponseMs;
 - (void)writeTo:(id)arg1;

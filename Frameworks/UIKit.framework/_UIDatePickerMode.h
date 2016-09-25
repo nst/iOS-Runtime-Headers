@@ -59,13 +59,13 @@
 @property (nonatomic) unsigned int numberOfComponents;
 @property (nonatomic, retain) NSDate *originatingDate;
 @property (nonatomic, readonly) NSString *pmString;
-@property (nonatomic, readonly) double rowHeight;
+@property (nonatomic, readonly) float rowHeight;
 @property (nonatomic, retain) NSDateComponents *selectedDateComponents;
 @property (nonatomic, readonly) UIFont *sizedFont;
 @property (nonatomic, retain) NSDateComponents *todayDateComponents;
 @property (nonatomic) double todaySinceReferenceDate;
 @property (nonatomic, readonly) UIColor *todayTextColor;
-@property (nonatomic, readonly) double totalComponentWidth;
+@property (nonatomic, readonly) float totalComponentWidth;
 @property (nonatomic) int yearsSinceBaseDate;
 
 + (id)_datePickerModeWithFormatString:(id)arg1 datePickerView:(id)arg2;

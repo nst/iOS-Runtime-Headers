@@ -12,7 +12,7 @@
     NSArray * _pendingDerivativesQueue;
     MSPublishStreamsProtocol * _protocol;
     int  _publishBatchSize;
-    int  _publishTargetByteCount;
+    long long  _publishTargetByteCount;
     MSObjectQueue * _quarantinedQueue;
     NSMutableArray * _requestAuthQueue;
     NSMutableArray * _sendingQueue;
@@ -30,7 +30,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic) int publishBatchSize;
-@property (nonatomic) int publishTargetByteCount;
+@property (nonatomic) long long publishTargetByteCount;
 @property (nonatomic, retain) NSURL *storageProtocolURL;
 @property (readonly) Class superclass;
 
@@ -90,12 +90,12 @@
 - (void)publishStreamsProtocol:(id)arg1 didFinishSendingUploadCompleteError:(id)arg2;
 - (void)publishStreamsProtocol:(id)arg1 didFinishUploadingMetadataResponse:(id)arg2 error:(id)arg3;
 - (void)publishStreamsProtocol:(id)arg1 didReceiveAuthenticationError:(id)arg2;
-- (int)publishTargetByteCount;
+- (long long)publishTargetByteCount;
 - (void)reenqueueQuarantinedAssetCollections;
 - (void)setDaemon:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setPublishBatchSize:(int)arg1;
-- (void)setPublishTargetByteCount:(int)arg1;
+- (void)setPublishTargetByteCount:(long long)arg1;
 - (void)setStorageProtocolURL:(id)arg1;
 - (void)stop;
 - (id)storageProtocolURL;

@@ -57,8 +57,8 @@
 - (id)createOutput;
 - (void)dealloc;
 - (id)delegate;
-- (id)dispatchQueueNameForSerialNumber:(unsigned int)arg1;
-- (id)dispatchQueueNameForSerialNumber:(unsigned int)arg1 returnedConcurrentFlag:(BOOL*)arg2 returnedThreadId:(unsigned int*)arg3;
+- (id)dispatchQueueNameForSerialNumber:(unsigned long long)arg1;
+- (id)dispatchQueueNameForSerialNumber:(unsigned long long)arg1 returnedConcurrentFlag:(BOOL*)arg2 returnedThreadId:(unsigned long long*)arg3;
 - (void)flushData;
 - (void)forceStop;
 - (id)initWithPID:(int)arg1;
@@ -91,9 +91,9 @@
 - (void)stopSampling;
 - (id)stopSamplingAndReturnCallNode;
 - (struct _CSTypeRef { unsigned int x1; unsigned int x2; })symbolicator;
-- (id)threadDescriptionStringForBacktrace:(id)arg1 returnedAddress:(unsigned int*)arg2;
+- (id)threadDescriptionStringForBacktrace:(id)arg1 returnedAddress:(unsigned long long*)arg2;
 - (id)threadNameForThread:(unsigned int)arg1;
-- (id)threadNameForThread:(unsigned int)arg1 returnedThreadId:(unsigned int*)arg2 returnedDispatchQueueSerialNum:(unsigned int*)arg3;
+- (id)threadNameForThread:(unsigned int)arg1 returnedThreadId:(unsigned long long*)arg2 returnedDispatchQueueSerialNum:(unsigned long long*)arg3;
 - (double)timeLimit;
 - (BOOL)waitUntilDone;
 - (void)writeOutput:(id)arg1 append:(BOOL)arg2;

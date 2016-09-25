@@ -6,7 +6,7 @@
     NSString * _bundleIdentifier;
     BOOL  _localDevice;
     NSString * _name;
-    unsigned int  _options;
+    unsigned long long  _options;
     NSString * _productType;
 }
 
@@ -16,7 +16,7 @@
 @property (readonly) unsigned int hash;
 @property (getter=_isLocalDevice, setter=_setLocalDevice:, nonatomic) BOOL localDevice;
 @property (readonly) NSString *name;
-@property (getter=_options, setter=_setOptions:, nonatomic) unsigned int options;
+@property (getter=_options, setter=_setOptions:, nonatomic) unsigned long long options;
 @property (getter=_productType, setter=_setProductType:, nonatomic, retain) NSString *productType;
 @property (readonly) Class superclass;
 
@@ -28,7 +28,7 @@
 + (BOOL)_representsCurrentDeviceWithBundleIdentifier:(id)arg1;
 + (id)_sourceBundleIdentifierWithEntitlements:(id)arg1 clientBundleIdentifier:(id)arg2 isExtension:(BOOL)arg3;
 + (id)_sourceNameWithRepresentsCurrentDevice:(BOOL)arg1 defaultSource:(BOOL)arg2;
-+ (id)_sourceWithBundleIdentifier:(id)arg1 name:(id)arg2 productType:(id)arg3 options:(unsigned int)arg4;
++ (id)_sourceWithBundleIdentifier:(id)arg1 name:(id)arg2 productType:(id)arg3 options:(unsigned long long)arg4;
 + (id)defaultSource;
 + (BOOL)supportsSecureCoding;
 
@@ -39,13 +39,13 @@
 - (BOOL)_isApplication;
 - (BOOL)_isLocalDevice;
 - (BOOL)_isPreferredSource;
-- (unsigned int)_options;
+- (unsigned long long)_options;
 - (id)_productType;
 - (BOOL)_requiresAuthorization;
 - (void)_setBundleIdentifier:(id)arg1;
 - (void)_setLocalDevice:(BOOL)arg1;
 - (void)_setName:(id)arg1;
-- (void)_setOptions:(unsigned int)arg1;
+- (void)_setOptions:(unsigned long long)arg1;
 - (void)_setProductType:(id)arg1;
 - (id)bundleIdentifier;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

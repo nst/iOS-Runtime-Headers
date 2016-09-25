@@ -5,12 +5,12 @@
 @interface LPCaptionPresentationProperties : NSObject {
     UIColor * _color;
     NSString * _text;
-    double  _textScale;
+    float  _textScale;
 }
 
 @property (nonatomic, retain) UIColor *color;
 @property (nonatomic, copy) NSString *text;
-@property (nonatomic) double textScale;
+@property (nonatomic) float textScale;
 
 - (void).cxx_destruct;
 - (id)color;

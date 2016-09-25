@@ -5,8 +5,8 @@
 @interface UIStatusBarExternalForegroundStyleAttributes : UIStatusBarForegroundStyleAttributes
 
 - (int)activityIndicatorStyleWithSyncActivity:(BOOL)arg1;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })edgeInsetsForBatteryInsides;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })edgeInsetsForBluetoothBatteryInsides;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsetsForBatteryInsides;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsetsForBluetoothBatteryInsides;
 - (float)edgePadding;
 - (id)makeTextFontForStyle:(int)arg1;
 - (float)middlePadding;

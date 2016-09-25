@@ -13,7 +13,7 @@
     SSURLConnectionRequest * _request;
     BOOL  _shouldProcessCategories;
     NSString * _stationHash;
-    int  _stationID;
+    long long  _stationID;
 }
 
 @property (nonatomic, readonly, copy) NSNumber *accountUniqueIdentifier;
@@ -25,7 +25,7 @@
 @property (nonatomic, copy) RadioPlayEventCollection *playEventCollection;
 @property (nonatomic) BOOL shouldProcessCategories;
 @property (nonatomic, copy) NSString *stationHash;
-@property (nonatomic) int stationID;
+@property (nonatomic) long long stationID;
 
 - (void).cxx_destruct;
 - (id)_newHistoryCategoryWithDictionary:(id)arg1;
@@ -47,11 +47,11 @@
 - (void)setPlayEventCollection:(id)arg1;
 - (void)setShouldProcessCategories:(BOOL)arg1;
 - (void)setStationHash:(id)arg1;
-- (void)setStationID:(int)arg1;
+- (void)setStationID:(long long)arg1;
 - (BOOL)shouldProcessCategories;
 - (void)startWithCompletionHandler:(id /* block */)arg1;
 - (void)startWithHistoryCompletionHandler:(id /* block */)arg1;
 - (id)stationHash;
-- (int)stationID;
+- (long long)stationID;
 
 @end

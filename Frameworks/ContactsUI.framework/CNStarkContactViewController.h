@@ -29,7 +29,7 @@
 - (void)loadContactViewControllerViews;
 - (void)queryComplete;
 - (void)scrollViewDidScroll:(id)arg1;
-- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { double x1; double x2; })arg2 targetContentOffset:(inout struct CGPoint { double x1; double x2; }*)arg3;
+- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { float x1; float x2; })arg2 targetContentOffset:(inout struct CGPoint { float x1; float x2; }*)arg3;
 - (void)setActivatedConstraints:(id)arg1;
 - (void)setBestiMessageQuery:(id)arg1;
 - (void)setContactNameView:(id)arg1;

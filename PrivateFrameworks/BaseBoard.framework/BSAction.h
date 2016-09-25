@@ -22,7 +22,7 @@
     BSActionResponse * _queue_response;
     BSMachPortTransferableSendRight * _queue_sendRight;
     BSTimer * _queue_timer;
-    unsigned int  _timeout;
+    unsigned long long  _timeout;
 }
 
 @property (readonly, copy) NSString *debugDescription;

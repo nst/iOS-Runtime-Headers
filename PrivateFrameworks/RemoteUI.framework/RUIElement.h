@@ -43,7 +43,7 @@
 - (void)setIdentifier:(id)arg1;
 - (void)setImage:(id)arg1;
 - (void)setImageAlignment:(int)arg1;
-- (void)setImageSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setImageSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setStyle:(id)arg1;
 - (id)sourceURL;
 - (id)style;

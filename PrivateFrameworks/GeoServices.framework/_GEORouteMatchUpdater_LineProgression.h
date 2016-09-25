@@ -7,7 +7,7 @@
     GEOComposedTransitTripRouteStep * _boardStep;
     struct PolylineCoordinate { 
         unsigned int index; 
-        double offset; 
+        float offset; 
     }  _startRouteCoordinate;
 }
 

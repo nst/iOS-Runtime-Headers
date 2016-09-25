@@ -20,7 +20,7 @@
 - (id)button;
 - (void)buttonPressed;
 - (id)controller;
-- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)initWithTitle:(id)arg1 subtitle:(id)arg2 punchout:(id)arg3 adamID:(id)arg4 offerIdentifier:(id)arg5 controller:(id)arg6 section:(id)arg7;
 - (void)lookupPriceForAdamID:(id)arg1 offerIdentifier:(id)arg2;
 - (id)punchout;

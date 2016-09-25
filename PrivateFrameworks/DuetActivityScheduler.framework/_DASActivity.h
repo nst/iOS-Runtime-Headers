@@ -8,7 +8,7 @@
     BOOL  _beforeDaysFirstActivity;
     BOOL  _beforeUserIsActive;
     BOOL  _budgeted;
-    unsigned int  _budgetingToken;
+    unsigned long long  _budgetingToken;
     NSString * _bundleId;
     BOOL  _bypassesPredictions;
     BOOL  _cancelAfterDeadline;
@@ -59,7 +59,7 @@
 @property (nonatomic) BOOL beforeDaysFirstActivity;
 @property (nonatomic) BOOL beforeUserIsActive;
 @property (nonatomic) BOOL budgeted;
-@property (nonatomic) unsigned int budgetingToken;
+@property (nonatomic) unsigned long long budgetingToken;
 @property (nonatomic, retain) NSString *bundleId;
 @property (nonatomic) BOOL bypassesPredictions;
 @property (nonatomic) BOOL cancelAfterDeadline;
@@ -122,7 +122,7 @@
 - (BOOL)beforeDaysFirstActivity;
 - (BOOL)beforeUserIsActive;
 - (BOOL)budgeted;
-- (unsigned int)budgetingToken;
+- (unsigned long long)budgetingToken;
 - (id)bundleId;
 - (BOOL)bypassesPredictions;
 - (BOOL)cancelAfterDeadline;
@@ -169,7 +169,7 @@
 - (void)setBeforeDaysFirstActivity:(BOOL)arg1;
 - (void)setBeforeUserIsActive:(BOOL)arg1;
 - (void)setBudgeted:(BOOL)arg1;
-- (void)setBudgetingToken:(unsigned int)arg1;
+- (void)setBudgetingToken:(unsigned long long)arg1;
 - (void)setBundleId:(id)arg1;
 - (void)setBypassesPredictions:(BOOL)arg1;
 - (void)setCancelAfterDeadline:(BOOL)arg1;

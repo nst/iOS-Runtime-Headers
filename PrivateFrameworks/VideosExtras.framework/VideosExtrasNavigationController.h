@@ -22,7 +22,7 @@
 - (void)_installDoneButtonOnNavigationItem:(id)arg1;
 - (void)_presentDialogTemplate:(id)arg1;
 - (id)_viewControllerForDocument:(id)arg1 index:(int*)arg2;
-- (void)applyMainTemplateOffset:(struct CGPoint { double x1; double x2; })arg1 animated:(BOOL)arg2;
+- (void)applyMainTemplateOffset:(struct CGPoint { float x1; float x2; })arg1 animated:(BOOL)arg2;
 - (id)context;
 - (id)documents;
 - (void)finalizeMainTemplateOffset:(BOOL)arg1;

@@ -18,8 +18,8 @@
     }  _has;
     NSString * _localizedShortTitle;
     NSString * _localizedTitle;
-    double  _maximumRating;
-    double  _minimumRating;
+    float  _maximumRating;
+    float  _minimumRating;
     struct { 
         double *list; 
         unsigned int count; 
@@ -29,7 +29,7 @@
     int  _repeatMode;
     int  _shuffleMode;
     struct { 
-        double *list; 
+        float *list; 
         unsigned int count; 
         unsigned int size; 
     }  _supportedRates;
@@ -50,8 +50,8 @@
 @property (nonatomic) BOOL hasShuffleMode;
 @property (nonatomic, retain) NSString *localizedShortTitle;
 @property (nonatomic, retain) NSString *localizedTitle;
-@property (nonatomic) double maximumRating;
-@property (nonatomic) double minimumRating;
+@property (nonatomic) float maximumRating;
+@property (nonatomic) float minimumRating;
 @property (nonatomic, readonly) double*preferredIntervals;
 @property (nonatomic, readonly) unsigned int preferredIntervalsCount;
 @property (nonatomic) int presentationStyle;

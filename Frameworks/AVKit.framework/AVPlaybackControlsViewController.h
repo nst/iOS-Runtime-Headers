@@ -18,7 +18,7 @@
     BOOL  _scanForwardButtonEnabled;
     BOOL  _scrubberEnabled;
     NSArray * _scrubberLoadedTimeRanges;
-    double  _scrubberWidth;
+    float  _scrubberWidth;
     BOOL  _showsDoneButton;
     BOOL  _showsExitFullScreenButton;
     BOOL  _showsLoadingIndicator;
@@ -42,7 +42,7 @@
 @property (getter=isScanForwardButtonEnabled, nonatomic) BOOL scanForwardButtonEnabled;
 @property (getter=isScrubberEnabled, nonatomic) BOOL scrubberEnabled;
 @property (nonatomic, retain) NSArray *scrubberLoadedTimeRanges;
-@property (nonatomic, readonly) double scrubberWidth;
+@property (nonatomic, readonly) float scrubberWidth;
 @property (nonatomic) BOOL showsDoneButton;
 @property (nonatomic) BOOL showsExitFullScreenButton;
 @property (nonatomic) BOOL showsLoadingIndicator;

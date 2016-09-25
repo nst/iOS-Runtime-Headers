@@ -23,7 +23,7 @@
     NSMutableArray * _sources;
     NSMutableArray * _starRatings;
     NSString * _telephone;
-    unsigned int  _uID;
+    unsigned long long  _uID;
     NSString * _uRL;
 }
 
@@ -51,7 +51,7 @@
 @property (nonatomic, retain) NSMutableArray *sources;
 @property (nonatomic, retain) NSMutableArray *starRatings;
 @property (nonatomic, retain) NSString *telephone;
-@property (nonatomic) unsigned int uID;
+@property (nonatomic) unsigned long long uID;
 @property (nonatomic, retain) NSString *uRL;
 
 + (Class)attributeKeyValueType;
@@ -111,7 +111,7 @@
 - (BOOL)hasUID;
 - (BOOL)hasURL;
 - (unsigned int)hash;
-- (id)initWithBusinessURL:(id)arg1 phoneNumber:(id)arg2 muid:(unsigned int)arg3 attributionID:(id)arg4 sampleSizeForUserRatingScore:(unsigned int)arg5 normalizedUserRatingScore:(float)arg6;
+- (id)initWithBusinessURL:(id)arg1 phoneNumber:(id)arg2 muid:(unsigned long long)arg3 attributionID:(id)arg4 sampleSizeForUserRatingScore:(unsigned int)arg5 normalizedUserRatingScore:(float)arg6;
 - (id)initWithPlaceDataEntity:(id)arg1 rating:(id)arg2 hours:(id)arg3 reviews:(id)arg4 photos:(id)arg5 entityAttribution:(id)arg6;
 - (BOOL)isClosed;
 - (BOOL)isEqual:(id)arg1;
@@ -153,7 +153,7 @@
 - (void)setSources:(id)arg1;
 - (void)setStarRatings:(id)arg1;
 - (void)setTelephone:(id)arg1;
-- (void)setUID:(unsigned int)arg1;
+- (void)setUID:(unsigned long long)arg1;
 - (void)setURL:(id)arg1;
 - (id)sourceAtIndex:(unsigned int)arg1;
 - (id)sources;
@@ -162,7 +162,7 @@
 - (id)starRatings;
 - (unsigned int)starRatingsCount;
 - (id)telephone;
-- (unsigned int)uID;
+- (unsigned long long)uID;
 - (id)uRL;
 - (void)writeTo:(id)arg1;
 

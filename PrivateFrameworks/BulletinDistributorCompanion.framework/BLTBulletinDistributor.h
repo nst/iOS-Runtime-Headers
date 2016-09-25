@@ -116,7 +116,7 @@
 - (void)observer:(id)arg1 addBulletin:(id)arg2 forFeed:(unsigned int)arg3 playLightsAndSirens:(BOOL)arg4 attachment:(id)arg5 attachmentType:(int)arg6 withReply:(id /* block */)arg7;
 - (void)observer:(id)arg1 addBulletin:(id)arg2 forFeed:(unsigned int)arg3 playLightsAndSirens:(BOOL)arg4 withReply:(id /* block */)arg5;
 - (void)observer:(id)arg1 composedImageFromThumbnailData:(id)arg2 forAttachment:(id)arg3 bulletin:(id)arg4 completionHandler:(id /* block */)arg5;
-- (struct CGSize { double x1; double x2; })observer:(id)arg1 composedImageSizeForAttachment:(id)arg2 bulletin:(id)arg3 thumbnailSize:(struct CGSize { double x1; double x2; })arg4;
+- (struct CGSize { float x1; float x2; })observer:(id)arg1 composedImageSizeForAttachment:(id)arg2 bulletin:(id)arg3 thumbnailSize:(struct CGSize { float x1; float x2; })arg4;
 - (void)observer:(id)arg1 modifyBulletin:(id)arg2 forFeed:(unsigned int)arg3;
 - (void)observer:(id)arg1 noteServerConnectionStateChanged:(BOOL)arg2;
 - (void)observer:(id)arg1 prepareAttachment:(id)arg2 beforeDeliveringBulletin:(id)arg3 withCompletionHandler:(id /* block */)arg4;

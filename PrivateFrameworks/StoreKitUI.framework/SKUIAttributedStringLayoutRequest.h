@@ -6,7 +6,7 @@
     NSAttributedString * _attributedString;
     int  _numberOfLines;
     BOOL  _wantsBaselineOffset;
-    double  _width;
+    float  _width;
 }
 
 @property (nonatomic, readonly) NSAttributedString *attributedString;
@@ -17,7 +17,7 @@
 @property (nonatomic) int numberOfLines;
 @property (readonly) Class superclass;
 @property (nonatomic) BOOL wantsBaselineOffset;
-@property (nonatomic) double width;
+@property (nonatomic) float width;
 
 - (void).cxx_destruct;
 - (id)attributedString;

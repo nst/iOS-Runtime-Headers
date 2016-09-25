@@ -74,7 +74,7 @@
 - (id)parentMessage;
 - (void)preVisualizeInScene:(id)arg1;
 - (BOOL)reachedSizeLimit;
-- (struct CGPoint { double x1; double x2; })scenePointFromNormalizedPoint:(struct CGPoint { double x1; double x2; })arg1 inScene:(id)arg2;
+- (struct CGPoint { float x1; float x2; })scenePointFromNormalizedPoint:(struct CGPoint { float x1; float x2; })arg1 inScene:(id)arg2;
 - (double)sendTime;
 - (BOOL)sendTimeIsValid;
 - (void)setColor:(id)arg1;

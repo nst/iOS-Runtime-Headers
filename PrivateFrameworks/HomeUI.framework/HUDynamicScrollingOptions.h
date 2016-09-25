@@ -4,14 +4,14 @@
 
 @interface HUDynamicScrollingOptions : NSObject {
     struct { 
-        double minScrollPercentage; 
-        double maxScrollPercentage; 
-        double maxValue; 
+        float minScrollPercentage; 
+        float maxScrollPercentage; 
+        float maxValue; 
     }  _textScaleSetting;
     int  _viewSizeSubclass;
 }
 
-@property (nonatomic) struct { double x1; double x2; double x3; } textScaleSetting;
+@property (nonatomic) struct { float x1; float x2; float x3; } textScaleSetting;
 @property (nonatomic, readonly) int viewSizeSubclass;
 
 + (id)_defaultOptionsWithStatusSectionForViewSizeSubclass:(int)arg1;
@@ -20,8 +20,8 @@
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)initWithViewSizeSubclass:(int)arg1;
-- (void)setTextScaleSetting:(struct { double x1; double x2; double x3; })arg1;
-- (struct { double x1; double x2; double x3; })textScaleSetting;
+- (void)setTextScaleSetting:(struct { float x1; float x2; float x3; })arg1;
+- (struct { float x1; float x2; float x3; })textScaleSetting;
 - (int)viewSizeSubclass;
 
 @end

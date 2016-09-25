@@ -5,7 +5,7 @@
 @interface _UIFullFontSize : NSObject {
     BOOL  _isDefault;
     BOOL  _needsEvaluation;
-    double  _value;
+    float  _value;
 }
 
 + (id)defaultValue;

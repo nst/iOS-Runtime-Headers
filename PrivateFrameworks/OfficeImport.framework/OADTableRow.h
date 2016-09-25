@@ -4,7 +4,7 @@
 
 @interface OADTableRow : NSObject {
     NSMutableArray * mCells;
-    double  mHeight;
+    float  mHeight;
 }
 
 - (id)addCell;

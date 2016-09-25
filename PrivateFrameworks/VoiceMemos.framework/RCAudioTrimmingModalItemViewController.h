@@ -12,7 +12,7 @@
     UIButton * _playPauseButton;
     AVPlayerItem * _playerItem;
     RCPreviewController * _previewController;
-    double  _progress;
+    float  _progress;
     RCUIConfiguration * _progressUIConfiguration;
     BOOL  _showsProgress;
     UILabel * _timeDisplayLabel;
@@ -24,13 +24,13 @@
 @property (getter=isEnabled, nonatomic) BOOL enabled;
 @property (nonatomic, readonly) double maximumDuration;
 @property (nonatomic, readonly) RCPreviewController *previewController;
-@property (nonatomic) double progress;
+@property (nonatomic) float progress;
 @property (nonatomic, readonly) struct { double x1; double x2; } selectedTimeRange;
 @property (nonatomic) BOOL showsProgress;
 
 - (void).cxx_destruct;
 - (void)_beginOrResumePreviewing;
-- (struct CGSize { double x1; double x2; })_calculatedPreferredContentSize;
+- (struct CGSize { float x1; float x2; })_calculatedPreferredContentSize;
 - (id)_currentUIConfiguration;
 - (void)_pausePreviewing;
 - (void)_playPauseAction;

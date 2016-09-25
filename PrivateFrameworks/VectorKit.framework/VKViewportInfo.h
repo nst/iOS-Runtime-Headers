@@ -10,7 +10,7 @@
     double  _pitch;
     int  _tileSize;
     double  _yaw;
-    double  _zoomLevel;
+    float  _zoomLevel;
 }
 
 @property (nonatomic) struct { double x1; double x2; } centerCoordinate;
@@ -18,7 +18,7 @@
 @property (nonatomic) double pitch;
 @property (nonatomic) int tileSize;
 @property (nonatomic) double yaw;
-@property (nonatomic) double zoomLevel;
+@property (nonatomic) float zoomLevel;
 
 - (struct { double x1; double x2; })centerCoordinate;
 - (id)dictionaryRepresentation;

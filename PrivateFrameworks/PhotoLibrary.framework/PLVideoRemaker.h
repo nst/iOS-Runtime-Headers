@@ -9,7 +9,7 @@
     double  _duration;
     AVAssetExportSession * _exportSession;
     int  _mode;
-    double  _percentComplete;
+    float  _percentComplete;
     id /* block */  _progressHandler;
     NSTimer * _progressTimer;
     PLProgressView * _progressView;
@@ -24,8 +24,8 @@
 @property (nonatomic, copy) id /* block */ progressHandler;
 @property (nonatomic) BOOL shouldExportToPhotoDataDirectory;
 
-+ (int)approximateByteSizeForMode:(int)arg1 duration:(double)arg2;
-+ (int)fileLengthLimitForRemakerMode:(int)arg1;
++ (long long)approximateByteSizeForMode:(int)arg1 duration:(double)arg2;
++ (long long)fileLengthLimitForRemakerMode:(int)arg1;
 + (int)getHDRemakerModeForMode:(int)arg1;
 + (int)getSDRemakerModeForMode:(int)arg1;
 + (double)maximumDurationForTrimMode:(int)arg1;

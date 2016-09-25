@@ -9,12 +9,12 @@
 - (int)_cameraDevice;
 - (int)_cameraFlashMode;
 - (UIView *)_cameraOverlayView;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })_cameraViewTransform;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_cameraViewTransform;
 - (void)_setCameraCaptureMode:(int)arg1;
 - (void)_setCameraDevice:(int)arg1;
 - (void)_setCameraFlashMode:(int)arg1;
 - (void)_setCameraOverlayView:(UIView *)arg1;
-- (void)_setCameraViewTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
+- (void)_setCameraViewTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (void)_setShowsCameraControls:(BOOL)arg1;
 - (BOOL)_showsCameraControls;
 - (BOOL)_startVideoCapture;

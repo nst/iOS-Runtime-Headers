@@ -23,9 +23,9 @@
 @property (nonatomic, readonly) NSString *internalName;
 @property (nonatomic, readonly) struct { double x1; double x2; }*polygonPoints;
 @property (nonatomic, readonly) int polygonPointsCount;
-@property (nonatomic, readonly) unsigned int stationID;
+@property (nonatomic, readonly) unsigned long long stationID;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) unsigned int transitID;
+@property (nonatomic, readonly) unsigned long long transitID;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -45,7 +45,7 @@
 - (id)internalName;
 - (struct { double x1; double x2; }*)polygonPoints;
 - (int)polygonPointsCount;
-- (unsigned int)stationID;
-- (unsigned int)transitID;
+- (unsigned long long)stationID;
+- (unsigned long long)transitID;
 
 @end

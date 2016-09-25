@@ -5,7 +5,7 @@
 @interface CKMessageEntryTextView : EMKTextView {
     NSString * _autocorrectionContext;
     BOOL  _hideCaret;
-    double  _placeHolderWidth;
+    float  _placeHolderWidth;
     UIColor * _placeholderColor;
     UILabel * _placeholderLabel;
     BOOL  _preventingResignFirstResponder;
@@ -19,7 +19,7 @@
 @property (nonatomic, copy) NSString *autocorrectionContext;
 @property (nonatomic, copy) NSAttributedString *compositionText;
 @property (nonatomic) BOOL hideCaret;
-@property (nonatomic) double placeHolderWidth;
+@property (nonatomic) float placeHolderWidth;
 @property (nonatomic, copy) UIColor *placeholderColor;
 @property (nonatomic, retain) UILabel *placeholderLabel;
 @property (nonatomic, copy) NSString *placeholderText;
@@ -34,11 +34,11 @@
 - (void).cxx_destruct;
 - (SEL)_sendCurrentLocationAction;
 - (id)autocorrectionContext;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })caretRectForPosition:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })caretRectForPosition:(id)arg1;
 - (id)compositionText;
 - (void)dealloc;
 - (BOOL)hideCaret;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 textContainer:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 textContainer:(id)arg2;
 - (id)insertDictationResultPlaceholder;
 - (BOOL)isPreventingResignFirstResponder;
 - (BOOL)isShowingDictationPlaceholder;

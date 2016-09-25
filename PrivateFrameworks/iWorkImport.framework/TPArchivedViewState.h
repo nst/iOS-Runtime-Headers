@@ -23,32 +23,32 @@
     BOOL  _showsCTMarkup;
     BOOL  _showsComments;
     BOOL  _showsPageNavigator;
-    double  _viewScale;
+    float  _viewScale;
     int  _viewScaleMode;
     int  _viewScaleModeiOS;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _visibleRect;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _windowFrame;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _wordCountHUDPosition;
     int  _wordCountHUDType;
     BOOL  _wordCountHUDVisible;

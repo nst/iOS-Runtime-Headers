@@ -4,30 +4,30 @@
 
 @interface PHAssetPhotoIrisProperties : PHAssetPropertySet {
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _photoIrisStillDisplayTime;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _photoIrisVideoDuration;
     unsigned short  _photoIrisVisibilityState;
 }
 
-@property (nonatomic, readonly) struct { int x1; int x2; unsigned int x3; int x4; } photoIrisStillDisplayTime;
-@property (nonatomic, readonly) struct { int x1; int x2; unsigned int x3; int x4; } photoIrisVideoDuration;
+@property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } photoIrisStillDisplayTime;
+@property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } photoIrisVideoDuration;
 @property (nonatomic, readonly) unsigned short photoIrisVisibilityState;
 
 + (id)propertiesToFetch;
 + (id)propertySetName;
 
 - (id)initWithFetchDictionary:(id)arg1 asset:(id)arg2 prefetched:(BOOL)arg3;
-- (struct { int x1; int x2; unsigned int x3; int x4; })photoIrisStillDisplayTime;
-- (struct { int x1; int x2; unsigned int x3; int x4; })photoIrisVideoDuration;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })photoIrisStillDisplayTime;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })photoIrisVideoDuration;
 - (unsigned short)photoIrisVisibilityState;
 
 @end

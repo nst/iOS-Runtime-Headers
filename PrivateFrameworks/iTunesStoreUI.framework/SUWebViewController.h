@@ -64,12 +64,12 @@
 - (id)copyScriptProperties;
 - (void)dealloc;
 - (id)displayedURL;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })documentBounds;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })documentBounds;
 - (void)invalidate;
 - (void)keyboardDidHideWithInfo:(id)arg1;
 - (void)keyboardWillShowWithInfo:(id)arg1;
 - (void)loadView;
-- (struct CGSize { double x1; double x2; })minimumViewSize;
+- (struct CGSize { float x1; float x2; })minimumViewSize;
 - (id)navigationItemForScriptInterface;
 - (id)newRotationController;
 - (id)newScriptInterface;
@@ -96,7 +96,7 @@
 - (void)webViewManager:(id)arg1 didReceivePrimaryResponse:(id)arg2;
 - (void)webViewManager:(id)arg1 didReceiveTitle:(id)arg2;
 - (void)webViewManager:(id)arg1 didRejectInvalidRequest:(id)arg2;
-- (void)webViewManager:(id)arg1 webDocumentViewDidSetFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (void)webViewManager:(id)arg1 webDocumentViewDidSetFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)webViewManager:(id)arg1 willInjectScriptInterface:(id)arg2;
 - (void)webViewManagerDidFinishLoad:(id)arg1;
 - (void)webViewManagerDidStartLoad:(id)arg1;

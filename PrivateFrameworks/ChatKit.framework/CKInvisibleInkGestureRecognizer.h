@@ -5,14 +5,14 @@
 @interface CKInvisibleInkGestureRecognizer : UIGestureRecognizer {
     UITouch * _firstTouch;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _startLocation;
     double  _startTime;
 }
 
 @property (nonatomic, retain) UITouch *firstTouch;
-@property (nonatomic) struct CGPoint { double x1; double x2; } startLocation;
+@property (nonatomic) struct CGPoint { float x1; float x2; } startLocation;
 @property (nonatomic) double startTime;
 
 - (void).cxx_destruct;
@@ -22,11 +22,11 @@
 - (id)firstTouch;
 - (void)reset;
 - (void)setFirstTouch:(id)arg1;
-- (void)setStartLocation:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setStartLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setStartTime:(double)arg1;
 - (BOOL)shouldBeRequiredToFailByGestureRecognizer:(id)arg1;
 - (BOOL)shouldRequireFailureOfGestureRecognizer:(id)arg1;
-- (struct CGPoint { double x1; double x2; })startLocation;
+- (struct CGPoint { float x1; float x2; })startLocation;
 - (double)startTime;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;

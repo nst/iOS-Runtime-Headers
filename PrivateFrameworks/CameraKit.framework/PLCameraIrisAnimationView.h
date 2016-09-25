@@ -7,8 +7,8 @@
     SEL  irisAnimationDidStopSelector;
     double  irisAnimationDuration;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  irisAnimationPosition;
     BOOL  shouldSetupAnimationInDidMoveToWindow;
 }
@@ -16,7 +16,7 @@
 @property (nonatomic) id irisAnimationDelegate;
 @property (nonatomic) SEL irisAnimationDidStopSelector;
 @property (nonatomic) double irisAnimationDuration;
-@property (nonatomic) struct CGPoint { double x1; double x2; } irisAnimationPosition;
+@property (nonatomic) struct CGPoint { float x1; float x2; } irisAnimationPosition;
 @property (nonatomic) BOOL shouldSetupAnimationInDidMoveToWindow;
 
 - (void)animateIrisOpen;
@@ -25,12 +25,12 @@
 - (id)irisAnimationDelegate;
 - (SEL)irisAnimationDidStopSelector;
 - (double)irisAnimationDuration;
-- (struct CGPoint { double x1; double x2; })irisAnimationPosition;
+- (struct CGPoint { float x1; float x2; })irisAnimationPosition;
 - (void)pauseIrisAnimation;
 - (void)setIrisAnimationDelegate:(id)arg1;
 - (void)setIrisAnimationDidStopSelector:(SEL)arg1;
 - (void)setIrisAnimationDuration:(double)arg1;
-- (void)setIrisAnimationPosition:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setIrisAnimationPosition:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setShouldSetupAnimationInDidMoveToWindow:(BOOL)arg1;
 - (void)setupAnimation;
 - (BOOL)shouldSetupAnimationInDidMoveToWindow;

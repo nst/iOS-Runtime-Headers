@@ -6,9 +6,9 @@
     int  mCap;
     GQDColor * mColor;
     int  mJoin;
-    double  mMiterLimit;
+    float  mMiterLimit;
     GQDRStrokePattern * mPattern;
-    double  mWidth;
+    float  mWidth;
 }
 
 @property (readonly, copy) NSString *debugDescription;

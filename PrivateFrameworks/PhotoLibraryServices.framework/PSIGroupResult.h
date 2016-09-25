@@ -15,7 +15,7 @@
     NSString * _owningContentString;
     struct __CFArray { } * _owningGroupIds;
     NSObject<OS_dispatch_queue> * _queue;
-    double  _score;
+    float  _score;
     NSArray * _searchTokens;
 }
 
@@ -29,7 +29,7 @@
 @property (nonatomic, retain) NSArray *matchRanges;
 @property (readonly) NSString *owningContentString;
 @property (nonatomic, retain) struct __CFArray { }*owningGroupIds;
-@property (nonatomic) double score;
+@property (nonatomic) float score;
 @property (nonatomic, retain) NSArray *searchTokens;
 
 - (void).cxx_destruct;

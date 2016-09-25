@@ -14,8 +14,8 @@
 @property (nonatomic, retain) NSString *fileSystemType;
 @property (nonatomic, readonly) BOOL supportsLocalSnapshots;
 
-+ (unsigned int)availableCacheSize;
-+ (unsigned int)fileSystemCapacity;
++ (unsigned long long)availableCacheSize;
++ (unsigned long long)fileSystemCapacity;
 + (id)sharedManager;
 
 - (void).cxx_destruct;

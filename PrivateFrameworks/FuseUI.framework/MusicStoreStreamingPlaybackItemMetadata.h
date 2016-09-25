@@ -22,11 +22,11 @@
 - (void)_storeItemMetadataContextRepresentativeMediaEntityDidChangeNotification:(id)arg1;
 - (void)_unregisterForNotificationsForStoreItemMetadataContext:(id)arg1;
 - (id)albumArtistName;
-- (int)albumStoreAdamID;
+- (long long)albumStoreAdamID;
 - (id)albumTitle;
 - (BOOL)allowsAssetCaching;
 - (id)artistName;
-- (int)artistStoreAdamID;
+- (long long)artistStoreAdamID;
 - (id)artworkCatalogForPlaybackTime:(double)arg1;
 - (id)composerName;
 - (id)contentTitle;
@@ -43,8 +43,8 @@
 - (void)setStoreItemMetadataContext:(id)arg1;
 - (BOOL)shouldReportPlayEventsToStore;
 - (BOOL)showComposer;
-- (int)storeAdamID;
+- (long long)storeAdamID;
 - (id)storeItemMetadataContext;
-- (int)storeSubscriptionAdamID;
+- (long long)storeSubscriptionAdamID;
 
 @end

@@ -15,7 +15,7 @@
         unsigned int topicSubscriptionCount : 1; 
         unsigned int startedFromNotification : 1; 
     }  _has;
-    int  _lastAppSessionTimestamp;
+    long long  _lastAppSessionTimestamp;
     NSString * _notificationArticleId;
     NSMutableArray * _notificationChannelIds;
     int  _notificationEnabledChannelsCount;
@@ -52,7 +52,7 @@
 @property (nonatomic) BOOL hasStartedFromNotification;
 @property (nonatomic) BOOL hasTopicSubscriptionCount;
 @property (nonatomic, readonly) BOOL hasUserActivityType;
-@property (nonatomic) int lastAppSessionTimestamp;
+@property (nonatomic) long long lastAppSessionTimestamp;
 @property (nonatomic, retain) NSString *notificationArticleId;
 @property (nonatomic, retain) NSMutableArray *notificationChannelIds;
 @property (nonatomic) int notificationEnabledChannelsCount;
@@ -104,7 +104,7 @@
 - (BOOL)hasUserActivityType;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
-- (int)lastAppSessionTimestamp;
+- (long long)lastAppSessionTimestamp;
 - (void)mergeFrom:(id)arg1;
 - (id)notificationArticleId;
 - (id)notificationChannelIds;
@@ -131,7 +131,7 @@
 - (void)setHasNotitificationsEnabledChannelsCount:(BOOL)arg1;
 - (void)setHasStartedFromNotification:(BOOL)arg1;
 - (void)setHasTopicSubscriptionCount:(BOOL)arg1;
-- (void)setLastAppSessionTimestamp:(int)arg1;
+- (void)setLastAppSessionTimestamp:(long long)arg1;
 - (void)setNotificationArticleId:(id)arg1;
 - (void)setNotificationChannelIds:(id)arg1;
 - (void)setNotificationEnabledChannelsCount:(int)arg1;

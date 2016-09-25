@@ -16,7 +16,7 @@
 @property (retain) NSString *appleClientApplication;
 @property unsigned int cachePolicy;
 @property (retain) NSDictionary *customHeaders;
-@property int expectedContentLength;
+@property long long expectedContentLength;
 @property (readonly) NSURL *primaryURL;
 @property (retain) NSDictionary *queryStringDictionary;
 @property double timeoutInterval;
@@ -36,7 +36,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)customHeaders;
 - (void)encodeWithCoder:(id)arg1;
-- (int)expectedContentLength;
+- (long long)expectedContentLength;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithRequestProperties:(id)arg1;
@@ -50,7 +50,7 @@
 - (void)setAppleClientApplication:(id)arg1;
 - (void)setCachePolicy:(unsigned int)arg1;
 - (void)setCustomHeaders:(id)arg1;
-- (void)setExpectedContentLength:(int)arg1;
+- (void)setExpectedContentLength:(long long)arg1;
 - (void)setHTTPBody:(id)arg1;
 - (void)setHTTPBodyStream:(id)arg1;
 - (void)setHTTPMethod:(id)arg1;

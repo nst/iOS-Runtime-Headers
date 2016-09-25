@@ -9,7 +9,7 @@
     unsigned int  _briskMinutes;
     unsigned int  _energyBurned;
     unsigned int  _energyBurnedGoal;
-    unsigned int  _eventTimestamp;
+    unsigned long long  _eventTimestamp;
     struct { 
         unsigned int eventTimestamp : 1; 
         unsigned int timestamp : 1; 
@@ -23,7 +23,7 @@
         unsigned int weight : 1; 
     }  _has;
     unsigned int  _height;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
     unsigned int  _weight;
 }
 
@@ -33,7 +33,7 @@
 @property (nonatomic) unsigned int briskMinutes;
 @property (nonatomic) unsigned int energyBurned;
 @property (nonatomic) unsigned int energyBurnedGoal;
-@property (nonatomic) unsigned int eventTimestamp;
+@property (nonatomic) unsigned long long eventTimestamp;
 @property (nonatomic) BOOL hasActiveSeconds;
 @property (nonatomic) BOOL hasAge;
 @property (nonatomic) BOOL hasBiologicalSex;
@@ -45,7 +45,7 @@
 @property (nonatomic) BOOL hasTimestamp;
 @property (nonatomic) BOOL hasWeight;
 @property (nonatomic) unsigned int height;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 @property (nonatomic) unsigned int weight;
 
 - (unsigned int)activeSeconds;
@@ -58,7 +58,7 @@
 - (id)dictionaryRepresentation;
 - (unsigned int)energyBurned;
 - (unsigned int)energyBurnedGoal;
-- (unsigned int)eventTimestamp;
+- (unsigned long long)eventTimestamp;
 - (BOOL)hasActiveSeconds;
 - (BOOL)hasAge;
 - (BOOL)hasBiologicalSex;
@@ -80,7 +80,7 @@
 - (void)setBriskMinutes:(unsigned int)arg1;
 - (void)setEnergyBurned:(unsigned int)arg1;
 - (void)setEnergyBurnedGoal:(unsigned int)arg1;
-- (void)setEventTimestamp:(unsigned int)arg1;
+- (void)setEventTimestamp:(unsigned long long)arg1;
 - (void)setHasActiveSeconds:(BOOL)arg1;
 - (void)setHasAge:(BOOL)arg1;
 - (void)setHasBiologicalSex:(BOOL)arg1;
@@ -92,9 +92,9 @@
 - (void)setHasTimestamp:(BOOL)arg1;
 - (void)setHasWeight:(BOOL)arg1;
 - (void)setHeight:(unsigned int)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (void)setWeight:(unsigned int)arg1;
-- (unsigned int)timestamp;
+- (unsigned long long)timestamp;
 - (unsigned int)weight;
 - (void)writeTo:(id)arg1;
 

@@ -13,7 +13,7 @@
 }
 
 @property (nonatomic, readonly) unsigned int count;
-@property (nonatomic, readonly) int currentEntityRevision;
+@property (nonatomic, readonly) long long currentEntityRevision;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
@@ -39,7 +39,7 @@
 - (id)_allTitles;
 - (void)_deleteOrphanedEntityRevisionsAndSave:(BOOL)arg1;
 - (void)_deleteRecordingsWithDurationLessThan:(double)arg1 passingTest:(id /* block */)arg2;
-- (id)_entityRevisionWithRecordingID:(int)arg1;
+- (id)_entityRevisionWithRecordingID:(long long)arg1;
 - (void)_enumerateFetchedRecordingTitles:(id /* block */)arg1;
 - (void)_enumerateSavedRecordingsAndEntityRevisionInArrayOfManagedObjects:(id)arg1 createIfNeeded:(BOOL)arg2 block:(id /* block */)arg3;
 - (void)_handleExternalModelDidSaveNotification:(id)arg1;
@@ -47,23 +47,23 @@
 - (id)_initWithManagedObjectContext:(id)arg1;
 - (id)_labelPresetsForQuery:(id)arg1;
 - (void)_migrateDatabaseIfNecessary;
-- (int)_nextEntityRevisionID;
-- (int)_nextRecordingID;
+- (long long)_nextEntityRevisionID;
+- (long long)_nextRecordingID;
 - (void)_postRecordingsModelDidChangeForNotificationName:(id)arg1;
-- (id)_recordingWithRecordingID:(int)arg1;
+- (id)_recordingWithRecordingID:(long long)arg1;
 - (BOOL)_saveIfNecessary:(id*)arg1;
 - (void)_scheduleAutomaticRecordingDeletions;
-- (void)_setNextEntityRevisionID:(int)arg1 save:(BOOL)arg2;
-- (void)_setNextRecordingID:(int)arg1 save:(BOOL)arg2;
+- (void)_setNextEntityRevisionID:(long long)arg1 save:(BOOL)arg2;
+- (void)_setNextRecordingID:(long long)arg1 save:(BOOL)arg2;
 - (void)controller:(id)arg1 didChangeObject:(id)arg2 atIndexPath:(id)arg3 forChangeType:(unsigned int)arg4 newIndexPath:(id)arg5;
 - (void)controllerDidChangeContent:(id)arg1;
 - (unsigned int)count;
-- (int)currentEntityRevision;
+- (long long)currentEntityRevision;
 - (void)dealloc;
 - (BOOL)deleteDatabaseProperty:(id)arg1;
 - (void)deleteRecording:(id)arg1;
 - (id)entityRevisionsForRecording:(id)arg1;
-- (void)enumerateExistingRecordingsSinceEntityRevision:(int)arg1 withBlock:(id /* block */)arg2;
+- (void)enumerateExistingRecordingsSinceEntityRevision:(long long)arg1 withBlock:(id /* block */)arg2;
 - (void)enumerateExistingRecordingsWithBlock:(id /* block */)arg1;
 - (id)fetchSavedRecordingIDs;
 - (void)finishSaveByUpdatingSearchableIndexWithChangeContext:(id)arg1;
@@ -81,7 +81,7 @@
 - (void)prepareToSaveByUpdatingEntityRevisionsWithChangeContext:(id)arg1;
 - (id)recordingAtIndex:(unsigned int)arg1;
 - (id)recordingWithID:(id)arg1;
-- (id)recordingWithITunesPersistentID:(int)arg1;
+- (id)recordingWithITunesPersistentID:(long long)arg1;
 - (id)recordingWithURIRepresentation:(id)arg1;
 - (id)recordings;
 - (id)recordingsForSpotlightSearch:(id)arg1;

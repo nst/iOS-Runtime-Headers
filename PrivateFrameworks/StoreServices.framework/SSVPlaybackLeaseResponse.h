@@ -4,10 +4,10 @@
 
 @interface SSVPlaybackLeaseResponse : SSVPlaybackResponse <NSCopying> {
     NSData * _certificateData;
-    unsigned int  _kdMovieIdentifier;
+    unsigned long long  _kdMovieIdentifier;
 }
 
-@property (nonatomic) unsigned int KDMovieIdentifier;
+@property (nonatomic) unsigned long long KDMovieIdentifier;
 @property (nonatomic, copy) NSData *certificateData;
 @property (nonatomic, readonly) double leaseDuration;
 @property (nonatomic, readonly, copy) NSData *leaseInfoData;
@@ -15,7 +15,7 @@
 @property (nonatomic, readonly, copy) NSData *subscriptionKeyBagData;
 
 - (void).cxx_destruct;
-- (unsigned int)KDMovieIdentifier;
+- (unsigned long long)KDMovieIdentifier;
 - (id)certificateData;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (BOOL)isOfflineSlotAvailable;
@@ -23,7 +23,7 @@
 - (double)leaseDuration;
 - (id)leaseInfoData;
 - (void)setCertificateData:(id)arg1;
-- (void)setKDMovieIdentifier:(unsigned int)arg1;
+- (void)setKDMovieIdentifier:(unsigned long long)arg1;
 - (id)subscriptionKeyBagData;
 
 @end

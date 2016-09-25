@@ -8,7 +8,7 @@
     NSObject<OS_dispatch_queue> * _workQueue;
 }
 
-@property (nonatomic, readonly) unsigned int dispatchTimeout;
+@property (nonatomic, readonly) unsigned long long dispatchTimeout;
 @property (nonatomic, retain) NSError *error;
 @property (nonatomic, retain) NSObject<OS_dispatch_semaphore> *finishedSemaphore;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *workQueue;
@@ -25,7 +25,7 @@
 - (void)dealloc;
 - (id)debugDescription;
 - (id)description;
-- (unsigned int)dispatchTimeout;
+- (unsigned long long)dispatchTimeout;
 - (id)error;
 - (void)finish;
 - (id)finishedSemaphore;

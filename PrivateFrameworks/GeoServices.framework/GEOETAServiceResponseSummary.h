@@ -9,8 +9,8 @@
         unsigned int resultsApplied : 1; 
     }  _has;
     struct GEOSessionID { 
-        unsigned int _high; 
-        unsigned int _low; 
+        unsigned long long _high; 
+        unsigned long long _low; 
     }  _responseUuid;
     BOOL  _resultsApplied;
     NSMutableArray * _routeInfos;
@@ -20,7 +20,7 @@
 @property (nonatomic) BOOL hasResponseUuid;
 @property (nonatomic) BOOL hasResultsApplied;
 @property (nonatomic) BOOL hasStatus;
-@property (nonatomic) struct GEOSessionID { unsigned int x1; unsigned int x2; } responseUuid;
+@property (nonatomic) struct GEOSessionID { unsigned long long x1; unsigned long long x2; } responseUuid;
 @property (nonatomic) BOOL resultsApplied;
 @property (nonatomic, retain) NSMutableArray *routeInfos;
 @property (nonatomic) int status;
@@ -42,7 +42,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (struct GEOSessionID { unsigned int x1; unsigned int x2; })responseUuid;
+- (struct GEOSessionID { unsigned long long x1; unsigned long long x2; })responseUuid;
 - (BOOL)resultsApplied;
 - (id)routeInfoAtIndex:(unsigned int)arg1;
 - (id)routeInfos;
@@ -50,7 +50,7 @@
 - (void)setHasResponseUuid:(BOOL)arg1;
 - (void)setHasResultsApplied:(BOOL)arg1;
 - (void)setHasStatus:(BOOL)arg1;
-- (void)setResponseUuid:(struct GEOSessionID { unsigned int x1; unsigned int x2; })arg1;
+- (void)setResponseUuid:(struct GEOSessionID { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)setResultsApplied:(BOOL)arg1;
 - (void)setRouteInfos:(id)arg1;
 - (void)setStatus:(int)arg1;

@@ -23,7 +23,7 @@
 @property (getter=isReusable, nonatomic) BOOL reusable;
 @property (nonatomic, readonly) NSString *reuseIdentifier;
 @property (nonatomic, readonly) PUTilingView *tilingView;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } visibleRect;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } visibleRect;
 @property (nonatomic, readonly) BOOL wantsVisibleRectChanges;
 
 - (void).cxx_destruct;
@@ -61,7 +61,7 @@
 - (void)setReusable:(BOOL)arg1;
 - (void)setTilingView:(id)arg1;
 - (id)tilingView;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })visibleRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleRect;
 - (BOOL)wantsVisibleRectChanges;
 - (int)willBeginAnimation;
 

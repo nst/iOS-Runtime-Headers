@@ -14,8 +14,8 @@
 @property (nonatomic, readonly) BOOL isFromInfinity;
 @property (nonatomic, readonly) BOOL isToInfinity;
 @property (nonatomic, readonly) NSDate *laterDate;
-@property (nonatomic, readonly) unsigned int maxMillisecondsTimeIntervalSince1970;
-@property (nonatomic, readonly) unsigned int minMillisecondsTimeIntervalSince1970;
+@property (nonatomic, readonly) unsigned long long maxMillisecondsTimeIntervalSince1970;
+@property (nonatomic, readonly) unsigned long long minMillisecondsTimeIntervalSince1970;
 @property (nonatomic, readonly) NSDate *startDate;
 @property (nonatomic, readonly) double timeInterval;
 
@@ -42,8 +42,8 @@
 - (BOOL)isToInfinity;
 - (BOOL)isWithinTimeInterval:(double)arg1 ofDateRange:(id)arg2;
 - (id)laterDate;
-- (unsigned int)maxMillisecondsTimeIntervalSince1970;
-- (unsigned int)minMillisecondsTimeIntervalSince1970;
+- (unsigned long long)maxMillisecondsTimeIntervalSince1970;
+- (unsigned long long)minMillisecondsTimeIntervalSince1970;
 - (id)sliceForDate:(id)arg1 withInterval:(double)arg2;
 - (int)sliceIndexForDate:(id)arg1 withInterval:(double)arg2;
 - (id)slicesWithTimeInterval:(double)arg1;

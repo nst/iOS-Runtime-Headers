@@ -11,8 +11,8 @@
 @property BOOL springBoardIsActive;
 
 - (void).cxx_destruct;
-- (void)addApplicationResults:(id)arg1 toSection:(id)arg2 collectedResults:(id)arg3 queryIdent:(unsigned int)arg4;
-- (void)addSuggestedResults:(id)arg1 toSection:(id)arg2 collectedResults:(id)arg3 queryIdent:(unsigned int)arg4;
+- (void)addApplicationResults:(id)arg1 toSection:(id)arg2 collectedResults:(id)arg3 queryIdent:(unsigned long long)arg4;
+- (void)addSuggestedResults:(id)arg1 toSection:(id)arg2 collectedResults:(id)arg3 queryIdent:(unsigned long long)arg4;
 - (id)cachedConsumer;
 - (void)execute:(id /* block */)arg1;
 - (unsigned int)maxZKWSuggestedQueries;

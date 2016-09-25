@@ -5,6 +5,6 @@
 
 @required
 
-- (void)syncParameter:(unsigned int)arg1 value:(float)arg2 extOriginator:(unsigned int)arg3 hostTime:(unsigned int)arg4 eventType:(unsigned int)arg5;
+- (void)syncParameter:(unsigned long long)arg1 value:(float)arg2 extOriginator:(unsigned long long)arg3 hostTime:(unsigned long long)arg4 eventType:(unsigned int)arg5;
 
 @end

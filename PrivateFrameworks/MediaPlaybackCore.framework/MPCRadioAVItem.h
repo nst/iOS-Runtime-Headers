@@ -11,7 +11,7 @@
     RadioTrack * _radioTrack;
     RadioStation * _station;
     NSString * _stationHash;
-    int  _stationID;
+    long long  _stationID;
     NSString * _stationName;
     NSString * _stationStringID;
 }
@@ -23,7 +23,7 @@
 @property (nonatomic) BOOL isInWishList;
 @property (nonatomic, retain) RadioStation *station;
 @property (nonatomic, readonly) NSString *stationHash;
-@property (nonatomic, readonly) int stationID;
+@property (nonatomic, readonly) long long stationID;
 @property (nonatomic, readonly) NSString *stationName;
 @property (nonatomic, readonly) NSString *stationStringID;
 
@@ -48,7 +48,7 @@
 - (void)addDerivedStationForArtist:(BOOL)arg1 withCompletionHandler:(id /* block */)arg2;
 - (id)aggregateDictionaryItemType;
 - (id)album;
-- (int)albumStoreID;
+- (long long)albumStoreID;
 - (id)artist;
 - (id)artworkCatalogForPlaybackTime:(double)arg1;
 - (id)artworkTimeMarkers;
@@ -77,7 +77,7 @@
 - (unsigned int)mpcReporting_itemType;
 - (BOOL)mpcReporting_shouldReportPlayEventsToStore;
 - (id)mpcReporting_trackInfo;
-- (unsigned int)persistentID;
+- (unsigned long long)persistentID;
 - (id)radioTrack;
 - (void)reevaluateType;
 - (void)setHeartbeatInvalid:(BOOL)arg1;
@@ -85,11 +85,11 @@
 - (void)setStation:(id)arg1;
 - (id)station;
 - (id)stationHash;
-- (int)stationID;
+- (long long)stationID;
 - (id)stationName;
 - (id)stationStringID;
-- (int)storeItemInt64ID;
-- (int)storeSubscriptionAdamID;
+- (long long)storeItemInt64ID;
+- (long long)storeSubscriptionAdamID;
 - (BOOL)supportsLikedState;
 - (BOOL)supportsSettingCurrentTime;
 - (id)title;

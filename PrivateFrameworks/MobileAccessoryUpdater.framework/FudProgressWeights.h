@@ -3,14 +3,14 @@
  */
 
 @interface FudProgressWeights : NSObject {
-    double  applyWeight;
-    double  finishWeight;
-    double  prepareWeight;
+    float  applyWeight;
+    float  finishWeight;
+    float  prepareWeight;
 }
 
-@property double applyWeight;
-@property double finishWeight;
-@property double prepareWeight;
+@property float applyWeight;
+@property float finishWeight;
+@property float prepareWeight;
 
 - (float)applyWeight;
 - (double)calculateOverallProgressWithStepProgress:(double)arg1 step:(int)arg2;

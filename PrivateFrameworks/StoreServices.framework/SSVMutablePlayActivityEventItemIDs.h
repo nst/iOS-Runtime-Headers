@@ -4,17 +4,17 @@
 
 @interface SSVMutablePlayActivityEventItemIDs : SSVPlayActivityEventItemIDs
 
-@property (nonatomic) unsigned int cloudID;
+@property (nonatomic) unsigned long long cloudID;
 @property (nonatomic, copy) NSString *lyricsID;
-@property (nonatomic) int purchasedAdamID;
-@property (nonatomic) int radioAdamID;
-@property (nonatomic) int subscriptionAdamID;
+@property (nonatomic) long long purchasedAdamID;
+@property (nonatomic) long long radioAdamID;
+@property (nonatomic) long long subscriptionAdamID;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)setCloudID:(unsigned int)arg1;
+- (void)setCloudID:(unsigned long long)arg1;
 - (void)setLyricsID:(id)arg1;
-- (void)setPurchasedAdamID:(int)arg1;
-- (void)setRadioAdamID:(int)arg1;
-- (void)setSubscriptionAdamID:(int)arg1;
+- (void)setPurchasedAdamID:(long long)arg1;
+- (void)setRadioAdamID:(long long)arg1;
+- (void)setSubscriptionAdamID:(long long)arg1;
 
 @end

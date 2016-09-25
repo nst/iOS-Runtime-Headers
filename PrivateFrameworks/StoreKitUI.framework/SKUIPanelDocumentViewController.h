@@ -7,12 +7,12 @@
     BOOL  _didAttemptBecomeFirstResponder;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _keyboardFrame;
     int  _lastContentWidth;
@@ -39,7 +39,7 @@
 - (void)_layoutScrollView;
 - (void)_reloadBackgroundImageView;
 - (void)_reloadContentSize;
-- (void)_reloadPanelViewWithScrollViewSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)_reloadPanelViewWithScrollViewSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_requestPanelViewLayoutWithContentWidth:(int)arg1 forced:(BOOL)arg2;
 - (id)_templateBackgroundColor;
 - (void)artworkRequest:(id)arg1 didLoadImage:(id)arg2;
@@ -56,6 +56,6 @@
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillLayoutSubviews;
-- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

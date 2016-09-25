@@ -22,12 +22,12 @@
 - (BOOL)prerollVideoAtRate:(float)arg1 completionHandler:(id /* block */)arg2;
 - (void)resignActive;
 - (void)seekCrossfadeToTime:(double)arg1;
-- (BOOL)seekVideoPlayerToTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1 completionHandler:(id /* block */)arg2;
+- (BOOL)seekVideoPlayerToTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 completionHandler:(id /* block */)arg2;
 - (void)setAudioEnabled:(BOOL)arg1;
 - (void)setCrossfadePlayRate:(float)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setOutputInfo:(id)arg1 withTransitionOptions:(id)arg2 completion:(id /* block */)arg3;
-- (void)setVideoForwardPlaybackEndTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
+- (void)setVideoForwardPlaybackEndTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setVideoPlayRate:(float)arg1;
 - (void)setVideoVolume:(float)arg1;
 - (void)videoDidPlayToEnd;

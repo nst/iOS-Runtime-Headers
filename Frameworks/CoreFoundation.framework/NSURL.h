@@ -74,7 +74,7 @@
 @property (readonly, copy) NSURL *standardizedURL;
 @property (readonly) Class superclass;
 @property (readonly) BOOL suppressAssist;
-@property (nonatomic, readonly) int totalBytesExpectedToBeDownloaded;
+@property (nonatomic, readonly) long long totalBytesExpectedToBeDownloaded;
 @property (nonatomic, readonly) NSString *tsu_UTI;
 @property (nonatomic, readonly) NSURL *uniquedURL;
 @property (readonly, copy) NSString *user;
@@ -162,8 +162,8 @@
 - (BOOL)_isAbsolute;
 - (BOOL)_isDeallocating;
 - (void)_performWithPhysicalURL:(id /* block */)arg1;
-- (int)_promiseExtensionConsume;
-- (void)_promiseExtensionRelease:(int)arg1;
+- (long long)_promiseExtensionConsume;
+- (void)_promiseExtensionRelease:(long long)arg1;
 - (BOOL)_tryRetain;
 - (id)_valueFromFaultDictionary:(id)arg1 forKey:(id)arg2;
 - (id)_web_URLByRemovingLastPathComponent_nowarn;
@@ -305,7 +305,7 @@
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
-+ (id)URLWithDisplayIdentifier:(id)arg1 forSearchResultDomain:(int)arg2 andIdentifier:(unsigned int)arg3;
++ (id)URLWithDisplayIdentifier:(id)arg1 forSearchResultDomain:(int)arg2 andIdentifier:(unsigned long long)arg3;
 + (id)mapsURLWithQuery:(id)arg1;
 + (id)mapsURLWithSourceAddress:(id)arg1 destinationAddress:(id)arg2;
 + (id)ui_URLFromExportBookmark:(id)arg1;
@@ -343,7 +343,7 @@
 
 // Image: /System/Library/Frameworks/UserNotifications.framework/UserNotifications
 
-- (unsigned int)un_fileSize;
+- (unsigned long long)un_fileSize;
 - (id)un_resourceTypeHint;
 
 // Image: /System/Library/Frameworks/WebKit.framework/WebKit
@@ -478,7 +478,7 @@
 - (id)br_physicalURL;
 - (void)br_preCacheBookmarkData:(id)arg1 versionEtag:(id)arg2;
 - (id)br_realpathURL;
-- (BOOL)br_setAccessTime:(unsigned int)arg1 error:(id*)arg2;
+- (BOOL)br_setAccessTime:(unsigned long long)arg1 error:(id*)arg2;
 - (BOOL)br_setTagNames:(id)arg1 error:(id*)arg2;
 - (id)br_typeIdentifierWithError:(id*)arg1;
 - (BOOL)br_wouldBeExcludedFromSync;
@@ -684,7 +684,7 @@
 - (BOOL)tsu_conformsToUTI:(id)arg1;
 - (id)tsu_displayName;
 - (id)tsu_documentIdentifier;
-- (unsigned int)tsu_fileSize;
+- (unsigned long long)tsu_fileSize;
 - (BOOL)tsu_isFileSizeTooLargeForSharing;
 - (BOOL)tsu_isShared;
 - (BOOL)tsu_isSharedWithMe;
@@ -947,7 +947,7 @@
 
 - (id)downloadTaskDescription;
 - (id)downloadURL;
-- (int)totalBytesExpectedToBeDownloaded;
+- (long long)totalBytesExpectedToBeDownloaded;
 - (id)tsp_URLExceptPrivate;
 - (id)tsp_documentIdentifier;
 - (id)tsp_documentIdentifierWithFallback:(BOOL)arg1;

@@ -8,11 +8,11 @@
 }
 
 - (void).cxx_destruct;
-- (int)dataState;
+- (long long)dataState;
 - (id)fileState;
 - (id)fileURL;
 - (BOOL)hasDataState;
 - (BOOL)hasFileState;
-- (id)initWithIdentifier:(int)arg1 classType:(int)arg2 fileState:(id)arg3 packageURL:(id)arg4;
+- (id)initWithIdentifier:(long long)arg1 classType:(int)arg2 fileState:(id)arg3 packageURL:(id)arg4;
 
 @end

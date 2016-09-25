@@ -6,7 +6,7 @@
     NSDictionary * diagnostics;
     struct { 
         double timestamp; 
-        unsigned int amount; 
+        unsigned long long amount; 
     }  urgencies;
 }
 

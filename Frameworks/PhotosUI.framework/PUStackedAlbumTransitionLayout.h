@@ -4,60 +4,60 @@
 
 @interface PUStackedAlbumTransitionLayout : UICollectionViewTransitionLayout {
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _currentCollapsedStackCenter;
     PUCollectionViewLayoutCache * _currentLayoutCache;
     BOOL  _didPrepareLayout;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _expandedStackDelta;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _expandedStackFinalDelta;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _finalCollapsedStackCenter;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _initialCollapsedStackCenter;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _interactionOffset;
     BOOL  _isExpanding;
     PUCollectionViewLayoutCache * _nextLayoutCache;
 }
 
-@property (nonatomic) struct CGPoint { double x1; double x2; } currentCollapsedStackCenter;
-@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } expandedStackFinalDelta;
-@property (nonatomic) struct CGPoint { double x1; double x2; } finalCollapsedStackCenter;
-@property (nonatomic) struct CGPoint { double x1; double x2; } initialCollapsedStackCenter;
-@property (nonatomic) struct CGPoint { double x1; double x2; } interactionOffset;
+@property (nonatomic) struct CGPoint { float x1; float x2; } currentCollapsedStackCenter;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } expandedStackFinalDelta;
+@property (nonatomic) struct CGPoint { float x1; float x2; } finalCollapsedStackCenter;
+@property (nonatomic) struct CGPoint { float x1; float x2; } initialCollapsedStackCenter;
+@property (nonatomic) struct CGPoint { float x1; float x2; } interactionOffset;
 @property (nonatomic, readonly) BOOL isExpanding;
 
 - (void).cxx_destruct;
-- (struct CGPoint { double x1; double x2; })_centerOfLayoutAttributes:(id)arg1;
-- (struct CGPoint { double x1; double x2; })_newCenterForLayoutAttributes:(id)arg1 transitionProgress:(float)arg2;
-- (struct CGPoint { double x1; double x2; })currentCollapsedStackCenter;
-- (struct CGPoint { double x1; double x2; })expandedStackFinalDelta;
-- (struct CGPoint { double x1; double x2; })finalCollapsedStackCenter;
+- (struct CGPoint { float x1; float x2; })_centerOfLayoutAttributes:(id)arg1;
+- (struct CGPoint { float x1; float x2; })_newCenterForLayoutAttributes:(id)arg1 transitionProgress:(float)arg2;
+- (struct CGPoint { float x1; float x2; })currentCollapsedStackCenter;
+- (struct CGPoint { float x1; float x2; })expandedStackFinalDelta;
+- (struct CGPoint { float x1; float x2; })finalCollapsedStackCenter;
 - (id)initWithCurrentLayout:(id)arg1 nextLayout:(id)arg2 isExpanding:(BOOL)arg3;
-- (struct CGPoint { double x1; double x2; })initialCollapsedStackCenter;
-- (struct CGPoint { double x1; double x2; })interactionOffset;
+- (struct CGPoint { float x1; float x2; })initialCollapsedStackCenter;
+- (struct CGPoint { float x1; float x2; })interactionOffset;
 - (BOOL)isExpanding;
 - (id)layoutAttributesForDecorationViewOfKind:(id)arg1 atIndexPath:(id)arg2;
-- (id)layoutAttributesForElementsInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)layoutAttributesForElementsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;
 - (id)layoutAttributesForSupplementaryViewOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (void)prepareLayout;
-- (void)setCurrentCollapsedStackCenter:(struct CGPoint { double x1; double x2; })arg1;
-- (void)setFinalCollapsedStackCenter:(struct CGPoint { double x1; double x2; })arg1;
-- (void)setInitialCollapsedStackCenter:(struct CGPoint { double x1; double x2; })arg1;
-- (void)setInteractionOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setCurrentCollapsedStackCenter:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setFinalCollapsedStackCenter:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setInitialCollapsedStackCenter:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setInteractionOffset:(struct CGPoint { float x1; float x2; })arg1;
 
 @end

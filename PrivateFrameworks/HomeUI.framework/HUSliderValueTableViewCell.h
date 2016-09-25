@@ -9,10 +9,10 @@
 }
 
 @property (nonatomic) <HUSliderValueTableViewCellDelegate> *delegate;
-@property (nonatomic) double maximumValue;
-@property (nonatomic) double minimumValue;
+@property (nonatomic) float maximumValue;
+@property (nonatomic) float minimumValue;
 @property (nonatomic, retain) UISlider *slider;
-@property (nonatomic) double value;
+@property (nonatomic) float value;
 @property (nonatomic, retain) UILabel *valueLabel;
 
 - (void).cxx_destruct;

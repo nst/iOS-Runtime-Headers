@@ -7,9 +7,9 @@
     NSString * _accountID;
     BOOL  _appMessageFallbackImage;
     NSDictionary * _attributionInfo;
-    unsigned int  _averageTransferRate;
+    unsigned long long  _averageTransferRate;
     NSDate * _createdDate;
-    unsigned int  _currentBytes;
+    unsigned long long  _currentBytes;
     int  _error;
     NSString * _errorDescription;
     NSString * _filename;
@@ -23,7 +23,7 @@
     BOOL  _isDirectory;
     BOOL  _isIncoming;
     BOOL  _isSticker;
-    unsigned int  _lastAveragedBytes;
+    unsigned long long  _lastAveragedBytes;
     double  _lastAveragedInterval;
     double  _lastUpdatedInterval;
     NSData * _localBookmark;
@@ -37,7 +37,7 @@
     BOOL  _shouldForceArchive;
     NSDate * _startDate;
     NSDictionary * _stickerUserInfo;
-    unsigned int  _totalBytes;
+    unsigned long long  _totalBytes;
     NSDictionary * _transcoderUserInfo;
     NSURL * _transferDataURL;
     int  _transferState;
@@ -47,17 +47,17 @@
 }
 
 @property (nonatomic, retain) NSDictionary *AuxTranscoderUserInfo;
-@property (nonatomic, readonly) unsigned int _lastAveragedBytes;
+@property (nonatomic, readonly) unsigned long long _lastAveragedBytes;
 @property (setter=_setLastAveragedInterval:, nonatomic) double _lastAveragedInterval;
 @property (setter=_setLastUpdatedInterval:, nonatomic) double _lastUpdatedInterval;
 @property (setter=_setNeedsWrapper:, nonatomic) BOOL _needsWrapper;
 @property (nonatomic, retain) NSString *accountID;
 @property (nonatomic) BOOL appMessageFallbackImage;
 @property (nonatomic, retain) NSDictionary *attributionInfo;
-@property (nonatomic) unsigned int averageTransferRate;
+@property (nonatomic) unsigned long long averageTransferRate;
 @property (nonatomic, readonly) BOOL canBeAccepted;
 @property (nonatomic, retain) NSDate *createdDate;
-@property (nonatomic) unsigned int currentBytes;
+@property (nonatomic) unsigned long long currentBytes;
 @property (nonatomic, readonly, retain) NSString *displayName;
 @property (setter=_setError:, nonatomic) int error;
 @property (setter=_setErrorDescription:, nonatomic, retain) NSString *errorDescription;
@@ -86,7 +86,7 @@
 @property (setter=_setForceArchive:, nonatomic) BOOL shouldForceArchive;
 @property (setter=_setStartDate:, nonatomic, retain) NSDate *startDate;
 @property (nonatomic, retain) NSDictionary *stickerUserInfo;
-@property (nonatomic) unsigned int totalBytes;
+@property (nonatomic) unsigned long long totalBytes;
 @property (nonatomic, retain) NSDictionary *transcoderUserInfo;
 @property (setter=_setTransferDataURL:, nonatomic, retain) NSURL *transferDataURL;
 @property (setter=_setTransferState:, nonatomic) int transferState;
@@ -103,14 +103,14 @@
 - (void)_calculateTypeInformation;
 - (void)_clear;
 - (id)_dictionaryRepresentation;
-- (id)_initWithGUID:(id)arg1 filename:(id)arg2 isDirectory:(BOOL)arg3 localURL:(id)arg4 account:(id)arg5 otherPerson:(id)arg6 totalBytes:(unsigned int)arg7 hfsType:(unsigned long)arg8 hfsCreator:(unsigned long)arg9 hfsFlags:(unsigned short)arg10 isIncoming:(BOOL)arg11;
-- (unsigned int)_lastAveragedBytes;
+- (id)_initWithGUID:(id)arg1 filename:(id)arg2 isDirectory:(BOOL)arg3 localURL:(id)arg4 account:(id)arg5 otherPerson:(id)arg6 totalBytes:(unsigned long long)arg7 hfsType:(unsigned long)arg8 hfsCreator:(unsigned long)arg9 hfsFlags:(unsigned short)arg10 isIncoming:(BOOL)arg11;
+- (unsigned long long)_lastAveragedBytes;
 - (double)_lastAveragedInterval;
 - (double)_lastUpdatedInterval;
 - (BOOL)_needsWrapper;
 - (void)_setAccount:(id)arg1 otherPerson:(id)arg2;
-- (void)_setAveragedTransferRate:(unsigned int)arg1 lastAveragedInterval:(double)arg2 lastAveragedBytes:(unsigned int)arg3;
-- (void)_setCurrentBytes:(unsigned int)arg1 totalBytes:(unsigned int)arg2;
+- (void)_setAveragedTransferRate:(unsigned long long)arg1 lastAveragedInterval:(double)arg2 lastAveragedBytes:(unsigned long long)arg3;
+- (void)_setCurrentBytes:(unsigned long long)arg1 totalBytes:(unsigned long long)arg2;
 - (void)_setDirectory:(BOOL)arg1 hfsType:(unsigned long)arg2 hfsCreator:(unsigned long)arg3 hfsFlags:(unsigned short)arg4;
 - (void)_setError:(int)arg1;
 - (void)_setErrorDescription:(id)arg1;
@@ -127,10 +127,10 @@
 - (id)accountID;
 - (BOOL)appMessageFallbackImage;
 - (id)attributionInfo;
-- (unsigned int)averageTransferRate;
+- (unsigned long long)averageTransferRate;
 - (BOOL)canBeAccepted;
 - (id)createdDate;
-- (unsigned int)currentBytes;
+- (unsigned long long)currentBytes;
 - (void)dealloc;
 - (id)description;
 - (id)displayName;
@@ -162,9 +162,9 @@
 - (void)setAppMessageFallbackImage:(BOOL)arg1;
 - (void)setAttributionInfo:(id)arg1;
 - (void)setAuxTranscoderUserInfo:(id)arg1;
-- (void)setAverageTransferRate:(unsigned int)arg1;
+- (void)setAverageTransferRate:(unsigned long long)arg1;
 - (void)setCreatedDate:(id)arg1;
-- (void)setCurrentBytes:(unsigned int)arg1;
+- (void)setCurrentBytes:(unsigned long long)arg1;
 - (void)setFilename:(id)arg1;
 - (void)setGuid:(id)arg1;
 - (void)setHfsCreator:(unsigned long)arg1;
@@ -182,7 +182,7 @@
 - (void)setRegisteredAsStandalone:(BOOL)arg1;
 - (void)setShouldAttemptToResume:(BOOL)arg1;
 - (void)setStickerUserInfo:(id)arg1;
-- (void)setTotalBytes:(unsigned int)arg1;
+- (void)setTotalBytes:(unsigned long long)arg1;
 - (void)setTranscoderUserInfo:(id)arg1;
 - (void)setTransferredFilename:(id)arg1;
 - (void)setType:(id)arg1;
@@ -191,7 +191,7 @@
 - (BOOL)shouldForceArchive;
 - (id)startDate;
 - (id)stickerUserInfo;
-- (unsigned int)totalBytes;
+- (unsigned long long)totalBytes;
 - (id)transcoderUserInfo;
 - (id)transferDataURL;
 - (int)transferState;

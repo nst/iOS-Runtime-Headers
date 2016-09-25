@@ -6,8 +6,8 @@
     struct CGImage { } * _baseImage;
     NSMutableArray * _patchArray;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _size;
 }
 
@@ -20,6 +20,6 @@
 - (void)drawInContext:(struct CGContext { }*)arg1;
 - (id)initWithImage:(struct CGImage { }*)arg1;
 - (void)removeAllPatches;
-- (struct CGSize { double x1; double x2; })size;
+- (struct CGSize { float x1; float x2; })size;
 
 @end

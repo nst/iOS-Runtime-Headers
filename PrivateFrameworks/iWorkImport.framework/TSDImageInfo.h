@@ -11,8 +11,8 @@
     TSUBezierPath * mInstantAlphaPath;
     TSDMaskInfo * mMaskInfo;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  mNaturalSize;
     TSPData * mOriginalImageData;
     TSDMediaStyle * mStyle;
@@ -39,7 +39,7 @@
 @property (nonatomic, retain) TSUBezierPath *instantAlphaPath;
 @property (nonatomic, retain) TSDMaskInfo *maskInfo;
 @property (nonatomic) BOOL matchesObjectPlaceholderGeometry;
-@property (nonatomic) struct CGSize { double x1; double x2; } naturalSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } naturalSize;
 @property (nonatomic, retain) TSPData *originalImageData;
 @property (nonatomic) TSPObject<TSDOwningAttachment> *owningAttachment;
 @property (nonatomic, readonly) TSPObject<TSDOwningAttachment> *owningAttachmentNoRecurse;
@@ -49,7 +49,7 @@
 @property (nonatomic, retain) TSPData *thumbnailImageData;
 @property (nonatomic, readonly) TSUBezierPath *tracedPath;
 
-+ (void)adjustIncomingImageGeometry:(id)arg1 maskGeometry:(id)arg2 forImageData:(id)arg3 maskedWithInstantAlphaPath:(id)arg4 withNaturalSize:(struct CGSize { double x1; double x2; })arg5 forTargetImageGeometry:(id)arg6 withTargetMaskGeometry:(id)arg7;
++ (void)adjustIncomingImageGeometry:(id)arg1 maskGeometry:(id)arg2 forImageData:(id)arg3 maskedWithInstantAlphaPath:(id)arg4 withNaturalSize:(struct CGSize { float x1; float x2; })arg5 forTargetImageGeometry:(id)arg6 withTargetMaskGeometry:(id)arg7;
 + (void)bootstrapPresetsOfKind:(id)arg1 inTheme:(id)arg2 alternate:(int)arg3;
 + (void)bootstrapPresetsOfKind:(id)arg1 inTheme:(id)arg2 alternate:(int)arg3 reservedCount:(unsigned int)arg4;
 + (id)bootstrapPropertyMapForPresetIndex:(unsigned int)arg1 inTheme:(id)arg2 alternate:(int)arg3;
@@ -60,16 +60,16 @@
 - (id)adjustedImageData;
 - (BOOL)canPasteAsPDF;
 - (BOOL)canResetMediaSize;
-- (struct CGPoint { double x1; double x2; })centerForReplacingWithNewMedia;
+- (struct CGPoint { float x1; float x2; })centerForReplacingWithNewMedia;
 - (id)childInfos;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })computeFullTransform;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })computeFullTransform;
 - (id)copyWithContext:(id)arg1;
 - (id)copyWithContext:(id)arg1 style:(id)arg2;
 - (id)datasForReplacingMediaContentsWithAssociatedHints;
 - (void)dealloc;
 - (id)defaultMaskInfo;
 - (id)defaultMaskInfoWithContext:(id)arg1;
-- (struct CGSize { double x1; double x2; })defaultOriginalSize;
+- (struct CGSize { float x1; float x2; })defaultOriginalSize;
 - (id)enhancedImageData;
 - (id)geometry;
 - (id)geometryWithMask;
@@ -97,18 +97,18 @@
 - (id)mediaFileType;
 - (id)mixedObjectWithFraction:(float)arg1 ofObject:(id)arg2;
 - (int)mixingTypeWithObject:(id)arg1 context:(id)arg2;
-- (struct CGSize { double x1; double x2; })naturalSize;
+- (struct CGSize { float x1; float x2; })naturalSize;
 - (BOOL)needsDownload;
 - (id)objectForProperty:(int)arg1;
 - (id)originalImageData;
-- (struct CGSize { double x1; double x2; })originalSize;
+- (struct CGSize { float x1; float x2; })originalSize;
 - (void)p_upgradeImageGeometry;
 - (void)p_upgradeImageThumbnail;
 - (id)parentInfo;
 - (id)presetKind;
 - (id)propertyNameForFlagsCommand;
 - (id)propertyNameForOriginalSizeCommand;
-- (struct CGSize { double x1; double x2; })rawDataSize;
+- (struct CGSize { float x1; float x2; })rawDataSize;
 - (Class)repClass;
 - (void)saveToArchive:(struct ImageArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct DrawableArchive {} *x5; struct DataReference {} *x6; struct Reference {} *x7; struct Size {} *x8; struct Reference {} *x9; struct DataReference {} *x10; struct DataReference {} *x11; struct Size {} *x12; struct Path {} *x13; struct ImageAdjustmentsArchive {} *x14; unsigned int x15; bool x16; struct DataReference {} *x17; struct DataReference {} *x18; struct DataReference {} *x19; struct Reference {} *x20; struct Reference {} *x21; struct Reference {} *x22; struct Path {} *x23; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
@@ -121,7 +121,7 @@
 - (void)setImageData:(id)arg1 thumbnailData:(id)arg2;
 - (void)setInstantAlphaPath:(id)arg1;
 - (void)setMaskInfo:(id)arg1;
-- (void)setNaturalSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setNaturalSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setOriginalImageData:(id)arg1;
 - (void)setParentInfo:(id)arg1;
 - (void)setStyle:(id)arg1;
@@ -131,12 +131,12 @@
 - (Class)styleClass;
 - (id)styleIdentifierTemplateForNewPreset;
 - (id)subclassInitFromUnarchiver:(id)arg1;
-- (struct CGSize { double x1; double x2; })targetSizeForImageData:(id)arg1 associatedHint:(id)arg2;
+- (struct CGSize { float x1; float x2; })targetSizeForImageData:(id)arg1 associatedHint:(id)arg2;
 - (id)thumbnailAdjustedImageData;
 - (id)thumbnailImageData;
 - (id)tracedPath;
 - (void)updateGeometryToReplaceMediaInfo:(id)arg1;
-- (id)updatedMaskInfoGeometryForImageDraggedBy:(struct CGPoint { double x1; double x2; })arg1;
+- (id)updatedMaskInfoGeometryForImageDraggedBy:(struct CGPoint { float x1; float x2; })arg1;
 - (void)wasAddedToDocumentRoot:(id)arg1 dolcContext:(id)arg2;
 - (void)wasRemovedFromDocumentRoot:(id)arg1;
 - (void)willBeAddedToDocumentRoot:(id)arg1 dolcContext:(id)arg2;

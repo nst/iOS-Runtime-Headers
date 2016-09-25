@@ -4,10 +4,10 @@
 
 @interface BWFigVideoCaptureStream : NSObject {
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _HDRStillCaptureReferenceFramePTS;
     int  _activeFormatIndex;
     BOOL  _activeStillImageCaptureIsMultiCameraCaptureAndFusion;
@@ -15,7 +15,7 @@
     int  _activeStillImagePrimaryCaptureType;
     NSDictionary * _attributes;
     BOOL  _avoidsSphereRecentering;
-    double  _baseZoomFactor;
+    float  _baseZoomFactor;
     int  _cameraAccessLock;
     BOOL  _clientProcessHasAccessToCamera;
     BOOL  _defersFaceDetectionStartup;
@@ -32,19 +32,19 @@
     BOOL  _hasSphere;
     int  _lastStillImageCaptureType;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _lastStillImagePTS;
     int  _masterToSlaveFrameRateRatio;
-    double  _maximumFrameRate;
-    double  _minimumFrameRate;
+    float  _maximumFrameRate;
+    float  _minimumFrameRate;
     NSDictionary * _moduleInfo;
     BOOL  _motionDataInvalid;
     BOOL  _multiStreamEnabled;
     NSDictionary * _opticalCenter;
-    double  _pixelSize;
+    float  _pixelSize;
     NSString * _portType;
     BOOL  _providesPreBracketedEV0;
     int  _receivedImagesOrErrorsForCaptureStillImageNow;
@@ -76,23 +76,23 @@
 @property (nonatomic, readonly) int activeStillImageCaptureType;
 @property (readonly) NSDictionary *attributes;
 @property (nonatomic) BOOL avoidsSphereRecentering;
-@property (readonly) double baseZoomFactor;
+@property (readonly) float baseZoomFactor;
 @property (nonatomic) BOOL defersFaceDetectionStartup;
 @property (nonatomic) <BWFigVideoCaptureStreamDelegate> *delegate;
 @property (nonatomic) BOOL enablesSphereWhenAvailable;
 @property (readonly) NSDictionary *geometricDistortionCoefficients;
 @property (readonly) BOOL hasSphere;
 @property (nonatomic, readonly) int lastStillImageCaptureType;
-@property (nonatomic, readonly) struct { int x1; int x2; unsigned int x3; int x4; } lastStillImagePTS;
-@property (nonatomic, readonly) double maximumAllowedFrameRate;
-@property (nonatomic) double maximumFrameRate;
-@property (nonatomic, readonly) double minimumAllowedFrameRate;
-@property (nonatomic) double minimumFrameRate;
+@property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } lastStillImagePTS;
+@property (nonatomic, readonly) float maximumAllowedFrameRate;
+@property (nonatomic) float maximumFrameRate;
+@property (nonatomic, readonly) float minimumAllowedFrameRate;
+@property (nonatomic) float minimumFrameRate;
 @property (readonly) NSDictionary *moduleInfo;
 @property (readonly) BOOL motionDataInvalid;
 @property (readonly) BOOL multiStreamEnabled;
 @property (readonly) NSDictionary *opticalCenter;
-@property (readonly) double pixelSize;
+@property (readonly) float pixelSize;
 @property (readonly) NSString *portType;
 @property (nonatomic, readonly) BOOL providesPreBracketedEV0;
 @property (readonly) NSDictionary *sensorIDDictionary;
@@ -141,7 +141,7 @@
 - (BOOL)hasSphere;
 - (id)initWithFigCaptureStream:(struct OpaqueFigCaptureStream { }*)arg1 attributes:(id)arg2 sensorIDDictionary:(id)arg3 synchronizedStreamsEnabled:(BOOL)arg4;
 - (int)lastStillImageCaptureType;
-- (struct { int x1; int x2; unsigned int x3; int x4; })lastStillImagePTS;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })lastStillImagePTS;
 - (float)maximumAllowedFrameRate;
 - (float)maximumFrameRate;
 - (float)minimumAllowedFrameRate;

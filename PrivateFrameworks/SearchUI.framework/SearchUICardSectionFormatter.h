@@ -3,33 +3,33 @@
  */
 
 @interface SearchUICardSectionFormatter : NSObject {
-    double  _imageXInset;
-    double  _imageYInset;
+    float  _imageXInset;
+    float  _imageYInset;
     UIFont * _primaryFont;
-    double  _primaryTextBaselineFromBottom;
-    double  _primaryTextBaselineFromTop;
+    float  _primaryTextBaselineFromBottom;
+    float  _primaryTextBaselineFromTop;
     BOOL  _primaryTextIsVibrant;
-    double  _primaryTextLeadingInset;
+    float  _primaryTextLeadingInset;
     UIFont * _secondaryFont;
-    double  _secondaryTextBaselineFromBottom;
-    double  _secondaryTextBaselineFromTop;
+    float  _secondaryTextBaselineFromBottom;
+    float  _secondaryTextBaselineFromTop;
     BOOL  _secondaryTextIsVibrant;
-    double  _secondaryTextLeadingInset;
+    float  _secondaryTextLeadingInset;
     unsigned int  _style;
 }
 
-@property (nonatomic) double imageXInset;
-@property (nonatomic) double imageYInset;
+@property (nonatomic) float imageXInset;
+@property (nonatomic) float imageYInset;
 @property (nonatomic, retain) UIFont *primaryFont;
-@property (nonatomic) double primaryTextBaselineFromBottom;
-@property (nonatomic) double primaryTextBaselineFromTop;
+@property (nonatomic) float primaryTextBaselineFromBottom;
+@property (nonatomic) float primaryTextBaselineFromTop;
 @property (nonatomic) BOOL primaryTextIsVibrant;
-@property (nonatomic) double primaryTextLeadingInset;
+@property (nonatomic) float primaryTextLeadingInset;
 @property (nonatomic, retain) UIFont *secondaryFont;
-@property (nonatomic) double secondaryTextBaselineFromBottom;
-@property (nonatomic) double secondaryTextBaselineFromTop;
+@property (nonatomic) float secondaryTextBaselineFromBottom;
+@property (nonatomic) float secondaryTextBaselineFromTop;
 @property (nonatomic) BOOL secondaryTextIsVibrant;
-@property (nonatomic) double secondaryTextLeadingInset;
+@property (nonatomic) float secondaryTextLeadingInset;
 @property (nonatomic) unsigned int style;
 
 - (void).cxx_destruct;

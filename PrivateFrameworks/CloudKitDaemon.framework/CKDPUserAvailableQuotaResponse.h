@@ -6,11 +6,11 @@
     struct { 
         unsigned int storageAvailableBytes : 1; 
     }  _has;
-    unsigned int  _storageAvailableBytes;
+    unsigned long long  _storageAvailableBytes;
 }
 
 @property (nonatomic) BOOL hasStorageAvailableBytes;
-@property (nonatomic) unsigned int storageAvailableBytes;
+@property (nonatomic) unsigned long long storageAvailableBytes;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -22,8 +22,8 @@
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setHasStorageAvailableBytes:(BOOL)arg1;
-- (void)setStorageAvailableBytes:(unsigned int)arg1;
-- (unsigned int)storageAvailableBytes;
+- (void)setStorageAvailableBytes:(unsigned long long)arg1;
+- (unsigned long long)storageAvailableBytes;
 - (void)writeTo:(id)arg1;
 
 @end

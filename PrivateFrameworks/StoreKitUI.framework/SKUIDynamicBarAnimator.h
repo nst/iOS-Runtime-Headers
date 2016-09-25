@@ -3,32 +3,32 @@
  */
 
 @interface SKUIDynamicBarAnimator : NSObject {
-    double  _bottomBarOffset;
-    double  _bottomBarOffsetForState;
+    float  _bottomBarOffset;
+    float  _bottomBarOffsetForState;
     <SKUIDynamicBarAnimatorDelegate> * _delegate;
     BOOL  _didHideBarsByMoving;
     BOOL  _didHideOrShowBarsExplicitly;
     CADisplayLink * _displayLink;
     BOOL  _dragging;
     BOOL  _inSteadyState;
-    double  _lastOffset;
-    double  _lastUnroundedTopBarHeight;
-    double  _maximumBottomBarOffset;
-    double  _minimumTopBarHeight;
+    float  _lastOffset;
+    float  _lastUnroundedTopBarHeight;
+    float  _maximumBottomBarOffset;
+    float  _minimumTopBarHeight;
     int  _state;
-    double  _targetTopBarHeight;
-    double  _topBarHeight;
-    double  _topBarHeightForState;
-    double  _unroundedTopBarHeight;
+    float  _targetTopBarHeight;
+    float  _topBarHeight;
+    float  _topBarHeightForState;
+    float  _unroundedTopBarHeight;
 }
 
-@property (nonatomic, readonly) double bottomBarOffset;
+@property (nonatomic, readonly) float bottomBarOffset;
 @property (nonatomic) <SKUIDynamicBarAnimatorDelegate> *delegate;
-@property (nonatomic) double maximumBottomBarOffset;
-@property (nonatomic) double minimumTopBarHeight;
+@property (nonatomic) float maximumBottomBarOffset;
+@property (nonatomic) float minimumTopBarHeight;
 @property (nonatomic, readonly) int state;
 @property (nonatomic, readonly) int targetState;
-@property (nonatomic, readonly) double topBarHeight;
+@property (nonatomic, readonly) float topBarHeight;
 
 - (void).cxx_destruct;
 - (float)_bottomBarOffsetForTopBarHeight:(float)arg1;

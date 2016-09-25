@@ -6,7 +6,7 @@
     struct __CFUserNotification { } * _cfUserNotification;
     NSMutableDictionary * _dialogInfo;
     NSObject<OS_dispatch_source> * _displaySource;
-    unsigned int  _nextDisplayBeginTime;
+    unsigned long long  _nextDisplayBeginTime;
     id  _progressSubscriber;
     struct __CFRunLoopSource { } * _source;
 }

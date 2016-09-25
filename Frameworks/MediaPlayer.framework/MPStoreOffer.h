@@ -3,7 +3,7 @@
  */
 
 @interface MPStoreOffer : NSObject {
-    unsigned int  _entityPersistentID;
+    unsigned long long  _entityPersistentID;
     NSString * _entityTitle;
     int  _entityType;
     NSDictionary * _mediaAssetDictionary;
@@ -17,14 +17,14 @@
 @property (nonatomic, readonly) int buyType;
 @property (nonatomic, readonly, copy) NSString *displayPrice;
 @property (nonatomic, readonly, copy) NSString *displayTitle;
-@property (nonatomic, readonly) unsigned int downloadSize;
-@property (nonatomic, readonly) unsigned int entityPersistentID;
+@property (nonatomic, readonly) unsigned long long downloadSize;
+@property (nonatomic, readonly) unsigned long long entityPersistentID;
 @property (nonatomic, readonly, copy) NSString *entityTitle;
 @property (nonatomic, readonly) int entityType;
 @property (nonatomic, readonly) int passType;
 @property (nonatomic, readonly) double previewDuration;
 @property (nonatomic, readonly, copy) NSURL *previewURL;
-@property (nonatomic, readonly) double price;
+@property (nonatomic, readonly) float price;
 @property (nonatomic, readonly, copy) NSString *regularPriceDisplayPrice;
 @property (nonatomic, readonly) BOOL requiresConfirmation;
 
@@ -43,11 +43,11 @@
 - (id)buyURL;
 - (id)displayPrice;
 - (id)displayTitle;
-- (unsigned int)downloadSize;
-- (unsigned int)entityPersistentID;
+- (unsigned long long)downloadSize;
+- (unsigned long long)entityPersistentID;
 - (id)entityTitle;
 - (int)entityType;
-- (id)initWithStoreOfferDictionary:(id)arg1 regularPriceOfferDictionary:(id)arg2 passType:(int)arg3 entityType:(int)arg4 persistentID:(unsigned int)arg5 title:(id)arg6;
+- (id)initWithStoreOfferDictionary:(id)arg1 regularPriceOfferDictionary:(id)arg2 passType:(int)arg3 entityType:(int)arg4 persistentID:(unsigned long long)arg5 title:(id)arg6;
 - (int)passType;
 - (double)previewDuration;
 - (id)previewURL;

@@ -7,13 +7,13 @@
     struct { 
         unsigned int stopID : 1; 
     }  _has;
-    unsigned int  _stopID;
+    unsigned long long  _stopID;
 }
 
 @property (nonatomic, retain) GEOLatLng *coordinate;
 @property (nonatomic, readonly) BOOL hasCoordinate;
 @property (nonatomic) BOOL hasStopID;
-@property (nonatomic) unsigned int stopID;
+@property (nonatomic) unsigned long long stopID;
 
 - (id)coordinate;
 - (void)copyTo:(id)arg1;
@@ -30,8 +30,8 @@
 - (BOOL)readFrom:(id)arg1;
 - (void)setCoordinate:(id)arg1;
 - (void)setHasStopID:(BOOL)arg1;
-- (void)setStopID:(unsigned int)arg1;
-- (unsigned int)stopID;
+- (void)setStopID:(unsigned long long)arg1;
+- (unsigned long long)stopID;
 - (void)writeTo:(id)arg1;
 
 @end

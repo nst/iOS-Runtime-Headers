@@ -17,7 +17,7 @@
 - (void).cxx_destruct;
 - (void)cancelResultsForTest:(id)arg1;
 - (void)connection:(id)arg1 connectionStateChanged:(int)arg2;
-- (void)connection:(id)arg1 didSendBodyData:(int)arg2 totalBytesSent:(int)arg3 totalBytesExpected:(int)arg4;
+- (void)connection:(id)arg1 didSendBodyData:(long long)arg2 totalBytesSent:(long long)arg3 totalBytesExpected:(long long)arg4;
 - (void)dealloc;
 - (id)delegate;
 - (void)downloadAsset:(id)arg1 destinationFileURL:(id)arg2 sessionId:(id)arg3 completion:(id /* block */)arg4;

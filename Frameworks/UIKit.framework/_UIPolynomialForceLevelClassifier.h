@@ -3,39 +3,39 @@
  */
 
 @interface _UIPolynomialForceLevelClassifier : _UIForceLevelClassifier {
-    double  _currentForce;
+    float  _currentForce;
     struct _UIForceLevelInfo { 
         int identifier; 
-        double center; 
-        double minimum; 
-        double maximum; 
-        double attractionStrength; 
+        float center; 
+        float minimum; 
+        float maximum; 
+        float attractionStrength; 
         int attractionSharpness; 
-        double attractionSlope; 
+        float attractionSlope; 
     }  _standardLevel;
     struct _UIForceLevelInfo { 
         int identifier; 
-        double center; 
-        double minimum; 
-        double maximum; 
-        double attractionStrength; 
+        float center; 
+        float minimum; 
+        float maximum; 
+        float attractionStrength; 
         int attractionSharpness; 
-        double attractionSlope; 
+        float attractionSlope; 
     }  _strongLevel;
 }
 
-@property (nonatomic) struct _UIForceLevelInfo { int x1; double x2; double x3; double x4; double x5; int x6; double x7; } standardLevel;
-@property (nonatomic) struct _UIForceLevelInfo { int x1; double x2; double x3; double x4; double x5; int x6; double x7; } strongLevel;
+@property (nonatomic) struct _UIForceLevelInfo { int x1; float x2; float x3; float x4; float x5; int x6; float x7; } standardLevel;
+@property (nonatomic) struct _UIForceLevelInfo { int x1; float x2; float x3; float x4; float x5; int x6; float x7; } strongLevel;
 
 - (int)_forceLevelForValue:(float)arg1;
 - (int)currentForceLevel;
 - (id)description;
 - (id)init;
-- (void)observeTouchWithForceValue:(float)arg1 atTimestamp:(double)arg2 withCentroidAtLocation:(struct CGPoint { double x1; double x2; })arg3;
+- (void)observeTouchWithForceValue:(float)arg1 atTimestamp:(double)arg2 withCentroidAtLocation:(struct CGPoint { float x1; float x2; })arg3;
 - (void)reset;
-- (void)setStandardLevel:(struct _UIForceLevelInfo { int x1; double x2; double x3; double x4; double x5; int x6; double x7; })arg1;
-- (void)setStrongLevel:(struct _UIForceLevelInfo { int x1; double x2; double x3; double x4; double x5; int x6; double x7; })arg1;
-- (struct _UIForceLevelInfo { int x1; double x2; double x3; double x4; double x5; int x6; double x7; })standardLevel;
-- (struct _UIForceLevelInfo { int x1; double x2; double x3; double x4; double x5; int x6; double x7; })strongLevel;
+- (void)setStandardLevel:(struct _UIForceLevelInfo { int x1; float x2; float x3; float x4; float x5; int x6; float x7; })arg1;
+- (void)setStrongLevel:(struct _UIForceLevelInfo { int x1; float x2; float x3; float x4; float x5; int x6; float x7; })arg1;
+- (struct _UIForceLevelInfo { int x1; float x2; float x3; float x4; float x5; int x6; float x7; })standardLevel;
+- (struct _UIForceLevelInfo { int x1; float x2; float x3; float x4; float x5; int x6; float x7; })strongLevel;
 
 @end

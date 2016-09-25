@@ -17,7 +17,7 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithSeed:(id)arg1;
-- (unsigned int)nextBits:(int)arg1;
+- (unsigned long long)nextBits:(int)arg1;
 - (BOOL)nextBool;
 - (int)nextInt;
 - (unsigned int)nextIntWithUpperBound:(unsigned int)arg1;

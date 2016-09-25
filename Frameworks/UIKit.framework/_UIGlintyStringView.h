@@ -9,19 +9,19 @@
     BOOL  _animationRepeats;
     UIColor * _backgroundColor;
     UIView * _backgroundView;
-    double  _blurAlpha;
+    float  _blurAlpha;
     NSMutableSet * _blurHiddenRequesters;
     UIView * _blurView;
     UIImage * _chevron;
     UIColor * _chevronBackgroundColor;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _chevronFrame;
     int  _chevronStyle;
@@ -32,11 +32,11 @@
     BOOL  _hasCustomBackgroundColor;
     BOOL  _highlight;
     UIView * _highlightView;
-    double  _horizontalPadding;
+    float  _horizontalPadding;
     UILabel * _label;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _labelSize;
     _UILegibilitySettings * _legibilitySettings;
     BOOL  _needsTextUpdate;
@@ -57,12 +57,12 @@
 @property (nonatomic) BOOL animationRepeats;
 @property (nonatomic, retain) UIColor *backgroundColor;
 @property (nonatomic, retain) UIView *backgroundView;
-@property (nonatomic) double blurAlpha;
+@property (nonatomic) float blurAlpha;
 @property (nonatomic, retain) NSMutableSet *blurHiddenRequesters;
 @property (nonatomic, retain) UIView *blurView;
 @property (nonatomic, retain) UIImage *chevron;
 @property (nonatomic, retain) UIColor *chevronBackgroundColor;
-@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } chevronFrame;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } chevronFrame;
 @property (nonatomic) int chevronStyle;
 @property (nonatomic) <_UIGlintyStringViewDelegate> *delegate;
 @property (nonatomic, retain) UIView *effectView;
@@ -71,10 +71,10 @@
 @property (nonatomic) BOOL hasCustomBackgroundColor;
 @property (nonatomic) BOOL highlight;
 @property (nonatomic, retain) UIView *highlightView;
-@property (nonatomic) double horizontalPadding;
+@property (nonatomic) float horizontalPadding;
 @property (nonatomic, retain) UILabel *label;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } labelFrame;
-@property (nonatomic) struct CGSize { double x1; double x2; } labelSize;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } labelFrame;
+@property (nonatomic) struct CGSize { float x1; float x2; } labelSize;
 @property (nonatomic, retain) _UILegibilitySettings *legibilitySettings;
 @property (nonatomic) BOOL needsTextUpdate;
 @property (nonatomic, retain) UIView *reflectionImageView;
@@ -96,9 +96,9 @@
 - (float)_chevronWidthWithPaddingCompression:(float)arg1;
 - (id)_highlightColor;
 - (id)_highlightCompositingFilter;
-- (struct CGSize { double x1; double x2; })_labelSizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })_labelSizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)_updateHighlight;
-- (void)_updateLabelWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)_updateLabelWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)addGlintyAnimations;
 - (void)addReflectionAnimationToLayer:(id)arg1;
 - (void)addShimmerAnimationToLayer:(id)arg1;
@@ -109,13 +109,13 @@
 - (id)backgroundColor;
 - (id)backgroundView;
 - (float)baselineOffsetFromBottom;
-- (float)baselineOffsetFromBottomWithSize:(struct CGSize { double x1; double x2; })arg1;
+- (float)baselineOffsetFromBottomWithSize:(struct CGSize { float x1; float x2; })arg1;
 - (float)blurAlpha;
 - (id)blurHiddenRequesters;
 - (id)blurView;
 - (id)chevron;
 - (id)chevronBackgroundColor;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })chevronFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })chevronFrame;
 - (int)chevronStyle;
 - (void)dealloc;
 - (id)delegate;
@@ -137,8 +137,8 @@
 - (id)initWithText:(id)arg1 andFont:(id)arg2;
 - (BOOL)isAnimating;
 - (id)label;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })labelFrame;
-- (struct CGSize { double x1; double x2; })labelSize;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })labelFrame;
+- (struct CGSize { float x1; float x2; })labelSize;
 - (void)layoutSubviews;
 - (id)legibilitySettings;
 - (BOOL)needsTextUpdate;
@@ -156,7 +156,7 @@
 - (void)setBlurView:(id)arg1;
 - (void)setChevron:(id)arg1;
 - (void)setChevronBackgroundColor:(id)arg1;
-- (void)setChevronFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setChevronFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setChevronStyle:(int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setEffectView:(id)arg1;
@@ -167,7 +167,7 @@
 - (void)setHighlightView:(id)arg1;
 - (void)setHorizontalPadding:(float)arg1;
 - (void)setLabel:(id)arg1;
-- (void)setLabelSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setLabelSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setLegibilitySettings:(id)arg1;
 - (void)setNeedsTextUpdate:(BOOL)arg1;
 - (void)setReflectionImageView:(id)arg1;
@@ -179,13 +179,13 @@
 - (void)setTextLanguage:(id)arg1;
 - (void)setUsesBackgroundDimming:(BOOL)arg1;
 - (void)setVibrantSettings:(id)arg1;
-- (id)shapeViewForCharactersInString:(id)arg1 withFont:(id)arg2 centeredInFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
+- (id)shapeViewForCharactersInString:(id)arg1 withFont:(id)arg2 centeredInFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 - (id)shimmerImageView;
 - (void)show;
 - (void)showBlur;
 - (void)showEffects;
 - (BOOL)showing;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)spotlightView;
 - (void)startAnimating;
 - (void)stopAnimating;
@@ -194,7 +194,7 @@
 - (id)textLanguage;
 - (void)updateBlurForHiddenRequesters;
 - (void)updateText;
-- (void)updateTextWithBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)updateTextWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)usesBackgroundDimming;
 - (id)vibrantSettings;
 

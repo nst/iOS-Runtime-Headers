@@ -6,7 +6,7 @@
     struct __CFArray { } * _commandStack;
     long  _currentIndex;
     unsigned int  _eatOneNewline;
-    double  _indentWidth;
+    float  _indentWidth;
     struct { 
         unsigned short buffer[64]; 
         struct __CFString {} *theString; 

@@ -9,7 +9,7 @@
 
 @property (nonatomic, retain) UIAlertController *alertController;
 @property (nonatomic, readonly) int completionCurve;
-@property (nonatomic, readonly) double completionSpeed;
+@property (nonatomic, readonly) float completionSpeed;
 @property (nonatomic, retain) <UIViewControllerContextTransitioning> *context;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;

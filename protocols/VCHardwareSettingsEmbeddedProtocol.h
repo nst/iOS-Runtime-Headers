@@ -5,7 +5,7 @@
 
 @required
 
-- (int)chipId;
+- (long long)chipId;
 - (int)deviceClass;
 - (int)screenHeight;
 - (int)screenWidth;

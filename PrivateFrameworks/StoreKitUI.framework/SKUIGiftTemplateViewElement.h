@@ -5,7 +5,7 @@
 @interface SKUIGiftTemplateViewElement : SKUIViewElement {
     int  _giftType;
     NSString * _productBuyParams;
-    int  _productItemIdentifier;
+    long long  _productItemIdentifier;
 }
 
 @property (nonatomic, readonly) int giftType;

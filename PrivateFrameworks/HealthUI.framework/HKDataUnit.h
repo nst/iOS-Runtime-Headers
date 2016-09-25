@@ -20,7 +20,7 @@
     HKObjectType * _objectType;
     NSDictionary * _portraitPresentationOptionOverrides;
     unsigned int  _portraitPresentationOptions;
-    double  _scalarValue;
+    float  _scalarValue;
     BOOL  _shouldDisplayUnitStringOnYAxis;
     BOOL  _shouldUseSingleSecondaryValue;
     BOOL  _showAllDataHierarchically;
@@ -58,7 +58,7 @@
 @property (nonatomic, readonly) HKObjectType *objectType;
 @property (nonatomic, readonly) HKSampleType *recordSampleType;
 @property (nonatomic, readonly) HKSampleType *sampleType;
-@property (nonatomic, readonly) double scalarValue;
+@property (nonatomic, readonly) float scalarValue;
 @property (nonatomic, readonly) UIImage *shareIcon;
 @property (nonatomic) BOOL shouldDisplayUnitStringOnYAxis;
 @property (nonatomic, readonly) BOOL shouldUseSingleSecondaryValue;

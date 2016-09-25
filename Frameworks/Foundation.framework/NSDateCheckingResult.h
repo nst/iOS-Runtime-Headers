@@ -47,7 +47,7 @@
 - (struct _NSRange { unsigned int x1; unsigned int x2; })range;
 - (id)referenceDate;
 - (id)resultByAdjustingRangesWithOffset:(int)arg1;
-- (unsigned int)resultType;
+- (unsigned long long)resultType;
 - (BOOL)timeIsApproximate;
 - (BOOL)timeIsPast;
 - (BOOL)timeIsSignificant;

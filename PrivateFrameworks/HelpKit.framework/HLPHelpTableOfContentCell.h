@@ -9,7 +9,7 @@
     NSLayoutConstraint * _arrowImageViewWidthConstraint;
     BOOL  _closed;
     HLPHelpItem * _helpItem;
-    double  _minNameLabelHeight;
+    float  _minNameLabelHeight;
     UILabel * _nameLabel;
     NSLayoutConstraint * _nameLabelMinHeightConstraint;
     NSLayoutConstraint * _sectionImageLeadingConstraint;
@@ -23,7 +23,7 @@
 @property (nonatomic, retain) UIImageView *arrowImageView;
 @property (nonatomic) BOOL closed;
 @property (nonatomic, retain) HLPHelpItem *helpItem;
-@property (nonatomic) double minNameLabelHeight;
+@property (nonatomic) float minNameLabelHeight;
 @property (nonatomic, retain) UILabel *nameLabel;
 @property (nonatomic, retain) UIImageView *sectionImageView;
 @property (nonatomic) BOOL showFirstLevelIcon;

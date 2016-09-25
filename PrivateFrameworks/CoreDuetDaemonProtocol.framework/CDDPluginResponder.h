@@ -11,11 +11,11 @@
 - (void).cxx_destruct;
 - (id)debug;
 - (id)init;
-- (id)makeStashWithId:(unsigned int)arg1;
-- (BOOL)respondToAdmissionCheckAndStartedOnConnection:(id)arg1 usingMessage:(id)arg2 withSequenceNumber:(unsigned int)arg3 status:(BOOL)arg4 reasons:(id)arg5 error:(id*)arg6;
-- (BOOL)respondToAdmissionSignoffOnConnection:(id)arg1 usingMessage:(id)arg2 withSequenceNumber:(unsigned int)arg3 status:(BOOL)arg4 reasons:(id)arg5 error:(id*)arg6;
-- (BOOL)respondToInitOnConnection:(id)arg1 usingMessage:(id)arg2 withSequenceNumber:(unsigned int)arg3 info:(id)arg4 error:(id*)arg5;
-- (BOOL)respondToTriggerOnConnection:(id)arg1 usingMessage:(id)arg2 withSequenceNumber:(unsigned int)arg3 info:(id)arg4 error:(id*)arg5;
-- (BOOL)sendMessageOnConnection:(id)arg1 usingMessage:(id)arg2 withSequenceNumber:(unsigned int)arg3 type:(int)arg4 error:(id*)arg5;
+- (id)makeStashWithId:(unsigned long long)arg1;
+- (BOOL)respondToAdmissionCheckAndStartedOnConnection:(id)arg1 usingMessage:(id)arg2 withSequenceNumber:(unsigned long long)arg3 status:(BOOL)arg4 reasons:(id)arg5 error:(id*)arg6;
+- (BOOL)respondToAdmissionSignoffOnConnection:(id)arg1 usingMessage:(id)arg2 withSequenceNumber:(unsigned long long)arg3 status:(BOOL)arg4 reasons:(id)arg5 error:(id*)arg6;
+- (BOOL)respondToInitOnConnection:(id)arg1 usingMessage:(id)arg2 withSequenceNumber:(unsigned long long)arg3 info:(id)arg4 error:(id*)arg5;
+- (BOOL)respondToTriggerOnConnection:(id)arg1 usingMessage:(id)arg2 withSequenceNumber:(unsigned long long)arg3 info:(id)arg4 error:(id*)arg5;
+- (BOOL)sendMessageOnConnection:(id)arg1 usingMessage:(id)arg2 withSequenceNumber:(unsigned long long)arg3 type:(int)arg4 error:(id*)arg5;
 
 @end

@@ -11,7 +11,7 @@
     UINavigationController * _navigationController;
     double  _pushDuration;
     NSArray * _snapshots;
-    double  _springDamping;
+    float  _springDamping;
     double  _startStagger;
     NSArray * _viewControllers;
 }
@@ -24,7 +24,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic) UINavigationController *navigationController;
 @property (nonatomic) double pushDuration;
-@property (nonatomic) double springDamping;
+@property (nonatomic) float springDamping;
 @property (nonatomic) double startStagger;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSArray *viewControllers;

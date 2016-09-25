@@ -12,7 +12,7 @@
 
 @property (nonatomic, readonly, copy) NSDictionary *dialogDictionary;
 @property (nonatomic, retain) NSDate *expirationDate;
-@property (nonatomic, readonly) unsigned int globalVersion;
+@property (nonatomic, readonly) unsigned long long globalVersion;
 @property (nonatomic, readonly, copy) NSDictionary *responseDictionary;
 @property (nonatomic, readonly) BOOL shouldIncrementSkipCount;
 @property (nonatomic, readonly) NSDate *skipDate;
@@ -24,7 +24,7 @@
 - (id)_tracksForStationKey:(id)arg1;
 - (id)dialogDictionary;
 - (id)expirationDate;
-- (unsigned int)globalVersion;
+- (unsigned long long)globalVersion;
 - (id)init;
 - (id)initWithResponseDictionary:(id)arg1;
 - (id)responseDictionary;
@@ -36,7 +36,7 @@
 - (int)tracklistActionType;
 - (id)tracksForStation:(id)arg1;
 - (id)tracksForStationHash:(id)arg1;
-- (id)tracksForStationID:(int)arg1;
+- (id)tracksForStationID:(long long)arg1;
 - (id)tracksForStationStringID:(id)arg1;
 - (id)unusedKBSyncStrings;
 

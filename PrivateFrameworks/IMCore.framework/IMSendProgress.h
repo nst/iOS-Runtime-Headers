@@ -3,7 +3,7 @@
  */
 
 @interface IMSendProgress : NSObject {
-    double  _cachedSendProgress;
+    float  _cachedSendProgress;
     id  _context;
     <IMSendProgressDelegate> * _delegate;
     NSTimer * _sendProgressTimer;

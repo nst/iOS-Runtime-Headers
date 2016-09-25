@@ -3,16 +3,16 @@
  */
 
 @interface MRTransactionDestination : NSObject {
-    unsigned int  _name;
+    unsigned long long  _name;
     MRTransactionPacketizer * _packetizer;
 }
 
-@property (nonatomic, readonly) unsigned int name;
+@property (nonatomic, readonly) unsigned long long name;
 
 - (void)_cleanUp;
 - (void)dealloc;
-- (id)initWithName:(unsigned int)arg1;
-- (unsigned int)name;
+- (id)initWithName:(unsigned long long)arg1;
+- (unsigned long long)name;
 - (void)packetsFromMessage:(id)arg1 completion:(id /* block */)arg2;
 - (void)unpacketize:(id)arg1 completion:(id /* block */)arg2;
 

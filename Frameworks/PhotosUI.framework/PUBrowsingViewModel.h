@@ -16,7 +16,7 @@
     BOOL  _browsingSpeedRegimeIsValid;
     PUAssetReference * _currentAssetReference;
     NSDate * _currentAssetReferenceChangedDate;
-    double  _currentAssetTransitionProgress;
+    float  _currentAssetTransitionProgress;
     NSMutableSet * _invalidAssetViewModels;
     BOOL  _isAnimatingAnyTransition;
     BOOL  _isChromeVisible;
@@ -29,8 +29,8 @@
     int  _ongoingEnumerations;
     BOOL  _presentingOverOneUp;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _secondScreenSize;
     NSString * _transitionDriverIdentifier;
     BOOL  _videoContentAllowed;
@@ -46,7 +46,7 @@
 @property (nonatomic, retain) PUAssetsDataSource *assetsDataSource;
 @property (setter=_setBrowsingSpeedRegime:, nonatomic) int browsingSpeedRegime;
 @property (nonatomic, retain) PUAssetReference *currentAssetReference;
-@property (nonatomic, readonly) double currentAssetTransitionProgress;
+@property (nonatomic, readonly) float currentAssetTransitionProgress;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
@@ -58,7 +58,7 @@
 @property (setter=_setLastChromeVisibilityChangeReason:, nonatomic) int lastChromeVisibilityChangeReason;
 @property (nonatomic, retain) PUMediaProvider *mediaProvider;
 @property (getter=isPresentingOverOneUp, nonatomic) BOOL presentingOverOneUp;
-@property (nonatomic) struct CGSize { double x1; double x2; } secondScreenSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } secondScreenSize;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, copy) NSString *transitionDriverIdentifier;
 @property (nonatomic) BOOL videoContentAllowed;
@@ -122,7 +122,7 @@
 - (id)mediaProvider;
 - (id)newViewModelChange;
 - (void)registerChangeObserver:(id)arg1;
-- (struct CGSize { double x1; double x2; })secondScreenSize;
+- (struct CGSize { float x1; float x2; })secondScreenSize;
 - (void)setAccessoryViewsDefaultVisibility:(BOOL)arg1;
 - (void)setAccessoryViewsDefaultVisibility:(BOOL)arg1 changeReason:(int)arg2;
 - (void)setAnimating:(BOOL)arg1 transitionWithIdentifier:(id)arg2;
@@ -136,7 +136,7 @@
 - (void)setIsScrubbing:(BOOL)arg1;
 - (void)setMediaProvider:(id)arg1;
 - (void)setPresentingOverOneUp:(BOOL)arg1;
-- (void)setSecondScreenSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setSecondScreenSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setVideoContentAllowed:(BOOL)arg1;
 - (id)transitionDriverIdentifier;
 - (void)unregisterChangeObserver:(id)arg1;

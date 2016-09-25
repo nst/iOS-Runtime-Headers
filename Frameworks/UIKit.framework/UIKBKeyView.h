@@ -16,12 +16,12 @@
     struct __CFBoolean { } * m_allowsCaching;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  m_drawFrame;
     UIKBRenderFactory * m_factory;
@@ -38,12 +38,12 @@
 @property (nonatomic) int cachedSelector;
 @property (nonatomic) unsigned int cachedShiftState;
 @property (nonatomic, retain) NSString *cachedTraitsHashString;
-@property (nonatomic, readonly) double cachedWidth;
+@property (nonatomic, readonly) float cachedWidth;
 @property (nonatomic, readonly) UIKBKeyView *contentsKeyView;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } displayInsets;
-@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } drawFrame;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } displayInsets;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } drawFrame;
 @property (nonatomic) double endingTransitionDuration;
 @property (nonatomic, retain) UIKBRenderFactory *factory;
 @property (nonatomic, readonly) BOOL hasRendered;
@@ -55,7 +55,7 @@
 @property (nonatomic) BOOL renderAsMask;
 @property (nonatomic, retain) UIKBRenderConfig *renderConfig;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } variantFrame;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } variantFrame;
 
 - (void)_applyAppearanceInvocations;
 - (BOOL)_canDrawContent;
@@ -78,16 +78,16 @@
 - (void)dealloc;
 - (int)didInputSubTree:(id)arg1;
 - (void)dimKeys:(id)arg1;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })displayInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })displayInsets;
 - (void)displayLayer:(id)arg1;
 - (void)drawContentsOfRenderers:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })drawFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })drawFrame;
 - (double)endingTransitionDuration;
 - (id)factory;
 - (unsigned int)focusableVariantCount;
 - (BOOL)hasRendered;
 - (int)imageOrientationForLayer:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 keyplane:(id)arg2 key:(id)arg3;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 keyplane:(id)arg2 key:(id)arg3;
 - (BOOL)keepNonPersistent;
 - (id)key;
 - (id)keyplane;
@@ -103,17 +103,17 @@
 - (void)setCachedSelector:(int)arg1;
 - (void)setCachedShiftState:(unsigned int)arg1;
 - (void)setCachedTraitsHashString:(id)arg1;
-- (void)setDrawFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setDrawFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setEndingTransitionDuration:(double)arg1;
 - (void)setFactory:(id)arg1;
 - (void)setPopupMenu:(id)arg1;
 - (void)setRenderAsMask:(BOOL)arg1;
 - (void)setRenderConfig:(id)arg1;
-- (id)subTreeHitTest:(struct CGPoint { double x1; double x2; })arg1;
+- (id)subTreeHitTest:(struct CGPoint { float x1; float x2; })arg1;
 - (int)textEffectsVisibilityLevel;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)updateForKeyplane:(id)arg1 key:(id)arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })variantFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })variantFrame;
 - (void)willDisplayModalActionView:(id)arg1 withSubTreeKeyView:(id)arg2 completion:(id /* block */)arg3;
 
 @end

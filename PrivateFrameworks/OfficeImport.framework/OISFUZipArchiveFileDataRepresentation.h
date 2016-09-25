@@ -12,13 +12,13 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
-- (id)bufferedInputStreamWithOffset:(int)arg1 length:(int)arg2;
-- (int)dataLength;
+- (id)bufferedInputStreamWithOffset:(long long)arg1 length:(long long)arg2;
+- (long long)dataLength;
 - (void)dealloc;
 - (BOOL)hasSameLocationAs:(id)arg1;
 - (id)initWithPath:(id)arg1;
 - (id)inputStream;
-- (id)inputStreamWithOffset:(int)arg1 length:(int)arg2;
+- (id)inputStreamWithOffset:(long long)arg1 length:(long long)arg2;
 - (BOOL)isEncrypted;
 - (BOOL)isReadable;
 - (id)path;

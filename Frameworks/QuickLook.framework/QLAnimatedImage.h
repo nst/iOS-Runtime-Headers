@@ -3,8 +3,8 @@
  */
 
 @interface QLAnimatedImage : NSObject {
-    double  _duration;
-    struct QLFrameDurationInformation { double x1; double x2; } * _durations;
+    float  _duration;
+    struct QLFrameDurationInformation { float x1; float x2; } * _durations;
     unsigned int  _durationsCount;
     QLImageData * _imageData;
     UIImage * _lastImage;

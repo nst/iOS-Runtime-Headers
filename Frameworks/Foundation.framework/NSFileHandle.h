@@ -5,7 +5,7 @@
 @interface NSFileHandle : NSObject <NSSecureCoding>
 
 @property (readonly, copy) NSData *availableData;
-@property (readonly) unsigned int offsetInFile;
+@property (readonly) unsigned long long offsetInFile;
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
@@ -38,16 +38,16 @@
 - (id)initWithPath:(id)arg1 flags:(int)arg2 createMode:(int)arg3;
 - (id)initWithPath:(id)arg1 flags:(int)arg2 createMode:(int)arg3 error:(id*)arg4;
 - (id)initWithURL:(id)arg1 flags:(int)arg2 createMode:(int)arg3 error:(id*)arg4;
-- (unsigned int)offsetInFile;
+- (unsigned long long)offsetInFile;
 - (id)readDataOfLength:(unsigned int)arg1;
 - (id)readDataToEndOfFile;
 - (id /* block */)readabilityHandler;
-- (unsigned int)seekToEndOfFile;
-- (void)seekToFileOffset:(unsigned int)arg1;
+- (unsigned long long)seekToEndOfFile;
+- (void)seekToFileOffset:(unsigned long long)arg1;
 - (void)setReadabilityHandler:(id /* block */)arg1;
 - (void)setWriteabilityHandler:(id /* block */)arg1;
 - (void)synchronizeFile;
-- (void)truncateFileAtOffset:(unsigned int)arg1;
+- (void)truncateFileAtOffset:(unsigned long long)arg1;
 - (void)writeData:(id)arg1;
 - (id /* block */)writeabilityHandler;
 

@@ -5,7 +5,7 @@
 @interface CKBrowserSwitcherPageControl : UIPageControl
 
 - (float)_indicatorSpacing;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_modernBounds;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_modernBounds;
 - (id)_pageIndicatorCurrentImageForPage:(int)arg1;
 - (id)_pageIndicatorImageForPage:(int)arg1;
 

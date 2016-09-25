@@ -10,7 +10,7 @@
         unsigned int flags : 1; 
     }  _has;
     NTPBDate * _lastVisitedDate;
-    unsigned int  _maxVersionRead;
+    unsigned long long  _maxVersionRead;
 }
 
 @property (nonatomic, readonly, copy) NSString *articleID;
@@ -31,8 +31,8 @@
 @property (nonatomic, readonly, copy) NSString *identifier;
 @property (nonatomic, readonly, copy) NSDate *lastVisitedAt;
 @property (nonatomic, retain) NTPBDate *lastVisitedDate;
-@property (nonatomic, readonly) unsigned int maxVersionRead;
-@property (nonatomic) unsigned int maxVersionRead;
+@property (nonatomic, readonly) unsigned long long maxVersionRead;
+@property (nonatomic) unsigned long long maxVersionRead;
 @property (readonly) Class superclass;
 
 // Image: /System/Library/PrivateFrameworks/NewsTransport.framework/NewsTransport
@@ -50,7 +50,7 @@
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)lastVisitedDate;
-- (unsigned int)maxVersionRead;
+- (unsigned long long)maxVersionRead;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setArticleID:(id)arg1;
@@ -58,7 +58,7 @@
 - (void)setHasFlags:(BOOL)arg1;
 - (void)setHasMaxVersionRead:(BOOL)arg1;
 - (void)setLastVisitedDate:(id)arg1;
-- (void)setMaxVersionRead:(unsigned int)arg1;
+- (void)setMaxVersionRead:(unsigned long long)arg1;
 - (void)writeTo:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore

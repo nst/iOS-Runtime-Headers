@@ -29,8 +29,8 @@
     NSString * _query;
     int  _requestType;
     struct GEOSessionID { 
-        unsigned int _high; 
-        unsigned int _low; 
+        unsigned long long _high; 
+        unsigned long long _low; 
     }  _sessionID;
     int  _tilesizeX;
     int  _tilesizeY;
@@ -65,7 +65,7 @@
 @property (nonatomic, retain) GEOPlaceSearchRequest *placeSearchRequest;
 @property (nonatomic, retain) NSString *query;
 @property (nonatomic) int requestType;
-@property (nonatomic) struct GEOSessionID { unsigned int x1; unsigned int x2; } sessionID;
+@property (nonatomic) struct GEOSessionID { unsigned long long x1; unsigned long long x2; } sessionID;
 @property (nonatomic) int tilesizeX;
 @property (nonatomic) int tilesizeY;
 @property (nonatomic, retain) GEOLocation *userLocation;
@@ -111,7 +111,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (int)requestType;
 - (id)requestTypeAsString:(int)arg1;
-- (struct GEOSessionID { unsigned int x1; unsigned int x2; })sessionID;
+- (struct GEOSessionID { unsigned long long x1; unsigned long long x2; })sessionID;
 - (void)setClientImgFmt:(int)arg1;
 - (void)setClientImgMaxHeight:(int)arg1;
 - (void)setClientImgMaxWidth:(int)arg1;
@@ -135,7 +135,7 @@
 - (void)setPlaceSearchRequest:(id)arg1;
 - (void)setQuery:(id)arg1;
 - (void)setRequestType:(int)arg1;
-- (void)setSessionID:(struct GEOSessionID { unsigned int x1; unsigned int x2; })arg1;
+- (void)setSessionID:(struct GEOSessionID { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)setTilesizeX:(int)arg1;
 - (void)setTilesizeY:(int)arg1;
 - (void)setUserLocation:(id)arg1;

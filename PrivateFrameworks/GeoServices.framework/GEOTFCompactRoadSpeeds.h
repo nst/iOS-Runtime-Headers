@@ -4,11 +4,11 @@
 
 @interface GEOTFCompactRoadSpeeds : PBCodable <NSCopying> {
     int  _color;
-    double  _confidence;
+    float  _confidence;
     unsigned int  _decayTimeWindowInMinutes;
-    double  _endOffset;
+    float  _endOffset;
     struct { 
-        int *list; 
+        long long *list; 
         unsigned int count; 
         unsigned int size; 
     }  _geoIds;
@@ -25,14 +25,14 @@
     NSData * _openlr;
     NSMutableArray * _predictedSpeeds;
     unsigned int  _speedKph;
-    double  _startOffset;
+    float  _startOffset;
 }
 
 @property (nonatomic) int color;
-@property (nonatomic) double confidence;
+@property (nonatomic) float confidence;
 @property (nonatomic) unsigned int decayTimeWindowInMinutes;
-@property (nonatomic) double endOffset;
-@property (nonatomic, readonly) int*geoIds;
+@property (nonatomic) float endOffset;
+@property (nonatomic, readonly) long long*geoIds;
 @property (nonatomic, readonly) unsigned int geoIdsCount;
 @property (nonatomic) BOOL hasColor;
 @property (nonatomic) BOOL hasConfidence;
@@ -46,12 +46,12 @@
 @property (nonatomic, retain) NSData *openlr;
 @property (nonatomic, retain) NSMutableArray *predictedSpeeds;
 @property (nonatomic) unsigned int speedKph;
-@property (nonatomic) double startOffset;
+@property (nonatomic) float startOffset;
 
 + (Class)predictedSpeedType;
 
 - (int)StringAsColor:(id)arg1;
-- (void)addGeoIds:(int)arg1;
+- (void)addGeoIds:(long long)arg1;
 - (void)addPredictedSpeed:(id)arg1;
 - (void)clearGeoIds;
 - (void)clearPredictedSpeeds;
@@ -65,8 +65,8 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (float)endOffset;
-- (int*)geoIds;
-- (int)geoIdsAtIndex:(unsigned int)arg1;
+- (long long*)geoIds;
+- (long long)geoIdsAtIndex:(unsigned int)arg1;
 - (unsigned int)geoIdsCount;
 - (BOOL)hasColor;
 - (BOOL)hasConfidence;
@@ -89,7 +89,7 @@
 - (void)setConfidence:(float)arg1;
 - (void)setDecayTimeWindowInMinutes:(unsigned int)arg1;
 - (void)setEndOffset:(float)arg1;
-- (void)setGeoIds:(int*)arg1 count:(unsigned int)arg2;
+- (void)setGeoIds:(long long*)arg1 count:(unsigned int)arg2;
 - (void)setHasColor:(BOOL)arg1;
 - (void)setHasConfidence:(BOOL)arg1;
 - (void)setHasDecayTimeWindowInMinutes:(BOOL)arg1;

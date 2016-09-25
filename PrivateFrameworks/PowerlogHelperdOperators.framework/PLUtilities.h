@@ -14,14 +14,14 @@
 + (id)bundleIDFromURL:(id)arg1;
 + (id)cameraTypeString;
 + (short)canLogMode:(id)arg1 fullMode:(BOOL)arg2;
-+ (int)compressWithSource:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; int x20; }*)arg1 withDestination:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; int x20; }*)arg2 withLevel:(int)arg3;
++ (int)compressWithSource:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; long long x20; }*)arg1 withDestination:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; long long x20; }*)arg2 withLevel:(int)arg3;
 + (id)containerPath;
 + (BOOL)createAndChownDirectory:(id)arg1;
 + (id)dateFromTimeval:(struct timeval { int x1; int x2; })arg1;
 + (double)defaultBatteryEnergyCapacity;
 + (id)deviceBootTime;
 + (void)dispatchSyncWithoutDeadlockOnQueue:(id)arg1 withBlock:(id /* block */)arg2;
-+ (unsigned int)dispatchTimeInSeconds:(double)arg1;
++ (unsigned long long)dispatchTimeInSeconds:(double)arg1;
 + (void)exitWithReason:(short)arg1;
 + (id)extractDateStringAndUUIDStringFromFilePath:(id)arg1;
 + (BOOL)gasGaugeEnabled;
@@ -85,7 +85,7 @@
 + (BOOL)runningAsMobileUser;
 + (id)runningAsUser;
 + (double)scaledPowerBasedOnPoint:(double)arg1 withPowerModel:(id)arg2;
-+ (double)secondsFromMachTime:(unsigned int)arg1;
++ (double)secondsFromMachTime:(unsigned long long)arg1;
 + (void)setMobileOwnerForFile:(id)arg1;
 + (id)shortUUIDString;
 + (BOOL)shouldLogForEntryKey:(id)arg1;

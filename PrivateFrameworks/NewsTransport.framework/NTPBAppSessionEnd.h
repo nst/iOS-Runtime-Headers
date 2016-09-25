@@ -3,7 +3,7 @@
  */
 
 @interface NTPBAppSessionEnd : PBCodable <NSCopying> {
-    int  _appSessionDuration;
+    long long  _appSessionDuration;
     int  _channelSubscriptionCount;
     struct { 
         unsigned int appSessionDuration : 1; 
@@ -22,7 +22,7 @@
     int  _topicSubscriptionCount;
 }
 
-@property (nonatomic) int appSessionDuration;
+@property (nonatomic) long long appSessionDuration;
 @property (nonatomic) int channelSubscriptionCount;
 @property (nonatomic) BOOL hasAppSessionDuration;
 @property (nonatomic) BOOL hasChannelSubscriptionCount;
@@ -46,7 +46,7 @@
 - (void)addLastVisibleViews:(id)arg1;
 - (void)addNotificationChannelIds:(id)arg1;
 - (void)addPaidSubscriptionChannelIds:(id)arg1;
-- (int)appSessionDuration;
+- (long long)appSessionDuration;
 - (int)channelSubscriptionCount;
 - (void)clearLastVisibleViews;
 - (void)clearNotificationChannelIds;
@@ -76,7 +76,7 @@
 - (unsigned int)paidSubscriptionChannelIdsCount;
 - (BOOL)readFrom:(id)arg1;
 - (int)sessionEndReason;
-- (void)setAppSessionDuration:(int)arg1;
+- (void)setAppSessionDuration:(long long)arg1;
 - (void)setChannelSubscriptionCount:(int)arg1;
 - (void)setHasAppSessionDuration:(BOOL)arg1;
 - (void)setHasChannelSubscriptionCount:(BOOL)arg1;

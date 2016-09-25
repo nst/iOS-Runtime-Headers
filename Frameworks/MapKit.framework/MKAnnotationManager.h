@@ -35,7 +35,7 @@
 - (void).cxx_destruct;
 - (void)_addAnnotation:(id)arg1 updateVisible:(BOOL)arg2;
 - (id)_addRepresentationForAnnotation:(id)arg1;
-- (void)_annotationDidChangeState:(id)arg1 animated:(BOOL)arg2 avoid:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
+- (void)_annotationDidChangeState:(id)arg1 animated:(BOOL)arg2 avoid:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 - (void)_removeAnnotation:(id)arg1 updateVisible:(BOOL)arg2 removeFromContainer:(BOOL)arg3;
 - (void)_removeRepresentationForAnnotation:(id)arg1 fromCull:(BOOL)arg2;
 - (void)_setupUpdateVisibleAnnotationsTimer;
@@ -72,7 +72,7 @@
 - (void)replaceAnnotation:(id)arg1 withAnnotation:(id)arg2;
 - (id)representationForAnnotation:(id)arg1;
 - (void)selectAnnotation:(id)arg1 animated:(BOOL)arg2;
-- (void)selectAnnotation:(id)arg1 animated:(BOOL)arg2 avoid:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
+- (void)selectAnnotation:(id)arg1 animated:(BOOL)arg2 avoid:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 - (id)selectedAnnotationRepresentation;
 - (void)setAnnotationRepresentationsAreAddedImmediately:(BOOL)arg1;
 - (void)setContainer:(id)arg1;

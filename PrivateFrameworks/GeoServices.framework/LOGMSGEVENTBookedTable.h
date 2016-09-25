@@ -23,7 +23,7 @@
         unsigned int viewedInProactiveTray : 1; 
     }  _has;
     BOOL  _isAsync;
-    unsigned int  _muid;
+    unsigned long long  _muid;
     BOOL  _routed;
     BOOL  _shared;
     BOOL  _tappedCancelReservation;
@@ -53,7 +53,7 @@
 @property (nonatomic) BOOL hasViewedInPlacecard;
 @property (nonatomic) BOOL hasViewedInProactiveTray;
 @property (nonatomic) BOOL isAsync;
-@property (nonatomic) unsigned int muid;
+@property (nonatomic) unsigned long long muid;
 @property (nonatomic) BOOL routed;
 @property (nonatomic) BOOL shared;
 @property (nonatomic) BOOL tappedCancelReservation;
@@ -90,7 +90,7 @@
 - (BOOL)isAsync;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (unsigned int)muid;
+- (unsigned long long)muid;
 - (BOOL)readFrom:(id)arg1;
 - (BOOL)routed;
 - (void)setAppId:(id)arg1;
@@ -111,7 +111,7 @@
 - (void)setHasViewedInPlacecard:(BOOL)arg1;
 - (void)setHasViewedInProactiveTray:(BOOL)arg1;
 - (void)setIsAsync:(BOOL)arg1;
-- (void)setMuid:(unsigned int)arg1;
+- (void)setMuid:(unsigned long long)arg1;
 - (void)setRouted:(BOOL)arg1;
 - (void)setShared:(BOOL)arg1;
 - (void)setTappedCancelReservation:(BOOL)arg1;

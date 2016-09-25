@@ -7,10 +7,10 @@
     BOOL  _adjustsFontForContentSizeCategory;
     int  _calculatedSecondaryTextNumberOfLines;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _contentInsets;
     UIView * _contentView;
     NCLookViewFontProvider * _fontProvider;
@@ -52,12 +52,12 @@
 @property (nonatomic) int thumbnailViewContentMode;
 
 - (void).cxx_destruct;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_contentInsets;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_contentInsetsForLongLook;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_contentInsetsForShortLook;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_contentInsetsForStyle:(int)arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_contentInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_contentInsetsForLongLook;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_contentInsetsForShortLook;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_contentInsetsForStyle:(int)arg1;
 - (id)_fontProvider;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameForThumbnailInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForThumbnailInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (float)_hintTextBaselineOffset;
 - (id)_hintTextLabel;
 - (id)_lazyHintTextLabel;
@@ -71,8 +71,8 @@
 - (id)_newHintTextLabel;
 - (id)_newPrimaryLabel;
 - (id)_newSecondaryLabel;
-- (int)_numberOfLinesForLabel:(id)arg1 inRectWithSize:(struct CGSize { double x1; double x2; })arg2;
-- (int)_numberOfLinesInSecondaryLabelInBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (int)_numberOfLinesForLabel:(id)arg1 inRectWithSize:(struct CGSize { float x1; float x2; })arg2;
+- (int)_numberOfLinesInSecondaryLabelInBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)_outgoingPrimaryLabel;
 - (id)_outgoingPrimarySubtitleLabel;
 - (id)_outgoingSecondaryLabel;
@@ -92,7 +92,7 @@
 - (void)_setPrimarySubtitleLabel:(id)arg1;
 - (void)_setSecondaryLabel:(id)arg1;
 - (void)_setText:(id)arg1 withFinalLabel:(id)arg2 setter:(id /* block */)arg3 andTransitionLabel:(id)arg4 setter:(id /* block */)arg5;
-- (struct CGSize { double x1; double x2; })_sizeThatFits:(struct CGSize { double x1; double x2; })arg1 withContentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
+- (struct CGSize { float x1; float x2; })_sizeThatFits:(struct CGSize { float x1; float x2; })arg1 withContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
 - (void)_tearDownSecondaryLabel;
 - (void)_updateFontForHintTextLabel:(id)arg1 withStyle:(int)arg2;
 - (void)_updateFontForPrimaryLabel:(id)arg1 withStyle:(int)arg2;
@@ -120,7 +120,7 @@
 - (void)setThumbnail:(id)arg1;
 - (void)setThumbnailViewContentMode:(int)arg1;
 - (BOOL)showAdditionalMessageLines;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)thumbnail;
 - (int)thumbnailViewContentMode;
 - (void)traitCollectionDidChange:(id)arg1;

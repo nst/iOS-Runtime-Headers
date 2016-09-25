@@ -9,7 +9,7 @@
     NSXPCConnection * _connection;
     BOOL  _connectionInitializationSucceeded;
     BOOL  _needToSendInitialMessage;
-    unsigned int  _osStateHandle;
+    unsigned long long  _osStateHandle;
     BOOL  _registeredForAppResignationMessages;
     NSObject<OS_dispatch_queue> * _serverQ;
     BOOL  _supportsActivityContinuation;
@@ -25,7 +25,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property BOOL needToSendInitialMessage;
-@property unsigned int osStateHandle;
+@property unsigned long long osStateHandle;
 @property BOOL registeredForAppResignationMessages;
 @property (readonly) NSObject<OS_dispatch_queue> *serverQ;
 @property (readonly) Class superclass;
@@ -65,7 +65,7 @@
 - (void)makeInactive:(id)arg1;
 - (void)markUserActivityAsDirty:(id)arg1 forceImmediate:(BOOL)arg2;
 - (BOOL)needToSendInitialMessage;
-- (unsigned int)osStateHandle;
+- (unsigned long long)osStateHandle;
 - (void)pinUserActivity:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)registerForApplicationDeactivateIfNecessary;
 - (BOOL)registeredForAppResignationMessages;
@@ -79,7 +79,7 @@
 - (void)setActiveUserActivitiesByUUID:(id)arg1;
 - (void)setActiveUserActivityUUID:(id)arg1;
 - (void)setNeedToSendInitialMessage:(BOOL)arg1;
-- (void)setOsStateHandle:(unsigned int)arg1;
+- (void)setOsStateHandle:(unsigned long long)arg1;
 - (void)setRegisteredForAppResignationMessages:(BOOL)arg1;
 - (void)setUserActivitiesByUUID:(id)arg1;
 - (BOOL)supportsActivityContinuation;

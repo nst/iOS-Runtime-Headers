@@ -5,6 +5,6 @@
 
 @optional
 
-- (void)pushNotificationControllerDidReceiveSyncRequest:(RadioPushNotificationController *)arg1 toGlobalVersion:(unsigned int)arg2;
+- (void)pushNotificationControllerDidReceiveSyncRequest:(RadioPushNotificationController *)arg1 toGlobalVersion:(unsigned long long)arg2;
 
 @end

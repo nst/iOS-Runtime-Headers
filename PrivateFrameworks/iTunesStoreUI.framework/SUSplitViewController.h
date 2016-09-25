@@ -20,9 +20,9 @@
 @property (nonatomic, retain) UIViewController *firstViewController;
 @property (nonatomic) int layoutType;
 @property (nonatomic, retain) NSString *mainTitle;
-@property (nonatomic) double minimumPaneSize;
+@property (nonatomic) float minimumPaneSize;
 @property (nonatomic, retain) UIViewController *secondViewController;
-@property (nonatomic) double splitPosition;
+@property (nonatomic) float splitPosition;
 @property (nonatomic, copy) SUShadow *splitShadow;
 @property (nonatomic) BOOL usesSharedPlaceholder;
 @property (getter=isVertical, nonatomic) BOOL vertical;

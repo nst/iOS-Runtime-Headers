@@ -7,12 +7,12 @@
 }
 
 @property (nonatomic, readonly) struct CGColor { }*CGColor;
-@property (nonatomic, readonly) double brightness;
+@property (nonatomic, readonly) float brightness;
 @property (nonatomic, readonly, copy) TSUColor *color;
-@property (nonatomic, readonly) double hue;
-@property (nonatomic, readonly) double luminance;
-@property (nonatomic, readonly) double opacity;
-@property (nonatomic, readonly) double saturation;
+@property (nonatomic, readonly) float hue;
+@property (nonatomic, readonly) float luminance;
+@property (nonatomic, readonly) float opacity;
+@property (nonatomic, readonly) float saturation;
 
 + (id)blackColor;
 + (id)blueColor;
@@ -75,7 +75,7 @@
 - (float)opacity;
 - (float)p_hsbComponentWithIndex:(unsigned long)arg1;
 - (void)paintPath:(struct CGPath { }*)arg1 inContext:(struct CGContext { }*)arg2;
-- (void)paintRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inContext:(struct CGContext { }*)arg2;
+- (void)paintRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inContext:(struct CGContext { }*)arg2;
 - (id)presetKind;
 - (id)referenceColor;
 - (float)saturation;

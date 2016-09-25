@@ -13,9 +13,9 @@
     VSKeepAlive * _inactiveKeepAlive;
     VSKeepAlive * _keepAlive;
     NSString * _language;
-    double  _pitch;
+    float  _pitch;
     NSObject<OS_dispatch_queue> * _queue;
-    double  _rate;
+    float  _rate;
     VSSpeechConnection * _speechConnection;
     struct { 
         unsigned int delegateStart : 1; 
@@ -37,14 +37,14 @@
     BOOL  _useSharedSession;
     NSString * _voice;
     long  _voiceType;
-    double  _volume;
+    float  _volume;
 }
 
 @property (nonatomic) <VSSpeechSynthesizerDelegate> *delegate;
-@property (nonatomic) double pitch;
-@property (nonatomic) double rate;
+@property (nonatomic) float pitch;
+@property (nonatomic) float rate;
 @property (nonatomic, retain) NSString *voice;
-@property (nonatomic) double volume;
+@property (nonatomic) float volume;
 
 + (id)availableFootprintsForVoice:(id)arg1 languageCode:(id)arg2;
 + (id)availableLanguageCodes;

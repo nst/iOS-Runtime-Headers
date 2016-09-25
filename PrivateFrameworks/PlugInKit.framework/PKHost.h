@@ -21,7 +21,7 @@
 + (id)defaultHost;
 
 - (void).cxx_destruct;
-- (void)accessPlugIns:(id)arg1 flags:(unsigned int)arg2 extensions:(id /* block */)arg3;
+- (void)accessPlugIns:(id)arg1 flags:(unsigned long long)arg2 extensions:(id /* block */)arg3;
 - (id)activatePlugIn:(id)arg1;
 - (id)activeOneShots;
 - (id)activePlugInForIdentifier:(id)arg1;

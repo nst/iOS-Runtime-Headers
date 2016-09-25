@@ -20,16 +20,16 @@
 + (int)urgencyForCacheDeleteUrgency:(int)arg1;
 
 - (void).cxx_destruct;
-- (int)_doFullVacuum:(id)arg1;
-- (int)_doIncrementalVacuum:(id)arg1 amount:(int)arg2;
+- (long long)_doFullVacuum:(id)arg1;
+- (long long)_doIncrementalVacuum:(id)arg1 amount:(long long)arg2;
 - (void)_enumerateItemsForEvictSyncWithBlock:(id /* block */)arg1 withTimeDelta:(double)arg2;
 - (void)_enumerateItemsForEvictSyncWithBlock:(id /* block */)arg1 withUrgency:(int)arg2;
-- (int)_purgeSpaceUnderQueue:(int)arg1 withUrgency:(int)arg2;
+- (long long)_purgeSpaceUnderQueue:(long long)arg1 withUrgency:(int)arg2;
 - (void)_requestPurgeSpace;
-- (int)_vacuumDB:(id)arg1 amount:(int)arg2 withUrgency:(int)arg3;
+- (long long)_vacuumDB:(id)arg1 amount:(long long)arg2 withUrgency:(int)arg3;
 - (id)accessTimestampForDocument:(id)arg1;
 - (void)close;
-- (int)computePurgableSpaceWithUrgency:(int)arg1;
+- (long long)computePurgableSpaceWithUrgency:(int)arg1;
 - (id)computePurgeableSpaceForAllUrgencies;
 - (id)descriptionForItem:(id)arg1 context:(id)arg2;
 - (void)didAccessDocument:(id)arg1;
@@ -40,10 +40,10 @@
 - (BOOL)documentWasDeleted:(id)arg1;
 - (id)initWithAccountSession:(id)arg1;
 - (void)lowDiskStatusChangedForDevice:(int)arg1 hasEnoughSpace:(BOOL)arg2;
-- (BOOL)overwriteDocumentAccessTime:(id)arg1 atime:(unsigned int)arg2;
+- (BOOL)overwriteDocumentAccessTime:(id)arg1 atime:(unsigned long long)arg2;
 - (BOOL)performOptimizeStorageWithTimeDelta:(double)arg1 error:(id*)arg2;
-- (int)periodicReclaimSpace;
-- (int)purgeSpace:(int)arg1 withUrgency:(int)arg2;
+- (long long)periodicReclaimSpace;
+- (long long)purgeSpace:(long long)arg1 withUrgency:(int)arg2;
 - (id)queue;
 - (void)recentDocumentsListUpdated;
 - (BOOL)renameAndUnlinkInBackgroundItemAt:(int)arg1 path:(id)arg2;

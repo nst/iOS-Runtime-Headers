@@ -5,7 +5,7 @@
 @interface _HDAchievementProgressLocalJournalEntry : HDJournalEntry {
     int  _category;
     HDCodableCategoryDomainDictionary * _dictionary;
-    int  _provenance;
+    long long  _provenance;
 }
 
 + (void)applyEntries:(id)arg1 withProfile:(id)arg2;
@@ -14,6 +14,6 @@
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithDictionary:(id)arg1 category:(int)arg2 provenance:(int)arg3;
+- (id)initWithDictionary:(id)arg1 category:(int)arg2 provenance:(long long)arg3;
 
 @end

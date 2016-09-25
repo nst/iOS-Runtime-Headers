@@ -26,7 +26,7 @@
 - (void)_stopListeningForBagLoad;
 - (id)_viewPortForFormSheetPresentation;
 - (id)_viewPortForNormalPresentation;
-- (id)_viewPortStringForSize:(struct CGSize { double x1; double x2; })arg1;
+- (id)_viewPortStringForSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)authIdHeaderValue;
 - (id)authTokenHeaderValue;
 - (id)bagKey;

@@ -5,7 +5,7 @@
 @interface PHAssetResource : NSObject {
     NSString * _assetLocalIdentifier;
     BOOL  _derivative;
-    int  _fileSize;
+    long long  _fileSize;
     NSURL * _fileURL;
     BOOL  _locallyAvailable;
     NSString * _originalFilename;
@@ -19,7 +19,7 @@
 
 @property (setter=_setAssetLocalIdentifier:, nonatomic, copy) NSString *assetLocalIdentifier;
 @property (getter=isDerivative, nonatomic, readonly) BOOL derivative;
-@property (setter=_setFileSize:, nonatomic) int fileSize;
+@property (setter=_setFileSize:, nonatomic) long long fileSize;
 @property (setter=_setFileURL:, nonatomic, retain) NSURL *fileURL;
 @property (getter=isLibraryAssetResource, nonatomic, readonly) BOOL libraryAssetResource;
 @property (getter=isLocallyAvailable, setter=_setIsLocallyAvailable:, nonatomic) BOOL locallyAvailable;
@@ -40,7 +40,7 @@
 
 - (void).cxx_destruct;
 - (void)_setAssetLocalIdentifier:(id)arg1;
-- (void)_setFileSize:(int)arg1;
+- (void)_setFileSize:(long long)arg1;
 - (void)_setFileURL:(id)arg1;
 - (void)_setIsLocallyAvailable:(BOOL)arg1;
 - (void)_setOriginalFilename:(id)arg1;
@@ -52,7 +52,7 @@
 - (int)analysisType;
 - (id)assetLocalIdentifier;
 - (id)description;
-- (int)fileSize;
+- (long long)fileSize;
 - (id)fileURL;
 - (id)initWithResourceType:(int)arg1;
 - (BOOL)isDerivative;
@@ -77,7 +77,7 @@
 - (BOOL)vcp_isLocallyAvailable;
 - (BOOL)vcp_isMovie;
 - (BOOL)vcp_isPhoto;
-- (struct CGSize { double x1; double x2; })vcp_size;
+- (struct CGSize { float x1; float x2; })vcp_size;
 - (id)vcp_url;
 
 @end

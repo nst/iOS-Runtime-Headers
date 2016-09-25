@@ -6,12 +6,12 @@
     NSObject<OS_dispatch_queue> * _accessSerialQueue;
     NSObject<OS_dispatch_queue> * _calloutSerialQueue;
     NSMutableDictionary * _contentTasteItemsToRetry;
-    unsigned int  _currentResponseRevisionID;
+    unsigned long long  _currentResponseRevisionID;
     int  _exponentialBackOffSeconds;
     BOOL  _havePendingRetryOperation;
     int  _itemsDidChangeNotifyToken;
-    unsigned int  _lastNotificationReceivedResponseRevisionID;
-    int  _pendingMutateRequestCount;
+    unsigned long long  _lastNotificationReceivedResponseRevisionID;
+    long long  _pendingMutateRequestCount;
     NSMutableDictionary * _playlistGlobalIDToContentTasteItem;
     NSMutableDictionary * _playlistGlobalIDToPendingContentTasteItem;
     NSMutableDictionary * _storeAdamIDToContentTasteItem;
@@ -29,10 +29,10 @@
 - (void)_scheduleContentTasteUpdateOperationForFailedItems;
 - (void)_sendUpdateWithItemUpdates:(id)arg1 completionHandler:(id /* block */)arg2;
 - (unsigned int)contentTasteTypeForPlaylistGlobalID:(id)arg1;
-- (unsigned int)contentTasteTypeForStoreAdamID:(int)arg1;
+- (unsigned int)contentTasteTypeForStoreAdamID:(long long)arg1;
 - (void)dealloc;
 - (id)init;
 - (void)setContentTasteType:(unsigned int)arg1 forPlaylistGlobalID:(id)arg2 withCompletionHandler:(id /* block */)arg3;
-- (void)setContentTasteType:(unsigned int)arg1 forStoreAdamID:(int)arg2 withContentType:(unsigned int)arg3 completionHandler:(id /* block */)arg4;
+- (void)setContentTasteType:(unsigned int)arg1 forStoreAdamID:(long long)arg2 withContentType:(unsigned int)arg3 completionHandler:(id /* block */)arg4;
 
 @end

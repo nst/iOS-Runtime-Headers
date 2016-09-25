@@ -4,8 +4,8 @@
 
 @interface _MKPaddedTextAttachmentImageView : UIView {
     UIImageView * _imageView;
-    double  _leadingPadding;
-    double  _trailingPadding;
+    float  _leadingPadding;
+    float  _trailingPadding;
 }
 
 - (void).cxx_destruct;

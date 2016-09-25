@@ -11,13 +11,13 @@
 @property (nonatomic, readonly, retain) GEODirectionsRequest *request;
 @property (nonatomic, readonly, retain) GEODirectionsResponse *response;
 
-+ (unsigned int)routingSharedLibraryCodeVersion;
-+ (unsigned int)routingSubgraphDataVersion;
++ (unsigned long long)routingSharedLibraryCodeVersion;
++ (unsigned long long)routingSubgraphDataVersion;
 
 - (void)dealloc;
 - (void)decompressResponse;
 - (id)initWithRequest:(id)arg1 response:(id)arg2;
-- (id)lookupHubStationOrStopFromMuid:(unsigned int)arg1;
+- (id)lookupHubStationOrStopFromMuid:(unsigned long long)arg1;
 - (id)request;
 - (void)rerouteFromWaypoint:(id)arg1 completion:(id /* block */)arg2;
 - (id)response;

@@ -3,7 +3,7 @@
  */
 
 @interface NTPBPersonalizationChangeGroup : PBCodable <NSCopying> {
-    unsigned int  _changeNumber;
+    unsigned long long  _changeNumber;
     NSMutableArray * _deltas;
     struct { 
         unsigned int changeNumber : 1; 
@@ -11,7 +11,7 @@
     NSString * _instanceIdentifier;
 }
 
-@property (nonatomic) unsigned int changeNumber;
+@property (nonatomic) unsigned long long changeNumber;
 @property (nonatomic, retain) NSMutableArray *deltas;
 @property (nonatomic) BOOL hasChangeNumber;
 @property (nonatomic, readonly) BOOL hasInstanceIdentifier;
@@ -20,7 +20,7 @@
 + (Class)deltasType;
 
 - (void)addDeltas:(id)arg1;
-- (unsigned int)changeNumber;
+- (unsigned long long)changeNumber;
 - (void)clearDeltas;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -36,7 +36,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (void)setChangeNumber:(unsigned int)arg1;
+- (void)setChangeNumber:(unsigned long long)arg1;
 - (void)setDeltas:(id)arg1;
 - (void)setHasChangeNumber:(BOOL)arg1;
 - (void)setInstanceIdentifier:(id)arg1;

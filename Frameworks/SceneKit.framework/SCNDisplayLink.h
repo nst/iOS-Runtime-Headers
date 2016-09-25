@@ -10,14 +10,14 @@
     double  _lastFrameTime;
     id  _owner;
     BOOL  _paused;
-    double  _preferredFrameRate;
+    float  _preferredFrameRate;
     NSObject<OS_dispatch_queue> * _queue;
     int  _queuedFrameCount;
     BOOL  _supportTargetTimestamp;
 }
 
 @property (getter=isPaused, nonatomic) BOOL paused;
-@property (nonatomic) double preferredFrameRate;
+@property (nonatomic) float preferredFrameRate;
 
 - (void)_caDisplayLinkCallback;
 - (void)_callbackWithTime:(double)arg1;

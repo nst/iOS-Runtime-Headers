@@ -7,29 +7,29 @@
     <SPUITableViewDelegate> * _gestureDelegate;
     BOOL  _hasAppeared;
     BOOL  _hasCardPresented;
-    double  _headerHeight;
+    float  _headerHeight;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _initialKeyboardFrame;
     BOOL  _isPresenting;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _keyboardFrame;
-    double  _lastScrollOffset;
+    float  _lastScrollOffset;
     SPUIPeekDelegate * _peekDelegate;
     <UIViewControllerPreviewing> * _previewingContext;
     NSArray * _resultIdentifiersForRowsInSections;
@@ -52,11 +52,11 @@
 @property BOOL hasAppeared;
 @property BOOL hasCardPresented;
 @property (readonly) unsigned int hash;
-@property double headerHeight;
-@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } initialKeyboardFrame;
+@property float headerHeight;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } initialKeyboardFrame;
 @property BOOL isPresenting;
-@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } keyboardFrame;
-@property double lastScrollOffset;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } keyboardFrame;
+@property float lastScrollOffset;
 @property (retain) SPUIPeekDelegate *peekDelegate;
 @property (retain) <UIViewControllerPreviewing> *previewingContext;
 @property (retain) NSArray *resultIdentifiersForRowsInSections;
@@ -91,11 +91,11 @@
 - (id)identifierForSection:(id)arg1;
 - (unsigned int)indexOfSection:(id)arg1;
 - (id)initWithSearchModel:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })initialKeyboardFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })initialKeyboardFrame;
 - (BOOL)isPresenting;
 - (void)isPresenting:(BOOL)arg1;
 - (BOOL)isZKWExpanded;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })keyboardFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })keyboardFrame;
 - (void)keyboardFrameChanged:(id)arg1;
 - (void)keyboardWillShow:(id)arg1;
 - (float)lastScrollOffset;
@@ -129,9 +129,9 @@
 - (void)setHasAppeared:(BOOL)arg1;
 - (void)setHasCardPresented:(BOOL)arg1;
 - (void)setHeaderHeight:(float)arg1;
-- (void)setInitialKeyboardFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setInitialKeyboardFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setIsPresenting:(BOOL)arg1;
-- (void)setKeyboardFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setKeyboardFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setLastScrollOffset:(float)arg1;
 - (void)setPeekDelegate:(id)arg1;
 - (void)setPreviewingContext:(id)arg1;

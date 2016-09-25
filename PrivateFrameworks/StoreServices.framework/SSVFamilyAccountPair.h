@@ -3,18 +3,18 @@
  */
 
 @interface SSVFamilyAccountPair : NSObject {
-    unsigned int  _downloaderAccountIdentifier;
-    unsigned int  _familyIdentifier;
-    unsigned int  _purchaserAccountIdentifier;
+    unsigned long long  _downloaderAccountIdentifier;
+    unsigned long long  _familyIdentifier;
+    unsigned long long  _purchaserAccountIdentifier;
 }
 
-@property (nonatomic, readonly) unsigned int downloaderAccountIdentifier;
-@property (nonatomic, readonly) unsigned int familyIdentifier;
-@property (nonatomic, readonly) unsigned int purchaserAccountIdentifier;
+@property (nonatomic, readonly) unsigned long long downloaderAccountIdentifier;
+@property (nonatomic, readonly) unsigned long long familyIdentifier;
+@property (nonatomic, readonly) unsigned long long purchaserAccountIdentifier;
 
-- (unsigned int)downloaderAccountIdentifier;
-- (unsigned int)familyIdentifier;
-- (id)initWithDownloaderAccountIdentifier:(unsigned int)arg1 purchaserAccountIdentifier:(unsigned int)arg2 familyIdentifier:(unsigned int)arg3;
-- (unsigned int)purchaserAccountIdentifier;
+- (unsigned long long)downloaderAccountIdentifier;
+- (unsigned long long)familyIdentifier;
+- (id)initWithDownloaderAccountIdentifier:(unsigned long long)arg1 purchaserAccountIdentifier:(unsigned long long)arg2 familyIdentifier:(unsigned long long)arg3;
+- (unsigned long long)purchaserAccountIdentifier;
 
 @end

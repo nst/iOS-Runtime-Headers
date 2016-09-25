@@ -3,13 +3,13 @@
  */
 
 @interface QLInteractiveTransitionController : QLTransitionController <UIViewControllerInteractiveTransitioning> {
-    double  _completeProgress;
-    double  _initialTransitioningViewWidth;
+    float  _completeProgress;
+    float  _initialTransitioningViewWidth;
 }
 
-@property (nonatomic) double completeProgress;
+@property (nonatomic) float completeProgress;
 @property (nonatomic, readonly) int completionCurve;
-@property (nonatomic, readonly) double completionSpeed;
+@property (nonatomic, readonly) float completionSpeed;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;

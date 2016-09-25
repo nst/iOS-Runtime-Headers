@@ -9,11 +9,11 @@
     AAGrandSlamSigner * _grandSlamSigner;
     ABMonogrammer * _monogrammer;
     NSOperationQueue * _networkingQueue;
-    double  _pictureDiameter;
+    float  _pictureDiameter;
     int  _pictureStyle;
 }
 
-@property (nonatomic) double pictureDiameter;
+@property (nonatomic) float pictureDiameter;
 @property (nonatomic) int pictureStyle;
 
 - (void).cxx_destruct;
@@ -37,10 +37,10 @@
 - (BOOL)_onAddressBookQueue_peopleLinkedToMeCardContainsRecordID:(int)arg1;
 - (BOOL)_onAddressBookQueue_personSyncsWithiCloud:(void*)arg1;
 - (id)_profilePictureForFamilyMemberWithoutMonogramFallback:(id)arg1;
-- (id)_profilePictureForPicture:(id)arg1 crop:(BOOL)arg2 cropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 cacheable:(BOOL)arg4;
+- (id)_profilePictureForPicture:(id)arg1 crop:(BOOL)arg2 cropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 cacheable:(BOOL)arg4;
 - (void)_updateServerProfilePictureForAccountOwner:(id)arg1 cropRect:(id)arg2;
 - (void)_updateServerProfilePictureWithRequest:(id)arg1;
-- (id)cacheablePictureForPicture:(id)arg1 cropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (id)cacheablePictureForPicture:(id)arg1 cropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)dealloc;
 - (void)fetchProfilePictureForAccountOwner:(id /* block */)arg1;
 - (void)fetchProfilePictureForFamilyMember:(id)arg1 completion:(id /* block */)arg2;
@@ -57,7 +57,7 @@
 - (id)profilePictureForFamilyMember:(id)arg1;
 - (id)profilePictureForFamilyMemberWithFirstName:(id)arg1 lastName:(id)arg2 email:(id)arg3;
 - (id)profilePictureForPicture:(id)arg1;
-- (id)profilePictureForPicture:(id)arg1 cropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (id)profilePictureForPicture:(id)arg1 cropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)setPictureDiameter:(float)arg1;
 - (void)setPictureStyle:(int)arg1;
 - (void)setProfilePictureForAccountOwner:(id)arg1;

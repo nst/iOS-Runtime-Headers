@@ -6,11 +6,11 @@
     int  _pendingWebViewLoads;
     NSString * _stylesheet;
     struct __CFDictionary { } * _webViewCache;
-    double  _webViewWidth;
+    float  _webViewWidth;
 }
 
 @property (nonatomic, retain) NSString *stylesheet;
-@property (nonatomic) double webViewWidth;
+@property (nonatomic) float webViewWidth;
 
 - (void)dealloc;
 - (void)setStylesheet:(id)arg1;

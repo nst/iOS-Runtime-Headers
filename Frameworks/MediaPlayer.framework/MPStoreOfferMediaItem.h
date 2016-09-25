@@ -52,7 +52,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)mediaLibrary;
 - (id)offerArtworkDescriptor;
-- (unsigned int)persistentID;
+- (unsigned long long)persistentID;
 - (int)preferredStoreOfferVariant;
 - (id)screenshotArtworkCatalog;
 - (BOOL)setValue:(id)arg1 forProperty:(id)arg2;

@@ -46,7 +46,7 @@
 - (id)profile;
 - (id)provenanceByID;
 - (id)provenanceManager;
-- (id)provenanceWithID:(int)arg1;
+- (id)provenanceWithID:(long long)arg1;
 - (void)setCodableObjectCollectionsByProvenance:(id)arg1;
 - (void)setCodableSourcesByID:(id)arg1;
 - (void)setDatabase:(id)arg1;

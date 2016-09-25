@@ -10,22 +10,22 @@
     BOOL  _override;
     void _position;
     PKRegion * _region;
-    double  _rotation;
+    float  _rotation;
     void _scale;
 }
 
 @property (nonatomic) unsigned int categoryBitMask;
 @property (nonatomic) void direction;
 @property (getter=isEnabled, nonatomic) BOOL enabled;
-@property (nonatomic) double falloff;
-@property (nonatomic) double minimumRadius;
+@property (nonatomic) float falloff;
+@property (nonatomic) float minimumRadius;
 @property (getter=isOverride, nonatomic) BOOL override;
 @property (nonatomic) void position;
 @property (nonatomic, retain) id region;
 @property (nonatomic) <NSObject> *representedObject;
-@property (nonatomic) double rotation;
+@property (nonatomic) float rotation;
 @property (nonatomic) void scale;
-@property (nonatomic) double strength;
+@property (nonatomic) float strength;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

@@ -9,8 +9,8 @@
     BOOL  _inOrderedArrangementUpdateSection;
     BOOL  _itemFittingSizeChanged;
     BOOL  _itemOrderingChanged;
-    double  _proportionalFillDenominator;
-    double  _spacing;
+    float  _proportionalFillDenominator;
+    float  _spacing;
 }
 
 @property (setter=_setItemFittingSizeChanged:, nonatomic) BOOL _itemFittingSizeChanged;
@@ -27,8 +27,8 @@
 @property (getter=isInOrderedArrangementUpdateSection, nonatomic) BOOL inOrderedArrangementUpdateSection;
 @property (nonatomic) BOOL layoutFillsCanvas;
 @property (nonatomic) BOOL layoutUsesCanvasMarginsWhenFilling;
-@property (nonatomic) double proportionalFillDenominator;
-@property (nonatomic) double spacing;
+@property (nonatomic) float proportionalFillDenominator;
+@property (nonatomic) float spacing;
 @property (readonly) Class superclass;
 
 - (BOOL)_itemFittingSizeChanged;

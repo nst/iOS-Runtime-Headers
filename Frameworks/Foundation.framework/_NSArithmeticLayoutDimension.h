@@ -3,8 +3,8 @@
  */
 
 @interface _NSArithmeticLayoutDimension : NSLayoutDimension <NSCompositeLayoutAnchor> {
-    double  _constant;
-    double  _multiplier;
+    float  _constant;
+    float  _multiplier;
     NSLayoutDimension * _rootLayoutDimension;
 }
 

@@ -4,7 +4,7 @@
 
 @interface MPMediaPersistentIDsPredicate : MPMediaPredicate <MPPProtobufferCoding> {
     unsigned int  _count;
-    int * _persistentIDs;
+    long long * _persistentIDs;
     BOOL  _shouldContain;
 }
 
@@ -12,11 +12,11 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly) const int*persistentIDs;
+@property (nonatomic, readonly) const long long*persistentIDs;
 @property (nonatomic, readonly) BOOL shouldContain;
 @property (readonly) Class superclass;
 
-+ (id)predicateWithPersistentIDs:(const int*)arg1 count:(unsigned int)arg2 shouldContain:(BOOL)arg3;
++ (id)predicateWithPersistentIDs:(const long long*)arg1 count:(unsigned int)arg2 shouldContain:(BOOL)arg3;
 
 - (id)ML3PredicateForContainer;
 - (id)ML3PredicateForTrack;
@@ -29,7 +29,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithProtobufferDecodableObject:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
-- (const int*)persistentIDs;
+- (const long long*)persistentIDs;
 - (id)protobufferEncodableObject;
 - (BOOL)shouldContain;
 

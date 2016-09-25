@@ -11,7 +11,7 @@
     }  _has;
     unsigned int  _hsRabCount;
     unsigned int  _r99RabCount;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
     unsigned int  _totalRabCount;
 }
 
@@ -21,7 +21,7 @@
 @property (nonatomic) BOOL hasTotalRabCount;
 @property (nonatomic) unsigned int hsRabCount;
 @property (nonatomic) unsigned int r99RabCount;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 @property (nonatomic) unsigned int totalRabCount;
 
 - (void)copyTo:(id)arg1;
@@ -44,9 +44,9 @@
 - (void)setHasTotalRabCount:(BOOL)arg1;
 - (void)setHsRabCount:(unsigned int)arg1;
 - (void)setR99RabCount:(unsigned int)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (void)setTotalRabCount:(unsigned int)arg1;
-- (unsigned int)timestamp;
+- (unsigned long long)timestamp;
 - (unsigned int)totalRabCount;
 - (void)writeTo:(id)arg1;
 

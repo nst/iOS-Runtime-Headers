@@ -12,7 +12,7 @@
     int  _indexBarControlVisibleTransactionCount;
     MusicVerticalScrollingContainerItem * _indexBarMinimumVerticalScrollingContainerItem;
     <MusicIndexBarDataSource><MusicIndexBarScrollDelegate> * _indexBarSupportDataSource;
-    double  _indexBarTrailingLayoutInsetAddition;
+    float  _indexBarTrailingLayoutInsetAddition;
     BOOL  _isContainedWithinSplitViewPrimary;
     BOOL  _isIndexBarTracking;
     BOOL  _isIndexBarVisible;
@@ -20,10 +20,10 @@
     BOOL  _needsIndexBarVisibilityUpdate;
     SKUIProxyScrollView * _proxyScrollView;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _proxyScrollViewContentInsetAdditions;
     MusicActionableHeaderView * _recentlyAddedHeaderView;
     MusicLibraryBrowseCollectionViewController * _recentlyAddedViewController;
@@ -53,7 +53,7 @@
 - (void).cxx_destruct;
 - (id)_calculateIndexBarBackgroundColor;
 - (float)_calculateIndexBarControlWidth;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_calculateLayoutInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_calculateLayoutInsets;
 - (void)_handleContentSizeCategoryDidChangeNotification:(id)arg1;
 - (BOOL)_hasContentForViewConfiguration:(id)arg1;
 - (void)_indexBarControlTouchAction:(id)arg1;

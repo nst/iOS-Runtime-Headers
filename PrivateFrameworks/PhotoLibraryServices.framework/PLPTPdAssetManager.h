@@ -28,7 +28,7 @@
 - (void)_performTransactionAndWait:(id /* block */)arg1;
 - (id)_ptpInformationForAllAssets;
 - (void)_registerForFirstUnlockNotification;
-- (struct CGSize { double x1; double x2; })_validateSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })_validateSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)albumHandles;
 - (id)assetsInAssociation:(struct NSObject { Class x1; }*)arg1;
 - (id)associationsInAlbum:(struct NSObject { Class x1; }*)arg1;
@@ -54,7 +54,7 @@
 - (id)ptpInformationForPhotoWithObjectID:(id)arg1;
 - (id)ptpInformationForPhotosWithPrimaryKeys:(id)arg1;
 - (id)ptpThumbnailForPhotoWithKey:(struct NSObject { Class x1; }*)arg1;
-- (id)ptpThumbnailForPhotoWithKey:(struct NSObject { Class x1; }*)arg1 size:(struct CGSize { double x1; double x2; })arg2;
+- (id)ptpThumbnailForPhotoWithKey:(struct NSObject { Class x1; }*)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setFileManager:(id)arg1;
 - (void)setPtpDelegate:(id)arg1;

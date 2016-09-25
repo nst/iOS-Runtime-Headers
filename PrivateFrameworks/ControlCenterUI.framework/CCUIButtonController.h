@@ -33,8 +33,8 @@
 - (id)appIconForceTouchController:(id)arg1 applicationShortcutItemsForGestureRecognizer:(id)arg2;
 - (id)appIconForceTouchController:(id)arg1 applicationShortcutWidgetBundleIdentifierForGestureRecognizer:(id)arg2;
 - (float)appIconForceTouchController:(id)arg1 iconImageCornerRadiusForGestureRecognizer:(id)arg2;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })appIconForceTouchController:(id)arg1 iconImageInsetsForGestureRecognizer:(id)arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })appIconForceTouchController:(id)arg1 iconViewFrameForGestureRecognizer:(id)arg2;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })appIconForceTouchController:(id)arg1 iconImageInsetsForGestureRecognizer:(id)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })appIconForceTouchController:(id)arg1 iconViewFrameForGestureRecognizer:(id)arg2;
 - (BOOL)appIconForceTouchController:(id)arg1 isSystemOrInternalApplicationForGestureRecognizer:(id)arg2;
 - (id)appIconForceTouchController:(id)arg1 newIconViewCopyForGestureRecognizer:(id)arg2;
 - (BOOL)appIconForceTouchController:(id)arg1 shouldUseSecureWindowForGestureRecognizer:(id)arg2;
@@ -49,8 +49,8 @@
 - (BOOL)dismissModalFullScreenIfNeeded;
 - (id)glyphImageForState:(int)arg1;
 - (float)iconForceTouchController:(id)arg1 iconImageCornerRadiusForGestureRecognizer:(id)arg2;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })iconForceTouchController:(id)arg1 iconImageInsetsForGestureRecognizer:(id)arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })iconForceTouchController:(id)arg1 iconViewFrameForGestureRecognizer:(id)arg2;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })iconForceTouchController:(id)arg1 iconImageInsetsForGestureRecognizer:(id)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })iconForceTouchController:(id)arg1 iconViewFrameForGestureRecognizer:(id)arg2;
 - (int)iconForceTouchController:(id)arg1 layoutStyleForGestureRecognizer:(id)arg2;
 - (id)iconForceTouchController:(id)arg1 newIconViewCopyForGestureRecognizer:(id)arg2;
 - (id)iconForceTouchController:(id)arg1 primaryViewControllerForGestureRecognizer:(id)arg2;

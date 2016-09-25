@@ -10,7 +10,7 @@
 @property (retain) NSString *name;
 @property BOOL visible;
 
-- (id)_colorFromShapeEffectValue:(union { double x1; unsigned int x2; struct _rgbcolor { unsigned char x_3_1_1; unsigned char x_3_1_2; unsigned char x_3_1_3; } x3; short x4; unsigned int x5; })arg1;
+- (id)_colorFromShapeEffectValue:(union { float x1; unsigned int x2; struct _rgbcolor { unsigned char x_3_1_1; unsigned char x_3_1_2; unsigned char x_3_1_3; } x3; short x4; unsigned int x5; })arg1;
 - (void)dealloc;
 - (unsigned int)effectType;
 - (id)initWithEffectFromPreset:(id)arg1 atIndex:(unsigned int)arg2;

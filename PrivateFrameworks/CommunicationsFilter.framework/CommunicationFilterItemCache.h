@@ -4,15 +4,15 @@
 
 @interface CommunicationFilterItemCache : NSObject {
     CommunicationFilterItem * _filterItem;
-    int  _isInList;
+    long long  _isInList;
 }
 
-@property (nonatomic) int isInList;
+@property (nonatomic) long long isInList;
 
 - (void)dealloc;
-- (id)initWithFilterItem:(id)arg1 isInList:(int)arg2;
-- (int)isInList;
+- (id)initWithFilterItem:(id)arg1 isInList:(long long)arg2;
+- (long long)isInList;
 - (BOOL)matchesItem:(id)arg1;
-- (void)setIsInList:(int)arg1;
+- (void)setIsInList:(long long)arg1;
 
 @end

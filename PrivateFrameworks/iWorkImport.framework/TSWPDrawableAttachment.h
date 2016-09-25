@@ -4,17 +4,17 @@
 
 @interface TSWPDrawableAttachment : TSWPAttachment {
     TSDDrawableInfo * _drawableInfo;
-    double  _hOffset;
+    float  _hOffset;
     int  _hOffsetType;
-    double  _vOffset;
+    float  _vOffset;
     int  _vOffsetType;
 }
 
-@property (nonatomic, readonly) double descent;
+@property (nonatomic, readonly) float descent;
 @property (nonatomic, readonly, retain) TSDDrawableInfo *drawable;
-@property (nonatomic) double hOffset;
+@property (nonatomic) float hOffset;
 @property (nonatomic) int hOffsetType;
-@property (nonatomic) double vOffset;
+@property (nonatomic) float vOffset;
 @property (nonatomic) int vOffsetType;
 
 + (void)setPositionerClass:(Class)arg1;
@@ -41,10 +41,10 @@
 - (BOOL)isHTMLWrap;
 - (BOOL)isPartitioned;
 - (BOOL)isSearchable;
-- (void)loadMessage:(const struct DrawableAttachmentArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Reference {} *x5; unsigned int x6; double x7; unsigned int x8; double x9; }*)arg1 fromUnarchiver:(id)arg2;
+- (void)loadMessage:(const struct DrawableAttachmentArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Reference {} *x5; unsigned int x6; float x7; unsigned int x8; float x9; }*)arg1 fromUnarchiver:(id)arg2;
 - (id)objectsForStyleMigrating;
 - (Class)positionerClass;
-- (void)saveMessage:(struct DrawableAttachmentArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Reference {} *x5; unsigned int x6; double x7; unsigned int x8; double x9; }*)arg1 toArchiver:(id)arg2;
+- (void)saveMessage:(struct DrawableAttachmentArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Reference {} *x5; unsigned int x6; float x7; unsigned int x8; float x9; }*)arg1 toArchiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
 - (void)setHOffset:(float)arg1;
 - (void)setHOffsetType:(int)arg1;

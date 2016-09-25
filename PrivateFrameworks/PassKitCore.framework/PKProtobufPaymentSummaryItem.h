@@ -3,7 +3,7 @@
  */
 
 @interface PKProtobufPaymentSummaryItem : PBCodable <NSCopying> {
-    int  _amount;
+    long long  _amount;
     struct { 
         unsigned int amount : 1; 
         unsigned int type : 1; 
@@ -12,7 +12,7 @@
     unsigned int  _type;
 }
 
-@property (nonatomic) int amount;
+@property (nonatomic) long long amount;
 @property (nonatomic) BOOL hasAmount;
 @property (nonatomic, readonly) BOOL hasLabel;
 @property (nonatomic) BOOL hasType;
@@ -20,7 +20,7 @@
 @property (nonatomic) unsigned int type;
 
 - (void).cxx_destruct;
-- (int)amount;
+- (long long)amount;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -33,7 +33,7 @@
 - (id)label;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (void)setAmount:(int)arg1;
+- (void)setAmount:(long long)arg1;
 - (void)setHasAmount:(BOOL)arg1;
 - (void)setHasType:(BOOL)arg1;
 - (void)setLabel:(id)arg1;

@@ -6,21 +6,21 @@
     _UIBackdropViewSettings * _blurEffect;
 }
 
-@property (nonatomic) double blurRadius;
-@property (nonatomic) double colorBurnTintAlpha;
-@property (nonatomic) double colorBurnTintLevel;
+@property (nonatomic) float blurRadius;
+@property (nonatomic) float colorBurnTintAlpha;
+@property (nonatomic) float colorBurnTintLevel;
 @property (nonatomic, retain) UIColor *colorTint;
-@property (nonatomic) double colorTintAlpha;
+@property (nonatomic) float colorTintAlpha;
 @property (nonatomic) BOOL darkenWithSourceOver;
-@property (nonatomic) double darkeningTintAlpha;
-@property (nonatomic) double darkeningTintHue;
-@property (nonatomic) double darkeningTintSaturation;
-@property (nonatomic) double grayscaleTintAlpha;
-@property (nonatomic) double grayscaleTintLevel;
+@property (nonatomic) float darkeningTintAlpha;
+@property (nonatomic) float darkeningTintHue;
+@property (nonatomic) float darkeningTintSaturation;
+@property (nonatomic) float grayscaleTintAlpha;
+@property (nonatomic) float grayscaleTintLevel;
 @property (nonatomic) BOOL lightenGrayscaleWithSourceOver;
-@property (nonatomic) double saturationDeltaFactor;
-@property (nonatomic) double scale;
-@property (nonatomic) double zoom;
+@property (nonatomic) float saturationDeltaFactor;
+@property (nonatomic) float scale;
+@property (nonatomic) float zoom;
 
 + (id)effectWithStyle:(int)arg1;
 

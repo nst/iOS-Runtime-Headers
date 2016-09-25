@@ -186,7 +186,7 @@
 - (void)URLSessionDataTask:(id)arg1 didReceiveResponse:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)URLSessionTask:(id)arg1 conditionalRequirementsChanged:(BOOL)arg2;
 - (void)URLSessionTask:(id)arg1 didCompleteWithError:(id)arg2;
-- (void)URLSessionTask:(id)arg1 didSendBodyData:(int)arg2 totalBytesSent:(int)arg3 totalBytesExpectedToSend:(int)arg4;
+- (void)URLSessionTask:(id)arg1 didSendBodyData:(long long)arg2 totalBytesSent:(long long)arg3 totalBytesExpectedToSend:(long long)arg4;
 - (void)URLSessionTask:(id)arg1 needNewBodyStream:(id /* block */)arg2;
 - (id)URLSessionTask:(id)arg1 requestForEstablishedConnection:(id)arg2;
 - (void)URLSessionTask:(id)arg1 willPerformHTTPRedirection:(id)arg2 newRequest:(id)arg3 completionHandler:(id /* block */)arg4;

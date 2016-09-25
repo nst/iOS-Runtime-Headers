@@ -6,11 +6,11 @@
     struct IMAssociatedMessageGeometryDescriptor { 
         unsigned int layoutIntent; 
         unsigned int associatedLayoutIntent; 
-        double parentPreviewWidth; 
-        double xScalar; 
-        double yScalar; 
-        double scale; 
-        double rotation; 
+        float parentPreviewWidth; 
+        float xScalar; 
+        float yScalar; 
+        float scale; 
+        float rotation; 
     }  _geometryDescriptor;
     BOOL  _parentMessageIsFromMe;
     IMHandle * _sender;
@@ -18,9 +18,9 @@
 
 @property (nonatomic, readonly) NSString *associatedMessageGUID;
 @property (nonatomic, readonly) struct _NSRange { unsigned int x1; unsigned int x2; } associatedMessageRange;
-@property (nonatomic, readonly) int associatedMessageType;
+@property (nonatomic, readonly) long long associatedMessageType;
 @property (nonatomic, readonly) BOOL failed;
-@property (nonatomic, readonly) struct IMAssociatedMessageGeometryDescriptor { unsigned int x1; unsigned int x2; double x3; double x4; double x5; double x6; double x7; } geometryDescriptor;
+@property (nonatomic, readonly) struct IMAssociatedMessageGeometryDescriptor { unsigned int x1; unsigned int x2; float x3; float x4; float x5; float x6; float x7; } geometryDescriptor;
 @property (nonatomic, readonly) BOOL isFromMe;
 @property (nonatomic, readonly) NSDictionary *messageSummaryInfo;
 @property (nonatomic, readonly) BOOL parentMessageIsFromMe;
@@ -33,10 +33,10 @@
 - (void)_setParentMessageIsFromMe:(BOOL)arg1;
 - (id)associatedMessageGUID;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })associatedMessageRange;
-- (int)associatedMessageType;
+- (long long)associatedMessageType;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (BOOL)failed;
-- (struct IMAssociatedMessageGeometryDescriptor { unsigned int x1; unsigned int x2; double x3; double x4; double x5; double x6; double x7; })geometryDescriptor;
+- (struct IMAssociatedMessageGeometryDescriptor { unsigned int x1; unsigned int x2; float x3; float x4; float x5; float x6; float x7; })geometryDescriptor;
 - (BOOL)isFromMe;
 - (id)message;
 - (id)messageSummaryInfo;

@@ -3,7 +3,7 @@
  */
 
 @interface SKCustomAction : SKAction {
-    struct SKCCustomAction { int (**x1)(); unsigned int x2; double x3; id /* block */ x4; id x5; double x6; double x7; double x8; double x9; double x10; bool x11; bool x12; id /* block */ x13; int x14; double x15; double x16; double x17; double x18; id /* block */ x19; } * _mycaction;
+    struct SKCCustomAction { int (**x1)(); unsigned int x2; float x3; id /* block */ x4; id x5; double x6; double x7; float x8; float x9; double x10; bool x11; bool x12; id /* block */ x13; int x14; float x15; float x16; float x17; float x18; id /* block */ x19; } * _mycaction;
 }
 
 + (id)customActionWithDuration:(double)arg1 actionBlock:(id /* block */)arg2;

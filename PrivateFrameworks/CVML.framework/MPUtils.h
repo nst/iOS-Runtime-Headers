@@ -4,10 +4,10 @@
 
 @interface MPUtils : NSObject
 
-+ (id)createErrorWithCode:(int)arg1 andMessage:(id)arg2;
++ (id)createErrorWithCode:(long long)arg1 andMessage:(id)arg2;
 + (void)freeVImageBuffer:(struct vImage_Buffer { void *x1; unsigned int x2; unsigned int x3; unsigned int x4; }*)arg1;
 + (double)getHostTime;
-+ (unsigned int)getHostTimeInNanos;
++ (unsigned long long)getHostTimeInNanos;
 + (long)parseExifTimestamp:(id)arg1;
 
 @end

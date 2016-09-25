@@ -3,13 +3,13 @@
  */
 
 @interface MSVArtworkServiceConversionRequest : MSVArtworkServiceRequest {
-    double  _destinationCompressionQuality;
+    float  _destinationCompressionQuality;
     int  _destinationFormat;
     NSURL * _destinationURL;
     NSURL * _sourceURL;
 }
 
-@property (nonatomic, readonly) double destinationCompressionQuality;
+@property (nonatomic, readonly) float destinationCompressionQuality;
 @property (nonatomic) int destinationFormat;
 @property (nonatomic, copy) NSURL *destinationURL;
 @property (nonatomic, copy) NSURL *sourceURL;

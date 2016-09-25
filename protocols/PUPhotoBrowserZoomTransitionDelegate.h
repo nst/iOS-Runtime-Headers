@@ -5,7 +5,7 @@
 
 @required
 
-- (BOOL)zoomTransition:(PUPhotoBrowserZoomTransition *)arg1 getFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg2 contentMode:(int*)arg3 cropInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; }*)arg4 forPhotoToken:(id)arg5 operation:(int)arg6;
+- (BOOL)zoomTransition:(PUPhotoBrowserZoomTransition *)arg1 getFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 contentMode:(int*)arg3 cropInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg4 forPhotoToken:(id)arg5 operation:(int)arg6;
 - (id)zoomTransition:(PUPhotoBrowserZoomTransition *)arg1 photoTokenForPhoto:(PHAsset *)arg2 inCollection:(PHAssetCollection *)arg3;
 
 @optional

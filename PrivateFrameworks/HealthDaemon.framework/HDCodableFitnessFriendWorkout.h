@@ -7,7 +7,7 @@
     double  _duration;
     NSData * _friendUUID;
     double  _goal;
-    int  _goalType;
+    long long  _goalType;
     struct { 
         unsigned int duration : 1; 
         unsigned int goal : 1; 
@@ -19,13 +19,13 @@
         unsigned int totalEnergyBurnedInCanonicalUnit : 1; 
         unsigned int type : 1; 
     }  _has;
-    int  _isIndoorWorkout;
-    int  _isWatchWorkout;
+    long long  _isIndoorWorkout;
+    long long  _isWatchWorkout;
     HDCodableSample * _sample;
     double  _totalBasalEnergyBurnedInCanonicalUnit;
     double  _totalDistanceInCanonicalUnit;
     double  _totalEnergyBurnedInCanonicalUnit;
-    int  _type;
+    long long  _type;
 }
 
 @property (nonatomic, retain) NSString *bundleID;
@@ -34,7 +34,7 @@
 @property (nonatomic) double duration;
 @property (nonatomic, retain) NSData *friendUUID;
 @property (nonatomic) double goal;
-@property (nonatomic) int goalType;
+@property (nonatomic) long long goalType;
 @property (nonatomic, readonly) BOOL hasBundleID;
 @property (nonatomic) BOOL hasDuration;
 @property (nonatomic, readonly) BOOL hasFriendUUID;
@@ -48,14 +48,14 @@
 @property (nonatomic) BOOL hasTotalEnergyBurnedInCanonicalUnit;
 @property (nonatomic) BOOL hasType;
 @property (readonly) unsigned int hash;
-@property (nonatomic) int isIndoorWorkout;
-@property (nonatomic) int isWatchWorkout;
+@property (nonatomic) long long isIndoorWorkout;
+@property (nonatomic) long long isWatchWorkout;
 @property (nonatomic, retain) HDCodableSample *sample;
 @property (readonly) Class superclass;
 @property (nonatomic) double totalBasalEnergyBurnedInCanonicalUnit;
 @property (nonatomic) double totalDistanceInCanonicalUnit;
 @property (nonatomic) double totalEnergyBurnedInCanonicalUnit;
-@property (nonatomic) int type;
+@property (nonatomic) long long type;
 
 - (void).cxx_destruct;
 - (BOOL)applyToObject:(id)arg1;
@@ -67,7 +67,7 @@
 - (double)duration;
 - (id)friendUUID;
 - (double)goal;
-- (int)goalType;
+- (long long)goalType;
 - (BOOL)hasBundleID;
 - (BOOL)hasDuration;
 - (BOOL)hasFriendUUID;
@@ -82,8 +82,8 @@
 - (BOOL)hasType;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
-- (int)isIndoorWorkout;
-- (int)isWatchWorkout;
+- (long long)isIndoorWorkout;
+- (long long)isWatchWorkout;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (id)sample;
@@ -91,7 +91,7 @@
 - (void)setDuration:(double)arg1;
 - (void)setFriendUUID:(id)arg1;
 - (void)setGoal:(double)arg1;
-- (void)setGoalType:(int)arg1;
+- (void)setGoalType:(long long)arg1;
 - (void)setHasDuration:(BOOL)arg1;
 - (void)setHasGoal:(BOOL)arg1;
 - (void)setHasGoalType:(BOOL)arg1;
@@ -101,17 +101,17 @@
 - (void)setHasTotalDistanceInCanonicalUnit:(BOOL)arg1;
 - (void)setHasTotalEnergyBurnedInCanonicalUnit:(BOOL)arg1;
 - (void)setHasType:(BOOL)arg1;
-- (void)setIsIndoorWorkout:(int)arg1;
-- (void)setIsWatchWorkout:(int)arg1;
+- (void)setIsIndoorWorkout:(long long)arg1;
+- (void)setIsWatchWorkout:(long long)arg1;
 - (void)setSample:(id)arg1;
 - (void)setTotalBasalEnergyBurnedInCanonicalUnit:(double)arg1;
 - (void)setTotalDistanceInCanonicalUnit:(double)arg1;
 - (void)setTotalEnergyBurnedInCanonicalUnit:(double)arg1;
-- (void)setType:(int)arg1;
+- (void)setType:(long long)arg1;
 - (double)totalBasalEnergyBurnedInCanonicalUnit;
 - (double)totalDistanceInCanonicalUnit;
 - (double)totalEnergyBurnedInCanonicalUnit;
-- (int)type;
+- (long long)type;
 - (void)writeTo:(id)arg1;
 
 @end

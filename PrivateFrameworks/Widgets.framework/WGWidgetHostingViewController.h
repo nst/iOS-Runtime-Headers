@@ -9,7 +9,7 @@
     _WGBrokenWidgetView * _brokenView;
     int  _connectionRequestState;
     UIView * _contentProvidingView;
-    double  _cornerRadius;
+    float  _cornerRadius;
     <WGWidgetHostingViewControllerDelegate> * _delegate;
     BOOL  _didRequestViewInset;
     BOOL  _didUpdate;
@@ -35,12 +35,12 @@
     UIView * _snapshotView;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _snapshotViewBounds;
     NSObject<OS_dispatch_semaphore> * _viewWillAppearSemaphore;
@@ -57,7 +57,7 @@
 @property (getter=_connectionRequestState, setter=_setConnectionRequestState:, nonatomic) int connectionRequestState;
 @property (getter=_containerIdentifier, nonatomic, readonly, copy) NSString *containerIdentifier;
 @property (getter=_contentProvidingView, setter=_setContentProvidingView:, nonatomic, retain) UIView *contentProvidingView;
-@property (nonatomic) double cornerRadius;
+@property (nonatomic) float cornerRadius;
 @property (nonatomic) <WGWidgetHostingViewControllerDelegate> *delegate;
 @property (getter=_didRequestViewInset, setter=_setDidRequestViewInset:, nonatomic) BOOL didRequestViewInset;
 @property (getter=_didUpdate, setter=_setDidUpdate:, nonatomic) BOOL didUpdate;
@@ -87,7 +87,7 @@
 @property (nonatomic, readonly) UIImage *settingsIcon;
 @property (getter=isSnapshotLoaded, nonatomic, readonly) BOOL snapshotLoaded;
 @property (getter=_snapshotView, setter=_setSnapshotView:, nonatomic, retain) UIView *snapshotView;
-@property (getter=_snapshotViewBounds, setter=_setSnapshotBounds:, nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } snapshotViewBounds;
+@property (getter=_snapshotViewBounds, setter=_setSnapshotBounds:, nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } snapshotViewBounds;
 @property (nonatomic) int userSpecifiedDisplayMode;
 @property (getter=_viewWillAppearSemaphore, setter=_setViewWillAppearSemaphore:, nonatomic, retain) NSObject<OS_dispatch_semaphore> *viewWillAppearSemaphore;
 @property (getter=_viewWillDisappearSemaphore, setter=_setViewWillDisappearSemaphore:, nonatomic, retain) NSObject<OS_dispatch_semaphore> *viewWillDisappearSemaphore;
@@ -140,8 +140,8 @@
 - (BOOL)_isIgnoringParentAppearState;
 - (id)_lastUnanticipatedDisconnectionDate;
 - (void)_loadSnapshotViewFromDiskIfNecessary:(id /* block */)arg1;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_marginInsets;
-- (struct CGSize { double x1; double x2; })_maxSizeForDisplayMode:(int)arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_marginInsets;
+- (struct CGSize { float x1; float x2; })_maxSizeForDisplayMode:(int)arg1;
 - (void)_noteOutstandingUpdateRequest;
 - (id)_openActiveDisplayModeChangeTransactions;
 - (id)_openAppearanceTransactions;
@@ -177,7 +177,7 @@
 - (void)_setOutstandingWidgetUpdateCompletionHandler:(id /* block */)arg1;
 - (void)_setRemoteViewController:(id)arg1;
 - (void)_setRemoteViewControllerDisconnectionHandler:(id /* block */)arg1;
-- (void)_setSnapshotBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)_setSnapshotBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_setSnapshotView:(id)arg1;
 - (void)_setSnapshotView:(id)arg1 forLayoutMode:(int)arg2;
 - (void)_setViewWillAppearSemaphore:(id)arg1;
@@ -185,7 +185,7 @@
 - (void)_setupRequestQueue;
 - (id)_snapshotIdentifierForLayoutMode:(int)arg1;
 - (id)_snapshotView;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_snapshotViewBounds;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_snapshotViewBounds;
 - (float)_updatePreferredContentSizeWithHeight:(float)arg1;
 - (void)_updateWidgetWithCompletionHandler:(id /* block */)arg1;
 - (void)_validateSnapshotViewForActiveLayoutMode;
@@ -228,7 +228,7 @@
 - (void)setDisconnectsImmediately:(BOOL)arg1;
 - (void)setHost:(id)arg1;
 - (void)setMaskedCorners:(unsigned int)arg1;
-- (void)setPreferredContentSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setPreferredContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setRequestState:(int)arg1;
 - (void)setUserSpecifiedDisplayMode:(int)arg1;
 - (id)settingsIcon;

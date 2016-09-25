@@ -15,7 +15,7 @@
     NSArray * _workoutEvents;
 }
 
-@property (nonatomic) int anchor;
+@property (nonatomic) long long anchor;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) double duration;
@@ -123,11 +123,11 @@
 + (Class)hd_dataEntityClass;
 
 - (BOOL)addCodableRepresentationToCollection:(id)arg1;
-- (int)anchor;
+- (long long)anchor;
 - (id)codableRepresentationForSync;
 - (id)codableWorkoutEvents;
 - (BOOL)hd_insertRelatedDataWithProfile:(id)arg1 database:(id)arg2 entityPersistentID:(id)arg3 error:(id*)arg4;
-- (void)setAnchor:(int)arg1;
+- (void)setAnchor:(long long)arg1;
 
 // Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
 

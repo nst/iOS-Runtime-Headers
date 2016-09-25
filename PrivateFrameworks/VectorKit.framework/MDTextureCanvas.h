@@ -3,7 +3,7 @@
  */
 
 @interface MDTextureCanvas : NSObject <MDRenderTarget> {
-    double  _contentScale;
+    float  _contentScale;
     struct Device { } * _device;
     struct RenderTargetFormat { 
         int colorFormats[4]; 
@@ -12,17 +12,17 @@
         int depthStencilFormat; 
     }  _format;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _size;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _sizeInPixels;
 }
 
-@property (nonatomic, readonly) double averageFPS;
-@property (nonatomic, readonly) double contentScale;
+@property (nonatomic, readonly) float averageFPS;
+@property (nonatomic, readonly) float contentScale;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) struct Device { }*device;
@@ -30,8 +30,8 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) BOOL multiSample;
 @property (nonatomic, readonly) BOOL shouldRasterize;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } size;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } sizeInPixels;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } sizeInPixels;
 @property (readonly) Class superclass;
 
 - (id).cxx_construct;
@@ -41,11 +41,11 @@
 - (struct Device { }*)device;
 - (void)didDrawView;
 - (const struct RenderTargetFormat { int x1[4]; unsigned int x2; unsigned int x3; int x4; }*)format;
-- (id)initWithDevice:(struct Device { }*)arg1 size:(struct CGSize { double x1; double x2; })arg2 scale:(float)arg3;
+- (id)initWithDevice:(struct Device { }*)arg1 size:(struct CGSize { float x1; float x2; })arg2 scale:(float)arg3;
 - (BOOL)multiSample;
 - (BOOL)shouldRasterize;
-- (struct CGSize { double x1; double x2; })size;
-- (struct CGSize { double x1; double x2; })sizeInPixels;
+- (struct CGSize { float x1; float x2; })size;
+- (struct CGSize { float x1; float x2; })sizeInPixels;
 - (void)willDrawView;
 
 @end

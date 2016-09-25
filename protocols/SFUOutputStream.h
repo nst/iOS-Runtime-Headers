@@ -10,7 +10,7 @@
 - (void)close;
 - (<SFUOutputStream> *)closeLocalStream;
 - (<SFUInputStream> *)inputStream;
-- (int)offset;
-- (void)seekToOffset:(int)arg1 whence:(int)arg2;
+- (long long)offset;
+- (void)seekToOffset:(long long)arg1 whence:(int)arg2;
 
 @end

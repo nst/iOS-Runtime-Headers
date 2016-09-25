@@ -5,7 +5,7 @@
 @interface UIFocusUpdateContext : NSObject {
     UIScrollView * _commonScrollView;
     _UIFocusedItemInfo * _destinationItemInfo;
-    double  _destinationViewDistanceOffscreen;
+    float  _destinationViewDistanceOffscreen;
     _UIFocusMapSearchInfo * _focusMapSearchInfo;
     _UIFocusMovementInfo * _focusMovement;
     UIFocusGuide * _focusedGuide;
@@ -26,12 +26,12 @@
 @property (getter=_commonScrollView, setter=_setCommonScrollView:, nonatomic, retain) UIScrollView *commonScrollView;
 @property (getter=_destinationItem, nonatomic, readonly) <UIFocusItem> *destinationItem;
 @property (getter=_destinationItemInfo, nonatomic, readonly, copy) _UIFocusedItemInfo *destinationItemInfo;
-@property (getter=_destinationViewDistanceOffscreen, setter=_setDestinationViewDistanceOffscreen:, nonatomic) double destinationViewDistanceOffscreen;
+@property (getter=_destinationViewDistanceOffscreen, setter=_setDestinationViewDistanceOffscreen:, nonatomic) float destinationViewDistanceOffscreen;
 @property (nonatomic, readonly) unsigned int focusHeading;
 @property (getter=_focusMapSearchInfo, setter=_setFocusMapSearchInfo:, nonatomic, retain) _UIFocusMapSearchInfo *focusMapSearchInfo;
 @property (getter=_focusMovement, setter=_setFocusMovement:, nonatomic, copy) _UIFocusMovementInfo *focusMovement;
 @property (getter=_focusUpdateType, nonatomic, readonly) int focusUpdateType;
-@property (getter=_focusVelocity, nonatomic, readonly) struct CGVector { double x1; double x2; } focusVelocity;
+@property (getter=_focusVelocity, nonatomic, readonly) struct CGVector { float x1; float x2; } focusVelocity;
 @property (getter=_focusedGuide, nonatomic, readonly) UIFocusGuide *focusedGuide;
 @property (getter=_forceSourceItemMayRemainFocused, setter=_setForceSourceItemMayRemainFocused:, nonatomic) BOOL forceSourceItemMayRemainFocused;
 @property (getter=_initialDestinationEnvironment, nonatomic, readonly) <UIFocusEnvironment> *initialDestinationEnvironment;
@@ -61,7 +61,7 @@
 - (id)_focusMapSnapshotDebugInfoArray;
 - (id)_focusMovement;
 - (int)_focusUpdateType;
-- (struct CGVector { double x1; double x2; })_focusVelocity;
+- (struct CGVector { float x1; float x2; })_focusVelocity;
 - (id)_focusedGuide;
 - (BOOL)_forceSourceItemMayRemainFocused;
 - (id)_initWithContext:(id)arg1;

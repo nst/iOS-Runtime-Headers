@@ -9,7 +9,7 @@
     double  _duration;
     CALayer * _layer;
     NSString * _masterKey;
-    double  _speed;
+    float  _speed;
     CAStateTransition * _transition;
 }
 
@@ -19,7 +19,7 @@
 @property (nonatomic, readonly) double duration;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) CALayer *layer;
-@property (nonatomic, readonly) double speed;
+@property (nonatomic, readonly) float speed;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) CAStateTransition *transition;
 

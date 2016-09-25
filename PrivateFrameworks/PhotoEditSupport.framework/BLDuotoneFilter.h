@@ -10,8 +10,8 @@
     NSNumber * _inputStrength;
     NSNumber * _inputVersion;
     BOOL  _lastAddColor;
-    double  _lastAmount;
-    double  _lastStrength;
+    float  _lastAmount;
+    float  _lastStrength;
     int  _lastVersion;
     BOOL  _needsReprocess;
 }

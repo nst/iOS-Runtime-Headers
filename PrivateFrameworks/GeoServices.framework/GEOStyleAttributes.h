@@ -4,14 +4,14 @@
 
 @interface GEOStyleAttributes : PBCodable <NSCopying> {
     NSMutableArray * _attributes;
-    unsigned int  _customIconId;
+    unsigned long long  _customIconId;
     struct { 
         unsigned int customIconId : 1; 
     }  _has;
 }
 
 @property (nonatomic, retain) NSMutableArray *attributes;
-@property (nonatomic) unsigned int customIconId;
+@property (nonatomic) unsigned long long customIconId;
 @property (nonatomic) BOOL hasCustomIconId;
 
 + (Class)attributeType;
@@ -25,7 +25,7 @@
 - (void)clearAttributes;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)customIconId;
+- (unsigned long long)customIconId;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
@@ -35,7 +35,7 @@
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setAttributes:(id)arg1;
-- (void)setCustomIconId:(unsigned int)arg1;
+- (void)setCustomIconId:(unsigned long long)arg1;
 - (void)setHasCustomIconId:(BOOL)arg1;
 - (void)writeTo:(id)arg1;
 

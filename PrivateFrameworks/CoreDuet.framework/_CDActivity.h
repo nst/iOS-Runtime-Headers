@@ -9,7 +9,7 @@
     BOOL  _beforeUserIsActive;
     BOOL  _budgeted;
     int  _budgetedPid;
-    unsigned int  _budgetingToken;
+    unsigned long long  _budgetingToken;
     NSString * _bundleId;
     BOOL  _cpuIntensive;
     BOOL  _deviceWakeAllowed;
@@ -38,7 +38,7 @@
 @property (nonatomic) BOOL beforeUserIsActive;
 @property (nonatomic) BOOL budgeted;
 @property (nonatomic) int budgetedPid;
-@property unsigned int budgetingToken;
+@property unsigned long long budgetingToken;
 @property (nonatomic, retain) NSString *bundleId;
 @property (nonatomic) BOOL cpuIntensive;
 @property (nonatomic) BOOL deviceWakeAllowed;
@@ -69,7 +69,7 @@
 - (BOOL)beforeUserIsActive;
 - (BOOL)budgeted;
 - (int)budgetedPid;
-- (unsigned int)budgetingToken;
+- (unsigned long long)budgetingToken;
 - (id)bundleId;
 - (BOOL)checkForBudget;
 - (BOOL)cpuIntensive;
@@ -94,7 +94,7 @@
 - (void)setBeforeUserIsActive:(BOOL)arg1;
 - (void)setBudgeted:(BOOL)arg1;
 - (void)setBudgetedPid:(int)arg1;
-- (void)setBudgetingToken:(unsigned int)arg1;
+- (void)setBudgetingToken:(unsigned long long)arg1;
 - (void)setBundleId:(id)arg1;
 - (void)setCpuIntensive:(BOOL)arg1;
 - (void)setDeviceWakeAllowed:(BOOL)arg1;

@@ -8,7 +8,7 @@
     _HKFilter * _filter;
     id /* block */  _initialResultsHandler;
     BOOL  _initialResultsSent;
-    int  _lastProcessedAnchor;
+    long long  _lastProcessedAnchor;
     BOOL  _needsUpdateAfterUnlock;
     HDSQLitePredicate * _predicate;
     NSMutableDictionary * _previousActivityCachesByCacheIndex;
@@ -27,7 +27,7 @@
 @property (nonatomic, readonly) id /* block */ updateHandler;
 
 - (void).cxx_destruct;
-- (id)_fetchActivityCacheIndicesWithAnchor:(int)arg1 predicate:(id)arg2 error:(id*)arg3;
+- (id)_fetchActivityCacheIndicesWithAnchor:(long long)arg1 predicate:(id)arg2 error:(id*)arg3;
 - (void)_onClientQueue:(id /* block */)arg1;
 - (id)_queue_addActivityCacheToCachedSamples:(id)arg1;
 - (void)_queue_deliverActivitySummariesMatchingPredicate:(id)arg1;

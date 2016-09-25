@@ -5,7 +5,7 @@
 
 @required
 
-- (id)initWithPropertyListObjectRepresentation:(id)arg1 version:(int)arg2;
+- (id)initWithPropertyListObjectRepresentation:(id)arg1 version:(long long)arg2;
 - (id)propertyListObjectRepresentation;
 
 @end

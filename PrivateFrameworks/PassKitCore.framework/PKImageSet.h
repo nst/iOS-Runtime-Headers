@@ -11,11 +11,11 @@
 @property (nonatomic) int version;
 
 + (id)_archiveURL:(id)arg1;
-+ (id)_createXPCContainerForImageSetWithType:(int)arg1 displayProfile:(id)arg2 screenScale:(float)arg3 screenSize:(struct CGSize { double x1; double x2; })arg4 suffix:(id)arg5 fileURL:(id)arg6 cacheURL:(id)arg7 imageSetOut:(id*)arg8;
++ (id)_createXPCContainerForImageSetWithType:(int)arg1 displayProfile:(id)arg2 screenScale:(float)arg3 screenSize:(struct CGSize { float x1; float x2; })arg4 suffix:(id)arg5 fileURL:(id)arg6 cacheURL:(id)arg7 imageSetOut:(id*)arg8;
 + (id)archiveName;
 + (Class)classForDisplayProfile:(id)arg1 imageSetType:(int)arg2;
 + (Class)classForImageSetType:(int)arg1;
-+ (id)createXPCContainerForImageSetWithType:(int)arg1 displayProfile:(id)arg2 screenScale:(float)arg3 screenSize:(struct CGSize { double x1; double x2; })arg4 suffix:(id)arg5 fileURL:(id)arg6 cacheURL:(id)arg7;
++ (id)createXPCContainerForImageSetWithType:(int)arg1 displayProfile:(id)arg2 screenScale:(float)arg3 screenSize:(struct CGSize { float x1; float x2; })arg4 suffix:(id)arg5 fileURL:(id)arg6 cacheURL:(id)arg7;
 + (unsigned int)currentVersion;
 + (id)imageSetForType:(int)arg1 displayProfile:(id)arg2 fileURL:(id)arg3 cacheURL:(id)arg4;
 + (id)imageSetForType:(int)arg1 screenScale:(float)arg2 suffix:(id)arg3 displayProfile:(id)arg4 fileURL:(id)arg5 cacheURL:(id)arg6;

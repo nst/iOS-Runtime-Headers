@@ -6,7 +6,7 @@
     BOOL  _allowsSearching;
     CNAvatarCardController * _cardController;
     CNContactFormatter * _contactFormatter;
-    double  _contentOffsetDueToMeContactBanner;
+    float  _contentOffsetDueToMeContactBanner;
     NSObject<CNContactDataSource> * _dataSource;
     <CNContactListViewControllerDelegate> * _delegate;
     CNUIContactsEnvironment * _environment;
@@ -34,7 +34,7 @@
 @property (nonatomic) BOOL allowsSearching;
 @property (nonatomic, retain) CNAvatarCardController *cardController;
 @property (nonatomic, retain) CNContactFormatter *contactFormatter;
-@property (nonatomic, readonly) double contentOffsetDueToMeContactBanner;
+@property (nonatomic, readonly) float contentOffsetDueToMeContactBanner;
 @property (nonatomic, retain) NSObject<CNContactDataSource> *dataSource;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CNContactListViewControllerDelegate> *delegate;
@@ -71,7 +71,7 @@
 - (id)_sections;
 - (void)_updateCountString;
 - (BOOL)allowsSearching;
-- (int)avatarCardController:(id)arg1 presentationResultForLocation:(struct CGPoint { double x1; double x2; })arg2;
+- (int)avatarCardController:(id)arg1 presentationResultForLocation:(struct CGPoint { float x1; float x2; })arg2;
 - (void)bannerView:(id)arg1 wasSelectedToPresentMeContact:(id)arg2;
 - (void)bannerViewWasSelectedToPresentPeoplePicker:(id)arg1;
 - (void)beginSearch:(id)arg1;

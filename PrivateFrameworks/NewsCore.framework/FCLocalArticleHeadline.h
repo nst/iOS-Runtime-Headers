@@ -20,7 +20,7 @@
 - (id)blockedStorefrontIDs;
 - (id)channel;
 - (id)contentManifestWithContext:(id)arg1;
-- (unsigned int)contentType;
+- (unsigned long long)contentType;
 - (id)contentURL;
 - (id)dictionary;
 - (id)endOfArticleTopicIDs;
@@ -47,7 +47,7 @@
 - (id)surfacedByBinID;
 - (id)thumbnail;
 - (id)thumbnailAssetHandle;
-- (struct CGSize { double x1; double x2; })thumbnailSize;
+- (struct CGSize { float x1; float x2; })thumbnailSize;
 - (id)title;
 - (id)topicIDs;
 - (float)videoDuration;

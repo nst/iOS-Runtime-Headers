@@ -26,7 +26,7 @@
 - (id)init;
 - (BOOL)isRepresentation:(id)arg1 bestRepresentationForArtworkCatalog:(id)arg2;
 - (void)loadRepresentationForArtworkCatalog:(id)arg1 completionHandler:(id /* block */)arg2;
-- (id)requestForCatalog:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
+- (id)requestForCatalog:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 - (id)visualIdenticalityIdentifierForCatalog:(id)arg1;
 
 @end

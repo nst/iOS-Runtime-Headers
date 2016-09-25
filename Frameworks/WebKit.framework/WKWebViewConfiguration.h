@@ -34,7 +34,7 @@
         void *m_ptr; 
     }  _groupIdentifier;
     BOOL  _ignoresViewportScaleLimits;
-    double  _incrementalRenderingSuppressionTimeout;
+    float  _incrementalRenderingSuppressionTimeout;
     BOOL  _initialCapitalizationEnabled;
     BOOL  _inlineMediaPlaybackRequiresPlaysInlineAttribute;
     BOOL  _invisibleAutoplayNotPermitted;
@@ -92,7 +92,7 @@
 @property (setter=_setContentProviderRegistry:, nonatomic) WKWebViewContentProviderRegistry *_contentProviderRegistry;
 @property (setter=_setConvertsPositionStyleOnCopy:, nonatomic) BOOL _convertsPositionStyleOnCopy;
 @property (setter=_setGroupIdentifier:, nonatomic, copy) NSString *_groupIdentifier;
-@property (setter=_setIncrementalRenderingSuppressionTimeout:, nonatomic) double _incrementalRenderingSuppressionTimeout;
+@property (setter=_setIncrementalRenderingSuppressionTimeout:, nonatomic) float _incrementalRenderingSuppressionTimeout;
 @property (setter=_setInitialCapitalizationEnabled:, nonatomic) BOOL _initialCapitalizationEnabled;
 @property (setter=_setInlineMediaPlaybackRequiresPlaysInlineAttribute:, nonatomic) BOOL _inlineMediaPlaybackRequiresPlaysInlineAttribute;
 @property (setter=_setInvisibleAutoplayNotPermitted:, nonatomic) BOOL _invisibleAutoplayNotPermitted;

@@ -10,7 +10,7 @@
 @property (nonatomic, readonly) BOOL delaysContentTouches;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (getter=_scrollHysteresis, nonatomic, readonly) double scrollHysteresis;
+@property (getter=_scrollHysteresis, nonatomic, readonly) float scrollHysteresis;
 @property (readonly) Class superclass;
 @property (getter=_touchDelayForScrollDetection, nonatomic, readonly) double touchDelayForScrollDetection;
 

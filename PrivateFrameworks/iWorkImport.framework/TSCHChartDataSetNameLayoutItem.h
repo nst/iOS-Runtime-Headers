@@ -6,7 +6,7 @@
 
 @property (nonatomic, readonly) BOOL isAboveChartBody;
 
-- (struct CGSize { double x1; double x2; })calcMinSize;
+- (struct CGSize { float x1; float x2; })calcMinSize;
 - (BOOL)isAboveChartBody;
 - (BOOL)isTitleOn;
 - (unsigned int)titleParagraphStyleIndex;

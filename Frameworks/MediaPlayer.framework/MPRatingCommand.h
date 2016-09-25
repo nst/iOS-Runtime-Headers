@@ -3,12 +3,12 @@
  */
 
 @interface MPRatingCommand : MPRemoteCommand {
-    double  _maximumRating;
-    double  _minimumRating;
+    float  _maximumRating;
+    float  _minimumRating;
 }
 
-@property (nonatomic) double maximumRating;
-@property (nonatomic) double minimumRating;
+@property (nonatomic) float maximumRating;
+@property (nonatomic) float minimumRating;
 
 - (id)_mediaRemoteCommandInfoOptions;
 - (float)maximumRating;

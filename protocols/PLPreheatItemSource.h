@@ -5,8 +5,8 @@
 
 @required
 
-- (PLPreheatItem *)originalPreheatItemForAsset:(id <_PLImageLoadingAsset>)arg1 optimalSourcePixelSize:(struct CGSize { double x1; double x2; })arg2 options:(unsigned int)arg3;
-- (PLPreheatItem *)preheatItemForAsset:(id <_PLImageLoadingAsset>)arg1 format:(int)arg2 optimalSourcePixelSize:(struct CGSize { double x1; double x2; })arg3 options:(unsigned int)arg4;
+- (PLPreheatItem *)originalPreheatItemForAsset:(id <_PLImageLoadingAsset>)arg1 optimalSourcePixelSize:(struct CGSize { float x1; float x2; })arg2 options:(unsigned int)arg3;
+- (PLPreheatItem *)preheatItemForAsset:(id <_PLImageLoadingAsset>)arg1 format:(int)arg2 optimalSourcePixelSize:(struct CGSize { float x1; float x2; })arg3 options:(unsigned int)arg4;
 
 @optional
 

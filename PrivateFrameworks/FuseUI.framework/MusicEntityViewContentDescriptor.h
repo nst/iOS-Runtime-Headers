@@ -16,8 +16,8 @@
     BOOL  _hasValidAllPropertiesToLoadAsynchronously;
     BOOL  _leftSeparatorInsetFollowsText;
     Class  _lockupViewClass;
-    double  _minimumHeight;
-    double  _popularityIndicatorThreshold;
+    float  _minimumHeight;
+    float  _popularityIndicatorThreshold;
     UIColor * _popularityIndicatorTintColor;
     int  _selectionStyle;
     BOOL  _shouldDisableWhenUnplayable;
@@ -49,8 +49,8 @@
 @property (nonatomic, copy) NSString *explicitBadgeProperty;
 @property (nonatomic) BOOL leftSeparatorInsetFollowsText;
 @property (nonatomic, retain) Class lockupViewClass;
-@property (nonatomic) double minimumHeight;
-@property (nonatomic) double popularityIndicatorThreshold;
+@property (nonatomic) float minimumHeight;
+@property (nonatomic) float popularityIndicatorThreshold;
 @property (nonatomic, retain) UIColor *popularityIndicatorTintColor;
 @property (nonatomic) int selectionStyle;
 @property (nonatomic) BOOL shouldDisableWhenUnplayable;

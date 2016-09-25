@@ -6,8 +6,8 @@
     BOOL  _keepScrollPosition;
     int  _preventScrollSelectionToVisible;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _scrollPosition;
 }
 

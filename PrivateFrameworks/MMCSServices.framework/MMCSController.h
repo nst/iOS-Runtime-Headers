@@ -5,7 +5,7 @@
 @interface MMCSController : NSObject {
     struct __CFURL { } * _chunkStoreURL;
     int  _connectionBehavior;
-    unsigned int  _currentItemID;
+    unsigned long long  _currentItemID;
     struct _mmcs_engine { } * _engine;
     id  _powerAssertion;
     NSTimer * _powerAssertionTimer;
@@ -38,7 +38,7 @@
 - (void)_registerPowerAssertionIfNeeded;
 - (void)_registerTransfers:(id)arg1 preauthenticate:(BOOL)arg2 completionBlock:(id /* block */)arg3;
 - (id)_registeredTransferForGUID:(id)arg1;
-- (id)_registeredTransferForItemID:(unsigned int)arg1;
+- (id)_registeredTransferForItemID:(unsigned long long)arg1;
 - (void)_releasePowerAssertion;
 - (void)_releasePowerAssertionAndSimulateCrash;
 - (void)_setScheduledTransfers:(id)arg1 block:(id /* block */)arg2;

@@ -6,8 +6,8 @@
 
 @property (nonatomic, copy) NSString *alternateDSID;
 @property (nonatomic, copy) NSDate *creationDate;
-@property (nonatomic) unsigned int dataQuota;
-@property (nonatomic) unsigned int dataUsed;
+@property (nonatomic) unsigned long long dataQuota;
+@property (nonatomic) unsigned long long dataUsed;
 @property (nonatomic, copy) NSString *displayName;
 @property (nonatomic, retain) NSError *errorCausingLogout;
 @property (nonatomic, copy) NSString *familyName;

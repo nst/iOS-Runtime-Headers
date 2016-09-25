@@ -14,7 +14,7 @@
 - (int)animatorType;
 - (int)focusBubbleType;
 - (double)minimumDurationForViewAnimations;
-- (id)scatterAnimationsForBubble:(id)arg1 sortedBubbles:(id)arg2 contractPoint:(union _GLKVector3 { struct { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; struct { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; struct { double x_3_1_1; double x_3_1_2; double x_3_1_3; } x3; double x4[3]; })arg3 context:(id)arg4;
+- (id)scatterAnimationsForBubble:(id)arg1 sortedBubbles:(id)arg2 contractPoint:(union _GLKVector3 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; float x4[3]; })arg3 context:(id)arg4;
 - (BOOL)scatterBubble:(id)arg1 shouldMoveLeftAmongBubbles:(id)arg2 context:(id)arg3;
 - (BOOL)scatterBubble:(id)arg1 shouldMoveUpAmongBubbles:(id)arg2;
 - (id)scatterBubblesSortedLeftToRightInContext:(id)arg1;

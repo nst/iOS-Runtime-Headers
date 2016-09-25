@@ -3,7 +3,7 @@
  */
 
 @interface BRCThrottler : NSObject {
-    int  _latestRetry;
+    long long  _latestRetry;
     NSObject<OS_dispatch_queue> * _queue;
     unsigned int  _retryCount;
     NSObject<OS_dispatch_source> * _source;

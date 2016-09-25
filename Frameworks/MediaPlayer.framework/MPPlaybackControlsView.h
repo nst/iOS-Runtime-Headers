@@ -6,7 +6,7 @@
     UIActivityIndicatorView * _activityIndicator;
     <MPPlaybackControlsDelegate> * _delegate;
     unsigned int  _detailScrubbing;
-    unsigned int  _disabledParts;
+    unsigned long long  _disabledParts;
     unsigned int  _fastForwardAndRewindButtonDisabled;
     MPButton * _fastFowardButton;
     UIView * _fastFowardButtonBezel;
@@ -27,12 +27,12 @@
     MPButton * _rewindButton;
     UIView * _rewindButtonBezel;
     CABasicAnimation * _rewindOpacityAnimation;
-    double  _seekedToValue;
+    float  _seekedToValue;
     MPButton * _shuffleButton;
     double  _tickInterval;
     UILabel * _trackInfoLabel;
     unsigned int  _useMediaDetailSlider;
-    unsigned int  _visibleParts;
+    unsigned long long  _visibleParts;
     unsigned int  _wantsTick;
 }
 
@@ -40,7 +40,7 @@
 @property (nonatomic) <MPPlaybackControlsDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) BOOL detailScrubbingHidesControls;
-@property (nonatomic) unsigned int disabledParts;
+@property (nonatomic) unsigned long long disabledParts;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) BOOL hideGeniusButton;
 @property (nonatomic, readonly) BOOL isScrubbing;
@@ -55,9 +55,9 @@
 @property (nonatomic, readonly) BOOL shuffleIsOn;
 @property (nonatomic, readonly) int shuffleType;
 @property (readonly) Class superclass;
-@property (nonatomic) unsigned int visibleParts;
+@property (nonatomic) unsigned long long visibleParts;
 
-+ (unsigned int)defaultVisibleParts;
++ (unsigned long long)defaultVisibleParts;
 
 - (void).cxx_destruct;
 - (void)_addOpacityAnimationToBezelView:(id)arg1 reversed:(BOOL)arg2;
@@ -102,26 +102,26 @@
 - (void)detailSliderTrackingDidCancel:(id)arg1;
 - (void)detailSliderTrackingDidEnd:(id)arg1;
 - (void)didMoveToSuperview;
-- (unsigned int)disabledParts;
-- (unsigned int)displayablePartsInPartMask:(unsigned int)arg1;
+- (unsigned long long)disabledParts;
+- (unsigned long long)displayablePartsInPartMask:(unsigned long long)arg1;
 - (id)geniusButtonImageForControlState:(unsigned int)arg1;
 - (void)handleChangeToRepeatType:(int)arg1;
 - (void)handleChangeToShuffleType:(int)arg1;
 - (BOOL)hideGeniusButton;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isScrubbing;
 - (id)item;
 - (void)layoutSubviews;
 - (id)localizedScrubSpeedText;
 - (id)mailButtonImage;
-- (id)newButtonBezelViewForPart:(unsigned int)arg1;
-- (id)newButtonForPart:(unsigned int)arg1;
+- (id)newButtonBezelViewForPart:(unsigned long long)arg1;
+- (id)newButtonForPart:(unsigned long long)arg1;
 - (id)newProgressIndicator;
 - (id)newTrackInfoLabel;
 - (id)playbackSpeedButtonImageForPlaybackSpeed:(int)arg1;
 - (id)playbackSpeedTitleForPlaybackSpeed:(int)arg1;
 - (id)player;
-- (BOOL)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (BOOL)progressBarClipsToChapterDuration;
 - (void)registerForPlayerNotifications;
 - (void)reloadButtonVisibility;
@@ -132,10 +132,10 @@
 - (void)resetDetailSlider:(id)arg1;
 - (void)setCurrentTime:(double)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setDisabledParts:(unsigned int)arg1;
+- (void)setDisabledParts:(unsigned long long)arg1;
 - (void)setItem:(id)arg1;
 - (void)setPlayer:(id)arg1;
-- (void)setVisibleParts:(unsigned int)arg1;
+- (void)setVisibleParts:(unsigned long long)arg1;
 - (BOOL)shouldOverrideProgressTimeLabelStyle;
 - (id)shuffleButtonImage;
 - (BOOL)shuffleIsOn;
@@ -144,6 +144,6 @@
 - (void)stopTicking;
 - (void)unregisterForPlayerNotifications;
 - (void)updateForEndOfDetailScrubbing;
-- (unsigned int)visibleParts;
+- (unsigned long long)visibleParts;
 
 @end

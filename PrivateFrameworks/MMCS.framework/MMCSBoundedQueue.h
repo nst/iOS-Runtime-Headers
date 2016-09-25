@@ -4,33 +4,33 @@
 
 @interface MMCSBoundedQueue : NSObject {
     struct dispatch_semaphore_s { } * _boundsExceeded;
-    unsigned int  _bytesErrorLevel;
-    unsigned int  _bytesUpperBound;
+    unsigned long long  _bytesErrorLevel;
+    unsigned long long  _bytesUpperBound;
     NSMutableArray * _entries;
     BOOL  _isValid;
 }
 
 @property (nonatomic) struct dispatch_semaphore_s { }*boundsExceeded;
-@property (nonatomic) unsigned int bytesErrorLevel;
-@property (nonatomic, readonly) unsigned int bytesUpperBound;
+@property (nonatomic) unsigned long long bytesErrorLevel;
+@property (nonatomic, readonly) unsigned long long bytesUpperBound;
 @property (nonatomic, retain) NSMutableArray *entries;
 @property (nonatomic, readonly) BOOL isValid;
 
 - (void).cxx_destruct;
-- (unsigned int)_sync_aggregateByteCount;
+- (unsigned long long)_sync_aggregateByteCount;
 - (BOOL)_sync_isFull;
 - (void)addData:(id)arg1;
 - (struct dispatch_semaphore_s { }*)boundsExceeded;
-- (unsigned int)bytesErrorLevel;
-- (unsigned int)bytesUpperBound;
+- (unsigned long long)bytesErrorLevel;
+- (unsigned long long)bytesUpperBound;
 - (void)dealloc;
 - (id)entries;
-- (id)initWithUpperBound:(unsigned int)arg1;
+- (id)initWithUpperBound:(unsigned long long)arg1;
 - (void)invalidate;
 - (BOOL)isValid;
 - (void)removeNextDataWithBlock:(id /* block */)arg1;
 - (void)setBoundsExceeded:(struct dispatch_semaphore_s { }*)arg1;
-- (void)setBytesErrorLevel:(unsigned int)arg1;
+- (void)setBytesErrorLevel:(unsigned long long)arg1;
 - (void)setEntries:(id)arg1;
 
 @end

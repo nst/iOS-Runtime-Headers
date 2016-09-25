@@ -17,14 +17,14 @@
 + (id)feedRangeByMergingRange:(id)arg1 withRange:(id)arg2;
 + (id)feedRangeFromDate:(id)arg1 toDate:(id)arg2;
 + (id)feedRangeFromDateRange:(id)arg1;
-+ (id)feedRangeWithMaxOrder:(unsigned int)arg1 minOrder:(unsigned int)arg2;
++ (id)feedRangeWithMaxOrder:(unsigned long long)arg1 minOrder:(unsigned long long)arg2;
 + (id)feedRangeWithTop:(id)arg1 bottom:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)bottom;
 - (BOOL)containsCursor:(id)arg1;
 - (BOOL)containsFeedRange:(id)arg1;
-- (BOOL)containsOrder:(unsigned int)arg1;
+- (BOOL)containsOrder:(unsigned long long)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dateRange;
 - (id)description;

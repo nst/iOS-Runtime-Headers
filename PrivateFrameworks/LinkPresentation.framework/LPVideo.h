@@ -15,7 +15,7 @@
 @property (nonatomic, readonly, copy) NSString *MIMEType;
 @property (nonatomic, readonly) AVAsset *_asset;
 @property (nonatomic, readonly) unsigned long _encodedSize;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } _intrinsicSize;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } _intrinsicSize;
 @property (nonatomic, readonly, copy) NSData *data;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -33,7 +33,7 @@
 - (id)_asset;
 - (unsigned long)_encodedSize;
 - (id)_initWithVideo:(id)arg1;
-- (struct CGSize { double x1; double x2; })_intrinsicSize;
+- (struct CGSize { float x1; float x2; })_intrinsicSize;
 - (void)_mapDataFromFileURL;
 - (BOOL)_shouldEncodeData;
 - (id)data;

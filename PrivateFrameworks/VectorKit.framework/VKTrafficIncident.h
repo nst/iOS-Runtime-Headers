@@ -13,11 +13,11 @@
         double latitude; 
         double longitude; 
     }  _location;
-    double  _maxZoom;
-    double  _minZoom;
+    float  _maxZoom;
+    float  _minZoom;
     struct PolylineCoordinate { 
         unsigned int index; 
-        double offset; 
+        float offset; 
     }  _routeOffset;
     unsigned int  _routeOffsetInMeters;
     int  _routeRelevance;
@@ -27,7 +27,7 @@
     NSString * _subtitle;
     NSString * _title;
     int  _type;
-    unsigned int  _uniqueID;
+    unsigned long long  _uniqueID;
     NSString * _uniqueString;
     struct Matrix<double, 3, 1> { 
         double _e[3]; 
@@ -40,9 +40,9 @@
 @property (nonatomic, readonly) BOOL isNotForDisplay;
 @property (nonatomic) BOOL isOnSelectedRoute;
 @property (nonatomic, readonly) NSDate *lastUpdatedDate;
-@property (nonatomic, readonly) double maxZoom;
-@property (nonatomic, readonly) double minZoom;
-@property (nonatomic) struct PolylineCoordinate { unsigned int x1; double x2; } routeOffset;
+@property (nonatomic, readonly) float maxZoom;
+@property (nonatomic, readonly) float minZoom;
+@property (nonatomic) struct PolylineCoordinate { unsigned int x1; float x2; } routeOffset;
 @property (nonatomic) unsigned int routeOffsetInMeters;
 @property (nonatomic) int routeRelevance;
 @property (nonatomic, readonly) int significance;
@@ -51,7 +51,7 @@
 @property (nonatomic, readonly, copy) NSString *subtitle;
 @property (nonatomic, readonly, copy) NSString *title;
 @property (nonatomic, readonly) int type;
-@property (nonatomic, readonly) unsigned int uniqueID;
+@property (nonatomic, readonly) unsigned long long uniqueID;
 @property (nonatomic, readonly) NSString *uniqueString;
 @property (nonatomic, readonly) struct Mercator2<double> { double x1[2]; } worldPoint;
 
@@ -69,11 +69,11 @@
 - (id)lastUpdatedDate;
 - (float)maxZoom;
 - (float)minZoom;
-- (struct PolylineCoordinate { unsigned int x1; double x2; })routeOffset;
+- (struct PolylineCoordinate { unsigned int x1; float x2; })routeOffset;
 - (unsigned int)routeOffsetInMeters;
 - (int)routeRelevance;
 - (void)setIsOnSelectedRoute:(BOOL)arg1;
-- (void)setRouteOffset:(struct PolylineCoordinate { unsigned int x1; double x2; })arg1;
+- (void)setRouteOffset:(struct PolylineCoordinate { unsigned int x1; float x2; })arg1;
 - (void)setRouteOffsetInMeters:(unsigned int)arg1;
 - (void)setRouteRelevance:(int)arg1;
 - (int)significance;
@@ -82,7 +82,7 @@
 - (id)subtitle;
 - (id)title;
 - (int)type;
-- (unsigned int)uniqueID;
+- (unsigned long long)uniqueID;
 - (id)uniqueString;
 - (struct Mercator2<double> { double x1[2]; })worldPoint;
 

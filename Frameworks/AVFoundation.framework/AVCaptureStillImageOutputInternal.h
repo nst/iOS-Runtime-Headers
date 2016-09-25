@@ -12,7 +12,7 @@
     BOOL  highResStillEnabled;
     unsigned long  imageDataFormatType;
     BOOL  isCapturingPhoto;
-    double  jpegQuality;
+    float  jpegQuality;
     BOOL  jpegQualitySpecified;
     BOOL  lensStabilizationDuringBracketedCaptureEnabled;
     BOOL  lensStabilizationDuringBracketedCaptureSupported;
@@ -27,8 +27,8 @@
         unsigned int outputHeight; 
     }  preparedBracket;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  previewImageSize;
     BOOL  rawCaptureEnabled;
     unsigned long  shutterSoundID;

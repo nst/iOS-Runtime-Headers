@@ -8,11 +8,11 @@
 }
 
 - (void).cxx_destruct;
-- (void)addAttributedString:(id)arg1 withSize:(struct CGSize { double x1; double x2; })arg2;
-- (id)attributedStringAndSize:(struct CGSize { double x1; double x2; }*)arg1 forMaxWidth:(float)arg2;
+- (void)addAttributedString:(id)arg1 withSize:(struct CGSize { float x1; float x2; })arg2;
+- (id)attributedStringAndSize:(struct CGSize { float x1; float x2; }*)arg1 forMaxWidth:(float)arg2;
 - (unsigned int)attributedStringCount;
 - (id)attributedStringForIndex:(unsigned int)arg1;
 - (id)init;
-- (id)smallestAttributedStringAndSize:(struct CGSize { double x1; double x2; }*)arg1;
+- (id)smallestAttributedStringAndSize:(struct CGSize { float x1; float x2; }*)arg1;
 
 @end

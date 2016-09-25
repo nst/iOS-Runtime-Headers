@@ -4,12 +4,12 @@
 
 @interface NRClientInfo : NSObject <NSCopying, NSSecureCoding> {
     NSArray * _entitlements;
-    unsigned int  _lastIndexCheckin;
+    unsigned long long  _lastIndexCheckin;
     NSString * _processName;
 }
 
 @property (nonatomic, retain) NSArray *entitlements;
-@property (nonatomic) unsigned int lastIndexCheckin;
+@property (nonatomic) unsigned long long lastIndexCheckin;
 @property (nonatomic, retain) NSString *processName;
 
 + (BOOL)supportsSecureCoding;
@@ -21,10 +21,10 @@
 - (id)entitlements;
 - (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
-- (unsigned int)lastIndexCheckin;
+- (unsigned long long)lastIndexCheckin;
 - (id)processName;
 - (void)setEntitlements:(id)arg1;
-- (void)setLastIndexCheckin:(unsigned int)arg1;
+- (void)setLastIndexCheckin:(unsigned long long)arg1;
 - (void)setProcessName:(id)arg1;
 
 @end

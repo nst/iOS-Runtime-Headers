@@ -7,8 +7,8 @@
     NSNumber * _inputDepthStrength;
     CIImage * _inputImage;
     NSNumber * _inputWaterBlend;
-    double  _lastDepthStrength;
-    double  _lastWaterBlend;
+    float  _lastDepthStrength;
+    float  _lastWaterBlend;
     BOOL  _needsReprocess;
     CIFilter * _underwaterAdditionFilter;
     CIFilter * _underwaterBalanceFilter;

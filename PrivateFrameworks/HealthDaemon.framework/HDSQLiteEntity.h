@@ -3,13 +3,13 @@
  */
 
 @interface HDSQLiteEntity : NSObject <HDSQLiteEntity> {
-    int  _persistentID;
+    long long  _persistentID;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly) int persistentID;
+@property (nonatomic, readonly) long long persistentID;
 @property (readonly) Class superclass;
 
 + (id)_copyDeleteSQLWithTableName:(id)arg1 columnName:(id)arg2;
@@ -61,8 +61,8 @@
 - (BOOL)existsInDatabase:(id)arg1;
 - (BOOL)getValuesForProperties:(id)arg1 database:(id)arg2 handler:(id /* block */)arg3;
 - (BOOL)getValuesForProperties:(id)arg1 withDatabase:(id)arg2 applier:(id /* block */)arg3;
-- (id)initWithPersistentID:(int)arg1;
-- (int)persistentID;
+- (id)initWithPersistentID:(long long)arg1;
+- (long long)persistentID;
 - (BOOL)updateProperties:(id)arg1 database:(id)arg2 error:(id*)arg3 bindingHandler:(id /* block */)arg4;
 - (id)valueForProperty:(id)arg1 database:(id)arg2;
 

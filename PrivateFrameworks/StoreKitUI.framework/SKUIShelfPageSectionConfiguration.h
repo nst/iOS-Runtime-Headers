@@ -20,10 +20,10 @@
     IKViewElementStyle * _shelfViewElementStyle;
     BOOL  _topSection;
     BOOL  _wantsZoomingShelfLayout;
-    double  _zoomingShelfLayoutFocusedItemHorizontalCenterOffset;
-    double  _zoomingShelfLayoutInterItemSpacing;
-    double  _zoomingShelfLayoutItemWidth;
-    double  _zoomingShelfLayoutScaledItemWidth;
+    float  _zoomingShelfLayoutFocusedItemHorizontalCenterOffset;
+    float  _zoomingShelfLayoutInterItemSpacing;
+    float  _zoomingShelfLayoutItemWidth;
+    float  _zoomingShelfLayoutScaledItemWidth;
 }
 
 @property (nonatomic, retain) SKUIViewElementLayoutContext *cellLayoutContext;
@@ -44,10 +44,10 @@
 @property (nonatomic, retain) IKViewElementStyle *shelfViewElementStyle;
 @property (getter=isTopSection, nonatomic) BOOL topSection;
 @property (nonatomic, readonly) BOOL wantsZoomingShelfLayout;
-@property (nonatomic, readonly) double zoomingShelfLayoutFocusedItemHorizontalCenterOffset;
-@property (nonatomic, readonly) double zoomingShelfLayoutInterItemSpacing;
-@property (nonatomic, readonly) double zoomingShelfLayoutItemWidth;
-@property (nonatomic, readonly) double zoomingShelfLayoutScaledItemWidth;
+@property (nonatomic, readonly) float zoomingShelfLayoutFocusedItemHorizontalCenterOffset;
+@property (nonatomic, readonly) float zoomingShelfLayoutInterItemSpacing;
+@property (nonatomic, readonly) float zoomingShelfLayoutItemWidth;
+@property (nonatomic, readonly) float zoomingShelfLayoutScaledItemWidth;
 
 - (void).cxx_destruct;
 - (Class)_cellClassForEffectiveShelfItemViewElement:(id)arg1;
@@ -64,7 +64,7 @@
 - (id)cellForShelfItemViewElement:(id)arg1 indexPath:(id)arg2;
 - (id)cellForShelfViewElement:(id)arg1 indexPath:(id)arg2;
 - (id)cellLayoutContext;
-- (struct CGSize { double x1; double x2; })cellSizeForShelfViewElement:(id)arg1 indexPath:(id)arg2 numberOfShelfItems:(int)arg3;
+- (struct CGSize { float x1; float x2; })cellSizeForShelfViewElement:(id)arg1 indexPath:(id)arg2 numberOfShelfItems:(int)arg3;
 - (void)collectionViewWillApplyLayoutAttributes:(id)arg1;
 - (id)dataSource;
 - (id)effectiveViewElementForShelfItemViewElement:(id)arg1;
@@ -86,7 +86,7 @@
 - (BOOL)rendersWithPerspective;
 - (void)requestCellLayoutForViewElement:(id)arg1 withColumnWidth:(float)arg2;
 - (void)scrollViewDidScroll:(id)arg1;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })sectionContentInsetAdjustedFromValue:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1 forShelfViewElement:(id)arg2 withSectionIndex:(int)arg3;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })sectionContentInsetAdjustedFromValue:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1 forShelfViewElement:(id)arg2 withSectionIndex:(int)arg3;
 - (int)sectionIndex;
 - (void)setCellLayoutContext:(id)arg1;
 - (void)setDataSource:(id)arg1;

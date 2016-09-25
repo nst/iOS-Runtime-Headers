@@ -6,7 +6,7 @@
 @required
 
 - (UIView *)adSpaceView;
-- (void)bannerTappedAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)bannerTappedAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)changeBannerViewState:(int)arg1;
 - (int)internalAdType;
 - (int)options;
@@ -18,7 +18,7 @@
 - (void)serverBannerViewDidLoad;
 - (void)serverBannerViewWillLoad;
 - (void)serverStoryboardDidTransitionOut;
-- (BOOL)shouldTestVisibilityAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (BOOL)shouldTestVisibilityAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)storyboardViewControllerDidPresent;
 
 @end

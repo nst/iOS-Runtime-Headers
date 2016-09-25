@@ -57,7 +57,7 @@
 - (long)incRefCount;
 - (id)initWithApplicationBundleID:(id)arg1 path:(id)arg2;
 - (unsigned long)maxChunkCountForSection;
-- (unsigned int)nextAvailableItemID;
+- (unsigned long long)nextAvailableItemID;
 - (id)path;
 - (void)performOnRunLoop:(id /* block */)arg1;
 - (id)protocolVersion;
@@ -80,6 +80,6 @@
 - (void)setStopMMCSThread:(BOOL)arg1;
 - (int)state;
 - (BOOL)stopMMCSThread;
-- (void)stopTrackingItemID:(unsigned int)arg1;
+- (void)stopTrackingItemID:(unsigned long long)arg1;
 
 @end

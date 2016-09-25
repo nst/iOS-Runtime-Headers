@@ -38,7 +38,7 @@
 - (void)dealloc;
 - (id)faviconURLs;
 - (id)handle;
-- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1;
 - (id)jsContextForWorld:(id)arg1;
 - (id)jsNodeForNodeHandle:(id)arg1 inWorld:(id)arg2;
 

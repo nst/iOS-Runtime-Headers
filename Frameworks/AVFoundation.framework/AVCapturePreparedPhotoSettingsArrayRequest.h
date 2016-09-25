@@ -6,13 +6,13 @@
     BOOL  _completed;
     id /* block */  _completionHandler;
     NSArray * _photoSettingsArray;
-    unsigned int  _requestID;
+    unsigned long long  _requestID;
 }
 
 @property (getter=isCompleted, nonatomic) BOOL completed;
 @property (readonly) id /* block */ completionHandler;
 @property (readonly) NSArray *photoSettingsArray;
-@property (readonly) unsigned int requestID;
+@property (readonly) unsigned long long requestID;
 
 + (id)preparedPhotoSettingsArrayRequestWithArray:(id)arg1 completionHandler:(id /* block */)arg2;
 
@@ -21,7 +21,7 @@
 - (void)dealloc;
 - (BOOL)isCompleted;
 - (id)photoSettingsArray;
-- (unsigned int)requestID;
+- (unsigned long long)requestID;
 - (void)setCompleted:(BOOL)arg1;
 
 @end

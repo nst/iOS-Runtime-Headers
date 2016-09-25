@@ -21,12 +21,12 @@
     _HKDelayedOperation * _rebuildCachesOperation;
     BOOL  _shouldSendCacheUpdateNotification;
     NSTimeZone * _timeZoneOverride;
-    int  _todayActivityCacheIndex;
+    long long  _todayActivityCacheIndex;
     _HKTimePeriod * _todayDateRange;
     HKQuantitySample * _todayGoal;
     _HKDelayedOperation * _updateCachesOperation;
     int  _wheelchairUse;
-    int  _yesterdayActivityCacheIndex;
+    long long  _yesterdayActivityCacheIndex;
     _HKTimePeriod * _yesterdayDateRange;
     HKQuantitySample * _yesterdayGoal;
 }
@@ -42,7 +42,7 @@
 @property (nonatomic, readonly) HKActivityCache *yesterdayActivityCache;
 
 - (void).cxx_destruct;
-- (void)_calculateCacheIndicesWithTodayIndex:(int*)arg1 yesterdayIndex:(int*)arg2 todayStart:(id)arg3 yesterdayStart:(id)arg4 calendar:(id)arg5;
+- (void)_calculateCacheIndicesWithTodayIndex:(long long*)arg1 yesterdayIndex:(long long*)arg2 todayStart:(id)arg3 yesterdayStart:(id)arg4 calendar:(id)arg5;
 - (void)_didReceiveSignificantTimeChangeNotification;
 - (id)_mostRecentGoalBeforeDate:(id)arg1 error:(id*)arg2;
 - (void)_queue_alertObserversTodayActivityCacheChanged:(id)arg1;
@@ -65,7 +65,7 @@
 - (void)_queue_resetDataSource;
 - (void)_queue_resetEverything;
 - (void)_queue_resetExistingActivityCaches;
-- (id)_queue_saveCacheWithDateRange:(id)arg1 calorieGoal:(id)arg2 cacheIndex:(int)arg3 previousCache:(id)arg4 statisticsBuilder:(id)arg5 wheelchairUse:(int)arg6;
+- (id)_queue_saveCacheWithDateRange:(id)arg1 calorieGoal:(id)arg2 cacheIndex:(long long)arg3 previousCache:(id)arg4 statisticsBuilder:(id)arg5 wheelchairUse:(int)arg6;
 - (void)_queue_saveCaches;
 - (BOOL)_queue_saveTodayCache;
 - (BOOL)_queue_saveYesterdayCache;

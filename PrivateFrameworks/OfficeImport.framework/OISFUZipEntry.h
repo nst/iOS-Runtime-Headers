@@ -4,30 +4,30 @@
 
 @interface OISFUZipEntry : OISFUDataRepresentation {
     OISFUDataRepresentation<SFUZipArchiveDataRepresentation> * mArchiveDataRepresentation;
-    unsigned int  mCompressedSize;
+    unsigned long long  mCompressedSize;
     int  mCompressionMethod;
     unsigned int  mCrc;
     OISFUCryptoKey * mCryptoKey;
-    unsigned int  mDataOffset;
-    unsigned int  mEncodedLength;
+    unsigned long long  mDataOffset;
+    unsigned long long  mEncodedLength;
     BOOL  mHasDataOffset;
     BOOL  mHasEncodedLength;
-    unsigned int  mOffset;
-    unsigned int  mUncompressedSize;
+    unsigned long long  mOffset;
+    unsigned long long  mUncompressedSize;
 }
 
-- (unsigned int)backingFileDataOffset;
+- (unsigned long long)backingFileDataOffset;
 - (id)backingFilePath;
-- (unsigned int)calculateEncodedLength;
+- (unsigned long long)calculateEncodedLength;
 - (void)copyToFile:(id)arg1;
 - (unsigned int)crc;
 - (id)data;
-- (int)dataLength;
-- (unsigned int)dataOffset;
+- (long long)dataLength;
+- (unsigned long long)dataOffset;
 - (void)dealloc;
-- (int)encodedLength;
+- (long long)encodedLength;
 - (id)initFromCentralFileHeader:(const char *)arg1 dataRepresentation:(id)arg2;
-- (id)initWithDataRepresentation:(id)arg1 compressionMethod:(int)arg2 compressedSize:(unsigned int)arg3 uncompressedSize:(unsigned int)arg4 offset:(unsigned int)arg5 crc:(unsigned int)arg6;
+- (id)initWithDataRepresentation:(id)arg1 compressionMethod:(int)arg2 compressedSize:(unsigned long long)arg3 uncompressedSize:(unsigned long long)arg4 offset:(unsigned long long)arg5 crc:(unsigned int)arg6;
 - (id)inputStream;
 - (BOOL)isBackedByFile;
 - (BOOL)isCompressed;
@@ -36,6 +36,6 @@
 - (void)readZip64ExtraField:(const char *)arg1 size:(unsigned long)arg2;
 - (void)setCompressionFlags:(unsigned short)arg1;
 - (void)setCryptoKey:(id)arg1;
-- (void)setDataLength:(int)arg1;
+- (void)setDataLength:(long long)arg1;
 
 @end

@@ -8,11 +8,11 @@
     _DECConsumer * _decConsumer;
     unsigned int  _decFeedbackState;
     BOOL  _justSelectedAQueryPrediction;
-    unsigned int  _lastDidStartSearchTimeStamp;
+    unsigned long long  _lastDidStartSearchTimeStamp;
     int  _lastEngagedQueryPredictionPosition;
     NSSet * _lastEngagedQueryPredictionSourceCodes;
     BOOL  _lastPredictedQuerySetWasEngagedOn;
-    unsigned int  _lastResultsDidBecomeVisibleTimeStamp;
+    unsigned long long  _lastResultsDidBecomeVisibleTimeStamp;
     BOOL  _predictedQuerySessionActive;
     BOOL  _predictedQuerySessionPredictedQueryWasEdited;
     NSString * _qpAbGroupIdentifier;
@@ -48,7 +48,7 @@
 - (id)_allEventTrackers;
 - (void)_endQueryPredictionSessionAndLogResults:(id)arg1;
 - (void)_logQueryPredictionEventStats:(id)arg1 searchResults:(id)arg2;
-- (void)_logZkwDisplayTime:(unsigned int)arg1;
+- (void)_logZkwDisplayTime:(unsigned long long)arg1;
 - (void)_sendAppFeedbackToDuetExpertCenter:(id)arg1 searchResults:(id)arg2;
 - (void)_sendFeedbackAndDoLogging:(id)arg1 searchResults:(id)arg2;
 - (void)_setConsumerSubType:(unsigned char)arg1;

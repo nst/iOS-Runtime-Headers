@@ -4,7 +4,7 @@
 
 @interface MusicAlbumTracklistTableViewHeaderFooterView : MusicEntityHorizontalLockupTableViewHeaderFooterView
 
-@property (nonatomic) double leadingTextColumnWidth;
+@property (nonatomic) float leadingTextColumnWidth;
 
 + (Class)lockupViewClass;
 

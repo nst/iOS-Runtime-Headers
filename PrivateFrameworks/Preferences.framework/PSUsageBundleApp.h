@@ -7,13 +7,13 @@
     NSArray * _categories;
     NSString * _name;
     PSWeakReference * _storageReporterReference;
-    double  _totalSize;
+    float  _totalSize;
 }
 
 @property (nonatomic, retain) NSString *bundleIdentifier;
 @property (nonatomic, retain) NSArray *categories;
 @property (nonatomic, retain) NSString *name;
-@property (nonatomic) double totalSize;
+@property (nonatomic) float totalSize;
 @property (nonatomic) <PSStorageReporting> *usageBundleStorageReporter;
 
 + (id)usageBundleAppForBundleWithIdentifier:(id)arg1 withTotalSize:(float)arg2;

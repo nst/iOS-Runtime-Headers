@@ -23,7 +23,7 @@
 - (void)_clientDidConnect:(id)arg1 withMessage:(id)arg2 completion:(id /* block */)arg3;
 - (void)_clientDidDisconnect:(id)arg1;
 - (id)_facilityClientForClient:(id)arg1;
-- (void)_handleMessage:(id)arg1 withType:(int)arg2 fromClient:(id)arg3;
+- (void)_handleMessage:(id)arg1 withType:(long long)arg2 fromClient:(id)arg3;
 - (BOOL)_queue_clientIsAuthenticated:(id)arg1 error:(out id*)arg2;
 - (id)authenticator;
 - (Class)classForClient:(id)arg1;
@@ -39,11 +39,11 @@
 - (void)noteClientDidDisconnect:(id)arg1;
 - (void)noteClientDidResume:(id)arg1;
 - (void)noteClientDidSuspend:(id)arg1;
-- (void)noteDidReceiveMessage:(id)arg1 withType:(int)arg2 fromClient:(id)arg3;
+- (void)noteDidReceiveMessage:(id)arg1 withType:(long long)arg2 fromClient:(id)arg3;
 - (id)prerequisiteMilestones;
 - (void)process:(id)arg1 stateDidChangeFromState:(id)arg2 toState:(id)arg3;
 - (id)queue;
-- (void)sendMessage:(id)arg1 withType:(int)arg2 toClients:(id)arg3;
+- (void)sendMessage:(id)arg1 withType:(long long)arg2 toClients:(id)arg3;
 - (id)succinctDescription;
 - (id)succinctDescriptionBuilder;
 

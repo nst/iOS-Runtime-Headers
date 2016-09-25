@@ -3,10 +3,10 @@
  */
 
 @interface FMHairlineConstraint : NSLayoutConstraint {
-    double  _pixelHeight;
+    float  _pixelHeight;
 }
 
-@property (nonatomic) double pixelHeight;
+@property (nonatomic) float pixelHeight;
 
 - (float)pixelHeight;
 - (void)setPixelHeight:(float)arg1;

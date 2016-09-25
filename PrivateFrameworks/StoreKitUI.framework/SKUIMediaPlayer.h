@@ -8,7 +8,7 @@
     MPAVController * _player;
     SKUIMediaPlayerItemStatus * _playerItem;
     BOOL  _playing;
-    double  _rate;
+    float  _rate;
 }
 
 @property (nonatomic) MPAVItem *currentItem;
@@ -16,7 +16,7 @@
 @property (nonatomic) MPAVController *player;
 @property (nonatomic, retain) SKUIMediaPlayerItemStatus *playerItem;
 @property (nonatomic) BOOL playing;
-@property (nonatomic) double rate;
+@property (nonatomic) float rate;
 
 - (void).cxx_destruct;
 - (id)currentItem;

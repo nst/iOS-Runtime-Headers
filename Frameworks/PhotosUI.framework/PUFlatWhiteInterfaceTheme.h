@@ -15,14 +15,14 @@
 @property (nonatomic, readonly) UIColor *albumBadgeInTitleColor;
 @property (nonatomic, readonly) UIColor *albumCornersBackgroundColor;
 @property (nonatomic, readonly) UIColor *albumListBackgroundColor;
-@property (nonatomic, readonly) double albumListDisabledAlbumStackViewAlpha;
-@property (nonatomic, readonly) double albumListDisabledAlbumTitleAlpha;
+@property (nonatomic, readonly) float albumListDisabledAlbumStackViewAlpha;
+@property (nonatomic, readonly) float albumListDisabledAlbumTitleAlpha;
 @property (nonatomic, readonly) UIFont *albumListSectionTitleLabelFont;
 @property (nonatomic, readonly) UIFont *albumListSubtitleLabelFont;
 @property (nonatomic, readonly) UIFont *albumListTitleLabelFont;
 @property (nonatomic, readonly) UIColor *badgeOverThumbnailColor;
 @property (nonatomic, readonly) UIColor *bannerBackgroundColor;
-@property (nonatomic, readonly) double bannerHeight;
+@property (nonatomic, readonly) float bannerHeight;
 @property (nonatomic, readonly) UIColor *cloudFeedBackgroundColor;
 @property (nonatomic, readonly) NSDictionary *cloudFeedDefaultTextAttributes;
 @property (nonatomic, readonly) NSDictionary *cloudFeedEmphasizedTextAttributes;
@@ -35,13 +35,13 @@
 @property (nonatomic, readonly) UIImage *cloudFeedMiniChevronImage;
 @property (nonatomic, readonly) UIImage *cloudFeedSectionHeaderBackgroundImage;
 @property (nonatomic, readonly) UIColor *cloudFeedSeparatorColor;
-@property (nonatomic, readonly) double cloudFeedSeparatorHeight;
+@property (nonatomic, readonly) float cloudFeedSeparatorHeight;
 @property (nonatomic, readonly) NSDictionary *cloudFeedWhiteDefaultTextAttributes;
 @property (nonatomic, readonly) NSDictionary *cloudFeedWhiteEmphasizedTextAttributes;
 @property (nonatomic, readonly) UIColor *cloudStatusHighlightColor;
-@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } commentsButtonTextInset;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } commentsButtonTextInset;
 @property (nonatomic, readonly) UIImage *compactLoadErrorIcon;
-@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentCommentsButtonImageInset;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentCommentsButtonImageInset;
 @property (nonatomic, readonly) UIColor *contentCommentsHiddenButtonImageColor;
 @property (nonatomic, readonly) NSDictionary *contentCommentsHiddenButtonTextAttributes;
 @property (nonatomic, readonly) UIColor *contentCommentsShownButtonImageColor;
@@ -58,8 +58,8 @@
 @property (nonatomic, readonly) UIColor *gridViewCellBannerTextColor;
 @property (nonatomic, readonly) UIFont *gridViewCellBannerTextFont;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly) double padAlbumCornerRadius;
-@property (nonatomic, readonly) double phoneAlbumCornerRadius;
+@property (nonatomic, readonly) float padAlbumCornerRadius;
+@property (nonatomic, readonly) float phoneAlbumCornerRadius;
 @property (nonatomic, readonly) int photoBrowserBarStyle;
 @property (nonatomic, readonly) UIColor *photoBrowserChromeHiddenBackgroundColor;
 @property (nonatomic, readonly) UIColor *photoBrowserChromeVisibleBackgroundColor;
@@ -69,8 +69,8 @@
 @property (nonatomic, readonly) UIFont *photoBrowserTimeTitleFont;
 @property (nonatomic, readonly) UIColor *photoBrowserTitleViewTappableTextColor;
 @property (nonatomic, readonly) UIColor *photoBrowserTitleViewTextColor;
-@property (nonatomic, readonly) double photoCollectionToolbarIconToTextSpacerWidth;
-@property (nonatomic, readonly) double photoCollectionToolbarTextTitleSpacerWidth;
+@property (nonatomic, readonly) float photoCollectionToolbarIconToTextSpacerWidth;
+@property (nonatomic, readonly) float photoCollectionToolbarTextTitleSpacerWidth;
 @property (nonatomic, readonly) UIColor *photoCollectionViewBackgroundColor;
 @property (nonatomic, readonly) int photoCollectionViewBackgroundColorValue;
 @property (nonatomic, readonly) UIColor *photoCollectionViewSecondScreenBackgroundColor;
@@ -128,7 +128,7 @@
 @property (nonatomic, readonly) UIColor *slideshowMusicHeaderBackgroundColor;
 @property (nonatomic, readonly) UIColor *slideshowMusicHeaderTextColor;
 @property (nonatomic, readonly) UIColor *slideshowSeparatorColor;
-@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } slideshowSeparatorInset;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } slideshowSeparatorInset;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) UIColor *toolbarAirPlayButtonColor;
 @property (nonatomic, readonly) UIColor *toolbarCommentsHiddenButtonImageColor;
@@ -143,8 +143,8 @@
 @property (nonatomic, readonly) UIColor *videoEditingToolbarMainButtonColor;
 @property (nonatomic, readonly) UIColor *videoEditingToolbarSecondaryButtonColor;
 @property (nonatomic, readonly) UIColor *videoEditingToolbarToolButtonColor;
-@property (nonatomic, readonly) double videoPaletteBottomMargin;
-@property (nonatomic, readonly) double videoPaletteSideMargin;
+@property (nonatomic, readonly) float videoPaletteBottomMargin;
+@property (nonatomic, readonly) float videoPaletteSideMargin;
 @property (nonatomic, readonly) UIColor *videoScrubberTileBackgroundColor;
 @property (nonatomic, readonly) UIFont *wallpaperCategoryLabelFont;
 
@@ -188,7 +188,7 @@
 - (id)cloudStatusHighlightColor;
 - (id)cloudWelcomeViewTitleLabelFontForSize:(float)arg1;
 - (id)commentsButtonStringForCount:(int)arg1;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })commentsButtonTextInset;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })commentsButtonTextInset;
 - (id)compactLoadErrorIcon;
 - (void)configureAlbumListDeleteButton:(id)arg1;
 - (void)configureAlbumListEmptyStackViewPadPhotoDecoration:(id)arg1;
@@ -203,7 +203,7 @@
 - (void)configureBannerStackView:(id)arg1;
 - (void)configureCloudFeedCommentButton:(id)arg1 withCount:(int)arg2;
 - (void)configureCloudFeedInvitationReplyButton:(id)arg1;
-- (void)configureCloudFeedStackView:(id)arg1 withStackSize:(struct CGSize { double x1; double x2; })arg2;
+- (void)configureCloudFeedStackView:(id)arg1 withStackSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)configureEditPluginListCellLabel:(id)arg1;
 - (void)configureEditPluginListNavigationController:(id)arg1;
 - (void)configureEditPluginNavigationController:(id)arg1;
@@ -220,7 +220,7 @@
 - (void)configureSearchSubtitleLabel:(id)arg1;
 - (void)configureSearchTitleLabel:(id)arg1;
 - (void)configureSlideshowMusicHeaderTitleLabel:(id)arg1;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentCommentsButtonImageInset;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentCommentsButtonImageInset;
 - (id)contentCommentsHiddenButtonImageColor;
 - (id)contentCommentsHiddenButtonTextAttributes;
 - (id)contentCommentsShownButtonImageColor;
@@ -253,7 +253,7 @@
 - (id)photoCollectionHeaderBackgroundColorForBackgroundStyle:(unsigned int)arg1;
 - (id)photoCollectionHeaderDateLabelFontDescriptorForStyle:(int)arg1;
 - (id)photoCollectionHeaderDisclosureIconForStyle:(int)arg1;
-- (struct UIOffset { double x1; double x2; })photoCollectionHeaderLocationIconOffsetForStyle:(int)arg1;
+- (struct UIOffset { float x1; float x2; })photoCollectionHeaderLocationIconOffsetForStyle:(int)arg1;
 - (id)photoCollectionHeaderLocationLabelFontDescriptorForStyle:(int)arg1;
 - (id)photoCollectionHeaderTitleLabelFontDescriptorForStyle:(int)arg1;
 - (float)photoCollectionToolbarIconToTextSpacerWidth;
@@ -320,7 +320,7 @@
 - (id)slideshowMusicHeaderBackgroundColor;
 - (id)slideshowMusicHeaderTextColor;
 - (id)slideshowSeparatorColor;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })slideshowSeparatorInset;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })slideshowSeparatorInset;
 - (id)themeImagePrefix;
 - (id)tintColorForBarStyle:(int)arg1;
 - (id)toolbarAirPlayButtonColor;
@@ -331,7 +331,7 @@
 - (id)topLevelNavigationBarBackButtonBackgroundImageForState:(unsigned int)arg1 barMetrics:(int)arg2;
 - (id)topLevelNavigationBarButtonBackgroundImageForState:(unsigned int)arg1 barMetrics:(int)arg2;
 - (id)topLevelNavigationBarButtonTintColor;
-- (struct UIOffset { double x1; double x2; })topLevelNavigationBarButtonTitlePositionAdjustmentforBarMetrics:(int)arg1;
+- (struct UIOffset { float x1; float x2; })topLevelNavigationBarButtonTitlePositionAdjustmentforBarMetrics:(int)arg1;
 - (id)topLevelNavigationBarButtonTitleTextAttributesForState:(unsigned int)arg1;
 - (id)topLevelNavigationBarDoneButtonBackgroundImageForState:(unsigned int)arg1 barMetrics:(int)arg2;
 - (id)topLevelNavigationBarDoneButtonTitleTextAttributesForState:(unsigned int)arg1;

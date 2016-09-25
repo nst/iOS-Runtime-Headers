@@ -3,7 +3,7 @@
  */
 
 @interface ETPHeartbeat : PBCodable <NSCopying> {
-    double  _beatsPerMinute;
+    float  _beatsPerMinute;
     unsigned int  _duration;
     struct { 
         unsigned int beatsPerMinute : 1; 
@@ -13,13 +13,13 @@
         unsigned int normalizedCenterY : 1; 
         unsigned int rotation : 1; 
     }  _has;
-    double  _heartbreakTime;
-    double  _normalizedCenterX;
-    double  _normalizedCenterY;
-    double  _rotation;
+    float  _heartbreakTime;
+    float  _normalizedCenterX;
+    float  _normalizedCenterY;
+    float  _rotation;
 }
 
-@property (nonatomic) double beatsPerMinute;
+@property (nonatomic) float beatsPerMinute;
 @property (nonatomic) unsigned int duration;
 @property (nonatomic) BOOL hasBeatsPerMinute;
 @property (nonatomic) BOOL hasDuration;
@@ -27,10 +27,10 @@
 @property (nonatomic) BOOL hasNormalizedCenterX;
 @property (nonatomic) BOOL hasNormalizedCenterY;
 @property (nonatomic) BOOL hasRotation;
-@property (nonatomic) double heartbreakTime;
-@property (nonatomic) double normalizedCenterX;
-@property (nonatomic) double normalizedCenterY;
-@property (nonatomic) double rotation;
+@property (nonatomic) float heartbreakTime;
+@property (nonatomic) float normalizedCenterX;
+@property (nonatomic) float normalizedCenterY;
+@property (nonatomic) float rotation;
 
 - (float)beatsPerMinute;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

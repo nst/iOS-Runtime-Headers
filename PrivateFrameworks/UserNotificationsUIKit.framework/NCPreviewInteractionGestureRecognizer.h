@@ -4,18 +4,18 @@
 
 @interface NCPreviewInteractionGestureRecognizer : UIGestureRecognizer <UIPreviewInteractionDelegate> {
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _initialLocation;
     UIPreviewInteraction * _previewInteraction;
-    double  _transitionProgress;
+    float  _transitionProgress;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) double transitionProgress;
+@property (nonatomic, readonly) float transitionProgress;
 
 - (void).cxx_destruct;
 - (void)_cancelPreviewInteraction;

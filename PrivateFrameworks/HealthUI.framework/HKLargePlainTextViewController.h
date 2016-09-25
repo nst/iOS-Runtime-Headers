@@ -3,7 +3,7 @@
  */
 
 @interface HKLargePlainTextViewController : HKViewController <HKIncrementalSearchBarDelegate> {
-    double  _currentKeyboardHeight;
+    float  _currentKeyboardHeight;
     NSMutableArray * _currentRanges;
     _IncrementalSearchOperation * _currentSearch;
     int  _currentSearchItem;
@@ -18,7 +18,7 @@
     UITextView * _textView;
 }
 
-@property (nonatomic) double currentKeyboardHeight;
+@property (nonatomic) float currentKeyboardHeight;
 @property (nonatomic, retain) NSMutableArray *currentRanges;
 @property (retain) _IncrementalSearchOperation *currentSearch;
 @property int currentSearchItem;

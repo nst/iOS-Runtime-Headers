@@ -6,13 +6,13 @@
     double  _elapsedTime;
     NSError * _error;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _imageSize;
     BOOL  _isFullScreen;
     BOOL  _isVisible;
     double  _mediaDuration;
-    double  _mediaVolume;
+    float  _mediaVolume;
     BOOL  _mediaWasPausedOnResignActive;
     BOOL  _playable;
     int  _playbackTimeFormat;
@@ -33,7 +33,7 @@
     BOOL  _visualTracksEnabled;
 }
 
-@property (nonatomic) double currentPlaybackHeadPosition;
+@property (nonatomic) float currentPlaybackHeadPosition;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) double elapsedTime;
@@ -41,7 +41,7 @@
 @property (nonatomic, retain) NSError *error;
 @property (readonly) unsigned int hash;
 @property (nonatomic) double mediaDuration;
-@property (nonatomic, readonly) double mediaVolume;
+@property (nonatomic, readonly) float mediaVolume;
 @property (nonatomic, readonly) BOOL playable;
 @property (nonatomic, readonly) AVPlayer *player;
 @property (nonatomic, readonly) AVPlayerLayer *playerLayer;
@@ -67,12 +67,12 @@
 - (void)hideTimeLabel;
 - (void)hideTimeLabelAfterDelay;
 - (void)hideTimeLabelAnimated:(BOOL)arg1;
-- (struct CGSize { double x1; double x2; })imageSize;
+- (struct CGSize { float x1; float x2; })imageSize;
 - (id)labelTextWithFormat:(int)arg1 elapsedInterval:(double)arg2 remainingInterval:(double)arg3;
 - (void)loadPreviewControllerWithPreviewItem:(id)arg1 completionHandler:(id /* block */)arg2;
 - (double)mediaDuration;
 - (float)mediaVolume;
-- (void)observePlayingTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
+- (void)observePlayingTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)pause;
 - (void)play;

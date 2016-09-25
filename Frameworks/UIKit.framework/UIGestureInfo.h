@@ -5,21 +5,21 @@
 @interface UIGestureInfo : NSObject {
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  centerRect;
     id  delegate;
     int  enabledGestures;
-    double  endDegrees;
-    double  endScale;
+    float  endDegrees;
+    float  endScale;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  endScrollPoint;
     struct { 
         unsigned int pushedRunLoop : 1; 
@@ -29,46 +29,46 @@
         unsigned int updatesScroller : 1; 
         unsigned int isAnimatingZoomFailure : 1; 
     }  flags;
-    double  maxDegrees;
-    double  maxScale;
-    double  minDegrees;
-    double  minScale;
+    float  maxDegrees;
+    float  maxScale;
+    float  minDegrees;
+    float  minScale;
     int  panState;
-    double  recentRotationDegrees;
+    float  recentRotationDegrees;
     UIGestureAnimation * rotationAnimation;
-    double  rotationDegrees;
+    float  rotationDegrees;
     int  rotationState;
     UIScrollAnimation * scrollAnimation;
-    double  startDegrees;
+    float  startDegrees;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  startGestureInner;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  startGestureOuter;
-    double  startScale;
+    float  startScale;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  startScrollPoint;
-    double  unadjustedScale;
+    float  unadjustedScale;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  visibleSize;
     UIGestureAnimation * zoomAnimation;
-    double  zoomAnimationProgress;
-    double  zoomFailureDuration;
-    double  zoomFailureStartScale;
+    float  zoomAnimationProgress;
+    float  zoomFailureDuration;
+    float  zoomFailureStartScale;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  zoomFailureWindowPoint;
-    double  zoomMultiplier;
+    float  zoomMultiplier;
     int  zoomRubberBandHysteresisCount;
-    double  zoomScale;
+    float  zoomScale;
     int  zoomState;
 }
 

@@ -4,20 +4,20 @@
 
 @interface NSTextContainer : NSObject <NSCoding, NSTextLayoutOrientationProvider> {
     NSDictionary * _attributesForExtraLineFragment;
-    double  _cacheBoundsMaxY;
-    double  _cacheBoundsMinY;
+    float  _cacheBoundsMaxY;
+    float  _cacheBoundsMinY;
     struct CGPath { } * _cachedBoundingPath;
     struct __CFArray { } * _cachedBounds;
     struct __CFArray { } * _cachedClippingAttributes;
     NSArray * _exclusionPaths;
     NSLayoutManager * _layoutManager;
     int  _layoutOrientation;
-    double  _lineFragmentPadding;
+    float  _lineFragmentPadding;
     unsigned int  _maximumLines;
-    double  _minimumWidth;
+    float  _minimumWidth;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _size;
     struct __tcFlags { 
         unsigned int widthTracksTextView : 1; 
@@ -36,10 +36,10 @@
 @property (nonatomic) NSLayoutManager *layoutManager;
 @property (nonatomic, readonly) int layoutOrientation;
 @property (nonatomic) int lineBreakMode;
-@property (nonatomic) double lineFragmentPadding;
+@property (nonatomic) float lineFragmentPadding;
 @property (nonatomic) unsigned int maximumNumberOfLines;
 @property (getter=isSimpleRectangularTextContainer, nonatomic, readonly) BOOL simpleRectangularTextContainer;
-@property (nonatomic) struct CGSize { double x1; double x2; } size;
+@property (nonatomic) struct CGSize { float x1; float x2; } size;
 @property (nonatomic) BOOL widthTracksTextView;
 
 // Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
@@ -49,7 +49,7 @@
 - (void)_commonInit;
 - (void)_resizeAccordingToTextView:(id)arg1;
 - (id)attributesForExtraLineFragment;
-- (struct CGSize { double x1; double x2; })containerSize;
+- (struct CGSize { float x1; float x2; })containerSize;
 - (void)coordinateAccess:(id /* block */)arg1;
 - (void)dealloc;
 - (id)description;
@@ -58,20 +58,20 @@
 - (BOOL)heightTracksTextView;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithContainerSize:(struct CGSize { double x1; double x2; })arg1;
-- (id)initWithSize:(struct CGSize { double x1; double x2; })arg1;
+- (id)initWithContainerSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)initWithSize:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)isSimpleRectangularTextContainer;
 - (id)layoutManager;
 - (int)layoutOrientation;
 - (int)lineBreakMode;
 - (float)lineFragmentPadding;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })lineFragmentRectForProposedRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 atIndex:(unsigned int)arg2 writingDirection:(int)arg3 remainingRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg4;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })lineFragmentRectForProposedRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 remainingRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })lineFragmentRectForProposedRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 atIndex:(unsigned int)arg2 writingDirection:(int)arg3 remainingRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg4;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })lineFragmentRectForProposedRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 remainingRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2;
 - (unsigned int)maximumNumberOfLines;
 - (float)minimumLineFragmentWidth;
 - (void)replaceLayoutManager:(id)arg1;
 - (void)setAttributesForExtraLineFragment:(id)arg1;
-- (void)setContainerSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setContainerSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setExclusionPaths:(id)arg1;
 - (void)setHeightTracksTextView:(BOOL)arg1;
 - (void)setLayoutManager:(id)arg1;
@@ -80,22 +80,22 @@
 - (void)setLineFragmentPadding:(float)arg1;
 - (void)setMaximumNumberOfLines:(unsigned int)arg1;
 - (void)setMinimumLineFragmentWidth:(float)arg1;
-- (void)setSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setTextView:(id)arg1;
 - (void)setWidthTracksTextView:(BOOL)arg1;
-- (struct CGSize { double x1; double x2; })size;
-- (struct CGPoint { double x1; double x2; })textContainerOrigin;
+- (struct CGSize { float x1; float x2; })size;
+- (struct CGPoint { float x1; float x2; })textContainerOrigin;
 - (id)textView;
 - (BOOL)widthTracksTextView;
 
 // Image: /System/Library/PrivateFrameworks/AnnotationKit.framework/AnnotationKit
 
-- (struct CGSize { double x1; double x2; })akContainerSize;
-- (void)akSetContainerSize:(struct CGSize { double x1; double x2; })arg1;
-- (id)initWithContainerSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })akContainerSize;
+- (void)akSetContainerSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)initWithContainerSize:(struct CGSize { float x1; float x2; })arg1;
 
 // Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
 
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1 textAlignmentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; }*)arg2 isSingleLine:(BOOL*)arg3;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1 textAlignmentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg2 isSingleLine:(BOOL*)arg3;
 
 @end

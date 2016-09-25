@@ -13,7 +13,7 @@
 @property (nonatomic) unsigned int deferredPersistenceOptions;
 @property (nonatomic) <CAMStillImageCaptureRequestDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) struct CGSize { double x1; double x2; } desiredPreviewSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } desiredPreviewSize;
 @property (nonatomic) int effectFilterType;
 @property (nonatomic) int flashMode;
 @property (readonly) unsigned int hash;
@@ -57,7 +57,7 @@
 - (void)setCapturedFromPhotoBooth:(BOOL)arg1;
 - (void)setDeferredPersistenceOptions:(unsigned int)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setDesiredPreviewSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setDesiredPreviewSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setEffectFilterType:(int)arg1;
 - (void)setFlashMode:(int)arg1;
 - (void)setHdrMode:(int)arg1;

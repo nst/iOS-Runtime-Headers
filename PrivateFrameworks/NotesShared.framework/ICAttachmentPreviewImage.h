@@ -32,7 +32,7 @@
 + (id)identifierForContentIdentifier:(id)arg1 scale:(float)arg2 width:(float)arg3 height:(float)arg4;
 + (id)imageCache;
 + (id)newAttachmentPreviewImageInContext:(id)arg1;
-+ (struct UIImage { Class x1; }*)orientedImage:(struct UIImage { Class x1; }*)arg1 withTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg2 background:(int)arg3 backgroundTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg4;
++ (struct UIImage { Class x1; }*)orientedImage:(struct UIImage { Class x1; }*)arg1 withTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2 background:(int)arg3 backgroundTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg4;
 + (id)previewImageDirectoryURL;
 + (id)previewImageURLsForIdentifier:(id)arg1;
 + (void)purgeAllAttachmentPreviewImagesInContext:(id)arg1;
@@ -72,7 +72,7 @@
 - (id)oldPreviewImageURL;
 - (struct UIImage { Class x1; }*)orientedImage;
 - (id)orientedImageID;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })orientedImageTransform;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })orientedImageTransform;
 - (struct UIImage { Class x1; }*)orientedImageWithBackground:(int)arg1;
 - (id)orientedPreviewImageURL;
 - (id)orientedPreviewImageURLCreateIfNeeded:(BOOL)arg1;
@@ -88,7 +88,7 @@
 - (void)setImage:(struct UIImage { Class x1; }*)arg1 withScale:(float)arg2 completion:(id /* block */)arg3;
 - (void)setMetadata:(id)arg1;
 - (BOOL)shouldSyncToCloud;
-- (struct CGSize { double x1; double x2; })size;
+- (struct CGSize { float x1; float x2; })size;
 - (void)updateFlagToExcludeFromBackup;
 - (void)updateFlagToExcludeFromBackupForURL:(id)arg1 touchFileIfNecessary:(BOOL)arg2;
 - (void)updateFlagToExcludeFromBackupTouchFileIfNecessary:(BOOL)arg1;

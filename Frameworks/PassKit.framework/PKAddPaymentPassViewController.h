@@ -28,7 +28,7 @@
 - (int)modalTransitionStyle;
 - (void)setDelegate:(id)arg1;
 - (BOOL)shouldAutorotate;
-- (struct CGSize { double x1; double x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { double x1; double x2; })arg2;
+- (struct CGSize { float x1; float x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { float x1; float x2; })arg2;
 - (unsigned int)supportedInterfaceOrientations;
 - (void)viewWillLayoutSubviews;
 

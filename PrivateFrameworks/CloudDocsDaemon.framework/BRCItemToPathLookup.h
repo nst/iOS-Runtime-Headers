@@ -17,7 +17,7 @@
     BRCRelativePath * _matchByEnclosure;
     BRCRelativePath * _matchByFileID;
     BRCRelativePath * _matchByPath;
-    unsigned int  _parentFileID;
+    unsigned long long  _parentFileID;
     BRCRelativePath * _parentPath;
     BRCServerItem * _serverItem;
     BRCServerZone * _serverZone;

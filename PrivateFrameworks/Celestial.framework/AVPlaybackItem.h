@@ -6,14 +6,14 @@
     AVItem * _avItem;
     double  _bookmarkTime;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _currentDuration;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _currentSize;
     BOOL  _currentSizeIsValid;
     id  _delegate;

@@ -12,8 +12,8 @@
     struct CGImageSource { } * _inputImageSource;
     bool  _isRawSource;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _nativeSize;
     NSArray * _neutralColour;
     NSDictionary * _rawDictionary;
@@ -58,7 +58,7 @@
 }
 
 @property (readonly, retain) NSArray *filters;
-@property (readonly) struct CGSize { double x1; double x2; } nativeSize;
+@property (readonly) struct CGSize { float x1; float x2; } nativeSize;
 @property (readonly, retain) NSDictionary *rawDictionary;
 @property (readonly) int rawMajorVersion;
 @property (readonly, retain) NSDictionary *rawReconstructionDefaultsDictionary;
@@ -102,8 +102,8 @@
 - (id)defaultNeutralTemperature;
 - (id)defaultNeutralTint;
 - (id)filters;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })getOrientationTransform;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })getScaleTransform;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })getOrientationTransform;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })getScaleTransform;
 - (void)getWhitePointVectorsR:(id*)arg1 g:(id*)arg2 b:(id*)arg3;
 - (id)init;
 - (id)initWithCVPixelBuffer:(struct __CVBuffer { }*)arg1 properties:(id)arg2 options:(id)arg3;
@@ -126,7 +126,7 @@
 - (id)inputNeutralTint;
 - (void)invalidateFilters;
 - (void)invalidateInputImage;
-- (struct CGSize { double x1; double x2; })nativeSize;
+- (struct CGSize { float x1; float x2; })nativeSize;
 - (id)outputImage;
 - (id)outputKeys;
 - (id)outputNativeSize;
@@ -170,7 +170,7 @@
 - (void)setInputNoiseReductionSharpnessAmount:(id)arg1;
 - (void)setInputRequestedSushiMode:(id)arg1;
 - (void)setInputScaleFactor:(id)arg1;
-- (void)setTempTintAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setTempTintAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (int)subsampling;
 - (id)supportedDecoderVersions;
 - (id)supportedSushiModes;

@@ -6,12 +6,12 @@
     unsigned int  mActiveSubpath;
     BOOL  mHasLockedFlipTransform;
     struct CGAffineTransform { 
-        double a; 
-        double b; 
-        double c; 
-        double d; 
-        double tx; 
-        double ty; 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     }  mLockedFlipTransform;
     NSArray * mSubpaths;
 }
@@ -26,7 +26,7 @@
 @property (nonatomic, readonly) BOOL isCompound;
 @property (nonatomic, readonly) BOOL isOpen;
 @property (nonatomic, readonly) TSDBezierNode *lastNode;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } nodeBounds;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } nodeBounds;
 @property (nonatomic, retain) NSArray *nodeTypes;
 @property (nonatomic, copy) NSArray *nodes;
 @property (nonatomic, readonly) struct CGPath { }*subpathForSelection;
@@ -41,7 +41,7 @@
 - (void)adjustGeometryForAlignToOrigin:(id)arg1;
 - (void)alignToOrigin;
 - (BOOL)allNodesSelected;
-- (id)bezierNodeUnderPoint:(struct CGPoint { double x1; double x2; })arg1 withTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg2 andTolerance:(float)arg3 returningType:(int*)arg4;
+- (id)bezierNodeUnderPoint:(struct CGPoint { float x1; float x2; })arg1 withTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2 andTolerance:(float)arg3 returningType:(int*)arg4;
 - (id)bezierPathWithoutFlips;
 - (BOOL)canCloseSelectedNodes;
 - (BOOL)canConnectSelectedNodes;
@@ -53,7 +53,7 @@
 - (void)connectSelectedNodes;
 - (void)convertToHobby;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)curveToPoint:(struct CGPoint { double x1; double x2; })arg1 controlPoint1:(struct CGPoint { double x1; double x2; })arg2 controlPoint2:(struct CGPoint { double x1; double x2; })arg3;
+- (void)curveToPoint:(struct CGPoint { float x1; float x2; })arg1 controlPoint1:(struct CGPoint { float x1; float x2; })arg2 controlPoint2:(struct CGPoint { float x1; float x2; })arg3;
 - (void)cutAtSelectedNodes;
 - (void)dealloc;
 - (void)deleteSelectedEdges;
@@ -62,7 +62,7 @@
 - (BOOL)deletingSelectedNodesWillDeleteShape;
 - (id)description;
 - (void)deselectAllNodes;
-- (float)distanceToPoint:(struct CGPoint { double x1; double x2; })arg1 subpathIndex:(unsigned int*)arg2 elementIndex:(unsigned int*)arg3 tValue:(float*)arg4 threshold:(float)arg5;
+- (float)distanceToPoint:(struct CGPoint { float x1; float x2; })arg1 subpathIndex:(unsigned int*)arg2 elementIndex:(unsigned int*)arg3 tValue:(float*)arg4 threshold:(float)arg5;
 - (id)firstNode;
 - (BOOL)hasSelectedNode;
 - (unsigned int)hash;
@@ -76,20 +76,20 @@
 - (BOOL)isOpen;
 - (BOOL)isRectangular;
 - (id)lastNode;
-- (void)lineToPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)lineToPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)mixedObjectWithFraction:(float)arg1 ofObject:(id)arg2;
 - (int)mixingTypeWithObject:(id)arg1 context:(id)arg2;
 - (void)morphWithMorphInfo:(id)arg1;
-- (void)moveToPoint:(struct CGPoint { double x1; double x2; })arg1;
-- (struct CGSize { double x1; double x2; })naturalSize;
+- (void)moveToPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGSize { float x1; float x2; })naturalSize;
 - (id)nodeAfterNode:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })nodeBounds;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })nodeBounds;
 - (id)nodePriorToNode:(id)arg1;
 - (id)nodeTypes;
 - (id)nodes;
-- (void)offsetSelectedEdgesByDelta:(struct CGPoint { double x1; double x2; })arg1;
-- (void)offsetSelectedNodesByDelta:(struct CGPoint { double x1; double x2; })arg1;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })pathFlipTransform;
+- (void)offsetSelectedEdgesByDelta:(struct CGPoint { float x1; float x2; })arg1;
+- (void)offsetSelectedNodesByDelta:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })pathFlipTransform;
 - (struct CGPath { }*)pathWithoutFlips;
 - (Class)preferredRepClass;
 - (void)removeLastNode;
@@ -101,13 +101,13 @@
 - (void)setBezierPath:(id)arg1;
 - (void)setClosed:(BOOL)arg1;
 - (void)setLockedFlipTransform:(BOOL)arg1;
-- (void)setNaturalSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setNaturalSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setNodeTypes:(id)arg1;
 - (void)setNodes:(id)arg1;
 - (void)setSubpaths:(id)arg1;
 - (void)sharpenAllNodes;
 - (void)smoothAllNodes;
-- (void)smoothCurveToPoint:(struct CGPoint { double x1; double x2; })arg1 controlPoint1:(struct CGPoint { double x1; double x2; })arg2 controlPoint2:(struct CGPoint { double x1; double x2; })arg3;
+- (void)smoothCurveToPoint:(struct CGPoint { float x1; float x2; })arg1 controlPoint1:(struct CGPoint { float x1; float x2; })arg2 controlPoint2:(struct CGPoint { float x1; float x2; })arg3;
 - (void)smoothNode:(id)arg1;
 - (id)splitEdge:(int)arg1 at:(float)arg2 fromSubpath:(int)arg3;
 - (void)splitSelectedEdges;
@@ -117,7 +117,7 @@
 - (id)subpathsForConnectingUsingFirstSubpathFirstNode:(BOOL*)arg1 andSecondPathFirstNode:(BOOL*)arg2;
 - (void)toggleNode:(id)arg1 toType:(int)arg2 prevNode:(id)arg3 nextNode:(id)arg4;
 - (void)toggleSelectedNodesToType:(int)arg1;
-- (void)transformUsingAffineTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
+- (void)transformUsingAffineTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (void)updateSmoothNodes;
 
 @end

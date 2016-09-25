@@ -61,8 +61,8 @@
     unsigned int  _reviewUserPhotosCount;
     unsigned int  _sequenceNumber;
     struct GEOSessionID { 
-        unsigned int _high; 
-        unsigned int _low; 
+        unsigned long long _high; 
+        unsigned long long _low; 
     }  _sessionId;
     int  _source;
     unsigned int  _timeSinceMapEnteredForeground;
@@ -144,7 +144,7 @@
 @property (nonatomic, retain) NSMutableArray *reviewUserPhotoSizes;
 @property (nonatomic) unsigned int reviewUserPhotosCount;
 @property (nonatomic) unsigned int sequenceNumber;
-@property (nonatomic) struct GEOSessionID { unsigned int x1; unsigned int x2; } sessionId;
+@property (nonatomic) struct GEOSessionID { unsigned long long x1; unsigned long long x2; } sessionId;
 @property (nonatomic) int source;
 @property (nonatomic) unsigned int timeSinceMapEnteredForeground;
 @property (nonatomic) unsigned int timeSinceMapViewportChanged;
@@ -272,7 +272,7 @@
 - (unsigned int)reviewUserPhotoSizesCount;
 - (unsigned int)reviewUserPhotosCount;
 - (unsigned int)sequenceNumber;
-- (struct GEOSessionID { unsigned int x1; unsigned int x2; })sessionId;
+- (struct GEOSessionID { unsigned long long x1; unsigned long long x2; })sessionId;
 - (void)setAction:(int)arg1;
 - (void)setAppIdentifier:(id)arg1;
 - (void)setAppMajorVersion:(id)arg1;
@@ -324,7 +324,7 @@
 - (void)setReviewUserPhotoSizes:(id)arg1;
 - (void)setReviewUserPhotosCount:(unsigned int)arg1;
 - (void)setSequenceNumber:(unsigned int)arg1;
-- (void)setSessionId:(struct GEOSessionID { unsigned int x1; unsigned int x2; })arg1;
+- (void)setSessionId:(struct GEOSessionID { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)setSource:(int)arg1;
 - (void)setTimeSinceMapEnteredForeground:(unsigned int)arg1;
 - (void)setTimeSinceMapViewportChanged:(unsigned int)arg1;

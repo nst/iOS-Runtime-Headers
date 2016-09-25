@@ -11,8 +11,8 @@
     NSMutableDictionary * _fetchedContainers;
     NSMutableArray * _imageCache;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _imageSize;
     PHFetchResult * _importantPeopleCountFetchResult;
     NSObject<OS_dispatch_queue> * _isolationQueue;
@@ -34,7 +34,7 @@
 @property (nonatomic, retain) NSMutableDictionary *fetchedContainers;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) NSMutableArray *imageCache;
-@property (nonatomic) struct CGSize { double x1; double x2; } imageSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } imageSize;
 @property (nonatomic, retain) PHFetchResult *importantPeopleCountFetchResult;
 @property (nonatomic) BOOL notificationSent;
 @property (nonatomic, retain) PHFetchResult *ordinaryPeopleCountFetchResult;
@@ -60,7 +60,7 @@
 - (id)fetchedContainers;
 - (id)imageCache;
 - (void)imageCacheDidChanged:(id)arg1;
-- (struct CGSize { double x1; double x2; })imageSize;
+- (struct CGSize { float x1; float x2; })imageSize;
 - (id)importantPeopleCountFetchResult;
 - (id)init;
 - (BOOL)isCountAvailable;
@@ -74,14 +74,14 @@
 - (id)peopleViewController;
 - (void)photoLibraryDidChangeOnMainQueue:(id)arg1;
 - (id)progressMgr;
-- (void)requestAlbumImagesWithSize:(struct CGSize { double x1; double x2; })arg1 completion:(id /* block */)arg2;
+- (void)requestAlbumImagesWithSize:(struct CGSize { float x1; float x2; })arg1 completion:(id /* block */)arg2;
 - (id /* block */)requestCompletion;
 - (void)setCachedPeopleCount:(int)arg1;
 - (void)setFavoriteDS:(id)arg1;
 - (void)setFavoriteLoaded:(BOOL)arg1;
 - (void)setFetchedContainers:(id)arg1;
 - (void)setImageCache:(id)arg1;
-- (void)setImageSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setImageSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setImportantPeopleCountFetchResult:(id)arg1;
 - (void)setNotificationSent:(BOOL)arg1;
 - (void)setOrdinaryPeopleCountFetchResult:(id)arg1;

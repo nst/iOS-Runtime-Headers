@@ -5,8 +5,8 @@
 @interface PXAssetsScene : NSObject <PXAssetsDataSourceManagerObserver, PXChangeObserver, PXReusableObjectPoolDelegate, PXTileSource, PXTilingControllerScrollDelegate, PXTilingControllerTransitionDelegate> {
     PXAssetReference * __anchorAssetReference;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  __anchorOrigin;
     PXAssetsDataSource * __dataSource;
     PXAssetBadgeManager * _badgeManager;
@@ -32,7 +32,7 @@
 }
 
 @property (setter=_setAnchorAssetReference:, nonatomic, retain) PXAssetReference *_anchorAssetReference;
-@property (setter=_setAnchorOrigin:, nonatomic) struct CGPoint { double x1; double x2; } _anchorOrigin;
+@property (setter=_setAnchorOrigin:, nonatomic) struct CGPoint { float x1; float x2; } _anchorOrigin;
 @property (setter=_setDataSource:, nonatomic, retain) PXAssetsDataSource *_dataSource;
 @property (nonatomic, readonly) PXAssetBadgeManager *badgeManager;
 @property (nonatomic, readonly) PXAssetsTilingLayout *currentLayout;
@@ -51,13 +51,13 @@
 
 - (void).cxx_destruct;
 - (id)_anchorAssetReference;
-- (struct CGPoint { double x1; double x2; })_anchorOrigin;
+- (struct CGPoint { float x1; float x2; })_anchorOrigin;
 - (void)_configureLayout:(id)arg1;
 - (id)_dataSource;
 - (void)_invalidateLayout;
 - (void)_saveAnchorAsset;
 - (void)_setAnchorAssetReference:(id)arg1;
-- (void)_setAnchorOrigin:(struct CGPoint { double x1; double x2; })arg1;
+- (void)_setAnchorOrigin:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_setDataSource:(id)arg1;
 - (void)_updateDataSourceIfNeeded;
 - (void)_updateLayoutIfNeeded;
@@ -84,8 +84,8 @@
 - (void)setNeedsUpdate;
 - (id)targetLayout;
 - (id)tilingController;
-- (struct CGPoint { double x1; double x2; })tilingController:(id)arg1 initialVisibleOriginForLayout:(id)arg2;
-- (struct CGPoint { double x1; double x2; })tilingController:(id)arg1 targetVisibleOriginForLayout:(id)arg2 proposedVisibleOrigin:(struct CGPoint { double x1; double x2; })arg3;
+- (struct CGPoint { float x1; float x2; })tilingController:(id)arg1 initialVisibleOriginForLayout:(id)arg2;
+- (struct CGPoint { float x1; float x2; })tilingController:(id)arg1 targetVisibleOriginForLayout:(id)arg2 proposedVisibleOrigin:(struct CGPoint { float x1; float x2; })arg3;
 - (id)tilingController:(id)arg1 tileIdentifierConverterForChange:(id)arg2;
 - (id)tilingController:(id)arg1 transitionAnimationCoordinatorForChange:(id)arg2;
 - (void)transitionToLayout:(id)arg1;

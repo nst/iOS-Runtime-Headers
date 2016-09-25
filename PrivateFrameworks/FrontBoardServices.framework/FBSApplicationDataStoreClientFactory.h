@@ -3,7 +3,7 @@
  */
 
 @interface FBSApplicationDataStoreClientFactory : NSObject {
-    unsigned int  _count;
+    unsigned long long  _count;
     Class  _dataStoreClientClass;
     NSArray * _prefetchedKeys;
     NSObject<OS_dispatch_queue> * _queue;

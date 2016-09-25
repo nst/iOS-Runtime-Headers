@@ -3,12 +3,12 @@
  */
 
 @interface GQDWrapPoint : NSObject {
-    double  mDistance;
+    float  mDistance;
     GQDDrawable * mDrawable;
     int  mFlowType;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  mPoint;
     int  mZIndex;
 }

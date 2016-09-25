@@ -11,7 +11,7 @@
 
 + (id)photoBracketSettingsWithRawPixelFormatType:(unsigned long)arg1 processedFormat:(id)arg2 bracketedSettings:(id)arg3;
 
-- (id)_initWithFormat:(id)arg1 rawPixelFormatType:(unsigned long)arg2 bracketedSettings:(id)arg3 uniqueID:(int)arg4;
+- (id)_initWithFormat:(id)arg1 rawPixelFormatType:(unsigned long)arg2 bracketedSettings:(id)arg3 uniqueID:(long long)arg4;
 - (id)bracketedSettings;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

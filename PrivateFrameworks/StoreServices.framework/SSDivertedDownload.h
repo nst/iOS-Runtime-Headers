@@ -16,12 +16,12 @@
 - (id)assets;
 - (id)assetsForType:(id)arg1;
 - (id)backgroundNetworkingJobGroupName;
-- (int)bytesDownloaded;
-- (int)bytesTotal;
+- (long long)bytesDownloaded;
+- (long long)bytesTotal;
 - (id)downloadIdentifier;
 - (id)downloadPhaseIdentifier;
 - (id)downloadPolicy;
-- (int)downloadSizeLimit;
+- (long long)downloadSizeLimit;
 - (double)estimatedSecondsRemaining;
 - (id)failureError;
 - (void)handleWithDownloadHandler:(id)arg1 completionBlock:(id /* block */)arg2;
@@ -35,7 +35,7 @@
 - (id)networkConstraints;
 - (void)pause;
 - (double)percentComplete;
-- (int)persistentIdentifier;
+- (long long)persistentIdentifier;
 - (void)prioritizeAboveDownload:(id)arg1 completionBlock:(id /* block */)arg2;
 - (BOOL)removeAsset:(id)arg1;
 - (void)restart;

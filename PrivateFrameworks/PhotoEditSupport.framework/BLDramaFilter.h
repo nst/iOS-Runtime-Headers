@@ -9,10 +9,10 @@
     CIImage * _inputImage;
     NSNumber * _inputNeutralGamma;
     NSNumber * _inputPhototone;
-    double  _lastAmount;
+    float  _lastAmount;
     CIVector * _lastHueStrengthArray;
-    double  _lastNeutralGamma;
-    double  _lastPhototone;
+    float  _lastNeutralGamma;
+    float  _lastPhototone;
     BOOL  _needsReprocess;
     NSData * _precomputedCube;
 }

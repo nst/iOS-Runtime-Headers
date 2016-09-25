@@ -14,7 +14,7 @@
     NSString * _identifier;
     NSData * _messageData;
     int  _messageType;
-    int  _sendDate;
+    long long  _sendDate;
     double  _startDelay;
     BOOL  _supportsPlaybackTimeOffsets;
 }
@@ -30,7 +30,7 @@
 @property (nonatomic, retain) NSString *identifier;
 @property (nonatomic, retain) NSData *messageData;
 @property (nonatomic) int messageType;
-@property (nonatomic) int sendDate;
+@property (nonatomic) long long sendDate;
 @property (nonatomic) double startDelay;
 @property (nonatomic) BOOL supportsPlaybackTimeOffsets;
 
@@ -55,7 +55,7 @@
 - (int)messageType;
 - (id)messageTypeAsString:(int)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (int)sendDate;
+- (long long)sendDate;
 - (void)setBaseColor:(unsigned int)arg1;
 - (void)setHasBaseColor:(BOOL)arg1;
 - (void)setHasMessageType:(BOOL)arg1;
@@ -65,7 +65,7 @@
 - (void)setIdentifier:(id)arg1;
 - (void)setMessageData:(id)arg1;
 - (void)setMessageType:(int)arg1;
-- (void)setSendDate:(int)arg1;
+- (void)setSendDate:(long long)arg1;
 - (void)setStartDelay:(double)arg1;
 - (void)setSupportsPlaybackTimeOffsets:(BOOL)arg1;
 - (double)startDelay;

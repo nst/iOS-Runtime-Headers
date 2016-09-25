@@ -17,7 +17,7 @@
         } __ptr_; 
     }  _readerAvailabilityController;
     _SFReaderWebProcessPlugInPageController * _readerPageController;
-    double  _readerUserVisibleWidth;
+    float  _readerUserVisibleWidth;
     <RequestDesktopSiteUIProcessListener> * _requestDesktopSiteUIProcessListener;
     _WKRemoteObjectInterface * _requestDesktopSiteWebProcessPlugInListenerInterface;
     _SFWebProcessPlugInPageSafeBrowsingController * _safeBrowsingController;
@@ -32,7 +32,7 @@
 @property (nonatomic, copy) NSDictionary *initalArticleScrollPositionAsDictionary;
 @property (nonatomic, readonly) NSDictionary *initialReaderConfiguration;
 @property (nonatomic, retain) _SFReaderWebProcessPlugInPageController *readerPageController;
-@property (nonatomic, readonly) double readerUserVisibleWidth;
+@property (nonatomic, readonly) float readerUserVisibleWidth;
 @property (readonly) Class superclass;
 @property (getter=isViewingReadingListArchive, nonatomic, readonly) BOOL viewingReadingListArchive;
 
@@ -77,7 +77,7 @@
 - (void)webProcessPlugInBrowserContextController:(id)arg1 didReceiveServerRedirectForProvisionalLoadForFrame:(id)arg2;
 - (void)webProcessPlugInBrowserContextController:(id)arg1 didSameDocumentNavigation:(int)arg2 forFrame:(id)arg3;
 - (void)webProcessPlugInBrowserContextController:(id)arg1 didStartProvisionalLoadForFrame:(id)arg2;
-- (id)webProcessPlugInBrowserContextController:(id)arg1 frame:(id)arg2 willSendRequestForResource:(unsigned int)arg3 request:(id)arg4 redirectResponse:(id)arg5;
+- (id)webProcessPlugInBrowserContextController:(id)arg1 frame:(id)arg2 willSendRequestForResource:(unsigned long long)arg3 request:(id)arg4 redirectResponse:(id)arg5;
 - (void)webProcessPlugInBrowserContextController:(id)arg1 globalObjectIsAvailableForFrame:(id)arg2 inScriptWorld:(id)arg3;
 - (void)webProcessPlugInBrowserContextController:(id)arg1 renderingProgressDidChange:(unsigned int)arg2;
 - (void)willDestroyBrowserContextController:(id)arg1;

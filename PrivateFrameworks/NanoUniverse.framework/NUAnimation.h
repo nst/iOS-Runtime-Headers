@@ -6,26 +6,26 @@
     <NUAnimatable> * _animatable;
     void _ctrl1;
     void _ctrl2;
-    double  _delay;
-    double  _duration;
+    float  _delay;
+    float  _duration;
     int  _frameInterval;
     void _from;
     unsigned int  _function;
     unsigned int  _key;
     <NUAnimationObserver> * _observer;
-    double  _pauseTime;
+    float  _pauseTime;
     BOOL  _paused;
-    double  _prevTime;
+    float  _prevTime;
     BOOL  _repeat;
-    double  _startTime;
+    float  _startTime;
     void _to;
     /* Warning: Unrecognized filer type: ']' using 'void*' */ void* _values;
     int  _valuesCount;
 }
 
 @property (nonatomic, retain) <NUAnimatable> *animatable;
-@property (nonatomic) double delay;
-@property (nonatomic) double duration;
+@property (nonatomic) float delay;
+@property (nonatomic) float duration;
 @property (nonatomic) int frameInterval;
 @property (nonatomic) void from;
 @property (nonatomic) unsigned int function;
@@ -33,7 +33,7 @@
 @property (nonatomic) <NUAnimationObserver> *observer;
 @property (nonatomic) BOOL pause;
 @property (nonatomic) BOOL repeat;
-@property (nonatomic) double startTime;
+@property (nonatomic) float startTime;
 @property (nonatomic) void to;
 
 - (void).cxx_destruct;

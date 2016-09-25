@@ -31,7 +31,7 @@
 - (void)setKeyFormatData:(id)arg1;
 - (void)setKeySemantics:(int)arg1;
 - (void)setRenditionCount:(unsigned int)arg1;
-- (void)setRenditionKey:(const struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)arg1 hotSpot:(struct CGPoint { double x1; double x2; })arg2 forName:(const char *)arg3;
+- (void)setRenditionKey:(const struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)arg1 hotSpot:(struct CGPoint { float x1; float x2; })arg2 forName:(const char *)arg3;
 - (void)setSchemaVersion:(unsigned int)arg1;
 - (void)setStorageVersion:(unsigned int)arg1;
 - (void)setThinningArguments:(id)arg1;

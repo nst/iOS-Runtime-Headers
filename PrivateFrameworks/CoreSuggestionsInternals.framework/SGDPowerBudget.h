@@ -4,7 +4,7 @@
 
 @interface SGDPowerBudget : NSObject {
     CDAttribute * _attribute;
-    unsigned int  _budgetingToken;
+    unsigned long long  _budgetingToken;
     NSString * _bundleId;
 }
 

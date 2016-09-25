@@ -10,9 +10,9 @@
     NSObject<TNPageControllerDelegate> * mDelegate;
     TNDocumentRoot * mDocumentRoot;
     TNPageCoordinateDictionary * mFooterLayerCache;
-    double  mFooterTextHeight;
+    float  mFooterTextHeight;
     TNPageCoordinateDictionary * mHeaderLayerCache;
-    double  mHeaderTextHeight;
+    float  mHeaderTextHeight;
     TSUPointerKeyDictionary * mHintCacheDictionary;
     BOOL  mInDynamicContentScaleChange;
     struct TSUCellCoord { 
@@ -27,36 +27,36 @@
     TNSheet * mSheet;
     TSUPointerKeyDictionary * mSheetPageCountCache;
     int  mSubsequentPageCount;
-    double  mUserViewScale;
+    float  mUserViewScale;
 }
 
-@property (readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } contentFrame;
-@property (readonly) double contentScale;
+@property (readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } contentFrame;
+@property (readonly) float contentScale;
 @property (nonatomic) NSObject<TNPageControllerDelegate> *delegate;
 @property (nonatomic) TNDocumentRoot *documentRoot;
-@property (nonatomic) double footerTextHeight;
-@property (nonatomic) double headerTextHeight;
+@property (nonatomic) float footerTextHeight;
+@property (nonatomic) float headerTextHeight;
 @property (nonatomic, readonly) BOOL inDynamicContentScaleChange;
 @property (readonly) unsigned int numPages;
-@property (readonly) struct CGSize { double x1; double x2; } pageSize;
-@property (readonly) struct CGSize { double x1; double x2; } pageSizeWithGutter;
+@property (readonly) struct CGSize { float x1; float x2; } pageSize;
+@property (readonly) struct CGSize { float x1; float x2; } pageSizeWithGutter;
 @property (getter=isPortrait, readonly) BOOL portrait;
 @property (readonly) TNPrintProperties *printProperties;
 @property (nonatomic) TNSheet *sheet;
-@property (nonatomic) double userViewScale;
+@property (nonatomic) float userViewScale;
 
 + (float)autoFitContentScaleForSheet:(id)arg1;
 + (id)p_cachedAutoFitContentScaleDictionary;
 + (float)p_contentScaleAutoFitForSheet:(id)arg1;
 
 - (void)canvasViewScaleDidChange:(float)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })contentFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentFrame;
 - (float)contentScale;
-- (struct CGSize { double x1; double x2; })contentSizeForCanvasLayer;
+- (struct CGSize { float x1; float x2; })contentSizeForCanvasLayer;
 - (void)dealloc;
 - (id)delegate;
 - (id)documentRoot;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })firstPartitionFrameForInfo:(id)arg1 outStartPageCoordinate:(out struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; }*)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })firstPartitionFrameForInfo:(id)arg1 outStartPageCoordinate:(out struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; }*)arg2;
 - (float)footerTextHeight;
 - (float)headerTextHeight;
 - (void)i_invalidateHintCache;
@@ -86,7 +86,7 @@
 - (void)p_layoutInfo:(id)arg1 intoPageLayout:(id)arg2 atPageCoordinate:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg3;
 - (void)p_layoutInfo:(id)arg1 intoPageRange:(struct { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct TSUCellCoord { unsigned short x_2_1_1; unsigned char x_2_1_2; unsigned char x_2_1_3; } x2; })arg2;
 - (void)p_measureHeadersAndFooters;
-- (struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })p_pageCoordinateForPageLayoutAtDevicePoint:(struct CGPoint { double x1; double x2; })arg1;
+- (struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })p_pageCoordinateForPageLayoutAtDevicePoint:(struct CGPoint { float x1; float x2; })arg1;
 - (int)p_pageCountForSheet:(id)arg1;
 - (id)p_pageInfoForPageAtIndex:(unsigned int)arg1;
 - (id)p_pageLayoutAtCoordinate:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
@@ -95,10 +95,10 @@
 - (int)p_updateCachedPageCountForCurrentSheet;
 - (void)p_updateVisiblePageRange:(struct { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct TSUCellCoord { unsigned short x_2_1_1; unsigned char x_2_1_2; unsigned char x_2_1_3; } x2; })arg1 forLayoutController:(id)arg2;
 - (void)p_willBeginDynamicContentScaleChange:(id)arg1;
-- (struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })pageCoordinateForDrawableAtUnscaledPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })pageCoordinateForDrawableAtUnscaledPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })pageCoordinateForMaxVisiblePage;
 - (struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })pageCoordinateForPageIndex:(unsigned int)arg1;
-- (struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })pageCoordinateForPageLayoutAtUnscaledPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })pageCoordinateForPageLayoutAtUnscaledPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (unsigned int)pageCount;
 - (id)pageInfoForPageIndex:(unsigned int)arg1;
 - (id)pageLayoutGeometryForPageCoordinate:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
@@ -109,10 +109,10 @@
 - (struct { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct TSUCellCoord { unsigned short x_2_1_1; unsigned char x_2_1_2; unsigned char x_2_1_3; } x2; })pageRangeForInfo:(id)arg1 upperBound:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
 - (struct { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct TSUCellCoord { unsigned short x_2_1_1; unsigned char x_2_1_2; unsigned char x_2_1_3; } x2; })pageRangeForPageIndex:(unsigned int)arg1;
 - (struct { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct TSUCellCoord { unsigned short x_2_1_1; unsigned char x_2_1_2; unsigned char x_2_1_3; } x2; })pageRangeWithPlaceholdersWithUpperBound:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
-- (struct CGSize { double x1; double x2; })pageSize;
-- (struct CGSize { double x1; double x2; })pageSizeWithGutter;
+- (struct CGSize { float x1; float x2; })pageSize;
+- (struct CGSize { float x1; float x2; })pageSizeWithGutter;
 - (id)printProperties;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })printingLayoutRectForPageIndex:(unsigned int)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })printingLayoutRectForPageIndex:(unsigned int)arg1;
 - (void)registerPageLayout:(id)arg1 atPageCoordinate:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
 - (void)removeLayoutsFromPages;
 - (void)setDelegate:(id)arg1;

@@ -7,18 +7,18 @@
     struct CGDisplayList { } * displayList;
     bool  hasZoomed;
     bool  isZooming;
-    unsigned int  layoutEndTime;
+    unsigned long long  layoutEndTime;
     int  layoutExpectedTileCount;
-    unsigned int  layoutStartTime;
+    unsigned long long  layoutStartTime;
     int  layoutUpdateCount;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  oldPageRect;
     int  oldRotation;

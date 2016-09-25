@@ -10,8 +10,8 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) int layoutOrientation;
-@property (nonatomic, readonly) double standardBottomBarHeight;
-@property (nonatomic, readonly) double standardSideBarWidth;
+@property (nonatomic, readonly) float standardBottomBarHeight;
+@property (nonatomic, readonly) float standardSideBarWidth;
 @property (readonly) Class superclass;
 
 - (int)layoutOrientation;

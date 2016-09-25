@@ -12,7 +12,7 @@
     }  _has;
     int  _networkService;
     int  _requestDataSize;
-    int  _requestErrorCode;
+    long long  _requestErrorCode;
     NSString * _requestErrorDescription;
     NSString * _requestErrorDomain;
     int  _responseDataSize;
@@ -28,7 +28,7 @@
 @property (nonatomic) BOOL hasResponseTime;
 @property (nonatomic) int networkService;
 @property (nonatomic) int requestDataSize;
-@property (nonatomic) int requestErrorCode;
+@property (nonatomic) long long requestErrorCode;
 @property (nonatomic, retain) NSString *requestErrorDescription;
 @property (nonatomic, retain) NSString *requestErrorDomain;
 @property (nonatomic) int responseDataSize;
@@ -54,7 +54,7 @@
 - (id)networkServiceAsString:(int)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (int)requestDataSize;
-- (int)requestErrorCode;
+- (long long)requestErrorCode;
 - (id)requestErrorDescription;
 - (id)requestErrorDomain;
 - (int)responseDataSize;
@@ -66,7 +66,7 @@
 - (void)setHasResponseTime:(BOOL)arg1;
 - (void)setNetworkService:(int)arg1;
 - (void)setRequestDataSize:(int)arg1;
-- (void)setRequestErrorCode:(int)arg1;
+- (void)setRequestErrorCode:(long long)arg1;
 - (void)setRequestErrorDescription:(id)arg1;
 - (void)setRequestErrorDomain:(id)arg1;
 - (void)setResponseDataSize:(int)arg1;

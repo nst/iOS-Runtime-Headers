@@ -69,60 +69,60 @@
     int * _materialIndices;
     union _GLKVector3 { 
         struct { 
-            double x; 
-            double y; 
-            double z; 
+            float x; 
+            float y; 
+            float z; 
         } ; 
         struct { 
-            double r; 
-            double g; 
-            double b; 
+            float r; 
+            float g; 
+            float b; 
         } ; 
         struct { 
-            double s; 
-            double t; 
-            double p; 
+            float s; 
+            float t; 
+            float p; 
         } ; 
-        double v[3]; 
+        float v[3]; 
     }  _modelBaseColor;
     union _GLKVector3 { 
         struct { 
-            double x; 
-            double y; 
-            double z; 
+            float x; 
+            float y; 
+            float z; 
         } ; 
         struct { 
-            double r; 
-            double g; 
-            double b; 
+            float r; 
+            float g; 
+            float b; 
         } ; 
         struct { 
-            double s; 
-            double t; 
-            double p; 
+            float s; 
+            float t; 
+            float p; 
         } ; 
-        double v[3]; 
+        float v[3]; 
     }  _modelEnamelColor;
     union _GLKMatrix4 { 
         struct { 
-            double m00; 
-            double m01; 
-            double m02; 
-            double m03; 
-            double m10; 
-            double m11; 
-            double m12; 
-            double m13; 
-            double m20; 
-            double m21; 
-            double m22; 
-            double m23; 
-            double m30; 
-            double m31; 
-            double m32; 
-            double m33; 
+            float m00; 
+            float m01; 
+            float m02; 
+            float m03; 
+            float m10; 
+            float m11; 
+            float m12; 
+            float m13; 
+            float m20; 
+            float m21; 
+            float m22; 
+            float m23; 
+            float m30; 
+            float m31; 
+            float m32; 
+            float m33; 
         } ; 
-        double m[16]; 
+        float m[16]; 
     }  _modelTransform;
     BOOL  _modelUsesFullColorEnamel;
     int  _numGroups;
@@ -183,24 +183,24 @@
     BOOL  _verticalPanningDisabled;
     union _GLKMatrix4 { 
         struct { 
-            double m00; 
-            double m01; 
-            double m02; 
-            double m03; 
-            double m10; 
-            double m11; 
-            double m12; 
-            double m13; 
-            double m20; 
-            double m21; 
-            double m22; 
-            double m23; 
-            double m30; 
-            double m31; 
-            double m32; 
-            double m33; 
+            float m00; 
+            float m01; 
+            float m02; 
+            float m03; 
+            float m10; 
+            float m11; 
+            float m12; 
+            float m13; 
+            float m20; 
+            float m21; 
+            float m22; 
+            float m23; 
+            float m30; 
+            float m31; 
+            float m32; 
+            float m33; 
         } ; 
-        double m[16]; 
+        float m[16]; 
     }  _viewProjectionMatrix;
 }
 
@@ -217,10 +217,10 @@
 - (void).cxx_destruct;
 - (void)_applyImpulse:(double)arg1;
 - (id)_attributedStringForUserName:(id)arg1 achievement:(id)arg2 usingSmallVariant:(BOOL)arg3 smallDateVariant:(BOOL)arg4;
-- (union _GLKVector3 { struct { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; struct { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; struct { double x_3_1_1; double x_3_1_2; double x_3_1_3; } x3; double x4[3]; })_colorVectorFromString:(id)arg1;
+- (union _GLKVector3 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; float x4[3]; })_colorVectorFromString:(id)arg1;
 - (void)_context_createBuffers;
 - (void)_context_destroyBuffers;
-- (void)_context_drawInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)_context_drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_context_loadBadgeModel;
 - (void)_context_loadShaders;
 - (void)_context_loadUniformsAndAttributes;
@@ -240,7 +240,7 @@
 - (id)badgeDelegate;
 - (void)configureForAchievement:(id)arg1 userName:(id)arg2 usingSmallVariant:(BOOL)arg3;
 - (void)dealloc;
-- (unsigned int)drawInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (unsigned int)drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (id)init;
 - (double)playFlipInAnimation;

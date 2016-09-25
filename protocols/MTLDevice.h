@@ -38,7 +38,7 @@
 - (<MTLRenderPipelineState> *)newRenderPipelineStateWithDescriptor:(MTLRenderPipelineDescriptor *)arg1 options:(unsigned int)arg2 reflection:(id*)arg3 error:(id*)arg4;
 - (<MTLSamplerState> *)newSamplerStateWithDescriptor:(MTLSamplerDescriptor *)arg1;
 - (<MTLTexture> *)newTextureWithDescriptor:(MTLTextureDescriptor *)arg1;
-- (unsigned int)recommendedMaxWorkingSetSize;
+- (unsigned long long)recommendedMaxWorkingSetSize;
 - (BOOL)supportsFeatureSet:(unsigned int)arg1;
 - (BOOL)supportsTextureSampleCount:(unsigned int)arg1;
 

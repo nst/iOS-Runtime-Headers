@@ -3,13 +3,13 @@
  */
 
 @interface W5WiFiLinkQualityUpdate : NSObject <NSCopying, NSSecureCoding> {
-    double  _cca;
+    float  _cca;
     int  _rssi;
     double  _timestamp;
     int  _txRate;
 }
 
-@property (nonatomic) double cca;
+@property (nonatomic) float cca;
 @property (nonatomic) int rssi;
 @property (nonatomic) double timestamp;
 @property (nonatomic) int txRate;

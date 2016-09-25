@@ -33,8 +33,8 @@
     unsigned int  _serviceRegisteredScrollToTopViewCount;
     unsigned int  _serviceScreenDisplayID;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _serviceScreenSize;
     id  _serviceViewControllerControlMessageProxy;
     id  _serviceViewControllerProxy;
@@ -111,10 +111,10 @@
 - (void)__viewServiceDidUpdatePreferredStatusBarStyle:(int)arg1 hidden:(int)arg2 updateAnimation:(int)arg3;
 - (void)__viewServiceDidUpdatePreferredWhitePointAdaptationStyle:(int)arg1 animationSettings:(id)arg2;
 - (void)__viewServiceDidUpdateTintColor:(id)arg1 duration:(double)arg2;
-- (void)__viewServiceInstrinsicContentSizeDidChange:(struct CGSize { double x1; double x2; })arg1 fence:(id)arg2;
-- (void)__viewServicePopoverDidChangeContentSize:(struct CGSize { double x1; double x2; })arg1 animated:(BOOL)arg2 fence:(id)arg3 withReplyHandler:(id /* block */)arg4;
+- (void)__viewServiceInstrinsicContentSizeDidChange:(struct CGSize { float x1; float x2; })arg1 fence:(id)arg2;
+- (void)__viewServicePopoverDidChangeContentSize:(struct CGSize { float x1; float x2; })arg1 animated:(BOOL)arg2 fence:(id)arg3 withReplyHandler:(id /* block */)arg4;
 - (void)__viewServicePopoverDidSetUseToolbarShine:(BOOL)arg1;
-- (void)__viewServicePreferredContentSizeDidChange:(struct CGSize { double x1; double x2; })arg1 fence:(id)arg2;
+- (void)__viewServicePreferredContentSizeDidChange:(struct CGSize { float x1; float x2; })arg1 fence:(id)arg2;
 - (void)__willChangeToIdiom:(int)arg1 onScreen:(id)arg2;
 - (id)_addAutoAllowedNotifications:(id)arg1;
 - (void)_appearanceInvocationsDidChange:(id)arg1;
@@ -149,9 +149,9 @@
 - (void)_screenDidConnect:(id)arg1;
 - (void)_screenDidDisconnect:(id)arg1;
 - (void)_screenIDChanged:(id)arg1;
-- (void)_scrollToTopFromTouchAtViewLocation:(struct CGPoint { double x1; double x2; })arg1 resultHandler:(id /* block */)arg2;
+- (void)_scrollToTopFromTouchAtViewLocation:(struct CGPoint { float x1; float x2; })arg1 resultHandler:(id /* block */)arg2;
 - (BOOL)_serviceHasScrollToTopView;
-- (void)_setContentOverlayInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)_setContentOverlayInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)_setDeferred:(BOOL)arg1 forDisplayUUID:(id)arg2;
 - (void)_setIsUpdatingSize:(BOOL)arg1;
 - (void)_setShouldUpdateRemoteTextEffectsWindow:(BOOL)arg1;
@@ -185,7 +185,7 @@
 - (id)disconnect;
 - (id)forbiddenNotifications;
 - (BOOL)inheritsSecurity;
-- (struct CGSize { double x1; double x2; })intrinsicContentSizeForServiceSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })intrinsicContentSizeForServiceSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)loadView;
 - (int)preferredStatusBarStyle;
 - (int)preferredStatusBarUpdateAnimation;
@@ -218,7 +218,7 @@
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
 
 @end

@@ -3,19 +3,19 @@
  */
 
 @interface BSSpringAnimationSettings : BSAnimationSettings {
-    double  _damping;
-    double  _epsilon;
+    float  _damping;
+    float  _epsilon;
     BOOL  _hasCalculatedDuration;
-    double  _initialVelocity;
-    double  _mass;
-    double  _stiffness;
+    float  _initialVelocity;
+    float  _mass;
+    float  _stiffness;
 }
 
-@property (nonatomic, readonly) double damping;
-@property (nonatomic, readonly) double epsilon;
-@property (nonatomic, readonly) double initialVelocity;
-@property (nonatomic, readonly) double mass;
-@property (nonatomic, readonly) double stiffness;
+@property (nonatomic, readonly) float damping;
+@property (nonatomic, readonly) float epsilon;
+@property (nonatomic, readonly) float initialVelocity;
+@property (nonatomic, readonly) float mass;
+@property (nonatomic, readonly) float stiffness;
 
 + (id)settingsWithMass:(float)arg1 stiffness:(float)arg2 damping:(float)arg3;
 + (id)settingsWithMass:(float)arg1 stiffness:(float)arg2 damping:(float)arg3 epsilon:(float)arg4;

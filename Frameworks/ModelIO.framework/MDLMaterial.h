@@ -12,7 +12,7 @@
 }
 
 @property (nonatomic, retain) MDLMaterial *baseMaterial;
-@property (nonatomic, readonly) struct BidirectionalScatteringDistributionFunction { int (**x1)(); struct BSDFMaterialValues { struct CGColor {} *x_2_1_1; double x_2_1_2; struct CGColor {} *x_2_1_3; double x_2_1_4; double x_2_1_5; double x_2_1_6; double x_2_1_7; double x_2_1_8; double x_2_1_9; double x_2_1_10; double x_2_1_11; double x_2_1_12; double x_2_1_13; double x_2_1_14; double x_2_1_15; double x_2_1_16; } x2; }*bsdf;
+@property (nonatomic, readonly) struct BidirectionalScatteringDistributionFunction { int (**x1)(); struct BSDFMaterialValues { struct CGColor {} *x_2_1_1; float x_2_1_2; struct CGColor {} *x_2_1_3; float x_2_1_4; float x_2_1_5; float x_2_1_6; float x_2_1_7; float x_2_1_8; float x_2_1_9; float x_2_1_10; float x_2_1_11; float x_2_1_12; float x_2_1_13; float x_2_1_14; float x_2_1_15; float x_2_1_16; } x2; }*bsdf;
 @property (nonatomic, readonly) unsigned int count;
 @property (nonatomic) unsigned int materialFace;
 @property (nonatomic, copy) NSString *name;
@@ -22,11 +22,11 @@
 
 - (void).cxx_destruct;
 - (id)baseMaterial;
-- (struct BidirectionalScatteringDistributionFunction { int (**x1)(); struct BSDFMaterialValues { struct CGColor {} *x_2_1_1; double x_2_1_2; struct CGColor {} *x_2_1_3; double x_2_1_4; double x_2_1_5; double x_2_1_6; double x_2_1_7; double x_2_1_8; double x_2_1_9; double x_2_1_10; double x_2_1_11; double x_2_1_12; double x_2_1_13; double x_2_1_14; double x_2_1_15; double x_2_1_16; } x2; }*)bsdf;
+- (struct BidirectionalScatteringDistributionFunction { int (**x1)(); struct BSDFMaterialValues { struct CGColor {} *x_2_1_1; float x_2_1_2; struct CGColor {} *x_2_1_3; float x_2_1_4; float x_2_1_5; float x_2_1_6; float x_2_1_7; float x_2_1_8; float x_2_1_9; float x_2_1_10; float x_2_1_11; float x_2_1_12; float x_2_1_13; float x_2_1_14; float x_2_1_15; float x_2_1_16; } x2; }*)bsdf;
 - (unsigned int)count;
 - (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (id)init;
-- (id)initWithName:(id)arg1 physicallyPlausibleBSDF:(struct PhysicallyPlausibleDistribution { int (**x1)(); struct BSDFMaterialValues { struct CGColor {} *x_2_1_1; double x_2_1_2; struct CGColor {} *x_2_1_3; double x_2_1_4; double x_2_1_5; double x_2_1_6; double x_2_1_7; double x_2_1_8; double x_2_1_9; double x_2_1_10; double x_2_1_11; double x_2_1_12; double x_2_1_13; double x_2_1_14; double x_2_1_15; double x_2_1_16; } x2; }*)arg2;
+- (id)initWithName:(id)arg1 physicallyPlausibleBSDF:(struct PhysicallyPlausibleDistribution { int (**x1)(); struct BSDFMaterialValues { struct CGColor {} *x_2_1_1; float x_2_1_2; struct CGColor {} *x_2_1_3; float x_2_1_4; float x_2_1_5; float x_2_1_6; float x_2_1_7; float x_2_1_8; float x_2_1_9; float x_2_1_10; float x_2_1_11; float x_2_1_12; float x_2_1_13; float x_2_1_14; float x_2_1_15; float x_2_1_16; } x2; }*)arg2;
 - (id)initWithName:(id)arg1 scatteringFunction:(id)arg2;
 - (unsigned int)materialFace;
 - (id)name;

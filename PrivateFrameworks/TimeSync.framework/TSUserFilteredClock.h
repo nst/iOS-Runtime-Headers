@@ -6,16 +6,16 @@
 
 @property (getter=isAdaptive, nonatomic, readonly) BOOL adaptive;
 @property (nonatomic, readonly) unsigned char filterShift;
-@property (nonatomic, readonly) unsigned int nominalDomainInterval;
-@property (nonatomic, readonly) unsigned int nominalMachInterval;
+@property (nonatomic, readonly) unsigned long long nominalDomainInterval;
+@property (nonatomic, readonly) unsigned long long nominalMachInterval;
 
-+ (id)iokitMatchingDictionaryForClockIdentifier:(unsigned int)arg1;
++ (id)iokitMatchingDictionaryForClockIdentifier:(unsigned long long)arg1;
 
-- (BOOL)addTimestampWithMachAbsolute:(unsigned int)arg1 andDomainTime:(unsigned int)arg2 error:(id*)arg3;
+- (BOOL)addTimestampWithMachAbsolute:(unsigned long long)arg1 andDomainTime:(unsigned long long)arg2 error:(id*)arg3;
 - (unsigned char)filterShift;
 - (BOOL)isAdaptive;
-- (unsigned int)nominalDomainInterval;
-- (unsigned int)nominalMachInterval;
+- (unsigned long long)nominalDomainInterval;
+- (unsigned long long)nominalMachInterval;
 - (BOOL)resetFilterToNominal:(BOOL)arg1 error:(id*)arg2;
 - (BOOL)resetSyncServiceWithError:(id*)arg1;
 

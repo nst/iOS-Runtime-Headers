@@ -10,7 +10,7 @@
         unsigned int isNegative : 1; 
     }  _has;
     BOOL  _isNegative;
-    unsigned int  _mantissa;
+    unsigned long long  _mantissa;
     PBUnknownFields * _unknownFields;
     _INPBValueMetadata * _valueMetadata;
 }
@@ -21,7 +21,7 @@
 @property (nonatomic) BOOL hasMantissa;
 @property (nonatomic, readonly) BOOL hasValueMetadata;
 @property (nonatomic) BOOL isNegative;
-@property (nonatomic) unsigned int mantissa;
+@property (nonatomic) unsigned long long mantissa;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic, retain) _INPBValueMetadata *valueMetadata;
 
@@ -39,7 +39,7 @@
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isNegative;
-- (unsigned int)mantissa;
+- (unsigned long long)mantissa;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setExponent:(int)arg1;
@@ -47,7 +47,7 @@
 - (void)setHasIsNegative:(BOOL)arg1;
 - (void)setHasMantissa:(BOOL)arg1;
 - (void)setIsNegative:(BOOL)arg1;
-- (void)setMantissa:(unsigned int)arg1;
+- (void)setMantissa:(unsigned long long)arg1;
 - (void)setValueMetadata:(id)arg1;
 - (id)unknownFields;
 - (id)valueMetadata;

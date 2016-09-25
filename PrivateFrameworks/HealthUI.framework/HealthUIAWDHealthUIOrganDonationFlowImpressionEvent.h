@@ -8,13 +8,13 @@
         unsigned int sourceOfFlowImpression : 1; 
     }  _has;
     int  _sourceOfFlowImpression;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) BOOL hasSourceOfFlowImpression;
 @property (nonatomic) BOOL hasTimestamp;
 @property (nonatomic) int sourceOfFlowImpression;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 
 - (int)StringAsSourceOfFlowImpression:(id)arg1;
 - (void)copyTo:(id)arg1;
@@ -30,10 +30,10 @@
 - (void)setHasSourceOfFlowImpression:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
 - (void)setSourceOfFlowImpression:(int)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (int)sourceOfFlowImpression;
 - (id)sourceOfFlowImpressionAsString:(int)arg1;
-- (unsigned int)timestamp;
+- (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 
 @end

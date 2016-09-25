@@ -32,7 +32,7 @@
 - (void)_clearViewForTouch:(id)arg1;
 - (id)_cloneEvent;
 - (struct __CFDictionary { }*)_coalescedTouchesForHidEvent:(struct __IOHIDEvent { }*)arg1;
-- (struct CGPoint { double x1; double x2; })_digitizerLocation;
+- (struct CGPoint { float x1; float x2; })_digitizerLocation;
 - (id)_firstTouchForView:(id)arg1;
 - (id)_gestureRecognizersForWindow:(id)arg1;
 - (id)_init;

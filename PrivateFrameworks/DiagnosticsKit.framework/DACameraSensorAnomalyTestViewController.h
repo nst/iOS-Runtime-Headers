@@ -21,23 +21,23 @@
     BOOL  _enableMaxBrightness;
     BOOL  _flashModeOn;
     UIScrollView * _imageScrollView;
-    double  _minimumSquareLength;
+    float  _minimumSquareLength;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _originPoint;
-    double  _originalScreenBrightness;
+    float  _originalScreenBrightness;
     DACameraSensorAnomalyTargetView * _overlayView;
     UIPanGestureRecognizer * _panGesture;
     BOOL  _presentedCameraPicker;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _rectangle;
     UIButton * _retakeButton;
@@ -67,13 +67,13 @@
 @property (nonatomic) BOOL flashModeOn;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) UIScrollView *imageScrollView;
-@property (nonatomic) double minimumSquareLength;
-@property (nonatomic) struct CGPoint { double x1; double x2; } originPoint;
-@property (nonatomic) double originalScreenBrightness;
+@property (nonatomic) float minimumSquareLength;
+@property (nonatomic) struct CGPoint { float x1; float x2; } originPoint;
+@property (nonatomic) float originalScreenBrightness;
 @property (nonatomic, retain) DACameraSensorAnomalyTargetView *overlayView;
 @property (nonatomic, retain) UIPanGestureRecognizer *panGesture;
 @property (nonatomic) BOOL presentedCameraPicker;
-@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } rectangle;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } rectangle;
 @property (nonatomic, retain) UIButton *retakeButton;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UITapGestureRecognizer *tapGesture;
@@ -113,7 +113,7 @@
 - (id)imageScrollView;
 - (id)initWithTest:(id)arg1 fullScreen:(BOOL)arg2;
 - (float)minimumSquareLength;
-- (struct CGPoint { double x1; double x2; })originPoint;
+- (struct CGPoint { float x1; float x2; })originPoint;
 - (float)originalScreenBrightness;
 - (id)overlayView;
 - (id)panGesture;
@@ -124,7 +124,7 @@
 - (void)presentCameraView;
 - (void)presentViewController:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
 - (BOOL)presentedCameraPicker;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rectangle;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectangle;
 - (void)removeDrawingModeViews;
 - (void)removeResultWithTag:(int)arg1;
 - (void)removeShape:(id)arg1;
@@ -155,12 +155,12 @@
 - (void)setFlashModeOn:(BOOL)arg1;
 - (void)setImageScrollView:(id)arg1;
 - (void)setMinimumSquareLength:(float)arg1;
-- (void)setOriginPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setOriginPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setOriginalScreenBrightness:(float)arg1;
 - (void)setOverlayView:(id)arg1;
 - (void)setPanGesture:(id)arg1;
 - (void)setPresentedCameraPicker:(BOOL)arg1;
-- (void)setRectangle:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setRectangle:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setRetakeButton:(id)arg1;
 - (void)setTapGesture:(id)arg1;
 - (void)setUsePhotoButton:(id)arg1;

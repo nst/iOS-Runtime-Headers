@@ -34,11 +34,11 @@
     }  _sections;
     double  _simplificationEpsilonPoints;
     struct Matrix<float, 2, 1> { 
-        double _e[2]; 
+        float _e[2]; 
     }  _userLocation;
     struct PolylineCoordinate { 
         unsigned int index; 
-        double offset; 
+        float offset; 
     }  _userLocationIndex;
     struct fast_shared_ptr<md::RouteLineSection> { 
         struct _fast_shared_ptr_control {} *_control; 

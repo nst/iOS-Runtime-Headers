@@ -27,7 +27,7 @@
     BOOL  _isPlayable;
     NSString * _localizedContentRating;
     int  _playCount;
-    double  _playbackProgress;
+    float  _playbackProgress;
     int  _playlistType;
     int  _radioStationType;
     double  _releaseDate;
@@ -67,7 +67,7 @@
 @property (nonatomic) BOOL isPlayable;
 @property (nonatomic, retain) NSString *localizedContentRating;
 @property (nonatomic) int playCount;
-@property (nonatomic) double playbackProgress;
+@property (nonatomic) float playbackProgress;
 @property (nonatomic) int playlistType;
 @property (nonatomic) int radioStationType;
 @property (nonatomic) double releaseDate;

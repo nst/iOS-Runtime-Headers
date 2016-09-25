@@ -32,14 +32,14 @@
 - (NSArray *)availableCounters;
 - (NSDictionary *)counterInfo;
 - (NSArray *)getRequestedCounters;
-- (unsigned int)getStatLocations;
-- (unsigned int)getStatOptions;
+- (unsigned long long)getStatLocations;
+- (unsigned long long)getStatOptions;
 - (BOOL)isStatEnabled;
 - (int)requestCounters:(NSArray *)arg1;
 - (int)requestCounters:(NSArray *)arg1 withIndex:(unsigned int)arg2;
 - (void)setStatEnabled:(BOOL)arg1;
-- (void)setStatLocations:(unsigned int)arg1;
-- (void)setStatOptions:(unsigned int)arg1;
+- (void)setStatLocations:(unsigned long long)arg1;
+- (void)setStatOptions:(unsigned long long)arg1;
 - (NSArray *)subdivideCounterList:(NSArray *)arg1;
 
 @end

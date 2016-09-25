@@ -71,7 +71,7 @@
 
 - (id)_ui_attributedStringWithOriginalFontAttributes;
 - (id)_ui_fontsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 usingDefaultFont:(id)arg2;
-- (id)_ui_glyphImageViewsScale:(float)arg1 outImageRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg2 outLineRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg3 outBaselineOffset:(float*)arg4;
+- (id)_ui_glyphImageViewsScale:(float)arg1 outImageRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 outLineRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg3 outBaselineOffset:(float*)arg4;
 - (int)_ui_resolvedTextAlignment;
 - (int)_ui_resolvedTextAlignmentForUserInterfaceLayoutDirection:(int)arg1;
 - (id)_ui_synthesizeAttributedSubstringFromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 usingDefaultAttributes:(id)arg2;
@@ -92,7 +92,7 @@
 // Image: /System/Library/PrivateFrameworks/DataDetectorsUI.framework/DataDetectorsUI
 
 - (id)dd_contextAtLocation:(int)arg1;
-- (struct __DDResult { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __DDQueryRange { struct __DDQueryOffset { unsigned int x_1_2_1 : 32; unsigned int x_1_2_2 : 32; } x_2_1_1; struct __DDQueryOffset { unsigned int x_2_2_1 : 32; unsigned int x_2_2_2 : 32; } x_2_1_2; } x2; struct { int x_3_1_1; int x_3_1_2; } x3; int x4; struct __CFArray {} *x5; struct __CFString {} *x6; struct __CFString {} *x7; void *x8; struct __CFDictionary {} *x9; int x10; unsigned char x11; double x12; }*)dd_resultAtLocation:(int)arg1;
+- (struct __DDResult { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __DDQueryRange { struct __DDQueryOffset { unsigned int x_1_2_1 : 32; unsigned int x_1_2_2 : 32; } x_2_1_1; struct __DDQueryOffset { unsigned int x_2_2_1 : 32; unsigned int x_2_2_2 : 32; } x_2_1_2; } x2; struct { int x_3_1_1; int x_3_1_2; } x3; int x4; struct __CFArray {} *x5; struct __CFString {} *x6; struct __CFString {} *x7; void *x8; struct __CFDictionary {} *x9; int x10; unsigned char x11; float x12; }*)dd_resultAtLocation:(int)arg1;
 
 // Image: /System/Library/PrivateFrameworks/FlightUtilities.framework/FlightUtilities
 
@@ -105,15 +105,15 @@
 // Image: /System/Library/PrivateFrameworks/Home.framework/Home
 
 - (id)_synthesizeAttributedSubstringFromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 usingDefaultAttributes:(id)arg2;
-- (id)dynamicStringForSize:(struct CGSize { double x1; double x2; })arg1 attributes:(id)arg2;
+- (id)dynamicStringForSize:(struct CGSize { float x1; float x2; })arg1 attributes:(id)arg2;
 - (BOOL)prefersDynamicString;
 - (id)stringWithAttributes:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/HomeUI.framework/HomeUI
 
 - (id)hu_attributedStringScaledByFactor:(float)arg1;
-- (float)hu_scaleFactorForBoundingSize:(struct CGSize { double x1; double x2; })arg1 minimumScaleFactor:(float)arg2 maximumNumberOfLines:(unsigned int)arg3;
-- (id)hu_scaledAttributedStringWithBoundingSize:(struct CGSize { double x1; double x2; })arg1 minimumScaleFactor:(float)arg2 maximumNumberOfLines:(unsigned int)arg3;
+- (float)hu_scaleFactorForBoundingSize:(struct CGSize { float x1; float x2; })arg1 minimumScaleFactor:(float)arg2 maximumNumberOfLines:(unsigned int)arg3;
+- (id)hu_scaledAttributedStringWithBoundingSize:(struct CGSize { float x1; float x2; })arg1 minimumScaleFactor:(float)arg2 maximumNumberOfLines:(unsigned int)arg3;
 
 // Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
 
@@ -157,9 +157,9 @@
 
 // Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
 
-- (struct CGSize { double x1; double x2; })pkui_sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
-- (struct CGSize { double x1; double x2; })pkui_sizeThatFits:(struct CGSize { double x1; double x2; })arg1 withNumberOfLines:(unsigned int)arg2;
-- (struct CGSize { double x1; double x2; })pkui_sizeThatFits:(struct CGSize { double x1; double x2; })arg1 withNumberOfLines:(unsigned int)arg2 forceWordWrap:(BOOL)arg3;
+- (struct CGSize { float x1; float x2; })pkui_sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { float x1; float x2; })pkui_sizeThatFits:(struct CGSize { float x1; float x2; })arg1 withNumberOfLines:(unsigned int)arg2;
+- (struct CGSize { float x1; float x2; })pkui_sizeThatFits:(struct CGSize { float x1; float x2; })arg1 withNumberOfLines:(unsigned int)arg2 forceWordWrap:(BOOL)arg3;
 
 // Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
 
@@ -229,8 +229,8 @@
 - (void)_readDocumentFragment:(id)arg1 fromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 documentAttributes:(id)arg3 subresources:(id*)arg4;
 - (id)_ui_attributedSubstringFromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 scaledByScaleFactor:(float)arg2;
 - (id)_ui_attributedSubstringFromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withTrackingAdjustment:(float)arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundingRectWithSize:(struct CGSize { double x1; double x2; })arg1 options:(int)arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundingRectWithSize:(struct CGSize { double x1; double x2; })arg1 options:(int)arg2 context:(id)arg3;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingRectWithSize:(struct CGSize { float x1; float x2; })arg1 options:(int)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingRectWithSize:(struct CGSize { float x1; float x2; })arg1 options:(int)arg2 context:(id)arg3;
 - (BOOL)containsAttachments;
 - (BOOL)containsAttachmentsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)dataFromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 documentAttributes:(id)arg2 error:(id*)arg3;
@@ -238,10 +238,10 @@
 - (id)docFormatFromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 documentAttributes:(id)arg2;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })doubleClickAtIndex:(unsigned int)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })doubleClickAtIndex:(unsigned int)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (void)drawAtPoint:(struct CGPoint { double x1; double x2; })arg1;
-- (void)drawInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)drawWithRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 options:(int)arg2;
-- (void)drawWithRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 options:(int)arg2 context:(id)arg3;
+- (void)drawAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)drawWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 options:(int)arg2;
+- (void)drawWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 options:(int)arg2 context:(id)arg3;
 - (id)fileWrapperFromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 documentAttributes:(id)arg2 error:(id*)arg3;
 - (id)fontAttributesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (BOOL)hasColorGlyphsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
@@ -265,7 +265,7 @@
 - (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfTextList:(id)arg1 atIndex:(unsigned int)arg2;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfTextTable:(id)arg1 atIndex:(unsigned int)arg2;
 - (id)rulerAttributesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (struct CGSize { double x1; double x2; })size;
+- (struct CGSize { float x1; float x2; })size;
 - (id)stringByStrippingAttachmentCharactersAndConvertingWritingDirectionToBidiControlCharactersFromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 
 // Image: /System/Library/PrivateFrameworks/VideosExtras.framework/VideosExtras

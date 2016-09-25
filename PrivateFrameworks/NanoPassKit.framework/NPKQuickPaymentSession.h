@@ -3,12 +3,12 @@
  */
 
 @interface NPKQuickPaymentSession : NSObject <PKContactlessInterfaceSessionDelegate> {
-    unsigned int  _authorizationValidity;
+    unsigned long long  _authorizationValidity;
     NSObject<OS_dispatch_queue> * _callbackQueue;
     BOOL  _confirmed;
     PKContactlessInterfaceSession * _contactlessSession;
     PKPaymentSessionHandle * _contactlessSessionHandle;
-    unsigned int  _contactlessValidity;
+    unsigned long long  _contactlessValidity;
     NSData * _credential;
     PKPass * _currentPass;
     BOOL  _deactivated;
@@ -22,12 +22,12 @@
     NSDictionary * _vasPasses;
 }
 
-@property (nonatomic) unsigned int authorizationValidity;
+@property (nonatomic) unsigned long long authorizationValidity;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *callbackQueue;
 @property (getter=isConfirmed, nonatomic) BOOL confirmed;
 @property (nonatomic, retain) PKContactlessInterfaceSession *contactlessSession;
 @property (nonatomic, retain) PKPaymentSessionHandle *contactlessSessionHandle;
-@property (nonatomic) unsigned int contactlessValidity;
+@property (nonatomic) unsigned long long contactlessValidity;
 @property (nonatomic, retain) NSData *credential;
 @property (nonatomic, retain) PKPass *currentPass;
 @property (getter=isDeactivated, nonatomic) BOOL deactivated;
@@ -49,8 +49,8 @@
 + (BOOL)hasOutstandingSessions;
 
 - (void).cxx_destruct;
-- (void)_checkContactlessValidity:(unsigned int)arg1 authorizationValidity:(unsigned int)arg2 performWork:(id /* block */)arg3;
-- (void)_checkContactlessValidity:(unsigned int)arg1 performWork:(id /* block */)arg2;
+- (void)_checkContactlessValidity:(unsigned long long)arg1 authorizationValidity:(unsigned long long)arg2 performWork:(id /* block */)arg3;
+- (void)_checkContactlessValidity:(unsigned long long)arg1 performWork:(id /* block */)arg2;
 - (void)_handleConventionalTransactionWithContext:(id)arg1;
 - (void)_internalQueue_deactivateSessionWithCompletion:(id /* block */)arg1;
 - (void)_internalQueue_getContactlessAndAuthorizationValidityAndPerformWork:(id /* block */)arg1;
@@ -59,11 +59,11 @@
 - (void)_internalQueue_updateContactlessValidityAndPerformWork:(id /* block */)arg1;
 - (void)_internalQueue_updateSessionWithCurrentPassAndLoyaltyState;
 - (void)_loyaltyEngineConfigurationChanged:(id)arg1;
-- (void)_sessionQueue_invokeAppropriateCallbackForActivationWithSuccess:(BOOL)arg1 invokeOnSuccess:(BOOL)arg2 contactlessValidity:(unsigned int)arg3 forPass:(id)arg4;
+- (void)_sessionQueue_invokeAppropriateCallbackForActivationWithSuccess:(BOOL)arg1 invokeOnSuccess:(BOOL)arg2 contactlessValidity:(unsigned long long)arg3 forPass:(id)arg4;
 - (BOOL)_sessionQueue_startContactlessSessionWithSuccessfulCompletionOnInternalQueue:(id /* block */)arg1;
 - (BOOL)_sessionQueue_updateContactlessSessionForPass:(id)arg1 paymentApplication:(id)arg2 whitelistedVASPasses:(id)arg3 greylistedVASPasses:(id)arg4 sessionConfirmed:(BOOL)arg5 deferAuthorization:(BOOL)arg6;
 - (void)_updateAuthorizationValidity;
-- (unsigned int)authorizationValidity;
+- (unsigned long long)authorizationValidity;
 - (id)callbackQueue;
 - (void)confirmOrRenewSession;
 - (void)contactlessInterfaceSession:(id)arg1 didFinishTransactionWithContext:(id)arg2;
@@ -77,7 +77,7 @@
 - (void)contactlessInterfaceSessionDidTimeout:(id)arg1 forPaymentApplication:(id)arg2 paymentPass:(id)arg3 valueAddedServicePasses:(id)arg4;
 - (id)contactlessSession;
 - (id)contactlessSessionHandle;
-- (unsigned int)contactlessValidity;
+- (unsigned long long)contactlessValidity;
 - (id)credential;
 - (id)currentPass;
 - (void)deactivateSessionWithCompletion:(id /* block */)arg1;
@@ -93,12 +93,12 @@
 - (BOOL)isDeactivated;
 - (BOOL)isDeactivating;
 - (id)paymentSessionQueue;
-- (void)setAuthorizationValidity:(unsigned int)arg1;
+- (void)setAuthorizationValidity:(unsigned long long)arg1;
 - (void)setCallbackQueue:(id)arg1;
 - (void)setConfirmed:(BOOL)arg1;
 - (void)setContactlessSession:(id)arg1;
 - (void)setContactlessSessionHandle:(id)arg1;
-- (void)setContactlessValidity:(unsigned int)arg1;
+- (void)setContactlessValidity:(unsigned long long)arg1;
 - (void)setCredential:(id)arg1;
 - (void)setCurrentPass:(id)arg1;
 - (void)setDeactivated:(BOOL)arg1;

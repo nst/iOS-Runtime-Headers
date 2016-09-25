@@ -6,7 +6,7 @@
     unsigned int  _cpuNumber;
     unsigned char  _microSnapshotFlags;
     unsigned short  _systemStatsFlags;
-    unsigned int  _timeInUsUnix;
+    unsigned long long  _timeInUsUnix;
 }
 
 @property (readonly) unsigned int cpuNumber;
@@ -19,14 +19,14 @@
 @property (readonly) BOOL isUserIdle;
 @property (readonly) unsigned char microSnapshotFlags;
 @property (readonly) unsigned short systemStatsFlags;
-@property (readonly) unsigned int timestampInUsUnix;
+@property (readonly) unsigned long long timestampInUsUnix;
 
 - (unsigned long)bytesUsedInBuffer;
 - (unsigned int)cpuNumber;
 - (BOOL)didInterruptKernelMode;
 - (BOOL)didInterruptUserMode;
 - (BOOL)hasValidOnBatteryAndUserIdleFlags;
-- (id)initWithMicrosnapshot:(const struct micro_snapshot { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned char x5; unsigned short x6; }*)arg1 withRemainingBytes:(unsigned long)arg2;
+- (id)initWithMicrosnapshot:(const struct micro_snapshot { unsigned int x1; unsigned int x2; unsigned long long x3; unsigned long long x4; unsigned char x5; unsigned short x6; }*)arg1 withRemainingBytes:(unsigned long)arg2;
 - (BOOL)isInterruptRecord;
 - (BOOL)isOnBattery;
 - (BOOL)isTimerArmingRecord;
@@ -34,6 +34,6 @@
 - (unsigned char)microSnapshotFlags;
 - (unsigned int)powerstatsFlags;
 - (unsigned short)systemStatsFlags;
-- (unsigned int)timestampInUsUnix;
+- (unsigned long long)timestampInUsUnix;
 
 @end

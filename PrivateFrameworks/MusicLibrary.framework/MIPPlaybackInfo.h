@@ -9,12 +9,12 @@
     int  _codecType;
     int  _dataKind;
     NSString * _dataUrl;
-    int  _durationInSamples;
+    long long  _durationInSamples;
     NSString * _eqPreset;
-    int  _gaplessEncodingDrainCode;
-    int  _gaplessFrameResyncCode;
-    int  _gaplessHeuristicCode;
-    int  _gaplessHeuristicDelayCode;
+    long long  _gaplessEncodingDrainCode;
+    long long  _gaplessFrameResyncCode;
+    long long  _gaplessHeuristicCode;
+    long long  _gaplessHeuristicDelayCode;
     struct { 
         unsigned int durationInSamples : 1; 
         unsigned int gaplessEncodingDrainCode : 1; 
@@ -37,9 +37,9 @@
     int  _progressionDirection;
     int  _relativeVolume;
     int  _sampleRate;
-    int  _startTime;
-    int  _stopTime;
-    int  _volumeNormalizationEnergy;
+    long long  _startTime;
+    long long  _stopTime;
+    long long  _volumeNormalizationEnergy;
 }
 
 @property (nonatomic) int beatsPerMinute;
@@ -48,12 +48,12 @@
 @property (nonatomic) int codecType;
 @property (nonatomic) int dataKind;
 @property (nonatomic, retain) NSString *dataUrl;
-@property (nonatomic) int durationInSamples;
+@property (nonatomic) long long durationInSamples;
 @property (nonatomic, retain) NSString *eqPreset;
-@property (nonatomic) int gaplessEncodingDrainCode;
-@property (nonatomic) int gaplessFrameResyncCode;
-@property (nonatomic) int gaplessHeuristicCode;
-@property (nonatomic) int gaplessHeuristicDelayCode;
+@property (nonatomic) long long gaplessEncodingDrainCode;
+@property (nonatomic) long long gaplessFrameResyncCode;
+@property (nonatomic) long long gaplessHeuristicCode;
+@property (nonatomic) long long gaplessHeuristicDelayCode;
 @property (nonatomic) BOOL hasBeatsPerMinute;
 @property (nonatomic) BOOL hasBitRate;
 @property (nonatomic) BOOL hasCodecSubType;
@@ -77,9 +77,9 @@
 @property (nonatomic) int progressionDirection;
 @property (nonatomic) int relativeVolume;
 @property (nonatomic) int sampleRate;
-@property (nonatomic) int startTime;
-@property (nonatomic) int stopTime;
-@property (nonatomic) int volumeNormalizationEnergy;
+@property (nonatomic) long long startTime;
+@property (nonatomic) long long stopTime;
+@property (nonatomic) long long volumeNormalizationEnergy;
 
 - (void).cxx_destruct;
 - (int)beatsPerMinute;
@@ -92,12 +92,12 @@
 - (id)dataUrl;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (int)durationInSamples;
+- (long long)durationInSamples;
 - (id)eqPreset;
-- (int)gaplessEncodingDrainCode;
-- (int)gaplessFrameResyncCode;
-- (int)gaplessHeuristicCode;
-- (int)gaplessHeuristicDelayCode;
+- (long long)gaplessEncodingDrainCode;
+- (long long)gaplessFrameResyncCode;
+- (long long)gaplessHeuristicCode;
+- (long long)gaplessHeuristicDelayCode;
 - (BOOL)hasBeatsPerMinute;
 - (BOOL)hasBitRate;
 - (BOOL)hasCodecSubType;
@@ -131,12 +131,12 @@
 - (void)setCodecType:(int)arg1;
 - (void)setDataKind:(int)arg1;
 - (void)setDataUrl:(id)arg1;
-- (void)setDurationInSamples:(int)arg1;
+- (void)setDurationInSamples:(long long)arg1;
 - (void)setEqPreset:(id)arg1;
-- (void)setGaplessEncodingDrainCode:(int)arg1;
-- (void)setGaplessFrameResyncCode:(int)arg1;
-- (void)setGaplessHeuristicCode:(int)arg1;
-- (void)setGaplessHeuristicDelayCode:(int)arg1;
+- (void)setGaplessEncodingDrainCode:(long long)arg1;
+- (void)setGaplessFrameResyncCode:(long long)arg1;
+- (void)setGaplessHeuristicCode:(long long)arg1;
+- (void)setGaplessHeuristicDelayCode:(long long)arg1;
 - (void)setHasBeatsPerMinute:(BOOL)arg1;
 - (void)setHasBitRate:(BOOL)arg1;
 - (void)setHasCodecSubType:(BOOL)arg1;
@@ -157,12 +157,12 @@
 - (void)setProgressionDirection:(int)arg1;
 - (void)setRelativeVolume:(int)arg1;
 - (void)setSampleRate:(int)arg1;
-- (void)setStartTime:(int)arg1;
-- (void)setStopTime:(int)arg1;
-- (void)setVolumeNormalizationEnergy:(int)arg1;
-- (int)startTime;
-- (int)stopTime;
-- (int)volumeNormalizationEnergy;
+- (void)setStartTime:(long long)arg1;
+- (void)setStopTime:(long long)arg1;
+- (void)setVolumeNormalizationEnergy:(long long)arg1;
+- (long long)startTime;
+- (long long)stopTime;
+- (long long)volumeNormalizationEnergy;
 - (void)writeTo:(id)arg1;
 
 @end

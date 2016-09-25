@@ -4,8 +4,8 @@
 
 @interface SCRCGestureEvent : NSObject {
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _averageLocation;
     unsigned int  _deviceIdentifier;
     SCRCGestureFinger * _finger;
@@ -13,22 +13,22 @@
     double  _time;
 }
 
-- (void)addFingerWithIdentifier:(unsigned int)arg1 location:(struct CGPoint { double x1; double x2; })arg2 orbValue:(float)arg3;
-- (void)addStylusWithIdentifier:(unsigned int)arg1 location:(struct CGPoint { double x1; double x2; })arg2 pressure:(float)arg3 altitude:(float)arg4 azimuth:(float)arg5;
-- (struct CGPoint { double x1; double x2; })averageLocation;
-- (struct CGPoint { double x1; double x2; })balancedLocation;
+- (void)addFingerWithIdentifier:(unsigned int)arg1 location:(struct CGPoint { float x1; float x2; })arg2 orbValue:(float)arg3;
+- (void)addStylusWithIdentifier:(unsigned int)arg1 location:(struct CGPoint { float x1; float x2; })arg2 pressure:(float)arg3 altitude:(float)arg4 azimuth:(float)arg5;
+- (struct CGPoint { float x1; float x2; })averageLocation;
+- (struct CGPoint { float x1; float x2; })balancedLocation;
 - (void)dealloc;
 - (id)description;
 - (unsigned int)deviceIdentifier;
 - (id)fingerAtIndex:(unsigned int)arg1;
 - (unsigned int)fingerCount;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })fingerFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })fingerFrame;
 - (id)fingerWithIdentifier:(unsigned int)arg1;
 - (id)fingerWithoutIdentifier:(unsigned int)arg1;
 - (id)fingers;
 - (id)initWithDeviceIdentifier:(unsigned int)arg1;
 - (BOOL)isCancelEvent;
-- (struct CGPoint { double x1; double x2; })magneticLocation;
+- (struct CGPoint { float x1; float x2; })magneticLocation;
 - (void)removeFingerWithIdentifier:(unsigned int)arg1;
 - (double)time;
 

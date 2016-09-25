@@ -18,13 +18,13 @@
     NSString * _referencedArticleId;
     int  _scrollHostViewType;
     NSString * _scrollVelocity;
-    double  _scrollingVelocity;
+    float  _scrollingVelocity;
     NSString * _sectionHeadlineId;
     NSString * _sourceChannelId;
     NSString * _verticalScrollPositionEnd;
-    double  _verticalScrollPositionEnding;
+    float  _verticalScrollPositionEnding;
     NSString * _verticalScrollPositionStart;
-    double  _verticalScrollPositionStarting;
+    float  _verticalScrollPositionStarting;
 }
 
 @property (nonatomic) BOOL adSupportedChannel;
@@ -50,13 +50,13 @@
 @property (nonatomic, retain) NSString *referencedArticleId;
 @property (nonatomic) int scrollHostViewType;
 @property (nonatomic, retain) NSString *scrollVelocity;
-@property (nonatomic) double scrollingVelocity;
+@property (nonatomic) float scrollingVelocity;
 @property (nonatomic, retain) NSString *sectionHeadlineId;
 @property (nonatomic, retain) NSString *sourceChannelId;
 @property (nonatomic, retain) NSString *verticalScrollPositionEnd;
-@property (nonatomic) double verticalScrollPositionEnding;
+@property (nonatomic) float verticalScrollPositionEnding;
 @property (nonatomic, retain) NSString *verticalScrollPositionStart;
-@property (nonatomic) double verticalScrollPositionStarting;
+@property (nonatomic) float verticalScrollPositionStarting;
 
 - (void).cxx_destruct;
 - (BOOL)adSupportedChannel;

@@ -9,14 +9,14 @@
         unsigned char ss_len; 
         unsigned char ss_family; 
         BOOL __ss_pad1[6]; 
-        int __ss_align; 
+        long long __ss_align; 
         BOOL __ss_pad2[112]; 
     }  _lastLocalAddress;
     struct sockaddr_storage { 
         unsigned char ss_len; 
         unsigned char ss_family; 
         BOOL __ss_pad1[6]; 
-        int __ss_align; 
+        long long __ss_align; 
         BOOL __ss_pad2[112]; 
     }  _lastRemoteAddress;
     NWEndpoint * _localEndpoint;

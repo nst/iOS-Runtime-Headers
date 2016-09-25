@@ -11,7 +11,7 @@
     NSMutableDictionary * _estimatedTouchRecordsByContextIDAndEstimationIndex;
     NSMutableArray * _estimatedTouchRecordsInIncomingOrder;
     NSMutableArray * _eventQueue;
-    double  _externalTouchScaleFactor;
+    float  _externalTouchScaleFactor;
     _UIGameControllerEvent * _gameControllerEvent;
     BOOL  _hasSeenAnyStylusEvents;
     BOOL  _isSystemApplication;

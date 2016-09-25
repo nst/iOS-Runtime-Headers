@@ -11,8 +11,8 @@
     BOOL  _canSeek;
     BOOL  _canTogglePlayback;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _contentDimensions;
     double  _contentDuration;
     double  _contentDurationWithinEndTimes;
@@ -49,7 +49,7 @@
 @property (readonly) BOOL canSeekToBeginning;
 @property (readonly) BOOL canSeekToEnd;
 @property BOOL canTogglePlayback;
-@property struct CGSize { double x1; double x2; } contentDimensions;
+@property struct CGSize { float x1; float x2; } contentDimensions;
 @property double contentDuration;
 @property double contentDurationWithinEndTimes;
 @property (retain) WebAVMediaSelectionOption *currentAudioMediaSelectionOption;
@@ -103,7 +103,7 @@
 - (BOOL)canSeekToBeginning;
 - (BOOL)canSeekToEnd;
 - (BOOL)canTogglePlayback;
-- (struct CGSize { double x1; double x2; })contentDimensions;
+- (struct CGSize { float x1; float x2; })contentDimensions;
 - (double)contentDuration;
 - (double)contentDurationWithinEndTimes;
 - (id)currentAudioMediaSelectionOption;
@@ -155,7 +155,7 @@
 - (void)setCanScanBackward:(BOOL)arg1;
 - (void)setCanSeek:(BOOL)arg1;
 - (void)setCanTogglePlayback:(BOOL)arg1;
-- (void)setContentDimensions:(struct CGSize { double x1; double x2; })arg1;
+- (void)setContentDimensions:(struct CGSize { float x1; float x2; })arg1;
 - (void)setContentDuration:(double)arg1;
 - (void)setContentDurationWithinEndTimes:(double)arg1;
 - (void)setCurrentAudioMediaSelectionOption:(id)arg1;

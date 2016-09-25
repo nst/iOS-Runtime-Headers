@@ -44,7 +44,7 @@
 - (id)initWithServiceGridItemManager:(id)arg1;
 - (BOOL)itemManager:(id)arg1 performBatchUpdateBlock:(id /* block */)arg2;
 - (id)mutableSelectedItems;
-- (BOOL)presentationCoordinator:(id)arg1 shouldBeginInteractivePresentationWithTouchLocation:(struct CGPoint { double x1; double x2; })arg2;
+- (BOOL)presentationCoordinator:(id)arg1 shouldBeginInteractivePresentationWithTouchLocation:(struct CGPoint { float x1; float x2; })arg2;
 - (id)selectedItems;
 - (id)serviceGridItemManager;
 - (void)setAllowsEmptySelection:(BOOL)arg1;

@@ -11,13 +11,13 @@
 + (float)dateLabelFontSize;
 + (float)dateViewBaselineY;
 + (float)dateViewSideMargin;
-+ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })deviceInformationInsets;
++ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })deviceInformationInsets;
 + (float)deviceInformationLabelFontLeading;
 + (float)deviceInformationLabelFontSize;
 + (float)deviceInformationParagraphSpacing;
-+ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })logoutInsets;
++ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })logoutInsets;
 + (float)logoutLabelFontSize;
-+ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })notificationListInsets;
++ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })notificationListInsets;
 + (float)pinFixedDigitEntryFieldBottomYDistanceFromNumberPadTopButton:(BOOL)arg1;
 + (float)pinFixedDigitEntryFieldIndicatorDiameter;
 + (float)pinFixedDigitEntryFieldIndicatorPaddingWidth;
@@ -36,7 +36,7 @@
 + (float)pinNumberPadButtonPaddingWidth;
 + (float)pinNumberPadWidth;
 + (float)slideToUnlockFontSize;
-+ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })slideToUnlockInsets;
++ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })slideToUnlockInsets;
 + (float)slideToUnlockOverlayMargin;
 + (float)slideUpGrabberInset;
 + (float)subtitleBaselineOffsetFromTopOfScreen;

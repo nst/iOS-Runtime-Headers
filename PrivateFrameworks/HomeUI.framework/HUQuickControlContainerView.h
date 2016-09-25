@@ -8,20 +8,20 @@
     HUQuickControlAuxiliaryHostView * _auxiliaryHostView;
     _UIBackdropViewSettings * _blurSettings;
     UIView * _blurTintView;
-    double  _blurTransitionProgress;
+    float  _blurTransitionProgress;
     _UIBackdropView * _blurView;
     HUQuickControlButtonRowView * _buttonRowView;
-    double  _chromeTransitionProgress;
+    float  _chromeTransitionProgress;
     NSLayoutConstraint * _compactControlBottomConstraint;
     NSArray * _contentConstraints;
     UILayoutGuide * _controlButtonSpacingLayoutGuide;
     HUControlHostView * _controlHostView;
-    double  _controlTransitionProgress;
+    float  _controlTransitionProgress;
     UILayoutGuide * _controlViewLayoutGuide;
     <HUQuickControlContainerViewDelegate> * _delegate;
     HUPillButton * _detailsButton;
-    double  _horizontalControlCompressionFactor;
-    double  _initialSourceViewScale;
+    float  _horizontalControlCompressionFactor;
+    float  _initialSourceViewScale;
     UIView<HUQuickControlPresentableView> * _primaryControlView;
     UIView<HUQuickControlPresentableView> * _secondaryControlView;
     BOOL  _shouldShowAlternateControlButton;
@@ -29,17 +29,17 @@
     BOOL  _shouldShowDetailsButton;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _sourceRect;
     HUQuickControlSummaryView * _summaryView;
     UILayoutGuide * _topSummarySpacingLayoutGuide;
-    double  _verticalDirectionalControlStretchFactor;
+    float  _verticalDirectionalControlStretchFactor;
 }
 
 @property (nonatomic) unsigned int activeControlType;
@@ -48,30 +48,30 @@
 @property (nonatomic, retain) HUQuickControlAuxiliaryHostView *auxiliaryHostView;
 @property (nonatomic, retain) _UIBackdropViewSettings *blurSettings;
 @property (nonatomic, retain) UIView *blurTintView;
-@property (nonatomic) double blurTransitionProgress;
+@property (nonatomic) float blurTransitionProgress;
 @property (nonatomic, retain) _UIBackdropView *blurView;
 @property (nonatomic, retain) HUQuickControlButtonRowView *buttonRowView;
-@property (nonatomic) double chromeTransitionProgress;
+@property (nonatomic) float chromeTransitionProgress;
 @property (nonatomic, retain) NSLayoutConstraint *compactControlBottomConstraint;
 @property (nonatomic, retain) NSArray *contentConstraints;
 @property (nonatomic, retain) UILayoutGuide *controlButtonSpacingLayoutGuide;
 @property (nonatomic, retain) HUControlHostView *controlHostView;
-@property (nonatomic) double controlTransitionProgress;
+@property (nonatomic) float controlTransitionProgress;
 @property (nonatomic, retain) UILayoutGuide *controlViewLayoutGuide;
 @property (nonatomic, readonly) <HUQuickControlContainerViewDelegate> *delegate;
 @property (nonatomic, retain) HUPillButton *detailsButton;
-@property (nonatomic) double horizontalControlCompressionFactor;
-@property (nonatomic) double initialSourceViewScale;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } presentedControlFrame;
+@property (nonatomic) float horizontalControlCompressionFactor;
+@property (nonatomic) float initialSourceViewScale;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } presentedControlFrame;
 @property (nonatomic, readonly) UIView<HUQuickControlPresentableView> *primaryControlView;
 @property (nonatomic, readonly) UIView<HUQuickControlPresentableView> *secondaryControlView;
 @property (nonatomic) BOOL shouldShowAlternateControlButton;
 @property (nonatomic) BOOL shouldShowControls;
 @property (nonatomic) BOOL shouldShowDetailsButton;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } sourceRect;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } sourceRect;
 @property (nonatomic, retain) HUQuickControlSummaryView *summaryView;
 @property (nonatomic, retain) UILayoutGuide *topSummarySpacingLayoutGuide;
-@property (nonatomic) double verticalDirectionalControlStretchFactor;
+@property (nonatomic) float verticalDirectionalControlStretchFactor;
 
 + (BOOL)requiresConstraintBasedLayout;
 
@@ -80,18 +80,18 @@
 - (void)_configureCompactHeightConstraints:(id)arg1;
 - (void)_configureControlViewLayoutGuideConstraints:(id)arg1;
 - (void)_configureRegularHeightConstraints:(id)arg1;
-- (struct CGPoint { double x1; double x2; })_controlHostCenter;
-- (struct CGPoint { double x1; double x2; })_controlHostCenterForPresentationProgress:(float)arg1;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })_controlHostTransform;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })_controlHostTransformForPresentationProgress:(float)arg1;
+- (struct CGPoint { float x1; float x2; })_controlHostCenter;
+- (struct CGPoint { float x1; float x2; })_controlHostCenterForPresentationProgress:(float)arg1;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_controlHostTransform;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_controlHostTransformForPresentationProgress:(float)arg1;
 - (void)_detailsButtonTapped:(id)arg1;
-- (struct CGSize { double x1; double x2; })_presentedControlHostSize;
+- (struct CGSize { float x1; float x2; })_presentedControlHostSize;
 - (void)_setupAlternateControlButtonIfNecessary;
 - (void)_setupBlurView;
 - (BOOL)_shouldShowControlView;
 - (int)_sizeSubclass;
 - (float)_summaryFirstBaselineToControlTopSpacing;
-- (struct CGPoint { double x1; double x2; })_transformedPresentedControlHostCenterOffset;
+- (struct CGPoint { float x1; float x2; })_transformedPresentedControlHostCenterOffset;
 - (void)_updateAlternateControlButtonText;
 - (void)_updateCompactControlBottomConstraint;
 - (void)_updateContentAlignment;
@@ -117,10 +117,10 @@
 - (id)detailsButton;
 - (void)hideAuxiliaryView;
 - (float)horizontalControlCompressionFactor;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 delegate:(id)arg2 sourceRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 delegate:(id)arg2 sourceRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 - (float)initialSourceViewScale;
 - (void)layoutSubviews;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })presentedControlFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })presentedControlFrame;
 - (id)primaryControlView;
 - (id)secondaryControlView;
 - (void)setActiveControlType:(unsigned int)arg1;
@@ -151,8 +151,8 @@
 - (BOOL)shouldShowControls;
 - (BOOL)shouldShowDetailsButton;
 - (void)showAuxiliaryView:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })sourceRect;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })sourceViewTransformForPresentationProgress:(float)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })sourceRect;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })sourceViewTransformForPresentationProgress:(float)arg1;
 - (id)summaryView;
 - (id)topSummarySpacingLayoutGuide;
 - (void)traitCollectionDidChange:(id)arg1;

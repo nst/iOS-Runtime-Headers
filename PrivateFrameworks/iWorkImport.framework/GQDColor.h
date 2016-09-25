@@ -3,10 +3,10 @@
  */
 
 @interface GQDColor : NSObject <GQDNameMappable> {
-    double  mAlpha;
-    double  mBlue;
-    double  mGreen;
-    double  mRed;
+    float  mAlpha;
+    float  mBlue;
+    float  mGreen;
+    float  mRed;
 }
 
 @property (readonly, copy) NSString *debugDescription;

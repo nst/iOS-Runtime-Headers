@@ -6,12 +6,12 @@
     double  __lastTime;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  __lastVisibleRect;
     int  __nextRegime;
@@ -20,14 +20,14 @@
     int  _previousRegime;
     int  _regime;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _scrollSpeed;
     PXScrollViewController * _scrollViewController;
 }
 
 @property (setter=_setLastTime:, nonatomic) double _lastTime;
-@property (setter=_setLastVisibleRect:, nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } _lastVisibleRect;
+@property (setter=_setLastVisibleRect:, nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } _lastVisibleRect;
 @property (setter=_setNextRegime:, nonatomic) int _nextRegime;
 @property (setter=_setNextRegimeCount:, nonatomic) int _nextRegimeCount;
 @property (setter=_setTimeoutTimer:, nonatomic, retain) NSTimer *_timeoutTimer;
@@ -36,25 +36,25 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) int previousRegime;
 @property (nonatomic, readonly) int regime;
-@property (setter=_setScrollSpeed:, nonatomic) struct CGPoint { double x1; double x2; } scrollSpeed;
+@property (setter=_setScrollSpeed:, nonatomic) struct CGPoint { float x1; float x2; } scrollSpeed;
 @property (nonatomic, readonly) PXScrollViewController *scrollViewController;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_handleTimeoutTimer:(id)arg1;
 - (double)_lastTime;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_lastVisibleRect;
-- (int)_newRegimeForScrollSpeed:(struct CGPoint { double x1; double x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_lastVisibleRect;
+- (int)_newRegimeForScrollSpeed:(struct CGPoint { float x1; float x2; })arg1;
 - (int)_nextRegime;
 - (int)_nextRegimeCount;
 - (void)_rescheduleTimeout;
 - (void)_setLastTime:(double)arg1;
-- (void)_setLastVisibleRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)_setLastVisibleRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_setNextRegime:(int)arg1;
 - (void)_setNextRegimeCount:(int)arg1;
 - (void)_setPreviousRegime:(int)arg1;
 - (void)_setRegime:(int)arg1;
-- (void)_setScrollSpeed:(struct CGPoint { double x1; double x2; })arg1;
+- (void)_setScrollSpeed:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_setTimeoutTimer:(id)arg1;
 - (id)_timeoutTimer;
 - (id)description;
@@ -67,7 +67,7 @@
 - (id)mutableChangeObject;
 - (int)previousRegime;
 - (int)regime;
-- (struct CGPoint { double x1; double x2; })scrollSpeed;
+- (struct CGPoint { float x1; float x2; })scrollSpeed;
 - (id)scrollViewController;
 - (void)scrollViewControllerDidEndScrolling:(id)arg1;
 - (void)scrollViewControllerDidScroll:(id)arg1;

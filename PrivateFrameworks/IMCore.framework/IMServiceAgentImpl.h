@@ -28,7 +28,7 @@
 - (void)setMyAwayMessages:(id)arg1;
 - (void)setMyStatus:(unsigned int)arg1 message:(id)arg2;
 - (void)setupComplete;
-- (unsigned int)vcCapabilities;
-- (void)vcCapabilitiesChanged:(unsigned int)arg1;
+- (unsigned long long)vcCapabilities;
+- (void)vcCapabilitiesChanged:(unsigned long long)arg1;
 
 @end

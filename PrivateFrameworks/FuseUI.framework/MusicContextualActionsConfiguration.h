@@ -51,7 +51,7 @@
 - (void).cxx_destruct;
 - (void)_didSelectHeaderFromAlertController:(id)arg1;
 - (void)_getAdditionalPresentationHandler:(id /* block */*)arg1 shouldDismissHandler:(id /* block */*)arg2 forAlertController:(id)arg3;
-- (struct { int x1; unsigned int x2; })_headerSelectionHandlingInformation;
+- (struct { long long x1; unsigned long long x2; })_headerSelectionHandlingInformation;
 - (id)_newContextualActionsAlertController;
 - (BOOL)allowsAddToPlaylistActions;
 - (BOOL)allowsCreateGeniusPlaylist;

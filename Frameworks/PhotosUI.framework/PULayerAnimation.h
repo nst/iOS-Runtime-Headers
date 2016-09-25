@@ -8,7 +8,7 @@
     BOOL  _isAnimationRunning;
     NSString * _key;
     CALayer * _layer;
-    double  _speed;
+    float  _speed;
     double  _timeOffset;
 }
 

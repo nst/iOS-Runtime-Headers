@@ -4,15 +4,15 @@
 
 @interface VMUFieldValue : NSObject {
     VMUFieldInfo * _field;
-    unsigned int  _value;
+    unsigned long long  _value;
 }
 
 @property (nonatomic, readonly) VMUFieldInfo *field;
-@property (nonatomic, readonly) unsigned int value;
+@property (nonatomic, readonly) unsigned long long value;
 
 - (void)dealloc;
 - (id)field;
-- (id)initWithField:(id)arg1 value:(unsigned int)arg2;
-- (unsigned int)value;
+- (id)initWithField:(id)arg1 value:(unsigned long long)arg2;
+- (unsigned long long)value;
 
 @end

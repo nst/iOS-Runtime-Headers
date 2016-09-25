@@ -4,7 +4,7 @@
 
 @interface SUStructuredPage : NSObject <NSCopying> {
     BOOL  _artworkShouldFitWidth;
-    double  _artworkWidth;
+    float  _artworkWidth;
     BOOL  _didShowDialog;
     int  _displayStyle;
     SUItem * _item;
@@ -18,7 +18,7 @@
 }
 
 @property (nonatomic, readonly) BOOL artworkShouldFitWidth;
-@property (nonatomic, readonly) double artworkWidth;
+@property (nonatomic, readonly) float artworkWidth;
 @property (nonatomic, readonly) BOOL didShowDialog;
 @property (nonatomic, readonly) int displayStyle;
 @property (nonatomic, readonly) BOOL hasDisplayableContent;

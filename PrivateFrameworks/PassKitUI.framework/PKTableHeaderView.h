@@ -6,36 +6,36 @@
     BOOL  _accessoryViewsDisabled;
     UIButton * _actionButton;
     UIActivityIndicatorView * _activityIndicator;
-    double  _bottomPadding;
+    float  _bottomPadding;
     UIImageView * _checkmarkView;
-    double  _extraTextPadding;
+    float  _extraTextPadding;
     UIImageView * _imageView;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _originalImageViewSize;
     BOOL  _shouldResizeImageToFit;
     unsigned int  _style;
     UILabel * _subtitleLabel;
     UILabel * _titleLabel;
-    double  _topPadding;
+    float  _topPadding;
 }
 
 @property (nonatomic) BOOL accessoryViewsDisabled;
 @property (nonatomic, readonly, retain) UIButton *actionButton;
 @property (nonatomic, readonly, retain) UIActivityIndicatorView *activityIndicator;
-@property (nonatomic) double bottomPadding;
+@property (nonatomic) float bottomPadding;
 @property (nonatomic, readonly, retain) UIImageView *checkmarkView;
-@property (nonatomic) double extraTextPadding;
+@property (nonatomic) float extraTextPadding;
 @property (nonatomic, retain) UIImageView *imageView;
 @property (nonatomic) BOOL shouldResizeImageToFit;
 @property (nonatomic) unsigned int style;
 @property (nonatomic, readonly, retain) UILabel *subtitleLabel;
 @property (nonatomic, readonly, retain) UILabel *titleLabel;
-@property (nonatomic) double topPadding;
+@property (nonatomic) float topPadding;
 
 - (void).cxx_destruct;
-- (struct CGSize { double x1; double x2; })_sizeThatFitsExcludingImage:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })_sizeThatFitsExcludingImage:(struct CGSize { float x1; float x2; })arg1;
 - (id)_subtitleFont;
 - (id)_titleFont;
 - (void)_updateAccessoryViews;
@@ -57,7 +57,7 @@
 - (void)setSubtitleBody:(id)arg1;
 - (void)setTopPadding:(float)arg1;
 - (BOOL)shouldResizeImageToFit;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (unsigned int)style;
 - (id)subtitleLabel;
 - (void)tintColorDidChange;

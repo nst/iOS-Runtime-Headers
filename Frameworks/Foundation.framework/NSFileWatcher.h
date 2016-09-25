@@ -12,7 +12,7 @@
     BOOL  _isUnsettled;
     BOOL  _isWatching;
     NSFileWatcherObservations * _itemObservations;
-    unsigned int  _lastObservedEventID;
+    unsigned long long  _lastObservedEventID;
     id /* block */  _observer;
     int  _pid;
     NSObject<OS_dispatch_queue> * _queue;
@@ -22,9 +22,9 @@
 
 - (void)_coalesceSubitemObservations;
 - (void)dealloc;
-- (void)handleFSEventPath:(id)arg1 flags:(unsigned long)arg2 id:(unsigned int)arg3;
+- (void)handleFSEventPath:(id)arg1 flags:(unsigned long)arg2 id:(unsigned long long)arg3;
 - (id)initWithQueue:(id)arg1 forProcessIdentifier:(int)arg2;
-- (void)setLastObservedEventID:(unsigned int)arg1;
+- (void)setLastObservedEventID:(unsigned long long)arg1;
 - (void)setObserver:(id /* block */)arg1;
 - (void)setURL:(id)arg1;
 - (void)settle;

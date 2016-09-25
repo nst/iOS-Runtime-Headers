@@ -3,12 +3,12 @@
  */
 
 @interface CLKComplicationTemplateCircularSmallRingText : CLKComplicationTemplate {
-    double  _fillFraction;
+    float  _fillFraction;
     int  _ringStyle;
     CLKTextProvider * _textProvider;
 }
 
-@property (nonatomic) double fillFraction;
+@property (nonatomic) float fillFraction;
 @property (nonatomic) int ringStyle;
 @property (nonatomic, copy) CLKTextProvider *textProvider;
 

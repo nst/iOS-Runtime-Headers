@@ -4,33 +4,33 @@
 
 @interface PARAsyncCard : SFCard <NSSecureCoding> {
     NSURL * _cardURL;
-    unsigned int  _clientQueryId;
+    unsigned long long  _clientQueryId;
     PARSessionConfiguration * _configuration;
     NSXPCListenerEndpoint * _endpoint;
-    int  _queryId;
-    double  _scale;
+    long long  _queryId;
+    float  _scale;
 }
 
 @property (nonatomic, copy) NSURL *cardURL;
-@property (nonatomic, readonly) unsigned int clientQueryId;
+@property (nonatomic, readonly) unsigned long long clientQueryId;
 @property (nonatomic, retain) PARSessionConfiguration *configuration;
 @property (nonatomic, retain) NSXPCListenerEndpoint *endpoint;
-@property (nonatomic, readonly) int queryId;
-@property (nonatomic) double scale;
+@property (nonatomic, readonly) long long queryId;
+@property (nonatomic) float scale;
 
-+ (id)cardWithTitle:(id)arg1 url:(id)arg2 session:(id)arg3 scale:(float)arg4 queryId:(int)arg5;
-+ (id)cardWithTitle:(id)arg1 url:(id)arg2 session:(id)arg3 scale:(float)arg4 queryId:(int)arg5 clientQueryId:(unsigned int)arg6;
++ (id)cardWithTitle:(id)arg1 url:(id)arg2 session:(id)arg3 scale:(float)arg4 queryId:(long long)arg5;
++ (id)cardWithTitle:(id)arg1 url:(id)arg2 session:(id)arg3 scale:(float)arg4 queryId:(long long)arg5 clientQueryId:(unsigned long long)arg6;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)cardURL;
-- (unsigned int)clientQueryId;
+- (unsigned long long)clientQueryId;
 - (id)configuration;
 - (void)encodeWithCoder:(id)arg1;
 - (id)endpoint;
 - (id)initWithCoder:(id)arg1;
 - (void)loadCardSectionsWithCompletionAndErrorHandler:(id /* block */)arg1;
-- (int)queryId;
+- (long long)queryId;
 - (float)scale;
 - (void)setCardURL:(id)arg1;
 - (void)setConfiguration:(id)arg1;

@@ -28,7 +28,7 @@
 @property (readonly) NSManagedObjectContext *destinationContext;
 @property (readonly) NSManagedObjectModel *destinationModel;
 @property (readonly) NSMappingModel *mappingModel;
-@property (readonly) double migrationProgress;
+@property (readonly) float migrationProgress;
 @property (readonly) NSManagedObjectContext *sourceContext;
 @property (readonly) NSManagedObjectModel *sourceModel;
 @property (nonatomic, retain) NSDictionary *userInfo;

@@ -12,7 +12,7 @@
     BOOL  _hasSetupContentScrollView;
     BOOL  _isChangingContentScrollViewContentOffset;
     MusicVerticalScrollingContainerItem * _item;
-    double  _lastSeenContentHeight;
+    float  _lastSeenContentHeight;
     unsigned int  _originalAutoresizingMask;
     NSMutableArray * _overriddenContentHeightStack;
     BOOL  _readyForDisplay;

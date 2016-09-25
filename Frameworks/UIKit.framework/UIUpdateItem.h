@@ -8,7 +8,7 @@
     UITableViewUpdateGap * _gap;
     BOOL  _headerFooterOnly;
     NSIndexPath * _indexPath;
-    double  _offset;
+    float  _offset;
     BOOL  _skipAnimation;
 }
 
@@ -17,7 +17,7 @@
 @property (nonatomic) UITableViewUpdateGap *gap;
 @property (nonatomic) BOOL headerFooterOnly;
 @property (nonatomic, readonly) NSIndexPath *indexPath;
-@property (nonatomic) double offset;
+@property (nonatomic) float offset;
 @property (nonatomic) BOOL skipAnimation;
 
 - (void).cxx_destruct;

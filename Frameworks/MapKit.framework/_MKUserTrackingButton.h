@@ -33,16 +33,16 @@
 - (int)_activityIndicatorStyle;
 - (id)_defaultImageForUserTrackingMode:(int)arg1 controlState:(unsigned int)arg2;
 - (id)_defaultLandscapeImagePhoneForUserTrackingMode:(int)arg1 controlState:(unsigned int)arg2;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_imageEdgeInsetsForUserTrackingMode:(int)arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_imageEdgeInsetsForUserTrackingMode:(int)arg1;
 - (id)_imageForState:(int)arg1 controlState:(unsigned int)arg2;
 - (id)_imageForUserTrackingMode:(int)arg1 controlState:(unsigned int)arg2;
 - (BOOL)_isHighlightedForState:(int)arg1;
 - (id)_landscapeImagePhoneForUserTrackingMode:(int)arg1 controlState:(unsigned int)arg2;
 - (void)_repositionViews;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_selectedIndicatorBounds;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_selectedIndicatorBounds;
 - (BOOL)_selectsWhenTracking;
 - (void)_setImage:(id)arg1 forUserTrackingMode:(int)arg2 controlState:(unsigned int)arg3;
-- (void)_setImageEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1 forUserTrackingMode:(int)arg2;
+- (void)_setImageEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1 forUserTrackingMode:(int)arg2;
 - (void)_setInternallyEnabled:(BOOL)arg1;
 - (void)_setLandscapeImagePhone:(id)arg1 forUserTrackingMode:(int)arg2 controlState:(unsigned int)arg3;
 - (void)_setSelectsWhenTracking:(BOOL)arg1;
@@ -56,7 +56,7 @@
 - (void)setEnabled:(BOOL)arg1;
 - (void)setMapView:(id)arg1;
 - (void)setUserTrackingView:(id)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)updateForMiniBarState:(BOOL)arg1;
 - (id)userTrackingView;
 

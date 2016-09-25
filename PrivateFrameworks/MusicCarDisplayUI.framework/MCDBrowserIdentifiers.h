@@ -5,13 +5,13 @@
 @interface MCDBrowserIdentifiers : NSObject {
     NSSet * _activeIdentifiers;
     NSArray * _cellIdentifiers;
-    double  _maxImageWidth;
+    float  _maxImageWidth;
     NSArray * _orderedIdentifiers;
 }
 
 @property (nonatomic, retain) NSSet *activeIdentifiers;
 @property (nonatomic, retain) NSArray *cellIdentifiers;
-@property (nonatomic, readonly) double maxImageWidth;
+@property (nonatomic, readonly) float maxImageWidth;
 @property (nonatomic, retain) NSArray *orderedIdentifiers;
 
 + (id)sharedInstance;

@@ -15,7 +15,7 @@
 + (id)customAttributes;
 
 - (id)_kernel;
-- (struct Rectangle { double x1; double x2; double x3; double x4; })computeDOD:(struct vec2 { double x1; double x2; })arg1 tst:(struct vec3 { double x1; double x2; double x3; })arg2 off:(struct vec4 { double x1; double x2; double x3; double x4; })arg3 mtx:(struct vec4 { double x1; double x2; double x3; double x4; })arg4;
+- (struct Rectangle { double x1; double x2; double x3; double x4; })computeDOD:(struct vec2 { float x1; float x2; })arg1 tst:(struct vec3 { float x1; float x2; float x3; })arg2 off:(struct vec4 { float x1; float x2; float x3; float x4; })arg3 mtx:(struct vec4 { float x1; float x2; float x3; float x4; })arg4;
 - (id)inputAngle;
 - (id)inputImage;
 - (id)inputPoint;

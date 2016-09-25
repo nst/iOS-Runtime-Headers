@@ -4,30 +4,30 @@
 
 @interface AKTSDPathIntersection : NSObject {
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  mPoint;
     int  mSegment;
     int  mSegmentB;
-    double  mT;
-    double  mTB;
+    float  mT;
+    float  mTB;
 }
 
-@property (nonatomic) struct CGPoint { double x1; double x2; } point;
+@property (nonatomic) struct CGPoint { float x1; float x2; } point;
 @property (nonatomic, readonly) int segment;
 @property (nonatomic, readonly) int segmentB;
-@property (nonatomic, readonly) double t;
-@property (nonatomic, readonly) double tB;
+@property (nonatomic, readonly) float t;
+@property (nonatomic, readonly) float tB;
 
 - (int)compareSegmentAndT:(id)arg1;
 - (int)compareT:(id)arg1;
 - (id)description;
-- (id)initWithSegment:(int)arg1 atT:(float)arg2 atPoint:(struct CGPoint { double x1; double x2; })arg3;
-- (id)initWithSegment:(int)arg1 atT:(float)arg2 onSegmentB:(int)arg3 atT:(float)arg4 atPoint:(struct CGPoint { double x1; double x2; })arg5;
-- (struct CGPoint { double x1; double x2; })point;
+- (id)initWithSegment:(int)arg1 atT:(float)arg2 atPoint:(struct CGPoint { float x1; float x2; })arg3;
+- (id)initWithSegment:(int)arg1 atT:(float)arg2 onSegmentB:(int)arg3 atT:(float)arg4 atPoint:(struct CGPoint { float x1; float x2; })arg5;
+- (struct CGPoint { float x1; float x2; })point;
 - (int)segment;
 - (int)segmentB;
-- (void)setPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (float)t;
 - (float)tB;
 

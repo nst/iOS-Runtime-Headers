@@ -3,13 +3,13 @@
  */
 
 @interface NWAWDLBClientConnectionReport : PBCodable <NSCopying> {
-    int  _bytesReceived;
-    int  _bytesSent;
-    int  _connectionDuration;
+    long long  _bytesReceived;
+    long long  _bytesSent;
+    long long  _connectionDuration;
     int  _connectionJoiningFailure;
     int  _connectionJoiningLbConnectionMigration;
     int  _connectionJoiningLbConnectionState;
-    unsigned int  _connectionServiceId;
+    unsigned long long  _connectionServiceId;
     int  _dataPathResult;
     struct { 
         unsigned int bytesReceived : 1; 
@@ -24,18 +24,18 @@
         unsigned int connectionJoiningLbConnectionState : 1; 
         unsigned int dataPathResult : 1; 
     }  _has;
-    int  _timeToConnectionFailure;
-    int  _timeToFirstResponse;
-    unsigned int  _timestamp;
+    long long  _timeToConnectionFailure;
+    long long  _timeToFirstResponse;
+    unsigned long long  _timestamp;
 }
 
-@property (nonatomic) int bytesReceived;
-@property (nonatomic) int bytesSent;
-@property (nonatomic) int connectionDuration;
+@property (nonatomic) long long bytesReceived;
+@property (nonatomic) long long bytesSent;
+@property (nonatomic) long long connectionDuration;
 @property (nonatomic) int connectionJoiningFailure;
 @property (nonatomic) int connectionJoiningLbConnectionMigration;
 @property (nonatomic) int connectionJoiningLbConnectionState;
-@property (nonatomic) unsigned int connectionServiceId;
+@property (nonatomic) unsigned long long connectionServiceId;
 @property (nonatomic) int dataPathResult;
 @property (nonatomic) BOOL hasBytesReceived;
 @property (nonatomic) BOOL hasBytesSent;
@@ -48,17 +48,17 @@
 @property (nonatomic) BOOL hasTimeToConnectionFailure;
 @property (nonatomic) BOOL hasTimeToFirstResponse;
 @property (nonatomic) BOOL hasTimestamp;
-@property (nonatomic) int timeToConnectionFailure;
-@property (nonatomic) int timeToFirstResponse;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) long long timeToConnectionFailure;
+@property (nonatomic) long long timeToFirstResponse;
+@property (nonatomic) unsigned long long timestamp;
 
-- (int)bytesReceived;
-- (int)bytesSent;
-- (int)connectionDuration;
+- (long long)bytesReceived;
+- (long long)bytesSent;
+- (long long)connectionDuration;
 - (int)connectionJoiningFailure;
 - (int)connectionJoiningLbConnectionMigration;
 - (int)connectionJoiningLbConnectionState;
-- (unsigned int)connectionServiceId;
+- (unsigned long long)connectionServiceId;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (int)dataPathResult;
@@ -79,13 +79,13 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (void)setBytesReceived:(int)arg1;
-- (void)setBytesSent:(int)arg1;
-- (void)setConnectionDuration:(int)arg1;
+- (void)setBytesReceived:(long long)arg1;
+- (void)setBytesSent:(long long)arg1;
+- (void)setConnectionDuration:(long long)arg1;
 - (void)setConnectionJoiningFailure:(int)arg1;
 - (void)setConnectionJoiningLbConnectionMigration:(int)arg1;
 - (void)setConnectionJoiningLbConnectionState:(int)arg1;
-- (void)setConnectionServiceId:(unsigned int)arg1;
+- (void)setConnectionServiceId:(unsigned long long)arg1;
 - (void)setDataPathResult:(int)arg1;
 - (void)setHasBytesReceived:(BOOL)arg1;
 - (void)setHasBytesSent:(BOOL)arg1;
@@ -98,12 +98,12 @@
 - (void)setHasTimeToConnectionFailure:(BOOL)arg1;
 - (void)setHasTimeToFirstResponse:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
-- (void)setTimeToConnectionFailure:(int)arg1;
-- (void)setTimeToFirstResponse:(int)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
-- (int)timeToConnectionFailure;
-- (int)timeToFirstResponse;
-- (unsigned int)timestamp;
+- (void)setTimeToConnectionFailure:(long long)arg1;
+- (void)setTimeToFirstResponse:(long long)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
+- (long long)timeToConnectionFailure;
+- (long long)timeToFirstResponse;
+- (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 
 @end

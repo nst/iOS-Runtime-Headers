@@ -52,7 +52,7 @@
 - (id)_availablePixelBuffers;
 - (id /* block */)_completion;
 - (int)_currentOutputFrameIndex;
-- (struct CGSize { double x1; double x2; })_desiredOutputSizeForFrameSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })_desiredOutputSizeForFrameSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_enqueueNextDecode;
 - (void)_enqueueNextRead;
 - (void)_enqueueNextWrite;
@@ -70,12 +70,12 @@
 - (int)_residentImageDataCount;
 - (int)_residentPixelBufferCount;
 - (void)_setMetadataOnVideoTrackAssetWriterInput:(id)arg1;
-- (BOOL)_startWritingWithOutputPath:(id)arg1 width:(int)arg2 height:(int)arg3 videoFormatDescription:(struct opaqueCMFormatDescription { }*)arg4 transform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg5 framesPerSecond:(int)arg6 frameCount:(int)arg7 videoMetadata:(id)arg8;
+- (BOOL)_startWritingWithOutputPath:(id)arg1 width:(int)arg2 height:(int)arg3 videoFormatDescription:(struct opaqueCMFormatDescription { }*)arg4 transform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg5 framesPerSecond:(int)arg6 frameCount:(int)arg7 videoMetadata:(id)arg8;
 - (id)_synchronizationQueue;
 - (id)_videoInput;
 - (id)_writer;
 - (id)init;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (void)writeMovieFromImageFiles:(id)arg1 visMetadataFiles:(id)arg2 startDate:(id)arg3 location:(id)arg4 outputPath:(id)arg5 transform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg6 framesPerSecond:(int)arg7 completionHandler:(id /* block */)arg8;
+- (void)writeMovieFromImageFiles:(id)arg1 visMetadataFiles:(id)arg2 startDate:(id)arg3 location:(id)arg4 outputPath:(id)arg5 transform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg6 framesPerSecond:(int)arg7 completionHandler:(id /* block */)arg8;
 
 @end

@@ -4,81 +4,81 @@
 
 @interface _UIPopoverLayoutInfo : NSObject <NSCopying> {
     unsigned int  _arrowDirection;
-    double  _arrowHeight;
-    double  _arrowOffset;
+    float  _arrowHeight;
+    float  _arrowOffset;
     BOOL  _canOverlapSourceViewRect;
     NSMutableArray * _candidates;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _containingFrame;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _containingFrameInsets;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _contentInset;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _frame;
-    double  _offset;
+    float  _offset;
     BOOL  _preferLandscapeOrientations;
     unsigned int  _preferredArrowDirections;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _preferredContentSize;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _sourceViewRect;
     BOOL  _updatesEnabled;
 }
 
 @property (nonatomic, readonly) unsigned int arrowDirection;
-@property (nonatomic) double arrowHeight;
-@property (nonatomic) double arrowOffset;
+@property (nonatomic) float arrowHeight;
+@property (nonatomic) float arrowOffset;
 @property (nonatomic) BOOL canOverlapSourceViewRect;
-@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } containingFrame;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } containingFrameInsets;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInset;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } frame;
-@property (nonatomic, readonly) double offset;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } containingFrame;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } containingFrameInsets;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } frame;
+@property (nonatomic, readonly) float offset;
 @property (nonatomic) BOOL preferLandscapeOrientations;
 @property (nonatomic) unsigned int preferredArrowDirections;
-@property (nonatomic) struct CGSize { double x1; double x2; } preferredContentSize;
-@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } sourceViewRect;
+@property (nonatomic) struct CGSize { float x1; float x2; } preferredContentSize;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } sourceViewRect;
 @property (getter=_updatesEnabled, setter=_setUpdatesEnabled:, nonatomic) BOOL updatesEnabled;
 
 + (id)_observationKeys;
 
 - (void).cxx_destruct;
-- (struct CGSize { double x1; double x2; })_popoverViewSizeForContentSize:(struct CGSize { double x1; double x2; })arg1 arrowDirection:(unsigned int)arg2;
+- (struct CGSize { float x1; float x2; })_popoverViewSizeForContentSize:(struct CGSize { float x1; float x2; })arg1 arrowDirection:(unsigned int)arg2;
 - (void)_setUpdatesEnabled:(BOOL)arg1;
 - (void)_updateOutputs;
 - (BOOL)_updatesEnabled;
@@ -87,30 +87,30 @@
 - (float)arrowOffset;
 - (BOOL)canOverlapSourceViewRect;
 - (id)candidates;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })containingFrame;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })containingFrameInsets;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInset;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })containingFrame;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })containingFrameInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInset;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
 - (id)init;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (float)offset;
 - (BOOL)preferLandscapeOrientations;
 - (unsigned int)preferredArrowDirections;
-- (struct CGSize { double x1; double x2; })preferredContentSize;
+- (struct CGSize { float x1; float x2; })preferredContentSize;
 - (void)setArrowHeight:(float)arg1;
 - (void)setArrowOffset:(float)arg1;
 - (void)setCanOverlapSourceViewRect:(BOOL)arg1;
-- (void)setContainingFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)setContainingFrameInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
-- (void)setContentInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setContainingFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setContainingFrameInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setPreferLandscapeOrientations:(BOOL)arg1;
 - (void)setPreferredArrowDirections:(unsigned int)arg1;
-- (void)setPreferredContentSize:(struct CGSize { double x1; double x2; })arg1;
-- (void)setSourceViewRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })sourceViewRect;
+- (void)setPreferredContentSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setSourceViewRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })sourceViewRect;
 - (void)updateProperties:(id /* block */)arg1;
 
 @end

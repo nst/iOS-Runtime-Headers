@@ -4,18 +4,18 @@
 
 @interface _RadioPlayEventStationInformation : NSObject {
     NSString * _stationHash;
-    int  _stationID;
+    long long  _stationID;
 }
 
 @property (nonatomic, copy) NSString *stationHash;
-@property (nonatomic) int stationID;
+@property (nonatomic) long long stationID;
 
 - (void).cxx_destruct;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)setStationHash:(id)arg1;
-- (void)setStationID:(int)arg1;
+- (void)setStationID:(long long)arg1;
 - (id)stationHash;
-- (int)stationID;
+- (long long)stationID;
 
 @end

@@ -10,8 +10,8 @@
 @property (nonatomic) unsigned int compareFunction;
 @property (nonatomic, copy) NSString *label;
 @property (nonatomic) BOOL lodAverage;
-@property (nonatomic) double lodMaxClamp;
-@property (nonatomic) double lodMinClamp;
+@property (nonatomic) float lodMaxClamp;
+@property (nonatomic) float lodMinClamp;
 @property (nonatomic) unsigned int magFilter;
 @property (nonatomic) unsigned int maxAnisotropy;
 @property (nonatomic) unsigned int minFilter;

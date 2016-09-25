@@ -28,7 +28,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)destroyContainerWithCompletion:(id /* block */)arg1;
-- (unsigned int)diskUsageWithError:(id*)arg1;
+- (unsigned long long)diskUsageWithError:(id*)arg1;
 - (struct container_object { }*)getLowLevelContainerObject;
 - (unsigned int)hash;
 - (id)identifier;

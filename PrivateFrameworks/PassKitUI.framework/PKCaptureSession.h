@@ -20,8 +20,8 @@
 
 - (void).cxx_destruct;
 - (void)_changeCameraConfiguration;
-- (void)autoExposeAtPoint:(struct CGPoint { double x1; double x2; })arg1;
-- (void)autoFocusAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)autoExposeAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)autoFocusAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithDelegate:(id)arg1;

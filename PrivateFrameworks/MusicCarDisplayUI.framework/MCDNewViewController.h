@@ -8,7 +8,7 @@
     BOOL  _contentLoaded;
     MusicStoreBrowseResponse * _contentResponse;
     MPWeakTimer * _loadingTimer;
-    int  _modelRevisionID;
+    long long  _modelRevisionID;
     UIView * _placeholderView;
     NSIndexPath * _selectedIndexPath;
     MCDContentItemTableViewController * _viewController;
@@ -22,7 +22,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) MPWeakTimer *loadingTimer;
-@property (nonatomic) int modelRevisionID;
+@property (nonatomic) long long modelRevisionID;
 @property (nonatomic, retain) UIView *placeholderView;
 @property (nonatomic, retain) NSIndexPath *selectedIndexPath;
 @property (readonly) Class superclass;
@@ -42,7 +42,7 @@
 - (void)errorViewDidTapButton:(id)arg1;
 - (id)initWithPlayer:(id)arg1 serviceProvider:(id)arg2;
 - (id)loadingTimer;
-- (int)modelRevisionID;
+- (long long)modelRevisionID;
 - (id)placeholderView;
 - (id)selectedIndexPath;
 - (void)setActivityIndicator:(id)arg1;
@@ -50,7 +50,7 @@
 - (void)setContentResponse:(id)arg1;
 - (void)setLoadingTimer:(id)arg1;
 - (void)setMCD_tableView:(id)arg1;
-- (void)setModelRevisionID:(int)arg1;
+- (void)setModelRevisionID:(long long)arg1;
 - (void)setPlaceholderView:(id)arg1;
 - (void)setSelectedIndexPath:(id)arg1;
 - (void)setViewController:(id)arg1;

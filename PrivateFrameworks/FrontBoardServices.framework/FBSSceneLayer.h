@@ -7,7 +7,7 @@
     CAContext * _context;
     <FBSSceneLayerDelegate> * _delegate;
     unsigned int  _identifier;
-    double  _level;
+    float  _level;
     FBSScene * _scene;
     BOOL  _shouldObserveUpdates;
 }
@@ -17,7 +17,7 @@
 @property (nonatomic) <FBSSceneLayerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic) double level;
+@property (nonatomic) float level;
 @property (nonatomic) FBSScene *scene;
 @property (nonatomic, readonly) BOOL shouldObserveUpdates;
 @property (readonly) Class superclass;

@@ -13,7 +13,7 @@
     NSString * _path;
     NSMutableArray * _symbols;
     PASymbol * _testSymbol;
-    unsigned int  _textSegmentLength;
+    unsigned long long  _textSegmentLength;
     NSUUID * _uuid;
 }
 
@@ -28,16 +28,16 @@
 @property (readonly) NSString *name;
 @property (retain) NSString *path;
 @property (readonly) Class superclass;
-@property (readonly) unsigned int textSegmentLength;
+@property (readonly) unsigned long long textSegmentLength;
 @property (readonly) NSUUID *uuid;
 
 + (id)classDictionaryKey;
 + (id)newInstanceWithoutReferencesFromBufferPosition:(const void*)arg1;
 
 - (void).cxx_destruct;
-- (id)_initWithSerializedSymbolOwner:(const struct { unsigned int x1; int x2; int x3; int x4; unsigned int x5; int x6; int x7; int x8; int x9; unsigned int x10; BOOL x11; }*)arg1;
-- (unsigned int)_insertionIndexInSymbols:(id)arg1 forSymbolWithOffsetIntoSymbolOwner:(unsigned int)arg2;
-- (id)_symbolContainingOffsetIntoSymbolOwner:(unsigned int)arg1 inSymbols:(id)arg2;
+- (id)_initWithSerializedSymbolOwner:(const struct { unsigned long long x1; long long x2; long long x3; long long x4; unsigned long long x5; long long x6; long long x7; long long x8; long long x9; unsigned long long x10; BOOL x11; }*)arg1;
+- (unsigned int)_insertionIndexInSymbols:(id)arg1 forSymbolWithOffsetIntoSymbolOwner:(unsigned long long)arg2;
+- (id)_symbolContainingOffsetIntoSymbolOwner:(unsigned long long)arg1 inSymbols:(id)arg2;
 - (BOOL)addSelfToBufferAtPosition:(void*)arg1 withCompletedSerializationDictionary:(id)arg2;
 - (void)addSelfToSerializationDictionary:(id)arg1;
 - (id)addSymbol:(id)arg1;
@@ -55,16 +55,16 @@
 - (id)initWithCSSymbolOwnerRef:(struct _CSTypeRef { unsigned int x1; unsigned int x2; })arg1;
 - (id)initWithCSSymbolOwnerRef:(struct _CSTypeRef { unsigned int x1; unsigned int x2; })arg1 andPath:(id)arg2;
 - (id)initWithPACSSymbolOwner:(id)arg1;
-- (id)initWithUUID:(id)arg1 andPath:(id)arg2 andSize:(unsigned int)arg3 isTextExecSegment:(BOOL)arg4;
+- (id)initWithUUID:(id)arg1 andPath:(id)arg2 andSize:(unsigned long long)arg3 isTextExecSegment:(BOOL)arg4;
 - (BOOL)isTextExecSegment;
 - (id)name;
-- (id)oldSymbolContainingOffsetIntoSymbolOwner:(unsigned int)arg1;
+- (id)oldSymbolContainingOffsetIntoSymbolOwner:(unsigned long long)arg1;
 - (id)path;
 - (void)populateReferencesUsingBufferPosition:(const void*)arg1 andDeserializationDictionary:(id)arg2 andDataBufferDictionary:(id)arg3;
 - (void)setPath:(id)arg1;
 - (unsigned long)sizeInBytesForSerializedVersion;
-- (id)symbolContainingOffsetIntoSymbolOwner:(unsigned int)arg1;
-- (unsigned int)textSegmentLength;
+- (id)symbolContainingOffsetIntoSymbolOwner:(unsigned long long)arg1;
+- (unsigned long long)textSegmentLength;
 - (id)uuid;
 
 @end

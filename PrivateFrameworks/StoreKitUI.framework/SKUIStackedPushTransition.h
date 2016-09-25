@@ -4,7 +4,7 @@
 
 @interface SKUIStackedPushTransition : NSObject <UIViewControllerAnimatedTransitioning> {
     SKUIStackedBar * _fromBar;
-    double  _split;
+    float  _split;
     SKUIStackedBar * _toBar;
 }
 
@@ -12,7 +12,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) SKUIStackedBar *fromBar;
 @property (readonly) unsigned int hash;
-@property (nonatomic) double split;
+@property (nonatomic) float split;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) SKUIStackedBar *toBar;
 

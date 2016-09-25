@@ -3,7 +3,7 @@
  */
 
 @interface SKUIViewElementLayoutContext : NSObject {
-    double  _activePageWidth;
+    float  _activePageWidth;
     NSMutableDictionary * _aggregateValues;
     <SKUIArtworkRequestDelegate> * _artworkRequestDelegate;
     NSString * _backdropGroupName;
@@ -12,17 +12,17 @@
     MPUBorderDrawingCache * _borderDrawingCache;
     SKUIClientContext * _clientContext;
     unsigned int  _containerViewElementType;
-    double  _displayScale;
+    float  _displayScale;
     NSMapTable * _editorialLayouts;
     NSHashTable * _expandedEditorialLayouts;
     SKUIItemOfferButton * _itemOfferButton;
     NSMutableDictionary * _itemOfferButtonSizes;
     SKUIViewElementTextLayoutCache * _labelLayoutCache;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _largeScreenElementPadding;
     NSMutableSet * _observedArtworkRequestIDs;
     UIViewController * _parentViewController;
@@ -31,16 +31,16 @@
     UIColor * _tintColor;
 }
 
-@property (nonatomic) double activePageWidth;
+@property (nonatomic) float activePageWidth;
 @property (nonatomic) <SKUIArtworkRequestDelegate> *artworkRequestDelegate;
 @property (nonatomic, copy) NSString *backdropGroupName;
 @property (nonatomic, readonly) SKUIBadgeTextAttachmentLoader *badgeImageLoader;
 @property (nonatomic, readonly) MPUBorderDrawingCache *borderDrawingCache;
 @property (nonatomic, retain) SKUIClientContext *clientContext;
 @property (nonatomic) unsigned int containerViewElementType;
-@property (nonatomic) double displayScale;
+@property (nonatomic) float displayScale;
 @property (nonatomic, retain) SKUIViewElementTextLayoutCache *labelLayoutCache;
-@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } largeScreenElementPadding;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } largeScreenElementPadding;
 @property (nonatomic) UIViewController *parentViewController;
 @property (nonatomic, retain) UIColor *placeholderColor;
 @property (nonatomic, readonly) NSCache *placeholderImageCache;
@@ -54,7 +54,7 @@
 - (void)_artworkRequestDidLoadImageNotification:(id)arg1;
 - (id)_initSKUIViewElementLayoutContext;
 - (BOOL)_loadImageForURL:(id)arg1 cacheKey:(id)arg2 dataConsumer:(id)arg3 reason:(int)arg4;
-- (struct CGSize { double x1; double x2; })_sizeForImageElement:(id)arg1 applyTransform:(BOOL)arg2;
+- (struct CGSize { float x1; float x2; })_sizeForImageElement:(id)arg1 applyTransform:(BOOL)arg2;
 - (float)activePageWidth;
 - (id)aggregateValueForKey:(id)arg1;
 - (id)artworkRequestDelegate;
@@ -78,7 +78,7 @@
 - (void)invalidateAllEditorialLayouts;
 - (BOOL)isEditorialLayoutExpanded:(id)arg1;
 - (id)labelLayoutCache;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })largeScreenElementPadding;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })largeScreenElementPadding;
 - (BOOL)loadImageForArtwork:(id)arg1 dataConsumer:(id)arg2 reason:(int)arg3;
 - (BOOL)loadImageForArtwork:(id)arg1 reason:(int)arg2;
 - (BOOL)loadImageForBadgeElement:(id)arg1 reason:(int)arg2;
@@ -90,7 +90,7 @@
 - (id)placeholderColor;
 - (id)placeholderImageCache;
 - (id)placeholderImageForImageElement:(id)arg1 dataConsumer:(id)arg2;
-- (id)placeholderImageForSize:(struct CGSize { double x1; double x2; })arg1;
+- (id)placeholderImageForSize:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)prefetchResourcesForViewElement:(id)arg1 reason:(int)arg2;
 - (id)requestIdentifierForArtwork:(id)arg1;
 - (id)requestIdentifierForResourceCacheKey:(id)arg1;
@@ -110,10 +110,10 @@
 - (void)setPlaceholderColor:(id)arg1;
 - (void)setResourceLoader:(id)arg1;
 - (void)setTintColor:(id)arg1;
-- (struct CGSize { double x1; double x2; })sizeForBadgeElement:(id)arg1;
-- (struct CGSize { double x1; double x2; })sizeForImageElement:(id)arg1;
-- (struct CGSize { double x1; double x2; })sizeForItemOfferButton:(id)arg1;
-- (struct CGSize { double x1; double x2; })sizeForViewElement:(id)arg1 width:(float)arg2;
+- (struct CGSize { float x1; float x2; })sizeForBadgeElement:(id)arg1;
+- (struct CGSize { float x1; float x2; })sizeForImageElement:(id)arg1;
+- (struct CGSize { float x1; float x2; })sizeForItemOfferButton:(id)arg1;
+- (struct CGSize { float x1; float x2; })sizeForViewElement:(id)arg1 width:(float)arg2;
 - (id)textPropertiesForViewElement:(id)arg1 width:(float)arg2;
 - (id)tintColor;
 - (id)transientRequestIdentifierForViewElement:(id)arg1;

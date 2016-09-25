@@ -6,8 +6,8 @@
     UIColor * _color;
     UIColor * _gridlineColor;
     unsigned int  _gridlineCount;
-    double  _hashmarkInterval;
-    double  _lineWidth;
+    float  _hashmarkInterval;
+    float  _lineWidth;
     BOOL  _showsGridlines;
     BOOL  _showsHashmarks;
     BOOL  _showsTitle;
@@ -18,8 +18,8 @@
 @property (nonatomic, retain) UIColor *color;
 @property (nonatomic, retain) UIColor *gridlineColor;
 @property (nonatomic) unsigned int gridlineCount;
-@property (nonatomic) double hashmarkInterval;
-@property (nonatomic) double lineWidth;
+@property (nonatomic) float hashmarkInterval;
+@property (nonatomic) float lineWidth;
 @property (nonatomic) BOOL showsGridlines;
 @property (nonatomic) BOOL showsHashmarks;
 @property (nonatomic) BOOL showsTitle;

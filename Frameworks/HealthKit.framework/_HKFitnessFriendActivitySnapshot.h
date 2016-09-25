@@ -11,7 +11,7 @@
     double  _energyBurnedGoal;
     NSUUID * _friendUUID;
     double  _pushCount;
-    int  _snapshotIndex;
+    long long  _snapshotIndex;
     NSDate * _snapshotUploadedDate;
     NSUUID * _sourceUUID;
     double  _stepCount;
@@ -36,7 +36,7 @@
 @property (nonatomic, retain) NSUUID *friendUUID;
 @property (readonly) unsigned int hash;
 @property (nonatomic) double pushCount;
-@property (nonatomic) int snapshotIndex;
+@property (nonatomic) long long snapshotIndex;
 @property (nonatomic, retain) NSDate *snapshotUploadedDate;
 @property (nonatomic, retain) NSUUID *sourceUUID;
 @property (nonatomic) double stepCount;
@@ -48,8 +48,8 @@
 
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
-+ (id)_fitnessFriendActivitySnapshotWithFriendUUID:(id)arg1 sourceUUID:(id)arg2 startDate:(id)arg3 endDate:(id)arg4 snapshotIndex:(int)arg5 snapshotUploadedDate:(id)arg6;
-+ (id)_fitnessFriendActivitySnapshotWithSnapshotIndex:(int)arg1 startDate:(id)arg2 endDate:(id)arg3 sourceUUID:(id)arg4;
++ (id)_fitnessFriendActivitySnapshotWithFriendUUID:(id)arg1 sourceUUID:(id)arg2 startDate:(id)arg3 endDate:(id)arg4 snapshotIndex:(long long)arg5 snapshotUploadedDate:(id)arg6;
++ (id)_fitnessFriendActivitySnapshotWithSnapshotIndex:(long long)arg1 startDate:(id)arg2 endDate:(id)arg3 sourceUUID:(id)arg4;
 + (id)_mostSignificantSnapshotAmongSnapshots:(id)arg1;
 + (id)snapshotWithActivitySummary:(id)arg1;
 + (BOOL)supportsSecureCoding;
@@ -78,14 +78,14 @@
 - (void)setEnergyBurnedGoal:(double)arg1;
 - (void)setFriendUUID:(id)arg1;
 - (void)setPushCount:(double)arg1;
-- (void)setSnapshotIndex:(int)arg1;
+- (void)setSnapshotIndex:(long long)arg1;
 - (void)setSnapshotUploadedDate:(id)arg1;
 - (void)setSourceUUID:(id)arg1;
 - (void)setStepCount:(double)arg1;
 - (void)setTimeZoneOffsetFromUTCForNoon:(id)arg1;
 - (void)setWalkingAndRunningDistance:(double)arg1;
 - (void)setWheelchairUse:(int)arg1;
-- (int)snapshotIndex;
+- (long long)snapshotIndex;
 - (id)snapshotUploadedDate;
 - (id)sourceUUID;
 - (double)stepCount;

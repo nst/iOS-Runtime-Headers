@@ -13,11 +13,11 @@
     GEOComposedTransitTripRouteStep * _rideStep;
     struct PolylineCoordinate { 
         unsigned int index; 
-        double offset; 
+        float offset; 
     }  _routeCoordinateApproaching;
     struct PolylineCoordinate { 
         unsigned int index; 
-        double offset; 
+        float offset; 
     }  _routeCoordinateAtStation;
     GEOPBTransitStation * _transitStation;
     GEOPBTransitStop * _transitStop;

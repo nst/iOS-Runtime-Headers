@@ -10,10 +10,10 @@
     BOOL  _isTV;
     BOOL  _isWatch;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _logicalScreenSize;
-    double  _screenScale;
+    float  _screenScale;
 }
 
 @property (nonatomic) BOOL isPad;
@@ -22,21 +22,21 @@
 @property (nonatomic, readonly) BOOL isRidingPowderSnow;
 @property (nonatomic) BOOL isTV;
 @property (nonatomic) BOOL isWatch;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } logicalScreenSize;
-@property (nonatomic, readonly) double screenScale;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } logicalScreenSize;
+@property (nonatomic, readonly) float screenScale;
 @property (nonatomic, readonly) BOOL shouldUseNanoThumbnailFormats;
 
 + (id)defaultDeviceConfiguration;
 
 - (id)description;
-- (id)initWithLogicalScreenSize:(struct CGSize { double x1; double x2; })arg1 screenScale:(float)arg2 isRidingCrudSnow:(BOOL)arg3 isRidingPowderSnow:(BOOL)arg4;
+- (id)initWithLogicalScreenSize:(struct CGSize { float x1; float x2; })arg1 screenScale:(float)arg2 isRidingCrudSnow:(BOOL)arg3 isRidingPowderSnow:(BOOL)arg4;
 - (BOOL)isPad;
 - (BOOL)isRetina;
 - (BOOL)isRidingCrudSnow;
 - (BOOL)isRidingPowderSnow;
 - (BOOL)isTV;
 - (BOOL)isWatch;
-- (struct CGSize { double x1; double x2; })logicalScreenSize;
+- (struct CGSize { float x1; float x2; })logicalScreenSize;
 - (float)screenScale;
 - (void)setIsPad:(BOOL)arg1;
 - (void)setIsRetina:(BOOL)arg1;

@@ -5,28 +5,28 @@
 @interface MFPPen : NSObject {
     int  mAlignment;
     MFPBrush * mBrush;
-    double * mCompoundArray;
+    float * mCompoundArray;
     int  mCompoundArrayCount;
     MFPCustomLineCap * mCustomEndCap;
     MFPCustomLineCap * mCustomStartCap;
     int  mDashCap;
-    double  mDashOffset;
-    double * mDashPattern;
+    float  mDashOffset;
+    float * mDashPattern;
     int  mDashPatternCount;
     int  mDashStyle;
     int  mEndCap;
     int  mLineJoin;
-    double  mMiterLimit;
+    float  mMiterLimit;
     int  mStartCap;
     struct CGAffineTransform { 
-        double a; 
-        double b; 
-        double c; 
-        double d; 
-        double tx; 
-        double ty; 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     }  mTransform;
-    double  mWidth;
+    float  mWidth;
 }
 
 - (int)alignment;
@@ -63,11 +63,11 @@
 - (void)setLineJoin:(int)arg1;
 - (void)setMiterLimit:(float)arg1;
 - (void)setStartCap:(int)arg1;
-- (void)setTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
+- (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (void)setWidth:(float)arg1;
 - (int)startCap;
 - (void)strokePath:(id)arg1;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })transform;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transform;
 - (float)width;
 
 @end

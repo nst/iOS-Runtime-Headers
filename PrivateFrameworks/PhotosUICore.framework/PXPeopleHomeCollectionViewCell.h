@@ -14,7 +14,7 @@
     UILabel * _quantityLabel;
     PXRoundedCornerOverlayView * _roundCornerOverlay;
     UIView * _selectionView;
-    double  _textAlpha;
+    float  _textAlpha;
 }
 
 @property (getter=isActionIndicatorHidden, nonatomic) BOOL actionIndicatorHidden;
@@ -29,7 +29,7 @@
 @property (nonatomic, retain) UILabel *quantityLabel;
 @property (nonatomic, retain) PXRoundedCornerOverlayView *roundCornerOverlay;
 @property (nonatomic, retain) UIView *selectionView;
-@property (nonatomic) double textAlpha;
+@property (nonatomic) float textAlpha;
 
 + (float)preferredHeightForWidth:(float)arg1 forAvatarPercentage:(float)arg2 withSizeClass:(int)arg3 isFavorite:(BOOL)arg4;
 
@@ -42,7 +42,7 @@
 - (void)contentSizeCategoryDidChangeNotification:(id)arg1;
 - (void)dealloc;
 - (id)image;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isActionIndicatorHidden;
 - (BOOL)isFavorite;
 - (BOOL)isReordering;

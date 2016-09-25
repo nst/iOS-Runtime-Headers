@@ -14,25 +14,25 @@
 + (id)_originalResourceTypes;
 
 - (id)_colorAwareResourceTypes;
-- (int)_fetchResourcesForPruningWithBatchHandler:(id /* block */)arg1 budget:(int)arg2;
+- (long long)_fetchResourcesForPruningWithBatchHandler:(id /* block */)arg1 budget:(long long)arg2;
 - (void)_handleCacheDeleteRegistration;
 - (id)_identifierForResource:(id)arg1;
-- (int)_localResourcesSize;
+- (long long)_localResourcesSize;
 - (id)_notOnDemandDownloadPredicate;
 - (id)_onDemandDownloadPredicate;
 - (id)_predicateForCPLResourceType:(unsigned int)arg1 additionalAssetConditions:(id)arg2 additionalResourcePredicates:(id)arg3;
 - (id)_predicatesForPrune;
-- (int)_purgeableAmount;
+- (long long)_purgeableAmount;
 - (void)_runOnWorkQueueWithTransaction:(id)arg1 block:(id /* block */)arg2;
 - (void)_updateLocalSRGBFileForPrunedResource:(id)arg1 inPhotoLibrary:(id)arg2;
 - (void)_updateLocalStateForPrunedResource:(id)arg1 inPhotoLibrary:(id)arg2;
 - (void)dealloc;
-- (int)diskSpaceToPrune;
+- (long long)diskSpaceToPrune;
 - (id)init;
 - (id)initWithCPLManager:(id)arg1;
-- (int)pruneResources:(id)arg1 inPhotoLibrary:(id)arg2;
+- (long long)pruneResources:(id)arg1 inPhotoLibrary:(id)arg2;
 - (id)pruneStatusForDebug:(BOOL)arg1;
-- (int)startAutomaticPruneWithBudget:(int)arg1;
+- (long long)startAutomaticPruneWithBudget:(long long)arg1;
 - (void)stop;
 
 @end

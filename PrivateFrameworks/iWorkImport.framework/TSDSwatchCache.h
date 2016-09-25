@@ -7,19 +7,19 @@
 }
 
 + (void)applyFakeShadowForPresetsIfNecessary:(id)arg1 documentRoot:(id)arg2;
-+ (struct CGImage { }*)newImageForDarkBackground:(struct CGImage { }*)arg1 atScale:(float)arg2 ofSize:(struct CGSize { double x1; double x2; })arg3;
++ (struct CGImage { }*)newImageForDarkBackground:(struct CGImage { }*)arg1 atScale:(float)arg2 ofSize:(struct CGSize { float x1; float x2; })arg3;
 + (id)swatchCache;
 
 - (void)dealloc;
-- (id)imageForImagePreset:(id)arg1 imageSize:(struct CGSize { double x1; double x2; })arg2 imageScale:(float)arg3 imageInfo:(id)arg4 shouldClipVertically:(BOOL)arg5 documentRoot:(id)arg6;
-- (id)imageForMoviePreset:(id)arg1 imageSize:(struct CGSize { double x1; double x2; })arg2 imageScale:(float)arg3 movieInfo:(id)arg4 shouldClipVertically:(BOOL)arg5 documentRoot:(id)arg6;
-- (id)imageForShapePreset:(id)arg1 imageSize:(struct CGSize { double x1; double x2; })arg2 imageScale:(float)arg3 shapeType:(int)arg4 angle:(float)arg5 documentRoot:(id)arg6;
-- (struct CGSize { double x1; double x2; })imageSizeForPreset:(id)arg1 swatchSize:(struct CGSize { double x1; double x2; })arg2;
+- (id)imageForImagePreset:(id)arg1 imageSize:(struct CGSize { float x1; float x2; })arg2 imageScale:(float)arg3 imageInfo:(id)arg4 shouldClipVertically:(BOOL)arg5 documentRoot:(id)arg6;
+- (id)imageForMoviePreset:(id)arg1 imageSize:(struct CGSize { float x1; float x2; })arg2 imageScale:(float)arg3 movieInfo:(id)arg4 shouldClipVertically:(BOOL)arg5 documentRoot:(id)arg6;
+- (id)imageForShapePreset:(id)arg1 imageSize:(struct CGSize { float x1; float x2; })arg2 imageScale:(float)arg3 shapeType:(int)arg4 angle:(float)arg5 documentRoot:(id)arg6;
+- (struct CGSize { float x1; float x2; })imageSizeForPreset:(id)arg1 swatchSize:(struct CGSize { float x1; float x2; })arg2;
 - (id)init;
 - (id)p_maskInfoForMovieInfo:(id)arg1 context:(id)arg2;
-- (struct CGImage { }*)p_newImageWithConnectionLineKnobsForShape:(id)arg1 atScale:(float)arg2 ofSize:(struct CGSize { double x1; double x2; })arg3 overImage:(struct CGImage { }*)arg4;
+- (struct CGImage { }*)p_newImageWithConnectionLineKnobsForShape:(id)arg1 atScale:(float)arg2 ofSize:(struct CGSize { float x1; float x2; })arg3 overImage:(struct CGImage { }*)arg4;
 - (id)p_thumbnailImageDataForImageData:(id)arg1;
-- (struct CGSize { double x1; double x2; })shapeSwatchInset;
+- (struct CGSize { float x1; float x2; })shapeSwatchInset;
 - (void)warmStyle:(id)arg1 withFillProperty:(int)arg2 documentRoot:(id)arg3;
 
 @end

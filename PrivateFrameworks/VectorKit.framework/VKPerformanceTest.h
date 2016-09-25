@@ -7,7 +7,7 @@
     VKMapView * _mapView;
     NSString * _outputHeader;
     int  _resultCount;
-    struct VKPerformanceTestResult_struct { char *x1; double x2[5]; } * _results;
+    struct VKPerformanceTestResult_struct { char *x1; float x2[5]; } * _results;
     BOOL  _running;
 }
 

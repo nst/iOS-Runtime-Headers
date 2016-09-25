@@ -4,12 +4,12 @@
 
 @interface TKTLVRecord : NSObject {
     NSData * _data;
-    unsigned int  _tag;
+    unsigned long long  _tag;
     NSData * _value;
 }
 
 @property (nonatomic, readonly) NSData *data;
-@property (nonatomic, readonly) unsigned int tag;
+@property (nonatomic, readonly) unsigned long long tag;
 @property (nonatomic, readonly) NSData *value;
 
 + (id)parseFromDataSource:(id)arg1;
@@ -19,8 +19,8 @@
 - (void).cxx_destruct;
 - (id)data;
 - (id)description;
-- (id)initWithTag:(unsigned int)arg1 value:(id)arg2 data:(id)arg3;
-- (unsigned int)tag;
+- (id)initWithTag:(unsigned long long)arg1 value:(id)arg2 data:(id)arg3;
+- (unsigned long long)tag;
 - (id)value;
 
 @end

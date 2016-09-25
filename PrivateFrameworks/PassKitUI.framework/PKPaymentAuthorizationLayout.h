@@ -3,16 +3,16 @@
  */
 
 @interface PKPaymentAuthorizationLayout : NSObject {
-    double  _contentHorizontalMargin;
-    double  _glyphDimension;
+    float  _contentHorizontalMargin;
+    float  _glyphDimension;
     int  _style;
-    double  _valueLeftMargin;
+    float  _valueLeftMargin;
 }
 
-@property (nonatomic, readonly) double contentHorizontalMargin;
-@property (nonatomic, readonly) double glyphDimension;
+@property (nonatomic, readonly) float contentHorizontalMargin;
+@property (nonatomic, readonly) float glyphDimension;
 @property (nonatomic, readonly) int style;
-@property (nonatomic, readonly) double valueLeftMargin;
+@property (nonatomic, readonly) float valueLeftMargin;
 
 - (void)applyTraitCollection:(id)arg1;
 - (float)contentHorizontalMargin;

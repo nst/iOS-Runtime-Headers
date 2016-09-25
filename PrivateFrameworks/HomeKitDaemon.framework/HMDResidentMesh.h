@@ -4,7 +4,7 @@
 
 @interface HMDResidentMesh : NSObject <HMFLogging, HMFMessageReceiver, HMFTimerDelegate> {
     HMDAccountRegistry * _accountRegistry;
-    unsigned int  _broadcastRate;
+    unsigned long long  _broadcastRate;
     HMFTimer * _devicesChangedTimer;
     HMDHomeManager * _homeManager;
     NSSet * _primaryResidentForHomes;
@@ -19,7 +19,7 @@
 }
 
 @property (nonatomic) HMDAccountRegistry *accountRegistry;
-@property unsigned int broadcastRate;
+@property unsigned long long broadcastRate;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) HMFTimer *devicesChangedTimer;
@@ -66,7 +66,7 @@
 - (void)_removeConnectivityFromDeviceToAccessory:(id)arg1 activateTimer:(BOOL)arg2;
 - (void)_sendMessage:(id)arg1 payload:(id)arg2 target:(id)arg3 responseHandler:(id /* block */)arg4;
 - (id)accountRegistry;
-- (unsigned int)broadcastRate;
+- (unsigned long long)broadcastRate;
 - (void)dealloc;
 - (id)deviceForAccessory:(id)arg1;
 - (id)devicesChangedTimer;
@@ -83,7 +83,7 @@
 - (id)resident;
 - (id)residents;
 - (void)setAccountRegistry:(id)arg1;
-- (void)setBroadcastRate:(unsigned int)arg1;
+- (void)setBroadcastRate:(unsigned long long)arg1;
 - (void)setHomeManager:(id)arg1;
 - (void)setPrimaryResidentForHomes:(id)arg1;
 - (void)setReachableAccessories:(id)arg1;

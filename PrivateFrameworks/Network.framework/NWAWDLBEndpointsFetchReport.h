@@ -16,7 +16,7 @@
         unsigned int endpointsFetchTaskFailureCount : 1; 
         unsigned int endpointsFetchTaskSuccessCount : 1; 
     }  _has;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) int connectionCellularFallbackCount;
@@ -30,7 +30,7 @@
 @property (nonatomic) BOOL hasEndpointsFetchTaskFailureCount;
 @property (nonatomic) BOOL hasEndpointsFetchTaskSuccessCount;
 @property (nonatomic) BOOL hasTimestamp;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 
 - (int)connectionCellularFallbackCount;
 - (void)copyTo:(id)arg1;
@@ -62,8 +62,8 @@
 - (void)setHasEndpointsFetchTaskFailureCount:(BOOL)arg1;
 - (void)setHasEndpointsFetchTaskSuccessCount:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
-- (unsigned int)timestamp;
+- (void)setTimestamp:(unsigned long long)arg1;
+- (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 
 @end

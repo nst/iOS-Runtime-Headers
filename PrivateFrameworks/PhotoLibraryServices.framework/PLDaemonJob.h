@@ -19,7 +19,7 @@
 - (void)archiveXPCToDisk:(id)arg1;
 - (BOOL)clientWantsReply;
 - (id)connection;
-- (int)daemonOperation;
+- (long long)daemonOperation;
 - (void)dealloc;
 - (void)encodeToXPCObject:(id)arg1;
 - (void)handleReply;

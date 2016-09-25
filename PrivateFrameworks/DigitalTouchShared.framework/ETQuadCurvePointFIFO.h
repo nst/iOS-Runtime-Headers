@@ -3,41 +3,41 @@
  */
 
 @interface ETQuadCurvePointFIFO : ETPointFIFO {
-    struct vector<double __attribute__((ext_vector_type(2))), std::__1::allocator<double __attribute__((ext_vector_type(2)))> >="__begin_"^"__end_"^"__end_cap_"{__compressed_pair<double * __attribute__((ext_vector_type(2))), std::__1::allocator<double __attribute__((ext_vector_type(2)))> >="__first_"^ {}  _controlPoints;
+    struct vector<float __attribute__((ext_vector_type(2))), std::__1::allocator<float __attribute__((ext_vector_type(2)))> >="__begin_"^"__end_"^"__end_cap_"{__compressed_pair<float * __attribute__((ext_vector_type(2))), std::__1::allocator<float __attribute__((ext_vector_type(2)))> >="__first_"^ {}  _controlPoints;
     id /* block */  _emissionHandler;
     BOOL  _emitInterpolatedPoints;
     void _lastPoint;
-    struct vector<double __attribute__((ext_vector_type(2))), std::__1::allocator<double __attribute__((ext_vector_type(2)))> >="__begin_"^"__end_"^"__end_cap_"{__compressed_pair<double * __attribute__((ext_vector_type(2))), std::__1::allocator<double __attribute__((ext_vector_type(2)))> >="__first_"^ {}  _points;
-    struct vector<double __attribute__((ext_vector_type(2))), std::__1::allocator<double __attribute__((ext_vector_type(2)))> >="__begin_"^"__end_"^"__end_cap_"{__compressed_pair<double * __attribute__((ext_vector_type(2))), std::__1::allocator<double __attribute__((ext_vector_type(2)))> >="__first_"^ {}  _prevPoints;
-    double  _unitSize;
+    struct vector<float __attribute__((ext_vector_type(2))), std::__1::allocator<float __attribute__((ext_vector_type(2)))> >="__begin_"^"__end_"^"__end_cap_"{__compressed_pair<float * __attribute__((ext_vector_type(2))), std::__1::allocator<float __attribute__((ext_vector_type(2)))> >="__first_"^ {}  _points;
+    struct vector<float __attribute__((ext_vector_type(2))), std::__1::allocator<float __attribute__((ext_vector_type(2)))> >="__begin_"^"__end_"^"__end_cap_"{__compressed_pair<float * __attribute__((ext_vector_type(2))), std::__1::allocator<float __attribute__((ext_vector_type(2)))> >="__first_"^ {}  _prevPoints;
+    float  _unitSize;
 }
 
-@property (nonatomic) /* Warning: unhandled struct encoding: '{vector<double __attribute__((ext_vector_type(2)))' */ struct  controlPoints; /* unknown property attribute:  std::__1::allocator<double __attribute__((ext_vector_type(2)))> >=^}} */
+@property (nonatomic) /* Warning: unhandled struct encoding: '{vector<float __attribute__((ext_vector_type(2)))' */ struct  controlPoints; /* unknown property attribute:  std::__1::allocator<float __attribute__((ext_vector_type(2)))> >=^}} */
 @property (copy) id /* block */ emissionHandler;
 @property (nonatomic) BOOL emitInterpolatedPoints;
 @property (nonatomic) void lastPoint;
-@property (nonatomic) /* Warning: unhandled struct encoding: '{vector<double __attribute__((ext_vector_type(2)))' */ struct  points; /* unknown property attribute:  std::__1::allocator<double __attribute__((ext_vector_type(2)))> >=^}} */
-@property (nonatomic) /* Warning: unhandled struct encoding: '{vector<double __attribute__((ext_vector_type(2)))' */ struct  prevPoints; /* unknown property attribute:  std::__1::allocator<double __attribute__((ext_vector_type(2)))> >=^}} */
-@property (nonatomic) double unitSize;
+@property (nonatomic) /* Warning: unhandled struct encoding: '{vector<float __attribute__((ext_vector_type(2)))' */ struct  points; /* unknown property attribute:  std::__1::allocator<float __attribute__((ext_vector_type(2)))> >=^}} */
+@property (nonatomic) /* Warning: unhandled struct encoding: '{vector<float __attribute__((ext_vector_type(2)))' */ struct  prevPoints; /* unknown property attribute:  std::__1::allocator<float __attribute__((ext_vector_type(2)))> >=^}} */
+@property (nonatomic) float unitSize;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)addPoints:(/* Warning: Unrecognized filer type: '8' using 'void*' */ void**)arg1 count:(unsigned long)arg2;
 - (void)clear;
-- (struct vector<double __attribute__((ext_vector_type(2))), std::__1::allocator<double __attribute__((ext_vector_type(2)))> >=^^{__compressed_pair<double * __attribute__((ext_vector_type(2))), std::__1::allocator<double __attribute__((ext_vector_type(2)))> >=^ {})controlPoints;
+- (struct vector<float __attribute__((ext_vector_type(2))), std::__1::allocator<float __attribute__((ext_vector_type(2)))> >=^^{__compressed_pair<float * __attribute__((ext_vector_type(2))), std::__1::allocator<float __attribute__((ext_vector_type(2)))> >=^ {})controlPoints;
 - (id /* block */)emissionHandler;
 - (BOOL)emitInterpolatedPoints;
 - (void)flush;
 - (id)initWithFIFO:(id)arg1;
 - (void)lastPoint;
-- (struct vector<double __attribute__((ext_vector_type(2))), std::__1::allocator<double __attribute__((ext_vector_type(2)))> >=^^{__compressed_pair<double * __attribute__((ext_vector_type(2))), std::__1::allocator<double __attribute__((ext_vector_type(2)))> >=^ {})points;
-- (struct vector<double __attribute__((ext_vector_type(2))), std::__1::allocator<double __attribute__((ext_vector_type(2)))> >=^^{__compressed_pair<double * __attribute__((ext_vector_type(2))), std::__1::allocator<double __attribute__((ext_vector_type(2)))> >=^ {})prevPoints;
-- (void)setControlPoints:(struct vector<double __attribute__((ext_vector_type(2))), std::__1::allocator<double __attribute__((ext_vector_type(2)))> >=^^{__compressed_pair<double * __attribute__((ext_vector_type(2))), std::__1::allocator<double __attribute__((ext_vector_type(2)))> >=^ {})arg1;
+- (struct vector<float __attribute__((ext_vector_type(2))), std::__1::allocator<float __attribute__((ext_vector_type(2)))> >=^^{__compressed_pair<float * __attribute__((ext_vector_type(2))), std::__1::allocator<float __attribute__((ext_vector_type(2)))> >=^ {})points;
+- (struct vector<float __attribute__((ext_vector_type(2))), std::__1::allocator<float __attribute__((ext_vector_type(2)))> >=^^{__compressed_pair<float * __attribute__((ext_vector_type(2))), std::__1::allocator<float __attribute__((ext_vector_type(2)))> >=^ {})prevPoints;
+- (void)setControlPoints:(struct vector<float __attribute__((ext_vector_type(2))), std::__1::allocator<float __attribute__((ext_vector_type(2)))> >=^^{__compressed_pair<float * __attribute__((ext_vector_type(2))), std::__1::allocator<float __attribute__((ext_vector_type(2)))> >=^ {})arg1;
 - (void)setEmissionHandler:(id /* block */)arg1;
 - (void)setEmitInterpolatedPoints:(BOOL)arg1;
 - (void)setLastPoint;
-- (void)setPoints:(struct vector<double __attribute__((ext_vector_type(2))), std::__1::allocator<double __attribute__((ext_vector_type(2)))> >=^^{__compressed_pair<double * __attribute__((ext_vector_type(2))), std::__1::allocator<double __attribute__((ext_vector_type(2)))> >=^ {})arg1;
-- (void)setPrevPoints:(struct vector<double __attribute__((ext_vector_type(2))), std::__1::allocator<double __attribute__((ext_vector_type(2)))> >=^^{__compressed_pair<double * __attribute__((ext_vector_type(2))), std::__1::allocator<double __attribute__((ext_vector_type(2)))> >=^ {})arg1;
+- (void)setPoints:(struct vector<float __attribute__((ext_vector_type(2))), std::__1::allocator<float __attribute__((ext_vector_type(2)))> >=^^{__compressed_pair<float * __attribute__((ext_vector_type(2))), std::__1::allocator<float __attribute__((ext_vector_type(2)))> >=^ {})arg1;
+- (void)setPrevPoints:(struct vector<float __attribute__((ext_vector_type(2))), std::__1::allocator<float __attribute__((ext_vector_type(2)))> >=^^{__compressed_pair<float * __attribute__((ext_vector_type(2))), std::__1::allocator<float __attribute__((ext_vector_type(2)))> >=^ {})arg1;
 - (void)setUnitSize:(float)arg1;
 - (float)unitSize;
 

@@ -54,7 +54,7 @@
 - (id)initWithBundleIdentifier:(id)arg1;
 - (id)initWithBundleIdentifier:(id)arg1 storeIdentifier:(id)arg2;
 - (id)initWithBundleIdentifier:(id)arg1 storeIdentifier:(id)arg2 additionalStore:(BOOL)arg3;
-- (int)longLongForKey:(id)arg1;
+- (long long)longLongForKey:(id)arg1;
 - (unsigned int)maximumDataLengthPerKey;
 - (unsigned int)maximumKeyCount;
 - (unsigned int)maximumKeyLength;
@@ -67,7 +67,7 @@
 - (void)setData:(id)arg1 forKey:(id)arg2;
 - (void)setDictionary:(id)arg1 forKey:(id)arg2;
 - (void)setDouble:(double)arg1 forKey:(id)arg2;
-- (void)setLongLong:(int)arg1 forKey:(id)arg2;
+- (void)setLongLong:(long long)arg1 forKey:(id)arg2;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (void)setString:(id)arg1 forKey:(id)arg2;
 - (id)stringForKey:(id)arg1;

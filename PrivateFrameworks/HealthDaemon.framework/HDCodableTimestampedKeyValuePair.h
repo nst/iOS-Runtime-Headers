@@ -11,7 +11,7 @@
     }  _has;
     NSString * _key;
     double  _numberDoubleValue;
-    int  _numberIntValue;
+    long long  _numberIntValue;
     NSString * _stringValue;
     double  _timestamp;
 }
@@ -25,7 +25,7 @@
 @property (nonatomic) BOOL hasTimestamp;
 @property (nonatomic, retain) NSString *key;
 @property (nonatomic) double numberDoubleValue;
-@property (nonatomic) int numberIntValue;
+@property (nonatomic) long long numberIntValue;
 @property (nonatomic, retain) NSString *stringValue;
 @property (nonatomic) double timestamp;
 
@@ -50,7 +50,7 @@
 - (id)key;
 - (void)mergeFrom:(id)arg1;
 - (double)numberDoubleValue;
-- (int)numberIntValue;
+- (long long)numberIntValue;
 - (BOOL)readFrom:(id)arg1;
 - (void)setBytesValue:(id)arg1;
 - (void)setHasNumberDoubleValue:(BOOL)arg1;
@@ -58,7 +58,7 @@
 - (void)setHasTimestamp:(BOOL)arg1;
 - (void)setKey:(id)arg1;
 - (void)setNumberDoubleValue:(double)arg1;
-- (void)setNumberIntValue:(int)arg1;
+- (void)setNumberIntValue:(long long)arg1;
 - (void)setStringValue:(id)arg1;
 - (void)setTimestamp:(double)arg1;
 - (void)setTimestampWithDate:(id)arg1;

@@ -8,7 +8,7 @@
     struct CMBaseObject { } * assetDownloader;
     NSNumber * cachePrimingDownloadTokenNum;
     NSURL * destinationURL;
-    unsigned int  downloadToken;
+    unsigned long long  downloadToken;
     NSError * error;
     struct OpaqueFigAsset { } * figAsset;
     struct OpaqueFigPlaybackItem { } * playbackItem;

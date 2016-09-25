@@ -7,13 +7,13 @@
     struct { 
         BOOL willGenerateLayoutForSection; 
     }  _delegateRespondsTo;
-    struct _PXLayoutGeometry { int x1; struct CGPoint { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; struct CGAffineTransform { double x_4_1_1; double x_4_1_2; double x_4_1_3; double x_4_1_4; double x_4_1_5; double x_4_1_6; } x4; double x5; int x6; } * _geometryBuffer;
+    struct _PXLayoutGeometry { int x1; struct CGPoint { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; struct CGAffineTransform { float x_4_1_1; float x_4_1_2; float x_4_1_3; float x_4_1_4; float x_4_1_5; float x_4_1_6; } x4; float x5; int x6; } * _geometryBuffer;
     unsigned int  _geometryBufferCount;
     PXSectionedLayoutContent * _layoutContent;
     BOOL  _needsUpdateSeedItem;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _seedSize;
 }
 
@@ -23,7 +23,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) <PXSectionedLayoutItem> *seedItem;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } seedSize;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } seedSize;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -42,15 +42,15 @@
 - (void)dealloc;
 - (id)init;
 - (id)initWithAxis:(int)arg1 layoutGenerator:(id)arg2 dataSourceSnapshot:(id)arg3;
-- (id)initWithAxis:(int)arg1 layoutGenerator:(id)arg2 dataSourceSnapshot:(id)arg3 insets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg4;
+- (id)initWithAxis:(int)arg1 layoutGenerator:(id)arg2 dataSourceSnapshot:(id)arg3 insets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg4;
 - (id)initWithLayoutGenerator:(id)arg1 dataSourceSnapshot:(id)arg2;
 - (void)performChanges:(id /* block */)arg1;
 - (id)performChangesAndWait:(id /* block */)arg1;
-- (struct CGSize { double x1; double x2; })seedSize;
+- (struct CGSize { float x1; float x2; })seedSize;
 - (void)setDataSourceSnapshot:(id)arg1 withChangeDetails:(id)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setSeedItem:(id)arg1;
-- (void)setSeedSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setSeedSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)updateLayoutDataWithChangeDetails:(id)arg1;
 
 @end

@@ -3,10 +3,10 @@
  */
 
 @interface HUGridServiceCellLayoutOptions : HUGridCellLayoutOptions {
-    double  _lineSpacing;
+    float  _lineSpacing;
 }
 
-@property (nonatomic) double lineSpacing;
+@property (nonatomic) float lineSpacing;
 
 + (id)defaultOptionsForCellSizeSubclass:(int)arg1;
 

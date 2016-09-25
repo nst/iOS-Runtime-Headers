@@ -25,8 +25,8 @@
     unsigned int  _sequenceNumber;
     NSMutableArray * _serviceTags;
     struct GEOSessionID { 
-        unsigned int _high; 
-        unsigned int _low; 
+        unsigned long long _high; 
+        unsigned long long _low; 
     }  _sessionId;
     PBUnknownFields * _unknownFields;
 }
@@ -57,7 +57,7 @@
 @property (nonatomic) int requestSource;
 @property (nonatomic) unsigned int sequenceNumber;
 @property (nonatomic, retain) NSMutableArray *serviceTags;
-@property (nonatomic) struct GEOSessionID { unsigned int x1; unsigned int x2; } sessionId;
+@property (nonatomic) struct GEOSessionID { unsigned long long x1; unsigned long long x2; } sessionId;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 + (Class)serviceTagType;
@@ -104,7 +104,7 @@
 - (id)serviceTagAtIndex:(unsigned int)arg1;
 - (id)serviceTags;
 - (unsigned int)serviceTagsCount;
-- (struct GEOSessionID { unsigned int x1; unsigned int x2; })sessionId;
+- (struct GEOSessionID { unsigned long long x1; unsigned long long x2; })sessionId;
 - (void)setAppIdentifier:(id)arg1;
 - (void)setAppMajorVersion:(id)arg1;
 - (void)setAppMinorVersion:(id)arg1;
@@ -124,7 +124,7 @@
 - (void)setRequestSource:(int)arg1;
 - (void)setSequenceNumber:(unsigned int)arg1;
 - (void)setServiceTags:(id)arg1;
-- (void)setSessionId:(struct GEOSessionID { unsigned int x1; unsigned int x2; })arg1;
+- (void)setSessionId:(struct GEOSessionID { unsigned long long x1; unsigned long long x2; })arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
 

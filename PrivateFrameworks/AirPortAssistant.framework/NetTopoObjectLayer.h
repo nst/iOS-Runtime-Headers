@@ -6,47 +6,47 @@
     NetTopoObjectLayer * _ancestor;
     id  _associatedNode;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _boundsSizeConstraint;
-    double  _change;
+    float  _change;
     NSMutableArray * _children;
     unsigned int  _column;
     NetTopoObjectLayer * _contourThread;
     BOOL  _ghosted;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _imageCoreFrame;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _imageFrame;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _imageSelectionFrame;
     BOOL  _isExpanded;
     BubbleTextLayer * _labelLayer;
-    double  _labelPinnedHeight;
+    float  _labelPinnedHeight;
     struct CGColor { } * _labelSelectedFillColor;
     struct CGColor { } * _labelSelectedFillColor2;
     struct CGColor { } * _labelSelectedTextColor;
@@ -54,16 +54,16 @@
     struct CGColor { } * _labelUnselectedFillColor;
     struct CGColor { } * _labelUnselectedTextColor;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _layoutOrigin;
-    double  _layoutScale;
-    double  _mod;
+    float  _layoutScale;
+    float  _mod;
     unsigned int  _number;
     struct CGImage { } * _objectImage;
     id  _owningView;
     NetTopoObjectLayer * _parent;
-    double  _prelim;
+    float  _prelim;
     unsigned int  _row;
     NSString * _saveLabel;
     NSString * _saveLable;
@@ -74,12 +74,12 @@
     BOOL  _selectable;
     BOOL  _selected;
     struct CGColor { } * _selectionColor;
-    double  _selectionCornerRadius;
-    double  _selectionRectOutset;
-    double  _shift;
+    float  _selectionCornerRadius;
+    float  _selectionRectOutset;
+    float  _shift;
     BOOL  _smallSize;
     UIImage * _statusBadgeImage;
-    double  _statusLightInterval;
+    float  _statusLightInterval;
     unsigned int  _statusLightMode;
     unsigned int  _statusLightState;
     NSTimer * _statusLightTimer;
@@ -87,43 +87,43 @@
     unsigned int  _topoBadgeNumber;
     TopoNumberBadge * _topoNumberBadge;
     TopoProgressBar * _topoProgressBar;
-    double  _topoProgressValue;
+    float  _topoProgressValue;
     int  _topoStyle;
     id  _userObject;
 }
 
 @property (nonatomic) NetTopoObjectLayer *ancestor;
 @property (nonatomic, retain) id associatedNode;
-@property (nonatomic) struct CGSize { double x1; double x2; } boundsSizeConstraint;
-@property (nonatomic) double change;
+@property (nonatomic) struct CGSize { float x1; float x2; } boundsSizeConstraint;
+@property (nonatomic) float change;
 @property (nonatomic, retain) NSMutableArray *children;
 @property (nonatomic) unsigned int column;
 @property (nonatomic) NetTopoObjectLayer *contourThread;
 @property (getter=isExpanded, nonatomic) BOOL expanded;
 @property (getter=isGhosted, nonatomic) BOOL ghosted;
 @property (nonatomic, retain) NSString *label;
-@property (nonatomic) double labelPinnedHeight;
-@property (nonatomic) struct CGPoint { double x1; double x2; } layoutOrigin;
-@property (nonatomic) double layoutScale;
-@property (nonatomic) double mod;
+@property (nonatomic) float labelPinnedHeight;
+@property (nonatomic) struct CGPoint { float x1; float x2; } layoutOrigin;
+@property (nonatomic) float layoutScale;
+@property (nonatomic) float mod;
 @property (nonatomic) unsigned int number;
 @property (nonatomic, readonly) unsigned int numberOfChildren;
 @property (nonatomic, retain) struct CGImage { }*objectImage;
 @property (nonatomic) id owningView;
 @property (nonatomic, retain) NetTopoObjectLayer *parent;
 @property (nonatomic, readonly) NetTopoObjectLayer *parentDevice;
-@property (nonatomic) double prelim;
+@property (nonatomic) float prelim;
 @property (nonatomic) unsigned int row;
 @property (nonatomic, retain) NSString *saveLabel;
 @property (nonatomic, retain) NSString *secondaryLabel;
 @property (getter=isSelectable, nonatomic) BOOL selectable;
 @property (getter=isSelected, nonatomic) BOOL selected;
-@property (nonatomic) double shift;
+@property (nonatomic) float shift;
 @property (nonatomic) BOOL smallSize;
 @property (nonatomic, retain) UIImage *statusBadgeImage;
 @property (nonatomic) unsigned int statusLightMode;
 @property (nonatomic) unsigned int topoBadgeNumber;
-@property (nonatomic) double topoProgressValue;
+@property (nonatomic) float topoProgressValue;
 @property (nonatomic, retain) id userObject;
 
 + (BOOL)needsDisplayForKey:(id)arg1;
@@ -131,7 +131,7 @@
 - (void)addChild:(id)arg1;
 - (id)ancestor;
 - (id)associatedNode;
-- (struct CGSize { double x1; double x2; })boundsSizeConstraint;
+- (struct CGSize { float x1; float x2; })boundsSizeConstraint;
 - (float)change;
 - (id)childAtIndex:(unsigned int)arg1;
 - (id)children;
@@ -143,9 +143,9 @@
 - (id)describeOne:(id)arg1 uiLayer:(id)arg2 indent:(unsigned int)arg3;
 - (void)drawInContext:(struct CGContext { }*)arg1;
 - (id)firstChild;
-- (struct { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGPoint { double x_2_1_1; double x_2_1_2; } x2; struct CGPoint { double x_3_1_1; double x_3_1_2; } x3; struct CGPoint { double x_4_1_1; double x_4_1_2; } x4; })getConnectionAttachmentLocations;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })getFrameContainingAllSublayers;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })getUserInteractionBounds;
+- (struct { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGPoint { float x_2_1_1; float x_2_1_2; } x2; struct CGPoint { float x_3_1_1; float x_3_1_2; } x3; struct CGPoint { float x_4_1_1; float x_4_1_2; } x4; })getConnectionAttachmentLocations;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })getFrameContainingAllSublayers;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })getUserInteractionBounds;
 - (id)init;
 - (void)initNetTopoObjectLayerCommonWithStyle:(int)arg1 andOwningView:(id)arg2;
 - (id)initWithUIStyle:(int)arg1 andOwningView:(id)arg2;
@@ -157,7 +157,7 @@
 - (id)label;
 - (float)labelPinnedHeight;
 - (id)lastChild;
-- (struct CGPoint { double x1; double x2; })layoutOrigin;
+- (struct CGPoint { float x1; float x2; })layoutOrigin;
 - (float)layoutScale;
 - (void)layoutSublayers;
 - (void)loadStatusImagesForScale:(float)arg1;
@@ -176,7 +176,7 @@
 - (id)secondaryLabel;
 - (void)setAncestor:(id)arg1;
 - (void)setAssociatedNode:(id)arg1;
-- (void)setBoundsSizeConstraint:(struct CGSize { double x1; double x2; })arg1;
+- (void)setBoundsSizeConstraint:(struct CGSize { float x1; float x2; })arg1;
 - (void)setChange:(float)arg1;
 - (void)setChildren:(id)arg1;
 - (void)setColumn:(unsigned int)arg1;
@@ -185,7 +185,7 @@
 - (void)setGhosted:(BOOL)arg1;
 - (void)setLabel:(id)arg1;
 - (void)setLabelPinnedHeight:(float)arg1;
-- (void)setLayoutOrigin:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setLayoutOrigin:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setLayoutScale:(float)arg1;
 - (void)setMod:(float)arg1;
 - (void)setNumber:(unsigned int)arg1;

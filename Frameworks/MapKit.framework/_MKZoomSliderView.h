@@ -6,20 +6,20 @@
     BOOL  _active;
     UIView * _knob;
     NSLayoutConstraint * _knobCenterYConstraint;
-    double  _lastTrackShadowImageScale;
+    float  _lastTrackShadowImageScale;
     UIImageView * _shadowImageView;
-    double  _zoomFraction;
+    float  _zoomFraction;
 }
 
 @property (getter=isActive, nonatomic) BOOL active;
-@property (nonatomic) double zoomFraction;
+@property (nonatomic) float zoomFraction;
 
 - (void).cxx_destruct;
 - (void)didMoveToWindow;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isActive;
 - (void)setActive:(BOOL)arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setZoomFraction:(float)arg1;
 - (void)updateConstraints;
 - (float)zoomFraction;

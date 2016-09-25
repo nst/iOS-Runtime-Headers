@@ -34,8 +34,8 @@
     NSData * _originalRouteZilchPoints;
     NSMutableArray * _serviceTags;
     struct GEOSessionID { 
-        unsigned int _high; 
-        unsigned int _low; 
+        unsigned long long _high; 
+        unsigned long long _low; 
     }  _sessionID;
     NSData * _sessionState;
     struct GEOTimepoint { 
@@ -95,7 +95,7 @@
 @property (nonatomic, retain) NSData *originalRouteID;
 @property (nonatomic, retain) NSData *originalRouteZilchPoints;
 @property (nonatomic, retain) NSMutableArray *serviceTags;
-@property (nonatomic) struct GEOSessionID { unsigned int x1; unsigned int x2; } sessionID;
+@property (nonatomic) struct GEOSessionID { unsigned long long x1; unsigned long long x2; } sessionID;
 @property (nonatomic, retain) NSData *sessionState;
 @property (nonatomic) struct GEOTimepoint { double x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; } timepoint;
 @property (nonatomic, retain) GEOTFTrafficSnapshot *trafficSnapshot;
@@ -180,7 +180,7 @@
 - (id)serviceTagAtIndex:(unsigned int)arg1;
 - (id)serviceTags;
 - (unsigned int)serviceTagsCount;
-- (struct GEOSessionID { unsigned int x1; unsigned int x2; })sessionID;
+- (struct GEOSessionID { unsigned long long x1; unsigned long long x2; })sessionID;
 - (id)sessionState;
 - (void)setAdditionalEnabledMarkets:(id)arg1;
 - (void)setAllowPartialResults:(BOOL)arg1;
@@ -210,7 +210,7 @@
 - (void)setOriginalRouteID:(id)arg1;
 - (void)setOriginalRouteZilchPoints:(id)arg1;
 - (void)setServiceTags:(id)arg1;
-- (void)setSessionID:(struct GEOSessionID { unsigned int x1; unsigned int x2; })arg1;
+- (void)setSessionID:(struct GEOSessionID { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)setSessionState:(id)arg1;
 - (void)setTimepoint:(struct GEOTimepoint { double x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; })arg1;
 - (void)setTrafficSnapshot:(id)arg1;

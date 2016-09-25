@@ -3,11 +3,11 @@
  */
 
 @interface _UIViewBaselineLoweringInfo : NSObject {
-    double  _baselineOffset;
+    float  _baselineOffset;
     UIView * _baselineView;
 }
 
-@property (nonatomic) double baselineOffset;
+@property (nonatomic) float baselineOffset;
 @property (nonatomic) UIView *baselineView;
 
 - (float)baselineOffset;

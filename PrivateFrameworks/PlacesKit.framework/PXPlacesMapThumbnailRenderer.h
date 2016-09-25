@@ -16,7 +16,7 @@
 @property (retain) id extendedTraitObserver;
 @property (readonly) unsigned int hash;
 @property (retain) <PXPlacesMapGeotaggableInfoDelegate> *informationDelegate;
-@property (readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } minimumEdgeInsets;
+@property (readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } minimumEdgeInsets;
 @property (nonatomic) <PXPlacesMapPipelineComponentProvider> *pipelineComponentProvider;
 @property (readonly) unsigned int popoverImageType;
 @property (readonly) Class superclass;
@@ -27,10 +27,10 @@
 - (void)dealloc;
 - (id)extendedTraitCollection;
 - (id)extendedTraitObserver;
-- (void)imageForGeotaggable:(id)arg1 ofSize:(struct CGSize { double x1; double x2; })arg2 networkAccessAllowed:(BOOL)arg3 andCompletion:(id /* block */)arg4;
+- (void)imageForGeotaggable:(id)arg1 ofSize:(struct CGSize { float x1; float x2; })arg2 networkAccessAllowed:(BOOL)arg3 andCompletion:(id /* block */)arg4;
 - (id)informationDelegate;
 - (id)initWithTraitCollection:(id)arg1 andInforamtionDelegate:(id)arg2 popoverImageType:(unsigned int)arg3;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })minimumEdgeInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })minimumEdgeInsets;
 - (id)pipelineComponentProvider;
 - (unsigned int)popoverImageType;
 - (void)reset;

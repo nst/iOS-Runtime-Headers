@@ -17,7 +17,7 @@
     NSString * _recordKey;
     struct _OpaquePCSShareProtection { } * _recordPCS;
     BOOL  _shouldReadRawEncryptedData;
-    unsigned int  _size;
+    unsigned long long  _size;
     CKSQLite * _sqlite;
     int  _state;
     int  _storageGroupingPolicy;
@@ -45,7 +45,7 @@
 @property (nonatomic) struct _OpaquePCSShareProtection { }*recordPCS;
 @property (nonatomic) BOOL shouldReadRawEncryptedData;
 @property (nonatomic, copy) NSData *signature;
-@property (nonatomic) unsigned int size;
+@property (nonatomic) unsigned long long size;
 @property (nonatomic, retain) CKSQLite *sqlite;
 @property (nonatomic) int state;
 @property (nonatomic) int storageGroupingPolicy;
@@ -135,7 +135,7 @@
 - (void)setRecordPCS:(struct _OpaquePCSShareProtection { }*)arg1;
 - (void)setShouldReadRawEncryptedData:(BOOL)arg1;
 - (void)setSignature:(id)arg1;
-- (void)setSize:(unsigned int)arg1;
+- (void)setSize:(unsigned long long)arg1;
 - (void)setSqlite:(id)arg1;
 - (void)setState:(int)arg1;
 - (void)setStorageGroupingPolicy:(int)arg1;
@@ -146,13 +146,13 @@
 - (void)setWasCached:(BOOL)arg1;
 - (BOOL)shouldReadRawEncryptedData;
 - (id)signature;
-- (unsigned int)size;
+- (unsigned long long)size;
 - (id)sqlite;
 - (id)sqliteOrRaise;
 - (int)state;
 - (int)storageGroupingPolicy;
 - (void)updateItemAtIndex:(int)arg1 withFileURL:(id)arg2;
-- (void)updateItemAtIndex:(int)arg1 withSignature:(id)arg2 size:(unsigned int)arg3 itemID:(unsigned int)arg4 sectionIndex:(unsigned int)arg5;
+- (void)updateItemAtIndex:(int)arg1 withSignature:(id)arg2 size:(unsigned long long)arg3 itemID:(unsigned long long)arg4 sectionIndex:(unsigned int)arg5;
 - (void)updateItemsAtIndexes:(id)arg1 fileURLs:(id)arg2;
 - (int)uploadRank;
 - (BOOL)uploaded;

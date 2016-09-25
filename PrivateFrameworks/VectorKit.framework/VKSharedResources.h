@@ -49,13 +49,13 @@
     }  _stylesheetVendor;
 }
 
-@property (nonatomic, readonly) struct AlphaAtlas { unsigned int x1; bool x2; unsigned int x3; unsigned int x4; unsigned int x5; double x6; struct Texture2D {} *x7; }*alphaAtlas;
+@property (nonatomic, readonly) struct AlphaAtlas { unsigned int x1; bool x2; unsigned int x3; unsigned int x4; unsigned int x5; float x6; struct Texture2D {} *x7; }*alphaAtlas;
 @property (nonatomic, readonly) struct Device { int (**x1)(); struct DeviceVersion { unsigned int x_2_1_1; unsigned int x_2_1_2; } x2; struct DeviceCapabilities { bool x_3_1_1; unsigned int x_3_1_2; unsigned int x_3_1_3; unsigned int x_3_1_4; } x3; struct DeviceAPIProperties { int x_4_1_1; double x_4_1_2; } x4; int x5; int x6; }*device;
 @property (nonatomic, readonly) struct DistanceAtlas { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; struct Texture2D {} *x5; }*distanceAtlas;
 @property (nonatomic, readonly) VKGGLTextureManager *gglTextureManager;
-@property (nonatomic, readonly) struct IsoAlphaAtlas { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; double x5; struct Texture2D {} *x6; struct shared_ptr<ggl::SamplerState> { struct SamplerState {} *x_7_1_1; struct __shared_weak_count {} *x_7_1_2; } x7; }*highInflationAlphaAtlas;
+@property (nonatomic, readonly) struct IsoAlphaAtlas { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; float x5; struct Texture2D {} *x6; struct shared_ptr<ggl::SamplerState> { struct SamplerState {} *x_7_1_1; struct __shared_weak_count {} *x_7_1_2; } x7; }*highInflationAlphaAtlas;
 @property (nonatomic, readonly) VKIconManager *iconManager;
-@property (nonatomic, readonly) struct IsoAlphaAtlas { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; double x5; struct Texture2D {} *x6; struct shared_ptr<ggl::SamplerState> { struct SamplerState {} *x_7_1_1; struct __shared_weak_count {} *x_7_1_2; } x7; }*isoAlphaAtlas;
+@property (nonatomic, readonly) struct IsoAlphaAtlas { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; float x5; struct Texture2D {} *x6; struct shared_ptr<ggl::SamplerState> { struct SamplerState {} *x_7_1_1; struct __shared_weak_count {} *x_7_1_2; } x7; }*isoAlphaAtlas;
 @property (nonatomic, readonly) VKResourceManager *resourceManager;
 @property (nonatomic, readonly) const struct StandardLibrary { int (**x1)(); struct ResourceManager {} *x2; struct RenderResource {} *x3; struct ShaderLibraryDescriptor {} *x4; /* Warning: unhandled struct encoding: '{vector<ggl::ShaderLibrary::FunctionEntry' */ struct x5; }*shaderLibrary; /* unknown property attribute:  std::__1::allocator<std::__1::shared_ptr<ggl::Shader> > >=^{shared_ptr<ggl::Shader>}}}{shared_ptr<ggl::ShaderLibraryData>=^{ShaderLibraryData}^{__shared_weak_count}}} */
 @property (nonatomic, readonly) VKShieldManager *shieldManager;
@@ -67,14 +67,14 @@
 - (void).cxx_destruct;
 - (id)_initWithConfiguration:(id)arg1 device:(const struct shared_ptr<ggl::Device> { struct Device {} *x1; struct __shared_weak_count {} *x2; }*)arg2 standardLibrary:(const struct shared_ptr<ggl::StandardLibrary> { struct StandardLibrary {} *x1; struct __shared_weak_count {} *x2; }*)arg3;
 - (void)addResourceUser;
-- (struct AlphaAtlas { unsigned int x1; bool x2; unsigned int x3; unsigned int x4; unsigned int x5; double x6; struct Texture2D {} *x7; }*)alphaAtlas;
+- (struct AlphaAtlas { unsigned int x1; bool x2; unsigned int x3; unsigned int x4; unsigned int x5; float x6; struct Texture2D {} *x7; }*)alphaAtlas;
 - (void)dealloc;
 - (struct Device { int (**x1)(); struct DeviceVersion { unsigned int x_2_1_1; unsigned int x_2_1_2; } x2; struct DeviceCapabilities { bool x_3_1_1; unsigned int x_3_1_2; unsigned int x_3_1_3; unsigned int x_3_1_4; } x3; struct DeviceAPIProperties { int x_4_1_1; double x_4_1_2; } x4; int x5; int x6; }*)device;
 - (struct DistanceAtlas { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; struct Texture2D {} *x5; }*)distanceAtlas;
 - (id)gglTextureManager;
-- (struct IsoAlphaAtlas { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; double x5; struct Texture2D {} *x6; struct shared_ptr<ggl::SamplerState> { struct SamplerState {} *x_7_1_1; struct __shared_weak_count {} *x_7_1_2; } x7; }*)highInflationAlphaAtlas;
+- (struct IsoAlphaAtlas { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; float x5; struct Texture2D {} *x6; struct shared_ptr<ggl::SamplerState> { struct SamplerState {} *x_7_1_1; struct __shared_weak_count {} *x_7_1_2; } x7; }*)highInflationAlphaAtlas;
 - (id)iconManager;
-- (struct IsoAlphaAtlas { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; double x5; struct Texture2D {} *x6; struct shared_ptr<ggl::SamplerState> { struct SamplerState {} *x_7_1_1; struct __shared_weak_count {} *x_7_1_2; } x7; }*)isoAlphaAtlas;
+- (struct IsoAlphaAtlas { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; float x5; struct Texture2D {} *x6; struct shared_ptr<ggl::SamplerState> { struct SamplerState {} *x_7_1_1; struct __shared_weak_count {} *x_7_1_2; } x7; }*)isoAlphaAtlas;
 - (void)purge;
 - (void)removeResourceUser;
 - (id)resourceManager;

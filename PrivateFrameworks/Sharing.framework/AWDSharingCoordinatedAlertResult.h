@@ -18,7 +18,7 @@
     int  _otherDevices;
     BOOL  _skipScanPhoneCall;
     BOOL  _skipScanVeryActive;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) unsigned int activityLevel;
@@ -34,7 +34,7 @@
 @property (nonatomic) int otherDevices;
 @property (nonatomic) BOOL skipScanPhoneCall;
 @property (nonatomic) BOOL skipScanVeryActive;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 
 - (unsigned int)activityLevel;
 - (BOOL)bestIsMe;
@@ -68,10 +68,10 @@
 - (void)setOtherDevices:(int)arg1;
 - (void)setSkipScanPhoneCall:(BOOL)arg1;
 - (void)setSkipScanVeryActive:(BOOL)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (BOOL)skipScanPhoneCall;
 - (BOOL)skipScanVeryActive;
-- (unsigned int)timestamp;
+- (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 
 @end

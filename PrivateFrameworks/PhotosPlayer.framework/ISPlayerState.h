@@ -3,22 +3,22 @@
  */
 
 @interface ISPlayerState : NSObject {
-    double  _crossfadeAlpha;
-    double  _crossfadeBlurRadius;
+    float  _crossfadeAlpha;
+    float  _crossfadeBlurRadius;
     NSString * _diagnosticLabel;
-    double  _photoBlurRadius;
-    double  _scale;
-    double  _videoAlpha;
-    double  _videoBlurRadius;
+    float  _photoBlurRadius;
+    float  _scale;
+    float  _videoAlpha;
+    float  _videoBlurRadius;
 }
 
-@property (nonatomic, readonly) double crossfadeAlpha;
-@property (nonatomic, readonly) double crossfadeBlurRadius;
+@property (nonatomic, readonly) float crossfadeAlpha;
+@property (nonatomic, readonly) float crossfadeBlurRadius;
 @property (nonatomic, readonly) NSString *diagnosticLabel;
-@property (nonatomic, readonly) double photoBlurRadius;
-@property (nonatomic, readonly) double scale;
-@property (nonatomic, readonly) double videoAlpha;
-@property (nonatomic, readonly) double videoBlurRadius;
+@property (nonatomic, readonly) float photoBlurRadius;
+@property (nonatomic, readonly) float scale;
+@property (nonatomic, readonly) float videoAlpha;
+@property (nonatomic, readonly) float videoBlurRadius;
 
 + (id)outputInfoWithScale:(float)arg1 photoBlurRadius:(float)arg2 videoAlpha:(float)arg3 videoBlurRadius:(float)arg4 crossfadeAlpha:(float)arg5 crossfadeBlurRadius:(float)arg6 label:(id)arg7;
 

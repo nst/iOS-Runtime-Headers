@@ -6,11 +6,11 @@
     UIView * __accessoryView;
     UIView * __accessoryViewContainer;
     NSMutableSet * __accessoryViewContainers;
-    double  __accessoryViewTopOutset;
+    float  __accessoryViewTopOutset;
     UIToolbar * __containedToolbar;
-    double  __containedToolbarHeight;
+    float  __containedToolbarHeight;
     BOOL  __isUpdating;
-    double  __minimumBackgroundHeight;
+    float  __minimumBackgroundHeight;
     BOOL  __needsUpdateAccessoryView;
     BOOL  __needsUpdateAccessoryViewContainer;
     BOOL  __needsUpdateAccessoryViewTopOutset;
@@ -24,11 +24,11 @@
 @property (setter=_setAccessoryView:, nonatomic, retain) UIView *_accessoryView;
 @property (setter=_setAccessoryViewContainer:, nonatomic, retain) UIView *_accessoryViewContainer;
 @property (nonatomic, readonly) NSMutableSet *_accessoryViewContainers;
-@property (setter=_setAccessoryViewTopOutset:, nonatomic) double _accessoryViewTopOutset;
+@property (setter=_setAccessoryViewTopOutset:, nonatomic) float _accessoryViewTopOutset;
 @property (setter=_setContainedToolbar:, nonatomic, retain) UIToolbar *_containedToolbar;
-@property (setter=_setContainedToolbarHeight:, nonatomic) double _containedToolbarHeight;
+@property (setter=_setContainedToolbarHeight:, nonatomic) float _containedToolbarHeight;
 @property (setter=_setUpdating:, nonatomic) BOOL _isUpdating;
-@property (setter=_setMinimumBackgroundHeight:, nonatomic) double _minimumBackgroundHeight;
+@property (setter=_setMinimumBackgroundHeight:, nonatomic) float _minimumBackgroundHeight;
 @property (setter=_setNeedsUpdateAccessoryView:, nonatomic) BOOL _needsUpdateAccessoryView;
 @property (setter=_setNeedsUpdateAccessoryViewContainer:, nonatomic) BOOL _needsUpdateAccessoryViewContainer;
 @property (setter=_setNeedsUpdateAccessoryViewTopOutset:, nonatomic) BOOL _needsUpdateAccessoryViewTopOutset;
@@ -51,7 +51,7 @@
 - (void)_assertInsideUpdate;
 - (id)_containedToolbar;
 - (float)_containedToolbarHeight;
-- (void)_getContainedToolbarFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg1 accessoryViewContainerFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg2 forBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
+- (void)_getContainedToolbarFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 accessoryViewContainerFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 forBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 - (void)_invalidateAccessoryView;
 - (void)_invalidateAccessoryViewContainer;
 - (void)_invalidateAccessoryViewTopOutset;
@@ -89,15 +89,15 @@
 - (void)_updateIfNeededWithAnimatorBlock:(id /* block */)arg1;
 - (void)_updateToolbarItemsIfNeeded;
 - (void)_updateViewsIfNeededWithAnimatorBlock:(id /* block */)arg1;
-- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (void)pu_animateBarTransitionWithContext:(id)arg1;
 - (void)setBarStyle:(int)arg1;
 - (void)setTintColor:(id)arg1;
 - (void)setToolbarViewModel:(id)arg1;
 - (void)setToolbarViewModel:(id)arg1 withAnimatorBlock:(id /* block */)arg2;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)toolbarViewModel;
 - (void)viewModel:(id)arg1 didChange:(id)arg2;
 

@@ -10,8 +10,8 @@
     PUVideoPlayerView * __playerView;
     id /* block */  __readyForDisplayCompletionHandler;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  __targetSize;
     int  __thumbnailRequestNumber;
     <PUDisplayAsset> * _asset;
@@ -28,7 +28,7 @@
 @property (setter=_setPlayer:, nonatomic, retain) AVPlayer *_player;
 @property (setter=_setPlayerView:, nonatomic, retain) PUVideoPlayerView *_playerView;
 @property (setter=_setReadyForDisplayCompletionHandler:, nonatomic, copy) id /* block */ _readyForDisplayCompletionHandler;
-@property (setter=_setTargetSize:, nonatomic) struct CGSize { double x1; double x2; } _targetSize;
+@property (setter=_setTargetSize:, nonatomic) struct CGSize { float x1; float x2; } _targetSize;
 @property (setter=_setThumbnailRequestNumber:, nonatomic) int _thumbnailRequestNumber;
 @property (setter=_setAsset:, nonatomic, retain) <PUDisplayAsset> *asset;
 @property (nonatomic, retain) PUAssetViewModel *assetViewModel;
@@ -56,9 +56,9 @@
 - (void)_setPlayer:(id)arg1;
 - (void)_setPlayerView:(id)arg1;
 - (void)_setReadyForDisplayCompletionHandler:(id /* block */)arg1;
-- (void)_setTargetSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)_setTargetSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_setThumbnailRequestNumber:(int)arg1;
-- (struct CGSize { double x1; double x2; })_targetSize;
+- (struct CGSize { float x1; float x2; })_targetSize;
 - (int)_thumbnailRequestNumber;
 - (void)_updateImage;
 - (void)_updateReadyForDisplay;

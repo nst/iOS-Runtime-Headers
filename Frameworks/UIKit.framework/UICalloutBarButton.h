@@ -5,13 +5,13 @@
 @interface UICalloutBarButton : UIButton {
     BOOL  forceFlash;
     SEL  m_action;
-    double  m_additionalContentHeight;
+    float  m_additionalContentHeight;
     BOOL  m_configured;
-    double  m_contentScale;
-    double  m_contentWidth;
-    double  m_dividerOffset;
+    float  m_contentScale;
+    float  m_contentWidth;
+    float  m_dividerOffset;
     BOOL  m_dontDismiss;
-    double  m_imageVerticalAdjust;
+    float  m_imageVerticalAdjust;
     BOOL  m_isText;
     BOOL  m_padLeft;
     BOOL  m_padRight;
@@ -23,13 +23,13 @@
 }
 
 @property (nonatomic, readonly) SEL action;
-@property (nonatomic, readonly) double additionalContentHeight;
-@property (nonatomic, readonly) double contentScale;
-@property (nonatomic, readonly) double contentWidth;
-@property (nonatomic) double dividerOffset;
+@property (nonatomic, readonly) float additionalContentHeight;
+@property (nonatomic, readonly) float contentScale;
+@property (nonatomic, readonly) float contentWidth;
+@property (nonatomic) float dividerOffset;
 @property (nonatomic) BOOL dontDismiss;
 @property (nonatomic) BOOL forceFlash;
-@property (nonatomic) double imageVerticalAdjust;
+@property (nonatomic) float imageVerticalAdjust;
 @property (nonatomic) int page;
 @property (nonatomic, retain) UITextReplacement *textReplacement;
 @property (nonatomic, readonly) int type;
@@ -42,7 +42,7 @@
 - (void)_commonSetupWithAction:(SEL)arg1 type:(int)arg2;
 - (SEL)action;
 - (float)additionalContentHeight;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })adjustRectForPosition:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 scaleRect:(BOOL)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })adjustRectForPosition:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 scaleRect:(BOOL)arg2;
 - (void)cancelFlash;
 - (void)configureForLeftPosition:(int)arg1;
 - (void)configureForMiddlePosition;
@@ -57,7 +57,7 @@
 - (void)fadeAndSendAction;
 - (void)flash;
 - (BOOL)forceFlash;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })imageRectForContentRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })imageRectForContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (float)imageVerticalAdjust;
 - (void)layoutSubviews;
 - (int)page;
@@ -74,7 +74,7 @@
 - (void)setupWithTitle:(id)arg1 action:(SEL)arg2 type:(int)arg3;
 - (void)setupWithTitle:(id)arg1 subtitle:(id)arg2 maxWidth:(float)arg3 action:(SEL)arg4 type:(int)arg5;
 - (id)textReplacement;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })titleRectForContentRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })titleRectForContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (int)type;
 
 @end

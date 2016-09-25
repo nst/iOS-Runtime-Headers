@@ -27,7 +27,7 @@
 - (void)localeDidChange:(id)arg1;
 - (int)numberOfRows;
 - (id)owningViewController;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })separatorInset;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })separatorInset;
 - (void)setData:(id)arg1;
 - (void)setOwningViewController:(id)arg1;
 - (BOOL)shouldHighlightRowAtIndex:(int)arg1;

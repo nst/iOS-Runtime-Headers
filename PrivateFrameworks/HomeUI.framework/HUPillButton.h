@@ -23,7 +23,7 @@
 - (void)didMoveToSuperview;
 - (id)initWithBackgroundStyle:(unsigned int)arg1;
 - (void)layoutSubviews;
-- (BOOL)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)setAdjustsFontSizeToFitWidth:(BOOL)arg1;
 - (void)setButtonText:(id)arg1;
 - (void)setHighlighted:(BOOL)arg1;

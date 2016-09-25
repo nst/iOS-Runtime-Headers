@@ -40,7 +40,7 @@
 - (void)_onServiceQueue_setDatabaseHasBookmarkableContents:(BOOL)arg1;
 - (void)_onServiceQueue_updateActiveServiceIfNeeded;
 - (void)_onServiceQueue_updateBoomkarkabilityState;
-- (id)_playbackPositionEntityWithValuesFromMusicLibraryTrackPersistentID:(int)arg1;
+- (id)_playbackPositionEntityWithValuesFromMusicLibraryTrackPersistentID:(long long)arg1;
 - (BOOL)applicationBecomingActive;
 - (void)beginUsingPlaybackPositionMetadata;
 - (BOOL)databaseHasBookmarkableContents;
@@ -49,7 +49,7 @@
 - (id)init;
 - (BOOL)isServiceActive;
 - (BOOL)isServiceActive;
-- (void)noteChangedPlaybackPositionMetadataForTrackPersistentID:(int)arg1 isCheckpoint:(BOOL)arg2;
+- (void)noteChangedPlaybackPositionMetadataForTrackPersistentID:(long long)arg1 isCheckpoint:(BOOL)arg2;
 - (id)queue;
 - (id)serviceQueue;
 - (void)setBeganUsingPlaybackPositionMetadata:(BOOL)arg1;

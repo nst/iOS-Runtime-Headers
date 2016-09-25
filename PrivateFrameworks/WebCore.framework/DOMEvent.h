@@ -12,7 +12,7 @@
 @property BOOL returnValue;
 @property (readonly) <DOMEventTarget> *srcElement;
 @property (readonly) <DOMEventTarget> *target;
-@property (readonly) unsigned int timeStamp;
+@property (readonly) unsigned long long timeStamp;
 @property (readonly, copy) NSString *type;
 
 - (BOOL)bubbles;
@@ -34,7 +34,7 @@
 - (void)stopImmediatePropagation;
 - (void)stopPropagation;
 - (id)target;
-- (unsigned int)timeStamp;
+- (unsigned long long)timeStamp;
 - (id)type;
 
 @end

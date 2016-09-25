@@ -13,8 +13,8 @@
     long  formatReaderInitializationOnce;
     struct OpaqueFigMutableComposition { } * mutableComposition;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  naturalSize;
     NSMutableArray * tracks;
     long  tracksInitializationOnce;

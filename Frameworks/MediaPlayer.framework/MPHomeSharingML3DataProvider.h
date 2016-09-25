@@ -30,7 +30,7 @@
 - (void)_homeSharingGroupIDDidChangeNotification:(id)arg1;
 - (void)_homeSharingLibraryDidBecomeUnavailable:(id)arg1;
 - (void)_homeSharingLibraryDidUpdateRevisionNumber:(id)arg1;
-- (id)_tokenDataForAccountID:(unsigned int)arg1;
+- (id)_tokenDataForAccountID:(unsigned long long)arg1;
 - (id)adjustedValueForMPProperty:(id)arg1 ofEntity:(id)arg2 withDefaultValue:(id)arg3;
 - (id)artworkDataSource;
 - (void)connectWithAuthenticationData:(id)arg1 completionBlock:(id /* block */)arg2 progressHandler:(id /* block */)arg3;
@@ -51,9 +51,9 @@
 - (id)protectedContentSupportStorageURL;
 - (BOOL)requiresAuthentication;
 - (void)setDatabaseID:(unsigned int)arg1;
-- (void)setRentalPlaybackStartDateForItemID:(unsigned int)arg1;
-- (void)setTokenData:(id)arg1 forAuthorizedDSID:(unsigned int)arg2;
-- (void)setValue:(id)arg1 forProperty:(id)arg2 ofItemWithIdentifier:(int)arg3 completionBlock:(id /* block */)arg4;
+- (void)setRentalPlaybackStartDateForItemID:(unsigned long long)arg1;
+- (void)setTokenData:(id)arg1 forAuthorizedDSID:(unsigned long long)arg2;
+- (void)setValue:(id)arg1 forProperty:(id)arg2 ofItemWithIdentifier:(long long)arg3 completionBlock:(id /* block */)arg4;
 - (id)uniqueIdentifier;
 
 @end

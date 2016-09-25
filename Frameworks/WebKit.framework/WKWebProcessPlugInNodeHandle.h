@@ -15,10 +15,10 @@
 @property (nonatomic, readonly) WKWebProcessPlugInNodeHandle *HTMLTableCellElementCellAbove;
 @property (nonatomic, readonly) BOOL HTMLTextAreaElementIsUserEdited;
 @property (readonly) /* Warning: unhandled struct encoding: '{Object=^^?@}' */ struct Object { int (**x1)(); id x2; }*_apiObject;
-@property (readonly) struct InjectedBundleNodeHandle { int (**x1)(); id x2; /* Warning: Unrecognized filer type: 'R' using 'void*' */ void*x3; void*x4; double x5; void*x6; void*x7; void*x8; unsigned int x9/* : ? */; unsigned char x10; out const void*x11; SEL x12; SEL x13; inout out double x14; void*x15; void*x16; void*x17; struct Node {} *x18; }*_nodeHandle;
+@property (readonly) struct InjectedBundleNodeHandle { int (**x1)(); id x2; /* Warning: Unrecognized filer type: 'R' using 'void*' */ void*x3; void*x4; float x5; void*x6; void*x7; void*x8; unsigned int x9/* : ? */; unsigned char x10; out const void*x11; SEL x12; SEL x13; inout out double x14; void*x15; void*x16; void*x17; struct Node {} *x18; }*_nodeHandle;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } elementBounds;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } elementBounds;
 @property (nonatomic, readonly) WKWebProcessPlugInFrame *frame;
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
@@ -30,9 +30,9 @@
 - (id)HTMLTableCellElementCellAbove;
 - (BOOL)HTMLTextAreaElementIsUserEdited;
 - (/* Warning: unhandled struct encoding: '{Object=^^?@}' */ struct Object { int (**x1)(); id x2; }*)_apiObject;
-- (struct InjectedBundleNodeHandle { int (**x1)(); id x2; /* Warning: Unrecognized filer type: 'R' using 'void*' */ void*x3; void*x4; double x5; void*x6; void*x7; void*x8; unsigned int x9/* : ? */; unsigned char x10; out const void*x11; SEL x12; SEL x13; inout out double x14; void*x15; void*x16; void*x17; struct Node {} *x18; }*)_nodeHandle;
+- (struct InjectedBundleNodeHandle { int (**x1)(); id x2; /* Warning: Unrecognized filer type: 'R' using 'void*' */ void*x3; void*x4; float x5; void*x6; void*x7; void*x8; unsigned int x9/* : ? */; unsigned char x10; out const void*x11; SEL x12; SEL x13; inout out double x14; void*x15; void*x16; void*x17; struct Node {} *x18; }*)_nodeHandle;
 - (void)dealloc;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })elementBounds;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })elementBounds;
 - (id)frame;
 - (id)htmlIFrameElementContentFrame;
 - (BOOL)isTextField;

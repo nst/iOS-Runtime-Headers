@@ -4,26 +4,26 @@
 
 @interface TSCHLegendViewCache : NSObject <TSCHUnretainedParent> {
     unsigned int  mCellCount;
-    struct CGPoint { double x1; double x2; } * mCellOrigins;
+    struct CGPoint { float x1; float x2; } * mCellOrigins;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  mFinalSize;
     TSCHLegendModelCache * mModelCache;
     unsigned int  mNumberOfColumns;
     unsigned int  mNumberOfRows;
 }
 
-@property (readonly) struct CGSize { double x1; double x2; } legendSize;
+@property (readonly) struct CGSize { float x1; float x2; } legendSize;
 @property (readonly) unsigned int numberOfColumns;
 @property (readonly) unsigned int numberOfRows;
 
 - (void)clearParent;
 - (void)dealloc;
 - (id)initWithLegendModelCache:(id)arg1 legendWidth:(float)arg2;
-- (struct CGSize { double x1; double x2; })legendSize;
+- (struct CGSize { float x1; float x2; })legendSize;
 - (unsigned int)numberOfColumns;
 - (unsigned int)numberOfRows;
-- (struct CGPoint { double x1; double x2; })originForCell:(id)arg1;
+- (struct CGPoint { float x1; float x2; })originForCell:(id)arg1;
 
 @end

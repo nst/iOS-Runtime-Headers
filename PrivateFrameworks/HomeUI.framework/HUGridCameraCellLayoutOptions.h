@@ -3,14 +3,14 @@
  */
 
 @interface HUGridCameraCellLayoutOptions : HUGridCellLayoutOptions {
-    double  _cameraViewHeight;
-    double  _headerHorizontalInnerMargins;
-    double  _headerViewHeight;
+    float  _cameraViewHeight;
+    float  _headerHorizontalInnerMargins;
+    float  _headerViewHeight;
 }
 
-@property (nonatomic) double cameraViewHeight;
-@property (nonatomic) double headerHorizontalInnerMargins;
-@property (nonatomic) double headerViewHeight;
+@property (nonatomic) float cameraViewHeight;
+@property (nonatomic) float headerHorizontalInnerMargins;
+@property (nonatomic) float headerViewHeight;
 
 + (id)defaultOptionsForCellSizeSubclass:(int)arg1;
 

@@ -6,17 +6,17 @@
     SSWishlist * _database;
 }
 
-@property (nonatomic, readonly) int accountIdentifier;
+@property (nonatomic, readonly) long long accountIdentifier;
 @property (nonatomic, readonly, copy) NSArray *items;
 
 + (id)activeWishlist;
 
 - (void).cxx_destruct;
-- (int)accountIdentifier;
+- (long long)accountIdentifier;
 - (void)addItem:(id)arg1;
-- (BOOL)containsItemWithIdentifier:(int)arg1;
+- (BOOL)containsItemWithIdentifier:(long long)arg1;
 - (unsigned int)hash;
-- (id)initWithAccountIdentifier:(int)arg1;
+- (id)initWithAccountIdentifier:(long long)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)items;
 - (void)postChangeNotification;

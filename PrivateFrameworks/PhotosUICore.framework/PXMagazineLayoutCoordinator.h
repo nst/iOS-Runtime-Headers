@@ -3,7 +3,7 @@
  */
 
 @interface PXMagazineLayoutCoordinator : NSObject {
-    double  _currentBestScore;
+    float  _currentBestScore;
     unsigned int  _currentIndex;
     PXMagazineRectArray * _currentLayout;
     PXMagazineRectArray * _fallbackLayout;
@@ -11,7 +11,7 @@
     NSMutableArray * _qualifiedLayouts;
     BOOL  _stop;
     BOOL  _stopIfAnyGoodLayout;
-    double  _tileAspectRatio;
+    float  _tileAspectRatio;
 }
 
 @property (nonatomic) unsigned int currentIndex;
@@ -20,7 +20,7 @@
 @property (nonatomic, retain) NSMutableArray *qualifiedLayouts;
 @property (nonatomic) BOOL stop;
 @property (nonatomic, readonly) BOOL stopIfAnyGoodLayout;
-@property (nonatomic, readonly) double tileAspectRatio;
+@property (nonatomic, readonly) float tileAspectRatio;
 
 - (void).cxx_destruct;
 - (id)currentBestLayout;

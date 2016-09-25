@@ -9,15 +9,15 @@
     NSString * _flatColorName;
     NSString * _gradientName;
     BOOL  _horizontal;
-    double  _middleLocation;
-    double  _opacity;
+    float  _middleLocation;
+    float  _opacity;
     NSString * _startColorName;
     BOOL  _usesRGBColors;
 }
 
 @property (nonatomic, readonly) NSString *flatColorName;
 @property (nonatomic) BOOL horizontal;
-@property (nonatomic) double opacity;
+@property (nonatomic) float opacity;
 @property (nonatomic, readonly) BOOL usesRGBColors;
 
 + (id)gradientWith3Colors:(id)arg1 middleLocation:(float)arg2;

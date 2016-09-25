@@ -29,7 +29,7 @@
     BOOL  _hasAdjustments;
     BOOL  _hidden;
     BOOL  _isPhotoIris;
-    unsigned int  _localResourcesState;
+    unsigned long long  _localResourcesState;
     struct CLLocationCoordinate2D { 
         double latitude; 
         double longitude; 
@@ -47,7 +47,7 @@
     unsigned int  _thumbnailIndex;
     NSDate * _trashedDate;
     NSString * _uniformTypeIdentifier;
-    int  _videoCpDurationValue;
+    long long  _videoCpDurationValue;
     unsigned short  _videoCpVisibilityState;
 }
 
@@ -119,7 +119,7 @@
 @property (getter=isLivePhotoVisibilityAdjustmentAllowed, nonatomic, readonly) BOOL livePhotoVisibilityAdjustmentAllowed;
 @property (nonatomic, readonly) unsigned int livePhotoVisibilityState;
 @property (nonatomic, readonly) NSDate *localDate;
-@property (nonatomic, readonly) unsigned int localResourcesState;
+@property (nonatomic, readonly) unsigned long long localResourcesState;
 @property (nonatomic, readonly) NSString *localizedGeoDescription;
 @property (nonatomic, readonly) CLLocation *location;
 @property (nonatomic, readonly) struct CLLocationCoordinate2D { double x1; double x2; } locationCoordinate;
@@ -136,15 +136,15 @@
 @property (nonatomic, readonly, copy) NSString *pathForTrimmedVideoFile;
 @property (nonatomic, readonly) NSArray *peopleNames;
 @property (nonatomic, readonly) unsigned int persistenceState;
-@property (nonatomic, readonly) struct { int x1; int x2; unsigned int x3; int x4; } photoIrisStillDisplayTime;
-@property (nonatomic, readonly) struct { int x1; int x2; unsigned int x3; int x4; } photoIrisVideoDuration;
+@property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } photoIrisStillDisplayTime;
+@property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } photoIrisVideoDuration;
 @property (nonatomic, readonly) unsigned int pixelHeight;
 @property (nonatomic, readonly) unsigned int pixelWidth;
 @property (nonatomic, readonly) BOOL representsBurst;
 @property (getter=isResourceDownloadPossible, nonatomic, readonly) BOOL resourceDownloadPossible;
 @property (nonatomic, readonly) short savedAssetType;
 @property (nonatomic, readonly) NSSet *sceneClassifications;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } size;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;
 @property (nonatomic, readonly) unsigned int sourceType;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) unsigned int thumbnailIndex;
@@ -153,10 +153,10 @@
 @property (nonatomic, readonly) NSString *uniformTypeIdentifier;
 @property (nonatomic, readonly) NSDate *universalDate;
 @property (nonatomic, readonly) NSString *uuid;
-@property (nonatomic, readonly) int videoCpDurationValue;
+@property (nonatomic, readonly) long long videoCpDurationValue;
 @property (nonatomic, readonly) unsigned short videoCpVisibilityState;
 @property (nonatomic, readonly) PFVideoAVObjectBuilder *videoObjectBuilder;
-@property (nonatomic, readonly) double weight;
+@property (nonatomic, readonly) float weight;
 
 // Image: /System/Library/Frameworks/Photos.framework/Photos
 
@@ -168,7 +168,7 @@
 + (id)_fetchAssetsMatchingMasterFingerPrint:(id)arg1;
 + (id)_fetchCuratedAssetInAssetCollection:(id)arg1 referenceAsset:(id)arg2 referencePersons:(id)arg3 onlyKey:(BOOL)arg4;
 + (id)_fetchRepresentativeAssetInAssetCollection:(id)arg1;
-+ (BOOL)_isLivePhotoWithPhotoIris:(BOOL)arg1 hasAdjustments:(BOOL)arg2 videoCpDuration:(int)arg3 videoCPVisibility:(unsigned short)arg4 sourceType:(unsigned int)arg5;
++ (BOOL)_isLivePhotoWithPhotoIris:(BOOL)arg1 hasAdjustments:(BOOL)arg2 videoCpDuration:(long long)arg3 videoCPVisibility:(unsigned short)arg4 sourceType:(unsigned int)arg5;
 + (id)_requestResultInfoForImageInfo:(id)arg1 videoInfo:(id)arg2 adjustmentInfo:(id)arg3 renderingError:(id)arg4;
 + (id)_transformMediaSubtypeComparisonPredicate:(id)arg1 options:(id)arg2;
 + (id)_transformValueExpression:(id)arg1 forKeyPath:(id)arg2;
@@ -299,7 +299,7 @@
 - (BOOL)hasLegacyAdjustments;
 - (BOOL)hasPhotoColorAdjustments;
 - (int)imageOrientation;
-- (struct CGSize { double x1; double x2; })imageSize;
+- (struct CGSize { float x1; float x2; })imageSize;
 - (id)initWithFetchDictionary:(id)arg1 propertyHint:(unsigned int)arg2 photoLibrary:(id)arg3;
 - (BOOL)isAudio;
 - (BOOL)isCloudPhotoLibraryAsset;
@@ -328,7 +328,7 @@
 - (BOOL)isVideo;
 - (short)kind;
 - (short)kindSubtype;
-- (unsigned int)localResourcesState;
+- (unsigned long long)localResourcesState;
 - (id)location;
 - (struct CLLocationCoordinate2D { double x1; double x2; })locationCoordinate;
 - (id)locationData;
@@ -375,7 +375,7 @@
 - (unsigned int)thumbnailIndex;
 - (id)trashedDate;
 - (id)uniformTypeIdentifier;
-- (int)videoCpDurationValue;
+- (long long)videoCpDurationValue;
 - (unsigned short)videoCpVisibilityState;
 
 // Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
@@ -403,8 +403,8 @@
 - (id)pathForOriginalImageFile;
 - (id)pathForOriginalVideoFile;
 - (id)pathForTrimmedVideoFile;
-- (struct { int x1; int x2; unsigned int x3; int x4; })photoIrisStillDisplayTime;
-- (struct { int x1; int x2; unsigned int x3; int x4; })photoIrisVideoDuration;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })photoIrisStillDisplayTime;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })photoIrisVideoDuration;
 - (id)videoObjectBuilder;
 
 // Image: /System/Library/PrivateFrameworks/NanoPhotosUICompanion.framework/NanoPhotosUICompanion
@@ -455,14 +455,14 @@
 + (id)px_fetchAssetsInArray:(id)arg1;
 + (id)px_fetchPlacesAssetsInAssetCollection:(id)arg1 options:(id)arg2;
 
-- (void)_px_adjustRectWithFaces:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg1 forAssetRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 verticalContentMode:(int)arg3;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })faceAreaRect;
+- (void)_px_adjustRectWithFaces:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 forAssetRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 verticalContentMode:(int)arg3;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })faceAreaRect;
 - (unsigned int)isContentEqualTo:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })px_bestCropRectForAspectRatio:(double)arg1 verticalContentMode:(int)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })px_bestCropRectForAspectRatio:(double)arg1 verticalContentMode:(int)arg2;
 - (id)px_mailingAddressIncludeZipCode:(BOOL)arg1;
 - (id)px_postalAddressIncludeZipCode:(BOOL)arg1;
 - (id)px_singleLineMailingAddressIncludeZipCode:(BOOL)arg1;
-- (struct CGSize { double x1; double x2; })size;
+- (struct CGSize { float x1; float x2; })size;
 - (float)weight;
 
 // Image: /System/Library/PrivateFrameworks/PlacesKit.framework/PlacesKit
@@ -477,15 +477,15 @@
 + (BOOL)vcp_usePHFaceExpression;
 
 - (id)vcp_exif;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })vcp_faceRectFrom:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })vcp_faceRectFrom:(id)arg1;
 - (id)vcp_fingerprint:(id)arg1;
-- (unsigned int)vcp_flagsForPHFace:(id)arg1 withFaceRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (unsigned int)vcp_flagsForPHFace:(id)arg1 withFaceRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (id)vcp_getAdjustmentPath;
 - (BOOL)vcp_isLivePhoto;
 - (BOOL)vcp_isPano;
 - (BOOL)vcp_isVideoSlowmo;
 - (id)vcp_modificationDate;
-- (struct CGSize { double x1; double x2; })vcp_originalSize;
+- (struct CGSize { float x1; float x2; })vcp_originalSize;
 - (long)vcp_queryPHFaces:(unsigned int*)arg1 results:(id*)arg2;
 
 @end

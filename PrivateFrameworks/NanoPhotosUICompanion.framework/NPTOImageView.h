@@ -6,8 +6,8 @@
     PHAsset * _asset;
     NSString * _assetPath;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _contentOffset;
     <NPTOImageViewDelegate> * _delegate;
     UIImage * _fullImage;
@@ -17,48 +17,48 @@
     double  _irisVDT;
     BOOL  _loaded;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _offcenterAdjustment;
     NPTOPhoto * _photo;
     UIScrollView * _scroller;
-    double  _zoomScale;
+    float  _zoomScale;
 }
 
 @property (nonatomic, retain) PHAsset *asset;
 @property (nonatomic, copy) NSString *assetPath;
-@property (nonatomic) struct CGPoint { double x1; double x2; } contentOffset;
+@property (nonatomic) struct CGPoint { float x1; float x2; } contentOffset;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) UIImage *fullImage;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) NPTOIrisView *imageView;
-@property (nonatomic) double interactiveProgress;
+@property (nonatomic) float interactiveProgress;
 @property (nonatomic, retain) NPTOPhoto *photo;
 @property (nonatomic, retain) UIScrollView *scroller;
 @property (readonly) Class superclass;
-@property (nonatomic) double zoomScale;
+@property (nonatomic) float zoomScale;
 
-+ (void)savePhoto:(id)arg1 contentOffset:(struct CGPoint { double x1; double x2; })arg2 zoomScale:(float)arg3 inDirectory:(id)arg4 completion:(id /* block */)arg5;
-+ (void)savePhoto:(id)arg1 contentOffset:(struct CGPoint { double x1; double x2; })arg2 zoomScale:(float)arg3 supplement:(id)arg4 inDirectory:(id)arg5 completion:(id /* block */)arg6;
-+ (void)savePhoto:(id)arg1 imageData:(id)arg2 irisURL:(id)arg3 contentOffset:(struct CGPoint { double x1; double x2; })arg4 zoomScale:(float)arg5 supplement:(id)arg6 inDirectory:(id)arg7 completion:(id /* block */)arg8;
++ (void)savePhoto:(id)arg1 contentOffset:(struct CGPoint { float x1; float x2; })arg2 zoomScale:(float)arg3 inDirectory:(id)arg4 completion:(id /* block */)arg5;
++ (void)savePhoto:(id)arg1 contentOffset:(struct CGPoint { float x1; float x2; })arg2 zoomScale:(float)arg3 supplement:(id)arg4 inDirectory:(id)arg5 completion:(id /* block */)arg6;
++ (void)savePhoto:(id)arg1 imageData:(id)arg2 irisURL:(id)arg3 contentOffset:(struct CGPoint { float x1; float x2; })arg4 zoomScale:(float)arg5 supplement:(id)arg6 inDirectory:(id)arg7 completion:(id /* block */)arg8;
 
 - (void).cxx_destruct;
 - (void)_updateView;
 - (id)asset;
 - (id)assetPath;
-- (struct CGPoint { double x1; double x2; })contentOffset;
+- (struct CGPoint { float x1; float x2; })contentOffset;
 - (id)delegate;
 - (id)fullImage;
 - (id)imageView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (float)interactiveProgress;
 - (void)interruptPlayback;
 - (void)irisViewDidBeginPlaying:(id)arg1;
 - (void)irisViewDidEndPlaying:(id)arg1;
 - (BOOL)isPlaying;
 - (void)layoutSubviews;
-- (struct CGPoint { double x1; double x2; })offcenterAdjustment;
+- (struct CGPoint { float x1; float x2; })offcenterAdjustment;
 - (void)pauseWithMode:(int)arg1;
 - (id)photo;
 - (void)playWithMode:(int)arg1;
@@ -68,12 +68,12 @@
 - (id)scroller;
 - (void)setAsset:(id)arg1;
 - (void)setAssetPath:(id)arg1;
-- (void)setContentOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFullImage:(id)arg1;
 - (void)setImageView:(id)arg1;
 - (void)setInteractiveProgress:(float)arg1;
-- (void)setOffcenterAdjustment:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setOffcenterAdjustment:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setPhoto:(id)arg1;
 - (void)setPhoto:(id)arg1 withImage:(id)arg2 allowIris:(BOOL)arg3;
 - (void)setScroller:(id)arg1;

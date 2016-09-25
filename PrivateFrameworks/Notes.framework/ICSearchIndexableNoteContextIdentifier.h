@@ -22,7 +22,7 @@
 - (unsigned int)hash;
 - (id)initForAnyContext;
 - (id)initWithContextIdentifierString:(id)arg1 isMainContext:(BOOL)arg2;
-- (id)initWithPropertyListObjectRepresentation:(id)arg1 version:(int)arg2;
+- (id)initWithPropertyListObjectRepresentation:(id)arg1 version:(long long)arg2;
 - (BOOL)isCompatibleWithContextIdentifier:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isMainContext;

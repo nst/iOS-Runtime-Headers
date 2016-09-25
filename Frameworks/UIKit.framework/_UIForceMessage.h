@@ -6,7 +6,7 @@
     BOOL  _reset;
     unsigned int  stage;
     double  timestamp;
-    double  touchForce;
+    float  touchForce;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -16,7 +16,7 @@
 @property (nonatomic) unsigned int stage;
 @property (readonly) Class superclass;
 @property (nonatomic) double timestamp;
-@property (nonatomic) double touchForce;
+@property (nonatomic) float touchForce;
 
 + (id)observe:(id /* block */)arg1;
 + (id)reset;

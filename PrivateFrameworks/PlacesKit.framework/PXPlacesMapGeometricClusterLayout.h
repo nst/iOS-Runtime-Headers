@@ -3,10 +3,10 @@
  */
 
 @interface PXPlacesMapGeometricClusterLayout : PXPlacesMapLayout {
-    double  _clusteringDistance;
+    float  _clusteringDistance;
 }
 
-@property (nonatomic) double clusteringDistance;
+@property (nonatomic) float clusteringDistance;
 
 - (id)_clusterGeotaggables:(id)arg1 forViewPort:(id)arg2;
 - (id)_findClusterOverlappingGeotaggable:(id)arg1 fromClusters:(id)arg2 forViewPort:(id)arg3;

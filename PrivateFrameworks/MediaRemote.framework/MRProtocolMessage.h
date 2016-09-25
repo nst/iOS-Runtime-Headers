@@ -8,7 +8,7 @@
     MSVMultiCallback * _messagePurgedCallbacks;
     MSVMultiCallback * _messageSentCallbacks;
     NSData * _protobufData;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
     PBCodable * _underlyingCodableMessage;
 }
 
@@ -21,7 +21,7 @@
 @property (nonatomic, readonly) unsigned int priority;
 @property (nonatomic, readonly) NSData *protobufData;
 @property (nonatomic, readonly) BOOL shouldLog;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 @property (nonatomic, readonly) unsigned int type;
 @property (nonatomic, retain) PBCodable *underlyingCodableMessage;
 
@@ -41,10 +41,10 @@
 - (id)protobufData;
 - (void)setError:(id)arg1;
 - (void)setIdentifier:(id)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (void)setUnderlyingCodableMessage:(id)arg1;
 - (BOOL)shouldLog;
-- (unsigned int)timestamp;
+- (unsigned long long)timestamp;
 - (unsigned int)type;
 - (id)underlyingCodableMessage;
 

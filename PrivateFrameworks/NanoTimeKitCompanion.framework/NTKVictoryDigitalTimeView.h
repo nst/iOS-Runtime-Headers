@@ -40,7 +40,7 @@
 - (void)setOverrideDate:(id)arg1 duration:(double)arg2;
 - (void)setStyle:(unsigned int)arg1;
 - (void)setTimeOffset:(double)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (unsigned int)style;
 - (void)timeFormatterTextDidChange:(id)arg1;
 - (void)willBeginEditing;

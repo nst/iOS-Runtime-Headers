@@ -3,36 +3,36 @@
  */
 
 @interface VideosExtrasMainMenuSectionMetrics : NSObject {
-    struct CGSize { double x1; double x2; } * _calculatedSizes;
+    struct CGSize { float x1; float x2; } * _calculatedSizes;
     <VideosExtrasMainMenuSectionMetricsDataSource> * _dataSource;
-    double  _desiredCellSpacing;
+    float  _desiredCellSpacing;
     UIFontDescriptor * _desiredFontDescriptor;
-    double  _desiredWidth;
-    double  _fittingCellSpacing;
+    float  _desiredWidth;
+    float  _fittingCellSpacing;
     UIFontDescriptor * _fittingFontDescriptor;
-    double  _fittingWidth;
+    float  _fittingWidth;
     int  _itemCount;
-    double  _minimumCellSpacing;
+    float  _minimumCellSpacing;
     UIFontDescriptor * _minimumFontDescriptor;
     BOOL  _needsUpdate;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _totalFittingSize;
 }
 
 @property (nonatomic) <VideosExtrasMainMenuSectionMetricsDataSource> *dataSource;
-@property (nonatomic) double desiredCellSpacing;
+@property (nonatomic) float desiredCellSpacing;
 @property (nonatomic, retain) UIFontDescriptor *desiredFontDescriptor;
-@property (nonatomic) double desiredWidth;
-@property (nonatomic, readonly) double fittingCellSpacing;
+@property (nonatomic) float desiredWidth;
+@property (nonatomic, readonly) float fittingCellSpacing;
 @property (nonatomic, readonly) UIFontDescriptor *fittingFontDescriptor;
-@property (nonatomic) double minimumCellSpacing;
+@property (nonatomic) float minimumCellSpacing;
 @property (nonatomic, retain) UIFontDescriptor *minimumFontDescriptor;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } totalFittingSize;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } totalFittingSize;
 
 - (void).cxx_destruct;
-- (struct CGSize { double x1; double x2; })_horizontalFittingSizeForFontDescriptor:(id)arg1 gutterSize:(float)arg2 itemCount:(int)arg3 itemSizes:(out struct CGSize { double x1; double x2; }*)arg4;
+- (struct CGSize { float x1; float x2; })_horizontalFittingSizeForFontDescriptor:(id)arg1 gutterSize:(float)arg2 itemCount:(int)arg3 itemSizes:(out struct CGSize { float x1; float x2; }*)arg4;
 - (void)_recalculateSizes;
 - (void)_setNeedsUpdate;
 - (void)_updateAllMetrics;
@@ -52,8 +52,8 @@
 - (void)setFittingWidth:(float)arg1;
 - (void)setMinimumCellSpacing:(float)arg1;
 - (void)setMinimumFontDescriptor:(id)arg1;
-- (struct CGSize { double x1; double x2; })sizeForCellAtIndex:(int)arg1;
-- (struct CGSize { double x1; double x2; })totalFittingSize;
+- (struct CGSize { float x1; float x2; })sizeForCellAtIndex:(int)arg1;
+- (struct CGSize { float x1; float x2; })totalFittingSize;
 - (void)updateSizes;
 
 @end

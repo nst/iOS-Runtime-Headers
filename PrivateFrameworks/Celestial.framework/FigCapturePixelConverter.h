@@ -17,8 +17,8 @@
 - (long)_buildBufferPool;
 - (long)_buildTransferSession;
 - (void)_purgeResources;
-- (long)convertPixelBuffer:(struct __CVBuffer { }*)arg1 cropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 allocateOutputFromBufferPool:(BOOL)arg3 outputPixelBuffer:(struct __CVBuffer {}**)arg4;
-- (long)convertSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 cropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 outputSampleBuffer:(struct opaqueCMSampleBuffer {}**)arg3;
+- (long)convertPixelBuffer:(struct __CVBuffer { }*)arg1 cropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 allocateOutputFromBufferPool:(BOOL)arg3 outputPixelBuffer:(struct __CVBuffer {}**)arg4;
+- (long)convertSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 cropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 outputSampleBuffer:(struct opaqueCMSampleBuffer {}**)arg3;
 - (void)dealloc;
 - (id)init;
 - (id)initWithPrefetchPool:(BOOL)arg1;

@@ -19,7 +19,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL playbackHasBegun;
-@property (nonatomic, readonly) double playbackRate;
+@property (nonatomic, readonly) float playbackRate;
 @property (nonatomic) unsigned int playbackState;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) id timeObserver;

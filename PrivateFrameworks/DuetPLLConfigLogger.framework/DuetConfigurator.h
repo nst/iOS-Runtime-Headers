@@ -20,7 +20,7 @@
 - (id)appBlackMap;
 - (id)appWhiteListArray;
 - (double)getDoubleFor:(id)arg1;
-- (int)getInt64For:(id)arg1;
+- (long long)getInt64For:(id)arg1;
 - (id)getNSNumberFor:(id)arg1;
 - (id)init;
 - (void)loadBundleConfigurations;

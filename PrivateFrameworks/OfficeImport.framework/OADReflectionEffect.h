@@ -4,19 +4,19 @@
 
 @interface OADReflectionEffect : OADEffect {
     int  mAlignment;
-    double  mBlurRadius;
-    double  mDirection;
-    double  mDistance;
-    double  mEndOpacity;
-    double  mEndPosition;
-    double  mFadeDirection;
+    float  mBlurRadius;
+    float  mDirection;
+    float  mDistance;
+    float  mEndOpacity;
+    float  mEndPosition;
+    float  mFadeDirection;
     BOOL  mRotateWithShape;
-    double  mStartOpacity;
-    double  mStartPosition;
-    double  mXScale;
-    double  mXSkew;
-    double  mYScale;
-    double  mYSkew;
+    float  mStartOpacity;
+    float  mStartPosition;
+    float  mXScale;
+    float  mXSkew;
+    float  mYScale;
+    float  mYSkew;
 }
 
 - (int)alignment;

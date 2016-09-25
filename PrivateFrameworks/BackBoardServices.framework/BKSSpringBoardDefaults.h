@@ -4,7 +4,7 @@
 
 @interface BKSSpringBoardDefaults : BSAbstractDefaultDomain
 
-@property (nonatomic) double brightness;
+@property (nonatomic) float brightness;
 
 - (void)_bindAndRegisterDefaults;
 - (id)init;

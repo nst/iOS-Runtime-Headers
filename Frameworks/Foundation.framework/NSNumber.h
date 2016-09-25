@@ -12,19 +12,19 @@
 @property (readonly) struct { unsigned int x1 : 8; unsigned int x2 : 4; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 18; unsigned short x6[8]; } decimalValue;
 @property (readonly, copy) NSString *description;
 @property (readonly) double doubleValue;
-@property (readonly) double floatValue;
+@property (readonly) float floatValue;
 @property (readonly) unsigned int hash;
 @property (readonly) int intValue;
 @property (readonly) int integerValue;
-@property (readonly) int longLongValue;
-@property (readonly) intValue;
+@property (readonly) long long longLongValue;
+@property (readonly) long longValue;
 @property (readonly) short shortValue;
 @property (readonly, copy) NSString *stringValue;
 @property (readonly) Class superclass;
 @property (readonly) unsigned char unsignedCharValue;
 @property (readonly) unsigned int unsignedIntValue;
 @property (readonly) unsigned int unsignedIntegerValue;
-@property (readonly) unsigned int unsignedLongLongValue;
+@property (readonly) unsigned long long unsignedLongLongValue;
 @property (readonly) unsigned long unsignedLongValue;
 @property (readonly) unsigned short unsignedShortValue;
 
@@ -38,13 +38,13 @@
 + (id)numberWithInt:(int)arg1;
 + (id)numberWithInteger:(int)arg1;
 + (id)numberWithLong:(long)arg1;
-+ (id)numberWithLongLong:(int)arg1;
++ (id)numberWithLongLong:(long long)arg1;
 + (id)numberWithShort:(short)arg1;
 + (id)numberWithUnsignedChar:(unsigned char)arg1;
 + (id)numberWithUnsignedInt:(unsigned int)arg1;
 + (id)numberWithUnsignedInteger:(unsigned int)arg1;
 + (id)numberWithUnsignedLong:(unsigned long)arg1;
-+ (id)numberWithUnsignedLongLong:(unsigned int)arg1;
++ (id)numberWithUnsignedLongLong:(unsigned long long)arg1;
 + (id)numberWithUnsignedShort:(unsigned short)arg1;
 + (BOOL)supportsSecureCoding;
 
@@ -74,27 +74,27 @@
 - (id)initWithInt:(int)arg1;
 - (id)initWithInteger:(int)arg1;
 - (id)initWithLong:(long)arg1;
-- (id)initWithLongLong:(int)arg1;
+- (id)initWithLongLong:(long long)arg1;
 - (id)initWithShort:(short)arg1;
 - (id)initWithUnsignedChar:(unsigned char)arg1;
 - (id)initWithUnsignedInt:(unsigned int)arg1;
 - (id)initWithUnsignedInteger:(unsigned int)arg1;
 - (id)initWithUnsignedLong:(unsigned long)arg1;
-- (id)initWithUnsignedLongLong:(unsigned int)arg1;
+- (id)initWithUnsignedLongLong:(unsigned long long)arg1;
 - (id)initWithUnsignedShort:(unsigned short)arg1;
 - (int)intValue;
 - (int)integerValue;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToNumber:(id)arg1;
 - (BOOL)isNSNumber__;
-- (int)longLongValue;
+- (long long)longLongValue;
 - (long)longValue;
 - (short)shortValue;
 - (id)stringValue;
 - (unsigned char)unsignedCharValue;
 - (unsigned int)unsignedIntValue;
 - (unsigned int)unsignedIntegerValue;
-- (unsigned int)unsignedLongLongValue;
+- (unsigned long long)unsignedLongLongValue;
 - (unsigned long)unsignedLongValue;
 - (unsigned short)unsignedShortValue;
 
@@ -161,12 +161,12 @@
 // Image: /System/Library/PrivateFrameworks/CoreRecents.framework/CoreRecents
 
 + (id)cr_numberWithCRContactGroupKind:(unsigned int)arg1;
-+ (id)cr_numberWithCRContactID:(int)arg1;
-+ (id)cr_numberWithCRRecentID:(int)arg1;
++ (id)cr_numberWithCRContactID:(long long)arg1;
++ (id)cr_numberWithCRRecentID:(long long)arg1;
 
 - (unsigned int)cr_CRContactGroupKindValue;
-- (int)cr_CRContactIDValue;
-- (int)cr_CRRecentIDValue;
+- (long long)cr_CRContactIDValue;
+- (long long)cr_CRRecentIDValue;
 
 // Image: /System/Library/PrivateFrameworks/FMCore.framework/FMCore
 
@@ -229,10 +229,10 @@
 
 // Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
 
-+ (id)numberWithItemIdentifier:(unsigned int)arg1;
++ (id)numberWithItemIdentifier:(unsigned long long)arg1;
 
-- (id)initWithItemIdentifier:(unsigned int)arg1;
-- (unsigned int)itemIdentifierValue;
+- (id)initWithItemIdentifier:(unsigned long long)arg1;
+- (unsigned long long)itemIdentifierValue;
 
 // Image: /System/Library/PrivateFrameworks/Swift/libswiftFoundation.dylib
 
@@ -242,7 +242,7 @@
 
 // Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
 
-- (int)rc_persistentIDValue;
+- (long long)rc_persistentIDValue;
 
 // Image: /System/Library/PrivateFrameworks/WebContentAnalysis.framework/WebContentAnalysis
 

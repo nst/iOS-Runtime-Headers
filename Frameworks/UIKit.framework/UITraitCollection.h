@@ -5,7 +5,7 @@
 @interface UITraitCollection : NSObject <NSCopying, NSSecureCoding> {
     struct { 
         int userInterfaceIdiom; 
-        double displayScale; 
+        float displayScale; 
         int displayGamut; 
         int touchLevel; 
         unsigned int interactionModel; 
@@ -27,7 +27,7 @@
 @property (nonatomic, readonly) int barMetrics;
 @property (nonatomic, readonly) int barPosition;
 @property (nonatomic, readonly) int displayGamut;
-@property (nonatomic, readonly) double displayScale;
+@property (nonatomic, readonly) float displayScale;
 @property (nonatomic, readonly) int forceTouchCapability;
 @property (nonatomic, readonly) int horizontalSizeClass;
 @property (nonatomic, readonly) int layoutDirection;
@@ -61,7 +61,7 @@
 
 - (BOOL)_changedContentSizeCategoryFromTraitCollection:(id)arg1;
 - (int)_compare:(id)arg1;
-- (id)_initWithBuiltinTraitStorage:(struct { int x1; double x2; int x3; int x4; unsigned int x5; unsigned int x6; int x7; int x8; int x9; int x10; int x11; int x12; }*)arg1 clientDefinedTraits:(id)arg2;
+- (id)_initWithBuiltinTraitStorage:(struct { int x1; float x2; int x3; int x4; unsigned int x5; unsigned int x6; int x7; int x8; int x9; int x10; int x11; int x12; }*)arg1 clientDefinedTraits:(id)arg2;
 - (BOOL)_matchesIntersectionWithTraitCollection:(id)arg1;
 - (id)_namedImageDescription;
 - (id)_traitCollectionByReplacingValue:(id)arg1 forTraitName:(id)arg2;

@@ -18,11 +18,11 @@
 - (BOOL)cancelWaitForeverForPredicteString:(id)arg1;
 - (id)clientIdentifierFromOptions:(id)arg1;
 - (void)dealloc;
-- (void)deregisterHandlerForPredicateId:(unsigned int)arg1;
+- (void)deregisterHandlerForPredicateId:(unsigned long long)arg1;
 - (void)deregisterHandlerForPredicateString:(id)arg1;
 - (void)deregisterHandlerForPredicateString:(id)arg1 withClientId:(id)arg2;
 - (void)deregisterHandlerForPredicateString:(id)arg1 withOptions:(id)arg2;
-- (void)enableHandlerForPredicateId:(unsigned int)arg1 withOptions:(id)arg2 usingBlock:(id /* block */)arg3;
+- (void)enableHandlerForPredicateId:(unsigned long long)arg1 withOptions:(id)arg2 usingBlock:(id /* block */)arg3;
 - (id)init;
 - (void)initConnection;
 - (int)integerValueForKey:(id)arg1;

@@ -10,8 +10,8 @@
     struct __CFDictionary { } * mOldTemplateNameMap;
     GQDSLPageMargins * mPageMargins;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  mPageSize;
     BOOL  mShowOutliner;
     GQDSStylesheet * mStylesheet;
@@ -30,7 +30,7 @@
 - (id)init;
 - (void)initializeAppBundleResourcesUrl:(struct __CFURL { }*)arg1;
 - (id)pageMargins;
-- (struct CGSize { double x1; double x2; })pageSize;
+- (struct CGSize { float x1; float x2; })pageSize;
 - (int)readAttributesFromReader:(struct _xmlTextReader { }*)arg1;
 - (void)setPageMargins:(id)arg1;
 - (void)setStylesheet:(id)arg1;

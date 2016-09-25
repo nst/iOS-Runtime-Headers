@@ -12,7 +12,7 @@
 + (id)secondaryTextLabelFont;
 + (id)timeLabelsFont;
 
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })layoutMargins;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })layoutMargins;
 - (id)primaryTextLabelFont;
 
 @end

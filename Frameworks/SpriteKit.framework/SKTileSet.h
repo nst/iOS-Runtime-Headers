@@ -5,8 +5,8 @@
 @interface SKTileSet : NSObject <NSCoding, NSCopying> {
     unsigned int  _defaultTileGroupIndex;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _defaultTileSize;
     NSMutableArray * _definitions;
     NSMutableArray * _groups;
@@ -16,7 +16,7 @@
 }
 
 @property (nonatomic, retain) SKTileGroup *defaultTileGroup;
-@property (nonatomic) struct CGSize { double x1; double x2; } defaultTileSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } defaultTileSize;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, retain) NSArray *stamps;
 @property (nonatomic, readonly) NSArray *tileDefinitions;
@@ -38,7 +38,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)defaultTileGroup;
-- (struct CGSize { double x1; double x2; })defaultTileSize;
+- (struct CGSize { float x1; float x2; })defaultTileSize;
 - (void)encodeWithCoder:(id)arg1;
 - (id)findTileDefinitionForGroup:(id)arg1 withGroupAdjacency:(unsigned int*)arg2;
 - (id)findTileDefinitionsForGroup:(id)arg1 withGroupAdjacency:(unsigned int*)arg2;
@@ -54,7 +54,7 @@
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)removeTileDefinitionObservers:(id)arg1;
 - (void)setDefaultTileGroup:(id)arg1;
-- (void)setDefaultTileSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setDefaultTileSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setGroupParentPointers;
 - (void)setName:(id)arg1;
 - (void)setStamps:(id)arg1;

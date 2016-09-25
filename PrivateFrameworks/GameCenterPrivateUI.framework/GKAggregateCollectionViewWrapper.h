@@ -28,7 +28,7 @@
 - (void)deselectItemAtIndexPath:(id)arg1 animated:(BOOL)arg2;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (id)indexPathForCell:(id)arg1;
-- (id)indexPathForItemAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (id)indexPathForItemAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)indexPathsForSelectedItems;
 - (id)indexPathsForVisibleItems;
 - (id)initWithView:(id)arg1 mapping:(id)arg2;

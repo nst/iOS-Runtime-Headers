@@ -5,7 +5,7 @@
 @interface SKUILoadProductPageOperation : NSOperation {
     SKUIClientContext * _clientContext;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
-    int  _itemID;
+    long long  _itemID;
     SSMetricsPageEvent * _metricsPageEvent;
     id /* block */  _outputBlock;
     NSURLRequest * _urlRequest;
@@ -16,7 +16,7 @@
 
 - (void).cxx_destruct;
 - (id)_initSKUILoadProductPageOperation;
-- (id)initWithItemIdentifier:(int)arg1 clientContext:(id)arg2;
+- (id)initWithItemIdentifier:(long long)arg1 clientContext:(id)arg2;
 - (id)initWithProductPageURLRequest:(id)arg1 clientContext:(id)arg2;
 - (void)main;
 - (id)metricsPageEvent;

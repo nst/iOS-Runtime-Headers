@@ -4,12 +4,12 @@
 
 @interface _PASRng : NSObject {
     struct { 
-        unsigned int s[2]; 
+        unsigned long long s[2]; 
     }  _state;
 }
 
 - (id)init;
-- (id)initWithSeed:(unsigned int)arg1;
-- (unsigned int)next;
+- (id)initWithSeed:(unsigned long long)arg1;
+- (unsigned long long)next;
 
 @end

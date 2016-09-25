@@ -6,7 +6,7 @@
     NSSet * _occlusions;
     BSSettings * _otherSettings;
     int  _preferredInterfaceOrientation;
-    double  _preferredLevel;
+    float  _preferredLevel;
     NSString * _preferredSceneHostIdentifier;
 }
 
@@ -15,7 +15,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly, copy) NSSet *occlusions;
 @property (nonatomic, readonly) int preferredInterfaceOrientation;
-@property (nonatomic, readonly) double preferredLevel;
+@property (nonatomic, readonly) float preferredLevel;
 @property (nonatomic, readonly, copy) NSString *preferredSceneHostIdentifier;
 @property (readonly) Class superclass;
 

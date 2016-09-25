@@ -4,7 +4,7 @@
 
 @interface PUAlbumListViewControllerPadSpec : PUAlbumListViewControllerSpec
 
-- (void)_getStackSize:(struct CGSize { double x1; double x2; }*)arg1 edgeInset:(float*)arg2 forLayoutReferenceSize:(struct CGSize { double x1; double x2; })arg3;
+- (void)_getStackSize:(struct CGSize { float x1; float x2; }*)arg1 edgeInset:(float*)arg2 forLayoutReferenceSize:(struct CGSize { float x1; float x2; })arg3;
 - (id)_nameOfAddSharedAlbumPlaceholderImage;
 - (id)_nameOfEmptyAlbumPlaceholderImage;
 - (id)_nameOfEmptySharedAlbumPlaceholderImage;
@@ -15,11 +15,11 @@
 - (BOOL)canDisplaySearchActionInNavigationBar;
 - (BOOL)canShowVirtualCollections;
 - (int)cellContentViewLayout;
-- (struct CGSize { double x1; double x2; })cellSizeForStackSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })cellSizeForStackSize:(struct CGSize { float x1; float x2; })arg1;
 - (int)collageImageContentMode;
-- (struct CGSize { double x1; double x2; })collageImageSize;
+- (struct CGSize { float x1; float x2; })collageImageSize;
 - (float)collageSpacing;
-- (void)configureGridLayout:(id)arg1 forLayoutReferenceSize:(struct CGSize { double x1; double x2; })arg2;
+- (void)configureGridLayout:(id)arg1 forLayoutReferenceSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)configureStackViewWithGridStyle:(id)arg1;
 - (BOOL)displaysSearchInPopover;
 - (id)emptyAlbumPlaceholderImage;
@@ -27,8 +27,8 @@
 - (id)feedViewControllerSpec;
 - (unsigned int)folderStackViewStyle;
 - (id)gridViewControllerSpec;
-- (struct CGSize { double x1; double x2; })imageSize;
-- (struct CGSize { double x1; double x2; })imageSizeForLayoutReferenceSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })imageSize;
+- (struct CGSize { float x1; float x2; })imageSizeForLayoutReferenceSize:(struct CGSize { float x1; float x2; })arg1;
 - (float)maxSearchBarWidth;
 - (id)panoramaViewControllerSpec;
 - (id)photosPickerViewControllerSpec;
@@ -36,16 +36,16 @@
 - (float)posterSubitemCornerRadius;
 - (float)sectionFooterHeight;
 - (float)sectionHeaderHeight;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })sectionInsetsForLayoutReferenceSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })sectionInsetsForLayoutReferenceSize:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)shouldShowSectionHeaders;
 - (BOOL)shouldUseCollageForCloudFeedPlaceholder;
 - (BOOL)showsDeleteButtonOnCellContentView;
-- (struct UIOffset { double x1; double x2; })stackOffset;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })stackPerspectiveInsets;
-- (struct UIOffset { double x1; double x2; })stackPerspectiveOffset;
+- (struct UIOffset { float x1; float x2; })stackOffset;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })stackPerspectiveInsets;
+- (struct UIOffset { float x1; float x2; })stackPerspectiveOffset;
 - (id)stackPhotoDecoration;
-- (struct CGSize { double x1; double x2; })stackSize;
-- (struct CGSize { double x1; double x2; })stackSizeForLayoutReferenceSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })stackSize;
+- (struct CGSize { float x1; float x2; })stackSizeForLayoutReferenceSize:(struct CGSize { float x1; float x2; })arg1;
 - (unsigned int)stackViewStyle;
 - (BOOL)usesStackTransitionToGrid;
 

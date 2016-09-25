@@ -39,7 +39,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UIColor *thumbTintColor;
 
-+ (struct CGSize { double x1; double x2; })preferredContentSize;
++ (struct CGSize { float x1; float x2; })preferredContentSize;
 
 - (void).cxx_destruct;
 - (id)_accessibleOffImage;
@@ -55,21 +55,21 @@
 - (id)_effectiveTintColor;
 - (BOOL)_feedbackEnabled;
 - (void)_handleLongPress:(id)arg1;
-- (void)_handleLongPressWithGestureLocationInBounds:(struct CGPoint { double x1; double x2; })arg1 gestureState:(int)arg2;
+- (void)_handleLongPressWithGestureLocationInBounds:(struct CGPoint { float x1; float x2; })arg1 gestureState:(int)arg2;
 - (void)_handlePan:(id)arg1;
-- (void)_handlePanWithGestureLocationInBounds:(struct CGPoint { double x1; double x2; })arg1 horizontalTranslation:(float)arg2 gestureState:(int)arg3 resetPanTranslationBlock:(id /* block */)arg4;
+- (void)_handlePanWithGestureLocationInBounds:(struct CGPoint { float x1; float x2; })arg1 horizontalTranslation:(float)arg2 gestureState:(int)arg3 resetPanTranslationBlock:(id /* block */)arg4;
 - (void)_invalidateControl;
 - (void)_invalidateKnob;
 - (void)_invalidateOnOffImages;
 - (void)_invalidateWell;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_knobBoundsPressed:(BOOL)arg1;
-- (struct CGPoint { double x1; double x2; })_knobPositionOn:(BOOL)arg1 pressed:(BOOL)arg2 forBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_knobBoundsPressed:(BOOL)arg1;
+- (struct CGPoint { float x1; float x2; })_knobPositionOn:(BOOL)arg1 pressed:(BOOL)arg2 forBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 - (id)_labelOpacityAnimation;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_leftSwitchWellContainerBoundsOn:(BOOL)arg1 pressed:(BOOL)arg2;
-- (struct CGPoint { double x1; double x2; })_leftSwitchWellContainerPositionOn:(BOOL)arg1 pressed:(BOOL)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_leftSwitchWellContainerBoundsOn:(BOOL)arg1 pressed:(BOOL)arg2;
+- (struct CGPoint { float x1; float x2; })_leftSwitchWellContainerPositionOn:(BOOL)arg1 pressed:(BOOL)arg2;
 - (id)_maskLayerForImageViews;
-- (struct CGPoint { double x1; double x2; })_offImagePosition;
-- (struct CGPoint { double x1; double x2; })_onImagePosition;
+- (struct CGPoint { float x1; float x2; })_offImagePosition;
+- (struct CGPoint { float x1; float x2; })_onImagePosition;
 - (void)_orderSubviews;
 - (void)_setPressed:(BOOL)arg1 on:(BOOL)arg2 animated:(BOOL)arg3 shouldAnimateLabels:(BOOL)arg4 completion:(id /* block */)arg5;
 - (id)_settings;
@@ -77,9 +77,9 @@
 - (id)_switchSpringAnimationWithKeyPath:(id)arg1 fromValue:(id)arg2 toValue:(id)arg3 pressed:(BOOL)arg4;
 - (id)_switchTrackAnimationWithFromValue:(id)arg1 toValue:(id)arg2 on:(BOOL)arg3;
 - (id)_switchTrackColorAnimationWithFromValue:(id)arg1 toValue:(id)arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_switchWellContainerBoundsOn:(BOOL)arg1 pressed:(BOOL)arg2;
-- (struct CGPoint { double x1; double x2; })_switchWellContainerPositionOn:(BOOL)arg1 pressed:(BOOL)arg2;
-- (struct CGPoint { double x1; double x2; })_switchWellPositionOn:(BOOL)arg1 pressed:(BOOL)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_switchWellContainerBoundsOn:(BOOL)arg1 pressed:(BOOL)arg2;
+- (struct CGPoint { float x1; float x2; })_switchWellContainerPositionOn:(BOOL)arg1 pressed:(BOOL)arg2;
+- (struct CGPoint { float x1; float x2; })_switchWellPositionOn:(BOOL)arg1 pressed:(BOOL)arg2;
 - (void)_transitionImagesToPressed:(BOOL)arg1 on:(BOOL)arg2 animated:(BOOL)arg3;
 - (void)_transitionKnobToOn:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_transitionKnobToPressed:(BOOL)arg1 animated:(BOOL)arg2;
@@ -92,7 +92,7 @@
 - (BOOL)displayedOn;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (id)gestureTrackingSession;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)interactiveChangeToDisplayedOn:(BOOL)arg1;
 - (id)longPress;
 - (id)offImage;

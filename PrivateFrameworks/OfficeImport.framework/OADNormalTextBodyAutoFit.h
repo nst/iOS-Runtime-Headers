@@ -3,8 +3,8 @@
  */
 
 @interface OADNormalTextBodyAutoFit : OADTextBodyAutoFit {
-    double  mFontScalePercent;
-    double  mLineSpacingReductionPercent;
+    float  mFontScalePercent;
+    float  mLineSpacingReductionPercent;
 }
 
 - (id)description;

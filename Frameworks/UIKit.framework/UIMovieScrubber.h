@@ -5,12 +5,12 @@
 @interface UIMovieScrubber : UIControl <UIMovieScrubberTrackViewDataSource, UIMovieScrubberTrackViewDelegate> {
     <UIMovieScrubberDataSource> * _dataSource;
     <UIMovieScrubberDelegate> * _delegate;
-    double  _edgeInset;
+    float  _edgeInset;
     BOOL  _editable;
     UIMovieScrubberEditingView * _editingView;
     UILabel * _elapsedLabel;
     UIImage * _fillImage;
-    double  _hitOffset;
+    float  _hitOffset;
     UIImage * _innerShadowImage;
     UIImage * _maskImage;
     double  _maxTrimmedLength;
@@ -58,17 +58,17 @@
     UIImageView * _thumbView;
     int  _timeComponents;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _touchLocationWhenTrackPressBegan;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _trackRect;
     UIMovieScrubberTrackView * _trackView;
@@ -80,14 +80,14 @@
     double  _zoomDelay;
 }
 
-@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } alignmentMargins;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } alignmentMargins;
 @property (getter=isContinuous, nonatomic) BOOL continuous;
 @property (nonatomic) <UIMovieScrubberDataSource> *dataSource;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <UIMovieScrubberDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) double duration;
-@property (nonatomic) double edgeInset;
+@property (nonatomic) float edgeInset;
 @property (getter=isEditable, nonatomic) BOOL editable;
 @property (getter=isEditing, nonatomic) BOOL editing;
 @property (readonly) unsigned int hash;
@@ -115,13 +115,13 @@
 - (void)_beginTrackPressWithLocatable:(id)arg1 touchesBegan:(BOOL)arg2;
 - (void)_cancelTrackPress:(BOOL)arg1;
 - (void)_cancelTrackPressIfNeccessaryWithLocatable:(id)arg1;
-- (void)_computeTrackRectForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)_computeTrackRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_controlTouchBegan:(id)arg1 withEvent:(id)arg2;
 - (void)_controlTouchEnded:(id)arg1 withEvent:(id)arg2;
 - (void)_controlTouchMoved:(id)arg1 withEvent:(id)arg2;
 - (int)_editingHandleWithLocatable:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_editingRect;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_editingRectForStartTime:(double)arg1 endTime:(double)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_editingRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_editingRectForStartTime:(double)arg1 endTime:(double)arg2;
 - (void)_handlePanGesture:(id)arg1;
 - (void)_initSubviews;
 - (void)_sendDelayedActions;
@@ -135,7 +135,7 @@
 - (void)_updateThumbLocation;
 - (void)_updateTimes;
 - (float)_valueForLocatable:(id)arg1;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })alignmentMargins;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentMargins;
 - (void)animateAfterEdit;
 - (void)animateCancelEdit;
 - (void)beginTrackingWithLocatable:(id)arg1;
@@ -152,8 +152,8 @@
 - (void)forceUnzoom;
 - (BOOL)forceZoom;
 - (id)init;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (BOOL)isAnimatingValueChange;
 - (BOOL)isContinuous;
 - (BOOL)isEditable;
@@ -174,7 +174,7 @@
 - (void)movieScrubberTrackViewWillBeginRequestingThumbnails:(id)arg1;
 - (double)movieScrubberTrackViewZoomAnimationDelay:(id)arg1;
 - (double)movieScrubberTrackViewZoomAnimationDuration:(id)arg1;
-- (BOOL)pointInsideThumb:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (BOOL)pointInsideThumb:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)reloadData;
 - (void)setContinuous:(BOOL)arg1;
 - (void)setDataSource:(id)arg1;
@@ -184,7 +184,7 @@
 - (void)setEditable:(BOOL)arg1;
 - (void)setEditing:(BOOL)arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setMaximumTrimLength:(double)arg1;
 - (void)setMinimumTrimLength:(double)arg1;
 - (void)setRotationDisabled:(BOOL)arg1;
@@ -198,10 +198,10 @@
 - (void)setZoomAnimationDuration:(double)arg1;
 - (void)setZoomDelay:(double)arg1;
 - (BOOL)showTimeViews;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)thumbIsVisible;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })thumbRectForValue:(float)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })trackRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })thumbRectForValue:(float)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })trackRect;
 - (double)trimEndValue;
 - (double)trimStartValue;
 - (double)value;

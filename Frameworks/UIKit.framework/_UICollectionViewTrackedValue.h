@@ -5,13 +5,13 @@
 @interface _UICollectionViewTrackedValue : NSObject {
     int  _currentIndex;
     BOOL  _isAccumulating;
-    double  _trackedValue;
+    float  _trackedValue;
     NSArray * _values;
     int  _valuesCount;
 }
 
 @property (nonatomic) BOOL isAccumulating;
-@property (nonatomic) double trackedValue;
+@property (nonatomic) float trackedValue;
 
 - (void).cxx_destruct;
 - (void)addValue:(float)arg1;

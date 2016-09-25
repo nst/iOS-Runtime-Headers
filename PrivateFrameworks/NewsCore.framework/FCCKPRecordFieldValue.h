@@ -13,7 +13,7 @@
     }  _has;
     NSMutableArray * _listValues;
     FCCKPRecordReference * _referenceValue;
-    int  _signedValue;
+    long long  _signedValue;
     NSString * _stringValue;
     int  _type;
 }
@@ -30,7 +30,7 @@
 @property (nonatomic) BOOL hasType;
 @property (nonatomic, retain) NSMutableArray *listValues;
 @property (nonatomic, retain) FCCKPRecordReference *referenceValue;
-@property (nonatomic) int signedValue;
+@property (nonatomic) long long signedValue;
 @property (nonatomic, retain) NSString *stringValue;
 @property (nonatomic) int type;
 
@@ -67,10 +67,10 @@
 - (void)setHasType:(BOOL)arg1;
 - (void)setListValues:(id)arg1;
 - (void)setReferenceValue:(id)arg1;
-- (void)setSignedValue:(int)arg1;
+- (void)setSignedValue:(long long)arg1;
 - (void)setStringValue:(id)arg1;
 - (void)setType:(int)arg1;
-- (int)signedValue;
+- (long long)signedValue;
 - (id)stringValue;
 - (int)type;
 - (void)writeTo:(id)arg1;

@@ -4,8 +4,8 @@
 
 @interface HDAWDHealthKitCoachingEvent : PBCodable <NSCopying> {
     unsigned int  _dismissReason;
-    unsigned int  _duration;
-    unsigned int  _eventTimestamp;
+    unsigned long long  _duration;
+    unsigned long long  _eventTimestamp;
     unsigned int  _eventType;
     HDAWDHealthKitCoachingFeatureGroup * _features;
     struct { 
@@ -24,12 +24,12 @@
     }  _has;
     unsigned int  _newGoal;
     unsigned int  _recommendedGoal;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) unsigned int dismissReason;
-@property (nonatomic) unsigned int duration;
-@property (nonatomic) unsigned int eventTimestamp;
+@property (nonatomic) unsigned long long duration;
+@property (nonatomic) unsigned long long eventTimestamp;
 @property (nonatomic) unsigned int eventType;
 @property (nonatomic, retain) HDAWDHealthKitCoachingFeatureGroup *features;
 @property (nonatomic, readonly) unsigned int*goalTypes;
@@ -44,7 +44,7 @@
 @property (nonatomic) BOOL hasTimestamp;
 @property (nonatomic) unsigned int newGoal;
 @property (nonatomic) unsigned int recommendedGoal;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void).cxx_destruct;
 - (void)addGoalType:(unsigned int)arg1;
@@ -55,8 +55,8 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (unsigned int)dismissReason;
-- (unsigned int)duration;
-- (unsigned int)eventTimestamp;
+- (unsigned long long)duration;
+- (unsigned long long)eventTimestamp;
 - (unsigned int)eventType;
 - (id)features;
 - (unsigned int)goalTypeAtIndex:(unsigned int)arg1;
@@ -77,8 +77,8 @@
 - (BOOL)readFrom:(id)arg1;
 - (unsigned int)recommendedGoal;
 - (void)setDismissReason:(unsigned int)arg1;
-- (void)setDuration:(unsigned int)arg1;
-- (void)setEventTimestamp:(unsigned int)arg1;
+- (void)setDuration:(unsigned long long)arg1;
+- (void)setEventTimestamp:(unsigned long long)arg1;
 - (void)setEventType:(unsigned int)arg1;
 - (void)setFeatures:(id)arg1;
 - (void)setGoalTypes:(unsigned int*)arg1 count:(unsigned int)arg2;
@@ -91,8 +91,8 @@
 - (void)setHasTimestamp:(BOOL)arg1;
 - (void)setNewGoal:(unsigned int)arg1;
 - (void)setRecommendedGoal:(unsigned int)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
-- (unsigned int)timestamp;
+- (void)setTimestamp:(unsigned long long)arg1;
+- (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 
 @end

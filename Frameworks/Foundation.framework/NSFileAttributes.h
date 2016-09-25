@@ -19,7 +19,7 @@
         int st_dev; 
         unsigned short st_mode; 
         unsigned short st_nlink; 
-        unsigned int st_ino; 
+        unsigned long long st_ino; 
         unsigned int st_uid; 
         unsigned int st_gid; 
         int st_rdev; 
@@ -39,20 +39,20 @@
             int tv_sec; 
             long tv_nsec; 
         } st_birthtimespec; 
-        int st_size; 
-        int st_blocks; 
+        long long st_size; 
+        long long st_blocks; 
         int st_blksize; 
         unsigned int st_flags; 
         unsigned int st_gen; 
         int st_lspare; 
-        int st_qspare[2]; 
+        long long st_qspare[2]; 
     }  statInfo;
 }
 
 + (id)_attributesAtPath:(id)arg1 partialReturn:(BOOL)arg2 filterResourceFork:(BOOL)arg3 error:(id*)arg4;
 + (id)_attributesAtURL:(id)arg1 partialReturn:(BOOL)arg2 filterResourceFork:(BOOL)arg3 error:(id*)arg4;
 + (id)attributesAtPath:(id)arg1 traverseLink:(BOOL)arg2;
-+ (id)attributesWithStat:(struct stat { int x1; unsigned short x2; unsigned short x3; unsigned int x4; unsigned int x5; unsigned int x6; int x7; struct timespec { int x_8_1_1; long x_8_1_2; } x8; struct timespec { int x_9_1_1; long x_9_1_2; } x9; struct timespec { int x_10_1_1; long x_10_1_2; } x10; struct timespec { int x_11_1_1; long x_11_1_2; } x11; int x12; int x13; int x14; unsigned int x15; unsigned int x16; int x17; int x18[2]; }*)arg1;
++ (id)attributesWithStat:(struct stat { int x1; unsigned short x2; unsigned short x3; unsigned long long x4; unsigned int x5; unsigned int x6; int x7; struct timespec { int x_8_1_1; long x_8_1_2; } x8; struct timespec { int x_9_1_1; long x_9_1_2; } x9; struct timespec { int x_10_1_1; long x_10_1_2; } x10; struct timespec { int x_11_1_1; long x_11_1_2; } x11; long long x12; long long x13; int x14; unsigned int x15; unsigned int x16; int x17; long long x18[2]; }*)arg1;
 
 - (unsigned int)count;
 - (void)dealloc;
@@ -62,7 +62,7 @@
 - (id)fileOwnerAccountName;
 - (unsigned int)fileOwnerAccountNumber;
 - (unsigned int)filePosixPermissions;
-- (unsigned int)fileSize;
+- (unsigned long long)fileSize;
 - (unsigned int)fileSystemFileNumber;
 - (int)fileSystemNumber;
 - (id)fileType;

@@ -6,10 +6,10 @@
     PKCheckGlyphLayer * _checkLayer;
     struct CGImage { } * _customImage;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _customImageAlignmentEdgeInsets;
     CALayer * _customImageLayer;
     <PKGlyphViewDelegate> * _delegate;
@@ -18,7 +18,7 @@
         unsigned int showingPhone : 1; 
         unsigned int phoneRotated : 1; 
     }  _layoutFlags;
-    double  _phoneAspectRatio;
+    float  _phoneAspectRatio;
     PKPhoneGlyphLayer * _phoneLayer;
     NSString * _phoneWiggleAnimationKey;
     BOOL  _phoneWiggling;
@@ -34,7 +34,7 @@
 }
 
 @property (nonatomic, readonly) struct CGImage { }*customImage;
-@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } customImageAlignmentEdgeInsets;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } customImageAlignmentEdgeInsets;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PKGlyphViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -57,9 +57,9 @@
 - (void)_layoutContentLayer:(id)arg1;
 - (double)_minimumAnimationDurationForStateTransition;
 - (void)_performTransitionWithTransitionIndex:(unsigned int)arg1 animated:(BOOL)arg2;
-- (struct CGPoint { double x1; double x2; })_phonePositionDeltaWhileShownFromRotationPercentage:(float)arg1 toPercentage:(float)arg2;
-- (struct CGPoint { double x1; double x2; })_phonePositionWhileShownWithRotationPercentage:(float)arg1;
-- (struct CATransform3D { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; })_phoneTransformDeltaWhileShownFromRotationPercentage:(float)arg1 toPercentage:(float)arg2;
+- (struct CGPoint { float x1; float x2; })_phonePositionDeltaWhileShownFromRotationPercentage:(float)arg1 toPercentage:(float)arg2;
+- (struct CGPoint { float x1; float x2; })_phonePositionWhileShownWithRotationPercentage:(float)arg1;
+- (struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })_phoneTransformDeltaWhileShownFromRotationPercentage:(float)arg1 toPercentage:(float)arg2;
 - (void)_startPhoneWiggle;
 - (void)_updateCheckViewStateAnimated:(BOOL)arg1;
 - (void)_updateCustomImageLayerOpacityAnimated:(BOOL)arg1;
@@ -68,17 +68,17 @@
 - (void)_updatePhoneWiggleIfNecessary;
 - (id)createCustomImageLayer;
 - (struct CGImage { }*)customImage;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })customImageAlignmentEdgeInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })customImageAlignmentEdgeInsets;
 - (void)dealloc;
 - (id)delegate;
 - (BOOL)fadeOnRecognized;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithStyle:(int)arg1;
 - (void)layoutSubviews;
 - (id)primaryColor;
 - (id)secondaryColor;
-- (void)setCustomImage:(struct CGImage { }*)arg1 withAlignmentEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
+- (void)setCustomImage:(struct CGImage { }*)arg1 withAlignmentEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setFadeOnRecognized:(BOOL)arg1;
 - (void)setPrimaryColor:(struct UIColor { Class x1; }*)arg1;

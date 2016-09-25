@@ -3,31 +3,31 @@
  */
 
 @interface NLArcLayer : CAShapeLayer <CALayerDelegate> {
-    double  _arcStart;
+    float  _arcStart;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _center;
     BOOL  _needsRegeneration;
-    double  _radius;
+    float  _radius;
 }
 
-@property (nonatomic) struct CGPoint { double x1; double x2; } center;
+@property (nonatomic) struct CGPoint { float x1; float x2; } center;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic) double radius;
+@property (nonatomic) float radius;
 @property (readonly) Class superclass;
 
 - (void)_regeneratePath;
 - (id)actionForKey:(id)arg1;
-- (void)animatePathCenter:(struct CGPoint { double x1; double x2; })arg1 radius:(float)arg2 lineWidth:(float)arg3 duration:(float)arg4;
-- (struct CGPoint { double x1; double x2; })center;
+- (void)animatePathCenter:(struct CGPoint { float x1; float x2; })arg1 radius:(float)arg2 lineWidth:(float)arg3 duration:(float)arg4;
+- (struct CGPoint { float x1; float x2; })center;
 - (id)init;
 - (void)layoutSublayers;
 - (float)radius;
-- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)setCenter:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setCenter:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setLineWidth:(float)arg1;
 - (void)setNeedsRegeneration;
 - (void)setRadius:(float)arg1;

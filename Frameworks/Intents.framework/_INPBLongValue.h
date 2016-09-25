@@ -7,14 +7,14 @@
         unsigned int value : 1; 
     }  _has;
     PBUnknownFields * _unknownFields;
-    int  _value;
+    long long  _value;
     _INPBValueMetadata * _valueMetadata;
 }
 
 @property (nonatomic) BOOL hasValue;
 @property (nonatomic, readonly) BOOL hasValueMetadata;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
-@property (nonatomic) int value;
+@property (nonatomic) long long value;
 @property (nonatomic, retain) _INPBValueMetadata *valueMetadata;
 
 + (id)options;
@@ -30,10 +30,10 @@
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setHasValue:(BOOL)arg1;
-- (void)setValue:(int)arg1;
+- (void)setValue:(long long)arg1;
 - (void)setValueMetadata:(id)arg1;
 - (id)unknownFields;
-- (int)value;
+- (long long)value;
 - (id)valueMetadata;
 - (void)writeTo:(id)arg1;
 

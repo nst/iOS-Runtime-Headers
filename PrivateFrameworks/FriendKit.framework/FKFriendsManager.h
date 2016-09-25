@@ -63,7 +63,7 @@
 - (BOOL)_addressBookSequenceNumberDidChange;
 - (void)_aggdLogFriendCount;
 - (void)_aggdLogFriendGroupCount;
-- (void)_aggdSetValue:(int)arg1 forScalarKey:(struct __CFString { }*)arg2;
+- (void)_aggdSetValue:(long long)arg1 forScalarKey:(struct __CFString { }*)arg2;
 - (BOOL)_canAddFriendGroup;
 - (BOOL)_changeLogContainsFriendAdditionsOrUpdates;
 - (unsigned int)_changeLogCount;

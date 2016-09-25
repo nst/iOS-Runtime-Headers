@@ -9,9 +9,9 @@
         unsigned int triggerSnapshotIndex : 1; 
         unsigned int type : 1; 
     }  _has;
-    int  _triggerSnapshotIndex;
+    long long  _triggerSnapshotIndex;
     NSData * _triggerUUID;
-    int  _type;
+    long long  _type;
 }
 
 @property (nonatomic) double date;
@@ -19,9 +19,9 @@
 @property (nonatomic) BOOL hasTriggerSnapshotIndex;
 @property (nonatomic, readonly) BOOL hasTriggerUUID;
 @property (nonatomic) BOOL hasType;
-@property (nonatomic) int triggerSnapshotIndex;
+@property (nonatomic) long long triggerSnapshotIndex;
 @property (nonatomic, retain) NSData *triggerUUID;
-@property (nonatomic) int type;
+@property (nonatomic) long long type;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
@@ -41,12 +41,12 @@
 - (void)setHasDate:(BOOL)arg1;
 - (void)setHasTriggerSnapshotIndex:(BOOL)arg1;
 - (void)setHasType:(BOOL)arg1;
-- (void)setTriggerSnapshotIndex:(int)arg1;
+- (void)setTriggerSnapshotIndex:(long long)arg1;
 - (void)setTriggerUUID:(id)arg1;
-- (void)setType:(int)arg1;
-- (int)triggerSnapshotIndex;
+- (void)setType:(long long)arg1;
+- (long long)triggerSnapshotIndex;
 - (id)triggerUUID;
-- (int)type;
+- (long long)type;
 - (void)writeTo:(id)arg1;
 
 @end

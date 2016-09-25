@@ -48,7 +48,7 @@
 - (void)_createCachesAndOptimizeState;
 - (long)_entitysReferenceID;
 - (BOOL)_epsilonEquals:(id)arg1 rhs:(id)arg2 withFlags:(int)arg3;
-- (struct _NSExtraPropertyIVars { id x1; int x2; }*)_extraIVars;
+- (struct _NSExtraPropertyIVars { id x1; long long x2; }*)_extraIVars;
 - (id)_initWithName:(id)arg1;
 - (void)_initializeExtraIVars;
 - (BOOL)_isEditable;

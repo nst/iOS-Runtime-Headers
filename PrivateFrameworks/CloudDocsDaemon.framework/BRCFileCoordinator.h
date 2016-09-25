@@ -7,7 +7,7 @@
     id /* block */  _doneHandler;
     BOOL  _isUpdateForReconnecting;
     BRCAccountSession * _session;
-    unsigned int  _startStamp;
+    unsigned long long  _startStamp;
     NSObject<OS_dispatch_source> * _timer;
     NSURL * _url1;
     NSURL * _url2;

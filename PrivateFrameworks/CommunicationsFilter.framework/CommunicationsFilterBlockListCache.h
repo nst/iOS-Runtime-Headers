@@ -9,7 +9,7 @@
 }
 
 - (void)_blockListChanged:(id)arg1;
-- (int)cachedResponseForItem:(id)arg1;
+- (long long)cachedResponseForItem:(id)arg1;
 - (id)init;
 - (void)removeItemFromCache:(id)arg1;
 - (void)setResponse:(BOOL)arg1 forItem:(id)arg2;

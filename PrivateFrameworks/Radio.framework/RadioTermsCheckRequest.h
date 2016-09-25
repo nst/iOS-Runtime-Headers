@@ -3,16 +3,16 @@
  */
 
 @interface RadioTermsCheckRequest : RadioRequest {
-    unsigned int  _acceptedTermsVersion;
+    unsigned long long  _acceptedTermsVersion;
     SSURLConnectionRequest * _request;
 }
 
-@property (nonatomic) unsigned int acceptedTermsVersion;
+@property (nonatomic) unsigned long long acceptedTermsVersion;
 
 - (void).cxx_destruct;
-- (unsigned int)acceptedTermsVersion;
+- (unsigned long long)acceptedTermsVersion;
 - (void)cancel;
-- (void)setAcceptedTermsVersion:(unsigned int)arg1;
+- (void)setAcceptedTermsVersion:(unsigned long long)arg1;
 - (void)startWithCompletionHandler:(id /* block */)arg1;
 
 @end

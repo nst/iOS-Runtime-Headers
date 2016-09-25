@@ -19,7 +19,7 @@
     NSString * _humanReadableDescription;
     BOOL  _isInstalled;
     int  _itemDisplayType;
-    unsigned int  _itemIdentifier;
+    unsigned long long  _itemIdentifier;
     SSItemImageCollection * _itemImageCollection;
     NSArray * _itemLinks;
     NSString * _itemMediaKind;
@@ -57,7 +57,7 @@
 @property (getter=isInstalled, nonatomic, readonly) BOOL installed;
 @property (nonatomic, readonly) NSDictionary *itemDictionary;
 @property (nonatomic) int itemDisplayType;
-@property (nonatomic) unsigned int itemIdentifier;
+@property (nonatomic) unsigned long long itemIdentifier;
 @property (nonatomic, copy) SSItemImageCollection *itemImageCollection;
 @property (nonatomic, copy) NSArray *itemLinks;
 @property (nonatomic, copy) NSString *itemMediaKind;
@@ -120,7 +120,7 @@
 - (BOOL)isInstalled;
 - (id)itemDictionary;
 - (int)itemDisplayType;
-- (unsigned int)itemIdentifier;
+- (unsigned long long)itemIdentifier;
 - (id)itemImageCollection;
 - (id)itemLinks;
 - (id)itemLinksForType:(int)arg1;
@@ -145,7 +145,7 @@
 - (void)setGenreName:(id)arg1;
 - (void)setHumanReadableDescription:(id)arg1;
 - (void)setItemDisplayType:(int)arg1;
-- (void)setItemIdentifier:(unsigned int)arg1;
+- (void)setItemIdentifier:(unsigned long long)arg1;
 - (void)setItemImageCollection:(id)arg1;
 - (void)setItemLinks:(id)arg1;
 - (void)setItemMediaKind:(id)arg1;

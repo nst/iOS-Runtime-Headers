@@ -5,8 +5,8 @@
 @interface PKPaymentSetupHeroView : UIView <PKPaymentHeroImageControllerDelegate> {
     unsigned int  _animationContext;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _aspectSize;
     NSMutableArray * _cardViews;
     int  _context;
@@ -28,8 +28,8 @@
 - (void)_createCardViewsWithImages:(id)arg1;
 - (void)_createSubviews;
 - (void)_finishedTransitionToCard:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameForCardView:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameForInstructionLabel;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForCardView:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForInstructionLabel;
 - (unsigned int)_getCardViewY;
 - (unsigned int)_getInstructionLabelY;
 - (id)_imageWithData:(id)arg1;
@@ -42,10 +42,10 @@
 - (void)_transitionFromCardToCard:(id)arg1;
 - (void)heroImageController:(id)arg1 didFinishDownloadingImageData:(id)arg2 forNetwork:(id)arg3 error:(id)arg4;
 - (id)initWithContext:(int)arg1 heroImageController:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)pk_childrenForAppearance;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)startAnimation;
 - (void)stopAnimation;
 

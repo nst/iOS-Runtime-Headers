@@ -58,7 +58,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) BOOL isBeingLocalized;
 @property (nonatomic, readonly) BOOL isCommandControllerConfiguredForCollaboration;
-@property (nonatomic, readonly) unsigned int maxMediaItemFileSize;
+@property (nonatomic, readonly) unsigned long long maxMediaItemFileSize;
 @property (nonatomic, retain) TSKPasteboardController *pasteboardController;
 @property (nonatomic, readonly) NSString *redoActionString;
 @property (nonatomic, readonly) unsigned int redoCount;
@@ -76,8 +76,8 @@
 
 - (id)UIStateForChart:(id)arg1;
 - (id)accessController;
-- (int)addObserverForICloudTeardownSuspendingCollaboration:(BOOL)arg1 block:(id /* block */)arg2;
-- (int)addObserverForICloudTeardownWithBlock:(id /* block */)arg1;
+- (long long)addObserverForICloudTeardownSuspendingCollaboration:(BOOL)arg1 block:(id /* block */)arg2;
+- (long long)addObserverForICloudTeardownWithBlock:(id /* block */)arg1;
 - (id)additionalDocumentPropertiesForWrite;
 - (id)additionalDocumentSupportPropertiesForWrite;
 - (id)annotationAuthorStorage;
@@ -123,7 +123,7 @@
 - (void)loadFromArchive:(const struct DocumentArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct Reference {} *x6; struct RepeatedPtrField<TSP::Reference> { void **x_7_1_1; int x_7_1_2; int x_7_1_3; int x_7_1_4; } x7; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x8; bool x9; }*)arg1 unarchiver:(id)arg2;
 - (id)makeIsolatedStyleMapper;
 - (id)makeStyleMapper;
-- (unsigned int)maxMediaItemFileSize;
+- (unsigned long long)maxMediaItemFileSize;
 - (void)migrateStylesInObjects:(id)arg1;
 - (void)migrateStylesInObjects:(id)arg1 changePropagationMap:(id)arg2;
 - (id)migratedPresetForPreset:(id)arg1;
@@ -149,7 +149,7 @@
 - (id)redoActionString;
 - (unsigned int)redoCount;
 - (void)removeCommentsFromDrawables:(id)arg1;
-- (void)removeICloudTeardownObserver:(int)arg1;
+- (void)removeICloudTeardownObserver:(long long)arg1;
 - (void)resumeRecalculation;
 - (void)saveToArchive:(struct DocumentArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct Reference {} *x6; struct RepeatedPtrField<TSP::Reference> { void **x_7_1_1; int x_7_1_2; int x_7_1_3; int x_7_1_4; } x7; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x8; bool x9; }*)arg1 archiver:(id)arg2;
 - (id)selectionDispatcher;

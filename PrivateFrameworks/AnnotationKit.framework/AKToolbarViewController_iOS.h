@@ -25,7 +25,7 @@
     AKUndoViewController * _undoPopoverViewController;
 }
 
-@property (nonatomic, readonly) double additionalOffset;
+@property (nonatomic, readonly) float additionalOffset;
 @property (nonatomic, retain) UIView *attributeToolbarContainer;
 @property (nonatomic, retain) AKFloatingAttributePickerViewController *attributeToolbarViewController;
 @property (nonatomic, retain) NSLayoutConstraint *attributeToolbarViewControllerConstraint;

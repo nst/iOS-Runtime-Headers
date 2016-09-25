@@ -7,7 +7,7 @@
     SSAuthenticationContext * _authenticationContext;
     SSURLBagContext * _bagContext;
     ISBiometricAuthenticationContext * _biometricAuthenticationContext;
-    int  _contentLength;
+    long long  _contentLength;
     NSString * _contentType;
     int  _errorHandlerResponseType;
     id  _output;
@@ -19,7 +19,7 @@
 @property (retain) SSAuthenticationContext *authenticationContext;
 @property (retain) SSURLBagContext *bagContext;
 @property (retain) ISBiometricAuthenticationContext *biometricAuthenticationContext;
-@property int contentLength;
+@property long long contentLength;
 @property (retain) NSString *contentType;
 @property int errorHandlerResponseType;
 @property (retain) id output;
@@ -34,10 +34,10 @@
 - (id)authenticationContext;
 - (id)bagContext;
 - (id)biometricAuthenticationContext;
-- (BOOL)canStreamContentLength:(int)arg1 error:(id*)arg2;
+- (BOOL)canStreamContentLength:(long long)arg1 error:(id*)arg2;
 - (id)closeStream;
 - (void)configureFromProvider:(id)arg1;
-- (int)contentLength;
+- (long long)contentLength;
 - (id)contentType;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (int)errorHandlerResponseType;
@@ -56,7 +56,7 @@
 - (void)setAuthenticationContext:(id)arg1;
 - (void)setBagContext:(id)arg1;
 - (void)setBiometricAuthenticationContext:(id)arg1;
-- (void)setContentLength:(int)arg1;
+- (void)setContentLength:(long long)arg1;
 - (void)setContentType:(id)arg1;
 - (void)setErrorHandlerResponseType:(int)arg1;
 - (void)setOutput:(id)arg1;
@@ -65,6 +65,6 @@
 - (void)setup;
 - (void)streamCancelled;
 - (void)streamDidFailWithError:(id)arg1;
-- (int)streamedBytes;
+- (long long)streamedBytes;
 
 @end

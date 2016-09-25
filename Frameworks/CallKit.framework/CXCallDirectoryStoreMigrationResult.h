@@ -3,24 +3,24 @@
  */
 
 @interface CXCallDirectoryStoreMigrationResult : NSObject {
-    int  _endingSchemaVersion;
+    long long  _endingSchemaVersion;
     BOOL  _requiresExtensionDisablement;
     BOOL  _requiresExtensionSynchronization;
-    int  _startingSchemaVersion;
+    long long  _startingSchemaVersion;
 }
 
-@property (nonatomic) int endingSchemaVersion;
+@property (nonatomic) long long endingSchemaVersion;
 @property (nonatomic) BOOL requiresExtensionDisablement;
 @property (nonatomic) BOOL requiresExtensionSynchronization;
-@property (nonatomic) int startingSchemaVersion;
+@property (nonatomic) long long startingSchemaVersion;
 
-- (int)endingSchemaVersion;
+- (long long)endingSchemaVersion;
 - (BOOL)requiresExtensionDisablement;
 - (BOOL)requiresExtensionSynchronization;
-- (void)setEndingSchemaVersion:(int)arg1;
+- (void)setEndingSchemaVersion:(long long)arg1;
 - (void)setRequiresExtensionDisablement:(BOOL)arg1;
 - (void)setRequiresExtensionSynchronization:(BOOL)arg1;
-- (void)setStartingSchemaVersion:(int)arg1;
-- (int)startingSchemaVersion;
+- (void)setStartingSchemaVersion:(long long)arg1;
+- (long long)startingSchemaVersion;
 
 @end

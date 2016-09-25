@@ -3,17 +3,17 @@
  */
 
 @interface SKPhysicsJointSliding : SKPhysicsJoint {
-    double  _lowerDistanceLimit;
+    float  _lowerDistanceLimit;
     BOOL  _shouldEnableLimits;
-    double  _upperDistanceLimit;
+    float  _upperDistanceLimit;
 }
 
-@property (nonatomic) double lowerDistanceLimit;
+@property (nonatomic) float lowerDistanceLimit;
 @property (nonatomic) BOOL shouldEnableLimits;
-@property (nonatomic) double upperDistanceLimit;
+@property (nonatomic) float upperDistanceLimit;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (id)jointWithBodyA:(id)arg1 bodyB:(id)arg2 anchor:(struct CGPoint { double x1; double x2; })arg3 axis:(struct CGVector { double x1; double x2; })arg4;
++ (id)jointWithBodyA:(id)arg1 bodyB:(id)arg2 anchor:(struct CGPoint { float x1; float x2; })arg3 axis:(struct CGVector { float x1; float x2; })arg4;
 
 - (float)lowerDistanceLimit;
 - (void)setLowerDistanceLimit:(float)arg1;

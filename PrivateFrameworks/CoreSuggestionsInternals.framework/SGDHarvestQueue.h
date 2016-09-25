@@ -24,7 +24,7 @@
 - (void)countHighPriorityItems:(unsigned int*)arg1 lowPriorityItems:(unsigned int*)arg2;
 - (id)permafailDirectory;
 - (void)pop:(id /* block */)arg1;
-- (void)popByItemId:(int)arg1 callback:(id /* block */)arg2;
+- (void)popByItemId:(long long)arg1 callback:(id /* block */)arg2;
 - (void)popBySourceKey:(id)arg1 messageId:(id)arg2 callback:(id /* block */)arg3;
 - (void)popHighPriority:(id /* block */)arg1;
 - (void)setPermafailDirectory:(id)arg1;

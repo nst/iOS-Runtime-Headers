@@ -19,7 +19,7 @@
 @property (nonatomic) unsigned int activePage;
 @property (nonatomic, retain) HUCCGridViewController *activePageViewController;
 @property (nonatomic, readonly) LSApplicationWorkspace *appWorkspace;
-@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInsets;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CCUIControlCenterPageContentViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;

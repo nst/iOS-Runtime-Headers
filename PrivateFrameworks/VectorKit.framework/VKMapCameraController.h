@@ -56,7 +56,7 @@
 - (float)minimumPitchForNormalizedZoomLevel:(float)arg1;
 - (double)minimumZoomLevel;
 - (float)normalizedZoomLevelAdjustmentForTileSize:(int)arg1;
-- (void)panWithOffset:(struct CGPoint { double x1; double x2; })arg1 relativeToScreenPoint:(struct CGPoint { double x1; double x2; })arg2 animated:(BOOL)arg3 duration:(double)arg4 completionHandler:(id /* block */)arg5;
+- (void)panWithOffset:(struct CGPoint { float x1; float x2; })arg1 relativeToScreenPoint:(struct CGPoint { float x1; float x2; })arg2 animated:(BOOL)arg3 duration:(double)arg4 completionHandler:(id /* block */)arg5;
 - (double)pitch;
 - (double)presentationYaw;
 - (BOOL)restoreViewportFromInfo:(id)arg1;
@@ -72,17 +72,17 @@
 - (void)setYaw:(double)arg1 animated:(BOOL)arg2;
 - (BOOL)snapMapIfNecessary:(BOOL)arg1;
 - (void)startTrackingAnnotation:(id)arg1 trackHeading:(BOOL)arg2 animated:(BOOL)arg3;
-- (void)tapZoom:(struct CGPoint { double x1; double x2; })arg1 levels:(double)arg2 completionHandler:(id /* block */)arg3;
+- (void)tapZoom:(struct CGPoint { float x1; float x2; })arg1 levels:(double)arg2 completionHandler:(id /* block */)arg3;
 - (int)tileSize;
 - (double)topDownMinimumZoomLevel;
 - (void)updateCameraToPositionOrientationLimits;
 - (void)updateCameraZBounds;
 - (id)viewportInfo;
 - (double)yaw;
-- (void)zoom:(double)arg1 withFocusPoint:(struct CGPoint { double x1; double x2; })arg2 completionHandler:(id /* block */)arg3;
+- (void)zoom:(double)arg1 withFocusPoint:(struct CGPoint { float x1; float x2; })arg2 completionHandler:(id /* block */)arg3;
 - (void)zoom:(double)arg1 withPoint:(struct Matrix<double, 3, 1> { double x1[3]; })arg2 completionHandler:(id /* block */)arg3;
 - (double)zoomLevelAdjustmentForTileSize:(int)arg1;
-- (void)zoomToLevel:(double)arg1 withFocusPoint:(struct CGPoint { double x1; double x2; })arg2;
+- (void)zoomToLevel:(double)arg1 withFocusPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (void)zoomToLevel:(double)arg1 withPoint:(struct Matrix<double, 3, 1> { double x1[3]; })arg2;
 
 @end

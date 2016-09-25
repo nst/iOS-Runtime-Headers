@@ -26,7 +26,7 @@
 - (struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; int x6; unsigned int x7; })oldLayoutSettings;
 - (struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; int x6; unsigned int x7; })p_oldLayoutSettingsForSpice:(BOOL)arg1;
 - (void)setWillModifyBlock:(id /* block */)arg1;
-- (void)upgradeForSpice:(BOOL)arg1 naturalSize:(struct CGSize { double x1; double x2; })arg2;
+- (void)upgradeForSpice:(BOOL)arg1 naturalSize:(struct CGSize { float x1; float x2; })arg2;
 - (struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; int x6; unsigned int x7; })upgradedLayoutSettings;
 - (id /* block */)willModifyBlock;
 

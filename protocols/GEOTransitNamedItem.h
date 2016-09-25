@@ -7,8 +7,8 @@
 
 - (NSString *)bestName;
 - (BOOL)hasMuid;
-- (unsigned int)muid;
+- (unsigned long long)muid;
 - (void)setHasMuid:(BOOL)arg1;
-- (void)setMuid:(unsigned int)arg1;
+- (void)setMuid:(unsigned long long)arg1;
 
 @end

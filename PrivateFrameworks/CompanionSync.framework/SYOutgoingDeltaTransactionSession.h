@@ -18,13 +18,13 @@
 - (void).cxx_destruct;
 - (void)_fetchNextBatch;
 - (void)_installStateListener;
-- (void)_messageExpiredWithSeqno:(unsigned int)arg1 identifier:(id)arg2;
+- (void)_messageExpiredWithSeqno:(unsigned long long)arg1 identifier:(id)arg2;
 - (void)_notifySessionComplete;
 - (void)_peerProcessedMessageWithIdentifier:(id)arg1 userInfo:(id)arg2;
 - (void)_processNextState;
 - (void)_sendSyncBatch:(id)arg1 nextState:(int)arg2;
 - (void)_sentMessageWithIdentifier:(id)arg1 userInfo:(id)arg2;
-- (void)_setMessageTimerForSeqno:(unsigned int)arg1;
+- (void)_setMessageTimerForSeqno:(unsigned long long)arg1;
 - (void)_setStateQuietly:(int)arg1;
 - (void)_setupChangeConcurrency;
 - (void)_waitForMessageWindow;

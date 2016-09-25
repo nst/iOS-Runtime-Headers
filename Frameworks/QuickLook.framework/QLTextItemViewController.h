@@ -25,7 +25,7 @@
 - (BOOL)canSwipeToDismiss;
 - (void)loadPreviewControllerWithPreviewItem:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)loadView;
-- (void)numberOfPagesWithSize:(struct CGSize { double x1; double x2; })arg1 completionHandler:(id /* block */)arg2;
+- (void)numberOfPagesWithSize:(struct CGSize { float x1; float x2; })arg1 completionHandler:(id /* block */)arg2;
 - (id)pageRenderer;
 - (void)pdfDataForPageAtIndex:(int)arg1 withCompletionHandler:(id /* block */)arg2;
 - (int)preferredWhitePointAdaptivityStyle;

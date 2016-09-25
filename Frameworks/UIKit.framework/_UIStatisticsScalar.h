@@ -4,8 +4,8 @@
 
 @interface _UIStatisticsScalar : _UIStatistics
 
-- (void)incrementValueBy:(int)arg1;
+- (void)incrementValueBy:(long long)arg1;
 - (void)resetValue;
-- (void)setValue:(int)arg1;
+- (void)setValue:(long long)arg1;
 
 @end

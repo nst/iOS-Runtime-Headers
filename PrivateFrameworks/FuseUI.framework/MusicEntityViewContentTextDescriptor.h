@@ -7,24 +7,24 @@
     int  _backdropOverlayBlendMode;
     UIColor * _backgroundColor;
     NSMutableArray * _controlTargetActions;
-    double  _defaultFirstBaselineOffset;
-    double  _displayScale;
+    float  _defaultFirstBaselineOffset;
+    float  _displayScale;
     MPUFontDescriptor * _fontDescriptor;
     int  _lineBreakMode;
-    double  _lineHeightMultiple;
-    double  _lineSpacing;
-    double  _maximumHeight;
+    float  _lineHeightMultiple;
+    float  _lineSpacing;
+    float  _maximumHeight;
     int  _maximumNumberOfLines;
     int  _maximumTextLengthForInput;
     BOOL  _needsTextAttributesUpdate;
     BOOL  _prefersAsynchronousLoading;
-    double  _scaledFirstBaselineOffset;
+    float  _scaledFirstBaselineOffset;
     BOOL  _shouldBaselineAlignTrailingAccessoryImage;
     int  _tag;
-    double  _tallestFontAscender;
-    double  _tallestFontBodyLeading;
-    double  _tallestFontCapHeight;
-    double  _tallestFontDescender;
+    float  _tallestFontAscender;
+    float  _tallestFontBodyLeading;
+    float  _tallestFontCapHeight;
+    float  _tallestFontDescender;
     int  _textAlignment;
     UIColor * _textColor;
     BOOL  _textColorFollowsTintColor;
@@ -38,8 +38,8 @@
     UIColor * _tintColor;
     UIImage * _trailingAccessoryImage;
     struct UIOffset { 
-        double horizontal; 
-        double vertical; 
+        float horizontal; 
+        float vertical; 
     }  _trailingAccessoryOffset;
     BOOL  _useTextFallbackForEmptyString;
 }
@@ -49,24 +49,24 @@
 @property (nonatomic, copy) id /* block */ attributedTextProvider;
 @property (nonatomic) int backdropOverlayBlendMode;
 @property (nonatomic, retain) UIColor *backgroundColor;
-@property (nonatomic) double defaultFirstBaselineOffset;
-@property (nonatomic) double displayScale;
+@property (nonatomic) float defaultFirstBaselineOffset;
+@property (nonatomic) float displayScale;
 @property (nonatomic, copy) MPUFontDescriptor *fontDescriptor;
 @property (nonatomic, readonly) BOOL hasControlBehaviors;
 @property (nonatomic) int lineBreakMode;
-@property (nonatomic) double lineHeightMultiple;
-@property (nonatomic) double lineSpacing;
-@property (nonatomic, readonly) double maximumHeight;
+@property (nonatomic) float lineHeightMultiple;
+@property (nonatomic) float lineSpacing;
+@property (nonatomic, readonly) float maximumHeight;
 @property (nonatomic) int maximumNumberOfLines;
 @property (nonatomic) int maximumTextLengthForInput;
 @property (nonatomic) BOOL prefersAsynchronousLoading;
-@property (nonatomic, readonly) double scaledFirstBaselineOffset;
+@property (nonatomic, readonly) float scaledFirstBaselineOffset;
 @property (nonatomic) BOOL shouldBaselineAlignTrailingAccessoryImage;
 @property (nonatomic) int tag;
-@property (nonatomic, readonly) double tallestFontAscender;
-@property (nonatomic, readonly) double tallestFontBodyLeading;
-@property (nonatomic, readonly) double tallestFontCapHeight;
-@property (nonatomic, readonly) double tallestFontDescender;
+@property (nonatomic, readonly) float tallestFontAscender;
+@property (nonatomic, readonly) float tallestFontBodyLeading;
+@property (nonatomic, readonly) float tallestFontCapHeight;
+@property (nonatomic, readonly) float tallestFontDescender;
 @property (nonatomic) int textAlignment;
 @property (nonatomic, retain) UIColor *textColor;
 @property (nonatomic) BOOL textColorFollowsTintColor;
@@ -79,7 +79,7 @@
 @property (nonatomic, copy) NSString *textValueProperty;
 @property (nonatomic, retain) UIColor *tintColor;
 @property (nonatomic, retain) UIImage *trailingAccessoryImage;
-@property (nonatomic) struct UIOffset { double x1; double x2; } trailingAccessoryOffset;
+@property (nonatomic) struct UIOffset { float x1; float x2; } trailingAccessoryOffset;
 @property (nonatomic) BOOL useTextFallbackForEmptyString;
 
 - (void).cxx_destruct;
@@ -132,7 +132,7 @@
 - (void)setTextValueProperty:(id)arg1;
 - (void)setTintColor:(id)arg1;
 - (void)setTrailingAccessoryImage:(id)arg1;
-- (void)setTrailingAccessoryOffset:(struct UIOffset { double x1; double x2; })arg1;
+- (void)setTrailingAccessoryOffset:(struct UIOffset { float x1; float x2; })arg1;
 - (void)setUseTextFallbackForEmptyString:(BOOL)arg1;
 - (BOOL)shouldBaselineAlignTrailingAccessoryImage;
 - (int)tag;
@@ -154,7 +154,7 @@
 - (id)textValueProperty;
 - (id)tintColor;
 - (id)trailingAccessoryImage;
-- (struct UIOffset { double x1; double x2; })trailingAccessoryOffset;
+- (struct UIOffset { float x1; float x2; })trailingAccessoryOffset;
 - (void)updateForPreferredContentSizeChange;
 - (BOOL)useTextFallbackForEmptyString;
 

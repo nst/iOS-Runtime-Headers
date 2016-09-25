@@ -8,7 +8,7 @@
     NSObject<OS_dispatch_group> * _commitGroup;
     NSMutableArray * _connections;
     long  _errorStatus;
-    int  _inflightConfigurationID;
+    long long  _inflightConfigurationID;
     NSMutableArray * _nodes;
     NSMutableArray * _outputsWithSharedPools;
     BOOL  _prefetchesPixelBufferPools;
@@ -30,7 +30,7 @@
 - (id)_breadthFirstEnumerator;
 - (id)_depthFirstEnumeratorWithVertexOrdering:(int)arg1;
 - (void)_makeParentConfigurationChangesLive;
-- (id)_newDispatchGroupForSinksToBecomeLiveWithConfigurationID:(int)arg1;
+- (id)_newDispatchGroupForSinksToBecomeLiveWithConfigurationID:(long long)arg1;
 - (id)_newDispatchGroupForSinksToTransitionToState:(int)arg1;
 - (BOOL)_prepareNodesWithConfigurationChanges:(id*)arg1;
 - (BOOL)_resolveFormats:(id*)arg1;
@@ -42,7 +42,7 @@
 - (void)_waitForOutstandingStartOrCommitOperationToComplete;
 - (BOOL)addNode:(id)arg1 error:(id*)arg2;
 - (void)beginConfiguration;
-- (BOOL)commitConfigurationWithID:(int)arg1 error:(id*)arg2;
+- (BOOL)commitConfigurationWithID:(long long)arg1 error:(id*)arg2;
 - (BOOL)connectOutput:(id)arg1 toInput:(id)arg2 pipelineStage:(id)arg3;
 - (void)dealloc;
 - (id)dotString;

@@ -5,31 +5,31 @@
 @interface SKUIItemBrowseCellLayout : SKUIItemCellLayout {
     _SKUIItemBrowseCellContentView * _cellContentView;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _imageBoundingSize;
     BOOL  _largeSpacing;
     int  _numberOfUserRatings;
     UIColor * _primaryTextColor;
     UIColor * _secondaryTextColor;
-    double  _userRating;
+    float  _userRating;
 }
 
 @property (nonatomic, copy) NSString *category;
-@property (nonatomic) struct CGSize { double x1; double x2; } imageBoundingSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } imageBoundingSize;
 @property (nonatomic, copy) NSString *indexNumberString;
 @property (getter=isLargeSpacing, nonatomic) BOOL largeSpacing;
 @property (nonatomic) int numberOfUserRatings;
 @property (nonatomic, copy) NSString *subtitle;
 @property (nonatomic, copy) NSString *title;
-@property (nonatomic) double userRating;
+@property (nonatomic) float userRating;
 
 - (void).cxx_destruct;
 - (id)_decimalNumberFormatter;
 - (void)_initSKUIItemBrowseCellLayout;
 - (void)_reloadUserRatingViews;
 - (id)category;
-- (struct CGSize { double x1; double x2; })imageBoundingSize;
+- (struct CGSize { float x1; float x2; })imageBoundingSize;
 - (id)indexNumberString;
 - (id)initWithCollectionViewCell:(id)arg1;
 - (id)initWithParentView:(id)arg1;
@@ -42,7 +42,7 @@
 - (void)setCategory:(id)arg1;
 - (void)setColoringWithColorScheme:(id)arg1;
 - (void)setIconImage:(id)arg1;
-- (void)setImageBoundingSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setImageBoundingSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setIndexNumberString:(id)arg1;
 - (void)setLargeSpacing:(BOOL)arg1;
 - (void)setNumberOfUserRatings:(int)arg1;

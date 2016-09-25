@@ -3,29 +3,29 @@
  */
 
 @interface HistogramElement : NSObject <NSCoding> {
-    unsigned int  count;
+    unsigned long long  count;
     double  probability;
-    unsigned int  queryID;
+    unsigned long long  queryID;
     NSString * stringkey;
 }
 
-@property (nonatomic) unsigned int count;
+@property (nonatomic) unsigned long long count;
 @property (nonatomic) double probability;
-@property (nonatomic) unsigned int queryID;
+@property (nonatomic) unsigned long long queryID;
 @property (nonatomic, retain) NSString *stringkey;
 
 - (void).cxx_destruct;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithString:(id)arg1 withCount:(unsigned int)arg2 withQueryID:(unsigned int)arg3;
-- (id)initWithString:(id)arg1 withProbability:(double)arg2 withQueryID:(unsigned int)arg3;
+- (id)initWithString:(id)arg1 withCount:(unsigned long long)arg2 withQueryID:(unsigned long long)arg3;
+- (id)initWithString:(id)arg1 withProbability:(double)arg2 withQueryID:(unsigned long long)arg3;
 - (double)probability;
-- (unsigned int)queryID;
-- (void)setCount:(unsigned int)arg1;
+- (unsigned long long)queryID;
+- (void)setCount:(unsigned long long)arg1;
 - (void)setProbability:(double)arg1;
-- (void)setQueryID:(unsigned int)arg1;
+- (void)setQueryID:(unsigned long long)arg1;
 - (void)setStringkey:(id)arg1;
 - (id)stringkey;
 

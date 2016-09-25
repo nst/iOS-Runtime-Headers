@@ -4,21 +4,21 @@
 
 @interface NTKComplicationLayoutRule : NTKLayoutRule {
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _keylinePadding;
 }
 
-@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } keylinePadding;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } keylinePadding;
 
-+ (id)layoutRuleWithReferenceFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 horizontalLayout:(int)arg2 verticalLayout:(int)arg3 keylinePadding:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg4;
-+ (id)layoutRuleWithReferenceFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 horizontalLayout:(int)arg2 verticalLayout:(int)arg3 keylinePadding:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg4 clip:(BOOL)arg5;
++ (id)layoutRuleWithReferenceFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 horizontalLayout:(int)arg2 verticalLayout:(int)arg3 keylinePadding:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg4;
++ (id)layoutRuleWithReferenceFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 horizontalLayout:(int)arg2 verticalLayout:(int)arg3 keylinePadding:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg4 clip:(BOOL)arg5;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })keylinePadding;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })keylinePadding;
 
 @end

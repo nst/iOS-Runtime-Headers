@@ -9,7 +9,7 @@
     NRDevice * _pairedDevice;
     NSObject<OS_dispatch_queue> * _queue;
     NSUUID * _sessionIdentifier;
-    unsigned int  _switchID;
+    unsigned long long  _switchID;
     PSYSyncCoordinator * _syncCoordinator;
     unsigned int  _syncSessionType;
 }
@@ -18,7 +18,7 @@
 @property (nonatomic) <PSYServiceSyncSessionDelegate> *delegate;
 @property (nonatomic, retain) NRDevice *pairedDevice;
 @property (nonatomic, retain) NSUUID *sessionIdentifier;
-@property (nonatomic) unsigned int switchID;
+@property (nonatomic) unsigned long long switchID;
 @property (nonatomic) PSYSyncCoordinator *syncCoordinator;
 @property (nonatomic) unsigned int syncSessionType;
 
@@ -32,10 +32,10 @@
 - (void)setDelegate:(id)arg1;
 - (void)setPairedDevice:(id)arg1;
 - (void)setSessionIdentifier:(id)arg1;
-- (void)setSwitchID:(unsigned int)arg1;
+- (void)setSwitchID:(unsigned long long)arg1;
 - (void)setSyncCoordinator:(id)arg1;
 - (void)setSyncSessionType:(unsigned int)arg1;
-- (unsigned int)switchID;
+- (unsigned long long)switchID;
 - (id)syncCoordinator;
 - (void)syncDidComplete;
 - (void)syncDidCompleteSending;

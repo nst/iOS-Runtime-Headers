@@ -10,7 +10,7 @@
 
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (BOOL)hitTestToContentArea;
-- (BOOL)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)setHitTestToContentArea:(BOOL)arg1;
 
 @end

@@ -4,8 +4,8 @@
 
 @interface SKUIVerticalInfoListPageSection : SKUIStorePageSection <SKUIArtworkRequestDelegate> {
     SKUIViewElementLayoutContext * _cellLayoutContext;
-    double  _columnHeight;
-    double  _columnWidth;
+    float  _columnHeight;
+    float  _columnWidth;
     NSMutableArray * _columns;
     SKUIInfoListViewElement * _infoList;
     int  _numberOfColumns;
@@ -17,7 +17,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_contentInsetForIndexPath:(id)arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_contentInsetForIndexPath:(id)arg1;
 - (void)_enumerateVisibleIndexPathsUsingBlock:(id /* block */)arg1;
 - (int)_numberOfColumnsForWidth:(float)arg1;
 - (id)_reloadColumnDataIfNecessary;
@@ -26,15 +26,15 @@
 - (void)artworkRequest:(id)arg1 didLoadImage:(id)arg2;
 - (id)backgroundColorForIndexPath:(id)arg1;
 - (id)cellForIndexPath:(id)arg1;
-- (struct CGSize { double x1; double x2; })cellSizeForIndexPath:(id)arg1;
+- (struct CGSize { float x1; float x2; })cellSizeForIndexPath:(id)arg1;
 - (void)collectionViewDidEndDisplayingCellForItemAtIndexPath:(id)arg1;
 - (void)collectionViewWillDisplayCellForItemAtIndexPath:(id)arg1;
 - (void)entityProvider:(id)arg1 didInvalidateWithContext:(id)arg2;
 - (id)initWithPageComponent:(id)arg1;
 - (int)numberOfCells;
 - (void)reloadCellWithIndexPath:(id)arg1 reason:(int)arg2;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })sectionContentInset;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })sectionContentInset;
 - (void)willAppearInContext:(id)arg1;
-- (void)willTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)willTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

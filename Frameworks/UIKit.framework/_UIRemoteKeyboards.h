@@ -18,7 +18,7 @@
     UIView * _keyboardSnapshot;
     NSMutableSet * _pendingKeyboardGrabs;
     int  _recursionCheck;
-    double  _requiredLevel;
+    float  _requiredLevel;
     BOOL  _takingSnapshot;
     BOOL  _updatingHeight;
     NSHashTable * _windowControllers;
@@ -33,8 +33,8 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) BOOL handlingRemoteEvent;
 @property (readonly) unsigned int hash;
-@property (readonly) double iavHeight;
-@property (readonly) double intersectionHeight;
+@property (readonly) float iavHeight;
+@property (readonly) float intersectionHeight;
 @property (nonatomic) BOOL isSnapshotting;
 @property (readonly) BOOL keyboardActive;
 @property (readonly) BOOL keyboardVisible;
@@ -88,7 +88,7 @@
 - (void)performOnControllers:(id /* block */)arg1;
 - (void)performOnDistributedControllers:(id /* block */)arg1;
 - (id)prepareForHostedWindow;
-- (void)prepareToMoveKeyboard:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withIAV:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 showing:(BOOL)arg3 forScreen:(id)arg4;
+- (void)prepareToMoveKeyboard:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withIAV:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 showing:(BOOL)arg3 forScreen:(id)arg4;
 - (id)proxy;
 - (void)queue_applicationLostFocusWithCompletion:(id /* block */)arg1;
 - (void)queue_failedConnection:(id)arg1;

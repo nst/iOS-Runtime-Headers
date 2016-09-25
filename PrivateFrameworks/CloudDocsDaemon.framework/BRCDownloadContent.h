@@ -6,7 +6,7 @@
     NSIndexSet * _desiredIndices;
     BOOL  _isFinderBookmark;
     unsigned int  _liveDocumentID;
-    unsigned int  _liveFileID;
+    unsigned long long  _liveFileID;
     BOOL  _liveItemIsPackage;
     BOOL  _requiresTwoPhase;
     BRCServerZone * _zone;
@@ -14,7 +14,7 @@
 
 @property (nonatomic, readonly) NSIndexSet *desiredIndices;
 @property (nonatomic, readonly) unsigned int liveDocumentID;
-@property (nonatomic, readonly) unsigned int liveFileID;
+@property (nonatomic, readonly) unsigned long long liveFileID;
 @property (nonatomic, readonly) BOOL liveItemIsPackage;
 @property (nonatomic, retain) BRCProgress *progress;
 @property (nonatomic, readonly) BOOL requiresTwoPhase;
@@ -28,7 +28,7 @@
 - (id)initWithDocument:(id)arg1 stageID:(id)arg2;
 - (int)kind;
 - (unsigned int)liveDocumentID;
-- (unsigned int)liveFileID;
+- (unsigned long long)liveFileID;
 - (BOOL)liveItemIsPackage;
 - (BOOL)requiresTwoPhase;
 - (void)setProgress:(id)arg1;

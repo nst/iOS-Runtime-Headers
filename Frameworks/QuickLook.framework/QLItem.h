@@ -10,9 +10,9 @@
     BOOL  _canBeShared;
     BOOL  _didCreateEditedFileURLFolder;
     <QLPreviewItemURLProviderDownloadTracker> * _downloadTracker;
-    int  _editedFileExtensionHandle;
+    long long  _editedFileExtensionHandle;
     NSURL * _editedFileURL;
-    int  _fileExtensionHandle;
+    long long  _fileExtensionHandle;
     NSString * _fileExtensionToken;
     NSNumber * _fileSize;
     NSString * _formattedFileSize;
@@ -24,7 +24,7 @@
     NSNumber * _needsCoordination;
     <QLPreviewItem> * _originalPreviewItem;
     NSString * _password;
-    int  _physicalFileExtensionHandle;
+    long long  _physicalFileExtensionHandle;
     NSString * _physicalFileExtensionToken;
     NSString * _previewItemContentType;
     NSData * _previewItemData;
@@ -150,7 +150,7 @@
 - (unsigned int)previewItemType;
 - (id)previewItemURL;
 - (Class)previewItemViewControllerClassWithStyle:(unsigned int)arg1;
-- (struct CGSize { double x1; double x2; })previewSizeForItemViewControllerSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })previewSizeForItemViewControllerSize:(struct CGSize { float x1; float x2; })arg1;
 - (int)processIdentifier;
 - (id)relativePath;
 - (id)representativeIcon;
@@ -177,7 +177,7 @@
 - (void)setUseFullPDFTransition:(BOOL)arg1;
 - (void)setUuid:(id)arg1;
 - (void)shouldAutoDownloadInNetworkState:(unsigned int)arg1 completionHandler:(id /* block */)arg2;
-- (void)thumbnailWithSize:(struct CGSize { double x1; double x2; })arg1 scale:(float)arg2 completionHandler:(id /* block */)arg3;
+- (void)thumbnailWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2 completionHandler:(id /* block */)arg3;
 - (id)urlProvider;
 - (BOOL)useAVPlayerViewController;
 - (BOOL)useExtensionPreview;

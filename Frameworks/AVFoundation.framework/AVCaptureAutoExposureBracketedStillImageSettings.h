@@ -3,10 +3,10 @@
  */
 
 @interface AVCaptureAutoExposureBracketedStillImageSettings : AVCaptureBracketedStillImageSettings {
-    double  _exposureTargetBias;
+    float  _exposureTargetBias;
 }
 
-@property (readonly) double exposureTargetBias;
+@property (readonly) float exposureTargetBias;
 
 + (id)autoExposureSettingsWithExposureTargetBias:(float)arg1;
 

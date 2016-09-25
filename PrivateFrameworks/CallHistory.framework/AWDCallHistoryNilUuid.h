@@ -10,7 +10,7 @@
         unsigned int callStatus : 1; 
         unsigned int callType : 1; 
     }  _has;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) unsigned int callStatus;
@@ -18,7 +18,7 @@
 @property (nonatomic) BOOL hasCallStatus;
 @property (nonatomic) BOOL hasCallType;
 @property (nonatomic) BOOL hasTimestamp;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 
 - (unsigned int)callStatus;
 - (unsigned int)callType;
@@ -38,8 +38,8 @@
 - (void)setHasCallStatus:(BOOL)arg1;
 - (void)setHasCallType:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
-- (unsigned int)timestamp;
+- (void)setTimestamp:(unsigned long long)arg1;
+- (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 
 @end

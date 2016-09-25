@@ -31,7 +31,7 @@
 - (id)initWithSharee:(id)arg1;
 - (void)loadView;
 - (int)numberOfSectionsInTableView:(id)arg1;
-- (struct CGSize { double x1; double x2; })preferredContentSize;
+- (struct CGSize { float x1; float x2; })preferredContentSize;
 - (void)removeClicked:(id)arg1;
 - (void)setAllowEditing:(BOOL)arg1;
 - (void)setAllowResendInvitations:(BOOL)arg1;

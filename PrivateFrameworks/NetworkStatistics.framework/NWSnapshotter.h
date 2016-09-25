@@ -3,16 +3,16 @@
  */
 
 @interface NWSnapshotter : NSObject {
-    unsigned int  _kernelSourceRef;
+    unsigned long long  _kernelSourceRef;
     NWSnapshotSource * _snapshotSource;
 }
 
-@property unsigned int kernelSourceRef;
+@property unsigned long long kernelSourceRef;
 @property (retain) NWSnapshotSource *snapshotSource;
 
 - (void).cxx_destruct;
-- (unsigned int)kernelSourceRef;
-- (void)setKernelSourceRef:(unsigned int)arg1;
+- (unsigned long long)kernelSourceRef;
+- (void)setKernelSourceRef:(unsigned long long)arg1;
 - (void)setSnapshotSource:(id)arg1;
 - (id)snapshot;
 - (id)snapshotSource;

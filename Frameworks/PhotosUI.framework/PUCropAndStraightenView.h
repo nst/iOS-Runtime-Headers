@@ -6,18 +6,18 @@
     UIView * __contentView;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  __fittingRegion;
     PLImageGeometry * __imageGeometry;
     UIImageView * __imageView;
     PHLivePhotoView * __livePhotoView;
-    double  __preferredZoomScale;
+    float  __preferredZoomScale;
     UIScrollView * __scrollView;
     UIView * __scrollViewReference;
     BOOL  __scrollViewTracking;
@@ -26,69 +26,69 @@
     BOOL  __updatingForStraighten;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _canvasFrame;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _cropRect;
     <PUCropAndStraightenViewDelegate> * _delegate;
     UIImage * _image;
     PHLivePhoto * _livePhoto;
     int  _orientation;
-    double  _straightenAngle;
+    float  _straightenAngle;
     BOOL  _tracking;
 }
 
 @property (setter=_setContentView:, nonatomic, retain) UIView *_contentView;
-@property (setter=_setFittingRegion:, nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } _fittingRegion;
+@property (setter=_setFittingRegion:, nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } _fittingRegion;
 @property (setter=_setImageGeometry:, nonatomic, retain) PLImageGeometry *_imageGeometry;
 @property (setter=_setImageView:, nonatomic, retain) UIImageView *_imageView;
 @property (setter=_setLivePhotoView:, nonatomic, retain) PHLivePhotoView *_livePhotoView;
-@property (setter=_setPreferredZoomScale:, nonatomic) double _preferredZoomScale;
+@property (setter=_setPreferredZoomScale:, nonatomic) float _preferredZoomScale;
 @property (getter=_isRotationSideways, nonatomic, readonly) BOOL _rotationSideways;
-@property (nonatomic, readonly) struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; } _rotationTransform;
+@property (nonatomic, readonly) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } _rotationTransform;
 @property (setter=_setScrollView:, nonatomic, retain) UIScrollView *_scrollView;
 @property (setter=_setScrollViewReference:, nonatomic, retain) UIView *_scrollViewReference;
 @property (getter=_isScrollViewTracking, setter=_setScrollViewTracking:, nonatomic) BOOL _scrollViewTracking;
 @property (getter=_isUpdatingForCrop, setter=_setUpdatingForCrop:, nonatomic) BOOL _updatingForCrop;
 @property (getter=_isUpdatingForFit, setter=_setUpdatingForFit:, nonatomic) BOOL _updatingForFit;
 @property (getter=_isUpdatingForStraighten, setter=_setUpdatingForStraighten:, nonatomic) BOOL _updatingForStraighten;
-@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } canvasFrame;
-@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } cropRect;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } canvasFrame;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } cropRect;
 @property (readonly, copy) NSString *debugDescription;
 @property (getter=isDecelerating, nonatomic, readonly) BOOL decelerating;
 @property (nonatomic) <PUCropAndStraightenViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) UIImage *image;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } imageCropRect;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } imageCropRect;
 @property (nonatomic, retain) PHLivePhoto *livePhoto;
 @property (nonatomic) int orientation;
-@property (nonatomic) double straightenAngle;
+@property (nonatomic) float straightenAngle;
 @property (readonly) Class superclass;
 @property (getter=isTracking, setter=_setTracking:, nonatomic) BOOL tracking;
 
 - (void).cxx_destruct;
-- (struct CGSize { double x1; double x2; })_boundingSizeOfStraightenedRectWithSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })_boundingSizeOfStraightenedRectWithSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)_contentView;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_croppingRect;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_fittingRegion;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_fullCropRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_croppingRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_fittingRegion;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_fullCropRect;
 - (void)_handleTouchingRecognizer:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_imageBounds;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_imageBounds;
 - (id)_imageGeometry;
 - (id)_imageView;
 - (BOOL)_isRotationSideways;
@@ -98,11 +98,11 @@
 - (BOOL)_isUpdatingForStraighten;
 - (id)_livePhotoView;
 - (float)_preferredZoomScale;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })_rotationTransform;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_rotationTransform;
 - (id)_scrollView;
 - (id)_scrollViewReference;
 - (void)_setContentView:(id)arg1;
-- (void)_setFittingRegion:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)_setFittingRegion:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_setImageGeometry:(id)arg1;
 - (void)_setImageView:(id)arg1;
 - (void)_setLivePhotoView:(id)arg1;
@@ -114,26 +114,26 @@
 - (void)_setUpdatingForCrop:(BOOL)arg1;
 - (void)_setUpdatingForFit:(BOOL)arg1;
 - (void)_setUpdatingForStraighten:(BOOL)arg1;
-- (struct CGSize { double x1; double x2; })_sizeRotatedIfNeeded:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })_sizeRotatedIfNeeded:(struct CGSize { float x1; float x2; })arg1;
 - (void)_updateLivePhotoScaleOffset;
 - (void)_updateScrollInsets;
 - (void)_updateScrollOffset;
 - (void)_updateScrollView;
 - (void)_updateZoomScale;
-- (float)_zoomScaleForImageRegion:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 toFit:(BOOL)arg2 viewBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
-- (float)_zoomScaleForImageToFit:(BOOL)arg1 viewBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (float)_zoomScaleForImageRegion:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 toFit:(BOOL)arg2 viewBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
+- (float)_zoomScaleForImageToFit:(BOOL)arg1 viewBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (float)_zoomScaleToFillCropRect;
 - (float)_zoomScaleToFillStraightenedCropRect;
 - (float)_zoomScaleToFitCanvas;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })canvasFrame;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })cropRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })canvasFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })cropRect;
 - (id)delegate;
-- (void)fitImageRegion:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inCropRectAnimated:(BOOL)arg2;
+- (void)fitImageRegion:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inCropRectAnimated:(BOOL)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (id)image;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })imageCropRect;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })imageCropRectForViewRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })imageCropRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })imageCropRectForViewRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isDecelerating;
 - (BOOL)isTracking;
 - (void)layoutSubviews;
@@ -144,8 +144,8 @@
 - (void)scrollViewDidEndZooming:(id)arg1 withView:(id)arg2 atScale:(float)arg3;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewDidZoom:(id)arg1;
-- (void)setCanvasFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)setCropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setCanvasFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setImage:(id)arg1;
 - (void)setLivePhoto:(id)arg1;

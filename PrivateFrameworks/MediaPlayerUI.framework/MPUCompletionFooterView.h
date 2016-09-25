@@ -10,10 +10,10 @@
     MPStoreCompletionOffering * _completionOffering;
     NSString * _completionTotalFormat;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _contentInsets;
     <MPUCompletionFooterViewDelegate> * _delegate;
     MPUItemOfferButton * _itemOfferButton;
@@ -35,7 +35,7 @@
 @property (nonatomic, copy) NSString *completeTitleFormat;
 @property (nonatomic, retain) MPStoreCompletionOffering *completionOffering;
 @property (nonatomic, copy) NSString *completionTotalFormat;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInsets;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <MPUCompletionFooterViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -68,14 +68,14 @@
 - (id)completeTitleFormat;
 - (id)completionOffering;
 - (id)completionTotalFormat;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithReuseIdentifier:(id)arg1;
 - (BOOL)isPurchasing;
 - (id)itemOfferButton;
 - (void)itemOfferButtonWillAnimateTransition:(id)arg1;
-- (void)layoutSeparatorsWithInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)layoutSeparatorsWithInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)layoutSubviews;
 - (int)preferredVariant;
 - (void)setBottomSeparatorView:(id)arg1;
@@ -84,7 +84,7 @@
 - (void)setCompleteTitleFormat:(id)arg1;
 - (void)setCompletionOffering:(id)arg1;
 - (void)setCompletionTotalFormat:(id)arg1;
-- (void)setContentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setItemOfferButton:(id)arg1;
 - (void)setPreferredVariant:(int)arg1;

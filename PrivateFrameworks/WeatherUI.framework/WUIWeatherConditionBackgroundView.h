@@ -12,7 +12,7 @@
     UIImageView * _introductionImageView;
     WUIWeatherCondition * _leftCondition;
     WUIWeatherCondition * _rightCondition;
-    double  _scrollOffset;
+    float  _scrollOffset;
 }
 
 @property (nonatomic, readonly) WUIDynamicWeatherBackground *background;
@@ -24,7 +24,7 @@
 @property (nonatomic, retain) UIImageView *introductionImageView;
 @property (nonatomic, retain) WUIWeatherCondition *leftCondition;
 @property (nonatomic, retain) WUIWeatherCondition *rightCondition;
-@property (nonatomic) double scrollOffset;
+@property (nonatomic) float scrollOffset;
 
 - (void).cxx_destruct;
 - (void)_addBackAllLayers;
@@ -33,16 +33,16 @@
 - (id)_conditions;
 - (void)_removeSideLayers;
 - (void)_setCondition:(id)arg1 atIndex:(unsigned int)arg2;
-- (void)animateTransitionToSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)animateTransitionToSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)background;
 - (id)cities;
 - (id)conditions;
 - (id)crossfadeEffectTimer;
 - (id)crossfadeTransaction;
 - (void)dealloc;
-- (void)didTransitionToSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)didTransitionToSize:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)hidesConditions;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)introductionImageView;
 - (void)layoutSubviews;
 - (id)leftCondition;

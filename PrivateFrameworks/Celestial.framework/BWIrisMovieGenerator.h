@@ -6,10 +6,10 @@
     struct OpaqueCMByteStream { } * _byteStream;
     int  _masterMovieAudioExtractionID;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _masterMovieDuration;
     BOOL  _masterMovieParsingComplete;
     struct OpaqueFigFormatReader { } * _masterMovieReader;

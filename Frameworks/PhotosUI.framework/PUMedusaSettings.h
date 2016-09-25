@@ -3,15 +3,15 @@
  */
 
 @interface PUMedusaSettings : PUSettings {
-    double  __desiredWidth;
-    double  __testIncrement;
+    float  __desiredWidth;
+    float  __testIncrement;
     double  __testInterval;
     double  __testStartDelay;
     double  __widthDelay;
 }
 
-@property (nonatomic) double _desiredWidth;
-@property (nonatomic) double _testIncrement;
+@property (nonatomic) float _desiredWidth;
+@property (nonatomic) float _testIncrement;
 @property (nonatomic) double _testInterval;
 @property (nonatomic) double _testStartDelay;
 @property (nonatomic) double _widthDelay;

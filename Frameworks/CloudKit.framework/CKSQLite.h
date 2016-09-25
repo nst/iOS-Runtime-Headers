@@ -64,10 +64,10 @@
 - (void)executeSQL:(id)arg1 arguments:(void*)arg2;
 - (BOOL)hasMigrated;
 - (id)initWithPath:(id)arg1 schema:(id)arg2;
-- (int)insertOrReplaceInto:(id)arg1 values:(id)arg2;
-- (int)insertOrReplaceObject:(id)arg1;
+- (long long)insertOrReplaceInto:(id)arg1 values:(id)arg2;
+- (long long)insertOrReplaceObject:(id)arg1;
 - (BOOL)isOpen;
-- (int)lastInsertRowID;
+- (long long)lastInsertRowID;
 - (id)objectClassPrefix;
 - (void)open;
 - (unsigned int)openCount;

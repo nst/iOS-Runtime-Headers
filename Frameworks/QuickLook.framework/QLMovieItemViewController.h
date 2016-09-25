@@ -11,7 +11,7 @@
     QLVideoScrubberView * _scrubber;
     UIView * _scrubberContainer;
     UIScrollView * _scrubberContainerScrollView;
-    double  _scrubberVerticalOffset;
+    float  _scrubberVerticalOffset;
 }
 
 @property (nonatomic, readonly) PHPlaceholderView *airPlayPlaceholderView;
@@ -23,7 +23,7 @@
 @property (retain) QLVideoScrubberView *scrubber;
 @property (retain) UIView *scrubberContainer;
 @property (retain) UIScrollView *scrubberContainerScrollView;
-@property (nonatomic) double scrubberVerticalOffset;
+@property (nonatomic) float scrubberVerticalOffset;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;

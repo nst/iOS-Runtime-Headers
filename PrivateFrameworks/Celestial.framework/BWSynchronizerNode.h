@@ -8,16 +8,16 @@
     int  _oldestPTSSyncHistoryElement;
     struct { 
         struct { 
-            int value; 
+            long long value; 
             int timescale; 
             unsigned int flags; 
-            int epoch; 
+            long long epoch; 
         } sourceTime; 
         struct { 
-            int value; 
+            long long value; 
             int timescale; 
             unsigned int flags; 
-            int epoch; 
+            long long epoch; 
         } syncedTime; 
     }  _ptsSyncHistory;
     struct OpaqueCMClock { } * _sourceClock;
@@ -25,9 +25,9 @@
 
 + (void)initialize;
 
-- (struct { int x1; int x2; unsigned int x3; int x4; })_getSyncedTimeForSourceTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })_getSyncedTimeForSourceTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)_synchronizeDetectedFaces:(id)arg1 metadata:(id)arg2 timescale:(int)arg3;
-- (void)_updatePTSSyncHistoryWithSourceTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1 syncedTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg2;
+- (void)_updatePTSSyncHistoryWithSourceTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 syncedTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
 - (void)dealloc;
 - (void)didSelectFormat:(id)arg1 forInput:(id)arg2;
 - (void)handleDroppedSample:(id)arg1 forInput:(id)arg2;

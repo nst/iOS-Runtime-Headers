@@ -25,8 +25,8 @@
 - (id)artworkURLForSize:(int)arg1;
 - (id)artworkWithWidth:(int)arg1;
 - (id)artworks;
-- (id)bestArtworkForScaledSize:(struct CGSize { double x1; double x2; })arg1;
-- (id)bestArtworkForSize:(struct CGSize { double x1; double x2; })arg1;
+- (id)bestArtworkForScaledSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)bestArtworkForSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)cacheRepresentation;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -37,7 +37,7 @@
 - (id)initWithLookupArray:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)largestArtwork;
-- (id)preferredExactArtworkForSize:(struct CGSize { double x1; double x2; })arg1;
+- (id)preferredExactArtworkForSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setArtworks:(id)arg1;
 - (id)smallestArtwork;
 

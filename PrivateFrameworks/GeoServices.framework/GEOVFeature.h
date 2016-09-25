@@ -3,13 +3,13 @@
  */
 
 @interface GEOVFeature : PBCodable <NSCopying> {
-    unsigned int  _businessID;
+    unsigned long long  _businessID;
     unsigned int  _centerlineCount;
     unsigned int  _centerlineStart;
     GEOVCharacteristics * _characteristics;
-    double  _endLaneWidth;
-    double  _endOffset;
-    double  _endRoadOffset;
+    float  _endLaneWidth;
+    float  _endOffset;
+    float  _endRoadOffset;
     unsigned int  _entryPointMask;
     struct { 
         int *list; 
@@ -46,7 +46,7 @@
         unsigned int count; 
         unsigned int size; 
     }  _labelOffsets;
-    double  _minzoomRank;
+    float  _minzoomRank;
     NSData * _oBSOLETECenterlines;
     NSData * _oBSOLETEShieldLabelPositions;
     NSData * _oBSOLETEVertexLabelPositions;
@@ -67,23 +67,23 @@
         unsigned int size; 
     }  _shieldLabelTypes;
     int  _speedLimit;
-    double  _startLaneWidth;
-    double  _startOffset;
-    double  _startRoadOffset;
+    float  _startLaneWidth;
+    float  _startOffset;
+    float  _startRoadOffset;
     NSMutableArray * _styleAttributes;
     unsigned int  _styleGroup;
     int  _travelDirection;
     int  _type;
-    int  _uID;
+    long long  _uID;
 }
 
-@property (nonatomic) unsigned int businessID;
+@property (nonatomic) unsigned long long businessID;
 @property (nonatomic) unsigned int centerlineCount;
 @property (nonatomic) unsigned int centerlineStart;
 @property (nonatomic, retain) GEOVCharacteristics *characteristics;
-@property (nonatomic) double endLaneWidth;
-@property (nonatomic) double endOffset;
-@property (nonatomic) double endRoadOffset;
+@property (nonatomic) float endLaneWidth;
+@property (nonatomic) float endOffset;
+@property (nonatomic) float endRoadOffset;
 @property (nonatomic) unsigned int entryPointMask;
 @property (nonatomic, readonly) int*extrusionHeights;
 @property (nonatomic, readonly) unsigned int extrusionHeightsCount;
@@ -117,7 +117,7 @@
 @property (nonatomic) BOOL hasUID;
 @property (nonatomic, readonly) int*labelOffsets;
 @property (nonatomic, readonly) unsigned int labelOffsetsCount;
-@property (nonatomic) double minzoomRank;
+@property (nonatomic) float minzoomRank;
 @property (nonatomic, retain) NSData *oBSOLETECenterlines;
 @property (nonatomic, retain) NSData *oBSOLETEShieldLabelPositions;
 @property (nonatomic, retain) NSData *oBSOLETEVertexLabelPositions;
@@ -132,21 +132,21 @@
 @property (nonatomic, readonly) int*shieldLabelTypes;
 @property (nonatomic, readonly) unsigned int shieldLabelTypesCount;
 @property (nonatomic) int speedLimit;
-@property (nonatomic) double startLaneWidth;
-@property (nonatomic) double startOffset;
-@property (nonatomic) double startRoadOffset;
+@property (nonatomic) float startLaneWidth;
+@property (nonatomic) float startOffset;
+@property (nonatomic) float startRoadOffset;
 @property (nonatomic, retain) NSMutableArray *styleAttributes;
 @property (nonatomic) unsigned int styleGroup;
 @property (nonatomic) int travelDirection;
 @property (nonatomic) int type;
-@property (nonatomic) int uID;
+@property (nonatomic) long long uID;
 
 - (void)addExtrusionHeight:(int)arg1;
 - (void)addLabelOffset:(int)arg1;
 - (void)addShieldLabelOffset:(int)arg1;
 - (void)addShieldLabelType:(int)arg1;
 - (void)addStyleAttributes:(id)arg1;
-- (unsigned int)businessID;
+- (unsigned long long)businessID;
 - (unsigned int)centerlineCount;
 - (unsigned int)centerlineStart;
 - (id)characteristics;
@@ -211,7 +211,7 @@
 - (int)roadClass;
 - (int)sectionCount;
 - (int)sectionStart;
-- (void)setBusinessID:(unsigned int)arg1;
+- (void)setBusinessID:(unsigned long long)arg1;
 - (void)setCenterlineCount:(unsigned int)arg1;
 - (void)setCenterlineStart:(unsigned int)arg1;
 - (void)setCharacteristics:(id)arg1;
@@ -264,7 +264,7 @@
 - (void)setStyleGroup:(unsigned int)arg1;
 - (void)setTravelDirection:(int)arg1;
 - (void)setType:(int)arg1;
-- (void)setUID:(int)arg1;
+- (void)setUID:(long long)arg1;
 - (int)shieldLabelOffsetAtIndex:(unsigned int)arg1;
 - (int*)shieldLabelOffsets;
 - (unsigned int)shieldLabelOffsetsCount;
@@ -281,7 +281,7 @@
 - (unsigned int)styleGroup;
 - (int)travelDirection;
 - (int)type;
-- (int)uID;
+- (long long)uID;
 - (void)writeTo:(id)arg1;
 
 @end

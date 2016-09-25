@@ -13,7 +13,7 @@
     unsigned int  _numberOfColumns;
     unsigned int  _numberOfRows;
     <NSCopying> * _revisionIdentifier;
-    double  _tileSpacing;
+    float  _tileSpacing;
 }
 
 @property (nonatomic) BOOL allowsSynchronousArtworkCatalogsBlockExecution;
@@ -23,7 +23,7 @@
 @property (nonatomic) unsigned int numberOfColumns;
 @property (nonatomic) unsigned int numberOfRows;
 @property (nonatomic, copy) <NSCopying> *revisionIdentifier;
-@property (nonatomic) double tileSpacing;
+@property (nonatomic) float tileSpacing;
 
 - (void).cxx_destruct;
 - (BOOL)allowsSynchronousArtworkCatalogsBlockExecution;

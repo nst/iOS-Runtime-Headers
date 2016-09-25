@@ -3,7 +3,7 @@
  */
 
 @interface PKAddPassesMethodPickerViewController : UITableViewController {
-    double  _boundsWidth;
+    float  _boundsWidth;
     BOOL  _cameraAvailable;
 }
 

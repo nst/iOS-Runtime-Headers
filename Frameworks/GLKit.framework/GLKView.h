@@ -25,15 +25,15 @@
     unsigned int  _stencilRenderbuffer;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _viewBounds;
-    double  _viewContentScaleFactor;
+    float  _viewContentScaleFactor;
 }
 
 @property (nonatomic, retain) EAGLContext *context;
@@ -57,8 +57,8 @@
 @property (nonatomic) BOOL shouldDeleteFramebuffer;
 @property (readonly) UIImage *snapshot;
 @property (nonatomic) unsigned int stencilRenderbuffer;
-@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } viewBounds;
-@property (nonatomic) double viewContentScaleFactor;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } viewBounds;
+@property (nonatomic) float viewContentScaleFactor;
 
 + (Class)layerClass;
 
@@ -92,8 +92,8 @@
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)inDraw;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 context:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 context:(id)arg2;
 - (void)layoutSubviews;
 - (unsigned int)multisampleColorRenderbuffer;
 - (unsigned int)multisampleFramebuffer;
@@ -118,12 +118,12 @@
 - (void)setResolveFramebuffer:(unsigned int)arg1;
 - (void)setShouldDeleteFramebuffer:(BOOL)arg1;
 - (void)setStencilRenderbuffer:(unsigned int)arg1;
-- (void)setViewBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setViewBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setViewContentScaleFactor:(float)arg1;
 - (BOOL)shouldDeleteFramebuffer;
 - (id)snapshot;
 - (unsigned int)stencilRenderbuffer;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })viewBounds;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })viewBounds;
 - (float)viewContentScaleFactor;
 
 @end

@@ -10,8 +10,8 @@
     NSLayoutConstraint * _leftInsetConstraint;
     NSLayoutConstraint * _rightInsetConstraint;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _thumbnailSize;
     NSLayoutConstraint * _topInsetConstraint;
 }

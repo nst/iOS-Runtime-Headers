@@ -16,11 +16,11 @@
 @property (nonatomic, retain) NSString *selectedLabel;
 
 - (BOOL)_allowsAutorotation;
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; int x7; }*)arg1;
+- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; float x6; int x7; }*)arg1;
 - (float)ab_heightToFitForViewInPopoverView;
 - (void)dealloc;
 - (BOOL)didCreateNewLabel;
-- (struct CGSize { double x1; double x2; })fullScreenContentSize;
+- (struct CGSize { float x1; float x2; })fullScreenContentSize;
 - (id)initWithAddressBook:(void*)arg1 propertyGroup:(id)arg2 itemIndex:(int)arg3 additionalLabels:(id)arg4;
 - (void)itemLabelPicker:(id)arg1 deletedCustomLabel:(id)arg2;
 - (void)itemLabelPicker:(id)arg1 endedWithSelectionConfirmed:(BOOL)arg2 animate:(BOOL)arg3;

@@ -8,7 +8,7 @@
 - (UIColor *)actionTitleLabelColorForViewState:(UIInterfaceActionViewState *)arg1;
 - (UIFont *)actionTitleLabelFontForViewState:(UIInterfaceActionViewState *)arg1;
 - (float)contentCornerRadius;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentMargin;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentMargin;
 - (UIScreen *)defaultScreen;
 - (float)horizontalImageContentSpacing;
 - (UIView<UIInterfaceActionVisualBackgroundDisplaying> *)newActionBackgroundViewForViewState:(UIInterfaceActionViewState *)arg1;
@@ -25,7 +25,7 @@
 - (NSArray *)actionPropertiesAffectingImageViewStyling;
 - (NSArray *)actionPropertiesAffectingLabelStyling;
 - (float)actionSectionSpacing;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })actionSequenceEdgeInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })actionSequenceEdgeInsets;
 - (id)actionViewStateForAttachingToActionRepresentationView:(UIView *)arg1;
 - (void)configureAttributesForActionRepresentationView:(UIView *)arg1 actionViewState:(UIInterfaceActionViewState *)arg2;
 - (void)configureAttributesForActionScrollView:(UIScrollView *)arg1 groupViewState:(UIInterfaceActionGroupViewState *)arg2;
@@ -33,8 +33,8 @@
 - (void)configureAttributesForTitleLabel:(UILabel *)arg1 classificationLabel:(UILabel *)arg2 actionViewState:(UIInterfaceActionViewState *)arg3;
 - (void)configureForDismissingGroupView:(UIView *)arg1 alongsideTransitionCoordinator:(id <UIViewControllerTransitionCoordinator>)arg2;
 - (void)configureForPresentingGroupView:(UIView *)arg1 alongsideTransitionCoordinator:(id <UIViewControllerTransitionCoordinator>)arg2;
-- (struct CGSize { double x1; double x2; })maximumActionGroupContentSize;
-- (struct CGSize { double x1; double x2; })minimumActionContentSize;
+- (struct CGSize { float x1; float x2; })maximumActionGroupContentSize;
+- (struct CGSize { float x1; float x2; })minimumActionContentSize;
 - (UIView<UIInterfaceActionVisualSeparatorDisplaying> *)newActionSeparatorViewForGroupViewState:(UIInterfaceActionGroupViewState *)arg1;
 - (UIView<UIInterfaceActionVisualSectionSeparatorDisplaying> *)newSectionSeparatorViewForGroupViewState:(UIInterfaceActionGroupViewState *)arg1;
 - (BOOL)selectByPressGestureRequired;

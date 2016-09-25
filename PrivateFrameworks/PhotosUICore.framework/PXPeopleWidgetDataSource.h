@@ -26,7 +26,7 @@
 - (id)initWithName:(id)arg1 objectsReloadBlock:(id /* block */)arg2;
 - (BOOL)isForOneUp;
 - (void)loadMembersWithCompletionBlock:(id /* block */)arg1;
-- (void)prefetchThumbnailsForTargetSize:(struct CGSize { double x1; double x2; })arg1 maxFetchCount:(unsigned int)arg2;
+- (void)prefetchThumbnailsForTargetSize:(struct CGSize { float x1; float x2; })arg1 maxFetchCount:(unsigned int)arg2;
 - (BOOL)prefetchingStarted;
 - (void)setContainsSocialGroups:(BOOL)arg1;
 - (void)setContext:(id)arg1;

@@ -24,7 +24,7 @@
 - (void)doneAction:(id)arg1;
 - (id)init;
 - (id)inputAccessoryView;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (BOOL)keyboardIsDown;
 - (BOOL)keyboardIsUp;
 - (id)matchDisplayText;

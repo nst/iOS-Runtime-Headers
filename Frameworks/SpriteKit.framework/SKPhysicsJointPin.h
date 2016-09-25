@@ -4,27 +4,27 @@
 
 @interface SKPhysicsJointPin : SKPhysicsJoint {
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _anchor;
-    double  _frictionTorque;
-    double  _lowerAngleLimit;
-    double  _rotationSpeed;
+    float  _frictionTorque;
+    float  _lowerAngleLimit;
+    float  _rotationSpeed;
     BOOL  _shouldEnableLimits;
-    double  _upperAngleLimit;
+    float  _upperAngleLimit;
 }
 
-@property (readonly) struct CGPoint { double x1; double x2; } anchor;
-@property (nonatomic) double frictionTorque;
-@property (nonatomic) double lowerAngleLimit;
-@property (nonatomic) double rotationSpeed;
+@property (readonly) struct CGPoint { float x1; float x2; } anchor;
+@property (nonatomic) float frictionTorque;
+@property (nonatomic) float lowerAngleLimit;
+@property (nonatomic) float rotationSpeed;
 @property (nonatomic) BOOL shouldEnableLimits;
-@property (nonatomic) double upperAngleLimit;
+@property (nonatomic) float upperAngleLimit;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (id)jointWithBodyA:(id)arg1 bodyB:(id)arg2 anchor:(struct CGPoint { double x1; double x2; })arg3;
++ (id)jointWithBodyA:(id)arg1 bodyB:(id)arg2 anchor:(struct CGPoint { float x1; float x2; })arg3;
 
-- (struct CGPoint { double x1; double x2; })anchor;
+- (struct CGPoint { float x1; float x2; })anchor;
 - (float)frictionTorque;
 - (float)lowerAngleLimit;
 - (float)rotationSpeed;

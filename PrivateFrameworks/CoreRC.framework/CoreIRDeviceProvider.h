@@ -5,18 +5,18 @@
 @interface CoreIRDeviceProvider : CoreIRDevice {
     struct { 
         unsigned int matchIndex; 
-        unsigned int *commandArray; 
+        unsigned long long *commandArray; 
         unsigned int commandCount; 
-        unsigned int *repeatArray; 
+        unsigned long long *repeatArray; 
         unsigned int repeatCount; 
         unsigned int command; 
     }  _buttonArray;
     unsigned long  _buttonCount;
     NSMutableSet * _commandMappings;
-    const struct { unsigned int x1; unsigned int *x2; unsigned int x3; unsigned int *x4; unsigned int x5; unsigned int x6; } * _lastButtonPressed;
-    unsigned int  _lastCommandTimestamp;
+    const struct { unsigned int x1; unsigned long long *x2; unsigned int x3; unsigned long long *x4; unsigned int x5; unsigned int x6; } * _lastButtonPressed;
+    unsigned long long  _lastCommandTimestamp;
     NSDictionary * _matchingDict;
-    unsigned int  _pressAndHoldTimeoutGenerationCount;
+    unsigned long long  _pressAndHoldTimeoutGenerationCount;
 }
 
 @property (nonatomic, copy) NSDictionary *matchingDict;
@@ -25,7 +25,7 @@
 + (void)load;
 + (BOOL)supportsSecureCoding;
 
-- (struct { unsigned int x1; unsigned int *x2; unsigned int x3; unsigned int *x4; unsigned int x5; unsigned int x6; }*)_findButtonWithCommand:(unsigned int)arg1;
+- (struct { unsigned int x1; unsigned long long *x2; unsigned int x3; unsigned long long *x4; unsigned int x5; unsigned int x6; }*)_findButtonWithCommand:(unsigned int)arg1;
 - (void)_removeMappingForCommand:(unsigned int)arg1;
 - (long)_setInfraredCommandPattern:(id)arg1 repeatPattern:(id)arg2 forCommand:(unsigned int)arg3;
 - (id)busProvider;
@@ -34,8 +34,8 @@
 - (BOOL)clearAllStoredCommands:(id*)arg1;
 - (void)dealloc;
 - (BOOL)disableButtonCombination:(id)arg1 delay:(double)arg2 error:(id*)arg3;
-- (BOOL)dispatchButtonEventWithCommand:(unsigned int)arg1 pressed:(BOOL)arg2 timestamp:(unsigned int)arg3 toDevice:(id)arg4;
-- (BOOL)dispatchEventForCommand:(id)arg1 matchingButton:(const struct { unsigned int x1; unsigned int *x2; unsigned int x3; unsigned int *x4; unsigned int x5; unsigned int x6; }*)arg2 timestamp:(unsigned int)arg3 toDevice:(id)arg4;
+- (BOOL)dispatchButtonEventWithCommand:(unsigned int)arg1 pressed:(BOOL)arg2 timestamp:(unsigned long long)arg3 toDevice:(id)arg4;
+- (BOOL)dispatchEventForCommand:(id)arg1 matchingButton:(const struct { unsigned int x1; unsigned long long *x2; unsigned int x3; unsigned long long *x4; unsigned int x5; unsigned int x6; }*)arg2 timestamp:(unsigned long long)arg3 toDevice:(id)arg4;
 - (BOOL)dispatchEventsForCommand:(id)arg1 toDevice:(id)arg2;
 - (BOOL)enableButtonCombination:(id)arg1 delay:(double)arg2 error:(id*)arg3;
 - (void)encodeWithCoder:(id)arg1;
@@ -62,7 +62,7 @@
 - (BOOL)setOSDName:(id)arg1 error:(id*)arg2;
 - (void)setPersistentProperties:(id)arg1;
 - (id)startLearningSessionWithReason:(unsigned int)arg1 error:(id*)arg2;
-- (void)synthesizeButtonReleaseWithTimestamp:(unsigned int)arg1;
+- (void)synthesizeButtonReleaseWithTimestamp:(unsigned long long)arg1;
 - (BOOL)updateMappingWithSession:(id)arg1 error:(id*)arg2;
 
 @end

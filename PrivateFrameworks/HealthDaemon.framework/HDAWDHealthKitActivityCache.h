@@ -3,13 +3,13 @@
  */
 
 @interface HDAWDHealthKitActivityCache : PBCodable <NSCopying> {
-    int  _activeHours;
-    int  _briskMinutes;
-    int  _cacheIndex;
-    int  _endDate;
-    int  _energyBurned;
-    int  _energyBurnedGoal;
-    int  _energyBurnedGoalDate;
+    long long  _activeHours;
+    long long  _briskMinutes;
+    long long  _cacheIndex;
+    long long  _endDate;
+    long long  _energyBurned;
+    long long  _energyBurnedGoal;
+    long long  _energyBurnedGoalDate;
     struct { 
         unsigned int activeHours : 1; 
         unsigned int briskMinutes : 1; 
@@ -22,18 +22,18 @@
         unsigned int stepCount : 1; 
         unsigned int walkingAndRunningDistance : 1; 
     }  _has;
-    int  _startDate;
-    int  _stepCount;
-    int  _walkingAndRunningDistance;
+    long long  _startDate;
+    long long  _stepCount;
+    long long  _walkingAndRunningDistance;
 }
 
-@property (nonatomic) int activeHours;
-@property (nonatomic) int briskMinutes;
-@property (nonatomic) int cacheIndex;
-@property (nonatomic) int endDate;
-@property (nonatomic) int energyBurned;
-@property (nonatomic) int energyBurnedGoal;
-@property (nonatomic) int energyBurnedGoalDate;
+@property (nonatomic) long long activeHours;
+@property (nonatomic) long long briskMinutes;
+@property (nonatomic) long long cacheIndex;
+@property (nonatomic) long long endDate;
+@property (nonatomic) long long energyBurned;
+@property (nonatomic) long long energyBurnedGoal;
+@property (nonatomic) long long energyBurnedGoalDate;
 @property (nonatomic) BOOL hasActiveHours;
 @property (nonatomic) BOOL hasBriskMinutes;
 @property (nonatomic) BOOL hasCacheIndex;
@@ -44,21 +44,21 @@
 @property (nonatomic) BOOL hasStartDate;
 @property (nonatomic) BOOL hasStepCount;
 @property (nonatomic) BOOL hasWalkingAndRunningDistance;
-@property (nonatomic) int startDate;
-@property (nonatomic) int stepCount;
-@property (nonatomic) int walkingAndRunningDistance;
+@property (nonatomic) long long startDate;
+@property (nonatomic) long long stepCount;
+@property (nonatomic) long long walkingAndRunningDistance;
 
-- (int)activeHours;
-- (int)briskMinutes;
-- (int)cacheIndex;
+- (long long)activeHours;
+- (long long)briskMinutes;
+- (long long)cacheIndex;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (int)endDate;
-- (int)energyBurned;
-- (int)energyBurnedGoal;
-- (int)energyBurnedGoalDate;
+- (long long)endDate;
+- (long long)energyBurned;
+- (long long)energyBurnedGoal;
+- (long long)energyBurnedGoalDate;
 - (BOOL)hasActiveHours;
 - (BOOL)hasBriskMinutes;
 - (BOOL)hasCacheIndex;
@@ -73,13 +73,13 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (void)setActiveHours:(int)arg1;
-- (void)setBriskMinutes:(int)arg1;
-- (void)setCacheIndex:(int)arg1;
-- (void)setEndDate:(int)arg1;
-- (void)setEnergyBurned:(int)arg1;
-- (void)setEnergyBurnedGoal:(int)arg1;
-- (void)setEnergyBurnedGoalDate:(int)arg1;
+- (void)setActiveHours:(long long)arg1;
+- (void)setBriskMinutes:(long long)arg1;
+- (void)setCacheIndex:(long long)arg1;
+- (void)setEndDate:(long long)arg1;
+- (void)setEnergyBurned:(long long)arg1;
+- (void)setEnergyBurnedGoal:(long long)arg1;
+- (void)setEnergyBurnedGoalDate:(long long)arg1;
 - (void)setHasActiveHours:(BOOL)arg1;
 - (void)setHasBriskMinutes:(BOOL)arg1;
 - (void)setHasCacheIndex:(BOOL)arg1;
@@ -90,12 +90,12 @@
 - (void)setHasStartDate:(BOOL)arg1;
 - (void)setHasStepCount:(BOOL)arg1;
 - (void)setHasWalkingAndRunningDistance:(BOOL)arg1;
-- (void)setStartDate:(int)arg1;
-- (void)setStepCount:(int)arg1;
-- (void)setWalkingAndRunningDistance:(int)arg1;
-- (int)startDate;
-- (int)stepCount;
-- (int)walkingAndRunningDistance;
+- (void)setStartDate:(long long)arg1;
+- (void)setStepCount:(long long)arg1;
+- (void)setWalkingAndRunningDistance:(long long)arg1;
+- (long long)startDate;
+- (long long)stepCount;
+- (long long)walkingAndRunningDistance;
 - (void)writeTo:(id)arg1;
 
 @end

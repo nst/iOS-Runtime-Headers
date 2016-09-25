@@ -24,7 +24,7 @@
 - (BOOL)_isDeallocating;
 - (BOOL)_isPersistentStoreAlive;
 - (id)_referenceData;
-- (int)_referenceData64;
+- (long long)_referenceData64;
 - (id)_retainedURIString;
 - (id)_storeIdentifier;
 - (id)_storeInfo1;

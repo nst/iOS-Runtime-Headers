@@ -4,12 +4,12 @@
 
 @interface TSDImageRep : TSDMediaRep <TSDMagicMoveMatching> {
     struct CGAffineTransform { 
-        double a; 
-        double b; 
-        double c; 
-        double d; 
-        double tx; 
-        double ty; 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     }  mBaseMaskLayoutTransform;
     BOOL  mCachedIsEquation;
     CALayer * mContentsLayer;
@@ -17,12 +17,12 @@
     BOOL  mFrameInUnscaledCanvasIsValid;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  mFrameInUnscaledCanvasRelativeToSuper;
     NSCache * mHitTestCache;
@@ -34,21 +34,21 @@
     BOOL  mIsEquation;
     TSDLayoutGeometry * mLastImageGeometryInRoot;
     struct CGAffineTransform { 
-        double a; 
-        double b; 
-        double c; 
-        double d; 
-        double tx; 
-        double ty; 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     }  mLastLayoutToImageTransform;
     TSDLayoutGeometry * mLastMaskGeometryInRoot;
     struct CGAffineTransform { 
-        double a; 
-        double b; 
-        double c; 
-        double d; 
-        double tx; 
-        double ty; 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     }  mLastPictureFrameLayerTransform;
     NSRecursiveLock * mLayerUpdateAndSizingStateLock;
     CAShapeLayer * mMaskPathLayer;
@@ -62,8 +62,8 @@
     struct CGPath { } * mSizedImageMaskPath;
     int  mSizedImageOrientation;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  mSizedImageSize;
     TSDImageRepSizingState * mSizingState;
     BOOL  mSizingStateReady;
@@ -72,7 +72,7 @@
 }
 
 + (float)magicMoveAttributeMatchPercentBetweenOutgoingObject:(id)arg1 incomingObject:(id)arg2 mixingTypeContext:(id)arg3;
-+ (struct CGPath { }*)p_newPathToBakeIntoSizedImageForSize:(struct CGSize { double x1; double x2; })arg1 withImageLayout:(id)arg2 orientation:(int)arg3;
++ (struct CGPath { }*)p_newPathToBakeIntoSizedImageForSize:(struct CGSize { float x1; float x2; })arg1 withImageLayout:(id)arg2 orientation:(int)arg3;
 
 - (BOOL)canDrawInParallel;
 - (BOOL)canDrawShadowInOneStepWithChildren:(BOOL)arg1;
@@ -80,10 +80,10 @@
 - (id)downloadProgressPlaceholderImage;
 - (void)drawInContextWithoutEffects:(struct CGContext { }*)arg1 withContent:(BOOL)arg2 strokeDrawOptions:(unsigned int)arg3 withOpacity:(BOOL)arg4 forAlphaOnly:(BOOL)arg5 drawChildren:(BOOL)arg6;
 - (void)drawInLayerContext:(struct CGContext { }*)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameInUnscaledCanvas;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameInUnscaledCanvas;
 - (id)imageInfo;
 - (id)imageLayout;
-- (id)imageOfStroke:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg1;
+- (id)imageOfStroke:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1;
 - (id)initWithLayout:(id)arg1 canvas:(id)arg2;
 - (BOOL)isDataCurrentlyDownloading;
 - (id)maskInfo;
@@ -92,11 +92,11 @@
 - (BOOL)p_drawsInOneStep;
 - (id)p_imageData;
 - (id)p_imageProvider;
-- (BOOL)p_shouldUseSourceImageForContext:(id)arg1 clipBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 transform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg3 image:(struct CGImage { }*)arg4;
+- (BOOL)p_shouldUseSourceImageForContext:(id)arg1 clipBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 transform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg3 image:(struct CGImage { }*)arg4;
 - (id)p_validatedBitmapImageProvider;
 - (id)p_validatedImageProvider;
 - (id)p_validatedThumbnailImageProvider;
-- (void)setTextureAttributes:(id)arg1 textureBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (void)setTextureAttributes:(id)arg1 textureBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (BOOL)shouldShowCheckerboard;
 - (id)textureForContext:(id)arg1;
 - (void)willBeRemoved;

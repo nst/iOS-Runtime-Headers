@@ -3,7 +3,7 @@
  */
 
 @interface UIDevice : NSObject {
-    double  _batteryLevel;
+    float  _batteryLevel;
     struct { 
         unsigned int batteryMonitoringEnabled : 1; 
         unsigned int proximityMonitoringEnabled : 1; 
@@ -17,8 +17,8 @@
     int  _numDeviceOrientationObservers;
 }
 
-@property (setter=_setBacklightLevel:, nonatomic) double _backlightLevel;
-@property (nonatomic, readonly) double batteryLevel;
+@property (setter=_setBacklightLevel:, nonatomic) float _backlightLevel;
+@property (nonatomic, readonly) float batteryLevel;
 @property (getter=isBatteryMonitoringEnabled, nonatomic) BOOL batteryMonitoringEnabled;
 @property (nonatomic, readonly) int batteryState;
 @property (nonatomic, readonly, retain) NSString *buildVersion;
@@ -115,7 +115,7 @@
 
 // Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
 
-- (struct CGSize { double x1; double x2; })_notesDeviceDrawingSize;
+- (struct CGSize { float x1; float x2; })_notesDeviceDrawingSize;
 - (BOOL)_notesDeviceSupportsBodyLettpress;
 - (BOOL)_notesLowEndHardware;
 - (id)_notesProductType;

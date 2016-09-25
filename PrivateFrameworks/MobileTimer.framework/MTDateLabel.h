@@ -17,7 +17,7 @@
 @property (nonatomic, copy) NSDate *date;
 @property (nonatomic, readonly) UILabel *dateLabel;
 @property (nonatomic, retain) UIFont *font;
-@property (nonatomic) double lastBaselineFrameOriginY;
+@property (nonatomic) float lastBaselineFrameOriginY;
 @property (nonatomic) BOOL shouldAddLayoutConstraints;
 @property (nonatomic, retain) UIColor *textColor;
 @property (nonatomic, retain) UIFont *timeDesignatorFont;
@@ -30,7 +30,7 @@
 - (id)date;
 - (id)dateLabel;
 - (id)font;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (float)lastBaselineFrameOriginY;
 - (void)setCurrentConstraints:(id)arg1;
 - (void)setDate:(id)arg1;

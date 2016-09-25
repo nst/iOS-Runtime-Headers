@@ -3,15 +3,15 @@
  */
 
 @interface TTTextController : NSObject <TTTextStorageStyler> {
-    double  _bodyStyleFontSizeThreshold;
-    double  _headingStyleFontSizeThreshold;
+    float  _bodyStyleFontSizeThreshold;
+    float  _headingStyleFontSizeThreshold;
 }
 
-@property (nonatomic) double bodyStyleFontSizeThreshold;
+@property (nonatomic) float bodyStyleFontSizeThreshold;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic) double headingStyleFontSizeThreshold;
+@property (nonatomic) float headingStyleFontSizeThreshold;
 @property (readonly) Class superclass;
 
 + (float)attachmentParagraphSpacing;

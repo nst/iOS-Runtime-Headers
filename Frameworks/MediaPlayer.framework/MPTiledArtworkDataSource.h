@@ -17,7 +17,7 @@
 + (id)_errorWithDescription:(id)arg1;
 + (id)_loadingRequestForArtworkCatalog:(id)arg1;
 + (id)_representationCacheKeyForArtworkCatalog:(id)arg1 forAnyRevision:(BOOL)arg2;
-+ (struct CGSize { double x1; double x2; })_tileSizeForFittingSize:(struct CGSize { double x1; double x2; })arg1 rows:(unsigned int)arg2 columns:(unsigned int)arg3 spacing:(float)arg4;
++ (struct CGSize { float x1; float x2; })_tileSizeForFittingSize:(struct CGSize { float x1; float x2; })arg1 rows:(unsigned int)arg2 columns:(unsigned int)arg3 spacing:(float)arg4;
 + (id)sharedDataSource;
 
 - (void).cxx_destruct;

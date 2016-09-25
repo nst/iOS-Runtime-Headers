@@ -13,7 +13,7 @@
 + (id)_appleWatchSourceRevision;
 + (id)_fakeAchievementDuringDayStartingAtDate:(id)arg1 personUUID:(id)arg2;
 + (id)_fakeWorkoutDuringDayStartingAtDate:(id)arg1 personUUID:(id)arg2;
-+ (id)_fakeWorkoutsForIndex:(int)arg1 personUUID:(id)arg2;
++ (id)_fakeWorkoutsForIndex:(long long)arg1 personUUID:(id)arg2;
 + (id)_fakeWorkoutsForLastWeekWithPersonUUID:(id)arg1 dailySnapshotProbability:(double)arg2;
 + (id)_workoutsForFriendOneWithFriendUUID:(id)arg1;
 + (id)_workoutsForFriendTwoWithFriendUUID:(id)arg1;

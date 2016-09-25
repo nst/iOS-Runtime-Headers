@@ -17,7 +17,7 @@
     struct { int x1; long x2; long x3; char *x4; int x5; long x6; long x7; int x8; struct _opaque_pthread_mutex_t { long x_9_1_1; BOOL x_9_1_2[40]; } x9; struct _telldir {} *x10; } * _dir;
     unsigned int  _documentID;
     int  _fd;
-    unsigned int  _fileID;
+    unsigned long long  _fileID;
     unsigned char  _finderInfo;
     unsigned int  _flags;
     unsigned int  _fsGenerationID;
@@ -42,7 +42,7 @@
     }  _mutex;
     unsigned int  _nlink;
     int  _openRefCount;
-    unsigned int  _parentFileID;
+    unsigned long long  _parentFileID;
     unsigned int  _qtnResolved;
     NSData * _quarantineInfo;
     unsigned int  _readFault;
@@ -51,7 +51,7 @@
     BRCAccountSession * _session;
     BRCItemID * _sharedItemID;
     NSString * _sharedOwnerName;
-    int  _size;
+    long long  _size;
     NSString * _symlinkContent;
     unsigned short  _type;
     NSData * _xattrs;
@@ -67,7 +67,7 @@
 @property (nonatomic, readonly) unsigned int documentID;
 @property (nonatomic, readonly) BOOL exists;
 @property (nonatomic, readonly) NSString *faultDisplayName;
-@property (nonatomic, readonly) unsigned int fileID;
+@property (nonatomic, readonly) unsigned long long fileID;
 @property (nonatomic, readonly) BRFileObjectID *fileObjectID;
 @property (nonatomic, readonly) unsigned long fileType;
 @property (nonatomic, readonly) NSString *filename;
@@ -96,7 +96,7 @@
 @property (nonatomic) unsigned char itemScope;
 @property (nonatomic, readonly) NSString *logicalName;
 @property (nonatomic, readonly) long modificationTime;
-@property (nonatomic, readonly) unsigned int parentFileID;
+@property (nonatomic, readonly) unsigned long long parentFileID;
 @property (readonly) unsigned int parentHash;
 @property (nonatomic, readonly) NSString *pathRelativeToPackageRoot;
 @property (nonatomic, readonly) NSString *pathRelativeToRoot;
@@ -107,13 +107,13 @@
 @property (nonatomic, readonly) NSString *sharedEnclosureUUID;
 @property (nonatomic, retain) BRCItemID *sharedItemID;
 @property (nonatomic, retain) NSString *sharedOwnerName;
-@property (nonatomic, readonly) int size;
+@property (nonatomic, readonly) long long size;
 @property (nonatomic, readonly) NSString *symlinkContent;
 @property (nonatomic) unsigned short type;
 @property (nonatomic, readonly) NSURL *url;
 @property (nonatomic, readonly) NSData *xattrs;
 
-+ (int)locateByFileID:(unsigned int)arg1 clientZone:(id)arg2 roots:(id)arg3;
++ (int)locateByFileID:(unsigned long long)arg1 clientZone:(id)arg2 roots:(id)arg3;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
@@ -143,7 +143,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)exists;
 - (id)faultDisplayName;
-- (unsigned int)fileID;
+- (unsigned long long)fileID;
 - (id)fileObjectID;
 - (unsigned long)fileType;
 - (id)filename;
@@ -156,7 +156,7 @@
 - (id)init;
 - (id)initWithAbsolutePath:(id)arg1 session:(id)arg2 roots:(id)arg3;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFileID:(unsigned int)arg1 clientZone:(id)arg2 roots:(id)arg3;
+- (id)initWithFileID:(unsigned long long)arg1 clientZone:(id)arg2 roots:(id)arg3;
 - (id)initWithPath:(id)arg1 appLibrary:(id)arg2 clientZone:(id)arg3;
 - (id)initWithRootPath:(id)arg1 session:(id)arg2;
 - (BOOL)isBRAlias;
@@ -188,7 +188,7 @@
 - (id)nextDescendant;
 - (BOOL)openDirectoryForRecursiveScan;
 - (BOOL)openDirectoryForScanWithError:(int*)arg1;
-- (unsigned int)parentFileID;
+- (unsigned long long)parentFileID;
 - (unsigned int)parentHash;
 - (id)pathOfPackageRoot;
 - (id)pathRelativeToPackageRoot;
@@ -213,7 +213,7 @@
 - (id)sharedEnclosureUUID;
 - (id)sharedItemID;
 - (id)sharedOwnerName;
-- (int)size;
+- (long long)size;
 - (id)symlinkContent;
 - (unsigned short)type;
 - (id)url;

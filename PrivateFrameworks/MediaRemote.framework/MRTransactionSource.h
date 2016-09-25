@@ -3,18 +3,18 @@
  */
 
 @interface MRTransactionSource : NSObject {
-    unsigned int  _name;
+    unsigned long long  _name;
     NSMutableDictionary * _originSources;
     NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (getter=isActive, nonatomic, readonly) BOOL active;
-@property (nonatomic, readonly) unsigned int name;
+@property (nonatomic, readonly) unsigned long long name;
 
 - (void)dealloc;
-- (id)initWithName:(unsigned int)arg1;
+- (id)initWithName:(unsigned long long)arg1;
 - (BOOL)isActive;
-- (unsigned int)name;
+- (unsigned long long)name;
 - (void)removeOrigin:(struct _MROrigin { }*)arg1;
 - (void)sendPackets:(id)arg1 forOrigin:(struct _MROrigin { }*)arg2;
 

@@ -6,7 +6,7 @@
     int  _colorId;
     int  _fontSizeInt;
     NSObject<OS_dispatch_source> * _hudTimer;
-    unsigned int  _hudUpdateInterval;
+    unsigned long long  _hudUpdateInterval;
     int  _hudXoffset;
     int  _hudYoffset;
     NSMutableDictionary * _loadingStatusCache;
@@ -35,7 +35,7 @@
 - (void)setColor:(int)arg1;
 - (void)setPlayer:(id)arg1;
 - (void)startDispatchTimer;
-- (void)updateBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)updateBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)valueLoadedForKey:(id)arg1 onObject:(id)arg2;
 
 @end

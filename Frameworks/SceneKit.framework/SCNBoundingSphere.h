@@ -4,20 +4,20 @@
 
 @interface SCNBoundingSphere : NSObject {
     struct SCNVector3 { 
-        double x; 
-        double y; 
-        double z; 
+        float x; 
+        float y; 
+        float z; 
     }  center;
-    double  radius;
+    float  radius;
 }
 
-@property (nonatomic) struct SCNVector3 { double x1; double x2; double x3; } center;
-@property (nonatomic) double radius;
+@property (nonatomic) struct SCNVector3 { float x1; float x2; float x3; } center;
+@property (nonatomic) float radius;
 
-- (struct SCNVector3 { double x1; double x2; double x3; })center;
+- (struct SCNVector3 { float x1; float x2; float x3; })center;
 - (id)description;
 - (float)radius;
-- (void)setCenter:(struct SCNVector3 { double x1; double x2; double x3; })arg1;
+- (void)setCenter:(struct SCNVector3 { float x1; float x2; float x3; })arg1;
 - (void)setRadius:(float)arg1;
 
 @end

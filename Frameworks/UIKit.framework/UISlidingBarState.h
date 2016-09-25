@@ -4,33 +4,33 @@
 
 @interface UISlidingBarState : NSObject <NSCopying> {
     int  __collapsedState;
-    double  __keyboardAdjustment;
-    double  __leadingOverlayWidth;
+    float  __keyboardAdjustment;
+    float  __leadingOverlayWidth;
     BOOL  __treatLeadingHiddenAsOverlaps;
-    double  _bounce;
+    float  _bounce;
     UISlidingBarConfiguration * _configuration;
-    double  _leadingDragOffset;
-    double  _leadingWidth;
-    double  _trailingDragOffset;
+    float  _leadingDragOffset;
+    float  _leadingWidth;
+    float  _trailingDragOffset;
     BOOL  _trailingOverlapsMain;
-    double  _trailingWidth;
+    float  _trailingWidth;
 }
 
 @property (setter=_setCollapsedState:, nonatomic) int _collapsedState;
-@property (nonatomic) double _keyboardAdjustment;
-@property (setter=_setLeadingOverlayWidth:, nonatomic) double _leadingOverlayWidth;
+@property (nonatomic) float _keyboardAdjustment;
+@property (setter=_setLeadingOverlayWidth:, nonatomic) float _leadingOverlayWidth;
 @property (setter=_setTreatLeadingHiddenAsOverlaps:, nonatomic) BOOL _treatLeadingHiddenAsOverlaps;
-@property (nonatomic) double bounce;
+@property (nonatomic) float bounce;
 @property (getter=isCollapsed, nonatomic, readonly) BOOL collapsed;
 @property (nonatomic, retain) UISlidingBarConfiguration *configuration;
 @property (nonatomic, readonly) BOOL isLeadingVisible;
 @property (nonatomic, readonly) BOOL isTrailingVisible;
-@property (nonatomic) double leadingDragOffset;
+@property (nonatomic) float leadingDragOffset;
 @property (nonatomic, readonly) BOOL leadingOverlapsMain;
-@property (nonatomic) double leadingWidth;
-@property (nonatomic) double trailingDragOffset;
+@property (nonatomic) float leadingWidth;
+@property (nonatomic) float trailingDragOffset;
 @property (nonatomic) BOOL trailingOverlapsMain;
-@property (nonatomic) double trailingWidth;
+@property (nonatomic) float trailingWidth;
 
 - (void).cxx_destruct;
 - (float)_absoluteDistanceFromRequest:(id)arg1;

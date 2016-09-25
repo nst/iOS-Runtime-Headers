@@ -6,7 +6,7 @@
     UIImageView * _availableOfflineBadgeImageView;
     <MusicEntityVerticalLockupViewDelegate> * _delegate;
     BOOL  _isAvailableOffline;
-    double  _textLateralEdgePadding;
+    float  _textLateralEdgePadding;
 }
 
 @property (nonatomic, retain) MusicEntityViewContentDescriptor *contentDescriptor;

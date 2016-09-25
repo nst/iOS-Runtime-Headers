@@ -3,7 +3,7 @@
  */
 
 @interface CMDiagramPointPyramidLayerMapper : CMDiagramPointMapper {
-    double  mPyramidAspectRatio;
+    float  mPyramidAspectRatio;
 }
 
 - (void)mapAt:(id)arg1 withState:(id)arg2;

@@ -6,7 +6,7 @@
     UIButton * _audioToggleButton;
     BOOL  _autoPlayOnAppearanceDisabled;
     id /* block */  _balloonPlaybackCompletion;
-    double  _bottomMargin;
+    float  _bottomMargin;
     UIButton * _cancelButton;
     ETCanvasView * _canvasView;
     DTSColorPicker * _colorPicker;
@@ -38,7 +38,7 @@
 
 @property (getter=isAutoPlayOnAppearanceDisabled, nonatomic) BOOL autoPlayOnAppearanceDisabled;
 @property (nonatomic, copy) id /* block */ balloonPlaybackCompletion;
-@property (nonatomic) double bottomMargin;
+@property (nonatomic) float bottomMargin;
 @property (nonatomic, retain) ETCanvasView *canvasView;
 @property (nonatomic, retain) DTSColorPicker *colorPicker;
 @property (getter=isComposeDisabled, nonatomic) BOOL composeDisabled;

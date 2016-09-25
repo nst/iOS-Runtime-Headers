@@ -14,8 +14,8 @@
     unsigned int  _vertexBuffer;
     struct { 
         struct { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } position; 
         /* Warning: Unrecognized filer type: '}' using 'void*' */ void*color; 
     }  _vertices;
@@ -40,7 +40,7 @@
 - (void)dealloc;
 - (id)debugView;
 - (BOOL)enabled;
-- (void)glkView:(id)arg1 drawInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (void)glkView:(id)arg1 drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (id)init;
 - (id)initWithAnimator:(id)arg1;
 - (void)setAnimator:(id)arg1;

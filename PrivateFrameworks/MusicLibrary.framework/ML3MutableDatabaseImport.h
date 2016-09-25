@@ -11,10 +11,10 @@
 @property (getter=isPendingMatch, nonatomic) BOOL pendingMatch;
 @property (nonatomic, copy) NSData *playlistData;
 @property (nonatomic) BOOL playlistsAreLibraryOwnedContent;
-@property (nonatomic) int preferredVideoQuality;
+@property (nonatomic) long long preferredVideoQuality;
 @property (getter=isResetSync, nonatomic) BOOL resetSync;
 @property (getter=isSagaEnabled, nonatomic) BOOL sagaEnabled;
-@property (nonatomic) int storeAccountID;
+@property (nonatomic) long long storeAccountID;
 @property (nonatomic, copy) NSString *syncAnchor;
 @property (nonatomic, copy) NSString *syncLibraryID;
 @property (nonatomic, copy) NSData *trackData;
@@ -27,10 +27,10 @@
 - (void)setPendingMatch:(BOOL)arg1;
 - (void)setPlaylistData:(id)arg1;
 - (void)setPlaylistsAreLibraryOwnedContent:(BOOL)arg1;
-- (void)setPreferredVideoQuality:(int)arg1;
+- (void)setPreferredVideoQuality:(long long)arg1;
 - (void)setResetSync:(BOOL)arg1;
 - (void)setSagaEnabled:(BOOL)arg1;
-- (void)setStoreAccountID:(int)arg1;
+- (void)setStoreAccountID:(long long)arg1;
 - (void)setSyncAnchor:(id)arg1;
 - (void)setSyncLibraryID:(id)arg1;
 - (void)setTrackData:(id)arg1;

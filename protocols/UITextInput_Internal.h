@@ -57,7 +57,7 @@
 - (UITextRange *)_rangeOfTextUnit:(int)arg1 enclosingPosition:(UITextPosition *)arg2;
 - (UITextRange *)_rangeSpanningTextUnit:(int)arg1 andPosition:(UITextPosition *)arg2;
 - (void)_replaceCurrentWordWithText:(NSString *)arg1;
-- (void)_scrollRectToVisible:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 animated:(BOOL)arg2;
+- (void)_scrollRectToVisible:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 animated:(BOOL)arg2;
 - (void)_selectAll;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_selectedNSRange;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_selectedRangeWithinMarkedText;
@@ -65,7 +65,7 @@
 - (BOOL)_selectionAtDocumentEnd;
 - (BOOL)_selectionAtDocumentStart;
 - (BOOL)_selectionAtWordStart;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_selectionClipRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_selectionClipRect;
 - (void)_setCaretSelectionAtEndOfSelection;
 - (void)_setGestureRecognizers;
 - (void)_setMarkedText:(NSString *)arg1 selectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
@@ -79,7 +79,7 @@
 @optional
 
 - (BOOL)_isInteractiveTextSelectionDisabled;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_lastRectForRange:(UITextRange *)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_lastRectForRange:(UITextRange *)arg1;
 - (void)_setInternalGestureRecognizers;
 - (UIView<UITextInputPrivate> *)_textSelectingContainer;
 

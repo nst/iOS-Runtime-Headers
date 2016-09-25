@@ -15,7 +15,7 @@
     SKUIScreenshotDataConsumer * _landscapeScreenshotDataConsumer;
     UIImage * _landscapeScreenshotPlaceholderImage;
     int  _numberOfItemsPerPage;
-    double  _numberOfPagesToCacheAhead;
+    float  _numberOfPagesToCacheAhead;
     UIImage * _placeholderImage;
     SKUIScreenshotDataConsumer * _portraitScreenshotDataConsumer;
     UIImage * _portraitScreenshotPlaceholderImage;
@@ -32,7 +32,7 @@
 @property (nonatomic, copy) NSArray *items;
 @property (nonatomic, retain) SKUIScreenshotDataConsumer *landscapeScreenshotDataConsumer;
 @property (nonatomic) int numberOfItemsPerPage;
-@property (nonatomic) double numberOfPagesToCacheAhead;
+@property (nonatomic) float numberOfPagesToCacheAhead;
 @property (nonatomic, retain) SKUIScreenshotDataConsumer *portraitScreenshotDataConsumer;
 @property (readonly) Class superclass;
 
@@ -74,11 +74,11 @@
 - (float)numberOfPagesToCacheAhead;
 - (id)performActionForItemAtIndex:(int)arg1;
 - (id)portraitScreenshotDataConsumer;
-- (void)precacheNextPageArtworkForOffset:(struct CGPoint { double x1; double x2; })arg1 direction:(float)arg2;
+- (void)precacheNextPageArtworkForOffset:(struct CGPoint { float x1; float x2; })arg1 direction:(float)arg2;
 - (void)removeAllCachedResources;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
-- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { double x1; double x2; })arg2 targetContentOffset:(inout struct CGPoint { double x1; double x2; }*)arg3;
+- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { float x1; float x2; })arg2 targetContentOffset:(inout struct CGPoint { float x1; float x2; }*)arg3;
 - (void)setArtworkContext:(id)arg1;
 - (void)setArtworkLoader:(id)arg1;
 - (void)setClientContext:(id)arg1;

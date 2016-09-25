@@ -6,11 +6,11 @@
     struct { 
         unsigned int intensity : 1; 
     }  _has;
-    double  _intensity;
+    float  _intensity;
 }
 
 @property (nonatomic) BOOL hasIntensity;
-@property (nonatomic) double intensity;
+@property (nonatomic) float intensity;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

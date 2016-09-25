@@ -19,7 +19,7 @@
 - (void)_stopGlowAnimation;
 - (BOOL)_styleCanGlow;
 - (BOOL)_topCornersAreRounded;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 style:(id)arg2 backgroundColor:(id)arg3;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(id)arg2 backgroundColor:(id)arg3;
 - (void)setGlowAnimationEnabled:(BOOL)arg1;
 - (void)setSuppressesGlow:(BOOL)arg1;
 - (id)style;

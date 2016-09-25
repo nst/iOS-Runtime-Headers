@@ -42,7 +42,7 @@
 - (void)setOtherActivityViewPresented:(BOOL)arg1;
 - (void)setSharedItemsAvailable:(BOOL)arg1;
 - (void)updateActivities:(id)arg1 animated:(BOOL)arg2;
-- (struct CGSize { double x1; double x2; })updatePreferredContentSizeWithWidth:(float)arg1;
+- (struct CGSize { float x1; float x2; })updatePreferredContentSizeWithWidth:(float)arg1;
 - (void)viewDidLoad;
 
 @end

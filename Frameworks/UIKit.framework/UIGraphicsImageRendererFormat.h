@@ -8,18 +8,18 @@
     int  _overrideBitsPerComponent;
     struct CGColorSpace { } * _overrideColorSpace;
     BOOL  _prefersExtendedRange;
-    double  _scale;
+    float  _scale;
     BOOL  _wantsAlphaMask;
 }
 
-@property (getter=_contextScale, nonatomic, readonly) double _contextScale;
+@property (getter=_contextScale, nonatomic, readonly) float _contextScale;
 @property (getter=_grayscale, setter=_setGrayscale:, nonatomic) BOOL _grayscale;
 @property (getter=_overrideBitsPerComponent, setter=_setOverrideBitsPerComponent:, nonatomic) int _overrideBitsPerComponent;
 @property (getter=_overrideColorSpace, setter=_setOverrideColorSpace:, nonatomic) struct CGColorSpace { }*_overrideColorSpace;
 @property (getter=_wantsAlphaMask, setter=_setWantsAlphaMask:, nonatomic) BOOL _wantsAlphaMask;
 @property (nonatomic) BOOL opaque;
 @property (nonatomic) BOOL prefersExtendedRange;
-@property (nonatomic) double scale;
+@property (nonatomic) float scale;
 
 + (id)defaultFormat;
 

@@ -12,10 +12,10 @@
     UIColor * _glyphColor;
     UIColor * _inlayColor;
     UIColor * _labelColor;
-    double  _largeTickValue;
+    float  _largeTickValue;
     unsigned int  _paletteColor;
     BOOL  _showsShadows;
-    double  _smallTickValue;
+    float  _smallTickValue;
     UIColor * _tickColor;
 }
 
@@ -28,9 +28,9 @@
 @property (nonatomic, readonly) UIColor *glyphColor;
 @property (nonatomic, readonly) UIColor *inlayColor;
 @property (nonatomic, readonly) UIColor *labelColor;
-@property (nonatomic, readonly) double largeTickValue;
+@property (nonatomic, readonly) float largeTickValue;
 @property (nonatomic, readonly) BOOL showsShadows;
-@property (nonatomic, readonly) double smallTickValue;
+@property (nonatomic, readonly) float smallTickValue;
 @property (nonatomic, readonly) UIColor *tickColor;
 
 + (id)interpolationFromPalette:(id)arg1 toPalette:(id)arg2 fraction:(float)arg3;

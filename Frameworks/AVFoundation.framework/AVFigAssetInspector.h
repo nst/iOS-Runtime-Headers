@@ -13,7 +13,7 @@
 }
 
 @property (nonatomic, readonly) NSURL *URL;
-@property (nonatomic, readonly) unsigned int downloadToken;
+@property (nonatomic, readonly) unsigned long long downloadToken;
 @property (getter=_figAsset, nonatomic, readonly) struct OpaqueFigAsset { }*figAsset;
 @property (nonatomic, readonly) NSArray *figChapterGroupInfo;
 @property (nonatomic, readonly) NSArray *figChapters;
@@ -39,8 +39,8 @@
 - (BOOL)containsFragments;
 - (id)creationDate;
 - (void)dealloc;
-- (unsigned int)downloadToken;
-- (struct { int x1; int x2; unsigned int x3; int x4; })duration;
+- (unsigned long long)downloadToken;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
 - (id)figChapterGroupInfo;
 - (id)figChapters;
 - (void)finalize;
@@ -57,12 +57,12 @@
 - (BOOL)isReadable;
 - (id)lyrics;
 - (id)metadataForFormat:(id)arg1;
-- (struct CGSize { double x1; double x2; })naturalSize;
+- (struct CGSize { float x1; float x2; })naturalSize;
 - (int)naturalTimeScale;
 - (id)originalNetworkContentURL;
 - (float)preferredRate;
 - (float)preferredSoundCheckVolumeNormalization;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })preferredTransform;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })preferredTransform;
 - (float)preferredVolume;
 - (id)propertyListForProxy;
 - (BOOL)providesPreciseDurationAndTiming;

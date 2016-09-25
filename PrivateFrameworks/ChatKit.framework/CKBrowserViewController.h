@@ -47,7 +47,7 @@
 + (BOOL)supportsMessagesAppExtendedLaunchTest;
 
 - (void).cxx_destruct;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_edgeInsetsForChildViewController:(id)arg1 insetsAreAbsolute:(BOOL*)arg2;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_edgeInsetsForChildViewController:(id)arg1 insetsAreAbsolute:(BOOL*)arg2;
 - (void)_updateContentOverlayInsetsForSelfAndChildren;
 - (id)balloonPlugin;
 - (id)balloonPluginDataSource;

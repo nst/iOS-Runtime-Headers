@@ -21,7 +21,7 @@
 - (float)_complicationAlphaForEditMode:(int)arg1;
 - (void)_configureComplicationView:(id)arg1 forSlot:(id)arg2;
 - (void)_configureForTransitionFraction:(float)arg1 fromEditMode:(int)arg2 toEditMode:(int)arg3;
-- (struct CGPoint { double x1; double x2; })_contentCenterOffset;
+- (struct CGPoint { float x1; float x2; })_contentCenterOffset;
 - (void)_endScrubbingAnimated:(BOOL)arg1 withCompletion:(id /* block */)arg2;
 - (float)_handsAlphaForEditMode:(int)arg1;
 - (float)_keylineEdgeGapForState:(int)arg1;
@@ -38,11 +38,11 @@
 - (void)_prepareForEditing;
 - (void)_startScrubbingAnimated:(BOOL)arg1 withCompletion:(id /* block */)arg2;
 - (float)_timeTravelCaptionLabelMaxWidth;
-- (struct CGPoint { double x1; double x2; })_timeTravelStatusModuleCenter;
+- (struct CGPoint { float x1; float x2; })_timeTravelStatusModuleCenter;
 - (void)_unloadSnapshotContentViews;
 - (int)_utilitySlotForSlot:(id)arg1;
 - (float)_verticalPaddingForStatusBar;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)logoTappedFromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)logoTappedFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

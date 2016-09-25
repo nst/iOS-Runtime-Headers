@@ -8,7 +8,7 @@
 
 @property (nonatomic, readonly) double timeout;
 
-- (unsigned int)dispatchTimeout;
+- (unsigned long long)dispatchTimeout;
 - (id)init;
 - (id)initWithTimeout:(double)arg1;
 - (double)timeout;

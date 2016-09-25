@@ -6,9 +6,9 @@
     UIBoxcarFilterPointFIFO * _boxcarFIFO;
     BOOL  _emitInterpolatedPoints;
     UIQuadCurvePointFIFO * _interpolatingFIFO;
-    double  _spacing;
+    float  _spacing;
     UIPointFIFO * _strokeFIFO;
-    double  _unitScale;
+    float  _unitScale;
     unsigned int  _width;
 }
 
@@ -16,9 +16,9 @@
 @property (nonatomic, copy) id /* block */ emissionHandler;
 @property (nonatomic) BOOL emitInterpolatedPoints;
 @property (nonatomic, retain) UIQuadCurvePointFIFO *interpolatingFIFO;
-@property (nonatomic) double spacing;
+@property (nonatomic) float spacing;
 @property (nonatomic, retain) UIPointFIFO *strokeFIFO;
-@property (nonatomic) double unitScale;
+@property (nonatomic) float unitScale;
 @property (nonatomic) unsigned int width;
 
 + (void)_interpolateFromPoint:(void *)arg1 toPoint:(void *)arg2 withControlPoint:(void *)arg3 atUnitScale:(void *)arg4 emissionHandler:(void *)arg5; // needs 5 arg types, found 2: float, id /* block */

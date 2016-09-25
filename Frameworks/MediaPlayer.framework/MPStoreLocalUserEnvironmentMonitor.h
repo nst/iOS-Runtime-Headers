@@ -4,7 +4,7 @@
 
 @interface MPStoreLocalUserEnvironmentMonitor : NSObject {
     NSObject<OS_dispatch_queue> * _accessQueue;
-    unsigned int  _accountIdentifier;
+    unsigned long long  _accountIdentifier;
     MPStoreUserEnvironment * _currentEnvironment;
     NSObject<OS_dispatch_queue> * _observerQueue;
     NSString * _storeFrontIdentifier;

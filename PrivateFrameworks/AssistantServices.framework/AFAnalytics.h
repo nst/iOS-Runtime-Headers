@@ -25,9 +25,9 @@
 - (void)logEventWithType:(int)arg1 context:(id)arg2 contextNoCopy:(BOOL)arg3;
 - (void)logEventWithType:(int)arg1 contextProvider:(id /* block */)arg2;
 - (void)logEventWithType:(int)arg1 contextProvider:(id /* block */)arg2 contextProvidingQueue:(id)arg3;
-- (void)logEventWithType:(int)arg1 machAbsoluteTime:(unsigned int)arg2 categoryType:(int)arg3 context:(id)arg4 contextNoCopy:(BOOL)arg5;
-- (void)logEventWithType:(int)arg1 machAbsoluteTime:(unsigned int)arg2 categoryType:(int)arg3 contextProvider:(id /* block */)arg4 contextProvidingQueue:(id)arg5;
-- (void)logEventWithType:(int)arg1 machAbsoluteTime:(unsigned int)arg2 context:(id)arg3;
+- (void)logEventWithType:(int)arg1 machAbsoluteTime:(unsigned long long)arg2 categoryType:(int)arg3 context:(id)arg4 contextNoCopy:(BOOL)arg5;
+- (void)logEventWithType:(int)arg1 machAbsoluteTime:(unsigned long long)arg2 categoryType:(int)arg3 contextProvider:(id /* block */)arg4 contextProvidingQueue:(id)arg5;
+- (void)logEventWithType:(int)arg1 machAbsoluteTime:(unsigned long long)arg2 context:(id)arg3;
 - (void)logEvents:(id)arg1;
 - (void)setService:(id)arg1;
 

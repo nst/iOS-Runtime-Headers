@@ -4,8 +4,8 @@
 
 @interface UIDeviceWhiteColor : UIColor {
     struct CGColor { } * _cachedColor;
-    double  alphaComponent;
-    double  whiteComponent;
+    float  alphaComponent;
+    float  whiteComponent;
 }
 
 - (struct CGColor { }*)CGColor;

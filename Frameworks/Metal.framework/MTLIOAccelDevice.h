@@ -27,24 +27,24 @@
     unsigned int  _fenceBitmapSearchStart;
     unsigned int  _fenceMaximumCount;
     int  _numCommandBuffers;
-    unsigned int  _segmentByteThreshold;
-    unsigned int  _sharedMemorySize;
+    unsigned long long  _segmentByteThreshold;
+    unsigned long long  _sharedMemorySize;
     struct __IOAccelShared { } * _sharedRef;
     /* Warning: unhandled struct encoding: '{?="segmentListShmemPool"@"MTLIOAccelDeviceShmemPool""kernelCommandShmemPool"@"MTLIOAccelDeviceShmemPool""hwResourcePools"^@"hwResourcePoolCount"I"akResourceListPool"@"MTLResourceListPool""akPrivateResourceListPool"@"MTLResourceListPool"}' */ struct { 
         MTLIOAccelDeviceShmemPool *segmentListShmemPool; 
         MTLIOAccelDeviceShmemPool *kernelCommandShmemPool; 
         hwResourcePoolCount **hwResourcePools; 
     }  _storageCreateParams;
-    unsigned int  _textureRam;
-    unsigned int  _videoRam;
+    unsigned long long  _textureRam;
+    unsigned long long  _videoRam;
 }
 
 @property (readonly) unsigned int acceleratorPort;
-@property (readonly) unsigned int dedicatedMemorySize;
+@property (readonly) unsigned long long dedicatedMemorySize;
 @property (readonly) unsigned int hwResourcePoolCount;
 @property (readonly) id*hwResourcePools;
 @property (readonly) int numCommandBuffers;
-@property (readonly) unsigned int sharedMemorySize;
+@property (readonly) unsigned long long sharedMemorySize;
 
 + (void)registerDevices;
 
@@ -55,7 +55,7 @@
 - (id)allocBufferSubDataWithLength:(unsigned int)arg1 options:(unsigned int)arg2 alignment:(int)arg3 heapIndex:(short*)arg4 bufferIndex:(short*)arg5 bufferOffset:(int*)arg6;
 - (void)dealloc;
 - (void)deallocBufferSubData:(id)arg1 heapIndex:(short)arg2 bufferIndex:(short)arg3 bufferOffset:(int)arg4 length:(int)arg5;
-- (unsigned int)dedicatedMemorySize;
+- (unsigned long long)dedicatedMemorySize;
 - (struct __IOAccelDevice { }*)deviceRef;
 - (short)heapIndexWithOptions:(unsigned int)arg1;
 - (unsigned int)hwResourcePoolCount;
@@ -67,12 +67,12 @@
 - (id)newCommandQueueWithMaxCommandBufferCount:(unsigned int)arg1;
 - (id)newFence;
 - (int)numCommandBuffers;
-- (unsigned int)recommendedMaxWorkingSetSize;
+- (unsigned long long)recommendedMaxWorkingSetSize;
 - (void)releaseFenceIndex:(unsigned int)arg1;
 - (void)setComputePipelineStateCommandShmemSize:(unsigned int)arg1;
 - (void)setHwResourcePool:(id*)arg1 count:(int)arg2;
 - (void)setSegmentListShmemSize:(unsigned int)arg1;
-- (unsigned int)sharedMemorySize;
+- (unsigned long long)sharedMemorySize;
 - (struct __IOAccelShared { }*)sharedRef;
 
 @end

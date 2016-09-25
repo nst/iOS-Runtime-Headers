@@ -36,7 +36,7 @@
 - (void)dealloc;
 - (struct __CFDictionary { }*)decodeSessionOptions;
 - (id)imagePath;
-- (id)initWithImagePath:(id)arg1 format:(int)arg2 imageType:(int)arg3 optimalSourcePixelSize:(struct CGSize { double x1; double x2; })arg4 options:(unsigned int)arg5;
+- (id)initWithImagePath:(id)arg1 format:(int)arg2 imageType:(int)arg3 optimalSourcePixelSize:(struct CGSize { float x1; float x2; })arg4 options:(unsigned int)arg5;
 - (id)initialDecodeSessionOptions;
 - (BOOL)isCancelled;
 - (void)loadPreheatDataWithHandler:(id /* block */)arg1;

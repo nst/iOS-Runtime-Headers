@@ -4,12 +4,12 @@
 
 @interface MRRegisterHIDDeviceResultMessage : MRProtocolMessage
 
-@property (nonatomic, readonly) unsigned int deviceIdentifier;
+@property (nonatomic, readonly) unsigned long long deviceIdentifier;
 @property (nonatomic, readonly) unsigned int errorCode;
 
-- (unsigned int)deviceIdentifier;
+- (unsigned long long)deviceIdentifier;
 - (unsigned int)errorCode;
-- (id)initWithErrorCode:(unsigned int)arg1 deviceIdentifier:(unsigned int)arg2;
+- (id)initWithErrorCode:(unsigned int)arg1 deviceIdentifier:(unsigned long long)arg2;
 - (unsigned int)type;
 
 @end

@@ -52,7 +52,7 @@
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
-- (void)updateContentViewSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)updateContentViewSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 

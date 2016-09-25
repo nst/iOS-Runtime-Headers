@@ -14,7 +14,7 @@
 @property (nonatomic, readonly) struct { double x1; double x2; }*polygonPoints;
 @property (nonatomic, readonly) int polygonPointsCount;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) unsigned int transitID;
+@property (nonatomic, readonly) unsigned long long transitID;
 
 - (void)dealloc;
 - (id)findAccessPoints:(id /* block */)arg1 completionHandler:(id /* block */)arg2;

@@ -3,8 +3,8 @@
  */
 
 @interface CMAltitudeDataInternal : NSObject <NSCopying> {
-    double  fAltitude;
-    double  fPressure;
+    float  fAltitude;
+    float  fPressure;
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

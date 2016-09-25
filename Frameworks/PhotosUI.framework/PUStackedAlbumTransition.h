@@ -13,8 +13,8 @@
     BOOL  _didAnimateRoundedCorners;
     BOOL  _forFolder;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _interactionCenter;
     BOOL  _isExpanding;
     BOOL  _isForStandInAlbum;
@@ -22,12 +22,12 @@
     <PLAssetContainer> * _photoCollection;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _popTransitionInitialVisibleBounds;
     NSSet * _popTransitionInitialVisibleStackedAssetIndexPaths;
@@ -44,7 +44,7 @@
 @property (getter=isForFolder, nonatomic) BOOL forFolder;
 @property (nonatomic, readonly) UIViewController<PUStackedAlbumControllerTransition> *fromViewController;
 @property (readonly) unsigned int hash;
-@property (nonatomic) struct CGPoint { double x1; double x2; } interactionCenter;
+@property (nonatomic) struct CGPoint { float x1; float x2; } interactionCenter;
 @property (setter=_setExpanding:, nonatomic) BOOL isExpanding;
 @property (setter=setForStandInAlbum:, nonatomic) BOOL isForStandInAlbum;
 @property (setter=ph_setPhotoCollection:, nonatomic, retain) PHCollection *ph_photoCollection;
@@ -74,7 +74,7 @@
 - (void)completeInteractiveOperation:(int)arg1 finished:(BOOL)arg2;
 - (id)delegate;
 - (id)init;
-- (struct CGPoint { double x1; double x2; })interactionCenter;
+- (struct CGPoint { float x1; float x2; })interactionCenter;
 - (BOOL)isExpanding;
 - (BOOL)isForFolder;
 - (BOOL)isForStandInAlbum;
@@ -84,12 +84,12 @@
 - (void)setDelegate:(id)arg1;
 - (void)setForFolder:(BOOL)arg1;
 - (void)setForStandInAlbum:(BOOL)arg1;
-- (void)setInteractionCenter:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setInteractionCenter:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setPhotoCollection:(id)arg1;
 - (void)startInteractiveTransitionWithPhotoPinchGestureRecognizer:(id)arg1 isExpanding:(BOOL)arg2;
 - (void)transitionViewAnimatorDidEnd:(id)arg1 finished:(BOOL)arg2;
 - (void)transitionViewAnimatorDidUpdate:(id)arg1;
-- (void)transitionViewAnimatorWillEnd:(id)arg1 withTargetTranslation:(inout struct CGPoint { double x1; double x2; }*)arg2;
+- (void)transitionViewAnimatorWillEnd:(id)arg1 withTargetTranslation:(inout struct CGPoint { float x1; float x2; }*)arg2;
 - (void)updateInteractiveTransitionWithPhotoPinchGestureRecognizer:(id)arg1;
 
 @end

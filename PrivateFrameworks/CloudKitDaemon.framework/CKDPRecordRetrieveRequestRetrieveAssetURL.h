@@ -8,7 +8,7 @@
         unsigned int requestedTTL : 1; 
         unsigned int type : 1; 
     }  _has;
-    int  _requestedTTL;
+    long long  _requestedTTL;
     int  _type;
 }
 
@@ -16,7 +16,7 @@
 @property (nonatomic, readonly) BOOL hasAssetFields;
 @property (nonatomic) BOOL hasRequestedTTL;
 @property (nonatomic) BOOL hasType;
-@property (nonatomic) int requestedTTL;
+@property (nonatomic) long long requestedTTL;
 @property (nonatomic) int type;
 
 - (void).cxx_destruct;
@@ -33,11 +33,11 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (int)requestedTTL;
+- (long long)requestedTTL;
 - (void)setAssetFields:(id)arg1;
 - (void)setHasRequestedTTL:(BOOL)arg1;
 - (void)setHasType:(BOOL)arg1;
-- (void)setRequestedTTL:(int)arg1;
+- (void)setRequestedTTL:(long long)arg1;
 - (void)setType:(int)arg1;
 - (int)type;
 - (id)typeAsString:(int)arg1;

@@ -42,7 +42,7 @@
 - (void)_setTextDocumentProxy:(id)arg1;
 - (void)_setupInputController;
 - (BOOL)_shouldForwardSystemLayoutFittingSizeChanges;
-- (struct CGSize { double x1; double x2; })_systemLayoutSizeFittingSize:(struct CGSize { double x1; double x2; })arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;
+- (struct CGSize { float x1; float x2; })_systemLayoutSizeFittingSize:(struct CGSize { float x1; float x2; })arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;
 - (id)_textDocumentInterface;
 - (void)_willResetDocumentState;
 - (void)advanceToNextInputMode;

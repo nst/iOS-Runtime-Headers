@@ -8,7 +8,7 @@
 
 @property (nonatomic, readonly) IMTranscriptPluginBreadcrumbChatItem *IMChatItem;
 @property (nonatomic, readonly) UIImage *iconImage;
-@property (nonatomic, readonly) double iconWidthPlusPadding;
+@property (nonatomic, readonly) float iconWidthPlusPadding;
 @property (nonatomic, retain) CKTranscriptPluginChatItem *previousPluginChatItem;
 
 - (void).cxx_destruct;
@@ -18,7 +18,7 @@
 - (Class)cellClass;
 - (id)iconImage;
 - (float)iconWidthPlusPadding;
-- (struct CGSize { double x1; double x2; })loadSizeThatFits:(struct CGSize { double x1; double x2; })arg1 textAlignmentInsets:(out struct UIEdgeInsets { double x1; double x2; double x3; double x4; }*)arg2;
+- (struct CGSize { float x1; float x2; })loadSizeThatFits:(struct CGSize { float x1; float x2; })arg1 textAlignmentInsets:(out struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg2;
 - (id)loadTranscriptText;
 - (id)previousPluginChatItem;
 - (void)setPreviousPluginChatItem:(id)arg1;

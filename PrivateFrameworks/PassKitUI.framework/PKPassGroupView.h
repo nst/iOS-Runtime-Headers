@@ -6,12 +6,12 @@
     unsigned short  _animationCounter;
     BOOL  _canPan;
     <PKPassGroupViewDelegate> * _delegate;
-    double  _dimmerValue;
+    float  _dimmerValue;
     unsigned short  _fanningAnimationCounter;
     unsigned short  _frontFaceContentModePinningCounter;
     PKPassView * _frontmostPassView;
     PKGroup * _group;
-    double  _horizontalMotionRelativeValue;
+    float  _horizontalMotionRelativeValue;
     UIScrollView * _horizontalScrollView;
     BOOL  _isAuthenticating;
     struct { 
@@ -25,23 +25,23 @@
         unsigned int delegateOverridesAllowPanning : 1; 
         unsigned int delegateOverridesGrowCenterWhileFlipped : 1; 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } priorContentOffset; 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } instantaneousContentOffsetDelta; 
         unsigned int numberOfPasses; 
         unsigned int selectedIndex; 
         struct CGRect { 
             struct CGPoint { 
-                double x; 
-                double y; 
+                float x; 
+                float y; 
             } origin; 
             struct CGSize { 
-                double width; 
-                double height; 
+                float width; 
+                float height; 
             } size; 
         } bounds; 
     }  _layoutState;
@@ -54,7 +54,7 @@
     PKReusablePassViewQueue * _passViewQueue;
     NSMutableDictionary * _passViewsByUniqueID;
     int  _presentationState;
-    double  _verticalMotionRelativeValue;
+    float  _verticalMotionRelativeValue;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -63,20 +63,20 @@
 @property (nonatomic, retain) PKPassView *frontmostPassView;
 @property (nonatomic, readonly) PKGroup *group;
 @property (readonly) unsigned int hash;
-@property (nonatomic) double horizontalMotionRelativeValue;
-@property (nonatomic, readonly) struct UIOffset { double x1; double x2; } offsetForFrontmostPassWhileStacked;
+@property (nonatomic) float horizontalMotionRelativeValue;
+@property (nonatomic, readonly) struct UIOffset { float x1; float x2; } offsetForFrontmostPassWhileStacked;
 @property (nonatomic, readonly) UIPageControl *pageControl;
 @property (nonatomic) BOOL pageControlHidden;
 @property (nonatomic) PKReusablePassViewQueue *passViewQueue;
 @property (nonatomic) int presentationState;
 @property (readonly) Class superclass;
-@property (nonatomic) double verticalMotionRelativeValue;
+@property (nonatomic) float verticalMotionRelativeValue;
 
 - (void).cxx_destruct;
 - (void)_addPanAndLongPressGestureRecognizers;
 - (void)_applyContentMode:(int)arg1 toPassView:(id)arg2 animated:(BOOL)arg3;
 - (void)_beginTrackingAnimation;
-- (struct CGSize { double x1; double x2; })_contentSize;
+- (struct CGSize { float x1; float x2; })_contentSize;
 - (int)_defaultContentModeForIndex:(unsigned int)arg1;
 - (void)_endTrackingAnimation;
 - (void)_enumeratePassIndicesInStackOrderWithBlock:(id /* block */)arg1;
@@ -85,11 +85,11 @@
 - (void)_handlePanGesture:(id)arg1;
 - (id)_loadCardViewForIndex:(unsigned int)arg1 contentMode:(int)arg2;
 - (void)_pageControlChanged:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_pagingFrameForCardView:(id)arg1 atIndex:(unsigned int)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_pagingFrameForCardView:(id)arg1 atIndex:(unsigned int)arg2;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_rangeOfPagingIndices;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_rangeOfVisibleIndices;
 - (void)_removePanAndLongPressGestureRecognizers;
-- (struct CGPoint { double x1; double x2; })_stackingPositionForPassViewLayer:(id)arg1 atStackIndex:(unsigned int)arg2 withSeparation:(BOOL)arg3;
+- (struct CGPoint { float x1; float x2; })_stackingPositionForPassViewLayer:(id)arg1 atStackIndex:(unsigned int)arg2 withSeparation:(BOOL)arg3;
 - (void)_updateCachedGroupState;
 - (void)_updateCachedLayoutState;
 - (void)_updateDelegateResponderCache;
@@ -112,14 +112,14 @@
 - (void)group:(id)arg1 didMovePassFromIndex:(unsigned int)arg2 toIndex:(unsigned int)arg3;
 - (void)group:(id)arg1 didRemovePass:(id)arg2 atIndex:(unsigned int)arg3;
 - (void)group:(id)arg1 didUpdatePass:(id)arg2 atIndex:(unsigned int)arg3;
-- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (float)horizontalMotionRelativeValue;
 - (id)initWithGroup:(id)arg1 delegate:(id)arg2 presentationState:(int)arg3;
 - (void)layoutPagesAnimated:(BOOL)arg1;
 - (void)layoutStackAnimated:(BOOL)arg1;
 - (void)layoutSubviews;
 - (void)layoutSubviewsAnimated:(BOOL)arg1;
-- (struct UIOffset { double x1; double x2; })offsetForFrontmostPassWhileStacked;
+- (struct UIOffset { float x1; float x2; })offsetForFrontmostPassWhileStacked;
 - (id)pageControl;
 - (BOOL)pageControlHidden;
 - (BOOL)passView:(id)arg1 deleteButtonEnabledForPass:(id)arg2;
@@ -155,10 +155,10 @@
 - (void)setPresentationState:(int)arg1;
 - (void)setPresentationState:(int)arg1 animated:(BOOL)arg2;
 - (void)setVerticalMotionRelativeValue:(float)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)sizeToFit;
 - (void)updatePageControlFrame;
-- (void)updateToStackWithProgress:(float)arg1 originalPosition:(struct CGPoint { double x1; double x2; })arg2 timingFunction:(id /* block */)arg3;
+- (void)updateToStackWithProgress:(float)arg1 originalPosition:(struct CGPoint { float x1; float x2; })arg2 timingFunction:(id /* block */)arg3;
 - (float)verticalMotionRelativeValue;
 
 @end

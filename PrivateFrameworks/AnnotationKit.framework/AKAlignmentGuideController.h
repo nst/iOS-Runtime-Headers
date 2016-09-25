@@ -5,23 +5,23 @@
 @interface AKAlignmentGuideController : NSObject {
     BOOL  _exifHasFlippedAxes;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _initialDraggedAnnotationsCombinedCenter;
-    struct CGPoint { double x1; double x2; } * _otherAnnotationCenters;
+    struct CGPoint { float x1; float x2; } * _otherAnnotationCenters;
     unsigned int  _otherAnnotationCentersCount;
     AKPageController * _pageController;
-    double  _screenToModelScaleFactor;
+    float  _screenToModelScaleFactor;
 }
 
 @property BOOL exifHasFlippedAxes;
 @property AKPageController *pageController;
-@property double screenToModelScaleFactor;
+@property float screenToModelScaleFactor;
 
 - (void).cxx_destruct;
 - (void)dealloc;
 - (BOOL)exifHasFlippedAxes;
-- (struct CGPoint { double x1; double x2; })guideAlignedPointForPoint:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2 orRecognizer:(id)arg3;
+- (struct CGPoint { float x1; float x2; })guideAlignedPointForPoint:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2 orRecognizer:(id)arg3;
 - (id)initWithPageController:(id)arg1;
 - (id)pageController;
 - (float)screenToModelScaleFactor;

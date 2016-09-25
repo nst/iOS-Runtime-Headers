@@ -5,10 +5,10 @@
 @interface AVPlayerLooperInternal : NSObject {
     NSError * error;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  forwardPlaybackStartTime;
     NSObject<OS_dispatch_queue> * ivarAccessQueue;
     AVPlayerItem * lastEnqueuedLoopingItem;
@@ -16,16 +16,16 @@
     int  loopCount;
     struct { 
         struct { 
-            int value; 
+            long long value; 
             int timescale; 
             unsigned int flags; 
-            int epoch; 
+            long long epoch; 
         } start; 
         struct { 
-            int value; 
+            long long value; 
             int timescale; 
             unsigned int flags; 
-            int epoch; 
+            long long epoch; 
         } duration; 
     }  loopRange;
     AVPlayerItem * loopingItem;

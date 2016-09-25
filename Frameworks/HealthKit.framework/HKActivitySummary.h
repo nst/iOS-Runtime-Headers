@@ -5,7 +5,7 @@
 @interface HKActivitySummary : NSObject <NSCopying, NSSecureCoding> {
     HKQuantity * _activeEnergyBurned;
     HKQuantity * _activeEnergyBurnedGoal;
-    int  _activitySummaryIndex;
+    long long  _activitySummaryIndex;
     HKQuantity * _appleExerciseTime;
     HKQuantity * _appleExerciseTimeGoal;
     HKQuantity * _appleStandHours;
@@ -27,7 +27,7 @@
 @property (nonatomic, retain) HKQuantity *activeEnergyBurned;
 @property (nonatomic, retain) HKQuantity *activeEnergyBurnedGoal;
 @property (getter=_activeEnergyCompletionPercentage, nonatomic, readonly) double activeEnergyCompletionPercentage;
-@property (getter=_activitySummaryIndex, setter=_setActivitySummaryIndex:, nonatomic) int activitySummaryIndex;
+@property (getter=_activitySummaryIndex, setter=_setActivitySummaryIndex:, nonatomic) long long activitySummaryIndex;
 @property (nonatomic, retain) HKQuantity *appleExerciseTime;
 @property (nonatomic, retain) HKQuantity *appleExerciseTimeGoal;
 @property (nonatomic, retain) HKQuantity *appleStandHours;
@@ -59,7 +59,7 @@
 
 - (void).cxx_destruct;
 - (double)_activeEnergyCompletionPercentage;
-- (int)_activitySummaryIndex;
+- (long long)_activitySummaryIndex;
 - (BOOL)_allFieldsAreEqual:(id)arg1;
 - (id)_creationDate;
 - (id)_decodeQuantityFromCoder:(id)arg1 forKey:(id)arg2 unit:(id)arg3;
@@ -76,7 +76,7 @@
 - (BOOL)_isDataLoading;
 - (double)_percentageCompleteWithQuantity:(id)arg1 goalQuantity:(id)arg2 unit:(id)arg3;
 - (id)_pushCount;
-- (void)_setActivitySummaryIndex:(int)arg1;
+- (void)_setActivitySummaryIndex:(long long)arg1;
 - (void)_setCreationDate:(id)arg1;
 - (void)_setDataLoading:(BOOL)arg1;
 - (void)_setDeepBreathingDuration:(id)arg1;

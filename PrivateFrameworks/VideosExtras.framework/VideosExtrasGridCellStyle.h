@@ -5,40 +5,40 @@
 @interface VideosExtrasGridCellStyle : NSObject <NSCopying> {
     int  _defaultTextAlignment;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _imageSize;
     NSDictionary * _subtitleDefaultFontAttributes;
-    double  _subtitleFirstBaselineHeight;
+    float  _subtitleFirstBaselineHeight;
     UIColor * _subtitleTextColor;
     NSString * _subtitleTextStyle;
-    double  _textFirstBaselineToBottom;
-    double  _textLastBaselineToBottom;
+    float  _textFirstBaselineToBottom;
+    float  _textLastBaselineToBottom;
     NSDictionary * _titleDefaultFontAttributes;
-    double  _titleFirstBaselineHeight;
+    float  _titleFirstBaselineHeight;
     UIColor * _titleTextColor;
     NSString * _titleTextStyle;
 }
 
 @property (nonatomic) int defaultTextAlignment;
-@property (nonatomic) struct CGSize { double x1; double x2; } imageSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } imageSize;
 @property (nonatomic, copy) NSDictionary *subtitleDefaultFontAttributes;
-@property (nonatomic) double subtitleFirstBaselineHeight;
+@property (nonatomic) float subtitleFirstBaselineHeight;
 @property (nonatomic, copy) UIColor *subtitleTextColor;
 @property (nonatomic, copy) NSString *subtitleTextStyle;
-@property (nonatomic) double textFirstBaselineToBottom;
-@property (nonatomic) double textLastBaselineToBottom;
+@property (nonatomic) float textFirstBaselineToBottom;
+@property (nonatomic) float textLastBaselineToBottom;
 @property (nonatomic, copy) NSDictionary *titleDefaultFontAttributes;
-@property (nonatomic) double titleFirstBaselineHeight;
+@property (nonatomic) float titleFirstBaselineHeight;
 @property (nonatomic, copy) UIColor *titleTextColor;
 @property (nonatomic, copy) NSString *titleTextStyle;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (int)defaultTextAlignment;
-- (struct CGSize { double x1; double x2; })imageSize;
+- (struct CGSize { float x1; float x2; })imageSize;
 - (void)setDefaultTextAlignment:(int)arg1;
-- (void)setImageSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setImageSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setSubtitleDefaultFontAttributes:(id)arg1;
 - (void)setSubtitleFirstBaselineHeight:(float)arg1;
 - (void)setSubtitleTextColor:(id)arg1;

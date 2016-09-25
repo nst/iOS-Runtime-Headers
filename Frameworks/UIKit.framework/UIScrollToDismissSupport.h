@@ -9,8 +9,8 @@
     BOOL  _scrollViewShowsHorizontalScrollIndicator;
     BOOL  _scrollViewTransitionFinishing;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _scrollViewTransitionPreviousPoint;
 }
 

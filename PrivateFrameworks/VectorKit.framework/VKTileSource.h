@@ -4,7 +4,7 @@
 
 @interface VKTileSource : NSObject {
     <VKTileSourceClient> * _client;
-    double  _contentScale;
+    float  _contentScale;
     VKTileKeyList * _decoding;
     VKTileKeyList * _failedTiles;
     NSObject<OS_dispatch_queue> * _homeQueue;
@@ -27,7 +27,7 @@
 }
 
 @property (nonatomic) <VKTileSourceClient> *client;
-@property (nonatomic) double contentScale;
+@property (nonatomic) float contentScale;
 @property (nonatomic, readonly) struct Device { int (**x1)(); struct DeviceVersion { unsigned int x_2_1_1; unsigned int x_2_1_2; } x2; struct DeviceCapabilities { bool x_3_1_1; unsigned int x_3_1_2; unsigned int x_3_1_3; unsigned int x_3_1_4; } x3; struct DeviceAPIProperties { int x_4_1_1; double x_4_1_2; } x4; int x5; int x6; }*device;
 @property (nonatomic) int mapType;
 @property (nonatomic, readonly) unsigned int maximumDownloadZoomLevel;

@@ -24,9 +24,9 @@
     }  _audioStream;
     struct AudioTimeStamp { 
         double mSampleTime; 
-        unsigned int mHostTime; 
+        unsigned long long mHostTime; 
         double mRateScalar; 
-        unsigned int mWordClockTime; 
+        unsigned long long mWordClockTime; 
         struct SMPTETime { 
             short mSubframes; 
             short mSubframeDivisor; 
@@ -48,30 +48,30 @@
     NSMutableArray * _musicDetections;
     int  _sampleBatchSize;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _trackStart;
     NSMutableArray * _utteranceDetections;
     BOOL  _voiceActivity;
     NSMutableArray * _voiceDetections;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _voiceStart;
 }
 
 + (id)voiceDetector;
 
 - (void).cxx_destruct;
-- (void)addDetectionFromTime:(const struct { int x1; int x2; unsigned int x3; int x4; }*)arg1 toTime:(const struct { int x1; int x2; unsigned int x3; int x4; }*)arg2 result:(id)arg3;
+- (void)addDetectionFromTime:(const struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg1 toTime:(const struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg2 result:(id)arg3;
 - (long)analyzeAsset:(id)arg1 cancel:(id /* block */)arg2 results:(id*)arg3;
 - (id)audioFormatRequirements;
 - (void)dealloc;
-- (long)finalize:(const struct { int x1; int x2; unsigned int x3; int x4; }*)arg1;
+- (long)finalize:(const struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg1;
 - (id)init;
 - (long)initialize:(struct opaqueCMSampleBuffer { }*)arg1;
 - (long)initializeAudioUnit:(const struct AudioStreamBasicDescription { double x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; }*)arg1;

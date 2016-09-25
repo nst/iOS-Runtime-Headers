@@ -23,7 +23,7 @@
 @property (setter=_setImageURL:, nonatomic, copy) NSURL *imageURL;
 @property (nonatomic, readonly) NSError *operationError;
 @property (nonatomic, copy) NSURL *outputDirectoryURL;
-@property (nonatomic, readonly) double progress;
+@property (nonatomic, readonly) float progress;
 @property (nonatomic) BOOL shouldConvertToSRGB;
 @property (nonatomic) BOOL shouldStripLocation;
 @property (nonatomic) BOOL shouldStripMetadata;

@@ -3,31 +3,31 @@
  */
 
 @interface CCUIPunchOutMask : NSObject {
-    double  _cornerRadius;
+    float  _cornerRadius;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _frame;
     unsigned int  _roundedCorners;
     int  _style;
 }
 
-@property (nonatomic, readonly) double cornerRadius;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } frame;
+@property (nonatomic, readonly) float cornerRadius;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } frame;
 @property (nonatomic, readonly) unsigned int roundedCorners;
 @property (nonatomic, readonly) int style;
 
 - (float)cornerRadius;
 - (id)description;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
 - (unsigned int)hash;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 style:(int)arg2 radius:(float)arg3 roundedCorners:(unsigned int)arg4;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2 radius:(float)arg3 roundedCorners:(unsigned int)arg4;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)roundedCorners;
 - (int)style;

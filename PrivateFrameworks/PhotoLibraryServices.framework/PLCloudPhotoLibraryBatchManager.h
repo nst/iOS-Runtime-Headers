@@ -6,7 +6,7 @@
     NSMutableArray * _batches;
     PLCloudPhotoLibraryBatchContainer * _currentBatch;
     NSMutableSet * _masterHistory;
-    unsigned int  _resourceBudget;
+    unsigned long long  _resourceBudget;
     BOOL  _wasDrained;
 }
 

@@ -4,8 +4,8 @@
 
 @interface NTKDateComplicationLabel : UIControl <NTKControl, NTKDateComplicationDisplay> {
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _cachedSize;
     BOOL  _cachedSizeIsValid;
     NSString * _currentDateText;
@@ -18,18 +18,18 @@
     UIColor * _numberColor;
     int  _sizeStyle;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _touchEdgeInsets;
     BOOL  _usesLegibility;
     <NTKComplicationDisplayObserver> * displayObserver;
 }
 
-@property (setter=_setFirstLineBaselineFrameOriginY:, nonatomic) double _firstLineBaselineFrameOriginY;
-@property (nonatomic, readonly) double _lastLineBaseline;
-@property (setter=_setLastLineBaselineFrameOriginY:, nonatomic) double _lastLineBaselineFrameOriginY;
+@property (setter=_setFirstLineBaselineFrameOriginY:, nonatomic) float _firstLineBaselineFrameOriginY;
+@property (nonatomic, readonly) float _lastLineBaseline;
+@property (setter=_setLastLineBaselineFrameOriginY:, nonatomic) float _lastLineBaselineFrameOriginY;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) <NTKComplicationDisplayObserver> *displayObserver;
@@ -43,7 +43,7 @@
 @property (nonatomic, readonly) int sizeStyle;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UIColor *textColor;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } touchEdgeInsets;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } touchEdgeInsets;
 @property (nonatomic) BOOL usesLegibility;
 
 - (void).cxx_destruct;
@@ -52,7 +52,7 @@
 - (float)_cornerRadius;
 - (float)_firstLineBaselineFrameOriginY;
 - (float)_firstLineBaselineOffsetFromBoundsTop;
-- (struct CGSize { double x1; double x2; })_highlightInset;
+- (struct CGSize { float x1; float x2; })_highlightInset;
 - (void)_invalidateInternalLabelSize;
 - (float)_lastLineBaseline;
 - (float)_lastLineBaselineFrameOriginY;
@@ -68,7 +68,7 @@
 - (BOOL)legibilityHidden;
 - (BOOL)needsAbbreviatedDate;
 - (id)numberColor;
-- (BOOL)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)setDateComplicationText:(id)arg1 forDateStyle:(unsigned int)arg2;
 - (void)setDisplayObserver:(id)arg1;
 - (void)setFont:(id)arg1;
@@ -77,13 +77,13 @@
 - (void)setNeedsAbbreviatedDate:(BOOL)arg1;
 - (void)setNumberColor:(id)arg1;
 - (void)setTextColor:(id)arg1;
-- (void)setTouchEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setTouchEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setUsesLegibility:(BOOL)arg1;
 - (BOOL)shouldCancelTouchesInScrollview;
 - (int)sizeStyle;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)textColor;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })touchEdgeInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })touchEdgeInsets;
 - (BOOL)usesLegibility;
 
 @end

@@ -14,7 +14,7 @@
 
 + (id)_highQualityCachedAssetDestinationDirectory;
 + (id)_lowQualityCachedAssetDestinationDirectory;
-+ (id)streamingPlaybackAssetDestinationFilePathForMediaLibraryPersistentID:(int)arg1 storeAdamID:(int)arg2 storeSagaID:(unsigned int)arg3 assetQuality:(unsigned int)arg4 assetFlavor:(id)arg5 protectionType:(unsigned int)arg6 pathExtension:(id)arg7;
++ (id)streamingPlaybackAssetDestinationFilePathForMediaLibraryPersistentID:(long long)arg1 storeAdamID:(long long)arg2 storeSagaID:(unsigned long long)arg3 assetQuality:(unsigned int)arg4 assetFlavor:(id)arg5 protectionType:(unsigned int)arg6 pathExtension:(id)arg7;
 
 - (void).cxx_destruct;
 - (id)_cachedLocalPlaybackAssetFilePathWithIntegrityCheck:(BOOL)arg1 returningAssetQuality:(unsigned int*)arg2 protectionType:(unsigned int*)arg3 usesPurchaseBundle:(BOOL*)arg4;
@@ -22,11 +22,11 @@
 - (id)_mediaItemValuesForProperties;
 - (void)_mediaLibraryDidChangeNotification:(id)arg1;
 - (id)albumArtistName;
-- (int)albumStoreAdamID;
+- (long long)albumStoreAdamID;
 - (id)albumTitle;
 - (BOOL)allowsInitiatingPlayWhileDownload;
 - (id)artistName;
-- (int)artistStoreAdamID;
+- (long long)artistStoreAdamID;
 - (id)artworkCatalogForPlaybackTime:(double)arg1;
 - (id)buyParameters;
 - (id)cachedLocalPlaybackAssetFilePathReturningAssetQuality:(unsigned int*)arg1 protectionType:(unsigned int*)arg2 usesPurchaseBundle:(BOOL*)arg3;
@@ -36,7 +36,7 @@
 - (unsigned int)contentType;
 - (id)copyrightText;
 - (void)dealloc;
-- (int)downloadIdentifier;
+- (long long)downloadIdentifier;
 - (int)endpointType;
 - (double)expectedDuration;
 - (unsigned int)hash;
@@ -48,17 +48,17 @@
 - (BOOL)isExplicitTrack;
 - (id)localNetworkContentURL;
 - (id)mediaItem;
-- (int)mediaLibraryPersistentID;
+- (long long)mediaLibraryPersistentID;
 - (id)modelSong;
 - (id)protectedContentSupportStorageURL;
 - (void)setCachedLocalPlaybackAssetFilePath:(id)arg1 protectionType:(unsigned int)arg2 assetQuality:(unsigned int)arg3 withCompletionHandler:(id /* block */)arg4;
 - (void)setMediaItem:(id)arg1;
 - (BOOL)shouldReportPlayEventsToStore;
 - (BOOL)showComposer;
-- (unsigned int)storeAccountID;
-- (int)storeAdamID;
-- (unsigned int)storeSagaID;
-- (int)storeSubscriptionAdamID;
+- (unsigned long long)storeAccountID;
+- (long long)storeAdamID;
+- (unsigned long long)storeSagaID;
+- (long long)storeSubscriptionAdamID;
 - (id)streamingPlaybackAssetDestinationFilePathForAssetQuality:(unsigned int)arg1 assetFlavor:(id)arg2 protectionType:(unsigned int)arg3 pathExtension:(id)arg4;
 - (float)volumeNormalization;
 

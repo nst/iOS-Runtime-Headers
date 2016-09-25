@@ -4,12 +4,12 @@
 
 @interface SKUIStarRatingViewElement : SKUIViewElement {
     bool  _enabled;
-    double  _ratingValue;
+    float  _ratingValue;
     int  _starType;
     SKUIViewElementText * _text;
 }
 
-@property (nonatomic, readonly) double ratingValue;
+@property (nonatomic, readonly) float ratingValue;
 @property (nonatomic, readonly) int starType;
 @property (nonatomic, readonly) SKUIViewElementText *text;
 

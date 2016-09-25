@@ -5,13 +5,13 @@
 
 @required
 
-- (struct CGSize { double x1; double x2; })maxSizeForWidget:(WGWidgetHostingViewController *)arg1 forDisplayMode:(int)arg2;
+- (struct CGSize { float x1; float x2; })maxSizeForWidget:(WGWidgetHostingViewController *)arg1 forDisplayMode:(int)arg2;
 
 @optional
 
 - (int)activeLayoutModeForWidget:(WGWidgetHostingViewController *)arg1;
 - (void)contentAvailabilityDidChangeForWidget:(WGWidgetHostingViewController *)arg1;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })marginInsetsForWidget:(WGWidgetHostingViewController *)arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })marginInsetsForWidget:(WGWidgetHostingViewController *)arg1;
 - (void)remoteViewControllerDidConnectForWidget:(WGWidgetHostingViewController *)arg1;
 - (void)remoteViewControllerDidDisconnectForWidget:(WGWidgetHostingViewController *)arg1;
 - (void)remoteViewControllerViewDidAppearForWidget:(WGWidgetHostingViewController *)arg1;

@@ -6,9 +6,9 @@
     struct { 
         unsigned int muid : 1; 
     }  _has;
-    unsigned int  _muid;
+    unsigned long long  _muid;
     struct { 
-        unsigned int *list; 
+        unsigned long long *list; 
         unsigned int count; 
         unsigned int size; 
     }  _nextStopsMuids;
@@ -20,16 +20,16 @@
 @property (nonatomic) BOOL hasMuid;
 @property (nonatomic, readonly) BOOL hasNextStopIDs;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly) unsigned int muid;
-@property (nonatomic) unsigned int muid;
+@property (nonatomic, readonly) unsigned long long muid;
+@property (nonatomic) unsigned long long muid;
 @property (nonatomic, readonly) NSSet *nextStopIDs;
-@property (nonatomic, readonly) unsigned int*nextStopsMuids;
+@property (nonatomic, readonly) unsigned long long*nextStopsMuids;
 @property (nonatomic, readonly) unsigned int nextStopsMuidsCount;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 - (void).cxx_destruct;
-- (void)addNextStopsMuids:(unsigned int)arg1;
+- (void)addNextStopsMuids:(unsigned long long)arg1;
 - (void)clearNextStopsMuids;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -42,15 +42,15 @@
 - (id)initWithIncidentEntity:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (unsigned int)muid;
+- (unsigned long long)muid;
 - (id)nextStopIDs;
-- (unsigned int*)nextStopsMuids;
-- (unsigned int)nextStopsMuidsAtIndex:(unsigned int)arg1;
+- (unsigned long long*)nextStopsMuids;
+- (unsigned long long)nextStopsMuidsAtIndex:(unsigned int)arg1;
 - (unsigned int)nextStopsMuidsCount;
 - (BOOL)readFrom:(id)arg1;
 - (void)setHasMuid:(BOOL)arg1;
-- (void)setMuid:(unsigned int)arg1;
-- (void)setNextStopsMuids:(unsigned int*)arg1 count:(unsigned int)arg2;
+- (void)setMuid:(unsigned long long)arg1;
+- (void)setNextStopsMuids:(unsigned long long*)arg1 count:(unsigned int)arg2;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
 

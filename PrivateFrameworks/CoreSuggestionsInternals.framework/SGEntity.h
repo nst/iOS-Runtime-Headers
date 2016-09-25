@@ -14,12 +14,12 @@
     }  _creationTimestamp;
     SGDuplicateKey * _duplicateKey;
     unsigned int  _extractionType;
-    int  _groupId;
+    long long  _groupId;
     struct SGUnixTimestamp_ { 
         double secondsFromUnixEpoch; 
     }  _lastModifiedTimestamp;
     NSMutableSet * _locations;
-    int  _masterEntityId;
+    long long  _masterEntityId;
     double  _quality;
     SGRecordId * _recordId;
     NSString * _sourceKey;
@@ -41,10 +41,10 @@
 @property (nonatomic) struct SGUnixTimestamp_ { double x1; } creationTimestamp;
 @property (nonatomic, retain) SGDuplicateKey *duplicateKey;
 @property (nonatomic) unsigned int extractionType;
-@property (nonatomic) int groupId;
+@property (nonatomic) long long groupId;
 @property (nonatomic) struct SGUnixTimestamp_ { double x1; } lastModifiedTimestamp;
 @property (nonatomic, retain) NSMutableSet *locations;
-@property (nonatomic) int masterEntityId;
+@property (nonatomic) long long masterEntityId;
 @property (nonatomic) double quality;
 @property (nonatomic, retain) SGRecordId *recordId;
 @property (nonatomic, retain) NSString *sourceKey;
@@ -65,7 +65,7 @@
 - (id)extraKeyTag;
 - (unsigned int)extractionType;
 - (id)fieldsToSaveOnConfirmation;
-- (int)groupId;
+- (long long)groupId;
 - (unsigned int)hash;
 - (id)init;
 - (id)initWithEntity:(id)arg1;
@@ -78,7 +78,7 @@
 - (struct SGUnixTimestamp_ { double x1; })lastModifiedTimestamp;
 - (id)loadOrigin:(id)arg1;
 - (id)locations;
-- (int)masterEntityId;
+- (long long)masterEntityId;
 - (double)quality;
 - (id)recordId;
 - (void)setAuthor:(id)arg1;
@@ -87,10 +87,10 @@
 - (void)setCreationTimestamp:(struct SGUnixTimestamp_ { double x1; })arg1;
 - (void)setDuplicateKey:(id)arg1;
 - (void)setExtractionType:(unsigned int)arg1;
-- (void)setGroupId:(int)arg1;
+- (void)setGroupId:(long long)arg1;
 - (void)setLastModifiedTimestamp:(struct SGUnixTimestamp_ { double x1; })arg1;
 - (void)setLocations:(id)arg1;
-- (void)setMasterEntityId:(int)arg1;
+- (void)setMasterEntityId:(long long)arg1;
 - (void)setQuality:(double)arg1;
 - (void)setRecordId:(id)arg1;
 - (void)setSourceKey:(id)arg1;

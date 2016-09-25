@@ -32,9 +32,9 @@
 - (void)mapTableAt:(id)arg1 withState:(id)arg2;
 - (void)mapTableStyleAt:(id)arg1 withState:(id)arg2;
 - (int)maxRowNumber;
-- (struct CGSize { double x1; double x2; })preprocessDrawableSizeWithState:(id)arg1;
+- (struct CGSize { float x1; float x2; })preprocessDrawableSizeWithState:(id)arg1;
 - (int)preprocessHeightWithState:(id)arg1;
-- (struct CGSize { double x1; double x2; })preprocessSizeWithState:(id)arg1;
+- (struct CGSize { float x1; float x2; })preprocessSizeWithState:(id)arg1;
 - (int)preprocessWidthWithState:(id)arg1;
 - (void)readHyperlinksWithState:(id)arg1;
 - (double*)rowGrid;

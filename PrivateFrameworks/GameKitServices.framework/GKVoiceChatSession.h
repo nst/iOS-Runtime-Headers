@@ -8,10 +8,10 @@
 
 @property (getter=isActiveSession) BOOL activeSession;
 @property <GKVoiceChatSessionDelegate> *delegate;
-@property (readonly) double inputMeter;
+@property (readonly) float inputMeter;
 @property (readonly) NSArray *peerList;
 @property (readonly) NSString *sessionName;
-@property double sessionVolume;
+@property float sessionVolume;
 
 - (void)dealloc;
 - (id)delegate;

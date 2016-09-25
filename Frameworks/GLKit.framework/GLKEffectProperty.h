@@ -3,7 +3,7 @@
  */
 
 @interface GLKEffectProperty : NSObject {
-    unsigned int  _dirtyUniforms;
+    unsigned long long  _dirtyUniforms;
     GLKEffect * _effect;
     char * _fshSource;
     int  _location;
@@ -13,7 +13,7 @@
     char * _vshSource;
 }
 
-@property (nonatomic) unsigned int dirtyUniforms;
+@property (nonatomic) unsigned long long dirtyUniforms;
 @property (nonatomic) GLKEffect *effect;
 @property (nonatomic) char *fshSource;
 @property (nonatomic) int location;
@@ -27,9 +27,9 @@
 - (void)bind;
 - (void)dealloc;
 - (void)dirtyAllUniforms;
-- (unsigned int)dirtyUniforms;
+- (unsigned long long)dirtyUniforms;
 - (id)effect;
-- (struct GLKBigInt_s { unsigned int x1; unsigned int x2; }*)fshMask;
+- (struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; }*)fshMask;
 - (char *)fshSource;
 - (bool)includeFshShaderTextForRootNode:(id)arg1;
 - (bool)includeVshShaderTextForRootNode:(id)arg1;
@@ -38,7 +38,7 @@
 - (int)location;
 - (unsigned char)masksInitialized;
 - (char *)nameString;
-- (void)setDirtyUniforms:(unsigned int)arg1;
+- (void)setDirtyUniforms:(unsigned long long)arg1;
 - (void)setEffect:(id)arg1;
 - (void)setFSHSource:(char *)arg1;
 - (void)setFshSource:(char *)arg1;
@@ -49,7 +49,7 @@
 - (void)setShaderBindings;
 - (void)setVSHSource:(char *)arg1;
 - (void)setVshSource:(char *)arg1;
-- (struct GLKBigInt_s { unsigned int x1; unsigned int x2; }*)vshMask;
+- (struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; }*)vshMask;
 - (char *)vshSource;
 
 @end

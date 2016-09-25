@@ -8,7 +8,7 @@
 
 @property (nonatomic, retain) NSURL *URL;
 @property (nonatomic) unsigned int pageIndex;
-@property (nonatomic) struct CGPoint { double x1; double x2; } point;
+@property (nonatomic) struct CGPoint { float x1; float x2; } point;
 
 - (void).cxx_destruct;
 - (id)URL;
@@ -19,12 +19,12 @@
 - (id)description;
 - (id)finishInitWithActionDictionary:(struct CGPDFDictionary { }*)arg1 forDocument:(id)arg2;
 - (id)initWithActionDictionary:(struct CGPDFDictionary { }*)arg1 forDocument:(id)arg2 forPage:(id)arg3;
-- (id)initWithPageIndex:(unsigned int)arg1 atPoint:(struct CGPoint { double x1; double x2; })arg2 fileURL:(id)arg3;
+- (id)initWithPageIndex:(unsigned int)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2 fileURL:(id)arg3;
 - (void)lazyInit;
 - (unsigned int)pageIndex;
-- (struct CGPoint { double x1; double x2; })point;
+- (struct CGPoint { float x1; float x2; })point;
 - (void)setPageIndex:(unsigned int)arg1;
-- (void)setPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setURL:(id)arg1;
 - (id)toolTip;
 - (id)toolTipNoLabel;

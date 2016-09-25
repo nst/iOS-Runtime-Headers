@@ -4,15 +4,15 @@
 
 @interface UIGravityBehavior : UIDynamicBehavior {
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _gravity;
 }
 
-@property (nonatomic) double angle;
-@property (nonatomic) struct CGVector { double x1; double x2; } gravityDirection;
+@property (nonatomic) float angle;
+@property (nonatomic) struct CGVector { float x1; float x2; } gravityDirection;
 @property (nonatomic, readonly, copy) NSArray *items;
-@property (nonatomic) double magnitude;
+@property (nonatomic) float magnitude;
 
 + (BOOL)_isPrimitiveBehavior;
 
@@ -22,10 +22,10 @@
 - (void)_setAngle:(float)arg1 magnitude:(float)arg2;
 - (void)addItem:(id)arg1;
 - (float)angle;
-- (struct CGPoint { double x1; double x2; })denormalizedGravity;
+- (struct CGPoint { float x1; float x2; })denormalizedGravity;
 - (id)description;
-- (struct CGPoint { double x1; double x2; })gravity;
-- (struct CGVector { double x1; double x2; })gravityDirection;
+- (struct CGPoint { float x1; float x2; })gravity;
+- (struct CGVector { float x1; float x2; })gravityDirection;
 - (id)init;
 - (id)initWithItems:(id)arg1;
 - (id)items;
@@ -33,8 +33,8 @@
 - (void)removeItem:(id)arg1;
 - (void)setAngle:(float)arg1;
 - (void)setAngle:(float)arg1 magnitude:(float)arg2;
-- (void)setGravity:(struct CGPoint { double x1; double x2; })arg1;
-- (void)setGravityDirection:(struct CGVector { double x1; double x2; })arg1;
+- (void)setGravity:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setGravityDirection:(struct CGVector { float x1; float x2; })arg1;
 - (void)setMagnitude:(float)arg1;
 - (void)setXComponent:(float)arg1;
 - (void)setXComponent:(float)arg1 yComponent:(float)arg2;

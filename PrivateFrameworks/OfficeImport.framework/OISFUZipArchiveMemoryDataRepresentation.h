@@ -13,14 +13,14 @@
 
 - (id)bufferedInputStream;
 - (id)bufferedInputStreamWithBufferSize:(unsigned long)arg1;
-- (id)bufferedInputStreamWithOffset:(int)arg1 length:(int)arg2;
+- (id)bufferedInputStreamWithOffset:(long long)arg1 length:(long long)arg2;
 - (id)data;
-- (int)dataLength;
+- (long long)dataLength;
 - (void)dealloc;
 - (BOOL)hasSameLocationAs:(id)arg1;
 - (id)initWithData:(id)arg1;
 - (id)inputStream;
-- (id)inputStreamWithOffset:(int)arg1 length:(int)arg2;
+- (id)inputStreamWithOffset:(long long)arg1 length:(long long)arg2;
 - (BOOL)isReadable;
 
 @end

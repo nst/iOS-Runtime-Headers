@@ -9,7 +9,7 @@
     NSMutableArray * lastPredictedApps;
     NSDate * lastTriggeredDate;
     short  lastTriggeredSlot;
-    unsigned int  records;
+    unsigned long long  records;
     AppLaunchStatsSaveAndRestore * saveAndRestoreContext;
     id /* block */  scoreCallback;
     NSObject<OS_dispatch_queue> * statsQueue;

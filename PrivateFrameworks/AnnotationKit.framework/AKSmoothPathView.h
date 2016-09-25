@@ -5,64 +5,64 @@
 @interface AKSmoothPathView : UIView {
     BOOL  _applyModelBaseScaleFactorToStroke;
     AKBitmapFIFO * _bitmapFifo;
-    double  _cachedEffectiveStrokeWidthInModel;
-    double  _cachedModelToViewScale;
+    float  _cachedEffectiveStrokeWidthInModel;
+    float  _cachedModelToViewScale;
     AKController * _controller;
-    double  _currentWeight;
+    float  _currentWeight;
     <AKSmoothPathViewDelegate> * _delegate;
     BOOL  _disableSingleDotSpecialCase;
     BOOL  _hasShadow;
     CHQuadCurvePointFIFO * _interpolatingFIFO;
     BOOL  _isAddingPointWithoutSmoothing;
-    double  _maxPressure;
-    double  _maxThickness;
-    double  _minPressure;
-    double  _minThickness;
+    float  _maxPressure;
+    float  _maxThickness;
+    float  _minPressure;
+    float  _minThickness;
     BOOL  _prestrokedOutputMode;
-    double  _shadowRadiusInModel;
-    double  _shadowRadiusInView;
-    double  _singleDotCurrentSize;
+    float  _shadowRadiusInModel;
+    float  _shadowRadiusInView;
+    float  _singleDotCurrentSize;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _singleDotRect;
     CHBoxcarFilterPointFIFO * _smoothingFIFO;
     BOOL  _startedTouchDrawing;
     UIColor * _strokeColor;
     CHPointStrokeFIFO * _strokeFIFO;
-    double  _strokeWidth;
+    float  _strokeWidth;
 }
 
 @property BOOL applyModelBaseScaleFactorToStroke;
 @property (nonatomic, retain) AKBitmapFIFO *bitmapFifo;
-@property double cachedModelToViewScale;
+@property float cachedModelToViewScale;
 @property AKController *controller;
-@property double currentWeight;
+@property float currentWeight;
 @property <AKSmoothPathViewDelegate> *delegate;
 @property BOOL disableSingleDotSpecialCase;
 @property (nonatomic) BOOL hasShadow;
 @property (nonatomic, retain) CHQuadCurvePointFIFO *interpolatingFIFO;
 @property BOOL isAddingPointWithoutSmoothing;
-@property (nonatomic) double maxPressure;
-@property (nonatomic) double maxThickness;
-@property (nonatomic) double minPressure;
-@property (nonatomic) double minThickness;
+@property (nonatomic) float maxPressure;
+@property (nonatomic) float maxThickness;
+@property (nonatomic) float minPressure;
+@property (nonatomic) float minThickness;
 @property (nonatomic) BOOL prestrokedOutputMode;
-@property double shadowRadiusInModel;
-@property double shadowRadiusInView;
-@property double singleDotCurrentSize;
-@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } singleDotRect;
+@property float shadowRadiusInModel;
+@property float shadowRadiusInView;
+@property float singleDotCurrentSize;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } singleDotRect;
 @property (nonatomic, retain) CHBoxcarFilterPointFIFO *smoothingFIFO;
 @property (nonatomic) BOOL startedTouchDrawing;
 @property (nonatomic, retain) UIColor *strokeColor;
 @property (nonatomic, retain) CHPointStrokeFIFO *strokeFIFO;
-@property (nonatomic) double strokeWidth;
+@property (nonatomic) float strokeWidth;
 
 + (id)newSmoothPathViewForCurrentPlatformWithController:(id)arg1;
 
@@ -91,14 +91,14 @@
 - (float)currentWeight;
 - (id)delegate;
 - (BOOL)disableSingleDotSpecialCase;
-- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)drawing;
 - (void)handleDragAction:(id)arg1;
 - (void)handleForwardedEvent:(id)arg1;
 - (void)handleTapAction:(id)arg1;
 - (BOOL)hasShadow;
 - (id)initWithController:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)interpolatingFIFO;
 - (BOOL)isAddingPointWithoutSmoothing;
 - (BOOL)isOpaque;
@@ -125,7 +125,7 @@
 - (void)setShadowRadiusInModel:(float)arg1;
 - (void)setShadowRadiusInView:(float)arg1;
 - (void)setSingleDotCurrentSize:(float)arg1;
-- (void)setSingleDotRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setSingleDotRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setSmoothingFIFO:(id)arg1;
 - (void)setStartedTouchDrawing:(BOOL)arg1;
 - (void)setStrokeColor:(id)arg1;
@@ -134,7 +134,7 @@
 - (float)shadowRadiusInModel;
 - (float)shadowRadiusInView;
 - (float)singleDotCurrentSize;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })singleDotRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })singleDotRect;
 - (id)smoothingFIFO;
 - (void)startStroke;
 - (BOOL)startedTouchDrawing;

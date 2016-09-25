@@ -3,21 +3,21 @@
  */
 
 @interface SKUITableViewCell : UITableViewCell {
-    double  _borderPaddingLeft;
+    float  _borderPaddingLeft;
     SKUIBorderView * _bottomBorderView;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _textLabelInsets;
-    double  _titlePaddingLeft;
+    float  _titlePaddingLeft;
     SKUIBorderView * _topBorderView;
 }
 
-@property (nonatomic) double borderPaddingLeft;
+@property (nonatomic) float borderPaddingLeft;
 @property (nonatomic, copy) UIColor *bottomBorderColor;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } textLabelInsets;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } textLabelInsets;
 @property (nonatomic, copy) UIColor *topBorderColor;
 
 - (void).cxx_destruct;
@@ -31,9 +31,9 @@
 - (void)setBottomBorderColor:(id)arg1;
 - (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setTextLabelInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setTextLabelInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setTopBorderColor:(id)arg1;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })textLabelInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })textLabelInsets;
 - (id)topBorderColor;
 
 @end

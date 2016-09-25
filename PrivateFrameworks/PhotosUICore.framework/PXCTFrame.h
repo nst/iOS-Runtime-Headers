@@ -9,8 +9,8 @@
     NSArray * _lines;
     unsigned int  _maximumLineCount;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _origin;
     BOOL  _prepared;
     BOOL  _truncated;
@@ -21,11 +21,11 @@
 @property (nonatomic, readonly) PXCTFramesetter *framesetter;
 @property (nonatomic, readonly) NSArray *lines;
 @property (nonatomic, readonly) unsigned int maximumLineCount;
-@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } origin;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } origin;
 @property (getter=isTruncated, nonatomic, readonly) BOOL truncated;
 
 - (void).cxx_destruct;
-- (BOOL)_truncateLine:(inout const struct __CTLine {}**)arg1 withOrigin:(inout struct CGPoint { double x1; double x2; }*)arg2 referenceAttributedString:(inout id*)arg3 bounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg4;
+- (BOOL)_truncateLine:(inout const struct __CTLine {}**)arg1 withOrigin:(inout struct CGPoint { float x1; float x2; }*)arg2 referenceAttributedString:(inout id*)arg3 bounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
 - (BOOL)allowTruncation;
 - (void)dealloc;
 - (const struct __CTFrame { }*)frame;
@@ -35,7 +35,7 @@
 - (BOOL)isTruncated;
 - (id)lines;
 - (unsigned int)maximumLineCount;
-- (struct CGPoint { double x1; double x2; })origin;
+- (struct CGPoint { float x1; float x2; })origin;
 - (void)prepare;
 
 @end

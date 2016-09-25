@@ -4,13 +4,13 @@
 
 @interface MRTransaction : NSObject {
     <MRTransactionDelegate> * _delegate;
-    unsigned int  _name;
+    unsigned long long  _name;
     struct _MROrigin { } * _origin;
     NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (nonatomic) <MRTransactionDelegate> *delegate;
-@property (nonatomic, readonly) unsigned int name;
+@property (nonatomic, readonly) unsigned long long name;
 
 - (unsigned int)_calculateMemory;
 - (void)_processMessage:(id)arg1;
@@ -18,8 +18,8 @@
 - (void)_transactionEnded;
 - (void)dealloc;
 - (id)delegate;
-- (id)initWithName:(unsigned int)arg1 fromMessage:(id)arg2;
-- (unsigned int)name;
+- (id)initWithName:(unsigned long long)arg1 fromMessage:(id)arg2;
+- (unsigned long long)name;
 - (void)send:(id)arg1 toConnection:(id)arg2 completion:(id /* block */)arg3;
 - (void)setDelegate:(id)arg1;
 

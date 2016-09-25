@@ -5,7 +5,7 @@
 @interface SKUIBrickItem : NSObject {
     NSString * _accessibilityLabel;
     SKUIArtwork * _artwork;
-    int  _brickIdentifier;
+    long long  _brickIdentifier;
     SKUICountdown * _countdown;
     SKUIEditorialComponent * _editorial;
     SKUILink * _link;
@@ -13,7 +13,7 @@
 
 @property (nonatomic, readonly) NSString *accessibilityLabel;
 @property (nonatomic, readonly) SKUIArtwork *artwork;
-@property (nonatomic, readonly) int brickIdentifier;
+@property (nonatomic, readonly) long long brickIdentifier;
 @property (nonatomic, readonly) SKUICountdown *countdown;
 @property (nonatomic, readonly) SKUIEditorialComponent *editorial;
 @property (nonatomic, readonly) SKUILink *link;
@@ -23,7 +23,7 @@
 - (void)_setLinkItem:(id)arg1;
 - (id)accessibilityLabel;
 - (id)artwork;
-- (int)brickIdentifier;
+- (long long)brickIdentifier;
 - (id)countdown;
 - (id)description;
 - (id)editorial;

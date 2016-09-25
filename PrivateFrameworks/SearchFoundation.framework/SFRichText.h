@@ -6,13 +6,13 @@
     NSString * _contentAdvisory;
     NSArray * _formattedTextPieces;
     NSArray * _icons;
-    double  _starRating;
+    float  _starRating;
 }
 
 @property (nonatomic, copy) NSString *contentAdvisory;
 @property (copy) NSArray *formattedTextPieces;
 @property (nonatomic, copy) NSArray *icons;
-@property (nonatomic) double starRating;
+@property (nonatomic) float starRating;
 
 + (BOOL)supportsSecureCoding;
 

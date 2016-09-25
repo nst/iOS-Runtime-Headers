@@ -6,7 +6,7 @@
 @optional
 
 - (BOOL)application:(void *)arg1 continueUserActivity:(void *)arg2 restorationHandler:(void *)arg3; // needs 3 arg types, found 8: UIApplication *, NSUserActivity *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, void*
-- (void)application:(UIApplication *)arg1 didChangeStatusBarFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (void)application:(UIApplication *)arg1 didChangeStatusBarFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)application:(UIApplication *)arg1 didChangeStatusBarOrientation:(int)arg2;
 - (void)application:(UIApplication *)arg1 didDecodeRestorableStateWithCoder:(NSCoder *)arg2;
 - (void)application:(UIApplication *)arg1 didFailToContinueUserActivityWithType:(NSString *)arg2 error:(NSError *)arg3;
@@ -35,7 +35,7 @@
 - (unsigned int)application:(UIApplication *)arg1 supportedInterfaceOrientationsForWindow:(UIWindow *)arg2;
 - (void)application:(UIApplication *)arg1 userDidAcceptCloudKitShareWithMetadata:(CKShareMetadata *)arg2;
 - (UIViewController *)application:(UIApplication *)arg1 viewControllerWithRestorationIdentifierPath:(NSArray *)arg2 coder:(NSCoder *)arg3;
-- (void)application:(UIApplication *)arg1 willChangeStatusBarFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (void)application:(UIApplication *)arg1 willChangeStatusBarFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)application:(UIApplication *)arg1 willChangeStatusBarOrientation:(int)arg2 duration:(double)arg3;
 - (BOOL)application:(UIApplication *)arg1 willContinueUserActivityWithType:(NSString *)arg2;
 - (void)application:(UIApplication *)arg1 willEncodeRestorableStateWithCoder:(NSCoder *)arg2;

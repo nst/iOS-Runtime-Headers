@@ -10,17 +10,17 @@
     unsigned int  _task;
 }
 
-+ (id)descriptionForRange:(struct _VMURange { unsigned int x1; unsigned int x2; })arg1 inSortedRegions:(id)arg2 options:(unsigned int)arg3;
++ (id)descriptionForRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1 inSortedRegions:(id)arg2 options:(unsigned int)arg3;
 
-- (int)_recordRegionsAroundAddress:(unsigned int)arg1 regionDescriptionOptions:(unsigned int)arg2;
+- (int)_recordRegionsAroundAddress:(unsigned long long)arg1 regionDescriptionOptions:(unsigned int)arg2;
 - (void)dealloc;
 - (id)descriptionForMallocZoneTotalsWithOptions:(unsigned int)arg1 memorySizeDivisor:(unsigned int)arg2;
-- (id)descriptionForRange:(struct _VMURange { unsigned int x1; unsigned int x2; })arg1;
-- (id)descriptionForRange:(struct _VMURange { unsigned int x1; unsigned int x2; })arg1 options:(unsigned int)arg2;
+- (id)descriptionForRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1;
+- (id)descriptionForRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1 options:(unsigned int)arg2;
 - (id)descriptionForRegionTotalsWithOptions:(unsigned int)arg1;
 - (id)descriptionForRegionTotalsWithOptions:(unsigned int)arg1 memorySizeDivisor:(unsigned int)arg2;
-- (id)descriptionOfRegionsAroundAddress:(unsigned int)arg1 options:(unsigned int)arg2;
-- (id)descriptionOfRegionsAroundAddress:(unsigned int)arg1 options:(unsigned int)arg2 maximumLength:(unsigned int)arg3 memorySizeDivisor:(unsigned int)arg4;
+- (id)descriptionOfRegionsAroundAddress:(unsigned long long)arg1 options:(unsigned int)arg2;
+- (id)descriptionOfRegionsAroundAddress:(unsigned long long)arg1 options:(unsigned int)arg2 maximumLength:(unsigned int)arg3 memorySizeDivisor:(unsigned int)arg4;
 - (BOOL)hasFractionalPageSizes;
 - (id)init;
 - (id)initWithGraph:(id)arg1 options:(unsigned int)arg2;

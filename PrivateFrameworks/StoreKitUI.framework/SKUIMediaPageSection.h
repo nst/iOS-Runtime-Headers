@@ -6,8 +6,8 @@
     SKUIArtwork * _artwork;
     unsigned int  _artworkRequestID;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _imageSize;
     SKUIEmbeddedMediaView * _mediaView;
 }
@@ -23,7 +23,7 @@
 - (void)addImpressionsForIndexPath:(id)arg1 toSession:(id)arg2;
 - (void)artworkRequest:(id)arg1 didLoadImage:(id)arg2;
 - (id)cellForIndexPath:(id)arg1;
-- (struct CGSize { double x1; double x2; })cellSizeForIndexPath:(id)arg1;
+- (struct CGSize { float x1; float x2; })cellSizeForIndexPath:(id)arg1;
 - (void)collectionViewDidEndDisplayingCellForItemAtIndexPath:(id)arg1;
 - (void)collectionViewDidSelectItemAtIndexPath:(id)arg1;
 - (void)collectionViewWillDisplayCellForItemAtIndexPath:(id)arg1;

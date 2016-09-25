@@ -7,14 +7,14 @@
     FCLoadableFont * _font;
     int  _fontSizeAdjustment;
     int  _horizontalTextAlignment;
-    double  _lineHeightMultiplier;
+    float  _lineHeightMultiplier;
 }
 
 @property (nonatomic, copy) UIColor *color;
 @property (nonatomic, copy) FCLoadableFont *font;
 @property (nonatomic) int fontSizeAdjustment;
 @property (nonatomic) int horizontalTextAlignment;
-@property (nonatomic) double lineHeightMultiplier;
+@property (nonatomic) float lineHeightMultiplier;
 
 + (id)textInfoFromJSONValues:(id)arg1;
 

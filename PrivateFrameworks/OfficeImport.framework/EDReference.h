@@ -19,7 +19,7 @@
 - (struct EDAreaReference { int x1; int x2; int x3; int x4; })areaReference;
 - (bool)containsRow:(int)arg1 column:(int)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)countOfCellsBeingReferenced;
+- (unsigned long long)countOfCellsBeingReferenced;
 - (id)description;
 - (int)firstColumn;
 - (int)firstRow;

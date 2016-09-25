@@ -28,8 +28,8 @@
         void *m_ptr; 
     }  _enclosingScrollViewScrollTimer;
     BOOL  _fastClickingIsDisabled;
-    unsigned int  _firstPaintAfterCommitLoadTransactionID;
-    unsigned int  _firstTransactionIDAfterPageRestore;
+    unsigned long long  _firstPaintAfterCommitLoadTransactionID;
+    unsigned long long  _firstTransactionIDAfterPageRestore;
     struct Optional<CGRect> { 
         bool m_isEngaged; 
         struct type { 
@@ -50,30 +50,30 @@
     BOOL  _hadDelayedUpdateVisibleContentRects;
     BOOL  _hasCommittedLoadForMainFrame;
     BOOL  _haveSetObscuredInsets;
-    double  _initialScaleFactor;
+    float  _initialScaleFactor;
     /* Warning: unhandled struct encoding: '{WeakObjCPtr<id<_WKInputDelegate> >="m_weakReference"@}' */ struct WeakObjCPtr<id<_WKInputDelegate> > { 
         id m_weakReference; 
     }  _inputDelegate;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _inputViewBounds;
     int  _interfaceOrientationOverride;
     BOOL  _isChangingObscuredInsetsInteractively;
-    double  _lastAdjustmentForScroller;
+    float  _lastAdjustmentForScroller;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _maximumUnobscuredSizeOverride;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _minimumLayoutSizeOverride;
     struct unique_ptr<WebKit::NavigationState, std::__1::default_delete<WebKit::NavigationState> > { 
         struct __compressed_pair<WebKit::NavigationState *, std::__1::default_delete<WebKit::NavigationState> > { 
@@ -84,14 +84,14 @@
     BOOL  _needsToRestoreScrollPosition;
     BOOL  _needsToRestoreUnobscuredCenter;
     struct FloatSize { 
-        double m_width; 
-        double m_height; 
+        float m_width; 
+        float m_height; 
     }  _obscuredInsetWhenSaved;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _obscuredInsets;
     unsigned int  _observedRenderingProgressEvents;
     BOOL  _overridesInterfaceOrientation;
@@ -104,24 +104,24 @@
         void *m_ptr; 
     }  _remoteObjectRegistry;
     struct CATransform3D { 
-        double m11; 
-        double m12; 
-        double m13; 
-        double m14; 
-        double m21; 
-        double m22; 
-        double m23; 
-        double m24; 
-        double m31; 
-        double m32; 
-        double m33; 
-        double m34; 
-        double m41; 
-        double m42; 
-        double m43; 
-        double m44; 
+        float m11; 
+        float m12; 
+        float m13; 
+        float m14; 
+        float m21; 
+        float m22; 
+        float m23; 
+        float m24; 
+        float m31; 
+        float m32; 
+        float m33; 
+        float m34; 
+        float m41; 
+        float m42; 
+        float m43; 
+        float m44; 
     }  _resizeAnimationTransformAdjustments;
-    struct Optional<unsigned int> { 
+    struct Optional<unsigned long long> { 
         bool m_isEngaged; 
         struct type { 
             unsigned char __lx[8]; 
@@ -132,8 +132,8 @@
     }  _resizeAnimationView;
     double  _scaleToRestore;
     struct FloatPoint { 
-        double m_x; 
-        double m_y; 
+        float m_x; 
+        float m_y; 
     }  _scrollOffsetToRestore;
     struct RetainPtr<WKScrollView> { 
         void *m_ptr; 
@@ -143,18 +143,18 @@
         bool m_valid; 
     }  _scrollViewBackgroundColor;
     struct Vector<std::__1::function<void ()>, 0, WTF::CrashOnOverflow, 16>="m_buffer"^{function<void ()> {}  _snapshotsDeferredDuringResize;
-    double  _totalScrollViewBottomInsetAdjustmentForKeyboard;
+    float  _totalScrollViewBottomInsetAdjustmentForKeyboard;
     struct unique_ptr<WebKit::UIDelegate, std::__1::default_delete<WebKit::UIDelegate> > { 
         struct __compressed_pair<WebKit::UIDelegate *, std::__1::default_delete<WebKit::UIDelegate> > { 
             struct UIDelegate {} *__first_; 
         } __ptr_; 
     }  _uiDelegate;
     struct FloatPoint { 
-        double m_x; 
-        double m_y; 
+        float m_x; 
+        float m_y; 
     }  _unobscuredCenterToRestore;
     BOOL  _viewportMetaTagCameFromImageDocument;
-    double  _viewportMetaTagWidth;
+    float  _viewportMetaTagWidth;
     BOOL  _viewportMetaTagWidthWasExplicit;
 }
 
@@ -170,9 +170,9 @@
 @property (setter=_setBackgroundExtendsBeyondPage:, nonatomic) BOOL _backgroundExtendsBeyondPage;
 @property (nonatomic, readonly) NSArray *_certificateChain;
 @property (nonatomic, readonly) NSURL *_committedURL;
-@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } _computedContentInset;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } _computedContentInset;
 @property (nonatomic, readonly) WKWebViewContentProviderRegistry *_contentProviderRegistry;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } _contentVisibleRect;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } _contentVisibleRect;
 @property (setter=_setCustomUserAgent:, copy) NSString *_customUserAgent;
 @property (nonatomic, readonly) NSData *_dataForDisplayedPDF;
 @property (setter=_setDiagnosticLoggingDelegate:, nonatomic) <_WKDiagnosticLoggingDelegate> *_diagnosticLoggingDelegate;
@@ -181,22 +181,22 @@
 @property (getter=_isDisplayingStandaloneMediaDocument, nonatomic, readonly) BOOL _displayingStandaloneMediaDocument;
 @property (getter=_isEditable, setter=_setEditable:, nonatomic) BOOL _editable;
 @property (setter=_setFindDelegate:, nonatomic) <_WKFindDelegate> *_findDelegate;
-@property (setter=_setFixedLayoutSize:, nonatomic) struct CGSize { double x1; double x2; } _fixedLayoutSize;
+@property (setter=_setFixedLayoutSize:, nonatomic) struct CGSize { float x1; float x2; } _fixedLayoutSize;
 @property (setter=_setFormDelegate:, nonatomic) <_WKFormDelegate> *_formDelegate;
-@property (setter=_setGapBetweenPages:, nonatomic) double _gapBetweenPages;
+@property (setter=_setGapBetweenPages:, nonatomic) float _gapBetweenPages;
 @property (nonatomic, readonly) WKBrowsingContextHandle *_handle;
 @property (setter=_setHistoryDelegate:, nonatomic) <WKHistoryDelegatePrivate> *_historyDelegate;
 @property (setter=_setInputDelegate:, nonatomic) <_WKInputDelegate> *_inputDelegate;
 @property (setter=_setInterfaceOrientationOverride:, nonatomic) int _interfaceOrientationOverride;
 @property (nonatomic, readonly) BOOL _isBackground;
 @property (setter=_setLayoutMode:, nonatomic) unsigned int _layoutMode;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } _maximumUnobscuredSizeOverride;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } _minimumLayoutSizeOverride;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } _maximumUnobscuredSizeOverride;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } _minimumLayoutSizeOverride;
 @property (nonatomic, readonly) BOOL _networkRequestsInProgress;
-@property (setter=_setObscuredInsets:, nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } _obscuredInsets;
+@property (setter=_setObscuredInsets:, nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } _obscuredInsets;
 @property (setter=_setObservedRenderingProgressEvents:, nonatomic) unsigned int _observedRenderingProgressEvents;
 @property (readonly) unsigned int _pageCount;
-@property (setter=_setPageLength:, nonatomic) double _pageLength;
+@property (setter=_setPageLength:, nonatomic) float _pageLength;
 @property (setter=_setPageZoomFactor:, nonatomic) double _pageZoomFactor;
 @property (setter=_setPaginationBehavesLikeColumns:, nonatomic) BOOL _paginationBehavesLikeColumns;
 @property (setter=_setPaginationLineGridEnabled:, nonatomic) BOOL _paginationLineGridEnabled;
@@ -217,7 +217,7 @@
 @property (nonatomic, readonly) NSURL *_unreachableURL;
 @property (nonatomic, readonly) NSString *_userAgent;
 @property (setter=_setUserContentExtensionsEnabled:, nonatomic) BOOL _userContentExtensionsEnabled;
-@property (setter=_setViewScale:, nonatomic) double _viewScale;
+@property (setter=_setViewScale:, nonatomic) float _viewScale;
 @property (nonatomic, readonly) int _webProcessIdentifier;
 @property (nonatomic, readonly) BOOL _webProcessIsResponsive;
 @property (nonatomic, readonly) _WKWebViewPrintFormatter *_webViewPrintFormatter;
@@ -250,7 +250,7 @@
 - (id)URL;
 - (id)_MIMEType;
 - (BOOL)_addsVisitedLinks;
-- (struct CGPoint { double x1; double x2; })_adjustedContentOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (struct CGPoint { float x1; float x2; })_adjustedContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)_allowsDoubleTapGestures;
 - (BOOL)_allowsMediaDocumentInlinePlayback;
 - (BOOL)_allowsRemoteInspection;
@@ -263,14 +263,14 @@
 - (id)_certificateChain;
 - (void)_close;
 - (id)_committedURL;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_computedContentInset;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_computedContentInset;
 - (id)_contentProviderRegistry;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_contentRectForUserInteraction;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_contentRectForUserInteraction;
 - (id)_contentSizeCategory;
 - (void)_contentSizeCategoryDidChange:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_contentVisibleRect;
-- (struct CGPoint { double x1; double x2; })_convertPointFromContentsToView:(struct CGPoint { double x1; double x2; })arg1;
-- (struct CGPoint { double x1; double x2; })_convertPointFromViewToContents:(struct CGPoint { double x1; double x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_contentVisibleRect;
+- (struct CGPoint { float x1; float x2; })_convertPointFromContentsToView:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGPoint { float x1; float x2; })_convertPointFromViewToContents:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_couldNotRestorePageState;
 - (void)_countStringMatches:(id)arg1 options:(unsigned int)arg2 maxCount:(unsigned int)arg3;
 - (id)_currentContentView;
@@ -278,7 +278,7 @@
 - (id)_dataDetectionResults;
 - (id)_dataForDisplayedPDF;
 - (id)_diagnosticLoggingDelegate;
-- (void)_didCommitLayerTree:(const struct RemoteLayerTreeTransaction { unsigned int x1; struct Vector<WTF::RefPtr<WebKit::PlatformCALayerRemote>, 0, WTF::CrashOnOverflow, 16> { struct RefPtr<WebKit::PlatformCALayerRemote> {} *x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3; } x2; struct HashMap<unsigned int, std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> >, WTF::IntHash<unsigned int>, WTF::HashTraits<unsigned int>, WTF::HashTraits<std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> > > > { struct HashTable<unsigned int, WTF::KeyValuePair<unsigned int, std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> > >, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<unsigned int, std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> > > >, WTF::IntHash<unsigned int>, WTF::HashMap<unsigned int, std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> >, WTF::IntHash<unsigned int>, WTF::HashTraits<unsigned int>, WTF::HashTraits<std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> > > >::KeyValuePairTraits, WTF::HashTraits<unsigned int> > { struct KeyValuePair<unsigned int, std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> > > {} *x_1_2_1; unsigned int x_1_2_2; unsigned int x_1_2_3; unsigned int x_1_2_4; unsigned int x_1_2_5; } x_3_1_1; } x3; }*)arg1;
+- (void)_didCommitLayerTree:(const struct RemoteLayerTreeTransaction { unsigned long long x1; struct Vector<WTF::RefPtr<WebKit::PlatformCALayerRemote>, 0, WTF::CrashOnOverflow, 16> { struct RefPtr<WebKit::PlatformCALayerRemote> {} *x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3; } x2; struct HashMap<unsigned long long, std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> >, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> > > > { struct HashTable<unsigned long long, WTF::KeyValuePair<unsigned long long, std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> > >, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<unsigned long long, std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> > > >, WTF::IntHash<unsigned long long>, WTF::HashMap<unsigned long long, std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> >, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> > > >::KeyValuePairTraits, WTF::HashTraits<unsigned long long> > { struct KeyValuePair<unsigned long long, std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> > > {} *x_1_2_1; unsigned int x_1_2_2; unsigned int x_1_2_3; unsigned int x_1_2_4; unsigned int x_1_2_5; } x_3_1_1; } x3; }*)arg1;
 - (void)_didCommitLoadForMainFrame;
 - (void)_didFailLoadForMainFrame;
 - (void)_didFinishLoadForMainFrame;
@@ -290,13 +290,13 @@
 - (void)_didSameDocumentNavigationForMainFrame:(int)arg1;
 - (void)_didScroll;
 - (void)_doAfterNextPresentationUpdate:(id /* block */)arg1;
-- (void)_dynamicViewportUpdateChangedTargetToScale:(double)arg1 position:(struct CGPoint { double x1; double x2; })arg2 nextValidLayerTreeTransactionID:(unsigned int)arg3;
+- (void)_dynamicViewportUpdateChangedTargetToScale:(double)arg1 position:(struct CGPoint { float x1; float x2; })arg2 nextValidLayerTreeTransactionID:(unsigned long long)arg3;
 - (void)_enclosingScrollerScrollingEnded:(id)arg1;
 - (void)_endAnimatedResize;
 - (void)_endInteractiveObscuredInsetsChange;
 - (id)_findDelegate;
 - (void)_findString:(id)arg1 options:(unsigned int)arg2 maxCount:(unsigned int)arg3;
-- (struct CGSize { double x1; double x2; })_fixedLayoutSize;
+- (struct CGSize { float x1; float x2; })_fixedLayoutSize;
 - (id)_formDelegate;
 - (void)_frameOrBoundsChanged;
 - (float)_gapBetweenPages;
@@ -327,16 +327,16 @@
 - (unsigned int)_layoutMode;
 - (void)_loadAlternateHTMLString:(id)arg1 baseURL:(id)arg2 forUnreachableURL:(id)arg3;
 - (id)_loadData:(id)arg1 MIMEType:(id)arg2 characterEncodingName:(id)arg3 baseURL:(id)arg4 userData:(id)arg5;
-- (struct CGSize { double x1; double x2; })_maximumUnobscuredSizeOverride;
+- (struct CGSize { float x1; float x2; })_maximumUnobscuredSizeOverride;
 - (BOOL)_mayAutomaticallyShowVideoPictureInPicture;
-- (struct CGSize { double x1; double x2; })_minimumLayoutSizeOverride;
+- (struct CGSize { float x1; float x2; })_minimumLayoutSizeOverride;
 - (void)_navigationGestureDidBegin;
 - (void)_navigationGestureDidEnd;
 - (BOOL)_networkRequestsInProgress;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_obscuredInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_obscuredInsets;
 - (unsigned int)_observedRenderingProgressEvents;
-- (void)_overrideLayoutParametersWithMinimumLayoutSize:(struct CGSize { double x1; double x2; })arg1 maximumUnobscuredSizeOverride:(struct CGSize { double x1; double x2; })arg2;
-- (void)_overrideLayoutParametersWithMinimumLayoutSize:(struct CGSize { double x1; double x2; })arg1 minimumLayoutSizeForMinimalUI:(struct CGSize { double x1; double x2; })arg2 maximumUnobscuredSizeOverride:(struct CGSize { double x1; double x2; })arg3;
+- (void)_overrideLayoutParametersWithMinimumLayoutSize:(struct CGSize { float x1; float x2; })arg1 maximumUnobscuredSizeOverride:(struct CGSize { float x1; float x2; })arg2;
+- (void)_overrideLayoutParametersWithMinimumLayoutSize:(struct CGSize { float x1; float x2; })arg1 minimumLayoutSizeForMinimalUI:(struct CGSize { float x1; float x2; })arg2 maximumUnobscuredSizeOverride:(struct CGSize { float x1; float x2; })arg3;
 - (unsigned int)_pageCount;
 - (struct OpaqueWKPage { }*)_pageForTesting;
 - (float)_pageLength;
@@ -352,16 +352,16 @@
 - (id)_remoteObjectRegistry;
 - (void)_resizeWhileHidingContentWithUpdates:(id /* block */)arg1;
 - (void)_restoreFromSessionStateData:(id)arg1;
-- (void)_restorePageScrollPosition:(struct FloatPoint { double x1; double x2; })arg1 scrollOrigin:(struct FloatPoint { double x1; double x2; })arg2 previousObscuredInset:(struct FloatSize { double x1; double x2; })arg3 scale:(double)arg4;
-- (void)_restorePageStateToUnobscuredCenter:(struct FloatPoint { double x1; double x2; })arg1 scale:(double)arg2;
+- (void)_restorePageScrollPosition:(struct FloatPoint { float x1; float x2; })arg1 scrollOrigin:(struct FloatPoint { float x1; float x2; })arg2 previousObscuredInset:(struct FloatSize { float x1; float x2; })arg3 scale:(double)arg4;
+- (void)_restorePageStateToUnobscuredCenter:(struct FloatPoint { float x1; float x2; })arg1 scale:(double)arg2;
 - (id)_restoreSessionState:(id)arg1 andNavigate:(BOOL)arg2;
 - (id /* block */)_retainActiveFocusedState;
 - (void)_saveBackForwardSnapshotForItem:(id)arg1;
-- (void)_scrollByContentOffset:(struct FloatPoint { double x1; double x2; })arg1;
+- (void)_scrollByContentOffset:(struct FloatPoint { float x1; float x2; })arg1;
 - (id)_scrollPerformanceData;
 - (BOOL)_scrollPerformanceDataCollectionEnabled;
-- (void)_scrollToContentScrollPosition:(struct FloatPoint { double x1; double x2; })arg1 scrollOrigin:(struct IntPoint { int x1; int x2; })arg2;
-- (BOOL)_scrollToRect:(struct FloatRect { struct FloatPoint { double x_1_1_1; double x_1_1_2; } x1; struct FloatSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 origin:(struct FloatPoint { double x1; double x2; })arg2 minimumScrollDistance:(float)arg3;
+- (void)_scrollToContentScrollPosition:(struct FloatPoint { float x1; float x2; })arg1 scrollOrigin:(struct IntPoint { int x1; int x2; })arg2;
+- (BOOL)_scrollToRect:(struct FloatRect { struct FloatPoint { float x_1_1_1; float x_1_1_2; } x1; struct FloatSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 origin:(struct FloatPoint { float x1; float x2; })arg2 minimumScrollDistance:(float)arg3;
 - (void)_scrollViewDidInterruptDecelerating:(id)arg1;
 - (BOOL)_scrollViewIsRubberBanding;
 - (int)_selectionGranularity;
@@ -378,7 +378,7 @@
 - (void)_setDiagnosticLoggingDelegate:(id)arg1;
 - (void)_setEditable:(BOOL)arg1;
 - (void)_setFindDelegate:(id)arg1;
-- (void)_setFixedLayoutSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)_setFixedLayoutSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_setFormDelegate:(id)arg1;
 - (void)_setGapBetweenPages:(float)arg1;
 - (void)_setHasCustomContentView:(BOOL)arg1 loadedMIMEType:(const struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; }*)arg2;
@@ -387,11 +387,11 @@
 - (void)_setInterfaceOrientationOverride:(int)arg1;
 - (void)_setIsBlankBeforeFirstNonEmptyLayout:(BOOL)arg1;
 - (void)_setLayoutMode:(unsigned int)arg1;
-- (void)_setMaximumUnobscuredSizeOverride:(struct CGSize { double x1; double x2; })arg1;
-- (void)_setMinimumLayoutSizeOverride:(struct CGSize { double x1; double x2; })arg1;
-- (void)_setObscuredInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)_setMaximumUnobscuredSizeOverride:(struct CGSize { float x1; float x2; })arg1;
+- (void)_setMinimumLayoutSizeOverride:(struct CGSize { float x1; float x2; })arg1;
+- (void)_setObscuredInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)_setObservedRenderingProgressEvents:(unsigned int)arg1;
-- (void)_setOverlaidAccessoryViewsInset:(struct CGSize { double x1; double x2; })arg1;
+- (void)_setOverlaidAccessoryViewsInset:(struct CGSize { float x1; float x2; })arg1;
 - (void)_setPageLength:(float)arg1;
 - (void)_setPageZoomFactor:(double)arg1;
 - (void)_setPaginationBehavesLikeColumns:(BOOL)arg1;
@@ -404,11 +404,11 @@
 - (void)_setViewScale:(float)arg1;
 - (BOOL)_shouldUpdateKeyboardWithInfo:(id)arg1;
 - (id)_snapshotLayerContentsForBackForwardListItem:(id)arg1;
-- (void)_snapshotRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 intoImageOfWidth:(float)arg2 completionHandler:(id /* block */)arg3;
+- (void)_snapshotRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 intoImageOfWidth:(float)arg2 completionHandler:(id /* block */)arg3;
 - (id)_suggestedFilenameForDisplayedPDF;
 - (BOOL)_supportsTextZoom;
 - (struct PassRefPtr<WebKit::ViewSnapshot> { struct ViewSnapshot {} *x1; })_takeViewSnapshot;
-- (float)_targetContentZoomScaleForRect:(const struct FloatRect { struct FloatPoint { double x_1_1_1; double x_1_1_2; } x1; struct FloatSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg1 currentScale:(double)arg2 fitEntireRect:(BOOL)arg3 minimumScale:(double)arg4 maximumScale:(double)arg5;
+- (float)_targetContentZoomScaleForRect:(const struct FloatRect { struct FloatPoint { float x_1_1_1; float x_1_1_2; } x1; struct FloatSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 currentScale:(double)arg2 fitEntireRect:(BOOL)arg3 minimumScale:(double)arg4 maximumScale:(double)arg5;
 - (double)_textZoomFactor;
 - (id)_unreachableURL;
 - (void)_updateContentRectsWithState:(BOOL)arg1;
@@ -419,19 +419,19 @@
 - (BOOL)_userContentExtensionsEnabled;
 - (id)_viewForFindUI;
 - (float)_viewScale;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_visibleContentRect;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_visibleRectInEnclosingScrollView:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_visibleContentRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_visibleRectInEnclosingScrollView:(id)arg1;
 - (int)_webProcessIdentifier;
 - (BOOL)_webProcessIsResponsive;
 - (id)_webViewPrintFormatter;
 - (void)_willInvokeUIScrollViewDelegateCallback;
 - (void)_windowDidRotate:(id)arg1;
-- (void)_zoomOutWithOrigin:(struct FloatPoint { double x1; double x2; })arg1 animated:(BOOL)arg2;
-- (void)_zoomToFocusRect:(struct FloatRect { struct FloatPoint { double x_1_1_1; double x_1_1_2; } x1; struct FloatSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 selectionRect:(struct FloatRect { struct FloatPoint { double x_1_1_1; double x_1_1_2; } x1; struct FloatSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 fontSize:(float)arg3 minimumScale:(double)arg4 maximumScale:(double)arg5 allowScaling:(BOOL)arg6 forceScroll:(BOOL)arg7;
-- (void)_zoomToInitialScaleWithOrigin:(struct FloatPoint { double x1; double x2; })arg1 animated:(BOOL)arg2;
-- (void)_zoomToPoint:(struct FloatPoint { double x1; double x2; })arg1 atScale:(double)arg2 animated:(BOOL)arg3;
-- (void)_zoomToRect:(struct FloatRect { struct FloatPoint { double x_1_1_1; double x_1_1_2; } x1; struct FloatSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 atScale:(double)arg2 origin:(struct FloatPoint { double x1; double x2; })arg3 animated:(BOOL)arg4;
-- (BOOL)_zoomToRect:(struct FloatRect { struct FloatPoint { double x_1_1_1; double x_1_1_2; } x1; struct FloatSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withOrigin:(struct FloatPoint { double x1; double x2; })arg2 fitEntireRect:(BOOL)arg3 minimumScale:(double)arg4 maximumScale:(double)arg5 minimumScrollDistance:(float)arg6;
+- (void)_zoomOutWithOrigin:(struct FloatPoint { float x1; float x2; })arg1 animated:(BOOL)arg2;
+- (void)_zoomToFocusRect:(struct FloatRect { struct FloatPoint { float x_1_1_1; float x_1_1_2; } x1; struct FloatSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 selectionRect:(struct FloatRect { struct FloatPoint { float x_1_1_1; float x_1_1_2; } x1; struct FloatSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 fontSize:(float)arg3 minimumScale:(double)arg4 maximumScale:(double)arg5 allowScaling:(BOOL)arg6 forceScroll:(BOOL)arg7;
+- (void)_zoomToInitialScaleWithOrigin:(struct FloatPoint { float x1; float x2; })arg1 animated:(BOOL)arg2;
+- (void)_zoomToPoint:(struct FloatPoint { float x1; float x2; })arg1 atScale:(double)arg2 animated:(BOOL)arg3;
+- (void)_zoomToRect:(struct FloatRect { struct FloatPoint { float x_1_1_1; float x_1_1_2; } x1; struct FloatSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 atScale:(double)arg2 origin:(struct FloatPoint { float x1; float x2; })arg3 animated:(BOOL)arg4;
+- (BOOL)_zoomToRect:(struct FloatRect { struct FloatPoint { float x_1_1_1; float x_1_1_2; } x1; struct FloatSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withOrigin:(struct FloatPoint { float x1; float x2; })arg2 fitEntireRect:(BOOL)arg3 minimumScale:(double)arg4 maximumScale:(double)arg5 minimumScrollDistance:(float)arg6;
 - (BOOL)allowsBackForwardNavigationGestures;
 - (BOOL)allowsLinkPreview;
 - (id)backForwardList;
@@ -454,8 +454,8 @@
 - (id)goToBackForwardListItem:(id)arg1;
 - (BOOL)hasOnlySecureContent;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 configuration:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 configuration:(id)arg2;
 - (BOOL)isLoading;
 - (void)keyboardAccessoryBarNext;
 - (void)keyboardAccessoryBarPrevious;
@@ -468,7 +468,7 @@
 - (id)reload;
 - (id)reloadFromOrigin;
 - (id)scrollView;
-- (struct CGSize { double x1; double x2; })scrollView:(id)arg1 contentSizeForZoomScale:(float)arg2 withProposedSize:(struct CGSize { double x1; double x2; })arg3;
+- (struct CGSize { float x1; float x2; })scrollView:(id)arg1 contentSizeForZoomScale:(float)arg2 withProposedSize:(struct CGSize { float x1; float x2; })arg3;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(BOOL)arg2;
 - (void)scrollViewDidEndScrollingAnimation:(id)arg1;
@@ -478,15 +478,15 @@
 - (void)scrollViewDidZoom:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)scrollViewWillBeginZooming:(id)arg1 withView:(id)arg2;
-- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { double x1; double x2; })arg2 targetContentOffset:(inout struct CGPoint { double x1; double x2; }*)arg3;
+- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { float x1; float x2; })arg2 targetContentOffset:(inout struct CGPoint { float x1; float x2; }*)arg3;
 - (struct __SecTrust { }*)serverTrust;
 - (void)setAllowsBackForwardNavigationGestures:(BOOL)arg1;
 - (void)setAllowsLinkPreview:(BOOL)arg1;
 - (void)setBackgroundColor:(id)arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setCustomUserAgent:(id)arg1;
 - (void)setForceIPadStyleZoomOnInputFocus:(BOOL)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setNavigationDelegate:(id)arg1;
 - (void)setOpaque:(BOOL)arg1;
 - (void)setSemanticContentAttribute:(int)arg1;
@@ -495,7 +495,7 @@
 - (id)title;
 - (BOOL)usesStandardContentView;
 - (id)viewForZoomingInScrollView:(id)arg1;
-- (struct FloatRect { struct FloatPoint { double x_1_1_1; double x_1_1_2; } x1; struct FloatSize { double x_2_1_1; double x_2_1_2; } x2; })visibleRectInViewCoordinates;
+- (struct FloatRect { struct FloatPoint { float x_1_1_1; float x_1_1_2; } x1; struct FloatSize { float x_2_1_1; float x_2_1_2; } x2; })visibleRectInViewCoordinates;
 
 // Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
 

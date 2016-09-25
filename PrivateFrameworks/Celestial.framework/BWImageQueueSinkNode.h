@@ -19,7 +19,7 @@
     struct OpaqueFigPreviewSynchronizer { } * _previewSynchronizer;
     <BWImageQueueSinkNodePreviewTapDelegate> * _previewTapDelegate;
     BOOL  _resetPreviewSynchronizerOnNextFrame;
-    unsigned int * _sharedBufferIDs;
+    unsigned long long * _sharedBufferIDs;
     unsigned int  _sharedSurfaceCount;
     NSMutableArray * _sharedSurfaces;
     BOOL  _surfaceRegistrationComplete;
@@ -34,13 +34,13 @@
 
 + (void)initialize;
 
-- (unsigned int)_bufferIDForSurface:(struct __IOSurface { }*)arg1;
+- (unsigned long long)_bufferIDForSurface:(struct __IOSurface { }*)arg1;
 - (void)_cleanupIOSurfaces;
-- (/* Warning: unhandled struct encoding: '{_EnqueuedBufferContext=^{opaqueCMSampleBuffer}Q@}' */ struct _EnqueuedBufferContext { struct opaqueCMSampleBuffer {} *x1; unsigned int x2; id x3; }*)_contextForBuffer:(struct opaqueCMSampleBuffer { }*)arg1 node:(id)arg2 bufferId:(unsigned int)arg3;
+- (/* Warning: unhandled struct encoding: '{_EnqueuedBufferContext=^{opaqueCMSampleBuffer}Q@}' */ struct _EnqueuedBufferContext { struct opaqueCMSampleBuffer {} *x1; unsigned long long x2; id x3; }*)_contextForBuffer:(struct opaqueCMSampleBuffer { }*)arg1 node:(id)arg2 bufferId:(unsigned long long)arg3;
 - (double)_displayTimeSyncedWithFramePTS:(double)arg1;
 - (void)_ensureImageQueue;
-- (void)_releaseBufferContext:(/* Warning: unhandled struct encoding: '{_EnqueuedBufferContext=^{opaqueCMSampleBuffer}Q@}' */ struct _EnqueuedBufferContext { struct opaqueCMSampleBuffer {} *x1; unsigned int x2; id x3; }*)arg1;
-- (void)configurationWithID:(int)arg1 updatedFormat:(id)arg2 didBecomeLiveForInput:(id)arg3;
+- (void)_releaseBufferContext:(/* Warning: unhandled struct encoding: '{_EnqueuedBufferContext=^{opaqueCMSampleBuffer}Q@}' */ struct _EnqueuedBufferContext { struct opaqueCMSampleBuffer {} *x1; unsigned long long x2; id x3; }*)arg1;
+- (void)configurationWithID:(long long)arg1 updatedFormat:(id)arg2 didBecomeLiveForInput:(id)arg3;
 - (void)dealloc;
 - (void)didReachEndOfDataForInput:(id)arg1;
 - (void)handleDroppedSample:(id)arg1 forInput:(id)arg2;

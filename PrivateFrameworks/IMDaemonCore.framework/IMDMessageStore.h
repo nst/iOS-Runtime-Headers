@@ -51,7 +51,7 @@
 - (id)init;
 - (BOOL)isSuppressDatabaseUpdates;
 - (id)itemWithGUID:(id)arg1;
-- (int)lastFailedMessageID;
+- (long long)lastFailedMessageID;
 - (id)lastMessageWithHandles:(id)arg1 onServices:(id)arg2;
 - (id)lastMessageWithRoomNames:(id)arg1 onServices:(id)arg2;
 - (void)loadConsumedSessionPayloadsForItems:(id)arg1;
@@ -80,8 +80,8 @@
 - (void)setModificationStamp:(id)arg1;
 - (void)setSuppressDatabaseUpdates:(BOOL)arg1;
 - (id)storeItem:(id)arg1 forceReplace:(BOOL)arg2;
-- (id)storeMessage:(id)arg1 forceReplace:(BOOL)arg2 modifyError:(BOOL)arg3 modifyFlags:(BOOL)arg4 flagMask:(unsigned int)arg5;
-- (int)unreadMessagesCount;
+- (id)storeMessage:(id)arg1 forceReplace:(BOOL)arg2 modifyError:(BOOL)arg3 modifyFlags:(BOOL)arg4 flagMask:(unsigned long long)arg5;
+- (long long)unreadMessagesCount;
 - (id)unreadMessagesWithHandles:(id)arg1 onServices:(id)arg2 limit:(unsigned int)arg3 fallbackGUID:(id)arg4;
 - (id)unreadMessagesWithRoomNames:(id)arg1 onServices:(id)arg2 limit:(unsigned int)arg3 fallbackGUID:(id)arg4;
 - (void)updateFileTransfer:(id)arg1;

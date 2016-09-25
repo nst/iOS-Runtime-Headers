@@ -3,7 +3,7 @@
  */
 
 @interface CKConversationListController : UITableViewController <CKConversationListCellDelegate, CKConversationResultsControllerDelegate, CKTranscriptPreviewControllerDelegate, UIActionSheetDelegate, UISearchBarDelegate, UISearchControllerDelegate, UITableViewDataSource, UITableViewDelegate, UIViewControllerPreviewingDelegate, UIViewControllerPreviewingDelegate_Private> {
-    double  _conversationCellHeight;
+    float  _conversationCellHeight;
     CKConversationList * _conversationList;
     UIBarButtonItem * _currentEditButtonItem;
     int  _filterMode;
@@ -27,7 +27,7 @@
     unsigned int  _willRotate;
 }
 
-@property (nonatomic) double conversationCellHeight;
+@property (nonatomic) float conversationCellHeight;
 @property (nonatomic) CKConversationList *conversationList;
 @property (nonatomic, retain) UIBarButtonItem *currentEditButtonItem;
 @property (readonly, copy) NSString *debugDescription;
@@ -66,7 +66,7 @@
 - (void)_conversationMuteDidChangeNotification:(id)arg1;
 - (void)_dismissDetailsController:(id)arg1;
 - (void)_filterCellSelectionChanged:(id)arg1;
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; int x7; }*)arg1;
+- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; float x6; int x7; }*)arg1;
 - (void)_groupsChanged:(id)arg1;
 - (unsigned int)_indexOfConverationClosestToDeletedIndex:(unsigned int)arg1;
 - (unsigned int)_indexOfDefaultConversation;
@@ -122,7 +122,7 @@
 - (void)prepareForSuspend;
 - (id)previewViewControllerForRowAtIndexPath:(id)arg1;
 - (void)previewingContext:(id)arg1 commitViewController:(id)arg2;
-- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { double x1; double x2; })arg2;
+- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { float x1; float x2; })arg2;
 - (id)previouslySelectedIndexPath;
 - (void)scrollToTop;
 - (void)searchBar:(id)arg1 textDidChange:(id)arg2;
@@ -185,7 +185,7 @@
 - (void)viewDidUnload;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (void)willDismissSearchController:(id)arg1;
 
 @end

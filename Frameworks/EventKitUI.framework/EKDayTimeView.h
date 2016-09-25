@@ -5,12 +5,12 @@
 @interface EKDayTimeView : EKUIVisualEffectView <EKCurrentTimeMarkerViewUpdating> {
     NSMutableArray * _contentViews;
     <EKDayTimeViewDelegate> * _delegate;
-    double  _designatorSize;
+    float  _designatorSize;
     double  _highlightedHour;
-    double  _hourHeight;
-    double  _hourHeightScale;
-    double  _hourSize;
-    double  _hoursToPad;
+    float  _hourHeight;
+    float  _hourHeightScale;
+    float  _hourSize;
+    float  _hoursToPad;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
@@ -23,19 +23,19 @@
     UIColor * _timeColor;
     EKCurrentTimeMarkerView * _timeMarker;
     UIView * _timeMarkerExtension;
-    double  _timeWidth;
+    float  _timeWidth;
     BOOL  _usesLightText;
 }
 
 @property (readonly, copy) NSString *debugDescription;
-@property (nonatomic, readonly) double defaultHeight;
+@property (nonatomic, readonly) float defaultHeight;
 @property (nonatomic) <EKDayTimeViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic) double highlightedHour;
-@property (nonatomic, readonly) double hourHeight;
-@property (nonatomic) double hourHeightScale;
-@property (nonatomic) double hoursToPad;
+@property (nonatomic, readonly) float hourHeight;
+@property (nonatomic) float hourHeightScale;
+@property (nonatomic) float hoursToPad;
 @property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } hoursToRender;
 @property (nonatomic) BOOL showsLeftBorder;
 @property (nonatomic) BOOL showsRightBorder;
@@ -83,18 +83,18 @@
 - (void)dealloc;
 - (float)defaultHeight;
 - (id)delegate;
-- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forContentView:(id)arg2 withHourRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forContentView:(id)arg2 withHourRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 - (double)highlightedHour;
 - (float)hourHeight;
 - (float)hourHeightScale;
 - (float)hoursToPad;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })hoursToRender;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutFrames;
 - (void)layoutSubviews;
 - (float)scaledHourHeight;
 - (void)setDelegate:(id)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setHighlightedHour:(double)arg1;
 - (void)setHourHeightScale:(float)arg1;
 - (void)setHoursToPad:(float)arg1;
@@ -113,7 +113,7 @@
 - (BOOL)showsRightBorder;
 - (BOOL)showsTimeMarker;
 - (BOOL)showsTimeMarkerExtension;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)subTintColorUpdatedToColor:(id)arg1;
 - (id)timeColor;
 - (id)timeMarker;

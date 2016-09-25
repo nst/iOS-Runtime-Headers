@@ -19,14 +19,14 @@
     UIImagePickerController * _imagePickerController;
     CKComposition * _initialComposition;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _initialContentInset;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _initialContentOffset;
     CKChatInputController * _inputController;
     BOOL  _isAnimatingMessageSend;
@@ -47,10 +47,10 @@
     BOOL  _shouldBecomeFirstResponderWhenDismissingModalBrowser;
     BOOL  _showingVideoMessageRecordingView;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _startingScrollOffset;
-    double  _stickerTranscriptScrollDelta;
+    float  _stickerTranscriptScrollDelta;
     CADisplayLink * _stickerTranscriptScrollDisplayLink;
     int  _targetFirstResponder;
     CKThrowAnimationManager * _throwAnimationManager;
@@ -82,8 +82,8 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) UIImagePickerController *imagePickerController;
 @property (nonatomic, retain) CKComposition *initialComposition;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } initialContentInset;
-@property (nonatomic) struct CGPoint { double x1; double x2; } initialContentOffset;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } initialContentInset;
+@property (nonatomic) struct CGPoint { float x1; float x2; } initialContentOffset;
 @property (nonatomic, retain) CKChatInputController *inputController;
 @property (nonatomic) BOOL isAnimatingMessageSend;
 @property (nonatomic) BOOL isShowingAcknowledgmentPicker;
@@ -101,7 +101,7 @@
 @property (nonatomic, copy) id /* block */ scrollBlock;
 @property (nonatomic) BOOL scrollDownIsValid;
 @property (getter=isShowingVideoMessageRecordingView, nonatomic) BOOL showingVideoMessageRecordingView;
-@property (nonatomic) double stickerTranscriptScrollDelta;
+@property (nonatomic) float stickerTranscriptScrollDelta;
 @property (nonatomic, retain) CADisplayLink *stickerTranscriptScrollDisplayLink;
 @property (readonly) Class superclass;
 @property (nonatomic) int targetFirstResponder;
@@ -121,7 +121,7 @@
 - (void)_askToTurnOnReadReceiptsIfNeeded;
 - (void)_askToTurnOnSMSRelayIfNeeded;
 - (void)_autorotationUpdaterFired;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_avoidanceInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_avoidanceInsets;
 - (void)_backbuttonPressed;
 - (BOOL)_canReloadEntryView;
 - (BOOL)_canShowBackButtonView;
@@ -129,7 +129,7 @@
 - (void)_confirmReadReceiptSettings;
 - (void)_conversationJoinStateDidChange:(id)arg1;
 - (void)_conversationParticipantsChanged:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_convertedNavigationBarFrameInSendAnimationContainerView:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_convertedNavigationBarFrameInSendAnimationContainerView:(id)arg1;
 - (void)_dataDetectorsDidDismissNotification:(id)arg1;
 - (void)_dataDetectorsWillPresentNotification:(id)arg1;
 - (void)_deleteSelectedMessages:(id)arg1;
@@ -164,7 +164,7 @@
 - (void)_resizeNavigationBarIfNecessary;
 - (void)_saveDraftState;
 - (void)_setConversationDeferredSetup;
-- (void)_setEntryViewFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 animated:(BOOL)arg2;
+- (void)_setEntryViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 animated:(BOOL)arg2;
 - (void)_setTitle:(id)arg1 animated:(BOOL)arg2;
 - (BOOL)_shouldHideNavigationBarForSendAnimationContext:(id)arg1;
 - (BOOL)_shouldShowAcknowledgmentPickerForBalloon;
@@ -204,7 +204,7 @@
 - (void)addPassesViewControllerDidFinish:(id)arg1;
 - (BOOL)allowContextProvider:(id)arg1;
 - (BOOL)allowEffectPickerToBePresented;
-- (void)animateRevealWithInteractionProgress:(id)arg1 forPreviewingAtLocation:(struct CGPoint { double x1; double x2; })arg2 inSourceView:(id)arg3 containerView:(id)arg4;
+- (void)animateRevealWithInteractionProgress:(id)arg1 forPreviewingAtLocation:(struct CGPoint { float x1; float x2; })arg2 inSourceView:(id)arg3 containerView:(id)arg4;
 - (id)audioTrimController;
 - (id)autorotationUpdater;
 - (float)balloonMaxWidth;
@@ -286,8 +286,8 @@
 - (void)imagePickerControllerDidCancel:(id)arg1;
 - (id)initWithConversation:(id)arg1;
 - (id)initialComposition;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })initialContentInset;
-- (struct CGPoint { double x1; double x2; })initialContentOffset;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })initialContentInset;
+- (struct CGPoint { float x1; float x2; })initialContentOffset;
 - (id)inputAccessoryView;
 - (id)inputController;
 - (id)inputViewController;
@@ -306,14 +306,14 @@
 - (void)loadView;
 - (void)makeEntryViewActiveAfterSend;
 - (void)messageEntryView:(id)arg1 didTapMediaObject:(id)arg2;
-- (void)messageEntryView:(id)arg1 sendButtonLongPressEnded:(struct CGPoint { double x1; double x2; })arg2;
-- (void)messageEntryView:(id)arg1 sendButtonLongPressMoved:(struct CGPoint { double x1; double x2; })arg2;
+- (void)messageEntryView:(id)arg1 sendButtonLongPressEnded:(struct CGPoint { float x1; float x2; })arg2;
+- (void)messageEntryView:(id)arg1 sendButtonLongPressMoved:(struct CGPoint { float x1; float x2; })arg2;
 - (BOOL)messageEntryView:(id)arg1 shouldInsertMediaObjects:(id)arg2;
 - (void)messageEntryViewDidBeginEditing:(id)arg1;
 - (void)messageEntryViewDidChange:(id)arg1;
 - (void)messageEntryViewDidEndEditing:(id)arg1;
 - (float)messageEntryViewMaxHeight:(id)arg1;
-- (struct CGSize { double x1; double x2; })messageEntryViewMaxShelfPluginViewSize:(id)arg1;
+- (struct CGSize { float x1; float x2; })messageEntryViewMaxShelfPluginViewSize:(id)arg1;
 - (void)messageEntryViewRaiseGestureAutoSend:(id)arg1;
 - (void)messageEntryViewRecordingDidChange:(id)arg1;
 - (void)messageEntryViewSendButtonHit:(id)arg1;
@@ -345,10 +345,10 @@
 - (id)previewController;
 - (BOOL)previewController:(id)arg1 canShareItem:(id)arg2;
 - (void)previewController:(id)arg1 didTransitionToState:(int)arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })previewController:(id)arg1 frameForPreviewItem:(id)arg2 inSourceView:(id*)arg3;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })previewController:(id)arg1 frameForPreviewItem:(id)arg2 inSourceView:(id*)arg3;
 - (BOOL)previewController:(id)arg1 shouldOpenURL:(id)arg2 forPreviewItem:(id)arg3;
-- (id)previewController:(id)arg1 transitionImageForPreviewItem:(id)arg2 contentRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg3;
-- (id)previewController:(id)arg1 transitionViewForPreviewItem:(id)arg2 uncroppedSourceFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg3 realSize:(struct CGSize { double x1; double x2; }*)arg4;
+- (id)previewController:(id)arg1 transitionImageForPreviewItem:(id)arg2 contentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg3;
+- (id)previewController:(id)arg1 transitionViewForPreviewItem:(id)arg2 uncroppedSourceFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg3 realSize:(struct CGSize { float x1; float x2; }*)arg4;
 - (void)previewController:(id)arg1 willTransitionToState:(int)arg2;
 - (void)previewControllerDidDismiss:(id)arg1;
 - (void)previewControllerWillDismiss:(id)arg1;
@@ -361,9 +361,9 @@
 - (id)previewRevealView;
 - (id)previewSourceView;
 - (void)previewingContext:(id)arg1 commitViewController:(id)arg2;
-- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { double x1; double x2; })arg2;
+- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { float x1; float x2; })arg2;
 - (void)prewarmCamera:(id)arg1;
-- (void)primeTranscriptWithInitialOffset:(struct CGPoint { double x1; double x2; })arg1 inset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
+- (void)primeTranscriptWithInitialOffset:(struct CGPoint { float x1; float x2; })arg1 inset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
 - (BOOL)primeTranscriptWithInitialScrollGeometries;
 - (id)progressBar;
 - (id)raiseGesture;
@@ -406,8 +406,8 @@
 - (void)setExtensionPayloadBeingSent:(id)arg1;
 - (void)setImagePickerController:(id)arg1;
 - (void)setInitialComposition:(id)arg1;
-- (void)setInitialContentInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
-- (void)setInitialContentOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setInitialContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setInitialContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setInputController:(id)arg1;
 - (void)setIsAnimatingMessageSend:(BOOL)arg1;
 - (void)setIsShowingAcknowledgmentPicker:(BOOL)arg1;
@@ -460,13 +460,13 @@
 - (id)supportedMediaTypesForPhotoPicker:(id)arg1;
 - (void)tapGestureRecognized:(id)arg1;
 - (int)targetFirstResponder;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })throwAnimationKeyboardFrame:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })throwAnimationKeyboardFrame:(id)arg1;
 - (id)throwAnimationManager;
 - (void)throwAnimationManager:(id)arg1 canNowSendMessages:(id)arg2;
 - (float)throwAnimationManagerAccessoryViewHeight:(id)arg1;
 - (id)throwAnimationManagerEntryView:(id)arg1;
 - (void)throwAnimationManagerPrepareForThrowAnimation:(id)arg1 context:(id)arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })throwAnimationWindowFrame:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })throwAnimationWindowFrame:(id)arg1;
 - (id)throwBalloonsForSendAnimationContext:(id)arg1;
 - (float)topInsetPadding;
 - (void)traitCollectionDidChange:(id)arg1;
@@ -505,10 +505,10 @@
 - (id)viewForDragAndChatInputDropTarget;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (BOOL)wantsOverKeyboardAnimationForSendAnimationContext:(id)arg1;
 - (void)willMoveToParentViewController:(id)arg1;
-- (void)willPresentPreviewViewController:(id)arg1 forLocation:(struct CGPoint { double x1; double x2; })arg2 inSourceView:(id)arg3;
+- (void)willPresentPreviewViewController:(id)arg1 forLocation:(struct CGPoint { float x1; float x2; })arg2 inSourceView:(id)arg3;
 - (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
 
 @end

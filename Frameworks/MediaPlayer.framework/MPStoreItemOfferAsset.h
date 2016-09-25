@@ -11,7 +11,7 @@
 @property (nonatomic, readonly, copy) NSDictionary *lookupDictionary;
 @property (nonatomic, readonly) double previewDuration;
 @property (nonatomic, readonly, copy) NSURL *previewURL;
-@property (nonatomic, readonly) int size;
+@property (nonatomic, readonly) long long size;
 
 - (void).cxx_destruct;
 - (double)duration;
@@ -20,6 +20,6 @@
 - (id)lookupDictionary;
 - (double)previewDuration;
 - (id)previewURL;
-- (int)size;
+- (long long)size;
 
 @end

@@ -14,7 +14,7 @@
 - (id)_authorDisplayNamesForDocument:(id)arg1;
 - (id)_searchableItemForDocument:(id)arg1;
 - (id)_searchableItemsForDocuments:(id)arg1;
-- (void)addDeletionOfDocID:(unsigned int)arg1;
+- (void)addDeletionOfDocID:(unsigned long long)arg1;
 - (void)addIndexOfDocument:(id)arg1;
 - (id)description;
 - (id)initWithIndex:(id)arg1 queue:(id)arg2 loggedInUserDisplayName:(id)arg3;

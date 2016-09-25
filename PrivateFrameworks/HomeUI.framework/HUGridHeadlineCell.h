@@ -30,7 +30,7 @@
 @property (nonatomic, retain) HUGridHeadlineCellLayoutOptions *layoutOptions;
 @property (getter=isRearranging, nonatomic) BOOL rearranging;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } unpaddedContentFrame;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } unpaddedContentFrame;
 
 + (Class)layoutOptionsClass;
 + (BOOL)requiresConstraintBasedLayout;
@@ -47,7 +47,7 @@
 - (id)headlineCellConstraints;
 - (id)headlineLabel;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isEditing;
 - (id)item;
 - (id)layoutOptions;
@@ -64,7 +64,7 @@
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setItem:(id)arg1;
 - (void)setLayoutOptions:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })unpaddedContentFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })unpaddedContentFrame;
 - (void)updateConstraints;
 - (void)updateUIWithAnimation:(BOOL)arg1;
 

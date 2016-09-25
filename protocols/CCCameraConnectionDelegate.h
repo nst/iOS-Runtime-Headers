@@ -10,7 +10,7 @@
 @optional
 
 - (void)cameraConnection:(CCCameraConnection *)arg1 setFlashMode:(int)arg2;
-- (void)cameraConnection:(CCCameraConnection *)arg1 setFocusPoint:(struct CGPoint { double x1; double x2; })arg2;
+- (void)cameraConnection:(CCCameraConnection *)arg1 setFocusPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (void)cameraConnection:(CCCameraConnection *)arg1 setHDRMode:(int)arg2;
 - (void)cameraConnection:(CCCameraConnection *)arg1 setIrisMode:(int)arg2;
 - (unsigned int)cameraConnection:(CCCameraConnection *)arg1 setMode:(unsigned int)arg2 interruptCapture:(BOOL)arg3;

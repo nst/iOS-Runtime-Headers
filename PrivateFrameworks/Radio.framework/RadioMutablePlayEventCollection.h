@@ -7,7 +7,7 @@
 @property (nonatomic, copy) NSString *deviceName;
 
 - (void)addPlayEvents:(id)arg1 forStation:(id)arg2;
-- (void)addPlayEvents:(id)arg1 forStationHash:(id)arg2 stationID:(int)arg3;
+- (void)addPlayEvents:(id)arg1 forStationHash:(id)arg2 stationID:(long long)arg3;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setDeviceName:(id)arg1;
 

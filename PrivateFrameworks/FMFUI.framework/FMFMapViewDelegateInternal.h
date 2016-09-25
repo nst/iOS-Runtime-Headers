@@ -28,11 +28,11 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_moveCenterByOffset:(struct CGPoint { double x1; double x2; })arg1 from:(struct CLLocationCoordinate2D { double x1; double x2; })arg2 mapView:(id)arg3;
+- (void)_moveCenterByOffset:(struct CGPoint { float x1; float x2; })arg1 from:(struct CLLocationCoordinate2D { double x1; double x2; })arg2 mapView:(id)arg3;
 - (id)accuracyCircleForLocation:(id)arg1;
 - (BOOL)canSelectAnnotation:(id)arg1;
 - (id)delegate;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })edgeInsetsWithMinApplied:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsetsWithMinApplied:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)endTouches;
 - (id)fmfOverlayColor;
 - (id)fmfOverlayColorSatellite;

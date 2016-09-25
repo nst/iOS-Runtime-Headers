@@ -11,7 +11,7 @@
     NSObject<OS_dispatch_source> * _powerMeterTimer;
     NSObject<OS_dispatch_source> * _recordingTimeoutTimer;
     NSMutableArray * _stopBlocks;
-    int  _totalRecordedPacketCount;
+    long long  _totalRecordedPacketCount;
     AVVoiceController * _voiceController;
 }
 

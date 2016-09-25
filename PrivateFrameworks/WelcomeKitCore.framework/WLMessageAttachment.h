@@ -7,7 +7,7 @@
     NSString * _fileName;
     NSString * _guid;
     NSString * _mimeType;
-    int * _rowID;
+    long long * _rowID;
     NSString * _uti;
 }
 
@@ -15,7 +15,7 @@
 @property (nonatomic, readonly) NSString *fileName;
 @property (nonatomic) NSString *guid;
 @property (nonatomic, readonly) NSString *mimeType;
-@property (nonatomic) int*rowID;
+@property (nonatomic) long long*rowID;
 @property (nonatomic, readonly) NSString *uti;
 
 - (void).cxx_destruct;
@@ -24,9 +24,9 @@
 - (id)fileName;
 - (id)guid;
 - (id)mimeType;
-- (int*)rowID;
+- (long long*)rowID;
 - (void)setGuid:(id)arg1;
-- (void)setRowID:(int*)arg1;
+- (void)setRowID:(long long*)arg1;
 - (id)uti;
 
 @end

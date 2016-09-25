@@ -9,7 +9,7 @@
 
 - (unsigned int)acceleratorPort;
 - (void)compilerPropagatesThreadPriority:(bool)arg1;
-- (unsigned int)dedicatedMemorySize;
+- (unsigned long long)dedicatedMemorySize;
 - (unsigned int)deviceLinearReadOnlyTextureAlignmentBytes;
 - (unsigned int)deviceLinearTextureAlignmentBytes;
 - (BOOL)deviceOrFeatureProfileSupportsFeatureSet:(unsigned int)arg1;
@@ -20,7 +20,7 @@
 - (unsigned int)iosurfaceReadOnlyTextureAlignmentBytes;
 - (unsigned int)iosurfaceTextureAlignmentBytes;
 - (struct { unsigned int x1; unsigned int x2; })libraryCacheStats;
-- (const struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; unsigned int x15; unsigned int x16; unsigned int x17; unsigned int x18; double x19; double x20; unsigned int x21; unsigned int x22; unsigned int x23; unsigned int x24; unsigned int x25; unsigned int x26; unsigned int x27; unsigned int x28; unsigned int x29; unsigned int x30; unsigned int x31; unsigned int x32; unsigned int x33; unsigned int x34; unsigned int x35; unsigned int x36; unsigned int x37; unsigned int x38; unsigned int x39; unsigned int x40; unsigned int x41; }*)limits;
+- (const struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; unsigned int x15; unsigned int x16; unsigned int x17; unsigned int x18; float x19; float x20; unsigned int x21; unsigned int x22; unsigned int x23; unsigned int x24; unsigned int x25; unsigned int x26; unsigned int x27; unsigned int x28; unsigned int x29; unsigned int x30; unsigned int x31; unsigned int x32; unsigned int x33; unsigned int x34; unsigned int x35; unsigned int x36; unsigned int x37; unsigned int x38; unsigned int x39; unsigned int x40; unsigned int x41; }*)limits;
 - (unsigned int)linearTextureAlignmentBytes;
 - (unsigned int)maxBufferLength;
 - (unsigned int)maxColorAttachments;
@@ -64,7 +64,7 @@
 - (<MTLTexture> *)newTextureWithDescriptor:(MTLTextureDescriptor *)arg1 iosurface:(struct __IOSurface { }*)arg2 plane:(unsigned int)arg3;
 - (struct { unsigned int x1; unsigned int x2; })pipelineCacheStats;
 - (void)setMetalAssertionsEnabled:(BOOL)arg1;
-- (unsigned int)sharedMemorySize;
+- (unsigned long long)sharedMemorySize;
 - (unsigned int)singleFPConfig;
 - (BOOL)supportsSampleCount:(unsigned int)arg1;
 - (void)unloadShaderCaches;

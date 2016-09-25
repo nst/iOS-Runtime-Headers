@@ -9,10 +9,10 @@
     NCAnimationCoordinator * _childPreferredContentSizeChangeCoordinator;
     <NCNotificationListViewControllerDestinationDelegate> * _destinationDelegate;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _insetMargins;
     BOOL  _needsReloadData;
     BOOL  _notificationRequestRemovedWhileInLongLook;
@@ -37,7 +37,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic) <NCNotificationListViewControllerDestinationDelegate> *destinationDelegate;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } insetMargins;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } insetMargins;
 @property (nonatomic) BOOL needsReloadData;
 @property (nonatomic) BOOL notificationRequestRemovedWhileInLongLook;
 @property (nonatomic, retain) NCNotificationViewController *notificationViewControllerForSizing;
@@ -54,7 +54,7 @@
 - (void)_forceTouchAvailabilityDidChange:(id)arg1;
 - (void)_handleEatenTouch:(id)arg1;
 - (void)_installTouchEater;
-- (BOOL)_isPointInWindowSpace:(struct CGPoint { double x1; double x2; })arg1 insideCell:(id)arg2;
+- (BOOL)_isPointInWindowSpace:(struct CGPoint { float x1; float x2; })arg1 insideCell:(id)arg2;
 - (void)_performCollectionViewOperationBlock:(id /* block */)arg1;
 - (void)_performCollectionViewOperationBlockIfNecessary:(id /* block */)arg1;
 - (void)_reloadCollectionViewDataIfNecessary;
@@ -69,7 +69,7 @@
 - (BOOL)collectionView:(id)arg1 canPerformAction:(SEL)arg2 forItemAtIndexPath:(id)arg3 withSender:(id)arg4;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didEndDisplayingCell:(id)arg2 forItemAtIndexPath:(id)arg3;
-- (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
+- (struct CGSize { float x1; float x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (void)collectionView:(id)arg1 performUpdatesAlongsideLayout:(id)arg2;
 - (BOOL)collectionView:(id)arg1 shouldHighlightItemAtIndexPath:(id)arg2;
 - (BOOL)collectionView:(id)arg1 shouldSelectItemAtIndexPath:(id)arg2;
@@ -87,7 +87,7 @@
 - (void)hideRequestsForNotificationSectionIdentifier:(id)arg1 subSectionIdentifier:(id)arg2;
 - (id)init;
 - (void)insertNotificationRequest:(id)arg1;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })insetMargins;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })insetMargins;
 - (BOOL)isBackgroundBlurred;
 - (BOOL)isContentExtensionVisible:(id)arg1;
 - (void)longLookWillPresentForNotificationViewController:(id)arg1;
@@ -151,7 +151,7 @@
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillLayoutSubviews;
-- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (void)willTearDownNotificationListCell:(id)arg1;
 
 @end

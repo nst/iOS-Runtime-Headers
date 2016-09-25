@@ -8,13 +8,13 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } digitizerLocation;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } digitizerLocation;
 @property (readonly) unsigned int hash;
-@property (nonatomic) double maximumPressDuration;
+@property (nonatomic) float maximumPressDuration;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (struct CGPoint { double x1; double x2; })digitizerLocation;
+- (struct CGPoint { float x1; float x2; })digitizerLocation;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 - (float)maximumPressDuration;
 - (void)pressesBegan:(id)arg1 withEvent:(id)arg2;

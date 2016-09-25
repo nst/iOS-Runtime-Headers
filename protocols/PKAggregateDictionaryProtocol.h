@@ -5,6 +5,6 @@
 
 @required
 
-- (void)addValueForScalarKey:(NSString *)arg1 value:(int)arg2;
+- (void)addValueForScalarKey:(NSString *)arg1 value:(long long)arg2;
 
 @end

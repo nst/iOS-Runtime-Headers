@@ -5,7 +5,7 @@
 @interface VideosExtrasPlaybackItemMetadata : MPMediaLibraryPlaybackItemMetadata {
     NSString * _buyParameters;
     unsigned int  _mediaType;
-    int  _storeAdamID;
+    long long  _storeAdamID;
 }
 
 - (void).cxx_destruct;
@@ -15,8 +15,8 @@
 - (id)buyParameters;
 - (unsigned int)contentType;
 - (unsigned int)hash;
-- (id)initWithStoreAdamID:(int)arg1 buyParameters:(id)arg2 mediaType:(unsigned int)arg3;
+- (id)initWithStoreAdamID:(long long)arg1 buyParameters:(id)arg2 mediaType:(unsigned int)arg3;
 - (BOOL)isEqual:(id)arg1;
-- (int)storeAdamID;
+- (long long)storeAdamID;
 
 @end

@@ -31,10 +31,10 @@
 - (void)_cancelUploadForDocumentID:(id)arg1 inState:(unsigned int)arg2;
 - (void)_cancelUploadForDocumentID:(id)arg1 inState:(unsigned int)arg2 willRetryTransfer:(BOOL)arg3;
 - (void)_cancelUploadForDocumentID:(id)arg1 inState:(unsigned int)arg2 willRetryTransfer:(BOOL)arg3 pendingQuota:(BOOL)arg4;
-- (void)_createDownloadMetadataWithCompletedUnitCount:(int)arg1 totalUnitCount:(int)arg2;
-- (void)_createNewGlobalProgressInGroup:(id)arg1 completedUnitCount:(int)arg2 totalUnitCount:(int)arg3;
+- (void)_createDownloadMetadataWithCompletedUnitCount:(long long)arg1 totalUnitCount:(long long)arg2;
+- (void)_createNewGlobalProgressInGroup:(id)arg1 completedUnitCount:(long long)arg2 totalUnitCount:(long long)arg3;
 - (void)_createNewIndeterminateGlobalProgress;
-- (void)_createUploadMetadataWithCompletedUnitCount:(int)arg1 totalUnitCount:(int)arg2;
+- (void)_createUploadMetadataWithCompletedUnitCount:(long long)arg1 totalUnitCount:(long long)arg2;
 - (void)_deleteDocument:(id)arg1 reason:(BOOL)arg2;
 - (void)_destroyDownloadWithReason:(BOOL)arg1;
 - (void)_destroyProgressInGroup:(id)arg1 reason:(BOOL)arg2;

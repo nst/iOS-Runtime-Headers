@@ -4,7 +4,7 @@
 
 @interface MPMessage : NSObject <MPMessage, NSSecureCoding> {
     NSArray * _ccPeople;
-    int  _conversationID;
+    long long  _conversationID;
     NSDate * _dateSent;
     BOOL  _isPriority;
     NSString * _listID;
@@ -16,7 +16,7 @@
 }
 
 @property (nonatomic, retain) NSArray *ccPeople;
-@property (nonatomic) int conversationID;
+@property (nonatomic) long long conversationID;
 @property (nonatomic, retain) NSDate *dateSent;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -31,18 +31,18 @@
 @property (nonatomic, retain) NSArray *toPeople;
 
 + (id)messageWithArray:(id)arg1;
-+ (id)messageWithMailbox:(id)arg1 isPriority:(BOOL)arg2 subject:(id)arg3 dateSent:(id)arg4 persistentID:(id)arg5 conversationID:(int)arg6 listID:(id)arg7 senderPerson:(id)arg8 toPeople:(id)arg9 ccPeople:(id)arg10;
++ (id)messageWithMailbox:(id)arg1 isPriority:(BOOL)arg2 subject:(id)arg3 dateSent:(id)arg4 persistentID:(id)arg5 conversationID:(long long)arg6 listID:(id)arg7 senderPerson:(id)arg8 toPeople:(id)arg9 ccPeople:(id)arg10;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)ccPeople;
-- (int)conversationID;
+- (long long)conversationID;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dateSent;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithMailbox:(id)arg1 isPriority:(BOOL)arg2 subject:(id)arg3 dateSent:(id)arg4 persistentID:(id)arg5 conversationID:(int)arg6 listID:(id)arg7 senderPerson:(id)arg8 toPeople:(id)arg9 ccPeople:(id)arg10;
+- (id)initWithMailbox:(id)arg1 isPriority:(BOOL)arg2 subject:(id)arg3 dateSent:(id)arg4 persistentID:(id)arg5 conversationID:(long long)arg6 listID:(id)arg7 senderPerson:(id)arg8 toPeople:(id)arg9 ccPeople:(id)arg10;
 - (id)initWithMessageArray:(id)arg1;
 - (BOOL)isPriority;
 - (id)listID;
@@ -51,7 +51,7 @@
 - (id)personizeRecipients:(id)arg1;
 - (id)senderPerson;
 - (void)setCcPeople:(id)arg1;
-- (void)setConversationID:(int)arg1;
+- (void)setConversationID:(long long)arg1;
 - (void)setDateSent:(id)arg1;
 - (void)setIsPriority:(BOOL)arg1;
 - (void)setListID:(id)arg1;

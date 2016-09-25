@@ -46,7 +46,7 @@
 + (void)deleteCacheWithName:(id)arg1;
 + (void)initialize;
 
-- (void)_appendAffectedStoreInfoToData:(id)arg1 adjustedOffset:(int*)arg2;
+- (void)_appendAffectedStoreInfoToData:(id)arg1 adjustedOffset:(long long*)arg2;
 - (BOOL)_computeSectionInfo:(id)arg1 error:(id*)arg2;
 - (BOOL)_computeSectionInfoWithGroupBy:(id)arg1 error:(id*)arg2;
 - (void)_core_managedObjectContextDidChange:(id)arg1;

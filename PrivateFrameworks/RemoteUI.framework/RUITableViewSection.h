@@ -11,10 +11,10 @@
     int  _disclosureLimit;
     NSNumber * _drawsTopSeparator;
     RUIElement * _footer;
-    double  _footerHeight;
+    float  _footerHeight;
     UIView<RemoteUITableFooter> * _footerView;
     RUIElement * _header;
-    double  _headerHeight;
+    float  _headerHeight;
     UIView<RUIHeader> * _headerView;
     NSMutableArray * _rows;
     RUITableViewRow * _showAllRow;
@@ -28,10 +28,10 @@
 @property (nonatomic, retain) RUIDetailHeaderElement *detailHeader;
 @property (nonatomic) BOOL drawTopSeparator;
 @property (nonatomic, retain) RUIElement *footer;
-@property (nonatomic) double footerHeight;
+@property (nonatomic) float footerHeight;
 @property (nonatomic, retain) UIView<RemoteUITableFooter> *footerView;
 @property (nonatomic, retain) RUIElement *header;
-@property (nonatomic) double headerHeight;
+@property (nonatomic) float headerHeight;
 @property (nonatomic, retain) UIView<RUIHeader> *headerView;
 @property (nonatomic, readonly) NSArray *rows;
 @property (nonatomic, retain) RUITableViewRow *showAllRow;
@@ -79,7 +79,7 @@
 - (void)setHeaderView:(id)arg1;
 - (void)setImage:(id)arg1;
 - (void)setImageAlignment:(int)arg1;
-- (void)setImageSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setImageSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setShowAllRow:(id)arg1;
 - (void)setSubHeader:(id)arg1;
 - (id)showAllRow;

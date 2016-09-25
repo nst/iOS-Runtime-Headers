@@ -3,7 +3,7 @@
  */
 
 @interface CMDrawingAction : NSObject {
-    double  _floatValue;
+    float  _floatValue;
     int  _type;
     id  _value;
 }

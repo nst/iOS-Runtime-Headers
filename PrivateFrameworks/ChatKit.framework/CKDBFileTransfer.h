@@ -16,7 +16,7 @@
 
 @property (nonatomic, retain) IMMessage *IMMessage;
 @property (nonatomic, copy) NSDictionary *attributionInfo;
-@property (nonatomic, readonly) unsigned int currentBytes;
+@property (nonatomic, readonly) unsigned long long currentBytes;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (getter=isDownloadable, nonatomic, readonly) BOOL downloadable;
@@ -33,13 +33,13 @@
 @property (getter=isRestoring, nonatomic, readonly) BOOL restoring;
 @property (nonatomic, readonly, copy) NSDictionary *stickerUserInfo;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) unsigned int totalBytes;
+@property (nonatomic, readonly) unsigned long long totalBytes;
 @property (nonatomic, readonly, copy) NSDictionary *transcoderUserInfo;
 @property (nonatomic) int transferState;
 
 - (void).cxx_destruct;
 - (id)attributionInfo;
-- (unsigned int)currentBytes;
+- (unsigned long long)currentBytes;
 - (id)description;
 - (id)error;
 - (id)fileURL;
@@ -60,7 +60,7 @@
 - (void)setFilename:(id)arg1;
 - (void)setTransferState:(int)arg1;
 - (id)stickerUserInfo;
-- (unsigned int)totalBytes;
+- (unsigned long long)totalBytes;
 - (id)transcoderUserInfo;
 - (int)transferState;
 

@@ -15,7 +15,7 @@
     LPVideoViewStyle * _mediaVideo;
     LPTextViewStyle * _quotedText;
     LPTapToLoadViewStyle * _tapToLoad;
-    double  _widthFractionForTallMedia;
+    float  _widthFractionForTallMedia;
 }
 
 @property (nonatomic, retain) UIColor *backgroundColor;
@@ -30,7 +30,7 @@
 @property (nonatomic, readonly) LPVideoViewStyle *mediaVideo;
 @property (nonatomic, readonly) LPTextViewStyle *quotedText;
 @property (nonatomic, readonly) LPTapToLoadViewStyle *tapToLoad;
-@property (nonatomic) double widthFractionForTallMedia;
+@property (nonatomic) float widthFractionForTallMedia;
 
 + (void)addClient:(id)arg1;
 + (id)regularTheme;

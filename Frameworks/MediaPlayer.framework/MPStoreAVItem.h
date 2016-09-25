@@ -50,7 +50,7 @@
 - (void)_willResignActivePlayerItem;
 - (id)album;
 - (id)albumArtist;
-- (int)albumStoreID;
+- (long long)albumStoreID;
 - (unsigned int)albumTrackCount;
 - (unsigned int)albumTrackNumber;
 - (BOOL)allowsAirPlayFromCloud;
@@ -59,7 +59,7 @@
 - (id)alternativeConfigurationOptions;
 - (void)applyVolumeNormalizationWithSoundCheckEnabled:(BOOL)arg1;
 - (id)artist;
-- (int)artistStoreID;
+- (long long)artistStoreID;
 - (id)artworkCatalogForPlaybackTime:(double)arg1;
 - (id)artworkTimeMarkers;
 - (BOOL)canSeedGenius;
@@ -93,7 +93,7 @@
 - (id)modelSong;
 - (void)notePlaybackFinishedByHittingEnd;
 - (unsigned int)options;
-- (unsigned int)persistentID;
+- (unsigned long long)persistentID;
 - (double)playbackCheckpointCurrentTime;
 - (id)playbackItemMetadata;
 - (void)prepareForRate:(float)arg1 completionHandler:(id /* block */)arg2;
@@ -106,9 +106,9 @@
 - (void)setPlaybackStoppedTime:(double)arg1;
 - (void)setRating:(float)arg1;
 - (id)storeDownload;
-- (int)storeItemInt64ID;
+- (long long)storeItemInt64ID;
 - (int)storePlaybackEndpointType;
-- (int)storeSubscriptionAdamID;
+- (long long)storeSubscriptionAdamID;
 - (unsigned int)streamType;
 - (BOOL)supportsLikedState;
 - (BOOL)supportsRewindAndFastForward15Seconds;

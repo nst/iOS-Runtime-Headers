@@ -4,11 +4,11 @@
 
 @interface ADIOSurfaceXPCCoder : NSXPCCoder <NSSecureCoding> {
     struct __IOSurface { } * _ioSurface;
-    double  _scale;
+    float  _scale;
 }
 
 @property struct __IOSurface { }*ioSurface;
-@property double scale;
+@property float scale;
 
 + (BOOL)supportsSecureCoding;
 

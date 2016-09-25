@@ -3,7 +3,7 @@
  */
 
 @interface TSCH3DGetSelectionKnobsPositionsPipeline : TSCH3DSceneRenderPipeline <TSCH3DSceneObjectDelegator, TSCHUnretainedParent> {
-    double  mNormalizedKnobRadius;
+    float  mNormalizedKnobRadius;
     NSMutableArray * mProjectedPoints;
     TSCH3DChartRep * mRep;
     TSCH3DGetSelectionKnobsPositionsPipelineDelegate * mSceneObjectDelegate;

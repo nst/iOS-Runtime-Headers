@@ -11,9 +11,9 @@
         unsigned int segmentsEnabled : 1; 
     }  _has;
     BOOL  _segmentsEnabled;
-    int  _segmentsHistoryWindowInterval;
-    int  _segmentsMinimumArticleCount;
-    int  _segmentsSubmissionFrequency;
+    long long  _segmentsHistoryWindowInterval;
+    long long  _segmentsMinimumArticleCount;
+    long long  _segmentsSubmissionFrequency;
     double  _segmentsThreshold;
 }
 
@@ -23,9 +23,9 @@
 @property (nonatomic) BOOL hasSegmentsSubmissionFrequency;
 @property (nonatomic) BOOL hasSegmentsThreshold;
 @property (nonatomic) BOOL segmentsEnabled;
-@property (nonatomic) int segmentsHistoryWindowInterval;
-@property (nonatomic) int segmentsMinimumArticleCount;
-@property (nonatomic) int segmentsSubmissionFrequency;
+@property (nonatomic) long long segmentsHistoryWindowInterval;
+@property (nonatomic) long long segmentsMinimumArticleCount;
+@property (nonatomic) long long segmentsSubmissionFrequency;
 @property (nonatomic) double segmentsThreshold;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -41,9 +41,9 @@
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (BOOL)segmentsEnabled;
-- (int)segmentsHistoryWindowInterval;
-- (int)segmentsMinimumArticleCount;
-- (int)segmentsSubmissionFrequency;
+- (long long)segmentsHistoryWindowInterval;
+- (long long)segmentsMinimumArticleCount;
+- (long long)segmentsSubmissionFrequency;
 - (double)segmentsThreshold;
 - (void)setHasSegmentsEnabled:(BOOL)arg1;
 - (void)setHasSegmentsHistoryWindowInterval:(BOOL)arg1;
@@ -51,9 +51,9 @@
 - (void)setHasSegmentsSubmissionFrequency:(BOOL)arg1;
 - (void)setHasSegmentsThreshold:(BOOL)arg1;
 - (void)setSegmentsEnabled:(BOOL)arg1;
-- (void)setSegmentsHistoryWindowInterval:(int)arg1;
-- (void)setSegmentsMinimumArticleCount:(int)arg1;
-- (void)setSegmentsSubmissionFrequency:(int)arg1;
+- (void)setSegmentsHistoryWindowInterval:(long long)arg1;
+- (void)setSegmentsMinimumArticleCount:(long long)arg1;
+- (void)setSegmentsSubmissionFrequency:(long long)arg1;
 - (void)setSegmentsThreshold:(double)arg1;
 - (void)writeTo:(id)arg1;
 

@@ -4,7 +4,7 @@
 
 @interface SBAppIconForceTouchDefaults : SBAbstractSpringBoardDefaultDomain
 
-@property (nonatomic) double animationDurationMultiplier;
+@property (nonatomic) float animationDurationMultiplier;
 @property (nonatomic) BOOL enableUIPreviewInteractionAnimations;
 
 - (void)_bindAndRegisterDefaults;

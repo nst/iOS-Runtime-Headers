@@ -3,14 +3,14 @@
  */
 
 @interface _UIInterfaceActionSeparatorConstraintController : NSObject {
-    double  _constantAxisDimension;
+    float  _constantAxisDimension;
     int  _constantSizedAxis;
     NSLayoutConstraint * _fixedHeightConstraint;
     NSLayoutConstraint * _fixedWidthConstraint;
     UIView<UIInterfaceActionVisualSeparatorDisplaying><UIInterfaceActionVisualSectionSeparatorDisplaying> * _separatorView;
 }
 
-@property (nonatomic) double constantAxisDimension;
+@property (nonatomic) float constantAxisDimension;
 @property (nonatomic) int constantSizedAxis;
 @property (nonatomic, readonly) NSLayoutConstraint *fixedHeightConstraint;
 @property (nonatomic, readonly) NSLayoutConstraint *fixedWidthConstraint;

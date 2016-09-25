@@ -3,12 +3,12 @@
  */
 
 @interface PXDemoDynamicViewWidget : NSObject <PXWidget> {
-    double  __preferredHeightPhase;
+    float  __preferredHeightPhase;
     UIView * __view;
     <PXWidgetDelegate> * _widgetDelegate;
 }
 
-@property (setter=_setPreferredHeight:, nonatomic) double _preferredHeightPhase;
+@property (setter=_setPreferredHeight:, nonatomic) float _preferredHeightPhase;
 @property (nonatomic, readonly) UIView *_view;
 @property (nonatomic, readonly) BOOL allowUserInteractionWithSubtitle;
 @property (nonatomic, readonly) int contentLayoutStyle;

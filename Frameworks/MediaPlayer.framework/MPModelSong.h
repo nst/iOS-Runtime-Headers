@@ -33,12 +33,12 @@
     NSString * _protectedContentSupportStorageFilePath;
     BOOL  _shouldReportPlayEventsToStore;
     BOOL  _shouldShowComposer;
-    unsigned int  _storeAccountIdentifier;
+    unsigned long long  _storeAccountIdentifier;
     NSString * _storeRedownloadParameters;
     BOOL  _storeRedownloadable;
     NSString * _title;
     int  _trackNumber;
-    double  _volumeNormalization;
+    float  _volumeNormalization;
 }
 
 @property (nonatomic, retain) MPModelAlbum *album;
@@ -71,12 +71,12 @@
 @property (nonatomic, copy) NSString *protectedContentSupportStorageFilePath;
 @property (nonatomic) BOOL shouldReportPlayEventsToStore;
 @property (nonatomic) BOOL shouldShowComposer;
-@property (nonatomic) unsigned int storeAccountIdentifier;
+@property (nonatomic) unsigned long long storeAccountIdentifier;
 @property (nonatomic, copy) NSString *storeRedownloadParameters;
 @property (getter=isStoreRedownloadable, nonatomic) BOOL storeRedownloadable;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic) int trackNumber;
-@property (nonatomic) double volumeNormalization;
+@property (nonatomic) float volumeNormalization;
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
@@ -229,7 +229,7 @@
 - (void)setProtectedContentSupportStorageFilePath:(id)arg1;
 - (void)setShouldReportPlayEventsToStore:(BOOL)arg1;
 - (void)setShouldShowComposer:(BOOL)arg1;
-- (void)setStoreAccountIdentifier:(unsigned int)arg1;
+- (void)setStoreAccountIdentifier:(unsigned long long)arg1;
 - (void)setStoreRedownloadParameters:(id)arg1;
 - (void)setStoreRedownloadable:(BOOL)arg1;
 - (void)setTitle:(id)arg1;
@@ -237,7 +237,7 @@
 - (void)setVolumeNormalization:(float)arg1;
 - (BOOL)shouldReportPlayEventsToStore;
 - (BOOL)shouldShowComposer;
-- (unsigned int)storeAccountIdentifier;
+- (unsigned long long)storeAccountIdentifier;
 - (id)storeRedownloadParameters;
 - (id)title;
 - (int)trackNumber;

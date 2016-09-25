@@ -18,7 +18,7 @@
     UILabel * _subtitleLabel2;
     SKUIGiftTheme * _theme;
     UILabel * _titleLabel;
-    double  _userRating;
+    float  _userRating;
     UILabel * _userRatingCountLabel;
 }
 
@@ -34,12 +34,12 @@
 @property (nonatomic, copy) NSString *price;
 @property (nonatomic, copy) SKUIGiftTheme *theme;
 @property (nonatomic, copy) NSString *title;
-@property (nonatomic) double userRating;
+@property (nonatomic) float userRating;
 
 - (void).cxx_destruct;
 - (void)_enumerateMetadataViewsUsingBlock:(id /* block */)arg1;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_imageEdgeInsets;
-- (struct CGSize { double x1; double x2; })_imageSize;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_imageEdgeInsets;
+- (struct CGSize { float x1; float x2; })_imageSize;
 - (void)_itemOfferConfirmAction:(id)arg1;
 - (id)_newLabel;
 - (float)_paddingLeft;
@@ -74,7 +74,7 @@
 - (void)setTheme:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setUserRating:(float)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)theme;
 - (id)title;
 - (float)userRating;

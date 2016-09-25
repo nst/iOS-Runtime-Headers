@@ -3,7 +3,7 @@
  */
 
 @interface _UILocationResultsTableViewCell : UITableViewCell {
-    double  _additionalLeftSidePadding;
+    float  _additionalLeftSidePadding;
     NSLayoutConstraint * _bottomMarginConstraint;
     UIView * _cellHeightStrut;
     UIImage * _customLocationImage;
@@ -15,7 +15,7 @@
     NSLayoutConstraint * _topMarginConstraint;
 }
 
-@property (nonatomic) double additionalLeftSidePadding;
+@property (nonatomic) float additionalLeftSidePadding;
 @property (nonatomic, retain) NSLayoutConstraint *bottomMarginConstraint;
 @property (nonatomic, retain) UIView *cellHeightStrut;
 @property (nonatomic, copy) UIImage *customLocationImage;

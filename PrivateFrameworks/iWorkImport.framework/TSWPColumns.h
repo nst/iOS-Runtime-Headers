@@ -5,8 +5,8 @@
 @interface TSWPColumns : NSObject {
     unsigned int  _columnCount;
     BOOL  _equalWidth;
-    double  _gapArray;
-    double  _widthArray;
+    float  _gapArray;
+    float  _widthArray;
 }
 
 @property (nonatomic, readonly) unsigned int columnCount;

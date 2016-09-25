@@ -3,7 +3,7 @@
  */
 
 @interface MPNondurableMediaItem : MPMediaItem {
-    unsigned int  _persistentID;
+    unsigned long long  _persistentID;
 }
 
 + (BOOL)canFilterByProperty:(id)arg1;
@@ -17,13 +17,13 @@
 - (BOOL)incrementPlayCountForStopTime:(double)arg1;
 - (void)incrementSkipCount;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithPersistentID:(unsigned int)arg1;
+- (id)initWithPersistentID:(unsigned long long)arg1;
 - (BOOL)isUsableAsRepresentativeItem;
 - (void)markNominalAmountHasBeenPlayed;
 - (id)mediaLibrary;
 - (double)nominalHasBeenPlayedThreshold;
 - (void)noteWasPlayedToTime:(double)arg1 skipped:(BOOL)arg2;
-- (unsigned int)persistentID;
+- (unsigned long long)persistentID;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
 - (void)updateDateAccessedToCurrentDateWithWriteCompletionBlock:(id /* block */)arg1;
 - (id)valueForProperty:(id)arg1;

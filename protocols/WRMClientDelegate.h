@@ -5,7 +5,7 @@
 
 @required
 
-- (void)setWRMMetricConfig:(struct { unsigned int x1; }*)arg1;
-- (void)setWRMNotification:(struct { int x1; int x2; unsigned int x3; unsigned int x4; unsigned int x5; }*)arg1;
+- (void)setWRMMetricConfig:(struct { unsigned long long x1; }*)arg1;
+- (void)setWRMNotification:(struct { int x1; int x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; }*)arg1;
 
 @end

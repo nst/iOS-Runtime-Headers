@@ -25,7 +25,7 @@
 - (void)didRankSections:(id)arg1 blendingDuration:(double)arg2 feedbackForHiddenAndDuplicateResults:(id)arg3;
 - (void)didReceiveLocalResultsForQuery:(id)arg1;
 - (void)didReceiveParsecResultsAfterTimeout:(id)arg1;
-- (void)didReceiveWebSuggestionsForQuery:(id)arg1 fromSearchProvider:(id)arg2 responseSize:(int)arg3 statusCode:(int)arg4 networkTimingData:(id)arg5;
+- (void)didReceiveWebSuggestionsForQuery:(id)arg1 fromSearchProvider:(id)arg2 responseSize:(long long)arg3 statusCode:(int)arg4 networkTimingData:(id)arg5;
 - (id)initWithSession:(id)arg1;
 - (void)postFeedback:(id)arg1;
 - (void)searchViewAppearedBecauseOfEvent:(unsigned int)arg1;

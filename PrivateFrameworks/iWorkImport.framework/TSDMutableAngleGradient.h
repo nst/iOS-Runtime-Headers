@@ -7,14 +7,14 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) TSUColor *firstColor;
-@property (nonatomic) double gradientAngle;
-@property (nonatomic) double gradientAngleInDegrees;
+@property (nonatomic) float gradientAngle;
+@property (nonatomic) float gradientAngleInDegrees;
 @property (nonatomic, retain) NSArray *gradientStops;
 @property (nonatomic) unsigned int gradientType;
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL isAdvancedGradient;
 @property (nonatomic, retain) TSUColor *lastColor;
-@property (nonatomic) double opacity;
+@property (nonatomic) float opacity;
 @property (readonly) Class superclass;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

@@ -14,7 +14,7 @@
     int  _hdrMode;
     int  _irisMode;
     BOOL  _showingPreview;
-    double  _zoomAmount;
+    float  _zoomAmount;
 }
 
 @property (nonatomic, readonly) CAMMotionController *_motionController;
@@ -33,7 +33,7 @@
 @property (nonatomic) int irisMode;
 @property (getter=isShowingPreview, nonatomic) BOOL showingPreview;
 @property (readonly) Class superclass;
-@property (nonatomic) double zoomAmount;
+@property (nonatomic) float zoomAmount;
 
 - (void).cxx_destruct;
 - (void)_captureOrientationDidChange:(id)arg1;
@@ -47,7 +47,7 @@
 - (void)burstCaptureNumberOfPhotosDidChange:(unsigned int)arg1;
 - (void)burstCaptureWillStart;
 - (void)cameraConnection:(id)arg1 setFlashMode:(int)arg2;
-- (void)cameraConnection:(id)arg1 setFocusPoint:(struct CGPoint { double x1; double x2; })arg2;
+- (void)cameraConnection:(id)arg1 setFocusPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (void)cameraConnection:(id)arg1 setHDRMode:(int)arg2;
 - (void)cameraConnection:(id)arg1 setIrisMode:(int)arg2;
 - (unsigned int)cameraConnection:(id)arg1 setMode:(unsigned int)arg2 interruptCapture:(BOOL)arg3;

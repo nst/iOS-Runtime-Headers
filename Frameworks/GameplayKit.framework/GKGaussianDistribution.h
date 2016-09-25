@@ -3,12 +3,12 @@
  */
 
 @interface GKGaussianDistribution : GKRandomDistribution {
-    double  _deviation;
-    double  _mean;
+    float  _deviation;
+    float  _mean;
 }
 
-@property (nonatomic, readonly) double deviation;
-@property (nonatomic, readonly) double mean;
+@property (nonatomic, readonly) float deviation;
+@property (nonatomic, readonly) float mean;
 
 - (float)deviation;
 - (id)initWithRandomSource:(id)arg1 lowestValue:(int)arg2 highestValue:(int)arg3;

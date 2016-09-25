@@ -5,7 +5,7 @@
 @interface UIPress : NSObject <_UIResponderForwardable> {
     BOOL  _abandonForwardingRecord;
     unsigned int  _clickCount;
-    double  _force;
+    float  _force;
     NSMutableArray * _forwardingRecord;
     unsigned int  _gameControllerComponent;
     NSMutableArray * _gestureRecognizers;
@@ -25,7 +25,7 @@
 @property (nonatomic) unsigned int clickCount;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) double force;
+@property (nonatomic) float force;
 @property (getter=_gameControllerComponent, setter=_setGameControllerComponent:, nonatomic) unsigned int gameControllerComponent;
 @property (nonatomic, copy) NSArray *gestureRecognizers;
 @property (readonly) unsigned int hash;

@@ -14,7 +14,7 @@
     int  _rssi;
     NSString * _sessionUUID;
     int  _smoothedRSSI;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
     unsigned int  _visibleMs;
 }
 
@@ -28,7 +28,7 @@
 @property (nonatomic) int rssi;
 @property (nonatomic, retain) NSString *sessionUUID;
 @property (nonatomic) int smoothedRSSI;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 @property (nonatomic) unsigned int visibleMs;
 
 - (void).cxx_destruct;
@@ -58,10 +58,10 @@
 - (void)setRssi:(int)arg1;
 - (void)setSessionUUID:(id)arg1;
 - (void)setSmoothedRSSI:(int)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (void)setVisibleMs:(unsigned int)arg1;
 - (int)smoothedRSSI;
-- (unsigned int)timestamp;
+- (unsigned long long)timestamp;
 - (unsigned int)visibleMs;
 - (void)writeTo:(id)arg1;
 

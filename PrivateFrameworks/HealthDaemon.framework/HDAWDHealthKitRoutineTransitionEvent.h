@@ -3,7 +3,7 @@
  */
 
 @interface HDAWDHealthKitRoutineTransitionEvent : PBCodable <NSCopying> {
-    int  _endDate;
+    long long  _endDate;
     HDAWDHealthKitRoutineLocation * _from;
     struct { 
         unsigned int endDate : 1; 
@@ -12,12 +12,12 @@
         unsigned int mode : 1; 
     }  _has;
     int  _mode;
-    int  _startDate;
-    unsigned int  _timestamp;
+    long long  _startDate;
+    unsigned long long  _timestamp;
     HDAWDHealthKitRoutineLocation * _to;
 }
 
-@property (nonatomic) int endDate;
+@property (nonatomic) long long endDate;
 @property (nonatomic, retain) HDAWDHealthKitRoutineLocation *from;
 @property (nonatomic) BOOL hasEndDate;
 @property (nonatomic, readonly) BOOL hasFrom;
@@ -26,8 +26,8 @@
 @property (nonatomic) BOOL hasTimestamp;
 @property (nonatomic, readonly) BOOL hasTo;
 @property (nonatomic) int mode;
-@property (nonatomic) int startDate;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) long long startDate;
+@property (nonatomic) unsigned long long timestamp;
 @property (nonatomic, retain) HDAWDHealthKitRoutineLocation *to;
 
 - (void).cxx_destruct;
@@ -36,7 +36,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (int)endDate;
+- (long long)endDate;
 - (id)from;
 - (BOOL)hasEndDate;
 - (BOOL)hasFrom;
@@ -50,18 +50,18 @@
 - (int)mode;
 - (id)modeAsString:(int)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (void)setEndDate:(int)arg1;
+- (void)setEndDate:(long long)arg1;
 - (void)setFrom:(id)arg1;
 - (void)setHasEndDate:(BOOL)arg1;
 - (void)setHasMode:(BOOL)arg1;
 - (void)setHasStartDate:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
 - (void)setMode:(int)arg1;
-- (void)setStartDate:(int)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
+- (void)setStartDate:(long long)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (void)setTo:(id)arg1;
-- (int)startDate;
-- (unsigned int)timestamp;
+- (long long)startDate;
+- (unsigned long long)timestamp;
 - (id)to;
 - (void)writeTo:(id)arg1;
 

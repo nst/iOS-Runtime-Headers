@@ -5,9 +5,9 @@
 @interface FigCoreMotionDelegate : NSObject {
     int  accelRingIndex;
     double  accelRingTime;
-    double  accelRingX;
-    double  accelRingY;
-    double  accelRingZ;
+    float  accelRingX;
+    float  accelRingY;
+    float  accelRingZ;
     BOOL  computingPosition;
     BOOL  copyingAllData;
     struct { 
@@ -22,16 +22,16 @@
     double  dStartOfLogging;
     struct OpaqueFigSemaphore { } * dataSemaphore;
     struct { 
-        double x; 
-        double y; 
-        double z; 
+        float x; 
+        float y; 
+        float z; 
     }  fusedRingAccel;
     BOOL  fusedRingDoingBiasEstimation;
     int  fusedRingIndex;
     struct { 
-        double x; 
-        double y; 
-        double z; 
+        float x; 
+        float y; 
+        float z; 
     }  fusedRingPosition;
     struct { 
         double w; 
@@ -49,9 +49,9 @@
     CMMotionManager * motionManager;
     struct { 
         double timestamp; 
-        double x; 
-        double y; 
-        double z; 
+        float x; 
+        float y; 
+        float z; 
     }  position;
     struct { 
         double w; 
@@ -66,9 +66,9 @@
     double  timestampLatency;
     struct { 
         double timestamp; 
-        double x; 
-        double y; 
-        double z; 
+        float x; 
+        float y; 
+        float z; 
     }  velocity;
 }
 
@@ -76,12 +76,12 @@
 - (id)copyFusedMotionData:(double)arg1 endTime:(double)arg2 timeoutValue:(double)arg3 errOut:(int*)arg4;
 - (id)copyNewFusedMotionData;
 - (void)dealloc;
-- (void)didUpdateAcceleration:(struct { double x1; double x2; double x3; })arg1 time:(double)arg2;
-- (void)didUpdateFusedMotionWithDeviceMotion:(struct { struct { double x_1_1_1; double x_1_1_2; double x_1_1_3; double x_1_1_4; } x1; struct { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; struct { double x_3_1_1; double x_3_1_2; double x_3_1_3; } x3; struct { double x_4_1_1; double x_4_1_2; double x_4_1_3; } x4; int x5; bool x6; bool x7; bool x8; })arg1 time:(double)arg2 ifsync:(BOOL)arg3;
-- (void)didUpdateGravity:(struct { double x1; double x2; double x3; })arg1 time:(double)arg2;
-- (void)didUpdatePositionWithAcceleration:(struct { double x1; double x2; double x3; }*)arg1 forTimeStamp:(double)arg2;
+- (void)didUpdateAcceleration:(struct { float x1; float x2; float x3; })arg1 time:(double)arg2;
+- (void)didUpdateFusedMotionWithDeviceMotion:(struct { struct { double x_1_1_1; double x_1_1_2; double x_1_1_3; double x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; struct { float x_4_1_1; float x_4_1_2; float x_4_1_3; } x4; int x5; bool x6; bool x7; bool x8; })arg1 time:(double)arg2 ifsync:(BOOL)arg3;
+- (void)didUpdateGravity:(struct { float x1; float x2; float x3; })arg1 time:(double)arg2;
+- (void)didUpdatePositionWithAcceleration:(struct { float x1; float x2; float x3; }*)arg1 forTimeStamp:(double)arg2;
 - (void)didUpdatePositionWithTimeStamp:(double)arg1;
-- (void)didUpdateVelocityWithAcceleration:(struct { double x1; double x2; double x3; }*)arg1 forTimeStamp:(double)arg2;
+- (void)didUpdateVelocityWithAcceleration:(struct { float x1; float x2; float x3; }*)arg1 forTimeStamp:(double)arg2;
 - (void)getCurrentAttitudeRoll:(double*)arg1 pitch:(double*)arg2 yaw:(double*)arg3;
 - (void)getCurrentDeltaAttitudeRoll:(double*)arg1 pitch:(double*)arg2 yaw:(double*)arg3;
 - (void)getCurrentDeltaQuaternion:(struct { double x1; double x2; double x3; double x4; }*)arg1;

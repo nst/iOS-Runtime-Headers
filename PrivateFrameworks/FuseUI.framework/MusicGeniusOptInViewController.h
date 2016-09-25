@@ -12,7 +12,7 @@
     UIButton * _geniusLearnMoreButton;
     UILabel * _geniusLegalLabel;
     UIButton * _geniusOptInButton;
-    int  _geniusTermsVersion;
+    long long  _geniusTermsVersion;
     BOOL  _hasUpdateGeniusCompletionBlock;
     MPUIndeterminateProgressIndicatorView * _indeterminateProgressIndicator;
     NSURL * _learnMoreURL;

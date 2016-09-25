@@ -22,19 +22,19 @@
     BOOL  _lastNotifiedIsCollapsed;
     int  _lastNotifiedMode;
     BOOL  _lastShouldAllowChange;
-    double  _lastUserInitiatedPrimaryWidth;
-    double  _maximumPrimaryColumnWidth;
-    double  _minimumPrimaryColumnWidth;
+    float  _lastUserInitiatedPrimaryWidth;
+    float  _maximumPrimaryColumnWidth;
+    float  _minimumPrimaryColumnWidth;
     int  _overrideReportedDisplayMode;
     UIPanelController * _panelController;
     UIResponder * _postTransitionResponder;
     int  _preferredDisplayMode;
-    double  _preferredPrimaryColumnWidthFraction;
+    float  _preferredPrimaryColumnWidthFraction;
     double  _presentationGestureDirection;
     BOOL  _presentsWithGesture;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _suspendedSize;
     int  _suspendedState;
     UISlidingBarStateRequest * _suspendedStateRequest;
@@ -42,8 +42,8 @@
     UISplitViewController * _svc;
     int  _transitioningToOrientation;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _transitioningToSize;
     UITraitCollection * _transitioningToTraitCollection;
 }
@@ -59,18 +59,18 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <UISplitViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) double gutterWidth;
+@property (nonatomic) float gutterWidth;
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL hidesMasterViewInPortrait;
 @property (nonatomic, retain) UIViewController *leadingViewController;
 @property (nonatomic, retain) UIViewController *mainViewController;
-@property (nonatomic) double masterColumnWidth;
-@property (nonatomic) double maximumPrimaryColumnWidth;
-@property (nonatomic) double minimumPrimaryColumnWidth;
+@property (nonatomic) float masterColumnWidth;
+@property (nonatomic) float maximumPrimaryColumnWidth;
+@property (nonatomic) float minimumPrimaryColumnWidth;
 @property (nonatomic, retain) UIPanelController *panelController;
 @property (nonatomic, readonly) NSArray *possibleStates;
 @property (nonatomic) int preferredDisplayMode;
-@property (nonatomic) double preferredPrimaryColumnWidthFraction;
+@property (nonatomic) float preferredPrimaryColumnWidthFraction;
 @property (nonatomic) BOOL presentsWithGesture;
 @property (nonatomic, copy) UISlidingBarStateRequest *stateRequest;
 @property (readonly) Class superclass;
@@ -86,7 +86,7 @@
 - (id)_childViewControllersToSendViewWillTransitionToSize;
 - (void)_commonInit;
 - (float)_contentMarginForChildViewController:(id)arg1;
-- (struct CGSize { double x1; double x2; })_contentSizeForChildViewController:(id)arg1 inPopoverController:(id)arg2;
+- (struct CGSize { float x1; float x2; })_contentSizeForChildViewController:(id)arg1 inPopoverController:(id)arg2;
 - (void)_descendantWillPresentViewController:(id)arg1 modalSourceViewController:(id)arg2 presentationController:(id)arg3 animated:(BOOL)arg4;
 - (void)_didChangeToFirstResponder:(id)arg1;
 - (void)_didEndSnapshotSession;
@@ -95,16 +95,16 @@
 - (id)_displayModeButtonItemTitle;
 - (void)_displayModeButtonItemWasAddedForFirstTime;
 - (int)_displayModeForState:(id)arg1;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_edgeInsetsForChildViewController:(id)arg1 insetsAreAbsolute:(BOOL*)arg2;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_edgeInsetsForChildViewController:(id)arg1 insetsAreAbsolute:(BOOL*)arg2;
 - (int)_effectiveTargetDisplayMode;
 - (int)_effectiveTargetDisplayModeForDisplayMode:(int)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameForChildContentContainer:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForChildContentContainer:(id)arg1;
 - (id)_fullScreenButtonImage;
 - (int)_fullScreenStateForOrientation:(int)arg1 viewWidth:(float)arg2;
 - (BOOL)_gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
 - (BOOL)_gestureRecognizer:(id)arg1 shouldRequireFailureOfGestureRecognizer:(id)arg2;
 - (BOOL)_gestureRecognizerShouldBegin:(id)arg1;
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; int x7; }*)arg1;
+- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; float x6; int x7; }*)arg1;
 - (BOOL)_handlesCounterRotationForPresentation;
 - (BOOL)_hasPreferredInterfaceOrientationForPresentation;
 - (BOOL)_iPadShouldUseOverlayInCurrentEnvironment;
@@ -206,7 +206,7 @@
 - (BOOL)shouldUpdateFocusInContext:(id)arg1;
 - (void)showDetailViewController:(id)arg1 sender:(id)arg2;
 - (void)showViewController:(id)arg1 sender:(id)arg2;
-- (struct CGSize { double x1; double x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { double x1; double x2; })arg2;
+- (struct CGSize { float x1; float x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { float x1; float x2; })arg2;
 - (id)stateRequest;
 - (unsigned int)supportedInterfaceOrientations;
 - (void)toggleMasterVisible:(id)arg1;
@@ -220,7 +220,7 @@
 - (void)viewDidLayoutSubviews;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;

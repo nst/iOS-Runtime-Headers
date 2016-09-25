@@ -5,15 +5,15 @@
 @interface _UIKBRTTouchHistory : NSObject <NSCopying> {
     NSMutableArray * _history;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _historyOffset;
     BOOL  _isLeftHand;
     double  _lastDecayTime;
 }
 
 @property (nonatomic, readonly) BOOL hasHistory;
-@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } historyOffset;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } historyOffset;
 @property (nonatomic) BOOL isLeftHand;
 @property (nonatomic, readonly) double lastTime;
 
@@ -22,14 +22,14 @@
 - (void)_sortHistory;
 - (void)_updateOffset;
 - (void)addInfo:(id)arg1;
-- (void)adjustHistoryOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (void)adjustHistoryOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)clearHistory;
 - (BOOL)containsInfo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)decayHistory;
 - (BOOL)hasHistory;
-- (struct CGPoint { double x1; double x2; })historyOffset;
+- (struct CGPoint { float x1; float x2; })historyOffset;
 - (id)initWithIsLeftHand:(BOOL)arg1;
 - (BOOL)isLeftHand;
 - (double)lastTime;

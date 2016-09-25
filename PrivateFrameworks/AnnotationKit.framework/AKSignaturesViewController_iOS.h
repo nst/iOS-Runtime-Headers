@@ -24,7 +24,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSArray *editingLeftBarItems;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly) double idealHeight;
+@property (nonatomic, readonly) float idealHeight;
 @property (nonatomic, retain) NSArray *leftBarItems;
 @property (nonatomic, retain) UINavigationBar *navBar;
 @property (nonatomic) BOOL presentedInAlert;
@@ -50,7 +50,7 @@
 - (id)leftBarItems;
 - (id)navBar;
 - (int)positionForBar:(id)arg1;
-- (struct CGSize { double x1; double x2; })preferredContentSize;
+- (struct CGSize { float x1; float x2; })preferredContentSize;
 - (BOOL)presentedInAlert;
 - (id)rightBarItems;
 - (void)setAllowsEdits:(BOOL)arg1;

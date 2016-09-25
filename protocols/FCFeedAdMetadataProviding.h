@@ -6,7 +6,7 @@
 @required
 
 - (NSArray *)iAdCategories;
-- (int)iAdContentProvider;
+- (long long)iAdContentProvider;
 - (NSString *)iAdFeedID;
 - (NSString *)iAdIdentifier;
 - (NSArray *)iAdKeywords;

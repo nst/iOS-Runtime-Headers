@@ -4,19 +4,19 @@
 
 @interface NRConnectivitySubscriber : NSObject {
     BOOL  _connected;
-    unsigned int  _dropoutCounter;
+    unsigned long long  _dropoutCounter;
 }
 
 @property (nonatomic) BOOL connected;
-@property (nonatomic) unsigned int dropoutCounter;
+@property (nonatomic) unsigned long long dropoutCounter;
 
-+ (BOOL)getDropoutCounter:(unsigned int*)arg1;
++ (BOOL)getDropoutCounter:(unsigned long long*)arg1;
 
 - (void)_readConnectivityStatus;
 - (BOOL)connected;
-- (unsigned int)dropoutCounter;
+- (unsigned long long)dropoutCounter;
 - (id)init;
 - (void)setConnected:(BOOL)arg1;
-- (void)setDropoutCounter:(unsigned int)arg1;
+- (void)setDropoutCounter:(unsigned long long)arg1;
 
 @end

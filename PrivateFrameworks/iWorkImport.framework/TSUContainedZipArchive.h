@@ -10,7 +10,7 @@
 + (id)zipArchiveFromEntry:(id)arg1 zipArchive:(id)arg2 options:(unsigned int)arg3 error:(id*)arg4;
 
 - (void).cxx_destruct;
-- (unsigned int)archiveLength;
+- (unsigned long long)archiveLength;
 - (id)initWithEntry:(id)arg1 zipArchive:(id)arg2 options:(unsigned int)arg3;
 - (BOOL)isValid;
 - (id)newArchiveReadChannel;

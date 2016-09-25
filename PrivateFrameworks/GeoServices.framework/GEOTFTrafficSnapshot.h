@@ -5,8 +5,8 @@
 @interface GEOTFTrafficSnapshot : PBCodable <NSCopying> {
     NSMutableArray * _compactSpeeds;
     NSString * _feedId;
-    unsigned int  _feedPublishTime;
-    int  _feedUpdateTime;
+    unsigned long long  _feedPublishTime;
+    long long  _feedUpdateTime;
     struct { 
         unsigned int feedPublishTime : 1; 
         unsigned int feedUpdateTime : 1; 
@@ -20,8 +20,8 @@
 
 @property (nonatomic, retain) NSMutableArray *compactSpeeds;
 @property (nonatomic, retain) NSString *feedId;
-@property (nonatomic) unsigned int feedPublishTime;
-@property (nonatomic) int feedUpdateTime;
+@property (nonatomic) unsigned long long feedPublishTime;
+@property (nonatomic) long long feedUpdateTime;
 @property (nonatomic, readonly) BOOL hasFeedId;
 @property (nonatomic) BOOL hasFeedPublishTime;
 @property (nonatomic) BOOL hasFeedUpdateTime;
@@ -53,8 +53,8 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)feedId;
-- (unsigned int)feedPublishTime;
-- (int)feedUpdateTime;
+- (unsigned long long)feedPublishTime;
+- (long long)feedUpdateTime;
 - (BOOL)hasFeedId;
 - (BOOL)hasFeedPublishTime;
 - (BOOL)hasFeedUpdateTime;
@@ -71,8 +71,8 @@
 - (unsigned int)regionsCount;
 - (void)setCompactSpeeds:(id)arg1;
 - (void)setFeedId:(id)arg1;
-- (void)setFeedPublishTime:(unsigned int)arg1;
-- (void)setFeedUpdateTime:(int)arg1;
+- (void)setFeedPublishTime:(unsigned long long)arg1;
+- (void)setFeedUpdateTime:(long long)arg1;
 - (void)setHasFeedPublishTime:(BOOL)arg1;
 - (void)setHasFeedUpdateTime:(BOOL)arg1;
 - (void)setHasTrafficVersion:(BOOL)arg1;

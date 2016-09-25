@@ -14,7 +14,7 @@
 
 - (void)dealloc;
 - (id)initWithTask:(unsigned int)arg1;
-- (id)sourceInfoForAddress:(unsigned int)arg1;
-- (id)symbolForAddress:(unsigned int)arg1;
+- (id)sourceInfoForAddress:(unsigned long long)arg1;
+- (id)symbolForAddress:(unsigned long long)arg1;
 
 @end

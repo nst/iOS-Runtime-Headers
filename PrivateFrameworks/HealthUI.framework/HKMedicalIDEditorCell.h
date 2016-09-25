@@ -7,7 +7,7 @@
     UIView * _horizontalSeparatorView;
     HKCaretOptionalTextField * _inputTextField;
     UILabel * _labelLabel;
-    double  _minimumLabelWidth;
+    float  _minimumLabelWidth;
     UIView * _verticalSeparatorView;
 }
 
@@ -18,7 +18,7 @@
 @property (nonatomic, readonly) HKCaretOptionalTextField *inputTextField;
 @property (nonatomic, retain) NSString *label;
 @property (nonatomic, readonly) UILabel *labelLabel;
-@property (nonatomic) double minimumLabelWidth;
+@property (nonatomic) float minimumLabelWidth;
 @property (readonly) Class superclass;
 
 + (BOOL)showsLabelAndValue;

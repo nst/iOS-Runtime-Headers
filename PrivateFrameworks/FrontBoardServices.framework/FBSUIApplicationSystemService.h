@@ -10,7 +10,7 @@
 @property (nonatomic, readonly) double backgroundTimeRemaining;
 @property (nonatomic) int badgeNumber;
 @property (nonatomic, copy) NSString *badgeString;
-@property (nonatomic) double currentBacklightLevel;
+@property (nonatomic) float currentBacklightLevel;
 @property (nonatomic) <FBSUIApplicationSystemServiceDelegate> *delegate;
 
 - (id)_getBadgeValue;

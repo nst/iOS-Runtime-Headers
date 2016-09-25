@@ -5,29 +5,29 @@
 @interface UIWebPaginationInfo : NSObject {
     NSObject<WebDocumentView> * _documentView;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _layoutSize;
     NSArray * _pageRects;
-    double  _scaleFactor;
+    float  _scaleFactor;
     UIWebDocumentView * _webDocumentView;
 }
 
-@property (nonatomic, readonly) double lastPageHeight;
+@property (nonatomic, readonly) float lastPageHeight;
 @property (nonatomic, readonly) unsigned int pageCount;
 @property (nonatomic, retain) UIWebDocumentView *webDocumentView;
 
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)documentView;
-- (id)initWithDocumentView:(id)arg1 scaleFactor:(float)arg2 layoutSize:(struct CGSize { double x1; double x2; })arg3 pageRects:(id)arg4;
+- (id)initWithDocumentView:(id)arg1 scaleFactor:(float)arg2 layoutSize:(struct CGSize { float x1; float x2; })arg3 pageRects:(id)arg4;
 - (float)lastPageHeight;
-- (struct CGSize { double x1; double x2; })layoutSize;
+- (struct CGSize { float x1; float x2; })layoutSize;
 - (unsigned int)pageCount;
 - (id)pageRects;
 - (float)scaleFactor;
 - (void)setWebDocumentView:(id)arg1;
-- (struct CGSize { double x1; double x2; })sizeForPageAtIndex:(int)arg1;
+- (struct CGSize { float x1; float x2; })sizeForPageAtIndex:(int)arg1;
 - (id)webDocumentView;
 
 @end

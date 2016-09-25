@@ -6,12 +6,12 @@
     NSDate * _expirationDate;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _rawCropRect;
     UIImage * _rawImage;
@@ -19,15 +19,15 @@
 }
 
 @property (nonatomic, readonly) NSDate *expirationDate;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } rawCropRect;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } rawCropRect;
 @property (nonatomic, readonly) UIImage *rawImage;
 @property (nonatomic, readonly) NSString *serverCacheTag;
 
-+ (id)entryWithRawImage:(id)arg1 rawCropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 serverCacheTag:(id)arg3;
++ (id)entryWithRawImage:(id)arg1 rawCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 serverCacheTag:(id)arg3;
 
 - (void).cxx_destruct;
 - (id)expirationDate;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rawCropRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rawCropRect;
 - (id)rawImage;
 - (id)serverCacheTag;
 - (BOOL)valid;

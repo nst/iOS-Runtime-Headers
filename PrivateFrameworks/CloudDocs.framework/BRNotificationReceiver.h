@@ -11,7 +11,7 @@
     BOOL  _isInvalidated;
     BOOL  _isNetworkReachable;
     NSMutableDictionary * _itemInTransferByID;
-    unsigned int  _lastBatchTime;
+    unsigned long long  _lastBatchTime;
     int  _networkReachabilityToken;
     BRNotificationQueue * _notifs;
     NSMutableDictionary * _progressObserverByID;

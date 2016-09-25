@@ -30,8 +30,8 @@
     BOOL  _needsDidDisappear;
     UITraitCollection * _overrideTraitCollection;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _preferredContentSize;
     UIView * _presentationView;
     UIViewController * _presentedViewController;
@@ -39,12 +39,12 @@
     UIView * _snapshotOverlayView;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _sourceRect;
     UIView * _sourceView;
@@ -57,7 +57,7 @@
 @property (getter=_currentPresentationSuperview, setter=_setCurrentPresentationSuperview:, nonatomic, retain) UIView *_currentPresentationSuperview;
 @property (nonatomic, copy) id /* block */ _currentTransitionDidComplete;
 @property (nonatomic, copy) id /* block */ _fromViewForCurrentTransition;
-@property (getter=_preferredContentSize, setter=_setPreferredContentSize:, nonatomic) struct CGSize { double x1; double x2; } _preferredContentSize;
+@property (getter=_preferredContentSize, setter=_setPreferredContentSize:, nonatomic) struct CGSize { float x1; float x2; } _preferredContentSize;
 @property (nonatomic, copy) id /* block */ _toViewForCurrentTransition;
 @property (nonatomic, copy) id /* block */ _transitionViewForCurrentTransition;
 @property (nonatomic, readonly) int adaptivePresentationStyle;
@@ -72,11 +72,11 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <UIAdaptivePresentationControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } frameOfPresentedViewInContainerView;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } frameOfPresentedViewInContainerView;
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL isCurrentStateCancelled;
 @property (nonatomic, copy) UITraitCollection *overrideTraitCollection;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } preferredContentSize;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } preferredContentSize;
 @property (nonatomic, readonly, copy) NSArray *preferredFocusEnvironments;
 @property (nonatomic, readonly) UIView *preferredFocusedView;
 @property (nonatomic, readonly) int presentationStyle;
@@ -86,13 +86,13 @@
 @property (setter=_setPresentingViewController:, nonatomic, retain) UIViewController *presentingViewController;
 @property (nonatomic, readonly) BOOL shouldPresentInFullscreen;
 @property (nonatomic, readonly) BOOL shouldRemovePresentersView;
-@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } sourceRect;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } sourceRect;
 @property (nonatomic, retain) UIView *sourceView;
 @property (nonatomic) int state;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) UITraitCollection *traitCollection;
 
-+ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_defaultBaseContentInsetsForFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inView:(id)arg2;
++ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_defaultBaseContentInsetsForFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2;
 + (BOOL)_preventsAppearanceProxyCustomization;
 
 - (void).cxx_destruct;
@@ -104,7 +104,7 @@
 - (id)_animatorForContainmentTransition;
 - (id)_appearanceContainer;
 - (Class)_appearanceGuideClass;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_baseContentInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_baseContentInsets;
 - (void)_beginOcclusionIfNecessary:(BOOL)arg1;
 - (BOOL)_changedPresentingViewControllerDuringAdaptation;
 - (id)_childPresentationController;
@@ -125,11 +125,11 @@
 - (void)_dismissWithAnimationController:(id)arg1 interactionController:(id)arg2 target:(id)arg3 didEndSelector:(SEL)arg4;
 - (void)_enableOcclusion:(BOOL)arg1;
 - (id)_firstCurrentContextChildInWindow;
-- (struct CGSize { double x1; double x2; })_flipSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })_flipSize:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)_forcesPreferredAnimationControllers;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameForChildContentContainer:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameForTransitionViewInPresentationSuperview:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameOfPresentedViewControllerViewInSuperview;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForChildContentContainer:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForTransitionViewInPresentationSuperview:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameOfPresentedViewControllerViewInSuperview;
 - (id /* block */)_fromViewForCurrentTransition;
 - (id)_fullscreenPresentationSuperview;
 - (BOOL)_gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
@@ -150,7 +150,7 @@
 - (void)_performBackGesture:(id)arg1;
 - (id)_preferredAnimationControllerForDismissal;
 - (id)_preferredAnimationControllerForPresentation;
-- (struct CGSize { double x1; double x2; })_preferredContentSize;
+- (struct CGSize { float x1; float x2; })_preferredContentSize;
 - (void)_presentWithAnimationController:(id)arg1 interactionController:(id)arg2 target:(id)arg3 didEndSelector:(SEL)arg4;
 - (id)_presentationControllerForTraitCollection:(id)arg1;
 - (BOOL)_presentationPotentiallyUnderlapsStatusBar;
@@ -168,7 +168,7 @@
 - (void)_setCurrentInteractionController:(id)arg1;
 - (void)_setCurrentPresentationSuperview:(id)arg1;
 - (void)_setCurrentTransitionController:(id)arg1;
-- (void)_setPreferredContentSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)_setPreferredContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_setPresentationView:(id)arg1;
 - (void)_setPresentedViewController:(id)arg1;
 - (void)_setPresentingViewController:(id)arg1;
@@ -215,12 +215,12 @@
 - (void)dismissalTransitionWillBegin;
 - (BOOL)dismissed;
 - (BOOL)dismissing;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameOfPresentedViewInContainerView;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameOfPresentedViewInContainerView;
 - (id)init;
 - (id)initWithPresentedViewController:(id)arg1 presentingViewController:(id)arg2;
 - (BOOL)isCurrentStateCancelled;
 - (id)overrideTraitCollection;
-- (struct CGSize { double x1; double x2; })preferredContentSize;
+- (struct CGSize { float x1; float x2; })preferredContentSize;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
 - (id)preferredFocusEnvironments;
 - (id)preferredFocusedView;
@@ -239,7 +239,7 @@
 - (void)setIsCurrentStateCancelled:(BOOL)arg1;
 - (void)setNeedsFocusUpdate;
 - (void)setOverrideTraitCollection:(id)arg1;
-- (void)setSourceRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setSourceRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setSourceView:(id)arg1;
 - (void)setState:(int)arg1;
 - (void)set_computeToEndFrameForCurrentTransition:(id /* block */)arg1;
@@ -250,8 +250,8 @@
 - (BOOL)shouldPresentInFullscreen;
 - (BOOL)shouldRemovePresentersView;
 - (BOOL)shouldUpdateFocusInContext:(id)arg1;
-- (struct CGSize { double x1; double x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { double x1; double x2; })arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })sourceRect;
+- (struct CGSize { float x1; float x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { float x1; float x2; })arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })sourceRect;
 - (id)sourceView;
 - (int)state;
 - (void)systemLayoutFittingSizeDidChangeForChildContentContainer:(id)arg1;
@@ -260,7 +260,7 @@
 - (void)transitionDidFinish:(BOOL)arg1;
 - (void)transitionDidStart;
 - (void)updateFocusIfNeeded;
-- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
 
 @end

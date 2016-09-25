@@ -4,7 +4,7 @@
 
 @interface UISearchController : UIViewController <NSCoding, UIViewControllerAnimatedTransitioning, UIViewControllerPresenting, UIViewControllerTransitioningDelegate, _UIScrollNotification> {
     int  __previousSearchBarPosition;
-    double  __resultsContentScrollViewPresentationOffset;
+    float  __resultsContentScrollViewPresentationOffset;
     BOOL  __showResultsForEmptySearch;
     <UIViewControllerAnimatedTransitioning> * _animator;
     UITapGestureRecognizer * _backButtonDismissGestureRecognizer;
@@ -29,7 +29,7 @@
 
 @property (nonatomic, readonly) int _barPresentationStyle;
 @property (nonatomic) int _previousSearchBarPosition;
-@property (nonatomic) double _resultsContentScrollViewPresentationOffset;
+@property (nonatomic) float _resultsContentScrollViewPresentationOffset;
 @property (nonatomic, retain) UIView *_resultsControllerViewContainer;
 @property (nonatomic, readonly) BOOL _searchbarWasTableHeaderView;
 @property (setter=_setShowResultsForEmptySearch:, nonatomic) BOOL _showResultsForEmptySearch;
@@ -79,7 +79,7 @@
 - (void)_presentingViewControllerWillChange:(id)arg1;
 - (int)_previousSearchBarPosition;
 - (BOOL)_requiresCustomPresentationController;
-- (void)_resizeResultsControllerWithDelta:(struct CGSize { double x1; double x2; })arg1;
+- (void)_resizeResultsControllerWithDelta:(struct CGSize { float x1; float x2; })arg1;
 - (float)_resultsContentScrollViewPresentationOffset;
 - (id)_resultsControllerViewContainer;
 - (BOOL)_resultsControllerWillLayoutVisibleUnderContainerView;
@@ -101,9 +101,9 @@
 - (void)_updateBarPresentationStyleForPresentingViewController:(id)arg1;
 - (void)_updateFocusFromDoneButton:(id)arg1;
 - (void)_updateSearchBarMaskIfNecessary;
-- (void)_updateSearchResultsContentScrollViewWithDelta:(struct CGSize { double x1; double x2; })arg1;
-- (void)_updateSearchResultsControllerWithDelta:(struct CGSize { double x1; double x2; })arg1;
-- (void)_updateSearchResultsPositionWithDelta:(struct CGSize { double x1; double x2; })arg1;
+- (void)_updateSearchResultsContentScrollViewWithDelta:(struct CGSize { float x1; float x2; })arg1;
+- (void)_updateSearchResultsControllerWithDelta:(struct CGSize { float x1; float x2; })arg1;
+- (void)_updateSearchResultsPositionWithDelta:(struct CGSize { float x1; float x2; })arg1;
 - (void)_updateTableHeaderBackgroundViewInTableView:(id)arg1 amountScrolledUnder:(float)arg2;
 - (void)_updateVisibilityOfSearchResultsForSearchBar:(id)arg1;
 - (void)_watchScrollView:(id)arg1 forScrolling:(BOOL)arg2;
@@ -142,7 +142,7 @@
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (void)willUpdateFocusToView:(id)arg1;
 
 @end

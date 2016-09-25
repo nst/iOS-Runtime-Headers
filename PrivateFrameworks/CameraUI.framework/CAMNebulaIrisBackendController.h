@@ -63,7 +63,7 @@
 - (void)_dispatchToMainQueueWithBlock:(id /* block */)arg1;
 - (void)_dispatchToQueue:(id)arg1 afterDelay:(double)arg2 withBlock:(id /* block */)arg3;
 - (void)_dispatchToQueue:(id)arg1 withBlock:(id /* block */)arg2;
-- (BOOL)_extractIrisPropertiesFromAVAsset:(id)arg1 stillImageDisplayTime:(struct { int x1; int x2; unsigned int x3; int x4; }*)arg2 irisIdentifier:(id*)arg3;
+- (BOOL)_extractIrisPropertiesFromAVAsset:(id)arg1 stillImageDisplayTime:(struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg2 irisIdentifier:(id*)arg3;
 - (id)_keepAliveController;
 - (id)_linkWorkQueue;
 - (void)_linkWorkQueue_linkAndPersistSelfContainedVideo:(id)arg1;

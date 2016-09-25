@@ -13,7 +13,7 @@
     int  _protocol;
     int  _provider;
     NSString * _serverInfo;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic, readonly) BOOL hasHostname;
@@ -27,7 +27,7 @@
 @property (nonatomic) int protocol;
 @property (nonatomic) int provider;
 @property (nonatomic, retain) NSString *serverInfo;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void).cxx_destruct;
 - (int)StringAsProtocol:(id)arg1;
@@ -61,8 +61,8 @@
 - (void)setProtocol:(int)arg1;
 - (void)setProvider:(int)arg1;
 - (void)setServerInfo:(id)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
-- (unsigned int)timestamp;
+- (void)setTimestamp:(unsigned long long)arg1;
+- (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -12,7 +12,7 @@
     unsigned long  _imagePixWidth;
     NSString * _keywords;
     NSString * _modificationDate;
-    unsigned int  _objectCompressedSize;
+    unsigned long long  _objectCompressedSize;
     unsigned short  _objectFormat;
     unsigned long  _objectHandle;
     unsigned long  _parentObject;
@@ -44,7 +44,7 @@
 - (id)keywords;
 - (id)modificationDate;
 - (unsigned long)objectCompressedSize;
-- (unsigned int)objectCompressedSize64;
+- (unsigned long long)objectCompressedSize64;
 - (unsigned short)objectFormat;
 - (unsigned long)objectHandle;
 - (unsigned long)parentObject;
@@ -59,7 +59,7 @@
 - (void)setImagePixWidth:(unsigned long)arg1;
 - (void)setKeywords:(id)arg1;
 - (void)setModificationDate:(id)arg1;
-- (void)setObjectCompressedSize:(unsigned int)arg1;
+- (void)setObjectCompressedSize:(unsigned long long)arg1;
 - (void)setObjectFormat:(unsigned short)arg1;
 - (void)setObjectHandle:(unsigned long)arg1;
 - (void)setParentObject:(unsigned long)arg1;

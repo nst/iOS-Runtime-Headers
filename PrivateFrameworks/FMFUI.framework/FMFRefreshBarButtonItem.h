@@ -33,7 +33,7 @@
 - (id)locations;
 - (void)removeLocationForHandle:(id)arg1;
 - (void)setAiv:(id)arg1;
-- (void)setImageInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setImageInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setImageView:(id)arg1;
 - (void)setLocateNotification:(id)arg1;
 - (void)setLocations:(id)arg1;

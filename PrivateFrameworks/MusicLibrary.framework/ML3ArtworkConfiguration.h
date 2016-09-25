@@ -5,13 +5,13 @@
 @interface ML3ArtworkConfiguration : NSObject {
     NSObject<OS_dispatch_queue> * _accessQueue;
     NSDictionary * _artworkConfigurationDictionary;
-    double  _mainScreenScale;
+    float  _mainScreenScale;
     NSMutableDictionary * _supportedSizesCache;
 }
 
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *accessQueue;
 @property (nonatomic, retain) NSDictionary *artworkConfigurationDictionary;
-@property (nonatomic) double mainScreenScale;
+@property (nonatomic) float mainScreenScale;
 @property (nonatomic, retain) NSMutableDictionary *supportedSizesCache;
 
 + (id)systemConfiguration;

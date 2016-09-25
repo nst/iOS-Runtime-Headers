@@ -6,7 +6,7 @@
     BOOL  _allFramesWritten;
     int  _captureOrientation;
     double  _captureTimeInterval;
-    double  _focusLensPosition;
+    float  _focusLensPosition;
     int  _frameIndexStride;
     NSDate * _lastFrameResponseTime;
     int  _nextFrameIndex;
@@ -22,7 +22,7 @@
 @property (nonatomic) int captureOrientation;
 @property (nonatomic, readonly) double captureTimeInterval;
 @property (nonatomic, readonly) int connectionMode;
-@property (nonatomic) double focusLensPosition;
+@property (nonatomic) float focusLensPosition;
 @property (nonatomic, readonly) int frameIndexStride;
 @property (nonatomic, retain) NSDate *lastFrameResponseTime;
 @property (nonatomic, readonly) int nextFrameIndex;

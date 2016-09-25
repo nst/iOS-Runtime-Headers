@@ -16,8 +16,8 @@
 @property (nonatomic) <EKEventEditViewDelegate> *editViewDelegate;
 @property (nonatomic, retain) EKEventEditor *editor;
 @property (nonatomic, retain) UIColor *editorBackgroundColor;
-@property (nonatomic) double editorNavBarLeftContentInset;
-@property (nonatomic) double editorNavBarRightContentInset;
+@property (nonatomic) float editorNavBarLeftContentInset;
+@property (nonatomic) float editorNavBarRightContentInset;
 @property (nonatomic, retain) EKEvent *event;
 @property (nonatomic, retain) EKEventStore *eventStore;
 @property (nonatomic) BOOL scrollToNotes;
@@ -49,7 +49,7 @@
 - (void)handleTapOutside;
 - (BOOL)hasUnsavedChanges;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (struct CGSize { double x1; double x2; })preferredContentSize;
+- (struct CGSize { float x1; float x2; })preferredContentSize;
 - (void)refreshStartAndEndDates;
 - (BOOL)saveWithSpan:(int)arg1 animated:(BOOL)arg2;
 - (BOOL)scrollToNotes;

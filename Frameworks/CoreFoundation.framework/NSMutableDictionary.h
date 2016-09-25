@@ -230,7 +230,7 @@
 - (void)bl_copyObjectFromDictionaryRemoveIfNotPresent:(id)arg1 forKey:(id)arg2;
 - (void)bl_copyObjectsFromDictionary:(id)arg1 forKeys:(id)arg2;
 - (void)bl_copyObjectsFromDictionaryRemoveIfNotPresent:(id)arg1 forKeys:(id)arg2;
-- (void)bl_setAffineTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1 forKey:(id)arg2;
+- (void)bl_setAffineTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 forKey:(id)arg2;
 - (void)bl_setBool:(BOOL)arg1 forKey:(id)arg2;
 - (void)bl_setBoolIfNotPresent:(BOOL)arg1 forKey:(id)arg2;
 - (void)bl_setDouble:(double)arg1 forKey:(id)arg2;
@@ -244,12 +244,12 @@
 - (void)bl_setObject:(id)arg1 forIndex:(int)arg2;
 - (void)bl_setObjectIfNotNil:(id)arg1 forKey:(id)arg2;
 - (void)bl_setObjectIfNotPresent:(id)arg1 forKey:(id)arg2;
-- (void)bl_setPointAsString:(struct CGPoint { double x1; double x2; })arg1 forKey:(id)arg2;
-- (void)bl_setPointAsStringIfNotPresent:(struct CGPoint { double x1; double x2; })arg1 forKey:(id)arg2;
-- (void)bl_setRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forKey:(id)arg2;
-- (void)bl_setRectAsString:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forKey:(id)arg2;
-- (void)bl_setRectAsStringIfNotPresent:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forKey:(id)arg2;
-- (void)bl_setRectIfNotPresent:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forKey:(id)arg2;
+- (void)bl_setPointAsString:(struct CGPoint { float x1; float x2; })arg1 forKey:(id)arg2;
+- (void)bl_setPointAsStringIfNotPresent:(struct CGPoint { float x1; float x2; })arg1 forKey:(id)arg2;
+- (void)bl_setRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forKey:(id)arg2;
+- (void)bl_setRectAsString:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forKey:(id)arg2;
+- (void)bl_setRectAsStringIfNotPresent:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forKey:(id)arg2;
+- (void)bl_setRectIfNotPresent:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forKey:(id)arg2;
 
 // Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
 
@@ -266,14 +266,14 @@
 
 // Image: /System/Library/PrivateFrameworks/UserNotificationsServer.framework/UserNotificationsServer
 
-- (void)uns_safeSetCGRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forKey:(id)arg2;
-- (void)uns_safeSetCMTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1 forKey:(id)arg2;
+- (void)uns_safeSetCGRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forKey:(id)arg2;
+- (void)uns_safeSetCMTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 forKey:(id)arg2;
 - (void)uns_safeSetNonEmptyArray:(id)arg1 forKey:(id)arg2;
 - (void)uns_safeSetNonEmptyDictionary:(id)arg1 forKey:(id)arg2;
 - (void)uns_safeSetNonEmptyString:(id)arg1 forKey:(id)arg2;
 - (void)uns_safeSetObject:(id)arg1 forKey:(id)arg2;
-- (void)uns_setCGRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forKey:(id)arg2;
-- (void)uns_setCMTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1 forKey:(id)arg2;
+- (void)uns_setCGRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forKey:(id)arg2;
+- (void)uns_setCMTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 forKey:(id)arg2;
 
 // Image: /System/Library/PrivateFrameworks/VideoProcessing.framework/VideoProcessing
 
@@ -289,8 +289,8 @@
 - (void)vcp_setFlags:(unsigned int)arg1;
 - (void)vcp_setQuality:(double)arg1;
 - (void)vcp_setResults:(id)arg1;
-- (void)vcp_setSyncPoint:(const struct { int x1; int x2; unsigned int x3; int x4; }*)arg1;
-- (void)vcp_setTimerange:(struct { struct { int x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; int x_1_1_4; } x1; struct { int x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; int x_2_1_4; } x2; })arg1;
+- (void)vcp_setSyncPoint:(const struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg1;
+- (void)vcp_setTimerange:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg1;
 - (void)vcp_setTypes:(unsigned int)arg1;
 - (void)vcp_setVersion:(int)arg1;
 
@@ -300,9 +300,9 @@
 - (void)_webkit_setBool:(BOOL)arg1 forKey:(id)arg2;
 - (void)_webkit_setFloat:(float)arg1 forKey:(id)arg2;
 - (void)_webkit_setInt:(int)arg1 forKey:(id)arg2;
-- (void)_webkit_setLongLong:(int)arg1 forKey:(id)arg2;
+- (void)_webkit_setLongLong:(long long)arg1 forKey:(id)arg2;
 - (void)_webkit_setUnsignedInt:(unsigned int)arg1 forKey:(id)arg2;
-- (void)_webkit_setUnsignedLongLong:(unsigned int)arg1 forKey:(id)arg2;
+- (void)_webkit_setUnsignedLongLong:(unsigned long long)arg1 forKey:(id)arg2;
 
 // Image: /System/Library/PrivateFrameworks/iPhotoMigrationSupport.framework/iPhotoMigrationSupport
 

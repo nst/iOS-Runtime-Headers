@@ -4,7 +4,7 @@
 
 @interface RadioDeleteStationRequest : RadioSyncRequest {
     NSDictionary * _stationDictionary;
-    unsigned int  _stationID;
+    unsigned long long  _stationID;
 }
 
 - (void).cxx_destruct;

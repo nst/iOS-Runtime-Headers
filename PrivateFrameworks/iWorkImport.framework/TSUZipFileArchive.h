@@ -4,7 +4,7 @@
 
 @interface TSUZipFileArchive : TSUZipArchive {
     NSObject<OS_dispatch_queue> * _accessQueue;
-    unsigned int  _archiveLength;
+    unsigned long long  _archiveLength;
     TSUZipFileDescriptorWrapper * _fdWrapper;
     NSURL * _temporaryDirectoryURL;
 }
@@ -15,7 +15,7 @@
 + (id)zipArchiveFromURL:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
 
 - (void).cxx_destruct;
-- (unsigned int)archiveLength;
+- (unsigned long long)archiveLength;
 - (BOOL)copyToTemporaryLocationRelativeToURL:(id)arg1 error:(id*)arg2;
 - (void)createTemporaryDirectoryRelativeToURL:(id)arg1;
 - (void)dealloc;

@@ -6,6 +6,6 @@
 @required
 
 - (void)performTimeTravelModuleTapAction;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })timeTravelModuleTouchInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })timeTravelModuleTouchInsets;
 
 @end

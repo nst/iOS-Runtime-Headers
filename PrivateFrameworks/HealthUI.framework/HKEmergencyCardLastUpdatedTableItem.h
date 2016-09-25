@@ -23,7 +23,7 @@
 - (id)delegate;
 - (BOOL)hasPresentableData;
 - (id)initInEditMode:(BOOL)arg1 updatedDateType:(unsigned int)arg2 editable:(BOOL)arg3;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })separatorInset;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })separatorInset;
 - (void)setDateType:(unsigned int)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndex:(int)arg2;

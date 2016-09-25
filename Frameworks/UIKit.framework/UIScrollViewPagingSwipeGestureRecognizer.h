@@ -5,19 +5,19 @@
 @interface UIScrollViewPagingSwipeGestureRecognizer : UIGestureRecognizer {
     int  _directionalFailureCount;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _lastLocation;
     double  _lastTime;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _startLocation;
     UIDelayedAction * _swipeFailureDelay;
 }
 
 - (void).cxx_destruct;
-- (void)_processNewLocation:(struct CGPoint { double x1; double x2; })arg1;
+- (void)_processNewLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_resetGestureRecognizer;
 - (void)clearTimer;
 - (void)dealloc;

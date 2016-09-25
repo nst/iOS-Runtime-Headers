@@ -10,8 +10,8 @@
     BOOL  _shouldSkipSyncCachedImage;
     unsigned int  _snapshotMapType;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _viewSize;
     double  _visibleDistance;
 }
@@ -22,7 +22,7 @@
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 @property (nonatomic) BOOL shouldSkipSyncCachedImage;
 @property (nonatomic) unsigned int snapshotMapType;
-@property (nonatomic) struct CGSize { double x1; double x2; } viewSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } viewSize;
 @property (nonatomic) double visibleDistance;
 
 - (void).cxx_destruct;
@@ -37,11 +37,11 @@
 - (void)setQueue:(id)arg1;
 - (void)setShouldSkipSyncCachedImage:(BOOL)arg1;
 - (void)setSnapshotMapType:(unsigned int)arg1;
-- (void)setViewSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setViewSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setVisibleDistance:(double)arg1;
 - (BOOL)shouldSkipSyncCachedImage;
 - (unsigned int)snapshotMapType;
-- (struct CGSize { double x1; double x2; })viewSize;
+- (struct CGSize { float x1; float x2; })viewSize;
 - (double)visibleDistance;
 
 @end

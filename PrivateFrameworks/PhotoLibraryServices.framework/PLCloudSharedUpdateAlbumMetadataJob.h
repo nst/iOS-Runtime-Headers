@@ -12,7 +12,7 @@
 
 - (id)_argumentsDictionaryAsData:(id)arg1;
 - (id)_argumentsDictionaryFromXPCEvent:(id)arg1;
-- (int)daemonOperation;
+- (long long)daemonOperation;
 - (void)dealloc;
 - (id)description;
 - (void)encodeToXPCObject:(id)arg1;

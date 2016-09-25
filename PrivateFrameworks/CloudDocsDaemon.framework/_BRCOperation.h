@@ -22,7 +22,7 @@
     NSObject<OS_dispatch_source> * _retryTimer;
     NSDate * _startDate;
     BRCSyncContext * _syncContext;
-    int  _throttleHash;
+    long long  _throttleHash;
 }
 
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *callbackQueue;

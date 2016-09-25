@@ -3,52 +3,52 @@
  */
 
 @interface TSDStroke : NSObject <NSCopying, NSMutableCopying, TSDMixing, TSDPathPainter, TSSPropertyCommandSerializing> {
-    double  mActualWidth;
+    float  mActualWidth;
     int  mCap;
     TSUColor * mColor;
     int  mJoin;
-    double  mMiterLimit;
+    float  mMiterLimit;
     TSDStrokePattern * mPattern;
-    double  mWidth;
+    float  mWidth;
 }
 
-@property (nonatomic, readonly) double actualWidth;
+@property (nonatomic, readonly) float actualWidth;
 @property (nonatomic, readonly) int cap;
 @property (nonatomic, readonly, copy) TSUColor *color;
-@property (nonatomic, readonly) double dashSpacing;
+@property (nonatomic, readonly) float dashSpacing;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) BOOL dontClearBackground;
 @property (nonatomic, readonly) BOOL drawsOutsideStrokeBounds;
 @property (nonatomic, readonly) BOOL empty;
 @property (readonly) unsigned int hash;
-@property (nonatomic) double i_actualWidth;
+@property (nonatomic) float i_actualWidth;
 @property (setter=i_setCap:, nonatomic) int i_cap;
 @property (nonatomic, copy) TSUColor *i_color;
 @property (nonatomic) int i_join;
-@property (nonatomic) double i_miterLimit;
+@property (nonatomic) float i_miterLimit;
 @property (setter=i_setPattern:, nonatomic, copy) TSDStrokePattern *i_pattern;
-@property (nonatomic, readonly) double i_verticalOffsetForSwatch;
-@property (nonatomic) double i_width;
+@property (nonatomic, readonly) float i_verticalOffsetForSwatch;
+@property (nonatomic) float i_width;
 @property (nonatomic, readonly) BOOL isDash;
 @property (nonatomic, readonly) BOOL isFrame;
 @property (nonatomic, readonly) BOOL isNearlyWhite;
 @property (nonatomic, readonly) BOOL isNullStroke;
 @property (nonatomic, readonly) BOOL isRoundDash;
 @property (nonatomic, readonly) int join;
-@property (nonatomic, readonly) double miterLimit;
-@property (nonatomic, readonly) struct _TSDStrokeOutsets { double x1; double x2; double x3; double x4; } outsets;
+@property (nonatomic, readonly) float miterLimit;
+@property (nonatomic, readonly) struct _TSDStrokeOutsets { float x1; float x2; float x3; float x4; } outsets;
 @property (nonatomic, readonly, copy) TSDStrokePattern *pattern;
-@property (nonatomic, readonly) double renderedWidth;
+@property (nonatomic, readonly) float renderedWidth;
 @property (nonatomic, readonly) BOOL shouldRender;
 @property (nonatomic, readonly) BOOL solid;
-@property (nonatomic, readonly) double suggestedMinimumLineWidth;
+@property (nonatomic, readonly) float suggestedMinimumLineWidth;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) BOOL supportsColor;
 @property (nonatomic, readonly) BOOL supportsLineOptions;
 @property (nonatomic, readonly) BOOL supportsPattern;
 @property (nonatomic, readonly) BOOL supportsWidth;
-@property (nonatomic, readonly) double width;
+@property (nonatomic, readonly) float width;
 
 + (BOOL)canMixWithNilObjects;
 + (id)editedStrokeFromModelStroke:(id)arg1 selectedStroke:(id)arg2;
@@ -57,7 +57,7 @@
 + (id)i_newEmptyStroke;
 + (id)i_newStroke;
 + (int)indexOfStroke:(id)arg1 strokeArray:(id)arg2;
-+ (id)instanceWithArchive:(const struct StrokeArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Color {} *x5; double x6; int x7; int x8; double x9; struct StrokePatternArchive {} *x10; struct SmartStrokeArchive {} *x11; struct FrameArchive {} *x12; struct PatternedStrokeArchive {} *x13; }*)arg1 unarchiver:(id)arg2;
++ (id)instanceWithArchive:(const struct StrokeArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Color {} *x5; float x6; int x7; int x8; float x9; struct StrokePatternArchive {} *x10; struct SmartStrokeArchive {} *x11; struct FrameArchive {} *x12; struct PatternedStrokeArchive {} *x13; }*)arg1 unarchiver:(id)arg2;
 + (id)mergeRangeEmptyStroke;
 + (Class)mutableClass;
 + (id)portalStroke;
@@ -66,7 +66,7 @@
 + (id)strokeWithColor:(id)arg1 width:(float)arg2 cap:(int)arg3 join:(int)arg4 pattern:(id)arg5;
 + (id)zeroWidthEmptyStroke;
 
-- (void)aaDefeatedPaintLineEnd:(id)arg1 atPoint:(struct CGPoint { double x1; double x2; })arg2 atAngle:(float)arg3 withScale:(float)arg4 inContext:(struct CGContext { }*)arg5;
+- (void)aaDefeatedPaintLineEnd:(id)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2 atAngle:(float)arg3 withScale:(float)arg4 inContext:(struct CGContext { }*)arg5;
 - (float)actualWidth;
 - (void)applyInteriorWrapPropertiesToContext:(struct CGContext { }*)arg1 insideStroke:(BOOL)arg2;
 - (void)applyToCAShapeLayer:(id)arg1 insideStroke:(BOOL)arg2 withScale:(float)arg3;
@@ -74,8 +74,8 @@
 - (void)applyToContext:(struct CGContext { }*)arg1;
 - (void)applyToContext:(struct CGContext { }*)arg1 insideStroke:(BOOL)arg2;
 - (void)applyToRepCALayer:(id)arg1 withScale:(float)arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundsForLineEnd:(id)arg1 atPoint:(struct CGPoint { double x1; double x2; })arg2 atAngle:(float)arg3 withScale:(float)arg4 transform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg5;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundsForPath:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundsForLineEnd:(id)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2 atAngle:(float)arg3 withScale:(float)arg4 transform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg5;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundsForPath:(id)arg1;
 - (BOOL)canApplyDirectlyToRepCALayer;
 - (BOOL)canApplyToCAShapeLayer;
 - (int)cap;
@@ -86,7 +86,7 @@
 - (void)dealloc;
 - (id)description;
 - (BOOL)dontClearBackground;
-- (void)drawSwatchInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inContext:(struct CGContext { }*)arg2;
+- (void)drawSwatchInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inContext:(struct CGContext { }*)arg2;
 - (BOOL)drawsInOneStep;
 - (BOOL)drawsOutsideStrokeBounds;
 - (BOOL)empty;
@@ -106,7 +106,7 @@
 - (float)i_width;
 - (id)init;
 - (id)initFromPropertyCommandMessage:(const struct Message { int (**x1)(); }*)arg1 unarchiver:(id)arg2;
-- (id)initWithArchive:(const struct StrokeArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Color {} *x5; double x6; int x7; int x8; double x9; struct StrokePatternArchive {} *x10; struct SmartStrokeArchive {} *x11; struct FrameArchive {} *x12; struct PatternedStrokeArchive {} *x13; }*)arg1 unarchiver:(id)arg2;
+- (id)initWithArchive:(const struct StrokeArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Color {} *x5; float x6; int x7; int x8; float x9; struct StrokePatternArchive {} *x10; struct SmartStrokeArchive {} *x11; struct FrameArchive {} *x12; struct PatternedStrokeArchive {} *x13; }*)arg1 unarchiver:(id)arg2;
 - (id)initWithColor:(id)arg1 width:(float)arg2 cap:(int)arg3 join:(int)arg4 pattern:(id)arg5;
 - (id)initWithColor:(id)arg1 width:(float)arg2 cap:(int)arg3 join:(int)arg4 pattern:(id)arg5 miterLimit:(float)arg6;
 - (BOOL)isDash;
@@ -124,22 +124,22 @@
 - (int)mixingTypeWithObject:(id)arg1 context:(id)arg2;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (BOOL)needsToExtendJoinsForBoundsCalculation;
-- (struct _TSDStrokeOutsets { double x1; double x2; double x3; double x4; })outsets;
-- (void)paintLineEnd:(id)arg1 atPoint:(struct CGPoint { double x1; double x2; })arg2 atAngle:(float)arg3 withScale:(float)arg4 inContext:(struct CGContext { }*)arg5;
-- (void)paintLineEnd:(id)arg1 atPoint:(struct CGPoint { double x1; double x2; })arg2 atAngle:(float)arg3 withScale:(float)arg4 inContext:(struct CGContext { }*)arg5 useFastDrawing:(BOOL)arg6;
+- (struct _TSDStrokeOutsets { float x1; float x2; float x3; float x4; })outsets;
+- (void)paintLineEnd:(id)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2 atAngle:(float)arg3 withScale:(float)arg4 inContext:(struct CGContext { }*)arg5;
+- (void)paintLineEnd:(id)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2 atAngle:(float)arg3 withScale:(float)arg4 inContext:(struct CGContext { }*)arg5 useFastDrawing:(BOOL)arg6;
 - (void)paintPath:(struct CGPath { }*)arg1 inContext:(struct CGContext { }*)arg2;
 - (void)paintPath:(struct CGPath { }*)arg1 wantsInteriorStroke:(BOOL)arg2 inContext:(struct CGContext { }*)arg3;
 - (void)paintPath:(struct CGPath { }*)arg1 wantsInteriorStroke:(BOOL)arg2 inContext:(struct CGContext { }*)arg3 useFastDrawing:(BOOL)arg4 parameterized:(BOOL)arg5 drawWithOpenGL:(BOOL)arg6 shouldReverseDrawOrder:(BOOL)arg7;
 - (void)paintPathWithNormalClip:(struct CGPath { }*)arg1 wantsInteriorStroke:(BOOL)arg2 inContext:(struct CGContext { }*)arg3;
-- (void)paintRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inContext:(struct CGContext { }*)arg2;
-- (void)paintRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 wantsInteriorStroke:(BOOL)arg2 inContext:(struct CGContext { }*)arg3;
-- (id)pathForLineEnd:(id)arg1 wrapPath:(BOOL)arg2 atPoint:(struct CGPoint { double x1; double x2; })arg3 atAngle:(float)arg4 withScale:(float)arg5;
+- (void)paintRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inContext:(struct CGContext { }*)arg2;
+- (void)paintRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 wantsInteriorStroke:(BOOL)arg2 inContext:(struct CGContext { }*)arg3;
+- (id)pathForLineEnd:(id)arg1 wrapPath:(BOOL)arg2 atPoint:(struct CGPoint { float x1; float x2; })arg3 atAngle:(float)arg4 withScale:(float)arg5;
 - (struct CGPath { }*)pathToStrokeFromCGPath:(struct CGPath { }*)arg1;
 - (id)pathToStrokeFromTSUBezierPath:(id)arg1;
 - (id)pattern;
 - (BOOL)prefersToApplyToCAShapeLayerDuringManipulation;
 - (float)renderedWidth;
-- (void)saveToArchive:(struct StrokeArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Color {} *x5; double x6; int x7; int x8; double x9; struct StrokePatternArchive {} *x10; struct SmartStrokeArchive {} *x11; struct FrameArchive {} *x12; struct PatternedStrokeArchive {} *x13; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct StrokeArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Color {} *x5; float x6; int x7; int x8; float x9; struct StrokePatternArchive {} *x10; struct SmartStrokeArchive {} *x11; struct FrameArchive {} *x12; struct PatternedStrokeArchive {} *x13; }*)arg1 archiver:(id)arg2;
 - (void)saveToPropertyCommandMessage:(struct Message { int (**x1)(); }*)arg1 archiver:(id)arg2;
 - (void)setI_actualWidth:(float)arg1;
 - (void)setI_color:(id)arg1;
@@ -149,7 +149,7 @@
 - (BOOL)shouldAntialiasDefeat;
 - (BOOL)shouldRender;
 - (BOOL)solid;
-- (id)strokeByTransformingByTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
+- (id)strokeByTransformingByTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (id)strokeLineEnd:(id)arg1;
 - (float)suggestedMinimumLineWidth;
 - (BOOL)supportsColor;

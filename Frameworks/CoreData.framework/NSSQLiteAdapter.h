@@ -51,7 +51,7 @@
 - (id)newDropTableStatementForTableNamed:(id)arg1;
 - (id)newGeneratorWithStatement:(id)arg1;
 - (id)newInsertStatementWithRow:(id)arg1;
-- (id)newPrimaryKeyInitializeStatementForEntity:(id)arg1 withInitialMaxPK:(int)arg2;
+- (id)newPrimaryKeyInitializeStatementForEntity:(id)arg1 withInitialMaxPK:(long long)arg2;
 - (id)newRenameTableStatementFrom:(id)arg1 to:(id)arg2;
 - (id)newRenameTableStatementFromManyToMany:(id)arg1 toManyToMany:(id)arg2 orToRandomSpot:(id)arg3;
 - (id)newSelectStatementWithFetchRequest:(id)arg1 ignoreInheritance:(BOOL)arg2;

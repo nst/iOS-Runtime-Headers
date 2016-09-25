@@ -6,7 +6,7 @@
     NSArray * _afWindowParamsArray;
     BOOL  _allowExperimentalOverrides;
     BOOL  _alwaysRequestsPreBracketedEV0;
-    double  _bracketGainCap;
+    float  _bracketGainCap;
     NSDictionary * _cameraTuningDictionary;
     int (* _createSampleBufferProcessorFunction;
     FigCaptureStillImageSettings * _currentCaptureSettings;
@@ -35,14 +35,14 @@
 
 - (void)_clearCaptureRequestState;
 - (id)_initWithCameraTuningDictionary:(id)arg1 sensorIDDictionary:(id)arg2 sbpCreationFunction:(int (*)arg3 fusionScheme:(int)arg4 allowExperimentalOverrides:(BOOL)arg5;
-- (id)_oisBracketSettingsWithCurrentFrameStats:(struct { double x1; double x2; double x3; double x4; double x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned char x11; unsigned int x12; unsigned int x13; int x14; int x15; unsigned int x16; double x17; double x18; double x19; double x20; int x21; int x22; double x23; int x24; int x25; double x26; int x27; int x28; int x29; int x30; }*)arg1 stillImageSettings:(id)arg2;
+- (id)_oisBracketSettingsWithCurrentFrameStats:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned char x11; unsigned int x12; unsigned int x13; int x14; int x15; unsigned int x16; float x17; float x18; float x19; double x20; int x21; int x22; float x23; int x24; int x25; float x26; int x27; int x28; int x29; long long x30; }*)arg1 stillImageSettings:(id)arg2;
 - (void)_sampleBufferProcessorOutputReady:(long)arg1 sampleBuffer:(struct opaqueCMSampleBuffer { }*)arg2;
 - (long)_setupSampleBufferProcessor;
-- (id)_sisBracketSettingsWithCurrentFrameStats:(struct { double x1; double x2; double x3; double x4; double x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned char x11; unsigned int x12; unsigned int x13; int x14; int x15; unsigned int x16; double x17; double x18; double x19; double x20; int x21; int x22; double x23; int x24; int x25; double x26; int x27; int x28; int x29; int x30; }*)arg1 stillImageSettings:(id)arg2;
+- (id)_sisBracketSettingsWithCurrentFrameStats:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned char x11; unsigned int x12; unsigned int x13; int x14; int x15; unsigned int x16; float x17; float x18; float x19; double x20; int x21; int x22; float x23; int x24; int x25; float x26; int x27; int x28; int x29; long long x30; }*)arg1 stillImageSettings:(id)arg2;
 - (long)_unpackSISOptions;
 - (BOOL)alwaysRequestsPreBracketedEV0;
 - (BOOL)attachesInputBracketToOutputSampleBuffer;
-- (id)bracketSettingsForBracketingMode:(int)arg1 withCurrentFrameStats:(struct { double x1; double x2; double x3; double x4; double x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned char x11; unsigned int x12; unsigned int x13; int x14; int x15; unsigned int x16; double x17; double x18; double x19; double x20; int x21; int x22; double x23; int x24; int x25; double x26; int x27; int x28; int x29; int x30; }*)arg2 stillImageSettings:(id)arg3;
+- (id)bracketSettingsForBracketingMode:(int)arg1 withCurrentFrameStats:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned char x11; unsigned int x12; unsigned int x13; int x14; int x15; unsigned int x16; float x17; float x18; float x19; double x20; int x21; int x22; float x23; int x24; int x25; float x26; int x27; int x28; int x29; long long x30; }*)arg2 stillImageSettings:(id)arg3;
 - (void)dealloc;
 - (void)didSelectFormat:(id)arg1 forInput:(id)arg2;
 - (void)handleNodeError:(id)arg1 forInput:(id)arg2;

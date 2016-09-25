@@ -48,8 +48,8 @@
 
 + (id)_subtitleFontForTable:(BOOL)arg1;
 + (id)_titleFontForTable:(BOOL)arg1;
-+ (struct CGSize { double x1; double x2; })defaultSizeForCellStyle:(int)arg1 traitCollection:(id)arg2;
-+ (struct CGSize { double x1; double x2; })thumbnailSizeForTraits:(id)arg1 cellStyle:(int)arg2;
++ (struct CGSize { float x1; float x2; })defaultSizeForCellStyle:(int)arg1 traitCollection:(id)arg2;
++ (struct CGSize { float x1; float x2; })thumbnailSizeForTraits:(id)arg1 cellStyle:(int)arg2;
 
 - (void).cxx_destruct;
 - (void)_activityAction:(id)arg1;
@@ -80,7 +80,7 @@
 - (id)indentationConstraint;
 - (id)indentationHelperView;
 - (id)indentedConstraints;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)item;
 - (id)pickableDiagnosticGestureRecognizer;
 - (void)prepareForReuse;

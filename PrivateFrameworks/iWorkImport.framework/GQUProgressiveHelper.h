@@ -6,8 +6,8 @@
     struct { int (*x1)(); int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); } * mCallBacks;
     const void * mClient;
     struct __CFString { } * mNumbersSheetUri;
-    double  mPreviewHeight;
-    double  mPreviewWidth;
+    float  mPreviewHeight;
+    float  mPreviewWidth;
     BOOL  mStartedMainHTML;
     unsigned char  started;
 }

@@ -7,13 +7,13 @@
     void * _priv;
 }
 
-@property (readonly) double alpha;
-@property (readonly) double blue;
+@property (readonly) float alpha;
+@property (readonly) float blue;
 @property (readonly) struct CGColorSpace { }*colorSpace;
 @property (readonly) const float*components;
-@property (readonly) double green;
+@property (readonly) float green;
 @property (readonly) unsigned long numberOfComponents;
-@property (readonly) double red;
+@property (readonly) float red;
 @property (readonly) NSString *stringRepresentation;
 
 // Image: /System/Library/Frameworks/CoreImage.framework/CoreImage

@@ -15,14 +15,14 @@
         unsigned int isTintable : 1; 
         unsigned int _reserved : 17; 
     }  _imageProperties;
-    double  _scale;
+    float  _scale;
 }
 
-@property (nonatomic, readonly) struct { double x1; double x2; double x3; double x4; } alignmentEdgeInsets;
+@property (nonatomic, readonly) struct { float x1; float x2; float x3; float x4; } alignmentEdgeInsets;
 @property (nonatomic, readonly) int blendMode;
 @property (nonatomic, readonly) struct CGImage { }*croppedImage;
 @property (nonatomic, readonly) int displayGamut;
-@property (nonatomic, readonly) struct { double x1; double x2; double x3; double x4; } edgeInsets;
+@property (nonatomic, readonly) struct { float x1; float x2; float x3; float x4; } edgeInsets;
 @property (nonatomic, readonly) int exifOrientation;
 @property (nonatomic, readonly) BOOL hasAlignmentInformation;
 @property (nonatomic, readonly) BOOL hasSliceInformation;
@@ -34,24 +34,24 @@
 @property (nonatomic, readonly) BOOL isTemplate;
 @property (nonatomic, readonly) BOOL isVectorBased;
 @property (nonatomic, readonly) int layoutDirection;
-@property (nonatomic, readonly) double opacity;
+@property (nonatomic, readonly) float opacity;
 @property (nonatomic, readonly) int resizingMode;
-@property (nonatomic, readonly) double scale;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } size;
+@property (nonatomic, readonly) float scale;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;
 @property (nonatomic, readonly) int templateRenderingMode;
 
 // Image: /System/Library/PrivateFrameworks/CoreUI.framework/CoreUI
 
 - (BOOL)_cacheRenditionProperties;
-- (struct { double x1; double x2; double x3; double x4; })alignmentEdgeInsets;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })alphaCroppedRect;
+- (struct { float x1; float x2; float x3; float x4; })alignmentEdgeInsets;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })alphaCroppedRect;
 - (id)baseKey;
 - (int)blendMode;
 - (struct CGImage { }*)createImageFromPDFRenditionWithScale:(float)arg1;
 - (struct CGImage { }*)croppedImage;
 - (id)description;
 - (int)displayGamut;
-- (struct { double x1; double x2; double x3; double x4; })edgeInsets;
+- (struct { float x1; float x2; float x3; float x4; })edgeInsets;
 - (int)exifOrientation;
 - (int)graphicsClass;
 - (BOOL)hasAlignmentInformation;
@@ -67,12 +67,12 @@
 - (int)layoutDirection;
 - (int)memoryClass;
 - (float)opacity;
-- (struct CGSize { double x1; double x2; })originalUncroppedSize;
+- (struct CGSize { float x1; float x2; })originalUncroppedSize;
 - (float)positionOfSliceBoundary:(unsigned int)arg1;
 - (int)resizingMode;
 - (int)resizingModeWithSubtype:(int)arg1;
 - (float)scale;
-- (struct CGSize { double x1; double x2; })size;
+- (struct CGSize { float x1; float x2; })size;
 - (int)sizeClassHorizontal;
 - (int)sizeClassVertical;
 - (unsigned int)subtype;

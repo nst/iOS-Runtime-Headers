@@ -3,28 +3,28 @@
  */
 
 @interface NWAWDLibnetcoreNetworkdStatsReport : PBCodable <NSCopying> {
-    unsigned int  _fallbackConnectionCount;
+    unsigned long long  _fallbackConnectionCount;
     struct { 
         unsigned int fallbackConnectionCount : 1; 
         unsigned int totalConnectionCount : 1; 
         unsigned int totalSuccessfulConnectionCount : 1; 
     }  _has;
-    unsigned int  _totalConnectionCount;
-    unsigned int  _totalSuccessfulConnectionCount;
+    unsigned long long  _totalConnectionCount;
+    unsigned long long  _totalSuccessfulConnectionCount;
 }
 
-@property (nonatomic) unsigned int fallbackConnectionCount;
+@property (nonatomic) unsigned long long fallbackConnectionCount;
 @property (nonatomic) BOOL hasFallbackConnectionCount;
 @property (nonatomic) BOOL hasTotalConnectionCount;
 @property (nonatomic) BOOL hasTotalSuccessfulConnectionCount;
-@property (nonatomic) unsigned int totalConnectionCount;
-@property (nonatomic) unsigned int totalSuccessfulConnectionCount;
+@property (nonatomic) unsigned long long totalConnectionCount;
+@property (nonatomic) unsigned long long totalSuccessfulConnectionCount;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)fallbackConnectionCount;
+- (unsigned long long)fallbackConnectionCount;
 - (BOOL)hasFallbackConnectionCount;
 - (BOOL)hasTotalConnectionCount;
 - (BOOL)hasTotalSuccessfulConnectionCount;
@@ -32,14 +32,14 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (void)setFallbackConnectionCount:(unsigned int)arg1;
+- (void)setFallbackConnectionCount:(unsigned long long)arg1;
 - (void)setHasFallbackConnectionCount:(BOOL)arg1;
 - (void)setHasTotalConnectionCount:(BOOL)arg1;
 - (void)setHasTotalSuccessfulConnectionCount:(BOOL)arg1;
-- (void)setTotalConnectionCount:(unsigned int)arg1;
-- (void)setTotalSuccessfulConnectionCount:(unsigned int)arg1;
-- (unsigned int)totalConnectionCount;
-- (unsigned int)totalSuccessfulConnectionCount;
+- (void)setTotalConnectionCount:(unsigned long long)arg1;
+- (void)setTotalSuccessfulConnectionCount:(unsigned long long)arg1;
+- (unsigned long long)totalConnectionCount;
+- (unsigned long long)totalSuccessfulConnectionCount;
 - (void)writeTo:(id)arg1;
 
 @end

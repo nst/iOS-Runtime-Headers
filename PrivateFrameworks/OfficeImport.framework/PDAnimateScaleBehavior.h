@@ -4,32 +4,32 @@
 
 @interface PDAnimateScaleBehavior : PDAnimateBehavior {
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  mBy;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  mFrom;
     BOOL  mHasBy;
     BOOL  mHasFrom;
     BOOL  mHasTo;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  mTo;
 }
 
-- (struct CGPoint { double x1; double x2; })by;
-- (struct CGPoint { double x1; double x2; })from;
+- (struct CGPoint { float x1; float x2; })by;
+- (struct CGPoint { float x1; float x2; })from;
 - (BOOL)hasBy;
 - (BOOL)hasFrom;
 - (BOOL)hasTo;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
-- (void)setBy:(struct CGPoint { double x1; double x2; })arg1;
-- (void)setFrom:(struct CGPoint { double x1; double x2; })arg1;
-- (void)setTo:(struct CGPoint { double x1; double x2; })arg1;
-- (struct CGPoint { double x1; double x2; })to;
+- (void)setBy:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setFrom:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setTo:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGPoint { float x1; float x2; })to;
 
 @end

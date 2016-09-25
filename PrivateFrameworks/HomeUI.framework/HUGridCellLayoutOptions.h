@@ -4,27 +4,27 @@
 
 @interface HUGridCellLayoutOptions : NSObject <HUGridDisplayOptions, NSCopying> {
     HUGridCellBackgroundDisplayOptions * _backgroundDisplayOptions;
-    double  _cellCornerRadius;
-    double  _cellInnerMargin;
-    double  _cellScaleFactor;
+    float  _cellCornerRadius;
+    float  _cellInnerMargin;
+    float  _cellScaleFactor;
     int  _cellSizeSubclass;
     unsigned int  _contentColorStyle;
     UIFont * _font;
-    double  _iconSize;
+    float  _iconSize;
     UIVisualEffect * _vibrancyEffect;
 }
 
 @property (nonatomic, copy) HUGridCellBackgroundDisplayOptions *backgroundDisplayOptions;
-@property (nonatomic) double cellCornerRadius;
-@property (nonatomic) double cellInnerMargin;
-@property (nonatomic) double cellScaleFactor;
+@property (nonatomic) float cellCornerRadius;
+@property (nonatomic) float cellInnerMargin;
+@property (nonatomic) float cellScaleFactor;
 @property (nonatomic, readonly) int cellSizeSubclass;
 @property (nonatomic) unsigned int contentColorStyle;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) UIFont *font;
 @property (readonly) unsigned int hash;
-@property (nonatomic) double iconSize;
+@property (nonatomic) float iconSize;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UIVisualEffect *vibrancyEffect;
 

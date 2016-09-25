@@ -26,7 +26,7 @@
     unsigned int  _serverConfigTime;
     NSString * _sessionUUID;
     int  _status;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
     unsigned int  _transportType;
 }
 
@@ -54,7 +54,7 @@
 @property (nonatomic) unsigned int serverConfigTime;
 @property (nonatomic, retain) NSString *sessionUUID;
 @property (nonatomic) int status;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 @property (nonatomic) unsigned int transportType;
 
 - (unsigned int)audioCompressionType;
@@ -110,10 +110,10 @@
 - (void)setServerConfigTime:(unsigned int)arg1;
 - (void)setSessionUUID:(id)arg1;
 - (void)setStatus:(int)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (void)setTransportType:(unsigned int)arg1;
 - (int)status;
-- (unsigned int)timestamp;
+- (unsigned long long)timestamp;
 - (unsigned int)transportType;
 - (void)writeTo:(id)arg1;
 

@@ -4,26 +4,26 @@
 
 @interface SFImage : NSObject <NSSecureCoding> {
     NSString * _contentType;
-    double  _cornerRadius;
+    float  _cornerRadius;
     NSData * _imageData;
     BOOL  _isTemplate;
     NSString * _keyColor;
-    double  _scale;
+    float  _scale;
     BOOL  _shouldCropToCircle;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _size;
 }
 
 @property (nonatomic, retain) NSString *contentType;
-@property (nonatomic) double cornerRadius;
+@property (nonatomic) float cornerRadius;
 @property (retain) NSData *imageData;
 @property (nonatomic) BOOL isTemplate;
 @property (nonatomic, retain) NSString *keyColor;
-@property (nonatomic) double scale;
+@property (nonatomic) float scale;
 @property (nonatomic) BOOL shouldCropToCircle;
-@property (nonatomic) struct CGSize { double x1; double x2; } size;
+@property (nonatomic) struct CGSize { float x1; float x2; } size;
 
 + (id)imageWithData:(id)arg1;
 + (BOOL)supportsSecureCoding;
@@ -46,8 +46,8 @@
 - (void)setKeyColor:(id)arg1;
 - (void)setScale:(float)arg1;
 - (void)setShouldCropToCircle:(BOOL)arg1;
-- (void)setSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)shouldCropToCircle;
-- (struct CGSize { double x1; double x2; })size;
+- (struct CGSize { float x1; float x2; })size;
 
 @end

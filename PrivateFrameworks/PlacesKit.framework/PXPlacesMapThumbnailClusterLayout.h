@@ -6,15 +6,15 @@
     unsigned int  _currentChangeType;
     <PXPlacesMapLayoutResult> * _currentMapLayoutResult;
     NSArray * _geotaggablesSortDescriptors;
-    double  _horizontalClusteringDistancePixels;
-    double  _verticalClusteringDistancePixels;
+    float  _horizontalClusteringDistancePixels;
+    float  _verticalClusteringDistancePixels;
 }
 
 @property (nonatomic) unsigned int currentChangeType;
 @property (nonatomic, retain) <PXPlacesMapLayoutResult> *currentMapLayoutResult;
 @property (nonatomic, retain) NSArray *geotaggablesSortDescriptors;
-@property (nonatomic) double horizontalClusteringDistancePixels;
-@property (nonatomic) double verticalClusteringDistancePixels;
+@property (nonatomic) float horizontalClusteringDistancePixels;
+@property (nonatomic) float verticalClusteringDistancePixels;
 
 - (void).cxx_destruct;
 - (id)_clusterGeotaggables:(id)arg1 fromMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg2 viewPort:(id)arg3;

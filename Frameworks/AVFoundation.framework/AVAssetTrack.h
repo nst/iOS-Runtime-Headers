@@ -44,7 +44,7 @@
 - (void)dealloc;
 - (int)defaultAlternateGroupID;
 - (id)description;
-- (struct CGSize { double x1; double x2; })dimensions;
+- (struct CGSize { float x1; float x2; })dimensions;
 - (float)estimatedDataRate;
 - (id)extendedLanguageTag;
 - (void)finalize;
@@ -65,33 +65,33 @@
 - (id)locale;
 - (id)loudnessInfo;
 - (id)mediaCharacteristics;
-- (struct { struct { int x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; int x_1_1_4; } x1; struct { int x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; int x_2_1_4; } x2; })mediaDecodeTimeRange;
-- (struct { struct { int x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; int x_1_1_4; } x1; struct { int x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; int x_2_1_4; } x2; })mediaPresentationTimeRange;
+- (struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })mediaDecodeTimeRange;
+- (struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })mediaPresentationTimeRange;
 - (id)mediaType;
 - (id)metadata;
 - (id)metadataForFormat:(id)arg1;
-- (struct { int x1; int x2; unsigned int x3; int x4; })minFrameDuration;
-- (struct CGSize { double x1; double x2; })naturalSize;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })minFrameDuration;
+- (struct CGSize { float x1; float x2; })naturalSize;
 - (int)naturalTimeScale;
 - (float)nominalFrameRate;
 - (long)playabilityValidationResult;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })preferredTransform;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })preferredTransform;
 - (float)preferredVolume;
 - (int)provisionalAlternateGroupID;
 - (BOOL)requiresFrameReordering;
-- (struct { int x1; int x2; unsigned int x3; int x4; })samplePresentationTimeForTrackTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
-- (id)segmentForTrackTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })samplePresentationTimeForTrackTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (id)segmentForTrackTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (id)segments;
 - (int)statusOfValueForKey:(id)arg1;
 - (int)statusOfValueForKey:(id)arg1 error:(id*)arg2;
-- (struct { struct { int x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; int x_1_1_4; } x1; struct { int x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; int x_2_1_4; } x2; })timeRange;
-- (int)totalSampleDataLength;
+- (struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })timeRange;
+- (long long)totalSampleDataLength;
 - (int)trackID;
 
 // Image: /System/Library/PrivateFrameworks/VideoProcessing.framework/VideoProcessing
 
-- (struct { int x1; int x2; unsigned int x3; int x4; })vcp_endTime;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })vcp_endTime;
 - (int)vcp_orientation;
-- (struct { int x1; int x2; unsigned int x3; int x4; })vcp_startTime;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })vcp_startTime;
 
 @end

@@ -13,7 +13,7 @@
 
 @property (nonatomic) struct CLLocationCoordinate2D { double x1; double x2; } coordinate;
 @property (readonly) struct CLLocationCoordinate2D { double x1; double x2; } currentLocation;
-@property (nonatomic) double currentProgress;
+@property (nonatomic) float currentProgress;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) struct CLLocationCoordinate2D { double x1; double x2; } endLocation;

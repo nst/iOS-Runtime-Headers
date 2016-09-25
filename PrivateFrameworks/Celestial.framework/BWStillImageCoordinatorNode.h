@@ -51,10 +51,10 @@
 
 - (void)_beginCapture;
 - (void)_captureDevicePreparedToCaptureStillImageNow;
-- (int)_captureTypeForSettings:(id)arg1 frameStatistics:(struct { double x1; double x2; double x3; double x4; double x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned char x11; unsigned int x12; unsigned int x13; int x14; int x15; unsigned int x16; double x17; double x18; double x19; double x20; int x21; int x22; double x23; int x24; int x25; double x26; int x27; int x28; int x29; int x30; }*)arg2;
+- (int)_captureTypeForSettings:(id)arg1 frameStatistics:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned char x11; unsigned int x12; unsigned int x13; int x14; int x15; unsigned int x16; float x17; float x18; float x19; double x20; int x21; int x22; float x23; int x24; int x25; float x26; int x27; int x28; int x29; long long x30; }*)arg2;
 - (void)_completeCaptureWithStatus:(long)arg1;
 - (void)_configureCurrentCaptureRequestStateForFigCaptureStillImageSettings;
-- (void)_didCaptureStillImageWithPTS:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
+- (void)_didCaptureStillImageWithPTS:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (long)_enqueueStillImageRequestWithSettings:(id)arg1 serviceRequestsIfNecessary:(BOOL)arg2;
 - (void)_flushStillImageRequestWithError:(long)arg1;
 - (id)_outputForMultiframeStereoFusionCaptureWithNodeInput:(id)arg1 resolvedStillImageCaptureSettings:(id)arg2 metadataDictionary:(id)arg3;
@@ -66,14 +66,14 @@
 - (void)_willBeginCapture;
 - (void)_willCaptureStillImage;
 - (BOOL)alwaysRequestsPreBracketedEV0;
-- (id)bracketSettingsForBracketingMode:(int)arg1 withCurrentFrameStats:(struct { double x1; double x2; double x3; double x4; double x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned char x11; unsigned int x12; unsigned int x13; int x14; int x15; unsigned int x16; double x17; double x18; double x19; double x20; int x21; int x22; double x23; int x24; int x25; double x26; int x27; int x28; int x29; int x30; }*)arg2 stillImageSettings:(id)arg3;
+- (id)bracketSettingsForBracketingMode:(int)arg1 withCurrentFrameStats:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned char x11; unsigned int x12; unsigned int x13; int x14; int x15; unsigned int x16; float x17; float x18; float x19; double x20; int x21; int x22; float x23; int x24; int x25; float x26; int x27; int x28; int x29; long long x30; }*)arg2 stillImageSettings:(id)arg3;
 - (long)captureStillImageNowWithSettings:(id)arg1;
-- (void)captureStream:(id)arg1 didCapturePreBracketedEV0ImageWithPTS:(struct { int x1; int x2; unsigned int x3; int x4; })arg2;
-- (void)captureStream:(id)arg1 didCompleteStillImageCaptureWithPTS:(struct { int x1; int x2; unsigned int x3; int x4; })arg2 referenceFrameBracketedCaptureSequenceNumber:(id)arg3;
+- (void)captureStream:(id)arg1 didCapturePreBracketedEV0ImageWithPTS:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
+- (void)captureStream:(id)arg1 didCompleteStillImageCaptureWithPTS:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 referenceFrameBracketedCaptureSequenceNumber:(id)arg3;
 - (void)captureStream:(id)arg1 stillImageCaptureError:(long)arg2;
 - (void)captureStreamWillBeginStillImageCapture:(id)arg1;
 - (void)clientReceivedPayloadForSettings:(id)arg1 status:(long)arg2 clientIsMidStillImageGraph:(BOOL)arg3;
-- (void)configurationWithID:(int)arg1 updatedFormat:(id)arg2 didBecomeLiveForInput:(id)arg3;
+- (void)configurationWithID:(long long)arg1 updatedFormat:(id)arg2 didBecomeLiveForInput:(id)arg3;
 - (void)dealloc;
 - (id)defaultInput;
 - (id)defaultOutput;

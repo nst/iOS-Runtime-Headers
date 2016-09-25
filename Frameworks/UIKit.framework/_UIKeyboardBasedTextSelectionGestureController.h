@@ -24,6 +24,6 @@
 - (BOOL)oneFingerForcePressShouldFailWithoutForce;
 - (void)setDelayForceMagnify:(BOOL)arg1;
 - (void)setDidLongForcePress:(BOOL)arg1;
-- (void)transitionFromBlockMagnifyToBlockSelectWithLocation:(struct CGPoint { double x1; double x2; })arg1 viaDrag:(BOOL)arg2;
+- (void)transitionFromBlockMagnifyToBlockSelectWithLocation:(struct CGPoint { float x1; float x2; })arg1 viaDrag:(BOOL)arg2;
 
 @end

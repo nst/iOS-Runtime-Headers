@@ -16,7 +16,7 @@
     BOOL  isFlashScene;
     BOOL  isHDRScene;
     BOOL  isStillImageStabilizationScene;
-    int  lastSettingsUniqueID;
+    long long  lastSettingsUniqueID;
     BOOL  lensStabilizationDuringBracketedCaptureSupported;
     BOOL  livePhotoAutoTrimmingEnabled;
     BOOL  livePhotoCaptureEnabled;
@@ -27,17 +27,17 @@
         int height; 
     }  livePhotoMovieDimensions;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  livePhotoMovieDuration;
     BOOL  livePhotoMovieProcessingSuspended;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  livePhotoMovieVideoFrameDuration;
     unsigned int  maxBracketedCapturePhotoCount;
     BOOL  optimizesImagesForOfflineVideoStabilization;

@@ -3,11 +3,11 @@
  */
 
 @interface ISPlaybackSettings : NSObject {
-    double  _audioVolume;
+    float  _audioVolume;
     AVVideoComposition * _videoComposition;
 }
 
-@property (nonatomic) double audioVolume;
+@property (nonatomic) float audioVolume;
 @property (nonatomic, retain) AVVideoComposition *videoComposition;
 
 - (void).cxx_destruct;

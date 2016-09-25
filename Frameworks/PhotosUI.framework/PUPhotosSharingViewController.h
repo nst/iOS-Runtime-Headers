@@ -15,12 +15,12 @@
     NSMutableSet * __preheatedAssets;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  __previousPreheatRect;
     UICollectionViewLayout * __transitionLayout;
@@ -30,7 +30,7 @@
     BOOL  _allowAirPlayActivity;
     NSMutableDictionary * _assetItemsByAssetIdentifier;
     PUOneUpAssetTransitionInfo * _assetTransitionInfo;
-    double  _cachedEmbeddedActivityViewHeight;
+    float  _cachedEmbeddedActivityViewHeight;
     UIBarButtonItem * _cancelButton;
     BOOL  _defaultIrisEnabled;
     <PUPhotosSharingViewControllerDelegate> * _delegate;
@@ -69,7 +69,7 @@
 @property (setter=_setPhotoZoomPinchGestureRecognizer:, nonatomic, retain) PUPhotoPinchGestureRecognizer *_photoZoomPinchGestureRecognizer;
 @property (setter=_pptSetOnDidEndScrollingBlock:, nonatomic, copy) id /* block */ _pptOnDidEndScrollingBlock;
 @property (setter=_setPreheatedAssets:, nonatomic, retain) NSMutableSet *_preheatedAssets;
-@property (setter=_setPreviousPreheatRect:, nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } _previousPreheatRect;
+@property (setter=_setPreviousPreheatRect:, nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } _previousPreheatRect;
 @property (setter=_setTransitionLayout:, nonatomic, retain) UICollectionViewLayout *_transitionLayout;
 @property (setter=_setUnembeddedActivityViewController:, nonatomic, retain) PUActivityViewController *_unembeddedActivityViewController;
 @property (getter=_isViewInSyncWithModel, setter=_setViewInSyncWithModel:, nonatomic) BOOL _viewInSyncWithModel;
@@ -106,15 +106,15 @@
 - (void)_beginZoomingForCellAtIndexPath:(id)arg1;
 - (id)_cachingImageManager;
 - (void)_cancel:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_collectionViewContentFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_collectionViewContentFrame;
 - (id)_currentSelectedAssets;
 - (id)_embeddedActivityViewController;
 - (BOOL)_embedsActivityView;
 - (void)_endZoomingForCell;
 - (id)_firstSelectedIndexPath;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameAtIndexPath:(id)arg1 inView:(id)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameAtIndexPath:(id)arg1 inView:(id)arg2;
 - (void)_getFirstValidIndexPath:(id*)arg1 lastValidIndexPath:(id*)arg2;
-- (void)_getMainCollectionViewFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg1 collectionViewLayoutInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; }*)arg2 embeddedActivityViewFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg3;
+- (void)_getMainCollectionViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 collectionViewLayoutInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg2 embeddedActivityViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg3;
 - (void)_handleLivePhotoRequestResult:(id)arg1 forCell:(id)arg2 tag:(int)arg3;
 - (void)_handlePhotoPinch:(id)arg1;
 - (void)_handleSelectionOption:(id)arg1;
@@ -123,7 +123,7 @@
 - (float)_horizontalOffsetInCollectionView:(id)arg1 forCenteringOnItemAtIndexPath:(id)arg2;
 - (unsigned int)_indexForPhotoCollection:(id)arg1;
 - (id)_indexPathInCollectionView:(id)arg1 closestToContentOffsetX:(float)arg2;
-- (id)_indexPathInCollectionView:(id)arg1 closestToPoint:(struct CGPoint { double x1; double x2; })arg2;
+- (id)_indexPathInCollectionView:(id)arg1 closestToPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (id)_indexPathOfAsset:(id)arg1 sectionHint:(int)arg2;
 - (id)_indexPathOfCenterVisibleItemInCollectionView:(id)arg1;
 - (BOOL)_isAnyAssetSelected;
@@ -145,7 +145,7 @@
 - (void)_pptSetOnDidEndScrollingBlock:(id /* block */)arg1;
 - (id)_preheatedAssets;
 - (void)_prepareActivityViewControllerForUse;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_previousPreheatRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_previousPreheatRect;
 - (void)_processCollectionListChangeNotifications:(id)arg1 singleCollectionNotifications:(id)arg2 needsReloadData:(BOOL)arg3;
 - (void)_removeActivityAssetItem:(id)arg1;
 - (id)_requiredActivityViewController;
@@ -162,13 +162,13 @@
 - (void)_setPhotoZoomCell:(id)arg1;
 - (void)_setPhotoZoomPinchGestureRecognizer:(id)arg1;
 - (void)_setPreheatedAssets:(id)arg1;
-- (void)_setPreviousPreheatRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)_setPreviousPreheatRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_setSelected:(BOOL)arg1 atIndexPath:(id)arg2 animated:(BOOL)arg3;
 - (void)_setTransitionLayout:(id)arg1;
 - (void)_setUnembeddedActivityViewController:(id)arg1;
 - (void)_setViewInSyncWithModel:(BOOL)arg1;
 - (BOOL)_shouldShowAsset:(id)arg1;
-- (struct CGSize { double x1; double x2; })_sizeForItemAtIndexPath:(id)arg1;
+- (struct CGSize { float x1; float x2; })_sizeForItemAtIndexPath:(id)arg1;
 - (void)_statusBarFrameDidChange:(id)arg1;
 - (void)_statusBarFrameWillChange:(id)arg1;
 - (id)_transitionLayout;
@@ -205,25 +205,25 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)embeddedActivityView;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })embeddedActivityViewFrameWhenShowing:(BOOL)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })embeddedActivityViewFrameWhenShowing:(BOOL)arg1;
 - (id)excludedActivityTypes;
 - (id)filterPredicate;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameForBadgeOfKind:(id)arg1 forItemFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 atIndexPath:(id)arg3;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForBadgeOfKind:(id)arg1 forItemFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 atIndexPath:(id)arg3;
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (id)initWithPhotoCollectionsFetchResult:(id)arg1 assetsFetchResults:(id)arg2 filterPredicate:(id)arg3 selection:(id)arg4;
 - (BOOL)isLockScreenCamera;
 - (float)layout:(id)arg1 collectionView:(id)arg2 bottomBadgeInsetforItemAtIndexPath:(id)arg3;
-- (void)layout:(id)arg1 collectionView:(id)arg2 itemAtIndexPath:(id)arg3 didChangeToVisibleFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg4;
+- (void)layout:(id)arg1 collectionView:(id)arg2 itemAtIndexPath:(id)arg3 didChangeToVisibleFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
 - (id)layout:(id)arg1 collectionView:(id)arg2 referenceIndexPathWithOffsetX:(float*)arg3;
-- (struct CGSize { double x1; double x2; })layout:(id)arg1 collectionView:(id)arg2 sizeForBadgeViewOfKind:(id)arg3 forItemAtIndexPath:(id)arg4;
-- (struct CGSize { double x1; double x2; })layout:(id)arg1 collectionView:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
+- (struct CGSize { float x1; float x2; })layout:(id)arg1 collectionView:(id)arg2 sizeForBadgeViewOfKind:(id)arg3 forItemAtIndexPath:(id)arg4;
+- (struct CGSize { float x1; float x2; })layout:(id)arg1 collectionView:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (id)mainCollectionView;
 - (id)mainCollectionViewLayout;
 - (int)numberOfSectionsInCollectionView:(id)arg1;
 - (void)oneUpAssetTransition:(id)arg1 requestTransitionContextWithCompletion:(id /* block */)arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })oneUpAssetTransitionAssetFinalFrame:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })oneUpAssetTransitionAssetFinalFrame:(id)arg1;
 - (id)person;
 - (id)photoCollectionsFetchResult;
 - (void)photoLibraryDidChangeOnMainQueue:(id)arg1;
@@ -241,7 +241,7 @@
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewSpeedometer:(id)arg1 regimeDidChange:(int)arg2 from:(int)arg3;
 - (void)scrollViewWillBeginDragging:(id)arg1;
-- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { double x1; double x2; })arg2 targetContentOffset:(inout struct CGPoint { double x1; double x2; }*)arg3;
+- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { float x1; float x2; })arg2 targetContentOffset:(inout struct CGPoint { float x1; float x2; }*)arg3;
 - (void)setAggregateKey:(struct __CFString { }*)arg1;
 - (void)setAllowAirPlayActivity:(BOOL)arg1;
 - (void)setAssetTransitionInfo:(id)arg1;
@@ -264,6 +264,6 @@
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillLayoutSubviews;
-- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

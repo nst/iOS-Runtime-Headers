@@ -5,10 +5,10 @@
 @interface SUBarButtonItem : UIBarButtonItem {
     UIView * _accessoryView;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _accessoryViewInsets;
     SUUIAppearance * _confirmationAppearance;
     UINavigationItem * _lastNavigationItem;
@@ -17,7 +17,7 @@
 }
 
 @property (nonatomic, retain) UIView *accessoryView;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } accessoryViewInsets;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } accessoryViewInsets;
 @property (getter=isLoading, nonatomic) BOOL loading;
 @property (getter=isShowingConfirmation, nonatomic, readonly) BOOL showingConfirmation;
 
@@ -30,7 +30,7 @@
 - (void)_touchCaptureAction:(id)arg1;
 - (void)_updateViewForAccessoryChange;
 - (id)accessoryView;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })accessoryViewInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })accessoryViewInsets;
 - (void)configureFromScriptButton:(id)arg1;
 - (id)createViewForNavigationItem:(id)arg1;
 - (void)dealloc;
@@ -38,7 +38,7 @@
 - (BOOL)isLoading;
 - (BOOL)isShowingConfirmation;
 - (void)setAccessoryView:(id)arg1;
-- (void)setAccessoryViewInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setAccessoryViewInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setLoading:(BOOL)arg1;
 - (void)showConfirmationWithTitle:(id)arg1 appearance:(id)arg2 animated:(BOOL)arg3;
 

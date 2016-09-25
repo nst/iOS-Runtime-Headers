@@ -6,10 +6,10 @@
     NSMutableArray * _barButtonItems;
     BOOL  _hidden;
     BOOL  _locked;
-    double  _minimumLeadingSpace;
-    double  _minimumTrailingSpace;
+    float  _minimumLeadingSpace;
+    float  _minimumTrailingSpace;
     <_UIBarButtonItemGroupOwner> * _owner;
-    double  _priority;
+    float  _priority;
     UIBarButtonItem * _representativeItem;
     _UIButtonGroupViewController * _representativeUI;
     BOOL  _sendActionsBeforeDismiss;
@@ -20,10 +20,10 @@
 @property (getter=_isHidden, setter=_setHidden:, nonatomic) BOOL hidden;
 @property (getter=_items, nonatomic, readonly) NSArray *items;
 @property (getter=_isLocked, setter=_setLocked:, nonatomic) BOOL locked;
-@property (getter=_minimumLeadingSpace, setter=_setMinimumLeadingSpace:, nonatomic) double minimumLeadingSpace;
-@property (getter=_minimumTrailingSpace, setter=_setMinimumTrailingSpace:, nonatomic) double minimumTrailingSpace;
+@property (getter=_minimumLeadingSpace, setter=_setMinimumLeadingSpace:, nonatomic) float minimumLeadingSpace;
+@property (getter=_minimumTrailingSpace, setter=_setMinimumTrailingSpace:, nonatomic) float minimumTrailingSpace;
 @property (getter=_owner, setter=_setOwner:, nonatomic) <_UIBarButtonItemGroupOwner> *owner;
-@property (getter=_priority, setter=_setPriority:, nonatomic) double priority;
+@property (getter=_priority, setter=_setPriority:, nonatomic) float priority;
 @property (nonatomic, retain) UIBarButtonItem *representativeItem;
 @property (getter=_representativeUI, setter=_setRepresentativeUI:, nonatomic, retain) _UIButtonGroupViewController *representativeUI;
 @property (getter=_sendActionsBeforeDismiss, setter=_setSendActionsBeforeDismiss:, nonatomic) BOOL sendActionsBeforeDismiss;

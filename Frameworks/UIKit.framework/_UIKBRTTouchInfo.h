@@ -5,18 +5,18 @@
 @interface _UIKBRTTouchInfo : _UIKBRTObject {
     double  _currentTimestamp;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _currentTouchPoint;
     BOOL  _currentTouchState;
-    double  _currentZGradient;
-    double  _maximumRadius;
+    float  _currentZGradient;
+    float  _maximumRadius;
     double  _originalTimestamp;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _originalTouchPoint;
-    double  _originalZGradient;
+    float  _originalZGradient;
     BOOL  _preRuleTouchState;
     _UIKBRTTimerBlock * _timer;
     NSObject<OS_dispatch_queue> * _timerQueue;
@@ -24,14 +24,14 @@
 }
 
 @property (nonatomic, readonly) double currentTimestamp;
-@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } currentTouchPoint;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } currentTouchPoint;
 @property (nonatomic) BOOL currentTouchState;
-@property (nonatomic, readonly) double currentZGradient;
-@property (nonatomic, readonly) double maximumRadius;
+@property (nonatomic, readonly) float currentZGradient;
+@property (nonatomic, readonly) float maximumRadius;
 @property (nonatomic, readonly) _UIKBRTTouchInfo *nextTouch;
 @property (nonatomic, readonly) double originalTimestamp;
-@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } originalTouchPoint;
-@property (nonatomic, readonly) double originalZGradient;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } originalTouchPoint;
+@property (nonatomic, readonly) float originalZGradient;
 @property (nonatomic) BOOL preRuleTouchState;
 @property (nonatomic, readonly) _UIKBRTTouchInfo *previousTouch;
 @property (nonatomic, readonly) _UIKBRTTimerBlock *timer;
@@ -46,7 +46,7 @@
 - (void).cxx_destruct;
 - (void)cleanup;
 - (double)currentTimestamp;
-- (struct CGPoint { double x1; double x2; })currentTouchPoint;
+- (struct CGPoint { float x1; float x2; })currentTouchPoint;
 - (BOOL)currentTouchState;
 - (float)currentZGradient;
 - (void)dealloc;
@@ -56,7 +56,7 @@
 - (float)maximumRadius;
 - (id)nextTouch;
 - (double)originalTimestamp;
-- (struct CGPoint { double x1; double x2; })originalTouchPoint;
+- (struct CGPoint { float x1; float x2; })originalTouchPoint;
 - (float)originalZGradient;
 - (BOOL)preRuleTouchState;
 - (id)previousTouch;

@@ -3,18 +3,18 @@
  */
 
 @interface PUPhotoStreamRecipientViewController : UIViewController <ABPeoplePickerNavigationControllerDelegate, IDSBatchIDQueryControllerDelegate, MFComposeRecipientViewDelegate, MFContactsSearchConsumer, UIPopoverPresentationControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
-    double  _bottomTableOffset;
+    float  _bottomTableOffset;
     NSNumber * _currentSearchTaskID;
     id  _delegate;
     IDSBatchIDQueryController * _idsBatchIDQueryController;
-    double  _lastHeight;
+    float  _lastHeight;
     ABPeoplePickerNavigationController * _peoplePickerPresentedController;
     NSArray * _properties;
     UIScrollView * _recipientContainerView;
     MFComposeRecipientView * _recipientView;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _recipientViewSize;
     MFContactsSearchManager * _searchManager;
     NSArray * _searchResults;
@@ -25,7 +25,7 @@
     BOOL  _wasFirstResponder;
 }
 
-@property (nonatomic) double bottomTableOffset;
+@property (nonatomic) float bottomTableOffset;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) id delegate;
 @property (readonly, copy) NSString *description;
@@ -48,7 +48,7 @@
 - (id)composeRecipientView:(id)arg1 composeRecipientForRecord:(void*)arg2 identifier:(int)arg3;
 - (id)composeRecipientView:(id)arg1 composeRecipientForRecord:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (void)composeRecipientView:(id)arg1 didAddRecipient:(id)arg2;
-- (void)composeRecipientView:(id)arg1 didChangeSize:(struct CGSize { double x1; double x2; })arg2;
+- (void)composeRecipientView:(id)arg1 didChangeSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)composeRecipientView:(id)arg1 didFinishEnteringAddress:(id)arg2;
 - (void)composeRecipientView:(id)arg1 didRemoveRecipient:(id)arg2;
 - (void)composeRecipientView:(id)arg1 requestDeleteRecipientAtIndex:(int)arg2;
@@ -86,6 +86,6 @@
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillLayoutSubviews;
-- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

@@ -17,10 +17,10 @@
     BOOL  _batteryMonitoringWasEnabled;
     unsigned int  _canAnimateControlsOverlay;
     unsigned int  _canShowControlsOverlay;
-    unsigned int  _desiredParts;
+    unsigned long long  _desiredParts;
     unsigned int  _disableAutoRotation;
     unsigned int  _disableControlsAutohide;
-    unsigned int  _disabledParts;
+    unsigned long long  _disabledParts;
     unsigned int  _displayPlaybackErrorAlerts;
     unsigned int  _hasShownFirstVideoFrame;
     unsigned int  _inlinePlaybackUsesTVOut;
@@ -33,7 +33,7 @@
     unsigned int  _scheduledLoadingIndicator;
     unsigned int  _tvOutEnabled;
     MPTVOutWindow * _tvOutWindow;
-    unsigned int  _visibleParts;
+    unsigned long long  _visibleParts;
 }
 
 @property (nonatomic) BOOL TVOutEnabled;
@@ -55,10 +55,10 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) id delegate;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) unsigned int desiredParts;
+@property (nonatomic) unsigned long long desiredParts;
 @property (nonatomic) BOOL disableAutoRotation;
 @property (nonatomic) BOOL disableControlsAutohide;
-@property (nonatomic) unsigned int disabledParts;
+@property (nonatomic) unsigned long long disabledParts;
 @property (nonatomic) BOOL displayPlaybackErrorAlerts;
 @property (getter=isFullscreen, nonatomic) BOOL fullscreen;
 @property (readonly) unsigned int hash;
@@ -81,10 +81,10 @@
 @property (nonatomic, readonly, retain) MPVideoView *videoView;
 @property (nonatomic, readonly, retain) UIView *view;
 @property (nonatomic, readonly) BOOL viewControllerWillRequestExit;
-@property (nonatomic) unsigned int visibleParts;
+@property (nonatomic) unsigned long long visibleParts;
 
 + (int)_activityIndicatorViewStyle;
-+ (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })calculateArtworkImageViewFrameInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
++ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })calculateArtworkImageViewFrameInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 + (BOOL)supportsFullscreenDisplay;
 
 - (void).cxx_destruct;
@@ -131,8 +131,8 @@
 - (id)backgroundView;
 - (void)backgroundViewDidUpdate;
 - (id)backstopColor;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })calculateArtworkImageViewFrame;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })calculateFullScreenArtworkImageViewFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })calculateArtworkImageViewFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })calculateFullScreenArtworkImageViewFrame;
 - (BOOL)canAnimateControlsOverlay;
 - (BOOL)canChangeScaleMode;
 - (BOOL)canHideOverlay:(BOOL)arg1;
@@ -141,11 +141,11 @@
 - (BOOL)controlsOverlayVisible;
 - (void)crossedTimeMakerWithEvent:(id)arg1;
 - (void)dealloc;
-- (unsigned int)desiredParts;
+- (unsigned long long)desiredParts;
 - (BOOL)disableAutoRotation;
 - (BOOL)disableControlsAutohide;
-- (unsigned int)disabledParts;
-- (unsigned int)disabledPartsForProposedParts:(unsigned int)arg1;
+- (unsigned long long)disabledParts;
+- (unsigned long long)disabledPartsForProposedParts:(unsigned long long)arg1;
 - (int)displayArtworkImageStyle;
 - (BOOL)displayPlaybackErrorAlerts;
 - (void)displayVideoView;
@@ -188,11 +188,11 @@
 - (void)setControlsOverlayVisible:(BOOL)arg1;
 - (void)setControlsOverlayVisible:(BOOL)arg1 animate:(BOOL)arg2;
 - (void)setControlsOverlayVisible:(BOOL)arg1 animate:(BOOL)arg2 force:(BOOL)arg3;
-- (void)setDesiredParts:(unsigned int)arg1;
-- (void)setDesiredParts:(unsigned int)arg1 animate:(BOOL)arg2;
+- (void)setDesiredParts:(unsigned long long)arg1;
+- (void)setDesiredParts:(unsigned long long)arg1 animate:(BOOL)arg2;
 - (void)setDisableAutoRotation:(BOOL)arg1;
 - (void)setDisableControlsAutohide:(BOOL)arg1;
-- (void)setDisabledParts:(unsigned int)arg1;
+- (void)setDisabledParts:(unsigned long long)arg1;
 - (void)setDisplayPlaybackErrorAlerts:(BOOL)arg1;
 - (void)setFullscreen:(BOOL)arg1;
 - (void)setFullscreen:(BOOL)arg1 animated:(BOOL)arg2;
@@ -208,8 +208,8 @@
 - (void)setScaleModeOverride:(int)arg1 animated:(BOOL)arg2;
 - (void)setTVOutEnabled:(BOOL)arg1;
 - (void)setUseHostedWindowWhenFullscreen:(BOOL)arg1;
-- (void)setVisibleParts:(unsigned int)arg1;
-- (void)setVisibleParts:(unsigned int)arg1 animate:(BOOL)arg2;
+- (void)setVisibleParts:(unsigned long long)arg1;
+- (void)setVisibleParts:(unsigned long long)arg1 animate:(BOOL)arg2;
 - (BOOL)showArtworkForTVOut;
 - (BOOL)showArtworkInImageView;
 - (void)tearDownTVOutWindow;
@@ -226,7 +226,7 @@
 - (BOOL)viewControllerWillRequestExit;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
-- (unsigned int)visibleParts;
-- (unsigned int)visiblePartsForProposedParts:(unsigned int)arg1;
+- (unsigned long long)visibleParts;
+- (unsigned long long)visiblePartsForProposedParts:(unsigned long long)arg1;
 
 @end

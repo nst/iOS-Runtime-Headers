@@ -6,7 +6,7 @@
 
 @property (nonatomic, readonly) unsigned int color;
 @property (nonatomic, readonly) UIColor *colorValue;
-@property (nonatomic, readonly) double desaturation;
+@property (nonatomic, readonly) float desaturation;
 
 + (id)_localizedNameForValue:(unsigned int)arg1;
 + (id)_snapshotKeyForValue:(unsigned int)arg1;

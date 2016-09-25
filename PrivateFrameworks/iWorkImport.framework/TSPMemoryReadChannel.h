@@ -21,7 +21,7 @@
 - (id)initWithDispatchData:(id)arg1;
 - (id)initWithNSData:(id)arg1;
 - (BOOL)isValid;
-- (void)readFromOffset:(int)arg1 length:(unsigned long)arg2 handler:(id /* block */)arg3;
+- (void)readFromOffset:(long long)arg1 length:(unsigned long)arg2 handler:(id /* block */)arg3;
 - (void)readWithHandler:(id /* block */)arg1;
 - (void)setLowWater:(unsigned long)arg1;
 

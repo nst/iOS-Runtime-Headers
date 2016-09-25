@@ -4,24 +4,24 @@
 
 @interface CAMPanoramaConfiguration : NSObject <NSCoding> {
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _maximumFramerate;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _minimumFramerate;
     int  _ringBufferSize;
     int  _sampleBufferHeight;
     int  _sampleBufferWidth;
 }
 
-@property (nonatomic, readonly) struct { int x1; int x2; unsigned int x3; int x4; } maximumFramerate;
-@property (nonatomic, readonly) struct { int x1; int x2; unsigned int x3; int x4; } minimumFramerate;
+@property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } maximumFramerate;
+@property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } minimumFramerate;
 @property (nonatomic, readonly) int ringBufferSize;
 @property (nonatomic, readonly) int sampleBufferHeight;
 @property (nonatomic, readonly) int sampleBufferWidth;
@@ -29,8 +29,8 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithACTConfiguration:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (struct { int x1; int x2; unsigned int x3; int x4; })maximumFramerate;
-- (struct { int x1; int x2; unsigned int x3; int x4; })minimumFramerate;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })maximumFramerate;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })minimumFramerate;
 - (int)ringBufferSize;
 - (int)sampleBufferHeight;
 - (int)sampleBufferWidth;

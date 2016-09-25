@@ -3,10 +3,10 @@
  */
 
 @interface PKShapeLayerPathState : NSObject {
-    double  _strokeEndT0;
-    double  _strokeEndT1;
-    double  _strokeStartT0;
-    double  _strokeStartT1;
+    float  _strokeEndT0;
+    float  _strokeEndT1;
+    float  _strokeStartT0;
+    float  _strokeStartT1;
 }
 
 - (void)dealloc;

@@ -3,24 +3,24 @@
  */
 
 @interface NPTunnelFlowMetrics : NSObject {
-    unsigned int  _rxBytes;
-    unsigned int  _rxPackets;
-    unsigned int  _txBytes;
-    unsigned int  _txPackets;
+    unsigned long long  _rxBytes;
+    unsigned long long  _rxPackets;
+    unsigned long long  _txBytes;
+    unsigned long long  _txPackets;
 }
 
-@property unsigned int rxBytes;
-@property unsigned int rxPackets;
-@property unsigned int txBytes;
-@property unsigned int txPackets;
+@property unsigned long long rxBytes;
+@property unsigned long long rxPackets;
+@property unsigned long long txBytes;
+@property unsigned long long txPackets;
 
-- (unsigned int)rxBytes;
-- (unsigned int)rxPackets;
-- (void)setRxBytes:(unsigned int)arg1;
-- (void)setRxPackets:(unsigned int)arg1;
-- (void)setTxBytes:(unsigned int)arg1;
-- (void)setTxPackets:(unsigned int)arg1;
-- (unsigned int)txBytes;
-- (unsigned int)txPackets;
+- (unsigned long long)rxBytes;
+- (unsigned long long)rxPackets;
+- (void)setRxBytes:(unsigned long long)arg1;
+- (void)setRxPackets:(unsigned long long)arg1;
+- (void)setTxBytes:(unsigned long long)arg1;
+- (void)setTxPackets:(unsigned long long)arg1;
+- (unsigned long long)txBytes;
+- (unsigned long long)txPackets;
 
 @end

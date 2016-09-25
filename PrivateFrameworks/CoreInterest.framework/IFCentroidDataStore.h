@@ -13,7 +13,7 @@
 + (id)defaultStore;
 + (id)migrationPlan;
 
-- (void)_addCentroidFeature:(id)arg1 score:(double)arg2 vectorIndex:(int)arg3 inTransaction:(BOOL)arg4;
+- (void)_addCentroidFeature:(id)arg1 score:(double)arg2 vectorIndex:(long long)arg3 inTransaction:(BOOL)arg4;
 - (BOOL)_addFeatureVector:(id)arg1;
 - (unsigned int)_centroidLength;
 - (unsigned int)_countTableRows:(id)arg1;

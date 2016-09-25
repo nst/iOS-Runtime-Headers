@@ -20,6 +20,6 @@
 - (void)saveToArchiver:(id)arg1;
 - (void)setData:(id)arg1 acknowledgedByServer:(BOOL)arg2;
 - (void)takeSnapshotWithCollaborationMode:(BOOL)arg1;
-- (int)tsp_identifier;
+- (long long)tsp_identifier;
 
 @end

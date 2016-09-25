@@ -42,7 +42,7 @@
 - (void)setClientContext:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)showWithInitialItem:(id)arg1;
-- (void)showWithInitialItemIdentifier:(int)arg1;
+- (void)showWithInitialItemIdentifier:(long long)arg1;
 - (void)showWithInitialProductPage:(id)arg1 metricsPageEvent:(id)arg2;
 - (void)showWithInitialURL:(id)arg1;
 - (void)showWithInitialURLRequest:(id)arg1;

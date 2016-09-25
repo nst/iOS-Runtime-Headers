@@ -23,7 +23,7 @@
 - (void)_performAuxiliaryActionWithCompletion:(id /* block */)arg1;
 - (void)_performHeaderActionWithCompletion:(id /* block */)arg1;
 - (void)_representFullscreenAfterActivityDismissal:(id /* block */)arg1;
-- (void)_requestContentSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)_requestContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_requestSavedShareWithCompletion:(id /* block */)arg1;
 - (void)_shareDidChange:(id)arg1;
 - (void)_shareWasMadePrivate;

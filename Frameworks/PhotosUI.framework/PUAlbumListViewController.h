@@ -24,8 +24,8 @@
     id /* block */  __justCreatedCollectionAnimationCompletionHandler;
     NSString * __justCreatedCollectionIdentifier;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  __layoutReferenceSize;
     PUCollectionView * __mainCollectionView;
     PUSectionedGridLayout * __mainCollectionViewLayout;
@@ -38,12 +38,12 @@
     NSMutableSet * __preheatedCollections;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  __previousPreheatRect;
     NSArray * __syncProgressAlbums;
@@ -99,7 +99,7 @@
 @property (setter=_setKeyboardAware:, nonatomic) BOOL _isKeyboardAware;
 @property (setter=_setJustCreatedCollectionAnimationCompletionHandler:, nonatomic, copy) id /* block */ _justCreatedCollectionAnimationCompletionHandler;
 @property (setter=_setJustCreatedCollectionIdentifier:, nonatomic, retain) NSString *_justCreatedCollectionIdentifier;
-@property (setter=_setLayoutReferenceSize:, nonatomic) struct CGSize { double x1; double x2; } _layoutReferenceSize;
+@property (setter=_setLayoutReferenceSize:, nonatomic) struct CGSize { float x1; float x2; } _layoutReferenceSize;
 @property (setter=_setMainCollectionView:, nonatomic, retain) PUCollectionView *_mainCollectionView;
 @property (setter=_setMainCollectionViewLayout:, nonatomic, retain) PUSectionedGridLayout *_mainCollectionViewLayout;
 @property (setter=_setMainTableView:, nonatomic, retain) UITableView *_mainTableView;
@@ -109,7 +109,7 @@
 @property (setter=_setPhotoPinchGestureRecognizer:, nonatomic, retain) PUPhotoPinchGestureRecognizer *_photoPinchGestureRecognizer;
 @property (nonatomic, readonly) PXPlacesAlbumCoverProvider *_placesAlbumCoverProvider;
 @property (setter=_setPreheatedCollections:, nonatomic, retain) NSMutableSet *_preheatedCollections;
-@property (setter=_setPreviousPreheatRect:, nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } _previousPreheatRect;
+@property (setter=_setPreviousPreheatRect:, nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } _previousPreheatRect;
 @property (nonatomic, readonly) NSArray *_syncProgressAlbums;
 @property (nonatomic, retain) PUAlbumListTransitionContext *albumListTransitionContext;
 @property (nonatomic, readonly) int albumsSection;
@@ -142,7 +142,7 @@
 - (id)_assetsFetchOptions;
 - (id)_backgroundView;
 - (id)_badgeManager;
-- (void)_beginInteractiveNavigationForItemAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)_beginInteractiveNavigationForItemAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_beginInteractiveZoomOut:(id)arg1;
 - (id)_cachedFeedViewController;
 - (id)_cachingImageManager;
@@ -184,7 +184,7 @@
 - (id)_justCreatedCollectionIdentifier;
 - (id)_keyAssetsForMoments;
 - (void)_keyboardWillChangeFrame:(id)arg1;
-- (struct CGSize { double x1; double x2; })_layoutReferenceSize;
+- (struct CGSize { float x1; float x2; })_layoutReferenceSize;
 - (id)_mainCollectionView;
 - (id)_mainCollectionViewLayout;
 - (id)_mainTableView;
@@ -205,7 +205,7 @@
 - (id)_preheatedCollections;
 - (void)_prepareStackView:(id)arg1 forCollection:(id)arg2 withStackCount:(int)arg3 withCustomEmptyPlaceHolderImage:(id)arg4;
 - (void)_presentSearchViewController:(id)arg1 animated:(BOOL)arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_previousPreheatRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_previousPreheatRect;
 - (void)_recursivelyCollectCollectionsIn:(id)arg1 fetchResult:(id)arg2;
 - (void)_resetPreheating;
 - (id)_searchButtonItem;
@@ -221,7 +221,7 @@
 - (void)_setJustCreatedCollectionAnimationCompletionHandler:(id /* block */)arg1;
 - (void)_setJustCreatedCollectionIdentifier:(id)arg1;
 - (void)_setKeyboardAware:(BOOL)arg1;
-- (void)_setLayoutReferenceSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)_setLayoutReferenceSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_setMainCollectionView:(id)arg1;
 - (void)_setMainCollectionViewLayout:(id)arg1;
 - (void)_setMainTableView:(id)arg1;
@@ -230,7 +230,7 @@
 - (void)_setPeopleAlbumProvider:(id)arg1;
 - (void)_setPhotoPinchGestureRecognizer:(id)arg1;
 - (void)_setPreheatedCollections:(id)arg1;
-- (void)_setPreviousPreheatRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)_setPreviousPreheatRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)_shouldShowAggregateItem;
 - (BOOL)_someAlbumSupportsEditing;
 - (id)_suppressionContexts;
@@ -314,10 +314,10 @@
 - (id)indexPathForCloudFeedPlaceholder;
 - (id)indexPathForCollection:(id)arg1;
 - (id)indexPathForFirstEditableAlbum;
-- (id)indexPathForItemAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (id)indexPathForItemAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)indexPathForPeopleAlbum;
 - (id)indexPathForPlacesAlbum;
-- (id)indexPathsForItemsInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)indexPathsForItemsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)indexPathsForVisibleItems;
 - (id)initWithSpec:(id)arg1 isRootSharedAlbumList:(BOOL)arg2;
 - (BOOL)isEmpty;
@@ -439,7 +439,7 @@
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillLayoutSubviews;
-- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (id)visibleAlbumListCellContentViewAtIndexPath:(id)arg1;
 - (struct PUAlbumListCellContentView { Class x1; }*)visiblePlaceholderListCellContentViewAtIndexPath:(id)arg1;
 

@@ -44,6 +44,6 @@
 - (id)aggregatesByFeatureKey;
 - (id)historiesByInstanceIdentifier;
 - (id)historyForInstanceIdentifier:(id)arg1;
-- (unsigned int)lastChangeNumberForInstanceIdentifier:(id)arg1;
+- (unsigned long long)lastChangeNumberForInstanceIdentifier:(id)arg1;
 
 @end

@@ -14,12 +14,12 @@
     NSDate * _creationDate;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _cropRect;
     NSArray * _dates;
@@ -91,7 +91,7 @@
 @property (nonatomic) unsigned int contactSource;
 @property (nonatomic, readonly) int contactType;
 @property (nonatomic, readonly, copy) NSDate *creationDate;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } cropRect;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } cropRect;
 @property (nonatomic, readonly, copy) NSArray *dates;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly, copy) NSString *departmentName;
@@ -233,7 +233,7 @@
 + (id)predicateForLegacyIdentifier:(unsigned int)arg1;
 + (id)predicateForPreferredNameInContainersWithIdentifiers:(id)arg1 groupsWithIdentifiers:(id)arg2;
 + (id)predicateForPreferredNameInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-+ (id)predicateForSuggestionIdentifier:(unsigned int)arg1;
++ (id)predicateForSuggestionIdentifier:(unsigned long long)arg1;
 + (id /* block */)preferredImageComparator;
 + (id)storeInfoFromCoder:(id)arg1 storeIdentifier:(id)arg2 key:(id)arg3;
 + (id)suggestionIDFromContactIdentifier:(id)arg1;
@@ -261,7 +261,7 @@
 - (id)copyWithSelfAsSnapshot;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)creationDate;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })cropRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })cropRect;
 - (id)dates;
 - (void)dealloc;
 - (id)departmentName;
@@ -374,7 +374,7 @@
 - (BOOL)isPreferredForPhoto;
 - (BOOL)isReadonly;
 - (id)largestAvailablePhoto;
-- (id)largestAvailablePhotoAndCropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg1;
+- (id)largestAvailablePhotoAndCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1;
 - (int)nameOrder;
 - (id)photoThumbnail;
 - (id)preferredContactForPhoto;

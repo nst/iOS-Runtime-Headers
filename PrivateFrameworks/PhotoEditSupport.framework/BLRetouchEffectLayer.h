@@ -3,20 +3,20 @@
  */
 
 @interface BLRetouchEffectLayer : BLRetouchLayer {
-    double  _amount;
+    float  _amount;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _area;
     NSMutableArray * _brushStrokes;
     struct CGContext { } * _edgeDetectContextRef;
-    double  _edgeDetectSize;
+    float  _edgeDetectSize;
     struct CGContext { } * _layerMask;
     struct { 
         unsigned char blue; 
@@ -28,38 +28,38 @@
     BOOL  _strokeInProgress;
 }
 
-@property (nonatomic) double amount;
-@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } area;
+@property (nonatomic) float amount;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } area;
 @property (nonatomic, copy) NSMutableArray *brushStrokes;
 @property (nonatomic, retain) struct CGContext { }*layerMask;
 @property (nonatomic, readonly) BOOL strokeInProgress;
 
 - (float)amount;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })area;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })area;
 - (id)brushStrokes;
 - (void)clearMask;
 - (void)dealloc;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })doDrawBrushAtLocation:(struct CGPoint { double x1; double x2; })arg1 opacity:(float)arg2 erase:(BOOL)arg3 magicEdges:(BOOL)arg4 brushSize:(float)arg5 brushSoftness:(float)arg6 firstPoint:(BOOL)arg7;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })drawBrushAtLocation:(struct CGPoint { double x1; double x2; })arg1 opacity:(float)arg2 erase:(BOOL)arg3 magicEdges:(BOOL)arg4 brushSize:(float)arg5 brushSoftness:(float)arg6;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })doDrawBrushAtLocation:(struct CGPoint { float x1; float x2; })arg1 opacity:(float)arg2 erase:(BOOL)arg3 magicEdges:(BOOL)arg4 brushSize:(float)arg5 brushSoftness:(float)arg6 firstPoint:(BOOL)arg7;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })drawBrushAtLocation:(struct CGPoint { float x1; float x2; })arg1 opacity:(float)arg2 erase:(BOOL)arg3 magicEdges:(BOOL)arg4 brushSize:(float)arg5 brushSoftness:(float)arg6;
 - (struct CGContext { }*)edgeDetectContextRefForSize:(float)arg1;
 - (void)fillMask;
 - (void)fillMaskWithValue:(float)arg1;
 - (BOOL)hasAmount;
 - (BOOL)hasLayerMask;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })imageFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })imageFrame;
 - (id)init;
 - (BOOL)isAffectingOutput;
 - (id)layerData;
 - (struct CGContext { }*)layerMask;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })maskFrame;
-- (struct CGContext { }*)newContextForRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inDestRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 andScale:(float)arg3;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })maskFrame;
+- (struct CGContext { }*)newContextForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inDestRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 andScale:(float)arg3;
 - (struct CGContext { }*)newContextWithEffect:(struct CGContext { }*)arg1;
 - (struct CGImage { }*)newImageFromContextWithEffect:(struct CGContext { }*)arg1;
 - (struct CGImage { }*)newMaskImage;
 - (void)performFill;
 - (void)releaseMask;
 - (void)setAmount:(float)arg1;
-- (void)setArea:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setArea:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setBrushStrokes:(id)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setLayerData:(id)arg1;

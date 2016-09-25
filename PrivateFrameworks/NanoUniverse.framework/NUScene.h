@@ -11,15 +11,15 @@
     unsigned int  _isUpdatable;
     unsigned int  _isUpdateNeeded;
     int  _minFrameInterval;
-    double  _orbit;
+    float  _orbit;
     void _position;
     unsigned int  _projectionType;
-    double  _roll;
+    float  _roll;
     unsigned int  _snap;
     NSMutableArray * _spheroids;
     void _target;
     void _up;
-    double  _yearsSince1970;
+    float  _yearsSince1970;
 }
 
 @property (nonatomic, readonly) int acceptableFrameInterval;
@@ -31,17 +31,17 @@
 @property (nonatomic, retain) NUSpheroid *focus;
 @property (readonly) unsigned int hash;
 @property (nonatomic) int minFrameInterval;
-@property (nonatomic) double orbit;
+@property (nonatomic) float orbit;
 @property (nonatomic, readonly) void position;
 @property (nonatomic) unsigned int projectionType;
-@property (nonatomic) double roll;
+@property (nonatomic) float roll;
 @property (nonatomic) unsigned int snap;
 @property (nonatomic, readonly) NSArray *spheroids;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) void target;
 @property (nonatomic, readonly) void up;
 @property (nonatomic) BOOL updatable;
-@property (nonatomic, readonly) double yearsSince1970;
+@property (nonatomic, readonly) float yearsSince1970;
 
 - (void).cxx_destruct;
 - (int)acceptableFrameInterval;

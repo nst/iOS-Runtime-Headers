@@ -8,9 +8,9 @@
     NSString * _attributionID;
     NSURL * _businessURL;
     GEOLocation * _location;
-    unsigned int  _muid;
+    unsigned long long  _muid;
     NSString * _name;
-    double  _normalizedUserRatingScore;
+    float  _normalizedUserRatingScore;
     NSString * _phoneNumber;
     GEOPlace * _place;
     unsigned int  _sampleSizeForUserRatingScore;
@@ -20,7 +20,7 @@
 - (BOOL)_hasMUID;
 - (BOOL)_hasResolvablePartialInformation;
 - (BOOL)_hasUserRatingScore;
-- (unsigned int)_muid;
+- (unsigned long long)_muid;
 - (float)_normalizedUserRatingScore;
 - (id)_place;
 - (unsigned int)_sampleSizeForUserRatingScore;
@@ -30,7 +30,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)geoAddress;
-- (id)initWithWithLocation:(id)arg1 addressDictionary:(id)arg2 name:(id)arg3 businessURL:(id)arg4 phoneNumber:(id)arg5 sessionID:(id)arg6 muid:(unsigned int)arg7 attributionID:(id)arg8 sampleSizeForUserRatingScore:(unsigned int)arg9 normalizedUserRatingScore:(float)arg10;
+- (id)initWithWithLocation:(id)arg1 addressDictionary:(id)arg2 name:(id)arg3 businessURL:(id)arg4 phoneNumber:(id)arg5 sessionID:(id)arg6 muid:(unsigned long long)arg7 attributionID:(id)arg8 sampleSizeForUserRatingScore:(unsigned int)arg9 normalizedUserRatingScore:(float)arg10;
 - (BOOL)isValid;
 - (id)name;
 - (id)weatherDisplayName;

@@ -15,12 +15,12 @@
     _UIAsyncInvocation * _prepareForDisconnectionInvocation;
     id  _remoteViewControllerProxy;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _sceneSize;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _windowOffset;
 }
 
@@ -42,8 +42,8 @@
 - (void)__prepareForDisconnectionWithCompletionHandler:(id /* block */)arg1;
 - (void)__setHostAllowedNotifications:(id)arg1;
 - (void)__setNextAutomaticOrderOutDirection:(int)arg1 duration:(double)arg2;
-- (void)__setSceneSize:(struct CGSize { double x1; double x2; })arg1;
-- (void)__setWindowOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (void)__setSceneSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)__setWindowOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_invalidateUnconditionallyThen:(id /* block */)arg1;
 - (BOOL)_isDeallocating;
 - (void)_prepareForDisconnectionUnconditionallyThen:(id /* block */)arg1;

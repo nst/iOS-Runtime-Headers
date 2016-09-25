@@ -24,7 +24,7 @@
 @property (nonatomic, readonly) BOOL hasSavedGeneratedWaveform;
 @property (nonatomic, readonly) BOOL hasStartedLoading;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly) double loadingProgress;
+@property (nonatomic, readonly) float loadingProgress;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *observerQueue;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
 @property (readonly) Class superclass;

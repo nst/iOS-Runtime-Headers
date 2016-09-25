@@ -3,19 +3,19 @@
  */
 
 @interface __NSCFBackgroundAVAssetDownloadTask : __NSCFBackgroundSessionTask {
-    unsigned int  _AVAssetDownloadToken;
+    unsigned long long  _AVAssetDownloadToken;
     NSURL * _URL;
     AVURLAsset * _URLAsset;
     NSData * _assetArtworkData;
     NSString * _assetTitle;
     NSURL * _destinationURL;
-    unsigned int  _downloadToken;
+    unsigned long long  _downloadToken;
     NSArray * _loadedTimeRanges;
     NSDictionary * _options;
     NSURL * _temporaryDestinationURL;
 }
 
-@property unsigned int AVAssetDownloadToken;
+@property unsigned long long AVAssetDownloadToken;
 @property (copy) NSURL *URL;
 @property (retain) AVURLAsset *URLAsset;
 @property (copy) NSData *assetArtworkData;
@@ -25,13 +25,13 @@
 @property (copy) NSDictionary *options;
 @property (copy) NSURL *temporaryDestinationURL;
 
-- (unsigned int)AVAssetDownloadToken;
+- (unsigned long long)AVAssetDownloadToken;
 - (id)URL;
 - (id)URLAsset;
 - (void)_onqueue_didFinishDownloadingToURL:(id)arg1;
 - (void)_onqueue_didFinishWithError:(id)arg1;
 - (void)_onqueue_didLoadTimeRange:(id)arg1 totalTimeRangesLoaded:(id)arg2 timeRangeExpectedToLoad:(id)arg3;
-- (void)_onqueue_didReceiveProgressUpdateWithTotalBytesWritten:(int)arg1 totalBytesExpectedToWrite:(int)arg2;
+- (void)_onqueue_didReceiveProgressUpdateWithTotalBytesWritten:(long long)arg1 totalBytesExpectedToWrite:(long long)arg2;
 - (void)_onqueue_didResolveMediaSelectionPropertyList:(id)arg1;
 - (id)assetArtworkData;
 - (id)assetTitle;
@@ -45,7 +45,7 @@
 - (id)options;
 - (id)originalRequest;
 - (id)response;
-- (void)setAVAssetDownloadToken:(unsigned int)arg1;
+- (void)setAVAssetDownloadToken:(unsigned long long)arg1;
 - (void)setAssetArtworkData:(id)arg1;
 - (void)setAssetTitle:(id)arg1;
 - (void)setDestinationURL:(id)arg1;

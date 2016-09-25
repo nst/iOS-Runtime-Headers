@@ -33,7 +33,7 @@
 @property (nonatomic, retain) PUBrowsingVideoPlayer *videoPlayer;
 
 + (id)_loadErrorIcon;
-+ (struct CGSize { double x1; double x2; })progressIndicatorTileSize;
++ (struct CGSize { float x1; float x2; })progressIndicatorTileSize;
 
 - (void).cxx_destruct;
 - (id)_debugProgressLabel;

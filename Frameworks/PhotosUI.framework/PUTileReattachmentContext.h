@@ -17,8 +17,8 @@
 - (BOOL)isTransitioningOverOneUp;
 - (BOOL)isZoomingIn;
 - (void)setTransitioningOverOneUp:(BOOL)arg1;
-- (void)setVelocity:(struct PUDisplayVelocity { double x1; double x2; double x3; double x4; })arg1 forTileController:(id)arg2;
+- (void)setVelocity:(struct PUDisplayVelocity { float x1; float x2; float x3; float x4; })arg1 forTileController:(id)arg2;
 - (void)setZoomingIn:(BOOL)arg1;
-- (struct PUDisplayVelocity { double x1; double x2; double x3; double x4; })velocityForTileController:(id)arg1;
+- (struct PUDisplayVelocity { float x1; float x2; float x3; float x4; })velocityForTileController:(id)arg1;
 
 @end

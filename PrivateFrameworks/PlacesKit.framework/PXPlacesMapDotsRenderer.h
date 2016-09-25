@@ -11,14 +11,14 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } minimumEdgeInsets;
+@property (readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } minimumEdgeInsets;
 @property (nonatomic) <PXPlacesMapPipelineComponentProvider> *pipelineComponentProvider;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (int)annotationType;
 - (id)dataSource;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })minimumEdgeInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })minimumEdgeInsets;
 - (id)overlayForLayoutItem:(id)arg1;
 - (id)pipelineComponentProvider;
 - (id)rendererForOverlay:(id)arg1 andMapView:(id)arg2;

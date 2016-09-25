@@ -11,7 +11,7 @@
         unsigned int location; 
         unsigned int length; 
     }  _pageRange;
-    double  _pickerWidth;
+    float  _pickerWidth;
     UIPrintPanelViewController * _printPanelViewController;
     UITableView * _tableView;
     UIPickerView * _toPicker;

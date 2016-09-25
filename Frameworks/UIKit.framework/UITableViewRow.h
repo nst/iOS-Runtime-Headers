@@ -4,12 +4,12 @@
 
 @interface UITableViewRow : NSObject <NSCoding> {
     UITableViewCell * _cell;
-    double  _height;
+    float  _height;
     int  _indentationLevel;
 }
 
 @property (nonatomic, retain) UITableViewCell *cell;
-@property (nonatomic) double height;
+@property (nonatomic) float height;
 
 + (id)row;
 

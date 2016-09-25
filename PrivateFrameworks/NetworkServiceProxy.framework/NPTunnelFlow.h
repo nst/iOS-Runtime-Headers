@@ -14,8 +14,8 @@
     NSPConnectionInfo * _finalConnectionInfo;
     NSDate * _firstTxByteTimestamp;
     BOOL  _hasTunnel;
-    unsigned int  _hashKey;
-    unsigned int  _identifier;
+    unsigned long long  _hashKey;
+    unsigned long long  _identifier;
     BOOL  _isDirectConnectionViable;
     long  _latestByteDate;
     NSMutableDictionary * _metrics;
@@ -44,8 +44,8 @@
 @property (retain) NSPConnectionInfo *finalConnectionInfo;
 @property (retain) NSDate *firstTxByteTimestamp;
 @property BOOL hasTunnel;
-@property (readonly) unsigned int hashKey;
-@property unsigned int identifier;
+@property (readonly) unsigned long long hashKey;
+@property unsigned long long identifier;
 @property (readonly) BOOL isBestEffort;
 @property (readonly) BOOL isClientFlowClosed;
 @property BOOL isDirectConnectionViable;
@@ -89,10 +89,10 @@
 - (void)handleTunnelCanHandleMoreData;
 - (void)handleTunnelDisconnected;
 - (BOOL)hasTunnel;
-- (unsigned int)hashKey;
-- (unsigned int)identifier;
+- (unsigned long long)hashKey;
+- (unsigned long long)identifier;
 - (void)increaseWindowSize:(unsigned int)arg1;
-- (id)initWithTunnel:(id)arg1 appRule:(id)arg2 clientFlow:(id)arg3 hashKey:(unsigned int)arg4 delegate:(id)arg5;
+- (id)initWithTunnel:(id)arg1 appRule:(id)arg2 clientFlow:(id)arg3 hashKey:(unsigned long long)arg4 delegate:(id)arg5;
 - (BOOL)isBestEffort;
 - (BOOL)isClientFlowClosed;
 - (BOOL)isDirectConnectionViable;
@@ -116,7 +116,7 @@
 - (void)setFirstTxByteTimestamp:(id)arg1;
 - (void)setFlowFallbackReason:(int)arg1;
 - (void)setHasTunnel:(BOOL)arg1;
-- (void)setIdentifier:(unsigned int)arg1;
+- (void)setIdentifier:(unsigned long long)arg1;
 - (void)setIsDirectConnectionViable:(BOOL)arg1;
 - (void)setLatestByteDate:(long)arg1;
 - (void)setMetrics:(id)arg1;

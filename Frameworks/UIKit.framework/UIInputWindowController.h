@@ -42,49 +42,49 @@
     UIInputViewSetPlacement * _postRotationPlacement;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _preLayoutHostViewFrame;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _preRotationInputAccessoryViewSize;
     struct CGAffineTransform { 
-        double a; 
-        double b; 
-        double c; 
-        double d; 
-        double tx; 
-        double ty; 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     }  _preRotationInputAccessoryViewTransform;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _preRotationInputAssistantViewSize;
     struct CGAffineTransform { 
-        double a; 
-        double b; 
-        double c; 
-        double d; 
-        double tx; 
-        double ty; 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     }  _preRotationInputAssistantViewTransform;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _preRotationInputViewSize;
     struct CGAffineTransform { 
-        double a; 
-        double b; 
-        double c; 
-        double d; 
-        double tx; 
-        double ty; 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     }  _preRotationInputViewTransform;
     UIView * _preRotationSnapshot;
     BOOL  _requiresConstraintUpdate;
@@ -131,7 +131,7 @@
 @property (nonatomic, readonly) int keyboardOrientation;
 @property (nonatomic, retain) UIInputViewSetPlacement *placement;
 @property (nonatomic, readonly, retain) UIInputViewSetPlacement *placementIgnoringRotation;
-@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } positionConstraintConstant;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } positionConstraintConstant;
 @property (nonatomic, retain) UIInputViewSetNotificationInfo *postRotationInputViewNotificationInfo;
 @property (nonatomic, retain) UIInputViewSet *postRotationInputViewSet;
 @property (nonatomic, retain) UIInputViewSetPlacement *postRotationPlacement;
@@ -143,14 +143,14 @@
 + (BOOL)_doesOverrideLegacyFullScreenLayout;
 + (id)tranformedUserInfoForNotificationName:(id)arg1 userInfo:(id)arg2;
 
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_aligningInsetsForChildInputViewController:(id)arg1 includeSceneBounds:(BOOL)arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_boundsForOrientation:(int)arg1;
-- (struct CGPoint { double x1; double x2; })_centerForOrientation:(int)arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_aligningInsetsForChildInputViewController:(id)arg1 includeSceneBounds:(BOOL)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_boundsForOrientation:(int)arg1;
+- (struct CGPoint { float x1; float x2; })_centerForOrientation:(int)arg1;
 - (int)_clipCornersOfView:(id)arg1;
 - (void)_collectTransitionTimeStatistics:(unsigned int)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_defaultInitialViewFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_defaultInitialViewFrame;
 - (void)_forcePreLayoutHostViewFrame;
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; int x7; }*)arg1;
+- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; float x6; int x7; }*)arg1;
 - (id)_inputAccessoryBackdropView;
 - (id)_inputAccessoryView;
 - (id)_inputAccessoryViewController;
@@ -240,7 +240,7 @@
 - (id)placementIgnoringRotation;
 - (void)placementNeedsUpdate:(id)arg1;
 - (void)popAnimationStyle;
-- (struct CGPoint { double x1; double x2; })positionConstraintConstant;
+- (struct CGPoint { float x1; float x2; })positionConstraintConstant;
 - (void)postEndNotifications:(unsigned int)arg1 withInfo:(id)arg2;
 - (id)postRotationInputViewNotificationInfo;
 - (id)postRotationInputViewSet;
@@ -291,7 +291,7 @@
 - (void)transferActiveNotificationInfoToInfo:(id)arg1;
 - (void)transferPlacementStateToInputWindowController:(id)arg1;
 - (void)transitionDidFinish:(BOOL)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })transitioningFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })transitioningFrame;
 - (id)transitioningView;
 - (void)updateAppearStatesForPlacement:(id)arg1 start:(BOOL)arg2 animated:(BOOL)arg3;
 - (void)updateConstraintInsets;
@@ -309,8 +309,8 @@
 - (id)viewMatchingConstraintForAttribute:(int)arg1 primaryView:(id)arg2 secondaryView:(id)arg3;
 - (void)viewWillLayoutSubviews;
 - (void)viewWillMoveToWindow:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })visibleFrame;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })visibleInputViewFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleInputViewFrame;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)willBeginTranslation;
 - (void)willResume:(id)arg1;

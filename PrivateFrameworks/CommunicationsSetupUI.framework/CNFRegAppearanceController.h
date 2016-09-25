@@ -64,7 +64,7 @@
 @property (nonatomic, readonly, retain) UIColor *tableHeaderTextColor;
 @property (nonatomic, readonly, retain) UIColor *tableHeaderTextColorSelected;
 @property (nonatomic, readonly, retain) UIColor *tableHeaderTextShadowColor;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } tableHeaderTextShadowOffset;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } tableHeaderTextShadowOffset;
 @property (nonatomic, readonly, retain) UIColor *tableSectionBorderColor;
 @property (nonatomic, readonly, retain) UIImage *tableSectionShadowImage;
 @property (nonatomic, readonly) UIColor *tableSeparatorBottomShadowColor;
@@ -146,7 +146,7 @@
 - (id)tableHeaderTextColor;
 - (id)tableHeaderTextColorSelected;
 - (id)tableHeaderTextShadowColor;
-- (struct CGSize { double x1; double x2; })tableHeaderTextShadowOffset;
+- (struct CGSize { float x1; float x2; })tableHeaderTextShadowOffset;
 - (id)tableSectionBorderColor;
 - (id)tableSectionShadowImage;
 - (id)tableSeparatorBottomShadowColor;

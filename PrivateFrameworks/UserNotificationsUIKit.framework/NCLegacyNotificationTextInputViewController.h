@@ -41,7 +41,7 @@
 - (id)notificationRequest;
 - (BOOL)performAction:(id)arg1 forNotification:(id)arg2;
 - (BOOL)performAction:(id)arg1 forNotification:(id)arg2 withUserInfo:(id)arg3;
-- (struct CGSize { double x1; double x2; })preferredContentSize;
+- (struct CGSize { float x1; float x2; })preferredContentSize;
 - (void)setButton:(id)arg1;
 - (void)setContentView:(id)arg1;
 - (void)setDelegate:(id)arg1;

@@ -62,7 +62,7 @@
 - (void)registerOrigin:(struct _MROrigin { }*)arg1 withCompletion:(id /* block */)arg2;
 - (id)registeredOrigins;
 - (id)routingNotificationObservers;
-- (void)sendTransaction:(unsigned int)arg1 withData:(id)arg2 forOrigin:(struct _MROrigin { }*)arg3;
+- (void)sendTransaction:(unsigned long long)arg1 withData:(id)arg2 forOrigin:(struct _MROrigin { }*)arg3;
 - (struct MRMediaRemoteService { }*)service;
 - (id)serviceQueue;
 - (void)setExternalScreenTypeNotificationObservers:(id)arg1;

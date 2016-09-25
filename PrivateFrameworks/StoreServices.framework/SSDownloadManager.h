@@ -53,7 +53,7 @@
 - (void)_connectAsObserver;
 - (id)_copyDownloadKindsUsingNetwork;
 - (id)_copyDownloads;
-- (id)_copyDownloadsForMessage:(int)arg1 downloadIDs:(id)arg2;
+- (id)_copyDownloadsForMessage:(long long)arg1 downloadIDs:(id)arg2;
 - (id)_downloadsForJobs:(id)arg1;
 - (id)_filterJobIDsFromDownloads:(inout id*)arg1;
 - (id)_filterJobsFromDownloads:(inout id*)arg1;

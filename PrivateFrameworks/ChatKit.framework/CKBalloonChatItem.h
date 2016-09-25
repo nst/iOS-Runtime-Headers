@@ -24,14 +24,14 @@
 - (id)cellIdentifier;
 - (void)configureBalloonView:(id)arg1;
 - (id)contact;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
 - (id)description;
 - (BOOL)displayDuringSend;
 - (BOOL)failed;
 - (Class)impactBalloonViewClass;
 - (BOOL)isEditable;
 - (BOOL)isFromMe;
-- (struct CGSize { double x1; double x2; })loadSizeThatFits:(struct CGSize { double x1; double x2; })arg1 textAlignmentInsets:(out struct UIEdgeInsets { double x1; double x2; double x3; double x4; }*)arg2;
+- (struct CGSize { float x1; float x2; })loadSizeThatFits:(struct CGSize { float x1; float x2; })arg1 textAlignmentInsets:(out struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg2;
 - (id)loadTranscriptDrawerText;
 - (BOOL)needsAdjustedTextAlignmentInsets;
 - (BOOL)needsPreservedAspectRatio;
@@ -39,7 +39,7 @@
 - (BOOL)tailShape;
 - (id)time;
 - (BOOL)transcriptOrientation;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })transcriptTextAlignmentInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })transcriptTextAlignmentInsets;
 - (BOOL)wantsDrawerLayout;
 
 @end

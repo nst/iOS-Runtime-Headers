@@ -58,13 +58,13 @@
 - (void)_updateFeedbackTowardNextState:(int)arg1 progress:(float)arg2;
 - (void)_updateForContinuousEvaluation:(id)arg1;
 - (void)_updateInteractionStateRecognizerForTouch:(id)arg1;
-- (void)_updateInteractionStateRecognizerForTouchForce:(float)arg1 atTimestamp:(double)arg2 withCentroidAtLocation:(struct CGPoint { double x1; double x2; })arg3;
+- (void)_updateInteractionStateRecognizerForTouchForce:(float)arg1 atTimestamp:(double)arg2 withCentroidAtLocation:(struct CGPoint { float x1; float x2; })arg3;
 - (void)cancelInteraction;
 - (id)delegate;
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (id)init;
 - (id)initWithView:(id)arg1;
-- (struct CGPoint { double x1; double x2; })locationInCoordinateSpace:(id)arg1;
+- (struct CGPoint { float x1; float x2; })locationInCoordinateSpace:(id)arg1;
 - (id)newAnimator;
 - (id)newAnimatorForViewControllerTransition;
 - (id)newGestureRecognizerForFailureRelationship;

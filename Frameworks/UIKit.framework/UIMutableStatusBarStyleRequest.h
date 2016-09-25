@@ -4,7 +4,7 @@
 
 @interface UIMutableStatusBarStyleRequest : UIStatusBarStyleRequest
 
-@property (nonatomic) double foregroundAlpha;
+@property (nonatomic) float foregroundAlpha;
 @property (nonatomic, retain) UIColor *foregroundColor;
 @property (getter=isLegacy, nonatomic) BOOL legacy;
 @property (nonatomic) int legibilityStyle;

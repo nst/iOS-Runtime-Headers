@@ -6,24 +6,24 @@
     NSMutableArray * _animations;
     struct _PXValueAnimationSpec { 
         int type; 
-        double epsilon; 
-        double stiffness; 
-        double dampingRatio; 
-        double initialVelocity; 
+        float epsilon; 
+        float stiffness; 
+        float dampingRatio; 
+        float initialVelocity; 
     }  _currentAnimationSpec;
     CADisplayLink * _displayLink;
-    double  _epsilon;
+    float  _epsilon;
     BOOL  _isPerformingChanges;
     struct { 
         BOOL presentationValue; 
     }  _needsUpdateFlags;
-    double  _presentationValue;
-    double  _value;
+    float  _presentationValue;
+    float  _value;
 }
 
-@property (nonatomic, readonly) double epsilon;
-@property (setter=_setPresentationValue:, nonatomic) double presentationValue;
-@property (nonatomic, readonly) double value;
+@property (nonatomic, readonly) float epsilon;
+@property (setter=_setPresentationValue:, nonatomic) float presentationValue;
+@property (nonatomic, readonly) float value;
 
 - (void).cxx_destruct;
 - (void)_handleDisplayLink:(id)arg1;

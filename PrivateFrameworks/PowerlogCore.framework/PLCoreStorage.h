@@ -57,7 +57,7 @@
 - (void)blockingFlushCachesWithReason:(id)arg1;
 - (void)blockingFlushQueues:(id)arg1;
 - (void)blockingUpdateEntry:(id)arg1 withBlock:(id /* block */)arg2;
-- (int)blockingWriteEntry:(id)arg1 withCompletionBlock:(id /* block */)arg2;
+- (long long)blockingWriteEntry:(id)arg1 withCompletionBlock:(id /* block */)arg2;
 - (void)cacheProcessIDEntry:(id)arg1;
 - (void)checkCacheSizeForFlush;
 - (void)cleanupQuarantine;
@@ -73,18 +73,18 @@
 - (void)deleteAllEntriesForKey:(id)arg1 beforeTimestamp:(id)arg2 withFilters:(id)arg3;
 - (void)deleteAllEntriesForKey:(id)arg1 withFilters:(id)arg2;
 - (void)deleteEntry:(id)arg1;
-- (void)deleteEntryForKey:(id)arg1 WithRowID:(int)arg2;
+- (void)deleteEntryForKey:(id)arg1 WithRowID:(long long)arg2;
 - (void)dispatchAsyncForEntryKey:(id)arg1 withBlock:(id /* block */)arg2;
 - (void)dispatchSyncForEntryKey:(id)arg1 withBlock:(id /* block */)arg2;
 - (id)entriesForKey:(id)arg1;
-- (id)entriesForKey:(id)arg1 before:(BOOL)arg2 timeInterval:(double)arg3 count:(int)arg4 withFilters:(id)arg5;
-- (id)entriesForKey:(id)arg1 inTimeRange:(struct _PLTimeIntervalRange { double x1; double x2; })arg2 withCountOfEntriesBefore:(int)arg3 withCountOfEntriesAfter:(int)arg4 withFilters:(id)arg5;
+- (id)entriesForKey:(id)arg1 before:(BOOL)arg2 timeInterval:(double)arg3 count:(long long)arg4 withFilters:(id)arg5;
+- (id)entriesForKey:(id)arg1 inTimeRange:(struct _PLTimeIntervalRange { double x1; double x2; })arg2 withCountOfEntriesBefore:(long long)arg3 withCountOfEntriesAfter:(long long)arg4 withFilters:(id)arg5;
 - (id)entriesForKey:(id)arg1 inTimeRange:(struct _PLTimeIntervalRange { double x1; double x2; })arg2 withFilters:(id)arg3;
-- (id)entriesForKey:(id)arg1 startingFromRowID:(int)arg2 count:(int)arg3 withFilters:(id)arg4;
+- (id)entriesForKey:(id)arg1 startingFromRowID:(long long)arg2 count:(long long)arg3 withFilters:(id)arg4;
 - (id)entriesForKey:(id)arg1 withComparisons:(id)arg2;
 - (id)entriesForKey:(id)arg1 withProperties:(id)arg2;
 - (id)entriesForKey:(id)arg1 withQuery:(id)arg2;
-- (id)entryForKey:(id)arg1 withID:(int)arg2;
+- (id)entryForKey:(id)arg1 withID:(long long)arg2;
 - (void)enumerateProcessIDCacheWithBlock:(id /* block */)arg1;
 - (id)flushCachesCFNotification;
 - (BOOL)flushCachesIfRequiredForEntryKey:(id)arg1;
@@ -95,11 +95,11 @@
 - (id)init;
 - (void)initOperatorDependancies;
 - (id)keybagFirstUnlockNotification;
-- (id)lastEntriesForKey:(id)arg1 count:(int)arg2 withFilters:(id)arg3;
+- (id)lastEntriesForKey:(id)arg1 count:(long long)arg2 withFilters:(id)arg3;
 - (id)lastEntryForKey:(id)arg1;
 - (id)lastEntryForKey:(id)arg1 withComparisons:(id)arg2 isSingleton:(BOOL)arg3;
 - (id)lastEntryForKey:(id)arg1 withFilters:(id)arg2;
-- (id)lastEntryForKey:(id)arg1 withIDLessThan:(int)arg2;
+- (id)lastEntryForKey:(id)arg1 withIDLessThan:(long long)arg2;
 - (id)lastEntryForKey:(id)arg1 withSubEntryKey:(id)arg2;
 - (void)loadDynamicValuesIntoEntry:(id)arg1;
 - (void)logMessage:(id)arg1 fromFile:(id)arg2 fromFunction:(id)arg3 fromLineNumber:(long)arg4;
@@ -151,7 +151,7 @@
 - (void)willSwitchUser;
 - (void)writeAggregateEntry:(id)arg1;
 - (void)writeEntries:(id)arg1 withCompletionBlock:(id /* block */)arg2;
-- (int)writeEntry:(id)arg1;
+- (long long)writeEntry:(id)arg1;
 - (void)writeEntry:(id)arg1 withCompletionBlock:(id /* block */)arg2;
 
 @end

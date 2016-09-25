@@ -11,7 +11,7 @@
     BOOL  _centerTextButtons;
     UIView * _customBackgroundView;
     <UIToolbarDelegate> * _delegate;
-    double  _extraEdgeInsets;
+    float  _extraEdgeInsets;
     NSArray * _items;
     UIView * _shadowView;
     struct { 
@@ -66,7 +66,7 @@
 - (float)_edgeMarginForBorderedItem:(BOOL)arg1 isText:(BOOL)arg2;
 - (id)_effectiveBarTintColor;
 - (void)_effectiveBarTintColorDidChangeWithPreviousColor:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameOfBarButtonItem:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameOfBarButtonItem:(id)arg1;
 - (void)_frameOrBoundsChangedWithVisibleSizeChange:(BOOL)arg1 wasMinibar:(BOOL)arg2;
 - (void)_frameOrCenterChanged;
 - (BOOL)_hasCustomAutolayoutNeighborSpacing;
@@ -92,7 +92,7 @@
 - (void)_setNeedsBackgroundViewUpdate;
 - (void)_setShadowView:(id)arg1;
 - (void)_setVisualAltitude:(float)arg1;
-- (void)_setVisualAltitudeBias:(struct CGSize { double x1; double x2; })arg1;
+- (void)_setVisualAltitudeBias:(struct CGSize { float x1; float x2; })arg1;
 - (void)_setWantsLetterpressContent:(BOOL)arg1;
 - (id)_shadowView;
 - (BOOL)_subclassImplementsDrawRect;
@@ -113,17 +113,17 @@
 - (BOOL)centerTextButtons;
 - (id)createButtonWithDescription:(id)arg1;
 - (int)currentButtonGroup;
-- (struct CGSize { double x1; double x2; })defaultSizeForOrientation:(int)arg1;
+- (struct CGSize { float x1; float x2; })defaultSizeForOrientation:(int)arg1;
 - (id)delegate;
-- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (float)extraEdgeInsets;
 - (void)getVisibleButtonTags:(int*)arg1 count:(unsigned int*)arg2 maxItems:(unsigned int)arg3;
-- (id)initInView:(id)arg1 withFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 withItemList:(id)arg3;
+- (id)initInView:(id)arg1 withFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 withItemList:(id)arg3;
 - (id)initInView:(id)arg1 withItemList:(id)arg2;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (void)invalidateIntrinsicContentSize;
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
 - (BOOL)isMinibar;
@@ -141,14 +141,14 @@
 - (void)setBadgeValue:(id)arg1 forButton:(int)arg2;
 - (void)setBarStyle:(int)arg1;
 - (void)setBarTintColor:(id)arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setButtonBarTrackingMode:(int)arg1;
 - (void)setButtonItems:(id)arg1;
-- (void)setCenter:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setCenter:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setCenterTextButtons:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setExtraEdgeInsets:(float)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setItems:(id)arg1;
 - (void)setItems:(id)arg1 animated:(BOOL)arg2;
 - (void)setMode:(int)arg1;
@@ -160,7 +160,7 @@
 - (id)shadowImageForToolbarPosition:(int)arg1;
 - (void)showButtonGroup:(int)arg1 withDuration:(double)arg2;
 - (void)showButtons:(int*)arg1 withCount:(int)arg2 withDuration:(double)arg3;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 
 // Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
 

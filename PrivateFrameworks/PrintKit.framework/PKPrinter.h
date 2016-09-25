@@ -15,7 +15,7 @@
     int  identifyActionsSupported;
     BOOL  isFromMCProfile;
     BOOL  isLocal;
-    struct _http_s { int x1; int x2; int x3; int x4; int x5; int x6; int x7; int x8; struct sockaddr_in { unsigned char x_9_1_1; unsigned char x_9_1_2; unsigned short x_9_1_3; struct in_addr { unsigned int x_4_2_1; } x_9_1_4; BOOL x_9_1_5[8]; } x9; BOOL x10[256]; BOOL x11[27][256]; char *x12; int x13; int x14; int x15; BOOL x16[2048]; int x17; struct _cups_md5_state_s { unsigned int x_18_1_1[2]; unsigned int x_18_1_2[4]; unsigned char x_18_1_3[64]; } x18; BOOL x19[256]; int x20; struct SSLContext {} *x21; int x22; struct fd_set {} *x23; int x24; char *x25; BOOL x26[256]; BOOL x27[256]; int x28; int x29; union { /* Warning: Unrecognized filer type: '_' using 'void*' */ void*x_30_1_1; void*x_30_1_2; void*x_30_1_3; void*x_30_1_4; void*x_30_1_5; void*x_30_1_6; void*x_30_1_7; double x_30_1_8; double x_30_1_9; const void*x_30_1_10; void*x_30_1_11; } *x30; struct http_addrlist_s {} *x31; BOOL x32[2048]; int x33; char *x34; char *x35; struct __CFArray {} *x36; int (*x37)(); void *x38; double x39; int x40; int x41; int x42; char *x43; } * job_http;
+    struct _http_s { int x1; int x2; int x3; int x4; int x5; int x6; int x7; int x8; struct sockaddr_in { unsigned char x_9_1_1; unsigned char x_9_1_2; unsigned short x_9_1_3; struct in_addr { unsigned int x_4_2_1; } x_9_1_4; BOOL x_9_1_5[8]; } x9; BOOL x10[256]; BOOL x11[27][256]; char *x12; int x13; int x14; int x15; BOOL x16[2048]; int x17; struct _cups_md5_state_s { unsigned int x_18_1_1[2]; unsigned int x_18_1_2[4]; unsigned char x_18_1_3[64]; } x18; BOOL x19[256]; int x20; struct SSLContext {} *x21; int x22; struct fd_set {} *x23; int x24; char *x25; BOOL x26[256]; BOOL x27[256]; int x28; long long x29; union { /* Warning: Unrecognized filer type: '_' using 'void*' */ void*x_30_1_1; void*x_30_1_2; void*x_30_1_3; void*x_30_1_4; void*x_30_1_5; void*x_30_1_6; void*x_30_1_7; double x_30_1_8; double x_30_1_9; const void*x_30_1_10; void*x_30_1_11; } *x30; struct http_addrlist_s {} *x31; BOOL x32[2048]; int x33; char *x34; char *x35; struct __CFArray {} *x36; int (*x37)(); void *x38; double x39; int x40; int x41; int x42; char *x43; } * job_http;
     int  kind;
     NSArray * mandatoryJobAttributes;
     int  maxCopies;
@@ -134,9 +134,9 @@
 - (BOOL)needsSetup;
 - (id)paperList;
 - (id)paperListForDuplexMode:(id)arg1;
-- (id)papersForDocumentWithSize:(struct CGSize { double x1; double x2; })arg1 andDuplex:(BOOL)arg2;
-- (id)papersForDocumentWithSize:(struct CGSize { double x1; double x2; })arg1 scaleUpOnRoll:(BOOL)arg2 andDuplex:(BOOL)arg3;
-- (id)papersForPhotoWithSize:(struct CGSize { double x1; double x2; })arg1;
+- (id)papersForDocumentWithSize:(struct CGSize { float x1; float x2; })arg1 andDuplex:(BOOL)arg2;
+- (id)papersForDocumentWithSize:(struct CGSize { float x1; float x2; })arg1 scaleUpOnRoll:(BOOL)arg2 andDuplex:(BOOL)arg3;
+- (id)papersForPhotoWithSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)port;
 - (id)printInfoSupported;
 - (int)printURL:(id)arg1 ofType:(id)arg2 printSettings:(id)arg3;
@@ -148,8 +148,8 @@
 - (BOOL)resolve;
 - (BOOL)resolveIfNeeded;
 - (BOOL)resolveWithTimeout:(int)arg1;
-- (id)rollReadyPaperListWithContentSize:(struct CGSize { double x1; double x2; })arg1;
-- (id)rollReadyPaperListWithContentSize:(struct CGSize { double x1; double x2; })arg1 forPhoto:(BOOL)arg2;
+- (id)rollReadyPaperListWithContentSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)rollReadyPaperListWithContentSize:(struct CGSize { float x1; float x2; })arg1 forPhoto:(BOOL)arg2;
 - (id)scheme;
 - (int)sendData:(const char *)arg1 ofLength:(int)arg2;
 - (void)setAccessState:(int)arg1;

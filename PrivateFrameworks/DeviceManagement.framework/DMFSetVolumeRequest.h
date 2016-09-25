@@ -3,10 +3,10 @@
  */
 
 @interface DMFSetVolumeRequest : CATTaskRequest {
-    double  _volume;
+    float  _volume;
 }
 
-@property (nonatomic) double volume;
+@property (nonatomic) float volume;
 
 + (BOOL)supportsSecureCoding;
 

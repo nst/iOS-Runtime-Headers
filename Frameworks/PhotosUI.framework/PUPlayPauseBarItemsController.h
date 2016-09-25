@@ -16,17 +16,17 @@
     id  __timeObservationToken;
     PUBrowsingVideoPlayer * __videoPlayer;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _currentPlaybackTime;
     int  _playPauseState;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _playbackDuration;
     PUBrowsingViewModel * _viewModel;
 }
@@ -43,12 +43,12 @@
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *_observerQueue;
 @property (setter=_setTimeObservationToken:, nonatomic, retain) id _timeObservationToken;
 @property (setter=_setVideoPlayer:, nonatomic, retain) PUBrowsingVideoPlayer *_videoPlayer;
-@property (setter=_setCurrentPlaybackTime:, nonatomic) struct { int x1; int x2; unsigned int x3; int x4; } currentPlaybackTime;
+@property (setter=_setCurrentPlaybackTime:, nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } currentPlaybackTime;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (setter=_setPlayPauseState:, nonatomic) int playPauseState;
-@property (setter=_setPlaybackDuration:, nonatomic) struct { int x1; int x2; unsigned int x3; int x4; } playbackDuration;
+@property (setter=_setPlaybackDuration:, nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } playbackDuration;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) PUBrowsingViewModel *viewModel;
 
@@ -75,7 +75,7 @@
 - (void)_performChanges:(id /* block */)arg1;
 - (void)_publishChanges;
 - (void)_setAVPlayer:(id)arg1;
-- (void)_setCurrentPlaybackTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
+- (void)_setCurrentPlaybackTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)_setNeedsUpdate;
 - (void)_setNeedsUpdateAVPlayer:(BOOL)arg1;
 - (void)_setNeedsUpdateCurrentPlaybackTimeAndDuration:(BOOL)arg1;
@@ -83,7 +83,7 @@
 - (void)_setNeedsUpdateVideoPlayer:(BOOL)arg1;
 - (void)_setPerformingChanges:(BOOL)arg1;
 - (void)_setPlayPauseState:(int)arg1;
-- (void)_setPlaybackDuration:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
+- (void)_setPlaybackDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)_setTimeObservationToken:(id)arg1;
 - (void)_setUpdating:(BOOL)arg1;
 - (void)_setVideoPlayer:(id)arg1;
@@ -96,10 +96,10 @@
 - (void)_updatePlayPauseStateIfNeeded;
 - (void)_updateVideoPlayerIfNeeded;
 - (id)_videoPlayer;
-- (struct { int x1; int x2; unsigned int x3; int x4; })currentPlaybackTime;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })currentPlaybackTime;
 - (id)init;
 - (int)playPauseState;
-- (struct { int x1; int x2; unsigned int x3; int x4; })playbackDuration;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })playbackDuration;
 - (void)registerChangeObserver:(id)arg1;
 - (void)setViewModel:(id)arg1;
 - (void)unregisterChangeObserver:(id)arg1;

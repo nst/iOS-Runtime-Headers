@@ -7,7 +7,7 @@
     UIColor * _highlightedTextColor;
     BOOL  _informParentOfContentSizeChange;
     BOOL  _isHighlighted;
-    double  _lastContentHeight;
+    float  _lastContentHeight;
     ABSwellTextView * _parent;
     struct _NSRange { 
         unsigned int location; 
@@ -16,8 +16,8 @@
     UIColor * _savedTextColor;
     UIColor * _shadowColor;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _shadowOffset;
 }
 
@@ -26,30 +26,30 @@
 @property (nonatomic, retain) UIColor *highlightedTextColor;
 @property (nonatomic) ABSwellTextView *parent;
 @property (nonatomic, retain) UIColor *shadowColor;
-@property (nonatomic) struct CGSize { double x1; double x2; } shadowOffset;
+@property (nonatomic) struct CGSize { float x1; float x2; } shadowOffset;
 
 - (void)_beginPinningInputViews;
 - (void)_endPinningInputViews;
-- (void)_secretSetFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)_secretSetFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_updateStylesheet;
 - (BOOL)becomeFirstResponder;
 - (void)dealloc;
 - (BOOL)disallowsSetContentOffset;
 - (id)highlightedTextColor;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isHighlighted;
 - (id)parent;
-- (void)setContentOffset:(struct CGPoint { double x1; double x2; })arg1;
-- (void)setContentSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setDisallowsSetContentOffset:(BOOL)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setHighlightedTextColor:(id)arg1;
 - (void)setParent:(id)arg1;
 - (void)setShadowColor:(id)arg1;
-- (void)setShadowOffset:(struct CGSize { double x1; double x2; })arg1;
+- (void)setShadowOffset:(struct CGSize { float x1; float x2; })arg1;
 - (void)setTextColor:(id)arg1;
 - (id)shadowColor;
-- (struct CGSize { double x1; double x2; })shadowOffset;
+- (struct CGSize { float x1; float x2; })shadowOffset;
 
 @end

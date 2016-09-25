@@ -62,7 +62,7 @@
 - (void)setValue:(void*)arg1 forKey:(struct __CFString { }*)arg2 appIdentifier:(struct __CFString { }*)arg3 container:(struct __CFString { }*)arg4 configurationURL:(struct __CFURL { }*)arg5;
 - (void)setValue:(void*)arg1 forKey:(struct __CFString { }*)arg2 identifier:(struct __CFString { }*)arg3 user:(struct __CFString { }*)arg4 host:(struct __CFString { }*)arg5 container:(struct __CFString { }*)arg6;
 - (void)setValuesForKeys:(struct __CFDictionary { }*)arg1 removingValuesForKeys:(struct __CFArray { }*)arg2 identifier:(struct __CFString { }*)arg3 user:(struct __CFString { }*)arg4 host:(struct __CFString { }*)arg5 container:(struct __CFString { }*)arg6;
-- (union { struct _CFPrefsShmemEntry { int x_1_1_1; unsigned int x_1_1_2; } x1; unsigned int x2; }*)shmemForRole:(int)arg1 name:(const char *)arg2;
+- (union { struct _CFPrefsShmemEntry { int x_1_1_1; unsigned int x_1_1_2; } x1; unsigned long long x2; }*)shmemForRole:(int)arg1 name:(const char *)arg2;
 - (unsigned char)synchronizeIdentifier:(struct __CFString { }*)arg1 user:(struct __CFString { }*)arg2 host:(struct __CFString { }*)arg3 container:(struct __CFString { }*)arg4;
 - (void)unregisterUserDefaultsInstance:(id)arg1;
 - (void)updateSearchListsForIdentifier:(struct __CFString { }*)arg1;

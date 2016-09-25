@@ -23,7 +23,7 @@
     BOOL  _prevDeviceCharging;
     BOOL  _prevDisplayOn;
     BOOL  _prevMieOn;
-    int  _startTouchEntryId;
+    long long  _startTouchEntryId;
     PLEntryNotificationOperatorComposition * _touchEventCallback;
     long  _touchSubmitCnt;
 }
@@ -48,7 +48,7 @@
 @property BOOL prevDeviceCharging;
 @property BOOL prevDisplayOn;
 @property BOOL prevMieOn;
-@property int startTouchEntryId;
+@property long long startTouchEntryId;
 @property (retain) PLEntryNotificationOperatorComposition *touchEventCallback;
 @property long touchSubmitCnt;
 
@@ -117,11 +117,11 @@
 - (void)setPrevDeviceCharging:(BOOL)arg1;
 - (void)setPrevDisplayOn:(BOOL)arg1;
 - (void)setPrevMieOn:(BOOL)arg1;
-- (void)setStartTouchEntryId:(int)arg1;
+- (void)setStartTouchEntryId:(long long)arg1;
 - (void)setTouchEventCallback:(id)arg1;
 - (void)setTouchSubmitCnt:(long)arg1;
 - (void)startMetricCollection:(id)arg1;
-- (int)startTouchEntryId;
+- (long long)startTouchEntryId;
 - (void)stopMetricCollection:(id)arg1;
 - (BOOL)submitDataToAWDServer:(id)arg1 withAwdConn:(id)arg2;
 - (id)touchEventCallback;

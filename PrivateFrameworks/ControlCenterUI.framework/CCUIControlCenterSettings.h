@@ -3,37 +3,37 @@
  */
 
 @interface CCUIControlCenterSettings : _UISettings {
-    double  _attachmentFrequencyAbove;
-    double  _attachmentFrequencyBelow;
-    double  _attachmentMaxDamping;
-    double  _attachmentMinDamping;
-    double  _attachmentThreshold;
-    double  _attachmentVelocityDamping;
-    double  _backgroundDarkening;
-    double  _bounceDensityFactor;
-    double  _bounceResistance;
-    double  _maxVelocity;
-    double  _minVelocity;
-    double  _oldBounceFriction;
-    double  _platterWallpaperAlpha;
+    float  _attachmentFrequencyAbove;
+    float  _attachmentFrequencyBelow;
+    float  _attachmentMaxDamping;
+    float  _attachmentMinDamping;
+    float  _attachmentThreshold;
+    float  _attachmentVelocityDamping;
+    float  _backgroundDarkening;
+    float  _bounceDensityFactor;
+    float  _bounceResistance;
+    float  _maxVelocity;
+    float  _minVelocity;
+    float  _oldBounceFriction;
+    float  _platterWallpaperAlpha;
     CCUIControlCenterSettingsSectionSettings * _settingsSectionSettings;
     CCUIControlCenterShortcutSectionSettings * _shortcutSectionSettings;
     BOOL  _useNewBounce;
 }
 
-@property double attachmentFrequencyAbove;
-@property double attachmentFrequencyBelow;
-@property double attachmentMaxDamping;
-@property double attachmentMinDamping;
-@property double attachmentThreshold;
-@property double attachmentVelocityDamping;
-@property double backgroundDarkening;
-@property double bounceDensityFactor;
-@property double bounceResistance;
-@property double maxVelocity;
-@property double minVelocity;
-@property double oldBounceFriction;
-@property double platterWallpaperAlpha;
+@property float attachmentFrequencyAbove;
+@property float attachmentFrequencyBelow;
+@property float attachmentMaxDamping;
+@property float attachmentMinDamping;
+@property float attachmentThreshold;
+@property float attachmentVelocityDamping;
+@property float backgroundDarkening;
+@property float bounceDensityFactor;
+@property float bounceResistance;
+@property float maxVelocity;
+@property float minVelocity;
+@property float oldBounceFriction;
+@property float platterWallpaperAlpha;
 @property (retain) CCUIControlCenterSettingsSectionSettings *settingsSectionSettings;
 @property (retain) CCUIControlCenterShortcutSectionSettings *shortcutSectionSettings;
 @property BOOL useNewBounce;

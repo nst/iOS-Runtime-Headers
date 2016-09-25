@@ -30,7 +30,7 @@
 @property (nonatomic, readonly) NSString *lineColorString;
 @property (nonatomic, readonly) GEOMapRegion *mapRegion;
 @property (nonatomic, readonly) <GEOTransitArtworkDataSource> *modeArtwork;
-@property (nonatomic, readonly) unsigned int muid;
+@property (nonatomic, readonly) unsigned long long muid;
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) NSArray *operatingHours;
 @property (nonatomic, readonly) BOOL showVehicleNumber;
@@ -67,7 +67,7 @@
 - (id)mapRegion;
 - (void)mergeFrom:(id)arg1;
 - (id)modeArtwork;
-- (unsigned int)muid;
+- (unsigned long long)muid;
 - (id)name;
 - (id)operatingHours;
 - (BOOL)readFrom:(id)arg1;

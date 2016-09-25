@@ -6,14 +6,14 @@
     NSMutableArray * _childViewElements;
     int  _identifier;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _size;
 }
 
 @property (nonatomic, readonly, copy) NSArray *childViewElements;
 @property (nonatomic) int identifier;
-@property (nonatomic) struct CGSize { double x1; double x2; } size;
+@property (nonatomic) struct CGSize { float x1; float x2; } size;
 
 - (void).cxx_destruct;
 - (void)_addChildViewElement:(id)arg1;
@@ -22,7 +22,7 @@
 - (int)identifier;
 - (id)init;
 - (void)setIdentifier:(int)arg1;
-- (void)setSize:(struct CGSize { double x1; double x2; })arg1;
-- (struct CGSize { double x1; double x2; })size;
+- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { float x1; float x2; })size;
 
 @end

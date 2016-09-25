@@ -3,7 +3,7 @@
  */
 
 @interface CKDPParticipant : PBCodable <NSCopying> {
-    int  _acceptTimestamp;
+    long long  _acceptTimestamp;
     BOOL  _acceptedInProcess;
     CKDPContactInformation * _contactInformation;
     BOOL  _createdInProcess;
@@ -32,7 +32,7 @@
     CKDPIdentifier * _userId;
 }
 
-@property (nonatomic) int acceptTimestamp;
+@property (nonatomic) long long acceptTimestamp;
 @property (nonatomic) BOOL acceptedInProcess;
 @property (nonatomic, retain) CKDPContactInformation *contactInformation;
 @property (nonatomic) BOOL createdInProcess;
@@ -72,7 +72,7 @@
 - (id)_participantTypeCKLogValue;
 - (id)_permissionCKLogValue;
 - (id)_stateCKLogValue;
-- (int)acceptTimestamp;
+- (long long)acceptTimestamp;
 - (BOOL)acceptedInProcess;
 - (id)contactInformation;
 - (void)copyTo:(id)arg1;
@@ -112,7 +112,7 @@
 - (id)publicKey;
 - (int)publicKeyVersion;
 - (BOOL)readFrom:(id)arg1;
-- (void)setAcceptTimestamp:(int)arg1;
+- (void)setAcceptTimestamp:(long long)arg1;
 - (void)setAcceptedInProcess:(BOOL)arg1;
 - (void)setContactInformation:(id)arg1;
 - (void)setCreatedInProcess:(BOOL)arg1;

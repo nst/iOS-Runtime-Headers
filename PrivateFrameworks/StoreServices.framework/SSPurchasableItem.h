@@ -12,14 +12,14 @@
 + (id)databaseTable;
 + (id)sortByDatePurchasedKey;
 
-- (int)accountUniqueIdentifier;
+- (long long)accountUniqueIdentifier;
 - (id)datePurchased;
 - (void)dealloc;
 - (id)description;
 - (id)initWithPropertyValues:(id)arg1;
 - (BOOL)isHidden;
-- (int)pid;
+- (long long)pid;
 - (id)propertyValues;
-- (int)storeID;
+- (long long)storeID;
 
 @end

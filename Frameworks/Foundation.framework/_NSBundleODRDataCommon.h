@@ -6,7 +6,7 @@
     NSMutableDictionary * _assetPackToURL;
     NSBundle * _bundle;
     NSLock * _lock;
-    int  _sandboxToken;
+    long long  _sandboxToken;
 }
 
 - (id)URLForAssetPack:(id)arg1;

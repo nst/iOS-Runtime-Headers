@@ -17,7 +17,7 @@
     unsigned int  _retransmits;
     NSString * _sessionUUID;
     unsigned int  _slowKeepAlives;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) unsigned int duration;
@@ -33,7 +33,7 @@
 @property (nonatomic) unsigned int retransmits;
 @property (nonatomic, retain) NSString *sessionUUID;
 @property (nonatomic) unsigned int slowKeepAlives;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -68,9 +68,9 @@
 - (void)setRetransmits:(unsigned int)arg1;
 - (void)setSessionUUID:(id)arg1;
 - (void)setSlowKeepAlives:(unsigned int)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned int)slowKeepAlives;
-- (unsigned int)timestamp;
+- (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 
 @end

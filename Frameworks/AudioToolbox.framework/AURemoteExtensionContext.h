@@ -35,7 +35,7 @@
 - (id)currentParameterTree;
 - (void)dealloc;
 - (void)getBusses:(unsigned long)arg1 reply:(id /* block */)arg2;
-- (void)getParameter:(unsigned int)arg1 reply:(id /* block */)arg2;
+- (void)getParameter:(unsigned long long)arg1 reply:(id /* block */)arg2;
 - (void)getParameterTree:(id /* block */)arg1;
 - (id)iOSViewController;
 - (id)initWithInputItems:(id)arg1 listenerEndpoint:(id)arg2 contextUUID:(id)arg3;
@@ -44,8 +44,8 @@
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)open:(id /* block */)arg1;
 - (void)parameterNode:(id)arg1 displayNameWithLength:(int)arg2 reply:(id /* block */)arg3;
-- (void)parameterStringFromValue:(float)arg1 currentValue:(BOOL)arg2 address:(unsigned int)arg3 reply:(id /* block */)arg4;
-- (void)parameterValueFromString:(id)arg1 address:(unsigned int)arg2 reply:(id /* block */)arg3;
+- (void)parameterStringFromValue:(float)arg1 currentValue:(BOOL)arg2 address:(unsigned long long)arg3 reply:(id /* block */)arg4;
+- (void)parameterValueFromString:(id)arg1 address:(unsigned long long)arg2 reply:(id /* block */)arg3;
 - (void)parametersForOverviewWithCount:(int)arg1 reply:(id /* block */)arg2;
 - (void)removePropertyObserver:(id)arg1 context:(unsigned long)arg2;
 - (void)requestViewControllerWithCompletionHandler:(id /* block */)arg1;
@@ -56,7 +56,7 @@
 - (void)setValue:(id)arg1 forKey:(id)arg2 reply:(id /* block */)arg3;
 - (void)setValue:(id)arg1 forProperty:(id)arg2 reply:(id /* block */)arg3;
 - (void)setViewService:(id)arg1;
-- (void)syncParameter:(unsigned int)arg1 value:(float)arg2 extOriginator:(unsigned int)arg3 hostTime:(unsigned int)arg4 eventType:(unsigned int)arg5;
+- (void)syncParameter:(unsigned long long)arg1 value:(float)arg2 extOriginator:(unsigned long long)arg3 hostTime:(unsigned long long)arg4 eventType:(unsigned int)arg5;
 - (void)uninitialize:(id /* block */)arg1;
 - (void)valueForKey:(id)arg1 reply:(id /* block */)arg2;
 - (void)valueForProperty:(id)arg1 reply:(id /* block */)arg2;

@@ -4,43 +4,43 @@
 
 @interface FUBarSeries : FUChartSeries {
     UIColor * _backgroundStrokeColor;
-    double  _backgroundStrokeWidth;
+    float  _backgroundStrokeWidth;
     UIColor * _barColor;
     NSArray * _barColors;
     struct CGGradient { } * _barGradient;
     NSArray * _barLabels;
-    double  _barSpacing;
-    double  _barWidth;
-    double  _fadeInPercentage;
+    float  _barSpacing;
+    float  _barWidth;
+    float  _fadeInPercentage;
     BOOL  _fadeZeroBars;
     UIColor * _fadedBarColor;
     NSArray * _labelAttributes;
     NSArray * _plotPoints;
-    double  _roundedCornerRadius;
+    float  _roundedCornerRadius;
     UIColor * _strokeColor;
-    double  _strokeWidth;
+    float  _strokeWidth;
 }
 
 @property (nonatomic, retain) UIColor *backgroundStrokeColor;
-@property (nonatomic) double backgroundStrokeWidth;
+@property (nonatomic) float backgroundStrokeWidth;
 @property (nonatomic, retain) UIColor *barColor;
 @property (nonatomic, retain) NSArray *barColors;
 @property (nonatomic) struct CGGradient { }*barGradient;
 @property (nonatomic, retain) NSArray *barLabels;
-@property (nonatomic) double barSpacing;
-@property (nonatomic) double barWidth;
-@property (nonatomic) double fadeInPercentage;
+@property (nonatomic) float barSpacing;
+@property (nonatomic) float barWidth;
+@property (nonatomic) float fadeInPercentage;
 @property (nonatomic) BOOL fadeZeroBars;
 @property (nonatomic, retain) UIColor *fadedBarColor;
 @property (nonatomic, retain) NSArray *labelAttributes;
 @property (nonatomic, retain) NSArray *plotPoints;
-@property (nonatomic) double roundedCornerRadius;
+@property (nonatomic) float roundedCornerRadius;
 @property (nonatomic, retain) UIColor *strokeColor;
-@property (nonatomic) double strokeWidth;
+@property (nonatomic) float strokeWidth;
 
 - (void).cxx_destruct;
 - (id)_chartColorForChartYValue:(float)arg1;
-- (void)_strokeRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 context:(struct CGContext { }*)arg2 color:(struct CGColor { }*)arg3 width:(float)arg4;
+- (void)_strokeRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 context:(struct CGContext { }*)arg2 color:(struct CGColor { }*)arg3 width:(float)arg4;
 - (void)_translateColorThresholds;
 - (id)backgroundStrokeColor;
 - (float)backgroundStrokeWidth;

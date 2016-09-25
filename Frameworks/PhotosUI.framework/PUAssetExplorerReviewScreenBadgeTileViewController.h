@@ -25,7 +25,7 @@
 @property (readonly) Class superclass;
 
 + (void)_configureBadgeView:(id)arg1 isOverContent:(BOOL)arg2;
-+ (struct CGSize { double x1; double x2; })badgeTileSize;
++ (struct CGSize { float x1; float x2; })badgeTileSize;
 
 - (void).cxx_destruct;
 - (id)_badgeView;

@@ -5,12 +5,12 @@
 @interface PLUICameraViewController : CMKCameraViewController <UIImagePickerCameraViewController> {
     int  _newStatusBarStyle;
     struct CGAffineTransform { 
-        double a; 
-        double b; 
-        double c; 
-        double d; 
-        double tx; 
-        double ty; 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     }  _previewViewTransform;
     int  _previousStatusBarStyle;
 }
@@ -27,7 +27,7 @@
 - (int)_cameraFlashMode;
 - (id)_cameraOverlayView;
 - (id)_cameraView;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })_cameraViewTransform;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_cameraViewTransform;
 - (BOOL)_displaysFullScreen;
 - (void)_editabilityChanged:(id)arg1;
 - (int)_imagePickerStatusBarStyle;
@@ -38,7 +38,7 @@
 - (void)_setCameraDevice:(int)arg1;
 - (void)_setCameraFlashMode:(int)arg1;
 - (void)_setCameraOverlayView:(id)arg1;
-- (void)_setCameraViewTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
+- (void)_setCameraViewTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (void)_setImagePickerMediaTypes:(id)arg1;
 - (void)_setShowsCameraControls:(BOOL)arg1;
 - (BOOL)_showsCameraControls;
@@ -67,6 +67,6 @@
 - (unsigned int)supportedInterfaceOrientations;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

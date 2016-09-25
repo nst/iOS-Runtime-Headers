@@ -6,13 +6,13 @@
     unsigned int  _cacheSize;
     BOOL  _circular;
     BOOL  _forceDecode;
-    double  _scale;
+    float  _scale;
 }
 
 @property (nonatomic) unsigned int cacheSize;
 @property (nonatomic) BOOL circular;
 @property (nonatomic) BOOL forceDecode;
-@property (nonatomic) double scale;
+@property (nonatomic) float scale;
 
 + (id)contextWithCacheSize:(unsigned int)arg1;
 

@@ -5,43 +5,43 @@
 @interface PUAccessoryTileViewController : PUTileViewController <PUAccessoryContentViewControllerDelegate> {
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  __contentBounds;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  __contentInsets;
     int  __contentInsetsChangeReason;
     UIView * __contentView;
     UIViewController<PUAccessoryContentViewController> * __contentViewController;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  __keyboardFrame;
     UIViewController<PUAccessoryContentViewController> * __loadedContentViewController;
-    double  __minimumVisibleHeight;
+    float  __minimumVisibleHeight;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  __untransformedMasterContentFrame;
     BOOL  __wasActiveOnLastMasterContentOffsetChange;
@@ -64,15 +64,15 @@
     }  _needsUpdateFlags;
 }
 
-@property (setter=_setContentBounds:, nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } _contentBounds;
-@property (setter=_setContentInsets:, nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } _contentInsets;
+@property (setter=_setContentBounds:, nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } _contentBounds;
+@property (setter=_setContentInsets:, nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } _contentInsets;
 @property (setter=_setContentInsetsChangeReason:, nonatomic) int _contentInsetsChangeReason;
 @property (setter=_setContentView:, nonatomic, retain) UIView *_contentView;
 @property (setter=_setContentViewController:, nonatomic, retain) UIViewController<PUAccessoryContentViewController> *_contentViewController;
-@property (setter=_setKeyboardFrame:, nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } _keyboardFrame;
+@property (setter=_setKeyboardFrame:, nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } _keyboardFrame;
 @property (setter=_setLoadedContentViewController:, nonatomic, retain) UIViewController<PUAccessoryContentViewController> *_loadedContentViewController;
-@property (setter=_setMinimumVisibleHeight:, nonatomic) double _minimumVisibleHeight;
-@property (setter=_setUntransformedMasterContentFrame:, nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } _untransformedMasterContentFrame;
+@property (setter=_setMinimumVisibleHeight:, nonatomic) float _minimumVisibleHeight;
+@property (setter=_setUntransformedMasterContentFrame:, nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } _untransformedMasterContentFrame;
 @property (setter=_setWasActiveOnLastMasterContentOffsetChange:, nonatomic) BOOL _wasActiveOnLastMasterContentOffsetChange;
 @property (nonatomic, retain) PUAssetReference *assetReference;
 @property (nonatomic, retain) PUAssetViewModel *assetViewModel;
@@ -83,8 +83,8 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_contentBounds;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_contentInsets;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_contentBounds;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_contentInsets;
 - (int)_contentInsetsChangeReason;
 - (id)_contentView;
 - (id)_contentViewController;
@@ -94,25 +94,25 @@
 - (void)_invalidateContentViewMetrics;
 - (void)_invalidateLoadedContentViewController;
 - (void)_invalidateMasterContentOffset;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_keyboardFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_keyboardFrame;
 - (void)_keyboardWillHide:(id)arg1;
 - (void)_keyboardWillShow:(id)arg1;
 - (id)_loadedContentViewController;
 - (float)_minimumVisibleHeight;
 - (BOOL)_needsUpdate;
 - (void)_performChanges:(id /* block */)arg1;
-- (void)_setContentBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)_setContentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)_setContentBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_setContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)_setContentInsetsChangeReason:(int)arg1;
 - (void)_setContentView:(id)arg1;
 - (void)_setContentViewController:(id)arg1;
-- (void)_setKeyboardFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)_setKeyboardFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_setLoadedContentViewController:(id)arg1;
 - (void)_setMinimumVisibleHeight:(float)arg1;
 - (void)_setNeedsUpdate;
-- (void)_setUntransformedMasterContentFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)_setUntransformedMasterContentFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_setWasActiveOnLastMasterContentOffsetChange:(BOOL)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_untransformedMasterContentFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_untransformedMasterContentFrame;
 - (void)_updateContentBoundsIfNeeded;
 - (void)_updateContentViewControllerIfNeeded;
 - (void)_updateContentViewMetricsIfNeeded;

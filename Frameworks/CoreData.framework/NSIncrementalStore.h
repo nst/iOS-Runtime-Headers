@@ -3,7 +3,7 @@
  */
 
 @interface NSIncrementalStore : NSPersistentStore {
-    unsigned int  _lastIdentifier;
+    unsigned long long  _lastIdentifier;
     void * _reserveda;
     void * _reservedb;
     NSDictionary * _storeMetadata;
@@ -13,7 +13,7 @@
 + (id)metadataForPersistentStoreWithURL:(id)arg1 error:(id*)arg2;
 + (BOOL)setMetadata:(id)arg1 forPersistentStoreWithURL:(id)arg2 error:(id*)arg3;
 
-- (id)_newObjectIDForEntityDescription:(id)arg1 pk:(int)arg2;
+- (id)_newObjectIDForEntityDescription:(id)arg1 pk:(long long)arg2;
 - (void)_preflightCrossCheck;
 - (BOOL)_prepareForExecuteRequest:(id)arg1 withContext:(id)arg2 error:(id*)arg3;
 - (id)_rawMetadata__;

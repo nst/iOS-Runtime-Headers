@@ -5,33 +5,33 @@
 @interface TSDScalarPathSource : TSDPathSource <TSDMixing, TSDSmartPathSource> {
     BOOL  mIsCurveContinuous;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  mNaturalSize;
-    double  mScalar;
+    float  mScalar;
     int  mType;
 }
 
 @property (nonatomic) BOOL isCurveContinuous;
-@property (nonatomic, readonly) double maxScalar;
-@property (nonatomic) struct CGSize { double x1; double x2; } naturalSize;
-@property (nonatomic) double scalar;
+@property (nonatomic, readonly) float maxScalar;
+@property (nonatomic) struct CGSize { float x1; float x2; } naturalSize;
+@property (nonatomic) float scalar;
 @property (nonatomic) int type;
 
-+ (id)chevronWithScalar:(float)arg1 naturalSize:(struct CGSize { double x1; double x2; })arg2;
-+ (id)pathSourceWithType:(int)arg1 scalar:(float)arg2 naturalSize:(struct CGSize { double x1; double x2; })arg3;
-+ (id)rectangleWithNaturalSize:(struct CGSize { double x1; double x2; })arg1;
-+ (id)regularPolygonWithScalar:(float)arg1 naturalSize:(struct CGSize { double x1; double x2; })arg2;
-+ (id)roundedRectangleWithScalar:(float)arg1 naturalSize:(struct CGSize { double x1; double x2; })arg2 continuousCurve:(BOOL)arg3;
++ (id)chevronWithScalar:(float)arg1 naturalSize:(struct CGSize { float x1; float x2; })arg2;
++ (id)pathSourceWithType:(int)arg1 scalar:(float)arg2 naturalSize:(struct CGSize { float x1; float x2; })arg3;
++ (id)rectangleWithNaturalSize:(struct CGSize { float x1; float x2; })arg1;
++ (id)regularPolygonWithScalar:(float)arg1 naturalSize:(struct CGSize { float x1; float x2; })arg2;
++ (id)roundedRectangleWithScalar:(float)arg1 naturalSize:(struct CGSize { float x1; float x2; })arg2 continuousCurve:(BOOL)arg3;
 
 - (id)bezierPathWithoutFlips;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (struct CGPoint { double x1; double x2; })getControlKnobPosition:(unsigned int)arg1;
+- (struct CGPoint { float x1; float x2; })getControlKnobPosition:(unsigned int)arg1;
 - (unsigned int)hash;
 - (id)init;
 - (id)initWithArchive:(const struct PathSourceArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct PointPathSourceArchive {} *x5; struct ScalarPathSourceArchive {} *x6; struct BezierPathSourceArchive {} *x7; struct CalloutPathSourceArchive {} *x8; struct ConnectionLinePathSourceArchive {} *x9; struct EditableBezierPathSourceArchive {} *x10; bool x11; bool x12; }*)arg1;
-- (id)initWithType:(int)arg1 scalar:(float)arg2 naturalSize:(struct CGSize { double x1; double x2; })arg3 continuousCurve:(BOOL)arg4;
+- (id)initWithType:(int)arg1 scalar:(float)arg2 naturalSize:(struct CGSize { float x1; float x2; })arg3 continuousCurve:(BOOL)arg4;
 - (BOOL)isCircular;
 - (BOOL)isCurveContinuous;
 - (BOOL)isEqual:(id)arg1;
@@ -39,23 +39,23 @@
 - (float)maxScalar;
 - (id)mixedObjectWithFraction:(float)arg1 ofObject:(id)arg2;
 - (int)mixingTypeWithObject:(id)arg1 context:(id)arg2;
-- (struct CGSize { double x1; double x2; })naturalSize;
+- (struct CGSize { float x1; float x2; })naturalSize;
 - (unsigned int)numberOfControlKnobs;
-- (struct CGPoint { double x1; double x2; })p_getControlKnobPointForChevron;
-- (struct CGPoint { double x1; double x2; })p_getControlKnobPointForRegularPolygon;
-- (struct CGPoint { double x1; double x2; })p_getControlKnobPointForRoundedRect;
+- (struct CGPoint { float x1; float x2; })p_getControlKnobPointForChevron;
+- (struct CGPoint { float x1; float x2; })p_getControlKnobPointForRegularPolygon;
+- (struct CGPoint { float x1; float x2; })p_getControlKnobPointForRoundedRect;
 - (struct CGPath { }*)p_newChevronPath;
 - (struct CGPath { }*)p_newRegularPolygonPath;
 - (struct CGPath { }*)p_newRoundedRectPath;
-- (void)p_setControlKnobPointForChevron:(struct CGPoint { double x1; double x2; })arg1;
-- (void)p_setControlKnobPointForRegularPolygon:(struct CGPoint { double x1; double x2; })arg1;
-- (void)p_setControlKnobPointForRoundedRect:(struct CGPoint { double x1; double x2; })arg1;
+- (void)p_setControlKnobPointForChevron:(struct CGPoint { float x1; float x2; })arg1;
+- (void)p_setControlKnobPointForRegularPolygon:(struct CGPoint { float x1; float x2; })arg1;
+- (void)p_setControlKnobPointForRoundedRect:(struct CGPoint { float x1; float x2; })arg1;
 - (void)saveToArchive:(struct PathSourceArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct PointPathSourceArchive {} *x5; struct ScalarPathSourceArchive {} *x6; struct BezierPathSourceArchive {} *x7; struct CalloutPathSourceArchive {} *x8; struct ConnectionLinePathSourceArchive {} *x9; struct EditableBezierPathSourceArchive {} *x10; bool x11; bool x12; }*)arg1;
 - (float)scalar;
-- (struct CGSize { double x1; double x2; })scaleFactorForInscribedRectangle;
-- (void)scaleToNaturalSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })scaleFactorForInscribedRectangle;
+- (void)scaleToNaturalSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setIsCurveContinuous:(BOOL)arg1;
-- (void)setNaturalSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setNaturalSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setScalar:(float)arg1;
 - (void)setScalarValue:(id)arg1;
 - (void)setType:(int)arg1;

@@ -3,12 +3,12 @@
  */
 
 @interface PASampleFrame : NSObject <PASerializable> {
-    unsigned int  _address;
+    unsigned long long  _address;
     NSMutableSet * _childFrames;
     PASampleFrame * _parentFrame;
 }
 
-@property unsigned int address;
+@property unsigned long long address;
 @property (readonly) NSSet *childFrames;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -18,28 +18,28 @@
 @property (readonly) BOOL isTruncatedBacktraceFrame;
 @property (readonly) PASampleFrame *parentFrame;
 @property (readonly) Class superclass;
-@property (readonly) unsigned int symbolicationAddress;
+@property (readonly) unsigned long long symbolicationAddress;
 
-+ (id)_newSampleFrameFromSerializedSampleFrame:(const struct { unsigned int x1; unsigned int x2; BOOL x3; BOOL x4; unsigned int x5; int x6; }*)arg1;
++ (id)_newSampleFrameFromSerializedSampleFrame:(const struct { unsigned long long x1; unsigned long long x2; BOOL x3; BOOL x4; unsigned long long x5; long long x6; }*)arg1;
 + (id)addStack:(id)arg1 toSetOfRootFrames:(id)arg2;
 + (id)classDictionaryKey;
 + (id)newInstanceWithoutReferencesFromBufferPosition:(const void*)arg1;
-+ (id)newSampleFrameWithStackFrame:(struct pa_stack_frame { unsigned int x1; BOOL x2; }*)arg1 andParent:(id)arg2;
++ (id)newSampleFrameWithStackFrame:(struct pa_stack_frame { unsigned long long x1; BOOL x2; }*)arg1 andParent:(id)arg2;
 
 - (void).cxx_destruct;
 - (void)_addChildFrame:(id)arg1;
-- (id)_initWithSerializedSampleFrame:(const struct { unsigned int x1; unsigned int x2; BOOL x3; BOOL x4; unsigned int x5; int x6; }*)arg1;
+- (id)_initWithSerializedSampleFrame:(const struct { unsigned long long x1; unsigned long long x2; BOOL x3; BOOL x4; unsigned long long x5; long long x6; }*)arg1;
 - (BOOL)addSelfToBufferAtPosition:(void*)arg1 withCompletedSerializationDictionary:(struct NSMutableDictionary { Class x1; }*)arg2;
 - (void)addSelfToSerializationDictionary:(id)arg1;
-- (unsigned int)address;
+- (unsigned long long)address;
 - (id)childFrames;
 - (id)copyWithNewParent:(id)arg1;
-- (BOOL)correspondsToStackshotFrame:(struct pa_stack_frame { unsigned int x1; BOOL x2; }*)arg1;
+- (BOOL)correspondsToStackshotFrame:(struct pa_stack_frame { unsigned long long x1; BOOL x2; }*)arg1;
 - (id)debugDescription;
 - (unsigned int)hash;
-- (id)initWithAddress:(unsigned int)arg1;
+- (id)initWithAddress:(unsigned long long)arg1;
 - (id)initWithSampleFrame:(id)arg1 andParent:(id)arg2;
-- (id)initWithStackFrame:(struct pa_stack_frame { unsigned int x1; BOOL x2; }*)arg1 andParent:(id)arg2;
+- (id)initWithStackFrame:(struct pa_stack_frame { unsigned long long x1; BOOL x2; }*)arg1 andParent:(id)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isKernel;
 - (BOOL)isRootFrame;
@@ -47,8 +47,8 @@
 - (id)parentFrame;
 - (void)populateReferencesUsingBufferPosition:(const void*)arg1 andDeserializationDictionary:(struct NSMutableDictionary { Class x1; }*)arg2 andDataBufferDictionary:(struct NSMutableDictionary { Class x1; }*)arg3;
 - (void)querySymbolInformationForSelfAndChildrenUsingTask:(id)arg1 andKernelTask:(id)arg2 andSampleTimeSeriesDataStore:(id)arg3;
-- (void)setAddress:(unsigned int)arg1;
+- (void)setAddress:(unsigned long long)arg1;
 - (unsigned long)sizeInBytesForSerializedVersion;
-- (unsigned int)symbolicationAddress;
+- (unsigned long long)symbolicationAddress;
 
 @end

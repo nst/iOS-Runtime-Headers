@@ -3,8 +3,8 @@
  */
 
 @interface HMDCameraSnapshotIDSRelayReceiver : HMDCameraSnapshotIDSRelay <HMFLogging, IDSServiceDelegate, IDSSessionDelegate> {
-    unsigned int  _bytesSoFar;
-    unsigned int  _bytesToReceive;
+    unsigned long long  _bytesSoFar;
+    unsigned long long  _bytesToReceive;
     <HMDCameraSnapshotIDSRelayReceiverDelegate> * _delegate;
     NSObject<OS_dispatch_queue> * _delegateQueue;
     IDSSession * _idsSession;
@@ -13,8 +13,8 @@
     NSObject<OS_dispatch_source> * _socketSource;
 }
 
-@property (nonatomic) unsigned int bytesSoFar;
-@property (nonatomic) unsigned int bytesToReceive;
+@property (nonatomic) unsigned long long bytesSoFar;
+@property (nonatomic) unsigned long long bytesToReceive;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) <HMDCameraSnapshotIDSRelayReceiverDelegate> *delegate;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *delegateQueue;
@@ -33,8 +33,8 @@
 - (void)_handleDataFromSocket:(id)arg1;
 - (id)_postProcessFileData;
 - (void)_startFileReceive;
-- (unsigned int)bytesSoFar;
-- (unsigned int)bytesToReceive;
+- (unsigned long long)bytesSoFar;
+- (unsigned long long)bytesToReceive;
 - (void)dealloc;
 - (id)delegate;
 - (id)delegateQueue;
@@ -45,8 +45,8 @@
 - (void)service:(id)arg1 account:(id)arg2 inviteReceivedForSession:(id)arg3 fromID:(id)arg4 withContext:(id)arg5;
 - (void)sessionEnded:(id)arg1 withReason:(unsigned int)arg2 error:(id)arg3;
 - (void)sessionStarted:(id)arg1;
-- (void)setBytesSoFar:(unsigned int)arg1;
-- (void)setBytesToReceive:(unsigned int)arg1;
+- (void)setBytesSoFar:(unsigned long long)arg1;
+- (void)setBytesToReceive:(unsigned long long)arg1;
 - (void)setIdsSession:(id)arg1;
 - (void)setRelayData:(id)arg1;
 - (void)setSocketSource:(id)arg1;

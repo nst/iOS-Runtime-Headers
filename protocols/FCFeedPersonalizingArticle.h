@@ -5,10 +5,10 @@
 
 @required
 
-- (unsigned int)articleContentType;
+- (unsigned long long)articleContentType;
 - (NSString *)articleID;
 - (double)globalUserFeedback;
-- (unsigned int)halfLife;
+- (unsigned long long)halfLife;
 - (BOOL)hasGlobalUserFeedback;
 - (BOOL)isPaid;
 - (NSDate *)publishDate;

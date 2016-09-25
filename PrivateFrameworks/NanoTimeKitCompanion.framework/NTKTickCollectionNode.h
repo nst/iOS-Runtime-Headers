@@ -5,29 +5,29 @@
 @interface NTKTickCollectionNode : NTKCollectionNode {
     unsigned int  _l1mod;
     unsigned int  _l2mod;
-    double  _largeColor;
-    double  _largeFilterWidth;
+    float  _largeColor;
+    float  _largeFilterWidth;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _largeSizeInPoints;
-    double  _smallColor;
-    double  _smallFilterWidth;
+    float  _smallColor;
+    float  _smallFilterWidth;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _smallSizeInPoints;
     unsigned int  _ticks;
 }
 
 @property (nonatomic) unsigned int l1mod;
 @property (nonatomic) unsigned int l2mod;
-@property (nonatomic) double largeColor;
-@property (nonatomic) double largeFilterWidth;
-@property (nonatomic) struct CGSize { double x1; double x2; } largeSizeInPoints;
-@property (nonatomic) double smallColor;
-@property (nonatomic) double smallFilterWidth;
-@property (nonatomic) struct CGSize { double x1; double x2; } smallSizeInPoints;
+@property (nonatomic) float largeColor;
+@property (nonatomic) float largeFilterWidth;
+@property (nonatomic) struct CGSize { float x1; float x2; } largeSizeInPoints;
+@property (nonatomic) float smallColor;
+@property (nonatomic) float smallFilterWidth;
+@property (nonatomic) struct CGSize { float x1; float x2; } smallSizeInPoints;
 @property (nonatomic) unsigned int ticks;
 
 - (void)colorizeBackground:(id)arg1;
@@ -37,19 +37,19 @@
 - (unsigned int)l2mod;
 - (float)largeColor;
 - (float)largeFilterWidth;
-- (struct CGSize { double x1; double x2; })largeSizeInPoints;
+- (struct CGSize { float x1; float x2; })largeSizeInPoints;
 - (void)setL1mod:(unsigned int)arg1;
 - (void)setL2mod:(unsigned int)arg1;
 - (void)setLargeColor:(float)arg1;
 - (void)setLargeFilterWidth:(float)arg1;
-- (void)setLargeSizeInPoints:(struct CGSize { double x1; double x2; })arg1;
+- (void)setLargeSizeInPoints:(struct CGSize { float x1; float x2; })arg1;
 - (void)setSmallColor:(float)arg1;
 - (void)setSmallFilterWidth:(float)arg1;
-- (void)setSmallSizeInPoints:(struct CGSize { double x1; double x2; })arg1;
+- (void)setSmallSizeInPoints:(struct CGSize { float x1; float x2; })arg1;
 - (void)setTicks:(unsigned int)arg1;
 - (float)smallColor;
 - (float)smallFilterWidth;
-- (struct CGSize { double x1; double x2; })smallSizeInPoints;
+- (struct CGSize { float x1; float x2; })smallSizeInPoints;
 - (unsigned int)ticks;
 
 @end

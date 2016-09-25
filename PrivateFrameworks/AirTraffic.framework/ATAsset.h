@@ -6,19 +6,19 @@
     int  _assetState;
     NSString * _assetType;
     BOOL  _bypassStore;
-    unsigned int  _bytesRemaining;
+    unsigned long long  _bytesRemaining;
     NSDictionary * _clientParams;
     unsigned int  _completedAssetParts;
     id /* block */  _completionBlock;
     NSString * _dataclass;
     BOOL  _downloadOnly;
-    double  _downloadProgress;
+    float  _downloadProgress;
     NSError * _error;
     NSURL * _icon;
     NSString * _identifier;
     NSString * _infoPlist;
     BOOL  _installOnly;
-    double  _installProgress;
+    float  _installProgress;
     BOOL  _installStarted;
     BOOL  _installed;
     BOOL  _isDownload;
@@ -32,28 +32,28 @@
     id /* block */  _progressBlock;
     BOOL  _readyForStore;
     ATStoreInfo * _storeInfo;
-    int  _storePID;
+    long long  _storePID;
     NSString * _storePlist;
-    unsigned int  _totalBytes;
+    unsigned long long  _totalBytes;
     NSDictionary * _variantOptions;
 }
 
 @property (nonatomic) int assetState;
 @property (nonatomic, retain) NSString *assetType;
 @property (nonatomic) BOOL bypassStore;
-@property (nonatomic) unsigned int bytesRemaining;
+@property (nonatomic) unsigned long long bytesRemaining;
 @property (nonatomic, retain) NSDictionary *clientParams;
 @property (nonatomic) unsigned int completedAssetParts;
 @property (nonatomic, copy) id /* block */ completionBlock;
 @property (nonatomic, retain) NSString *dataclass;
 @property (nonatomic) BOOL downloadOnly;
-@property (nonatomic) double downloadProgress;
+@property (nonatomic) float downloadProgress;
 @property (nonatomic, retain) NSError *error;
 @property (nonatomic, retain) NSURL *icon;
 @property (nonatomic, retain) NSString *identifier;
 @property (nonatomic, retain) NSString *infoPlist;
 @property (nonatomic) BOOL installOnly;
-@property (nonatomic) double installProgress;
+@property (nonatomic) float installProgress;
 @property (nonatomic) BOOL installStarted;
 @property (getter=isInstalled, nonatomic) BOOL installed;
 @property (nonatomic) BOOL isDownload;
@@ -67,9 +67,9 @@
 @property (nonatomic, copy) id /* block */ progressBlock;
 @property (nonatomic) BOOL readyForStore;
 @property (nonatomic, retain) ATStoreInfo *storeInfo;
-@property (nonatomic) int storePID;
+@property (nonatomic) long long storePID;
 @property (nonatomic, retain) NSString *storePlist;
-@property (nonatomic) unsigned int totalBytes;
+@property (nonatomic) unsigned long long totalBytes;
 @property (nonatomic, retain) NSDictionary *variantOptions;
 
 + (id)assetWithSerializedAsset:(id)arg1;
@@ -84,7 +84,7 @@
 - (int)assetState;
 - (id)assetType;
 - (BOOL)bypassStore;
-- (unsigned int)bytesRemaining;
+- (unsigned long long)bytesRemaining;
 - (id)clientParams;
 - (unsigned int)completedAssetParts;
 - (id /* block */)completionBlock;
@@ -120,7 +120,7 @@
 - (void)setAssetState:(int)arg1;
 - (void)setAssetType:(id)arg1;
 - (void)setBypassStore:(BOOL)arg1;
-- (void)setBytesRemaining:(unsigned int)arg1;
+- (void)setBytesRemaining:(unsigned long long)arg1;
 - (void)setClientParams:(id)arg1;
 - (void)setCompletedAssetParts:(unsigned int)arg1;
 - (void)setCompletionBlock:(id /* block */)arg1;
@@ -146,15 +146,15 @@
 - (void)setProgressBlock:(id /* block */)arg1;
 - (void)setReadyForStore:(BOOL)arg1;
 - (void)setStoreInfo:(id)arg1;
-- (void)setStorePID:(int)arg1;
+- (void)setStorePID:(long long)arg1;
 - (void)setStorePlist:(id)arg1;
-- (void)setTotalBytes:(unsigned int)arg1;
+- (void)setTotalBytes:(unsigned long long)arg1;
 - (void)setVariantOptions:(id)arg1;
 - (id)shortDescription;
 - (id)storeInfo;
-- (int)storePID;
+- (long long)storePID;
 - (id)storePlist;
-- (unsigned int)totalBytes;
+- (unsigned long long)totalBytes;
 - (id)variantOptions;
 
 @end

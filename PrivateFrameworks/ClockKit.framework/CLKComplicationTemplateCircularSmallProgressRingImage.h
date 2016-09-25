@@ -16,7 +16,7 @@
 - (void)_enumerateImageProviderKeysWithBlock:(id /* block */)arg1;
 - (void)_enumerateIntegerKeysWithBlock:(id /* block */)arg1;
 - (void)_enumerateProgressProviderKeysWithBlock:(id /* block */)arg1;
-- (struct CGSize { double x1; double x2; })_imageSize;
+- (struct CGSize { float x1; float x2; })_imageSize;
 - (id)imageProvider;
 - (BOOL)isCompatibleWithFamily:(int)arg1;
 - (id)progressProvider;

@@ -36,7 +36,7 @@
     int  _postConnectSubflowMaxSubflowCount;
     int  _subflowSwitchingCount;
     NSMutableArray * _subflowSwitchingReports;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic, retain) NSString *clientId;
@@ -72,7 +72,7 @@
 @property (nonatomic) int postConnectSubflowMaxSubflowCount;
 @property (nonatomic) int subflowSwitchingCount;
 @property (nonatomic, retain) NSMutableArray *subflowSwitchingReports;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 
 + (Class)interfaceReportsType;
 + (Class)subflowSwitchingReportsType;
@@ -154,12 +154,12 @@
 - (void)setPostConnectSubflowMaxSubflowCount:(int)arg1;
 - (void)setSubflowSwitchingCount:(int)arg1;
 - (void)setSubflowSwitchingReports:(id)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (int)subflowSwitchingCount;
 - (id)subflowSwitchingReports;
 - (id)subflowSwitchingReportsAtIndex:(unsigned int)arg1;
 - (unsigned int)subflowSwitchingReportsCount;
-- (unsigned int)timestamp;
+- (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 
 @end

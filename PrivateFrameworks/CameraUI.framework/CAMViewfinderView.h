@@ -68,9 +68,9 @@
 
 - (void).cxx_destruct;
 - (id)HDRBadge;
-- (struct CGSize { double x1; double x2; })_bottomBarSizeForLayoutStyle:(int)arg1 withProposedSize:(struct CGSize { double x1; double x2; })arg2;
+- (struct CGSize { float x1; float x2; })_bottomBarSizeForLayoutStyle:(int)arg1 withProposedSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)_commonCAMViewfinderViewInitializationWithLayoutStyle:(int)arg1;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })_correctingTransformFromPreviewViewOrientation:(int)arg1;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_correctingTransformFromPreviewViewOrientation:(int)arg1;
 - (void)_createPlaceholderSnapshotAndPerformDoubleSidedFadeForView:(id)arg1 fadeOutDuration:(double)arg2 fadeOutDelay:(double)arg3 fadeInDuration:(double)arg4 fadeInDelay:(double)arg5;
 - (id)_flipTransition;
 - (float)_interpolatedBottomBarHeightWithProposedHeight:(float)arg1;
@@ -98,12 +98,12 @@
 - (id)_openAndCloseTransition;
 - (id)_previewContainerMaskingView;
 - (id)_previewContainerView;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_previewFrameForAspectRatio:(int)arg1 topBarFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 bottomBarFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
-- (void)_previewLayoutForAspectRatio:(int)arg1 outBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg2 outCenter:(struct CGPoint { double x1; double x2; }*)arg3;
-- (struct CGSize { double x1; double x2; })_previewSizeForAspectRatio:(int)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_previewFrameForAspectRatio:(int)arg1 topBarFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 bottomBarFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
+- (void)_previewLayoutForAspectRatio:(int)arg1 outBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 outCenter:(struct CGPoint { float x1; float x2; }*)arg3;
+- (struct CGSize { float x1; float x2; })_previewSizeForAspectRatio:(int)arg1;
 - (void)_setFlipTransition:(id)arg1;
 - (void)_setOpenAndCloseTransition:(id)arg1;
-- (struct CGSize { double x1; double x2; })_topBarSizeForLayoutStyle:(int)arg1;
+- (struct CGSize { float x1; float x2; })_topBarSizeForLayoutStyle:(int)arg1;
 - (BOOL)_wantsFullScreenPreviewRegardlessOfLayoutForLayoutStyle:(int)arg1;
 - (BOOL)_wantsInterfaceOrientedPreviewForLayoutStyle:(int)arg1;
 - (BOOL)automaticallyAdjustsTopBarOrientation;
@@ -118,7 +118,7 @@
 - (id)focusAndExposureLockBadge;
 - (id)framerateIndicatorView;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithLayoutStyle:(int)arg1;
 - (int)layoutStyle;
 - (void)layoutSubviews;
@@ -160,7 +160,7 @@
 - (void)setZoomSlider:(id)arg1;
 - (id)shutterButton;
 - (id)shutterIndicatorView;
-- (struct CGSize { double x1; double x2; })systemLayoutSizeFittingSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })systemLayoutSizeFittingSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)timerIndicatorView;
 - (id)topBar;
 - (void)updateBadgeLayoutForZoomSliderVisibilityChangedAnimated:(BOOL)arg1;

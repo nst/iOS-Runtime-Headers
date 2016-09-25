@@ -48,7 +48,7 @@
 
 - (void).cxx_destruct;
 - (void)_applyVolumeNormalizationForQueuedItems;
-- (void)_handleDownloadCancelledForDownloadToken:(unsigned int)arg1;
+- (void)_handleDownloadCancelledForDownloadToken:(unsigned long long)arg1;
 - (int)_indexForStringIdentifier:(id)arg1;
 - (id)_itemToFollowItemIndex:(int)arg1 skipUnavailableContent:(BOOL)arg2;
 - (void)_mediaLibraryDisplayValuesDidChangeNotification:(id)arg1;

@@ -25,7 +25,7 @@
 - (BOOL)fanSpeedIsValid;
 - (id)init;
 - (id)initWithMachTime:(double)arg1;
-- (id)initWithSerializedFanSpeed:(const struct { unsigned int x1; double x2; int x3; }*)arg1;
+- (id)initWithSerializedFanSpeed:(const struct { unsigned long long x1; double x2; int x3; }*)arg1;
 - (double)machTimesamp;
 - (void)populateReferencesUsingBufferPosition:(const void*)arg1 andDeserializationDictionary:(id)arg2 andDataBufferDictionary:(id)arg3;
 - (unsigned long)sizeInBytesForSerializedVersion;

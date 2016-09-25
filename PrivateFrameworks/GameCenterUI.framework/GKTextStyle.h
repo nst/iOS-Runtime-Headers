@@ -3,37 +3,37 @@
  */
 
 @interface GKTextStyle : NSObject {
-    double  _UIKitFontLeading;
+    float  _UIKitFontLeading;
     NSString * _UIKitFontTextStyleName;
     UIColor * _color;
     NSString * _fontName;
     SEL  _fontNameRebaseSelector;
-    double  _fontSize;
+    float  _fontSize;
     SEL  _fontSizeRebaseSelector;
     int  _lineBreakMode;
-    double  _m34;
-    double  _minimumLineHeight;
+    float  _m34;
+    float  _minimumLineHeight;
     BOOL  _needsParagraphStyle;
     BOOL  _overrideUIKitFontSize;
     GKColorPalette * _palette;
     int  _textAlignment;
-    double  _zPosition;
+    float  _zPosition;
 }
 
 @property (nonatomic, retain) NSString *UIKitFontTextStyleName;
 @property (nonatomic, retain) UIColor *color;
 @property (nonatomic, retain) NSString *fontName;
 @property (nonatomic) SEL fontNameRebaseSelector;
-@property (nonatomic, readonly) double fontSize;
+@property (nonatomic, readonly) float fontSize;
 @property (nonatomic) SEL fontSizeRebaseSelector;
 @property (nonatomic) int lineBreakMode;
-@property (nonatomic) double m34;
-@property (nonatomic) double minimumLineHeight;
+@property (nonatomic) float m34;
+@property (nonatomic) float minimumLineHeight;
 @property (nonatomic) BOOL needsParagraphStyle;
 @property (nonatomic) BOOL overrideUIKitFontSize;
 @property (nonatomic, retain) GKColorPalette *palette;
 @property (nonatomic) int textAlignment;
-@property (nonatomic) double zPosition;
+@property (nonatomic) float zPosition;
 
 + (id)attributedString:(id)arg1 byReplayingFromBaseStyle:(id)arg2 systemContentSizeDidChange:(BOOL)arg3;
 + (float)bubbleTextScale;

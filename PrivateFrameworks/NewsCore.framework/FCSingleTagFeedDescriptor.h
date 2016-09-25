@@ -23,7 +23,7 @@
 - (BOOL)hasNotificationsEnabledWithSubscriptionController:(id)arg1;
 - (BOOL)hideAccessoryText;
 - (id)iAdCategories;
-- (int)iAdContentProvider;
+- (long long)iAdContentProvider;
 - (id)iAdFeedID;
 - (id)iAdKeywords;
 - (id)iAdPrimaryAudience;

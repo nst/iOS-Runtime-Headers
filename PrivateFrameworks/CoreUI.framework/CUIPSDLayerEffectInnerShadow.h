@@ -8,7 +8,7 @@
     unsigned int  _blurSize;
     CUIColor * _color;
     unsigned int  _distance;
-    double  _opacity;
+    float  _opacity;
 }
 
 @property short angle;
@@ -16,7 +16,7 @@
 @property unsigned int blurSize;
 @property (retain) CUIColor *color;
 @property unsigned int distance;
-@property double opacity;
+@property float opacity;
 
 - (short)angle;
 - (int)blendMode;

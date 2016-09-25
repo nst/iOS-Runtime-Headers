@@ -6,13 +6,13 @@
     struct { 
         unsigned int numRequested : 1; 
     }  _has;
-    int  _numRequested;
+    long long  _numRequested;
     NSString * _resource;
 }
 
 @property (nonatomic) BOOL hasNumRequested;
 @property (nonatomic, readonly) BOOL hasResource;
-@property (nonatomic) int numRequested;
+@property (nonatomic) long long numRequested;
 @property (nonatomic, retain) NSString *resource;
 
 - (void).cxx_destruct;
@@ -25,11 +25,11 @@
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (int)numRequested;
+- (long long)numRequested;
 - (BOOL)readFrom:(id)arg1;
 - (id)resource;
 - (void)setHasNumRequested:(BOOL)arg1;
-- (void)setNumRequested:(int)arg1;
+- (void)setNumRequested:(long long)arg1;
 - (void)setResource:(id)arg1;
 - (void)writeTo:(id)arg1;
 

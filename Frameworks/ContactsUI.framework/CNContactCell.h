@@ -6,16 +6,16 @@
     CNCardGroupItem * _cardGroupItem;
     NSArray * _constantConstraints;
     BOOL  _hasBeenDisplayed;
-    double  _leftContentMargin;
-    double  _rightContentMargin;
+    float  _leftContentMargin;
+    float  _rightContentMargin;
     BOOL  _shouldUseExpandedContentStyle;
     NSArray * _variableConstraints;
 }
 
 @property (nonatomic, retain) CNCardGroupItem *cardGroupItem;
 @property (nonatomic) BOOL hasBeenDisplayed;
-@property (nonatomic) double leftContentMargin;
-@property (nonatomic) double rightContentMargin;
+@property (nonatomic) float leftContentMargin;
+@property (nonatomic) float rightContentMargin;
 @property (nonatomic) BOOL shouldUseExpandedContentStyle;
 @property (nonatomic) BOOL showSeparator;
 

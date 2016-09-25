@@ -5,20 +5,20 @@
 @interface _UIPanelInteractionState : NSObject <NSCopying> {
     int  _affectedSides;
     int  _interactingSide;
-    double  _maxLeading;
-    double  _maxTrailing;
-    double  _minLeading;
-    double  _minTrailing;
+    float  _maxLeading;
+    float  _maxTrailing;
+    float  _minLeading;
+    float  _minTrailing;
     UISlidingBarState * _originalState;
     UISlidingBarStateRequest * _stateRequest;
 }
 
 @property (nonatomic) int affectedSides;
 @property (nonatomic) int interactingSide;
-@property (nonatomic) double maxLeading;
-@property (nonatomic) double maxTrailing;
-@property (nonatomic) double minLeading;
-@property (nonatomic) double minTrailing;
+@property (nonatomic) float maxLeading;
+@property (nonatomic) float maxTrailing;
+@property (nonatomic) float minLeading;
+@property (nonatomic) float minTrailing;
 @property (nonatomic, copy) UISlidingBarState *originalState;
 @property (nonatomic, copy) UISlidingBarStateRequest *stateRequest;
 

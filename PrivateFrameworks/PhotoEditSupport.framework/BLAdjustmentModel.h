@@ -3,16 +3,16 @@
  */
 
 @interface BLAdjustmentModel : NSObject {
-    double  _autoBlackLevelAtShadowsMaxLevel;
-    double  _autoShadowsMaxLevel;
-    double  _blackLevel;
-    double  _brightness;
+    float  _autoBlackLevelAtShadowsMaxLevel;
+    float  _autoShadowsMaxLevel;
+    float  _blackLevel;
+    float  _brightness;
     CIFilter * _colorBalanceFilter;
     CIFilter * _colorFilter;
-    double  _contrast;
+    float  _contrast;
     CIFilter * _curvesFilter;
     CIFilter * _faceBalanceFilter;
-    double  _faceBalanceWarmth;
+    float  _faceBalanceWarmth;
     BOOL  _hasColor;
     BOOL  _hasExposure;
     BOOL  _hasFaceBalance;
@@ -23,11 +23,11 @@
     BOOL  _hasWhiteBalance;
     int  _highlightShadowAdjustVersion;
     CIFilter * _highlightsAndShadowsFilter;
-    double  _histogramAverageLinearBlue;
-    double  _histogramAverageLinearGreen;
-    double  _histogramAverageLinearRed;
-    double  _histogramBlackPoint;
-    double  _histogramWhitePoint;
+    float  _histogramAverageLinearBlue;
+    float  _histogramAverageLinearGreen;
+    float  _histogramAverageLinearRed;
+    float  _histogramBlackPoint;
+    float  _histogramWhitePoint;
     BOOL  _isChainBuilt;
     BOOL  _reprocessFaceBalance;
     BOOL  _reprocessPentaCurve;
@@ -35,25 +35,25 @@
     BOOL  _reprocessSkyAndGrass;
     BOOL  _reprocessUnderwaterBalance;
     BOOL  _reprocessWhiteBalance;
-    double  _saturation;
-    double  _saturationGrass;
-    double  _saturationSky;
+    float  _saturation;
+    float  _saturationGrass;
+    float  _saturationSky;
     CIFilter * _skyAndGrassFilter;
     CIFilter * _tempAndTintFilter;
-    double  _underwaterBalanceDepthStrength;
+    float  _underwaterBalanceDepthStrength;
     CIFilter * _underwaterBalanceFilter;
-    double  _underwaterBalanceWaterBlend;
+    float  _underwaterBalanceWaterBlend;
     BOOL  _useVibrancy;
     CIFilter * _vibranceFilter;
     struct { 
         int type; 
-        double x; 
-        double y; 
-        double ri; 
-        double gq; 
-        double b; 
+        float x; 
+        float y; 
+        float ri; 
+        float gq; 
+        float b; 
     }  _whiteBalance;
-    double  _whiteLevel;
+    float  _whiteLevel;
 }
 
 @property (nonatomic, retain) CIFilter *colorBalanceFilter;
@@ -67,7 +67,7 @@
 @property (nonatomic, retain) CIFilter *vibranceFilter;
 
 + (id)exposureValuesForToneCurveData:(id)arg1 highlightsAndShadowsData:(id)arg2 andHistogramData:(id)arg3;
-+ (struct CGPoint { double x1; double x2; })pointOnCurveFromPoint:(struct CGPoint { double x1; double x2; })arg1 withSlope:(float)arg2 andCurveData:(float*)arg3;
++ (struct CGPoint { float x1; float x2; })pointOnCurveFromPoint:(struct CGPoint { float x1; float x2; })arg1 withSlope:(float)arg2 andCurveData:(float*)arg3;
 + (id)rampImage;
 
 - (id)adjustedImageFromImage:(id)arg1;

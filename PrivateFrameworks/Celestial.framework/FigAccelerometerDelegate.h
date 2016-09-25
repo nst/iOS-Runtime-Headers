@@ -9,9 +9,9 @@
         BOOL __opaque[40]; 
     }  ringMutex;
     double  ringTime;
-    double  ringX;
-    double  ringY;
-    double  ringZ;
+    float  ringX;
+    float  ringY;
+    float  ringZ;
     SBSAccelerometer * sbsaccel;
 }
 

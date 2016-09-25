@@ -3,29 +3,29 @@
  */
 
 @interface NTPBKeyValueStore : PBCodable <NSCopying> {
-    int  _clientVersion;
+    long long  _clientVersion;
     struct { 
         unsigned int clientVersion : 1; 
         unsigned int version : 1; 
     }  _has;
     NSMutableArray * _keyValuePairs;
     NSData * _plistSidecar;
-    int  _version;
+    long long  _version;
 }
 
-@property (nonatomic) int clientVersion;
+@property (nonatomic) long long clientVersion;
 @property (nonatomic) BOOL hasClientVersion;
 @property (nonatomic, readonly) BOOL hasPlistSidecar;
 @property (nonatomic) BOOL hasVersion;
 @property (nonatomic, retain) NSMutableArray *keyValuePairs;
 @property (nonatomic, retain) NSData *plistSidecar;
-@property (nonatomic) int version;
+@property (nonatomic) long long version;
 
 + (Class)keyValuePairsType;
 
 - (void)addKeyValuePairs:(id)arg1;
 - (void)clearKeyValuePairs;
-- (int)clientVersion;
+- (long long)clientVersion;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
@@ -41,13 +41,13 @@
 - (void)mergeFrom:(id)arg1;
 - (id)plistSidecar;
 - (BOOL)readFrom:(id)arg1;
-- (void)setClientVersion:(int)arg1;
+- (void)setClientVersion:(long long)arg1;
 - (void)setHasClientVersion:(BOOL)arg1;
 - (void)setHasVersion:(BOOL)arg1;
 - (void)setKeyValuePairs:(id)arg1;
 - (void)setPlistSidecar:(id)arg1;
-- (void)setVersion:(int)arg1;
-- (int)version;
+- (void)setVersion:(long long)arg1;
+- (long long)version;
 - (void)writeTo:(id)arg1;
 
 @end

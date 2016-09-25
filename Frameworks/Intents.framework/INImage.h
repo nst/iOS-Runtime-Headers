@@ -50,7 +50,7 @@
 
 // Image: /System/Library/Frameworks/IntentsUI.framework/IntentsUI
 
-+ (struct CGSize { double x1; double x2; })imageSizeForIntentResponse:(id)arg1;
++ (struct CGSize { float x1; float x2; })imageSizeForIntentResponse:(id)arg1;
 + (id)imageWithCGImage:(struct CGImage { }*)arg1;
 + (id)imageWithUIImage:(id)arg1;
 

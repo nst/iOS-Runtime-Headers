@@ -5,13 +5,13 @@
 @interface TUSandboxExtendedURL : NSObject <NSSecureCoding> {
     NSURL * _URL;
     NSString * _sandboxExtensionClass;
-    int  _sandboxExtensionHandle;
+    long long  _sandboxExtensionHandle;
     NSString * _sandboxExtensionToken;
 }
 
 @property (nonatomic, retain) NSURL *URL;
 @property (nonatomic, copy) NSString *sandboxExtensionClass;
-@property (nonatomic) int sandboxExtensionHandle;
+@property (nonatomic) long long sandboxExtensionHandle;
 @property (nonatomic, copy) NSString *sandboxExtensionToken;
 
 + (BOOL)supportsSecureCoding;
@@ -25,10 +25,10 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithURL:(id)arg1;
 - (id)sandboxExtensionClass;
-- (int)sandboxExtensionHandle;
+- (long long)sandboxExtensionHandle;
 - (id)sandboxExtensionToken;
 - (void)setSandboxExtensionClass:(id)arg1;
-- (void)setSandboxExtensionHandle:(int)arg1;
+- (void)setSandboxExtensionHandle:(long long)arg1;
 - (void)setSandboxExtensionToken:(id)arg1;
 - (void)setURL:(id)arg1;
 

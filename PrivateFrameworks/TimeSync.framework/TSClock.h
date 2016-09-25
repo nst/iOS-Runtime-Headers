@@ -7,27 +7,27 @@
 }
 
 @property (nonatomic, readonly, retain) NSMutableArray *clients;
-@property (nonatomic) unsigned int clockIdentifier;
+@property (nonatomic) unsigned long long clockIdentifier;
 @property (nonatomic, readonly, copy) NSString *clockName;
 @property (nonatomic, readonly) double hostRateRatio;
 @property (nonatomic, readonly) int lockState;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *notificationQueue;
 
-+ (unsigned int)_mach_absolute_time;
++ (unsigned long long)_mach_absolute_time;
 
 - (void)addClient:(id)arg1;
 - (id)clients;
-- (unsigned int)clockIdentifier;
+- (unsigned long long)clockIdentifier;
 - (id)clockName;
-- (BOOL)convertFromDomainTime:(unsigned int*)arg1 toMachAbsoluteTime:(unsigned int*)arg2 withCount:(unsigned int)arg3;
-- (unsigned int)convertFromDomainToMachAbsoluteTime:(unsigned int)arg1 withFlags:(unsigned int*)arg2;
-- (BOOL)convertFromMachAbsoluteTime:(unsigned int*)arg1 toDomainTime:(unsigned int*)arg2 withCount:(unsigned int)arg3;
-- (unsigned int)convertFromMachAbsoluteToDomainTime:(unsigned int)arg1 withFlags:(unsigned int*)arg2;
+- (BOOL)convertFromDomainTime:(unsigned long long*)arg1 toMachAbsoluteTime:(unsigned long long*)arg2 withCount:(unsigned int)arg3;
+- (unsigned long long)convertFromDomainToMachAbsoluteTime:(unsigned long long)arg1 withFlags:(unsigned int*)arg2;
+- (BOOL)convertFromMachAbsoluteTime:(unsigned long long*)arg1 toDomainTime:(unsigned long long*)arg2 withCount:(unsigned int)arg3;
+- (unsigned long long)convertFromMachAbsoluteToDomainTime:(unsigned long long)arg1 withFlags:(unsigned int*)arg2;
 - (void)dealloc;
-- (BOOL)getRateRatioNumerator:(unsigned int*)arg1 denominator:(unsigned int*)arg2 machAnchor:(unsigned int*)arg3 andDomainAnchor:(unsigned int*)arg4 withError:(id*)arg5;
+- (BOOL)getRateRatioNumerator:(unsigned long long*)arg1 denominator:(unsigned long long*)arg2 machAnchor:(unsigned long long*)arg3 andDomainAnchor:(unsigned long long*)arg4 withError:(id*)arg5;
 - (double)hostRateRatio;
 - (id)init;
-- (id)initWithClockIdentifier:(unsigned int)arg1;
+- (id)initWithClockIdentifier:(unsigned long long)arg1;
 - (int)lockState;
 - (id)notificationQueue;
 - (void)removeClient:(id)arg1;

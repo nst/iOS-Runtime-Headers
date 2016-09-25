@@ -4,7 +4,7 @@
 
 @interface PXMemoriesFeedScrollFilter : NSObject <PXScrollViewControllerObserver> {
     NSDate * __lastAdditionalContentRequestDate;
-    double  _additionalContentThreshold;
+    float  _additionalContentThreshold;
     <PXMemoriesFeedScrollFilterDelegate> * _delegate;
     struct { 
         BOOL respondsToShouldRequestAdditionalContent; 

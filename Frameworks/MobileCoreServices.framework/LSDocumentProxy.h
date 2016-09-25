@@ -49,7 +49,7 @@
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
-- (struct CGSize { double x1; double x2; })_defaultStyleSize:(id)arg1;
-- (struct { int x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)_iconVariantDefinitions:(id)arg1;
+- (struct CGSize { float x1; float x2; })_defaultStyleSize:(id)arg1;
+- (struct { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)_iconVariantDefinitions:(id)arg1;
 
 @end

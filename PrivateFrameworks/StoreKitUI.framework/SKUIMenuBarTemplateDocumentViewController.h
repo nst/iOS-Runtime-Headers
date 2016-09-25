@@ -15,7 +15,7 @@
     SKUIMenuItemViewElement * _pendingSelectedMenuItemViewElement;
     SKUIScrollingSegmentedController * _scrollingSegmentedController;
     struct { 
-        double progress; 
+        float progress; 
         BOOL isBouncingOffTheEdge; 
     }  _scrollingTabAppearanceStatus;
     SKUIMenuBarTemplateElement * _templateElement;
@@ -27,7 +27,7 @@
 @property (nonatomic, readonly) UIScrollView *scrollingTabNestedPagingScrollView;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) UIView *titleView;
-@property (nonatomic, readonly) double titleViewHeight;
+@property (nonatomic, readonly) float titleViewHeight;
 
 - (void).cxx_destruct;
 - (void)_addContentViewController:(id)arg1;
@@ -56,12 +56,12 @@
 - (id)navigationBarControllerWithViewElement:(id)arg1;
 - (id)navigationPaletteView;
 - (void)scrollingSegmentedController:(id)arg1 willDisplayViewControllerAtIndex:(unsigned int)arg2;
-- (void)scrollingTabAppearanceStatusWasUpdated:(struct { double x1; BOOL x2; })arg1;
+- (void)scrollingTabAppearanceStatusWasUpdated:(struct { float x1; BOOL x2; })arg1;
 - (id)scrollingTabNestedPagingScrollView;
 - (id)scrollingTabViewControllerInNestedPagingScrollViewAtPageIndex:(unsigned int)arg1;
 - (void)setClientContext:(id)arg1;
 - (void)setOperationQueue:(id)arg1;
-- (void)setPreferredContentSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setPreferredContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)titleView;
 - (float)titleViewHeight;
 - (void)viewDidLoad;

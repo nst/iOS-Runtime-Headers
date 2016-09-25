@@ -75,8 +75,8 @@
 - (id)displayName;
 - (void)doCompact;
 - (int)fetchMessagesMatchingCriterion:(id)arg1 limit:(unsigned int)arg2;
-- (int)fetchMessagesWithMessageIDs:(id)arg1 andSetFlags:(unsigned int)arg2;
-- (int)fetchMessagesWithRemoteIDs:(id)arg1 andSetFlags:(unsigned int)arg2;
+- (int)fetchMessagesWithMessageIDs:(id)arg1 andSetFlags:(unsigned long long)arg2;
+- (int)fetchMessagesWithRemoteIDs:(id)arg1 andSetFlags:(unsigned long long)arg2;
 - (int)fetchMobileSynchronously:(unsigned int)arg1;
 - (int)fetchMobileSynchronously:(unsigned int)arg1 preservingUID:(id)arg2 options:(unsigned int)arg3;
 - (int)fetchNumMessages:(unsigned int)arg1 preservingUID:(id)arg2 options:(unsigned int)arg3;

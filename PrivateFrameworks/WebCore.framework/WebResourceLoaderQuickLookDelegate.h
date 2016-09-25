@@ -21,7 +21,7 @@
 - (void).cxx_destruct;
 - (void)_sendDidReceiveResponseIfNecessary;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
-- (void)connection:(id)arg1 didReceiveData:(id)arg2 lengthReceived:(int)arg3;
+- (void)connection:(id)arg1 didReceiveData:(id)arg2 lengthReceived:(long long)arg3;
 - (void)connection:(id)arg1 didReceiveDataArray:(id)arg2;
 - (void)connectionDidFinishLoading:(id)arg1;
 - (void)detachHandle;

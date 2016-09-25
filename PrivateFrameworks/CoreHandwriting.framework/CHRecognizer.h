@@ -31,8 +31,8 @@
     void * _mecabraDynamicLexicon;
     void * _mecabraStaticLexicon;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _minimumDrawingSize;
     struct Network { unsigned int x1; unsigned int x2; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_3_1_1; } x3; unsigned int x4; struct vector<NetworkNode, std::__1::allocator<NetworkNode> > { struct NetworkNode {} *x_5_1_1; struct NetworkNode {} *x_5_1_2; struct __compressed_pair<NetworkNode *, std::__1::allocator<NetworkNode> > { struct NetworkNode {} *x_3_2_1; } x_5_1_3; } x5; struct vector<NetworkEdge, std::__1::allocator<NetworkEdge> > { struct NetworkEdge {} *x_6_1_1; struct NetworkEdge {} *x_6_1_2; struct __compressed_pair<NetworkEdge *, std::__1::allocator<NetworkEdge> > { struct NetworkEdge {} *x_3_2_1; } x_6_1_3; } x6; } * _radicalClusterFST;
     int  _recognitionMode;
@@ -60,7 +60,7 @@
 @property (nonatomic) struct __Mecabra { }*mecabra;
 @property (nonatomic) void*mecabraDynamicLexicon;
 @property (nonatomic) void*mecabraStaticLexicon;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } minimumDrawingSize;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } minimumDrawingSize;
 @property (nonatomic) /* Warning: unhandled struct encoding: '{Network=II{basic_string<char' */ struct *radicalClusterFST; /* unknown property attribute:  std::__1::less<uint128> >=L}}}} */
 @property (nonatomic) int recognitionMode;
 @property (nonatomic) NSObject<OS_dispatch_queue> *recognitionQueue;
@@ -84,12 +84,12 @@
 - (void)candidateAccepted:(void*)arg1;
 - (void)candidatesCleared;
 - (id)characterSetForStrings:(id)arg1;
-- (id)chatBubbleCandidateResultForDrawing:(id)arg1 candidate:(struct CHCandidateResult { unsigned int x1; double x2; }*)arg2;
+- (id)chatBubbleCandidateResultForDrawing:(id)arg1 candidate:(struct CHCandidateResult { unsigned int x1; float x2; }*)arg2;
 - (struct vector<const void *, std::__1::allocator<const void *> > { void **x1; void **x2; struct __compressed_pair<const void **, std::__1::allocator<const void *> > { void **x_3_1_1; } x3; })completionsForCandidate:(id)arg1 candidateContext:(id)arg2 prefix:(id)arg3 option:(unsigned long)arg4;
 - (struct vector<const void *, std::__1::allocator<const void *> > { void **x1; void **x2; struct __compressed_pair<const void **, std::__1::allocator<const void *> > { void **x_3_1_1; } x3; })completionsForCandidate:(id)arg1 prefix:(id)arg2 option:(unsigned long)arg3;
 - (void)dealloc;
-- (id)ellipseCandidateResultForDrawing:(id)arg1 candidate:(struct CHCandidateResult { unsigned int x1; double x2; }*)arg2;
-- (void)endpointsForDrawing:(id)arg1 startLocation:(struct CGPoint { double x1; double x2; }*)arg2 endLocation:(struct CGPoint { double x1; double x2; }*)arg3;
+- (id)ellipseCandidateResultForDrawing:(id)arg1 candidate:(struct CHCandidateResult { unsigned int x1; float x2; }*)arg2;
+- (void)endpointsForDrawing:(id)arg1 startLocation:(struct CGPoint { float x1; float x2; }*)arg2 endLocation:(struct CGPoint { float x1; float x2; }*)arg3;
 - (struct CHNeuralNetwork { int (**x1)(); int x2; char *x3; unsigned int x4; unsigned int *x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; }*)engine;
 - (struct Network { unsigned int x1; unsigned int x2; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_3_1_1; } x3; unsigned int x4; struct vector<NetworkNode, std::__1::allocator<NetworkNode> > { struct NetworkNode {} *x_5_1_1; struct NetworkNode {} *x_5_1_2; struct __compressed_pair<NetworkNode *, std::__1::allocator<NetworkNode> > { struct NetworkNode {} *x_3_2_1; } x_5_1_3; } x5; struct vector<NetworkEdge, std::__1::allocator<NetworkEdge> > { struct NetworkEdge {} *x_6_1_1; struct NetworkEdge {} *x_6_1_2; struct __compressed_pair<NetworkEdge *, std::__1::allocator<NetworkEdge> > { struct NetworkEdge {} *x_3_2_1; } x_6_1_3; } x6; }*)formatGrammarFST;
 - (struct CHNeuralNetwork { int (**x1)(); int x2; char *x3; unsigned int x4; unsigned int *x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; }*)freeformEngine;
@@ -100,17 +100,17 @@
 - (unsigned int)lastCharacterStrokeCount;
 - (id)lastCharacterStrokeIndexes;
 - (id)learningDictionaryURL;
-- (id)lineCandidateResultForDrawing:(id)arg1 candidate:(struct CHCandidateResult { unsigned int x1; double x2; }*)arg2 rejectionResult:(id*)arg3;
+- (id)lineCandidateResultForDrawing:(id)arg1 candidate:(struct CHCandidateResult { unsigned int x1; float x2; }*)arg2 rejectionResult:(id*)arg3;
 - (void)loadEngineModel;
 - (void)logCandidateIfAppropriate:(void*)arg1;
-- (id)manhattanLineCandidateResultForDrawing:(id)arg1 candidate:(struct CHCandidateResult { unsigned int x1; double x2; }*)arg2 rejectionResult:(id*)arg3;
+- (id)manhattanLineCandidateResultForDrawing:(id)arg1 candidate:(struct CHCandidateResult { unsigned int x1; float x2; }*)arg2 rejectionResult:(id*)arg3;
 - (unsigned int)maxRecognitionResultCount;
 - (struct __Mecabra { }*)mecabra;
 - (void*)mecabraDynamicLexicon;
 - (void*)mecabraStaticLexicon;
-- (struct CGSize { double x1; double x2; })minimumDrawingSize;
-- (id)outlineArrowCandidateResultForDrawing:(id)arg1 candidate:(struct CHCandidateResult { unsigned int x1; double x2; }*)arg2;
-- (id)pentagonCandidateResultForDrawing:(id)arg1 candidate:(struct CHCandidateResult { unsigned int x1; double x2; }*)arg2;
+- (struct CGSize { float x1; float x2; })minimumDrawingSize;
+- (id)outlineArrowCandidateResultForDrawing:(id)arg1 candidate:(struct CHCandidateResult { unsigned int x1; float x2; }*)arg2;
+- (id)pentagonCandidateResultForDrawing:(id)arg1 candidate:(struct CHCandidateResult { unsigned int x1; float x2; }*)arg2;
 - (struct Network { unsigned int x1; unsigned int x2; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_3_1_1; } x3; unsigned int x4; struct vector<NetworkNode, std::__1::allocator<NetworkNode> > { struct NetworkNode {} *x_5_1_1; struct NetworkNode {} *x_5_1_2; struct __compressed_pair<NetworkNode *, std::__1::allocator<NetworkNode> > { struct NetworkNode {} *x_3_2_1; } x_5_1_3; } x5; struct vector<NetworkEdge, std::__1::allocator<NetworkEdge> > { struct NetworkEdge {} *x_6_1_1; struct NetworkEdge {} *x_6_1_2; struct __compressed_pair<NetworkEdge *, std::__1::allocator<NetworkEdge> > { struct NetworkEdge {} *x_3_2_1; } x_6_1_3; } x6; }*)radicalClusterFST;
 - (int)recognitionMode;
 - (id)recognitionQueue;
@@ -120,7 +120,7 @@
 - (id)recognitionResultsForSingleCharacterDrawing:(id)arg1 options:(id)arg2;
 - (id)recognitionResultsForSketchDrawing:(id)arg1 options:(id)arg2;
 - (int)recognitionType;
-- (id)rectangleCandidateResultForDrawing:(id)arg1 candidate:(struct CHCandidateResult { unsigned int x1; double x2; }*)arg2;
+- (id)rectangleCandidateResultForDrawing:(id)arg1 candidate:(struct CHCandidateResult { unsigned int x1; float x2; }*)arg2;
 - (void)releaseLMResources;
 - (void)rescoreCandidatesWithLangaugeModel:(struct vector<CHCandidateResult, std::__1::allocator<CHCandidateResult> > { struct CHCandidateResult {} *x1; struct CHCandidateResult {} *x2; struct __compressed_pair<CHCandidateResult *, std::__1::allocator<CHCandidateResult> > { struct CHCandidateResult {} *x_3_1_1; } x3; }*)arg1 history:(id)arg2;
 - (BOOL)saveDrawingUntilNextCandidateAccepted;
@@ -153,12 +153,12 @@
 - (void)setTcVariantMap:(struct VariantMap { int *x1; int *x2; int *x3; int x4; int *x5; unsigned int x6; }*)arg1;
 - (id)sketchCodeForDescription:(id)arg1;
 - (id)sketchDescriptionForCode:(int)arg1;
-- (id)starCandidateResultForDrawing:(id)arg1 candidate:(struct CHCandidateResult { unsigned int x1; double x2; }*)arg2;
+- (id)starCandidateResultForDrawing:(id)arg1 candidate:(struct CHCandidateResult { unsigned int x1; float x2; }*)arg2;
 - (id)strokeIndexesForLastCharacter;
 - (id)supportedCharacterSet;
 - (id)supportedStrings;
 - (struct VariantMap { int *x1; int *x2; int *x3; int x4; int *x5; unsigned int x6; }*)tcVariantMap;
-- (id)triangleCandidateResultForDrawing:(id)arg1 candidate:(struct CHCandidateResult { unsigned int x1; double x2; }*)arg2;
+- (id)triangleCandidateResultForDrawing:(id)arg1 candidate:(struct CHCandidateResult { unsigned int x1; float x2; }*)arg2;
 - (void)updateAddressBookLexicon:(id)arg1;
 - (void)updateUserDictionaryLexicon:(id)arg1;
 

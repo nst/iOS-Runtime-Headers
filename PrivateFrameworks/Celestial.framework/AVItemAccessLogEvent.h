@@ -9,7 +9,7 @@
 @property (nonatomic, readonly) NSString *URI;
 @property (nonatomic, readonly) double durationWatched;
 @property (nonatomic, readonly) double indicatedBitrate;
-@property (nonatomic, readonly) int numberOfBytesTransferred;
+@property (nonatomic, readonly) long long numberOfBytesTransferred;
 @property (nonatomic, readonly) int numberOfDroppedVideoFrames;
 @property (nonatomic, readonly) int numberOfSegmentsDownloaded;
 @property (nonatomic, readonly) int numberOfServerAddressChanges;
@@ -31,7 +31,7 @@
 - (double)indicatedBitrate;
 - (id)init;
 - (id)initWithDictionary:(id)arg1;
-- (int)numberOfBytesTransferred;
+- (long long)numberOfBytesTransferred;
 - (int)numberOfDroppedVideoFrames;
 - (int)numberOfSegmentsDownloaded;
 - (int)numberOfServerAddressChanges;

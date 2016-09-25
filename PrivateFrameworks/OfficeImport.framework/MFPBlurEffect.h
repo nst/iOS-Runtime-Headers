@@ -4,7 +4,7 @@
 
 @interface MFPBlurEffect : MFPEffect {
     BOOL  mExpandEdge;
-    double  mRadius;
+    float  mRadius;
 }
 
 + (id)GUID;

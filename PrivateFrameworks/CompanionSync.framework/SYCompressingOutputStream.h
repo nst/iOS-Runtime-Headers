@@ -3,7 +3,7 @@
  */
 
 @interface SYCompressingOutputStream : NSOutputStream <NSStreamDelegate, SYCompressionBufferOptimization, SYOutputCompressor, SYStreamEventHandlerBlocks, SYStreamProgress, SYStreamThroughputCounter, _SYStreamRunLoopSourceHandler> {
-    unsigned int  _byteCount;
+    unsigned long long  _byteCount;
     _SYZlibStreamInternal * _internal;
     int  _level;
     id /* block */  _onBytesAvailable;
@@ -16,7 +16,7 @@
     NSOutputStream * _stream;
 }
 
-@property (nonatomic, readonly) unsigned int bytesThroughput;
+@property (nonatomic, readonly) unsigned long long bytesThroughput;
 @property (nonatomic) int compressionLevel;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -39,7 +39,7 @@
 - (int)_handlePendingInput;
 - (id)_internal;
 - (void)_postEventToDelegate:(unsigned int)arg1;
-- (unsigned int)bytesThroughput;
+- (unsigned long long)bytesThroughput;
 - (void)close;
 - (int)compressionLevel;
 - (void)dealloc;

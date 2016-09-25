@@ -117,7 +117,7 @@
 - (void)setServerChangeTokenData:(id)arg1;
 - (void)setSyncCircleSizeRetrievalThrottlerData:(id)arg1;
 - (id)syncCircleSizeRetrievalThrottlerData;
-- (void)updateHistoryAfterSuccessfulPersistedLongLivedSaveOperationWithGeneration:(int)arg1 completion:(id /* block */)arg2;
+- (void)updateHistoryAfterSuccessfulPersistedLongLivedSaveOperationWithGeneration:(long long)arg1 completion:(id /* block */)arg2;
 - (void)updateTitle:(id)arg1 forVisit:(id)arg2;
 - (void)visitIdentifiersMatchingExistingVisits:(id)arg1 populateAssociatedVisits:(BOOL)arg2 completion:(id /* block */)arg3;
 - (void)waitUntilHistoryHasLoaded;

@@ -10,16 +10,16 @@
 
 - (void)_endCurrentListingContainer;
 - (void)_endCurrentSongsContainer;
-- (id)_playlistExportItemForPersistentId:(int)arg1;
+- (id)_playlistExportItemForPersistentId:(long long)arg1;
 - (void)_setListingContainer:(unsigned int)arg1;
 - (void)_setSongsContainer:(unsigned int)arg1;
-- (id)_trackExportItemForPersistendId:(int)arg1;
+- (id)_trackExportItemForPersistendId:(long long)arg1;
 - (id)begin:(unsigned int)arg1;
 - (id)end;
-- (id)exportPlaylistAdded:(unsigned int)arg1;
-- (id)exportPlaylistDeleted:(unsigned int)arg1;
-- (id)exportTrackAdded:(unsigned int)arg1;
-- (id)exportTrackDeleted:(unsigned int)arg1;
+- (id)exportPlaylistAdded:(unsigned long long)arg1;
+- (id)exportPlaylistDeleted:(unsigned long long)arg1;
+- (id)exportTrackAdded:(unsigned long long)arg1;
+- (id)exportTrackDeleted:(unsigned long long)arg1;
 - (id)initWithLibrary:(id)arg1 outputStream:(id)arg2 updateType:(int)arg3;
 
 @end

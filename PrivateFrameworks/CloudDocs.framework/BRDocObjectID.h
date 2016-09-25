@@ -14,6 +14,6 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDocID:(unsigned int)arg1;
 - (BOOL)isDocumentID;
-- (unsigned int)rawID;
+- (unsigned long long)rawID;
 
 @end

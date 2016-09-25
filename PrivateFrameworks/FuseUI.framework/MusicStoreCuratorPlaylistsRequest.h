@@ -3,11 +3,11 @@
  */
 
 @interface MusicStoreCuratorPlaylistsRequest : MPStoreModelRequest {
-    int  _curatorStoreAdamID;
+    long long  _curatorStoreAdamID;
     MusicStoreCuratorPlaylistsResponse * _previousResponse;
 }
 
-@property (nonatomic) int curatorStoreAdamID;
+@property (nonatomic) long long curatorStoreAdamID;
 @property (nonatomic, retain) MusicStoreCuratorPlaylistsResponse *previousResponse;
 
 + (id)allSupportedItemProperties;
@@ -15,12 +15,12 @@
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (int)curatorStoreAdamID;
+- (long long)curatorStoreAdamID;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)newOperationWithResponseHandler:(id /* block */)arg1;
 - (id)previousResponse;
-- (void)setCuratorStoreAdamID:(int)arg1;
+- (void)setCuratorStoreAdamID:(long long)arg1;
 - (void)setPreviousResponse:(id)arg1;
 
 @end

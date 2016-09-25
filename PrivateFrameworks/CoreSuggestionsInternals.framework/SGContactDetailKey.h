@@ -16,7 +16,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSString *value;
 
-+ (BOOL)isSupportedEntityType:(int)arg1;
++ (BOOL)isSupportedEntityType:(long long)arg1;
 + (id)prefixForForIdentityKey:(id)arg1;
 
 - (void).cxx_destruct;

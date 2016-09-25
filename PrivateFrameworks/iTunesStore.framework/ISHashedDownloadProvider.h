@@ -17,28 +17,28 @@
         unsigned int data[16]; 
         int num; 
     }  _md5Context;
-    int  _numberOfBytesToHash;
+    long long  _numberOfBytesToHash;
     BOOL  _shouldResumeFromLocalBytes;
-    int  _totalBytesWritten;
-    int  _validatedBytes;
+    long long  _totalBytesWritten;
+    long long  _validatedBytes;
 }
 
 @property (retain) NSArray *hashes;
 @property (copy) ISHashError *lastHashError;
 @property (retain) NSString *localFilePath;
-@property int numberOfBytesToHash;
+@property long long numberOfBytesToHash;
 @property BOOL shouldResumeFromLocalBytes;
-@property int streamedBytes;
-@property int validatedBytes;
+@property long long streamedBytes;
+@property long long validatedBytes;
 
-- (BOOL)_checkHashForByteCount:(int)arg1;
+- (BOOL)_checkHashForByteCount:(long long)arg1;
 - (void)_closeFile;
 - (BOOL)_openFile;
-- (BOOL)_truncateToSize:(int)arg1;
-- (int)_verifiedBytesByInitializingHashForFileSize:(int)arg1;
+- (BOOL)_truncateToSize:(long long)arg1;
+- (long long)_verifiedBytesByInitializingHashForFileSize:(long long)arg1;
 - (BOOL)_writeDataWithHashing:(id)arg1 returningError:(id*)arg2;
 - (BOOL)_writeDataWithoutHashing:(id)arg1 returningError:(id*)arg2;
-- (BOOL)canStreamContentLength:(int)arg1 error:(id*)arg2;
+- (BOOL)canStreamContentLength:(long long)arg1 error:(id*)arg2;
 - (id)closeStream;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -47,19 +47,19 @@
 - (BOOL)isStream;
 - (id)lastHashError;
 - (id)localFilePath;
-- (int)numberOfBytesToHash;
+- (long long)numberOfBytesToHash;
 - (BOOL)parseData:(id)arg1 returningError:(id*)arg2;
 - (void)resetStream;
 - (void)setHashes:(id)arg1;
 - (void)setLastHashError:(id)arg1;
 - (void)setLocalFilePath:(id)arg1;
-- (void)setNumberOfBytesToHash:(int)arg1;
+- (void)setNumberOfBytesToHash:(long long)arg1;
 - (void)setShouldResumeFromLocalBytes:(BOOL)arg1;
-- (void)setStreamedBytes:(int)arg1;
-- (void)setValidatedBytes:(int)arg1;
+- (void)setStreamedBytes:(long long)arg1;
+- (void)setValidatedBytes:(long long)arg1;
 - (void)setup;
 - (BOOL)shouldResumeFromLocalBytes;
-- (int)streamedBytes;
-- (int)validatedBytes;
+- (long long)streamedBytes;
+- (long long)validatedBytes;
 
 @end

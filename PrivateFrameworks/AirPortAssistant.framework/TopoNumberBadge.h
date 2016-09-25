@@ -6,13 +6,13 @@
     int  _count;
     UIFont * _font;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _imageSize;
     id  _owningView;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _textSize;
 }
 
@@ -30,7 +30,7 @@
 - (void)layoutSublayers;
 - (struct CGImage { }*)newNumberBadge;
 - (id)owningView;
-- (struct CGSize { double x1; double x2; })preferredFrameSize;
+- (struct CGSize { float x1; float x2; })preferredFrameSize;
 - (void)setCount:(int)arg1;
 - (void)setOwningView:(id)arg1;
 

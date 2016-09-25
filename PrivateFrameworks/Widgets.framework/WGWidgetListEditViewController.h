@@ -3,7 +3,7 @@
  */
 
 @interface WGWidgetListEditViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
-    double  _contentMinY;
+    float  _contentMinY;
     <WGWidgetListEditViewControllerDataSource> * _dataSource;
     <WGWidgetListEditViewControllerDelegate> * _delegate;
     NSMutableArray * _disabledItemIDs;

@@ -7,14 +7,14 @@
     NSArray * _matchTokens;
     SGMatchedDetails * _matchedDetails;
     SGRecordId * _matchingFieldRecordId;
-    int  _matchingFieldType;
+    long long  _matchingFieldType;
 }
 
 @property (nonatomic, readonly) SGContact *contact;
 @property (nonatomic, readonly) NSArray *matchTokens;
 @property (nonatomic, readonly) SGMatchedDetails *matchedDetails;
 @property (nonatomic, readonly) SGObject *matchingField;
-@property (nonatomic, readonly) int matchingFieldType;
+@property (nonatomic, readonly) long long matchingFieldType;
 
 + (BOOL)supportsSecureCoding;
 
@@ -37,6 +37,6 @@
 - (id)matchTokens;
 - (id)matchedDetails;
 - (id)matchingField;
-- (int)matchingFieldType;
+- (long long)matchingFieldType;
 
 @end

@@ -21,7 +21,7 @@
     unsigned long  _estimatedNumOfDownloadableObjects;
     PTPEventPacket * _event;
     NSMutableArray * _eventQueue;
-    unsigned int  _excessReceivedDataSize;
+    unsigned long long  _excessReceivedDataSize;
     unsigned long  _lastAddedObject;
     unsigned long  _maxMetadata;
     unsigned long  _maxMetadataAndThumbnails;
@@ -36,8 +36,8 @@
     BOOL  _responseReceived;
     BOOL  _sessionOpen;
     NSMutableArray * _storages;
-    unsigned int  _totalFDFileSize;
-    unsigned int  _totalFDReceivedSize;
+    unsigned long long  _totalFDFileSize;
+    unsigned long long  _totalFDReceivedSize;
     unsigned long  _totalFDReportedProgress;
     unsigned long  _transactionID;
     PTPTransport * _transport;
@@ -91,7 +91,7 @@
 - (id)objectFilesystemInfosForObjectsInStorage:(unsigned long)arg1 objectFormatCode:(unsigned long)arg2 association:(unsigned long)arg3;
 - (id)objectHandlesInStorage64:(unsigned long)arg1 objectFormatCode:(unsigned long)arg2 association:(unsigned long)arg3;
 - (id)objectHandlesInStorage:(unsigned long)arg1 objectFormatCode:(unsigned long)arg2 association:(unsigned long)arg3;
-- (unsigned int)objectInfo64BitSize:(unsigned long)arg1;
+- (unsigned long long)objectInfo64BitSize:(unsigned long)arg1;
 - (id)objectInfo:(unsigned long)arg1;
 - (id)objectInfosForObjectsInStorage64:(unsigned long)arg1 objectFormatCode:(unsigned long)arg2 association:(unsigned long)arg3;
 - (id)objectInfosForObjectsInStorage:(unsigned long)arg1 objectFormatCode:(unsigned long)arg2 association:(unsigned long)arg3;
@@ -103,12 +103,12 @@
 - (BOOL)requestPending;
 - (BOOL)resetDevicePropertyValueForProperty:(unsigned short)arg1;
 - (unsigned short)saveFile:(id)arg1 to:(id)arg2;
-- (unsigned short)savePartialFile:(id)arg1 fromOffset:(unsigned int)arg2 size:(unsigned int)arg3 to:(id)arg4;
-- (unsigned short)savePartialFileMD5:(id)arg1 fromOffset:(unsigned int)arg2 size:(unsigned int)arg3 to:(id)arg4;
-- (id)sendRequest:(id)arg1 andReceiveData:(id)arg2 excessReceivedDataSize:(unsigned int*)arg3 timeout:(double)arg4;
-- (id)sendRequest:(id)arg1 andReceiveData:(id)arg2 maxDataSize:(unsigned long)arg3 excessReceivedDataSize:(unsigned int*)arg4 timeout:(double)arg5;
+- (unsigned short)savePartialFile:(id)arg1 fromOffset:(unsigned long long)arg2 size:(unsigned long long)arg3 to:(id)arg4;
+- (unsigned short)savePartialFileMD5:(id)arg1 fromOffset:(unsigned long long)arg2 size:(unsigned long long)arg3 to:(id)arg4;
+- (id)sendRequest:(id)arg1 andReceiveData:(id)arg2 excessReceivedDataSize:(unsigned long long*)arg3 timeout:(double)arg4;
+- (id)sendRequest:(id)arg1 andReceiveData:(id)arg2 maxDataSize:(unsigned long)arg3 excessReceivedDataSize:(unsigned long long*)arg4 timeout:(double)arg5;
 - (id)sendRequest:(id)arg1 andSendData:(id)arg2;
-- (id)sendRequest:(id)arg1 excessReceivedDataSize:(unsigned int*)arg2 timeout:(double)arg3;
+- (id)sendRequest:(id)arg1 excessReceivedDataSize:(unsigned long long*)arg2 timeout:(double)arg3;
 - (void)sentData:(id)arg1;
 - (void)setContentCatalogPercentCompleted:(unsigned long)arg1;
 - (void)setDelegate:(id)arg1;

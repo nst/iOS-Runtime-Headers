@@ -7,7 +7,7 @@
 }
 
 @property (nonatomic, readonly) NSString *ID;
-@property (nonatomic, readonly) double batteryLevel;
+@property (nonatomic, readonly) float batteryLevel;
 @property (nonatomic, readonly) int deviceType;
 @property (nonatomic, readonly) BOOL hasBatteryLevel;
 @property (nonatomic, readonly) NSString *modelID;

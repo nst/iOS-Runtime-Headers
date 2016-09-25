@@ -21,7 +21,7 @@
 
 - (void).cxx_destruct;
 - (void)_didInvalidateWithContext:(id)arg1;
-- (int)_pidForSectionAtIndex:(int)arg1;
+- (long long)_pidForSectionAtIndex:(int)arg1;
 - (void)_setCompletion:(id)arg1 forSectionAtIndex:(int)arg2;
 - (void)_setToken:(unsigned int)arg1 forSectionAtIndex:(int)arg2;
 - (int)_tokenForSectionAtIndex:(int)arg1;

@@ -23,13 +23,13 @@
 @property (nonatomic, retain) UIView *footerView;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) SKUIOnboardingInstructionsView *instructionsView;
-@property (nonatomic, readonly) double maximumCircleDiameter;
+@property (nonatomic, readonly) float maximumCircleDiameter;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_cancelDeletionTimer;
 - (float)_circleImageAlphaForAffinityCount:(int)arg1;
-- (struct CGSize { double x1; double x2; })_circleSizeForAffinityCount:(int)arg1;
+- (struct CGSize { float x1; float x2; })_circleSizeForAffinityCount:(int)arg1;
 - (void)_completeDeletionForCircleAtIndex:(int)arg1;
 - (void)_reloadRepellors;
 - (void)_sendAffilationItemsDidChange;

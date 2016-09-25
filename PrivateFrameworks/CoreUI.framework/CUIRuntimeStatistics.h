@@ -5,10 +5,10 @@
 @interface CUIRuntimeStatistics : NSObject {
     int  _notify_token;
     NSObject<OS_dispatch_queue> * _queue;
-    int  _shortCircuitImageLookup;
-    int  _total_lookup;
-    int  _total_size;
-    int  _wasted_size;
+    long long  _shortCircuitImageLookup;
+    long long  _total_lookup;
+    long long  _total_size;
+    long long  _wasted_size;
 }
 
 + (void)generateLog;

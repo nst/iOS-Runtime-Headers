@@ -12,7 +12,7 @@
     BOOL  _shouldRepeat;
     NSString * _toneFileName;
     NSString * _toneIdentifier;
-    unsigned int  _toneMediaLibraryItemIdentifier;
+    unsigned long long  _toneMediaLibraryItemIdentifier;
     NSString * _vibrationIdentifier;
     NSDictionary * _vibrationPattern;
 }
@@ -26,7 +26,7 @@
 @property (nonatomic, readonly) BOOL shouldRepeat;
 @property (nonatomic, readonly, copy) NSString *toneFileName;
 @property (nonatomic, readonly, copy) NSString *toneIdentifier;
-@property (nonatomic, readonly) unsigned int toneMediaLibraryItemIdentifier;
+@property (nonatomic, readonly) unsigned long long toneMediaLibraryItemIdentifier;
 @property (nonatomic, readonly, copy) NSString *vibrationIdentifier;
 @property (nonatomic, readonly, copy) NSDictionary *vibrationPattern;
 
@@ -37,7 +37,7 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)_initWithAlertType:(int)arg1 alertTopic:(id)arg2 audioCategory:(id)arg3 audioVolume:(id)arg4 maximumDuration:(double)arg5 shouldIgnoreRingerSwitch:(BOOL)arg6 shouldRepeat:(BOOL)arg7 toneFileName:(id)arg8 toneIdentifier:(id)arg9 toneMediaLibraryItemIdentifier:(unsigned int)arg10 vibrationIdentifier:(id)arg11 vibrationPattern:(id)arg12;
+- (id)_initWithAlertType:(int)arg1 alertTopic:(id)arg2 audioCategory:(id)arg3 audioVolume:(id)arg4 maximumDuration:(double)arg5 shouldIgnoreRingerSwitch:(BOOL)arg6 shouldRepeat:(BOOL)arg7 toneFileName:(id)arg8 toneIdentifier:(id)arg9 toneMediaLibraryItemIdentifier:(unsigned long long)arg10 vibrationIdentifier:(id)arg11 vibrationPattern:(id)arg12;
 - (id)alertTopic;
 - (int)alertType;
 - (id)audioCategory;
@@ -55,7 +55,7 @@
 - (BOOL)shouldRepeat;
 - (id)toneFileName;
 - (id)toneIdentifier;
-- (unsigned int)toneMediaLibraryItemIdentifier;
+- (unsigned long long)toneMediaLibraryItemIdentifier;
 - (id)vibrationIdentifier;
 - (id)vibrationPattern;
 

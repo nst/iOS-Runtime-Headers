@@ -5,55 +5,55 @@
 @interface CVMLFaceObservation : CVMLDetectedObject <NSCoding> {
     struct _Geometry2D_rect2D_ { 
         struct _Geometry2D_point2D_ { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct _Geometry2D_size2D_ { 
-            double height; 
-            double width; 
+            float height; 
+            float width; 
         } size; 
     }  _alignedBoundingBox;
     NSData * _alignedMeanShape;
     NSDictionary * _expressionsAndScores;
     unsigned int  _faceId;
-    double  _faceIdConfidence;
+    float  _faceIdConfidence;
     CVMLFaceRegionMap * _faceRegionMap;
     CVMLFaceprint * _faceprint;
     BOOL  _hasBBoxBeenAligned;
     BOOL  _isBlinking;
     NSData * _landmarkPoints;
     NSData * _landmarkPoints3d;
-    double  _landmarkPointsScore;
-    double  _landmarkScore;
+    float  _landmarkPointsScore;
+    float  _landmarkScore;
     CVMLFaceLandmarks * _landmarks;
     CVMLFaceLandmarks * _landmarks3d;
     NSData * _poseData;
 }
 
-@property struct _Geometry2D_rect2D_ { struct _Geometry2D_point2D_ { double x_1_1_1; double x_1_1_2; } x1; struct _Geometry2D_size2D_ { double x_2_1_1; double x_2_1_2; } x2; } alignedBoundingBox;
+@property struct _Geometry2D_rect2D_ { struct _Geometry2D_point2D_ { float x_1_1_1; float x_1_1_2; } x1; struct _Geometry2D_size2D_ { float x_2_1_1; float x_2_1_2; } x2; } alignedBoundingBox;
 @property (retain) NSData *alignedMeanShape;
 @property (readonly) NSDictionary *expressionsAndConfidence;
 @property unsigned int faceId;
-@property double faceIdConfidence;
+@property float faceIdConfidence;
 @property (nonatomic, retain) CVMLFaceRegionMap *faceRegionMap;
 @property (retain) CVMLFaceprint *faceprint;
 @property BOOL hasBBoxBeenAligned;
 @property (retain) NSData *landmarkPoints;
 @property (retain) NSData *landmarkPoints3d;
-@property double landmarkPointsScore;
+@property float landmarkPointsScore;
 @property (nonatomic, retain) CVMLFaceLandmarks *landmarks;
 @property (nonatomic, retain) CVMLFaceLandmarks *landmarks3d;
-@property (readonly) double nameConfidence;
+@property (readonly) float nameConfidence;
 @property (readonly) struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; } pose;
 @property (retain) NSData *poseData;
 
 + (BOOL)computeYawPitchRollFromPoseMatrix:(struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; })arg1 outputYaw:(float*)arg2 outputPitch:(float*)arg3 outputRoll:(float*)arg4;
-+ (id)observationWithBoundingBox:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-+ (id)observationWithBoundingBox:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 andAlignedBoundingBox:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
++ (id)observationWithBoundingBox:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
++ (id)observationWithBoundingBox:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 andAlignedBoundingBox:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 
 - (void).cxx_destruct;
-- (struct _Geometry2D_rect2D_ { struct _Geometry2D_point2D_ { double x_1_1_1; double x_1_1_2; } x1; struct _Geometry2D_size2D_ { double x_2_1_1; double x_2_1_2; } x2; })alignedBoundingBox;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })alignedBoundingBoxAsCGRect;
+- (struct _Geometry2D_rect2D_ { struct _Geometry2D_point2D_ { float x_1_1_1; float x_1_1_2; } x1; struct _Geometry2D_size2D_ { float x_2_1_1; float x_2_1_2; } x2; })alignedBoundingBox;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })alignedBoundingBoxAsCGRect;
 - (id)alignedMeanShape;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
@@ -64,7 +64,7 @@
 - (float)faceIdConfidence;
 - (id)faceRegionMap;
 - (id)faceprint;
-- (BOOL)getComputedRectifyingTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; }*)arg1;
+- (BOOL)getComputedRectifyingTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg1;
 - (BOOL)hasBBoxBeenAligned;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
@@ -78,7 +78,7 @@
 - (float)nameConfidence;
 - (struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; })pose;
 - (id)poseData;
-- (void)setAlignedBoundingBox:(struct _Geometry2D_rect2D_ { struct _Geometry2D_point2D_ { double x_1_1_1; double x_1_1_2; } x1; struct _Geometry2D_size2D_ { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setAlignedBoundingBox:(struct _Geometry2D_rect2D_ { struct _Geometry2D_point2D_ { float x_1_1_1; float x_1_1_2; } x1; struct _Geometry2D_size2D_ { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setAlignedMeanShape:(id)arg1;
 - (void)setExpressionsAndScores:(id)arg1;
 - (void)setFaceId:(unsigned int)arg1;

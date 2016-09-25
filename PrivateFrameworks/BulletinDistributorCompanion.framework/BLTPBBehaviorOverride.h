@@ -3,8 +3,8 @@
  */
 
 @interface BLTPBBehaviorOverride : PBCodable <NSCopying> {
-    unsigned int  _behaviorOverrideMode;
-    unsigned int  _behaviorOverrideType;
+    unsigned long long  _behaviorOverrideMode;
+    unsigned long long  _behaviorOverrideType;
     NSMutableArray * _effectiveIntervals;
     struct { 
         unsigned int behaviorOverrideMode : 1; 
@@ -12,16 +12,16 @@
     }  _has;
 }
 
-@property (nonatomic) unsigned int behaviorOverrideMode;
-@property (nonatomic) unsigned int behaviorOverrideType;
+@property (nonatomic) unsigned long long behaviorOverrideMode;
+@property (nonatomic) unsigned long long behaviorOverrideType;
 @property (nonatomic, retain) NSMutableArray *effectiveIntervals;
 @property (nonatomic) BOOL hasBehaviorOverrideMode;
 @property (nonatomic) BOOL hasBehaviorOverrideType;
 
 - (void).cxx_destruct;
 - (void)addEffectiveIntervals:(id)arg1;
-- (unsigned int)behaviorOverrideMode;
-- (unsigned int)behaviorOverrideType;
+- (unsigned long long)behaviorOverrideMode;
+- (unsigned long long)behaviorOverrideType;
 - (void)clearEffectiveIntervals;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -36,8 +36,8 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (void)setBehaviorOverrideMode:(unsigned int)arg1;
-- (void)setBehaviorOverrideType:(unsigned int)arg1;
+- (void)setBehaviorOverrideMode:(unsigned long long)arg1;
+- (void)setBehaviorOverrideType:(unsigned long long)arg1;
 - (void)setEffectiveIntervals:(id)arg1;
 - (void)setHasBehaviorOverrideMode:(BOOL)arg1;
 - (void)setHasBehaviorOverrideType:(BOOL)arg1;

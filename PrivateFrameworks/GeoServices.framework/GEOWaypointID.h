@@ -13,10 +13,10 @@
         unsigned int placeTypeHint : 1; 
     }  _has;
     GEOLatLng * _locationHint;
-    unsigned int  _muid;
+    unsigned long long  _muid;
     NSString * _placeNameHint;
     int  _placeTypeHint;
-    unsigned int  _resultProviderId;
+    unsigned long long  _resultProviderId;
 }
 
 @property (nonatomic) int addressGeocodeAccuracyHint;
@@ -30,10 +30,10 @@
 @property (nonatomic) BOOL hasPlaceTypeHint;
 @property (nonatomic) BOOL hasResultProviderId;
 @property (nonatomic, retain) GEOLatLng *locationHint;
-@property (nonatomic) unsigned int muid;
+@property (nonatomic) unsigned long long muid;
 @property (nonatomic, retain) NSString *placeNameHint;
 @property (nonatomic) int placeTypeHint;
-@property (nonatomic) unsigned int resultProviderId;
+@property (nonatomic) unsigned long long resultProviderId;
 
 + (Class)formattedAddressLineHintType;
 
@@ -63,12 +63,12 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)locationHint;
 - (void)mergeFrom:(id)arg1;
-- (unsigned int)muid;
+- (unsigned long long)muid;
 - (id)placeNameHint;
 - (int)placeTypeHint;
 - (id)placeTypeHintAsString:(int)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (unsigned int)resultProviderId;
+- (unsigned long long)resultProviderId;
 - (void)setAddressGeocodeAccuracyHint:(int)arg1;
 - (void)setAddressHint:(id)arg1;
 - (void)setFormattedAddressLineHints:(id)arg1;
@@ -77,10 +77,10 @@
 - (void)setHasPlaceTypeHint:(BOOL)arg1;
 - (void)setHasResultProviderId:(BOOL)arg1;
 - (void)setLocationHint:(id)arg1;
-- (void)setMuid:(unsigned int)arg1;
+- (void)setMuid:(unsigned long long)arg1;
 - (void)setPlaceNameHint:(id)arg1;
 - (void)setPlaceTypeHint:(int)arg1;
-- (void)setResultProviderId:(unsigned int)arg1;
+- (void)setResultProviderId:(unsigned long long)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

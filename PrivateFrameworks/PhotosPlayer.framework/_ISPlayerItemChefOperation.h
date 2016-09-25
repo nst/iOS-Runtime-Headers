@@ -9,16 +9,16 @@
     id /* block */  _resultHandler;
     struct { 
         struct { 
-            int value; 
+            long long value; 
             int timescale; 
             unsigned int flags; 
-            int epoch; 
+            long long epoch; 
         } start; 
         struct { 
-            int value; 
+            long long value; 
             int timescale; 
             unsigned int flags; 
-            int epoch; 
+            long long epoch; 
         } duration; 
     }  _trimmedTimeRange;
 }
@@ -27,16 +27,16 @@
 @property (nonatomic, readonly) BOOL includeAudio;
 @property (nonatomic, readonly) BOOL includeVideo;
 @property (nonatomic, readonly, copy) id /* block */ resultHandler;
-@property (nonatomic, readonly) struct { struct { int x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; int x_1_1_4; } x1; struct { int x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; int x_2_1_4; } x2; } trimmedTimeRange;
+@property (nonatomic, readonly) struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; } trimmedTimeRange;
 
 - (void).cxx_destruct;
 - (void)_handleValuesDidLoad;
 - (id)asset;
 - (BOOL)includeAudio;
 - (BOOL)includeVideo;
-- (id)initWithAsset:(id)arg1 trimmedTimeRange:(struct { struct { int x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; int x_1_1_4; } x1; struct { int x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; int x_2_1_4; } x2; })arg2 includeAudio:(BOOL)arg3 includeVideo:(BOOL)arg4 resultHandler:(id /* block */)arg5;
+- (id)initWithAsset:(id)arg1 trimmedTimeRange:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg2 includeAudio:(BOOL)arg3 includeVideo:(BOOL)arg4 resultHandler:(id /* block */)arg5;
 - (void)main;
 - (id /* block */)resultHandler;
-- (struct { struct { int x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; int x_1_1_4; } x1; struct { int x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; int x_2_1_4; } x2; })trimmedTimeRange;
+- (struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })trimmedTimeRange;
 
 @end

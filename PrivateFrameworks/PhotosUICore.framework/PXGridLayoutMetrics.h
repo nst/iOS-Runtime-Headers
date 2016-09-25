@@ -5,48 +5,48 @@
 @interface PXGridLayoutMetrics : PXLayoutMetrics {
     int  _axis;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _contentInsets;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _footerSize;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _headerSize;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _interItemSpacing;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _itemSize;
 }
 
 @property int axis;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInsets;
-@property (nonatomic) struct CGSize { double x1; double x2; } footerSize;
-@property (nonatomic) struct CGSize { double x1; double x2; } headerSize;
-@property (nonatomic) struct CGSize { double x1; double x2; } interItemSpacing;
-@property (nonatomic) struct CGSize { double x1; double x2; } itemSize;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
+@property (nonatomic) struct CGSize { float x1; float x2; } footerSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } headerSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } interItemSpacing;
+@property (nonatomic) struct CGSize { float x1; float x2; } itemSize;
 
 - (int)axis;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (struct CGSize { double x1; double x2; })footerSize;
-- (struct CGSize { double x1; double x2; })headerSize;
-- (struct CGSize { double x1; double x2; })interItemSpacing;
-- (struct CGSize { double x1; double x2; })itemSize;
+- (struct CGSize { float x1; float x2; })footerSize;
+- (struct CGSize { float x1; float x2; })headerSize;
+- (struct CGSize { float x1; float x2; })interItemSpacing;
+- (struct CGSize { float x1; float x2; })itemSize;
 - (void)setAxis:(int)arg1;
-- (void)setContentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
-- (void)setFooterSize:(struct CGSize { double x1; double x2; })arg1;
-- (void)setHeaderSize:(struct CGSize { double x1; double x2; })arg1;
-- (void)setInterItemSpacing:(struct CGSize { double x1; double x2; })arg1;
-- (void)setItemSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setFooterSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setHeaderSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setInterItemSpacing:(struct CGSize { float x1; float x2; })arg1;
+- (void)setItemSize:(struct CGSize { float x1; float x2; })arg1;
 
 @end

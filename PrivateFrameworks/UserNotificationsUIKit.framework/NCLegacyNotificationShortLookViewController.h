@@ -18,9 +18,9 @@
 - (void)_loadLookView;
 - (id)_newTransitionManager;
 - (void)_notificationViewControllerViewDidLoad;
-- (struct CGSize { double x1; double x2; })_preferredCustomContentSizeForSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })_preferredCustomContentSizeForSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_resizeLegacyScrollViewToFitContentSize;
-- (void)_resizeLegacyScrollViewToFitContentSizeWithKeyboardFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)_resizeLegacyScrollViewToFitContentSizeWithKeyboardFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_setCustomContentProvidingViewController:(id)arg1;
 - (void)_setupCustomContentProvider;
 - (BOOL)_tryDismissingShortLookInScrollView:(id)arg1;
@@ -44,6 +44,6 @@
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillLayoutSubviews;
-- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

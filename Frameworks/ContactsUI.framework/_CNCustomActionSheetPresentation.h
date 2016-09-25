@@ -7,12 +7,12 @@
     unsigned int  _permittedArrowDirections;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _sourceRect;
     UIView * _sourceView;
@@ -24,7 +24,7 @@
 @property (nonatomic, copy) id /* block */ dismissHandler;
 @property (readonly) unsigned int hash;
 @property (nonatomic) unsigned int permittedArrowDirections;
-@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } sourceRect;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } sourceRect;
 @property (nonatomic, retain) UIView *sourceView;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UIViewController *viewController;
@@ -38,10 +38,10 @@
 - (id)presentedViewController;
 - (void)setDismissHandler:(id /* block */)arg1;
 - (void)setPermittedArrowDirections:(unsigned int)arg1;
-- (void)setSourceRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setSourceRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setSourceView:(id)arg1;
 - (void)setViewController:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })sourceRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })sourceRect;
 - (id)sourceView;
 - (id)viewController;
 

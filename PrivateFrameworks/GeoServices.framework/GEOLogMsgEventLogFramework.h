@@ -11,7 +11,7 @@
         unsigned int retryCount : 1; 
     }  _has;
     unsigned int  _messageCount;
-    unsigned int  _messageSize;
+    unsigned long long  _messageSize;
     int  _metricState;
     int  _metricType;
     unsigned int  _retryCount;
@@ -23,7 +23,7 @@
 @property (nonatomic) BOOL hasMetricType;
 @property (nonatomic) BOOL hasRetryCount;
 @property (nonatomic) unsigned int messageCount;
-@property (nonatomic) unsigned int messageSize;
+@property (nonatomic) unsigned long long messageSize;
 @property (nonatomic) int metricState;
 @property (nonatomic) int metricType;
 @property (nonatomic) unsigned int retryCount;
@@ -43,7 +43,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)messageCount;
-- (unsigned int)messageSize;
+- (unsigned long long)messageSize;
 - (int)metricState;
 - (id)metricStateAsString:(int)arg1;
 - (int)metricType;
@@ -56,7 +56,7 @@
 - (void)setHasMetricType:(BOOL)arg1;
 - (void)setHasRetryCount:(BOOL)arg1;
 - (void)setMessageCount:(unsigned int)arg1;
-- (void)setMessageSize:(unsigned int)arg1;
+- (void)setMessageSize:(unsigned long long)arg1;
 - (void)setMetricState:(int)arg1;
 - (void)setMetricType:(int)arg1;
 - (void)setRetryCount:(unsigned int)arg1;

@@ -3,7 +3,7 @@
  */
 
 @interface SBUIChevronView : UIView <_SBFVibrantView> {
-    double  _alphaComponent;
+    float  _alphaComponent;
     UIView * _alphaContainerView;
     double  _animationDuration;
     UIView * _backgroundView;
@@ -26,17 +26,17 @@
 @property (nonatomic, retain) _SBFVibrantSettings *vibrantSettings;
 
 - (void).cxx_destruct;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameForGrabberView:(id)arg1 forState:(int)arg2 unified:(BOOL)arg3;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForGrabberView:(id)arg1 forState:(int)arg2 unified:(BOOL)arg3;
 - (void)_layoutGrabberView:(id)arg1 forState:(int)arg2;
 - (BOOL)_setState:(int)arg1;
 - (BOOL)_setUnified:(BOOL)arg1;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })_transformForGrabberView:(id)arg1 forState:(int)arg2;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_transformForGrabberView:(id)arg1 forState:(int)arg2;
 - (double)animationDuration;
 - (id)color;
 - (void)configureForLightStyle;
 - (id)description;
 - (id)initWithColor:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (void)setAnimationDuration:(double)arg1;
 - (void)setBackgroundView:(id)arg1;
@@ -44,7 +44,7 @@
 - (void)setState:(int)arg1;
 - (void)setState:(int)arg1 animated:(BOOL)arg2;
 - (void)setVibrantSettings:(id)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (int)state;
 - (id)vibrantSettings;
 

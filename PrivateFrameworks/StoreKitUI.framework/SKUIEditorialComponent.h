@@ -9,11 +9,11 @@
     struct SKUIEditorialStyle { 
         int alignment; 
         int bodyFontWeight; 
-        double bodyFontSize; 
-        double linkSpacing; 
+        float bodyFontSize; 
+        float linkSpacing; 
         int titleFontWeight; 
-        double titleFontSize; 
-        double titleSpacing; 
+        float titleFontSize; 
+        float titleSpacing; 
     }  _style;
     NSString * _titleText;
     BOOL  _usesLockupTitle;
@@ -22,7 +22,7 @@
 @property (getter=_usesLockupTitle, nonatomic, readonly) BOOL _usesLockupTitle;
 @property (nonatomic, readonly) NSAttributedString *bodyAttributedText;
 @property (nonatomic, readonly) NSString *bodyText;
-@property (nonatomic, readonly) struct SKUIEditorialStyle { int x1; int x2; double x3; double x4; int x5; double x6; double x7; } editorialStyle;
+@property (nonatomic, readonly) struct SKUIEditorialStyle { int x1; int x2; float x3; float x4; int x5; float x6; float x7; } editorialStyle;
 @property (nonatomic, readonly) NSArray *links;
 @property (nonatomic, readonly) int maximumBodyLines;
 @property (nonatomic, readonly) NSString *titleText;
@@ -34,7 +34,7 @@
 - (id)bodyAttributedText;
 - (id)bodyText;
 - (int)componentType;
-- (struct SKUIEditorialStyle { int x1; int x2; double x3; double x4; int x5; double x6; double x7; })editorialStyle;
+- (struct SKUIEditorialStyle { int x1; int x2; float x3; float x4; int x5; float x6; float x7; })editorialStyle;
 - (id)initWithBrickRoomText:(id)arg1;
 - (id)initWithCustomPageContext:(id)arg1;
 - (id)initWithUberText:(id)arg1;

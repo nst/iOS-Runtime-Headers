@@ -10,7 +10,7 @@
     NSData * _clientAuditTokenData;
     NSString * _clientIdentifier;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
-    int  _expectedContentLength;
+    long long  _expectedContentLength;
     NSData * _httpBody;
     NSInputStream * _httpBodyStream;
     NSDictionary * _httpHeaders;
@@ -60,7 +60,7 @@
 @property (readonly, copy) NSString *clientIdentifier;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) int expectedContentLength;
+@property (readonly) long long expectedContentLength;
 @property (readonly) unsigned int hash;
 @property (getter=isLargeDownload, readonly) BOOL largeDownload;
 @property (readonly) int machineDataStyle;
@@ -106,7 +106,7 @@
 - (id)copyXPCEncoding;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (int)expectedContentLength;
+- (long long)expectedContentLength;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithURL:(id)arg1;

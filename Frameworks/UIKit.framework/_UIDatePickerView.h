@@ -35,7 +35,7 @@
 @property (getter=_allowsZeroTimeInterval, setter=_setAllowsZeroTimeInterval:, nonatomic) BOOL allowsZeroTimeInterval;
 @property (getter=_amPmValue, nonatomic, readonly) int amPmValue;
 @property (nonatomic, readonly) NSCalendar *calendar;
-@property (nonatomic, readonly) double contentWidth;
+@property (nonatomic, readonly) float contentWidth;
 @property (nonatomic, copy) NSDate *date;
 @property (nonatomic, copy) NSDateComponents *dateComponents;
 @property (nonatomic) int datePickerMode;
@@ -121,7 +121,7 @@
 - (id)delegateOfDatePicker;
 - (BOOL)highlightsToday;
 - (int)hour;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)locale;
 - (id)maximumDate;
@@ -144,7 +144,7 @@
 - (void)setDatePickerMode:(int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDelegateOfDatePicker:(id)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setHighlightsToday:(BOOL)arg1;
 - (void)setMaximumDate:(id)arg1;
 - (void)setMinimumDate:(id)arg1;

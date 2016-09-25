@@ -3,15 +3,15 @@
  */
 
 @interface UISlidingBarStateRequest : NSObject <NSCopying> {
-    double  _bounce;
-    double  _leadingWidth;
-    double  _trailingWidth;
+    float  _bounce;
+    float  _leadingWidth;
+    float  _trailingWidth;
     BOOL  _userInitiated;
 }
 
-@property (nonatomic) double bounce;
-@property (nonatomic) double leadingWidth;
-@property (nonatomic) double trailingWidth;
+@property (nonatomic) float bounce;
+@property (nonatomic) float leadingWidth;
+@property (nonatomic) float trailingWidth;
 @property (nonatomic) BOOL userInitiated;
 
 - (float)bounce;

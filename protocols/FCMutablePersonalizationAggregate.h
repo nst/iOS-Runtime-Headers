@@ -6,10 +6,10 @@
 @required
 
 - (double)clicks;
-- (unsigned int)eventCount;
+- (unsigned long long)eventCount;
 - (double)impressions;
 - (void)setClicks:(double)arg1;
-- (void)setEventCount:(unsigned int)arg1;
+- (void)setEventCount:(unsigned long long)arg1;
 - (void)setImpressions:(double)arg1;
 - (void)setTimestamp:(double)arg1;
 - (double)timestamp;

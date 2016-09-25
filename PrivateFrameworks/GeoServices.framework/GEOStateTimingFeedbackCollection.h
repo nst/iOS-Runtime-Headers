@@ -10,8 +10,8 @@
         unsigned int sessionRelativeTimestamp : 1; 
     }  _has;
     struct GEOSessionID { 
-        unsigned int _high; 
-        unsigned int _low; 
+        unsigned long long _high; 
+        unsigned long long _low; 
     }  _sessionID;
     double  _sessionRelativeTimestamp;
     NSMutableArray * _stateTransitions;
@@ -21,7 +21,7 @@
 @property (nonatomic) BOOL hasDurationInOldState;
 @property (nonatomic) BOOL hasSessionID;
 @property (nonatomic) BOOL hasSessionRelativeTimestamp;
-@property (nonatomic) struct GEOSessionID { unsigned int x1; unsigned int x2; } sessionID;
+@property (nonatomic) struct GEOSessionID { unsigned long long x1; unsigned long long x2; } sessionID;
 @property (nonatomic) double sessionRelativeTimestamp;
 @property (nonatomic, retain) NSMutableArray *stateTransitions;
 
@@ -42,13 +42,13 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (struct GEOSessionID { unsigned int x1; unsigned int x2; })sessionID;
+- (struct GEOSessionID { unsigned long long x1; unsigned long long x2; })sessionID;
 - (double)sessionRelativeTimestamp;
 - (void)setDurationInOldState:(double)arg1;
 - (void)setHasDurationInOldState:(BOOL)arg1;
 - (void)setHasSessionID:(BOOL)arg1;
 - (void)setHasSessionRelativeTimestamp:(BOOL)arg1;
-- (void)setSessionID:(struct GEOSessionID { unsigned int x1; unsigned int x2; })arg1;
+- (void)setSessionID:(struct GEOSessionID { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)setSessionRelativeTimestamp:(double)arg1;
 - (void)setStateTransitions:(id)arg1;
 - (id)stateTransitionAtIndex:(unsigned int)arg1;

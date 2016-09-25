@@ -11,7 +11,7 @@
 + (void)deleteAllLocalSharedAlbumsInLibrary:(id)arg1 keepPendingAlbums:(BOOL)arg2 withReason:(id)arg3;
 + (void)enableCloudSharing:(BOOL)arg1;
 
-- (int)daemonOperation;
+- (long long)daemonOperation;
 - (id)description;
 - (BOOL)enableSharing;
 - (void)encodeToXPCObject:(id)arg1;

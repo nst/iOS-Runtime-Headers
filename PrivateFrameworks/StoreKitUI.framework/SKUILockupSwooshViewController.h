@@ -13,44 +13,44 @@
     BOOL  _delegateWantsWillDisplay;
     BOOL  _didInitialReload;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _expectedImageSize;
     NSMutableIndexSet * _hiddenIconIndexSet;
     NSArray * _lockups;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _maxCellSize;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _maxImageSize;
     struct { 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } iconSize; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } newsstandSize; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } newsstandSwooshSize; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } videoLockupIconSize; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } videoThumbnailSize; 
-        double horizontalPadding; 
-        double interItemSpacingMixed; 
-        double interItemSpacingNewsstand; 
-        double interItemSpacingVideoLockup; 
+        float horizontalPadding; 
+        float interItemSpacingMixed; 
+        float interItemSpacingNewsstand; 
+        float interItemSpacingVideoLockup; 
     }  _metrics;
     BOOL  _seeAllHidden;
     int  _seeAllStyle;
@@ -67,7 +67,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) NSArray *items;
 @property (nonatomic, copy) NSArray *lockups;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } seeAllButtonFrame;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } seeAllButtonFrame;
 @property (getter=isSeeAllHidden, nonatomic) BOOL seeAllHidden;
 @property (nonatomic, readonly) NSURL *seeAllURL;
 @property (readonly) Class superclass;
@@ -77,22 +77,22 @@
 + (int)_swooshTypeForLockups:(id)arg1;
 
 - (void).cxx_destruct;
-- (struct { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; struct CGSize { double x_4_1_1; double x_4_1_2; } x4; struct CGSize { double x_5_1_1; double x_5_1_2; } x5; double x6; double x7; double x8; double x9; })_lockupSwooshMetrics;
-- (struct CGSize { double x1; double x2; })_maximumCellSizeForImageSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; struct CGSize { float x_4_1_1; float x_4_1_2; } x4; struct CGSize { float x_5_1_1; float x_5_1_2; } x5; float x6; float x7; float x8; float x9; })_lockupSwooshMetrics;
+- (struct CGSize { float x1; float x2; })_maximumCellSizeForImageSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)_newArtworkContextForSwooshType:(int)arg1;
 - (id)_newLockupComponentWithItem:(id)arg1 defaultStyle:(struct SKUILockupStyle { int x1; int x2; unsigned int x3; })arg2;
 - (void)_reloadSizes;
 - (void)_seeAllAction:(id)arg1;
-- (void)_setExpectedImageSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)_setExpectedImageSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)artworkContext;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })collectionView:(id)arg1 layout:(id)arg2 insetForSectionAtIndex:(int)arg3;
-- (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })collectionView:(id)arg1 layout:(id)arg2 insetForSectionAtIndex:(int)arg3;
+- (struct CGSize { float x1; float x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
 - (void)dealloc;
 - (void)deselectAllItems;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameForItemAtIndex:(int)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForItemAtIndex:(int)arg1;
 - (id)indexPathsForVisibleItems;
 - (id)initWithItemList:(id)arg1;
 - (id)initWithSwoosh:(id)arg1;
@@ -101,7 +101,7 @@
 - (void)loadView;
 - (id)lockups;
 - (id)popImageViewForItemAtIndex:(int)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })seeAllButtonFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })seeAllButtonFrame;
 - (id)seeAllURL;
 - (void)setClientContext:(id)arg1;
 - (void)setColorScheme:(id)arg1;

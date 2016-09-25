@@ -10,7 +10,7 @@
 - (float)deleteKeyFontSize;
 - (float)dictationKeyFontSize;
 - (float)dismissKeyFontSize;
-- (struct CGPoint { double x1; double x2; })dismissKeyOffset;
+- (struct CGPoint { float x1; float x2; })dismissKeyOffset;
 - (float)internationalKeyFontSize;
 - (float)keyCornerRadius;
 - (id)lightKeycapsFontName;
@@ -18,7 +18,7 @@
 - (float)moreKeyFontSize;
 - (void)setupLayoutSegments;
 - (float)spaceKeyFontSize;
-- (struct CGPoint { double x1; double x2; })spaceReturnKeyTextOffset;
+- (struct CGPoint { float x1; float x2; })spaceReturnKeyTextOffset;
 - (id)thinKeycapsFontName;
 
 @end

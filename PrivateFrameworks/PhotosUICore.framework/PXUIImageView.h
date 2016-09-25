@@ -10,19 +10,19 @@
     UIView * _contentView;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _contentsRect;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _floatingInsets;
     UIView * _floatingOverlayView;
     BOOL  _floatingRotationEnabled;
@@ -39,7 +39,7 @@
 @property (nonatomic) BOOL allowsFocus;
 @property (getter=isAnimating, nonatomic) BOOL animating;
 @property (nonatomic, retain) UIView *contentView;
-@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } contentsRect;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } contentsRect;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (getter=isFloatingRotationEnabled, nonatomic) BOOL floatingRotationEnabled;
@@ -61,19 +61,19 @@
 - (void)_updateSubviewsOrdering;
 - (BOOL)allowsFocus;
 - (id)contentView;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })contentsRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentsRect;
 - (BOOL)floatingViewEnabled;
 - (id)image;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isAnimating;
 - (BOOL)isFloatingRotationEnabled;
 - (void)setAllowsFocus:(BOOL)arg1;
 - (void)setAnimating:(BOOL)arg1;
 - (void)setContentMode:(int)arg1;
 - (void)setContentView:(id)arg1;
-- (void)setContentsRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)setFloatingOverlay:(id)arg1 withInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2 parallax:(BOOL)arg3;
+- (void)setContentsRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setFloatingOverlay:(id)arg1 withInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2 parallax:(BOOL)arg3;
 - (void)setFloatingRotationEnabled:(BOOL)arg1;
 - (void)setFloatingViewEnabled:(BOOL)arg1;
 - (void)setImage:(id)arg1;

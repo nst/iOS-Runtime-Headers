@@ -60,7 +60,7 @@
 - (void)_queue_updateRemoveBulletin:(id)arg1 withReply:(id /* block */)arg2;
 - (void)assertionExpired:(id)arg1 transactionID:(unsigned int)arg2;
 - (id)cachedComposedImageForBulletin:(id)arg1 attachment:(id)arg2;
-- (struct CGSize { double x1; double x2; })cachedComposedImageSizeForBulletin:(id)arg1 attachment:(id)arg2;
+- (struct CGSize { float x1; float x2; })cachedComposedImageSizeForBulletin:(id)arg1 attachment:(id)arg2;
 - (void)clearBulletins:(id)arg1 inSection:(id)arg2;
 - (void)clearBulletinsFromDate:(id)arg1 toDate:(id)arg2 inSections:(id)arg3;
 - (void)clearSection:(id)arg1;

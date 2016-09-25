@@ -4,11 +4,11 @@
 
 @interface KNAnimParameterSavedParameter : NSObject <NSCoding> {
     BOOL  _debugOnly;
-    double  _doubleValue;
+    float  _doubleValue;
     BOOL  _hasMaxValue;
     BOOL  _hasMinValue;
-    double  _maxValue;
-    double  _minValue;
+    float  _maxValue;
+    float  _minValue;
     NSString * _name;
     NSString * _parameterDescription;
     TSUBezierPath * _pathValue;
@@ -17,11 +17,11 @@
 }
 
 @property (nonatomic) BOOL debugOnly;
-@property (nonatomic) double doubleValue;
+@property (nonatomic) float doubleValue;
 @property (nonatomic) BOOL hasMaxValue;
 @property (nonatomic) BOOL hasMinValue;
-@property (nonatomic) double maxValue;
-@property (nonatomic) double minValue;
+@property (nonatomic) float maxValue;
+@property (nonatomic) float minValue;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *parameterDescription;
 @property (nonatomic, retain) TSUBezierPath *pathValue;

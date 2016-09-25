@@ -44,7 +44,7 @@
 - (void)updateConstraints;
 - (void)updateEnabledForCurrentMode;
 - (id)visibleSliderAdjustmentModes;
-- (BOOL)wantsToHandleEventAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (BOOL)wantsToHandleEventAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)willMoveToWindow:(id)arg1;
 
 @end

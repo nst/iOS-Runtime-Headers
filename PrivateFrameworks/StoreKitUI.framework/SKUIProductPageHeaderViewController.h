@@ -13,7 +13,7 @@
     SKUIProductPageHeaderView * _headerView;
     UIImage * _iconImage;
     SKUIItem * _item;
-    int  _itemIdentifier;
+    long long  _itemIdentifier;
     SSVLoadURLOperation * _loadIconOperation;
     SSVLoadURLOperation * _loadUberOperation;
     NSOperationQueue * _operationQueue;

@@ -7,8 +7,8 @@
     BOOL  _autoCropEnabled;
     BOOL  _cropMaskBlurred;
     double  _cropRecomposeDelay;
-    double  _cropSideMargins;
-    double  _cropWheelSize;
+    float  _cropSideMargins;
+    float  _cropWheelSize;
     BOOL  _previewOriginalAllowsLongPress;
     double  _previewOriginalDuration;
     BOOL  _previewOriginalTimesOut;
@@ -22,8 +22,8 @@
 @property (nonatomic) BOOL autoCropEnabled;
 @property (nonatomic) BOOL cropMaskBlurred;
 @property (nonatomic) double cropRecomposeDelay;
-@property (nonatomic) double cropSideMargins;
-@property (nonatomic) double cropWheelSize;
+@property (nonatomic) float cropSideMargins;
+@property (nonatomic) float cropWheelSize;
 @property (nonatomic) BOOL previewOriginalAllowsLongPress;
 @property (nonatomic) double previewOriginalDuration;
 @property (nonatomic) BOOL previewOriginalTimesOut;

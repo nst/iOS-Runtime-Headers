@@ -19,8 +19,8 @@
     NSMutableSet * _remainingTasks;
     NSString * _sessionDescription;
     NSMutableDictionary * _taskProgress;
-    int  _totalBytesDownloaded;
-    int  _totalBytesExpectedToBeDownloaded;
+    long long  _totalBytesDownloaded;
+    long long  _totalBytesExpectedToBeDownloaded;
 }
 
 @property (nonatomic, readonly) NSProgress *NSProgress;
@@ -28,8 +28,8 @@
 @property (nonatomic, readonly) BOOL isCancelled;
 @property (nonatomic, readonly) TSUProgress *progress;
 @property (nonatomic, readonly) NSString *sessionDescription;
-@property (nonatomic, readonly) int totalBytesDownloaded;
-@property (nonatomic, readonly) int totalBytesExpectedToBeDownloaded;
+@property (nonatomic, readonly) long long totalBytesDownloaded;
+@property (nonatomic, readonly) long long totalBytesExpectedToBeDownloaded;
 
 - (void).cxx_destruct;
 - (id)NSProgress;
@@ -48,12 +48,12 @@
 - (void)notifyCompletionWithQueue:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)progress;
 - (id)sessionDescription;
-- (void)task:(id)arg1 withDescription:(id)arg2 didCompleteWithError:(id)arg3 totalBytesWritten:(int)arg4 totalBytesExpectedToWrite:(int)arg5;
-- (void)task:(id)arg1 withDescription:(id)arg2 didWriteData:(int)arg3 totalBytesWritten:(int)arg4 totalBytesExpectedToWrite:(int)arg5;
-- (int)totalBytesDownloaded;
-- (int)totalBytesExpectedToBeDownloaded;
+- (void)task:(id)arg1 withDescription:(id)arg2 didCompleteWithError:(id)arg3 totalBytesWritten:(long long)arg4 totalBytesExpectedToWrite:(long long)arg5;
+- (void)task:(id)arg1 withDescription:(id)arg2 didWriteData:(long long)arg3 totalBytesWritten:(long long)arg4 totalBytesExpectedToWrite:(long long)arg5;
+- (long long)totalBytesDownloaded;
+- (long long)totalBytesExpectedToBeDownloaded;
 - (void)updateProgressAndNotifyDelegate;
-- (void)updateTaskProgress:(id)arg1 withTotalBytesWritten:(int)arg2 totalBytesExpectedToWrite:(int)arg3;
-- (id)waitUntilTimeout:(unsigned int)arg1;
+- (void)updateTaskProgress:(id)arg1 withTotalBytesWritten:(long long)arg2 totalBytesExpectedToWrite:(long long)arg3;
+- (id)waitUntilTimeout:(unsigned long long)arg1;
 
 @end

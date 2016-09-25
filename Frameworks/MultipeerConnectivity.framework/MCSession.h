@@ -18,7 +18,7 @@
     <MCSessionPrivateDelegate> * _privateDelegate;
     NSArray * _securityIdentity;
     NSString * _sessionID;
-    unsigned int  _stateHandle;
+    unsigned long long  _stateHandle;
     NSObject<OS_dispatch_queue> * _syncQueue;
 }
 
@@ -38,7 +38,7 @@
 @property (nonatomic) <MCSessionPrivateDelegate> *privateDelegate;
 @property (nonatomic, readonly) NSArray *securityIdentity;
 @property (nonatomic, retain) NSString *sessionID;
-@property (nonatomic) unsigned int stateHandle;
+@property (nonatomic) unsigned long long stateHandle;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *syncQueue;
 
 + (id)stringForMCSessionSendDataMode:(int)arg1;
@@ -93,11 +93,11 @@
 - (void)setPeerStates:(id)arg1;
 - (void)setPrivateDelegate:(id)arg1;
 - (void)setSessionID:(id)arg1;
-- (void)setStateHandle:(unsigned int)arg1;
+- (void)setStateHandle:(unsigned long long)arg1;
 - (void)setSyncQueue:(id)arg1;
 - (void)startConnectionWithIndirectPID:(unsigned int)arg1;
 - (id)startStreamWithName:(id)arg1 toPeer:(id)arg2 error:(id*)arg3;
-- (unsigned int)stateHandle;
+- (unsigned long long)stateHandle;
 - (id)stringForEncryptionPreference:(int)arg1;
 - (void)syncCancelIncomingStream:(id)arg1 fromPeer:(id)arg2;
 - (void)syncCancelOutgoingStream:(id)arg1 toPeer:(id)arg2;

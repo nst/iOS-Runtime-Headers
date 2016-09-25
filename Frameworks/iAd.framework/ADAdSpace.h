@@ -21,22 +21,22 @@
     int  _lastSnapshottingOrientation;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _nativeAdFrame;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _placeholderImageRect;
     _ADRemoteViewController * _portraitOnlyViewController;
@@ -74,8 +74,8 @@
 @property (nonatomic) BOOL isModalInterstitial;
 @property (nonatomic) double lastSlowCheck;
 @property (nonatomic) int lastSnapshottingOrientation;
-@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } nativeAdFrame;
-@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } placeholderImageRect;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } nativeAdFrame;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } placeholderImageRect;
 @property (nonatomic, retain) _ADRemoteViewController *portraitOnlyViewController;
 @property (nonatomic, retain) ADPrivacyViewController *privacyViewController;
 @property (nonatomic, readonly) <ADAdRecipient> *recipient;
@@ -142,8 +142,8 @@
 - (id)currentAdImpressionPublicAttributes;
 - (void)dealloc;
 - (id)description;
-- (void)determineActionForTapAtLocation:(struct CGPoint { double x1; double x2; })arg1 inFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 completeHandler:(id /* block */)arg3;
-- (void)executeBannerViewActionFrom:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withTapLocation:(struct CGPoint { double x1; double x2; })arg2;
+- (void)determineActionForTapAtLocation:(struct CGPoint { float x1; float x2; })arg1 inFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 completeHandler:(id /* block */)arg3;
+- (void)executeBannerViewActionFrom:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withTapLocation:(struct CGPoint { float x1; float x2; })arg2;
 - (BOOL)fastVisibilityContextIsFeed;
 - (BOOL)gettingSnapshot;
 - (id)identifier;
@@ -156,8 +156,8 @@
 - (double)lastSlowCheck;
 - (int)lastSnapshottingOrientation;
 - (void)loadAd:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })nativeAdFrame;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })placeholderImageRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })nativeAdFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })placeholderImageRect;
 - (id)portraitOnlyViewController;
 - (id)privacyViewController;
 - (id)recipient;
@@ -188,8 +188,8 @@
 - (void)setIsModalInterstitial:(BOOL)arg1;
 - (void)setLastSlowCheck:(double)arg1;
 - (void)setLastSnapshottingOrientation:(int)arg1;
-- (void)setNativeAdFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)setPlaceholderImageRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setNativeAdFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setPlaceholderImageRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setPortraitOnlyViewController:(id)arg1;
 - (void)setPrivacyViewController:(id)arg1;
 - (void)setRemoteViewController:(id)arg1;
@@ -204,7 +204,7 @@
 - (BOOL)shouldPresentActionViewControllerWhenReady;
 - (void)showAdTransparency;
 - (void)showPlaceholderImage:(BOOL)arg1;
-- (void)updateCreativeSnapshotImageWithDebugHighlight:(BOOL)arg1 frame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (void)updateCreativeSnapshotImageWithDebugHighlight:(BOOL)arg1 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)updateVisibility;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 - (int)visibility;

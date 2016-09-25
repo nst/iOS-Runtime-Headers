@@ -23,7 +23,7 @@
 + (void)didRankSections:(id)arg1;
 + (void)didSearchInAppForSection:(id)arg1;
 + (void)didShowMoreForSection:(id)arg1 showMore:(BOOL)arg2;
-+ (id)didStartSearch:(id)arg1 whyQuery:(unsigned int)arg2 queryIdent:(unsigned int)arg3;
++ (id)didStartSearch:(id)arg1 whyQuery:(unsigned int)arg2 queryIdent:(unsigned long long)arg3;
 + (void)resultsDidBecomeVisible:(id)arg1 why:(unsigned int)arg2;
 + (void)sectionHeaderDidBecomeVisible:(id)arg1 headerType:(unsigned int)arg2;
 + (id)sharedManager;

@@ -8,7 +8,7 @@
         unsigned int lineId : 1; 
     }  _has;
     NSString * _headsign;
-    unsigned int  _lineId;
+    unsigned long long  _lineId;
 }
 
 @property (nonatomic, retain) NSString *direction;
@@ -16,7 +16,7 @@
 @property (nonatomic, readonly) BOOL hasHeadsign;
 @property (nonatomic) BOOL hasLineId;
 @property (nonatomic, retain) NSString *headsign;
-@property (nonatomic) unsigned int lineId;
+@property (nonatomic) unsigned long long lineId;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -30,13 +30,13 @@
 - (unsigned int)hash;
 - (id)headsign;
 - (BOOL)isEqual:(id)arg1;
-- (unsigned int)lineId;
+- (unsigned long long)lineId;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setDirection:(id)arg1;
 - (void)setHasLineId:(BOOL)arg1;
 - (void)setHeadsign:(id)arg1;
-- (void)setLineId:(unsigned int)arg1;
+- (void)setLineId:(unsigned long long)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -25,12 +25,12 @@
     }  _has;
     double  _pushCount;
     HDFitnessFriendsCloudKitCodableSample * _sample;
-    int  _snapshotIndex;
+    long long  _snapshotIndex;
     NSData * _sourceUUID;
     double  _stepCount;
-    int  _timeZoneOffsetFromUTCForNoon;
+    long long  _timeZoneOffsetFromUTCForNoon;
     double  _walkingAndRunningDistance;
-    int  _wheelchairUse;
+    long long  _wheelchairUse;
 }
 
 @property (nonatomic) double activeHours;
@@ -55,12 +55,12 @@
 @property (nonatomic) BOOL hasWheelchairUse;
 @property (nonatomic) double pushCount;
 @property (nonatomic, retain) HDFitnessFriendsCloudKitCodableSample *sample;
-@property (nonatomic) int snapshotIndex;
+@property (nonatomic) long long snapshotIndex;
 @property (nonatomic, retain) NSData *sourceUUID;
 @property (nonatomic) double stepCount;
-@property (nonatomic) int timeZoneOffsetFromUTCForNoon;
+@property (nonatomic) long long timeZoneOffsetFromUTCForNoon;
 @property (nonatomic) double walkingAndRunningDistance;
-@property (nonatomic) int wheelchairUse;
+@property (nonatomic) long long wheelchairUse;
 
 - (void).cxx_destruct;
 - (double)activeHours;
@@ -113,18 +113,18 @@
 - (void)setHasWheelchairUse:(BOOL)arg1;
 - (void)setPushCount:(double)arg1;
 - (void)setSample:(id)arg1;
-- (void)setSnapshotIndex:(int)arg1;
+- (void)setSnapshotIndex:(long long)arg1;
 - (void)setSourceUUID:(id)arg1;
 - (void)setStepCount:(double)arg1;
-- (void)setTimeZoneOffsetFromUTCForNoon:(int)arg1;
+- (void)setTimeZoneOffsetFromUTCForNoon:(long long)arg1;
 - (void)setWalkingAndRunningDistance:(double)arg1;
-- (void)setWheelchairUse:(int)arg1;
-- (int)snapshotIndex;
+- (void)setWheelchairUse:(long long)arg1;
+- (long long)snapshotIndex;
 - (id)sourceUUID;
 - (double)stepCount;
-- (int)timeZoneOffsetFromUTCForNoon;
+- (long long)timeZoneOffsetFromUTCForNoon;
 - (double)walkingAndRunningDistance;
-- (int)wheelchairUse;
+- (long long)wheelchairUse;
 - (void)writeTo:(id)arg1;
 
 @end

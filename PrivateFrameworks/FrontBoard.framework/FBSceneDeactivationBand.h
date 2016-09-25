@@ -4,14 +4,14 @@
 
 @interface FBSceneDeactivationBand : NSObject <BSDescriptionProviding> {
     NSHashTable * _assertions;
-    double  _level;
+    float  _level;
 }
 
 @property (nonatomic, readonly) unsigned int assertionCount;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly) double level;
+@property (nonatomic, readonly) float level;
 @property (readonly) Class superclass;
 
 + (id)bandWithSceneLevel:(float)arg1;

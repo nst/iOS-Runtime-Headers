@@ -6,7 +6,7 @@
     struct { 
         unsigned int transitLineMuid : 1; 
     }  _has;
-    unsigned int  _transitLineMuid;
+    unsigned long long  _transitLineMuid;
     NSString * _transitLineName;
     NSString * _transitSystemName;
 }
@@ -14,7 +14,7 @@
 @property (nonatomic) BOOL hasTransitLineMuid;
 @property (nonatomic, readonly) BOOL hasTransitLineName;
 @property (nonatomic, readonly) BOOL hasTransitSystemName;
-@property (nonatomic) unsigned int transitLineMuid;
+@property (nonatomic) unsigned long long transitLineMuid;
 @property (nonatomic, retain) NSString *transitLineName;
 @property (nonatomic, retain) NSString *transitSystemName;
 
@@ -31,10 +31,10 @@
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setHasTransitLineMuid:(BOOL)arg1;
-- (void)setTransitLineMuid:(unsigned int)arg1;
+- (void)setTransitLineMuid:(unsigned long long)arg1;
 - (void)setTransitLineName:(id)arg1;
 - (void)setTransitSystemName:(id)arg1;
-- (unsigned int)transitLineMuid;
+- (unsigned long long)transitLineMuid;
 - (id)transitLineName;
 - (id)transitSystemName;
 - (void)writeTo:(id)arg1;

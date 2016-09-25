@@ -3,32 +3,32 @@
  */
 
 @interface SSVPlayActivityEventItemIDs : NSObject <NSCoding, NSCopying, NSMutableCopying, NSSecureCoding> {
-    unsigned int  _cloudID;
+    unsigned long long  _cloudID;
     NSString * _lyricsID;
-    int  _purchasedAdamID;
-    int  _radioAdamID;
-    int  _subscriptionAdamID;
+    long long  _purchasedAdamID;
+    long long  _radioAdamID;
+    long long  _subscriptionAdamID;
 }
 
-@property (nonatomic, readonly) unsigned int cloudID;
+@property (nonatomic, readonly) unsigned long long cloudID;
 @property (nonatomic, readonly, copy) NSString *lyricsID;
-@property (nonatomic, readonly) int purchasedAdamID;
-@property (nonatomic, readonly) int radioAdamID;
-@property (nonatomic, readonly) int subscriptionAdamID;
+@property (nonatomic, readonly) long long purchasedAdamID;
+@property (nonatomic, readonly) long long radioAdamID;
+@property (nonatomic, readonly) long long subscriptionAdamID;
 
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_copyWithClass:(Class)arg1;
-- (unsigned int)cloudID;
+- (unsigned long long)cloudID;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)lyricsID;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (int)purchasedAdamID;
-- (int)radioAdamID;
-- (int)subscriptionAdamID;
+- (long long)purchasedAdamID;
+- (long long)radioAdamID;
+- (long long)subscriptionAdamID;
 
 @end

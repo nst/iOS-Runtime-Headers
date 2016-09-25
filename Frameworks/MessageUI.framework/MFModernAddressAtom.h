@@ -18,15 +18,15 @@
 }
 
 @property (nonatomic, readonly) NSString *addressIdentifier;
-@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } baselinePoint;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } baselinePoint;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } edgeInsets;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL hidesVIPIndicator;
 @property (nonatomic) BOOL isPrimaryAddressAtom;
 @property (nonatomic) unsigned int presentationOptions;
-@property (nonatomic) double scale;
+@property (nonatomic) float scale;
 @property (nonatomic) BOOL separatorHidden;
 @property (nonatomic) BOOL separatorIsLeftAligned;
 @property (nonatomic) int separatorStyle;
@@ -38,12 +38,12 @@
 - (void*)ABPerson;
 - (int)ABPropertyType;
 - (void)_displayStringDidChange;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_highlightBounds;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_highlightBounds;
 - (void)_updateABPerson;
 - (void)_updateDisplayStringIncludingABPerson:(BOOL)arg1;
 - (void)addressBookDidChange:(id)arg1;
 - (id)addressIdentifier;
-- (struct CGPoint { double x1; double x2; })baselinePoint;
+- (struct CGPoint { float x1; float x2; })baselinePoint;
 - (id)contactWithKeysToFetch:(id)arg1;
 - (void)dealloc;
 - (id)description;
@@ -63,14 +63,14 @@
 - (void)setAtomFont:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setEnabled:(BOOL)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setIsPrimaryAddressAtom:(BOOL)arg1;
 - (void)setMaxWidth:(unsigned int)arg1;
 - (void)setOpaque:(BOOL)arg1;
 - (void)setPresentationOptions:(unsigned int)arg1;
 - (void)setScale:(float)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)unmodifiedAddressString;
 - (id)viewForLastBaselineLayout;
 

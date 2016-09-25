@@ -12,7 +12,7 @@
     }  _has;
     unsigned int  _schema;
     unsigned int  _size;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) unsigned int fetchLimit;
@@ -22,7 +22,7 @@
 @property (nonatomic) BOOL hasTimestamp;
 @property (nonatomic) unsigned int schema;
 @property (nonatomic) unsigned int size;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -45,9 +45,9 @@
 - (void)setHasTimestamp:(BOOL)arg1;
 - (void)setSchema:(unsigned int)arg1;
 - (void)setSize:(unsigned int)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned int)size;
-- (unsigned int)timestamp;
+- (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 
 @end

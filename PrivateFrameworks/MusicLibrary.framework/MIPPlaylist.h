@@ -9,7 +9,7 @@
     BOOL  _cloudIsSharingDisabled;
     BOOL  _cloudIsSubscribed;
     NSString * _cloudVersionHash;
-    int  _creationDateTime;
+    long long  _creationDateTime;
     int  _distinguishedKind;
     NSString * _externalVendorDisplayName;
     NSString * _externalVendorIdentifier;
@@ -33,14 +33,14 @@
     }  _has;
     BOOL  _hidden;
     NSMutableArray * _items;
-    int  _lastPlayedDateTime;
-    int  _modificationDateTime;
+    long long  _lastPlayedDateTime;
+    long long  _modificationDateTime;
     NSString * _name;
     MIPMultiverseIdentifier * _parentIdentifier;
     BOOL  _reversedSorting;
     MIPSmartPlaylistInfo * _smartPlaylistInfo;
     int  _sortType;
-    int  _storeId;
+    long long  _storeId;
     int  _type;
 }
 
@@ -50,7 +50,7 @@
 @property (nonatomic) BOOL cloudIsSharingDisabled;
 @property (nonatomic) BOOL cloudIsSubscribed;
 @property (nonatomic, retain) NSString *cloudVersionHash;
-@property (nonatomic) int creationDateTime;
+@property (nonatomic) long long creationDateTime;
 @property (nonatomic) int distinguishedKind;
 @property (nonatomic, retain) NSString *externalVendorDisplayName;
 @property (nonatomic, retain) NSString *externalVendorIdentifier;
@@ -81,14 +81,14 @@
 @property (nonatomic) BOOL hasType;
 @property (nonatomic) BOOL hidden;
 @property (nonatomic, retain) NSMutableArray *items;
-@property (nonatomic) int lastPlayedDateTime;
-@property (nonatomic) int modificationDateTime;
+@property (nonatomic) long long lastPlayedDateTime;
+@property (nonatomic) long long modificationDateTime;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) MIPMultiverseIdentifier *parentIdentifier;
 @property (nonatomic) BOOL reversedSorting;
 @property (nonatomic, retain) MIPSmartPlaylistInfo *smartPlaylistInfo;
 @property (nonatomic) int sortType;
-@property (nonatomic) int storeId;
+@property (nonatomic) long long storeId;
 @property (nonatomic) int type;
 
 + (Class)childIdentifiersType;
@@ -111,7 +111,7 @@
 - (id)cloudVersionHash;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (int)creationDateTime;
+- (long long)creationDateTime;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (int)distinguishedKind;
@@ -148,9 +148,9 @@
 - (id)items;
 - (id)itemsAtIndex:(unsigned int)arg1;
 - (unsigned int)itemsCount;
-- (int)lastPlayedDateTime;
+- (long long)lastPlayedDateTime;
 - (void)mergeFrom:(id)arg1;
-- (int)modificationDateTime;
+- (long long)modificationDateTime;
 - (id)name;
 - (id)parentIdentifier;
 - (BOOL)readFrom:(id)arg1;
@@ -161,7 +161,7 @@
 - (void)setCloudIsSharingDisabled:(BOOL)arg1;
 - (void)setCloudIsSubscribed:(BOOL)arg1;
 - (void)setCloudVersionHash:(id)arg1;
-- (void)setCreationDateTime:(int)arg1;
+- (void)setCreationDateTime:(long long)arg1;
 - (void)setDistinguishedKind:(int)arg1;
 - (void)setExternalVendorDisplayName:(id)arg1;
 - (void)setExternalVendorIdentifier:(id)arg1;
@@ -183,19 +183,19 @@
 - (void)setHasType:(BOOL)arg1;
 - (void)setHidden:(BOOL)arg1;
 - (void)setItems:(id)arg1;
-- (void)setLastPlayedDateTime:(int)arg1;
-- (void)setModificationDateTime:(int)arg1;
+- (void)setLastPlayedDateTime:(long long)arg1;
+- (void)setModificationDateTime:(long long)arg1;
 - (void)setName:(id)arg1;
 - (void)setParentIdentifier:(id)arg1;
 - (void)setReversedSorting:(BOOL)arg1;
 - (void)setSmartPlaylistInfo:(id)arg1;
 - (void)setSortType:(int)arg1;
-- (void)setStoreId:(int)arg1;
+- (void)setStoreId:(long long)arg1;
 - (void)setType:(int)arg1;
 - (id)smartPlaylistInfo;
 - (int)sortType;
 - (id)sortTypeAsString:(int)arg1;
-- (int)storeId;
+- (long long)storeId;
 - (int)type;
 - (id)typeAsString:(int)arg1;
 - (void)writeTo:(id)arg1;

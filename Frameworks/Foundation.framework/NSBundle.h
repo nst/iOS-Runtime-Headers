@@ -126,7 +126,7 @@
 // Image: /System/Library/Frameworks/AVKit.framework/AVKit
 
 - (id)URLForMovieResource:(id)arg1;
-- (id)imageForResource:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
+- (id)imageForResource:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 
 // Image: /System/Library/Frameworks/CallKit.framework/CallKit
 

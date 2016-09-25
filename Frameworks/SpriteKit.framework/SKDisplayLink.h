@@ -3,7 +3,7 @@
  */
 
 @interface SKDisplayLink : NSObject {
-    double  _averageFrameTime;
+    float  _averageFrameTime;
     id /* block */  _block;
     CADisplayLink * _caDisplayLink;
     bool  _callbackAlreadyInProgress;
@@ -12,7 +12,7 @@
     int  _frameCount;
     double  _frameCountBeginTime;
     BOOL  _paused;
-    double  _preferredFramesPerSecond;
+    float  _preferredFramesPerSecond;
     double  _previousFrameTime;
     NSTimer * _timer;
 }

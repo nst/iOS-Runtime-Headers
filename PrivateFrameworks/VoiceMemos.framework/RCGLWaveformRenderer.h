@@ -6,10 +6,10 @@
     RCUIConfiguration * _UIConfiguration;
     BOOL  _activeDisplayLinkRequired;
     BOOL  _buffersInitialized;
-    double  _cachedContentWidth;
+    float  _cachedContentWidth;
     BOOL  _centerKeylineRendered;
     BOOL  _contentWidthDirty;
-    double  _dataPointWidth;
+    float  _dataPointWidth;
     RCWaveformDataSource * _dataSource;
     CADisplayLink * _displayLink;
     NSTimer * _displayLinkTerminationTimer;
@@ -26,12 +26,12 @@
     BOOL  _isAnimatingModelview;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _lastViewportRect;
     CALayer * _modelviewLayer;
@@ -50,25 +50,25 @@
     <RCGLWaveformRendererDelegate> * _rendererDelegate;
     unsigned int  _shaderProgram;
     BOOL  _shadersInitialized;
-    double  _spacingWidth;
+    float  _spacingWidth;
     unsigned int  _vertexBuffers;
     struct { 
         double beginTime; 
         double endTime; 
     }  _visibleTimeRange;
     struct vector<float, std::__1::allocator<float> > { 
-        double *__begin_; 
-        double *__end_; 
-        struct __compressed_pair<double *, std::__1::allocator<float> > { 
-            double *__first_; 
+        float *__begin_; 
+        float *__end_; 
+        struct __compressed_pair<float *, std::__1::allocator<float> > { 
+            float *__first_; 
         } __end_cap_; 
     }  _waveformVertexData;
 }
 
 @property (nonatomic, copy) RCUIConfiguration *UIConfiguration;
 @property (getter=isActiveDisplayLinkRequired, nonatomic) BOOL activeDisplayLinkRequired;
-@property (nonatomic, readonly) double contentWidth;
-@property (nonatomic) double dataPointWidth;
+@property (nonatomic, readonly) float contentWidth;
+@property (nonatomic) float dataPointWidth;
 @property (nonatomic, retain) RCWaveformDataSource *dataSource;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -77,9 +77,9 @@
 @property (nonatomic) struct { double x1; double x2; } highlightTimeRange;
 @property (getter=isPaused, nonatomic) BOOL paused;
 @property (nonatomic) <RCGLWaveformRendererDelegate> *rendererDelegate;
-@property (nonatomic) double spacingWidth;
+@property (nonatomic) float spacingWidth;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } visibleRect;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } visibleRect;
 @property (nonatomic) struct { double x1; double x2; } visibleTimeRange;
 
 - (id).cxx_construct;
@@ -133,7 +133,7 @@
 - (id)dataSource;
 - (void)dealloc;
 - (BOOL)frequentUpdatesSegmentUpdatesExpectedHint;
-- (void)glkView:(id)arg1 drawInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (void)glkView:(id)arg1 drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)glkViewRenderingContextValidityDidChange:(id)arg1;
 - (struct { double x1; double x2; })highlightTimeRange;
 - (float)horizontalOffsetAtTime:(double)arg1;
@@ -143,7 +143,7 @@
 - (BOOL)isPaused;
 - (void)loadView;
 - (float)pointsPerSecondWithVisibleTimeRange:(struct { double x1; double x2; })arg1;
-- (id)rasterizeTimeRange:(struct { double x1; double x2; })arg1 imageSize:(struct CGSize { double x1; double x2; })arg2;
+- (id)rasterizeTimeRange:(struct { double x1; double x2; })arg1 imageSize:(struct CGSize { float x1; float x2; })arg2;
 - (id)rendererDelegate;
 - (void)setActiveDisplayLinkRequired:(BOOL)arg1;
 - (void)setDataPointWidth:(float)arg1;
@@ -163,7 +163,7 @@
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 - (void)viewWillDisappear:(BOOL)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })visibleRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleRect;
 - (struct { double x1; double x2; })visibleTimeRange;
 - (void)waveformDataSource:(id)arg1 didLoadWaveformSegment:(id)arg2;
 - (void)waveformDataSourceDidFinishLoading:(id)arg1;

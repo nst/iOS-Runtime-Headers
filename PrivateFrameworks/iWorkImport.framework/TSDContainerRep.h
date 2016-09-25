@@ -21,11 +21,11 @@
 - (id)containerInfo;
 - (void)dealloc;
 - (void)drawInContext:(struct CGContext { }*)arg1;
-- (id)hitRep:(struct CGPoint { double x1; double x2; })arg1;
-- (id)hitRep:(struct CGPoint { double x1; double x2; })arg1 passingTest:(id /* block */)arg2;
-- (id)hitRepChrome:(struct CGPoint { double x1; double x2; })arg1;
-- (id)hitRepChrome:(struct CGPoint { double x1; double x2; })arg1 passingTest:(id /* block */)arg2;
-- (id)hitReps:(struct CGPoint { double x1; double x2; })arg1 withSlopBlock:(id /* block */)arg2;
+- (id)hitRep:(struct CGPoint { float x1; float x2; })arg1;
+- (id)hitRep:(struct CGPoint { float x1; float x2; })arg1 passingTest:(id /* block */)arg2;
+- (id)hitRepChrome:(struct CGPoint { float x1; float x2; })arg1;
+- (id)hitRepChrome:(struct CGPoint { float x1; float x2; })arg1 passingTest:(id /* block */)arg2;
+- (id)hitReps:(struct CGPoint { float x1; float x2; })arg1 withSlopBlock:(id /* block */)arg2;
 - (id)initWithLayout:(id)arg1 canvasView:(id)arg2;
 - (void)insertChildRep:(id)arg1 above:(id)arg2;
 - (void)insertChildRep:(id)arg1 atIndex:(unsigned int)arg2;

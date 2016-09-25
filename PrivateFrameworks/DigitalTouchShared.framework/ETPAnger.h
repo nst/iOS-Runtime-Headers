@@ -3,22 +3,22 @@
  */
 
 @interface ETPAnger : PBCodable <NSCopying> {
-    double  _duration;
+    float  _duration;
     struct { 
         unsigned int duration : 1; 
         unsigned int normalizedCenterX : 1; 
         unsigned int normalizedCenterY : 1; 
     }  _has;
-    double  _normalizedCenterX;
-    double  _normalizedCenterY;
+    float  _normalizedCenterX;
+    float  _normalizedCenterY;
 }
 
-@property (nonatomic) double duration;
+@property (nonatomic) float duration;
 @property (nonatomic) BOOL hasDuration;
 @property (nonatomic) BOOL hasNormalizedCenterX;
 @property (nonatomic) BOOL hasNormalizedCenterY;
-@property (nonatomic) double normalizedCenterX;
-@property (nonatomic) double normalizedCenterY;
+@property (nonatomic) float normalizedCenterX;
+@property (nonatomic) float normalizedCenterY;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;

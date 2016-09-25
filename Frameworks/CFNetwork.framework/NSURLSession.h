@@ -82,10 +82,10 @@
 - (id)dataTaskWithURL:(id)arg1;
 - (id)dataTaskWithURL:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)delegate_AVAssetDownloadTask:(id)arg1 didFinishDownloadingToURL:(id)arg2 completionHandler:(id /* block */)arg3;
-- (void)delegate_AVAssetDownloadTask:(id)arg1 didLoadTimeRange:(struct { struct { int x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; int x_1_1_4; } x1; struct { int x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; int x_2_1_4; } x2; })arg2 totalTimeRangesLoaded:(id)arg3 timeRangeExpectedToLoad:(struct { struct { int x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; int x_1_1_4; } x1; struct { int x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; int x_2_1_4; } x2; })arg4;
-- (void)delegate_AVAssetDownloadTask:(id)arg1 didReceiveDownloadToken:(unsigned int)arg2;
+- (void)delegate_AVAssetDownloadTask:(id)arg1 didLoadTimeRange:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg2 totalTimeRangesLoaded:(id)arg3 timeRangeExpectedToLoad:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg4;
+- (void)delegate_AVAssetDownloadTask:(id)arg1 didReceiveDownloadToken:(unsigned long long)arg2;
 - (void)delegate_AVAssetDownloadTask:(id)arg1 didResolveMediaSelection:(id)arg2;
-- (void)delegate_AVAssetDownloadTask:(id)arg1 didWriteData:(int)arg2 totalBytesWritten:(int)arg3 totalBytesExpectedToWrite:(int)arg4;
+- (void)delegate_AVAssetDownloadTask:(id)arg1 didWriteData:(long long)arg2 totalBytesWritten:(long long)arg3 totalBytesExpectedToWrite:(long long)arg4;
 - (void)delegate_betterRouteDiscoveredForStreamTask:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)delegate_companionAvailabilityChanged:(BOOL)arg1;
 - (void)delegate_connectionEstablishedForStreamTask:(id)arg1;
@@ -98,8 +98,8 @@
 - (void)delegate_didReceiveChallenge:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)delegate_downloadTask:(id)arg1 didFinishDownloadingToURL:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)delegate_downloadTask:(id)arg1 didReceiveResponse:(id)arg2;
-- (void)delegate_downloadTask:(id)arg1 didResumeAtOffset:(int)arg2 expectedTotalBytes:(int)arg3;
-- (void)delegate_downloadTask:(id)arg1 didWriteData:(int)arg2 totalBytesWritten:(int)arg3 totalBytesExpectedToWrite:(int)arg4 completionHandler:(id /* block */)arg5;
+- (void)delegate_downloadTask:(id)arg1 didResumeAtOffset:(long long)arg2 expectedTotalBytes:(long long)arg3;
+- (void)delegate_downloadTask:(id)arg1 didWriteData:(long long)arg2 totalBytesWritten:(long long)arg3 totalBytesExpectedToWrite:(long long)arg4 completionHandler:(id /* block */)arg5;
 - (id)delegate_downloadTaskNeedsDownloadDirectory:(id)arg1;
 - (void)delegate_needConnectedSocketToHost:(id)arg1 port:(unsigned int)arg2 completionHandler:(id /* block */)arg3;
 - (int)delegate_openFileAtPath:(id)arg1 mode:(int)arg2;
@@ -111,9 +111,9 @@
 - (void)delegate_task:(id)arg1 didCompleteWithError:(id)arg2;
 - (void)delegate_task:(id)arg1 didFinishCollectingMetrics:(id)arg2 completion:(id /* block */)arg3;
 - (void)delegate_task:(id)arg1 didReceiveChallenge:(id)arg2 completionHandler:(id /* block */)arg3;
-- (void)delegate_task:(id)arg1 didSendBodyData:(int)arg2 totalBytesSent:(int)arg3 totalBytesExpectedToSend:(int)arg4;
+- (void)delegate_task:(id)arg1 didSendBodyData:(long long)arg2 totalBytesSent:(long long)arg3 totalBytesExpectedToSend:(long long)arg4;
 - (void)delegate_task:(id)arg1 isWaitingForConnectionWithError:(id)arg2;
-- (void)delegate_task:(id)arg1 isWaitingForConnectionWithReason:(int)arg2;
+- (void)delegate_task:(id)arg1 isWaitingForConnectionWithReason:(long long)arg2;
 - (void)delegate_task:(id)arg1 needNewBodyStream:(id /* block */)arg2;
 - (void)delegate_task:(id)arg1 willPerformHTTPRedirection:(id)arg2 newRequest:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)delegate_task_isWaitingForConnection:(id)arg1;

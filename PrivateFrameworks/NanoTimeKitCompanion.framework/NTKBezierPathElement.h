@@ -3,33 +3,33 @@
  */
 
 @interface NTKBezierPathElement : NSObject {
-    double  _length;
+    float  _length;
     unsigned int  _pointCount;
-    struct CGPoint { double x1; double x2; } * _points;
+    struct CGPoint { float x1; float x2; } * _points;
     int  _type;
 }
 
-@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } endPoint;
-@property (nonatomic) double length;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } endPoint;
+@property (nonatomic) float length;
 @property (nonatomic) unsigned int pointCount;
-@property (nonatomic) struct CGPoint { double x1; double x2; }*points;
-@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } startPoint;
+@property (nonatomic) struct CGPoint { float x1; float x2; }*points;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } startPoint;
 @property (nonatomic) int type;
 
 - (float)computeLength;
 - (void)dealloc;
-- (struct CGPoint { double x1; double x2; })endPoint;
-- (id)initWithStartPoint:(struct CGPoint { double x1; double x2; })arg1 pathElement:(const struct CGPathElement { int x1; struct CGPoint {} *x2; }*)arg2;
+- (struct CGPoint { float x1; float x2; })endPoint;
+- (id)initWithStartPoint:(struct CGPoint { float x1; float x2; })arg1 pathElement:(const struct CGPathElement { int x1; struct CGPoint {} *x2; }*)arg2;
 - (float)length;
 - (unsigned int)numberOfPointsForCGPathElementType:(int)arg1;
 - (unsigned int)pointCount;
-- (struct CGPoint { double x1; double x2; })pointOnPathForX:(float)arg1;
-- (struct CGPoint { double x1; double x2; }*)points;
+- (struct CGPoint { float x1; float x2; })pointOnPathForX:(float)arg1;
+- (struct CGPoint { float x1; float x2; }*)points;
 - (void)setLength:(float)arg1;
 - (void)setPointCount:(unsigned int)arg1;
-- (void)setPoints:(struct CGPoint { double x1; double x2; }*)arg1;
+- (void)setPoints:(struct CGPoint { float x1; float x2; }*)arg1;
 - (void)setType:(int)arg1;
-- (struct CGPoint { double x1; double x2; })startPoint;
+- (struct CGPoint { float x1; float x2; })startPoint;
 - (int)type;
 
 @end

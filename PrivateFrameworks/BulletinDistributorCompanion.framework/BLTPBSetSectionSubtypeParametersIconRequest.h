@@ -10,7 +10,7 @@
     }  _has;
     BLTPBSectionIcon * _icon;
     NSString * _sectionID;
-    unsigned int  _subtypeID;
+    unsigned long long  _subtypeID;
 }
 
 @property (nonatomic) BOOL defaultSubtype;
@@ -20,7 +20,7 @@
 @property (nonatomic) BOOL hasSubtypeID;
 @property (nonatomic, retain) BLTPBSectionIcon *icon;
 @property (nonatomic, retain) NSString *sectionID;
-@property (nonatomic) unsigned int subtypeID;
+@property (nonatomic) unsigned long long subtypeID;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
@@ -43,8 +43,8 @@
 - (void)setHasSubtypeID:(BOOL)arg1;
 - (void)setIcon:(id)arg1;
 - (void)setSectionID:(id)arg1;
-- (void)setSubtypeID:(unsigned int)arg1;
-- (unsigned int)subtypeID;
+- (void)setSubtypeID:(unsigned long long)arg1;
+- (unsigned long long)subtypeID;
 - (void)writeTo:(id)arg1;
 
 @end

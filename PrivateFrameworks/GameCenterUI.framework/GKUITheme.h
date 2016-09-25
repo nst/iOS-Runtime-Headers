@@ -6,8 +6,8 @@
     NSCache * _resourceCache;
 }
 
-@property (nonatomic, readonly) double formSheetCornerRadius;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } formSheetSize;
+@property (nonatomic, readonly) float formSheetCornerRadius;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } formSheetSize;
 @property (nonatomic, readonly, retain) GKNetworkImageSource *iconLeaderboardListSource;
 @property (nonatomic, readonly, retain) GKNetworkImageSource *iconLeaderboardSetListSource;
 @property (nonatomic, readonly, retain) UIImage *interactiveRatingStarsBackground;
@@ -46,7 +46,7 @@
 - (id)defaultPlayerPhoto;
 - (id)eventIconImage;
 - (float)formSheetCornerRadius;
-- (struct CGSize { double x1; double x2; })formSheetSize;
+- (struct CGSize { float x1; float x2; })formSheetSize;
 - (id)iconLeaderboardListSource;
 - (id)iconLeaderboardSetListSource;
 - (id)imageNamed:(id)arg1;

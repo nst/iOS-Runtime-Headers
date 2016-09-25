@@ -6,26 +6,26 @@
     unsigned int  _animationOptions;
     double  _focusingBaseDuration;
     double  _focusingDelay;
-    double  _focusingDurationScaleFactorLowerBound;
-    double  _focusingDurationScaleFactorUpperBound;
+    float  _focusingDurationScaleFactorLowerBound;
+    float  _focusingDurationScaleFactorUpperBound;
     double  _minimumFocusDuration;
-    double  _unfocusingBackgroundFadeDurationPercentage;
+    float  _unfocusingBackgroundFadeDurationPercentage;
     double  _unfocusingBaseDuration;
-    double  _unfocusingDurationScaleFactorLowerBound;
-    double  _unfocusingDurationScaleFactorUpperBound;
+    float  _unfocusingDurationScaleFactorLowerBound;
+    float  _unfocusingDurationScaleFactorUpperBound;
     double  _unfocusingRepositionBaseDuration;
 }
 
 @property (nonatomic) unsigned int animationOptions;
 @property (nonatomic) double focusingBaseDuration;
 @property (nonatomic) double focusingDelay;
-@property (nonatomic) double focusingDurationScaleFactorLowerBound;
-@property (nonatomic) double focusingDurationScaleFactorUpperBound;
+@property (nonatomic) float focusingDurationScaleFactorLowerBound;
+@property (nonatomic) float focusingDurationScaleFactorUpperBound;
 @property (nonatomic) double minimumFocusDuration;
-@property (nonatomic) double unfocusingBackgroundFadeDurationPercentage;
+@property (nonatomic) float unfocusingBackgroundFadeDurationPercentage;
 @property (nonatomic) double unfocusingBaseDuration;
-@property (nonatomic) double unfocusingDurationScaleFactorLowerBound;
-@property (nonatomic) double unfocusingDurationScaleFactorUpperBound;
+@property (nonatomic) float unfocusingDurationScaleFactorLowerBound;
+@property (nonatomic) float unfocusingDurationScaleFactorUpperBound;
 @property (nonatomic) double unfocusingRepositionBaseDuration;
 
 + (id)configurationWithStyle:(int)arg1;

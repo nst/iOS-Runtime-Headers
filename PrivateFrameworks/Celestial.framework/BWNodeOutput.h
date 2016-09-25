@@ -3,7 +3,7 @@
  */
 
 @interface BWNodeOutput : NSObject {
-    int  _configurationID;
+    long long  _configurationID;
     <BWNodeOutputConsumer> * _consumer;
     BOOL  _consumerIsANodeConnection;
     BOOL  _discardsSampleData;
@@ -12,22 +12,22 @@
     BWFormatRequirements * _formatRequirements;
     int  _indexOfInputWhichDrivesThisOutput;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _lastEmittedPTS;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _lastValidPTS;
-    int  _liveConfigurationID;
+    long long  _liveConfigurationID;
     BWFormat * _liveFormat;
     BWPixelBufferPool * _livePixelBufferPool;
     unsigned long  _livePixelBufferPoolSize;
-    double  _maxSampleDataOutputRate;
+    float  _maxSampleDataOutputRate;
     unsigned long  _mediaType;
     BOOL  _mediaTypeIsVideo;
     NSString * _name;
@@ -48,7 +48,7 @@
 }
 
 @property (nonatomic) BOOL buffersOriginateUpstream;
-@property (nonatomic) int configurationID;
+@property (nonatomic) long long configurationID;
 @property (nonatomic, readonly) BWNodeConnection *connection;
 @property (nonatomic) <BWNodeOutputConsumer> *consumer;
 @property (nonatomic) BOOL discardsSampleData;
@@ -56,10 +56,10 @@
 @property (nonatomic, copy) BWFormat *format;
 @property (nonatomic, copy) BWFormatRequirements *formatRequirements;
 @property (nonatomic) int indexOfInputWhichDrivesThisOutput;
-@property (nonatomic, readonly) int liveConfigurationID;
+@property (nonatomic, readonly) long long liveConfigurationID;
 @property (nonatomic, retain) BWFormat *liveFormat;
 @property (nonatomic, readonly) BWPixelBufferPool *livePixelBufferPool;
-@property (nonatomic) double maxSampleDataOutputRate;
+@property (nonatomic) float maxSampleDataOutputRate;
 @property (nonatomic, readonly) unsigned long mediaType;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, readonly) BWNode *node;
@@ -78,7 +78,7 @@
 - (id)_poolName;
 - (void)addPoolPreallocationCompletionHandler:(id /* block */)arg1;
 - (BOOL)buffersOriginateUpstream;
-- (int)configurationID;
+- (long long)configurationID;
 - (id)connection;
 - (id)consumer;
 - (void)dealloc;
@@ -95,7 +95,7 @@
 - (int)indexOfInputWhichDrivesThisOutput;
 - (id)initWithMediaType:(unsigned long)arg1 node:(id)arg2;
 - (void)invalidate;
-- (int)liveConfigurationID;
+- (long long)liveConfigurationID;
 - (id)liveFormat;
 - (id)livePixelBufferPool;
 - (void)makeConfiguredFormatLive;
@@ -114,7 +114,7 @@
 - (BOOL)providesPixelBufferPool;
 - (unsigned long)retainedBufferCount;
 - (void)setBuffersOriginateUpstream:(BOOL)arg1;
-- (void)setConfigurationID:(int)arg1;
+- (void)setConfigurationID:(long long)arg1;
 - (void)setConsumer:(id)arg1;
 - (void)setDiscardsSampleData:(BOOL)arg1;
 - (void)setDropsSampleBuffersWithUnexpectedPTS:(BOOL)arg1;

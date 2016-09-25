@@ -3,20 +3,20 @@
  */
 
 @interface SKUIItemOfferButtonProperties : NSObject {
-    double  _alpha;
+    float  _alpha;
     NSAttributedString * _attributedText;
     UIColor * _borderBackgroundColor;
     UIColor * _borderColor;
     CAFilter * _borderCompositingFilter;
-    double  _borderCornerRadius;
+    float  _borderCornerRadius;
     BOOL  _borderCornerRadiusMatchesHalfBoundingDimension;
-    double  _borderWidth;
+    float  _borderWidth;
     BOOL  _cancelRecognizer;
     int  _confirmationTitleStyle;
     BOOL  _hasBorderView;
     BOOL  _hasTitleLabel;
     UIImage * _image;
-    double  _progress;
+    float  _progress;
     BOOL  _progressIndeterminate;
     int  _progressType;
     BOOL  _restores;
@@ -25,20 +25,20 @@
     BOOL  _universal;
 }
 
-@property (nonatomic) double alpha;
+@property (nonatomic) float alpha;
 @property (nonatomic, copy) NSAttributedString *attributedText;
 @property (nonatomic, retain) UIColor *borderBackgroundColor;
 @property (nonatomic, retain) UIColor *borderColor;
 @property (nonatomic, retain) CAFilter *borderCompositingFilter;
-@property (nonatomic) double borderCornerRadius;
+@property (nonatomic) float borderCornerRadius;
 @property (nonatomic) BOOL borderCornerRadiusMatchesHalfBoundingDimension;
-@property (nonatomic) double borderWidth;
+@property (nonatomic) float borderWidth;
 @property (nonatomic) BOOL cancelRecognizer;
 @property (nonatomic) int confirmationTitleStyle;
 @property (nonatomic) BOOL hasBorderView;
 @property (nonatomic) BOOL hasTitleLabel;
 @property (nonatomic, retain) UIImage *image;
-@property (nonatomic) double progress;
+@property (nonatomic) float progress;
 @property (nonatomic) BOOL progressIndeterminate;
 @property (nonatomic) int progressType;
 @property (nonatomic) BOOL restores;

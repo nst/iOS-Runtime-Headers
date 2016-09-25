@@ -4,11 +4,11 @@
 
 @interface NSXPCStoreServerNotificationManager : NSObject {
     NSMutableDictionary * _generations;
-    int  _origin;
+    long long  _origin;
 }
 
 - (id)changesSinceGeneration:(id)arg1;
-- (int)currentGenerationForStore:(id)arg1;
+- (long long)currentGenerationForStore:(id)arg1;
 - (id)currentGenerationTokenForStore:(id)arg1;
 - (void)dealloc;
 - (void)handleNotification:(id)arg1;

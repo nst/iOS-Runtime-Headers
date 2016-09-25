@@ -8,7 +8,7 @@
     UIView * _borrowedCircleView;
     UIView * _borrowedHandsView;
     UIView * _contentView;
-    double  _maxZoomingIconDiameter;
+    float  _maxZoomingIconDiameter;
     UIView * _zoomingClippingView;
 }
 
@@ -17,7 +17,7 @@
 @property (nonatomic) UIView *borrowedCircleView;
 @property (nonatomic) UIView *borrowedHandsView;
 @property (nonatomic, readonly) UIView *contentView;
-@property (nonatomic) double maxZoomingIconDiameter;
+@property (nonatomic) float maxZoomingIconDiameter;
 @property (nonatomic, retain) NTKAnalogHandsView *timeView;
 @property (nonatomic, retain) UIView *zoomingClippingView;
 
@@ -35,10 +35,10 @@
 - (void)_configureForEditMode:(int)arg1;
 - (void)_configureForTransitionFraction:(float)arg1 fromEditMode:(int)arg2 toEditMode:(int)arg3;
 - (void)_configureReusableTimeView:(id)arg1;
-- (struct CGPoint { double x1; double x2; })_contentCenterOffset;
+- (struct CGPoint { float x1; float x2; })_contentCenterOffset;
 - (BOOL)_contentViewsAreOpaque;
-- (struct CGPoint { double x1; double x2; })_dateComplicationCenterOffset;
-- (struct CGPoint { double x1; double x2; })_dateComplicationRightAlignment;
+- (struct CGPoint { float x1; float x2; })_dateComplicationCenterOffset;
+- (struct CGPoint { float x1; float x2; })_dateComplicationRightAlignment;
 - (void)_endScrubbingAnimated:(BOOL)arg1 withCompletion:(id /* block */)arg2;
 - (void)_handleLocaleDidChange;
 - (void)_loadContentToReplaceUnadornedSnapshot;
@@ -67,7 +67,7 @@
 - (id)borrowedHandsView;
 - (id)contentView;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (float)maxZoomingIconDiameter;
 - (void)setBorrowedCircleView:(id)arg1;

@@ -4,7 +4,7 @@
 
 @interface _BRCLogSection : NSObject {
     id  asl;
-    unsigned int  osl;
+    unsigned long long  osl;
 }
 
 - (void).cxx_destruct;

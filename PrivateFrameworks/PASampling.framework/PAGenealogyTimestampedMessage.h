@@ -3,17 +3,17 @@
  */
 
 @interface PAGenealogyTimestampedMessage : NSObject {
-    unsigned int  _activityId;
+    unsigned long long  _activityId;
     double  _machTime;
 }
 
-@property (readonly) unsigned int activityId;
+@property (readonly) unsigned long long activityId;
 @property (readonly) double machTime;
 @property (readonly) NSString *message;
 
-- (unsigned int)activityId;
+- (unsigned long long)activityId;
 - (int)compareToOtherMessage:(id)arg1;
-- (id)initWithActivityId:(unsigned int)arg1 atMachTime:(double)arg2;
+- (id)initWithActivityId:(unsigned long long)arg1 atMachTime:(double)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (double)machTime;
 - (id)message;

@@ -5,7 +5,7 @@
 @interface HMFTimer : NSObject {
     NSObject<OS_dispatch_queue> * _clientQueue;
     <HMFTimerDelegate> * _delegate;
-    unsigned int  _leeway;
+    unsigned long long  _leeway;
     unsigned int  _options;
     BOOL  _running;
     double  _timeInterval;
@@ -14,7 +14,7 @@
 
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *clientQueue;
 @property <HMFTimerDelegate> *delegate;
-@property (nonatomic, readonly) unsigned int leeway;
+@property (nonatomic, readonly) unsigned long long leeway;
 @property (nonatomic, readonly) unsigned int options;
 @property (getter=isRunning, nonatomic) BOOL running;
 @property (nonatomic, readonly) double timeInterval;
@@ -39,7 +39,7 @@
 - (id)initWithTimeInterval:(double)arg1 options:(unsigned int)arg2;
 - (BOOL)isRunning;
 - (void)kick;
-- (unsigned int)leeway;
+- (unsigned long long)leeway;
 - (unsigned int)options;
 - (void)resume;
 - (void)setDelegate:(id)arg1;

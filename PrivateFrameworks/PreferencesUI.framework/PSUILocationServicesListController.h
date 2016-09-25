@@ -53,7 +53,7 @@
 - (id)locationSharingOperationQueue;
 - (id)locationSharingSession;
 - (id)locationSharingSpecifiers;
-- (unsigned int)locationSharingTimeout;
+- (unsigned long long)locationSharingTimeout;
 - (int)locationUsageBasedOnDetails:(id)arg1;
 - (int)locationUsageForEntity:(id)arg1;
 - (void)mainThreadConnectionError:(id)arg1;

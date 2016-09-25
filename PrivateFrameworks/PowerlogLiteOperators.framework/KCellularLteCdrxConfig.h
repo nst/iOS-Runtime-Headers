@@ -25,7 +25,7 @@
     unsigned int  _onDurationMs;
     int  _rrcState;
     unsigned int  _shortDrxCycleMs;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
     unsigned int  _transmissionMode;
 }
 
@@ -49,7 +49,7 @@
 @property (nonatomic) unsigned int onDurationMs;
 @property (nonatomic) int rrcState;
 @property (nonatomic) unsigned int shortDrxCycleMs;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 @property (nonatomic) unsigned int transmissionMode;
 
 - (unsigned int)cdrxConfigStatus;
@@ -99,10 +99,10 @@
 - (void)setOnDurationMs:(unsigned int)arg1;
 - (void)setRrcState:(int)arg1;
 - (void)setShortDrxCycleMs:(unsigned int)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (void)setTransmissionMode:(unsigned int)arg1;
 - (unsigned int)shortDrxCycleMs;
-- (unsigned int)timestamp;
+- (unsigned long long)timestamp;
 - (unsigned int)transmissionMode;
 - (void)writeTo:(id)arg1;
 

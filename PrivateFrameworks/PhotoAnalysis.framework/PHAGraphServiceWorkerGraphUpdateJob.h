@@ -3,7 +3,7 @@
  */
 
 @interface PHAGraphServiceWorkerGraphUpdateJob : PHAWorkerJob {
-    double  _completionScore;
+    float  _completionScore;
     NSDate * _creationDate;
     BOOL  _finished;
     NSString * _label;
@@ -11,7 +11,7 @@
     id /* block */  _updateBlock;
 }
 
-@property (nonatomic) double completionScore;
+@property (nonatomic) float completionScore;
 @property (retain) NSDate *creationDate;
 @property (nonatomic) BOOL finished;
 @property (copy) NSString *label;

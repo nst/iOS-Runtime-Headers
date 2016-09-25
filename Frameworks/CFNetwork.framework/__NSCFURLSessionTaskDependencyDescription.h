@@ -6,7 +6,7 @@
     __NSURLSessionTaskDependencyResourceIdentifier * _dependent;
     BOOL  _exclusive;
     __NSURLSessionTaskDependencyResourceIdentifier * _parent;
-    double  _priority;
+    float  _priority;
 }
 
 - (id)_dependent;

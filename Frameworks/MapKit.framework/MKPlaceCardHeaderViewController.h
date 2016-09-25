@@ -55,7 +55,7 @@
 
 @property (nonatomic, retain) _MKPlaceActionButtonController *actionButtonController;
 @property (nonatomic, retain) GEOAutomobileOptions *automobileOptions;
-@property (nonatomic) double currentMinimalModeInterpolationFactor;
+@property (nonatomic) float currentMinimalModeInterpolationFactor;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <MKPlaceCardHeaderViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;

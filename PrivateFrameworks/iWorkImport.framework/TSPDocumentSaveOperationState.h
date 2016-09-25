@@ -19,7 +19,7 @@
     NSData * _passwordVerifier;
     NSProgress * _progress;
     NSURL * _relativeURLForExternalData;
-    unsigned int  _saveToken;
+    unsigned long long  _saveToken;
     BOOL  _shouldLeavePendingEndSave;
     BOOL  _shouldResumeAsynchronousModifications;
     TSPObject * _supportObject;
@@ -42,7 +42,7 @@
 @property (nonatomic, retain) NSData *passwordVerifier;
 @property (nonatomic, retain) NSProgress *progress;
 @property (nonatomic, copy) NSURL *relativeURLForExternalData;
-@property (nonatomic) unsigned int saveToken;
+@property (nonatomic) unsigned long long saveToken;
 @property (nonatomic) BOOL shouldLeavePendingEndSave;
 @property (nonatomic) BOOL shouldResumeAsynchronousModifications;
 @property (nonatomic, retain) TSPObject *supportObject;
@@ -67,7 +67,7 @@
 - (id)passwordVerifier;
 - (id)progress;
 - (id)relativeURLForExternalData;
-- (unsigned int)saveToken;
+- (unsigned long long)saveToken;
 - (void)setDidEndWriteOperation:(BOOL)arg1;
 - (void)setDidResetDocumentRevision:(BOOL)arg1;
 - (void)setDocumentObject:(id)arg1;
@@ -82,7 +82,7 @@
 - (void)setPasswordVerifier:(id)arg1;
 - (void)setProgress:(id)arg1;
 - (void)setRelativeURLForExternalData:(id)arg1;
-- (void)setSaveToken:(unsigned int)arg1;
+- (void)setSaveToken:(unsigned long long)arg1;
 - (void)setShouldLeavePendingEndSave:(BOOL)arg1;
 - (void)setShouldResumeAsynchronousModifications:(BOOL)arg1;
 - (void)setSupportObject:(id)arg1;

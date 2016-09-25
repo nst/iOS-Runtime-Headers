@@ -16,8 +16,8 @@
     BOOL  _hasActivities;
     NSIndexPath * _indexPathForMenuActivity;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _initialDraggingLocation;
     BOOL  _picker;
     _UIActivityUserDefaults * _userDefaults;
@@ -40,7 +40,7 @@
 @property (nonatomic) BOOL hasActivities;
 @property (readonly) unsigned int hash;
 @property (nonatomic, copy) NSIndexPath *indexPathForMenuActivity;
-@property (nonatomic) struct CGPoint { double x1; double x2; } initialDraggingLocation;
+@property (nonatomic) struct CGPoint { float x1; float x2; } initialDraggingLocation;
 @property (getter=isPicker, nonatomic) BOOL picker;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) _UIActivityUserDefaults *userDefaults;
@@ -48,7 +48,7 @@
 @property (nonatomic, copy) NSArray *visibleActivities;
 
 - (void).cxx_destruct;
-- (struct CGSize { double x1; double x2; })_cachedPreferredItemSizeForString:(id)arg1;
+- (struct CGSize { float x1; float x2; })_cachedPreferredItemSizeForString:(id)arg1;
 - (void)_setActivities:(id)arg1 animated:(BOOL)arg2;
 - (void)_setVisibleActivities:(id)arg1 animated:(BOOL)arg2;
 - (id)_titleTextForActivity:(id)arg1;
@@ -66,7 +66,7 @@
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (id)collectionView:(id)arg1 layout:(id)arg2 moveItemAtIndexPath:(id)arg3 toIndexPath:(id)arg4;
 - (id)collectionView:(id)arg1 layout:(id)arg2 needsContainerViewForDraggingItemAtIndexPath:(id)arg3;
-- (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 preferredSizeForItemAtIndexPath:(id)arg3;
+- (struct CGSize { float x1; float x2; })collectionView:(id)arg1 layout:(id)arg2 preferredSizeForItemAtIndexPath:(id)arg3;
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
 - (BOOL)collectionView:(id)arg1 shouldHighlightItemAtIndexPath:(id)arg2;
 - (BOOL)collectionView:(id)arg1 shouldSelectItemAtIndexPath:(id)arg2;
@@ -89,7 +89,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithCollectionViewLayout:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (struct CGPoint { double x1; double x2; })initialDraggingLocation;
+- (struct CGPoint { float x1; float x2; })initialDraggingLocation;
 - (BOOL)isEmbedded;
 - (BOOL)isPicker;
 - (void)registerForActivityUserDefaultsChanges;
@@ -108,7 +108,7 @@
 - (void)setEmbedded:(BOOL)arg1;
 - (void)setHasActivities:(BOOL)arg1;
 - (void)setIndexPathForMenuActivity:(id)arg1;
-- (void)setInitialDraggingLocation:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setInitialDraggingLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setPicker:(BOOL)arg1;
 - (void)setUserDefaults:(id)arg1;
 - (void)setUserDefaultsActivity:(id)arg1;

@@ -4,53 +4,53 @@
 
 @interface UIPrintFormatter : NSObject <NSCopying> {
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _contentInsets;
-    double  _maximumContentHeight;
-    double  _maximumContentWidth;
+    float  _maximumContentHeight;
+    float  _maximumContentWidth;
     BOOL  _needsRecalc;
     int  _pageCount;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _perPageContentInsets;
     UIPrintPageRenderer * _printPageRenderer;
     int  _startPage;
 }
 
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInsets;
-@property (nonatomic) double maximumContentHeight;
-@property (nonatomic) double maximumContentWidth;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
+@property (nonatomic) float maximumContentHeight;
+@property (nonatomic) float maximumContentWidth;
 @property (nonatomic, readonly) int pageCount;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } perPageContentInsets;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } perPageContentInsets;
 @property (nonatomic) UIPrintPageRenderer *printPageRenderer;
 @property (nonatomic) int startPage;
 
 - (void).cxx_destruct;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_pageContentRect:(BOOL)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_pageContentRect:(BOOL)arg1;
 - (void)_recalcIfNecessary;
 - (int)_recalcPageCount;
 - (void)_setNeedsRecalc;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)drawInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forPageAtIndex:(int)arg2;
+- (void)drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forPageAtIndex:(int)arg2;
 - (id)init;
 - (float)maximumContentHeight;
 - (float)maximumContentWidth;
 - (int)pageCount;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })perPageContentInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })perPageContentInsets;
 - (id)printPageRenderer;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rectForPageAtIndex:(int)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForPageAtIndex:(int)arg1;
 - (void)removeFromPrintPageRenderer;
-- (void)setContentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setMaximumContentHeight:(float)arg1;
 - (void)setMaximumContentWidth:(float)arg1;
-- (void)setPerPageContentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setPerPageContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setPrintPageRenderer:(id)arg1;
 - (void)setStartPage:(int)arg1;
 - (int)startPage;

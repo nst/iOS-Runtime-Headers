@@ -7,7 +7,7 @@
     int  _accessCount;
     NSDate * _contentAccessDate;
     NSString * _digestString;
-    int  _fileSize;
+    long long  _fileSize;
     BOOL  _wasDownloaded;
 }
 
@@ -15,7 +15,7 @@
 @property (nonatomic) int accessCount;
 @property (nonatomic, retain) NSDate *contentAccessDate;
 @property (nonatomic, readonly) NSString *digestString;
-@property (nonatomic) int fileSize;
+@property (nonatomic) long long fileSize;
 @property (nonatomic) BOOL wasDownloaded;
 
 - (void).cxx_destruct;
@@ -23,12 +23,12 @@
 - (int)accessCount;
 - (id)contentAccessDate;
 - (id)digestString;
-- (int)fileSize;
+- (long long)fileSize;
 - (id)init;
 - (id)initWithDigestString:(id)arg1;
 - (void)setAccessCount:(int)arg1;
 - (void)setContentAccessDate:(id)arg1;
-- (void)setFileSize:(int)arg1;
+- (void)setFileSize:(long long)arg1;
 - (void)setURL:(id)arg1;
 - (void)setWasDownloaded:(BOOL)arg1;
 - (BOOL)wasDownloaded;

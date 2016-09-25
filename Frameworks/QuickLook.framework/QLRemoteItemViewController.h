@@ -20,7 +20,7 @@
 - (BOOL)canSwipeToDismiss;
 - (void)dealloc;
 - (void)loadPreviewControllerWithPreviewItem:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)numberOfPagesWithSize:(struct CGSize { double x1; double x2; })arg1 completionHandler:(id /* block */)arg2;
+- (void)numberOfPagesWithSize:(struct CGSize { float x1; float x2; })arg1 completionHandler:(id /* block */)arg2;
 - (void)pdfDataForPageAtIndex:(int)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)prepareForDrawingPages:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)previewBecameFullScreen:(BOOL)arg1 animated:(BOOL)arg2;

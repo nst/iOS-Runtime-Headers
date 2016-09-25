@@ -8,7 +8,7 @@
     NSString * _dataClass;
     NSString * _libraryID;
     NSString * _localizedDescription;
-    double  _progress;
+    float  _progress;
     unsigned int  _syncStage;
     unsigned int  _syncType;
     unsigned int  _totalAssetCount;
@@ -21,7 +21,7 @@
 @property (nonatomic, copy) NSString *dataClass;
 @property (nonatomic, copy) NSString *libraryID;
 @property (nonatomic, copy) NSString *localizedDescription;
-@property (nonatomic) double progress;
+@property (nonatomic) float progress;
 @property (nonatomic) unsigned int syncStage;
 @property (nonatomic) unsigned int syncType;
 @property (nonatomic) unsigned int totalAssetCount;

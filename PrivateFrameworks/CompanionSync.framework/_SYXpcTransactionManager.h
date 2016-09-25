@@ -4,7 +4,7 @@
 
 @interface _SYXpcTransactionManager : NSObject {
     NSMutableSet * _errorsForStateDump;
-    unsigned int  _stateHandle;
+    unsigned long long  _stateHandle;
     NSObject<OS_dispatch_queue> * _syncQ;
     NSMutableDictionary * _table;
 }

@@ -55,7 +55,7 @@
 - (id)performDatabaseLookups:(id)arg1;
 - (id)performDatabaseLookups:(id)arg1 boundedByCount:(unsigned int)arg2;
 - (id)persistentStore;
-- (void)saveFeedItems:(id)arg1 forFeedID:(id)arg2 insertionToken:(id)arg3 requestDate:(id)arg4 followingCKCursor:(id)arg5 reachedToOrder:(BOOL)arg6 extent:(unsigned int)arg7 reachedEnd:(BOOL)arg8;
+- (void)saveFeedItems:(id)arg1 forFeedID:(id)arg2 insertionToken:(id)arg3 requestDate:(id)arg4 followingCKCursor:(id)arg5 reachedToOrder:(BOOL)arg6 extent:(unsigned long long)arg7 reachedEnd:(BOOL)arg8;
 - (id)saveThrottler;
 - (void)setCachedFeedsByID:(id)arg1;
 - (void)setFeedEntity:(id)arg1;

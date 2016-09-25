@@ -16,7 +16,7 @@
     BOOL  _isLast;
     BOOL  _isShowingLatestMessageAsBreadcrumb;
     NSString * _messageGUID;
-    int  _messageIDOfLastMessageInSession;
+    long long  _messageIDOfLastMessageInSession;
     BOOL  _payloadInShelf;
     NSArray * _pendingAttachmentData;
     IMPluginPayload * _pluginPayload;
@@ -42,7 +42,7 @@
 @property (nonatomic, readonly) BOOL isPlayed;
 @property (setter=setShowingLatestMessageAsBreadcrumb:, nonatomic) BOOL isShowingLatestMessageAsBreadcrumb;
 @property (nonatomic, retain) NSString *messageGUID;
-@property (nonatomic, readonly) int messageIDOfLastMessageInSession;
+@property (nonatomic, readonly) long long messageIDOfLastMessageInSession;
 @property (nonatomic, readonly, retain) NSData *messagePayloadDataForSending;
 @property (nonatomic, retain) NSData *payload;
 @property (nonatomic) BOOL payloadInShelf;
@@ -70,9 +70,9 @@
 - (void)_removeTemporaryAttachmentURLs;
 - (id)_replaceHandleWithContactNameInString:(id)arg1;
 - (BOOL)_senderIsSameBetweenPayload:(id)arg1 andOtherPayload:(id)arg2;
-- (void)_updatePayload:(id)arg1 messageID:(int)arg2 messageGUID:(id)arg3;
+- (void)_updatePayload:(id)arg1 messageID:(long long)arg2 messageGUID:(id)arg3;
 - (void)_updateTemporaryAttachmentURLsForPluginPayload;
-- (unsigned int)_updateWithPluginPayload:(id)arg1 messageID:(int)arg2 messageGUID:(id)arg3;
+- (unsigned int)_updateWithPluginPayload:(id)arg1 messageID:(long long)arg2 messageGUID:(id)arg3;
 - (id)allPayloads;
 - (id)attachmentGUIDs;
 - (void)beginShowingLastConsumedBreadcrumbForOutgoingPayload:(id)arg1;
@@ -100,7 +100,7 @@
 - (BOOL)isShowingLatestMessageAsBreadcrumb;
 - (void)markAsPlayed;
 - (id)messageGUID;
-- (int)messageIDOfLastMessageInSession;
+- (long long)messageIDOfLastMessageInSession;
 - (id)messagePayloadDataForSending;
 - (void)needsResize;
 - (id)payload;
@@ -132,13 +132,13 @@
 - (void)setTemporaryAttachmentURLs:(id)arg1;
 - (void)setUrl:(id)arg1;
 - (void)set_imMessageGUID:(id)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)statusAttributedString;
 - (id)statusString;
 - (void)statusStringNeedsUpdate;
 - (void)stopPlayback;
 - (id)temporaryAttachmentURLs;
-- (void)thumbnailURLWithSize:(struct CGSize { double x1; double x2; })arg1 completion:(id /* block */)arg2;
+- (void)thumbnailURLWithSize:(struct CGSize { float x1; float x2; })arg1 completion:(id /* block */)arg2;
 - (void)updatePayload:(id)arg1;
 - (void)updatePayload:(id)arg1 attachments:(id)arg2;
 - (id)url;

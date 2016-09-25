@@ -5,7 +5,7 @@
 @interface PUViewControllerTransition : NSObject <UIViewControllerAnimatedTransitioning> {
     double  _duration;
     BOOL  _interactive;
-    double  _interactiveProgress;
+    float  _interactiveProgress;
     UIPercentDrivenInteractiveTransition * _interactiveTransition;
     BOOL  _startedInteractively;
     <UIViewControllerContextTransitioning> * _transitionContext;
@@ -16,7 +16,7 @@
 @property (nonatomic, readonly) double duration;
 @property (readonly) unsigned int hash;
 @property (getter=isInteractive, setter=_setInteractive:, nonatomic) BOOL interactive;
-@property (setter=_setInteractiveProgress:, nonatomic) double interactiveProgress;
+@property (setter=_setInteractiveProgress:, nonatomic) float interactiveProgress;
 @property (nonatomic) BOOL startedInteractively;
 @property (readonly) Class superclass;
 
@@ -32,13 +32,13 @@
 - (void)completeTransition:(BOOL)arg1;
 - (id)containerView;
 - (double)duration;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })finalFromViewFrame;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })finalToViewFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })finalFromViewFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })finalToViewFrame;
 - (void)finishInteractiveTransition;
 - (id)fromViewController;
 - (id)initWithDuration:(double)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })initialFromViewFrame;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })initialToViewFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })initialFromViewFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })initialToViewFrame;
 - (float)interactiveProgress;
 - (id)interactiveTransition;
 - (BOOL)isInteractive;

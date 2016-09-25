@@ -16,19 +16,19 @@
 
 - (void).cxx_destruct;
 - (void)_close;
-- (void)_describe:(id)arg1 zone:(id)arg2 now:(int)arg3 context:(id)arg4;
+- (void)_describe:(id)arg1 zone:(id)arg2 now:(long long)arg3 context:(id)arg4;
 - (void)_handleWatchingFaults;
-- (void)_rescheduleThrottle:(int)arg1 forZone:(id)arg2 state:(int)arg3;
-- (void)_retriedThrottleID:(int)arg1 zone:(id)arg2 kind:(unsigned int)arg3;
+- (void)_rescheduleThrottle:(long long)arg1 forZone:(id)arg2 state:(int)arg3;
+- (void)_retriedThrottleID:(long long)arg1 zone:(id)arg2 kind:(unsigned int)arg3;
 - (BOOL)_scheduleOne:(id)arg1;
 - (unsigned int)_writeCoordinationCount;
-- (void)createThrottleID:(int)arg1 zone:(id)arg2 itemID:(id)arg3 state:(int)arg4 kind:(unsigned int)arg5;
+- (void)createThrottleID:(long long)arg1 zone:(id)arg2 itemID:(id)arg3 state:(int)arg4 kind:(unsigned int)arg5;
 - (void)deleteExpiredThrottles;
 - (void)didCompleteCrossZoneMigrationForAppLibrary:(id)arg1;
 - (void)didCreateMissingParentID:(id)arg1 zone:(id)arg2;
-- (void)didMarkSyncIdleForServerRank:(int)arg1 zone:(id)arg2;
+- (void)didMarkSyncIdleForServerRank:(long long)arg1 zone:(id)arg2;
 - (void)didReparentOrKillItemID:(id)arg1 parentItemID:(id)arg2 zone:(id)arg3;
-- (void)didSyncDownZone:(id)arg1 requestID:(unsigned int)arg2 upToRank:(int)arg3 caughtUpWithServer:(BOOL)arg4;
+- (void)didSyncDownZone:(id)arg1 requestID:(unsigned long long)arg2 upToRank:(long long)arg3 caughtUpWithServer:(BOOL)arg4;
 - (void)endWriteCoordinationInAppLibrary:(id)arg1 rowID:(int)arg2;
 - (id)initWithAccountSession:(id)arg1;
 - (void)monitorFaultingForContainer:(id)arg1;
@@ -36,7 +36,7 @@
 - (void)rescheduleSuspendedThrottlesForZone:(id)arg1 state:(int)arg2;
 - (void)schedule;
 - (BOOL)startWriteCoordinationInAppLibrary:(id)arg1;
-- (void)updateThrottleID:(int)arg1 zone:(id)arg2 state:(int)arg3;
-- (void)updateThrottleID:(int)arg1 zone:(id)arg2 state:(int)arg3 kind:(unsigned int)arg4;
+- (void)updateThrottleID:(long long)arg1 zone:(id)arg2 state:(int)arg3;
+- (void)updateThrottleID:(long long)arg1 zone:(id)arg2 state:(int)arg3 kind:(unsigned int)arg4;
 
 @end

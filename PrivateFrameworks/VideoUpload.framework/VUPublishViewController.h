@@ -3,8 +3,8 @@
  */
 
 @interface VUPublishViewController : UIViewController <UIAlertViewDelegate, UIPickerViewDelegate, UITableViewDataSource, UITableViewDelegate> {
-    int  _HDSize;
-    int  _SDSize;
+    long long  _HDSize;
+    long long  _SDSize;
     NSArray * _accessCells;
     unsigned int  _accessRow;
     UIAlertView * _accountAlert;
@@ -14,7 +14,7 @@
     VUCategoryCell * _categoryCell;
     <VUPublishViewControllerDelegate> * _delegate;
     PLTableViewEditableCell * _descriptionCell;
-    double  _descriptionHeight;
+    float  _descriptionHeight;
     BOOL  _enableHDSection;
     VUFooterContainerView * _footerContainer;
     UIImageView * _headerImageView;
@@ -38,8 +38,8 @@
     BOOL  _viewShrunk;
 }
 
-@property (nonatomic) int HDSize;
-@property (nonatomic) int SDSize;
+@property (nonatomic) long long HDSize;
+@property (nonatomic) long long SDSize;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <VUPublishViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -54,8 +54,8 @@
 @property (nonatomic, readonly) NSString *videoTitle;
 
 - (void).cxx_destruct;
-- (int)HDSize;
-- (int)SDSize;
+- (long long)HDSize;
+- (long long)SDSize;
 - (void)_addNewTagCell;
 - (void)_authenticatorFailed:(id)arg1;
 - (void)_authenticatorStateChanged:(id)arg1;
@@ -103,8 +103,8 @@
 - (int)selectedOption;
 - (void)setDelegate:(id)arg1;
 - (void)setEnableHDSection:(BOOL)arg1;
-- (void)setHDSize:(int)arg1;
-- (void)setSDSize:(int)arg1;
+- (void)setHDSize:(long long)arg1;
+- (void)setSDSize:(long long)arg1;
 - (void)setShowHDSection:(BOOL)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)showAlertWithTitle:(id)arg1 message:(id)arg2;

@@ -23,7 +23,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) NSURL *remoteURL;
 @property (readonly) Class superclass;
-@property (nonatomic) int xpcActivityTriggerCount;
+@property (nonatomic) long long xpcActivityTriggerCount;
 
 - (void)_beginSendingLogMessageChunks;
 - (void)_cleanupLogMessageCollectionRequester;
@@ -43,7 +43,7 @@
 - (void)_setupLogMessageCache;
 - (void)_setupQueueAndNotifications;
 - (void)_setupXPCActivity;
-- (int)_sizeOfLogMessageRequest:(id)arg1;
+- (long long)_sizeOfLogMessageRequest:(id)arg1;
 - (void)_unregisterXPCActivityTimer;
 - (BOOL)_useInMemoryLogMessageCache;
 - (id)adaptorIdentifier;
@@ -60,7 +60,7 @@
 - (void)requesterDidFinish:(id)arg1;
 - (void)setDebugRequestName:(id)arg1;
 - (void)setRemoteURL:(id)arg1;
-- (void)setXpcActivityTriggerCount:(int)arg1;
-- (int)xpcActivityTriggerCount;
+- (void)setXpcActivityTriggerCount:(long long)arg1;
+- (long long)xpcActivityTriggerCount;
 
 @end

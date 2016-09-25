@@ -8,10 +8,10 @@
     NSMapTable * _buyButtonDescriptorToButton;
     NSMapTable * _cacheKeyToImageView;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _contentInset;
     UIColor * _gradientColor;
     SUPlayerStatus * _lastPlayerStatus;
@@ -43,11 +43,11 @@
 + (id)_attributedStringForOrdinal:(id)arg1 context:(id)arg2;
 + (void)_requestLayoutForViewElements:(id)arg1 width:(float)arg2 context:(id)arg3;
 + (BOOL)_usesEditorialLayoutForLabelViewElement:(id)arg1;
-+ (float)maximumPerspectiveHeightForSize:(struct CGSize { double x1; double x2; })arg1;
-+ (struct CGSize { double x1; double x2; })preferredSizeForViewElement:(id)arg1 context:(id)arg2;
++ (float)maximumPerspectiveHeightForSize:(struct CGSize { float x1; float x2; })arg1;
++ (struct CGSize { float x1; float x2; })preferredSizeForViewElement:(id)arg1 context:(id)arg2;
 + (BOOL)prefetchResourcesForViewElement:(id)arg1 reason:(int)arg2 context:(id)arg3;
 + (void)requestLayoutForViewElement:(id)arg1 width:(float)arg2 context:(id)arg3;
-+ (struct CGSize { double x1; double x2; })sizeThatFitsWidth:(float)arg1 viewElement:(id)arg2 context:(id)arg3;
++ (struct CGSize { float x1; float x2; })sizeThatFitsWidth:(float)arg1 viewElement:(id)arg2 context:(id)arg3;
 
 - (void).cxx_destruct;
 - (void)_addConfirmationGradientForView:(id)arg1;
@@ -69,7 +69,7 @@
 - (void)_resizeMetadataRelativeToItemOfferView:(id)arg1;
 - (void)_resolvePreviewStateAfterTransitionForFlipView:(id)arg1;
 - (void)_showConfirmationAction:(id)arg1;
-- (struct CGSize { double x1; double x2; })_sizeViewsForColumn:(id)arg1 toFitWidth:(float)arg2;
+- (struct CGSize { float x1; float x2; })_sizeViewsForColumn:(id)arg1 toFitWidth:(float)arg2;
 - (void)_tapGestureAction:(id)arg1;
 - (BOOL)_usesBackgroundWithAlpha;
 - (id)_viewElementForView:(id)arg1;
@@ -77,7 +77,7 @@
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (id)gradientColor;
 - (void)hidePreviewProgressAnimated:(BOOL)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)itemOfferButtonDidAnimateTransition:(id)arg1;
 - (void)itemOfferButtonWillAnimateTransition:(id)arg1;
 - (void)layoutSubviews;
@@ -90,16 +90,16 @@
 - (void)reloadWithViewElement:(id)arg1 width:(float)arg2 context:(id)arg3;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setContainerBackgroundImageForPlayButton:(id)arg1;
-- (void)setContentInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setGradientColor:(id)arg1;
 - (BOOL)setImage:(id)arg1 forArtworkRequest:(id)arg2 context:(id)arg3;
 - (void)setMetadataBackgroundView:(id)arg1;
 - (void)setPerspectiveTargetView:(id)arg1;
 - (void)setSemanticContentAttribute:(int)arg1;
 - (void)setUpdateLayoutOnButtonConfirmation:(BOOL)arg1;
-- (void)setVanishingPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setVanishingPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)showPreviewProgressWithStatus:(id)arg1 animated:(BOOL)arg2;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)toggleButtonDidAnimateTransition:(id)arg1;
 - (void)toggleButtonWillAnimateTransition:(id)arg1;
 - (void)togglePreviewPlaybackAnimated:(BOOL)arg1;

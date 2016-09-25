@@ -3,12 +3,12 @@
  */
 
 @interface SKUIRemoveFromWishlistOperation : NSOperation {
-    int  _entityID;
-    int  _itemID;
+    long long  _entityID;
+    long long  _itemID;
     int  _reason;
 }
 
-- (id)initWithItemIdentifier:(int)arg1 entityIdentifier:(int)arg2 reason:(int)arg3;
+- (id)initWithItemIdentifier:(long long)arg1 entityIdentifier:(long long)arg2 reason:(int)arg3;
 - (void)main;
 
 @end

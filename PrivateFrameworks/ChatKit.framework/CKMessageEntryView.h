@@ -7,12 +7,12 @@
     CKActionMenuController * _audioActionMenuController;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _audioActionMenuFrame;
     CKActionMenuGestureRecognizerButton * _audioActionMenuGestureRecognizerButton;
@@ -25,8 +25,8 @@
     BOOL  _characterCountHidden;
     UILabel * _characterCountLabel;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _characterCountSize;
     UILabel * _collpasedPlaceholderLabel;
     BOOL  _composingRecipient;
@@ -34,10 +34,10 @@
     CKMessageEntryContentView * _contentView;
     CKConversation * _conversation;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _coverInsets;
     <CKMessageEntryViewDelegate><UIPreviewInteractionDelegate> * _delegate;
     CKEntryViewButton * _digitalTouchButton;
@@ -49,22 +49,22 @@
     BOOL  _failedRecipients;
     UIView * _inputButtonContainerView;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _inputButtonSize;
     <CKMessageEntryViewInputDelegate> * _inputDelegate;
     NSArray * _keyCommands;
     BOOL  _keyboardVisible;
     UIView * _knockoutCoverView;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _marginInsets;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _panAnimationStartPosition;
     double  _panStartTime;
     BOOL  _performingActionMenuSend;
@@ -76,8 +76,8 @@
     UILongPressGestureRecognizer * _sendButtonLongPressGestureRecognizer;
     UIPreviewInteraction * _sendButtonPreviewInteraction;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _sendButtonSize;
     BOOL  _sendingMessage;
     BOOL  _shouldAllowImpactSend;
@@ -94,14 +94,14 @@
     BOOL  _unreachableEmergencyRecipient;
     CKMessageEntryWaveformView * _waveformView;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _waveformViewSize;
 }
 
 @property (nonatomic, retain) CKEntryViewButton *arrowButton;
 @property (nonatomic, retain) CKActionMenuController *audioActionMenuController;
-@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } audioActionMenuFrame;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } audioActionMenuFrame;
 @property (nonatomic, retain) CKActionMenuGestureRecognizerButton *audioActionMenuGestureRecognizerButton;
 @property (nonatomic, retain) CKEntryViewButton *audioButton;
 @property (nonatomic, retain) CKComposition *audioComposition;
@@ -111,7 +111,7 @@
 @property (nonatomic, retain) CKEntryViewButton *browserButton;
 @property (getter=isCharacterCountHidden, nonatomic) BOOL characterCountHidden;
 @property (nonatomic, retain) UILabel *characterCountLabel;
-@property (nonatomic) struct CGSize { double x1; double x2; } characterCountSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } characterCountSize;
 @property (nonatomic, retain) UILabel *collpasedPlaceholderLabel;
 @property (getter=isComposingRecipient, nonatomic) BOOL composingRecipient;
 @property (nonatomic, retain) CKComposition *composition;
@@ -119,7 +119,7 @@
 @property (nonatomic, retain) UIView *contentClipView;
 @property (nonatomic, retain) CKMessageEntryContentView *contentView;
 @property (nonatomic, retain) CKConversation *conversation;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } coverInsets;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } coverInsets;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CKMessageEntryViewDelegate><UIPreviewInteractionDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -134,14 +134,14 @@
 @property (nonatomic, readonly) BOOL hasRecording;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) UIView *inputButtonContainerView;
-@property (nonatomic) struct CGSize { double x1; double x2; } inputButtonSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } inputButtonSize;
 @property (nonatomic) <CKMessageEntryViewInputDelegate> *inputDelegate;
 @property (nonatomic, readonly) BOOL isAudioActionMenuVisible;
 @property (nonatomic, copy) NSArray *keyCommands;
 @property (getter=isKeyboardVisible, nonatomic) BOOL keyboardVisible;
 @property (nonatomic, retain) UIView *knockoutCoverView;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } marginInsets;
-@property (nonatomic) struct CGPoint { double x1; double x2; } panAnimationStartPosition;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } marginInsets;
+@property (nonatomic) struct CGPoint { float x1; float x2; } panAnimationStartPosition;
 @property (nonatomic) double panStartTime;
 @property (getter=isPerformingActionMenuSend, nonatomic) BOOL performingActionMenuSend;
 @property (nonatomic, retain) CKEntryViewButton *photoButton;
@@ -152,7 +152,7 @@
 @property (nonatomic, retain) CKEntryViewButton *sendButton;
 @property (nonatomic, retain) UILongPressGestureRecognizer *sendButtonLongPressGestureRecognizer;
 @property (nonatomic, retain) UIPreviewInteraction *sendButtonPreviewInteraction;
-@property (nonatomic) struct CGSize { double x1; double x2; } sendButtonSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } sendButtonSize;
 @property (getter=isSendingMessage, nonatomic) BOOL sendingMessage;
 @property (nonatomic) BOOL shouldAllowImpactSend;
 @property (nonatomic) BOOL shouldCenterCharacterCount;
@@ -169,13 +169,13 @@
 @property (readonly) Class superclass;
 @property (getter=hasUnreachableEmergencyRecipient, nonatomic) BOOL unreachableEmergencyRecipient;
 @property (nonatomic, retain) CKMessageEntryWaveformView *waveformView;
-@property (nonatomic) struct CGSize { double x1; double x2; } waveformViewSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } waveformViewSize;
 
 + (id)_imageNamesForPrecaching;
 + (id)audioButtonImage;
-+ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentViewInsetsForMarginInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1 shouldShowPluginButtons:(BOOL)arg2 shouldShowCharacterCount:(BOOL)arg3 shouldCoverSendButton:(BOOL)arg4;
-+ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })coverViewInsetsForMarginInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1 shouldShowPluginButtons:(BOOL)arg2 shouldShowCharacterCount:(BOOL)arg3;
-+ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })coverViewInsetsForMarginInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1 shouldShowPluginButtons:(BOOL)arg2 shouldShowCharacterCount:(BOOL)arg3 shouldCenterCharacterCount:(BOOL*)arg4;
++ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentViewInsetsForMarginInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1 shouldShowPluginButtons:(BOOL)arg2 shouldShowCharacterCount:(BOOL)arg3 shouldCoverSendButton:(BOOL)arg4;
++ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })coverViewInsetsForMarginInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1 shouldShowPluginButtons:(BOOL)arg2 shouldShowCharacterCount:(BOOL)arg3;
++ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })coverViewInsetsForMarginInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1 shouldShowPluginButtons:(BOOL)arg2 shouldShowCharacterCount:(BOOL)arg3 shouldCenterCharacterCount:(BOOL*)arg4;
 
 - (void).cxx_destruct;
 - (float)_accessoryViewFadeDuration;
@@ -198,7 +198,7 @@
 - (void)arrowButtonTapped:(id)arg1;
 - (void)arrowCollapsePanGestureRecongnized:(id)arg1;
 - (id)audioActionMenuController;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })audioActionMenuFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })audioActionMenuFrame;
 - (id)audioActionMenuGestureRecognizerButton;
 - (id)audioButton;
 - (id)audioComposition;
@@ -219,7 +219,7 @@
 - (void)browserButtonTapped:(id)arg1;
 - (void)cancelRecordingAndShowAudioHint;
 - (id)characterCountLabel;
-- (struct CGSize { double x1; double x2; })characterCountSize;
+- (struct CGSize { float x1; float x2; })characterCountSize;
 - (void)clearResponseContext;
 - (void)collapseGestureRecongnized;
 - (id)collpasedPlaceholderLabel;
@@ -232,8 +232,8 @@
 - (id)contentView;
 - (id)conversation;
 - (void)conversationPreferredServiceChanged:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })coverFrameThatFitsInSize:(struct CGSize { double x1; double x2; })arg1;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })coverInsets;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })coverFrameThatFitsInSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })coverInsets;
 - (void)dealloc;
 - (id)delegate;
 - (id)digitalTouchButton;
@@ -250,12 +250,12 @@
 - (BOOL)hasFailedRecipients;
 - (BOOL)hasRecording;
 - (BOOL)hasUnreachableEmergencyRecipient;
-- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
-- (id)initForFullscreenAppViewWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 marginInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2 shouldAllowImpact:(BOOL)arg3 shouldShowSendButton:(BOOL)arg4 shouldShowSubject:(BOOL)arg5 shouldShowBrowserButton:(BOOL)arg6 shouldShowCharacterCount:(BOOL)arg7;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 marginInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2 shouldAllowImpact:(BOOL)arg3 shouldShowSendButton:(BOOL)arg4 shouldShowSubject:(BOOL)arg5 shouldShowPluginButtons:(BOOL)arg6 shouldShowCharacterCount:(BOOL)arg7;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 marginInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2 shouldShowSendButton:(BOOL)arg3 shouldShowSubject:(BOOL)arg4 shouldShowPluginButtons:(BOOL)arg5 shouldShowCharacterCount:(BOOL)arg6;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (id)initForFullscreenAppViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 marginInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2 shouldAllowImpact:(BOOL)arg3 shouldShowSendButton:(BOOL)arg4 shouldShowSubject:(BOOL)arg5 shouldShowBrowserButton:(BOOL)arg6 shouldShowCharacterCount:(BOOL)arg7;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 marginInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2 shouldAllowImpact:(BOOL)arg3 shouldShowSendButton:(BOOL)arg4 shouldShowSubject:(BOOL)arg5 shouldShowPluginButtons:(BOOL)arg6 shouldShowCharacterCount:(BOOL)arg7;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 marginInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2 shouldShowSendButton:(BOOL)arg3 shouldShowSubject:(BOOL)arg4 shouldShowPluginButtons:(BOOL)arg5 shouldShowCharacterCount:(BOOL)arg6;
 - (id)inputButtonContainerView;
-- (struct CGSize { double x1; double x2; })inputButtonSize;
+- (struct CGSize { float x1; float x2; })inputButtonSize;
 - (id)inputDelegate;
 - (BOOL)isAudioActionMenuVisible;
 - (BOOL)isCharacterCountHidden;
@@ -269,7 +269,7 @@
 - (id)knockoutCoverView;
 - (void)layoutSubviews;
 - (void)loadRecordedAudioViewsIfNeeded;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })marginInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })marginInsets;
 - (void)messageEntryContentView:(id)arg1 didPasteURL:(id)arg2;
 - (void)messageEntryContentView:(id)arg1 didTapMediaObject:(id)arg2;
 - (BOOL)messageEntryContentView:(id)arg1 shouldInsertMediaObjects:(id)arg2;
@@ -278,12 +278,12 @@
 - (void)messageEntryContentViewDidChange:(id)arg1;
 - (void)messageEntryContentViewDidEndEditing:(id)arg1;
 - (void)messageEntryContentViewDidTapHandwritingKey:(id)arg1;
-- (struct CGSize { double x1; double x2; })messageEntryContentViewMaxShelfPluginViewSize:(id)arg1;
+- (struct CGSize { float x1; float x2; })messageEntryContentViewMaxShelfPluginViewSize:(id)arg1;
 - (BOOL)messageEntryContentViewShouldBeginEditing:(id)arg1;
 - (void)messageEntryContentViewWasTapped:(id)arg1 isLongPress:(BOOL)arg2;
 - (void)messageEntryRecordedAudioView:(id)arg1 mediaObjectDidFinishPlaying:(id)arg2;
 - (void)messageReceived:(id)arg1;
-- (struct CGPoint { double x1; double x2; })panAnimationStartPosition;
+- (struct CGPoint { float x1; float x2; })panAnimationStartPosition;
 - (double)panStartTime;
 - (void)pauseMenuItemAction:(id)arg1;
 - (id)photoButton;
@@ -296,18 +296,18 @@
 - (id)recordedAudioView;
 - (id)recorder;
 - (id)sendButton;
-- (struct CGPoint { double x1; double x2; })sendButtonConvertPointToScreen:(struct CGPoint { double x1; double x2; })arg1;
+- (struct CGPoint { float x1; float x2; })sendButtonConvertPointToScreen:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)sendButtonEnabled;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })sendButtonFrameInScreenCoordinates;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })sendButtonFrameInScreenCoordinates;
 - (void)sendButtonLongPressGesture:(id)arg1;
 - (id)sendButtonLongPressGestureRecognizer;
 - (id)sendButtonPreviewInteraction;
-- (struct CGSize { double x1; double x2; })sendButtonSize;
+- (struct CGSize { float x1; float x2; })sendButtonSize;
 - (void)sendCurrentLocationMessage;
 - (void)sendMenuItemAction:(id)arg1;
 - (void)setArrowButton:(id)arg1;
 - (void)setAudioActionMenuController:(id)arg1;
-- (void)setAudioActionMenuFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setAudioActionMenuFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setAudioActionMenuGestureRecognizerButton:(id)arg1;
 - (void)setAudioButton:(id)arg1;
 - (void)setAudioComposition:(id)arg1;
@@ -317,14 +317,14 @@
 - (void)setBrowserButton:(id)arg1;
 - (void)setCharacterCountHidden:(BOOL)arg1;
 - (void)setCharacterCountLabel:(id)arg1;
-- (void)setCharacterCountSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setCharacterCountSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setCollpasedPlaceholderLabel:(id)arg1;
 - (void)setComposingRecipient:(BOOL)arg1;
 - (void)setComposition:(id)arg1;
 - (void)setContentClipView:(id)arg1;
 - (void)setContentView:(id)arg1;
 - (void)setConversation:(id)arg1;
-- (void)setCoverInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setCoverInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDigitalTouchButton:(id)arg1;
 - (void)setDisablePluginButtons:(BOOL)arg1;
@@ -335,15 +335,15 @@
 - (void)setEntryFieldUpdaterAnimatedValue:(BOOL)arg1;
 - (void)setEntryFieldUpdaterCollapsedValue:(BOOL)arg1;
 - (void)setFailedRecipients:(BOOL)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setInputButtonContainerView:(id)arg1;
-- (void)setInputButtonSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setInputButtonSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setInputDelegate:(id)arg1;
 - (void)setKeyCommands:(id)arg1;
 - (void)setKeyboardVisible:(BOOL)arg1;
 - (void)setKnockoutCoverView:(id)arg1;
-- (void)setMarginInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
-- (void)setPanAnimationStartPosition:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setMarginInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setPanAnimationStartPosition:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setPanStartTime:(double)arg1;
 - (void)setPerformingActionMenuSend:(BOOL)arg1;
 - (void)setPhotoButton:(id)arg1;
@@ -353,7 +353,7 @@
 - (void)setSendButton:(id)arg1;
 - (void)setSendButtonLongPressGestureRecognizer:(id)arg1;
 - (void)setSendButtonPreviewInteraction:(id)arg1;
-- (void)setSendButtonSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setSendButtonSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setSendingMessage:(BOOL)arg1;
 - (void)setShouldAllowImpactSend:(BOOL)arg1;
 - (void)setShouldCenterCharacterCount:(BOOL)arg1;
@@ -369,7 +369,7 @@
 - (void)setStyle:(int)arg1;
 - (void)setUnreachableEmergencyRecipient:(BOOL)arg1;
 - (void)setWaveformView:(id)arg1;
-- (void)setWaveformViewSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setWaveformViewSize:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)shouldAllowImpactSend;
 - (BOOL)shouldCenterCharacterCount;
 - (BOOL)shouldConfigureForFullscreenAppView;
@@ -383,7 +383,7 @@
 - (BOOL)shouldShowSendButton;
 - (BOOL)shouldShowSubject;
 - (id)shutterButton;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)startRecordingForRaiseGesture;
 - (void)stopRecordingForRaiseGestureWithFailure:(BOOL)arg1;
 - (int)style;
@@ -393,6 +393,6 @@
 - (void)updateResponseContext;
 - (void)updateTextViewsForShouldHideCaret:(BOOL)arg1;
 - (id)waveformView;
-- (struct CGSize { double x1; double x2; })waveformViewSize;
+- (struct CGSize { float x1; float x2; })waveformViewSize;
 
 @end

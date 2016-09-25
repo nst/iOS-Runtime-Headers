@@ -11,7 +11,7 @@
 + (id)deserializeObject:(id)arg1;
 + (void)dispatchAsyncToMainThread:(id /* block */)arg1;
 + (void)dispatchSyncToMainThread:(id /* block */)arg1;
-+ (unsigned int)folderSizeAtPath:(id)arg1 volumeBlockSize:(unsigned int)arg2;
++ (unsigned long long)folderSizeAtPath:(id)arg1 volumeBlockSize:(unsigned int)arg2;
 + (BOOL)isApplicationCompanionConnectionClientIdentifier:(id)arg1;
 + (BOOL)isRTL;
 + (BOOL)isRunningInAnyDemoMode;

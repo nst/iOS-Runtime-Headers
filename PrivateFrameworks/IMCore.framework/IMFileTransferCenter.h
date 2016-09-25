@@ -34,7 +34,7 @@
 - (void)_clearTransfers;
 - (void)_handleAllFileTransfers:(id)arg1;
 - (void)_handleFileTransfer:(id)arg1 createdWithProperties:(id)arg2;
-- (void)_handleFileTransfer:(id)arg1 updatedWithCurrentBytes:(unsigned int)arg2 totalBytes:(unsigned int)arg3 averageTransferRate:(unsigned int)arg4;
+- (void)_handleFileTransfer:(id)arg1 updatedWithCurrentBytes:(unsigned long long)arg2 totalBytes:(unsigned long long)arg3 averageTransferRate:(unsigned long long)arg4;
 - (void)_handleFileTransfer:(id)arg1 updatedWithProperties:(id)arg2;
 - (void)_handleFileTransfers:(id)arg1 createdWithLocalPaths:(id)arg2;
 - (void)_handleStandaloneFileTransferRegistered:(id)arg1;

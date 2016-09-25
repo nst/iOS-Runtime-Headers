@@ -6,16 +6,16 @@
 @required
 
 - (UIScrollView *)_scrollView;
-- (struct CGSize { double x1; double x2; })contentSizeExcludingActions;
+- (struct CGSize { float x1; float x2; })contentSizeExcludingActions;
 - (unsigned int)customContentLocation;
-- (struct CGSize { double x1; double x2; })customContentSize;
+- (struct CGSize { float x1; float x2; })customContentSize;
 - (BOOL)hidesNotificationContent;
 - (BOOL)isActionsHidden;
 - (UITapGestureRecognizer *)lookViewTapGestureRecognizer;
 - (void)setActionsHidden:(BOOL)arg1;
 - (void)setCustomContentLocation:(unsigned int)arg1;
-- (void)setCustomContentSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setCustomContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setHidesNotificationContent:(BOOL)arg1;
-- (struct CGSize { double x1; double x2; })sizeExcludingActions;
+- (struct CGSize { float x1; float x2; })sizeExcludingActions;
 
 @end

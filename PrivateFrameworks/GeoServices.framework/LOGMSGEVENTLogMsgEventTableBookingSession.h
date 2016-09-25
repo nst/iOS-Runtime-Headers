@@ -4,8 +4,8 @@
 
 @interface LOGMSGEVENTLogMsgEventTableBookingSession : PBCodable <NSCopying> {
     BOOL  _addedSpecialRequest;
-    int  _blurredBookingTimestamp;
-    int  _blurredReservationTimestamp;
+    long long  _blurredBookingTimestamp;
+    long long  _blurredReservationTimestamp;
     NSString * _bookTableAppId;
     NSString * _bookTableSessionId;
     double  _durationOfSessionInSeconds;
@@ -29,15 +29,15 @@
     BOOL  _installCompleted;
     BOOL  _installNeeded;
     NSString * _installNeededTappedAppId;
-    unsigned int  _muid;
+    unsigned long long  _muid;
     BOOL  _swipedAvailableTimes;
     unsigned int  _tableSize;
     BOOL  _tappedDatePicker;
 }
 
 @property (nonatomic) BOOL addedSpecialRequest;
-@property (nonatomic) int blurredBookingTimestamp;
-@property (nonatomic) int blurredReservationTimestamp;
+@property (nonatomic) long long blurredBookingTimestamp;
+@property (nonatomic) long long blurredReservationTimestamp;
 @property (nonatomic, retain) NSString *bookTableAppId;
 @property (nonatomic, retain) NSString *bookTableSessionId;
 @property (nonatomic) double durationOfSessionInSeconds;
@@ -62,7 +62,7 @@
 @property (nonatomic) BOOL installCompleted;
 @property (nonatomic) BOOL installNeeded;
 @property (nonatomic, retain) NSString *installNeededTappedAppId;
-@property (nonatomic) unsigned int muid;
+@property (nonatomic) unsigned long long muid;
 @property (nonatomic) BOOL swipedAvailableTimes;
 @property (nonatomic) unsigned int tableSize;
 @property (nonatomic) BOOL tappedDatePicker;
@@ -73,8 +73,8 @@
 - (int)StringAsEndView:(id)arg1;
 - (void)addErrorMessage:(id)arg1;
 - (BOOL)addedSpecialRequest;
-- (int)blurredBookingTimestamp;
-- (int)blurredReservationTimestamp;
+- (long long)blurredBookingTimestamp;
+- (long long)blurredReservationTimestamp;
 - (id)bookTableAppId;
 - (id)bookTableSessionId;
 - (void)clearErrorMessages;
@@ -112,11 +112,11 @@
 - (id)installNeededTappedAppId;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (unsigned int)muid;
+- (unsigned long long)muid;
 - (BOOL)readFrom:(id)arg1;
 - (void)setAddedSpecialRequest:(BOOL)arg1;
-- (void)setBlurredBookingTimestamp:(int)arg1;
-- (void)setBlurredReservationTimestamp:(int)arg1;
+- (void)setBlurredBookingTimestamp:(long long)arg1;
+- (void)setBlurredReservationTimestamp:(long long)arg1;
 - (void)setBookTableAppId:(id)arg1;
 - (void)setBookTableSessionId:(id)arg1;
 - (void)setDurationOfSessionInSeconds:(double)arg1;
@@ -138,7 +138,7 @@
 - (void)setInstallCompleted:(BOOL)arg1;
 - (void)setInstallNeeded:(BOOL)arg1;
 - (void)setInstallNeededTappedAppId:(id)arg1;
-- (void)setMuid:(unsigned int)arg1;
+- (void)setMuid:(unsigned long long)arg1;
 - (void)setSwipedAvailableTimes:(BOOL)arg1;
 - (void)setTableSize:(unsigned int)arg1;
 - (void)setTappedDatePicker:(BOOL)arg1;

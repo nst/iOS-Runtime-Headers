@@ -3,17 +3,17 @@
  */
 
 @interface _NACVolumeRecord : NSObject <NSCoding> {
-    double  _EUVolumeLimit;
+    float  _EUVolumeLimit;
     BOOL  _muted;
     BOOL  _volumeControlAvailable;
-    double  _volumeValue;
+    float  _volumeValue;
     BOOL  _volumeWarningEnabled;
 }
 
-@property (nonatomic) double EUVolumeLimit;
+@property (nonatomic) float EUVolumeLimit;
 @property (getter=isMuted, nonatomic) BOOL muted;
 @property (getter=isVolumeControlAvailable, nonatomic) BOOL volumeControlAvailable;
-@property (nonatomic) double volumeValue;
+@property (nonatomic) float volumeValue;
 @property (getter=isVolumeWarningEnabled, nonatomic) BOOL volumeWarningEnabled;
 
 - (float)EUVolumeLimit;

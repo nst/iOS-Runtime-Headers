@@ -89,8 +89,8 @@
 - (void)scheduledFindOnPage:(id)arg1;
 - (id)selectionForEntireDocument;
 - (id)selectionFromPage:(id)arg1 atCharacterIndex:(unsigned int)arg2 toPage:(id)arg3 atCharacterIndex:(unsigned int)arg4;
-- (id)selectionFromPage:(id)arg1 atPoint:(struct CGPoint { double x1; double x2; })arg2 toPage:(id)arg3 atPoint:(struct CGPoint { double x1; double x2; })arg4;
-- (id)selectionFromPage:(id)arg1 atPoint:(struct CGPoint { double x1; double x2; })arg2 toPage:(id)arg3 atPoint:(struct CGPoint { double x1; double x2; })arg4 type:(int)arg5;
+- (id)selectionFromPage:(id)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2 toPage:(id)arg3 atPoint:(struct CGPoint { float x1; float x2; })arg4;
+- (id)selectionFromPage:(id)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2 toPage:(id)arg3 atPoint:(struct CGPoint { float x1; float x2; })arg4 type:(int)arg5;
 - (void)setDelegate:(id)arg1;
 - (void)setDocument:(struct CGPDFDocument { }*)arg1;
 - (void)setDocumentAttributes:(id)arg1;

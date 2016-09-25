@@ -300,9 +300,9 @@
 - (BOOL)deserializeiWorkSharingOptions:(unsigned int*)arg1 error:(id*)arg2;
 - (void)serializeFilename:(id)arg1 forCreation:(BOOL)arg2;
 - (void)serializeFilename:(id)arg1 forCreation:(BOOL)arg2 setExtension:(BOOL)arg3;
-- (void)serializeStatInfo:(id)arg1 diffs:(unsigned int)arg2 stageID:(id)arg3 deadInServerTruth:(BOOL)arg4 pcsChaining:(BOOL)arg5;
+- (void)serializeStatInfo:(id)arg1 diffs:(unsigned long long)arg2 stageID:(id)arg3 deadInServerTruth:(BOOL)arg4 pcsChaining:(BOOL)arg5;
 - (void)serializeSystemFields:(id)arg1;
-- (void)serializeVersion:(id)arg1 diffs:(unsigned int)arg2 deadInServerTruth:(BOOL)arg3;
+- (void)serializeVersion:(id)arg1 diffs:(unsigned long long)arg2 deadInServerTruth:(BOOL)arg3;
 - (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
 
 // Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon

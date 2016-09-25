@@ -7,7 +7,7 @@
     NSString * _identifier;
     unsigned int  _maxInitiallyVisibleResults;
     NSString * _moreText;
-    double  _rankingScore;
+    float  _rankingScore;
     NSArray * _results;
     NSString * _title;
 }
@@ -16,7 +16,7 @@
 @property (nonatomic, copy) NSString *identifier;
 @property (nonatomic) unsigned int maxInitiallyVisibleResults;
 @property (nonatomic, copy) NSString *moreText;
-@property (nonatomic) double rankingScore;
+@property (nonatomic) float rankingScore;
 @property (nonatomic, retain) NSArray *results;
 @property (nonatomic, copy) NSString *title;
 

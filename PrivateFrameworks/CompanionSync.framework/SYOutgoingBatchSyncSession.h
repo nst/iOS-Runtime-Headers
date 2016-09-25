@@ -4,7 +4,7 @@
 
 @interface SYOutgoingBatchSyncSession : SYSession {
     NSMutableIndexSet * _ackedBatchIndices;
-    unsigned int  _batchIndex;
+    unsigned long long  _batchIndex;
     BOOL  _canRestart;
     BOOL  _canRollback;
     BOOL  _cancelled;
@@ -27,7 +27,7 @@
 - (BOOL)_handleBatchSyncEndResponse:(id)arg1 error:(id*)arg2;
 - (void)_installStateListener;
 - (void)_installTimers;
-- (void)_messageExpiredWithSeqno:(unsigned int)arg1 identifier:(id)arg2;
+- (void)_messageExpiredWithSeqno:(unsigned long long)arg1 identifier:(id)arg2;
 - (void)_notifySessionComplete;
 - (void)_processNextState;
 - (void)_sendSyncBatch:(id)arg1 nextState:(int)arg2;
@@ -37,7 +37,7 @@
 - (void)_sendSyncStart;
 - (void)_sentMessageWithIdentifier:(id)arg1 userInfo:(id)arg2;
 - (void)_sessionComplete;
-- (void)_setMessageTimerForSeqno:(unsigned int)arg1;
+- (void)_setMessageTimerForSeqno:(unsigned long long)arg1;
 - (void)_setStateQuietly:(int)arg1;
 - (void)_setupChangeConcurrency;
 - (void)_waitForMessageWindow;

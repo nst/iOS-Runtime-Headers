@@ -4,8 +4,8 @@
 
 @interface FCChannelMembershipRecordSource : FCRecordSource
 
-+ (unsigned int)highThresholdDataSizeLimit;
-+ (unsigned int)lowThresholdDataSizeLimit;
++ (unsigned long long)highThresholdDataSizeLimit;
++ (unsigned long long)lowThresholdDataSizeLimit;
 + (id)recordType;
 + (id)storeFilename;
 + (unsigned int)storeVersion;

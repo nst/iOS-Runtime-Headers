@@ -110,9 +110,9 @@
 - (void)tsp_enumerateIdentifiersAndObjectsUsingBlock:(id /* block */)arg1;
 - (void)tsp_enumerateObjectsUsingBlock:(id /* block */)arg1;
 - (BOOL)tsp_isWeakObjectMapTable;
-- (id)tsp_objectForIdentifier:(int)arg1;
-- (void)tsp_removeObjectForIdentifier:(int)arg1;
-- (void)tsp_setObject:(id)arg1 forIdentifier:(int)arg2;
+- (id)tsp_objectForIdentifier:(long long)arg1;
+- (void)tsp_removeObjectForIdentifier:(long long)arg1;
+- (void)tsp_setObject:(id)arg1 forIdentifier:(long long)arg2;
 - (id)tsu_allKeys;
 - (id)tsu_noCopyDictionaryRepresentation;
 

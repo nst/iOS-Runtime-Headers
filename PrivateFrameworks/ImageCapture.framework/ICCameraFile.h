@@ -11,7 +11,7 @@
 @property (readonly) NSString *burstUUID;
 @property BOOL fetchingMetadata;
 @property BOOL fetchingThumbnail;
-@property int fileSize;
+@property long long fileSize;
 @property (readonly) BOOL hasOverriddenOrientation;
 @property (readonly) BOOL highFramerate;
 @property (retain) NSMutableDictionary *metadata_hidden;
@@ -29,7 +29,7 @@
 - (double)duration;
 - (BOOL)fetchingMetadata;
 - (BOOL)fetchingThumbnail;
-- (int)fileSize;
+- (long long)fileSize;
 - (void)finalize;
 - (void)flushMetadataCache;
 - (void)flushThumbnailCache;
@@ -48,7 +48,7 @@
 - (void)requestThumbnail;
 - (void)setFetchingMetadata:(BOOL)arg1;
 - (void)setFetchingThumbnail:(BOOL)arg1;
-- (void)setFileSize:(int)arg1;
+- (void)setFileSize:(long long)arg1;
 - (void)setHasMetadata:(BOOL)arg1;
 - (void)setHasThumbnail:(BOOL)arg1;
 - (void)setKeywordPropertiesFromMetadata;

@@ -3,7 +3,7 @@
  */
 
 @interface UIPrintRangePickerView : UIPickerView {
-    double  _shift;
+    float  _shift;
 }
 
 - (BOOL)_forceTextAlignmentCentered;

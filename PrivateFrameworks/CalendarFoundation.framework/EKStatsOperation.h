@@ -4,20 +4,20 @@
 
 @interface EKStatsOperation : NSObject {
     double  _doubleValue;
-    int  _intValue;
+    long long  _intValue;
     int  _type;
 }
 
 @property double doubleValue;
-@property int intValue;
+@property long long intValue;
 @property int type;
 
 - (double)doubleValue;
 - (id)initWithType:(int)arg1 doubleValue:(double)arg2;
-- (id)initWithType:(int)arg1 intValue:(int)arg2;
-- (int)intValue;
+- (id)initWithType:(int)arg1 intValue:(long long)arg2;
+- (long long)intValue;
 - (void)setDoubleValue:(double)arg1;
-- (void)setIntValue:(int)arg1;
+- (void)setIntValue:(long long)arg1;
 - (void)setType:(int)arg1;
 - (int)type;
 

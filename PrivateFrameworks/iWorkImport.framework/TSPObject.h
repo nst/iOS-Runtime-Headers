@@ -6,9 +6,9 @@
     NSUUID * _UUID;
     TSPComponent * _component;
     <TSPObjectDelegate> * _delegate;
-    int  _identifier;
-    int  _modifyObjectToken;
-    int  _unarchiverIdentifier;
+    long long  _identifier;
+    long long  _modifyObjectToken;
+    long long  _unarchiverIdentifier;
     TSPUnknownContent * _unknownContent;
 }
 
@@ -28,17 +28,17 @@
 @property (nonatomic) TSPComponent *tsp_component;
 @property (nonatomic) <TSPObjectDelegate> *tsp_delegate;
 @property (nonatomic, readonly) NSString *tsp_description;
-@property (nonatomic) int tsp_identifier;
+@property (nonatomic) long long tsp_identifier;
 @property (nonatomic, readonly) BOOL tsp_isInDocument;
 @property (nonatomic, readonly) BOOL tsp_isPersisted;
-@property (nonatomic) int tsp_modifyObjectToken;
-@property (nonatomic, readonly) int tsp_unarchiverIdentifier;
+@property (nonatomic) long long tsp_modifyObjectToken;
+@property (nonatomic, readonly) long long tsp_unarchiverIdentifier;
 @property (nonatomic, readonly) TSPUnknownContent *tsp_unknownContent;
 
 + (BOOL)needsObjectUUID;
 + (id)newObjectForUnarchiver:(id)arg1;
 + (id)tsp_deserializeFromData:(id)arg1 options:(id)arg2 context:(id)arg3 error:(id*)arg4;
-+ (BOOL)tsp_isTransientObjectIdentifier:(int)arg1;
++ (BOOL)tsp_isTransientObjectIdentifier:(long long)arg1;
 
 - (void).cxx_destruct;
 - (unsigned int)allowedObjectTargetTypes;
@@ -76,8 +76,8 @@
 - (void)setObjectUUID:(id)arg1 updatingObjectUUIDMap:(BOOL)arg2;
 - (void)setTsp_component:(id)arg1;
 - (void)setTsp_delegate:(id)arg1;
-- (void)setTsp_identifier:(int)arg1;
-- (void)setTsp_modifyObjectToken:(int)arg1;
+- (void)setTsp_identifier:(long long)arg1;
+- (void)setTsp_modifyObjectToken:(long long)arg1;
 - (BOOL)shouldDelayArchiving;
 - (BOOL)storeOutsideObjectArchive;
 - (id)tsp_component;
@@ -89,17 +89,17 @@
 - (id)tsp_delegate;
 - (id)tsp_description;
 - (id)tsp_descriptionWithDepth:(unsigned int)arg1;
-- (int)tsp_identifier;
+- (long long)tsp_identifier;
 - (BOOL)tsp_isInDocument;
 - (BOOL)tsp_isPersisted;
-- (int)tsp_modifyObjectToken;
+- (long long)tsp_modifyObjectToken;
 - (id)tsp_objectInfoWithDepth:(unsigned int)arg1;
 - (id)tsp_referencedData;
 - (id)tsp_referencedObjectUUIDs;
 - (id)tsp_referencedObjects;
 - (id)tsp_serializeToDataWithOptions:(id)arg1 dataReferences:(id*)arg2 error:(id*)arg3;
 - (id)tsp_serializeToDataWithOptions:(id)arg1 error:(id*)arg2;
-- (int)tsp_unarchiverIdentifier;
+- (long long)tsp_unarchiverIdentifier;
 - (id)tsp_unknownContent;
 - (void)wasAddedToDocumentDuringImportWithContext:(id)arg1;
 - (void)wasAddedToDocumentDuringUnarchiveWithContext:(id)arg1;

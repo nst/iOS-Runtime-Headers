@@ -23,7 +23,7 @@
     unsigned int  _iconRectX;
     unsigned int  _iconRectY;
     unsigned int  _matchingStyleAttributeKey;
-    unsigned int  _matchingStyleAttributeLongValue;
+    unsigned long long  _matchingStyleAttributeLongValue;
     int  _matchingStyleAttributeValue;
     NSString * _name;
     unsigned int  _quadIndex;
@@ -49,7 +49,7 @@
 @property (nonatomic) unsigned int iconRectX;
 @property (nonatomic) unsigned int iconRectY;
 @property (nonatomic) unsigned int matchingStyleAttributeKey;
-@property (nonatomic) unsigned int matchingStyleAttributeLongValue;
+@property (nonatomic) unsigned long long matchingStyleAttributeLongValue;
 @property (nonatomic) int matchingStyleAttributeValue;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic) unsigned int quadIndex;
@@ -81,7 +81,7 @@
 - (unsigned int)iconRectY;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)matchingStyleAttributeKey;
-- (unsigned int)matchingStyleAttributeLongValue;
+- (unsigned long long)matchingStyleAttributeLongValue;
 - (int)matchingStyleAttributeValue;
 - (void)mergeFrom:(id)arg1;
 - (id)name;
@@ -105,7 +105,7 @@
 - (void)setIconRectX:(unsigned int)arg1;
 - (void)setIconRectY:(unsigned int)arg1;
 - (void)setMatchingStyleAttributeKey:(unsigned int)arg1;
-- (void)setMatchingStyleAttributeLongValue:(unsigned int)arg1;
+- (void)setMatchingStyleAttributeLongValue:(unsigned long long)arg1;
 - (void)setMatchingStyleAttributeValue:(int)arg1;
 - (void)setName:(id)arg1;
 - (void)setQuadIndex:(unsigned int)arg1;

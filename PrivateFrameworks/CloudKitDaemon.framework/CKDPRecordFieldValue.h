@@ -16,7 +16,7 @@
     CKDPLocationCoordinate * _locationValue;
     CKDPPackage * _packageValue;
     CKDPRecordReference * _referenceValue;
-    int  _signedValue;
+    long long  _signedValue;
     NSString * _stringValue;
     int  _type;
 }
@@ -39,7 +39,7 @@
 @property (nonatomic, retain) CKDPLocationCoordinate *locationValue;
 @property (nonatomic, retain) CKDPPackage *packageValue;
 @property (nonatomic, retain) CKDPRecordReference *referenceValue;
-@property (nonatomic) int signedValue;
+@property (nonatomic) long long signedValue;
 @property (nonatomic, retain) NSString *stringValue;
 @property (nonatomic) int type;
 
@@ -89,10 +89,10 @@
 - (void)setLocationValue:(id)arg1;
 - (void)setPackageValue:(id)arg1;
 - (void)setReferenceValue:(id)arg1;
-- (void)setSignedValue:(int)arg1;
+- (void)setSignedValue:(long long)arg1;
 - (void)setStringValue:(id)arg1;
 - (void)setType:(int)arg1;
-- (int)signedValue;
+- (long long)signedValue;
 - (id)stringValue;
 - (int)type;
 - (id)typeAsString:(int)arg1;

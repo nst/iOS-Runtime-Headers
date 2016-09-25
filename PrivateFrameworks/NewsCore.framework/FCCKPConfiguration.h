@@ -3,8 +3,8 @@
  */
 
 @interface FCCKPConfiguration : PBCodable <NSCopying> {
-    unsigned int  _created;
-    unsigned int  _expires;
+    unsigned long long  _created;
+    unsigned long long  _expires;
     NSMutableArray * _fields;
     struct { 
         unsigned int created : 1; 
@@ -12,8 +12,8 @@
     }  _has;
 }
 
-@property (nonatomic) unsigned int created;
-@property (nonatomic) unsigned int expires;
+@property (nonatomic) unsigned long long created;
+@property (nonatomic) unsigned long long expires;
 @property (nonatomic, retain) NSMutableArray *fields;
 @property (nonatomic) BOOL hasCreated;
 @property (nonatomic) BOOL hasExpires;
@@ -22,11 +22,11 @@
 - (void)clearFields;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)created;
+- (unsigned long long)created;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)expires;
+- (unsigned long long)expires;
 - (id)fields;
 - (id)fieldsAtIndex:(unsigned int)arg1;
 - (unsigned int)fieldsCount;
@@ -36,8 +36,8 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (void)setCreated:(unsigned int)arg1;
-- (void)setExpires:(unsigned int)arg1;
+- (void)setCreated:(unsigned long long)arg1;
+- (void)setExpires:(unsigned long long)arg1;
 - (void)setFields:(id)arg1;
 - (void)setHasCreated:(BOOL)arg1;
 - (void)setHasExpires:(BOOL)arg1;

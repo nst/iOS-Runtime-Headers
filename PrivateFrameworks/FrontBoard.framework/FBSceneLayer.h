@@ -6,7 +6,7 @@
     int  _alignment;
     unsigned int  _contextID;
     NSString * _externalSceneID;
-    double  _level;
+    float  _level;
     unsigned int  _sceneID;
     int  _type;
 }
@@ -18,7 +18,7 @@
 @property (nonatomic, copy) NSString *externalSceneID;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) unsigned int identifier;
-@property (nonatomic) double level;
+@property (nonatomic) float level;
 @property (nonatomic) unsigned int sceneID;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) int type;

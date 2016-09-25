@@ -15,8 +15,8 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } intrinsicSize;
-@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } opticalInsets;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } intrinsicSize;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } opticalInsets;
 @property (nonatomic) BOOL showSeconds;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UIColor *textColor;
@@ -34,9 +34,9 @@
 - (id)effectiveFont;
 - (void)enumerateUnderlyingLabelsWithBlock:(id /* block */)arg1;
 - (id)initWithTimeFormatter:(id)arg1 options:(unsigned int)arg2 labelFactory:(id /* block */)arg3;
-- (struct CGSize { double x1; double x2; })intrinsicSize;
+- (struct CGSize { float x1; float x2; })intrinsicSize;
 - (void)layoutSubviews;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })opticalInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })opticalInsets;
 - (void)setAnimationsPaused:(BOOL)arg1;
 - (void)setMaxWidth:(float)arg1;
 - (void)setShowSeconds:(BOOL)arg1;
@@ -44,7 +44,7 @@
 - (void)setStyle:(id)arg1;
 - (void)setTextColor:(id)arg1;
 - (BOOL)showSeconds;
-- (struct CGSize { double x1; double x2; })sizeThatFits;
+- (struct CGSize { float x1; float x2; })sizeThatFits;
 - (void)sizeViewToFit;
 - (id)textColor;
 - (void)timeFormatterReportingLiveTimeDidChange:(id)arg1;

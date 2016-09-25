@@ -3,16 +3,16 @@
  */
 
 @interface NSDataDetector : NSRegularExpression {
-    unsigned int  _types;
+    unsigned long long  _types;
 }
 
-@property (readonly) unsigned int checkingTypes;
+@property (readonly) unsigned long long checkingTypes;
 
-+ (id)dataDetectorWithTypes:(unsigned int)arg1 error:(id*)arg2;
++ (id)dataDetectorWithTypes:(unsigned long long)arg1 error:(id*)arg2;
 + (void)initialize;
 + (BOOL)supportsSecureCoding;
 
-- (unsigned int)checkingTypes;
+- (unsigned long long)checkingTypes;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
@@ -20,7 +20,7 @@
 - (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithPattern:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
-- (id)initWithTypes:(unsigned int)arg1 error:(id*)arg2;
+- (id)initWithTypes:(unsigned long long)arg1 error:(id*)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)numberOfCaptureGroups;
 - (unsigned int)options;

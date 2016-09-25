@@ -4,7 +4,7 @@
 
 @interface HKDateZoomScale : NSObject <HKZoomScale> {
     int  _previousZoom;
-    double  _previousZoomScale;
+    float  _previousZoomScale;
     HKValueRange * _valueRange;
 }
 
@@ -22,6 +22,6 @@
 - (void)setValueRange:(id)arg1;
 - (id)valueRange;
 - (int)zoomForZoomScale:(float)arg1;
-- (float)zoomScaleForRange:(struct HKRange { double x1; double x2; })arg1;
+- (float)zoomScaleForRange:(struct HKRange { float x1; float x2; })arg1;
 
 @end

@@ -8,8 +8,8 @@
     NSArray * _previewHTMLStrings;
     NSArray * _previewStyleSheets;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _size;
     BOOL  _zoomed;
 }
@@ -18,10 +18,10 @@
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSArray *previewHTMLStrings;
 @property (nonatomic, retain) NSArray *previewStyleSheets;
-@property (nonatomic) struct CGSize { double x1; double x2; } size;
+@property (nonatomic) struct CGSize { float x1; float x2; } size;
 @property (getter=isZoomed, nonatomic) BOOL zoomed;
 
-+ (id)magnifyModeWithSize:(struct CGSize { double x1; double x2; })arg1 name:(id)arg2 localizedName:(id)arg3 isZoomed:(BOOL)arg4;
++ (id)magnifyModeWithSize:(struct CGSize { float x1; float x2; })arg1 name:(id)arg2 localizedName:(id)arg3 isZoomed:(BOOL)arg4;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -37,8 +37,8 @@
 - (void)setName:(id)arg1;
 - (void)setPreviewHTMLStrings:(id)arg1;
 - (void)setPreviewStyleSheets:(id)arg1;
-- (void)setSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setZoomed:(BOOL)arg1;
-- (struct CGSize { double x1; double x2; })size;
+- (struct CGSize { float x1; float x2; })size;
 
 @end

@@ -7,8 +7,8 @@
     BOOL  _hasValidFallbackImage;
     NSString * _resourceName;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _size;
     NSString * _text;
     NSURL * _url;
@@ -19,7 +19,7 @@
 @property (nonatomic, readonly) int badgeType;
 @property (nonatomic, readonly) UIImage *fallbackImage;
 @property (nonatomic, readonly) NSString *resourceName;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } size;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;
 
 - (void).cxx_destruct;
 - (id)URL;
@@ -30,6 +30,6 @@
 - (id)fallbackImage;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
 - (id)resourceName;
-- (struct CGSize { double x1; double x2; })size;
+- (struct CGSize { float x1; float x2; })size;
 
 @end

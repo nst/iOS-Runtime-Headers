@@ -106,7 +106,7 @@
 - (id)_briefDescription;
 - (BOOL)_canExcludeOtherExcludables;
 - (void)_cancelRecognition;
-- (struct CGPoint { double x1; double x2; })_centroidOfTouches:(id)arg1 excludingEnded:(BOOL)arg2;
+- (struct CGPoint { float x1; float x2; })_centroidOfTouches:(id)arg1 excludingEnded:(BOOL)arg2;
 - (void)_clearDelayedPresses;
 - (void)_clearDelayedTouches;
 - (void)_connectInterfaceBuilderEventConnection:(id)arg1;
@@ -202,8 +202,8 @@
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 - (BOOL)isEnabled;
 - (double)lastTouchTimestamp;
-- (struct CGPoint { double x1; double x2; })locationInView:(id)arg1;
-- (struct CGPoint { double x1; double x2; })locationOfTouch:(unsigned int)arg1 inView:(id)arg2;
+- (struct CGPoint { float x1; float x2; })locationInView:(id)arg1;
+- (struct CGPoint { float x1; float x2; })locationOfTouch:(unsigned int)arg1 inView:(id)arg2;
 - (unsigned int)numberOfTouches;
 - (void)pressesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)pressesCancelled:(id)arg1 withEvent:(id)arg2;
@@ -246,17 +246,17 @@
 
 // Image: /System/Library/PrivateFrameworks/AnnotationKit.framework/AnnotationKit
 
-- (struct CGPoint { double x1; double x2; })akLocationInWindow;
+- (struct CGPoint { float x1; float x2; })akLocationInWindow;
 - (unsigned int)akNumberOfTouches;
 
 // Image: /System/Library/PrivateFrameworks/HomeUI.framework/HomeUI
 
-- (struct CGPoint { double x1; double x2; })hu_locationInGlobalCoordinateSpace;
+- (struct CGPoint { float x1; float x2; })hu_locationInGlobalCoordinateSpace;
 
 // Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
 
 - (void)px_cancel;
-- (struct CGPoint { double x1; double x2; })px_locationInCoordinateSpace:(id)arg1;
+- (struct CGPoint { float x1; float x2; })px_locationInCoordinateSpace:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/SlideshowKit.framework/Frameworks/OpusFoundation.framework/OpusFoundation
 

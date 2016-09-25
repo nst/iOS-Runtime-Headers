@@ -75,7 +75,7 @@
 + (id)mf_edgeToEdgeImageAttachmentStyle;
 
 - (void)mf_applyEdgeToEdgeStyleWithViewportWidth:(float)arg1;
-- (void)mf_constrainImageToSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)mf_constrainImageToSize:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)mf_isEdgeToEdgeFormatted;
 - (BOOL)mf_shouldFormatEdgeToEdge;
 - (void)mf_unconstrainImageSize;

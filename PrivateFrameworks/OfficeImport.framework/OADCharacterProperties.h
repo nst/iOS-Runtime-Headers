@@ -3,7 +3,7 @@
  */
 
 @interface OADCharacterProperties : OADProperties <OADEffectsParent> {
-    double  mBaseline;
+    float  mBaseline;
     NSString * mBidiFont;
     unsigned char  mCaps;
     OADHyperlink * mClickHyperlink;
@@ -41,9 +41,9 @@
     unsigned int  mIsVerticalText;
     int  mLanguage;
     NSString * mLatinFont;
-    double  mOpacity;
-    double  mSize;
-    double  mSpacing;
+    float  mOpacity;
+    float  mSize;
+    float  mSpacing;
     unsigned char  mStrikeThroughType;
     OADStroke * mStroke;
     NSString * mSymbolFont;

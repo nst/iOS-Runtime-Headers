@@ -6,7 +6,7 @@
     id * _classInfos;
     unsigned int  _classInfosCount;
     unsigned int  _internalizedCount;
-    struct _VMUBlockNode { unsigned int x1; unsigned int x2 : 3; unsigned int x3 : 2; unsigned int x4 : 36; unsigned int x5 : 23; } * _internalizedNodes;
+    struct _VMUBlockNode { unsigned long long x1; unsigned int x2 : 3; unsigned int x3 : 2; unsigned int x4 : 36; unsigned int x5 : 23; } * _internalizedNodes;
     VMUClassInfoMap * _knownClassInfos;
     id /* block */  _nodeProvider;
     VMUObjectGraph * _referenceGraph;
@@ -25,10 +25,10 @@
 + (void)initialize;
 
 - (void)_modifyDerivativeGraphCount:(int)arg1;
-- (struct { unsigned int x1; unsigned int x2; unsigned int x3; })_rawReferenceInfoWithName:(unsigned int)arg1;
+- (struct { unsigned long long x1; unsigned int x2; unsigned long long x3; })_rawReferenceInfoWithName:(unsigned int)arg1;
 - (void)_refineTypesWithOverlay:(id)arg1;
 - (void)_renameWithNodeMap:(unsigned int*)arg1 nodeNamespace:(unsigned int)arg2 edgeMap:(unsigned int*)arg3 edgeNamespace:(unsigned int)arg4;
-- (unsigned int)addEdgeFromNode:(unsigned int)arg1 sourceOffset:(unsigned int)arg2 withScanType:(unsigned int)arg3 toNode:(unsigned int)arg4 destinationOffset:(unsigned int)arg5;
+- (unsigned int)addEdgeFromNode:(unsigned int)arg1 sourceOffset:(unsigned long long)arg2 withScanType:(unsigned int)arg3 toNode:(unsigned int)arg4 destinationOffset:(unsigned long long)arg5;
 - (unsigned int)addEdgeFromNode:(unsigned int)arg1 toNode:(unsigned int)arg2;
 - (void)archiveDictionaryRepresentation:(id)arg1 options:(unsigned int)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -41,10 +41,10 @@
 - (id)indexedClassInfos;
 - (id)initWithArchived:(id)arg1 version:(int)arg2 options:(unsigned int)arg3;
 - (id)initWithNodeCount:(unsigned int)arg1 nodeProvider:(id /* block */)arg2;
-- (id)initWithNodesNoCopy:(struct _VMUBlockNode { unsigned int x1; unsigned int x2 : 3; unsigned int x3 : 2; unsigned int x4 : 36; unsigned int x5 : 23; }*)arg1 nodeCount:(unsigned int)arg2;
+- (id)initWithNodesNoCopy:(struct _VMUBlockNode { unsigned long long x1; unsigned int x2 : 3; unsigned int x3 : 2; unsigned int x4 : 36; unsigned int x5 : 23; }*)arg1 nodeCount:(unsigned int)arg2;
 - (void)internalizeNodes;
-- (/* Warning: unhandled struct encoding: '{?=Qb60b4@}' */ struct { unsigned int x1; unsigned int x2 : 60; unsigned int x3 : 4; id x4; })nodeDetails:(unsigned int)arg1;
-- (struct { unsigned int x1; unsigned int x2; unsigned int x3; })referenceInfoWithName:(unsigned int)arg1;
+- (/* Warning: unhandled struct encoding: '{?=Qb60b4@}' */ struct { unsigned long long x1; unsigned int x2 : 60; unsigned int x3 : 4; id x4; })nodeDetails:(unsigned int)arg1;
+- (struct { unsigned long long x1; unsigned int x2; unsigned long long x3; })referenceInfoWithName:(unsigned int)arg1;
 - (void)setIndexedClassInfos:(id)arg1;
 
 @end

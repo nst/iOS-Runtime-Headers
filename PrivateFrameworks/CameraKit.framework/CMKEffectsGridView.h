@@ -8,8 +8,8 @@
     NSDictionary * __gridFilters;
     struct __CVPixelBufferPool { } * _pixelBufferPool;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _pixelBufferPoolSize;
     struct OpaqueVTPixelTransferSession { } * _pixelTransferSession;
     BOOL  _square;
@@ -24,7 +24,7 @@
 - (void).cxx_destruct;
 - (unsigned int)_cellCount;
 - (unsigned int)_cellsPerRow;
-- (struct __CVBuffer { }*)_createPixelBufferForSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct __CVBuffer { }*)_createPixelBufferForSize:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)_fetchingGridFilters;
 - (unsigned int)_filterIndexForGridIndex:(unsigned int)arg1;
 - (id)_gridFilters;
@@ -36,14 +36,14 @@
 - (void)_setFetchingGridFilters:(BOOL)arg1;
 - (void)_setGridFilters:(id)arg1;
 - (void)_setupGridFiltersIfNecessary;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_squareCropFromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)_updatePixelBufferPoolForSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_squareCropFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_updatePixelBufferPoolForSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)dealloc;
-- (unsigned int)filterIndexForPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (unsigned int)filterIndexForPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)filterIndices;
 - (BOOL)isBlackAndWhite;
 - (BOOL)isSquare;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rectForFilterIndex:(unsigned int)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForFilterIndex:(unsigned int)arg1;
 - (void)renderPixelBuffer:(struct __CVBuffer { }*)arg1 ciContext:(id)arg2 mirrorRendering:(BOOL)arg3;
 - (void)setBlackAndWhite:(BOOL)arg1;
 - (void)setSquare:(BOOL)arg1;

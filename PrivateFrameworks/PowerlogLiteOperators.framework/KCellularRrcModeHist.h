@@ -60,7 +60,7 @@
     unsigned int  _idleDurBin7;
     unsigned int  _idleDurBin8;
     unsigned int  _idleDurBin9;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) unsigned int connDurBin0;
@@ -118,7 +118,7 @@
 @property (nonatomic) unsigned int idleDurBin7;
 @property (nonatomic) unsigned int idleDurBin8;
 @property (nonatomic) unsigned int idleDurBin9;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 
 - (unsigned int)connDurBin0;
 - (unsigned int)connDurBin1;
@@ -238,8 +238,8 @@
 - (void)setIdleDurBin7:(unsigned int)arg1;
 - (void)setIdleDurBin8:(unsigned int)arg1;
 - (void)setIdleDurBin9:(unsigned int)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
-- (unsigned int)timestamp;
+- (void)setTimestamp:(unsigned long long)arg1;
+- (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 
 @end

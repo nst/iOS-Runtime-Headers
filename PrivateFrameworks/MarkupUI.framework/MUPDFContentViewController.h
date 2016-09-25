@@ -6,10 +6,10 @@
     BOOL  _constraintsAreHorizontal;
     BOOL  _didSetup;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _edgeInsets;
     BOOL  _forcesPDFViewTopAlignment;
     BOOL  _navigationModeHorizontal;
@@ -26,11 +26,11 @@
     BOOL  _viewIsTransitioningBetweenSizes;
     PDFPage * _viewTransitionPageToCenter;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _viewTransitionPointOnPageToCenter;
     BOOL  _viewTransitionPreviousAutoscalingState;
-    double  _viewTransitionPreviousScale;
+    float  _viewTransitionPreviousScale;
 }
 
 @property (nonatomic) BOOL centersIgnoringContentInsets;
@@ -39,7 +39,7 @@
 @property (readonly, copy) NSString *description;
 @property BOOL didSetup;
 @property (nonatomic, readonly) NSString *documentUnlockedWithPassword;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } edgeInsets;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
 @property (nonatomic) BOOL forcesPDFViewTopAlignment;
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL navigationModeHorizontal;
@@ -57,18 +57,18 @@
 @property (retain) NSLayoutConstraint *thumbnailViewHolderRevealConstraint;
 @property BOOL viewIsTransitioningBetweenSizes;
 @property PDFPage *viewTransitionPageToCenter;
-@property struct CGPoint { double x1; double x2; } viewTransitionPointOnPageToCenter;
+@property struct CGPoint { float x1; float x2; } viewTransitionPointOnPageToCenter;
 @property BOOL viewTransitionPreviousAutoscalingState;
-@property double viewTransitionPreviousScale;
+@property float viewTransitionPreviousScale;
 
 - (void).cxx_destruct;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })_compensatingAffineTransformForPage:(id)arg1;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_compensatingAffineTransformForPage:(id)arg1;
 - (void)_createPDFView;
 - (void)_installOverlayForPageView:(id)arg1 ofPage:(id)arg2 atIndex:(unsigned int)arg3;
 - (void)_loadContentForAnnotationController:(id)arg1;
-- (struct CGPoint { double x1; double x2; })_maximumContentOffset;
-- (struct CGSize { double x1; double x2; })_medianSizeForCurrentDocumentInPDFViewWithGetter:(id /* block */)arg1;
-- (struct CGPoint { double x1; double x2; })_minimumContentOffset;
+- (struct CGPoint { float x1; float x2; })_maximumContentOffset;
+- (struct CGSize { float x1; float x2; })_medianSizeForCurrentDocumentInPDFViewWithGetter:(id /* block */)arg1;
+- (struct CGPoint { float x1; float x2; })_minimumContentOffset;
 - (void)_prepareToRotate;
 - (void)_recoverFromRotation;
 - (void)_teardownPDFViewIfNecessary;
@@ -83,28 +83,28 @@
 - (id)characterIndexesForQuadPoints:(id)arg1 onPageAtIndex:(unsigned int)arg2;
 - (void)clearHighlightableSelection;
 - (BOOL)constraintsAreHorizontal;
-- (struct CGSize { double x1; double x2; })contentSize;
+- (struct CGSize { float x1; float x2; })contentSize;
 - (id)contentSnapshot;
-- (struct CGPoint { double x1; double x2; })convertPoint:(struct CGPoint { double x1; double x2; })arg1 fromModelToOverlayWithPageIndex:(unsigned int)arg2;
-- (struct CGPoint { double x1; double x2; })convertPoint:(struct CGPoint { double x1; double x2; })arg1 fromOverlayToModelWithPageIndex:(unsigned int)arg2;
+- (struct CGPoint { float x1; float x2; })convertPoint:(struct CGPoint { float x1; float x2; })arg1 fromModelToOverlayWithPageIndex:(unsigned int)arg2;
+- (struct CGPoint { float x1; float x2; })convertPoint:(struct CGPoint { float x1; float x2; })arg1 fromOverlayToModelWithPageIndex:(unsigned int)arg2;
 - (void)dealloc;
 - (void)didEnterToolMode;
 - (void)didExitToolMode;
 - (BOOL)didSetup;
 - (id)documentUnlockedWithPassword;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })edgeInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
 - (BOOL)forcesPDFViewTopAlignment;
 - (BOOL)hasHighlightableSelection;
 - (void)highlight:(id)arg1;
 - (id)highlightableSelectionCharacterIndexesOnPageAtIndex:(unsigned int)arg1;
-- (struct CGSize { double x1; double x2; })idealContentSizeForScreenSize:(struct CGSize { double x1; double x2; })arg1 windowDecorationSize:(struct CGSize { double x1; double x2; })arg2;
+- (struct CGSize { float x1; float x2; })idealContentSizeForScreenSize:(struct CGSize { float x1; float x2; })arg1 windowDecorationSize:(struct CGSize { float x1; float x2; })arg2;
 - (id)initWithPDFDocument:(id)arg1 andPDFReader:(id)arg2 annotationController:(id)arg3;
 - (id)layerContainingQuickBackgroundForLoupeOnOverlayAtPageIndex:(unsigned int)arg1;
 - (void)loadDocumentWithCompletionHandler:(id /* block */)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })maxPageRectWithPageIndex:(unsigned int)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })maxPageRectWithPageIndex:(unsigned int)arg1;
 - (id)menuItems:(id)arg1 forPage:(id)arg2;
 - (BOOL)navigationModeHorizontal;
-- (id)newContentSnapshotPDFDataIncludingAdornments:(BOOL)arg1 atScale:(float)arg2 inRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 onOverlayAtPageIndex:(unsigned int)arg4;
+- (id)newContentSnapshotPDFDataIncludingAdornments:(BOOL)arg1 atScale:(float)arg2 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 onOverlayAtPageIndex:(unsigned int)arg4;
 - (unsigned int)pageCount;
 - (id)pageLabelView;
 - (id)pdfDocument;
@@ -118,7 +118,7 @@
 - (id)quadPointsForCharacterIndexes:(id)arg1 onPageAtIndex:(unsigned int)arg2;
 - (void)setConstraintsAreHorizontal:(BOOL)arg1;
 - (void)setDidSetup:(BOOL)arg1;
-- (void)setEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setForcesPDFViewTopAlignment:(BOOL)arg1;
 - (void)setNavigationModeHorizontal:(BOOL)arg1;
 - (void)setPageLabelView:(id)arg1;
@@ -132,13 +132,13 @@
 - (void)setThumbnailViewHolderRevealConstraint:(id)arg1;
 - (void)setViewIsTransitioningBetweenSizes:(BOOL)arg1;
 - (void)setViewTransitionPageToCenter:(id)arg1;
-- (void)setViewTransitionPointOnPageToCenter:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setViewTransitionPointOnPageToCenter:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setViewTransitionPreviousAutoscalingState:(BOOL)arg1;
 - (void)setViewTransitionPreviousScale:(float)arg1;
 - (void)setup;
 - (BOOL)shouldDetectFormElements;
-- (BOOL)shouldPlaceFormElementAtPoint:(struct CGPoint { double x1; double x2; })arg1 onOverlayAtPageIndex:(unsigned int)arg2;
-- (BOOL)shouldPlaceProposedFormElementAtRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 onOverlayAtPageIndex:(unsigned int)arg2;
+- (BOOL)shouldPlaceFormElementAtPoint:(struct CGPoint { float x1; float x2; })arg1 onOverlayAtPageIndex:(unsigned int)arg2;
+- (BOOL)shouldPlaceProposedFormElementAtRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 onOverlayAtPageIndex:(unsigned int)arg2;
 - (BOOL)shouldShowAnnotationsOfType:(id)arg1;
 - (BOOL)showsThumbnailView;
 - (id)sourceContentReplacedAnnotationMaps;
@@ -152,12 +152,12 @@
 - (void)viewDidLoad;
 - (BOOL)viewIsTransitioningBetweenSizes;
 - (id)viewTransitionPageToCenter;
-- (struct CGPoint { double x1; double x2; })viewTransitionPointOnPageToCenter;
+- (struct CGPoint { float x1; float x2; })viewTransitionPointOnPageToCenter;
 - (BOOL)viewTransitionPreviousAutoscalingState;
 - (float)viewTransitionPreviousScale;
-- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })visibleContentRect;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })visibleContentRectInCoordinateSpace:(id)arg1;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleContentRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleContentRectInCoordinateSpace:(id)arg1;
 - (void)willPlaceSingleShotAnnotation:(id)arg1 onProposedPageModelController:(id*)arg2;
 
 @end

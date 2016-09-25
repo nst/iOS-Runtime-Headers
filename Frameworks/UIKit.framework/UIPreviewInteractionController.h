@@ -15,8 +15,8 @@
     UIInteractionProgress * _interactionProgressForPresentation;
     BOOL  _isCommitting;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _location;
     UIPanGestureRecognizer * _modalPanGestureRecognizer;
     UIViewController * _presentingViewController;
@@ -43,7 +43,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) UIInteractionProgress *interactionProgressForCommit;
 @property (nonatomic, retain) UIInteractionProgress *interactionProgressForPresentation;
-@property (nonatomic) struct CGPoint { double x1; double x2; } location;
+@property (nonatomic) struct CGPoint { float x1; float x2; } location;
 @property (nonatomic, retain) UIPanGestureRecognizer *modalPanGestureRecognizer;
 @property (nonatomic, readonly) UIGestureRecognizer *presentationGestureRecognizer;
 @property (nonatomic) UIViewController *presentingViewController;
@@ -70,7 +70,7 @@
 - (void)_resetCustomPresentationHooks;
 - (void)_setCalloutBarHidden:(BOOL)arg1;
 - (void)_setStatusBarHidden:(BOOL)arg1;
-- (id)_transitionDelegateForPreviewViewController:(id)arg1 atPosition:(struct CGPoint { double x1; double x2; })arg2 inView:(id)arg3;
+- (id)_transitionDelegateForPreviewViewController:(id)arg1 atPosition:(struct CGPoint { float x1; float x2; })arg2 inView:(id)arg3;
 - (void)_turnOffFeedbackBehavior;
 - (void)_turnOnFeedbackBehavior;
 - (BOOL)_usesPreviewInteraction;
@@ -79,8 +79,8 @@
 - (id)beginPreviewGestureRecognizer;
 - (void)cancelInteractivePreview;
 - (void)commitInteractivePreview;
-- (BOOL)configureRevealTransformSourceViewSnapshotSuppressionFromLocation:(struct CGPoint { double x1; double x2; })arg1 inView:(id)arg2;
-- (void)configureRevealTransformWithInteractionProgress:(id)arg1 forLocation:(struct CGPoint { double x1; double x2; })arg2 inView:(id)arg3 containerView:(id)arg4;
+- (BOOL)configureRevealTransformSourceViewSnapshotSuppressionFromLocation:(struct CGPoint { float x1; float x2; })arg1 inView:(id)arg2;
+- (void)configureRevealTransformWithInteractionProgress:(id)arg1 forLocation:(struct CGPoint { float x1; float x2; })arg2 inView:(id)arg3 containerView:(id)arg4;
 - (id)currentCommitTransition;
 - (id)currentPresentationController;
 - (id)currentPreviewViewController;
@@ -103,7 +103,7 @@
 - (void)interactionProgressDidUpdate:(id)arg1;
 - (id)interactionProgressForCommit;
 - (id)interactionProgressForPresentation;
-- (struct CGPoint { double x1; double x2; })location;
+- (struct CGPoint { float x1; float x2; })location;
 - (id)modalPanGestureRecognizer;
 - (id)presentationGestureRecognizer;
 - (id)presentingViewController;
@@ -123,7 +123,7 @@
 - (void)setFeedbackBehavior:(id)arg1;
 - (void)setInteractionProgressForCommit:(id)arg1;
 - (void)setInteractionProgressForPresentation:(id)arg1;
-- (void)setLocation:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setModalPanGestureRecognizer:(id)arg1;
 - (void)setPresentingViewController:(id)arg1;
 - (void)setPreviewGestureRecognizer:(id)arg1;
@@ -134,7 +134,7 @@
 - (void)setTouchObservingGestureRecognizer:(id)arg1;
 - (void)setWindowForPreviewPresentation:(id)arg1;
 - (id)sourceView;
-- (BOOL)startInteractivePreviewAtLocation:(struct CGPoint { double x1; double x2; })arg1 inView:(id)arg2;
+- (BOOL)startInteractivePreviewAtLocation:(struct CGPoint { float x1; float x2; })arg1 inView:(id)arg2;
 - (BOOL)startInteractivePreviewWithGestureRecognizer:(id)arg1;
 - (BOOL)statusBarWasHidden;
 - (id)touchObservingGestureRecognizer;

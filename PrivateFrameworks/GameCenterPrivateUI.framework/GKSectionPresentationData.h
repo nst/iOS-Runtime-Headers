@@ -3,38 +3,38 @@
  */
 
 @interface GKSectionPresentationData : NSObject {
-    double  _footerMaxY;
-    double  _footerMinY;
-    double  _headerMaxY;
-    double  _headerMinY;
-    double  _itemsMaxY;
-    double  _itemsMinY;
-    double  _maxY;
-    double  _minY;
+    float  _footerMaxY;
+    float  _footerMinY;
+    float  _headerMaxY;
+    float  _headerMinY;
+    float  _itemsMaxY;
+    float  _itemsMinY;
+    float  _maxY;
+    float  _minY;
     unsigned int  _numFooters;
     unsigned int  _numHeaders;
     unsigned int  _numItems;
     unsigned int  _numOverlays;
     unsigned int  _overlayOffset;
     int  _section;
-    double  _showMoreMaxY;
+    float  _showMoreMaxY;
 }
 
-@property (nonatomic) double footerMaxY;
-@property (nonatomic) double footerMinY;
-@property (nonatomic) double headerMaxY;
-@property (nonatomic) double headerMinY;
-@property (nonatomic) double itemsMaxY;
-@property (nonatomic) double itemsMinY;
-@property (nonatomic) double maxY;
-@property (nonatomic) double minY;
+@property (nonatomic) float footerMaxY;
+@property (nonatomic) float footerMinY;
+@property (nonatomic) float headerMaxY;
+@property (nonatomic) float headerMinY;
+@property (nonatomic) float itemsMaxY;
+@property (nonatomic) float itemsMinY;
+@property (nonatomic) float maxY;
+@property (nonatomic) float minY;
 @property (nonatomic) unsigned int numFooters;
 @property (nonatomic) unsigned int numHeaders;
 @property (nonatomic) unsigned int numItems;
 @property (nonatomic) unsigned int numOverlays;
 @property (nonatomic) unsigned int overlayOffset;
 @property (nonatomic) int section;
-@property (nonatomic) double showMoreMaxY;
+@property (nonatomic) float showMoreMaxY;
 
 - (id)description;
 - (float)footerMaxY;

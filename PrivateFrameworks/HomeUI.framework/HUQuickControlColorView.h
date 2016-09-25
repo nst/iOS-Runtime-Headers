@@ -4,7 +4,7 @@
 
 @interface HUQuickControlColorView : UIView <HUQuickControlColorPaletteViewInteractionDelegate, HUQuickControlColorPickerViewInteractionDelegate, HUQuickControlInteractiveView> {
     unsigned int  _activeMode;
-    double  _circleRadius;
+    float  _circleRadius;
     HFColorPalette * _colorPalette;
     HUColorPaletteView * _colorPaletteView;
     HUQuickControlSegmentedControl * _colorPickerModeSegmentedControl;
@@ -19,7 +19,7 @@
 
 @property (nonatomic) unsigned int activeMode;
 @property (nonatomic, readonly) UIView<HUQuickControlInteractiveView> *activeView;
-@property (nonatomic) double circleRadius;
+@property (nonatomic) float circleRadius;
 @property (nonatomic, retain) HFColorPalette *colorPalette;
 @property (nonatomic, retain) HUColorPaletteView *colorPaletteView;
 @property (nonatomic, retain) HUQuickControlSegmentedControl *colorPickerModeSegmentedControl;
@@ -61,7 +61,7 @@
 - (void)controlView:(id)arg1 colorPickerModeDidChange:(unsigned int)arg2;
 - (void)controlView:(id)arg1 interactionStateDidChange:(BOOL)arg2 forFirstTouch:(BOOL)arg3;
 - (void)controlView:(id)arg1 valueDidChange:(id)arg2;
-- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)initWithProfile:(id)arg1;
 - (id)initWithProfile:(id)arg1 colorPalette:(id)arg2;
 - (id)interactionDelegate;

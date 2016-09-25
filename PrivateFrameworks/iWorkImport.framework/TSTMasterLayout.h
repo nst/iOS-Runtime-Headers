@@ -11,21 +11,21 @@
     unsigned short  mCachedNumberOfFooterRows;
     unsigned short  mCachedNumberOfHeaderColumns;
     unsigned short  mCachedNumberOfHeaderRows;
-    double  mCachedTableNameHeight;
+    float  mCachedTableNameHeight;
     TSTWPColumnCache * mCellIDToWPColumnCache;
     TSTCellRegion * mCellRegionForClearedMergeStrokes;
     NSMutableArray * mChangeDescriptors;
     TSKChangeNotifier * mChangeNotifier;
     TSTStrokeWidthCache * mColumnToStrokeWidthCache;
     TSTDupContentCache * mDupContentCache;
-    double  mDynamicAddOrRemoveColumnElementSize;
-    double  mDynamicAddOrRemoveRowElementSize;
+    float  mDynamicAddOrRemoveColumnElementSize;
+    float  mDynamicAddOrRemoveRowElementSize;
     BOOL  mDynamicBandedFill;
     BOOL  mDynamicBandedFillSetting;
     <TSTLayoutDynamicCellFillProtocol> * mDynamicCellFillDelegate;
     int  mDynamicColumnAdjustment;
     <TSTLayoutDynamicColumnMoveProtocol> * mDynamicColumnMoveDelegate;
-    double  mDynamicColumnTabSize;
+    float  mDynamicColumnTabSize;
     <TSTLayoutDynamicContentProtocol> * mDynamicContentDelegate;
     TSUColor * mDynamicFontColor;
     struct TSUCellRect { 
@@ -39,7 +39,7 @@
             unsigned short numberOfRows; 
         } size; 
     }  mDynamicFontColorCellRange;
-    double  mDynamicHeightResize;
+    float  mDynamicHeightResize;
     struct TSUCellRect { 
         struct TSUCellCoord { 
             unsigned short row; 
@@ -80,7 +80,7 @@
     BOOL  mDynamicRepressFrozenHeaderColumns;
     BOOL  mDynamicRepressFrozenHeaderRows;
     TSTLayoutDynamicResizeInfo * mDynamicResizeInfo;
-    double  mDynamicResizingColumnAdjustment;
+    float  mDynamicResizingColumnAdjustment;
     struct TSUCellRect { 
         struct TSUCellCoord { 
             unsigned short row; 
@@ -93,7 +93,7 @@
         } size; 
     }  mDynamicResizingColumnRange;
     BOOL  mDynamicResizingColumns;
-    double  mDynamicResizingRowAdjustment;
+    float  mDynamicResizingRowAdjustment;
     struct TSUCellRect { 
         struct TSUCellCoord { 
             unsigned short row; 
@@ -120,7 +120,7 @@
     int  mDynamicRevealingRowsColsDirection;
     int  mDynamicRowAdjustment;
     <TSTLayoutDynamicRowMoveProtocol> * mDynamicRowMoveDelegate;
-    double  mDynamicRowTabSize;
+    float  mDynamicRowTabSize;
     TSDLayoutGeometry * mDynamicSavedLayoutGeometry;
     TSTCellSelection * mDynamicSelection;
     struct TSUCellCoord { 
@@ -128,8 +128,8 @@
         unsigned char column; 
         unsigned char reserved; 
     }  mDynamicSuppressingConditionalStylesCellID;
-    double  mDynamicTableNameResize;
-    double  mDynamicWidthResize;
+    float  mDynamicTableNameResize;
+    float  mDynamicWidthResize;
     BOOL  mEmptyFilteredTable;
     BOOL  mHeaderColumnsFrozen;
     BOOL  mHeaderColumnsRepeat;
@@ -143,8 +143,8 @@
     NSLock * mLock;
     unsigned int  mMaxConcurrentTasks;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  mMaximumPartitionSize;
     TSTMergeRangeSortedSet * mMergeRanges;
     unsigned int  mNumCellsPerTask;
@@ -159,18 +159,18 @@
         long __sig; 
         BOOL __opaque[124]; 
     }  mStrokesRWLock;
-    double  mTableDefaultFontHeightForArea;
+    float  mTableDefaultFontHeightForArea;
     BOOL  mTableDefaultFontHeightsAreValid;
     int  mTableEnvironment;
     TSTTableInfo * mTableInfo;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  mTableNameBounds;
     BOOL  mTableNameEnabled;
@@ -188,36 +188,36 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) TSTDupContentCache *dupContentCache;
-@property (nonatomic, readonly) double dynamicAddOrRemoveColumnElementSize;
-@property (nonatomic, readonly) double dynamicAddOrRemoveRowElementSize;
+@property (nonatomic, readonly) float dynamicAddOrRemoveColumnElementSize;
+@property (nonatomic, readonly) float dynamicAddOrRemoveRowElementSize;
 @property (nonatomic, readonly) BOOL dynamicBandedFill;
 @property (nonatomic, readonly) BOOL dynamicBandedFillSetting;
 @property (nonatomic, readonly) <TSTLayoutDynamicCellFillProtocol> *dynamicCellFillDelegate;
 @property (nonatomic, readonly) int dynamicColumnAdjustment;
 @property (nonatomic, readonly) <TSTLayoutDynamicColumnMoveProtocol> *dynamicColumnMoveDelegate;
-@property (nonatomic, readonly) double dynamicColumnTabSize;
+@property (nonatomic, readonly) float dynamicColumnTabSize;
 @property (nonatomic, readonly) <TSTLayoutDynamicContentProtocol> *dynamicContentDelegate;
 @property (nonatomic, readonly) TSUColor *dynamicFontColor;
 @property (nonatomic, readonly) struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; } dynamicFontColorCellRange;
-@property (nonatomic) double dynamicHeightResize;
+@property (nonatomic) float dynamicHeightResize;
 @property (nonatomic, readonly) TSDInfoGeometry *dynamicInfoGeometry;
 @property (nonatomic, readonly) TSTLayout *dynamicLayout;
 @property (nonatomic, readonly) NSMutableSet *dynamicLayoutParticipants;
 @property (nonatomic) BOOL dynamicRepResize;
-@property (nonatomic, readonly) double dynamicResizingColumnAdjustment;
+@property (nonatomic, readonly) float dynamicResizingColumnAdjustment;
 @property (nonatomic, readonly) struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; } dynamicResizingColumnRange;
 @property (nonatomic, readonly) BOOL dynamicResizingColumns;
-@property (nonatomic, readonly) double dynamicResizingRowAdjustment;
+@property (nonatomic, readonly) float dynamicResizingRowAdjustment;
 @property (nonatomic, readonly) struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; } dynamicResizingRowRange;
 @property (nonatomic, readonly) BOOL dynamicResizingRows;
 @property (nonatomic, readonly) int dynamicRowAdjustment;
 @property (nonatomic, readonly) <TSTLayoutDynamicRowMoveProtocol> *dynamicRowMoveDelegate;
-@property (nonatomic, readonly) double dynamicRowTabSize;
+@property (nonatomic, readonly) float dynamicRowTabSize;
 @property (nonatomic, copy) TSDLayoutGeometry *dynamicSavedLayoutGeometry;
 @property (nonatomic, readonly) TSTCellSelection *dynamicSelection;
 @property (nonatomic, readonly) struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; } dynamicSuppressingConditionalStylesCellID;
-@property (nonatomic, readonly) double dynamicTableNameResize;
-@property (nonatomic) double dynamicWidthResize;
+@property (nonatomic, readonly) float dynamicTableNameResize;
+@property (nonatomic) float dynamicWidthResize;
 @property (nonatomic, readonly) BOOL emptyFilteredTable;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) NSIndexSet *hiddenColumnIndices;
@@ -226,7 +226,7 @@
 @property (getter=isInDynamicLayoutMode, nonatomic, readonly) BOOL inDynamicLayoutMode;
 @property (nonatomic, readonly) BOOL isGrouped;
 @property (nonatomic) unsigned int maxConcurrentTasks;
-@property (nonatomic) struct CGSize { double x1; double x2; } maximumPartitionSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } maximumPartitionSize;
 @property (nonatomic, retain) TSTMergeRangeSortedSet *mergeRanges;
 @property (nonatomic) unsigned int numCellsPerTask;
 @property (nonatomic, readonly) unsigned short numberOfColumns;
@@ -249,7 +249,7 @@
 
 + (float)effectiveTableNameHeightForModel:(id)arg1;
 + (id)tableNameTextEngine:(id)arg1;
-+ (struct CGSize { double x1; double x2; })tableNameTextSize:(id)arg1;
++ (struct CGSize { float x1; float x2; })tableNameTextSize:(id)arg1;
 + (int)tableRowsBehaviorForTable:(id)arg1 andEnvironment:(int)arg2;
 
 - (id)accountingParagraphStylePropertyMapForCell:(id)arg1 atCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
@@ -277,7 +277,7 @@
 - (BOOL)containsAnyContentInRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
 - (id)customStrokeProvider;
 - (void)dealloc;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })defaultPaddingForCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })defaultPaddingForCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
 - (id)description;
 - (id)dupContentCache;
 - (float)dynamicAddOrRemoveColumnElementSize;
@@ -310,7 +310,7 @@
 - (struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })dynamicSuppressingConditionalStylesCellID;
 - (float)dynamicTableNameResize;
 - (float)dynamicWidthResize;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })edgeInsetsFromPadding:(id)arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsetsFromPadding:(id)arg1;
 - (BOOL)emptyFilteredTable;
 - (void)enumerateMergedStrokesAndCapsForGridColumn:(unsigned int)arg1 from:(unsigned int)arg2 to:(unsigned int)arg3 usingBlock:(id /* block */)arg4;
 - (void)enumerateMergedStrokesAndCapsForGridRow:(unsigned int)arg1 from:(unsigned int)arg2 to:(unsigned int)arg3 usingBlock:(id /* block */)arg4;
@@ -373,7 +373,7 @@
 - (unsigned char)layoutColumnForModelColumn:(unsigned char)arg1;
 - (unsigned short)layoutRowForModelRow:(unsigned short)arg1;
 - (unsigned int)maxConcurrentTasks;
-- (struct CGSize { double x1; double x2; })maximumPartitionSize;
+- (struct CGSize { float x1; float x2; })maximumPartitionSize;
 - (void)measureTextForLayoutState:(id)arg1;
 - (id)mergeRanges;
 - (id)mergeRangesProppingRowHeightsInRegion:(id)arg1;
@@ -413,7 +413,7 @@
 - (id)p_validationFittingCellRegionForRowsInserted:(id)arg1 currentRegionToValidate:(id)arg2;
 - (id)p_validationFittingCellRegionForStrokesChanged:(id)arg1 currentRegionToValidate:(id)arg2;
 - (id)p_validationFittingForChangeDescriptorType:(int)arg1 regionFromChangeDescriptor:(id)arg2 currentRegionToValidate:(id)arg3;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })paddingForCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })paddingForCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
 - (BOOL)processHiddenRowsForExport;
 - (void)processLayoutTask:(id)arg1;
 - (void)queueCellForValidation:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1 cell:(id)arg2 modelMergeRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg3 wrap:(BOOL)arg4 verticalAlignment:(int)arg5 padding:(id)arg6 prop:(BOOL)arg7 layoutCacheFlags:(int)arg8 layoutTask:(id)arg9;
@@ -427,7 +427,7 @@
 - (void)setDynamicSavedLayoutGeometry:(id)arg1;
 - (void)setDynamicWidthResize:(float)arg1;
 - (void)setMaxConcurrentTasks:(unsigned int)arg1;
-- (void)setMaximumPartitionSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setMaximumPartitionSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setMergeRanges:(id)arg1;
 - (void)setNumCellsPerTask:(unsigned int)arg1;
 - (void)setProcessHiddenRowsForExport:(BOOL)arg1;
@@ -447,7 +447,7 @@
 - (id)tableModel;
 - (float)tableNameHeight;
 - (id)tableNameTextEngine;
-- (struct CGSize { double x1; double x2; })tableNameTextSize;
+- (struct CGSize { float x1; float x2; })tableNameTextSize;
 - (int)tableRowsBehavior;
 - (id)tableStrokeProvider;
 - (id)tempWPColumnCache;

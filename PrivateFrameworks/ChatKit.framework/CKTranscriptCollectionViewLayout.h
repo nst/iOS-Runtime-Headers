@@ -3,11 +3,11 @@
  */
 
 @interface CKTranscriptCollectionViewLayout : UICollectionViewLayout {
-    double  _anchorYPosition;
+    float  _anchorYPosition;
     NSArray * _associatedLayoutAttributes;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _contentSize;
     NSArray * _decorationLayoutAttributes;
     CADisplayLink * _displayLink;
@@ -25,25 +25,25 @@
     double  _prevTimestamp;
     BOOL  _shouldDisplayLinkInvalidateLayout;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _targetContentOffset;
     BOOL  _useInitialLayoutAttributesForRotation;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _visibleBounds;
 }
 
-@property (nonatomic) double anchorYPosition;
+@property (nonatomic) float anchorYPosition;
 @property (nonatomic, copy) NSArray *associatedLayoutAttributes;
-@property (nonatomic) struct CGSize { double x1; double x2; } contentSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } contentSize;
 @property (nonatomic, copy) NSArray *decorationLayoutAttributes;
 @property (nonatomic, retain) CADisplayLink *displayLink;
 @property (nonatomic) BOOL easingUp;
@@ -57,9 +57,9 @@
 @property (nonatomic, copy) NSArray *oldAssociatedLayoutAttributes;
 @property (nonatomic) double prevTimestamp;
 @property (nonatomic) BOOL shouldDisplayLinkInvalidateLayout;
-@property (nonatomic) struct CGPoint { double x1; double x2; } targetContentOffset;
+@property (nonatomic) struct CGPoint { float x1; float x2; } targetContentOffset;
 @property (getter=isUsingInitialLayoutAttributesForRotation, nonatomic) BOOL useInitialLayoutAttributesForRotation;
-@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } visibleBounds;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } visibleBounds;
 
 + (Class)layoutAttributesClass;
 + (int)translateLayoutIndexToEffectIndex:(int)arg1;
@@ -69,8 +69,8 @@
 - (id)associatedLayoutAttributes;
 - (float)bezierPointForPercentage:(float)arg1 anchor1:(float)arg2 anchor2:(float)arg3 control1:(float)arg4 control2:(float)arg5;
 - (void)clearParentInitialIndexesAndFinalOffsets;
-- (struct CGSize { double x1; double x2; })collectionViewContentSize;
-- (struct CGSize { double x1; double x2; })contentSize;
+- (struct CGSize { float x1; float x2; })collectionViewContentSize;
+- (struct CGSize { float x1; float x2; })contentSize;
 - (void)dealloc;
 - (id)decorationLayoutAttributes;
 - (id)displayLink;
@@ -90,7 +90,7 @@
 - (BOOL)isUsingInitialLayoutAttributesForRotation;
 - (id)layoutAttributes;
 - (id)layoutAttributesForDecorationViewOfKind:(id)arg1 atIndexPath:(id)arg2;
-- (id)layoutAttributesForElementsInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)layoutAttributesForElementsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;
 - (id)oldAssociatedLayoutAttributes;
 - (void)prepareLayout;
@@ -100,7 +100,7 @@
 - (void)reloadData;
 - (void)setAnchorYPosition:(float)arg1;
 - (void)setAssociatedLayoutAttributes:(id)arg1;
-- (void)setContentSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setDecorationLayoutAttributes:(id)arg1;
 - (void)setDisplayLink:(id)arg1;
 - (void)setEasingUp:(BOOL)arg1;
@@ -115,18 +115,18 @@
 - (void)setOldAssociatedLayoutAttributes:(id)arg1;
 - (void)setPrevTimestamp:(double)arg1;
 - (void)setShouldDisplayLinkInvalidateLayout:(BOOL)arg1;
-- (void)setTargetContentOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setTargetContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setUseInitialLayoutAttributesForRotation:(BOOL)arg1;
 - (void)setVerticalOffset:(float)arg1 forParentOfAssociatedItemDeletedAtIndex:(unsigned int)arg2;
-- (void)setVisibleBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setVisibleBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)shouldDisplayLinkInvalidateLayout;
-- (BOOL)shouldInvalidateLayoutForBoundsChange:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (struct CGPoint { double x1; double x2; })targetContentOffset;
+- (BOOL)shouldInvalidateLayoutForBoundsChange:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGPoint { float x1; float x2; })targetContentOffset;
 - (void)updateAssociatedLayoutAttributesIfNecessary;
 - (void)updateAttributesForAnchorYChangeWithAttributes:(id)arg1;
 - (void)updateAttributesForTargetContentOffsetChangeWithAttributes:(id)arg1;
 - (void)updateContentSize;
 - (void)updateFrames;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })visibleBounds;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleBounds;
 
 @end

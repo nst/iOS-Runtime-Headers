@@ -3,12 +3,12 @@
  */
 
 @interface TSWPHeaderRep : TSWPRep {
-    double  _leftClip;
-    double  _rightClip;
+    float  _leftClip;
+    float  _rightClip;
 }
 
-@property (nonatomic) double leftClip;
-@property (nonatomic) double rightClip;
+@property (nonatomic) float leftClip;
+@property (nonatomic) float rightClip;
 
 - (float)leftClip;
 - (float)rightClip;

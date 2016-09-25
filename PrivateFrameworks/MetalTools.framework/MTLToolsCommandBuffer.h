@@ -64,9 +64,9 @@
 - (id)renderCommandEncoderWithDescriptor:(id)arg1;
 - (id)renderCommandEncoders;
 - (BOOL)retainedReferences;
-- (id)sampledComputeCommandEncoderWithProgramInfoBuffer:(struct { unsigned int x1 : 8; unsigned int x2 : 24; unsigned int x3; unsigned int x4; unsigned int x5; }*)arg1 capacity:(unsigned int)arg2;
-- (id)sampledFragmentRenderCommandEncoderWithDescriptor:(id)arg1 programInfoBuffer:(struct { unsigned int x1 : 8; unsigned int x2 : 24; unsigned int x3; unsigned int x4; unsigned int x5; }*)arg2 capacity:(unsigned int)arg3;
-- (id)sampledRenderCommandEncoderWithDescriptor:(id)arg1 programInfoBuffer:(struct { unsigned int x1 : 8; unsigned int x2 : 24; unsigned int x3; unsigned int x4; unsigned int x5; }*)arg2 capacity:(unsigned int)arg3;
+- (id)sampledComputeCommandEncoderWithProgramInfoBuffer:(struct { unsigned int x1 : 8; unsigned int x2 : 24; unsigned int x3; unsigned long long x4; unsigned long long x5; }*)arg1 capacity:(unsigned int)arg2;
+- (id)sampledFragmentRenderCommandEncoderWithDescriptor:(id)arg1 programInfoBuffer:(struct { unsigned int x1 : 8; unsigned int x2 : 24; unsigned int x3; unsigned long long x4; unsigned long long x5; }*)arg2 capacity:(unsigned int)arg3;
+- (id)sampledRenderCommandEncoderWithDescriptor:(id)arg1 programInfoBuffer:(struct { unsigned int x1 : 8; unsigned int x2 : 24; unsigned int x3; unsigned long long x4; unsigned long long x5; }*)arg2 capacity:(unsigned int)arg3;
 - (void)setLabel:(id)arg1;
 - (void)setProfilingEnabled:(BOOL)arg1;
 - (unsigned int)status;

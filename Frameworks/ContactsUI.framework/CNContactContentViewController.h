@@ -76,7 +76,7 @@
     CNUIIDSAvailabilityProvider * _idsAvailabilityProvider;
     BOOL  _isMailVIP;
     NSMutableArray * _issuedSaveRequestIdentifiers;
-    double  _keyboardVerticalOverlap;
+    float  _keyboardVerticalOverlap;
     CNPropertyLinkedCardsAction * _linkedCardsAction;
     NSDictionary * _linkedPoliciesByContactIdentifier;
     CNMedicalIDAction * _medicalIDAction;
@@ -187,7 +187,7 @@
 @property (nonatomic) BOOL isMailVIP;
 @property (readonly) BOOL isPresentingModalViewController;
 @property (nonatomic, retain) NSMutableArray *issuedSaveRequestIdentifiers;
-@property (nonatomic) double keyboardVerticalOverlap;
+@property (nonatomic) float keyboardVerticalOverlap;
 @property (nonatomic, retain) CNPropertyLinkedCardsAction *linkedCardsAction;
 @property (nonatomic, retain) NSDictionary *linkedPoliciesByContactIdentifier;
 @property (nonatomic, retain) CNMedicalIDAction *medicalIDAction;
@@ -372,7 +372,7 @@
 - (int)contactView:(id)arg1 numberOfItemsInGroup:(id)arg2;
 - (void)contactViewController:(id)arg1 didDeleteContact:(id)arg2;
 - (BOOL)contactViewController:(id)arg1 shouldPerformDefaultActionForContact:(id)arg2 propertyKey:(id)arg3 propertyIdentifier:(id)arg4;
-- (float)contentOffsetYForGlobalHeaderHeight:(float)arg1 contentInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
+- (float)contentOffsetYForGlobalHeaderHeight:(float)arg1 contentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
 - (id)contentScrollView;
 - (void)contentSizeCategoryDidChange:(id)arg1;
 - (id)createNewContactAction;
@@ -401,7 +401,7 @@
 - (id)faceTimeAudioAction;
 - (id)faceTimeIDSRequest;
 - (id)fakeEditableContact;
-- (float)globalHeaderHeightForContentOffset:(float)arg1 contentInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
+- (float)globalHeaderHeightForContentOffset:(float)arg1 contentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
 - (Class)groupClassForProperty:(id)arg1;
 - (unsigned int)groupIndexFromTableViewSectionIndex:(unsigned int)arg1;
 - (id)groupsAfterGroup;
@@ -423,8 +423,8 @@
 - (id)initWithContact:(id)arg1 andContactStore:(id)arg2;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)initializeTableViewsForHeaderHeight;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })insetsForDisplayTableView:(id)arg1;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })insetsForEditingTableView:(id)arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })insetsForDisplayTableView:(id)arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })insetsForEditingTableView:(id)arg1;
 - (BOOL)isMailVIP;
 - (BOOL)isOutOfProcess;
 - (BOOL)isPresentingModalViewController;
@@ -473,14 +473,14 @@
 - (void)removeEditingItem:(id)arg1 atIndexPath:(id)arg2;
 - (void)removeFirstSectionHeaderViewControllerFromHierarchy;
 - (void)removeLinkedContact:(id)arg1;
-- (struct CGSize { double x1; double x2; })requiredSizeForVisibleTableView;
+- (struct CGSize { float x1; float x2; })requiredSizeForVisibleTableView;
 - (BOOL)saveChanges;
 - (id)saveCommand;
 - (id)saveLinkedContactChanges;
 - (void)saveModelChangesToContact;
 - (void)scrollScrollViewAllTheWayUp:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
-- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { double x1; double x2; })arg2 targetContentOffset:(inout struct CGPoint { double x1; double x2; }*)arg3;
+- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { float x1; float x2; })arg2 targetContentOffset:(inout struct CGPoint { float x1; float x2; }*)arg3;
 - (int)sectionOfGroupInTableView:(id)arg1;
 - (id)sendMessageAction;
 - (void)sender:(id)arg1 dismissViewController:(id)arg2;
@@ -642,7 +642,7 @@
 - (id)updateExistingContactAction;
 - (float)updateHeaderConstraintForGlobalHeaderHeight:(float)arg1 direction:(int)arg2 animated:(BOOL)arg3;
 - (void)updateHeaderHeightToMatchScrollViewState:(id)arg1 scrollDirection:(int)arg2 animated:(BOOL)arg3;
-- (void)updateTableView:(id)arg1 insetsTo:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
+- (void)updateTableView:(id)arg1 insetsTo:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
 - (void)updateUserActivityState:(id)arg1;
 - (void)updateViewConstraints;
 - (void)updateWithNewContact:(id)arg1;

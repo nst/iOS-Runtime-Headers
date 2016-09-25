@@ -17,7 +17,7 @@
 
 - (void).cxx_destruct;
 - (float)_edgeRegionSize;
-- (struct CGPoint { double x1; double x2; })_locationForTouch:(id)arg1;
+- (struct CGPoint { float x1; float x2; })_locationForTouch:(id)arg1;
 - (void)_setEdgeRegionSize:(float)arg1;
 - (void)_setHysteresis:(float)arg1;
 - (BOOL)_shouldTryToBeginWithEvent:(id)arg1;

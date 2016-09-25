@@ -7,14 +7,14 @@
     double  _fadeOutDuration;
     NSURL * _itemURL;
     int  _numberOfLoops;
-    double  _volume;
+    float  _volume;
 }
 
 @property (nonatomic, readonly) double fadeInDuration;
 @property (nonatomic, readonly) double fadeOutDuration;
 @property (nonatomic, readonly, copy) NSURL *itemURL;
 @property (nonatomic, readonly) int numberOfLoops;
-@property (nonatomic, readonly) double volume;
+@property (nonatomic, readonly) float volume;
 
 + (BOOL)supportsSecureCoding;
 

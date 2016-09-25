@@ -3,36 +3,36 @@
  */
 
 @interface _UIMotionAnalyzerSettings : _UISettings {
-    double  _delayBeforeIdle;
+    float  _delayBeforeIdle;
     BOOL  _directionalLockEnabled;
-    double  _directionalLockSharpness;
-    double  _directionalLockStickiness;
-    double  _directionalLockThreshold;
-    double  _idleLeeway;
-    double  _inputSmoothingFactor;
+    float  _directionalLockSharpness;
+    float  _directionalLockStickiness;
+    float  _directionalLockThreshold;
+    float  _idleLeeway;
+    float  _inputSmoothingFactor;
     BOOL  _jumpEnabled;
-    double  _jumpThreshold;
+    float  _jumpThreshold;
     BOOL  _playJumpSound;
-    double  _referenceShiftDistanceDependence;
+    float  _referenceShiftDistanceDependence;
     BOOL  _referenceShiftEnabled;
-    double  _referenceShiftSpeed;
+    float  _referenceShiftSpeed;
     BOOL  _showDirectionalLockIndicators;
     BOOL  _showIdleIndicator;
 }
 
-@property double delayBeforeIdle;
+@property float delayBeforeIdle;
 @property BOOL directionalLockEnabled;
-@property double directionalLockSharpness;
-@property double directionalLockStickiness;
-@property double directionalLockThreshold;
-@property double idleLeeway;
-@property double inputSmoothingFactor;
+@property float directionalLockSharpness;
+@property float directionalLockStickiness;
+@property float directionalLockThreshold;
+@property float idleLeeway;
+@property float inputSmoothingFactor;
 @property BOOL jumpEnabled;
-@property double jumpThreshold;
+@property float jumpThreshold;
 @property BOOL playJumpSound;
-@property double referenceShiftDistanceDependence;
+@property float referenceShiftDistanceDependence;
 @property BOOL referenceShiftEnabled;
-@property double referenceShiftSpeed;
+@property float referenceShiftSpeed;
 @property BOOL showDirectionalLockIndicators;
 @property BOOL showIdleIndicator;
 

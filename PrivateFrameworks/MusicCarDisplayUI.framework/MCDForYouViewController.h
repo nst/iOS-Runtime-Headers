@@ -10,7 +10,7 @@
     UINavigationController * _nowPlayingNavigationController;
     UIView * _placeholderView;
     MusicForYouRecommendationsResponse * _recommendationsResponse;
-    double  _screenScale;
+    float  _screenScale;
     NSIndexPath * _selectedIndexPath;
 }
 
@@ -24,7 +24,7 @@
 @property (nonatomic, retain) UINavigationController *nowPlayingNavigationController;
 @property (nonatomic, retain) UIView *placeholderView;
 @property (nonatomic, retain) MusicForYouRecommendationsResponse *recommendationsResponse;
-@property (nonatomic) double screenScale;
+@property (nonatomic) float screenScale;
 @property (nonatomic, retain) NSIndexPath *selectedIndexPath;
 @property (readonly) Class superclass;
 

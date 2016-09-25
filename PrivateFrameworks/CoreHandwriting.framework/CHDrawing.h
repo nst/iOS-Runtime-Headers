@@ -27,10 +27,10 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)addPoint:(struct CGPoint { double x1; double x2; })arg1;
-- (struct Matrix<float> { int (**x1)(); double *x2; unsigned int x3; unsigned int x4; })bitmapRepresentationForSize:(struct CGSize { double x1; double x2; })arg1;
-- (struct Matrix<float> { int (**x1)(); double *x2; unsigned int x3; unsigned int x4; })bitmapRepresentationForSize:(struct CGSize { double x1; double x2; })arg1 drawingAlgorithm:(int)arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })bounds;
+- (void)addPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (struct Matrix<float> { int (**x1)(); float *x2; unsigned int x3; unsigned int x4; })bitmapRepresentationForSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct Matrix<float> { int (**x1)(); float *x2; unsigned int x3; unsigned int x4; })bitmapRepresentationForSize:(struct CGSize { float x1; float x2; })arg1 drawingAlgorithm:(int)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
 - (void)clear;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (struct CJKChar { struct vector<std::__1::vector<double, std::__1::allocator<double> >, std::__1::allocator<std::__1::vector<double, std::__1::allocator<double> > > > { struct vector<double, std::__1::allocator<double> > {} *x_1_1_1; struct vector<double, std::__1::allocator<double> > {} *x_1_1_2; struct __compressed_pair<std::__1::vector<double, std::__1::allocator<double> > *, std::__1::allocator<std::__1::vector<double, std::__1::allocator<double> > > > { struct vector<double, std::__1::allocator<double> > {} *x_3_2_1; } x_1_1_3; } x1; unsigned int x2; unsigned int x3; struct Matrix<double> { int (**x_4_1_1)(); double *x_4_1_2; unsigned int x_4_1_3; unsigned int x_4_1_4; } x4; double x5; })drawing;
@@ -38,10 +38,10 @@
 - (id)initWithContentsOfFile:(id)arg1;
 - (BOOL)isPrefixForDrawing:(id)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })matchingStrokePrefixRangeForDrawing:(id)arg1;
-- (struct Matrix<float> { int (**x1)(); double *x2; unsigned int x3; unsigned int x4; })orientationRepresentationForSampling:(unsigned int)arg1 convolutionWidth:(unsigned int)arg2;
+- (struct Matrix<float> { int (**x1)(); float *x2; unsigned int x3; unsigned int x4; })orientationRepresentationForSampling:(unsigned int)arg1 convolutionWidth:(unsigned int)arg2;
 - (unsigned int)pointCount;
 - (unsigned int)pointCountForStrokeIndex:(unsigned int)arg1;
-- (struct CGPoint { double x1; double x2; })pointForStrokeIndex:(unsigned int)arg1 pointIndex:(unsigned int)arg2;
+- (struct CGPoint { float x1; float x2; })pointForStrokeIndex:(unsigned int)arg1 pointIndex:(unsigned int)arg2;
 - (void)setDrawing:(struct CJKChar { struct vector<std::__1::vector<double, std::__1::allocator<double> >, std::__1::allocator<std::__1::vector<double, std::__1::allocator<double> > > > { struct vector<double, std::__1::allocator<double> > {} *x_1_1_1; struct vector<double, std::__1::allocator<double> > {} *x_1_1_2; struct __compressed_pair<std::__1::vector<double, std::__1::allocator<double> > *, std::__1::allocator<std::__1::vector<double, std::__1::allocator<double> > > > { struct vector<double, std::__1::allocator<double> > {} *x_3_2_1; } x_1_1_3; } x1; unsigned int x2; unsigned int x3; struct Matrix<double> { int (**x_4_1_1)(); double *x_4_1_2; unsigned int x_4_1_3; unsigned int x_4_1_4; } x4; double x5; })arg1;
 - (void)setLineHeight:(double)arg1;
 - (id)sortedDrawing;

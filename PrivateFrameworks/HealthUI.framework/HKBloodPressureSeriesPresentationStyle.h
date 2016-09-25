@@ -5,25 +5,25 @@
 @interface HKBloodPressureSeriesPresentationStyle : NSObject {
     UIColor * _arrowColor;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _arrowSize;
-    double  _arrowStrokeWidth;
+    float  _arrowStrokeWidth;
     UIColor * _fillColor;
 }
 
 @property (nonatomic, retain) UIColor *arrowColor;
-@property (nonatomic) struct CGSize { double x1; double x2; } arrowSize;
-@property (nonatomic) double arrowStrokeWidth;
+@property (nonatomic) struct CGSize { float x1; float x2; } arrowSize;
+@property (nonatomic) float arrowStrokeWidth;
 @property (nonatomic, retain) UIColor *fillColor;
 
 - (void).cxx_destruct;
 - (id)arrowColor;
-- (struct CGSize { double x1; double x2; })arrowSize;
+- (struct CGSize { float x1; float x2; })arrowSize;
 - (float)arrowStrokeWidth;
 - (id)fillColor;
 - (void)setArrowColor:(id)arg1;
-- (void)setArrowSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setArrowSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setArrowStrokeWidth:(float)arg1;
 - (void)setFillColor:(id)arg1;
 

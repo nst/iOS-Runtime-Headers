@@ -20,7 +20,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) int threeStarRatingCount;
 @property (nonatomic, readonly) int twoStarRatingCount;
-@property (nonatomic, readonly) double userRating;
+@property (nonatomic, readonly) float userRating;
 @property (nonatomic, readonly) NSURL *writeReviewURL;
 
 - (void).cxx_destruct;

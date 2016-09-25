@@ -6,15 +6,15 @@
     unsigned int  _sequenceNumber;
     double  _sessionCreationTime;
     struct GEOSessionID { 
-        unsigned int _high; 
-        unsigned int _low; 
+        unsigned long long _high; 
+        unsigned long long _low; 
     }  _sessionID;
 }
 
 @property (nonatomic) unsigned int sequenceNumber;
 @property double sessionCreationTime;
 @property (nonatomic, readonly) NSString *sessionEntityString;
-@property struct GEOSessionID { unsigned int x1; unsigned int x2; } sessionID;
+@property struct GEOSessionID { unsigned long long x1; unsigned long long x2; } sessionID;
 @property (nonatomic, readonly) NSNumber *sessionIDHigh;
 @property (nonatomic, readonly) NSString *sessionIDHighString;
 @property (nonatomic, readonly) NSNumber *sessionIDLow;
@@ -27,12 +27,12 @@
 - (id)description;
 - (id)init;
 - (id)initWithSessionEntityString:(id)arg1;
-- (id)initWithSessionID:(struct GEOSessionID { unsigned int x1; unsigned int x2; })arg1 sessionCreationTime:(double)arg2 sequenceNumber:(unsigned int)arg3;
+- (id)initWithSessionID:(struct GEOSessionID { unsigned long long x1; unsigned long long x2; })arg1 sessionCreationTime:(double)arg2 sequenceNumber:(unsigned int)arg3;
 - (unsigned int)rawSequenceNumber;
 - (unsigned int)sequenceNumber;
 - (double)sessionCreationTime;
 - (id)sessionEntityString;
-- (struct GEOSessionID { unsigned int x1; unsigned int x2; })sessionID;
+- (struct GEOSessionID { unsigned long long x1; unsigned long long x2; })sessionID;
 - (id)sessionIDHigh;
 - (id)sessionIDHighString;
 - (id)sessionIDLow;
@@ -42,7 +42,7 @@
 - (id)sessionUUIDString;
 - (void)setSequenceNumber:(unsigned int)arg1;
 - (void)setSessionCreationTime:(double)arg1;
-- (void)setSessionID:(struct GEOSessionID { unsigned int x1; unsigned int x2; })arg1;
+- (void)setSessionID:(struct GEOSessionID { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)updateSessionIDFromUUIDString:(id)arg1;
 - (void)updateWithSessionEntityString:(id)arg1;
 

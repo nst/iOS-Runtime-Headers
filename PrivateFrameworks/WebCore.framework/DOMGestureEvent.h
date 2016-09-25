@@ -7,8 +7,8 @@
 @property (readonly) BOOL altKey;
 @property (readonly) BOOL ctrlKey;
 @property (readonly) BOOL metaKey;
-@property (readonly) double rotation;
-@property (readonly) double scale;
+@property (readonly) float rotation;
+@property (readonly) float scale;
 @property (readonly) BOOL shiftKey;
 @property (readonly) <DOMEventTarget> *target;
 

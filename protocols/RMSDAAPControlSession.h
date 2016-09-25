@@ -5,7 +5,7 @@
 
 @required
 
-- (void)addToWishlist:(void *)arg1 databaseID:(void *)arg2 completionHandler:(void *)arg3; // needs 3 arg types, found 8: unsigned int, unsigned int, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, void*
+- (void)addToWishlist:(void *)arg1 databaseID:(void *)arg2 completionHandler:(void *)arg3; // needs 3 arg types, found 8: unsigned long long, unsigned long long, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, void*
 - (void)beginObservingNowPlaying;
 - (void)connectToService:(void *)arg1 pairingGUID:(void *)arg2 completionHandler:(void *)arg3; // needs 3 arg types, found 9: RMSService *, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, RMSControlInterface *, void*
 - (<RMSDAAPControlSessionDelegate> *)delegate;
@@ -19,7 +19,7 @@
 - (void)sendTouchMoveWithDirection:(int)arg1 repeatCount:(unsigned long)arg2;
 - (RMSService *)service;
 - (void)setDelegate:(id <RMSDAAPControlSessionDelegate>)arg1;
-- (void)setLikedState:(void *)arg1 itemID:(void *)arg2 databaseID:(void *)arg3 completionHandler:(void *)arg4; // needs 4 arg types, found 9: int, unsigned int, unsigned int, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, void*
+- (void)setLikedState:(void *)arg1 itemID:(void *)arg2 databaseID:(void *)arg3 completionHandler:(void *)arg4; // needs 4 arg types, found 9: int, unsigned long long, unsigned long long, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, void*
 - (void)setVolume:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 7: float, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, void*
 
 @end

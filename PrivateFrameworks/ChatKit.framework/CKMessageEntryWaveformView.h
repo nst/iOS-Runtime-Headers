@@ -7,7 +7,7 @@
     UIVisualEffectView * _blurView;
     double  _duration;
     unsigned int  _maxPowerLevelsCount;
-    double  _minTimeLabelWidth;
+    float  _minTimeLabelWidth;
     NSMutableArray * _powerLevels;
     UILabel * _timeLabel;
     UIImageView * _waveformImageView;
@@ -17,7 +17,7 @@
 @property (nonatomic, retain) UIVisualEffectView *blurView;
 @property (nonatomic) double duration;
 @property (nonatomic) unsigned int maxPowerLevelsCount;
-@property (nonatomic) double minTimeLabelWidth;
+@property (nonatomic) float minTimeLabelWidth;
 @property (nonatomic, retain) NSMutableArray *powerLevels;
 @property (nonatomic, retain) UILabel *timeLabel;
 @property (nonatomic, retain) UIImageView *waveformImageView;
@@ -31,7 +31,7 @@
 - (void)clearPowerLevels;
 - (void)didMoveToWindow;
 - (double)duration;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (unsigned int)maxPowerLevelsCount;
 - (float)minTimeLabelWidth;
@@ -44,7 +44,7 @@
 - (void)setPowerLevels:(id)arg1;
 - (void)setTimeLabel:(id)arg1;
 - (void)setWaveformImageView:(id)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)timeLabel;
 - (void)updateWaveform;
 - (id)waveformImageView;

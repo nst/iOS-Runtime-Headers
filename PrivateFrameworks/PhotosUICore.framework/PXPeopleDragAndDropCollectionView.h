@@ -33,7 +33,7 @@
 - (void)animateDropToFavoriteSection:(id /* block */)arg1;
 - (void)animateDropToFavoriteShelf:(id /* block */)arg1;
 - (BOOL)animatingFavorite;
-- (BOOL)beginInteractiveMovementAtLocation:(struct CGPoint { double x1; double x2; })arg1 forItemAtIndexPath:(id)arg2;
+- (BOOL)beginInteractiveMovementAtLocation:(struct CGPoint { float x1; float x2; })arg1 forItemAtIndexPath:(id)arg2;
 - (id)blurEffect;
 - (void)cancelInteractiveMovement;
 - (id)dragDestIndexPath;
@@ -51,7 +51,7 @@
 - (void)reloadData;
 - (void)removeFavoriteShelf;
 - (void)resetTransformForSourceIndex:(id)arg1;
-- (int)sectionAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (int)sectionAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setAnimatingFavorite:(BOOL)arg1;
 - (void)setBlurEffect:(id)arg1;
 - (void)setDragDestIndexPath:(id)arg1;
@@ -61,10 +61,10 @@
 - (void)setFavoriteShelfView:(id)arg1;
 - (void)setInteractiveMode:(BOOL)arg1;
 - (void)setValidDrop:(BOOL)arg1;
-- (struct CGSize { double x1; double x2; })shelfSize;
+- (struct CGSize { float x1; float x2; })shelfSize;
 - (void)showFavoriteShelfIfNeeded;
 - (id)sortedIndexPathsForSelectedItems;
-- (void)updateInteractiveMovementTargetPosition:(struct CGPoint { double x1; double x2; })arg1;
+- (void)updateInteractiveMovementTargetPosition:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)validDrop;
 
 @end

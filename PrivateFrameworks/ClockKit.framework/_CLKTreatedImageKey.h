@@ -5,12 +5,12 @@
 @interface _CLKTreatedImageKey : NSObject <NSCopying> {
     BOOL  _maskToCircle;
     UIImage * _rawImage;
-    double  _scale;
+    float  _scale;
 }
 
 @property (nonatomic, readonly) BOOL maskToCircle;
 @property (nonatomic, readonly) UIImage *rawImage;
-@property (nonatomic, readonly) double scale;
+@property (nonatomic, readonly) float scale;
 
 + (id)keyWithRawImage:(id)arg1 scale:(float)arg2 mask:(BOOL)arg3;
 

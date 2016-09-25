@@ -24,7 +24,7 @@
 @property (nonatomic) BOOL needsPersistenceUpdate;
 @property (nonatomic) BOOL pending;
 @property (nonatomic, retain) NSData *photosGraphData;
-@property (nonatomic) int photosGraphVersion;
+@property (nonatomic) long long photosGraphVersion;
 @property (nonatomic) BOOL rejected;
 @property (nonatomic, retain) NSSet *representativeAssets;
 @property (nonatomic) double score;

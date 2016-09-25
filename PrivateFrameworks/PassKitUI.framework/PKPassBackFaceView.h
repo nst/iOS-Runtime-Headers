@@ -74,7 +74,7 @@
 - (id)_updateLabelAttributedStringWithDate:(id)arg1;
 - (id)_updateLabelAttributedStringWithString:(id)arg1;
 - (void)_wifiChanged:(id)arg1;
-- (struct CGSize { double x1; double x2; })contentSize;
+- (struct CGSize { float x1; float x2; })contentSize;
 - (void)createBodyInvariantViews;
 - (void)dealloc;
 - (BOOL)deleteEnabled;

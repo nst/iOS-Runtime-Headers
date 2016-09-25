@@ -4,17 +4,17 @@
 
 @interface VSInstrumentMetrics : NSObject <NSSecureCoding> {
     BOOL  _isWarmStart;
-    unsigned int  _requestCreatedTimestamp;
-    unsigned int  _speechBeginTimestamp;
-    unsigned int  _speechEndTimestamp;
+    unsigned long long  _requestCreatedTimestamp;
+    unsigned long long  _speechBeginTimestamp;
+    unsigned long long  _speechEndTimestamp;
     NSString * _utterance;
     NSString * _voiceAssetKey;
 }
 
 @property BOOL isWarmStart;
-@property unsigned int requestCreatedTimestamp;
-@property unsigned int speechBeginTimestamp;
-@property unsigned int speechEndTimestamp;
+@property unsigned long long requestCreatedTimestamp;
+@property unsigned long long speechBeginTimestamp;
+@property unsigned long long speechEndTimestamp;
 @property (copy) NSString *utterance;
 @property (copy) NSString *voiceAssetKey;
 
@@ -24,15 +24,15 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isWarmStart;
-- (unsigned int)requestCreatedTimestamp;
+- (unsigned long long)requestCreatedTimestamp;
 - (void)setIsWarmStart:(BOOL)arg1;
-- (void)setRequestCreatedTimestamp:(unsigned int)arg1;
-- (void)setSpeechBeginTimestamp:(unsigned int)arg1;
-- (void)setSpeechEndTimestamp:(unsigned int)arg1;
+- (void)setRequestCreatedTimestamp:(unsigned long long)arg1;
+- (void)setSpeechBeginTimestamp:(unsigned long long)arg1;
+- (void)setSpeechEndTimestamp:(unsigned long long)arg1;
 - (void)setUtterance:(id)arg1;
 - (void)setVoiceAssetKey:(id)arg1;
-- (unsigned int)speechBeginTimestamp;
-- (unsigned int)speechEndTimestamp;
+- (unsigned long long)speechBeginTimestamp;
+- (unsigned long long)speechEndTimestamp;
 - (id)utterance;
 - (id)voiceAssetKey;
 

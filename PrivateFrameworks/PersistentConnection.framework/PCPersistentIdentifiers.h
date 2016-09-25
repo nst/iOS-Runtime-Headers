@@ -5,7 +5,7 @@
 @interface PCPersistentIdentifiers : NSObject
 
 + (id)_processNamePrefix;
-+ (unsigned int)hostUniqueIdentifier;
++ (unsigned long long)hostUniqueIdentifier;
 + (int)pidFromMatchingIdentifer:(id)arg1;
 + (id)processNameAndPidIdentifier;
 + (id)processNamePidAndStringIdentifier:(id)arg1;

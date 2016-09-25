@@ -3,9 +3,9 @@
  */
 
 @interface CUIStyleEffectConfiguration : NSObject <NSCopying> {
-    double  _brightnessMultiplier;
+    float  _brightnessMultiplier;
     unsigned int  _colorTemperature;
-    double  _effectScale;
+    float  _effectScale;
     BOOL  _foregroundColorShouldTintEffects;
     int  _presentationState;
     int  _state;
@@ -13,9 +13,9 @@
     int  _value;
 }
 
-@property (nonatomic) double brightnessMultiplier;
+@property (nonatomic) float brightnessMultiplier;
 @property (nonatomic) unsigned int colorTemperature;
-@property (nonatomic) double effectScale;
+@property (nonatomic) float effectScale;
 @property (nonatomic) BOOL foregroundColorShouldTintEffects;
 @property (nonatomic) int presentationState;
 @property (nonatomic) int state;

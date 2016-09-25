@@ -44,7 +44,7 @@
 @property (nonatomic, retain) UINavigationController *contactViewNavigationController;
 @property (nonatomic, retain) NSArray *contacts;
 @property (nonatomic, readonly) UIImage *contentImage;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } contentImageFrame;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } contentImageFrame;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CNAvatarViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -69,11 +69,11 @@
 @property (nonatomic) BOOL showsContactOnTap;
 @property (readonly) Class superclass;
 @property (getter=isThreeDTouchEnabled, nonatomic) BOOL threeDTouchEnabled;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } transitioningContentFrame;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } transitioningContentFrame;
 @property (nonatomic, readonly) UIView *transitioningContentView;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } transitioningFrame;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } transitioningFrame;
 @property (nonatomic, readonly) UIImage *transitioningImage;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } transitioningImageFrame;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } transitioningImageFrame;
 @property BOOL transitioningImageVisible;
 @property (nonatomic, readonly) UIView *transitioningView;
 
@@ -92,7 +92,7 @@
 - (BOOL)asynchronousRendering;
 - (BOOL)autoUpdateContact;
 - (id)avatarCardController:(id)arg1 orderedPropertiesForProperties:(id)arg2 category:(id)arg3;
-- (int)avatarCardController:(id)arg1 presentationResultForLocation:(struct CGPoint { double x1; double x2; })arg2;
+- (int)avatarCardController:(id)arg1 presentationResultForLocation:(struct CGPoint { float x1; float x2; })arg2;
 - (BOOL)avatarCardController:(id)arg1 shouldShowContact:(id)arg2;
 - (void)avatarCardController:(id)arg1 willShowActions:(id)arg2;
 - (void)avatarCardControllerDidDismiss:(id)arg1;
@@ -106,7 +106,7 @@
 - (id)contactViewNavigationController;
 - (id)contacts;
 - (id)contentImage;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })contentImageFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentImageFrame;
 - (void)dealloc;
 - (id)delegate;
 - (id)descriptorForRequiredKeys;
@@ -119,7 +119,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithContact:(id)arg1;
 - (id)initWithContactStore:(id)arg1 personaStore:(id)arg2 threeDTouchEnabled:(BOOL)arg3;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithLikenessResolver:(id)arg1 threeDTouchEnabled:(BOOL)arg2;
 - (id)initWithSettings:(id)arg1;
 - (BOOL)isThreeDTouchEnabled;
@@ -174,11 +174,11 @@
 - (BOOL)showsActionsOnForcePress;
 - (BOOL)showsActionsOnTap;
 - (BOOL)showsContactOnTap;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })transitioningContentFrame;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })transitioningFrame;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })transitioningContentFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })transitioningFrame;
 - (id)transitioningImage;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })transitioningImageFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })transitioningImageFrame;
 - (BOOL)transitioningImageVisible;
 - (id)transitioningView;
 - (void)updateLikenessViewsWithCurrentSize;

@@ -3,42 +3,42 @@
  */
 
 @interface PTXParallaxEngineSettings : _UISettings {
-    double  _delayBeforeIdle;
+    float  _delayBeforeIdle;
     BOOL  _directionalLockEnabled;
-    double  _directionalLockSharpness;
-    double  _directionalLockStickiness;
-    double  _directionalLockThreshold;
+    float  _directionalLockSharpness;
+    float  _directionalLockStickiness;
+    float  _directionalLockThreshold;
     unsigned int  _frameInterval;
-    double  _idleLeeway;
-    double  _inputSmoothing;
+    float  _idleLeeway;
+    float  _inputSmoothing;
     BOOL  _jumpEnabled;
-    double  _jumpThreshold;
+    float  _jumpThreshold;
     BOOL  _playJumpSound;
-    double  _shiftDistanceDependence;
+    float  _shiftDistanceDependence;
     BOOL  _shiftEnabled;
-    double  _shiftSpeed;
+    float  _shiftSpeed;
     BOOL  _showDirectionalLockIndicators;
     BOOL  _showIdleIndicator;
-    double  _sigmoidDegree;
+    float  _sigmoidDegree;
 }
 
-@property double delayBeforeIdle;
+@property float delayBeforeIdle;
 @property BOOL directionalLockEnabled;
-@property double directionalLockSharpness;
-@property double directionalLockStickiness;
-@property double directionalLockThreshold;
+@property float directionalLockSharpness;
+@property float directionalLockStickiness;
+@property float directionalLockThreshold;
 @property unsigned int frameInterval;
-@property double idleLeeway;
-@property double inputSmoothing;
+@property float idleLeeway;
+@property float inputSmoothing;
 @property BOOL jumpEnabled;
-@property double jumpThreshold;
+@property float jumpThreshold;
 @property BOOL playJumpSound;
-@property double shiftDistanceDependence;
+@property float shiftDistanceDependence;
 @property BOOL shiftEnabled;
-@property double shiftSpeed;
+@property float shiftSpeed;
 @property BOOL showDirectionalLockIndicators;
 @property BOOL showIdleIndicator;
-@property double sigmoidDegree;
+@property float sigmoidDegree;
 
 + (id)settingsControllerModule;
 

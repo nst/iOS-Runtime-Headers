@@ -6,7 +6,7 @@
 @required
 
 - (BOOL)hasNextStopIDs;
-- (unsigned int)muid;
+- (unsigned long long)muid;
 - (NSSet *)nextStopIDs;
 
 @end

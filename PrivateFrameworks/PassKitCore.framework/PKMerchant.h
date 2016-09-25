@@ -8,7 +8,7 @@
     int  _industryCode;
     double  _locationLatitude;
     double  _locationLongitude;
-    unsigned int  _mapsIdentifier;
+    unsigned long long  _mapsIdentifier;
     NSString * _mapsName;
     NSString * _name;
     NSString * _phoneNumber;
@@ -24,7 +24,7 @@
 @property (nonatomic, copy) CLLocation *location;
 @property (nonatomic) double locationLatitude;
 @property (nonatomic) double locationLongitude;
-@property (nonatomic) unsigned int mapsIdentifier;
+@property (nonatomic) unsigned long long mapsIdentifier;
 @property (nonatomic, copy) NSString *mapsName;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *phoneNumber;
@@ -49,7 +49,7 @@
 - (id)location;
 - (double)locationLatitude;
 - (double)locationLongitude;
-- (unsigned int)mapsIdentifier;
+- (unsigned long long)mapsIdentifier;
 - (id)mapsName;
 - (id)name;
 - (id)phoneNumber;
@@ -60,7 +60,7 @@
 - (void)setLocation:(id)arg1;
 - (void)setLocationLatitude:(double)arg1;
 - (void)setLocationLongitude:(double)arg1;
-- (void)setMapsIdentifier:(unsigned int)arg1;
+- (void)setMapsIdentifier:(unsigned long long)arg1;
 - (void)setMapsName:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setPhoneNumber:(id)arg1;

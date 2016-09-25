@@ -27,11 +27,11 @@
 - (id)editingContentViewController;
 - (id)initWithEditModes:(id)arg1;
 - (BOOL)isTransitioningBetweenEditPages;
-- (struct CGPoint { double x1; double x2; })pageOffsetFromCenter:(int)arg1;
+- (struct CGPoint { float x1; float x2; })pageOffsetFromCenter:(int)arg1;
 - (void)removeAllKeylinesForEditMode:(int)arg1;
 - (void)selectKeylineForKey:(id)arg1 editMode:(int)arg2;
 - (void)setDelegate:(id)arg1;
-- (void)setDeselectedKeylineFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forKey:(id)arg2 editMode:(int)arg3;
+- (void)setDeselectedKeylineFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forKey:(id)arg2 editMode:(int)arg3;
 - (void)setEditMode:(int)arg1;
 - (void)setEditingContentViewController:(id)arg1 forEditMode:(int)arg2;
 - (void)setForEditMode:(int)arg1 gestureDidScrollHandler:(id /* block */)arg2;
@@ -41,7 +41,7 @@
 - (void)setForEditMode:(int)arg1 numberOfLisaValues:(unsigned int)arg2 currentValue:(unsigned int)arg3 valueHeight:(float)arg4 animated:(BOOL)arg5;
 - (void)setLabelAlignment:(unsigned int)arg1 forKey:(id)arg2 editMode:(int)arg3;
 - (void)setLabelText:(id)arg1 forKey:(id)arg2 editMode:(int)arg3;
-- (void)setSelectedKeylineFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forKey:(id)arg2 editMode:(int)arg3;
+- (void)setSelectedKeylineFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forKey:(id)arg2 editMode:(int)arg3;
 - (void)willActivate;
 - (void)willDeactivate;
 

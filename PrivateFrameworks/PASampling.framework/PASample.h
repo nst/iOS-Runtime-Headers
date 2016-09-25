@@ -21,7 +21,7 @@
 + (id)newInstanceWithoutReferencesFromBufferPosition:(const void*)arg1;
 
 - (void).cxx_destruct;
-- (id)_initWithSerializedData:(const struct { unsigned int x1; double x2; double x3; unsigned int x4; }*)arg1;
+- (id)_initWithSerializedData:(const struct { unsigned long long x1; double x2; double x3; unsigned long long x4; }*)arg1;
 - (void)addSampleTask:(id)arg1;
 - (BOOL)addSelfToBufferAtPosition:(void*)arg1 withCompletedSerializationDictionary:(struct NSMutableDictionary { Class x1; }*)arg2;
 - (void)addSelfToSerializationDictionary:(id)arg1;

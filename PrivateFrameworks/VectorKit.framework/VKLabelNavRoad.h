@@ -6,9 +6,9 @@
     BOOL  _areLabelsDisabled;
     BOOL  _cachedShieldVisibility;
     BOOL  _cachedSignVisibility;
-    struct { struct { id x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; unsigned int x_1_1_5; unsigned int x_1_1_6; unsigned int x_1_1_7; BOOL x_1_1_8; unsigned int x_1_1_9; double x_1_1_10; unsigned int x_1_1_11; id x_1_1_12; } x1; unsigned int x2; unsigned int x3; int x4; int x5; int x6; unsigned int x7; unsigned int x8; union { struct { struct { double x_1_3_1; double x_1_3_2; } x_1_2_1; struct { double x_2_3_1; double x_2_3_2; } x_1_2_2; } x_9_1_1; struct { double x_2_2_1; double x_2_2_2; double x_2_2_3; double x_2_2_4; } x_9_1_2; } x9; struct { /* ? */ } *x10; struct { unsigned short x_11_1_1[2]; unsigned short x_11_1_2[2]; } x11; unsigned char x12; BOOL x13; unsigned char x14; BOOL x15; BOOL x16; unsigned char x17; BOOL x18; unsigned char x19; struct _NSRange { unsigned int x_20_1_1; unsigned int x_20_1_2; } x20; BOOL x21; } * _data;
+    struct { struct { id x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; unsigned int x_1_1_5; unsigned int x_1_1_6; unsigned long long x_1_1_7; BOOL x_1_1_8; unsigned long long x_1_1_9; float x_1_1_10; unsigned long long x_1_1_11; id x_1_1_12; } x1; unsigned int x2; unsigned int x3; int x4; int x5; int x6; unsigned int x7; unsigned int x8; union { struct { struct { float x_1_3_1; float x_1_3_2; } x_1_2_1; struct { float x_2_3_1; float x_2_3_2; } x_1_2_2; } x_9_1_1; struct { float x_2_2_1; float x_2_2_2; float x_2_2_3; float x_2_2_4; } x_9_1_2; } x9; struct { /* ? */ } *x10; struct { unsigned short x_11_1_1[2]; unsigned short x_11_1_2[2]; } x11; unsigned char x12; BOOL x13; unsigned char x14; BOOL x15; BOOL x16; unsigned char x17; BOOL x18; unsigned char x19; struct _NSRange { unsigned int x_20_1_1; unsigned int x_20_1_2; } x20; BOOL x21; } * _data;
     struct Matrix<float, 2, 1> { 
-        double _e[2]; 
+        float _e[2]; 
     }  _direction;
     BOOL  _hasVisibleShields;
     BOOL  _hasVisibleSigns;
@@ -26,10 +26,10 @@
     VKLabelNavJunction * _navJunctionA;
     VKLabelNavRoadLabel * _roadShield;
     VKLabelNavRoadLabel * _roadSign;
-    double  _routeCrossProduct;
+    float  _routeCrossProduct;
     struct PolylineCoordinate { 
         unsigned int index; 
-        double offset; 
+        float offset; 
     }  _routeOffset;
     NSString * _shieldDisplayGroup;
     NSString * _shieldGroup;
@@ -63,8 +63,8 @@
 @property (nonatomic, readonly) VKLabelNavJunction *navJunctionA;
 @property (nonatomic, readonly) int roadClass;
 @property (nonatomic, readonly) unsigned char roadSignAlignment;
-@property (nonatomic) double routeCrossProduct;
-@property (nonatomic) struct PolylineCoordinate { unsigned int x1; double x2; } routeOffset;
+@property (nonatomic) float routeCrossProduct;
+@property (nonatomic) struct PolylineCoordinate { unsigned int x1; float x2; } routeOffset;
 @property (nonatomic, readonly) NSString *shieldDisplayGroup;
 @property (nonatomic, readonly) NSString *shieldGroup;
 @property (nonatomic, readonly) BOOL suppressRoadSignIfShieldPresent;
@@ -73,8 +73,8 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (BOOL)_findLabelAnchorPoint:(struct Mercator3<double> { double x1[3]; }*)arg1 isShieldLabel:(BOOL)arg2 desiredOffsetDistance:(float)arg3 maxOffsetDistance:(float)arg4 minJunctionDistance:(float)arg5 roadGraph:(id)arg6;
-- (float)_findRoadOffsetForDistanceToRay:(float)arg1 rayStart:(struct Matrix<double, 3, 1> { double x1[3]; })arg2 rayVector:(struct Matrix<float, 2, 1> { double x1[2]; })arg3 roadGraph:(id)arg4;
-- (id)_newLabelWithNavContext:(struct NavContext { int (**x1)(); struct LabelManager {} *x2; }*)arg1 isShieldLabel:(BOOL)arg2 worldPoint:(struct Matrix<double, 3, 1> { double x1[3]; })arg3 alignment:(unsigned char)arg4 artworkCache:(struct VKLabelNavArtworkCache { struct unique_ptr<LRUCache<unsigned long, VKRoadSignArtwork *>, std::__1::default_delete<LRUCache<unsigned long, VKRoadSignArtwork *> > > { struct __compressed_pair<LRUCache<unsigned long, VKRoadSignArtwork *> *, std::__1::default_delete<LRUCache<unsigned long, VKRoadSignArtwork *> > > { struct LRUCache<unsigned long, VKRoadSignArtwork *> {} *x_1_2_1; } x_1_1_1; } x1; struct unique_ptr<LRUCache<unsigned long, CGImage *>, std::__1::default_delete<LRUCache<unsigned long, CGImage *> > > { struct __compressed_pair<LRUCache<unsigned long, CGImage *> *, std::__1::default_delete<LRUCache<unsigned long, CGImage *> > > { struct LRUCache<unsigned long, CGImage *> {} *x_1_2_1; } x_2_1_1; } x2; struct CGColor {} *x3; struct CGColor {} *x4; struct VKGuidanceManeuverArrowMetrics { struct CGSize { double x_1_2_1; double x_1_2_2; } x_5_1_1; double x_5_1_2; double x_5_1_3; double x_5_1_4; struct CGSize { double x_5_2_1; double x_5_2_2; } x_5_1_5; double x_5_1_6; double x_5_1_7; double x_5_1_8; unsigned char x_5_1_9; double x_5_1_10; double x_5_1_11; double x_5_1_12; double x_5_1_13; double x_5_1_14; double x_5_1_15; double x_5_1_16; double x_5_1_17; double x_5_1_18; double x_5_1_19; double x_5_1_20; double x_5_1_21; double x_5_1_22; double x_5_1_23; double x_5_1_24; double x_5_1_25; bool x_5_1_26; double x_5_1_27; double x_5_1_28; double x_5_1_29; bool x_5_1_30; bool x_5_1_31; } x5; }*)arg5;
+- (float)_findRoadOffsetForDistanceToRay:(float)arg1 rayStart:(struct Matrix<double, 3, 1> { double x1[3]; })arg2 rayVector:(struct Matrix<float, 2, 1> { float x1[2]; })arg3 roadGraph:(id)arg4;
+- (id)_newLabelWithNavContext:(struct NavContext { int (**x1)(); struct LabelManager {} *x2; }*)arg1 isShieldLabel:(BOOL)arg2 worldPoint:(struct Matrix<double, 3, 1> { double x1[3]; })arg3 alignment:(unsigned char)arg4 artworkCache:(struct VKLabelNavArtworkCache { struct unique_ptr<LRUCache<unsigned long, VKRoadSignArtwork *>, std::__1::default_delete<LRUCache<unsigned long, VKRoadSignArtwork *> > > { struct __compressed_pair<LRUCache<unsigned long, VKRoadSignArtwork *> *, std::__1::default_delete<LRUCache<unsigned long, VKRoadSignArtwork *> > > { struct LRUCache<unsigned long, VKRoadSignArtwork *> {} *x_1_2_1; } x_1_1_1; } x1; struct unique_ptr<LRUCache<unsigned long, CGImage *>, std::__1::default_delete<LRUCache<unsigned long, CGImage *> > > { struct __compressed_pair<LRUCache<unsigned long, CGImage *> *, std::__1::default_delete<LRUCache<unsigned long, CGImage *> > > { struct LRUCache<unsigned long, CGImage *> {} *x_1_2_1; } x_2_1_1; } x2; struct CGColor {} *x3; struct CGColor {} *x4; struct VKGuidanceManeuverArrowMetrics { struct CGSize { float x_1_2_1; float x_1_2_2; } x_5_1_1; float x_5_1_2; float x_5_1_3; float x_5_1_4; struct CGSize { float x_5_2_1; float x_5_2_2; } x_5_1_5; float x_5_1_6; float x_5_1_7; float x_5_1_8; unsigned char x_5_1_9; float x_5_1_10; float x_5_1_11; float x_5_1_12; float x_5_1_13; float x_5_1_14; float x_5_1_15; float x_5_1_16; float x_5_1_17; float x_5_1_18; float x_5_1_19; float x_5_1_20; float x_5_1_21; float x_5_1_22; float x_5_1_23; float x_5_1_24; float x_5_1_25; bool x_5_1_26; float x_5_1_27; float x_5_1_28; float x_5_1_29; bool x_5_1_30; bool x_5_1_31; } x5; }*)arg5;
 - (void)_updateWithNavContext:(struct NavContext { int (**x1)(); struct LabelManager {} *x2; }*)arg1;
 - (void)_updateWithNavContext:(struct NavContext { int (**x1)(); struct LabelManager {} *x2; }*)arg1 threshold:(double)arg2;
 - (BOOL)_worldPointForRoadOffset:(float)arg1 worldPoint:(struct Mercator3<double> { double x1[3]; }*)arg2;
@@ -82,16 +82,16 @@
 - (void)appendSimplifiedWorldRoadPoints:(struct vector<gm::Matrix<double, 2, 1>, std::__1::allocator<gm::Matrix<double, 2, 1> > > { struct Matrix<double, 2, 1> {} *x1; struct Matrix<double, 2, 1> {} *x2; struct __compressed_pair<gm::Matrix<double, 2, 1> *, std::__1::allocator<gm::Matrix<double, 2, 1> > > { struct Matrix<double, 2, 1> {} *x_3_1_1; } x3; }*)arg1;
 - (BOOL)areLabelsDisabled;
 - (void)clearRoadSign;
-- (void)createLabelWithNavContext:(struct NavContext { int (**x1)(); struct LabelManager {} *x2; }*)arg1 isShieldLabel:(BOOL)arg2 desiredOffsetDistance:(float)arg3 maxOffsetDistance:(float)arg4 minJunctionDistance:(float)arg5 minRouteDistance:(float)arg6 roadGraph:(id)arg7 artworkCache:(struct VKLabelNavArtworkCache { struct unique_ptr<LRUCache<unsigned long, VKRoadSignArtwork *>, std::__1::default_delete<LRUCache<unsigned long, VKRoadSignArtwork *> > > { struct __compressed_pair<LRUCache<unsigned long, VKRoadSignArtwork *> *, std::__1::default_delete<LRUCache<unsigned long, VKRoadSignArtwork *> > > { struct LRUCache<unsigned long, VKRoadSignArtwork *> {} *x_1_2_1; } x_1_1_1; } x1; struct unique_ptr<LRUCache<unsigned long, CGImage *>, std::__1::default_delete<LRUCache<unsigned long, CGImage *> > > { struct __compressed_pair<LRUCache<unsigned long, CGImage *> *, std::__1::default_delete<LRUCache<unsigned long, CGImage *> > > { struct LRUCache<unsigned long, CGImage *> {} *x_1_2_1; } x_2_1_1; } x2; struct CGColor {} *x3; struct CGColor {} *x4; struct VKGuidanceManeuverArrowMetrics { struct CGSize { double x_1_2_1; double x_1_2_2; } x_5_1_1; double x_5_1_2; double x_5_1_3; double x_5_1_4; struct CGSize { double x_5_2_1; double x_5_2_2; } x_5_1_5; double x_5_1_6; double x_5_1_7; double x_5_1_8; unsigned char x_5_1_9; double x_5_1_10; double x_5_1_11; double x_5_1_12; double x_5_1_13; double x_5_1_14; double x_5_1_15; double x_5_1_16; double x_5_1_17; double x_5_1_18; double x_5_1_19; double x_5_1_20; double x_5_1_21; double x_5_1_22; double x_5_1_23; double x_5_1_24; double x_5_1_25; bool x_5_1_26; double x_5_1_27; double x_5_1_28; double x_5_1_29; bool x_5_1_30; bool x_5_1_31; } x5; }*)arg8;
+- (void)createLabelWithNavContext:(struct NavContext { int (**x1)(); struct LabelManager {} *x2; }*)arg1 isShieldLabel:(BOOL)arg2 desiredOffsetDistance:(float)arg3 maxOffsetDistance:(float)arg4 minJunctionDistance:(float)arg5 minRouteDistance:(float)arg6 roadGraph:(id)arg7 artworkCache:(struct VKLabelNavArtworkCache { struct unique_ptr<LRUCache<unsigned long, VKRoadSignArtwork *>, std::__1::default_delete<LRUCache<unsigned long, VKRoadSignArtwork *> > > { struct __compressed_pair<LRUCache<unsigned long, VKRoadSignArtwork *> *, std::__1::default_delete<LRUCache<unsigned long, VKRoadSignArtwork *> > > { struct LRUCache<unsigned long, VKRoadSignArtwork *> {} *x_1_2_1; } x_1_1_1; } x1; struct unique_ptr<LRUCache<unsigned long, CGImage *>, std::__1::default_delete<LRUCache<unsigned long, CGImage *> > > { struct __compressed_pair<LRUCache<unsigned long, CGImage *> *, std::__1::default_delete<LRUCache<unsigned long, CGImage *> > > { struct LRUCache<unsigned long, CGImage *> {} *x_1_2_1; } x_2_1_1; } x2; struct CGColor {} *x3; struct CGColor {} *x4; struct VKGuidanceManeuverArrowMetrics { struct CGSize { float x_1_2_1; float x_1_2_2; } x_5_1_1; float x_5_1_2; float x_5_1_3; float x_5_1_4; struct CGSize { float x_5_2_1; float x_5_2_2; } x_5_1_5; float x_5_1_6; float x_5_1_7; float x_5_1_8; unsigned char x_5_1_9; float x_5_1_10; float x_5_1_11; float x_5_1_12; float x_5_1_13; float x_5_1_14; float x_5_1_15; float x_5_1_16; float x_5_1_17; float x_5_1_18; float x_5_1_19; float x_5_1_20; float x_5_1_21; float x_5_1_22; float x_5_1_23; float x_5_1_24; float x_5_1_25; bool x_5_1_26; float x_5_1_27; float x_5_1_28; float x_5_1_29; bool x_5_1_30; bool x_5_1_31; } x5; }*)arg8;
 - (const char *)cstrName;
 - (void)dealloc;
 - (id)description;
-- (struct Matrix<float, 2, 1> { double x1[2]; })direction;
+- (struct Matrix<float, 2, 1> { float x1[2]; })direction;
 - (void)getRoadEdge:(struct { struct { /* ? */ } *x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; struct { /* ? */ } *x6; struct { /* ? */ } *x7; }*)arg1;
 - (BOOL)hasShield;
 - (BOOL)hasVisibleShields;
 - (BOOL)hasVisibleSigns;
-- (id)initWithRoadEdge:(const struct { struct { /* ? */ } *x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; struct { /* ? */ } *x6; struct { /* ? */ } *x7; }*)arg1 navJunctionA:(id)arg2 routeOffset:(struct PolylineCoordinate { unsigned int x1; double x2; })arg3 tile:(id)arg4;
+- (id)initWithRoadEdge:(const struct { struct { /* ? */ } *x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; struct { /* ? */ } *x6; struct { /* ? */ } *x7; }*)arg1 navJunctionA:(id)arg2 routeOffset:(struct PolylineCoordinate { unsigned int x1; float x2; })arg3 tile:(id)arg4;
 - (int)intraRoadPriority;
 - (BOOL)isAwayFromRoute;
 - (BOOL)isGuidanceStepStart;
@@ -110,13 +110,13 @@
 - (id)name;
 - (id)navJunctionA;
 - (void)prepareStyleVarsWithContext:(struct NavContext { int (**x1)(); struct LabelManager {} *x2; }*)arg1;
-- (void)recreateRoadSignWithAlignment:(unsigned char)arg1 navContext:(struct NavContext { int (**x1)(); struct LabelManager {} *x2; }*)arg2 artworkCache:(struct VKLabelNavArtworkCache { struct unique_ptr<LRUCache<unsigned long, VKRoadSignArtwork *>, std::__1::default_delete<LRUCache<unsigned long, VKRoadSignArtwork *> > > { struct __compressed_pair<LRUCache<unsigned long, VKRoadSignArtwork *> *, std::__1::default_delete<LRUCache<unsigned long, VKRoadSignArtwork *> > > { struct LRUCache<unsigned long, VKRoadSignArtwork *> {} *x_1_2_1; } x_1_1_1; } x1; struct unique_ptr<LRUCache<unsigned long, CGImage *>, std::__1::default_delete<LRUCache<unsigned long, CGImage *> > > { struct __compressed_pair<LRUCache<unsigned long, CGImage *> *, std::__1::default_delete<LRUCache<unsigned long, CGImage *> > > { struct LRUCache<unsigned long, CGImage *> {} *x_1_2_1; } x_2_1_1; } x2; struct CGColor {} *x3; struct CGColor {} *x4; struct VKGuidanceManeuverArrowMetrics { struct CGSize { double x_1_2_1; double x_1_2_2; } x_5_1_1; double x_5_1_2; double x_5_1_3; double x_5_1_4; struct CGSize { double x_5_2_1; double x_5_2_2; } x_5_1_5; double x_5_1_6; double x_5_1_7; double x_5_1_8; unsigned char x_5_1_9; double x_5_1_10; double x_5_1_11; double x_5_1_12; double x_5_1_13; double x_5_1_14; double x_5_1_15; double x_5_1_16; double x_5_1_17; double x_5_1_18; double x_5_1_19; double x_5_1_20; double x_5_1_21; double x_5_1_22; double x_5_1_23; double x_5_1_24; double x_5_1_25; bool x_5_1_26; double x_5_1_27; double x_5_1_28; double x_5_1_29; bool x_5_1_30; bool x_5_1_31; } x5; }*)arg3;
+- (void)recreateRoadSignWithAlignment:(unsigned char)arg1 navContext:(struct NavContext { int (**x1)(); struct LabelManager {} *x2; }*)arg2 artworkCache:(struct VKLabelNavArtworkCache { struct unique_ptr<LRUCache<unsigned long, VKRoadSignArtwork *>, std::__1::default_delete<LRUCache<unsigned long, VKRoadSignArtwork *> > > { struct __compressed_pair<LRUCache<unsigned long, VKRoadSignArtwork *> *, std::__1::default_delete<LRUCache<unsigned long, VKRoadSignArtwork *> > > { struct LRUCache<unsigned long, VKRoadSignArtwork *> {} *x_1_2_1; } x_1_1_1; } x1; struct unique_ptr<LRUCache<unsigned long, CGImage *>, std::__1::default_delete<LRUCache<unsigned long, CGImage *> > > { struct __compressed_pair<LRUCache<unsigned long, CGImage *> *, std::__1::default_delete<LRUCache<unsigned long, CGImage *> > > { struct LRUCache<unsigned long, CGImage *> {} *x_1_2_1; } x_2_1_1; } x2; struct CGColor {} *x3; struct CGColor {} *x4; struct VKGuidanceManeuverArrowMetrics { struct CGSize { float x_1_2_1; float x_1_2_2; } x_5_1_1; float x_5_1_2; float x_5_1_3; float x_5_1_4; struct CGSize { float x_5_2_1; float x_5_2_2; } x_5_1_5; float x_5_1_6; float x_5_1_7; float x_5_1_8; unsigned char x_5_1_9; float x_5_1_10; float x_5_1_11; float x_5_1_12; float x_5_1_13; float x_5_1_14; float x_5_1_15; float x_5_1_16; float x_5_1_17; float x_5_1_18; float x_5_1_19; float x_5_1_20; float x_5_1_21; float x_5_1_22; float x_5_1_23; float x_5_1_24; float x_5_1_25; bool x_5_1_26; float x_5_1_27; float x_5_1_28; float x_5_1_29; bool x_5_1_30; bool x_5_1_31; } x5; }*)arg3;
 - (int)roadClass;
 - (unsigned char)roadSignAlignment;
 - (float)routeCrossProduct;
-- (struct PolylineCoordinate { unsigned int x1; double x2; })routeOffset;
+- (struct PolylineCoordinate { unsigned int x1; float x2; })routeOffset;
 - (void)setAreLabelsDisabled:(BOOL)arg1;
-- (void)setDirection:(struct Matrix<float, 2, 1> { double x1[2]; })arg1;
+- (void)setDirection:(struct Matrix<float, 2, 1> { float x1[2]; })arg1;
 - (void)setIntraRoadPriority:(int)arg1;
 - (void)setIsGuidanceStepStart:(BOOL)arg1;
 - (void)setIsInGuidance:(BOOL)arg1;
@@ -124,7 +124,7 @@
 - (void)setIsRoadLabelUnique:(BOOL)arg1;
 - (void)setIsStartOfRoadName:(BOOL)arg1;
 - (void)setRouteCrossProduct:(float)arg1;
-- (void)setRouteOffset:(struct PolylineCoordinate { unsigned int x1; double x2; })arg1;
+- (void)setRouteOffset:(struct PolylineCoordinate { unsigned int x1; float x2; })arg1;
 - (id)shieldDisplayGroup;
 - (id)shieldGroup;
 - (BOOL)suppressRoadSignIfShieldPresent;

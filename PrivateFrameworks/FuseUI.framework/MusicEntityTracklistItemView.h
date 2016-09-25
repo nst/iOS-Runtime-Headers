@@ -14,13 +14,13 @@
     MusicDownloadProgressButton * _downloadProgressButton;
     UIImageView * _explicitBadgeImageView;
     MPUNowPlayingIndicatorView * _indicatorView;
-    double  _leadingTextColumnWidth;
+    float  _leadingTextColumnWidth;
     UIImageView * _mediaTypeImageView;
     MusicPopularityIndicatorView * _popularityIndicatorView;
     NSMapTable * _textDescriptorToTextDrawingView;
     NSMutableArray * _textDrawingViewReusePool;
     UIImageView * _trailingAccessoryImageView;
-    double  _trailingTextColumnWidth;
+    float  _trailingTextColumnWidth;
 }
 
 @property (nonatomic) BOOL alwaysApplyLeadingTextColumnWidth;
@@ -31,9 +31,9 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) <MusicEntityValueProviding> *entityValueProvider;
 @property (readonly) unsigned int hash;
-@property (nonatomic) double leadingTextColumnWidth;
+@property (nonatomic) float leadingTextColumnWidth;
 @property (readonly) Class superclass;
-@property (nonatomic) double trailingTextColumnWidth;
+@property (nonatomic) float trailingTextColumnWidth;
 
 + (float)maximumHeightForContentDescriptor:(id)arg1 width:(float)arg2 traitCollection:(id)arg3;
 
@@ -55,7 +55,7 @@
 - (id)contextualActionsButton;
 - (void)dealloc;
 - (id)delegate;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (float)leadingTextColumnWidth;
 - (void)music_inheritedLayoutInsetsDidChange;

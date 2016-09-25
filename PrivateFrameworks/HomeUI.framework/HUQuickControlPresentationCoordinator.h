@@ -45,11 +45,11 @@
 - (void)_prepareForTapticFeedbackIfAvailable;
 - (void)_preparePressedItemContextForPresentationContext:(id)arg1 startApplier:(BOOL)arg2;
 - (void)_pressGestureDidBecomeActive;
-- (void)_pressGestureDidBeginWithLocation:(struct CGPoint { double x1; double x2; })arg1;
+- (void)_pressGestureDidBeginWithLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_pressGestureDidEnd:(BOOL)arg1;
 - (void)_pressedStateDidEndForItem:(id)arg1 clearPresentationContext:(BOOL)arg2;
 - (void)_updateOverrideAttributesWithScale:(float)arg1 forItem:(id)arg2;
-- (void)_updateOverrideAttributesWithTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1 alpha:(float)arg2 forItem:(id)arg3;
+- (void)_updateOverrideAttributesWithTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 alpha:(float)arg2 forItem:(id)arg3;
 - (void)_validatePresentationContext:(id)arg1;
 - (id)activePressedItemContext;
 - (void)addMutuallyExclusiveGestureRecognizer:(id)arg1;

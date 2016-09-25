@@ -5,7 +5,7 @@
 @interface MFPFont : NSObject {
     unsigned int  mFlags;
     NSString * mName;
-    double  mSize;
+    float  mSize;
     int  mUnit;
 }
 

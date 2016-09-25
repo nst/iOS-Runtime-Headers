@@ -3,22 +3,22 @@
  */
 
 @interface PXPhotosDetailsHeaderTileSettings : PXSettings {
-    double  _aspectRatio;
+    float  _aspectRatio;
     BOOL  _fakeMiroViewController;
     BOOL  _forceMiroCompelling;
-    double  _maximumAbsoluteHeight;
-    double  _maximumHeightRelativeToScreenHeight;
-    double  _movieLessTVHeight;
+    float  _maximumAbsoluteHeight;
+    float  _maximumHeightRelativeToScreenHeight;
+    float  _movieLessTVHeight;
     BOOL  _showAlways;
     BOOL  _showSlideshow;
 }
 
-@property (nonatomic) double aspectRatio;
+@property (nonatomic) float aspectRatio;
 @property (nonatomic) BOOL fakeMiroViewController;
 @property (nonatomic) BOOL forceMiroCompelling;
-@property (nonatomic) double maximumAbsoluteHeight;
-@property (nonatomic) double maximumHeightRelativeToScreenHeight;
-@property (nonatomic) double movieLessTVHeight;
+@property (nonatomic) float maximumAbsoluteHeight;
+@property (nonatomic) float maximumHeightRelativeToScreenHeight;
+@property (nonatomic) float movieLessTVHeight;
 @property (nonatomic) BOOL showAlways;
 @property (nonatomic) BOOL showSlideshow;
 

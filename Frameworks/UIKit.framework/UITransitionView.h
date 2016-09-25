@@ -4,7 +4,7 @@
 
 @interface UITransitionView : UIView <NSCoding> {
     int  _animationTimingCurve;
-    double  _curlUpRevealedHeight;
+    float  _curlUpRevealedHeight;
     id  _delegate;
     UIResponder * _firstResponderToRemember;
     UIView * _fromView;
@@ -44,11 +44,11 @@
 - (double)durationForTransition:(int)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)fromView;
-- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (BOOL)ignoreDirectTouchEvents;
 - (BOOL)ignoresInteractionEvents;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isTransitioning;
 - (void)notifyDidCompleteTransition:(id)arg1;
 - (BOOL)rasterizesOnTransition;

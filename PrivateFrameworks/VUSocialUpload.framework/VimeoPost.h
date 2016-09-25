@@ -73,7 +73,7 @@
 - (id)init;
 - (id)initWithDictionary:(id)arg1;
 - (id)postDescription;
-- (unsigned int)postSize;
+- (unsigned long long)postSize;
 - (int)privacySettings;
 - (id)serializedDictionary;
 - (void)setAccessType:(unsigned int)arg1;

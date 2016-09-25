@@ -5,13 +5,13 @@
 @interface _UIRepeatingPressGestureRecognizer : UIGestureRecognizer {
     unsigned int  _changeCount;
     int  _delayIndex;
-    double  _force;
+    float  _force;
     unsigned int  _numberOfTouchesRequired;
     BOOL  _timerOn;
 }
 
 @property (setter=_setButtonType:, nonatomic) int _buttonType;
-@property (nonatomic, readonly) double _force;
+@property (nonatomic, readonly) float _force;
 @property (nonatomic) unsigned int changeCount;
 @property (nonatomic) unsigned int numberOfTouchesRequired;
 

@@ -19,6 +19,6 @@
 - (void)markAsFailed:(id)arg1;
 - (id)serialQueue;
 - (id)table;
-- (id)unreportedEventsSinceTimestamp:(int)arg1;
+- (id)unreportedEventsSinceTimestamp:(long long)arg1;
 
 @end

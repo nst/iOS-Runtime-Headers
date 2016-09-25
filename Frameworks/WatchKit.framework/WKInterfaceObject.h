@@ -32,7 +32,7 @@
 - (void)setAccessibilityIdentifier:(id)arg1;
 - (void)setAccessibilityImageRegions:(id)arg1;
 - (void)setAccessibilityLabel:(id)arg1;
-- (void)setAccessibilityTraits:(unsigned int)arg1;
+- (void)setAccessibilityTraits:(unsigned long long)arg1;
 - (void)setAccessibilityValue:(id)arg1;
 - (void)setAlpha:(float)arg1;
 - (void)setHeight:(float)arg1;

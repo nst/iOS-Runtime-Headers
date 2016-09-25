@@ -19,7 +19,7 @@
 - (void)dealloc;
 - (id)description;
 - (unsigned int)foreignEntityKeyForSlot:(unsigned int)arg1;
-- (int)foreignKeyForSlot:(unsigned int)arg1;
+- (long long)foreignKeyForSlot:(unsigned int)arg1;
 - (unsigned int)foreignOrderKeyForSlot:(unsigned int)arg1;
 - (id)initWithSQLEntity:(id)arg1 objectID:(struct _NSScalarObjectID { Class x1; }*)arg2;
 - (id)initWithSQLEntity:(id)arg1 ownedObjectID:(struct _NSScalarObjectID { Class x1; }*)arg2 andTimestamp:(double)arg3;
@@ -30,16 +30,16 @@
 - (struct __CFBitVector { }*)newUpdateMaskForConstrainedValues;
 - (struct __CFBitVector { }*)newUpdateMaskFrom:(id)arg1;
 - (struct _NSScalarObjectID { Class x1; }*)objectID;
-- (int)optLock;
-- (int)pk64;
+- (long long)optLock;
+- (long long)pk64;
 - (void)setForeignEntityKeySlot:(unsigned int)arg1 entityKey:(unsigned int)arg2;
-- (void)setForeignKeySlot:(unsigned int)arg1 int64:(int)arg2;
+- (void)setForeignKeySlot:(unsigned int)arg1 int64:(long long)arg2;
 - (void)setForeignOrderKeySlot:(unsigned int)arg1 orderKey:(unsigned int)arg2;
 - (void)setObjectID:(struct _NSScalarObjectID { Class x1; }*)arg1;
-- (void)setOptLock:(int)arg1;
+- (void)setOptLock:(long long)arg1;
 - (id)sqlEntity;
 - (unsigned int)sqlEntityID;
 - (id)valueForKey:(id)arg1;
-- (int)version;
+- (long long)version;
 
 @end

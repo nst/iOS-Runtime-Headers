@@ -41,16 +41,16 @@
 @property (readonly) Class superclass;
 
 - (id)_displayView;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_displayViewFrameForWidth:(float)arg1;
-- (struct CGPoint { double x1; double x2; })_displayViewOrigin;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_displayViewFrameForWidth:(float)arg1;
+- (struct CGPoint { float x1; float x2; })_displayViewOrigin;
 - (float)_displayViewWidthForWidth:(float)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_editingViewContainerFrameForWidth:(float)arg1;
-- (struct CGPoint { double x1; double x2; })_editingViewOrigin;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_editingViewContainerFrameForWidth:(float)arg1;
+- (struct CGPoint { float x1; float x2; })_editingViewOrigin;
 - (float)_editingViewWidthForWidth:(float)arg1;
 - (float)_extraHeaderViewAvailableWidthForWidth:(float)arg1 whenEditing:(BOOL)arg2;
-- (struct CGPoint { double x1; double x2; })_extraHeaderViewOriginForWidth:(float)arg1 whenEditing:(BOOL)arg2;
+- (struct CGPoint { float x1; float x2; })_extraHeaderViewOriginForWidth:(float)arg1 whenEditing:(BOOL)arg2;
 - (id)_imageShadowView;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_imageViewFrameWhenEditing:(BOOL)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_imageViewFrameWhenEditing:(BOOL)arg1;
 - (BOOL)_isSpecialInternalHeaderView;
 - (void)_layoutExtraHeaderView;
 - (void)_recreateEditingViewContainer;
@@ -70,11 +70,11 @@
 - (id)extraHeaderView;
 - (BOOL)extraHeaderViewAlignsToImage;
 - (float)extraHeaderViewHorizontalPaddingWhenEditing:(BOOL)arg1;
-- (struct CGPoint { double x1; double x2; })extraHeaderViewOrigin;
+- (struct CGPoint { float x1; float x2; })extraHeaderViewOrigin;
 - (id)imageView;
 - (void)imageViewSelected:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 styleProvider:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 styleProvider:(id)arg2;
 - (BOOL)isFirstResponder;
 - (void)layoutSubviews;
 - (float)marginForTableView:(id)arg1;
@@ -108,7 +108,7 @@
 - (void)setPrimaryProperty:(int)arg1 countryCode:(id)arg2;
 - (void)setRepresentsLinkedPeople:(BOOL)arg1;
 - (void)setStyleProvider:(id)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)styleProvider;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;

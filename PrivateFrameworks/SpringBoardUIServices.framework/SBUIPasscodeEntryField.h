@@ -31,7 +31,7 @@
 - (void)_resetForFailedPasscode:(BOOL)arg1;
 - (void)_setLuminosityBoost:(float)arg1;
 - (id)_textField;
-- (struct CGSize { double x1; double x2; })_viewSize;
+- (struct CGSize { float x1; float x2; })_viewSize;
 - (void)appendString:(id)arg1;
 - (BOOL)becomeFirstResponder;
 - (BOOL)canBecomeFirstResponder;

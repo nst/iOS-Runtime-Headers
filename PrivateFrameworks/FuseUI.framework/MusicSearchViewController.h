@@ -32,7 +32,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic) <MusicSearchViewControllerMediaPickerDelegate> *mediaPickerDelegate;
 @property (nonatomic, readonly) UISearchBar *searchBar;
-@property (nonatomic, readonly) double searchNavigationBarPaletteHeight;
+@property (nonatomic, readonly) float searchNavigationBarPaletteHeight;
 @property (nonatomic) unsigned int searchOptions;
 @property (nonatomic, copy) NSString *searchTerm;
 @property (nonatomic) BOOL storeSearchViewIsVisible;

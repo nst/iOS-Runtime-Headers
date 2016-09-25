@@ -9,7 +9,7 @@
     BOOL  hasDropCap;
     CPListItem * listItem;
     BOOL  noIndentation;
-    double  preformatWidth;
+    float  preformatWidth;
 }
 
 @property (nonatomic, retain) CPListItem *listItem;
@@ -35,7 +35,7 @@
 - (BOOL)isTextRegion;
 - (id)listItem;
 - (BOOL)noIndentation;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })reducedBounds;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })reducedBounds;
 - (float)selectionBottom;
 - (void)setAlignment:(unsigned int)arg1;
 - (void)setBelow:(BOOL)arg1;

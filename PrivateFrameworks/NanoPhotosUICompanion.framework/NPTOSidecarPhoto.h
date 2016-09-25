@@ -9,17 +9,17 @@
     NSDictionary * _supplement;
 }
 
-@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } contentOffset;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } contentOffset;
 @property (nonatomic, readonly) double irisDuration;
 @property (nonatomic, readonly) double irisStillDisplayTime;
 @property (nonatomic, readonly) NSURL *irisURL;
 @property (nonatomic, readonly) BOOL isPhotoIris;
 @property (nonatomic, readonly) NSString *path;
 @property (nonatomic, readonly) NSDictionary *supplement;
-@property (nonatomic, readonly) double zoomScale;
+@property (nonatomic, readonly) float zoomScale;
 
 - (void).cxx_destruct;
-- (struct CGPoint { double x1; double x2; })contentOffset;
+- (struct CGPoint { float x1; float x2; })contentOffset;
 - (id)eagerlyDecodedFullImage;
 - (id)faceRegions;
 - (id)fullImage;

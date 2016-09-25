@@ -7,8 +7,8 @@
         unsigned int length : 1; 
         unsigned int location : 1; 
     }  _has;
-    unsigned int  _length;
-    unsigned int  _location;
+    unsigned long long  _length;
+    unsigned long long  _location;
     PBUnknownFields * _unknownFields;
     _INPBValueMetadata * _valueMetadata;
 }
@@ -16,8 +16,8 @@
 @property (nonatomic) BOOL hasLength;
 @property (nonatomic) BOOL hasLocation;
 @property (nonatomic, readonly) BOOL hasValueMetadata;
-@property (nonatomic) unsigned int length;
-@property (nonatomic) unsigned int location;
+@property (nonatomic) unsigned long long length;
+@property (nonatomic) unsigned long long location;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic, retain) _INPBValueMetadata *valueMetadata;
 
@@ -32,14 +32,14 @@
 - (BOOL)hasValueMetadata;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
-- (unsigned int)length;
-- (unsigned int)location;
+- (unsigned long long)length;
+- (unsigned long long)location;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setHasLength:(BOOL)arg1;
 - (void)setHasLocation:(BOOL)arg1;
-- (void)setLength:(unsigned int)arg1;
-- (void)setLocation:(unsigned int)arg1;
+- (void)setLength:(unsigned long long)arg1;
+- (void)setLocation:(unsigned long long)arg1;
 - (void)setValueMetadata:(id)arg1;
 - (id)unknownFields;
 - (id)valueMetadata;

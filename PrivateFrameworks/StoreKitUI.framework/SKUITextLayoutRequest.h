@@ -4,18 +4,18 @@
 
 @interface SKUITextLayoutRequest : NSObject <SKUILayoutRequest> {
     NSAttributedString * _attributedText;
-    double  _fontSize;
+    float  _fontSize;
     int  _fontWeight;
     int  _numberOfLines;
     NSString * _text;
     unsigned char  _textAlignment;
-    double  _width;
+    float  _width;
 }
 
 @property (nonatomic, copy) NSAttributedString *attributedText;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) double fontSize;
+@property (nonatomic) float fontSize;
 @property (nonatomic) int fontWeight;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) Class layoutClass;
@@ -23,7 +23,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *text;
 @property (nonatomic) unsigned char textAlignment;
-@property (nonatomic) double width;
+@property (nonatomic) float width;
 
 - (void).cxx_destruct;
 - (id)attributedText;

@@ -71,8 +71,8 @@
 - (BOOL)isPhysicalB239:(id)arg1;
 - (void)launchHIDInputThread;
 - (id /* block */)logger;
-- (void)microControllerWithDigitizerX:(float)arg1 withY:(float)arg2 withTimeStamp:(unsigned int)arg3 touchDown:(BOOL)arg4;
-- (void)microControllerWithUDID:(unsigned int)arg1 setDigitizerX:(float)arg2 digitizerY:(float)arg3 withTimeStamp:(unsigned int)arg4 touchDown:(BOOL)arg5;
+- (void)microControllerWithDigitizerX:(float)arg1 withY:(float)arg2 withTimeStamp:(unsigned long long)arg3 touchDown:(BOOL)arg4;
+- (void)microControllerWithUDID:(unsigned int)arg1 setDigitizerX:(float)arg2 digitizerY:(float)arg3 withTimeStamp:(unsigned long long)arg4 touchDown:(BOOL)arg5;
 - (void)open;
 - (id)remote;
 - (void)removeController:(id)arg1;
@@ -91,7 +91,7 @@
 - (void)stopHIDEventMonitor;
 - (void)threadHIDInputOffMain:(id)arg1;
 - (void)threadHIDInputOnMain:(id)arg1;
-- (void)updateControllerWithEvent:(struct __IOHIDEvent { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; char *x6; void *x7; void *x8; struct __CFArray {} *x9; struct __IOHIDEvent {} *x10; int x11; int x12; struct IOHIDEventData { unsigned int x_13_1_1; unsigned int x_13_1_2; unsigned int x_13_1_3; unsigned char x_13_1_4; unsigned char x_13_1_5[3]; } x13[0]; }*)arg1;
+- (void)updateControllerWithEvent:(struct __IOHIDEvent { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned int x5; char *x6; void *x7; void *x8; struct __CFArray {} *x9; struct __IOHIDEvent {} *x10; int x11; int x12; struct IOHIDEventData { unsigned int x_13_1_1; unsigned int x_13_1_2; unsigned int x_13_1_3; unsigned char x_13_1_4; unsigned char x_13_1_5[3]; } x13[0]; }*)arg1;
 - (void)updateIdleTimer:(id)arg1;
 
 @end

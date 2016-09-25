@@ -3,27 +3,27 @@
  */
 
 @interface VMUVMRegionRangeInfo : NSObject {
-    unsigned int  address;
-    unsigned int  size;
-    unsigned int  stackIdentifier;
+    unsigned long long  address;
+    unsigned long long  size;
+    unsigned long long  stackIdentifier;
     unsigned int  userTag;
 }
 
-@property unsigned int address;
-@property (readonly) struct _VMURange { unsigned int x1; unsigned int x2; } range;
-@property unsigned int size;
-@property unsigned int stackIdentifier;
+@property unsigned long long address;
+@property (readonly) struct _VMURange { unsigned long long x1; unsigned long long x2; } range;
+@property unsigned long long size;
+@property unsigned long long stackIdentifier;
 @property unsigned int userTag;
 
-- (unsigned int)address;
+- (unsigned long long)address;
 - (id)init;
-- (struct _VMURange { unsigned int x1; unsigned int x2; })range;
-- (void)setAddress:(unsigned int)arg1;
-- (void)setSize:(unsigned int)arg1;
-- (void)setStackIdentifier:(unsigned int)arg1;
+- (struct _VMURange { unsigned long long x1; unsigned long long x2; })range;
+- (void)setAddress:(unsigned long long)arg1;
+- (void)setSize:(unsigned long long)arg1;
+- (void)setStackIdentifier:(unsigned long long)arg1;
 - (void)setUserTag:(unsigned int)arg1;
-- (unsigned int)size;
-- (unsigned int)stackIdentifier;
+- (unsigned long long)size;
+- (unsigned long long)stackIdentifier;
 - (unsigned int)userTag;
 
 @end

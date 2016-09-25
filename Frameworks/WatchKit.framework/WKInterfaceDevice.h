@@ -13,15 +13,15 @@
     NSString * _preferredContentSizeCategory;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _screenBounds;
-    double  _screenScale;
+    float  _screenScale;
     int  _wristLocation;
 }
 
@@ -37,8 +37,8 @@
 @property (nonatomic, readonly, copy) NSString *model;
 @property (nonatomic, readonly, copy) NSString *name;
 @property (nonatomic, copy) NSString *preferredContentSizeCategory;
-@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } screenBounds;
-@property (nonatomic) double screenScale;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } screenBounds;
+@property (nonatomic) float screenScale;
 @property (nonatomic, readonly, copy) NSString *systemName;
 @property (nonatomic, readonly, copy) NSString *systemVersion;
 @property (nonatomic, readonly) int wristLocation;
@@ -63,7 +63,7 @@
 - (id)preferredContentSizeCategory;
 - (void)removeAllCachedImages;
 - (void)removeCachedImageWithName:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })screenBounds;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })screenBounds;
 - (float)screenScale;
 - (void)setDeviceLocalizedModel:(id)arg1;
 - (void)setDeviceModel:(id)arg1;
@@ -71,7 +71,7 @@
 - (void)setDeviceSystemName:(id)arg1;
 - (void)setDeviceSystemVersion:(id)arg1;
 - (void)setPreferredContentSizeCategory:(id)arg1;
-- (void)setScreenBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setScreenBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setScreenScale:(float)arg1;
 - (id)systemName;
 - (id)systemVersion;

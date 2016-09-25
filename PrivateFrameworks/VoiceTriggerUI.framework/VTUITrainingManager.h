@@ -12,7 +12,7 @@
     BOOL  _performRMS;
     VTPhraseSpotter * _phraseSpotter;
     NSObject<OS_dispatch_queue> * _queue;
-    double  _rms;
+    float  _rms;
     int  _sessionNumber;
     SFSpeechRecognizer * _speechRecognizer;
     BOOL  _speechRecognizerAvailable;
@@ -25,7 +25,7 @@
 @property (nonatomic) <VTUITrainingManagerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property double rms;
+@property float rms;
 @property (readonly) BOOL speechRecognizerAvailable;
 @property (readonly) Class superclass;
 @property BOOL suspendAudio;

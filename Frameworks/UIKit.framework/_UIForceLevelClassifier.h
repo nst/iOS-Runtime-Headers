@@ -5,7 +5,7 @@
 @interface _UIForceLevelClassifier : NSObject <NSObserver> {
     NSMutableDictionary * _cachedProgressObservables;
     int  _currentForceLevel;
-    double  _currentTouchForceMultiplier;
+    float  _currentTouchForceMultiplier;
     <_UIForceLevelClassifierDelegate> * _delegate;
     NSArray * _delegateObservations;
     NSObservationSource * _progressTouchForceObservable;
@@ -13,7 +13,7 @@
 }
 
 @property (nonatomic, readonly) int currentForceLevel;
-@property (nonatomic) double currentTouchForceMultiplier;
+@property (nonatomic) float currentTouchForceMultiplier;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <_UIForceLevelClassifierDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -31,7 +31,7 @@
 - (id)init;
 - (id)observableForProgressToForceLevel:(int)arg1;
 - (id)observableForProgressToForceLevel:(int)arg1 minimumRequiredForceLevel:(int)arg2;
-- (void)observeTouchWithForceValue:(float)arg1 atTimestamp:(double)arg2 withCentroidAtLocation:(struct CGPoint { double x1; double x2; })arg3;
+- (void)observeTouchWithForceValue:(float)arg1 atTimestamp:(double)arg2 withCentroidAtLocation:(struct CGPoint { float x1; float x2; })arg3;
 - (void)receiveObservedValue:(id)arg1;
 - (void)reset;
 - (BOOL)respectsSystemGestureTouchFiltering;

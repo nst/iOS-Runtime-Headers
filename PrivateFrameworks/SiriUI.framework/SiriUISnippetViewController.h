@@ -9,10 +9,10 @@
     UIView * _containingView;
     int  _defaultKeylineType;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _defaultViewInsets;
     UICollectionReusableView<SiriUIReusableView> * _footerView;
     SAUIAppPunchOut * _headerPunchOut;
@@ -42,7 +42,7 @@
 @property (getter=isConfirmed, nonatomic) BOOL confirmed;
 @property (nonatomic) UIView *containingView;
 @property (nonatomic) int defaultKeylineType;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } defaultViewInsets;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } defaultViewInsets;
 @property (nonatomic) <SiriUISnippetViewControllerDelegate> *delegate;
 @property (nonatomic, retain) SAUIAppPunchOut *headerPunchOut;
 @property (nonatomic) BOOL isFullPadWidth;
@@ -97,7 +97,7 @@
 - (void)confirmButtonTapped:(id)arg1;
 - (id)containingView;
 - (int)defaultKeylineType;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })defaultViewInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })defaultViewInsets;
 - (float)desiredHeightForFooterView;
 - (float)desiredHeightForHeaderView;
 - (float)desiredHeightForTransparentFooterView;
@@ -122,7 +122,7 @@
 - (void)setConfirmed:(BOOL)arg1;
 - (void)setContainingView:(id)arg1;
 - (void)setDefaultKeylineType:(int)arg1;
-- (void)setDefaultViewInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setDefaultViewInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setHeaderPunchOut:(id)arg1;
 - (void)setIsFullPadWidth:(BOOL)arg1;
 - (void)setIsTransparent:(BOOL)arg1;

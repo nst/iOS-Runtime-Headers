@@ -11,7 +11,7 @@
     NSMutableDictionary * _chatGUIDToiMessageSentOrReceivedMap;
     NSMutableDictionary * _chatsBeingLoadedMap;
     BOOL  _daemonHadTerminated;
-    int  _daemonLastFailedMessageID;
+    long long  _daemonLastFailedMessageID;
     unsigned int  _daemonUnreadCount;
     unsigned int  _defaultNumberOfMessagesToLoad;
     BOOL  _firstLoad;
@@ -161,8 +161,8 @@
 - (void)historicalMessageGUIDsDeleted:(id)arg1 chatGUIDs:(id)arg2 queryID:(id)arg3;
 - (void)historyQuery:(id)arg1 chatID:(id)arg2 services:(id)arg3 finishedWithResult:(id)arg4 limit:(unsigned int)arg5;
 - (id)init;
-- (int)lastFailedMessageID;
-- (void)lastFailedMessageIDChanged:(int)arg1;
+- (long long)lastFailedMessageID;
+- (void)lastFailedMessageIDChanged:(long long)arg1;
 - (void)leftChat:(id)arg1;
 - (id)loadChatFromDaemonWithChatIdentifier:(id)arg1;
 - (void)markAsSpamQuery:(id)arg1 chatID:(id)arg2 services:(id)arg3 finishedWithResult:(id)arg4;

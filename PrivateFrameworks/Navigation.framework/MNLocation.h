@@ -19,7 +19,7 @@
     NSString * _roadName;
     GEORouteMatch * _routeMatch;
     NSString * _shieldText;
-    int  _shieldType;
+    long long  _shieldType;
     unsigned int  _speedLimit;
     BOOL  _speedLimitIsMPH;
     unsigned int  _state;
@@ -40,7 +40,7 @@
 @property (nonatomic, retain) NSString *roadName;
 @property (nonatomic, retain) GEORouteMatch *routeMatch;
 @property (nonatomic, retain) NSString *shieldText;
-@property (nonatomic) int shieldType;
+@property (nonatomic) long long shieldType;
 @property (nonatomic) unsigned int speedLimit;
 @property (nonatomic) BOOL speedLimitIsMPH;
 @property (nonatomic) unsigned int state;
@@ -53,7 +53,7 @@
 - (BOOL)_navigation_isStale;
 - (struct CLLocationCoordinate2D { double x1; double x2; })_navigation_rawShiftedCoordinate;
 - (id)_navigation_routeMatch;
-- (struct { struct { id x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; unsigned int x_1_1_5; unsigned int x_1_1_6; unsigned int x_1_1_7; BOOL x_1_1_8; unsigned int x_1_1_9; double x_1_1_10; unsigned int x_1_1_11; id x_1_1_12; } x1; unsigned int x2; unsigned int x3; int x4; int x5; int x6; unsigned int x7; unsigned int x8; union { struct { struct { double x_1_3_1; double x_1_3_2; } x_1_2_1; struct { double x_2_3_1; double x_2_3_2; } x_1_2_2; } x_9_1_1; struct { double x_2_2_1; double x_2_2_2; double x_2_2_3; double x_2_2_4; } x_9_1_2; } x9; struct { /* ? */ } *x10; struct { unsigned short x_11_1_1[2]; unsigned short x_11_1_2[2]; } x11; unsigned char x12; BOOL x13; unsigned char x14; BOOL x15; BOOL x16; unsigned char x17; BOOL x18; unsigned char x19; struct _NSRange { unsigned int x_20_1_1; unsigned int x_20_1_2; } x20; BOOL x21; }*)_roadFeature;
+- (struct { struct { id x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; unsigned int x_1_1_5; unsigned int x_1_1_6; unsigned long long x_1_1_7; BOOL x_1_1_8; unsigned long long x_1_1_9; float x_1_1_10; unsigned long long x_1_1_11; id x_1_1_12; } x1; unsigned int x2; unsigned int x3; int x4; int x5; int x6; unsigned int x7; unsigned int x8; union { struct { struct { float x_1_3_1; float x_1_3_2; } x_1_2_1; struct { float x_2_3_1; float x_2_3_2; } x_1_2_2; } x_9_1_1; struct { float x_2_2_1; float x_2_2_2; float x_2_2_3; float x_2_2_4; } x_9_1_2; } x9; struct { /* ? */ } *x10; struct { unsigned short x_11_1_1[2]; unsigned short x_11_1_2[2]; } x11; unsigned char x12; BOOL x13; unsigned char x14; BOOL x15; BOOL x16; unsigned char x17; BOOL x18; unsigned char x19; struct _NSRange { unsigned int x_20_1_1; unsigned int x_20_1_2; } x20; BOOL x21; }*)_roadFeature;
 - (id)description;
 - (id)detailedMatchInfo;
 - (id)expirationDate;
@@ -90,12 +90,12 @@
 - (void)setRoadName:(id)arg1;
 - (void)setRouteMatch:(id)arg1;
 - (void)setShieldText:(id)arg1;
-- (void)setShieldType:(int)arg1;
+- (void)setShieldType:(long long)arg1;
 - (void)setSpeedLimit:(unsigned int)arg1;
 - (void)setSpeedLimitIsMPH:(BOOL)arg1;
 - (void)setState:(unsigned int)arg1;
 - (id)shieldText;
-- (int)shieldType;
+- (long long)shieldType;
 - (unsigned int)speedLimit;
 - (BOOL)speedLimitIsMPH;
 - (unsigned int)state;

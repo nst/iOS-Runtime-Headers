@@ -11,10 +11,10 @@
     double  _baseDuration;
     NSMutableArray * _completions;
     double  _delay;
-    double  _drag;
+    float  _drag;
     int  _finishingPosition;
-    double  _fractionComplete;
-    double  _fractionCompleteWhenContinued;
+    float  _fractionComplete;
+    float  _fractionCompleteWhenContinued;
     double  _internalDuration;
     BOOL  _interruptible;
     BOOL  _introspectable;
@@ -45,7 +45,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) double duration;
 @property (getter=_finishingPosition, setter=_setFinishingPosition:, nonatomic) int finishingPosition;
-@property (nonatomic) double fractionComplete;
+@property (nonatomic) float fractionComplete;
 @property (readonly) unsigned int hash;
 @property (nonatomic) double internalDuration;
 @property (getter=isInterruptible, nonatomic) BOOL interruptible;
@@ -150,11 +150,11 @@
 - (void)finishAnimationAtPosition:(int)arg1;
 - (float)fractionComplete;
 - (id)init;
-- (id)initWithDuration:(double)arg1 controlPoint1:(struct CGPoint { double x1; double x2; })arg2 controlPoint2:(struct CGPoint { double x1; double x2; })arg3 animations:(id /* block */)arg4;
+- (id)initWithDuration:(double)arg1 controlPoint1:(struct CGPoint { float x1; float x2; })arg2 controlPoint2:(struct CGPoint { float x1; float x2; })arg3 animations:(id /* block */)arg4;
 - (id)initWithDuration:(double)arg1 curve:(int)arg2 animations:(id /* block */)arg3;
 - (id)initWithDuration:(double)arg1 dampingRatio:(float)arg2 animations:(id /* block */)arg3;
 - (id)initWithDuration:(double)arg1 timingParameters:(id)arg2;
-- (id)initWithMass:(float)arg1 stiffness:(float)arg2 damping:(float)arg3 initialVelocity:(struct CGVector { double x1; double x2; })arg4 animations:(id /* block */)arg5;
+- (id)initWithMass:(float)arg1 stiffness:(float)arg2 damping:(float)arg3 initialVelocity:(struct CGVector { float x1; float x2; })arg4 animations:(id /* block */)arg5;
 - (void)interactionProgress:(id)arg1 didEnd:(BOOL)arg2;
 - (void)interactionProgressDidUpdate:(id)arg1;
 - (double)internalDuration;

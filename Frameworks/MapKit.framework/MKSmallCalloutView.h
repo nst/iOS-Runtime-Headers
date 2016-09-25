@@ -31,8 +31,8 @@
     NSLayoutConstraint * _minWidthConstraint;
     BOOL  _needsPreferredContentSizeUpdate;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _preferredContentSize;
     UIView<_MKCalloutAccessoryView> * _rightView;
     NSLayoutConstraint * _rightViewCenterContentMarginConstraint;
@@ -62,9 +62,9 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) UIView *leftView;
 @property (nonatomic) struct { unsigned char x1; unsigned char x2; unsigned char x3; unsigned char x4; BOOL x5; } mapDisplayStyle;
-@property (nonatomic) double maximumWidth;
-@property (nonatomic) double minimumWidth;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } preferredContentSize;
+@property (nonatomic) float maximumWidth;
+@property (nonatomic) float minimumWidth;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } preferredContentSize;
 @property (nonatomic, retain) UIView *rightView;
 @property (readonly) Class superclass;
 
@@ -82,12 +82,12 @@
 - (BOOL)canDisplayCompleteTitleWhenExpanded;
 - (void)dealloc;
 - (id)detailView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)leftView;
 - (struct { unsigned char x1; unsigned char x2; unsigned char x3; unsigned char x4; BOOL x5; })mapDisplayStyle;
 - (float)maximumWidth;
 - (float)minimumWidth;
-- (struct CGSize { double x1; double x2; })preferredContentSize;
+- (struct CGSize { float x1; float x2; })preferredContentSize;
 - (void)reset;
 - (id)rightView;
 - (void)setCalloutBackgroundView:(id)arg1;
@@ -103,6 +103,6 @@
 - (void)setMinimumWidth:(float)arg1;
 - (void)setRightView:(id)arg1;
 - (void)setRightView:(id)arg1 animated:(BOOL)arg2;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 
 @end

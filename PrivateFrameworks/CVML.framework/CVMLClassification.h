@@ -4,7 +4,7 @@
 
 @interface CVMLClassification : CVMLObservation {
     NSString * _classification;
-    double  _confidence;
+    float  _confidence;
 }
 
 @property (readonly) NSString *classification;

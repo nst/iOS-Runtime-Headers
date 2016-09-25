@@ -12,12 +12,12 @@
     BOOL  _editsDisableAppearanceOverride;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _initialDrawingBoundsForAppearanceOverride;
     BOOL  _isDraggingHandle;
@@ -28,7 +28,7 @@
     BOOL  _isReallyObservingForIsEdited;
     BOOL  _isTranslating;
     int  _originalExifOrientation;
-    double  _originalModelBaseScaleFactor;
+    float  _originalModelBaseScaleFactor;
     AKAnnotation * _parentAnnotation;
     BOOL  _shouldUseAppearanceOverride;
     BOOL  _shouldUsePlaceholderText;
@@ -44,18 +44,18 @@
 @property AKAnnotation *childAnnotation;
 @property (copy) NSString *customPlaceholderText;
 @property (readonly) NSString *displayName;
-@property (readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } drawingBounds;
+@property (readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } drawingBounds;
 @property BOOL editsDisableAppearanceOverride;
-@property (readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } hitTestBounds;
-@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } initialDrawingBoundsForAppearanceOverride;
-@property (readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } integralDrawingBounds;
+@property (readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } hitTestBounds;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } initialDrawingBoundsForAppearanceOverride;
+@property (readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } integralDrawingBounds;
 @property BOOL isDraggingHandle;
 @property BOOL isEdited;
 @property BOOL isEditingText;
 @property BOOL isTranslating;
 @property (readonly) BOOL isUsingAppearanceOverride;
 @property (nonatomic) int originalExifOrientation;
-@property (nonatomic) double originalModelBaseScaleFactor;
+@property (nonatomic) float originalModelBaseScaleFactor;
 @property AKAnnotation *parentAnnotation;
 @property BOOL shouldObserveEdits;
 @property BOOL shouldUseAppearanceOverride;
@@ -83,15 +83,15 @@
 - (id)dataRepresentation;
 - (void)dealloc;
 - (id)displayName;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })drawingBounds;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })drawingBounds;
 - (BOOL)editsDisableAppearanceOverride;
 - (void)encodeWithCoder:(id)arg1;
-- (void)flattenModelExifOrientation:(int)arg1 withModelSize:(struct CGSize { double x1; double x2; })arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })hitTestBounds;
+- (void)flattenModelExifOrientation:(int)arg1 withModelSize:(struct CGSize { float x1; float x2; })arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })hitTestBounds;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })initialDrawingBoundsForAppearanceOverride;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })integralDrawingBounds;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })initialDrawingBoundsForAppearanceOverride;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })integralDrawingBounds;
 - (BOOL)isDraggingHandle;
 - (BOOL)isEdited;
 - (BOOL)isEditingText;
@@ -110,7 +110,7 @@
 - (void)setChildAnnotation:(id)arg1;
 - (void)setCustomPlaceholderText:(id)arg1;
 - (void)setEditsDisableAppearanceOverride:(BOOL)arg1;
-- (void)setInitialDrawingBoundsForAppearanceOverride:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setInitialDrawingBoundsForAppearanceOverride:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setIsDraggingHandle:(BOOL)arg1;
 - (void)setIsEdited:(BOOL)arg1;
 - (void)setIsEditingText:(BOOL)arg1;
@@ -130,6 +130,6 @@
 - (BOOL)textIsClipped;
 - (BOOL)textIsFixedHeight;
 - (BOOL)textIsFixedWidth;
-- (void)translateBy:(struct CGPoint { double x1; double x2; })arg1;
+- (void)translateBy:(struct CGPoint { float x1; float x2; })arg1;
 
 @end

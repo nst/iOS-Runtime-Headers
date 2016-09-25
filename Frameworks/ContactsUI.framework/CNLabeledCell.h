@@ -8,16 +8,16 @@
     NSDictionary * _valueTextAttributes;
 }
 
-@property (nonatomic, readonly) double bottomBaselineConstant;
+@property (nonatomic, readonly) float bottomBaselineConstant;
 @property (nonatomic, readonly) UIImageView *chevron;
-@property (nonatomic, readonly) double chevronWidth;
+@property (nonatomic, readonly) float chevronWidth;
 @property (nonatomic, readonly) NSString *labelString;
 @property (nonatomic, copy) NSDictionary *labelTextAttributes;
 @property (nonatomic, readonly) UIView<ABText> *labelView;
 @property (nonatomic, readonly) UIView *rightMostView;
 @property (nonatomic, readonly) UILabel *standardLabelView;
 @property (nonatomic, readonly) UILabel *standardValueView;
-@property (nonatomic, readonly) double topBaselineConstant;
+@property (nonatomic, readonly) float topBaselineConstant;
 @property (nonatomic, readonly) NSString *valueString;
 @property (nonatomic, copy) NSDictionary *valueTextAttributes;
 @property (nonatomic, readonly) UIView<ABText> *valueView;

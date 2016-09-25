@@ -13,8 +13,8 @@
     ISPlayerView * _playerView;
     ISAVPlayer * _prewiredAVPlayer;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _prewiredSize;
     double  _stillTimeInVideo;
     BOOL  _useRewindPlaybackStyle;
@@ -43,8 +43,8 @@
 - (BOOL)_setupContentViewForMode:(int)arg1;
 - (int)currentIrisMode;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 wallpaperImage:(id)arg2 cacheGroup:(id)arg3 wallpaperVideoURL:(id)arg4 stillTimeInVideo:(double)arg5 staticImageOptions:(unsigned int)arg6 variant:(int)arg7 prewireMemory:(BOOL)arg8 useRewindPlaybackStyle:(BOOL)arg9;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 wallpaperImage:(id)arg2 variant:(int)arg3;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 wallpaperImage:(id)arg2 cacheGroup:(id)arg3 wallpaperVideoURL:(id)arg4 stillTimeInVideo:(double)arg5 staticImageOptions:(unsigned int)arg6 variant:(int)arg7 prewireMemory:(BOOL)arg8 useRewindPlaybackStyle:(BOOL)arg9;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 wallpaperImage:(id)arg2 variant:(int)arg3;
 - (id)irisDelegate;
 - (id)irisGestureRecognizer;
 - (int)irisPlaybackState;

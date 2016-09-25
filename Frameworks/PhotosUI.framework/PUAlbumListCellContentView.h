@@ -21,7 +21,7 @@
     UIFont * _subtitleFont;
     NSString * _title;
     UIFont * _titleFont;
-    double  _xInset;
+    float  _xInset;
 }
 
 @property (setter=_setDeleteButton:, nonatomic, retain) PXUIButton *_deleteButton;
@@ -46,12 +46,12 @@
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, retain) UIFont *titleFont;
-@property (nonatomic) double xInset;
+@property (nonatomic) float xInset;
 
 - (void).cxx_destruct;
 - (void)_deleteAction:(id)arg1;
 - (id)_deleteButton;
-- (struct CGPoint { double x1; double x2; })_deleteButtonCenter;
+- (struct CGPoint { float x1; float x2; })_deleteButtonCenter;
 - (void)_setDeleteButton:(id)arg1;
 - (void)_setShowsTitleAndSubtitle:(BOOL)arg1;
 - (void)_setStackView:(id)arg1;
@@ -75,7 +75,7 @@
 - (id)delegate;
 - (unsigned int)editCapabilities;
 - (void)handleTransitionFade:(BOOL)arg1 animate:(BOOL)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isEditing;
 - (BOOL)isEnabled;
 - (BOOL)isHighlighted;

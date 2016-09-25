@@ -4,7 +4,7 @@
 
 @interface MFPGradientStop : NSObject {
     OITSUColor * mColor;
-    double  mPosition;
+    float  mPosition;
 }
 
 - (id)color;

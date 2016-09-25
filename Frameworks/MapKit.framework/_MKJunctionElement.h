@@ -3,28 +3,28 @@
  */
 
 @interface _MKJunctionElement : NSObject {
-    double  _angle;
+    float  _angle;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _leftBasePoint;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _rightBasePoint;
 }
 
-@property double angle;
-@property struct CGPoint { double x1; double x2; } leftBasePoint;
-@property struct CGPoint { double x1; double x2; } rightBasePoint;
+@property float angle;
+@property struct CGPoint { float x1; float x2; } leftBasePoint;
+@property struct CGPoint { float x1; float x2; } rightBasePoint;
 
 - (float)angle;
-- (struct CGPoint { double x1; double x2; })leftBasePoint;
-- (struct CGPoint { double x1; double x2; })leftEdgePointAtDistanceFromBase:(float)arg1;
-- (struct CGPoint { double x1; double x2; })rightBasePoint;
-- (struct CGPoint { double x1; double x2; })rightEdgePointAtDistanceFromBase:(float)arg1;
+- (struct CGPoint { float x1; float x2; })leftBasePoint;
+- (struct CGPoint { float x1; float x2; })leftEdgePointAtDistanceFromBase:(float)arg1;
+- (struct CGPoint { float x1; float x2; })rightBasePoint;
+- (struct CGPoint { float x1; float x2; })rightEdgePointAtDistanceFromBase:(float)arg1;
 - (void)setAngle:(float)arg1;
-- (void)setLeftBasePoint:(struct CGPoint { double x1; double x2; })arg1;
-- (void)setRightBasePoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setLeftBasePoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setRightBasePoint:(struct CGPoint { float x1; float x2; })arg1;
 
 @end

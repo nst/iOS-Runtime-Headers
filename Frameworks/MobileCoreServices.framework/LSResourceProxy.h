@@ -79,14 +79,14 @@
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
-+ (struct CGSize { double x1; double x2; })_applicationIconCanvasSize;
-+ (int)_compareApplicationIconCanvasSize:(struct CGSize { double x1; double x2; })arg1 withSize:(struct CGSize { double x1; double x2; })arg2;
++ (struct CGSize { float x1; float x2; })_applicationIconCanvasSize;
++ (int)_compareApplicationIconCanvasSize:(struct CGSize { float x1; float x2; })arg1 withSize:(struct CGSize { float x1; float x2; })arg2;
 
-- (struct CGSize { double x1; double x2; })_defaultStyleSize:(id)arg1;
-- (struct { int x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)_iconDefinitionForSize:(struct CGSize { double x1; double x2; })arg1 style:(id)arg2;
+- (struct CGSize { float x1; float x2; })_defaultStyleSize:(id)arg1;
+- (struct { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)_iconDefinitionForSize:(struct CGSize { float x1; float x2; })arg1 style:(id)arg2;
 - (id)_iconForStyle:(id)arg1;
-- (id)_iconForStyle:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
-- (struct { int x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)_iconVariantDefinitions:(id)arg1;
-- (struct CGSize { double x1; double x2; })_largestImageSize:(id)arg1;
+- (id)_iconForStyle:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
+- (struct { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)_iconVariantDefinitions:(id)arg1;
+- (struct CGSize { float x1; float x2; })_largestImageSize:(id)arg1;
 
 @end

@@ -13,7 +13,7 @@
         unsigned int errorCode : 1; 
         unsigned int found : 1; 
     }  _has;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) unsigned int count;
@@ -25,7 +25,7 @@
 @property (nonatomic, readonly) BOOL hasErrorDomain;
 @property (nonatomic) BOOL hasFound;
 @property (nonatomic) BOOL hasTimestamp;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
@@ -53,8 +53,8 @@
 - (void)setHasErrorCode:(BOOL)arg1;
 - (void)setHasFound:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
-- (unsigned int)timestamp;
+- (void)setTimestamp:(unsigned long long)arg1;
+- (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 
 @end

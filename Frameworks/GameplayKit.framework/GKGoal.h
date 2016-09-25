@@ -4,12 +4,12 @@
 
 @interface GKGoal : NSObject <NSCopying> {
     NSArray * _agents;
-    double  _angle;
-    double  _distance;
+    float  _angle;
+    float  _distance;
     BOOL  _forward;
     NSArray * _obstacles;
     GKPath * _path;
-    double  _speed;
+    float  _speed;
     double  _time;
     int  _type;
 }

@@ -7,7 +7,7 @@
     NSMutableDictionary * _actionViewsByType;
     NSObject<CNActionsViewProtocol> * _actionsDelegate;
     NSArray * _sortedActionTypes;
-    double  _spacing;
+    float  _spacing;
     CNUIContainerStackView * _stackView;
     int  _style;
 }
@@ -16,7 +16,7 @@
 @property (nonatomic, retain) NSMutableDictionary *actionViewsByType;
 @property (nonatomic) NSObject<CNActionsViewProtocol> *actionsDelegate;
 @property (nonatomic, copy) NSArray *sortedActionTypes;
-@property (nonatomic) double spacing;
+@property (nonatomic) float spacing;
 @property (nonatomic, retain) CNUIContainerStackView *stackView;
 @property (nonatomic) int style;
 
@@ -28,9 +28,9 @@
 - (void)addActionItem:(id)arg1;
 - (void)didMoveToWindow;
 - (void)didPressActionView:(id)arg1 longPress:(BOOL)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (unsigned int)insertionIndexForType:(id)arg1;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (void)resetActions;
 - (void)setActionItemsByType:(id)arg1;
 - (void)setActionViewsByType:(id)arg1;

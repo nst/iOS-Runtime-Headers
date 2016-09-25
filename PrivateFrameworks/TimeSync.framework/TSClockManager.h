@@ -6,7 +6,7 @@
     void * _clockManagerImpl;
 }
 
-@property (nonatomic, readonly) unsigned int machAbsoluteNanosecondClockIdentifier;
+@property (nonatomic, readonly) unsigned long long machAbsoluteNanosecondClockIdentifier;
 
 + (id)clockManager;
 + (id)defaultClockPersonalities;
@@ -14,23 +14,23 @@
 + (id)diagnosticDescriptionForService:(unsigned int)arg1 withIndent:(id)arg2;
 + (void)loadClockManagerNub;
 + (id)sharedClockManager;
-+ (id)timeSyncAudioClockDeviceUIDForClockIdentifier:(unsigned int)arg1;
++ (id)timeSyncAudioClockDeviceUIDForClockIdentifier:(unsigned long long)arg1;
 
 - (void)addClockPersonality:(id)arg1;
-- (BOOL)addMappingFromClockID:(unsigned int)arg1 toCoreAudioClockDomain:(unsigned int*)arg2 error:(id*)arg3;
-- (unsigned int)addUserFilteredClockWithMachInterval:(unsigned int)arg1 domainInterval:(unsigned int)arg2 usingFilterShift:(unsigned char)arg3 isAdaptive:(BOOL)arg4 error:(id*)arg5;
+- (BOOL)addMappingFromClockID:(unsigned long long)arg1 toCoreAudioClockDomain:(unsigned int*)arg2 error:(id*)arg3;
+- (unsigned long long)addUserFilteredClockWithMachInterval:(unsigned long long)arg1 domainInterval:(unsigned long long)arg2 usingFilterShift:(unsigned char)arg3 isAdaptive:(BOOL)arg4 error:(id*)arg5;
 - (BOOL)addgPTPServicesWithError:(id*)arg1;
 - (id)availableClockIdentifiers;
-- (id)clockWithClockIdentifier:(unsigned int)arg1;
+- (id)clockWithClockIdentifier:(unsigned long long)arg1;
 - (void)dealloc;
-- (BOOL)getMachAbsoluteClockID:(unsigned int*)arg1 error:(id*)arg2;
+- (BOOL)getMachAbsoluteClockID:(unsigned long long*)arg1 error:(id*)arg2;
 - (id)init;
-- (unsigned int)machAbsoluteNanosecondClockIdentifier;
-- (BOOL)nextAvailableDynamicClockID:(unsigned int*)arg1 error:(id*)arg2;
-- (BOOL)releaseDynamicClockID:(unsigned int)arg1 error:(id*)arg2;
+- (unsigned long long)machAbsoluteNanosecondClockIdentifier;
+- (BOOL)nextAvailableDynamicClockID:(unsigned long long*)arg1 error:(id*)arg2;
+- (BOOL)releaseDynamicClockID:(unsigned long long)arg1 error:(id*)arg2;
 - (void)removeClockPersonality:(id)arg1;
-- (BOOL)removeMappingFromClockIDToCoreAudioClockDomainForClockID:(unsigned int)arg1 error:(id*)arg2;
-- (BOOL)removeUserFilteredClockWithIdentifier:(unsigned int)arg1 error:(id*)arg2;
+- (BOOL)removeMappingFromClockIDToCoreAudioClockDomainForClockID:(unsigned long long)arg1 error:(id*)arg2;
+- (BOOL)removeUserFilteredClockWithIdentifier:(unsigned long long)arg1 error:(id*)arg2;
 - (BOOL)removegPTPServicesWithError:(id*)arg1;
 
 @end

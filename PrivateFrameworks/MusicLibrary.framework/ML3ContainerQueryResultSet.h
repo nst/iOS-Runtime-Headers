@@ -3,7 +3,7 @@
  */
 
 @interface ML3ContainerQueryResultSet : ML3QueryResultSet {
-    int  _containerPID;
+    long long  _containerPID;
     unsigned int  _entityLimit;
     BOOL  _needsReversing;
     BOOL  _needsSorting;
@@ -18,7 +18,7 @@
 - (void)enumeratePersistentIDsUsingBlock:(id /* block */)arg1;
 - (void)enumerateSectionsUsingBlock:(id /* block */)arg1;
 - (id)initWithQuery:(id)arg1;
-- (int)persistentIDAtIndex:(unsigned int)arg1;
+- (long long)persistentIDAtIndex:(unsigned int)arg1;
 - (id)sortedBackingStoreForDisplayOrdering;
 
 @end

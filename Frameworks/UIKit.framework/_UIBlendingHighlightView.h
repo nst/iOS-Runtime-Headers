@@ -4,10 +4,10 @@
 
 @interface _UIBlendingHighlightView : UIView <UIInterfaceActionVisualBackgroundDisplaying, UIInterfaceActionVisualGroupBackgroundDisplaying> {
     NSMutableArray * _blendingViews;
-    double  _cornerRadius;
+    float  _cornerRadius;
 }
 
-@property (nonatomic) double cornerRadius;
+@property (nonatomic) float cornerRadius;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;

@@ -13,13 +13,13 @@
 }
 
 @property (nonatomic, readonly) _CertInfoActionButton *actionButton;
-@property (nonatomic, readonly) double rowHeight;
+@property (nonatomic, readonly) float rowHeight;
 @property (nonatomic, copy) NSString *trustSubtitle;
 @property (nonatomic, copy) NSString *trustTitle;
 @property (getter=isTrusted, nonatomic) BOOL trusted;
 
 - (void).cxx_destruct;
-- (void)_layoutSubviewsWithActionButtonSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)_layoutSubviewsWithActionButtonSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)_subtitleLabel;
 - (id)_titleLabel;
 - (id)_trustedLabel;

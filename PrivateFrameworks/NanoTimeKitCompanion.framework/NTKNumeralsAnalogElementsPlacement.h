@@ -5,9 +5,9 @@
 @interface NTKNumeralsAnalogElementsPlacement : NSObject
 
 + (id)_elementsPositionsForHour:(int)arg1;
-+ (struct CGPoint { double x1; double x2; })centerPointFor10NumeralInImageForStyle:(unsigned int)arg1;
++ (struct CGPoint { float x1; float x2; })centerPointFor10NumeralInImageForStyle:(unsigned int)arg1;
 + (int)complicationPlacementForHour:(int)arg1;
 + (float)edgeVerticalAdjustmentDistance;
-+ (struct CGPoint { double x1; double x2; })hourViewPositionForHour:(int)arg1 complicationHidden:(BOOL)arg2 utilitySlot:(int)arg3;
++ (struct CGPoint { float x1; float x2; })hourViewPositionForHour:(int)arg1 complicationHidden:(BOOL)arg2 utilitySlot:(int)arg3;
 
 @end

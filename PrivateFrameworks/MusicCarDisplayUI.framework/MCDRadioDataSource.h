@@ -48,7 +48,7 @@
 - (BOOL)isOptedInToRadio;
 - (id)playbackContextForIndex:(unsigned int)arg1;
 - (id)playbackCoordinator;
-- (void)pushNotificationControllerDidReceiveSyncRequest:(id)arg1 toGlobalVersion:(unsigned int)arg2;
+- (void)pushNotificationControllerDidReceiveSyncRequest:(id)arg1 toGlobalVersion:(unsigned long long)arg2;
 - (void)refreshFeaturedStations;
 - (void)setDelegate:(id)arg1;
 - (void)setPlaybackCoordinator:(id)arg1;

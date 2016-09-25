@@ -8,14 +8,14 @@
         unsigned int nanos : 1; 
     }  _has;
     int  _nanos;
-    int  _seconds;
+    long long  _seconds;
     PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic) BOOL hasNanos;
 @property (nonatomic) BOOL hasSeconds;
 @property (nonatomic) int nanos;
-@property (nonatomic) int seconds;
+@property (nonatomic) long long seconds;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 + (id)options;
@@ -31,11 +31,11 @@
 - (void)mergeFrom:(id)arg1;
 - (int)nanos;
 - (BOOL)readFrom:(id)arg1;
-- (int)seconds;
+- (long long)seconds;
 - (void)setHasNanos:(BOOL)arg1;
 - (void)setHasSeconds:(BOOL)arg1;
 - (void)setNanos:(int)arg1;
-- (void)setSeconds:(int)arg1;
+- (void)setSeconds:(long long)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
 

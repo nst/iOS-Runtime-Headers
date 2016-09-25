@@ -5,7 +5,7 @@
 @interface HDSeriesSampleEntity : HDSampleEntity
 
 + (id)_databaseTable;
-+ (int)_insertionEra;
++ (long long)_insertionEra;
 + (id)additionalPredicateForEnumeration;
 + (id)columnsDefinition;
 + (id)entityEncoderForProfile:(id)arg1 database:(id)arg2 purpose:(int)arg3 authorizationFilter:(id /* block */)arg4;
@@ -15,6 +15,6 @@
 + (void)updateInsertionEra;
 
 - (BOOL)freezeWithDatabase:(id)arg1 error:(id*)arg2;
-- (BOOL)updateSampleCount:(int)arg1 withDatabase:(id)arg2 error:(id*)arg3;
+- (BOOL)updateSampleCount:(long long)arg1 withDatabase:(id)arg2 error:(id*)arg3;
 
 @end

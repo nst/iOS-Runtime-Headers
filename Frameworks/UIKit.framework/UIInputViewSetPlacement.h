@@ -4,12 +4,12 @@
 
 @interface UIInputViewSetPlacement : NSObject <NSSecureCoding> {
     BOOL  _dirty;
-    double  _extendedHeight;
+    float  _extendedHeight;
     <UIInputViewSetPlacementDelegate> * delegate;
 }
 
 @property (nonatomic) <UIInputViewSetPlacementDelegate> *delegate;
-@property (nonatomic) double extendedHeight;
+@property (nonatomic) float extendedHeight;
 @property (nonatomic, readonly) BOOL isInteractive;
 @property (nonatomic, readonly) BOOL isUndocked;
 @property (nonatomic, readonly) BOOL showsInputViews;
@@ -34,7 +34,7 @@
 - (BOOL)isInteractive;
 - (BOOL)isUndocked;
 - (unsigned int)notificationsForTransitionToPlacement:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })remoteIntrinsicContentSizeForInputViewInSet:(id)arg1 includingIAV:(BOOL)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })remoteIntrinsicContentSizeForInputViewInSet:(id)arg1 includingIAV:(BOOL)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setDirty;
 - (void)setExtendedHeight:(float)arg1;

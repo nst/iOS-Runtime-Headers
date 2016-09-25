@@ -8,13 +8,13 @@
         unsigned int l1State : 1; 
     }  _has;
     int  _l1State;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) BOOL hasL1State;
 @property (nonatomic) BOOL hasTimestamp;
 @property (nonatomic) int l1State;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -30,8 +30,8 @@
 - (void)setHasL1State:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
 - (void)setL1State:(int)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
-- (unsigned int)timestamp;
+- (void)setTimestamp:(unsigned long long)arg1;
+- (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 
 @end

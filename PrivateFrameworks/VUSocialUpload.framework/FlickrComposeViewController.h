@@ -13,7 +13,7 @@
     FlickrPhotoSetManager * _manager;
     SLComposeSheetConfigurationItem * _photoSetConfigurationItem;
     FlickrPhotoSetController * _photoSetController;
-    int  _photoSetID;
+    long long  _photoSetID;
     NSString * _photoSetTitle;
     FlickrUploadSession * _session;
 }

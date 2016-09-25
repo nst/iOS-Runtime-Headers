@@ -24,7 +24,7 @@
     BOOL  _disallowAdditiveAnimations;
     double  _duration;
     int  _filter;
-    double  _filterValue;
+    float  _filterValue;
     UIView * _filterView;
     double  _frameInterval;
     unsigned int  _hasOuterAnimator;
@@ -32,12 +32,12 @@
     unsigned int  _layoutSubviews;
     UIViewAnimationState * _nextState;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _position;
     unsigned int  _preventsAdditive;
     UIViewPropertyAnimator * _propertyAnimator;
-    double  _repeatCount;
+    float  _repeatCount;
     UIViewAnimationState * _retainedSelf;
     unsigned int  _roundsToInteger;
     double  _start;

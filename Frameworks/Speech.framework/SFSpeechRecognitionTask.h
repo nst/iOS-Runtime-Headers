@@ -19,14 +19,14 @@
 }
 
 @property (nonatomic, readonly) int _taskHint;
-@property (nonatomic, readonly) double averagePower;
+@property (nonatomic, readonly) float averagePower;
 @property (getter=isCancelled, nonatomic, readonly) BOOL cancelled;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, copy) NSError *error;
 @property (getter=isFinishing, nonatomic, readonly) BOOL finishing;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly) double peakPower;
+@property (nonatomic, readonly) float peakPower;
 @property (getter=isPowerAvailable, nonatomic, readonly) BOOL powerAvailable;
 @property (nonatomic, readonly, copy) NSString *requestIdentifier;
 @property (nonatomic, readonly) int state;

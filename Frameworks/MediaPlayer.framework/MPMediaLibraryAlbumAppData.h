@@ -14,9 +14,9 @@
 - (id)createAppDataDictionary;
 - (id)init;
 - (id)initWithAppDataDictionary:(id)arg1;
-- (void)setSongPopularity:(id)arg1 forAdamID:(int)arg2;
+- (void)setSongPopularity:(id)arg1 forAdamID:(long long)arg2;
 - (void)setSongPopularity:(id)arg1 forIdentifierSet:(id)arg2;
-- (id)songPopularityForAdamID:(int)arg1;
+- (id)songPopularityForAdamID:(long long)arg1;
 - (id)songPopularityForIdentifiers:(id)arg1;
 - (int)version;
 

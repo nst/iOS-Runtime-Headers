@@ -12,12 +12,12 @@
     int  _conditionCode;
     NSArray * _dayForecasts;
     NSURL * _deeplink;
-    double  _dewPoint;
+    float  _dewPoint;
     WFTemperature * _feelsLike;
     NSString * _fullName;
-    double  _heatIndex;
+    float  _heatIndex;
     NSArray * _hourlyForecasts;
-    double  _humidity;
+    float  _humidity;
     BOOL  _isDay;
     BOOL  _isLocalWeatherCity;
     BOOL  _isRequestedByFrameworkClient;
@@ -30,8 +30,8 @@
     unsigned int  _moonPhase;
     NSString * _name;
     unsigned int  _observationTime;
-    double  _precipitationPast24Hours;
-    double  _pressure;
+    float  _precipitationPast24Hours;
+    float  _pressure;
     unsigned int  _pressureRising;
     NSString * _state;
     unsigned int  _sunriseTime;
@@ -45,11 +45,11 @@
     NSString * _updateTimeString;
     BOOL  _updatingTimeZone;
     unsigned int  _uvIndex;
-    double  _visibility;
+    float  _visibility;
     WFLocation * _wfLocation;
-    double  _windChill;
-    double  _windDirection;
-    double  _windSpeed;
+    float  _windChill;
+    float  _windDirection;
+    float  _windSpeed;
     NSString * _woeid;
 }
 
@@ -62,12 +62,12 @@
 @property (nonatomic) int conditionCode;
 @property (nonatomic, copy) NSArray *dayForecasts;
 @property (nonatomic, copy) NSURL *deeplink;
-@property (nonatomic) double dewPoint;
+@property (nonatomic) float dewPoint;
 @property (nonatomic, retain) WFTemperature *feelsLike;
 @property (nonatomic, copy) NSString *fullName;
-@property (nonatomic) double heatIndex;
+@property (nonatomic) float heatIndex;
 @property (nonatomic, copy) NSArray *hourlyForecasts;
-@property (nonatomic) double humidity;
+@property (nonatomic) float humidity;
 @property (nonatomic) BOOL isDay;
 @property (nonatomic) BOOL isLocalWeatherCity;
 @property (nonatomic) BOOL isRequestedByFrameworkClient;
@@ -83,8 +83,8 @@
 @property (nonatomic) unsigned int moonPhase;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic) unsigned int observationTime;
-@property (nonatomic) double precipitationPast24Hours;
-@property (nonatomic) double pressure;
+@property (nonatomic) float precipitationPast24Hours;
+@property (nonatomic) float pressure;
 @property (nonatomic) unsigned int pressureRising;
 @property (nonatomic, copy) NSString *state;
 @property (nonatomic) unsigned int sunriseTime;
@@ -100,11 +100,11 @@
 @property (getter=isUpdatingTimeZone, nonatomic) BOOL updatingTimeZone;
 @property (readonly) NSDictionary *urlComponents;
 @property (setter=setUVIndex:, nonatomic) unsigned int uvIndex;
-@property (nonatomic) double visibility;
+@property (nonatomic) float visibility;
 @property (nonatomic, retain) WFLocation *wfLocation;
-@property (nonatomic) double windChill;
-@property (nonatomic) double windDirection;
-@property (nonatomic) double windSpeed;
+@property (nonatomic) float windChill;
+@property (nonatomic) float windDirection;
+@property (nonatomic) float windSpeed;
 @property (nonatomic, copy) NSString *woeid;
 
 + (id)_ISO8601Calendar;

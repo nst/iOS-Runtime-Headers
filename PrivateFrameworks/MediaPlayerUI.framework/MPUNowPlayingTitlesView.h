@@ -7,10 +7,10 @@
     NSString * _artistText;
     UILabel * _detailLabel;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _detailMarqueeEdgeInsets;
     MPUMarqueeView * _detailMarqueeView;
     NSDictionary * _detailTextAttributes;
@@ -20,14 +20,14 @@
     BOOL  _needsLabelUpdate;
     NSString * _stationNameText;
     int  _style;
-    double  _textMargin;
+    float  _textMargin;
     UILabel * _titleLabel;
-    double  _titleLeading;
+    float  _titleLeading;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _titleMarqueeEdgeInsets;
     MPUMarqueeView * _titleMarqueeView;
     NSString * _titleText;
@@ -36,17 +36,17 @@
 
 @property (nonatomic, copy) NSString *albumText;
 @property (nonatomic, copy) NSString *artistText;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } detailMarqueeEdgeInsets;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } detailMarqueeEdgeInsets;
 @property (nonatomic, retain) NSDictionary *detailTextAttributes;
 @property (getter=isExplicit, nonatomic) BOOL explicit;
 @property (nonatomic, retain) UIImage *explicitImage;
 @property (getter=isMarqueeEnabled, nonatomic) BOOL marqueeEnabled;
 @property (nonatomic, copy) NSString *stationNameText;
 @property (nonatomic) int style;
-@property (nonatomic) double textMargin;
-@property (nonatomic, readonly) double titleBaselineOffsetFromBottom;
-@property (nonatomic) double titleLeading;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } titleMarqueeEdgeInsets;
+@property (nonatomic) float textMargin;
+@property (nonatomic, readonly) float titleBaselineOffsetFromBottom;
+@property (nonatomic) float titleLeading;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } titleMarqueeEdgeInsets;
 @property (nonatomic, copy) NSString *titleText;
 @property (nonatomic, retain) NSDictionary *titleTextAttributes;
 
@@ -60,10 +60,10 @@
 - (void)_updateAttributedTitleLabel;
 - (id)albumText;
 - (id)artistText;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })detailMarqueeEdgeInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })detailMarqueeEdgeInsets;
 - (id)detailTextAttributes;
 - (id)explicitImage;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithStyle:(int)arg1;
 - (BOOL)isExplicit;
 - (BOOL)isMarqueeEnabled;
@@ -71,26 +71,26 @@
 - (void)resetMarqueePositions;
 - (void)setAlbumText:(id)arg1;
 - (void)setArtistText:(id)arg1;
-- (void)setDetailMarqueeEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setDetailMarqueeEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setDetailTextAttributes:(id)arg1;
 - (void)setExplicit:(BOOL)arg1;
 - (void)setExplicitImage:(id)arg1;
 - (void)setMarqueeEnabled:(BOOL)arg1;
-- (void)setMarqueeEnabled:(BOOL)arg1 withOptions:(int)arg2;
+- (void)setMarqueeEnabled:(BOOL)arg1 withOptions:(long long)arg2;
 - (void)setStationNameText:(id)arg1;
 - (void)setStyle:(int)arg1;
 - (void)setTextMargin:(float)arg1;
 - (void)setTitleLeading:(float)arg1;
-- (void)setTitleMarqueeEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setTitleMarqueeEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setTitleText:(id)arg1;
 - (void)setTitleTextAttributes:(id)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)stationNameText;
 - (int)style;
 - (float)textMargin;
 - (float)titleBaselineOffsetFromBottom;
 - (float)titleLeading;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })titleMarqueeEdgeInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })titleMarqueeEdgeInsets;
 - (id)titleText;
 - (id)titleTextAttributes;
 

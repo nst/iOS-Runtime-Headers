@@ -5,10 +5,10 @@
 @interface GKNoiseMap : NSObject {
     NSDictionary * _gradientColors;
     struct NoiseMap { 
-        double m_borderValue; 
+        float m_borderValue; 
         int m_height; 
         unsigned int m_memUsed; 
-        double *m_pNoiseMap; 
+        float *m_pNoiseMap; 
         int m_stride; 
         int m_width; 
     }  _map;

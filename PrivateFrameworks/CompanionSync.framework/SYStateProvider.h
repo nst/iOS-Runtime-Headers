@@ -4,7 +4,7 @@
 
 @interface SYStateProvider : NSObject {
     id /* block */  _encoder;
-    unsigned int  _handle;
+    unsigned long long  _handle;
     struct os_unfair_lock_s { 
         unsigned int _os_unfair_lock_opaque; 
     }  _lock;

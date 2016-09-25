@@ -16,7 +16,7 @@
 @property (copy) NSString *companyName;
 @property (nonatomic, copy) NSArray *contactRelations;
 @property (nonatomic) int contactType;
-@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } cropRect;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } cropRect;
 @property (nonatomic, copy) NSArray *dates;
 @property (nonatomic, copy) NSString *departmentName;
 @property (nonatomic, copy) NSArray *emailAddresses;
@@ -87,7 +87,7 @@
 - (int)contactType;
 - (id)copyWithSelfAsSnapshot;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })cropRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })cropRect;
 - (id)dates;
 - (id)departmentName;
 - (id)emailAddresses;
@@ -138,7 +138,7 @@
 - (void)setCompanyName:(id)arg1;
 - (void)setContactRelations:(id)arg1;
 - (void)setContactType:(int)arg1;
-- (void)setCropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setDates:(id)arg1;
 - (void)setDepartmentName:(id)arg1;
 - (void)setEmailAddresses:(id)arg1;

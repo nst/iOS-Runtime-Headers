@@ -7,31 +7,31 @@
     struct CGPath { } * _contextPath;
     id  _fillStyle;
     int  _fillStyleType;
-    double  _height;
-    double  _scale;
-    double  _shadowBlur;
+    float  _height;
+    float  _scale;
+    float  _shadowBlur;
     SUScriptColor * _shadowColor;
-    double  _shadowOffsetX;
-    double  _shadowOffsetY;
+    float  _shadowOffsetX;
+    float  _shadowOffsetY;
     id  _strokeStyle;
     int  _strokeStyleType;
-    double  _width;
+    float  _width;
 }
 
 @property (retain) id fillStyle;
-@property double globalAlpha;
+@property float globalAlpha;
 @property (retain) NSString *globalCompositeOperation;
-@property (readonly) double height;
+@property (readonly) float height;
 @property (retain) id lineCap;
 @property (retain) id lineJoin;
-@property double lineWidth;
-@property double miterLimit;
-@property double shadowBlur;
+@property float lineWidth;
+@property float miterLimit;
+@property float shadowBlur;
 @property (retain) id shadowColor;
-@property double shadowOffsetX;
-@property double shadowOffsetY;
+@property float shadowOffsetX;
+@property float shadowOffsetY;
 @property (retain) id strokeStyle;
-@property (readonly) double width;
+@property (readonly) float width;
 
 + (void)initialize;
 + (id)webScriptNameForKeyName:(id)arg1;

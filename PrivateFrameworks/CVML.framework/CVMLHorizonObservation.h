@@ -3,23 +3,23 @@
  */
 
 @interface CVMLHorizonObservation : CVMLObservation {
-    double  _angle;
+    float  _angle;
     struct CGAffineTransform { 
-        double a; 
-        double b; 
-        double c; 
-        double d; 
-        double tx; 
-        double ty; 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     }  _transform;
 }
 
-@property double angle;
-@property struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; } transform;
+@property float angle;
+@property struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } transform;
 
 - (float)angle;
 - (void)setAngle:(float)arg1;
-- (void)setTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })transform;
+- (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transform;
 
 @end

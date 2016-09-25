@@ -7,48 +7,48 @@
     BOOL  mDisableColorOutput;
     struct tvec4<float> { 
         union { 
-            double x; 
-            double r; 
-            double s; 
+            float x; 
+            float r; 
+            float s; 
         } ; 
         union { 
-            double y; 
-            double g; 
-            double t; 
+            float y; 
+            float g; 
+            float t; 
         } ; 
         union { 
-            double z; 
-            double b; 
-            double p; 
+            float z; 
+            float b; 
+            float p; 
         } ; 
         union { 
-            double w; 
-            double a; 
-            double q; 
+            float w; 
+            float a; 
+            float q; 
         } ; 
     }  mFilterRadius;
-    double  mLineWidth;
+    float  mLineWidth;
     TSDStroke * mStroke;
     struct tvec4<float> { 
         union { 
-            double x; 
-            double r; 
-            double s; 
+            float x; 
+            float r; 
+            float s; 
         } ; 
         union { 
-            double y; 
-            double g; 
-            double t; 
+            float y; 
+            float g; 
+            float t; 
         } ; 
         union { 
-            double z; 
-            double b; 
-            double p; 
+            float z; 
+            float b; 
+            float p; 
         } ; 
         union { 
-            double w; 
-            double a; 
-            double q; 
+            float w; 
+            float a; 
+            float q; 
         } ; 
     }  mStrokeColor;
     BOOL  mUseNormals;
@@ -56,10 +56,10 @@
 
 @property (nonatomic) BOOL cullBackfaces;
 @property (nonatomic) BOOL disableColorOutput;
-@property (nonatomic) struct tvec4<float> { union { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; union { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; union { double x_3_1_1; double x_3_1_2; double x_3_1_3; } x3; union { double x_4_1_1; double x_4_1_2; double x_4_1_3; } x4; } filterRadius;
-@property (nonatomic) double lineWidth;
+@property (nonatomic) struct tvec4<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; union { float x_4_1_1; float x_4_1_2; float x_4_1_3; } x4; } filterRadius;
+@property (nonatomic) float lineWidth;
 @property (nonatomic, copy) TSDStroke *stroke;
-@property (nonatomic) struct tvec4<float> { union { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; union { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; union { double x_3_1_1; double x_3_1_2; double x_3_1_3; } x3; union { double x_4_1_1; double x_4_1_2; double x_4_1_3; } x4; } strokeColor;
+@property (nonatomic) struct tvec4<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; union { float x_4_1_1; float x_4_1_2; float x_4_1_3; } x4; } strokeColor;
 @property (nonatomic) BOOL useNormals;
 
 + (id)setting;
@@ -69,20 +69,20 @@
 - (BOOL)cullBackfaces;
 - (void)dealloc;
 - (BOOL)disableColorOutput;
-- (struct tvec4<float> { union { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; union { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; union { double x_3_1_1; double x_3_1_2; double x_3_1_3; } x3; union { double x_4_1_1; double x_4_1_2; double x_4_1_3; } x4; })filterRadius;
+- (struct tvec4<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; union { float x_4_1_1; float x_4_1_2; float x_4_1_3; } x4; })filterRadius;
 - (unsigned int)hash;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
 - (float)lineWidth;
 - (void)setCullBackfaces:(BOOL)arg1;
 - (void)setDisableColorOutput:(BOOL)arg1;
-- (void)setFilterRadius:(struct tvec4<float> { union { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; union { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; union { double x_3_1_1; double x_3_1_2; double x_3_1_3; } x3; union { double x_4_1_1; double x_4_1_2; double x_4_1_3; } x4; })arg1;
+- (void)setFilterRadius:(struct tvec4<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; union { float x_4_1_1; float x_4_1_2; float x_4_1_3; } x4; })arg1;
 - (void)setLineWidth:(float)arg1;
 - (void)setStroke:(id)arg1;
-- (void)setStrokeColor:(struct tvec4<float> { union { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; union { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; union { double x_3_1_1; double x_3_1_2; double x_3_1_3; } x3; union { double x_4_1_1; double x_4_1_2; double x_4_1_3; } x4; })arg1;
+- (void)setStrokeColor:(struct tvec4<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; union { float x_4_1_1; float x_4_1_2; float x_4_1_3; } x4; })arg1;
 - (void)setUseNormals:(BOOL)arg1;
 - (id)stroke;
-- (struct tvec4<float> { union { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; union { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; union { double x_3_1_1; double x_3_1_2; double x_3_1_3; } x3; union { double x_4_1_1; double x_4_1_2; double x_4_1_3; } x4; })strokeColor;
+- (struct tvec4<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; union { float x_4_1_1; float x_4_1_2; float x_4_1_3; } x4; })strokeColor;
 - (BOOL)useNormals;
 
 @end

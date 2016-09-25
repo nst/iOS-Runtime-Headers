@@ -22,7 +22,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isValidMIMEType:(id)arg1;
-- (int)maximumBytes;
+- (long long)maximumBytes;
 - (void)setURL:(id)arg1;
 - (id)tryToResolveWithWebViewForProcessSharing:(id)arg1 completionHandler:(id /* block */)arg2;
 - (unsigned int)version;

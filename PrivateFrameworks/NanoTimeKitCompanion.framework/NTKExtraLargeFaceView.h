@@ -6,8 +6,8 @@
     NTKFaceColorScheme * _colorScheme;
     UIView * _complicationEditingTimeOverlayView;
     BOOL  _complicationIsVisible;
-    double  _currentFaceOffsetY;
-    double  _currentFaceViewScale;
+    float  _currentFaceOffsetY;
+    float  _currentFaceViewScale;
     unsigned int  _faceColor;
     BOOL  _isEditing;
     NTKExtraLargeTimeView * _largeTimeLabel;
@@ -43,7 +43,7 @@
 - (void)_handleTimeTravelTapGesture:(id)arg1;
 - (void)_initLargeTimeLabelIfNecessary;
 - (void)_initSmallTimeLabelIfNecessary;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_keylineFrameForCustomEditMode:(int)arg1 slot:(id)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_keylineFrameForCustomEditMode:(int)arg1 slot:(id)arg2;
 - (unsigned int)_keylineLabelAlignmentForComplicationSlot:(id)arg1;
 - (unsigned int)_keylineLabelAlignmentForCustomEditMode:(int)arg1 slot:(id)arg2;
 - (BOOL)_keylineLabelShouldShowIndividualOptionNamesForCustomEditMode:(int)arg1;
@@ -72,7 +72,7 @@
 - (float)_verticalPaddingForStatusBar;
 - (BOOL)_wantsTimeTravelStatusModule;
 - (void)endScrubbingAnimated:(BOOL)arg1 withCompletion:(id /* block */)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 
 @end

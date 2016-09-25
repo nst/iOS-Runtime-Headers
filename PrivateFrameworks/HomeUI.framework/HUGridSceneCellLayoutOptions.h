@@ -3,20 +3,20 @@
  */
 
 @interface HUGridSceneCellLayoutOptions : HUGridCellLayoutOptions {
-    double  _cellHeight;
+    float  _cellHeight;
     UIFont * _descriptionFont;
-    double  _iconInnerHorizontalMargin;
+    float  _iconInnerHorizontalMargin;
     unsigned int  _numberOfTitleLines;
-    double  _titleDescriptionLineSpacing;
-    double  _titleInterLineSpacing;
+    float  _titleDescriptionLineSpacing;
+    float  _titleInterLineSpacing;
 }
 
-@property (nonatomic) double cellHeight;
+@property (nonatomic) float cellHeight;
 @property (nonatomic, retain) UIFont *descriptionFont;
-@property (nonatomic) double iconInnerHorizontalMargin;
+@property (nonatomic) float iconInnerHorizontalMargin;
 @property (nonatomic) unsigned int numberOfTitleLines;
-@property (nonatomic) double titleDescriptionLineSpacing;
-@property (nonatomic) double titleInterLineSpacing;
+@property (nonatomic) float titleDescriptionLineSpacing;
+@property (nonatomic) float titleInterLineSpacing;
 
 + (id)defaultOptionsForCellSizeSubclass:(int)arg1;
 

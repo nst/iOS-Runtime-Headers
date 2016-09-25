@@ -10,10 +10,10 @@
     int  _iconSize;
     NSArray * _labelItems;
     MKMapItem * _mapItem;
-    double  _maxWidth;
+    float  _maxWidth;
     int  _shieldSize;
-    double  _spaceBetweenIcons;
-    double  _spaceBetweenShields;
+    float  _spaceBetweenIcons;
+    float  _spaceBetweenShields;
     BOOL  _truncateBySwitchingToTextOnly;
 }
 
@@ -21,10 +21,10 @@
 @property (nonatomic) int iconSize;
 @property (nonatomic, copy) NSArray *labelItems;
 @property (nonatomic, retain) MKMapItem *mapItem;
-@property (nonatomic) double maxWidth;
+@property (nonatomic) float maxWidth;
 @property (nonatomic) int shieldSize;
-@property (nonatomic) double spaceBetweenIcons;
-@property (nonatomic) double spaceBetweenShields;
+@property (nonatomic) float spaceBetweenIcons;
+@property (nonatomic) float spaceBetweenShields;
 @property (nonatomic) BOOL truncateBySwitchingToTextOnly;
 
 - (void).cxx_destruct;

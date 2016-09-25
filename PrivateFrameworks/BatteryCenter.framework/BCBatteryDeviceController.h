@@ -35,7 +35,7 @@
 - (void)_incrementNumberOfConnectedDevices:(BOOL)arg1;
 - (void)_incrementPercentChargeForConnectedDevices:(BOOL)arg1;
 - (BOOL)_isDevicePartOfPairWithBaseIdentifier:(id)arg1 matchIdentifier:(id)arg2 andPart:(unsigned int)arg3;
-- (struct CGSize { double x1; double x2; })_largestBatteryDeviceGlyphSize;
+- (struct CGSize { float x1; float x2; })_largestBatteryDeviceGlyphSize;
 - (int)_lowBatteryLevelForBaseIdentifier:(id)arg1 fromPowerSourceDescription:(id)arg2;
 - (id)_matchIdentifierFromPowerSourceDescription:(id)arg1;
 - (id)_orderedFirstPartyAccessoryIdentifiers;

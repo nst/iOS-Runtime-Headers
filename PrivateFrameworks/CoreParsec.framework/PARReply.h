@@ -7,7 +7,7 @@
     NSURLRequest * _httpRequest;
     NSURLResponse * _httpResponse;
     NSArray * _rawResponse;
-    double  _scale;
+    float  _scale;
     PARTask * _task;
 }
 
@@ -15,7 +15,7 @@
 @property (nonatomic, retain) NSURLRequest *httpRequest;
 @property (nonatomic, retain) NSURLResponse *httpResponse;
 @property (nonatomic, retain) NSArray *rawResponse;
-@property (nonatomic) double scale;
+@property (nonatomic) float scale;
 @property (nonatomic) PARTask *task;
 
 + (BOOL)supportsSecureCoding;

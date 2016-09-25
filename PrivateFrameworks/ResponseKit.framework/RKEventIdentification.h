@@ -3,7 +3,7 @@
  */
 
 @interface RKEventIdentification : NSObject {
-    double * _probabilities;
+    float * _probabilities;
     struct vector<RKNaturalLanguageEvents::TokenSequence, std::__1::allocator<RKNaturalLanguageEvents::TokenSequence> > { struct TokenSequence {} *x1; struct TokenSequence {} *x2; struct __compressed_pair<RKNaturalLanguageEvents::TokenSequence *, std::__1::allocator<RKNaturalLanguageEvents::TokenSequence> > { struct TokenSequence {} *x_3_1_1; } x3; } * _tokenSequences;
 }
 
@@ -17,6 +17,6 @@
 - (id)init;
 - (id)initWithOwnedTokenSequences:(struct vector<RKNaturalLanguageEvents::TokenSequence, std::__1::allocator<RKNaturalLanguageEvents::TokenSequence> > { struct TokenSequence {} *x1; struct TokenSequence {} *x2; struct __compressed_pair<RKNaturalLanguageEvents::TokenSequence *, std::__1::allocator<RKNaturalLanguageEvents::TokenSequence> > { struct TokenSequence {} *x_3_1_1; } x3; }*)arg1 probabilities:(float*)arg2;
 - (struct vector<RKNaturalLanguageEvents::TokenSequence, std::__1::allocator<RKNaturalLanguageEvents::TokenSequence> > { struct TokenSequence {} *x1; struct TokenSequence {} *x2; struct __compressed_pair<RKNaturalLanguageEvents::TokenSequence *, std::__1::allocator<RKNaturalLanguageEvents::TokenSequence> > { struct TokenSequence {} *x_3_1_1; } x3; }*)tokenSequences;
-- (struct { unsigned int x1; double x2; })topClassification;
+- (struct { unsigned int x1; float x2; })topClassification;
 
 @end

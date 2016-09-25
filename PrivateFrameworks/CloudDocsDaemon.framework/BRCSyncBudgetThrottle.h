@@ -4,12 +4,12 @@
 
 @interface BRCSyncBudgetThrottle : NSObject <NSSecureCoding> {
     double  _t0;
-    double  _values;
+    float  _values;
 }
 
-@property (nonatomic, readonly) double lastDay;
-@property (nonatomic, readonly) double lastHour;
-@property (nonatomic, readonly) double lastMinute;
+@property (nonatomic, readonly) float lastDay;
+@property (nonatomic, readonly) float lastHour;
+@property (nonatomic, readonly) float lastMinute;
 
 + (BOOL)supportsSecureCoding;
 

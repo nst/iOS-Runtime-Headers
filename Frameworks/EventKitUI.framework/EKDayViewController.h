@@ -26,7 +26,7 @@
     EKEventGestureController * _eventGestureController;
     BOOL  _fingerDown;
     UIView * _gestureOccurrenceSuperview;
-    double  _gutterWidth;
+    float  _gutterWidth;
     unsigned int  _hasPendingNextDate;
     unsigned int  _hasPendingPreviousDate;
     UIScrollView * _horizontalScrollingView;
@@ -38,8 +38,8 @@
     CalendarOccurrencesCollection * _nextDayOccurrences;
     EKDayViewWithGutters * _nextDayWithGutter;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _normalizedContentOffset;
     BOOL  _notifyWhenTapOtherEventDuringDragging;
     CalendarOccurrencesCollection * _occurrences;
@@ -80,9 +80,9 @@
 @property (nonatomic) BOOL disableNotifyDateChangeDuringTracking;
 @property (nonatomic, copy) NSDateComponents *displayDate;
 @property (nonatomic, retain) UIView *gestureOccurrenceSuperview;
-@property (nonatomic) double gutterWidth;
+@property (nonatomic) float gutterWidth;
 @property (readonly) unsigned int hash;
-@property (nonatomic) struct CGPoint { double x1; double x2; } normalizedContentOffset;
+@property (nonatomic) struct CGPoint { float x1; float x2; } normalizedContentOffset;
 @property (nonatomic) BOOL notifyWhenTapOtherEventDuringDragging;
 @property (nonatomic, copy) NSDateComponents *pendingNextDate;
 @property (nonatomic, copy) NSDateComponents *pendingPreviousDate;
@@ -123,7 +123,7 @@
 - (void)_setDisplayDate:(id)arg1 forRepeat:(BOOL)arg2;
 - (void)_setDisplayDate:(id)arg1 forRepeat:(BOOL)arg2 animate:(BOOL)arg3;
 - (void)_setDisplayDateInternal:(id)arg1;
-- (void)_setHorizontalContentOffsetUsingSpringAnimation:(struct CGPoint { double x1; double x2; })arg1;
+- (void)_setHorizontalContentOffsetUsingSpringAnimation:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_setNextAndPreviousFirstVisibleSecondToCurrent;
 - (BOOL)_shouldEndGestureEditingOnTap;
 - (BOOL)_shouldRespondToApplicationDidBecomeActiveStateChange;
@@ -134,7 +134,7 @@
 - (void)_showWeekNumbersPreferenceChanged:(id)arg1;
 - (void)_stopShowNowTimer;
 - (void)_updateAllDayAreaHeight;
-- (float)_weightedAllDayHeightForView:(id)arg1 visibleRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (float)_weightedAllDayHeightForView:(id)arg1 visibleRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (BOOL)allowsDaySwitching;
 - (BOOL)allowsSelection;
 - (BOOL)alwaysAnimate;
@@ -156,7 +156,7 @@
 - (void)dayView:(id)arg1 didCreateOccurrenceViews:(id)arg2;
 - (void)dayView:(id)arg1 didScaleDayViewWithScale:(float)arg2;
 - (void)dayView:(id)arg1 didSelectEvent:(id)arg2;
-- (void)dayView:(id)arg1 didUpdateScrollPosition:(struct CGPoint { double x1; double x2; })arg2;
+- (void)dayView:(id)arg1 didUpdateScrollPosition:(struct CGPoint { float x1; float x2; })arg2;
 - (id)dayView:(id)arg1 eventsForStartDate:(id)arg2 endDate:(id)arg3;
 - (void)dayView:(id)arg1 firstVisibleSecondChanged:(unsigned int)arg2;
 - (void)dayView:(id)arg1 isPinchingDayViewWithScale:(float)arg2;
@@ -164,7 +164,7 @@
 - (void)dayViewDidTapEmptySpace:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (BOOL)didScrollWhenEventGestureController:(id)arg1 scrollTimerFiredToMoveLeft:(BOOL)arg2 right:(BOOL)arg3 vertically:(BOOL)arg4 towardPoint:(struct CGPoint { double x1; double x2; })arg5;
+- (BOOL)didScrollWhenEventGestureController:(id)arg1 scrollTimerFiredToMoveLeft:(BOOL)arg2 right:(BOOL)arg3 vertically:(BOOL)arg4 towardPoint:(struct CGPoint { float x1; float x2; })arg5;
 - (BOOL)disableGestureDayChange;
 - (BOOL)disableNotifyDateChangeDuringTracking;
 - (id)displayDate;
@@ -174,19 +174,19 @@
 - (BOOL)eventEditorPopoverActiveWhileDraggingForEventGestureController:(id)arg1;
 - (void)eventGestureController:(id)arg1 addViewToScroller:(id)arg2 isAllDay:(BOOL)arg3;
 - (void)eventGestureController:(id)arg1 adjustDraggingViewForAllDay:(BOOL)arg2;
-- (double)eventGestureController:(id)arg1 dateAtPoint:(struct CGPoint { double x1; double x2; })arg2;
+- (double)eventGestureController:(id)arg1 dateAtPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (void)eventGestureController:(id)arg1 didCancelEditingOccurrence:(id)arg2 fadedOut:(BOOL)arg3;
 - (BOOL)eventGestureController:(id)arg1 didCommitOccurrence:(id)arg2 toDate:(double)arg3 isAllDay:(BOOL)arg4 span:(int)arg5;
 - (void)eventGestureController:(id)arg1 didMoveToDate:(double)arg2 isAllDay:(BOOL)arg3;
 - (void)eventGestureController:(id)arg1 didSetUpAtDate:(double)arg2 isAllDay:(BOOL)arg3;
 - (void)eventGestureController:(id)arg1 didSingleTapOccurrence:(id)arg2;
 - (float)eventGestureController:(id)arg1 heightForOccurrenceViewOfDuration:(double)arg2 allDay:(BOOL)arg3;
-- (BOOL)eventGestureController:(id)arg1 isAllDayAtPoint:(struct CGPoint { double x1; double x2; })arg2 requireInsistence:(BOOL)arg3;
-- (id)eventGestureController:(id)arg1 occurrenceViewAtPoint:(struct CGPoint { double x1; double x2; })arg2;
+- (BOOL)eventGestureController:(id)arg1 isAllDayAtPoint:(struct CGPoint { float x1; float x2; })arg2 requireInsistence:(BOOL)arg3;
+- (id)eventGestureController:(id)arg1 occurrenceViewAtPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (id)eventGestureController:(id)arg1 occurrenceViewForOccurrence:(id)arg2;
-- (struct CGPoint { double x1; double x2; })eventGestureController:(id)arg1 pointAtDate:(double)arg2 isAllDay:(BOOL)arg3;
+- (struct CGPoint { float x1; float x2; })eventGestureController:(id)arg1 pointAtDate:(double)arg2 isAllDay:(BOOL)arg3;
 - (float)eventGestureController:(id)arg1 widthForOccurrenceViewOfDays:(unsigned int)arg2;
-- (float)eventGestureController:(id)arg1 yPositionPerhapsMatchingAllDayOccurrence:(id)arg2 atPoint:(struct CGPoint { double x1; double x2; })arg3;
+- (float)eventGestureController:(id)arg1 yPositionPerhapsMatchingAllDayOccurrence:(id)arg2 atPoint:(struct CGPoint { float x1; float x2; })arg3;
 - (BOOL)eventGestureControllerShouldAllowLongPress:(id)arg1;
 - (id)eventsForStartDate:(id)arg1 endDate:(id)arg2;
 - (void)externallyEndedGestureDragging;
@@ -199,7 +199,7 @@
 - (void)insertViewForEvent:(id)arg1 belowViewForOtherEvent:(id)arg2;
 - (void)layoutContainerView:(id)arg1;
 - (void)loadView;
-- (struct CGPoint { double x1; double x2; })normalizedContentOffset;
+- (struct CGPoint { float x1; float x2; })normalizedContentOffset;
 - (BOOL)notifyWhenTapOtherEventDuringDragging;
 - (id)occurrenceViewForEvent:(id)arg1;
 - (id)occurrenceViewForEvent:(id)arg1 includeNextAndPreviousDays:(BOOL)arg2;
@@ -208,7 +208,7 @@
 - (id)pendingPreviousDate;
 - (id)preferredEventToSelectOnDate:(id)arg1;
 - (void)previewingContext:(id)arg1 commitViewController:(id)arg2;
-- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { double x1; double x2; })arg2;
+- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { float x1; float x2; })arg2;
 - (void)reloadData;
 - (void)reloadDataBetweenStart:(id)arg1 end:(id)arg2;
 - (void)scrollDayViewAppropriatelyWithAnimation:(BOOL)arg1;
@@ -233,10 +233,10 @@
 - (void)setDisableGestureDayChange:(BOOL)arg1;
 - (void)setDisableNotifyDateChangeDuringTracking:(BOOL)arg1;
 - (void)setDisplayDate:(id)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 gutterWidth:(float)arg2;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 gutterWidth:(float)arg2;
 - (void)setGestureOccurrenceSuperview:(id)arg1;
 - (void)setGutterWidth:(float)arg1;
-- (void)setNormalizedContentOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setNormalizedContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setNotifyWhenTapOtherEventDuringDragging:(BOOL)arg1;
 - (void)setPendingNextDate:(id)arg1;
 - (void)setPendingPreviousDate:(id)arg1;
@@ -260,6 +260,6 @@
 - (void)viewDidLayoutSubviews;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

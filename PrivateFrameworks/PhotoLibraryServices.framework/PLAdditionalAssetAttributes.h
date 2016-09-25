@@ -43,19 +43,19 @@
 @property (nonatomic, retain) NSNumber *originalOrientation;
 @property (nonatomic, retain) NSNumber *originalResourceChoice;
 @property (nonatomic, retain) NSNumber *originalWidth;
-@property (nonatomic) int pendingPlayCount;
-@property (nonatomic) int pendingShareCount;
-@property (nonatomic) int pendingViewCount;
+@property (nonatomic) long long pendingPlayCount;
+@property (nonatomic) long long pendingShareCount;
+@property (nonatomic) long long pendingViewCount;
 @property (nonatomic, retain) NSSet *personReferences;
 @property (nonatomic, retain) NSData *placeAnnotationData;
-@property (nonatomic) int playCount;
+@property (nonatomic) long long playCount;
 @property (nonatomic, retain) NSString *publicGlobalUUID;
 @property (nonatomic, retain) NSData *reverseLocationData;
 @property (nonatomic, retain) NSNumber *reverseLocationDataIsValid;
 @property (nonatomic, retain) NSDate *sceneAnalysisTimestamp;
 @property (nonatomic) short sceneAnalysisVersion;
 @property (nonatomic, retain) NSSet *sceneClassifications;
-@property (nonatomic) int shareCount;
+@property (nonatomic) long long shareCount;
 @property (nonatomic, retain) CLLocation *shiftedLocation;
 @property (nonatomic, retain) NSData *shiftedLocationData;
 @property (nonatomic) BOOL shiftedLocationIsValid;
@@ -65,14 +65,14 @@
 @property (nonatomic, retain) PLUnmanagedAdjustment *unmanagedAdjustment;
 @property (nonatomic, retain) NSNumber *uploadAttempts;
 @property (nonatomic) int videoCpDisplayTimescale;
-@property (nonatomic) int videoCpDisplayValue;
+@property (nonatomic) long long videoCpDisplayValue;
 @property (nonatomic) int videoCpDurationTimescale;
-@property (nonatomic) int viewCount;
+@property (nonatomic) long long viewCount;
 
 + (id)entityName;
-+ (void)fromExtraDurationData:(id)arg1 getStillDisplayTime:(struct { int x1; int x2; unsigned int x3; int x4; }*)arg2 videoDuration:(struct { int x1; int x2; unsigned int x3; int x4; }*)arg3;
++ (void)fromExtraDurationData:(id)arg1 getStillDisplayTime:(struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg2 videoDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg3;
 + (id)listOfSyncedProperties;
-+ (id)newExtraDurationDataFromStillDisplayTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1 videoDuration:(struct { int x1; int x2; unsigned int x3; int x4; })arg2;
++ (id)newExtraDurationDataFromStillDisplayTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 videoDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
 
 - (id)_cachedShiftedLocation;
 - (void)_setCachedShiftedLocation:(id)arg1;

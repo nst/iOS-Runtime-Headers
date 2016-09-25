@@ -9,7 +9,7 @@
     int  _exifOrientation;
     struct _renditionkeytoken { unsigned short x1; unsigned short x2; } * _key;
     NSString * _name;
-    double  _opacity;
+    float  _opacity;
     struct { 
         unsigned int isHeaderFlaggedFPO : 1; 
         unsigned int isExcludedFromContrastFilter : 1; 
@@ -38,7 +38,7 @@
 
 @property (nonatomic) int blendMode;
 @property (nonatomic) int exifOrientation;
-@property (nonatomic) double opacity;
+@property (nonatomic) float opacity;
 
 + (id)displayNameForRenditionType:(int)arg1;
 + (id)filteredCSIDataFromBaseCSIData:(id)arg1;
@@ -51,7 +51,7 @@
 - (void)_initializeRenditionKey:(const struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)arg1;
 - (void)_initializeTypeIdentifiersWithLayout:(unsigned short)arg1;
 - (void)_setStructuredThemeStore:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })alphaCroppedRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })alphaCroppedRect;
 - (int)artworkStatus;
 - (id)assetPackIdentifier;
 - (int)bitmapEncoding;
@@ -89,7 +89,7 @@
 - (id)name;
 - (float)opacity;
 - (BOOL)optOutOfThinning;
-- (struct CGSize { double x1; double x2; })originalUncroppedSize;
+- (struct CGSize { float x1; float x2; })originalUncroppedSize;
 - (id)packedContents;
 - (struct CGPDFDocument { }*)pdfDocument;
 - (int)pixelFormat;
@@ -105,7 +105,7 @@
 - (int)type;
 - (struct CGImage { }*)uncroppedImage;
 - (struct CGImage { }*)unslicedImage;
-- (struct CGSize { double x1; double x2; })unslicedSize;
+- (struct CGSize { float x1; float x2; })unslicedSize;
 - (id)utiType;
 - (unsigned short)valueForTokenIdentifier:(unsigned short)arg1;
 

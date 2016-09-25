@@ -4,14 +4,14 @@
 
 @interface NSFilePresenterManagedProxy : NSObject <NSXPCProxyCreating> {
     id /* block */  _errorHandler;
-    unsigned int  _filePresenterResponses;
+    unsigned long long  _filePresenterResponses;
     NSObject<NSFilePresenterXPCInterface><NSXPCProxyCreating> * _nonboostingXPCProxy;
     NSFileAccessProcessManager * _processManager;
     NSObject<NSFilePresenterXPCInterface><NSXPCProxyCreating> * _xpcProxy;
 }
 
 @property (copy) id /* block */ errorHandler;
-@property unsigned int filePresenterResponses;
+@property unsigned long long filePresenterResponses;
 @property (retain) NSFileAccessProcessManager *processManager;
 
 - (BOOL)_presenterRespondsToSelector:(SEL)arg1;
@@ -20,7 +20,7 @@
 - (void)collectDebuggingInformationWithCompletionHandler:(id /* block */)arg1;
 - (void)dealloc;
 - (id /* block */)errorHandler;
-- (unsigned int)filePresenterResponses;
+- (unsigned long long)filePresenterResponses;
 - (void)forwardInvocation:(id)arg1;
 - (id)initWithXPCProxy:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
@@ -32,7 +32,7 @@
 - (id)remoteObjectProxyWithErrorHandler:(id /* block */)arg1;
 - (void)saveChangesWithCompletionHandler:(id /* block */)arg1;
 - (void)setErrorHandler:(id /* block */)arg1;
-- (void)setFilePresenterResponses:(unsigned int)arg1;
+- (void)setFilePresenterResponses:(unsigned long long)arg1;
 - (void)setProcessManager:(id)arg1;
 
 @end

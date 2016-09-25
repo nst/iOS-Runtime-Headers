@@ -5,14 +5,14 @@
 @interface UIDynamicItemBehavior : UIDynamicBehavior {
     BOOL  _allowsRotation;
     BOOL  _anchored;
-    double  _angularResistance;
+    float  _angularResistance;
     NSMapTable * _cachedAngularVelocities;
     NSMapTable * _cachedLinearVelocities;
-    double  _charge;
-    double  _density;
-    double  _elasticity;
-    double  _friction;
-    double  _resistance;
+    float  _charge;
+    float  _density;
+    float  _elasticity;
+    float  _friction;
+    float  _resistance;
     struct { 
         unsigned int elasticityChanged : 1; 
         unsigned int frictionChanged : 1; 
@@ -29,13 +29,13 @@
 
 @property (nonatomic) BOOL allowsRotation;
 @property (getter=isAnchored, nonatomic) BOOL anchored;
-@property (nonatomic) double angularResistance;
-@property (nonatomic) double charge;
-@property (nonatomic) double density;
-@property (nonatomic) double elasticity;
-@property (nonatomic) double friction;
+@property (nonatomic) float angularResistance;
+@property (nonatomic) float charge;
+@property (nonatomic) float density;
+@property (nonatomic) float elasticity;
+@property (nonatomic) float friction;
 @property (nonatomic, readonly, copy) NSArray *items;
-@property (nonatomic) double resistance;
+@property (nonatomic) float resistance;
 
 + (BOOL)_isPrimitiveBehavior;
 
@@ -49,19 +49,19 @@
 - (float)_elasticityForItem:(id)arg1;
 - (float)_frictionForItem:(id)arg1;
 - (float)_massForItem:(id)arg1;
-- (struct CGPoint { double x1; double x2; })_positionForItem:(id)arg1;
+- (struct CGPoint { float x1; float x2; })_positionForItem:(id)arg1;
 - (void)_reevaluate:(unsigned int)arg1;
 - (float)_resistanceForItem:(id)arg1;
 - (BOOL)_rotationEnabledForItem:(id)arg1;
 - (void)_setAngle:(float)arg1 forItem:(id)arg2;
-- (void)_setPosition:(struct CGPoint { double x1; double x2; })arg1 forItem:(id)arg2;
+- (void)_setPosition:(struct CGPoint { float x1; float x2; })arg1 forItem:(id)arg2;
 - (void)addAngularVelocity:(float)arg1 forItem:(id)arg2;
 - (void)addItem:(id)arg1;
-- (void)addLinearVelocity:(struct CGPoint { double x1; double x2; })arg1 forItem:(id)arg2;
+- (void)addLinearVelocity:(struct CGPoint { float x1; float x2; })arg1 forItem:(id)arg2;
 - (BOOL)allowsRotation;
 - (float)angularResistance;
 - (float)angularVelocityForItem:(id)arg1;
-- (void)applyImpulse:(struct CGPoint { double x1; double x2; })arg1 toItem:(id)arg2;
+- (void)applyImpulse:(struct CGPoint { float x1; float x2; })arg1 toItem:(id)arg2;
 - (float)charge;
 - (float)density;
 - (id)description;
@@ -71,7 +71,7 @@
 - (id)initWithItems:(id)arg1;
 - (BOOL)isAnchored;
 - (id)items;
-- (struct CGPoint { double x1; double x2; })linearVelocityForItem:(id)arg1;
+- (struct CGPoint { float x1; float x2; })linearVelocityForItem:(id)arg1;
 - (void)removeItem:(id)arg1;
 - (float)resistance;
 - (void)setAllowsRotation:(BOOL)arg1;

@@ -28,7 +28,7 @@
 - (id)artworkToken;
 - (int)artworkType;
 - (id)fileURLForEffect:(id)arg1;
-- (id)fileURLForSize:(struct CGSize { double x1; double x2; })arg1;
+- (id)fileURLForSize:(struct CGSize { float x1; float x2; })arg1;
 - (unsigned int)hash;
 - (id)initWithToken:(id)arg1 artworkType:(int)arg2 musicLibrary:(id)arg3;
 - (id)initWithToken:(id)arg1 relativePath:(id)arg2 artworkType:(int)arg3 musicLibrary:(id)arg4;

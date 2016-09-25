@@ -7,7 +7,7 @@
     int  _contentType;
     BOOL  _hidden;
     NSData * _photoData;
-    int  _photoSetID;
+    long long  _photoSetID;
     NSString * _postDescription;
     int  _safetyLevel;
     NSArray * _tags;
@@ -22,7 +22,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL hidden;
 @property (nonatomic, retain) NSData *photoData;
-@property (nonatomic) int photoSetID;
+@property (nonatomic) long long photoSetID;
 @property (nonatomic, retain) NSString *postDescription;
 @property (nonatomic) int safetyLevel;
 @property (readonly) Class superclass;
@@ -39,7 +39,7 @@
 - (BOOL)hidden;
 - (id)initWithDictionary:(id)arg1;
 - (id)photoData;
-- (int)photoSetID;
+- (long long)photoSetID;
 - (id)postDescription;
 - (int)safetyLevel;
 - (id)serializedDictionary;
@@ -47,7 +47,7 @@
 - (void)setContentType:(int)arg1;
 - (void)setHidden:(BOOL)arg1;
 - (void)setPhotoData:(id)arg1;
-- (void)setPhotoSetID:(int)arg1;
+- (void)setPhotoSetID:(long long)arg1;
 - (void)setPostDescription:(id)arg1;
 - (void)setSafetyLevel:(int)arg1;
 - (void)setTags:(id)arg1;

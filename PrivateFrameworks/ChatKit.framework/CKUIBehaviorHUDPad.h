@@ -5,8 +5,8 @@
 @interface CKUIBehaviorHUDPad : CKUIBehaviorPad
 
 - (BOOL)entryFieldShouldUseBackdropView;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })entryViewHorizontalCoverInsets;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })entryViewVerticalCoverInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })entryViewHorizontalCoverInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })entryViewVerticalCoverInsets;
 - (BOOL)joystickUsesWindow;
 - (id)theme;
 - (BOOL)usesActionMenu;

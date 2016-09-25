@@ -5,12 +5,12 @@
 @interface TUAnswerRequest : NSObject <NSSecureCoding, TUCallRequest, TUVideoRequest> {
     int  _behavior;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _localLandscapeAspectRatio;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _localPortraitAspectRatio;
     NSString * _sourceIdentifier;
     NSString * _uniqueProxyIdentifier;
@@ -21,8 +21,8 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic) struct CGSize { double x1; double x2; } localLandscapeAspectRatio;
-@property (nonatomic) struct CGSize { double x1; double x2; } localPortraitAspectRatio;
+@property (nonatomic) struct CGSize { float x1; float x2; } localLandscapeAspectRatio;
+@property (nonatomic) struct CGSize { float x1; float x2; } localPortraitAspectRatio;
 @property (nonatomic, copy) NSString *sourceIdentifier;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *uniqueProxyIdentifier;
@@ -38,11 +38,11 @@
 - (id)initWithCall:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithUniqueProxyIdentifier:(id)arg1;
-- (struct CGSize { double x1; double x2; })localLandscapeAspectRatio;
-- (struct CGSize { double x1; double x2; })localPortraitAspectRatio;
+- (struct CGSize { float x1; float x2; })localLandscapeAspectRatio;
+- (struct CGSize { float x1; float x2; })localPortraitAspectRatio;
 - (void)setBehavior:(int)arg1;
-- (void)setLocalLandscapeAspectRatio:(struct CGSize { double x1; double x2; })arg1;
-- (void)setLocalPortraitAspectRatio:(struct CGSize { double x1; double x2; })arg1;
+- (void)setLocalLandscapeAspectRatio:(struct CGSize { float x1; float x2; })arg1;
+- (void)setLocalPortraitAspectRatio:(struct CGSize { float x1; float x2; })arg1;
 - (void)setSourceIdentifier:(id)arg1;
 - (void)setUniqueProxyIdentifier:(id)arg1;
 - (void)setWantsHoldMusic:(BOOL)arg1;

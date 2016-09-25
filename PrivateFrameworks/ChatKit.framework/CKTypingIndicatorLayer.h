@@ -27,12 +27,12 @@
 - (void).cxx_destruct;
 - (void)_buildIconImage;
 - (void)_buildThinkingDots;
-- (id)_largeBubbleGrowAnimationsWithSpeed:(float)arg1 offset:(struct CGPoint { double x1; double x2; })arg2;
+- (id)_largeBubbleGrowAnimationsWithSpeed:(float)arg1 offset:(struct CGPoint { float x1; float x2; })arg2;
 - (id)_largeBubblePulseAnimationWithSpeed:(float)arg1 delay:(float)arg2;
-- (id)_mediumBubbleGrowAnimationsWithSpeed:(float)arg1 offset:(struct CGPoint { double x1; double x2; })arg2;
+- (id)_mediumBubbleGrowAnimationsWithSpeed:(float)arg1 offset:(struct CGPoint { float x1; float x2; })arg2;
 - (id)_mediumBubblePulseAnimationWithSpeed:(float)arg1 delay:(float)arg2;
 - (void)_setup;
-- (id)_smallBubbleGrowAnimationsWithSpeed:(float)arg1 offset:(struct CGPoint { double x1; double x2; })arg2;
+- (id)_smallBubbleGrowAnimationsWithSpeed:(float)arg1 offset:(struct CGPoint { float x1; float x2; })arg2;
 - (id)_smallBubblePulseAnimationWithSpeed:(float)arg1 delay:(float)arg2;
 - (void)_updateForImage;
 - (double)convertedCurrentMediaTime;

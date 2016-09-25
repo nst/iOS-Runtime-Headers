@@ -12,14 +12,14 @@
 @property (readonly) NSString *downloadFileName;
 @property (readonly) NSString *downloadPath;
 @property (getter=isExternal, readonly) BOOL external;
-@property (readonly) int fileSize;
+@property (readonly) long long fileSize;
 @property (readonly) NSString *finalizedPath;
 @property (readonly) NSArray *sinfs;
 
-+ (int)_existsMessage;
-+ (int)_getExternalValuesMessage;
-+ (int)_getValueMessage;
-+ (int)_setValuesMessage;
++ (long long)_existsMessage;
++ (long long)_getExternalValuesMessage;
++ (long long)_getValueMessage;
++ (long long)_setValuesMessage;
 + (id)assetWithURL:(id)arg1 type:(int)arg2;
 
 - (id)URLRequest;
@@ -28,14 +28,14 @@
 - (int)_legacyAssetType;
 - (void)_resetLocalIVars;
 - (int)assetType;
-- (int)bytesDownloaded;
-- (int)bytesUploadTotal;
-- (int)bytesUploaded;
+- (long long)bytesDownloaded;
+- (long long)bytesUploadTotal;
+- (long long)bytesUploaded;
 - (id)copyXPCEncoding;
 - (void)dealloc;
 - (id)downloadFileName;
 - (id)downloadPath;
-- (int)fileSize;
+- (long long)fileSize;
 - (id)finalizedPath;
 - (id)initWithURLRequest:(id)arg1;
 - (id)initWithURLRequest:(id)arg1 type:(int)arg2;

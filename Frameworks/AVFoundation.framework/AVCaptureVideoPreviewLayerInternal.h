@@ -5,12 +5,12 @@
 @interface AVCaptureVideoPreviewLayerInternal : NSObject {
     BOOL  automaticallyAdjustsMirroring;
     struct CGAffineTransform { 
-        double a; 
-        double b; 
-        double c; 
-        double d; 
-        double tx; 
-        double ty; 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     }  captureDeviceTransform;
     int  changeSeed;
     BOOL  chromaNoiseReductionEnabled;
@@ -22,15 +22,15 @@
     BOOL  isPresentationLayer;
     BOOL  mirrored;
     int  orientation;
-    double  previewRotationDegrees;
+    float  previewRotationDegrees;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  previewSize;
-    double  rollAdjustment;
+    float  rollAdjustment;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  sensorSize;
     NSString * sensorToPreviewVTScalingMode;
     AVCaptureSession * session;

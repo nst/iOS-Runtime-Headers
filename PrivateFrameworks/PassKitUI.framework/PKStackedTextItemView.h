@@ -5,24 +5,24 @@
 @interface PKStackedTextItemView : UIView {
     bool  _animated;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _boundsSize;
     PKStackedTextItem * _content;
     struct { 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } boundingSize; 
         struct { 
             struct CGRect { 
                 struct CGPoint { 
-                    double x; 
-                    double y; 
+                    float x; 
+                    float y; 
                 } origin; 
                 struct CGSize { 
-                    double width; 
-                    double height; 
+                    float width; 
+                    float height; 
                 } size; 
             } frame; 
             bool widthConstrained; 
@@ -42,7 +42,7 @@
 }
 
 @property (nonatomic, copy) PKStackedTextItem *content;
-@property (nonatomic) struct { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; struct { struct CGRect { struct CGPoint { double x_1_3_1; double x_1_3_2; } x_1_2_1; struct CGSize { double x_2_3_1; double x_2_3_2; } x_1_2_2; } x_2_1_1; bool x_2_1_2; } x2[4]; } contentConstraints;
+@property (nonatomic) struct { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; struct { struct CGRect { struct CGPoint { float x_1_3_1; float x_1_3_2; } x_1_2_1; struct CGSize { float x_2_3_1; float x_2_3_2; } x_1_2_2; } x_2_1_1; bool x_2_1_2; } x2[4]; } contentConstraints;
 @property (nonatomic, readonly) int style;
 @property (nonatomic) int textAlignment;
 
@@ -50,17 +50,17 @@
 - (double)_prepareViewForReuse:(id)arg1;
 - (void)_updateAlignmentAnimated:(bool)arg1;
 - (void)_updateSubviewsAnimated:(bool)arg1;
-- (struct { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; struct { struct CGRect { struct CGPoint { double x_1_3_1; double x_1_3_2; } x_1_2_1; struct CGSize { double x_2_3_1; double x_2_3_2; } x_1_2_2; } x_2_1_1; bool x_2_1_2; } x2[4]; })boundingMetricForWidth:(float)arg1;
+- (struct { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; struct { struct CGRect { struct CGPoint { float x_1_3_1; float x_1_3_2; } x_1_2_1; struct CGSize { float x_2_3_1; float x_2_3_2; } x_1_2_2; } x_2_1_1; bool x_2_1_2; } x2[4]; })boundingMetricForWidth:(float)arg1;
 - (id)content;
-- (struct { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; struct { struct CGRect { struct CGPoint { double x_1_3_1; double x_1_3_2; } x_1_2_1; struct CGSize { double x_2_3_1; double x_2_3_2; } x_1_2_2; } x_2_1_1; bool x_2_1_2; } x2[4]; })contentConstraints;
+- (struct { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; struct { struct CGRect { struct CGPoint { float x_1_3_1; float x_1_3_2; } x_1_2_1; struct CGSize { float x_2_3_1; float x_2_3_2; } x_1_2_2; } x_2_1_1; bool x_2_1_2; } x2[4]; })contentConstraints;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithStyle:(int)arg1;
 - (void)layoutIfNeededAnimated:(bool)arg1;
 - (void)layoutSubviews;
 - (void)setContent:(id)arg1;
 - (void)setContent:(id)arg1 animated:(bool)arg2;
-- (void)setContentConstraints:(struct { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; struct { struct CGRect { struct CGPoint { double x_1_3_1; double x_1_3_2; } x_1_2_1; struct CGSize { double x_2_3_1; double x_2_3_2; } x_1_2_2; } x_2_1_1; bool x_2_1_2; } x2[4]; })arg1;
+- (void)setContentConstraints:(struct { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; struct { struct CGRect { struct CGPoint { float x_1_3_1; float x_1_3_2; } x_1_2_1; struct CGSize { float x_2_3_1; float x_2_3_2; } x_1_2_2; } x_2_1_1; bool x_2_1_2; } x2[4]; })arg1;
 - (void)setTextAlignment:(int)arg1;
 - (void)setTextAlignment:(int)arg1 animated:(bool)arg2;
 - (int)style;

@@ -33,7 +33,7 @@
 - (id)_localTimeZoneName;
 - (id)_lookupOrInsertProvenance:(id)arg1 error:(id*)arg2;
 - (void)checkDefaultsLoaded;
-- (id)dataProvenanceDefaultsWithSyncProvenance:(int)arg1 productType:(id)arg2 systemBuild:(id)arg3 sourceVersion:(id)arg4 timeZoneName:(id)arg5 sourceID:(id)arg6 deviceID:(id)arg7;
+- (id)dataProvenanceDefaultsWithSyncProvenance:(long long)arg1 productType:(id)arg2 systemBuild:(id)arg3 sourceVersion:(id)arg4 timeZoneName:(id)arg5 sourceID:(id)arg6 deviceID:(id)arg7;
 - (id)defaultLocalDataProvenance;
 - (id)description;
 - (id)deviceNoneID;
@@ -45,7 +45,7 @@
 - (id)localSourceID;
 - (id)localSystemBuild;
 - (id)originProvenanceByPersistentID;
-- (id)originProvenanceForPersistentID:(int)arg1 database:(id)arg2 error:(id*)arg3;
+- (id)originProvenanceForPersistentID:(long long)arg1 database:(id)arg2 error:(id*)arg3;
 - (id)persistentIDsByProvenanceKey;
 - (id)provenanceEntityForProvenance:(id)arg1 error:(id*)arg2;
 - (void)setDeviceNoneID:(id)arg1;

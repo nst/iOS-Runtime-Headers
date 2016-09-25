@@ -15,8 +15,8 @@
 - (id)imageDataForAdamID:(id)arg1;
 - (id)init;
 - (id)initWithAccount:(id)arg1;
-- (unsigned int)purge:(unsigned int)arg1;
-- (unsigned int)purgeableSpace;
+- (unsigned long long)purge:(unsigned long long)arg1;
+- (unsigned long long)purgeableSpace;
 - (BOOL)setImageData:(id)arg1 forAdamID:(id)arg2 imageToken:(id)arg3;
 
 @end

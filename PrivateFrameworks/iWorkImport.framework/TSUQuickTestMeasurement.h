@@ -14,9 +14,9 @@
 - (id)autorelease;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)displayTime:(unsigned int)arg1 forClassAndMethodName:(id)arg2;
+- (id)displayTime:(unsigned long long)arg1 forClassAndMethodName:(id)arg2;
 - (id)getPreviousTimeForKey:(id)arg1;
-- (id)p_niceString:(unsigned int)arg1 withPrefix:(id)arg2;
+- (id)p_niceString:(unsigned long long)arg1 withPrefix:(id)arg2;
 - (oneway void)release;
 - (id)retain;
 - (unsigned int)retainCount;

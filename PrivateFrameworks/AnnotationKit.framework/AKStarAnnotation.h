@@ -3,10 +3,10 @@
  */
 
 @interface AKStarAnnotation : AKPolygonAnnotation {
-    double  _innerRadiusFactor;
+    float  _innerRadiusFactor;
 }
 
-@property double innerRadiusFactor;
+@property float innerRadiusFactor;
 
 + (id)displayNameForUndoablePropertyChangeWithKey:(id)arg1;
 + (id)keyPathsForValuesAffectingDrawingBounds;

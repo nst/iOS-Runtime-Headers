@@ -3,27 +3,27 @@
  */
 
 @interface _UITextFieldRoundedRectBackgroundViewNeue : UIImageView {
-    double  _cornerRadius;
+    float  _cornerRadius;
     BOOL  _disabled;
     UIColor * _fillColor;
-    double  _lineWidth;
+    float  _lineWidth;
     UIColor * _strokeColor;
 }
 
-@property (nonatomic) double cornerRadius;
+@property (nonatomic) float cornerRadius;
 @property (nonatomic, retain) UIColor *fillColor;
-@property (nonatomic) double lineWidth;
+@property (nonatomic) float lineWidth;
 @property (nonatomic, retain) UIColor *strokeColor;
 
 - (void).cxx_destruct;
 - (id)_fillColor:(BOOL)arg1;
-- (id)_initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 active:(BOOL)arg2 lineWidth:(float)arg3;
-- (id)_initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 active:(BOOL)arg2 lineWidth:(float)arg3 updateView:(BOOL)arg4;
+- (id)_initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 active:(BOOL)arg2 lineWidth:(float)arg3;
+- (id)_initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 active:(BOOL)arg2 lineWidth:(float)arg3 updateView:(BOOL)arg4;
 - (id)_strokeColor:(BOOL)arg1;
 - (float)cornerRadius;
 - (id)fillColor;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 active:(BOOL)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 active:(BOOL)arg2;
 - (float)lineWidth;
 - (void)setActive:(BOOL)arg1;
 - (void)setCornerRadius:(float)arg1;

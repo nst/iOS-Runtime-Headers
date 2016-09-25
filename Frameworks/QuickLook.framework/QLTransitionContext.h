@@ -4,46 +4,46 @@
 
 @interface QLTransitionContext : NSObject <NSSecureCoding> {
     BOOL  _contextPreparedToSend;
-    double  _hostNavigationOffset;
+    float  _hostNavigationOffset;
     QLPreviewController * _previewController;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _previewItemSize;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _sourceFrame;
     UIView * _sourceView;
     UIView * _sourceViewSnapshot;
     UIImage * _sourceViewSnapshotImage;
-    double  _topNavigationOffset;
+    float  _topNavigationOffset;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _uncroppedFrame;
     BOOL  _usingViewForZoomTransition;
 }
 
-@property double hostNavigationOffset;
-@property struct CGSize { double x1; double x2; } previewItemSize;
-@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } sourceFrame;
+@property float hostNavigationOffset;
+@property struct CGSize { float x1; float x2; } previewItemSize;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } sourceFrame;
 @property (nonatomic, retain) UIView *sourceView;
 @property (nonatomic, retain) UIView *sourceViewSnapshot;
-@property double topNavigationOffset;
-@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } uncroppedFrame;
+@property float topNavigationOffset;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } uncroppedFrame;
 @property BOOL usingViewForZoomTransition;
 
 + (id)firstChildNavigationControllerFromViewController:(id)arg1;
@@ -59,22 +59,22 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithQLPreviewController:(id)arg1 toViewController:(id)arg2;
 - (void)prepareContextToSend;
-- (struct CGSize { double x1; double x2; })previewItemSize;
+- (struct CGSize { float x1; float x2; })previewItemSize;
 - (void)setHostNavigationOffset:(float)arg1;
-- (void)setPreviewItemSize:(struct CGSize { double x1; double x2; })arg1;
-- (void)setSourceFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setPreviewItemSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setSourceFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setSourceView:(id)arg1;
 - (void)setSourceViewSnapshot:(id)arg1;
 - (void)setTopNavigationOffset:(float)arg1;
-- (void)setUncroppedFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setUncroppedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setUpTransitionSourceView;
 - (void)setUsingViewForZoomTransition:(BOOL)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })sourceFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })sourceFrame;
 - (id)sourceView;
 - (id)sourceViewSnapshot;
 - (id)sourceViewSnapshotImage;
 - (float)topNavigationOffset;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })uncroppedFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })uncroppedFrame;
 - (BOOL)usingViewForZoomTransition;
 
 @end

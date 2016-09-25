@@ -26,7 +26,7 @@
 - (void)configureWithInteraction:(id)arg1 context:(unsigned int)arg2 errorHandlingCompletion:(id /* block */)arg3;
 - (id)delegate;
 - (id)extensionHostContext;
-- (void)serviceViewControllerDesiresConstrainedSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)serviceViewControllerDesiresConstrainedSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setExtensionHostContext:(id)arg1;
 - (void)updateSize;

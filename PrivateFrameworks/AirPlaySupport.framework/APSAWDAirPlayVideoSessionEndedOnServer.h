@@ -35,7 +35,7 @@
     unsigned int  _rewinds;
     NSString * _sessionUUID;
     unsigned int  _stallCount;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) double bandwidthMax;
@@ -69,7 +69,7 @@
 @property (nonatomic) unsigned int rewinds;
 @property (nonatomic, retain) NSString *sessionUUID;
 @property (nonatomic) unsigned int stallCount;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 
 - (double)bandwidthMax;
 - (double)bandwidthMean;
@@ -140,9 +140,9 @@
 - (void)setRewinds:(unsigned int)arg1;
 - (void)setSessionUUID:(id)arg1;
 - (void)setStallCount:(unsigned int)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned int)stallCount;
-- (unsigned int)timestamp;
+- (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 
 @end

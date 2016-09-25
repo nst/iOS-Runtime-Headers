@@ -5,7 +5,7 @@
 @interface PASymbolHandle : NSObject <PASerializable> {
     PASymbolOwner * _owner;
     PASymbol * _symbol;
-    unsigned int  _symbolOwnerStartAddressInTask;
+    unsigned long long  _symbolOwnerStartAddressInTask;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -15,7 +15,7 @@
 @property (readonly) BOOL hasSymbolOwnerStartAddressInTask;
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
-@property (readonly) unsigned int symbolLength;
+@property (readonly) unsigned long long symbolLength;
 @property (readonly) NSString *symbolName;
 @property (readonly) NSString *symbolOwnerBinaryVersion;
 @property (readonly) NSString *symbolOwnerBundleIdentifier;
@@ -24,10 +24,10 @@
 @property (readonly) BOOL symbolOwnerIsTextExecSegment;
 @property (readonly) NSString *symbolOwnerName;
 @property (retain) NSString *symbolOwnerPath;
-@property (readonly) unsigned int symbolOwnerStartAddressInTask;
-@property (readonly) unsigned int symbolOwnerTextSegmentLength;
+@property (readonly) unsigned long long symbolOwnerStartAddressInTask;
+@property (readonly) unsigned long long symbolOwnerTextSegmentLength;
 @property (readonly) NSUUID *symbolOwnerUUID;
-@property (readonly) unsigned int symbolStartAddressInTask;
+@property (readonly) unsigned long long symbolStartAddressInTask;
 
 + (id)classDictionaryKey;
 + (id)getEmptySymbolHandle;
@@ -35,27 +35,27 @@
 
 - (void).cxx_destruct;
 - (id)_initAsEmptyHandle;
-- (id)_sourceInformationForAddress:(unsigned int)arg1;
+- (id)_sourceInformationForAddress:(unsigned long long)arg1;
 - (BOOL)addSelfToBufferAtPosition:(void*)arg1 withCompletedSerializationDictionary:(id)arg2;
 - (void)addSelfToSerializationDictionary:(id)arg1;
 - (BOOL)addToPersistentCache;
-- (int)compareInfoRichnessToSymbolHandle:(id)arg1 forAddress:(unsigned int)arg2;
+- (int)compareInfoRichnessToSymbolHandle:(id)arg1 forAddress:(unsigned long long)arg2;
 - (id)debugDescription;
-- (id)debugDescriptionForAddress:(unsigned int)arg1;
-- (BOOL)hasSourceInformationForAddress:(unsigned int)arg1;
+- (id)debugDescriptionForAddress:(unsigned long long)arg1;
+- (BOOL)hasSourceInformationForAddress:(unsigned long long)arg1;
 - (BOOL)hasSymbol;
 - (BOOL)hasSymbolOwner;
 - (BOOL)hasSymbolOwnerStartAddressInTask;
-- (id)initWithSymbol:(id)arg1 andSymbolOwnerStartAddress:(unsigned int)arg2 andSymbolOwner:(id)arg3;
+- (id)initWithSymbol:(id)arg1 andSymbolOwnerStartAddress:(unsigned long long)arg2 andSymbolOwner:(id)arg3;
 - (void)populateReferencesUsingBufferPosition:(const void*)arg1 andDeserializationDictionary:(id)arg2 andDataBufferDictionary:(id)arg3;
 - (void)setSymbolOwnerPath:(id)arg1;
 - (unsigned long)sizeInBytesForSerializedVersion;
-- (unsigned int)sourceColumnNumberForAddress:(unsigned int)arg1;
-- (id)sourceFileNameForAddress:(unsigned int)arg1;
-- (unsigned int)sourceLengthForAddress:(unsigned int)arg1;
-- (unsigned int)sourceLineNumberForAddress:(unsigned int)arg1;
-- (unsigned int)sourceStartAddressInTaskForAddress:(unsigned int)arg1;
-- (unsigned int)symbolLength;
+- (unsigned int)sourceColumnNumberForAddress:(unsigned long long)arg1;
+- (id)sourceFileNameForAddress:(unsigned long long)arg1;
+- (unsigned long long)sourceLengthForAddress:(unsigned long long)arg1;
+- (unsigned int)sourceLineNumberForAddress:(unsigned long long)arg1;
+- (unsigned long long)sourceStartAddressInTaskForAddress:(unsigned long long)arg1;
+- (unsigned long long)symbolLength;
 - (id)symbolName;
 - (id)symbolOwnerBinaryVersion;
 - (id)symbolOwnerBundleIdentifier;
@@ -64,9 +64,9 @@
 - (BOOL)symbolOwnerIsTextExecSegment;
 - (id)symbolOwnerName;
 - (id)symbolOwnerPath;
-- (unsigned int)symbolOwnerStartAddressInTask;
-- (unsigned int)symbolOwnerTextSegmentLength;
+- (unsigned long long)symbolOwnerStartAddressInTask;
+- (unsigned long long)symbolOwnerTextSegmentLength;
 - (id)symbolOwnerUUID;
-- (unsigned int)symbolStartAddressInTask;
+- (unsigned long long)symbolStartAddressInTask;
 
 @end

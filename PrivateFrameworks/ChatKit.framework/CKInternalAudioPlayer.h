@@ -23,7 +23,7 @@
 @property (nonatomic, readonly) int playerType;
 @property (getter=isPlaying, nonatomic, readonly) BOOL playing;
 @property (readonly) Class superclass;
-@property (nonatomic) double volume;
+@property (nonatomic) float volume;
 
 - (void).cxx_destruct;
 - (void)_handleAVPlayerItemStateChange;

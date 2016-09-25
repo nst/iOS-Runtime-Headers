@@ -38,8 +38,8 @@
     NSMutableArray * _responses;
     BOOL  _shouldHandleCookies;
     NSThread * _startThread;
-    unsigned int  _timeRequestSent;
-    unsigned int  _timeResponseReceived;
+    unsigned long long  _timeRequestSent;
+    unsigned long long  _timeResponseReceived;
     double  _timeoutSeconds;
     struct __CFRunLoopTimer { } * _timeoutTimer;
     unsigned int  _uploadPayloadSize;

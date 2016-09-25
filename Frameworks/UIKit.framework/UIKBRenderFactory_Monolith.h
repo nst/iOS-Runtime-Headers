@@ -16,8 +16,8 @@
 - (id)_highlightedTraitsForKey:(id)arg1;
 - (id)_highlightedTraitsForKeyplaneSwitchKey:(id)arg1 onKeyplane:(id)arg2;
 - (id)_highlightedTraitsForLetterKey:(id)arg1;
-- (struct CGPoint { double x1; double x2; })_secondaryTextOffsetForKey:(id)arg1;
-- (struct CGPoint { double x1; double x2; })_textOffsetForKey:(id)arg1;
+- (struct CGPoint { float x1; float x2; })_secondaryTextOffsetForKey:(id)arg1;
+- (struct CGPoint { float x1; float x2; })_textOffsetForKey:(id)arg1;
 - (id)_traitsForKey:(id)arg1 onKeyplane:(id)arg2;
 - (id)_variantTraitsForLetterKey:(id)arg1 onKeyplane:(id)arg2;
 - (id)backgroundTraitsForKeyplane:(id)arg1;

@@ -45,7 +45,7 @@
 - (id)accountForUniqueID:(id)arg1;
 - (id)accounts;
 - (id)accountsForService:(id)arg1;
-- (id)accountsWithCapability:(unsigned int)arg1;
+- (id)accountsWithCapability:(unsigned long long)arg1;
 - (BOOL)activateAccount:(id)arg1;
 - (BOOL)activateAccount:(id)arg1 force:(BOOL)arg2;
 - (BOOL)activateAccount:(id)arg1 force:(BOOL)arg2 locally:(BOOL)arg3;
@@ -66,7 +66,7 @@
 - (id)bestAccountForService:(id)arg1 login:(id)arg2 guid:(id)arg3;
 - (id)bestAccountForService:(id)arg1 withLogin:(id)arg2;
 - (id)bestAccountForStatus;
-- (id)bestAccountWithCapability:(unsigned int)arg1;
+- (id)bestAccountWithCapability:(unsigned long long)arg1;
 - (id)bestActiveAccountForService:(id)arg1;
 - (id)bestActiveAccountForService:(id)arg1 withLogin:(id)arg2;
 - (id)bestConnectedAccountForService:(id)arg1;
@@ -78,7 +78,7 @@
 - (BOOL)canDeleteAccount:(id)arg1;
 - (id)connectedAccounts;
 - (id)connectedAccountsForService:(id)arg1;
-- (id)connectedAccountsWithCapability:(unsigned int)arg1;
+- (id)connectedAccountsWithCapability:(unsigned long long)arg1;
 - (BOOL)deactivateAccount:(id)arg1;
 - (BOOL)deactivateAccount:(id)arg1 withDisable:(BOOL)arg2;
 - (BOOL)deactivateAccounts:(id)arg1;
@@ -92,7 +92,7 @@
 - (int)numberOfAccounts;
 - (id)operationalAccounts;
 - (id)operationalAccountsForService:(id)arg1;
-- (id)operationalAccountsWithCapability:(unsigned int)arg1;
+- (id)operationalAccountsWithCapability:(unsigned long long)arg1;
 - (BOOL)readOnly;
 - (void)setAccounts:(id)arg1;
 - (void)setReadOnly:(BOOL)arg1;

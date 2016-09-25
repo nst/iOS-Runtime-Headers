@@ -12,11 +12,11 @@
 @property (readonly) unsigned int hash;
 @property (readonly) SSOperationProgress *operationProgress;
 @property (readonly) int phaseType;
-@property (readonly) double progressChangeRate;
+@property (readonly) float progressChangeRate;
 @property (readonly) int progressUnits;
-@property (readonly) int progressValue;
+@property (readonly) long long progressValue;
 @property (readonly) Class superclass;
-@property (readonly) int totalProgressValue;
+@property (readonly) long long totalProgressValue;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)copyXPCEncoding;
@@ -29,7 +29,7 @@
 - (int)phaseType;
 - (float)progressChangeRate;
 - (int)progressUnits;
-- (int)progressValue;
-- (int)totalProgressValue;
+- (long long)progressValue;
+- (long long)totalProgressValue;
 
 @end

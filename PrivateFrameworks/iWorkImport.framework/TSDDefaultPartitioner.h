@@ -29,12 +29,12 @@
 - (void)i_unregisterPartialRep:(id)arg1;
 - (id)initWithInfo:(id)arg1;
 - (id)layoutForHint:(id)arg1 parentLayout:(id)arg2;
-- (id)nextHintForSize:(struct CGSize { double x1; double x2; })arg1 parentLayout:(id)arg2 previousHint:(id)arg3 horizontally:(BOOL)arg4 outFinished:(out BOOL*)arg5;
-- (id)nextLayoutForSize:(struct CGSize { double x1; double x2; })arg1 parentLayout:(id)arg2 previousHint:(id)arg3 horizontally:(BOOL)arg4 outFinished:(out BOOL*)arg5;
-- (unsigned int)p_edgesForHintBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (id)p_firstHintForSize:(struct CGSize { double x1; double x2; })arg1;
+- (id)nextHintForSize:(struct CGSize { float x1; float x2; })arg1 parentLayout:(id)arg2 previousHint:(id)arg3 horizontally:(BOOL)arg4 outFinished:(out BOOL*)arg5;
+- (id)nextLayoutForSize:(struct CGSize { float x1; float x2; })arg1 parentLayout:(id)arg2 previousHint:(id)arg3 horizontally:(BOOL)arg4 outFinished:(out BOOL*)arg5;
+- (unsigned int)p_edgesForHintBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)p_firstHintForSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)p_generateLayouts;
-- (id)p_nextHintForSize:(struct CGSize { double x1; double x2; })arg1 previousHint:(id)arg2 horizontally:(BOOL)arg3;
+- (id)p_nextHintForSize:(struct CGSize { float x1; float x2; })arg1 previousHint:(id)arg2 horizontally:(BOOL)arg3;
 - (void)p_teardownLayouts;
 
 @end

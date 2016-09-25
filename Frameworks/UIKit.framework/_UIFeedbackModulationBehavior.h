@@ -3,7 +3,7 @@
  */
 
 @interface _UIFeedbackModulationBehavior : UIFeedbackGenerator {
-    double  _currentValue;
+    float  _currentValue;
     _UIFeedback<_UIFeedbackContinuousPlayable> * _playingContinuousFeedback;
 }
 

@@ -30,7 +30,7 @@
 - (void)session:(VCCallSession *)arg1 localIPChange:(NSData *)arg2 withCallID:(unsigned long)arg3;
 - (void)session:(VCCallSession *)arg1 packMeters:(char *)arg2 withLength:(char *)arg3;
 - (void)session:(VCCallSession *)arg1 receivedNoPacketsForSeconds:(double)arg2;
-- (bool)session:(VCCallSession *)arg1 receivedRemoteFrame:(struct __CVBuffer { }*)arg2 atTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg3 withScreenAttributes:(VideoAttributes *)arg4 videoAttributes:(VideoAttributes *)arg5 isFirstFrame:(BOOL)arg6 isVideoPaused:(BOOL)arg7;
+- (bool)session:(VCCallSession *)arg1 receivedRemoteFrame:(struct __CVBuffer { }*)arg2 atTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3 withScreenAttributes:(VideoAttributes *)arg4 videoAttributes:(VideoAttributes *)arg5 isFirstFrame:(BOOL)arg6 isVideoPaused:(BOOL)arg7;
 - (void)session:(VCCallSession *)arg1 remoteAudioEnabled:(BOOL)arg2 withCallID:(unsigned long)arg3;
 - (void)session:(VCCallSession *)arg1 remoteCallingModeChanged:(unsigned long)arg2 withCallID:(unsigned long)arg3;
 - (void)session:(VCCallSession *)arg1 remoteMediaStalled:(BOOL)arg2;

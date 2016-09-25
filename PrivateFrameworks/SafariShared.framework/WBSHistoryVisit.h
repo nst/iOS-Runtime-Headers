@@ -5,7 +5,7 @@
 @interface WBSHistoryVisit : NSObject {
     unsigned int  _attributes;
     int  _databaseID;
-    int  _generation;
+    long long  _generation;
     BOOL  _httpNonGet;
     WBSHistoryItem * _item;
     BOOL  _loadSuccessful;
@@ -23,7 +23,7 @@
 @property (nonatomic) unsigned int attributes;
 @property (nonatomic) int databaseID;
 @property (nonatomic, readonly) WBSHistoryVisit *endOfRedirectChain;
-@property (nonatomic) int generation;
+@property (nonatomic) long long generation;
 @property (getter=wasHTTPNonGet, nonatomic, readonly) BOOL httpNonGet;
 @property (nonatomic) WBSHistoryItem *item;
 @property (getter=loadWasSuccessful, nonatomic) BOOL loadSuccessful;
@@ -47,7 +47,7 @@
 - (unsigned int)attributes;
 - (int)databaseID;
 - (id)endOfRedirectChain;
-- (int)generation;
+- (long long)generation;
 - (BOOL)hasAttributes:(unsigned int)arg1;
 - (id)initWithHistoryItem:(id)arg1 sqliteRow:(id)arg2;
 - (id)initWithHistoryItem:(id)arg1 sqliteRow:(id)arg2 baseColumnIndex:(unsigned int)arg3;
@@ -66,7 +66,7 @@
 - (unsigned int)score;
 - (void)setAttributes:(unsigned int)arg1;
 - (void)setDatabaseID:(int)arg1;
-- (void)setGeneration:(int)arg1;
+- (void)setGeneration:(long long)arg1;
 - (void)setItem:(id)arg1;
 - (void)setLoadSuccessful:(BOOL)arg1;
 - (void)setOrigin:(int)arg1;

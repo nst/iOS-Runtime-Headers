@@ -4,16 +4,16 @@
 
 @interface TSCH3DLabelResourceAttributes : NSObject <NSCopying> {
     TSCH3DLabelBitmapContextInfo * mBitmapContextInfo;
-    double  mLabelWidth;
+    float  mLabelWidth;
     TSWPParagraphStyle * mParagraphStyle;
-    double  mRenderSamples;
+    float  mRenderSamples;
     NSString * mString;
 }
 
 @property (nonatomic, readonly) TSCH3DLabelBitmapContextInfo *bitmapContextInfo;
-@property (nonatomic, readonly) double labelWidth;
+@property (nonatomic, readonly) float labelWidth;
 @property (nonatomic, readonly) TSWPParagraphStyle *paragraphStyle;
-@property (nonatomic, readonly) double renderSamples;
+@property (nonatomic, readonly) float renderSamples;
 @property (nonatomic, readonly) NSString *string;
 
 + (id)labelAttributesWithParagraphStyle:(id)arg1 string:(id)arg2 bitmapContextInfo:(id)arg3 labelWidth:(float)arg4 renderSamples:(float)arg5;

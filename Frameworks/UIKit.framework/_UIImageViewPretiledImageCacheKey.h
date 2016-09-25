@@ -5,12 +5,12 @@
 @interface _UIImageViewPretiledImageCacheKey : NSObject {
     UIImage * _originalImage;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _pretiledSize;
 }
 
-+ (id)cacheKeyWithOriginalImage:(id)arg1 pretiledSize:(struct CGSize { double x1; double x2; })arg2;
++ (id)cacheKeyWithOriginalImage:(id)arg1 pretiledSize:(struct CGSize { float x1; float x2; })arg2;
 
 - (void).cxx_destruct;
 - (id)description;

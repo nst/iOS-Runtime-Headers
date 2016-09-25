@@ -3,12 +3,12 @@
  */
 
 @interface TSTCoordinateArray : NSObject {
-    double  mAverage;
-    double * mCoordinates;
+    float  mAverage;
+    float * mCoordinates;
     unsigned int  mCount;
     BOOL  mLayoutDirectionIsLeftToRight;
     unsigned int  mOffset;
-    double  mTableWidth;
+    float  mTableWidth;
     NSMutableIndexSet * mVisibleIndices;
 }
 

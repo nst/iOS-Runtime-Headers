@@ -5,7 +5,7 @@
 @interface HUAnimationSettings : NSObject <NSCopying, _UIBasicAnimationFactory> {
     double  _delay;
     double  _duration;
-    double  _speed;
+    float  _speed;
     CAMediaTimingFunction * _timingFunction;
 }
 
@@ -15,7 +15,7 @@
 @property (nonatomic) double duration;
 @property (nonatomic, readonly) double durationWithSpeed;
 @property (readonly) unsigned int hash;
-@property (nonatomic) double speed;
+@property (nonatomic) float speed;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) CAMediaTimingFunction *timingFunction;
 

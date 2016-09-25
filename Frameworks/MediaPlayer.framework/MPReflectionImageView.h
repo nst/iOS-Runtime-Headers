@@ -17,9 +17,9 @@
 - (id)albumArtImage;
 - (id)image;
 - (id)imageView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setAlbumVisible:(BOOL)arg1 reflectionVisible:(BOOL)arg2;
-- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withReflectionHeight:(float)arg2;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withReflectionHeight:(float)arg2;
 - (void)setImage:(id)arg1;
 - (void)setReflectionVisible:(BOOL)arg1 withDuration:(float)arg2;
 - (void)setSquareImage:(BOOL)arg1;

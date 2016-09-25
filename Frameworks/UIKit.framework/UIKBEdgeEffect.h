@@ -7,13 +7,13 @@
     unsigned int  _edges;
     UIKBGradient * _gradient;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _insets;
-    double  _opacity;
-    double  _weight;
+    float  _opacity;
+    float  _weight;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -21,17 +21,17 @@
 @property (nonatomic) unsigned int edges;
 @property (nonatomic, retain) UIKBGradient *gradient;
 @property (readonly) unsigned int hash;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } insets;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } insets;
 @property (nonatomic, readonly) BOOL isValid;
-@property (nonatomic) double opacity;
+@property (nonatomic) float opacity;
 @property (nonatomic, readonly) SEL renderSelector;
 @property (nonatomic, readonly) BOOL renderUnder;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) BOOL usesRGBColors;
-@property (nonatomic) double weight;
+@property (nonatomic) float weight;
 
 + (id)effectWithColor:(id)arg1 edges:(unsigned int)arg2 inset:(float)arg3 weight:(float)arg4;
-+ (id)effectWithColor:(id)arg1 edges:(unsigned int)arg2 insets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg3 weight:(float)arg4;
++ (id)effectWithColor:(id)arg1 edges:(unsigned int)arg2 insets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg3 weight:(float)arg4;
 
 - (struct CGColor { }*)CGColor;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -39,8 +39,8 @@
 - (id)description;
 - (unsigned int)edges;
 - (id)gradient;
-- (id)initWithColor:(id)arg1 edges:(unsigned int)arg2 insets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg3 weight:(float)arg4;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })insets;
+- (id)initWithColor:(id)arg1 edges:(unsigned int)arg2 insets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg3 weight:(float)arg4;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })insets;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isValid;
 - (float)opacity;
@@ -48,7 +48,7 @@
 - (BOOL)renderUnder;
 - (void)setEdges:(unsigned int)arg1;
 - (void)setGradient:(id)arg1;
-- (void)setInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setOpacity:(float)arg1;
 - (void)setWeight:(float)arg1;
 - (BOOL)usesRGBColors;

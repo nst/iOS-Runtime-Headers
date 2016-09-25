@@ -3,7 +3,7 @@
  */
 
 @interface BRCDeadlineSource : NSObject {
-    int  _deadline;
+    long long  _deadline;
     NSObject<OS_dispatch_source> * _latch;
     BRCDeadlineScheduler * _scheduler;
     int  _suspendCount;
@@ -19,7 +19,7 @@
 - (void)setEventHandler:(id /* block */)arg1;
 - (void)setTargetQueue:(id)arg1;
 - (void)signal;
-- (void)signalWithDeadline:(int)arg1;
+- (void)signalWithDeadline:(long long)arg1;
 - (void)suspend;
 
 @end

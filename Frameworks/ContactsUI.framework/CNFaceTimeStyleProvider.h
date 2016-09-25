@@ -37,7 +37,7 @@
 - (id)cardLabelTextColor;
 - (id)cardPhotoBackgroundImage;
 - (float)cardPhotoFrameBorderSize;
-- (struct CGSize { double x1; double x2; })cardPhotoOffset;
+- (struct CGSize { float x1; float x2; })cardPhotoOffset;
 - (BOOL)cardPlaceholderImageShouldApplyMaskAndOverlay;
 - (BOOL)cardSectionAlwaysWantsHeader;
 - (id)cardSectionBackgroundColor;
@@ -93,10 +93,10 @@
 - (id)personActionFont;
 - (id)personActionHighlightedColor;
 - (id)personActionShadowColor;
-- (struct CGSize { double x1; double x2; })personActionShadowOffset;
+- (struct CGSize { float x1; float x2; })personActionShadowOffset;
 - (id)personHeaderPasteboardColor;
 - (id)personHeaderShadowColor;
-- (struct CGSize { double x1; double x2; })personHeaderShadowOffset;
+- (struct CGSize { float x1; float x2; })personHeaderShadowOffset;
 - (id)personLabelColor;
 - (id)personLabelHighlightedColor;
 - (id)personLabelShadowColor;

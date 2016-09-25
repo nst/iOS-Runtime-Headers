@@ -59,7 +59,7 @@
 - (id)GSEventPort;
 - (id)_applicationWorkspace;
 - (id)_createWorkspace;
-- (int)_exceptionCodeForKillReason:(int)arg1;
+- (long long)_exceptionCodeForKillReason:(int)arg1;
 - (void)_queue_addAllowedLockedFilePath:(id)arg1;
 - (int)_queue_bksVisibilityForVisibility:(int)arg1;
 - (BOOL)_queue_bootstrapAndExecWithContext:(id)arg1;
@@ -93,7 +93,7 @@
 - (id)_queue_lockedFilePathsIgnoringAllowed;
 - (id)_queue_name;
 - (id)_queue_newWatchdogForContext:(id)arg1 completion:(id /* block */)arg2;
-- (unsigned int)_queue_noteExitedForForceQuit:(BOOL)arg1;
+- (unsigned long long)_queue_noteExitedForForceQuit:(BOOL)arg1;
 - (int)_queue_ourTaskStateForBKSTaskState:(int)arg1;
 - (void)_queue_processDidExit;
 - (void)_queue_processReallyDidExit;

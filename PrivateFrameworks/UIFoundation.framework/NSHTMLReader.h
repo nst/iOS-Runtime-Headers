@@ -10,8 +10,8 @@
     NSMutableDictionary * _computedStylesForElements;
     NSData * _data;
     WebDataSource * _dataSource;
-    double  _defaultFontSize;
-    double  _defaultTabInterval;
+    float  _defaultFontSize;
+    float  _defaultTabInterval;
     DOMDocument * _document;
     NSMutableDictionary * _documentAttrs;
     DOMRange * _domRange;
@@ -31,7 +31,7 @@
     NSMutableDictionary * _floatsForNodes;
     NSMutableDictionary * _fontCache;
     int  _indexingLimit;
-    double  _minimumFontSize;
+    float  _minimumFontSize;
     NSDictionary * _options;
     int  _quoteLevel;
     NSMutableDictionary * _specifiedStylesForElements;
@@ -39,7 +39,7 @@
     NSMutableDictionary * _stringsForNodes;
     NSMutableArray * _textBlocks;
     NSMutableArray * _textLists;
-    double  _textSizeMultiplier;
+    float  _textSizeMultiplier;
     NSMutableDictionary * _textTableFooters;
     NSMutableArray * _textTablePaddings;
     NSMutableArray * _textTableRowArrays;
@@ -50,7 +50,7 @@
     int  _thumbnailLimit;
     id  _webDelegate;
     WebView * _webView;
-    double  _webViewTextSizeMultiplier;
+    float  _webViewTextSizeMultiplier;
     NSMutableArray * _writingDirectionArray;
 }
 

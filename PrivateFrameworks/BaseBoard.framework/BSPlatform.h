@@ -12,9 +12,9 @@
 @property (nonatomic, readonly) int homeButtonType;
 @property (getter=isInternalInstall, nonatomic, readonly) BOOL internalInstall;
 @property (nonatomic, readonly, copy) NSString *localizedProductName;
-@property (nonatomic, readonly) double mainScreenOrientation;
+@property (nonatomic, readonly) float mainScreenOrientation;
 @property (nonatomic, readonly) int mainScreenPitch;
-@property (nonatomic, readonly) double mainScreenScale;
+@property (nonatomic, readonly) float mainScreenScale;
 @property (getter=isMultiCore, nonatomic, readonly) BOOL multiCore;
 @property (nonatomic, readonly, copy) NSString *operatingSystemName;
 @property (nonatomic, readonly, copy) NSString *productBuildVersion;

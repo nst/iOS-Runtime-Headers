@@ -4,27 +4,27 @@
 
 @interface FUFlightLeg : NSObject <NSCopying, NSSecureCoding> {
     NSString * _aircraftcode;
-    double  _altitude;
+    float  _altitude;
     FUFlightStep * _arrival;
     FUFlightStep * _departure;
     double  _duration;
-    double  _heading;
+    float  _heading;
     struct CLLocationCoordinate2D { 
         double latitude; 
         double longitude; 
     }  _location;
-    double  _speed;
+    float  _speed;
     int  _status;
 }
 
 @property (retain) NSString *aircraftcode;
-@property double altitude;
+@property float altitude;
 @property (retain) FUFlightStep *arrival;
 @property (retain) FUFlightStep *departure;
 @property double duration;
-@property double heading;
+@property float heading;
 @property struct CLLocationCoordinate2D { double x1; double x2; } location;
-@property double speed;
+@property float speed;
 @property int status;
 
 + (BOOL)supportsSecureCoding;

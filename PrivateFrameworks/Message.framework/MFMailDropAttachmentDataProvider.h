@@ -12,8 +12,8 @@
 @property (readonly) Class superclass;
 
 - (void)URLSession:(id)arg1 downloadTask:(id)arg2 didFinishDownloadingToURL:(id)arg3;
-- (void)URLSession:(id)arg1 downloadTask:(id)arg2 didResumeAtOffset:(int)arg3 expectedTotalBytes:(int)arg4;
-- (void)URLSession:(id)arg1 downloadTask:(id)arg2 didWriteData:(int)arg3 totalBytesWritten:(int)arg4 totalBytesExpectedToWrite:(int)arg5;
+- (void)URLSession:(id)arg1 downloadTask:(id)arg2 didResumeAtOffset:(long long)arg3 expectedTotalBytes:(long long)arg4;
+- (void)URLSession:(id)arg1 downloadTask:(id)arg2 didWriteData:(long long)arg3 totalBytesWritten:(long long)arg4 totalBytesExpectedToWrite:(long long)arg5;
 - (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
 - (id)_defaultDownloadSessionForAttachment:(id)arg1;
 - (void)contentDirectoryOfAttachment:(id)arg1 withCompletion:(id /* block */)arg2;

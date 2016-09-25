@@ -27,8 +27,8 @@
 - (void)_prefectchAllATDownloads;
 - (void)_setupAirTrafficObserver;
 - (id)_storeKindForAssetType:(id)arg1;
-- (id)activeDownloadForMediaItemPersistentID:(unsigned int)arg1;
-- (id)activeDownloadForStoreID:(int)arg1;
+- (id)activeDownloadForMediaItemPersistentID:(unsigned long long)arg1;
+- (id)activeDownloadForStoreID:(long long)arg1;
 - (void)addObserver:(id)arg1;
 - (void)atcDidDownloadAsset:(id)arg1 withError:(id)arg2;
 - (void)atcDidEnqueueAsset:(id)arg1;

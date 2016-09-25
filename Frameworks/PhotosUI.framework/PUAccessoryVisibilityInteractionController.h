@@ -7,8 +7,8 @@
     PXNumberAnimator * __contentOffsetOverrideFactor;
     NSHashTable * __dependentScrollViews;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  __initialContentOffset;
     PXNumberAnimator * __overridingContentOffsetY;
     PUChangeDirectionValueFilter * __swipeDirectionValueFilter;
@@ -33,7 +33,7 @@
 @property (setter=_setAssetViewModel:, nonatomic, retain) PUAssetViewModel *_assetViewModel;
 @property (setter=_setContentOffsetOverrideFactor:, nonatomic, retain) PXNumberAnimator *_contentOffsetOverrideFactor;
 @property (nonatomic, readonly) NSHashTable *_dependentScrollViews;
-@property (setter=_setInitialContentOffset:, nonatomic) struct CGPoint { double x1; double x2; } _initialContentOffset;
+@property (setter=_setInitialContentOffset:, nonatomic) struct CGPoint { float x1; float x2; } _initialContentOffset;
 @property (setter=_setOverridingContentOffsetY:, nonatomic, retain) PXNumberAnimator *_overridingContentOffsetY;
 @property (setter=_setSwipeDirectionValueFilter:, nonatomic, retain) PUChangeDirectionValueFilter *_swipeDirectionValueFilter;
 @property (setter=_setVerticalDirectionValueFilter:, nonatomic, retain) PUChangeDirectionValueFilter *_verticalDirectionValueFilter;
@@ -52,7 +52,7 @@
 - (id)_dependentScrollViews;
 - (void)_handlePanGestureRecognizer:(id)arg1;
 - (void)_handleScheduledUpdate;
-- (struct CGPoint { double x1; double x2; })_initialContentOffset;
+- (struct CGPoint { float x1; float x2; })_initialContentOffset;
 - (void)_invalidateContentOffset;
 - (BOOL)_needsUpdate;
 - (id)_overridingContentOffsetY;
@@ -60,7 +60,7 @@
 - (void)_setAccessoryVisible:(BOOL)arg1;
 - (void)_setAssetViewModel:(id)arg1;
 - (void)_setContentOffsetOverrideFactor:(id)arg1;
-- (void)_setInitialContentOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (void)_setInitialContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_setNeedsUpdate;
 - (void)_setOverridingContentOffsetY:(id)arg1;
 - (void)_setSwipeDirectionValueFilter:(id)arg1;

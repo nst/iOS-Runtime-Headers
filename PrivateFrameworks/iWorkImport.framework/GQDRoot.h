@@ -8,7 +8,7 @@
     struct __CFURL { } * mAppBundleResourcesUrl;
     BOOL  mAppBundleResourcesUrlInitialized;
     int  mAppBundleVersion;
-    unsigned int  mDocVersion;
+    unsigned long long  mDocVersion;
     BOOL  mIsOldAssetNameMapInitialized;
     struct __CFDictionary { } * mOldAssetNameMap;
     struct __CFDictionary { } * mUidToObjectMap;

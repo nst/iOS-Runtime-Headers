@@ -4,17 +4,17 @@
 
 @interface ADCircularCountdownView : UIView {
     UIColor * _animationBackgroundColor;
-    double  _animationBackgroundLineWidth;
+    float  _animationBackgroundLineWidth;
     UIColor * _animationColor;
-    double  _animationLineWidth;
+    float  _animationLineWidth;
     CAShapeLayer * _backgroundLayer;
     CAShapeLayer * _progressLayer;
 }
 
 @property (nonatomic, retain) UIColor *animationBackgroundColor;
-@property (nonatomic) double animationBackgroundLineWidth;
+@property (nonatomic) float animationBackgroundLineWidth;
 @property (nonatomic, retain) UIColor *animationColor;
-@property (nonatomic) double animationLineWidth;
+@property (nonatomic) float animationLineWidth;
 @property (nonatomic, retain) CAShapeLayer *backgroundLayer;
 @property (nonatomic) double countdownProgress;
 @property (nonatomic, retain) CAShapeLayer *progressLayer;
@@ -27,7 +27,7 @@
 - (double)countdownProgress;
 - (void)dealloc;
 - (id)init;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)progressLayer;
 - (void)setAnimationBackgroundColor:(id)arg1;
 - (void)setAnimationBackgroundLineWidth:(float)arg1;

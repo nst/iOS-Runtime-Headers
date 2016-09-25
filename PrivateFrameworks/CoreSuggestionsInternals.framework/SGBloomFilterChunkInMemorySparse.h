@@ -13,9 +13,9 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)add:(union { unsigned int x1; union { unsigned int x_2_1_1; unsigned int x_2_1_2; } x2; })arg1;
+- (void)add:(union { unsigned long long x1; union { unsigned int x_2_1_1; unsigned int x_2_1_2; } x2; })arg1;
 - (unsigned int)count;
-- (BOOL)exists:(union { unsigned int x1; union { unsigned int x_2_1_1; unsigned int x_2_1_2; } x2; })arg1;
+- (BOOL)exists:(union { unsigned long long x1; union { unsigned int x_2_1_1; unsigned int x_2_1_2; } x2; })arg1;
 - (id)init;
 
 @end

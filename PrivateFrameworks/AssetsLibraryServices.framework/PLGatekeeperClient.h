@@ -29,8 +29,8 @@
 - (void)analyzeAllMoments;
 - (void)analyzeMomentID:(id)arg1;
 - (void)analyzeMomentListID:(id)arg1;
-- (unsigned int)attemptToPurgeSharedAssetsExceptForRecentlyViewedAssets;
-- (unsigned int)attemptToPurgeSharedAssetsSpace:(unsigned int)arg1;
+- (unsigned long long)attemptToPurgeSharedAssetsExceptForRecentlyViewedAssets;
+- (unsigned long long)attemptToPurgeSharedAssetsSpace:(unsigned long long)arg1;
 - (void)automaticallyDeleteEmptyAlbum:(id)arg1;
 - (void)backupChangeStore;
 - (void)batchSaveAssetsWithJobDictionaries:(id)arg1 handler:(id /* block */)arg2;
@@ -60,7 +60,7 @@
 - (id)emailAddressForKey:(int)arg1;
 - (void)enableCloudPhotos:(BOOL)arg1;
 - (void)enablePhotostreamsWithStreamID:(id)arg1;
-- (int)estimatedOutputFileLengthForVideoURL:(id)arg1 fallbackFilePath:(id)arg2 exportPreset:(id)arg3 exportProperties:(id)arg4;
+- (long long)estimatedOutputFileLengthForVideoURL:(id)arg1 fallbackFilePath:(id)arg2 exportPreset:(id)arg3 exportProperties:(id)arg4;
 - (int)fileDescriptorForAssetURL:(id)arg1;
 - (int)fileDescriptorForAssetURL:(id)arg1 withAdjustments:(BOOL)arg2 outFileExtension:(id*)arg3;
 - (id)fileURLForAssetURL:(id)arg1 withAdjustments:(BOOL)arg2;
@@ -109,7 +109,7 @@
 - (void)privateDownloadCloudPhotoLibraryAsset:(id)arg1 resourceType:(unsigned int)arg2 highPriority:(BOOL)arg3;
 - (void)pruneAssets:(id)arg1 resourceTypes:(id)arg2;
 - (void)purgeExpiredOutboundSharingAssets;
-- (unsigned int)purgeableSharedAssetsSpace;
+- (unsigned long long)purgeableSharedAssetsSpace;
 - (void)rampingRequestForResourceType:(unsigned int)arg1 numRequested:(unsigned int)arg2 withCompletionHandler:(id /* block */)arg3;
 - (void)rebuildAllThumbnails;
 - (void)rebuildCloudFeed;

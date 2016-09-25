@@ -8,12 +8,12 @@
     UIPopoverPresentationController * _popoverPresentationController;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _popoverSourceRect;
     UIView * _popoverSourceView;
@@ -24,7 +24,7 @@
 @property (nonatomic) <MSCLComposeImagePickerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } popoverSourceRect;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } popoverSourceRect;
 @property (nonatomic, retain) UIView *popoverSourceView;
 @property (readonly) Class superclass;
 
@@ -37,11 +37,11 @@
 - (id)initWithImagePickerSourceType:(int)arg1;
 - (id)popoverPresentationController;
 - (void)popoverPresentationControllerDidDismissPopover:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })popoverSourceRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })popoverSourceRect;
 - (id)popoverSourceView;
 - (void)presentImagePickerAnimated:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setPopoverSourceRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setPopoverSourceRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setPopoverSourceView:(id)arg1;
 
 @end

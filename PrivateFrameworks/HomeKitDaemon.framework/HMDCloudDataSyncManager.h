@@ -122,7 +122,7 @@
 - (void)_setupSubscription;
 - (void)_startControllerKeyPollTimer;
 - (void)_startControllerKeyPollTimerWithBackoff;
-- (void)_startControllerKeyPollTimerWithValue:(int)arg1;
+- (void)_startControllerKeyPollTimerWithValue:(long long)arg1;
 - (void)_startFetchPollTimer;
 - (void)_startFetchRetryTimer;
 - (void)_stopControllerKeyPollTimer;

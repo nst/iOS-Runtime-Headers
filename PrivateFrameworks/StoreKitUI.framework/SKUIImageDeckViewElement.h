@@ -3,16 +3,16 @@
  */
 
 @interface SKUIImageDeckViewElement : SKUIViewElement {
-    double  _additionalDragLeft;
-    double  _additionalDragRight;
-    double  _initialDragLeft;
-    double  _initialDragRight;
+    float  _additionalDragLeft;
+    float  _additionalDragRight;
+    float  _initialDragLeft;
+    float  _initialDragRight;
 }
 
-@property (nonatomic, readonly) double additionalDragLeft;
-@property (nonatomic, readonly) double additionalDragRight;
-@property (nonatomic, readonly) double initialDragLeft;
-@property (nonatomic, readonly) double initialDragRight;
+@property (nonatomic, readonly) float additionalDragLeft;
+@property (nonatomic, readonly) float additionalDragRight;
+@property (nonatomic, readonly) float initialDragLeft;
+@property (nonatomic, readonly) float initialDragRight;
 
 - (float)additionalDragLeft;
 - (float)additionalDragRight;

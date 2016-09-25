@@ -22,7 +22,7 @@
     <SYChangeSerializer> * _serializer;
     SYService * _service;
     NSDictionary * _sessionMetadata;
-    unsigned int  _sessionSignpost;
+    unsigned long long  _sessionSignpost;
     BOOL  _sessionStarted;
     NSDictionary * _userContext;
 }
@@ -50,7 +50,7 @@
 @property (nonatomic, retain) <SYChangeSerializer> *serializer;
 @property (nonatomic, readonly) SYService *service;
 @property (nonatomic, copy) NSDictionary *sessionMetadata;
-@property (nonatomic) unsigned int sessionSignpost;
+@property (nonatomic) unsigned long long sessionSignpost;
 @property int state;
 @property (nonatomic, readonly) PBCodable *stateForLogging;
 @property (readonly) Class superclass;
@@ -117,7 +117,7 @@
 - (id)serializer;
 - (id)service;
 - (id)sessionMetadata;
-- (unsigned int)sessionSignpost;
+- (unsigned long long)sessionSignpost;
 - (void)setBirthDate:(double)arg1;
 - (void)setCanRestart:(BOOL)arg1;
 - (void)setCanRollback:(BOOL)arg1;
@@ -132,7 +132,7 @@
 - (void)setPriority:(int)arg1;
 - (void)setSerializer:(id)arg1;
 - (void)setSessionMetadata:(id)arg1;
-- (void)setSessionSignpost:(unsigned int)arg1;
+- (void)setSessionSignpost:(unsigned long long)arg1;
 - (void)setState:(int)arg1;
 - (void)setTargetQueue:(id)arg1;
 - (void)setUserContext:(id)arg1;

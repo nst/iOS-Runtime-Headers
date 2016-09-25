@@ -23,7 +23,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) BOOL hideAccessoryText;
 @property (nonatomic, readonly) NSArray *iAdCategories;
-@property (nonatomic, readonly) int iAdContentProvider;
+@property (nonatomic, readonly) long long iAdContentProvider;
 @property (nonatomic, readonly) NSString *iAdFeedID;
 @property (nonatomic, readonly) NSString *iAdIdentifier;
 @property (nonatomic, readonly) NSArray *iAdKeywords;
@@ -56,7 +56,7 @@
 - (unsigned int)hash;
 - (BOOL)hideAccessoryText;
 - (id)iAdCategories;
-- (int)iAdContentProvider;
+- (long long)iAdContentProvider;
 - (id)iAdFeedID;
 - (id)iAdIdentifier;
 - (id)iAdKeywords;

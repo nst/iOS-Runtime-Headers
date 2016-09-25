@@ -8,7 +8,7 @@
     NSCalendar * _cal;
     NSDate * _date;
     BOOL  _is24HourMode;
-    double  _nowLabelCenterY;
+    float  _nowLabelCenterY;
     NSDateComponentsFormatter * _offsetDateFormatter;
     BOOL  _shouldUseNowText;
     <NTKTimeTravelModuleViewTapClient> * _tapDelegate;
@@ -28,11 +28,11 @@
 - (void)_setupBorder;
 - (id)initWithMaximumWidth:(float)arg1;
 - (void)layoutSubviews;
-- (BOOL)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)prepareToAppear;
 - (void)scrubToDate:(id)arg1;
 - (void)setTapDelegate:(id)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)tapDelegate;
 
 @end

@@ -9,7 +9,7 @@
         struct { 
             MTLIOAccelDeviceShmem *tqe_next; 
             id *tqe_prev; 
-            unsigned int time_added; 
+            unsigned long long time_added; 
         } entry; 
     }  _priv;
     unsigned int  _shmemID;

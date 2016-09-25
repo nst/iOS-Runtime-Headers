@@ -3,7 +3,7 @@
  */
 
 @interface HUContactView : UIView {
-    double  _avatarDiameter;
+    float  _avatarDiameter;
     CNAvatarView * _avatarView;
     NSMutableArray * _constraints;
     CNContact * _contact;
@@ -13,7 +13,7 @@
     unsigned int  _numberOfLinesForMessage;
 }
 
-@property (nonatomic) double avatarDiameter;
+@property (nonatomic) float avatarDiameter;
 @property (nonatomic, retain) CNAvatarView *avatarView;
 @property (nonatomic, retain) NSMutableArray *constraints;
 @property (nonatomic, retain) CNContact *contact;
@@ -31,7 +31,7 @@
 - (id)constraints;
 - (id)contact;
 - (int)contactNameFormatStyle;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)message;
 - (id)messageLabel;
 - (id)nameLabel;

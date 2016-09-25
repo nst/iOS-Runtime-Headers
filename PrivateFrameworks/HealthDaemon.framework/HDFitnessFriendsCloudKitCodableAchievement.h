@@ -12,9 +12,9 @@
         unsigned int intValue : 1; 
         unsigned int workActivityType : 1; 
     }  _has;
-    int  _intValue;
+    long long  _intValue;
     HDFitnessFriendsCloudKitCodableSample * _sample;
-    int  _workActivityType;
+    long long  _workActivityType;
 }
 
 @property (nonatomic) double completedDate;
@@ -26,9 +26,9 @@
 @property (nonatomic) BOOL hasIntValue;
 @property (nonatomic, readonly) BOOL hasSample;
 @property (nonatomic) BOOL hasWorkActivityType;
-@property (nonatomic) int intValue;
+@property (nonatomic) long long intValue;
 @property (nonatomic, retain) HDFitnessFriendsCloudKitCodableSample *sample;
-@property (nonatomic) int workActivityType;
+@property (nonatomic) long long workActivityType;
 
 - (void).cxx_destruct;
 - (double)completedDate;
@@ -45,7 +45,7 @@
 - (BOOL)hasSample;
 - (BOOL)hasWorkActivityType;
 - (unsigned int)hash;
-- (int)intValue;
+- (long long)intValue;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
@@ -57,10 +57,10 @@
 - (void)setHasDoubleValue:(BOOL)arg1;
 - (void)setHasIntValue:(BOOL)arg1;
 - (void)setHasWorkActivityType:(BOOL)arg1;
-- (void)setIntValue:(int)arg1;
+- (void)setIntValue:(long long)arg1;
 - (void)setSample:(id)arg1;
-- (void)setWorkActivityType:(int)arg1;
-- (int)workActivityType;
+- (void)setWorkActivityType:(long long)arg1;
+- (long long)workActivityType;
 - (void)writeTo:(id)arg1;
 
 @end

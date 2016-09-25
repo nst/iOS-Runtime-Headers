@@ -8,11 +8,11 @@
 
 @property (nonatomic, readonly) NSArray *availableVideoCodecTypes;
 @property (nonatomic, copy) NSArray *metadata;
-@property (nonatomic) struct { int x1; int x2; unsigned int x3; int x4; } movieFragmentInterval;
+@property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } movieFragmentInterval;
 
 + (BOOL)consolidateMovieFragmentsInFile:(id)arg1 error:(id*)arg2;
 + (void)initialize;
-+ (int)nextMovieFileSettingsID;
++ (long long)nextMovieFileSettingsID;
 + (BOOL)updateMovieMetadataInFile:(id)arg1 withMetadata:(id)arg2 error:(id*)arg3;
 
 - (id)_avErrorUserInfoDictionaryForError:(long)arg1 wrapper:(id)arg2 payload:(id)arg3;
@@ -35,7 +35,7 @@
 - (BOOL)isRecording;
 - (BOOL)isRecordingPaused;
 - (id)metadata;
-- (struct { int x1; int x2; unsigned int x3; int x4; })movieFragmentInterval;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })movieFragmentInterval;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)outputFileURL;
 - (id)outputSettingsForConnection:(id)arg1;
@@ -47,7 +47,7 @@
 - (BOOL)sendsLastVideoPreviewFrame;
 - (void)setBravoCameraSelectionBehaviorForRecording:(id)arg1;
 - (void)setMetadata:(id)arg1;
-- (void)setMovieFragmentInterval:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
+- (void)setMovieFragmentInterval:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setOutputSettings:(id)arg1 forConnection:(id)arg2;
 - (void)setRecordsVideoOrientationAndMirroringChanges:(BOOL)arg1 asMetadataTrackForConnection:(id)arg2;
 - (void)setSendsLastVideoPreviewFrame:(BOOL)arg1;

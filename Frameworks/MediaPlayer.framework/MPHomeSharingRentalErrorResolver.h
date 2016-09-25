@@ -3,12 +3,12 @@
  */
 
 @interface MPHomeSharingRentalErrorResolver : MPAVErrorResolver <SSRequestDelegate> {
-    unsigned int  _accountID;
+    unsigned long long  _accountID;
     MPHomeSharingML3DataProvider * _dataProvider;
     NSError * _error;
-    unsigned int  _homeSharingID;
-    unsigned int  _itemID;
-    unsigned int  _rentalID;
+    unsigned long long  _homeSharingID;
+    unsigned long long  _itemID;
+    unsigned long long  _rentalID;
     SSRentalCheckoutRequest * _request;
 }
 
@@ -16,15 +16,15 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly) unsigned int itemID;
+@property (nonatomic, readonly) unsigned long long itemID;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (BOOL)_errorIsFairPlayError:(id)arg1;
 - (id)dataProvider;
 - (void)dealloc;
-- (id)initWithItemID:(unsigned int)arg1 homeSharingID:(unsigned int)arg2 rentalID:(unsigned int)arg3 accountID:(unsigned int)arg4;
-- (unsigned int)itemID;
+- (id)initWithItemID:(unsigned long long)arg1 homeSharingID:(unsigned long long)arg2 rentalID:(unsigned long long)arg3 accountID:(unsigned long long)arg4;
+- (unsigned long long)itemID;
 - (void)request:(id)arg1 didFailWithError:(id)arg2;
 - (void)requestDidFinish:(id)arg1;
 - (void)resolveError:(id)arg1;

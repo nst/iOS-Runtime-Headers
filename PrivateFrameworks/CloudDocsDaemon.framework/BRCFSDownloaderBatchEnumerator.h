@@ -3,8 +3,8 @@
  */
 
 @interface BRCFSDownloaderBatchEnumerator : NSObject {
-    int  _now;
-    int * _retryQueueKick;
+    long long  _now;
+    long long * _retryQueueKick;
     PQLResultSet * _rs;
     BRCSyncContext * _syncContext;
 }
@@ -13,9 +13,9 @@
 
 - (void).cxx_destruct;
 - (void)close;
-- (int)completedUnitCount;
+- (long long)completedUnitCount;
 - (id)etag;
-- (id)initWithSyncContext:(id)arg1 kind:(int)arg2 now:(int)arg3 retryQueueKick:(int*)arg4;
+- (id)initWithSyncContext:(id)arg1 kind:(int)arg2 now:(long long)arg3 retryQueueKick:(long long*)arg4;
 - (id)nextDocumentItem;
 - (id)stageID;
 - (id)syncContext;

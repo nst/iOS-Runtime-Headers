@@ -12,7 +12,7 @@
 }
 
 - (void).cxx_destruct;
-- (struct CGPoint { double x1; double x2; })_currentHourViewPlacementForEditMode:(int)arg1 faceConfiguration:(id)arg2;
+- (struct CGPoint { float x1; float x2; })_currentHourViewPlacementForEditMode:(int)arg1 faceConfiguration:(id)arg2;
 - (float)_hourAlphaForEditMode:(int)arg1;
 - (id)_hourViewForHour:(int)arg1 loadIfNeeded:(BOOL)arg2;
 - (void)_update12AdjustmentForStatusIndicator;

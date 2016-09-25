@@ -11,12 +11,12 @@
     NTKEditOption * _editOptionTo;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _maskZoomStartingBounds;
     UIView * _selectedContentView;
@@ -24,19 +24,19 @@
     NTKDigitalTimeLabel * _timeLabel;
     UIView * _timeTravelDimmingOverlayView;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _timeViewZoomEndingCenter;
     UIView * _transitionViewFrom;
     UIView * _transitionViewTo;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _vignetteZoomStartingBounds;
     UIView * _zoomMaskView;
@@ -48,11 +48,11 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } maskZoomStartingBounds;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } maskZoomStartingBounds;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NTKDigitalTimeLabel *timeLabel;
-@property (nonatomic) struct CGPoint { double x1; double x2; } timeViewZoomEndingCenter;
-@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } vignetteZoomStartingBounds;
+@property (nonatomic) struct CGPoint { float x1; float x2; } timeViewZoomEndingCenter;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } vignetteZoomStartingBounds;
 @property (nonatomic, retain) UIView *zoomMaskView;
 @property (nonatomic, retain) UIImageView *zoomVignette;
 
@@ -111,19 +111,19 @@
 - (id)borrowedTimeView;
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })maskZoomStartingBounds;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })maskZoomStartingBounds;
 - (void)setBorrowedCircleView:(id)arg1;
 - (void)setBorrowedTimeView:(id)arg1;
-- (void)setMaskZoomStartingBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setMaskZoomStartingBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setTimeLabel:(id)arg1;
-- (void)setTimeViewZoomEndingCenter:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setTimeViewZoomEndingCenter:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setViewMode:(int)arg1;
-- (void)setVignetteZoomStartingBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setVignetteZoomStartingBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setZoomMaskView:(id)arg1;
 - (void)setZoomVignette:(id)arg1;
 - (id)timeLabel;
-- (struct CGPoint { double x1; double x2; })timeViewZoomEndingCenter;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })vignetteZoomStartingBounds;
+- (struct CGPoint { float x1; float x2; })timeViewZoomEndingCenter;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })vignetteZoomStartingBounds;
 - (id)zoomMaskView;
 - (id)zoomVignette;
 

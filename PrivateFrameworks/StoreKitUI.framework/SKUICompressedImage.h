@@ -4,14 +4,14 @@
 
 @interface SKUICompressedImage : UIImage {
     UIColor * _borderColor;
-    double  _borderWidth;
-    double  _cornerRadius;
+    float  _borderWidth;
+    float  _cornerRadius;
     int  _cornerType;
 }
 
 @property (nonatomic, retain) UIColor *borderColor;
-@property (nonatomic) double borderWidth;
-@property (nonatomic) double cornerRadius;
+@property (nonatomic) float borderWidth;
+@property (nonatomic) float cornerRadius;
 @property (nonatomic) int cornerType;
 
 - (void).cxx_destruct;

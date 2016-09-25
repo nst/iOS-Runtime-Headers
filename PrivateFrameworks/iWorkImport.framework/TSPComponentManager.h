@@ -36,8 +36,8 @@
 - (void).cxx_destruct;
 - (void)beginIgnoringCachedObjectEviction;
 - (void)cacheComponent:(id)arg1 isDiscardingContent:(BOOL)arg2;
-- (id)componentForRootObjectIdentifier:(int)arg1;
-- (void)componentForRootObjectIdentifier:(int)arg1 queue:(id)arg2 completion:(id /* block */)arg3;
+- (id)componentForRootObjectIdentifier:(long long)arg1;
+- (void)componentForRootObjectIdentifier:(long long)arg1 queue:(id)arg2 completion:(id /* block */)arg3;
 - (id)componentForRootObjectOfLazyReference:(id)arg1;
 - (void)componentForRootObjectOfLazyReference:(id)arg1 queue:(id)arg2 completion:(id /* block */)arg3;
 - (id)componentForRootObjectOfLazyReferenceImpl:(id)arg1;
@@ -62,14 +62,14 @@
 - (BOOL)isPerformingCacheOperation;
 - (BOOL)isSupportComponentTreeModified;
 - (void)loadFromPackage:(id)arg1 metadata:(id)arg2;
-- (id)objectForIdentifier:(int)arg1;
+- (id)objectForIdentifier:(long long)arg1;
 - (unsigned int)objectTargetType;
 - (id)packageMetadataComponent;
 - (void)performCacheOperationUsingBlock:(id /* block */)arg1;
 - (void)resumeLoadingModifiedFlushedComponents;
 - (void)retrieveOrCreateComponentForRootObject:(id)arg1 queue:(id)arg2 completion:(id /* block */)arg3;
 - (id)rootComponentForPackageIdentifier:(unsigned char)arg1;
-- (id)rootComponentWithIdentifierImpl:(int)arg1 locator:(id)arg2 packageIdentifier:(unsigned char)arg3;
+- (id)rootComponentWithIdentifierImpl:(long long)arg1 locator:(id)arg2 packageIdentifier:(unsigned char)arg3;
 - (void)setViewStateComponent:(id)arg1;
 - (BOOL)shouldKeepAllCachedObjectsInMemory;
 - (id)supportComponent;

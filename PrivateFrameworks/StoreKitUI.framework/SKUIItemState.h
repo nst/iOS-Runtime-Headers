@@ -6,7 +6,7 @@
     unsigned int  _downloadContentFlags;
     NSArray * _downloadIdentifiers;
     NSString * _downloadPhase;
-    double  _downloadProgress;
+    float  _downloadProgress;
     NSNumber * _itemIdentifier;
     unsigned int  _libraryContentFlags;
     int  _mediaCategory;
@@ -20,7 +20,7 @@
 @property (nonatomic) unsigned int downloadContentFlags;
 @property (nonatomic, copy) NSArray *downloadIdentifiers;
 @property (nonatomic, copy) NSString *downloadPhase;
-@property (nonatomic) double downloadProgress;
+@property (nonatomic) float downloadProgress;
 @property (nonatomic, copy) NSNumber *itemIdentifier;
 @property (nonatomic) unsigned int libraryContentFlags;
 @property (nonatomic) int mediaCategory;

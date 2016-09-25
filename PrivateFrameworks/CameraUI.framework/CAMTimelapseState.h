@@ -7,13 +7,13 @@
     int  _captureDevice;
     int  _captureOrientation;
     double  _captureTimeInterval;
-    double  _focusLensPosition;
+    float  _focusLensPosition;
     int  _frameIndexStride;
     NSDate * _lastFrameResponseTime;
     int  _nextFrameIndex;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _nominalIntermediateFrameSize;
     unsigned short  _sessionIdentifier;
     CLLocation * _startLocation;
@@ -28,11 +28,11 @@
 @property (nonatomic) int captureOrientation;
 @property (nonatomic, readonly) double captureTimeInterval;
 @property (nonatomic, readonly) int connectionMode;
-@property (nonatomic) double focusLensPosition;
+@property (nonatomic) float focusLensPosition;
 @property (nonatomic, readonly) int frameIndexStride;
 @property (nonatomic, retain) NSDate *lastFrameResponseTime;
 @property (nonatomic, readonly) int nextFrameIndex;
-@property (nonatomic) struct CGSize { double x1; double x2; } nominalIntermediateFrameSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } nominalIntermediateFrameSize;
 @property (nonatomic) unsigned short sessionIdentifier;
 @property (nonatomic, retain) CLLocation *startLocation;
 @property (nonatomic, retain) NSDate *startTime;
@@ -69,14 +69,14 @@
 - (id)lastFrameResponseTime;
 - (BOOL)mergeSecondaryState:(id)arg1;
 - (int)nextFrameIndex;
-- (struct CGSize { double x1; double x2; })nominalIntermediateFrameSize;
+- (struct CGSize { float x1; float x2; })nominalIntermediateFrameSize;
 - (unsigned short)sessionIdentifier;
 - (void)setAllFramesWritten:(BOOL)arg1;
 - (void)setCaptureDevice:(int)arg1;
 - (void)setCaptureOrientation:(int)arg1;
 - (void)setFocusLensPosition:(float)arg1;
 - (void)setLastFrameResponseTime:(id)arg1;
-- (void)setNominalIntermediateFrameSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setNominalIntermediateFrameSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setSessionIdentifier:(unsigned short)arg1;
 - (void)setStartLocation:(id)arg1;
 - (void)setStartTime:(id)arg1;

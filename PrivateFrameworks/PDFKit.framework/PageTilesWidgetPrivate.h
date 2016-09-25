@@ -5,10 +5,10 @@
 @interface PageTilesWidgetPrivate : NSObject {
     NSMutableDictionary * pageFrames;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  parentViewSize;
-    double  tileSize;
+    float  tileSize;
 }
 
 - (void).cxx_destruct;

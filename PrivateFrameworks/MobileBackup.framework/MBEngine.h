@@ -64,7 +64,7 @@
 - (BOOL)isServiceEngine;
 - (id)localRootPathForDomain:(id)arg1;
 - (id)properties;
-- (void)pushAggregateDictionaryTotalFileCount:(int)arg1 totalFileSize:(int)arg2 duration:(double)arg3;
+- (void)pushAggregateDictionaryTotalFileCount:(long long)arg1 totalFileSize:(long long)arg2 duration:(double)arg3;
 - (int)restoreBehaviorForDomain:(id)arg1 error:(id*)arg2;
 - (int)restoreBehaviorForFile:(id)arg1 error:(id*)arg2;
 - (int)restoreBehaviorForFile:(id)arg1 withValidation:(BOOL)arg2 error:(id*)arg3;

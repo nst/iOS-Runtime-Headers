@@ -156,7 +156,7 @@
 - (void)setBannerTitle:(id)arg1 value:(id)arg2;
 - (void)setBehavior:(int)arg1;
 - (void)setContactsSplitViewPresentationDelegate:(id)arg1;
-- (void)setContentSizeForViewInPopover:(struct CGSize { double x1; double x2; })arg1;
+- (void)setContentSizeForViewInPopover:(struct CGSize { float x1; float x2; })arg1;
 - (void)setDisplayedProperties:(id)arg1;
 - (void)setForceInProcess:(BOOL)arg1;
 - (void)setForceOutOfProcess:(BOOL)arg1;
@@ -191,7 +191,7 @@
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (void)willShowViewController:(id)arg1 animated:(BOOL)arg2;
 
 @end

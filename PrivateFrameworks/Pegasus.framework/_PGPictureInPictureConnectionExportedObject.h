@@ -25,7 +25,7 @@
 - (oneway void)pictureInPictureStartRequestedAnimated:(BOOL)arg1 withCompletionHandler:(id /* block */)arg2;
 - (oneway void)pictureInPictureStopRequestedAnimated:(BOOL)arg1 withCompletionHandler:(id /* block */)arg2;
 - (oneway void)pictureInPictureSuspended;
-- (oneway void)updateHostedWindowSize:(struct CGSize { double x1; double x2; })arg1 animationType:(int)arg2 initialSpringVelocity:(float)arg3 synchronizationFence:(id)arg4;
+- (oneway void)updateHostedWindowSize:(struct CGSize { float x1; float x2; })arg1 animationType:(int)arg2 initialSpringVelocity:(float)arg3 synchronizationFence:(id)arg4;
 - (oneway void)updatePictureInPicturePossible:(BOOL)arg1;
 
 @end

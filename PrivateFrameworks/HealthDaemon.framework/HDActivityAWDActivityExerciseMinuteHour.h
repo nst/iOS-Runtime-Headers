@@ -3,35 +3,35 @@
  */
 
 @interface HDActivityAWDActivityExerciseMinuteHour : PBCodable <NSCopying> {
-    int  _exerciseMinutes;
+    long long  _exerciseMinutes;
     struct { 
         unsigned int exerciseMinutes : 1; 
         unsigned int hourSinceMidnight : 1; 
     }  _has;
-    int  _hourSinceMidnight;
+    long long  _hourSinceMidnight;
 }
 
-@property (nonatomic) int exerciseMinutes;
+@property (nonatomic) long long exerciseMinutes;
 @property (nonatomic) BOOL hasExerciseMinutes;
 @property (nonatomic) BOOL hasHourSinceMidnight;
-@property (nonatomic) int hourSinceMidnight;
+@property (nonatomic) long long hourSinceMidnight;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (int)exerciseMinutes;
+- (long long)exerciseMinutes;
 - (BOOL)hasExerciseMinutes;
 - (BOOL)hasHourSinceMidnight;
 - (unsigned int)hash;
-- (int)hourSinceMidnight;
+- (long long)hourSinceMidnight;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (void)setExerciseMinutes:(int)arg1;
+- (void)setExerciseMinutes:(long long)arg1;
 - (void)setHasExerciseMinutes:(BOOL)arg1;
 - (void)setHasHourSinceMidnight:(BOOL)arg1;
-- (void)setHourSinceMidnight:(int)arg1;
+- (void)setHourSinceMidnight:(long long)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

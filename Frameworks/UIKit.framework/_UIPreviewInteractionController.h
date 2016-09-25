@@ -11,8 +11,8 @@
     _UIPreviewInteractionViewControllerTransition * _currentTransitionDelegate;
     <_UIPreviewInteractionControllerDelegate> * _delegate;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _location;
     UIPanGestureRecognizer * _modalPanGestureRecognizer;
     BOOL  _performingCommitTransition;
@@ -36,7 +36,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSArray *gestureRecognizers;
 @property (readonly) unsigned int hash;
-@property (nonatomic) struct CGPoint { double x1; double x2; } location;
+@property (nonatomic) struct CGPoint { float x1; float x2; } location;
 @property (nonatomic, retain) UIPanGestureRecognizer *modalPanGestureRecognizer;
 @property (nonatomic) BOOL performingCommitTransition;
 @property (nonatomic) BOOL performingPreviewTransition;
@@ -70,7 +70,7 @@
 - (id)delegate;
 - (id)gestureRecognizers;
 - (id)initWithView:(id)arg1;
-- (struct CGPoint { double x1; double x2; })location;
+- (struct CGPoint { float x1; float x2; })location;
 - (id)modalPanGestureRecognizer;
 - (BOOL)performingCommitTransition;
 - (BOOL)performingPreviewTransition;
@@ -90,7 +90,7 @@
 - (void)setCurrentPreviewingContext:(id)arg1;
 - (void)setCurrentTransitionDelegate:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setLocation:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setModalPanGestureRecognizer:(id)arg1;
 - (void)setPerformingCommitTransition:(BOOL)arg1;
 - (void)setPerformingPreviewTransition:(BOOL)arg1;

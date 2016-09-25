@@ -8,9 +8,9 @@
     NSXPCConnection * _connection;
     PARPromise * _endpointPromise;
     NSObject<OS_dispatch_queue> * _idQueue;
-    int  _idState;
+    long long  _idState;
     NSString * _lastQuery;
-    int  _opCounter;
+    long long  _opCounter;
     NSObject<OS_dispatch_queue> * _queue;
     <PARDaemonXPC> * _remoteObject;
 }
@@ -29,9 +29,9 @@
 
 - (void).cxx_destruct;
 - (void)_invalidateConnection;
-- (int)_queryIdForObject:(id)arg1;
+- (long long)_queryIdForObject:(id)arg1;
 - (void)bag:(id /* block */)arg1;
-- (void)coalesceQueryId:(int)arg1;
+- (void)coalesceQueryId:(long long)arg1;
 - (id)config;
 - (void)configure;
 - (id)connection;
@@ -47,7 +47,7 @@
 - (id)remoteObject;
 - (id)replacementObjectForXPCConnection:(id)arg1 encoder:(id)arg2 object:(id)arg3;
 - (void)reportEvent:(id)arg1;
-- (int)request:(id)arg1 reply:(id /* block */)arg2;
+- (long long)request:(id)arg1 reply:(id /* block */)arg2;
 - (void)setConfig:(id)arg1;
 - (void)setConnection:(id)arg1;
 - (void)setEndpoint:(id)arg1;

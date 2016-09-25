@@ -15,10 +15,10 @@
     BOOL  _highlightCurrentFlightLeg;
     UIView * _loadingView;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _mapInsets;
     MKMapView * _mapView;
     UIPageControl * _pageControl;
@@ -40,7 +40,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL highlightCurrentFlightLeg;
 @property (retain) UIView *loadingView;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } mapInsets;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } mapInsets;
 @property MKMapView *mapView;
 @property UIPageControl *pageControl;
 @property (nonatomic) BOOL showInfoPanel;
@@ -69,7 +69,7 @@
 - (BOOL)highlightCurrentFlightLeg;
 - (void)layoutSubviews;
 - (id)loadingView;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })mapInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })mapInsets;
 - (id)mapView;
 - (void)mapView:(id)arg1 regionDidChangeAnimated:(BOOL)arg2;
 - (id)mapView:(id)arg1 rendererForOverlay:(id)arg2;
@@ -89,7 +89,7 @@
 - (void)setFlights:(id)arg1;
 - (void)setHighlightCurrentFlightLeg:(BOOL)arg1;
 - (void)setLoadingView:(id)arg1;
-- (void)setMapInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setMapInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setMapView:(id)arg1;
 - (void)setPageControl:(id)arg1;
 - (void)setShowInfoPanel:(BOOL)arg1;

@@ -8,7 +8,7 @@
     double  _endTimeInTrack;
     NSString * _externalIdentifier;
     double  _startTimeInTrack;
-    int  _storeID;
+    long long  _storeID;
     NSData * _timedMetadata;
     NSDictionary * _trackInfo;
     int  _type;
@@ -19,7 +19,7 @@
 @property (nonatomic, readonly) double endTimeInTrack;
 @property (nonatomic, readonly, copy) NSString *externalIdentifier;
 @property (nonatomic, readonly) double startTimeInTrack;
-@property (nonatomic, readonly) int storeID;
+@property (nonatomic, readonly) long long storeID;
 @property (nonatomic, readonly, copy) NSData *timedMetadata;
 @property (nonatomic, readonly, copy) NSDictionary *trackInfo;
 @property (nonatomic, readonly) int type;
@@ -37,7 +37,7 @@
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)playDictionary;
 - (double)startTimeInTrack;
-- (int)storeID;
+- (long long)storeID;
 - (id)timedMetadata;
 - (id)trackInfo;
 - (int)type;

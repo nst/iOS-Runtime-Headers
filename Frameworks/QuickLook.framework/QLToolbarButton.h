@@ -33,7 +33,7 @@
 
 - (void).cxx_destruct;
 - (id)accessibilityIdentifier;
-- (id)barButtonWithTarget:(id)arg1 action:(SEL)arg2 maxSize:(struct CGSize { double x1; double x2; })arg3;
+- (id)barButtonWithTarget:(id)arg1 action:(SEL)arg2 maxSize:(struct CGSize { float x1; float x2; })arg3;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)forceToNavBar;
 - (void)handleLongPress:(id)arg1;

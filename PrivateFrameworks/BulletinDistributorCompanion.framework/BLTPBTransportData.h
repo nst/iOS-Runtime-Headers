@@ -10,7 +10,7 @@
     }  _has;
     BOOL  _isInitialSequenceNumber;
     NSData * _md5;
-    unsigned int  _sequenceNumber;
+    unsigned long long  _sequenceNumber;
     NSData * _sessionIdentifier;
     unsigned int  _sessionState;
 }
@@ -22,7 +22,7 @@
 @property (nonatomic) BOOL hasSessionState;
 @property (nonatomic) BOOL isInitialSequenceNumber;
 @property (nonatomic, retain) NSData *md5;
-@property (nonatomic) unsigned int sequenceNumber;
+@property (nonatomic) unsigned long long sequenceNumber;
 @property (nonatomic, retain) NSData *sessionIdentifier;
 @property (nonatomic) unsigned int sessionState;
 
@@ -45,7 +45,7 @@
 - (id)md5;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (unsigned int)sequenceNumber;
+- (unsigned long long)sequenceNumber;
 - (id)sessionIdentifier;
 - (unsigned int)sessionState;
 - (id)sessionUUID;
@@ -54,7 +54,7 @@
 - (void)setHasSessionState:(BOOL)arg1;
 - (void)setIsInitialSequenceNumber:(BOOL)arg1;
 - (void)setMd5:(id)arg1;
-- (void)setSequenceNumber:(unsigned int)arg1;
+- (void)setSequenceNumber:(unsigned long long)arg1;
 - (int)setSequenceNumberOnManager:(id)arg1;
 - (void)setSessionIdentifier:(id)arg1;
 - (void)setSessionState:(unsigned int)arg1;

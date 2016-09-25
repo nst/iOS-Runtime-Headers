@@ -71,7 +71,7 @@
 - (void)_invalidateCachedPreferences;
 - (int)_layoutInterval;
 - (id)_localStorageDatabasePath;
-- (int)_longLongValueForKey:(id)arg1;
+- (long long)_longLongValueForKey:(id)arg1;
 - (float)_maxParseDuration;
 - (float)_minimumZoomFontSize;
 - (float)_passwordEchoDuration;
@@ -89,7 +89,7 @@
 - (void)_setInterpolationQuality:(int)arg1;
 - (void)_setLayoutInterval:(int)arg1;
 - (void)_setLocalStorageDatabasePath:(id)arg1;
-- (void)_setLongLongValue:(int)arg1 forKey:(id)arg2;
+- (void)_setLongLongValue:(long long)arg1 forKey:(id)arg2;
 - (void)_setMaxParseDuration:(float)arg1;
 - (void)_setMinimumZoomFontSize:(float)arg1;
 - (void)_setPreferenceForTestWithValue:(id)arg1 forKey:(id)arg2;
@@ -98,7 +98,7 @@
 - (void)_setTelephoneNumberParsingEnabled:(BOOL)arg1;
 - (void)_setTextAutosizingEnabled:(BOOL)arg1;
 - (void)_setUnsignedIntValue:(unsigned int)arg1 forKey:(id)arg2;
-- (void)_setUnsignedLongLongValue:(unsigned int)arg1 forKey:(id)arg2;
+- (void)_setUnsignedLongLongValue:(unsigned long long)arg1 forKey:(id)arg2;
 - (void)_setUseSiteSpecificSpoofing:(BOOL)arg1;
 - (BOOL)_standalone;
 - (id)_stringValueForKey:(id)arg1;
@@ -106,7 +106,7 @@
 - (BOOL)_telephoneNumberParsingEnabled;
 - (BOOL)_textAutosizingEnabled;
 - (unsigned int)_unsignedIntValueForKey:(id)arg1;
-- (unsigned int)_unsignedLongLongValueForKey:(id)arg1;
+- (unsigned long long)_unsignedLongLongValueForKey:(id)arg1;
 - (void)_updatePrivateBrowsingStateTo:(BOOL)arg1;
 - (BOOL)_useSiteSpecificSpoofing;
 - (id)_valueForKey:(id)arg1;
@@ -121,8 +121,8 @@
 - (BOOL)allowsAnimatedImages;
 - (BOOL)allowsInlineMediaPlaybackAfterFullscreen;
 - (BOOL)allowsPictureInPictureMediaPlayback;
-- (int)applicationCacheDefaultOriginQuota;
-- (int)applicationCacheTotalQuota;
+- (long long)applicationCacheDefaultOriginQuota;
+- (long long)applicationCacheTotalQuota;
 - (BOOL)applicationChromeModeEnabled;
 - (BOOL)arePlugInsEnabled;
 - (BOOL)asynchronousSpellCheckingEnabled;
@@ -236,8 +236,8 @@
 - (void)setAllowsAnimatedImages:(BOOL)arg1;
 - (void)setAllowsInlineMediaPlaybackAfterFullscreen:(BOOL)arg1;
 - (void)setAllowsPictureInPictureMediaPlayback:(BOOL)arg1;
-- (void)setApplicationCacheDefaultOriginQuota:(int)arg1;
-- (void)setApplicationCacheTotalQuota:(int)arg1;
+- (void)setApplicationCacheDefaultOriginQuota:(long long)arg1;
+- (void)setApplicationCacheTotalQuota:(long long)arg1;
 - (void)setApplicationChromeModeEnabled:(BOOL)arg1;
 - (void)setAsynchronousSpellCheckingEnabled:(BOOL)arg1;
 - (void)setAttachmentElementEnabled:(BOOL)arg1;

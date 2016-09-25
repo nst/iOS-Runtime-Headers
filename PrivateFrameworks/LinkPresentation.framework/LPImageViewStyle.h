@@ -6,9 +6,9 @@
     UIColor * _backgroundColor;
     LPPointUnit * _backgroundInset;
     LPPointUnit * _cornerRadius;
-    double  _darkeningAmount;
+    float  _darkeningAmount;
     int  _filter;
-    double  _foregroundOpacity;
+    float  _foregroundOpacity;
     LPPadding * _margin;
     UIColor * _maskColor;
     LPPadding * _padding;
@@ -18,9 +18,9 @@
 @property (nonatomic, retain) UIColor *backgroundColor;
 @property (nonatomic, retain) LPPointUnit *backgroundInset;
 @property (nonatomic, retain) LPPointUnit *cornerRadius;
-@property (nonatomic) double darkeningAmount;
+@property (nonatomic) float darkeningAmount;
 @property (nonatomic) int filter;
-@property (nonatomic) double foregroundOpacity;
+@property (nonatomic) float foregroundOpacity;
 @property (nonatomic, readonly, retain) LPPadding *margin;
 @property (nonatomic) UIColor *maskColor;
 @property (nonatomic, readonly, retain) LPPadding *padding;

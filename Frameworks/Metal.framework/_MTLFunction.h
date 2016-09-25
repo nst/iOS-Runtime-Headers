@@ -15,7 +15,7 @@
     NSArray * _vertexAttributes;
 }
 
-@property (readonly) unsigned int bitCodeOffset;
+@property (readonly) unsigned long long bitCodeOffset;
 @property (readonly) unsigned char bitcodeType;
 @property (readonly) NSObject<OS_dispatch_data> *constantData;
 @property (readonly, copy) NSString *debugDescription;
@@ -39,7 +39,7 @@
 @property (readonly) id vendorPrivate;
 @property NSArray *vertexAttributes;
 
-- (unsigned int)bitCodeFileSize;
+- (unsigned long long)bitCodeFileSize;
 - (const struct { unsigned char x1[32]; }*)bitCodeHash;
 - (id)constantData;
 - (void)dealloc;

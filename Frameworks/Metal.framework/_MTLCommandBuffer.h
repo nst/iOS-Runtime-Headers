@@ -4,28 +4,28 @@
 
 @interface _MTLCommandBuffer : NSObject {
     BOOL  _StatEnabled;
-    unsigned int  _commitTime;
+    unsigned long long  _commitTime;
     bool  _completedCallbacksDone;
     struct MTLDispatch { struct MTLDispatch {} *x1; id /* block */ x2; } * _completedDispatchList;
     struct MTLDispatch { struct MTLDispatch {} *x1; id /* block */ x2; } * _completedDispatchListTail;
-    unsigned int  _completionHandlerEnqueueTime;
-    unsigned int  _completionHandlerExecutionTime;
-    unsigned int  _completionInterruptTime;
+    unsigned long long  _completionHandlerEnqueueTime;
+    unsigned long long  _completionHandlerExecutionTime;
+    unsigned long long  _completionInterruptTime;
     struct _opaque_pthread_cond_t { 
         long __sig; 
         BOOL __opaque[24]; 
     }  _cond;
-    unsigned int  _creationTime;
+    unsigned long long  _creationTime;
     <MTLCommandEncoder> * _currentCommandEncoder;
-    unsigned int  _enqueueTime;
+    unsigned long long  _enqueueTime;
     NSError * _error;
-    unsigned int  _globalTraceObjectID;
-    unsigned int  _gpuEndTime;
-    unsigned int  _gpuStartTime;
-    unsigned int  _kernelEndTime;
-    unsigned int  _kernelStartTime;
+    unsigned long long  _globalTraceObjectID;
+    unsigned long long  _gpuEndTime;
+    unsigned long long  _gpuStartTime;
+    unsigned long long  _kernelEndTime;
+    unsigned long long  _kernelStartTime;
     NSString * _label;
-    unsigned int  _labelTraceID;
+    unsigned long long  _labelTraceID;
     unsigned int  _listIndex;
     struct _opaque_pthread_mutex_t { 
         long __sig; 
@@ -44,8 +44,8 @@
     bool  _skipRender;
     unsigned int  _status;
     BOOL  _strongObjectReferences;
-    unsigned int  _submitToHardwareTime;
-    unsigned int  _submitToKernelTime;
+    unsigned long long  _submitToHardwareTime;
+    unsigned long long  _submitToKernelTime;
     BOOL  _synchronousDebugMode;
     NSMutableDictionary * _userDictionary;
 }
@@ -55,7 +55,7 @@
 @property (getter=isStatEnabled, nonatomic) BOOL StatEnabled;
 @property (readonly) <MTLCommandQueue> *commandQueue;
 @property (readonly) NSError *error;
-@property (readonly) unsigned int globalTraceObjectID;
+@property (readonly) unsigned long long globalTraceObjectID;
 @property (nonatomic, readonly) double kernelEndTime;
 @property (nonatomic, readonly) double kernelStartTime;
 @property (copy) NSString *label;
@@ -81,14 +81,14 @@
 - (void)commitAndReset;
 - (void)dealloc;
 - (id)description;
-- (void)didCompleteWithStartTime:(unsigned int)arg1 endTime:(unsigned int)arg2 error:(id)arg3;
-- (void)didSchedule:(unsigned int)arg1 error:(id)arg2;
-- (void)didScheduleWithStartTime:(unsigned int)arg1 endTime:(unsigned int)arg2 error:(id)arg3;
+- (void)didCompleteWithStartTime:(unsigned long long)arg1 endTime:(unsigned long long)arg2 error:(id)arg3;
+- (void)didSchedule:(unsigned long long)arg1 error:(id)arg2;
+- (void)didScheduleWithStartTime:(unsigned long long)arg1 endTime:(unsigned long long)arg2 error:(id)arg3;
 - (void)enqueue;
 - (id)error;
 - (unsigned int)getAndIncrementNumEncoders;
 - (unsigned int)getListIndex;
-- (unsigned int)globalTraceObjectID;
+- (unsigned long long)globalTraceObjectID;
 - (id)initWithQueue:(id)arg1 retainedReferences:(BOOL)arg2;
 - (id)initWithQueue:(id)arg1 retainedReferences:(BOOL)arg2 synchronousDebugMode:(BOOL)arg3;
 - (BOOL)isCommitted;

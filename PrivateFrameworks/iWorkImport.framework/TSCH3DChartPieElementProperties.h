@@ -4,24 +4,24 @@
 
 @interface TSCH3DChartPieElementProperties : TSCH3DChartBasicElementProperties {
     struct vector<float, std::__1::allocator<float> > { 
-        double *__begin_; 
-        double *__end_; 
-        struct __compressed_pair<double *, std::__1::allocator<float> > { 
-            double *__first_; 
+        float *__begin_; 
+        float *__end_; 
+        struct __compressed_pair<float *, std::__1::allocator<float> > { 
+            float *__first_; 
         } __end_cap_; 
     }  mExplode;
     struct vector<float, std::__1::allocator<float> > { 
-        double *__begin_; 
-        double *__end_; 
-        struct __compressed_pair<double *, std::__1::allocator<float> > { 
-            double *__first_; 
+        float *__begin_; 
+        float *__end_; 
+        struct __compressed_pair<float *, std::__1::allocator<float> > { 
+            float *__first_; 
         } __end_cap_; 
     }  mPercentOfTotal;
     struct vector<float, std::__1::allocator<float> > { 
-        double *__begin_; 
-        double *__end_; 
-        struct __compressed_pair<double *, std::__1::allocator<float> > { 
-            double *__first_; 
+        float *__begin_; 
+        float *__end_; 
+        struct __compressed_pair<float *, std::__1::allocator<float> > { 
+            float *__first_; 
         } __end_cap_; 
     }  mRotation;
 }

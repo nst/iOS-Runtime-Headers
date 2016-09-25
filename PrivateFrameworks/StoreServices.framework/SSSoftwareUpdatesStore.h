@@ -27,7 +27,7 @@
 - (void)reloadFromServerWithCompletionBlock:(id /* block */)arg1;
 - (void)removeUpdateBulletins;
 - (void)showApplicationBadgeForPendingUpdates;
-- (void)updateItemWithIdentifer:(int)arg1 downloadPhase:(id)arg2 properties:(id)arg3 callback:(id /* block */)arg4;
-- (id)updateWithItemIdentifier:(int)arg1;
+- (void)updateItemWithIdentifer:(long long)arg1 downloadPhase:(id)arg2 properties:(id)arg3 callback:(id /* block */)arg4;
+- (id)updateWithItemIdentifier:(long long)arg1;
 
 @end

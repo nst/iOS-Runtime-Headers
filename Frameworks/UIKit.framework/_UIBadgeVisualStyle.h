@@ -5,20 +5,20 @@
 @interface _UIBadgeVisualStyle : NSObject
 
 @property (nonatomic, readonly) BOOL allowsDrawingOutsideTabBar;
-@property (nonatomic, readonly) double edgePadding;
+@property (nonatomic, readonly) float edgePadding;
 @property (nonatomic, readonly) UIFont *font;
-@property (nonatomic, readonly) double fontSize;
-@property (nonatomic, readonly) double horizontalAnimatedInset;
-@property (nonatomic, readonly) double horizontalBorderedInset;
-@property (nonatomic, readonly) double horizontalInset;
-@property (nonatomic, readonly) double maxWidth;
-@property (nonatomic, readonly) double minWidth;
-@property (nonatomic, readonly) double shadowHeight;
-@property (nonatomic, readonly) double singleBadgeWidth;
+@property (nonatomic, readonly) float fontSize;
+@property (nonatomic, readonly) float horizontalAnimatedInset;
+@property (nonatomic, readonly) float horizontalBorderedInset;
+@property (nonatomic, readonly) float horizontalInset;
+@property (nonatomic, readonly) float maxWidth;
+@property (nonatomic, readonly) float minWidth;
+@property (nonatomic, readonly) float shadowHeight;
+@property (nonatomic, readonly) float singleBadgeWidth;
 @property (nonatomic, readonly) BOOL usesExternalImage;
-@property (nonatomic, readonly) double verticalAnimatedInset;
-@property (nonatomic, readonly) double verticalBorderedInset;
-@property (nonatomic, readonly) double verticalInset;
+@property (nonatomic, readonly) float verticalAnimatedInset;
+@property (nonatomic, readonly) float verticalBorderedInset;
+@property (nonatomic, readonly) float verticalInset;
 
 - (BOOL)allowsDrawingOutsideTabBar;
 - (float)edgePadding;

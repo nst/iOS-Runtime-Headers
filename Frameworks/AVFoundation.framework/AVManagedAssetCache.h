@@ -10,18 +10,18 @@
 
 - (id)URL;
 - (id)allKeys;
-- (int)currentSize;
+- (long long)currentSize;
 - (void)dealloc;
 - (void)finalize;
 - (id)initWithURL:(id)arg1;
 - (BOOL)isPlayableOffline;
 - (id)lastModifiedDateOfEntryForKey:(id)arg1;
-- (int)maxEntrySize;
-- (int)maxSize;
+- (long long)maxEntrySize;
+- (long long)maxSize;
 - (id)mediaSelectionOptionsInMediaSelectionGroup:(id)arg1;
 - (void)removeEntryForKey:(id)arg1;
-- (void)setMaxEntrySize:(int)arg1;
-- (void)setMaxSize:(int)arg1;
-- (int)sizeOfEntryForKey:(id)arg1;
+- (void)setMaxEntrySize:(long long)arg1;
+- (void)setMaxSize:(long long)arg1;
+- (long long)sizeOfEntryForKey:(id)arg1;
 
 @end

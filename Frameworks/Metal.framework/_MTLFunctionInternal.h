@@ -5,10 +5,10 @@
 @interface _MTLFunctionInternal : _MTLFunction {
     NSString * _filePath;
     struct MTLFunctionData { 
-        unsigned int bitCodeOffset; 
-        unsigned int bitCodeFileSize; 
-        unsigned int publicArgumentsOffset; 
-        unsigned int privateArgumentsOffset; 
+        unsigned long long bitCodeOffset; 
+        unsigned long long bitCodeFileSize; 
+        unsigned long long publicArgumentsOffset; 
+        unsigned long long privateArgumentsOffset; 
         unsigned short airMajorVersion; 
         unsigned short airMinorVersion; 
         unsigned short languageMajorVersion; 
@@ -28,17 +28,17 @@
 }
 
 - (id).cxx_construct;
-- (unsigned int)bitCodeFileSize;
+- (unsigned long long)bitCodeFileSize;
 - (const struct { unsigned char x1[32]; }*)bitCodeHash;
-- (unsigned int)bitCodeOffset;
+- (unsigned long long)bitCodeOffset;
 - (unsigned char)bitcodeType;
 - (void)dealloc;
 - (id)filePath;
 - (id)functionConstants;
 - (id)functionConstantsDictionary;
-- (const /* Warning: unhandled struct encoding: '{MTLFunctionData=QQQQSSSS{?=[32C]}Cb2b6@}' */ struct MTLFunctionData { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned short x5; unsigned short x6; unsigned short x7; unsigned short x8; struct { unsigned char x_9_1_1[32]; } x9; unsigned char x10; unsigned int x11 : 2; unsigned int x12 : 6; id x13; }*)functionData;
+- (const /* Warning: unhandled struct encoding: '{MTLFunctionData=QQQQSSSS{?=[32C]}Cb2b6@}' */ struct MTLFunctionData { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned short x5; unsigned short x6; unsigned short x7; unsigned short x8; struct { unsigned char x_9_1_1[32]; } x9; unsigned char x10; unsigned int x11 : 2; unsigned int x12 : 6; id x13; }*)functionData;
 - (id)functionInputs;
-- (id)initWithName:(id)arg1 type:(unsigned int)arg2 libraryData:(/* Warning: unhandled struct encoding: '{MTLLibraryData=^^?i@}' */ struct MTLLibraryData { int (**x1)(); int x2; id x3; }*)arg3 functionData:(/* Warning: unhandled struct encoding: '{MTLFunctionData=QQQQSSSS{?=[32C]}Cb2b6@}' */ struct MTLFunctionData { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned short x5; unsigned short x6; unsigned short x7; unsigned short x8; struct { unsigned char x_9_1_1[32]; } x9; unsigned char x10; unsigned int x11 : 2; unsigned int x12 : 6; id x13; }*)arg4 device:(id)arg5;
+- (id)initWithName:(id)arg1 type:(unsigned int)arg2 libraryData:(/* Warning: unhandled struct encoding: '{MTLLibraryData=^^?i@}' */ struct MTLLibraryData { int (**x1)(); int x2; id x3; }*)arg3 functionData:(/* Warning: unhandled struct encoding: '{MTLFunctionData=QQQQSSSS{?=[32C]}Cb2b6@}' */ struct MTLFunctionData { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned short x5; unsigned short x6; unsigned short x7; unsigned short x8; struct { unsigned char x_9_1_1[32]; } x9; unsigned char x10; unsigned int x11 : 2; unsigned int x12 : 6; id x13; }*)arg4 device:(id)arg5;
 - (void)initializePrivateMetadata;
 - (void)initializePublicMetadata;
 - (int)lineNumber;

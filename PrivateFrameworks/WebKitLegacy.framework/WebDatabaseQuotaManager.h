@@ -8,8 +8,8 @@
 
 - (id)initWithOrigin:(id)arg1;
 - (id)origin;
-- (unsigned int)quota;
-- (void)setQuota:(unsigned int)arg1;
-- (unsigned int)usage;
+- (unsigned long long)quota;
+- (void)setQuota:(unsigned long long)arg1;
+- (unsigned long long)usage;
 
 @end

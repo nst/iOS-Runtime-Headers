@@ -4,7 +4,7 @@
 
 @interface CPTextLine : CPTextObject <CPDisposable> {
     BOOL  baseLineIsNull;
-    double  baseline;
+    float  baseline;
     CPCharSequence * charSequence;
     NSArray * columnBreaks;
     int  columnNumber;
@@ -20,16 +20,16 @@
     BOOL  lineBreakAfter;
     int  lineNumber;
     unsigned int  listSpacerIndex;
-    double  maximumLetterGap;
-    double  maximumWordGap;
+    float  maximumLetterGap;
+    float  maximumWordGap;
     BOOL  maySplit;
-    double  monospaceWidth;
+    float  monospaceWidth;
     unsigned int  rightSpacerIndex;
     unsigned int * spacesBefore;
     int  tabsBefore;
-    struct CPPDFStyle { struct CGColor {} *x1; struct CGColorSpace {} *x2; struct CGColor {} *x3; struct CGColorSpace {} *x4; double x5; double x6; unsigned char x7; unsigned char x8; int x9; double x10; id x11; struct CGPDFObject {} *x12; struct CGPDFObject {} *x13; struct CGColor {} *x14; struct CPPDFStyle {} *x15; } * uniformStyle;
+    struct CPPDFStyle { struct CGColor {} *x1; struct CGColorSpace {} *x2; struct CGColor {} *x3; struct CGColorSpace {} *x4; float x5; float x6; unsigned char x7; unsigned char x8; int x9; float x10; id x11; struct CGPDFObject {} *x12; struct CGPDFObject {} *x13; struct CGColor {} *x14; struct CPPDFStyle {} *x15; } * uniformStyle;
     unsigned short  uniformStyleFlags;
-    struct { unsigned int x1; unsigned int x2; int x3; int x4; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_5_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_5_1_2; } x5; } * wordArray;
+    struct { unsigned int x1; unsigned int x2; int x3; int x4; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_5_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_5_1_2; } x5; } * wordArray;
     unsigned int  wordCount;
     NSArray * xsegments;
 }
@@ -42,14 +42,14 @@
 
 - (void)accept:(id)arg1;
 - (int)align;
-- (struct CGPoint { double x1; double x2; })anchor;
+- (struct CGPoint { float x1; float x2; })anchor;
 - (void)anchorChunk:(id)arg1 atWordIndex:(unsigned int)arg2;
 - (id)attributes;
 - (int)baseLineAscending:(id)arg1;
 - (int)baseLineDescending:(id)arg1;
 - (float)baseline;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })bounds;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundsOfWordAtIndex:(unsigned int)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundsOfWordAtIndex:(unsigned int)arg1;
 - (BOOL)changesFontAt:(id)arg1;
 - (id)charSequence;
 - (id)columnBreaks;
@@ -57,7 +57,7 @@
 - (void)dealloc;
 - (void)dispose;
 - (void)finalize;
-- (struct { unsigned int x1; unsigned int x2; int x3; int x4; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_5_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_5_1_2; } x5; }*)firstWord;
+- (struct { unsigned int x1; unsigned int x2; int x3; int x4; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_5_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_5_1_2; } x5; }*)firstWord;
 - (void)fitBoundsToChildren;
 - (BOOL)hasBeenProcessed;
 - (BOOL)hasBeenSplit;
@@ -72,7 +72,7 @@
 - (BOOL)isIndivisible;
 - (BOOL)isListItem;
 - (BOOL)isMonospaced;
-- (struct { unsigned int x1; unsigned int x2; int x3; int x4; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_5_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_5_1_2; } x5; }*)lastWord;
+- (struct { unsigned int x1; unsigned int x2; int x3; int x4; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_5_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_5_1_2; } x5; }*)lastWord;
 - (unsigned int)leftSpacerIndex;
 - (int)levels;
 - (BOOL)lineBreakAfter;
@@ -86,7 +86,7 @@
 - (float)medianFontSize;
 - (float)monospaceWidth;
 - (id)newTextLineFromWordAt:(unsigned int)arg1 lengthInWords:(unsigned int)arg2;
-- (BOOL)overlapsHorizontally:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (BOOL)overlapsHorizontally:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)overlapsWith:(id)arg1;
 - (id)properties;
 - (void)recomputeBaseline;
@@ -116,9 +116,9 @@
 - (int)tabsBefore;
 - (int)topIsAbove:(id)arg1;
 - (void)translateObjectYBy:(float)arg1;
-- (struct { unsigned int x1; unsigned int x2; int x3; int x4; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_5_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_5_1_2; } x5; }*)wordArray;
-- (struct { unsigned int x1; unsigned int x2; int x3; int x4; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_5_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_5_1_2; } x5; }*)wordArrayOfSize:(unsigned int)arg1;
-- (struct { unsigned int x1; unsigned int x2; int x3; int x4; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_5_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_5_1_2; } x5; }*)wordAtIndex:(unsigned int)arg1;
+- (struct { unsigned int x1; unsigned int x2; int x3; int x4; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_5_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_5_1_2; } x5; }*)wordArray;
+- (struct { unsigned int x1; unsigned int x2; int x3; int x4; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_5_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_5_1_2; } x5; }*)wordArrayOfSize:(unsigned int)arg1;
+- (struct { unsigned int x1; unsigned int x2; int x3; int x4; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_5_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_5_1_2; } x5; }*)wordAtIndex:(unsigned int)arg1;
 - (unsigned int)wordCount;
 - (long)zOrder;
 

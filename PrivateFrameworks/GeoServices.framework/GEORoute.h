@@ -348,7 +348,7 @@
 
 // Image: /System/Library/Frameworks/MapKit.framework/MapKit
 
-- (id)maneuverImageForStep:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 scale:(float)arg3;
+- (id)maneuverImageForStep:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 scale:(float)arg3;
 
 // Image: /System/Library/PrivateFrameworks/Navigation.framework/Navigation
 

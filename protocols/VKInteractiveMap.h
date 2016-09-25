@@ -21,16 +21,16 @@
 - (NSArray *)attributionsForCurrentRegion;
 - (void)beginStyleAnimationGroup;
 - (VKObjectBoundsContext *)boundsForSelectedTransitLines;
-- (struct shared_ptr<md::LabelFeatureMarker> { struct LabelFeatureMarker {} *x1; struct __shared_weak_count {} *x2; })closestRoadMarkerForSelectionAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (struct shared_ptr<md::LabelFeatureMarker> { struct LabelFeatureMarker {} *x1; struct __shared_weak_count {} *x2; })closestRoadMarkerForSelectionAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (NSString *)consoleString:(BOOL)arg1;
-- (struct CGPoint { double x1; double x2; })convertCoordinateToCameraModelPoint:(struct { double x1; double x2; })arg1;
-- (struct CGPoint { double x1; double x2; })convertCoordinateToPoint:(struct { double x1; double x2; })arg1;
-- (struct CGPoint { double x1; double x2; })convertMapPointToPoint:(struct { double x1; double x2; })arg1;
-- (struct { double x1; double x2; })convertPointToCoordinate:(struct CGPoint { double x1; double x2; })arg1;
-- (struct { double x1; double x2; })convertPointToMapPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (struct CGPoint { float x1; float x2; })convertCoordinateToCameraModelPoint:(struct { double x1; double x2; })arg1;
+- (struct CGPoint { float x1; float x2; })convertCoordinateToPoint:(struct { double x1; double x2; })arg1;
+- (struct CGPoint { float x1; float x2; })convertMapPointToPoint:(struct { double x1; double x2; })arg1;
+- (struct { double x1; double x2; })convertPointToCoordinate:(struct CGPoint { float x1; float x2; })arg1;
+- (struct { double x1; double x2; })convertPointToMapPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (NSArray *)customFeatureDataSources;
 - (void)debugHighlightFeatureMarker:(const struct shared_ptr<md::FeatureMarker> { struct FeatureMarker {} *x1; struct __shared_weak_count {} *x2; }*)arg1;
-- (void)debugHighlightObjectAtPoint:(struct CGPoint { double x1; double x2; })arg1 highlightTarget:(unsigned char)arg2;
+- (void)debugHighlightObjectAtPoint:(struct CGPoint { float x1; float x2; })arg1 highlightTarget:(unsigned char)arg2;
 - (<VKInteractiveMapDelegate> *)delegate;
 - (void)deselectLabelMarker;
 - (void)deselectTransitLineMarker;
@@ -43,10 +43,10 @@
 - (void)insertRasterOverlay:(VKRasterOverlay *)arg1 aboveOverlay:(VKRasterOverlay *)arg2;
 - (void)insertRasterOverlay:(VKRasterOverlay *)arg1 belowOverlay:(VKRasterOverlay *)arg2;
 - (BOOL)isFullyDrawn;
-- (BOOL)isPointValidForGesturing:(struct CGPoint { double x1; double x2; })arg1;
+- (BOOL)isPointValidForGesturing:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)isShowingNoDataPlaceholders;
 - (struct shared_ptr<md::LabelMarker> { struct LabelMarker {} *x1; struct __shared_weak_count {} *x2; })labelMarkerForCustomFeatureAnnotation:(id <VKCustomFeatureAnnotation>)arg1 dataSource:(id <VKCustomFeatureDataSource>)arg2;
-- (struct shared_ptr<md::LabelMarker> { struct LabelMarker {} *x1; struct __shared_weak_count {} *x2; })labelMarkerForSelectionAtPoint:(struct CGPoint { double x1; double x2; })arg1 selectableLabelsOnly:(BOOL)arg2;
+- (struct shared_ptr<md::LabelMarker> { struct LabelMarker {} *x1; struct __shared_weak_count {} *x2; })labelMarkerForSelectionAtPoint:(struct CGPoint { float x1; float x2; })arg1 selectableLabelsOnly:(BOOL)arg2;
 - (BOOL)labelMarkerSelectionEnabled;
 - (struct vector<std::__1::shared_ptr<md::LabelMarker>, std::__1::allocator<std::__1::shared_ptr<md::LabelMarker> > > { struct shared_ptr<md::LabelMarker> {} *x1; struct shared_ptr<md::LabelMarker> {} *x2; struct __compressed_pair<std::__1::shared_ptr<md::LabelMarker> *, std::__1::allocator<std::__1::shared_ptr<md::LabelMarker> > > { struct shared_ptr<md::LabelMarker> {} *x_3_1_1; } x3; })labelMarkers;
 - (unsigned char)labelScaleFactor;
@@ -64,7 +64,7 @@
 - (void)removeRasterOverlay:(VKRasterOverlay *)arg1;
 - (void)requestStylesheetAnimation:(void *)arg1 targetMapDisplayStyle:(void *)arg2 setupHandler:(void *)arg3; // needs 3 arg types, found 7: VKAnimation *, struct DisplayStyle { unsigned char x1; unsigned char x2; unsigned char x3; unsigned char x4; unsigned char x5; }, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
 - (<VKRouteMatchedAnnotationPresentation> *)routeLineSplitAnnotation;
-- (struct PolylineCoordinate { unsigned int x1; double x2; })routeUserOffset;
+- (struct PolylineCoordinate { unsigned int x1; float x2; })routeUserOffset;
 - (void)selectLabelMarker:(const struct shared_ptr<md::LabelMarker> { struct LabelMarker {} *x1; struct __shared_weak_count {} *x2; }*)arg1;
 - (void)selectTransitLineMarker:(VKTransitLineMarker *)arg1;
 - (struct shared_ptr<md::LabelMarker> { struct LabelMarker {} *x1; struct __shared_weak_count {} *x2; })selectedLabelMarker;
@@ -79,7 +79,7 @@
 - (void)setMapType:(int)arg1 animated:(BOOL)arg2;
 - (void)setNavigationShieldSize:(int)arg1;
 - (void)setRouteLineSplitAnnotation:(id <VKRouteMatchedAnnotationPresentation>)arg1;
-- (void)setRouteUserOffset:(struct PolylineCoordinate { unsigned int x1; double x2; })arg1;
+- (void)setRouteUserOffset:(struct PolylineCoordinate { unsigned int x1; float x2; })arg1;
 - (void)setShieldIdiom:(int)arg1;
 - (void)setShieldSize:(int)arg1;
 - (void)setShowsBuildings:(BOOL)arg1;
@@ -99,7 +99,7 @@
 - (BOOL)supportsMapDisplayStyle:(struct DisplayStyle { unsigned char x1; unsigned char x2; unsigned char x3; unsigned char x4; unsigned char x5; })arg1;
 - (BOOL)trafficEnabled;
 - (BOOL)trafficIncidentsEnabled;
-- (NSArray *)transitLineMarkersForSelectionAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (NSArray *)transitLineMarkersForSelectionAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (NSArray *)transitLineMarkersInCurrentViewport;
 - (NSArray *)visibleTileSets;
 

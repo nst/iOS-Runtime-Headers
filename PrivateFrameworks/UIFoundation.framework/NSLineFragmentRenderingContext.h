@@ -3,9 +3,9 @@
  */
 
 @interface NSLineFragmentRenderingContext : NSObject {
-    struct CGSize { double x1; double x2; } * _advancements;
+    struct CGSize { float x1; float x2; } * _advancements;
     CUICatalog * _catalog;
-    double  _elasticWidth;
+    float  _elasticWidth;
     struct { 
         unsigned int _isRTL : 1; 
         unsigned int _vAdvance : 1; 
@@ -16,21 +16,21 @@
     unsigned short * _glyphs;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _imageBounds;
-    double  _leftControlWidth;
-    double  _leftSideDelta;
-    double  _lineWidth;
+    float  _leftControlWidth;
+    float  _leftSideDelta;
+    float  _lineWidth;
     long  _numRuns;
     int  _resolvedAlignment;
     int  _resolvedDirection;
-    double  _rightControlWidth;
+    float  _rightControlWidth;
     void * _runs;
     CUIStyleEffectConfiguration * _styleEffects;
 }
@@ -51,11 +51,11 @@
 - (id)cuiCatalog;
 - (id)cuiStyleEffects;
 - (void)dealloc;
-- (void)drawAtPoint:(struct CGPoint { double x1; double x2; })arg1 inContext:(struct CGContext { }*)arg2;
+- (void)drawAtPoint:(struct CGPoint { float x1; float x2; })arg1 inContext:(struct CGContext { }*)arg2;
 - (float)elasticWidth;
 - (void)finalize;
 - (void)getMaximumAscender:(float*)arg1 minimumDescender:(float*)arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })imageBounds;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })imageBounds;
 - (id)initWithRuns:(struct __CFArray { }*)arg1 glyphOrigin:(float)arg2 lineFragmentWidth:(float)arg3 elasticWidth:(float)arg4 usesScreenFonts:(BOOL)arg5 isRTL:(BOOL)arg6;
 - (BOOL)isRTL;
 - (float)lineFragmentWidth;
@@ -66,6 +66,6 @@
 - (void)setCuiStyleEffects:(id)arg1;
 - (void)setResolvedBaseWritingDirection:(int)arg1;
 - (void)setResolvedTextAlignment:(int)arg1;
-- (struct CGSize { double x1; double x2; })sizeWithBehavior:(int)arg1 usesFontLeading:(BOOL)arg2 baselineDelta:(float*)arg3;
+- (struct CGSize { float x1; float x2; })sizeWithBehavior:(int)arg1 usesFontLeading:(BOOL)arg2 baselineDelta:(float*)arg3;
 
 @end

@@ -43,7 +43,7 @@
 - (void)manager:(id)arg1 loadDidFailWithError:(id)arg2;
 - (void)manager:(id)arg1 willPresentViewController:(id)arg2;
 - (void)managerDidCancel:(id)arg1;
-- (struct CGSize { double x1; double x2; })preferredContentSize;
+- (struct CGSize { float x1; float x2; })preferredContentSize;
 - (int)preferredInterfaceOrientationForPresentation;
 - (void)setWelcomeView:(id)arg1;
 - (BOOL)shouldAutorotate;

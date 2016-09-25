@@ -3,21 +3,21 @@
  */
 
 @interface PKSpringAnimationFactory : NSObject {
-    double  _damping;
+    float  _damping;
     double  _duration;
-    double  _mass;
+    float  _mass;
     BOOL  _needsDurationUpdate;
-    double  _stiffness;
+    float  _stiffness;
     CAMediaTimingFunction * _timing;
-    double  _velocity;
+    float  _velocity;
 }
 
-@property (nonatomic) double damping;
+@property (nonatomic) float damping;
 @property (nonatomic, readonly) double duration;
-@property (nonatomic) double mass;
-@property (nonatomic) double stiffness;
+@property (nonatomic) float mass;
+@property (nonatomic) float stiffness;
 @property (nonatomic, retain) CAMediaTimingFunction *timing;
-@property (nonatomic) double velocity;
+@property (nonatomic) float velocity;
 
 + (id)defaultTimingFunction;
 + (id)springAnimationWithKeyPath:(id)arg1;

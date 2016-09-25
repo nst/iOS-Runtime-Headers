@@ -29,12 +29,12 @@
 
 - (void).cxx_destruct;
 - (void)_applyTintInformation;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_calculateArtworkEdgeInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_calculateArtworkEdgeInsets;
 - (void)_containerEntityProviderDidInvalidateNotification:(id)arg1;
 - (void)_contentSizeCategoryDidChangeNotification:(id)arg1;
 - (void)_reloadContainerEntityValueContextProperties;
 - (void)_reloadVerticalScrollingContainerItems;
-- (void)_setContentOverlayInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)_setContentOverlayInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)_updatePlaybackStatusForLockupView;
 - (void)_updateVerticalLockupViewSize;
 - (void)cancelEditing;
@@ -58,7 +58,7 @@
 - (void)setMediaSplitViewControllerDelegate:(id)arg1;
 - (void)setRelatedContentViewController:(id)arg1;
 - (void)verticalLockupView:(id)arg1 didSelectPlayButtonAction:(unsigned int)arg2;
-- (void)verticalScrollingContainerViewController:(id)arg1 willEndDraggingWithVelocity:(struct CGPoint { double x1; double x2; })arg2 targetContentOffset:(inout struct CGPoint { double x1; double x2; }*)arg3;
+- (void)verticalScrollingContainerViewController:(id)arg1 willEndDraggingWithVelocity:(struct CGPoint { float x1; float x2; })arg2 targetContentOffset:(inout struct CGPoint { float x1; float x2; }*)arg3;
 - (void)verticalScrollingContainerViewControllerContentSizeDidChange:(id)arg1;
 - (void)verticalScrollingContainerViewControllerDidScroll:(id)arg1;
 - (void)viewDidLayoutSubviews;

@@ -7,14 +7,14 @@
     NSString * _code;
     double  _latitude;
     double  _longitude;
-    int  _utcOffset;
+    long long  _utcOffset;
 }
 
 @property (nonatomic, retain) NSString *city;
 @property (nonatomic, retain) NSString *code;
 @property (nonatomic) double latitude;
 @property (nonatomic) double longitude;
-@property (nonatomic) int utcOffset;
+@property (nonatomic) long long utcOffset;
 
 - (void).cxx_destruct;
 - (id)city;
@@ -26,7 +26,7 @@
 - (void)setCode:(id)arg1;
 - (void)setLatitude:(double)arg1;
 - (void)setLongitude:(double)arg1;
-- (void)setUtcOffset:(int)arg1;
-- (int)utcOffset;
+- (void)setUtcOffset:(long long)arg1;
+- (long long)utcOffset;
 
 @end

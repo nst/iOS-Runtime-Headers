@@ -30,7 +30,7 @@
 + (BOOL)supportsTransitMapAccess;
 + (id)transitMap;
 
-- (id)_findTransitPointWithID:(unsigned int)arg1 near:(struct { double x1; double x2; })arg2 type:(unsigned int)arg3 pointHandler:(id /* block */)arg4 completionHandler:(id /* block */)arg5;
+- (id)_findTransitPointWithID:(unsigned long long)arg1 near:(struct { double x1; double x2; })arg2 type:(unsigned int)arg3 pointHandler:(id /* block */)arg4 completionHandler:(id /* block */)arg5;
 - (id)_findTransitPointsWithin:(double)arg1 of:(struct { double x1; double x2; })arg2 type:(unsigned int)arg3 pointHandler:(id /* block */)arg4 completionHandler:(id /* block */)arg5;
 - (BOOL)_hasLoadedTilesNearCoordinate:(struct { double x1; double x2; })arg1 radius:(double)arg2 zoomLevel:(unsigned int)arg3 tileStyle:(int)arg4 tileSize:(int)arg5 tileScale:(int)arg6;
 - (id)_transitPointForTransitMapNode:(struct shared_ptr<geo::MapNodeTransit> { struct MapNodeTransit {} *x1; struct __shared_weak_count {} *x2; })arg1;
@@ -46,17 +46,17 @@
 - (id)findRoadTilesWithin:(double)arg1 of:(struct { double x1; double x2; })arg2 tileHander:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
 - (id)findRoadsWithin:(double)arg1 of:(struct { double x1; double x2; })arg2 handler:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
 - (id)findTransitEdgesWithin:(double)arg1 of:(struct { double x1; double x2; })arg2 edgeHandler:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
-- (id)findTransitHallWithID:(unsigned int)arg1 near:(struct { double x1; double x2; })arg2 hallHandler:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
+- (id)findTransitHallWithID:(unsigned long long)arg1 near:(struct { double x1; double x2; })arg2 hallHandler:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
 - (id)findTransitHallsWithin:(double)arg1 of:(struct { double x1; double x2; })arg2 hallHandler:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
 - (id)findTransitLinksWithin:(double)arg1 of:(struct { double x1; double x2; })arg2 linkHandler:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
-- (id)findTransitNodeWithID:(unsigned int)arg1 near:(struct { double x1; double x2; })arg2 nodeHandler:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
+- (id)findTransitNodeWithID:(unsigned long long)arg1 near:(struct { double x1; double x2; })arg2 nodeHandler:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
 - (id)findTransitNodesWithin:(double)arg1 of:(struct { double x1; double x2; })arg2 nodeHandler:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
-- (id)findTransitPointWithID:(unsigned int)arg1 near:(struct { double x1; double x2; })arg2 pointHandler:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
-- (id)findTransitPointWithParentID:(unsigned int)arg1 near:(struct { double x1; double x2; })arg2 type:(unsigned int)arg3 pointHandler:(id /* block */)arg4 completionHandler:(id /* block */)arg5;
+- (id)findTransitPointWithID:(unsigned long long)arg1 near:(struct { double x1; double x2; })arg2 pointHandler:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
+- (id)findTransitPointWithParentID:(unsigned long long)arg1 near:(struct { double x1; double x2; })arg2 type:(unsigned int)arg3 pointHandler:(id /* block */)arg4 completionHandler:(id /* block */)arg5;
 - (id)findTransitPointsWithin:(double)arg1 of:(struct { double x1; double x2; })arg2 pointHandler:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
-- (id)findTransitStationWithID:(unsigned int)arg1 near:(struct { double x1; double x2; })arg2 stationHandler:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
+- (id)findTransitStationWithID:(unsigned long long)arg1 near:(struct { double x1; double x2; })arg2 stationHandler:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
 - (id)findTransitStationsWithin:(double)arg1 of:(struct { double x1; double x2; })arg2 stationHandler:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
-- (id)findTransitStopWithID:(unsigned int)arg1 near:(struct { double x1; double x2; })arg2 stopHandler:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
+- (id)findTransitStopWithID:(unsigned long long)arg1 near:(struct { double x1; double x2; })arg2 stopHandler:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
 - (id)findTransitStopsWithin:(double)arg1 of:(struct { double x1; double x2; })arg2 stopHandler:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
 - (BOOL)hasLoadedBuildingTilesNearCoordinate:(struct { double x1; double x2; })arg1 radius:(double)arg2;
 - (BOOL)hasLoadedRoadTilesNearCoordinate:(struct { double x1; double x2; })arg1 radius:(double)arg2;

@@ -31,7 +31,7 @@
 - (id)clientContext;
 - (void)dealloc;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
-- (BOOL)getContentOffset:(struct CGPoint { double x1; double x2; }*)arg1 forIndexBarEntryAtIndex:(unsigned int)arg2;
+- (BOOL)getContentOffset:(struct CGPoint { float x1; float x2; }*)arg1 forIndexBarEntryAtIndex:(unsigned int)arg2;
 - (id)indexBarEntryAtIndex:(unsigned int)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithLibraryViewConfiguration:(id)arg1;

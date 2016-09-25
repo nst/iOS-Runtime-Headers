@@ -31,8 +31,8 @@
     GEOLocation * _lastKnownRoadLocation;
     NSString * _loggedAbExperiment;
     unsigned int  _mainTransportTypeMaxRouteCount;
-    unsigned int  _maxDecoderVersion;
-    unsigned int  _maxGraphVersion;
+    unsigned long long  _maxDecoderVersion;
+    unsigned long long  _maxGraphVersion;
     BOOL  _needLatency;
     NSData * _originalDirectionsResponseID;
     GEOOriginalRoute * _originalRoute;
@@ -44,11 +44,11 @@
     unsigned int  _sequenceNumber;
     NSMutableArray * _serviceTags;
     struct GEOSessionID { 
-        unsigned int _high; 
-        unsigned int _low; 
+        unsigned long long _high; 
+        unsigned long long _low; 
     }  _sessionID;
     NSData * _sessionState;
-    unsigned int  _sharedLibraryVersion;
+    unsigned long long  _sharedLibraryVersion;
     unsigned int  _timeSinceLastRerouteRequest;
     GEOTFTrafficSnapshot * _trafficSnapshot;
     BOOL  _useLiveTrafficAsFallback;
@@ -96,8 +96,8 @@
 @property (nonatomic, retain) GEOLocation *lastKnownRoadLocation;
 @property (nonatomic, retain) NSString *loggedAbExperiment;
 @property (nonatomic) unsigned int mainTransportTypeMaxRouteCount;
-@property (nonatomic) unsigned int maxDecoderVersion;
-@property (nonatomic) unsigned int maxGraphVersion;
+@property (nonatomic) unsigned long long maxDecoderVersion;
+@property (nonatomic) unsigned long long maxGraphVersion;
 @property (nonatomic) BOOL needLatency;
 @property (nonatomic, retain) NSData *originalDirectionsResponseID;
 @property (nonatomic, retain) GEOOriginalRoute *originalRoute;
@@ -108,9 +108,9 @@
 @property (nonatomic, retain) GEORouteAttributes *routeAttributes;
 @property (nonatomic) unsigned int sequenceNumber;
 @property (nonatomic, retain) NSMutableArray *serviceTags;
-@property (nonatomic) struct GEOSessionID { unsigned int x1; unsigned int x2; } sessionID;
+@property (nonatomic) struct GEOSessionID { unsigned long long x1; unsigned long long x2; } sessionID;
 @property (nonatomic, retain) NSData *sessionState;
-@property (nonatomic) unsigned int sharedLibraryVersion;
+@property (nonatomic) unsigned long long sharedLibraryVersion;
 @property (nonatomic) unsigned int timeSinceLastRerouteRequest;
 @property (nonatomic, retain) GEOTFTrafficSnapshot *trafficSnapshot;
 @property (nonatomic) BOOL useLiveTrafficAsFallback;
@@ -177,8 +177,8 @@
 - (id)lastKnownRoadLocation;
 - (id)loggedAbExperiment;
 - (unsigned int)mainTransportTypeMaxRouteCount;
-- (unsigned int)maxDecoderVersion;
-- (unsigned int)maxGraphVersion;
+- (unsigned long long)maxDecoderVersion;
+- (unsigned long long)maxGraphVersion;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)needLatency;
 - (id)originalDirectionsResponseID;
@@ -196,7 +196,7 @@
 - (id)serviceTagAtIndex:(unsigned int)arg1;
 - (id)serviceTags;
 - (unsigned int)serviceTagsCount;
-- (struct GEOSessionID { unsigned int x1; unsigned int x2; })sessionID;
+- (struct GEOSessionID { unsigned long long x1; unsigned long long x2; })sessionID;
 - (id)sessionState;
 - (void)setAdditionalEnabledMarkets:(id)arg1;
 - (void)setClientCapabilities:(id)arg1;
@@ -224,8 +224,8 @@
 - (void)setLastKnownRoadLocation:(id)arg1;
 - (void)setLoggedAbExperiment:(id)arg1;
 - (void)setMainTransportTypeMaxRouteCount:(unsigned int)arg1;
-- (void)setMaxDecoderVersion:(unsigned int)arg1;
-- (void)setMaxGraphVersion:(unsigned int)arg1;
+- (void)setMaxDecoderVersion:(unsigned long long)arg1;
+- (void)setMaxGraphVersion:(unsigned long long)arg1;
 - (void)setNeedLatency:(BOOL)arg1;
 - (void)setOriginalDirectionsResponseID:(id)arg1;
 - (void)setOriginalRoute:(id)arg1;
@@ -236,14 +236,14 @@
 - (void)setRouteAttributes:(id)arg1;
 - (void)setSequenceNumber:(unsigned int)arg1;
 - (void)setServiceTags:(id)arg1;
-- (void)setSessionID:(struct GEOSessionID { unsigned int x1; unsigned int x2; })arg1;
+- (void)setSessionID:(struct GEOSessionID { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)setSessionState:(id)arg1;
-- (void)setSharedLibraryVersion:(unsigned int)arg1;
+- (void)setSharedLibraryVersion:(unsigned long long)arg1;
 - (void)setTimeSinceLastRerouteRequest:(unsigned int)arg1;
 - (void)setTrafficSnapshot:(id)arg1;
 - (void)setUseLiveTrafficAsFallback:(BOOL)arg1;
 - (void)setWaypointTypeds:(id)arg1;
-- (unsigned int)sharedLibraryVersion;
+- (unsigned long long)sharedLibraryVersion;
 - (unsigned int)timeSinceLastRerouteRequest;
 - (id)trafficSnapshot;
 - (BOOL)useLiveTrafficAsFallback;

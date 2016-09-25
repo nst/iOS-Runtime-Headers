@@ -4,7 +4,7 @@
 
 @interface SBMiscellaneousDefaults : SBAbstractSpringBoardDefaultDomain
 
-@property (nonatomic) double backlightLevel;
+@property (nonatomic) float backlightLevel;
 @property (nonatomic, retain) NSString *carrierDebuggingAlertVersion;
 @property (nonatomic) int dataPlanActivationPromptCount;
 @property (nonatomic, readonly) NSArray *fakeDuetTriggers;

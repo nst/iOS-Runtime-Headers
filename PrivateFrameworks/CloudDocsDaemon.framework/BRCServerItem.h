@@ -9,7 +9,7 @@
     BOOL  _needsInsert;
     NSString * _originalName;
     NSNumber * _ownerKey;
-    int  _rank;
+    long long  _rank;
     BRCServerZone * _serverZone;
     BRCAccountSession * _session;
     unsigned int  _sharingOptions;
@@ -33,7 +33,7 @@
 @property (nonatomic, readonly) BRCVersion *latestVersion;
 @property (nonatomic, readonly) NSString *originalName;
 @property (nonatomic, readonly) NSNumber *ownerKey;
-@property (nonatomic, readonly) int rank;
+@property (nonatomic, readonly) long long rank;
 @property (nonatomic, readonly) BRCServerZone *serverZone;
 @property (nonatomic, readonly) BRCAccountSession *session;
 @property (nonatomic) unsigned int sharingOptions;
@@ -49,7 +49,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)descriptionWithContext:(id)arg1;
-- (unsigned int)diffAgainstServerItem:(id)arg1;
+- (unsigned long long)diffAgainstServerItem:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initFromPQLResultSet:(id)arg1 serverZone:(id)arg2 error:(id*)arg3;
 - (id)initFromPQLResultSet:(id)arg1 session:(id)arg2 error:(id*)arg3;
@@ -67,16 +67,16 @@
 - (BOOL)isZoneRoot;
 - (id)itemID;
 - (id)latestVersion;
-- (id)newLocalItemWithServerZone:(id)arg1 dbRowID:(unsigned int)arg2;
+- (id)newLocalItemWithServerZone:(id)arg1 dbRowID:(unsigned long long)arg2;
 - (id)originalName;
 - (id)ownerKey;
-- (int)rank;
+- (long long)rank;
 - (id)serverZone;
 - (id)session;
 - (void)setSharingOptions:(unsigned int)arg1;
 - (unsigned int)sharingOptions;
 - (id)st;
 - (id)symlinkTarget;
-- (BOOL)validateLoggingToFile:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; int x20; }*)arg1;
+- (BOOL)validateLoggingToFile:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; long long x20; }*)arg1;
 
 @end

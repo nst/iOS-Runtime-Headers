@@ -15,7 +15,7 @@
 @property (nonatomic, copy) NSString *placeholder;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *value;
-@property (nonatomic) double width;
+@property (nonatomic) float width;
 
 - (id)_nativeObjectDelegate;
 - (void)_sendScriptDidChange;

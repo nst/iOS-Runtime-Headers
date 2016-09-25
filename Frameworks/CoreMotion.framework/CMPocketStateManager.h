@@ -18,7 +18,7 @@
 + (BOOL)isPocketStateAvailable;
 
 - (void)_disableDispatcher;
-- (void)addToAggdScalarWithName:(id)arg1 andScalar:(unsigned int)arg2;
+- (void)addToAggdScalarWithName:(id)arg1 andScalar:(unsigned long long)arg2;
 - (void)dealloc;
 - (id)delegate;
 - (id)externalStateToString:(int)arg1;

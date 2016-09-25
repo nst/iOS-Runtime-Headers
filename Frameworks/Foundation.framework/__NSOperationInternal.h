@@ -26,10 +26,10 @@
     struct _opaque_pthread_t { long x1; struct __darwin_pthread_handler_rec {} *x2; BOOL x3[4088]; } * __pthread;
     int  __qoses;
     NSOperationQueue * __queue;
-    int  __seqno;
+    long long  __seqno;
     int  __state;
     double  __thread_prio;
-    int  __unfinished_deps;
+    long long  __unfinished_deps;
     struct _opaque_pthread_cond_t { 
         long __sig; 
         BOOL __opaque[24]; 

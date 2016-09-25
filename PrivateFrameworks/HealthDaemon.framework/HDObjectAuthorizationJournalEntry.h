@@ -5,12 +5,12 @@
 @interface HDObjectAuthorizationJournalEntry : HDJournalEntry {
     double  _modificationDate;
     NSArray * _records;
-    int  _syncProvenance;
+    long long  _syncProvenance;
 }
 
 @property (nonatomic) double modificationDate;
 @property (nonatomic, retain) NSArray *records;
-@property (nonatomic) int syncProvenance;
+@property (nonatomic) long long syncProvenance;
 
 + (void)applyEntries:(id)arg1 withProfile:(id)arg2;
 + (BOOL)supportsSecureCoding;
@@ -22,7 +22,7 @@
 - (id)records;
 - (void)setModificationDate:(double)arg1;
 - (void)setRecords:(id)arg1;
-- (void)setSyncProvenance:(int)arg1;
-- (int)syncProvenance;
+- (void)setSyncProvenance:(long long)arg1;
+- (long long)syncProvenance;
 
 @end

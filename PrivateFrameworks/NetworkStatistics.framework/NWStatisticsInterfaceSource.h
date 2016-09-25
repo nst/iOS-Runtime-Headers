@@ -11,7 +11,7 @@
     struct nstat_ifnet_descriptor { 
         BOOL name[17]; 
         unsigned int ifindex; 
-        unsigned int threshold; 
+        unsigned long long threshold; 
         unsigned int type; 
         BOOL description[128]; 
         struct nstat_ifnet_desc_link_status { 

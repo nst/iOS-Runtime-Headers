@@ -5,20 +5,20 @@
 @interface _CLKUIBasicTimeLabelManager : NSObject <_CLKUITimeLabelManager> {
     BOOL  _animationsPaused;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _cachedIntrinsicSize;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _cachedOpticalEdgeInsets;
     BOOL  _cachedOpticalEdgeInsetsIsValid;
     NSAttributedString * _correctAttributedText;
     BOOL  _hideMinutesIfZero;
     UILabel * _label;
-    double  _maxWidth;
+    float  _maxWidth;
     BOOL  _primary;
     BOOL  _showSeconds;
     BOOL  _showSubstringFromSeparator;
@@ -32,8 +32,8 @@
 }
 
 @property (nonatomic) BOOL animationsPaused;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } intrinsicSize;
-@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } opticalInsets;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } intrinsicSize;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } opticalInsets;
 @property (nonatomic) BOOL showSeconds;
 @property (nonatomic) BOOL showsBlinker;
 @property (nonatomic) BOOL showsNumbers;
@@ -50,8 +50,8 @@
 - (id)effectiveFont;
 - (void)enumerateUnderlyingLabelsWithBlock:(id /* block */)arg1;
 - (id)initWithTimeFormatter:(id)arg1 options:(unsigned int)arg2 labelFactory:(id /* block */)arg3;
-- (struct CGSize { double x1; double x2; })intrinsicSize;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })opticalInsets;
+- (struct CGSize { float x1; float x2; })intrinsicSize;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })opticalInsets;
 - (void)setAnimationsPaused:(BOOL)arg1;
 - (void)setMaxWidth:(float)arg1;
 - (void)setShowSeconds:(BOOL)arg1;
@@ -63,7 +63,7 @@
 - (BOOL)showSeconds;
 - (BOOL)showsBlinker;
 - (BOOL)showsNumbers;
-- (struct CGSize { double x1; double x2; })sizeThatFits;
+- (struct CGSize { float x1; float x2; })sizeThatFits;
 - (void)sizeViewToFit;
 - (id)textColor;
 - (void)updateTimeText;

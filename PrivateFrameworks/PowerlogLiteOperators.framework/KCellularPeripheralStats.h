@@ -9,14 +9,14 @@
         unsigned int durationMs : 1; 
     }  _has;
     NSMutableArray * _peripherals;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) unsigned int durationMs;
 @property (nonatomic) BOOL hasDurationMs;
 @property (nonatomic) BOOL hasTimestamp;
 @property (nonatomic, retain) NSMutableArray *peripherals;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void).cxx_destruct;
 - (void)addPeripherals:(id)arg1;
@@ -39,8 +39,8 @@
 - (void)setHasDurationMs:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
 - (void)setPeripherals:(id)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
-- (unsigned int)timestamp;
+- (void)setTimestamp:(unsigned long long)arg1;
+- (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 
 @end

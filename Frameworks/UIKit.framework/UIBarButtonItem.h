@@ -32,28 +32,28 @@
     BOOL  _groupRepresentative;
     UIImage * _image;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _imageInsets;
     UIImage * _landscapeImagePhone;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _landscapeImagePhoneInsets;
-    double  _maximumWidth;
-    double  _minimumWidth;
+    float  _maximumWidth;
+    float  _minimumWidth;
     NSSet * _possibleSystemItems;
     NSSet * _possibleTitles;
     NSDictionary * _stylesForSizingTitles;
     id  _target;
     NSString * _title;
-    double  _toolbarCharge;
+    float  _toolbarCharge;
     UIView * _view;
-    double  _width;
+    float  _width;
 }
 
 @property (setter=_setAutoValidationHandler:, nonatomic, copy) id /* block */ _autoValidationHandler;
@@ -61,8 +61,8 @@
 @property (setter=_setHidden:, nonatomic) BOOL _hidden;
 @property (setter=_setImageHasEffects:, nonatomic) BOOL _imageHasEffects;
 @property (setter=_setItemVariation:, nonatomic, retain) UIBarButtonItem *_itemVariation;
-@property (setter=_setMaximumWidth:, nonatomic) double _maximumWidth;
-@property (setter=_setMinimumWidth:, nonatomic) double _minimumWidth;
+@property (setter=_setMaximumWidth:, nonatomic) float _maximumWidth;
+@property (setter=_setMinimumWidth:, nonatomic) float _minimumWidth;
 @property (nonatomic, readonly) BOOL _needsViewUpdateForLetterpressImage;
 @property (setter=_setOwningButtonGroup:, nonatomic) UIBarButtonItemGroup *_owningButtonGroup;
 @property (setter=_setOwningNavigationItem:, nonatomic) UINavigationItem *_owningNavigationItem;
@@ -71,7 +71,7 @@
 @property (setter=_setShowsBackButtonIndicator:, nonatomic) BOOL _showsBackButtonIndicator;
 @property (setter=_setStylesForSizingTitles:, nonatomic, copy) NSDictionary *_stylesForSizingTitles;
 @property (nonatomic, readonly) UIToolbarButton *_toolbarButton;
-@property (setter=_setToolbarCharge:, nonatomic) double _toolbarCharge;
+@property (setter=_setToolbarCharge:, nonatomic) float _toolbarCharge;
 @property (setter=_setViewOwner:, nonatomic) <_UIBarButtonItemViewOwner> *_viewOwner;
 @property (nonatomic, readonly) BOOL _viewWantsLetterpressImage;
 @property (nonatomic) SEL action;
@@ -84,7 +84,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) BOOL isSystemItem;
 @property (getter=_miniImage, setter=_setMiniImage:, nonatomic, retain) UIImage *miniImage;
-@property (getter=_miniImageInsets, setter=_setMiniImageInsets:, nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } miniImageInsets;
+@property (getter=_miniImageInsets, setter=_setMiniImageInsets:, nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } miniImageInsets;
 @property (getter=_possibleSystemItems, setter=_setPossibleSystemItems:, nonatomic, copy) NSSet *possibleSystemItems;
 @property (nonatomic, copy) NSSet *possibleTitles;
 @property (nonatomic) BOOL selected;
@@ -93,7 +93,7 @@
 @property (nonatomic, readonly) int systemItem;
 @property (nonatomic) id target;
 @property (nonatomic, retain) UIColor *tintColor;
-@property (nonatomic) double width;
+@property (nonatomic) float width;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
@@ -111,9 +111,9 @@
 - (void)_executeValidationHandler;
 - (BOOL)_flexible;
 - (id)_foregroundColorForLetterpressWithView:(id)arg1;
-- (void)_getNavBarEdgeSizeAdjust:(struct CGSize { double x1; double x2; }*)arg1 imageInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; }*)arg2 landscape:(BOOL)arg3;
+- (void)_getNavBarEdgeSizeAdjust:(struct CGSize { float x1; float x2; }*)arg1 imageInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg2 landscape:(BOOL)arg3;
 - (void)_getSystemItemStyle:(int*)arg1 title:(id*)arg2 image:(id*)arg3 selectedImage:(id*)arg4 action:(SEL*)arg5 forBarStyle:(int)arg6 landscape:(BOOL)arg7 alwaysBordered:(BOOL)arg8;
-- (void)_getToolbarEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; }*)arg1 imageInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; }*)arg2 glowInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; }*)arg3 forBarStyle:(int)arg4 landscape:(BOOL)arg5 alwaysBordered:(BOOL)arg6;
+- (void)_getToolbarEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg1 imageInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg2 glowInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg3 forBarStyle:(int)arg4 landscape:(BOOL)arg5 alwaysBordered:(BOOL)arg6;
 - (BOOL)_hidden;
 - (id)_imageForState:(unsigned int)arg1 metrics:(int)arg2 position:(int)arg3 type:(int)arg4;
 - (BOOL)_imageHasEffects;
@@ -123,7 +123,7 @@
 - (float)_leftImagePaddingForEdgeMarginInNavBar;
 - (float)_maximumWidth;
 - (id)_miniImage;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_miniImageInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_miniImageInsets;
 - (float)_minimumWidth;
 - (BOOL)_needsViewUpdateForLetterpressImage;
 - (id)_owningButtonGroup;
@@ -131,7 +131,7 @@
 - (id)_popoverLayoutGuide;
 - (id)_possibleItemVariations;
 - (id)_possibleSystemItems;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_rectForPresenting;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_rectForPresenting;
 - (BOOL)_resolveSystemImage:(id*)arg1 metrics:(int)arg2 position:(int)arg3 type:(int)arg4;
 - (id)_resolveSystemTitle;
 - (float)_rightImagePaddingForEdgeMarginInNavBar;
@@ -146,7 +146,7 @@
 - (void)_setItemVariation:(id)arg1;
 - (void)_setMaximumWidth:(float)arg1;
 - (void)_setMiniImage:(id)arg1;
-- (void)_setMiniImageInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)_setMiniImageInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)_setMinimumWidth:(float)arg1;
 - (void)_setOwningButtonGroup:(id)arg1;
 - (void)_setOwningNavigationItem:(id)arg1;
@@ -172,7 +172,7 @@
 - (SEL)action;
 - (id)backButtonBackgroundImageForState:(unsigned int)arg1 barMetrics:(int)arg2;
 - (float)backButtonBackgroundVerticalPositionAdjustmentForBarMetrics:(int)arg1;
-- (struct UIOffset { double x1; double x2; })backButtonTitlePositionAdjustmentForBarMetrics:(int)arg1;
+- (struct UIOffset { float x1; float x2; })backButtonTitlePositionAdjustmentForBarMetrics:(int)arg1;
 - (id)backgroundImageForState:(unsigned int)arg1 barMetrics:(int)arg2;
 - (id)backgroundImageForState:(unsigned int)arg1 style:(int)arg2 barMetrics:(int)arg3;
 - (float)backgroundVerticalPositionAdjustmentForBarMetrics:(int)arg1;
@@ -186,7 +186,7 @@
 - (BOOL)hasImage;
 - (BOOL)hasTitle;
 - (id)image;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })imageInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })imageInsets;
 - (id)init;
 - (id)initWithBarButtonSystemItem:(int)arg1 target:(id)arg2 action:(SEL)arg3;
 - (id)initWithCoder:(id)arg1;
@@ -201,7 +201,7 @@
 - (BOOL)isSystemItem;
 - (id)itemVariation;
 - (id)landscapeImagePhone;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })landscapeImagePhoneInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })landscapeImagePhoneInsets;
 - (id)nextResponder;
 - (id)possibleTitles;
 - (id)resolvedTitle;
@@ -209,24 +209,24 @@
 - (void)setAction:(SEL)arg1;
 - (void)setBackButtonBackgroundImage:(id)arg1 forState:(unsigned int)arg2 barMetrics:(int)arg3;
 - (void)setBackButtonBackgroundVerticalPositionAdjustment:(float)arg1 forBarMetrics:(int)arg2;
-- (void)setBackButtonTitlePositionAdjustment:(struct UIOffset { double x1; double x2; })arg1 forBarMetrics:(int)arg2;
+- (void)setBackButtonTitlePositionAdjustment:(struct UIOffset { float x1; float x2; })arg1 forBarMetrics:(int)arg2;
 - (void)setBackgroundImage:(id)arg1 forState:(unsigned int)arg2 barMetrics:(int)arg3;
 - (void)setBackgroundImage:(id)arg1 forState:(unsigned int)arg2 style:(int)arg3 barMetrics:(int)arg4;
 - (void)setBackgroundVerticalPositionAdjustment:(float)arg1 forBarMetrics:(int)arg2;
 - (void)setCustomView:(id)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setImage:(id)arg1;
-- (void)setImageInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setImageInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setIsMinibarView:(BOOL)arg1;
 - (void)setLandscapeImagePhone:(id)arg1;
-- (void)setLandscapeImagePhoneInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setLandscapeImagePhoneInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setPossibleTitles:(id)arg1;
 - (void)setSelected:(BOOL)arg1;
 - (void)setStyle:(int)arg1;
 - (void)setTarget:(id)arg1;
 - (void)setTintColor:(id)arg1;
 - (void)setTitle:(id)arg1;
-- (void)setTitlePositionAdjustment:(struct UIOffset { double x1; double x2; })arg1 forBarMetrics:(int)arg2;
+- (void)setTitlePositionAdjustment:(struct UIOffset { float x1; float x2; })arg1 forBarMetrics:(int)arg2;
 - (void)setTitleTextAttributes:(id)arg1 forState:(unsigned int)arg2;
 - (void)setView:(id)arg1;
 - (void)setWidth:(float)arg1;
@@ -235,7 +235,7 @@
 - (id)target;
 - (id)tintColor;
 - (id)title;
-- (struct UIOffset { double x1; double x2; })titlePositionAdjustmentForBarMetrics:(int)arg1;
+- (struct UIOffset { float x1; float x2; })titlePositionAdjustmentForBarMetrics:(int)arg1;
 - (id)titleTextAttributesForState:(unsigned int)arg1;
 - (id)view;
 - (float)width;
@@ -244,9 +244,9 @@
 // Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
 
 - (void)mf_setAsSourceForPopoverPresentationController:(id)arg1;
-- (void)mf_setImageOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (void)mf_setImageOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)mf_setImageVerticalOffset:(float)arg1;
-- (void)mf_setLandscapeImagePhoneOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (void)mf_setLandscapeImagePhoneOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)mf_setLandscapeImagePhoneVerticalOffset:(float)arg1;
 
 // Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit

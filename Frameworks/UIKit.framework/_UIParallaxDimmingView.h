@@ -13,7 +13,7 @@
 @property (nonatomic) BOOL backgroundIsDimmed;
 @property (nonatomic, retain) UIColor *dimmingColor;
 
-+ (id)newDimmingViewWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
++ (id)newDimmingViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 + (id)newDimmingViewWrappingView:(id)arg1 withLeftBorder:(float)arg2;
 + (id)newDimmingViewWrappingView:(id)arg1 withLeftBorder:(float)arg2 shouldReverseLayoutDirection:(BOOL)arg3;
 
@@ -28,7 +28,7 @@
 - (id)dimmingColor;
 - (id)initViewWrappingView:(id)arg1 withLeftBorder:(float)arg2;
 - (id)initViewWrappingView:(id)arg1 withLeftBorder:(float)arg2 shouldReverseLayoutDirection:(BOOL)arg3;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setAddingSubview:(id)arg1;
 - (void)setBackgroundIsDimmed:(BOOL)arg1;
 - (void)setDimmingColor:(id)arg1;

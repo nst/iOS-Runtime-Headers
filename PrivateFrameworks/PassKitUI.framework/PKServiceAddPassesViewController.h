@@ -4,10 +4,10 @@
 
 @interface PKServiceAddPassesViewController : PKNavigationController <PKAddPassesCardStackViewControllerDelegate, PKServiceAddPassesViewControllerProtocol> {
     BOOL  _placeholderViewControllerDidCancel;
-    double  _screenScale;
+    float  _screenScale;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _screenSize;
 }
 
@@ -25,7 +25,7 @@
 - (void)ingestPassesWithData:(id)arg1 fromPresentationSource:(unsigned int)arg2;
 - (int)preferredStatusBarStyle;
 - (BOOL)prefersStatusBarHidden;
-- (void)setDisplayPropertiesWithScreenSize:(struct CGSize { double x1; double x2; })arg1 scale:(float)arg2;
+- (void)setDisplayPropertiesWithScreenSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2;
 - (BOOL)shouldAutorotate;
 - (unsigned int)supportedInterfaceOrientations;
 

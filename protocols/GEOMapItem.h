@@ -16,7 +16,7 @@
 - (NSString *)_businessURL;
 - (GEOMapItemClientAttributes *)_clientAttributes;
 - (NSArray *)_completeOperatingHours;
-- (unsigned int)_customIconID;
+- (unsigned long long)_customIconID;
 - (NSString *)_disambiguationName;
 - (<GEOEncyclopedicInfo> *)_encyclopedicInfo;
 - (GEORestaurantFeaturesLink *)_featureLink;
@@ -47,7 +47,7 @@
 - (BOOL)_hasUserRatingScore;
 - (NSArray *)_localizedCategoryNamesForType:(unsigned int)arg1;
 - (<GEOMapItem> *)_mapItemByStrippingOptionalData;
-- (unsigned int)_muid;
+- (unsigned long long)_muid;
 - (BOOL)_needsAttribution;
 - (float)_normalizedUserRatingScore;
 - (unsigned int)_openingHoursOptions;

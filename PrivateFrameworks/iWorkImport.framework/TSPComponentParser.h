@@ -10,7 +10,7 @@
         } _unknown_fields_; 
         unsigned int _has_bits_[1]; 
         int _cached_size_; 
-        unsigned int identifier_; 
+        unsigned long long identifier_; 
         struct RepeatedPtrField<TSP::MessageInfo> { 
             void **elements_; 
             int current_size_; 

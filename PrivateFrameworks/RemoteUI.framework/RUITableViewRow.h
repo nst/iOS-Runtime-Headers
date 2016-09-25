@@ -4,7 +4,7 @@
 
 @interface RUITableViewRow : RUIElement <RUIWebContainerViewDelegate, UIPickerViewDelegate, UITextFieldDelegate> {
     int  _alignment;
-    double  _cachedHeight;
+    float  _cachedHeight;
     BOOL  _configured;
     NSData * _data;
     NSDate * _date;
@@ -13,7 +13,7 @@
     int  _datePickerMode;
     <RUITableViewRowDelegate> * _delegate;
     NSDictionary * _deleteAction;
-    double  _height;
+    float  _height;
     RUIPage * _linkedPage;
     UIView * _pickerView;
     BOOL  _rowInvalid;
@@ -40,7 +40,7 @@
 @property (nonatomic, retain) NSDictionary *deleteAction;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic) double height;
+@property (nonatomic) float height;
 @property (nonatomic) RUIPage *linkedPage;
 @property (nonatomic, retain) UIView *pickerView;
 @property (nonatomic) BOOL rowInvalid;

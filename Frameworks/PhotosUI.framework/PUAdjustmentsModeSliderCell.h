@@ -8,7 +8,7 @@
     int  _layoutOrientation;
     PUPhotoEditLevelSlider * _levelSlider;
     NSArray * _levelSliderConstraints;
-    double  _sliderShortSideLength;
+    float  _sliderShortSideLength;
     NSString * _title;
     PUAdjustmentsModeBadge * _titleBackground;
     NSArray * _titleBackgroundConstraints;
@@ -25,7 +25,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) int layoutOrientation;
 @property (nonatomic, retain) PUPhotoEditLevelSlider *levelSlider;
-@property (nonatomic) double sliderShortSideLength;
+@property (nonatomic) float sliderShortSideLength;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic) int titleLabelPosition;
@@ -36,7 +36,7 @@
 - (void).cxx_destruct;
 - (void)_updateTitleViews;
 - (id)adjustmentsMode;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isEnabled;
 - (BOOL)isToggleable;
 - (int)layoutOrientation;

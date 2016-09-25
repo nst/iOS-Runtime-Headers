@@ -72,6 +72,6 @@
 - (BOOL)supportsShrinkTextToFit;
 - (BOOL)supportsTextInset;
 - (id)tailLineEnd;
-- (struct CGSize { double x1; double x2; })targetSizeForImageData:(id)arg1 associatedHint:(id)arg2;
+- (struct CGSize { float x1; float x2; })targetSizeForImageData:(id)arg1 associatedHint:(id)arg2;
 
 @end

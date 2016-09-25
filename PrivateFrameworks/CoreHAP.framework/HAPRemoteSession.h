@@ -7,9 +7,9 @@
     unsigned char  _cipherReadNonce;
     unsigned char  _cipherWriteKey;
     unsigned char  _cipherWriteNonce;
-    unsigned int  _clientIdleTimeoutNanos;
+    unsigned long long  _clientIdleTimeoutNanos;
     BOOL  _commitResponded;
-    unsigned int  _commitTimeoutNanos;
+    unsigned long long  _commitTimeoutNanos;
     id /* block */  _findPeerHandler;
     id /* block */  _getLocalIdentityHandler;
     NSObject<OS_dispatch_source> * _idleTimer;
@@ -21,9 +21,9 @@
     NSMutableDictionary * _prepareRequests;
     BOOL  _prepareResponded;
     id /* block */  _requestHandler;
-    unsigned int  _sendInternalTimeoutNanos;
-    unsigned int  _sendUserTimeoutNanos;
-    unsigned int  _serverIdleTimeoutNanos;
+    unsigned long long  _sendInternalTimeoutNanos;
+    unsigned long long  _sendUserTimeoutNanos;
+    unsigned long long  _serverIdleTimeoutNanos;
     NSString * _sessionID;
     BOOL  _started;
     int  _state;
@@ -72,7 +72,7 @@
 - (id /* block */)findPeerHandler;
 - (id /* block */)getLocalIdentityHandler;
 - (id)init;
-- (id)initWithType:(int)arg1 commitTimeout:(unsigned int)arg2 clientIdleTimeout:(unsigned int)arg3 serverIdleTimeout:(unsigned int)arg4 sendInternalTimeout:(unsigned int)arg5 sendUserTimeout:(unsigned int)arg6;
+- (id)initWithType:(int)arg1 commitTimeout:(unsigned long long)arg2 clientIdleTimeout:(unsigned long long)arg3 serverIdleTimeout:(unsigned long long)arg4 sendInternalTimeout:(unsigned long long)arg5 sendUserTimeout:(unsigned long long)arg6;
 - (id /* block */)internalRequestHandler;
 - (id /* block */)requestHandler;
 - (void)sendRequest:(id)arg1 options:(id)arg2 responseHandler:(id /* block */)arg3;

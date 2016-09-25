@@ -29,11 +29,11 @@
 - (void)_callDelegateActionForProtobuf:(id)arg1 delegate:(id)arg2 identifier:(id)arg3 type:(unsigned short)arg4 isResponse:(BOOL)arg5;
 - (void)_handleProtobuf:(id)arg1 identifier:(id)arg2 sendDelay:(unsigned int)arg3;
 - (id)_lightsAndSirensRequestForProtobuf:(id)arg1;
-- (unsigned int)_nextSequenceNumber;
+- (unsigned long long)_nextSequenceNumber;
 - (unsigned int)_randomResponseDelay;
 - (unsigned int)_randomSendDelay;
 - (unsigned int)_randomValueBetweenMin:(unsigned int)arg1 max:(unsigned int)arg2;
-- (void)_sendBlockToAllDelegatesAfterTime:(unsigned int)arg1 block:(id /* block */)arg2;
+- (void)_sendBlockToAllDelegatesAfterTime:(unsigned long long)arg1 block:(id /* block */)arg2;
 - (void)_sendLightsAndSirensRequestForProtobuf:(id)arg1 identifier:(id)arg2 sendDelay:(unsigned int)arg3;
 - (void)_sendSetSectionInfoResponseWithIdentifier:(id)arg1 sendDelay:(unsigned int)arg2;
 - (void)addDelegate:(id)arg1 queue:(id)arg2;

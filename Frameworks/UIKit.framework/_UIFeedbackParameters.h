@@ -3,26 +3,26 @@
  */
 
 @interface _UIFeedbackParameters : NSObject <NSCopying> {
-    double  _attackTime;
-    double  _decayTime;
+    float  _attackTime;
+    float  _decayTime;
     _UIFeedback * _feedback;
     _UIFeedbackParameters * _parentParameters;
-    double  _rate;
-    double  _releaseTime;
-    double  _transposition;
-    double  _volume;
+    float  _rate;
+    float  _releaseTime;
+    float  _transposition;
+    float  _volume;
 }
 
-@property (nonatomic) double attackTime;
+@property (nonatomic) float attackTime;
 @property (getter=_isAudio, nonatomic, readonly) BOOL audio;
-@property (nonatomic) double decayTime;
-@property (getter=_effectiveVolume, nonatomic, readonly) double effectiveVolume;
+@property (nonatomic) float decayTime;
+@property (getter=_effectiveVolume, nonatomic, readonly) float effectiveVolume;
 @property (nonatomic) _UIFeedback *feedback;
 @property (nonatomic) _UIFeedbackParameters *parentParameters;
-@property (nonatomic) double rate;
-@property (nonatomic) double releaseTime;
-@property (nonatomic) double transposition;
-@property (nonatomic) double volume;
+@property (nonatomic) float rate;
+@property (nonatomic) float releaseTime;
+@property (nonatomic) float transposition;
+@property (nonatomic) float volume;
 
 + (id)parameters;
 

@@ -6,31 +6,31 @@
     id /* block */  _emissionHandler;
     struct { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } point; 
-        double force; 
+        float force; 
     }  _lastPoint;
     NSMutableArray * _prevPoints;
-    double  _scale;
+    float  _scale;
 }
 
 @property (copy) id /* block */ emissionHandler;
-@property (nonatomic) struct { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; double x2; } lastPoint;
+@property (nonatomic) struct { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; float x2; } lastPoint;
 @property (nonatomic, retain) NSMutableArray *prevPoints;
-@property (nonatomic) double scale;
+@property (nonatomic) float scale;
 
 - (void).cxx_destruct;
-- (void)addPoint:(struct { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; double x2; })arg1;
+- (void)addPoint:(struct { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; float x2; })arg1;
 - (void)clear;
 - (id /* block */)emissionHandler;
 - (void)flush;
 - (id)initWithFIFO:(id)arg1 scale:(float)arg2;
-- (struct { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; double x2; })lastPoint;
+- (struct { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; float x2; })lastPoint;
 - (id)prevPoints;
 - (float)scale;
 - (void)setEmissionHandler:(id /* block */)arg1;
-- (void)setLastPoint:(struct { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; double x2; })arg1;
+- (void)setLastPoint:(struct { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; float x2; })arg1;
 - (void)setPrevPoints:(id)arg1;
 - (void)setScale:(float)arg1;
 

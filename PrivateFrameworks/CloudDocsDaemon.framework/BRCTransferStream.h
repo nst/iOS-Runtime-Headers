@@ -5,12 +5,12 @@
 @interface BRCTransferStream : NSObject <BRCLifeCycle> {
     BOOL  _hasReachedCap;
     NSMutableDictionary * _inFlightOpByID;
-    unsigned int  _inFlightSize;
+    unsigned long long  _inFlightSize;
     BOOL  _isCancelled;
     BOOL  _isWaitingForTransferBatch;
     unsigned int  _maxCountOfBatchesInFlight;
     int  _multipleItemsInteractiveSchedulingCount;
-    int  _nextFire;
+    long long  _nextFire;
     BRCDeadlineSource * _schedulingSource;
     BRCAccountSession * _session;
     id /* block */  _streamDidBecomeReadyToTransferRecords;
@@ -22,7 +22,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly) unsigned int inFlightSize;
+@property (nonatomic, readonly) unsigned long long inFlightSize;
 @property (nonatomic, readonly) BOOL isCancelled;
 @property (nonatomic) unsigned int maxCountOfBatchesInFlight;
 @property (readonly) NSArray *operations;
@@ -42,7 +42,7 @@
 - (void)close;
 - (void)endSchedulingMultipleItemsInteractively;
 - (void)forceSchedulingPendingInteractiveTransfers;
-- (unsigned int)inFlightSize;
+- (unsigned long long)inFlightSize;
 - (id)initWithSyncContext:(id)arg1 name:(id)arg2 scheduler:(id)arg3;
 - (BOOL)isCancelled;
 - (unsigned int)maxCountOfBatchesInFlight;
@@ -52,7 +52,7 @@
 - (void)setMaxCountOfBatchesInFlight:(unsigned int)arg1;
 - (void)setStreamDidBecomeReadyToTransferRecords:(id /* block */)arg1;
 - (void)signal;
-- (void)signalWithDeadline:(int)arg1;
+- (void)signalWithDeadline:(long long)arg1;
 - (void)startSchedulingMultipleItemsInteractively;
 - (id /* block */)streamDidBecomeReadyToTransferRecords;
 - (void)suspend;

@@ -35,7 +35,7 @@
 - (id)animatingImageView;
 - (BOOL)animationsSuspended;
 - (id)fullHeartImageView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 heartSpriteImageName:(id)arg2 spriteFrameCount:(int)arg3 spriteColumnCount:(int)arg4 resourceBundle:(id)arg5;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 heartSpriteImageName:(id)arg2 spriteFrameCount:(int)arg3 spriteColumnCount:(int)arg4 resourceBundle:(id)arg5;
 - (void)layoutSubviews;
 - (id)reloadArrowView;
 - (id)reloadOutlineView;
@@ -48,7 +48,7 @@
 - (void)setReloadHeartOutlineImage:(id)arg1;
 - (void)setReloadOutlineView:(id)arg1;
 - (void)setState:(unsigned int)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)unloadAnimationAssets;
 
 @end

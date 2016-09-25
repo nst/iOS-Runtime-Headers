@@ -6,7 +6,7 @@
 
 @property (nonatomic, retain) NSString *pageContext;
 @property (nonatomic, retain) NSString *pageDescription;
-@property (nonatomic) unsigned int pageID;
+@property (nonatomic) unsigned long long pageID;
 @property (nonatomic, retain) NSString *pageType;
 @property (nonatomic, retain) NSString *pageURL;
 @property (nonatomic, retain) NSNumber *pixelRatio;
@@ -21,7 +21,7 @@
 - (BOOL)isBlacklistedByConfiguration:(id)arg1;
 - (id)pageContext;
 - (id)pageDescription;
-- (unsigned int)pageID;
+- (unsigned long long)pageID;
 - (id)pageType;
 - (id)pageURL;
 - (id)pixelRatio;
@@ -29,7 +29,7 @@
 - (id)screenWidth;
 - (void)setPageContext:(id)arg1;
 - (void)setPageDescription:(id)arg1;
-- (void)setPageID:(unsigned int)arg1;
+- (void)setPageID:(unsigned long long)arg1;
 - (void)setPageType:(id)arg1;
 - (void)setPageURL:(id)arg1;
 - (void)setPixelRatio:(id)arg1;

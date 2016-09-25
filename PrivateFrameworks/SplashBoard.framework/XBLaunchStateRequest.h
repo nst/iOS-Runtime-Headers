@@ -8,12 +8,12 @@
     int  _interfaceOrientation;
     NSString * _launchInterfaceIdentifier;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _naturalSize;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _referenceSize;
     unsigned int  _statusBarState;
     NSString * _urlSchemeName;
@@ -26,8 +26,8 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic) int interfaceOrientation;
 @property (nonatomic, copy) NSString *launchInterfaceIdentifier;
-@property (nonatomic) struct CGSize { double x1; double x2; } naturalSize;
-@property (nonatomic) struct CGSize { double x1; double x2; } referenceSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } naturalSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } referenceSize;
 @property (nonatomic) unsigned int statusBarState;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *urlSchemeName;
@@ -42,14 +42,14 @@
 - (int)interfaceOrientation;
 - (BOOL)isEqual:(id)arg1;
 - (id)launchInterfaceIdentifier;
-- (struct CGSize { double x1; double x2; })naturalSize;
-- (struct CGSize { double x1; double x2; })referenceSize;
+- (struct CGSize { float x1; float x2; })naturalSize;
+- (struct CGSize { float x1; float x2; })referenceSize;
 - (void)setDisplay:(id)arg1;
 - (void)setGroupID:(id)arg1;
 - (void)setInterfaceOrientation:(int)arg1;
 - (void)setLaunchInterfaceIdentifier:(id)arg1;
-- (void)setNaturalSize:(struct CGSize { double x1; double x2; })arg1;
-- (void)setReferenceSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setNaturalSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setReferenceSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setStatusBarState:(unsigned int)arg1;
 - (void)setUrlSchemeName:(id)arg1;
 - (unsigned int)statusBarState;

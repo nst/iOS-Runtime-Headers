@@ -29,7 +29,7 @@
 - (void)_handleApplicationWillResignActiveNotification:(id)arg1;
 - (void)_handleReorderGesture:(id)arg1;
 - (BOOL)_hasTapActionForItem:(id)arg1;
-- (id)_itemForServiceControlPresentationAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (id)_itemForServiceControlPresentationAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_itemSetDidChange;
 - (void)_logUserMetricsAfterTapOfItem:(id)arg1;
 - (id)_performTapActionForItem:(id)arg1;
@@ -60,10 +60,10 @@
 - (id)prepareToPerformToggleActionForItem:(id)arg1 sourceItem:(id)arg2;
 - (void)presentationCoordinator:(id)arg1 applyOverrideAttributes:(id)arg2 toItem:(id)arg3;
 - (void)presentationCoordinator:(id)arg1 clearOverrideAttributesForItem:(id)arg2;
-- (id)presentationCoordinator:(id)arg1 contextForPresentationAtPoint:(struct CGPoint { double x1; double x2; })arg2;
+- (id)presentationCoordinator:(id)arg1 contextForPresentationAtPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (void)presentationCoordinator:(id)arg1 didEndPresentationWithContext:(id)arg2;
 - (void)presentationCoordinator:(id)arg1 didRecognizeTapForItem:(id)arg2;
-- (BOOL)presentationCoordinator:(id)arg1 shouldBeginInteractivePresentationWithTouchLocation:(struct CGPoint { double x1; double x2; })arg2;
+- (BOOL)presentationCoordinator:(id)arg1 shouldBeginInteractivePresentationWithTouchLocation:(struct CGPoint { float x1; float x2; })arg2;
 - (void)presentationCoordinator:(id)arg1 willBeginPresentationWithContext:(id)arg2;
 - (id)quickControlPresentationCoordinator;
 - (id)reorderGestureRecognizer;

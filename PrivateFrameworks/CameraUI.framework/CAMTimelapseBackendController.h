@@ -42,14 +42,14 @@
 - (void)_dispatchToMainQueueWithBlock:(id /* block */)arg1;
 - (void)_dispatchToWorkQueueAfterDelay:(double)arg1 withBlock:(id /* block */)arg2;
 - (void)_dispatchToWorkQueueWithBlock:(id /* block */)arg1;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })_frameTransformForState:(id)arg1;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_frameTransformForState:(id)arg1;
 - (id)_getOrCreateSessionContextForTimelapseUUID:(id)arg1;
 - (BOOL)_isCameraRunning;
 - (BOOL)_isCapturing;
 - (id)_keepAliveController;
 - (id)_movieWriter;
-- (void)_movieWrittenToFilePath:(id)arg1 duration:(struct { int x1; int x2; unsigned int x3; int x4; })arg2 metadata:(id)arg3 state:(id)arg4;
-- (void)_notifyAssetsdOfIncomingMovieAtPath:(id)arg1 duration:(struct { int x1; int x2; unsigned int x3; int x4; })arg2 metadata:(id)arg3 state:(id)arg4;
+- (void)_movieWrittenToFilePath:(id)arg1 duration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 metadata:(id)arg3 state:(id)arg4;
+- (void)_notifyAssetsdOfIncomingMovieAtPath:(id)arg1 duration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 metadata:(id)arg3 state:(id)arg4;
 - (int)_notifyRegisterTokenResumeIO;
 - (int)_notifyRegisterTokenSuspendIO;
 - (BOOL)_oldMovieWriterEnabled;

@@ -3,10 +3,10 @@
  */
 
 @interface SKUISearchBar : UISearchBar {
-    double  _intrinsicWidth;
+    float  _intrinsicWidth;
 }
 
-@property (nonatomic) double intrinsicWidth;
+@property (nonatomic) float intrinsicWidth;
 
 - (id)init;
 - (float)intrinsicWidth;
@@ -14,6 +14,6 @@
 - (void)setShowsCancelButton:(BOOL)arg1;
 - (void)setShowsCancelButton:(BOOL)arg1 animated:(BOOL)arg2;
 - (BOOL)showsCancelButton;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 
 @end

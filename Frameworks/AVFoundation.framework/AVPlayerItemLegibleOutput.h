@@ -16,7 +16,7 @@
 - (void)_collectUncollectables;
 - (void)_detachFromPlayerItem;
 - (id)_figLegibleOutputsDictionaryOptions;
-- (void)_pushAttributedStrings:(id)arg1 andSampleBuffers:(id)arg2 atItemTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg3;
+- (void)_pushAttributedStrings:(id)arg1 andSampleBuffers:(id)arg2 atItemTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3;
 - (void)_signalFlush;
 - (double)advanceIntervalForDelegateInvocation;
 - (void)dealloc;

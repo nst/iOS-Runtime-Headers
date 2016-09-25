@@ -49,9 +49,9 @@
 + (id)keyPathsForValuesAffectingDomainString;
 
 - (void).cxx_destruct;
-- (void)_fetchOriginatorProfileImageForSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)_fetchOriginatorProfileImageForSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_getFallbackImage;
-- (id)bestOriginatorProfileImageForSize:(struct CGSize { double x1; double x2; })arg1;
+- (id)bestOriginatorProfileImageForSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)biggerOriginatorProfileImageURL;
 - (id)continuousBannerDisplayString;
 - (id)continuousBannerTitle;

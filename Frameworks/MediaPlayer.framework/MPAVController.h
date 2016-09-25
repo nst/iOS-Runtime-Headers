@@ -20,7 +20,7 @@
     NSMutableSet * _clientsWantingExternalPlayback;
     struct __CFRunLoopTimer { } * _currentItemBookkeepingTimer;
     BOOL  _currentItemDidLoad;
-    int  _currentItemRevisionID;
+    long long  _currentItemRevisionID;
     BOOL  _currentItemStartedAsCloudItem;
     int  _delayedCurrentTimeOptions;
     double  _delayedCurrentTimeToSet;
@@ -35,7 +35,7 @@
     BOOL  _hasPendingRate;
     BOOL  _hasSentTracePlaybackStartDidFinish;
     int  _indexChangeDirection;
-    double  _inflightSeekRate;
+    float  _inflightSeekRate;
     BOOL  _isConnectingPlayer;
     unsigned int  _isSeekingOrScrubbing;
     NSDate * _itemDidChangeDate;
@@ -63,15 +63,15 @@
     NSMutableArray * _observerInfos;
     unsigned int  _pausedDuringInterruption;
     BOOL  _pendingChangeForScanning;
-    double  _pendingRate;
+    float  _pendingRate;
     MPAVItem * _pendingRateItem;
     MPAVRoute * _pickedRoute;
     AVPictureInPictureController * _pictureInPictureController;
     unsigned int  _playInBackgroundUserDefaultEnabled;
     int  _playbackMode;
     MPAVPlaylistManager * _playlistManager;
-    double  _rateBeforeResignActive;
-    double  _rateBeforeSeek;
+    float  _rateBeforeResignActive;
+    float  _rateBeforeSeek;
     unsigned int  _resetRateAfterSeeking;
     int  _resetRateAfterSeekingUpdateDisabled;
     unsigned int  _resumePlaybackWhenActive;
@@ -111,7 +111,7 @@
 
 @property (nonatomic, readonly) int _displayPlaybackState;
 @property (nonatomic, readonly) AVAudioSessionMediaPlayerOnly *_playerAVAudioSession;
-@property (nonatomic, readonly) double _playerRate;
+@property (nonatomic, readonly) float _playerRate;
 @property (nonatomic, readonly) int activeRepeatType;
 @property (nonatomic, readonly) int activeShuffleType;
 @property (nonatomic) BOOL alwaysPlayWheneverPossible;
@@ -149,7 +149,7 @@
 @property (nonatomic) int playbackMode;
 @property (getter=isPlaying, nonatomic, readonly) BOOL playing;
 @property (getter=_playlistManager, nonatomic, retain) MPAVPlaylistManager *playlistManager;
-@property (nonatomic, readonly) double rate;
+@property (nonatomic, readonly) float rate;
 @property (nonatomic) int repeatType;
 @property (getter=isRewindHoldingAtStart, nonatomic, readonly) BOOL rewindHoldingAtStart;
 @property (nonatomic, readonly) NSString *routeNameForVolumeControl;
@@ -171,7 +171,7 @@
 @property (getter=isValid, nonatomic, readonly) BOOL valid;
 @property (nonatomic, readonly) AVPlayerLayer *videoLayer;
 @property (nonatomic, readonly) MPVideoView *videoView;
-@property (nonatomic) double volume;
+@property (nonatomic) float volume;
 @property (nonatomic) BOOL wantsPictureInPicture;
 
 + (id)_itemKeysToObserve;
@@ -204,7 +204,7 @@
 - (void)_configureUpdateCurrentItemBookkeepingTimer;
 - (void)_connectAVPlayer;
 - (unsigned int)_currentIndexInBoundaryCMTimes:(id)arg1;
-- (double)_currentTimeWithPreloadedPlayerTime:(BOOL)arg1 value:(struct { int x1; int x2; unsigned int x3; int x4; })arg2;
+- (double)_currentTimeWithPreloadedPlayerTime:(BOOL)arg1 value:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
 - (void)_delayedPlaybackIndexChange;
 - (void)_delayedPostPlaybackStateChangedNotification;
 - (void)_delayedSetCurrentTime;

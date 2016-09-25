@@ -35,7 +35,7 @@
     NSString * _rideType;
     BOOL  _showedSurgePricingAlert;
     BOOL  _switchedApp;
-    int  _timestamp;
+    long long  _timestamp;
     BOOL  _unavailable;
 }
 
@@ -74,7 +74,7 @@
 @property (nonatomic, retain) NSString *rideType;
 @property (nonatomic) BOOL showedSurgePricingAlert;
 @property (nonatomic) BOOL switchedApp;
-@property (nonatomic) int timestamp;
+@property (nonatomic) long long timestamp;
 @property (nonatomic) BOOL unavailable;
 
 + (Class)errorMessageType;
@@ -159,11 +159,11 @@
 - (void)setRideType:(id)arg1;
 - (void)setShowedSurgePricingAlert:(BOOL)arg1;
 - (void)setSwitchedApp:(BOOL)arg1;
-- (void)setTimestamp:(int)arg1;
+- (void)setTimestamp:(long long)arg1;
 - (void)setUnavailable:(BOOL)arg1;
 - (BOOL)showedSurgePricingAlert;
 - (BOOL)switchedApp;
-- (int)timestamp;
+- (long long)timestamp;
 - (BOOL)unavailable;
 - (void)writeTo:(id)arg1;
 

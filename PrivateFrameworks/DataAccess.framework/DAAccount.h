@@ -10,7 +10,7 @@
     NSMutableDictionary * _dataclassPropertyURLsByDataclass;
     BOOL  _hasInitted;
     BOOL  _isValidating;
-    unsigned int  _lastQueryStartedTime;
+    unsigned long long  _lastQueryStartedTime;
     NSMutableArray * _pendingQueries;
     NSObject<OS_dispatch_queue> * _pendingQueryQueue;
     BOOL  _shouldFailAllTasks;
@@ -40,7 +40,7 @@
 @property (nonatomic, readonly) BOOL isChildAccount;
 @property (nonatomic) BOOL isValidating;
 @property (nonatomic, readonly) int keychainAccessibilityType;
-@property (nonatomic) unsigned int lastQueryStartedTime;
+@property (nonatomic) unsigned long long lastQueryStartedTime;
 @property (nonatomic, copy) NSString *password;
 @property (nonatomic, retain) NSMutableArray *pendingQueries;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *pendingQueryQueue;
@@ -164,7 +164,7 @@
 - (BOOL)isSubscribedCalendarAccount;
 - (BOOL)isValidating;
 - (int)keychainAccessibilityType;
-- (unsigned int)lastQueryStartedTime;
+- (unsigned long long)lastQueryStartedTime;
 - (id)localizedIdenticalAccountFailureMessage;
 - (id)localizedInvalidPasswordMessage;
 - (BOOL)monitorFolderWithID:(id)arg1;
@@ -225,7 +225,7 @@
 - (void)setHost:(id)arg1;
 - (void)setIdentityCertificatePersistentID:(id)arg1 managedByProfile:(BOOL)arg2;
 - (void)setIsValidating:(BOOL)arg1;
-- (void)setLastQueryStartedTime:(unsigned int)arg1;
+- (void)setLastQueryStartedTime:(unsigned long long)arg1;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
 - (void)setPassword:(id)arg1;
 - (void)setPendingQueries:(id)arg1;

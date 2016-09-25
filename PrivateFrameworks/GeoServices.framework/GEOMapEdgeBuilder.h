@@ -9,10 +9,10 @@
     GEOMapTileFinder * _currentTileFinder;
     id /* block */  _edgeHandler;
     struct Matrix<float, 2, 1> { 
-        double _e[2]; 
+        float _e[2]; 
     }  _firstTilePoint;
     struct Matrix<float, 2, 1> { 
-        double _e[2]; 
+        float _e[2]; 
     }  _lastTilePoint;
     BOOL  _searchDirection;
     struct unordered_set<_GEOTileKey, std::__1::hash<GEOTileKey>, std::__1::equal_to<GEOTileKey>, std::__1::allocator<_GEOTileKey> > { 
@@ -36,7 +36,7 @@
                 unsigned long __first_; 
             } __p2_; 
             struct __compressed_pair<float, std::__1::equal_to<GEOTileKey> > { 
-                double __first_; 
+                float __first_; 
             } __p3_; 
         } __table_; 
     }  _tileKeysSeen;
@@ -49,19 +49,19 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)_buildCompleteEdge;
-- (BOOL)_edgeStart:(const struct Matrix<float, 2, 1> { double x1[2]; }*)arg1 end:(const struct Matrix<float, 2, 1> { double x1[2]; }*)arg2 connectsTo:(const struct Matrix<float, 2, 1> { double x1[2]; }*)arg3;
+- (BOOL)_edgeStart:(const struct Matrix<float, 2, 1> { float x1[2]; }*)arg1 end:(const struct Matrix<float, 2, 1> { float x1[2]; }*)arg2 connectsTo:(const struct Matrix<float, 2, 1> { float x1[2]; }*)arg3;
 - (BOOL)_findEdgeAhead;
 - (BOOL)_findEdgeAheadInTile:(id)arg1;
 - (BOOL)_findEdgeBehind;
 - (BOOL)_findEdgeBehindInTile:(id)arg1;
 - (BOOL)_findNextEdge;
-- (void)_findTilesAdjacentToTile:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1 containingPoint:(const struct Matrix<float, 2, 1> { double x1[2]; }*)arg2 findAhead:(BOOL)arg3;
-- (struct Matrix<float, 2, 1> { double x1[2]; })_firstPoint;
+- (void)_findTilesAdjacentToTile:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1 containingPoint:(const struct Matrix<float, 2, 1> { float x1[2]; }*)arg2 findAhead:(BOOL)arg3;
+- (struct Matrix<float, 2, 1> { float x1[2]; })_firstPoint;
 - (id)_firstTile;
-- (struct Matrix<float, 2, 1> { double x1[2]; })_lastPoint;
+- (struct Matrix<float, 2, 1> { float x1[2]; })_lastPoint;
 - (id)_lastTile;
 - (unsigned int)_maxTileCount;
-- (BOOL)_pointConnects:(const struct Matrix<float, 2, 1> { double x1[2]; }*)arg1 rect:(const struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; }*)arg2 to:(const struct { double x1; double x2; }*)arg3;
+- (BOOL)_pointConnects:(const struct Matrix<float, 2, 1> { float x1[2]; }*)arg1 rect:(const struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; }*)arg2 to:(const struct { double x1; double x2; }*)arg3;
 - (BOOL)_shouldFindEdgeAhead;
 - (BOOL)_shouldFindEdgeBehind;
 - (id)_tileFinderForMap:(id)arg1 center:(struct { double x1; double x2; })arg2 radius:(double)arg3;

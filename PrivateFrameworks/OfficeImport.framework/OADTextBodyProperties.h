@@ -4,9 +4,9 @@
 
 @interface OADTextBodyProperties : OADProperties {
     OADTextBodyAutoFit * mAutoFit;
-    double  mBottomInset;
+    float  mBottomInset;
     unsigned short  mColumnCount;
-    double  mColumnSpacing;
+    float  mColumnSpacing;
     unsigned char  mFlowType;
     unsigned int  mHasBottomInset;
     unsigned int  mHasColumnCount;
@@ -29,14 +29,14 @@
     unsigned int  mIsAnchorCenter;
     unsigned int  mIsLeftToRightColumns;
     unsigned int  mIsUpright;
-    double  mLeftInset;
+    float  mLeftInset;
     unsigned int  mRepectFirstLastParagraphSpacing;
-    double  mRightInset;
-    double  mRotation;
+    float  mRightInset;
+    float  mRotation;
     unsigned char  mTextAnchorType;
     unsigned short  mTextBodyId;
     OADTextWarp * mTextWarp;
-    double  mTopInset;
+    float  mTopInset;
     unsigned char  mVerticalOverflowType;
     unsigned char  mWrapType;
 }

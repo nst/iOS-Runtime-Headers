@@ -6,8 +6,8 @@
     AVCaptureAudioChannelInternal * _internal;
 }
 
-@property (nonatomic, readonly) double averagePowerLevel;
-@property (nonatomic, readonly) double peakHoldLevel;
+@property (nonatomic, readonly) float averagePowerLevel;
+@property (nonatomic, readonly) float peakHoldLevel;
 
 - (float)averagePowerLevel;
 - (void)dealloc;

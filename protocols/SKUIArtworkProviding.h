@@ -10,11 +10,11 @@
 - (SKUIArtwork *)artworkForSize:(int)arg1;
 - (NSURL *)artworkURLForSize:(int)arg1;
 - (SKUIArtwork *)artworkWithWidth:(int)arg1;
-- (SKUIArtwork *)bestArtworkForScaledSize:(struct CGSize { double x1; double x2; })arg1;
-- (SKUIArtwork *)bestArtworkForSize:(struct CGSize { double x1; double x2; })arg1;
+- (SKUIArtwork *)bestArtworkForScaledSize:(struct CGSize { float x1; float x2; })arg1;
+- (SKUIArtwork *)bestArtworkForSize:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)hasArtwork;
 - (SKUIArtwork *)largestArtwork;
-- (SKUIArtwork *)preferredExactArtworkForSize:(struct CGSize { double x1; double x2; })arg1;
+- (SKUIArtwork *)preferredExactArtworkForSize:(struct CGSize { float x1; float x2; })arg1;
 - (SKUIArtwork *)smallestArtwork;
 
 @end

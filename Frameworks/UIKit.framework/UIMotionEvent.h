@@ -4,12 +4,12 @@
 
 @interface UIMotionEvent : UIEvent {
     double  _highLevelTime;
-    double  _highPassState;
+    float  _highPassState;
     unsigned int  _highPassStateIndex;
     NSTimer * _idleTimer;
     double  _lastMovementTime;
     double  _lowEndTimeout;
-    double  _lowPassState;
+    float  _lowPassState;
     unsigned int  _lowPassStateIndex;
     id  _motionAccelerometer;
     BOOL  _sentMotionBegan;

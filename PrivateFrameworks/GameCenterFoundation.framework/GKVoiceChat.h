@@ -17,7 +17,7 @@
 @property (nonatomic, copy) id /* block */ playerStateUpdateHandler;
 @property (nonatomic, copy) id /* block */ playerVoiceChatStateDidChangeHandler;
 @property (nonatomic, retain) NSArray *players;
-@property (nonatomic) double volume;
+@property (nonatomic) float volume;
 
 + (BOOL)isVoIPAllowed;
 

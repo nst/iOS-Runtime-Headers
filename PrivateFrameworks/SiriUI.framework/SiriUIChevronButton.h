@@ -4,24 +4,24 @@
 
 @interface SiriUIChevronButton : UIButton {
     UIImageView * _chevronImageView;
-    double  _chevronRightInset;
+    float  _chevronRightInset;
     BOOL  _hasChevron;
     SiriUIKeyline * _keyline;
     int  _keylineType;
-    double  _leftSubviewInset;
+    float  _leftSubviewInset;
     UIView * _subview;
 }
 
-@property (nonatomic) double chevronRightInset;
+@property (nonatomic) float chevronRightInset;
 @property (nonatomic) BOOL hasChevron;
 @property (nonatomic) int keylineType;
-@property (nonatomic) double leftSubviewInset;
+@property (nonatomic) float leftSubviewInset;
 @property (nonatomic, retain) UIView *subview;
 
 - (void).cxx_destruct;
 - (float)chevronRightInset;
 - (BOOL)hasChevron;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (int)keylineType;
 - (void)layoutSubviews;
 - (float)leftSubviewInset;

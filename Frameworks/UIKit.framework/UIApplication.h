@@ -110,8 +110,8 @@
     BKSAnimationFenceHandle * _cachedSystemAnimationFence;
     int  _classicMode;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _currentLocationWhereFirstTouchCameDown;
     double  _currentTimestampWhenFirstTouchCameDown;
     UIColor * _defaultTopNavBarTintColor;
@@ -132,12 +132,12 @@
     BOOL  _isDisplayingActivityContinuationUI;
     UIRepeatedAction * _keyRepeatAction;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _lastLocationWhereAllTouchesLifted;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _lastLocationWhereFirstTouchCameDown;
     double  _lastTimestampWhenAllTouchesLifted;
     double  _lastTimestampWhenFirstTouchCameDown;
@@ -172,8 +172,8 @@
     int  _virtualHorizontalSizeClass;
     int  _virtualVerticalSizeClass;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _virtualWindowSizeInSceneReferenceSpace;
     BOOL  optOutOfRTL;
 }
@@ -182,7 +182,7 @@
 @property (setter=_setExpectedViewOrientation:, nonatomic) int _expectedViewOrientation;
 @property (readonly) int _virtualHorizontalSizeClass;
 @property (readonly) int _virtualVerticalSizeClass;
-@property (readonly) struct CGSize { double x1; double x2; } _virtualWindowSizeInSceneReferenceSpace;
+@property (readonly) struct CGSize { float x1; float x2; } _virtualWindowSizeInSceneReferenceSpace;
 @property (nonatomic, retain) NSDate *accessibilityLastGesturedTextInputStatusChange;
 @property (nonatomic) int applicationIconBadgeNumber;
 @property (nonatomic, readonly) int applicationState;
@@ -197,8 +197,8 @@
 @property (getter=isIgnoringInteractionEvents, nonatomic, readonly) BOOL ignoringInteractionEvents;
 @property (getter=_isDisplayingActivityContinuationUI, setter=_setIsDisplayingActivityContinuationUI:, nonatomic) BOOL isDisplayingActivityContinuationUI;
 @property (nonatomic, readonly) UIWindow *keyWindow;
-@property (getter=_lastLocationWhereAllTouchesLifted, setter=_setLastLocationWhereAllTouchesLifted:, nonatomic) struct CGPoint { double x1; double x2; } lastLocationWhereAllTouchesLifted;
-@property (getter=_lastLocationWhereFirstTouchCameDown, setter=_setLastLocationWhereFirstTouchCameDown:, nonatomic) struct CGPoint { double x1; double x2; } lastLocationWhereFirstTouchCameDown;
+@property (getter=_lastLocationWhereAllTouchesLifted, setter=_setLastLocationWhereAllTouchesLifted:, nonatomic) struct CGPoint { float x1; float x2; } lastLocationWhereAllTouchesLifted;
+@property (getter=_lastLocationWhereFirstTouchCameDown, setter=_setLastLocationWhereFirstTouchCameDown:, nonatomic) struct CGPoint { float x1; float x2; } lastLocationWhereFirstTouchCameDown;
 @property (getter=_lastTimestampWhenAllTouchesLifted, setter=_setLastTimestampWhenAllTouchesLifted:, nonatomic) double lastTimestampWhenAllTouchesLifted;
 @property (getter=_lastTimestampWhenFirstTouchCameDown, setter=_setLastTimestampWhenFirstTouchCameDown:, nonatomic) double lastTimestampWhenFirstTouchCameDown;
 @property (getter=isNetworkActivityIndicatorVisible, nonatomic) BOOL networkActivityIndicatorVisible;
@@ -206,7 +206,7 @@
 @property (nonatomic, readonly) NSString *preferredContentSizeCategory;
 @property (getter=isProtectedDataAvailable, nonatomic, readonly) BOOL protectedDataAvailable;
 @property (nonatomic, retain) SBSApplicationShortcutService *shortcutService;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } statusBarFrame;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } statusBarFrame;
 @property (getter=isStatusBarHidden, nonatomic, readonly) BOOL statusBarHidden;
 @property (nonatomic, readonly) int statusBarOrientation;
 @property (nonatomic, readonly) double statusBarOrientationAnimationDuration;
@@ -418,8 +418,8 @@
 - (BOOL)_keyCommandIsCurrentlyPerformable:(id)arg1;
 - (id)_keyCommandsForResponder:(id)arg1;
 - (id)_keyWindowForScreen:(id)arg1;
-- (struct CGPoint { double x1; double x2; })_lastLocationWhereAllTouchesLifted;
-- (struct CGPoint { double x1; double x2; })_lastLocationWhereFirstTouchCameDown;
+- (struct CGPoint { float x1; float x2; })_lastLocationWhereAllTouchesLifted;
+- (struct CGPoint { float x1; float x2; })_lastLocationWhereFirstTouchCameDown;
 - (double)_lastTimestampWhenAllTouchesLifted;
 - (double)_lastTimestampWhenFirstTouchCameDown;
 - (id)_launchTestName;
@@ -444,9 +444,9 @@
 - (int)_normativeWhitePointAdaptivityStyleForWindow:(id)arg1;
 - (void)_noteAnimationFinished:(id)arg1;
 - (void)_noteAnimationStarted:(id)arg1;
-- (void)_notifyDidChangeStatusBarFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)_notifyDidChangeStatusBarFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_notifySpringBoardOfStatusBarOrientationChangeAndFenceWithAnimationDuration:(double)arg1;
-- (void)_notifyWillChangeStatusBarFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)_notifyWillChangeStatusBarFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)_openURL:(id)arg1;
 - (void)_openURL:(id)arg1 originatingView:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)_overrideDefaultInterfaceOrientationWithOrientation:(int)arg1;
@@ -546,8 +546,8 @@
 - (void)_setIdleTimerDisabled:(BOOL)arg1 forReason:(id)arg2;
 - (void)_setIgnoreHeadsetClicks:(BOOL)arg1;
 - (void)_setIsDisplayingActivityContinuationUI:(BOOL)arg1;
-- (void)_setLastLocationWhereAllTouchesLifted:(struct CGPoint { double x1; double x2; })arg1;
-- (void)_setLastLocationWhereFirstTouchCameDown:(struct CGPoint { double x1; double x2; })arg1;
+- (void)_setLastLocationWhereAllTouchesLifted:(struct CGPoint { float x1; float x2; })arg1;
+- (void)_setLastLocationWhereFirstTouchCameDown:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_setLastTimestampWhenAllTouchesLifted:(double)arg1;
 - (void)_setLastTimestampWhenFirstTouchCameDown:(double)arg1;
 - (void)_setOptOutOfRTL:(BOOL)arg1;
@@ -572,7 +572,7 @@
 - (void)_setSystemWindowsSecure:(BOOL)arg1;
 - (void)_setTopNavBarTintColor:(id)arg1 withDuration:(double)arg2;
 - (void)_setUserDefaultsSyncEnabled:(BOOL)arg1;
-- (void)_setVirtualWindowSizeInSceneReferenceSpace:(struct CGSize { double x1; double x2; })arg1 virtualHorizontalSizeClass:(int)arg2 virtualVerticalSizeClass:(int)arg3;
+- (void)_setVirtualWindowSizeInSceneReferenceSpace:(struct CGSize { float x1; float x2; })arg1 virtualHorizontalSizeClass:(int)arg2 virtualVerticalSizeClass:(int)arg3;
 - (void)_setWatchSystemAppHIDEventFilter:(id /* block */)arg1;
 - (void)_setupMotionEventBehavior;
 - (BOOL)_shakeToUndoEnabled;
@@ -591,8 +591,8 @@
 - (BOOL)_shouldUseHiResForClassic;
 - (BOOL)_shouldZoom;
 - (void)_showEditAlertViewWithUndoManager:(id)arg1 window:(id)arg2;
-- (id)_showServiceForText:(id)arg1 selectedTextRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 type:(int)arg3 fromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg4 inView:(id)arg5;
-- (id)_showServiceForText:(id)arg1 type:(int)arg2 fromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 inView:(id)arg4;
+- (id)_showServiceForText:(id)arg1 selectedTextRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 type:(int)arg3 fromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4 inView:(id)arg5;
+- (id)_showServiceForText:(id)arg1 type:(int)arg2 fromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 inView:(id)arg4;
 - (void)_startHangTracer;
 - (id)_statusBarControllingWindow;
 - (BOOL)_statusBarOrientationFollowsWindow:(id)arg1;
@@ -646,7 +646,7 @@
 - (BOOL)_usesPreMTAlertBehavior;
 - (int)_virtualHorizontalSizeClass;
 - (int)_virtualVerticalSizeClass;
-- (struct CGSize { double x1; double x2; })_virtualWindowSizeInSceneReferenceSpace;
+- (struct CGSize { float x1; float x2; })_virtualWindowSizeInSceneReferenceSpace;
 - (void)_wakeTimerFired;
 - (void)_wheelChangedWithEvent:(id)arg1;
 - (id)_wheelEvent;
@@ -933,8 +933,8 @@
 - (void)statusBar:(id)arg1 didAnimateFromHeight:(float)arg2 toHeight:(float)arg3 animation:(int)arg4;
 - (int)statusBar:(id)arg1 styleForRequestedStyle:(int)arg2 overrides:(int)arg3;
 - (void)statusBar:(id)arg1 willAnimateFromHeight:(float)arg2 toHeight:(float)arg3 duration:(double)arg4 animation:(int)arg5;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })statusBarFrame;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })statusBarFrameForOrientation:(int)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })statusBarFrame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })statusBarFrameForOrientation:(int)arg1;
 - (float)statusBarHeight;
 - (float)statusBarHeightForOrientation:(int)arg1;
 - (float)statusBarHeightForOrientation:(int)arg1 ignoreHidden:(BOOL)arg2;

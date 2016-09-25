@@ -11,7 +11,7 @@
 - (void)cleanupStagingURL:(NSURL *)arg1;
 - (void)createAdditionStagedAtURL:(void *)arg1 creationInfo:(void *)arg2 completionHandler:(void *)arg3; // needs 3 arg types, found 9: NSURL *, NSDictionary *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, GSAddition *, NSError *, void*
 - (NSURL *)documentURL;
-- (struct NSEnumerator { Class x1; }*)enumeratorForAdditionsInNameSpace:(NSString *)arg1 withOptions:(unsigned int)arg2 withoutOptions:(unsigned int)arg3 ordering:(int)arg4;
+- (struct NSEnumerator { Class x1; }*)enumeratorForAdditionsInNameSpace:(NSString *)arg1 withOptions:(unsigned long long)arg2 withoutOptions:(unsigned long long)arg3 ordering:(int)arg4;
 - (<NSCopying><NSSecureCoding> *)persistentIdentifier;
 - (NSURL *)prepareAdditionCreationWithItemAtURL:(NSURL *)arg1 byMoving:(BOOL)arg2 creationInfo:(NSDictionary *)arg3 error:(id*)arg4;
 - (void)removeAdditions:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 8: NSArray *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSDictionary *, NSError *, void*

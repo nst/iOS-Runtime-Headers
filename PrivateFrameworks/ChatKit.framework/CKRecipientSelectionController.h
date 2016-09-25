@@ -11,7 +11,7 @@
     BOOL  _forceMMS;
     id /* block */  _gameCenterPickerBlock;
     BOOL  _homogenizePreferredServiceForiMessage;
-    double  _keyboardHeightWithAccessoryView;
+    float  _keyboardHeightWithAccessoryView;
     ABPeoplePickerNavigationController * _peoplePickerController;
     BOOL  _peoplePickerHidden;
     BOOL  _preventAtomization;
@@ -27,7 +27,7 @@
 }
 
 @property (nonatomic, retain) NSArray *addressBookProperties;
-@property (nonatomic, readonly) double collapsedHeight;
+@property (nonatomic, readonly) float collapsedHeight;
 @property (nonatomic, retain) CKPendingConversation *conversation;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CKRecipientSelectionControllerDelegate> *delegate;
@@ -68,7 +68,7 @@
 - (void)_hideSearchField;
 - (BOOL)_isToFieldPushedUp;
 - (void)_keyboardWillShowOrHide:(id)arg1;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_navigationBarInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_navigationBarInsets;
 - (id)_recipientCausingTooManyRecipientsError;
 - (void)_refreshActionSheet;
 - (void)_removeAvailabilityTimeoutTimerForRecipient:(id)arg1;
@@ -96,7 +96,7 @@
 - (id)composeRecipientView:(id)arg1 composeRecipientForAddress:(id)arg2;
 - (id)composeRecipientView:(id)arg1 composeRecipientForRecord:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (void)composeRecipientView:(id)arg1 didAddRecipient:(id)arg2;
-- (void)composeRecipientView:(id)arg1 didChangeSize:(struct CGSize { double x1; double x2; })arg2;
+- (void)composeRecipientView:(id)arg1 didChangeSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)composeRecipientView:(id)arg1 didFinishEnteringAddress:(id)arg2;
 - (void)composeRecipientView:(id)arg1 didRemoveRecipient:(id)arg2;
 - (void)composeRecipientView:(id)arg1 didSelectRecipients:(id)arg2;
@@ -184,6 +184,6 @@
 - (void)viewDidLoad;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillLayoutSubviews;
-- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

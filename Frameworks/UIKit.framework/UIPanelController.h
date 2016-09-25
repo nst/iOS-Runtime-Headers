@@ -11,8 +11,8 @@
     UISlidingBarState * __lastComputedPublicState;
     NSArray * __lastPossiblePublicStates;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  __lastViewSize;
     UILayoutGuide * __layoutGuide;
     UIView * __leadingBorderView;
@@ -45,7 +45,7 @@
 @property (setter=_setInternalState:, nonatomic, retain) _UIPanelInternalState *_internalState;
 @property (setter=_setLastComputedPublicState:, nonatomic, copy) UISlidingBarState *_lastComputedPublicState;
 @property (setter=_setLastPossiblePublicStates:, nonatomic, copy) NSArray *_lastPossiblePublicStates;
-@property (setter=_setLastViewSize:, nonatomic) struct CGSize { double x1; double x2; } _lastViewSize;
+@property (setter=_setLastViewSize:, nonatomic) struct CGSize { float x1; float x2; } _lastViewSize;
 @property (setter=_setLayoutGuide:, nonatomic, retain) UILayoutGuide *_layoutGuide;
 @property (setter=_setLeadingBorderView:, nonatomic, retain) UIView *_leadingBorderView;
 @property (setter=_setNeedsFirstTimeUpdateForTraitCollection:, nonatomic) BOOL _needsFirstTimeUpdateForTraitCollection;
@@ -90,7 +90,7 @@
 - (id)_internalState;
 - (id)_lastComputedPublicState;
 - (id)_lastPossiblePublicStates;
-- (struct CGSize { double x1; double x2; })_lastViewSize;
+- (struct CGSize { float x1; float x2; })_lastViewSize;
 - (void)_layoutContainerViewDidMoveToWindow:(id)arg1;
 - (void)_layoutContainerViewWillMoveToWindow:(id)arg1;
 - (id)_layoutGuide;
@@ -100,7 +100,7 @@
 - (void)_performDeferredUpdate;
 - (void)_performSingleDeferredUpdatePass;
 - (void)_performWrappedUpdate:(id /* block */)arg1;
-- (BOOL)_pointHitsAffordance:(struct CGPoint { double x1; double x2; })arg1 returningSide:(int*)arg2;
+- (BOOL)_pointHitsAffordance:(struct CGPoint { float x1; float x2; })arg1 returningSide:(int*)arg2;
 - (id)_previousInternalState;
 - (void)_removeIdentifiedChildViewController:(id)arg1;
 - (void)_setChangingViewControllerParentage:(BOOL)arg1;
@@ -110,7 +110,7 @@
 - (void)_setInternalState:(id)arg1;
 - (void)_setLastComputedPublicState:(id)arg1;
 - (void)_setLastPossiblePublicStates:(id)arg1;
-- (void)_setLastViewSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)_setLastViewSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_setLayoutGuide:(id)arg1;
 - (void)_setLeadingBorderView:(id)arg1;
 - (void)_setNeedsDeferredUpdate;
@@ -123,7 +123,7 @@
 - (id)_trailingBorderView;
 - (void)_updateForTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
 - (void)_updateInteractionWithOffset:(float)arg1;
-- (void)_updateToNewPublicState:(id)arg1 withSize:(struct CGSize { double x1; double x2; })arg2;
+- (void)_updateToNewPublicState:(id)arg1 withSize:(struct CGSize { float x1; float x2; })arg2;
 - (BOOL)_willCollapseWithNewTraitCollection:(id)arg1;
 - (BOOL)_willExpandWithNewTraitCollection:(id)arg1;
 - (void)addWrapperBlockForNextUpdate:(id /* block */)arg1;
@@ -163,7 +163,7 @@
 - (id)trailingViewController;
 - (void)updateViewConstraints;
 - (id)view;
-- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2 superBlock:(id /* block */)arg3;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2 superBlock:(id /* block */)arg3;
 - (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2 superBlock:(id /* block */)arg3;
 
 @end

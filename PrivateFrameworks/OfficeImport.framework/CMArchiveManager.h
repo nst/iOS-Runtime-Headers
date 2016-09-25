@@ -4,7 +4,7 @@
 
 @interface CMArchiveManager : NSObject <TCCancelDelegate> {
     BOOL  mAutoCommit;
-    double  mCommitInterval;
+    float  mCommitInterval;
     NSMutableDictionary * mDrawableCache;
     int  mHeight;
     BOOL  mIsOnPhone;

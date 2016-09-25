@@ -6,12 +6,12 @@
     struct { 
         unsigned int name : 1; 
     }  _has;
-    unsigned int  _name;
+    unsigned long long  _name;
     NSMutableArray * _packets;
 }
 
 @property (nonatomic) BOOL hasName;
-@property (nonatomic) unsigned int name;
+@property (nonatomic) unsigned long long name;
 @property (nonatomic, retain) NSMutableArray *packets;
 
 + (Class)packetsType;
@@ -27,13 +27,13 @@
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (unsigned int)name;
+- (unsigned long long)name;
 - (id)packets;
 - (id)packetsAtIndex:(unsigned int)arg1;
 - (unsigned int)packetsCount;
 - (BOOL)readFrom:(id)arg1;
 - (void)setHasName:(BOOL)arg1;
-- (void)setName:(unsigned int)arg1;
+- (void)setName:(unsigned long long)arg1;
 - (void)setPackets:(id)arg1;
 - (void)writeTo:(id)arg1;
 

@@ -17,7 +17,7 @@
 - (void)setDetailText:(NSString *)arg1 attributes:(NSDictionary *)arg2;
 - (void)setIconImage:(UIImage *)arg1;
 - (void)setImageAlignment:(int)arg1;
-- (void)setImageSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setImageSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setSectionIsFirst:(BOOL)arg1;
 - (void)setSubHeaderText:(NSString *)arg1 attributes:(NSDictionary *)arg2;
 - (void)setText:(NSString *)arg1 attributes:(NSDictionary *)arg2;

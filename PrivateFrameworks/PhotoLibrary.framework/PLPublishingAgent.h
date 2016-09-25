@@ -4,33 +4,33 @@
 
 @interface PLPublishingAgent : NSObject <PLDataArrayInputStreamProgressDelegate, UIAlertViewDelegate> {
     BOOL  _allowsHDOver3GUpload;
-    int  _approximateHDUploadSize;
-    int  _approximateSDUploadSize;
+    long long  _approximateHDUploadSize;
+    long long  _approximateSDUploadSize;
     double  _changeRate;
     SEL  _completionSelector;
-    int  _currentValue;
+    long long  _currentValue;
     id  _delegate;
     BOOL  _deleteAfterPublishing;
     BOOL  _enableHDUpload;
     double  _endTime;
     double  _estimatedTimeRemaining;
-    int  _maxValue;
+    long long  _maxValue;
     NSData * _mediaData;
     BOOL  _mediaIsHDVideo;
     NSString * _mediaPath;
     NSString * _mimeType;
     BOOL  _needsRemaking;
     BOOL  _needsTrimming;
-    int  _normalizedCurrentValue;
-    int  _normalizedMaxValue;
+    long long  _normalizedCurrentValue;
+    long long  _normalizedMaxValue;
     BOOL  _ownerIsCamera;
-    double  _percentComplete;
-    double  _progressMultiplier;
+    float  _percentComplete;
+    float  _progressMultiplier;
     unsigned int  _publishing;
     PLVideoRemaker * _remaker;
     int  _remakerMode;
     unsigned int  _remaking;
-    double  _remakingPercentComplete;
+    float  _remakingPercentComplete;
     unsigned int  _remakingWasCancelled;
     int  _selectedOption;
     BOOL  _shouldCancelPublish;
@@ -42,8 +42,8 @@
 
 @property (nonatomic, readonly) BOOL allowsCellularAccessForRequests;
 @property (nonatomic) BOOL allowsHDOver3GUpload;
-@property (nonatomic) int approximateHDUploadSize;
-@property (nonatomic) int approximateSDUploadSize;
+@property (nonatomic) long long approximateHDUploadSize;
+@property (nonatomic) long long approximateSDUploadSize;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PLPublishingAgentDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -52,7 +52,7 @@
 @property (nonatomic) BOOL mediaIsHDVideo;
 @property (nonatomic) BOOL needsTrimming;
 @property (nonatomic) BOOL ownerIsCamera;
-@property (nonatomic) double progressMultiplier;
+@property (nonatomic) float progressMultiplier;
 @property (nonatomic) int remakerMode;
 @property (nonatomic) int selectedOption;
 @property (nonatomic) BOOL shouldCancelPublish;
@@ -77,8 +77,8 @@
 - (BOOL)allowsHDOver3GUpload;
 - (BOOL)allowsTellingFriend;
 - (BOOL)allowsViewingOnHost;
-- (int)approximateHDUploadSize;
-- (int)approximateSDUploadSize;
+- (long long)approximateHDUploadSize;
+- (long long)approximateSDUploadSize;
 - (void)cancelButtonClicked;
 - (void)cancelRemaking;
 - (void)dataArrayInputStreamBytesWereRead:(id)arg1;
@@ -113,8 +113,8 @@
 - (int)selectedOption;
 - (id)serviceName;
 - (void)setAllowsHDOver3GUpload:(BOOL)arg1;
-- (void)setApproximateHDUploadSize:(int)arg1;
-- (void)setApproximateSDUploadSize:(int)arg1;
+- (void)setApproximateHDUploadSize:(long long)arg1;
+- (void)setApproximateSDUploadSize:(long long)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDeleteMediaFileAfterPublishing:(BOOL)arg1;
 - (void)setEnableHDUpload:(BOOL)arg1;

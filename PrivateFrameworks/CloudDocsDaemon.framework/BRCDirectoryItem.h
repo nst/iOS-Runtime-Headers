@@ -9,11 +9,11 @@
 @property (nonatomic, readonly) BRCDocumentItem *asDocument;
 
 - (BOOL)_deleteFromDB:(id)arg1 keepAliases:(BOOL)arg2;
-- (BOOL)_insertInDB:(id)arg1 dbRowID:(unsigned int)arg2;
+- (BOOL)_insertInDB:(id)arg1 dbRowID:(unsigned long long)arg2;
 - (BOOL)_markChildrenLostForDeadParent;
 - (void)_markLostDirectoryAsAlmostDead;
-- (void)_retryPostponedIfNeededForDiffs:(unsigned int)arg1;
-- (BOOL)_updateInDB:(id)arg1 diffs:(unsigned int)arg2;
+- (void)_retryPostponedIfNeededForDiffs:(unsigned long long)arg1;
+- (BOOL)_updateInDB:(id)arg1 diffs:(unsigned long long)arg2;
 - (id)asDirectory;
 - (BOOL)changedAtRelativePath:(id)arg1 scanPackage:(BOOL)arg2;
 - (BOOL)evictInTask:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;

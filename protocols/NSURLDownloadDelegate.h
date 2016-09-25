@@ -14,7 +14,7 @@
 - (void)download:(NSURLDownload *)arg1 didReceiveDataOfLength:(unsigned int)arg2;
 - (void)download:(NSURLDownload *)arg1 didReceiveResponse:(NSURLResponse *)arg2;
 - (BOOL)download:(NSURLDownload *)arg1 shouldDecodeSourceDataOfMIMEType:(NSString *)arg2;
-- (void)download:(NSURLDownload *)arg1 willResumeWithResponse:(NSURLResponse *)arg2 fromByte:(int)arg3;
+- (void)download:(NSURLDownload *)arg1 willResumeWithResponse:(NSURLResponse *)arg2 fromByte:(long long)arg3;
 - (NSURLRequest *)download:(NSURLDownload *)arg1 willSendRequest:(NSURLRequest *)arg2 redirectResponse:(NSURLResponse *)arg3;
 - (void)downloadDidBegin:(NSURLDownload *)arg1;
 - (void)downloadDidFinish:(NSURLDownload *)arg1;

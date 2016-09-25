@@ -5,8 +5,8 @@
 @interface QLAVPlayerItemViewController : QLItemViewController <AVPlayerViewControllerDelegate> {
     BOOL  _fullScreen;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _imageSize;
     QLOverlayPlayButton * _playButton;
     AVPlayer * _player;
@@ -21,7 +21,7 @@
 - (void).cxx_destruct;
 - (BOOL)canEnterFullScreen;
 - (void)enterFullScreen:(BOOL)arg1;
-- (struct CGSize { double x1; double x2; })imageSize;
+- (struct CGSize { float x1; float x2; })imageSize;
 - (void)loadPreviewControllerWithPreviewItem:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)pause;
 - (void)play;

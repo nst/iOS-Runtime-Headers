@@ -7,12 +7,12 @@
     BOOL  _hideUserFrames;
     PASampleKernelFrame * _kernel;
     PASampleUserFrame * _user;
-    unsigned int  continuation;
+    unsigned long long  continuation;
     BOOL  isUserStackTruncated;
     const struct stack_snapshot_frame32 { unsigned int x1; unsigned int x2; } * kernel32Frames;
     const unsigned int * kernel32LRs;
-    const struct stack_snapshot_frame64 { unsigned int x1; unsigned int x2; } * kernel64Frames;
-    const unsigned int * kernel64LRs;
+    const struct stack_snapshot_frame64 { unsigned long long x1; unsigned long long x2; } * kernel64Frames;
+    const unsigned long long * kernel64LRs;
     int  numKernel32Frames;
     int  numKernel32LRs;
     int  numKernel64Frames;
@@ -23,8 +23,8 @@
     int  numUser64LRs;
     const struct stack_snapshot_frame32 { unsigned int x1; unsigned int x2; } * user32Frames;
     const unsigned int * user32LRs;
-    const struct stack_snapshot_frame64 { unsigned int x1; unsigned int x2; } * user64Frames;
-    const unsigned int * user64LRs;
+    const struct stack_snapshot_frame64 { unsigned long long x1; unsigned long long x2; } * user64Frames;
+    const unsigned long long * user64LRs;
 }
 
 @property (readonly, copy) NSString *debugDescription;

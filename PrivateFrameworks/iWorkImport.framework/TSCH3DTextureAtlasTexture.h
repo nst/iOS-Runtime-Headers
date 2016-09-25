@@ -15,7 +15,7 @@
         } __end_cap_; 
     }  mPositions;
     TSCH3DTextureAtlasTextureResource * mResource;
-    double  mSamples;
+    float  mSamples;
     struct tvec2<int> { 
         union { 
             int x; 

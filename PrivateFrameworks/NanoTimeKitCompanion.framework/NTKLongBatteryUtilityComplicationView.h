@@ -3,7 +3,7 @@
  */
 
 @interface NTKLongBatteryUtilityComplicationView : NTKUtilityImageAndLabelsComplicationView <NTKBatteryComplicationDisplay> {
-    double  _level;
+    float  _level;
     int  _state;
 }
 

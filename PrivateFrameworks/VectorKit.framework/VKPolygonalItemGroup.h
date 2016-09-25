@@ -6,16 +6,16 @@
     NSMutableOrderedSet * _attributeSets;
     struct Box<float, 3> { 
         struct Matrix<float, 3, 1> { 
-            double _e[3]; 
+            float _e[3]; 
         } _minimum; 
         struct Matrix<float, 3, 1> { 
-            double _e[3]; 
+            float _e[3]; 
         } _maximum; 
     }  _boundingBox;
     struct Matrix<float, 2, 1> { 
-        double _e[2]; 
+        float _e[2]; 
     }  _centroid;
-    double  _contentScale;
+    float  _contentScale;
     unsigned int  _cullingMask;
     struct vector<std::__1::vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > >, std::__1::allocator<std::__1::vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > > > > { 
         struct vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > > {} *__begin_; 
@@ -99,7 +99,7 @@
                 unsigned long __first_; 
             } __p2_; 
             struct __compressed_pair<float, std::__1::__unordered_map_equal<std::__1::pair<void *, unsigned long>, std::__1::__hash_value_type<std::__1::pair<void *, unsigned long>, std::__1::vector<Edge, std::__1::allocator<Edge> > >, std::__1::equal_to<std::__1::pair<void *, unsigned long> >, true> > { 
-                double __first_; 
+                float __first_; 
             } __p3_; 
         } __table_; 
     }  _polygonEdges;
@@ -146,29 +146,29 @@
 @property (nonatomic, readonly) const /* Warning: unhandled struct encoding: '{Matrix<float' */ struct *origin; /* unknown property attribute:  1>=[3f]} */
 @property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{Matrix<float' */ struct  size; /* unknown property attribute:  1>=[3f]} */
 @property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{vector<std::__1::shared_ptr<gss::StylesheetQuery<gss::PropertyID> >' */ struct *styleQueries; /* unknown property attribute:  std::__1::allocator<std::__1::shared_ptr<gss::StylesheetQuery<gss::PropertyID> > > >=^{shared_ptr<gss::StylesheetQuery<gss::PropertyID> >}}} */
-@property (nonatomic, readonly) double tileZoom;
+@property (nonatomic, readonly) float tileZoom;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)addRangesToFillRenderItemBatcher:(struct RenderItemBatcher { struct vector<ggl::Range, std::__1::allocator<ggl::Range> > { struct Range {} *x_1_1_1; struct Range {} *x_1_1_2; struct __compressed_pair<ggl::Range *, std::__1::allocator<ggl::Range> > { struct Range {} *x_3_2_1; } x_1_1_3; } x1; unsigned int x2; struct vector<ggl::MultiRange, std::__1::allocator<ggl::MultiRange> > { struct MultiRange {} *x_3_1_1; struct MultiRange {} *x_3_1_2; struct __compressed_pair<ggl::MultiRange *, std::__1::allocator<ggl::MultiRange> > { struct MultiRange {} *x_3_2_1; } x_3_1_3; } x3; struct vector<ggl::Range, std::__1::allocator<ggl::Range> > { struct Range {} *x_4_1_1; struct Range {} *x_4_1_2; struct __compressed_pair<ggl::Range *, std::__1::allocator<ggl::Range> > { struct Range {} *x_3_2_1; } x_4_1_3; } x4; struct RenderItem {} *x5; struct Pool<ggl::RenderItem> { struct set<void *, std::__1::less<void *>, std::__1::allocator<void *> > { struct __tree<void *, std::__1::less<void *>, std::__1::allocator<void *> > { struct __tree_node<void *, void *> {} *x_1_3_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<void *, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_5_1; } x_2_4_1; } x_1_3_2; struct __compressed_pair<unsigned long, std::__1::less<void *> > { unsigned long x_3_4_1; } x_1_3_3; } x_1_2_1; } x_6_1_1; unsigned int x_6_1_2; unsigned int x_6_1_3; struct FreeList {} *x_6_1_4; } x6; }*)arg1 forMeshAtIndex:(unsigned long)arg2 cullingMask:(unsigned int)arg3;
 - (void)addRangesToStrokeRenderItemBatcher:(struct RenderItemBatcher { struct vector<ggl::Range, std::__1::allocator<ggl::Range> > { struct Range {} *x_1_1_1; struct Range {} *x_1_1_2; struct __compressed_pair<ggl::Range *, std::__1::allocator<ggl::Range> > { struct Range {} *x_3_2_1; } x_1_1_3; } x1; unsigned int x2; struct vector<ggl::MultiRange, std::__1::allocator<ggl::MultiRange> > { struct MultiRange {} *x_3_1_1; struct MultiRange {} *x_3_1_2; struct __compressed_pair<ggl::MultiRange *, std::__1::allocator<ggl::MultiRange> > { struct MultiRange {} *x_3_2_1; } x_3_1_3; } x3; struct vector<ggl::Range, std::__1::allocator<ggl::Range> > { struct Range {} *x_4_1_1; struct Range {} *x_4_1_2; struct __compressed_pair<ggl::Range *, std::__1::allocator<ggl::Range> > { struct Range {} *x_3_2_1; } x_4_1_3; } x4; struct RenderItem {} *x5; struct Pool<ggl::RenderItem> { struct set<void *, std::__1::less<void *>, std::__1::allocator<void *> > { struct __tree<void *, std::__1::less<void *>, std::__1::allocator<void *> > { struct __tree_node<void *, void *> {} *x_1_3_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<void *, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_5_1; } x_2_4_1; } x_1_3_2; struct __compressed_pair<unsigned long, std::__1::less<void *> > { unsigned long x_3_4_1; } x_1_3_3; } x_1_2_1; } x_6_1_1; unsigned int x_6_1_2; unsigned int x_6_1_3; struct FreeList {} *x_6_1_4; } x6; }*)arg1 forMeshAtIndex:(unsigned long)arg2 cullingMask:(unsigned int)arg3;
 - (id)attributeSets;
-- (bool)canAcceptPolygon:(struct { struct { id x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; unsigned int x_1_1_5; unsigned int x_1_1_6; unsigned int x_1_1_7; BOOL x_1_1_8; unsigned int x_1_1_9; double x_1_1_10; unsigned int x_1_1_11; id x_1_1_12; } x1; unsigned int x2; unsigned int x3; int x4; int x5; int x6; unsigned int x7; unsigned int x8; union { struct { struct { double x_1_3_1; double x_1_3_2; } x_1_2_1; struct { double x_2_3_1; double x_2_3_2; } x_1_2_2; } x_9_1_1; struct { double x_2_2_1; double x_2_2_2; double x_2_2_3; double x_2_2_4; } x_9_1_2; } x9; struct { /* ? */ } *x10; struct { unsigned short x_11_1_1[2]; unsigned short x_11_1_2[2]; } x11; unsigned char x12; BOOL x13; unsigned char x14; BOOL x15; BOOL x16; unsigned char x17; BOOL x18; unsigned char x19; struct _NSRange { unsigned int x_20_1_1; unsigned int x_20_1_2; } x20; BOOL x21; }*)arg1;
-- (struct Matrix<float, 2, 1> { double x1[2]; })centroid;
+- (bool)canAcceptPolygon:(struct { struct { id x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; unsigned int x_1_1_5; unsigned int x_1_1_6; unsigned long long x_1_1_7; BOOL x_1_1_8; unsigned long long x_1_1_9; float x_1_1_10; unsigned long long x_1_1_11; id x_1_1_12; } x1; unsigned int x2; unsigned int x3; int x4; int x5; int x6; unsigned int x7; unsigned int x8; union { struct { struct { float x_1_3_1; float x_1_3_2; } x_1_2_1; struct { float x_2_3_1; float x_2_3_2; } x_1_2_2; } x_9_1_1; struct { float x_2_2_1; float x_2_2_2; float x_2_2_3; float x_2_2_4; } x_9_1_2; } x9; struct { /* ? */ } *x10; struct { unsigned short x_11_1_1[2]; unsigned short x_11_1_2[2]; } x11; unsigned char x12; BOOL x13; unsigned char x14; BOOL x15; BOOL x16; unsigned char x17; BOOL x18; unsigned char x19; struct _NSRange { unsigned int x_20_1_1; unsigned int x_20_1_2; } x20; BOOL x21; }*)arg1;
+- (struct Matrix<float, 2, 1> { float x1[2]; })centroid;
 - (void)clearRouteAttributes;
-- (void)computeUnitVectors:(struct vector<gm::Matrix<float, 2, 1>, std::__1::allocator<gm::Matrix<float, 2, 1> > > { struct Matrix<float, 2, 1> {} *x1; struct Matrix<float, 2, 1> {} *x2; struct __compressed_pair<gm::Matrix<float, 2, 1> *, std::__1::allocator<gm::Matrix<float, 2, 1> > > { struct Matrix<float, 2, 1> {} *x_3_1_1; } x3; }*)arg1 forPoints:(struct Matrix<float, 2, 1> { double x1[2]; }*)arg2 count:(unsigned long)arg3;
+- (void)computeUnitVectors:(struct vector<gm::Matrix<float, 2, 1>, std::__1::allocator<gm::Matrix<float, 2, 1> > > { struct Matrix<float, 2, 1> {} *x1; struct Matrix<float, 2, 1> {} *x2; struct __compressed_pair<gm::Matrix<float, 2, 1> *, std::__1::allocator<gm::Matrix<float, 2, 1> > > { struct Matrix<float, 2, 1> {} *x_3_1_1; } x3; }*)arg1 forPoints:(struct Matrix<float, 2, 1> { float x1[2]; }*)arg2 count:(unsigned long)arg3;
 - (unsigned int)cullingMask;
 - (void)dealloc;
 - (void)didFinishAddingData;
 - (struct vector<ggl::PolygonBase::CompressedMeshMesh, std::__1::allocator<ggl::PolygonBase::CompressedMeshMesh> > { struct CompressedMeshMesh {} *x1; struct CompressedMeshMesh {} *x2; struct __compressed_pair<ggl::PolygonBase::CompressedMeshMesh *, std::__1::allocator<ggl::PolygonBase::CompressedMeshMesh> > { struct CompressedMeshMesh {} *x_3_1_1; } x3; }*)fillMeshes;
 - (unsigned char)indexForGeoFeatureAttributes:(id)arg1;
-- (id)initWithStyleQuery:(struct shared_ptr<gss::StylesheetQuery<gss::PropertyID> > { struct StylesheetQuery<gss::PropertyID> {} *x1; struct __shared_weak_count {} *x2; }*)arg1 tile:(id)arg2 fixedAroundCentroid:(const struct Matrix<float, 2, 1> { double x1[2]; }*)arg3 contentScale:(float)arg4;
+- (id)initWithStyleQuery:(struct shared_ptr<gss::StylesheetQuery<gss::PropertyID> > { struct StylesheetQuery<gss::PropertyID> {} *x1; struct __shared_weak_count {} *x2; }*)arg1 tile:(id)arg2 fixedAroundCentroid:(const struct Matrix<float, 2, 1> { float x1[2]; }*)arg3 contentScale:(float)arg4;
 - (bool)isFixedSize;
 - (unsigned char)maxAttributeSetsPerGroup;
-- (const struct Matrix<float, 3, 1> { double x1[3]; }*)maxPoint;
-- (const struct Matrix<float, 3, 1> { double x1[3]; }*)origin;
+- (const struct Matrix<float, 3, 1> { float x1[3]; }*)maxPoint;
+- (const struct Matrix<float, 3, 1> { float x1[3]; }*)origin;
 - (void)setRouteAttributes:(const struct PolygonRouteAttributes { unsigned int x1; unsigned char x2; bool x3; }*)arg1;
-- (struct Matrix<float, 3, 1> { double x1[3]; })size;
+- (struct Matrix<float, 3, 1> { float x1[3]; })size;
 - (struct vector<std::__1::shared_ptr<gss::StylesheetQuery<gss::PropertyID> >, std::__1::allocator<std::__1::shared_ptr<gss::StylesheetQuery<gss::PropertyID> > > > { struct shared_ptr<gss::StylesheetQuery<gss::PropertyID> > {} *x1; struct shared_ptr<gss::StylesheetQuery<gss::PropertyID> > {} *x2; struct __compressed_pair<std::__1::shared_ptr<gss::StylesheetQuery<gss::PropertyID> > *, std::__1::allocator<std::__1::shared_ptr<gss::StylesheetQuery<gss::PropertyID> > > > { struct shared_ptr<gss::StylesheetQuery<gss::PropertyID> > {} *x_3_1_1; } x3; }*)styleQueries;
 - (float)tileZoom;
 - (void)updateCachedStyles;

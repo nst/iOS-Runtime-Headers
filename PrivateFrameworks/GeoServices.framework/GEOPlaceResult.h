@@ -6,7 +6,7 @@
     NSMutableArray * _additionalPlaces;
     int  _cacheControl;
     NSMutableArray * _disambiguationLabels;
-    unsigned int  _flyoverTourMuid;
+    unsigned long long  _flyoverTourMuid;
     struct { 
         unsigned int flyoverTourMuid : 1; 
         unsigned int cacheControl : 1; 
@@ -28,7 +28,7 @@
 @property (nonatomic, retain) NSMutableArray *additionalPlaces;
 @property (nonatomic) int cacheControl;
 @property (nonatomic, retain) NSMutableArray *disambiguationLabels;
-@property (nonatomic) unsigned int flyoverTourMuid;
+@property (nonatomic) unsigned long long flyoverTourMuid;
 @property (nonatomic) BOOL hasCacheControl;
 @property (nonatomic) BOOL hasFlyoverTourMuid;
 @property (nonatomic, readonly) BOOL hasQuad;
@@ -78,7 +78,7 @@
 - (id)disambiguationLabelAtIndex:(unsigned int)arg1;
 - (id)disambiguationLabels;
 - (unsigned int)disambiguationLabelsCount;
-- (unsigned int)flyoverTourMuid;
+- (unsigned long long)flyoverTourMuid;
 - (id)geoMapItem;
 - (BOOL)hasCacheControl;
 - (BOOL)hasFlyoverTourMuid;
@@ -104,7 +104,7 @@
 - (void)setAdditionalPlaces:(id)arg1;
 - (void)setCacheControl:(int)arg1;
 - (void)setDisambiguationLabels:(id)arg1;
-- (void)setFlyoverTourMuid:(unsigned int)arg1;
+- (void)setFlyoverTourMuid:(unsigned long long)arg1;
 - (void)setHasCacheControl:(BOOL)arg1;
 - (void)setHasFlyoverTourMuid:(BOOL)arg1;
 - (void)setHasTravelDistance:(BOOL)arg1;

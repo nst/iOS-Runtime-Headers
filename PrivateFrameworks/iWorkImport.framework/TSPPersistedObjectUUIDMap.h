@@ -11,14 +11,14 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)count;
 - (void)dealloc;
-- (id)descriptionForComponentIdentifier:(int)arg1 objectIdentifier:(int)arg2 delegate:(id)arg3;
-- (void)didUpdateObjectIdentifierDuringRead:(int)arg1 forUUID:(id)arg2 componentIdentifier:(int)arg3 originalObjectIdentifier:(int)arg4 delegate:(id)arg5;
-- (void)didUpdateUUIDDuringRead:(id)arg1 forComponentIdentifier:(int)arg2 objectIdentifier:(int)arg3 originalUUID:(id)arg4 isDuplicatedUUID:(BOOL)arg5 delegate:(id)arg6;
+- (id)descriptionForComponentIdentifier:(long long)arg1 objectIdentifier:(long long)arg2 delegate:(id)arg3;
+- (void)didUpdateObjectIdentifierDuringRead:(long long)arg1 forUUID:(id)arg2 componentIdentifier:(long long)arg3 originalObjectIdentifier:(long long)arg4 delegate:(id)arg5;
+- (void)didUpdateUUIDDuringRead:(id)arg1 forComponentIdentifier:(long long)arg2 objectIdentifier:(long long)arg3 originalUUID:(id)arg4 isDuplicatedUUID:(BOOL)arg5 delegate:(id)arg6;
 - (void)enumerateEntriesUsingBlock:(id /* block */)arg1;
 - (id)init;
 - (id)initWithComponentsDictionary:(id)arg1 isLoadingDocument:(BOOL)arg2 objectReferenceMapOrNil:(id)arg3 delegate:(id)arg4;
 - (id)initWithPersistedObjectUUIDMap:(id)arg1;
-- (struct ObjectLocation { int x1; int x2; })objectLocationForUUID:(id)arg1;
-- (BOOL)setObjectLocation:(struct ObjectLocation { int x1; int x2; })arg1 forUUID:(id)arg2 objectReferenceMapOrNil:(id)arg3 delegate:(id)arg4;
+- (struct ObjectLocation { long long x1; long long x2; })objectLocationForUUID:(id)arg1;
+- (BOOL)setObjectLocation:(struct ObjectLocation { long long x1; long long x2; })arg1 forUUID:(id)arg2 objectReferenceMapOrNil:(id)arg3 delegate:(id)arg4;
 
 @end

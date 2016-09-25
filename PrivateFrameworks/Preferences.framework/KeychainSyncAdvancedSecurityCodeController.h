@@ -4,7 +4,7 @@
 
 @interface KeychainSyncAdvancedSecurityCodeController : PSKeychainSyncViewController <UIAlertViewDelegate> {
     UIFont * _cellFont;
-    double  _cellTextWidth;
+    float  _cellTextWidth;
     BOOL  _showsDisableRecoveryOption;
 }
 

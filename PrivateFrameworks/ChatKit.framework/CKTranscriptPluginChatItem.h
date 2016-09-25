@@ -32,7 +32,7 @@
 - (id)cellIdentifier;
 - (id)composition;
 - (id)contact;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
 - (id)contentViewController;
 - (id)extensableView;
 - (BOOL)handlePresentationAction;
@@ -44,7 +44,7 @@
 - (BOOL)isInteractive;
 - (BOOL)isPlayed;
 - (BOOL)isSaved;
-- (struct CGSize { double x1; double x2; })loadSizeThatFits:(struct CGSize { double x1; double x2; })arg1 textAlignmentInsets:(out struct UIEdgeInsets { double x1; double x2; double x3; double x4; }*)arg2;
+- (struct CGSize { float x1; float x2; })loadSizeThatFits:(struct CGSize { float x1; float x2; })arg1 textAlignmentInsets:(out struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg2;
 - (id)loadTranscriptDrawerText;
 - (id)menuTitle;
 - (id)message;
@@ -57,7 +57,7 @@
 - (void)setImTranscriptPluginChatItem:(id)arg1;
 - (void)setIsAppearing:(BOOL)arg1;
 - (BOOL)shouldSnapshot;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })textAlignmentInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })textAlignmentInsets;
 - (BOOL)transcriptOrientation;
 - (BOOL)wantsBalloonGradient;
 - (BOOL)wantsDrawerLayout;

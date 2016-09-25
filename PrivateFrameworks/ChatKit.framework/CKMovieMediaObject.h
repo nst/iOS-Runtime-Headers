@@ -7,8 +7,8 @@
     BOOL  _checkedVideoInfo;
     BOOL  _hasVideoTrack;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _pxSize;
     UIImage * _thumbnail;
 }
@@ -16,7 +16,7 @@
 @property (nonatomic, retain) AVURLAsset *asset;
 @property (nonatomic) BOOL checkedVideoInfo;
 @property (nonatomic) BOOL hasVideoTrack;
-@property (nonatomic) struct CGSize { double x1; double x2; } pxSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } pxSize;
 @property (nonatomic, retain) UIImage *thumbnail;
 
 + (id)UTITypes;
@@ -27,11 +27,11 @@
 
 - (void).cxx_destruct;
 - (id)asset;
-- (struct CGSize { double x1; double x2; })bbSize;
+- (struct CGSize { float x1; float x2; })bbSize;
 - (BOOL)canExport;
 - (BOOL)checkedVideoInfo;
 - (void)export:(id)arg1;
-- (id)generateThumbnailFillToSize:(struct CGSize { double x1; double x2; })arg1 contentAlignmentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
+- (id)generateThumbnailFillToSize:(struct CGSize { float x1; float x2; })arg1 contentAlignmentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
 - (id)generateThumbnailForWidth:(float)arg1 orientation:(BOOL)arg2;
 - (BOOL)hasNoVideoTrack;
 - (BOOL)hasVideoTrack;
@@ -41,11 +41,11 @@
 - (id)previewCachesFileURLWithOrientation:(BOOL)arg1 extension:(id)arg2;
 - (id)previewForWidth:(float)arg1 orientation:(BOOL)arg2;
 - (id)previewItemTitle;
-- (struct CGSize { double x1; double x2; })pxSize;
+- (struct CGSize { float x1; float x2; })pxSize;
 - (void)setAsset:(id)arg1;
 - (void)setCheckedVideoInfo:(BOOL)arg1;
 - (void)setHasVideoTrack:(BOOL)arg1;
-- (void)setPxSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setPxSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setThumbnail:(id)arg1;
 - (id)thumbnail;
 - (void)updateVideoInfo;

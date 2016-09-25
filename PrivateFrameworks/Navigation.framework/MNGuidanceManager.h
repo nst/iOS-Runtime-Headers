@@ -20,7 +20,7 @@
     }  _currentInstructionOptions;
     NSString * _currentRoadName;
     NSString * _currentShieldText;
-    int  _currentShieldType;
+    long long  _currentShieldType;
     unsigned int  _currentStepIndex;
     <MNGuidanceManagerDelegate> * _delegate;
     GEOComposedWaypoint * _destination;

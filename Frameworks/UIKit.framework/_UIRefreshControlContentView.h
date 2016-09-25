@@ -10,8 +10,8 @@
 
 @property (nonatomic, retain) NSAttributedString *attributedTitle;
 @property (nonatomic, retain) _UIFeedbackImpactBehavior *impactFeedbackBehavior;
-@property (nonatomic, readonly) double maximumSnappingHeight;
-@property (nonatomic, readonly) double minimumSnappingHeight;
+@property (nonatomic, readonly) float maximumSnappingHeight;
+@property (nonatomic, readonly) float minimumSnappingHeight;
 @property (nonatomic) UIRefreshControl *refreshControl;
 @property (nonatomic, readonly) int style;
 @property (nonatomic, retain) UIColor *tintColor;

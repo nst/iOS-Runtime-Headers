@@ -7,8 +7,8 @@
     NSLayoutConstraint * _baselineToBottomConstraint;
     NSLayoutConstraint * _baselineToTopConstraint;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _iconDisplaySize;
     NSLayoutConstraint * _iconHeightConstraint;
     NSLayoutConstraint * _iconWidthConstraint;
@@ -28,7 +28,7 @@
 
 @property (nonatomic) SEL action;
 @property (nonatomic, retain) UIImage *icon;
-@property (nonatomic) struct CGSize { double x1; double x2; } iconDisplaySize;
+@property (nonatomic) struct CGSize { float x1; float x2; } iconDisplaySize;
 @property (nonatomic, retain) NSArray *marginConstraints;
 @property (nonatomic, retain) NSString *providerName;
 @property (nonatomic, retain) _MKUILabel *sectionHeaderLabel;
@@ -46,8 +46,8 @@
 - (void)contentSizeDidChange;
 - (void)dealloc;
 - (id)icon;
-- (struct CGSize { double x1; double x2; })iconDisplaySize;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGSize { float x1; float x2; })iconDisplaySize;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)marginConstraints;
 - (id)providerName;
@@ -58,7 +58,7 @@
 - (id)separator;
 - (void)setAction:(SEL)arg1;
 - (void)setIcon:(id)arg1;
-- (void)setIconDisplaySize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setIconDisplaySize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setMarginConstraints:(id)arg1;
 - (void)setProviderName:(id)arg1;
 - (void)setSectionHeaderLabel:(id)arg1;

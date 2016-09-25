@@ -13,7 +13,7 @@
     }  _has;
     unsigned int  _rxOnDurationMs;
     unsigned int  _rxTxOffDurationMs;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
     unsigned int  _totalDurationMs;
 }
 
@@ -25,7 +25,7 @@
 @property (nonatomic) BOOL hasTotalDurationMs;
 @property (nonatomic) unsigned int rxOnDurationMs;
 @property (nonatomic) unsigned int rxTxOffDurationMs;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 @property (nonatomic) unsigned int totalDurationMs;
 
 - (void)copyTo:(id)arg1;
@@ -52,9 +52,9 @@
 - (void)setHasTotalDurationMs:(BOOL)arg1;
 - (void)setRxOnDurationMs:(unsigned int)arg1;
 - (void)setRxTxOffDurationMs:(unsigned int)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (void)setTotalDurationMs:(unsigned int)arg1;
-- (unsigned int)timestamp;
+- (unsigned long long)timestamp;
 - (unsigned int)totalDurationMs;
 - (void)writeTo:(id)arg1;
 

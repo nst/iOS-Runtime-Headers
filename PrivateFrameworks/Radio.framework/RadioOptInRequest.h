@@ -3,7 +3,7 @@
  */
 
 @interface RadioOptInRequest : RadioRequest {
-    unsigned int  _accountIdentifier;
+    unsigned long long  _accountIdentifier;
     SSURLConnectionRequest * _request;
 }
 

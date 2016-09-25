@@ -12,10 +12,10 @@
 @property (nonatomic, readonly) _DPPrivacyBudgetRecord *budgetRecord;
 @property (nonatomic, readonly, copy) NSString *name;
 
-+ (int)balanceForbudgetWithName:(id)arg1;
++ (long long)balanceForbudgetWithName:(id)arg1;
 + (id)budgetWithName:(id)arg1;
 + (void)createBudgetRecordsIn:(id)arg1;
-+ (BOOL)createDatabaseRecordIfMissingIn:(id)arg1 key:(id)arg2 balance:(int)arg3;
++ (BOOL)createDatabaseRecordIfMissingIn:(id)arg1 key:(id)arg2 balance:(long long)arg3;
 + (BOOL)credit:(unsigned int)arg1 budgetWithName:(id)arg2;
 + (BOOL)debit:(unsigned int)arg1 budgetWithName:(id)arg2;
 + (id)fetchBudgetRecordFrom:(id)arg1 key:(id)arg2;
@@ -24,7 +24,7 @@
 + (void)updateAllBudgetsIn:(id)arg1;
 
 - (void).cxx_destruct;
-- (int)balanceUnsafe;
+- (long long)balanceUnsafe;
 - (id)budgetProperties;
 - (id)budgetRecord;
 - (BOOL)credit:(unsigned int)arg1;

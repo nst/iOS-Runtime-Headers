@@ -5,21 +5,21 @@
 @interface PXSectionedLayoutContent : NSObject {
     int  _axis;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _contentSize;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _edgeInsets;
     NSMutableArray * _sections;
 }
 
 @property (nonatomic) int axis;
-@property (nonatomic) struct CGSize { double x1; double x2; } contentSize;
-@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } edgeInsets;
+@property (nonatomic) struct CGSize { float x1; float x2; } contentSize;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
 @property (nonatomic, readonly, copy) NSArray *sections;
 
 - (void).cxx_destruct;
@@ -30,12 +30,12 @@
 - (void)_removeSection:(id)arg1;
 - (void)addSection:(id)arg1;
 - (int)axis;
-- (struct CGSize { double x1; double x2; })contentSize;
+- (struct CGSize { float x1; float x2; })contentSize;
 - (id)description;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })edgeInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
 - (void)exchangeSectionAtIndex:(unsigned int)arg1 withSectionAtIndex:(unsigned int)arg2;
 - (id)init;
-- (id)initWithAxis:(int)arg1 insets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
+- (id)initWithAxis:(int)arg1 insets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
 - (void)insertSection:(id)arg1 atIndex:(int)arg2;
 - (void)removeAllSections;
 - (void)removeSection:(id)arg1;
@@ -43,7 +43,7 @@
 - (id)sectionAtIndex:(unsigned int)arg1;
 - (id)sections;
 - (void)setAxis:(int)arg1;
-- (void)setContentSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)updateSections:(id)arg1;
 
 @end

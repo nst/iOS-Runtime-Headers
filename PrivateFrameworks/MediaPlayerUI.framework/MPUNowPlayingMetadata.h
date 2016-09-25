@@ -14,8 +14,8 @@
 @property (getter=isExplicitContent, nonatomic, readonly) BOOL explicitContent;
 @property (getter=isMusicApp, nonatomic, readonly) BOOL musicApp;
 @property (nonatomic, readonly) NSDictionary *nowPlayingInfo;
-@property (nonatomic, readonly) unsigned int persistentID;
-@property (nonatomic, readonly) double playbackRate;
+@property (nonatomic, readonly) unsigned long long persistentID;
+@property (nonatomic, readonly) float playbackRate;
 @property (nonatomic, readonly) NSString *radioStationIdentifier;
 @property (nonatomic, readonly) NSString *title;
 
@@ -29,7 +29,7 @@
 - (BOOL)isExplicitContent;
 - (BOOL)isMusicApp;
 - (id)nowPlayingInfo;
-- (unsigned int)persistentID;
+- (unsigned long long)persistentID;
 - (float)playbackRate;
 - (id)radioStationIdentifier;
 - (id)title;

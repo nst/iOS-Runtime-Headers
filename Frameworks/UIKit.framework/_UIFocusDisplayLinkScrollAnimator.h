@@ -3,7 +3,7 @@
  */
 
 @interface _UIFocusDisplayLinkScrollAnimator : NSObject <_UIFocusScrollAnimator> {
-    double  _defaultConvergenceRate;
+    float  _defaultConvergenceRate;
     CADisplayLink * _displayLink;
     UIScreen * _screen;
     NSMapTable * _scrollViews;
@@ -11,14 +11,14 @@
 }
 
 @property (readonly, copy) NSString *debugDescription;
-@property (nonatomic) double defaultConvergenceRate;
+@property (nonatomic) float defaultConvergenceRate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) BOOL requiresExtendingScrollViewVisibleBounds;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (struct CGPoint { double x1; double x2; })_applyAccelerationLimitToAcceleration:(struct CGPoint { double x1; double x2; })arg1 currentOffset:(struct CGPoint { double x1; double x2; })arg2 targetOffset:(struct CGPoint { double x1; double x2; })arg3;
+- (struct CGPoint { float x1; float x2; })_applyAccelerationLimitToAcceleration:(struct CGPoint { float x1; float x2; })arg1 currentOffset:(struct CGPoint { float x1; float x2; })arg2 targetOffset:(struct CGPoint { float x1; float x2; })arg3;
 - (id)_entryForScrollView:(id)arg1 createIfNeeded:(BOOL)arg2;
 - (void)_heartbeat:(id)arg1;
 - (void)_processEntry:(id)arg1 timeDelta:(int)arg2 completed:(id)arg3;
@@ -32,9 +32,9 @@
 - (BOOL)isAnimatingScrollView:(id)arg1;
 - (BOOL)requiresExtendingScrollViewVisibleBounds;
 - (void)setDefaultConvergenceRate:(float)arg1;
-- (void)setPeekOffsetAdjustment:(struct CGPoint { double x1; double x2; })arg1 forScrollView:(id)arg2;
-- (void)setTargetContentOffset:(struct CGPoint { double x1; double x2; })arg1 forScrollView:(id)arg2 convergenceRate:(float)arg3 completion:(id /* block */)arg4;
-- (struct CGPoint { double x1; double x2; })targetContentOffsetForScrollView:(id)arg1;
-- (struct CGPoint { double x1; double x2; })velocityToScrollFromOffset:(struct CGPoint { double x1; double x2; })arg1 toOffset:(struct CGPoint { double x1; double x2; })arg2;
+- (void)setPeekOffsetAdjustment:(struct CGPoint { float x1; float x2; })arg1 forScrollView:(id)arg2;
+- (void)setTargetContentOffset:(struct CGPoint { float x1; float x2; })arg1 forScrollView:(id)arg2 convergenceRate:(float)arg3 completion:(id /* block */)arg4;
+- (struct CGPoint { float x1; float x2; })targetContentOffsetForScrollView:(id)arg1;
+- (struct CGPoint { float x1; float x2; })velocityToScrollFromOffset:(struct CGPoint { float x1; float x2; })arg1 toOffset:(struct CGPoint { float x1; float x2; })arg2;
 
 @end

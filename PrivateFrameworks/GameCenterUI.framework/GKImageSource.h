@@ -46,7 +46,7 @@
 - (id)processAndCacheImageDataInContext:(id)arg1 withImage:(id)arg2 forKey:(id)arg3;
 - (id)renderedDefaultImage;
 - (id)renderedImageWithImage:(id)arg1;
-- (id)renderedImageWithImage:(id)arg1 defaultSize:(struct CGSize { double x1; double x2; })arg2 returnContext:(id*)arg3;
+- (id)renderedImageWithImage:(id)arg1 defaultSize:(struct CGSize { float x1; float x2; })arg2 returnContext:(id*)arg3;
 - (id)renderedImageWithImage:(id)arg1 returnContext:(id*)arg2;
 - (id)renderedTestImage;
 - (void)setCache:(id)arg1;

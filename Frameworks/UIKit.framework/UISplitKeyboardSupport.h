@@ -6,8 +6,8 @@
     id /* block */  _bounceCompletionBlock;
     CADisplayLink * _displayLink;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _initialTranslation;
     BOOL  _isSplitting;
     BOOL  _isTranslating;
@@ -15,13 +15,13 @@
     double  _lastTranslationNotificationTime;
     BOOL  _splitLockState;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _targetTranslation;
     UIPanGestureRecognizer * _translateRecognizer;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _translationVelocity;
 }
 

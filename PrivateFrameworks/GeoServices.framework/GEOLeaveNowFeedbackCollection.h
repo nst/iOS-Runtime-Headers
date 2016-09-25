@@ -17,8 +17,8 @@
         unsigned int travelState : 1; 
     }  _has;
     struct GEOSessionID { 
-        unsigned int _high; 
-        unsigned int _low; 
+        unsigned long long _high; 
+        unsigned long long _low; 
     }  _sessionID;
     double  _travelDuration;
     int  _travelState;
@@ -35,7 +35,7 @@
 @property (nonatomic) BOOL hasSessionID;
 @property (nonatomic) BOOL hasTravelDuration;
 @property (nonatomic) BOOL hasTravelState;
-@property (nonatomic) struct GEOSessionID { unsigned int x1; unsigned int x2; } sessionID;
+@property (nonatomic) struct GEOSessionID { unsigned long long x1; unsigned long long x2; } sessionID;
 @property (nonatomic) double travelDuration;
 @property (nonatomic) int travelState;
 
@@ -63,7 +63,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (struct GEOSessionID { unsigned int x1; unsigned int x2; })sessionID;
+- (struct GEOSessionID { unsigned long long x1; unsigned long long x2; })sessionID;
 - (void)setActionType:(int)arg1;
 - (void)setAlertType:(int)arg1;
 - (void)setCurrentTimestamp:(double)arg1;
@@ -75,7 +75,7 @@
 - (void)setHasSessionID:(BOOL)arg1;
 - (void)setHasTravelDuration:(BOOL)arg1;
 - (void)setHasTravelState:(BOOL)arg1;
-- (void)setSessionID:(struct GEOSessionID { unsigned int x1; unsigned int x2; })arg1;
+- (void)setSessionID:(struct GEOSessionID { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)setTravelDuration:(double)arg1;
 - (void)setTravelState:(int)arg1;
 - (double)travelDuration;

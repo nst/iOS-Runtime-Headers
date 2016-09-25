@@ -34,7 +34,7 @@
     int  _rssi;
     NSString * _sessionID;
     unsigned int  _tcpConnectionComplete;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
     unsigned int  _tlsHandshakeComplete;
     unsigned int  _totalDiscovery;
     BOOL  _verifiableIdentity;
@@ -74,7 +74,7 @@
 @property (nonatomic) int rssi;
 @property (nonatomic, retain) NSString *sessionID;
 @property (nonatomic) unsigned int tcpConnectionComplete;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 @property (nonatomic) unsigned int tlsHandshakeComplete;
 @property (nonatomic) unsigned int totalDiscovery;
 @property (nonatomic) BOOL verifiableIdentity;
@@ -150,12 +150,12 @@
 - (void)setRssi:(int)arg1;
 - (void)setSessionID:(id)arg1;
 - (void)setTcpConnectionComplete:(unsigned int)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (void)setTlsHandshakeComplete:(unsigned int)arg1;
 - (void)setTotalDiscovery:(unsigned int)arg1;
 - (void)setVerifiableIdentity:(BOOL)arg1;
 - (unsigned int)tcpConnectionComplete;
-- (unsigned int)timestamp;
+- (unsigned long long)timestamp;
 - (unsigned int)tlsHandshakeComplete;
 - (unsigned int)totalDiscovery;
 - (BOOL)verifiableIdentity;

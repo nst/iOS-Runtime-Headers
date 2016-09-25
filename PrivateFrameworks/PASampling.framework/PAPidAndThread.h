@@ -5,7 +5,7 @@
 @interface PAPidAndThread : NSObject {
     int  pid;
     const char * processName;
-    unsigned int  tid;
+    unsigned long long  tid;
 }
 
 @end

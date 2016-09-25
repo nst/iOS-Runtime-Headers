@@ -5,7 +5,7 @@
 @interface MKOverlayContainerView : UIView {
     <MKOverlayContainerViewDelegate> * _delegate;
     NSMutableArray * _drawables;
-    double  _mapZoomScale;
+    float  _mapZoomScale;
     NSMapTable * _overlayToDrawable;
     NSMutableOrderedSet * _overlays;
     UIView * _viewContainers;
@@ -13,7 +13,7 @@
 }
 
 @property (nonatomic) <MKOverlayContainerViewDelegate> *delegate;
-@property (nonatomic) double mapZoomScale;
+@property (nonatomic) float mapZoomScale;
 @property (nonatomic, readonly) NSArray *overlays;
 
 - (void).cxx_destruct;
@@ -37,7 +37,7 @@
 - (id)drawableForOverlay:(id)arg1;
 - (void)exchangeOverlay:(id)arg1 withOverlay:(id)arg2;
 - (void)exchangeOverlayAtIndex:(unsigned int)arg1 withOverlayAtIndex:(unsigned int)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)insertOverlay:(id)arg1 aboveOverlay:(id)arg2;
 - (void)insertOverlay:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)insertOverlay:(id)arg1 atIndex:(unsigned int)arg2 level:(int)arg3;
@@ -45,7 +45,7 @@
 - (float)mapZoomScale;
 - (id)overlays;
 - (id)overlaysInLevel:(int)arg1;
-- (BOOL)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)removeOverlay:(id)arg1;
 - (void)removeOverlays:(id)arg1;
 - (void)setDelegate:(id)arg1;

@@ -4,7 +4,7 @@
 
 @interface WBSHistoryTombstone : NSObject {
     double  _endTime;
-    int  _generation;
+    long long  _generation;
     double  _startTime;
     NSData * _urlHash;
     NSData * _urlSalt;
@@ -13,7 +13,7 @@
 
 @property (nonatomic, readonly) NSDictionary *dictionaryRepresentation;
 @property (nonatomic, readonly) double endTime;
-@property (nonatomic, readonly) int generation;
+@property (nonatomic, readonly) long long generation;
 @property (getter=isSecure, nonatomic, readonly) BOOL secure;
 @property (nonatomic, readonly) double startTime;
 @property (nonatomic, readonly) NSData *urlHash;
@@ -24,10 +24,10 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (double)endTime;
-- (int)generation;
+- (long long)generation;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithSQLiteRow:(id)arg1 historyStore:(id)arg2;
-- (id)initWithURLString:(id)arg1 urlHash:(id)arg2 urlSalt:(id)arg3 startTime:(double)arg4 endTime:(double)arg5 generation:(int)arg6;
+- (id)initWithURLString:(id)arg1 urlHash:(id)arg2 urlSalt:(id)arg3 startTime:(double)arg4 endTime:(double)arg5 generation:(long long)arg6;
 - (BOOL)isSecure;
 - (BOOL)matchesVisitTime:(double)arg1 urlString:(id)arg2;
 - (id)secureTombstoneWithSalt:(id)arg1;

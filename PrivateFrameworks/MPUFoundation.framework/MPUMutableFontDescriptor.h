@@ -5,7 +5,7 @@
 @interface MPUMutableFontDescriptor : MPUFontDescriptor
 
 @property (nonatomic) int leadingAdjustment;
-@property (nonatomic) double systemFontSize;
+@property (nonatomic) float systemFontSize;
 @property (nonatomic) int textStyle;
 @property (nonatomic) BOOL usesItalic;
 @property (nonatomic) BOOL wantsMonospaceNumbers;

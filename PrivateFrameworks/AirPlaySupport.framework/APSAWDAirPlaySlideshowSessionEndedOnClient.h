@@ -20,7 +20,7 @@
     unsigned int  _minPhotoBytes;
     int  _reason;
     NSString * _sessionUUID;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
     unsigned int  _totalPhotos;
 }
 
@@ -40,7 +40,7 @@
 @property (nonatomic) unsigned int minPhotoBytes;
 @property (nonatomic) int reason;
 @property (nonatomic, retain) NSString *sessionUUID;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 @property (nonatomic) unsigned int totalPhotos;
 
 - (void)copyTo:(id)arg1;
@@ -83,9 +83,9 @@
 - (void)setMinPhotoBytes:(unsigned int)arg1;
 - (void)setReason:(int)arg1;
 - (void)setSessionUUID:(id)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (void)setTotalPhotos:(unsigned int)arg1;
-- (unsigned int)timestamp;
+- (unsigned long long)timestamp;
 - (unsigned int)totalPhotos;
 - (void)writeTo:(id)arg1;
 

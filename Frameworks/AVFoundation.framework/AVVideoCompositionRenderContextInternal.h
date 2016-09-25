@@ -15,10 +15,10 @@
         int height; 
     }  _destinationPixelBufferDimensions;
     struct { 
-        double left; 
-        double top; 
-        double right; 
-        double bottom; 
+        float left; 
+        float top; 
+        float right; 
+        float bottom; 
     }  _edgeWidths;
     BOOL  _highQualityRendering;
     struct { 
@@ -28,18 +28,18 @@
     struct __CFDictionary { } * _pixelAspectRatioDict;
     struct __CVPixelBufferPool { } * _pixelBufferPool;
     NSObject<OS_dispatch_queue> * _pixelBufferPoolQ;
-    double  _renderScale;
+    float  _renderScale;
     struct CGAffineTransform { 
-        double a; 
-        double b; 
-        double c; 
-        double d; 
-        double tx; 
-        double ty; 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
     }  _renderTransform;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _size;
     AVVideoComposition * _videoComposition;
     int  pixelFormatFamily;

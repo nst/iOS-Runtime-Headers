@@ -6,7 +6,7 @@
     id /* block */  _cleanupBlock;
     id /* block */  _errorBlock;
     NSXPCInterface * _interface;
-    unsigned int  _proxyNumber;
+    unsigned long long  _proxyNumber;
     NSBlock * _replyBlock;
     SEL  _selector;
     NSDictionary * _userInfo;
@@ -15,7 +15,7 @@
 @property (copy) id /* block */ cleanupBlock;
 @property (copy) id /* block */ errorBlock;
 @property (retain) NSXPCInterface *interface;
-@property unsigned int proxyNumber;
+@property unsigned long long proxyNumber;
 @property (copy) NSBlock *replyBlock;
 @property SEL selector;
 @property (retain) NSDictionary *userInfo;
@@ -24,13 +24,13 @@
 - (void)dealloc;
 - (id /* block */)errorBlock;
 - (id)interface;
-- (unsigned int)proxyNumber;
+- (unsigned long long)proxyNumber;
 - (id)replyBlock;
 - (SEL)selector;
 - (void)setCleanupBlock:(id /* block */)arg1;
 - (void)setErrorBlock:(id /* block */)arg1;
 - (void)setInterface:(id)arg1;
-- (void)setProxyNumber:(unsigned int)arg1;
+- (void)setProxyNumber:(unsigned long long)arg1;
 - (void)setReplyBlock:(id)arg1;
 - (void)setSelector:(SEL)arg1;
 - (void)setUserInfo:(id)arg1;

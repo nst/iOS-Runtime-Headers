@@ -6,7 +6,7 @@
     BOOL  _hasPendingProgressHandlerExecution;
     BOOL  _invalidated;
     BOOL  _paused;
-    int  _pid;
+    long long  _pid;
     id /* block */  _progressHandler;
     NSObject<OS_dispatch_queue> * _queue;
 }
@@ -15,7 +15,7 @@
 @property (getter=isCurrentlyPlayable, readonly) BOOL currentlyPlayable;
 @property (readonly) double downloadProgress;
 @property (getter=isPaused, readonly) BOOL paused;
-@property (nonatomic, readonly) int persistentID;
+@property (nonatomic, readonly) long long persistentID;
 @property (copy) id /* block */ progressHandler;
 @property (getter=isPurchasing, nonatomic, readonly) BOOL purchasing;
 @property (nonatomic, readonly) double rawDownloadProgress;
@@ -24,8 +24,8 @@
 
 + (id)newObserverForMediaCollection:(id)arg1;
 + (id)newObserverForMediaItem:(id)arg1;
-+ (id)newObserverForMediaItemPersistentID:(unsigned int)arg1 isPendingSync:(BOOL)arg2 storeID:(int)arg3;
-+ (id)newObserverForStoreID:(int)arg1;
++ (id)newObserverForMediaItemPersistentID:(unsigned long long)arg1 isPendingSync:(BOOL)arg2 storeID:(long long)arg3;
++ (id)newObserverForStoreID:(long long)arg1;
 
 - (void).cxx_destruct;
 - (void)_onQueue_invalidate;
@@ -41,7 +41,7 @@
 - (BOOL)isPurchasing;
 - (BOOL)isRestoreDownload;
 - (void)pauseDownload;
-- (int)persistentID;
+- (long long)persistentID;
 - (id /* block */)progressHandler;
 - (double)rawDownloadProgress;
 - (double)rawDownloadTotal;

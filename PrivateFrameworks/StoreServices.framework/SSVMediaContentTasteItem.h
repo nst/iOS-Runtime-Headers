@@ -5,7 +5,7 @@
 @interface SSVMediaContentTasteItem : NSObject <NSCopying, NSMutableCopying, NSSecureCoding, SSXPCCoding> {
     unsigned int  _contentType;
     NSString * _playlistGlobalID;
-    int  _storeAdamID;
+    long long  _storeAdamID;
     unsigned int  _tasteType;
 }
 
@@ -14,7 +14,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly, copy) NSString *playlistGlobalID;
-@property (nonatomic, readonly) int storeAdamID;
+@property (nonatomic, readonly) long long storeAdamID;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) unsigned int tasteType;
 
@@ -31,7 +31,7 @@
 - (id)initWithXPCEncoding:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)playlistGlobalID;
-- (int)storeAdamID;
+- (long long)storeAdamID;
 - (unsigned int)tasteType;
 
 @end

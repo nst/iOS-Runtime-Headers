@@ -14,12 +14,12 @@
     UIColor * _detailTextColor;
     int  _detailViewStyle;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _headerContentInset;
-    double  _headerHeight;
+    float  _headerHeight;
     UIView * _headerView;
     UIColor * _highlightColor;
     UIView * _keyLine;
@@ -37,7 +37,7 @@
     NSMutableDictionary * _pendingTransactions;
     UIColor * _primaryTextColor;
     UISegmentedControl * _tabBar;
-    double  _tabBarHeight;
+    float  _tabBarHeight;
     NSArray * _tabBarSegments;
     NSObject<OS_dispatch_source> * _transactionTimer;
     NSArray * _transactions;

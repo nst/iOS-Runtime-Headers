@@ -18,10 +18,10 @@
     UIViewController * _playlistsViewController;
     SKUIProxyScrollView * _proxyScrollView;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _proxyScrollViewContentInsetAdditions;
     MusicActionableHeaderView * _recentlyAddedPlaylistsHeaderView;
     MusicLibraryBrowseCollectionViewController * _recentlyAddedPlaylistsViewController;

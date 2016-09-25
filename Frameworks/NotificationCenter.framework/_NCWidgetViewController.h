@@ -6,10 +6,10 @@
     NSMutableArray * _activeTransitionContexts;
     NSMapTable * _activeTransitionContextsByRequestID;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _clientMarginInsets;
     NSString * _containerIdentifier;
     UIViewController<NCWidgetProviding> * _contentProvidingViewController;
@@ -21,15 +21,15 @@
     UIView * _contentView;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _initialBounds;
-    double  _lastRequestedHeight;
+    float  _lastRequestedHeight;
     NSMutableArray * _pendingSizeTransitionUUIDStack;
     NSObject<OS_dispatch_queue> * _remoteViewControllerProxyQueue;
     UIScrollViewDelayedTouchesBeganGestureRecognizer * _touchDelayGestureRecognizer;
@@ -61,8 +61,8 @@
 - (void)__prepareForAnimationsForRequestWithIdentifier:(id)arg1 withReplyHandler:(id /* block */)arg2;
 - (void)__requestEncodedLayerTreeToURL:(id)arg1 withReplyHandler:(id /* block */)arg2;
 - (void)__setActiveDisplayMode:(int)arg1 requestIdentifier:(id)arg2;
-- (void)__setMaximumSize:(struct CGSize { double x1; double x2; })arg1 forDisplayMode:(int)arg2;
-- (void)__viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 requestIdentifier:(id)arg2;
+- (void)__setMaximumSize:(struct CGSize { float x1; float x2; })arg1 forDisplayMode:(int)arg2;
+- (void)__viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 requestIdentifier:(id)arg2;
 - (id)_activeTransitionContextsByRequestID;
 - (int)_clientLargestSupportedDisplayMode;
 - (void)_clientLargestSupportedDisplayModeDidChange;
@@ -74,7 +74,7 @@
 - (id)_contentProvidingViewController;
 - (id)_customAnimator:(BOOL)arg1;
 - (BOOL)_disableAutomaticKeyboardBehavior;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_edgeInsetsForChildViewController:(id)arg1 insetsAreAbsolute:(BOOL*)arg2;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_edgeInsetsForChildViewController:(id)arg1 insetsAreAbsolute:(BOOL*)arg2;
 - (float)_effectiveHeightForRequestedHeight:(float)arg1;
 - (void)_encodeLayerTreeToURL:(id)arg1 withReplyHandler:(id /* block */)arg2;
 - (void)_enqueueProxyRequest:(id /* block */)arg1;
@@ -103,7 +103,7 @@
 - (void)setContentProvidingViewController:(id)arg1;
 - (void)setWidgetIdentifier:(id)arg1;
 - (BOOL)shouldAutomaticallyForwardAppearanceMethods;
-- (void)sizeObservingView:(id)arg1 didChangeSize:(struct CGSize { double x1; double x2; })arg2;
+- (void)sizeObservingView:(id)arg1 didChangeSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)systemLayoutFittingSizeDidChangeForChildContentContainer:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;

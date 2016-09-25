@@ -39,8 +39,8 @@
 @property (nonatomic, retain) NSMutableDictionary *widgetIDsToPendingTestCompletions;
 @property (nonatomic, retain) NSMutableDictionary *widgetIDsToPendingTestTearDowns;
 
-+ (id /* block */)generatorForWidgetViewControllerWithBundleID:(id)arg1 containingBundleID:(id)arg2 timeout:(unsigned int)arg3;
-+ (int)layoutModeForSize:(struct CGSize { double x1; double x2; })arg1;
++ (id /* block */)generatorForWidgetViewControllerWithBundleID:(id)arg1 containingBundleID:(id)arg2 timeout:(unsigned long long)arg3;
++ (int)layoutModeForSize:(struct CGSize { float x1; float x2; })arg1;
 
 - (void).cxx_destruct;
 - (void)_beginObservingDataSourcesIfNecessary;

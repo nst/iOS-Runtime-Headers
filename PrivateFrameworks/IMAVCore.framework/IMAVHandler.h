@@ -33,6 +33,6 @@
 - (void)persistentProperty:(id)arg1 changedTo:(id)arg2 from:(id)arg3;
 - (void)property:(id)arg1 changedTo:(id)arg2 from:(id)arg3;
 - (void)setupComplete;
-- (void)vcCapabilitiesChanged:(unsigned int)arg1;
+- (void)vcCapabilitiesChanged:(unsigned long long)arg1;
 
 @end

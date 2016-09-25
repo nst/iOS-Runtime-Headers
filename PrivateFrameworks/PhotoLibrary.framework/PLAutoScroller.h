@@ -5,24 +5,24 @@
 @interface PLAutoScroller : NSObject {
     NSTimer * _autoscrollTimer;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _targetPoint;
     UIScrollView * _targetScrollView;
-    double  _thresholdDistance;
+    float  _thresholdDistance;
 }
 
-@property (nonatomic) struct CGPoint { double x1; double x2; } targetPoint;
-@property (readonly) double thresholdDistance;
+@property (nonatomic) struct CGPoint { float x1; float x2; } targetPoint;
+@property (readonly) float thresholdDistance;
 
 - (void)_stopAutoscrollTimer;
 - (void)_updateAutoscrollTimer:(id)arg1;
 - (void)dealloc;
 - (id)init;
 - (id)initWithTargetScrollView:(id)arg1 thresholdDistance:(float)arg2;
-- (void)setTargetPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setTargetPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)stopAndInvalidate;
-- (struct CGPoint { double x1; double x2; })targetPoint;
+- (struct CGPoint { float x1; float x2; })targetPoint;
 - (float)thresholdDistance;
 
 @end

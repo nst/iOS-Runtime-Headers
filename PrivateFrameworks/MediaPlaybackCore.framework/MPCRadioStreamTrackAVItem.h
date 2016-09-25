@@ -4,14 +4,14 @@
 
 @interface MPCRadioStreamTrackAVItem : MPCRadioAVItem <AVAssetResourceLoaderDelegate> {
     _MPCRadioStreamMetadata * _adamIDMetadata;
-    int  _albumStoreID;
+    long long  _albumStoreID;
     NSArray * _buyOffers;
     _MPCRadioStreamMetadata * _effectiveMetadata;
     NSData * _jingleTimedMetadata;
     double  _playStartDateTimeSinceReferenceDate;
     NSData * _previousAdamIDBlob;
     _MPCRadioStreamMetadata * _radioStreamTrackMetadata;
-    int  _storeID;
+    long long  _storeID;
     _MPCRadioStreamMetadata * _timedMetadata;
 }
 
@@ -36,7 +36,7 @@
 - (id)album;
 - (id)albumBuyButtonText;
 - (int)albumBuyButtonType;
-- (int)albumStoreID;
+- (long long)albumStoreID;
 - (id)artist;
 - (id)buyOffers;
 - (void)dealloc;
@@ -52,7 +52,7 @@
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (BOOL)resourceLoader:(id)arg1 shouldWaitForLoadingOfRequestedResource:(id)arg2;
 - (void)setPlayerItem:(id)arg1;
-- (int)storeItemInt64ID;
+- (long long)storeItemInt64ID;
 - (id)streamTrack;
 - (BOOL)supportsRadioTrackActions;
 

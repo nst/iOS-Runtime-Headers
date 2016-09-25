@@ -5,7 +5,7 @@
 @interface AVFlashlightInternal : NSObject {
     BOOL  available;
     struct OpaqueFigFlashlight { } * flashlight;
-    double  flashlightLevel;
+    float  flashlightLevel;
     struct OpaqueFigSimpleMutex { } * lock;
     BOOL  overheated;
     AVWeakReference * weakReference;

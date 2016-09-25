@@ -26,7 +26,7 @@
 + (id)_figStreamingMIMETypes;
 + (id)_figStreamingUTIs;
 + (id)_fileUTTypes;
-+ (id)_getFigAssetCreationOptionsFromURLAssetInitializationOptions:(id)arg1 figAssetCreationFlags:(unsigned int*)arg2 error:(id*)arg3;
++ (id)_getFigAssetCreationOptionsFromURLAssetInitializationOptions:(id)arg1 figAssetCreationFlags:(unsigned long long*)arg2 error:(id*)arg3;
 + (id)_getFigAssetiTunesStoreContentInfoFromURLAssetiTunesStoreContentInfo:(id)arg1;
 + (id)_streamingUTTypes;
 + (id)audiovisualMIMETypes;
@@ -67,7 +67,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)downloadDestinationURL;
-- (unsigned int)downloadToken;
+- (unsigned long long)downloadToken;
 - (void)finalize;
 - (id)identifyingTagClass;
 - (id)init;

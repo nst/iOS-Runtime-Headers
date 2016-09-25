@@ -14,7 +14,7 @@
     }  _has;
     unsigned int  _newSchema;
     unsigned int  _oldSchema;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) unsigned int domain;
@@ -26,7 +26,7 @@
 @property (nonatomic) BOOL hasTimestamp;
 @property (nonatomic) unsigned int newSchema;
 @property (nonatomic) unsigned int oldSchema;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -54,8 +54,8 @@
 - (void)setHasTimestamp:(BOOL)arg1;
 - (void)setNewSchema:(unsigned int)arg1;
 - (void)setOldSchema:(unsigned int)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
-- (unsigned int)timestamp;
+- (void)setTimestamp:(unsigned long long)arg1;
+- (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 
 @end

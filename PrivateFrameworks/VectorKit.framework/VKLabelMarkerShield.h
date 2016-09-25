@@ -13,24 +13,24 @@
 @property (nonatomic, readonly) NSString *locale;
 @property (nonatomic, readonly) NSString *shieldColorString;
 @property (nonatomic, readonly) NSString *shieldText;
-@property (nonatomic, readonly) int shieldType;
+@property (nonatomic, readonly) long long shieldType;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSString *text;
-@property (nonatomic, readonly) int type;
+@property (nonatomic, readonly) long long type;
 
 // Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
 
-- (struct { struct Matrix<float, 4, 1> { double x_1_1_1[4]; } x1; })color;
+- (struct { struct Matrix<float, 4, 1> { float x_1_1_1[4]; } x1; })color;
 - (void)dealloc;
 - (id)initWithImageKey:(id)arg1;
 - (id)locale;
 - (id)text;
-- (int)type;
+- (long long)type;
 
 // Image: /System/Library/Frameworks/MapKit.framework/MapKit
 
 - (id)shieldColorString;
 - (id)shieldText;
-- (int)shieldType;
+- (long long)shieldType;
 
 @end

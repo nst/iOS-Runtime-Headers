@@ -6,19 +6,19 @@
     CKServerChangeToken * _changeToken;
     NSDate * _lastSyncDownDate;
     BOOL  _needsSyncDown;
-    unsigned int  _requestID;
+    unsigned long long  _requestID;
 }
 
 @property (nonatomic, readonly) CKServerChangeToken *changeToken;
 @property (readonly) NSDate *lastSyncDownDate;
 @property (nonatomic) BOOL needsSyncDown;
-@property (nonatomic, readonly) unsigned int requestID;
+@property (nonatomic, readonly) unsigned long long requestID;
 
 + (id)loadFromClientStateInSession:(id)arg1 options:(id)arg2;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (unsigned int)allocateNextRequestID;
+- (unsigned long long)allocateNextRequestID;
 - (id)changeToken;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -27,9 +27,9 @@
 - (id)initWithZoneHealthState:(id)arg1;
 - (id)lastSyncDownDate;
 - (BOOL)needsSyncDown;
-- (unsigned int)requestID;
+- (unsigned long long)requestID;
 - (void)setNeedsSyncDown:(BOOL)arg1;
-- (void)updateWithServerChangeToken:(id)arg1 requestID:(unsigned int)arg2;
+- (void)updateWithServerChangeToken:(id)arg1 requestID:(unsigned long long)arg2;
 - (void)zoneHealthWasReset;
 
 @end

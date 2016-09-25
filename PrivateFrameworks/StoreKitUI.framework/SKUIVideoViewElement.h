@@ -4,13 +4,13 @@
 
 @interface SKUIVideoViewElement : SKUIViewElement {
     BOOL  _enabled;
-    int  _itemIdentifier;
+    long long  _itemIdentifier;
     int  _playbackStyle;
     SKUIImageViewElement * _thumbnailImage;
 }
 
 @property (nonatomic, readonly) NSArray *assets;
-@property (nonatomic, readonly) int itemIdentifier;
+@property (nonatomic, readonly) long long itemIdentifier;
 @property (nonatomic, readonly) int playbackStyle;
 @property (nonatomic, readonly) SKUIImageViewElement *thumbnailImage;
 
@@ -19,7 +19,7 @@
 - (id)assets;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
 - (BOOL)isEnabled;
-- (int)itemIdentifier;
+- (long long)itemIdentifier;
 - (int)playbackStyle;
 - (id)thumbnailImage;
 

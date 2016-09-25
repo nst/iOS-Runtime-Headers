@@ -39,7 +39,7 @@
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isCompatibleWithFamily:(int)arg1;
 - (BOOL)isEqual:(id)arg1;
-- (struct CGSize { double x1; double x2; })maxSizeForImageProviderKey:(id)arg1;
+- (struct CGSize { float x1; float x2; })maxSizeForImageProviderKey:(id)arg1;
 - (void)setTintColor:(id)arg1;
 - (int)timeTravelUpdateFrequency;
 - (id)tintColor;

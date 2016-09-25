@@ -18,6 +18,6 @@
 - (id)shiftLockImageName;
 - (id)shiftOnKeyImageName;
 - (id)thinKeycapsFontName;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })topEdgeAdjustmentInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })topEdgeAdjustmentInsets;
 
 @end

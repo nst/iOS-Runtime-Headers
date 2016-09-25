@@ -10,7 +10,7 @@
     unsigned long  _chunkCount;
     NSURL * _contentBaseURL;
     NSNumber * _deviceID;
-    unsigned int  _downloadTokenExpiration;
+    unsigned long long  _downloadTokenExpiration;
     NSError * _error;
     NSNumber * _fileID;
     NSURL * _fileURL;
@@ -21,10 +21,10 @@
     BOOL  _inMemoryDownloadLooksOkay;
     BOOL  _isAlreadyRegistered;
     BOOL  _isReaderReadFrom;
-    unsigned int  _itemID;
+    unsigned long long  _itemID;
     NSString * _itemTypeHint;
     NSNumber * _modTimeInSeconds;
-    unsigned int  _offset;
+    unsigned long long  _offset;
     NSString * _owner;
     CKPackage * _package;
     unsigned int  _packageIndex;
@@ -38,11 +38,11 @@
     NSMutableArray * _sectionItems;
     BOOL  _shouldReadRawEncryptedData;
     NSData * _signature;
-    unsigned int  _size;
+    unsigned long long  _size;
     BOOL  _temporary;
     NSString * _trackingUUID;
     NSString * _uploadReceipt;
-    unsigned int  _uploadTokenExpiration;
+    unsigned long long  _uploadTokenExpiration;
     NSData * _wrappedAssetKey;
     CKDMMCSItemCommandWriter * _writer;
 }
@@ -54,7 +54,7 @@
 @property (nonatomic) unsigned long chunkCount;
 @property (nonatomic, retain) NSURL *contentBaseURL;
 @property (nonatomic, retain) NSNumber *deviceID;
-@property (nonatomic) unsigned int downloadTokenExpiration;
+@property (nonatomic) unsigned long long downloadTokenExpiration;
 @property (nonatomic, retain) NSError *error;
 @property (nonatomic, retain) NSNumber *fileID;
 @property (nonatomic, retain) NSURL *fileURL;
@@ -65,10 +65,10 @@
 @property (nonatomic) BOOL inMemoryDownloadLooksOkay;
 @property (nonatomic) BOOL isAlreadyRegistered;
 @property (nonatomic) BOOL isReaderReadFrom;
-@property (nonatomic) unsigned int itemID;
+@property (nonatomic) unsigned long long itemID;
 @property (nonatomic, retain) NSString *itemTypeHint;
 @property (nonatomic, retain) NSNumber *modTimeInSeconds;
-@property (nonatomic) unsigned int offset;
+@property (nonatomic) unsigned long long offset;
 @property (nonatomic, retain) NSString *owner;
 @property (nonatomic, retain) CKPackage *package;
 @property (nonatomic) unsigned int packageIndex;
@@ -82,11 +82,11 @@
 @property (nonatomic, retain) NSMutableArray *sectionItems;
 @property (nonatomic) BOOL shouldReadRawEncryptedData;
 @property (nonatomic, retain) NSData *signature;
-@property (nonatomic) unsigned int size;
+@property (nonatomic) unsigned long long size;
 @property (getter=isTemporary, nonatomic) BOOL temporary;
 @property (nonatomic, retain) NSString *trackingUUID;
 @property (nonatomic, retain) NSString *uploadReceipt;
-@property (nonatomic) unsigned int uploadTokenExpiration;
+@property (nonatomic) unsigned long long uploadTokenExpiration;
 @property (nonatomic, retain) NSData *wrappedAssetKey;
 @property (nonatomic, retain) CKDMMCSItemCommandWriter *writer;
 
@@ -101,7 +101,7 @@
 - (id)contentBaseURL;
 - (id)description;
 - (id)deviceID;
-- (unsigned int)downloadTokenExpiration;
+- (unsigned long long)downloadTokenExpiration;
 - (id)error;
 - (id)fileID;
 - (id)fileURL;
@@ -119,10 +119,10 @@
 - (BOOL)isAlreadyRegistered;
 - (BOOL)isReaderReadFrom;
 - (BOOL)isTemporary;
-- (unsigned int)itemID;
+- (unsigned long long)itemID;
 - (id)itemTypeHint;
 - (id)modTimeInSeconds;
-- (unsigned int)offset;
+- (unsigned long long)offset;
 - (id)openWithError:(id*)arg1;
 - (id)openWithProxy:(id)arg1 error:(id*)arg2;
 - (id)owner;
@@ -143,7 +143,7 @@
 - (void)setChunkCount:(unsigned long)arg1;
 - (void)setContentBaseURL:(id)arg1;
 - (void)setDeviceID:(id)arg1;
-- (void)setDownloadTokenExpiration:(unsigned int)arg1;
+- (void)setDownloadTokenExpiration:(unsigned long long)arg1;
 - (void)setError:(id)arg1;
 - (void)setFileID:(id)arg1;
 - (void)setFileURL:(id)arg1;
@@ -154,10 +154,10 @@
 - (void)setInMemoryDownloadLooksOkay:(BOOL)arg1;
 - (void)setIsAlreadyRegistered:(BOOL)arg1;
 - (void)setIsReaderReadFrom:(BOOL)arg1;
-- (void)setItemID:(unsigned int)arg1;
+- (void)setItemID:(unsigned long long)arg1;
 - (void)setItemTypeHint:(id)arg1;
 - (void)setModTimeInSeconds:(id)arg1;
-- (void)setOffset:(unsigned int)arg1;
+- (void)setOffset:(unsigned long long)arg1;
 - (void)setOwner:(id)arg1;
 - (void)setPackage:(id)arg1;
 - (void)setPackageIndex:(unsigned int)arg1;
@@ -171,19 +171,19 @@
 - (void)setSectionItems:(id)arg1;
 - (void)setShouldReadRawEncryptedData:(BOOL)arg1;
 - (void)setSignature:(id)arg1;
-- (void)setSize:(unsigned int)arg1;
+- (void)setSize:(unsigned long long)arg1;
 - (void)setTemporary:(BOOL)arg1;
 - (void)setTrackingUUID:(id)arg1;
 - (void)setUploadReceipt:(id)arg1;
-- (void)setUploadTokenExpiration:(unsigned int)arg1;
+- (void)setUploadTokenExpiration:(unsigned long long)arg1;
 - (void)setWrappedAssetKey:(id)arg1;
 - (void)setWriter:(id)arg1;
 - (BOOL)shouldReadRawEncryptedData;
 - (id)signature;
-- (unsigned int)size;
+- (unsigned long long)size;
 - (id)trackingUUID;
 - (id)uploadReceipt;
-- (unsigned int)uploadTokenExpiration;
+- (unsigned long long)uploadTokenExpiration;
 - (id)wrappedAssetKey;
 - (id)writer;
 

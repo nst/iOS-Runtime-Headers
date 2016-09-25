@@ -23,8 +23,8 @@
     }  _has;
     NSString * _localizedShortTitle;
     NSString * _localizedTitle;
-    double  _maximumRating;
-    double  _minimumRating;
+    float  _maximumRating;
+    float  _minimumRating;
     int  _numAvailableSkips;
     struct { 
         double *list; 
@@ -37,7 +37,7 @@
     int  _skipFrequency;
     int  _skipInterval;
     struct { 
-        double *list; 
+        float *list; 
         unsigned int count; 
         unsigned int size; 
     }  _supportedRates;
@@ -63,8 +63,8 @@
 @property (nonatomic) BOOL hasSkipInterval;
 @property (nonatomic, retain) NSString *localizedShortTitle;
 @property (nonatomic, retain) NSString *localizedTitle;
-@property (nonatomic) double maximumRating;
-@property (nonatomic) double minimumRating;
+@property (nonatomic) float maximumRating;
+@property (nonatomic) float minimumRating;
 @property (nonatomic) int numAvailableSkips;
 @property (nonatomic, readonly) double*preferredIntervals;
 @property (nonatomic, readonly) unsigned int preferredIntervalsCount;

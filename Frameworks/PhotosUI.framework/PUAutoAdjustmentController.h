@@ -5,8 +5,8 @@
 @interface PUAutoAdjustmentController : NSObject {
     BOOL  _busy;
     NSArray * _cachedRedEyeCorrections;
-    double  _cachedSmartColorLevel;
-    double  _cachedSmartToneLevel;
+    float  _cachedSmartColorLevel;
+    float  _cachedSmartToneLevel;
     BOOL  _cachedValuesAreValid;
     NSDictionary * _cachedWhiteBalanceSettings;
     PLPhotoEditModel * _stashedPreviousManualModel;

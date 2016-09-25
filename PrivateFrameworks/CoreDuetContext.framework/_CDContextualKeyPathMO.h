@@ -5,7 +5,7 @@
 @interface _CDContextualKeyPathMO : NSManagedObject
 
 @property (nonatomic, retain) NSDate *creationDate;
-@property (nonatomic) unsigned int deviceID;
+@property (nonatomic) unsigned long long deviceID;
 @property (nonatomic) BOOL isEphemeral;
 @property (nonatomic) BOOL isUserCentric;
 @property (nonatomic, retain) NSString *key;

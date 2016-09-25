@@ -21,6 +21,6 @@
 - (void)deletePhoneNumberMapping;
 - (void)evictAllEntries;
 - (id)init;
-- (void)shrinkBySize:(unsigned int)arg1 finished:(id /* block */)arg2;
+- (void)shrinkBySize:(unsigned long long)arg1 finished:(id /* block */)arg2;
 
 @end

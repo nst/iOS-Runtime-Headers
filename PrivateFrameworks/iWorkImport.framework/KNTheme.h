@@ -17,7 +17,7 @@
 
 @property (nonatomic, retain) NSString *UUID;
 @property (nonatomic, retain) NSArray *classicThemeRecords;
-@property (nonatomic, readonly) double cornerRadius;
+@property (nonatomic, readonly) float cornerRadius;
 @property (nonatomic, copy) NSDictionary *customEffectTimingCurves;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, retain) KNSlideNode *defaultMasterSlideNode;
@@ -28,7 +28,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) NSArray *masters;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } thumbnailSize;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } thumbnailSize;
 
 + (void)bootstrapPresetsOfKind:(id)arg1 inTheme:(id)arg2 alternate:(int)arg3;
 + (id)classicThemeNameFromTheme:(id)arg1;
@@ -44,10 +44,10 @@
 - (void)addDefaultPresenterNotesStylesIfAbsent;
 - (void)addMasterSlideNode:(id)arg1 dolcContext:(id)arg2;
 - (void)addMasterSlideNode:(id)arg1 withThumbnails:(id)arg2 dolcContext:(id)arg3;
-- (void)bootstrapBlackThemeOfSize:(struct CGSize { double x1; double x2; })arg1;
-- (void)bootstrapGradientThemeOfSize:(struct CGSize { double x1; double x2; })arg1;
-- (void)bootstrapThemeOfSize:(struct CGSize { double x1; double x2; })arg1 alternate:(int)arg2;
-- (void)bootstrapWhiteThemeOfSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)bootstrapBlackThemeOfSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)bootstrapGradientThemeOfSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)bootstrapThemeOfSize:(struct CGSize { float x1; float x2; })arg1 alternate:(int)arg2;
+- (void)bootstrapWhiteThemeOfSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)childEnumerator;
 - (id)classicThemeRecords;
 - (BOOL)containsMasterWithName:(id)arg1;
@@ -103,7 +103,7 @@
 - (id)slideNamesMatchingPrefix:(id)arg1;
 - (id)slideNodeForFormulaReferenceName:(id)arg1 caseSensitive:(BOOL)arg2;
 - (id)themeCurvesForBuilds:(id)arg1 slideNodes:(id)arg2;
-- (struct CGSize { double x1; double x2; })thumbnailSize;
+- (struct CGSize { float x1; float x2; })thumbnailSize;
 - (id)undeletableStyles;
 - (id)updatedThemeCurveInfoForPastedThemeCurves:(id)arg1;
 - (void)wasAddedToDocumentRoot:(id)arg1 dolcContext:(id)arg2;

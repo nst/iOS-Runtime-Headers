@@ -47,8 +47,8 @@
 + (id)_remoteAlertViewWithBlock:(id /* block */)arg1;
 + (void)_setSpringBoardAlertDisplayingOverApplicationAlert:(BOOL)arg1;
 + (BOOL)_springBoardAlertDisplayingOverApplicationAlert;
-+ (void)applyTransformToAllAlerts:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
-+ (struct CGSize { double x1; double x2; })minimumSize;
++ (void)applyTransformToAllAlerts:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
++ (struct CGSize { float x1; float x2; })minimumSize;
 
 - (void).cxx_destruct;
 - (id)_addButtonWithTitle:(id)arg1;
@@ -109,7 +109,7 @@
 - (id)addTextFieldWithValue:(id)arg1 label:(id)arg2;
 - (int)alertSheetStyle;
 - (int)alertViewStyle;
-- (struct CGSize { double x1; double x2; })backgroundSize;
+- (struct CGSize { float x1; float x2; })backgroundSize;
 - (int)bodyMaxLineCount;
 - (id)bodyText;
 - (id)bodyTextLabel;
@@ -130,7 +130,7 @@
 - (BOOL)forceHorizontalButtonsLayout;
 - (BOOL)groupsTextFields;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithTitle:(id)arg1 buttons:(id)arg2 defaultButtonIndex:(int)arg3 delegate:(id)arg4 context:(id)arg5;
 - (id)initWithTitle:(id)arg1 message:(id)arg2 delegate:(id)arg3 cancelButtonTitle:(id)arg4 otherButtonTitles:(id)arg5;
 - (id)initWithTitle:(id)arg1 message:(id)arg2 delegate:(id)arg3 defaultButton:(id)arg4 cancelButton:(id)arg5 otherButtons:(id)arg6;
@@ -192,7 +192,7 @@
 - (id)title;
 - (id)titleLabel;
 - (int)titleMaxLineCount;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })titleRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })titleRect;
 - (id)window;
 
 // Image: /System/Library/PrivateFrameworks/Swift/libswiftUIKit.dylib

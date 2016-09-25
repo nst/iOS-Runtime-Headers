@@ -9,27 +9,27 @@
     struct __CVBuffer { } * _inputTexture;
     struct __CVPixelBufferPool { } * _largePool;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _largePoolSize;
     struct _CAImageQueue { } * _outputImageQueue;
     struct __CVBuffer { } * _outputPixelBuffer;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _outputSize;
     struct __CVBuffer { } * _outputTexture;
     bool  _render9Up;
     bool  _renderForSave;
     struct __CVPixelBufferPool { } * _smallPool;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _smallPoolSize;
     struct __CVOpenGLESTextureCache { } * _textureCache;
 }
 
-- (void)_createPixelBuffer:(struct __CVBuffer {}**)arg1 withSize:(struct CGSize { double x1; double x2; })arg2;
+- (void)_createPixelBuffer:(struct __CVBuffer {}**)arg1 withSize:(struct CGSize { float x1; float x2; })arg2;
 - (id)ciContext;
 - (struct __CVBuffer { }*)createCVPixelBufferForFilter:(id)arg1 inputPixelBuffer:(struct __CVBuffer { }*)arg2 mirrored:(BOOL)arg3;
 - (void)dealloc;
@@ -39,7 +39,7 @@
 - (struct __CVPixelBufferPool { }*)largePool;
 - (struct _CAImageQueue { }*)outputImageQueue;
 - (struct __CVBuffer { }*)outputPixelBuffer;
-- (struct CGSize { double x1; double x2; })outputSize;
+- (struct CGSize { float x1; float x2; })outputSize;
 - (unsigned int)outputTexture;
 - (bool)render9Up;
 - (void)renderFilter:(id)arg1 inputPixelBuffer:(struct __CVBuffer { }*)arg2;
@@ -53,7 +53,7 @@
 - (void)setOutputImageQueue:(struct _CAImageQueue { }*)arg1;
 - (void)setOutputPixelBuffer:(struct __CVBuffer { }*)arg1;
 - (void)setOutputPixelBuffer:(struct __CVBuffer { }*)arg1 mapTexture:(BOOL)arg2;
-- (void)setOutputSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setOutputSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setRender9Up:(bool)arg1;
 - (void)setRenderForSave:(bool)arg1;
 - (void)setSmallPool:(struct __CVPixelBufferPool { }*)arg1;

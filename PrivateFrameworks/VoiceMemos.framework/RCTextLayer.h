@@ -4,8 +4,8 @@
 
 @interface RCTextLayer : CALayer {
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _cachedSize;
     unsigned int  _cachedSizeHash;
     UIFont * _font;
@@ -23,13 +23,13 @@
 
 - (void).cxx_destruct;
 - (id)_attributes;
-- (struct CGSize { double x1; double x2; })_displaySize;
+- (struct CGSize { float x1; float x2; })_displaySize;
 - (void)drawInContext:(struct CGContext { }*)arg1;
 - (id)font;
 - (id)init;
 - (int)preferredAlignment;
 - (void)setFont:(id)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setPreferredAlignment:(int)arg1;
 - (void)setText:(id)arg1;
 - (void)setTextAlignment:(int)arg1;
@@ -38,6 +38,6 @@
 - (id)text;
 - (int)textAlignment;
 - (id)textColor;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })textRectWithAlignment:(int)arg1 inLayoutBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })textRectWithAlignment:(int)arg1 inLayoutBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 
 @end

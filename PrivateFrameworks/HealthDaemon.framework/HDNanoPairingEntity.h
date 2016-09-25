@@ -10,7 +10,7 @@
     NSUUID * _nanoRegistryUUID;
     NSUUID * _persistentUUID;
     BOOL  _restoreComplete;
-    int  _syncProvenance;
+    long long  _syncProvenance;
 }
 
 @property (nonatomic, copy) NSString *defaultSourceBundleIdentifier;
@@ -20,13 +20,13 @@
 @property (nonatomic, retain) NSUUID *nanoRegistryUUID;
 @property (nonatomic, retain) NSUUID *persistentUUID;
 @property (getter=isRestoreComplete, nonatomic) BOOL restoreComplete;
-@property (nonatomic) int syncProvenance;
+@property (nonatomic) long long syncProvenance;
 
 + (id)_nanoPairingEntitiesWithPredicate:(id)arg1 database:(id)arg2 error:(id*)arg3;
 + (id)_predicateWithRegistryUUID:(id)arg1;
 + (id)columnsDefinition;
 + (id)databaseTable;
-+ (BOOL)enumeratePairingsForStoreIdentifier:(int)arg1 database:(id)arg2 error:(id*)arg3 handler:(id /* block */)arg4;
++ (BOOL)enumeratePairingsForStoreIdentifier:(long long)arg1 database:(id)arg2 error:(id*)arg3 handler:(id /* block */)arg4;
 + (id)nanoPairingEntityWithRegistryUUID:(id)arg1 healthDatabase:(id)arg2 error:(id*)arg3;
 + (int)protectionClass;
 + (id)sourceEntityForRegistryUUID:(id)arg1 healthDatabase:(id)arg2 error:(id*)arg3;
@@ -49,7 +49,7 @@
 - (void)setNanoRegistryUUID:(id)arg1;
 - (void)setPersistentUUID:(id)arg1;
 - (void)setRestoreComplete:(BOOL)arg1;
-- (void)setSyncProvenance:(int)arg1;
-- (int)syncProvenance;
+- (void)setSyncProvenance:(long long)arg1;
+- (long long)syncProvenance;
 
 @end

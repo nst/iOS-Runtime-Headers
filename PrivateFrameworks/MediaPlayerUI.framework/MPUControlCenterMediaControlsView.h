@@ -49,15 +49,15 @@
 @property (nonatomic) BOOL useCompactStyle;
 
 - (void).cxx_destruct;
-- (struct CGSize { double x1; double x2; })_artworkViewSize;
+- (struct CGSize { float x1; float x2; })_artworkViewSize;
 - (id)_createTappableNowPlayingMetadataView;
 - (void)_init;
-- (void)_layoutExpandedRoutingViewUsingBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)_layoutExpandedRoutingViewUsingBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_layoutPad;
 - (void)_layoutPhoneCompactStyle;
 - (void)_layoutPhoneLandscape;
 - (void)_layoutPhoneRegularStyle;
-- (void)_layoutPhoneRegularStyleMediaControlsUsingBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)_layoutPhoneRegularStyleMediaControlsUsingBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)_nowPlayingMetadataHasDisplayableProperties:(id)arg1;
 - (id)_nowPlayingMetadataTextWithString:(id)arg1 bold:(BOOL)arg2 centered:(BOOL)arg3;
 - (void)_primaryActionTapped:(id)arg1;
@@ -72,8 +72,8 @@
 - (id)emptyNowPlayingView;
 - (void)emptyNowPlayingView:(id)arg1 couldNotLoadApplication:(id)arg2;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (unsigned int)layoutStyle;
 - (void)layoutSubviews;
 - (id)pickedRoute;

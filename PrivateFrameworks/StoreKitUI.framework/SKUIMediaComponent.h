@@ -8,12 +8,12 @@
     double  _duration;
     SKUILink * _link;
     int  _mediaAppearance;
-    int  _mediaIdentifier;
+    long long  _mediaIdentifier;
     int  _mediaType;
     NSString * _mediaURLString;
     <SKUIArtworkProviding> * _thumbnailArtworkProvider;
     NSString * _title;
-    double  _titleFontSize;
+    float  _titleFontSize;
     int  _titleFontWeight;
 }
 
@@ -25,13 +25,13 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) SKUILink *link;
 @property (nonatomic, readonly) int mediaAppearance;
-@property (nonatomic, readonly) int mediaIdentifier;
+@property (nonatomic, readonly) long long mediaIdentifier;
 @property (nonatomic, readonly) int mediaType;
 @property (nonatomic, readonly) NSString *mediaURLString;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) <SKUIArtworkProviding> *thumbnailArtworkProvider;
 @property (nonatomic, readonly) NSString *title;
-@property (nonatomic, readonly) double titleFontSize;
+@property (nonatomic, readonly) float titleFontSize;
 @property (nonatomic, readonly) int titleFontWeight;
 
 - (void).cxx_destruct;
@@ -48,7 +48,7 @@
 - (id)initWithFeaturedContentContext:(id)arg1 kind:(int)arg2;
 - (id)link;
 - (int)mediaAppearance;
-- (int)mediaIdentifier;
+- (long long)mediaIdentifier;
 - (int)mediaType;
 - (id)mediaURLString;
 - (id)metricsElementName;

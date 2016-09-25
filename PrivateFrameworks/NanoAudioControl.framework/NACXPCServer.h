@@ -9,7 +9,7 @@
     NSObject<OS_dispatch_source> * _audioRouteDeferTimer;
     NSMutableDictionary * _audioRoutesRecords;
     NPSDomainAccessor * _domainAccessor;
-    double  _hapticIntensity;
+    float  _hapticIntensity;
     NACIDSClient * _idsClient;
     NSObject<OS_dispatch_queue> * _internalQueue;
     BOOL  _prominentHapticEnabled;

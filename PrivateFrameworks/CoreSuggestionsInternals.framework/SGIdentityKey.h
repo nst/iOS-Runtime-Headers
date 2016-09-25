@@ -11,7 +11,7 @@
 @property (nonatomic, readonly) unsigned int type;
 
 + (unsigned int)identityTypeForKeyPart:(id)arg1;
-+ (BOOL)isSupportedEntityType:(int)arg1;
++ (BOOL)isSupportedEntityType:(long long)arg1;
 + (id)keyForContactExternalId:(int)arg1;
 + (id)keyForContactUniqueId:(id)arg1;
 + (id)keyForEmail:(id)arg1;

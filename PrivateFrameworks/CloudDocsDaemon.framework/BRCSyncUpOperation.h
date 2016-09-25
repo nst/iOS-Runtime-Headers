@@ -4,7 +4,7 @@
 
 @interface BRCSyncUpOperation : _BRCOperation <BRCOperationSubclass> {
     NSMutableDictionary * _conflictLosersToResolveByRecordID;
-    double  _cost;
+    float  _cost;
     NSMutableArray * _createdAppLibraryNames;
     NSMutableArray * _deletedRecordIDs;
     BRCLocalItem * _itemNeedingPCSChaining;
@@ -15,14 +15,14 @@
     NSMutableArray * _recordsNeedingNewSharingProtectionInfo;
     NSMutableArray * _recordsNeedingUpdatedSharingProtectionInfo;
     NSMutableArray * _recordsToSave;
-    unsigned int  _requestID;
+    unsigned long long  _requestID;
     BRCServerZone * _serverZone;
     NSString * _stageID;
     id /* block */  _syncUpCompletionBlock;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *conflictLosersToResolveByRecordID;
-@property (nonatomic, readonly) double cost;
+@property (nonatomic, readonly) float cost;
 @property (nonatomic, readonly) NSMutableArray *createdAppLibraryNames;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, retain) NSMutableArray *deletedRecordIDs;
@@ -41,7 +41,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, copy) id /* block */ syncUpCompletionBlock;
 
-+ (id)syncUpOperationForZone:(id)arg1 maxCost:(float)arg2 retryAfter:(unsigned int*)arg3;
++ (id)syncUpOperationForZone:(id)arg1 maxCost:(float)arg2 retryAfter:(unsigned long long*)arg3;
 
 - (void).cxx_destruct;
 - (void)_performModifyRecordsOrPCSChainOperationWithCompletion:(id /* block */)arg1;
@@ -64,7 +64,7 @@
 - (void)main;
 - (id)packagesInFlight;
 - (void)performShareUpdate:(id /* block */)arg1;
-- (BOOL)prepareWithMaxCost:(float)arg1 retryAfter:(unsigned int*)arg2;
+- (BOOL)prepareWithMaxCost:(float)arg1 retryAfter:(unsigned long long*)arg2;
 - (id)recordIDsToDeleteToEtags;
 - (id)recordsNeedingNewSharingProtectionInfo;
 - (id)recordsNeedingUpdatedSharingProtectionInfo;

@@ -3,23 +3,23 @@
  */
 
 @interface NTKOneColumnModularSmallLayoutAttributes : NSObject {
-    double  _imageHeight;
-    double  _imageOriginY;
-    double  _marginWidth;
-    double  _minimumFontSize;
-    double  _subtitleBaselineOffset;
+    float  _imageHeight;
+    float  _imageOriginY;
+    float  _marginWidth;
+    float  _minimumFontSize;
+    float  _subtitleBaselineOffset;
     CLKFont * _subtitleFont;
-    double  _titleBaselineOffset;
+    float  _titleBaselineOffset;
     CLKFont * _titleFont;
 }
 
-@property (nonatomic) double imageHeight;
-@property (nonatomic) double imageOriginY;
-@property (nonatomic) double marginWidth;
-@property (nonatomic) double minimumFontSize;
-@property (nonatomic) double subtitleBaselineOffset;
+@property (nonatomic) float imageHeight;
+@property (nonatomic) float imageOriginY;
+@property (nonatomic) float marginWidth;
+@property (nonatomic) float minimumFontSize;
+@property (nonatomic) float subtitleBaselineOffset;
 @property (nonatomic, retain) CLKFont *subtitleFont;
-@property (nonatomic) double titleBaselineOffset;
+@property (nonatomic) float titleBaselineOffset;
 @property (nonatomic, retain) CLKFont *titleFont;
 
 + (id)attributesForTemplate:(id)arg1;

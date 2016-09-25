@@ -8,13 +8,13 @@
         unsigned int lastSysMode : 1; 
     }  _has;
     int  _lastSysMode;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) BOOL hasLastSysMode;
 @property (nonatomic) BOOL hasTimestamp;
 @property (nonatomic) int lastSysMode;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -30,8 +30,8 @@
 - (void)setHasLastSysMode:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
 - (void)setLastSysMode:(int)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
-- (unsigned int)timestamp;
+- (void)setTimestamp:(unsigned long long)arg1;
+- (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 
 @end

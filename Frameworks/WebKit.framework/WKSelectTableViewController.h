@@ -5,8 +5,8 @@
 @interface WKSelectTableViewController : UITableViewController <UIKeyInput> {
     BOOL  _allowsMultipleSelection;
     WKContentView * _contentView;
-    double  _fontSize;
-    double  _maximumTextWidth;
+    float  _fontSize;
+    float  _maximumTextWidth;
     int  _numberOfSections;
     WKSelectPopover * _popover;
     unsigned int  _singleSelectionIndex;

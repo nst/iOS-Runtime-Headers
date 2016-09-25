@@ -27,7 +27,7 @@
 - (id)publicController;
 - (void)setExtension:(id)arg1;
 - (void)setExtensionRequestIdentifier:(id)arg1;
-- (void)setPreferredContentSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setPreferredContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setPublicController:(id)arg1;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 

@@ -8,7 +8,7 @@
     int  _photoEXIFOrientation;
     BOOL  _photoHasColorAdjustments;
     double  _photoTime;
-    double  _videoCropFactor;
+    float  _videoCropFactor;
     AVPlayerItem * _videoPlayerItem;
 }
 
@@ -17,7 +17,7 @@
 @property (nonatomic, readonly) int photoEXIFOrientation;
 @property (nonatomic, readonly) BOOL photoHasColorAdjustments;
 @property (nonatomic, readonly) double photoTime;
-@property (nonatomic, readonly) double videoCropFactor;
+@property (nonatomic, readonly) float videoCropFactor;
 @property (nonatomic, readonly) AVPlayerItem *videoPlayerItem;
 
 - (void).cxx_destruct;

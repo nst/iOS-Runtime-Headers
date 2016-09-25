@@ -5,7 +5,7 @@
 @interface CPParagraphMaker : NSObject {
     NSMutableArray * avail;
     NSMutableArray * compoundedShapesOnPage;
-    double  currentSpacing;
+    float  currentSpacing;
     CPPage * page;
     NSMutableArray * paragraphs;
     CPZone * parent;

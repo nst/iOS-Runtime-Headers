@@ -33,22 +33,22 @@
 @property (readonly) NSURL *committedURL;
 @property (copy) NSString *customUserAgent;
 @property (readonly) double estimatedProgress;
-@property double gapBetweenPages;
+@property float gapBetweenPages;
 @property (nonatomic, readonly) WKBrowsingContextHandle *handle;
 @property (readonly) BOOL hasOnlySecureContent;
 @property <WKBrowsingContextHistoryDelegate> *historyDelegate;
 @property <WKBrowsingContextLoadDelegate> *loadDelegate;
 @property (getter=isLoading, readonly) BOOL loading;
 @property (readonly) unsigned int pageCount;
-@property double pageLength;
-@property double pageZoom;
+@property float pageLength;
+@property float pageZoom;
 @property BOOL paginationBehavesLikeColumns;
 @property BOOL paginationLineGridEnabled;
 @property unsigned int paginationMode;
 @property <WKBrowsingContextPolicyDelegate> *policyDelegate;
 @property (nonatomic, readonly) int processIdentifier;
 @property (readonly) NSURL *provisionalURL;
-@property double textZoom;
+@property float textZoom;
 @property (readonly) NSString *title;
 @property (readonly) NSURL *unreachableURL;
 

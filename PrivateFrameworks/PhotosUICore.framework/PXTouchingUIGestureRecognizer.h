@@ -5,27 +5,27 @@
 @interface PXTouchingUIGestureRecognizer : UIGestureRecognizer {
     unsigned int  __beginRequestID;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  __initialPointInView;
     unsigned int  __touchCount;
-    double  _maximumTouchMovement;
+    float  _maximumTouchMovement;
     double  _minimumTouchDuration;
 }
 
 @property (setter=_setBeginRequestID:, nonatomic) unsigned int _beginRequestID;
-@property (setter=_setInitialPointInView:, nonatomic) struct CGPoint { double x1; double x2; } _initialPointInView;
+@property (setter=_setInitialPointInView:, nonatomic) struct CGPoint { float x1; float x2; } _initialPointInView;
 @property (setter=_setTouchCount:, nonatomic) unsigned int _touchCount;
-@property (nonatomic) double maximumTouchMovement;
+@property (nonatomic) float maximumTouchMovement;
 @property (nonatomic) double minimumTouchDuration;
 
 - (unsigned int)_beginRequestID;
 - (void)_beginWithRequestID:(unsigned int)arg1;
 - (void)_decrementTouchesBy:(unsigned int)arg1;
 - (void)_incrementTouchesBy:(unsigned int)arg1;
-- (struct CGPoint { double x1; double x2; })_initialPointInView;
+- (struct CGPoint { float x1; float x2; })_initialPointInView;
 - (void)_setBeginRequestID:(unsigned int)arg1;
-- (void)_setInitialPointInView:(struct CGPoint { double x1; double x2; })arg1;
+- (void)_setInitialPointInView:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_setTouchCount:(unsigned int)arg1;
 - (unsigned int)_touchCount;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;

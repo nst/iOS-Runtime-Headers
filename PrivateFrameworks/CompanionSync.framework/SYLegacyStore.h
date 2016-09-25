@@ -5,7 +5,7 @@
 @interface SYLegacyStore : SYStore <IDSServiceDelegate, NMSMessageCenterDelegate> {
     BOOL  _alwaysWins;
     NSMutableIndexSet * _batchChunkUnackedIndices;
-    unsigned int  _batchCounter;
+    unsigned long long  _batchCounter;
     NSString * _databaseFileName;
     BOOL  _deferredFullSync;
     BOOL  _encryptPayloads;
@@ -117,7 +117,7 @@
 - (id)newFullSyncContext;
 - (id)newMessageHeader;
 - (id /* block */)nextBatchStep;
-- (BOOL)objectChanged:(id)arg1 sinceVersion:(unsigned int)arg2;
+- (BOOL)objectChanged:(id)arg1 sinceVersion:(unsigned long long)arg2;
 - (id)pairedDeviceID;
 - (BOOL)peerState:(id)arg1 fromPeer:(id)arg2 matchesExpectationForChangeCount:(unsigned int)arg3 offsetAmount:(unsigned int*)arg4;
 - (BOOL)performBatchedSyncToCurrentDBVersion;
@@ -130,7 +130,7 @@
 - (int)priority;
 - (void)processBatchChunkAck:(unsigned int)arg1;
 - (BOOL)processBatchChunkAtIndex:(unsigned int)arg1 encodedObjects:(id)arg2 error:(id*)arg3;
-- (void)processBatchSyncEnd:(unsigned int)arg1;
+- (void)processBatchSyncEnd:(unsigned long long)arg1;
 - (void)processBatchSyncStart;
 - (id)queue;
 - (BOOL)registeredNotificationHandlers;

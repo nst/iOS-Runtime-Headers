@@ -54,7 +54,7 @@
 - (BOOL)isArticleAvailableForOfflineReading:(id)arg1;
 - (id)keyedOperationQueue:(id)arg1 performAsyncOperationForKey:(id)arg2 completion:(id /* block */)arg3;
 - (void)networkReachabilityDidChange:(id)arg1;
-- (void)notifyWhenFinishedDownloadingForOfflineReadingWithTimeout:(unsigned int)arg1 block:(id /* block */)arg2;
+- (void)notifyWhenFinishedDownloadingForOfflineReadingWithTimeout:(unsigned long long)arg1 block:(id /* block */)arg2;
 - (id)observer;
 - (id)operationSerialQueue;
 - (void)operationThrottler:(id)arg1 performAsyncOperationWithCompletion:(id /* block */)arg2;

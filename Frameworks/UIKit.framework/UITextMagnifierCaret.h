@@ -6,27 +6,27 @@
     int  _delayedAnimationType;
     BOOL  _isAnimating;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _offset;
-    double  _yOffset;
+    float  _yOffset;
 }
 
-@property (nonatomic) struct CGPoint { double x1; double x2; } offset;
-@property (nonatomic) double yOffset;
+@property (nonatomic) struct CGPoint { float x1; float x2; } offset;
+@property (nonatomic) float yOffset;
 
 + (id)sharedCaretMagnifier;
 
-- (struct CGPoint { double x1; double x2; })animationPoint;
-- (void)beginMagnifyingTarget:(id)arg1 text:(id)arg2 magnificationPoint:(struct CGPoint { double x1; double x2; })arg3 offset:(struct CGPoint { double x1; double x2; })arg4 animated:(BOOL)arg5;
+- (struct CGPoint { float x1; float x2; })animationPoint;
+- (void)beginMagnifyingTarget:(id)arg1 text:(id)arg2 magnificationPoint:(struct CGPoint { float x1; float x2; })arg3 offset:(struct CGPoint { float x1; float x2; })arg4 animated:(BOOL)arg5;
 - (id)initWithFrame;
 - (BOOL)isHorizontal;
-- (struct CGPoint { double x1; double x2; })offset;
+- (struct CGPoint { float x1; float x2; })offset;
 - (void)remove;
-- (void)setAnimationPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setAnimationPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setAutoscrollDirections:(int)arg1;
-- (void)setMagnificationPoint:(struct CGPoint { double x1; double x2; })arg1;
-- (void)setOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setMagnificationPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setYOffset:(float)arg1;
 - (void)stopMagnifying:(BOOL)arg1;
 - (BOOL)terminalPointPlacedCarefully;

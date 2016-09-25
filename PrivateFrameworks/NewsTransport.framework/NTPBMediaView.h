@@ -35,7 +35,7 @@
     NSString * _mediaId;
     int  _mediaType;
     NSMutableArray * _namedEntities;
-    int  _personalizationTreatmentId;
+    long long  _personalizationTreatmentId;
     int  _publisherArticleVersion;
     NSString * _referencedArticleId;
     NSString * _sectionHeadlineId;
@@ -87,7 +87,7 @@
 @property (nonatomic, retain) NSString *mediaId;
 @property (nonatomic) int mediaType;
 @property (nonatomic, retain) NSMutableArray *namedEntities;
-@property (nonatomic) int personalizationTreatmentId;
+@property (nonatomic) long long personalizationTreatmentId;
 @property (nonatomic) int publisherArticleVersion;
 @property (nonatomic, retain) NSString *referencedArticleId;
 @property (nonatomic, retain) NSString *sectionHeadlineId;
@@ -166,7 +166,7 @@
 - (id)namedEntities;
 - (id)namedEntitiesAtIndex:(unsigned int)arg1;
 - (unsigned int)namedEntitiesCount;
-- (int)personalizationTreatmentId;
+- (long long)personalizationTreatmentId;
 - (int)publisherArticleVersion;
 - (BOOL)readFrom:(id)arg1;
 - (id)referencedArticleId;
@@ -201,7 +201,7 @@
 - (void)setMediaId:(id)arg1;
 - (void)setMediaType:(int)arg1;
 - (void)setNamedEntities:(id)arg1;
-- (void)setPersonalizationTreatmentId:(int)arg1;
+- (void)setPersonalizationTreatmentId:(long long)arg1;
 - (void)setPublisherArticleVersion:(int)arg1;
 - (void)setReferencedArticleId:(id)arg1;
 - (void)setSectionHeadlineId:(id)arg1;

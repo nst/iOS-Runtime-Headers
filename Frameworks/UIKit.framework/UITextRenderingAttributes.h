@@ -3,26 +3,26 @@
  */
 
 @interface UITextRenderingAttributes : NSObject <NSCopying> {
-    double  _actualFontSize;
-    double  _actualTrackingAdjustment;
+    float  _actualFontSize;
+    float  _actualTrackingAdjustment;
     int  _alignment;
     int  _baselineAdjustment;
     BOOL  _drawUnderline;
     UIFont * _font;
     BOOL  _includeEmoji;
     int  _lineBreakMode;
-    double  _lineSpacing;
-    double  _minimumFontSize;
-    double  _minimumTrackingAdjustment;
-    double  _trackingAdjustment;
+    float  _lineSpacing;
+    float  _minimumFontSize;
+    float  _minimumTrackingAdjustment;
+    float  _trackingAdjustment;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _truncationRect;
 }

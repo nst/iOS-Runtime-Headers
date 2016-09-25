@@ -58,7 +58,7 @@
 - (id)pictureInPictureApplication;
 - (void)pictureInPictureInterruptionBegan;
 - (void)pictureInPictureInterruptionEnded;
-- (void)pictureInPictureViewController:(id)arg1 updateHostedWindowSize:(struct CGSize { double x1; double x2; })arg2 animationType:(int)arg3 initialSpringVelocity:(float)arg4;
+- (void)pictureInPictureViewController:(id)arg1 updateHostedWindowSize:(struct CGSize { float x1; float x2; })arg2 animationType:(int)arg3 initialSpringVelocity:(float)arg4;
 - (void)pictureInPictureViewControllerActionButtonTapped:(id)arg1;
 - (void)pictureInPictureViewControllerCancelButtonTapped:(id)arg1;
 - (void)pictureInPictureViewControllerHostedWindowSizeChangeBegan:(id)arg1;
@@ -74,12 +74,12 @@
 - (oneway void)setPlaybackProgress:(id)arg1 completionHandler:(id /* block */)arg2;
 - (oneway void)setShouldShowAlternateActionButtonImage:(BOOL)arg1 completionHandler:(id /* block */)arg2;
 - (oneway void)setShouldShowLoadingIndicator:(BOOL)arg1 completionHandler:(id /* block */)arg2;
-- (oneway void)setupAnimated:(BOOL)arg1 withHostedWindowHostingHandle:(id)arg2 preferredContentSize:(struct CGSize { double x1; double x2; })arg3 initialLayerFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg4 completionHandler:(id /* block */)arg5;
+- (oneway void)setupAnimated:(BOOL)arg1 withHostedWindowHostingHandle:(id)arg2 preferredContentSize:(struct CGSize { float x1; float x2; })arg3 initialLayerFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4 completionHandler:(id /* block */)arg5;
 - (BOOL)shouldStartPictureInPictureEnteringBackground;
 - (oneway void)startPictureInPictureAnimated:(BOOL)arg1 completionHandler:(id /* block */)arg2;
 - (void)startPictureInPictureEnteringBackgroundAnimated:(BOOL)arg1 withCompletionHandler:(id /* block */)arg2;
-- (oneway void)stopPictureInPictureAnimated:(BOOL)arg1 withFinalLayerFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 completionHandler:(id /* block */)arg3;
+- (oneway void)stopPictureInPictureAnimated:(BOOL)arg1 withFinalLayerFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 completionHandler:(id /* block */)arg3;
 - (void)suspend;
-- (oneway void)updatePreferredContentSize:(struct CGSize { double x1; double x2; })arg1 withCompletionHandler:(id /* block */)arg2;
+- (oneway void)updatePreferredContentSize:(struct CGSize { float x1; float x2; })arg1 withCompletionHandler:(id /* block */)arg2;
 
 @end

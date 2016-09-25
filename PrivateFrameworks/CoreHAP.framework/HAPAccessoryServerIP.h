@@ -9,7 +9,7 @@
     BOOL  _continuingLegacyWACpairing;
     NSString * _controllerUsername;
     BOOL  _establishingSecureConnection;
-    unsigned int  _featureFlags;
+    unsigned long long  _featureFlags;
     BOOL  _hasTunnelService;
     HAPHTTPClient * _httpClient;
     NSArray * _ipServices;

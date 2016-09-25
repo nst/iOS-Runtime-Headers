@@ -9,7 +9,7 @@
     BOOL  _allMultipleAssetIsMine;
     int  _assetCount;
     NSMutableSet * _assetUUIDs;
-    int  _bulletinType;
+    long long  _bulletinType;
     int  _commentCount;
     NSDate * _commentDate;
     BOOL  _commentIsCaption;
@@ -40,7 +40,7 @@
 @property (readonly, copy) NSString *albumCloudGUID;
 @property (readonly, copy) NSString *albumUUID;
 @property (readonly) BOOL allAssetsAreFullResolution;
-@property (readonly) int bulletinType;
+@property (readonly) long long bulletinType;
 @property (readonly) BOOL canMergeWithPersistedBulletins;
 @property (readonly) double completionPercentage;
 @property (readonly, copy) NSDate *date;
@@ -64,7 +64,7 @@
 - (id)_initWithLikesCount:(int)arg1 commentDate:(id)arg2 firstCommentGUID:(id)arg3 toAssetWithUUID:(id)arg4 photosBatchID:(id)arg5 mainAssetIsMine:(BOOL)arg6 mainAssetIsVideo:(BOOL)arg7 inAlbumWithTitle:(id)arg8 albumUUID:(id)arg9 albumCloudGUID:(id)arg10 assetUUIDs:(id)arg11 placeholderAssetUUIDs:(id)arg12 lowResThumbAssetUUIDs:(id)arg13 senderNames:(id)arg14 forMultipleAsset:(BOOL)arg15 allMultipleAssetIsMine:(BOOL)arg16 isMixedType:(BOOL)arg17;
 - (id)_initWithPhotosAddedBulletin:(id)arg1 mergedWithBulletin:(id)arg2;
 - (id)_initWithPhotosAddedBulletin:(id)arg1 mergedWithBulletinDictionary:(id)arg2;
-- (id)_initWithType:(int)arg1;
+- (id)_initWithType:(long long)arg1;
 - (id)_localizedCountFormatter;
 - (id)albumCloudGUID;
 - (id)albumUUID;
@@ -72,7 +72,7 @@
 - (BOOL)assetWithUUID:(id)arg1 didChangePlaceholderKindTo:(short)arg2 fromOldKind:(short)arg3;
 - (id)bulletinByMergingWithBulletin:(id)arg1;
 - (id)bulletinByMergingWithBulletinDictionary:(id)arg1;
-- (int)bulletinType;
+- (long long)bulletinType;
 - (BOOL)canMergeWithPersistedBulletins;
 - (double)completionPercentage;
 - (id)date;

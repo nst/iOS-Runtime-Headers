@@ -6,14 +6,14 @@
     int  _affectedSides;
     _UIDynamicValueAnimation * _animation;
     UISlidingBarStateRequest * _fromRequest;
-    double  _progress;
+    float  _progress;
     UISlidingBarStateRequest * _toRequest;
 }
 
 @property (nonatomic) int affectedSides;
 @property (nonatomic, retain) _UIDynamicValueAnimation *animation;
 @property (nonatomic, copy) UISlidingBarStateRequest *fromRequest;
-@property (nonatomic) double progress;
+@property (nonatomic) float progress;
 @property (nonatomic, readonly) UISlidingBarStateRequest *stateRequest;
 @property (nonatomic, copy) UISlidingBarStateRequest *toRequest;
 

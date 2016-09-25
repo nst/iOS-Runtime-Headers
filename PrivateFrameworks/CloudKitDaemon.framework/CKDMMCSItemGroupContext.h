@@ -44,14 +44,14 @@
 - (id /* block */)commandBlock;
 - (id /* block */)completionBlock;
 - (void)didCompleteRequestWithError:(id)arg1;
-- (void)didGetItemID:(unsigned int)arg1 signature:(id)arg2 path:(id)arg3 error:(id)arg4 results:(id)arg5;
+- (void)didGetItemID:(unsigned long long)arg1 signature:(id)arg2 path:(id)arg3 error:(id)arg4 results:(id)arg5;
 - (void)didGetMetricsForRequest:(id)arg1;
-- (void)didPutItemID:(unsigned int)arg1 signature:(id)arg2 receipt:(id)arg3 error:(id)arg4;
-- (void)didPutItemID:(unsigned int)arg1 signature:(id)arg2 results:(id)arg3;
+- (void)didPutItemID:(unsigned long long)arg1 signature:(id)arg2 receipt:(id)arg3 error:(id)arg4;
+- (void)didPutItemID:(unsigned long long)arg1 signature:(id)arg2 results:(id)arg3;
 - (void)didPutSectionWithSignature:(id)arg1 receipt:(id)arg2 error:(id)arg3;
-- (id)findTrackedMMCSItemByItemID:(unsigned int)arg1;
+- (id)findTrackedMMCSItemByItemID:(unsigned long long)arg1;
 - (id)getCKDMMCSItemReaderByPathForMMCSItem:(id)arg1 error:(id*)arg2;
-- (struct MMCSItemReaderWriter { }*)getMMCSItemReaderForItemID:(unsigned int)arg1 error:(id*)arg2;
+- (struct MMCSItemReaderWriter { }*)getMMCSItemReaderForItemID:(unsigned long long)arg1 error:(id*)arg2;
 - (void)handleCommand:(id)arg1 forItem:(id)arg2;
 - (id)initWithMMCS:(id)arg1 itemGroup:(id)arg2 operation:(id)arg3 progress:(id /* block */)arg4 command:(id /* block */)arg5 start:(id /* block */)arg6 completionHandler:(id /* block */)arg7;
 - (id)itemGroup;
@@ -73,8 +73,8 @@
 - (BOOL)shouldFetchAssetContentInMemory;
 - (void)start;
 - (id /* block */)startBlock;
-- (void)updateProgressForItemID:(unsigned int)arg1 state:(int)arg2 progress:(double)arg3 error:(id)arg4;
-- (void)updateProgressForItemID:(unsigned int)arg1 state:(int)arg2 progress:(double)arg3 results:(id)arg4;
+- (void)updateProgressForItemID:(unsigned long long)arg1 state:(int)arg2 progress:(double)arg3 error:(id)arg4;
+- (void)updateProgressForItemID:(unsigned long long)arg1 state:(int)arg2 progress:(double)arg3 results:(id)arg4;
 - (void)updateProgressForPackageSectionState:(int)arg1 progress:(double)arg2 results:(id)arg3;
 
 @end

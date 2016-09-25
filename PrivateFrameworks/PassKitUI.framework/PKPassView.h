@@ -10,17 +10,17 @@
     unsigned int  _contentModeToken;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _delayedFlipFrame;
     <WLCardViewDelegate> * _delegate;
-    double  _flipLayoutOvershoot;
-    double  _flipOvershoot;
+    float  _flipLayoutOvershoot;
+    float  _flipOvershoot;
     BOOL  _flipping;
     PKPassFrontFaceView * _frontFace;
     BOOL  _isModalFrontmostPassView;
@@ -68,12 +68,12 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)flipPass:(BOOL)arg1 fromLeft:(BOOL)arg2 notify:(BOOL)arg3;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frame;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameOfVisibleFace;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameOfVisibleFace;
 - (BOOL)frontFaceBodyContentCreated;
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
-- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)initWithPass:(id)arg1;
 - (id)initWithPass:(id)arg1 content:(int)arg2;
 - (BOOL)isForcedFrontFaceResized;
@@ -99,16 +99,16 @@
 - (void)setContentMode:(int)arg1 animated:(BOOL)arg2 withDelay:(double)arg3;
 - (void)setDelegate:(id)arg1;
 - (void)setDimmer:(float)arg1 animated:(BOOL)arg2;
-- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setIsModalFrontmostPassView:(BOOL)arg1;
 - (void)setSuppressedContent:(unsigned int)arg1;
 - (BOOL)showingFront;
-- (struct CGSize { double x1; double x2; })sizeOfBackFace;
-- (struct CGSize { double x1; double x2; })sizeOfFront;
-- (struct CGSize { double x1; double x2; })sizeOfFrontFace;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeOfBackFace;
+- (struct CGSize { float x1; float x2; })sizeOfFront;
+- (struct CGSize { float x1; float x2; })sizeOfFrontFace;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)snapshotOfFrontFace;
-- (id)snapshotOfFrontFaceWithRequestedSize:(struct CGSize { double x1; double x2; })arg1;
+- (id)snapshotOfFrontFaceWithRequestedSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)snapshotViewOfVisibleFaceAfterScreenUpdates:(BOOL)arg1;
 - (unsigned int)suppressedContent;
 - (void)tapRecognized:(id)arg1;

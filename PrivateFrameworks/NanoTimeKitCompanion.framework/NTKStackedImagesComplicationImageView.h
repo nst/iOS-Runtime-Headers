@@ -8,16 +8,16 @@
     UIImageView * _foregroundAccentImageView;
     NTKColoringImageView * _foregroundImageView;
     CLKImageProvider * _imageProvider;
-    double  _imageScaleFactor;
+    float  _imageScaleFactor;
     BOOL  _isShadowImagesStale;
     BOOL  _isUsingLegibility;
     NTKColoringImageView * _monochromeImageView;
     UIImageView * _monochromeShadowView;
-    double  _multicolorAlpha;
+    float  _multicolorAlpha;
     UIImageView * _multipartShadowView;
     UIImage * _multipartShadowViewSource;
     UIColor * _overrideColor;
-    double  _shadowBlur;
+    float  _shadowBlur;
     UIColor * _shadowColor;
 }
 
@@ -28,9 +28,9 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) CLKImageProvider *imageProvider;
 @property (nonatomic) BOOL legibilityEnabled;
-@property (nonatomic) double multicolorAlpha;
+@property (nonatomic) float multicolorAlpha;
 @property (nonatomic, retain) UIColor *overrideColor;
-@property (nonatomic) double shadowBlur;
+@property (nonatomic) float shadowBlur;
 @property (nonatomic, retain) UIColor *shadowColor;
 @property (readonly) Class superclass;
 @property (nonatomic) BOOL usesLegibility;
@@ -51,7 +51,7 @@
 - (id)contentColor;
 - (BOOL)hasMonochromeImage;
 - (id)imageProvider;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (BOOL)legibilityEnabled;
 - (float)multicolorAlpha;
@@ -66,7 +66,7 @@
 - (void)setUsesLegibility:(BOOL)arg1;
 - (float)shadowBlur;
 - (id)shadowColor;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)usesLegibility;
 
 @end

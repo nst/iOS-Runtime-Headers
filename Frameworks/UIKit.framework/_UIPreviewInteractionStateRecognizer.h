@@ -3,53 +3,53 @@
  */
 
 @interface _UIPreviewInteractionStateRecognizer : NSObject {
-    double  _actualHintForce;
+    float  _actualHintForce;
     double  _actualHintTime;
-    double  _actualPeekForce;
+    float  _actualPeekForce;
     double  _actualPeekTime;
-    double  _actualPopForce;
+    float  _actualPopForce;
     double  _actualPopTime;
     BOOL  _allowsPopOffsetDecay;
     int  _currentState;
     double  _currentTime;
-    double  _currentTouchForce;
+    float  _currentTouchForce;
     unsigned int  _deepPressCount;
-    double  _distanceThreshold;
-    double  _highPopThreshold;
-    double  _hintAndPeekInterval;
-    double  _hintReductionForce;
+    float  _distanceThreshold;
+    float  _highPopThreshold;
+    float  _hintAndPeekInterval;
+    float  _hintReductionForce;
     BOOL  _isFirstForceEvaluation;
-    double  _lowpassDistanceAlpha;
-    double  _lowpassForceAlpha;
-    double  _maximumForce;
-    double  _popAlwaysThreshold;
-    double  _popDecayingOffset;
-    double  _popForceReductionThreshold;
-    double  _popOffsetDecayAlpha;
-    double  _popOffsetInitial;
-    double  _popOffsetLongterm;
-    double  _popReductionForce;
-    double  _previousEffectiveTouchForce;
-    double  _previousPopThreshold;
+    float  _lowpassDistanceAlpha;
+    float  _lowpassForceAlpha;
+    float  _maximumForce;
+    float  _popAlwaysThreshold;
+    float  _popDecayingOffset;
+    float  _popForceReductionThreshold;
+    float  _popOffsetDecayAlpha;
+    float  _popOffsetInitial;
+    float  _popOffsetLongterm;
+    float  _popReductionForce;
+    float  _previousEffectiveTouchForce;
+    float  _previousPopThreshold;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _previousSceneReferenceLocation;
     double  _previousTime;
-    double  _progressToStrongThreshold;
-    double  _revealThreshold;
-    double  _saturationForce;
-    double  _smoothedDistance;
-    double  _smoothedForce;
-    double  _standardThreshold;
-    double  _strongThreshold;
+    float  _progressToStrongThreshold;
+    float  _revealThreshold;
+    float  _saturationForce;
+    float  _smoothedDistance;
+    float  _smoothedForce;
+    float  _standardThreshold;
+    float  _strongThreshold;
     double  _timeMark;
     double  _transitionInterval;
 }
 
 @property (nonatomic) int currentState;
-@property (nonatomic) double currentTouchForce;
-@property (nonatomic, readonly) double velocity;
+@property (nonatomic) float currentTouchForce;
+@property (nonatomic, readonly) float velocity;
 
 - (void)_accessibilityForceSensitivityChanged:(id)arg1;
 - (float)_currentTouchForceMultiplier;
@@ -61,7 +61,7 @@
 - (float)currentTouchForce;
 - (void)dealloc;
 - (id)description;
-- (void)evaluateWithTouchForce:(float)arg1 atTimestamp:(double)arg2 withCentroidAtLocation:(struct CGPoint { double x1; double x2; })arg3;
+- (void)evaluateWithTouchForce:(float)arg1 atTimestamp:(double)arg2 withCentroidAtLocation:(struct CGPoint { float x1; float x2; })arg3;
 - (id)init;
 - (void)reset;
 - (void)setCurrentState:(int)arg1;

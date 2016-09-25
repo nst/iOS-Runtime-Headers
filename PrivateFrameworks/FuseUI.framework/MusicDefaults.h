@@ -19,12 +19,12 @@
 @property (nonatomic, retain) NSNumber *lastKnownStoreAccountUniqueIdentifier;
 @property (nonatomic) BOOL lastKnownSupportsConnect;
 @property (nonatomic, copy) NSDictionary *lastKnownTabConfigurations;
-@property (nonatomic) unsigned int lastModifiedPlaylistID;
+@property (nonatomic) unsigned long long lastModifiedPlaylistID;
 @property (nonatomic, retain) NSDate *lastMyMusicSearchDate;
 @property (getter=isPinningEnabled, nonatomic, readonly) BOOL pinningEnabled;
 @property (nonatomic) int playbackSpeed;
 @property (nonatomic) BOOL playlistsOverviewShowsOnlyOfflinePlaylists;
-@property (nonatomic) double popularityIndicatorThreshold;
+@property (nonatomic) float popularityIndicatorThreshold;
 @property (nonatomic) int repeatType;
 @property (nonatomic) BOOL searchShouldDefaultToMyMusic;
 @property (nonatomic, copy) NSString *selectedLibraryViewIdentifier;
@@ -64,7 +64,7 @@
 - (id)lastKnownStoreAccountUniqueIdentifier;
 - (BOOL)lastKnownSupportsConnect;
 - (id)lastKnownTabConfigurations;
-- (unsigned int)lastModifiedPlaylistID;
+- (unsigned long long)lastModifiedPlaylistID;
 - (id)lastMyMusicSearchDate;
 - (void)migrateTabBarOrderingIfNeeded;
 - (int)playbackSpeed;
@@ -82,7 +82,7 @@
 - (void)setLastKnownStoreAccountUniqueIdentifier:(id)arg1;
 - (void)setLastKnownSupportsConnect:(BOOL)arg1;
 - (void)setLastKnownTabConfigurations:(id)arg1;
-- (void)setLastModifiedPlaylistID:(unsigned int)arg1;
+- (void)setLastModifiedPlaylistID:(unsigned long long)arg1;
 - (void)setLastMyMusicSearchDate:(id)arg1;
 - (void)setPlaybackSpeed:(int)arg1;
 - (void)setPlaylistsOverviewShowsOnlyOfflinePlaylists:(BOOL)arg1;

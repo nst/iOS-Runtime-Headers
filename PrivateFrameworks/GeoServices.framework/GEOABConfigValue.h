@@ -10,7 +10,7 @@
         unsigned int intValue : 1; 
         unsigned int boolValue : 1; 
     }  _has;
-    int  _intValue;
+    long long  _intValue;
     NSString * _stringValue;
     PBUnknownFields * _unknownFields;
 }
@@ -21,7 +21,7 @@
 @property (nonatomic) BOOL hasDoubleValue;
 @property (nonatomic) BOOL hasIntValue;
 @property (nonatomic, readonly) BOOL hasStringValue;
-@property (nonatomic) int intValue;
+@property (nonatomic) long long intValue;
 @property (nonatomic, retain) NSString *stringValue;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
@@ -37,7 +37,7 @@
 - (BOOL)hasIntValue;
 - (BOOL)hasStringValue;
 - (unsigned int)hash;
-- (int)intValue;
+- (long long)intValue;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
@@ -46,7 +46,7 @@
 - (void)setHasBoolValue:(BOOL)arg1;
 - (void)setHasDoubleValue:(BOOL)arg1;
 - (void)setHasIntValue:(BOOL)arg1;
-- (void)setIntValue:(int)arg1;
+- (void)setIntValue:(long long)arg1;
 - (void)setStringValue:(id)arg1;
 - (id)stringValue;
 - (id)unknownFields;

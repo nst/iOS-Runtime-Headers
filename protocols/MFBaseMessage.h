@@ -5,7 +5,7 @@
 
 @required
 
-- (int)conversationHash;
+- (long long)conversationHash;
 - (unsigned int)dateReceivedInterval;
 - (unsigned int)dateSentInterval;
 - (BOOL)deleted;
@@ -13,7 +13,7 @@
 - (BOOL)isKnownToHaveAttachments;
 - (BOOL)isVIP;
 - (unsigned int)mailboxID;
-- (int)messageIDHash;
+- (long long)messageIDHash;
 - (BOOL)read;
 - (unsigned long)uid;
 

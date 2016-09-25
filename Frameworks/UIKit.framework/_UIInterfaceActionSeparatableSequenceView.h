@@ -28,12 +28,12 @@
 - (void)_reloadStackViewArrangement;
 - (int)_separatorConstantSizedAxis;
 - (void)_setLayoutDebuggingIdentifier:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_stackViewFrameForViewBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (struct CGSize { double x1; double x2; })_systemLayoutSizeFittingStackView;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_stackViewFrameForViewBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGSize { float x1; float x2; })_systemLayoutSizeFittingStackView;
 - (void)_updateActionRepresentationViewsOnlyKeepVisibleContentInHierarchySetting;
 - (void)_updateLayoutWithStackFrameForActionSequenceEdgeInsets;
 - (void)_updateSeparatorConstantSizedAxis;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_viewBoundsForStackViewFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_viewBoundsForStackViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_withUnsatisfiableConstraintsLoggingSuspendedIfEngineDelegateExists:(id /* block */)arg1;
 - (id)arrangedContentSeparatorViews;
 - (id)arrangedContentViews;
@@ -42,16 +42,16 @@
 - (int)distribution;
 - (float)fittingWidthForLayoutAxis:(int)arg1;
 - (id)initWithVisualStyle:(id)arg1;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (void)layoutSublayersOfLayer:(id)arg1;
 - (void)reloadDisplayedContentVisualStyle;
 - (void)setArrangedContentViews:(id)arg1;
 - (void)setAxis:(int)arg1;
 - (void)setDistribution:(int)arg1;
 - (void)setVisualStyle:(id)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)stackView;
-- (struct CGSize { double x1; double x2; })systemLayoutSizeFittingSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })systemLayoutSizeFittingSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)updateConstraints;
 - (id)visualStyle;
 

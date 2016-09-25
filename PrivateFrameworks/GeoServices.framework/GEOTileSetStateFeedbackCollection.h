@@ -15,8 +15,8 @@
     double  _newCoverage;
     double  _oldCoverage;
     struct GEOSessionID { 
-        unsigned int _high; 
-        unsigned int _low; 
+        unsigned long long _high; 
+        unsigned long long _low; 
     }  _sessionID;
     double  _sessionRelativeTimestamp;
     int  _tileSetStateType;
@@ -31,7 +31,7 @@
 @property (nonatomic) BOOL hasTileSetStateType;
 @property (nonatomic) double newCoverage;
 @property (nonatomic) double oldCoverage;
-@property (nonatomic) struct GEOSessionID { unsigned int x1; unsigned int x2; } sessionID;
+@property (nonatomic) struct GEOSessionID { unsigned long long x1; unsigned long long x2; } sessionID;
 @property (nonatomic) double sessionRelativeTimestamp;
 @property (nonatomic) int tileSetStateType;
 
@@ -53,7 +53,7 @@
 - (double)newCoverage;
 - (double)oldCoverage;
 - (BOOL)readFrom:(id)arg1;
-- (struct GEOSessionID { unsigned int x1; unsigned int x2; })sessionID;
+- (struct GEOSessionID { unsigned long long x1; unsigned long long x2; })sessionID;
 - (double)sessionRelativeTimestamp;
 - (void)setDurationInOldState:(double)arg1;
 - (void)setHasDurationInOldState:(BOOL)arg1;
@@ -64,7 +64,7 @@
 - (void)setHasTileSetStateType:(BOOL)arg1;
 - (void)setNewCoverage:(double)arg1;
 - (void)setOldCoverage:(double)arg1;
-- (void)setSessionID:(struct GEOSessionID { unsigned int x1; unsigned int x2; })arg1;
+- (void)setSessionID:(struct GEOSessionID { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)setSessionRelativeTimestamp:(double)arg1;
 - (void)setTileSetStateType:(int)arg1;
 - (int)tileSetStateType;

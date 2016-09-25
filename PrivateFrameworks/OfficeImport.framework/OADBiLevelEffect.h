@@ -3,7 +3,7 @@
  */
 
 @interface OADBiLevelEffect : OADBlipEffect {
-    double  mThreshold;
+    float  mThreshold;
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

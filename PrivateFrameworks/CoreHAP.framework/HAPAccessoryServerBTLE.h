@@ -7,7 +7,7 @@
     unsigned char  _connectionIdleTime;
     unsigned int  _hapBLEProtocolVersion;
     CBPeripheral * _peripheral;
-    unsigned int  _resumeSessionID;
+    unsigned long long  _resumeSessionID;
     NSNumber * _stateNumber;
 }
 
@@ -15,7 +15,7 @@
 @property (nonatomic) unsigned char connectionIdleTime;
 @property (nonatomic, readonly) unsigned int hapBLEProtocolVersion;
 @property (nonatomic, readonly) CBPeripheral *peripheral;
-@property (nonatomic, readonly) unsigned int resumeSessionID;
+@property (nonatomic, readonly) unsigned long long resumeSessionID;
 @property (nonatomic, retain) NSNumber *stateNumber;
 
 + (id)hapUUIDFromBTLEUUID:(id)arg1;
@@ -30,12 +30,12 @@
 - (int)linkType;
 - (void)notifyDelegateUdpatedStateNumber;
 - (id)peripheral;
-- (unsigned int)resumeSessionID;
+- (unsigned long long)resumeSessionID;
 - (void)setConnectionIdleTime:(unsigned char)arg1;
 - (void)setStateNumber:(id)arg1;
 - (id)stateNumber;
 - (void)updateConnectionIdleTime:(unsigned char)arg1;
 - (BOOL)updatePeripheralIdentifier:(id*)arg1;
-- (BOOL)updateResumeSessionID:(unsigned int)arg1;
+- (BOOL)updateResumeSessionID:(unsigned long long)arg1;
 
 @end

@@ -26,15 +26,15 @@
     BOOL  _isAlwaysLive;
     BOOL  _isExplicitTrack;
     BOOL  _isMusicApp;
-    double  _playbackRate;
+    float  _playbackRate;
     NSString * _radioStationHash;
-    int  _radioStationIdentifier;
+    long long  _radioStationIdentifier;
     NSString * _radioStationName;
     int  _repeatMode;
     int  _shuffleMode;
     double  _timestamp;
     NSString * _title;
-    unsigned int  _uniqueIdentifier;
+    unsigned long long  _uniqueIdentifier;
 }
 
 @property (nonatomic, retain) NSString *album;
@@ -64,15 +64,15 @@
 @property (nonatomic) BOOL isAlwaysLive;
 @property (nonatomic) BOOL isExplicitTrack;
 @property (nonatomic) BOOL isMusicApp;
-@property (nonatomic) double playbackRate;
+@property (nonatomic) float playbackRate;
 @property (nonatomic, retain) NSString *radioStationHash;
-@property (nonatomic) int radioStationIdentifier;
+@property (nonatomic) long long radioStationIdentifier;
 @property (nonatomic, retain) NSString *radioStationName;
 @property (nonatomic) int repeatMode;
 @property (nonatomic) int shuffleMode;
 @property (nonatomic) double timestamp;
 @property (nonatomic, retain) NSString *title;
-@property (nonatomic) unsigned int uniqueIdentifier;
+@property (nonatomic) unsigned long long uniqueIdentifier;
 
 - (int)StringAsRepeatMode:(id)arg1;
 - (int)StringAsShuffleMode:(id)arg1;
@@ -113,7 +113,7 @@
 - (void)mergeFrom:(id)arg1;
 - (float)playbackRate;
 - (id)radioStationHash;
-- (int)radioStationIdentifier;
+- (long long)radioStationIdentifier;
 - (id)radioStationName;
 - (BOOL)readFrom:(id)arg1;
 - (int)repeatMode;
@@ -141,18 +141,18 @@
 - (void)setIsMusicApp:(BOOL)arg1;
 - (void)setPlaybackRate:(float)arg1;
 - (void)setRadioStationHash:(id)arg1;
-- (void)setRadioStationIdentifier:(int)arg1;
+- (void)setRadioStationIdentifier:(long long)arg1;
 - (void)setRadioStationName:(id)arg1;
 - (void)setRepeatMode:(int)arg1;
 - (void)setShuffleMode:(int)arg1;
 - (void)setTimestamp:(double)arg1;
 - (void)setTitle:(id)arg1;
-- (void)setUniqueIdentifier:(unsigned int)arg1;
+- (void)setUniqueIdentifier:(unsigned long long)arg1;
 - (int)shuffleMode;
 - (id)shuffleModeAsString:(int)arg1;
 - (double)timestamp;
 - (id)title;
-- (unsigned int)uniqueIdentifier;
+- (unsigned long long)uniqueIdentifier;
 - (void)writeTo:(id)arg1;
 
 @end

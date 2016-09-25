@@ -39,7 +39,7 @@
         BOOL respondsToShouldHideToolbarWhenShowingAccessoryViewForAssetReference; 
     }  _delegateFlags;
     BOOL  _isShowingPlayPauseButton;
-    double  _maximumToolbarHeight;
+    float  _maximumToolbarHeight;
     BOOL  _shouldPlaceButtonsInNavigationBar;
     BOOL  _shouldShowAirPlayButton;
     BOOL  _shouldShowDoneButton;
@@ -78,7 +78,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (setter=_setShowingPlayPauseButton:, nonatomic) BOOL isShowingPlayPauseButton;
-@property (nonatomic) double maximumToolbarHeight;
+@property (nonatomic) float maximumToolbarHeight;
 @property (nonatomic, readonly) UIView *ppt_scrubberView;
 @property (nonatomic) BOOL shouldPlaceButtonsInNavigationBar;
 @property (nonatomic) BOOL shouldShowAirPlayButton;
@@ -124,8 +124,8 @@
 - (BOOL)_needsUpdateCommentsTitle;
 - (BOOL)_needsUpdateTitle;
 - (id)_newBarButtonItemWithIdentifier:(int)arg1 location:(int)arg2;
-- (id)_newBarButtonItemWithImageName:(id)arg1 offset:(struct UIOffset { double x1; double x2; })arg2 landscapeImagePhoneName:(id)arg3 offset:(struct UIOffset { double x1; double x2; })arg4 location:(int)arg5;
-- (id)_newBarButtonWithSystemItem:(int)arg1 offset:(struct UIOffset { double x1; double x2; })arg2 landscapeImagePhoneOffset:(struct UIOffset { double x1; double x2; })arg3;
+- (id)_newBarButtonItemWithImageName:(id)arg1 offset:(struct UIOffset { float x1; float x2; })arg2 landscapeImagePhoneName:(id)arg3 offset:(struct UIOffset { float x1; float x2; })arg4 location:(int)arg5;
+- (id)_newBarButtonWithSystemItem:(int)arg1 offset:(struct UIOffset { float x1; float x2; })arg2 landscapeImagePhoneOffset:(struct UIOffset { float x1; float x2; })arg3;
 - (id)_newCustomButtonItem;
 - (int)_nextChromeVisibilityUpdateAnimationType;
 - (BOOL)_nextCommentsActionShouldBeginEditing;
@@ -206,7 +206,7 @@
 - (int)preferredBarStyle;
 - (BOOL)prefersStatusBarHidden;
 - (void)prepareForPopoverPresentation:(id)arg1;
-- (BOOL)scrubberView:(id)arg1 shouldIgnoreHitTest:(struct CGPoint { double x1; double x2; })arg2 withEvent:(id)arg3;
+- (BOOL)scrubberView:(id)arg1 shouldIgnoreHitTest:(struct CGPoint { float x1; float x2; })arg2 withEvent:(id)arg3;
 - (void)setAllowTapOnTitle:(BOOL)arg1;
 - (void)setBrowsingSession:(id)arg1;
 - (void)setDelegate:(id)arg1;

@@ -16,7 +16,7 @@
 @property (readonly) unsigned int length;
 @property (nonatomic, readonly) NSString *mobileMeDomain;
 @property (readonly) BOOL npkHasContent;
-@property (nonatomic, readonly) int px_platformAgnosticHash;
+@property (nonatomic, readonly) long long px_platformAgnosticHash;
 @property (nonatomic, readonly) NSString *px_stringByIndentingNewLines;
 @property (nonatomic, readonly) struct _NSRange { unsigned int x1; unsigned int x2; } range;
 @property (nonatomic, readonly, copy) NSString *safari_stringByRemovingExcessWhitespace;
@@ -35,7 +35,7 @@
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
-+ (id)_web_stringRepresentationForBytes:(int)arg1;
++ (id)_web_stringRepresentationForBytes:(long long)arg1;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (const unsigned int*)availableStringEncodings;
 + (unsigned int)defaultCStringEncoding;
@@ -212,7 +212,7 @@
 - (BOOL)localizedStandardContainsString:(id)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })localizedStandardRangeOfString:(id)arg1;
 - (id)localizedUppercaseString;
-- (int)longLongValue;
+- (long long)longLongValue;
 - (const char *)lossyCString;
 - (id)lowercaseString;
 - (id)lowercaseStringWithLocale:(id)arg1;
@@ -404,7 +404,7 @@
 // Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
 
 - (BOOL)pu_endsWithFullStopOrEquivalentPunctuationMark;
-- (int)pu_platformAgnosticHash;
+- (long long)pu_platformAgnosticHash;
 - (id)pu_stringByIndentingNewLines;
 - (id)pu_stringByRepeating:(int)arg1;
 
@@ -447,56 +447,56 @@
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
-- (id)_adjustedFontFromFont:(id)arg1 withinFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 minimumSize:(float)arg3 textSize:(struct CGSize { double x1; double x2; }*)arg4;
-- (struct CGSize { double x1; double x2; })_drawInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withFont:(id)arg2 lineBreakMode:(int)arg3 alignment:(int)arg4 lineSpacing:(int)arg5 includeEmoji:(BOOL)arg6 truncationRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg7;
+- (id)_adjustedFontFromFont:(id)arg1 withinFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 minimumSize:(float)arg3 textSize:(struct CGSize { float x1; float x2; }*)arg4;
+- (struct CGSize { float x1; float x2; })_drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withFont:(id)arg2 lineBreakMode:(int)arg3 alignment:(int)arg4 lineSpacing:(int)arg5 includeEmoji:(BOOL)arg6 truncationRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg7;
 - (id)_initWithUTF8String:(const char *)arg1 maxLength:(unsigned int)arg2;
-- (struct CGSize { double x1; double x2; })_legacy_drawAtPoint:(struct CGPoint { double x1; double x2; })arg1 forWidth:(float)arg2 withFont:(id)arg3 fontSize:(float)arg4 lineBreakMode:(int)arg5 baselineAdjustment:(int)arg6;
-- (struct CGSize { double x1; double x2; })_legacy_drawAtPoint:(struct CGPoint { double x1; double x2; })arg1 forWidth:(float)arg2 withFont:(id)arg3 fontSize:(float)arg4 lineBreakMode:(int)arg5 baselineAdjustment:(int)arg6 includeEmoji:(BOOL)arg7;
-- (struct CGSize { double x1; double x2; })_legacy_drawAtPoint:(struct CGPoint { double x1; double x2; })arg1 forWidth:(float)arg2 withFont:(id)arg3 lineBreakMode:(int)arg4;
-- (struct CGSize { double x1; double x2; })_legacy_drawAtPoint:(struct CGPoint { double x1; double x2; })arg1 forWidth:(float)arg2 withFont:(id)arg3 lineBreakMode:(int)arg4 letterSpacing:(float)arg5;
-- (struct CGSize { double x1; double x2; })_legacy_drawAtPoint:(struct CGPoint { double x1; double x2; })arg1 forWidth:(float)arg2 withFont:(id)arg3 lineBreakMode:(int)arg4 letterSpacing:(float)arg5 includeEmoji:(BOOL)arg6;
-- (struct CGSize { double x1; double x2; })_legacy_drawAtPoint:(struct CGPoint { double x1; double x2; })arg1 forWidth:(float)arg2 withFont:(id)arg3 minFontSize:(float)arg4 actualFontSize:(float*)arg5 lineBreakMode:(int)arg6 baselineAdjustment:(int)arg7;
-- (struct CGSize { double x1; double x2; })_legacy_drawAtPoint:(struct CGPoint { double x1; double x2; })arg1 forWidth:(float)arg2 withFont:(id)arg3 minFontSize:(float)arg4 actualFontSize:(float*)arg5 lineBreakMode:(int)arg6 baselineAdjustment:(int)arg7 includeEmoji:(BOOL)arg8;
-- (struct CGSize { double x1; double x2; })_legacy_drawAtPoint:(struct CGPoint { double x1; double x2; })arg1 withFont:(id)arg2;
-- (struct CGSize { double x1; double x2; })_legacy_drawInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withFont:(id)arg2;
-- (struct CGSize { double x1; double x2; })_legacy_drawInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withFont:(id)arg2 lineBreakMode:(int)arg3;
-- (struct CGSize { double x1; double x2; })_legacy_drawInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withFont:(id)arg2 lineBreakMode:(int)arg3 alignment:(int)arg4;
-- (struct CGSize { double x1; double x2; })_legacy_drawInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withFont:(id)arg2 lineBreakMode:(int)arg3 alignment:(int)arg4 lineSpacing:(int)arg5;
-- (struct CGSize { double x1; double x2; })_legacy_drawInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withFont:(id)arg2 lineBreakMode:(int)arg3 alignment:(int)arg4 lineSpacing:(int)arg5 includeEmoji:(BOOL)arg6;
-- (struct CGSize { double x1; double x2; })_legacy_drawInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withFont:(id)arg2 lineBreakMode:(int)arg3 alignment:(int)arg4 lineSpacing:(int)arg5 includeEmoji:(BOOL)arg6 truncationRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg7;
-- (struct CGSize { double x1; double x2; })_legacy_sizeWithFont:(id)arg1;
-- (struct CGSize { double x1; double x2; })_legacy_sizeWithFont:(id)arg1 constrainedToSize:(struct CGSize { double x1; double x2; })arg2;
-- (struct CGSize { double x1; double x2; })_legacy_sizeWithFont:(id)arg1 constrainedToSize:(struct CGSize { double x1; double x2; })arg2 lineBreakMode:(int)arg3;
-- (struct CGSize { double x1; double x2; })_legacy_sizeWithFont:(id)arg1 constrainedToSize:(struct CGSize { double x1; double x2; })arg2 lineBreakMode:(int)arg3 lineSpacing:(int)arg4;
-- (struct CGSize { double x1; double x2; })_legacy_sizeWithFont:(id)arg1 forWidth:(float)arg2 lineBreakMode:(int)arg3;
-- (struct CGSize { double x1; double x2; })_legacy_sizeWithFont:(id)arg1 forWidth:(float)arg2 lineBreakMode:(int)arg3 letterSpacing:(float)arg4;
-- (struct CGSize { double x1; double x2; })_legacy_sizeWithFont:(id)arg1 minFontSize:(float)arg2 actualFontSize:(float*)arg3 forWidth:(float)arg4 lineBreakMode:(int)arg5;
-- (struct CGSize { double x1; double x2; })_optimizedSizeWithFont:(id)arg1;
+- (struct CGSize { float x1; float x2; })_legacy_drawAtPoint:(struct CGPoint { float x1; float x2; })arg1 forWidth:(float)arg2 withFont:(id)arg3 fontSize:(float)arg4 lineBreakMode:(int)arg5 baselineAdjustment:(int)arg6;
+- (struct CGSize { float x1; float x2; })_legacy_drawAtPoint:(struct CGPoint { float x1; float x2; })arg1 forWidth:(float)arg2 withFont:(id)arg3 fontSize:(float)arg4 lineBreakMode:(int)arg5 baselineAdjustment:(int)arg6 includeEmoji:(BOOL)arg7;
+- (struct CGSize { float x1; float x2; })_legacy_drawAtPoint:(struct CGPoint { float x1; float x2; })arg1 forWidth:(float)arg2 withFont:(id)arg3 lineBreakMode:(int)arg4;
+- (struct CGSize { float x1; float x2; })_legacy_drawAtPoint:(struct CGPoint { float x1; float x2; })arg1 forWidth:(float)arg2 withFont:(id)arg3 lineBreakMode:(int)arg4 letterSpacing:(float)arg5;
+- (struct CGSize { float x1; float x2; })_legacy_drawAtPoint:(struct CGPoint { float x1; float x2; })arg1 forWidth:(float)arg2 withFont:(id)arg3 lineBreakMode:(int)arg4 letterSpacing:(float)arg5 includeEmoji:(BOOL)arg6;
+- (struct CGSize { float x1; float x2; })_legacy_drawAtPoint:(struct CGPoint { float x1; float x2; })arg1 forWidth:(float)arg2 withFont:(id)arg3 minFontSize:(float)arg4 actualFontSize:(float*)arg5 lineBreakMode:(int)arg6 baselineAdjustment:(int)arg7;
+- (struct CGSize { float x1; float x2; })_legacy_drawAtPoint:(struct CGPoint { float x1; float x2; })arg1 forWidth:(float)arg2 withFont:(id)arg3 minFontSize:(float)arg4 actualFontSize:(float*)arg5 lineBreakMode:(int)arg6 baselineAdjustment:(int)arg7 includeEmoji:(BOOL)arg8;
+- (struct CGSize { float x1; float x2; })_legacy_drawAtPoint:(struct CGPoint { float x1; float x2; })arg1 withFont:(id)arg2;
+- (struct CGSize { float x1; float x2; })_legacy_drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withFont:(id)arg2;
+- (struct CGSize { float x1; float x2; })_legacy_drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withFont:(id)arg2 lineBreakMode:(int)arg3;
+- (struct CGSize { float x1; float x2; })_legacy_drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withFont:(id)arg2 lineBreakMode:(int)arg3 alignment:(int)arg4;
+- (struct CGSize { float x1; float x2; })_legacy_drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withFont:(id)arg2 lineBreakMode:(int)arg3 alignment:(int)arg4 lineSpacing:(int)arg5;
+- (struct CGSize { float x1; float x2; })_legacy_drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withFont:(id)arg2 lineBreakMode:(int)arg3 alignment:(int)arg4 lineSpacing:(int)arg5 includeEmoji:(BOOL)arg6;
+- (struct CGSize { float x1; float x2; })_legacy_drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withFont:(id)arg2 lineBreakMode:(int)arg3 alignment:(int)arg4 lineSpacing:(int)arg5 includeEmoji:(BOOL)arg6 truncationRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg7;
+- (struct CGSize { float x1; float x2; })_legacy_sizeWithFont:(id)arg1;
+- (struct CGSize { float x1; float x2; })_legacy_sizeWithFont:(id)arg1 constrainedToSize:(struct CGSize { float x1; float x2; })arg2;
+- (struct CGSize { float x1; float x2; })_legacy_sizeWithFont:(id)arg1 constrainedToSize:(struct CGSize { float x1; float x2; })arg2 lineBreakMode:(int)arg3;
+- (struct CGSize { float x1; float x2; })_legacy_sizeWithFont:(id)arg1 constrainedToSize:(struct CGSize { float x1; float x2; })arg2 lineBreakMode:(int)arg3 lineSpacing:(int)arg4;
+- (struct CGSize { float x1; float x2; })_legacy_sizeWithFont:(id)arg1 forWidth:(float)arg2 lineBreakMode:(int)arg3;
+- (struct CGSize { float x1; float x2; })_legacy_sizeWithFont:(id)arg1 forWidth:(float)arg2 lineBreakMode:(int)arg3 letterSpacing:(float)arg4;
+- (struct CGSize { float x1; float x2; })_legacy_sizeWithFont:(id)arg1 minFontSize:(float)arg2 actualFontSize:(float*)arg3 forWidth:(float)arg4 lineBreakMode:(int)arg5;
+- (struct CGSize { float x1; float x2; })_optimizedSizeWithFont:(id)arg1;
 - (id)_ui_secureString;
 - (id)_uikit_stringByTrimmingWhitespaceAndNewlines;
 - (id)_uikit_stringWithWritingDirection:(int)arg1 asOverride:(BOOL)arg2;
 - (id)_uikit_unescapedQueryValue;
-- (struct CGSize { double x1; double x2; })drawAtPoint:(struct CGPoint { double x1; double x2; })arg1 forWidth:(float)arg2 withFont:(id)arg3 fontSize:(float)arg4 lineBreakMode:(int)arg5 baselineAdjustment:(int)arg6;
-- (struct CGSize { double x1; double x2; })drawAtPoint:(struct CGPoint { double x1; double x2; })arg1 forWidth:(float)arg2 withFont:(id)arg3 fontSize:(float)arg4 lineBreakMode:(int)arg5 baselineAdjustment:(int)arg6 includeEmoji:(BOOL)arg7;
-- (struct CGSize { double x1; double x2; })drawAtPoint:(struct CGPoint { double x1; double x2; })arg1 forWidth:(float)arg2 withFont:(id)arg3 lineBreakMode:(int)arg4;
-- (struct CGSize { double x1; double x2; })drawAtPoint:(struct CGPoint { double x1; double x2; })arg1 forWidth:(float)arg2 withFont:(id)arg3 lineBreakMode:(int)arg4 letterSpacing:(float)arg5;
-- (struct CGSize { double x1; double x2; })drawAtPoint:(struct CGPoint { double x1; double x2; })arg1 forWidth:(float)arg2 withFont:(id)arg3 lineBreakMode:(int)arg4 letterSpacing:(float)arg5 includeEmoji:(BOOL)arg6;
-- (struct CGSize { double x1; double x2; })drawAtPoint:(struct CGPoint { double x1; double x2; })arg1 forWidth:(float)arg2 withFont:(id)arg3 minFontSize:(float)arg4 actualFontSize:(float*)arg5 lineBreakMode:(int)arg6 baselineAdjustment:(int)arg7;
-- (struct CGSize { double x1; double x2; })drawAtPoint:(struct CGPoint { double x1; double x2; })arg1 forWidth:(float)arg2 withFont:(id)arg3 minFontSize:(float)arg4 actualFontSize:(float*)arg5 lineBreakMode:(int)arg6 baselineAdjustment:(int)arg7 includeEmoji:(BOOL)arg8;
-- (struct CGSize { double x1; double x2; })drawAtPoint:(struct CGPoint { double x1; double x2; })arg1 withFont:(id)arg2;
-- (struct CGSize { double x1; double x2; })drawInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withFont:(id)arg2;
-- (struct CGSize { double x1; double x2; })drawInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withFont:(id)arg2 lineBreakMode:(int)arg3;
-- (struct CGSize { double x1; double x2; })drawInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withFont:(id)arg2 lineBreakMode:(int)arg3 alignment:(int)arg4;
-- (struct CGSize { double x1; double x2; })drawInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withFont:(id)arg2 lineBreakMode:(int)arg3 alignment:(int)arg4 lineSpacing:(int)arg5;
-- (struct CGSize { double x1; double x2; })drawInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withFont:(id)arg2 lineBreakMode:(int)arg3 alignment:(int)arg4 lineSpacing:(int)arg5 includeEmoji:(BOOL)arg6;
+- (struct CGSize { float x1; float x2; })drawAtPoint:(struct CGPoint { float x1; float x2; })arg1 forWidth:(float)arg2 withFont:(id)arg3 fontSize:(float)arg4 lineBreakMode:(int)arg5 baselineAdjustment:(int)arg6;
+- (struct CGSize { float x1; float x2; })drawAtPoint:(struct CGPoint { float x1; float x2; })arg1 forWidth:(float)arg2 withFont:(id)arg3 fontSize:(float)arg4 lineBreakMode:(int)arg5 baselineAdjustment:(int)arg6 includeEmoji:(BOOL)arg7;
+- (struct CGSize { float x1; float x2; })drawAtPoint:(struct CGPoint { float x1; float x2; })arg1 forWidth:(float)arg2 withFont:(id)arg3 lineBreakMode:(int)arg4;
+- (struct CGSize { float x1; float x2; })drawAtPoint:(struct CGPoint { float x1; float x2; })arg1 forWidth:(float)arg2 withFont:(id)arg3 lineBreakMode:(int)arg4 letterSpacing:(float)arg5;
+- (struct CGSize { float x1; float x2; })drawAtPoint:(struct CGPoint { float x1; float x2; })arg1 forWidth:(float)arg2 withFont:(id)arg3 lineBreakMode:(int)arg4 letterSpacing:(float)arg5 includeEmoji:(BOOL)arg6;
+- (struct CGSize { float x1; float x2; })drawAtPoint:(struct CGPoint { float x1; float x2; })arg1 forWidth:(float)arg2 withFont:(id)arg3 minFontSize:(float)arg4 actualFontSize:(float*)arg5 lineBreakMode:(int)arg6 baselineAdjustment:(int)arg7;
+- (struct CGSize { float x1; float x2; })drawAtPoint:(struct CGPoint { float x1; float x2; })arg1 forWidth:(float)arg2 withFont:(id)arg3 minFontSize:(float)arg4 actualFontSize:(float*)arg5 lineBreakMode:(int)arg6 baselineAdjustment:(int)arg7 includeEmoji:(BOOL)arg8;
+- (struct CGSize { float x1; float x2; })drawAtPoint:(struct CGPoint { float x1; float x2; })arg1 withFont:(id)arg2;
+- (struct CGSize { float x1; float x2; })drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withFont:(id)arg2;
+- (struct CGSize { float x1; float x2; })drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withFont:(id)arg2 lineBreakMode:(int)arg3;
+- (struct CGSize { float x1; float x2; })drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withFont:(id)arg2 lineBreakMode:(int)arg3 alignment:(int)arg4;
+- (struct CGSize { float x1; float x2; })drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withFont:(id)arg2 lineBreakMode:(int)arg3 alignment:(int)arg4 lineSpacing:(int)arg5;
+- (struct CGSize { float x1; float x2; })drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withFont:(id)arg2 lineBreakMode:(int)arg3 alignment:(int)arg4 lineSpacing:(int)arg5 includeEmoji:(BOOL)arg6;
 - (id)queryKeysAndValues;
-- (struct CGSize { double x1; double x2; })sizeWithFont:(id)arg1;
-- (struct CGSize { double x1; double x2; })sizeWithFont:(id)arg1 constrainedToSize:(struct CGSize { double x1; double x2; })arg2;
-- (struct CGSize { double x1; double x2; })sizeWithFont:(id)arg1 constrainedToSize:(struct CGSize { double x1; double x2; })arg2 lineBreakMode:(int)arg3;
-- (struct CGSize { double x1; double x2; })sizeWithFont:(id)arg1 constrainedToSize:(struct CGSize { double x1; double x2; })arg2 lineBreakMode:(int)arg3 lineSpacing:(int)arg4;
-- (struct CGSize { double x1; double x2; })sizeWithFont:(id)arg1 forWidth:(float)arg2 lineBreakMode:(int)arg3;
-- (struct CGSize { double x1; double x2; })sizeWithFont:(id)arg1 forWidth:(float)arg2 lineBreakMode:(int)arg3 letterSpacing:(float)arg4;
-- (struct CGSize { double x1; double x2; })sizeWithFont:(id)arg1 minFontSize:(float)arg2 actualFontSize:(float*)arg3 forWidth:(float)arg4 lineBreakMode:(int)arg5;
+- (struct CGSize { float x1; float x2; })sizeWithFont:(id)arg1;
+- (struct CGSize { float x1; float x2; })sizeWithFont:(id)arg1 constrainedToSize:(struct CGSize { float x1; float x2; })arg2;
+- (struct CGSize { float x1; float x2; })sizeWithFont:(id)arg1 constrainedToSize:(struct CGSize { float x1; float x2; })arg2 lineBreakMode:(int)arg3;
+- (struct CGSize { float x1; float x2; })sizeWithFont:(id)arg1 constrainedToSize:(struct CGSize { float x1; float x2; })arg2 lineBreakMode:(int)arg3 lineSpacing:(int)arg4;
+- (struct CGSize { float x1; float x2; })sizeWithFont:(id)arg1 forWidth:(float)arg2 lineBreakMode:(int)arg3;
+- (struct CGSize { float x1; float x2; })sizeWithFont:(id)arg1 forWidth:(float)arg2 lineBreakMode:(int)arg3 letterSpacing:(float)arg4;
+- (struct CGSize { float x1; float x2; })sizeWithFont:(id)arg1 minFontSize:(float)arg2 actualFontSize:(float*)arg3 forWidth:(float)arg4 lineBreakMode:(int)arg5;
 - (id)stringByStandardizingWhitespace;
 
 // Image: /System/Library/Frameworks/UserNotifications.framework/UserNotifications
@@ -507,7 +507,7 @@
 - (id)un_localizedStringKey;
 - (id)un_localizedStringValue;
 - (id)un_logDigest;
-- (unsigned int)un_unsignedLongLongValue;
+- (unsigned long long)un_unsignedLongLongValue;
 
 // Image: /System/Library/Frameworks/WatchKit.framework/WatchKit
 
@@ -709,7 +709,7 @@
 
 + (id)br_emptyFilenameAlternativeName;
 + (id)br_pathForDirectory:(unsigned int)arg1;
-+ (id)br_pathWithDeviceID:(int)arg1 fileID:(unsigned int)arg2;
++ (id)br_pathWithDeviceID:(int)arg1 fileID:(unsigned long long)arg2;
 + (id)br_pathWithFileSystemRepresentation:(const char *)arg1;
 + (id)br_representableHFSFileNameWithBase:(id)arg1 suffix:(id)arg2 extension:(id)arg3 makeDotFile:(BOOL)arg4;
 
@@ -717,7 +717,7 @@
 - (id)br_displayFilenameWithExtensionHidden:(BOOL)arg1;
 - (const char *)br_fileSystemRepresentation;
 - (BOOL)br_isAbsolutePath;
-- (BOOL)br_isDocumentTooLargeForUpload:(BOOL)arg1 maxUploadDocumentSize:(int)arg2;
+- (BOOL)br_isDocumentTooLargeForUpload:(BOOL)arg1 maxUploadDocumentSize:(long long)arg2;
 - (BOOL)br_isEqualToStringForHFS:(id)arg1 isCaseSensitive:(BOOL)arg2;
 - (BOOL)br_isExcludedButPreservedAtLogOutWithFilenames:(id)arg1 extensions:(id)arg2;
 - (BOOL)br_isExcludedWithMaximumDepth:(unsigned int)arg1;
@@ -833,7 +833,7 @@
 + (id)MSTempFilePath;
 
 - (id)MSHexData;
-- (unsigned int)MSUniqueID;
+- (unsigned long long)MSUniqueID;
 
 // Image: /System/Library/PrivateFrameworks/CoreParsec.framework/CoreParsec
 
@@ -1022,7 +1022,7 @@
 
 + (id)hf_formattedPersonNameForFirstName:(id)arg1 lastName:(id)arg2;
 
-- (id)dynamicStringForSize:(struct CGSize { double x1; double x2; })arg1 attributes:(id)arg2;
+- (id)dynamicStringForSize:(struct CGSize { float x1; float x2; })arg1 attributes:(id)arg2;
 - (id)hf_MD5;
 - (id)hf_SHA1;
 - (id)hf_SHA256;
@@ -1218,7 +1218,7 @@
 + (id)mf_stringForMimeTypeFromFileName:(id)arg1;
 + (id)mf_stringFromMimeEnrichedString:(id)arg1 asHTML:(BOOL)arg2;
 + (id)mf_stringFromMimeRichTextString:(id)arg1 asHTML:(BOOL)arg2;
-+ (id)mf_stringRepresentationForBytes:(int)arg1;
++ (id)mf_stringRepresentationForBytes:(long long)arg1;
 + (id)mf_stringWithAttachmentCharacter;
 
 - (id)mf_betterStringByResolvingSymlinksInPath;
@@ -1441,7 +1441,7 @@
 - (id)gsu_splitWithoutLastEmptyEntryWithDelimiter:(id)arg1 isEndWithDelimiter:(BOOL*)arg2;
 - (id)gsu_stripTrailingChars:(BOOL)arg1;
 - (id)gsu_stripTrailingSlashesIfPresent;
-- (int)gsu_uInt64Value:(unsigned int*)arg1;
+- (int)gsu_uInt64Value:(unsigned long long*)arg1;
 - (unsigned int)gsu_unsignedIntegerValue;
 - (id)initWithCsString:(const struct CsString { int (**x1)(); unsigned short *x2; unsigned int x3; unsigned int x4; }*)arg1;
 - (id)initWithOcText:(const struct OcText { int (**x1)(); int x2; unsigned int x3; unsigned int x4; unsigned int x5; char *x6; char *x7; bool x8; }*)arg1;
@@ -1612,7 +1612,7 @@
 - (BOOL)containsDigits;
 - (int)digits;
 - (BOOL)px_hasPrefixIgnoringCaseAndDiacritics:(id)arg1;
-- (int)px_platformAgnosticHash;
+- (long long)px_platformAgnosticHash;
 - (id)px_stringByApplyingCapitalization:(int)arg1;
 - (id)px_stringByIndentingNewLines;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfDigits;
@@ -1775,9 +1775,9 @@
 
 // Image: /System/Library/PrivateFrameworks/SpringBoardServices.framework/SpringBoardServices
 
-+ (id)sbs_stringFromCGRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
++ (id)sbs_stringFromCGRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })sbs_cgRectValue;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })sbs_cgRectValue;
 
 // Image: /System/Library/PrivateFrameworks/SpringBoardUI.framework/SpringBoardUI
 
@@ -1947,15 +1947,15 @@
 + (BOOL)usesFontLeading;
 + (BOOL)usesScreenFonts;
 
-- (struct CGSize { double x1; double x2; })_sizeWithSize:(struct CGSize { double x1; double x2; })arg1 attributes:(id)arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundingRectWithSize:(struct CGSize { double x1; double x2; })arg1 options:(int)arg2 attributes:(id)arg3;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundingRectWithSize:(struct CGSize { double x1; double x2; })arg1 options:(int)arg2 attributes:(id)arg3 context:(id)arg4;
-- (void)drawAtPoint:(struct CGPoint { double x1; double x2; })arg1 withAttributes:(id)arg2;
-- (void)drawInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withAttributes:(id)arg2;
-- (void)drawWithRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 options:(int)arg2 attributes:(id)arg3;
-- (void)drawWithRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 options:(int)arg2 attributes:(id)arg3 context:(id)arg4;
+- (struct CGSize { float x1; float x2; })_sizeWithSize:(struct CGSize { float x1; float x2; })arg1 attributes:(id)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingRectWithSize:(struct CGSize { float x1; float x2; })arg1 options:(int)arg2 attributes:(id)arg3;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingRectWithSize:(struct CGSize { float x1; float x2; })arg1 options:(int)arg2 attributes:(id)arg3 context:(id)arg4;
+- (void)drawAtPoint:(struct CGPoint { float x1; float x2; })arg1 withAttributes:(id)arg2;
+- (void)drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withAttributes:(id)arg2;
+- (void)drawWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 options:(int)arg2 attributes:(id)arg3;
+- (void)drawWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 options:(int)arg2 attributes:(id)arg3 context:(id)arg4;
 - (BOOL)hasColorGlyphsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 attributes:(id)arg2;
-- (struct CGSize { double x1; double x2; })sizeWithAttributes:(id)arg1;
+- (struct CGSize { float x1; float x2; })sizeWithAttributes:(id)arg1;
 - (id)stringByStrippingLeadingAndTrailingWhitespace;
 
 // Image: /System/Library/PrivateFrameworks/UserNotificationsServer.framework/UserNotificationsServer
@@ -1978,9 +1978,9 @@
 
 // Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
 
-+ (id)rc_stringWithPersistentID:(int)arg1;
++ (id)rc_stringWithPersistentID:(long long)arg1;
 
-- (int)rc_persistentIDValue;
+- (long long)rc_persistentIDValue;
 - (id)rc_stringByReplacingBreakingWithNonBreakingSpaces;
 
 // Image: /System/Library/PrivateFrameworks/VoiceTriggerUI.framework/VoiceTriggerUI
@@ -1999,9 +1999,9 @@
 
 + (id)stringWithFormat:(id)arg1 andArguments:(id)arg2;
 
-- (void)drawAtPoint:(struct CGPoint { double x1; double x2; })arg1 forWidth:(float)arg2 withFont:(id)arg3 fontColor:(id)arg4 shadowColor:(id)arg5;
-- (void)drawWithDegreeAtPoint:(struct CGPoint { double x1; double x2; })arg1 font:(id)arg2 degreeFont:(id)arg3 degreeOffset:(struct CGSize { double x1; double x2; })arg4;
-- (struct CGSize { double x1; double x2; })sizeWithDegreeWithFont:(id)arg1 degreeFont:(id)arg2 degreeOffset:(struct CGSize { double x1; double x2; })arg3;
+- (void)drawAtPoint:(struct CGPoint { float x1; float x2; })arg1 forWidth:(float)arg2 withFont:(id)arg3 fontColor:(id)arg4 shadowColor:(id)arg5;
+- (void)drawWithDegreeAtPoint:(struct CGPoint { float x1; float x2; })arg1 font:(id)arg2 degreeFont:(id)arg3 degreeOffset:(struct CGSize { float x1; float x2; })arg4;
+- (struct CGSize { float x1; float x2; })sizeWithDegreeWithFont:(id)arg1 degreeFont:(id)arg2 degreeOffset:(struct CGSize { float x1; float x2; })arg3;
 
 // Image: /System/Library/PrivateFrameworks/WebApp.framework/WebApp
 

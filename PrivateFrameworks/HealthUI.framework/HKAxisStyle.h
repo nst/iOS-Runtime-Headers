@@ -5,8 +5,8 @@
 @interface HKAxisStyle : NSObject <NSCopying> {
     unsigned int  _axisLabelPosition;
     HKStrokeStyle * _axisLineStyle;
-    double  _fillInnerPadding;
-    double  _fillOuterPadding;
+    float  _fillInnerPadding;
+    float  _fillOuterPadding;
     HKFillStyle * _fillStyle;
     HKStrokeStyle * _gridLineStyle;
     HKAxisLabelStyle * _labelStyle;
@@ -18,8 +18,8 @@
 
 @property (nonatomic) unsigned int axisLabelPosition;
 @property (nonatomic, retain) HKStrokeStyle *axisLineStyle;
-@property (nonatomic) double fillInnerPadding;
-@property (nonatomic) double fillOuterPadding;
+@property (nonatomic) float fillInnerPadding;
+@property (nonatomic) float fillOuterPadding;
 @property (nonatomic, retain) HKFillStyle *fillStyle;
 @property (nonatomic, retain) HKStrokeStyle *gridLineStyle;
 @property (nonatomic, retain) HKAxisLabelStyle *labelStyle;

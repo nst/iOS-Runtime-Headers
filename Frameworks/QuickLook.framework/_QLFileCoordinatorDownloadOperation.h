@@ -3,7 +3,7 @@
  */
 
 @interface _QLFileCoordinatorDownloadOperation : _QLDownloadOperation {
-    double  _currentProgress;
+    float  _currentProgress;
     NSFileCoordinator * _fileCoordinator;
     id  _progressSubscriber;
 }

@@ -4,13 +4,13 @@
 
 @interface CKTranscriptStatusCell : CKTranscriptLabelCell {
     BOOL  _buttonAlignmentRelativeToContent;
-    double  _prevBalloonWidth;
+    float  _prevBalloonWidth;
     UIButton * _statusButton;
 }
 
 @property (nonatomic, copy) NSAttributedString *attributedButtonText;
 @property (nonatomic) BOOL buttonAlignmentRelativeToContent;
-@property (nonatomic) double prevBalloonWidth;
+@property (nonatomic) float prevBalloonWidth;
 @property (nonatomic, retain) UIButton *statusButton;
 
 + (id)statusButton;

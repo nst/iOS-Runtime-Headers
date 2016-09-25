@@ -14,7 +14,7 @@
         unsigned int pointSize; 
     }  _finalTileKey;
     struct CGImage { } * _image;
-    double  _scale;
+    float  _scale;
     struct VKTileKey { 
         unsigned int z; 
         int x; 

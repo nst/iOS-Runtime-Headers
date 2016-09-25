@@ -3,12 +3,12 @@
  */
 
 @interface GQZEntry : NSObject {
-    unsigned int  mCompressedSize;
+    unsigned long long  mCompressedSize;
     int  mCompressionMethod;
     unsigned int  mCrc;
     <GQZArchiveInputStream> * mInput;
-    unsigned int  mOffset;
-    unsigned int  mUncompressedSize;
+    unsigned long long  mOffset;
+    unsigned long long  mUncompressedSize;
 }
 
 - (id)data;

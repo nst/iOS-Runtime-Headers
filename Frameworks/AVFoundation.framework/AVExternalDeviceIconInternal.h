@@ -6,8 +6,8 @@
     NSData * _data;
     BOOL  _prerendered;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _size;
 }
 

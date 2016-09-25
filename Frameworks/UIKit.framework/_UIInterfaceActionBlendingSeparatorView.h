@@ -6,7 +6,7 @@
     _UIInterfaceActionSeparatorConstraintController * _separatorViewConstraints;
 }
 
-@property (nonatomic) double constantAxisDimension;
+@property (nonatomic) float constantAxisDimension;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;

@@ -12,9 +12,9 @@
     NSString * _label;
     NSString * _labelForLocalMedia;
     NSString * _labelITunes;
-    double  _latitude;
+    float  _latitude;
     NSString * _localMediaIdentifier;
-    double  _longitude;
+    float  _longitude;
     NSData * _mapsData;
     NSString * _offerType;
     NSString * _phoneNumber;
@@ -34,9 +34,9 @@
 @property (nonatomic, copy) NSString *label;
 @property (nonatomic, copy) NSString *labelForLocalMedia;
 @property (nonatomic, retain) NSString *labelITunes;
-@property (nonatomic) double latitude;
+@property (nonatomic) float latitude;
 @property (nonatomic, copy) NSString *localMediaIdentifier;
-@property (nonatomic) double longitude;
+@property (nonatomic) float longitude;
 @property (nonatomic, retain) NSData *mapsData;
 @property (nonatomic, retain) NSString *offerType;
 @property (nonatomic, copy) NSString *phoneNumber;

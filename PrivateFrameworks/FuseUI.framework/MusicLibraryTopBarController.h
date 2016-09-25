@@ -8,10 +8,10 @@
     UIViewController * _targetViewController;
     UIView * _topBarContainerView;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _topBarContentInsetAdditions;
     UIViewController * _topBarViewController;
 }

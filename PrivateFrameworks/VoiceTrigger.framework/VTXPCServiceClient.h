@@ -16,7 +16,7 @@
 - (id)getFirstChanceTriggeredDate;
 - (id)getFirstChanceVTEventInfo;
 - (unsigned char)getLastTriggerType;
-- (int)getVoiceTriggerCount;
+- (long long)getVoiceTriggerCount;
 - (id)init;
 - (void)notifySecondChanceRequest;
 - (void)notifyTriggerEventRequest;

@@ -10,7 +10,7 @@
     unsigned int  _outputWidth;
     unsigned int  _processedOutputFormat;
     unsigned int  _rawOutputFormat;
-    int  _settingsID;
+    long long  _settingsID;
 }
 
 @property (nonatomic) int HDRMode;
@@ -23,7 +23,7 @@
 @property (nonatomic) unsigned int outputWidth;
 @property (nonatomic) unsigned int processedOutputFormat;
 @property (nonatomic) unsigned int rawOutputFormat;
-@property (nonatomic) int settingsID;
+@property (nonatomic) long long settingsID;
 @property (readonly) Class superclass;
 
 - (int)HDRMode;
@@ -48,7 +48,7 @@
 - (void)setProcessedOutputFormat:(unsigned int)arg1;
 - (void)setRawOutputFormat:(unsigned int)arg1;
 - (void)setSISMode:(int)arg1;
-- (void)setSettingsID:(int)arg1;
-- (int)settingsID;
+- (void)setSettingsID:(long long)arg1;
+- (long long)settingsID;
 
 @end

@@ -4,7 +4,7 @@
 
 @interface PAAggregatedKernelInstruction : PAAggregatedInstruction
 
-- (id)initWithUUID:(id)arg1 andOffset:(unsigned int)arg2;
+- (id)initWithUUID:(id)arg1 andOffset:(unsigned long long)arg2;
 - (BOOL)isKernel;
 
 @end

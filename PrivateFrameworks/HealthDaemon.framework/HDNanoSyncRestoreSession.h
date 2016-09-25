@@ -7,7 +7,7 @@
     NSMutableArray * _completionHandlers;
     BOOL  _finished;
     HDNanoSyncStore * _nanoSyncStore;
-    int  _sequenceNumber;
+    long long  _sequenceNumber;
     NSUUID * _sessionUUID;
     NSDate * _startDate;
     _HKExpiringCompletionTimer * _timer;
@@ -17,7 +17,7 @@
 @property (nonatomic, retain) NSMutableArray *completionHandlers;
 @property (getter=isFinished, nonatomic, readonly) BOOL finished;
 @property (nonatomic, readonly) HDNanoSyncStore *nanoSyncStore;
-@property (nonatomic) int sequenceNumber;
+@property (nonatomic) long long sequenceNumber;
 @property (nonatomic, readonly) NSUUID *sessionUUID;
 @property (nonatomic, readonly) NSDate *startDate;
 @property (nonatomic, retain) _HKExpiringCompletionTimer *timer;
@@ -33,10 +33,10 @@
 - (BOOL)isFinished;
 - (id)nanoSyncStore;
 - (void)scheduleTimeoutWithInterval:(double)arg1 handler:(id /* block */)arg2;
-- (int)sequenceNumber;
+- (long long)sequenceNumber;
 - (id)sessionUUID;
 - (void)setCompletionHandlers:(id)arg1;
-- (void)setSequenceNumber:(int)arg1;
+- (void)setSequenceNumber:(long long)arg1;
 - (void)setTimer:(id)arg1;
 - (id)startDate;
 - (id)timer;

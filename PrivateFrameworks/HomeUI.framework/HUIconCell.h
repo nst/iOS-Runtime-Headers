@@ -7,14 +7,14 @@
     BOOL  _disabled;
     NSArray * _dynamicConstraints;
     BOOL  _hideIcon;
-    double  _iconAlpha;
+    float  _iconAlpha;
     UIView * _iconContainerView;
     unsigned int  _iconDisplayStyle;
     UIColor * _iconForegroundColor;
     BOOL  _iconForegroundColorFollowsTintColor;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _iconSize;
     HUIconView * _iconView;
     HFItem * _item;
@@ -28,12 +28,12 @@
 @property (nonatomic, retain) NSArray *dynamicConstraints;
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL hideIcon;
-@property (nonatomic) double iconAlpha;
+@property (nonatomic) float iconAlpha;
 @property (nonatomic, retain) UIView *iconContainerView;
 @property (nonatomic) unsigned int iconDisplayStyle;
 @property (nonatomic, retain) UIColor *iconForegroundColor;
 @property (nonatomic) BOOL iconForegroundColorFollowsTintColor;
-@property (nonatomic) struct CGSize { double x1; double x2; } iconSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } iconSize;
 @property (nonatomic, retain) HUIconView *iconView;
 @property (nonatomic, retain) HFItem *item;
 @property (readonly) Class superclass;
@@ -51,7 +51,7 @@
 - (unsigned int)iconDisplayStyle;
 - (id)iconForegroundColor;
 - (BOOL)iconForegroundColorFollowsTintColor;
-- (struct CGSize { double x1; double x2; })iconSize;
+- (struct CGSize { float x1; float x2; })iconSize;
 - (id)iconView;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (BOOL)isDisabled;
@@ -67,7 +67,7 @@
 - (void)setIconDisplayStyle:(unsigned int)arg1;
 - (void)setIconForegroundColor:(id)arg1;
 - (void)setIconForegroundColorFollowsTintColor:(BOOL)arg1;
-- (void)setIconSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setIconSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setIconView:(id)arg1;
 - (void)setItem:(id)arg1;
 - (void)updateConstraints;

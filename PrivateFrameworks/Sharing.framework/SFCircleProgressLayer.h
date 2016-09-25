@@ -3,18 +3,18 @@
  */
 
 @interface SFCircleProgressLayer : CALayer {
-    double  _oneFullRotation;
+    float  _oneFullRotation;
     UIColor * _progressBackgroundColor;
     UIColor * _progressColor;
-    double  _progressLineWidth;
+    float  _progressLineWidth;
     int  _progressStartPoint;
     BOOL  _showProgressTray;
 }
 
-@property (nonatomic) double progress;
+@property (nonatomic) float progress;
 @property (nonatomic, retain) UIColor *progressBackgroundColor;
 @property (nonatomic, retain) UIColor *progressColor;
-@property (nonatomic) double progressLineWidth;
+@property (nonatomic) float progressLineWidth;
 @property (nonatomic) int progressStartPoint;
 @property (nonatomic) BOOL showProgressTray;
 

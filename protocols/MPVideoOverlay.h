@@ -7,8 +7,8 @@
 
 - (BOOL)allowsWirelessPlayback;
 - (<MPVideoOverlayDelegate> *)delegate;
-- (unsigned int)desiredParts;
-- (unsigned int)disabledParts;
+- (unsigned long long)desiredParts;
+- (unsigned long long)disabledParts;
 - (void)hideAlternateTracks;
 - (MPAVItem *)item;
 - (UINavigationBar *)navigationBar;
@@ -16,20 +16,20 @@
 - (MPAVController *)player;
 - (void)setAllowsWirelessPlayback:(BOOL)arg1;
 - (void)setDelegate:(id <MPVideoOverlayDelegate>)arg1;
-- (void)setDesiredParts:(unsigned int)arg1;
-- (void)setDesiredParts:(unsigned int)arg1 animate:(BOOL)arg2;
-- (void)setDisabledParts:(unsigned int)arg1;
+- (void)setDesiredParts:(unsigned long long)arg1;
+- (void)setDesiredParts:(unsigned long long)arg1 animate:(BOOL)arg2;
+- (void)setDisabledParts:(unsigned long long)arg1;
 - (void)setItem:(MPAVItem *)arg1;
 - (void)setNavigationBarHidden:(BOOL)arg1;
 - (void)setPlayer:(MPAVController *)arg1;
 - (void)setVideoViewController:(id <MPVideoControllerProtocol>)arg1;
-- (void)setVisibleParts:(unsigned int)arg1;
-- (void)setVisibleParts:(unsigned int)arg1 animate:(BOOL)arg2;
+- (void)setVisibleParts:(unsigned long long)arg1;
+- (void)setVisibleParts:(unsigned long long)arg1 animate:(BOOL)arg2;
 - (void)showAlternateTracks;
 - (void)startTicking;
 - (void)stopTicking;
 - (BOOL)updateTimeBasedValues;
 - (<MPVideoControllerProtocol> *)videoViewController;
-- (unsigned int)visibleParts;
+- (unsigned long long)visibleParts;
 
 @end

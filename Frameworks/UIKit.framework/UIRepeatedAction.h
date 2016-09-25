@@ -8,9 +8,9 @@
     BOOL  _disableRepeat;
     NSInvocation * _invocation;
     id  _invocationArgument;
-    double  _invocationDelay;
-    double  _preInvocationDelay;
-    double  _repeatedDelay;
+    float  _invocationDelay;
+    float  _preInvocationDelay;
+    float  _repeatedDelay;
     BOOL  _skipInitialFire;
     NSTimer * _timer;
 }
@@ -18,9 +18,9 @@
 @property (nonatomic) BOOL disableRepeat;
 @property (nonatomic, retain) NSInvocation *invocation;
 @property (nonatomic, retain) id invocationArgument;
-@property (nonatomic) double invocationDelay;
-@property (nonatomic) double preInvocationDelay;
-@property (nonatomic) double repeatedDelay;
+@property (nonatomic) float invocationDelay;
+@property (nonatomic) float preInvocationDelay;
+@property (nonatomic) float repeatedDelay;
 @property (nonatomic) BOOL skipInitialFire;
 @property (nonatomic, retain) NSTimer *timer;
 

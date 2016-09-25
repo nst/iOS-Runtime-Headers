@@ -4,27 +4,27 @@
 
 @interface WBSTemplateIconMonogramConfiguration : NSObject {
     UIColor * _backgroundColor;
-    double  _baselineOffset;
-    double  _cornerRadius;
-    double  _fontSize;
+    float  _baselineOffset;
+    float  _cornerRadius;
+    float  _fontSize;
     int  _fontWeight;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _iconSize;
     BOOL  _skipMonogramGeneration;
 }
 
 @property (nonatomic, retain) UIColor *backgroundColor;
-@property (nonatomic) double baselineOffset;
-@property (nonatomic) double cornerRadius;
-@property (nonatomic) double fontSize;
+@property (nonatomic) float baselineOffset;
+@property (nonatomic) float cornerRadius;
+@property (nonatomic) float fontSize;
 @property (nonatomic) int fontWeight;
-@property (nonatomic) struct CGSize { double x1; double x2; } iconSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } iconSize;
 @property (nonatomic) BOOL skipMonogramGeneration;
 
 + (id)configurationWithBackgroundColor:(id)arg1;
-+ (id)configurationWithIconSize:(struct CGSize { double x1; double x2; })arg1 fontSize:(float)arg2 fontWeight:(int)arg3 baselineOffset:(float)arg4 backgroundColor:(id)arg5 cornerRadius:(float)arg6;
++ (id)configurationWithIconSize:(struct CGSize { float x1; float x2; })arg1 fontSize:(float)arg2 fontWeight:(int)arg3 baselineOffset:(float)arg4 backgroundColor:(id)arg5 cornerRadius:(float)arg6;
 
 - (void).cxx_destruct;
 - (id)backgroundColor;
@@ -32,13 +32,13 @@
 - (float)cornerRadius;
 - (float)fontSize;
 - (int)fontWeight;
-- (struct CGSize { double x1; double x2; })iconSize;
+- (struct CGSize { float x1; float x2; })iconSize;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setBaselineOffset:(float)arg1;
 - (void)setCornerRadius:(float)arg1;
 - (void)setFontSize:(float)arg1;
 - (void)setFontWeight:(int)arg1;
-- (void)setIconSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setIconSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setSkipMonogramGeneration:(BOOL)arg1;
 - (BOOL)skipMonogramGeneration;
 

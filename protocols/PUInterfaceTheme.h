@@ -43,7 +43,7 @@
 - (UIColor *)cloudStatusHighlightColor;
 - (UIFont *)cloudWelcomeViewTitleLabelFontForSize:(float)arg1;
 - (NSString *)commentsButtonStringForCount:(int)arg1;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })commentsButtonTextInset;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })commentsButtonTextInset;
 - (UIImage *)compactLoadErrorIcon;
 - (void)configureAlbumListDeleteButton:(UIButton *)arg1;
 - (void)configureAlbumListEmptyStackViewPadPhotoDecoration:(PUPhotoDecoration *)arg1;
@@ -58,7 +58,7 @@
 - (void)configureBannerStackView:(PUStackView *)arg1;
 - (void)configureCloudFeedCommentButton:(UIButton *)arg1 withCount:(int)arg2;
 - (void)configureCloudFeedInvitationReplyButton:(UIButton *)arg1;
-- (void)configureCloudFeedStackView:(PUStackView *)arg1 withStackSize:(struct CGSize { double x1; double x2; })arg2;
+- (void)configureCloudFeedStackView:(PUStackView *)arg1 withStackSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)configureEditPluginListCellLabel:(UILabel *)arg1;
 - (void)configureEditPluginListNavigationController:(UINavigationController *)arg1;
 - (void)configureEditPluginNavigationController:(UINavigationController *)arg1;
@@ -75,7 +75,7 @@
 - (void)configureSearchSubtitleLabel:(UILabel *)arg1;
 - (void)configureSearchTitleLabel:(UILabel *)arg1;
 - (void)configureSlideshowMusicHeaderTitleLabel:(UILabel *)arg1;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentCommentsButtonImageInset;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentCommentsButtonImageInset;
 - (UIColor *)contentCommentsHiddenButtonImageColor;
 - (NSDictionary *)contentCommentsHiddenButtonTextAttributes;
 - (UIColor *)contentCommentsShownButtonImageColor;
@@ -108,7 +108,7 @@
 - (UIColor *)photoCollectionHeaderBackgroundColorForBackgroundStyle:(unsigned int)arg1;
 - (UIFontDescriptor *)photoCollectionHeaderDateLabelFontDescriptorForStyle:(int)arg1;
 - (UIImage *)photoCollectionHeaderDisclosureIconForStyle:(int)arg1;
-- (struct UIOffset { double x1; double x2; })photoCollectionHeaderLocationIconOffsetForStyle:(int)arg1;
+- (struct UIOffset { float x1; float x2; })photoCollectionHeaderLocationIconOffsetForStyle:(int)arg1;
 - (UIFontDescriptor *)photoCollectionHeaderLocationLabelFontDescriptorForStyle:(int)arg1;
 - (UIFontDescriptor *)photoCollectionHeaderTitleLabelFontDescriptorForStyle:(int)arg1;
 - (float)photoCollectionToolbarIconToTextSpacerWidth;
@@ -172,7 +172,7 @@
 - (UIColor *)slideshowMusicHeaderBackgroundColor;
 - (UIColor *)slideshowMusicHeaderTextColor;
 - (UIColor *)slideshowSeparatorColor;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })slideshowSeparatorInset;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })slideshowSeparatorInset;
 - (UIColor *)tintColorForBarStyle:(int)arg1;
 - (UIColor *)toolbarAirPlayButtonColor;
 - (UIColor *)toolbarCommentsHiddenButtonImageColor;
@@ -182,7 +182,7 @@
 - (UIImage *)topLevelNavigationBarBackButtonBackgroundImageForState:(unsigned int)arg1 barMetrics:(int)arg2;
 - (UIImage *)topLevelNavigationBarButtonBackgroundImageForState:(unsigned int)arg1 barMetrics:(int)arg2;
 - (UIColor *)topLevelNavigationBarButtonTintColor;
-- (struct UIOffset { double x1; double x2; })topLevelNavigationBarButtonTitlePositionAdjustmentforBarMetrics:(int)arg1;
+- (struct UIOffset { float x1; float x2; })topLevelNavigationBarButtonTitlePositionAdjustmentforBarMetrics:(int)arg1;
 - (NSDictionary *)topLevelNavigationBarButtonTitleTextAttributesForState:(unsigned int)arg1;
 - (UIImage *)topLevelNavigationBarDoneButtonBackgroundImageForState:(unsigned int)arg1 barMetrics:(int)arg2;
 - (NSDictionary *)topLevelNavigationBarDoneButtonTitleTextAttributesForState:(unsigned int)arg1;

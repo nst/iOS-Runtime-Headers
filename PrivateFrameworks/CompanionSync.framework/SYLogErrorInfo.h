@@ -3,17 +3,17 @@
  */
 
 @interface SYLogErrorInfo : PBCodable <NSCopying> {
-    int  _code;
+    long long  _code;
     NSString * _domain;
 }
 
 @property (nonatomic, readonly) NSError *cocoaError;
-@property (nonatomic) int code;
+@property (nonatomic) long long code;
 @property (nonatomic, retain) NSString *domain;
 
 - (void).cxx_destruct;
 - (id)cocoaError;
-- (int)code;
+- (long long)code;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -24,7 +24,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (void)setCode:(int)arg1;
+- (void)setCode:(long long)arg1;
 - (void)setDomain:(id)arg1;
 - (void)writeTo:(id)arg1;
 

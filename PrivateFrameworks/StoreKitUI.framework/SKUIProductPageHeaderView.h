@@ -10,7 +10,7 @@
     SKUIItemContentRating * _contentRating;
     SKUIContentRatingArtworkResourceLoader * _contentRatingArtworkLoader;
     SKUIBadgeLabel * _editorialBadgeLabel;
-    double  _headerImageHeight;
+    float  _headerImageHeight;
     UIImageView * _headerImageView;
     UIImageView * _iconImageView;
     UILabel * _inAppPurchasesLabel;
@@ -25,7 +25,7 @@
     SKUIItemContentRating * _secondaryContentRating;
     UIButton * _shareButton;
     SKUIProductPageHeaderLabel * _titleLabel;
-    double  _userRating;
+    float  _userRating;
     UILabel * _userRatingLabel;
     UIImageView * _userRatingStarsView;
 }
@@ -41,7 +41,7 @@
 @property (nonatomic, copy) NSString *editorialBadge;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) UIImage *headerImage;
-@property (nonatomic) double headerImageHeight;
+@property (nonatomic) float headerImageHeight;
 @property (nonatomic, retain) UIImage *iconImage;
 @property (nonatomic, copy) NSString *inAppPurchasesString;
 @property (nonatomic, retain) SKUIItemOffer *itemOffer;
@@ -55,7 +55,7 @@
 @property (nonatomic, readonly) UIControl *shareButton;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *title;
-@property (nonatomic) double userRating;
+@property (nonatomic) float userRating;
 
 - (void).cxx_destruct;
 - (void)_cancelConfirmationAction:(id)arg1;

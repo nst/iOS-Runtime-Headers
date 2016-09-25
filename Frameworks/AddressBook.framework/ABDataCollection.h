@@ -36,8 +36,8 @@
 @property (nonatomic) int totalGroups;
 
 + (BOOL)isEnabled;
-+ (void)logContactCreation:(int)arg1;
-+ (void)logContactUpdate:(int)arg1;
++ (void)logContactCreation:(long long)arg1;
++ (void)logContactUpdate:(long long)arg1;
 + (void)logPropertyAdded:(int)arg1 forContact:(void*)arg2;
 
 - (id)_sourceTypeAsString:(int)arg1;

@@ -3,21 +3,21 @@
  */
 
 @interface MDLPhysicallyPlausibleLight : MDLLight {
-    double  _attenuationEndDistance;
-    double  _attenuationFalloffExponent;
-    double  _attenuationStartDistance;
-    double  _innerConeAngle;
-    double  _lumens;
-    double  _outerConeAngle;
+    float  _attenuationEndDistance;
+    float  _attenuationFalloffExponent;
+    float  _attenuationStartDistance;
+    float  _innerConeAngle;
+    float  _lumens;
+    float  _outerConeAngle;
 }
 
-@property (nonatomic) double attenuationEndDistance;
-@property (nonatomic) double attenuationFalloffExponent;
-@property (nonatomic) double attenuationStartDistance;
+@property (nonatomic) float attenuationEndDistance;
+@property (nonatomic) float attenuationFalloffExponent;
+@property (nonatomic) float attenuationStartDistance;
 @property (nonatomic) struct CGColor { }*color;
-@property (nonatomic) double innerConeAngle;
-@property (nonatomic) double lumens;
-@property (nonatomic) double outerConeAngle;
+@property (nonatomic) float innerConeAngle;
+@property (nonatomic) float lumens;
+@property (nonatomic) float outerConeAngle;
 
 - (float)attenuationEndDistance;
 - (float)attenuationFalloffExponent;

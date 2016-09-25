@@ -4,19 +4,19 @@
 
 @interface UIFont : NSObject <NSCopying, NSSecureCoding>
 
-@property (nonatomic, readonly) double ascender;
-@property (nonatomic, readonly) double capHeight;
-@property (nonatomic, readonly) double descender;
+@property (nonatomic, readonly) float ascender;
+@property (nonatomic, readonly) float capHeight;
+@property (nonatomic, readonly) float descender;
 @property (nonatomic, readonly) NSString *familyName;
 @property (nonatomic, readonly) UIFontDescriptor *fontDescriptor;
 @property (nonatomic, readonly) NSString *fontName;
-@property (nonatomic, readonly) double leading;
-@property (nonatomic, readonly) double lineHeight;
+@property (nonatomic, readonly) float leading;
+@property (nonatomic, readonly) float lineHeight;
 @property (nonatomic, readonly) NAUITextStyleDescriptor *naui_dynamicFontTextStyleDescriptor;
-@property (nonatomic, readonly) double pointSize;
+@property (nonatomic, readonly) float pointSize;
 @property (nonatomic, readonly) UIFont *pu_fontWithMonospacedNumbers;
 @property (nonatomic, readonly) NSString *rc_textStyle;
-@property (nonatomic, readonly) double xHeight;
+@property (nonatomic, readonly) float xHeight;
 
 // Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
 
@@ -80,12 +80,12 @@
 - (id)_kernOverride;
 - (float)_leading;
 - (float)_scaledValueForValue:(float)arg1;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })_textMatrixTransformForContext:(struct CGContext { }*)arg1;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_textMatrixTransformForContext:(struct CGContext { }*)arg1;
 - (float)_totalAdvancementForNativeGlyphs:(const unsigned short*)arg1 count:(long)arg2;
-- (struct CGSize { double x1; double x2; })advancementForGlyph:(unsigned short)arg1;
+- (struct CGSize { float x1; float x2; })advancementForGlyph:(unsigned short)arg1;
 - (float)ascender;
 - (id)bestMatchingFontForCharacters:(const unsigned short*)arg1 length:(unsigned int)arg2 attributes:(id)arg3 actualCoveredLength:(unsigned int*)arg4;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundingRectForFont;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingRectForFont;
 - (float)capHeight;
 - (Class)classForCoder;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -98,10 +98,10 @@
 - (id)fontDescriptor;
 - (id)fontName;
 - (id)fontWithSize:(float)arg1;
-- (void)getAdvancements:(struct CGSize { double x1; double x2; }*)arg1 forCGGlyphs:(const unsigned short*)arg2 count:(unsigned int)arg3;
-- (void)getBoundingRects:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg1 forCGGlyphs:(const unsigned short*)arg2 count:(unsigned int)arg3;
+- (void)getAdvancements:(struct CGSize { float x1; float x2; }*)arg1 forCGGlyphs:(const unsigned short*)arg2 count:(unsigned int)arg3;
+- (void)getBoundingRects:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 forCGGlyphs:(const unsigned short*)arg2 count:(unsigned int)arg3;
 - (unsigned int)getCaretPositions:(float*)arg1 forGlyph:(unsigned int)arg2 maximumLength:(unsigned int)arg3;
-- (void)getVerticalOriginTranslations:(struct CGSize { double x1; double x2; }*)arg1 forCGGlyphs:(const unsigned short*)arg2 count:(unsigned int)arg3;
+- (void)getVerticalOriginTranslations:(struct CGSize { float x1; float x2; }*)arg1 forCGGlyphs:(const unsigned short*)arg2 count:(unsigned int)arg3;
 - (unsigned short)glyphWithName:(id)arg1;
 - (unsigned int)hyphenGlyphForLocale:(id)arg1;
 - (id)initWithCoder:(id)arg1;
@@ -163,13 +163,13 @@
 
 // Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
 
-- (struct CGPoint { double x1; double x2; })mf_baselinePointFromCaplinePoint:(struct CGPoint { double x1; double x2; })arg1;
-- (struct CGPoint { double x1; double x2; })mf_baselinePointFromOriginPoint:(struct CGPoint { double x1; double x2; })arg1;
-- (struct CGPoint { double x1; double x2; })mf_caplinePointFromBaselinePoint:(struct CGPoint { double x1; double x2; })arg1;
-- (struct CGPoint { double x1; double x2; })mf_caplinePointFromOriginPoint:(struct CGPoint { double x1; double x2; })arg1;
-- (struct CGPoint { double x1; double x2; })mf_originPointFromBaselinePoint:(struct CGPoint { double x1; double x2; })arg1;
-- (struct CGPoint { double x1; double x2; })mf_originPointFromCaplinePoint:(struct CGPoint { double x1; double x2; })arg1;
-- (struct CGPoint { double x1; double x2; })mf_originPointFromMidlinePoint:(struct CGPoint { double x1; double x2; })arg1;
+- (struct CGPoint { float x1; float x2; })mf_baselinePointFromCaplinePoint:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGPoint { float x1; float x2; })mf_baselinePointFromOriginPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGPoint { float x1; float x2; })mf_caplinePointFromBaselinePoint:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGPoint { float x1; float x2; })mf_caplinePointFromOriginPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGPoint { float x1; float x2; })mf_originPointFromBaselinePoint:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGPoint { float x1; float x2; })mf_originPointFromCaplinePoint:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGPoint { float x1; float x2; })mf_originPointFromMidlinePoint:(struct CGPoint { float x1; float x2; })arg1;
 
 // Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
 

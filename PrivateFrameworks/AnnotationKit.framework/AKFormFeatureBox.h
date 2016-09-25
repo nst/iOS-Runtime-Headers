@@ -7,12 +7,12 @@
     AKFormFeatureLine * _baseline;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _enclosingRegionRect;
     unsigned int  _flags;
@@ -22,23 +22,23 @@
 
 @property (nonatomic) unsigned int alignment;
 @property (nonatomic, retain) AKFormFeatureLine *baseline;
-@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } enclosingRegionRect;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } enclosingRegionRect;
 @property (nonatomic) unsigned int flags;
 @property (getter=isMultiline, nonatomic) BOOL multiline;
 @property (nonatomic) BOOL widthExpands;
 
-+ (id)boxWithRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 onPage:(id)arg2 flags:(unsigned int)arg3 baseline:(id)arg4;
++ (id)boxWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 onPage:(id)arg2 flags:(unsigned int)arg3 baseline:(id)arg4;
 
 - (void).cxx_destruct;
 - (unsigned int)alignment;
 - (id)baseline;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })enclosingRegionRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })enclosingRegionRect;
 - (unsigned int)flags;
-- (id)initWithRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 onPage:(id)arg2 flags:(unsigned int)arg3 baseline:(id)arg4;
+- (id)initWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 onPage:(id)arg2 flags:(unsigned int)arg3 baseline:(id)arg4;
 - (BOOL)isMultiline;
 - (void)setAlignment:(unsigned int)arg1;
 - (void)setBaseline:(id)arg1;
-- (void)setEnclosingRegionRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setEnclosingRegionRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setFlags:(unsigned int)arg1;
 - (void)setMultiline:(BOOL)arg1;
 - (void)setWidthExpands:(BOOL)arg1;

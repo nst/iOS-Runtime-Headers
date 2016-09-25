@@ -8,7 +8,7 @@
     BOOL  _flipped;
     GCControllerButtonInput * _negative;
     GCControllerButtonInput * _positive;
-    double  _value;
+    float  _value;
     id /* block */  _valueChangedHandler;
 }
 

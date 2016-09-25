@@ -10,7 +10,7 @@
     int  _switchCount;
     NSString * _switchFromInterfaceName;
     NSString * _switchToInterfaceName;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) BOOL hasSwitchCount;
@@ -20,7 +20,7 @@
 @property (nonatomic) int switchCount;
 @property (nonatomic, retain) NSString *switchFromInterfaceName;
 @property (nonatomic, retain) NSString *switchToInterfaceName;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
@@ -40,11 +40,11 @@
 - (void)setSwitchCount:(int)arg1;
 - (void)setSwitchFromInterfaceName:(id)arg1;
 - (void)setSwitchToInterfaceName:(id)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (int)switchCount;
 - (id)switchFromInterfaceName;
 - (id)switchToInterfaceName;
-- (unsigned int)timestamp;
+- (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -16,10 +16,10 @@
 - (id)actionTitleLabelColorForViewState:(id)arg1;
 - (id)actionTitleLabelFontForViewState:(id)arg1;
 - (float)contentCornerRadius;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentMargin;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentMargin;
 - (id)defaultScreen;
 - (float)horizontalImageContentSpacing;
-- (struct CGSize { double x1; double x2; })minimumActionContentSize;
+- (struct CGSize { float x1; float x2; })minimumActionContentSize;
 - (id)newActionBackgroundViewForViewState:(id)arg1;
 - (id)newActionSeparatorViewForGroupViewState:(id)arg1;
 - (id)newGroupBackgroundViewWithGroupViewState:(id)arg1;

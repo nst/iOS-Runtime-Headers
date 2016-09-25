@@ -4,8 +4,8 @@
 
 @interface HDAWDHealthKitWorkout : PBCodable <NSCopying> {
     int  _activityType;
-    int  _durationMs;
-    int  _endDate;
+    long long  _durationMs;
+    long long  _endDate;
     struct { 
         unsigned int durationMs : 1; 
         unsigned int endDate : 1; 
@@ -16,16 +16,16 @@
         unsigned int totalSteps : 1; 
         unsigned int activityType : 1; 
     }  _has;
-    int  _startDate;
-    unsigned int  _timestamp;
-    int  _totalDistance;
-    int  _totalEnergyBurned;
-    int  _totalSteps;
+    long long  _startDate;
+    unsigned long long  _timestamp;
+    long long  _totalDistance;
+    long long  _totalEnergyBurned;
+    long long  _totalSteps;
 }
 
 @property (nonatomic) int activityType;
-@property (nonatomic) int durationMs;
-@property (nonatomic) int endDate;
+@property (nonatomic) long long durationMs;
+@property (nonatomic) long long endDate;
 @property (nonatomic) BOOL hasActivityType;
 @property (nonatomic) BOOL hasDurationMs;
 @property (nonatomic) BOOL hasEndDate;
@@ -34,11 +34,11 @@
 @property (nonatomic) BOOL hasTotalDistance;
 @property (nonatomic) BOOL hasTotalEnergyBurned;
 @property (nonatomic) BOOL hasTotalSteps;
-@property (nonatomic) int startDate;
-@property (nonatomic) unsigned int timestamp;
-@property (nonatomic) int totalDistance;
-@property (nonatomic) int totalEnergyBurned;
-@property (nonatomic) int totalSteps;
+@property (nonatomic) long long startDate;
+@property (nonatomic) unsigned long long timestamp;
+@property (nonatomic) long long totalDistance;
+@property (nonatomic) long long totalEnergyBurned;
+@property (nonatomic) long long totalSteps;
 
 - (int)StringAsActivityType:(id)arg1;
 - (int)activityType;
@@ -47,8 +47,8 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (int)durationMs;
-- (int)endDate;
+- (long long)durationMs;
+- (long long)endDate;
 - (BOOL)hasActivityType;
 - (BOOL)hasDurationMs;
 - (BOOL)hasEndDate;
@@ -62,8 +62,8 @@
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setActivityType:(int)arg1;
-- (void)setDurationMs:(int)arg1;
-- (void)setEndDate:(int)arg1;
+- (void)setDurationMs:(long long)arg1;
+- (void)setEndDate:(long long)arg1;
 - (void)setHasActivityType:(BOOL)arg1;
 - (void)setHasDurationMs:(BOOL)arg1;
 - (void)setHasEndDate:(BOOL)arg1;
@@ -72,16 +72,16 @@
 - (void)setHasTotalDistance:(BOOL)arg1;
 - (void)setHasTotalEnergyBurned:(BOOL)arg1;
 - (void)setHasTotalSteps:(BOOL)arg1;
-- (void)setStartDate:(int)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
-- (void)setTotalDistance:(int)arg1;
-- (void)setTotalEnergyBurned:(int)arg1;
-- (void)setTotalSteps:(int)arg1;
-- (int)startDate;
-- (unsigned int)timestamp;
-- (int)totalDistance;
-- (int)totalEnergyBurned;
-- (int)totalSteps;
+- (void)setStartDate:(long long)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
+- (void)setTotalDistance:(long long)arg1;
+- (void)setTotalEnergyBurned:(long long)arg1;
+- (void)setTotalSteps:(long long)arg1;
+- (long long)startDate;
+- (unsigned long long)timestamp;
+- (long long)totalDistance;
+- (long long)totalEnergyBurned;
+- (long long)totalSteps;
 - (void)writeTo:(id)arg1;
 
 @end

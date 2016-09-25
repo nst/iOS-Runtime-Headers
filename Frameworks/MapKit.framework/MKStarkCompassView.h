@@ -36,7 +36,7 @@
 - (void)didMoveToWindow;
 - (id)initWithEffectiveBundleIdentifier:(id)arg1;
 - (id)initWithSharedMKLocationManager;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (BOOL)isActive;
 - (void)layoutSubviews;
 - (void)locationManager:(id)arg1 didUpdateVehicleHeading:(double)arg2 timestamp:(id)arg3;
@@ -50,6 +50,6 @@
 - (void)setActive:(BOOL)arg1;
 - (void)setCompassPoint:(int)arg1;
 - (void)setContentsHidden:(BOOL)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 
 @end

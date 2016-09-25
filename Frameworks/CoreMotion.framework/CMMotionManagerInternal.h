@@ -51,16 +51,16 @@
     struct Sample { 
         double timestamp; 
         struct { 
-            double x; 
-            double y; 
-            double z; 
+            float x; 
+            float y; 
+            float z; 
         } acceleration; 
     }  fLatestAccelerometerSample;
     struct Sample { 
         double timestamp; 
         struct { 
-            double pressure; 
-            double temperature; 
+            float pressure; 
+            float temperature; 
         } pressureData; 
     }  fLatestAmbientPressureSample;
     struct Sample { 
@@ -73,19 +73,19 @@
                 double z; 
             } quaternion; 
             struct { 
-                double x; 
-                double y; 
-                double z; 
+                float x; 
+                float y; 
+                float z; 
             } userAcceleration; 
             struct { 
-                double x; 
-                double y; 
-                double z; 
+                float x; 
+                float y; 
+                float z; 
             } rotationRate; 
             struct { 
-                double x; 
-                double y; 
-                double z; 
+                float x; 
+                float y; 
+                float z; 
             } magneticField; 
             int magneticFieldCalibrationLevel; 
             bool doingYawCorrection; 
@@ -97,9 +97,9 @@
     struct Sample { 
         double timestamp; 
         struct { 
-            double x; 
-            double y; 
-            double z; 
+            float x; 
+            float y; 
+            float z; 
         } rotationRate; 
         unsigned short sampleNum; 
         bool fsync; 
@@ -107,9 +107,9 @@
     struct Sample { 
         double timestamp; 
         struct { 
-            double x; 
-            double y; 
-            double z; 
+            float x; 
+            float y; 
+            float z; 
         } magneticField; 
     }  fLatestMagnetometerSample;
     /* Warning: unhandled struct encoding: '{Dispatcher=^^?@}' */ struct Dispatcher { int (**x1)(); id x2; } * fMagnetometerDispatcher;

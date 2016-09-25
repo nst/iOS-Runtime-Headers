@@ -12,9 +12,9 @@
             unsigned int m_deletedCount; 
         } m_impl; 
     }  _exportedObjects;
-    struct HashMap<unsigned int, PendingReply, WTF::IntHash<unsigned int>, WTF::HashTraits<unsigned int>, WTF::HashTraits<PendingReply> > { 
-        struct HashTable<unsigned int, WTF::KeyValuePair<unsigned int, PendingReply>, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<unsigned int, PendingReply> >, WTF::IntHash<unsigned int>, WTF::HashMap<unsigned int, PendingReply, WTF::IntHash<unsigned int>, WTF::HashTraits<unsigned int>, WTF::HashTraits<PendingReply> >::KeyValuePairTraits, WTF::HashTraits<unsigned int> > { 
-            struct KeyValuePair<unsigned int, PendingReply> {} *m_table; 
+    struct HashMap<unsigned long long, PendingReply, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<PendingReply> > { 
+        struct HashTable<unsigned long long, WTF::KeyValuePair<unsigned long long, PendingReply>, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<unsigned long long, PendingReply> >, WTF::IntHash<unsigned long long>, WTF::HashMap<unsigned long long, PendingReply, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<PendingReply> >::KeyValuePairTraits, WTF::HashTraits<unsigned long long> > { 
+            struct KeyValuePair<unsigned long long, PendingReply> {} *m_table; 
             unsigned int m_tableSize; 
             unsigned int m_tableSizeMask; 
             unsigned int m_keyCount; 
@@ -35,7 +35,7 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)_callReplyWithID:(unsigned int)arg1 blockInvocation:(const struct UserData { struct RefPtr<API::Object> { struct Object {} *x_1_1_1; } x1; }*)arg2;
+- (void)_callReplyWithID:(unsigned long long)arg1 blockInvocation:(const struct UserData { struct RefPtr<API::Object> { struct Object {} *x_1_1_1; } x1; }*)arg2;
 - (id)_initWithMessageSender:(struct MessageSender { }*)arg1;
 - (void)_invalidate;
 - (void)_invokeMethod:(const struct RemoteObjectInvocation { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_1_1_1; } x1; struct RefPtr<API::Dictionary> { struct Dictionary {} *x_2_1_1; } x2; struct unique_ptr<WebKit::RemoteObjectInvocation::ReplyInfo, std::__1::default_delete<WebKit::RemoteObjectInvocation::ReplyInfo> > { struct __compressed_pair<WebKit::RemoteObjectInvocation::ReplyInfo *, std::__1::default_delete<WebKit::RemoteObjectInvocation::ReplyInfo> > { struct ReplyInfo {} *x_1_2_1; } x_3_1_1; } x3; }*)arg1;

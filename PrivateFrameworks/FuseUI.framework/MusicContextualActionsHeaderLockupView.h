@@ -4,7 +4,7 @@
 
 @interface MusicContextualActionsHeaderLockupView : MusicEntityHorizontalLockupView {
     UIImageView * _disclosureImageView;
-    double  _downloadProgress;
+    float  _downloadProgress;
     MusicDownloadProgressButton * _downloadProgressButton;
     int  _downloadProgressType;
     MusicContextualActionsHeaderBlendingHighlightView * _highlightView;
@@ -19,7 +19,7 @@
 }
 
 @property (nonatomic) <MusicContextualActionsHeaderLockupViewDelegate> *delegate;
-@property (nonatomic) double downloadProgress;
+@property (nonatomic) float downloadProgress;
 @property (nonatomic) int downloadProgressType;
 @property (nonatomic) unsigned int likeState;
 @property (nonatomic) BOOL supportsRadio;
@@ -40,7 +40,7 @@
 - (int)downloadProgressType;
 - (void)layoutSubviews;
 - (unsigned int)likeState;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })music_inheritedLayoutInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })music_inheritedLayoutInsets;
 - (void)music_inheritedLayoutInsetsDidChange;
 - (void)setDownloadProgress:(float)arg1;
 - (void)setDownloadProgressType:(int)arg1;

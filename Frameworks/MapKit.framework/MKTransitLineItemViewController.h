@@ -10,7 +10,7 @@
     NSNumber * _favorited;
     MKPlaceCardHeaderViewController * _headerViewController;
     NSString * _lastNearestRequestErrorMessage;
-    unsigned int  _lastRequestedNearestID;
+    unsigned long long  _lastRequestedNearestID;
     BOOL  _loading;
     MKInfoCardLoadingView * _loadingView;
     <MKLocationManagerOperation> * _locationOperation;
@@ -26,7 +26,7 @@
 
 @property (nonatomic, retain) MKPlaceCardActionItem *addToFavoritesItem;
 @property (nonatomic, retain) GEOAutomobileOptions *automobileOptions;
-@property (nonatomic) double currentHeaderMinimalModeInterpolationFactor;
+@property (nonatomic) float currentHeaderMinimalModeInterpolationFactor;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <MKTransitLineItemViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -53,7 +53,7 @@
 - (void)infoCardAnalyticsDidSelectAction:(int)arg1 eventValue:(id)arg2 feedbackDelegateSelector:(int)arg3;
 - (void)infoCardAnalyticsDidSelectAction:(int)arg1 target:(int)arg2 eventValue:(id)arg3 actionURL:(id)arg4 photoID:(id)arg5 feedbackDelegateSelector:(int)arg6;
 - (void)infoCardAnalyticsDidSelectAction:(int)arg1 target:(int)arg2 eventValue:(id)arg3 feedbackDelegateSelector:(int)arg4;
-- (void)infoCardTransitAnalyticsDidSelectionAction:(int)arg1 resultIndex:(int)arg2 targetID:(unsigned int)arg3 transitSystem:(id)arg4 transitDepartureSequence:(id)arg5 transitCardCategory:(int)arg6 transitIncident:(id)arg7 feedbackDelegateSelector:(int)arg8;
+- (void)infoCardTransitAnalyticsDidSelectionAction:(int)arg1 resultIndex:(int)arg2 targetID:(unsigned long long)arg3 transitSystem:(id)arg4 transitDepartureSequence:(id)arg5 transitCardCategory:(int)arg6 transitIncident:(id)arg7 feedbackDelegateSelector:(int)arg8;
 - (id)initWithTransitLineItem:(id)arg1;
 - (BOOL)isLoading;
 - (int)mapTypeForPlaceCardHeaderViewController:(id)arg1;
@@ -73,7 +73,7 @@
 - (id)scrollViewDelegate;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
-- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { double x1; double x2; })arg2 targetContentOffset:(inout struct CGPoint { double x1; double x2; }*)arg3;
+- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { float x1; float x2; })arg2 targetContentOffset:(inout struct CGPoint { float x1; float x2; }*)arg3;
 - (void)setAddToFavoritesItem:(id)arg1;
 - (void)setAutomobileOptions:(id)arg1;
 - (void)setCurrentHeaderMinimalModeInterpolationFactor:(float)arg1;

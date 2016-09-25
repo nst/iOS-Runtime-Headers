@@ -26,7 +26,7 @@
 - (void)setDispatchQueue:(id)arg1;
 - (void)setRingerStateNotifyToken:(int)arg1;
 - (void)setRingerSwitchEnabled:(BOOL)arg1;
-- (unsigned int)stateForNotifyToken:(int)arg1;
+- (unsigned long long)stateForNotifyToken:(int)arg1;
 - (void)unregisterForRingerStateNotifications;
 
 @end

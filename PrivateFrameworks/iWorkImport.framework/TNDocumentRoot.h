@@ -4,8 +4,8 @@
 
 @interface TNDocumentRoot : TSADocumentRoot <TSTFormsSheetProvider, TSTResolverContainerNameProvider> {
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _pageSize;
     NSString * _paperID;
     NSString * _printerID;
@@ -22,7 +22,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic) struct CGSize { double x1; double x2; } pageSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } pageSize;
 @property (nonatomic, copy) NSString *paperID;
 @property (nonatomic, copy) NSString *printerID;
 @property (getter=isPrintingAllSheets, nonatomic) BOOL printingAllSheets;
@@ -36,8 +36,8 @@
 @property (nonatomic, retain) TNTheme *theme;
 @property (nonatomic, retain) TNUIState *uiState;
 
-+ (struct CGSize { double x1; double x2; })previewImageMaxSizeForType:(unsigned int)arg1;
-+ (struct CGSize { double x1; double x2; })previewImageSizeForType:(unsigned int)arg1;
++ (struct CGSize { float x1; float x2; })previewImageMaxSizeForType:(unsigned int)arg1;
++ (struct CGSize { float x1; float x2; })previewImageSizeForType:(unsigned int)arg1;
 
 - (id)UIStateForChart:(id)arg1;
 - (id)activeSheet;
@@ -62,23 +62,23 @@
 - (int)naturalAlignmentAtCharIndex:(unsigned int)arg1 inTextStorage:(id)arg2;
 - (id)nearestDisplayableSheetToSheet:(id)arg1;
 - (void)p_addSidebarNodeForSheet:(id)arg1;
-- (struct CGSize { double x1; double x2; })p_adjustCapturedContentSize:(struct CGSize { double x1; double x2; })arg1 toAspectRatio:(struct CGSize { double x1; double x2; })arg2;
+- (struct CGSize { float x1; float x2; })p_adjustCapturedContentSize:(struct CGSize { float x1; float x2; })arg1 toAspectRatio:(struct CGSize { float x1; float x2; })arg2;
 - (void)p_buildSidebarOrder;
 - (id)p_chartsWantingDeferredUpgrade;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })p_contentFrameToCaptureForSheet:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })p_contentFrameToCaptureForSheet:(id)arg1;
 - (id)p_fixedUpSelectionPathForNearestDisplayableSheet:(id)arg1;
-- (float)p_imageBorderForSize:(struct CGSize { double x1; double x2; })arg1;
-- (id)p_previewImageWithImageSize:(struct CGSize { double x1; double x2; })arg1;
+- (float)p_imageBorderForSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)p_previewImageWithImageSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)p_removeSidebarNodeForSheet:(id)arg1;
 - (id)p_resolverContainerForResolver:(id)arg1;
 - (unsigned int)p_tableCountForSheet:(id)arg1;
-- (struct CGSize { double x1; double x2; })pageSize;
+- (struct CGSize { float x1; float x2; })pageSize;
 - (id)paperID;
 - (void)performDeferredUpgradeImportOperationsOnNewThreadForCharts:(id)arg1;
 - (void)performDeferredUpgradeImportOperationsRequiringCalcEngine;
 - (BOOL)prepareAndValidateSidecarViewStateObjectWithVersionUUIDMismatch:(id)arg1 originalDocumentViewStateObject:(id)arg2;
 - (void)prepareNewDocumentWithTemplateBundle:(id)arg1;
-- (id)previewImageForSize:(struct CGSize { double x1; double x2; })arg1;
+- (id)previewImageForSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)printerID;
 - (void)removeAllSheets;
 - (void)removeSheet:(id)arg1;
@@ -93,7 +93,7 @@
 - (void)saveToArchiver:(id)arg1;
 - (id)selectedQuickCalcFunctions;
 - (void)setImportedPaperID:(id)arg1 printerID:(id)arg2;
-- (void)setPageSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setPageSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setPaperID:(id)arg1;
 - (void)setPrinterID:(id)arg1;
 - (void)setPrintingAllSheets:(BOOL)arg1;

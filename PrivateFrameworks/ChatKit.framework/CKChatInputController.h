@@ -103,7 +103,7 @@
 - (void)clearBrowserViewControllerIfNecessary;
 - (void)commitPayload:(id)arg1;
 - (void)commitSticker:(id)arg1;
-- (void)commitSticker:(id)arg1 atScreenCoordinate:(struct CGPoint { double x1; double x2; })arg2 scale:(float)arg3 rotation:(float)arg4;
+- (void)commitSticker:(id)arg1 atScreenCoordinate:(struct CGPoint { float x1; float x2; })arg2 scale:(float)arg3 rotation:(float)arg4;
 - (void)commitSticker:(id)arg1 forPlugin:(id)arg2;
 - (void)commitSticker:(id)arg1 withDragTarget:(id)arg2;
 - (void)composeRecipientViewDidBecomeFirstResponder:(id)arg1;

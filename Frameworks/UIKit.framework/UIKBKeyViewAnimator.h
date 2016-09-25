@@ -40,7 +40,7 @@
 - (id)keycapLeftSelectRightInvertedTransform;
 - (id)keycapLeftSelectRightTransform;
 - (id)keycapLeftStandardTransform;
-- (id)keycapMeshTransformFromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 toRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (id)keycapMeshTransformFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 toRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (id)keycapNullTransform;
 - (id)keycapPrimaryBackspaceInvertedTransform;
 - (id)keycapPrimaryBackspaceTransform;
@@ -66,6 +66,6 @@
 - (void)transitionKeyView:(id)arg1 fromState:(int)arg2 toState:(int)arg3 completion:(id /* block */)arg4;
 - (void)transitionOutKeyView:(id)arg1 fromState:(int)arg2 toState:(int)arg3 completion:(id /* block */)arg4;
 - (void)transitionStartedForKeyView:(id)arg1 alternateCount:(unsigned int)arg2 toLeft:(BOOL)arg3;
-- (void)updateTransitionForKeyView:(id)arg1 normalizedDragSize:(struct CGSize { double x1; double x2; })arg2;
+- (void)updateTransitionForKeyView:(id)arg1 normalizedDragSize:(struct CGSize { float x1; float x2; })arg2;
 
 @end

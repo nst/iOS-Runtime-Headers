@@ -4,11 +4,11 @@
 
 @interface CAMFocusLockWithLensPositionCommand : CAMCaptureCommand {
     id /* block */  __completionBlock;
-    double  __lensPosition;
+    float  __lensPosition;
 }
 
 @property (setter=_setCompletionBlock:, nonatomic, copy) id /* block */ _completionBlock;
-@property (setter=_setLensPosition:, nonatomic) double _lensPosition;
+@property (setter=_setLensPosition:, nonatomic) float _lensPosition;
 
 + (float)currentLensPositionSentinel;
 

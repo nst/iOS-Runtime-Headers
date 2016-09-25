@@ -33,9 +33,9 @@
 - (id)dataConsumerForItem:(id)arg1;
 - (id)generalConsumer;
 - (id)iconConsumer;
-- (struct CGSize { double x1; double x2; })imageSizeForItem:(id)arg1;
-- (struct CGSize { double x1; double x2; })largestImageSizeForItems:(id)arg1;
-- (struct CGSize { double x1; double x2; })largestImageSizeForLockups:(id)arg1;
+- (struct CGSize { float x1; float x2; })imageSizeForItem:(id)arg1;
+- (struct CGSize { float x1; float x2; })largestImageSizeForItems:(id)arg1;
+- (struct CGSize { float x1; float x2; })largestImageSizeForLockups:(id)arg1;
 - (id)letterboxConsumer;
 - (id)newsstandConsumer;
 - (id)placeholderImageForItem:(id)arg1;

@@ -9,7 +9,7 @@
     struct { /* ? */ } * _collections;
     NSXPCConnection * _connection;
     void ** _decoder;
-    unsigned int  _genericIndex;
+    unsigned long long  _genericIndex;
     NSXPCInterface * _interface;
     NSObject<OS_xpc_object> * _oolObjects;
     SEL  _replyToSelector;
@@ -41,7 +41,7 @@
 - (double)decodeDoubleForKey:(id)arg1;
 - (float)decodeFloatForKey:(id)arg1;
 - (int)decodeInt32ForKey:(id)arg1;
-- (int)decodeInt64ForKey:(id)arg1;
+- (long long)decodeInt64ForKey:(id)arg1;
 - (int)decodeIntForKey:(id)arg1;
 - (int)decodeIntegerForKey:(id)arg1;
 - (id)decodeInvocation;

@@ -3,7 +3,7 @@
  */
 
 @interface _SFNavigationBarURLButton : UIButton <UIGestureRecognizerDelegate> {
-    double  _backgroundAlphaFactor;
+    float  _backgroundAlphaFactor;
     int  _backgroundStyle;
     UIImage * _darkBackgroundImage;
     <_SFNavigationBarURLButtonDelegate> * _delegate;
@@ -14,7 +14,7 @@
     BOOL  _usesLightOverlayAndTintAlpha;
 }
 
-@property (nonatomic) double backgroundAlphaFactor;
+@property (nonatomic) float backgroundAlphaFactor;
 @property (nonatomic) int backgroundStyle;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <_SFNavigationBarURLButtonDelegate> *delegate;
@@ -35,10 +35,10 @@
 - (void)dealloc;
 - (id)delegate;
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)pasteAndNavigate:(id)arg1;
 - (id)pasteButtonTitle;
-- (BOOL)pointMostlyInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (BOOL)pointMostlyInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)setBackgroundAlphaFactor:(float)arg1;
 - (void)setBackgroundStyle:(int)arg1;
 - (void)setDelegate:(id)arg1;

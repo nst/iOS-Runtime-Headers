@@ -10,8 +10,8 @@
     UIView * _backgroundView;
     CKBalloonView * _balloonView;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _balloonViewOrigin;
     CALayer * _blueContrastLayer;
     UIButton * _closeButton;
@@ -54,7 +54,7 @@
 @property (nonatomic, retain) CABackdropLayer *backdrop;
 @property (nonatomic, retain) UIView *backgroundView;
 @property (nonatomic, retain) CKBalloonView *balloonView;
-@property (nonatomic) struct CGPoint { double x1; double x2; } balloonViewOrigin;
+@property (nonatomic) struct CGPoint { float x1; float x2; } balloonViewOrigin;
 @property (nonatomic, retain) CALayer *blueContrastLayer;
 @property (nonatomic, retain) UIButton *closeButton;
 @property (nonatomic, retain) NSLayoutConstraint *closeButtonBottomConstraint;
@@ -134,7 +134,7 @@
 - (id)backdrop;
 - (id)backgroundView;
 - (id)balloonView;
-- (struct CGPoint { double x1; double x2; })balloonViewOrigin;
+- (struct CGPoint { float x1; float x2; })balloonViewOrigin;
 - (id)blueContrastLayer;
 - (void)cancelImpactSelection;
 - (id)closeButton;
@@ -154,12 +154,12 @@
 - (id)effectSendButtons;
 - (void)effectTypeDidChange:(id)arg1;
 - (id)fsem;
-- (void)handleTouchMoved:(struct CGPoint { double x1; double x2; })arg1;
-- (void)handleTouchUp:(struct CGPoint { double x1; double x2; })arg1;
+- (void)handleTouchMoved:(struct CGPoint { float x1; float x2; })arg1;
+- (void)handleTouchUp:(struct CGPoint { float x1; float x2; })arg1;
 - (id)hintBlackText;
 - (id)hintContainer;
 - (id)hintSendButton;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 sendButtonFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 balloonViewOrigin:(struct CGPoint { double x1; double x2; })arg3 composition:(id)arg4;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 sendButtonFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 balloonViewOrigin:(struct CGPoint { float x1; float x2; })arg3 composition:(id)arg4;
 - (void)invalidateAllAnimationTimers;
 - (BOOL)isAnimating;
 - (void)layoutSubviews;
@@ -190,7 +190,7 @@
 - (void)setBackgroundView:(id)arg1;
 - (void)setBalloonText:(id)arg1;
 - (void)setBalloonView:(id)arg1;
-- (void)setBalloonViewOrigin:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setBalloonViewOrigin:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setBlueContrastLayer:(id)arg1;
 - (void)setCloseButton:(id)arg1;
 - (void)setCloseButtonBottomConstraint:(id)arg1;

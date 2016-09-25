@@ -11,10 +11,10 @@
     BOOL  _disableFlatDictionaryVDOMetadata;
     BOOL  _discardsLateSampleBuffers;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _lastPTS;
     struct OpaqueFigFlatDictionaryKeySpec { } * _makerNoteKeySpec;
     BOOL  _mediaTypeIsVideo;
@@ -36,7 +36,7 @@
 - (BOOL)attachPanoramaMetadata;
 - (BOOL)cameraSupportsFlash;
 - (int)clientVideoRetainedBufferCount;
-- (void)configurationWithID:(int)arg1 updatedFormat:(id)arg2 didBecomeLiveForInput:(id)arg3;
+- (void)configurationWithID:(long long)arg1 updatedFormat:(id)arg2 didBecomeLiveForInput:(id)arg3;
 - (void)dealloc;
 - (id)delegate;
 - (void)didReachEndOfDataForInput:(id)arg1;

@@ -4,8 +4,8 @@
 
 @interface GQDRLineEnd : NSObject <GQDNameMappable> {
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  mEndPoint;
     BOOL  mIsFilled;
     GQDBezierPath * mPath;
@@ -20,7 +20,7 @@
 + (const struct StateSpec { int (**x1)(); char *x2; int x3; int x4; struct Action {} *x5; int (*x6)(); int (*x7)(); int (*x8)(); struct ActionFinder {} *x9; }*)stateForReading;
 
 - (void)dealloc;
-- (struct CGPoint { double x1; double x2; })endPoint;
+- (struct CGPoint { float x1; float x2; })endPoint;
 - (BOOL)isFilled;
 - (struct CGPath { }*)path;
 - (char *)pathStr;

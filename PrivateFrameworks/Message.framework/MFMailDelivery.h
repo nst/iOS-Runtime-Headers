@@ -7,7 +7,7 @@
     MailAccount * _archiveAccount;
     NSArray * _charsets;
     NSDictionary * _compositionSpecification;
-    unsigned int  _conversationFlags;
+    unsigned long long  _conversationFlags;
     id  _delegate;
     MFMutableMessageHeaders * _headers;
     NSString * _htmlString;
@@ -23,7 +23,7 @@
 }
 
 @property (nonatomic, retain) NSDictionary *compositionSpecification;
-@property (nonatomic) unsigned int conversationFlags;
+@property (nonatomic) unsigned long long conversationFlags;
 @property (nonatomic) BOOL isUserRequested;
 
 + (BOOL)deliverMessage:(id)arg1;
@@ -35,7 +35,7 @@
 - (void)archive;
 - (id)archiveAccount;
 - (id)compositionSpecification;
-- (unsigned int)conversationFlags;
+- (unsigned long long)conversationFlags;
 - (void)dealloc;
 - (id)delegate;
 - (void)deliverAsynchronously;
@@ -56,7 +56,7 @@
 - (void)setArchiveAccount:(id)arg1;
 - (void)setCellDataOnly:(BOOL)arg1;
 - (void)setCompositionSpecification:(id)arg1;
-- (void)setConversationFlags:(unsigned int)arg1;
+- (void)setConversationFlags:(unsigned long long)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setIsUserRequested:(BOOL)arg1;
 - (BOOL)shouldEncryptMessage;

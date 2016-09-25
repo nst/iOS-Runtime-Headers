@@ -4,13 +4,13 @@
 
 @interface SiriUIContentCollectionViewCell : SiriUIClearBackgroundCell {
     struct UIOffset { 
-        double horizontal; 
-        double vertical; 
+        float horizontal; 
+        float vertical; 
     }  _accessoryOffset;
     UIView * _accessoryView;
     struct UIOffset { 
-        double horizontal; 
-        double vertical; 
+        float horizontal; 
+        float vertical; 
     }  _chevronOffset;
     UIImageView * _chevronView;
     BOOL  _hasChevron;
@@ -20,61 +20,61 @@
     int  _keylineType;
     NSMutableArray * _subviewConstraints;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _textAndAccessoryInsets;
     UILabel * _textLabel;
     struct UIOffset { 
-        double horizontal; 
-        double vertical; 
+        float horizontal; 
+        float vertical; 
     }  _textOffset;
     int  _verticalAlignment;
     NSLayoutConstraint * leftChevronWidthConstraint;
     NSLayoutConstraint * rightChevronWidthConstraint;
 }
 
-@property (nonatomic) struct UIOffset { double x1; double x2; } accessoryOffset;
+@property (nonatomic) struct UIOffset { float x1; float x2; } accessoryOffset;
 @property (nonatomic, retain) UIView *accessoryView;
-@property (nonatomic) struct UIOffset { double x1; double x2; } chevronOffset;
-@property (nonatomic, readonly) double chevronTrailingMargin;
+@property (nonatomic) struct UIOffset { float x1; float x2; } chevronOffset;
+@property (nonatomic, readonly) float chevronTrailingMargin;
 @property (nonatomic) BOOL hasChevron;
 @property (nonatomic, readonly) SiriUIKeyline *keyline;
 @property (nonatomic) int keylineType;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } textAndAccessoryInsets;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } textAndAccessoryInsets;
 @property (nonatomic, retain) UILabel *textLabel;
-@property (nonatomic) struct UIOffset { double x1; double x2; } textOffset;
+@property (nonatomic) struct UIOffset { float x1; float x2; } textOffset;
 @property (nonatomic) int verticalAlignment;
 
-+ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })defaultInsets;
++ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })defaultInsets;
 + (id)reuseIdentifier;
 
 - (void).cxx_destruct;
 - (void)_updateSubviewConstraints;
-- (struct UIOffset { double x1; double x2; })accessoryOffset;
+- (struct UIOffset { float x1; float x2; })accessoryOffset;
 - (id)accessoryView;
-- (struct UIOffset { double x1; double x2; })chevronOffset;
+- (struct UIOffset { float x1; float x2; })chevronOffset;
 - (float)chevronTrailingMargin;
 - (BOOL)hasChevron;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)keyline;
 - (int)keylineType;
 - (void)layoutSubviews;
 - (void)prepareForReuse;
-- (void)setAccessoryOffset:(struct UIOffset { double x1; double x2; })arg1;
+- (void)setAccessoryOffset:(struct UIOffset { float x1; float x2; })arg1;
 - (void)setAccessoryView:(id)arg1;
-- (void)setChevronOffset:(struct UIOffset { double x1; double x2; })arg1;
+- (void)setChevronOffset:(struct UIOffset { float x1; float x2; })arg1;
 - (void)setHasChevron:(BOOL)arg1;
 - (void)setKeylineType:(int)arg1;
 - (void)setNeedsUpdateSubviewConstraints;
-- (void)setTextAndAccessoryInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setTextAndAccessoryInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setTextLabel:(id)arg1;
-- (void)setTextOffset:(struct UIOffset { double x1; double x2; })arg1;
+- (void)setTextOffset:(struct UIOffset { float x1; float x2; })arg1;
 - (void)setVerticalAlignment:(int)arg1;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })textAndAccessoryInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })textAndAccessoryInsets;
 - (id)textLabel;
-- (struct UIOffset { double x1; double x2; })textOffset;
+- (struct UIOffset { float x1; float x2; })textOffset;
 - (void)updateConstraints;
 - (int)verticalAlignment;
 

@@ -7,14 +7,14 @@
         unsigned int lengthInSeconds : 1; 
         unsigned int timestamp : 1; 
     }  _has;
-    unsigned int  _lengthInSeconds;
-    unsigned int  _timestamp;
+    unsigned long long  _lengthInSeconds;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) BOOL hasLengthInSeconds;
 @property (nonatomic) BOOL hasTimestamp;
-@property (nonatomic) unsigned int lengthInSeconds;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long lengthInSeconds;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -24,14 +24,14 @@
 - (BOOL)hasTimestamp;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
-- (unsigned int)lengthInSeconds;
+- (unsigned long long)lengthInSeconds;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setHasLengthInSeconds:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
-- (void)setLengthInSeconds:(unsigned int)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
-- (unsigned int)timestamp;
+- (void)setLengthInSeconds:(unsigned long long)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
+- (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 
 @end

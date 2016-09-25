@@ -20,12 +20,12 @@
 - (void)_startObservingTimebaseNotificationsForTimebase:(struct OpaqueCMTimebase { }*)arg1;
 - (void)_stopObservingTimebaseNotificationsForTimebase:(struct OpaqueCMTimebase { }*)arg1;
 - (struct OpaqueFigVisualContext { }*)_visualContext;
-- (struct __CVBuffer { }*)copyPixelBufferForItemTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1 itemTimeForDisplay:(struct { int x1; int x2; unsigned int x3; int x4; }*)arg2;
+- (struct __CVBuffer { }*)copyPixelBufferForItemTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 itemTimeForDisplay:(struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg2;
 - (void)dealloc;
 - (id)delegate;
 - (id)delegateQueue;
 - (void)finalize;
-- (BOOL)hasNewPixelBufferForItemTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
+- (BOOL)hasNewPixelBufferForItemTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (id)init;
 - (id)initWithOutputSettings:(id)arg1;
 - (id)initWithPixelBufferAttributes:(id)arg1;

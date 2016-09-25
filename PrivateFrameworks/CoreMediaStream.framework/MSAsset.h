@@ -19,7 +19,7 @@
     NSDictionary * _metadata;
     NSString * _path;
     NSDate * _photoCreationDate;
-    unsigned int  _protocolFileSize;
+    unsigned long long  _protocolFileSize;
     NSString * _type;
     <NSCoding> * _userInfo;
 }
@@ -30,8 +30,8 @@
 @property (nonatomic, retain) NSError *MMCSError;
 @property (nonatomic, retain) NSData *MMCSHash;
 @property (nonatomic) unsigned long MMCSItemFlags;
-@property (nonatomic) unsigned int MMCSItemID;
-@property (nonatomic) unsigned int MMCSItemSize;
+@property (nonatomic) unsigned long long MMCSItemID;
+@property (nonatomic) unsigned long long MMCSItemSize;
 @property (nonatomic, retain) NSString *MMCSReceipt;
 @property (nonatomic, retain) NSURL *MMCSURL;
 @property (nonatomic, retain) NSString *MMCSUTI;
@@ -49,7 +49,7 @@
 @property (nonatomic, retain) NSDictionary *metadata;
 @property (nonatomic, retain) NSString *path;
 @property (nonatomic, retain) NSDate *photoCreationDate;
-@property (nonatomic) unsigned int protocolFileSize;
+@property (nonatomic) unsigned long long protocolFileSize;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSString *type;
 @property (nonatomic, retain) <NSCoding> *userInfo;
@@ -66,16 +66,16 @@
 - (id)MMCSError;
 - (id)MMCSHash;
 - (unsigned long)MMCSItemFlags;
-- (unsigned int)MMCSItemID;
-- (unsigned int)MMCSItemSize;
+- (unsigned long long)MMCSItemID;
+- (unsigned long long)MMCSItemSize;
 - (id)MMCSItemType;
 - (int)MMCSOpenNewFileDescriptor;
 - (id)MMCSReceipt;
 - (id)MMCSURL;
 - (id)MMCSUTI;
 - (id)MSASPProtocolDictionary;
-- (unsigned int)_fileSize;
-- (unsigned int)_fileSizeOnDisk;
+- (unsigned long long)_fileSize;
+- (unsigned long long)_fileSizeOnDisk;
 - (void)addMetadataValue:(id)arg1 forKey:(id)arg2;
 - (id)assetCollectionGUID;
 - (BOOL)assetDataAvailableOnServer;
@@ -99,7 +99,7 @@
 - (id)metadataValueForKey:(id)arg1;
 - (id)path;
 - (id)photoCreationDate;
-- (unsigned int)protocolFileSize;
+- (unsigned long long)protocolFileSize;
 - (void)setAssetCollectionGUID:(id)arg1;
 - (void)setAssetDataAvailableOnServer:(BOOL)arg1;
 - (void)setBatchCreationDate:(id)arg1;
@@ -113,8 +113,8 @@
 - (void)setMMCSError:(id)arg1;
 - (void)setMMCSHash:(id)arg1;
 - (void)setMMCSItemFlags:(unsigned long)arg1;
-- (void)setMMCSItemID:(unsigned int)arg1;
-- (void)setMMCSItemSize:(unsigned int)arg1;
+- (void)setMMCSItemID:(unsigned long long)arg1;
+- (void)setMMCSItemSize:(unsigned long long)arg1;
 - (void)setMMCSReceipt:(id)arg1;
 - (void)setMMCSURL:(id)arg1;
 - (void)setMMCSUTI:(id)arg1;
@@ -124,7 +124,7 @@
 - (void)setMetadataValue:(id)arg1 forKey:(id)arg2;
 - (void)setPath:(id)arg1;
 - (void)setPhotoCreationDate:(id)arg1;
-- (void)setProtocolFileSize:(unsigned int)arg1;
+- (void)setProtocolFileSize:(unsigned long long)arg1;
 - (void)setType:(id)arg1;
 - (void)setUserInfo:(id)arg1;
 - (id)type;

@@ -55,16 +55,16 @@
 - (id)_initFromPQLResultSet:(id)arg1 session:(id)arg2 db:(id)arg3 error:(id*)arg4;
 - (id)_initWithLocalItem:(id)arg1;
 - (id)_initWithRelativePath:(id)arg1 parentID:(id)arg2;
-- (id)_initWithServerItem:(id)arg1 dbRowID:(unsigned int)arg2;
-- (BOOL)_insertInDB:(id)arg1 dbRowID:(unsigned int)arg2;
+- (id)_initWithServerItem:(id)arg1 dbRowID:(unsigned long long)arg2;
+- (BOOL)_insertInDB:(id)arg1 dbRowID:(unsigned long long)arg2;
 - (BOOL)_isInterestingUpdateForNotifs;
 - (BOOL)_needsSyncBubbleRecomputeForError:(id)arg1 origError:(id)arg2;
 - (BOOL)_nukePackageItemsFromDB:(id)arg1;
-- (BOOL)_updateInDB:(id)arg1 diffs:(unsigned int)arg2;
+- (BOOL)_updateInDB:(id)arg1 diffs:(unsigned long long)arg2;
 - (void)_updateLiveConflictLoserFromFSAtPath:(id)arg1;
-- (void)_updateReadThrottleIfNeededForRowID:(unsigned int)arg1 forCreation:(BOOL)arg2;
-- (void)_updateRecursivePropertiesInDB:(id)arg1 dbRowID:(unsigned int)arg2 diffs:(unsigned int)arg3;
-- (void)_updateUploadThrottleIfNeededWithDiffs:(unsigned int)arg1;
+- (void)_updateReadThrottleIfNeededForRowID:(unsigned long long)arg1 forCreation:(BOOL)arg2;
+- (void)_updateRecursivePropertiesInDB:(id)arg1 dbRowID:(unsigned long long)arg2 diffs:(unsigned long long)arg3;
+- (void)_updateUploadThrottleIfNeededWithDiffs:(unsigned long long)arg1;
 - (void)addResolvedConflictLoserEtag:(id)arg1;
 - (id)aliasItemIDForAppLibrary:(id)arg1;
 - (id)anyReverseAliasInAppLibrary:(id)arg1;
@@ -80,8 +80,8 @@
 - (id)currentVersion;
 - (id)descriptionWithContext:(id)arg1;
 - (id)desiredVersion;
-- (unsigned int)diffAgainstLocalItem:(id)arg1;
-- (unsigned int)diffAgainstServerItem:(id)arg1;
+- (unsigned long long)diffAgainstLocalItem:(id)arg1;
+- (unsigned long long)diffAgainstServerItem:(id)arg1;
 - (unsigned int)downloadStatus;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)evictInTask:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
@@ -125,7 +125,7 @@
 - (void)setLiveConflictLoserEtags:(id)arg1;
 - (void)setLiveThumbnailSignature:(id)arg1;
 - (id)setOfAppLibraryIDsWithReverseAliases;
-- (int)setVersionToStage:(id)arg1 diffsWithServerItem:(unsigned int)arg2 options:(unsigned int)arg3 needsSave:(BOOL*)arg4;
+- (int)setVersionToStage:(id)arg1 diffsWithServerItem:(unsigned long long)arg2 options:(unsigned int)arg3 needsSave:(BOOL*)arg4;
 - (int)setVersionToStage:(id)arg1 options:(unsigned int)arg2 needsSave:(BOOL*)arg3;
 - (BOOL)shouldAutomaticallyDownloadThumbnail;
 - (BOOL)shouldBeGreedy;
@@ -142,6 +142,6 @@
 - (void)updateVersionMetadataFromServerItem:(id)arg1 preventVersionDiffs:(BOOL)arg2;
 - (BOOL)updateXattrInfoFromPath:(id)arg1 error:(id*)arg2;
 - (id)uploadError;
-- (BOOL)validateLoggingToFile:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; int x20; }*)arg1;
+- (BOOL)validateLoggingToFile:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; long long x20; }*)arg1;
 
 @end

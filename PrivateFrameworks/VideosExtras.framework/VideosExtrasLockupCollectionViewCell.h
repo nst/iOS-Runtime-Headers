@@ -8,8 +8,8 @@
     VideosExtrasConstrainedArtworkContainerView * _artworkContainerView;
     NSLayoutConstraint * _artworkContainerWidthConstraint;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _artworkSize;
     NSLayoutConstraint * _descriptionBaselineConstraint;
     UILabel * _descriptionLabel;
@@ -34,7 +34,7 @@
 - (void)_handlePinchGesture:(id)arg1;
 - (id)descriptionTextStyle;
 - (void)finalizeZoomingImageTransitionWithContext:(id)arg1 transitionFinished:(BOOL)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (unsigned int)itemIndex;
 - (id)lockup;
 - (void)performZoomingImageTransitionWithContext:(id)arg1;
@@ -50,7 +50,7 @@
 - (void)setThumbnailImage:(id)arg1;
 - (void)setThumbnailImageAccessibilityText:(id)arg1;
 - (void)setThumbnailImagePlaceholder:(id)arg1;
-- (void)setThumbnailMaxSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setThumbnailMaxSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setThumbnailOverlayImage:(id)arg1;
 - (void)setTitleText:(id)arg1;
 - (void)setZoomingImageTransitionIdentifier:(id)arg1;

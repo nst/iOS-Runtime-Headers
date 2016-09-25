@@ -34,8 +34,8 @@
 @property (readonly) Class superclass;
 
 + (id)_buttonForCharacter:(unsigned int)arg1 withLightStyle:(BOOL)arg2;
-+ (struct CGSize { double x1; double x2; })_inputButtonCircleSize;
-+ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_inputButtonCircleSpacing;
++ (struct CGSize { float x1; float x2; })_inputButtonCircleSize;
++ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_inputButtonCircleSpacing;
 
 - (void).cxx_destruct;
 - (void)_backspaceButtonHit;

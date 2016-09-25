@@ -8,7 +8,7 @@
     _UIBackdropView * _backgroundView;
     NSArray * _backgroundViewConstraints;
     id /* block */  _completionHandler;
-    double  _currentProgress;
+    float  _currentProgress;
     BOOL  _isDeterminate;
     NSArray * _labelAndPieProgressConstraints;
     NSArray * _labelAndSpinnerConstraints;
@@ -27,7 +27,7 @@
 
 @property (setter=_setCurrentState:, nonatomic) int _currentState;
 @property (setter=_setTimestampBeganShowing:, nonatomic) double _timestampBeganShowing;
-@property (nonatomic) double currentProgress;
+@property (nonatomic) float currentProgress;
 @property (setter=setDeterminate:, nonatomic) BOOL isDeterminate;
 @property (nonatomic, copy) NSString *localizedMessage;
 @property (getter=isShowingProgress, nonatomic, readonly) BOOL showingProgress;
@@ -50,9 +50,9 @@
 - (float)currentProgress;
 - (void)endShowingProgressImmediately:(BOOL)arg1 animated:(BOOL)arg2 withCompletionHandler:(id /* block */)arg3;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithStyle:(int)arg1;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (BOOL)isDeterminate;
 - (BOOL)isShowingProgress;
 - (id)localizedMessage;

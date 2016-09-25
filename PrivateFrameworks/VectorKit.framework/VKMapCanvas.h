@@ -9,10 +9,10 @@
     BOOL  _hasLastValidCanvasSizeZoomLevel;
     VKTimedAnimation * _horizontalOffsetAnimation;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _lastCanvasSize;
-    double  _lastValidCanvasSizeZoomLevel;
+    float  _lastValidCanvasSizeZoomLevel;
     VKMapModel * _map;
 }
 
@@ -37,7 +37,7 @@
 @property (nonatomic, readonly) NSArray *rasterOverlays;
 @property (nonatomic) <VKRouteMatchedAnnotationPresentation> *routeLineSplitAnnotation;
 @property (nonatomic, retain) <GEORoutePreloadSession> *routePreloadSession;
-@property (nonatomic) struct PolylineCoordinate { unsigned int x1; double x2; } routeUserOffset;
+@property (nonatomic) struct PolylineCoordinate { unsigned int x1; float x2; } routeUserOffset;
 @property (nonatomic, readonly) VKSceneConfiguration *sceneConfiguration;
 @property (nonatomic) int shieldIdiom;
 @property (nonatomic) int shieldSize;
@@ -70,7 +70,7 @@
 - (id)attributionsForCurrentRegion;
 - (void)beginStyleAnimationGroup;
 - (id)boundsForSelectedTransitLines;
-- (struct shared_ptr<md::FeatureMarker> { struct FeatureMarker {} *x1; struct __shared_weak_count {} *x2; })buildingMarkerAtScreenPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (struct shared_ptr<md::FeatureMarker> { struct FeatureMarker {} *x1; struct __shared_weak_count {} *x2; })buildingMarkerAtScreenPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)cameraController:(id)arg1 canEnter3DModeDidChange:(BOOL)arg2;
 - (void)cameraController:(id)arg1 canZoomInDidChange:(BOOL)arg2;
 - (void)cameraController:(id)arg1 canZoomOutDidChange:(BOOL)arg2;
@@ -84,19 +84,19 @@
 - (double)canonicalSkyHeight;
 - (void)clearScene;
 - (void)clearSceneIsEffectivelyHidden:(BOOL)arg1;
-- (struct shared_ptr<md::LabelFeatureMarker> { struct LabelFeatureMarker {} *x1; struct __shared_weak_count {} *x2; })closestRoadMarkerForSelectionAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (struct shared_ptr<md::LabelFeatureMarker> { struct LabelFeatureMarker {} *x1; struct __shared_weak_count {} *x2; })closestRoadMarkerForSelectionAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)consoleString:(BOOL)arg1;
-- (struct CGPoint { double x1; double x2; })convertCoordinateToCameraModelPoint:(struct { double x1; double x2; })arg1;
-- (struct CGPoint { double x1; double x2; })convertCoordinateToPoint:(struct { double x1; double x2; })arg1;
-- (struct CGPoint { double x1; double x2; })convertMapPointToPoint:(struct { double x1; double x2; })arg1;
-- (struct { double x1; double x2; })convertPointToCoordinate:(struct CGPoint { double x1; double x2; })arg1;
-- (struct { double x1; double x2; })convertPointToMapPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (struct CGPoint { float x1; float x2; })convertCoordinateToCameraModelPoint:(struct { double x1; double x2; })arg1;
+- (struct CGPoint { float x1; float x2; })convertCoordinateToPoint:(struct { double x1; double x2; })arg1;
+- (struct CGPoint { float x1; float x2; })convertMapPointToPoint:(struct { double x1; double x2; })arg1;
+- (struct { double x1; double x2; })convertPointToCoordinate:(struct CGPoint { float x1; float x2; })arg1;
+- (struct { double x1; double x2; })convertPointToMapPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (int)currentMapMode;
 - (BOOL)currentSceneRequiresMSAA;
 - (id)customFeatureDataSources;
 - (void)dealloc;
 - (void)debugHighlightFeatureMarker:(const struct shared_ptr<md::FeatureMarker> { struct FeatureMarker {} *x1; struct __shared_weak_count {} *x2; }*)arg1;
-- (void)debugHighlightObjectAtPoint:(struct CGPoint { double x1; double x2; })arg1 highlightTarget:(unsigned char)arg2;
+- (void)debugHighlightObjectAtPoint:(struct CGPoint { float x1; float x2; })arg1 highlightTarget:(unsigned char)arg2;
 - (id)defaultTrackingCamera;
 - (id)delegate;
 - (void)deselectLabelMarker;
@@ -107,7 +107,7 @@
 - (void)endStyleAnimationGroup;
 - (id)externalAnchors;
 - (id)externalTrafficIncidents;
-- (struct shared_ptr<md::FeatureMarker> { struct FeatureMarker {} *x1; struct __shared_weak_count {} *x2; })featureMarkerAtScreenPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (struct shared_ptr<md::FeatureMarker> { struct FeatureMarker {} *x1; struct __shared_weak_count {} *x2; })featureMarkerAtScreenPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)finishStyleBlend;
 - (id)focusedLabelsPolylinePainter;
 - (void)forceSceneLoad;
@@ -117,10 +117,10 @@
 - (void)insertRasterOverlay:(id)arg1 aboveOverlay:(id)arg2;
 - (void)insertRasterOverlay:(id)arg1 belowOverlay:(id)arg2;
 - (BOOL)isFullyDrawn;
-- (BOOL)isPointValidForGesturing:(struct CGPoint { double x1; double x2; })arg1;
+- (BOOL)isPointValidForGesturing:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)isShowingNoDataPlaceholders;
 - (struct shared_ptr<md::LabelMarker> { struct LabelMarker {} *x1; struct __shared_weak_count {} *x2; })labelMarkerForCustomFeatureAnnotation:(id)arg1 dataSource:(id)arg2;
-- (struct shared_ptr<md::LabelMarker> { struct LabelMarker {} *x1; struct __shared_weak_count {} *x2; })labelMarkerForSelectionAtPoint:(struct CGPoint { double x1; double x2; })arg1 selectableLabelsOnly:(BOOL)arg2;
+- (struct shared_ptr<md::LabelMarker> { struct LabelMarker {} *x1; struct __shared_weak_count {} *x2; })labelMarkerForSelectionAtPoint:(struct CGPoint { float x1; float x2; })arg1 selectableLabelsOnly:(BOOL)arg2;
 - (BOOL)labelMarkerSelectionEnabled;
 - (struct vector<std::__1::shared_ptr<md::LabelMarker>, std::__1::allocator<std::__1::shared_ptr<md::LabelMarker> > > { struct shared_ptr<md::LabelMarker> {} *x1; struct shared_ptr<md::LabelMarker> {} *x2; struct __compressed_pair<std::__1::shared_ptr<md::LabelMarker> *, std::__1::allocator<std::__1::shared_ptr<md::LabelMarker> > > { struct shared_ptr<md::LabelMarker> {} *x_3_1_1; } x3; })labelMarkers;
 - (unsigned char)labelScaleFactor;
@@ -157,10 +157,10 @@
 - (void)requestStylesheetAnimation:(id)arg1 targetMapDisplayStyle:(struct DisplayStyle { unsigned char x1; unsigned char x2; unsigned char x3; unsigned char x4; unsigned char x5; })arg2 setupHandler:(id /* block */)arg3;
 - (void)resetRenderQueue:(struct shared_ptr<ggl::RenderQueue> { struct RenderQueue {} *x1; struct __shared_weak_count {} *x2; })arg1;
 - (void)resetTileContainers;
-- (struct vector<std::__1::shared_ptr<md::LabelFeatureMarker>, std::__1::allocator<std::__1::shared_ptr<md::LabelFeatureMarker> > > { struct shared_ptr<md::LabelFeatureMarker> {} *x1; struct shared_ptr<md::LabelFeatureMarker> {} *x2; struct __compressed_pair<std::__1::shared_ptr<md::LabelFeatureMarker> *, std::__1::allocator<std::__1::shared_ptr<md::LabelFeatureMarker> > > { struct shared_ptr<md::LabelFeatureMarker> {} *x_3_1_1; } x3; })roadMarkersForSelectionAtScreenPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (struct vector<std::__1::shared_ptr<md::LabelFeatureMarker>, std::__1::allocator<std::__1::shared_ptr<md::LabelFeatureMarker> > > { struct shared_ptr<md::LabelFeatureMarker> {} *x1; struct shared_ptr<md::LabelFeatureMarker> {} *x2; struct __compressed_pair<std::__1::shared_ptr<md::LabelFeatureMarker> *, std::__1::allocator<std::__1::shared_ptr<md::LabelFeatureMarker> > > { struct shared_ptr<md::LabelFeatureMarker> {} *x_3_1_1; } x3; })roadMarkersForSelectionAtScreenPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)routeLineSplitAnnotation;
 - (id)routePreloadSession;
-- (struct PolylineCoordinate { unsigned int x1; double x2; })routeUserOffset;
+- (struct PolylineCoordinate { unsigned int x1; float x2; })routeUserOffset;
 - (id)sceneConfiguration;
 - (void)selectLabelMarker:(const struct shared_ptr<md::LabelMarker> { struct LabelMarker {} *x1; struct __shared_weak_count {} *x2; }*)arg1;
 - (void)selectTransitLineMarker:(id)arg1;
@@ -190,7 +190,7 @@
 - (void)setRouteContext:(id)arg1;
 - (void)setRouteLineSplitAnnotation:(id)arg1;
 - (void)setRoutePreloadSession:(id)arg1;
-- (void)setRouteUserOffset:(struct PolylineCoordinate { unsigned int x1; double x2; })arg1;
+- (void)setRouteUserOffset:(struct PolylineCoordinate { unsigned int x1; float x2; })arg1;
 - (void)setShieldIdiom:(int)arg1;
 - (void)setShieldSize:(int)arg1;
 - (void)setShouldLimitTrackingCameraHeight:(BOOL)arg1;
@@ -213,7 +213,7 @@
 - (BOOL)showsBuildings;
 - (BOOL)showsPointsOfInterest;
 - (struct DisplayStyle { unsigned char x1; unsigned char x2; unsigned char x3; unsigned char x4; unsigned char x5; })sourceMapDisplayStyle;
-- (struct shared_ptr<gss::CartoStyle<gss::PropertyID> > { struct CartoStyle<gss::PropertyID> {} *x1; struct __shared_weak_count {} *x2; })styleAtScreenPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (struct shared_ptr<gss::CartoStyle<gss::PropertyID> > { struct CartoStyle<gss::PropertyID> {} *x1; struct __shared_weak_count {} *x2; })styleAtScreenPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (struct shared_ptr<gss::CartoStyle<gss::PropertyID> > { struct CartoStyle<gss::PropertyID> {} *x1; struct __shared_weak_count {} *x2; })styleForFeature:(const struct shared_ptr<md::FeatureMarker> { struct FeatureMarker {} *x1; struct __shared_weak_count {} *x2; }*)arg1;
 - (struct shared_ptr<gss::StylesheetManager<gss::PropertyID> > { struct StylesheetManager<gss::PropertyID> {} *x1; struct __shared_weak_count {} *x2; })styleManager;
 - (struct shared_ptr<gss::StyleSheet<gss::PropertyID> > { struct StyleSheet<gss::PropertyID> {} *x1; struct __shared_weak_count {} *x2; })stylesheet;
@@ -225,7 +225,7 @@
 - (BOOL)trafficEnabled;
 - (BOOL)trafficIncidentsEnabled;
 - (void)transferStateFromCanvas:(id)arg1;
-- (id)transitLineMarkersForSelectionAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (id)transitLineMarkersForSelectionAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)transitLineMarkersInCurrentViewport;
 - (void)transitionToTracking:(BOOL)arg1 mapMode:(int)arg2 cameraController:(id)arg3 pounceCompletionHandler:(id /* block */)arg4;
 - (void)updateCameraForFrameResize;

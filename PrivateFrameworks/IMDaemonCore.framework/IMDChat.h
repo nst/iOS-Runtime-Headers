@@ -18,7 +18,7 @@
     NSArray * _participants;
     NSDictionary * _properties;
     NSString * _roomName;
-    int  _rowID;
+    long long  _rowID;
     NSString * _serviceName;
     int  _state;
     unsigned char  _style;
@@ -42,7 +42,7 @@
 @property (copy) NSArray *participants;
 @property (retain) NSDictionary *properties;
 @property (copy) NSString *roomName;
-@property (setter=_setRowID:) int rowID;
+@property (setter=_setRowID:) long long rowID;
 @property (readonly, retain) IMDService *service;
 @property (copy) NSString *serviceName;
 @property (readonly, retain) IMDServiceSession *serviceSession;
@@ -50,7 +50,7 @@
 @property unsigned char style;
 @property (setter=_setUnreadCount:) unsigned int unreadCount;
 
-- (void)_setRowID:(int)arg1;
+- (void)_setRowID:(long long)arg1;
 - (void)_setUnreadCount:(unsigned int)arg1;
 - (void)_updateCachedParticipants;
 - (void)_updateLastMessage:(id)arg1;
@@ -81,7 +81,7 @@
 - (void)removeParticipant:(id)arg1;
 - (void)removeParticipants:(id)arg1;
 - (id)roomName;
-- (int)rowID;
+- (long long)rowID;
 - (id)service;
 - (id)serviceName;
 - (id)serviceSession;

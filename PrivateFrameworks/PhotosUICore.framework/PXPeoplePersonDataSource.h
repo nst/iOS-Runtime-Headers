@@ -18,7 +18,7 @@
 + (id)otherPeopleDataSourceWithFetchLimit:(unsigned int)arg1;
 
 - (id)_applyChanges:(id)arg1;
-- (void)_asyncLoadImageForItem:(id)arg1 targetSize:(struct CGSize { double x1; double x2; })arg2 withCompletionBlock:(id /* block */)arg3;
+- (void)_asyncLoadImageForItem:(id)arg1 targetSize:(struct CGSize { float x1; float x2; })arg2 withCompletionBlock:(id /* block */)arg3;
 - (id)_itemsArrayFromObjects:(id)arg1;
 - (id)_membersForModelObjects:(id)arg1;
 - (void)_updateMember:(id)arg1 WithModelObject:(id)arg2;

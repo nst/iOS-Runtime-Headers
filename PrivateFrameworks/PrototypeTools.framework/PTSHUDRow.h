@@ -4,11 +4,11 @@
 
 @interface PTSHUDRow : NSObject {
     NSArray * _controls;
-    double  _height;
+    float  _height;
 }
 
 @property (nonatomic, retain) NSArray *controls;
-@property (nonatomic) double height;
+@property (nonatomic) float height;
 
 + (id)controlsModeFooterRow;
 + (id)controlsModeHeaderRow;

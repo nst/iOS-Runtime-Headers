@@ -3,7 +3,7 @@
  */
 
 @interface _CUIPSDStopAndMidpointPair : NSObject {
-    double  midpoint;
+    float  midpoint;
     id  stop;
 }
 

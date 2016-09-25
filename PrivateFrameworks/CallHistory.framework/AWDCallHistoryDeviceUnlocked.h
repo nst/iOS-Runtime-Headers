@@ -8,13 +8,13 @@
         unsigned int timestamp : 1; 
         unsigned int callCount : 1; 
     }  _has;
-    unsigned int  _timestamp;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) unsigned int callCount;
 @property (nonatomic) BOOL hasCallCount;
 @property (nonatomic) BOOL hasTimestamp;
-@property (nonatomic) unsigned int timestamp;
+@property (nonatomic) unsigned long long timestamp;
 
 - (unsigned int)callCount;
 - (void)copyTo:(id)arg1;
@@ -30,8 +30,8 @@
 - (void)setCallCount:(unsigned int)arg1;
 - (void)setHasCallCount:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
-- (void)setTimestamp:(unsigned int)arg1;
-- (unsigned int)timestamp;
+- (void)setTimestamp:(unsigned long long)arg1;
+- (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 
 @end

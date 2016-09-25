@@ -4,13 +4,13 @@
 
 @interface UIViewControllerAction : NSObject {
     id /* block */  _completion;
-    double  _curlUpRevealedHeight;
+    float  _curlUpRevealedHeight;
     NSString * _name;
     int  _transition;
     UIViewController * _viewController;
 }
 
-@property (setter=_setCurlUpRevealedHeight:, nonatomic) double _curlUpRevealedHeight;
+@property (setter=_setCurlUpRevealedHeight:, nonatomic) float _curlUpRevealedHeight;
 @property (nonatomic, readonly) BOOL animated;
 @property (nonatomic, copy) id /* block */ completion;
 @property (nonatomic, retain) NSString *name;

@@ -253,7 +253,7 @@
 - (void)setUuid:(id)arg1;
 - (id)sizeClassWithIdentifier:(int)arg1;
 - (id)sizeWithIdentifier:(int)arg1;
-- (id)slicesComputedForImageSize:(struct CGSize { double x1; double x2; })arg1 usingSliceInsets:(struct { double x1; double x2; double x3; double x4; })arg2 resizableSliceSize:(struct CGSize { double x1; double x2; })arg3 withRenditionType:(int)arg4;
+- (id)slicesComputedForImageSize:(struct CGSize { float x1; float x2; })arg1 usingSliceInsets:(struct { float x1; float x2; float x3; float x4; })arg2 resizableSliceSize:(struct CGSize { float x1; float x2; })arg3 withRenditionType:(int)arg4;
 - (id)stateWithIdentifier:(int)arg1;
 - (int)targetPlatform;
 - (id)templateRenderingModeWithIdentifier:(int)arg1;

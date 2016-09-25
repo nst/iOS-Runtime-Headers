@@ -21,9 +21,9 @@
     NSString * _identifier;
     BOOL  _isFirstFromEdition;
     int  _l2TagIDRef;
-    unsigned int  _mergeID;
+    unsigned long long  _mergeID;
     int  _nameRef;
-    unsigned int  _options;
+    unsigned long long  _options;
     int  _sourceIdentifierRef;
     int  _themeTagIDRef;
     int  _type;
@@ -50,9 +50,9 @@
 @property (nonatomic, retain) NSString *identifier;
 @property (nonatomic) BOOL isFirstFromEdition;
 @property (nonatomic) int l2TagIDRef;
-@property (nonatomic) unsigned int mergeID;
+@property (nonatomic) unsigned long long mergeID;
 @property (nonatomic) int nameRef;
-@property (nonatomic) unsigned int options;
+@property (nonatomic) unsigned long long options;
 @property (nonatomic) int sourceIdentifierRef;
 @property (nonatomic) int themeTagIDRef;
 @property (nonatomic) int type;
@@ -91,9 +91,9 @@
 - (BOOL)isFirstFromEdition;
 - (int)l2TagIDRef;
 - (void)mergeFrom:(id)arg1;
-- (unsigned int)mergeID;
+- (unsigned long long)mergeID;
 - (int)nameRef;
-- (unsigned int)options;
+- (unsigned long long)options;
 - (BOOL)readFrom:(id)arg1;
 - (void)setCreationDate:(id)arg1;
 - (void)setEditionFeedEndDate:(id)arg1;
@@ -111,9 +111,9 @@
 - (void)setIdentifier:(id)arg1;
 - (void)setIsFirstFromEdition:(BOOL)arg1;
 - (void)setL2TagIDRef:(int)arg1;
-- (void)setMergeID:(unsigned int)arg1;
+- (void)setMergeID:(unsigned long long)arg1;
 - (void)setNameRef:(int)arg1;
-- (void)setOptions:(unsigned int)arg1;
+- (void)setOptions:(unsigned long long)arg1;
 - (void)setSourceIdentifierRef:(int)arg1;
 - (void)setThemeTagIDRef:(int)arg1;
 - (void)setType:(int)arg1;

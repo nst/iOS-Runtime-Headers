@@ -15,7 +15,7 @@
     BOOL  _handledAVCaptureSessionFailedToStart;
     BOOL  _handledAVCaptureSessionTerminatedAbnormally;
     BOOL  _isProcessingSamples;
-    unsigned int  _maxRecordedFileSize;
+    unsigned long long  _maxRecordedFileSize;
     NSObject<OS_dispatch_queue> * _queue;
     NSDate * _recordingCreationDate;
     NSUUID * _recordingSessionID;
@@ -23,10 +23,10 @@
     NSObject<OS_dispatch_queue> * _sampleBufferQueue;
     unsigned int  _sampleBuffersWritten;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _sampleBuffersWrittenDuration;
     double  _storeDemoTimeLimit;
     BOOL  _waitingForAVCaptureSessionDidStart;
@@ -44,7 +44,7 @@
 @property (nonatomic, readonly) BOOL finalizedAssetEncounteredError;
 @property (nonatomic, readonly) NSURL *finalizedAssetURL;
 @property (readonly) unsigned int hash;
-@property (nonatomic) unsigned int maxRecordedFileSize;
+@property (nonatomic) unsigned long long maxRecordedFileSize;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 @property (nonatomic, retain) NSDate *recordingCreationDate;
 @property (nonatomic, copy) NSUUID *recordingSessionID;
@@ -84,7 +84,7 @@
 - (BOOL)finalizedAssetEncounteredError;
 - (id)finalizedAssetURL;
 - (id)initWithAVCaptureSession:(id)arg1;
-- (unsigned int)maxRecordedFileSize;
+- (unsigned long long)maxRecordedFileSize;
 - (void)pauseWriting;
 - (id)queue;
 - (id)recordingCreationDate;
@@ -95,7 +95,7 @@
 - (void)setActiveOutputFileURL:(id)arg1;
 - (void)setAssetWriter:(id)arg1;
 - (void)setCaptureOutputDelegate:(id)arg1;
-- (void)setMaxRecordedFileSize:(unsigned int)arg1;
+- (void)setMaxRecordedFileSize:(unsigned long long)arg1;
 - (void)setQueue:(id)arg1;
 - (void)setRecordingCreationDate:(id)arg1;
 - (void)setRecordingSessionID:(id)arg1;

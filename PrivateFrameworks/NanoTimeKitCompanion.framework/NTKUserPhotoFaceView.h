@@ -3,7 +3,7 @@
  */
 
 @interface NTKUserPhotoFaceView : NTKBasePhotoFaceView {
-    unsigned int  _currentAnalysisOperationID;
+    unsigned long long  _currentAnalysisOperationID;
     BOOL  _irisIndicatorActive;
     BOOL  _isAnalysisOperationInProgress;
     BOOL  _isContentLoaded;
@@ -17,7 +17,7 @@
 
 - (void)_applyBreathingFraction:(float)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3;
 - (float)_backgroundImageAlphaForEditMode:(int)arg1;
-- (BOOL)_canOperationProceed:(unsigned int)arg1;
+- (BOOL)_canOperationProceed:(unsigned long long)arg1;
 - (void)_cleanupAfterEditing;
 - (void)_configureForEditMode:(int)arg1;
 - (void)_loadSnapshotContentViews;

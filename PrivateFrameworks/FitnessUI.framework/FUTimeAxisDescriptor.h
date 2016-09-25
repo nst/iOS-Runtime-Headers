@@ -4,7 +4,7 @@
 
 @interface FUTimeAxisDescriptor : NSObject <FUAxisDescriptor> {
     FUDateAnchorRule * _anchorRule;
-    double  _axisDescriptorPadding;
+    float  _axisDescriptorPadding;
     NSDateComponents * _axisSpacing;
     NSMutableArray * _cachedAxisLabelColors;
     NSArray * _cachedAxisLabels;
@@ -23,9 +23,9 @@
     UIColor * _selectedLabelColor;
     FUDateAnchorRule * _subAnchorRule;
     BOOL  _subAxisCapitalize;
-    double  _subAxisDescriptorPadding;
+    float  _subAxisDescriptorPadding;
     NSDateComponents * _subAxisSpacing;
-    double  _subAxisVerticalPadding;
+    float  _subAxisVerticalPadding;
     UIFont * _subLabelFont;
     unsigned int  _subTextStyle;
     unsigned int  _subTimeInterval;
@@ -38,7 +38,7 @@
 }
 
 @property (nonatomic, retain) FUDateAnchorRule *anchorRule;
-@property (nonatomic) double axisDescriptorPadding;
+@property (nonatomic) float axisDescriptorPadding;
 @property (nonatomic, retain) NSDateComponents *axisSpacing;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -54,9 +54,9 @@
 @property (nonatomic, retain) UIColor *selectedLabelColor;
 @property (nonatomic, retain) FUDateAnchorRule *subAnchorRule;
 @property (nonatomic) BOOL subAxisCapitalize;
-@property (nonatomic) double subAxisDescriptorPadding;
+@property (nonatomic) float subAxisDescriptorPadding;
 @property (nonatomic, retain) NSDateComponents *subAxisSpacing;
-@property (nonatomic) double subAxisVerticalPadding;
+@property (nonatomic) float subAxisVerticalPadding;
 @property (nonatomic, retain) UIFont *subLabelFont;
 @property (nonatomic) unsigned int subTextStyle;
 @property (nonatomic) unsigned int subTimeInterval;

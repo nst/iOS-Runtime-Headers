@@ -29,7 +29,7 @@
 - (void)setImageView:(id)arg1;
 - (void)setPersonItem:(id)arg1;
 - (void)setPlaceholderView:(id)arg1;
-- (void)setPreferredContentSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setPreferredContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)viewDidLoad;
 - (void)viewWillLayoutSubviews;
 

@@ -10,16 +10,16 @@
     PUAdjustmentsModeBar * _adjustmentsModeBar;
     NSArray * _adjustmentsModeBarConstraints;
     NSMutableSet * _cleanSliderThumbnailsModes;
-    double  _currentModeLevelSliderOffset;
+    float  _currentModeLevelSliderOffset;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _interactionInitialScrollOffset;
     int  _interactionMode;
-    double  _interactiveModeTransitionStartOffset;
+    float  _interactiveModeTransitionStartOffset;
     PUAdjustmentsMode * _lastUsedMode;
     NSMapTable * _levelSlidersByMode;
-    double  _scrollViewModeSwitchSideOriginOffset;
+    float  _scrollViewModeSwitchSideOriginOffset;
     NSMapTable * _sliderThumbnailsByModeAndIntensity;
 }
 
@@ -74,13 +74,13 @@
 - (id)localizedResetToolActionTitle;
 - (void)photoEditModelDidChange;
 - (id)preferredPreviewBackgroundColor;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })preferredPreviewViewInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })preferredPreviewViewInsets;
 - (void)resetToDefaultValueAnimated:(BOOL)arg1;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(BOOL)arg2;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
-- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { double x1; double x2; })arg2 targetContentOffset:(inout struct CGPoint { double x1; double x2; }*)arg3;
+- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { float x1; float x2; })arg2 targetContentOffset:(inout struct CGPoint { float x1; float x2; }*)arg3;
 - (id)selectedToolbarIcon;
 - (void)setLayoutOrientation:(int)arg1;
 - (void)setLayoutOrientation:(int)arg1 withTransitionCoordinator:(id)arg2;

@@ -5,22 +5,22 @@
 @interface ICBaseAttachmentView : UIView {
     ICAttachment * _attachment;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _attachmentContentSize;
     BOOL  _selected;
     ICTextAttachment * _textAttachment;
 }
 
 @property (nonatomic) ICAttachment *attachment;
-@property (nonatomic) struct CGSize { double x1; double x2; } attachmentContentSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } attachmentContentSize;
 @property (nonatomic) BOOL selected;
 @property (nonatomic) ICTextAttachment *textAttachment;
 
 - (void).cxx_destruct;
 - (void)addKVObserversForAttachment:(id)arg1;
 - (id)attachment;
-- (struct CGSize { double x1; double x2; })attachmentContentSize;
+- (struct CGSize { float x1; float x2; })attachmentContentSize;
 - (void)attachmentDidLoad:(id)arg1;
 - (void)attachmentPreviewImagesDidUpdate:(id)arg1;
 - (void)attachmentWillBeDeleted:(id)arg1;
@@ -38,7 +38,7 @@
 - (void)removeKVOObserversForAttachment:(id)arg1;
 - (BOOL)selected;
 - (void)setAttachment:(id)arg1;
-- (void)setAttachmentContentSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setAttachmentContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setSelected:(BOOL)arg1;
 - (void)setTextAttachment:(id)arg1;
 - (id)textAttachment;

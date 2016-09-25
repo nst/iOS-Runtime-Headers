@@ -90,10 +90,10 @@
     int  _containerScrollViewVisitationCount;
     UIFocusContainerGuide * _contentFocusContainerGuide;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _currentCenterOffset;
-    double  _currentInteractiveTransitionProgress;
+    float  _currentInteractiveTransitionProgress;
     double  _currentInteractiveTransitionTimeStamp;
     _UICollectionViewPrefetchingContext * _currentPrefetchingContext;
     UICollectionViewCell * _currentPromiseFulfillmentCell;
@@ -101,10 +101,10 @@
     UICollectionViewUpdate * _currentUpdate;
     <UICollectionViewDataSource_Private> * _dataSource;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _defaultLayoutMargins;
     NSMutableArray * _deleteItems;
     _UIDynamicAnimationGroup * _endInteractiveTransitionAnimationGroup;
@@ -129,8 +129,8 @@
     id /* block */  _invalidationBlock;
     BOOL  _isInInteractiveTransition;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _lastLayoutOffset;
     UICollectionViewLayout * _layout;
     NSMutableArray * _moveItems;
@@ -144,12 +144,12 @@
     id /* block */  _postUpdateBlock;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _preRotationBounds;
     NSMutableDictionary * _prefetchCacheItems;
@@ -158,23 +158,23 @@
     _UIVelocityIntegrator * _prefetchVelocityIntegrator;
     BOOL  _prefetchingEnabled;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _previousCenterOffset;
-    double  _previousInteractiveTransitionProgress;
+    float  _previousInteractiveTransitionProgress;
     double  _previousInteractiveTransitionTimeStamp;
     NSMutableArray * _reloadItems;
     int  _reloadingSuspendedCount;
     _UIFeedbackDragSnappingBehavior * _reorderFeedbackBehavior;
     NSMutableArray * _reorderedItems;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _reorderingTargetPosition;
     int  _rotationAnimationCount;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _rotationBoundsOffset;
     BOOL  _shouldAccumulateTrackedLayoutValues;
     double  _startTimeStamp;
@@ -191,12 +191,12 @@
     int  _updateCount;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _visibleBounds;
     NSMutableDictionary * _visibleCellsDict;
@@ -218,7 +218,7 @@
 @property (nonatomic) <UICollectionViewDataSource> *dataSource;
 @property (getter=_dataSourceSupportsReordering, nonatomic, readonly) BOOL dataSourceSupportsReordering;
 @property (readonly, copy) NSString *debugDescription;
-@property (getter=_defaultLayoutMargins, setter=_setDefaultLayoutMargins:, nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } defaultLayoutMargins;
+@property (getter=_defaultLayoutMargins, setter=_setDefaultLayoutMargins:, nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } defaultLayoutMargins;
 @property (nonatomic) <UICollectionViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (getter=_endOfContentFocusContainerGuide, nonatomic, readonly) UIFocusContainerGuide *endOfContentFocusContainerGuide;
@@ -235,7 +235,7 @@
 @property (getter=isPrefetchingEnabled, nonatomic) BOOL prefetchingEnabled;
 @property (nonatomic) BOOL remembersLastFocusedIndexPath;
 @property (getter=_reorderedItems, nonatomic, readonly) NSArray *reorderedItems;
-@property (getter=_reorderingTargetPosition, nonatomic, readonly) struct CGPoint { double x1; double x2; } reorderingTargetPosition;
+@property (getter=_reorderingTargetPosition, nonatomic, readonly) struct CGPoint { float x1; float x2; } reorderingTargetPosition;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSArray *visibleCells;
 @property (getter=_visibleViews, nonatomic, readonly) NSArray *visibleViews;
@@ -274,16 +274,16 @@
 - (void)_cellMenuDismissed;
 - (int)_cellPrefetchMode;
 - (void)_checkForPreferredAttributesInView:(id)arg1 originalAttributes:(id)arg2;
-- (id)_childFocusRegionsInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)_childFocusRegionsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_cleanUpAfterInteractiveTransitionDidFinish:(BOOL)arg1;
 - (id)_collectionViewData;
 - (void)_completeInteractiveMovementWithDisposition:(int)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_computeFutureVisibleBoundsForPrefetchVelocity:(struct CGVector { double x1; double x2; })arg1 visibleBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_computePrefetchCacheValidationBoundsForPrefetchVelocity:(struct CGVector { double x1; double x2; })arg1 visibleBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
-- (void)_computePrefetchCandidatesForVelocity:(struct CGVector { double x1; double x2; })arg1 notifyDelegateIfNeeded:(BOOL)arg2;
-- (void)_computePrefetchCandidatesForVisibleBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 futureVisibleBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 prefetchVector:(struct CGVector { double x1; double x2; })arg3 notifyDelegateIfNeeded:(BOOL)arg4;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_computeFutureVisibleBoundsForPrefetchVelocity:(struct CGVector { float x1; float x2; })arg1 visibleBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_computePrefetchCacheValidationBoundsForPrefetchVelocity:(struct CGVector { float x1; float x2; })arg1 visibleBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (void)_computePrefetchCandidatesForVelocity:(struct CGVector { float x1; float x2; })arg1 notifyDelegateIfNeeded:(BOOL)arg2;
+- (void)_computePrefetchCandidatesForVisibleBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 futureVisibleBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 prefetchVector:(struct CGVector { float x1; float x2; })arg3 notifyDelegateIfNeeded:(BOOL)arg4;
 - (id)_contentFocusContainerGuide;
-- (struct CGPoint { double x1; double x2; })_contentOffsetForNewFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 oldFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 newContentSize:(struct CGSize { double x1; double x2; })arg3 andOldContentSize:(struct CGSize { double x1; double x2; })arg4;
+- (struct CGPoint { float x1; float x2; })_contentOffsetForNewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 oldFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 newContentSize:(struct CGSize { float x1; float x2; })arg3 andOldContentSize:(struct CGSize { float x1; float x2; })arg4;
 - (id)_createPreparedCellForItemAtIndexPath:(id)arg1 withLayoutAttributes:(id)arg2 applyAttributes:(BOOL)arg3;
 - (id)_createPreparedCellForItemAtIndexPath:(id)arg1 withLayoutAttributes:(id)arg2 applyAttributes:(BOOL)arg3 isFocused:(BOOL)arg4 notify:(BOOL)arg5;
 - (id)_createPreparedSupplementaryViewForElementOfKind:(id)arg1 atIndexPath:(id)arg2 withLayoutAttributes:(id)arg3 applyAttributes:(BOOL)arg4;
@@ -293,9 +293,9 @@
 - (id)_currentUpdate;
 - (BOOL)_dataSourceImplementsNumberOfSections;
 - (BOOL)_dataSourceSupportsReordering;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_defaultLayoutMargins;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_defaultLayoutMargins;
 - (id)_delegatePreferredIndexPath;
-- (struct CGPoint { double x1; double x2; })_delegateTargetOffsetForProposedContentOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (struct CGPoint { float x1; float x2; })_delegateTargetOffsetForProposedContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (id)_dequeueReusableViewOfKind:(id)arg1 withIdentifier:(id)arg2 forIndexPath:(id)arg3 viewCategory:(unsigned int)arg4;
 - (void)_deselectAllAnimated:(BOOL)arg1 notifyDelegate:(BOOL)arg2;
 - (void)_deselectItemAtIndexPath:(id)arg1 animated:(BOOL)arg2 notifyDelegate:(BOOL)arg3;
@@ -310,7 +310,7 @@
 - (id)_endOfContentFocusContainerGuide;
 - (void)_endReordering;
 - (void)_endUpdatesWithInvalidationContext:(id)arg1 tentativelyForReordering:(BOOL)arg2 animator:(id)arg3;
-- (void)_ensureViewsAreLoadedInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)_ensureViewsAreLoadedInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_finishInteractiveTransitionShouldFinish:(BOOL)arg1 finalAnimation:(BOOL)arg2;
 - (void)_finishInteractiveTransitionWithFinalAnimation:(BOOL)arg1;
 - (id)_focusedCell;
@@ -344,7 +344,7 @@
 - (id)_managedViews;
 - (id /* block */)_navigationCompletion;
 - (id)_objectInDictionary:(id)arg1 forKind:(id)arg2 indexPath:(id)arg3;
-- (void)_offsetPinnedReorderedItemsWithCurrentContentOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (void)_offsetPinnedReorderedItemsWithCurrentContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_performAction:(SEL)arg1 forCell:(id)arg2 sender:(id)arg3;
 - (void)_performBatchUpdates:(id /* block */)arg1 completion:(id /* block */)arg2 invalidationContext:(id)arg3;
 - (void)_performBatchUpdates:(id /* block */)arg1 completion:(id /* block */)arg2 invalidationContext:(id)arg3 tentativelyForReordering:(BOOL)arg4;
@@ -353,14 +353,14 @@
 - (void)_pinReorderedItemsWithPinningTest:(id /* block */)arg1;
 - (id)_pivotForTransitionFromLayout:(id)arg1 toLayout:(id)arg2;
 - (id)_preReorderingIndexPathForLayoutIndexPath:(id)arg1;
-- (unsigned int)_prefetchItemsForVelocity:(struct CGVector { double x1; double x2; })arg1 maxItemsToPrefetch:(unsigned int)arg2;
-- (unsigned int)_prefetchItemsForVelocity:(struct CGVector { double x1; double x2; })arg1 maxItemsToPrefetch:(unsigned int)arg2 invalidateCandidatesOnDirectionChanges:(BOOL)arg3;
+- (unsigned int)_prefetchItemsForVelocity:(struct CGVector { float x1; float x2; })arg1 maxItemsToPrefetch:(unsigned int)arg2;
+- (unsigned int)_prefetchItemsForVelocity:(struct CGVector { float x1; float x2; })arg1 maxItemsToPrefetch:(unsigned int)arg2 invalidateCandidatesOnDirectionChanges:(BOOL)arg3;
 - (BOOL)_prefetchingEnabledDefault;
 - (void)_prepareLayoutForUpdates;
 - (void)_prepareViewForUse:(id)arg1 withElementCategory:(unsigned int)arg2 elementKind:(id)arg3 reuseIdentifier:(id)arg4 indexPath:(id)arg5;
 - (void)_prepareViewForUse:(id)arg1 withElementCategory:(unsigned int)arg2 elementKind:(id)arg3 reuseIdentifier:(id)arg4 indexPath:(id)arg5 applyDefaultAttributes:(BOOL)arg6;
-- (void)_pruneCachedPrefetchViewsForCacheValidationBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)_pruneCachedPrefetchViewsForVelocity:(struct CGVector { double x1; double x2; })arg1;
+- (void)_pruneCachedPrefetchViewsForCacheValidationBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_pruneCachedPrefetchViewsForVelocity:(struct CGVector { float x1; float x2; })arg1;
 - (void)_registerForGeometryChangesIfInSupeview;
 - (void)_registeredSupplementaryViewKind:(id)arg1;
 - (void)_reloadDataIfNeeded;
@@ -368,10 +368,10 @@
 - (void)_removeAnyAncestorScrollViewNotifications;
 - (void)_removeContainerScrollViewForNotifications:(id)arg1;
 - (id)_reorderFeedbackBehavior;
-- (id)_reorderPrefetchCandidates:(id)arg1 forPrefetchVelocity:(struct CGVector { double x1; double x2; })arg2 visibleBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
+- (id)_reorderPrefetchCandidates:(id)arg1 forPrefetchVelocity:(struct CGVector { float x1; float x2; })arg2 visibleBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 - (id)_reorderedItemForView:(id)arg1;
 - (id)_reorderedItems;
-- (struct CGPoint { double x1; double x2; })_reorderingTargetPosition;
+- (struct CGPoint { float x1; float x2; })_reorderingTargetPosition;
 - (void)_resetContainerScrollViewVisitationCount;
 - (void)_resetCurrentPrefetchContext;
 - (void)_resetPrefetchState;
@@ -385,7 +385,7 @@
 - (void)_reuseSupplementaryView:(id)arg1;
 - (void)_scrollFirstResponderCellToVisible:(BOOL)arg1;
 - (void)_scrollViewDidEndDraggingWithDeceleration:(BOOL)arg1;
-- (void)_scrollViewWillEndDraggingWithVelocity:(struct CGPoint { double x1; double x2; })arg1 targetContentOffset:(inout struct CGPoint { double x1; double x2; }*)arg2;
+- (void)_scrollViewWillEndDraggingWithVelocity:(struct CGPoint { float x1; float x2; })arg1 targetContentOffset:(inout struct CGPoint { float x1; float x2; }*)arg2;
 - (void)_selectAllSelectedItems;
 - (void)_selectItemAtIndexPath:(id)arg1 animated:(BOOL)arg2 scrollPosition:(unsigned int)arg3 notifyDelegate:(BOOL)arg4;
 - (id)_selectableIndexPathForItemContainingHitView:(id)arg1;
@@ -396,7 +396,7 @@
 - (void)_setCollectionViewLayout:(id)arg1 animated:(BOOL)arg2 isInteractive:(BOOL)arg3 completion:(id /* block */)arg4 animator:(id)arg5;
 - (void)_setCurrentPromiseFulfillmentCell:(id)arg1;
 - (void)_setCurrentTouch:(id)arg1;
-- (void)_setDefaultLayoutMargins:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)_setDefaultLayoutMargins:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)_setExternalObjectTable:(id)arg1 forNibLoadingOfCellWithReuseIdentifier:(id)arg2;
 - (void)_setExternalObjectTable:(id)arg1 forNibLoadingOfSupplementaryViewOfKind:(id)arg2 withReuseIdentifier:(id)arg3;
 - (void)_setFocusedCell:(id)arg1;
@@ -429,7 +429,7 @@
 - (void)_unhighlightAllItemsAndHighlightGlobalItem:(int)arg1;
 - (void)_unhighlightItemAtIndexPath:(id)arg1 animated:(BOOL)arg2;
 - (void)_unhighlightItemAtIndexPath:(id)arg1 animated:(BOOL)arg2 notifyDelegate:(BOOL)arg3;
-- (struct CGVector { double x1; double x2; })_unitVectorForVector:(struct CGVector { double x1; double x2; })arg1;
+- (struct CGVector { float x1; float x2; })_unitVectorForVector:(struct CGVector { float x1; float x2; })arg1;
 - (void)_unpinReorderedItemsIfNeeded;
 - (void)_updateAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (void)_updateBackgroundView;
@@ -437,9 +437,9 @@
 - (void)_updateContentFocusContainerGuides;
 - (void)_updateDefaultLayoutMargins;
 - (void)_updateEditing:(BOOL)arg1 forView:(id)arg2 atIndexPath:(id)arg3;
-- (void)_updateFocusedCellIndexPathIfNecessaryWithLastFocusedRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)_updateReorderingTargetPosition:(struct CGPoint { double x1; double x2; })arg1;
-- (void)_updateReorderingTargetPosition:(struct CGPoint { double x1; double x2; })arg1 forced:(BOOL)arg2;
+- (void)_updateFocusedCellIndexPathIfNecessaryWithLastFocusedRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_updateReorderingTargetPosition:(struct CGPoint { float x1; float x2; })arg1;
+- (void)_updateReorderingTargetPosition:(struct CGPoint { float x1; float x2; })arg1 forced:(BOOL)arg2;
 - (void)_updateRowsAtIndexPaths:(id)arg1 updateAction:(int)arg2;
 - (void)_updateSections:(id)arg1 updateAction:(int)arg2;
 - (void)_updateTrackedLayoutValuesWith:(id)arg1;
@@ -451,7 +451,7 @@
 - (id)_viewControllerToNotifyOnLayoutSubviews;
 - (BOOL)_viewIsReorderedCell:(id)arg1;
 - (BOOL)_visible;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_visibleBounds;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_visibleBounds;
 - (id)_visibleCellForIndexPath:(id)arg1;
 - (id)_visibleDecorationViewOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (id)_visibleDecorationViewsOfKind:(id)arg1;
@@ -489,17 +489,17 @@
 - (void)finishInteractiveTransition;
 - (int)highlightedGlobalItem;
 - (id)indexPathForCell:(id)arg1;
-- (id)indexPathForItemAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (id)indexPathForItemAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)indexPathForSupplementaryView:(id)arg1;
 - (id)indexPathsForSelectedItems;
 - (id)indexPathsForVisibleItems;
 - (id)indexPathsForVisibleSupplementaryElementsOfKind:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 collectionViewLayout:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 collectionViewLayout:(id)arg2;
 - (void)insertItemsAtIndexPaths:(id)arg1;
 - (void)insertSections:(id)arg1;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (BOOL)isEditing;
 - (BOOL)isPrefetchingEnabled;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;
@@ -533,19 +533,19 @@
 - (void)setAllowsMultipleSelection:(BOOL)arg1;
 - (void)setAllowsSelection:(BOOL)arg1;
 - (void)setBackgroundView:(id)arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setCollectionViewLayout:(id)arg1;
 - (void)setCollectionViewLayout:(id)arg1 animated:(BOOL)arg2;
 - (void)setCollectionViewLayout:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
 - (void)setCollectionViewLayout:(id)arg1 withAnimator:(id)arg2;
-- (void)setContentInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
-- (void)setContentOffset:(struct CGPoint { double x1; double x2; })arg1 animated:(BOOL)arg2;
-- (void)setContentSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1 animated:(BOOL)arg2;
+- (void)setContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setDataSource:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setEditing:(BOOL)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)setLayoutMargins:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setLayoutMargins:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setPrefetchDataSource:(id)arg1;
 - (void)setPrefetchingEnabled:(BOOL)arg1;
 - (void)setRemembersLastFocusedIndexPath:(BOOL)arg1;
@@ -558,7 +558,7 @@
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)traitCollectionDidChange:(id)arg1;
-- (void)updateInteractiveMovementTargetPosition:(struct CGPoint { double x1; double x2; })arg1;
+- (void)updateInteractiveMovementTargetPosition:(struct CGPoint { float x1; float x2; })arg1;
 - (id)visibleCells;
 - (id)visibleSupplementaryViewsOfKind:(id)arg1;
 
@@ -566,18 +566,18 @@
 
 - (id)next:(int)arg1 indexPathFromIndexPath:(id)arg2;
 - (void)pu_scrollToItemAtIndexPath:(id)arg1 atScrollPosition:(unsigned int)arg2 animated:(BOOL)arg3;
-- (void)pu_scrollToRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 atScrollPosition:(unsigned int)arg2 animated:(BOOL)arg3;
+- (void)pu_scrollToRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 atScrollPosition:(unsigned int)arg2 animated:(BOOL)arg3;
 
 // Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
 
-- (struct CGSize { double x1; double x2; })__ck_contentSize;
+- (struct CGSize { float x1; float x2; })__ck_contentSize;
 - (id)__ck_indexPathForLastItem;
 - (id)__ck_indexPathForReplyItem;
 - (BOOL)__ck_isScrolledToBottomHidingIndexPath:(id)arg1;
 - (void)__ck_reloadDataKeepingSelection;
-- (struct CGPoint { double x1; double x2; })__ck_scrollToBottomContentOffsetHidingIndexPath:(id)arg1;
+- (struct CGPoint { float x1; float x2; })__ck_scrollToBottomContentOffsetHidingIndexPath:(id)arg1;
 - (void)__ck_scrollToTopOfCellAtIndexPath:(id)arg1 hidingCellAtIndexPath:(id)arg2 animated:(BOOL)arg3;
-- (id)ckIndexPathsForElementsInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)ckIndexPathsForElementsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 // Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
 

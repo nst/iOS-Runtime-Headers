@@ -3,11 +3,11 @@
  */
 
 @interface FMAccuracyOverlay : MKCircle {
-    double  _horizontalAccuracy;
+    float  _horizontalAccuracy;
     <MKAnnotation> * _parentAnnotation;
 }
 
-@property (nonatomic) double horizontalAccuracy;
+@property (nonatomic) float horizontalAccuracy;
 @property (nonatomic) <MKAnnotation> *parentAnnotation;
 
 - (void).cxx_destruct;

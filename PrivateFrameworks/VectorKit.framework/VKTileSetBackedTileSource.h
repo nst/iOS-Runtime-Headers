@@ -22,8 +22,8 @@
     GEOActiveTileSet * _tileSet;
     _VKTileSetBackedTileSourceTimerTarget * _timerTarget;
     struct ZoomRange { 
-        double min; 
-        double max; 
+        float min; 
+        float max; 
     }  _zoomLevelRange;
 }
 
@@ -42,7 +42,7 @@
 - (BOOL)expires;
 - (void)fetchedTile:(id)arg1 forKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg2;
 - (id)initWithTileSet:(id)arg1 resourceManifestConfiguration:(id)arg2 locale:(id)arg3 sharedResources:(id)arg4;
-- (unsigned int)mapLayerForZoomLevelRange;
+- (unsigned long long)mapLayerForZoomLevelRange;
 - (unsigned int)maximumDownloadZoomLevel;
 - (int)maximumZoomLevel;
 - (unsigned int)minimumDownloadZoomLevel;

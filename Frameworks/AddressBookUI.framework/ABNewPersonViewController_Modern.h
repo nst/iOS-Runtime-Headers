@@ -59,7 +59,7 @@
 - (id)parentContactsFilter;
 - (const void*)parentGroup;
 - (void*)parentSource;
-- (struct CGSize { double x1; double x2; })preferredContentSize;
+- (struct CGSize { float x1; float x2; })preferredContentSize;
 - (id)presentingDelegate;
 - (void)save:(id)arg1;
 - (BOOL)savesNewContactOnSuspend;

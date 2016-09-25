@@ -8,10 +8,10 @@
 
 - (void).cxx_destruct;
 - (void)applyChanges:(id)arg1;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
 - (id)draggableView;
 - (void)invalidate;
-- (BOOL)isGesture:(id)arg1 inDraggableView:(struct CGPoint { double x1; double x2; })arg2;
+- (BOOL)isGesture:(id)arg1 inDraggableView:(struct CGPoint { float x1; float x2; })arg2;
 - (BOOL)preBeginGesture:(id)arg1 shouldBegin:(BOOL*)arg2;
 - (void)prepare;
 

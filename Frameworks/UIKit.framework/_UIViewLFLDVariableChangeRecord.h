@@ -3,12 +3,12 @@
  */
 
 @interface _UIViewLFLDVariableChangeRecord : _UIViewLFLDChangeRecord {
-    double  _value;
+    float  _value;
     NSISVariable * _variable;
     UIView * _variableDelegate;
 }
 
-@property (nonatomic, readonly) double value;
+@property (nonatomic, readonly) float value;
 @property (nonatomic, readonly) NSISVariable *variable;
 @property (nonatomic, readonly) UIView *variableDelegate;
 

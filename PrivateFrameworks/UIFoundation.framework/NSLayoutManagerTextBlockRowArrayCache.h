@@ -4,7 +4,7 @@
 
 @interface NSLayoutManagerTextBlockRowArrayCache : NSObject {
     BOOL  _collapseBorders;
-    double  _containerWidth;
+    float  _containerWidth;
     NSArray * _rowArray;
     struct _NSRange { 
         unsigned int location; 

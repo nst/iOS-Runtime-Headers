@@ -13,8 +13,8 @@
     BOOL  _doubleSided;
     SCNMaterialProperty * _emission;
     int  _fillMode;
-    double  _fresnelExponent;
-    double  _indexOfRefraction;
+    float  _fresnelExponent;
+    float  _indexOfRefraction;
     BOOL  _isPresentationInstance;
     NSString * _lightingModelName;
     BOOL  _litPerPixel;
@@ -28,11 +28,11 @@
     SCNMaterialProperty * _reflective;
     SCNMaterialProperty * _roughness;
     SCNMaterialProperty * _selfIllumination;
-    double  _selfIlluminationOcclusion;
+    float  _selfIlluminationOcclusion;
     SCNShadableHelper * _shadableHelper;
-    double  _shininess;
+    float  _shininess;
     SCNMaterialProperty * _specular;
-    double  _transparency;
+    float  _transparency;
     int  _transparencyMode;
     SCNMaterialProperty * _transparent;
     NSMutableDictionary * _valuesForUndefinedKeys;
@@ -49,7 +49,7 @@
 @property (nonatomic, readonly) SCNMaterialProperty *diffuse;
 @property (getter=isDoubleSided, nonatomic) BOOL doubleSided;
 @property (nonatomic, readonly) SCNMaterialProperty *emission;
-@property (nonatomic) double fresnelExponent;
+@property (nonatomic) float fresnelExponent;
 @property (readonly) unsigned int hash;
 @property (nonatomic, copy) NSString *lightingModelName;
 @property (getter=isLitPerPixel, nonatomic) BOOL litPerPixel;
@@ -64,10 +64,10 @@
 @property (nonatomic, readonly) SCNMaterialProperty *roughness;
 @property (nonatomic, readonly) SCNMaterialProperty *selfIllumination;
 @property (nonatomic, copy) NSDictionary *shaderModifiers;
-@property (nonatomic) double shininess;
+@property (nonatomic) float shininess;
 @property (nonatomic, readonly) SCNMaterialProperty *specular;
 @property (readonly) Class superclass;
-@property (nonatomic) double transparency;
+@property (nonatomic) float transparency;
 @property (nonatomic) int transparencyMode;
 @property (nonatomic, readonly) SCNMaterialProperty *transparent;
 @property (nonatomic) BOOL writesToDepthBuffer;
@@ -107,7 +107,7 @@
 - (void)bindAnimatablePath:(id)arg1 toObject:(id)arg2 withKeyPath:(id)arg3 options:(id)arg4;
 - (int)blendMode;
 - (id)color;
-- (struct __C3DEffectCommonProfile { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __C3DMaterial {} *x2; long x3; struct __C3DEffectSlot {} *x4; struct __C3DEffectSlot {} *x5; struct __C3DEffectSlot {} *x6; struct __C3DEffectSlot {} *x7; struct __C3DEffectSlot {} *x8; struct __C3DEffectSlot {} *x9; struct __C3DEffectSlot {} *x10; struct __C3DEffectSlot {} *x11; struct __C3DEffectSlot {} *x12; struct __C3DEffectSlot {} *x13; struct __C3DEffectSlot {} *x14; struct __C3DEffectSlot {} *x15; double x16; double x17; double x18; double x19; double x20; BOOL x21; int x22; bool x23; bool x24; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; unsigned int x34 : 13; }*)commonProfile;
+- (struct __C3DEffectCommonProfile { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __C3DMaterial {} *x2; long x3; struct __C3DEffectSlot {} *x4; struct __C3DEffectSlot {} *x5; struct __C3DEffectSlot {} *x6; struct __C3DEffectSlot {} *x7; struct __C3DEffectSlot {} *x8; struct __C3DEffectSlot {} *x9; struct __C3DEffectSlot {} *x10; struct __C3DEffectSlot {} *x11; struct __C3DEffectSlot {} *x12; struct __C3DEffectSlot {} *x13; struct __C3DEffectSlot {} *x14; struct __C3DEffectSlot {} *x15; float x16; float x17; float x18; float x19; float x20; BOOL x21; int x22; bool x23; bool x24; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; unsigned int x34 : 13; }*)commonProfile;
 - (id)content;
 - (id)contents;
 - (id)copy;

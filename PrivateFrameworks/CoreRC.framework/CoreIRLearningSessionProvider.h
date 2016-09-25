@@ -3,13 +3,13 @@
  */
 
 @interface CoreIRLearningSessionProvider : CoreIRLearningSession {
-    unsigned int  _captureDoneTicks;
+    unsigned long long  _captureDoneTicks;
     NSObject<OS_dispatch_source> * _captureDoneTimer;
     NSObject<OS_dispatch_source> * _captureIdleTimer;
     NSObject<OS_dispatch_source> * _captureNoSignalTimer;
-    unsigned int  _captureStartTicks;
+    unsigned long long  _captureStartTicks;
     int  _captureState;
-    unsigned int  _capturedCommands;
+    unsigned long long  _capturedCommands;
     unsigned long  _capturedCount;
     unsigned char  _capturedProtocolID;
     unsigned char  _capturedProtocolOptions;
@@ -23,9 +23,9 @@
 
 - (BOOL)_addMapping:(id)arg1;
 - (unsigned int)_findDuplicateIRCommand:(id)arg1 forCommand:(unsigned int)arg2 device:(id*)arg3;
-- (id)_newMappingWithProtocolID:(unsigned char)arg1 options:(unsigned char)arg2 commandToMap:(unsigned int)arg3 commands:(unsigned int*)arg4 commandCount:(unsigned long)arg5 repeats:(unsigned int*)arg6 repeatCount:(unsigned long)arg7;
+- (id)_newMappingWithProtocolID:(unsigned char)arg1 options:(unsigned char)arg2 commandToMap:(unsigned int)arg3 commands:(unsigned long long*)arg4 commandCount:(unsigned long)arg5 repeats:(unsigned long long*)arg6 repeatCount:(unsigned long)arg7;
 - (void)_removeMappingForCommand:(unsigned int)arg1;
-- (BOOL)addMappingWithProtocolID:(unsigned char)arg1 options:(unsigned char)arg2 commandToMap:(unsigned int)arg3 commands:(unsigned int*)arg4 commandCount:(unsigned long)arg5 repeats:(unsigned int*)arg6 repeatCount:(unsigned long)arg7;
+- (BOOL)addMappingWithProtocolID:(unsigned char)arg1 options:(unsigned char)arg2 commandToMap:(unsigned int)arg3 commands:(unsigned long long*)arg4 commandCount:(unsigned long)arg5 repeats:(unsigned long long*)arg6 repeatCount:(unsigned long)arg7;
 - (void)captureIRCommand:(id)arg1;
 - (Class)classForCoder;
 - (void)cleanup;
@@ -37,7 +37,7 @@
 - (void)handleDone;
 - (void)handleIdle;
 - (void)handleNoSignal;
-- (void)initTimer:(id*)arg1 withTimeout:(unsigned int)arg2 handler:(id /* block */)arg3;
+- (void)initTimer:(id*)arg1 withTimeout:(unsigned long long)arg2 handler:(id /* block */)arg3;
 - (long)initTimers;
 - (id)mappings;
 - (void)processCapturedPattern;

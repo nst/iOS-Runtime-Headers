@@ -8,31 +8,31 @@
     NSAttributedString * _attributedString;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _bounds;
     struct CGContext { } * _context;
     NSArray * _lines;
     unsigned int  _maximumNumberOfLines;
-    double  _minimumScaleFactor;
-    double  _minimumTruncatedScaleFactor;
+    float  _minimumScaleFactor;
+    float  _minimumTruncatedScaleFactor;
     int  _typesettingMode;
 }
 
 @property (nonatomic) BOOL adjustsFontSizeToFitWidth;
 @property (nonatomic) BOOL allowTruncation;
 @property (nonatomic, copy) NSAttributedString *attributedString;
-@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } bounds;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
 @property (nonatomic, readonly) struct CGContext { }*context;
 @property (nonatomic, readonly) NSArray *lines;
 @property (nonatomic) unsigned int maximumNumberOfLines;
-@property (nonatomic) double minimumScaleFactor;
-@property (nonatomic) double minimumTruncatedScaleFactor;
+@property (nonatomic) float minimumScaleFactor;
+@property (nonatomic) float minimumTruncatedScaleFactor;
 @property (nonatomic) int typesettingMode;
 
 - (void).cxx_destruct;
@@ -43,7 +43,7 @@
 - (BOOL)adjustsFontSizeToFitWidth;
 - (BOOL)allowTruncation;
 - (id)attributedString;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })bounds;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
 - (struct CGContext { }*)context;
 - (void)didPerformChanges;
 - (id)init;
@@ -57,7 +57,7 @@
 - (void)setAdjustsFontSizeToFitWidth:(BOOL)arg1;
 - (void)setAllowTruncation:(BOOL)arg1;
 - (void)setAttributedString:(id)arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setMaximumNumberOfLines:(unsigned int)arg1;
 - (void)setMinimumScaleFactor:(float)arg1;
 - (void)setMinimumTruncatedScaleFactor:(float)arg1;

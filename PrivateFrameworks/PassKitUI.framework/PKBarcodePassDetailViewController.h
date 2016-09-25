@@ -17,12 +17,12 @@
     NSMutableDictionary * _fieldCellsByIndexPath;
     unsigned int  _fieldsSection;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _headerContentInset;
-    double  _headerHeight;
+    float  _headerHeight;
     UIView * _headerView;
     BOOL  _isBluetoothEnabled;
     BOOL  _isLocationEnabled;
@@ -51,7 +51,7 @@
     BOOL  _showsShare;
     unsigned int  _suppressedContent;
     UISegmentedControl * _tabBar;
-    double  _tabBarHeight;
+    float  _tabBarHeight;
     NSArray * _tabBarSegments;
 }
 

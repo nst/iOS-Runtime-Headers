@@ -14,18 +14,18 @@
     <NCNotificationListCellDelegate> * _delegate;
     BOOL  _executingDefaultAction;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _fullActionsRevealContentOffset;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _initialContentOffset;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _insetMargins;
     BOOL  _supportsSwipeToDefaultAction;
 }
@@ -42,18 +42,18 @@
 @property (nonatomic) <NCNotificationListCellDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (getter=isExecutingDefaultAction, nonatomic) BOOL executingDefaultAction;
-@property (nonatomic) struct CGPoint { double x1; double x2; } fullActionsRevealContentOffset;
+@property (nonatomic) struct CGPoint { float x1; float x2; } fullActionsRevealContentOffset;
 @property (readonly) unsigned int hash;
-@property (nonatomic) struct CGPoint { double x1; double x2; } initialContentOffset;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } insetMargins;
+@property (nonatomic) struct CGPoint { float x1; float x2; } initialContentOffset;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } insetMargins;
 @property (nonatomic, copy) NSString *preferredContentSizeCategory;
 @property (readonly) Class superclass;
 @property (nonatomic) BOOL supportsSwipeToDefaultAction;
 
 - (void).cxx_destruct;
-- (struct CGPoint { double x1; double x2; })_absoluteContentOffsetForLogicalOffset:(float)arg1;
+- (struct CGPoint { float x1; float x2; })_absoluteContentOffsetForLogicalOffset:(float)arg1;
 - (float)_actionButtonsViewAlphaForPercentRevealed:(float)arg1;
-- (float)_actionButtonsViewPercentRevealedForContentOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (float)_actionButtonsViewPercentRevealedForContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (float)_actionButtonsViewWidthWithMargin;
 - (void)_adjustCellScrollViewAfterLayout;
 - (float)_cellWidth;
@@ -73,8 +73,8 @@
 - (void)_layoutClippingRevealView;
 - (void)_layoutContentView;
 - (void)_layoutScrollView;
-- (float)_logicalContentOffsetForAbsoluteOffset:(struct CGPoint { double x1; double x2; })arg1;
-- (void)_revealActionButtonsViewForContentOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (float)_logicalContentOffsetForAbsoluteOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (void)_revealActionButtonsViewForContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_scrollViewDidFinishScrolling:(id)arg1;
 - (id)actionButtonsView;
 - (BOOL)adjustForContentSizeCategoryChange;
@@ -87,10 +87,10 @@
 - (id)contentViewController;
 - (void)dealloc;
 - (id)delegate;
-- (struct CGPoint { double x1; double x2; })fullActionsRevealContentOffset;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (struct CGPoint { double x1; double x2; })initialContentOffset;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })insetMargins;
+- (struct CGPoint { float x1; float x2; })fullActionsRevealContentOffset;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGPoint { float x1; float x2; })initialContentOffset;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })insetMargins;
 - (BOOL)isActionButtonsFullyRevealed;
 - (BOOL)isBackgroundBlurred;
 - (BOOL)isConfigured;
@@ -103,7 +103,7 @@
 - (void)scrollViewDidEndScrollingAnimation:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
-- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { double x1; double x2; })arg2 targetContentOffset:(inout struct CGPoint { double x1; double x2; }*)arg3;
+- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { float x1; float x2; })arg2 targetContentOffset:(inout struct CGPoint { float x1; float x2; }*)arg3;
 - (void)setActionButtonsFullyRevealed:(BOOL)arg1;
 - (void)setActionButtonsView:(id)arg1;
 - (void)setAdjustsFontForContentSizeCategory:(BOOL)arg1;
@@ -114,9 +114,9 @@
 - (void)setContentViewController:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setExecutingDefaultAction:(BOOL)arg1;
-- (void)setFullActionsRevealContentOffset:(struct CGPoint { double x1; double x2; })arg1;
-- (void)setInitialContentOffset:(struct CGPoint { double x1; double x2; })arg1;
-- (void)setInsetMargins:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setFullActionsRevealContentOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setInitialContentOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setInsetMargins:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setSupportsSwipeToDefaultAction:(BOOL)arg1;
 - (BOOL)supportsSwipeToDefaultAction;
 - (void)traitCollectionDidChange:(id)arg1;

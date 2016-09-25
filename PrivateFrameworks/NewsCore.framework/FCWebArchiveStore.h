@@ -15,7 +15,7 @@
 - (id)initWithStoreDirectory:(id)arg1;
 - (BOOL)saveWebArchiveData:(id)arg1 forKey:(id)arg2;
 - (void)setAssetStore:(id)arg1;
-- (unsigned int)totalSizeOfAllWebArchives;
+- (unsigned long long)totalSizeOfAllWebArchives;
 - (id)webArchiveURLForKey:(id)arg1;
 
 @end

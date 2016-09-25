@@ -20,7 +20,7 @@
 - (id)_newSceneLayer;
 - (void)_setRotatableClient:(id)arg1 toOrientation:(int)arg2 updateStatusBar:(BOOL)arg3 duration:(double)arg4 force:(BOOL)arg5 isRotating:(BOOL)arg6;
 - (BOOL)_usesWindowServerHitTesting;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })_viewTransformForInterfaceOrientation:(int)arg1;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_viewTransformForInterfaceOrientation:(int)arg1;
 - (BOOL)_wantsSceneAssociation;
 - (void)dealloc;
 - (void)invalidate;

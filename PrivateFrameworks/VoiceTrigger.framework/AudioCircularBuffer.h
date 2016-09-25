@@ -5,7 +5,7 @@
 @interface AudioCircularBuffer : NSObject {
     short * _buffer;
     int  _bufferLength;
-    double  _bufferSeconds;
+    float  _bufferSeconds;
     int  _endPos;
     long  _markIn;
     long  _markOut;
@@ -15,7 +15,7 @@
     int  _startPos;
 }
 
-@property (readonly) double bufferSeconds;
+@property (readonly) float bufferSeconds;
 @property (nonatomic) long markIn;
 @property (nonatomic) long markOut;
 

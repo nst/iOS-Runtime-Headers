@@ -14,7 +14,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)completedWithServerChangeToken:(id)arg1 requestID:(unsigned int)arg2 moreComing:(BOOL)arg3 error:(id)arg4;
+- (void)completedWithServerChangeToken:(id)arg1 requestID:(unsigned long long)arg2 moreComing:(BOOL)arg3 error:(id)arg4;
 - (id)initWithSession:(id)arg1 changeToken:(id)arg2;
 - (void)main;
 - (BOOL)shouldRetryForError:(id)arg1;

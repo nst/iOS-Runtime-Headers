@@ -3,18 +3,18 @@
  */
 
 @interface NSShadow : NSObject <NSCoding, NSCopying> {
-    double  _shadowBlurRadius;
+    float  _shadowBlurRadius;
     NSColor * _shadowColor;
     unsigned int  _shadowFlags;
     struct CGSize { 
-        double width; 
-        double height; 
+        float width; 
+        float height; 
     }  _shadowOffset;
 }
 
-@property (nonatomic) double shadowBlurRadius;
+@property (nonatomic) float shadowBlurRadius;
 @property (nonatomic, retain) id shadowColor;
-@property (nonatomic) struct CGSize { double x1; double x2; } shadowOffset;
+@property (nonatomic) struct CGSize { float x1; float x2; } shadowOffset;
 
 + (id)defaultShadowColor;
 + (void)initialize;
@@ -31,9 +31,9 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)setShadowBlurRadius:(float)arg1;
 - (void)setShadowColor:(id)arg1;
-- (void)setShadowOffset:(struct CGSize { double x1; double x2; })arg1;
+- (void)setShadowOffset:(struct CGSize { float x1; float x2; })arg1;
 - (float)shadowBlurRadius;
 - (id)shadowColor;
-- (struct CGSize { double x1; double x2; })shadowOffset;
+- (struct CGSize { float x1; float x2; })shadowOffset;
 
 @end

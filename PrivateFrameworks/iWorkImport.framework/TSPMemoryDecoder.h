@@ -20,7 +20,7 @@
 - (id)initWithEncodedData:(id)arg1 delegate:(id)arg2;
 - (id)initWithMetadataDispatchData:(id)arg1 rootObjectComponentDispatchData:(id)arg2 delegate:(id)arg3;
 - (id)metadataDispatchData;
-- (id)newReadChannelForDataWithIdentifier:(int)arg1 info:(id)arg2;
+- (id)newReadChannelForDataWithIdentifier:(long long)arg1 info:(id)arg2;
 - (id)newReadChannelForMetadata;
 - (id)newReadChannelForRootObjectComponent;
 - (id)rootObjectComponentDispatchData;

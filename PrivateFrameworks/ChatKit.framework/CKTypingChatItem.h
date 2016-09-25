@@ -8,11 +8,11 @@
 @property (nonatomic, readonly) CALayer<CKTypingIndicatorLayerProtocol> *indicatorLayer;
 
 - (Class)cellClass;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
 - (BOOL)displayDuringSend;
 - (id)indicatorLayer;
 - (BOOL)isFromMe;
-- (struct CGSize { double x1; double x2; })loadSizeThatFits:(struct CGSize { double x1; double x2; })arg1 textAlignmentInsets:(out struct UIEdgeInsets { double x1; double x2; double x3; double x4; }*)arg2;
+- (struct CGSize { float x1; float x2; })loadSizeThatFits:(struct CGSize { float x1; float x2; })arg1 textAlignmentInsets:(out struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg2;
 - (BOOL)transcriptOrientation;
 - (BOOL)wantsDrawerLayout;
 

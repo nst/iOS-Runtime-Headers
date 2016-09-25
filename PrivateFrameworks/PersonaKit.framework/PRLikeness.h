@@ -6,12 +6,12 @@
     NSDate * _creationDate;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  _cropRectForTopLeftOrigin;
     NSMutableSet * _dirtyProperties;
@@ -32,8 +32,8 @@
 }
 
 @property (nonatomic, retain) NSDate *creationDate;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } cropRectForBottomLeftOrigin;
-@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } cropRectForTopLeftOrigin;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } cropRectForBottomLeftOrigin;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } cropRectForTopLeftOrigin;
 @property (nonatomic, retain) NSSet *dirtyProperties;
 @property (nonatomic, retain) NSDate *expirationDate;
 @property (nonatomic, copy) NSString *externalIdentifier;
@@ -55,8 +55,8 @@
 // Image: /System/Library/PrivateFrameworks/PersonaKit.framework/PersonaKit
 
 + (id)_dateFormatter;
-+ (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_flippedRectForRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 relativeToImage:(struct CGImage { }*)arg2;
-+ (id)_photoWithScope:(unsigned int)arg1 image:(struct CGImage { }*)arg2 cropRectForTopLeftOrigin:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
++ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_flippedRectForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 relativeToImage:(struct CGImage { }*)arg2;
++ (id)_photoWithScope:(unsigned int)arg1 image:(struct CGImage { }*)arg2 cropRectForTopLeftOrigin:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 + (BOOL)automaticallyNotifiesObserversOfCropRectForTopLeftOrigin;
 + (id)descriptionForScope:(unsigned int)arg1;
 + (id)diddlySquatLikeness;
@@ -64,9 +64,9 @@
 + (id)monogramWithRecipe:(id)arg1 staticRepresentation:(struct CGImage { }*)arg2;
 + (id)monogramWithScope:(unsigned int)arg1 recipe:(id)arg2 staticRepresentation:(struct CGImage { }*)arg3;
 + (id)photoWithImage:(struct CGImage { }*)arg1;
-+ (id)photoWithImage:(struct CGImage { }*)arg1 cropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
-+ (id)photoWithImage:(struct CGImage { }*)arg1 cropRectForBottomLeftOrigin:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
-+ (id)photoWithImage:(struct CGImage { }*)arg1 cropRectForTopLeftOrigin:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
++ (id)photoWithImage:(struct CGImage { }*)arg1 cropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
++ (id)photoWithImage:(struct CGImage { }*)arg1 cropRectForBottomLeftOrigin:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
++ (id)photoWithImage:(struct CGImage { }*)arg1 cropRectForTopLeftOrigin:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 + (id)photoWithScope:(unsigned int)arg1 image:(struct CGImage { }*)arg2;
 + (unsigned int)scopeFromDescription:(id)arg1;
 + (BOOL)supportsSecureCoding;
@@ -75,9 +75,9 @@
 - (id)_initWithIdentifier:(id)arg1;
 - (void)clearDirtyProperties;
 - (id)creationDate;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })cropRect;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })cropRectForBottomLeftOrigin;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })cropRectForTopLeftOrigin;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })cropRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })cropRectForBottomLeftOrigin;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })cropRectForTopLeftOrigin;
 - (id)dataForPropagation;
 - (void)dealloc;
 - (id)description;
@@ -96,8 +96,8 @@
 - (unsigned int)scope;
 - (id)scopeDescription;
 - (void)setCreationDate:(id)arg1;
-- (void)setCropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)setCropRectForTopLeftOrigin:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setCropRectForTopLeftOrigin:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setCurrent:(BOOL)arg1;
 - (void)setDirtyProperties:(id)arg1;
 - (void)setExpirationDate:(id)arg1;
@@ -125,8 +125,8 @@
 
 - (id)_accentColorForMonogram;
 - (id)_accentColorForPhoto;
-- (id)_photoSnapshotWithSize:(struct CGSize { double x1; double x2; })arg1 scale:(float)arg2 options:(id)arg3;
+- (id)_photoSnapshotWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2 options:(id)arg3;
 - (id)accentColor;
-- (id)snapshotWithSize:(struct CGSize { double x1; double x2; })arg1 scale:(float)arg2 options:(id)arg3;
+- (id)snapshotWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2 options:(id)arg3;
 
 @end

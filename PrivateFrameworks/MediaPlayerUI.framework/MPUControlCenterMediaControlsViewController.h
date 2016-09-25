@@ -12,7 +12,7 @@
     BOOL  _viewHasAppeared;
 }
 
-@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInsets;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CCUIControlCenterPageContentViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -49,7 +49,7 @@
 - (void)routingViewController:(id)arg1 didPickRoute:(id)arg2;
 - (void)setDelegate:(id)arg1;
 - (id)transportControlsView:(id)arg1 buttonForControlType:(int)arg2;
-- (struct CGSize { double x1; double x2; })transportControlsView:(id)arg1 defaultTransportButtonSizeWithProposedSize:(struct CGSize { double x1; double x2; })arg2;
+- (struct CGSize { float x1; float x2; })transportControlsView:(id)arg1 defaultTransportButtonSizeWithProposedSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidLoad;

@@ -5,17 +5,17 @@
 
 @required
 
-- (TSPData *)cachedDataForIdentifier:(int)arg1;
+- (TSPData *)cachedDataForIdentifier:(long long)arg1;
 - (TSPObject *)cachedMetadataObject;
 - (BOOL)canResolveExternalReferences;
-- (<TSPDecoderDataInfo> *)dataInfoForIdentifier:(int)arg1;
-- (unsigned int)fileFormatVersion;
+- (<TSPDecoderDataInfo> *)dataInfoForIdentifier:(long long)arg1;
+- (unsigned long long)fileFormatVersion;
 - (BOOL)hasDocumentVersionUUID;
 - (BOOL)isCrossAppPaste;
 - (BOOL)isCrossDocumentPaste;
 - (TSPComponent *)metadataComponent;
-- (int)objectIdentifierForUUID:(NSUUID *)arg1;
-- (NSUUID *)objectUUIDForExternalReferenceToIdentifier:(int)arg1;
+- (long long)objectIdentifierForUUID:(NSUUID *)arg1;
+- (NSUUID *)objectUUIDForExternalReferenceToIdentifier:(long long)arg1;
 - (BOOL)processMetadataObject:(TSPObject *)arg1 error:(id*)arg2;
 - (TSPComponent *)rootObjectComponent;
 - (BOOL)shouldDecodeMissingDataAsRemote;

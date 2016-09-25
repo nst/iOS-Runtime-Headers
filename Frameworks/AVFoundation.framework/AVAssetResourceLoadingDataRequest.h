@@ -6,20 +6,20 @@
     AVAssetResourceLoadingDataRequestInternal * _dataRequest;
 }
 
-@property (nonatomic, readonly) int currentOffset;
+@property (nonatomic, readonly) long long currentOffset;
 @property (nonatomic, readonly) int requestedLength;
-@property (nonatomic, readonly) int requestedOffset;
+@property (nonatomic, readonly) long long requestedOffset;
 @property (nonatomic, readonly) BOOL requestsAllDataToEndOfResource;
 
 - (id)_loadingRequest;
-- (int)currentOffset;
+- (long long)currentOffset;
 - (void)dealloc;
 - (id)description;
 - (void)finalize;
 - (id)init;
-- (id)initWithLoadingRequest:(id)arg1 requestedOffset:(int)arg2 requestedLength:(int)arg3 requestsAllDataToEndOfResource:(BOOL)arg4 canSupplyIncrementalDataImmediately:(BOOL)arg5;
+- (id)initWithLoadingRequest:(id)arg1 requestedOffset:(long long)arg2 requestedLength:(long long)arg3 requestsAllDataToEndOfResource:(BOOL)arg4 canSupplyIncrementalDataImmediately:(BOOL)arg5;
 - (int)requestedLength;
-- (int)requestedOffset;
+- (long long)requestedOffset;
 - (BOOL)requestsAllDataToEndOfResource;
 - (void)respondWithData:(id)arg1;
 

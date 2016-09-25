@@ -11,14 +11,14 @@
     CMMotionManager * _motionManager;
     int  _numSamplesInBuffer;
     BOOL  _running;
-    struct BWCoreMotionMetadataSampleData { unsigned int x1; unsigned int x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; } * _sampleDataForBuffer;
+    struct BWCoreMotionMetadataSampleData { unsigned int x1; unsigned int x2; double x3; double x4; double x5; double x6; double x7; float x8; float x9; float x10; } * _sampleDataForBuffer;
     int  _samplesPerBuffer;
 }
 
 @property (nonatomic, readonly) struct opaqueCMFormatDescription { }*formatDescription;
 
-+ (long)extractBWCoreMotionMetadataFromBlockBuffer:(struct OpaqueCMBlockBuffer { }*)arg1 intoNativeEndianSampleData:(struct BWCoreMotionMetadataSampleData { unsigned int x1; unsigned int x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; }*)arg2;
-+ (long)extractBWCoreMotionMetadataFromSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 intoNativeEndianSampleData:(struct BWCoreMotionMetadataSampleData { unsigned int x1; unsigned int x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; }*)arg2;
++ (long)extractBWCoreMotionMetadataFromBlockBuffer:(struct OpaqueCMBlockBuffer { }*)arg1 intoNativeEndianSampleData:(struct BWCoreMotionMetadataSampleData { unsigned int x1; unsigned int x2; double x3; double x4; double x5; double x6; double x7; float x8; float x9; float x10; }*)arg2;
++ (long)extractBWCoreMotionMetadataFromSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 intoNativeEndianSampleData:(struct BWCoreMotionMetadataSampleData { unsigned int x1; unsigned int x2; double x3; double x4; double x5; double x6; double x7; float x8; float x9; float x10; }*)arg2;
 + (void)initialize;
 
 - (void)_emitMetadataSampleBuffer;

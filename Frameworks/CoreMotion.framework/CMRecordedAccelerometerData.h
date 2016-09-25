@@ -8,12 +8,12 @@
         double y; 
         double z; 
     }  _accelerationValue;
-    unsigned int  _identifier;
+    unsigned long long  _identifier;
     double  _startDateValue;
     double  _timestampValue;
 }
 
-@property (readonly) unsigned int identifier;
+@property (readonly) unsigned long long identifier;
 @property (readonly) NSDate *startDate;
 
 + (BOOL)supportsSecureCoding;
@@ -22,10 +22,10 @@
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)identifier;
+- (unsigned long long)identifier;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithData:(struct CMAccel100 { double x1; double x2; double x3; unsigned int x4; }*)arg1 timestamp:(unsigned int)arg2 walltime:(double)arg3 identifier:(unsigned int)arg4;
-- (void)resetWithData:(struct CMAccel100 { double x1; double x2; double x3; unsigned int x4; }*)arg1 timestamp:(unsigned int)arg2 walltime:(double)arg3 identifier:(unsigned int)arg4;
+- (id)initWithData:(struct CMAccel100 { float x1; float x2; float x3; unsigned long long x4; }*)arg1 timestamp:(unsigned long long)arg2 walltime:(double)arg3 identifier:(unsigned long long)arg4;
+- (void)resetWithData:(struct CMAccel100 { float x1; float x2; float x3; unsigned long long x4; }*)arg1 timestamp:(unsigned long long)arg2 walltime:(double)arg3 identifier:(unsigned long long)arg4;
 - (id)startDate;
 - (double)timestamp;
 

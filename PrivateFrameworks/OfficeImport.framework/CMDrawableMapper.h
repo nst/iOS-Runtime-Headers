@@ -5,12 +5,12 @@
 @interface CMDrawableMapper : CMMapper {
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  mBox;
     OADDrawable * mDrawable;
@@ -21,23 +21,23 @@
     NSString * mName;
     OADOrientedBounds * mOrientedBounds;
     int  mResourceType;
-    double  mRotation;
+    float  mRotation;
     NSString * mSourcePath;
     CMDrawableStyle * mStyle;
     struct CGRect { 
         struct CGPoint { 
-            double x; 
-            double y; 
+            float x; 
+            float y; 
         } origin; 
         struct CGSize { 
-            double width; 
-            double height; 
+            float width; 
+            float height; 
         } size; 
     }  mUncroppedBox;
 }
 
 - (id)blipAtIndex:(unsigned int)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })box;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })box;
 - (void)calculateUncroppedBox:(id)arg1;
 - (id)convertMetafileToPdf;
 - (void)dealloc;
@@ -54,7 +54,7 @@
 - (void)setBoundingBox;
 - (void)setRotation:(float)arg1;
 - (void)setWithOadImage:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })shapeTextBoxRect;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })uncroppedBox;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })shapeTextBoxRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })uncroppedBox;
 
 @end

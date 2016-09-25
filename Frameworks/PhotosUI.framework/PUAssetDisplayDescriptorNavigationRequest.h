@@ -17,10 +17,10 @@
     PUAssetReference * _targetAssetReference;
     NSDate * _targetModificationDate;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _targetSeekTime;
     double  _timeOut;
     NSTimer * _timeOutTimer;
@@ -43,7 +43,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) PUAssetReference *targetAssetReference;
 @property (nonatomic, retain) NSDate *targetModificationDate;
-@property (nonatomic) struct { int x1; int x2; unsigned int x3; int x4; } targetSeekTime;
+@property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } targetSeekTime;
 @property (nonatomic) double timeOut;
 @property (nonatomic, retain) PUBrowsingViewModel *viewModel;
 
@@ -90,12 +90,12 @@
 - (void)setCompletionHandler:(id /* block */)arg1;
 - (void)setTargetAssetReference:(id)arg1;
 - (void)setTargetModificationDate:(id)arg1;
-- (void)setTargetSeekTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
+- (void)setTargetSeekTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setTimeOut:(double)arg1;
 - (void)setViewModel:(id)arg1;
 - (id)targetAssetReference;
 - (id)targetModificationDate;
-- (struct { int x1; int x2; unsigned int x3; int x4; })targetSeekTime;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })targetSeekTime;
 - (double)timeOut;
 - (id)viewModel;
 - (void)viewModel:(id)arg1 didChange:(id)arg2;

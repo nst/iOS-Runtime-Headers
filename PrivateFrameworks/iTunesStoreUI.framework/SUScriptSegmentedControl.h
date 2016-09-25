@@ -14,7 +14,7 @@
 @property (readonly) unsigned int controlStateNormal;
 @property (readonly) unsigned int controlStateSelected;
 @property int maximumNumberOfItems;
-@property double maximumWidth;
+@property float maximumWidth;
 @property (copy) NSString *moreListTitle;
 @property (nonatomic, retain) SUSegmentedControl *nativeSegmentedControl;
 @property (nonatomic, readonly) int nativeSelectedIndex;

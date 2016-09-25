@@ -6,13 +6,13 @@
     SKSpriteNode * _anger;
     double  _duration;
     struct CGPoint { 
-        double x; 
-        double y; 
+        float x; 
+        float y; 
     }  _normalizedCenter;
 }
 
 @property (nonatomic) double duration;
-@property (nonatomic) struct CGPoint { double x1; double x2; } normalizedCenter;
+@property (nonatomic) struct CGPoint { float x1; float x2; } normalizedCenter;
 
 + (unsigned short)messageType;
 
@@ -23,9 +23,9 @@
 - (id)initWithArchiveData:(id)arg1;
 - (double)messageDuration;
 - (id)messageTypeAsString;
-- (struct CGPoint { double x1; double x2; })normalizedCenter;
+- (struct CGPoint { float x1; float x2; })normalizedCenter;
 - (void)setDuration:(double)arg1;
-- (void)setNormalizedCenter:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setNormalizedCenter:(struct CGPoint { float x1; float x2; })arg1;
 - (void)stopPlaying;
 
 @end

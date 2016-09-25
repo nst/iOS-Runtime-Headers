@@ -3,7 +3,7 @@
  */
 
 @interface BLCannyEdgeAutoThres : NSObject {
-    double * _anglePointer;
+    float * _anglePointer;
     int  _cols;
     char * _dataPointer;
     int * _deriv_x;
@@ -11,7 +11,7 @@
     int * _magnitude;
     char * _nonMaxSup;
     int  _rows;
-    double  _sigma;
+    float  _sigma;
     int * _smoothedImg;
 }
 

@@ -9,10 +9,10 @@
     BOOL  __needsUpdateGestureRecognizers;
     int  __updateBarsDisabledCount;
     struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     }  _contentGuideInsets;
     <PUBarsControllerDelegate> * _delegate;
     struct { 
@@ -28,7 +28,7 @@
 @property (setter=_setNeedsUpdateContentGuideInsets:, nonatomic) BOOL _needsUpdateContentGuideInsets;
 @property (setter=_setNeedsUpdateGestureRecognizers:, nonatomic) BOOL _needsUpdateGestureRecognizers;
 @property (setter=_setUpdateBarsDisabledCount:, nonatomic) int _updateBarsDisabledCount;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentGuideInsets;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentGuideInsets;
 @property (nonatomic) <PUBarsControllerDelegate> *delegate;
 @property (nonatomic, readonly) int preferredBarStyle;
 @property (nonatomic, readonly) BOOL prefersStatusBarHidden;
@@ -56,7 +56,7 @@
 - (void)_updateContentGuideInsetsIfNeeded;
 - (void)_updateGestureRecognizersIfNeeded;
 - (void)_updateNowIfNeeded;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentGuideInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentGuideInsets;
 - (id)delegate;
 - (void)disableUpdateBarsForDuration:(double)arg1;
 - (id)init;
@@ -67,7 +67,7 @@
 - (BOOL)isLocationFromProviderInBarsArea:(id)arg1;
 - (int)preferredBarStyle;
 - (BOOL)prefersStatusBarHidden;
-- (void)setContentGuideInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setContentGuideInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setViewController:(id)arg1;
 - (void)updateBars;

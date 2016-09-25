@@ -6,7 +6,7 @@
     UIViewController<CCUIControlCenterPageContentProviding> * _contentViewController;
     <CCUIControlCenterPageContainerViewControllerDelegate> * _delegate;
     NSMutableSet * _punchOutMaskCachingSuppressionReasons;
-    double  _revealPercentage;
+    float  _revealPercentage;
 }
 
 @property (nonatomic, readonly) UIViewController<CCUIControlCenterPageContentProviding> *contentViewController;
@@ -14,8 +14,8 @@
 @property (nonatomic, retain) <CCUIControlCenterPageContainerViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } marginInsets;
-@property (nonatomic) double revealPercentage;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } marginInsets;
+@property (nonatomic) float revealPercentage;
 @property (nonatomic, readonly) BOOL shouldSuppressPunchOutMaskCaching;
 @property (readonly) Class superclass;
 
@@ -37,10 +37,10 @@
 - (id)initWithContentViewController:(id)arg1 delegate:(id)arg2;
 - (int)layoutStyle;
 - (void)loadView;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })marginInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })marginInsets;
 - (float)revealPercentage;
 - (void)setDelegate:(id)arg1;
-- (void)setMarginInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setMarginInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setRevealPercentage:(float)arg1;
 - (BOOL)shouldSuppressPunchOutMaskCaching;
 - (void)viewDidLoad;

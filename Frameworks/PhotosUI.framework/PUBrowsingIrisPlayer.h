@@ -62,7 +62,7 @@
 - (void)_setLivePhotoPlaybackAllowed:(BOOL)arg1;
 - (void)_setLivePhotoRequestID:(int)arg1;
 - (void)_setLivePhotoRequestState:(int)arg1;
-- (struct CGSize { double x1; double x2; })_targetSize;
+- (struct CGSize { float x1; float x2; })_targetSize;
 - (void)_updateIfNeeded;
 - (void)_updateLivePhotoIfNeeded;
 - (void)_updatePlayerContentIfNeeded;

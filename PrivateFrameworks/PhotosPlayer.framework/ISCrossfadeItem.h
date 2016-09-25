@@ -9,10 +9,10 @@
     NSArray * _images;
     unsigned int  _numberOfFrames;
     struct { 
-        int value; 
+        long long value; 
         int timescale; 
         unsigned int flags; 
-        int epoch; 
+        long long epoch; 
     }  _videoDuration;
 }
 
@@ -21,15 +21,15 @@
 @property (nonatomic, readonly) int firstImageOrientation;
 @property (nonatomic, readonly, copy) NSArray *images;
 @property (nonatomic, readonly) unsigned int numberOfFrames;
-@property (nonatomic, readonly) struct { int x1; int x2; unsigned int x3; int x4; } videoDuration;
+@property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } videoDuration;
 
 - (void).cxx_destruct;
 - (id)animations;
 - (double)crossfadeDuration;
 - (int)firstImageOrientation;
 - (id)images;
-- (id)initWithImages:(id)arg1 firstImageOrientation:(int)arg2 animations:(id)arg3 videoDuration:(struct { int x1; int x2; unsigned int x3; int x4; })arg4 crossfadeDuration:(double)arg5;
+- (id)initWithImages:(id)arg1 firstImageOrientation:(int)arg2 animations:(id)arg3 videoDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg4 crossfadeDuration:(double)arg5;
 - (unsigned int)numberOfFrames;
-- (struct { int x1; int x2; unsigned int x3; int x4; })videoDuration;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })videoDuration;
 
 @end

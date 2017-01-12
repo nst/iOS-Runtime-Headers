@@ -3,6 +3,7 @@
  */
 
 @interface MPCReportingPlaybackEventSource : NSObject {
+    long long  _equivalencySourceAdamID;
     double  _eventDuration;
     NSString * _featureName;
     NSString * _lyricsID;
@@ -11,10 +12,13 @@
     unsigned int  _overrideItemType;
     NSString * _playbackSessionID;
     NSData * _recommendationData;
+    NSString * _requestingBundleIdentifier;
+    NSString * _requestingBundleVersion;
     BOOL  _shouldReportPlayEventsToStore;
     NSData * _trackInfo;
 }
 
+@property (nonatomic) long long equivalencySourceAdamID;
 @property (nonatomic) double eventDuration;
 @property (nonatomic, copy) NSString *featureName;
 @property (nonatomic, copy) NSString *lyricsID;
@@ -23,10 +27,13 @@
 @property (nonatomic) unsigned int overrideItemType;
 @property (nonatomic, copy) NSString *playbackSessionID;
 @property (nonatomic, copy) NSData *recommendationData;
+@property (nonatomic, copy) NSString *requestingBundleIdentifier;
+@property (nonatomic, copy) NSString *requestingBundleVersion;
 @property (nonatomic) BOOL shouldReportPlayEventsToStore;
 @property (nonatomic, copy) NSData *trackInfo;
 
 - (void).cxx_destruct;
+- (long long)equivalencySourceAdamID;
 - (double)eventDuration;
 - (id)featureName;
 - (id)initWithAVItem:(id)arg1;
@@ -36,6 +43,9 @@
 - (unsigned int)overrideItemType;
 - (id)playbackSessionID;
 - (id)recommendationData;
+- (id)requestingBundleIdentifier;
+- (id)requestingBundleVersion;
+- (void)setEquivalencySourceAdamID:(long long)arg1;
 - (void)setEventDuration:(double)arg1;
 - (void)setFeatureName:(id)arg1;
 - (void)setLyricsID:(id)arg1;
@@ -44,6 +54,8 @@
 - (void)setOverrideItemType:(unsigned int)arg1;
 - (void)setPlaybackSessionID:(id)arg1;
 - (void)setRecommendationData:(id)arg1;
+- (void)setRequestingBundleIdentifier:(id)arg1;
+- (void)setRequestingBundleVersion:(id)arg1;
 - (void)setShouldReportPlayEventsToStore:(BOOL)arg1;
 - (void)setTrackInfo:(id)arg1;
 - (BOOL)shouldReportPlayEventsToStore;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUCloudPhotoWelcomeViewController : PUWelcomeViewController <AAUIGenericTermsRemoteUIDelegate, PSCloudStorageOffersManagerDelegate, PUCloudPhotoWelcomeViewDelegate> {
+@interface PUCloudPhotoWelcomeViewController : PUWelcomeViewController <AAUIGenericTermsRemoteUIDelegate, PSCloudStorageOffersManagerDelegate, PUCloudPhotoWelcomeNavigationControllerDismissDelegate, PUCloudPhotoWelcomeViewDelegate> {
     id /* block */  __completionHandler;
     BOOL  _enableOnAppear;
     PSCloudStorageOffersManager * _offersManager;
@@ -35,6 +35,7 @@
 - (void)_handleGoButtonTapped;
 - (void)_presentStoragePurchaseController;
 - (void)_setCompletionHandler:(id /* block */)arg1;
+- (void)_updateCurrentActivity;
 - (void)cloudPhotoWelcomeViewGoButtonTapped:(id)arg1;
 - (void)cloudPhotoWelcomeViewLearnMoreTapped:(id)arg1;
 - (void)cloudPhotoWelcomeViewNotNowButtonTapped:(id)arg1;
@@ -43,6 +44,7 @@
 - (void)manager:(id)arg1 loadDidFailWithError:(id)arg2;
 - (void)manager:(id)arg1 willPresentViewController:(id)arg2;
 - (void)managerDidCancel:(id)arg1;
+- (void)navigationControllerDidDismissViewController:(id)arg1;
 - (struct CGSize { float x1; float x2; })preferredContentSize;
 - (int)preferredInterfaceOrientationForPresentation;
 - (void)setWelcomeView:(id)arg1;

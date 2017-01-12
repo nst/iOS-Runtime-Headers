@@ -5,6 +5,8 @@
 @interface PKPaymentSetupInfoView : UIView {
     UILabel * _bodyLabel;
     int  _context;
+    BOOL  _hasSupportingHardware;
+    PKPaymentHeroImageController * _heroImageController;
     PKPaymentSetupHeroView * _heroView;
     BOOL  _insetPrivacyFooter;
     UIImageView * _logo;
@@ -29,7 +31,7 @@
 - (id)bodyLabel;
 - (int)context;
 - (id)heroView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 context:(int)arg2 heroImageController:(id)arg3;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 context:(int)arg2 heroImageController:(id)arg3 hasSupportingHardware:(BOOL)arg4;
 - (BOOL)insetPrivacyFooter;
 - (BOOL)isBuddyiPad;
 - (void)layoutSubviews;

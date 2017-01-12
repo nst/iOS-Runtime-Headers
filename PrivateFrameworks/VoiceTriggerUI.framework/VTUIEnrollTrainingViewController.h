@@ -47,6 +47,7 @@
 - (void)VTUITrainingManagerFeedLevel:(float)arg1;
 - (void)VTUITrainingManagerStopListening;
 - (void)_advanceState;
+- (void)_becomeActive;
 - (void)_cleanupTrainingManagerWithCompletion:(id /* block */)arg1;
 - (void)_clearAggdScalar:(id)arg1;
 - (void)_continueFromIntro:(id)arg1;

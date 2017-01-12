@@ -114,7 +114,6 @@
 - (int)numberOfColumns;
 - (id)overrideNumberOfColumns;
 - (id)overrideViewSizeSubclass;
-- (float)pointWidthForCameraCell;
 - (float)pointWidthForFullWidthCell;
 - (float)pointWidthForNumberOfColumns:(int)arg1;
 - (float)rowSpacing;

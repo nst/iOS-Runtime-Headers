@@ -36,7 +36,7 @@
 - (void)_handleNewDownloadSession:(id)arg1 withAssetDownloadSession:(id)arg2 forPlaybackItemMetadata:(id)arg3 uniqueKey:(id)arg4;
 - (void)_handlePrioritizationForFinishingAssetDownloadSession:(id)arg1;
 - (void)_networkTypeDidChangeNotification:(id)arg1;
-- (id)_newDownloadSessionForPlaybackItemMetadata:(id)arg1 sourceURL:(id)arg2 downloadKey:(id)arg3 sinfs:(id)arg4 pathExtension:(id)arg5 assetFlavor:(id)arg6 protectionType:(unsigned int)arg7 returningAssetDownloadSession:(id*)arg8;
+- (id)_newDownloadSessionForPlaybackItemMetadata:(id)arg1 sourceURL:(id)arg2 downloadKey:(id)arg3 sinfs:(id)arg4 pathExtension:(id)arg5 assetFlavor:(id)arg6 allowAssetCaching:(BOOL)arg7 protectionType:(unsigned int)arg8 returningAssetDownloadSession:(id*)arg9;
 - (void)_playbackItemMetadataNetworkConstraintsDidChangeNotification:(id)arg1;
 - (void)_postFailedForDownloadSession:(id)arg1;
 - (void)_postFailedForDownloadSession:(id)arg1 withError:(id)arg2;

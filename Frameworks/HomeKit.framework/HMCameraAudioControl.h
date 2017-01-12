@@ -13,9 +13,7 @@
 - (void).cxx_destruct;
 - (id)audioControl;
 - (id)initWithAudioControl:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
 - (id)mute;
-- (void)resetControl;
 - (void)setAudioControl:(id)arg1;
 - (id)volume;
 

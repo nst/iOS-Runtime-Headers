@@ -3,19 +3,27 @@
  */
 
 @interface HMDVideoResolution : HMDNumberParser <NSCopying, NSSecureCoding> {
+    NSNumber * _imageHeight;
+    NSNumber * _imageWidth;
     unsigned int  _resolutionType;
 }
 
+@property (nonatomic, readonly, copy) NSNumber *imageHeight;
+@property (nonatomic, readonly, copy) NSNumber *imageWidth;
 @property (nonatomic, readonly) unsigned int resolutionType;
 
 + (id)arrayWithResolutions:(id)arg1;
 + (BOOL)supportsSecureCoding;
 
+- (void).cxx_destruct;
+- (void)_extractWidthAndHeight;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)description:(id)arg1 indent:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
+- (id)imageHeight;
+- (id)imageWidth;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithResolution:(unsigned int)arg1;
 - (id)initWithTLVData:(id)arg1;

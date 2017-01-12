@@ -5,6 +5,7 @@
 @interface FBApplicationDataStoreRepositoryManager : NSObject <FBApplicationDataStoreRepositoryDelegate> {
     FBSqliteApplicationDataStoreRepository * _dataStore;
     NSURL * _dataStoreURL;
+    NSObject<OS_dispatch_queue> * _deferredWorkQueue;
     LSApplicationWorkspace * _lsApplicationWorkspace;
 }
 
@@ -20,6 +21,7 @@
 - (void)_handleApplicationInstalled:(id)arg1;
 - (void)_handleApplicationsUninstalled:(id)arg1;
 - (id)_initWithDataStore:(id)arg1 lsWorkspace:(id)arg2;
+- (void)_performAfterDeferredWork:(id /* block */)arg1;
 - (id)_safeObjectForKey:(id)arg1 forApplication:(id)arg2 ofType:(Class)arg3;
 - (void)clearExpiredUninstalledApplicationsFromStoreIfNecessary;
 - (id)dataStore;

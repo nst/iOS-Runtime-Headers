@@ -51,6 +51,7 @@
 - (id)delegateCaller;
 - (id)discoveredAccessories;
 - (unsigned int)generationCounter;
+- (void)handleStartWithError:(id)arg1 response:(id)arg2;
 - (id)init;
 - (id)initWithDelegate:(id)arg1 queue:(id)arg2;
 - (BOOL)isBrowsing;

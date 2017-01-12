@@ -37,6 +37,7 @@
 - (BOOL)_shouldPlayAfterPreparation;
 - (void)_startVideoPlayback;
 - (void)activeDidChange;
+- (int)behaviorType;
 - (id)initWithInitialLayoutInfo:(id)arg1 photoTime:(double)arg2 playDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3 playRate:(float)arg4 photoTransitionDuration:(double)arg5;
 - (BOOL)isPlaying;
 - (BOOL)isPrepared;

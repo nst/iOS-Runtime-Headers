@@ -3,20 +3,21 @@
  */
 
 @interface PXUIPeopleSuggestionDataSource : NSObject <PXPeopleSuggestionManagerDataSource> {
-    NSArray * _cachedSuggestions;
+    NSMutableSet * _cancelledTokens;
 }
 
-@property (retain) NSArray *cachedSuggestions;
+@property (nonatomic, retain) NSMutableSet *cancelledTokens;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (id)cachedSuggestions;
-- (void)commitSuggestionsForFaceCollection:(id)arg1 withConfirmedSuggestions:(id)arg2 andRejectedSuggestions:(id)arg3;
-- (id)initWithInitialSuggestions:(id)arg1;
-- (void)setCachedSuggestions:(id)arg1;
-- (id)suggestionsForFaceCollection:(id)arg1 withConfirmedSuggestions:(id)arg2 andRejectedSuggestions:(id)arg3;
+- (void)cancelSuggestionForPerson:(id)arg1 withToken:(int)arg2 error:(id*)arg3;
+- (id)cancelledTokens;
+- (void)commitSuggestionsForPerson:(id)arg1 withConfirmedSuggestions:(id)arg2 andRejectedSuggestions:(id)arg3;
+- (id)init;
+- (void)setCancelledTokens:(id)arg1;
+- (int)suggestionsForPerson:(id)arg1 withConfirmedSuggestions:(id)arg2 andRejectedSuggestions:(id)arg3 completion:(id /* block */)arg4;
 
 @end

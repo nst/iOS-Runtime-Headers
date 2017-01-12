@@ -10,6 +10,7 @@
     UILabel * _label;
     float  _labelAlpha;
     float  _labelTopPadding;
+    BOOL  _persistentEmulationHint;
     int  _state;
     int  _style;
     BOOL  _touchRecognizingHint;
@@ -22,12 +23,15 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) UILabel *label;
 @property (nonatomic) float labelAlpha;
+@property (nonatomic) BOOL persistentEmulationHint;
 @property (nonatomic) int state;
 @property (readonly) Class superclass;
 @property (nonatomic) BOOL touchRecognizingHint;
 
 - (void).cxx_destruct;
 - (void)_applyStateWithTextOverride:(id)arg1 animated:(BOOL)arg2 completionHandler:(id /* block */)arg3;
+- (id)_attributedTextWithTitle:(id)arg1;
+- (id)_attributedTextWithTitle:(id)arg1 subtitle:(id)arg2;
 - (BOOL)_canEmphasizeState:(int)arg1;
 - (void)_configureLayoutMetrics;
 - (id)_labelForState:(int)arg1 textOverride:(id)arg2;
@@ -41,8 +45,10 @@
 - (id)label;
 - (float)labelAlpha;
 - (void)layoutSubviews;
+- (BOOL)persistentEmulationHint;
 - (void)setDelegate:(id)arg1;
 - (void)setLabelAlpha:(float)arg1;
+- (void)setPersistentEmulationHint:(BOOL)arg1;
 - (void)setState:(int)arg1;
 - (void)setState:(int)arg1 textOverride:(id)arg2 animated:(BOOL)arg3 completionHandler:(id /* block */)arg4;
 - (void)setTouchRecognizingHint:(BOOL)arg1;

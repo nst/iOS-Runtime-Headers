@@ -421,14 +421,15 @@
 
 + (id)contactWithABRecordRef:(void*)arg1;
 + (id)contactWithPkDictionary:(id)arg1;
-+ (id)pkContactWithFirstName:(id)arg1 lastName:(id)arg2 district:(id)arg3 labeledValues:(id)arg4;
-+ (id)pkContactWithFirstName:(id)arg1 lastName:(id)arg2 district:(id)arg3 postalAddresses:(id)arg4 emailAddresses:(id)arg5 phoneNumbers:(id)arg6;
-+ (id)pkContactWithFirstName:(id)arg1 lastName:(id)arg2 labeledValues:(id)arg3;
++ (id)pkContactWithNameComponents:(id)arg1 district:(id)arg2 labeledValues:(id)arg3;
++ (id)pkContactWithNameComponents:(id)arg1 district:(id)arg2 postalAddresses:(id)arg3 emailAddresses:(id)arg4 phoneNumbers:(id)arg5;
++ (id)pkContactWithNameComponents:(id)arg1 labeledValues:(id)arg2;
 + (id)pkContactWithNameFromContact:(id)arg1 labeledValue:(id)arg2 property:(id)arg3;
 + (id)pkPassbookRequiredKeys;
 
 - (void*)ABPerson;
 - (unsigned int)contactSource;
+- (id)nameComponents;
 - (void)pkAddLabeledValues:(id)arg1 withProperty:(id)arg2;
 - (id)pkDictionaryForProperty:(id)arg1;
 - (id)pkFormattedContactAddress;

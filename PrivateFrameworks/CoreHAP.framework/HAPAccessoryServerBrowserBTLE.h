@@ -50,7 +50,7 @@
 - (void)_clearCachedDescriptorsForIdentifier:(id)arg1;
 - (void)_connectHAPPeripheralWhenAllowed:(id)arg1;
 - (void)_connectPendingConnections;
-- (void)_createHAPAccessoryAndNotifyDelegateWithPeripheral:(id)arg1 name:(id)arg2 pairingUsername:(id)arg3 statusFlags:(id)arg4 stateNumber:(id)arg5 category:(id)arg6 connectionIdleTime:(unsigned char)arg7 format:(unsigned int)arg8;
+- (void)_createHAPAccessoryAndNotifyDelegateWithPeripheral:(id)arg1 name:(id)arg2 pairingUsername:(id)arg3 statusFlags:(id)arg4 stateNumber:(id)arg5 stateChanged:(BOOL)arg6 category:(id)arg7 connectionIdleTime:(unsigned char)arg8 format:(unsigned int)arg9;
 - (BOOL)_delegateRespondsToSelector:(SEL)arg1;
 - (void)_didDiscoverPeripheral:(id)arg1 accessoryName:(id)arg2 pairingIdentifier:(id)arg3 format:(unsigned int)arg4 statusFlags:(id)arg5 stateNumber:(id)arg6 category:(id)arg7 configNumber:(id)arg8;
 - (void)_disconectFromHAPPeripheral:(id)arg1;
@@ -112,6 +112,7 @@
 - (unsigned int)qosLimits;
 - (id /* block */)reachabilityCompletion;
 - (id)recentlySeenPairedPeripherals;
+- (void)retrieveCurrentStateForIdentifer:(id)arg1 onQueue:(id)arg2 withCompletion:(id /* block */)arg3;
 - (int)scanState;
 - (void)setCentralManager:(id)arg1;
 - (void)setConnectionLatency:(int)arg1 forPeripheral:(id)arg2;

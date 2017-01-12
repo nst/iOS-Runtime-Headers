@@ -12,6 +12,7 @@
     NTPBArticleScroll * _articleScroll;
     NTPBBackgroundSubscriptionValidation * _backgroundSubscriptionValidation;
     NTPBChannelMuteUnmute * _channelMuteUnmute;
+    NTPBComscoreEventSend * _comscoreEventSend;
     NTPBCoverArticleWidgetExposure * _coverArticleWidgetExposure;
     NTPBCoverArticleWidgetView * _coverArticleWidgetView;
     NTPBEmailOptInInvite * _emailOptInInvite;
@@ -68,6 +69,7 @@
 @property (nonatomic, retain) NTPBArticleScroll *articleScroll;
 @property (nonatomic, retain) NTPBBackgroundSubscriptionValidation *backgroundSubscriptionValidation;
 @property (nonatomic, retain) NTPBChannelMuteUnmute *channelMuteUnmute;
+@property (nonatomic, retain) NTPBComscoreEventSend *comscoreEventSend;
 @property (nonatomic, retain) NTPBCoverArticleWidgetExposure *coverArticleWidgetExposure;
 @property (nonatomic, retain) NTPBCoverArticleWidgetView *coverArticleWidgetView;
 @property (nonatomic, retain) NTPBEmailOptInInvite *emailOptInInvite;
@@ -87,6 +89,7 @@
 @property (nonatomic, readonly) BOOL hasArticleScroll;
 @property (nonatomic, readonly) BOOL hasBackgroundSubscriptionValidation;
 @property (nonatomic, readonly) BOOL hasChannelMuteUnmute;
+@property (nonatomic, readonly) BOOL hasComscoreEventSend;
 @property (nonatomic, readonly) BOOL hasCoverArticleWidgetExposure;
 @property (nonatomic, readonly) BOOL hasCoverArticleWidgetView;
 @property (nonatomic, readonly) BOOL hasEmailOptInInvite;
@@ -178,6 +181,7 @@
 - (id)articleScroll;
 - (id)backgroundSubscriptionValidation;
 - (id)channelMuteUnmute;
+- (id)comscoreEventSend;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)coverArticleWidgetExposure;
 - (id)coverArticleWidgetView;
@@ -200,6 +204,7 @@
 - (BOOL)hasArticleScroll;
 - (BOOL)hasBackgroundSubscriptionValidation;
 - (BOOL)hasChannelMuteUnmute;
+- (BOOL)hasComscoreEventSend;
 - (BOOL)hasCoverArticleWidgetExposure;
 - (BOOL)hasCoverArticleWidgetView;
 - (BOOL)hasEmailOptInInvite;
@@ -282,6 +287,7 @@
 - (void)setArticleScroll:(id)arg1;
 - (void)setBackgroundSubscriptionValidation:(id)arg1;
 - (void)setChannelMuteUnmute:(id)arg1;
+- (void)setComscoreEventSend:(id)arg1;
 - (void)setCoverArticleWidgetExposure:(id)arg1;
 - (void)setCoverArticleWidgetView:(id)arg1;
 - (void)setEmailOptInInvite:(id)arg1;

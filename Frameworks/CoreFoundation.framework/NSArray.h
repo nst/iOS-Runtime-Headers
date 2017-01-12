@@ -835,6 +835,8 @@
 - (id)_pl_filter:(id /* block */)arg1;
 - (id)_pl_firstObjectPassingTest:(id /* block */)arg1;
 - (id)_pl_flatMap:(id /* block */)arg1;
+- (id)_pl_groupBy:(id /* block */)arg1;
+- (id)_pl_indexBy:(id /* block */)arg1;
 - (id)_pl_map:(id /* block */)arg1;
 - (id)pl_arrayOfUniqueObjectsNotInOrderedSet:(id)arg1;
 - (unsigned int)pl_countOfObjectsPassingTest:(id /* block */)arg1;

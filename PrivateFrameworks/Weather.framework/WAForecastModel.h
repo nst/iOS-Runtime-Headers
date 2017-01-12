@@ -24,6 +24,7 @@
 @property (nonatomic, copy) NSArray *dailyForecasts;
 @property (nonatomic, retain) NSURL *deepLink;
 @property (nonatomic, copy) NSArray *hourlyForecasts;
+@property (nonatomic, readonly) BOOL isPopulated;
 @property (nonatomic, retain) NSURL *link;
 @property (nonatomic, retain) WFLocation *location;
 @property (nonatomic, retain) NSDate *sunrise;
@@ -39,7 +40,11 @@
 - (id)currentConditions;
 - (id)dailyForecasts;
 - (id)deepLink;
+- (id)description;
+- (unsigned int)hash;
 - (id)hourlyForecasts;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isPopulated;
 - (id)link;
 - (id)location;
 - (void)setAirQualityConditions:(id)arg1;

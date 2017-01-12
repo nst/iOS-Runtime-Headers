@@ -3,17 +3,23 @@
  */
 
 @interface MPPlaybackContext : NSObject <NSCoding> {
+    NSString * _playActivityFeatureName;
+    NSData * _playActivityRecommendationData;
     int  _repeatType;
+    NSString * _requestingBundleIdentifier;
+    NSString * _requestingBundleVersion;
     BOOL  _shouldRestartPlayback;
     BOOL  _shouldStartPlayback;
     int  _shuffleType;
     int  _startIndex;
 }
 
-@property (setter=mpcReporting_setFeatureName:, nonatomic, copy) NSString *mpcReporting_featureName;
 @property (getter=mpcReporting_isQuickPlay, nonatomic, readonly) BOOL mpcReporting_quickPlay;
-@property (setter=mpcReporting_setRecommendationData:, nonatomic, copy) NSData *mpcReporting_recommendationData;
+@property (nonatomic, copy) NSString *playActivityFeatureName;
+@property (nonatomic, copy) NSData *playActivityRecommendationData;
 @property (nonatomic) int repeatType;
+@property (nonatomic, copy) NSString *requestingBundleIdentifier;
+@property (nonatomic, copy) NSString *requestingBundleVersion;
 @property (nonatomic) BOOL shouldRestartPlayback;
 @property (nonatomic) BOOL shouldStartPlayback;
 @property (nonatomic) int shuffleType;
@@ -23,13 +29,22 @@
 
 + (Class)queueFeederClass;
 
+- (void).cxx_destruct;
 - (id)description;
 - (id)descriptionComponents;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
+- (id)playActivityFeatureName;
+- (id)playActivityRecommendationData;
 - (int)repeatType;
+- (id)requestingBundleIdentifier;
+- (id)requestingBundleVersion;
+- (void)setPlayActivityFeatureName:(id)arg1;
+- (void)setPlayActivityRecommendationData:(id)arg1;
 - (void)setRepeatType:(int)arg1;
+- (void)setRequestingBundleIdentifier:(id)arg1;
+- (void)setRequestingBundleVersion:(id)arg1;
 - (void)setShouldRestartPlayback:(BOOL)arg1;
 - (void)setShouldStartPlayback:(BOOL)arg1;
 - (void)setShuffleType:(int)arg1;
@@ -41,10 +56,6 @@
 
 // Image: /System/Library/PrivateFrameworks/MediaPlaybackCore.framework/MediaPlaybackCore
 
-- (id)mpcReporting_featureName;
 - (BOOL)mpcReporting_isQuickPlay;
-- (id)mpcReporting_recommendationData;
-- (void)mpcReporting_setFeatureName:(id)arg1;
-- (void)mpcReporting_setRecommendationData:(id)arg1;
 
 @end

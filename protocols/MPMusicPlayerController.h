@@ -38,6 +38,7 @@
 - (void)setCurrentPlaybackTime:(NSNumber *)arg1;
 - (void)setNowPlayingItem:(MPMediaItem *)arg1;
 - (void)setPlaybackSpeed:(NSNumber *)arg1;
+- (void)setQueueWithDescriptor:(MPMusicPlayerQueueDescriptor *)arg1;
 - (void)setQueueWithGeniusMixPlaylist:(MPMediaPlaylist *)arg1;
 - (void)setQueueWithItemCollection:(MPMediaItemCollection *)arg1;
 - (void)setQueueWithQuery:(MPMediaQuery *)arg1;

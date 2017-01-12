@@ -12,6 +12,7 @@
     }  __previousTouchLocation;
     double  __previousTouchTime;
     BOOL  __shouldShowZoomDial;
+    NSDate * __startTimeForHideAnimationInProgress;
     struct CGPoint { 
         float x; 
         float y; 
@@ -37,6 +38,7 @@
 @property (setter=_setPreviousTouchLocation:, nonatomic) struct CGPoint { float x1; float x2; } _previousTouchLocation;
 @property (setter=_setPreviousTouchTime:, nonatomic) double _previousTouchTime;
 @property (setter=_setShouldShowZoomDial:, nonatomic) BOOL _shouldShowZoomDial;
+@property (setter=_setStartTimeForHideAnimationInProgress:, nonatomic, retain) NSDate *_startTimeForHideAnimationInProgress;
 @property (setter=_setStartTouchLocation:, nonatomic) struct CGPoint { float x1; float x2; } _startTouchLocation;
 @property (nonatomic, readonly) CAMZoomButton *_zoomButton;
 @property (nonatomic, readonly) CAMZoomDial *_zoomDial;
@@ -68,7 +70,6 @@
 - (float)_distanceFromDialClippingViewToPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_handleZoomDialVisibilityTimerFiredWithUserInfo:(id)arg1;
 - (BOOL)_isEligibleForTapInEmptySpace;
-- (BOOL)_isHidingZoomDial;
 - (BOOL)_isWithinZoomButtonBoundsWithTouch:(id)arg1;
 - (float)_normalizeValue:(float)arg1 betweenMinimumValue:(float)arg2 maximumValue:(float)arg3;
 - (struct CGPoint { float x1; float x2; })_previousTouchLocation;
@@ -79,10 +80,13 @@
 - (void)_setShouldShowZoomDial:(BOOL)arg1;
 - (void)_setShouldShowZoomDial:(BOOL)arg1 animationSpeed:(double)arg2;
 - (void)_setShouldShowZoomDial:(BOOL)arg1 animationSpeed:(double)arg2 afterDelay:(double)arg3;
+- (void)_setStartTimeForHideAnimationInProgress:(id)arg1;
 - (void)_setStartTouchLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_setZoomDialVisibilityTimer:(id)arg1;
 - (void)_setZoomFactor:(float)arg1 shouldNotifyDelegate:(BOOL)arg2;
+- (BOOL)_shouldInterceptTouchesForHidingZoomDial;
 - (BOOL)_shouldShowZoomDial;
+- (id)_startTimeForHideAnimationInProgress;
 - (struct CGPoint { float x1; float x2; })_startTouchLocation;
 - (void)_updateMaskViewForZoomButtonHighlightingTransform;
 - (id)_zoomButton;

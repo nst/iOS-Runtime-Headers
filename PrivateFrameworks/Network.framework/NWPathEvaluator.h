@@ -15,6 +15,8 @@
 @property (readonly) NWParameters *parameters;
 @property (nonatomic, readonly) NWPath *path;
 
+// Image: /System/Library/PrivateFrameworks/Network.framework/Network
+
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (id)copySavedPathEvaluatorForEndpoint:(id)arg1 parameters:(id)arg2;
 + (void)initialize;
@@ -37,5 +39,11 @@
 - (void)setInternalPath:(id)arg1;
 - (void)triggerPathAgentsIncludingVoluntary:(BOOL)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)triggerVoluntaryPathAgentsWithCompletionHandler:(id /* block */)arg1;
+
+// Image: /System/Library/PrivateFrameworks/WeatherFoundation.framework/WeatherFoundation
+
++ (id)wf_pathEvaluatorForURL:(id)arg1;
+
+- (BOOL)wf_isReachable;
 
 @end

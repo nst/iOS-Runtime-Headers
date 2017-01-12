@@ -3,6 +3,7 @@
  */
 
 @interface PKPaymentSetupFieldsModel : NSObject {
+    PKPaymentSetupFieldFooter * _footerField;
     NSMutableArray * _paymentSetupFields;
 }
 
@@ -13,6 +14,8 @@
 + (id)fakePaymentSetupProvisioningFields;
 
 - (void).cxx_destruct;
+- (id)footerPaymentSetupField;
+- (BOOL)hasFooterPaymentSetupField;
 - (BOOL)hasIncompletePaymentSetupFields;
 - (id)incompletePaymentSetupFields;
 - (id)initWithPaymentSetupFields:(id)arg1;

@@ -29,6 +29,7 @@
 - (void)getContextWithCompletion:(id /* block */)arg1;
 - (void)getProvisioningDataWithCompletion:(id /* block */)arg1;
 - (void)getRegistrationDataWithAuthToken:(id)arg1 completion:(id /* block */)arg2;
+- (void)handlePotentialExpressPass:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)hasPassesOfType:(unsigned int)arg1 completion:(id /* block */)arg2;
 - (id)init;
 - (id)initWithWebService:(id)arg1 connection:(id)arg2;
@@ -43,5 +44,6 @@
 - (void)setNewAuthRandomIfNecessaryReturningPairingState:(id /* block */)arg1;
 - (void)signData:(id)arg1 signatureEntanglementMode:(unsigned int)arg2 withCompletion:(id /* block */)arg3;
 - (void)validateAddPreconditionsWithCompletion:(id /* block */)arg1;
+- (void)validateTransferPreconditionsWithCompletion:(id /* block */)arg1;
 
 @end

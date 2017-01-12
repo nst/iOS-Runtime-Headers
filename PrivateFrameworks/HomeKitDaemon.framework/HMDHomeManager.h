@@ -79,6 +79,7 @@
     BOOL  _uploadHomeDataToCloud;
     BOOL  _uploadMetadataToCloud;
     BOOL  _uploadToCloudIsPending;
+    NSMutableDictionary * _userPushCacheMap;
     NSUUID * _uuid;
     NSMutableArray * _uuidsOfRemovedHomes;
     HMDWatchManager * _watchManager;
@@ -170,6 +171,7 @@
 @property (nonatomic) BOOL uploadHomeDataToCloud;
 @property (nonatomic) BOOL uploadMetadataToCloud;
 @property (nonatomic) BOOL uploadToCloudIsPending;
+@property (nonatomic, readonly) NSMutableDictionary *userPushCacheMap;
 @property (nonatomic, retain) NSUUID *uuid;
 @property (nonatomic, retain) NSMutableArray *uuidsOfRemovedHomes;
 @property (nonatomic, readonly) HMDWatchManager *watchManager;
@@ -253,6 +255,7 @@
 - (BOOL)_handleControllerKeyAvailable;
 - (void)_handleCurrentHomeChanged:(id)arg1;
 - (void)_handleDeleteDuetEvent:(id)arg1;
+- (void)_handleDevicePing:(id)arg1;
 - (void)_handleDisabledResidentDevices;
 - (void)_handleDismissBulletinRequest:(id)arg1;
 - (void)_handleDismissDialogRequest:(id)arg1;
@@ -319,7 +322,7 @@
 - (id)_prepareDataForDevicesOnSameAccountForHome:(id)arg1 remoteGateway:(BOOL)arg2;
 - (id)_prepareHomesVersionDict;
 - (void)_processAnyPendingRequestsForRemoteAccess:(BOOL)arg1;
-- (void)_pushChangesForHome:(id)arg1 toRegularUsersOfHome:(id)arg2 adminUsersOfHome:(id)arg3 electDestinationDevice:(BOOL)arg4;
+- (void)_pushChangesForHome:(id)arg1 toRegularUsersOfHome:(id)arg2 adminUsersOfHome:(id)arg3 deviceDestinations:(id)arg4;
 - (void)_pushChangesForHome:(id)arg1 toRemoteDevicesOnSameAccount:(id)arg2 addedUser:(id)arg3;
 - (void)_pushChangesToAllUsersOfAllHomes;
 - (void)_pushChangesToCloud:(BOOL)arg1;
@@ -389,8 +392,10 @@
 - (void)_updateHomesAboutNetworkConnectivity:(BOOL)arg1;
 - (void)_updateResidentEnabledOnThisDevice:(BOOL)arg1 message:(id)arg2;
 - (void)_updateTransportInformationInstances:(id)arg1 remoteAccessories:(id)arg2;
+- (void)_updateUserPushCachedForUser:(id)arg1 device:(id)arg2;
 - (void)_updateiCloudSwitchState:(BOOL)arg1;
 - (void)_uploadHomeConfigToCloud:(BOOL)arg1;
+- (id)_userPushCachedGetDeviceForUser:(id)arg1;
 - (void)accessoriesAreLocallyReachableOnTransientDevice:(BOOL)arg1 forHome:(id)arg2;
 - (id)accessoryBrowser;
 - (void)accessoryBrowserDidFindNewAccessory:(id)arg1;
@@ -619,10 +624,12 @@
 - (void)updateGenerationCounter;
 - (void)updateHomesConfigured;
 - (void)updateIncomingInvitesPresent;
+- (void)updateUserPushCachedForUser:(id)arg1 device:(id)arg2;
 - (void)updateiCloudSwitchState:(BOOL)arg1;
 - (BOOL)uploadHomeDataToCloud;
 - (BOOL)uploadMetadataToCloud;
 - (BOOL)uploadToCloudIsPending;
+- (id)userPushCacheMap;
 - (id)uuid;
 - (id)uuidsOfRemovedHomes;
 - (id)watchManager;

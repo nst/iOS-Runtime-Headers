@@ -40,6 +40,7 @@
 - (void)pk_applyAppearance:(id)arg1;
 - (id)pk_childrenForAppearance;
 - (void)setDelegate:(id)arg1;
+- (void)setFelicaProperties:(id)arg1;
 - (void)setPass:(id)arg1;
 - (void)setShowAddButton:(BOOL)arg1;
 - (void)setShowSubTitle:(BOOL)arg1;

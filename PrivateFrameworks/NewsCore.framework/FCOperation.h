@@ -39,6 +39,8 @@
 - (void)_associateChildOperation:(id)arg1;
 - (id)_errorUserInfo;
 - (void)_finishOperationWithError:(id)arg1;
+- (BOOL)_shouldThrottleOperationWithRetryAfter:(double*)arg1;
+- (id)_userDefaultsKeyForThrottleEndDate;
 - (void)addCompletionHandler:(id /* block */)arg1;
 - (void)associateChildOperation:(id)arg1;
 - (void)associateChildOperations:(id)arg1;
@@ -81,9 +83,11 @@
 - (void)setRelativePriority:(int)arg1;
 - (void)setRetryCount:(unsigned int)arg1;
 - (void)setStartLock:(id)arg1;
+- (BOOL)shouldStartThrottlingWithError:(id)arg1 retryAfter:(double*)arg2;
 - (void)start;
 - (void)startIfNeeded;
 - (id)startLock;
+- (id)throttleGroup;
 - (BOOL)validateOperation;
 - (BOOL)waitUntilFinishedWithTimeout:(double)arg1;
 

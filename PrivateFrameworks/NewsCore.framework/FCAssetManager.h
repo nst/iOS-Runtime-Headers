@@ -40,12 +40,12 @@
 - (void)cacheCoordinator:(id)arg1 flushKeysWithWriteLock:(id)arg2;
 - (unsigned long long)cacheCoordinatorCurrentSizeWithReadLock:(id)arg1;
 - (void)enableFlushingWithFlushingThreshold:(unsigned int)arg1;
-- (id)fetchFileForAssetHandle:(id)arg1 completion:(id /* block */)arg2;
 - (BOOL)flushUnusedAssets;
 - (id)init;
 - (id)initWithName:(id)arg1 directory:(id)arg2 networkBehaviorMonitor:(id)arg3;
 - (id)keyValueStore;
 - (id)networkBehaviorMonitor;
+- (id)operationToFetchFileForAssetHandle:(id)arg1 completion:(id /* block */)arg2;
 - (void)setAssetHandles:(id)arg1;
 - (void)setAssetHandlesQueue:(id)arg1;
 - (void)setAssetStore:(id)arg1;

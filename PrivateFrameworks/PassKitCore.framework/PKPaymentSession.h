@@ -11,6 +11,7 @@
 
 + (id)startContactlessInterfaceSessionWithCompletion:(id /* block */)arg1;
 + (id)startInAppSessionWithCompletion:(id /* block */)arg1;
++ (id)startReaderSessionWithCompletion:(id /* block */)arg1;
 
 - (void).cxx_destruct;
 - (id)initWithInternalSession:(id)arg1;

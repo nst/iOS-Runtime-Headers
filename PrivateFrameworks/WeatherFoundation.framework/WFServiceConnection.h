@@ -36,6 +36,7 @@
 - (void)_onQueueOpenConnection;
 - (void)accessServiceWithBlock:(id /* block */)arg1;
 - (id)callbackQueue;
+- (void)cancelRequestWithIdentifier:(id)arg1;
 - (void)dealloc;
 - (id)dispatchGroupForTaskIdentifier;
 - (void)enqueueRequest:(id)arg1;

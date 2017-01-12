@@ -6,6 +6,7 @@
     BOOL  _aborted;
     BSAuditHistory * _auditHistory;
     BOOL  _auditHistoryEnabled;
+    NSObject<OS_os_log> * _auditHistoryLog;
     NSMutableArray * _blockObservers;
     BOOL  _cachedDefaultBasedAuditHistoryEnabled;
     NSString * _cachedDescriptionProem;

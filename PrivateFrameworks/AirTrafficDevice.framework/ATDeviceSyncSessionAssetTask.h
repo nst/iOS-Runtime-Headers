@@ -11,7 +11,6 @@
     NSMutableOrderedSet * _clientAssetsInProgress;
     NSMutableOrderedSet * _clientAssetsRemaining;
     NSMutableDictionary * _detailedProgress;
-    BOOL  _handledTaskCompletion;
     BOOL  _peerRequestsComplete;
     BOOL  _requestsComplete;
     NSMutableOrderedSet * _serverAssetsInProgress;

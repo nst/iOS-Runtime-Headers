@@ -5,7 +5,6 @@
 @interface _HMAccessoryProfile : NSObject <HMFMessageReceiver, NSSecureCoding> {
     HMAccessory * _accessory;
     NSObject<OS_dispatch_queue> * _clientQueue;
-    BOOL  _configured;
     HMDelegateCaller * _delegateCaller;
     HMHome * _home;
     HMFMessageDispatcher * _msgDispatcher;
@@ -17,7 +16,6 @@
 
 @property (nonatomic, readonly) HMAccessory *accessory;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *clientQueue;
-@property BOOL configured;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, retain) HMDelegateCaller *delegateCaller;
 @property (readonly, copy) NSString *description;
@@ -38,8 +36,7 @@
 - (void)_registerNotificationHandlers;
 - (id)accessory;
 - (id)clientQueue;
-- (void)configureWithClientQueue:(id)arg1 delegateCaller:(id)arg2 msgDispatcher:(id)arg3 home:(id)arg4;
-- (BOOL)configured;
+- (void)configureWithAccessory:(id)arg1 clientQueue:(id)arg2 delegateCaller:(id)arg3 msgDispatcher:(id)arg4 home:(id)arg5;
 - (id)delegateCaller;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
@@ -55,7 +52,6 @@
 - (id)propertyQueue;
 - (id)services;
 - (void)setClientQueue:(id)arg1;
-- (void)setConfigured:(BOOL)arg1;
 - (void)setDelegateCaller:(id)arg1;
 - (void)setMsgDispatcher:(id)arg1;
 - (void)setPropertyQueue:(id)arg1;

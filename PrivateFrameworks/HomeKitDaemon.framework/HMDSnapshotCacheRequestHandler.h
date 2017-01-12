@@ -19,11 +19,13 @@
 + (id)logCategory;
 
 - (void).cxx_destruct;
-- (void)addSnapshotFileToCache:(id)arg1 sessionID:(id)arg2;
+- (void)addSnapshotFileToCache:(id)arg1;
 - (id)initWithWorkQueue:(id)arg1 logID:(id)arg2;
 - (id)logIdentifier;
 - (id)logString;
-- (void)requestSnapshot:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)removeSnapshotFileToCache:(id)arg1 error:(id)arg2;
+- (void)requestSnapshot:(id)arg1 streamingTierType:(unsigned int)arg2 completionHandler:(id /* block */)arg3;
+- (void)setSnapshotFileToCache:(id)arg1 proactiveSessionID:(id)arg2;
 - (id)snapshotCacheMap;
 - (void)timerDidFire:(id)arg1;
 - (id)workQueue;

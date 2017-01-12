@@ -17,7 +17,7 @@
 - (id)firstSegmentFollowingFeedRange:(id)arg1;
 - (void)insertFeedItems:(id)arg1 ckCursor:(id)arg2 plausibleRange:(id)arg3 segmentEntity:(id)arg4 itemEntity:(id)arg5 itemIndexEntity:(id)arg6 moc:(id)arg7 indexFeatures:(BOOL)arg8;
 - (void)insertSegment:(id)arg1;
-- (void)prune;
+- (id)prune;
 - (void)willAccessFeedRange:(id)arg1;
 - (void)willTurnIntoFault;
 

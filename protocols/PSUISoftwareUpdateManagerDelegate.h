@@ -14,6 +14,7 @@
 - (void)manager:(PSUISoftwareUpdateManager *)arg1 download:(SUDownload *)arg2 failedWithError:(NSError *)arg3;
 - (void)manager:(PSUISoftwareUpdateManager *)arg1 downloadFinished:(SUDownload *)arg2;
 - (void)manager:(PSUISoftwareUpdateManager *)arg1 installFailedWithError:(NSError *)arg2;
+- (void)manager:(PSUISoftwareUpdateManager *)arg1 installStartedForUpdate:(SUDescriptor *)arg2;
 - (void)manager:(PSUISoftwareUpdateManager *)arg1 scanFoundUpdate:(SUDescriptor *)arg2 error:(NSError *)arg3;
 
 @end

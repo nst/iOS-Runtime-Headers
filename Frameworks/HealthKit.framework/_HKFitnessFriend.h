@@ -4,6 +4,7 @@
 
 @interface _HKFitnessFriend : NSObject <NSCopying, NSSecureCoding> {
     _HKFitnessFriendContact * _contact;
+    NSNumber * _currentCacheIndex;
     NSDictionary * _friendAchievements;
     NSDictionary * _friendWorkouts;
     NSDictionary * _snapshots;

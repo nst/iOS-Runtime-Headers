@@ -699,13 +699,6 @@
 - (void)willDetachFieldEditor:(id)arg1;
 - (void)willMoveToWindow:(id)arg1;
 
-// Image: /System/Library/AccessibilityBundles/QuickSpeak.bundle/QuickSpeak
-
-+ (Class)safeCategoryBaseClass;
-
-- (id)_accessibilityQuickSpeakContent;
-- (BOOL)_accessibilitySystemShouldShowSpeakBubble;
-
 // Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
 
 - (void)_cnui_applyContactStyle;

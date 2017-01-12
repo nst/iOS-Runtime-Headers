@@ -252,6 +252,7 @@
 + (id)assetsWithCloudAssetUUIDs:(id)arg1 inLibrary:(id)arg2;
 + (id)assetsWithSavedAssetType:(short)arg1 inManagedObjectContext:(id)arg2;
 + (id)assetsWithUUIDs:(id)arg1 options:(unsigned int)arg2 inLibrary:(id)arg3;
++ (id)assetsWithUUIDs:(id)arg1 options:(unsigned int)arg2 inManagedObjectContext:(id)arg3;
 + (id)baseSearchIndexPredicate;
 + (id)bestCreationDateForAssetAtURL:(id)arg1 modificationDate:(id*)arg2 creationDateString:(id*)arg3;
 + (BOOL)canPlayPhotoIrisWithPhotoIris:(BOOL)arg1 photoIrisPlaceholder:(BOOL)arg2 hasAdjustments:(BOOL)arg3 videoCpVisibilityState:(unsigned short)arg4;

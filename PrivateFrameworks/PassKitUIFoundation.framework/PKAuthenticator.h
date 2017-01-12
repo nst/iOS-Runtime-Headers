@@ -34,6 +34,7 @@
 - (BOOL)_delegateSupportsPasscodePresentation;
 - (BOOL)_delegateSupportsPassphrasePresentation;
 - (id)_swapContext:(id)arg1;
+- (void)accessExternalizedContextWithCompletion:(id /* block */)arg1;
 - (unsigned int)authenticationIdentifier;
 - (void)cancelEvaluation;
 - (void)dealloc;

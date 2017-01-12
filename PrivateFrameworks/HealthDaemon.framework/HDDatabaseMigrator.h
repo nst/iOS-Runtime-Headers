@@ -101,6 +101,7 @@
 - (int)_removeAchievementsAndActivityCachesFromUnprotectedDatabaseWithError:(id*)arg1;
 - (int)_removeActivitySharingDataWithError:(id*)arg1;
 - (int)_removeOrphanedDeletedObjectsWithError:(id*)arg1;
+- (int)_removeOrphanedLocationSeriesWithError:(id*)arg1;
 - (int)_removeStandHourWriteAuthorizationWithError:(id*)arg1;
 - (int)_renameCDATableWithError:(id*)arg1;
 - (int)_renameKeyValueSyncStoreColumnInProtectedDabase:(BOOL)arg1 error:(id*)arg2;
@@ -116,6 +117,8 @@
 - (int)_updateKeyValueEntityUniquenessWithProtectedDatabase:(BOOL)arg1 error:(id*)arg2;
 - (id)boulderProtectedMigrationSteps;
 - (id)boulderUnprotectedMigrationSteps;
+- (id)butlerProtectedMigrationSteps;
+- (id)butlerUnprotectedMigrationSteps;
 - (id)database;
 - (id)eagleProtectedMigrationSteps;
 - (id)eagleUnprotectedMigrationSteps;

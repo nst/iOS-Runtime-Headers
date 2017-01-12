@@ -16,6 +16,7 @@
 
 - (void).cxx_destruct;
 - (BOOL)_parseFromTLVData;
+- (BOOL)compatibleWithRemoteEndPoint:(id)arg1;
 - (void)description:(id)arg1 indent:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

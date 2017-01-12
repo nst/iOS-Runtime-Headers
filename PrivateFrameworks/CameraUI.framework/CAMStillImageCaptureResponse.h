@@ -10,6 +10,7 @@
     UIImage * _imageWellImage;
     NSDictionary * _metadata;
     BOOL  _originalForHDR;
+    BOOL  _originalForPortraitEffect;
     NSString * _persistenceUUID;
 }
 
@@ -31,6 +32,7 @@
 @property (nonatomic, readonly) unsigned int numberOfRepresentedAssets;
 @property (getter=isOriginal, nonatomic, readonly) BOOL original;
 @property (getter=isOriginalForHDR, nonatomic, readonly) BOOL originalForHDR;
+@property (getter=isOriginalForPortraitEffect, nonatomic, readonly) BOOL originalForPortraitEffect;
 @property (nonatomic, readonly, copy) NSURL *persistenceURL;
 @property (nonatomic, readonly, copy) NSString *persistenceUUID;
 @property (nonatomic, readonly) UIImage *placeholderImage;
@@ -47,13 +49,14 @@
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
 - (BOOL)flashFired;
 - (id)imageWellImage;
-- (id)initWithUUID:(id)arg1 captureSession:(unsigned short)arg2 captureDate:(id)arg3 metadata:(id)arg4 burstIdentifier:(id)arg5 burstRepresentedCount:(unsigned int)arg6 imageWellImage:(id)arg7 originalForHDR:(BOOL)arg8 expectingPairedVideo:(BOOL)arg9;
+- (id)initWithUUID:(id)arg1 captureSession:(unsigned short)arg2 captureDate:(id)arg3 metadata:(id)arg4 burstIdentifier:(id)arg5 burstRepresentedCount:(unsigned int)arg6 imageWellImage:(id)arg7 originalForHDR:(BOOL)arg8 originalForPortraitEffect:(BOOL)arg9 expectingPairedVideo:(BOOL)arg10;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })irisStillDisplayTime;
 - (id)irisStillImageUUID;
 - (id)irisVideoPersistenceURL;
 - (BOOL)isExpectingPairedVideo;
 - (BOOL)isOriginal;
 - (BOOL)isOriginalForHDR;
+- (BOOL)isOriginalForPortraitEffect;
 - (unsigned int)mediaType;
 - (id)metadata;
 - (unsigned int)numberOfRepresentedAssets;

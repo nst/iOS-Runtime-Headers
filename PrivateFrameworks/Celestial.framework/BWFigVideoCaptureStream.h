@@ -29,6 +29,7 @@
     BOOL  _flashEnabled;
     NSDictionary * _geometricDistortionCoefficients;
     BOOL  _grabNextFrame;
+    float  _gravityFactor;
     BOOL  _hasSphere;
     int  _lastStillImageCaptureType;
     struct { 
@@ -81,6 +82,7 @@
 @property (nonatomic) <BWFigVideoCaptureStreamDelegate> *delegate;
 @property (nonatomic) BOOL enablesSphereWhenAvailable;
 @property (readonly) NSDictionary *geometricDistortionCoefficients;
+@property (readonly) float gravityFactor;
 @property (readonly) BOOL hasSphere;
 @property (nonatomic, readonly) int lastStillImageCaptureType;
 @property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } lastStillImagePTS;
@@ -138,6 +140,7 @@
 - (BOOL)enablesSphereWhenAvailable;
 - (void)failedToCaptureStillImageFromFirmwareWithError:(long)arg1;
 - (id)geometricDistortionCoefficients;
+- (float)gravityFactor;
 - (BOOL)hasSphere;
 - (id)initWithFigCaptureStream:(struct OpaqueFigCaptureStream { }*)arg1 attributes:(id)arg2 sensorIDDictionary:(id)arg3 synchronizedStreamsEnabled:(BOOL)arg4;
 - (int)lastStillImageCaptureType;

@@ -6,6 +6,7 @@
 @required
 
 - (void)authorizationDidAuthorizePayment:(PKPayment *)arg1;
+- (void)authorizationDidAuthorizePurchase:(PKServiceProviderPurchase *)arg1;
 - (void)authorizationDidFinishWithError:(NSError *)arg1;
 - (void)authorizationDidRequestMerchantSession;
 - (void)authorizationDidSelectPaymentMethod:(PKPaymentMethod *)arg1;

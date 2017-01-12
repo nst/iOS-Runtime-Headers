@@ -12,7 +12,6 @@
 - (id)errorResolverForItem:(id)arg1;
 - (Class)itemClass;
 - (id)mixPlaylist;
-- (id)playbackInfoForIdentifier:(id)arg1;
 - (int)realRepeatType;
 - (int)realShuffleType;
 - (void)setMixPlaylist:(id)arg1;

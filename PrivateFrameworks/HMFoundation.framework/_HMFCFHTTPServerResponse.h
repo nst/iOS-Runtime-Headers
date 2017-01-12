@@ -18,6 +18,7 @@
 - (id)body;
 - (id /* block */)completionHandler;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)headerFields;
 - (id)initWithRequest:(id)arg1 statusCode:(int)arg2;
 - (id)request;

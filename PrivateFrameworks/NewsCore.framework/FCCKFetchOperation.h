@@ -43,6 +43,7 @@
 - (void)setRecordIDsToETags:(id)arg1;
 - (void)setRequestUUIDs:(id)arg1;
 - (void)setResultRecordsByRecordID:(id)arg1;
+- (id)throttleGroup;
 - (BOOL)validateOperation;
 
 @end

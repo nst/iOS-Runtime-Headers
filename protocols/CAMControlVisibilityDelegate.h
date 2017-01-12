@@ -14,6 +14,8 @@
 - (BOOL)shouldHideHDRButton;
 - (BOOL)shouldHideIrisButton;
 - (BOOL)shouldHideLivePhotoBadge;
+- (BOOL)shouldHidePortraitModeInstructionLabel;
+- (BOOL)shouldHideShallowDepthOfFieldBadge;
 - (BOOL)shouldHideTimerButton;
 - (BOOL)shouldHideTopBar;
 

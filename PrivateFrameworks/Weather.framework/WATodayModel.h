@@ -4,38 +4,34 @@
 
 @interface WATodayModel : NSObject {
     WAForecastModel * _forecastModel;
-    NSError * _lastError;
     NSDate * _lastUpdateDate;
-    WFLocation * _location;
+    NSOperationQueue * _modelOperationQueue;
+    NSHashTable * _observers;
 }
 
 @property (nonatomic, retain) WAForecastModel *forecastModel;
-@property (nonatomic, retain) NSError *lastError;
-@property (nonatomic, retain) NSDate *lastUpdateDate;
-@property (nonatomic, retain) WFLocation *location;
+@property (nonatomic, readonly) NSDate *lastUpdateDate;
 
 + (id)autoupdatingLocationModelWithPreferences:(id)arg1 effectiveBundleIdentifier:(id)arg2;
-+ (id)modelOperationQueue;
 + (id)modelWithLocation:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_executeForecastRetrievalForLocation:(id)arg1 completion:(id /* block */)arg2;
 - (void)_executeLocationUpdateWithCompletion:(id /* block */)arg1;
-- (void)_fireEventNotification:(unsigned int)arg1 userInfo:(id)arg2;
-- (void)_fireNotification:(id)arg1 event:(unsigned int)arg2 userInfo:(id)arg3;
-- (void)_fireWantsUpdateNotificationBecauseOfEvent:(unsigned int)arg1 userInfo:(id)arg2;
-- (void)_fireWasUpdatedNotificationForEvent:(unsigned int)arg1 userInfo:(id)arg2;
-- (void)_fireWillUpdateNotificationForEvent:(unsigned int)arg1 userInfo:(id)arg2;
-- (void)_persistState;
+- (void)_fireTodayModelForecastWasUpdated:(id)arg1;
+- (void)_fireTodayModelWantsUpdate;
+- (void)_forecastUpdateCompleted:(id)arg1 forecastModel:(id)arg2 error:(id)arg3 completion:(id /* block */)arg4;
+- (void)_locationUpdateCompleted:(id)arg1 error:(id)arg2 completion:(id /* block */)arg3;
+- (void)_persistStateWithModel:(id)arg1;
+- (void)_willDeliverForecastModel:(id)arg1;
+- (void)addObserver:(id)arg1;
 - (BOOL)executeModelUpdateWithCompletion:(id /* block */)arg1;
 - (id)forecastModel;
+- (id)init;
 - (id)initWithLocation:(id)arg1;
-- (id)lastError;
 - (id)lastUpdateDate;
 - (id)location;
+- (void)removeObserver:(id)arg1;
 - (void)setForecastModel:(id)arg1;
-- (void)setLastError:(id)arg1;
-- (void)setLastUpdateDate:(id)arg1;
-- (void)setLocation:(id)arg1;
 
 @end

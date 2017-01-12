@@ -3,27 +3,37 @@
  */
 
 @interface NTPBFeedCellHostViewExposure : PBCodable <NSCopying> {
+    int  _areaPresentationReason;
     int  _feedCellHostType;
     struct { 
+        unsigned int areaPresentationReason : 1; 
         unsigned int feedCellHostType : 1; 
     }  _has;
 }
 
+@property (nonatomic) int areaPresentationReason;
 @property (nonatomic) int feedCellHostType;
+@property (nonatomic) BOOL hasAreaPresentationReason;
 @property (nonatomic) BOOL hasFeedCellHostType;
 
+- (int)StringAsAreaPresentationReason:(id)arg1;
 - (int)StringAsFeedCellHostType:(id)arg1;
+- (int)areaPresentationReason;
+- (id)areaPresentationReasonAsString:(int)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (int)feedCellHostType;
 - (id)feedCellHostTypeAsString:(int)arg1;
+- (BOOL)hasAreaPresentationReason;
 - (BOOL)hasFeedCellHostType;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)setAreaPresentationReason:(int)arg1;
 - (void)setFeedCellHostType:(int)arg1;
+- (void)setHasAreaPresentationReason:(BOOL)arg1;
 - (void)setHasFeedCellHostType:(BOOL)arg1;
 - (void)writeTo:(id)arg1;
 

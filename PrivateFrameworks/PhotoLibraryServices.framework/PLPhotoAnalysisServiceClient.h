@@ -5,6 +5,7 @@
 @interface PLPhotoAnalysisServiceClient : NSObject {
     NSDictionary * _cachedRequestContextDictionary;
     NSURL * _libraryURL;
+    NSObject<OS_dispatch_semaphore> * _notifySemaphore;
     NSXPCConnection * _xpcConnection;
 }
 
@@ -13,6 +14,8 @@
 + (id)defaultClient;
 
 - (void).cxx_destruct;
+- (void)cancelOperationsWithIdentifiers:(id)arg1 reply:(id /* block */)arg2;
+- (void)configureXPCConnection;
 - (void)dispatchBlockWithoutBoost:(id /* block */)arg1;
 - (id)dumpAnalysisStatusError:(id*)arg1;
 - (id)faceClusteringInformation:(unsigned int)arg1 error:(id*)arg2;
@@ -39,6 +42,7 @@
 - (id)requestAssetCollectionsRelatedToMomentWithLocalIdentifier:(id)arg1 options:(id)arg2 error:(id*)arg3;
 - (id)requestAssetsForFaceCollectionIdentifiers:(id)arg1 withError:(id*)arg2;
 - (id)requestContextDictionary;
+- (id)requestContextDictionaryWithOperationId:(BOOL)arg1;
 - (id)requestCuratedAssetForAssetCollectionWithLocalIdentifier:(id)arg1 referenceAssetLocalIdentifier:(id)arg2 precision:(unsigned int)arg3 options:(id)arg4 error:(id*)arg5;
 - (id)requestCuratedAssetsForAssetCollectionWithLocalIdentifier:(id)arg1 duration:(unsigned int)arg2 precision:(unsigned int)arg3 options:(id)arg4 error:(id*)arg5;
 - (id)requestCurationDebugInformationForAssetLocalIdentifier:(id)arg1 precision:(unsigned int)arg2 error:(id*)arg3;
@@ -79,7 +83,7 @@
 - (void)setJobProcessingConstraintsWithValues:(id)arg1 mask:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)setupXpcConnection;
 - (id)suggestedFacesForFacesWithLocalIdentifiers:(id)arg1 error:(id*)arg2;
-- (id)suggestedFacesForPersonWithLocalIdentifier:(id)arg1 toBeConfirmedFaceLocalIdentifiers:(id)arg2 toBeRejectedFaceLocalIdentifiers:(id)arg3 error:(id*)arg4;
+- (int)suggestedFacesForPersonWithLocalIdentifier:(id)arg1 toBeConfirmedFaceLocalIdentifiers:(id)arg2 toBeRejectedFaceLocalIdentifiers:(id)arg3 completion:(id /* block */)arg4;
 - (id)suggestedPersonLocalIdentifierForFaceWithLocalIdentifier:(id)arg1 error:(id*)arg2;
 - (id)synchronousRemoteObjectProxyWithErrorHandler:(id /* block */)arg1;
 - (id)xpcConnection;

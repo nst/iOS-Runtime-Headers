@@ -58,6 +58,7 @@
 - (void)activatePaymentPass:(id)arg1 withActivationData:(id)arg2 completion:(id /* block */)arg3;
 - (void)addPasses:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (id)archiveForObjectWithUniqueID:(id)arg1;
+- (BOOL)canAddFelicaPass;
 - (BOOL)canAddPassOfType:(unsigned int)arg1;
 - (BOOL)canAddPaymentPassWithPrimaryAccountIdentifier:(id)arg1;
 - (void)catalogChanged:(id)arg1 withNewPasses:(id)arg2;
@@ -70,6 +71,7 @@
 - (id)delegate;
 - (id)diffForPassUpdateUserNotificationWithIdentifier:(id)arg1;
 - (void)enabledValueAddedServicePassesWithCompletion:(id /* block */)arg1;
+- (id)expressFelicaTransitPasses;
 - (void)fetchContentForUniqueID:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)fetchCurrentRelevantPassInfo:(id /* block */)arg1;
 - (void)fetchHasCandidatePasses:(id /* block */)arg1;
@@ -84,10 +86,9 @@
 - (void)hasInAppPaymentPassesForNetworks:(id)arg1 withHandler:(id /* block */)arg2;
 - (void)hasInAppPrivateLabelPaymentPassesForApplicationIdentifier:(id)arg1 withHandler:(id /* block */)arg2;
 - (BOOL)hasPassesOfType:(unsigned int)arg1;
+- (void)hasWebPaymentPassesForNetworks:(id)arg1 capabilities:(unsigned int)arg2 withHandler:(id /* block */)arg3;
 - (id)inAppPaymentPassesForNetworks:(id)arg1;
 - (id)inAppPaymentPassesForNetworks:(id)arg1 capabilities:(unsigned int)arg2;
-- (void)inAppPaymentPassesForNetworks:(id)arg1 capabilities:(unsigned int)arg2 withHandler:(id /* block */)arg3;
-- (void)inAppPaymentPassesForNetworks:(id)arg1 withHandler:(id /* block */)arg2;
 - (id)inAppPrivateLabelPaymentPassesForApplicationIdentifier:(id)arg1;
 - (void)inAppPrivateLabelPaymentPassesForApplicationIdentifier:(id)arg1 withHandler:(id /* block */)arg2;
 - (id)init;
@@ -96,6 +97,7 @@
 - (BOOL)isPassbookVisible;
 - (BOOL)isPaymentPassActivationAvailable;
 - (BOOL)isRemovingPassesOfType:(unsigned int)arg1;
+- (void)issueWalletUserNotificationWithTitle:(id)arg1 message:(id)arg2;
 - (void)logDelayExitReasons;
 - (BOOL)migrateData;
 - (void)noteAccountChanged;
@@ -104,6 +106,7 @@
 - (void)notifyPassUsed:(id)arg1 fromSource:(int)arg2;
 - (void)nukeDatabaseAndExit;
 - (void)openPaymentSetup;
+- (void)openPaymentSetupForMerchantIdentifier:(id)arg1 domain:(id)arg2 completion:(id /* block */)arg3;
 - (void)passAdded:(id)arg1;
 - (void)passRemoved:(id)arg1;
 - (void)passUpdated:(id)arg1;
@@ -112,6 +115,7 @@
 - (id)passes;
 - (id)passesOfType:(unsigned int)arg1;
 - (id)passesPendingActivation;
+- (id)paymentPassesWithLocallyStoredValue;
 - (void)presentContactlessInterfaceForDefaultPassFromSource:(int)arg1 completion:(id /* block */)arg2;
 - (void)presentContactlessInterfaceForPassWithUniqueIdentifier:(id)arg1 fromSource:(int)arg2 completion:(id /* block */)arg3;
 - (void)presentPaymentPass:(id)arg1;
@@ -139,5 +143,6 @@
 - (BOOL)setShowInLockScreenEnabled:(BOOL)arg1 forPass:(id)arg2;
 - (void)shuffleGroups:(int)arg1;
 - (void)updateSettings:(unsigned int)arg1 forObjectWithUniqueID:(id)arg2;
+- (id)webPaymentPassesForNetworks:(id)arg1 capabilities:(unsigned int)arg2;
 
 @end

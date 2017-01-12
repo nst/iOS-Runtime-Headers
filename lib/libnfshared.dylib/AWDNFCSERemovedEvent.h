@@ -6,12 +6,16 @@
     struct { 
         unsigned int timestamp : 1; 
         unsigned int reason : 1; 
+        unsigned int hasCardEmulationStarted : 1; 
     }  _has;
+    BOOL  _hasCardEmulationStarted;
     unsigned int  _reason;
     unsigned long long  _timestamp;
     NSData * _uuidReference;
 }
 
+@property (nonatomic) BOOL hasCardEmulationStarted;
+@property (nonatomic) BOOL hasHasCardEmulationStarted;
 @property (nonatomic) BOOL hasReason;
 @property (nonatomic) BOOL hasTimestamp;
 @property (nonatomic, readonly) BOOL hasUuidReference;
@@ -24,6 +28,8 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (BOOL)hasCardEmulationStarted;
+- (BOOL)hasHasCardEmulationStarted;
 - (BOOL)hasReason;
 - (BOOL)hasTimestamp;
 - (BOOL)hasUuidReference;
@@ -32,6 +38,8 @@
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (unsigned int)reason;
+- (void)setHasCardEmulationStarted:(BOOL)arg1;
+- (void)setHasHasCardEmulationStarted:(BOOL)arg1;
 - (void)setHasReason:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
 - (void)setReason:(unsigned int)arg1;

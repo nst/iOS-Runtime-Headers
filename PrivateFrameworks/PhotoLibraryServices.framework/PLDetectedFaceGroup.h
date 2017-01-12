@@ -9,7 +9,7 @@
 @property (nonatomic, retain) NSSet *faces;
 @property (nonatomic) PLDetectedFace *keyFace;
 @property (nonatomic, retain) PLPerson *rejectedFacesPerson;
-@property (nonatomic) int*unnamedFaceCount;
+@property (nonatomic) int unnamedFaceCount;
 @property (nonatomic, retain) NSString *uuid;
 
 + (id)entityInManagedObjectContext:(id)arg1;

@@ -5,22 +5,29 @@
 @interface CAMPreviewView : UIView {
     int  __exposureBiasSide;
     NSMutableDictionary * __faceIndicators;
+    NSMutableDictionary * __internalTrackedSubjectIndicatorsByIdentifier;
     UILabel * __simulatorLabel;
+    CAMSubjectIndicatorView * _centeredSubjectIndicatorView;
     CAMFocusIndicatorView * _continuousIndicator;
     CAMGridView * _gridView;
     UIView * _indicatorContainerView;
     CAMFocusIndicatorView * _pointIndicator;
+    <CAMPreviewViewSubjectIndicatorDelegate> * _subjectIndicatorDelegate;
     CAMVideoPreviewView * _videoPreviewView;
 }
 
 @property (nonatomic) int _exposureBiasSide;
 @property (nonatomic, readonly) NSMutableDictionary *_faceIndicators;
+@property (nonatomic, readonly) NSMutableDictionary *_internalTrackedSubjectIndicatorsByIdentifier;
 @property (nonatomic, readonly) UILabel *_simulatorLabel;
+@property (nonatomic, retain) CAMSubjectIndicatorView *centeredSubjectIndicatorView;
 @property (nonatomic, retain) CAMFocusIndicatorView *continuousIndicator;
 @property (nonatomic, readonly) NSDictionary *faceIndicatorsByIdentifier;
 @property (nonatomic) CAMGridView *gridView;
 @property (nonatomic, readonly) UIView *indicatorContainerView;
 @property (nonatomic, retain) CAMFocusIndicatorView *pointIndicator;
+@property (nonatomic) <CAMPreviewViewSubjectIndicatorDelegate> *subjectIndicatorDelegate;
+@property (nonatomic, readonly) NSDictionary *trackedSubjectIndicatorsByIdentifier;
 @property (nonatomic, retain) AVCaptureVideoPreviewLayer *videoPreviewLayer;
 @property (nonatomic, readonly) CAMVideoPreviewView *videoPreviewView;
 
@@ -31,13 +38,17 @@
 - (int)_exposureBiasSide;
 - (id)_faceIndicators;
 - (int)_faceOrientationForRollAngle:(float)arg1;
+- (id)_internalTrackedSubjectIndicatorsByIdentifier;
 - (id)_simulatorLabel;
 - (void)addFaceIndicator:(id)arg1 forIdentifier:(int)arg2;
+- (void)addTrackedSubjectIndicator:(id)arg1 forIdentifier:(int)arg2;
 - (struct CGPoint { float x1; float x2; })captureDevicePointOfInterestForPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (id)centeredSubjectIndicatorView;
 - (id)continuousIndicator;
 - (void)dealloc;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })faceIndicatorFrameForFaceResult:(id)arg1;
 - (id)faceIndicatorsByIdentifier;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForSubjectIndicator:(id)arg1 andFaceResult:(id)arg2 useNominalSize:(BOOL)arg3;
 - (id)gridView;
 - (void)indicatePointOfInterest:(struct CGPoint { float x1; float x2; })arg1;
 - (id)indicatorContainerView;
@@ -46,11 +57,16 @@
 - (struct CGPoint { float x1; float x2; })pointForCaptureDevicePointOfInterest:(struct CGPoint { float x1; float x2; })arg1;
 - (id)pointIndicator;
 - (void)removeFaceIndicatorForIdentifier:(int)arg1;
+- (void)removeTrackedSubjectIndicatorForIdentifier:(int)arg1;
+- (void)setCenteredSubjectIndicatorView:(id)arg1;
 - (void)setContinuousIndicator:(id)arg1;
 - (void)setGridView:(id)arg1;
 - (void)setPointIndicator:(id)arg1;
+- (void)setSubjectIndicatorDelegate:(id)arg1;
 - (void)setVideoPreviewLayer:(id)arg1;
 - (void)set_exposureBiasSide:(int)arg1;
+- (id)subjectIndicatorDelegate;
+- (id)trackedSubjectIndicatorsByIdentifier;
 - (id)videoPreviewLayer;
 - (id)videoPreviewView;
 

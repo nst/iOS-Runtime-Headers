@@ -27,6 +27,7 @@
 - (void)addClient:(id)arg1;
 - (void)addClient:(id)arg1 forPid:(int)arg2;
 - (void)airQualityForLocation:(id)arg1 locale:(id)arg2 options:(id)arg3 taskIdentifier:(id)arg4;
+- (void)cancelTaskWithIdentifier:(id)arg1;
 - (id)clientDictionary;
 - (id)clientForPid:(int)arg1;
 - (id)clients;
@@ -42,6 +43,7 @@
 - (void)performMigrationWithCompletion:(id /* block */)arg1;
 - (id)queryDispatcher;
 - (void)queryDispatcherDidReceiveResponse:(id)arg1 identifier:(id)arg2;
+- (void)reachabilityConfigurationForIdentifier:(id)arg1;
 - (void)removeClient:(id)arg1;
 - (void)replaceTemperatureUnitWith:(int)arg1 identifier:(id)arg2;
 - (void)setClientDictionary:(id)arg1;

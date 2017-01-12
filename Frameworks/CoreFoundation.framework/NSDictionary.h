@@ -211,6 +211,10 @@
 
 // Image: /System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
 
+- (BOOL)_LS_BoolForKey:(id)arg1;
+- (BOOL)_LS_containsKey:(id)arg1;
+- (unsigned long long)_LS_integerForKey:(id)arg1;
+- (id)_LS_objectForKey:(id)arg1 ofType:(Class)arg2;
 - (unsigned int)_hashQuery;
 - (id)_parseQueryForIdentifiers:(id)arg1;
 - (id)insertExtensionPointVersion:(id)arg1;
@@ -831,6 +835,7 @@
 // Image: /System/Library/PrivateFrameworks/UIAccessibility.framework/UIAccessibility
 
 - (id)_accessibilityLeafDescendantsWithCount:(unsigned int)arg1 shouldStopAtRemoteElement:(BOOL)arg2 options:(id)arg3 treeLogger:(id)arg4;
+- (id)_rearrangeKeyboardIfNecessaryWithOriginalArray:(id)arg1 processedArray:(id)arg2;
 
 // Image: /System/Library/PrivateFrameworks/UserNotificationsServer.framework/UserNotificationsServer
 

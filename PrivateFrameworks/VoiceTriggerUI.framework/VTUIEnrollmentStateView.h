@@ -27,5 +27,6 @@
 - (void)setInstructionText:(id)arg1;
 - (void)setSubtitle:(id)arg1;
 - (void)setTitle:(id)arg1;
+- (BOOL)suppressFinishButton;
 
 @end

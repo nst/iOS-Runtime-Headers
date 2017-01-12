@@ -43,7 +43,9 @@
 - (int)_getPasscodeComplianceWarningExpiryDate:(id)arg1 lastLockDate:(id)arg2 outLocalizedTitle:(id*)arg3 outLocalizedMessage:(id*)arg4;
 - (id)_init;
 - (void)_internalDefaultsDidChange;
-- (id)_localizedRestricitionSourceDescriptionFromMDMName:(id)arg1 exchangeName:(id)arg2 exchangeCount:(int)arg3 profileName:(id)arg4 profileCount:(int)arg5;
+- (id)_localizedCertificateSourceDescriptionFromMDMName:(id)arg1 exchangeName:(id)arg2 exchangeCount:(int)arg3 profileName:(id)arg4 profileCount:(int)arg5;
+- (id)_localizedRestrictionSourceDescriptionFromMDMName:(id)arg1 exchangeName:(id)arg2 exchangeCount:(int)arg3 profileName:(id)arg4 profileCount:(int)arg5;
+- (id)_localizedSourceDescriptionForType:(int)arg1 MDMName:(id)arg2 exchangeName:(id)arg3 exchangeCount:(int)arg4 profileName:(id)arg5 profileCount:(int)arg6;
 - (BOOL)_openSensitiveURLString:(id)arg1 unlock:(BOOL)arg2;
 - (void)_passcodeDidChange;
 - (void)_passcodePolicyDidChange;
@@ -279,6 +281,7 @@
 - (void)lockDevice;
 - (void)lockDeviceImmediately:(BOOL)arg1;
 - (void)lockdownDidReceiveActivationRecord:(id)arg1;
+- (id)lockedDownRootCertificatesWithOutLocalizedSourceDescription:(id*)arg1;
 - (id)managedAppIDs;
 - (id)managedAppIDsWithFlags:(int)arg1;
 - (id)managedEmailDomains;

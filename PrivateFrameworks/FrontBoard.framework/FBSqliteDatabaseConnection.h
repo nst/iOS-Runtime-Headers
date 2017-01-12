@@ -5,12 +5,16 @@
 @interface FBSqliteDatabaseConnection : NSObject {
     NSObject<OS_dispatch_queue> * _queue;
     struct sqlite3 { } * _queue_dbConnection;
+    NSHashTable * _queue_observers;
     NSCache * _queue_queryCache;
 }
 
 + (int)_sqliteOpenFlagsForDataProtectionClass:(unsigned int)arg1;
 
 - (id)_initWithSqlitePath:(id)arg1 dataProtectionClass:(unsigned int)arg2;
+- (void)_queue_close;
+- (void)addObserver:(id)arg1;
+- (void)close;
 - (void)dealloc;
 - (id)initWithInMemoryDatabase;
 - (id)initWithURL:(id)arg1;
@@ -19,5 +23,6 @@
 - (void)performSyncWithDatabase:(id /* block */)arg1;
 - (void)performWithDatabase:(id /* block */)arg1;
 - (id)prepareStatement:(id)arg1;
+- (void)removeObserver:(id)arg1;
 
 @end

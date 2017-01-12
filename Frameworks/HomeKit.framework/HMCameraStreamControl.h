@@ -24,9 +24,7 @@
 - (void)cameraStreamControlDidStartStream:(id)arg1;
 - (id)delegate;
 - (id)initWithStreamControl:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
 - (id)propertyQueue;
-- (void)resetControl;
 - (void)setDelegate:(id)arg1;
 - (void)setStreamControl:(id)arg1;
 - (void)startStream;

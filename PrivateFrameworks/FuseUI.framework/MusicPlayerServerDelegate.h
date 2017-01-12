@@ -4,7 +4,10 @@
 
 @interface MusicPlayerServerDelegate : NSObject <MPMusicPlayerControllerServerDelegate> {
     MPAVController * _applicationPlayer;
+    MPCMediaPlayerLegacyReportingController * _applicationPlayerReportingController;
+    NSDictionary * _assetStoreFrontOverrides;
     MPMediaItem * _firstItem;
+    NSString * _firstItemIdentifier;
     MPNowPlayingObserver * _nowPlayingObserver;
     int  _playbackShuffleMode;
     MPAVController * _player;
@@ -15,6 +18,7 @@
     MPAVController * _shuffleChangeHandlerPlayer;
     int  _shuffleMode;
     MPAVController * _systemPlayer;
+    NSDictionary * _timeModifications;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -38,10 +42,13 @@
 - (void)musicPlayerServer:(id)arg1 prepareQueueWithStoreIDs:(id)arg2;
 - (void)musicPlayerServer:(id)arg1 registerForRepeatModeChangesWithChangeHandler:(id /* block */)arg2;
 - (void)musicPlayerServer:(id)arg1 registerForShuffleModeChangesWithChangeHandler:(id /* block */)arg2;
+- (void)musicPlayerServer:(id)arg1 setAssetStoreFrontOverrides:(id)arg2;
 - (void)musicPlayerServer:(id)arg1 setFirstItem:(id)arg2;
+- (void)musicPlayerServer:(id)arg1 setFirstItemIdentifier:(id)arg2;
 - (void)musicPlayerServer:(id)arg1 setNowPlayingItem:(id)arg2;
 - (void)musicPlayerServer:(id)arg1 setPlaybackSpeed:(int)arg2;
 - (void)musicPlayerServer:(id)arg1 setShuffleMode:(int)arg2;
+- (void)musicPlayerServer:(id)arg1 setTimeModifications:(id)arg2;
 - (void)musicPlayerServer:(id)arg1 setUserQueueModificationsDisabled:(BOOL)arg2;
 - (id)nowPlayingItemForMusicPlayerServer:(id)arg1;
 - (int)playbackSpeedForMusicPlayerServer:(id)arg1;

@@ -239,6 +239,7 @@
 - (void)notifyCloudLibraryAvailabilityDidChange;
 - (void)notifyContentsDidChange;
 - (void)notifyDisplayValuesPropertyDidChange;
+- (void)notifyEntitiesAddedOrRemoved;
 - (void)notifyInvisiblePropertyDidChange;
 - (void)notifyKeepLocalStateDidChange;
 - (void)notifyLibraryImportDidFinish;

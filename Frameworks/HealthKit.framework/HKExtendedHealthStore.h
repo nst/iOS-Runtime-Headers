@@ -21,6 +21,7 @@
 @property (nonatomic, copy) id /* block */ unviewedAchievementDefinitionsChangedHandler;
 
 - (void).cxx_destruct;
+- (void)achievementAssetAvailabilityOnPairedDeviceForIdentifiers:(id)arg1 completion:(id /* block */)arg2;
 - (id /* block */)achievementsAddedHandler;
 - (void)addAchievement:(id)arg1 completion:(id /* block */)arg2;
 - (id)clientInterface;
@@ -44,6 +45,7 @@
 - (void)markAchievementAsViewed:(id)arg1 completion:(id /* block */)arg2;
 - (void)markAchievementDefinitionIdentifierAlertViewed:(id)arg1 completion:(id /* block */)arg2;
 - (void)markAchievementsAlerted:(id)arg1 completion:(id /* block */)arg2;
+- (void)nextScheduledAchievementDefinitionAlertTaskDateWithCompletion:(id /* block */)arg1;
 - (id)remoteObjectProxyWithErrorHandler:(id /* block */)arg1;
 - (void)runAchievementsFixupAsDryRun:(BOOL)arg1 completion:(id /* block */)arg2;
 - (id)serverInterface;

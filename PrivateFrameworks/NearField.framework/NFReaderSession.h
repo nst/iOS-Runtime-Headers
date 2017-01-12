@@ -22,10 +22,11 @@
 - (BOOL)disconnectTag;
 - (void)endSession;
 - (id)felicaState;
+- (id)felicaStateForSystemCode:(id)arg1 withRequestService:(id)arg2 withBlockReadList:(id)arg3 performSearchServiceCode:(BOOL)arg4;
 - (BOOL)formatNdefWithKey:(id)arg1;
 - (id)ndefRead;
 - (BOOL)ndefWrite:(id)arg1;
-- (BOOL)runScript:(id)arg1 results:(id*)arg2 lastStatus:(unsigned int*)arg3;
+- (unsigned int)runScript:(id)arg1 results:(id*)arg2 lastStatus:(unsigned int*)arg3;
 - (void)setDelegate:(id)arg1;
 - (BOOL)startPolling;
 - (BOOL)stopPolling;

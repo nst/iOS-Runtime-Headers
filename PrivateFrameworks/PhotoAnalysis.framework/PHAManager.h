@@ -21,6 +21,7 @@
 @property (retain) NSDictionary *photoAnalysisWorkersByType;
 @property (retain) PHPhotoLibrary *photoLibrary;
 @property (getter=isQuiescent, readonly) BOOL quiescent;
+@property (getter=isTurboMode, readonly) BOOL turboMode;
 
 + (id)allWorkerClasses;
 + (void)enumerateWorkerClassesUsingBlock:(id /* block */)arg1;
@@ -38,6 +39,7 @@
 - (id)init;
 - (id)initWithPhotoLibraryURL:(id)arg1 executiveStateQueue:(id)arg2 delegate:(id)arg3;
 - (BOOL)isQuiescent;
+- (BOOL)isTurboMode;
 - (id)jobCoordinator;
 - (id)libraryURL;
 - (id)monitoring;

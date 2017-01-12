@@ -2,10 +2,11 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDRemoteDeviceMonitor : NSObject <HMFLogging, HMFNetMonitorDelegate, IDSServiceDelegate> {
+@interface HMDRemoteDeviceMonitor : NSObject <HMFLogging, HMFNetMonitorDelegate, HMFTimerDelegate, IDSServiceDelegate> {
     HMDAccountRegistry * _accountRegistry;
     NSObject<OS_dispatch_queue> * _clientQueue;
     <HMDRemoteDeviceMonitorDelegate> * _delegate;
+    HMFTimer * _deviceHealthTimer;
     NSMapTable * _devices;
     HMFNetMonitor * _netMonitor;
     NSObject<OS_dispatch_queue> * _propertyQueue;
@@ -18,6 +19,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property <HMDRemoteDeviceMonitorDelegate> *delegate;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) HMFTimer *deviceHealthTimer;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) HMFNetMonitor *netMonitor;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *propertyQueue;
@@ -34,11 +36,14 @@
 - (void)_handleGlobalReachabilityChange;
 - (void)_notifyDeviceReachabilityChange:(BOOL)arg1 forDevice:(id)arg2;
 - (void)_sendPingToDevice:(id)arg1;
+- (void)_startActivelyMonitoringDevice:(id)arg1;
+- (void)_stopActivelyMonitoringDevice:(id)arg1;
 - (id)accountRegistry;
 - (id)clientQueue;
 - (void)confirmDevice:(id)arg1 timeout:(double)arg2 completionHandler:(id /* block */)arg3;
 - (void)dealloc;
 - (id)delegate;
+- (id)deviceHealthTimer;
 - (id)deviceInformationForDevice:(id)arg1;
 - (id)devices;
 - (id)dumpState;
@@ -60,6 +65,7 @@
 - (void)setReachable:(BOOL)arg1;
 - (void)startMonitoringDevice:(id)arg1;
 - (void)stopMonitoringDevice:(id)arg1;
+- (void)timerDidFire:(id)arg1;
 - (id)unreachableDevices;
 
 @end

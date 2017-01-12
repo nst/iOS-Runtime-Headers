@@ -15,6 +15,7 @@
 - (void)URLSessionTask:(void *)arg1 willPerformHTTPRedirection:(void *)arg2 newRequest:(void *)arg3 completionHandler:(void *)arg4; // needs 4 arg types, found 9: NSURLSessionTask *, NSHTTPURLResponse *, NSURLRequest *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSURLRequest *, void*
 - (void)URLSessionTaskIsWaitingForConnection:(NSURLSessionTask *)arg1;
 - (NSOperationQueue *)delegateQueue;
+- (int)qualityOfService;
 - (NSString *)sectionID;
 - (NSObject<OS_voucher> *)voucher;
 

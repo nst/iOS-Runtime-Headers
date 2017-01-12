@@ -242,6 +242,7 @@
 @property (readonly) NSLayoutYAxisAnchor *bottomAnchor;
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
 @property (nonatomic, readonly) struct CGPoint { float x1; float x2; } boundsCenter;
+@property (nonatomic, readonly) BOOL cam_isHidden;
 @property (nonatomic, readonly) BOOL canBecomeFocused;
 @property (nonatomic) struct CGPoint { float x1; float x2; } center;
 @property (readonly) NSLayoutXAxisAnchor *centerXAnchor;
@@ -1831,6 +1832,7 @@
 + (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })cam_transformForInterfaceOrientation:(int)arg1;
 
 - (void)cam_ensureSubview:(id)arg1;
+- (BOOL)cam_isHidden;
 - (BOOL)cam_isOnScreen:(id)arg1;
 - (BOOL)cam_isOnScreen:(id)arg1;
 - (BOOL)cam_isPoint:(struct CGPoint { float x1; float x2; })arg1 withinBoundsWithPadding:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
@@ -1844,6 +1846,7 @@
 - (void)cam_setHidden:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)cam_setHidden:(BOOL)arg1 animationDuration:(double)arg2;
 - (void)cam_setHidden:(BOOL)arg1 animationDuration:(double)arg2 delay:(double)arg3;
+- (void)cam_setHidden:(BOOL)arg1 animationDuration:(double)arg2 delay:(double)arg3 completion:(id /* block */)arg4;
 
 // Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
 

@@ -14,7 +14,6 @@
     NSString * _callUUID;
     NSString * _callerNameFromNetwork;
     int  _cameraType;
-    NSString * _contactIdentifier;
     TUCallDisplayContext * _displayContext;
     TUCallProvider * _displayProvider;
     BOOL  _downlinkMuted;
@@ -82,7 +81,6 @@
 @property (nonatomic, copy) NSString *callUUID;
 @property (nonatomic, copy) NSString *callerNameFromNetwork;
 @property (nonatomic) int cameraType;
-@property (nonatomic, copy) NSString *contactIdentifier;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) TUCallDisplayContext *displayContext;
@@ -141,7 +139,6 @@
 - (id)callUUID;
 - (id)callerNameFromNetwork;
 - (int)cameraType;
-- (id)contactIdentifier;
 - (void)disconnectWithReason:(int)arg1;
 - (id)displayContext;
 - (id)displayProvider;
@@ -201,7 +198,6 @@
 - (void)setCallUUID:(id)arg1;
 - (void)setCallerNameFromNetwork:(id)arg1;
 - (void)setCameraType:(int)arg1;
-- (void)setContactIdentifier:(id)arg1;
 - (void)setDisconnectedReason:(int)arg1;
 - (void)setDisplayContext:(id)arg1;
 - (void)setDisplayProvider:(id)arg1;

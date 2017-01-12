@@ -3,11 +3,13 @@
  */
 
 @interface PHAServiceClientHandler : NSObject <NSXPCConnectionDelegate, PLPhotoAnalysisServiceProtocol> {
+    NSMapTable * _cancelableOperationsById;
     NSString * _clientBundleID;
     PHAExecutive * _executive;
     NSObject<OS_dispatch_semaphore> * _invalidationSemaphore;
     PHAManager * _photoAnalysisManager;
     id  _serviceUnavailableHandler;
+    NSLock * _sharedOperationLock;
     NSXPCConnection * _xpcConnection;
 }
 
@@ -19,10 +21,13 @@
 @property (retain) NSObject<OS_dispatch_semaphore> *invalidationSemaphore;
 @property (retain) PHAManager *photoAnalysisManager;
 @property (retain) id serviceUnavailableHandler;
+@property (nonatomic, retain) NSLock *sharedOperationLock;
 @property (readonly) Class superclass;
 @property (retain) NSXPCConnection *xpcConnection;
 
 - (void).cxx_destruct;
+- (void)cancelOperationsWithIdentifiers:(id)arg1 context:(id)arg2 reply:(id /* block */)arg3;
+- (id)cancelableOperationsById;
 - (id)clientBundleID;
 - (void)connection:(id)arg1 handleInvocation:(id)arg2 isReply:(BOOL)arg3;
 - (id)contextInformationFromInvocation:(id)arg1;
@@ -40,7 +45,9 @@
 - (void)setInvalidationSemaphore:(id)arg1;
 - (void)setPhotoAnalysisManager:(id)arg1;
 - (void)setServiceUnavailableHandler:(id)arg1;
+- (void)setSharedOperationLock:(id)arg1;
 - (void)setXpcConnection:(id)arg1;
+- (id)sharedOperationLock;
 - (void)shutdown;
 - (void)submitBlockToExecutiveStateQueue:(id /* block */)arg1;
 - (id)xpcConnection;

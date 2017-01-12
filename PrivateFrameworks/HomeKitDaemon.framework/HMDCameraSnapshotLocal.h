@@ -30,13 +30,13 @@
 
 - (void).cxx_destruct;
 - (void)_callDelegate:(id)arg1 error:(id)arg2;
-- (void)_getSnapshot;
+- (void)_getSnapshot:(unsigned int)arg1;
 - (void)_handleSnapshotFile:(id)arg1 error:(id)arg2;
 - (id)accessory;
 - (void)dealloc;
 - (id)delegate;
 - (id)delegateQueue;
-- (void)getSnapshot;
+- (void)getSnapshot:(unsigned int)arg1;
 - (id)initWithSessionID:(id)arg1 workQueue:(id)arg2 options:(id)arg3 accessory:(id)arg4 delegate:(id)arg5 delegateQueue:(id)arg6 snapshotRequestHandler:(id)arg7;
 - (id)logIdentifier;
 - (id)options;

@@ -18,6 +18,7 @@
 
 - (void).cxx_destruct;
 - (BOOL)attachRawAPIData;
+- (void)cleanup;
 - (id /* block */)completionHandler;
 - (void)handleResponse:(id)arg1;
 - (id)initWithLocation:(id)arg1 locale:(id)arg2 completionHandler:(id /* block */)arg3;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDCameraSnapshotSender : NSObject <HMFLogging> {
+@interface HMDCameraSnapshotSender : NSObject <HMDCameraPowerAssertionProtocol, HMFLogging> {
     HMDAccessory * _accessory;
     NSObject<OS_dispatch_queue> * _delegateQueue;
     NSString * _destinationID;

@@ -31,12 +31,12 @@
 + (id)logCategory;
 
 - (void).cxx_destruct;
-- (void)_callStreamFirstFrameReceived:(unsigned int)arg1;
+- (void)_callStreamFirstFrameReceived:(unsigned int)arg1 aspectRatio:(id)arg2;
 - (void)_callStreamNegotiated:(id)arg1;
 - (void)_callStreamReconfigured;
 - (void)_callStreamRemoteConnectionSetup;
 - (void)_callStreamStarted;
-- (void)_callStreamStopped;
+- (void)_callStreamStopped:(id)arg1;
 - (void)_cleanUpStreamSession;
 - (void)_reportError:(id)arg1;
 - (void)_reportErrorCode:(int)arg1;

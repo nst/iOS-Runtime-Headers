@@ -25,11 +25,13 @@
 - (void)dealloc;
 - (void)didEndUnexpectedly;
 - (void)didStartSession:(id)arg1;
+- (void)didStartSessionWithoutQueue:(id)arg1;
 - (void)endSession;
 - (void)endSessionWithCompletion:(id /* block */)arg1;
 - (id)init;
 - (BOOL)isFirstInQueue;
 - (id)proxy;
+- (id)remoteObjectProxyWithErrorHandler:(id /* block */)arg1;
 - (void)resume;
 - (void)setDidEndCallback:(id /* block */)arg1;
 - (void)setDidStartCallback:(id /* block */)arg1;

@@ -4,6 +4,7 @@
 
 @interface SSVPlayActivityEventItemIDs : NSObject <NSCoding, NSCopying, NSMutableCopying, NSSecureCoding> {
     unsigned long long  _cloudID;
+    long long  _equivalencySourceAdamID;
     NSString * _lyricsID;
     long long  _purchasedAdamID;
     long long  _radioAdamID;
@@ -11,6 +12,7 @@
 }
 
 @property (nonatomic, readonly) unsigned long long cloudID;
+@property (nonatomic, readonly) long long equivalencySourceAdamID;
 @property (nonatomic, readonly, copy) NSString *lyricsID;
 @property (nonatomic, readonly) long long purchasedAdamID;
 @property (nonatomic, readonly) long long radioAdamID;
@@ -24,6 +26,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (long long)equivalencySourceAdamID;
 - (id)initWithCoder:(id)arg1;
 - (id)lyricsID;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;

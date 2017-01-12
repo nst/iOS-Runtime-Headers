@@ -9,12 +9,11 @@
 @property (nonatomic, retain) UIImage *_contentImage;
 
 - (void).cxx_destruct;
-- (void)_commonInit;
 - (id)_contentImage;
-- (float)_cornerRadius;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_imageInsets;
 - (struct CGSize { float x1; float x2; })_imageSize;
 - (id)_maskImage;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (void)set_contentImage:(id)arg1;
 

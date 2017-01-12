@@ -10,6 +10,7 @@
     NSObject<OS_dispatch_queue> * _objectDisposalQueue;
     NSObject<OS_dispatch_queue> * _observerConcurrentQueue;
     NSHashTable * _observers;
+    id /* block */  _pairingChangeHandler;
     NFSecureElement * _secureElement;
     NSArray * _secureElementArray;
 }
@@ -32,6 +33,7 @@
 
 - (void).cxx_destruct;
 - (void)SEPPairingInfoWithCompletion:(id /* block */)arg1;
+- (void)_registerPairingChangeHandler;
 - (void)allAppletsWithCompletion:(id /* block */)arg1;
 - (void)appletWithIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (void)connectToServerWithPushTopic:(id)arg1 completion:(id /* block */)arg2;

@@ -8,6 +8,7 @@
     BOOL  _invalid;
     int  _listenerResumedToken;
     NSMutableArray * _observers;
+    NSObject<OS_dispatch_queue> * _xpcSetupQueue;
 }
 
 @property (retain) NSXPCConnection *connection;
@@ -15,6 +16,7 @@
 @property (getter=isInvalid) BOOL invalid;
 @property int listenerResumedToken;
 @property (retain) NSMutableArray *observers;
+@property (retain) NSObject<OS_dispatch_queue> *xpcSetupQueue;
 
 + (id)advertiserClientInterface;
 + (id)advertiserInterface;
@@ -33,6 +35,8 @@
 - (void)activityAdvertiserProxyForClient:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)addAirDropClientToManager:(id)arg1 withFailureHandler:(id /* block */)arg2;
 - (void)airdropTransferDataProviderForClient:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)appleAccountSignedIn;
+- (void)appleAccountSignedOut;
 - (id)connection;
 - (void)continuityScannerProxyForClient:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)dealloc;
@@ -52,11 +56,13 @@
 - (void)setInvalid:(BOOL)arg1;
 - (void)setListenerResumedToken:(int)arg1;
 - (void)setObservers:(id)arg1;
+- (void)setXpcSetupQueue:(id)arg1;
 - (void)setupConnection;
 - (void)streamsForMessage:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)unlockManagerWithCompletionHandler:(id /* block */)arg1;
 - (void)unregisterObserver:(id)arg1;
 - (void)userDidPerformActionWithType:(unsigned int)arg1 andRecordID:(id)arg2;
 - (void)userDidSelectAppWithIndex:(id)arg1 forRecordID:(id)arg2;
+- (id)xpcSetupQueue;
 
 @end

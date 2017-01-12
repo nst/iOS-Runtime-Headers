@@ -7,12 +7,14 @@
     BOOL  _canRunAutomaticForegroundAnalysis;
     BOOL  _canRunUserInitiatedForegroundAnalysis;
     BOOL  _canUseNetwork;
+    BOOL  _turboMode;
 }
 
 @property (nonatomic, readonly) BOOL canRunAutomaticBackgroundAnalysis;
 @property (nonatomic, readonly) BOOL canRunAutomaticForegroundAnalysis;
 @property (nonatomic, readonly) BOOL canRunUserInitiatedForegroundAnalysis;
 @property (nonatomic, readonly) BOOL canUseNetwork;
+@property (getter=isTurboMode, nonatomic) BOOL turboMode;
 
 + (id)constraintsWithAllAllowances;
 + (id)constraintsWithNoAllowances;
@@ -28,6 +30,8 @@
 - (id)initFromBitString:(id)arg1;
 - (id)initWithCanRunAutomaticBackgroundAnalysis:(BOOL)arg1 canRunAutomaticForegroundAnalysis:(BOOL)arg2 canRunUserInitiatedForegroundAnalysis:(BOOL)arg3 canUseNetwork:(BOOL)arg4;
 - (BOOL)isEqualToConstraints:(id)arg1;
+- (BOOL)isTurboMode;
+- (void)setTurboMode:(BOOL)arg1;
 - (id)statusAsDictionary;
 
 @end

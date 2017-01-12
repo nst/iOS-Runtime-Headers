@@ -6,6 +6,7 @@
     int  _HDRMode;
     float * _ISOs;
     int  _SISMode;
+    BOOL  _autoShallowDepthOfFieldEffectEnabled;
     unsigned int  _bracketImageCount;
     int  _bracketType;
     int  _bravoImageFusionMode;
@@ -44,6 +45,7 @@
 @property (nonatomic) int HDRMode;
 @property (nonatomic, readonly) float*ISOs;
 @property (nonatomic) int SISMode;
+@property (nonatomic) BOOL autoShallowDepthOfFieldEffectEnabled;
 @property (nonatomic, readonly) unsigned int bracketImageCount;
 @property (nonatomic, readonly) int bracketType;
 @property (nonatomic) int bravoImageFusionMode;
@@ -86,6 +88,7 @@
 - (float*)ISOs;
 - (int)SISMode;
 - (void)_teardownBracketStorage;
+- (BOOL)autoShallowDepthOfFieldEffectEnabled;
 - (unsigned int)bracketImageCount;
 - (int)bracketType;
 - (int)bravoImageFusionMode;
@@ -119,6 +122,7 @@
 - (BOOL)providesOriginalImage;
 - (unsigned int)rawOutputFormat;
 - (float)scaleFactor;
+- (void)setAutoShallowDepthOfFieldEffectEnabled:(BOOL)arg1;
 - (void)setBracketType:(int)arg1 imageCount:(unsigned int)arg2;
 - (void)setBravoImageFusionMode:(int)arg1;
 - (void)setFlashMode:(int)arg1;

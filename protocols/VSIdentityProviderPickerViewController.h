@@ -18,4 +18,8 @@
 - (void)setRequestingAppDisplayName:(NSString *)arg1;
 - (void)setResourceTitle:(NSString *)arg1;
 
+@optional
+
+- (void)deselectSelectedProviderAnimated:(BOOL)arg1;
+
 @end

@@ -10,6 +10,7 @@
     BOOL  _isBuddy;
     BOOL  _isHeySiriAlwaysOn;
     BOOL  _isIpad;
+    BOOL  _isLargeIpad;
     BOOL  _needMoreLineSpacing;
 }
 
@@ -32,14 +33,15 @@
 - (id)deviceSetupImage;
 - (int)enrollmentMode;
 - (float)flamesHeight;
-- (float)footerButtonBaselineFromFooterTop;
 - (id)footerButtonFont;
+- (float)footerContinueButtonMinBaselineFromText;
 - (float)footerHorizontalPadding;
 - (id)footerLabelFont;
 - (float)footerLabelLineHeight;
 - (BOOL)footerShouldPinToImage;
-- (float)footerTextBaselineFromBottom;
-- (float)footerTextBaselineOffsetFromButton;
+- (float)footerSkipButtonBaselineFromBottom;
+- (float)footerSkipButtonBaselineFromContinueButton;
+- (float)footerTextBaselineFromTop;
 - (id)footerTextColor;
 - (id)headerTitleFont;
 - (float)headerTitleLinespacing;

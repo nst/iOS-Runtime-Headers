@@ -28,6 +28,7 @@
 - (void)_handleNextButtonTapped:(id)arg1;
 - (void)_setIdleTimerDisabled:(BOOL)arg1 title:(id)arg2 subtitle:(id)arg3;
 - (void)_setNavigationBarEnabled:(BOOL)arg1;
+- (void)_setTableViewHeaderActivitySpinnerAnimated:(BOOL)arg1 title:(id)arg2 subtitle:(id)arg3;
 - (void)_triggerNextActionLoop;
 - (id)allCells;
 - (id)cellForIdentifier:(id)arg1;
@@ -42,6 +43,7 @@
 - (id)fieldsModel;
 - (id)firstEmptyCell;
 - (id)firstEmptyField;
+- (id)firstEmptySetupField;
 - (id)firstResponderCell;
 - (id)footerView;
 - (void)handleNextActionError:(id)arg1 shouldContinue:(BOOL)arg2 withCompletion:(id /* block */)arg3;
@@ -61,6 +63,7 @@
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (id)readonlyFieldIdentifiers;
 - (void)setFieldsModel:(id)arg1;
+- (void)setHeaderViewTitle:(id)arg1 subtitle:(id)arg2;
 - (void)setSetupDelegate:(id)arg1;
 - (void)setWebService:(id)arg1;
 - (id)setupDelegate;

@@ -48,6 +48,7 @@
 - (id)HDRButton;
 - (id)_allowedControls;
 - (id)_allowedControlsForPanoramaMode;
+- (id)_allowedControlsForPortraitMode;
 - (id)_allowedControlsForSquareMode;
 - (id)_allowedControlsForStillImageMode;
 - (id)_allowedControlsForTimelapseMode;

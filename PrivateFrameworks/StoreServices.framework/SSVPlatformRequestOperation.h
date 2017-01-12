@@ -3,6 +3,7 @@
  */
 
 @interface SSVPlatformRequestOperation : NSOperation {
+    NSMutableDictionary * _additionalHeaderFields;
     NSMutableDictionary * _additionalParameters;
     NSString * _caller;
     SSVPlatformContext * _context;
@@ -50,9 +51,11 @@
 - (void)setResponseBlock:(id /* block */)arg1;
 - (void)setStoreFrontSuffix:(id)arg1;
 - (void)setTimeoutInterval:(id)arg1;
+- (void)setValue:(id)arg1 forHTTPHeaderField:(id)arg2;
 - (void)setValue:(id)arg1 forRequestParameter:(id)arg2;
 - (id)storeFrontSuffix;
 - (id)timeoutInterval;
+- (id)valueForHTTPHeaderField:(id)arg1;
 - (id)valueForRequestParameter:(id)arg1;
 
 @end

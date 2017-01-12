@@ -218,10 +218,12 @@
 - (id)_extractImageFromMetadata:(id)arg1;
 - (void)_firstVideoFrameDisplayed:(id)arg1;
 - (BOOL)_hasEnoughDataToPlay;
+- (BOOL)_hasValidPlayerTime;
 - (BOOL)_isChangingPlayerProperties;
 - (void)_isExternalPlaybackActiveDidChange:(id)arg1;
 - (BOOL)_isVideoLayerAttachedToPlayer;
 - (void)_itemAssetIsLoadedNotification:(id)arg1;
+- (void)_itemBookmarkTimeDidChangeNotification:(id)arg1;
 - (void)_itemDidChange:(id)arg1;
 - (void)_itemFailedToPlayToEnd:(id)arg1;
 - (void)_itemFailedToPlayToEndNotification:(id)arg1;
@@ -232,7 +234,6 @@
 - (void)_itemTimeMarkersAvailableNotification:(id)arg1;
 - (void)_itemTypeAvailableNotification:(id)arg1;
 - (void)_itemWillChange:(id)arg1;
-- (void)_mediaLibraryDynamicPropertiesDidChangeNotification:(id)arg1;
 - (void)_networkChangedNotification:(id)arg1;
 - (void)_pauseBookkeepingTimer;
 - (void)_pausePlaybackIfNecessary;
@@ -285,8 +286,7 @@
 - (void)_unregisterForPlaylistManager:(id)arg1;
 - (void)_updateCurrentItemBookkeepingForTimerCallback;
 - (void)_updateCurrentItemBookkeepingMarkedAsCheckpoint:(BOOL)arg1;
-- (void)_updateCurrentTimeToBookmarkTimeForDynamicPropertyChange;
-- (void)_updateCurrentTimeToNextStartTimeForQueueFeeder:(id)arg1 withItemIndex:(int)arg2;
+- (void)_updateLastSetTimeForCurrentItemIfNeeded;
 - (void)_updatePlaybackModeForItem:(id)arg1;
 - (void)_updateProgress:(struct __CFRunLoopTimer { }*)arg1;
 - (void)_updateScanningRate;

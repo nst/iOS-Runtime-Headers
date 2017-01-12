@@ -3,19 +3,27 @@
  */
 
 @interface PKPaymentTransactionTableCell : PKTableViewCell {
+    UIColor * _primaryColor;
     UILabel * _primaryLabel;
     NSString * _primaryString;
+    UIColor * _secondaryColor;
     UILabel * _secondaryLabel;
     NSString * _secondaryString;
+    UIColor * _tertiaryColor;
     UILabel * _tertiaryLabel;
     NSString * _tertiaryString;
+    UIColor * _transactionValueColor;
     UILabel * _transactionValueLabel;
     NSString * _transactionValueString;
 }
 
+@property (nonatomic, retain) UIColor *primaryColor;
 @property (nonatomic, retain) NSString *primaryString;
+@property (nonatomic, retain) UIColor *secondaryColor;
 @property (nonatomic, retain) NSString *secondaryString;
+@property (nonatomic, retain) UIColor *tertiaryColor;
 @property (nonatomic, retain) NSString *tertiaryString;
+@property (nonatomic, retain) UIColor *transactionValueColor;
 @property (nonatomic, retain) NSString *transactionValueString;
 
 + (id)primaryLabelFont;
@@ -27,21 +35,26 @@
 - (void).cxx_destruct;
 - (id)defaultPrimaryColor;
 - (id)defaultSecondaryColor;
-- (id)defaultTertiaryValueColor;
+- (id)defaultTertiaryColor;
 - (id)defaultTransactionValueColor;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
 - (void)prepareForReuse;
+- (id)primaryColor;
 - (id)primaryString;
+- (id)secondaryColor;
 - (id)secondaryString;
 - (void)setPrimaryColor:(id)arg1;
 - (void)setPrimaryString:(id)arg1;
 - (void)setSecondaryColor:(id)arg1;
 - (void)setSecondaryString:(id)arg1;
+- (void)setTertiaryColor:(id)arg1;
 - (void)setTertiaryString:(id)arg1;
 - (void)setTransactionValueColor:(id)arg1;
 - (void)setTransactionValueString:(id)arg1;
+- (id)tertiaryColor;
 - (id)tertiaryString;
+- (id)transactionValueColor;
 - (id)transactionValueString;
 
 @end

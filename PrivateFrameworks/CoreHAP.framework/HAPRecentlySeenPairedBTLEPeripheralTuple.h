@@ -30,7 +30,7 @@
 @property (nonatomic, readonly) double lastSeen;
 @property (nonatomic) BOOL monitorState;
 @property (nonatomic) BOOL notifyingCharacteristicUpdated;
-@property (nonatomic, readonly) CBPeripheral *peripheral;
+@property (nonatomic, retain) CBPeripheral *peripheral;
 @property (nonatomic, retain) NSNumber *stateNumber;
 @property (nonatomic, retain) NSNumber *statusFlags;
 
@@ -53,6 +53,7 @@
 - (void)setConnectionPriority:(unsigned int)arg1;
 - (void)setMonitorState:(BOOL)arg1;
 - (void)setNotifyingCharacteristicUpdated:(BOOL)arg1;
+- (void)setPeripheral:(id)arg1;
 - (void)setStateNumber:(id)arg1;
 - (void)setStatusFlags:(id)arg1;
 - (id)stateNumber;

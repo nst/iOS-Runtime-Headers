@@ -18,7 +18,7 @@
     UIImageView * _imageView;
     BOOL  _needsSpotlightUpdate;
     CAShapeLayer * _spotlightLayer;
-    <PXFaceCollection> * _suggestion;
+    <PXPerson> * _suggestion;
     UIView * _suggestionView;
     BOOL  _validSpotlight;
 }
@@ -29,7 +29,7 @@
 @property (nonatomic, retain) UIImageView *imageView;
 @property BOOL needsSpotlightUpdate;
 @property (nonatomic, retain) CAShapeLayer *spotlightLayer;
-@property (nonatomic, readonly) <PXFaceCollection> *suggestion;
+@property (nonatomic, readonly) <PXPerson> *suggestion;
 @property (nonatomic, retain) UIView *suggestionView;
 @property BOOL validSpotlight;
 

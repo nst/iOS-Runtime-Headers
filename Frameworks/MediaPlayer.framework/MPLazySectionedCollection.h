@@ -27,6 +27,7 @@
 - (void)enumerateSectionsUsingBlock:(id /* block */)arg1;
 - (id)firstItem;
 - (id)firstSection;
+- (BOOL)hasSameContentAsSectionedCollection:(id)arg1;
 - (id)identifiersForItemAtIndexPath:(id)arg1;
 - (id)identifiersForSectionAtIndex:(int)arg1;
 - (id)indexPathForItemWithIdentifiersIntersectingSet:(id)arg1;

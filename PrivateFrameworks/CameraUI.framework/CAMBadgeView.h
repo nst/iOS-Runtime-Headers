@@ -2,16 +2,26 @@
    Image: /System/Library/PrivateFrameworks/CameraUI.framework/CameraUI
  */
 
-@interface CAMBadgeView : UIView
+@interface CAMBadgeView : UIView {
+    UIColor * __contentColor;
+    UIColor * __fillColor;
+    float  __fillCornerRadius;
+}
 
-- (void)_commonInit;
+@property (setter=_setContentColor:, nonatomic, retain) UIColor *_contentColor;
+@property (setter=_setFillColor:, nonatomic, retain) UIColor *_fillColor;
+@property (setter=_setFillCornerRadius:, nonatomic) float _fillCornerRadius;
+
+- (void).cxx_destruct;
 - (id)_contentColor;
-- (float)_cornerRadius;
+- (id)_fillColor;
+- (float)_fillCornerRadius;
 - (id)_maskImage;
+- (void)_setContentColor:(id)arg1;
+- (void)_setFillColor:(id)arg1;
+- (void)_setFillCornerRadius:(float)arg1;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (void)tintColorDidChange;
 
 @end

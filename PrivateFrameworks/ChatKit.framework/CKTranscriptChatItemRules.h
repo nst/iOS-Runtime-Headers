@@ -4,7 +4,6 @@
 
 @interface CKTranscriptChatItemRules : IMTranscriptChatItemRules
 
-- (BOOL)shouldShowExpressiveMessageTextAsText:(id)arg1;
 - (BOOL)shouldShowRaiseMessageStatus;
 
 @end

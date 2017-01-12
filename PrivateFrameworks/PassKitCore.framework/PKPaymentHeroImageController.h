@@ -23,11 +23,13 @@
 - (id)_debugString;
 - (void)beginDownloadingRemoteImages;
 - (void)beginDownloadingRemoteImagesWithCompletion:(id /* block */)arg1;
+- (BOOL)containsPaymentCredentialType:(int)arg1;
 - (id)delegate;
 - (void)downloadRemoteImageForNetwork:(id)arg1 completion:(id /* block */)arg2;
 - (id)featuredNetworksImageData;
 - (struct CGSize { float x1; float x2; })imageSizeForScreenSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)initWithManifest:(id)arg1 featuredNetworks:(id)arg2;
+- (id)initWithManifest:(id)arg1 featuredNetworks:(id)arg2 webService:(id)arg3;
 - (id)primaryFeaturedNetwork;
 - (void)setDelegate:(id)arg1;
 - (void)setWatchSize:(int)arg1;

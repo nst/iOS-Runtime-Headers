@@ -7,6 +7,7 @@
     NSString * _characteristicInstanceID;
     NSString * _serviceInstanceID;
     NSString * _updateIdentifier;
+    id  _value;
 }
 
 @property (nonatomic, readonly) NSString *accessoryUUID;
@@ -17,6 +18,7 @@
 @property (nonatomic, readonly) NSString *serviceInstanceID;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSString *updateIdentifier;
+@property (nonatomic, readonly) id value;
 
 + (id)logCategory;
 
@@ -24,11 +26,12 @@
 - (id)accessoryUUID;
 - (id)characteristicInstanceID;
 - (id)description;
-- (id)initWithAccessoryUUID:(id)arg1 serviceInstanceID:(id)arg2 characteristicInstanceID:(id)arg3 updateIdentifier:(id)arg4;
+- (id)initWithAccessoryUUID:(id)arg1 serviceInstanceID:(id)arg2 characteristicInstanceID:(id)arg3 updateIdentifier:(id)arg4 value:(id)arg5;
 - (id)logIdentifier;
 - (BOOL)matchesAccessoryUUID:(id)arg1 serviceInstanceID:(id)arg2 characteristicInstanceID:(id)arg3;
 - (BOOL)matchesCharacterisitic:(id)arg1;
 - (id)serviceInstanceID;
 - (id)updateIdentifier;
+- (id)value;
 
 @end

@@ -219,4 +219,8 @@
 - (void)setBirthdays:(id)arg1;
 - (void)updateContactType:(BOOL)arg1;
 
+// Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
+
+- (void)populateNamesFromComponents:(id)arg1;
+
 @end

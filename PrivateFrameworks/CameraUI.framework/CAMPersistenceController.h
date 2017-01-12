@@ -96,8 +96,8 @@
 - (id)_protectionController;
 - (id)_remotePersistenceQueue;
 - (id)_remotePersistenceThumbnailGenerator;
-- (void)_remotelyPersistStillImageJob:(id)arg1 forRequest:(id)arg2 withCompletionHandler:(id /* block */)arg3;
-- (void)_remotelyPersistVideoJob:(id)arg1 forRequest:(id)arg2 withCompletionHandler:(id /* block */)arg3;
+- (void)_remotelyPersistStillImageJob:(id)arg1 forRequest:(id)arg2 withSendHandler:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
+- (void)_remotelyPersistVideoJob:(id)arg1 forRequest:(id)arg2 withSendHandler:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
 - (void)_removeCoordinationGroupForIdentifier:(id)arg1;
 - (void)_removeDispatchGroupForImageGroupIdentifier:(id)arg1;
 - (id)_resultDelegateIsolationQueue;

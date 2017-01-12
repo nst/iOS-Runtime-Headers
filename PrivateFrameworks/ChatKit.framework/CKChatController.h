@@ -338,6 +338,7 @@
 - (int)preferredStatusBarStyle;
 - (BOOL)prefersStatusBarHidden;
 - (void)prepareForSuspend;
+- (void)prepareToDismissForSecondInstance;
 - (void)presentTrimControllerForMediaObject:(id)arg1;
 - (void)presentationController:(id)arg1 willPresentWithAdaptiveStyle:(int)arg2 transitionCoordinator:(id)arg3;
 - (id)presentedControllerDoneButtonItem;

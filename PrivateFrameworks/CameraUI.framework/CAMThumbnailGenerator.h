@@ -13,6 +13,7 @@
 @property (nonatomic, readonly) NSMapTable *_generationQueueRotationSessionsMapTable;
 
 - (void).cxx_destruct;
+- (id)_extractedIsolatedColorspacePropertiesFromMetadata:(id)arg1;
 - (id)_generationQueue;
 - (struct OpaqueVTPixelTransferSession { }*)_generationQueuePixelTransferSession;
 - (id)_generationQueueRotationSessionsMapTable;
@@ -23,7 +24,7 @@
 - (id)init;
 - (struct CGImage { }*)newBGRAImageInOrientation:(int)arg1 usingSurface:(void*)arg2;
 - (struct CGImage { }*)newBGRAImageOfFormat:(int)arg1 inOrientation:(int)arg2 usingSurface:(void*)arg3;
-- (id)newJPEGDataInOrientation:(int)arg1 usingSurface:(void*)arg2;
-- (id)newJPEGDataOfFormat:(int)arg1 inOrientation:(int)arg2 usingSurface:(void*)arg3;
+- (id)newJPEGDataInOrientation:(int)arg1 usingSurface:(void*)arg2 withMetadata:(id)arg3;
+- (id)newJPEGDataOfFormat:(int)arg1 inOrientation:(int)arg2 usingSurface:(void*)arg3 withMetadata:(id)arg4;
 
 @end

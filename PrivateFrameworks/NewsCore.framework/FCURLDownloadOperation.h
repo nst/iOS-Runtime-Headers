@@ -50,6 +50,7 @@
 - (void)setTimingData:(id)arg1;
 - (void)setURLRequest:(id)arg1;
 - (void)setURLSession:(id)arg1;
+- (id)throttleGroup;
 - (id)timingData;
 - (BOOL)validateOperation;
 

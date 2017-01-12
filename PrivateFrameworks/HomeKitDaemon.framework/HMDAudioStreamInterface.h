@@ -75,6 +75,8 @@
 - (void)stream:(id)arg1 didPause:(BOOL)arg2 error:(id)arg3;
 - (void)stream:(id)arg1 didResume:(BOOL)arg2 error:(id)arg3;
 - (void)stream:(id)arg1 didStart:(BOOL)arg2 error:(id)arg3;
+- (void)streamDidRTCPTimeOut:(id)arg1;
+- (void)streamDidRTPTimeOut:(id)arg1;
 - (void)streamDidServerDie:(id)arg1;
 - (void)streamDidStop:(id)arg1;
 - (BOOL)streamStarted;

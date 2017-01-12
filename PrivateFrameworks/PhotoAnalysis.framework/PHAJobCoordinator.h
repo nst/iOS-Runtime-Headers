@@ -22,6 +22,8 @@
     NSObject<OS_os_transaction> * _runningJobTransaction;
     BOOL  _shouldIgnoreConstraintChanges;
     PHAAnalysisStateObserver * _stateObserver;
+    BOOL  _turboMode;
+    NSObject<OS_voucher> * _turboModeBoostVoucher;
     NSMutableArray * _waitingForegroundJobs;
     PHAWorkerWarmer * _warmer;
     NSMutableSet * _workerTypesServicedForUserFG;
@@ -52,6 +54,7 @@
 @property (nonatomic) BOOL shouldIgnoreConstraintChanges;
 @property (nonatomic, readonly) PHAAnalysisStateObserver *stateObserver;
 @property (readonly) Class superclass;
+@property (getter=isTurboMode, nonatomic) BOOL turboMode;
 @property (nonatomic, readonly) NSMutableArray *waitingForegroundJobs;
 @property (nonatomic, readonly) PHAWorkerWarmer *warmer;
 @property (nonatomic, retain) NSMutableSet *workerTypesServicedForUserFG;
@@ -99,6 +102,7 @@
 - (id)initWithManager:(id)arg1;
 - (id)initWithManager:(id)arg1 initialConstraints:(id)arg2 additionalWorkersByType:(id)arg3;
 - (BOOL)isQuiescent;
+- (BOOL)isTurboMode;
 - (id)jobCoalescer;
 - (void)jobCoalescer:(id)arg1 didProduceJob:(id)arg2;
 - (void)jobConstraintsObserver:(id)arg1 constraintsDidChange:(id)arg2 mask:(id)arg3;
@@ -123,6 +127,7 @@
 - (void)setQueue:(id)arg1;
 - (void)setRunningJobTransaction:(id)arg1;
 - (void)setShouldIgnoreConstraintChanges:(BOOL)arg1;
+- (void)setTurboMode:(BOOL)arg1;
 - (void)setWorkerTypesServicedForUserFG:(id)arg1;
 - (BOOL)shouldIgnoreConstraintChanges;
 - (id)stateObserver;

@@ -5,7 +5,6 @@
 @interface AVCaptureDeviceInputInternal : NSObject {
     BOOL  authorizedForCamera;
     AVCaptureDevice * device;
-    <AVCallbackCancellation> * deviceClockCallbackInvoker;
     <AVCallbackCancellation> * deviceOpenCallbackInvoker;
     NSArray * ports;
     BOOL  ready;

@@ -4,7 +4,9 @@
 
 @interface SFDeviceDiscovery : NSObject <NSSecureCoding, SFXPCInterface> {
     BOOL  _activateCalled;
+    unsigned long long  _activateTicks;
     unsigned int  _changeFlags;
+    NSObject<OS_dispatch_source> * _consoleUserTimer;
     id /* block */  _deviceChangedHandler;
     NSSet * _deviceFilter;
     id /* block */  _deviceFoundHandler;
@@ -42,11 +44,12 @@
 
 - (void).cxx_destruct;
 - (void)_activateWithCompletion:(id /* block */)arg1;
-- (void)_ensureXPCStarted;
+- (long)_ensureXPCStarted;
 - (void)_interrupted;
 - (void)_invalidate;
 - (void)_invalidated;
 - (void)_invokeBlockActivateSafe:(id /* block */)arg1;
+- (void)_retryConsole;
 - (void)activateWithCompletion:(id /* block */)arg1;
 - (unsigned int)changeFlags;
 - (void)dealloc;

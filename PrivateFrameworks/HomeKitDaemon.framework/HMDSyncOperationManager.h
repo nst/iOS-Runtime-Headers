@@ -31,6 +31,7 @@
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *workQueue;
 
 - (void).cxx_destruct;
+- (void)_createCloudPushDelayTimer;
 - (void)_handleCancelledOperations:(id)arg1;
 - (void)_handleNextOperation;
 - (void)addOperation:(id)arg1;
@@ -49,6 +50,7 @@
 - (void)pauseCloudPush;
 - (int)pauseCloudPushLevel;
 - (id)propertyQueue;
+- (void)resetCloudPushTimer;
 - (void)resumeCloudPush;
 - (void)setCloudMergeOperations:(id)arg1;
 - (void)setCloudPushDelayTimer:(id)arg1;

@@ -23,8 +23,11 @@
     int  _maskingAspectRatio;
     int  _orientation;
     CAMPanoramaView * _panoramaView;
+    CAMPortraitModeDescriptionOverlayView * _portraitModeDescriptionOverlayView;
+    CAMPortraitModeInstructionLabel * _portraitModeInstructionLabel;
     CAMPreviewView * _previewView;
     int  _previewViewOrientation;
+    CAMShallowDepthOfFieldBadge * _shallowDepthOfFieldBadge;
     CUShutterButton * _shutterButton;
     CAMShutterIndicatorView * _shutterIndicatorView;
     CAMTimerIndicatorView * _timerIndicatorView;
@@ -54,8 +57,11 @@
 @property (nonatomic) int maskingAspectRatio;
 @property (nonatomic) int orientation;
 @property (nonatomic, retain) CAMPanoramaView *panoramaView;
+@property (nonatomic, retain) CAMPortraitModeDescriptionOverlayView *portraitModeDescriptionOverlayView;
+@property (nonatomic, retain) CAMPortraitModeInstructionLabel *portraitModeInstructionLabel;
 @property (nonatomic, retain) CAMPreviewView *previewView;
 @property (nonatomic) int previewViewOrientation;
+@property (nonatomic, retain) CAMShallowDepthOfFieldBadge *shallowDepthOfFieldBadge;
 @property (nonatomic, retain) CUShutterButton *shutterButton;
 @property (nonatomic, retain) CAMShutterIndicatorView *shutterIndicatorView;
 @property (nonatomic, retain) CAMTimerIndicatorView *timerIndicatorView;
@@ -80,12 +86,13 @@
 - (BOOL)_isAdjustingTopBarOrientationForLayoutStyle:(int)arg1;
 - (void)_layoutBadgeForTinyLayoutStyle:(id)arg1;
 - (void)_layoutBadgesForLayoutStyle:(int)arg1;
-- (void)_layoutBottomCenteredView:(id)arg1 forLayoutStyle:(int)arg2;
+- (void)_layoutBottomCenteredView:(id)arg1 aboveView:(id)arg2 aboveViewSpacing:(float)arg3 forLayoutStyle:(int)arg4;
 - (void)_layoutBurstIndicatorForLayoutStyle:(int)arg1;
 - (void)_layoutElapsedTimeViewForLayoutStyle:(int)arg1;
 - (void)_layoutFlipButtonForLayoutStyle:(int)arg1;
 - (void)_layoutFramerateIndicatorViewForLayoutStyle:(int)arg1;
 - (void)_layoutPanoramaViewForLayoutStyle:(int)arg1;
+- (void)_layoutPortraitModeDescriptionOverlayView;
 - (void)_layoutShutterButtonForLayoutStyle:(int)arg1;
 - (void)_layoutShutterIndicatorForLayoutStyle:(int)arg1;
 - (void)_layoutSnapshotsOfPreviewView;
@@ -127,6 +134,8 @@
 - (void)openForReason:(int)arg1 animated:(BOOL)arg2 withCompletionHandler:(id /* block */)arg3;
 - (int)orientation;
 - (id)panoramaView;
+- (id)portraitModeDescriptionOverlayView;
+- (id)portraitModeInstructionLabel;
 - (void)prepareForAutorotation;
 - (id)previewView;
 - (int)previewViewOrientation;
@@ -149,8 +158,11 @@
 - (void)setOrientation:(int)arg1;
 - (void)setOrientation:(int)arg1 animated:(BOOL)arg2;
 - (void)setPanoramaView:(id)arg1;
+- (void)setPortraitModeDescriptionOverlayView:(id)arg1;
+- (void)setPortraitModeInstructionLabel:(id)arg1;
 - (void)setPreviewView:(id)arg1;
 - (void)setPreviewViewOrientation:(int)arg1;
+- (void)setShallowDepthOfFieldBadge:(id)arg1;
 - (void)setShutterButton:(id)arg1;
 - (void)setShutterIndicatorView:(id)arg1;
 - (void)setTimerIndicatorView:(id)arg1;
@@ -158,6 +170,7 @@
 - (void)setVisibilityDelegate:(id)arg1;
 - (void)setZoomControl:(id)arg1;
 - (void)setZoomSlider:(id)arg1;
+- (id)shallowDepthOfFieldBadge;
 - (id)shutterButton;
 - (id)shutterIndicatorView;
 - (struct CGSize { float x1; float x2; })systemLayoutSizeFittingSize:(struct CGSize { float x1; float x2; })arg1;

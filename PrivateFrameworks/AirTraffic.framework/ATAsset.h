@@ -30,11 +30,15 @@
     NSString * _prettyName;
     unsigned int  _priority;
     id /* block */  _progressBlock;
+    double  _queueDuration;
+    double  _queueStartTime;
     BOOL  _readyForStore;
     ATStoreInfo * _storeInfo;
     long long  _storePID;
     NSString * _storePlist;
     unsigned long long  _totalBytes;
+    double  _transferDuration;
+    double  _transferStartTime;
     NSDictionary * _variantOptions;
 }
 
@@ -65,11 +69,15 @@
 @property (nonatomic, retain) NSString *prettyName;
 @property (nonatomic) unsigned int priority;
 @property (nonatomic, copy) id /* block */ progressBlock;
+@property (nonatomic) double queueDuration;
+@property (nonatomic) double queueStartTime;
 @property (nonatomic) BOOL readyForStore;
 @property (nonatomic, retain) ATStoreInfo *storeInfo;
 @property (nonatomic) long long storePID;
 @property (nonatomic, retain) NSString *storePlist;
 @property (nonatomic) unsigned long long totalBytes;
+@property (nonatomic) double transferDuration;
+@property (nonatomic) double transferStartTime;
 @property (nonatomic, retain) NSDictionary *variantOptions;
 
 + (id)assetWithSerializedAsset:(id)arg1;
@@ -115,6 +123,8 @@
 - (id)prettyName;
 - (unsigned int)priority;
 - (id /* block */)progressBlock;
+- (double)queueDuration;
+- (double)queueStartTime;
 - (BOOL)readyForStore;
 - (id)serializedAsset;
 - (void)setAssetState:(int)arg1;
@@ -144,17 +154,23 @@
 - (void)setPrettyName:(id)arg1;
 - (void)setPriority:(unsigned int)arg1;
 - (void)setProgressBlock:(id /* block */)arg1;
+- (void)setQueueDuration:(double)arg1;
+- (void)setQueueStartTime:(double)arg1;
 - (void)setReadyForStore:(BOOL)arg1;
 - (void)setStoreInfo:(id)arg1;
 - (void)setStorePID:(long long)arg1;
 - (void)setStorePlist:(id)arg1;
 - (void)setTotalBytes:(unsigned long long)arg1;
+- (void)setTransferDuration:(double)arg1;
+- (void)setTransferStartTime:(double)arg1;
 - (void)setVariantOptions:(id)arg1;
 - (id)shortDescription;
 - (id)storeInfo;
 - (long long)storePID;
 - (id)storePlist;
 - (unsigned long long)totalBytes;
+- (double)transferDuration;
+- (double)transferStartTime;
 - (id)variantOptions;
 
 @end

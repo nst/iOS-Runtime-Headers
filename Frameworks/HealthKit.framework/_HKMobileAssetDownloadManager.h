@@ -26,7 +26,7 @@
 - (void)_callErrorHandlerWithError:(id)arg1;
 - (void)_queue_downloadAssets:(id)arg1 completionOverride:(id /* block */)arg2;
 - (void)_queue_fetchAssetsWithLocalInformation:(BOOL)arg1 shouldRequery:(BOOL)arg2 predicate:(id)arg3;
-- (void)_queue_fetchAssetsWithPredicate:(id)arg1 completion:(id /* block */)arg2;
+- (void)_queue_fetchAssetsWithPredicate:(id)arg1 onlyLocal:(BOOL)arg2 completion:(id /* block */)arg3;
 - (void)dealloc;
 - (void)downloadAssets:(id)arg1 completion:(id /* block */)arg2;
 - (void)downloadAssetsWithPredicate:(id)arg1;
@@ -34,7 +34,7 @@
 - (id /* block */)downloadCompletionHandler;
 - (id)downloadOptions;
 - (id /* block */)errorHandler;
-- (void)fetchAssetsWithPredicate:(id)arg1 completion:(id /* block */)arg2;
+- (void)fetchAssetsWithPredicate:(id)arg1 onlyLocal:(BOOL)arg2 completion:(id /* block */)arg3;
 - (id)initWithMobileAssetTypeName:(id)arg1;
 - (void)removeAssets:(id)arg1 completion:(id /* block */)arg2;
 - (void)setDownloadCompletionHandler:(id /* block */)arg1;

@@ -4,7 +4,7 @@
 
 @interface PLManagedObjectContext : NSManagedObjectContext {
     BOOL  __hiddenFaceStateChanged;
-    NSMutableArray * _albumUuidForCloudDeletion;
+    NSMutableSet * _assetObjectIDsWithCloudGUIDChange;
     NSMutableSet * _avalancheUUIDsForUpdate;
     int  _changeSource;
     PLDelayedFiledSystemDeletions * _delayedDeletions;
@@ -15,7 +15,6 @@
     BOOL  _isInitializingSingletons;
     BOOL  _isLoadingPhotoLibrary;
     BOOL  _isObservingChangesForPTPNotificationDelegate;
-    NSMutableArray * _memoryUUIDsForCloudDeletion;
     PLMergePolicy * _mergePolicy;
     BOOL  _mergingChanges;
     PLPhotoLibrary * _photoLibrary;
@@ -25,7 +24,6 @@
     BOOL  _syncChangeMarker;
     NSMutableDictionary * _updatedObjectsAttributes;
     NSMutableDictionary * _updatedObjectsRelationships;
-    NSMutableArray * _uuidForCloudDeletion;
     NSMutableDictionary * _uuidsForCloudDeletion;
     NSObject<OS_xpc_object> * changeHubConnection;
 }
@@ -100,6 +98,7 @@
 - (void)_notifyALAssetsLibraryWithChanges:(id)arg1 usingObjectIDs:(BOOL)arg2;
 - (void)_setHiddenFaceStateChanged:(BOOL)arg1;
 - (BOOL)_tooManyAssetChangesToHandle:(unsigned int)arg1;
+- (void)_writeHiddenFaceMetadata;
 - (id)changeHubConnection;
 - (int)changeSource;
 - (void)connectToChangeHub;
@@ -130,12 +129,14 @@
 - (id)pl_fetchObjectsWithIDs:(id)arg1;
 - (id)pl_fetchObjectsWithIDs:(id)arg1 rootEntity:(id)arg2;
 - (id)ptpNotificationDelegate;
+- (void)recordAssetWithCloudGUIDChange:(id)arg1;
 - (void)recordAvalancheUUIDForUpdate:(id)arg1;
 - (void)recordCloudDeletionForObjectWithID:(id)arg1 withCloudUUID:(id)arg2;
 - (void)recordHiddenFaceStateChanged;
 - (void)recordManagedObjectWillSave:(id)arg1;
 - (void)recordSyncChangeMarker;
-- (void)refreshHiddenFaceStatePersistence;
+- (void)refreshAssetsWithCloudGUIDChangePersistenceIfNeeded;
+- (void)refreshHiddenFaceStatePersistenceIfNeeded;
 - (BOOL)regenerateVideoThumbnails;
 - (void)registerFilesystemDeletionInfo:(id)arg1;
 - (BOOL)save:(id*)arg1;

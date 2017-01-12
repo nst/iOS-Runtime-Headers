@@ -4,6 +4,8 @@
 
 @interface GEOMapService : NSObject {
     int  _additionalEnabledMarketsChangedToken;
+    NSCache * _handleCache;
+    <NSCacheDelegate> * _handleCacheDelegate;
     int  _overriddenResultProviderID;
     NSObject<OS_dispatch_queue> * _placeDataObserverQueue;
     NSMutableArray * _placeDataObservers;
@@ -38,7 +40,7 @@
 - (void)notifyPlaceDataRequestObserversThatTicket:(id)arg1 didCompleteWithMapItems:(id)arg2;
 - (void)removePlaceDataRequestObserver:(id)arg1;
 - (void)resolveMapItemFromHandle:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)resolveMapItemFromHandle:(id)arg1 withTraits:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)resolveMapItemFromHandle:(id)arg1 withTraits:(id)arg2 useCache:(BOOL)arg3 completionHandler:(id /* block */)arg4;
 - (id)serializedClientMetadataForParsec;
 - (id)serializedClientMetadataForSiri;
 - (id)serializedClientMetadataForTraits:(id)arg1;

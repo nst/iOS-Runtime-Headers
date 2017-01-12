@@ -7,6 +7,8 @@
     unsigned int  _backgroundTask;
     unsigned int  _backgroundTaskCount;
     NSObject<OS_dispatch_queue> * _backgroundTaskQueue;
+    NSObject<OS_dispatch_source> * _entitiesAddedOrRemovedCoalescingTimer;
+    NSObject<OS_dispatch_queue> * _entitiesAddedOrRemovedNotificationQueue;
     MPMediaEntityCache * _entityCache;
     BOOL  _hasScheduledEventPosting;
     ML3MusicLibrary * _library;
@@ -71,6 +73,7 @@
 - (void)_invisiblePropertiesDidChange:(id)arg1;
 - (void)_libraryCloudLibraryAvailabilityDidChange:(id)arg1;
 - (void)_libraryContentsDidChange:(id)arg1;
+- (void)_libraryEntitiesAddedOrRemoved:(id)arg1;
 - (void)_libraryUIDDidChange:(id)arg1;
 - (void)_loadProperties:(id)arg1 ofEntityWithIdentifier:(long long)arg2 ML3EntityClass:(Class)arg3 completionBlock:(id /* block */)arg4;
 - (void)_loadValueForAggregateFunction:(id)arg1 entityClass:(Class)arg2 property:(id)arg3 query:(id)arg4 completionBlock:(id /* block */)arg5;

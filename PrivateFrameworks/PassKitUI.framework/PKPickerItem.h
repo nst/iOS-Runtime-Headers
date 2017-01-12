@@ -13,6 +13,7 @@
 + (id)itemWithTitle:(id)arg1 selectionHandler:(id /* block */)arg2;
 
 - (void).cxx_destruct;
+- (void)handleSelectionWithCompletionHandler:(id /* block */)arg1;
 - (id /* block */)selectionHandler;
 - (void)setSelectionHandler:(id /* block */)arg1;
 - (void)setTitle:(id)arg1;

@@ -25,6 +25,7 @@
 - (id)PDFView;
 - (void)_commonInit;
 - (id /* block */)_newIconSetterBlockForIconView:(id)arg1 andIndexPath:(id)arg2;
+- (void)_pdfDocumentWasUnlocked:(id)arg1;
 - (id)backgroundColor;
 - (void)configureItem:(id)arg1 forRepresentedObject:(id)arg2 andViewIndexPath:(id)arg3 usingOptionalImage:(id)arg4;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInset;

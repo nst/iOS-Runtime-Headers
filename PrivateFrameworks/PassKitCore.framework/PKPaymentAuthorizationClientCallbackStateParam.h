@@ -11,6 +11,7 @@
 @property (nonatomic, retain) id object;
 @property (nonatomic, readonly) PKPayment *payment;
 @property (nonatomic, readonly) PKPaymentMethod *paymentMethod;
+@property (nonatomic, readonly) PKServiceProviderPurchase *purchase;
 @property (nonatomic, readonly) CNContact *shippingContact;
 @property (nonatomic, readonly) PKShippingMethod *shippingMethod;
 
@@ -22,6 +23,7 @@
 - (id)object;
 - (id)payment;
 - (id)paymentMethod;
+- (id)purchase;
 - (void)setKind:(int)arg1;
 - (void)setObject:(id)arg1;
 - (id)shippingContact;

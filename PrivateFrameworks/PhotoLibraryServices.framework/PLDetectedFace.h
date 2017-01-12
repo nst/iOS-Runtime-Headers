@@ -58,10 +58,12 @@
 
 + (id)_allSyncableFacesInManagedObjectContext:(id)arg1;
 + (void)batchFetchDetectedFacesByAssetUUIDWithAssetUUIDs:(id)arg1 predicate:(id)arg2 completion:(id /* block */)arg3;
++ (unsigned int)countOfHiddenFacesOnAssetsWithObjectIDs:(id)arg1 inManagedObjectContext:(id)arg2;
 + (id)detectedFaceWithUUID:(id)arg1 inManagedObjectContext:(id)arg2;
 + (id)entityInManagedObjectContext:(id)arg1;
 + (id)entityName;
 + (void)enumerateAssetUUIDsForSearchIndexingWithDetctedFaceUUIDs:(id)arg1 managedObjectContext:(id)arg2 assetUUIDHandler:(id /* block */)arg3;
++ (id)findExistingFaceMatchingDimension:(struct PLFaceDimension { double x1; double x2; double x3; int x4; int x5; })arg1 inFaces:(id)arg2 inAsset:(id)arg3;
 + (id)findExistingFaceMatchingRef:(id)arg1 inFaces:(id)arg2 inAsset:(id)arg3;
 + (id)insertInManagedObjectContext:(id)arg1;
 + (id)predicatesToExcludeNonVisibleFaces;

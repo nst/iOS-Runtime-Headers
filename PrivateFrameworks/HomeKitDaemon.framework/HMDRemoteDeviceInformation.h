@@ -9,6 +9,8 @@
     BOOL  _pingConfirmed;
     BOOL  _pinging;
     BOOL  _reachable;
+    HMFTimer * _retryTimer;
+    BOOL  _shouldConfirm;
 }
 
 @property (nonatomic, readonly) NSMutableArray *confirmationHandlers;
@@ -17,6 +19,8 @@
 @property (getter=isPingConfirmed, nonatomic) BOOL pingConfirmed;
 @property (getter=isPinging, nonatomic) BOOL pinging;
 @property (getter=isReachable, nonatomic) BOOL reachable;
+@property (nonatomic, retain) HMFTimer *retryTimer;
+@property (nonatomic) BOOL shouldConfirm;
 
 - (void).cxx_destruct;
 - (void)completeConfirmationsWithError:(id)arg1;
@@ -30,8 +34,12 @@
 - (BOOL)isReachable;
 - (id)pendingPingIdentifiers;
 - (void)queueConfirmationHandler:(id /* block */)arg1 timeout:(double)arg2;
+- (id)retryTimer;
 - (void)setPingConfirmed:(BOOL)arg1;
 - (void)setPinging:(BOOL)arg1;
 - (void)setReachable:(BOOL)arg1;
+- (void)setRetryTimer:(id)arg1;
+- (void)setShouldConfirm:(BOOL)arg1;
+- (BOOL)shouldConfirm;
 
 @end

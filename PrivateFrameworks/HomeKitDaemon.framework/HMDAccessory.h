@@ -3,11 +3,13 @@
  */
 
 @interface HMDAccessory : NSObject <HAPAccessoryServerForBridgeDelegate, HAPRelayAccessoryDelegate, HMDBulletinIdentifiers, HMDTimeInformationMonitorDelegate, HMFDumpState, HMFMessageReceiver, HMFTimerDelegate, NSSecureCoding> {
+    HMFTimer * _accessoryDiscoveryBackoffTimer;
     NSNumber * _accessoryFlags;
     NSSet * _accessoryProfiles;
     unsigned int  _activationAttempts;
     HMDApplicationData * _appData;
     HMDApplicationRegistry * _appRegistry;
+    NSNumber * _backedOffStateNumber;
     BOOL  _blocked;
     HMDAccessory * _bridge;
     NSSet * _cameraProfiles;
@@ -58,11 +60,13 @@
     NSObject<OS_dispatch_queue> * _workQueue;
 }
 
+@property (nonatomic, retain) HMFTimer *accessoryDiscoveryBackoffTimer;
 @property (nonatomic, copy) NSNumber *accessoryFlags;
 @property (nonatomic, retain) NSSet *accessoryProfiles;
 @property (nonatomic) unsigned int activationAttempts;
 @property (nonatomic, retain) HMDApplicationData *appData;
 @property (nonatomic, retain) HMDApplicationRegistry *appRegistry;
+@property (nonatomic, copy) NSNumber *backedOffStateNumber;
 @property (getter=isBlocked, nonatomic) BOOL blocked;
 @property (nonatomic) HMDAccessory *bridge;
 @property (nonatomic, retain) NSSet *cameraProfiles;
@@ -156,6 +160,7 @@
 - (void)_handleCharacteristicWrite:(id)arg1;
 - (void)_handleCharacteristicsChangedNotification:(id)arg1;
 - (void)_handleDiscoverBridgedAccessories:(id)arg1 startDiscovery:(BOOL)arg2;
+- (void)_handleDiscoveryBackoffTimerFired;
 - (void)_handleIdentify:(id)arg1;
 - (void)_handleMultipleCharacteristicsUpdated:(id)arg1 filterUnmodifiedCharacteristics:(BOOL)arg2 queue:(id)arg3 remoteDevice:(id)arg4 notificationUpdateIdentifier:(id)arg5 completionHandler:(id /* block */)arg6;
 - (void)_handleRename:(id)arg1;
@@ -197,6 +202,7 @@
 - (void)_removeNewAccessoryCompletionBlockForDisAssociatingAccessory:(id)arg1;
 - (void)_removeNewAccessoryCompletionBlockforAssociatingAccessory:(id)arg1;
 - (void)_removeNewAccessoryCompletionBlockforDiscoveredAccessory:(id)arg1;
+- (void)_retrieveStateForTrackedAccessory:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)_sendBlockedNotification:(BOOL)arg1 withError:(id)arg2 withIdentifier:(id)arg3 withCompletion:(id /* block */)arg4;
 - (void)_setCurrentRelayAccessoryState:(unsigned int)arg1;
 - (void)_setCurrentTimeCharacteristic:(id)arg1;
@@ -247,6 +253,7 @@
 - (id /* block */)accessoryCompletionBlockForDiscoveredAccessory:(id)arg1;
 - (void)accessoryDidBecomeReachable:(id)arg1;
 - (void)accessoryDidBecomeUnreachable:(id)arg1;
+- (id)accessoryDiscoveryBackoffTimer;
 - (id)accessoryFlags;
 - (id)accessoryProfiles;
 - (void)accessoryServer:(id)arg1 didUpdateValuesForBridgeCharacteristic:(id)arg2;
@@ -266,6 +273,8 @@
 - (id)appRegistry;
 - (id)assistantObject;
 - (id)assistantUniqueIdentifier;
+- (void)backOffAccessoryForStateNumber:(id)arg1;
+- (id)backedOffStateNumber;
 - (void)blockWithError:(id)arg1;
 - (id)bridge;
 - (id)cameraProfiles;
@@ -273,6 +282,7 @@
 - (id)characteristicsPassingTest:(id /* block */)arg1;
 - (id)configurationAppIdentifier;
 - (void)configure:(id)arg1 msgDispatcher:(id)arg2 accessoryConfigureGroup:(id)arg3;
+- (void)configureBulletinNotification:(id /* block */)arg1;
 - (void)configureWithAccessory:(id)arg1 reAddServices:(BOOL)arg2 homeNotificationsEnabled:(BOOL)arg3 queue:(id)arg4 completion:(id /* block */)arg5;
 - (void)configureWithMsgDispatcher:(id)arg1;
 - (id)contextID;
@@ -373,6 +383,7 @@
 - (id)relayIdentifier;
 - (void)remoteAccessEnabled:(BOOL)arg1;
 - (void)removeAllTransportInformationInstances;
+- (void)removeBackedoffAccessoryForStateNumber:(id)arg1;
 - (void)removeBridgeFromDiscoveredAccessory:(id)arg1;
 - (void)removeBridgedAccessory:(id)arg1;
 - (void)removeBridgesFromDiscoveredAccessory;
@@ -392,12 +403,14 @@
 - (id)serializedIdentifier;
 - (id)serverIdentifier;
 - (id)services;
+- (void)setAccessoryDiscoveryBackoffTimer:(id)arg1;
 - (void)setAccessoryFlags:(id)arg1;
 - (void)setAccessoryProfiles:(id)arg1;
 - (void)setActivationAttempts:(unsigned int)arg1;
 - (void)setAppData:(id)arg1;
 - (void)setAppRegistry:(id)arg1;
 - (void)setAssociatingAccessory:(id)arg1;
+- (void)setBackedOffStateNumber:(id)arg1;
 - (void)setBlocked:(BOOL)arg1;
 - (void)setBridge:(id)arg1;
 - (void)setCameraProfiles:(id)arg1;
@@ -447,6 +460,7 @@
 - (void)setUnblockPending:(BOOL)arg1;
 - (void)setUniqueIdentifier:(id)arg1;
 - (void)setWorkQueue:(id)arg1;
+- (BOOL)shouldEnableDaemonRelaunch;
 - (void)startAssociatingAccessoryTimer;
 - (void)startDisassociatingAccessoryTimer;
 - (void)startDiscoveryAccessoryTimer:(id /* block */)arg1;
@@ -473,6 +487,7 @@
 - (void)unconfigureAccessoryWithServerIdentifier:(id)arg1 linkType:(int)arg2;
 - (id)uniqueIdentifier;
 - (void)updateAccessoryFlags:(id)arg1;
+- (void)updateAccessoryFlagsAndNotifyClients:(id)arg1;
 - (void)updateAccessoryInformation:(id)arg1;
 - (void)updateCategory:(id)arg1;
 - (void)updateName:(id)arg1;

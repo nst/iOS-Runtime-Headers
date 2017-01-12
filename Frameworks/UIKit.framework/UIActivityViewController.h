@@ -22,6 +22,7 @@
     id /* block */  _completionHandler;
     id /* block */  _completionWithItemsHandler;
     _UIActivityViewControllerContentController * _contentController;
+    BOOL  _dismissalDetectionOfViewControllerForSelectedActivityShouldAutoCancel;
     int  _excludedActivityCategories;
     NSArray * _excludedActivityTypes;
     NSArray * _includedActivityTypes;
@@ -60,6 +61,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) id /* block */ dismissCompletionHandler;
+@property (nonatomic) BOOL dismissalDetectionOfViewControllerForSelectedActivityShouldAutoCancel;
 @property (nonatomic) int excludedActivityCategories;
 @property (nonatomic, copy) NSArray *excludedActivityTypes;
 @property (readonly) unsigned int hash;
@@ -92,7 +94,8 @@
 - (id)_availableActivitiesForItems:(id)arg1;
 - (id)_availableActivitiesForItems:(id)arg1 applicationExtensionActivities:(id)arg2;
 - (id)_availableActivitiesMatchingOnlyUserElectedExtensions:(BOOL)arg1;
-- (void)_beginPresentedViewControllerActivityForcedStrongReference;
+- (void)_beginDismissalDetectionOfViewControllerForSelectedActivityShouldAutoCancel;
+- (void)_beginInProgressActivityExecutionForcedStrongReference;
 - (void)_cancel;
 - (void)_changeActionButtonToDone;
 - (void)_cleanupActivityWithSuccess:(BOOL)arg1;
@@ -100,7 +103,8 @@
 - (id)_containedAlertController;
 - (void)_didResignContentViewControllerOfPopover:(id)arg1;
 - (float)_displayHeight;
-- (void)_endPresentedViewControllerActivityForcedStrongReference;
+- (void)_endDismissalDetectionOfViewControllerForSelectedActivityShouldAutoCancel;
+- (void)_endInProgressActivityExecutionForcedStrongReference;
 - (void)_executeActivity;
 - (void)_mailAutosaveWithHandler:(id /* block */)arg1;
 - (void)_notifyReloadImageForActivity:(id)arg1;
@@ -112,6 +116,7 @@
 - (void)_prepareActivity:(id)arg1;
 - (void)_prepareActivity:(id)arg1 completion:(id /* block */)arg2;
 - (void)_presentUserDefaultsController:(id)arg1;
+- (void)_presentationControllerDismissalTransitionDidEndNotification:(id)arg1;
 - (id)_presentationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
 - (void)_reloadImageForActivity:(id)arg1;
 - (BOOL)_requiresCustomPresentationController;
@@ -148,9 +153,9 @@
 - (id)contentController;
 - (void)dealloc;
 - (void)decodeRestorableStateWithCoder:(id)arg1;
-- (void)didDismissViewController:(id)arg1;
 - (id /* block */)dismissCompletionHandler;
 - (void)dismissViewControllerAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
+- (BOOL)dismissalDetectionOfViewControllerForSelectedActivityShouldAutoCancel;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
 - (int)excludedActivityCategories;
 - (id)excludedActivityTypes;
@@ -186,6 +191,7 @@
 - (void)setCompletionWithItemsHandler:(id /* block */)arg1;
 - (void)setContentController:(id)arg1;
 - (void)setDismissCompletionHandler:(id /* block */)arg1;
+- (void)setDismissalDetectionOfViewControllerForSelectedActivityShouldAutoCancel:(BOOL)arg1;
 - (void)setExcludedActivityCategories:(int)arg1;
 - (void)setExcludedActivityTypes:(id)arg1;
 - (void)setIncludedActivityTypes:(id)arg1;

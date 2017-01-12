@@ -85,6 +85,7 @@
 - (id)bfa_fetchObjectsForOIDs:(id)arg1 propertyHint:(unsigned int)arg2;
 - (id)bfa_photoLibrary;
 - (id)bfa_tombstoneObjectForOID:(id)arg1 uuid:(id)arg2 propertyHint:(unsigned int)arg3;
+- (void)cancelOperationsWithIdentifiers:(id)arg1 reply:(id /* block */)arg2;
 - (id)changeHandlingPhotoLibrary;
 - (id)changeNotificationInfo;
 - (id)changeRequestForUUID:(id)arg1;
@@ -97,6 +98,8 @@
 - (void)enableNamingFlow;
 - (id)exportGraphForPurpose:(id)arg1 error:(id*)arg2;
 - (id)externalObservers;
+- (id)faceClusterSequenceNumbersOfKeyFacesInAlgorithmicFaceGroupsForPerson:(id)arg1 verifiedClusterSequenceNumbers:(id)arg2;
+- (id)faceSuggestionsForFaceClusterSequenceNumbers:(id)arg1 excludeFaceLocalIdentifers:(id)arg2;
 - (BOOL)featureEnabledForWorkerType:(short)arg1;
 - (BOOL)featureEnabledForWorkerType:(short)arg1 completion:(id /* block */)arg2;
 - (id)fetchDictionariesByPHClassForOIDs:(id)arg1 propertyHint:(unsigned int)arg2 includeTrash:(BOOL)arg3;

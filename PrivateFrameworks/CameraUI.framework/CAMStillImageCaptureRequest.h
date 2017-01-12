@@ -26,6 +26,7 @@
     BOOL  _wantsAudioForCapture;
     BOOL  _wantsAutoDuoImageFusion;
     BOOL  _wantsHighResolutionStills;
+    BOOL  _wantsPortraitEffect;
     BOOL  _wantsSquareCrop;
 }
 
@@ -53,6 +54,7 @@
 @property (nonatomic, readonly) BOOL wantsAudioForCapture;
 @property (nonatomic, readonly) BOOL wantsAutoDuoImageFusion;
 @property (nonatomic, readonly) BOOL wantsHighResolutionStills;
+@property (nonatomic, readonly) BOOL wantsPortraitEffect;
 @property (nonatomic, readonly) BOOL wantsSquareCrop;
 
 - (void).cxx_destruct;
@@ -87,6 +89,7 @@
 - (BOOL)wantsAudioForCapture;
 - (BOOL)wantsAutoDuoImageFusion;
 - (BOOL)wantsHighResolutionStills;
+- (BOOL)wantsPortraitEffect;
 - (BOOL)wantsSquareCrop;
 
 @end

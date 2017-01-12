@@ -33,6 +33,7 @@
 - (void).cxx_destruct;
 - (void)_handleBulletinBoardNotificationCommitRequest:(id)arg1;
 - (void)_registerNotificationHandlers;
+- (void)configureBulletinNotification:(id /* block */)arg1;
 - (void)configureMsgDispatcher:(id)arg1;
 - (void)dealloc;
 - (id)dumpState;

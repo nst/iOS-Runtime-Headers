@@ -52,6 +52,7 @@
 - (id)_dequeuePendingCallbackParam;
 - (void)_deviceUpdateDidTimeout;
 - (void)_dispatchNextCallbackParam;
+- (void)_enqeueDidAuthorizePurchaseWithParam:(id)arg1;
 - (void)_enqueueCallbackOfKind:(int)arg1 withObject:(id)arg2;
 - (void)_enqueueDidAuthorizePaymentWithPayment:(id)arg1;
 - (void)_enqueueDidAuthorizePaymentWithRemotePayment:(id)arg1;
@@ -82,6 +83,7 @@
 - (void)_startPayment;
 - (void)_startRemoteDeviceUpdate;
 - (id)_transactionWithPaymentToken:(id)arg1;
+- (id)_transactionWithPurchase:(id)arg1 transactionIdentifier:(id)arg2;
 - (void)_unregisterForNotifications;
 - (void)_updateModelWithShippingMethods:(id)arg1 paymentSummaryItems:(id)arg2;
 - (id)aggregateDictionary;
@@ -91,6 +93,7 @@
 - (id)continuityPaymentCoordinator;
 - (void)continuityPaymentCoordinator:(id)arg1 didReceivePayment:(id)arg2;
 - (void)continuityPaymentCoordinator:(id)arg1 didReceiveUpdatedPaymentDevices:(id)arg2;
+- (void)continuityPaymentCoordinator:(id)arg1 didTimeoutTotalWithPaymentDevices:(id)arg2;
 - (void)continuityPaymentCoordinatorDidReceiveCancellation:(id)arg1;
 - (void)continuityPaymentCoordinatorDidTimeoutUpdatePaymentDevices:(id)arg1;
 - (id)continuityPaymentService;

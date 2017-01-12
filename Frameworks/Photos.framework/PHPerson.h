@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Photos.framework/Photos
  */
 
-@interface PHPerson : PHObject <PXFaceCollection> {
+@interface PHPerson : PHObject <PXPerson> {
     NSString * _displayName;
     int  _faceCount;
     BOOL  _inPersonNamingModel;
@@ -30,11 +30,12 @@
 
 + (id)_convertFaceSuggestionToFaceCollection:(id)arg1 options:(id)arg2;
 + (id)_faceLocalIdentifiersFromFaceCollection:(id)arg1 options:(id)arg2;
-+ (id)_faceSuggestionForPerson:(id)arg1 confirmedFaceCollections:(id)arg2 rejectedFaceCollections:(id)arg3 options:(id)arg4 fromClient:(id)arg5;
++ (int)_faceSuggestionForPerson:(id)arg1 confirmedFaceCollections:(id)arg2 rejectedFaceCollections:(id)arg3 options:(id)arg4 fromClient:(id)arg5 completion:(id /* block */)arg6;
 + (id)_packageSuggestionList:(id)arg1 options:(id)arg2;
 + (id)_transformValueExpression:(id)arg1 forKeyPath:(id)arg2;
 + (id)entityKeyForPropertyKey:(id)arg1;
 + (id)faceSuggestionForPerson:(id)arg1 confirmedFaceCollections:(id)arg2 rejectedFaceCollections:(id)arg3 options:(id)arg4;
++ (int)faceSuggestionForPerson:(id)arg1 confirmedFaceCollections:(id)arg2 rejectedFaceCollections:(id)arg3 options:(id)arg4 completion:(id /* block */)arg5;
 + (id)fetchAssociatedPersonForFaceGroup:(id)arg1 withOptions:(id)arg2;
 + (id)fetchPersonCountGroupedByAssetLocalIdentifierForAssets:(id)arg1 options:(id)arg2;
 + (id)fetchPersonWithFace:(id)arg1 options:(id)arg2;

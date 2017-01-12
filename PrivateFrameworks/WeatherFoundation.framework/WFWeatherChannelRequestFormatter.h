@@ -11,5 +11,6 @@
 
 + (id)airQualityRequestForLocation:(id)arg1 locale:(id)arg2 error:(id*)arg3;
 + (id)forecastRequestForLocation:(id)arg1 date:(id)arg2;
++ (id)hostURLForService;
 
 @end

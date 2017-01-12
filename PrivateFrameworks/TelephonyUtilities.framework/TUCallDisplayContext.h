@@ -8,6 +8,7 @@
     NSString * _callDirectoryLocalizedExtensionContainingAppName;
     CXCallDirectoryManager * _callDirectoryManager;
     NSString * _companyName;
+    NSString * _contactIdentifier;
     NSString * _contactLabel;
     NSString * _contactName;
     <TUCallDisplayContextDelegate> * _delegate;
@@ -26,6 +27,7 @@
 @property (nonatomic, copy) NSString *callDirectoryLocalizedExtensionContainingAppName;
 @property (nonatomic, retain) CXCallDirectoryManager *callDirectoryManager;
 @property (nonatomic, copy) NSString *companyName;
+@property (nonatomic, copy) NSString *contactIdentifier;
 @property (nonatomic, copy) NSString *contactLabel;
 @property (nonatomic, copy) NSString *contactName;
 @property (nonatomic) <TUCallDisplayContextDelegate> *delegate;
@@ -47,6 +49,7 @@
 - (id)callDirectoryLocalizedExtensionContainingAppName;
 - (id)callDirectoryManager;
 - (id)companyName;
+- (id)contactIdentifier;
 - (id)contactLabel;
 - (id)contactName;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -69,6 +72,7 @@
 - (void)setCallDirectoryLocalizedExtensionContainingAppName:(id)arg1;
 - (void)setCallDirectoryManager:(id)arg1;
 - (void)setCompanyName:(id)arg1;
+- (void)setContactIdentifier:(id)arg1;
 - (void)setContactLabel:(id)arg1;
 - (void)setContactName:(id)arg1;
 - (void)setDelegate:(id)arg1;

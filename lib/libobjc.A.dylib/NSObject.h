@@ -125,33 +125,6 @@
 - (Class)superclass;
 - (struct _NSZone { }*)zone;
 
-// Image: /System/Library/AccessibilityBundles/QuickSpeak.bundle/QuickSpeak
-
-- (void)_accessibilityCacheContentIfNecessary;
-- (void)_accessibilityHandleFinishSpeaking;
-- (void)_accessibilityPauseSpeaking:(id)arg1;
-- (BOOL)_accessibilityQScanPerformAction:(SEL)arg1 withSender:(id)arg2;
-- (BOOL)_accessibilityQuickSpeakContentIsSpeakable;
-- (void)_accessibilityQuickSpeakTextRectsWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 string:(id)arg2 highlightRects:(id)arg3 sentenceRects:(id)arg4 singleTextRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg5;
-- (BOOL)_accessibilityShouldShowPauseBubble;
-- (BOOL)_accessibilityShouldShowSpeakBubble;
-- (BOOL)_accessibilityShouldShowSpeakLanguageBubble;
-- (BOOL)_accessibilityShouldShowSpeakSpellOut;
-- (BOOL)_accessibilityShouldUpdateQuickSpeakContent;
-- (void)_accessibilitySpeak:(id)arg1;
-- (void)_accessibilitySpeakLanguageSelection:(id)arg1;
-- (id)_accessibilitySpeakSelectionAssociatedScrollView;
-- (id)_accessibilitySpeakSelectionTextInputResponder;
-- (void)_accessibilitySpeakSentence:(id)arg1;
-- (void)_accessibilitySpeakSpellOut:(id)arg1;
-- (void)_accessibilitySpeakWithLanguage:(id)arg1;
-- (BOOL)_accessibilitySystemShouldShowPauseBubble;
-- (BOOL)_accessibilitySystemShouldShowSpeakBubble;
-- (BOOL)_accessibilitySystemShouldShowSpeakBubbleCommon;
-- (BOOL)_accessibilitySystemShouldShowSpeakLanguageBubble;
-- (BOOL)_accessibilitySystemShouldShowSpeakSentence;
-- (BOOL)_accessibilitySystemShouldShowSpeakSpellOut;
-
 // Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
 
 + (id)CKSQLiteClassName;
@@ -889,7 +862,6 @@
 + (void)_accessibilityUpdateOpaqueFocusStateForTechnology:(id)arg1 oldElement:(id)arg2 newElement:(id)arg3;
 + (id)accessibilityBundles;
 + (void)accessibilityInitializeBundle;
-+ (Class)safeCategoryBaseClass;
 
 - (BOOL)__accessibilityReadAllOnFocus;
 - (id)__accessibilityRetrieveFrameOrPathDelegate;
@@ -1141,7 +1113,6 @@
 - (BOOL)_accessibilityIsSpeakThisElement;
 - (BOOL)_accessibilityIsStarkElement;
 - (BOOL)_accessibilityIsTableCell;
-- (BOOL)_accessibilityIsTextInput;
 - (BOOL)_accessibilityIsTitleElement;
 - (BOOL)_accessibilityIsTouchContainer;
 - (BOOL)_accessibilityIsTourGuideRunning;
@@ -1244,8 +1215,6 @@
 - (void)_accessibilityProcessScannerGroupElementPieces:(id)arg1;
 - (id)_accessibilityPublicCustomRotorName:(id)arg1;
 - (id)_accessibilityPublicCustomRotors;
-- (id)_accessibilityQuickSpeakContent;
-- (id)_accessibilityQuickSpeakEnclosingSentence:(id*)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_accessibilityRangeForLineNumber:(int)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_accessibilityRangeForLineNumberAndColumn:(id)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_accessibilityRangeForTextMarker:(id)arg1;

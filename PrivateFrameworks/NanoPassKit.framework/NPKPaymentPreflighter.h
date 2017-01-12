@@ -44,6 +44,8 @@
 @property (nonatomic, retain) NSDate *watchPasscodeAndUnlockedQueryDate;
 @property (nonatomic, retain) PKPaymentWebService *webService;
 
++ (BOOL)watchConnected;
+
 - (void).cxx_destruct;
 - (void)_checkCompanioniCloudAccount;
 - (void)_checkPasscodeEnabledAndUnlockedState;
@@ -61,6 +63,7 @@
 - (id)_errorForWristDetectNeeded;
 - (void)_finishPresentingSetupControllerIfReadyWithSuccess:(BOOL)arg1 error:(id)arg2;
 - (void)_setAuthRandomIfNecessary;
+- (void)addCardPreflightWithCompletion:(id /* block */)arg1;
 - (BOOL)authRandomSetIfNecessary;
 - (BOOL)checkedCompanioniCloudStatus;
 - (BOOL)checkedWatchPasscodeAndUnlockedStatus;
@@ -76,7 +79,6 @@
 - (BOOL)needsWristDetection;
 - (id)passcodeConnection;
 - (id /* block */)preflightCompletionHandler;
-- (void)preflightWithCompletion:(id /* block */)arg1;
 - (void)setAuthRandomSetIfNecessary:(BOOL)arg1;
 - (void)setCheckedCompanioniCloudStatus:(BOOL)arg1;
 - (void)setCheckedWatchPasscodeAndUnlockedStatus:(BOOL)arg1;
@@ -98,6 +100,7 @@
 - (void)setWebService:(id)arg1;
 - (BOOL)spaceAvailableOnSecureElement;
 - (id)systemSettingsManager;
+- (void)transferToCompanionPreflightWithCompletion:(id /* block */)arg1;
 - (BOOL)watchConnected;
 - (id)watchPasscodeAndUnlockedQueryDate;
 - (id)webService;

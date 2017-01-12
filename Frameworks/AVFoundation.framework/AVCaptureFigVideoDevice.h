@@ -24,6 +24,7 @@
     BOOL  _adjustingFocus;
     BOOL  _adjustingWB;
     int  _autoFocusRangeRestriction;
+    BOOL  _autoShallowDepthOfFieldEffectEnabled;
     BOOL  _automaticallyAdjustsImageControlMode;
     BOOL  _automaticallyAdjustsVideoHDREnabled;
     BOOL  _automaticallyEnablesLowLightBoostWhenAvailable;
@@ -130,6 +131,7 @@
     BOOL  _sceneIsHighDynamicRange;
     NSObject<OS_dispatch_semaphore> * _serverConnectionDiedSemaphore;
     NSDictionary * _sessionPresetCompressionSettings;
+    int  _shallowDepthOfFieldEffectStatus;
     BOOL  _smileDetectionEnabled;
     BOOL  _smoothAutoFocusEnabled;
     BOOL  _subjectMonitoringEnabled;
@@ -223,6 +225,7 @@
 - (void)_setIsStillImageStabilizationScene:(BOOL)arg1;
 - (void)_setLowLightBoostEnabled:(BOOL)arg1;
 - (void)_setMinAvailableVideoZoomFactor:(float)arg1;
+- (void)_setShallowDepthOfFieldEffectStatus:(int)arg1;
 - (void)_setStillImageStabilizationAutomaticallyEnabled:(BOOL)arg1;
 - (void)_setStillImageStabilizationDetectionEnabled:(BOOL)arg1;
 - (void)_setTorchActive:(BOOL)arg1;
@@ -287,6 +290,7 @@
 - (BOOL)isAdjustingFocus;
 - (BOOL)isAdjustingWhiteBalance;
 - (BOOL)isAutoFocusRangeRestrictionSupported;
+- (BOOL)isAutoShallowDepthOfFieldEffectEnabled;
 - (BOOL)isConnected;
 - (BOOL)isExposureModeSupported:(int)arg1;
 - (BOOL)isExposurePointOfInterestSupported;
@@ -355,6 +359,7 @@
 - (void)setActiveVideoMaxFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setActiveVideoMinFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setAutoFocusRangeRestriction:(int)arg1;
+- (void)setAutoShallowDepthOfFieldEffectEnabled:(BOOL)arg1;
 - (void)setAutomaticallyAdjustsImageControlMode:(BOOL)arg1;
 - (void)setAutomaticallyAdjustsVideoHDREnabled:(BOOL)arg1;
 - (void)setAutomaticallyEnablesLowLightBoostWhenAvailable:(BOOL)arg1;
@@ -388,6 +393,7 @@
 - (void)setVideoZoomUpscaleStageHint:(int)arg1;
 - (void)setWhiteBalanceMode:(int)arg1;
 - (void)setWhiteBalanceModeLockedWithDeviceWhiteBalanceGains:(struct { float x1; float x2; float x3; })arg1 completionHandler:(id /* block */)arg2;
+- (int)shallowDepthOfFieldEffectStatus;
 - (BOOL)smileDetectionEnabled;
 - (id)supportedMetadataObjectIdentifiers;
 - (BOOL)supportsAVCaptureSessionPreset:(id)arg1;

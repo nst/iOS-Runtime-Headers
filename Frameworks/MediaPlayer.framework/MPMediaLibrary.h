@@ -97,6 +97,7 @@
 + (id)libraryDataProviders;
 + (id)mediaLibraries;
 + (id)mediaLibraryWithUniqueIdentifier:(id)arg1;
++ (void)postEntitiesAddedOrRemovedNotificationForLibraryDataProvider:(id)arg1;
 + (void)reloadDisplayValuesForLibraryDataProvider:(id)arg1;
 + (void)reloadDynamicPropertiesForLibraryDataProvider:(id)arg1;
 + (void)reloadInvisiblePropertiesForLibraryDataProvider:(id)arg1;

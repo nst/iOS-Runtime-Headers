@@ -10,5 +10,6 @@
 + (id)_secureStateMap;
 + (id)localizedStateForCharacteristic:(id)arg1;
 + (id)presentationValueForValue:(id)arg1 type:(id)arg2;
++ (id)trimLeadingAndTailingSpacesInName:(id)arg1;
 
 @end

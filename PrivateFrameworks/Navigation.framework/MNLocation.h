@@ -69,7 +69,7 @@
 - (BOOL)locationUnreliable;
 - (id)matchInfo;
 - (id)originalDate;
-- (id)propagatedLocationForTimeInterval:(double)arg1;
+- (id)propagatedLocationForTimeInterval:(double)arg1 shouldProjectAlongRoute:(BOOL)arg2;
 - (int)rampType;
 - (id)rawLocation;
 - (struct CLLocationCoordinate2D { double x1; double x2; })rawShiftedCoordinate;

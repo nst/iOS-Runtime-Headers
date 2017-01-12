@@ -5,6 +5,7 @@
 @interface BWStereoFusionNode : BWNode {
     struct opaqueCMSampleBuffer { } * _cachedFrameFromTelephotoSourceForLaterProcessing;
     struct opaqueCMSampleBuffer { } * _cachedFrameFromWideSourceForLaterProcessing;
+    struct opaqueCMSampleBuffer { } * _cachedTelephotoFrameForSDOF;
     NSDictionary * _cameraAlignmentInfo;
     NSDictionary * _cameraInfoByPortType;
     int (* _createSampleBufferProcessorFunction;
@@ -42,6 +43,7 @@
 + (void)initialize;
 
 - (void)_clearCaptureRequestState;
+- (void)_emitSDOFOriginalImage:(struct opaqueCMSampleBuffer { }*)arg1 tagFrameWithExifCustomRenderedValue:(BOOL)arg2;
 - (void)_endSequence;
 - (void)_handleError:(long)arg1 forSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg2 input:(id)arg3;
 - (id)_initWithTelephotoSensorIDDictionary:(id)arg1 processingType:(int)arg2 cameraAlignmentInfo:(id)arg3 cameraInfoByPortType:(id)arg4 sbpCreationFunction:(int (*)arg5 treatSoftErrorsAsHardErrors:(BOOL)arg6;
@@ -50,6 +52,7 @@
 - (void)_processSequenceInSampleBufferProcessor;
 - (BOOL)_receivedExpectedNumberOfFramesOrErrors;
 - (void)_sampleBufferProcessorOutputReady:(long)arg1 sampleBuffer:(struct opaqueCMSampleBuffer { }*)arg2;
+- (void)_setExifOrientationInMetadata:(id)arg1;
 - (void)_setExpectedInputFramesWithResolvedCaptureSettings:(id)arg1;
 - (long)_setPropertyOnSampleBufferProcessorWithKey:(struct __CFString { }*)arg1 value:(void*)arg2;
 - (void)_setZoomRectangleOnSampleBufferProcessorIfNecessaryBasedOnMetadata:(id)arg1 captureType:(int)arg2;

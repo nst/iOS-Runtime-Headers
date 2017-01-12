@@ -30,6 +30,7 @@
     NSURL * _protectedContentSupportStorageURL;
     NSNumber * _rentalIdentifier;
     BOOL  _requiresPlayWhileDownload;
+    BOOL  _shouldRememberBookmarkTime;
     BOOL  _shouldReportPlayEventsToStore;
     BOOL  _showComposer;
     unsigned long long  _storeAccountID;
@@ -72,6 +73,7 @@
 @property (nonatomic, readonly, copy) NSURL *protectedContentSupportStorageURL;
 @property (getter=_rentalIdentifier, nonatomic, readonly) NSNumber *rentalIdentifier;
 @property (nonatomic, readonly) BOOL requiresPlayWhileDownload;
+@property (nonatomic, readonly) BOOL shouldRememberBookmarkTime;
 @property (nonatomic, readonly) BOOL shouldReportPlayEventsToStore;
 @property (nonatomic, readonly) BOOL showComposer;
 @property (nonatomic, readonly) unsigned long long storeAccountID;
@@ -134,6 +136,7 @@
 - (BOOL)requiresPlayWhileDownload;
 - (void)setCachedLocalPlaybackAssetFilePath:(id)arg1 protectionType:(unsigned int)arg2 assetQuality:(unsigned int)arg3 withCompletionHandler:(id /* block */)arg4;
 - (void)setLikedState:(int)arg1 withCompletionHandler:(id /* block */)arg2;
+- (BOOL)shouldRememberBookmarkTime;
 - (BOOL)shouldReportPlayEventsToStore;
 - (BOOL)showComposer;
 - (unsigned long long)storeAccountID;

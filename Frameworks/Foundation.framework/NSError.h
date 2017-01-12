@@ -30,6 +30,7 @@
 @property (nonatomic, readonly) NSDate *hd_messageSent;
 @property (nonatomic, readonly) NSDictionary *hd_persistentUserInfo;
 @property (readonly, copy) NSString *helpAnchor;
+@property (nonatomic, readonly) BOOL hf_isHomeKitNamingError;
 @property (getter=isHMError, nonatomic, readonly) BOOL hmError;
 @property (getter=isHMFError, nonatomic, readonly) BOOL hmfError;
 @property (nonatomic, readonly) NSString *idsIdentifier;
@@ -540,6 +541,7 @@
 
 - (id)hf_errorWithOperationType:(id)arg1 failedItemName:(id)arg2;
 - (id)hf_errorWithOperationType:(id)arg1 options:(id)arg2;
+- (BOOL)hf_isHomeKitNamingError;
 
 // Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
 

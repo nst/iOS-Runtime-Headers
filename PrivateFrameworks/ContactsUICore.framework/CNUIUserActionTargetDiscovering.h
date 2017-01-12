@@ -20,6 +20,7 @@
 - (void).cxx_destruct;
 - (id)_targetsForActionType:(id)arg1;
 - (id)cache;
+- (void)dealloc;
 - (id)discoveringEnvironment;
 - (id)initWithDiscoveringEnvironment:(id)arg1;
 - (id)observableForTargetsChangedForActionType:(id)arg1 schedulerProvider:(id)arg2;

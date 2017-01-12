@@ -11,6 +11,7 @@
     int  _containerType;
     NSString * _deviceName;
     int  _endReasonType;
+    long long  _equivalencySourceAdamID;
     double  _eventDateTimestamp;
     double  _eventSecondsFromGMT;
     int  _eventType;
@@ -20,6 +21,7 @@
     struct { 
         unsigned int cloudPlaylistID : 1; 
         unsigned int containerAdamID : 1; 
+        unsigned int equivalencySourceAdamID : 1; 
         unsigned int eventDateTimestamp : 1; 
         unsigned int eventSecondsFromGMT : 1; 
         unsigned int itemCloudID : 1; 
@@ -57,6 +59,8 @@
     long long  _radioAdamID;
     int  _reasonHintType;
     NSData * _recommendationData;
+    NSString * _requestingBundleIdentifier;
+    NSString * _requestingBundleVersion;
     BOOL  _sBEnabled;
     int  _sourceType;
     NSString * _stationHash;
@@ -78,6 +82,7 @@
 @property (nonatomic) int containerType;
 @property (nonatomic, retain) NSString *deviceName;
 @property (nonatomic) int endReasonType;
+@property (nonatomic) long long equivalencySourceAdamID;
 @property (nonatomic) double eventDateTimestamp;
 @property (nonatomic) double eventSecondsFromGMT;
 @property (nonatomic) int eventType;
@@ -92,6 +97,7 @@
 @property (nonatomic) BOOL hasContainerType;
 @property (nonatomic, readonly) BOOL hasDeviceName;
 @property (nonatomic) BOOL hasEndReasonType;
+@property (nonatomic) BOOL hasEquivalencySourceAdamID;
 @property (nonatomic) BOOL hasEventDateTimestamp;
 @property (nonatomic) BOOL hasEventSecondsFromGMT;
 @property (nonatomic) BOOL hasEventType;
@@ -113,6 +119,8 @@
 @property (nonatomic) BOOL hasRadioAdamID;
 @property (nonatomic) BOOL hasReasonHintType;
 @property (nonatomic, readonly) BOOL hasRecommendationData;
+@property (nonatomic, readonly) BOOL hasRequestingBundleIdentifier;
+@property (nonatomic, readonly) BOOL hasRequestingBundleVersion;
 @property (nonatomic) BOOL hasSBEnabled;
 @property (nonatomic) BOOL hasSourceType;
 @property (nonatomic, readonly) BOOL hasStationHash;
@@ -139,6 +147,8 @@
 @property (nonatomic) long long radioAdamID;
 @property (nonatomic) int reasonHintType;
 @property (nonatomic, retain) NSData *recommendationData;
+@property (nonatomic, retain) NSString *requestingBundleIdentifier;
+@property (nonatomic, retain) NSString *requestingBundleVersion;
 @property (nonatomic) BOOL sBEnabled;
 @property (nonatomic) int sourceType;
 @property (nonatomic, retain) NSString *stationHash;
@@ -152,21 +162,32 @@
 @property (nonatomic, retain) NSData *trackInfo;
 
 - (void).cxx_destruct;
+- (int)StringAsContainerType:(id)arg1;
+- (int)StringAsEndReasonType:(id)arg1;
+- (int)StringAsEventType:(id)arg1;
+- (int)StringAsItemType:(id)arg1;
+- (int)StringAsMediaType:(id)arg1;
+- (int)StringAsReasonHintType:(id)arg1;
+- (int)StringAsSourceType:(id)arg1;
 - (id)buildVersion;
 - (id)cloudAlbumID;
 - (unsigned long long)cloudPlaylistID;
 - (long long)containerAdamID;
 - (id)containerID;
 - (int)containerType;
+- (id)containerTypeAsString:(int)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)deviceName;
 - (id)dictionaryRepresentation;
 - (int)endReasonType;
+- (id)endReasonTypeAsString:(int)arg1;
+- (long long)equivalencySourceAdamID;
 - (double)eventDateTimestamp;
 - (double)eventSecondsFromGMT;
 - (int)eventType;
+- (id)eventTypeAsString:(int)arg1;
 - (id)externalID;
 - (id)featureName;
 - (id)globalPlaylistID;
@@ -178,6 +199,7 @@
 - (BOOL)hasContainerType;
 - (BOOL)hasDeviceName;
 - (BOOL)hasEndReasonType;
+- (BOOL)hasEquivalencySourceAdamID;
 - (BOOL)hasEventDateTimestamp;
 - (BOOL)hasEventSecondsFromGMT;
 - (BOOL)hasEventType;
@@ -199,6 +221,8 @@
 - (BOOL)hasRadioAdamID;
 - (BOOL)hasReasonHintType;
 - (BOOL)hasRecommendationData;
+- (BOOL)hasRequestingBundleIdentifier;
+- (BOOL)hasRequestingBundleVersion;
 - (BOOL)hasSBEnabled;
 - (BOOL)hasSourceType;
 - (BOOL)hasStationHash;
@@ -217,8 +241,10 @@
 - (double)itemEndTime;
 - (double)itemStartTime;
 - (int)itemType;
+- (id)itemTypeAsString:(int)arg1;
 - (id)lyricsID;
 - (int)mediaType;
+- (id)mediaTypeAsString:(int)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)offline;
 - (long long)persistentID;
@@ -228,7 +254,10 @@
 - (long long)radioAdamID;
 - (BOOL)readFrom:(id)arg1;
 - (int)reasonHintType;
+- (id)reasonHintTypeAsString:(int)arg1;
 - (id)recommendationData;
+- (id)requestingBundleIdentifier;
+- (id)requestingBundleVersion;
 - (BOOL)sBEnabled;
 - (void)setBuildVersion:(id)arg1;
 - (void)setCloudAlbumID:(id)arg1;
@@ -238,6 +267,7 @@
 - (void)setContainerType:(int)arg1;
 - (void)setDeviceName:(id)arg1;
 - (void)setEndReasonType:(int)arg1;
+- (void)setEquivalencySourceAdamID:(long long)arg1;
 - (void)setEventDateTimestamp:(double)arg1;
 - (void)setEventSecondsFromGMT:(double)arg1;
 - (void)setEventType:(int)arg1;
@@ -248,6 +278,7 @@
 - (void)setHasContainerAdamID:(BOOL)arg1;
 - (void)setHasContainerType:(BOOL)arg1;
 - (void)setHasEndReasonType:(BOOL)arg1;
+- (void)setHasEquivalencySourceAdamID:(BOOL)arg1;
 - (void)setHasEventDateTimestamp:(BOOL)arg1;
 - (void)setHasEventSecondsFromGMT:(BOOL)arg1;
 - (void)setHasEventType:(BOOL)arg1;
@@ -282,6 +313,8 @@
 - (void)setRadioAdamID:(long long)arg1;
 - (void)setReasonHintType:(int)arg1;
 - (void)setRecommendationData:(id)arg1;
+- (void)setRequestingBundleIdentifier:(id)arg1;
+- (void)setRequestingBundleVersion:(id)arg1;
 - (void)setSBEnabled:(BOOL)arg1;
 - (void)setSourceType:(int)arg1;
 - (void)setStationHash:(id)arg1;
@@ -294,6 +327,7 @@
 - (void)setTimedMetadata:(id)arg1;
 - (void)setTrackInfo:(id)arg1;
 - (int)sourceType;
+- (id)sourceTypeAsString:(int)arg1;
 - (id)stationHash;
 - (long long)stationID;
 - (id)stationStringID;

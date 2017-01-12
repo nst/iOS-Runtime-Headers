@@ -3,6 +3,7 @@
  */
 
 @interface _HMCameraSource : NSObject <HMFMessageReceiver> {
+    NSNumber * _aspectRatio;
     HMCameraView * _cameraView;
     NSObject<OS_dispatch_queue> * _clientQueue;
     HMDelegateCaller * _delegateCaller;
@@ -13,6 +14,7 @@
     NSNumber * _slotIdentifier;
 }
 
+@property (nonatomic, readonly, copy) NSNumber *aspectRatio;
 @property (nonatomic) HMCameraView *cameraView;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *clientQueue;
 @property (readonly, copy) NSString *debugDescription;
@@ -29,10 +31,11 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (id)aspectRatio;
 - (id)cameraView;
 - (id)clientQueue;
 - (id)delegateCaller;
-- (id)initWithSessionID:(id)arg1 slotIdentifier:(id)arg2 clientQueue:(id)arg3 delegateCaller:(id)arg4 msgDispatcher:(id)arg5 profileUniqueIdentifier:(id)arg6;
+- (id)initWithSessionID:(id)arg1 slotIdentifier:(id)arg2 clientQueue:(id)arg3 delegateCaller:(id)arg4 msgDispatcher:(id)arg5 profileUniqueIdentifier:(id)arg6 aspectRatio:(id)arg7;
 - (id)messageReceiveQueue;
 - (id)messageTargetUUID;
 - (id)msgDispatcher;

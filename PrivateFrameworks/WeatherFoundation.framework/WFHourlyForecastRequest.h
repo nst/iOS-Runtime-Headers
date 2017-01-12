@@ -4,10 +4,7 @@
 
 @interface WFHourlyForecastRequest : WFAggregateForecastRequest
 
-+ (BOOL)supportsSecureCoding;
-
 - (id)description;
-- (void)handleResponse:(id)arg1;
 - (id)initWithLocation:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)startWithService:(id)arg1;
 

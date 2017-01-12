@@ -7,6 +7,8 @@
     <MPQueueFeederDelegate> * _delegate;
     MPModelPlayEvent * _modelPlayEvent;
     NSMutableDictionary * _nextStartTimes;
+    NSString * _playActivityFeatureName;
+    NSData * _playActivityRecommendationData;
     int  _repeatType;
     BOOL  _requiresQueueChangeVerification;
     int  _shuffleType;
@@ -32,8 +34,8 @@
 @property (nonatomic, readonly) Class itemClass;
 @property (nonatomic, readonly) unsigned int itemCount;
 @property (nonatomic, readonly) MPModelPlayEvent *modelPlayEvent;
-@property (setter=mpcReporting_setFeatureName:, nonatomic, copy) NSString *mpcReporting_featureName;
-@property (setter=mpcReporting_setRecommendationData:, nonatomic, copy) NSData *mpcReporting_recommendationData;
+@property (nonatomic, copy) NSString *playActivityFeatureName;
+@property (nonatomic, copy) NSData *playActivityRecommendationData;
 @property (nonatomic, readonly) int playbackMode;
 @property (nonatomic, readonly) BOOL playerPreparesItemsForPlaybackAsynchronously;
 @property (nonatomic, readonly) int realRepeatType;
@@ -56,6 +58,7 @@
 - (BOOL)_canPurgeNextStartTimes;
 - (int)activeShuffleType;
 - (BOOL)allowsUserVisibleUpcomingItems;
+- (void)applyVolumeNormalizationForItem:(id)arg1;
 - (id)audioSessionModeForItemAtIndex:(unsigned int)arg1;
 - (BOOL)canReorder;
 - (BOOL)canSeek;
@@ -89,6 +92,8 @@
 - (id)metadataItemForIdentifier:(id)arg1;
 - (id)modelPlayEvent;
 - (id)pathAtIndex:(unsigned int)arg1;
+- (id)playActivityFeatureName;
+- (id)playActivityRecommendationData;
 - (id)playbackInfoForIdentifier:(id)arg1;
 - (int)playbackMode;
 - (void)player:(id)arg1 currentItemDidChangeToItem:(id)arg2;
@@ -106,6 +111,8 @@
 - (void)setActiveShuffleType:(int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setNextStartTime:(double)arg1 forIndentifier:(id)arg2;
+- (void)setPlayActivityFeatureName:(id)arg1;
+- (void)setPlayActivityRecommendationData:(id)arg1;
 - (void)setRepeatType:(int)arg1;
 - (void)setRequiresQueueChangeVerification:(BOOL)arg1;
 - (void)setShuffleType:(int)arg1;
@@ -135,10 +142,6 @@
 
 - (id)MPC_contentItemIdentifierCollection;
 - (BOOL)isRadioQueueFeeder;
-- (id)mpcReporting_featureName;
-- (id)mpcReporting_recommendationData;
-- (void)mpcReporting_setFeatureName:(id)arg1;
-- (void)mpcReporting_setRecommendationData:(id)arg1;
 - (id)station;
 
 @end

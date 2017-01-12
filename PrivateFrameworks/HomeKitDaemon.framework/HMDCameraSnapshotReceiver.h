@@ -6,6 +6,7 @@
     HMDAccessory * _accessory;
     NSObject<OS_dispatch_queue> * _delegateQueue;
     NSDictionary * _options;
+    HMDCameraResidentMessageHandler * _residentMessageHandler;
     HMDCameraSessionID * _sessionID;
     HMDSnapshotFile * _snapshotFile;
     HMDSnapshotRequestHandler * _snapshotRequestHandler;
@@ -19,6 +20,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) NSDictionary *options;
+@property (nonatomic, readonly) HMDCameraResidentMessageHandler *residentMessageHandler;
 @property (nonatomic, readonly) HMDCameraSessionID *sessionID;
 @property (nonatomic, retain) HMDSnapshotFile *snapshotFile;
 @property (nonatomic, readonly) HMDSnapshotRequestHandler *snapshotRequestHandler;
@@ -30,12 +32,13 @@
 
 - (void).cxx_destruct;
 - (void)_sendConfirmationToResident:(id /* block */)arg1;
-- (void)_sendRequestToResident:(id /* block */)arg1;
+- (void)_sendRequestWithTierType:(unsigned int)arg1 toResident:(id /* block */)arg2;
 - (id)accessory;
 - (id)delegateQueue;
-- (id)initWithSessionID:(id)arg1 workQueue:(id)arg2 options:(id)arg3 accessory:(id)arg4 delegateQueue:(id)arg5 uniqueIdentifier:(id)arg6 snapshotRequestHandler:(id)arg7;
+- (id)initWithSessionID:(id)arg1 workQueue:(id)arg2 options:(id)arg3 accessory:(id)arg4 delegateQueue:(id)arg5 uniqueIdentifier:(id)arg6 snapshotRequestHandler:(id)arg7 residentMessageHandler:(id)arg8;
 - (id)logIdentifier;
 - (id)options;
+- (id)residentMessageHandler;
 - (id)sessionID;
 - (void)setSnapshotFile:(id)arg1;
 - (id)snapshotFile;

@@ -2,17 +2,19 @@
    Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
  */
 
-@interface PKPaymentPassDetailViewController : PKSectionTableViewController <MFMailComposeViewControllerDelegate, PKPassHeaderViewDelegate, PKPaymentDataProviderDelegate, PKPaymentSetupDelegate, PKPaymentVerificationControllerDelegate, PSStateRestoration, UITableViewDataSource, UITableViewDelegate> {
+@interface PKPaymentPassDetailViewController : PKSectionTableViewController <MFMailComposeViewControllerDelegate, PKPassHeaderViewDelegate, PKPaymentDataProviderDelegate, PKPaymentSetupDelegate, PKPaymentVerificationControllerDelegate, PKPerformActionViewControllerDelegate, PSStateRestoration, UITableViewDataSource, UITableViewDelegate> {
     PKPaymentPassDetailActivationFooterView * _activationFooter;
     NSArray * _allPaymentApplications;
     PKSettingTableCell * _automaticPresentationSwitch;
     UIVisualEffectView * _blurView;
+    NSArray * _commuterFields;
     NSArray * _contactlessPaymentApplications;
     BOOL  _deepLinkingEnabled;
     PKPaymentApplication * _defaultPaymentApplication;
     <PKPassDeleteHandler> * _deleteOverrider;
     UIColor * _detailTextColor;
     int  _detailViewStyle;
+    PKFelicaPassProperties * _felicaProperties;
     struct UIEdgeInsets { 
         float top; 
         float left; 
@@ -35,6 +37,7 @@
     <PKPaymentDataProvider> * _paymentServiceDataProvider;
     NSNumber * _paymentTransactionCellHeightCache;
     NSMutableDictionary * _pendingTransactions;
+    BOOL  _performingCardTransfer;
     UIColor * _primaryTextColor;
     UISegmentedControl * _tabBar;
     float  _tabBarHeight;
@@ -65,25 +68,32 @@
 - (void)_applyDefaultStaticStylingToCell:(id)arg1;
 - (id)_automaticPresentationCellForTableView:(id)arg1;
 - (void)_automaticPresentationSwitchChanged:(id)arg1;
+- (id)_availableActionCellForIndexPath:(id)arg1 tableView:(id)arg2;
+- (id)_availableActions;
 - (id)_billingAddressCellForTableView:(id)arg1;
 - (void)_callIssuer;
 - (BOOL)_canSelectTransaction;
 - (void)_cancelPendingTransactionTimerClearingPending:(BOOL)arg1;
 - (unsigned int)_cardInfoSectionGenerateCellWithOutput:(id*)arg1 forRowIndex:(int)arg2 tableView:(id)arg3;
+- (id)_commuterRouteCellForIndexPath:(id)arg1 tableView:(id)arg2;
+- (unsigned int)_contactBankCellWithOutput:(id*)arg1 forRowIndex:(int)arg2 tableView:(id)arg3;
 - (void)_contentSizeCategoryDidChange:(id)arg1;
 - (id)_createTabBarWithSelectedIndex:(int)arg1;
 - (id)_defaultCellWithTextColor:(id)arg1 forTableView:(id)arg2;
 - (id)_deleteCardCellForTableView:(id)arg1;
 - (id)_deviceAccountNumberCellForIndexPath:(id)arg1 tableView:(id)arg2;
 - (id)_deviceSpecificLocalizedStringKeyForKey:(id)arg1;
+- (void)_didSelectAvailableActionAtRow:(int)arg1;
 - (void)_didSelectBillingAddress;
-- (void)_didSelectContactBankSection;
+- (void)_didSelectContactBankSectionAtIndexPath:(int)arg1;
 - (void)_didSelectDeleteCard;
 - (void)_didSelectPassOperationsSectionAtIndexPath:(id)arg1;
 - (void)_didSelectPassStateSection;
 - (void)_didSelectPaymentApplicationSectionRowAtIndexPath:(id)arg1;
 - (void)_didSelectPrivacySectionAtRow:(int)arg1;
 - (void)_didSelectTransactionAtRow:(int)arg1;
+- (void)_didSelectTransferCardAtIndexPath:(id)arg1;
+- (void)_didSelectTransitTicketAtRow:(int)arg1;
 - (id)_disabledCellWithText:(id)arg1 forTableView:(id)arg2;
 - (id)_disclosureCellWithTitle:(id)arg1 forTableView:(id)arg2;
 - (void)_done:(id)arg1;
@@ -91,6 +101,7 @@
 - (id)_footerTextForPassStateSection;
 - (id)_footerViewForPassStateSection;
 - (float)_footerViewHeightForPassStateSectionWithTableView:(id)arg1;
+- (void)_handleProvisioningError:(id)arg1;
 - (id)_headerTitleForPassStateSection;
 - (float)_heightForPassStateSectionWithTableView:(id)arg1;
 - (id)_infoCellWithDescription:(id)arg1 forTableView:(id)arg2;
@@ -102,11 +113,15 @@
 - (void)_messagesSwitchChanged:(id)arg1;
 - (id)_moreTransactionsCellForTableView:(id)arg1;
 - (void)_openIssuerWebsite;
+- (void)_openPaymentSetup;
 - (unsigned int)_passOperationsCellWithOutput:(id*)arg1 forRowIndex:(int)arg2 tableView:(id)arg3;
 - (void)_passSettingsChanged:(id)arg1;
 - (unsigned int)_passStateSectionGenerateCellWithOutput:(id*)arg1 forRowIndex:(int)arg2 tableView:(id)arg3;
 - (id)_paymentApplicationsCellForIndexPath:(id)arg1 tableView:(id)arg2;
+- (id)_paymentSetupNavigationControllerForProvisioningController:(id)arg1;
 - (float)_paymentTransactionCellHeight;
+- (void)_preflightWatchForTransferWithCompletion:(id /* block */)arg1;
+- (void)_presentContactBankViewController;
 - (void)_presentMerchantDetailsViewWithTransaction:(id)arg1 forCell:(id)arg2;
 - (unsigned int)_privacyTermsSectionGenerateCellWithOutput:(id*)arg1 forRowIndex:(int)arg2 tableView:(id)arg3;
 - (void)_reloadPassAndView;
@@ -117,7 +132,9 @@
 - (BOOL)_shouldShowBillingAddressCell;
 - (BOOL)_shouldShowContactCell;
 - (BOOL)_shouldShowPrivacyPolicyCell;
+- (BOOL)_shouldShowServiceMode;
 - (BOOL)_shouldShowTermsCell;
+- (BOOL)_shouldShowTransferCell;
 - (id)_spinnerCellForTableView:(id)arg1;
 - (void)_startPendingTransactionTimer;
 - (id)_subtitleCellForTableView:(id)arg1;
@@ -126,12 +143,15 @@
 - (id)_transactionCellForIndexPath:(id)arg1 tableView:(id)arg2;
 - (id)_transactionsSwitchCellForTableView:(id)arg1;
 - (void)_transactionsSwitchChanged:(id)arg1;
+- (id)_transferCardCellForTableView:(id)arg1;
+- (int)_transitCellGenerateCellWithOutput:(id*)arg1 forRowIndex:(int)arg2 tableView:(id)arg3;
+- (void)_updateFelicaProperties;
 - (BOOL)_updateHeaderHeight;
 - (void)_updatePassProperties;
+- (void)_updateSectionVisibilityAndReloadIfNecessaryForSection:(unsigned int)arg1;
 - (void)_updateTabBar;
 - (void)_updateTabBarWithSegments:(id)arg1;
 - (void)_updateTransactionsWithPendingTransactions;
-- (void)_updateVisibilityAndReloadIfNecessaryForSection:(unsigned int)arg1;
 - (BOOL)canBeShownFromSuspendedState;
 - (void)dealloc;
 - (id)deleteOverrider;
@@ -148,7 +168,10 @@
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didEnableTransactionService:(BOOL)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didReceiveTransaction:(id)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didRemoveTransactionWithIdentifier:(id)arg2;
+- (void)paymentPassWithUniqueIdentifier:(id)arg1 didUpdateWithFelicaPassProperties:(id)arg2;
 - (void)paymentSetupDidFinish:(id)arg1;
+- (void)performActionViewControllerDidCancel:(id)arg1;
+- (void)performActionViewControllerDidPerformAction:(id)arg1;
 - (BOOL)pkui_prefersNavigationBarShadowHidden;
 - (void)presentVerificationViewController:(id)arg1 animated:(BOOL)arg2;
 - (id)primaryTextColor;

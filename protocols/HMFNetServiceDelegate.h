@@ -5,7 +5,7 @@
 
 @optional
 
-- (void)netService:(HMFNetService *)arg1 didUpdateAddress:(HMFNetAddress *)arg2;
+- (void)netService:(HMFNetService *)arg1 didUpdateAddresses:(NSArray *)arg2;
 - (void)netService:(HMFNetService *)arg1 didUpdateTXTRecord:(NSDictionary *)arg2;
 
 @end

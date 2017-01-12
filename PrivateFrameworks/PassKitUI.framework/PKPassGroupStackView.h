@@ -291,6 +291,7 @@
 - (void)setCurrentPageIndicatorTintColor:(id)arg1;
 - (void)setDatasource:(id)arg1;
 - (void)setFooterSuppressed:(BOOL)arg1;
+- (void)setFooterSuppressed:(BOOL)arg1 withContext:(id)arg2;
 - (void)setModalGroupIndex:(unsigned int)arg1;
 - (void)setPageIndicatorTintColor:(id)arg1;
 - (void)setPilingMode:(int)arg1;

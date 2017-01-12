@@ -19,12 +19,12 @@
 
 - (void).cxx_destruct;
 - (void)cameraSnapshotControl:(id)arg1 didTakeSnapshot:(id)arg2 error:(id)arg3;
+- (void)cameraSnapshotControlDidUpdateMostRecentSnapshot:(id)arg1;
 - (id)delegate;
+- (void)fetchCameraSnapshotForBulletinContext:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)initWithSnapshotControl:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
 - (id)mostRecentSnapshot;
 - (id)propertyQueue;
-- (void)resetControl;
 - (void)setDelegate:(id)arg1;
 - (void)setSnapshotControl:(id)arg1;
 - (id)snapshotControl;

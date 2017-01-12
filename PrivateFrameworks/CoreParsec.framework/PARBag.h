@@ -21,6 +21,7 @@
 @property (nonatomic, readonly, copy) NSString *firstUseLearnMoreURL;
 @property (nonatomic, readonly) unsigned int maximumCachedQueriesToSend;
 @property (nonatomic, readonly) unsigned int maximumCachedResultsToSend;
+@property (nonatomic, readonly) NSNumber *minSearchRenderTimeout;
 @property (nonatomic, readonly) double minimumIntervalBetweenQueriesFromBag;
 @property (nonatomic, readonly) unsigned int minimumQueryLength;
 @property (nonatomic, readonly) NSNumber *otherRenderTimeout;
@@ -65,6 +66,7 @@
 - (BOOL)isEnabled;
 - (unsigned int)maximumCachedQueriesToSend;
 - (unsigned int)maximumCachedResultsToSend;
+- (id)minSearchRenderTimeout;
 - (double)minimumIntervalBetweenQueriesFromBag;
 - (unsigned int)minimumQueryLength;
 - (id)otherRenderTimeout;

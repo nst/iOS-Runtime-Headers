@@ -5,11 +5,13 @@
 @interface HMDNameValidator : NSObject {
     NSUUID * _homeManagerUUID;
     NSMutableDictionary * _namespaceList;
+    NSPredicate * _nonZeroLengthPredicate;
     NSObject<OS_dispatch_queue> * _workQueue;
 }
 
 @property (nonatomic, retain) NSUUID *homeManagerUUID;
 @property (nonatomic, copy) NSMutableDictionary *namespaceList;
+@property (nonatomic, retain) NSPredicate *nonZeroLengthPredicate;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
 - (void).cxx_destruct;
@@ -25,11 +27,13 @@
 - (id)homeManagerUUID;
 - (id)initWithUUID:(id)arg1;
 - (id)namespaceList;
+- (id)nonZeroLengthPredicate;
 - (id)removeName:(id)arg1 namespace:(id)arg2;
 - (id)removeNamespace:(id)arg1;
 - (id)replaceName:(id)arg1 withNewName:(id)arg2 inNamespaces:(id)arg3;
 - (void)setHomeManagerUUID:(id)arg1;
 - (void)setNamespaceList:(id)arg1;
+- (void)setNonZeroLengthPredicate:(id)arg1;
 - (void)setWorkQueue:(id)arg1;
 - (id)validateName:(id)arg1;
 - (id)workQueue;

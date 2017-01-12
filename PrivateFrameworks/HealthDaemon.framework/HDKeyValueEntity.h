@@ -33,6 +33,7 @@
 + (id)columnsDefinition;
 + (id)companionAlertedStateKeyFromDefinitionIdentifier:(id)arg1;
 + (id)companionAvailabilityStateKeyFromDefinitionIdentifier:(id)arg1;
++ (id)companionAvailabilityStateKeySuffix;
 + (id)dataForKey:(id)arg1 domain:(id)arg2 category:(int)arg3 profile:(id)arg4 entity:(id*)arg5 error:(id*)arg6;
 + (id)databaseTable;
 + (id)dateComponentsForKey:(id)arg1 domain:(id)arg2 category:(int)arg3 profile:(id)arg4 entity:(id*)arg5 error:(id*)arg6;
@@ -67,5 +68,6 @@
 + (id)valuesForKeys:(id)arg1 domain:(id)arg2 category:(int)arg3 profile:(id)arg4 error:(id*)arg5;
 + (id)watchAlertedStateKeyFromDefinitionIdentifier:(id)arg1;
 + (id)watchAvailabilityStateKeyFromDefinitionIdentifier:(id)arg1;
++ (id)watchAvailabilityStateKeySuffix;
 
 @end

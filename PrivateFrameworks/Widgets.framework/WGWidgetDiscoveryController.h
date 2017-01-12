@@ -10,7 +10,6 @@
     <WGWidgetDebugging> * _debuggingHandler;
     NSMutableSet * _defaultEnabledIDs;
     <WGWidgetDiscoveryControllerDelegate> * _delegate;
-    NSMutableDictionary * _hostIDsToWidgetIDsToWidgets;
     NSMutableDictionary * _identifiersToDataSources;
     NSMutableDictionary * _identifiersToDatums;
     NSMutableDictionary * _identifiersToWidgetInfos;
@@ -23,6 +22,7 @@
     WGWidgetPersistentStateController * _persistentStateController;
     WGWidgetListEditViewController * _presentedEditViewController;
     id  _presentedEditViewControllerStatusBarAssertion;
+    NSMutableDictionary * _requesterIDsToWidgetIDsToWidgets;
     NSMutableDictionary * _widgetIDsToPendingTestCompletions;
     NSMutableDictionary * _widgetIDsToPendingTestTearDowns;
 }
@@ -59,7 +59,7 @@
 - (BOOL)_managesTwoColumns;
 - (id)_newWidgetListEditViewController;
 - (id)_newWidgetListEditViewControllerStatusBarAssertion;
-- (id)_newWidgetWithIdentifier:(id)arg1;
+- (id)_newWidgetWithIdentifier:(id)arg1 delegate:(id)arg2;
 - (int)_nextSequenceNumber;
 - (void)_notifyObserversOfOrderChange;
 - (void)_notifyObserversOfVisibilityChange:(BOOL)arg1 ofWidgetWithIdentifier:(id)arg2 inGroup:(id)arg3;
@@ -132,6 +132,6 @@
 - (id)widgetListEditViewController:(id)arg1 itemIdentifiersForGroup:(id)arg2;
 - (void)widgetListEditViewController:(id)arg1 setEnabled:(BOOL)arg2 forItemsWithIdentifiers:(id)arg3;
 - (BOOL)widgetListEditViewControllerShouldIncludeInternalWidgets:(id)arg1;
-- (id)widgetWithIdentifier:(id)arg1 forHostWithIdentifier:(id)arg2;
+- (id)widgetWithIdentifier:(id)arg1 delegate:(id)arg2 forRequesterWithIdentifier:(id)arg3;
 
 @end

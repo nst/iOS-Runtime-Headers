@@ -6,6 +6,7 @@
 @required
 
 - (NSArray *)applicationIdentifiersWithState;
+- (void)close;
 - (BOOL)containsKey:(NSString *)arg1 forApplication:(NSString *)arg2;
 - (<FBApplicationDataStoreRepositoryReadingDelegate> *)delegate;
 - (NSArray *)keysForApplication:(NSString *)arg1;

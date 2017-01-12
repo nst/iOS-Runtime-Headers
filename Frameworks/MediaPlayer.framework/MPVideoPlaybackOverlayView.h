@@ -47,6 +47,7 @@
     NSArray * _topItems;
     NSArray * _topItemsConstraints;
     NSLayoutConstraint * _topItemsTrailingConstraint;
+    UIViewController * _viewControllerForModalPresentationOrientation;
     MPVolumeSlider * _volumeSlider;
     NSLayoutConstraint * _volumeSliderRightConstraint;
     NSLayoutConstraint * _volumeSliderWidthConstraint;
@@ -81,6 +82,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) _UIBackdropView *topBarBackdropView;
 @property (nonatomic) <MPVideoControllerProtocol> *videoViewController;
+@property (nonatomic) UIViewController *viewControllerForModalPresentationOrientation;
 @property (nonatomic) unsigned long long visibleParts;
 
 - (void).cxx_destruct;
@@ -185,6 +187,7 @@
 - (void)setPlayer:(id)arg1;
 - (void)setStyle:(int)arg1;
 - (void)setVideoViewController:(id)arg1;
+- (void)setViewControllerForModalPresentationOrientation:(id)arg1;
 - (void)setVisibleParts:(unsigned long long)arg1;
 - (void)setVisibleParts:(unsigned long long)arg1 animate:(BOOL)arg2;
 - (void)showAlternateTracks;
@@ -196,6 +199,7 @@
 - (void)updateConstraints;
 - (BOOL)updateTimeBasedValues;
 - (id)videoViewController;
+- (id)viewControllerForModalPresentationOrientation;
 - (unsigned long long)visibleParts;
 
 @end

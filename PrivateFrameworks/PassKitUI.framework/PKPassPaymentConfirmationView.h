@@ -2,9 +2,16 @@
    Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
  */
 
-@interface PKPassPaymentConfirmationView : PKPassFooterContentView <PKPassPaymentPayStateViewDelegate> {
+@interface PKPassPaymentConfirmationView : PKPassFooterContentView <PKPassPaymentPayStateViewDelegate, PKPaymentServiceDelegate> {
+    bool  _animated;
+    NSObject<OS_dispatch_source> * _checkmarkHoldTimer;
+    int  _expressFinishedNotifyToken;
+    bool  _holdingCheckmark;
     PKPassPaymentPayStateView * _payStateView;
-    _UIFeedbackEventBehavior * _paymentSuccessBehavior;
+    PKPaymentService * _paymentService;
+    bool  _shouldHoldCheckmark;
+    PKFooterTransactionView * _transactionView;
+    NSDate * _visibleDate;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -13,12 +20,22 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (void)_finishHoldingCheckmarkAfterDelay:(double)arg1;
+- (void)_finishHoldingCheckmarkIfPossible;
+- (void)_handleNotifyToken:(int)arg1;
+- (void)_registerForExpressFelicaTransitNotifications:(BOOL)arg1;
+- (void)_updateContentViewsWithFelicaProperties:(id)arg1;
+- (void)_updateContentViewsWithTransaction:(id)arg1;
+- (void)_updateContentViewsWithTransaction:(id)arg1 felicaProperties:(id)arg2;
 - (void)dealloc;
 - (void)didBecomeHiddenAnimated:(BOOL)arg1;
 - (void)didBecomeVisibleAnimated:(BOOL)arg1;
 - (id)initWithStyle:(int)arg1 pass:(id)arg2 context:(id)arg3;
+- (void)layoutIfNeededAnimated:(bool)arg1;
 - (void)layoutSubviews;
 - (void)payStateView:(id)arg1 revealingCheckmark:(BOOL)arg2;
+- (void)paymentPassWithUniqueIdentifier:(id)arg1 didReceiveTransaction:(id)arg2;
+- (void)paymentPassWithUniqueIdentifier:(id)arg1 didUpdateWithFelicaPassProperties:(id)arg2;
 - (void)willBecomeHiddenAnimated:(BOOL)arg1;
 - (void)willBecomeVisibleAnimated:(BOOL)arg1;
 

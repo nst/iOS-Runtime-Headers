@@ -5,6 +5,7 @@
 @interface SSVMutablePlayActivityEventItemIDs : SSVPlayActivityEventItemIDs
 
 @property (nonatomic) unsigned long long cloudID;
+@property (nonatomic) long long equivalencySourceAdamID;
 @property (nonatomic, copy) NSString *lyricsID;
 @property (nonatomic) long long purchasedAdamID;
 @property (nonatomic) long long radioAdamID;
@@ -12,6 +13,7 @@
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setCloudID:(unsigned long long)arg1;
+- (void)setEquivalencySourceAdamID:(long long)arg1;
 - (void)setLyricsID:(id)arg1;
 - (void)setPurchasedAdamID:(long long)arg1;
 - (void)setRadioAdamID:(long long)arg1;

@@ -19,6 +19,7 @@
 
 - (void).cxx_destruct;
 - (void)authorizationDidAuthorizePaymentCompleteWithStatus:(int)arg1;
+- (void)authorizationDidAuthorizePurchaseCompleteWithStatus:(int)arg1;
 - (void)authorizationDidRequestMerchantSessionCompleteWithSession:(id)arg1 error:(id)arg2;
 - (void)authorizationDidSelectPaymentMethodCompleteWithPaymentSummaryItems:(id)arg1;
 - (void)authorizationDidSelectShippingAddressCompleteWithStatus:(int)arg1 shippingMethods:(id)arg2 paymentSummaryItems:(id)arg3;

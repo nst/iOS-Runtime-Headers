@@ -47,6 +47,7 @@
 - (BOOL)isIrisVideoStabilizationSupported;
 - (BOOL)isPhotoFormat;
 - (BOOL)isSISSupported;
+- (BOOL)isShallowDepthOfFieldEffectSupported;
 - (BOOL)isVideoBinned;
 - (BOOL)isVideoHDRSupported;
 - (BOOL)isVideoStabilizationModeSupported:(int)arg1;

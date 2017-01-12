@@ -29,12 +29,13 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (void)_configureWithClientQueue:(id)arg1 delegateCaller:(id)arg2 msgDispatcher:(id)arg3 home:(id)arg4;
 - (void)_registerNotificationHandlers;
 - (id)cameraProfile;
 - (id)clientQueue;
 - (id)delegateCaller;
 - (id)home;
-- (id)initWithCameraProfile:(id)arg1 service:(id)arg2 clientQueue:(id)arg3 delegateCaller:(id)arg4 msgDispatcher:(id)arg5 home:(id)arg6 profileUniqueIdentifier:(id)arg7;
+- (id)initWithCameraProfile:(id)arg1 service:(id)arg2 profileUniqueIdentifier:(id)arg3;
 - (id)messageReceiveQueue;
 - (id)messageTargetUUID;
 - (id)msgDispatcher;

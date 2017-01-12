@@ -18,6 +18,7 @@
 - (BOOL)deviceInRestrictedMode;
 - (id)deviceName;
 - (BOOL)deviceSupportsInAppPayments;
+- (BOOL)hasFelicaSecureElement;
 - (id)init;
 - (id)optionsDelegate;
 - (id)passLibraryDataProvider;
@@ -25,6 +26,6 @@
 - (id)secureElementID;
 - (BOOL)secureElementIsProductionSigned;
 - (id)setupDelegate;
-- (BOOL)showPassState;
+- (id)setupFeaturedNetworksForDevice;
 
 @end

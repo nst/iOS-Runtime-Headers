@@ -78,13 +78,21 @@
 
 // Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
 
++ (struct CGSize { float x1; float x2; })_fiui_badgeThumbnailSizeUsingLargerDeviceSize:(BOOL)arg1;
++ (float)fiui_badgeThumbnailRenderingScale;
++ (struct CGSize { float x1; float x2; })fiui_badgeThumbnailRenderingSize;
++ (struct CGSize { float x1; float x2; })fiui_badgeThumbnailSize;
+
+- (void)_addStickersFromBundle:(id)arg1 forType:(id)arg2 toArray:(id)arg3;
 - (id)_fiui_badgeAssetNameSuffix;
 - (id)_fiui_badgeContainerPath;
+- (id)_fiui_imagePathForUncompletedAchievementOfSizeClass:(int)arg1;
 - (id)_fiui_pathForAssetNamed:(id)arg1 ofType:(id)arg2;
 - (id)fiui_badgeModelFilename;
 - (id)fiui_badgePlistPath;
 - (id)fiui_badgeTexturePath;
 - (id)fiui_compressedBadgeModelPath;
+- (BOOL)fiui_hasImageForSizeClass:(int)arg1;
 - (id)fiui_imageForSizeClass:(int)arg1;
 - (id)fiui_stickerBundle;
 - (id)fiui_stickerURLs;

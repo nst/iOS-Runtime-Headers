@@ -8,6 +8,7 @@
     NSData * _PMm;
     NSData * _SystemCode;
     NSData * _UID;
+    NSArray * _allSystemCodes;
     NSData * _tagID;
     unsigned int  _technology;
 }
@@ -17,6 +18,7 @@
 @property (nonatomic, readonly) NSData *PMm;
 @property (nonatomic, readonly) NSData *SystemCode;
 @property (nonatomic, readonly) NSData *UID;
+@property (nonatomic, readonly) NSArray *allSystemCodes;
 @property (nonatomic, readonly) NSData *tagID;
 @property (nonatomic, readonly) unsigned int technology;
 
@@ -32,11 +34,14 @@
 - (void)_setIdentifier:(id)arg1;
 - (void)_setPMm:(id)arg1;
 - (void)_setSystemCode:(id)arg1;
+- (void)_setSystemCodes:(id)arg1;
 - (void)_setTechnology:(unsigned int)arg1;
 - (void)_setUID:(id)arg1;
+- (id)allSystemCodes;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (id)getSystemCodeListString;
 - (id)initWithCoder:(id)arg1;
 - (id)tagID;
 - (unsigned int)technology;

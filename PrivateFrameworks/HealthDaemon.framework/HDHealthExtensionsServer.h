@@ -24,8 +24,10 @@
 + (id)serverWithClient:(id)arg1 profile:(id)arg2 error:(id*)arg3;
 
 - (void).cxx_destruct;
+- (void)_achievementDefinitionAvailabilityChanged:(id)arg1;
 - (void)_achievementDefinitionUnviewedCountChanged:(id)arg1;
 - (void)_achievementsAdded:(id)arg1;
+- (void)_callClientRemoteAchievementDefinitionUnviewedCountChanged;
 - (void)_checkForUpdatedAchievementAssetsOnce;
 - (id)client;
 - (id)clientInterface;
@@ -38,6 +40,7 @@
 - (BOOL)registeredForAchievementDefinitionUnviewedCountChangeNotifications;
 - (BOOL)registeredForAchievementNotifications;
 - (id)remoteObjectProxyWithErrorHandler:(id /* block */)arg1;
+- (void)remote_achievementAssetAvailabilityOnPairedDeviceForIdentifiers:(id)arg1 completion:(id /* block */)arg2;
 - (void)remote_addAchievement:(id)arg1 completion:(id /* block */)arg2;
 - (void)remote_deleteAchievementWithUUID:(id)arg1 completion:(id /* block */)arg2;
 - (void)remote_deleteAllAchievementsWithCompletion:(id /* block */)arg1;
@@ -49,6 +52,7 @@
 - (void)remote_markAchievementAsViewed:(id)arg1 completion:(id /* block */)arg2;
 - (void)remote_markAchievementDefinitionIdentifierAlertViewed:(id)arg1 completion:(id /* block */)arg2;
 - (void)remote_markAchievementsAlerted:(id)arg1 completion:(id /* block */)arg2;
+- (void)remote_nextScheduledAchievementDefinitionAlertTaskDateWithCompletion:(id /* block */)arg1;
 - (void)remote_registerForAchievementDefinitionNotificationsWithCompletion:(id /* block */)arg1;
 - (void)remote_registerForAchievementNotificationsAndFetchUnalertedCountWithCompletion:(id /* block */)arg1;
 - (void)remote_runAchievementsFixupAsDryRun:(BOOL)arg1 completion:(id /* block */)arg2;

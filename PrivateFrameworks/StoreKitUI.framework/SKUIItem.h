@@ -16,6 +16,7 @@
     NSString * _editorialBadge;
     NSString * _editorialBage;
     NSString * _feedUrlString;
+    BOOL  _gameControllerSupported;
     BOOL  _hasInAppPurchases;
     BOOL  _hasMessagesExtension;
     long long  _itemIdentifier;
@@ -32,6 +33,7 @@
     BOOL  _prerenderedArtwork;
     NSString * _productPageURLString;
     NSArray * _requiredCapabilities;
+    BOOL  _requiresGameController;
     SKUIStoreIdentifier * _storeIdentifier;
     NSString * _title;
     float  _userRating;
@@ -54,6 +56,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) unsigned int deviceFamilies;
 @property (nonatomic, readonly) NSString *editorialBadge;
+@property (nonatomic, readonly) BOOL gameControllerSupported;
 @property (nonatomic, readonly) BOOL hasInAppPurchases;
 @property (nonatomic, readonly) BOOL hasMessagesExtension;
 @property (readonly) unsigned int hash;
@@ -73,6 +76,7 @@
 @property (nonatomic, readonly) SKUIItemOffer *primaryItemOffer;
 @property (nonatomic, readonly) NSString *productPageURLString;
 @property (nonatomic, readonly) NSArray *requiredCapabilities;
+@property (nonatomic, readonly) BOOL requiresGameController;
 @property (nonatomic, copy) SKUIStoreIdentifier *storeIdentifier;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSString *title;
@@ -98,6 +102,7 @@
 - (id)collectionName;
 - (unsigned int)deviceFamilies;
 - (id)editorialBadge;
+- (BOOL)gameControllerSupported;
 - (BOOL)hasInAppPurchases;
 - (BOOL)hasMessagesExtension;
 - (BOOL)hasPrerenderedArtwork;
@@ -122,6 +127,7 @@
 - (id)primaryItemOffer;
 - (id)productPageURLString;
 - (id)requiredCapabilities;
+- (BOOL)requiresGameController;
 - (void)setItemIdentifier:(long long)arg1;
 - (void)setItemKind:(int)arg1;
 - (void)setStoreIdentifier:(id)arg1;

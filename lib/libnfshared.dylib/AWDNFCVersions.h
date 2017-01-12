@@ -21,6 +21,11 @@
         unsigned int seRestrictedMode : 1; 
         unsigned int seSequenceCounter : 1; 
         unsigned int seSignKeyType : 1; 
+        unsigned int seosHWVersion : 1; 
+        unsigned int seosMigrationState : 1; 
+        unsigned int seosOSMode : 1; 
+        unsigned int seosOSVersion : 1; 
+        unsigned int seosSignKeyType : 1; 
     }  _has;
     unsigned int  _middlewareVersion;
     unsigned int  _nfccFWRevision;
@@ -39,6 +44,12 @@
     unsigned int  _seRestrictedMode;
     unsigned int  _seSequenceCounter;
     unsigned int  _seSignKeyType;
+    unsigned int  _seosHWVersion;
+    unsigned int  _seosMigrationState;
+    unsigned int  _seosOSMode;
+    unsigned int  _seosOSVersion;
+    NSString * _seosPlatformID;
+    unsigned int  _seosSignKeyType;
     unsigned long long  _timestamp;
 }
 
@@ -59,6 +70,12 @@
 @property (nonatomic) BOOL hasSeRestrictedMode;
 @property (nonatomic) BOOL hasSeSequenceCounter;
 @property (nonatomic) BOOL hasSeSignKeyType;
+@property (nonatomic) BOOL hasSeosHWVersion;
+@property (nonatomic) BOOL hasSeosMigrationState;
+@property (nonatomic) BOOL hasSeosOSMode;
+@property (nonatomic) BOOL hasSeosOSVersion;
+@property (nonatomic, readonly) BOOL hasSeosPlatformID;
+@property (nonatomic) BOOL hasSeosSignKeyType;
 @property (nonatomic) BOOL hasTimestamp;
 @property (nonatomic) unsigned int middlewareVersion;
 @property (nonatomic) unsigned int nfccFWRevision;
@@ -77,6 +94,12 @@
 @property (nonatomic) unsigned int seRestrictedMode;
 @property (nonatomic) unsigned int seSequenceCounter;
 @property (nonatomic) unsigned int seSignKeyType;
+@property (nonatomic) unsigned int seosHWVersion;
+@property (nonatomic) unsigned int seosMigrationState;
+@property (nonatomic) unsigned int seosOSMode;
+@property (nonatomic) unsigned int seosOSVersion;
+@property (nonatomic, retain) NSString *seosPlatformID;
+@property (nonatomic) unsigned int seosSignKeyType;
 @property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
@@ -101,6 +124,12 @@
 - (BOOL)hasSeRestrictedMode;
 - (BOOL)hasSeSequenceCounter;
 - (BOOL)hasSeSignKeyType;
+- (BOOL)hasSeosHWVersion;
+- (BOOL)hasSeosMigrationState;
+- (BOOL)hasSeosOSMode;
+- (BOOL)hasSeosOSVersion;
+- (BOOL)hasSeosPlatformID;
+- (BOOL)hasSeosSignKeyType;
 - (BOOL)hasTimestamp;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -123,6 +152,12 @@
 - (unsigned int)seRestrictedMode;
 - (unsigned int)seSequenceCounter;
 - (unsigned int)seSignKeyType;
+- (unsigned int)seosHWVersion;
+- (unsigned int)seosMigrationState;
+- (unsigned int)seosOSMode;
+- (unsigned int)seosOSVersion;
+- (id)seosPlatformID;
+- (unsigned int)seosSignKeyType;
 - (void)setHasMiddlewareVersion:(BOOL)arg1;
 - (void)setHasNfccFWRevision:(BOOL)arg1;
 - (void)setHasNfccFWVersion:(BOOL)arg1;
@@ -139,6 +174,11 @@
 - (void)setHasSeRestrictedMode:(BOOL)arg1;
 - (void)setHasSeSequenceCounter:(BOOL)arg1;
 - (void)setHasSeSignKeyType:(BOOL)arg1;
+- (void)setHasSeosHWVersion:(BOOL)arg1;
+- (void)setHasSeosMigrationState:(BOOL)arg1;
+- (void)setHasSeosOSMode:(BOOL)arg1;
+- (void)setHasSeosOSVersion:(BOOL)arg1;
+- (void)setHasSeosSignKeyType:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
 - (void)setMiddlewareVersion:(unsigned int)arg1;
 - (void)setNfccFWRevision:(unsigned int)arg1;
@@ -157,6 +197,12 @@
 - (void)setSeRestrictedMode:(unsigned int)arg1;
 - (void)setSeSequenceCounter:(unsigned int)arg1;
 - (void)setSeSignKeyType:(unsigned int)arg1;
+- (void)setSeosHWVersion:(unsigned int)arg1;
+- (void)setSeosMigrationState:(unsigned int)arg1;
+- (void)setSeosOSMode:(unsigned int)arg1;
+- (void)setSeosOSVersion:(unsigned int)arg1;
+- (void)setSeosPlatformID:(id)arg1;
+- (void)setSeosSignKeyType:(unsigned int)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;

@@ -62,5 +62,6 @@
 - (void)uninstallIdentifiers:(id)arg1 withOptions:(id)arg2 completion:(id /* block */)arg3;
 - (void)updateAppDataProtectionWithOptions:(id)arg1 completion:(id /* block */)arg2;
 - (void)updateSinfForLSWithIdentifier:(id)arg1 withOptions:(id)arg2 sinfData:(id)arg3 completion:(id /* block */)arg4;
+- (void)updateiTunesMetadataForLSWithIdentifier:(id)arg1 options:(id)arg2 plistData:(id)arg3 completion:(id /* block */)arg4;
 
 @end

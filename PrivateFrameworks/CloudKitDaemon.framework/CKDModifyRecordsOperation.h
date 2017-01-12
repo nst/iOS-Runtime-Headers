@@ -87,6 +87,7 @@
 - (id)_prepareAssetsForUpload;
 - (void)_prepareParentPCS;
 - (BOOL)_prepareRecordsForSave;
+- (void)_reallyHandleRecordSaved:(id)arg1 handler:(id)arg2 etag:(id)arg3 dateStatistics:(id)arg4 responseCode:(id)arg5 keysAssociatedWithETag:(id)arg6 recordForOplockFailure:(id)arg7 decryptedServerRecord:(id)arg8;
 - (void)_reportRecordsInFlight;
 - (BOOL)_shouldToposortInContainerID:(id)arg1;
 - (BOOL)_topoSortRecords;

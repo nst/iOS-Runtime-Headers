@@ -5,6 +5,7 @@
 @interface AVCapturePhotoSettingsInternal : NSObject {
     int  HDRMode;
     BOOL  autoBravoImageFusionEnabled;
+    BOOL  autoShallowDepthOfFieldEffectEnabled;
     BOOL  autoStillImageStabilizationEnabled;
     int  flashMode;
     NSDictionary * format;

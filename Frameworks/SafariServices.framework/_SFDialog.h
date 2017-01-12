@@ -20,6 +20,8 @@
 + (id)javaScriptAlertDialogWithMessage:(id)arg1 completionHandler:(id /* block */)arg2;
 + (id)javaScriptConfirmDialogWithMessage:(id)arg1 completionHandler:(id /* block */)arg2;
 + (id)javaScriptPromptDialogWithMessage:(id)arg1 defaultText:(id)arg2 completionHandler:(id /* block */)arg3;
++ (id)mailNavigationDialogWithCompletionHandler:(id /* block */)arg1;
++ (id)telephonyNavigationDialogWithCompletionHandler:(id /* block */)arg1;
 
 - (void).cxx_destruct;
 - (void)cancel;

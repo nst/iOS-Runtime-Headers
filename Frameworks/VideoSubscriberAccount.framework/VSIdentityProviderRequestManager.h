@@ -14,6 +14,7 @@
     <VSIdentityProviderRequestManagerDelegate> * _delegate;
     BOOL  _didCreateAccount;
     VSIdentityProvider * _identityProvider;
+    VSPreferences * _preferences;
     NSOperationQueue * _privateQueue;
     double  _requestCompletionDelayAfterShowingUserInterface;
     NSMutableArray * _requestContexts;
@@ -35,6 +36,7 @@
 @property (nonatomic) BOOL didCreateAccount;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) VSIdentityProvider *identityProvider;
+@property (nonatomic, retain) VSPreferences *preferences;
 @property (nonatomic, retain) NSOperationQueue *privateQueue;
 @property (nonatomic) double requestCompletionDelayAfterShowingUserInterface;
 @property (nonatomic, retain) NSMutableArray *requestContexts;
@@ -98,6 +100,7 @@
 - (id)init;
 - (id)initWithIdentityProvider:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (id)preferences;
 - (id)privateQueue;
 - (double)requestCompletionDelayAfterShowingUserInterface;
 - (id)requestContexts;
@@ -111,6 +114,7 @@
 - (void)setCurrentApplicationControllerRequest:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDidCreateAccount:(BOOL)arg1;
+- (void)setPreferences:(id)arg1;
 - (void)setPrivateQueue:(id)arg1;
 - (void)setRequestCompletionDelayAfterShowingUserInterface:(double)arg1;
 - (void)setRequestContexts:(id)arg1;

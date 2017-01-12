@@ -8,7 +8,7 @@
     UIView * _view;
 }
 
-@property (retain) SearchUITableViewCell *cell;
+@property SearchUITableViewCell *cell;
 @property (retain) SFSearchResult *resultForFeedback;
 @property (retain) UIView *view;
 

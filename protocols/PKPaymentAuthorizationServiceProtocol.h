@@ -6,6 +6,7 @@
 @required
 
 - (void)authorizationDidAuthorizePaymentCompleteWithStatus:(int)arg1;
+- (void)authorizationDidAuthorizePurchaseCompleteWithStatus:(int)arg1;
 - (void)authorizationDidRequestMerchantSessionCompleteWithSession:(PKPaymentMerchantSession *)arg1 error:(NSError *)arg2;
 - (void)authorizationDidSelectPaymentMethodCompleteWithPaymentSummaryItems:(NSArray *)arg1;
 - (void)authorizationDidSelectShippingAddressCompleteWithStatus:(int)arg1 shippingMethods:(NSArray *)arg2 paymentSummaryItems:(NSArray *)arg3;

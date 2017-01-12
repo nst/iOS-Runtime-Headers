@@ -39,6 +39,7 @@
 - (unsigned long)formatFourCC;
 - (id)init;
 - (BOOL)isAutoBravoImageFusionEnabled;
+- (BOOL)isAutoShallowDepthOfFieldEffectEnabled;
 - (BOOL)isAutoStillImageStabilizationEnabled;
 - (BOOL)isHighResolutionPhotoEnabled;
 - (BOOL)isOriginalPhotoDeliveryEnabled;
@@ -55,6 +56,7 @@
 - (id)previewPhotoFormat;
 - (unsigned long)rawPhotoPixelFormatType;
 - (void)setAutoBravoImageFusionEnabled:(BOOL)arg1;
+- (void)setAutoShallowDepthOfFieldEffectEnabled:(BOOL)arg1;
 - (void)setAutoStillImageStabilizationEnabled:(BOOL)arg1;
 - (void)setFlashMode:(int)arg1;
 - (void)setHDRMode:(int)arg1;

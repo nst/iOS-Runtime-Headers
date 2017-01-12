@@ -45,7 +45,6 @@
 - (void)reloadAccounts;
 - (void)resetExpiration;
 - (void)resetExpirationForTokenType:(int)arg1;
-- (BOOL)sdk_hasActiveLockerAccount;
 - (void)setAccountCredits:(id)arg1 forAccountWithUniqueIdentifier:(id)arg2;
 - (id)setActiveAccount:(id)arg1;
 - (id)setActiveLockerAccount:(id)arg1;

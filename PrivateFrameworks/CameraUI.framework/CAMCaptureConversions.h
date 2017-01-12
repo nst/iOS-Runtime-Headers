@@ -8,6 +8,7 @@
 + (int)captureFlashModeForFlashMode:(int)arg1;
 + (int)captureFocusModeForFocusMode:(int)arg1;
 + (int)captureHDRModeForHDRMode:(int)arg1;
++ (int)captureShallowDepthOfFieldStatusForStatus:(int)arg1;
 + (int)captureTorchModeForTorchMode:(int)arg1;
 + (int)captureWhiteBalanceModeForWhiteBalanceMode:(int)arg1;
 + (int)exposureModeForCaptureExposureMode:(int)arg1;

@@ -35,6 +35,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSData *transactionId;
 @property (nonatomic) unsigned int transactionStatus;
+@property (nonatomic) unsigned int transactionType;
 @property (nonatomic) unsigned int version;
 
 - (id)aid;
@@ -68,10 +69,12 @@
 - (void)setStatus:(unsigned int)arg1;
 - (void)setTransactionId:(id)arg1;
 - (void)setTransactionStatus:(unsigned int)arg1;
+- (void)setTransactionType:(unsigned int)arg1;
 - (void)setVersion:(unsigned int)arg1;
 - (unsigned int)status;
 - (id)transactionId;
 - (unsigned int)transactionStatus;
+- (unsigned int)transactionType;
 - (unsigned int)updateTransactionStateInfoWithPreviousState:(unsigned int)arg1;
 - (void)updateUUID:(id)arg1 withUUIDRefTimestamp:(unsigned long long)arg2;
 - (unsigned int)version;

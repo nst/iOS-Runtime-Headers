@@ -17,6 +17,8 @@
 + (id)badgeInfoWithHDRPhotoIrisStyle;
 + (id)badgeInfoWithHDRStyle;
 + (id)badgeInfoWithPhotoIrisStyle;
++ (id)badgeInfoWithSDOFPhotoIrisStyle;
++ (id)badgeInfoWithSDOFStyle;
 
 - (void).cxx_destruct;
 - (id /* block */)_numberOfPhotosProvider;

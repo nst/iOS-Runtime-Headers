@@ -5,7 +5,8 @@
 
 @required
 
-- (void)commitSuggestionsForFaceCollection:(id <PXFaceCollection>)arg1 withConfirmedSuggestions:(NSArray *)arg2 andRejectedSuggestions:(NSArray *)arg3;
-- (NSArray *)suggestionsForFaceCollection:(id <PXFaceCollection>)arg1 withConfirmedSuggestions:(NSArray *)arg2 andRejectedSuggestions:(NSArray *)arg3;
+- (void)cancelSuggestionForPerson:(id <PXPerson>)arg1 withToken:(int)arg2 error:(id*)arg3;
+- (void)commitSuggestionsForPerson:(id <PXPerson>)arg1 withConfirmedSuggestions:(NSArray *)arg2 andRejectedSuggestions:(NSArray *)arg3;
+- (int)suggestionsForPerson:(void *)arg1 withConfirmedSuggestions:(void *)arg2 andRejectedSuggestions:(void *)arg3 completion:(void *)arg4; // needs 4 arg types, found 9: <PXPerson> *, NSArray *, NSArray *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, void*
 
 @end

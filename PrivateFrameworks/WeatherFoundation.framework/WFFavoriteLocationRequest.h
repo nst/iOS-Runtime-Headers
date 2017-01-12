@@ -9,6 +9,7 @@
 @property (readonly) id /* block */ resultHandler;
 
 - (void).cxx_destruct;
+- (void)handleCancellation;
 - (void)handleResponse:(id)arg1;
 - (id)initWithResultHandler:(id /* block */)arg1;
 - (id /* block */)resultHandler;

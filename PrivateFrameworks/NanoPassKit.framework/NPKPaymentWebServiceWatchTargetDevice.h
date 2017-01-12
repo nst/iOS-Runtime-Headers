@@ -20,6 +20,7 @@
 - (id)deviceName;
 - (id)deviceRegion;
 - (void)downloadAllPaymentPassesForPaymentWebService:(id)arg1;
+- (BOOL)felicaSecureElementIsAvailable;
 - (id)init;
 - (void)noteProvisioningDidBegin;
 - (void)noteProvisioningDidEnd;

@@ -5,7 +5,7 @@
 @interface HDFitnessFriendsGatewayManager : NSObject <HDFitnessFriendsCloudKitManagerChangesObserver, HDFitnessFriendsManagerReadyObserver> {
     BOOL  _allPairedWatchesMeetMinimumVersion;
     HDFitnessFriendsCloudKitManager * _cloudKitManager;
-    HDFitnessFriendsManager * _fitnessFriendsManager;
+    HDFitnessFriendsFriendListManager * _friendListManager;
     NSObject<OS_dispatch_queue> * _observerQueue;
     NSHashTable * _observers;
     NSObject<OS_dispatch_queue> * _serialQueue;
@@ -13,6 +13,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) BOOL hasReachedMaximumNumberOfFriends;
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
@@ -23,6 +24,7 @@
 - (void)cloudKitManagerDidUpdateAccountStatus:(id)arg1;
 - (void)fitnessFriendsManagerReady:(id)arg1;
 - (void)gatewayStatusWithCompletion:(id /* block */)arg1;
+- (BOOL)hasReachedMaximumNumberOfFriends;
 - (id)init;
 - (BOOL)isInviteVersionCompatible:(unsigned int)arg1;
 - (void)removeObserver:(id)arg1;

@@ -168,6 +168,7 @@
 + (id)_intents_extensionMatchingAttributesForIntents:(id)arg1;
 + (void)_intents_findAppsWithAnIntentsServiceExtension:(id /* block */)arg1;
 + (void)_intents_findPossibleSiriEnabledAppsWithAnIntentsServiceExtension:(id /* block */)arg1;
++ (void)_intents_findSiriEntitledAppsContainingAnIntentsExtensionWithCompletion:(id /* block */)arg1;
 + (void)_intents_matchExtensionsForIntent:(id)arg1 completion:(id /* block */)arg2;
 + (void)_intents_matchSiriExtensionsForIntent:(id)arg1 completion:(id /* block */)arg2;
 + (void)_intents_matchSiriUIExtensionsForIntent:(id)arg1 completion:(id /* block */)arg2;
@@ -175,6 +176,8 @@
 + (id)_intents_uiExtensionMatchingAttributesForIntents:(id)arg1;
 + (void)_matchExtensionsForIntent:(id)arg1 extensionPointName:(id)arg2 shouldCheckForSiriEnabled:(BOOL)arg3 completion:(id /* block */)arg4;
 + (BOOL)appAllowedToTalkToSiri:(id)arg1;
+
+- (BOOL)_intents_extensionSupportsAtLeastOneSiriIntent;
 
 // Image: /System/Library/Frameworks/NotificationCenter.framework/NotificationCenter
 

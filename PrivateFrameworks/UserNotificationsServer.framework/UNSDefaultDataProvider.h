@@ -76,6 +76,7 @@
 - (id)sectionDisplayName;
 - (id)sectionIdentifier;
 - (id)sectionParameters;
+- (void)setApplicationDescription:(id)arg1;
 - (void)setProxy:(id)arg1;
 - (id)sortDescriptors;
 - (BOOL)syncsBulletinDismissal;

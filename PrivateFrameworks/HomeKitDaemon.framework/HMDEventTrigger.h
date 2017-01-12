@@ -65,6 +65,8 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithName:(id)arg1 events:(id)arg2 recurrences:(id)arg3 evaluationCondition:(id)arg4;
 - (void)invalidate;
+- (BOOL)isEventTriggerOnLocalDeviceForAccessory:(id)arg1;
+- (BOOL)isEventTriggerOnRemoteGatewayForAccessory:(id)arg1;
 - (id)locationEvents;
 - (id)recurrences;
 - (void)removeAccessory:(id)arg1;

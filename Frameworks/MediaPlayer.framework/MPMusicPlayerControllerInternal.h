@@ -12,6 +12,7 @@
     MPMusicPlayerController * _musicPlayerController;
     int  _playbackNotificationObservers;
     int  _playbackState;
+    id /* block */  _prepareToPlayCompletionHandler;
     BOOL  _preparedToPlay;
     BKSProcessAssertion * _processAssertion;
     MPMediaQuery * _query;

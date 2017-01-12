@@ -7,9 +7,11 @@
     BOOL  _cancelled;
     struct { 
         unsigned int cancelled : 1; 
+        unsigned int needsUnlock : 1; 
         unsigned int pending : 1; 
         unsigned int success : 1; 
     }  _has;
+    BOOL  _needsUnlock;
     BOOL  _pending;
     BOOL  _success;
 }
@@ -18,8 +20,10 @@
 @property (nonatomic) BOOL cancelled;
 @property (nonatomic, readonly) BOOL hasActualUniqueID;
 @property (nonatomic) BOOL hasCancelled;
+@property (nonatomic) BOOL hasNeedsUnlock;
 @property (nonatomic) BOOL hasPending;
 @property (nonatomic) BOOL hasSuccess;
+@property (nonatomic) BOOL needsUnlock;
 @property (nonatomic) BOOL pending;
 @property (nonatomic) BOOL success;
 
@@ -32,18 +36,22 @@
 - (id)dictionaryRepresentation;
 - (BOOL)hasActualUniqueID;
 - (BOOL)hasCancelled;
+- (BOOL)hasNeedsUnlock;
 - (BOOL)hasPending;
 - (BOOL)hasSuccess;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
+- (BOOL)needsUnlock;
 - (BOOL)pending;
 - (BOOL)readFrom:(id)arg1;
 - (void)setActualUniqueID:(id)arg1;
 - (void)setCancelled:(BOOL)arg1;
 - (void)setHasCancelled:(BOOL)arg1;
+- (void)setHasNeedsUnlock:(BOOL)arg1;
 - (void)setHasPending:(BOOL)arg1;
 - (void)setHasSuccess:(BOOL)arg1;
+- (void)setNeedsUnlock:(BOOL)arg1;
 - (void)setPending:(BOOL)arg1;
 - (void)setSuccess:(BOOL)arg1;
 - (BOOL)success;

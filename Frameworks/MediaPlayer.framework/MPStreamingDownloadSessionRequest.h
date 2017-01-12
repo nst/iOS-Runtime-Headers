@@ -3,22 +3,30 @@
  */
 
 @interface MPStreamingDownloadSessionRequest : NSObject {
+    NSString * _assetSourceStoreFrontID;
     NSString * _buyParameters;
     int  _endpointType;
+    long long  _equivalencySourceAdamID;
     MPMediaPlaybackItemMetadata * _playbackItemMetadata;
     unsigned int  _preferredAssetQuality;
     BOOL  _prefersHLS;
+    NSString * _requestingBundleIdentifier;
+    NSString * _requestingBundleVersion;
     BOOL  _shouldStartLeaseSession;
     BOOL  _shouldUseAccountLessStreaming;
     BOOL  _shouldUseStreamingRedownload;
     long long  _storeAdamID;
 }
 
+@property (nonatomic, copy) NSString *assetSourceStoreFrontID;
 @property (nonatomic, readonly, copy) NSString *buyParameters;
 @property (nonatomic, readonly) int endpointType;
+@property (nonatomic) long long equivalencySourceAdamID;
 @property (nonatomic, retain) MPMediaPlaybackItemMetadata *playbackItemMetadata;
 @property (nonatomic) unsigned int preferredAssetQuality;
 @property (nonatomic) BOOL prefersHLS;
+@property (nonatomic, copy) NSString *requestingBundleIdentifier;
+@property (nonatomic, copy) NSString *requestingBundleVersion;
 @property (nonatomic) BOOL shouldStartLeaseSession;
 @property (nonatomic) BOOL shouldUseAccountLessStreaming;
 @property (nonatomic) BOOL shouldUseStreamingRedownload;
@@ -26,14 +34,22 @@
 @property (nonatomic, readonly) BOOL usesSubscriptionLease;
 
 - (void).cxx_destruct;
+- (id)assetSourceStoreFrontID;
 - (id)buyParameters;
 - (int)endpointType;
+- (long long)equivalencySourceAdamID;
 - (id)playbackItemMetadata;
 - (unsigned int)preferredAssetQuality;
 - (BOOL)prefersHLS;
+- (id)requestingBundleIdentifier;
+- (id)requestingBundleVersion;
+- (void)setAssetSourceStoreFrontID:(id)arg1;
+- (void)setEquivalencySourceAdamID:(long long)arg1;
 - (void)setPlaybackItemMetadata:(id)arg1;
 - (void)setPreferredAssetQuality:(unsigned int)arg1;
 - (void)setPrefersHLS:(BOOL)arg1;
+- (void)setRequestingBundleIdentifier:(id)arg1;
+- (void)setRequestingBundleVersion:(id)arg1;
 - (void)setShouldStartLeaseSession:(BOOL)arg1;
 - (void)setShouldUseAccountLessStreaming:(BOOL)arg1;
 - (void)setShouldUseStreamingRedownload:(BOOL)arg1;

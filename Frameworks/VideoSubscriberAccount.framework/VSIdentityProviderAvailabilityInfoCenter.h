@@ -2,35 +2,51 @@
    Image: /System/Library/Frameworks/VideoSubscriberAccount.framework/VideoSubscriberAccount
  */
 
-@interface VSIdentityProviderAvailabilityInfoCenter : NSObject {
+@interface VSIdentityProviderAvailabilityInfoCenter : NSObject <VSRemoteNotifierDelegate> {
     VSStoreURLBag * _bag;
-    VSDevice * _device;
+    VSDeveloperServiceConnection * _developerServiceConnection;
+    BOOL  _hasDeterminedInitialStatus;
+    VSPreferences * _preferences;
+    NSOperationQueue * _privateQueue;
+    VSRemoteNotifier * _remoteNotifier;
     int  _status;
-    NSUserDefaults * _userDefaults;
 }
 
 @property (nonatomic, retain) VSStoreURLBag *bag;
-@property (nonatomic, retain) VSDevice *device;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) VSDeveloperServiceConnection *developerServiceConnection;
+@property (nonatomic) BOOL hasDeterminedInitialStatus;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) VSPreferences *preferences;
+@property (nonatomic, retain) NSOperationQueue *privateQueue;
+@property (nonatomic, retain) VSRemoteNotifier *remoteNotifier;
 @property (nonatomic) int status;
-@property (nonatomic, retain) NSUserDefaults *userDefaults;
+@property (readonly) Class superclass;
 
++ (BOOL)automaticallyNotifiesObserversOfStatus;
 + (id)defaultCenter;
 
 - (void).cxx_destruct;
 - (void)_accountStoreChanged:(id)arg1;
 - (void)_beginStatusUpdateAttemptWithCompletionHandler:(id /* block */)arg1;
-- (BOOL)_isFeatureEnabled;
 - (void)_sendStatusChangeNotification;
 - (id)bag;
 - (void)determineIdentityProviderAvailabilityWithCompletionHandler:(id /* block */)arg1;
-- (id)device;
+- (id)developerServiceConnection;
+- (BOOL)hasDeterminedInitialStatus;
 - (id)init;
-- (id)initWithBag:(id)arg1 device:(id)arg2 userDefaults:(id)arg3;
+- (id)preferences;
+- (id)privateQueue;
+- (id)remoteNotifier;
+- (void)remoteNotifier:(id)arg1 didReceiveRemoteNotificationWithUserInfo:(id)arg2;
 - (void)setBag:(id)arg1;
-- (void)setDevice:(id)arg1;
+- (void)setDeveloperServiceConnection:(id)arg1;
+- (void)setHasDeterminedInitialStatus:(BOOL)arg1;
+- (void)setPreferences:(id)arg1;
+- (void)setPrivateQueue:(id)arg1;
+- (void)setRemoteNotifier:(id)arg1;
 - (void)setStatus:(int)arg1;
-- (void)setUserDefaults:(id)arg1;
 - (int)status;
-- (id)userDefaults;
 
 @end

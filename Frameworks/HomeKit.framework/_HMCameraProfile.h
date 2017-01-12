@@ -3,7 +3,6 @@
  */
 
 @interface _HMCameraProfile : _HMAccessoryProfile {
-    NSMutableArray * _controls;
     _HMCameraAudioControl * _microphoneControl;
     _HMCameraSettingsControl * _settingsControl;
     _HMCameraSnapshotControl * _snapshotControlInternal;
@@ -11,7 +10,7 @@
     _HMCameraStreamControl * _streamControlInternal;
 }
 
-@property (nonatomic, readonly) NSMutableArray *controls;
+@property (nonatomic, readonly) NSArray *controls;
 @property (nonatomic, readonly) _HMCameraAudioControl *microphoneControl;
 @property (nonatomic, readonly) _HMCameraSettingsControl *settingsControl;
 @property (nonatomic, readonly) _HMCameraSnapshotControl *snapshotControlInternal;
@@ -21,10 +20,12 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (void)_createControls:(id)arg1;
 - (void)_registerNotificationHandlers;
-- (void)configureWithClientQueue:(id)arg1 delegateCaller:(id)arg2 msgDispatcher:(id)arg3 home:(id)arg4;
+- (void)configureWithAccessory:(id)arg1 clientQueue:(id)arg2 delegateCaller:(id)arg3 msgDispatcher:(id)arg4 home:(id)arg5;
 - (id)controls;
 - (void)encodeWithCoder:(id)arg1;
+- (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)microphoneControl;
 - (id)settingsControl;

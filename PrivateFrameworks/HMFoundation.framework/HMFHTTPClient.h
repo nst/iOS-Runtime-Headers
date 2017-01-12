@@ -2,49 +2,57 @@
    Image: /System/Library/PrivateFrameworks/HMFoundation.framework/HMFoundation
  */
 
-@interface HMFHTTPClient : NSObject <HMFNetMonitorDelegate, HMFNetServiceBrowserDelegate, NSURLSessionDelegate> {
+@interface HMFHTTPClient : NSObject <HMFLogging, HMFNetMonitorDelegate, HMFTimerDelegate, NSURLSessionDelegate, _HMFNetServiceMonitorDelegate> {
     BOOL  _allowAnonymousConnection;
     NSURL * _baseURL;
     NSObject<OS_dispatch_queue> * _clientQueue;
     <HMFHTTPClientDelegate> * _delegate;
+    HMFExponentialBackoffTimer * _delegatedPingTimer;
     HMFNetService * _netService;
-    HMFNetServiceBrowser * _netServiceBrowser;
+    _HMFNetServiceMonitor * _netServiceMonitor;
     unsigned int  _options;
     NSObject<OS_dispatch_queue> * _propertyQueue;
     HMFNetMonitor * _reachabilityMonitor;
+    NSOperationQueue * _reachabilityProbeQueue;
     BOOL  _reachable;
     NSURLSession * _session;
 }
 
 @property (nonatomic) BOOL allowAnonymousConnection;
-@property (nonatomic, retain) NSURL *baseURL;
+@property (nonatomic, readonly) NSURL *baseURL;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *clientQueue;
 @property (readonly, copy) NSString *debugDescription;
 @property <HMFHTTPClientDelegate> *delegate;
+@property (nonatomic, retain) HMFExponentialBackoffTimer *delegatedPingTimer;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) HMFNetService *netService;
-@property (nonatomic, readonly) HMFNetServiceBrowser *netServiceBrowser;
+@property (nonatomic, readonly) _HMFNetServiceMonitor *netServiceMonitor;
 @property (nonatomic, readonly) unsigned int options;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *propertyQueue;
 @property (nonatomic, readonly) HMFNetMonitor *reachabilityMonitor;
+@property (nonatomic, readonly) NSOperationQueue *reachabilityProbeQueue;
 @property (getter=isReachable, nonatomic) BOOL reachable;
 @property (nonatomic, readonly) NSURLSession *session;
 @property (readonly) Class superclass;
 
 + (id)baseURLWithScheme:(id)arg1 hostAddress:(id)arg2 port:(unsigned int)arg3;
 + (BOOL)isValidBaseURL:(id)arg1;
++ (id)logCategory;
 + (id)shortDescription;
 
 - (void).cxx_destruct;
+- (void)URLSession:(id)arg1 didBecomeInvalidWithError:(id)arg2;
 - (void)URLSession:(id)arg1 didReceiveChallenge:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)__initializeWithOptions:(unsigned int)arg1;
-- (BOOL)_requestClientReachabilityPing;
 - (BOOL)allowAnonymousConnection;
 - (id)baseURL;
 - (id)clientQueue;
+- (id)currentNetService;
+- (void)dealloc;
 - (id)debugDescription;
 - (id)delegate;
+- (id)delegatedPingTimer;
 - (id)description;
 - (id)descriptionWithPointer:(BOOL)arg1;
 - (id)init;
@@ -52,25 +60,30 @@
 - (id)initWithNetService:(id)arg1 options:(unsigned int)arg2;
 - (BOOL)isReachable;
 - (BOOL)isValid;
+- (id)logIdentifier;
+- (void)monitor:(id)arg1 didUpdateNetService:(id)arg2;
+- (void)monitor:(id)arg1 didUpdateReachability:(BOOL)arg2;
 - (id)netService;
-- (id)netServiceBrowser;
-- (void)netServiceBrowser:(id)arg1 didAddService:(id)arg2;
-- (void)netServiceBrowser:(id)arg1 didRemoveService:(id)arg2;
-- (void)netServiceBrowser:(id)arg1 didStopBrowsingWithError:(id)arg2;
+- (id)netServiceMonitor;
 - (void)networkMonitorIsReachable:(id)arg1;
 - (void)networkMonitorIsUnreachable:(id)arg1;
 - (void)notifyDelegateOfReachabilityChange:(BOOL)arg1;
 - (unsigned int)options;
 - (id)propertyQueue;
 - (id)reachabilityMonitor;
+- (id)reachabilityProbeQueue;
+- (BOOL)requestClientReachabilityPingWithRetry:(BOOL)arg1;
 - (void)resolveWithCompletionHandler:(id /* block */)arg1;
 - (void)sendRequest:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)session;
 - (void)setAllowAnonymousConnection:(BOOL)arg1;
-- (void)setBaseURL:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setDelegatedPingTimer:(id)arg1;
 - (void)setReachable:(BOOL)arg1;
 - (id)shortDescription;
+- (void)startDelegatedPingTimer;
 - (void)startReachabilityProbe;
+- (void)stopDelegatedPingTimer;
+- (void)timerDidFire:(id)arg1;
 
 @end

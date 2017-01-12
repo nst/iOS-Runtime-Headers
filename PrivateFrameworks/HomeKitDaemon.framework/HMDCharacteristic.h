@@ -13,8 +13,10 @@
     id  _lastKnownValue;
     NSDate * _lastKnownValueUpdateTime;
     NSDate * _notificationEnabledTime;
+    BOOL  _notificationRegisteredWithRemoteGateway;
     NSMutableSet * _notificationRegistrations;
     HMDService * _service;
+    NSNumber * _stateNumber;
 }
 
 @property (nonatomic, readonly) HMDAccessory *accessory;
@@ -35,10 +37,12 @@
 @property (nonatomic, retain) NSDate *lastKnownValueUpdateTime;
 @property (nonatomic, readonly) HMDCharacteristicMetadata *metadata;
 @property (nonatomic, retain) NSDate *notificationEnabledTime;
+@property (nonatomic) BOOL notificationRegisteredWithRemoteGateway;
 @property (nonatomic, retain) NSMutableSet *notificationRegistrations;
 @property (nonatomic, readonly) int properties;
 @property (nonatomic, readonly) NSString *serializedIdentifier;
 @property (nonatomic, readonly) HMDService *service;
+@property (setter=setStateNumber:, nonatomic, copy) NSNumber *stateNumber;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, copy) NSString *type;
 @property (nonatomic, readonly, copy) id value;
@@ -70,6 +74,7 @@
 - (id)instanceID;
 - (BOOL)isClientNotificationEnabled;
 - (BOOL)isNonClientNotificationEnabled;
+- (BOOL)isNonHomeNotificationsEnabled;
 - (BOOL)isNotificationEnabled;
 - (BOOL)isNotificationEnabledForClientIdentifier:(id)arg1;
 - (BOOL)isNotificationEnabledForClientIdentifierPrefix:(id)arg1;
@@ -78,6 +83,7 @@
 - (id)lastKnownValueUpdateTime;
 - (id)metadata;
 - (id)notificationEnabledTime;
+- (BOOL)notificationRegisteredWithRemoteGateway;
 - (id)notificationRegistrations;
 - (int)properties;
 - (id)serializedIdentifier;
@@ -92,8 +98,11 @@
 - (void)setLastKnownValueUpdateTime:(id)arg1;
 - (void)setNotificationEnabled:(BOOL)arg1 forClientIdentifier:(id)arg2;
 - (void)setNotificationEnabledTime:(id)arg1;
+- (void)setNotificationRegisteredWithRemoteGateway:(BOOL)arg1;
 - (void)setNotificationRegistrations:(id)arg1;
+- (void)setStateNumber:(id)arg1;
 - (id)shortTypeDescription;
+- (id)stateNumber;
 - (BOOL)supportsNotification;
 - (id)type;
 - (void)unconfigure;
@@ -101,7 +110,7 @@
 - (void)unconfigureForServerIdentifier:(id)arg1 linkType:(int)arg2;
 - (void)updateLastKnownValue;
 - (void)updateService:(id)arg1 accessory:(id)arg2;
-- (void)updateValue:(id)arg1;
+- (void)updateValue:(id)arg1 updatedTime:(id)arg2 stateNumber:(id)arg3;
 - (id)validateValue:(id)arg1 outValue:(id*)arg2;
 - (id)value;
 - (BOOL)value:(id)arg1 differentThan:(id)arg2;

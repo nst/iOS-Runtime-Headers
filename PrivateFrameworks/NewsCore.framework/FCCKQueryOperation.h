@@ -29,6 +29,7 @@
 - (void).cxx_destruct;
 - (id)_ckCursorFromQueryResponse:(id)arg1;
 - (id)_ckRecordsFromQueryResponse:(id)arg1;
+- (id)_requestOperations;
 - (id)cursor;
 - (id)database;
 - (id)desiredKeys;
@@ -39,7 +40,6 @@
 - (id)query;
 - (id /* block */)queryCompletionBlock;
 - (id /* block */)recordFetchedBlock;
-- (id)requestOperations;
 - (id)requestUUIDs;
 - (id)resultCursor;
 - (unsigned int)resultsLimit;
@@ -53,6 +53,7 @@
 - (void)setRequestUUIDs:(id)arg1;
 - (void)setResultCursor:(id)arg1;
 - (void)setResultsLimit:(unsigned int)arg1;
+- (id)throttleGroup;
 - (BOOL)validateOperation;
 
 @end

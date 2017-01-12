@@ -19,11 +19,11 @@
 - (void).cxx_destruct;
 - (void)_callDidSaveImageDelegateWithError:(id)arg1;
 - (void)_callGettingImageDelegate:(id)arg1;
-- (void)_getSnapshot;
+- (void)_getSnapshot:(unsigned int)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (void)getSnapshot;
-- (id)initWithSessionID:(id)arg1 workQueue:(id)arg2 options:(id)arg3 accessory:(id)arg4 delegate:(id)arg5 delegateQueue:(id)arg6 uniqueIdentifier:(id)arg7 snapshotRequestHandler:(id)arg8;
+- (void)getSnapshot:(unsigned int)arg1;
+- (id)initWithSessionID:(id)arg1 workQueue:(id)arg2 options:(id)arg3 accessory:(id)arg4 delegate:(id)arg5 delegateQueue:(id)arg6 uniqueIdentifier:(id)arg7 snapshotRequestHandler:(id)arg8 residentMessageHandler:(id)arg9;
 - (id)logIdentifier;
 - (id)relayReceiver;
 - (void)relayReceiver:(id)arg1 didReceiveFile:(id)arg2;

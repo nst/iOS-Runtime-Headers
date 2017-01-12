@@ -18,8 +18,10 @@
 
 - (void).cxx_destruct;
 - (void)_queue_addValueForScalarKey:(id)arg1 value:(int)arg2;
+- (void)_queue_pushValue:(double)arg1 forKey:(id)arg2;
 - (id)domain;
 - (id)init;
+- (void)logLocationAccuracy:(double)arg1;
 - (void)logRequestFailure;
 - (void)logRequestSuccess;
 - (id)queue;

@@ -44,6 +44,7 @@
 - (void)etaManagerUpdatedETATime:(id)arg1;
 - (void)etaManagerUpdatedTrafficIncidents:(id)arg1;
 - (id)initWithNavigationSession:(id)arg1;
+- (BOOL)shouldProjectAlongRoute;
 - (void)startTracking;
 - (void)stopTracking;
 - (void)trafficIncidentAlertUpdater:(id)arg1 didSwitchToNewRoute:(id)arg2;

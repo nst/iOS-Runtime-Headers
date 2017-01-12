@@ -19,6 +19,7 @@
 @property (nonatomic, copy) NSString *homeTeamRecordSummary;
 @property (nonatomic, copy) NSNumber *isExplicitlyEndOfPeriod;
 @property (nonatomic, copy) NSString *line;
+@property (nonatomic, retain) SALCMLiveTuneInButton *liveTuneInButton;
 @property (nonatomic, copy) NSString *location;
 @property (nonatomic, copy) NSString *locationName;
 @property (nonatomic, copy) NSString *matchupOrder;
@@ -57,6 +58,7 @@
 - (id)homeTeamRecordSummary;
 - (id)isExplicitlyEndOfPeriod;
 - (id)line;
+- (id)liveTuneInButton;
 - (id)location;
 - (id)locationName;
 - (id)matchupOrder;
@@ -79,6 +81,7 @@
 - (void)setHomeTeamRecordSummary:(id)arg1;
 - (void)setIsExplicitlyEndOfPeriod:(id)arg1;
 - (void)setLine:(id)arg1;
+- (void)setLiveTuneInButton:(id)arg1;
 - (void)setLocation:(id)arg1;
 - (void)setLocationName:(id)arg1;
 - (void)setMatchupOrder:(id)arg1;

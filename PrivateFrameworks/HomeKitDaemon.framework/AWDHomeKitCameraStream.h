@@ -21,6 +21,7 @@
     NSString * _sessionID;
     unsigned long long  _startupDelay;
     unsigned long long  _timestamp;
+    AWDHomeKitVendorInformation * _vendorDetails;
 }
 
 @property (nonatomic) unsigned long long duration;
@@ -33,6 +34,7 @@
 @property (nonatomic, readonly) BOOL hasSessionID;
 @property (nonatomic) BOOL hasStartupDelay;
 @property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic, readonly) BOOL hasVendorDetails;
 @property (nonatomic) BOOL isLocal;
 @property (nonatomic) BOOL isStreamStarted;
 @property (nonatomic, retain) NSMutableArray *resolutionCounts;
@@ -40,6 +42,7 @@
 @property (nonatomic, retain) NSString *sessionID;
 @property (nonatomic) unsigned long long startupDelay;
 @property (nonatomic) unsigned long long timestamp;
+@property (nonatomic, retain) AWDHomeKitVendorInformation *vendorDetails;
 
 + (Class)resolutionCountType;
 
@@ -61,6 +64,7 @@
 - (BOOL)hasSessionID;
 - (BOOL)hasStartupDelay;
 - (BOOL)hasTimestamp;
+- (BOOL)hasVendorDetails;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isLocal;
@@ -89,8 +93,10 @@
 - (void)setSessionID:(id)arg1;
 - (void)setStartupDelay:(unsigned long long)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
+- (void)setVendorDetails:(id)arg1;
 - (unsigned long long)startupDelay;
 - (unsigned long long)timestamp;
+- (id)vendorDetails;
 - (void)writeTo:(id)arg1;
 
 @end

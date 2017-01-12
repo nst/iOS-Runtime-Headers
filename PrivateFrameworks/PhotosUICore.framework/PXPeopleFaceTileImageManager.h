@@ -4,6 +4,7 @@
 
 @interface PXPeopleFaceTileImageManager : NSObject <NSCacheDelegate, PXPhotoLibraryUIChangeObserver> {
     BOOL  _concurrencyEnabled;
+    NSObject<OS_dispatch_queue> * _cropCacheQueue;
     NSMapTable * _faceTileRequestByRequestID;
     NSObject<OS_dispatch_queue> * _fetchQueue;
     PXLRUMemoryCache * _memoryCache;
@@ -24,8 +25,10 @@
 
 - (void).cxx_destruct;
 - (void)_addRequestResult:(id)arg1 forIdentifier:(id)arg2;
-- (id)_cachedResultForIdentifier:(id)arg1 params:(struct PXFaceTileImageParams { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; unsigned int x2; BOOL x3; BOOL x4; })arg2 isLowResResult:(BOOL*)arg3;
+- (id)_cachedResultForIdentifier:(id)arg1 params:(struct PXFaceTileImageParams { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; unsigned int x2; BOOL x3; BOOL x4; BOOL x5; })arg2 allowVeryLowQuality:(BOOL)arg3 isLowResResult:(BOOL*)arg4;
+- (id)_cachedResultForIdentifier:(id)arg1 params:(struct PXFaceTileImageParams { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; unsigned int x2; BOOL x3; BOOL x4; BOOL x5; })arg2 isLowResResult:(BOOL*)arg3;
 - (void)_cropImage:(id)arg1 cacheResult:(BOOL)arg2 isDegraded:(BOOL)arg3 forRequest:(id)arg4 completionBlock:(id /* block */)arg5;
+- (BOOL)_deliverCachedResultIfPossibleForRequest:(id)arg1 allowDegradedDelivery:(BOOL)arg2 allowVeryLowQuality:(BOOL)arg3 completionBlock:(id /* block */)arg4;
 - (BOOL)_deliverCachedResultIfPossibleForRequest:(id)arg1 allowDegradedDelivery:(BOOL)arg2 completionBlock:(id /* block */)arg3;
 - (BOOL)_doesChange:(id)arg1 containVisibleChangesToPHAssetWithOID:(id)arg2;
 - (id)_fetchKeyFaceFromFaceCollection:(id)arg1 error:(id*)arg2;

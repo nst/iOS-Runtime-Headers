@@ -5,27 +5,38 @@
 @interface CAMCallStatusMonitor : NSObject {
     NSObject<OS_dispatch_queue> * __mutexQueue;
     BOOL  __mutexQueue_callActive;
+    BOOL  __mutexQueue_enabled;
     BOOL  __mutexQueue_mustQueryInitialValueForCallActive;
 }
 
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *_mutexQueue;
 @property (getter=_mutexQueue_isCallActive, setter=_mutexQueue_setCallActive:, nonatomic) BOOL _mutexQueue_callActive;
+@property (getter=_mutexQueue_isEnabled, setter=_mutexQueue_setEnabled:, nonatomic) BOOL _mutexQueue_enabled;
 @property (setter=_mutexQueue_setMustQueryInitialValueForCallActive:, nonatomic) BOOL _mutexQueue_mustQueryInitialValueForCallActive;
 @property (getter=isCallActive, nonatomic, readonly) BOOL callActive;
+@property (getter=isEnabled, nonatomic) BOOL enabled;
 
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
 - (void)_handleCallIsActiveDidChangeNotification:(id)arg1;
+- (void)_handleServerConnectionDiedNotification:(id)arg1;
 - (id)_mutexQueue;
 - (BOOL)_mutexQueue_isCallActive;
+- (BOOL)_mutexQueue_isEnabled;
 - (BOOL)_mutexQueue_mustQueryInitialValueForCallActive;
 - (void)_mutexQueue_setCallActive:(BOOL)arg1;
+- (void)_mutexQueue_setEnabled:(BOOL)arg1;
 - (void)_mutexQueue_setMustQueryInitialValueForCallActive:(BOOL)arg1;
+- (void)_queryCallActiveStatusForReason:(id)arg1;
+- (void)_queryInitialValueForCallActiveIfNecessary;
+- (void)_registerForAVSystemControllerNotifications;
 - (void)_setCallActive:(BOOL)arg1;
+- (void)_unregisterForAVSystemControllerNotifications;
 - (void)dealloc;
 - (id)init;
 - (BOOL)isCallActive;
-- (void)queryInitialValueForCallActiveIfNecessary;
+- (BOOL)isEnabled;
+- (void)setEnabled:(BOOL)arg1;
 
 @end

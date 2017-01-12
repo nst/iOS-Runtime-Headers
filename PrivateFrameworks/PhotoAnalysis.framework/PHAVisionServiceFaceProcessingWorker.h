@@ -24,10 +24,11 @@
 - (id)_changeAsset:(id)arg1 faceDetectionState:(int)arg2 error:(id*)arg3;
 - (void)_didPerformFaceClustering;
 - (id)_faceDescriptionsOfFacesInImageWithSRGBImageData:(id)arg1 width:(unsigned long)arg2 height:(unsigned long)arg3 bytesPerRow:(unsigned long)arg4 bitmapInfo:(unsigned int)arg5 error:(id*)arg6;
-- (id)_faceSuggestionsForFacesWithLocalIdentifiers:(id)arg1 error:(id*)arg2;
-- (id)_faceSuggestionsForPersonWithLocalIdentifier:(id)arg1 toBeConfirmedFaceLocalIdentifiers:(id)arg2 toBeRejectedFaceLocalIdentifiers:(id)arg3 error:(id*)arg4;
-- (id)_faceSuggestionsFromKeyFaceClustSeqNums:(id)arg1 excludeFaceLocalIdentifers:(id)arg2;
+- (id)_faceSuggestionsForFacesWithLocalIdentifiers:(id)arg1 operation:(id)arg2 error:(id*)arg3;
+- (id)_faceSuggestionsForPersonWithLocalIdentifier:(id)arg1 toBeConfirmedFaceLocalIdentifiers:(id)arg2 toBeRejectedFaceLocalIdentifiers:(id)arg3 operation:(id)arg4 error:(id*)arg5;
+- (id)_faceSuggestionsFromKeyFaceClustSeqNums:(id)arg1 excludeFaceLocalIdentifers:(id)arg2 operation:(id)arg3;
 - (void)_handleNilReplyBlockForSelector:(SEL)arg1;
+- (void)_interruptPhotoVision;
 - (id)_newFaceGroupsFetchOptions;
 - (id)_newFacesFetchOptions;
 - (id)_newPersonsFetchOptions;

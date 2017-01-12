@@ -14,6 +14,7 @@
     NSString * _hostAppLocalizedName;
     NSString * _hostApplicationIdentifier;
     BOOL  _ignoreProximity;
+    PKRemotePaymentInstrument * _initialRemotePaymentInstrument;
     NSMapTable * _instrumentToDeviceMap;
     NSMutableArray * _items;
     PKPassLibrary * _library;
@@ -55,6 +56,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) NSString *hostAppLocalizedName;
 @property (nonatomic, retain) NSString *hostApplicationIdentifier;
+@property (nonatomic, retain) PKRemotePaymentInstrument *initialRemotePaymentInstrument;
 @property (nonatomic, readonly) NSArray *items;
 @property (nonatomic, retain) PKPassLibrary *library;
 @property (nonatomic, readonly) NSString *merchantName;
@@ -81,6 +83,8 @@
 @property (nonatomic, readonly) NSDecimalNumber *transactionAmount;
 @property (nonatomic, readonly) NSArray *unavailablePasses;
 @property (nonatomic, copy) id /* block */ updateHandler;
+
+// Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
 
 - (void).cxx_destruct;
 - (void)_ensureItemForClass:(Class)arg1;
@@ -112,6 +116,7 @@
 - (id)hostApplicationIdentifier;
 - (id)init;
 - (id)initWithMode:(int)arg1;
+- (id)initialRemotePaymentInstrument;
 - (BOOL)isShippingEditable;
 - (BOOL)isValidWithError:(id*)arg1;
 - (id)itemForType:(int)arg1;
@@ -134,6 +139,7 @@
 - (void)setDefaults:(id)arg1;
 - (void)setHostAppLocalizedName:(id)arg1;
 - (void)setHostApplicationIdentifier:(id)arg1;
+- (void)setInitialRemotePaymentInstrument:(id)arg1;
 - (void)setLibrary:(id)arg1;
 - (void)setPass:(id)arg1;
 - (void)setPaymentApplication:(id)arg1;
@@ -166,5 +172,9 @@
 - (id /* block */)updateHandler;
 - (void)updateRemoteDevices:(id)arg1;
 - (void)updateRemoteDevices:(id)arg1 ignoreProximity:(BOOL)arg2;
+
+// Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
+
+- (void)npkSetPassAndPaymentApplicationForAID:(id)arg1;
 
 @end

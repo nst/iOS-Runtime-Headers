@@ -25,6 +25,7 @@
 - (void)getSELDInfoForBroker:(id /* block */)arg1;
 - (BOOL)ingestCard:(id)arg1 uri:(id)arg2 cardSessionToken:(id)arg3;
 - (void)ingestCard:(id)arg1 uri:(id)arg2 cardSessionToken:(id)arg3 withCompletionHandler:(id /* block */)arg4;
+- (void)ingestCard:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (id)init;
 - (id)nextRequestForServer:(id)arg1;
 - (id)primaryRegionTopic;

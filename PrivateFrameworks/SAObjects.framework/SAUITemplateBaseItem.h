@@ -8,6 +8,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) SAUITemplateEdgeInsets *fullScreenPaddingDelta;
+@property (nonatomic) BOOL hasPriorityLayout;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) SAUITemplateEdgeInsets *padding;
 @property (nonatomic, copy) NSArray *presentationOptions;
@@ -21,10 +22,12 @@
 - (id)encodedClassName;
 - (id)fullScreenPaddingDelta;
 - (id)groupIdentifier;
+- (BOOL)hasPriorityLayout;
 - (id)padding;
 - (id)presentationOptions;
 - (void)setCommunicationOptions:(id)arg1;
 - (void)setFullScreenPaddingDelta:(id)arg1;
+- (void)setHasPriorityLayout:(BOOL)arg1;
 - (void)setPadding:(id)arg1;
 - (void)setPresentationOptions:(id)arg1;
 - (void)setShouldBeOffscreenInPartial:(BOOL)arg1;

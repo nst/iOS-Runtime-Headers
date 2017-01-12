@@ -34,10 +34,10 @@
 - (void)_callConfigurationUpdated;
 - (void)_callNetworkDeteriorated;
 - (void)_callNetworkImproved;
-- (void)_callReceivedFirstFrame;
+- (void)_callReceivedFirstFrame:(id)arg1;
 - (void)_callRelayStarted:(id)arg1;
 - (void)_callStreamStarted:(id)arg1;
-- (void)_callStreamStopped;
+- (void)_callStreamStopped:(id)arg1;
 - (void)_startStreamWithVideoConfig:(id)arg1 audioConfig:(id)arg2;
 - (void)_stopStream;
 - (void)audioStream:(id)arg1 didPause:(id)arg2;

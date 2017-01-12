@@ -14,7 +14,10 @@
 
 @optional
 
+- (void)didExpressModeStateChange:(unsigned int)arg1;
 - (void)didPerformValueAddedServiceTransactions:(NSArray *)arg1;
+- (void)didReceiveActivityTimeout;
+- (void)didReceivePendingServerRequest;
 - (void)didSelectValueAddedService:(BOOL)arg1;
 
 @end

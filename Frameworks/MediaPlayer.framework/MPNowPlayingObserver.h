@@ -5,6 +5,7 @@
 @interface MPNowPlayingObserver : NSObject <MPStoreDownloadManagerObserver> {
     NSObject<OS_dispatch_queue> * _accessQueue;
     MPStoreDownload * _activeDownload;
+    MPArtworkCatalog * _currentArtworkCatalog;
     NSData * _currentArtworkData;
     UIImage * _currentArtworkImage;
     BOOL  _enabled;

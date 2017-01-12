@@ -26,10 +26,12 @@
     NSXPCConnection * _xpcConnection;
 }
 
+@property (nonatomic, readonly) NSArray *contactlessPaymentPassDescriptions;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) BOOL disableCaching;
 @property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSArray *inAppPaymentPassDescriptions;
 @property (nonatomic) BOOL initialLoadComplete;
 @property (nonatomic, retain) NSArray *lastSeenRelevantPassTuples;
 @property (nonatomic) BOOL needsRelevancyInformation;
@@ -63,6 +65,7 @@
 - (void)addPassData:(id)arg1 completion:(id /* block */)arg2;
 - (void)boostDaemonUntilPassDBAvailable:(id /* block */)arg1;
 - (id)cachedPassWithID:(id)arg1;
+- (id)contactlessPaymentPassDescriptions;
 - (void)dealloc;
 - (void)deletePassWithID:(id)arg1;
 - (BOOL)disableCaching;
@@ -72,12 +75,16 @@
 - (void)getPassWithID:(id)arg1 reply:(id /* block */)arg2 queue:(id)arg3;
 - (void)getSecureElementIdentifiers:(id /* block */)arg1;
 - (void)getSharedWebServiceContextWithCompletion:(id /* block */)arg1;
+- (void)handleAddedValue:(id)arg1 forPassUniqueID:(id)arg2;
+- (void)handleEndedServiceModeRequest;
 - (void)handlePassLibraryChangedNotification:(id)arg1;
+- (void)handlePaymentTransactions:(id)arg1 forPassUniqueIDs:(id)arg2 completion:(id /* block */)arg3;
 - (void)handleRelevancyCheckCompletedNotification:(id)arg1;
 - (void)handleRelevancyPotentialChangedNotification:(id)arg1;
 - (void)handleRelevantPassTuplesChanged:(id)arg1;
 - (void)handleRelevantPassTuplesChangedNotification:(id)arg1;
 - (void)handleValueAddedServiceTransactions:(id)arg1 forPassUniqueIDs:(id)arg2 completion:(id /* block */)arg3;
+- (id)inAppPaymentPassDescriptions;
 - (id)init;
 - (BOOL)initialLoadComplete;
 - (id)lastSeenRelevantPassTuples;
@@ -95,10 +102,13 @@
 - (void)performWorkAfterFirstLibraryLoad:(id /* block */)arg1;
 - (id)preferredPaymentApplicationForPaymentPass:(id)arg1;
 - (id)preferredPaymentApplicationsCache;
+- (void)processFelicaTransitAppletState:(id)arg1 forPassUniqueID:(id)arg2;
+- (void)processFelicaTransitHistory:(id)arg1 forPaymentApplication:(id)arg2 withPassUniqueIdentifier:(id)arg3 transactionDate:(id)arg4;
 - (id)relevantPassTuples;
 - (BOOL)serverHasPasses;
 - (BOOL)serverHasPotentiallyRelevantPasses;
 - (void)setDisableCaching:(BOOL)arg1;
+- (void)setExpressTransitUniqueID:(id)arg1 applicationIdentifier:(id)arg2 completion:(id /* block */)arg3;
 - (void)setInitialLoadComplete:(BOOL)arg1;
 - (void)setLastSeenRelevantPassTuples:(id)arg1;
 - (void)setNeedsRelevancyInformation:(BOOL)arg1;

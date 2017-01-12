@@ -82,6 +82,8 @@
 - (void)stream:(id)arg1 didStart:(BOOL)arg2 error:(id)arg3;
 - (void)stream:(id)arg1 didUpdateVideoConfiguration:(BOOL)arg2 error:(id)arg3;
 - (void)stream:(id)arg1 downlinkQualityDidChange:(id)arg2;
+- (void)streamDidRTCPTimeOut:(id)arg1;
+- (void)streamDidRTPTimeOut:(id)arg1;
 - (void)streamDidServerDie:(id)arg1;
 - (void)streamDidStop:(id)arg1;
 - (id)streamToken;

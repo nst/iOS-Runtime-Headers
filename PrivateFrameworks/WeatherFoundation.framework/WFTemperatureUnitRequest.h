@@ -9,6 +9,8 @@
 @property (nonatomic, copy) id /* block */ resultHandler;
 
 - (void).cxx_destruct;
+- (void)cleanup;
+- (void)handleCancellation;
 - (void)handleResponse:(id)arg1;
 - (id)initWithResultHandler:(id /* block */)arg1;
 - (BOOL)requiresResponse;

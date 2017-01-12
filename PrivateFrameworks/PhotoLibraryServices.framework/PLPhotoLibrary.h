@@ -61,6 +61,7 @@
 + (id)_operationQueueForPriority:(int)arg1;
 + (id)_statusDescriptionForQueue:(id)arg1;
 + (void)_updateAssetCountKeyPath:(id)arg1 withPendingCountKeyPath:(id)arg2 inContext:(id)arg3;
++ (id)allPersistedDirectoryURLs;
 + (BOOL)areOpportunisticTasksDisabled;
 + (id)assetsDataDirectory;
 + (BOOL)canSaveVideoToCameraRoll:(id)arg1;
@@ -122,6 +123,7 @@
 + (void)performOnTransientLibraryWithPriority:(int)arg1 name:(const char *)arg2 block:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
 + (void)performTransactionAndWaitOnTransientLibraryWithName:(const char *)arg1 block:(id /* block */)arg2;
 + (id)persistedAlbumDataDirectoryURL;
++ (id)persistedFaceDataDirectoryURL;
 + (id)photoCloudSharingCacheDataDirectory;
 + (id)photoCloudSharingDataDirectory;
 + (id)photoCloudSharingMetadataDirectory;
@@ -148,6 +150,7 @@
 + (void)recoverFromCrashIfNeeded;
 + (void)refreshCachedCountsOnAllAssetContainersInContext:(id)arg1;
 + (void)refreshCachedCountsOnAssetsContainerClass:(Class)arg1 inContext:(id)arg2 withPredicate:(id)arg3;
++ (BOOL)removeFaceMetadataAtURL:(id)arg1 includingPeople:(BOOL)arg2;
 + (void)repairSingletonObjects;
 + (void)resetSyncedAssetsDCIMDirectory;
 + (void)scheduleUserInitiatedAnalysisForAssets:(id)arg1;
@@ -192,6 +195,8 @@
 - (void)_calculatePendingItemCountsAfterOTARestoreWithMangedObjectContext:(id)arg1;
 - (BOOL)_checkMomentAnalysisCompletion;
 - (void)_deleteObsoleteMetadataFiles;
+- (void)_enumerateFilesAtURL:(id)arg1 withBlock:(id /* block */)arg2;
+- (void)_enumerateFilesAtURLs:(id)arg1 withBlock:(id /* block */)arg2;
 - (id)_fetchCompleteAssetIDsWithSavedAssetType:(short)arg1 context:(id)arg2;
 - (void)_filterAlbums:(id)arg1 toTrashableAlbums:(id*)arg2 deletableAlbums:(id*)arg3 otherAlbums:(id*)arg4;
 - (void)_filterAssets:(id)arg1 toTrashableAssets:(id*)arg2 deletableAssets:(id*)arg3 otherAssets:(id*)arg4;
@@ -202,6 +207,8 @@
 - (void)_linkAsideAlbumMetadataForOTARestore;
 - (void)_loadFileExtensionInformation;
 - (void)_processPhotoIrisSidecarIfNecessary:(id)arg1 forAsset:(id)arg2;
+- (void)_recreateItemsFromMetadataAtDirectoryURLs:(id)arg1;
+- (void)_removeOldFaceMetadataAsync;
 - (void)_removeSyncedAlbumsInTransactionWithManagedObjectContext:(id)arg1;
 - (void)_safeSave:(id)arg1;
 - (void)_updateHasAtLeastOnePhotoWithGPSWithInsertedCount:(unsigned int)arg1 deletedCount:(unsigned int)arg2 updatedAssets:(id)arg3;
@@ -327,6 +334,7 @@
 - (int)priorityForFileExtension:(id)arg1;
 - (void)processSyncSaveJob:(id)arg1 albumMap:(id)arg2;
 - (void)recreateAlbumsFromMetadata;
+- (void)recreateFacesFromMetadata;
 - (void)removeFromKnownPhotoStreamAlbums:(id)arg1;
 - (void)resetCachedImportAlbumsIfNeededForAlbum:(id)arg1;
 - (id)rootAlbumList;

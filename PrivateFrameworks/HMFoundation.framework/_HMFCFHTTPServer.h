@@ -11,6 +11,7 @@
 }
 
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *clientQueue;
+@property double connectionIdleTimeout;
 @property (nonatomic, readonly) NSMutableArray *connections;
 @property (readonly, copy) NSString *debugDescription;
 @property <_HMFCFHTTPServerDelegate> *delegate;
@@ -25,6 +26,7 @@
 
 - (void).cxx_destruct;
 - (id)clientQueue;
+- (double)connectionIdleTimeout;
 - (id)connections;
 - (void)dealloc;
 - (id)delegate;
@@ -35,6 +37,9 @@
 - (BOOL)isValid;
 - (id)logIdentifier;
 - (unsigned int)port;
+- (void)setConnectionIdleTimeout:(double)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setWatchdogTimeout:(double)arg1;
+- (double)watchdogTimeout;
 
 @end

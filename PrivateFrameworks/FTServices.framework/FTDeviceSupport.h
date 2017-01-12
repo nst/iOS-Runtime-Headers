@@ -48,6 +48,7 @@
 @property (nonatomic, readonly) NSString *deviceIDPrefix;
 @property (nonatomic, readonly) NSString *deviceInformationString;
 @property (nonatomic, readonly) NSString *deviceName;
+@property (nonatomic, readonly) NSString *deviceRegionInfo;
 @property (nonatomic, readonly) int deviceType;
 @property (nonatomic, readonly) NSString *deviceTypeIDPrefix;
 @property (nonatomic, readonly) NSString *enclosureColor;
@@ -101,6 +102,7 @@
 - (BOOL)SIMInserted;
 - (void)_carrierChanged;
 - (void)_commCenterAlive;
+- (id)_forceWWANQueriesCarrierBundleValue;
 - (void)_handlePhoneNumberRegistrationStateChanged:(id)arg1;
 - (void)_handleTechnologyChange:(id)arg1;
 - (void)_lockdownStateChanged:(id)arg1;
@@ -119,6 +121,7 @@
 - (void)_unregisterForManagedConfigurationNotifications;
 - (void)_updateCapabilities;
 - (void)_updateManagedConfigurationSettings;
+- (BOOL)_wantsForcedCellularQueries;
 - (void)_watchNotifyTokens;
 - (BOOL)accountModificationRestricted;
 - (BOOL)callingAvailable;
@@ -134,6 +137,7 @@
 - (id)deviceIDPrefix;
 - (id)deviceInformationString;
 - (id)deviceName;
+- (id)deviceRegionInfo;
 - (int)deviceType;
 - (id)deviceTypeIDPrefix;
 - (id)enclosureColor;

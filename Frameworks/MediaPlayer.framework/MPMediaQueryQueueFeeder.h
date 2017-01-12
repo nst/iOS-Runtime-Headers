@@ -6,6 +6,7 @@
     MPMediaItem * _cloudDialogAllowedMediaItem;
     MPMediaLibraryConnectionAssertion * _connectionAssertion;
     unsigned int  _currentInvalidationRevision;
+    NSDictionary * _endTimeModifications;
     unsigned long long  _feederRevisionID;
     BOOL  _hasValidItems;
     MPMutableBidirectionalDictionary * _indexToIdentifierCache;
@@ -19,7 +20,10 @@
     }  _itemPIDs;
     MPMediaQuery * _query;
     NSArray * _queryItems;
+    NSString * _requestingBundleIdentifier;
+    NSString * _requestingBundleVersion;
     MPShuffleController * _shuffleController;
+    NSDictionary * _startTimeModifications;
 }
 
 @property (nonatomic, retain) MPMediaItem *cloudDialogAllowedMediaItem;
@@ -39,6 +43,7 @@
 - (void).cxx_destruct;
 - (void)_allowsHighQualityMusicStreamingOnCellularDidChangeNotification:(id)arg1;
 - (void)_commonInit;
+- (void)_configureStoreAVItem:(id)arg1;
 - (id)_currentEmptyQueueError;
 - (void)_handleMediaLibraryDidChange;
 - (id)_identifierAtIndex:(unsigned int)arg1;
@@ -50,6 +55,7 @@
 - (unsigned int)_playbackIndexByApplyShuffleType:(int)arg1 withStartIndex:(unsigned int)arg2 startIndexMediaItem:(id)arg3 shouldKeepConsistentQueueOrder:(BOOL)arg4;
 - (void)_reloadQueryItems;
 - (void)_verifyQueueInvalidationCompletionHandler:(id /* block */)arg1;
+- (void)applyVolumeNormalizationForItem:(id)arg1;
 - (id)audioSessionModeForItemAtIndex:(unsigned int)arg1;
 - (id)cloudDialogAllowedMediaItem;
 - (id)copyRawItemAtIndex:(unsigned int)arg1;

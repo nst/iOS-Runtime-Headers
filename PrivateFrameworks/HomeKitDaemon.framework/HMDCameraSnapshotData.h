@@ -5,14 +5,18 @@
 @interface HMDCameraSnapshotData : NSObject {
     NSData * _snapshotData;
     HAPOSTransaction * _snapshotDataTrasaction;
+    HMDVideoResolution * _videoResolution;
 }
 
 @property (nonatomic, readonly) NSData *snapshotData;
 @property (nonatomic, readonly) HAPOSTransaction *snapshotDataTrasaction;
+@property (nonatomic, readonly) HMDVideoResolution *videoResolution;
 
 - (void).cxx_destruct;
-- (id)initWithSnapshotData:(id)arg1 snapshotDataTrasaction:(id)arg2;
+- (void)dealloc;
+- (id)initWithSnapshotData:(id)arg1 videoResolution:(id)arg2 snapshotDataTrasaction:(id)arg3;
 - (id)snapshotData;
 - (id)snapshotDataTrasaction;
+- (id)videoResolution;
 
 @end

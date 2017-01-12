@@ -6,6 +6,9 @@
     NSString * _administrativeArea;
     NSDecimalNumber * _amount;
     NSString * _currencyCode;
+    BOOL  _enRoute;
+    NSString * _endStation;
+    NSData * _endStationCode;
     BOOL  _hasAssociatedPaymentApplication;
     BOOL  _hasNotificationServiceData;
     NSString * _identifier;
@@ -19,19 +22,28 @@
     PKMerchant * _merchant;
     BOOL  _processedForLocation;
     BOOL  _processedForMerchantCleanup;
+    BOOL  _processedForStations;
     NSString * _serviceIdentifier;
+    NSString * _startStation;
+    NSData * _startStationCode;
+    NSString * _stationCodeProvider;
     int  _technologyType;
     NSDate * _transactionDate;
     NSString * _transactionIdentifier;
     unsigned int  _transactionSource;
     int  _transactionStatus;
     int  _transactionType;
+    unsigned int  _transitModifiers;
+    int  _transitType;
 }
 
 @property (nonatomic, retain) NSString *administrativeArea;
 @property (nonatomic, copy) NSDecimalNumber *amount;
 @property (nonatomic, copy) NSString *currencyCode;
 @property (nonatomic, readonly) NSString *displayLocation;
+@property (nonatomic) BOOL enRoute;
+@property (nonatomic, copy) NSString *endStation;
+@property (nonatomic, copy) NSData *endStationCode;
 @property (nonatomic) BOOL hasAssociatedPaymentApplication;
 @property (nonatomic, readonly) BOOL hasBackingData;
 @property (nonatomic) BOOL hasNotificationServiceData;
@@ -48,13 +60,19 @@
 @property (nonatomic, retain) PKMerchant *merchant;
 @property (nonatomic) BOOL processedForLocation;
 @property (nonatomic) BOOL processedForMerchantCleanup;
+@property (nonatomic) BOOL processedForStations;
 @property (nonatomic, copy) NSString *serviceIdentifier;
+@property (nonatomic, copy) NSString *startStation;
+@property (nonatomic, copy) NSData *startStationCode;
+@property (nonatomic, copy) NSString *stationCodeProvider;
 @property (nonatomic) int technologyType;
 @property (nonatomic, copy) NSDate *transactionDate;
 @property (nonatomic, copy) NSString *transactionIdentifier;
 @property (nonatomic) unsigned int transactionSource;
 @property (nonatomic) int transactionStatus;
 @property (nonatomic) int transactionType;
+@property (nonatomic) unsigned int transitModifiers;
+@property (nonatomic) int transitType;
 
 + (id)paymentTransactionFromSource:(unsigned int)arg1;
 + (id)paymentTransactionWithSource:(unsigned int)arg1;
@@ -71,7 +89,10 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)displayLocation;
+- (BOOL)enRoute;
 - (void)encodeWithCoder:(id)arg1;
+- (id)endStation;
+- (id)endStationCode;
 - (BOOL)hasAssociatedPaymentApplication;
 - (BOOL)hasBackingData;
 - (BOOL)hasNotificationServiceData;
@@ -93,10 +114,14 @@
 - (id)merchant;
 - (BOOL)processedForLocation;
 - (BOOL)processedForMerchantCleanup;
+- (BOOL)processedForStations;
 - (id)serviceIdentifier;
 - (void)setAdministrativeArea:(id)arg1;
 - (void)setAmount:(id)arg1;
 - (void)setCurrencyCode:(id)arg1;
+- (void)setEnRoute:(BOOL)arg1;
+- (void)setEndStation:(id)arg1;
+- (void)setEndStationCode:(id)arg1;
 - (void)setHasAssociatedPaymentApplication:(BOOL)arg1;
 - (void)setHasNotificationServiceData:(BOOL)arg1;
 - (void)setIdentifier:(id)arg1;
@@ -111,18 +136,29 @@
 - (void)setMerchant:(id)arg1;
 - (void)setProcessedForLocation:(BOOL)arg1;
 - (void)setProcessedForMerchantCleanup:(BOOL)arg1;
+- (void)setProcessedForStations:(BOOL)arg1;
 - (void)setServiceIdentifier:(id)arg1;
+- (void)setStartStation:(id)arg1;
+- (void)setStartStationCode:(id)arg1;
+- (void)setStationCodeProvider:(id)arg1;
 - (void)setTechnologyType:(int)arg1;
 - (void)setTransactionDate:(id)arg1;
 - (void)setTransactionIdentifier:(id)arg1;
 - (void)setTransactionSource:(unsigned int)arg1;
 - (void)setTransactionStatus:(int)arg1;
 - (void)setTransactionType:(int)arg1;
+- (void)setTransitModifiers:(unsigned int)arg1;
+- (void)setTransitType:(int)arg1;
+- (id)startStation;
+- (id)startStationCode;
+- (id)stationCodeProvider;
 - (int)technologyType;
 - (id)transactionDate;
 - (id)transactionIdentifier;
 - (unsigned int)transactionSource;
 - (int)transactionStatus;
 - (int)transactionType;
+- (unsigned int)transitModifiers;
+- (int)transitType;
 
 @end

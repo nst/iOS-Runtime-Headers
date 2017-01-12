@@ -6,5 +6,6 @@
 
 - (void)_showPhoto;
 - (void)activeDidChange;
+- (int)behaviorType;
 
 @end

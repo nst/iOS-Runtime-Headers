@@ -4,6 +4,7 @@
 
 @interface NTPBLanguageConfig : PBCodable <NSCopying> {
     NSString * _appleEditorialChannelId;
+    NSString * _briefingsTagId;
     NTPBCoverArticlesConfig * _coverArticlesConfig;
     NSString * _forYouConfigId;
     NSString * _hiddenFeedId;
@@ -17,9 +18,11 @@
 }
 
 @property (nonatomic, retain) NSString *appleEditorialChannelId;
+@property (nonatomic, retain) NSString *briefingsTagId;
 @property (nonatomic, retain) NTPBCoverArticlesConfig *coverArticlesConfig;
 @property (nonatomic, retain) NSString *forYouConfigId;
 @property (nonatomic, readonly) BOOL hasAppleEditorialChannelId;
+@property (nonatomic, readonly) BOOL hasBriefingsTagId;
 @property (nonatomic, readonly) BOOL hasCoverArticlesConfig;
 @property (nonatomic, readonly) BOOL hasForYouConfigId;
 @property (nonatomic, readonly) BOOL hasHiddenFeedId;
@@ -46,6 +49,7 @@
 - (void)addPreSubscribedNotificationsChannelIds:(id)arg1;
 - (void)addRecommendedNotificationChannels:(id)arg1;
 - (id)appleEditorialChannelId;
+- (id)briefingsTagId;
 - (void)clearOnboardingTagIds;
 - (void)clearPreSubscribedFeedIds;
 - (void)clearPreSubscribedNotificationsChannelIds;
@@ -56,6 +60,7 @@
 - (id)dictionaryRepresentation;
 - (id)forYouConfigId;
 - (BOOL)hasAppleEditorialChannelId;
+- (BOOL)hasBriefingsTagId;
 - (BOOL)hasCoverArticlesConfig;
 - (BOOL)hasForYouConfigId;
 - (BOOL)hasHiddenFeedId;
@@ -82,6 +87,7 @@
 - (unsigned int)recommendedNotificationChannelsCount;
 - (id)rootCategory;
 - (void)setAppleEditorialChannelId:(id)arg1;
+- (void)setBriefingsTagId:(id)arg1;
 - (void)setCoverArticlesConfig:(id)arg1;
 - (void)setForYouConfigId:(id)arg1;
 - (void)setHiddenFeedId:(id)arg1;

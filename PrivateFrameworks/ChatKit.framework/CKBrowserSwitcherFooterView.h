@@ -7,20 +7,24 @@
     _UIBackdropView * _backdropView;
     int  _barStyle;
     UIButton * _browserButton;
+    BOOL  _dragging;
     UIButton * _expandButton;
     UIView * _grayLine;
-    CKBrowserSwitcherPageControl * _pageControl;
+    CKBrowserSwitcherScrollBar * _switcherScrollBar;
 }
 
 @property (nonatomic, retain) UILabel *appNameLabel;
 @property (nonatomic, retain) _UIBackdropView *backdropView;
 @property (nonatomic, readonly) int barStyle;
 @property (nonatomic, retain) UIButton *browserButton;
+@property (getter=isDragging, nonatomic) BOOL dragging;
 @property (nonatomic, retain) UIButton *expandButton;
 @property (nonatomic, retain) UIView *grayLine;
-@property (nonatomic, retain) CKBrowserSwitcherPageControl *pageControl;
+@property (nonatomic, retain) CKBrowserSwitcherScrollBar *switcherScrollBar;
 
 - (void).cxx_destruct;
+- (void)_animateInScrollBar;
+- (void)_animateOutScrollBar;
 - (id)appNameLabel;
 - (id)backdropView;
 - (void)backdropView:(id)arg1 didChangeToGraphicsQuality:(int)arg2;
@@ -30,14 +34,16 @@
 - (id)expandButton;
 - (id)grayLine;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 barStyle:(int)arg2;
+- (BOOL)isDragging;
 - (void)layoutSubviews;
-- (id)pageControl;
 - (void)setAppNameLabel:(id)arg1;
 - (void)setBackdropView:(id)arg1;
 - (void)setBarStyle:(int)arg1;
 - (void)setBrowserButton:(id)arg1;
+- (void)setDragging:(BOOL)arg1;
 - (void)setExpandButton:(id)arg1;
 - (void)setGrayLine:(id)arg1;
-- (void)setPageControl:(id)arg1;
+- (void)setSwitcherScrollBar:(id)arg1;
+- (id)switcherScrollBar;
 
 @end

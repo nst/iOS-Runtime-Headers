@@ -5,6 +5,6 @@
 @interface HMDSnapshotRemoteSession : HMDSnapshotSession
 
 - (id)description;
-- (id)initWithSessionID:(id)arg1 snapshotGetter:(id)arg2 message:(id)arg3 waitPeriod:(double)arg4;
+- (id)initWithSessionID:(id)arg1 snapshotGetter:(id)arg2 message:(id)arg3 waitPeriod:(double)arg4 streamingTierType:(unsigned int)arg5;
 
 @end

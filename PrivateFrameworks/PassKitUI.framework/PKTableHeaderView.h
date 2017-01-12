@@ -8,7 +8,6 @@
     UIActivityIndicatorView * _activityIndicator;
     float  _bottomPadding;
     UIImageView * _checkmarkView;
-    float  _extraTextPadding;
     UIImageView * _imageView;
     struct CGSize { 
         float width; 
@@ -26,7 +25,6 @@
 @property (nonatomic, readonly, retain) UIActivityIndicatorView *activityIndicator;
 @property (nonatomic) float bottomPadding;
 @property (nonatomic, readonly, retain) UIImageView *checkmarkView;
-@property (nonatomic) float extraTextPadding;
 @property (nonatomic, retain) UIImageView *imageView;
 @property (nonatomic) BOOL shouldResizeImageToFit;
 @property (nonatomic) unsigned int style;
@@ -45,16 +43,13 @@
 - (float)bottomPadding;
 - (id)checkmarkView;
 - (void)dealloc;
-- (float)extraTextPadding;
 - (id)imageView;
 - (void)layoutSubviews;
 - (void)setAccessoryViewsDisabled:(BOOL)arg1;
 - (void)setBottomPadding:(float)arg1;
-- (void)setExtraTextPadding:(float)arg1;
 - (void)setImageView:(id)arg1;
 - (void)setShouldResizeImageToFit:(BOOL)arg1;
 - (void)setStyle:(unsigned int)arg1;
-- (void)setSubtitleBody:(id)arg1;
 - (void)setTopPadding:(float)arg1;
 - (BOOL)shouldResizeImageToFit;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;

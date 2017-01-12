@@ -7,7 +7,7 @@
     BOOL  _autoUnlockWatch;
     NSArray * _batteryInfo;
     SFBLEDevice * _bleDevice;
-    unsigned char  _deviceClass;
+    unsigned char  _deviceActionType;
     int  _deviceType;
     int  _distance;
     BOOL  _hasProblem;
@@ -25,7 +25,7 @@
 @property (nonatomic) BOOL autoUnlockWatch;
 @property (nonatomic, readonly, copy) NSArray *batteryInfo;
 @property (nonatomic, retain) SFBLEDevice *bleDevice;
-@property (nonatomic, readonly) unsigned char deviceClass;
+@property (nonatomic, readonly) unsigned char deviceActionType;
 @property (nonatomic, readonly) int deviceType;
 @property (nonatomic) int distance;
 @property (nonatomic) BOOL hasProblem;
@@ -46,7 +46,7 @@
 - (id)batteryInfo;
 - (id)bleDevice;
 - (id)description;
-- (unsigned char)deviceClass;
+- (unsigned char)deviceActionType;
 - (int)deviceType;
 - (int)distance;
 - (void)encodeWithCoder:(id)arg1;

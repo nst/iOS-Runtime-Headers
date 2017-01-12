@@ -18,6 +18,8 @@
 @property (nonatomic, readonly) CAMMemoizationCache *_videoSessionPresetForVideoConfiguration;
 @property (nonatomic, readonly) AVCaptureDevice *captureDevice;
 @property (nonatomic, readonly) AVCaptureDeviceInput *captureDeviceInput;
+@property (nonatomic, readonly) AVCaptureDeviceFormat *portraitModeDeviceFormat;
+@property (nonatomic, readonly) NSString *portraitModeSessionPreset;
 @property (nonatomic, readonly) AVCaptureDeviceFormat *stillImageDeviceFormat;
 @property (nonatomic, readonly) NSString *stillImageSessionPreset;
 @property (nonatomic, readonly) AVCaptureDeviceFormat *timelapseDeviceFormat;
@@ -36,6 +38,8 @@
 - (id)initWithEngine:(id)arg1 captureDevice:(id)arg2;
 - (id)panoramaDeviceFormatForConfiguration:(id)arg1;
 - (id)panoramaSessionPresetForConfiguration:(id)arg1;
+- (id)portraitModeDeviceFormat;
+- (id)portraitModeSessionPreset;
 - (id)stillImageDeviceFormat;
 - (id)stillImageSessionPreset;
 - (id)timelapseDeviceFormat;

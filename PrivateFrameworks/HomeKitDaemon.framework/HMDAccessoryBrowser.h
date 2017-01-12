@@ -79,10 +79,10 @@
 - (void)_notifyDelegatesOfAccessoryServer:(id)arg1 didUpdateCategory:(id)arg2;
 - (void)_notifyDelegatesOfAccessoryServer:(id)arg1 didUpdateHasPairings:(BOOL)arg2;
 - (void)_notifyDelegatesOfAccessoryServer:(id)arg1 didUpdateName:(id)arg2;
-- (void)_notifyDelegatesOfAccessoryServer:(id)arg1 didUpdateValuesForCharacteristics:(id)arg2;
+- (void)_notifyDelegatesOfAccessoryServer:(id)arg1 didUpdateValuesForCharacteristics:(id)arg2 stateNumber:(id)arg3;
 - (void)_notifyDelegatesOfDiscoveryFailure:(id)arg1 accessoryServer:(id)arg2 linkType:(int)arg3;
 - (void)_notifyDelegatesOfNewAccessory:(id)arg1;
-- (void)_notifyDelegatesOfNewPairedAccessoryServer:(id)arg1;
+- (void)_notifyDelegatesOfNewPairedAccessoryServer:(id)arg1 stateChanged:(BOOL)arg2 stateNumber:(id)arg3;
 - (void)_notifyDelegatesOfReachabilityChange:(BOOL)arg1 forBTLEAccessories:(id)arg2;
 - (void)_notifyDelegatesOfRemovedAccessoryServer:(id)arg1;
 - (void)_notifyDelegatesOfTombstonedAccessoryServer:(id)arg1;
@@ -114,12 +114,12 @@
 - (void)accessoryServer:(id)arg1 didUpdateCategory:(id)arg2;
 - (void)accessoryServer:(id)arg1 didUpdateHasPairings:(BOOL)arg2;
 - (void)accessoryServer:(id)arg1 didUpdateName:(id)arg2;
-- (void)accessoryServer:(id)arg1 didUpdateValuesForCharacteristics:(id)arg2;
+- (void)accessoryServer:(id)arg1 didUpdateValuesForCharacteristics:(id)arg2 stateNumber:(id)arg3;
 - (void)accessoryServer:(id)arg1 isBlockedWithCompletionHandler:(id /* block */)arg2;
 - (void)accessoryServer:(id)arg1 promptUserForPasswordWithType:(unsigned int)arg2;
 - (void)accessoryServer:(id)arg1 requestUserPermission:(int)arg2;
 - (void)accessoryServerBrowser:(id)arg1 didFailToDiscoverAccessoryServerWithIdentifier:(id)arg2;
-- (void)accessoryServerBrowser:(id)arg1 didFindAccessoryServer:(id)arg2;
+- (void)accessoryServerBrowser:(id)arg1 didFindAccessoryServer:(id)arg2 stateChanged:(BOOL)arg3 stateNumber:(id)arg4;
 - (void)accessoryServerBrowser:(id)arg1 didRemoveAccessoryServer:(id)arg2;
 - (void)accessoryServerBrowser:(id)arg1 didStartDiscoveringWithError:(id)arg2;
 - (void)accessoryServerBrowser:(id)arg1 didStopDiscoveringWithError:(id)arg2;
@@ -178,6 +178,7 @@
 - (void)removeDiscoveredBridgeableAccessories:(id)arg1;
 - (void)resetConfiguration;
 - (void)resurrectAccessoryServer:(id)arg1;
+- (void)retrieveCurrentStateForIdentifer:(id)arg1 onQueue:(id)arg2 withCompletion:(id /* block */)arg3;
 - (void)setAccessoryServerBrowsers:(id)arg1;
 - (void)setAddAccessoryCompletionHandlersForAccessoryServers:(id)arg1;
 - (void)setAppIsInForeground:(BOOL)arg1;

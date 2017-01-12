@@ -2,8 +2,9 @@
    Image: /System/Library/PrivateFrameworks/HMFoundation.framework/HMFoundation
  */
 
-@interface HMFHTTPServer : NSObject <HMFHTTPClientConnectionDelegate, _HMFCFHTTPServerDelegate> {
+@interface HMFHTTPServer : NSObject <HMFHTTPClientConnectionDelegate, HMFLogging, _HMFCFHTTPServerDelegate> {
     NSObject<OS_dispatch_queue> * _clientQueue;
+    double  _connectionIdleTimeout;
     NSMutableArray * _connections;
     <HMFHTTPServerDelegate> * _delegate;
     _HMFCFHTTPServer * _internal;
@@ -17,6 +18,7 @@
 }
 
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *clientQueue;
+@property double connectionIdleTimeout;
 @property (readonly, copy) NSArray *connections;
 @property (readonly, copy) NSString *debugDescription;
 @property <HMFHTTPServerDelegate> *delegate;
@@ -32,6 +34,7 @@
 @property (nonatomic, readonly, copy) NSString *serviceType;
 @property (readonly) Class superclass;
 
++ (id)logCategory;
 + (id)shortDescription;
 
 - (void).cxx_destruct;
@@ -42,6 +45,7 @@
 - (void)addConnection:(id)arg1;
 - (id)clientQueue;
 - (void)connection:(id)arg1 didReceiveRequest:(id)arg2;
+- (double)connectionIdleTimeout;
 - (id)connections;
 - (void)dealloc;
 - (id)debugDescription;
@@ -51,6 +55,7 @@
 - (id)init;
 - (id)initWithServiceType:(id)arg1 name:(id)arg2 port:(unsigned int)arg3 options:(unsigned int)arg4;
 - (id)internal;
+- (id)logIdentifier;
 - (id)name;
 - (id)netService;
 - (unsigned int)options;
@@ -63,6 +68,7 @@
 - (void)server:(id)arg1 didOpenConnection:(id)arg2;
 - (void)serverDidInvalidate:(id)arg1;
 - (id)serviceType;
+- (void)setConnectionIdleTimeout:(double)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setInternal:(id)arg1;
 - (id)shortDescription;

@@ -24,6 +24,7 @@
         unsigned int flags; 
         long long epoch; 
     }  _movieEndTime;
+    NSArray * _movieLevelMetadataForSDOFOriginalMovie;
     struct { 
         long long value; 
         int timescale; 
@@ -44,6 +45,8 @@
     }  _movieTrimStartTime;
     BOOL  _originalPhotoRecording;
     NSURL * _outputMovieURL;
+    NSURL * _outputURLForSDOFOriginalMovie;
+    unsigned int  _requestedSDOFVariants;
     FigCaptureMovieFileRecordingSettings * _settings;
     struct { 
         long long value; 
@@ -60,6 +63,7 @@
     BOOL  _stillImageEncoderKeyFrameEmitted;
     BOOL  _stillImageVISKeyFrameTagged;
     NSURL * _temporaryMovieURL;
+    NSURL * _temporaryURLForSDOFOriginalMovie;
 }
 
 @property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } audioOffset;
@@ -69,24 +73,29 @@
 @property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } masterMovieStartTime;
 @property (nonatomic, retain) NSURL *masterMovieURL;
 @property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } movieEndTime;
+@property (nonatomic, copy) NSArray *movieLevelMetadataForSDOFOriginalMovie;
 @property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } movieStartTime;
 @property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } movieTrimEndTime;
 @property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } movieTrimStartTime;
 @property (nonatomic, readonly) int numberOfRequestedVariants;
 @property (getter=isOriginalPhotoRecording, nonatomic) BOOL originalPhotoRecording;
 @property (nonatomic, retain) NSURL *outputMovieURL;
+@property (nonatomic, copy) NSURL *outputURLForSDOFOriginalMovie;
+@property (nonatomic) unsigned int requestedSDOFVariants;
 @property (nonatomic, readonly) FigCaptureMovieFileRecordingSettings *settings;
 @property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } stillImageCaptureHostTime;
 @property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } stillImageCaptureTime;
 @property (nonatomic) BOOL stillImageEncoderKeyFrameEmitted;
 @property (nonatomic) BOOL stillImageVISKeyFrameTagged;
 @property (nonatomic, retain) NSURL *temporaryMovieURL;
+@property (nonatomic, copy) NSURL *temporaryURLForSDOFOriginalMovie;
 
 + (id)irisMovieInfoWithFigCaptureMovieFileRecordingSettings:(id)arg1 stillImageCaptureTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 stillImageCaptureHostTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3 originalPhotoRecording:(BOOL)arg4;
 
 - (id)_initWithFigCaptureMovieFileRecordingSettings:(id)arg1 stillImageCaptureTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 stillImageCaptureHostTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3 originalPhotoRecording:(BOOL)arg4;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })audioOffset;
 - (BOOL)containsTrims;
+- (id)copyMovieInfosForRequestedSDOFVariants;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
@@ -96,31 +105,39 @@
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })masterMovieStartTime;
 - (id)masterMovieURL;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })movieEndTime;
+- (id)movieLevelMetadataForSDOFOriginalMovie;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })movieStartTime;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })movieTrimEndTime;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })movieTrimStartTime;
 - (int)numberOfRequestedVariants;
 - (id)outputMovieURL;
+- (id)outputURLForSDOFOriginalMovie;
+- (unsigned int)requestedSDOFVariants;
 - (void)setAudioOffset:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setFinalEnqueuedIrisRequest:(BOOL)arg1;
 - (void)setFinalReferenceMovie:(BOOL)arg1;
 - (void)setMasterMovieStartTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setMasterMovieURL:(id)arg1;
 - (void)setMovieEndTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)setMovieLevelMetadataForSDOFOriginalMovie:(id)arg1;
 - (void)setMovieStartTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setMovieTrimEndTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setMovieTrimStartTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setOriginalPhotoRecording:(BOOL)arg1;
 - (void)setOutputMovieURL:(id)arg1;
+- (void)setOutputURLForSDOFOriginalMovie:(id)arg1;
+- (void)setRequestedSDOFVariants:(unsigned int)arg1;
 - (void)setStillImageCaptureTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setStillImageEncoderKeyFrameEmitted:(BOOL)arg1;
 - (void)setStillImageVISKeyFrameTagged:(BOOL)arg1;
 - (void)setTemporaryMovieURL:(id)arg1;
+- (void)setTemporaryURLForSDOFOriginalMovie:(id)arg1;
 - (id)settings;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })stillImageCaptureHostTime;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })stillImageCaptureTime;
 - (BOOL)stillImageEncoderKeyFrameEmitted;
 - (BOOL)stillImageVISKeyFrameTagged;
 - (id)temporaryMovieURL;
+- (id)temporaryURLForSDOFOriginalMovie;
 
 @end

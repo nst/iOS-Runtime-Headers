@@ -5,6 +5,6 @@
 
 @required
 
-- (void)browseProductsViewController:(PKPaymentSetupBrowseProductsViewController *)arg1 didSelectProduct:(PKPaymentSetupProduct *)arg2;
+- (void)browseProductsViewController:(void *)arg1 didSelectProduct:(void *)arg2 withCompletionHandler:(void *)arg3; // needs 3 arg types, found 9: PKPaymentSetupBrowseProductsViewController *, PKPaymentSetupProduct *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, NSError *, void*
 
 @end

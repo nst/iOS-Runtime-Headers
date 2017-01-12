@@ -12,6 +12,7 @@
 
 @optional
 
+- (BOOL)hasSameContentAsDataSource:(id <MPLazySectionedCollectionDataSource>)arg1;
 - (int)indexOfSectionForSectionIndexTitleAtIndex:(int)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })optionalSectionIndexTitlesRange;
 - (NSArray *)sectionIndexTitles;

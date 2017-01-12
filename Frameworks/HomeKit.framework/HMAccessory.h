@@ -5,7 +5,6 @@
 @interface HMAccessory : NSObject <HFFavoritable, HFPrettyDescription, HFReorderableHomeKitObject, HMFMessageReceiver, HMMutableApplicationData, HMObjectMerge, NSSecureCoding> {
     HMThreadSafeMutableArrayCollection * _accessories;
     NSNumber * _accessoryFlags;
-    HMThreadSafeMutableArrayCollection * _accessoryInternalProfiles;
     HMThreadSafeMutableArrayCollection * _accessoryProfiles;
     unsigned int  _additionalSetupStatus;
     HMApplicationData * _applicationData;
@@ -39,7 +38,6 @@
 
 @property (nonatomic, retain) HMThreadSafeMutableArrayCollection *accessories;
 @property (nonatomic, retain) NSNumber *accessoryFlags;
-@property (nonatomic, retain) HMThreadSafeMutableArrayCollection *accessoryInternalProfiles;
 @property (nonatomic, retain) HMThreadSafeMutableArrayCollection *accessoryProfiles;
 @property (nonatomic) unsigned int additionalSetupStatus;
 @property (nonatomic, readonly) HMApplicationData *applicationData;
@@ -96,8 +94,9 @@
 - (void)_configure:(id)arg1 messageDispatcher:(id)arg2 clientQueue:(id)arg3 delegateCaller:(id)arg4 configCompletionQueue:(id)arg5 configCompletion:(id /* block */)arg6;
 - (void)_configureClientQueue:(id)arg1;
 - (void)_configureMessageDispatcher:(id)arg1 clientQueue:(id)arg2 delegateCaller:(id)arg3;
+- (void)_configureProfilesWithClientQueue:(id)arg1 delegateCaller:(id)arg2 msgDispatcher:(id)arg3 home:(id)arg4;
 - (void)_copyFrom:(id)arg1;
-- (void)_createCameraProfilesWithClientQueue:(id)arg1 delegateCaller:(id)arg2 msgDispatcher:(id)arg3 home:(id)arg4;
+- (void)_createCameraProfiles:(id)arg1;
 - (id)_findCharacteristic:(id)arg1 forService:(id)arg2;
 - (id)_findService:(id)arg1;
 - (void)_handleAccessoryCategoryChanged:(id)arg1;
@@ -115,6 +114,7 @@
 - (void)_handleServicesUpdated:(id)arg1;
 - (void)_handleUpdateRoom:(id)arg1;
 - (void)_identifyWithCompletionHandler:(id /* block */)arg1;
+- (void)_mergeProfileObjects:(id)arg1 currentOperations:(id)arg2;
 - (BOOL)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
 - (void)_notifyDelegateOfAppDataUpdateForService:(id)arg1;
 - (void)_notifyDelegatesOfAdditionalSetupRequiredChange;
@@ -134,7 +134,6 @@
 - (void)_writeValue:(id)arg1 forCharacteristic:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)accessories;
 - (id)accessoryFlags;
-- (id)accessoryInternalProfiles;
 - (id)accessoryProfiles;
 - (unsigned int)additionalSetupStatus;
 - (id)applicationData;
@@ -177,7 +176,6 @@
 - (id)services;
 - (void)setAccessories:(id)arg1;
 - (void)setAccessoryFlags:(id)arg1;
-- (void)setAccessoryInternalProfiles:(id)arg1;
 - (void)setAccessoryProfiles:(id)arg1;
 - (void)setAdditionalSetupStatus:(unsigned int)arg1;
 - (void)setApplicationData:(id)arg1;

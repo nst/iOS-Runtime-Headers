@@ -2,17 +2,20 @@
    Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
  */
 
-@interface PKPassGroupsViewController : UIViewController <PKCodeAcquisitionDelegate, PKGroupsControllerDelegate, PKPassGroupStackViewDatasource, PKPassGroupStackViewDelegate, PKPassPersonalizationViewControllerDelegate, PKPaymentServiceDelegate, UIScrollViewDelegate> {
+@interface PKPassGroupsViewController : UIViewController <PKCodeAcquisitionDelegate, PKGroupsControllerDelegate, PKPassGroupStackViewDatasource, PKPassGroupStackViewDelegate, PKPassPersonalizationViewControllerDelegate, PKPaymentServiceDelegate, PKPerformActionViewControllerDelegate, UIScrollViewDelegate> {
     NSTimer * _allowDimmingTimer;
     BOOL  _backgroundMode;
     NSMutableArray * _blocksQueuedForUpdateCompletion;
+    int  _expressTransactionNotifyToken;
     PKPassGroupStackView * _groupStackView;
     PKGroupsController * _groupsController;
     BOOL  _handleFieldDetection;
+    unsigned int  _instanceFooterSuppressionCounter;
     unsigned int  _modalCardIndex;
     NSTimer * _passViewedNotificationTimer;
     BOOL  _passesAreOutdated;
     PKPaymentService * _paymentService;
+    BOOL  _persistentCardEmulationQueued;
     int  _presentationState;
     BOOL  _reloadingPasses;
     UIImageView * _statusBarGradient;
@@ -40,10 +43,13 @@
 
 - (void).cxx_destruct;
 - (void)_applyPresentationState;
+- (void)_beginSuppressingInstanceFooter;
 - (void)_clearPassViewedNotificationTimer;
 - (void)_dismissPresentedVCsWithRequirements:(unsigned int)arg1 performAction:(id /* block */)arg2;
+- (void)_endSuppressingInstanceFooterWithContext:(id)arg1;
 - (void)_handleApplicationDidEnterBackground:(id)arg1;
 - (void)_handleApplicationWillEnterForeground:(id)arg1;
+- (void)_handleChildViewControllerRequestingServiceMode:(id)arg1;
 - (void)_handleFooterSupressionChange:(id)arg1;
 - (void)_handleNotifyToken:(int)arg1;
 - (void)_handleStatusBarChange:(id)arg1;
@@ -54,12 +60,13 @@
 - (void)_presentGroupWithIndex:(unsigned int)arg1 context:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)_presentWithUpdatedPasses:(id /* block */)arg1;
 - (void)_regionConfigurationDidChangeNotification;
+- (void)_registerForExpressFelicaTransitNotifications:(BOOL)arg1;
 - (void)_startPassViewedNotificationTimer;
-- (void)_updateFooterSupression;
+- (void)_updateFooterSuppression;
+- (void)_updateFooterSuppressionWithContext:(id)arg1;
 - (void)_updateStatusBarGradientOpacity:(BOOL)arg1;
 - (void)addVASPassWithIdentifier:(id)arg1;
 - (void)allowIdleTimer;
-- (void)cardsChanged:(id)arg1;
 - (void)codeAcquisitionController:(id)arg1 didAddPass:(id)arg2;
 - (void)codeAcquisitionController:(id)arg1 didFinishWithPass:(id)arg2;
 - (void)codeAcquisitionController:(id)arg1 willAddPass:(id)arg2;
@@ -97,8 +104,11 @@
 - (BOOL)passesAreOutdated;
 - (BOOL)passesGrowWhenFlipped;
 - (void)paymentDeviceDidEnterFieldWithProperties:(id)arg1;
+- (void)performActionViewControllerDidCancel:(id)arg1;
+- (void)performActionViewControllerDidPerformAction:(id)arg1;
 - (int)preferredStatusBarStyle;
 - (BOOL)prefersStatusBarHidden;
+- (void)presentActionViewControllerWithUniqueID:(id)arg1 actionType:(unsigned int)arg2;
 - (void)presentAutomaticPresentationControllerForPassWithUniqueID:(id)arg1;
 - (void)presentGroupTable;
 - (void)presentGroupTableAnimated:(BOOL)arg1;
@@ -113,6 +123,7 @@
 - (void)presentPassWithUpdateUserNotificationIdentifier:(id)arg1;
 - (void)presentPaymentSetup;
 - (void)presentPileOffscreen;
+- (void)queuePersistentCardEmulation;
 - (void)reloadGroupsForGroupStackView:(id)arg1;
 - (void)reloadPasses;
 - (void)reloadPassesWithCompletion:(id /* block */)arg1;

@@ -38,8 +38,6 @@
 - (BOOL)hasCard;
 - (id)init;
 - (BOOL)isInRestrictedMode;
-- (unsigned int)isUserBlessed;
-- (BOOL)isUserBlessed:(id)arg1;
 - (void)refreshSecureElements;
 - (void)registerEventListener:(id)arg1;
 - (id)remoteObjectProxyWithErrorHandler:(id /* block */)arg1;
@@ -49,6 +47,7 @@
 - (id)secureElements;
 - (void)sessionDidEnd:(id)arg1;
 - (void)setAuthorization:(id)arg1;
+- (unsigned int)setBlessedUser:(id)arg1 keybagUUID:(id)arg2 withAuthorization:(id)arg3;
 - (unsigned int)setBlessedUser:(id)arg1 withAuthorization:(id)arg2;
 - (BOOL)setFieldDetectEnabled:(BOOL)arg1;
 - (id)startContactlessPaymentSession:(id /* block */)arg1;
@@ -59,6 +58,7 @@
 - (id)startLoyaltyAndContactlessPaymentSession:(id /* block */)arg1;
 - (id)startReaderSession:(id /* block */)arg1;
 - (id)startSecureElementManagerSession:(id /* block */)arg1;
+- (id)startSecureElementManagerSessionWithPriority:(id /* block */)arg1;
 - (id)startSecureElementSession:(id)arg1 didStartCallback:(id /* block */)arg2;
 - (id)startValueAddedServiceSession:(id /* block */)arg1;
 - (id)startValueAddedServiceSession:(id)arg1 callback:(id /* block */)arg2;

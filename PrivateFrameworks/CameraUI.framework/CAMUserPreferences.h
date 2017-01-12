@@ -5,6 +5,7 @@
 @interface CAMUserPreferences : NSObject {
     CAMCaptureConfiguration * _captureConfiguration;
     CAMConflictingControlConfiguration * _conflictingControlConfiguration;
+    BOOL  _didAcknowledgePortraitModeDescription;
     BOOL  _didResetTorchMode;
     BOOL  _lockAsShutterEnabled;
     int  _overriddenBackCaptureInterval;
@@ -12,6 +13,7 @@
     int  _previewViewAspectMode;
     NSDate * _resetTimeoutDate;
     BOOL  _shouldCaptureHDREV0;
+    BOOL  _shouldCaptureOriginalForPortraitEffect;
     BOOL  _shouldDelayRemotePersistence;
     BOOL  _shouldDisableCameraSwitchingDuringVideoRecording;
     BOOL  _shouldShowGridView;
@@ -22,6 +24,7 @@
 
 @property (nonatomic, retain) CAMCaptureConfiguration *captureConfiguration;
 @property (nonatomic, retain) CAMConflictingControlConfiguration *conflictingControlConfiguration;
+@property (nonatomic) BOOL didAcknowledgePortraitModeDescription;
 @property (setter=_setDidResetTorchMode:, nonatomic) BOOL didResetTorchMode;
 @property (getter=isLockAsShutterEnabled, nonatomic, readonly) BOOL lockAsShutterEnabled;
 @property (nonatomic, readonly) int overriddenBackCaptureInterval;
@@ -29,6 +32,7 @@
 @property (nonatomic) int previewViewAspectMode;
 @property (setter=_setResetTimeoutDate:, nonatomic, retain) NSDate *resetTimeoutDate;
 @property (nonatomic, readonly) BOOL shouldCaptureHDREV0;
+@property (nonatomic, readonly) BOOL shouldCaptureOriginalForPortraitEffect;
 @property (nonatomic, readonly) BOOL shouldDelayRemotePersistence;
 @property (nonatomic, readonly) BOOL shouldDisableCameraSwitchingDuringVideoRecording;
 @property (nonatomic, readonly) BOOL shouldShowGridView;
@@ -46,6 +50,7 @@
 - (id)_underlyingUserDefaults;
 - (id)captureConfiguration;
 - (id)conflictingControlConfiguration;
+- (BOOL)didAcknowledgePortraitModeDescription;
 - (BOOL)didResetTorchMode;
 - (BOOL)isLockAsShutterEnabled;
 - (int)overriddenBackCaptureInterval;
@@ -56,8 +61,10 @@
 - (id)resetTimeoutDate;
 - (void)setCaptureConfiguration:(id)arg1;
 - (void)setConflictingControlConfiguration:(id)arg1;
+- (void)setDidAcknowledgePortraitModeDescription:(BOOL)arg1;
 - (void)setPreviewViewAspectMode:(int)arg1;
 - (BOOL)shouldCaptureHDREV0;
+- (BOOL)shouldCaptureOriginalForPortraitEffect;
 - (BOOL)shouldDelayRemotePersistence;
 - (BOOL)shouldDisableCameraSwitchingDuringVideoRecording;
 - (BOOL)shouldResetCaptureConfiguration;

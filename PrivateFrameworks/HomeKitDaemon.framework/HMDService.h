@@ -54,6 +54,7 @@
 - (id)associatedServiceType;
 - (id)bulletinBoardNotification;
 - (id)characteristics;
+- (void)configureBulletinNotification:(id /* block */)arg1;
 - (void)configureMsgDispatcher:(id)arg1;
 - (id)configureWithService:(id)arg1 accessory:(id)arg2;
 - (id)contextID;
@@ -84,6 +85,7 @@
 - (void)setPrimary:(BOOL)arg1;
 - (void)setProvidedName:(id)arg1;
 - (void)setServiceType:(id)arg1;
+- (BOOL)shouldEnableDaemonRelaunch;
 - (id)type;
 - (void)updateAccessory:(id)arg1;
 - (BOOL)updateAssociatedServiceType:(id)arg1 error:(id*)arg2;

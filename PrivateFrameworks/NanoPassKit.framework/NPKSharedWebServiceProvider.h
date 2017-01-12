@@ -25,9 +25,12 @@
 - (void)archiveWebServiceContext:(id)arg1;
 - (id)companionAgentConnection;
 - (void)dealloc;
+- (void)handleAppletState:(id)arg1 forUniqueID:(id)arg2;
+- (void)handlePaymentTransactions:(id)arg1 appletStates:(id)arg2 forUniqueIDs:(id)arg3;
 - (void)handlePreconditionNotMetWithUniqueIDs:(id)arg1 shouldUnregister:(BOOL)arg2;
 - (void)handlePreferredAID:(id)arg1 forPassWithUniqueID:(id)arg2;
 - (void)handlePushToken:(id)arg1;
+- (void)handleRemoveTransactionsWithIdentifiers:(id)arg1;
 - (void)handleUpdatePaymentPassWithTypeIdentifier:(id)arg1;
 - (id)init;
 - (void)loadWebService;

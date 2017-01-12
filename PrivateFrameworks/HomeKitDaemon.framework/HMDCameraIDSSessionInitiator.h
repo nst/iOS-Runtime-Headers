@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDCameraIDSSessionInitiator : HMDCameraIDSSessionHandler <HMDCameraRemoteStreamSenderProtocol, IDSServiceDelegate, IDSSessionDelegate> {
+@interface HMDCameraIDSSessionInitiator : HMDCameraIDSSessionHandler <HMDCameraPowerAssertionProtocol, HMDCameraRemoteStreamSenderProtocol, IDSServiceDelegate, IDSSessionDelegate> {
     <HMDCameraIDSSessionInitiatorDelegate> * _delegate;
     NSObject<OS_dispatch_queue> * _delegateQueue;
     NSString * _destinationID;
@@ -21,6 +21,7 @@
 @property (nonatomic, readonly) NSNumber *mtu;
 @property (nonatomic, retain) AVCPacketRelay *packetRelay;
 @property (nonatomic, retain) HAPOSTransaction *packetRelayTransaction;
+@property (nonatomic, readonly) HMDCameraSessionID *sessionID;
 @property (readonly) Class superclass;
 
 + (id)logCategory;

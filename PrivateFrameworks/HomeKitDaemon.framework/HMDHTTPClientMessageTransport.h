@@ -18,6 +18,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly, copy) NSUUID *identifier;
 @property (nonatomic, readonly) HMFNetService *netService;
+@property (getter=isReachable, nonatomic, readonly) BOOL reachable;
 @property (nonatomic, readonly) HMDHTTPDevice *remoteDevice;
 @property (getter=isRunning, nonatomic) BOOL running;
 @property (readonly) Class superclass;
@@ -39,6 +40,7 @@
 - (id)identifier;
 - (id)init;
 - (id)initWithIdentifier:(id)arg1 netService:(id)arg2;
+- (BOOL)isReachable;
 - (BOOL)isRunning;
 - (id)logIdentifier;
 - (id)netService;

@@ -17,12 +17,14 @@
 + (id)localTargetDevice;
 
 - (void).cxx_destruct;
+- (void)_validateCommonPreconditionsWithCompletion:(id /* block */)arg1;
 - (id)bridgedClientInfo;
 - (void)dealloc;
 - (id)deviceDescriptionForPaymentWebService:(id)arg1;
 - (id)deviceName;
 - (id)deviceRegion;
 - (void)downloadAllPaymentPassesForPaymentWebService:(id)arg1;
+- (BOOL)felicaSecureElementIsAvailable;
 - (id)init;
 - (void)noteProvisioningDidBegin;
 - (void)noteProvisioningDidEnd;
@@ -36,6 +38,7 @@
 - (void)paymentWebService:(id)arg1 deleteApplicationWithAID:(id)arg2;
 - (void)paymentWebService:(id)arg1 didRegisterWithRegionMap:(id)arg2 primaryRegionTopic:(id)arg3;
 - (id)paymentWebService:(id)arg1 filterVerificationChannels:(id)arg2;
+- (void)paymentWebService:(id)arg1 handlePotentialExpressPass:(id)arg2 withCompletionHandler:(id /* block */)arg3;
 - (BOOL)paymentWebService:(id)arg1 hasPassesOfType:(unsigned int)arg2;
 - (void)paymentWebService:(id)arg1 provisioningDataWithCompletionHandler:(id /* block */)arg2;
 - (void)paymentWebService:(id)arg1 queueConnectionToTrustedServiceManagerForPushTopic:(id)arg2 withCompletion:(id /* block */)arg3;
@@ -44,6 +47,7 @@
 - (void)paymentWebService:(id)arg1 setNewAuthRandomIfNecessaryReturningPairingState:(id /* block */)arg2;
 - (void)paymentWebService:(id)arg1 signData:(id)arg2 signatureEntanglementMode:(unsigned int)arg3 withCompletionHandler:(id /* block */)arg4;
 - (void)paymentWebService:(id)arg1 validateAddPreconditionsWithCompletion:(id /* block */)arg2;
+- (void)paymentWebService:(id)arg1 validateTransferPreconditionsWithCompletion:(id /* block */)arg2;
 - (void)paymentWebServiceDidUpdateConfiguration:(id)arg1;
 - (id)secureElementIdentifiers;
 - (BOOL)supportsAutomaticPassPresentation;

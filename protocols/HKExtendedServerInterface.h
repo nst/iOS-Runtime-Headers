@@ -5,6 +5,7 @@
 
 @required
 
+- (void)remote_achievementAssetAvailabilityOnPairedDeviceForIdentifiers:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 8: NSArray *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, NSError *, void*
 - (void)remote_addAchievement:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 8: _HKAchievement *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, NSError *, void*
 - (void)remote_deleteAchievementWithUUID:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 8: NSUUID *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, NSError *, void*
 - (void)remote_deleteAllAchievementsWithCompletion:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, NSError *, void*
@@ -16,6 +17,7 @@
 - (void)remote_markAchievementAsViewed:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 8: _HKAchievement *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, _HKAchievement *, NSError *, void*
 - (void)remote_markAchievementDefinitionIdentifierAlertViewed:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 8: NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, NSError *, void*
 - (void)remote_markAchievementsAlerted:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 8: NSArray *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, NSError *, void*
+- (void)remote_nextScheduledAchievementDefinitionAlertTaskDateWithCompletion:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSDate *, NSError *, void*
 - (void)remote_registerForAchievementDefinitionNotificationsWithCompletion:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, NSError *, void*
 - (void)remote_registerForAchievementNotificationsAndFetchUnalertedCountWithCompletion:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, NSError *, void*
 - (void)remote_runAchievementsFixupAsDryRun:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 9: BOOL, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, BOOL, NSError *, void*

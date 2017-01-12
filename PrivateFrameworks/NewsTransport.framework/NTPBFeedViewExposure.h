@@ -4,6 +4,7 @@
 
 @interface NTPBFeedViewExposure : PBCodable <NSCopying> {
     BOOL  _adSupportedChannel;
+    int  _areaPresentationReason;
     BOOL  _cameFromGroup;
     NSString * _campaignId;
     NSString * _campaignType;
@@ -17,6 +18,7 @@
     NSData * _feedViewExposureId;
     int  _groupType;
     struct { 
+        unsigned int areaPresentationReason : 1; 
         unsigned int countOfTotalGroupExposures : 1; 
         unsigned int countOfTotalGroupsExposed : 1; 
         unsigned int feedCellHostType : 1; 
@@ -45,6 +47,7 @@
 }
 
 @property (nonatomic) BOOL adSupportedChannel;
+@property (nonatomic) int areaPresentationReason;
 @property (nonatomic) BOOL cameFromGroup;
 @property (nonatomic, retain) NSString *campaignId;
 @property (nonatomic, retain) NSString *campaignType;
@@ -58,6 +61,7 @@
 @property (nonatomic, retain) NSData *feedViewExposureId;
 @property (nonatomic) int groupType;
 @property (nonatomic) BOOL hasAdSupportedChannel;
+@property (nonatomic) BOOL hasAreaPresentationReason;
 @property (nonatomic) BOOL hasCameFromGroup;
 @property (nonatomic, readonly) BOOL hasCampaignId;
 @property (nonatomic, readonly) BOOL hasCampaignType;
@@ -94,12 +98,15 @@
 @property (nonatomic, retain) NSString *viewFrameInScreen;
 
 - (void).cxx_destruct;
+- (int)StringAsAreaPresentationReason:(id)arg1;
 - (int)StringAsFeedCellHostType:(id)arg1;
 - (int)StringAsFeedCellSection:(id)arg1;
 - (int)StringAsFeedType:(id)arg1;
 - (int)StringAsGroupType:(id)arg1;
 - (int)StringAsPresentationReason:(id)arg1;
 - (BOOL)adSupportedChannel;
+- (int)areaPresentationReason;
+- (id)areaPresentationReasonAsString:(int)arg1;
 - (BOOL)cameFromGroup;
 - (id)campaignId;
 - (id)campaignType;
@@ -120,6 +127,7 @@
 - (int)groupType;
 - (id)groupTypeAsString:(int)arg1;
 - (BOOL)hasAdSupportedChannel;
+- (BOOL)hasAreaPresentationReason;
 - (BOOL)hasCameFromGroup;
 - (BOOL)hasCampaignId;
 - (BOOL)hasCampaignType;
@@ -157,6 +165,7 @@
 - (id)referringSourceApplication;
 - (id)referringUrl;
 - (void)setAdSupportedChannel:(BOOL)arg1;
+- (void)setAreaPresentationReason:(int)arg1;
 - (void)setCameFromGroup:(BOOL)arg1;
 - (void)setCampaignId:(id)arg1;
 - (void)setCampaignType:(id)arg1;
@@ -170,6 +179,7 @@
 - (void)setFeedViewExposureId:(id)arg1;
 - (void)setGroupType:(int)arg1;
 - (void)setHasAdSupportedChannel:(BOOL)arg1;
+- (void)setHasAreaPresentationReason:(BOOL)arg1;
 - (void)setHasCameFromGroup:(BOOL)arg1;
 - (void)setHasCountOfTotalGroupExposures:(BOOL)arg1;
 - (void)setHasCountOfTotalGroupsExposed:(BOOL)arg1;

@@ -22,6 +22,7 @@
 - (void)clearExistingPreferencesCache;
 - (void)clearInMemoryCache;
 - (double)coalescingPeriod;
+- (id)copyABUniqueID;
 - (id)description;
 - (id)filePath;
 - (void)setCacheSequenceNumber:(int)arg1;

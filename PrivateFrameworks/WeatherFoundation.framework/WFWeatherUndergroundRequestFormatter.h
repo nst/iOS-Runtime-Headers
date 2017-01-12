@@ -10,5 +10,6 @@
 @property (readonly) Class superclass;
 
 + (id)forecastRequestForLocation:(id)arg1 date:(id)arg2;
++ (id)hostURLForService;
 
 @end

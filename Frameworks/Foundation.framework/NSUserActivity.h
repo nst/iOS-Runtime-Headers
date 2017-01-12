@@ -39,6 +39,7 @@
 @property (getter=isEligibleForPublicIndexing) BOOL eligibleForPublicIndexing;
 @property (getter=isEligibleForSearch) BOOL eligibleForSearch;
 @property (copy) NSDate *expirationDate;
+@property (nonatomic, copy) NSString *externalMediaContentIdentifier;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) INInteraction *interaction;
 @property (copy) NSSet *keywords;
@@ -189,6 +190,13 @@
 - (void)_mapkit_populateFieldsForDonationOfMapItem:(id)arg1;
 - (id)mapItem;
 - (void)setMapItem:(id)arg1;
+
+// Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
+
+- (id)_externalMediaContentBundleIdentifier;
+- (void)_setExternalMediaContentBundleIdentifier:(id)arg1;
+- (id)externalMediaContentIdentifier;
+- (void)setExternalMediaContentIdentifier:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/ContactsUICore.framework/ContactsUICore
 

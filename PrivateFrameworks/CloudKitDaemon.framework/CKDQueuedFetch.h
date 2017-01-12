@@ -10,6 +10,7 @@
     NSMutableDictionary * _completionHandlersByItemID;
     CKDClientContext * _context;
     NSString * _deviceIdentifier;
+    int  _highestQOS;
     BOOL  _isFinished;
     unsigned int  _lastCompletionHandlerCount;
     NSDate * _lastRequestDate;
@@ -31,6 +32,7 @@
 @property (nonatomic, retain) NSMutableDictionary *completionHandlersByItemID;
 @property (nonatomic) CKDClientContext *context;
 @property (nonatomic, retain) NSString *deviceIdentifier;
+@property (nonatomic) int highestQOS;
 @property (nonatomic) BOOL isFinished;
 @property (nonatomic) unsigned int lastCompletionHandlerCount;
 @property (nonatomic, retain) NSDate *lastRequestDate;
@@ -61,6 +63,7 @@
 - (id)deviceIdentifier;
 - (id)fetchOperationForItemIDs:(id)arg1;
 - (void)finishFetchOperationWithError:(id)arg1;
+- (int)highestQOS;
 - (id)init;
 - (id)initWithOperation:(id)arg1 context:(id)arg2 operationQueue:(id)arg3;
 - (BOOL)isFinished;
@@ -82,6 +85,7 @@
 - (void)setCompletionHandlersByItemID:(id)arg1;
 - (void)setContext:(id)arg1;
 - (void)setDeviceIdentifier:(id)arg1;
+- (void)setHighestQOS:(int)arg1;
 - (void)setIsFinished:(BOOL)arg1;
 - (void)setLastCompletionHandlerCount:(unsigned int)arg1;
 - (void)setLastRequestDate:(id)arg1;

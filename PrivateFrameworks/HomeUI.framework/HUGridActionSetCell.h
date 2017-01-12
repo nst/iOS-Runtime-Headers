@@ -37,7 +37,7 @@
 - (void)_updateLabelsWithTitle:(id)arg1 description:(id)arg2 primaryState:(int)arg3;
 - (id)accessoryView;
 - (id)actionSetCellConstraints;
-- (void)contentEffectDidChange;
+- (void)displayStyleDidChange;
 - (id)executeActionSetFuture;
 - (id)iconView;
 - (id)initWithCoder:(id)arg1;

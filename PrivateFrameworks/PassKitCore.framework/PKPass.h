@@ -66,6 +66,7 @@
 @property (nonatomic, retain) NSDate *modifiedDate;
 @property (setter=setNFCPayload:, nonatomic, copy) PKNFCPayload *nfcPayload;
 @property (getter=isNFCPayloadEncrypted, nonatomic, readonly) BOOL nfcPayloadEncrypted;
+@property (readonly) NSString *notificationCenterTitle;
 @property (nonatomic, readonly) PKImage *notificationIconImage;
 @property (readonly) NSData *npkCompleteHash;
 @property (readonly) BOOL npkExpired;
@@ -164,6 +165,7 @@
 - (id)lowercaseLocalizedName;
 - (id)modifiedDate;
 - (id)nfcPayload;
+- (id)notificationCenterTitle;
 - (id)notificationIconImage;
 - (id)organizationName;
 - (id)partialFrontFaceImage;

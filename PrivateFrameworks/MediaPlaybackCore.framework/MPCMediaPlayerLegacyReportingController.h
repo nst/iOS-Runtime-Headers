@@ -19,6 +19,7 @@
 - (void)_networkTypeDidChangeNotification:(id)arg1;
 - (void)_storefrontDidChangeNotification:(id)arg1;
 - (void)dealloc;
+- (id)initWithController:(id)arg1;
 - (id)initWithPlayer:(id)arg1;
 - (id)jinglePlayActivityReportingController;
 - (id)player;

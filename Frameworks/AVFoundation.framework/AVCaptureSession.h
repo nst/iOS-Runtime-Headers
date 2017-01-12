@@ -19,8 +19,11 @@
 // Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
 
 + (void)_beginConfiguringActiveColorSpaceForDevice:(id)arg1;
++ (void)_beginConfiguringAutoShallowDepthOfFieldEffectEnabledForDevice:(id)arg1;
 + (void)_finishConfiguringActiveColorSpaceForDevice:(id)arg1;
++ (void)_finishConfiguringAutoShallowDepthOfFieldEffectEnabledForDevice:(id)arg1;
 + (BOOL)_isActiveColorSpaceBeingConfiguredForDevice:(id)arg1;
++ (BOOL)_isAutoShallowDepthOfFieldEffectEnabledBeingConfiguredForDevice:(id)arg1;
 + (id)allSessionPresets;
 + (BOOL)automaticallyNotifiesObserversOfMasterClock;
 + (BOOL)automaticallyNotifiesObserversOfRunning;

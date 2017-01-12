@@ -93,6 +93,7 @@
 - (void)removeDelegate:(id)arg1;
 - (void)removeRelayAccessory:(id)arg1;
 - (void)requestPairingWithRelayAccessories:(id)arg1;
+- (void)service:(id)arg1 account:(id)arg2 incomingAccessoryData:(id)arg3 fromAccessoryID:(id)arg4 context:(id)arg5;
 - (void)service:(id)arg1 account:(id)arg2 incomingAccessoryReportMessage:(id)arg3 controllerID:(id)arg4 accessoryID:(id)arg5 context:(id)arg6;
 - (void)setControllerIdentifier:(id)arg1;
 - (void)setCurrentState:(unsigned int)arg1;

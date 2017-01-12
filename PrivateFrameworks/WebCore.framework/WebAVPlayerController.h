@@ -30,7 +30,7 @@
     double  _minTime;
     BOOL  _pictureInPictureInterrupted;
     BOOL  _pictureInPicturePossible;
-    struct WebPlaybackSessionInterfaceAVKit { int (**x1)(); unsigned int x2; struct RetainPtr<WebAVPlayerController> { void *x_3_1_1; } x3; struct WebPlaybackSessionModel {} *x4; struct WebPlaybackSessionInterfaceAVKitClient {} *x5; bool x6; } * _playbackSessionInterface;
+    struct WebPlaybackSessionInterfaceAVKit { int (**x1)(); int (**x2)(); unsigned int x3; struct RetainPtr<WebAVPlayerController> { void *x_4_1_1; } x4; struct WebPlaybackSessionModel {} *x5; } * _playbackSessionInterface;
     AVPlayerController * _playerControllerProxy;
     BOOL  _playingOnSecondScreen;
     double  _rate;
@@ -69,7 +69,7 @@
 @property double minTime;
 @property (getter=isPictureInPictureInterrupted) BOOL pictureInPictureInterrupted;
 @property (getter=isPictureInPicturePossible) BOOL pictureInPicturePossible;
-@property struct WebPlaybackSessionInterfaceAVKit { int (**x1)(); unsigned int x2; struct RetainPtr<WebAVPlayerController> { void *x_3_1_1; } x3; struct WebPlaybackSessionModel {} *x4; struct WebPlaybackSessionInterfaceAVKitClient {} *x5; bool x6; }*playbackSessionInterface;
+@property struct WebPlaybackSessionInterfaceAVKit { int (**x1)(); int (**x2)(); unsigned int x3; struct RetainPtr<WebAVPlayerController> { void *x_4_1_1; } x4; struct WebPlaybackSessionModel {} *x5; }*playbackSessionInterface;
 @property (retain) AVPlayerController *playerControllerProxy;
 @property (getter=isPlaying) BOOL playing;
 @property (getter=isPlayingOnExternalScreen, readonly) BOOL playingOnExternalScreen;
@@ -137,11 +137,10 @@
 - (double)minTime;
 - (void)pause:(id)arg1;
 - (void)play:(id)arg1;
-- (struct WebPlaybackSessionInterfaceAVKit { int (**x1)(); unsigned int x2; struct RetainPtr<WebAVPlayerController> { void *x_3_1_1; } x3; struct WebPlaybackSessionModel {} *x4; struct WebPlaybackSessionInterfaceAVKitClient {} *x5; bool x6; }*)playbackSessionInterface;
+- (struct WebPlaybackSessionInterfaceAVKit { int (**x1)(); int (**x2)(); unsigned int x3; struct RetainPtr<WebAVPlayerController> { void *x_4_1_1; } x4; struct WebPlaybackSessionModel {} *x5; }*)playbackSessionInterface;
 - (id)player;
 - (id)playerControllerProxy;
 - (double)rate;
-- (void)resetState;
 - (void)seekChapterBackward:(id)arg1;
 - (void)seekChapterForward:(id)arg1;
 - (void)seekToBeginning:(id)arg1;
@@ -173,7 +172,7 @@
 - (void)setMinTime:(double)arg1;
 - (void)setPictureInPictureInterrupted:(BOOL)arg1;
 - (void)setPictureInPicturePossible:(BOOL)arg1;
-- (void)setPlaybackSessionInterface:(struct WebPlaybackSessionInterfaceAVKit { int (**x1)(); unsigned int x2; struct RetainPtr<WebAVPlayerController> { void *x_3_1_1; } x3; struct WebPlaybackSessionModel {} *x4; struct WebPlaybackSessionInterfaceAVKitClient {} *x5; bool x6; }*)arg1;
+- (void)setPlaybackSessionInterface:(struct WebPlaybackSessionInterfaceAVKit { int (**x1)(); int (**x2)(); unsigned int x3; struct RetainPtr<WebAVPlayerController> { void *x_4_1_1; } x4; struct WebPlaybackSessionModel {} *x5; }*)arg1;
 - (void)setPlayerControllerProxy:(id)arg1;
 - (void)setPlaying:(BOOL)arg1;
 - (void)setRate:(double)arg1;

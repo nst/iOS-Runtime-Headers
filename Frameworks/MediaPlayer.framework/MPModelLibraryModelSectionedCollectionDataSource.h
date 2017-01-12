@@ -24,6 +24,7 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (BOOL)hasSameContentAsDataSource:(id)arg1;
 - (id)identifiersForItemAtIndexPath:(id)arg1;
 - (id)identifiersForSectionAtIndex:(int)arg1;
 - (id)indexPathForItemWithIdentifiersIntersectingSet:(id)arg1;

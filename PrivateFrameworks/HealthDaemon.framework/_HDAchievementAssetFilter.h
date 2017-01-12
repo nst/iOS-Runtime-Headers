@@ -10,6 +10,7 @@
 - (BOOL)_isAchievementDefinitionExpired:(id)arg1;
 - (BOOL)_wasAchievementDefinitionEverEarned:(id)arg1;
 - (BOOL)areAssetsNeededForAchievementDefinition:(id)arg1;
+- (BOOL)areStickersEarnedForAchievementDefinition:(id)arg1;
 - (BOOL)areStickersNeededAtAll;
 - (BOOL)areStickersNeededForAchievementDefinition:(id)arg1;
 - (id)initWithAllEarnedDefinitionIdentifiers:(id)arg1;

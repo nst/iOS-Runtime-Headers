@@ -10,10 +10,10 @@
     int  _vertexCount;
 }
 
-@property (nonatomic, readonly) const /* Warning: Unrecognized filer type: ' ' using 'void*' */ void**destPositions;
+@property (nonatomic, readonly) const /* Warning: Unrecognized filer type: '' using 'void*' */ void**destPositions;
 @property (nonatomic, readonly) int numberOfColumns;
 @property (nonatomic, readonly) int numberOfRows;
-@property (nonatomic, readonly) const /* Warning: Unrecognized filer type: ' ' using 'void*' */ void**sourcePositions;
+@property (nonatomic, readonly) const /* Warning: Unrecognized filer type: '' using 'void*' */ void**sourcePositions;
 @property (nonatomic, readonly) int vertexCount;
 
 + (id)grid;

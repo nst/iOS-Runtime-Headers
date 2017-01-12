@@ -15,9 +15,11 @@
 @property (readonly) NSArray *replacedAnnotationMaps;
 
 - (void).cxx_destruct;
+- (void)_loadDocument;
 - (id)annotationController;
 - (void)dealloc;
 - (struct CGPDFDocument { }*)document;
+- (void)documentDidUnlock;
 - (BOOL)hasReadAnnotationsFromPageAtIndex:(unsigned int)arg1;
 - (id)initWithDocument:(struct CGPDFDocument { }*)arg1 annotationController:(id)arg2;
 - (unsigned int)pageCount;

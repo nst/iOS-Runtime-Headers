@@ -4,10 +4,12 @@
 
 @interface PKPaymentProvisioningController : NSObject <PKPaymentWebServiceDelegate> {
     NSMutableArray * _associatedCredentials;
+    NSSet * _automaticExpressModes;
     NSTimer * _descriptionTimer;
     PKPaymentEligibilityResponse * _eligibilityResponse;
     NSString * _localizedProgressDescription;
     NSArray * _moreInfoItems;
+    PKPaymentSetupProductModel * _paymentSetupProductModel;
     NSString * _productIdentifier;
     PKPaymentPass * _provisionedPass;
     NSString * _provisioningNonce;
@@ -21,12 +23,14 @@
 }
 
 @property (nonatomic, readonly, copy) NSArray *associatedCredentials;
+@property (nonatomic, readonly) NSSet *automaticExpressModes;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) PKPaymentEligibilityResponse *eligibilityResponse;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly, copy) NSString *localizedProgressDescription;
 @property (nonatomic, readonly) NSArray *moreInfoItems;
+@property (nonatomic, readonly) PKPaymentSetupProductModel *paymentSetupProductModel;
 @property (nonatomic, readonly, copy) NSString *productIdentifier;
 @property (nonatomic, readonly) PKPaymentPass *provisionedPass;
 @property (nonatomic, readonly) PKPaymentProvisioningResponse *provisioningResponse;
@@ -39,13 +43,14 @@
 
 - (void).cxx_destruct;
 - (void)_addAssociatedCredential:(id)arg1;
+- (void)_associateCredential:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (int)_defaultResetState;
 - (id)_displayableErrorOverrideForUnderlyingError:(id)arg1;
 - (void)_downloadMoreInfoItemURLs:(id)arg1 withMetadata:(id)arg2 completion:(id /* block */)arg3;
+- (id)_filterPaymentSetupProducts:(id)arg1;
 - (void)_handleProvisioningError:(id)arg1 forRequest:(id)arg2;
-- (void)_moreInfoItemAtURL:(id)arg1 withMetadata:(id)arg2 completion:(id /* block */)arg3;
 - (void)_passAlreadyProvisioned;
-- (void)_provisoniningNonceWithCompletion:(id /* block */)arg1;
+- (void)_provisioningNonceWithCompletion:(id /* block */)arg1;
 - (void)_queryEligibilityForCredential:(id)arg1 completion:(id /* block */)arg2;
 - (void)_queryRequirementsForCredential:(id)arg1 completion:(id /* block */)arg2;
 - (void)_registerWhileRetrievingRemoteCredentials:(BOOL)arg1 withCompletion:(id /* block */)arg2;
@@ -57,9 +62,9 @@
 - (void)_updateLocalizedProgressAndInvalidateTimer;
 - (void)_validatePreconditionsWhileRetrievingRemoteCredentials:(BOOL)arg1 withCompletion:(id /* block */)arg2;
 - (void)acceptTerms;
-- (void)associateCredential:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)associateCredentials:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (id)associatedCredentials;
+- (id)automaticExpressModes;
 - (void)dealloc;
 - (id)displayableErrorForError:(id)arg1;
 - (id)displayableErrorForProvisioningError:(id)arg1;
@@ -69,6 +74,7 @@
 - (id)moreInfoItems;
 - (void)noteProvisioningUserInterfaceDidAppear;
 - (void)noteProvisioningUserInterfaceDidDisappear;
+- (id)paymentSetupProductModel;
 - (void)paymentWebService:(id)arg1 didCompleteTSMConnectionForTaskID:(unsigned int)arg2;
 - (void)paymentWebService:(id)arg1 didQueueTSMConnectionForTaskID:(unsigned int)arg2;
 - (id)productIdentifier;
@@ -76,6 +82,7 @@
 - (id)provisioningResponse;
 - (BOOL)provisioningUserInterfaceIsVisible;
 - (void)registerDevice:(id /* block */)arg1;
+- (void)removeProvisionedPass;
 - (void)requestEligibility:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)requestProvisioning:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)requestRemoteCredentials:(id)arg1 withCompletionHandler:(id /* block */)arg2;
@@ -87,6 +94,7 @@
 - (void)retrieveRemoteCredentials:(id /* block */)arg1;
 - (void)setState:(int)arg1;
 - (int)state;
+- (void)updatePaymentSetupProductModelWithCompletionHandler:(id /* block */)arg1;
 - (void)validatePreconditions:(id /* block */)arg1;
 - (void)validatePreconditionsAndRegister:(id /* block */)arg1;
 - (void)validatePreconditionsRegisterAndAssociateRemoteCredentials:(id /* block */)arg1;

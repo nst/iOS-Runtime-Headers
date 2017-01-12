@@ -7,9 +7,13 @@
     UIImageView * _circleView;
 }
 
+@property (getter=_checkView, nonatomic, retain) WGCheckView *checkView;
 @property (getter=isChecked, nonatomic) BOOL checked;
+@property (getter=_circleView, nonatomic, retain) UIImageView *circleView;
 
 - (void).cxx_destruct;
+- (id)_checkView;
+- (id)_circleView;
 - (void)_configureCheckViewIfNecessary;
 - (id)_configureCircleViewIfNecessary;
 - (BOOL)_isFrozen;
@@ -18,7 +22,9 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isChecked;
 - (void)layoutSubviews;
+- (void)setCheckView:(id)arg1;
 - (void)setChecked:(BOOL)arg1;
+- (void)setCircleView:(id)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 
 @end

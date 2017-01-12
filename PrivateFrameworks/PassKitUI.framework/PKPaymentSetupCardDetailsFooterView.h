@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
  */
 
-@interface PKPaymentSetupCardDetailsFooterView : UIView {
+@interface PKPaymentSetupCardDetailsFooterView : PKTableFooterView {
     int  _context;
     UIButton * _manualEntryButton;
     UIButton * _setupLaterButton;
@@ -19,6 +19,7 @@
 - (BOOL)isBuddyiPad;
 - (void)layoutSubviews;
 - (id)manualEntryButton;
+- (void)setButtonsEnabled:(BOOL)arg1;
 - (void)setContext:(int)arg1;
 - (void)setManualEntryButton:(id)arg1;
 - (void)setSetupLaterButton:(id)arg1;

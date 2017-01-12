@@ -23,7 +23,7 @@
 - (void)_callDidStartCaptureImageDelegate:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (void)getSnapshot;
+- (void)getSnapshot:(unsigned int)arg1;
 - (id)initWithSessionID:(id)arg1 workQueue:(id)arg2 options:(id)arg3 destinationID:(id)arg4 accessory:(id)arg5 delegate:(id)arg6 delegateQueue:(id)arg7 uniqueIdentifier:(id)arg8 snapshotRequestHandler:(id)arg9;
 - (id)logIdentifier;
 - (void)sendSnapshotAtPath:(id)arg1;

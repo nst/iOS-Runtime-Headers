@@ -60,8 +60,8 @@
 - (id)accessoryView;
 - (id)activityIndicator;
 - (id)coloredDescriptionLabel;
-- (void)contentEffectDidChange;
 - (BOOL)disableContinuousIconAnimation;
+- (void)displayStyleDidChange;
 - (id)exclamationView;
 - (BOOL)hasUpdatedUISinceLastReuse;
 - (id)iconView;

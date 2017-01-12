@@ -51,6 +51,7 @@
 - (void)_startPlaybackWithPlaybackID:(int)arg1;
 - (void)_transitionToVideoWithPlaybackID:(int)arg1;
 - (void)activeDidChange;
+- (int)behaviorType;
 - (double)crossfadeDuration;
 - (BOOL)immediatelyShowsPhotoWhenPlaybackEnds;
 - (id)initWithInitialLayoutInfo:(id)arg1 playbackStyle:(int)arg2 keyTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3 photoTransitionDuration:(double)arg4 crossfadeDuration:(double)arg5 immediatelyShowsPhotoWhenPlaybackEnds:(BOOL)arg6;

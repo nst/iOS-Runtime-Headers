@@ -38,7 +38,7 @@
 - (void)addVideoStreamInterface:(id)arg1;
 - (void)callStreamSetupInProgress:(BOOL)arg1;
 - (id)delegateTable;
-- (void)getSnapshot;
+- (void)getSnapshot:(unsigned int)arg1;
 - (id)initWithWorkQueue:(id)arg1 services:(id)arg2 logID:(id)arg3;
 - (BOOL)isStreamAvailable;
 - (BOOL)isStreamSetupInProgress;

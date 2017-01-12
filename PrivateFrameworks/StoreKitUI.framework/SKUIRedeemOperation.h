@@ -15,6 +15,7 @@
 
 - (void).cxx_destruct;
 - (void)_applyThankYouDictionary:(id)arg1 toRedeem:(id)arg2;
+- (id)_authenticationContext;
 - (id)_itemsForItemIdentifiers:(id)arg1;
 - (id)_performRequestWithProperties:(id)arg1 error:(id*)arg2;
 - (id)_redeemForSuccessDictionary:(id)arg1;

@@ -10,6 +10,7 @@
     BOOL  _emulationActive;
     BOOL  _fieldPresent;
     unsigned int  _numActiveSEs;
+    BOOL  _pendingServerRequest;
     NFTechnologyEvent * _technologyEvent;
     BOOL  _vasTransactionInProgress;
 }
@@ -33,14 +34,18 @@
 - (void)didEndTransaction:(id)arg1;
 - (void)didEndUnexpectedly;
 - (void)didExpireTransactionForApplet:(id)arg1;
+- (void)didExpressModeStateChange:(unsigned int)arg1;
 - (void)didFailDeferredAuthorization;
 - (void)didFelicaStateChange:(id)arg1;
 - (void)didPerformValueAddedServiceTransactions:(id)arg1;
+- (void)didReceiveActivityTimeout;
 - (void)didReceiveButtonPressForApplet:(id)arg1;
+- (void)didReceivePendingServerRequest;
 - (void)didSelectApplet:(id)arg1;
 - (void)didSelectValueAddedService:(BOOL)arg1;
 - (void)didStartSession:(id)arg1;
 - (void)didStartTransaction:(id)arg1;
+- (BOOL)enablePlasticCardMode:(BOOL)arg1;
 - (void)endSession;
 - (void)endSessionWithCompletion:(id /* block */)arg1;
 - (id)felicaAppletState:(id)arg1;

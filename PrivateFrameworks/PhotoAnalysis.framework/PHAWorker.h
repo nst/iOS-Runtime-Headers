@@ -3,6 +3,7 @@
  */
 
 @interface PHAWorker : NSObject <PHAWorkerConfiguration> {
+    PHAServiceCancelableOperation * _currentOperation;
     <PHAAssetResourceDataLoading> * _dataLoader;
     PHAManager * _photoAnalysisManager;
     BOOL  _shutdownHasBeenCalled;
@@ -11,6 +12,7 @@
 }
 
 @property (readonly) PHALibraryChangeListener *changeListener;
+@property (retain) PHAServiceCancelableOperation *currentOperation;
 @property (nonatomic, retain) <PHAAssetResourceDataLoading> *dataLoader;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -36,6 +38,7 @@
 - (void)assertUserInitiatedRequestQueue;
 - (id)changeListener;
 - (void)cooldown;
+- (id)currentOperation;
 - (id)dataLoader;
 - (void)dispatchAsyncToExecutiveStateQueue:(id /* block */)arg1;
 - (void)dispatchAsyncToUserInitiatedRequestQueue:(id /* block */)arg1;
@@ -53,6 +56,7 @@
 - (id)persistentStorageDirectoryURL;
 - (id)photoAnalysisManager;
 - (id)photoLibrary;
+- (void)setCurrentOperation:(id)arg1;
 - (void)setDataLoader:(id)arg1;
 - (void)setLibraryScopedWorkerPreferencesValue:(id)arg1 forKey:(id)arg2;
 - (void)setUserInitiatedRequestQueue:(id)arg1;

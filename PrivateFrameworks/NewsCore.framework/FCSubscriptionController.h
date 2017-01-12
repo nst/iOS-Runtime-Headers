@@ -29,8 +29,10 @@
 - (void).cxx_destruct;
 - (void)_fetchMissingTagsWithCompletion:(id /* block */)arg1;
 - (void)_fetchTagsForIDs:(id)arg1 maxCachedAge:(double)arg2 qualityOfService:(int)arg3 completion:(id /* block */)arg4;
+- (void)_handleMutedSubscriptionsAdded:(id)arg1 mutedSubscriptionsChanged:(id)arg2 mutedSubscriptionsRemoved:(id)arg3;
 - (void)_handleTagSubscriptionsAdded:(id)arg1 tagSubscriptionsChanged:(id)arg2 tagSubscriptionsRemoved:(id)arg3;
 - (void)_integrateTags:(id)arg1;
+- (void)_notifyOfMutedSubscriptionsAdded:(id)arg1 mutedSubscriptionsChanged:(id)arg2 mutedSubscriptionsRemoved:(id)arg3;
 - (void)_notifyOfTagsAdded:(id)arg1 tagsChanged:(id)arg2 tagsRemoved:(id)arg3;
 - (void)_notifyOfTagsWithNotificationSupport:(id)arg1;
 - (void)_purchaseListDidChange;

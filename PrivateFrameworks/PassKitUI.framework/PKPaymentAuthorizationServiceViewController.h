@@ -17,8 +17,6 @@
     PKPaymentAuthorizationNavigationBar * _navBar;
     UIView * _passphraseSeparatorView;
     PKPaymentPreferencesViewController * _paymentCardPreferencesController;
-    _UIFeedbackImpactBehavior * _paymentFailureBehavior;
-    _UIFeedbackEventBehavior * _paymentSuccessBehavior;
     int  _preferencesStyle;
     BOOL  _requestingInAppPIN;
     PKPaymentPreferencesViewController * _shippingAddressPreferencesController;
@@ -79,6 +77,7 @@
 - (void)authenticatorDidEncounterFingerOn:(id)arg1;
 - (void)authenticatorDidEncounterMatchMiss:(id)arg1;
 - (void)authorizationDidAuthorizePaymentCompleteWithStatus:(int)arg1;
+- (void)authorizationDidAuthorizePurchaseCompleteWithStatus:(int)arg1;
 - (void)authorizationDidRequestMerchantSessionCompleteWithSession:(id)arg1 error:(id)arg2;
 - (void)authorizationDidSelectPaymentMethodCompleteWithPaymentSummaryItems:(id)arg1;
 - (void)authorizationDidSelectShippingAddressCompleteWithStatus:(int)arg1 shippingMethods:(id)arg2 paymentSummaryItems:(id)arg3;

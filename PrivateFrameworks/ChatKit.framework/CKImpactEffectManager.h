@@ -42,7 +42,7 @@
 - (void)_cleanupExpressiveSendComponents;
 - (id)_sendAnimationContextForIdentifier:(id)arg1 message:(id)arg2 isSender:(BOOL)arg3;
 - (void)_sizeAnimationWindow;
-- (void)_visibleCells:(id*)arg1;
+- (void)_visibleCells:(id*)arg1 aboveItem:(id)arg2;
 - (void)animateMessages:(id)arg1;
 - (id)animatingIdentifier;
 - (void)animationDidFinishWithContext:(id)arg1;

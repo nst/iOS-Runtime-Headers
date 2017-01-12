@@ -6,6 +6,7 @@
     int  _actionType;
     NSData * _certificateData;
     NSURL * _certificateURL;
+    NSMutableDictionary * _httpHeaderFields;
     unsigned long long  _kdChannelIdentifier;
     unsigned long long  _kdMovieIdentifier;
     int  _leaseType;
@@ -14,6 +15,7 @@
     NSURL * _url;
 }
 
+@property (nonatomic, copy) NSDictionary *HTTPHeaderFields;
 @property (nonatomic) unsigned long long KDChannelIdentifier;
 @property (getter=_KDMovieIdentifier, setter=_setKDMovieIdentifier:, nonatomic) unsigned long long _KDMovieIdentifier;
 @property (getter=_URL, setter=_setURL:, nonatomic, copy) NSURL *_URL;
@@ -28,6 +30,7 @@
 + (id)_requestWithType:(int)arg1;
 
 - (void).cxx_destruct;
+- (id)HTTPHeaderFields;
 - (unsigned long long)KDChannelIdentifier;
 - (unsigned long long)_KDMovieIdentifier;
 - (id)_URL;
@@ -45,11 +48,14 @@
 - (void)_setURL:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)parameterValues;
+- (void)setHTTPHeaderFields:(id)arg1;
 - (void)setKDChannelIdentifier:(unsigned long long)arg1;
 - (void)setParameterValues:(id)arg1;
 - (void)setStartsLeaseSession:(BOOL)arg1;
+- (void)setValue:(id)arg1 forHTTPHeaderField:(id)arg2;
 - (void)setValue:(id)arg1 forParameter:(id)arg2;
 - (BOOL)startsLeaseSession;
+- (id)valueForHTTPHeaderField:(id)arg1;
 - (id)valueForParameter:(id)arg1;
 
 @end

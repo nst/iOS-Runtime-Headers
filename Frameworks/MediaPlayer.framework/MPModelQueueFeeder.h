@@ -5,12 +5,17 @@
 @interface MPModelQueueFeeder : MPQueueFeeder <MPCQueueBehaviorManaging, MPModelObjectPlaybackItemMetadataDelegate, MPShuffleControllerDataSource, MPStoreAVItemDownloadMetadataConsuming> {
     NSObject<OS_dispatch_queue> * _accessQueue;
     NSHashTable * _activeModelObjectPlaybackItemMetadataInstances;
+    NSDictionary * _assetStoreFronts;
+    int  _currentRevisionID;
+    NSDictionary * _endTimeModifications;
     id /* block */  _finalTracklistLoadingCompletionHandler;
     BOOL  _hasFoundStartItem;
     BOOL  _hasLoadedFinalResponse;
     NSOperationQueue * _operationQueue;
     MPPlaceholderAVItem * _placeholderAVItem;
     MPModelRequest * _request;
+    NSString * _requestingBundleIdentifier;
+    NSString * _requestingBundleVersion;
     MPModelResponse * _response;
     struct map<unsigned int, MPIdentifierSet *, std::__1::less<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, MPIdentifierSet *> > > { 
         struct __tree<std::__1::__value_type<unsigned int, MPIdentifierSet *>, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, MPIdentifierSet *>, std::__1::less<unsigned int>, true>, std::__1::allocator<std::__1::__value_type<unsigned int, MPIdentifierSet *> > > { 
@@ -27,6 +32,7 @@
     }  _retrievedIndexToIdentifiers;
     MPShuffleController * _shuffleController;
     MPIdentifierSet * _startItemIdentifiers;
+    NSDictionary * _startTimeModifications;
 }
 
 @property (nonatomic, readonly) BOOL allowsUserVisibleUpcomingItems;
@@ -45,6 +51,7 @@
 - (void).cxx_destruct;
 - (void)_allowsHighQualityMusicStreamingOnCellularDidChangeNotification:(id)arg1;
 - (int)_currentPreferredStartIndexWithFinalResponse:(BOOL)arg1;
+- (id)_equivalencySourceAdamIDForIdentifierSet:(id)arg1;
 - (void)_handleFinalResponseWithPreferredStartIndex:(unsigned int)arg1;
 - (BOOL)_hasPlaceholderItemAtIndex:(unsigned int)arg1;
 - (id)_identifiersAtIndex:(unsigned int)arg1;
@@ -61,6 +68,7 @@
 - (void)_responseDidInvalidateNotification:(id)arg1;
 - (unsigned int)_songShuffledIndexForIndex:(unsigned int)arg1;
 - (void)_unregisterNotificationsForResponse:(id)arg1;
+- (void)applyVolumeNormalizationForItem:(id)arg1;
 - (id)audioSessionModeForItemAtIndex:(unsigned int)arg1;
 - (id)copyRawItemAtIndex:(unsigned int)arg1;
 - (void)dealloc;

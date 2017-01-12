@@ -5,12 +5,12 @@
 @interface _UIPointVector : NSObject {
     unsigned long  _capacity;
     unsigned long  _count;
-    /* Warning: Unrecognized filer type: ' ' using 'void*' */ void** _vectors;
+    /* Warning: Unrecognized filer type: '' using 'void*' */ void** _vectors;
 }
 
 @property (nonatomic) unsigned long capacity;
 @property (nonatomic) unsigned long count;
-@property (nonatomic) /* Warning: Unrecognized filer type: ' ' using 'void*' */ void**vectors;
+@property (nonatomic) /* Warning: Unrecognized filer type: '' using 'void*' */ void**vectors;
 
 - (void)addVector;
 - (unsigned long)capacity;

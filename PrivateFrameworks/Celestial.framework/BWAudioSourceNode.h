@@ -65,7 +65,7 @@
 @property (nonatomic) BOOL interrupted;
 
 + (double)_desiredSampleRate;
-+ (id)audioSourceNodeWithAttributes:(id)arg1 CMSession:(struct opaqueCMSession { }*)arg2 configureSession:(BOOL)arg3 doEndInterruption:(BOOL)arg4 clientToken:(id)arg5 clientPID:(int)arg6 clientVersionOfLinkedSDK:(unsigned int)arg7;
++ (id)audioSourceNodeWithAttributes:(id)arg1 clock:(struct OpaqueCMClock { }*)arg2 CMSession:(struct opaqueCMSession { }*)arg3 configureSession:(BOOL)arg4 doEndInterruption:(BOOL)arg5 clientToken:(id)arg6 clientPID:(int)arg7 clientVersionOfLinkedSDK:(unsigned int)arg8;
 + (void)initialize;
 
 - (struct __CFString { }*)CMSessionAudioMode;
@@ -78,7 +78,7 @@
 - (void)_generateSamples;
 - (void)_generateSilenceIfNeeded;
 - (long)_getAudioDevicePullFrames:(unsigned int*)arg1;
-- (id)_initWithAttributes:(id)arg1 CMSession:(struct opaqueCMSession { }*)arg2 configureSession:(BOOL)arg3 doEndInterruption:(BOOL)arg4 clientToken:(id)arg5 clientPID:(int)arg6 clientVersionOfLinkedSDK:(unsigned int)arg7;
+- (id)_initWithAttributes:(id)arg1 clock:(struct OpaqueCMClock { }*)arg2 CMSession:(struct opaqueCMSession { }*)arg3 configureSession:(BOOL)arg4 doEndInterruption:(BOOL)arg5 clientToken:(id)arg6 clientPID:(int)arg7 clientVersionOfLinkedSDK:(unsigned int)arg8;
 - (long)_selectMicForAudioRoute:(id)arg1;
 - (long)_setCMSessionAudioModeAndSelectMic:(BOOL*)arg1;
 - (long)_setCMSessionPropertyWithKey:(struct __CFString { }*)arg1 value:(void*)arg2;

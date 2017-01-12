@@ -46,6 +46,7 @@
 @property (readonly) struct { int x1; int x2; } sensorCropDimensions;
 @property (readonly) struct { int x1; int x2; } sensorDimensions;
 @property (readonly) int sensorHDRCompanionIndex;
+@property (getter=isShallowDepthOfFieldEffectSupported, readonly) BOOL shallowDepthOfFieldEffectSupported;
 @property (readonly) struct { int x1; int x2; } sourceCropAspectRatio;
 @property (getter=isStillImageISPChromaNoiseReductionEnabled, readonly) BOOL stillImageISPChromaNoiseReductionEnabled;
 @property (readonly) int stillImageNoiseReductionAndStabilizationScheme;
@@ -107,6 +108,7 @@
 - (BOOL)isMultiStreamFormat;
 - (BOOL)isPhotoFormat;
 - (BOOL)isQuadraHighResStillImageSupported;
+- (BOOL)isShallowDepthOfFieldEffectSupported;
 - (BOOL)isStillImageISPChromaNoiseReductionEnabled;
 - (BOOL)isStillImageStabilizationSupported;
 - (BOOL)isValidDerivedBravoFormatForUnderlyingFormat:(id)arg1;

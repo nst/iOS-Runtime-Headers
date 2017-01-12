@@ -27,6 +27,7 @@
 - (id)firstItem;
 - (id)firstSection;
 - (int)globalIndexForIndexPath:(id)arg1;
+- (BOOL)hasSameContentAsSectionedCollection:(id)arg1;
 - (id)identifiersForItemAtIndexPath:(id)arg1;
 - (id)identifiersForSectionAtIndex:(int)arg1;
 - (id)indexPathForGlobalIndex:(int)arg1;

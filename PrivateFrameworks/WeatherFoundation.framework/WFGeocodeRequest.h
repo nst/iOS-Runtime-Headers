@@ -22,9 +22,11 @@
 
 - (void).cxx_destruct;
 - (id)autocompleteSearchResult;
+- (void)cleanup;
 - (struct CLLocationCoordinate2D { double x1; double x2; })coordinate;
 - (id)description;
 - (id)geocodedResult;
+- (void)handleCancellation;
 - (void)handleResponse:(id)arg1;
 - (id)initWithCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1 resultHandler:(id /* block */)arg2;
 - (id)initWithSearchCompletion:(id)arg1 resultHandler:(id /* block */)arg2;

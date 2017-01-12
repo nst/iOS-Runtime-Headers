@@ -11,6 +11,7 @@
 @property (nonatomic, retain) _HMCameraSource *source;
 
 - (void).cxx_destruct;
+- (id)aspectRatio;
 - (id)initWithSource:(id)arg1;
 - (id)propertyQueue;
 - (void)setSource:(id)arg1;

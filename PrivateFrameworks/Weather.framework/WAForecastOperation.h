@@ -4,6 +4,7 @@
 
 @interface WAForecastOperation : NSOperation {
     WFAirQualityConditions * _airQualityConditions;
+    WFAirQualityRequest * _airQualityRequest;
     NSCalendar * _calendar;
     City * _city;
     WACurrentForecast * _currentConditions;
@@ -28,6 +29,7 @@
 }
 
 @property (nonatomic, retain) WFAirQualityConditions *airQualityConditions;
+@property (nonatomic, retain) WFAirQualityRequest *airQualityRequest;
 @property (nonatomic, retain) NSCalendar *calendar;
 @property (nonatomic, retain) City *city;
 @property (nonatomic, retain) WACurrentForecast *currentConditions;
@@ -57,7 +59,9 @@
 - (void)_mapReferralLinks;
 - (BOOL)_needsGeolocation;
 - (id)airQualityConditions;
+- (id)airQualityRequest;
 - (id)calendar;
+- (void)cancel;
 - (id)city;
 - (id)currentConditions;
 - (id)currentWeatherConditions;
@@ -78,6 +82,7 @@
 - (void)main;
 - (id)rawAPIData;
 - (void)setAirQualityConditions:(id)arg1;
+- (void)setAirQualityRequest:(id)arg1;
 - (void)setCalendar:(id)arg1;
 - (void)setCity:(id)arg1;
 - (void)setCurrentConditions:(id)arg1;

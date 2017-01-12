@@ -27,7 +27,6 @@
 - (void)dealloc;
 - (id)init;
 - (void)reloadAccounts;
-- (BOOL)sdk_hasActiveLockerAccount;
 - (void)setAccountCredits:(id)arg1 forAccountWithUniqueIdentifier:(id)arg2;
 - (void)setAccounts:(id)arg1;
 - (id)setActiveAccount:(id)arg1;

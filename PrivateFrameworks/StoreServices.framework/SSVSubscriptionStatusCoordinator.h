@@ -34,6 +34,5 @@
 - (id)lastKnownStatus;
 - (void)modifyLastKnownStatusUsingBlock:(id /* block */)arg1;
 - (void)reset;
-- (void)sdk_getStatusWithBlock:(id /* block */)arg1;
 
 @end

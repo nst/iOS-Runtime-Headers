@@ -16,7 +16,7 @@
 - (void)setHandler:(void *)arg1 version:(void *)arg2 roles:(void *)arg3 forContentType:(void *)arg4 completionHandler:(void *)arg5; // needs 5 arg types, found 11: NSString *, unsigned long long, unsigned long, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, NSError *, void*
 - (void)setHandlerOptions:(void *)arg1 forContentType:(void *)arg2 completionHandler:(void *)arg3; // needs 3 arg types, found 9: unsigned long, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, NSError *, void*
 - (void)synchronizeWithMobileInstallation;
-- (void)updateApplication:(void *)arg1 mobileInstallationChanges:(void *)arg2 completionHandler:(void *)arg3; // needs 3 arg types, found 9: NSString *, NSDictionary *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, NSError *, void*
 - (void)updateContainerUnit:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 8: unsigned int, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSData *, NSError *, void*
+- (void)updateRecordForApp:(void *)arg1 withSINF:(void *)arg2 iTunesMetadata:(void *)arg3 completionHandler:(void *)arg4; // needs 4 arg types, found 10: NSString *, NSDictionary *, NSDictionary *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, NSError *, void*
 
 @end

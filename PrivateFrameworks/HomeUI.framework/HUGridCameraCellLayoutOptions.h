@@ -3,22 +3,22 @@
  */
 
 @interface HUGridCameraCellLayoutOptions : HUGridCellLayoutOptions {
-    float  _cameraViewHeight;
+    float  _cameraViewAspectRatio;
     float  _headerHorizontalInnerMargins;
     float  _headerViewHeight;
 }
 
-@property (nonatomic) float cameraViewHeight;
+@property (nonatomic) float cameraViewAspectRatio;
 @property (nonatomic) float headerHorizontalInnerMargins;
 @property (nonatomic) float headerViewHeight;
 
 + (id)defaultOptionsForCellSizeSubclass:(int)arg1;
 
-- (float)cameraViewHeight;
+- (float)cameraViewAspectRatio;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (float)headerHorizontalInnerMargins;
 - (float)headerViewHeight;
-- (void)setCameraViewHeight:(float)arg1;
+- (void)setCameraViewAspectRatio:(float)arg1;
 - (void)setHeaderHorizontalInnerMargins:(float)arg1;
 - (void)setHeaderViewHeight:(float)arg1;
 

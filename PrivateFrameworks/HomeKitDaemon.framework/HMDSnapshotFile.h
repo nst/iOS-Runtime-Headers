@@ -3,18 +3,22 @@
  */
 
 @interface HMDSnapshotFile : NSObject <HMFLogging> {
+    NSNumber * _aspectRatio;
     HAPOSTransaction * _createSlotIdentifierTransaction;
     NSString * _directory;
+    BOOL  _externalFilePath;
     NSString * _filePath;
     NSNumber * _slotIdentifier;
     CAContext * _snapshotContext;
     NSDate * _snapshotTimestamp;
 }
 
+@property (nonatomic, readonly) NSNumber *aspectRatio;
 @property (nonatomic, retain) HAPOSTransaction *createSlotIdentifierTransaction;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSString *directory;
+@property (nonatomic, readonly) BOOL externalFilePath;
 @property (nonatomic, readonly) NSString *filePath;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) NSNumber *slotIdentifier;
@@ -25,21 +29,25 @@
 + (id)logCategory;
 
 - (void).cxx_destruct;
+- (id)aspectRatio;
 - (id)copyFileAtPath:(id)arg1 snapshotTimestamp:(id)arg2;
 - (id)createSlotIdentifierTransaction;
 - (struct CGImage { }*)createSnapshotCGImageRef:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)directory;
+- (BOOL)externalFilePath;
 - (id)filePath;
 - (unsigned int)hash;
-- (id)initWithFilePath:(id)arg1 snapshotTimestamp:(id)arg2;
 - (id)initWithImageDirectory:(id)arg1;
-- (id)initWithImageDirectory:(id)arg1 data:(id)arg2;
+- (id)initWithImageDirectory:(id)arg1 externalFilePath:(id)arg2 snapshotTimestamp:(id)arg3;
+- (id)initWithImageDirectory:(id)arg1 filePath:(id)arg2 snapshotTimestamp:(id)arg3;
+- (id)initWithImageDirectory:(id)arg1 snapshotData:(id)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (id)logIdentifier;
+- (BOOL)prepareParametersWithFilePath:(id)arg1 snapshotData:(id)arg2 directory:(id)arg3 snapshotTimestamp:(id)arg4 resize:(BOOL)arg5 writeBack:(BOOL)arg6;
 - (void)setCreateSlotIdentifierTransaction:(id)arg1;
-- (void)setFileData:(id)arg1 snapshotTimestamp:(id)arg2;
+- (id)setFileData:(id)arg1 snapshotTimestamp:(id)arg2;
 - (void)setSlotIdentifier:(id)arg1;
 - (void)setSnapshotContext:(id)arg1;
 - (id)slotIdentifier;

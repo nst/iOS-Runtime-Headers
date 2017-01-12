@@ -16,6 +16,11 @@
     }  _faceRect;
     UIImage * _image;
     BOOL  _isDegraded;
+    BOOL  _isVeryLowQuality;
+    struct CGSize { 
+        float width; 
+        float height; 
+    }  _originalImageSize;
     id  _originalObjectID;
     struct PXFaceTileImageParams { 
         struct CGSize { 
@@ -25,6 +30,7 @@
         unsigned int cropFactor; 
         BOOL round; 
         BOOL cropBounded; 
+        BOOL acceptsVeryLowQuality; 
     }  _params;
 }
 
@@ -32,8 +38,10 @@
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } faceRect;
 @property (nonatomic, readonly) UIImage *image;
 @property (nonatomic, readonly) BOOL isDegraded;
+@property (nonatomic) BOOL isVeryLowQuality;
+@property (nonatomic) struct CGSize { float x1; float x2; } originalImageSize;
 @property (nonatomic, retain) id originalObjectID;
-@property (nonatomic) struct PXFaceTileImageParams { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; unsigned int x2; BOOL x3; BOOL x4; } params;
+@property (nonatomic) struct PXFaceTileImageParams { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; unsigned int x2; BOOL x3; BOOL x4; BOOL x5; } params;
 
 - (void).cxx_destruct;
 - (id)assetObjectID;
@@ -42,10 +50,14 @@
 - (id)image;
 - (id)initWithImage:(id)arg1 faceRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 isDegraded:(BOOL)arg3;
 - (BOOL)isDegraded;
+- (BOOL)isVeryLowQuality;
+- (struct CGSize { float x1; float x2; })originalImageSize;
 - (id)originalObjectID;
-- (struct PXFaceTileImageParams { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; unsigned int x2; BOOL x3; BOOL x4; })params;
+- (struct PXFaceTileImageParams { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; unsigned int x2; BOOL x3; BOOL x4; BOOL x5; })params;
 - (void)setAssetObjectID:(id)arg1;
+- (void)setIsVeryLowQuality:(BOOL)arg1;
+- (void)setOriginalImageSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setOriginalObjectID:(id)arg1;
-- (void)setParams:(struct PXFaceTileImageParams { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; unsigned int x2; BOOL x3; BOOL x4; })arg1;
+- (void)setParams:(struct PXFaceTileImageParams { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; unsigned int x2; BOOL x3; BOOL x4; BOOL x5; })arg1;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Photos.framework/Photos
  */
 
-@interface PHFaceCollection : NSObject <PXFaceCollection> {
+@interface PHFaceCollection : NSObject <PXPerson> {
     NSSet * _faces;
     NSString * _identifier;
     NSString * _name;

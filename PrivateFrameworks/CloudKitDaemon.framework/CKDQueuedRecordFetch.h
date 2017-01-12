@@ -4,7 +4,7 @@
 
 @interface CKDQueuedRecordFetch : CKDQueuedFetch
 
-- (void)addRequestForRecordID:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)addRequestForRecordID:(id)arg1 forOperation:(id)arg2 withCompletionHandler:(id /* block */)arg3;
 - (id)fetchOperationForItemIDs:(id)arg1;
 - (Class)operationInfoClass;
 

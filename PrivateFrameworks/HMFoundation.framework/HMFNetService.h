@@ -4,11 +4,12 @@
 
 @interface HMFNetService : NSObject <NSNetServiceDelegate> {
     NSMutableDictionary * _TXTRecord;
-    HMFNetAddress * _address;
+    NSArray * _addresses;
     NSObject<OS_dispatch_queue> * _clientQueue;
     <HMFNetServiceDelegate> * _delegate;
     NSObject<OS_dispatch_queue> * _delegateQueue;
     NSString * _domain;
+    HMFNetAddress * _hostName;
     NSNetService * _internal;
     NSString * _name;
     unsigned int  _port;
@@ -19,7 +20,7 @@
 }
 
 @property (nonatomic, readonly, copy) NSDictionary *TXTRecord;
-@property (nonatomic, readonly) HMFNetAddress *address;
+@property (readonly, copy) NSArray *addresses;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *clientQueue;
 @property (readonly, copy) NSString *debugDescription;
 @property <HMFNetServiceDelegate> *delegate;
@@ -27,6 +28,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, copy) NSString *domain;
 @property (readonly) unsigned int hash;
+@property (readonly, copy) HMFNetAddress *hostName;
 @property (nonatomic, readonly) NSNetService *internal;
 @property (nonatomic, readonly, copy) NSString *name;
 @property (nonatomic, readonly) unsigned int port;
@@ -42,7 +44,7 @@
 - (void).cxx_destruct;
 - (id)TXTRecord;
 - (void)_reallyResolveWithTimeout:(double)arg1 completionHandler:(id /* block */)arg2;
-- (id)address;
+- (id)addresses;
 - (id)bestAddress;
 - (id)clientQueue;
 - (void)confirmWithTimeout:(double)arg1 completionHandler:(id /* block */)arg2;
@@ -54,6 +56,7 @@
 - (id)descriptionWithPointer:(BOOL)arg1;
 - (id)domain;
 - (unsigned int)hash;
+- (id)hostName;
 - (id)init;
 - (id)initWithNetService:(id)arg1;
 - (id)internal;
@@ -65,15 +68,16 @@
 - (void)netServiceDidResolveAddress:(id)arg1;
 - (void)netServiceDidStop:(id)arg1;
 - (void)netServiceWillResolve:(id)arg1;
-- (void)notifyUpdatedAddress:(id)arg1;
+- (void)notifyUpdatedAddresses:(id)arg1;
 - (void)notifyUpdatedTXTRecord:(id)arg1;
 - (unsigned int)port;
 - (id)propertyQueue;
 - (void)removeAllTXTRecordObjects;
 - (id)resolveBlocks;
 - (void)resolveWithTimeout:(double)arg1 completionHandler:(id /* block */)arg2;
-- (void)setAddress:(id)arg1;
+- (void)setAddresses:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setHostname:(id)arg1;
 - (void)setResolving:(BOOL)arg1;
 - (void)setTXTRecord:(id)arg1;
 - (id)shortDescription;

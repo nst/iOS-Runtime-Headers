@@ -1364,9 +1364,11 @@
 - (id)_FCCKPIdentifierWithType:(int)arg1;
 - (id)fc_lowerCaseStringByTrimmingWhiteSpace;
 - (id)fc_lowercaseTokensWithMinimumLength:(unsigned int)arg1;
+- (id)fc_sanitizeWithOffendingCharacterSet:(id)arg1;
 - (id)fc_stringByMultiplyingStringByCount:(unsigned int)arg1;
 - (id)fc_stringByPrefixingLinesWithString:(id)arg1;
 - (id)fc_stringByRemovingPunctuation;
+- (BOOL)fc_validateWithRegexPattern:(id)arg1;
 - (id)fr_readingHistoryItemID;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })range;
 - (id)stringByRemovingCharactersInSet:(id)arg1;

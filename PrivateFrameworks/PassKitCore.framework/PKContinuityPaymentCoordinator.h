@@ -7,6 +7,7 @@
     PKContinuityPaymentService * _continuityPaymentService;
     PKRemotePaymentRequest * _currentRemotePaymentRequest;
     <PKContinuityPaymentCoordinatorDelegate> * _delegate;
+    NSObject<OS_dispatch_source> * _deviceTotalUpdateTimeoutTimer;
     NSObject<OS_dispatch_source> * _deviceUpdateTimeoutTimer;
     NSObject<OS_dispatch_queue> * _internalQueue;
     BOOL  _isUpdatingDevices;
@@ -26,11 +27,13 @@
 
 - (void).cxx_destruct;
 - (void)_deviceUpdateTimerDidTimeout;
+- (void)_deviceUpdateTotalTimerDidTimeout;
 - (void)_queue_sendPaymentStatus:(int)arg1 completion:(id /* block */)arg2;
 - (void)_resetRequest;
 - (void)_send_didReceiveCancellation;
 - (void)_send_didReceivePayment:(id)arg1;
 - (void)_send_didReceiveUpdatedPaymentDevice:(id)arg1;
+- (void)_send_didTimeoutTotalUpdatePaymentDevices;
 - (void)_send_didTimeoutUpdatePaymentDevices;
 - (void)cancelRemotePaymentRequestWithCompletion:(id /* block */)arg1;
 - (id)currentRemotePaymentRequest;

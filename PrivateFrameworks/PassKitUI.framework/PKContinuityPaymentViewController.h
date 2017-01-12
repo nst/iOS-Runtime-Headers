@@ -12,8 +12,6 @@
     UIView * _dimmingBackgroundView;
     PKContinuityPaymentFaviconView * _faviconImage;
     UIViewController * _passphraseViewController;
-    _UIFeedbackImpactBehavior * _paymentFailureBehavior;
-    _UIFeedbackEventBehavior * _paymentSuccessBehavior;
     UILabel * _priceLabel;
     UIView * _priceView;
     PKRemotePaymentRequest * _remoteRequest;

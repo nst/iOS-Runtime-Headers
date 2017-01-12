@@ -49,6 +49,7 @@
 - (void)layoutSubviews;
 - (unsigned int)maxFittingItems;
 - (void)pageDidChangeNotification:(id)arg1;
+- (void)reloadDataAndRecenter;
 - (id)scrubbingItemView;
 - (void)setCurrentTouch:(id)arg1;
 - (void)setInDelayedUpdate:(BOOL)arg1;

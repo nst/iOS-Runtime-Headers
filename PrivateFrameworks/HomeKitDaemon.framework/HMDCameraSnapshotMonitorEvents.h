@@ -9,6 +9,7 @@
     NSMutableSet * _characteristicsList;
     NSString * _logID;
     HMFMessageDispatcher * _msgDispatcher;
+    HMDNotificationRegistration * _notificationRegistration;
     NSObject<OS_dispatch_queue> * _propertyQueue;
     NSMutableSet * _snapShotNotificationResponseTimers;
     HMDCameraSnapshotManager * _snapshotManager;
@@ -27,6 +28,7 @@
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 @property (nonatomic, readonly) NSUUID *messageTargetUUID;
 @property (nonatomic, retain) HMFMessageDispatcher *msgDispatcher;
+@property (nonatomic, readonly) HMDNotificationRegistration *notificationRegistration;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *propertyQueue;
 @property (nonatomic, retain) NSMutableSet *snapShotNotificationResponseTimers;
 @property (nonatomic, readonly) HMDCameraSnapshotManager *snapshotManager;
@@ -43,6 +45,7 @@
 - (void)_handleRemoteNotification:(id)arg1;
 - (void)_handleSnapshotResponse:(id)arg1 cameraSessionID:(id)arg2 changedCharacteristics:(id)arg3 response:(id)arg4 responseTimer:(id)arg5;
 - (void)_monitorForEventsForServices:(id)arg1;
+- (void)_removeBulletins:(id)arg1 sessionID:(id)arg2;
 - (void)_sendReleaseSnapshot:(id)arg1;
 - (void)_subscribeToNotifications;
 - (id)accessory;
@@ -59,6 +62,8 @@
 - (id)messageTargetUUID;
 - (void)monitorForEventsForServices:(id)arg1;
 - (id)msgDispatcher;
+- (id)notificationRegistration;
+- (void)processPostedBulletin:(id)arg1 responseTimer:(id)arg2;
 - (id)propertyQueue;
 - (void)registerForMessages;
 - (void)setMsgDispatcher:(id)arg1;

@@ -10,6 +10,7 @@
     NSObject<OS_dispatch_queue> * _delegateQueue;
     NSString * _logID;
     HMFMessageDispatcher * _msgDispatcher;
+    HMDNotificationRegistration * _notificationRegistration;
     NSObject<OS_dispatch_queue> * _propertyQueue;
     HMDService * _streamService;
     NSUUID * _uniqueIdentifier;
@@ -28,6 +29,7 @@
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 @property (nonatomic, readonly) NSUUID *messageTargetUUID;
 @property (nonatomic, retain) HMFMessageDispatcher *msgDispatcher;
+@property (nonatomic, readonly) HMDNotificationRegistration *notificationRegistration;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *propertyQueue;
 @property (nonatomic, readonly) HMDService *streamService;
 @property (readonly) Class superclass;
@@ -57,6 +59,7 @@
 - (id)messageReceiveQueue;
 - (id)messageTargetUUID;
 - (id)msgDispatcher;
+- (id)notificationRegistration;
 - (id)propertyQueue;
 - (void)registerForMessages;
 - (void)setCharacteristicsValues:(id)arg1;

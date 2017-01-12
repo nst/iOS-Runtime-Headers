@@ -108,6 +108,7 @@
 - (unsigned int)pageCount;
 - (id)pageLabelView;
 - (id)pdfDocument;
+- (void)pdfDocumentDidUnlock:(id)arg1;
 - (id)pdfReader;
 - (id)pdfView;
 - (void)pdfView:(id)arg1 didAddView:(id)arg2 forPage:(id)arg3 atIndex:(unsigned int)arg4;

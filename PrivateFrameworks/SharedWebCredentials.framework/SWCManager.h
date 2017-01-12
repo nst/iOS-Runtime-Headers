@@ -9,6 +9,7 @@
     NSMutableArray * _deferredRequests;
     unsigned int  _maxNetRequests;
     NSMutableArray * _netRequests;
+    BOOL  _obfuscateLogs;
     BOOL  _rebuildDatabase;
     long long  _recheckFailureMaxCount;
     long long  _recheckFailureSecs;
@@ -46,6 +47,7 @@
 - (id)_findService:(id)arg1 app:(id)arg2 domain:(id)arg3;
 - (id)_findService:(id)arg1 app:(id)arg2 domain:(id)arg3 wildcards:(BOOL)arg4;
 - (id)_installedAppByID:(id)arg1;
+- (id)_obfuscatedDomain:(id)arg1;
 - (void)_parseServiceDomainString:(id)arg1 legacy:(BOOL)arg2 service:(id*)arg3 domain:(id*)arg4;
 - (void)_processDeferredNetRequests;
 - (void)_recheckPerform;

@@ -7,6 +7,7 @@
     BOOL  _iCloudAccountChanged;
     FCTagSettings * _tagSettings;
     NSNumber * _totalMeteredCount;
+    BOOL  _useParsecResults;
     NTPBWidgetConfig * _widgetConfiguration;
 }
 

@@ -16,6 +16,7 @@
     BOOL  _supports2pt4GHz;
     BOOL  _supports5GHz;
     BOOL  _supportsSpruce2;
+    id /* block */  _wacCompatibilityCheckCompletionHandler;
     struct __CFDictionary { } * _wifiInfo;
 }
 
@@ -32,15 +33,17 @@
 @property (nonatomic, readonly) BOOL supports2pt4GHz;
 @property (nonatomic, readonly) BOOL supports5GHz;
 @property (nonatomic, readonly) BOOL supportsSpruce2;
+@property (nonatomic, copy) id /* block */ wacCompatibilityCheckCompletionHandler;
 @property (nonatomic) struct __CFDictionary { }*wifiInfo;
 
 - (void).cxx_destruct;
+- (BOOL)_checkCompatibleNetwork:(id)arg1;
 - (void)_configProgress:(id)arg1;
 - (long)_configPrompt:(unsigned int)arg1 inDelaySeconds:(int)arg2;
 - (void)_configStopped:(id)arg1;
 - (void)_joinComplete;
 - (void)_waitForLinkUp:(long)arg1 inContext:(void*)arg2;
-- (BOOL)checkCompatibleNetwork:(id)arg1;
+- (void)checkCompatibleNetwork:(id)arg1 completion:(id /* block */)arg2;
 - (id)clientQueue;
 - (id /* block */)completion;
 - (void)dealloc;
@@ -60,11 +63,13 @@
 - (void)setDidRestoreNetwork:(BOOL)arg1;
 - (void)setEzConfigDevice:(id)arg1;
 - (void)setPromptForSetupCode_f:(int (*)arg1;
+- (void)setWacCompatibilityCheckCompletionHandler:(id /* block */)arg1;
 - (void)setWifiInfo:(struct __CFDictionary { }*)arg1;
 - (id)ssid;
 - (BOOL)supports2pt4GHz;
 - (BOOL)supports5GHz;
 - (BOOL)supportsSpruce2;
+- (id /* block */)wacCompatibilityCheckCompletionHandler;
 - (struct __CFDictionary { }*)wifiInfo;
 
 @end

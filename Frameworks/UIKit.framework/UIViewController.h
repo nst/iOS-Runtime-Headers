@@ -1438,6 +1438,7 @@
 
 // Image: /System/Library/PrivateFrameworks/HomeUI.framework/HomeUI
 
+- (id)hu_delegateForModalPresentation;
 - (id)hu_presentPreloadableViewController:(id)arg1 animated:(BOOL)arg2;
 
 // Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation

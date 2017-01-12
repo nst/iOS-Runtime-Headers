@@ -68,6 +68,7 @@
 - (void)client:(id)arg1 downloadProgressDidChange:(id)arg2;
 - (void)client:(id)arg1 downloadWasInvalidatedForNewUpdateAvailable:(id)arg2;
 - (void)client:(id)arg1 installDidFail:(id)arg2 withError:(id)arg3;
+- (void)client:(id)arg1 installDidStart:(id)arg2;
 - (void)client:(id)arg1 scanDidCompleteWithNewUpdateAvailable:(id)arg2 error:(id)arg3;
 - (void)client:(id)arg1 scanRequestDidStartForOptions:(id)arg2;
 - (void)dealloc;

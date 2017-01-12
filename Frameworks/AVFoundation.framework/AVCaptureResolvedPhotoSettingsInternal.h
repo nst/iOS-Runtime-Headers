@@ -24,6 +24,7 @@
         int width; 
         int height; 
     }  rawPhotoDimensions;
+    BOOL  shallowDepthOfFieldEffectEnabled;
     BOOL  squareCropEnabled;
     BOOL  stillImageStabilizationEnabled;
     BOOL  turboModeEnabled;

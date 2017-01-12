@@ -10,6 +10,7 @@
     unsigned int  _properties;
     HAPService * _service;
     BOOL  _shouldValidateValueAfterReading;
+    NSNumber * _stateNumber;
     NSString * _type;
     id  _value;
     NSDate * _valueUpdatedTime;
@@ -23,6 +24,7 @@
 @property (nonatomic) unsigned int properties;
 @property (nonatomic) HAPService *service;
 @property (nonatomic) BOOL shouldValidateValueAfterReading;
+@property (nonatomic, readonly) NSNumber *stateNumber;
 @property (nonatomic, readonly) BOOL supportsAdditionalAuthorizationData;
 @property (nonatomic, copy) NSString *type;
 @property (setter=setValue:, nonatomic, copy) id value;
@@ -35,7 +37,7 @@
 - (id)cbCharacteristic;
 - (id)description;
 - (BOOL)eventNotificationsEnabled;
-- (id)initWithType:(id)arg1 instanceID:(id)arg2 value:(id)arg3 properties:(unsigned int)arg4 eventNotificationsEnabled:(BOOL)arg5 metadata:(id)arg6;
+- (id)initWithType:(id)arg1 instanceID:(id)arg2 value:(id)arg3 stateNumber:(id)arg4 properties:(unsigned int)arg5 eventNotificationsEnabled:(BOOL)arg6 metadata:(id)arg7;
 - (id)instanceID;
 - (BOOL)isEqualToCharacteristic:(id)arg1;
 - (id)metadata;
@@ -53,6 +55,7 @@
 - (void)setValue:(id)arg1;
 - (void)setValueUpdatedTime:(id)arg1;
 - (BOOL)shouldValidateValueAfterReading;
+- (id)stateNumber;
 - (BOOL)supportsAdditionalAuthorizationData;
 - (id)type;
 - (id)validateValue:(id)arg1 outValue:(id*)arg2;

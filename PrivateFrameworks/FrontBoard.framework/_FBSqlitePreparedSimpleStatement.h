@@ -2,11 +2,17 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@interface _FBSqlitePreparedSimpleStatement : FBSqlitePreparedStatement {
+@interface _FBSqlitePreparedSimpleStatement : FBSqlitePreparedStatement <FBSqliteDatabaseConnectionObserver> {
+    FBSqliteDatabaseConnection * _dbConnection;
     struct sqlite3_stmt { } * _statement;
-    BSZeroingWeakReference * _weak_dbConnection;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
 - (int)_bindKey:(id)arg1 value:(id)arg2;
 - (int)_bindParameterIndex:(int)arg1 dataValue:(id)arg2;
 - (int)_bindParameterIndex:(int)arg1 nullValue:(id)arg2;
@@ -17,5 +23,6 @@
 - (void)dealloc;
 - (BOOL)executeWithBindings:(id)arg1 resultRowHandler:(id /* block */)arg2 error:(out id*)arg3;
 - (id)initWithDatabaseConnection:(id)arg1 statement:(struct sqlite3_stmt { }*)arg2;
+- (void)sqliteDatabaseConnectionWillClose:(id)arg1;
 
 @end

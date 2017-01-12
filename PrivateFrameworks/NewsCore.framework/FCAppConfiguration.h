@@ -4,6 +4,8 @@
 
 @interface FCAppConfiguration : NSObject {
     NSObject<OS_dispatch_queue> * _accessQueue;
+    BOOL  _alternativeWidgetConfigEnabled;
+    NTPBWidgetConfig * _alternativeWidgetConfiguration;
     long long  _appConfigRefreshRate;
     long long  _articleRapidUpdatesTimeout;
     long long  _autoScrollToTopFeedTimeout;
@@ -61,6 +63,8 @@
 }
 
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *accessQueue;
+@property (getter=isAlternativeWidgetConfigEnabled, nonatomic) BOOL alternativeWidgetConfigEnabled;
+@property (nonatomic, readonly, copy) NTPBWidgetConfig *alternativeWidgetConfiguration;
 @property (nonatomic) long long appConfigRefreshRate;
 @property (nonatomic) long long articleRapidUpdatesTimeout;
 @property (nonatomic) long long autoScrollToTopFeedTimeout;
@@ -127,6 +131,7 @@
 - (id)_categoryFromProtobufCategory:(id)arg1;
 - (void)_didChange;
 - (void)_didChangeTrendingTopics;
+- (void)_extractAlternativeWidgetConfigFromProtobufConfiguration:(id)arg1;
 - (void)_extractCommonValuesFromProtobufConfiguration:(id)arg1;
 - (void)_extractCoverArticlesFromLanguageConfiguration:(id)arg1;
 - (void)_extractEditorialChannelFromLanguageConfiguration:(id)arg1;
@@ -149,6 +154,7 @@
 - (id)accessQueue;
 - (void)addChangeObservationBlock:(id /* block */)arg1;
 - (void)addObserver:(id)arg1;
+- (id)alternativeWidgetConfiguration;
 - (long long)appConfigRefreshRate;
 - (long long)articleRapidUpdatesTimeout;
 - (long long)autoScrollToTopFeedTimeout;
@@ -175,6 +181,7 @@
 - (id)initWithContext:(id)arg1;
 - (long long)initialArticlesFromNewFavorite;
 - (double)interstitialAdLoadDelay;
+- (BOOL)isAlternativeWidgetConfigEnabled;
 - (long long)longReminderTime;
 - (long long)minimumArticleUpdateInterval;
 - (long long)minimumDistanceBetweenImageOnTopTiles;
@@ -201,6 +208,7 @@
 - (void)removeObserver:(id)arg1;
 - (id)requestSerialQueue;
 - (void)setAccessQueue:(id)arg1;
+- (void)setAlternativeWidgetConfigEnabled:(BOOL)arg1;
 - (void)setAppConfigRefreshRate:(long long)arg1;
 - (void)setArticleRapidUpdatesTimeout:(long long)arg1;
 - (void)setAutoScrollToTopFeedTimeout:(long long)arg1;

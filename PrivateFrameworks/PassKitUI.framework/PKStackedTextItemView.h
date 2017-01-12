@@ -29,6 +29,9 @@
         } textMetrics[4]; 
     }  _contentConstraints;
     UIFont * _idealPrimaryFont;
+    UIFont * _idealSecondaryFont;
+    UIFont * _idealTertiaryFont;
+    UIFont * _idealTitleFont;
     UIFont * _layoutPrimaryFont;
     UILabel * _primary;
     UIFont * _primaryFont;

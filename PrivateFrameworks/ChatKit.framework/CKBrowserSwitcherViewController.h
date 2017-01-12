@@ -101,7 +101,6 @@
 - (void)_updateForBeginScrolling;
 - (void)_updateForEndScrolling;
 - (void)_updateGutterDividerViewsForCurrentVisibleBrowser;
-- (void)_updatePageControlToCurrentVisiblePlugin;
 - (void)_updatePluginFromScrollPosition;
 - (void)_updateVisibleBrowserView;
 - (unsigned int)_visibleSwitcherPluginIndexForHorizontalOffset:(float)arg1;
@@ -156,8 +155,6 @@
 - (void)layoutMarginsDidChange;
 - (id)livePluginIdentifierToTimestampMap;
 - (void)loadView;
-- (void)pageControlChanged:(id)arg1;
-- (void)pageControlTapped:(id)arg1;
 - (id /* block */)performAfterFirstLayoutBlock;
 - (void)reinsertSwitcherFooterViewForBrowserTransitionCoordinator:(id)arg1;
 - (void)saveSnapshotForCurrentBrowserViewControllerIfPossible;
@@ -207,7 +204,6 @@
 - (void)setTransitioningFromSnapshotToLiveView:(BOOL)arg1;
 - (void)setViewHasLaidOutSubviews:(BOOL)arg1;
 - (BOOL)shouldAutorotate;
-- (void)showAppName:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)showBrowserFullscreenForPlugin:(id)arg1 datasource:(id)arg2;
 - (void)showBrowserInSwitcherForPlugin:(id)arg1 datasource:(id)arg2 reloadData:(BOOL)arg3;
 - (void)showSelectionViewController:(BOOL)arg1 animated:(BOOL)arg2;

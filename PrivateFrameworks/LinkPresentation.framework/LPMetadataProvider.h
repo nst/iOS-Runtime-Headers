@@ -7,6 +7,7 @@
     BOOL  _cancelled;
     BOOL  _complete;
     id /* block */  _completionHandler;
+    BOOL  _fetchSubresources;
     LPStatisticsTimingToken * _fetchTimingToken;
     BOOL  _fetchingFromExistingWebView;
     unsigned int  _loggingID;
@@ -23,6 +24,7 @@
 @property (nonatomic, copy) id /* block */ completionHandler;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL fetchSubresources;
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 @property (nonatomic) double timeout;
@@ -45,6 +47,7 @@
 - (void)_fetchMetadataFromWebView;
 - (void)_fetchNextSuccessfulItem:(id)arg1 currentIndex:(unsigned int)arg2 group:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)_fetchResolvableItems:(id)arg1 group:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)_fetchSubresources;
 - (void)_fetchedMetadata:(id)arg1;
 - (void)_redistinguishImagesAndIcons;
 - (void)_startWatchdogTimer;
@@ -52,15 +55,18 @@
 - (BOOL)cancelled;
 - (id /* block */)completionHandler;
 - (void)dealloc;
+- (BOOL)fetchSubresources;
 - (id)init;
 - (void)metadataProviderSpecialization:(id)arg1 didCompleteWithMetadata:(id)arg2;
 - (void)metadataProviderSpecialization:(id)arg1 didFailWithError:(id)arg2;
 - (void)setCancelled:(BOOL)arg1;
 - (void)setCompletionHandler:(id /* block */)arg1;
+- (void)setFetchSubresources:(BOOL)arg1;
 - (void)setTimeout:(double)arg1;
 - (void)setUseSpecializedProviders:(BOOL)arg1;
 - (void)startFetchingMetadataForURL:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)startFetchingMetadataForWebView:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)startFetchingSubresourcesForPartialMetadata:(id)arg1 completionHandler:(id /* block */)arg2;
 - (double)timeout;
 - (BOOL)useSpecializedProviders;
 - (void)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 decisionHandler:(id /* block */)arg3;

@@ -27,6 +27,7 @@
         unsigned int protectedContentSupportStorageFilePath : 1; 
         unsigned int storeRedownloadParameters : 1; 
         unsigned int storeAccountIdentifier : 1; 
+        unsigned int shouldRememberBookmarkTime : 1; 
         unsigned int shouldReportPlayEventsToStore : 1; 
         unsigned int shouldShowComposer : 1; 
         unsigned int storeRedownloadable : 1; 

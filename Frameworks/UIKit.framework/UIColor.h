@@ -397,10 +397,6 @@
 
 + (id)ak_colorWithServerRGBRepresentation:(id)arg1;
 
-// Image: /System/Library/PrivateFrameworks/CameraUI.framework/CameraUI
-
-+ (id)cam_lightenColor:(id)arg1;
-
 // Image: /System/Library/PrivateFrameworks/CertInfo.framework/CertInfo
 
 + (id)CertUIVerifiedColor;

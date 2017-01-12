@@ -4,6 +4,7 @@
 
 @interface PKContactlessInterfaceTransactionContext : NSObject {
     NSDate * _date;
+    PKFelicaAppletHistory * _felicaHistory;
     PKPaymentApplication * _paymentApplication;
     PKPaymentPass * _paymentPass;
     BOOL  _success;
@@ -13,6 +14,7 @@
 }
 
 @property (nonatomic, retain) NSDate *date;
+@property (nonatomic, retain) PKFelicaAppletHistory *felicaHistory;
 @property (nonatomic, retain) PKPaymentApplication *paymentApplication;
 @property (nonatomic, retain) PKPaymentPass *paymentPass;
 @property (nonatomic) BOOL success;
@@ -22,9 +24,11 @@
 
 - (void).cxx_destruct;
 - (id)date;
+- (id)felicaHistory;
 - (id)paymentApplication;
 - (id)paymentPass;
 - (void)setDate:(id)arg1;
+- (void)setFelicaHistory:(id)arg1;
 - (void)setPaymentApplication:(id)arg1;
 - (void)setPaymentPass:(id)arg1;
 - (void)setSuccess:(BOOL)arg1;

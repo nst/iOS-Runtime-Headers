@@ -8,6 +8,8 @@
     NSObject<OS_dispatch_queue> * _awdSubmissionQueue;
     NSData * _deviceExceptionUuid;
     unsigned int  _middlewareExceptionCount;
+    unsigned int  _previousCardIngestionSessionState;
+    unsigned int  _previousExpressFelicaState;
     unsigned int  _previousTransactionState;
     unsigned int  _previousVASTransactionState;
     NSData * _tsmUuid;
@@ -35,13 +37,18 @@
 - (void)postAWDCRSAuthInitEventWithStatus:(unsigned int)arg1;
 - (void)postAWDCRSAuthWithStatus:(unsigned int)arg1 withMethod:(unsigned int)arg2;
 - (void)postAWDCRSDeAuthWithStatus:(unsigned int)arg1;
+- (void)postAWDCardIngestionReaderStateChangeWithType:(unsigned int)arg1 errorCode:(unsigned int)arg2;
+- (void)postAWDCardIngestionSessionStateChangeTo:(unsigned int)arg1;
 - (void)postAWDEvent:(id)arg1;
+- (void)postAWDExpressFelicaStarted:(BOOL)arg1;
 - (void)postAWDFieldEventWithFieldOn:(BOOL)arg1 withTechnology:(unsigned int)arg2;
 - (void)postAWDHCIEndOfTransactionEventWithParameters:(id)arg1;
 - (void)postAWDHCIStartOfTransactionEventWithVersion:(unsigned int)arg1 withStatus:(unsigned int)arg2;
 - (void)postAWDMiddlewareException:(unsigned int)arg1 errorType:(unsigned int)arg2 errorCode:(unsigned int)arg3 checkMaxExceptionCounter:(BOOL)arg4;
 - (void)postAWDPLLUnlockEvent;
-- (void)postAWDRestrictedModeFromContactlessMode:(BOOL)arg1;
+- (void)postAWDReaderModeExceptionForType:(unsigned int)arg1 withErrorCode:(unsigned int)arg2;
+- (void)postAWDRestrictedModeFromContactlessMode:(BOOL)arg1 isIcf:(BOOL)arg2;
+- (void)postAWDSERemovedEvent:(unsigned int)arg1 isIcf:(BOOL)arg2 hasCardEmulationStarted:(BOOL)arg3 hasExpressTransitStarted:(BOOL)arg4;
 - (void)postAWDSESelectEventWithAID:(id)arg1;
 - (void)postAWDTSMConnectivityException:(unsigned int)arg1;
 - (void)postAWDTSMEndOfSession;

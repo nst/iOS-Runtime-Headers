@@ -2,36 +2,45 @@
    Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
  */
 
-@interface PKPaymentCredentialProvisioningViewController : PKPaymentSetupProvisioningFieldsViewController {
+@interface PKPaymentCredentialProvisioningViewController : PKPaymentSetupProvisioningFieldsViewController <PKPaymentSetupViewControllerCanHideSetupLaterButton, PKPaymentSetupViewControllerRequiresPreflightProtocol> {
+    BOOL  _allowsManualEntry;
     unsigned int  _credentialProvisioningType;
-    PKPaymentPass * _localPaymentPass;
     PKPaymentCredentialMetadataTableController * _metadataController;
     UIImage * _passSnapshot;
     PKPaymentCredential * _paymentCredential;
     PKPaymentSetupProduct * _setupProduct;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+
 - (void).cxx_destruct;
+- (void)_cleanupTransferredCredentialFromSourceDeviceWithCompletion:(id /* block */)arg1;
+- (id)_createPassSnapshotFromPaymentPass:(id)arg1;
 - (id)_defaultHeaderViewSubTitleForLocalCredential;
+- (id)_defaultHeaderViewSubTitleForLocalCredentialTransfer;
+- (void)_downloadPassAssetsWithURL:(id)arg1 completion:(id /* block */)arg2;
 - (void)_performEligibilityWithCompletion:(id /* block */)arg1;
 - (void)_performFinishWithCompletion:(id /* block */)arg1;
 - (void)_performProvisionWithCompletion:(id /* block */)arg1;
 - (void)_performRequirementsWithCompletion:(id /* block */)arg1;
 - (void)_performTermsWithCompletion:(id /* block */)arg1;
 - (id)_remoteIDMSCredentialDefaultHeaderViewSubTitle;
+- (void)_updateTableHeader;
 - (void)addDifferentCard:(id)arg1;
 - (id)defaultFields;
 - (id)defaultHeaderViewSubTitle;
 - (id)defaultHeaderViewTitle;
-- (void)downloadPassWithCompletion:(id /* block */)arg1;
-- (id)initWithProvisioningController:(id)arg1 context:(int)arg2 setupDelegate:(id)arg3 paymentCredential:(id)arg4 setupProduct:(id)arg5;
+- (id)initWithProvisioningController:(id)arg1 context:(int)arg2 setupDelegate:(id)arg3 paymentCredential:(id)arg4 setupProduct:(id)arg5 allowsManualEntry:(BOOL)arg6;
 - (BOOL)isComplete;
 - (void)loadView;
 - (id)newPaymentEligibilityRequest;
 - (id)newPaymentProvisioningRequest;
 - (id)newPaymentRequirementsRequest;
 - (void)performNextActionForProvisioningState:(int)arg1 withCompletion:(id /* block */)arg2;
-- (void)preflightCredentialWithCompletion:(id /* block */)arg1;
+- (void)preflightWithCompletion:(id /* block */)arg1;
 - (id)readonlyFieldIdentifiers;
 - (BOOL)shouldAppearWithFirstEmptyFieldAsFirstResponder;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

@@ -55,6 +55,7 @@
 @property (nonatomic, readonly, copy) NSString *shortEditorNotes;
 @property (nonatomic, readonly, copy) NSString *shortName;
 @property (nonatomic, readonly, copy) NSURL *shortURL;
+@property (nonatomic, readonly) BOOL shouldBookmarkPlayPosition;
 @property (nonatomic, readonly) BOOL showComposer;
 @property (nonatomic, readonly, copy) id storeID;
 @property (nonatomic, readonly) int trackCount;
@@ -134,6 +135,7 @@
 - (id)shortEditorNotes;
 - (id)shortName;
 - (id)shortURL;
+- (BOOL)shouldBookmarkPlayPosition;
 - (BOOL)showComposer;
 - (id)storeID;
 - (int)trackCount;

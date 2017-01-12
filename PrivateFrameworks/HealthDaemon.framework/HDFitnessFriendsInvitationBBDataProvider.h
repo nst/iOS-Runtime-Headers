@@ -59,6 +59,7 @@
 - (void)showInviteAttemptNeedToSignInFrom:(id)arg1;
 - (void)showInviteAttemptNeedToUpgradeFrom:(id)arg1;
 - (void)showInviteRequestFrom:(id)arg1;
+- (void)showMaxNumberOfFriendsError;
 - (void)showVersionTooHighForOutgoingInviteTo:(id)arg1;
 - (void)showVersionTooLowForIncomingInviteFrom:(id)arg1;
 - (void)showVersionTooLowForOutgoingInviteTo:(id)arg1;

@@ -18,8 +18,10 @@
 + (void)zoomAnimation:(id /* block */)arg1 completion:(id /* block */)arg2;
 
 - (void).cxx_destruct;
+- (void)addFilter:(id)arg1;
 - (id)attributedButtonText;
 - (BOOL)buttonAlignmentRelativeToContent;
+- (void)clearFilters;
 - (void)configureForChatItem:(id)arg1;
 - (void)layoutSubviewsForAlignmentContents;
 - (void)performInsertion:(id /* block */)arg1;

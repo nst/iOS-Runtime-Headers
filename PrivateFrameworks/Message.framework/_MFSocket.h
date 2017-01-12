@@ -41,8 +41,9 @@
 - (unsigned int)_bufferedByteCount;
 - (BOOL)_certificateIsTrustedForAccount:(id)arg1;
 - (BOOL)_evaluateTrust:(struct __SecTrust { }*)arg1 errorPtr:(id*)arg2;
+- (id)_negotiatedProtocolVersion;
 - (void)_setCertificateIsTrusted:(BOOL)arg1 forAccount:(id)arg2;
-- (BOOL)_startSSLHandshakeWithProtocol:(id)arg1 disableSSL2:(BOOL)arg2 errorPtr:(id*)arg3;
+- (BOOL)_startSSLHandshakeWithProtocol:(id)arg1 errorPtr:(id*)arg2;
 - (BOOL)_waitForSocketOpenAndFlag:(BOOL*)arg1;
 - (void)abort;
 - (id)accountIdentifier;

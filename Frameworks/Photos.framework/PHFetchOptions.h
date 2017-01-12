@@ -10,6 +10,7 @@
     NSNumber * _fetchLimitNumber;
     NSNumber * _includeAllBurstAssetsNumber;
     NSNumber * _includeAssetSourceTypesNumber;
+    NSNumber * _includeDepthEffectSmartAlbumNumber;
     NSNumber * _includeDuplicateAssetsNumber;
     NSNumber * _includeFavoriteMemoriesCollectionListNumber;
     NSNumber * _includeHiddenAssetsNumber;
@@ -44,6 +45,7 @@
 @property (nonatomic, readonly) NSSet *fetchPropertySetsAsSet;
 @property (nonatomic) BOOL includeAllBurstAssets;
 @property (nonatomic) unsigned int includeAssetSourceTypes;
+@property (nonatomic) BOOL includeDepthEffectSmartAlbum;
 @property (nonatomic) BOOL includeDuplicateAssets;
 @property (nonatomic) BOOL includeFavoriteMemoriesCollectionList;
 @property (nonatomic) BOOL includeHiddenAssets;
@@ -84,6 +86,7 @@
 - (id)fetchPropertySetsAsSet;
 - (BOOL)includeAllBurstAssets;
 - (unsigned int)includeAssetSourceTypes;
+- (BOOL)includeDepthEffectSmartAlbum;
 - (BOOL)includeDuplicateAssets;
 - (BOOL)includeFavoriteMemoriesCollectionList;
 - (BOOL)includeHiddenAssets;
@@ -112,6 +115,7 @@
 - (void)setFetchPropertySets:(id)arg1;
 - (void)setIncludeAllBurstAssets:(BOOL)arg1;
 - (void)setIncludeAssetSourceTypes:(unsigned int)arg1;
+- (void)setIncludeDepthEffectSmartAlbum:(BOOL)arg1;
 - (void)setIncludeDuplicateAssets:(BOOL)arg1;
 - (void)setIncludeFavoriteMemoriesCollectionList:(BOOL)arg1;
 - (void)setIncludeHiddenAssets:(BOOL)arg1;

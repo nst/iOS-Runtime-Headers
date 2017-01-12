@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Home.framework/Home
  */
 
-@interface HFItemManager : NSObject <HFAccessoryObserver, HFHomeManagerObserver, HFHomeObserver, HFResidentDeviceObserver, HFTemperatureUnitObserver> {
+@interface HFItemManager : NSObject <HFAccessoryObserver, HFCameraObserver, HFHomeManagerObserver, HFHomeObserver, HFResidentDeviceObserver, HFTemperatureUnitObserver> {
     <HFItemManagerDelegate> * _delegate;
     NSMutableSet * _disableUpdateReasons;
     NAFuture * _firstFastUpdateFuture;
@@ -44,6 +44,8 @@
 - (void)_applicationDidEnterBackground:(id)arg1;
 - (void)_applicationWillEnterForeground:(id)arg1;
 - (void)_batchItemUpdateFutureWrappers:(id)arg1 removedItems:(id)arg2 batchingIntervals:(id)arg3 logger:(id)arg4;
+- (id)_cameraForCameraControl:(id)arg1;
+- (id)_cameraForCameraStream:(id)arg1;
 - (id /* block */)_comparatorForSectionIdentifier:(id)arg1;
 - (void)_createItemProvidersWithHome:(id)arg1;
 - (id)_dependentHomeKitObjectsOfClass:(Class)arg1 inHomeKitObjects:(id)arg2;
@@ -64,6 +66,7 @@
 - (id)_itemsToUpdateForModifiedAccessories:(id)arg1;
 - (id)_itemsToUpdateForModifiedActionSets:(id)arg1;
 - (id)_itemsToUpdateForModifiedActions:(id)arg1;
+- (id)_itemsToUpdateForModifiedCameras:(id)arg1;
 - (id)_itemsToUpdateForModifiedCharacteristics:(id)arg1;
 - (id)_itemsToUpdateForModifiedEvents:(id)arg1;
 - (id)_itemsToUpdateForModifiedMetadataForHomes:(id)arg1;
@@ -128,6 +131,12 @@
 - (id)allDisplayedItems;
 - (id)allItems;
 - (void)beginSuppressingUpdatesForCharacteristics:(id)arg1 withReason:(id)arg2;
+- (void)cameraSnapshotControl:(id)arg1 didTakeSnapshot:(id)arg2 error:(id)arg3;
+- (void)cameraSnapshotControlDidUpdateMostRecentSnapshot:(id)arg1;
+- (void)cameraStream:(id)arg1 didUpdateAudioStreamSettingWithError:(id)arg2;
+- (void)cameraStreamControl:(id)arg1 didStopStreamWithError:(id)arg2;
+- (void)cameraStreamControlDidStartStream:(id)arg1;
+- (void)cameraStreamControlDidUpdateStreamState:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (void)disableExternalUpdatesWithReason:(id)arg1;

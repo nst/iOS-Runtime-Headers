@@ -44,6 +44,7 @@
 @property (nonatomic) BOOL wantsAudioForCapture;
 @property (nonatomic) BOOL wantsAutoDuoImageFusion;
 @property (nonatomic) BOOL wantsHighResolutionStills;
+@property (nonatomic) BOOL wantsPortraitEffect;
 @property (nonatomic) BOOL wantsSquareCrop;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -86,6 +87,7 @@
 - (void)setWantsAudioForCapture:(BOOL)arg1;
 - (void)setWantsAutoDuoImageFusion:(BOOL)arg1;
 - (void)setWantsHighResolutionStills:(BOOL)arg1;
+- (void)setWantsPortraitEffect:(BOOL)arg1;
 - (void)setWantsSquareCrop:(BOOL)arg1;
 
 @end

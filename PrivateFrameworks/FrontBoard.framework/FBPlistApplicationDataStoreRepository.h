@@ -32,6 +32,7 @@
 - (void)_writeQueue_flushSynchronously;
 - (id)applicationIdentifiersWithState;
 - (void)beginBatchedUpdate;
+- (void)close;
 - (BOOL)containsKey:(id)arg1 forApplication:(id)arg2;
 - (void)dealloc;
 - (id)delegate;

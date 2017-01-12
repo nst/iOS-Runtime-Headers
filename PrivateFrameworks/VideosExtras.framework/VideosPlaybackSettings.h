@@ -16,6 +16,7 @@
 }
 
 @property (getter=isCellularDataEnabled, nonatomic) BOOL cellularDataEnabled;
+@property (getter=areCloudPurchasesEnabled, nonatomic, readonly) BOOL cloudPurchasesEnabled;
 @property (nonatomic, retain) MPMediaItem *item;
 @property (nonatomic) unsigned int networkStatus;
 @property (nonatomic) unsigned int playbackQuality;
@@ -28,6 +29,7 @@
 - (void)_populateSettings;
 - (unsigned int)_qualityForString:(id)arg1;
 - (void)_registerObserverForSettingsChange;
+- (BOOL)areCloudPurchasesEnabled;
 - (void)clearsCurrentSession;
 - (BOOL)clearsCurrentSessionWithMediaItem:(id)arg1;
 - (void)dealloc;

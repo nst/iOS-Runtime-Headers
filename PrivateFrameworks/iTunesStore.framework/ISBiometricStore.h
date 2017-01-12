@@ -21,6 +21,7 @@
 - (int)biometricAvailabilityForAccountIdentifier:(id)arg1;
 - (int)biometricState;
 - (BOOL)canPerformBiometricOptIn;
+- (BOOL)canPerformExtendedTouchIDActionsForAccountIdentifier:(id)arg1;
 - (void)clearLastRegisteredAccountIdentifier;
 - (id)createAttestationDataForAccountIdentifier:(id)arg1 error:(id*)arg2;
 - (unsigned int)identityMapCount;

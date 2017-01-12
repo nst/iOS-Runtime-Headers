@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
  */
 
-@interface PKPassbookSettingsController : NSObject <PKPaymentPassTableCellDelegate, PKPaymentServiceDelegate> {
+@interface PKPassbookSettingsController : NSObject <PKPaymentDataProviderDelegate, PKPaymentPassTableCellDelegate, PKPaymentServiceDelegate> {
     LAContext * _LAContext;
     PSSpecifier * _addCardButtonSpecifier;
     PKPaymentPreference * _availableCards;
@@ -16,9 +16,12 @@
     PKPaymentPreferencesViewController * _defaultCardsController;
     PSSpecifier * _defaultContactEmailSpecifier;
     PSSpecifier * _defaultContactPhoneSpecifier;
+    NSString * _defaultExpressFelicaTransitPassIdentifier;
+    PSSpecifier * _defaultExpressFelicaTransitSpecifier;
     PSSpecifier * _defaultPaymentSpecifier;
     PSSpecifier * _defaultShippingAddressSpecifier;
     <PKPassbookSettingsDelegate> * _delegate;
+    NSArray * _expressFelicaTransitPasses;
     NSArray * _handoffSwitchSpecifiers;
     NSArray * _lockscreenSwitchSpecifiers;
     <PKPaymentOptionsProtocol> * _optionsDelegate;
@@ -45,14 +48,18 @@
 - (id)_currentDefaultPaymentPass;
 - (id)_defaultContactEmailSpecifier;
 - (id)_defaultContactPhoneSpecifier;
+- (id)_defaultExpressFelicaTransitPassDescription;
+- (id)_defaultExpressFelicaTransitSpecifier;
 - (id)_defaultPaymentSpecifier;
 - (id)_defaultShippingAddressSpecifier;
 - (id)_defaultsGroupSpecifiers;
 - (id)_displayableStringForLabeledValue:(id)arg1;
+- (void)_finishDefaultExpressFelicaTransitUpdateWithContainer:(id)arg1 preference:(id)arg2;
 - (id)_getDefaultContactEmail;
 - (id)_getDefaultContactPhone;
 - (id)_getDefaultPaymentCard;
 - (id)_getDefaultShippingAddress;
+- (void)_handleDefaultExpressFelicaTransitPassChangedTo:(id)arg1 withContainer:(id)arg2 preference:(id)arg3;
 - (void)_handleDefaultPaymentPassChangedTo:(id)arg1 withSender:(id)arg2 optionsController:(id)arg3 canPrompt:(BOOL)arg4;
 - (void)_handleProvisioningError:(id)arg1 viewController:(id)arg2;
 - (id)_handoffSwitchGroupSpecifiers;
@@ -62,7 +69,9 @@
 - (void)_openPrivacyLink;
 - (id)_passSpecifiers;
 - (int)_paymentPreferencesStyle;
+- (int)_paymentSetupContextForSettingsContext:(int)arg1;
 - (void)_performPhoneToWatchProvisioningForPaymentPass:(id)arg1;
+- (void)_presentCannotTransferAlert;
 - (void)_presentProvisioningPaymentPassNavController:(id)arg1 paymentPass:(id)arg2;
 - (void)_regionConfigurationDidChangeNotification;
 - (void)_reloadPassData;
@@ -77,7 +86,9 @@
 - (void)_showDefaultContactPhoneOptions:(id)arg1;
 - (void)_showDefaultPaymentOptions:(id)arg1;
 - (void)_showDefaultShippingAddressOptions:(id)arg1;
+- (void)_showExpressFelicaTransitOptions:(id)arg1;
 - (id)_specifierForPassUniqueID:(id)arg1;
+- (id)_transitDefaultsGroupSpecifiers;
 - (void)_updateAddButtonSpecifier;
 - (void)_updateCardsGroupSpecifier;
 - (void)_updateCompanionGroupSpecifier;
@@ -89,7 +100,9 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithDelegate:(id)arg1 dataSource:(id)arg2 context:(int)arg3;
+- (void)paymentPassWithUniqueIdentifier:(id)arg1 didUpdateWithFelicaPassProperties:(id)arg2;
 - (void)refreshDefaultCard;
+- (void)refreshExpressFelicaTransitCard;
 - (void)refreshPasses;
 - (void)removeFooterForSpecifier:(id)arg1;
 - (void)setDelegate:(id)arg1;

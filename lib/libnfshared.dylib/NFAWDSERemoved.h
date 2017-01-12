@@ -3,12 +3,13 @@
  */
 
 @interface NFAWDSERemoved : NSObject <NFAWDEventProtocol> {
+    BOOL  _hasCardEmulationStarted;
     AWDNFCSERemovedEvent * _metric;
-    unsigned int  _reason;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL hasCardEmulationStarted;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) AWDNFCSERemovedEvent *metric;
 @property (nonatomic) unsigned int reason;
@@ -17,9 +18,13 @@
 - (void)dealloc;
 - (id)getMetric;
 - (unsigned long)getMetricId;
+- (BOOL)hasCardEmulationStarted;
+- (BOOL)hasCardemulationStarted;
 - (id)init;
 - (id)metric;
 - (unsigned int)reason;
+- (void)setHasCardEmulationStarted:(BOOL)arg1;
+- (void)setHasCardemulationStarted:(BOOL)arg1;
 - (void)setMetric:(id)arg1;
 - (void)setReason:(unsigned int)arg1;
 - (void)updateExceptionUUID:(id)arg1;

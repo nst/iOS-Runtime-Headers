@@ -80,6 +80,7 @@
 - (id)owner;
 - (id)owningDevice;
 - (void)reEvaluate;
+- (void)refreshActivate;
 - (void)removeAccessory:(id)arg1;
 - (void)removeActionSet:(id)arg1;
 - (void)sendTriggerFiredNotification:(id)arg1;

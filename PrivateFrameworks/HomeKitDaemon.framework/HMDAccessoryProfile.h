@@ -32,6 +32,7 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (void)_encodeWithCoder:(id)arg1;
 - (id)accessory;
 - (id)contextID;
 - (id)contextSPIUniqueIdentifier;

@@ -4,12 +4,10 @@
 
 @interface CKDURLSessionPool : NSObject <NSURLSessionDataDelegate, NSURLSessionDelegate, NSURLSessionTaskDelegatePrivate> {
     int  _backgroundSessionConnectionPoolLimit;
-    NSMutableDictionary * _delegateByTaskDescription;
-    NSMutableDictionary * _ephemeralSessionByName;
     NSObject<OS_dispatch_queue> * _queue;
-    NSMutableDictionary * _sessionByIdentifier;
     NSMutableDictionary * _sessionConfigurationReferenceByIdentifier;
     NSMutableDictionary * _sessionConfigurationReferenceByName;
+    NSMutableDictionary * _sessionWrapperByIdentifier;
 }
 
 @property (nonatomic, readonly) int backgroundSessionConnectionPoolLimit;
@@ -33,7 +31,7 @@
 - (void)URLSession:(id)arg1 task:(id)arg2 didSendBodyData:(long long)arg3 totalBytesSent:(long long)arg4 totalBytesExpectedToSend:(long long)arg5;
 - (void)URLSession:(id)arg1 task:(id)arg2 needNewBodyStream:(id /* block */)arg3;
 - (void)URLSession:(id)arg1 task:(id)arg2 willPerformHTTPRedirection:(id)arg3 newRequest:(id)arg4 completionHandler:(id /* block */)arg5;
-- (id)_URLSessionWithConfiguration:(id)arg1 configurationName:(id)arg2 forDelegate:(id)arg3;
+- (id)_URLSessionWrapperWithConfiguration:(id)arg1 configurationName:(id)arg2 forDelegate:(id)arg3;
 - (void)_performAsyncOnDelegateOfSession:(id)arg1 task:(id)arg2 fromSelector:(SEL)arg3 block:(id /* block */)arg4;
 - (void)_updateBackgroundSessionConnectionPoolLimit;
 - (int)backgroundSessionConnectionPoolLimit;

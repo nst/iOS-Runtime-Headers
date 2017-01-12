@@ -50,10 +50,12 @@
 - (void)enumerateValidDisplayModesForFilter:(int)arg1 usingBlock:(id /* block */)arg2;
 - (id)friendWithUUID:(id)arg1;
 - (BOOL)hasAnyFriendsSetup;
+- (BOOL)hasReachedMaxNumberOfFriends;
 - (id)init;
 - (id)initWithModel:(id)arg1 andWorkoutDataProvider:(id)arg2;
 - (id)me;
 - (unsigned int)numberOfFriendsWithInvitesAwaitingResponseFromMe;
+- (int)numberOfNewFriendsAllowed;
 - (id)sectionForFriendsHidingDataFromMe;
 - (id)sectionForFriendsInvitedByMe;
 - (id)sectionForFriendsInvitingMe;

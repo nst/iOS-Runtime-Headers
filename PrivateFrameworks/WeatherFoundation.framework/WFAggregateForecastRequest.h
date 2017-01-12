@@ -11,7 +11,10 @@
 @property (nonatomic, copy) WFLocation *location;
 
 - (void).cxx_destruct;
+- (void)cleanup;
 - (id /* block */)completionHandler;
+- (void)handleCancellation;
+- (void)handleResponse:(id)arg1;
 - (id)initWithLocation:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)location;
 - (void)setCompletionHandler:(id /* block */)arg1;

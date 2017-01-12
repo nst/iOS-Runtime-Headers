@@ -21,6 +21,7 @@
 
 - (void).cxx_destruct;
 - (void)authorizationDidAuthorizePayment:(id)arg1;
+- (void)authorizationDidAuthorizePurchase:(id)arg1;
 - (void)authorizationDidFinishWithError:(id)arg1;
 - (void)authorizationDidPresent;
 - (void)authorizationDidRequestMerchantSession;

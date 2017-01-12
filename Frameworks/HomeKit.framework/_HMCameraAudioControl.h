@@ -11,8 +11,7 @@
 @property (nonatomic, readonly) HMCharacteristic *volume;
 
 - (void).cxx_destruct;
-- (id)initWithCameraProfile:(id)arg1 service:(id)arg2 clientQueue:(id)arg3 delegateCaller:(id)arg4 msgDispatcher:(id)arg5 home:(id)arg6 profileUniqueIdentifier:(id)arg7;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithCameraProfile:(id)arg1 service:(id)arg2 profileUniqueIdentifier:(id)arg3;
 - (id)mute;
 - (id)volume;
 

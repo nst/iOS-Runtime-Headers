@@ -46,6 +46,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)description;
+- (id)dictionaryWithLowercaseKeys:(id)arg1;
 - (id)dockType;
 - (unsigned int)eqIndex;
 - (id)eqNames;

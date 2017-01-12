@@ -11,6 +11,7 @@
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 
 - (void).cxx_destruct;
+- (void)cancelTaskWithIdentifier:(id)arg1;
 - (void)dispatchQuery:(id)arg1;
 - (void)fetchFavoriteLocationsWithTaskIdentifier:(id)arg1 results:(id /* block */)arg2;
 - (id)init;

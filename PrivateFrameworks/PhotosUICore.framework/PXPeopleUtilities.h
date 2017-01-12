@@ -5,9 +5,10 @@
 @interface PXPeopleUtilities : NSObject
 
 + (void)_mergeFaces:(id)arg1 rejectedFaces:(id)arg2 toPerson:(id)arg3 personChangeRequest:(id*)arg4 newPersonLocalIdentifier:(id*)arg5;
++ (id)_rejectedFaceIDsForPerson:(id)arg1;
 + (id)_rejectedFacesForPerson:(id)arg1;
 + (id)assetCollectionListFetchResultForPerson:(id)arg1;
-+ (void)changePeople:(id)arg1 toPersonType:(int)arg2;
++ (void)changePeople:(id)arg1 toPersonType:(int)arg2 error:(id*)arg3;
 + (id)changePerson:(id)arg1 toPersonType:(int)arg2;
 + (id)dataSourceArrayForHomeViewController;
 + (id)identifiersForPeople:(id)arg1;

@@ -64,6 +64,7 @@
 - (int)flowControlBudgetOverride;
 - (double)flowControlRegeneration;
 - (double)flowControlRegenerationOverride;
+- (BOOL)highPriorityURLDelegates;
 - (BOOL)isAppleInternalInstall;
 - (BOOL)logTraffic;
 - (BOOL)logTrafficToTextFile;

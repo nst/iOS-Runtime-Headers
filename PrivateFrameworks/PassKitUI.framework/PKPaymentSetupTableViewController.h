@@ -5,6 +5,8 @@
 @interface PKPaymentSetupTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     UIView * _containerView;
     int  _context;
+    UILabel * _footerLabel;
+    NSIndexPath * _selectedIndexPath;
     int  _style;
     UITableView * _tableView;
     UITableViewController * _tableViewController;
@@ -13,7 +15,9 @@
 @property (nonatomic) int context;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, readonly, retain) UILabel *footerLabel;
 @property (readonly) unsigned int hash;
+@property (nonatomic, readonly, copy) NSIndexPath *selectedIndexPath;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, retain) UITableView *tableView;
 
@@ -22,14 +26,18 @@
 - (void)dealloc;
 - (unsigned int)edgesForExtendedLayout;
 - (BOOL)extendedLayoutIncludesOpaqueBars;
+- (id)footerLabel;
 - (id)initWithStyle:(int)arg1 context:(int)arg2;
 - (void)loadView;
 - (void)scrollViewDidScroll:(id)arg1;
+- (id)selectedIndexPath;
 - (void)setContext:(int)arg1;
 - (id)tableView;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;

@@ -9,7 +9,6 @@
 }
 
 @property (nonatomic, readonly) HMDCameraProfile *cameraProfile;
-@property (nonatomic, readonly) NSSet *notificationGeneratingServices;
 @property (nonatomic, readonly) NSMutableSet *notificationGeneratingServicesInRoom;
 @property (nonatomic, readonly) NSMutableSet *notificationGeneratingServicesWithCamera;
 
@@ -17,7 +16,6 @@
 - (id)cameraProfile;
 - (id)description;
 - (id)initWithCameraProfile:(id)arg1;
-- (id)notificationGeneratingServices;
 - (id)notificationGeneratingServicesInRoom;
 - (id)notificationGeneratingServicesWithCamera;
 

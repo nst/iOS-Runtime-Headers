@@ -5,20 +5,20 @@
 @interface PKPaymentSetupNavigationController : PKNavigationController <PKPaymentSetupViewControllerDelegate> {
     BOOL  _allowsManualEntry;
     int  _context;
+    int  _paymentSetupMode;
     PKPaymentProvisioningController * _provisioningController;
     <PKPaymentSetupDelegate> * _setupDelegate;
     BOOL  _showsWelcomeViewController;
-    BOOL  _skipFlowPicker;
 }
 
 @property (nonatomic) BOOL allowsManualEntry;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic) int paymentSetupMode;
 @property (nonatomic, readonly, retain) PKPaymentProvisioningController *provisioningController;
 @property (nonatomic) <PKPaymentSetupDelegate> *setupDelegate;
 @property (nonatomic) BOOL showsWelcomeViewController;
-@property (nonatomic) BOOL skipFlowPicker;
 @property (readonly) Class superclass;
 
 + (id)viewControllerForPresentingPaymentError:(id)arg1;
@@ -32,15 +32,15 @@
 - (id)initWithProvisioningController:(id)arg1 context:(int)arg2;
 - (void)loadView;
 - (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(BOOL)arg3;
+- (int)paymentSetupMode;
 - (id)provisioningController;
 - (void)setAllowsManualEntry:(BOOL)arg1;
+- (void)setPaymentSetupMode:(int)arg1;
 - (void)setSetupDelegate:(id)arg1;
 - (void)setShowsWelcomeViewController:(BOOL)arg1;
-- (void)setSkipFlowPicker:(BOOL)arg1;
 - (id)setupDelegate;
 - (BOOL)shouldAutorotate;
 - (BOOL)showsWelcomeViewController;
-- (BOOL)skipFlowPicker;
 - (unsigned int)supportedInterfaceOrientations;
 - (void)viewController:(id)arg1 didShowProvisioningError:(id)arg2;
 - (void)viewControllerDidShowEligibilityIssue:(id)arg1;

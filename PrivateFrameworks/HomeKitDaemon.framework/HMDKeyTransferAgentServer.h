@@ -29,6 +29,7 @@
 - (void)__deviceAddedToAccount:(id)arg1;
 - (void)__deviceRemovedFromAccount:(id)arg1;
 - (void)__deviceUpdated:(id)arg1;
+- (void)__resetTimer:(id)arg1;
 - (void)_device:(id)arg1 addedToAccount:(id)arg2;
 - (void)_device:(id)arg1 removedFromAccount:(id)arg2;
 - (BOOL)_endAdvertiseUUIDWithError:(id*)arg1;

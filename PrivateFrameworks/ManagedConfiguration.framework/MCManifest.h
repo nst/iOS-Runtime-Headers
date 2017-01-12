@@ -27,6 +27,7 @@
 - (id)allInstalledProfileIdentifiers;
 - (id)allInstalledSystemProfileIdentifiers;
 - (id)allInstalledUserProfileIdentifiers;
+- (id)allProfileIdentifiersInstalledNonInteractivelyWithFilterFlags:(int)arg1;
 - (void)dealloc;
 - (id)identifiersOfProfilesWithFilterFlags:(int)arg1;
 - (id)init;

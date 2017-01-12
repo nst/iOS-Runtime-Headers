@@ -8,9 +8,9 @@
     VSApplication * _application;
     JSValue * _applicationReadyCallback;
     <VSApplicationControllerDelegate> * _delegate;
-    BOOL  _deviceRunningAnInternalBuild;
     VSIdentityProvider * _identityProvider;
     VSJSSAMLRequest * _javascriptRequest;
+    VSPreferences * _preferences;
     NSOperationQueue * _privateQueue;
     VSApplicationControllerRequest * _request;
     VSApplicationControllerResponseHandler * _responseHandler;
@@ -23,10 +23,10 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <VSApplicationControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (getter=isDeviceRunningAnInternalBuild, nonatomic) BOOL deviceRunningAnInternalBuild;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) VSIdentityProvider *identityProvider;
 @property (nonatomic, retain) VSJSSAMLRequest *javascriptRequest;
+@property (nonatomic, retain) VSPreferences *preferences;
 @property (nonatomic, retain) NSOperationQueue *privateQueue;
 @property (nonatomic, retain) VSApplicationControllerRequest *request;
 @property (nonatomic, retain) VSApplicationControllerResponseHandler *responseHandler;
@@ -74,9 +74,9 @@
 - (id)identityProvider;
 - (id)init;
 - (id)initWithIdentityProvider:(id)arg1;
-- (BOOL)isDeviceRunningAnInternalBuild;
 - (id)javascriptRequest;
 - (id)launchParamsForApplication:(id)arg1;
+- (id)preferences;
 - (id)privateQueue;
 - (id)request;
 - (id)responseHandler;
@@ -85,9 +85,9 @@
 - (void)setApplication:(id)arg1;
 - (void)setApplicationReadyCallback:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setDeviceRunningAnInternalBuild:(BOOL)arg1;
 - (void)setIdentityProvider:(id)arg1;
 - (void)setJavascriptRequest:(id)arg1;
+- (void)setPreferences:(id)arg1;
 - (void)setPrivateQueue:(id)arg1;
 - (void)setRequest:(id)arg1;
 - (void)setResponseHandler:(id)arg1;

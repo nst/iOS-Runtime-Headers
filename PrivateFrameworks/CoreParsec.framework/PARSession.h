@@ -8,6 +8,7 @@
     PARSessionConfiguration * _configuration;
     NSXPCConnection * _connection;
     <PARSessionDelegate> * _delegate;
+    MKSearchFoundationFeedbackListener * _mapsListener;
     PARRanker * _ranker;
 }
 

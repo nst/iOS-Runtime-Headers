@@ -9,7 +9,7 @@
     id /* block */  _headlinesCompletionHandler;
     id /* block */  _headlinesMapCompletionHandler;
     <FCFeedPersonalizing> * _personalizer;
-    BOOL  _refreshRapidUpdateHeadlines;
+    id /* block */  _rapidUpdateRefreshTest;
     NSArray * _resultHeadlines;
     NSMapTable * _resultHeadlinesByFeedItem;
 }
@@ -20,7 +20,7 @@
 @property (nonatomic, copy) id /* block */ headlinesCompletionHandler;
 @property (nonatomic, copy) id /* block */ headlinesMapCompletionHandler;
 @property (nonatomic, retain) <FCFeedPersonalizing> *personalizer;
-@property (nonatomic) BOOL refreshRapidUpdateHeadlines;
+@property (nonatomic, copy) id /* block */ rapidUpdateRefreshTest;
 @property (nonatomic, retain) NSArray *resultHeadlines;
 @property (nonatomic, retain) NSMapTable *resultHeadlinesByFeedItem;
 
@@ -34,7 +34,7 @@
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;
 - (id)personalizer;
-- (BOOL)refreshRapidUpdateHeadlines;
+- (id /* block */)rapidUpdateRefreshTest;
 - (id)resultHeadlines;
 - (id)resultHeadlinesByFeedItem;
 - (void)setContext:(id)arg1;
@@ -43,7 +43,7 @@
 - (void)setHeadlinesCompletionHandler:(id /* block */)arg1;
 - (void)setHeadlinesMapCompletionHandler:(id /* block */)arg1;
 - (void)setPersonalizer:(id)arg1;
-- (void)setRefreshRapidUpdateHeadlines:(BOOL)arg1;
+- (void)setRapidUpdateRefreshTest:(id /* block */)arg1;
 - (void)setResultHeadlines:(id)arg1;
 - (void)setResultHeadlinesByFeedItem:(id)arg1;
 - (BOOL)validateOperation;

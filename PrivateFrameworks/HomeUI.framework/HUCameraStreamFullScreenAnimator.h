@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeUI.framework/HomeUI
  */
 
-@interface HUCameraStreamFullScreenAnimator : NSObject <UIViewControllerAnimatedTransitioning> {
+@interface HUCameraStreamFullScreenAnimator : NSObject {
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -12,28 +12,14 @@
             float width; 
             float height; 
         } size; 
-    }  _cameraCellFrameInWindowSpace;
-    UIView * _cameraSnapshotView;
-    BOOL  _presenting;
-    <UIViewControllerContextTransitioning> * transContext;
+    }  _sourceFrameInPresentingView;
 }
 
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } cameraCellFrameInWindowSpace;
-@property (nonatomic) UIView *cameraSnapshotView;
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (getter=isPresenting, nonatomic) BOOL presenting;
-@property (readonly) Class superclass;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } sourceFrameInPresentingView;
 
-- (void).cxx_destruct;
-- (void)animateTransition:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })cameraCellFrameInWindowSpace;
-- (id)cameraSnapshotView;
-- (BOOL)isPresenting;
-- (void)setCameraCellFrameInWindowSpace:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setCameraSnapshotView:(id)arg1;
-- (void)setPresenting:(BOOL)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_toViewFinalFrame:(id)arg1;
+- (id)initWithSourceFrameInPresentingView:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })sourceFrameInPresentingView;
 - (double)transitionDuration:(id)arg1;
 
 @end

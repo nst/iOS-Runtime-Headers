@@ -92,13 +92,12 @@
 - (unsigned int)_performRewrapRequest:(id)arg1 responseHandler:(id /* block */)arg2 completion:(id /* block */)arg3;
 - (void)_performVerificationRequest:(id)arg1 selectedChannel:(id)arg2 paymentPass:(id)arg3 taskID:(unsigned int)arg4 completion:(id /* block */)arg5;
 - (id)_primaryAppleAccount;
-- (id)_reencryptPayload:(id)arg1 forRegion:(id)arg2;
+- (void)_processRetryRequest:(id)arg1 responseData:(id)arg2 orginalRequest:(id)arg3 completion:(id /* block */)arg4;
 - (void)_removeVerificationRequestRecord:(id)arg1;
 - (int)_resultForResponse:(id)arg1 error:(id)arg2 successHandler:(id /* block */)arg3;
 - (int)_resultForUnexpectedStatusCode:(int)arg1;
 - (void)_startBackgroundURLSessionWithIdentifier:(id)arg1 context:(id)arg2 backgroundDelegate:(id)arg3 completion:(id /* block */)arg4;
 - (BOOL)_trustPassesExtendedValidation:(struct __SecTrust { }*)arg1;
-- (void)_updateRequest:(id)arg1 responseData:(id)arg2 orginalRequest:(id)arg3 completion:(id /* block */)arg4;
 - (void)_updateRequestWithCurrentTargetDevice:(id)arg1;
 - (id)_urlRequestTaggedWithDiagnosticReasonHeader:(id)arg1 forTaskID:(unsigned int)arg2;
 - (id)_urlRequestTaggedWithWebServiceSessionMarkerHeader:(id)arg1;
@@ -106,7 +105,7 @@
 - (void)addDelegate:(id)arg1;
 - (id)archiver;
 - (unsigned int)availableDevicesWithCompletion:(id /* block */)arg1;
-- (unsigned int)availableProductsOfType:(id)arg1 withCompletion:(id /* block */)arg2;
+- (unsigned int)availableProductsWithRequest:(id)arg1 completion:(id /* block */)arg2;
 - (id)backgroundContext;
 - (id)backgroundDelegate;
 - (void)backgroundDownloadPassAtURL:(id)arg1;
@@ -115,7 +114,6 @@
 - (void)backgroundDownloadRemotePassAssets:(id)arg1;
 - (void)backgroundDownloadRemotePassAssets:(id)arg1 forSuffixesAndScreenScales:(id)arg2;
 - (void)backgroundDownloadWithPassTypeIdentifier:(id)arg1 serialNumber:(id)arg2;
-- (void)calculateDeviceScoreForRequest:(id)arg1 deviceData:(id)arg2 cryptogram:(id)arg3 challengeResponse:(id)arg4 completion:(id /* block */)arg5;
 - (unsigned int)checkMerchantStatus:(id)arg1 forDomain:(id)arg2 withCompletion:(id /* block */)arg3;
 - (unsigned int)completeSession:(id)arg1 wrappedPayment:(id)arg2 pass:(id)arg3 applicationData:(id)arg4 completion:(id /* block */)arg5;
 - (unsigned int)configurePaymentServiceWithCompletion:(id /* block */)arg1;
@@ -133,13 +131,18 @@
 - (void)invalidate;
 - (void)invalidateBackgroundSession;
 - (unsigned int)issuerProvisioningCertificatesForRequest:(id)arg1 withCompletion:(id /* block */)arg2;
+- (unsigned int)moreInfoItemAtURL:(id)arg1 withMetadata:(id)arg2 completion:(id /* block */)arg3;
 - (BOOL)needsConfiguration;
 - (BOOL)needsRegistration;
 - (unsigned int)networkManifestWithCompletion:(id /* block */)arg1;
+- (unsigned int)passActionWithRemoteContentPassAction:(id)arg1 forPass:(id)arg2 completion:(id /* block */)arg3;
 - (unsigned int)passAtURL:(id)arg1 completion:(id /* block */)arg2;
 - (unsigned int)passWithPassTypeIdentifier:(id)arg1 serialNumber:(id)arg2 completion:(id /* block */)arg3;
 - (unsigned int)paymentProvisioningNonceWithCompletion:(id /* block */)arg1;
+- (unsigned int)paymentServiceLightweightRegistrationRequestWithCompletion:(id /* block */)arg1;
 - (int)paymentSetupSupportedInRegion;
+- (unsigned int)performAction:(id)arg1 onServiceProviderPurchase:(id)arg2 completion:(id /* block */)arg3;
+- (unsigned int)performServiceProviderPayment:(id)arg1 completion:(id /* block */)arg2;
 - (id)primaryBrokerURL;
 - (unsigned int)provisionForRequest:(id)arg1 completion:(id /* block */)arg2;
 - (unsigned int)provisionRequest:(id)arg1 completion:(id /* block */)arg2;
@@ -148,6 +151,7 @@
 - (unsigned int)registerDeviceWithCompletion:(id /* block */)arg1;
 - (unsigned int)registerDeviceWithConsistencyData:(id)arg1 completion:(id /* block */)arg2;
 - (unsigned int)remotePaymentCredentialsForRequest:(id)arg1 completion:(id /* block */)arg2;
+- (unsigned int)remotePreferencesWithCompletion:(id /* block */)arg1;
 - (void)removeDelegate:(id)arg1;
 - (unsigned int)requestVerificationCodeForPass:(id)arg1 usingChannel:(id)arg2 completion:(id /* block */)arg3;
 - (unsigned int)requirementsForRequest:(id)arg1 completion:(id /* block */)arg2;
@@ -155,6 +159,8 @@
 - (unsigned int)retainSession:(id)arg1 wrappedPayment:(id)arg2 pass:(id)arg3 applicationData:(id)arg4 completion:(id /* block */)arg5;
 - (unsigned int)rewrapInAppPayment:(id)arg1 merchantIdentifier:(id)arg2 hostApplicationIdentifier:(id)arg3 applicationData:(id)arg4 pass:(id)arg5 completion:(id /* block */)arg6;
 - (unsigned int)rewrapInAppPayment:(id)arg1 merchantIdentifier:(id)arg2 merchantSession:(id)arg3 hostApplicationIdentifier:(id)arg4 applicationData:(id)arg5 pass:(id)arg6 completion:(id /* block */)arg7;
+- (unsigned int)serviceProviderPurchaseWithIdentifier:(id)arg1 completion:(id /* block */)arg2;
+- (unsigned int)serviceProviderPurchasesWithRequest:(id)arg1 completion:(id /* block */)arg2;
 - (id)sessionConfiguration;
 - (void)setArchiver:(id)arg1;
 - (void)setBackgroundContext:(id)arg1;
@@ -163,7 +169,6 @@
 - (void)setSharedService:(BOOL)arg1;
 - (void)sharedPaymentServiceChanged:(id)arg1;
 - (BOOL)sharedService;
-- (void)sharedServiceDidRegister;
 - (void)signNonce:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)startBackgroundURLSessionWithIdentifier:(id)arg1 context:(id)arg2 backgroundDelegate:(id)arg3;
 - (void)startBackgroundURLSessionWithIdentifier:(id)arg1 context:(id)arg2 backgroundDelegate:(id)arg3 completion:(id /* block */)arg4;
@@ -171,7 +176,9 @@
 - (id)targetDevice;
 - (unsigned int)unregisterDeviceWithCompanionSerialNumber:(id)arg1 completion:(id /* block */)arg2;
 - (unsigned int)unregisterDeviceWithCompletion:(id /* block */)arg1;
+- (unsigned int)updateRemotePreferences:(id)arg1 withCompletion:(id /* block */)arg2;
 - (unsigned int)updateVerification:(id)arg1 completion:(id /* block */)arg2;
+- (unsigned int)userPaymentPassesWithCompletion:(id /* block */)arg1;
 - (unsigned int)verificationChannelsForPass:(id)arg1 completion:(id /* block */)arg2;
 - (unsigned int)verificationOptionsForRequest:(id)arg1 completion:(id /* block */)arg2;
 - (id)verificationRecordForPass:(id)arg1;

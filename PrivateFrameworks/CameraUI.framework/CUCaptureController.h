@@ -46,6 +46,7 @@
     <CAMCaptureRecoveryDelegate> * _recoveryDelegate;
     <CAMCaptureResultDelegate> * _resultDelegate;
     <CAMCaptureRunningDelegate> * _runningDelegate;
+    <CAMShallowDepthOfFieldStatusDelegate> * _shallowDepthOfFieldStatusDelegate;
     <CAMStillImageCapturingVideoDelegate> * _stillImageCapturingVideoDelegate;
     <CAMSuggestionDelegate> * _suggestionDelegate;
     BOOL  _torchActive;
@@ -106,6 +107,7 @@
 @property (nonatomic) <CAMCaptureRecoveryDelegate> *recoveryDelegate;
 @property (nonatomic) <CAMCaptureResultDelegate> *resultDelegate;
 @property (nonatomic) <CAMCaptureRunningDelegate> *runningDelegate;
+@property (nonatomic) <CAMShallowDepthOfFieldStatusDelegate> *shallowDepthOfFieldStatusDelegate;
 @property (nonatomic, readonly) BOOL shouldAllowUserToChangeFocusAndExposure;
 @property (nonatomic, readonly) BOOL shouldShowLivePhotoIndicator;
 @property (nonatomic) <CAMStillImageCapturingVideoDelegate> *stillImageCapturingVideoDelegate;
@@ -194,8 +196,11 @@
 - (void)_setupExposureMonitoring;
 - (void)_setupFocusAndExposureMonitoring;
 - (void)_setupFocusMonitoring;
+- (void)_setupShallowDepthOfFieldMonitoring;
 - (void)_setupSuggestionMonitoring;
 - (void)_setupZoomMonitoring;
+- (void)_shallowDepthOfFieldMonitoringChangedForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3;
+- (id)_shallowDepthOfFieldMonitoringKeyPaths;
 - (BOOL)_shouldResetFocusAndExposureAfterIrisVideoCapture;
 - (void)_startShowingLivePhotoIndicatorForStillImageRequest:(id)arg1;
 - (void)_stopShowingLivePhotoIndicatorForStillImageRequest:(id)arg1;
@@ -204,6 +209,7 @@
 - (void)_suggestionResultChangedForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3;
 - (void)_teardownAvailabilityMonitoring;
 - (void)_teardownFocusAndExposureMonitoring;
+- (void)_teardownShallowDepthOfFieldMonitoring;
 - (void)_teardownSuggestionMonitoring;
 - (void)_teardownZoomMonitoring;
 - (id)_thumbnailImageFromStillImageCaptureResult:(id)arg1 imageOrientation:(int)arg2;
@@ -217,7 +223,7 @@
 - (id)_updateFocusAndExposureForStartPanorama;
 - (void)_updateMaximumNumberOfStillImageRequestsAfterBurst;
 - (void)_updateMaximumNumberOfStillImageRequestsAfterCapturedRequestIfNecessary:(id)arg1;
-- (void)_updateMaximumNumberOfStillImageRequestsAfterEnqueuingRequestWithFlashMode:(int)arg1 HDRMode:(int)arg2 burstIdentifier:(id)arg3;
+- (void)_updateMaximumNumberOfStillImageRequestsAfterEnqueuingRequestWithFlashMode:(int)arg1 HDRMode:(int)arg2 burstIdentifier:(id)arg3 wantsPortraitEffect:(BOOL)arg4;
 - (BOOL)_useSmoothFocus;
 - (id)_zoomMonitoringKeyPaths;
 - (void)_zoomResultChangedForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3;
@@ -247,7 +253,7 @@
 - (void)dealloc;
 - (id)exposureDelegate;
 - (id)facesDelgate;
-- (void)focusAndExposeAtPoint:(struct CGPoint { float x1; float x2; })arg1 resetExposureTargetBias:(BOOL)arg2;
+- (void)focusAndExposeAtPoint:(struct CGPoint { float x1; float x2; })arg1 lockFocus:(BOOL)arg2 resetExposureTargetBias:(BOOL)arg3;
 - (void)focusAtCenterForVideoRecording;
 - (id)focusDelegate;
 - (void)forceDisableSubjectAreaChangeMonitoring;
@@ -310,9 +316,11 @@
 - (void)setRecoveryDelegate:(id)arg1;
 - (void)setResultDelegate:(id)arg1;
 - (void)setRunningDelegate:(id)arg1;
+- (void)setShallowDepthOfFieldStatusDelegate:(id)arg1;
 - (void)setStillImageCapturingVideoDelegate:(id)arg1;
 - (void)setSuggestionDelegate:(id)arg1;
 - (void)setZoomDelegate:(id)arg1;
+- (id)shallowDepthOfFieldStatusDelegate;
 - (BOOL)shouldAllowUserToChangeFocusAndExposure;
 - (BOOL)shouldShowLivePhotoIndicator;
 - (void)startCaptureSession;

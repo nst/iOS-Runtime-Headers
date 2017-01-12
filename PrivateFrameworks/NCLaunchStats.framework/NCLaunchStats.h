@@ -11,6 +11,7 @@
     int  classCLockedToken;
     NSDate * earliestRequestedRefresh;
     NSDate * forecastStartDate;
+    int  generatePredictionToken;
     BOOL  isClassCLocked;
     double  kTimeGuardBand;
     NSDate * lastTriggerTime;
@@ -32,6 +33,7 @@
 
 // Image: /System/Library/PrivateFrameworks/NCLaunchStats.framework/NCLaunchStats
 
++ (double)minTimeBetweenRefreshes;
 + (id)sharedInstance;
 
 - (void).cxx_destruct;

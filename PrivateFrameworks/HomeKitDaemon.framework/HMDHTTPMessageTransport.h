@@ -17,7 +17,7 @@
 @property (nonatomic, readonly, copy) NSDictionary *TXTRecord;
 @property (nonatomic, readonly) HMFNetServiceBrowser *clientBrowser;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *clientQueue;
-@property (nonatomic, readonly) NSMutableArray *clientTransports;
+@property (nonatomic, readonly) NSArray *clientTransports;
 @property (nonatomic, readonly) HMDHTTPDevice *currentDevice;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -33,20 +33,20 @@
 
 - (void).cxx_destruct;
 - (id)TXTRecord;
-- (id)_clientTransportForDevice:(id)arg1;
 - (void)_connectToDevice:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_handleReceivedRequestMessage:(id)arg1 fromDevice:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)_sendMessage:(id)arg1 destination:(id)arg2 timeout:(double)arg3 responseHandler:(id /* block */)arg4;
 - (id)_serviceForDevice:(id)arg1;
+- (void)addClientTransport:(id)arg1;
 - (BOOL)canSendMessage:(id)arg1;
 - (void)client:(id)arg1 didReceiveMessage:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)client:(id)arg1 didStopWithError:(id)arg2;
 - (id)clientBrowser;
 - (id)clientQueue;
+- (id)clientTransportForDevice:(id)arg1;
 - (id)clientTransports;
 - (void)configureWithDevice:(id)arg1;
 - (id)currentDevice;
-- (void)dealloc;
 - (id)debugDescription;
 - (id)description;
 - (id)descriptionWithPointer:(BOOL)arg1;
@@ -60,6 +60,7 @@
 - (void)netServiceBrowser:(id)arg1 didStopBrowsingWithError:(id)arg2;
 - (id)propertyQueue;
 - (int)qualityOfService;
+- (void)removeAllClientTransports;
 - (void)removeTXTRecordValueForKey:(id)arg1;
 - (void)sendMessage:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)server:(id)arg1 didAddDevice:(id)arg2;

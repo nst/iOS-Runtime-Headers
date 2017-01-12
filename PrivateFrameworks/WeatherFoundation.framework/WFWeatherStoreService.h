@@ -5,6 +5,8 @@
 @interface WFWeatherStoreService : NSObject <WFWeatherStore> {
     NSMutableDictionary * _URLToCallbackMap;
     NSMutableDictionary * _URLToTaskMap;
+    NSMutableDictionary * _UUIDToCallbackMap;
+    NSMutableDictionary * _UUIDToURLMap;
     WFWeatherStoreCache * _cache;
     WFWeatherStoreServiceConfiguration * _configuration;
     NSObject<OS_dispatch_queue> * _incomingRequestQueue;
@@ -14,6 +16,8 @@
 
 @property (retain) NSMutableDictionary *URLToCallbackMap;
 @property (retain) NSMutableDictionary *URLToTaskMap;
+@property (retain) NSMutableDictionary *UUIDToCallbackMap;
+@property (retain) NSMutableDictionary *UUIDToURLMap;
 @property (retain) WFWeatherStoreCache *cache;
 @property (nonatomic, copy) WFWeatherStoreServiceConfiguration *configuration;
 @property (readonly, copy) NSString *debugDescription;
@@ -27,15 +31,20 @@
 - (void).cxx_destruct;
 - (id)URLToCallbackMap;
 - (id)URLToTaskMap;
-- (void)_addCallback:(id)arg1 forURL:(id)arg2;
+- (id)UUIDToCallbackMap;
+- (id)UUIDToURLMap;
+- (void)_addCallback:(id /* block */)arg1 requestIdentifier:(id)arg2 forURL:(id)arg3;
 - (BOOL)_cacheParsedForecastData:(id)arg1 type:(unsigned int)arg2 location:(id)arg3 date:(id)arg4 requestIdentifier:(id)arg5;
-- (void)_executeCallbacksForURL:(id)arg1 conditions:(id)arg2 error:(id)arg3;
-- (void)_executeCallbacksForURL:(id)arg1 parsedForecastData:(id)arg2 error:(id)arg3;
+- (void)_cancelWithRequestIdentifier:(id)arg1;
+- (void)_executeCallbacksForURL:(id)arg1 requestIdentifier:(id)arg2 conditions:(id)arg3 error:(id)arg4;
+- (void)_executeCallbacksForURL:(id)arg1 requestIdentifier:(id)arg2 parsedForecastData:(id)arg3 error:(id)arg4;
 - (BOOL)_forecastConditionsForType:(unsigned int)arg1 location:(id)arg2 date:(id)arg3 requestIdentifier:(id)arg4 completionHandler:(id /* block */)arg5;
-- (void)_setTask:(id)arg1 callback:(id)arg2 forURL:(id)arg3;
+- (BOOL)_isConnectivityAvailableForWeatherHost:(id*)arg1;
+- (void)_setTask:(id)arg1 requestIdentifier:(id)arg2 callback:(id /* block */)arg3 forURL:(id)arg4;
 - (id)_taskForURL:(id)arg1;
 - (void)airQualityForLocation:(id)arg1 locale:(id)arg2 requestIdentifier:(id)arg3 options:(id)arg4 completionHandler:(id /* block */)arg5;
 - (id)cache;
+- (void)cancelTaskWithIdentifier:(id)arg1;
 - (id)configuration;
 - (void)dailyForecastForLocation:(id)arg1 requestIdentifier:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)forecastForLocation:(id)arg1 atDate:(id)arg2 requestIdentifier:(id)arg3 options:(id)arg4 completionHandler:(id /* block */)arg5;
@@ -53,5 +62,7 @@
 - (void)setParseQueue:(id)arg1;
 - (void)setURLToCallbackMap:(id)arg1;
 - (void)setURLToTaskMap:(id)arg1;
+- (void)setUUIDToCallbackMap:(id)arg1;
+- (void)setUUIDToURLMap:(id)arg1;
 
 @end

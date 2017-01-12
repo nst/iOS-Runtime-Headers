@@ -26,6 +26,7 @@
 - (void)setConnection:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setQueue:(id)arg1;
+- (void)setServiceModeRequested:(BOOL)arg1;
 - (void)setTransientPassRequest:(id)arg1;
 - (void)setTransientPassUniqueID:(id)arg1;
 - (id)transientPassRequest;

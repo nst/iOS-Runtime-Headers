@@ -28,6 +28,7 @@
     BOOL  _backHDRSupported;
     BOOL  _backIrisSupported;
     BOOL  _backPanoramaSupported;
+    BOOL  _backPortraitModeSupported;
     BOOL  _backSlomoSupported;
     BOOL  _backTelephotoSupported;
     BOOL  _backTimelapseSupported;
@@ -50,6 +51,7 @@
     BOOL  _frontHDRSupported;
     BOOL  _frontIrisSupported;
     BOOL  _frontPanoramaSupported;
+    BOOL  _frontPortraitModeSupported;
     BOOL  _frontSlomoSupported;
     BOOL  _frontTelephotoSupported;
     BOOL  _frontTimelapseSupported;
@@ -94,6 +96,7 @@
 @property (getter=isBackHDRSupported, nonatomic, readonly) BOOL backHDRSupported;
 @property (getter=isBackIrisSupported, nonatomic, readonly) BOOL backIrisSupported;
 @property (getter=isBackPanoramaSupported, nonatomic, readonly) BOOL backPanoramaSupported;
+@property (getter=isBackPortraitModeSupported, nonatomic, readonly) BOOL backPortraitModeSupported;
 @property (getter=isBackSlomoSupported, nonatomic, readonly) BOOL backSlomoSupported;
 @property (getter=isBackTelephotoSupported, nonatomic, readonly) BOOL backTelephotoSupported;
 @property (getter=isBackTimelapseSupported, nonatomic, readonly) BOOL backTimelapseSupported;
@@ -116,6 +119,7 @@
 @property (getter=isFrontHDRSupported, nonatomic, readonly) BOOL frontHDRSupported;
 @property (getter=isFrontIrisSupported, nonatomic, readonly) BOOL frontIrisSupported;
 @property (getter=isFrontPanoramaSupported, nonatomic, readonly) BOOL frontPanoramaSupported;
+@property (getter=isFrontPortraitModeSupported, nonatomic, readonly) BOOL frontPortraitModeSupported;
 @property (getter=isFrontSlomoSupported, nonatomic, readonly) BOOL frontSlomoSupported;
 @property (getter=isFrontTelephotoSupported, nonatomic, readonly) BOOL frontTelephotoSupported;
 @property (getter=isFrontTimelapseSupported, nonatomic, readonly) BOOL frontTimelapseSupported;
@@ -171,6 +175,7 @@
 - (BOOL)isBackHDRSupported;
 - (BOOL)isBackIrisSupported;
 - (BOOL)isBackPanoramaSupported;
+- (BOOL)isBackPortraitModeSupported;
 - (BOOL)isBackSlomoSupported;
 - (BOOL)isBackTelephotoSupported;
 - (BOOL)isBackTimelapseSupported;
@@ -196,6 +201,7 @@
 - (BOOL)isFrontHDRSupported;
 - (BOOL)isFrontIrisSupported;
 - (BOOL)isFrontPanoramaSupported;
+- (BOOL)isFrontPortraitModeSupported;
 - (BOOL)isFrontSlomoSupported;
 - (BOOL)isFrontTelephotoSupported;
 - (BOOL)isFrontTimelapseSupported;
@@ -211,6 +217,7 @@
 - (BOOL)isMessagesApplication;
 - (BOOL)isPanoramaSupportedForDevice:(int)arg1;
 - (BOOL)isPipelinedStillImageProcessingSupported;
+- (BOOL)isPortraitModeSupportedForDevice:(int)arg1;
 - (BOOL)isPreviewDuringHDRSupported;
 - (BOOL)isSlomoSupportedForDevice:(int)arg1;
 - (BOOL)isSquareModeSupported;

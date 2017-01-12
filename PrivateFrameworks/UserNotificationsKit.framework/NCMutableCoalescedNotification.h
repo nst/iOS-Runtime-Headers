@@ -4,7 +4,7 @@
 
 @interface NCMutableCoalescedNotification : NCCoalescedNotification
 
-- (BOOL)_matchRequest:(id)arg1 withRequest:(id)arg2;
+- (BOOL)_containsRequestMatchingRequest:(id)arg1;
 - (void)addNotificationRequest:(id)arg1;
 - (void)removeNotificationRequest:(id)arg1;
 - (void)replaceNotificationRequest:(id)arg1;

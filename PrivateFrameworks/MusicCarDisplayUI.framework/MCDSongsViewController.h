@@ -2,7 +2,11 @@
    Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
  */
 
-@interface MCDSongsViewController : MCDTableViewController
+@interface MCDSongsViewController : MCDTableViewController {
+    BOOL  _playlistMode;
+}
+
+@property (getter=isPlaylistMode, nonatomic) BOOL playlistMode;
 
 + (id)actionCellConfigurationClassesForLocation:(unsigned int)arg1;
 
@@ -10,6 +14,8 @@
 - (void)_updateQuery;
 - (void)dealloc;
 - (id)initWithDataSource:(id)arg1 cellConfigurationClass:(Class)arg2;
+- (BOOL)isPlaylistMode;
+- (void)setPlaylistMode:(BOOL)arg1;
 - (BOOL)shouldShowActionCellConfiguration:(Class)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;

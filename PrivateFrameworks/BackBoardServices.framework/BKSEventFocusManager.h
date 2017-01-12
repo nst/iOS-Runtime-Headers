@@ -35,6 +35,7 @@
 
 - (void)_connectToEventFocusService;
 - (void)_pruneSet:(id)arg1 ofDeferralsPassingTest:(id /* block */)arg2;
+- (void)_rebuildPendingStatesByPriority;
 - (void)addObserver:(id)arg1;
 - (id)cachedFocusedDeferralProperties;
 - (id)clientIdentifier;
